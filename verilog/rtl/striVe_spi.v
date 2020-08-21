@@ -40,12 +40,12 @@
 
 module striVe_spi(
 `ifdef LVS
-	vdd, vss, 
+    vdd, vss, 
 `endif
-	RSTB, SCK, SDI, CSB, SDO, sdo_enb,
-	xtal_ena, reg_ena, pll_dco_ena, pll_div, pll_sel,
-	pll_trim, pll_bypass, irq, reset, RST, trap,
-	mfgr_id, prod_id, mask_rev_in, mask_rev);
+    RSTB, SCK, SDI, CSB, SDO, sdo_enb,
+    xtal_ena, reg_ena, pll_dco_ena, pll_div, pll_sel,
+    pll_trim, pll_bypass, irq, reset, RST, trap,
+    mfgr_id, prod_id, mask_rev_in, mask_rev);
 
 `ifdef LVS
     inout vdd;	    // 3.3V supply
@@ -97,16 +97,16 @@ module striVe_spi(
     // Instantiate the SPI slave module
 
     spi_slave U1 (
-	.SCK(SCK),
-	.SDI(SDI),
-	.CSB(CSB),
-	.SDO(SDO),
-	.sdoenb(sdo_enb),
-	.idata(odata),
-	.odata(idata),
-	.oaddr(iaddr),
-	.rdstb(rdstb),
-	.wrstb(wrstb)
+    .SCK(SCK),
+    .SDI(SDI),
+    .CSB(CSB),
+    .SDO(SDO),
+    .sdoenb(sdo_enb),
+    .idata(odata),
+    .odata(idata),
+    .oaddr(iaddr),
+    .rdstb(rdstb),
+    .wrstb(wrstb)
     );
 
     wire [11:0] mfgr_id;
@@ -121,74 +121,74 @@ module striVe_spi(
     // All values are 1-4 bits and no shadow registers are required.
 
     assign odata = 
-	(iaddr == 8'h00) ? 8'h00 :	// SPI status (fixed)
-	(iaddr == 8'h01) ? {mask_rev, mfgr_id[11:8]} : 	// Mask rev (metal programmed)
-	(iaddr == 8'h02) ? mfgr_id[7:0] :	// Manufacturer ID (fixed)
-	(iaddr == 8'h03) ? prod_id :	// Product ID (fixed)
-	(iaddr == 8'h04) ? {5'b00000, xtal_ena, reg_ena, pll_dco_ena} :
-	(iaddr == 8'h05) ? {7'b0000000, pll_bypass} :
-	(iaddr == 8'h06) ? {7'b0000000, irq} :
-	(iaddr == 8'h07) ? {7'b0000000, reset} :
-	(iaddr == 8'h08) ? {7'b0000000, trap} :
-	(iaddr == 8'h09) ? pll_trim[7:0] :
-	(iaddr == 8'h0a) ? pll_trim[15:8] :
-	(iaddr == 8'h0b) ? pll_trim[23:16] :
-	(iaddr == 8'h0c) ? {6'b000000, pll_trim[25:24]} :
-	(iaddr == 8'h0d) ? {5'b00000, pll_sel} :
-	(iaddr == 8'h0e) ? {3'b000, pll_div} :
-			   8'h00;	// Default
+    (iaddr == 8'h00) ? 8'h00 :	// SPI status (fixed)
+    (iaddr == 8'h01) ? {mask_rev, mfgr_id[11:8]} : 	// Mask rev (metal programmed)
+    (iaddr == 8'h02) ? mfgr_id[7:0] :	// Manufacturer ID (fixed)
+    (iaddr == 8'h03) ? prod_id :	// Product ID (fixed)
+    (iaddr == 8'h04) ? {5'b00000, xtal_ena, reg_ena, pll_dco_ena} :
+    (iaddr == 8'h05) ? {7'b0000000, pll_bypass} :
+    (iaddr == 8'h06) ? {7'b0000000, irq} :
+    (iaddr == 8'h07) ? {7'b0000000, reset} :
+    (iaddr == 8'h08) ? {7'b0000000, trap} :
+    (iaddr == 8'h09) ? pll_trim[7:0] :
+    (iaddr == 8'h0a) ? pll_trim[15:8] :
+    (iaddr == 8'h0b) ? pll_trim[23:16] :
+    (iaddr == 8'h0c) ? {6'b000000, pll_trim[25:24]} :
+    (iaddr == 8'h0d) ? {5'b00000, pll_sel} :
+    (iaddr == 8'h0e) ? {3'b000, pll_div} :
+               8'h00;	// Default
 
     // Register mapping and I/O to slave module
 
     always @(posedge SCK or negedge RSTB) begin
-	if (RSTB == 1'b0) begin
-	    // Set trim for PLL at (almost) slowest rate (~90MHz).  However,
-	    // pll_trim[12] must be set to zero for proper startup.
-	    pll_trim <= 26'b11111111111110111111111111;
-	    pll_sel <= 3'b000;
-	    pll_div <= 5'b00100;	// Default divide-by-8
-	    xtal_ena <= 1'b1;
-	    reg_ena <= 1'b1;
-	    pll_dco_ena <= 1'b1;	// Default free-running PLL
-	    pll_bypass <= 1'b1;		// NOTE: Default bypass mode (don't use PLL)
-	    irq <= 1'b0;
-	    reset <= 1'b0;
-	end else if (wrstb == 1'b1) begin
-	    case (iaddr)
-		8'h04: begin
-			 pll_dco_ena <= idata[2];
-			 reg_ena    <= idata[1];
-			 xtal_ena  <= idata[0];
-		       end
-		8'h05: begin
-			 pll_bypass <= idata[0];
-		       end
-		8'h06: begin
-			 irq <= idata[0];
-		       end
-		8'h07: begin
-			 reset <= idata[0];
-		       end
-		// Register 8 is read-only
-		8'h09: begin
- 			 pll_trim[7:0] <= idata;
-		       end
-		8'h0a: begin
- 			 pll_trim[15:8] <= idata;
-		       end
-		8'h0b: begin
- 			 pll_trim[23:16] <= idata;
-		       end
-		8'h0c: begin
- 			 pll_trim[25:24] <= idata[1:0];
-		       end
-		8'h0d: begin
-			 pll_sel <= idata[2:0];
-		       end
-		8'h0e: begin
-			 pll_div <= idata[4:0];
-		       end
-	    endcase	// (iaddr)
-	end
+    if (RSTB == 1'b0) begin
+        // Set trim for PLL at (almost) slowest rate (~90MHz).  However,
+        // pll_trim[12] must be set to zero for proper startup.
+        pll_trim <= 26'b11111111111110111111111111;
+        pll_sel <= 3'b000;
+        pll_div <= 5'b00100;	// Default divide-by-8
+        xtal_ena <= 1'b1;
+        reg_ena <= 1'b1;
+        pll_dco_ena <= 1'b1;	// Default free-running PLL
+        pll_bypass <= 1'b1;		// NOTE: Default bypass mode (don't use PLL)
+        irq <= 1'b0;
+        reset <= 1'b0;
+    end else if (wrstb == 1'b1) begin
+        case (iaddr)
+        8'h04: begin
+             pll_dco_ena <= idata[2];
+             reg_ena    <= idata[1];
+             xtal_ena  <= idata[0];
+               end
+        8'h05: begin
+             pll_bypass <= idata[0];
+               end
+        8'h06: begin
+             irq <= idata[0];
+               end
+        8'h07: begin
+             reset <= idata[0];
+               end
+        // Register 8 is read-only
+        8'h09: begin
+              pll_trim[7:0] <= idata;
+               end
+        8'h0a: begin
+              pll_trim[15:8] <= idata;
+               end
+        8'h0b: begin
+              pll_trim[23:16] <= idata;
+               end
+        8'h0c: begin
+              pll_trim[25:24] <= idata[1:0];
+               end
+        8'h0d: begin
+             pll_sel <= idata[2:0];
+               end
+        8'h0e: begin
+             pll_div <= idata[4:0];
+               end
+        endcase	// (iaddr)
+    end
     end
 endmodule	// striVe_spi_orig

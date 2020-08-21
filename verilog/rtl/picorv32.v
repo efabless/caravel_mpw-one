@@ -17,6 +17,11 @@
  *
  */
 
+/* verilator lint_off WIDTH */
+/* verilator lint_off PINMISSING */
+/* verilator lint_off CASEOVERLAP */
+/* verilator lint_off CASEINCOMPLETE */
+
 `timescale 1 ns / 1 ps
 // `default_nettype none
 // `define DEBUGNETS
@@ -122,6 +127,8 @@ module picorv32 #(
 	output reg        rvfi_trap,
 	output reg        rvfi_halt,
 	output reg        rvfi_intr,
+	output reg [ 1:0] rvfi_mode,
+	output reg [ 1:0] rvfi_ixl,
 	output reg [ 4:0] rvfi_rs1_addr,
 	output reg [ 4:0] rvfi_rs2_addr,
 	output reg [31:0] rvfi_rs1_rdata,
@@ -135,6 +142,16 @@ module picorv32 #(
 	output reg [ 3:0] rvfi_mem_wmask,
 	output reg [31:0] rvfi_mem_rdata,
 	output reg [31:0] rvfi_mem_wdata,
+
+	output reg [63:0] rvfi_csr_mcycle_rmask,
+	output reg [63:0] rvfi_csr_mcycle_wmask,
+	output reg [63:0] rvfi_csr_mcycle_rdata,
+	output reg [63:0] rvfi_csr_mcycle_wdata,
+
+	output reg [63:0] rvfi_csr_minstret_rmask,
+	output reg [63:0] rvfi_csr_minstret_wmask,
+	output reg [63:0] rvfi_csr_minstret_rdata,
+	output reg [63:0] rvfi_csr_minstret_wdata,
 `endif
 
 	// Trace Interface
@@ -636,7 +653,7 @@ module picorv32 #(
 	wire instr_trap;
 
 	reg [regindex_bits-1:0] decoded_rd, decoded_rs1, decoded_rs2;
-	reg [31:0] decoded_imm, decoded_imm_uj;
+	reg [31:0] decoded_imm, decoded_imm_j;
 	reg decoder_trigger;
 	reg decoder_trigger_q;
 	reg decoder_pseudo_trigger;
@@ -858,7 +875,7 @@ module picorv32 #(
 			is_alu_reg_imm               <= mem_rdata_latched[6:0] == 7'b0010011;
 			is_alu_reg_reg               <= mem_rdata_latched[6:0] == 7'b0110011;
 
-			{ decoded_imm_uj[31:20], decoded_imm_uj[10:1], decoded_imm_uj[11], decoded_imm_uj[19:12], decoded_imm_uj[0] } <= $signed({mem_rdata_latched[31:12], 1'b0});
+			{ decoded_imm_j[31:20], decoded_imm_j[10:1], decoded_imm_j[11], decoded_imm_j[19:12], decoded_imm_j[0] } <= $signed({mem_rdata_latched[31:12], 1'b0});
 
 			decoded_rd <= mem_rdata_latched[11:7];
 			decoded_rs1 <= mem_rdata_latched[19:15];
@@ -877,8 +894,8 @@ module picorv32 #(
 				decoded_rs1 <= 0;
 				decoded_rs2 <= 0;
 
-				{ decoded_imm_uj[31:11], decoded_imm_uj[4], decoded_imm_uj[9:8], decoded_imm_uj[10], decoded_imm_uj[6],
-				  decoded_imm_uj[7], decoded_imm_uj[3:1], decoded_imm_uj[5], decoded_imm_uj[0] } <= $signed({mem_rdata_latched[12:2], 1'b0});
+				{ decoded_imm_j[31:11], decoded_imm_j[4], decoded_imm_j[9:8], decoded_imm_j[10], decoded_imm_j[6],
+				  decoded_imm_j[7], decoded_imm_j[3:1], decoded_imm_j[5], decoded_imm_j[0] } <= $signed({mem_rdata_latched[12:2], 1'b0});
 
 				case (mem_rdata_latched[1:0])
 					2'b00: begin // Quadrant 0
@@ -1099,7 +1116,7 @@ module picorv32 #(
 			(* parallel_case *)
 			case (1'b1)
 				instr_jal:
-					decoded_imm <= decoded_imm_uj;
+					decoded_imm <= decoded_imm_j;
 				|{instr_lui, instr_auipc}:
 					decoded_imm <= mem_rdata_q[31:12] << 12;
 				|{instr_jalr, is_lb_lh_lw_lbu_lhu, is_alu_reg_imm}:
@@ -1314,7 +1331,13 @@ module picorv32 #(
 `ifndef PICORV32_REGS
 	always @(posedge clk) begin
 		if (resetn && cpuregs_write && latched_rd)
+`ifdef PICORV32_TESTBUG_001
+			cpuregs[latched_rd ^ 1] <= cpuregs_wrdata;
+`elsif PICORV32_TESTBUG_002
+			cpuregs[latched_rd] <= cpuregs_wrdata ^ 1;
+`else
 			cpuregs[latched_rd] <= cpuregs_wrdata;
+`endif
 	end
 
 	always @* begin
@@ -1412,13 +1435,7 @@ module picorv32 #(
 		next_irq_pending = ENABLE_IRQ ? irq_pending & LATCHED_IRQ : 'bx;
 
 		if (ENABLE_IRQ && ENABLE_IRQ_TIMER && timer) begin
-			if (timer - 1 == 0)
-				next_irq_pending[irq_timer] = 1;
 			timer <= timer - 1;
-		end
-
-		if (ENABLE_IRQ) begin
-			next_irq_pending = next_irq_pending | irq;
 		end
 
 		decoder_trigger <= mem_do_rinst && mem_done;
@@ -1544,7 +1561,7 @@ module picorv32 #(
 					end
 					if (instr_jal) begin
 						mem_do_rinst <= 1;
-						reg_next_pc <= current_pc + decoded_imm_uj;
+						reg_next_pc <= current_pc + decoded_imm_j;
 						latched_branch <= 1;
 					end else begin
 						mem_do_rinst <= 0;
@@ -1890,6 +1907,13 @@ module picorv32 #(
 			end
 		endcase
 
+		if (ENABLE_IRQ) begin
+			next_irq_pending = next_irq_pending | irq;
+			if(ENABLE_IRQ_TIMER && timer)
+				if (timer - 1 == 0)
+					next_irq_pending[irq_timer] = 1;
+		end
+
 		if (CATCH_MISALIGN && resetn && (mem_do_rdata || mem_do_wdata)) begin
 			if (mem_wordsize == 0 && reg_op1[1:0] != 0) begin
 				`debug($display("MISALIGNED WORD: 0x%08x", reg_op1);)
@@ -1962,6 +1986,8 @@ module picorv32 #(
 		rvfi_trap <= trap;
 		rvfi_halt <= trap;
 		rvfi_intr <= dbg_irq_enter;
+		rvfi_mode <= 3;
+		rvfi_ixl <= 1;
 
 		if (!resetn) begin
 			dbg_irq_call <= 0;
@@ -1981,8 +2007,16 @@ module picorv32 #(
 			rvfi_rd_wdata <= 0;
 		end else
 		if (cpuregs_write && !irq_state) begin
+`ifdef PICORV32_TESTBUG_003
+			rvfi_rd_addr <= latched_rd ^ 1;
+`else
 			rvfi_rd_addr <= latched_rd;
+`endif
+`ifdef PICORV32_TESTBUG_004
+			rvfi_rd_wdata <= latched_rd ? cpuregs_wrdata ^ 1 : 0;
+`else
 			rvfi_rd_wdata <= latched_rd ? cpuregs_wrdata : 0;
+`endif
 		end else
 		if (rvfi_valid) begin
 			rvfi_rd_addr <= 0;
@@ -2023,7 +2057,40 @@ module picorv32 #(
 	end
 
 	always @* begin
+`ifdef PICORV32_TESTBUG_005
+		rvfi_pc_wdata = (dbg_irq_call ? dbg_irq_ret : dbg_insn_addr) ^ 4;
+`else
 		rvfi_pc_wdata = dbg_irq_call ? dbg_irq_ret : dbg_insn_addr;
+`endif
+
+		rvfi_csr_mcycle_rmask = 0;
+		rvfi_csr_mcycle_wmask = 0;
+		rvfi_csr_mcycle_rdata = 0;
+		rvfi_csr_mcycle_wdata = 0;
+
+		rvfi_csr_minstret_rmask = 0;
+		rvfi_csr_minstret_wmask = 0;
+		rvfi_csr_minstret_rdata = 0;
+		rvfi_csr_minstret_wdata = 0;
+
+		if (rvfi_valid && rvfi_insn[6:0] == 7'b 1110011 && rvfi_insn[13:12] == 3'b010) begin
+			if (rvfi_insn[31:20] == 12'h C00) begin
+				rvfi_csr_mcycle_rmask = 64'h 0000_0000_FFFF_FFFF;
+				rvfi_csr_mcycle_rdata = {32'h 0000_0000, rvfi_rd_wdata};
+			end
+			if (rvfi_insn[31:20] == 12'h C80) begin
+				rvfi_csr_mcycle_rmask = 64'h FFFF_FFFF_0000_0000;
+				rvfi_csr_mcycle_rdata = {rvfi_rd_wdata, 32'h 0000_0000};
+			end
+			if (rvfi_insn[31:20] == 12'h C02) begin
+				rvfi_csr_minstret_rmask = 64'h 0000_0000_FFFF_FFFF;
+				rvfi_csr_minstret_rdata = {32'h 0000_0000, rvfi_rd_wdata};
+			end
+			if (rvfi_insn[31:20] == 12'h C82) begin
+				rvfi_csr_minstret_rmask = 64'h FFFF_FFFF_0000_0000;
+				rvfi_csr_minstret_rdata = {rvfi_rd_wdata, 32'h 0000_0000};
+			end
+		end
 	end
 `endif
 
@@ -2913,7 +2980,7 @@ module picorv32_wb #(
 		.trace_valid(trace_valid),
 		.trace_data (trace_data)
 	);
-
+	// Wishbone Controller
 	localparam IDLE = 2'b00;
 	localparam WBSTART = 2'b01;
 	localparam WBEND = 2'b10;

@@ -1,0 +1,460 @@
+$date
+	Fri Aug 21 14:21:00 2020
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1ps
+$end
+$scope module spi_sysctrl_wb_tb $end
+$var wire 32 ! spi_cfg [31:0] $end
+$var wire 32 " spi_ena [31:0] $end
+$var wire 32 # spi_mask_rev [31:0] $end
+$var wire 32 $ spi_mfgr_id [31:0] $end
+$var wire 32 % spi_pll_bypass [31:0] $end
+$var wire 32 & spi_pll_cfg [31:0] $end
+$var wire 32 ' spi_prod_id [31:0] $end
+$var wire 8 ( spi_ro_config [7:0] $end
+$var wire 12 ) spi_ro_mfgr_id [11:0] $end
+$var wire 8 * spi_ro_prod_id [7:0] $end
+$var wire 32 + wb_dat_o [31:0] $end
+$var wire 1 , wb_ack_o $end
+$var wire 1 - spi_ro_xtal_ena $end
+$var wire 1 . spi_ro_reg_ena $end
+$var wire 26 / spi_ro_pll_trim [25:0] $end
+$var wire 3 0 spi_ro_pll_sel [2:0] $end
+$var wire 5 1 spi_ro_pll_div [4:0] $end
+$var wire 1 2 spi_ro_pll_dco_ena $end
+$var wire 1 3 spi_ro_pll_bypass $end
+$var wire 4 4 spi_ro_mask_rev [3:0] $end
+$var wire 1 5 por $end
+$var wire 1 6 irq_spi $end
+$var wire 1 7 ext_reset $end
+$var wire 1 8 SDO_enb $end
+$var wire 1 9 SDO $end
+$var reg 1 : CSB $end
+$var reg 1 ; RSTB $end
+$var reg 1 < SCK $end
+$var reg 1 = SDI $end
+$var reg 4 > mask_rev_in [3:0] $end
+$var reg 1 ? trap $end
+$var reg 32 @ wb_adr_i [31:0] $end
+$var reg 1 A wb_clk_i $end
+$var reg 1 B wb_cyc_i $end
+$var reg 32 C wb_dat_i [31:0] $end
+$var reg 1 D wb_rst_i $end
+$var reg 4 E wb_sel_i [3:0] $end
+$var reg 1 F wb_stb_i $end
+$var reg 1 G wb_we_i $end
+$scope module hkspi $end
+$var wire 1 : CSB $end
+$var wire 1 5 RST $end
+$var wire 1 ; RSTB $end
+$var wire 1 < SCK $end
+$var wire 1 = SDI $end
+$var wire 4 H mask_rev [3:0] $end
+$var wire 4 I mask_rev_in [3:0] $end
+$var wire 12 J mfgr_id [11:0] $end
+$var wire 8 K prod_id [7:0] $end
+$var wire 1 ? trap $end
+$var wire 1 L wrstb $end
+$var wire 1 8 sdo_enb $end
+$var wire 1 M rdstb $end
+$var wire 8 N odata [7:0] $end
+$var wire 8 O idata [7:0] $end
+$var wire 8 P iaddr [7:0] $end
+$var wire 1 9 SDO $end
+$var reg 1 6 irq $end
+$var reg 1 3 pll_bypass $end
+$var reg 1 2 pll_dco_ena $end
+$var reg 5 Q pll_div [4:0] $end
+$var reg 3 R pll_sel [2:0] $end
+$var reg 26 S pll_trim [25:0] $end
+$var reg 1 . reg_ena $end
+$var reg 1 7 reset $end
+$var reg 1 - xtal_ena $end
+$scope module U1 $end
+$var wire 1 : CSB $end
+$var wire 1 < SCK $end
+$var wire 1 = SDI $end
+$var wire 8 T idata [7:0] $end
+$var wire 8 U odata [7:0] $end
+$var wire 8 V oaddr [7:0] $end
+$var wire 1 9 SDO $end
+$var reg 8 W addr [7:0] $end
+$var reg 3 X count [2:0] $end
+$var reg 3 Y fixed [2:0] $end
+$var reg 8 Z ldata [7:0] $end
+$var reg 7 [ predata [6:0] $end
+$var reg 1 M rdstb $end
+$var reg 1 \ readmode $end
+$var reg 1 8 sdoenb $end
+$var reg 2 ] state [1:0] $end
+$var reg 1 ^ writemode $end
+$var reg 1 L wrstb $end
+$upscope $end
+$upscope $end
+$scope module uut $end
+$var wire 4 _ iomem_we [3:0] $end
+$var wire 1 3 pll_bypass $end
+$var wire 1 ` resetn $end
+$var wire 8 a spi_ro_config [7:0] $end
+$var wire 4 b spi_ro_mask_rev [3:0] $end
+$var wire 12 c spi_ro_mfgr_id [11:0] $end
+$var wire 1 2 spi_ro_pll_dco_ena $end
+$var wire 5 d spi_ro_pll_div [4:0] $end
+$var wire 3 e spi_ro_pll_sel [2:0] $end
+$var wire 26 f spi_ro_pll_trim [25:0] $end
+$var wire 8 g spi_ro_prod_id [7:0] $end
+$var wire 1 . spi_ro_reg_ena $end
+$var wire 1 - spi_ro_xtal_ena $end
+$var wire 1 h valid $end
+$var wire 1 , wb_ack_o $end
+$var wire 32 i wb_adr_i [31:0] $end
+$var wire 1 A wb_clk_i $end
+$var wire 1 B wb_cyc_i $end
+$var wire 32 j wb_dat_i [31:0] $end
+$var wire 1 D wb_rst_i $end
+$var wire 4 k wb_sel_i [3:0] $end
+$var wire 1 F wb_stb_i $end
+$var wire 1 G wb_we_i $end
+$var wire 32 l wb_dat_o [31:0] $end
+$var wire 1 m ready $end
+$scope module spi_sysctrl $end
+$var wire 1 A clk $end
+$var wire 32 n iomem_addr [31:0] $end
+$var wire 1 h iomem_valid $end
+$var wire 32 o iomem_wdata [31:0] $end
+$var wire 4 p iomem_wstrb [3:0] $end
+$var wire 1 3 pll_bypass $end
+$var wire 1 ` resetn $end
+$var wire 8 q spi_ro_config [7:0] $end
+$var wire 4 r spi_ro_mask_rev [3:0] $end
+$var wire 12 s spi_ro_mfgr_id [11:0] $end
+$var wire 1 2 spi_ro_pll_dco_ena $end
+$var wire 5 t spi_ro_pll_div [4:0] $end
+$var wire 3 u spi_ro_pll_sel [2:0] $end
+$var wire 26 v spi_ro_pll_trim [25:0] $end
+$var wire 8 w spi_ro_prod_id [7:0] $end
+$var wire 1 . spi_ro_reg_ena $end
+$var wire 1 - spi_ro_xtal_ena $end
+$var wire 1 x spi_prod_sel $end
+$var wire 1 y spi_mfgr_sel $end
+$var wire 1 z spi_maskrev_sel $end
+$var wire 1 { spi_ena_sel $end
+$var wire 1 | spi_cfg_sel $end
+$var wire 1 } pll_cfg_sel $end
+$var wire 1 ~ pll_bypass_sel $end
+$var reg 32 !" iomem_rdata [31:0] $end
+$var reg 1 m iomem_ready $end
+$upscope $end
+$upscope $end
+$scope task read $end
+$var reg 33 "" addr [32:0] $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+bx ""
+bx !"
+0~
+0}
+1|
+0{
+0z
+0y
+0x
+b101 w
+b11111111111110111111111111 v
+b0 u
+b100 t
+b10001010110 s
+bx r
+bz q
+b0 p
+b0 o
+b0 n
+xm
+bx l
+b0 k
+b0 j
+b0 i
+0h
+b101 g
+b11111111111110111111111111 f
+b0 e
+b100 d
+b10001010110 c
+bx b
+bz a
+0`
+b0 _
+0^
+b0 ]
+0\
+b0 [
+b0 Z
+b0 Y
+b0 X
+b0 W
+b0 V
+b0 U
+b0 T
+b11111111111110111111111111 S
+b0 R
+b100 Q
+b0 P
+b0 O
+b0 N
+0M
+0L
+b101 K
+b10001010110 J
+bx I
+bx H
+0G
+0F
+b0 E
+1D
+b0 C
+0B
+0A
+b0 @
+x?
+bx >
+0=
+0<
+0;
+1:
+09
+18
+07
+06
+15
+bx 4
+13
+12
+b100 1
+b0 0
+b11111111111110111111111111 /
+1.
+1-
+x,
+bx +
+b101 *
+b10001010110 )
+bz (
+b101110000000000000000000010000 '
+b101110000000000000000000001000 &
+b101110000000000000000000011000 %
+b101110000000000000000000001100 $
+b101110000000000000000000010100 #
+b101110000000000000000000000100 "
+b101110000000000000000000000000 !
+$end
+#1000
+0,
+0m
+1A
+#2000
+05
+1`
+0A
+1;
+0D
+#3000
+1A
+#4000
+0A
+b101110000000000000000000010100 ""
+b1111 4
+b1111 H
+b1111 b
+b1111 r
+b1111 >
+b1111 I
+#5000
+0|
+1z
+1h
+b101110000000000000000000010100 @
+b101110000000000000000000010100 i
+b101110000000000000000000010100 n
+1B
+1F
+1A
+#6000
+0A
+#7000
+b1111 +
+b1111 l
+b1111 !"
+1,
+1m
+1A
+#8000
+0A
+#9000
+0h
+b101110000000000000000000001100 ""
+0F
+0B
+0,
+0m
+1A
+#10000
+0A
+#11000
+1y
+0z
+1h
+b101110000000000000000000001100 @
+b101110000000000000000000001100 i
+b101110000000000000000000001100 n
+1B
+1F
+1A
+#12000
+0A
+#13000
+b10001010110 +
+b10001010110 l
+b10001010110 !"
+1,
+1m
+1A
+#14000
+0A
+#15000
+0h
+b101110000000000000000000010000 ""
+0F
+0B
+0,
+0m
+1A
+#16000
+0A
+#17000
+0y
+1x
+1h
+b101110000000000000000000010000 @
+b101110000000000000000000010000 i
+b101110000000000000000000010000 n
+1B
+1F
+1A
+#18000
+0A
+#19000
+b101 +
+b101 l
+b101 !"
+1,
+1m
+1A
+#20000
+0A
+#21000
+0h
+b101110000000000000000000011000 ""
+0F
+0B
+0,
+0m
+1A
+#22000
+0A
+#23000
+0x
+1~
+1h
+b101110000000000000000000011000 @
+b101110000000000000000000011000 i
+b101110000000000000000000011000 n
+1B
+1F
+1A
+#24000
+0A
+#25000
+b1 +
+b1 l
+b1 !"
+1,
+1m
+1A
+#26000
+0A
+#27000
+0h
+b101110000000000000000000001000 ""
+0F
+0B
+0,
+0m
+1A
+#28000
+0A
+#29000
+1}
+0~
+1h
+b101110000000000000000000001000 @
+b101110000000000000000000001000 i
+b101110000000000000000000001000 n
+1B
+1F
+1A
+#30000
+0A
+#31000
+b111111111111101111111111111 +
+b111111111111101111111111111 l
+b111111111111101111111111111 !"
+1,
+1m
+1A
+#32000
+0A
+#33000
+0h
+b101110000000000000000000000100 ""
+0F
+0B
+0,
+0m
+1A
+#34000
+0A
+#35000
+1{
+0}
+1h
+b101110000000000000000000000100 @
+b101110000000000000000000000100 i
+b101110000000000000000000000100 n
+1B
+1F
+1A
+#36000
+0A
+#37000
+b10000011 +
+b10000011 l
+b10000011 !"
+1,
+1m
+1A
+#38000
+0A
+#39000
+0h
+0F
+0B
+0,
+0m
+1A

@@ -10,40 +10,40 @@ module delay_stage(in, trim, out);
 
     wire d0, d1, d2;
 
-    sky130_fd_sc_hd__clkbuf_2 delaybuf0 (
+    scs8hd_clkbuf_2 delaybuf0 (
 	.A(in),
 	.X(ts)
     );
 
-    sky130_fd_sc_hd__clkbuf_1 delaybuf1 (
+    scs8hd_clkbuf_1 delaybuf1 (
 	.A(ts),
 	.X(d0)
     );
 
-    sky130_fd_sc_hd__einvp_2 delayen1 (
+    scs8hd_einvp_2 delayen1 (
 	.A(d0),
 	.TE(trim[1]),
 	.Z(d1)
     );
 
-    sky130_fd_sc_hd__einvn_4 delayenb1 (
+    scs8hd_einvn_4 delayenb1 (
 	.A(ts),
 	.TEB(trim[1]),
 	.Z(d1)
     );
 
-    sky130_fd_sc_hd__clkinv_1 delayint0 (
+    scs8hd_clkinv_1 delayint0 (
 	.A(d1),
 	.Y(d2)
     );
 
-    sky130_fd_sc_hd__einvp_2 delayen0 (
+    scs8hd_einvp_2 delayen0 (
 	.A(d2),
 	.TE(trim[0]),
 	.Z(out)
     );
 
-    sky130_fd_sc_hd__einvn_8 delayenb0 (
+    scs8hd_einvn_8 delayenb0 (
 	.A(ts),
 	.TEB(trim[0]),
 	.Z(out)
@@ -59,53 +59,53 @@ module start_stage(in, trim, reset, out);
 
     wire d0, d1, d2, ctrl0, one;
 
-    sky130_fd_sc_hd__clkbuf_1 delaybuf0 (
+    scs8hd_clkbuf_1 delaybuf0 (
 	.A(in),
 	.X(d0)
     );
 
-    sky130_fd_sc_hd__einvp_2 delayen1 (
+    scs8hd_einvp_2 delayen1 (
 	.A(d0),
 	.TE(trim[1]),
 	.Z(d1)
     );
 
-    sky130_fd_sc_hd__einvn_4 delayenb1 (
+    scs8hd_einvn_4 delayenb1 (
 	.A(in),
 	.TEB(trim[1]),
 	.Z(d1)
     );
 
-    sky130_fd_sc_hd__clkinv_1 delayint0 (
+    scs8hd_clkinv_1 delayint0 (
 	.A(d1),
 	.Y(d2)
     );
 
-    sky130_fd_sc_hd__einvp_2 delayen0 (
+    scs8hd_einvp_2 delayen0 (
 	.A(d2),
 	.TE(trim[0]),
 	.Z(out)
     );
 
-    sky130_fd_sc_hd__einvn_8 delayenb0 (
+    scs8hd_einvn_8 delayenb0 (
 	.A(in),
 	.TEB(ctrl0),
 	.Z(out)
     );
 
-    sky130_fd_sc_hd__einvp_1 reseten0 (
+    scs8hd_einvp_1 reseten0 (
 	.A(one),
 	.TE(reset),
 	.Z(out)
     );
 
-    sky130_fd_sc_hd__or2_2 ctrlen0 (
+    scs8hd_or2_2 ctrlen0 (
 	.A(reset),
 	.B(trim[0]),
 	.X(ctrl0)
     );
 
-    sky130_fd_sc_hd__conb_1 const1 (
+    scs8hd_conb_1 const1 (
 	.HI(one),
 	.LO()
     );
@@ -159,19 +159,19 @@ module ring_osc2x13(reset, trim, clockp);
 
     // Buffered outputs a 0 and 90 degrees phase (approximately)
 
-    sky130_fd_sc_hd__clkinv_2 ibufp00 (
+    scs8hd_clkinv_2 ibufp00 (
 	.A(d[0]),
 	.Y(c[0])
     );
-    sky130_fd_sc_hd__clkinv_8 ibufp01 (
+    scs8hd_clkinv_8 ibufp01 (
 	.A(c[0]),
 	.Y(clockp[0])
     );
-    sky130_fd_sc_hd__clkinv_2 ibufp10 (
+    scs8hd_clkinv_2 ibufp10 (
 	.A(d[6]),
 	.Y(c[1])
     );
-    sky130_fd_sc_hd__clkinv_8 ibufp11 (
+    scs8hd_clkinv_8 ibufp11 (
 	.A(c[1]),
 	.Y(clockp[1])
     );
