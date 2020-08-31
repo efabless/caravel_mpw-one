@@ -20,7 +20,7 @@ This is the user space. It has limitted silicon area (???) as well as a fixed nu
 The repoo contains a [sample mega project](/verilog/rtl/mprj_counter.v) that contains a binary 32-bit up counter.  </br>
 
 <p align=”center”>
-<img src="/doc/counter_32.png" width="40%" height="40%">
+<img src="/doc/counter_32.png" width="50%" height="50%">
 </p>
 
 The firmware running on the Management Area SoC, configures the I/O pads used by the counter and uses the logic probes to observe/control the counter. Three firmware examples are provided:
