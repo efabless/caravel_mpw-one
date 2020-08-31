@@ -22,8 +22,9 @@ module la_wb # (
     output [31:0] wb_dat_o,
     output wb_ack_o,
 
+    input  [127:0] la_data_in, // From MPRJ 
     output [127:0] la_data,
-    output [127:0] la_ena
+    output [127:0] la_oen
 );
 
     wire resetn;
@@ -56,8 +57,9 @@ module la_wb # (
         .iomem_wdata(wb_dat_i),
         .iomem_rdata(wb_dat_o),
         .iomem_ready(ready),
+        .la_data_in(la_data_in),
         .la_data(la_data),
-        .la_ena(la_ena)
+        .la_oen(la_oen)
     );
     
 endmodule
@@ -84,8 +86,9 @@ module la #(
     output reg [31:0] iomem_rdata,
     output reg iomem_ready,
 
-    output [127:0] la_data,
-    output [127:0] la_ena
+    input  [127:0] la_data_in, // From MPRJ 
+    output [127:0] la_data,    // To MPRJ
+    output [127:0] la_oen
 );
 
     reg [31:0] la_data_0;		
@@ -102,7 +105,7 @@ module la #(
     wire [3:0] la_ena_sel;
 
     assign la_data = {la_data_3, la_data_2, la_data_1, la_data_0};
-    assign la_ena  = {la_ena_3, la_ena_2, la_ena_1, la_ena_0};
+    assign la_oen  = {la_ena_3, la_ena_2, la_ena_1, la_ena_0};
 
     assign la_data_sel = {
         (iomem_addr[7:0] == LA_DATA_3),
@@ -125,17 +128,17 @@ module la #(
             la_data_1 <= 0;
             la_data_2 <= 0;
             la_data_3 <= 0;
-            la_ena_0 <= 0;
-            la_ena_1 <= 0;
-            la_ena_2 <= 0;
-            la_ena_3 <= 0;
+            la_ena_0  <= 32'hFFFF_FFFF;  // default is tri-state buff disabled
+            la_ena_1  <= 32'hFFFF_FFFF;
+            la_ena_2  <= 32'hFFFF_FFFF;
+            la_ena_3  <= 32'hFFFF_FFFF;
         end else begin
             iomem_ready <= 0;
             if (iomem_valid && !iomem_ready && iomem_addr[31:8] == BASE_ADR[31:8]) begin
                 iomem_ready <= 1'b 1;
                 
                 if (la_data_sel[0]) begin
-                    iomem_rdata <= la_data_0;
+                    iomem_rdata <= la_data_0 | (la_data_in[31:0] & la_ena_0);
 
                     if (iomem_wstrb[0]) la_data_0[ 7: 0] <= iomem_wdata[ 7: 0];
                     if (iomem_wstrb[1]) la_data_0[15: 8] <= iomem_wdata[15: 8];
@@ -143,7 +146,7 @@ module la #(
                     if (iomem_wstrb[3]) la_data_0[31:24] <= iomem_wdata[31:24];
 
                 end else if (la_data_sel[1]) begin
-                    iomem_rdata <= la_data_1;
+                    iomem_rdata <= la_data_1 | (la_data_in[63:32] & la_ena_1);
 
                     if (iomem_wstrb[0]) la_data_1[ 7: 0] <= iomem_wdata[ 7: 0];
                     if (iomem_wstrb[1]) la_data_1[15: 8] <= iomem_wdata[15: 8];
@@ -151,7 +154,7 @@ module la #(
                     if (iomem_wstrb[3]) la_data_1[31:24] <= iomem_wdata[31:24];
 
                 end else if (la_data_sel[2]) begin
-                    iomem_rdata <= la_data_2;
+                    iomem_rdata <= la_data_2 | (la_data_in[95:64] & la_ena_2);
 
                     if (iomem_wstrb[0]) la_data_2[ 7: 0] <= iomem_wdata[ 7: 0];
                     if (iomem_wstrb[1]) la_data_2[15: 8] <= iomem_wdata[15: 8];
@@ -159,7 +162,7 @@ module la #(
                     if (iomem_wstrb[3]) la_data_2[31:24] <= iomem_wdata[31:24];
 
                 end else if (la_data_sel[3]) begin
-                    iomem_rdata <= la_data_3;
+                    iomem_rdata <= la_data_3 | (la_data_in[127:96] & la_ena_3);
 
                     if (iomem_wstrb[0]) la_data_3[ 7: 0] <= iomem_wdata[ 7: 0];
                     if (iomem_wstrb[1]) la_data_3[15: 8] <= iomem_wdata[15: 8];

@@ -38,6 +38,7 @@
 `include "spi_sysctrl.v"
 `include "sysctrl.v"
 `include "la_wb.v"
+`include "mprj_ctrl.v"
 
 module mgmt_soc (
 `ifdef LVS
@@ -62,7 +63,18 @@ module mgmt_soc (
     // LA signals
     input  [127:0] la_input,           	// From Mega-Project to cpu
     output [127:0] la_output,          	// From CPU to Mega-Project
-    output [127:0] la_oe,              	// LA output enable (sensitiviy according to tri-state ?) 
+    output [127:0] la_oen,              // LA output enable (active low) 
+
+    // Mega-Project Control
+    output [MPRJ_IO_PADS-1:0] mprj_io_oeb_n,
+    output [MPRJ_IO_PADS-1:0] mprj_io_hldh_n,
+    output [MPRJ_IO_PADS-1:0] mprj_io_enh,
+    output [MPRJ_IO_PADS-1:0] mprj_io_inp_dis,
+    output [MPRJ_IO_PADS-1:0] mprj_io_ib_mode_sel,
+    output [MPRJ_IO_PADS-1:0] mprj_io_analog_en,
+    output [MPRJ_IO_PADS-1:0] mprj_io_analog_sel,
+    output [MPRJ_IO_PADS-1:0] mprj_io_analog_pol,
+    output [MPRJ_IO_PADS*3-1:0] mprj_io_dm,
 
     output 	      adc0_ena,
     output 	      adc0_convert,
@@ -149,7 +161,17 @@ module mgmt_soc (
     input  flash_io2_di,
     input  flash_io3_di,
 
-    // Crossbar Switch Slaves
+    // WB MI A (Mega project)
+    input mprj_ack_i,
+	input [31:0] mprj_dat_i,
+    output mprj_cyc_o,
+	output mprj_stb_o,
+	output mprj_we_o,
+	output [3:0] mprj_sel_o,
+	output [31:0] mprj_adr_o,
+	output [31:0] mprj_dat_o,
+	
+    // WB MI B (xbar)
     input [31:0] xbar_dat_i,
     input xbar_ack_i,
     output xbar_cyc_o,	
@@ -160,7 +182,7 @@ module mgmt_soc (
     output [31:0] xbar_dat_o
 );
     /* Memory reverted back to 256 words while memory has to be synthesized */
-    parameter integer MEM_WORDS = 256;
+    parameter integer MEM_WORDS = 8192;
     parameter [31:0] STACKADDR = (4*MEM_WORDS);       // end of memory
     parameter [31:0] PROGADDR_RESET = 32'h 1000_0000; 
     parameter [31:0] PROGADDR_IRQ   = 32'h 0000_0000;
@@ -170,7 +192,9 @@ module mgmt_soc (
     parameter FLASH_BASE_ADR = 32'h 1000_0000;
     parameter UART_BASE_ADR  = 32'h 2000_0000;
     parameter GPIO_BASE_ADR  = 32'h 2100_0000;
-    parameter LA_BASE_ADR   = 32'h 2200_0000;
+    parameter LA_BASE_ADR    = 32'h 2200_0000;
+    parameter MPRJ_CTRL_ADR  = 32'h 2300_0000;
+    parameter MPRJ_BASE_ADR  = 32'h 3000_0000;   // WB MI A
     parameter SYS_BASE_ADR   = 32'h 2F00_0000;
     parameter SPI_BASE_ADR   = 32'h 2E00_0000;
     parameter FLASH_CTRL_CFG = 32'h 2D00_0000;
@@ -186,7 +210,7 @@ module mgmt_soc (
     parameter GPIO_PU   = 8'h08;
     parameter GPIO_PD   = 8'h0c;
     
-    // LDO
+    // LA
     parameter LA_DATA_0 = 8'h00;
     parameter LA_DATA_1 = 8'h04;
     parameter LA_DATA_2 = 8'h08;
@@ -196,6 +220,10 @@ module mgmt_soc (
     parameter LA_ENA_2  = 8'h18;
     parameter LA_ENA_3  = 8'h1c;
     
+    // Mega-Project Control
+    parameter MPRJ_IO_PADS  = 32;
+    parameter MPRJ_PWR_CTRL = 32;
+   
     // SPI-Controlled Registers 
     parameter SPI_CFG        = 8'h00;
     parameter SPI_ENA        = 8'h04;
@@ -220,7 +248,7 @@ module mgmt_soc (
     // Wishbone Interconnect 
     localparam ADR_WIDTH = 32;
     localparam DAT_WIDTH = 32;
-    localparam NUM_SLAVES = 9;
+    localparam NUM_SLAVES = 11;
 
     parameter [NUM_SLAVES*ADR_WIDTH-1: 0] ADR_MASK = {
         {8'h80, {ADR_WIDTH-8{1'b0}}},
@@ -231,13 +259,18 @@ module mgmt_soc (
         {8'hFF, {ADR_WIDTH-8{1'b0}}},
         {8'hFF, {ADR_WIDTH-8{1'b0}}},
         {8'hFF, {ADR_WIDTH-8{1'b0}}},
+        {8'hFF, {ADR_WIDTH-8{1'b0}}},
+        {8'hFF, {ADR_WIDTH-8{1'b0}}},
         {8'hFF, {ADR_WIDTH-8{1'b0}}}
     };
+
     parameter [NUM_SLAVES*ADR_WIDTH-1: 0] SLAVE_ADR = {
         {XBAR_BASE_ADR},
         {SYS_BASE_ADR},
         {SPI_BASE_ADR},
         {FLASH_CTRL_CFG},
+        {MPRJ_BASE_ADR},
+        {MPRJ_CTRL_ADR},
         {LA_BASE_ADR},
         {GPIO_BASE_ADR},
         {UART_BASE_ADR},
@@ -281,9 +314,9 @@ module mgmt_soc (
     reg [1:0] comp_output_dest; 	// Comparator output destination
     
     reg analog_out_sel;				// Analog output select
-     reg	opamp_ena;					// Analog output op-amp enable
-     reg	opamp_bias_ena;				// Analog output op-amp bias enable
-     reg	bg_ena;						// Bandgap enable
+    reg	opamp_ena;					// Analog output op-amp enable
+    reg	opamp_bias_ena;				// Analog output op-amp bias enable
+    reg	bg_ena;						// Bandgap enable
     wire adc0_clk;					// ADC0 clock (multiplexed)
     wire adc1_clk;					// ADC1 clock (multiplexed)
 
@@ -380,6 +413,19 @@ module mgmt_soc (
         .gpio_mode0_pad(gpio_mode0_pad)
     );
 
+    wire [7:0] mprj_io_oeb;
+    convert_gpio_sigs convert_io_bit [7:0] (
+        .gpio_out(),
+        .gpio_outenb(mprj_io_oeb),
+        .gpio_pu(mprj_io_pu),
+        .gpio_pd(mprj_io_pd),
+        .gpio_out_pad(),
+        .gpio_outenb_pad(mprj_io_outenb_pad),
+        .gpio_inenb_pad(mprj_io_inenb_pad),
+        .gpio_mode1_pad(mprj_io_mode1_pad),
+        .gpio_mode0_pad(mprj_io_mode0_pad)
+    );
+    
     reg [31:0] irq;
     wire irq_7;
     wire irq_8;
@@ -596,18 +642,15 @@ module mgmt_soc (
     ) gpio_wb (
         .wb_clk_i(wb_clk_i),
         .wb_rst_i(wb_rst_i),
-
         .wb_adr_i(cpu_adr_o), 
         .wb_dat_i(cpu_dat_o),
         .wb_sel_i(cpu_sel_o),
         .wb_we_i(cpu_we_o),
         .wb_cyc_i(cpu_cyc_o),
-
         .wb_stb_i(gpio_stb_i),
         .wb_ack_o(gpio_ack_o),
         .wb_dat_o(gpio_dat_o),
         .gpio_in_pad(gpio_in_pad),
-
         .gpio(gpio),
         .gpio_oeb(gpio_oeb),
         .gpio_pu(gpio_pu),
@@ -729,9 +772,43 @@ module mgmt_soc (
         .wb_dat_o(la_dat_o),
 
         .la_data(la_output),
-        .la_ena(la_oe)
+        .la_data_in(la_input),
+        .la_oen(la_oen)
     );
     
+    // WB Slave Mega-Project Control
+    wire mprj_ctrl_stb_i;
+    wire mprj_ctrl_ack_o;
+    wire [31:0] mprj_ctrl_dat_o;
+
+    mprj_ctrl_wb #(
+        .BASE_ADR(MPRJ_CTRL_ADR),
+        .IO_PADS(MPRJ_IO_PADS),
+        .PWR_CTRL(MPRJ_PWR_CTRL)
+    ) mprj_ctrl (
+        .wb_clk_i(wb_clk_i),
+        .wb_rst_i(wb_rst_i),
+
+        .wb_adr_i(cpu_adr_o), 
+        .wb_dat_i(cpu_dat_o),
+        .wb_sel_i(cpu_sel_o),
+        .wb_we_i(cpu_we_o),
+        .wb_cyc_i(cpu_cyc_o),
+        .wb_stb_i(mprj_ctrl_stb_i),
+        .wb_ack_o(mprj_ctrl_ack_o),
+        .wb_dat_o(mprj_ctrl_dat_o),
+
+        .output_en_n(mprj_io_oeb_n),
+        .holdh_n(mprj_io_hldh_n),
+        .enableh(mprj_io_enh),
+        .input_dis(mprj_io_inp_dis),
+        .ib_mode_sel(mprj_io_ib_mode_sel),
+        .analog_en(mprj_io_analog_en),
+        .analog_sel(mprj_io_analog_sel),
+        .analog_pol(mprj_io_analog_pol),
+        .digital_mode(mprj_io_dm)
+    );
+
     // Wishbone Slave RAM
     wire mem_stb_i;
     wire mem_ack_o;
@@ -769,9 +846,9 @@ module mgmt_soc (
         .wbm_ack_o(cpu_ack_i),
 
         // Slaves Interface
-        .wbs_stb_o({ xbar_stb_o, sys_stb_i, spi_sys_stb_i, spimemio_cfg_stb_i, la_stb_i, gpio_stb_i, uart_stb_i, spimemio_flash_stb_i, mem_stb_i }), 
-        .wbs_dat_i({ xbar_dat_i, sys_dat_o, spi_sys_dat_o, spimemio_cfg_dat_o, la_dat_o, gpio_dat_o, uart_dat_o, spimemio_flash_dat_o, mem_dat_o }),
-        .wbs_ack_i({ xbar_ack_i, sys_ack_o, spi_sys_ack_o, spimemio_cfg_ack_o, la_ack_o, gpio_ack_o, uart_ack_o, spimemio_flash_ack_o, mem_ack_o })
+        .wbs_stb_o({ xbar_stb_o, sys_stb_i, spi_sys_stb_i, spimemio_cfg_stb_i, mprj_stb_o, mprj_ctrl_stb_i, la_stb_i, gpio_stb_i, uart_stb_i, spimemio_flash_stb_i, mem_stb_i }), 
+        .wbs_dat_i({ xbar_dat_i, sys_dat_o, spi_sys_dat_o, spimemio_cfg_dat_o, mprj_dat_i, mprj_ctrl_dat_o, la_dat_o, gpio_dat_o, uart_dat_o, spimemio_flash_dat_o, mem_dat_o }),
+        .wbs_ack_i({ xbar_ack_i, sys_ack_o, spi_sys_ack_o, spimemio_cfg_ack_o, mprj_ack_i, mprj_ctrl_ack_o, la_ack_o, gpio_ack_o, uart_ack_o, spimemio_flash_ack_o, mem_ack_o })
     );
 
     // Akin to ram ack

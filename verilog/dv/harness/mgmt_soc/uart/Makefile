@@ -1,4 +1,8 @@
 # ---- Test patterns for project striVe ----
+FIRMWARE_PATH = ../..
+RTL_PATH = ../../../../rtl
+IP_PATH = ../../../../ip
+BEHAVIOURAL_MODELS = ../../ 
 
 .SUFFIXES:
 
@@ -9,14 +13,14 @@ all:  ${PATTERN:=.vcd}
 hex:  ${PATTERN:=.hex}
 
 %.vvp: %_tb.v %.hex
-	iverilog -I ../ -I ../../../../ip -I ../../../../rtl \
+	iverilog -I $(BEHAVIOURAL_MODELS)-I $(IP_PATH) -I $(RTL_PATH) \
 	$< -o $@
 
 %.vcd: %.vvp
 	vvp $<
 
-%.elf: %.c ../sections.lds ../start.s
-	/ef/apps/bin/riscv32-unknown-elf-gcc -march=rv32imc -Wl,-Bstatic,-T,../sections.lds,--strip-debug -ffreestanding -nostdlib -o $@ ../start.s $<
+%.elf: %.c $(FIRMWARE_PATH)/sections.lds $(FIRMWARE_PATH)/start.s
+	/ef/apps/bin/riscv32-unknown-elf-gcc -march=rv32imc -Wl,-Bstatic,-T,$(FIRMWARE_PATH)/sections.lds,--strip-debug -ffreestanding -nostdlib -o $@ $(FIRMWARE_PATH)/start.s $<
 
 %.hex: %.elf
 	/ef/apps/bin/riscv32-unknown-elf-objcopy -O verilog $< $@

@@ -4,7 +4,7 @@
 
 `timescale 1 ns / 1 ps
 
-`include "harness.v"
+`include "harness_chip.v"
 `include "spiflash.v"
 `include "tbuart.v"
 
@@ -167,31 +167,31 @@ module hkspi_tb;
 		write_byte(8'h00);	// Address (register 3 = product ID)
 	    read_byte(tbdata);
 	    $display("Read register 0 = 0x%02x (should be 0x00)", tbdata);
-		if(tbdata != 8'h00) begin $display("Monitor: Test HK SPI (RTL) Failed"); $finish; end
+		if(tbdata !== 8'h00) begin $display("Monitor: Test HK SPI (RTL) Failed"); $finish; end
 	    read_byte(tbdata);
 	    $display("Read register 1 = 0x%02x (should be 0x04)", tbdata);
-		if(tbdata != 8'h14) begin $display("Monitor: Test HK SPI (RTL) Failed"); $finish; end
+		if(tbdata !== 8'h14) begin $display("Monitor: Test HK SPI (RTL) Failed"); $finish; end
 	    read_byte(tbdata);
 	    $display("Read register 2 = 0x%02x (should be 0x56)", tbdata);
-		if(tbdata != 8'h56) begin $display("Monitor: Test HK SPI (RTL) Failed, %02x", tbdata); $finish; end
+		if(tbdata !== 8'h56) begin $display("Monitor: Test HK SPI (RTL) Failed, %02x", tbdata); $finish; end
 	    read_byte(tbdata);
 	    $display("Read register 3 = 0x%02x (should be 0x05)", tbdata);
-		if(tbdata != 8'h05) begin $display("Monitor: Test HK SPI (RTL) Failed"); $finish; end
+		if(tbdata !== 8'h05) begin $display("Monitor: Test HK SPI (RTL) Failed"); $finish; end
 	    read_byte(tbdata);
 	    $display("Read register 4 = 0x%02x (should be 0x07)", tbdata);
-		if(tbdata != 8'h07) begin $display("Monitor: Test HK SPI (RTL) Failed"); $finish; end
+		if(tbdata !== 8'h07) begin $display("Monitor: Test HK SPI (RTL) Failed"); $finish; end
 	    read_byte(tbdata);
 	    $display("Read register 5 = 0x%02x (should be 0x01)", tbdata);
-		if(tbdata != 8'h01) begin $display("Monitor: Test HK SPI (RTL) Failed"); $finish; end
+		if(tbdata !== 8'h01) begin $display("Monitor: Test HK SPI (RTL) Failed"); $finish; end
 	    read_byte(tbdata);
 	    $display("Read register 6 = 0x%02x (should be 0x00)", tbdata);
-		if(tbdata != 8'h00) begin $display("Monitor: Test HK SPI (RTL) Failed"); $finish; end
+		if(tbdata !== 8'h00) begin $display("Monitor: Test HK SPI (RTL) Failed"); $finish; end
 	    read_byte(tbdata);
 	    $display("Read register 7 = 0x%02x (should be 0x00)", tbdata);
-		if(tbdata != 8'h00) begin $display("Monitor: Test HK SPI (RTL) Failed"); $finish; end
+		if(tbdata !== 8'h00) begin $display("Monitor: Test HK SPI (RTL) Failed"); $finish; end
 	    read_byte(tbdata);
 	    $display("Read register 8 = 0x%02x (should be 0x00)", tbdata);
-		if(tbdata != 8'h00) begin $display("Monitor: Test HK SPI (RTL) Failed"); $finish; end
+		if(tbdata !== 8'h00) begin $display("Monitor: Test HK SPI (RTL) Failed"); $finish; end
 		
         end_csb();
 
@@ -209,7 +209,7 @@ module hkspi_tb;
 	assign VSS = 1'b0;
 	assign VDD1V8 = 1'b1;
 
-	harness uut (
+	harness_chip uut (
 		.vdd	  (VDD3V3),
 		.vdd1v8	  (VDD1V8),
 		.vss	  (VSS),

@@ -1,0 +1,142 @@
+
+
+`timescale 1 ns / 1 ps
+
+`include "mprj_ctrl.v"
+
+module mprj_ctrl_tb;
+
+    reg wb_clk_i;
+	reg wb_rst_i;
+
+    reg wb_stb_i;
+    reg wb_cyc_i;
+	reg wb_we_i;
+	reg [3:0] wb_sel_i;
+	reg [31:0] wb_dat_i;
+	reg [31:0] wb_adr_i;
+
+	wire wb_ack_o;
+	wire [31:0] wb_dat_o;
+
+    initial begin
+        wb_clk_i = 0; 
+        wb_rst_i = 0;
+        wb_stb_i = 0; 
+        wb_cyc_i = 0;  
+        wb_sel_i = 0;  
+        wb_we_i  = 0;  
+        wb_dat_i = 0; 
+        wb_adr_i = 0; 
+    end
+
+    always #1 wb_clk_i = ~wb_clk_i;
+
+    // Mega Project Control Registers 
+    wire [31:0] mprj_ctrl = uut.BASE_ADR;
+    wire [31:0] pwr_ctrl  = uut.BASE_ADR + uut.IO_PADS*4;
+
+    initial begin
+        $dumpfile("mprj_ctrl_tb.vcd");
+        $dumpvars(0, mprj_ctrl_tb);
+        repeat (50) begin
+            repeat (1000) @(posedge wb_clk_i);
+        end
+        $display("%c[1;31m",27);
+        $display ("Monitor: Timeout, Test Mega-Project Control Failed");
+        $display("%c[0m",27);
+        $finish;
+    end
+
+    integer i;
+
+    reg [31:0] data;
+
+    initial begin   
+        // Reset Operation
+        wb_rst_i = 1;
+        #2;
+        wb_rst_i = 0;
+        #2;
+
+        for (i=0; i<uut.IO_PADS; i=i+1) begin
+            data = $urandom_range(0, 2**(7));
+            write(mprj_ctrl+i*4, data);
+            #2;
+            read(mprj_ctrl+i*4);
+            if (wb_dat_o !== data) begin
+                $display("Monitor: R/W from IO-CTRL Failed.");
+                $finish;
+            end
+        end
+
+        for (i=0; i<uut.PWR_CTRL; i=i+1) begin
+            data = $urandom_range(0, 2**(7));
+            write(pwr_ctrl+i*4, data);
+            #2;
+            read(pwr_ctrl+i*4);
+            if (wb_dat_o !== data) begin
+                $display("Monitor: R/W from POWER-CTRL Failed.");
+                $finish;
+            end
+        end
+        
+        $display("Success!");
+        $finish;
+    end
+
+    task write;
+        input [32:0] addr;
+        input [32:0] data;
+        begin 
+            @(posedge wb_clk_i) begin
+                wb_stb_i = 1;
+                wb_cyc_i = 1;
+                wb_sel_i = 4'hF; 
+                wb_we_i = 1;     
+                wb_adr_i = addr;
+                wb_dat_i = data;
+                $display("Write Cycle Started.");
+            end
+            // Wait for an ACK
+            wait(wb_ack_o == 1);
+            wait(wb_ack_o == 0);
+            wb_cyc_i = 0;
+            wb_stb_i = 0;
+            $display("Write Cycle Ended.");
+        end
+    endtask
+    
+    task read;
+        input [32:0] addr;
+        begin 
+            @(posedge wb_clk_i) begin
+                wb_stb_i = 1;
+                wb_cyc_i = 1;
+                wb_we_i = 0;
+                wb_adr_i = addr;
+                $display("Read Cycle Started.");
+            end
+            // Wait for an ACK
+            wait(wb_ack_o == 1);
+            wait(wb_ack_o == 0);
+            wb_cyc_i = 0;
+            wb_stb_i = 0;
+            $display("Read Cycle Ended.");
+        end
+    endtask
+
+    mprj_ctrl_wb uut(
+        .wb_clk_i(wb_clk_i),
+	    .wb_rst_i(wb_rst_i),
+        .wb_stb_i(wb_stb_i),
+	    .wb_cyc_i(wb_cyc_i),
+	    .wb_sel_i(wb_sel_i),
+	    .wb_we_i(wb_we_i),
+	    .wb_dat_i(wb_dat_i),
+	    .wb_adr_i(wb_adr_i), 
+        .wb_ack_o(wb_ack_o),
+	    .wb_dat_o(wb_dat_o)
+    );
+
+endmodule

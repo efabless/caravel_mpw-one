@@ -3,7 +3,7 @@
 .SUFFIXES:
 .SILENT: clean all
 
-PATTERNS = gpio mem uart perf hkspi sysctrl xbar
+PATTERNS = gpio mem uart perf hkspi sysctrl mprj_ctrl
 
 all:  ${PATTERNS}
 	for i in ${PATTERNS}; do \

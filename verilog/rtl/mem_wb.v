@@ -34,15 +34,17 @@ module mem_wb # (
             - read transaction : asserted one clock cycle after receiving the adr_i & dat_i
     */ 
 
-    reg [2:0] wb_ack_read;
-   
-    assign wb_ack_o = wb_we_i ? valid : &wb_ack_read;
+    reg wb_ack_read;
+    reg wb_ack_o;
 
     always @(posedge wb_clk_i) begin
         if (wb_rst_i == 1'b 1) begin
-            wb_ack_read <= 3'b 00;
+            wb_ack_read <= 1'b0;
+            wb_ack_o <= 1'b0;
         end else begin
-            wb_ack_read <= {3{valid}} & {1'b1, wb_ack_read[2:1]};
+            // wb_ack_read <= {2{valid}} & {1'b1, wb_ack_read[1]};
+            wb_ack_o    <= wb_we_i? (valid & !wb_ack_o): wb_ack_read;
+            wb_ack_read <= (valid & !wb_ack_o) & !wb_ack_read;
         end
     end
 
@@ -62,7 +64,7 @@ endmodule
 module soc_mem 
 `ifndef USE_OPENRAM
 #(
-    parameter integer WORDS = 256
+    parameter integer WORDS = 8192
 )
 `endif
  ( 
@@ -91,12 +93,12 @@ module soc_mem
     
     /* Using Port 0 Only - Size: 1KB, 256x32 bits */
     //sram_1rw1r_32_256_8_scn4m_subm 
-    sram_1rw1r_32_256_8_sky130 SRAM(
+    sram_1rw1r_32_8192_8_sky130 SRAM(
             .clk0(clk), 
             .csb0(~ena), 
             .web0(~|wen),
             .wmask0(wen),
-            .addr0(addr[7:0]),
+            .addr0(addr[12:0]),
             .din0(wdata),
             .dout0(rdata)
       );

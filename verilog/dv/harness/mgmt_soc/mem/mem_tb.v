@@ -20,7 +20,7 @@
 
 `timescale 1 ns / 1 ps
 
-`include "harness.v"
+`include "harness_chip.v"
 `include "spiflash.v"
 
 module mem_tb;
@@ -146,7 +146,7 @@ module mem_tb;
 	assign VDD3V3 = 1'b1;
 	assign VDD1V8 = 1'b1;
 
-	harness uut (
+	harness_chip uut (
 		.vdd	  (VDD3V3),
 		.vdd1v8	  (VDD1V8),
 		.vss	  (VSS),
