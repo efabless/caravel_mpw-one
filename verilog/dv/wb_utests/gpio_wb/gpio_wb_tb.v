@@ -7,19 +7,19 @@
 module gpio_wb_tb;
 
     reg wb_clk_i;
-	reg wb_rst_i;
+    reg wb_rst_i;
 
     reg wb_stb_i;
     reg wb_cyc_i;
-	reg wb_we_i;
-	reg [3:0] wb_sel_i;
+    reg wb_we_i;
+    reg [3:0] wb_sel_i;
 
-	reg [31:0] wb_dat_i;
-	reg [31:0] wb_adr_i;
+    reg [31:0] wb_dat_i;
+    reg [31:0] wb_adr_i;
     reg [15:0] gpio_in_pad;
 
-	wire wb_ack_o;
-	wire [31:0] wb_dat_o;
+    wire wb_ack_o;
+    wire [31:0] wb_dat_o;
 
     initial begin
         wb_clk_i = 0; 
@@ -167,15 +167,15 @@ module gpio_wb_tb;
     
     gpio_wb uut(
         .wb_clk_i(wb_clk_i),
-	    .wb_rst_i(wb_rst_i),
+	.wb_rst_i(wb_rst_i),
         .wb_stb_i(wb_stb_i),
-	    .wb_cyc_i(wb_cyc_i),
-	    .wb_sel_i(wb_sel_i),
-	    .wb_we_i(wb_we_i),
-	    .wb_dat_i(wb_dat_i),
-	    .wb_adr_i(wb_adr_i), 
+	.wb_cyc_i(wb_cyc_i),
+	.wb_sel_i(wb_sel_i),
+	.wb_we_i(wb_we_i),
+	.wb_dat_i(wb_dat_i),
+	.wb_adr_i(wb_adr_i), 
         .wb_ack_o(wb_ack_o),
-	    .wb_dat_o(wb_dat_o),
+	.wb_dat_o(wb_dat_o),
         .gpio_in_pad(gpio_in_pad)
     );
     

@@ -1,44 +1,17 @@
 module mgmt_core(
 `ifdef LVS
+	inout vdd3v3,
 	inout vdd1v8,	   
 	inout vss,
 `endif
 	input ext_clk,
-	output[ 15:0] gpio_out_pad,		    // Connect to out on gpio pad
-	input  [15:0] gpio_in_pad,		    // Connect to in on gpio pad
+	output[ 15:0] gpio_out_pad,		// Connect to out on gpio pad
+	input  [15:0] gpio_in_pad,		// Connect to in on gpio pad
 	output [15:0] gpio_mode0_pad,		// Connect to dm[0] on gpio pad
 	output [15:0] gpio_mode1_pad,		// Connect to dm[2] on gpio pad
 	output [15:0] gpio_outenb_pad,		// Connect to oe_n on gpio pad
 	output [15:0] gpio_inenb_pad,		// Connect to inp_dis on gpio pad
-	output adc0_ena,
-	output adc0_convert,
-	input [9:0] adc0_data,
-	input adc0_done,
-	output adc0_clk,
-	output [1:0] adc0_inputsrc,
-	output adc1_ena,
-	output adc1_convert,
-	output adc1_clk,
-	output [1:0] adc1_inputsrc,
-	input [9:0] adc1_data,
-	input adc1_done,
-	output dac_ena,
-	output [9:0] dac_value,
-	output analog_out_sel,              // Analog output select (DAC or bandgap)
-	output opamp_ena,                   // Op-amp enable for analog output
-	output opamp_bias_ena,              // Op-amp bias enable for analog output
-	output bg_ena,		                // Bandgap enable
-	output comp_ena,
-	output [1:0] comp_ninputsrc,
-	output [1:0] comp_pinputsrc,
-	output rcosc_ena,
-	output overtemp_ena,
-	input overtemp,
-	input rcosc_in,		        // RC oscillator output
-	input xtal_in,		        // crystal oscillator output
-	input comp_in,		        // comparator output
-	input spi_sck,
-	input [7:0] spi_ro_config,
+	input [7:0]   spi_ro_config,
 	output ser_tx,
 	input  ser_rx,
 	// IRQ
@@ -68,52 +41,52 @@ module mgmt_core(
 	input flash_io3_di,
 	output por,
 	input porb_l,
-	input xi,
+	input clock,
 	output pll_clk16,
 	input SDI_core,
 	input CSB_core,
 	output SDO_core,
 	output SDO_enb,
 	// LA signals
-    input  [127:0] la_input,           	// From Mega-Project to cpu
-    output [127:0] la_output,          	// From CPU to Mega-Project
-    output [127:0] la_oen,              // LA output enable  
+    	input  [127:0] la_input,           	// From Mega-Project to cpu
+    	output [127:0] la_output,          	// From CPU to Mega-Project
+    	output [127:0] la_oen,              // LA output enable  
 	// Mega-Project Control Signals
 	output [`MPRJ_IO_PADS-1:0] mprj_io_oeb_n,
-    output [`MPRJ_IO_PADS-1:0] mprj_io_hldh_n,
+    	output [`MPRJ_IO_PADS-1:0] mprj_io_hldh_n,
 	output [`MPRJ_IO_PADS-1:0] mprj_io_enh,
-    output [`MPRJ_IO_PADS-1:0] mprj_io_inp_dis,
-    output [`MPRJ_IO_PADS-1:0] mprj_io_ib_mode_sel,
-    output [`MPRJ_IO_PADS-1:0] mprj_io_analog_en,
-    output [`MPRJ_IO_PADS-1:0] mprj_io_analog_sel,
-    output [`MPRJ_IO_PADS-1:0] mprj_io_analog_pol,
-    output [`MPRJ_IO_PADS*3-1:0] mprj_io_dm,
+    	output [`MPRJ_IO_PADS-1:0] mprj_io_inp_dis,
+    	output [`MPRJ_IO_PADS-1:0] mprj_io_ib_mode_sel,
+    	output [`MPRJ_IO_PADS-1:0] mprj_io_analog_en,
+    	output [`MPRJ_IO_PADS-1:0] mprj_io_analog_sel,
+    	output [`MPRJ_IO_PADS-1:0] mprj_io_analog_pol,
+    	output [`MPRJ_IO_PADS*3-1:0] mprj_io_dm,
 	// WB MI A (Mega project)
-    input mprj_ack_i,
+    	input mprj_ack_i,
 	input [31:0] mprj_dat_i,
-    output mprj_cyc_o,
+    	output mprj_cyc_o,
 	output mprj_stb_o,
 	output mprj_we_o,
 	output [3:0] mprj_sel_o,
 	output [31:0] mprj_adr_o,
 	output [31:0] mprj_dat_o,
-    // WB MI B Switch 
-    input xbar_ack_i,
-    input [31:0] xbar_dat_i,
-    output xbar_cyc_o,
-    output xbar_stb_o,
-    output xbar_we_o,
-    output [3:0] xbar_sel_o,
-    output [31:0] xbar_adr_o,
-    output [31:0] xbar_dat_o,
+    	// WB MI B Switch 
+    	input xbar_ack_i,
+    	input [31:0] xbar_dat_i,
+    	output xbar_cyc_o,
+    	output xbar_stb_o,
+    	output xbar_we_o,
+    	output [3:0] xbar_sel_o,
+    	output [31:0] xbar_adr_o,
+    	output [31:0] xbar_dat_o,
 
-    output striVe_clk,
-    output striVe_rstn
+    	output striVe_clk,
+    	output striVe_rstn
 );
-    wire ext_clk_sel;
-    wire ext_clk;
-    wire pll_clk;
-    wire ext_reset;
+    	wire ext_clk_sel;
+    	wire ext_clk;
+    	wire pll_clk;
+    	wire ext_reset;
 
 	striVe_clkrst clkrst(
 	`ifdef LVS
@@ -129,30 +102,30 @@ module mgmt_core(
 		.resetn(striVe_rstn)
 	);
 
-    // SoC core
-    wire [9:0] adc0_data_core;
-    wire [1:0] adc0_inputsrc_core;
-    wire [9:0] adc1_data_core;
-    wire [1:0] adc1_inputsrc_core;
-    wire [9:0] dac_value_core;
-    wire [1:0] comp_ninputsrc_core;
-    wire [1:0] comp_pinputsrc_core;
-    wire [7:0] spi_ro_config_core;
+    	// SoC core
+    	wire [9:0] adc0_data_core;
+    	wire [1:0] adc0_inputsrc_core;
+    	wire [9:0] adc1_data_core;
+    	wire [1:0] adc1_inputsrc_core;
+    	wire [9:0] dac_value_core;
+    	wire [1:0] comp_ninputsrc_core;
+    	wire [1:0] comp_pinputsrc_core;
+    	wire [7:0] spi_ro_config_core;
 
-    // HKSPI 
+    	// HKSPI 
 	wire [11:0] spi_ro_mfgr_id;
-    wire [7:0] spi_ro_prod_id;
-    wire [3:0] spi_ro_mask_rev;
+    	wire [7:0] spi_ro_prod_id;
+    	wire [3:0] spi_ro_mask_rev;
 	wire [2:0] spi_ro_pll_sel;
-    wire [4:0] spi_ro_pll_div;
-    wire [25:0] spi_ro_pll_trim;
+    	wire [4:0] spi_ro_pll_div;
+    	wire [25:0] spi_ro_pll_trim;
 
 	mgmt_soc soc (
-    `ifdef LVS
-        .vdd1v8(vdd1v8),
-        .vss(vss),
-    `endif
-        .pll_clk(pll_clk),
+    	    `ifdef LVS
+        	.vdd1v8(vdd1v8),
+        	.vss(vss),
+    	    `endif
+        	.pll_clk(pll_clk),
 		.ext_clk(ext_clk),
 		.ext_clk_sel(ext_clk_sel),
 		.clk(striVe_clk),
@@ -163,37 +136,7 @@ module mgmt_core(
 		.gpio_mode1_pad(gpio_mode1_pad),
 		.gpio_outenb_pad(gpio_outenb_pad),
 		.gpio_inenb_pad(gpio_inenb_pad),
-		.adc0_ena(adc0_ena),
-		.adc0_convert(adc0_convert),
-		.adc0_data(adc0_data),
-		.adc0_done(adc0_done),
-		.adc0_clk(adc0_clk),
-		.adc0_inputsrc(adc0_inputsrc),
-		.adc1_ena(adc1_ena),
-		.adc1_convert(adc1_convert),
-		.adc1_clk(adc1_clk),
-		.adc1_inputsrc(adc1_inputsrc),
-		.adc1_data(adc1_data),
-		.adc1_done(adc1_done),
-		.dac_ena(dac_ena),
-		.dac_value(dac_value),
-		.analog_out_sel(analog_out_sel),
-		.opamp_ena(opamp_ena),
-		.opamp_bias_ena(opamp_bias_ena),
-		.bg_ena(bg_ena),
-		.comp_ena(comp_ena),
-		.comp_ninputsrc(comp_ninputsrc),
-		.comp_pinputsrc(comp_pinputsrc),
-		.rcosc_ena(rcosc_ena),
-		.overtemp_ena(overtemp_ena),
-		.overtemp(overtemp),
-		.rcosc_in(rcosc_in),
-		.xtal_in(xtal_in),
-		.comp_in(comp_in),
-		.spi_sck(spi_sck),
 		.spi_ro_config(spi_ro_config),
-		.spi_ro_xtal_ena(spi_ro_xtal_ena),
-		.spi_ro_reg_ena(spi_ro_reg_ena),
 		.spi_ro_pll_dco_ena(spi_ro_pll_dco_ena),
 		.spi_ro_pll_div(spi_ro_pll_div),
 		.spi_ro_pll_sel(spi_ro_pll_sel),
@@ -235,14 +178,14 @@ module mgmt_core(
 		.la_oen(la_oen),
 		// Mega-Project Control
 		.mprj_io_oeb_n(mprj_io_oeb_n),
-        .mprj_io_hldh_n(mprj_io_hldh_n),
+        	.mprj_io_hldh_n(mprj_io_hldh_n),
 		.mprj_io_enh(mprj_io_enh),
-        .mprj_io_inp_dis(mprj_io_inp_dis),
-        .mprj_io_ib_mode_sel(mprj_io_ib_mode_sel),
-        .mprj_io_analog_en(mprj_io_analog_en),
-        .mprj_io_analog_sel(mprj_io_analog_sel),
-        .mprj_io_analog_pol(mprj_io_analog_pol),
-        .mprj_io_dm(mprj_io_dm),
+        	.mprj_io_inp_dis(mprj_io_inp_dis),
+        	.mprj_io_ib_mode_sel(mprj_io_ib_mode_sel),
+        	.mprj_io_analog_en(mprj_io_analog_en),
+        	.mprj_io_analog_sel(mprj_io_analog_sel),
+        	.mprj_io_analog_pol(mprj_io_analog_pol),
+        	.mprj_io_dm(mprj_io_dm),
 		// Mega Project Slave ports (WB MI A)
 		.mprj_cyc_o(mprj_cyc_o),
 		.mprj_stb_o(mprj_stb_o),
@@ -253,21 +196,21 @@ module mgmt_core(
 		.mprj_ack_i(mprj_ack_i),
 		.mprj_dat_i(mprj_dat_i),
 		// Crossbar Switch
-        .xbar_cyc_o(xbar_cyc_o),
-        .xbar_stb_o(xbar_stb_o),
-        .xbar_we_o (xbar_we_o),
-        .xbar_sel_o(xbar_sel_o),
-        .xbar_adr_o(xbar_adr_o),
-        .xbar_dat_o(xbar_dat_o),
-        .xbar_ack_i(xbar_ack_i),
-        .xbar_dat_i(xbar_dat_i)
-    );
+        	.xbar_cyc_o(xbar_cyc_o),
+        	.xbar_stb_o(xbar_stb_o),
+        	.xbar_we_o (xbar_we_o),
+        	.xbar_sel_o(xbar_sel_o),
+        	.xbar_adr_o(xbar_adr_o),
+        	.xbar_dat_o(xbar_dat_o),
+        	.xbar_ack_i(xbar_ack_i),
+        	.xbar_dat_i(xbar_dat_i)
+    	);
     
-    digital_pll pll (
-	`ifdef LVS
+    	digital_pll pll (
+	    `ifdef LVS
 		.vdd(vdd1v8),
 		.vss(vss),
-	`endif
+	    `endif
 		.reset(por),
 		.extclk_sel(ext_clk_sel),
 		.osc(xi),
@@ -278,49 +221,48 @@ module mgmt_core(
 		.sel(spi_ro_pll_sel),
 		.dco(spi_ro_pll_dco_ena),
 		.ext_trim(spi_ro_pll_trim)
-    );
+    	);
 
 	// For the mask revision input, use an array of digital constant logic cells
 	wire [3:0] mask_rev;
-    wire [3:0] no_connect;
-    scs8hd_conb_1 mask_rev_value [3:0] (
-	`ifdef LVS
-        .vpwr(vdd1v8),
-        .vpb(vdd1v8),
-        .vnb(vss),
-        .vgnd(vss),
-	`endif
-        .HI({no_connect[3:1], mask_rev[0]}),
-        .LO({mask_rev[3:1], no_connect[0]})
-    );
+    	wire [3:0] no_connect;
 
-	// Housekeeping SPI at 1.8V.
-    striVe_spi housekeeping (
-	`ifdef LVS
-		.vdd(vdd1v8),
+    	scs8hd_conb_1 mask_rev_value [3:0] (
+	    `ifdef LVS
+        	.vpwr(vdd1v8),
+        	.vpb(vdd1v8),
+        	.vnb(vss),
+        	.vgnd(vss),
+	    `endif
+        	.HI({no_connect[3:1], mask_rev[0]}),
+        	.LO({mask_rev[3:1], no_connect[0]})
+    	);
+
+	// Housekeeping SPI at 3.3V.
+    	striVe_spi housekeeping (
+	    `ifdef LVS
+		.vdd(vdd3v3),
 		.vss(vss),
-	`endif
+	    `endif
 		.RSTB(porb_l),
 		.SCK(spi_sck),
 		.SDI(SDI_core),
 		.CSB(CSB_core),
 		.SDO(SDO_core),
 		.sdo_enb(SDO_enb),
-        .xtal_ena(spi_ro_xtal_ena),
-		.reg_ena(spi_ro_reg_ena),
 		.pll_dco_ena(spi_ro_pll_dco_ena),
 		.pll_sel(spi_ro_pll_sel),
 		.pll_div(spi_ro_pll_div),
-        .pll_trim(spi_ro_pll_trim),
+        	.pll_trim(spi_ro_pll_trim),
 		.pll_bypass(ext_clk_sel),
 		.irq(irq_spi),
 		.RST(por),
 		.reset(ext_reset),
 		.trap(trap),
-        .mfgr_id(spi_ro_mfgr_id),
+        	.mfgr_id(spi_ro_mfgr_id),
 		.prod_id(spi_ro_prod_id),
 		.mask_rev_in(mask_rev),
 		.mask_rev(spi_ro_mask_rev)
-    );
+    	);
 
 endmodule

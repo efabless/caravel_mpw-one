@@ -20,48 +20,19 @@
 
 `timescale 1 ns / 1 ps
 
-`include "harness_chip.v"
+`include "caravel.v"
 `include "spiflash.v"
 
 module gpio_tb;
-	reg XCLK;
-
 	wire VDD3V3;
 	assign VDD3V3 = 1'b1;
 
-	reg XI;
+	reg clock;
 
-	reg real adc_h, adc_l;
-	reg real adc_0, adc_1;
-	reg real comp_n, comp_p;
-
-	// External clock is used by default.  Make this artificially fast for the
-	// simulation.  Normally this would be a slow clock and the digital PLL
-	// would be the fast clock.
-
-	always #10 XCLK <= (XCLK === 1'b0);
-	always #220 XI <= (XI === 1'b0);
+	always #10 clock <= (clock === 1'b0);
 
 	initial begin
-		XI = 0;
-		XCLK = 0;
-	end
-
-	initial begin
-		// Analog input pin values
-		adc_h = 0.0;
-		adc_l = 0.0;
-		adc_0 = 0.0;
-		adc_1 = 0.0;
-		comp_n = 0.0;
-		comp_p = 0.0;
-		#2000;
-		adc_h = 3.25;
-		adc_l = 0.05;
-		adc_0 = 1.0;
-		adc_1 = 1.5;
-		comp_n = 2.0;
-		comp_p = 2.5;
+		clock = 0;
 	end
 
 	initial begin
@@ -79,13 +50,13 @@ module gpio_tb;
 		$finish;
 	end
 
-	wire [15:0] gpio;
+	wire [1:0] gpio;
 
-	reg [7:0] gpio_lo;
-	wire [7:0] gpio_hi;
+	reg gpio_lo;
+	reg gpio_hi;
 
-	assign gpio[7:0] = gpio_lo;
-	assign gpio_hi = gpio[15:8];
+	assign gpio[0] = gpio_lo;
+	assign gpio[1] = gpio_hi;
 
 	wire flash_csb;
 	wire flash_clk;
@@ -99,32 +70,32 @@ module gpio_tb;
 
 	// Transactor
 	initial begin
-		gpio_lo = {8{1'bz}};
-		wait(gpio_hi==8'hA0);
-		gpio_lo = 8'hF0;
-		wait(gpio_hi==8'h0B);
-		gpio_lo = 8'h0F;
-		wait(gpio_hi==8'hAB);
-		gpio_lo = 8'h0;
-		repeat (1000) @(posedge XCLK);
-		gpio_lo = 8'h1;
-		repeat (1000) @(posedge XCLK);
-		gpio_lo = 8'h3;
+		gpio_lo = 1'bz;
+		wait(gpio_hi == 1'b1);
+		gpio_lo = 1'b0;
+		wait(gpio_hi == 1'b0);
+		gpio_lo = 1'b1;
+		wait(gpio_hi == 1'hb1);
+		gpio_lo = 1'b0;
+		repeat (1000) @(posedge clock);
+		gpio_lo = 1'b1;
+		repeat (1000) @(posedge clock);
+		gpio_lo = 1'b0;
 	end
 
 	// Monitor
 	initial begin
-		wait(gpio_hi==8'hA0);
-		wait(gpio[7:0]==8'hF0);
-		wait(gpio_hi==8'h0B);
-		wait(gpio[7:0]==8'h0F);
-		wait(gpio_hi==8'hAB);
-		wait(gpio[7:0]==8'h00);
-		wait(gpio_hi==8'h01);
-		wait(gpio[7:0]==8'h01);
-		wait(gpio_hi==8'h02);
-		wait(gpio[7:0]==8'h03);
-		wait(gpio_hi==8'h04);
+		wait(gpio_hi == 1'b0);
+		wait(gpio == 2'b0);
+		wait(gpio_hi== 1'b1);
+		wait(gpio == 2'b0);
+		wait(gpio_hi== 1'b1);
+		wait(gpio == 2'b0);
+		wait(gpio_hi== 1'b0);
+		wait(gpio == 2'b01);
+		wait(gpio_hi== 1'b0);
+		wait(gpio == 2'b0);
+		wait(gpio_hi== 1'b1);
 		$display("Monitor: Test GPIO (RTL) Passed");
 		$finish;
 	end
@@ -151,12 +122,11 @@ module gpio_tb;
 	assign VSS = 1'b0;
 	assign VDD1V8 = 1'b1;
 
-	harness_chip uut (
-		.vdd	  (VDD3V3),
+	caravel uut (
+		.vdd3v3	  (VDD3V3),
 		.vdd1v8	  (VDD1V8),
 		.vss	  (VSS),
-		.xi	  	  (XI),
-		.xclk	  (XCLK),
+		.clock	  (CLOCK),
 		.SDI	  (SDI),
 		.SDO	  (SDO),
 		.CSB	  (CSB),
@@ -171,13 +141,7 @@ module gpio_tb;
 		.flash_io1(flash_io1),
 		.flash_io2(flash_io2),
 		.flash_io3(flash_io3),
-		.adc_high (adc_h),
-		.adc_low  (adc_l),
-		.adc0_in  (adc_0),
-		.adc1_in  (adc_1),
-		.RSTB	  (RSTB),
-		.comp_inp (comp_p),
-		.comp_inn (comp_n)
+		.RSTB	  (RSTB)
 	);
 
 	spiflash #(

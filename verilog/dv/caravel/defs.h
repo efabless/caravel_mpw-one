@@ -89,53 +89,16 @@ extern uint32_t flashio_worker_end;
 #define reg_spi_pll_bypass (*(volatile uint32_t*)0x2E000018)
 
 // System Area (0x2F00_0000)
-#define reg_rcosc_enable   (*(volatile uint32_t*)0x2F000000)
-#define reg_rcosc_out_dest (*(volatile uint32_t*)0x2F000004)
-
-#define reg_xtal_out_dest (*(volatile uint32_t*)0x2F000008)
 #define reg_pll_out_dest  (*(volatile uint32_t*)0x2F00000c)
 #define reg_trap_out_dest (*(volatile uint32_t*)0x2F000010)
-
 #define reg_irq7_source (*(volatile uint32_t*)0x2F000014)
 #define reg_irq8_source (*(volatile uint32_t*)0x2F000018)
-
-#define reg_overtemp_ena      (*(volatile uint32_t*)0x2F00001c)
-#define reg_overtemp_data     (*(volatile uint32_t*)0x2F000020)
-#define reg_overtemp_out_dest (*(volatile uint32_t*)0x2F000024)
 
 // Crosbbar Slave Addresses (0x8000_0000 - 0xB000_0000)
 #define qspi_ctrl_slave    (*(volatile uint32_t*)0x80000000)
 #define storage_area_slave (*(volatile uint32_t*)0x90000000)
 #define mega_any_slave1    (*(volatile uint32_t*)0xA0000000)
 #define mega_any_slave2    (*(volatile uint32_t*)0xB0000000)
-
-// #define reg_adc0_ena (*(volatile uint32_t*)0x21000010)
-// #define reg_adc0_data (*(volatile uint32_t*)0x21000014)
-// #define reg_adc0_done (*(volatile uint32_t*)0x21000018)
-// #define reg_adc0_convert (*(volatile uint32_t*)0x2100001c)
-// #define reg_adc0_clk_source (*(volatile uint32_t*)0x21000020)
-// #define reg_adc0_input_source (*(volatile uint32_t*)0x21000024)
-
-// #define reg_adc1_ena (*(volatile uint32_t*)0x21000030)
-// #define reg_adc1_data (*(volatile uint32_t*)0x21000034)
-// #define reg_adc1_done (*(volatile uint32_t*)0x21000038)
-// #define reg_adc1_convert (*(volatile uint32_t*)0x2100003c)
-// #define reg_adc1_clk_source (*(volatile uint32_t*)0x21000040)
-// #define reg_adc1_input_source (*(volatile uint32_t*)0x21000044)
-
-// #define reg_dac_ena (*(volatile uint32_t*)0x21000050)
-// #define reg_dac_data (*(volatile uint32_t*)0x21000054)
-
-// #define reg_comp_enable (*(volatile uint32_t*)0x21000060)
-// #define reg_comp_n_source (*(volatile uint32_t*)0x21000064)
-// #define reg_comp_p_source (*(volatile uint32_t*)0x21000068)
-// #define reg_comp_out_dest (*(volatile uint32_t*)0x2100006c)
-
-// #define reg_analog_out_sel (*(volatile uint32_t*)0x210000c0)
-// #define reg_analog_out_bias_ena (*(volatile uint32_t*)0x210000c4)
-// #define reg_analog_out_ena (*(volatile uint32_t*)0x210000c8)
-
-// #define reg_bandgap_ena (*(volatile uint32_t*)0x210000d0)
 
 // --------------------------------------------------------
 #endif

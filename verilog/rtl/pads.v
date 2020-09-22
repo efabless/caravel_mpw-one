@@ -3,8 +3,8 @@
 	.amuxbus_a(analog_a),\
 	.amuxbus_b(analog_b),\
 	.vssa(vss),\
-	.vdda(vdd),\
-	.vswitch(vdd),\
+	.vdda(vdd3v3),\
+	.vswitch(vdd3v3),\
 	.vddio_q(vddio_q),\
 	.vcchib(vdd1v8),\
 	.vddio(vdd),\
@@ -25,7 +25,7 @@
 	`endif	\
 		.out(vss),	\
 		.oe_n(vdd1v8), \
-		.hld_h_n(vdd),	\
+		.hld_h_n(vdd3v3),	\
 		.enable_h(porb_h), \
 		.enable_inp_h(loop_``X), \
 		.enable_vdda_h(porb_h), \
@@ -57,7 +57,7 @@
 	`endif	\
 		.out(vss),	\
 		.oe_n(vdd1v8), \
-		.hld_h_n(vdd),	\
+		.hld_h_n(vdd3v3),	\
 		.enable_h(porb_h), \
 		.enable_inp_h(loop_``X), \
 		.enable_vdda_h(porb_h), \
@@ -89,10 +89,10 @@
 	`endif	\
 		.out(),	\
 		.oe_n(vdd1v8), \
-		.hld_h_n(vdd),	\
-		.enable_h(vdd), \
+		.hld_h_n(vdd3v3),	\
+		.enable_h(vdd3v3), \
 		.enable_inp_h(loop_``X), \
-		.enable_vdda_h(vdd), \
+		.enable_vdda_h(vdd3v3), \
 		.enable_vswitch_h(vss), \
 		.enable_vddio(vdd1v8), \
 		.inp_dis(por), \
@@ -121,7 +121,7 @@
 	`endif \
 		.out(Y), \
 		.oe_n(OUT_EN_N), \
-		.hld_h_n(vdd), \
+		.hld_h_n(vdd3v3), \
 		.enable_h(porb_h),	\
 		.enable_inp_h(loop_``X), \
 		.enable_vdda_h(porb_h), \
@@ -153,7 +153,7 @@
 	`endif	\
 		.out(Y_OUT),	\
 		.oe_n(OUT_EN_N), \
-		.hld_h_n(vdd),	\
+		.hld_h_n(vdd3v3),	\
 		.enable_h(porb_h), \
 		.enable_inp_h(loop_``X), \
 		.enable_vdda_h(porb_h), \
@@ -184,7 +184,7 @@
 	`endif	\
 		.out(Y_OUT),	\
 		.oe_n(OUT_EN_N), \
-		.hld_h_n(vdd),	\
+		.hld_h_n(vdd3v3),	\
 		.enable_h(porb_h), \
 		.enable_inp_h(loop_``X), \
 		.enable_vdda_h(porb_h), \
@@ -248,7 +248,7 @@
 	`endif \
 		.out(vss), \
 		.oe_n(vdd1v8), \
-		.hld_h_n(vdd), \
+		.hld_h_n(vdd3v3), \
 		.enable_h(porb_h), \
 		.enable_inp_h(loop_``X), \
 		.enable_vdda_h(porb_h), \
@@ -283,7 +283,7 @@
 	`endif \
 		.out(Y), \
 		.oe_n(vss), \
-		.hld_h_n(vdd), \
+		.hld_h_n(vdd3v3), \
 		.enable_h(porb_h), \
 		.enable_inp_h(loop_``X), \
 		.enable_vdda_h(porb_h), \

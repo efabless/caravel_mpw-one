@@ -1,19 +1,15 @@
 
 `timescale 1 ns / 1 ps
 
-`include "harness_chip.v"
+`include "caravel.v"
 `include "spiflash.v"
 
 module sysctrl_tb;
-	reg XCLK;
-	reg XI;
+	reg clock;
 
-	reg real adc_h, adc_l;
-	reg real adc_0, adc_1;
-	reg real comp_n, comp_p;
 	reg SDI, CSB, SCK, RSTB;
 
-	wire [15:0] gpio;
+	wire [1:0] gpio;
 	wire flash_csb;
 	wire flash_clk;
 	wire flash_io0;
@@ -26,12 +22,10 @@ module sysctrl_tb;
 	// simulation.  Normally this would be a slow clock and the digital PLL
 	// would be the fast clock.
 
-	always #10 XCLK <= (XCLK === 1'b0);
-	always #220 XI <= (XI === 1'b0);
+	always #10 clock <= (clock === 1'b0);
 
 	initial begin
-		XI = 0;
-		XCLK = 0;
+		clock = 0;
 	end
 
 	initial begin
@@ -127,12 +121,11 @@ module sysctrl_tb;
 	assign VDD1V8 = 1'b1;
 	assign VDD3V3 = 1'b1;
 
-	harness_chip uut (
-		.vdd	  (VDD3V3),
+	caravel uut (
+		.vdd3v3	  (VDD3V3),
 		.vdd1v8	  (VDD1V8),
 		.vss	  (VSS),
-		.xi	      (XI),
-		.xclk	  (XCLK),
+		.clock    (clock),
 		.SDI	  (SDI),
 		.SDO	  (SDO),
 		.CSB	  (CSB),
@@ -147,13 +140,7 @@ module sysctrl_tb;
 		.flash_io1(flash_io1),
 		.flash_io2(flash_io2),
 		.flash_io3(flash_io3),
-		.adc_high (adc_h),
-		.adc_low  (adc_l),
-		.adc0_in  (adc_0),
-		.adc1_in  (adc_1),
-		.RSTB	  (RSTB),
-		.comp_inp (comp_p),
-		.comp_inn (comp_n)
+		.RSTB	  (RSTB)
 	);
 
 	spiflash #(
