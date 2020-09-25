@@ -5,12 +5,12 @@ module mgmt_core(
 	inout vss,
 `endif
 	input ext_clk,
-	output[ 15:0] gpio_out_pad,		// Connect to out on gpio pad
-	input  [15:0] gpio_in_pad,		// Connect to in on gpio pad
-	output [15:0] gpio_mode0_pad,		// Connect to dm[0] on gpio pad
-	output [15:0] gpio_mode1_pad,		// Connect to dm[2] on gpio pad
-	output [15:0] gpio_outenb_pad,		// Connect to oe_n on gpio pad
-	output [15:0] gpio_inenb_pad,		// Connect to inp_dis on gpio pad
+	output[ 1:0] gpio_out_pad,		// Connect to out on gpio pad
+	input  [1:0] gpio_in_pad,		// Connect to in on gpio pad
+	output [1:0] gpio_mode0_pad,		// Connect to dm[0] on gpio pad
+	output [1:0] gpio_mode1_pad,		// Connect to dm[2] on gpio pad
+	output [1:0] gpio_outenb_pad,		// Connect to oe_n on gpio pad
+	output [1:0] gpio_inenb_pad,		// Connect to inp_dis on gpio pad
 	input [7:0]   spi_ro_config,
 	output ser_tx,
 	input  ser_rx,
@@ -227,7 +227,7 @@ module mgmt_core(
 	wire [3:0] mask_rev;
     	wire [3:0] no_connect;
 
-    	scs8hd_conb_1 mask_rev_value [3:0] (
+    	sky130_fd_sc_hd__conb_1 mask_rev_value [3:0] (
 	    `ifdef LVS
         	.vpwr(vdd1v8),
         	.vpb(vdd1v8),

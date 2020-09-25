@@ -18,11 +18,11 @@ module gpio_wb # (
     output [31:0] wb_dat_o,
     output wb_ack_o,
 
-    input [15:0] gpio_in_pad,
-    output [15:0] gpio,
-    output [15:0] gpio_oeb,
-    output [15:0] gpio_pu,
-    output [15:0] gpio_pd
+    input [1:0] gpio_in_pad,
+    output [1:0] gpio,
+    output [1:0] gpio_oeb,
+    output [1:0] gpio_pu,
+    output [1:0] gpio_pd
 );
 
     wire resetn;
@@ -73,7 +73,7 @@ module gpio #(
     input clk,
     input resetn,
 
-    input [15:0] gpio_in_pad,
+    input [1:0] gpio_in_pad,
 
     input [31:0] iomem_addr,
     input iomem_valid,
@@ -82,16 +82,16 @@ module gpio #(
     output reg [31:0] iomem_rdata,
     output reg iomem_ready,
 
-    output [15:0] gpio,
-    output [15:0] gpio_oeb,
-    output [15:0] gpio_pu,
-    output [15:0] gpio_pd
+    output [1:0] gpio,
+    output [1:0] gpio_oeb,
+    output [1:0] gpio_pu,
+    output [1:0] gpio_pd
 );
 
-    reg [15:0] gpio;		// GPIO output data
-    reg [15:0] gpio_pu;		// GPIO pull-up enable
-    reg [15:0] gpio_pd;		// GPIO pull-down enable
-    reg [15:0] gpio_oeb;    // GPIO output enable (sense negative)
+    reg [1:0] gpio;		// GPIO output data
+    reg [1:0] gpio_pu;		// GPIO pull-up enable
+    reg [1:0] gpio_pd;		// GPIO pull-down enable
+    reg [1:0] gpio_oeb;    // GPIO output enable (sense negative)
     
     wire gpio_sel;
     wire gpio_oeb_sel;
@@ -115,28 +115,24 @@ module gpio #(
                 iomem_ready <= 1'b 1;
                 
                 if (gpio_sel) begin
-                    iomem_rdata <= {gpio, gpio_in_pad};
+                    iomem_rdata <= {14'd0, gpio, 14'd0, gpio_in_pad};
 
-                    if (iomem_wstrb[0]) gpio[ 7: 0] <= iomem_wdata[ 7: 0];
-                    if (iomem_wstrb[1]) gpio[15: 8] <= iomem_wdata[15: 8];
+                    if (iomem_wstrb[0]) gpio[ 1: 0] <= iomem_wdata[ 1: 0];
 
                 end else if (gpio_oeb_sel) begin
-                    iomem_rdata <= {16'd0, gpio_oeb};
+                    iomem_rdata <= {30'd0, gpio_oeb};
 
-                    if (iomem_wstrb[0]) gpio_oeb[ 7: 0] <= iomem_wdata[ 7: 0];
-                    if (iomem_wstrb[1]) gpio_oeb[15: 8] <= iomem_wdata[15: 8];
+                    if (iomem_wstrb[0]) gpio_oeb[ 1: 0] <= iomem_wdata[ 1: 0];
 
                 end else if (gpio_pu_sel) begin
-                    iomem_rdata <= {16'd0, gpio_pu};
+                    iomem_rdata <= {30'd0, gpio_pu};
 
-                    if (iomem_wstrb[0]) gpio_pu[ 7: 0] <= iomem_wdata[ 7: 0];
-                    if (iomem_wstrb[1]) gpio_pu[15: 8] <= iomem_wdata[15: 8];
+                    if (iomem_wstrb[0]) gpio_pu[ 1: 0] <= iomem_wdata[ 1: 0];
 
                 end else if (gpio_pd_sel) begin
-                    iomem_rdata <= {16'd0, gpio_pd};          
+                    iomem_rdata <= {30'd0, gpio_pd};          
 
-                    if (iomem_wstrb[0]) gpio_pd[ 7: 0] <= iomem_wdata[ 7: 0];
-                    if (iomem_wstrb[1]) gpio_pd[15: 8] <= iomem_wdata[15: 8];
+                    if (iomem_wstrb[0]) gpio_pd[ 1: 0] <= iomem_wdata[ 1: 0];
 
                 end
 

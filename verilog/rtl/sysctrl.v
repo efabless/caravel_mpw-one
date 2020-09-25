@@ -92,7 +92,6 @@ module sysctrl #(
 
     assign pll_out_sel  = (iomem_addr[7:0] == PLL_OUT);
     assign trap_out_sel = (iomem_addr[7:0] == TRAP_OUT);
-    assign xtal_out_sel = (iomem_addr[7:0] == XTAL_OUT);
 
     assign irq7_sel  = (iomem_addr[7:0] == IRQ7_SRC);
     assign irq8_sel  = (iomem_addr[7:0] == IRQ8_SRC);

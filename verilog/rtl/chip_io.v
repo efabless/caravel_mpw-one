@@ -165,7 +165,7 @@ module chip_io(
 
     	// GPIO pads
 	`INOUT_PAD_V(
-		gpio, gpio_in_core, gpio_out_core, 16,
+		gpio, gpio_in_core, gpio_out_core, 2,
 		gpio_inenb_core, gpio_outenb_core, dm_all);
 	
 	// Flash pads

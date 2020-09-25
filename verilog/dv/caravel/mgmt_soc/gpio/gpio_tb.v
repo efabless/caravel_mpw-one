@@ -20,6 +20,8 @@
 
 `timescale 1 ns / 1 ps
 
+`define FUNCTIONAL
+
 `include "caravel.v"
 `include "spiflash.v"
 
@@ -39,9 +41,9 @@ module gpio_tb;
 		$dumpfile("gpio.vcd");
 		$dumpvars(0, gpio_tb);
 
-		// Repeat cycles of 1000 XCLK edges as needed to complete testbench
+		// Repeat cycles of 1000 clock edges as needed to complete testbench
 		repeat (25) begin
-			repeat (1000) @(posedge XCLK);
+			repeat (1000) @(posedge clock);
 			$display("+1000 cycles");
 		end
 		$display("%c[1;31m",27);
@@ -75,7 +77,7 @@ module gpio_tb;
 		gpio_lo = 1'b0;
 		wait(gpio_hi == 1'b0);
 		gpio_lo = 1'b1;
-		wait(gpio_hi == 1'hb1);
+		wait(gpio_hi == 1'b1);
 		gpio_lo = 1'b0;
 		repeat (1000) @(posedge clock);
 		gpio_lo = 1'b1;

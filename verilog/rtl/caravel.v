@@ -15,6 +15,7 @@
 `define USE_OPENRAM
 `define USE_PG_PIN
 `define functional
+`define UNIT_DELAY #1
 
 `define MPRJ_IO_PADS 32
 
@@ -30,9 +31,11 @@
 // `include "/home/tim/projects/efabless/tech/SW/sky130A/libs.ref/sky130_fd_io/verilog/sky130_fd_io.v"
 // `include "/home/tim/projects/efabless/tech/SW/sky130A/libs.ref/sky130_fd_io/verilog/power_pads_lib.v"
 `include "/home/tim/projects/efabless/tech/SW/EFS8A/libs.ref/s8iom0s8/verilog/s8iom0s8.v"
-`include "/home/tim/projects/efabless/tech/SW/EFS8A/libs.ref/s8iom0s8/verilog/power_pads_lib.v"
-`include "/home/tim/projects/efabless/tech/SW/sky130A/libs.ref/verilog/sky130_fd_sc_hd/sky130_fd_sc_hd.v"
-`include "/home/tim/projects/efabless/tech/SW/sky130A/libs.ref/verilog/sky130_fd_sc_hd/sky130_fd_sc_hvl.v"
+// `include "/home/tim/projects/efabless/tech/SW/EFS8A/libs.ref/s8iom0s8/verilog/power_pads_lib.v"
+`include "/home/tim/projects/efabless/tech/SW/sky130A/libs.ref/sky130_fd_sc_hd/verilog/primitives.v"
+`include "/home/tim/projects/efabless/tech/SW/sky130A/libs.ref/sky130_fd_sc_hd/verilog/sky130_fd_sc_hd.v"
+`include "/home/tim/projects/efabless/tech/SW/sky130A/libs.ref/sky130_fd_sc_hvl/verilog/primitives.v"
+`include "/home/tim/projects/efabless/tech/SW/sky130A/libs.ref/sky130_fd_sc_hvl/verilog/sky130_fd_sc_hvl.v"
 
 `include "mgmt_soc.v"
 `include "striVe_spi.v"
@@ -218,7 +221,6 @@ module caravel (
 		.gpio_mode1_pad(gpio_mode1_core),
 		.gpio_outenb_pad(gpio_outenb_core),
 		.gpio_inenb_pad(gpio_inenb_core),
-		.spi_sck(SCK_core),
 		.spi_ro_config(spi_ro_config_core),
 		.ser_tx(ser_tx_core),
 		.ser_rx(ser_rx_core),
@@ -292,7 +294,7 @@ module caravel (
 	sky130_fd_sc_hd__ebufn_8 la_buf[127:0](
 		.Z(la_data_in_mprj),
 		.A(la_output_core),
-		.TEB(la_oen)
+		.TE_B(la_oen)
 	);
 	
 	mega_project mprj ( 
@@ -316,7 +318,7 @@ module caravel (
 		.io_in (mprj_io_in)
 	);
 
-    sky130_fd_sc_hvl__lsbufhv2lv (
+    sky130_fd_sc_hvl__lsbufhv2lv levelshift (
 	`ifdef LVS
 		.vpwr(vdd3v3),
 		.vpb(vdd3v3),
