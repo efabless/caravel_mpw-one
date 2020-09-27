@@ -14,7 +14,7 @@ all:  ${PATTERN:=.vcd}
 hex:  ${PATTERN:=.hex}
 
 %.vvp: %_tb.v %.hex
-	iverilog -I $(BEHAVIOURAL_MODELS)-I $(IP_PATH) -I $(RTL_PATH) \
+	iverilog -DFUNCTIONAL -I $(BEHAVIOURAL_MODELS)-I $(IP_PATH) -I $(RTL_PATH) \
 	$< -o $@
 
 %.vcd: %.vvp

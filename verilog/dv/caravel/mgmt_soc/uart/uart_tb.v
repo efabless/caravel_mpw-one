@@ -50,7 +50,7 @@ module uart_tb;
 
 		$display("Wait for UART o/p");
 		repeat (150) begin
-			repeat (10000) @(posedge XCLK);
+			repeat (10000) @(posedge clock);
 			// Diagnostic. . . interrupts output pattern.
 		end
 		$finish;

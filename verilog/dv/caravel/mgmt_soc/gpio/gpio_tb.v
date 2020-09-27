@@ -20,8 +20,6 @@
 
 `timescale 1 ns / 1 ps
 
-`define FUNCTIONAL
-
 `include "caravel.v"
 `include "spiflash.v"
 
@@ -128,7 +126,7 @@ module gpio_tb;
 		.vdd3v3	  (VDD3V3),
 		.vdd1v8	  (VDD1V8),
 		.vss	  (VSS),
-		.clock	  (CLOCK),
+		.clock	  (clock),
 		.SDI	  (SDI),
 		.SDO	  (SDO),
 		.CSB	  (CSB),
