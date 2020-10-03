@@ -2,8 +2,7 @@ module sysctrl_wb #(
     parameter BASE_ADR      = 32'h2F00_0000,
     parameter PLL_OUT       = 8'h0c,
     parameter TRAP_OUT      = 8'h10,
-    parameter IRQ7_SRC      = 8'h14,
-    parameter IRQ8_SRC      = 8'h18
+    parameter IRQ7_SRC      = 8'h14
 ) (
     input wb_clk_i,
     input wb_rst_i,
@@ -20,8 +19,7 @@ module sysctrl_wb #(
     
     output pll_output_dest,
     output trap_output_dest,
-    output irq_7_inputsrc,
-    output irq_8_inputsrc
+    output irq_7_inputsrc
 
 );
 
@@ -40,8 +38,7 @@ module sysctrl_wb #(
         .BASE_ADR(BASE_ADR),
         .PLL_OUT(PLL_OUT),
         .TRAP_OUT(TRAP_OUT),
-        .IRQ7_SRC(IRQ7_SRC),
-        .IRQ8_SRC(IRQ8_SRC)
+        .IRQ7_SRC(IRQ7_SRC)
     ) sysctrl (
         .clk(wb_clk_i),
         .resetn(resetn),
@@ -56,8 +53,7 @@ module sysctrl_wb #(
         .pll_output_dest(pll_output_dest),
         .trap_output_dest(trap_output_dest), 
     
-        .irq_7_inputsrc(irq_7_inputsrc),
-        .irq_8_inputsrc(irq_8_inputsrc)
+        .irq_7_inputsrc(irq_7_inputsrc)
     );
 
 endmodule
@@ -66,8 +62,7 @@ module sysctrl #(
     parameter BASE_ADR = 32'h2300_0000,
     parameter PLL_OUT       = 8'h0c,
     parameter TRAP_OUT      = 8'h10,
-    parameter IRQ7_SRC      = 8'h14,
-    parameter IRQ8_SRC      = 8'h18
+    parameter IRQ7_SRC      = 8'h14
 ) (
     input clk,
     input resetn,
@@ -81,27 +76,23 @@ module sysctrl #(
 
     output pll_output_dest,
     output trap_output_dest,
-    output irq_7_inputsrc,
-    output irq_8_inputsrc
+    output irq_7_inputsrc
 ); 
 
     reg pll_output_dest;
     reg trap_output_dest;
     reg irq_7_inputsrc;
-    reg irq_8_inputsrc;
 
     assign pll_out_sel  = (iomem_addr[7:0] == PLL_OUT);
     assign trap_out_sel = (iomem_addr[7:0] == TRAP_OUT);
 
     assign irq7_sel  = (iomem_addr[7:0] == IRQ7_SRC);
-    assign irq8_sel  = (iomem_addr[7:0] == IRQ8_SRC);
 
     always @(posedge clk) begin
         if (!resetn) begin
             pll_output_dest <= 0;
             trap_output_dest <= 0;
             irq_7_inputsrc <= 0;
-            irq_8_inputsrc <= 0;
         end else begin
             iomem_ready <= 0;
             if (iomem_valid && !iomem_ready && iomem_addr[31:8] == BASE_ADR[31:8]) begin
@@ -121,11 +112,6 @@ module sysctrl #(
                     iomem_rdata <= {31'd0, irq_7_inputsrc};
                     if (iomem_wstrb[0])
                         irq_7_inputsrc <= iomem_wdata[0];
-
-                end else if (irq8_sel) begin
-                    iomem_rdata <= {31'd0, irq_8_inputsrc};
-                    if (iomem_wstrb[0])
-                        irq_8_inputsrc <= iomem_wdata[0];
 
                 end
             end

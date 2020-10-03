@@ -9,14 +9,14 @@ module digital_pll(
     vdd,
     vss,
 `endif
-    reset, extclk_sel, osc, clockc, clockp, clockd, div, sel, dco, ext_trim);
+    resetb, extclk_sel, osc, clockc, clockp, clockd, div, sel, dco, ext_trim);
 
 `ifdef LVS
     input vdd;
     input vss;
 `endif
 
-    input	reset;		// Sense positive reset
+    input	resetb;		// Sense negative reset
     input	extclk_sel;	// External clock select (acts as 2nd reset)
     input	osc;		// Input oscillator to match
     input [4:0]	div;		// PLL feedback division ratio
@@ -31,7 +31,8 @@ module digital_pll(
     wire [25:0] itrim;		// Internally generated trim bits
     wire [25:0] otrim;		// Trim bits applied to the ring oscillator
     wire [3:0]	nint;		// Internal divided down clocks
-    wire	resetb;		// Internal positivie sense reset
+    wire	reset;		// Internal positive sense reset
+    wire	resetbb;	// Internal buffered negative sense reset
     wire	creset;		// Controller reset
     wire	ireset;		// Internal reset (external reset OR extclk_sel)
 
@@ -42,17 +43,17 @@ module digital_pll(
     assign creset = (dco == 1'b0) ? ireset : 1'b1;
 
     ring_osc2x13 ringosc (
-    .reset(ireset),
-    .trim(itrim),
-    .clockp(clockp)
+        .reset(ireset),
+        .trim(itrim),
+        .clockp(clockp)
     );
 
     digital_pll_controller pll_control (
-    .reset(creset),
-    .clock(clockp[0]),
-    .osc(osc),
-    .div(div),
-    .trim(otrim)
+        .reset(creset),
+        .clock(clockp[0]),
+        .osc(osc),
+        .div(div),
+        .trim(otrim)
     );
 
     // Select core clock output
@@ -62,11 +63,11 @@ module digital_pll(
             (sel == 3'b011) ? clockd[2] :
                           clockd[3];
 
-    // Derive negative-sense reset from the input positive-sense reset
+    // Derive internal negative-sense reset from the input negative-sense reset
 
-    sky130_fd_sc_hd__inv_4 irb (
-    .A(reset),
-    .Y(resetb)
+    sky130_fd_sc_hd__buf_8 irbb (
+        .A(resetb),
+        .X(resetbb)
     );
 
     // Create divided down clocks.  The inverted output only comes
@@ -74,34 +75,34 @@ module digital_pll(
     // reset has to be inverted as well.
  
     sky130_fd_sc_hd__dfrbp_1 idiv2 (
-    .CLK(clockp[1]),
-    .D(clockd[0]),
-    .Q(nint[0]),
-    .Q_N(clockd[0]),
-    .RESET_B(resetb)
+        .CLK(clockp[1]),
+        .D(clockd[0]),
+        .Q(nint[0]),
+        .Q_N(clockd[0]),
+        .RESET_B(resetbb)
     );
 
     sky130_fd_sc_hd__dfrbp_1 idiv4 (
-    .CLK(clockd[0]),
-    .D(clockd[1]),
-    .Q(nint[1]),
-    .Q_N(clockd[1]),
-    .RESET_B(resetb)
+        .CLK(clockd[0]),
+        .D(clockd[1]),
+        .Q(nint[1]),
+        .Q_N(clockd[1]),
+        .RESET_B(resetbb)
     );
 
     sky130_fd_sc_hd__dfrbp_1 idiv8 (
-    .CLK(clockd[1]),
-    .D(clockd[2]),
-    .Q(nint[2]),
-    .Q_N(clockd[2]),
-    .RESET_B(resetb)
+        .CLK(clockd[1]),
+        .D(clockd[2]),
+        .Q(nint[2]),
+        .Q_N(clockd[2]),
+        .RESET_B(resetbb)
     );
 
     sky130_fd_sc_hd__dfrbp_1 idiv16 (
-    .CLK(clockd[2]),
-    .D(clockd[3]),
-    .Q(nint[3]),
-    .Q_N(clockd[3]),
-    .RESET_B(resetb)
+        .CLK(clockd[2]),
+        .D(clockd[3]),
+        .Q(nint[3]),
+        .Q_N(clockd[3]),
+        .RESET_B(resetbb)
     );
 endmodule

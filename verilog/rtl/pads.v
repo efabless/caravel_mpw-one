@@ -207,7 +207,7 @@
 		.tie_hi_esd(), \
 		.tie_lo_esd(loop_``X) )
 
-`define MPRJ_IO_PAD_V(X,Y,Y_OUT,V,OUT_EN_N,HLD_N, ENH, INP_DIS, MODE_SEL, AN_EN, AN_SEL, AN_POL, MODE) \
+`define MPRJ_IO_PAD_V(X,Y,Y_OUT,V,OUT_EN_N,HLD_N, ENH, INP_DIS, MODE_SEL, VTRIP_SEL, SLOW_SEL, HOLD_SEL, AN_EN, AN_SEL, AN_POL, MODE) \
 	wire [V-1:0] loop_``X; \
 	s8iom0_gpiov2_pad  X``_pad [V-1:0] ( \
 	`ABUTMENT_PINS \
@@ -224,9 +224,9 @@
 		.enable_vddio(vdd1v8), \
 		.inp_dis(INP_DIS), \
 		.ib_mode_sel(MODE_SEL), \
-		.vtrip_sel(vss), \
-		.slow(vss),	\
-		.hld_ovr(vss), \
+		.vtrip_sel(VTRIP_SEL), \
+		.slow(SLOW_SEL),	\
+		.hld_ovr(HOLD_SEL), \
 		.analog_en(AN_EN), \
 		.analog_sel(AN_SEL), \
 		.analog_pol(AN_POL), \
@@ -238,73 +238,3 @@
 		.in_h(), \
 		.tie_hi_esd(), \
 		.tie_lo_esd(loop_``X) )
-
-`define I2C_RX(X,Y) \
-	wire loop_``X; \
-	s8iom0s8_top_gpio_ovtv2 X``_pad ( \
-	`ABUTMENT_PINS \
-	`ifndef	TOP_ROUTING \
-		.pad(X), \
-	`endif \
-		.out(vss), \
-		.oe_n(vdd1v8), \
-		.hld_h_n(vdd3v3), \
-		.enable_h(porb_h), \
-		.enable_inp_h(loop_``X), \
-		.enable_vdda_h(porb_h), \
-		.enable_vddio(vdd1v8), \
-		.enable_vswitch_h(vss), \
-		.inp_dis(por), \
-		.vtrip_sel(vss), \
-		.hys_trim(vdd1v8), \
-		.slow(vss), \
-		.slew_ctl({vss, vss}), \	// 2 bits
-		.hld_ovr(vss), \
-		.analog_en(vss), \
-		.analog_sel(vss), \
-		.analog_pol(vss), \
-		.dm({vss, vss, vdd1v8}), \		// 3 bits
-		.ib_mode_sel({vss, vss}), \	// 2 bits
-		.vinref(vdd1v8), \
-		.pad_a_noesd_h(), \
-		.pad_a_esd_0_h(), \
-		.pad_a_esd_1_h(), \
-		.in(Y), \
-		.in_h(), \
-		.tie_hi_esd(), \
-		.tie_lo_esd() )
-
-`define I2C_TX(X,Y) \
-	wire loop_``X; \
-	s8iom0s8_top_gpio_ovtv2 X``_pad ( \
-	`ABUTMENT_PINS \
-	`ifndef	TOP_ROUTING \
-		.pad(X), \
-	`endif \
-		.out(Y), \
-		.oe_n(vss), \
-		.hld_h_n(vdd3v3), \
-		.enable_h(porb_h), \
-		.enable_inp_h(loop_``X), \
-		.enable_vdda_h(porb_h), \
-		.enable_vddio(vdd1v8), \
-		.enable_vswitch_h(vss), \
-		.inp_dis(vdd1v8), \
-		.vtrip_sel(vss), \
-		.hys_trim(vdd1v8), \
-		.slow(vss), \
-		.slew_ctl({vss, vss}), \	// 2 bits
-		.hld_ovr(vss), \
-		.analog_en(vss), \
-		.analog_sel(vss), \
-		.analog_pol(vss), \
-		.dm({vdd1v8, vdd1v8, vss}),	\	// 3 bits
-		.ib_mode_sel({vss, vss}), \	// 2 bits
-		.vinref(vdd1v8), \
-		.pad_a_noesd_h(), \
-		.pad_a_esd_0_h(), \
-		.pad_a_esd_1_h(), \
-		.in(), \
-		.in_h(), \
-		.tie_hi_esd(), \
-		.tie_lo_esd())

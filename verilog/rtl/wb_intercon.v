@@ -24,12 +24,12 @@ module wb_intercon #(
         {8'hFF, {24{1'b0}} }
     };
     parameter [NS*AW-1:0] SLAVE_ADR = {
-        {8'h28, {24{1'b0}} },    // Flash Configuration Register
-        {8'h23, {24{1'b0}} },    // System Control
-        {8'h21, {24{1'b0}} },    // GPIOs
-        {8'h20, {24{1'b0}} },    // UART 
-        {8'h10, {24{1'b0}} },    // Flash 
-        {8'h00, {24{1'b0}} }     // RAM
+        { 32'h2800_0000 },    // Flash Configuration Register
+        { 32'h2200_0000 },    // System Control
+        { 32'h2100_0000 },    // GPIOs
+        { 32'h2000_0000 },    // UART 
+        { 32'h1000_0000 },    // Flash 
+        { 32'h0000_0000 }     // RAM
     };
     
     wire [NS-1: 0] slave_sel;

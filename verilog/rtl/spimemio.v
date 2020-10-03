@@ -22,7 +22,7 @@ module spimemio_wb (
     input wb_rst_i,
 
     input [31:0] wb_adr_i, 
-     input [31:0] wb_dat_i,
+    input [31:0] wb_dat_i,
     input [3:0] wb_sel_i,
     input wb_we_i,
     input wb_cyc_i,
@@ -35,6 +35,12 @@ module spimemio_wb (
 
     output [31:0] wb_flash_dat_o,
     output [31:0] wb_cfg_dat_o,
+
+    input  pass_thru,
+    input  pass_thru_csb,
+    input  pass_thru_sck,
+    input  pass_thru_sdi,
+    output pass_thru_sdo,
 
     output flash_csb,
     output flash_clk,
@@ -280,28 +286,35 @@ module spimemio (
         xfer_io3_90 <= xfer_io3_do;
     end
 
-    assign flash_csb = config_en ? xfer_csb : config_csb;
-    assign flash_clk = config_en ? xfer_clk : config_clk;
+    wire pass_thru;
+    wire pass_thru_csb;
+    wire pass_thru_sck;
+    wire pass_thru_sdi;
+    wire pass_thru_sdo;
 
-    assign flash_csb_oeb = ~resetn;
-    assign flash_clk_oeb = ~resetn;
+    assign flash_csb = (pass_thru) ? pass_thru_csb : (config_en ? xfer_csb : config_csb);
+    assign flash_clk = (pass_thru) ? pass_thru_sck : (config_en ? xfer_clk : config_clk);
 
-    assign flash_io0_oeb = ~resetn ? 1'b1 : (config_en ? ~xfer_io0_oe : ~config_oe[0]);
-    assign flash_io1_oeb = ~resetn ? 1'b1 : (config_en ? ~xfer_io1_oe : ~config_oe[1]);
-    assign flash_io2_oeb = ~resetn ? 1'b1 : (config_en ? ~xfer_io2_oe : ~config_oe[2]);
-    assign flash_io3_oeb = ~resetn ? 1'b1 : (config_en ? ~xfer_io3_oe : ~config_oe[3]);
+    assign flash_csb_oeb = (pass_thru) ? 1'b0 : (~resetn ? 1'b1 : 1'b0);
+    assign flash_clk_oeb = (pass_thru) ? 1'b0 : (~resetn ? 1'b1 : 1'b0);
+
+    assign flash_io0_oeb = pass_thru ? 1'b0 : ~resetn ? 1'b1 : (config_en ? ~xfer_io0_oe : ~config_oe[0]);
+    assign flash_io1_oeb = (pass_thru | ~resetn) ? 1'b1 : (config_en ? ~xfer_io1_oe : ~config_oe[1]);
+    assign flash_io2_oeb = (pass_thru | ~resetn) ? 1'b1 : (config_en ? ~xfer_io2_oe : ~config_oe[2]);
+    assign flash_io3_oeb = (pass_thru | ~resetn) ? 1'b1 : (config_en ? ~xfer_io3_oe : ~config_oe[3]);
     assign flash_csb_ieb = 1'b1;	/* Always disabled */
     assign flash_clk_ieb = 1'b1;	/* Always disabled */
 
-    assign flash_io0_ieb = ~resetn ? 1'b1 : (config_en ? xfer_io0_oe : config_oe[0]);
-    assign flash_io1_ieb = ~resetn ? 1'b1 : (config_en ? xfer_io1_oe : config_oe[1]);
-    assign flash_io2_ieb = ~resetn ? 1'b1 : (config_en ? xfer_io2_oe : config_oe[2]);
-    assign flash_io3_ieb = ~resetn ? 1'b1 : (config_en ? xfer_io3_oe : config_oe[3]);
+    assign flash_io0_ieb = (pass_thru | ~resetn) ? 1'b1 : (config_en ? xfer_io0_oe : config_oe[0]);
+    assign flash_io1_ieb = (pass_thru | ~resetn) ? 1'b1 : (config_en ? xfer_io1_oe : config_oe[1]);
+    assign flash_io2_ieb = (pass_thru | ~resetn) ? 1'b1 : (config_en ? xfer_io2_oe : config_oe[2]);
+    assign flash_io3_ieb = (pass_thru | ~resetn) ? 1'b1 : (config_en ? xfer_io3_oe : config_oe[3]);
 
-    assign flash_io0_do = config_en ? (config_ddr ? xfer_io0_90 : xfer_io0_do) : config_do[0];
+    assign flash_io0_do = pass_thru ? pass_thru_sdi : (config_en ? (config_ddr ? xfer_io0_90 : xfer_io0_do) : config_do[0]);
     assign flash_io1_do = config_en ? (config_ddr ? xfer_io1_90 : xfer_io1_do) : config_do[1];
     assign flash_io2_do = config_en ? (config_ddr ? xfer_io2_90 : xfer_io2_do) : config_do[2];
     assign flash_io3_do = config_en ? (config_ddr ? xfer_io3_90 : xfer_io3_do) : config_do[3];
+    assign pass_thru_sdo = pass_thru ? flash_io1_di : 1'b0;
 
     wire xfer_dspi = din_ddr && !din_qspi;
     wire xfer_ddr = din_ddr && din_qspi;

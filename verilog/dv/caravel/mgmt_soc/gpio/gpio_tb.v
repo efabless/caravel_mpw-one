@@ -50,20 +50,17 @@ module gpio_tb;
 		$finish;
 	end
 
-	wire [1:0] gpio;
+	wire gpio;
 
 	reg gpio_lo;
 	reg gpio_hi;
 
-	assign gpio[0] = gpio_lo;
-	assign gpio[1] = gpio_hi;
+	assign gpio = gpio_lo;
 
 	wire flash_csb;
 	wire flash_clk;
 	wire flash_io0;
 	wire flash_io1;
-	wire flash_io2;
-	wire flash_io3;
 
 	reg SDI, CSB, SCK, RSTB;
 	wire SDO;
@@ -86,15 +83,15 @@ module gpio_tb;
 	// Monitor
 	initial begin
 		wait(gpio_hi == 1'b0);
-		wait(gpio == 2'b0);
+		wait(gpio == 1'b0);
 		wait(gpio_hi== 1'b1);
-		wait(gpio == 2'b0);
+		wait(gpio == 1'b0);
 		wait(gpio_hi== 1'b1);
-		wait(gpio == 2'b0);
+		wait(gpio == 1'b0);
 		wait(gpio_hi== 1'b0);
-		wait(gpio == 2'b01);
+		wait(gpio == 1'b1);
 		wait(gpio_hi== 1'b0);
-		wait(gpio == 2'b0);
+		wait(gpio == 1'b0);
 		wait(gpio_hi== 1'b1);
 		$display("Monitor: Test GPIO (RTL) Passed");
 		$finish;
@@ -122,26 +119,35 @@ module gpio_tb;
 	assign VSS = 1'b0;
 	assign VDD1V8 = 1'b1;
 
+	// These are the mappings of mprj_io GPIO pads that are set to
+	// specific functions on startup:
+	//
+	// JTAG      = mgmt_gpio_io[0]              (inout)
+	// SDO       = mgmt_gpio_io[1]              (output)
+	// SDI       = mgmt_gpio_io[2]              (input)
+	// CSB       = mgmt_gpio_io[3]              (input)
+	// SCK       = mgmt_gpio_io[4]              (input)
+	// ser_rx    = mgmt_gpio_io[5]              (input)
+	// ser_tx    = mgmt_gpio_io[6]              (output)
+	// irq       = mgmt_gpio_io[7]              (input)
+	//
+	// Therefore to connect SDO, SDI, CSB, and SCK,
+	// apply {27'bz, SCK, CSB, SDI, SDO, 1'bz} to mprj_io (32 bits)
+
+	wire [27:0] noconnect;
+
 	caravel uut (
 		.vdd3v3	  (VDD3V3),
 		.vdd1v8	  (VDD1V8),
 		.vss	  (VSS),
 		.clock	  (clock),
-		.SDI	  (SDI),
-		.SDO	  (SDO),
-		.CSB	  (CSB),
-		.SCK	  (SCK),
-		.ser_rx	  (1'b0),
-		.ser_tx	  (),
-		.irq	  (1'b0),
 		.gpio     (gpio),
+		.mprj_io  ({noconnect[27:1], SCK, CSB, SDI, SDO, noconnect[0]}),
 		.flash_csb(flash_csb),
 		.flash_clk(flash_clk),
 		.flash_io0(flash_io0),
 		.flash_io1(flash_io1),
-		.flash_io2(flash_io2),
-		.flash_io3(flash_io3),
-		.RSTB	  (RSTB)
+		.resetb	  (RSTB)
 	);
 
 	spiflash #(
@@ -151,8 +157,8 @@ module gpio_tb;
 		.clk(flash_clk),
 		.io0(flash_io0),
 		.io1(flash_io1),
-		.io2(flash_io2),
-		.io3(flash_io3)
+		.io2(),			// not used
+		.io3()			// not used
 	);
 
 endmodule

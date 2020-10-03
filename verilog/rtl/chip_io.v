@@ -3,62 +3,37 @@ module chip_io(
 	inout  vdd3v3,
     	inout  vdd1v8,
     	inout  vss,
-	input  [1:0] gpio,
+	inout  gpio,
 	inout  clock,
-	inout  RSTB,
-	inout  ser_rx,
-	output ser_tx,
-	inout  irq,
-	output SDO,
-	inout  SDI,
-	inout  CSB,
-	inout  SCK,
+	inout  resetb,
 	output flash_csb,
 	output flash_clk,
 	output flash_io0,
 	output flash_io1,
-	output flash_io2,
-	output flash_io3,
 	// Chip Core Interface
-	input  por,
 	output porb_h,
 	output clock_core,
-	input  [1:0] gpio_out_core,
-    	output [1:0] gpio_in_core,
-    	input  [1:0] gpio_mode0_core,
-    	input  [1:0] gpio_mode1_core,
-    	input  [1:0] gpio_outenb_core,
-    	input  [1:0] gpio_inenb_core,
-	output SCK_core,
-	output ser_rx_core,
-	inout  ser_tx_core,
-	output irq_pin_core,
+	input  gpio_out_core,
+    	output gpio_in_core,
+    	input  gpio_mode0_core,
+    	input  gpio_mode1_core,
+    	input  gpio_outenb_core,
+    	input  gpio_inenb_core,
 	input  flash_csb_core,
 	input  flash_clk_core,
 	input  flash_csb_oeb_core,
 	input  flash_clk_oeb_core,
 	input  flash_io0_oeb_core,
 	input  flash_io1_oeb_core,
-	input  flash_io2_oeb_core,
-	input  flash_io3_oeb_core,
 	input  flash_csb_ieb_core,
 	input  flash_clk_ieb_core,
 	input  flash_io0_ieb_core,
 	input  flash_io1_ieb_core,
-	input  flash_io2_ieb_core,
-	input  flash_io3_ieb_core,
 	input  flash_io0_do_core,
 	input  flash_io1_do_core,
-	input  flash_io2_do_core,
-	input  flash_io3_do_core,
 	output flash_io0_di_core,
 	output flash_io1_di_core,
-	output flash_io2_di_core,
-	output flash_io3_di_core,	
-	output SDI_core,
-	output CSB_core,
 	input  pll_clk16,
-	input  SDO_core,
 	// Mega-project IOs
 	input [`MPRJ_IO_PADS-1:0] mprj_io,
 	input [`MPRJ_IO_PADS-1:0] mprj_io_out,
@@ -67,6 +42,9 @@ module chip_io(
 	input [`MPRJ_IO_PADS-1:0] mprj_io_enh,
     	input [`MPRJ_IO_PADS-1:0] mprj_io_inp_dis,
     	input [`MPRJ_IO_PADS-1:0] mprj_io_ib_mode_sel,
+    	input [`MPRJ_IO_PADS-1:0] mprj_io_vtrip_sel,
+    	input [`MPRJ_IO_PADS-1:0] mprj_io_slow_sel,
+    	input [`MPRJ_IO_PADS-1:0] mprj_io_holdover,
     	input [`MPRJ_IO_PADS-1:0] mprj_io_analog_en,
     	input [`MPRJ_IO_PADS-1:0] mprj_io_analog_sel,
     	input [`MPRJ_IO_PADS-1:0] mprj_io_analog_pol,
@@ -150,22 +128,16 @@ module chip_io(
 		.src_bdy_lvc2()
     	);
 
-	wire [5:0] dm_all;
-    	assign dm_all = {gpio_mode1_core[1], gpio_mode1_core[1], gpio_mode0_core[1],
-		 gpio_mode1_core[0], gpio_mode1_core[0], gpio_mode0_core[0]};
-
+	wire [2:0] dm_all =
+    		{gpio_mode1_core, gpio_mode1_core, gpio_mode0_core};
 	wire[2:0] flash_io0_mode = 
 		{flash_io0_ieb_core, flash_io0_ieb_core, flash_io0_oeb_core};
 	wire[2:0] flash_io1_mode = 
 		{flash_io1_ieb_core, flash_io1_ieb_core, flash_io1_oeb_core};
-	wire[2:0] flash_io2_mode = 
-		{flash_io2_ieb_core, flash_io2_ieb_core, flash_io2_oeb_core};
-	wire[2:0] flash_io3_mode =
-		{flash_io3_ieb_core, flash_io3_ieb_core, flash_io3_oeb_core};
 
-    	// GPIO pads
-	`INOUT_PAD_V(
-		gpio, gpio_in_core, gpio_out_core, 2,
+    	// GPIO pad
+	`INOUT_PAD(
+		gpio, gpio_in_core, gpio_out_core,
 		gpio_inenb_core, gpio_outenb_core, dm_all);
 	
 	// Flash pads
@@ -175,35 +147,22 @@ module chip_io(
 	`INOUT_PAD(
 		flash_io1, flash_io1_di_core, flash_io1_do_core,
 		flash_io1_ieb_core, flash_io1_oeb_core, flash_io1_mode);
-	`INOUT_PAD(
-		flash_io2, flash_io2_di_core, flash_io2_do_core,
-		flash_io2_ieb_core, flash_io2_oeb_core, flash_io2_mode);
-	`INOUT_PAD(
-		flash_io3, flash_io3_di_core, flash_io3_do_core,
-		flash_io3_ieb_core, flash_io3_oeb_core, flash_io3_mode);
 
 	`INPUT_PAD(clock, clock_core); 	    
-	`INPUT_PAD(irq, irq_pin_core);
-	`INPUT_PAD(SDI, SDI_core); 	    
-	`INPUT_PAD(CSB, CSB_core); 	    
-	`INPUT_PAD(SCK, SCK_core); 	    
-	`INPUT_PAD(ser_rx, ser_rx_core); 	    
 
 	// Output Pads
-	`OUTPUT_PAD(SDO, SDO_core, vdd1v8, SDO_enb);
 	`OUTPUT_PAD(flash_csb, flash_csb_core, flash_csb_ieb_core, flash_csb_oeb_core);  
 	`OUTPUT_PAD(flash_clk, flash_clk_core, flash_clk_ieb_core, flash_clk_oeb_core);
-	`OUTPUT_PAD(ser_tx, ser_tx_core, vdd1v8, ser_tx_ena); 	    
 
 
 	// NOTE:  The analog_out pad from the raven chip has been replaced by
-    	// the digital reset input RSTB on striVe due to the lack of an on-board
+    	// the digital reset input resetb on caravel due to the lack of an on-board
     	// power-on-reset circuit.  The XRES pad is used for providing a glitch-
     	// free reset.
-	s8iom0s8_top_xres4v2 RSTB_pad (
+	s8iom0s8_top_xres4v2 resetb_pad (
 		`ABUTMENT_PINS 
 		`ifndef	TOP_ROUTING
-		    .pad(RSTB),
+		    .pad(resetb),
 		`endif
 		.tie_weak_hi_h(xresloop),   // Loop-back connection to pad through pad_a_esd_h
 		.tie_hi_esd(),
