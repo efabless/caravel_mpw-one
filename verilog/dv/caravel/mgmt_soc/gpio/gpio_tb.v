@@ -50,67 +50,65 @@ module gpio_tb;
 		$finish;
 	end
 
-	wire gpio;
+	wire [15:0] checkbits;
 
-	reg gpio_lo;
-	reg gpio_hi;
+	reg [7:0] checkbits_lo;
+	wire [7:0] checkbits_hi;
 
-	assign gpio = gpio_lo;
+	assign checkbits[7:0] = checkbits_lo;
+	assign checkbits_hi = checkbits[15:8];
 
 	wire flash_csb;
 	wire flash_clk;
 	wire flash_io0;
 	wire flash_io1;
 
-	reg SDI, CSB, SCK, RSTB;
-	wire SDO;
+	reg RSTB;
+	wire CSB, SCK, SDI, SDO;
 
 	// Transactor
 	initial begin
-		gpio_lo = 1'bz;
-		wait(gpio_hi == 1'b1);
-		gpio_lo = 1'b0;
-		wait(gpio_hi == 1'b0);
-		gpio_lo = 1'b1;
-		wait(gpio_hi == 1'b1);
-		gpio_lo = 1'b0;
+		checkbits_lo = {8{1'bz}};
+		wait(checkbits_hi == 8'hA0);
+		checkbits_lo = 8'hF0;
+		wait(checkbits_hi == 8'h0B);
+		checkbits_lo = 8'h0F;
+		wait(checkbits_hi == 8'hAB);
+		checkbits_lo = 8'h0;
 		repeat (1000) @(posedge clock);
-		gpio_lo = 1'b1;
+		checkbits_lo = 8'h1;
 		repeat (1000) @(posedge clock);
-		gpio_lo = 1'b0;
+		checkbits_lo = 8'h3;
 	end
 
 	// Monitor
 	initial begin
-		wait(gpio_hi == 1'b0);
-		wait(gpio == 1'b0);
-		wait(gpio_hi== 1'b1);
-		wait(gpio == 1'b0);
-		wait(gpio_hi== 1'b1);
-		wait(gpio == 1'b0);
-		wait(gpio_hi== 1'b0);
-		wait(gpio == 1'b1);
-		wait(gpio_hi== 1'b0);
-		wait(gpio == 1'b0);
-		wait(gpio_hi== 1'b1);
+		wait(checkbits_hi == 8'hA0);
+		wait(checkbits[7:0] == 8'hF0);
+		wait(checkbits_hi== 8'h0B);
+		wait(checkbits[7:0] == 8'h0F);
+		wait(checkbits_hi== 8'hAB);
+		wait(checkbits[7:0] == 8'h00);
+		wait(checkbits_hi== 8'h01);
+		wait(checkbits[7:0] == 8'h01);
+		wait(checkbits_hi== 8'h02);
+		wait(checkbits[7:0] == 8'h03);
+		wait(checkbits_hi== 8'h04);
 		$display("Monitor: Test GPIO (RTL) Passed");
 		$finish;
 	end
 
 	initial begin
-		CSB <= 1'b1;
-		SCK <= 1'b0;
-		SDI <= 1'b0;
 		RSTB <= 1'b0;
 		
 		#1000;
 		RSTB <= 1'b1;	    // Release reset
 		#2000;
-		CSB <= 1'b0;	    // Apply CSB to start transmission
 	end
 
-	always @(gpio) begin
-		#1 $display("GPIO state = %b (%d - %d)", gpio, gpio_hi, gpio_lo);
+	always @(checkbits) begin
+		#1 $display("GPIO state = %b (%d - %d)", checkbits,
+				checkbits_hi, checkbits_lo);
 	end
 
 	wire VDD1V8;
@@ -134,7 +132,7 @@ module gpio_tb;
 	// Therefore to connect SDO, SDI, CSB, and SCK,
 	// apply {27'bz, SCK, CSB, SDI, SDO, 1'bz} to mprj_io (32 bits)
 
-	wire [27:0] noconnect;
+	wire [11:0] noconnect;
 
 	caravel uut (
 		.vdd3v3	  (VDD3V3),
@@ -142,7 +140,8 @@ module gpio_tb;
 		.vss	  (VSS),
 		.clock	  (clock),
 		.gpio     (gpio),
-		.mprj_io  ({noconnect[27:1], SCK, CSB, SDI, SDO, noconnect[0]}),
+		.mprj_io  ({checkbits, noconnect[11:1],
+				SCK, CSB, SDI, SDO, noconnect[0]}),
 		.flash_csb(flash_csb),
 		.flash_clk(flash_clk),
 		.flash_io0(flash_io0),

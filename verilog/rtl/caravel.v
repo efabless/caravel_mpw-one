@@ -341,36 +341,33 @@ module caravel (
     gpio_control_block gpio_control_inst [`MPRJ_IO_PADS-1:0] (
     	// Management Soc-facing signals
 
-    	resetn(mprj_io_loader_resetn),
-    	serial_clock(mprj_io_loader_clock),
+    	.resetn(mprj_io_loader_resetn),
+    	.serial_clock(mprj_io_loader_clock),
 
-    	mgmt_gpio_io(mgmt_io_data),
+    	.mgmt_gpio_io(mgmt_io_data),
 
     	// Serial data chain for pad configuration
-    	serial_data_in(gpio_serial_link_shifted),
-    	serial_data_out(gpio_serial_link),
+    	.serial_data_in(gpio_serial_link_shifted),
+    	.serial_data_out(gpio_serial_link),
 
     	// User-facing signals
-    	user_gpio_out(user_io_out),
-    	user_gpio_outenb(user_io_oeb_n),
-    	user_gpio_in(user_io_in),
+    	.user_gpio_out(user_io_out),
+    	.user_gpio_outenb(user_io_oeb_n),
+    	.user_gpio_in(user_io_in),
 
     	// Pad-facing signals (Pad GPIOv2)
-    	pad_gpio_holdover(mprj_io_hldh_n),
-    	pad_gpio_slow(mprj_io_slow),
-    	pad_gpio_vtrip_sel(mprj_io_vtrip_sel),
-    	pad_gpio_inenb(mprj_io_inp_dis),
-    	pad_gpio_ib_mode_sel(mprj_io_ib_mode_sel),
-    	pad_gpio_vtrip_sel(mprj_io_vtrip_sel),
-    	pad_gpio_slow_sel(mprj_io_slow_sel),
-    	pad_gpio_holdover(mprj_io_holdover),
-    	pad_gpio_ana_en(mprj_io_analog_en),
-    	pad_gpio_ana_sel(mprj_io_analog_sel),
-    	pad_gpio_ana_pol(mprj_io_analog_pol),
-    	pad_gpio_dm(mprj_io_dm),
-    	pad_gpio_outenb(mprj_io_oen_n),
-    	pad_gpio_out(mprj_io_out),
-    	pad_gpio_in(mprj_io_in)
+    	.pad_gpio_inenb(mprj_io_inp_dis),
+    	.pad_gpio_ib_mode_sel(mprj_io_ib_mode_sel),
+    	.pad_gpio_vtrip_sel(mprj_io_vtrip_sel),
+    	.pad_gpio_slow_sel(mprj_io_slow_sel),
+    	.pad_gpio_holdover(mprj_io_holdover),
+    	.pad_gpio_ana_en(mprj_io_analog_en),
+    	.pad_gpio_ana_sel(mprj_io_analog_sel),
+    	.pad_gpio_ana_pol(mprj_io_analog_pol),
+    	.pad_gpio_dm(mprj_io_dm),
+    	.pad_gpio_outenb(mprj_io_oen_n),
+    	.pad_gpio_out(mprj_io_out),
+    	.pad_gpio_in(mprj_io_in)
     );
 
     sky130_fd_sc_hvl__lsbufhv2lv levelshift (

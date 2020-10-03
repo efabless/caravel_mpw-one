@@ -4,7 +4,7 @@ module mprj_ctrl_wb #(
     parameter XFER   = 8'h 04,
     parameter CONFIG = 8'h 08,
     parameter IO_PADS = 32,   // Number of IO control registers
-    parameter PWR_CTRL = 32   // Number of power control registers
+    parameter PWR_PADS = 32   // Number of power control registers
 )(
     input wb_clk_i,
     input wb_rst_i,
@@ -44,13 +44,13 @@ module mprj_ctrl_wb #(
         .CONFIG(CONFIG),
         .XFER(XFER),
 	.IO_PADS(IO_PADS),
-        .PWR_CTRL(PWR_CTRL)
+        .PWR_PADS(PWR_PADS)
     ) mprj_ctrl (
         .clk(wb_clk_i),
         .resetn(resetn),
         .iomem_addr(wb_adr_i),
         .iomem_valid(valid),
-        .iomem_wstrb(iomem_we),
+        .iomem_wstrb(iomem_we[1:0]),
         .iomem_wdata(wb_dat_i),
         .iomem_rdata(wb_dat_o),
         .iomem_ready(ready),
@@ -69,14 +69,16 @@ module mprj_ctrl #(
     parameter XFER   = 8'h 04,
     parameter CONFIG = 8'h 08,
     parameter IO_PADS = 32,
-    parameter PWR_CTRL = 32
+    parameter PWR_PADS = 32,
+    parameter IO_CTRL_BITS = 14,
+    parameter PWR_CTRL_BITS = 1
 )(
     input clk,
     input resetn,
 
     input [31:0] iomem_addr,
     input iomem_valid,
-    input [3:0] iomem_wstrb,
+    input [1:0] iomem_wstrb,
     input [31:0] iomem_wdata,
     output reg [31:0] iomem_rdata,
     output reg iomem_ready,
@@ -86,18 +88,22 @@ module mprj_ctrl #(
     output serial_data_out,
     inout [IO_PADS-1:0] mgmt_gpio_io
 );
-	
+
+`define START	2'b00
+`define XBYTE	2'b01
+`define LOAD	2'b10
+
     localparam IO_BASE_ADR = (BASE_ADR | CONFIG);
     localparam PWR_BASE_ADR = (BASE_ADR | CONFIG) + IO_PADS*4;
     localparam OEB = 1;			// Offset of OEB in shift register block.
 
-    reg [IO_PADS*32-1:0] io_ctrl;	// I/O control, 1 word per gpio pad
-    reg [PWR_CTRL*32-1:0] pwr_ctrl;	// Power control, 1 word per power pad
+    reg [IO_CTRL_BITS-1:0] io_ctrl [IO_PADS-1:0];  // I/O control, 1 word per gpio pad
+    reg [PWR_CTRL_BITS-1:0] pwr_ctrl [PWR_PADS-1:0];// Power control, 1 word per power pad
     reg [IO_PADS-1:0] mgmt_gpio_out;	// I/O read/write data, 1 bit per gpio pad
     reg xfer_ctrl;			// Transfer control (1 bit)
 
     wire [IO_PADS-1:0] io_ctrl_sel;	// wishbone selects
-    wire [PWR_CTRL-1:0] pwr_ctrl_sel;
+    wire [PWR_PADS-1:0] pwr_ctrl_sel;
     wire io_data_sel;
     wire xfer_sel;
 
@@ -114,13 +120,13 @@ module mprj_ctrl #(
     generate
         for (i=0; i<IO_PADS; i=i+1) begin
             assign io_ctrl_sel[i] = (iomem_addr[7:0] == (IO_BASE_ADR[7:0] + i*4)); 
-            assign mgmt_gpio_io[i] = (io_ctrl[i*32] + OEB == 1'b0) ?
+            assign mgmt_gpio_io[i] = (io_ctrl[0][i] + OEB == 1'b0) ?
 				mgmt_gpio_out[i] : 1'bz;
         end
     endgenerate
 
     generate
-        for (i=0; i<PWR_CTRL; i=i+1) begin
+        for (i=0; i<PWR_PADS; i=i+1) begin
             assign pwr_ctrl_sel[i] = (iomem_addr[7:0] == (PWR_BASE_ADR[7:0] + i*4)); 
         end
     endgenerate
@@ -134,7 +140,7 @@ module mprj_ctrl #(
 	    mgmt_gpio_out <= 'd0;
 	end else begin
 	    iomem_ready <= 0;
-	    if (iomem_valid && !iomem_ready && iomem_addr[31:8] == BASE_ADDR[31:8]) begin
+	    if (iomem_valid && !iomem_ready && iomem_addr[31:8] == BASE_ADR[31:8]) begin
 		iomem_ready <= 1'b 1;
 
 		if (io_data_sel) begin
@@ -154,22 +160,17 @@ module mprj_ctrl #(
         for (i=0; i<IO_PADS; i=i+1) begin
              always @(posedge clk) begin
                 if (!resetn) begin
-                    io_ctrl[i*32+: 32]  <= 0;
+		    // NOTE:  This needs to be set to the specific bit sequence
+		    // that initializes every I/O pad to the appropriate state on
+		    // startup.
+                    io_ctrl[i] <= 'd0;
                 end else begin
                     if (iomem_valid && !iomem_ready && iomem_addr[31:8] == BASE_ADR[31:8]) begin
                         if (io_ctrl_sel[i]) begin
-                            iomem_rdata <= io_ctrl[i*32+: 32];
+                            iomem_rdata <= io_ctrl[i];
+			    // NOTE:  Byte-wide write to io_ctrl is prohibited
                             if (iomem_wstrb[0])
-                                io_ctrl[(i+1)*32-1-24:i*32]  <= iomem_wdata[7:0];
-                            
-                            if (iomem_wstrb[1])
-                                io_ctrl[(i+1)*32-1-16:i*32+8] <= iomem_wdata[15:8];
-
-                            if (iomem_wstrb[2])
-                                io_ctrl[(i+1)*32-1-8:i*32+16] <= iomem_wdata[23:16];
-                            
-                            if (iomem_wstrb[3])
-                                io_ctrl[(i+1)*32-1:i*32+24] <= iomem_wdata[31:24];
+				io_ctrl[i] <= iomem_wdata[IO_CTRL_BITS-1:0];
                         end 
                     end
                 end
@@ -178,25 +179,16 @@ module mprj_ctrl #(
     endgenerate
 
     generate 
-        for (i=0; i<PWR_CTRL; i=i+1) begin
+        for (i=0; i<PWR_PADS; i=i+1) begin
              always @(posedge clk) begin
                 if (!resetn) begin
-                    pwr_ctrl[i*32+: 32]  <= 0;
+                    pwr_ctrl[i] <= 'd0;
                 end else begin
                     if (iomem_valid && !iomem_ready && iomem_addr[31:8] == BASE_ADR[31:8]) begin
                         if (pwr_ctrl_sel[i]) begin
-                            iomem_rdata <= pwr_ctrl[i*32+: 32];
+                            iomem_rdata <= pwr_ctrl[i];
                             if (iomem_wstrb[0])
-                                pwr_ctrl[(i+1)*32-1-24:i*32]  <= iomem_wdata[7:0];
-                            
-                            if (pwr_ctrl_sel[1])
-                                pwr_ctrl[(i+1)*32-1-16:i*32+8] <= iomem_wdata[15:8];
-
-                            if (pwr_ctrl_sel[2])
-                                pwr_ctrl[(i+1)*32-1-8:i*32+16] <= iomem_wdata[23:16];
-                            
-                            if (pwr_ctrl_sel[3])
-                                pwr_ctrl[(i+1)*32-1:i*32+24]  <= iomem_wdata[31:24];
+				pwr_ctrl[i] <= iomem_wdata[PWR_CTRL_BITS-1:0];
                         end 
                     end
                 end
@@ -204,58 +196,21 @@ module mprj_ctrl #(
         end
     endgenerate
 
-    // Instantiate the GPIO transfer circuit
-
-    gpio_transfer_data #(
-	.NUM_GPIO_PADS(IO_PADS),
-	.PAD_CTRL_BITS(14)
-    ) gpio_xfer (
-	.resetn(resetn),
-	.clock(clk),
-	.pad_configure(io_ctrl),
-	.serial_clock(serial_clock),
-	.serial_resetn(serial_resetn),
-	.serial_data_out(serial_data_out)
-    );
-
-endmodule
-
-/*
- *----------------------------------------------------
- *
- * This module initiates a write to the shift register
- * chain from registered data in the processor core.
- *
- *----------------------------------------------------
- */
-
-`define START	2'b00
-`define XBYTE	2'b01
-`define LOAD	2'b10
-
-module gpio_transfer_data #(
-    parameter NUM_GPIO_PADS = 32,
-    parameter PAD_CTRL_BITS = 13
-) (
-    input resetn,
-    input clock,
-    input [NUM_GPIO_PADS*PAD_CTRL_BITS-1:0] pad_configure,
-
-    output	 serial_clock,
-    output	 serial_resetn,
-    output 	 serial_data_out
-);
     reg [3:0]  xfer_count;
     reg [5:0]  pad_count;
     reg [1:0]  xfer_state;
     reg	       serial_clock;
     reg	       serial_resetn;
     reg	       serial_data_out;
-    reg [PAD_CTRL_BITS-1:0] serial_data_staging;
 
-    integer i;
+    // NOTE:  Ignoring power control bits for now. . .  need to revisit.
+    // Depends on how the power pads are arranged among the GPIO, and
+    // whether or not switching will be internal and under the control
+    // of the SoC.
 
-    always @(posedge clock or negedge resetn) begin
+    reg [IO_CTRL_BITS-1:0] serial_data_staging;
+
+    always @(posedge clk or negedge resetn) begin
 	if (resetn == 1'b0) begin
 
 	    xfer_state <= `START;
@@ -271,30 +226,25 @@ module gpio_transfer_data #(
 	    	serial_resetn <= 1'b1;
 		serial_clock <= 1'b0;
 	    	xfer_count <= 6'd0;
-		if (pad_count == NUM_GPIO_PADS) begin
+		if (pad_count == IO_PADS) begin
 		    xfer_state <= `LOAD;
 		end else begin
 		    pad_count <= pad_count + 1;
 		    xfer_state <= `XBYTE;
-
-		    for (i=0; i < NUM_GPIO_PADS; i = i + 1) begin
-			if (pad_count == i) 
-			    serial_data_staging <=
-				pad_configure[(i+1)*PAD_CTRL_BITS-1 : i*PAD_CTRL_BITS];
-		    end
+		    serial_data_staging <= io_ctrl[pad_count];
 		end
 	    end else if (xfer_state == `XBYTE) begin
 	    	serial_resetn <= 1'b1;
 		serial_clock <= ~serial_clock;
 		if (serial_clock == 1'b0) begin
-		    if (xfer_count == PAD_CTRL_BITS) begin
+		    if (xfer_count == IO_CTRL_BITS) begin
 		    	xfer_state <= `START;
 		    end else begin
 		    	xfer_count <= xfer_count + 1;
 		    end
 		end else begin
-		    serial_data_staging <= {serial_data_staging[PAD_CTRL_BITS-2:0], 1'b0};
-		    serial_data_out <= serial_data_staging[PAD_CTRL_BITS-1];
+		    serial_data_staging <= {serial_data_staging[IO_CTRL_BITS-2:0], 1'b0};
+		    serial_data_out <= serial_data_staging[IO_CTRL_BITS-1];
 		end
 	    end else if (xfer_state == `LOAD) begin
 		xfer_count <= xfer_count + 1;

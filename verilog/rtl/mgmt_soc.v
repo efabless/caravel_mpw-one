@@ -206,7 +206,7 @@ module mgmt_soc (
     
     // Mega-Project Control
     parameter MPRJ_IO_PADS  = 32;
-    parameter MPRJ_PWR_CTRL = 32;
+    parameter MPRJ_PWR_PADS = 32;
    
     // System Control Registers
     parameter PLL_OUT       = 8'h0c;
@@ -633,7 +633,7 @@ module mgmt_soc (
     mprj_ctrl_wb #(
         .BASE_ADR(MPRJ_CTRL_ADR),
         .IO_PADS(MPRJ_IO_PADS),
-        .PWR_CTRL(MPRJ_PWR_CTRL)
+        .PWR_PADS(MPRJ_PWR_PADS)
     ) mprj_ctrl (
         .wb_clk_i(wb_clk_i),
         .wb_rst_i(wb_rst_i),
