@@ -7,7 +7,7 @@
 	.vswitch(vdd3v3),\
 	.vddio_q(vddio_q),\
 	.vcchib(vdd1v8),\
-	.vddio(vdd),\
+	.vddio(vdd3v3),\
 	.vccd(vdd1v8),\
 	.vssio(vss),\
 	.vssd(vss),\
