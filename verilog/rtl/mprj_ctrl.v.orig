@@ -25,10 +25,7 @@ module mprj_ctrl_wb #(
     output serial_data_out,
 
     // Read/write data to each GPIO pad from management SoC
-    input [IO_PADS-1:0] mgmt_gpio_in,
-    output [IO_PADS-1:0] mgmt_gpio_out,
-    output [IO_PADS-1:0] mgmt_gpio_outz,
-    output [IO_PADS-1:0] mgmt_gpio_oeb		// Only JTAG and SDO connected
+    inout [IO_PADS-1:0] mgmt_gpio_io
 );
     wire resetn;
     wire valid;
@@ -61,11 +58,7 @@ module mprj_ctrl_wb #(
 	.serial_clock(serial_clock),
 	.serial_resetn(serial_resetn),
 	.serial_data_out(serial_data_out),
-	// .mgmt_gpio_io(mgmt_gpio_io)
-	.mgmt_gpio_in(mgmt_gpio_in),
-	.mgmt_gpio_out(mgmt_gpio_out),
-	.mgmt_gpio_outz(mgmt_gpio_outz),
-	.mgmt_gpio_oeb(mgmt_gpio_oeb)
+	.mgmt_gpio_io(mgmt_gpio_io)
     );
 
 endmodule
@@ -77,7 +70,7 @@ module mprj_ctrl #(
     parameter CONFIG = 8'h 08,
     parameter IO_PADS = 32,
     parameter PWR_PADS = 32,
-    parameter IO_CTRL_BITS = 13,
+    parameter IO_CTRL_BITS = 14,
     parameter PWR_CTRL_BITS = 1
 )(
     input clk,
@@ -93,11 +86,7 @@ module mprj_ctrl #(
     output serial_clock,
     output serial_resetn,
     output serial_data_out,
-    // inout [IO_PADS-1:0] mgmt_gpio_io
-    input  [IO_PADS-1:0] mgmt_gpio_in,
-    output [IO_PADS-1:0] mgmt_gpio_out,
-    output [IO_PADS-1:0] mgmt_gpio_outz,
-    output [IO_PADS-1:0] mgmt_gpio_oeb
+    inout [IO_PADS-1:0] mgmt_gpio_io
 );
 
 `define IDLE	2'b00
@@ -107,14 +96,11 @@ module mprj_ctrl #(
 
     localparam IO_BASE_ADR = (BASE_ADR | CONFIG);
     localparam PWR_BASE_ADR = (BASE_ADR | CONFIG) + IO_PADS*4;
-    localparam OEB = 1;			// Offset of output enable in shift register.
-    localparam INP_DIS = 3;		// Offset of input disable in shift register. 
+    localparam OEB = 1;			// Offset of OEB in shift register block.
 
     reg [IO_CTRL_BITS-1:0] io_ctrl [IO_PADS-1:0];  // I/O control, 1 word per gpio pad
     reg [PWR_CTRL_BITS-1:0] pwr_ctrl [PWR_PADS-1:0];// Power control, 1 word per power pad
-    reg [IO_PADS-1:0] mgmt_gpio_out; // I/O write data, 1 bit per gpio pad
-    wire [IO_PADS-1:0] mgmt_gpio_outz;	 // I/O write data output when input disabled
-    wire [IO_PADS-1:0] mgmt_gpio_oeb;
+    reg [IO_PADS-1:0] mgmt_gpio_out;	// I/O read/write data, 1 bit per gpio pad
     reg xfer_ctrl;			// Transfer control (1 bit)
 
     wire [IO_PADS-1:0] io_ctrl_sel;	// wishbone selects
@@ -130,18 +116,14 @@ module mprj_ctrl #(
     // if OEB = 0 then mgmt_gpio_out --> mgmt_gpio_io;  if OEB = 1 then
     // mgmt_gpio_io --> mgmt_gpio_in.  mgmt_gpio_in is always a copy of mgmt_gpio_io.
 
-    // assign mgmt_gpio_in = mgmt_gpio_io;
+    assign mgmt_gpio_in = mgmt_gpio_io;
 
     genvar i;
     generate
         for (i=0; i<IO_PADS; i=i+1) begin
             assign io_ctrl_sel[i] = (iomem_addr[7:0] == (IO_BASE_ADR[7:0] + i*4)); 
-	    // OEB is both tranferred by serial chain and output;  that way
-	    // each pad can selectively choose whether to have a dedicated
-	    // signal for OEB, or to use it as a static configuration bit.
-    	    assign mgmt_gpio_oeb[i] = io_ctrl[OEB][i];
-    	    assign mgmt_gpio_outz[i] = (io_ctrl[INP_DIS][i] == 1'b1) ?
-			mgmt_gpio_out[i] : 1'bz;
+            assign mgmt_gpio_io[i] = (io_ctrl[0][i] + OEB == 1'b0) ?
+				mgmt_gpio_out[i] : 1'bz;
         end
     endgenerate
 
@@ -165,9 +147,8 @@ module mprj_ctrl #(
 
 		if (io_data_sel) begin
 		    iomem_rdata <= mgmt_gpio_in;
-		    if (iomem_wstrb[0]) begin
-			mgmt_gpio_out[IO_PADS-1:0] <= iomem_wdata[IO_PADS-1:0];
-		    end
+		    mgmt_gpio_out <= 'd0;
+		    if (iomem_wstrb[0]) mgmt_gpio_out[IO_PADS-1:0] <= iomem_wdata[IO_PADS-1:0];
 
 		end else if (xfer_sel) begin
 		    iomem_rdata <= {31'd0, xfer_ctrl};
@@ -183,9 +164,7 @@ module mprj_ctrl #(
                 if (!resetn) begin
 		    // NOTE:  This needs to be set to the specific bit sequence
 		    // that initializes every I/O pad to the appropriate state on
-		    // startup, to match the startup state at each pad.  Otherwise
-		    // surprises happen if not all pad configurations are applied
-		    // from the program code, and a transfer is initiated.
+		    // startup.
                     io_ctrl[i] <= 'd0;
                 end else begin
                     if (iomem_valid && !iomem_ready && iomem_addr[31:8] == BASE_ADR[31:8]) begin

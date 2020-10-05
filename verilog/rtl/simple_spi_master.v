@@ -82,6 +82,7 @@ module simple_spi_master_wb #(
     output 	 csb,	 // SPI chip select
     output 	 sck,	 // SPI clock
     output 	 sdo,	 // SPI output
+    output 	 sdoenb, // SPI output enable
     output	 irq	 // interrupt output
 );
 
@@ -175,13 +176,16 @@ module simple_spi_master (
     wire	  irq_out;
     wire	  sck;
     wire	  sdo;
+    wire	  sdoenb;
 
     // Define behavior for inverted SCK and inverted CSB
-    assign    	  csb = (invcsb) ? ~icsb : icsb;
-    assign	  sck = (invsck) ? ~isck : isck;
+    assign    	  csb = (enable == 1'b0) ? 1'bz : (invcsb) ? ~icsb : icsb;
+    assign	  sck = (enable == 1'b0) ? 1'bz : (invsck) ? ~isck : isck;
 
     // No bidirectional 3-pin mode defined, so SDO is enabled whenever CSB is low.
-    assign	  sdo = icsb ? 1'bz : isdo;
+    assign	  sdoenb = icsb;
+    // assign	  sdo = (enable == 1'b0) ? 1'bz : icsb ? 1'bz : isdo;
+    assign	  sdo = isdo;
 
     assign	  irq_out = irqena & done;
 

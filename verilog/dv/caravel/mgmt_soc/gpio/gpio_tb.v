@@ -32,7 +32,7 @@ module gpio_tb;
 	always #10 clock <= (clock === 1'b0);
 
 	initial begin
-		clock = 0;
+		clock <= 0;
 	end
 
 	initial begin
@@ -64,7 +64,8 @@ module gpio_tb;
 	wire flash_io1;
 
 	reg RSTB;
-	wire CSB, SCK, SDI, SDO;
+	reg CSB, SCK, SDI;
+	wire SDO;
 
 	// Transactor
 	initial begin
@@ -99,6 +100,9 @@ module gpio_tb;
 	end
 
 	initial begin
+		CSB <= 1'b1;
+		SCK <= 1'b0;
+		SDI <= 1'b0;
 		RSTB <= 1'b0;
 		
 		#1000;
@@ -133,6 +137,9 @@ module gpio_tb;
 	// apply {27'bz, SCK, CSB, SDI, SDO, 1'bz} to mprj_io (32 bits)
 
 	wire [11:0] noconnect;
+	wire [2:0] spi_sigs;
+
+	assign spi_sigs = 3'b010;
 
 	caravel uut (
 		.vdd3v3	  (VDD3V3),
@@ -141,7 +148,8 @@ module gpio_tb;
 		.clock	  (clock),
 		.gpio     (gpio),
 		.mprj_io  ({checkbits, noconnect[11:1],
-				SCK, CSB, SDI, SDO, noconnect[0]}),
+				// SCK, CSB, SDI, SDO, noconnect[0]}),
+				spi_sigs, SDO, noconnect[0]}),
 		.flash_csb(flash_csb),
 		.flash_clk(flash_clk),
 		.flash_io0(flash_io0),

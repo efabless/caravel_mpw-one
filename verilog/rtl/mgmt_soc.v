@@ -76,12 +76,17 @@ module mgmt_soc (
     output mprj_io_loader_data,
 
     // Mega-Project pad data (when management SoC controls the pad)
-    inout [MPRJ_IO_PADS-1:0] mgmt_io_data,
+    // inout [MPRJ_IO_PADS-1:0] mgmt_io_data,
+    input [MPRJ_IO_PADS-1:0] mgmt_in_data,
+    output [MPRJ_IO_PADS-1:0] mgmt_out_data,
+    output [MPRJ_IO_PADS-1:0] mgmt_outz_data,
+    output [MPRJ_IO_PADS-1:0] mgmt_oeb_data,
 
     // SPI master
     output spi_csb,
     output spi_sck,
     output spi_sdo,
+    output spi_sdoenb,
     input  spi_sdi,
 
     // UART
@@ -209,9 +214,9 @@ module mgmt_soc (
     parameter MPRJ_PWR_PADS = 32;
    
     // System Control Registers
-    parameter PLL_OUT       = 8'h0c;
-    parameter TRAP_OUT      = 8'h10;
-    parameter IRQ7_SRC      = 8'h14;
+    parameter PLL_OUT       = 8'h00;
+    parameter TRAP_OUT      = 8'h04;
+    parameter IRQ7_SRC      = 8'h08;
 
     // Wishbone Interconnect 
     localparam ADR_WIDTH = 32;
@@ -477,6 +482,7 @@ module mgmt_soc (
         .sck(spi_sck),
         .sdi(spi_sdi),
         .sdo(spi_sdo),
+        .sdoenb(spi_sdoenb),
 	.irq(irq_spi_master)
     );
 
@@ -650,7 +656,11 @@ module mgmt_soc (
 	.serial_clock(mprj_io_loader_clock),
 	.serial_resetn(mprj_io_loader_resetn),
 	.serial_data_out(mprj_io_loader_data),
-	.mgmt_gpio_io(mgmt_io_data)
+	// .mgmt_gpio_io(mgmt_io_data)
+	.mgmt_gpio_in(mgmt_in_data),
+	.mgmt_gpio_out(mgmt_out_data),
+	.mgmt_gpio_outz(mgmt_outz_data),
+	.mgmt_gpio_oeb(mgmt_oeb_data)
     );
 
     // Wishbone Slave RAM

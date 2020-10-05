@@ -38,7 +38,7 @@
 `include "/home/tim/projects/efabless/tech/SW/sky130A/libs.ref/sky130_fd_sc_hvl/verilog/sky130_fd_sc_hvl.v"
 
 `include "mgmt_soc.v"
-`include "caravel_spi.v"
+`include "housekeeping_spi.v"
 `include "digital_pll.v"
 `include "caravel_clkrst.v"
 `include "mprj_counter.v"
@@ -47,6 +47,7 @@
 `include "chip_io.v"
 `include "user_id_programming.v"
 `include "gpio_control_block.v"
+`include "gpio_control_block2.v"
 
 `ifdef USE_OPENRAM
     `include "sram_1rw1r_32_8192_8_sky130.v"
@@ -102,10 +103,10 @@ module caravel (
     // can be accessed through the SPI slave even when the processor is in
     // reset.
 
-    // flash_csb = mprj_io[8]
-    // flash_sck = mprj_io[9]
-    // flash_io0 = mprj_io[10]
-    // flash_io1 = mprj_io[11]
+    // user_flash_csb = mprj_io[8]
+    // user_flash_sck = mprj_io[9]
+    // user_flash_io0 = mprj_io[10]
+    // user_flash_io1 = mprj_io[11]
 
     // One-bit GPIO dedicated to management SoC (outside of user control)
     wire gpio_out_core;
@@ -116,7 +117,6 @@ module caravel (
     wire gpio_inenb_core;
 
     // Mega-Project Control (pad-facing)
-    wire [`MPRJ_IO_PADS-1:0] mgmt_io_data;
     wire mprj_io_loader_resetn;
     wire mprj_io_loader_clock;
     wire mprj_io_loader_data;
@@ -124,7 +124,7 @@ module caravel (
     wire [`MPRJ_IO_PADS-1:0] mprj_io_hldh_n;
     wire [`MPRJ_IO_PADS-1:0] mprj_io_enh;
     wire [`MPRJ_IO_PADS-1:0] mprj_io_inp_dis;
-    wire [`MPRJ_IO_PADS-1:0] mprj_io_oeb_n;
+    wire [`MPRJ_IO_PADS-1:0] mprj_io_oeb;
     wire [`MPRJ_IO_PADS-1:0] mprj_io_ib_mode_sel;
     wire [`MPRJ_IO_PADS-1:0] mprj_io_vtrip_sel;
     wire [`MPRJ_IO_PADS-1:0] mprj_io_slow_sel;
@@ -137,7 +137,7 @@ module caravel (
     wire [`MPRJ_IO_PADS-1:0] mprj_io_out;
 
     // Mega-Project Control (user-facing)
-    wire [`MPRJ_IO_PADS-1:0] user_io_oeb_n;
+    wire [`MPRJ_IO_PADS-1:0] user_io_oeb;
     wire [`MPRJ_IO_PADS-1:0] user_io_in;
     wire [`MPRJ_IO_PADS-1:0] user_io_out;
 
@@ -146,12 +146,41 @@ module caravel (
     wire mgmt_serial_clock;
     wire mgmt_serial_resetn;
 
+    // Mega-Project Control management I/O
+    // There are two types of GPIO connections:
+    // (1) Full Bidirectional: Management connects to in, out, and oeb
+    //     Uses:  JTAG and SDO
+    // (2) Selectable bidirectional:  Management connects to in and out,
+    //	   which are tied together.  oeb is grounded (oeb from the
+    //	   configuration is used)
+
+    // SDI 	 = mprj_io[2]		(input)
+    // CSB 	 = mprj_io[3]		(input)
+    // SCK	 = mprj_io[4]		(input)
+    // ser_rx    = mprj_io[5]		(input)
+    // ser_tx    = mprj_io[6]		(output)
+    // irq 	 = mprj_io[7]		(input)
+
+    wire [`MPRJ_IO_PADS-1:0] mgmt_io_in;
+    wire jtag_out, sdo_out; 		
+    wire jtag_outenb, sdo_outenb; 
+
+    wire [`MPRJ_IO_PADS-3:0] mgmt_io_nc1;	/* no-connects */
+    wire [`MPRJ_IO_PADS-3:0] mgmt_io_nc3;	/* no-connects */
+    wire [1:0] mgmt_io_nc2;			/* no-connects */
+
     // Power-on-reset signal.  The reset pad generates the sense-inverted
     // reset at 3.3V.  The 1.8V signal and the inverted 1.8V signal are
     // derived.
 
     wire porb_h;
     wire porb_l;
+
+    // To be considered:  Master hold signal on all user pads (?)
+    // For now, set holdh_n to 1 (NOTE:  This is in the 3.3V domain)
+    // and setting enh to porb_h.
+    assign mprj_io_hldh_n = {`MPRJ_IO_PADS{vdd3v3}};
+    assign mprj_io_enh = {`MPRJ_IO_PADS{porb_h}};
 
     chip_io padframe(
 	// Package Pins
@@ -189,10 +218,10 @@ module caravel (
 	.flash_io1_do_core(flash_io1_do_core),
 	.flash_io0_di_core(flash_io0_di_core),
 	.flash_io1_di_core(flash_io1_di_core),
-	.pll_clk16(pll_clk16),
+	.por(~porb_l),
 	.mprj_io_in(mprj_io_in),
 	.mprj_io_out(mprj_io_out),
-	.mprj_io_oeb_n(mprj_io_oeb_n),
+	.mprj_io_oeb(mprj_io_oeb),
         .mprj_io_hldh_n(mprj_io_hldh_n),
 	.mprj_io_enh(mprj_io_enh),
         .mprj_io_inp_dis(mprj_io_inp_dis),
@@ -284,7 +313,10 @@ module caravel (
 		.mprj_io_loader_resetn(mprj_io_loader_resetn),
 		.mprj_io_loader_clock(mprj_io_loader_clock),
 		.mprj_io_loader_data(mprj_io_loader_data),
-		.mgmt_io_data(mgmt_io_data),
+		.mgmt_in_data(mgmt_io_in),
+		.mgmt_out_data({mgmt_io_nc1, sdo_out, jtag_out}),
+		.mgmt_outz_data({mgmt_io_in[(`MPRJ_IO_PADS-1):2], mgmt_io_nc2}),
+		.mgmt_oeb_data({mgmt_io_nc3, sdo_outenb, jtag_outenb}),
 		// Mega Project Slave ports (WB MI A)
 		.mprj_cyc_o(mprj_cyc_o_core),
 		.mprj_stb_o(mprj_stb_o_core),
@@ -338,13 +370,26 @@ module caravel (
 
     assign gpio_serial_link_shifted = {mprj_io_loader_data, gpio_serial_link[`MPRJ_IO_PADS-1:1]};
 
-    gpio_control_block gpio_control_inst [`MPRJ_IO_PADS-1:0] (
+    // NOTE:  The intention is to replace most of gpio_control_block2
+    // (3 management wires per pad) with gpio_control_block (1 management
+    // wire per pad).  However, the inout line on gpio_control_block is
+    // troublesome and so I am starting with the simpler interface.  Ultimately
+    // the JTAG and SDO lines will keep the 3-pin interface and these pads will
+    // be located closest to the management area.
+
+    gpio_control_block2 #(
+	.DM_INIT(3'b010),	// Test:  All pads set to pull-up
+	.OENB_INIT(1'b0)	// Test:  All pads set to pull-up
+    ) gpio_control_inst [`MPRJ_IO_PADS-1:0] (
+
     	// Management Soc-facing signals
 
     	.resetn(mprj_io_loader_resetn),
     	.serial_clock(mprj_io_loader_clock),
 
-    	.mgmt_gpio_io(mgmt_io_data),
+    	.mgmt_gpio_in(mgmt_io_in),    // For gpio_control_block2 only
+	.mgmt_gpio_out({mgmt_io_in[(`MPRJ_IO_PADS-1):2], sdo_out, jtag_out}),
+	.mgmt_gpio_oeb({{(`MPRJ_IO_PADS-2){1'b1}}, sdo_outenb, jtag_outenb}),
 
     	// Serial data chain for pad configuration
     	.serial_data_in(gpio_serial_link_shifted),
@@ -352,7 +397,7 @@ module caravel (
 
     	// User-facing signals
     	.user_gpio_out(user_io_out),
-    	.user_gpio_outenb(user_io_oeb_n),
+    	.user_gpio_oeb(user_io_oeb),
     	.user_gpio_in(user_io_in),
 
     	// Pad-facing signals (Pad GPIOv2)
@@ -365,7 +410,7 @@ module caravel (
     	.pad_gpio_ana_sel(mprj_io_analog_sel),
     	.pad_gpio_ana_pol(mprj_io_analog_pol),
     	.pad_gpio_dm(mprj_io_dm),
-    	.pad_gpio_outenb(mprj_io_oen_n),
+    	.pad_gpio_outenb(mprj_io_oeb),
     	.pad_gpio_out(mprj_io_out),
     	.pad_gpio_in(mprj_io_in)
     );

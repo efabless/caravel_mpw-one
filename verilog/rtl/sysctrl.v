@@ -1,8 +1,8 @@
 module sysctrl_wb #(
     parameter BASE_ADR      = 32'h2F00_0000,
-    parameter PLL_OUT       = 8'h0c,
-    parameter TRAP_OUT      = 8'h10,
-    parameter IRQ7_SRC      = 8'h14
+    parameter PLL_OUT       = 8'h00,
+    parameter TRAP_OUT      = 8'h04,
+    parameter IRQ7_SRC      = 8'h08
 ) (
     input wb_clk_i,
     input wb_rst_i,
@@ -60,9 +60,9 @@ endmodule
 
 module sysctrl #(
     parameter BASE_ADR = 32'h2300_0000,
-    parameter PLL_OUT       = 8'h0c,
-    parameter TRAP_OUT      = 8'h10,
-    parameter IRQ7_SRC      = 8'h14
+    parameter PLL_OUT       = 8'h00,
+    parameter TRAP_OUT      = 8'h04,
+    parameter IRQ7_SRC      = 8'h08
 ) (
     input clk,
     input resetn,

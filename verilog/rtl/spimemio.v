@@ -132,7 +132,13 @@ module spimemio_wb (
 
         .cfgreg_we(cfgreg_we),
         .cfgreg_di(wb_dat_i),
-        .cfgreg_do(spimemio_cfgreg_do)
+        .cfgreg_do(spimemio_cfgreg_do),
+
+	.pass_thru(pass_thru),
+	.pass_thru_csb(pass_thru_csb),
+	.pass_thru_sck(pass_thru_sck),
+	.pass_thru_sdi(pass_thru_sdi),
+	.pass_thru_sdo(pass_thru_sdo)
     );
 
 endmodule
@@ -176,7 +182,13 @@ module spimemio (
 
     input   [3:0] cfgreg_we,
     input  [31:0] cfgreg_di,
-    output [31:0] cfgreg_do
+    output [31:0] cfgreg_do,
+
+    input  pass_thru,
+    input  pass_thru_csb,
+    input  pass_thru_sck,
+    input  pass_thru_sdi,
+    output pass_thru_sdo
 );
     reg        xfer_resetn;
     reg        din_valid;
