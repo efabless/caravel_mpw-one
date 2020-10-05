@@ -183,10 +183,17 @@ module gpio_control_block #(
 
     /* Implement pad control behavior depending on state of mgmt_ena */
 
-    assign pad_gpio_out    =  (mgmt_ena) ? mgmt_gpio_out : user_gpio_out; 
-    assign pad_gpio_outenb =  (mgmt_ena) ? mgmt_gpio_oeb : user_gpio_oeb;
-
     assign user_gpio_in =    (mgmt_ena) ? 1'b0 : pad_gpio_in;
-    assign mgmt_gpio_in =    (mgmt_ena) ? pad_gpio_in : 1'b0;
+    assign mgmt_gpio_in =    (mgmt_ena) ? ((gpio_inenb == 1'b0) ?
+					pad_gpio_in : 1'bz) : 1'b0;
+
+    assign pad_gpio_outenb =  (mgmt_ena) ? ((mgmt_gpio_oeb == 1'b1) ? gpio_outenb :
+					1'b0) : user_gpio_oeb;
+    assign pad_gpio_out    =  (mgmt_ena) ? 
+			((mgmt_gpio_oeb == 1'b1) ?
+			((gpio_dm[2:1] == 2'b01) ? ~gpio_dm[0] : mgmt_gpio_out) :
+			mgmt_gpio_out) :
+			user_gpio_out; 
+
 
 endmodule

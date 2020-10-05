@@ -109,8 +109,8 @@ module mprj_ctrl #(
     localparam OEB = 1;			// Offset of output enable in shift register.
     localparam INP_DIS = 3;		// Offset of input disable in shift register. 
 
-    reg [IO_CTRL_BITS-1:0] io_ctrl [IO_PADS-1:0];  // I/O control, 1 word per gpio pad
-    reg [PWR_CTRL_BITS-1:0] pwr_ctrl [PWR_PADS-1:0];// Power control, 1 word per power pad
+    reg [IO_CTRL_BITS-1:0] io_ctrl[IO_PADS-1:0];  // I/O control, 1 word per gpio pad
+    reg [PWR_CTRL_BITS-1:0] pwr_ctrl[PWR_PADS-1:0]; // Power control, 1 word per power pad
     reg [IO_PADS-1:0] mgmt_gpio_out; // I/O write data, 1 bit per gpio pad
     wire [IO_PADS-1:0] mgmt_gpio_outz;	 // I/O write data output when input disabled
     wire [IO_PADS-1:0] mgmt_gpio_oeb;
@@ -125,12 +125,6 @@ module mprj_ctrl #(
     assign xfer_sel = (iomem_addr[7:0] == XFER);
     assign io_data_sel = (iomem_addr[7:0] == DATA); 
 
-    // Direction of mgmt_gpio_io depends on the value of io_ctrl pad bit 1 (OEB)
-    // if OEB = 0 then mgmt_gpio_out --> mgmt_gpio_io;  if OEB = 1 then
-    // mgmt_gpio_io --> mgmt_gpio_in.  mgmt_gpio_in is always a copy of mgmt_gpio_io.
-
-    // assign mgmt_gpio_in = mgmt_gpio_io;
-
     genvar i;
     generate
         for (i=0; i<IO_PADS; i=i+1) begin
@@ -138,8 +132,8 @@ module mprj_ctrl #(
 	    // OEB is both tranferred by serial chain and output;  that way
 	    // each pad can selectively choose whether to have a dedicated
 	    // signal for OEB, or to use it as a static configuration bit.
-    	    assign mgmt_gpio_oeb[i] = io_ctrl[OEB][i];
-    	    assign mgmt_gpio_outz[i] = (io_ctrl[INP_DIS][i] == 1'b1) ?
+    	    assign mgmt_gpio_oeb[i] = io_ctrl[i][OEB];
+    	    assign mgmt_gpio_outz[i] = (io_ctrl[i][INP_DIS] == 1'b1) ?
 			mgmt_gpio_out[i] : 1'bz;
         end
     endgenerate
