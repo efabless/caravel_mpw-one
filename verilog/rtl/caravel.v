@@ -47,6 +47,7 @@
 `include "chip_io.v"
 `include "user_id_programming.v"
 `include "gpio_control_block.v"
+`include "simple_por.v"
 
 `ifdef USE_OPENRAM
     `include "sram_1rw1r_32_8192_8_sky130.v"
@@ -175,6 +176,9 @@ module caravel (
     wire porb_h;
     wire porb_l;
 
+    wire rstb_h;
+    wire rstb_l;
+
     // To be considered:  Master hold signal on all user pads (?)
     // For now, set holdh_n to 1 (NOTE:  This is in the 3.3V domain)
     // and setting enh to porb_h.
@@ -196,6 +200,7 @@ module caravel (
 	.flash_io1(flash_io1),
 	// SoC Core Interface
 	.porb_h(porb_h),
+	.resetb_core_h(rstb_h),
 	.clock_core(clock_core),
 	.gpio_out_core(gpio_out_core),
 	.gpio_in_core(gpio_in_core),
@@ -297,7 +302,8 @@ module caravel (
 		.flash_io1_do(flash_io1_do_core),
 		.flash_io0_di(flash_io0_di_core),
 		.flash_io1_di(flash_io1_di_core),
-		// Power-on Reset
+		// Master Reset
+		.resetb(rstb_l),
 		.porb(porb_l),
 		// Clocks and reset
 		.clock(clock_core),
@@ -452,7 +458,7 @@ module caravel (
     	.pad_gpio_in(mprj_io_in[(`MPRJ_IO_PADS-1):2])
     );
 
-    sky130_fd_sc_hvl__lsbufhv2lv levelshift (
+    sky130_fd_sc_hvl__lsbufhv2lv porb_level (
 	`ifdef LVS
 		.vpwr(vdd3v3),
 		.vpb(vdd3v3),
@@ -468,6 +474,26 @@ module caravel (
 	.USER_PROJECT_ID(USER_PROJECT_ID)
     ) user_id_value (
 	.mask_rev(mask_rev)
+    );
+
+    // Power-on-reset circuit
+    simple_por por (
+		.vdd3v3(vdd3v3),
+		.vss(vss),
+		.porb_h(porb_h)
+    );
+
+    // XRES (chip input pin reset) reset level converter
+    sky130_fd_sc_hvl__lsbufhv2lv rstb_level (
+	`ifdef LVS
+		.vpwr(vdd3v3),
+		.vpb(vdd3v3),
+		.lvpwr(vdd1v8),
+		.vnb(vss),
+		.vgnd(vss),
+	`endif
+		.A(rstb_h),
+		.X(rstb_l)
     );
 
 endmodule

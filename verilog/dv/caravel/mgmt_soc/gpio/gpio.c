@@ -91,7 +91,7 @@ void main()
 	reg_mprj_data = 0xab000000;
 
 	while (1){
-		int x = reg_mprj_data & 0xff0000;
+		int x = (reg_mprj_data & 0xff0000) >> 16;
 		reg_mprj_data = (x+1) << 24;
 	}
 }

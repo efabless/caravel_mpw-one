@@ -11,7 +11,8 @@ module chip_io(
 	inout  flash_io0,
 	inout  flash_io1,
 	// Chip Core Interface
-	output porb_h,
+	input  porb_h,
+	output resetb_core_h,
 	output clock_core,
 	input  gpio_out_core,
     	output gpio_in_core,
@@ -169,7 +170,7 @@ module chip_io(
 		.tie_hi_esd(),
 		.tie_lo_esd(),
 		.pad_a_esd_h(xresloop),
-		.xres_h_n(porb_h),
+		.xres_h_n(resetb_core_h),
 		.disable_pullup_h(vss),	    // 0 = enable pull-up on reset pad
 		.enable_h(vdd3v3),	    // Power-on-reset to the power-on-reset input??
 		.en_vddio_sig_h(vss),	    // No idea.

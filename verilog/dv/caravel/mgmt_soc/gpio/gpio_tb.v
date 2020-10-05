@@ -64,7 +64,6 @@ module gpio_tb;
 	wire flash_io1;
 
 	reg RSTB;
-	reg CSB, SCK, SDI;
 	wire SDO;
 
 	// Transactor
@@ -100,9 +99,6 @@ module gpio_tb;
 	end
 
 	initial begin
-		CSB <= 1'b1;
-		SCK <= 1'b0;
-		SDI <= 1'b0;
 		RSTB <= 1'b0;
 		
 		#1000;
@@ -139,7 +135,7 @@ module gpio_tb;
 	wire [11:0] noconnect;
 	wire [2:0] spi_sigs;
 
-	assign spi_sigs = 3'b010;
+	assign spi_sigs = 3'b010;	// Set SCK, CSB, and SDI
 
 	caravel uut (
 		.vdd3v3	  (VDD3V3),
@@ -148,7 +144,6 @@ module gpio_tb;
 		.clock	  (clock),
 		.gpio     (gpio),
 		.mprj_io  ({checkbits, noconnect[11:1],
-				// SCK, CSB, SDI, SDO, noconnect[0]}),
 				spi_sigs, SDO, noconnect[0]}),
 		.flash_csb(flash_csb),
 		.flash_clk(flash_clk),

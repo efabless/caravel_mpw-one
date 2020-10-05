@@ -25,6 +25,7 @@ module mgmt_core(
 	input flash_io0_di,
 	input flash_io1_di,
 	// Master reset
+	input resetb,
 	input porb,
 	// Clocking
 	input clock,
@@ -79,7 +80,7 @@ module mgmt_core(
 		.ext_clk_sel(ext_clk_sel),
 		.ext_clk(clock),		// Should be better handled. . .
 		.pll_clk(pll_clk),
-		.resetb(porb), 
+		.resetb(resetb), 
 		.ext_reset(ext_reset),
 		.core_clk(core_clk),
 		.resetb_sync(core_rstn)
@@ -203,7 +204,7 @@ module mgmt_core(
 		.vdd(vdd1v8),
 		.vss(vss),
 	    `endif
-		.resetb(porb),
+		.resetb(resetb),
 		.extclk_sel(ext_clk_sel),
 		.osc(clock),
 		.clockc(pll_clk),
