@@ -47,7 +47,6 @@
 `include "chip_io.v"
 `include "user_id_programming.v"
 `include "gpio_control_block.v"
-`include "gpio_control_block2.v"
 
 `ifdef USE_OPENRAM
     `include "sram_1rw1r_32_8192_8_sky130.v"
@@ -368,16 +367,15 @@ module caravel (
 
     wire [`MPRJ_IO_PADS-1:0] gpio_serial_link_shifted;
 
-    assign gpio_serial_link_shifted = {mprj_io_loader_data, gpio_serial_link[`MPRJ_IO_PADS-1:1]};
+    assign gpio_serial_link_shifted = {gpio_serial_link[`MPRJ_IO_PADS-2:0], mprj_io_loader_data};
 
-    // NOTE:  The intention is to replace most of gpio_control_block2
-    // (3 management wires per pad) with gpio_control_block (1 management
-    // wire per pad).  However, the inout line on gpio_control_block is
-    // troublesome and so I am starting with the simpler interface.  Ultimately
-    // the JTAG and SDO lines will keep the 3-pin interface and these pads will
-    // be located closest to the management area.
+    // Each control block sits next to an I/O pad in the user area.
+    // It gets input through a serial chain from the previous control
+    // block and passes it to the next control block.  Due to the nature
+    // of the shift register, bits are presented in reverse, as the first
+    // bit in ends up as the last bit of the last I/O pad control block.
 
-    gpio_control_block2 #(
+    gpio_control_block #(
 	.DM_INIT(3'b010),	// Test:  All pads set to pull-up
 	.OENB_INIT(1'b0)	// Test:  All pads set to pull-up
     ) gpio_control_inst [`MPRJ_IO_PADS-1:0] (
@@ -387,7 +385,7 @@ module caravel (
     	.resetn(mprj_io_loader_resetn),
     	.serial_clock(mprj_io_loader_clock),
 
-    	.mgmt_gpio_in(mgmt_io_in),    // For gpio_control_block2 only
+    	.mgmt_gpio_in(mgmt_io_in),
 	.mgmt_gpio_out({mgmt_io_in[(`MPRJ_IO_PADS-1):2], sdo_out, jtag_out}),
 	.mgmt_gpio_oeb({{(`MPRJ_IO_PADS-2){1'b1}}, sdo_outenb, jtag_outenb}),
 

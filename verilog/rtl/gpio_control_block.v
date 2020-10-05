@@ -1,17 +1,13 @@
 /* 
  *---------------------------------------------------------------------
- * This block interfaces between the sky130_fd_io GPIOv2 pad, the
- * caravel management area, and the user project area.
- *
- * The management area has ultimate control over the setting of the
- * pad, and can modify all core-voltage inputs to the pad and monitor
- * the output.
- *
- * The user project will rely on the management SoC startup program
- * to configure each I/O pad to a fixed configuration except for
- * the output enable which remains under user control.
- *
- * This module is bit-sliced.  Instantiate once for each GPIO pad.
+ * See gpio_control_block for description.  This module is like
+ * gpio_contro_block except that it has an additional two management-
+ * Soc-facing pins, which are the out_enb line and the output line.
+ * If the chip is configured for output with the oeb control
+ * register = 1, then the oeb line is controlled by the additional
+ * signal from the management SoC.  If the oeb control register = 0,
+ * then the output is disabled completely.  The "io" line is input
+ * only in this module.
  *
  *---------------------------------------------------------------------
  */
@@ -51,7 +47,9 @@ module gpio_control_block #(
     input  	 resetn,		// Global reset
     input  	 serial_clock,
 
-    inout        mgmt_gpio_io,		// Management to/from pad
+    output       mgmt_gpio_in,		// Management from pad (input only)
+    input        mgmt_gpio_out,		// Management to pad (output only)
+    input        mgmt_gpio_oeb,		// Management to pad (output only)
 
     // Serial data chain for pad configuration
     input  	 serial_data_in,
@@ -72,7 +70,7 @@ module gpio_control_block #(
     output	 pad_gpio_ana_sel,
     output	 pad_gpio_ana_pol,
     output [2:0] pad_gpio_dm,
-    output       pad_gpio_oeb,
+    output       pad_gpio_outenb,
     output	 pad_gpio_out,
     input	 pad_gpio_in
 );
@@ -81,7 +79,7 @@ module gpio_control_block #(
     localparam MGMT_EN = 0;
     localparam OEB = 1;
     localparam HLDH = 2;
-    localparam INP_DIS = 2;
+    localparam INP_DIS = 3;
     localparam MOD_SEL = 4;
     localparam AN_EN = 5;
     localparam AN_SEL = 6;
@@ -148,7 +146,7 @@ module gpio_control_block #(
 	    gpio_vtrip_sel <= TRIP_INIT; // CMOS mode
             gpio_ib_mode_sel <= IB_INIT; // CMOS mode
 	    gpio_inenb <= IENB_INIT;	 // Input enabled
-	    gpio_outenb <= OENB_INIT;	 // Output disabled
+	    gpio_outenb <= OENB_INIT;	 // (unused placeholder)
 	    gpio_dm <= DM_INIT;		 // Configured as input only
 	    gpio_ana_en <= AENA_INIT;	 // Digital enabled
 	    gpio_ana_sel <= ASEL_INIT;	 // Don't-care when gpio_ana_en = 0
@@ -185,34 +183,10 @@ module gpio_control_block #(
 
     /* Implement pad control behavior depending on state of mgmt_ena */
 
-    /* If pad is configured for input and dm[2:1] is 01, then pad is	*/
-    /* configured as pull-up or pull-down depending on dm[0], and to	*/
-    /* set the pullup or pulldown condition, the pad output bit must	*/
-    /* be set to the opposite state of dm[0].				*/
-    /* 		dm[0] = 0 is pull-down;  dm[0] = 1 is pull-up.		*/
-    /*									*/
-    /* This is done for management control only, since the management	*/
-    /* control has only 1 inout signal for both input and output, and	*/
-    /* cannot set the output and read the input simultaneously.  The 	*/
-    /* user has control over both lines and only needs to be told what	*/
-    /* to set the output line to, to enable a pullup or pulldown.	*/
+    assign pad_gpio_out    =  (mgmt_ena) ? mgmt_gpio_out : user_gpio_out; 
+    assign pad_gpio_outenb =  (mgmt_ena) ? mgmt_gpio_oeb : user_gpio_oeb;
 
-    assign pad_gpio_out = (mgmt_ena) ?  
-			(((gpio_dm[2:1] == 2'b01) && (gpio_inenb == 1'b0)) ?
-			~gpio_dm[0] : mgmt_gpio_io) : user_gpio_out;
-
-    /* When under user control, gpio_outenb = 1 means that the pad is	*/
-    /* configured as input, and the user outenb is unused.  Otherwise,	*/
-    /* the pad outenb signal is controlled by the user.			*/
-
-    assign pad_gpio_outenb = (mgmt_ena) ? gpio_outenb : 
-		((gpio_outenb == 1) ? 1'b1 : user_gpio_oeb);
-
-    /* User gpio_in is grounded when the management controls the pad	*/
-    assign user_gpio_in = (mgmt_ena) ? 1'b0 : pad_gpio_in;
-
-    /* Management I/O line is set from the pad when the pad is		*/
-    /* configured for input.						*/
-    assign mgmt_gpio_io = (gpio_inenb == 0) ? pad_gpio_in : 1'bz;
+    assign user_gpio_in =    (mgmt_ena) ? 1'b0 : pad_gpio_in;
+    assign mgmt_gpio_in =    (mgmt_ena) ? pad_gpio_in : 1'b0;
 
 endmodule

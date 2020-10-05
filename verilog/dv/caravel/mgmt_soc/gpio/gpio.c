@@ -37,7 +37,7 @@ void main()
 
 	/* Apply configuration */
 	reg_mprj_xfer = 1;
-	reg_mprj_xfer = 0;
+	while (reg_mprj_xfer == 1);
 
 	// change the pull up and pull down (checked by the TB)
 	reg_mprj_data = 0xa0000000;
@@ -54,7 +54,7 @@ void main()
 
 	/* Apply configuration */
 	reg_mprj_xfer = 1;
-	reg_mprj_xfer = 0;
+	while (reg_mprj_xfer == 1);
 
 	reg_mprj_data = 0x0b000000;
 
@@ -70,7 +70,7 @@ void main()
 
 	/* Apply configuration */
 	reg_mprj_xfer = 1;
-	reg_mprj_xfer = 0;
+	while (reg_mprj_xfer == 1);
 
 	reg_mprj_io_23 = GPIO_MODE_MGMT_STD_INPUT_PULLDOWN;
 	reg_mprj_io_22 = GPIO_MODE_MGMT_STD_INPUT_PULLDOWN;
@@ -84,9 +84,9 @@ void main()
 
 	/* Apply configuration */
 	reg_mprj_xfer = 1;
-	reg_mprj_xfer = 0;
+	while (reg_mprj_xfer == 1);
 
-	// read the lower 8 pins, add 1 then o/p the result
+	// read the lower 8 pins, add 1 then output the result
 	// checked by the TB
 	reg_mprj_data = 0xab000000;
 

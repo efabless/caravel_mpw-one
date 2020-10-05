@@ -93,7 +93,6 @@ module mprj_ctrl #(
     output serial_clock,
     output serial_resetn,
     output serial_data_out,
-    // inout [IO_PADS-1:0] mgmt_gpio_io
     input  [IO_PADS-1:0] mgmt_gpio_in,
     output [IO_PADS-1:0] mgmt_gpio_out,
     output [IO_PADS-1:0] mgmt_gpio_outz,
@@ -170,9 +169,11 @@ module mprj_ctrl #(
 		    end
 
 		end else if (xfer_sel) begin
-		    iomem_rdata <= {31'd0, xfer_ctrl};
-		    if (iomem_wstrb[0]) xfer_ctrl <= iomem_wdata[1:0];
+		    iomem_rdata <= {31'd0, busy};
+		    if (iomem_wstrb[0]) xfer_ctrl <= iomem_wdata[0];
 		end
+	    end else begin
+		xfer_ctrl <= 1'b0;	// Immediately self-resetting
 	    end
 	end
     end
@@ -181,12 +182,14 @@ module mprj_ctrl #(
         for (i=0; i<IO_PADS; i=i+1) begin
              always @(posedge clk) begin
                 if (!resetn) begin
-		    // NOTE:  This needs to be set to the specific bit sequence
-		    // that initializes every I/O pad to the appropriate state on
-		    // startup, to match the startup state at each pad.  Otherwise
-		    // surprises happen if not all pad configurations are applied
-		    // from the program code, and a transfer is initiated.
-                    io_ctrl[i] <= 'd0;
+		    // NOTE:  This initialization must match the defaults passed
+		    // to the control blocks.  Specifically, 0x1801 is for a
+		    // bidirectional pad, and 0x0403 is for a simple input pad
+		    if (i < 2) begin
+                    	io_ctrl[i] <= 'h1801;
+		    end else begin
+                    	io_ctrl[i] <= 'h0403;
+		    end
                 end else begin
                     if (iomem_valid && !iomem_ready && iomem_addr[31:8] == BASE_ADR[31:8]) begin
                         if (io_ctrl_sel[i]) begin
@@ -224,7 +227,6 @@ module mprj_ctrl #(
     reg [1:0]  xfer_state;
     reg	       serial_clock;
     reg	       serial_resetn;
-    reg	       serial_data_out;
 
     // NOTE:  Ignoring power control bits for now. . .  need to revisit.
     // Depends on how the power pads are arranged among the GPIO, and
@@ -233,20 +235,26 @@ module mprj_ctrl #(
 
     reg [IO_CTRL_BITS-1:0] serial_data_staging;
 
+    wire       serial_data_out;
+    wire       busy;
+
+    assign serial_data_out = serial_data_staging[IO_CTRL_BITS-1];
+    assign busy = (xfer_state != `IDLE);
+ 
     always @(posedge clk or negedge resetn) begin
 	if (resetn == 1'b0) begin
 
 	    xfer_state <= `IDLE;
 	    xfer_count <= 4'd0;
-	    pad_count  <= 6'd0;
+	    pad_count  <= IO_PADS;
 	    serial_resetn <= 1'b0;
 	    serial_clock <= 1'b0;
-	    serial_data_out <= 1'b0;
 
 	end else begin
 
 	    if (xfer_state == `IDLE) begin
-	    	serial_resetn <= 1'b0;
+	    	pad_count  <= IO_PADS;
+	    	serial_resetn <= 1'b1;
 		serial_clock <= 1'b0;
 		if (xfer_ctrl == 1'b1) begin
 		    xfer_state <= `START;
@@ -255,25 +263,24 @@ module mprj_ctrl #(
 	    	serial_resetn <= 1'b1;
 		serial_clock <= 1'b0;
 	    	xfer_count <= 6'd0;
-		if (pad_count == IO_PADS) begin
-		    xfer_state <= `LOAD;
-		end else begin
-		    pad_count <= pad_count + 1;
-		    xfer_state <= `XBYTE;
-		    serial_data_staging <= io_ctrl[pad_count];
-		end
+		pad_count <= pad_count - 1;
+		xfer_state <= `XBYTE;
+		serial_data_staging <= io_ctrl[pad_count - 1];
 	    end else if (xfer_state == `XBYTE) begin
 	    	serial_resetn <= 1'b1;
 		serial_clock <= ~serial_clock;
 		if (serial_clock == 1'b0) begin
-		    if (xfer_count == IO_CTRL_BITS) begin
-		    	xfer_state <= `START;
+		    if (xfer_count == IO_CTRL_BITS - 1) begin
+			if (pad_count == 0) begin
+		    	    xfer_state <= `LOAD;
+			end else begin
+		    	    xfer_state <= `START;
+			end
 		    end else begin
 		    	xfer_count <= xfer_count + 1;
 		    end
 		end else begin
 		    serial_data_staging <= {serial_data_staging[IO_CTRL_BITS-2:0], 1'b0};
-		    serial_data_out <= serial_data_staging[IO_CTRL_BITS-1];
 		end
 	    end else if (xfer_state == `LOAD) begin
 		xfer_count <= xfer_count + 1;
