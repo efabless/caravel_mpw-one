@@ -25,17 +25,15 @@
 
 module mem_tb;
 	reg clock;
+	reg RSTB;
 
-	reg SDI, CSB, SCK, RSTB;
-
-	wire [1:0] gpio;
+	wire gpio;
+        wire [15:0] checkbits;
+        wire [15:0] noconnect;
 	wire flash_csb;
 	wire flash_clk;
 	wire flash_io0;
 	wire flash_io1;
-	wire flash_io2;
-	wire flash_io3;
-	wire SDO;
 
 	// External clock is used by default.  Make this artificially fast for the
 	// simulation.  Normally this would be a slow clock and the digital PLL
@@ -51,9 +49,9 @@ module mem_tb;
 		$dumpfile("mem.vcd");
 		$dumpvars(0, mem_tb);
 
-		// Repeat cycles of 1000 XCLK edges as needed to complete testbench
+		// Repeat cycles of 1000 clock edges as needed to complete testbench
 		repeat (100) begin
-			repeat (1000) @(posedge XCLK);
+			repeat (1000) @(posedge clock);
 			//$display("+1000 cycles");
 		end
 		$display("%c[1;31m",27);
@@ -63,52 +61,47 @@ module mem_tb;
 	end
 
 	initial begin
-		CSB <= 1'b1;
-		SCK <= 1'b0;
-		SDI <= 1'b0;
 		RSTB <= 1'b0;
-		
 		#1000;
 		RSTB <= 1'b1;	    // Release reset
 		#2000;
-		CSB <= 1'b0;	    // Apply CSB to start transmission
 	end
 
-	always @(gpio) begin
-		if(gpio == 16'hA040) begin
+	always @(checkbits) begin
+		if(checkbits == 16'hA040) begin
 			$display("Mem Test (word rw) started");
 		end
-		else if(gpio == 16'hAB40) begin
+		else if(checkbits == 16'hAB40) begin
 			$display("%c[1;31m",27);
 			$display("Monitor: Test MEM (RTL) [word rw] failed");
 			$display("%c[0m",27);
 			$finish;
 		end
-		else if(gpio == 16'hAB41) begin
+		else if(checkbits == 16'hAB41) begin
 			$display("Monitor: Test MEM (RTL) [word rw]  passed");
 		end
-		else if(gpio == 16'hA020) begin
+		else if(checkbits == 16'hA020) begin
 			$display("Mem Test (short rw) started");
 		end
-		else if(gpio == 16'hAB20) begin
+		else if(checkbits == 16'hAB20) begin
 			$display("%c[1;31m",27);
 			$display("Monitor: Test MEM (RTL) [short rw] failed");
 			$display("%c[0m",27);
 			$finish;
 		end
-		else if(gpio == 16'hAB21) begin
+		else if(checkbits == 16'hAB21) begin
 			$display("Monitor: Test MEM (RTL) [short rw]  passed");
 		end
-		else if(gpio == 16'hA010) begin
+		else if(checkbits == 16'hA010) begin
 			$display("Mem Test (byte rw) started");
 		end
-		else if(gpio == 16'hAB10) begin
+		else if(checkbits == 16'hAB10) begin
 			$display("%c[1;31m",27);
 			$display("Monitor: Test MEM (RTL) [byte rw] failed");
 			$display("%c[0m",27);
 			$finish;
 		end
-		else if(gpio == 16'hAB11) begin
+		else if(checkbits == 16'hAB11) begin
 			$display("Monitor: Test MEM (RTL) [byte rw] passed");
 			$finish;
 		end
@@ -128,22 +121,13 @@ module mem_tb;
 		.vdd1v8	  (VDD1V8),
 		.vss	  (VSS),
 		.clock	  (clock),
-		.xclk	  (XCLK),
-		.SDI	  (SDI),
-		.SDO	  (SDO),
-		.CSB	  (CSB),
-		.SCK	  (SCK),
-		.ser_rx	  (1'b0),
-		.ser_tx	  (),
-		.irq	  (1'b0),
 		.gpio     (gpio),
+                .mprj_io  ({checkbits, noconnect}),
 		.flash_csb(flash_csb),
 		.flash_clk(flash_clk),
 		.flash_io0(flash_io0),
 		.flash_io1(flash_io1),
-		.flash_io2(flash_io2),
-		.flash_io3(flash_io3),
-		.RSTB	  (RSTB)
+		.resetb	  (RSTB)
 	);
 
 	spiflash #(
@@ -153,8 +137,8 @@ module mem_tb;
 		.clk(flash_clk),
 		.io0(flash_io0),
 		.io1(flash_io1),
-		.io2(flash_io2),
-		.io3(flash_io3)
+		.io2(),			// not used
+		.io3()			// not used
 	);
 
 endmodule

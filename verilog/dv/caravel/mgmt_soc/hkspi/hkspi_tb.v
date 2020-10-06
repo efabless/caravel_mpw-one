@@ -12,7 +12,11 @@ module hkspi_tb;
 	reg clock;
 	reg SDI, CSB, SCK, RSTB;
 
-	wire [1:0] gpio;
+	wire gpio;
+	wire [15:0] checkbits;
+	wire [9:0] noconnect;
+	wire uart_tx;
+	wire uart_rx;
 
 	wire flash_csb;
 	wire flash_clk;
@@ -119,52 +123,53 @@ module hkspi_tb;
 	    RSTB <= 1'b1;
 	    #2000;
 
-        // First do a normal read from the housekeeping SPI to
+            // First do a normal read from the housekeeping SPI to
 	    // make sure the housekeeping SPI works.
 
-		start_csb();
-		write_byte(8'h40);	// Read stream command
-		write_byte(8'h03);	// Address (register 3 = product ID)
+	    start_csb();
+	    write_byte(8'h40);	// Read stream command
+	    write_byte(8'h03);	// Address (register 3 = product ID)
 	    read_byte(tbdata);
 	    end_csb();
 	    #10;
-	    $display("Read data = 0x%02x (should be 0x05)", tbdata);
+	    $display("Read data = 0x%02x (should be 0x10)", tbdata);
 
 	    // Toggle external reset
-		start_csb();
-		write_byte(8'h80);	// Write stream command
-		write_byte(8'h07);	// Address (register 7 = external reset)
-		write_byte(8'h01);	// Data = 0x01 (apply external reset)
-		end_csb();
+	    start_csb();
+	    write_byte(8'h80);	// Write stream command
+	    write_byte(8'h07);	// Address (register 7 = external reset)
+	    write_byte(8'h01);	// Data = 0x01 (apply external reset)
+	    end_csb();
 
-		start_csb();
-		write_byte(8'h80);	// Write stream command
-		write_byte(8'h07);	// Address (register 7 = external reset)
-		write_byte(8'h00);	// Data = 0x00 (release external reset)
-		end_csb();
+	    start_csb();
+	    write_byte(8'h80);	// Write stream command
+	    write_byte(8'h07);	// Address (register 7 = external reset)
+	    write_byte(8'h00);	// Data = 0x00 (release external reset)
+	    end_csb();
 
-	    // Read all registers (0 to 8)
-		start_csb();
-		write_byte(8'h40);	// Read stream command
-		write_byte(8'h00);	// Address (register 3 = product ID)
+	    // Read all registers (0 to 18)
+	    start_csb();
+	    write_byte(8'h40);	// Read stream command
+	    write_byte(8'h00);	// Address (register 3 = product ID)
 	    read_byte(tbdata);
+
 	    $display("Read register 0 = 0x%02x (should be 0x00)", tbdata);
 		if(tbdata !== 8'h00) begin $display("Monitor: Test HK SPI (RTL) Failed"); $finish; end
 	    read_byte(tbdata);
 	    $display("Read register 1 = 0x%02x (should be 0x04)", tbdata);
-		if(tbdata !== 8'h14) begin $display("Monitor: Test HK SPI (RTL) Failed"); $finish; end
+		if(tbdata !== 8'h04) begin $display("Monitor: Test HK SPI (RTL) Failed"); $finish; end
 	    read_byte(tbdata);
 	    $display("Read register 2 = 0x%02x (should be 0x56)", tbdata);
 		if(tbdata !== 8'h56) begin $display("Monitor: Test HK SPI (RTL) Failed, %02x", tbdata); $finish; end
 	    read_byte(tbdata);
-	    $display("Read register 3 = 0x%02x (should be 0x05)", tbdata);
-		if(tbdata !== 8'h05) begin $display("Monitor: Test HK SPI (RTL) Failed"); $finish; end
+	    $display("Read register 3 = 0x%02x (should be 0x10)", tbdata);
+		if(tbdata !== 8'h10) begin $display("Monitor: Test HK SPI (RTL) Failed"); $finish; end
 	    read_byte(tbdata);
-	    $display("Read register 4 = 0x%02x (should be 0x07)", tbdata);
-		if(tbdata !== 8'h07) begin $display("Monitor: Test HK SPI (RTL) Failed"); $finish; end
+	    $display("Read register 4 = 0x%02x (should be 0x00)", tbdata);
+		if(tbdata !== 8'h00) begin $display("Monitor: Test HK SPI (RTL) Failed"); $finish; end
 	    read_byte(tbdata);
-	    $display("Read register 5 = 0x%02x (should be 0x01)", tbdata);
-		if(tbdata !== 8'h01) begin $display("Monitor: Test HK SPI (RTL) Failed"); $finish; end
+	    $display("Read register 5 = 0x%02x (should be 0x00)", tbdata);
+		if(tbdata !== 8'h00) begin $display("Monitor: Test HK SPI (RTL) Failed"); $finish; end
 	    read_byte(tbdata);
 	    $display("Read register 6 = 0x%02x (should be 0x00)", tbdata);
 		if(tbdata !== 8'h00) begin $display("Monitor: Test HK SPI (RTL) Failed"); $finish; end
@@ -172,8 +177,38 @@ module hkspi_tb;
 	    $display("Read register 7 = 0x%02x (should be 0x00)", tbdata);
 		if(tbdata !== 8'h00) begin $display("Monitor: Test HK SPI (RTL) Failed"); $finish; end
 	    read_byte(tbdata);
-	    $display("Read register 8 = 0x%02x (should be 0x00)", tbdata);
+	    $display("Read register 8 = 0x%02x (should be 0x01)", tbdata);
+		if(tbdata !== 8'h01) begin $display("Monitor: Test HK SPI (RTL) Failed"); $finish; end
+	    read_byte(tbdata);
+	    $display("Read register 9 = 0x%02x (should be 0x01)", tbdata);
+		if(tbdata !== 8'h01) begin $display("Monitor: Test HK SPI (RTL) Failed"); $finish; end
+	    read_byte(tbdata);
+	    $display("Read register 10 = 0x%02x (should be 0x00)", tbdata);
 		if(tbdata !== 8'h00) begin $display("Monitor: Test HK SPI (RTL) Failed"); $finish; end
+	    read_byte(tbdata);
+	    $display("Read register 11 = 0x%02x (should be 0x00)", tbdata);
+		if(tbdata !== 8'h00) begin $display("Monitor: Test HK SPI (RTL) Failed"); $finish; end
+	    read_byte(tbdata);
+	    $display("Read register 12 = 0x%02x (should be 0x00)", tbdata);
+		if(tbdata !== 8'h00) begin $display("Monitor: Test HK SPI (RTL) Failed"); $finish; end
+	    read_byte(tbdata);
+	    $display("Read register 13 = 0x%02x (should be 0xff)", tbdata);
+		if(tbdata !== 8'hff) begin $display("Monitor: Test HK SPI (RTL) Failed"); $finish; end
+	    read_byte(tbdata);
+	    $display("Read register 14 = 0x%02x (should be 0xef)", tbdata);
+		if(tbdata !== 8'hef) begin $display("Monitor: Test HK SPI (RTL) Failed"); $finish; end
+	    read_byte(tbdata);
+	    $display("Read register 15 = 0x%02x (should be 0xff)", tbdata);
+		if(tbdata !== 8'hff) begin $display("Monitor: Test HK SPI (RTL) Failed"); $finish; end
+	    read_byte(tbdata);
+	    $display("Read register 16 = 0x%02x (should be 0x03)", tbdata);
+		if(tbdata !== 8'h03) begin $display("Monitor: Test HK SPI (RTL) Failed"); $finish; end
+	    read_byte(tbdata);
+	    $display("Read register 17 = 0x%02x (should be 0x00)", tbdata);
+		if(tbdata !== 8'h00) begin $display("Monitor: Test HK SPI (RTL) Failed"); $finish; end
+	    read_byte(tbdata);
+	    $display("Read register 18 = 0x%02x (should be 0x04)", tbdata);
+		if(tbdata !== 8'h04) begin $display("Monitor: Test HK SPI (RTL) Failed"); $finish; end
 		
         end_csb();
 
@@ -191,26 +226,27 @@ module hkspi_tb;
 	assign VSS = 1'b0;
 	assign VDD1V8 = 1'b1;
 
+	wire hk_sck;
+	wire hk_csb;
+	wire hk_sdi;
+
+	assign hk_sck = SCK;
+	assign hk_csb = CSB;
+	assign hk_sdi = SDI;
+
 	caravel uut (
 		.vdd3v3	  (VDD3V3),
 		.vdd1v8	  (VDD1V8),
 		.vss	  (VSS),
 		.clock	  (clock),
-		.SDI	  (SDI),
-		.SDO	  (SDO),
-		.CSB	  (CSB),
-		.SCK	  (SCK),
-		.ser_rx	  (1'b0),
-		.ser_tx	  (tbuart_rx),
-		.irq	  (1'b0),
 		.gpio     (gpio),
+		.mprj_io  ({checkbits, noconnect[9:1], uart_tx, uart_rx,
+				hk_sck, hk_csb, hk_sdi, SDO, noconnect[0]}),
 		.flash_csb(flash_csb),
 		.flash_clk(flash_clk),
 		.flash_io0(flash_io0),
 		.flash_io1(flash_io1),
-		.flash_io2(flash_io2),
-		.flash_io3(flash_io3),
-		.RSTB	  (RSTB)
+		.resetb	  (RSTB)
 	);
 
 	spiflash #(
@@ -220,12 +256,12 @@ module hkspi_tb;
 		.clk(flash_clk),
 		.io0(flash_io0),
 		.io1(flash_io1),
-		.io2(flash_io2),
-		.io3(flash_io3)
+		.io2(),			// not used
+		.io3()			// not used
 	);
 
 	tbuart tbuart (
-		.ser_rx(tbuart_rx)
+		.ser_rx(uart_tx)
 	);
 		
 endmodule

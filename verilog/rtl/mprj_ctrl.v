@@ -26,9 +26,7 @@ module mprj_ctrl_wb #(
 
     // Read/write data to each GPIO pad from management SoC
     input [IO_PADS-1:0] mgmt_gpio_in,
-    output [IO_PADS-1:0] mgmt_gpio_out,
-    output [IO_PADS-1:0] mgmt_gpio_outz,
-    output [IO_PADS-1:0] mgmt_gpio_oeb		// Only JTAG and SDO connected
+    output [IO_PADS-1:0] mgmt_gpio_out
 );
     wire resetn;
     wire valid;
@@ -63,9 +61,7 @@ module mprj_ctrl_wb #(
 	.serial_data_out(serial_data_out),
 	// .mgmt_gpio_io(mgmt_gpio_io)
 	.mgmt_gpio_in(mgmt_gpio_in),
-	.mgmt_gpio_out(mgmt_gpio_out),
-	.mgmt_gpio_outz(mgmt_gpio_outz),
-	.mgmt_gpio_oeb(mgmt_gpio_oeb)
+	.mgmt_gpio_out(mgmt_gpio_out)
     );
 
 endmodule
@@ -94,9 +90,7 @@ module mprj_ctrl #(
     output serial_resetn,
     output serial_data_out,
     input  [IO_PADS-1:0] mgmt_gpio_in,
-    output [IO_PADS-1:0] mgmt_gpio_out,
-    output [IO_PADS-1:0] mgmt_gpio_outz,
-    output [IO_PADS-1:0] mgmt_gpio_oeb
+    output [IO_PADS-1:0] mgmt_gpio_out
 );
 
 `define IDLE	2'b00
@@ -111,9 +105,8 @@ module mprj_ctrl #(
 
     reg [IO_CTRL_BITS-1:0] io_ctrl[IO_PADS-1:0];  // I/O control, 1 word per gpio pad
     reg [PWR_CTRL_BITS-1:0] pwr_ctrl[PWR_PADS-1:0]; // Power control, 1 word per power pad
-    reg [IO_PADS-1:0] mgmt_gpio_out; // I/O write data, 1 bit per gpio pad
-    wire [IO_PADS-1:0] mgmt_gpio_outz;	 // I/O write data output when input disabled
-    wire [IO_PADS-1:0] mgmt_gpio_oeb;
+    reg [IO_PADS-1:0] mgmt_gpio_outr; // I/O write data, 1 bit per gpio pad
+    wire [IO_PADS-1:0] mgmt_gpio_out;	 // I/O write data output when input disabled
     reg xfer_ctrl;			// Transfer control (1 bit)
 
     wire [IO_PADS-1:0] io_ctrl_sel;	// wishbone selects
@@ -129,12 +122,8 @@ module mprj_ctrl #(
     generate
         for (i=0; i<IO_PADS; i=i+1) begin
             assign io_ctrl_sel[i] = (iomem_addr[7:0] == (IO_BASE_ADR[7:0] + i*4)); 
-	    // OEB is both tranferred by serial chain and output;  that way
-	    // each pad can selectively choose whether to have a dedicated
-	    // signal for OEB, or to use it as a static configuration bit.
-    	    assign mgmt_gpio_oeb[i] = io_ctrl[i][OEB];
-    	    assign mgmt_gpio_outz[i] = (io_ctrl[i][INP_DIS] == 1'b1) ?
-			mgmt_gpio_out[i] : 1'bz;
+    	    assign mgmt_gpio_out[i] = (io_ctrl[i][INP_DIS] == 1'b1) ?
+			mgmt_gpio_outr[i] : 1'bz;
         end
     endgenerate
 
@@ -150,7 +139,7 @@ module mprj_ctrl #(
     always @(posedge clk) begin
 	if (!resetn) begin
 	    xfer_ctrl <= 0;
-	    mgmt_gpio_out <= 'd0;
+	    mgmt_gpio_outr <= 'd0;
 	end else begin
 	    iomem_ready <= 0;
 	    if (iomem_valid && !iomem_ready && iomem_addr[31:8] == BASE_ADR[31:8]) begin
@@ -159,7 +148,7 @@ module mprj_ctrl #(
 		if (io_data_sel) begin
 		    iomem_rdata <= mgmt_gpio_in;
 		    if (iomem_wstrb[0]) begin
-			mgmt_gpio_out[IO_PADS-1:0] <= iomem_wdata[IO_PADS-1:0];
+			mgmt_gpio_outr[IO_PADS-1:0] <= iomem_wdata[IO_PADS-1:0];
 		    end
 
 		end else if (xfer_sel) begin

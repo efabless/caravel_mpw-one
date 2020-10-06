@@ -23,19 +23,17 @@
 `include "caravel.v"
 `include "spiflash.v"
 
-module striVe_perf_tb;
+module perf_tb;
 	reg clock;
+	reg RSTB;
 
-	reg SDI, CSB, SCK, RSTB;
-
-	wire [1:0] gpio;
+	wire gpio;
+	wire [15:0] checkbits;
+	wire [15:0] noconnect;
 	wire flash_csb;
 	wire flash_clk;
 	wire flash_io0;
 	wire flash_io1;
-	wire flash_io2;
-	wire flash_io3;
-	wire SDO;
 
 	// External clock is used by default.  Make this artificially fast for the
 	// simulation.  Normally this would be a slow clock and the digital PLL
@@ -50,15 +48,15 @@ module striVe_perf_tb;
 	reg [31:0] kcycles;
 
 	initial begin
-		$dumpfile("striVe_perf.vcd");
-		$dumpvars(0, striVe_perf_tb);
+		$dumpfile("perf.vcd");
+		$dumpvars(0, perf_tb);
 
 		kcycles = 0;
-		// Repeat cycles of 1000 XCLK edges as needed to complete testbench
+		// Repeat cycles of 1000 clock edges as needed to complete testbench
 		repeat (150) begin
-			repeat (1000) @(posedge XCLK);
+			repeat (1000) @(posedge clock);
 			//$display("+1000 cycles");
-			kcycles<=kcycles+1;
+			kcycles <= kcycles + 1;
 		end
 		$display("%c[1;31m",27);
 		$display ("Monitor: Timeout, Test Performance (RTL) Failed");
@@ -67,24 +65,19 @@ module striVe_perf_tb;
 	end
 
 	initial begin
-		CSB <= 1'b1;
-		SCK <= 1'b0;
-		SDI <= 1'b0;
 		RSTB <= 1'b0;
-		
 		#1000;
 		RSTB <= 1'b1;	    // Release reset
 		#2000;
-		CSB <= 1'b0;	    // Apply CSB to start transmission
 	end
 
-	always @(gpio) begin
+	always @(checkbits) begin
 		//#1 $display("GPIO state = %X ", gpio);
-		if(gpio == 16'hA000) begin
+		if(checkbits == 16'hA000) begin
 			kcycles = 0;
 			$display("Performance Test started");
 		end
-		else if(gpio == 16'hAB00) begin
+		else if(checkbits == 16'hAB00) begin
 			//$display("Monitor: number of cycles/100 iterations: %d KCycles", kcycles);
 			$display("Monitor: Test Performance (RTL) passed [%0d KCycles]", kcycles);
 			$finish;
@@ -104,22 +97,13 @@ module striVe_perf_tb;
 		.vdd1v8	  (VDD1V8),
 		.vss	  (VSS),
 		.clock	  (clock),
-		.xclk	  (XCLK),
-		.SDI	  (SDI),
-		.SDO	  (SDO),
-		.CSB	  (CSB),
-		.SCK	  (SCK),
-		.ser_rx	  (1'b0),
-		.ser_tx	  (	    ),
-		.irq	  (1'b0	    ),
 		.gpio     (gpio),
+		.mprj_io  ({checkbits, noconnect}),
 		.flash_csb(flash_csb),
 		.flash_clk(flash_clk),
 		.flash_io0(flash_io0),
 		.flash_io1(flash_io1),
-		.flash_io2(flash_io2),
-		.flash_io3(flash_io3),
-		.RSTB	  (RSTB)
+		.resetb	  (RSTB)
 	);
 
 	spiflash #(
@@ -129,8 +113,8 @@ module striVe_perf_tb;
 		.clk(flash_clk),
 		.io0(flash_io0),
 		.io1(flash_io1),
-		.io2(flash_io2),
-		.io3(flash_io3)
+		.io2(),			// not used
+		.io3()			// not used
 	);
 
 endmodule

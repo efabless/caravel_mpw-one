@@ -52,7 +52,6 @@ module housekeeping_spi(
     vdd, vss, 
 `endif
     RSTB, SCK, SDI, CSB, SDO, sdo_enb,
-    mgmt_sck, mgmt_sdi, mgmt_csb, mgmt_sdo,
     pll_dco_ena, pll_div, pll_sel,
     pll_trim, pll_bypass, irq, reset, trap,
     mask_rev_in, pass_thru_reset,
@@ -74,11 +73,6 @@ module housekeeping_spi(
     input CSB;	    // from padframe
     output SDO;	    // to padframe
     output sdo_enb; // to padframe
-
-    input mgmt_sck;    // from management SoC
-    input mgmt_sdi;    // from management SoC
-    input mgmt_csb;    // from management SoC
-    output mgmt_sdo;   // to management SoC
 
     output pll_dco_ena;
     output [4:0] pll_div;
@@ -122,21 +116,7 @@ module housekeeping_spi(
     wire pass_thru_mgmt_delay;
     wire pass_thru_user;		// Mode detected by spi_slave
     wire pass_thru_user_delay;
-
-    // Connect to management SoC SPI master when mgmt_csb is low
-
-    wire loc_sck;
-    wire loc_csb;
-    wire loc_sdi;
     wire loc_sdo;
-    wire loc_sdoenb;
-
-    assign loc_csb = (mgmt_csb == 1'b0) ? 1'b0 : CSB;
-    assign loc_sck = (mgmt_csb == 1'b0) ? mgmt_sck : SCK;
-    assign loc_sdi = (mgmt_csb == 1'b0) ? mgmt_sdi : SDI;
-
-    assign mgmt_sdo = (mgmt_csb == 1'b0) ? loc_sdo : 1'b0;
-    assign sdo_enb = (mgmt_csb == 1'b0) ? 1'b1 : loc_sdoenb;
 
     // Pass-through mode handling
 
@@ -156,11 +136,11 @@ module housekeeping_spi(
 
     housekeeping_spi_slave U1 (
 	.reset(~RSTB),
-    	.SCK(loc_sck),
-    	.SDI(loc_sdi),
-    	.CSB(loc_csb),
+    	.SCK(SCK),
+    	.SDI(SDI),
+    	.CSB(CSB),
     	.SDO(loc_sdo),
-    	.sdoenb(loc_sdoenb),
+    	.sdoenb(sdo_enb),
     	.idata(odata),
     	.odata(idata),
     	.oaddr(iaddr),

@@ -1,3 +1,4 @@
+# ---- Test patterns for project striVe ----
 FIRMWARE_PATH = ../..
 RTL_PATH = ../../../../rtl
 IP_PATH = ../../../../ip
@@ -16,7 +17,7 @@ hex:  ${PATTERN:=.hex}
 %.vvp: %_tb.v %.hex
 	iverilog -DFUNCTIONAL -I $(BEHAVIOURAL_MODELS)-I $(IP_PATH) -I $(RTL_PATH) \
 	$< -o $@
-	
+
 %.vcd: %.vvp
 	vvp $<
 
@@ -24,7 +25,9 @@ hex:  ${PATTERN:=.hex}
 	${GCC_PATH}/riscv32-unknown-elf-gcc -march=rv32imc -Wl,-Bstatic,-T,$(FIRMWARE_PATH)/sections.lds,--strip-debug -ffreestanding -nostdlib -o $@ $(FIRMWARE_PATH)/start.s $<
 
 %.hex: %.elf
-	${GCC_PATH}/riscv32-unknown-elf-objcopy -O verilog $< /dev/stdout | sed -e '1 s/@10000000/@00000000/; 2,65537 d;' > $@
+	${GCC_PATH}/riscv32-unknown-elf-objcopy -O verilog $< $@
+	# to fix flash base address
+	sed -i 's/@10000000/@00000000/g' $@
 
 %.bin: %.elf
 	${GCC_PATH}/riscv32-unknown-elf-objcopy -O binary $< /dev/stdout | tail -c +1048577 > $@

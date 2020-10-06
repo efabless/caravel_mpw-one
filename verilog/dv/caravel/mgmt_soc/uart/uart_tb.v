@@ -29,13 +29,17 @@ module uart_tb;
 
 	reg SDI, CSB, SCK, RSTB;
 
-	wire [1:0] gpio;
+	wire gpio;
 	wire flash_csb;
 	wire flash_clk;
 	wire flash_io0;
 	wire flash_io1;
 	wire flash_io2;
 	wire flash_io3;
+	wire [15:0] checkbits;
+	wire [13:0] noconnect;
+	wire uart_tx;
+	wire uart_rx;
 	wire SDO;
 
 	always #12.5 clock <= (clock === 1'b0);
@@ -67,12 +71,12 @@ module uart_tb;
 		CSB <= 1'b0;
 	end
 
-	always @(gpio) begin
-		if(gpio == 16'hA000) begin
+	always @(checkbits) begin
+		if(checkbits == 16'hA000) begin
 			$display("UART Test started");
 		end
-		else if(gpio == 16'hAB00) begin
-			#1000;
+		else if(checkbits == 16'hAB00) begin
+			#20000;		// Allow time for last transmission
 			$finish;
 		end
 	end
@@ -90,21 +94,14 @@ module uart_tb;
 		.vdd1v8	  (VDD1V8),
 		.vss	  (VSS),
 		.clock	  (clock),
-		.SDI	  (SDI),
-		.SDO	  (SDO),
-		.CSB	  (CSB),
-		.SCK	  (SCK),
-		.ser_rx	  (1'b0),
-		.ser_tx	  (tbuart_rx),
-		.irq	  (1'b0),
 		.gpio     (gpio),
+		.mprj_io  ({checkbits, noconnect[13:5],
+				uart_tx, uart_rx, noconnect[4:0]}),
 		.flash_csb(flash_csb),
 		.flash_clk(flash_clk),
 		.flash_io0(flash_io0),
 		.flash_io1(flash_io1),
-		.flash_io2(flash_io2),
-		.flash_io3(flash_io3),
-		.RSTB	  (RSTB)
+		.resetb	  (RSTB)
 	);
 
 	spiflash #(
@@ -114,13 +111,13 @@ module uart_tb;
 		.clk(flash_clk),
 		.io0(flash_io0),
 		.io1(flash_io1),
-		.io2(flash_io2),
-		.io3(flash_io3)
+		.io2(),			// not used
+		.io3()			// not used
 	);
 
 	// Testbench UART
 	tbuart tbuart (
-		.ser_rx(tbuart_rx)
+		.ser_rx(uart_tx)
 	);
 		
 endmodule

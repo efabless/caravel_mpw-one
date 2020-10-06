@@ -76,25 +76,10 @@ module mgmt_soc (
     output mprj_io_loader_data,
 
     // Mega-Project pad data (when management SoC controls the pad)
-    // inout [MPRJ_IO_PADS-1:0] mgmt_io_data,
     input [MPRJ_IO_PADS-1:0] mgmt_in_data,
     output [MPRJ_IO_PADS-1:0] mgmt_out_data,
-    output [MPRJ_IO_PADS-1:0] mgmt_outz_data,
-    output [MPRJ_IO_PADS-1:0] mgmt_oeb_data,
-
-    // SPI master
-    output spi_csb,
-    output spi_sck,
-    output spi_sdo,
-    output spi_sdoenb,
-    input  spi_sdi,
-
-    // UART
-    output ser_tx,
-    input  ser_rx,
 
     // IRQ
-    input  irq_pin,		// dedicated IRQ pin
     input  irq_spi,		// IRQ from standalone SPI
 
     // Flash memory control (SPI master)
@@ -255,6 +240,27 @@ module mgmt_soc (
         {RAM_BASE_ADR}
     };
 
+    // The following functions are connected to specific user project
+    // area pins, when under control of the management area (during
+    // startup, and when not otherwise programmed for the user project).
+
+    // JTAG      = jtag_out		 (inout)
+    // SDO       = sdo_out	         (output)   (shared with SPI master)
+    // SDI       = mgmt_in_data[2]       (input)    (shared with SPI master)
+    // CSB       = mgmt_in_data[3]       (input)    (shared with SPI master)
+    // SCK       = mgmt_in_data[4]       (input)    (shared with SPI master)
+    // ser_rx    = mgmt_in_data[5]       (input)
+    // ser_tx    = mgmt_out_data[6]      (output)
+    // irq_pin   = mgmt_in_data[7]       (input)
+    // flash_csb = mgmt_out_data[8]      (output)   (user area flash)
+    // flash_sck = mgmt_out_data[9]      (output)   (user area flash)
+    // flash_io0 = mgmt_in/out_data[10]  (input)    (user area flash)
+    // flash_io1 = mgmt_in/out_data[11]  (output)   (user area flash)
+
+    // OEB lines for [0] and [1] are the only ones connected directly to
+    // the pad.  All others have OEB controlled by the configuration bit
+    // in the control block.
+
     // memory-mapped I/O control registers
     wire gpio_pullup;    	// Intermediate GPIO pullup
     wire gpio_pulldown;  	// Intermediate GPIO pulldown
@@ -272,11 +278,8 @@ module mgmt_soc (
 
     // GPIO assignments
     assign gpio_out = (trap_output_dest == 1'b1) ? trap : gpio;
-
     assign gpio_outenb = (trap_output_dest == 1'b0) ? gpio_oeb : 1'b0;
-
     assign gpio_pullup = (trap_output_dest == 1'b0) ? gpio_pu : 1'b0;
-
     assign gpio_pulldown = (trap_output_dest == 1'b0) ? gpio_pd : 1'b0;
 
     // Convert GPIO signals to sky130_fd_io pad signals
@@ -301,13 +304,12 @@ module mgmt_soc (
     wire irq_counter_timer1;
 
     assign irq_stall = 0;
-    assign irq_7 = (irq_7_inputsrc == 1'b1) ? gpio_in_pad : 1'b0;
+    assign irq_7 = (irq_7_inputsrc == 1'b1) ? mgmt_in_data[7] : 1'b0;
 
     always @* begin
         irq = 0;
         irq[3] = irq_stall;
         irq[4] = irq_uart;
-        irq[5] = irq_pin;
         irq[6] = irq_spi;
         irq[7] = irq_7;
         irq[9] = irq_spi_master;
@@ -430,6 +432,7 @@ module mgmt_soc (
     wire uart_stb_i;
     wire uart_ack_o;
     wire [31:0] uart_dat_o;
+    wire uart_enabled;
 
     simpleuart_wb #(
         .BASE_ADR(UART_BASE_ADR),
@@ -450,8 +453,9 @@ module mgmt_soc (
         .wb_ack_o(uart_ack_o),
         .wb_dat_o(uart_dat_o),
 
+	.uart_enabled(uart_enabled),
         .ser_tx(ser_tx),
-        .ser_rx(ser_rx)
+        .ser_rx(mgmt_in_data[5])
     );
 
     // Wishbone SPI master
@@ -478,11 +482,11 @@ module mgmt_soc (
         .wb_ack_o(spi_master_ack_o),
         .wb_dat_o(spi_master_dat_o),
 
-        .csb(spi_csb),
-        .sck(spi_sck),
-        .sdi(spi_sdi),
-        .sdo(spi_sdo),
-        .sdoenb(spi_sdoenb),
+        .csb(mgmt_out_pre[3]),
+        .sck(mgmt_out_pre[4]),
+        .sdi(mgmt_in_data[1]),
+        .sdo(mgmt_out_pre[2]),
+        .sdoenb(),
 	.irq(irq_spi_master)
     );
 
@@ -635,6 +639,15 @@ module mgmt_soc (
     wire mprj_ctrl_stb_i;
     wire mprj_ctrl_ack_o;
     wire [31:0] mprj_ctrl_dat_o;
+    wire [31:0] mgmt_out_pre;
+
+    // Bits assigned to specific functions as outputs prevent the
+    // mprj GPIO-as-output from applying data when that function
+    // is active
+
+    assign mgmt_out_data[MPRJ_IO_PADS-1:7] = mgmt_out_pre[MPRJ_IO_PADS-1:7];
+    assign mgmt_out_data[6] = uart_enabled ? ser_tx : mgmt_out_pre[6];
+    assign mgmt_out_data[5:0] = mgmt_out_pre[5:0];
 
     mprj_ctrl_wb #(
         .BASE_ADR(MPRJ_CTRL_ADR),
@@ -656,11 +669,8 @@ module mgmt_soc (
 	.serial_clock(mprj_io_loader_clock),
 	.serial_resetn(mprj_io_loader_resetn),
 	.serial_data_out(mprj_io_loader_data),
-	// .mgmt_gpio_io(mgmt_io_data)
-	.mgmt_gpio_in(mgmt_in_data),
-	.mgmt_gpio_out(mgmt_out_data),
-	.mgmt_gpio_outz(mgmt_outz_data),
-	.mgmt_gpio_oeb(mgmt_oeb_data)
+	.mgmt_gpio_out(mgmt_out_pre),
+	.mgmt_gpio_in(mgmt_in_data)
     );
 
     // Wishbone Slave RAM
