@@ -41,13 +41,17 @@
 `include "housekeeping_spi.v"
 `include "digital_pll.v"
 `include "caravel_clkrst.v"
-`include "mprj_counter.v"
 `include "mgmt_core.v"
 `include "mprj_io.v"
 `include "chip_io.v"
 `include "user_id_programming.v"
 `include "gpio_control_block.v"
 `include "simple_por.v"
+
+/*------------------------------*/
+/* Include user project here	*/
+/*------------------------------*/
+`include "user_proj_example.v"
 
 `ifdef USE_OPENRAM
     `include "sram_1rw1r_32_8192_8_sky130.v"
@@ -352,7 +356,11 @@ module caravel (
 		.TE_B(la_oen)
 	);
 	
-	mega_project mprj ( 
+	/*--------------------------------------*/
+	/* User project is instantiated  here	*/
+	/*--------------------------------------*/
+
+	user_proj_example mprj ( 
     		.wb_clk_i(caravel_clk),
     		.wb_rst_i(!caravel_rstn),
 		// MGMT SoC Wishbone Slave 
@@ -369,9 +377,13 @@ module caravel (
 		.la_data_out(la_data_out_mprj),
 		.la_oen (la_oen),
 		// IO Pads
-		.io_in (mprj_io_in),
-    		.io_out()		// ???
+		.io_in (user_io_in),
+    		.io_out(user_io_out)
 	);
+
+	/*--------------------------------------*/
+	/* End user project instantiation	*/
+	/*--------------------------------------*/
 
     wire [`MPRJ_IO_PADS-1:0] gpio_serial_link_shifted;
 

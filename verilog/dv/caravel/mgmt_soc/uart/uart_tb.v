@@ -26,21 +26,20 @@
 
 module uart_tb;
 	reg clock;
-
-	reg SDI, CSB, SCK, RSTB;
+	reg RSTB;
 
 	wire gpio;
 	wire flash_csb;
 	wire flash_clk;
 	wire flash_io0;
 	wire flash_io1;
-	wire flash_io2;
-	wire flash_io3;
+	wire [31:0] mprj_io;
 	wire [15:0] checkbits;
-	wire [13:0] noconnect;
 	wire uart_tx;
-	wire uart_rx;
 	wire SDO;
+
+	assign checkbits = mprj_io[31:16];
+	assign uart_tx = mprj_io[6];
 
 	always #12.5 clock <= (clock === 1'b0);
 
@@ -61,14 +60,10 @@ module uart_tb;
 	end
 
 	initial begin
-		CSB <= 1'b1;
-		SCK <= 1'b0;
-		SDI <= 1'b0;
 		RSTB <= 1'b0;
 		#1000;
 		RSTB <= 1'b1;	    // Release reset
 		#2000;
-		CSB <= 1'b0;
 	end
 
 	always @(checkbits) begin
@@ -77,6 +72,7 @@ module uart_tb;
 		end
 		else if(checkbits == 16'hAB00) begin
 			#20000;		// Allow time for last transmission
+			$display("UART Test passed");
 			$finish;
 		end
 	end
@@ -95,8 +91,7 @@ module uart_tb;
 		.vss	  (VSS),
 		.clock	  (clock),
 		.gpio     (gpio),
-		.mprj_io  ({checkbits, noconnect[13:5],
-				uart_tx, uart_rx, noconnect[4:0]}),
+		.mprj_io  (mprj_io),
 		.flash_csb(flash_csb),
 		.flash_clk(flash_clk),
 		.flash_io0(flash_io0),
