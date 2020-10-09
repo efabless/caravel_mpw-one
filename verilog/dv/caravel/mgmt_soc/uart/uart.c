@@ -41,12 +41,12 @@ void main()
     reg_uart_enable = 1;
 
     // Start test
-    reg_mprj_data = 0xa0000000;
+    reg_mprj_datal = 0xa0000000;
 
     // This should appear at the output, received by the testbench UART.
     print("\n");
     // print("Monitor: Test UART (RTL) passed\n\n");
     print("X\n\n");
 
-    reg_mprj_data = 0xab000000;
+    reg_mprj_datal = 0xab000000;
 }

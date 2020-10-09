@@ -39,15 +39,15 @@ int main()
     reg_mprj_xfer = 1;
     while (reg_mprj_xfer == 1);
 
-    reg_mprj_data = 0;
+    reg_mprj_datal = 0;
 
     // start test
-    reg_mprj_data = 0xA0000000;
+    reg_mprj_datal = 0xA0000000;
 	
     for (i=0; i<100; i++)
         sum += (sum + i);
     
-    reg_mprj_data = 0xAB000000;
+    reg_mprj_datal = 0xAB000000;
     
     return sum;
 }

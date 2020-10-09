@@ -60,7 +60,7 @@ void main()
 	reg_la3_ena = 0xFFFFFFFF;    // [127:96]
 
 	// Flag start of the test
-	reg_mprj_data = 0xAB600000;
+	reg_mprj_datal = 0xAB600000;
 
 	// Configure LA[64] LA[65] as outputs from the cpu
 	reg_la2_ena  = 0xFFFFFFFC; 
@@ -75,7 +75,7 @@ void main()
 	}
 
 	if (reg_la0_data == 0x05) {
-		reg_mprj_data = 0xAB610000;
+		reg_mprj_datal = 0xAB610000;
 	}
 
 }

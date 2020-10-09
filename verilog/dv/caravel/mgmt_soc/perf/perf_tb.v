@@ -29,11 +29,13 @@ module perf_tb;
 
 	wire gpio;
 	wire [15:0] checkbits;
-	wire [15:0] noconnect;
+	wire [36:0] mprj_io;
 	wire flash_csb;
 	wire flash_clk;
 	wire flash_io0;
 	wire flash_io1;
+
+	assign checkbits = mprj_io[31:16];
 
 	// External clock is used by default.  Make this artificially fast for the
 	// simulation.  Normally this would be a slow clock and the digital PLL
@@ -93,12 +95,23 @@ module perf_tb;
 	assign VDD3V3 = 1'b1;
 
 	caravel uut (
-		.vdd3v3	  (VDD3V3  ),
-		.vdd1v8	  (VDD1V8),
-		.vss	  (VSS),
+		.vddio	  (VDD3V3),
+		.vssio	  (VSS),
+		.vdda	  (VDD3V3),
+		.vssa	  (VSS),
+		.vccd	  (VDD1V8),
+		.vssd	  (VSS),
+		.vdda1    (VDD3V3),
+		.vdda2    (VDD3V3),
+		.vssa1	  (VSS),
+		.vssa2	  (VSS),
+		.vccd1	  (VDD1V8),
+		.vccd2	  (VDD1V8),
+		.vssd1	  (VSS),
+		.vssd2	  (VSS),
 		.clock	  (clock),
 		.gpio     (gpio),
-		.mprj_io  ({checkbits, noconnect}),
+		.mprj_io  (mprj_io),
 		.flash_csb(flash_csb),
 		.flash_clk(flash_clk),
 		.flash_io0(flash_io0),

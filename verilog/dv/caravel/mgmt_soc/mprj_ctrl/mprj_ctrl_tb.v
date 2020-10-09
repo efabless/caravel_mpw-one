@@ -13,7 +13,7 @@ module mprj_ctrl_tb;
 	wire flash_clk;
 	wire flash_io0;
 	wire flash_io1;
-	wire [31:0] user_io;
+	wire [36:0] user_io;
 	wire SDO;
 
 	wire [15:0] checkbits;
@@ -67,14 +67,10 @@ module mprj_ctrl_tb;
 	end
 
 	initial begin
-		CSB <= 1'b1;
-		SCK <= 1'b0;
-		SDI <= 1'b0;
 		RSTB <= 1'b0;
 		#1000;
 		RSTB <= 1'b1;	    // Release reset
 		#2000;
-		CSB <= 1'b0;	    // Apply CSB to start transmission
 	end
 
 	always @(gpio) begin
@@ -90,9 +86,20 @@ module mprj_ctrl_tb;
 	assign VDD3V3 = 1'b1;
 
 	caravel uut (
-		.vdd3v3	   (VDD3V3),
-		.vdd1v8	   (VDD1V8),
-		.vss	   (VSS),
+		.vddio	  (VDD3V3),
+		.vssio	  (VSS),
+		.vdda	  (VDD3V3),
+		.vssa	  (VSS),
+		.vccd	  (VDD1V8),
+		.vssd	  (VSS),
+		.vdda1    (VDD3V3),
+		.vdda2    (VDD3V3),
+		.vssa1	  (VSS),
+		.vssa2	  (VSS),
+		.vccd1	  (VDD1V8),
+		.vccd2	  (VDD1V8),
+		.vssd1	  (VSS),
+		.vssd2	  (VSS),
 		.clock	   (clock),
 		.gpio      (gpio),
 		.mprj_io   (user_io),

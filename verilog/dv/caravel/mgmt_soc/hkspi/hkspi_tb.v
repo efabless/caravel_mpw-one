@@ -14,7 +14,7 @@ module hkspi_tb;
 
 	wire gpio;
 	wire [15:0] checkbits;
-	wire [9:0] noconnect;
+	wire [36:0] mprj_io;
 	wire uart_tx;
 	wire uart_rx;
 
@@ -234,14 +234,32 @@ module hkspi_tb;
 	assign hk_csb = CSB;
 	assign hk_sdi = SDI;
 
+	assign checkbits = mprj_io[31:16];
+	assign uart_tx = mprj_io[6];
+	assign mprj_io[5] = uart_rx;
+	assign mprj_io[4] = hk_sck;
+	assign mprj_io[3] = hk_csb;
+	assign mprj_io[2] = hk_sdi;
+	assign SDO = mprj_io[1];
+	
 	caravel uut (
-		.vdd3v3	  (VDD3V3),
-		.vdd1v8	  (VDD1V8),
-		.vss	  (VSS),
+		.vddio	  (VDD3V3),
+		.vssio	  (VSS),
+		.vdda	  (VDD3V3),
+		.vssa	  (VSS),
+		.vccd	  (VDD1V8),
+		.vssd	  (VSS),
+		.vdda1    (VDD3V3),
+		.vdda2    (VDD3V3),
+		.vssa1	  (VSS),
+		.vssa2	  (VSS),
+		.vccd1	  (VDD1V8),
+		.vccd2	  (VDD1V8),
+		.vssd1	  (VSS),
+		.vssd2	  (VSS),
 		.clock	  (clock),
 		.gpio     (gpio),
-		.mprj_io  ({checkbits, noconnect[9:1], uart_tx, uart_rx,
-				hk_sck, hk_csb, hk_sdi, SDO, noconnect[0]}),
+		.mprj_io  (mprj_io),
 		.flash_csb(flash_csb),
 		.flash_clk(flash_clk),
 		.flash_io0(flash_io0),

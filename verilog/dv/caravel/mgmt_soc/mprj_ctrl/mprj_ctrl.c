@@ -55,37 +55,37 @@ void main()
     reg_mprj_xfer = 1;
     while (reg_mprj_xfer == 1);
 
-    reg_mprj_data = 0;
+    reg_mprj_datal = 0;
 
     // start test
-    reg_mprj_data = 0xA040;
+    reg_mprj_datal = 0xA040;
 
     // Write to IO Control
     reg_mprj_io_0 = 0x004F;
     if (reg_mprj_io_0 != 0x004F)
-	reg_mprj_data = 0xAB400000;
+	reg_mprj_datal = 0xAB400000;
      else
-	reg_mprj_data = 0xAB410000;
+	reg_mprj_datal = 0xAB410000;
 
     // Write to IO Control 
     reg_mprj_io_1 = 0x005F;
     if (reg_mprj_io_1 != 0x005F)
-	reg_mprj_data = 0xAB500000;
+	reg_mprj_datal = 0xAB500000;
     else
-	reg_mprj_data = 0xAB510000;
+	reg_mprj_datal = 0xAB510000;
 
     // Write to IO Control
     reg_mprj_io_2 = 0x006F;
     if (reg_mprj_io_2 != 0x006F)
-	reg_mprj_data = 0xAB600000;
+	reg_mprj_datal = 0xAB600000;
     else
-	reg_mprj_data = 0xAB610000;
+	reg_mprj_datal = 0xAB610000;
 
     // Write to IO Control
     reg_mprj_io_3 = 0xF0F5;
     if (reg_mprj_io_3 != 0xF0F5)
-	reg_mprj_data = 0xAB700000;
+	reg_mprj_datal = 0xAB700000;
     else
-	reg_mprj_data = 0xAB710000;
+	reg_mprj_datal = 0xAB710000;
 }
 

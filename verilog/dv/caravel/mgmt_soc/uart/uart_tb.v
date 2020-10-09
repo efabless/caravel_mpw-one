@@ -33,7 +33,7 @@ module uart_tb;
 	wire flash_clk;
 	wire flash_io0;
 	wire flash_io1;
-	wire [31:0] mprj_io;
+	wire [36:0] mprj_io;
 	wire [15:0] checkbits;
 	wire uart_tx;
 	wire SDO;
@@ -86,9 +86,20 @@ module uart_tb;
 	assign VDD3V3 = 1'b1;
 
 	caravel uut (
-		.vdd3v3	  (VDD3V3),
-		.vdd1v8	  (VDD1V8),
-		.vss	  (VSS),
+		.vddio	  (VDD3V3),
+		.vssio	  (VSS),
+		.vdda	  (VDD3V3),
+		.vssa	  (VSS),
+		.vccd	  (VDD1V8),
+		.vssd	  (VSS),
+		.vdda1    (VDD3V3),
+		.vdda2    (VDD3V3),
+		.vssa1	  (VSS),
+		.vssa2	  (VSS),
+		.vccd1	  (VDD1V8),
+		.vccd2	  (VDD1V8),
+		.vssd1	  (VSS),
+		.vssd2	  (VSS),
 		.clock	  (clock),
 		.gpio     (gpio),
 		.mprj_io  (mprj_io),

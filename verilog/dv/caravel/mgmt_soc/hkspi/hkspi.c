@@ -56,7 +56,7 @@ void main()
     while (reg_mprj_xfer == 1);
 
     // Start test
-    reg_mprj_data = 0xa0000000;
+    reg_mprj_datal = 0xa0000000;
 
     // Set clock to 64 kbaud and enable the UART
     reg_uart_clkdiv = 625;
@@ -70,6 +70,6 @@ void main()
     print(" |  __/| | (_| (_) |__) | (_) | |___\n");
     print(" |_|   |_|\\___\\___/____/ \\___/ \\____|\n");
 
-    reg_mprj_data = 0xab000000;
+    reg_mprj_datal = 0xab000000;
 }
 

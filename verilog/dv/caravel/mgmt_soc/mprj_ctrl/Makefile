@@ -1,3 +1,4 @@
+
 FIRMWARE_PATH = ../..
 RTL_PATH = ../../../../rtl
 IP_PATH = ../../../../ip
@@ -20,13 +21,13 @@ hex:  ${PATTERN:=.hex}
 %.vcd: %.vvp
 	vvp $<
 
-%.elf: %.c  $(FIRMWARE_PATH)/sections.lds  $(FIRMWARE_PATH)/start.s
-	${GCC_PATH}/riscv32-unknown-elf-gcc -march=rv32imc -Wl,-Bstatic,-T,  $(FIRMWARE_PATH)/sections.lds,--strip-debug -ffreestanding -nostdlib -o $@  $(FIRMWARE_PATH)/start.s $<
+%.elf: %.c $(FIRMWARE_PATH)/sections.lds $(FIRMWARE_PATH)/start.s
+	${GCC_PATH}/riscv32-unknown-elf-gcc -march=rv32imc -Wl,-Bstatic,-T,$(FIRMWARE_PATH)/sections.lds,--strip-debug -ffreestanding -nostdlib -o $@ $(FIRMWARE_PATH)/start.s $<
 
 %.hex: %.elf
 	${GCC_PATH}/riscv32-unknown-elf-objcopy -O verilog $< $@ 
 	# to fix flash base address
-	sed -i 's/@10000000/@00000000/g' $@
+	sed -i 's/@10000000/@00000000/g' $@                     
 
 %.bin: %.elf
 	${GCC_PATH}/riscv32-unknown-elf-objcopy -O binary $< /dev/stdout | tail -c +1048577 > $@
@@ -37,3 +38,4 @@ clean:
 	rm -f *.elf *.hex *.bin *.vvp *.vcd *.log
 
 .PHONY: clean hex all
+

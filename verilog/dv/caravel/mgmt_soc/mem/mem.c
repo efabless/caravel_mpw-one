@@ -39,7 +39,7 @@ void main()
     while (reg_mprj_xfer == 1);
 
     // start test
-    reg_mprj_data = 0xA0400000;
+    reg_mprj_datal = 0xA0400000;
 
     // Test Word R/W
     for (i=0; i<10; i++)
@@ -47,30 +47,30 @@ void main()
 	
     for (i=0; i<10; i++)
 	if ((i*5000+10000) != ints[i])
-	    reg_mprj_data = 0xAB400000;
+	    reg_mprj_datal = 0xAB400000;
 
-    reg_mprj_data = 0xAB410000;
+    reg_mprj_datal = 0xAB410000;
 	
     // Test Half Word R/W
-    reg_mprj_data = 0xA0200000;
+    reg_mprj_datal = 0xA0200000;
     for (i=0; i<10; i++)
 	shorts[i] = i*500 + 100;
 	
     for(i=0; i<10; i++)
 	if((i*500+100) != shorts[i])
-	    reg_mprj_data = 0xAB200000;
+	    reg_mprj_datal = 0xAB200000;
 
-    reg_mprj_data = 0xAB210000;
+    reg_mprj_datal = 0xAB210000;
 
     // Test byte R/W
-    reg_mprj_data = 0xA0100000;
+    reg_mprj_datal = 0xA0100000;
     for(i=0; i<10; i++)
 	bytes[i] = i*5 + 10;
 	
     for(i=0; i<10; i++)
 	if((i*5+10) != bytes[i])
-	    reg_mprj_data = 0xAB100000;
+	    reg_mprj_datal = 0xAB100000;
 
-    reg_mprj_data = 0xAB110000;
+    reg_mprj_datal = 0xAB110000;
 }
 

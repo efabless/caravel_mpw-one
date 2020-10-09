@@ -74,7 +74,7 @@ void main()
 	reg_la3_ena = 0xFFFFFFFF;    // [127:96]
 
 	// Flag start of the test 
-	reg_mprj_data = 0xAB400000;
+	reg_mprj_datal = 0xAB400000;
 
 	// Set Counter value to zero through LA probes [63:32]
 	reg_la1_data = 0x00000000;
@@ -84,12 +84,12 @@ void main()
 
 	while (1) {
 		if (reg_la0_data > 0x1F4) {
-			reg_mprj_data = 0xAB410000;
+			reg_mprj_datal = 0xAB410000;
 			break;
 		}
 	}
 	print("\n");
 	print("Monitor: Test 2 Passed\n\n");
-	reg_mprj_data = 0xAB510000;
+	reg_mprj_datal = 0xAB510000;
 }
 
