@@ -42,7 +42,10 @@
 `include "mprj_ctrl.v"
 `include "convert_gpio_sigs.v"
 
-module mgmt_soc (
+module mgmt_soc #(
+    parameter MPRJ_IO_PADS = 32,
+    parameter MPRJ_PWR_PADS = 32
+) (
 `ifdef LVS
     inout vdd1v8,	    /* 1.8V domain */
     inout vss,
@@ -194,10 +197,6 @@ module mgmt_soc (
     parameter LA_ENA_2  = 8'h18;
     parameter LA_ENA_3  = 8'h1c;
     
-    // Mega-Project Control
-    parameter MPRJ_IO_PADS  = 32;
-    parameter MPRJ_PWR_PADS = 32;
-   
     // System Control Registers
     parameter PLL_OUT       = 8'h00;
     parameter TRAP_OUT      = 8'h04;
@@ -639,7 +638,7 @@ module mgmt_soc (
     wire mprj_ctrl_stb_i;
     wire mprj_ctrl_ack_o;
     wire [31:0] mprj_ctrl_dat_o;
-    wire [31:0] mgmt_out_pre;
+    wire [MPRJ_IO_PADS-1:0] mgmt_out_pre;
 
     // Bits assigned to specific functions as outputs prevent the
     // mprj GPIO-as-output from applying data when that function

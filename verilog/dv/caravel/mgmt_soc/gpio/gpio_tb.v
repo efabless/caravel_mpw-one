@@ -50,12 +50,13 @@ module gpio_tb;
 		$finish;
 	end
 
+	wire [36:0] mprj_io;	// Most of these are no-connects
 	wire [15:0] checkbits;
-
-	reg [7:0] checkbits_lo;
+	reg  [7:0] checkbits_lo;
 	wire [7:0] checkbits_hi;
 
-	assign checkbits[7:0] = checkbits_lo;
+	assign mprj_io[23:16] = checkbits_lo;
+	assign checkbits = mprj_io[31:16];
 	assign checkbits_hi = checkbits[15:8];
 
 	wire flash_csb;
@@ -64,36 +65,35 @@ module gpio_tb;
 	wire flash_io1;
 
 	reg RSTB;
-	wire SDO;
 
 	// Transactor
 	initial begin
-		checkbits_lo = {8{1'bz}};
+		checkbits_lo <= {8{1'bz}};
 		wait(checkbits_hi == 8'hA0);
-		checkbits_lo = 8'hF0;
+		checkbits_lo <= 8'hF0;
 		wait(checkbits_hi == 8'h0B);
-		checkbits_lo = 8'h0F;
+		checkbits_lo <= 8'h0F;
 		wait(checkbits_hi == 8'hAB);
-		checkbits_lo = 8'h0;
+		checkbits_lo <= 8'h0;
 		repeat (1000) @(posedge clock);
-		checkbits_lo = 8'h1;
+		checkbits_lo <= 8'h1;
 		repeat (1000) @(posedge clock);
-		checkbits_lo = 8'h3;
+		checkbits_lo <= 8'h3;
 	end
 
 	// Monitor
 	initial begin
 		wait(checkbits_hi == 8'hA0);
-		wait(checkbits[7:0] == 8'hF0);
-		wait(checkbits_hi== 8'h0B);
-		wait(checkbits[7:0] == 8'h0F);
-		wait(checkbits_hi== 8'hAB);
-		wait(checkbits[7:0] == 8'h00);
-		wait(checkbits_hi== 8'h01);
-		wait(checkbits[7:0] == 8'h01);
-		wait(checkbits_hi== 8'h02);
-		wait(checkbits[7:0] == 8'h03);
-		wait(checkbits_hi== 8'h04);
+		wait(checkbits[7:0]  == 8'hF0);
+		wait(checkbits_hi == 8'h0B);
+		wait(checkbits[7:0]  == 8'h0F);
+		wait(checkbits_hi == 8'hAB);
+		wait(checkbits[7:0]  == 8'h00);
+		wait(checkbits_hi == 8'h01);
+		wait(checkbits[7:0]  == 8'h01);
+		wait(checkbits_hi == 8'h02);
+		wait(checkbits[7:0]  == 8'h03);
+		wait(checkbits_hi == 8'h04);
 		$display("Monitor: Test GPIO (RTL) Passed");
 		$finish;
 	end
@@ -128,23 +128,25 @@ module gpio_tb;
 	// ser_rx    = mgmt_gpio_io[5]              (input)
 	// ser_tx    = mgmt_gpio_io[6]              (output)
 	// irq       = mgmt_gpio_io[7]              (input)
-	//
-	// Therefore to connect SDO, SDI, CSB, and SCK,
-	// apply {27'bz, SCK, CSB, SDI, SDO, 1'bz} to mprj_io (32 bits)
-
-	wire [11:0] noconnect;
-	wire [2:0] spi_sigs;
-
-	assign spi_sigs = 3'b010;	// Set SCK, CSB, and SDI
 
 	caravel uut (
-		.vdd3v3	  (VDD3V3),
-		.vdd1v8	  (VDD1V8),
-		.vss	  (VSS),
+		.vddio	  (VDD3V3),
+		.vssio	  (VSS),
+		.vdda	  (VDD3V3),
+		.vssa	  (VSS),
+		.vccd	  (VDD1V8),
+		.vssd	  (VSS),
+		.vdda1    (VDD3V3),
+		.vdda2    (VDD3V3),
+		.vssa1	  (VSS),
+		.vssa2	  (VSS),
+		.vccd1	  (VDD1V8),
+		.vccd2	  (VDD1V8),
+		.vssd1	  (VSS),
+		.vssd2	  (VSS),
 		.clock	  (clock),
 		.gpio     (gpio),
-		.mprj_io  ({checkbits, noconnect[11:1],
-				spi_sigs, SDO, noconnect[0]}),
+		.mprj_io  (mprj_io),
 		.flash_csb(flash_csb),
 		.flash_clk(flash_clk),
 		.flash_io0(flash_io0),

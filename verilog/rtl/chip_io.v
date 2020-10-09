@@ -1,8 +1,20 @@
 module chip_io(
 	// Package Pins
-	inout  vdd3v3,
-    	inout  vdd1v8,
-    	inout  vss,
+	inout  vddio,		// Common padframe/ESD supply
+	inout  vssio,		// Common padframe/ESD ground
+	inout  vccd,		// Common 1.8V supply
+	inout  vssd,		// Common digital ground
+	inout  vdda,		// Management analog 3.3V supply
+	inout  vssa,		// Management analog ground
+	inout  vdda1,		// User area 1 3.3V supply
+	inout  vdda2,		// User area 2 3.3V supply
+	inout  vssa1,		// User area 1 analog ground
+	inout  vssa2,		// User area 2 analog ground
+	inout  vccd1,		// User area 1 1.8V supply
+	inout  vccd2,		// User area 2 1.8V supply
+	inout  vssd1,		// User area 1 digital ground
+	inout  vssd2,		// User area 2 digital ground
+
 	inout  gpio,
 	input  clock,
 	input  resetb,
@@ -56,78 +68,141 @@ module chip_io(
 
 	wire analog_a, analog_b;
 	wire vddio_q, vssio_q;
-	// Instantiate power cells for VDD3V3 domain (8 total; 4 high clamps and
-    	// 4 low clamps)
-    	s8iom0_vdda_hvc_pad vdd3v3hclamp [1:0] (
-		`ABUTMENT_PINS
-		.drn_hvc(),
-		.src_bdy_hvc()
+
+	// Instantiate power and ground pads for management domain
+	// 12 pads:  vddio, vssio, vdda, vssa, vccd, vssd
+	// One each HV and LV clamp.
+
+    	s8iom0_vddio_hvc_pad mgmt_vddio_hvclamp_pad (
+		`MGMT_ABUTMENT_PINS
+		`HVCLAMP_PINS
+    	);
+    	s8iom0_vddio_lvc_pad mgmt_vddio_lvclamp_pad (
+		`MGMT_ABUTMENT_PINS
+		`LVCLAMP_PINS
     	);
 
-    	s8iom0_vddio_hvc_pad vddiohclamp [1:0] (
-		`ABUTMENT_PINS
-		.drn_hvc(),
-		.src_bdy_hvc()
+    	s8iom0_vdda_hvc_pad mgmt_vdda_hvclamp_pad (
+		`MGMT_ABUTMENT_PINS
+		`HVCLAMP_PINS
     	);
-	
-    	s8iom0_vdda_lvc_pad vdd3v3lclamp [3:0] (
-		`ABUTMENT_PINS
-		.bdy2_b2b(),
-		.drn_lvc1(),
-		.drn_lvc2(),
-		.src_bdy_lvc1(),
-		.src_bdy_lvc2()
+    	s8iom0_vdda_lvc_pad mgmt_vdda_lvclamp_pad (
+		`MGMT_ABUTMENT_PINS
+		`LVCLAMP_PINS
     	);
 
-    	// Instantiate the core voltage supply (since it is not generated on-chip)
-    	// (1.8V) (4 total, 2 high and 2 low clamps)
-    	s8iom0_vccd_hvc_pad vdd1v8hclamp [1:0] (
-		`ABUTMENT_PINS
-		.drn_hvc(),
-		.src_bdy_hvc()
+    	s8iom0_vccd_hvc_pad mgmt_vccd_hvclamp_pad (
+		`MGMT_ABUTMENT_PINS
+		`HVCLAMP_PINS
+    	);
+    	s8iom0_vccd_lvc_pad mgmt_vccd_lvclamp_pad (
+		`MGMT_ABUTMENT_PINS
+		`LVCLAMP_PINS
     	);
 
-    	s8iom0_vccd_lvc_pad vdd1v8lclamp [1:0] (
-		`ABUTMENT_PINS
-		.bdy2_b2b(),
-		.drn_lvc1(),
-		.drn_lvc2(),
-		.src_bdy_lvc1(),
-		.src_bdy_lvc2()
+    	s8iom0_vssio_hvc_pad mgmt_vssio_hvclamp_pad (
+		`MGMT_ABUTMENT_PINS
+		`HVCLAMP_PINS
+    	);
+    	s8iom0_vssio_lvc_pad mgmt_vssio_lvclamp_pad (
+		`MGMT_ABUTMENT_PINS
+		`LVCLAMP_PINS
     	);
 
-    	// Instantiate ground cells (7 total, 4 high clamps and 3 low clamps)
-    	s8iom0_vssa_hvc_pad vsshclamp [3:0] (
-		`ABUTMENT_PINS
-		.drn_hvc(),
-		.src_bdy_hvc()
+    	s8iom0_vssa_hvc_pad mgmt_vssa_hvclamp_pad (
+		`MGMT_ABUTMENT_PINS
+		`HVCLAMP_PINS
+    	);
+    	s8iom0_vssa_lvc_pad mgmt_vssa_lvclamp_pad (
+		`MGMT_ABUTMENT_PINS
+		`LVCLAMP_PINS
     	);
 
-    	s8iom0_vssa_lvc_pad vssalclamp (
-		`ABUTMENT_PINS
-		.bdy2_b2b(),
-		.drn_lvc1(),
-		.drn_lvc2(),
-		.src_bdy_lvc1(),
-		.src_bdy_lvc2()
+    	s8iom0_vssd_hvc_pad mgmt_vssd_hvclamp_pad (
+		`MGMT_ABUTMENT_PINS
+		`HVCLAMP_PINS
+    	);
+    	s8iom0_vssd_lvc_pad mgmt_vssd_lvclmap_pad (
+		`MGMT_ABUTMENT_PINS
+		`LVCLAMP_PINS
     	);
 
-    	s8iom0_vssd_lvc_pad vssdlclamp (
-		`ABUTMENT_PINS
-		.bdy2_b2b(),
-		.drn_lvc1(),
-		.drn_lvc2(),
-		.src_bdy_lvc1(),
-		.src_bdy_lvc2()
+	// Instantiate power and ground pads for user 1 domain
+	// 8 pads:  vdda, vssa, vccd, vssd;  One each HV and LV clamp.
+
+    	s8iom0_vdda_hvc_pad user1_vdda_hvclamp_pad (
+		`USER1_ABUTMENT_PINS
+		`HVCLAMP_PINS
+    	);
+    	s8iom0_vdda_lvc_pad user1_vdda_lvclamp_pad (
+		`USER1_ABUTMENT_PINS
+		`LVCLAMP_PINS
     	);
 
-    	s8iom0_vssio_lvc_pad vssiolclamp (
-		`ABUTMENT_PINS
-		.bdy2_b2b(),
-		.drn_lvc1(),
-		.drn_lvc2(),
-		.src_bdy_lvc1(),
-		.src_bdy_lvc2()
+    	s8iom0_vccd_hvc_pad user1_vccd_hvclamp_pad (
+		`USER1_ABUTMENT_PINS
+		`HVCLAMP_PINS
+    	);
+    	s8iom0_vccd_lvc_pad user1_vccd_lvclamp_pad (
+		`USER1_ABUTMENT_PINS
+		`LVCLAMP_PINS
+    	);
+
+    	s8iom0_vssa_hvc_pad user1_vssa_hvclamp_pad (
+		`USER1_ABUTMENT_PINS
+		`HVCLAMP_PINS
+    	);
+    	s8iom0_vssa_lvc_pad user1_vssa_lvclamp_pad (
+		`USER1_ABUTMENT_PINS
+		`LVCLAMP_PINS
+    	);
+
+    	s8iom0_vssd_hvc_pad user1_vssd_hvclamp_pad (
+		`USER1_ABUTMENT_PINS
+		`HVCLAMP_PINS
+    	);
+    	s8iom0_vssd_lvc_pad user1_vssd_lvclmap_pad (
+		`USER1_ABUTMENT_PINS
+		`LVCLAMP_PINS
+    	);
+
+	// Instantiate power and ground pads for user 2 domain
+	// 8 pads:  vdda, vssa, vccd, vssd;  One each HV and LV clamp.
+
+    	s8iom0_vdda_hvc_pad user2_vdda_hvclamp_pad (
+		`USER2_ABUTMENT_PINS
+		`HVCLAMP_PINS
+    	);
+    	s8iom0_vdda_lvc_pad user2_vdda_lvclamp_pad (
+		`USER2_ABUTMENT_PINS
+		`LVCLAMP_PINS
+    	);
+
+    	s8iom0_vccd_hvc_pad user2_vccd_hvclamp_pad (
+		`USER2_ABUTMENT_PINS
+		`HVCLAMP_PINS
+    	);
+    	s8iom0_vccd_lvc_pad user2_vccd_lvclamp_pad (
+		`USER2_ABUTMENT_PINS
+		`LVCLAMP_PINS
+    	);
+
+    	s8iom0_vssa_hvc_pad user2_vssa_hvclamp_pad (
+		`USER2_ABUTMENT_PINS
+		`HVCLAMP_PINS
+    	);
+    	s8iom0_vssa_lvc_pad user2_vssa_lvclamp_pad (
+		`USER2_ABUTMENT_PINS
+		`LVCLAMP_PINS
+    	);
+
+    	s8iom0_vssd_hvc_pad user2_vssd_hvclamp_pad (
+		`USER2_ABUTMENT_PINS
+		`HVCLAMP_PINS
+    	);
+    	s8iom0_vssd_lvc_pad user2_vssd_lvclmap_pad (
+		`USER2_ABUTMENT_PINS
+		`LVCLAMP_PINS
     	);
 
 	wire [2:0] dm_all =
@@ -137,12 +212,15 @@ module chip_io(
 	wire[2:0] flash_io1_mode = 
 		{flash_io1_ieb_core, flash_io1_ieb_core, flash_io1_oeb_core};
 
-    	// GPIO pad
+	// Management clock input pad
+	`INPUT_PAD(clock, clock_core); 	    
+
+    	// Management GPIO pad
 	`INOUT_PAD(
 		gpio, gpio_in_core, gpio_out_core,
 		gpio_inenb_core, gpio_outenb_core, dm_all);
 	
-	// Flash pads
+	// Management Flash SPI pads
 	`INOUT_PAD(
 		flash_io0, flash_io0_di_core, flash_io0_do_core,
 		flash_io0_ieb_core, flash_io0_oeb_core, flash_io0_mode);
@@ -150,19 +228,16 @@ module chip_io(
 		flash_io1, flash_io1_di_core, flash_io1_do_core,
 		flash_io1_ieb_core, flash_io1_oeb_core, flash_io1_mode);
 
-	`INPUT_PAD(clock, clock_core); 	    
-
-	// Output Pads
 	`OUTPUT_PAD(flash_csb, flash_csb_core, flash_csb_ieb_core, flash_csb_oeb_core);  
 	`OUTPUT_PAD(flash_clk, flash_clk_core, flash_clk_ieb_core, flash_clk_oeb_core);
-
 
 	// NOTE:  The analog_out pad from the raven chip has been replaced by
     	// the digital reset input resetb on caravel due to the lack of an on-board
     	// power-on-reset circuit.  The XRES pad is used for providing a glitch-
     	// free reset.
+
 	s8iom0s8_top_xres4v2 resetb_pad (
-		`ABUTMENT_PINS 
+		`MGMT_ABUTMENT_PINS 
 		`ifndef	TOP_ROUTING
 		    .pad(resetb),
 		`endif
@@ -171,38 +246,76 @@ module chip_io(
 		.tie_lo_esd(),
 		.pad_a_esd_h(xresloop),
 		.xres_h_n(resetb_core_h),
-		.disable_pullup_h(vss),	    // 0 = enable pull-up on reset pad
-		.enable_h(vdd3v3),	    // Power-on-reset to the power-on-reset input??
-		.en_vddio_sig_h(vss),	    // No idea.
-		.inp_sel_h(vss),	    // 1 = use filt_in_h else filter the pad input
-		.filt_in_h(vss),	    // Alternate input for glitch filter
-		.pullup_h(vss),		    // Pullup connection for alternate filter input
-		.enable_vddio(vdd1v8)
+		.disable_pullup_h(vssio),    // 0 = enable pull-up on reset pad
+		.enable_h(porb_h),	    // Power-on-reset
+		.en_vddio_sig_h(vssio),	    // No idea.
+		.inp_sel_h(vssio),	    // 1 = use filt_in_h else filter the pad input
+		.filt_in_h(vssio),	    // Alternate input for glitch filter
+		.pullup_h(vssio),	    // Pullup connection for alternate filter input
+		.enable_vddio(vccd)
     	);
 
 	// Corner cells (These are overlay cells;  it is not clear what is normally
-    	// supposed to go under them.)
+    	// supposed to go under them.)  
+
 	`ifndef TOP_ROUTING   
-	    s8iom0_corner_pad corner [3:0] (
-		.vssio(vss),
-		.vddio(vdd3v3),
+	    s8iom0_corner_pad mgmt_corner [1:0] (
+		.vssio(vssio),
+		.vddio(vddio),
 		.vddio_q(vddio_q),
 		.vssio_q(vssio_q),
 		.amuxbus_a(analog_a),
 		.amuxbus_b(analog_b),
-		.vssd(vss),
-		.vssa(vss),
-		.vswitch(vdd3v3),
-		.vdda(vdd3v3),
-		.vccd(vdd1v8),
-		.vcchib(vdd1v8)
+		.vssd(vssio),
+		.vssa(vssio),
+		.vswitch(vddio),
+		.vdda(vdda),
+		.vccd(vccd),
+		.vcchib(vccd)
+    	    );
+	    s8iom0_corner_pad user1_corner (
+		.vssio(vssio),
+		.vddio(vddio),
+		.vddio_q(vddio_q),
+		.vssio_q(vssio_q),
+		.amuxbus_a(analog_a),
+		.amuxbus_b(analog_b),
+		.vssd(vssd1),
+		.vssa(vssa1),
+		.vswitch(vddio),
+		.vdda(vdda1),
+		.vccd(vccd1),
+		.vcchib(vccd)
+    	    );
+	    s8iom0_corner_pad user2_corner (
+		.vssio(vssio),
+		.vddio(vddio),
+		.vddio_q(vddio_q),
+		.vssio_q(vssio_q),
+		.amuxbus_a(analog_a),
+		.amuxbus_b(analog_b),
+		.vssd(vssd2),
+		.vssa(vssa2),
+		.vswitch(vddio),
+		.vdda(vdda2),
+		.vccd(vccd2),
+		.vcchib(vccd)
     	    );
 	`endif
 
 	mprj_io mprj_pads(
-		.vdd3v3(vdd3v3),
-		.vdd1v8(vdd1v8),
-		.vss(vss),
+		.vddio(vddio),
+		.vssio(vssio),
+		.vccd(vccd),
+		.vssd(vssd),
+		.vdda1(vdda1),
+		.vdda2(vdda2),
+		.vssa1(vssa1),
+		.vssa2(vssa2),
+		.vccd1(vccd1),
+		.vccd2(vccd2),
+		.vssd1(vssd1),
+		.vssd2(vssd2),
 		.vddio_q(vddio_q),
 		.vssio_q(vssio_q),
 		.analog_a(analog_a),

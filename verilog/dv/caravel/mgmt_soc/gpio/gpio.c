@@ -14,7 +14,7 @@ void main()
 	int i;
 
 	/* Set data out to zero */
-	reg_mprj_data = 0;
+	reg_mprj_datal = 0;
 
 	/* Lower 8 pins are input and upper 8 pins are output */
 	reg_mprj_io_31 = GPIO_MODE_MGMT_STD_OUTPUT;
@@ -40,7 +40,7 @@ void main()
 	while (reg_mprj_xfer == 1);
 
 	// change the pull up and pull down (checked by the TB)
-	reg_mprj_data = 0xa0000000;
+	reg_mprj_datal = 0xa0000000;
 
 	reg_mprj_io_23 = GPIO_MODE_MGMT_STD_INPUT_PULLDOWN;
 	reg_mprj_io_22 = GPIO_MODE_MGMT_STD_INPUT_PULLDOWN;
@@ -56,7 +56,7 @@ void main()
 	reg_mprj_xfer = 1;
 	while (reg_mprj_xfer == 1);
 
-	reg_mprj_data = 0x0b000000;
+	reg_mprj_datal = 0x0b000000;
 
 	reg_mprj_io_23 = GPIO_MODE_MGMT_STD_INPUT_PULLUP;
 	reg_mprj_io_22 = GPIO_MODE_MGMT_STD_INPUT_PULLUP;
@@ -88,11 +88,11 @@ void main()
 
 	// read the lower 8 pins, add 1 then output the result
 	// checked by the TB
-	reg_mprj_data = 0xab000000;
+	reg_mprj_datal = 0xab000000;
 
 	while (1){
-		int x = (reg_mprj_data & 0xff0000) >> 16;
-		reg_mprj_data = (x+1) << 24;
+		int x = (reg_mprj_datal & 0xff0000) >> 16;
+		reg_mprj_datal = (x+1) << 24;
 	}
 }
 

@@ -4,7 +4,7 @@ module mprj_ctrl_wb #(
     parameter XFER   = 8'h 04,
     parameter CONFIG = 8'h 08,
     parameter IO_PADS = 32,   // Number of IO control registers
-    parameter PWR_PADS = 32   // Number of power control registers
+    parameter PWR_PADS = 32  // Number of power control registers
 )(
     input wb_clk_i,
     input wb_rst_i,
@@ -98,10 +98,14 @@ module mprj_ctrl #(
 `define XBYTE	2'b10
 `define LOAD	2'b11
 
-    localparam IO_BASE_ADR = (BASE_ADR | CONFIG);
-    localparam PWR_BASE_ADR = (BASE_ADR | CONFIG) + IO_PADS*4;
+    localparam IO_WORDS = 1 + (IO_PADS / 32);
+    localparam PWR_WORDS = 1 + (PWR_PADS / 32);
+
+    localparam IO_BASE_ADR = (BASE_ADR | CONFIG) + ((IO_WORDS + PWR_WORDS - 2) * 4);
+    localparam PWR_BASE_ADR = IO_BASE_ADR + (IO_PADS * 4);
     localparam OEB = 1;			// Offset of output enable in shift register.
     localparam INP_DIS = 3;		// Offset of input disable in shift register. 
+    localparam XFER_ADJ = XFER + ((IO_WORDS + PWR_WORDS - 2) * 4);
 
     reg [IO_CTRL_BITS-1:0] io_ctrl[IO_PADS-1:0];  // I/O control, 1 word per gpio pad
     reg [PWR_CTRL_BITS-1:0] pwr_ctrl[PWR_PADS-1:0]; // Power control, 1 word per power pad
@@ -109,16 +113,22 @@ module mprj_ctrl #(
     wire [IO_PADS-1:0] mgmt_gpio_out;	 // I/O write data output when input disabled
     reg xfer_ctrl;			// Transfer control (1 bit)
 
-    wire [IO_PADS-1:0] io_ctrl_sel;	// wishbone selects
-    wire [PWR_PADS-1:0] pwr_ctrl_sel;
-    wire io_data_sel;
+    wire [IO_WORDS-1:0] io_data_sel;	// wishbone selects
     wire xfer_sel;
+    wire [IO_PADS-1:0] io_ctrl_sel;
+    wire [PWR_PADS-1:0] pwr_ctrl_sel;
     wire [IO_PADS-1:0] mgmt_gpio_in;
 
-    assign xfer_sel = (iomem_addr[7:0] == XFER);
-    assign io_data_sel = (iomem_addr[7:0] == DATA); 
+    assign xfer_sel = (iomem_addr[7:0] == XFER_ADJ);
 
     genvar i;
+
+    generate
+        for (i=0; i<IO_WORDS; i=i+1) begin
+    	    assign io_data_sel[i] = (iomem_addr[7:0] == (DATA + i*4)); 
+	end
+    endgenerate
+
     generate
         for (i=0; i<IO_PADS; i=i+1) begin
             assign io_ctrl_sel[i] = (iomem_addr[7:0] == (IO_BASE_ADR[7:0] + i*4)); 
@@ -133,25 +143,17 @@ module mprj_ctrl #(
         end
     endgenerate
 
-    // I/O transfer of xfer bit and gpio data to/from user project region under
-    // management SoC control
+    // I/O transfer of xfer bit.  Also handles iomem_ready signal.
 
     always @(posedge clk) begin
 	if (!resetn) begin
 	    xfer_ctrl <= 0;
-	    mgmt_gpio_outr <= 'd0;
 	end else begin
 	    iomem_ready <= 0;
 	    if (iomem_valid && !iomem_ready && iomem_addr[31:8] == BASE_ADR[31:8]) begin
 		iomem_ready <= 1'b 1;
 
-		if (io_data_sel) begin
-		    iomem_rdata <= mgmt_gpio_in;
-		    if (iomem_wstrb[0]) begin
-			mgmt_gpio_outr[IO_PADS-1:0] <= iomem_wdata[IO_PADS-1:0];
-		    end
-
-		end else if (xfer_sel) begin
+		if (xfer_sel) begin
 		    iomem_rdata <= {31'd0, busy};
 		    if (iomem_wstrb[0]) xfer_ctrl <= iomem_wdata[0];
 		end
@@ -160,6 +162,33 @@ module mprj_ctrl #(
 	    end
 	end
     end
+
+    // I/O transfer of gpio data to/from user project region under management
+    // SoC control
+
+    `define wtop (((i+1)*32 > IO_PADS) ? IO_PADS-1 : (i+1)*32-1)
+    `define wbot (i*32)
+    `define rtop (`wtop - `wbot + 1)
+
+    generate 
+        for (i=0; i<IO_WORDS; i=i+1) begin
+	    always @(posedge clk) begin
+		if (!resetn) begin
+		    mgmt_gpio_outr[`wtop:`wbot] <= 'd0;
+		end else begin
+		    if (iomem_valid && !iomem_ready && iomem_addr[31:8] ==
+					BASE_ADR[31:8]) begin
+			if (io_data_sel[i]) begin
+			    iomem_rdata[`rtop:0] <= mgmt_gpio_in[`wtop:`wbot];
+			    if (iomem_wstrb[0]) begin
+				mgmt_gpio_outr[`wtop:`wbot] <= iomem_wdata[`rtop:0];
+			    end
+			end
+		    end
+		end
+	    end
+	end
+    endgenerate
 
     generate 
         for (i=0; i<IO_PADS; i=i+1) begin

@@ -17,7 +17,8 @@
 `define functional
 `define UNIT_DELAY #1
 
-`define MPRJ_IO_PADS 32
+`define MPRJ_IO_PADS 37
+`define MPRJ_PWR_PADS 4		/* vdda1, vccd1, vdda2, vccd2 */
 
 `include "pads.v"
 
@@ -58,9 +59,21 @@
 `endif
 
 module caravel (
-    inout vdd3v3,
-    inout vdd1v8,
-    inout vss,
+    inout vddio,	// Common 3.3V padframe/ESD power
+    inout vssio,	// Common padframe/ESD ground
+    inout vdda,		// Management 3.3V power
+    inout vssa,		// Common analog ground
+    inout vccd,		// Management/Common 1.8V power
+    inout vssd,		// Common digital ground
+    inout vdda1,	// User area 1 3.3V power
+    inout vdda2,	// User area 2 3.3V power
+    inout vssa1,	// User area 1 analog ground
+    inout vssa2,	// User area 2 analog ground
+    inout vccd1,	// User area 1 1.8V power
+    inout vccd2,	// User area 2 1.8V power
+    inout vssd1,	// User area 1 digital ground
+    inout vssd2,	// User area 2 digital ground
+
     inout gpio,			// Used for external LDO control
     inout [`MPRJ_IO_PADS-1:0] mprj_io,
     input clock,	    	// CMOS core clock input, not a crystal
@@ -186,14 +199,26 @@ module caravel (
     // To be considered:  Master hold signal on all user pads (?)
     // For now, set holdh_n to 1 (NOTE:  This is in the 3.3V domain)
     // and setting enh to porb_h.
-    assign mprj_io_hldh_n = {`MPRJ_IO_PADS{vdd3v3}};
+    assign mprj_io_hldh_n = {`MPRJ_IO_PADS{vddio}};
     assign mprj_io_enh = {`MPRJ_IO_PADS{porb_h}};
 
     chip_io padframe(
 	// Package Pins
-	.vdd3v3(vdd3v3),
-	.vdd1v8(vdd1v8),
-	.vss(vss),
+	.vddio(vddio),
+	.vssio(vssio),
+	.vdda(vdda),
+	.vssa(vssa),
+	.vccd(vccd),
+	.vssd(vssd),
+	.vdda1(vdda1),
+	.vdda2(vdda2),
+	.vssa1(vssa1),
+	.vssa2(vssa2),
+	.vccd1(vccd1),
+	.vccd2(vccd2),
+	.vssd1(vssd1),
+	.vssd2(vssd2),
+
 	.gpio(gpio),
 	.mprj_io(mprj_io),
 	.clock(clock),
@@ -279,10 +304,13 @@ module caravel (
     // Mask revision
     wire [31:0] mask_rev;
 
-    mgmt_core soc (
+    mgmt_core #(
+	.MPRJ_IO_PADS(`MPRJ_IO_PADS),
+	.MPRJ_PWR_PADS(`MPRJ_PWR_PADS)
+    ) soc (
 	`ifdef LVS
-		.vdd1v8(vdd1v8),
-		.vss(vss),
+		.vdd(vccd),
+		.vss(vssa),
 	`endif
 		// GPIO (1 pin)
 		.gpio_out_pad(gpio_out_core),
@@ -360,7 +388,20 @@ module caravel (
 	/* User project is instantiated  here	*/
 	/*--------------------------------------*/
 
-	user_proj_example mprj ( 
+	user_proj_example #(
+	    .IO_PADS(`MPRJ_IO_PADS),
+	    .PWR_PADS(`MPRJ_PWR_PADS)
+	) mprj ( 
+	    `ifdef LVS
+		vdda1,	// User area 1 3.3V power
+		vdda2,	// User area 2 3.3V power
+		vssa1,	// User area 1 analog ground
+		vssa2,	// User area 2 analog ground
+		vccd1,	// User area 1 1.8V power
+		vccd2,	// User area 2 1.8V power
+		vssa1,	// User area 1 digital ground
+		vssa2,	// User area 2 digital ground
+	    `endif
     		.wb_clk_i(caravel_clk),
     		.wb_rst_i(!caravel_rstn),
 		// MGMT SoC Wishbone Slave 
@@ -474,11 +515,11 @@ module caravel (
 
     sky130_fd_sc_hvl__lsbufhv2lv porb_level (
 	`ifdef LVS
-		.vpwr(vdd3v3),
-		.vpb(vdd3v3),
-		.lvpwr(vdd1v8),
-		.vnb(vss),
-		.vgnd(vss),
+		.vpwr(vddio),
+		.vpb(vddio),
+		.lvpwr(vccd),
+		.vnb(vssio),
+		.vgnd(vssio),
 	`endif
 		.A(porb_h),
 		.X(porb_l)
@@ -492,19 +533,19 @@ module caravel (
 
     // Power-on-reset circuit
     simple_por por (
-		.vdd3v3(vdd3v3),
-		.vss(vss),
+		.vdd3v3(vddio),
+		.vss(vssio),
 		.porb_h(porb_h)
     );
 
     // XRES (chip input pin reset) reset level converter
     sky130_fd_sc_hvl__lsbufhv2lv rstb_level (
 	`ifdef LVS
-		.vpwr(vdd3v3),
-		.vpb(vdd3v3),
+		.vpwr(vddio),
+		.vpb(vddio),
 		.lvpwr(vdd1v8),
-		.vnb(vss),
-		.vgnd(vss),
+		.vnb(vssio),
+		.vgnd(vssio),
 	`endif
 		.A(rstb_h),
 		.X(rstb_l)
