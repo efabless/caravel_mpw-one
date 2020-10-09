@@ -1,7 +1,7 @@
 /* Simple 32-bit counter-timer for Caravel. */
 
 module counter_timer_wb # (
-    parameter BASE_ADR = 32'h2200_0000,
+    parameter BASE_ADR = 32'h2400_0000,
     parameter CONFIG = 8'h00,
     parameter VALUE  = 8'h04,
     parameter DATA   = 8'h08
@@ -85,6 +85,7 @@ reg [31:0] value_reset;
 reg	   irq_out;
 
 reg enable;	// Enable (start) the counter/timer
+reg lastenable;	// Previous state of enable (catch rising/falling edge)
 reg oneshot;	// Set oneshot (1) mode or continuous (0) mode
 reg updown;	// Count up (1) or down (0)
 reg irq_ena;	// Enable interrupt on timeout
@@ -96,10 +97,12 @@ assign reg_cfg_do = {28'd0, irq_ena, updown, oneshot, enable};
 always @(posedge clkin or negedge resetn) begin
     if (resetn == 1'b0) begin
 	enable <= 1'b0;
+	lastenable <= 1'b0;
 	oneshot <= 1'b0;
 	updown <= 1'b0;
 	irq_ena <= 1'b0;
     end else begin
+	lastenable <= enable;
 	if (reg_cfg_we) begin
 	    enable <= reg_cfg_di[0];
 	    oneshot <= reg_cfg_di[1];
@@ -117,10 +120,10 @@ always @(posedge clkin or negedge resetn) begin
     if (resetn == 1'b0) begin
 	value_reset <= 32'd0;
     end else begin
-	if (reg_val_we[3]) value_reset <= reg_val_di[31:24];
-	if (reg_val_we[2]) value_reset <= reg_val_di[23:16];
-	if (reg_val_we[1]) value_reset <= reg_val_di[15:8];
-	if (reg_val_we[0]) value_reset <= reg_val_di[7:0];
+	if (reg_val_we[3]) value_reset[31:24] <= reg_val_di[31:24];
+	if (reg_val_we[2]) value_reset[23:16] <= reg_val_di[23:16];
+	if (reg_val_we[1]) value_reset[15:8] <= reg_val_di[15:8];
+	if (reg_val_we[0]) value_reset[7:0] <= reg_val_di[7:0];
     end
 end
 
@@ -140,7 +143,9 @@ always @(posedge clkin or negedge resetn) begin
 	    if (reg_dat_we[0] == 1'b1) value_cur[7:0] <= reg_dat_di[7:0];
 	end else if (enable == 1'b1) begin
 	    if (updown == 1'b1) begin
-		if (value_cur == value_reset) begin
+		if (lastenable == 1'b0) begin
+		    value_cur <= 32'd0;
+		end else if (value_cur == value_reset) begin
 		    if (oneshot != 1'b1) begin
 			value_cur <= 32'd0;
 		    end
@@ -150,7 +155,9 @@ always @(posedge clkin or negedge resetn) begin
 		    irq_out <= 1'b0;
 		end
 	    end else begin
-		if (value_cur == 32'd0) begin
+		if (lastenable == 1'b0) begin
+		    value_cur <= value_reset;
+		end else if (value_cur == 32'd0) begin
 		    if (oneshot != 1'b1) begin
 			value_cur <= value_reset;
 		    end

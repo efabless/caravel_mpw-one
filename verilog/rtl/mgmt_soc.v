@@ -153,14 +153,14 @@ module mgmt_soc #(
     parameter FLASH_BASE_ADR  = 32'h 1000_0000;
     parameter UART_BASE_ADR   = 32'h 2000_0000;
     parameter GPIO_BASE_ADR   = 32'h 2100_0000;
-    parameter COUNTER_TIMER0_BASE_ADR = 32'h 2110_0000;
-    parameter COUNTER_TIMER1_BASE_ADR = 32'h 2120_0000;
-    parameter SPI_MASTER_BASE_ADR = 32'h 2130_0000;
-    parameter LA_BASE_ADR     = 32'h 2200_0000;
-    parameter MPRJ_CTRL_ADR   = 32'h 2300_0000;
-    parameter MPRJ_BASE_ADR   = 32'h 3000_0000;   // WB MI A
-    parameter SYS_BASE_ADR    = 32'h 2F00_0000;
+    parameter COUNTER_TIMER0_BASE_ADR = 32'h 2200_0000;
+    parameter COUNTER_TIMER1_BASE_ADR = 32'h 2300_0000;
+    parameter SPI_MASTER_BASE_ADR = 32'h 2400_0000;
+    parameter LA_BASE_ADR     = 32'h 2500_0000;
+    parameter MPRJ_CTRL_ADR   = 32'h 2600_0000;
     parameter FLASH_CTRL_CFG  = 32'h 2D00_0000;
+    parameter SYS_BASE_ADR    = 32'h 2F00_0000;
+    parameter MPRJ_BASE_ADR   = 32'h 3000_0000;   // WB MI A
     parameter XBAR_BASE_ADR   = 32'h 8000_0000;
 
     // UART

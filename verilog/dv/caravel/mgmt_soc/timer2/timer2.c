@@ -3,7 +3,8 @@
 // --------------------------------------------------------
 
 /*
- *	Timer Test
+ *	Timer2 Test --- This runs the same testbench as the
+ *	other timer, on the 2nd counter/timer module instance.
  */
 
 void main()
@@ -67,7 +68,7 @@ void main()
 	reg_mprj_datah = 0x0a;
 
 	/* Configure timer for a single-shot countdown */
-	reg_timer0_value = 0xdcba9876;
+	reg_timer1_value = 0xdcba9876;
 
 	/* Timer configuration bits:				*/
 	/* 0 = timer enable (1 = enabled, 0 = disabled)		*/
@@ -75,44 +76,44 @@ void main()
 	/* 2 = up/down (1 = count up, 0 = count down)		*/
 	/* 3 = IRQ enable (1 = enabled, 0 = disabled)		*/
 
-	reg_timer0_config = 3;	/* Enabled, one-shot, down count */
+	reg_timer1_config = 3;	/* Enabled, one-shot, down count */
 
 	for (i = 0; i < 8; i++) {
-	    value = reg_timer0_data;
+	    value = reg_timer1_data;
 	    reg_mprj_datal = value;	// Put count value on GPIO
 	}
 
-	reg_timer0_config = 0;	/* Disabled */
+	reg_timer1_config = 0;	/* Disabled */
 
 	reg_mprj_datah = 0x01;	/* Check value in testbench */
 
-	reg_timer0_value = 0x00000011;
-	reg_timer0_config = 7;	/* Enabled, one-shot, count up */
+	reg_timer1_value = 0x00000011;
+	reg_timer1_config = 7;	/* Enabled, one-shot, count up */
 	
 	for (i = 0; i < 3; i++) {
-	    value = reg_timer0_data;
+	    value = reg_timer1_data;
 	    reg_mprj_datal = value;	// Put count value on GPIO
 	}
 
 	reg_mprj_datah = 0x02;	/* Check value in testbench */
 	
-	reg_timer0_data = 0x00000101;	// Set value (will be reset)
-	reg_timer0_config = 2;	/* Disabled, one-shot, count up */
-	reg_timer0_config = 5;	/* Enabled, continuous, count down */
+	reg_timer1_data = 0x00000101;	// Set value (will be reset)
+	reg_timer1_config = 2;	/* Disabled, one-shot, count up */
+	reg_timer1_config = 5;	/* Enabled, continuous, count down */
 	
 	for (i = 0; i < 5; i++) {
-	    value = reg_timer0_data;
+	    value = reg_timer1_data;
 	    reg_mprj_datal = value;	// Put count value on GPIO
 	}
 
 	reg_mprj_datah = 0x03;	/* Check value in testbench */
 
-	reg_timer0_data = 0x00000145;	// Force new value
+	reg_timer1_data = 0x00000145;	// Force new value
 
 	reg_mprj_datah = 0x04;	/* Check value in testbench */
 	
 	for (i = 0; i < 5; i++) {
-	    value = reg_timer0_data;
+	    value = reg_timer1_data;
 	    reg_mprj_datal = value;	// Put count value on GPIO
 	}
 	

@@ -118,15 +118,16 @@ module housekeeping_spi(
     wire pass_thru_user_delay;
     wire loc_sdo;
 
-    // Pass-through mode handling
+    // Pass-through mode handling.  Signals may only be applied when the
+    // core processor is in reset.
 
-    assign pass_thru_mgmt_csb = ~pass_thru_mgmt_delay;
-    assign pass_thru_mgmt_sck = pass_thru_mgmt ? SCK : 1'b0;
-    assign pass_thru_mgmt_sdi = pass_thru_mgmt ? SDI : 1'b0;
+    assign pass_thru_mgmt_csb = reset ? ~pass_thru_mgmt_delay : 1'bz;
+    assign pass_thru_mgmt_sck = reset ? (pass_thru_mgmt ? SCK : 1'b0) : 1'bz;
+    assign pass_thru_mgmt_sdi = reset ? (pass_thru_mgmt ? SDI : 1'b0) : 1'bz;
 
-    assign pass_thru_user_csb = ~pass_thru_user_delay;
-    assign pass_thru_user_sck = pass_thru_user ? SCK : 1'b0;
-    assign pass_thru_user_sdi = pass_thru_user ? SDI : 1'b0;
+    assign pass_thru_user_csb = reset ? ~pass_thru_user_delay : 1'bz;
+    assign pass_thru_user_sck = reset ? (pass_thru_user ? SCK : 1'b0) : 1'bz;
+    assign pass_thru_user_sdi = reset ? (pass_thru_user ? SDI : 1'b0) : 1'bz;
 
     assign SDO = pass_thru_mgmt ? pass_thru_mgmt_sdo :
 		 pass_thru_user ? pass_thru_user_sdo : loc_sdo;

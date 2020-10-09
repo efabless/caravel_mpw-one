@@ -23,7 +23,7 @@
 `include "caravel.v"
 `include "spiflash.v"
 
-module timer_tb;
+module timer2_tb;
 	wire VDD3V3;
 	assign VDD3V3 = 1'b1;
 
@@ -36,8 +36,8 @@ module timer_tb;
 	end
 
 	initial begin
-		$dumpfile("timer.vcd");
-		$dumpvars(0, timer_tb);
+		$dumpfile("timer2.vcd");
+		$dumpvars(0, timer2_tb);
 
 		// Repeat cycles of 1000 clock edges as needed to complete testbench
 		repeat (50) begin
@@ -161,7 +161,7 @@ module timer_tb;
 	);
 
 	spiflash #(
-		.FILENAME("timer.hex")
+		.FILENAME("timer2.hex")
 	) spiflash (
 		.csb(flash_csb),
 		.clk(flash_clk),
