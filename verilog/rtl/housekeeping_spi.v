@@ -271,7 +271,7 @@ endmodule	// housekeeping_spi
 // 01000000  Read  until CSB raised
 // 11000000  Simultaneous read/write until CSB raised
 // 11000100  Pass-through read/write to management area flash SPI until CSB raised
-// 11000101  Pass-through read/write to user area flash SPI until CSB raised
+// 11000010  Pass-through read/write to user area flash SPI until CSB raised
 // wrnnn000  Read/write as above, for nnn = 1 to 7 bytes, then terminate
 
 // Lower three bits are reserved for future use.
@@ -414,10 +414,13 @@ module housekeeping_spi_slave(reset, SCK, SDI, CSB, SDO,
 	            readmode <= SDI;
 	        end else if (count < 3'b101) begin
 	            fixed <= {fixed[1:0], SDI}; 
-	        end else if (count < 3'b110) begin
+	        end else if (count == 3'b101) begin
+		    pre_pass_thru_mgmt <= SDI;
+	        end else if (count == 3'b110) begin
+		    pre_pass_thru_user <= SDI;
 		    pass_thru_mgmt_delay <= pre_pass_thru_mgmt;
-		    pass_thru_user_delay <= pre_pass_thru_user;
 	        end else if (count == 3'b111) begin
+		    pass_thru_user_delay <= pre_pass_thru_user;
 		    if (pre_pass_thru_mgmt == 1'b1) begin
 			state <= `MGMTPASS;
 			pre_pass_thru_mgmt <= 1'b0;
@@ -454,7 +457,11 @@ module housekeeping_spi_slave(reset, SCK, SDI, CSB, SDO,
 	        end else begin
 	            rdstb <= 1'b0;
 	        end
-            end		// ! state `DATA
+	    end else if (state == `MGMTPASS) begin
+		pass_thru_mgmt <= 1'b1;
+	    end else if (state == `USERPASS) begin
+		pass_thru_user <= 1'b1;
+            end		// ! state `DATA | `MGMTPASS | `USERPASS
         end		// ! csb_reset 
     end			// always @ SCK
 

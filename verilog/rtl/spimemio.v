@@ -318,7 +318,7 @@ module spimemio (
     assign flash_clk_ieb = 1'b1;	/* Always disabled */
 
     assign flash_io0_ieb = (pass_thru | ~resetn) ? 1'b1 : (config_en ? xfer_io0_oe : config_oe[0]);
-    assign flash_io1_ieb = (pass_thru | ~resetn) ? 1'b1 : (config_en ? xfer_io1_oe : config_oe[1]);
+    assign flash_io1_ieb = pass_thru ? 1'b0 : ~resetn ? 1'b1 : (config_en ? xfer_io1_oe : config_oe[1]);
     assign flash_io2_ieb = (pass_thru | ~resetn) ? 1'b1 : (config_en ? xfer_io2_oe : config_oe[2]);
     assign flash_io3_ieb = (pass_thru | ~resetn) ? 1'b1 : (config_en ? xfer_io3_oe : config_oe[3]);
 
