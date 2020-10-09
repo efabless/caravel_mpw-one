@@ -122,6 +122,9 @@ module mgmt_soc #(
     input  pass_thru_mgmt_sdi,
     output pass_thru_mgmt_sdo,
 
+    // SPI master->slave direct link
+    output hk_connect,
+
     // WB MI A (Mega project)
     input mprj_ack_i,
     input [31:0] mprj_dat_i,
@@ -481,6 +484,7 @@ module mgmt_soc #(
         .wb_ack_o(spi_master_ack_o),
         .wb_dat_o(spi_master_dat_o),
 
+	.hk_connect(hk_connect),
         .csb(mgmt_out_pre[3]),
         .sck(mgmt_out_pre[4]),
         .sdi(mgmt_in_data[1]),

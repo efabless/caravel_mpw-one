@@ -46,6 +46,9 @@
 // irqena:
 //     0 = disable interrupt
 //     1 = enable interrupt
+// hkconn:
+//     0 = housekeeping SPI disconnected
+//     1 = housekeeping SPI connected (when SPI master enabled)
 // prescaler: count (in master clock cycles) of 1/2 SCK cycle.
 //
 // reg_dat_we:
@@ -78,6 +81,7 @@ module simple_spi_master_wb #(
     output wb_ack_o,
     output [31:0] wb_dat_o,
 
+    output	 hk_connect,	// Connect to housekeeping SPI
     input 	 sdi,	 // SPI input
     output 	 csb,	 // SPI chip select
     output 	 sck,	 // SPI clock
@@ -118,6 +122,7 @@ module simple_spi_master_wb #(
     	.reg_dat_do(simple_spi_master_reg_dat_do),
     	.reg_dat_wait(reg_dat_wait),
 
+	.hk_connect(hk_connect),	// Attach to housekeeping SPI slave
     	.sdi(sdi),	 // SPI input
     	.csb(csb),	 // SPI chip select
     	.sck(sck),	 // SPI clock
@@ -142,6 +147,7 @@ module simple_spi_master (
     output	  irq_out,
     output	  err_out,
 
+    output	 hk_connect,	// Connect to housekeeping SPI
     input 	 sdi,	 // SPI input
     output 	 csb,	 // SPI chip select
     output 	 sck,	 // SPI clock
@@ -171,12 +177,14 @@ module simple_spi_master (
     reg	   stream;
     reg	   mode;
     reg	   enable;
+    reg	   hkconn;
  
     wire	  csb;
     wire	  irq_out;
     wire	  sck;
     wire	  sdo;
     wire	  sdoenb;
+    wire	  hk_connect;
 
     // Define behavior for inverted SCK and inverted CSB
     assign    	  csb = (enable == 1'b0) ? 1'bz : (invcsb) ? ~icsb : icsb;
@@ -188,9 +196,11 @@ module simple_spi_master (
     assign	  sdo = (enable == 1'b0) ? 1'bz : isdo;
 
     assign	  irq_out = irqena & done;
+    assign	  hk_connect = (enable == 1'b1) ? hkconn : 1'b0;
 
     // Read configuration and data registers
-    assign reg_cfg_do = {17'd0, irqena, enable, stream, mode, invsck, invcsb, mlb, prescaler};
+    assign reg_cfg_do = {16'd0, hkconn, irqena, enable, stream, mode,
+			 invsck, invcsb, mlb, prescaler};
     assign reg_dat_wait = ~done;
     assign reg_dat_do = done ? rreg : ~0;
 
@@ -205,6 +215,7 @@ module simple_spi_master (
 	    irqena <= 1'b0;
 	    stream <= 1'b0;
 	    mode <= 1'b0;
+	    hkconn <= 1'b0;
         end else begin
             if (reg_cfg_we[0]) prescaler <= reg_cfg_di[7:0];
             if (reg_cfg_we[1]) begin
@@ -215,6 +226,7 @@ module simple_spi_master (
 	        stream <= reg_cfg_di[12];
 	        enable <= reg_cfg_di[13];
 	        irqena <= reg_cfg_di[14];
+	        hkconn <= reg_cfg_di[15];
 	    end //reg_cfg_we[1]
         end //resetn
     end //always

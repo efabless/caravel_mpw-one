@@ -77,6 +77,7 @@ module mgmt_core #(
     	wire ext_clk_sel;
     	wire pll_clk;
     	wire ext_reset;
+	wire hk_connect;
 
 	caravel_clkrst clkrst(
 	`ifdef LVS
@@ -165,6 +166,8 @@ module mgmt_core #(
 		.pass_thru_mgmt_sck(pass_thru_mgmt_sck),
 		.pass_thru_mgmt_sdi(pass_thru_mgmt_sdi),
 		.pass_thru_mgmt_sdo(pass_thru_mgmt_sdo),
+		// SPI master->slave direct connection
+		.hk_connect(hk_connect),
 		// Logic Analyzer
 		.la_input(la_input),
 		.la_output(la_output),
@@ -229,9 +232,9 @@ module mgmt_core #(
 		.vss(vss),
 	    `endif
 	    .RSTB(porb),
-	    .SCK(mgmt_in_data[4]),
-	    .SDI(mgmt_in_data[2]),
-	    .CSB(mgmt_in_data[3]),
+	    .SCK((hk_connect) ? mgmt_out_data[4] : mgmt_in_data[4]),
+	    .SDI((hk_connect) ? mgmt_out_data[2] : mgmt_in_data[2]),
+	    .CSB((hk_connect) ? mgmt_out_data[3] : mgmt_in_data[3]),
 	    .SDO(sdo_out),
 	    .sdo_enb(sdo_outenb),
 	    .pll_dco_ena(spi_pll_dco_ena),

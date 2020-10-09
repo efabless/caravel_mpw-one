@@ -32,7 +32,7 @@
 // Caravel defined registers:
 // Register 0:  SPI status and control (unused & reserved)
 // Register 1 and 2:  Manufacturer ID (0x0456) (readonly)
-// Register 3:  Product ID (= 2) (readonly)
+// Register 3:  Product ID (= 16) (readonly)
 // Register 4-7: Mask revision (readonly) --- Externally programmed
 //	with via programming.  Via programmed with a script to match
 //	each customer ID.

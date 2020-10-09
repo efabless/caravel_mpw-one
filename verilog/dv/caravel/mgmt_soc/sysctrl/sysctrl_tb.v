@@ -10,6 +10,7 @@ module sysctrl_tb;
 
 	wire gpio;
 	wire [15:0] checkbits;
+	wire [7:0] spivalue;
 	wire [36:0] mprj_io;
 	wire flash_csb;
 	wire flash_clk;
@@ -18,6 +19,7 @@ module sysctrl_tb;
 	wire SDO;
 
 	assign checkbits = mprj_io[31:16];
+	assign spivalue  = mprj_io[15:8];
 
 	// External clock is used by default.  Make this artificially fast for the
 	// simulation.  Normally this would be a slow clock and the digital PLL
@@ -42,72 +44,88 @@ module sysctrl_tb;
 		$finish;
 	end
 
-	always @(checkbits) begin
-		if(checkbits == 16'hA040) begin
-			$display("System control Test started");
-		end
-		else if(checkbits == 16'hAB40) begin
-			$display("%c[1;31m",27);
-			$display("Monitor: System control (RTL) Test failed");
-			$display("%c[0m",27);
-			$finish;
-		end
-		else if(checkbits == 16'hAB41) begin
-			$display("Monitor: System control product ID read passed");
-		end
-        else if(checkbits == 16'hAB50) begin
-            $display("%c[1;31m",27);
-			$display("Monitor: System control manufacture ID read failed");
-			$display("%c[0m",27);
-			$finish;
-        end else if(checkbits == 16'hAB51) begin
-			$display("Monitor: System control manufacture ID read passed");
-        end
-        else if(checkbits == 16'hAB60) begin
-            $display("%c[1;31m",27);
-			$display("Monitor: System control mask rev read failed");
-			$display("%c[0m",27);
-			$finish;
-        end else if(checkbits == 16'hAB61) begin
-			$display("Monitor: System control mask rev read passed");
-        end
-        else if(checkbits == 16'hAB70) begin
-            $display("%c[1;31m",27);
-			$display("Monitor: System control pll-bypass read failed");
-			$display("%c[0m",27);
-			$finish;
-        end else if(checkbits == 16'hAB71) begin
-			$display("Monitor: System control pll-bypass read passed");
-        end
-        else if(checkbits == 16'hAB80) begin
-            $display("%c[1;31m",27);
-			$display("Monitor: System control pll-config read failed");
-			$display("%c[0m",27);
-			$finish;
-        end else if(checkbits == 16'hAB81) begin
-			$display("Monitor: System control pll-config read passed");
-        end
-        else if(checkbits == 16'hAB90) begin
-            $display("%c[1;31m",27);
-			$display("Monitor: System control spi-enables read failed");
-			$display("%c[0m",27);
-			$finish;
-        end else if(checkbits == 16'hAB91) begin
-			$display("Monitor: System control spi-enables read passed");
-			$display("Monitor: Sysctrl (RTL) test passed.");
+	// Monitor
+	initial begin
+	    wait(checkbits == 16'hA040);
+            $display("Monitor: Test Sysctrl (RTL) Started");
+
+	    wait(checkbits == 16'hA041);
+            $display("   SPI value = 0x%x (should be 0x04)", spivalue);
+            if(spivalue !== 32'h04) begin
+                $display("Monitor: Test Sysctrl (RTL) Failed");
+                $finish;
+            end
+	    wait(checkbits == 16'hA042);
+            $display("   SPI value = 0x%x (should be 0x56)", spivalue);
+            if(spivalue !== 32'h56) begin
+                $display("Monitor: Test Sysctrl (RTL) Failed");
+                $finish;
+            end
+	    wait(checkbits == 16'hA043);
+            $display("   SPI value = 0x%x (should be 0x10)", spivalue);
+            if(spivalue !== 32'h10) begin
+                $display("Monitor: Test Sysctrl (RTL) Failed");
+                $finish;
+            end
+	    wait(checkbits == 16'hA044);
+            $display("   SPI value = 0x%x (should be 0x01)", spivalue);
+            if(spivalue !== 32'h01) begin
+                $display("Monitor: Test Sysctrl (RTL) Failed");
+                $finish;
+            end
+	    wait(checkbits == 16'hA045);
+            $display("   SPI value = 0x%x (should be 0x01)", spivalue);
+            if(spivalue !== 32'h01) begin
+                $display("Monitor: Test Sysctrl (RTL) Failed");
+                $finish;
+            end
+	    wait(checkbits == 16'hA046);
+            $display("   SPI value = 0x%x (should be 0xff)", spivalue);
+            if(spivalue !== 32'hff) begin
+                $display("Monitor: Test Sysctrl (RTL) Failed");
+                $finish;
+            end
+	    wait(checkbits == 16'hA047);
+            $display("   SPI value = 0x%x (should be 0xef)", spivalue);
+            if(spivalue !== 32'hef) begin
+                $display("Monitor: Test Sysctrl (RTL) Failed");
+                $finish;
+            end
+	    wait(checkbits == 16'hA048);
+            $display("   SPI value = 0x%x (should be 0xff)", spivalue);
+            if(spivalue !== 32'hff) begin
+                $display("Monitor: Test Sysctrl (RTL) Failed");
+                $finish;
+            end
+	    wait(checkbits == 16'hA049);
+            $display("   SPI value = 0x%x (should be 0x03)", spivalue);
+            if(spivalue !== 32'h03) begin
+                $display("Monitor: Test Sysctrl (RTL) Failed");
+                $finish;
+            end
+	    wait(checkbits == 16'hA04a);
+            $display("   SPI value = 0x%x (should be 0x00)", spivalue);
+            if(spivalue !== 32'h00) begin
+                $display("Monitor: Test Sysctrl (RTL) Failed");
+                $finish;
+            end
+	    wait(checkbits == 16'hA04b);
+            $display("   SPI value = 0x%x (should be 0x04)", spivalue);
+            if(spivalue !== 32'h04) begin
+                $display("Monitor: Test Sysctrl (RTL) Failed");
+                $finish;
+            end
+
+	    wait(checkbits == 16'hA090);
+            $display("Monitor: Test Sysctrl (RTL) Passed");
             $finish;
-        end
 	end
 
 	initial begin
-		CSB <= 1'b1;
-		SCK <= 1'b0;
-		SDI <= 1'b0;
 		RSTB <= 1'b0;
 		#1000;
 		RSTB <= 1'b1;	    // Release reset
 		#2000;
-		CSB <= 1'b0;	    // Apply CSB to start transmission
 	end
 
 	always @(checkbits) begin
