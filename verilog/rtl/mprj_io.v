@@ -53,7 +53,7 @@ module mprj_io #(
 	    .enable_h(enh[AREA1PADS - 1:0]),
 	    .enable_inp_h(loop1_io[AREA1PADS - 1:0]),
 	    .enable_vdda_h(porb_h),
-	    .enable_vswitch_h(vssa),
+	    .enable_vswitch_h(vssio),
 	    .enable_vddio(vccd),
 	    .inp_dis(inp_dis[AREA1PADS - 1:0]),
 	    .ib_mode_sel(ib_mode_sel[AREA1PADS - 1:0]),
@@ -76,7 +76,7 @@ module mprj_io #(
     s8iom0_gpiov2_pad area2_io_pad [`MPRJ_IO_PADS - AREA1PADS - 1:0] (
 	`USER2_ABUTMENT_PINS
 	`ifndef	TOP_ROUTING
-	    .pad(io[`MPRJ_IO_PADS - AREA1PADS - 1:0]),
+	    .pad(io[`MPRJ_IO_PADS - 1:AREA1PADS]),
 	`endif
 	    .out(io_out[`MPRJ_IO_PADS - 1:AREA1PADS]),
 	    .oe_n(oeb[`MPRJ_IO_PADS - 1:AREA1PADS]),
@@ -84,7 +84,7 @@ module mprj_io #(
 	    .enable_h(enh[`MPRJ_IO_PADS - 1:AREA1PADS]),
 	    .enable_inp_h(loop1_io[`MPRJ_IO_PADS - 1:AREA1PADS]),
 	    .enable_vdda_h(porb_h),
-	    .enable_vswitch_h(vssa),
+	    .enable_vswitch_h(vssio),
 	    .enable_vddio(vccd),
 	    .inp_dis(inp_dis[`MPRJ_IO_PADS - 1:AREA1PADS]),
 	    .ib_mode_sel(ib_mode_sel[`MPRJ_IO_PADS - 1:AREA1PADS]),
