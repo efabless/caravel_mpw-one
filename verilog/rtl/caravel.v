@@ -41,12 +41,13 @@
 `include "mgmt_soc.v"
 `include "housekeeping_spi.v"
 `include "digital_pll.v"
-`include "caravel_clkrst.v"
+`include "caravel_clocking.v"
 `include "mgmt_core.v"
 `include "mprj_io.v"
 `include "chip_io.v"
 `include "user_id_programming.v"
 `include "gpio_control_block.v"
+`include "clock_div.v"
 `include "simple_por.v"
 
 /*------------------------------*/
@@ -339,7 +340,6 @@ module caravel (
 		.porb(porb_l),
 		// Clocks and reset
 		.clock(clock_core),
-		.pll_clk16(pll_clk16),
         	.core_clk(caravel_clk),
         	.core_rstn(caravel_rstn),
 		// Logic Analyzer 

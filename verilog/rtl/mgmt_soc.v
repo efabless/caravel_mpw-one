@@ -50,10 +50,6 @@ module mgmt_soc #(
     inout vdd1v8,	    /* 1.8V domain */
     inout vss,
 `endif
-    input pll_clk,
-    input ext_clk,
-    input ext_clk_sel,
-
     input clk,
     input resetn,
 
@@ -319,7 +315,9 @@ module mgmt_soc #(
         irq[11] = irq_counter_timer1;
     end
 
-    // Assumption : no syscon module and wb_clk is the clock coming from the chip pin ? 
+    // Assumption : no syscon module and wb_clk is the clock coming from the
+    // caravel_clocking module
+
     assign wb_clk_i = clk;
     assign wb_rst_i = ~resetn;      // Redundant
 

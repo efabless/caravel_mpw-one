@@ -37,14 +37,14 @@
 //	with via programming.  Via programmed with a script to match
 //	each customer ID.
 //
-// Register 8:   PLL enable (1 bit)
+// Register 8:   PLL enables (2 bits)
 // Register 9:   PLL bypass (1 bit)
 // Register 10:  IRQ (1 bit)
 // Register 11:  reset (1 bit)
 // Register 12:  trap (1 bit) (readonly)
 // Register 13-16:  PLL trim (26 bits)
-// Register 17:	 PLL output select (3 bits)
-// Register 18:	 PLL divider (5 bits)
+// Register 17:	 PLL output divider (3 bits)
+// Register 18:	 PLL feedback divider (5 bits)
 //------------------------------------------------------------
 
 module housekeeping_spi(
@@ -52,7 +52,7 @@ module housekeeping_spi(
     vdd, vss, 
 `endif
     RSTB, SCK, SDI, CSB, SDO, sdo_enb,
-    pll_dco_ena, pll_div, pll_sel,
+    pll_ena, pll_dco_ena, pll_div, pll_sel,
     pll_trim, pll_bypass, irq, reset, trap,
     mask_rev_in, pass_thru_reset,
     pass_thru_mgmt_sck, pass_thru_mgmt_csb,
@@ -74,6 +74,7 @@ module housekeeping_spi(
     output SDO;	    // to padframe
     output sdo_enb; // to padframe
 
+    output pll_ena;
     output pll_dco_ena;
     output [4:0] pll_div;
     output [2:0] pll_sel;
@@ -101,6 +102,7 @@ module housekeeping_spi(
     reg [4:0] pll_div;
     reg [2:0] pll_sel;
     reg pll_dco_ena;
+    reg pll_ena;
     reg pll_bypass;
     reg reset_reg;
     reg irq;
@@ -175,7 +177,7 @@ module housekeeping_spi(
     (iaddr == 8'h06) ? mask_rev[15:8] :		// Mask rev (metal programmed)
     (iaddr == 8'h07) ? mask_rev[7:0] :		// Mask rev (metal programmed)
 
-    (iaddr == 8'h08) ? {7'b0000000, pll_dco_ena} :
+    (iaddr == 8'h08) ? {6'b0000000, pll_dco_ena, pll_ena} :
     (iaddr == 8'h09) ? {7'b0000000, pll_bypass} :
     (iaddr == 8'h0a) ? {7'b0000000, irq} :
     (iaddr == 8'h0b) ? {7'b0000000, reset} :
@@ -195,16 +197,18 @@ module housekeeping_spi(
         // Set trim for PLL at (almost) slowest rate (~90MHz).  However,
         // pll_trim[12] must be set to zero for proper startup.
         pll_trim <= 26'b11111111111110111111111111;
-        pll_sel <= 3'b000;
-        pll_div <= 5'b00100;	// Default divide-by-8
+        pll_sel <= 3'b010;	// Default output divider divide-by-2
+        pll_div <= 5'b00100;	// Default feedback divider divide-by-8
         pll_dco_ena <= 1'b1;	// Default free-running PLL
-        pll_bypass <= 1'b1;		// NOTE: Default bypass mode (don't use PLL)
+        pll_ena <= 1'b0;	// Default PLL turned off
+        pll_bypass <= 1'b1;	// Default bypass mode (don't use PLL)
         irq <= 1'b0;
         reset_reg <= 1'b0;
     end else if (wrstb == 1'b1) begin
         case (iaddr)
         8'h08: begin
-             pll_dco_ena <= idata[0];
+             pll_ena <= idata[0];
+             pll_dco_ena <= idata[1];
                end
         8'h09: begin
              pll_bypass <= idata[0];

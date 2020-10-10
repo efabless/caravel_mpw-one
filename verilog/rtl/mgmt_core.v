@@ -32,7 +32,6 @@ module mgmt_core #(
 	input porb,
 	// Clocking
 	input clock,
-	output pll_clk16,
 	// LA signals
     	input  [127:0] la_input,           	// From Mega-Project to cpu
     	output [127:0] la_output,          	// From CPU to Mega-Project
@@ -75,20 +74,21 @@ module mgmt_core #(
 	input [31:0] mask_rev
 );
     	wire ext_clk_sel;
-    	wire pll_clk;
+    	wire pll_clk, pll_clk90;
     	wire ext_reset;
 	wire hk_connect;
 
-	caravel_clkrst clkrst(
+	caravel_clocking clocking(
 	`ifdef LVS
 		.vdd1v8(vdd1v8),
 		.vss(vss),
 	`endif		
 		.ext_clk_sel(ext_clk_sel),
-		.ext_clk(clock),		// Should be better handled. . .
+		.ext_clk(clock),
 		.pll_clk(pll_clk),
 		.resetb(resetb), 
-		.ext_reset(ext_reset),
+		.sel(spi_pll_sel),
+		.ext_reset(ext_reset),	// From housekeeping SPI
 		.core_clk(core_clk),
 		.resetb_sync(core_rstn)
 	);
@@ -123,9 +123,6 @@ module mgmt_core #(
         	.vdd1v8(vdd1v8),
         	.vss(vss),
     	    `endif
-        	.pll_clk(pll_clk),
-		.ext_clk(clock),
-		.ext_clk_sel(ext_clk_sel),
 		.clk(core_clk),
 		.resetn(core_rstn),
 		.trap(trap),
@@ -205,13 +202,10 @@ module mgmt_core #(
 		.vss(vss),
 	    `endif
 		.resetb(resetb),
-		.extclk_sel(ext_clk_sel),
+		.enable(spi_pll_ena),
 		.osc(clock),
-		.clockc(pll_clk),
-		.clockp({pll_clk_core0, pll_clk_core90}),
-		.clockd({pll_clk2, pll_clk4, pll_clk8, pll_clk16}),
+		.clockp({pll_clk, pll_clk90}),
 		.div(spi_pll_div),
-		.sel(spi_pll_sel),
 		.dco(spi_pll_dco_ena),
 		.ext_trim(spi_pll_trim)
     	);
@@ -240,6 +234,7 @@ module mgmt_core #(
 	    .pll_dco_ena(spi_pll_dco_ena),
 	    .pll_sel(spi_pll_sel),
 	    .pll_div(spi_pll_div),
+	    .pll_ena(spi_pll_ena),
             .pll_trim(spi_pll_trim),
 	    .pll_bypass(ext_clk_sel),
 	    .irq(irq_spi),
