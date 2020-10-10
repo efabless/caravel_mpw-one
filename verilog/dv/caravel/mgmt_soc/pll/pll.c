@@ -14,7 +14,6 @@
 void main()
 {
     int i;
-    uint32_t value;
 
     reg_mprj_datal = 0;
 
@@ -37,16 +36,6 @@ void main()
     reg_mprj_io_18 = GPIO_MODE_MGMT_STD_OUTPUT;
     reg_mprj_io_17 = GPIO_MODE_MGMT_STD_OUTPUT;
     reg_mprj_io_16 = GPIO_MODE_MGMT_STD_OUTPUT;
-
-    // Configure next 8 bits for writing the SPI value read on GPIO
-    reg_mprj_io_15 = GPIO_MODE_MGMT_STD_OUTPUT;
-    reg_mprj_io_14 = GPIO_MODE_MGMT_STD_OUTPUT;
-    reg_mprj_io_13 = GPIO_MODE_MGMT_STD_OUTPUT;
-    reg_mprj_io_12 = GPIO_MODE_MGMT_STD_OUTPUT;
-    reg_mprj_io_11 = GPIO_MODE_MGMT_STD_OUTPUT;
-    reg_mprj_io_10 = GPIO_MODE_MGMT_STD_OUTPUT;
-    reg_mprj_io_9  = GPIO_MODE_MGMT_STD_OUTPUT;
-    reg_mprj_io_8  = GPIO_MODE_MGMT_STD_OUTPUT;
 
     /* Apply configuration */
     reg_mprj_xfer = 1;
@@ -81,7 +70,7 @@ void main()
     reg_spimaster_config = 0xa102;	// Release CSB (ends stream mode)
 
     // Write checkpoint
-    reg_mprj_datal = 0xA0410000 | (value << 8);	// Mfgr ID (high)
+    reg_mprj_datal = 0xA0410000;
 
     reg_spimaster_config = 0xb002;	// Apply stream mode
     reg_spimaster_data = 0x80;		// Write 0x80 (write mode)
@@ -91,7 +80,7 @@ void main()
     reg_spimaster_config = 0xa102;	// Release CSB (ends stream mode)
 
     // Write checkpoint
-    reg_mprj_datal = 0xA0420000 | (value << 8);	// PLL enable
+    reg_mprj_datal = 0xA0420000;
 
     reg_spimaster_config = 0xb002;	// Apply stream mode
     reg_spimaster_data = 0x80;		// Write 0x80 (write mode)
