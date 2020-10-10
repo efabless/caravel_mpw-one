@@ -63,8 +63,13 @@ void main()
 
     reg_spimaster_config = 0xb002;	// Apply stream mode
     reg_spimaster_data = 0x80;		// Write 0x80 (write mode)
-    reg_spimaster_data = 0x08;		// Write 0x08 (start address)
+    reg_spimaster_data = 0x11;		// Write 0x11 (start address)
+    reg_spimaster_data = 0x02;		// Write 0x02 to PLL select
+    reg_spimaster_config = 0xa102;	// Release CSB (ends stream mode)
 
+    reg_spimaster_config = 0xb002;	// Apply stream mode
+    reg_spimaster_data = 0x80;		// Write 0x80 (write mode)
+    reg_spimaster_data = 0x08;		// Write 0x08 (start address)
     reg_spimaster_data = 0x00;		// Write 0x00 to turn off DCO mode
     reg_spimaster_data = 0x00;		// Write 0x00 to clock from PLL
     reg_spimaster_config = 0xa102;	// Release CSB (ends stream mode)
@@ -75,7 +80,6 @@ void main()
     reg_spimaster_config = 0xb002;	// Apply stream mode
     reg_spimaster_data = 0x80;		// Write 0x80 (write mode)
     reg_spimaster_data = 0x12;		// Write 0x12 (start address)
-
     reg_spimaster_data = 0x03;		// Write 0x03 to divider (was 0x04)
     reg_spimaster_config = 0xa102;	// Release CSB (ends stream mode)
 
@@ -85,8 +89,7 @@ void main()
     reg_spimaster_config = 0xb002;	// Apply stream mode
     reg_spimaster_data = 0x80;		// Write 0x80 (write mode)
     reg_spimaster_data = 0x11;		// Write 0x11 (start address)
-
-    reg_spimaster_data = 0x02;		// Write 0x02 to PLL select
+    reg_spimaster_data = 0x03;		// Write 0x03 to PLL select
     reg_spimaster_config = 0xa102;	// Release CSB (ends stream mode)
 
     reg_spimaster_config = 0x2102;	// Release housekeeping SPI
