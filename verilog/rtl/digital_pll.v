@@ -31,12 +31,11 @@ module digital_pll(
     wire [25:0] itrim;		// Internally generated trim bits
     wire [25:0] otrim;		// Trim bits applied to the ring oscillator
     wire [3:0]	nint;		// Internal divided down clocks
-    wire	reset;		// Internal positive sense reset
     wire	resetbb;	// Internal buffered negative sense reset
     wire	creset;		// Controller reset
     wire	ireset;		// Internal reset (external reset OR extclk_sel)
 
-    assign ireset = reset | extclk_sel;
+    assign ireset = ~resetb | extclk_sel;
 
     // In DCO mode: Hold controller in reset and apply external trim value
     assign itrim = (dco == 1'b0) ? otrim : ext_trim;

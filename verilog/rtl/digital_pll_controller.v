@@ -99,9 +99,13 @@ module digital_pll_controller(reset, clock, osc, div, trim);
 
         if (prep == 3'b111) begin
             if (sum > div) begin
-            tval <= tval + 1;
+		if (tval < 127) begin
+            	    tval <= tval + 1;
+		end
             end else if (sum < div) begin
-            tval <= tval - 1;
+		if (tval > 0) begin
+            	    tval <= tval - 1;
+		end
             end
         end
         end else begin
