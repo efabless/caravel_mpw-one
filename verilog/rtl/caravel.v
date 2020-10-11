@@ -22,21 +22,15 @@
 
 `include "pads.v"
 
-/* To be removed when sky130_fd_io is available */
-// `include "/ef/tech/SW/EFS8A/libs.ref/verilog/s8iom0s8/s8iom0s8.v"
-// `include "/ef/tech/SW/EFS8A/libs.ref/verilog/s8iom0s8/power_pads_lib.v"
-// `include "/ef/tech/SW/sky130A/libs.ref/verilog/sky130_fd_sc_hd/sky130_fd_sc_hd.v"
-// `include "/ef/tech/SW/sky130A/libs.ref/verilog/sky130_fd_sc_hvl/sky130_fd_sc_hvl.v"
+/* NOTE: Need to pass the PDK root directory to iverilog with option -I */
 
-/* Local only, please remove */
-// `include "/home/tim/projects/efabless/tech/SW/sky130A/libs.ref/sky130_fd_io/verilog/sky130_fd_io.v"
-// `include "/home/tim/projects/efabless/tech/SW/sky130A/libs.ref/sky130_fd_io/verilog/power_pads_lib.v"
-`include "/home/tim/projects/efabless/tech/SW/EFS8A/libs.ref/s8iom0s8/verilog/s8iom0s8.v"
-// `include "/home/tim/projects/efabless/tech/SW/EFS8A/libs.ref/s8iom0s8/verilog/power_pads_lib.v"
-`include "/home/tim/projects/efabless/tech/SW/sky130A/libs.ref/sky130_fd_sc_hd/verilog/primitives.v"
-`include "/home/tim/projects/efabless/tech/SW/sky130A/libs.ref/sky130_fd_sc_hd/verilog/sky130_fd_sc_hd.v"
-`include "/home/tim/projects/efabless/tech/SW/sky130A/libs.ref/sky130_fd_sc_hvl/verilog/primitives.v"
-`include "/home/tim/projects/efabless/tech/SW/sky130A/libs.ref/sky130_fd_sc_hvl/verilog/sky130_fd_sc_hvl.v"
+`include "libs.ref/sky130_fd_io/verilog/sky130_fd_io.v"
+// `include "libs.ref/sky130_fd_io/verilog/power_pads_lib.v"
+
+`include "libs.ref/sky130_fd_sc_hd/verilog/primitives.v"
+`include "libs.ref/sky130_fd_sc_hd/verilog/sky130_fd_sc_hd.v"
+`include "libs.ref/sky130_fd_sc_hvl/verilog/primitives.v"
+`include "libs.ref/sky130_fd_sc_hvl/verilog/sky130_fd_sc_hvl.v"
 
 `include "mgmt_soc.v"
 `include "housekeeping_spi.v"

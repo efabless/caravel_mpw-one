@@ -5,6 +5,7 @@ IP_PATH = ../../../../ip
 BEHAVIOURAL_MODELS = ../../ 
 
 GCC_PATH=/ef/apps/bin
+PDK_PATH=/ef/tech/SW/sky130A
 
 .SUFFIXES:
 
@@ -15,7 +16,8 @@ all:  ${PATTERN:=.vcd}
 hex:  ${PATTERN:=.hex}
 
 %.vvp: %_tb.v %.hex
-	iverilog -DFUNCTIONAL -I $(BEHAVIOURAL_MODELS)-I $(IP_PATH) -I $(RTL_PATH) \
+	iverilog -DFUNCTIONAL -I $(BEHAVIOURAL_MODELS) \
+	-I $(PDK_PATH) -I $(IP_PATH) -I $(RTL_PATH) \
 	$< -o $@
 
 %.vcd: %.vvp
