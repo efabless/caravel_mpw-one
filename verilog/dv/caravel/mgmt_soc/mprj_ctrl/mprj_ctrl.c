@@ -58,34 +58,34 @@ void main()
     reg_mprj_datal = 0;
 
     // start test
-    reg_mprj_datal = 0xA040;
+    reg_mprj_datal = 0x50000000;
 
     // Write to IO Control
     reg_mprj_io_0 = 0x004F;
     if (reg_mprj_io_0 != 0x004F)
-	reg_mprj_datal = 0xAB400000;
+	reg_mprj_datal = 0x60000000;
      else
-	reg_mprj_datal = 0xAB410000;
+	reg_mprj_datal = 0x70000000;
 
     // Write to IO Control 
     reg_mprj_io_1 = 0x005F;
     if (reg_mprj_io_1 != 0x005F)
-	reg_mprj_datal = 0xAB500000;
+	reg_mprj_datal = 0x80000000;
     else
-	reg_mprj_datal = 0xAB510000;
+	reg_mprj_datal = 0x90000000;
 
     // Write to IO Control
     reg_mprj_io_2 = 0x006F;
     if (reg_mprj_io_2 != 0x006F)
-	reg_mprj_datal = 0xAB600000;
+	reg_mprj_datal = 0xA0000000;
     else
-	reg_mprj_datal = 0xAB610000;
+	reg_mprj_datal = 0xb0000000;
 
-    // Write to IO Control
+    // Write to IO Control (NOTE:  Only 13 bits are valid)
     reg_mprj_io_3 = 0xF0F5;
-    if (reg_mprj_io_3 != 0xF0F5)
-	reg_mprj_datal = 0xAB700000;
+    if (reg_mprj_io_3 != 0x10F5)
+	reg_mprj_datal = 0xc0000000;
     else
-	reg_mprj_datal = 0xAB710000;
+	reg_mprj_datal = 0xd0000000;
 }
 

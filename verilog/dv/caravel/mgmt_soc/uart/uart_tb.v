@@ -71,7 +71,6 @@ module uart_tb;
 			$display("UART Test started");
 		end
 		else if(checkbits == 16'hAB00) begin
-			#20000;		// Allow time for last transmission
 			$display("UART Test passed");
 			$finish;
 		end

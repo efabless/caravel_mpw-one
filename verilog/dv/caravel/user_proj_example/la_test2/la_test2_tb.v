@@ -13,7 +13,7 @@ module la_test2_tb;
     	wire [36:0] mprj_io;
 	wire [15:0] checkbits;
 
-	assign checkbits = mprj_io[15:8];
+	assign checkbits = mprj_io[31:16];
 
 	always #12.5 clock <= (clock === 1'b0);
 

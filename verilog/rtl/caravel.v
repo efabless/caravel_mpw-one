@@ -413,7 +413,8 @@ module caravel (
 		.la_oen (la_oen),
 		// IO Pads
 		.io_in (user_io_in),
-    		.io_out(user_io_out)
+    		.io_out(user_io_out),
+    		.io_oeb(user_io_oeb)
 	);
 
 	/*--------------------------------------*/

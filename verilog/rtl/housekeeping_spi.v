@@ -177,7 +177,7 @@ module housekeeping_spi(
     (iaddr == 8'h06) ? mask_rev[15:8] :		// Mask rev (metal programmed)
     (iaddr == 8'h07) ? mask_rev[7:0] :		// Mask rev (metal programmed)
 
-    (iaddr == 8'h08) ? {6'b0000000, pll_dco_ena, pll_ena} :
+    (iaddr == 8'h08) ? {6'b000000, pll_dco_ena, pll_ena} :
     (iaddr == 8'h09) ? {7'b0000000, pll_bypass} :
     (iaddr == 8'h0a) ? {7'b0000000, irq} :
     (iaddr == 8'h0b) ? {7'b0000000, reset} :

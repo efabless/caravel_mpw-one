@@ -177,8 +177,8 @@ module hkspi_tb;
 	    $display("Read register 7 = 0x%02x (should be 0x00)", tbdata);
 		if(tbdata !== 8'h00) begin $display("Monitor: Test HK SPI (RTL) Failed"); $finish; end
 	    read_byte(tbdata);
-	    $display("Read register 8 = 0x%02x (should be 0x01)", tbdata);
-		if(tbdata !== 8'h01) begin $display("Monitor: Test HK SPI (RTL) Failed"); $finish; end
+	    $display("Read register 8 = 0x%02x (should be 0x02)", tbdata);
+		if(tbdata !== 8'h02) begin $display("Monitor: Test HK SPI (RTL) Failed"); $finish; end
 	    read_byte(tbdata);
 	    $display("Read register 9 = 0x%02x (should be 0x01)", tbdata);
 		if(tbdata !== 8'h01) begin $display("Monitor: Test HK SPI (RTL) Failed"); $finish; end
@@ -204,8 +204,8 @@ module hkspi_tb;
 	    $display("Read register 16 = 0x%02x (should be 0x03)", tbdata);
 		if(tbdata !== 8'h03) begin $display("Monitor: Test HK SPI (RTL) Failed"); $finish; end
 	    read_byte(tbdata);
-	    $display("Read register 17 = 0x%02x (should be 0x00)", tbdata);
-		if(tbdata !== 8'h00) begin $display("Monitor: Test HK SPI (RTL) Failed"); $finish; end
+	    $display("Read register 17 = 0x%02x (should be 0x02)", tbdata);
+		if(tbdata !== 8'h02) begin $display("Monitor: Test HK SPI (RTL) Failed"); $finish; end
 	    read_byte(tbdata);
 	    $display("Read register 18 = 0x%02x (should be 0x04)", tbdata);
 		if(tbdata !== 8'h04) begin $display("Monitor: Test HK SPI (RTL) Failed"); $finish; end

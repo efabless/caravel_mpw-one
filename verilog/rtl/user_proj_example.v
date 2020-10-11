@@ -54,10 +54,15 @@ module user_proj_example #(
 
     // IOs
     input  [IO_PADS-1:0] io_in,
-    output [IO_PADS-1:0] io_out
+    output [IO_PADS-1:0] io_out,
+    output [IO_PADS-1:0] io_oeb
 );
     wire clk;
     wire rst;
+
+    wire [IO_PADS-1:0] io_in;
+    wire [IO_PADS-1:0] io_out;
+    wire [IO_PADS-1:0] io_oeb;
 
     wire [31:0] rdata; 
     wire [31:0] wdata;
@@ -75,6 +80,7 @@ module user_proj_example #(
 
     // IO
     assign io_out = count;
+    assign io_oeb = {(IO_PADS-1){rst}};
 
     // LA
     assign la_data_out = {{(127-BITS){1'b0}}, count};

@@ -185,7 +185,7 @@ module pass_thru_tb;
 	    $display("Read data = 0x%02x (should be 0x10)", tbdata);
 	    if(tbdata !== 8'h10) begin $display("Monitor: Test HK SPI Pass-thru (RTL) Failed"); $finish; end
 
-	    $display("Monitor: Test HK SPI (RTL) Passed");
+	    $display("Monitor: Test HK SPI Pass-thru (RTL) Passed");
 
 	    #10000;
  	    $finish;

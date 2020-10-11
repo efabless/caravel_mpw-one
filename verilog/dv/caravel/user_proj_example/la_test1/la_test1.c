@@ -58,13 +58,13 @@ void main()
 
         reg_mprj_io_6  = GPIO_MODE_MGMT_STD_OUTPUT;
 
+	// Set UART clock to 64 kbaud (enable before I/O configuration)
+	reg_uart_clkdiv = 625;
+	reg_uart_enable = 1;
+
         /* Apply configuration */
         reg_mprj_xfer = 1;
         while (reg_mprj_xfer == 1);
-
-	// Set UART clock to 64 kbaud
-	reg_uart_clkdiv = 625;
-	reg_uart_enable = 1;
 
 	// Configure LA probes [31:0], [127:64] as inputs to the cpu 
 	// Configure LA probes [63:32] as outputs from the cpu
@@ -89,7 +89,7 @@ void main()
 		}
 	}
 	print("\n");
-	print("Monitor: Test 2 Passed\n\n");
+	print("Monitor: Test 2 Passed\n\n");	// Makes simulation very long!
 	reg_mprj_datal = 0xAB510000;
 }
 

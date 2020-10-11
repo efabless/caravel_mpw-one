@@ -67,19 +67,19 @@ module timer2_tb;
 	// Monitor
 	initial begin
 		wait(checkbits == 5'h0a);
-		$display("Monitor: Test Timer (RTL) Started");
+		$display("Monitor: Test Timer2 (RTL) Started");
 
 		/* Add checks here */
 		wait(checkbits == 5'h01);
 		$display("   countbits = 0x%x (should be 0xdcba7eb0)", countbits);
 		if(countbits !== 32'hdcba7eb0) begin
-		    $display("Monitor: Test Timer (RTL) Failed");
+		    $display("Monitor: Test Timer2 (RTL) Failed");
 		    $finish;
 		end
 		wait(checkbits == 5'h02);
 		$display("   countbits = 0x%x (should be 0x10)", countbits);
 		if(countbits !== 32'h10) begin
-		    $display("Monitor: Test Timer (RTL) Failed");
+		    $display("Monitor: Test Timer2 (RTL) Failed");
 		    $finish;
 		end
 		wait(checkbits == 5'h03);
@@ -91,17 +91,17 @@ module timer2_tb;
 		wait(checkbits == 5'h04);
 		$display("   countbits = %x (should be 0x0c)", countbits);
 		if(countbits !== 32'h0c) begin
-		    $display("Monitor: Test Timer (RTL) Failed");
+		    $display("Monitor: Test Timer2 (RTL) Failed");
 		    $finish;
 		end
 		wait(checkbits == 5'h05);
 		$display("   countbits = %x (should be 0x117c)", countbits);
 		if(countbits !== 32'h117c) begin
-		    $display("Monitor: Test Timer (RTL) Failed");
+		    $display("Monitor: Test Timer2 (RTL) Failed");
 		    $finish;
 		end
 
-		$display("Monitor: Test Timer (RTL) Passed");
+		$display("Monitor: Test Timer2 (RTL) Passed");
 		$finish;
 	end
 

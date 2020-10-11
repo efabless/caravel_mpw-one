@@ -5,6 +5,8 @@
 
 void main()
 {
+    int j;
+
     // Configure I/O:  High 16 bits of user area used for a 16-bit
     // word to write and be detected by the testbench verilog.
     // Only serial Tx line is used in this testbench.  It connects
@@ -32,21 +34,26 @@ void main()
 
     reg_mprj_io_6 = GPIO_MODE_MGMT_STD_OUTPUT;
 
-    // Apply configuration
-    reg_mprj_xfer = 1;
-    while (reg_mprj_xfer == 1);
+    // Set clock to 64 kbaud and enable the UART.  It is important to do this
+    // before applying the configuration, or else the Tx line initializes as
+    // zero, which indicates the start of a byte to the receiver.
 
-    // Set clock to 64 kbaud and enable the UART
     reg_uart_clkdiv = 625;
     reg_uart_enable = 1;
+
+    // Now, apply the configuration
+    reg_mprj_xfer = 1;
+    while (reg_mprj_xfer == 1);
 
     // Start test
     reg_mprj_datal = 0xa0000000;
 
     // This should appear at the output, received by the testbench UART.
-    print("\n");
-    // print("Monitor: Test UART (RTL) passed\n\n");
-    print("X\n\n");
+    // (Makes simulation time long.)
+    print("Monitor: Test UART (RTL) passed\n");
 
+    // Allow transmission to complete before signalling that the program
+    // has ended.
+    for (j = 0; j < 20; j++);
     reg_mprj_datal = 0xab000000;
 }

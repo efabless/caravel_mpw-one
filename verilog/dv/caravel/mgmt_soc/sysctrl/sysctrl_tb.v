@@ -32,7 +32,7 @@ module sysctrl_tb;
 	end
 
 	initial begin
-		$dumpfile("sysctrl_tb.vcd");
+		$dumpfile("sysctrl.vcd");
 		$dumpvars(0, sysctrl_tb);
 		repeat (25) begin
 			repeat (1000) @(posedge clock);
@@ -68,8 +68,8 @@ module sysctrl_tb;
                 $finish;
             end
 	    wait(checkbits == 16'hA044);
-            $display("   SPI value = 0x%x (should be 0x01)", spivalue);
-            if(spivalue !== 32'h01) begin
+            $display("   SPI value = 0x%x (should be 0x02)", spivalue);
+            if(spivalue !== 32'h02) begin
                 $display("Monitor: Test Sysctrl (RTL) Failed");
                 $finish;
             end
@@ -104,8 +104,8 @@ module sysctrl_tb;
                 $finish;
             end
 	    wait(checkbits == 16'hA04a);
-            $display("   SPI value = 0x%x (should be 0x00)", spivalue);
-            if(spivalue !== 32'h00) begin
+            $display("   SPI value = 0x%x (should be 0x02)", spivalue);
+            if(spivalue !== 32'h02) begin
                 $display("Monitor: Test Sysctrl (RTL) Failed");
                 $finish;
             end

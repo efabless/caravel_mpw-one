@@ -16,7 +16,9 @@ module mprj_ctrl_tb;
 	wire [36:0] user_io;
 	wire SDO;
 
-	wire [15:0] checkbits;
+	wire [3:0] checkbits;
+
+	assign checkbits = user_io[31:28];
 
 	// External clock is used by default.  Make this artificially fast for the
 	// simulation.  Normally this would be a slow clock and the digital PLL
@@ -29,7 +31,7 @@ module mprj_ctrl_tb;
 	end
 
 	initial begin
-		$dumpfile("mprj_ctrl_tb.vcd");
+		$dumpfile("mprj_ctrl.vcd");
 		$dumpvars(0, mprj_ctrl_tb);
 		repeat (25) begin
 			repeat (1000) @(posedge clock);
@@ -42,28 +44,39 @@ module mprj_ctrl_tb;
 	end
 
 	always @(checkbits) begin
-		if(checkbits == 16'hA040) begin
+		if(checkbits == 4'h5) begin
 			$display("Mega-Project control Test started");
-		end
-		else if(checkbits == 16'hAB40) begin
+		end else if(checkbits == 4'h6) begin
 			$display("%c[1;31m",27);
 			$display("Monitor: IO control R/W failed");
 			$display("%c[0m",27);
 			$finish;
-		end
-		else if(checkbits == 16'hAB41) begin
+		end else if(checkbits == 4'h7) begin
 			$display("Monitor: IO control R/W passed");
-		end
-        else if(checkbits == 16'hAB50) begin
-            $display("%c[1;31m",27);
+		end else if(checkbits == 4'h8) begin
+            		$display("%c[1;31m",27);
 			$display("Monitor: power control R/W failed");
 			$display("%c[0m",27);
 			$finish;
-        end else if(checkbits == 16'hAB51) begin
+        	end else if(checkbits == 4'h9) begin
 			$display("Monitor: power control R/W passed");
-            $display("Monitor: Mega-Project control (RTL) test passed.");
-            $finish;
-        end			
+		end else if(checkbits == 4'ha) begin
+            		$display("%c[1;31m",27);
+			$display("Monitor: power control R/W failed");
+			$display("%c[0m",27);
+			$finish;
+        	end else if(checkbits == 4'hb) begin
+			$display("Monitor: power control R/W passed");
+		end else if(checkbits == 4'hc) begin
+            		$display("%c[1;31m",27);
+			$display("Monitor: power control R/W failed");
+			$display("%c[0m",27);
+			$finish;
+        	end else if(checkbits == 4'hd) begin
+			$display("Monitor: power control R/W passed");
+            		$display("Monitor: Mega-Project control (RTL) test passed.");
+            		$finish;
+        	end			
 	end
 
 	initial begin

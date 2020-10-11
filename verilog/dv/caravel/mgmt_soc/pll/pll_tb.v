@@ -32,14 +32,14 @@ module pll_tb;
 	end
 
 	initial begin
-		$dumpfile("pll_tb.vcd");
+		$dumpfile("pll.vcd");
 		$dumpvars(0, pll_tb);
 		repeat (25) begin
 			repeat (1000) @(posedge clock);
 			$display("+1000 cycles");
 		end
 		$display("%c[1;31m",27);
-		$display ("Monitor: Timeout, Test GPIO (RTL) Failed");
+		$display ("Monitor: Timeout, Test PLL (RTL) Failed");
 		 $display("%c[0m",27);
 		$finish;
 	end
