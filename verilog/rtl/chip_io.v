@@ -73,97 +73,62 @@ module chip_io(
 	// 12 pads:  vddio, vssio, vdda, vssa, vccd, vssd
 	// One each HV and LV clamp.
 
-    	s8iom0_vddio_hvc_pad mgmt_vddio_hvclamp_pad (
+	// HV clamps connect between one HV power rail and one ground
+	// LV clamps have two clamps connecting between any two LV power
+	// rails and grounds, and one back-to-back diode which connects
+	// between the first LV clamp ground and any other ground.
+
+    	s8iom0_vddio_hvc_pad mgmt_vddio_hvclamp_pad [1:0] (
 		`MGMT_ABUTMENT_PINS
-		`HVCLAMP_PINS
-    	);
-    	s8iom0_vddio_lvc_pad mgmt_vddio_lvclamp_pad (
-		`MGMT_ABUTMENT_PINS
-		`LVCLAMP_PINS
+		`HVCLAMP_PINS(vddio, vssio)
     	);
 
     	s8iom0_vdda_hvc_pad mgmt_vdda_hvclamp_pad (
 		`MGMT_ABUTMENT_PINS
-		`HVCLAMP_PINS
-    	);
-    	s8iom0_vdda_lvc_pad mgmt_vdda_lvclamp_pad (
-		`MGMT_ABUTMENT_PINS
-		`LVCLAMP_PINS
+		`HVCLAMP_PINS(vdda, vssa)
     	);
 
-    	s8iom0_vccd_hvc_pad mgmt_vccd_hvclamp_pad (
-		`MGMT_ABUTMENT_PINS
-		`HVCLAMP_PINS
-    	);
     	s8iom0_vccd_lvc_pad mgmt_vccd_lvclamp_pad (
 		`MGMT_ABUTMENT_PINS
-		`LVCLAMP_PINS
+		`LVCLAMP_PINS(vccd, vssio, vccd, vssd, vssa)
     	);
 
-    	s8iom0_vssio_hvc_pad mgmt_vssio_hvclamp_pad (
+    	s8iom0_vssio_hvc_pad mgmt_vssio_hvclamp_pad [1:0] (
 		`MGMT_ABUTMENT_PINS
-		`HVCLAMP_PINS
-    	);
-    	s8iom0_vssio_lvc_pad mgmt_vssio_lvclamp_pad (
-		`MGMT_ABUTMENT_PINS
-		`LVCLAMP_PINS
+		`HVCLAMP_PINS(vddio, vssio)
     	);
 
     	s8iom0_vssa_hvc_pad mgmt_vssa_hvclamp_pad (
 		`MGMT_ABUTMENT_PINS
-		`HVCLAMP_PINS
-    	);
-    	s8iom0_vssa_lvc_pad mgmt_vssa_lvclamp_pad (
-		`MGMT_ABUTMENT_PINS
-		`LVCLAMP_PINS
+		`HVCLAMP_PINS(vdda, vssa)
     	);
 
-    	s8iom0_vssd_hvc_pad mgmt_vssd_hvclamp_pad (
-		`MGMT_ABUTMENT_PINS
-		`HVCLAMP_PINS
-    	);
     	s8iom0_vssd_lvc_pad mgmt_vssd_lvclmap_pad (
 		`MGMT_ABUTMENT_PINS
-		`LVCLAMP_PINS
+		`LVCLAMP_PINS(vccd, vssio, vccd, vssd, vssa)
     	);
 
 	// Instantiate power and ground pads for user 1 domain
 	// 8 pads:  vdda, vssa, vccd, vssd;  One each HV and LV clamp.
 
-    	s8iom0_vdda_hvc_pad user1_vdda_hvclamp_pad (
+    	s8iom0_vdda_hvc_pad user1_vdda_hvclamp_pad [1:0] (
 		`USER1_ABUTMENT_PINS
-		`HVCLAMP_PINS
-    	);
-    	s8iom0_vdda_lvc_pad user1_vdda_lvclamp_pad (
-		`USER1_ABUTMENT_PINS
-		`LVCLAMP_PINS
+		`HVCLAMP_PINS(vdda1, vssa1)
     	);
 
-    	s8iom0_vccd_hvc_pad user1_vccd_hvclamp_pad (
-		`USER1_ABUTMENT_PINS
-		`HVCLAMP_PINS
-    	);
     	s8iom0_vccd_lvc_pad user1_vccd_lvclamp_pad (
 		`USER1_ABUTMENT_PINS
-		`LVCLAMP_PINS
+		`LVCLAMP_PINS(vccd1, vssd1, vccd1, vssd, vssio)
     	);
 
-    	s8iom0_vssa_hvc_pad user1_vssa_hvclamp_pad (
+    	s8iom0_vssa_hvc_pad user1_vssa_hvclamp_pad [1:0] (
 		`USER1_ABUTMENT_PINS
-		`HVCLAMP_PINS
-    	);
-    	s8iom0_vssa_lvc_pad user1_vssa_lvclamp_pad (
-		`USER1_ABUTMENT_PINS
-		`LVCLAMP_PINS
+		`HVCLAMP_PINS(vdda1, vssa1)
     	);
 
-    	s8iom0_vssd_hvc_pad user1_vssd_hvclamp_pad (
-		`USER1_ABUTMENT_PINS
-		`HVCLAMP_PINS
-    	);
     	s8iom0_vssd_lvc_pad user1_vssd_lvclmap_pad (
 		`USER1_ABUTMENT_PINS
-		`LVCLAMP_PINS
+		`LVCLAMP_PINS(vccd1, vssd1, vccd1, vssd, vssio)
     	);
 
 	// Instantiate power and ground pads for user 2 domain
@@ -171,38 +136,22 @@ module chip_io(
 
     	s8iom0_vdda_hvc_pad user2_vdda_hvclamp_pad (
 		`USER2_ABUTMENT_PINS
-		`HVCLAMP_PINS
-    	);
-    	s8iom0_vdda_lvc_pad user2_vdda_lvclamp_pad (
-		`USER2_ABUTMENT_PINS
-		`LVCLAMP_PINS
+		`HVCLAMP_PINS(vdda2, vssa2)
     	);
 
-    	s8iom0_vccd_hvc_pad user2_vccd_hvclamp_pad (
-		`USER2_ABUTMENT_PINS
-		`HVCLAMP_PINS
-    	);
     	s8iom0_vccd_lvc_pad user2_vccd_lvclamp_pad (
 		`USER2_ABUTMENT_PINS
-		`LVCLAMP_PINS
+		`LVCLAMP_PINS(vccd2, vssd2, vccd2, vssd, vssio)
     	);
 
     	s8iom0_vssa_hvc_pad user2_vssa_hvclamp_pad (
 		`USER2_ABUTMENT_PINS
-		`HVCLAMP_PINS
-    	);
-    	s8iom0_vssa_lvc_pad user2_vssa_lvclamp_pad (
-		`USER2_ABUTMENT_PINS
-		`LVCLAMP_PINS
+		`HVCLAMP_PINS(vdda2, vssa2)
     	);
 
-    	s8iom0_vssd_hvc_pad user2_vssd_hvclamp_pad (
-		`USER2_ABUTMENT_PINS
-		`HVCLAMP_PINS
-    	);
     	s8iom0_vssd_lvc_pad user2_vssd_lvclmap_pad (
 		`USER2_ABUTMENT_PINS
-		`LVCLAMP_PINS
+		`LVCLAMP_PINS(vccd2, vssd2, vccd2, vssd, vssio)
     	);
 
 	wire [2:0] dm_all =

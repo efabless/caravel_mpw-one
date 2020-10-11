@@ -46,16 +46,16 @@
 	`define MGMT_ABUTMENT_PINS 
 `endif
 
-`define HVCLAMP_PINS \
-	.drn_hvc(), \
-	.src_bdy_hvc()
+`define HVCLAMP_PINS(H,L) \
+	.drn_hvc(H), \
+	.src_bdy_hvc(L)
 
-`define LVCLAMP_PINS \
-	.bdy2_b2b(), \
-	.drn_lvc1(), \
-	.drn_lvc2(), \
-	.src_bdy_lvc1(), \
-	.src_bdy_lvc2()
+`define LVCLAMP_PINS(H1,L1,H2,L2,L3) \
+	.bdy2_b2b(L3), \
+	.drn_lvc1(H1), \
+	.drn_lvc2(H2), \
+	.src_bdy_lvc1(L1), \
+	.src_bdy_lvc2(L2)
 
 `define INPUT_PAD(X,Y) \
 	wire loop_``X; \
