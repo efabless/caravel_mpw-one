@@ -188,20 +188,20 @@ module chip_io(
 	sky130_fd_io__top_xres4v2 resetb_pad (
 		`MGMT_ABUTMENT_PINS 
 		`ifndef	TOP_ROUTING
-		    .pad(resetb),
+		    .PAD(resetb),
 		`endif
-		.tie_weak_hi_h(xresloop),   // Loop-back connection to pad through pad_a_esd_h
-		.tie_hi_esd(),
-		.tie_lo_esd(),
-		.pad_a_esd_h(xresloop),
-		.xres_h_n(resetb_core_h),
-		.disable_pullup_h(vssio),    // 0 = enable pull-up on reset pad
-		.enable_h(porb_h),	    // Power-on-reset
-		.en_vddio_sig_h(vssio),	    // No idea.
-		.inp_sel_h(vssio),	    // 1 = use filt_in_h else filter the pad input
-		.filt_in_h(vssio),	    // Alternate input for glitch filter
-		.pullup_h(vssio),	    // Pullup connection for alternate filter input
-		.enable_vddio(vccd)
+		.TIE_WEAK_HI_H(xresloop),   // Loop-back connection to pad through pad_a_esd_h
+		.TIE_HI_ESD(),
+		.TIE_LO_ESD(),
+		.PAD_A_ESD_H(xresloop),
+		.XRES_H_N(resetb_core_h),
+		.DISABLE_PULLUP_H(vssio),    // 0 = enable pull-up on reset pad
+		.ENABLE_H(porb_h),	    // Power-on-reset
+		.EN_VDDIO_SIG_H(vssio),	    // No idea.
+		.INP_SEL_H(vssio),	    // 1 = use filt_in_h else filter the pad input
+		.FILT_IN_H(vssio),	    // Alternate input for glitch filter
+		.PULLUP_H(vssio),	    // Pullup connection for alternate filter input
+		.ENABLE_VDDIO(vccd)
     	);
 
 	// Corner cells (These are overlay cells;  it is not clear what is normally
@@ -253,39 +253,39 @@ module chip_io(
 	`endif
 
 	mprj_io mprj_pads(
-		.VDDIO(vddio),
-		.VSSIO(vssio),
-		.VCCD(vccd),
-		.VSSD(vssd),
-		.VDDA1(vdda1),
-		.VDDA2(vdda2),
-		.VSSA1(vssa1),
-		.VSSA2(vssa2),
-		.VCCD1(vccd1),
-		.VCCD2(vccd2),
-		.VSSD1(vssd1),
-		.VSSD2(vssd2),
-		.VDDIO_Q(vddio_q),
-		.VSSIO_Q(vssio_q),
-		.ANALOG_A(analog_a),
-		.ANALOG_B(analog_b),
-		.PORB_H(porb_h),
-		.POR(por),
-		.IO(mprj_io),
-		.IO_OUT(mprj_io_out),
-		.OEB(mprj_io_oeb),
-		.HLDH_N(mprj_io_hldh_n),
-		.ENH(mprj_io_enh),
-		.INP_DIS(mprj_io_inp_dis),
-		.IB_MODE_SEL(mprj_io_ib_mode_sel),
-		.VTRIP_SEL(mprj_io_vtrip_sel),
-		.HOLDOVER(mprj_io_holdover),
-		.SLOW_SEL(mprj_io_slow_sel),
-		.ANALOG_EN(mprj_io_analog_en),
-		.ANALOG_SEL(mprj_io_analog_sel),
-		.ANALOG_POL(mprj_io_analog_pol),
-		.DM(mprj_io_dm),
-		.IO_IN(mprj_io_in)
+		.vddio(vddio),
+		.vssio(vssio),
+		.vccd(vccd),
+		.vssd(vssd),
+		.vdda1(vdda1),
+		.vdda2(vdda2),
+		.vssa1(vssa1),
+		.vssa2(vssa2),
+		.vccd1(vccd1),
+		.vccd2(vccd2),
+		.vssd1(vssd1),
+		.vssd2(vssd2),
+		.vddio_q(vddio_q),
+		.vssio_q(vssio_q),
+		.analog_a(analog_a),
+		.analog_b(analog_b),
+		.porb_h(porb_h),
+		.por(por),
+		.io(mprj_io),
+		.io_out(mprj_io_out),
+		.oeb(mprj_io_oeb),
+		.hldh_n(mprj_io_hldh_n),
+		.enh(mprj_io_enh),
+		.inp_dis(mprj_io_inp_dis),
+		.ib_mode_sel(mprj_io_ib_mode_sel),
+		.vtrip_sel(mprj_io_vtrip_sel),
+		.holdover(mprj_io_holdover),
+		.slow_sel(mprj_io_slow_sel),
+		.analog_en(mprj_io_analog_en),
+		.analog_sel(mprj_io_analog_sel),
+		.analog_pol(mprj_io_analog_pol),
+		.dm(mprj_io_dm),
+		.io_in(mprj_io_in)
 	);
 
 endmodule
