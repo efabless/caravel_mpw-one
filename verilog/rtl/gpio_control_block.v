@@ -43,6 +43,13 @@ module gpio_control_block #(
     parameter ASEL_INIT = 1'b0,
     parameter APOL_INIT = 1'b0
 ) (
+    `ifdef LVS
+         inout vccd,
+         inout vssd,
+         inout vccd1,
+         inout vssd1,
+    `endif
+
     // Management Soc-facing signals
     input  	 resetn,		// Global reset
     input  	 serial_clock,
@@ -115,6 +122,9 @@ module gpio_control_block #(
     wire	pad_gpio_out;
     wire	pad_gpio_in;
 
+    wire user_gpio_in;
+    wire gpio_in_unbuf;
+
     /* Serial shift for the above (latched) values */
     reg [PAD_CTRL_BITS-1:0] shift_register;
 
@@ -183,7 +193,7 @@ module gpio_control_block #(
 
     /* Implement pad control behavior depending on state of mgmt_ena */
 
-    assign user_gpio_in =    (mgmt_ena) ? 1'b0 : pad_gpio_in;
+    assign gpio_in_unbuf =    (mgmt_ena) ? 1'b0 : pad_gpio_in;
     assign mgmt_gpio_in =    (mgmt_ena) ? ((gpio_inenb == 1'b0) ?
 					pad_gpio_in : 1'bz) : 1'b0;
 
@@ -195,5 +205,29 @@ module gpio_control_block #(
 			mgmt_gpio_out) :
 			user_gpio_out; 
 
+    /* Buffer user_gpio_in with an enable that is set by the user domain vccd */
+
+    sky130_fd_sc_hd__conb_1 gpio_logic_high (
+        `ifdef LVS
+            .VPWR(vccd1),
+            .VGND(vssd1),
+            .VPB(vccd1),
+            .VNB(vssd1),
+        `endif
+            .HI(gpio_logic1),
+            .LO()
+    );
+
+    sky130_fd_sc_hd__einvp_8 gpio_in_buf (
+        `ifdef LVS
+            .VPWR(vccd),
+            .VGND(vssd),
+            .VPB(vccd),
+            .VNB(vssd),
+        `endif
+            .Z(user_gpio_in),
+            .A(~gpio_in_unbuf),
+            .TE(gpio_logic1)
+    );
 
 endmodule

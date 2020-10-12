@@ -37,6 +37,7 @@
 `include "digital_pll.v"
 `include "caravel_clocking.v"
 `include "mgmt_core.v"
+`include "mgmt_protect.v"
 `include "mprj_io.v"
 `include "chip_io.v"
 `include "user_id_programming.v"
@@ -372,11 +373,49 @@ module caravel (
 		.mask_rev(mask_rev)
     	);
 
-	sky130_fd_sc_hd__ebufn_8 la_buf [127:0] (
-		.Z(la_data_in_mprj),
-		.A(la_output_core),
-		.TE_B(la_oen)
+	/* Clock and reset to user space are passed through a tristate	*/
+	/* buffer like the above, but since they are intended to be	*/
+	/* always active, connect the enable to the logic-1 output from	*/
+	/* the vccd1 domain.						*/
+
+	wire 	    mprj_clock;
+	wire 	    mprj_resetn;
+	wire 	    mprj_cyc_o_user;
+	wire 	    mprj_stb_o_user;
+	wire 	    mprj_we_o_user;
+	wire [3:0]  mprj_sel_o_user;
+	wire [31:0] mprj_adr_o_user;
+	wire [31:0] mprj_dat_o_user;
+
+	mgmt_protect mgmt_buffers (
+	    `ifdef LVS
+		.vccd(vccd),
+		.vssd(vssd),
+		.vccd1(vccd1),
+		.vssd1(vssd1),
+	    `endif
+		.caravel_clk(caravel_clk),
+		.caravel_rstn(caravel_rstn),
+		.mprj_cyc_o_core(mprj_cyc_o_core),
+		.mprj_stb_o_core(mprj_stb_o_core),
+		.mprj_we_o_core(mprj_we_o_core),
+		.mprj_sel_o_core(mprj_sel_o_core),
+		.mprj_adr_o_core(mprj_adr_o_core),
+		.mprj_dat_o_core(mprj_dat_o_core),
+		.la_output_core(la_output_core),
+		.la_oen(la_oen),
+
+		.user_clock(mprj_clock),
+		.user_resetn(mprj_resetn),
+		.mprj_cyc_o_user(mprj_cyc_o_user),
+		.mprj_stb_o_user(mprj_stb_o_user),
+		.mprj_we_o_user(mprj_we_o_user),
+		.mprj_sel_o_user(mprj_sel_o_user),
+		.mprj_adr_o_user(mprj_adr_o_user),
+		.mprj_dat_o_user(mprj_dat_o_user),
+		.la_data_in_mprj(la_data_in_mprj)
 	);
+
 	
 	/*--------------------------------------*/
 	/* User project is instantiated  here	*/
@@ -396,15 +435,15 @@ module caravel (
 		vssa1,	// User area 1 digital ground
 		vssa2,	// User area 2 digital ground
 	    `endif
-    		.wb_clk_i(caravel_clk),
-    		.wb_rst_i(!caravel_rstn),
+    		.wb_clk_i(mprj_clock),
+    		.wb_rst_i(!mprj_resetn),
 		// MGMT SoC Wishbone Slave 
-		.wbs_cyc_i(mprj_cyc_o_core),
-		.wbs_stb_i(mprj_stb_o_core),
-		.wbs_we_i(mprj_we_o_core),
-		.wbs_sel_i(mprj_sel_o_core),
-	    	.wbs_adr_i(mprj_adr_o_core),
-		.wbs_dat_i(mprj_dat_o_core),
+		.wbs_cyc_i(mprj_cyc_o_user),
+		.wbs_stb_i(mprj_stb_o_user),
+		.wbs_we_i(mprj_we_o_user),
+		.wbs_sel_i(mprj_sel_o_user),
+	    	.wbs_adr_i(mprj_adr_o_user),
+		.wbs_dat_i(mprj_dat_o_user),
 	    	.wbs_ack_o(mprj_ack_i_core),
 		.wbs_dat_o(mprj_dat_i_core),
 		// Logic Analyzer
@@ -439,6 +478,12 @@ module caravel (
 	.DM_INIT(3'b110),	// Mode = output, strong up/down
 	.OENB_INIT(1'b0)	// Enable output signaling from wire
     ) gpio_control_bidir [1:0] (
+    	`ifdef LVS
+             inout vccd,
+             inout vssd,
+             inout vccd1,
+             inout vssd1,
+        `endif
 
     	// Management Soc-facing signals
 
@@ -474,6 +519,12 @@ module caravel (
     );
 
     gpio_control_block gpio_control_in [`MPRJ_IO_PADS-1:2] (
+    	`ifdef LVS
+             inout vccd,
+             inout vssd,
+             inout vccd1,
+             inout vssd1,
+        `endif
 
     	// Management Soc-facing signals
 
