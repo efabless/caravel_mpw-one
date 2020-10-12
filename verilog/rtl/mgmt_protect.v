@@ -22,6 +22,7 @@ module mgmt_protect (
 `endif
 
     input 	  caravel_clk,
+    input 	  caravel_clk2,
     input	  caravel_rstn,
     input 	  mprj_cyc_o_core,
     input 	  mprj_stb_o_core,
@@ -33,6 +34,7 @@ module mgmt_protect (
     input [127:0] la_oen,
 
     output 	  user_clock,
+    output 	  user_clock2,
     output 	  user_resetn,
     output 	  mprj_cyc_o_user,
     output 	  mprj_stb_o_user,
@@ -43,9 +45,9 @@ module mgmt_protect (
     output [127:0] la_data_in_mprj
 );
 
-	wire [72:0] mprj_logic1;
+	wire [73:0] mprj_logic1;
 
-        sky130_fd_sc_hd__conb_1 mprj_logic_high [72:0] (
+        sky130_fd_sc_hd__conb_1 mprj_logic_high [73:0] (
             `ifdef LVS
                 .VPWR(vccd1),
                 .VGND(vssd1),
@@ -80,6 +82,18 @@ module mgmt_protect (
                 .TE(mprj_logic1[1])
         );
 
+        sky130_fd_sc_hd__einvp_8 mprj_clk2_buf (
+            `ifdef LVS
+                .VPWR(vccd),
+                .VGND(vssd),
+                .VPB(vccd),
+                .VNB(vssd),
+            `endif
+                .Z(user_clock2),
+                .A(~caravel_clk2),
+                .TE(mprj_logic1[2])
+        );
+
         sky130_fd_sc_hd__einvp_8 mprj_cyc_buf (
             `ifdef LVS
                 .VPWR(vccd),
@@ -89,7 +103,7 @@ module mgmt_protect (
             `endif
                 .Z(mprj_cyc_o_user),
                 .A(~mprj_cyc_o_core),
-                .TE(mprj_logic1[2])
+                .TE(mprj_logic1[3])
         );
 
         sky130_fd_sc_hd__einvp_8 mprj_stb_buf (
@@ -101,7 +115,7 @@ module mgmt_protect (
             `endif
                 .Z(mprj_stb_o_user),
                 .A(~mprj_stb_o_core),
-                .TE(mprj_logic1[3])
+                .TE(mprj_logic1[4])
         );
 
         sky130_fd_sc_hd__einvp_8 mprj_we_buf (
@@ -113,7 +127,7 @@ module mgmt_protect (
             `endif
                 .Z(mprj_we_o_user),
                 .A(~mprj_we_o_core),
-                .TE(mprj_logic1[4])
+                .TE(mprj_logic1[5])
         );
 
         sky130_fd_sc_hd__einvp_8 mprj_sel_buf [3:0] (
@@ -125,7 +139,7 @@ module mgmt_protect (
             `endif
                 .Z(mprj_sel_o_user),
                 .A(~mprj_sel_o_core),
-                .TE(mprj_logic1[8:5])
+                .TE(mprj_logic1[9:6])
         );
 
         sky130_fd_sc_hd__einvp_8 mprj_adr_buf [31:0] (
@@ -137,7 +151,7 @@ module mgmt_protect (
             `endif
                 .Z(mprj_adr_o_user),
                 .A(~mprj_adr_o_core),
-                .TE(mprj_logic1[40:9])
+                .TE(mprj_logic1[41:10])
         );
 
         sky130_fd_sc_hd__einvp_8 mprj_dat_buf [31:0] (
@@ -149,7 +163,7 @@ module mgmt_protect (
             `endif
                 .Z(mprj_dat_o_user),
                 .A(~mprj_dat_o_core),
-                .TE(mprj_logic1[72:41])
+                .TE(mprj_logic1[73:42])
         );
 
 	/* The LA buffers are controlled from the user side, so	*/

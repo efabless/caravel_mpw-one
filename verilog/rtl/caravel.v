@@ -266,6 +266,7 @@ module caravel (
 
     // SoC core
     wire caravel_clk;
+    wire caravel_clk2;
     wire caravel_rstn;
 
     wire [7:0] spi_ro_config_core;
@@ -336,6 +337,7 @@ module caravel (
 		// Clocks and reset
 		.clock(clock_core),
         	.core_clk(caravel_clk),
+        	.user_clk(caravel_clk2),
         	.core_rstn(caravel_rstn),
 		// Logic Analyzer 
 		.la_input(la_data_out_mprj),
@@ -379,6 +381,7 @@ module caravel (
 	/* the vccd1 domain.						*/
 
 	wire 	    mprj_clock;
+	wire 	    mprj_clock2;
 	wire 	    mprj_resetn;
 	wire 	    mprj_cyc_o_user;
 	wire 	    mprj_stb_o_user;
@@ -395,6 +398,7 @@ module caravel (
 		.vssd1(vssd1),
 	    `endif
 		.caravel_clk(caravel_clk),
+		.caravel_clk2(caravel_clk2),
 		.caravel_rstn(caravel_rstn),
 		.mprj_cyc_o_core(mprj_cyc_o_core),
 		.mprj_stb_o_core(mprj_stb_o_core),
@@ -406,6 +410,7 @@ module caravel (
 		.la_oen(la_oen),
 
 		.user_clock(mprj_clock),
+		.user_clock2(mprj_clock2),
 		.user_resetn(mprj_resetn),
 		.mprj_cyc_o_user(mprj_cyc_o_user),
 		.mprj_stb_o_user(mprj_stb_o_user),

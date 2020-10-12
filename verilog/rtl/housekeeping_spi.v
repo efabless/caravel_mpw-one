@@ -53,8 +53,8 @@ module housekeeping_spi(
 `endif
     RSTB, SCK, SDI, CSB, SDO, sdo_enb,
     pll_ena, pll_dco_ena, pll_div, pll_sel,
-    pll_trim, pll_bypass, irq, reset, trap,
-    mask_rev_in, pass_thru_reset,
+    pll90_sel, pll_trim, pll_bypass, irq, reset,
+    trap, mask_rev_in, pass_thru_reset,
     pass_thru_mgmt_sck, pass_thru_mgmt_csb,
     pass_thru_mgmt_sdi, pass_thru_mgmt_sdo,
     pass_thru_user_sck, pass_thru_user_csb,
@@ -78,6 +78,7 @@ module housekeeping_spi(
     output pll_dco_ena;
     output [4:0] pll_div;
     output [2:0] pll_sel;
+    output [2:0] pll90_sel;
     output [25:0] pll_trim;
     output pll_bypass;
     output irq;
@@ -101,6 +102,7 @@ module housekeeping_spi(
     reg [25:0] pll_trim;
     reg [4:0] pll_div;
     reg [2:0] pll_sel;
+    reg [2:0] pll90_sel;
     reg pll_dco_ena;
     reg pll_ena;
     reg pll_bypass;
@@ -186,7 +188,7 @@ module housekeeping_spi(
     (iaddr == 8'h0e) ? pll_trim[15:8] :
     (iaddr == 8'h0f) ? pll_trim[23:16] :
     (iaddr == 8'h10) ? {6'b000000, pll_trim[25:24]} :
-    (iaddr == 8'h11) ? {5'b00000, pll_sel} :
+    (iaddr == 8'h11) ? {2'b00, pll90_sel, pll_sel} :
     (iaddr == 8'h12) ? {3'b000, pll_div} :
                8'h00;	// Default
 
@@ -198,6 +200,7 @@ module housekeeping_spi(
         // pll_trim[12] must be set to zero for proper startup.
         pll_trim <= 26'b11111111111110111111111111;
         pll_sel <= 3'b010;	// Default output divider divide-by-2
+        pll90_sel <= 3'b010;	// Default secondary output divider divide-by-2
         pll_div <= 5'b00100;	// Default feedback divider divide-by-8
         pll_dco_ena <= 1'b1;	// Default free-running PLL
         pll_ena <= 1'b0;	// Default PLL turned off
@@ -234,6 +237,7 @@ module housekeeping_spi(
                end
         8'h11: begin
              pll_sel <= idata[2:0];
+             pll90_sel <= idata[5:3];
                end
         8'h12: begin
              pll_div <= idata[4:0];

@@ -9,9 +9,12 @@ module caravel_clocking(
     input ext_clk_sel,	// 0=use PLL clock, 1=use external (pad) clock
     input ext_clk,	// External pad (slow) clock
     input pll_clk,	// Internal PLL (fast) clock
+    input pll_clk90,	// Internal PLL (fast) clock, 90 degree phase
     input [2:0] sel,	// Select clock divider value (0=thru, 1=divide-by-2, etc.)
+    input [2:0] sel2,	// Select clock divider value for 90 degree phase divided clock
     input ext_reset,	// Positive sense reset from housekeeping SPI.
     output core_clk,	// Output core clock
+    output user_clk,	// Output user (secondary) clock
     output resetb_sync	// Output propagated and buffered reset
 );
 
@@ -50,10 +53,23 @@ module caravel_clocking(
 	.resetb(resetb)
     ); 
 
+    // Secondary PLL clock divider for user space access
+
+    clock_div #(
+	.SIZE(3)
+    ) divider2 (
+	.in(pll_clk90),
+	.out(pll_clk90_divided),
+	.N(sel2),
+	.resetb(resetb)
+    ); 
+
+
     // Multiplex the clock output
 
     assign core_ext_clk = (use_pll_first) ? ext_clk_syncd : ext_clk;
     assign core_clk = (use_pll_second) ? pll_clk_divided : core_ext_clk;
+    assign user_clk = (use_pll_second) ? pll_clk90_divided : core_ext_clk;
 
     // Reset assignment.  "reset" comes from POR, while "ext_reset"
     // comes from standalone SPI (and is normally zero unless

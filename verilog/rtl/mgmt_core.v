@@ -68,6 +68,7 @@ module mgmt_core #(
     	output [31:0] xbar_dat_o,
 
     	output core_clk,
+    	output user_clk,
     	output core_rstn,
 
 	// Metal programmed user ID / mask revision vector
@@ -86,10 +87,13 @@ module mgmt_core #(
 		.ext_clk_sel(ext_clk_sel),
 		.ext_clk(clock),
 		.pll_clk(pll_clk),
+		.pll_clk90(pll_clk90),
 		.resetb(resetb), 
 		.sel(spi_pll_sel),
+		.sel2(spi_pll90_sel),
 		.ext_reset(ext_reset),	// From housekeeping SPI
 		.core_clk(core_clk),
+		.user_clk(user_clk),
 		.resetb_sync(core_rstn)
 	);
 
@@ -217,6 +221,7 @@ module mgmt_core #(
 	// Housekeeping SPI vectors
 	wire [4:0]  spi_pll_div;
 	wire [2:0]  spi_pll_sel;
+	wire [2:0]  spi_pll90_sel;
 	wire [25:0] spi_pll_trim;
 
 	// Housekeeping SPI (SPI slave module)
@@ -233,6 +238,7 @@ module mgmt_core #(
 	    .sdo_enb(sdo_outenb),
 	    .pll_dco_ena(spi_pll_dco_ena),
 	    .pll_sel(spi_pll_sel),
+	    .pll90_sel(spi_pll90_sel),
 	    .pll_div(spi_pll_div),
 	    .pll_ena(spi_pll_ena),
             .pll_trim(spi_pll_trim),
