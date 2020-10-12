@@ -42,66 +42,66 @@ module mprj_io #(
 
     wire [`MPRJ_IO_PADS-1:0] loop1_io;
 
-    s8iom0_gpiov2_pad  area1_io_pad [AREA1PADS - 1:0] (
+    sky130_ef_io__gpiov2_pad  area1_io_pad [AREA1PADS - 1:0] (
 	`USER1_ABUTMENT_PINS
 	`ifndef	TOP_ROUTING
-	    .pad(io[AREA1PADS - 1:0]),
+	    .PAD(io[AREA1PADS - 1:0]),
 	`endif
-	    .out(io_out[AREA1PADS - 1:0]),
-	    .oe_n(oeb[AREA1PADS - 1:0]),
-	    .hld_h_n(hldh_n[AREA1PADS - 1:0]),
-	    .enable_h(enh[AREA1PADS - 1:0]),
-	    .enable_inp_h(loop1_io[AREA1PADS - 1:0]),
-	    .enable_vdda_h(porb_h),
-	    .enable_vswitch_h(vssio),
-	    .enable_vddio(vccd),
-	    .inp_dis(inp_dis[AREA1PADS - 1:0]),
-	    .ib_mode_sel(ib_mode_sel[AREA1PADS - 1:0]),
-	    .vtrip_sel(vtrip_sel[AREA1PADS - 1:0]),
-	    .slow(slow_sel[AREA1PADS - 1:0]),
-	    .hld_ovr(holdover[AREA1PADS - 1:0]),
-	    .analog_en(analog_en[AREA1PADS - 1:0]),
-	    .analog_sel(analog_sel[AREA1PADS - 1:0]),
-	    .analog_pol(analog_pol[AREA1PADS - 1:0]),
-	    .dm(dm[AREA1PADS*3 - 1:0]),
-	    .pad_a_noesd_h(),
-	    .pad_a_esd_0_h(),
-	    .pad_a_esd_1_h(),
-	    .in(io_in[AREA1PADS - 1:0]),
-	    .in_h(),
-	    .tie_hi_esd(),
-	    .tie_lo_esd(loop1_io[AREA1PADS - 1:0])
+	    .OUT(io_out[AREA1PADS - 1:0]),
+	    .OE_N(oeb[AREA1PADS - 1:0]),
+	    .HLD_H_N(hldh_n[AREA1PADS - 1:0]),
+	    .ENABLE_H(enh[AREA1PADS - 1:0]),
+	    .ENABLE_INP_H(loop1_io[AREA1PADS - 1:0]),
+	    .ENABLE_VDDA_H(porb_h),
+	    .ENABLE_VSWITCH_H(vssio),
+	    .ENABLE_VDDIO(vccd),
+	    .INP_DIS(inp_dis[AREA1PADS - 1:0]),
+	    .IB_MODE_SEL(ib_mode_sel[AREA1PADS - 1:0]),
+	    .VTRIP_SEL(vtrip_sel[AREA1PADS - 1:0]),
+	    .SLOW(slow_sel[AREA1PADS - 1:0]),
+	    .HLD_OVR(holdover[AREA1PADS - 1:0]),
+	    .ANALOG_EN(analog_en[AREA1PADS - 1:0]),
+	    .ANALOG_SEL(analog_sel[AREA1PADS - 1:0]),
+	    .ANALOG_POL(analog_pol[AREA1PADS - 1:0]),
+	    .DM(dm[AREA1PADS*3 - 1:0]),
+	    .PAD_A_NOESD_H(),
+	    .PAD_A_ESD_0_H(),
+	    .PAD_A_ESD_1_H(),
+	    .IN(io_in[AREA1PADS - 1:0]),
+	    .IN_H(),
+	    .TIE_HI_ESD(),
+	    .TIE_LO_ESD(loop1_io[AREA1PADS - 1:0])
     );
 
-    s8iom0_gpiov2_pad area2_io_pad [`MPRJ_IO_PADS - AREA1PADS - 1:0] (
+    sky130_ef_io__gpiov2_pad area2_io_pad [`MPRJ_IO_PADS - AREA1PADS - 1:0] (
 	`USER2_ABUTMENT_PINS
 	`ifndef	TOP_ROUTING
-	    .pad(io[`MPRJ_IO_PADS - 1:AREA1PADS]),
+	    .PAD(io[`MPRJ_IO_PADS - 1:AREA1PADS]),
 	`endif
-	    .out(io_out[`MPRJ_IO_PADS - 1:AREA1PADS]),
-	    .oe_n(oeb[`MPRJ_IO_PADS - 1:AREA1PADS]),
-	    .hld_h_n(hldh_n[`MPRJ_IO_PADS - 1:AREA1PADS]),
-	    .enable_h(enh[`MPRJ_IO_PADS - 1:AREA1PADS]),
-	    .enable_inp_h(loop1_io[`MPRJ_IO_PADS - 1:AREA1PADS]),
-	    .enable_vdda_h(porb_h),
-	    .enable_vswitch_h(vssio),
-	    .enable_vddio(vccd),
-	    .inp_dis(inp_dis[`MPRJ_IO_PADS - 1:AREA1PADS]),
-	    .ib_mode_sel(ib_mode_sel[`MPRJ_IO_PADS - 1:AREA1PADS]),
-	    .vtrip_sel(vtrip_sel[`MPRJ_IO_PADS - 1:AREA1PADS]),
-	    .slow(slow_sel[`MPRJ_IO_PADS - 1:AREA1PADS]),
-	    .hld_ovr(holdover[`MPRJ_IO_PADS - 1:AREA1PADS]),
-	    .analog_en(analog_en[`MPRJ_IO_PADS - 1:AREA1PADS]),
-	    .analog_sel(analog_sel[`MPRJ_IO_PADS - 1:AREA1PADS]),
-	    .analog_pol(analog_pol[`MPRJ_IO_PADS - 1:AREA1PADS]),
-	    .dm(dm[`MPRJ_IO_PADS*3 - 1:AREA1PADS*3]),
-	    .pad_a_noesd_h(),
-	    .pad_a_esd_0_h(),
-	    .pad_a_esd_1_h(),
-	    .in(io_in[`MPRJ_IO_PADS - 1:AREA1PADS]),
-	    .in_h(),
-	    .tie_hi_esd(),
-	    .tie_lo_esd(loop1_io[`MPRJ_IO_PADS - 1:AREA1PADS])
+	    .OUT(io_out[`MPRJ_IO_PADS - 1:AREA1PADS]),
+	    .OE_N(oeb[`MPRJ_IO_PADS - 1:AREA1PADS]),
+	    .HLD_H_N(hldh_n[`MPRJ_IO_PADS - 1:AREA1PADS]),
+	    .ENABLE_H(enh[`MPRJ_IO_PADS - 1:AREA1PADS]),
+	    .ENABLE_INP_H(loop1_io[`MPRJ_IO_PADS - 1:AREA1PADS]),
+	    .ENABLE_VDDA_H(porb_h),
+	    .ENABLE_VSWITCH_H(vssio),
+	    .ENABLE_VDDIO(vccd),
+	    .INP_DIS(inp_dis[`MPRJ_IO_PADS - 1:AREA1PADS]),
+	    .IB_MODE_SEL(ib_mode_sel[`MPRJ_IO_PADS - 1:AREA1PADS]),
+	    .VTRIP_SEL(vtrip_sel[`MPRJ_IO_PADS - 1:AREA1PADS]),
+	    .SLOW(slow_sel[`MPRJ_IO_PADS - 1:AREA1PADS]),
+	    .HLD_OVR(holdover[`MPRJ_IO_PADS - 1:AREA1PADS]),
+	    .ANALOG_EN(analog_en[`MPRJ_IO_PADS - 1:AREA1PADS]),
+	    .ANALOG_SEL(analog_sel[`MPRJ_IO_PADS - 1:AREA1PADS]),
+	    .ANALOG_POL(analog_pol[`MPRJ_IO_PADS - 1:AREA1PADS]),
+	    .DM(dm[`MPRJ_IO_PADS*3 - 1:AREA1PADS*3]),
+	    .PAD_A_NOESD_H(),
+	    .PAD_A_ESD_0_H(),
+	    .PAD_A_ESD_1_H(),
+	    .IN(io_in[`MPRJ_IO_PADS - 1:AREA1PADS]),
+	    .IN_H(),
+	    .TIE_HI_ESD(),
+	    .TIE_LO_ESD(loop1_io[`MPRJ_IO_PADS - 1:AREA1PADS])
     );
 
 endmodule

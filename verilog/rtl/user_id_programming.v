@@ -16,10 +16,10 @@ module user_id_programming #(
 
     sky130_fd_sc_hd__conb_1 mask_rev_value [31:0] (
         `ifdef LVS
-            .vpwr(vdd1v8),
-            .vpb(vdd1v8),
-            .vnb(vss),
-            .vgnd(vss),
+            .VPWR(vdd1v8),
+            .VPB(vdd1v8),
+            .VNB(vss),
+            .VGND(vss),
         `endif
             .HI(user_proj_id_high),
             .LO(user_proj_id_low)

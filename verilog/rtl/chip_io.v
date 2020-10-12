@@ -78,32 +78,32 @@ module chip_io(
 	// rails and grounds, and one back-to-back diode which connects
 	// between the first LV clamp ground and any other ground.
 
-    	s8iom0_vddio_hvc_pad mgmt_vddio_hvclamp_pad [1:0] (
+    	sky130_ef_io__vddio_hvc_pad mgmt_vddio_hvclamp_pad [1:0] (
 		`MGMT_ABUTMENT_PINS
 		`HVCLAMP_PINS(vddio, vssio)
     	);
 
-    	s8iom0_vdda_hvc_pad mgmt_vdda_hvclamp_pad (
+    	sky130_ef_io__vdda_hvc_pad mgmt_vdda_hvclamp_pad (
 		`MGMT_ABUTMENT_PINS
 		`HVCLAMP_PINS(vdda, vssa)
     	);
 
-    	s8iom0_vccd_lvc_pad mgmt_vccd_lvclamp_pad (
+    	sky130_ef_io__vccd_lvc_pad mgmt_vccd_lvclamp_pad (
 		`MGMT_ABUTMENT_PINS
 		`LVCLAMP_PINS(vccd, vssio, vccd, vssd, vssa)
     	);
 
-    	s8iom0_vssio_hvc_pad mgmt_vssio_hvclamp_pad [1:0] (
+    	sky130_ef_io__vssio_hvc_pad mgmt_vssio_hvclamp_pad [1:0] (
 		`MGMT_ABUTMENT_PINS
 		`HVCLAMP_PINS(vddio, vssio)
     	);
 
-    	s8iom0_vssa_hvc_pad mgmt_vssa_hvclamp_pad (
+    	sky130_ef_io__vssa_hvc_pad mgmt_vssa_hvclamp_pad (
 		`MGMT_ABUTMENT_PINS
 		`HVCLAMP_PINS(vdda, vssa)
     	);
 
-    	s8iom0_vssd_lvc_pad mgmt_vssd_lvclmap_pad (
+    	sky130_ef_io__vssd_lvc_pad mgmt_vssd_lvclmap_pad (
 		`MGMT_ABUTMENT_PINS
 		`LVCLAMP_PINS(vccd, vssio, vccd, vssd, vssa)
     	);
@@ -111,22 +111,22 @@ module chip_io(
 	// Instantiate power and ground pads for user 1 domain
 	// 8 pads:  vdda, vssa, vccd, vssd;  One each HV and LV clamp.
 
-    	s8iom0_vdda_hvc_pad user1_vdda_hvclamp_pad [1:0] (
+    	sky130_ef_io__vdda_hvc_pad user1_vdda_hvclamp_pad [1:0] (
 		`USER1_ABUTMENT_PINS
 		`HVCLAMP_PINS(vdda1, vssa1)
     	);
 
-    	s8iom0_vccd_lvc_pad user1_vccd_lvclamp_pad (
+    	sky130_ef_io__vccd_lvc_pad user1_vccd_lvclamp_pad (
 		`USER1_ABUTMENT_PINS
 		`LVCLAMP_PINS(vccd1, vssd1, vccd1, vssd, vssio)
     	);
 
-    	s8iom0_vssa_hvc_pad user1_vssa_hvclamp_pad [1:0] (
+    	sky130_ef_io__vssa_hvc_pad user1_vssa_hvclamp_pad [1:0] (
 		`USER1_ABUTMENT_PINS
 		`HVCLAMP_PINS(vdda1, vssa1)
     	);
 
-    	s8iom0_vssd_lvc_pad user1_vssd_lvclmap_pad (
+    	sky130_ef_io__vssd_lvc_pad user1_vssd_lvclmap_pad (
 		`USER1_ABUTMENT_PINS
 		`LVCLAMP_PINS(vccd1, vssd1, vccd1, vssd, vssio)
     	);
@@ -134,22 +134,22 @@ module chip_io(
 	// Instantiate power and ground pads for user 2 domain
 	// 8 pads:  vdda, vssa, vccd, vssd;  One each HV and LV clamp.
 
-    	s8iom0_vdda_hvc_pad user2_vdda_hvclamp_pad (
+    	sky130_ef_io__vdda_hvc_pad user2_vdda_hvclamp_pad (
 		`USER2_ABUTMENT_PINS
 		`HVCLAMP_PINS(vdda2, vssa2)
     	);
 
-    	s8iom0_vccd_lvc_pad user2_vccd_lvclamp_pad (
+    	sky130_ef_io__vccd_lvc_pad user2_vccd_lvclamp_pad (
 		`USER2_ABUTMENT_PINS
 		`LVCLAMP_PINS(vccd2, vssd2, vccd2, vssd, vssio)
     	);
 
-    	s8iom0_vssa_hvc_pad user2_vssa_hvclamp_pad (
+    	sky130_ef_io__vssa_hvc_pad user2_vssa_hvclamp_pad (
 		`USER2_ABUTMENT_PINS
 		`HVCLAMP_PINS(vdda2, vssa2)
     	);
 
-    	s8iom0_vssd_lvc_pad user2_vssd_lvclmap_pad (
+    	sky130_ef_io__vssd_lvc_pad user2_vssd_lvclmap_pad (
 		`USER2_ABUTMENT_PINS
 		`LVCLAMP_PINS(vccd2, vssd2, vccd2, vssd, vssio)
     	);
@@ -185,7 +185,7 @@ module chip_io(
     	// power-on-reset circuit.  The XRES pad is used for providing a glitch-
     	// free reset.
 
-	s8iom0s8_top_xres4v2 resetb_pad (
+	sky130_fd_io__top_xres4v2 resetb_pad (
 		`MGMT_ABUTMENT_PINS 
 		`ifndef	TOP_ROUTING
 		    .pad(resetb),
@@ -208,84 +208,84 @@ module chip_io(
     	// supposed to go under them.)  
 
 	`ifndef TOP_ROUTING   
-	    s8iom0_corner_pad mgmt_corner [1:0] (
-		.vssio(vssio),
-		.vddio(vddio),
-		.vddio_q(vddio_q),
-		.vssio_q(vssio_q),
-		.amuxbus_a(analog_a),
-		.amuxbus_b(analog_b),
-		.vssd(vssio),
-		.vssa(vssio),
-		.vswitch(vddio),
-		.vdda(vdda),
-		.vccd(vccd),
-		.vcchib(vccd)
+	    sky130_ef_io__corner_pad mgmt_corner [1:0] (
+		.VSSIO(vssio),
+		.VDDIO(vddio),
+		.VDDIO_Q(vddio_q),
+		.VSSIO_Q(vssio_q),
+		.AMUXBUS_A(analog_a),
+		.AMUXBUS_B(analog_b),
+		.VSSD(vssio),
+		.VSSA(vssio),
+		.VSWITCH(vddio),
+		.VDDA(vdda),
+		.VCCD(vccd),
+		.VCCHIB(vccd)
     	    );
-	    s8iom0_corner_pad user1_corner (
-		.vssio(vssio),
-		.vddio(vddio),
-		.vddio_q(vddio_q),
-		.vssio_q(vssio_q),
-		.amuxbus_a(analog_a),
-		.amuxbus_b(analog_b),
-		.vssd(vssd1),
-		.vssa(vssa1),
-		.vswitch(vddio),
-		.vdda(vdda1),
-		.vccd(vccd1),
-		.vcchib(vccd)
+	    sky130_ef_io__corner_pad user1_corner (
+		.VSSIO(vssio),
+		.VDDIO(vddio),
+		.VDDIO_Q(vddio_q),
+		.VSSIO_Q(vssio_q),
+		.AMUXBUS_A(analog_a),
+		.AMUXBUS_B(analog_b),
+		.VSSD(vssd1),
+		.VSSA(vssa1),
+		.VSWITCH(vddio),
+		.VDDA(vdda1),
+		.VCCD(vccd1),
+		.VCCHIB(vccd)
     	    );
-	    s8iom0_corner_pad user2_corner (
-		.vssio(vssio),
-		.vddio(vddio),
-		.vddio_q(vddio_q),
-		.vssio_q(vssio_q),
-		.amuxbus_a(analog_a),
-		.amuxbus_b(analog_b),
-		.vssd(vssd2),
-		.vssa(vssa2),
-		.vswitch(vddio),
-		.vdda(vdda2),
-		.vccd(vccd2),
-		.vcchib(vccd)
+	    sky130_ef_io__corner_pad user2_corner (
+		.VSSIO(vssio),
+		.VDDIO(vddio),
+		.VDDIO_Q(vddio_q),
+		.VSSIO_Q(vssio_q),
+		.AMUXBUS_A(analog_a),
+		.AMUXBUS_B(analog_b),
+		.VSSD(vssd2),
+		.VSSA(vssa2),
+		.VSWITCH(vddio),
+		.VDDA(vdda2),
+		.VCCD(vccd2),
+		.VCCHIB(vccd)
     	    );
 	`endif
 
 	mprj_io mprj_pads(
-		.vddio(vddio),
-		.vssio(vssio),
-		.vccd(vccd),
-		.vssd(vssd),
-		.vdda1(vdda1),
-		.vdda2(vdda2),
-		.vssa1(vssa1),
-		.vssa2(vssa2),
-		.vccd1(vccd1),
-		.vccd2(vccd2),
-		.vssd1(vssd1),
-		.vssd2(vssd2),
-		.vddio_q(vddio_q),
-		.vssio_q(vssio_q),
-		.analog_a(analog_a),
-		.analog_b(analog_b),
-		.porb_h(porb_h),
-		.por(por),
-		.io(mprj_io),
-		.io_out(mprj_io_out),
-		.oeb(mprj_io_oeb),
-		.hldh_n(mprj_io_hldh_n),
-		.enh(mprj_io_enh),
-		.inp_dis(mprj_io_inp_dis),
-		.ib_mode_sel(mprj_io_ib_mode_sel),
-		.vtrip_sel(mprj_io_vtrip_sel),
-		.holdover(mprj_io_holdover),
-		.slow_sel(mprj_io_slow_sel),
-		.analog_en(mprj_io_analog_en),
-		.analog_sel(mprj_io_analog_sel),
-		.analog_pol(mprj_io_analog_pol),
-		.dm(mprj_io_dm),
-		.io_in(mprj_io_in)
+		.VDDIO(vddio),
+		.VSSIO(vssio),
+		.VCCD(vccd),
+		.VSSD(vssd),
+		.VDDA1(vdda1),
+		.VDDA2(vdda2),
+		.VSSA1(vssa1),
+		.VSSA2(vssa2),
+		.VCCD1(vccd1),
+		.VCCD2(vccd2),
+		.VSSD1(vssd1),
+		.VSSD2(vssd2),
+		.VDDIO_Q(vddio_q),
+		.VSSIO_Q(vssio_q),
+		.ANALOG_A(analog_a),
+		.ANALOG_B(analog_b),
+		.PORB_H(porb_h),
+		.POR(por),
+		.IO(mprj_io),
+		.IO_OUT(mprj_io_out),
+		.OEB(mprj_io_oeb),
+		.HLDH_N(mprj_io_hldh_n),
+		.ENH(mprj_io_enh),
+		.INP_DIS(mprj_io_inp_dis),
+		.IB_MODE_SEL(mprj_io_ib_mode_sel),
+		.VTRIP_SEL(mprj_io_vtrip_sel),
+		.HOLDOVER(mprj_io_holdover),
+		.SLOW_SEL(mprj_io_slow_sel),
+		.ANALOG_EN(mprj_io_analog_en),
+		.ANALOG_SEL(mprj_io_analog_sel),
+		.ANALOG_POL(mprj_io_analog_pol),
+		.DM(mprj_io_dm),
+		.IO_IN(mprj_io_in)
 	);
 
 endmodule

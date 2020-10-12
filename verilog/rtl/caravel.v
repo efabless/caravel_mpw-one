@@ -25,7 +25,7 @@
 /* NOTE: Need to pass the PDK root directory to iverilog with option -I */
 
 `include "libs.ref/sky130_fd_io/verilog/sky130_fd_io.v"
-// `include "libs.ref/sky130_fd_io/verilog/power_pads_lib.v"
+`include "libs.ref/sky130_fd_io/verilog/sky130_ef_io.v"
 
 `include "libs.ref/sky130_fd_sc_hd/verilog/primitives.v"
 `include "libs.ref/sky130_fd_sc_hd/verilog/sky130_fd_sc_hd.v"
