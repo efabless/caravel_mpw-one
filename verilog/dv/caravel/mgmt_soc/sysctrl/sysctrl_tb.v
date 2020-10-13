@@ -7,6 +7,7 @@
 module sysctrl_tb;
 	reg clock;
 	reg RSTB;
+	reg power1, power2;
 
 	wire gpio;
 	wire [15:0] checkbits;
@@ -104,8 +105,8 @@ module sysctrl_tb;
                 $finish;
             end
 	    wait(checkbits == 16'hA04a);
-            $display("   SPI value = 0x%x (should be 0x02)", spivalue);
-            if(spivalue !== 32'h02) begin
+            $display("   SPI value = 0x%x (should be 0x12)", spivalue);
+            if(spivalue !== 32'h12) begin
                 $display("Monitor: Test Sysctrl (RTL) Failed");
                 $finish;
             end
@@ -128,6 +129,15 @@ module sysctrl_tb;
 		#2000;
 	end
 
+	initial begin		// Power-up sequence
+		power1 <= 1'b0;
+		power2 <= 1'b0;
+		#200;
+		power1 <= 1'b1;
+		#200;
+		power2 <= 1'b1;
+	end
+
 	always @(checkbits) begin
 		#1 $display("GPIO state = %b ", checkbits);
 	end
@@ -136,9 +146,9 @@ module sysctrl_tb;
 	wire VDD1V8;
 	wire VSS;
 	
+	assign VDD3V3 = power1;
+	assign VDD1V8 = power2;
 	assign VSS = 1'b0;
-	assign VDD1V8 = 1'b1;
-	assign VDD3V3 = 1'b1;
 
 	caravel uut (
 		.vddio	  (VDD3V3),

@@ -1,3 +1,5 @@
+`timescale 1 ns / 1 ps
+
 module simple_por(
     input vdd3v3,
     input vss,
@@ -12,7 +14,7 @@ module simple_por(
     // two schmitt triggers for strong hysteresis/glitch tolerance.
 
     initial begin
-	inode <= 1'b0;
+	inode <= 1'b0; 
     end 
 
     // Emulate current source on capacitor as a 500ns delay either up or
@@ -28,23 +30,19 @@ module simple_por(
     // Instantiate two shmitt trigger buffers in series
 
     sky130_fd_sc_hvl__schmittbuf hystbuf1 (
-`ifdef LVS
 	.VPWR(vdd3v3),
 	.VGND(vss),
 	.VPB(vdd3v3),
 	.VNB(vss),
-`endif
 	.A(inode),
 	.X(mid)
     );
 
     sky130_fd_sc_hvl__schmittbuf hystbuf2 (
-`ifdef LVS
 	.VPWR(vdd3v3),
 	.VGND(vss),
 	.VPB(vdd3v3),
 	.VNB(vss),
-`endif
 	.A(mid),
 	.X(porb_h)
     );

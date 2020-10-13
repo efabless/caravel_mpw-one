@@ -24,10 +24,10 @@
 `include "spiflash.v"
 
 module gpio_tb;
-	wire VDD3V3;
-	assign VDD3V3 = 1'b1;
 
 	reg clock;
+	reg power1;
+	reg power2;
 
 	always #10 clock <= (clock === 1'b0);
 
@@ -106,16 +106,28 @@ module gpio_tb;
 		#2000;
 	end
 
+	initial begin			// Power-up
+		power1 <= 1'b0;
+		power2 <= 1'b0;
+		#200;
+		power1 <= 1'b1;
+		#200;
+		power2 <= 1'b1;
+	end
+		
+
 	always @(checkbits) begin
 		#1 $display("GPIO state = %b (%d - %d)", checkbits,
 				checkbits_hi, checkbits_lo);
 	end
 
+	wire VDD3V3;
 	wire VDD1V8;
 	wire VSS;
 
+	assign VDD3V3 = power1;
+	assign VDD1V8 = power2;
 	assign VSS = 1'b0;
-	assign VDD1V8 = 1'b1;
 
 	// These are the mappings of mprj_io GPIO pads that are set to
 	// specific functions on startup:

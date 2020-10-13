@@ -14,12 +14,10 @@
 /*----------------------------------------------------------------------*/
 
 module mgmt_protect (
-`ifdef LVS
     inout	  vccd,
     inout	  vssd,
     inout	  vccd1,
     inout	  vssd1,
-`endif
 
     input 	  caravel_clk,
     input 	  caravel_clk2,
@@ -48,119 +46,99 @@ module mgmt_protect (
 	wire [73:0] mprj_logic1;
 
         sky130_fd_sc_hd__conb_1 mprj_logic_high [73:0] (
-            `ifdef LVS
                 .VPWR(vccd1),
                 .VGND(vssd1),
                 .VPB(vccd1),
                 .VNB(vssd1),
-            `endif
                 .HI(mprj_logic1),
                 .LO()
         );
 
         sky130_fd_sc_hd__einvp_8 mprj_rstn_buf (
-            `ifdef LVS
                 .VPWR(vccd),
                 .VGND(vssd),
                 .VPB(vccd),
                 .VNB(vssd),
-            `endif
                 .Z(user_resetn),
                 .A(~caravel_rstn),
                 .TE(mprj_logic1[0])
         );
 
         sky130_fd_sc_hd__einvp_8 mprj_clk_buf (
-            `ifdef LVS
                 .VPWR(vccd),
                 .VGND(vssd),
                 .VPB(vccd),
                 .VNB(vssd),
-            `endif
                 .Z(user_clock),
                 .A(~caravel_clk),
                 .TE(mprj_logic1[1])
         );
 
         sky130_fd_sc_hd__einvp_8 mprj_clk2_buf (
-            `ifdef LVS
                 .VPWR(vccd),
                 .VGND(vssd),
                 .VPB(vccd),
                 .VNB(vssd),
-            `endif
                 .Z(user_clock2),
                 .A(~caravel_clk2),
                 .TE(mprj_logic1[2])
         );
 
         sky130_fd_sc_hd__einvp_8 mprj_cyc_buf (
-            `ifdef LVS
                 .VPWR(vccd),
                 .VGND(vssd),
                 .VPB(vccd),
                 .VNB(vssd),
-            `endif
                 .Z(mprj_cyc_o_user),
                 .A(~mprj_cyc_o_core),
                 .TE(mprj_logic1[3])
         );
 
         sky130_fd_sc_hd__einvp_8 mprj_stb_buf (
-            `ifdef LVS
                 .VPWR(vccd),
                 .VGND(vssd),
                 .VPB(vccd),
                 .VNB(vssd),
-            `endif
                 .Z(mprj_stb_o_user),
                 .A(~mprj_stb_o_core),
                 .TE(mprj_logic1[4])
         );
 
         sky130_fd_sc_hd__einvp_8 mprj_we_buf (
-            `ifdef LVS
                 .VPWR(vccd),
                 .VGND(vssd),
                 .VPB(vccd),
                 .VNB(vssd),
-            `endif
                 .Z(mprj_we_o_user),
                 .A(~mprj_we_o_core),
                 .TE(mprj_logic1[5])
         );
 
         sky130_fd_sc_hd__einvp_8 mprj_sel_buf [3:0] (
-            `ifdef LVS
                 .VPWR(vccd),
                 .VGND(vssd),
                 .VPB(vccd),
                 .VNB(vssd),
-            `endif
                 .Z(mprj_sel_o_user),
                 .A(~mprj_sel_o_core),
                 .TE(mprj_logic1[9:6])
         );
 
         sky130_fd_sc_hd__einvp_8 mprj_adr_buf [31:0] (
-            `ifdef LVS
                 .VPWR(vccd),
                 .VGND(vssd),
                 .VPB(vccd),
                 .VNB(vssd),
-            `endif
                 .Z(mprj_adr_o_user),
                 .A(~mprj_adr_o_core),
                 .TE(mprj_logic1[41:10])
         );
 
         sky130_fd_sc_hd__einvp_8 mprj_dat_buf [31:0] (
-            `ifdef LVS
                 .VPWR(vccd),
                 .VGND(vssd),
                 .VPB(vccd),
                 .VNB(vssd),
-            `endif
                 .Z(mprj_dat_o_user),
                 .A(~mprj_dat_o_core),
                 .TE(mprj_logic1[73:42])
@@ -173,12 +151,10 @@ module mgmt_protect (
 	/* power-down of vccd1.					*/
 
         sky130_fd_sc_hd__einvp_8 la_buf [127:0] (
-            `ifdef LVS
                 .VPWR(vccd),
                 .VGND(vssd),
                 .VPB(vccd),
                 .VNB(vssd),
-            `endif
                 .Z(la_data_in_mprj),
                 .A(~la_output_core),
                 .TE(~la_oen)

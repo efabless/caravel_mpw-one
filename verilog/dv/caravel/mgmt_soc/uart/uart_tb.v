@@ -27,6 +27,7 @@
 module uart_tb;
 	reg clock;
 	reg RSTB;
+	reg power1, power2;
 
 	wire gpio;
 	wire flash_csb;
@@ -66,6 +67,15 @@ module uart_tb;
 		#2000;
 	end
 
+	initial begin		// Power-up sequence
+		power1 <= 1'b0;
+		power2 <= 1'b0;
+		#200;
+		power1 <= 1'b1;
+		#200;
+		power2 <= 1'b1;
+	end
+
 	always @(checkbits) begin
 		if(checkbits == 16'hA000) begin
 			$display("UART Test started");
@@ -80,9 +90,9 @@ module uart_tb;
 	wire VDD1V8;
 	wire VSS;
 
+	assign VDD3V3 = power1;
+	assign VDD1V8 = power2;
 	assign VSS = 1'b0;
-	assign VDD1V8 = 1'b1;
-	assign VDD3V3 = 1'b1;
 
 	caravel uut (
 		.vddio	  (VDD3V3),

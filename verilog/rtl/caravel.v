@@ -390,12 +390,11 @@ module caravel (
 	wire [31:0] mprj_dat_o_user;
 
 	mgmt_protect mgmt_buffers (
-	    `ifdef LVS
 		.vccd(vccd),
 		.vssd(vssd),
 		.vccd1(vccd1),
 		.vssd1(vssd1),
-	    `endif
+
 		.caravel_clk(caravel_clk),
 		.caravel_clk2(caravel_clk2),
 		.caravel_rstn(caravel_rstn),
@@ -429,16 +428,15 @@ module caravel (
 	    .IO_PADS(`MPRJ_IO_PADS),
 	    .PWR_PADS(`MPRJ_PWR_PADS)
 	) mprj ( 
-	    `ifdef LVS
-		vdda1,	// User area 1 3.3V power
-		vdda2,	// User area 2 3.3V power
-		vssa1,	// User area 1 analog ground
-		vssa2,	// User area 2 analog ground
-		vccd1,	// User area 1 1.8V power
-		vccd2,	// User area 2 1.8V power
-		vssa1,	// User area 1 digital ground
-		vssa2,	// User area 2 digital ground
-	    `endif
+		.vdda1(vdda1),	// User area 1 3.3V power
+		.vdda2(vdda2),	// User area 2 3.3V power
+		.vssa1(vssa1),	// User area 1 analog ground
+		.vssa2(vssa2),	// User area 2 analog ground
+		.vccd1(vccd1),	// User area 1 1.8V power
+		.vccd2(vccd2),	// User area 2 1.8V power
+		.vssd1(vssd1),	// User area 1 digital ground
+		.vssd2(vssd2),	// User area 2 digital ground
+
     		.wb_clk_i(mprj_clock),
     		.wb_rst_i(!mprj_resetn),
 		// MGMT SoC Wishbone Slave 
@@ -564,13 +562,11 @@ module caravel (
     );
 
     sky130_fd_sc_hvl__lsbufhv2lv porb_level (
-	`ifdef LVS
-		.vpwr(vddio),
-		.vpb(vddio),
-		.lvpwr(vccd),
-		.vnb(vssio),
-		.vgnd(vssio),
-	`endif
+		.VPWR(vddio),
+		.VPB(vddio),
+		.LVPWR(vccd),
+		.VNB(vssio),
+		.VGND(vssio),
 		.A(porb_h),
 		.X(porb_l)
     );
@@ -578,6 +574,8 @@ module caravel (
     user_id_programming #(
 	.USER_PROJECT_ID(USER_PROJECT_ID)
     ) user_id_value (
+	.vdd1v8(vccd),
+	.vss(vssd),
 	.mask_rev(mask_rev)
     );
 
@@ -590,13 +588,11 @@ module caravel (
 
     // XRES (chip input pin reset) reset level converter
     sky130_fd_sc_hvl__lsbufhv2lv rstb_level (
-	`ifdef LVS
-		.vpwr(vddio),
-		.vpb(vddio),
-		.lvpwr(vdd1v8),
-		.vnb(vssio),
-		.vgnd(vssio),
-	`endif
+		.VPWR(vddio),
+		.VPB(vddio),
+		.LVPWR(vccd),
+		.VNB(vssio),
+		.VGND(vssio),
 		.A(rstb_h),
 		.X(rstb_l)
     );

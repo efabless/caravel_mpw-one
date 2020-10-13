@@ -38,7 +38,7 @@
 	.VDDIO(vddio),\
 	.VCCD(vccd),\
 	.VSSIO(vssio),\
-	.VSSD(vssa),\
+	.VSSD(vssd),\
 	.VSSIO_Q(vssio_q),
 `else 
 	`define USER1_ABUTMENT_PINS 
@@ -64,30 +64,30 @@
 	`ifndef	TOP_ROUTING \
 		.PAD(X), \
 	`endif	\
-		.OUT(vssa),	\
+		.OUT(vssd), \
 		.OE_N(vccd), \
-		.HLD_H_N(vddio),	\
+		.HLD_H_N(vddio), \
 		.ENABLE_H(porb_h), \
 		.ENABLE_INP_H(loop_``X), \
 		.ENABLE_VDDA_H(porb_h), \
 		.ENABLE_VSWITCH_H(vssa), \
 		.ENABLE_VDDIO(vccd), \
 		.INP_DIS(por), \
-		.IB_MODE_SEL(vssa), \
-		.VTRIP_SEL(vssa), \
-		.SLOW(vssa),	\
-		.HLD_OVR(vssa), \
-		.ANALOG_EN(vssa), \
-		.ANALOG_SEL(vssa), \
-		.ANALOG_POL(vssa), \
-		.DM({vssa, vssa, vccd}), \
+		.IB_MODE_SEL(vssd), \
+		.VTRIP_SEL(vssd), \
+		.SLOW(vssd),	\
+		.HLD_OVR(vssd), \
+		.ANALOG_EN(vssd), \
+		.ANALOG_SEL(vssd), \
+		.ANALOG_POL(vssd), \
+		.DM({vssd, vssd, vccd}), \
 		.PAD_A_NOESD_H(), \
 		.PAD_A_ESD_0_H(), \
 		.PAD_A_ESD_1_H(), \
 		.IN(Y), \
 		.IN_H(), \
 		.TIE_HI_ESD(), \
-		.TIE_LO_ESD(loop_``X) ) 
+		.TIE_LO_ESD(loop_``X) )
 
 `define OUTPUT_PAD(X,Y,INPUT_DIS,OUT_EN_N) \
 	wire loop_``X; \
@@ -105,14 +105,14 @@
 		.ENABLE_VSWITCH_H(vssa), \
 		.ENABLE_VDDIO(vccd), \
 		.INP_DIS(INPUT_DIS), \
-		.IB_MODE_SEL(vssa), \
-		.VTRIP_SEL(vssa), \
-		.SLOW(vssa),	\
-		.HLD_OVR(vssa), \
-		.ANALOG_EN(vssa), \
-		.ANALOG_SEL(vssa), \
-		.ANALOG_POL(vssa), \
-		.DM({vccd, vccd, vssa}),	\
+		.IB_MODE_SEL(vssd), \
+		.VTRIP_SEL(vssd), \
+		.SLOW(vssd),	\
+		.HLD_OVR(vssd), \
+		.ANALOG_EN(vssd), \
+		.ANALOG_SEL(vssd), \
+		.ANALOG_POL(vssd), \
+		.DM({vccd, vccd, vssd}),	\
 		.PAD_A_NOESD_H(), \
 		.PAD_A_ESD_0_H(), \
 		.PAD_A_ESD_1_H(), \
@@ -136,13 +136,13 @@
 		.ENABLE_VSWITCH_H(vssa), \
 		.ENABLE_VDDIO(vccd), \
 		.INP_DIS(INPUT_DIS), \
-		.IB_MODE_SEL(vssa), \
-		.VTRIP_SEL(vssa), \
-		.SLOW(vssa),	\
-		.HLD_OVR(vssa), \
-		.ANALOG_EN(vssa), \
-		.ANALOG_SEL(vssa), \
-		.ANALOG_POL(vssa), \
+		.IB_MODE_SEL(vssd), \
+		.VTRIP_SEL(vssd), \
+		.SLOW(vssd),	\
+		.HLD_OVR(vssd), \
+		.ANALOG_EN(vssd), \
+		.ANALOG_SEL(vssd), \
+		.ANALOG_POL(vssd), \
 		.DM(MODE), \
 		.PAD_A_NOESD_H(), \
 		.PAD_A_ESD_0_H(), \

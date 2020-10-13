@@ -11,6 +11,7 @@
 module pass_thru_tb;
 	reg clock;
 	reg SDI, CSB, SCK, RSTB;
+	reg power1, power2;
 
 	wire gpio;
 	wire [15:0] checkbits;
@@ -31,6 +32,15 @@ module pass_thru_tb;
 
 	initial begin
 		clock = 0;
+	end
+
+	initial begin		// Power-up sequence
+		power1 <= 1'b0;
+		power2 <= 1'b0;
+		#200;
+		power1 <= 1'b1;
+		#200;
+		power2 <= 1'b1;
 	end
 
     // The main testbench is here.  Put the housekeeping SPI into
@@ -195,9 +205,9 @@ module pass_thru_tb;
 	wire VDD1V8;
 	wire VSS;
 
-	assign VDD3V3 = 1'b1;
+	assign VDD3V3 = power1;
+	assign VDD1V8 = power2;
 	assign VSS = 1'b0;
-	assign VDD1V8 = 1'b1;
 
 	wire hk_sck;
 	wire hk_csb;

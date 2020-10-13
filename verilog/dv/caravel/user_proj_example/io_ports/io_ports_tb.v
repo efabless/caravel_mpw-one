@@ -7,7 +7,8 @@
 module io_ports_tb;
 	reg clock;
     	reg RSTB;
-	wire SDO;
+	reg power1, power2;
+	reg power3, power4;
 
     	wire gpio;
     	wire [36:0] mprj_io;
@@ -61,27 +62,43 @@ module io_ports_tb;
 
 	initial begin
 		RSTB <= 1'b0;
-		#1000;
-		RSTB <= 1'b1;	    // Release reset
 		#2000;
+		RSTB <= 1'b1;	    // Release reset
+	end
+
+	initial begin		// Power-up sequence
+		power1 <= 1'b0;
+		power2 <= 1'b0;
+		power3 <= 1'b0;
+		power4 <= 1'b0;
+		#200;
+		power1 <= 1'b1;
+		#200;
+		power2 <= 1'b1;
+		#200;
+		power3 <= 1'b1;
+		#200;
+		power4 <= 1'b1;
 	end
 
 	always @(mprj_io) begin
 		#1 $display("MPRJ-IO state = %b ", mprj_io[7:0]);
 	end
 
-	wire VDD1V8;
-    	wire VDD3V3;
-	wire VSS;
-    
     	wire flash_csb;
 	wire flash_clk;
 	wire flash_io0;
 	wire flash_io1;
 
+	wire VDD1V8;
+    	wire VDD3V3;
+	wire VSS;
+    
+	assign VDD3V3 = power1;
+	assign VDD1V8 = power2;
+	assign USER_VDD3V3 = power3;
+	assign USER_VDD1V8 = power4;
 	assign VSS = 1'b0;
-	assign VDD1V8 = 1'b1;
-	assign VDD3V3 = 1'b1;
 
 	caravel uut (
 		.vddio	  (VDD3V3),
@@ -90,12 +107,12 @@ module io_ports_tb;
 		.vssa	  (VSS),
 		.vccd	  (VDD1V8),
 		.vssd	  (VSS),
-		.vdda1    (VDD3V3),
-		.vdda2    (VDD3V3),
+		.vdda1    (USER_VDD3V3),
+		.vdda2    (USER_VDD3V3),
 		.vssa1	  (VSS),
 		.vssa2	  (VSS),
-		.vccd1	  (VDD1V8),
-		.vccd2	  (VDD1V8),
+		.vccd1	  (USER_VDD1V8),
+		.vccd2	  (USER_VDD1V8),
 		.vssd1	  (VSS),
 		.vssd2	  (VSS),
 		.clock	  (clock),

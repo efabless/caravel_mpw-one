@@ -6,6 +6,8 @@
 
 module pll_tb;
 	reg clock;
+	reg power1;
+	reg power2;
 	reg RSTB;
 
 	wire gpio;
@@ -74,6 +76,15 @@ module pll_tb;
 		#2000;
 	end
 
+	initial begin
+		power1 <= 1'b0;
+		power2 <= 1'b0;
+		#200;
+		power1 <= 1'b1;
+		#200;
+		power2 <= 1'b1;
+	end
+
 	always @(checkbits) begin
 		#1 $display("GPIO state = %b ", checkbits);
 	end
@@ -82,9 +93,9 @@ module pll_tb;
 	wire VDD1V8;
 	wire VSS;
 	
+	assign VDD3V3 = power1;
+	assign VDD1V8 = power2;
 	assign VSS = 1'b0;
-	assign VDD1V8 = 1'b1;
-	assign VDD3V3 = 1'b1;
 
 	caravel uut (
 		.vddio	  (VDD3V3),

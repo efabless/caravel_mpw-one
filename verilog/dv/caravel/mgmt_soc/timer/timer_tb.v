@@ -24,10 +24,10 @@
 `include "spiflash.v"
 
 module timer_tb;
-	wire VDD3V3;
-	assign VDD3V3 = 1'b1;
 
+	reg RSTB;
 	reg clock;
+	reg power1, power2;
 
 	always #10 clock <= (clock === 1'b0);
 
@@ -61,8 +61,6 @@ module timer_tb;
 	wire flash_clk;
 	wire flash_io0;
 	wire flash_io1;
-
-	reg RSTB;
 
 	// Monitor
 	initial begin
@@ -107,21 +105,30 @@ module timer_tb;
 
 	initial begin
 		RSTB <= 1'b0;
-		
 		#1000;
 		RSTB <= 1'b1;	    // Release reset
-		#2000;
+	end
+
+	initial begin		// Power-up sequence
+		power1 <= 1'b0;
+		power2 <= 1'b0;
+		#200;
+		power1 <= 1'b1;
+		#200;
+		power2 <= 1'b1;
 	end
 
 	always @(checkbits) begin
 		#1 $display("Timer state = %b (%d)", countbits, countbits);
 	end
 
+	wire VDD3V3;
 	wire VDD1V8;
 	wire VSS;
 
+	assign VDD3V3 = power1;
+	assign VDD1V8 = power2;
 	assign VSS = 1'b0;
-	assign VDD1V8 = 1'b1;
 
 	// These are the mappings of mprj_io GPIO pads that are set to
 	// specific functions on startup:

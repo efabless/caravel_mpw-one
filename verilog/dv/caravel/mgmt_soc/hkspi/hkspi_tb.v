@@ -11,6 +11,7 @@
 module hkspi_tb;
 	reg clock;
 	reg SDI, CSB, SCK, RSTB;
+	reg power1, power2;
 
 	wire gpio;
 	wire [15:0] checkbits;
@@ -31,6 +32,15 @@ module hkspi_tb;
 
 	initial begin
 		clock = 0;
+	end
+
+	initial begin		// Power-up sequence
+		power1 <= 1'b0;
+		power2 <= 1'b0;
+		#200;
+		power1 <= 1'b1;
+		#200;
+		power2 <= 1'b1;
 	end
 
     // The main testbench is here.  Put the housekeeping SPI into
@@ -204,8 +214,8 @@ module hkspi_tb;
 	    $display("Read register 16 = 0x%02x (should be 0x03)", tbdata);
 		if(tbdata !== 8'h03) begin $display("Monitor: Test HK SPI (RTL) Failed"); $finish; end
 	    read_byte(tbdata);
-	    $display("Read register 17 = 0x%02x (should be 0x02)", tbdata);
-		if(tbdata !== 8'h02) begin $display("Monitor: Test HK SPI (RTL) Failed"); $finish; end
+	    $display("Read register 17 = 0x%02x (should be 0x12)", tbdata);
+		if(tbdata !== 8'h12) begin $display("Monitor: Test HK SPI (RTL) Failed"); $finish; end
 	    read_byte(tbdata);
 	    $display("Read register 18 = 0x%02x (should be 0x04)", tbdata);
 		if(tbdata !== 8'h04) begin $display("Monitor: Test HK SPI (RTL) Failed"); $finish; end
@@ -222,9 +232,9 @@ module hkspi_tb;
 	wire VDD1V8;
 	wire VSS;
 
-	assign VDD3V3 = 1'b1;
+	assign VDD3V3 = power1;
+	assign VDD1V8 = power2;
 	assign VSS = 1'b0;
-	assign VDD1V8 = 1'b1;
 
 	wire hk_sck;
 	wire hk_csb;

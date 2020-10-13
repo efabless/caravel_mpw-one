@@ -8,7 +8,7 @@
 module la_test1_tb;
 	reg clock;
     	reg RSTB;
-	wire SDO;
+	reg power1, power2;
 
     	wire gpio;
 	wire uart_tx;
@@ -55,18 +55,27 @@ module la_test1_tb;
 		#2000;
 	end
 
-	wire VDD1V8;
-    	wire VDD3V3;
-	wire VSS;
-    
+	initial begin		// Power-up sequence
+		power1 <= 1'b0;
+		power2 <= 1'b0;
+		#200;
+		power1 <= 1'b1;
+		#200;
+		power2 <= 1'b1;
+	end
+
     	wire flash_csb;
 	wire flash_clk;
 	wire flash_io0;
 	wire flash_io1;
 
+	wire VDD1V8;
+    	wire VDD3V3;
+	wire VSS;
+    
+	assign VDD3V3 = power1;
+	assign VDD1V8 = power2;
 	assign VSS = 1'b0;
-	assign VDD1V8 = 1'b1;
-	assign VDD3V3 = 1'b1;
 
 	caravel uut (
 		.vddio	  (VDD3V3),
