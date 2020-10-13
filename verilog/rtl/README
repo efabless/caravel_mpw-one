@@ -4,17 +4,30 @@ A quick documentation of the Caravel memory map and operation
 Caravel pinout:
 ---------------
 
-	vdd3v3
-	vdd1v8
-	vss
-	gpio	   1 bit, mainly used for external LDO control of user power supply
+	vddio	   3.3V supply for all I/O and ESD
+	vssio	   Ground for all I/O and ESD
+	vdda	   3.3V supply for management area
+	vssa	   Ground for management area
+	vccd	   1.8V supply for management area
+	vssd	   Digital ground for management area
+
+	vdda1	   3.3V supply for user area 1
+	vdda2	   3.3V supply for user area 2
+	vssa1	   Ground for user area 1
+	vssa2	   Ground for user area 2
+	vccd1	   1.8 supply for user area 1
+	vccd2	   1.8 supply for user area 2
+	vssd1	   Digital ground for user area 1
+	vssd2	   Digital ground for user area 2
+
 	clock	   Master clock input
+	gpio	   1 bit, mainly used for external LDO control of user power supply
+	mprj_io	   32 bits general purpose programmable digital	or analog I/O
 	resetb	   Master reset (sense inverted) input
 	flash_csb  SPI flash controller chip select (sense inverted)
 	flash_clk  SPI flash controller clock
 	flash_io0  SPI flash controller data out
 	flash_io1  SPI flash controller data in
-	mprj_io	   32 bits general purpose programmable digital	or analog I/O
 
 Special-use pins for the management SoC:
 ----------------------------------------
@@ -80,38 +93,40 @@ Memory map:
 
 	UART:		Clock divider:	2000 0000
 			Data:		2000 0004
+			Enable		2000 0008
 
 	GPIO:		Data:		2100 0000
 			Output enable:	2100 0004
 			Pullup		2100 0008
 			Pulldown	2100 000c 
 
-	Counter 1:	Config:		2110 0000
-			Value:		2110 0004
-			Data:		2110 0008
+	Counter 1:	Config:		2200 0000
+			Value:		2200 0004
+			Data:		2200 0008
 
-	Counter 2:	Config:		2120 0000
-			Value:		2120 0004
-			Data:		2120 0008
+	Counter 2:	Config:		2300 0000
+			Value:		2300 0004
+			Data:		2300 0008
 
-	SPI master:	Config:		2130 0000
-			Data:		2130 0004
+	SPI master:	Config:		2400 0000
+			Data:		2400 0004
 
-	Logic analyzer:	Data 0:		2200 0000
-			Data 1:		2200 0004
-			Data 2:		2200 0008
-			Data 3:		2200 000c
-			Enable 0:	2200 0010
-			Enable 1:	2200 0014
-			Enable 2:	2200 0018
-			Enable 3:	2200 001c
+	Logic analyzer:	Data 0:		2500 0000
+			Data 1:		2500 0004
+			Data 2:		2500 0008
+			Data 3:		2500 000c
+			Enable 0:	2500 0010
+			Enable 1:	2500 0014
+			Enable 2:	2500 0018
+			Enable 3:	2500 001c
 
-	Project ctrl:	Data:		2300 0000
-			Transfer:	2300 0004
-			I/O Config:	2300 0008
-			to		2300 0084
-			Power Config:	2300 0088
-			to		2300 0104
+	Project ctrl:	Data (L):	2600 0000
+			Data (H):	2600 0004
+			Transfer:	2600 0008
+			I/O Config:	2600 000c
+			to		2600 009c
+			Power Config:	2600 00a0
+			to		2600 0130
 
 	Flash ctrl:	Config:		2D00 0000
 

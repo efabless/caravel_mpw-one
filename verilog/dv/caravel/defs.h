@@ -108,7 +108,6 @@ extern uint32_t flashio_worker_end;
 #define reg_pll_out_dest  (*(volatile uint32_t*)0x2F00000c)
 #define reg_trap_out_dest (*(volatile uint32_t*)0x2F000010)
 #define reg_irq7_source (*(volatile uint32_t*)0x2F000014)
-#define reg_irq8_source (*(volatile uint32_t*)0x2F000018)
 
 // Crossbar Slave Addresses (0x8000_0000 - 0xB000_0000)
 #define qspi_ctrl_slave    (*(volatile uint32_t*)0x80000000)

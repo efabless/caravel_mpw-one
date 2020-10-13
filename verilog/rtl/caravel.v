@@ -40,6 +40,7 @@
 `include "mprj_io.v"
 `include "chip_io.v"
 `include "user_id_programming.v"
+`include "user_project_wrapper.v"
 `include "gpio_control_block.v"
 `include "clock_div.v"
 `include "simple_por.v"
@@ -420,11 +421,11 @@ module caravel (
 	);
 
 	
-	/*--------------------------------------*/
-	/* User project is instantiated  here	*/
-	/*--------------------------------------*/
+	/*----------------------------------------------*/
+	/* Wrapper module around the user project 	*/
+	/*----------------------------------------------*/
 
-	user_proj_example #(
+	user_project_wrapper #(
 	    .IO_PADS(`MPRJ_IO_PADS),
 	    .PWR_PADS(`MPRJ_PWR_PADS)
 	) mprj ( 
@@ -455,7 +456,9 @@ module caravel (
 		// IO Pads
 		.io_in (user_io_in),
     		.io_out(user_io_out),
-    		.io_oeb(user_io_oeb)
+    		.io_oeb(user_io_oeb),
+		// Independent clock
+		.user_clock2(mprj_clock2)
 	);
 
 	/*--------------------------------------*/
