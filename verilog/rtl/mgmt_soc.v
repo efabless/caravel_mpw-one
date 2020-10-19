@@ -129,17 +129,7 @@ module mgmt_soc #(
     output mprj_we_o,
     output [3:0] mprj_sel_o,
     output [31:0] mprj_adr_o,
-    output [31:0] mprj_dat_o,
-	
-    // WB MI B (xbar)
-    input [31:0] xbar_dat_i,
-    input xbar_ack_i,
-    output xbar_cyc_o,	
-    output xbar_stb_o,
-    output xbar_we_o,
-    output [3:0] xbar_sel_o,
-    output [31:0] xbar_adr_o,
-    output [31:0] xbar_dat_o
+    output [31:0] mprj_dat_o
 );
     /* Memory reverted back to 256 words while memory has to be synthesized */
     parameter integer MEM_WORDS = 8192;
@@ -160,7 +150,6 @@ module mgmt_soc #(
     parameter FLASH_CTRL_CFG  = 32'h 2D00_0000;
     parameter SYS_BASE_ADR    = 32'h 2F00_0000;
     parameter MPRJ_BASE_ADR   = 32'h 3000_0000;   // WB MI A
-    parameter XBAR_BASE_ADR   = 32'h 8000_0000;
 
     // UART
     parameter UART_CLK_DIV = 8'h00;
@@ -204,10 +193,9 @@ module mgmt_soc #(
     // Wishbone Interconnect 
     localparam ADR_WIDTH = 32;
     localparam DAT_WIDTH = 32;
-    localparam NUM_SLAVES = 13;
+    localparam NUM_SLAVES = 12;
 
     parameter [NUM_SLAVES*ADR_WIDTH-1: 0] ADR_MASK = {
-        {8'h80, {ADR_WIDTH-8{1'b0}}},
         {8'hFF, {ADR_WIDTH-8{1'b0}}},
         {8'hFF, {ADR_WIDTH-8{1'b0}}},
         {8'hFF, {ADR_WIDTH-8{1'b0}}},
@@ -223,7 +211,6 @@ module mgmt_soc #(
     };
 
     parameter [NUM_SLAVES*ADR_WIDTH-1: 0] SLAVE_ADR = {
-        {XBAR_BASE_ADR},
         {SYS_BASE_ADR},
         {FLASH_CTRL_CFG},
         {MPRJ_BASE_ADR},
@@ -330,12 +317,6 @@ module mgmt_soc #(
     wire cpu_stb_o;
     wire [31:0] cpu_dat_o;
     wire cpu_ack_i;
-
-    assign xbar_cyc_o = cpu_cyc_o;
-    assign xbar_we_o  = cpu_we_o;
-    assign xbar_sel_o = cpu_sel_o;
-    assign xbar_adr_o = cpu_adr_o;
-    assign xbar_dat_o = cpu_dat_o;
     
     picorv32_wb #(
         .STACKADDR(STACKADDR),
@@ -711,17 +692,17 @@ module mgmt_soc #(
         .wbm_ack_o(cpu_ack_i),
 
         // Slaves Interface
-        .wbs_stb_o({ xbar_stb_o, sys_stb_i, spimemio_cfg_stb_i,
+        .wbs_stb_o({ sys_stb_i, spimemio_cfg_stb_i,
 		mprj_stb_o, mprj_ctrl_stb_i, la_stb_i, 
 		spi_master_stb_i, counter_timer1_stb_i, counter_timer0_stb_i,
 		gpio_stb_i, uart_stb_i,
 		spimemio_flash_stb_i, mem_stb_i }), 
-        .wbs_dat_i({ xbar_dat_i, sys_dat_o, spimemio_cfg_dat_o,
+        .wbs_dat_i({ sys_dat_o, spimemio_cfg_dat_o,
 		mprj_dat_i, mprj_ctrl_dat_o, la_dat_o,
 		spi_master_dat_o, counter_timer1_dat_o, counter_timer0_dat_o,
 		gpio_dat_o, uart_dat_o,
 		spimemio_flash_dat_o, mem_dat_o }),
-        .wbs_ack_i({ xbar_ack_i, sys_ack_o, spimemio_cfg_ack_o,
+        .wbs_ack_i({ sys_ack_o, spimemio_cfg_ack_o,
 		mprj_ack_i, mprj_ctrl_ack_o, la_ack_o,
 		spi_master_ack_o, counter_timer1_ack_o, counter_timer0_ack_o,
 		gpio_ack_o, uart_ack_o,

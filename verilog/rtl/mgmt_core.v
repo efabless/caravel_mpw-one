@@ -57,16 +57,7 @@ module mgmt_core #(
 	output [3:0] mprj_sel_o,
 	output [31:0] mprj_adr_o,
 	output [31:0] mprj_dat_o,
-    	// WB MI B Switch 
-    	input xbar_ack_i,
-    	input [31:0] xbar_dat_i,
-    	output xbar_cyc_o,
-    	output xbar_stb_o,
-    	output xbar_we_o,
-    	output [3:0] xbar_sel_o,
-    	output [31:0] xbar_adr_o,
-    	output [31:0] xbar_dat_o,
-
+	
     	output core_clk,
     	output user_clk,
     	output core_rstn,
@@ -198,16 +189,7 @@ module mgmt_core #(
 		.mprj_adr_o(mprj_adr_o),
 		.mprj_dat_o(mprj_dat_o),
 		.mprj_ack_i(mprj_ack_i),
-		.mprj_dat_i(mprj_dat_i),
-		// Crossbar Switch
-        	.xbar_cyc_o(xbar_cyc_o),
-        	.xbar_stb_o(xbar_stb_o),
-        	.xbar_we_o (xbar_we_o),
-        	.xbar_sel_o(xbar_sel_o),
-        	.xbar_adr_o(xbar_adr_o),
-        	.xbar_dat_o(xbar_dat_o),
-        	.xbar_ack_i(xbar_ack_i),
-        	.xbar_dat_i(xbar_dat_i)
+		.mprj_dat_i(mprj_dat_i)
     	);
     
     	digital_pll pll (
