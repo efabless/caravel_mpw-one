@@ -364,15 +364,6 @@ module caravel (
 		.mprj_dat_o(mprj_dat_o_core),
 		.mprj_ack_i(mprj_ack_i_core),
 		.mprj_dat_i(mprj_dat_i_core),
-		// Xbar Switch (WB MI B)
-        	.xbar_cyc_o(xbar_cyc_o_core),
-        	.xbar_stb_o(xbar_stb_o_core),
-        	.xbar_we_o (xbar_we_o_core),
-        	.xbar_sel_o(xbar_sel_o_core),
-        	.xbar_adr_o(xbar_adr_o_core),
-        	.xbar_dat_o(xbar_dat_o_core),
-        	.xbar_ack_i(xbar_ack_i_core),
-        	.xbar_dat_i(xbar_dat_i_core),
 		// mask data
 		.mask_rev(mask_rev)
     	);
