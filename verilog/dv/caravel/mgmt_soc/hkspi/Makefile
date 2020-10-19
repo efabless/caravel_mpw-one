@@ -5,7 +5,7 @@ IP_PATH = ../../../../ip
 BEHAVIOURAL_MODELS = ../../ 
 
 GCC_PATH=/ef/apps/bin
-PDK_PATH=/ef/tech/SW/sky130A
+PDK_PATH?=/ef/tech/SW/sky130A
 
 .SUFFIXES:
 
