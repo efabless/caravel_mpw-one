@@ -4,7 +4,7 @@ RTL_PATH = ../../../../rtl
 IP_PATH = ../../../../ip
 BEHAVIOURAL_MODELS = ../../ 
 
-GCC_PATH=/ef/apps/bin
+GCC_PATH?=/ef/apps/bin
 PDK_PATH?=/ef/tech/SW/sky130A
 
 .SUFFIXES:

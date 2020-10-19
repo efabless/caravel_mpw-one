@@ -15,7 +15,7 @@ module hkspi_tb;
 
 	wire gpio;
 	wire [15:0] checkbits;
-	wire [36:0] mprj_io;
+	wire [37:0] mprj_io;
 	wire uart_tx;
 	wire uart_rx;
 

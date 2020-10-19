@@ -10,7 +10,7 @@ module la_test2_tb;
 	reg power1, power2;
 
     	wire gpio;
-    	wire [36:0] mprj_io;
+    	wire [37:0] mprj_io;
 	wire [15:0] checkbits;
 
 	assign checkbits = mprj_io[31:16];

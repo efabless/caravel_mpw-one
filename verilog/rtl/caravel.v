@@ -16,7 +16,7 @@
 `define USE_POWER_PINS
 `define UNIT_DELAY #1
 
-`define MPRJ_IO_PADS 37
+`define MPRJ_IO_PADS 38
 `define MPRJ_PWR_PADS 4		/* vdda1, vccd1, vdda2, vccd2 */
 
 `include "pads.v"

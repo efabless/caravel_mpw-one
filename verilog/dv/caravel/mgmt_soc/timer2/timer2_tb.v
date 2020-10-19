@@ -50,11 +50,11 @@ module timer2_tb;
 		$finish;
 	end
 
-	wire [36:0] mprj_io;	// Most of these are no-connects
-	wire [4:0] checkbits;
+	wire [37:0] mprj_io;	// Most of these are no-connects
+	wire [5:0] checkbits;
 	wire [31:0] countbits;
 
-	assign checkbits = mprj_io[36:32];
+	assign checkbits = mprj_io[37:32];
 	assign countbits = mprj_io[31:0];
 
 	wire flash_csb;
@@ -64,35 +64,35 @@ module timer2_tb;
 
 	// Monitor
 	initial begin
-		wait(checkbits == 5'h0a);
+		wait(checkbits == 6'h0a);
 		$display("Monitor: Test Timer2 (RTL) Started");
 
 		/* Add checks here */
-		wait(checkbits == 5'h01);
+		wait(checkbits == 6'h01);
 		$display("   countbits = 0x%x (should be 0xdcba7eb0)", countbits);
 		if(countbits !== 32'hdcba7eb0) begin
 		    $display("Monitor: Test Timer2 (RTL) Failed");
 		    $finish;
 		end
-		wait(checkbits == 5'h02);
+		wait(checkbits == 6'h02);
 		$display("   countbits = 0x%x (should be 0x10)", countbits);
 		if(countbits !== 32'h10) begin
 		    $display("Monitor: Test Timer2 (RTL) Failed");
 		    $finish;
 		end
-		wait(checkbits == 5'h03);
+		wait(checkbits == 6'h03);
 		$display("   countbits = %x (should be 0x0c)", countbits);
 		if(countbits !== 32'h0c) begin
 		    $display("Monitor: Test Timer (RTL) Failed");
 		    $finish;
 		end
-		wait(checkbits == 5'h04);
+		wait(checkbits == 6'h04);
 		$display("   countbits = %x (should be 0x0c)", countbits);
 		if(countbits !== 32'h0c) begin
 		    $display("Monitor: Test Timer2 (RTL) Failed");
 		    $finish;
 		end
-		wait(checkbits == 5'h05);
+		wait(checkbits == 6'h05);
 		$display("   countbits = %x (should be 0x117c)", countbits);
 		if(countbits !== 32'h117c) begin
 		    $display("Monitor: Test Timer2 (RTL) Failed");

@@ -13,7 +13,7 @@ module pll_tb;
 	wire gpio;
 	wire [15:0] checkbits;
 	wire [7:0] spivalue;
-	wire [36:0] mprj_io;
+	wire [37:0] mprj_io;
 	wire flash_csb;
 	wire flash_clk;
 	wire flash_io0;

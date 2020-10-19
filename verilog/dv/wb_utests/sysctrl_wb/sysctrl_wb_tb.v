@@ -18,8 +18,6 @@ module sysctrl_wb_tb;
 	wire wb_ack_o;
 	wire [31:0] wb_dat_o;
     
-    reg overtemp;
-
     initial begin
         wb_clk_i = 0; 
         wb_rst_i = 0;

@@ -83,6 +83,7 @@ extern uint32_t flashio_worker_end;
 #define reg_mprj_io_34 (*(volatile uint32_t*)0x26000094)
 #define reg_mprj_io_35 (*(volatile uint32_t*)0x26000098)
 #define reg_mprj_io_36 (*(volatile uint32_t*)0x2600009c)
+#define reg_mprj_io_37 (*(volatile uint32_t*)0x260000a0)
 
 // Mega Project Slaves (0x3000_0000)
 #define reg_mprj_slave (*(volatile uint32_t*)0x30000000)

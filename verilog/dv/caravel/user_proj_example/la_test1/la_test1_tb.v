@@ -12,7 +12,7 @@ module la_test1_tb;
 
     	wire gpio;
 	wire uart_tx;
-    	wire [36:0] mprj_io;
+    	wire [37:0] mprj_io;
 	wire [15:0] checkbits;
 
 	assign checkbits  = mprj_io[31:16];

@@ -34,7 +34,7 @@ module uart_tb;
 	wire flash_clk;
 	wire flash_io0;
 	wire flash_io1;
-	wire [36:0] mprj_io;
+	wire [37:0] mprj_io;
 	wire [15:0] checkbits;
 	wire uart_tx;
 	wire SDO;

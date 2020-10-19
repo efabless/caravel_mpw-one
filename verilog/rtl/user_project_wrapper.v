@@ -14,7 +14,7 @@
  */
 
 module user_project_wrapper #(
-    parameter IO_PADS = 37,
+    parameter IO_PADS = 38,
     parameter PWR_PADS = 4,
     parameter BITS = 32
 )(

@@ -11,7 +11,7 @@ module io_ports_tb;
 	reg power3, power4;
 
     	wire gpio;
-    	wire [36:0] mprj_io;
+    	wire [37:0] mprj_io;
 	wire [7:0] mprj_io_0;
 
 	assign mprj_io_0 = mprj_io[7:0];

@@ -15,12 +15,13 @@ void main()
 	reg_mprj_datah = 0x00000000;
 	reg_mprj_datal = 0x00000000;
 
-	/* Apply all 37 bits to management standard output.	*/
+	/* Apply all 38 bits to management standard output.	*/
 
 	/* The lower 32 will be used to output the count value	*/
 	/* from the timer.  The top 5 bits will be used	to mark	*/
 	/* specific checkpoints for the testbench simulation.	*/
 
+	reg_mprj_io_37 = GPIO_MODE_MGMT_STD_OUTPUT;
 	reg_mprj_io_36 = GPIO_MODE_MGMT_STD_OUTPUT;
 	reg_mprj_io_35 = GPIO_MODE_MGMT_STD_OUTPUT;
 	reg_mprj_io_34 = GPIO_MODE_MGMT_STD_OUTPUT;

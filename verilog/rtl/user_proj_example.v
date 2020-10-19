@@ -20,7 +20,7 @@
  */
 
 module user_proj_example #(
-    parameter IO_PADS = 37,
+    parameter IO_PADS = 38,
     parameter PWR_PADS = 4,
     parameter BITS = 32
 )(
