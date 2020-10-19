@@ -70,6 +70,8 @@ module mgmt_soc #(
     output [127:0] la_oen,              // LA output enable (active low) 
 
     // User Project I/O Configuration (serial load)
+    input  mprj_pwrgood,
+    input  mprj2_pwrgood,
     output mprj_io_loader_resetn,
     output mprj_io_loader_clock,
     output mprj_io_loader_data,
@@ -120,6 +122,8 @@ module mgmt_soc #(
 
     // SPI master->slave direct link
     output hk_connect,
+    // User clock monitoring
+    input  user_clk,
 
     // WB MI A (User project)
     input mprj_ack_i,
@@ -197,9 +201,10 @@ module mgmt_soc #(
     parameter LA_ENA_3  = 8'h1c;
     
     // System Control Registers
-    parameter PLL_OUT       = 8'h00;
-    parameter TRAP_OUT      = 8'h04;
-    parameter IRQ7_SRC      = 8'h08;
+    parameter PWRGOOD       = 8'h00;
+    parameter CLK_OUT       = 8'h04;
+    parameter TRAP_OUT      = 8'h08;
+    parameter IRQ_SRC       = 8'h0c;
 
     // Wishbone Interconnect 
     localparam ADR_WIDTH = 32;
@@ -254,6 +259,10 @@ module mgmt_soc #(
     // flash_sck = mgmt_out_data[9]      (output)   (user area flash)
     // flash_io0 = mgmt_in/out_data[10]  (input)    (user area flash)
     // flash_io1 = mgmt_in/out_data[11]  (output)   (user area flash)
+    // irq2_pin	 = mgmt_in_data[12]	 (input)
+    // trap_mon	 = mgmt_in_data[13]	 (output)
+    // clk1_mon	 = mgmt_in_data[14]	 (output)
+    // clk2_mon	 = mgmt_in_data[15]	 (output)
 
     // OEB lines for [0] and [1] are the only ones connected directly to
     // the pad.  All others have OEB controlled by the configuration bit
@@ -265,20 +274,11 @@ module mgmt_soc #(
     wire gpio_outenb;    	// Intermediate GPIO out enable (bar)
     wire gpio_out;      	// Intermediate GPIO output
 
-    wire gpio;		// GPIO output data
-    wire gpio_pu;	// GPIO pull-up enable
-    wire gpio_pd;	// GPIO pull-down enable
-    wire gpio_oeb;	// GPIO output enable (sense negative)
-
-    wire pll_output_dest;	// PLL clock output destination
     wire trap_output_dest; 	// Trap signal output destination
+    wire clk1_output_dest; 	// Core clock1 signal output destination
+    wire clk2_output_dest; 	// Core clock2 signal output destination
     wire irq_7_inputsrc;	// IRQ 7 source
-
-    // GPIO assignments
-    assign gpio_out = (trap_output_dest == 1'b1) ? trap : gpio;
-    assign gpio_outenb = (trap_output_dest == 1'b0) ? gpio_oeb : 1'b0;
-    assign gpio_pullup = (trap_output_dest == 1'b0) ? gpio_pu : 1'b0;
-    assign gpio_pulldown = (trap_output_dest == 1'b0) ? gpio_pd : 1'b0;
+    wire irq_8_inputsrc;	// IRQ 8 source
 
     // Convert GPIO signals to sky130_fd_io pad signals
     convert_gpio_sigs convert_gpio_bit (
@@ -295,6 +295,7 @@ module mgmt_soc #(
 
     reg [31:0] irq;
     wire irq_7;
+    wire irq_8;
     wire irq_stall;
     wire irq_uart;
     wire irq_spi_master;
@@ -303,6 +304,7 @@ module mgmt_soc #(
 
     assign irq_stall = 0;
     assign irq_7 = (irq_7_inputsrc == 1'b1) ? mgmt_in_data[7] : 1'b0;
+    assign irq_8 = (irq_8_inputsrc == 1'b1) ? mgmt_in_data[12] : 1'b0;
 
     always @* begin
         irq = 0;
@@ -491,6 +493,8 @@ module mgmt_soc #(
 	.irq(irq_spi_master)
     );
 
+    wire strobe_counter_timer0, strobe_counter_timer1;
+
     // Wishbone Counter-timer 0
     wire counter_timer0_stb_i;
     wire counter_timer0_ack_o;
@@ -505,6 +509,7 @@ module mgmt_soc #(
         // Wishbone Interface
         .wb_clk_i(wb_clk_i),
         .wb_rst_i(wb_rst_i),
+	.strobe_in(strobe_counter_timer1),
 
         .wb_adr_i(cpu_adr_o),      
         .wb_dat_i(cpu_dat_o),
@@ -515,6 +520,7 @@ module mgmt_soc #(
         .wb_stb_i(counter_timer0_stb_i),
         .wb_ack_o(counter_timer0_ack_o),
         .wb_dat_o(counter_timer0_dat_o),
+	.strobe_out(strobe_counter_timer0),
 	.irq(irq_counter_timer0)
     );
 
@@ -532,6 +538,7 @@ module mgmt_soc #(
         // Wishbone Interface
         .wb_clk_i(wb_clk_i),
         .wb_rst_i(wb_rst_i),
+	.strobe_in(strobe_counter_timer0),
 
         .wb_adr_i(cpu_adr_o),      
         .wb_dat_i(cpu_dat_o),
@@ -542,6 +549,7 @@ module mgmt_soc #(
         .wb_stb_i(counter_timer1_stb_i),
         .wb_ack_o(counter_timer1_ack_o),
         .wb_dat_o(counter_timer1_dat_o),
+	.strobe_out(strobe_counter_timer1),
 	.irq(irq_counter_timer1)
     );
 
@@ -568,10 +576,10 @@ module mgmt_soc #(
         .wb_ack_o(gpio_ack_o),
         .wb_dat_o(gpio_dat_o),
         .gpio_in_pad(gpio_in_pad),
-        .gpio(gpio),
-        .gpio_oeb(gpio_oeb),
-        .gpio_pu(gpio_pu),
-        .gpio_pd(gpio_pd)
+        .gpio(gpio_out),
+        .gpio_oeb(gpio_outenb),
+        .gpio_pu(gpio_pullup),
+        .gpio_pd(gpio_pulldown)
     );
 
     // Wishbone Slave System Control Register
@@ -581,9 +589,10 @@ module mgmt_soc #(
     
     sysctrl_wb #(
         .BASE_ADR(SYS_BASE_ADR),
-        .PLL_OUT(PLL_OUT),
+        .PWRGOOD(PWRGOOD),
+        .CLK_OUT(CLK_OUT),
         .TRAP_OUT(TRAP_OUT),
-        .IRQ7_SRC(IRQ7_SRC)
+        .IRQ_SRC(IRQ_SRC)
     ) sysctrl (
         .wb_clk_i(wb_clk_i),
         .wb_rst_i(wb_rst_i),
@@ -598,9 +607,13 @@ module mgmt_soc #(
         .wb_ack_o(sys_ack_o),
         .wb_dat_o(sys_dat_o),
 
-        .pll_output_dest(pll_output_dest),
+	.usr1_pwrgood(mprj_pwrgood),
+	.usr2_pwrgood(mprj2_pwrgood),
         .trap_output_dest(trap_output_dest),
-        .irq_7_inputsrc(irq_7_inputsrc)
+        .clk1_output_dest(clk1_output_dest),
+        .clk2_output_dest(clk2_output_dest),
+        .irq_7_inputsrc(irq_7_inputsrc),
+        .irq_8_inputsrc(irq_8_inputsrc)
     );
 
     // Logic Analyzer 
@@ -646,7 +659,14 @@ module mgmt_soc #(
     // mprj GPIO-as-output from applying data when that function
     // is active
 
-    assign mgmt_out_data[MPRJ_IO_PADS-1:7] = mgmt_out_pre[MPRJ_IO_PADS-1:7];
+    assign mgmt_out_data[MPRJ_IO_PADS-1:16] = mgmt_out_pre[MPRJ_IO_PADS-1:16];
+
+    // Routing of output monitors (PLL, trap, clk1, clk2)
+    assign mgmt_out_data[15] = clk2_output_dest ? user_clk : mgmt_out_pre[15];
+    assign mgmt_out_data[14] = clk1_output_dest ? clk : mgmt_out_pre[14];
+    assign mgmt_out_data[13] = trap_output_dest ? trap : mgmt_out_pre[13];
+
+    assign mgmt_out_data[12:7] = mgmt_out_pre[12:7];
     assign mgmt_out_data[6] = uart_enabled ? ser_tx : mgmt_out_pre[6];
     assign mgmt_out_data[5:0] = mgmt_out_pre[5:0];
 

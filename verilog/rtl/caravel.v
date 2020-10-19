@@ -344,6 +344,8 @@ module caravel (
 		.la_output(la_output_core),
 		.la_oen(la_oen),
 		// User Project IO Control
+		.mprj_pwrgood(mprj_pwrgood),
+		.mprj2_pwrgood(mprj2_pwrgood),
 		.mprj_io_loader_resetn(mprj_io_loader_resetn),
 		.mprj_io_loader_clock(mprj_io_loader_clock),
 		.mprj_io_loader_data(mprj_io_loader_data),
@@ -389,6 +391,8 @@ module caravel (
 	wire [3:0]  mprj_sel_o_user;
 	wire [31:0] mprj_adr_o_user;
 	wire [31:0] mprj_dat_o_user;
+	wire	    mprj_pwrgood;
+	wire	    mprj2_pwrgood;
 
 	mgmt_protect mgmt_buffers (
 		.vccd(vccd),
@@ -417,7 +421,9 @@ module caravel (
 		.mprj_sel_o_user(mprj_sel_o_user),
 		.mprj_adr_o_user(mprj_adr_o_user),
 		.mprj_dat_o_user(mprj_dat_o_user),
-		.la_data_in_mprj(la_data_in_mprj)
+		.la_data_in_mprj(la_data_in_mprj),
+		.user1_powergood(mprj_pwrgood),
+		.user2_powergood(mprj2_pwrgood)
 	);
 
 	

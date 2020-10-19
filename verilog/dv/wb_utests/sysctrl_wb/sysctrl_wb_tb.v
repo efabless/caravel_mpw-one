@@ -46,13 +46,17 @@ module sysctrl_wb_tb;
     integer i;
     
     // System Control Default Register Addresses 
-    wire [31:0] pll_out_adr   = uut.BASE_ADR | uut.PLL_OUT;  
+    wire [31:0] clk1_out_adr   = uut.BASE_ADR | uut.CLK1_OUT;  
+    wire [31:0] clk2_out_adr   = uut.BASE_ADR | uut.CLK2_OUT;  
     wire [31:0] trap_out_adr  = uut.BASE_ADR | uut.TRAP_OUT;
     wire [31:0] irq7_src_adr  = uut.BASE_ADR | uut.IRQ7_SRC;
+    wire [31:0] irq8_src_adr  = uut.BASE_ADR | uut.IRQ8_SRC;
 
-    reg pll_output_dest;
+    reg clk1_output_dest;
+    reg clk2_output_dest;
     reg trap_output_dest;
     reg irq_7_inputsrc;
+    reg irq_8_inputsrc;
    
     initial begin
         // Reset Operation
@@ -61,18 +65,28 @@ module sysctrl_wb_tb;
         wb_rst_i = 0;
         #2;
         
-        pll_output_dest   = 1'b1;
+        clk1_output_dest   = 1'b1;
+        clk2_output_dest   = 1'b1;
         trap_output_dest  = 1'b1;
         irq_7_inputsrc    = 1'b1;
+        irq_8_inputsrc    = 1'b1;
 
         // Write to System Control Registers
-        write(pll_out_adr, pll_output_dest);
+        write(clk1_out_adr, clk1_output_dest);
+        write(clk2_out_adr, clk2_output_dest);
         write(trap_out_adr, trap_output_dest);
         write(irq7_src_adr, irq_7_inputsrc);
+        write(irq8_src_adr, irq_8_inputsrc);
         #2;
-        read(pll_out_adr);
-        if (wb_dat_o !== pll_output_dest) begin
-            $display("Error reading PLL output destination register.");
+        read(clk1_out_adr);
+        if (wb_dat_o !== clk1_output_dest) begin
+            $display("Error reading CLK1 output destination register.");
+            $finish;
+        end
+
+        read(clk2_out_adr);
+        if (wb_dat_o !== clk2_output_dest) begin
+            $display("Error reading CLK2 output destination register.");
             $finish;
         end
 
@@ -85,6 +99,12 @@ module sysctrl_wb_tb;
         read(irq7_src_adr);
         if (wb_dat_o !== irq_7_inputsrc) begin
             $display("Error reading IRQ7 input source register.");
+            $finish;
+        end
+
+        read(irq8_src_adr);
+        if (wb_dat_o !== irq_8_inputsrc) begin
+            $display("Error reading IRQ8 input source register.");
             $finish;
         end
 

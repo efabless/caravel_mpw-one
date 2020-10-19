@@ -106,9 +106,11 @@ extern uint32_t flashio_worker_end;
 #define reg_spimaster_data   (*(volatile uint32_t*)0x24000004)
 
 // System Area (0x2F00_0000)
-#define reg_pll_out_dest  (*(volatile uint32_t*)0x2F00000c)
-#define reg_trap_out_dest (*(volatile uint32_t*)0x2F000010)
-#define reg_irq7_source (*(volatile uint32_t*)0x2F000014)
+#define reg_clk1_out_dest  (*(volatile uint32_t*)0x2F000000)
+#define reg_clk2_out_dest  (*(volatile uint32_t*)0x2F000004)
+#define reg_trap_out_dest (*(volatile uint32_t*)0x2F000008)
+#define reg_irq7_source (*(volatile uint32_t*)0x2F00000C)
+#define reg_irq8_source (*(volatile uint32_t*)0x2F000010)
 
 // Crossbar Slave Addresses (0x8000_0000 - 0xB000_0000)
 #define qspi_ctrl_slave    (*(volatile uint32_t*)0x80000000)

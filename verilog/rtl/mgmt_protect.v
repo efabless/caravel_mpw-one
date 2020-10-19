@@ -18,6 +18,8 @@ module mgmt_protect (
     inout	  vssd,
     inout	  vccd1,
     inout	  vssd1,
+    inout	  vccd2,
+    inout	  vssd2,
 
     input 	  caravel_clk,
     input 	  caravel_clk2,
@@ -40,12 +42,17 @@ module mgmt_protect (
     output [3:0]  mprj_sel_o_user,
     output [31:0] mprj_adr_o_user,
     output [31:0] mprj_dat_o_user,
-    output [127:0] la_data_in_mprj
+    output [127:0] la_data_in_mprj,
+    output	  user1_powergood,
+    output	  user2_powergood
 );
 
-	wire [73:0] mprj_logic1;
+	wire [74:0] mprj_logic1;
+	wire mprj2_logic1;
+	wire user1_powergood;
+	wire user2_powergood;
 
-        sky130_fd_sc_hd__conb_1 mprj_logic_high [73:0] (
+        sky130_fd_sc_hd__conb_1 mprj_logic_high [74:0] (
                 .VPWR(vccd1),
                 .VGND(vssd1),
                 .VPB(vccd1),
@@ -53,6 +60,16 @@ module mgmt_protect (
                 .HI(mprj_logic1),
                 .LO()
         );
+
+        sky130_fd_sc_hd__conb_1 mprj2_logic_high (
+                .VPWR(vccd2),
+                .VGND(vssd2),
+                .VPB(vccd2),
+                .VNB(vssd2),
+                .HI(mprj2_logic1),
+                .LO()
+        );
+
 
         sky130_fd_sc_hd__einvp_8 mprj_rstn_buf (
                 .VPWR(vccd),
@@ -159,5 +176,27 @@ module mgmt_protect (
                 .A(~la_output_core),
                 .TE(~la_oen)
         );
+
+	/* The conb cell output is a resistive connection directly to	*/
+	/* the power supply, so when returning the user1_powergood	*/
+	/* signal, make sure that it is buffered properly.		*/
+
+        sky130_fd_sc_hd__buf_8 mprj_pwrgood (
+                .VPWR(vccd),
+                .VGND(vssd),
+                .VPB(vccd),
+                .VNB(vssd),
+                .A(mprj_logic1[74]),
+                .X(user1_powergood)
+	);
+
+        sky130_fd_sc_hd__buf_8 mprj2_pwrgood (
+                .VPWR(vccd),
+                .VGND(vssd),
+                .VPB(vccd),
+                .VNB(vssd),
+                .A(mprj_logic2),
+                .X(user2_powergood)
+	);
 
 endmodule

@@ -1,8 +1,9 @@
 module sysctrl_wb #(
-    parameter BASE_ADR      = 32'h2F00_0000,
-    parameter PLL_OUT       = 8'h00,
-    parameter TRAP_OUT      = 8'h04,
-    parameter IRQ7_SRC      = 8'h08
+    parameter BASE_ADR     = 32'h2F00_0000,
+    parameter PWRGOOD	   = 8'h00,
+    parameter CLK_OUT      = 8'h04,
+    parameter TRAP_OUT     = 8'h08,
+    parameter IRQ_SRC      = 8'h0c
 ) (
     input wb_clk_i,
     input wb_rst_i,
@@ -17,9 +18,13 @@ module sysctrl_wb #(
     output [31:0] wb_dat_o,
     output wb_ack_o,
     
-    output pll_output_dest,
+    input  usr1_pwrgood,
+    input  usr2_pwrgood,
+    output clk1_output_dest,
+    output clk2_output_dest,
     output trap_output_dest,
-    output irq_7_inputsrc
+    output irq_7_inputsrc,
+    output irq_8_inputsrc
 
 );
 
@@ -36,9 +41,10 @@ module sysctrl_wb #(
     
     sysctrl #(
         .BASE_ADR(BASE_ADR),
-        .PLL_OUT(PLL_OUT),
+        .PWRGOOD(PWRGOOD),
+        .CLK_OUT(CLK_OUT),
         .TRAP_OUT(TRAP_OUT),
-        .IRQ7_SRC(IRQ7_SRC)
+        .IRQ_SRC(IRQ_SRC)
     ) sysctrl (
         .clk(wb_clk_i),
         .resetn(resetn),
@@ -50,9 +56,12 @@ module sysctrl_wb #(
         .iomem_rdata(wb_dat_o),
         .iomem_ready(ready),
         
-        .pll_output_dest(pll_output_dest),
+	.usr1_pwrgood(usr1_pwrgood),
+	.usr2_pwrgood(usr2_pwrgood),
+        .clk1_output_dest(clk1_output_dest),
+        .clk2_output_dest(clk2_output_dest),
         .trap_output_dest(trap_output_dest), 
-    
+        .irq_8_inputsrc(irq_8_inputsrc),
         .irq_7_inputsrc(irq_7_inputsrc)
     );
 
@@ -60,9 +69,10 @@ endmodule
 
 module sysctrl #(
     parameter BASE_ADR = 32'h2300_0000,
-    parameter PLL_OUT       = 8'h00,
-    parameter TRAP_OUT      = 8'h04,
-    parameter IRQ7_SRC      = 8'h08
+    parameter PWRGOOD	   = 8'h00,
+    parameter CLK_OUT      = 8'h04,
+    parameter TRAP_OUT     = 8'h08,
+    parameter IRQ_SRC      = 8'h0c
 ) (
     input clk,
     input resetn,
@@ -74,45 +84,63 @@ module sysctrl #(
     output reg [31:0] iomem_rdata,
     output reg iomem_ready,
 
-    output pll_output_dest,
+    input  usr1_pwrgood,
+    input  usr2_pwrgood,
+    output clk1_output_dest,
+    output clk2_output_dest,
     output trap_output_dest,
-    output irq_7_inputsrc
+    output irq_7_inputsrc,
+    output irq_8_inputsrc
 ); 
 
-    reg pll_output_dest;
+    reg clk1_output_dest;
+    reg clk2_output_dest;
     reg trap_output_dest;
     reg irq_7_inputsrc;
+    reg irq_8_inputsrc;
 
-    assign pll_out_sel  = (iomem_addr[7:0] == PLL_OUT);
+    wire usr1_pwrgood;
+    wire usr2_pwrgood;
+
+    assign pwrgood_sel  = (iomem_addr[7:0] == PWRGOOD);
+    assign clk_out_sel  = (iomem_addr[7:0] == CLK_OUT);
     assign trap_out_sel = (iomem_addr[7:0] == TRAP_OUT);
-
-    assign irq7_sel  = (iomem_addr[7:0] == IRQ7_SRC);
+    assign irq_sel  = (iomem_addr[7:0] == IRQ_SRC);
 
     always @(posedge clk) begin
         if (!resetn) begin
-            pll_output_dest <= 0;
+            clk1_output_dest <= 0;
+            clk2_output_dest <= 0;
             trap_output_dest <= 0;
             irq_7_inputsrc <= 0;
+            irq_8_inputsrc <= 0;
         end else begin
             iomem_ready <= 0;
             if (iomem_valid && !iomem_ready && iomem_addr[31:8] == BASE_ADR[31:8]) begin
                 iomem_ready <= 1'b 1;
                 
-                if (pll_out_sel) begin
-                    iomem_rdata <= {31'd0, pll_output_dest};
-                    if (iomem_wstrb[0])
-                        pll_output_dest <= iomem_wdata[0];
+                if (pwrgood_sel) begin
+                    iomem_rdata <= {30'd0, usr2_pwrgood, usr1_pwrgood};
+		    // These are read-only bits;  no write behavior on wstrb.
+
+                end else if (clk_out_sel) begin
+                    iomem_rdata <= {30'd0, clk2_output_dest, clk1_output_dest};
+                    if (iomem_wstrb[0]) begin
+                        clk1_output_dest <= iomem_wdata[0];
+                        clk2_output_dest <= iomem_wdata[1];
+		    end
 
                 end else if (trap_out_sel) begin
                     iomem_rdata <= {31'd0, trap_output_dest};
                     if (iomem_wstrb[0]) 
                         trap_output_dest <= iomem_wdata[0];
 
-                end else if (irq7_sel) begin
-                    iomem_rdata <= {31'd0, irq_7_inputsrc};
-                    if (iomem_wstrb[0])
+                end else if (irq_sel) begin
+                    iomem_rdata <= {30'd0, irq_8_inputsrc, irq_7_inputsrc};
+                    if (iomem_wstrb[0]) begin
                         irq_7_inputsrc <= iomem_wdata[0];
-
+                        irq_8_inputsrc <= iomem_wdata[1];
+		    end
                 end
             end
         end

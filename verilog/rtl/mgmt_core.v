@@ -45,6 +45,8 @@ module mgmt_core #(
 	// User Project Control Signals
 	input [MPRJ_IO_PADS-1:0] mgmt_in_data,
 	output [MPRJ_IO_PADS-1:0] mgmt_out_data,
+	input mprj_pwrgood,
+	input mprj2_pwrgood,
 	output mprj_io_loader_resetn,
 	output mprj_io_loader_clock,
 	output mprj_io_loader_data,
@@ -123,6 +125,11 @@ module mgmt_core #(
 	// flash_sck = mgmt_out_data[9]      (output)	(user area flash)
 	// flash_io0 = mgmt_in/out_data[10]  (input)	(user area flash)
 	// flash_io1 = mgmt_in/out_data[11]  (output)	(user area flash)
+   	// irq2_pin  = mgmt_in_data[12]      (input)
+    	// trap_mon  = mgmt_in_data[13]      (output)
+    	// clk1_mon  = mgmt_in_data[14]      (output)
+    	// clk2_mon  = mgmt_in_data[15]      (output)
+
 
 	// OEB lines for [0] and [1] are the only ones connected directly to
 	// the pad.  All others have OEB controlled by the configuration bit
@@ -179,11 +186,15 @@ module mgmt_core #(
 		.pass_thru_mgmt_sdo(pass_thru_mgmt_sdo),
 		// SPI master->slave direct connection
 		.hk_connect(hk_connect),
+		// Secondary clock (for monitoring)
+		.user_clk(user_clk),
 		// Logic Analyzer
 		.la_input(la_input),
 		.la_output(la_output),
 		.la_oen(la_oen),
 		// User Project I/O Configuration
+		.mprj_pwrgood(mprj_pwrgood),
+		.mprj2_pwrgood(mprj2_pwrgood),
 		.mprj_io_loader_resetn(mprj_io_loader_resetn),
 		.mprj_io_loader_clock(mprj_io_loader_clock),
 		.mprj_io_loader_data(mprj_io_loader_data),

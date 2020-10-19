@@ -8,6 +8,7 @@ module counter_timer_wb # (
 ) (
     input wb_clk_i,
     input wb_rst_i,
+    input strobe_in,
     input [31:0] wb_adr_i,
     input [31:0] wb_dat_i,
     input [3:0] wb_sel_i,
@@ -17,6 +18,7 @@ module counter_timer_wb # (
 
     output wb_ack_o,
     output [31:0] wb_dat_o,
+    output strobe_out,
     output irq
 );
     wire [31:0] counter_timer_reg_cfg_do;
@@ -48,6 +50,7 @@ module counter_timer_wb # (
     counter_timer counter_timer_inst (
         .resetn(resetn),
         .clkin(wb_clk_i),
+	.strobe_in(strobe_in),
         .reg_val_we(reg_val_we),
         .reg_val_di(mem_wdata),
         .reg_val_do(counter_timer_reg_val_do),
@@ -57,6 +60,7 @@ module counter_timer_wb # (
         .reg_dat_we(reg_dat_we),
         .reg_dat_di(mem_wdata),
         .reg_dat_do(counter_timer_reg_dat_do),
+	.strobe_out(strobe_out),
 	.irq_out(irq)
    );
 
@@ -65,6 +69,7 @@ endmodule
 module counter_timer (
     input resetn,
     input clkin,
+    input strobe_in,
 
     input  [3:0]  reg_val_we,
     input  [31:0] reg_val_di,
@@ -77,22 +82,25 @@ module counter_timer (
     input  [3:0]  reg_dat_we,
     input  [31:0] reg_dat_di,
     output [31:0] reg_dat_do,
+    output	  strobe_out,
     output	  irq_out
 );
 
 reg [31:0] value_cur;
 reg [31:0] value_reset;
-reg	   irq_out;
+reg	   strobe_out;
+wire	   irq_out;
 
 reg enable;	// Enable (start) the counter/timer
 reg lastenable;	// Previous state of enable (catch rising/falling edge)
 reg oneshot;	// Set oneshot (1) mode or continuous (0) mode
 reg updown;	// Count up (1) or down (0)
 reg irq_ena;	// Enable interrupt on timeout
+reg chain;	// Chain to a secondary timer
 
 // Configuration register
 
-assign reg_cfg_do = {28'd0, irq_ena, updown, oneshot, enable};
+assign reg_cfg_do = {27'd0, irq_ena, chain, updown, oneshot, enable};
 
 always @(posedge clkin or negedge resetn) begin
     if (resetn == 1'b0) begin
@@ -100,6 +108,7 @@ always @(posedge clkin or negedge resetn) begin
 	lastenable <= 1'b0;
 	oneshot <= 1'b0;
 	updown <= 1'b0;
+	chain <= 1'b0;
 	irq_ena <= 1'b0;
     end else begin
 	lastenable <= enable;
@@ -107,7 +116,8 @@ always @(posedge clkin or negedge resetn) begin
 	    enable <= reg_cfg_di[0];
 	    oneshot <= reg_cfg_di[1];
 	    updown <= reg_cfg_di[2];
-	    irq_ena <= reg_cfg_di[3];
+	    chain <= reg_cfg_di[3];
+	    irq_ena <= reg_cfg_di[4];
 	end
     end
 end
@@ -131,10 +141,12 @@ assign reg_dat_do = value_cur;
 
 // Counter/timer current value register and timer implementation
 
+assign irq_out = (irq_ena) ? strobe_out : 1'b0;
+
 always @(posedge clkin or negedge resetn) begin
     if (resetn == 1'b0) begin
 	value_cur <= 32'd0;	
-	irq_out <= 1'b0;
+	strobe_out <= 1'b0;
     end else begin
 	if (reg_dat_we != 4'b0000) begin
 	    if (reg_dat_we[3] == 1'b1) value_cur[31:24] <= reg_dat_di[31:24];
@@ -149,10 +161,12 @@ always @(posedge clkin or negedge resetn) begin
 		    if (oneshot != 1'b1) begin
 			value_cur <= 32'd0;
 		    end
-		    irq_out <= irq_ena;
+		    strobe_out <= 1'b1;
 		end else begin
-		    value_cur <= value_cur + 1;	// count up
-		    irq_out <= 1'b0;
+		    if ((chain == 1'b0) || ((chain == 1'b1) && (strobe_in == 1'b1))) begin
+			value_cur <= value_cur + 1;	// count up
+		    	strobe_out <= 1'b0;
+		    end
 		end
 	    end else begin
 		if (lastenable == 1'b0) begin
@@ -161,14 +175,16 @@ always @(posedge clkin or negedge resetn) begin
 		    if (oneshot != 1'b1) begin
 			value_cur <= value_reset;
 		    end
-		    irq_out <= irq_ena;
+		    strobe_out <= 1'b1;
 		end else begin
-		    value_cur <= value_cur - 1;	// count down
-		    irq_out <= 1'b0;
+		    if ((chain == 1'b0) || ((chain == 1'b1) && (strobe_in == 1'b1))) begin
+		    	value_cur <= value_cur - 1;	// count down
+		    	strobe_out <= 1'b0;
+		    end
 		end
 	    end
 	end else begin
-	    irq_out <= 1'b0;
+	    strobe_out <= 1'b0;
 	end
     end
 end
