@@ -65,16 +65,16 @@ module mgmt_soc #(
     output gpio_inenb_pad,	// Connect to inp_dis on gpio pad
 
     // LA signals
-    input  [127:0] la_input,           	// From Mega-Project to cpu
-    output [127:0] la_output,          	// From CPU to Mega-Project
+    input  [127:0] la_input,           	// From User Project to cpu
+    output [127:0] la_output,          	// From CPU to User Project
     output [127:0] la_oen,              // LA output enable (active low) 
 
-    // Mega-Project I/O Configuration (serial load)
+    // User Project I/O Configuration (serial load)
     output mprj_io_loader_resetn,
     output mprj_io_loader_clock,
     output mprj_io_loader_data,
 
-    // Mega-Project pad data (when management SoC controls the pad)
+    // User Project pad data (when management SoC controls the pad)
     input [MPRJ_IO_PADS-1:0] mgmt_in_data,
     output [MPRJ_IO_PADS-1:0] mgmt_out_data,
 
@@ -121,7 +121,7 @@ module mgmt_soc #(
     // SPI master->slave direct link
     output hk_connect,
 
-    // WB MI A (Mega project)
+    // WB MI A (User project)
     input mprj_ack_i,
     input [31:0] mprj_dat_i,
     output mprj_cyc_o,
@@ -636,7 +636,7 @@ module mgmt_soc #(
         .la_oen(la_oen)
     );
     
-    // WB Slave Mega-Project Control
+    // WB Slave User Project Control
     wire mprj_ctrl_stb_i;
     wire mprj_ctrl_ack_o;
     wire [31:0] mprj_ctrl_dat_o;

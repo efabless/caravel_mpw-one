@@ -48,7 +48,7 @@ module chip_io(
 	output flash_io1_di_core,
 	// porbh, returned to the I/O level shifted down and inverted
 	input  por,
-	// Mega-project IOs
+	// User project IOs
 	inout [`MPRJ_IO_PADS-1:0] mprj_io,
 	input [`MPRJ_IO_PADS-1:0] mprj_io_out,
 	input [`MPRJ_IO_PADS-1:0] mprj_io_oeb,

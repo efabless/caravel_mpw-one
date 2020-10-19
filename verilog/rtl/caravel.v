@@ -129,7 +129,7 @@ module caravel (
     wire gpio_outenb_core;
     wire gpio_inenb_core;
 
-    // Mega-Project Control (pad-facing)
+    // User Project Control (pad-facing)
     wire mprj_io_loader_resetn;
     wire mprj_io_loader_clock;
     wire mprj_io_loader_data;
@@ -149,7 +149,7 @@ module caravel (
     wire [`MPRJ_IO_PADS-1:0] mprj_io_in;
     wire [`MPRJ_IO_PADS-1:0] mprj_io_out;
 
-    // Mega-Project Control (user-facing)
+    // User Project Control (user-facing)
     wire [`MPRJ_IO_PADS-1:0] user_io_oeb;
     wire [`MPRJ_IO_PADS-1:0] user_io_in;
     wire [`MPRJ_IO_PADS-1:0] user_io_out;
@@ -159,7 +159,7 @@ module caravel (
     wire mgmt_serial_clock;
     wire mgmt_serial_resetn;
 
-    // Mega-Project Control management I/O
+    // User Project Control management I/O
     // There are two types of GPIO connections:
     // (1) Full Bidirectional: Management connects to in, out, and oeb
     //     Uses:  JTAG and SDO
@@ -278,7 +278,7 @@ module caravel (
     wire [127:0] la_output_mprj;   // From MPRJ to CPU
     wire [127:0] la_oen;           // LA output enable from CPU perspective (active-low) 
 	
-    // WB MI A (Mega Project)
+    // WB MI A (User Project)
     wire mprj_cyc_o_core;
     wire mprj_stb_o_core;
     wire mprj_we_o_core;
@@ -343,7 +343,7 @@ module caravel (
 		.la_input(la_data_out_mprj),
 		.la_output(la_output_core),
 		.la_oen(la_oen),
-		// Mega Project IO Control
+		// User Project IO Control
 		.mprj_io_loader_resetn(mprj_io_loader_resetn),
 		.mprj_io_loader_clock(mprj_io_loader_clock),
 		.mprj_io_loader_data(mprj_io_loader_data),
@@ -353,7 +353,7 @@ module caravel (
 		.sdo_outenb(sdo_outenb),
 		.jtag_out(jtag_out),
 		.jtag_outenb(jtag_outenb),
-		// Mega Project Slave ports (WB MI A)
+		// User Project Slave ports (WB MI A)
 		.mprj_cyc_o(mprj_cyc_o_core),
 		.mprj_stb_o(mprj_stb_o_core),
 		.mprj_we_o(mprj_we_o_core),

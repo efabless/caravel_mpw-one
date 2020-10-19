@@ -33,8 +33,8 @@ module mgmt_core #(
 	// Clocking
 	input clock,
 	// LA signals
-    	input  [127:0] la_input,           	// From Mega-Project to cpu
-    	output [127:0] la_output,          	// From CPU to Mega-Project
+    	input  [127:0] la_input,           	// From User Project to cpu
+    	output [127:0] la_output,          	// From CPU to User Project
     	output [127:0] la_oen,              // LA output enable  
 	// Housekeeping SPI
 	output sdo_out,
@@ -42,13 +42,13 @@ module mgmt_core #(
 	// JTAG
 	output jtag_out,
 	output jtag_outenb,
-	// Mega-Project Control Signals
+	// User Project Control Signals
 	input [MPRJ_IO_PADS-1:0] mgmt_in_data,
 	output [MPRJ_IO_PADS-1:0] mgmt_out_data,
 	output mprj_io_loader_resetn,
 	output mprj_io_loader_clock,
 	output mprj_io_loader_data,
-	// WB MI A (Mega project)
+	// WB MI A (User project)
     	input mprj_ack_i,
 	input [31:0] mprj_dat_i,
     	output mprj_cyc_o,
@@ -173,14 +173,14 @@ module mgmt_core #(
 		.la_input(la_input),
 		.la_output(la_output),
 		.la_oen(la_oen),
-		// Mega-Project I/O Configuration
+		// User Project I/O Configuration
 		.mprj_io_loader_resetn(mprj_io_loader_resetn),
 		.mprj_io_loader_clock(mprj_io_loader_clock),
 		.mprj_io_loader_data(mprj_io_loader_data),
 		// I/O data
 		.mgmt_in_data(mgmt_in_data),
 		.mgmt_out_data(mgmt_out_data),
-		// Mega Project Slave ports (WB MI A)
+		// User Project Slave ports (WB MI A)
 		.mprj_cyc_o(mprj_cyc_o),
 		.mprj_stb_o(mprj_stb_o),
 		.mprj_we_o(mprj_we_o),
