@@ -58,8 +58,8 @@ module user_project_wrapper #(
     /*--------------------------------------*/
 
     user_proj_example #(
-	.IO_PADS(`MPRJ_IO_PADS),
-	.PWR_PADS(`MPRJ_PWR_PADS)
+	.IO_PADS(IO_PADS),
+	.PWR_PADS(PWR_PADS)
     ) mprj ( 
 	.vdda1(vdda1),	// User area 1 3.3V power
 	.vdda2(vdda2),	// User area 2 3.3V power
