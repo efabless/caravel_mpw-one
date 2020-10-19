@@ -79,6 +79,16 @@ module mgmt_core #(
     	wire ext_reset;
 	wire hk_connect;
 
+	// JTAG (to be implemented)
+	wire jtag_out = 1'b0;
+	wire jtag_outenb = 1'b1;
+
+	// Housekeeping SPI vectors
+	wire [4:0]  spi_pll_div;
+	wire [2:0]  spi_pll_sel;
+	wire [2:0]  spi_pll90_sel;
+	wire [25:0] spi_pll_trim;
+
 	caravel_clocking clocking(
 	`ifdef LVS
 		.vdd1v8(vdd1v8),
@@ -213,16 +223,6 @@ module mgmt_core #(
 		.dco(spi_pll_dco_ena),
 		.ext_trim(spi_pll_trim)
     	);
-
-	// JTAG (to be implemented)
-	wire jtag_out = 1'b0;
-	wire jtag_outenb = 1'b1;
-
-	// Housekeeping SPI vectors
-	wire [4:0]  spi_pll_div;
-	wire [2:0]  spi_pll_sel;
-	wire [2:0]  spi_pll90_sel;
-	wire [25:0] spi_pll_trim;
 
 	// Housekeeping SPI (SPI slave module)
 	housekeeping_spi housekeeping (
