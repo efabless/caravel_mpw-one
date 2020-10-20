@@ -7,7 +7,7 @@ A template SoC for Google SKY130 free shuttles. It is still WIP. The current SoC
 </p>
 
 ## Managment SoC
-The managment SoC runs firmware taht can be used to:
+The managment SoC runs firmware that can be used to:
 - Configure Mega Project I/O pads
 - Observe and control Mega Project signals (through on-chip logic analyzer probes)
 - Control the Mega Project power supply
@@ -17,7 +17,7 @@ The memory map of the management SoC is given below <br>
 <img src="/doc/mgmt_soc_memory_map.png" width="40%" height="40%">
 
 ## Mega Project Area
-This is the user space. It has limited silicon area (TBD, about 2.8mm x 2.8mm) as well as a fixed number of I/O pads (37) and power pads (10).  See [the Caravel  premliminary datasheet](doc/caravel.pdf) for details.
+This is the user space. It has limited silicon area (TBD, about 2.8mm x 2.8mm) as well as a fixed number of I/O pads (37) and power pads (10).  See [the Caravel  premliminary datasheet](doc/caravel_datasheet.pdf) for details.
 The repository contains a [sample mega project](/verilog/rtl/user_proj_example.v) that contains a binary 32-bit up counter.  </br>
 
 <p align=”center”>
