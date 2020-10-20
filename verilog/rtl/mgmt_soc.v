@@ -70,8 +70,10 @@ module mgmt_soc #(
     output [127:0] la_oen,              // LA output enable (active low) 
 
     // User Project I/O Configuration (serial load)
-    input  mprj_pwrgood,
-    input  mprj2_pwrgood,
+    input  mprj_vcc_pwrgood,
+    input  mprj2_vcc_pwrgood,
+    input  mprj_vdd_pwrgood,
+    input  mprj2_vdd_pwrgood,
     output mprj_io_loader_resetn,
     output mprj_io_loader_clock,
     output mprj_io_loader_data,
@@ -588,8 +590,10 @@ module mgmt_soc #(
         .wb_ack_o(sys_ack_o),
         .wb_dat_o(sys_dat_o),
 
-	.usr1_pwrgood(mprj_pwrgood),
-	.usr2_pwrgood(mprj2_pwrgood),
+	.usr1_vcc_pwrgood(mprj_vcc_pwrgood),
+	.usr2_vcc_pwrgood(mprj2_vcc_pwrgood),
+	.usr1_vdd_pwrgood(mprj_vdd_pwrgood),
+	.usr2_vdd_pwrgood(mprj2_vdd_pwrgood),
         .trap_output_dest(trap_output_dest),
         .clk1_output_dest(clk1_output_dest),
         .clk2_output_dest(clk2_output_dest),

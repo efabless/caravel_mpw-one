@@ -20,6 +20,10 @@ module mgmt_protect (
     inout	  vssd1,
     inout	  vccd2,
     inout	  vssd2,
+    inout	  vdda1,
+    inout	  vssa1,
+    inout	  vdda2,
+    inout	  vssa2,
 
     input 	  caravel_clk,
     input 	  caravel_clk2,
@@ -43,14 +47,24 @@ module mgmt_protect (
     output [31:0] mprj_adr_o_user,
     output [31:0] mprj_dat_o_user,
     output [127:0] la_data_in_mprj,
-    output	  user1_powergood,
-    output	  user2_powergood
+    output	  user1_vcc_powergood,
+    output	  user2_vcc_powergood,
+    output	  user1_vdd_powergood,
+    output	  user2_vdd_powergood
 );
 
 	wire [74:0] mprj_logic1;
 	wire mprj2_logic1;
-	wire user1_powergood;
-	wire user2_powergood;
+
+	wire mprj_vdd_logic1_h;
+	wire mprj2_vdd_logic1_h;
+	wire mprj_vdd_logic1;
+	wire mprj2_vdd_logic1;
+
+	wire user1_vcc_powergood;
+	wire user2_vcc_powergood;
+	wire user1_vdd_powergood;
+	wire user2_vdd_powergood;
 
         sky130_fd_sc_hd__conb_1 mprj_logic_high [74:0] (
                 .VPWR(vccd1),
@@ -70,6 +84,47 @@ module mgmt_protect (
                 .LO()
         );
 
+	// Logic high in the VDDA (3.3V) domains
+
+        sky130_fd_sc_hvl__conb_1 mprj_logic_high_hvl (
+                .VPWR(vdda1),
+                .VGND(vssa1),
+                .VPB(vdda1),
+                .VNB(vssa1),
+                .HI(mprj_vdd_logic1_h),
+                .LO()
+        );
+
+        sky130_fd_sc_hvl__conb_1 mprj2_logic_high_hvl (
+                .VPWR(vdda2),
+                .VGND(vssa2),
+                .VPB(vdda2),
+                .VNB(vssa2),
+                .HI(mprj2_vdd_logic1_h),
+                .LO()
+        );
+
+	// Level shift the logic high signals into the 1.8V domain
+
+	sky130_fd_sc_hvl__lsbufhv2lv mprj_logic_high_lv (
+		.VPWR(vdda1),
+		.VGND(vssd),
+		.LVPWR(vccd),
+		.VPB(vdda1),
+		.VNB(vssd),
+		.X(mprj_vdd_logic1),
+		.A(mprj_vdd_logic1_h)
+	);
+
+	sky130_fd_sc_hvl__lsbufhv2lv mprj2_logic_high_lv (
+		.VPWR(vdda2),
+		.VGND(vssd),
+		.LVPWR(vccd),
+		.VPB(vdda2),
+		.VNB(vssd),
+		.X(mprj2_vdd_logic1),
+		.A(mprj2_vdd_logic1_h)
+	);
 
         sky130_fd_sc_hd__einvp_8 mprj_rstn_buf (
                 .VPWR(vccd),
@@ -187,7 +242,7 @@ module mgmt_protect (
                 .VPB(vccd),
                 .VNB(vssd),
                 .A(mprj_logic1[74]),
-                .X(user1_powergood)
+                .X(user1_vcc_powergood)
 	);
 
         sky130_fd_sc_hd__buf_8 mprj2_pwrgood (
@@ -195,8 +250,25 @@ module mgmt_protect (
                 .VGND(vssd),
                 .VPB(vccd),
                 .VNB(vssd),
-                .A(mprj_logic2),
-                .X(user2_powergood)
+                .A(mprj2_logic1),
+                .X(user2_vcc_powergood)
 	);
 
+        sky130_fd_sc_hd__buf_8 mprj_vdd_pwrgood (
+                .VPWR(vccd),
+                .VGND(vssd),
+                .VPB(vccd),
+                .VNB(vssd),
+                .A(mprj_vdd_logic1),
+                .X(user_vdd_powergood)
+	);
+
+        sky130_fd_sc_hd__buf_8 mprj2_vdd_pwrgood (
+                .VPWR(vccd),
+                .VGND(vssd),
+                .VPB(vccd),
+                .VNB(vssd),
+                .A(mprj2_vdd_logic1),
+                .X(user2_vdd_powergood)
+	);
 endmodule

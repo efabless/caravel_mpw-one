@@ -18,8 +18,10 @@ module sysctrl_wb #(
     output [31:0] wb_dat_o,
     output wb_ack_o,
     
-    input  usr1_pwrgood,
-    input  usr2_pwrgood,
+    input  usr1_vcc_pwrgood,
+    input  usr2_vcc_pwrgood,
+    input  usr1_vdd_pwrgood,
+    input  usr2_vdd_pwrgood,
     output clk1_output_dest,
     output clk2_output_dest,
     output trap_output_dest,
@@ -56,8 +58,10 @@ module sysctrl_wb #(
         .iomem_rdata(wb_dat_o),
         .iomem_ready(ready),
         
-	.usr1_pwrgood(usr1_pwrgood),
-	.usr2_pwrgood(usr2_pwrgood),
+	.usr1_vcc_pwrgood(usr1_vcc_pwrgood),
+	.usr2_vcc_pwrgood(usr2_vcc_pwrgood),
+	.usr1_vdd_pwrgood(usr1_vdd_pwrgood),
+	.usr2_vdd_pwrgood(usr2_vdd_pwrgood),
         .clk1_output_dest(clk1_output_dest),
         .clk2_output_dest(clk2_output_dest),
         .trap_output_dest(trap_output_dest), 
@@ -84,8 +88,10 @@ module sysctrl #(
     output reg [31:0] iomem_rdata,
     output reg iomem_ready,
 
-    input  usr1_pwrgood,
-    input  usr2_pwrgood,
+    input  usr1_vcc_pwrgood,
+    input  usr2_vcc_pwrgood,
+    input  usr1_vdd_pwrgood,
+    input  usr2_vdd_pwrgood,
     output clk1_output_dest,
     output clk2_output_dest,
     output trap_output_dest,
@@ -99,8 +105,10 @@ module sysctrl #(
     reg irq_7_inputsrc;
     reg irq_8_inputsrc;
 
-    wire usr1_pwrgood;
-    wire usr2_pwrgood;
+    wire usr1_vcc_pwrgood;
+    wire usr2_vcc_pwrgood;
+    wire usr1_vdd_pwrgood;
+    wire usr2_vdd_pwrgood;
 
     assign pwrgood_sel  = (iomem_addr[7:0] == PWRGOOD);
     assign clk_out_sel  = (iomem_addr[7:0] == CLK_OUT);
@@ -120,7 +128,8 @@ module sysctrl #(
                 iomem_ready <= 1'b 1;
                 
                 if (pwrgood_sel) begin
-                    iomem_rdata <= {30'd0, usr2_pwrgood, usr1_pwrgood};
+                    iomem_rdata <= {28'd0, usr2_vdd_pwrgood, usr1_vdd_pwrgood,
+				usr2_vcc_pwrgood, usr1_vcc_pwrgood};
 		    // These are read-only bits;  no write behavior on wstrb.
 
                 end else if (clk_out_sel) begin
