@@ -51,7 +51,7 @@
 `include "user_proj_example.v"
 
 `ifdef USE_OPENRAM
-    `include "sram_1rw1r_32_8192_8_sky130.v"
+    `include "sram_1rw1r_32_256_8_sky130.v"
 `endif
 
 module caravel (
@@ -251,17 +251,17 @@ module caravel (
 	.mprj_io_in(mprj_io_in),
 	.mprj_io_out(mprj_io_out),
 	.mprj_io_oeb(mprj_io_oeb),
-        .mprj_io_hldh_n(mprj_io_hldh_n),
+	.mprj_io_hldh_n(mprj_io_hldh_n),
 	.mprj_io_enh(mprj_io_enh),
-        .mprj_io_inp_dis(mprj_io_inp_dis),
-        .mprj_io_ib_mode_sel(mprj_io_ib_mode_sel),
-        .mprj_io_vtrip_sel(mprj_io_vtrip_sel),
-        .mprj_io_slow_sel(mprj_io_slow_sel),
-        .mprj_io_holdover(mprj_io_holdover),
-        .mprj_io_analog_en(mprj_io_analog_en),
-        .mprj_io_analog_sel(mprj_io_analog_sel),
-        .mprj_io_analog_pol(mprj_io_analog_pol),
-        .mprj_io_dm(mprj_io_dm)
+	.mprj_io_inp_dis(mprj_io_inp_dis),
+	.mprj_io_ib_mode_sel(mprj_io_ib_mode_sel),
+	.mprj_io_vtrip_sel(mprj_io_vtrip_sel),
+	.mprj_io_slow_sel(mprj_io_slow_sel),
+	.mprj_io_holdover(mprj_io_holdover),
+	.mprj_io_analog_en(mprj_io_analog_en),
+	.mprj_io_analog_sel(mprj_io_analog_sel),
+	.mprj_io_analog_pol(mprj_io_analog_pol),
+	.mprj_io_dm(mprj_io_dm)
     );
 
     // SoC core
@@ -300,6 +300,20 @@ module caravel (
 
     // Mask revision
     wire [31:0] mask_rev;
+
+	wire 	    mprj_clock;
+	wire 	    mprj_clock2;
+	wire 	    mprj_resetn;
+	wire 	    mprj_cyc_o_user;
+	wire 	    mprj_stb_o_user;
+	wire 	    mprj_we_o_user;
+	wire [3:0]  mprj_sel_o_user;
+	wire [31:0] mprj_adr_o_user;
+	wire [31:0] mprj_dat_o_user;
+	wire	    mprj_vcc_pwrgood;
+	wire	    mprj2_vcc_pwrgood;
+	wire	    mprj_vdd_pwrgood;
+	wire	    mprj2_vdd_pwrgood;
 
     mgmt_core #(
 	.MPRJ_IO_PADS(`MPRJ_IO_PADS),
@@ -374,20 +388,6 @@ module caravel (
 	/* buffer like the above, but since they are intended to be	*/
 	/* always active, connect the enable to the logic-1 output from	*/
 	/* the vccd1 domain.						*/
-
-	wire 	    mprj_clock;
-	wire 	    mprj_clock2;
-	wire 	    mprj_resetn;
-	wire 	    mprj_cyc_o_user;
-	wire 	    mprj_stb_o_user;
-	wire 	    mprj_we_o_user;
-	wire [3:0]  mprj_sel_o_user;
-	wire [31:0] mprj_adr_o_user;
-	wire [31:0] mprj_dat_o_user;
-	wire	    mprj_vcc_pwrgood;
-	wire	    mprj2_vcc_pwrgood;
-	wire	    mprj_vdd_pwrgood;
-	wire	    mprj2_vdd_pwrgood;
 
 	mgmt_protect mgmt_buffers (
 		.vccd(vccd),

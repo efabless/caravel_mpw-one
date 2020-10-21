@@ -12,6 +12,9 @@ extern uint32_t sram;
 extern uint32_t flashio_worker_begin;
 extern uint32_t flashio_worker_end;
 
+// SYNTH_MEM (0x0100_0000)
+#define reg_synth_mem (*(volatile uint32_t*)0x01000000)
+
 // UART (0x2000_0000)
 #define reg_uart_clkdiv (*(volatile uint32_t*)0x20000000)
 #define reg_uart_data   (*(volatile uint32_t*)0x20000004)

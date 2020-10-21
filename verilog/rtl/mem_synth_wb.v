@@ -1,6 +1,6 @@
-module mem_wb # (
-    parameter integer MEM_WORDS = 256
-) (
+module mem_synth_wb #(
+   parameter integer MEM_WORDS = 1024
+)( 
     input wb_clk_i,
     input wb_rst_i,
 
@@ -13,8 +13,8 @@ module mem_wb # (
 
     output wb_ack_o,
     output [31:0] wb_dat_o
-    
 );
+
     wire valid;
     wire ram_wen;
     wire [3:0] wen; // write enable
@@ -24,16 +24,6 @@ module mem_wb # (
 
     assign wen = wb_sel_i & {4{ram_wen}} ;
 
-`ifndef USE_OPENRAM
-    assign wb_ack_o = valid;
-`else
-
-    /*
-        Ack Generation
-            - write transaction: asserted upon receiving adr_i & dat_i 
-            - read transaction : asserted one clock cycle after receiving the adr_i & dat_i
-    */ 
-
     reg wb_ack_read;
     reg wb_ack_o;
 
@@ -42,43 +32,37 @@ module mem_wb # (
             wb_ack_read <= 1'b0;
             wb_ack_o <= 1'b0;
         end else begin
-            // wb_ack_read <= {2{valid}} & {1'b1, wb_ack_read[1]};
             wb_ack_o    <= wb_we_i? (valid & !wb_ack_o): wb_ack_read;
             wb_ack_read <= (valid & !wb_ack_o) & !wb_ack_read;
         end
     end
 
-`endif
-
-    soc_mem mem(
+    soc_mem_synth # (
+        .MEM_WORDS(MEM_WORDS)
+    ) mem (
         .clk(wb_clk_i),
         .ena(valid),
         .wen(wen),
-        .addr(wb_adr_i[23:2]),
+        .addr(wb_adr_i[12:2]),
         .wdata(wb_dat_i),
         .rdata(wb_dat_o)
     );
 
 endmodule
 
-module soc_mem 
-`ifndef USE_OPENRAM
-#(
-    parameter integer WORDS = 8192
-)
-`endif
- ( 
+module soc_mem_synth #(
+    parameter integer MEM_WORDS = 2048
+)(
     input clk,
     input ena,
     input [3:0] wen,
-    input [21:0] addr,
+    input [10:0] addr,
     input [31:0] wdata,
     output[31:0] rdata
 );
 
-`ifndef USE_OPENRAM
     reg [31:0] rdata;
-    reg [31:0] mem [0:WORDS-1];
+    reg [31:0] mem [0:MEM_WORDS-1];
 
     always @(posedge clk) begin
         if (ena == 1'b1) begin
@@ -89,20 +73,5 @@ module soc_mem
             if (wen[3]) mem[addr][31:24] <= wdata[31:24];
         end
     end
-`else
-    
-    /* Using Port 0 Only - Size: 1KB, 256x32 bits */
-    //sram_1rw1r_32_256_8_scn4m_subm 
-    sram_1rw1r_32_256_8_sky130 SRAM(
-            .clk0(clk), 
-            .csb0(~ena), 
-            .web0(~|wen),
-            .wmask0(wen),
-            .addr0(addr[7:0]),
-            .din0(wdata),
-            .dout0(rdata)
-      );
-
-`endif
 
 endmodule

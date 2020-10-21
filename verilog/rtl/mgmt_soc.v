@@ -41,6 +41,7 @@
 `include "la_wb.v"
 `include "mprj_ctrl.v"
 `include "convert_gpio_sigs.v"
+`include "mem_synth_wb.v"
 
 module mgmt_soc #(
     parameter MPRJ_IO_PADS = 32,
@@ -138,13 +139,15 @@ module mgmt_soc #(
     output [31:0] mprj_dat_o
 );
     /* Memory reverted back to 256 words while memory has to be synthesized */
-    parameter integer MEM_WORDS = 8192;
-    parameter [31:0] STACKADDR = (4*MEM_WORDS);       // end of memory
+    parameter integer MEM_WORDS = 256;
+    parameter integer MEM_SYNTH_WORDS = 1024;
+    parameter [31:0] STACKADDR = (4*(MEM_WORDS + MEM_SYNTH_WORDS));       // end of memory
     parameter [31:0] PROGADDR_RESET = 32'h 1000_0000; 
     parameter [31:0] PROGADDR_IRQ   = 32'h 0000_0000;
 
     // Slaves Base Addresses
     parameter RAM_BASE_ADR    = 32'h 0000_0000;
+    parameter RAM_SYNTH_BASE_ADR = 32'h 0100_0000;
     parameter FLASH_BASE_ADR  = 32'h 1000_0000;
     parameter UART_BASE_ADR   = 32'h 2000_0000;
     parameter GPIO_BASE_ADR   = 32'h 2100_0000;
@@ -200,9 +203,10 @@ module mgmt_soc #(
     // Wishbone Interconnect 
     localparam ADR_WIDTH = 32;
     localparam DAT_WIDTH = 32;
-    localparam NUM_SLAVES = 12;
+    localparam NUM_SLAVES = 13;
 
     parameter [NUM_SLAVES*ADR_WIDTH-1: 0] ADR_MASK = {
+        {8'hFF, {ADR_WIDTH-8{1'b0}}},
         {8'hFF, {ADR_WIDTH-8{1'b0}}},
         {8'hFF, {ADR_WIDTH-8{1'b0}}},
         {8'hFF, {ADR_WIDTH-8{1'b0}}},
@@ -229,6 +233,7 @@ module mgmt_soc #(
         {GPIO_BASE_ADR},
         {UART_BASE_ADR},
         {FLASH_BASE_ADR},
+        {RAM_SYNTH_BASE_ADR},
         {RAM_BASE_ADR}
     };
 
@@ -701,6 +706,26 @@ module mgmt_soc #(
         .wb_dat_o(mem_dat_o)
     );
 
+    // Wishbone Slave Synthesized RAM
+    wire mem_synth_stb_i;
+    wire mem_synth_ack_o;
+    wire [31:0] mem_synth_dat_o;
+
+    mem_synth_wb #(
+        .MEM_WORDS(MEM_SYNTH_WORDS)
+    ) soc_mem_synth (
+        .wb_clk_i(wb_clk_i),
+        .wb_rst_i(wb_rst_i),
+        .wb_adr_i(cpu_adr_o), 
+        .wb_dat_i(cpu_dat_o),
+        .wb_sel_i(cpu_sel_o),
+        .wb_we_i(cpu_we_o),
+        .wb_cyc_i(cpu_cyc_o),
+        .wb_stb_i(mem_synth_stb_i),
+        .wb_ack_o(mem_synth_ack_o), 
+        .wb_dat_o(mem_synth_dat_o)
+    );
+
     // Wishbone intercon logic
     wb_intercon #(
         .AW(ADR_WIDTH),
@@ -720,17 +745,17 @@ module mgmt_soc #(
 		mprj_stb_o, mprj_ctrl_stb_i, la_stb_i, 
 		spi_master_stb_i, counter_timer1_stb_i, counter_timer0_stb_i,
 		gpio_stb_i, uart_stb_i,
-		spimemio_flash_stb_i, mem_stb_i }), 
+		spimemio_flash_stb_i, mem_synth_stb_i, mem_stb_i }), 
         .wbs_dat_i({ sys_dat_o, spimemio_cfg_dat_o,
 		mprj_dat_i, mprj_ctrl_dat_o, la_dat_o,
 		spi_master_dat_o, counter_timer1_dat_o, counter_timer0_dat_o,
 		gpio_dat_o, uart_dat_o,
-		spimemio_flash_dat_o, mem_dat_o }),
+		spimemio_flash_dat_o,mem_synth_dat_o, mem_dat_o }),
         .wbs_ack_i({ sys_ack_o, spimemio_cfg_ack_o,
 		mprj_ack_i, mprj_ctrl_ack_o, la_ack_o,
 		spi_master_ack_o, counter_timer1_ack_o, counter_timer0_ack_o,
 		gpio_ack_o, uart_ack_o,
-		spimemio_flash_ack_o, mem_ack_o })
+		spimemio_flash_ack_o, mem_synth_ack_o,  mem_ack_o })
     );
 
 endmodule

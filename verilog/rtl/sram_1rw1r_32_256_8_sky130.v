@@ -1,9 +1,13 @@
 // OpenRAM SRAM model
-// Words: 8192
+// Words: 256
 // Word size: 32
 // Write size: 8
 
-module sram_1rw1r_32_8192_8_sky130(
+module sram_1rw1r_32_256_8_sky130(
+`ifdef LVS
+	vdd,
+	gnd,
+`endif
 // Port 0: RW
     clk0,csb0,web0,wmask0,addr0,din0,dout0,
 // Port 1: R
@@ -12,11 +16,15 @@ module sram_1rw1r_32_8192_8_sky130(
 
   parameter NUM_WMASKS = 4 ;
   parameter DATA_WIDTH = 32 ;
-  parameter ADDR_WIDTH = 13 ;
+  parameter ADDR_WIDTH = 8 ;
   parameter RAM_DEPTH = 1 << ADDR_WIDTH;
   // FIXME: This delay is arbitrary.
-  parameter DELAY = 1 ;
+  parameter DELAY = 3 ;
 
+`ifdef LVS
+  inout vdd;
+  inout gnd;
+`endif
   input  clk0; // clock
   input   csb0; // active low chip select
   input  web0; // active low write control
