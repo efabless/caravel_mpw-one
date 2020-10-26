@@ -107,8 +107,8 @@ module mprj_ctrl #(
 `define XBYTE	2'b10
 `define LOAD	2'b11
 
-    localparam IO_WORDS = 1 + (IO_PADS / 32);
-    localparam PWR_WORDS = 1 + (PWR_PADS / 32);
+    localparam IO_WORDS = (IO_PADS % 32 != 0) + (IO_PADS / 32);
+    localparam PWR_WORDS = (IO_PADS % 32 != 0) + (PWR_PADS / 32);
 
     localparam IO_BASE_ADR = (BASE_ADR | CONFIG) + ((IO_WORDS + PWR_WORDS - 2) * 4);
     localparam PWR_BASE_ADR = IO_BASE_ADR + (IO_PADS * 4);
@@ -187,7 +187,7 @@ module mprj_ctrl #(
 
     `define wtop (((i+1)*32 > IO_PADS) ? IO_PADS-1 : (i+1)*32-1)
     `define wbot (i*32)
-    `define rtop (`wtop - `wbot + 1)
+    `define rtop (`wtop - `wbot)
 
     generate 
         for (i=0; i<IO_WORDS; i=i+1) begin
