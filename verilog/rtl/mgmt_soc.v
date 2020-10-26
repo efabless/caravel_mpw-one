@@ -124,6 +124,9 @@ module mgmt_soc #(
     input  pass_thru_mgmt_sdi,
     output pass_thru_mgmt_sdo,
 
+    // State of JTAG and SDO pins (override for management output use)
+    output sdo_oenb_state,
+    output jtag_oenb_state,
     // SPI master->slave direct link
     output hk_connect,
     // User clock monitoring
@@ -693,6 +696,8 @@ module mgmt_soc #(
 	.serial_clock(mprj_io_loader_clock),
 	.serial_resetn(mprj_io_loader_resetn),
 	.serial_data_out(mprj_io_loader_data),
+	.sdo_oenb_state(sdo_oenb_state),
+	.jtag_oenb_state(jtag_oenb_state),
 	.mgmt_gpio_out(mgmt_out_pre),
 	.mgmt_gpio_in(mgmt_in_data)
     );

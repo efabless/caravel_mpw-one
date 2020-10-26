@@ -168,7 +168,6 @@ assign reg_dat_do = value_cur;
 assign value_cur_plus = value_cur + 1;
 assign value_cur_minus = value_cur - 1;
 
-assign loc_enable = enable_in && enable;
 assign loc_enable = (chain == 1'b1) ? (enable && enable_in) : enable;
 assign enable_out = enable;
 

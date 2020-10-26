@@ -69,26 +69,26 @@ module timer2_tb;
 
 		/* Add checks here */
 		wait(checkbits == 6'h01);
-		$display("   countbits = 0x%x (should be 0xdcba7eb0)", countbits);
-		if(countbits !== 32'hdcba7eb0) begin
+		$display("   countbits = 0x%x (should be 0xdcba7eb3)", countbits);
+		if(countbits !== 32'hdcba7eb3) begin
 		    $display("Monitor: Test Timer2 (RTL) Failed");
 		    $finish;
 		end
 		wait(checkbits == 6'h02);
-		$display("   countbits = 0x%x (should be 0x10)", countbits);
-		if(countbits !== 32'h10) begin
+		$display("   countbits = 0x%x (should be 0x11)", countbits);
+		if(countbits !== 32'h11) begin
 		    $display("Monitor: Test Timer2 (RTL) Failed");
 		    $finish;
 		end
 		wait(checkbits == 6'h03);
-		$display("   countbits = %x (should be 0x0c)", countbits);
-		if(countbits !== 32'h0c) begin
+		$display("   countbits = %x (should be 0x0f)", countbits);
+		if(countbits !== 32'h0f) begin
 		    $display("Monitor: Test Timer (RTL) Failed");
 		    $finish;
 		end
 		wait(checkbits == 6'h04);
-		$display("   countbits = %x (should be 0x0c)", countbits);
-		if(countbits !== 32'h0c) begin
+		$display("   countbits = %x (should be 0x0f)", countbits);
+		if(countbits !== 32'h0f) begin
 		    $display("Monitor: Test Timer2 (RTL) Failed");
 		    $finish;
 		end
@@ -100,8 +100,8 @@ module timer2_tb;
 		end
 
 		wait(checkbits == 6'h06);
-		$display("   countbits = %x (should be 0x0054)", countbits);
-		if(countbits !== 32'h0054) begin
+		$display("   countbits = %x (should be 0x0055)", countbits);
+		if(countbits !== 32'h0055) begin
 		    $display("Monitor: Test Timer2 (RTL) Failed");
 		    $finish;
 		end
@@ -114,8 +114,8 @@ module timer2_tb;
 		end
 
 		wait(checkbits == 6'h08);
-		$display("   countbits = %x (should be 0x0218)", countbits);
-		if(countbits !== 32'h0218) begin
+		$display("   countbits = %x (should be 0x0219)", countbits);
+		if(countbits !== 32'h0219) begin
 		    $display("Monitor: Test Timer2 (RTL) Failed");
 		    $finish;
 		end

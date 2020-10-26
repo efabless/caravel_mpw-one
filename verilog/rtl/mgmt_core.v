@@ -75,14 +75,24 @@ module mgmt_core #(
 	wire hk_connect;
 
 	// JTAG (to be implemented)
-	wire jtag_out = 1'b0;
+	wire jtag_out;
+	wire jtag_out_pre = 1'b0;
 	wire jtag_outenb = 1'b1;
+
+	// SDO
+	wire sdo_out;
+	wire sdo_out_pre;
 
 	// Housekeeping SPI vectors
 	wire [4:0]  spi_pll_div;
 	wire [2:0]  spi_pll_sel;
 	wire [2:0]  spi_pll90_sel;
 	wire [25:0] spi_pll_trim;
+
+	// Override default function for SDO and JTAG outputs if purposely
+	// set for override by the management SoC.
+	assign sdo_out = (sdo_oenb_state == 1'b0) ? mgmt_out_data[1] : sdo_out_pre;
+	assign jtag_out = (jtag_oenb_state == 1'b0) ? mgmt_out_data[0] : jtag_out_pre;
 
 	caravel_clocking clocking(
 	`ifdef LVS
@@ -177,6 +187,9 @@ module mgmt_core #(
 		.pass_thru_mgmt_sck(pass_thru_mgmt_sck),
 		.pass_thru_mgmt_sdi(pass_thru_mgmt_sdi),
 		.pass_thru_mgmt_sdo(pass_thru_mgmt_sdo),
+		// SDO and JTAG state for output override
+		.sdo_oenb_state(sdo_oenb_state),
+		.jtag_oenb_state(jtag_oenb_state),
 		// SPI master->slave direct connection
 		.hk_connect(hk_connect),
 		// Secondary clock (for monitoring)
@@ -231,7 +244,7 @@ module mgmt_core #(
 	    .SCK((hk_connect) ? mgmt_out_data[4] : mgmt_in_data[4]),
 	    .SDI((hk_connect) ? mgmt_out_data[2] : mgmt_in_data[2]),
 	    .CSB((hk_connect) ? mgmt_out_data[3] : mgmt_in_data[3]),
-	    .SDO(sdo_out),
+	    .SDO(sdo_out_pre),
 	    .sdo_enb(sdo_outenb),
 	    .pll_dco_ena(spi_pll_dco_ena),
 	    .pll_sel(spi_pll_sel),

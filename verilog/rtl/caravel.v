@@ -488,7 +488,7 @@ module caravel (
 
     gpio_control_block #(
 	.DM_INIT(3'b110),	// Mode = output, strong up/down
-	.OENB_INIT(1'b0)	// Enable output signaling from wire
+	.OENB_INIT(1'b1)	// Enable output signaling from wire
     ) gpio_control_bidir [1:0] (
     	`ifdef LVS
              inout vccd,

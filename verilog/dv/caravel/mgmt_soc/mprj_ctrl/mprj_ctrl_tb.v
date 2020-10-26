@@ -14,7 +14,7 @@ module mprj_ctrl_tb;
 	wire flash_clk;
 	wire flash_io0;
 	wire flash_io1;
-	wire [36:0] user_io;
+	wire [37:0] user_io;
 	wire SDO;
 
 	wire [3:0] checkbits;

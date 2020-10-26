@@ -24,6 +24,11 @@ module mprj_ctrl_wb #(
     output serial_resetn,
     output serial_data_out,
 
+    // Pass state of OEB bit on SDO and JTAG back to the core
+    // so that the function can be overridden for management output
+    output sdo_oenb_state,
+    output jtag_oenb_state,
+
     // Read/write data to each GPIO pad from management SoC
     input [IO_PADS-1:0] mgmt_gpio_in,
     output [IO_PADS-1:0] mgmt_gpio_out
@@ -59,6 +64,8 @@ module mprj_ctrl_wb #(
 	.serial_clock(serial_clock),
 	.serial_resetn(serial_resetn),
 	.serial_data_out(serial_data_out),
+	.sdo_oenb_state(sdo_oenb_state),
+	.jtag_oenb_state(jtag_oenb_state),
 	// .mgmt_gpio_io(mgmt_gpio_io)
 	.mgmt_gpio_in(mgmt_gpio_in),
 	.mgmt_gpio_out(mgmt_gpio_out)
@@ -89,6 +96,8 @@ module mprj_ctrl #(
     output serial_clock,
     output serial_resetn,
     output serial_data_out,
+    output sdo_oenb_state,
+    output jtag_oenb_state,
     input  [IO_PADS-1:0] mgmt_gpio_in,
     output [IO_PADS-1:0] mgmt_gpio_out
 );
@@ -118,6 +127,16 @@ module mprj_ctrl #(
     wire [IO_PADS-1:0] io_ctrl_sel;
     wire [PWR_PADS-1:0] pwr_ctrl_sel;
     wire [IO_PADS-1:0] mgmt_gpio_in;
+
+    wire sdo_oenb_state, jtag_oenb_state;
+
+    // JTAG and housekeeping SDO are normally controlled by their respective
+    // modules with OEB set to the default 1 value.  If configured for an
+    // additional output by setting the OEB bit low, then pass this information
+    // back to the core so that the default signals can be overridden.
+
+    assign jtag_oenb_state = io_ctrl[0][OEB];
+    assign sdo_oenb_state = io_ctrl[1][OEB];
 
     assign xfer_sel = (iomem_addr[7:0] == XFER_ADJ);
 
@@ -195,10 +214,10 @@ module mprj_ctrl #(
              always @(posedge clk) begin
                 if (!resetn) begin
 		    // NOTE:  This initialization must match the defaults passed
-		    // to the control blocks.  Specifically, 0x1801 is for a
+		    // to the control blocks.  Specifically, 0x1803 is for a
 		    // bidirectional pad, and 0x0403 is for a simple input pad
 		    if (i < 2) begin
-                    	io_ctrl[i] <= 'h1801;
+                    	io_ctrl[i] <= 'h1803;
 		    end else begin
                     	io_ctrl[i] <= 'h0403;
 		    end
