@@ -33,7 +33,8 @@
 `include "spimemio.v"
 `include "simpleuart.v"
 `include "simple_spi_master.v"
-`include "counter_timer.v"
+`include "counter_timer_high.v"
+`include "counter_timer_low.v"
 `include "wb_intercon.v"
 `include "mem_wb.v"
 `include "gpio_wb.v"
@@ -481,14 +482,16 @@ module mgmt_soc #(
 	.irq(irq_spi_master)
     );
 
-    wire strobe_counter_timer0, strobe_counter_timer1;
+    wire counter_timer_strobe, counter_timer_offset;
+    wire counter_timer0_enable, counter_timer1_enable;
+    wire counter_timer0_stop, counter_timer1_stop;
 
     // Wishbone Counter-timer 0
     wire counter_timer0_stb_i;
     wire counter_timer0_ack_o;
     wire [31:0] counter_timer0_dat_o;
 
-    counter_timer_wb #(
+    counter_timer_low_wb #(
         .BASE_ADR(COUNTER_TIMER0_BASE_ADR),
         .CONFIG(COUNTER_TIMER0_CONFIG),
         .VALUE(COUNTER_TIMER0_VALUE),
@@ -497,7 +500,6 @@ module mgmt_soc #(
         // Wishbone Interface
         .wb_clk_i(wb_clk_i),
         .wb_rst_i(wb_rst_i),
-	.strobe_in(strobe_counter_timer1),
 
         .wb_adr_i(cpu_adr_o),      
         .wb_dat_i(cpu_dat_o),
@@ -508,7 +510,13 @@ module mgmt_soc #(
         .wb_stb_i(counter_timer0_stb_i),
         .wb_ack_o(counter_timer0_ack_o),
         .wb_dat_o(counter_timer0_dat_o),
-	.strobe_out(strobe_counter_timer0),
+
+	.enable_in(counter_timer1_enable),
+	.stop_in(counter_timer1_stop),
+	.strobe(counter_timer_strobe),
+	.is_offset(counter_timer_offset),
+	.enable_out(counter_timer0_enable),
+	.stop_out(counter_timer0_stop),
 	.irq(irq_counter_timer0)
     );
 
@@ -517,7 +525,7 @@ module mgmt_soc #(
     wire counter_timer1_ack_o;
     wire [31:0] counter_timer1_dat_o;
 
-    counter_timer_wb #(
+    counter_timer_high_wb #(
         .BASE_ADR(COUNTER_TIMER1_BASE_ADR),
         .CONFIG(COUNTER_TIMER1_CONFIG),
         .VALUE(COUNTER_TIMER1_VALUE),
@@ -526,7 +534,6 @@ module mgmt_soc #(
         // Wishbone Interface
         .wb_clk_i(wb_clk_i),
         .wb_rst_i(wb_rst_i),
-	.strobe_in(strobe_counter_timer0),
 
         .wb_adr_i(cpu_adr_o),      
         .wb_dat_i(cpu_dat_o),
@@ -537,7 +544,13 @@ module mgmt_soc #(
         .wb_stb_i(counter_timer1_stb_i),
         .wb_ack_o(counter_timer1_ack_o),
         .wb_dat_o(counter_timer1_dat_o),
-	.strobe_out(strobe_counter_timer1),
+
+	.enable_in(counter_timer0_enable),
+	.strobe(counter_timer_strobe),
+	.stop_in(counter_timer0_stop),
+	.is_offset(counter_timer_offset),
+	.enable_out(counter_timer1_enable),
+	.stop_out(counter_timer1_stop),
 	.irq(irq_counter_timer1)
     );
 

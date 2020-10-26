@@ -40,13 +40,13 @@ module timer2_tb;
 		$dumpvars(0, timer2_tb);
 
 		// Repeat cycles of 1000 clock edges as needed to complete testbench
-		repeat (50) begin
+		repeat (60) begin
 			repeat (1000) @(posedge clock);
 			$display("+1000 cycles");
 		end
 		$display("%c[1;31m",27);
 		$display ("Monitor: Timeout, Test GPIO (RTL) Failed");
-		 $display("%c[0m",27);
+		$display("%c[0m",27);
 		$finish;
 	end
 
@@ -95,6 +95,34 @@ module timer2_tb;
 		wait(checkbits == 6'h05);
 		$display("   countbits = %x (should be 0x117c)", countbits);
 		if(countbits !== 32'h117c) begin
+		    $display("Monitor: Test Timer2 (RTL) Failed");
+		    $finish;
+		end
+
+		wait(checkbits == 6'h06);
+		$display("   countbits = %x (should be 0x0054)", countbits);
+		if(countbits !== 32'h0054) begin
+		    $display("Monitor: Test Timer2 (RTL) Failed");
+		    $finish;
+		end
+
+		wait(checkbits == 6'h07);
+		$display("   countbits = %x (should be 0x0000)", countbits);
+		if(countbits !== 32'h0000) begin
+		    $display("Monitor: Test Timer2 (RTL) Failed");
+		    $finish;
+		end
+
+		wait(checkbits == 6'h08);
+		$display("   countbits = %x (should be 0x0218)", countbits);
+		if(countbits !== 32'h0218) begin
+		    $display("Monitor: Test Timer2 (RTL) Failed");
+		    $finish;
+		end
+
+		wait(checkbits == 6'h10);
+		$display("   countbits = %x (should be 0x0002)", countbits);
+		if(countbits !== 32'h0002) begin
 		    $display("Monitor: Test Timer2 (RTL) Failed");
 		    $finish;
 		end

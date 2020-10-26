@@ -117,8 +117,81 @@ void main()
 	    value = reg_timer1_data;
 	    reg_mprj_datal = value;	// Put count value on GPIO
 	}
-	
+
+	reg_mprj_datah = 0x05;	/* Check value in testbench */
+
+	/* Now, set up chained 64 bit timer.  Check count-up	*/
+	/* value and count-down value crossing the 32-bit	*/
+	/* boundary.						*/
+
+	/* First disable both counters, and set the "chained"	*/
+	/* property so that enable/disable will be synchronized	*/
+
+	reg_timer1_config = 8;	/* Disabled, chained */
+	reg_timer0_config = 8;	/* Disabled, chained */
+
+	/* Configure timer for a chained single-shot countdown. */
+	/* Count start = 0x0000000100001000, end = 0x0		*/
+
+	reg_timer1_value = 0x00000055;
+	reg_timer0_value = 0x00001000;
+
+	/* Timer configuration bits:				*/
+	/* 0 = timer enable (1 = enabled, 0 = disabled)		*/
+	/* 1 = one-shot mode (1 = oneshot, 0 = continuous)	*/
+	/* 2 = up/down (1 = count up, 0 = count down)		*/
+	/* 3 = chain (1 = enabled, 0 = disabled)		*/
+	/* 4 = IRQ enable (1 = enabled, 0 = disabled)		*/
+
+	reg_timer1_config = 11;	/* Enabled, one-shot, down count, chained */
+	reg_timer0_config = 11;	/* Enabled, one-shot, down count, chained */
+
+	for (i = 0; i < 1; i++) {
+	    value = reg_timer1_data;
+	    reg_mprj_datal = value;	// Put count value on GPIO
+	}
+
+	reg_mprj_datah = 0x06;	/* Check value in testbench */
+
+	// Skip to the end. . .
+	reg_timer1_data = 0x00000000;
+	reg_timer0_data = 0x00000200;
+
+	for (i = 0; i < 4; i++) {
+	    value = reg_timer0_data;
+	    reg_mprj_datal = value;	// Put count value on GPIO
+	}
+
+	reg_mprj_datah = 0x07;	/* Check value in testbench */
+
+	reg_timer1_config = 14;	/* Disabled, one-shot, up count, chained */
+	reg_timer0_config = 14;	/* Disabled, one-shot, up count, chained */
+
+	reg_timer1_value = 0x00000002;
+	reg_timer0_value = 0x00000000;
+
+	reg_timer1_config = 15;	/* Enabled, one-shot, up count, chained */
+	reg_timer0_config = 15;	/* Enabled, one-shot, up count, chained */
+
+	for (i = 0; i < 1; i++) {
+	    value = reg_timer0_data;
+	    reg_mprj_datal = value;	// Put count value on GPIO
+	}
+
+	reg_mprj_datah = 0x08;	/* Check value in testbench */
+
+	// Skip to the end. . . 
+	/* Count 0x00000001ffffff00 to 0x0000000200000000 and stop */
+
+	reg_timer1_data = 0x00000001;	// Set value (will be reset)
+	reg_timer0_data = 0xffffff00;	// Set value (will be reset)
+
+	for (i = 0; i < 4; i++) {
+	    value = reg_timer1_data;
+	    reg_mprj_datal = value;	// Put timer1 count value on GPIO
+	}
+
 	/* Present end marker (see testbench verilog) */
-	reg_mprj_datah = 0x05;
+	reg_mprj_datah = 0x10;
 }
 

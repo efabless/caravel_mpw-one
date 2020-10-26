@@ -74,7 +74,8 @@ void main()
 	/* 0 = timer enable (1 = enabled, 0 = disabled)		*/
 	/* 1 = one-shot mode (1 = oneshot, 0 = continuous)	*/
 	/* 2 = up/down (1 = count up, 0 = count down)		*/
-	/* 3 = IRQ enable (1 = enabled, 0 = disabled)		*/
+	/* 3 = chain (1 = enabled, 0 = disabled)		*/
+	/* 4 = IRQ enable (1 = enabled, 0 = disabled)		*/
 
 	reg_timer0_config = 3;	/* Enabled, one-shot, down count */
 
