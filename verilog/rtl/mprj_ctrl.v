@@ -108,7 +108,7 @@ module mprj_ctrl #(
 `define LOAD	2'b11
 
     localparam IO_WORDS = (IO_PADS % 32 != 0) + (IO_PADS / 32);
-    localparam PWR_WORDS = (IO_PADS % 32 != 0) + (PWR_PADS / 32);
+    localparam PWR_WORDS = (PWR_PADS % 32 != 0) + (PWR_PADS / 32);
 
     localparam IO_BASE_ADR = (BASE_ADR | CONFIG) + ((IO_WORDS + PWR_WORDS - 2) * 4);
     localparam PWR_BASE_ADR = IO_BASE_ADR + (IO_PADS * 4);
