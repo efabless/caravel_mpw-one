@@ -72,6 +72,7 @@ module caravel (
 
     inout gpio,			// Used for external LDO control
     inout [`MPRJ_IO_PADS-1:0] mprj_io,
+    output [`MPRJ_PWR_PADS-1:0] pwr_ctrl_out,
     input clock,	    	// CMOS core clock input, not a crystal
     input resetb,
 
@@ -367,6 +368,7 @@ module caravel (
 		.mprj_io_loader_data(mprj_io_loader_data),
 		.mgmt_in_data(mgmt_io_in),
 		.mgmt_out_data({mgmt_io_in[(`MPRJ_IO_PADS-1):2], mgmt_io_nc2}),
+		.pwr_ctrl_out(pwr_ctrl_out),
 		.sdo_out(sdo_out),
 		.sdo_outenb(sdo_outenb),
 		.jtag_out(jtag_out),

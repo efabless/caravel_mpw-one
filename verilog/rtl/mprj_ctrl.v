@@ -1,10 +1,11 @@
 module mprj_ctrl_wb #(
-    parameter BASE_ADR = 32'h 2300_0000,
-    parameter DATA   = 8'h 00,
-    parameter XFER   = 8'h 04,
-    parameter CONFIG = 8'h 08,
-    parameter IO_PADS = 32,   // Number of IO control registers
-    parameter PWR_PADS = 32  // Number of power control registers
+    parameter BASE_ADR  = 32'h 2300_0000,
+    parameter XFER      = 8'h 00,
+    parameter PWRDATA   = 8'h 04,
+    parameter IODATA    = 8'h 08, // One word per 32 IOs
+    parameter IOCONFIG  = 8'h 20,
+    parameter IO_PADS   = 32,     // Number of IO control registers (may be > 32)
+    parameter PWR_PADS  = 32  	  // Number of power control registers (always < 32)
 )(
     input wb_clk_i,
     input wb_rst_i,
@@ -31,7 +32,10 @@ module mprj_ctrl_wb #(
 
     // Read/write data to each GPIO pad from management SoC
     input [IO_PADS-1:0] mgmt_gpio_in,
-    output [IO_PADS-1:0] mgmt_gpio_out
+    output [IO_PADS-1:0] mgmt_gpio_out,
+
+    // Write data to power controls
+    output [PWR_PADS-1:0] pwr_ctrl_out
 );
     wire resetn;
     wire valid;
@@ -46,9 +50,10 @@ module mprj_ctrl_wb #(
 
     mprj_ctrl #(
         .BASE_ADR(BASE_ADR),
-	.DATA(DATA),
-        .CONFIG(CONFIG),
         .XFER(XFER),
+	.PWRDATA(PWRDATA),
+	.IODATA(IODATA),
+        .IOCONFIG(IOCONFIG),
 	.IO_PADS(IO_PADS),
         .PWR_PADS(PWR_PADS)
     ) mprj_ctrl (
@@ -74,14 +79,14 @@ module mprj_ctrl_wb #(
 endmodule
 
 module mprj_ctrl #(
-    parameter BASE_ADR = 32'h 2300_0000,
-    parameter DATA   = 8'h 00,
-    parameter XFER   = 8'h 04,
-    parameter CONFIG = 8'h 08,
-    parameter IO_PADS = 32,
-    parameter PWR_PADS = 32,
-    parameter IO_CTRL_BITS = 13,
-    parameter PWR_CTRL_BITS = 1
+    parameter BASE_ADR  = 32'h 2300_0000,
+    parameter XFER      = 8'h 00,
+    parameter PWRDATA   = 8'h 04,
+    parameter IODATA    = 8'h 08,
+    parameter IOCONFIG  = 8'h 20,
+    parameter IO_PADS   = 32,
+    parameter PWR_PADS  = 32,
+    parameter IO_CTRL_BITS = 13
 )(
     input clk,
     input resetn,
@@ -108,24 +113,23 @@ module mprj_ctrl #(
 `define LOAD	2'b11
 
     localparam IO_WORDS = (IO_PADS % 32 != 0) + (IO_PADS / 32);
-    localparam PWR_WORDS = (PWR_PADS % 32 != 0) + (PWR_PADS / 32);
 
-    localparam IO_BASE_ADR = (BASE_ADR | CONFIG) + ((IO_WORDS + PWR_WORDS - 2) * 4);
-    localparam PWR_BASE_ADR = IO_BASE_ADR + (IO_PADS * 4);
+    localparam IO_BASE_ADR = (BASE_ADR | IOCONFIG);
+
     localparam OEB = 1;			// Offset of output enable in shift register.
     localparam INP_DIS = 3;		// Offset of input disable in shift register. 
-    localparam XFER_ADJ = XFER + ((IO_WORDS + PWR_WORDS - 2) * 4);
 
-    reg [IO_CTRL_BITS-1:0] io_ctrl[IO_PADS-1:0];  // I/O control, 1 word per gpio pad
-    reg [PWR_CTRL_BITS-1:0] pwr_ctrl[PWR_PADS-1:0]; // Power control, 1 word per power pad
-    reg [IO_PADS-1:0] mgmt_gpio_outr; // I/O write data, 1 bit per gpio pad
+    reg  [IO_CTRL_BITS-1:0] io_ctrl[IO_PADS-1:0];  // I/O control, 1 word per gpio pad
+    reg  [IO_PADS-1:0] mgmt_gpio_outr; 	 // I/O write data, 1 bit per gpio pad
     wire [IO_PADS-1:0] mgmt_gpio_out;	 // I/O write data output when input disabled
-    reg xfer_ctrl;			// Transfer control (1 bit)
+    reg  [PWR_PADS-1:0] pwr_ctrl_out;	 // Power write data, 1 bit per power pad
+    reg xfer_ctrl;			 // Transfer control (1 bit)
 
     wire [IO_WORDS-1:0] io_data_sel;	// wishbone selects
+    wire pwr_data_sel;
     wire xfer_sel;
     wire [IO_PADS-1:0] io_ctrl_sel;
-    wire [PWR_PADS-1:0] pwr_ctrl_sel;
+
     wire [IO_PADS-1:0] mgmt_gpio_in;
 
     wire sdo_oenb_state, jtag_oenb_state;
@@ -138,17 +142,16 @@ module mprj_ctrl #(
     assign jtag_oenb_state = io_ctrl[0][OEB];
     assign sdo_oenb_state = io_ctrl[1][OEB];
 
-    assign xfer_sel = (iomem_addr[7:0] == XFER_ADJ);
+    assign xfer_sel = (iomem_addr[7:0] == XFER);
+    assign pwr_data_sel = (iomem_addr[7:0] == PWRDATA);
 
     genvar i;
 
     generate
         for (i=0; i<IO_WORDS; i=i+1) begin
-    	    assign io_data_sel[i] = (iomem_addr[7:0] == (DATA + i*4)); 
+    	    assign io_data_sel[i] = (iomem_addr[7:0] == (IODATA + i*4)); 
 	end
-    endgenerate
 
-    generate
         for (i=0; i<IO_PADS; i=i+1) begin
             assign io_ctrl_sel[i] = (iomem_addr[7:0] == (IO_BASE_ADR[7:0] + i*4)); 
     	    assign mgmt_gpio_out[i] = (io_ctrl[i][INP_DIS] == 1'b1) ?
@@ -156,17 +159,12 @@ module mprj_ctrl #(
         end
     endgenerate
 
-    generate
-        for (i=0; i<PWR_PADS; i=i+1) begin
-            assign pwr_ctrl_sel[i] = (iomem_addr[7:0] == (PWR_BASE_ADR[7:0] + i*4)); 
-        end
-    endgenerate
-
-    // I/O transfer of xfer bit.  Also handles iomem_ready signal.
+    // I/O transfer of xfer bit.  Also handles iomem_ready signal and power data.
 
     always @(posedge clk) begin
 	if (!resetn) begin
 	    xfer_ctrl <= 0;
+            pwr_ctrl_out <= 0;
 	end else begin
 	    iomem_ready <= 0;
 	    if (iomem_valid && !iomem_ready && iomem_addr[31:8] == BASE_ADR[31:8]) begin
@@ -175,6 +173,9 @@ module mprj_ctrl #(
 		if (xfer_sel) begin
 		    iomem_rdata <= {31'd0, busy};
 		    if (iomem_wstrb[0]) xfer_ctrl <= iomem_wdata[0];
+		end else if (pwr_data_sel) begin
+                    iomem_rdata <= pwr_ctrl_out;
+                    if (iomem_wstrb[0]) pwr_ctrl_out <= iomem_wdata[PWR_PADS-1:0];
 		end
 	    end else begin
 		xfer_ctrl <= 1'b0;	// Immediately self-resetting
@@ -198,7 +199,7 @@ module mprj_ctrl #(
 		    if (iomem_valid && !iomem_ready && iomem_addr[31:8] ==
 					BASE_ADR[31:8]) begin
 			if (io_data_sel[i]) begin
-			    iomem_rdata[`rtop:0] <= mgmt_gpio_in[`wtop:`wbot];
+			    iomem_rdata <= mgmt_gpio_in[`wtop:`wbot];
 			    if (iomem_wstrb[0]) begin
 				mgmt_gpio_outr[`wtop:`wbot] <= iomem_wdata[`rtop:0];
 			    end
@@ -207,9 +208,7 @@ module mprj_ctrl #(
 		end
 	    end
 	end
-    endgenerate
 
-    generate 
         for (i=0; i<IO_PADS; i=i+1) begin
              always @(posedge clk) begin
                 if (!resetn) begin
@@ -222,30 +221,13 @@ module mprj_ctrl #(
                     	io_ctrl[i] <= 'h0403;
 		    end
                 end else begin
-                    if (iomem_valid && !iomem_ready && iomem_addr[31:8] == BASE_ADR[31:8]) begin
+                    if (iomem_valid && !iomem_ready &&
+					iomem_addr[31:8] == BASE_ADR[31:8]) begin
                         if (io_ctrl_sel[i]) begin
                             iomem_rdata <= io_ctrl[i];
 			    // NOTE:  Byte-wide write to io_ctrl is prohibited
                             if (iomem_wstrb[0])
 				io_ctrl[i] <= iomem_wdata[IO_CTRL_BITS-1:0];
-                        end 
-                    end
-                end
-            end
-        end
-    endgenerate
-
-    generate 
-        for (i=0; i<PWR_PADS; i=i+1) begin
-             always @(posedge clk) begin
-                if (!resetn) begin
-                    pwr_ctrl[i] <= 'd0;
-                end else begin
-                    if (iomem_valid && !iomem_ready && iomem_addr[31:8] == BASE_ADR[31:8]) begin
-                        if (pwr_ctrl_sel[i]) begin
-                            iomem_rdata <= pwr_ctrl[i];
-                            if (iomem_wstrb[0])
-				pwr_ctrl[i] <= iomem_wdata[PWR_CTRL_BITS-1:0];
                         end 
                     end
                 end

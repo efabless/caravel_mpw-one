@@ -45,6 +45,7 @@ module mgmt_core #(
 	// User Project Control Signals
 	input [MPRJ_IO_PADS-1:0] mgmt_in_data,
 	output [MPRJ_IO_PADS-1:0] mgmt_out_data,
+	output [MPRJ_PWR_PADS-1:0] pwr_ctrl_out,
 	input mprj_vcc_pwrgood,
 	input mprj2_vcc_pwrgood,
 	input mprj_vdd_pwrgood,
@@ -209,6 +210,7 @@ module mgmt_core #(
 		// I/O data
 		.mgmt_in_data(mgmt_in_data),
 		.mgmt_out_data(mgmt_out_data),
+		.pwr_ctrl_out(pwr_ctrl_out),
 		// User Project Slave ports (WB MI A)
 		.mprj_cyc_o(mprj_cyc_o),
 		.mprj_stb_o(mprj_stb_o),

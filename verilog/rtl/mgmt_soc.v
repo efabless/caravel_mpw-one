@@ -83,6 +83,7 @@ module mgmt_soc #(
     // User Project pad data (when management SoC controls the pad)
     input [MPRJ_IO_PADS-1:0] mgmt_in_data,
     output [MPRJ_IO_PADS-1:0] mgmt_out_data,
+    output [MPRJ_PWR_PADS-1:0] pwr_ctrl_out,
 
     // IRQ
     input  irq_spi,		// IRQ from standalone SPI
@@ -699,7 +700,8 @@ module mgmt_soc #(
 	.sdo_oenb_state(sdo_oenb_state),
 	.jtag_oenb_state(jtag_oenb_state),
 	.mgmt_gpio_out(mgmt_out_pre),
-	.mgmt_gpio_in(mgmt_in_data)
+	.mgmt_gpio_in(mgmt_in_data),
+	.pwr_ctrl_out(pwr_ctrl_out)
     );
 
     // Wishbone Slave RAM
