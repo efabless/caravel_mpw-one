@@ -1,6 +1,4 @@
-module mem_synth_wb #(
-   parameter integer MEM_WORDS = 1024
-)( 
+module mem_synth_wb ( 
     input wb_clk_i,
     input wb_rst_i,
 
@@ -37,9 +35,7 @@ module mem_synth_wb #(
         end
     end
 
-    soc_mem_synth # (
-        .MEM_WORDS(MEM_WORDS)
-    ) mem (
+    soc_mem_synth mem (
         .clk(wb_clk_i),
         .ena(valid),
         .wen(wen),
@@ -50,9 +46,7 @@ module mem_synth_wb #(
 
 endmodule
 
-module soc_mem_synth #(
-    parameter integer MEM_WORDS = 2048
-)(
+module soc_mem_synth (
     input clk,
     input ena,
     input [3:0] wen,
@@ -62,7 +56,7 @@ module soc_mem_synth #(
 );
 
     reg [31:0] rdata;
-    reg [31:0] mem [0:MEM_WORDS-1];
+    reg [31:0] mem [0:`MEM_SYNTH_WORDS-1];
 
     always @(posedge clk) begin
         if (ena == 1'b1) begin

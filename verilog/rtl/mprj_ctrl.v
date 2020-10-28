@@ -3,9 +3,7 @@ module mprj_ctrl_wb #(
     parameter XFER      = 8'h 00,
     parameter PWRDATA   = 8'h 04,
     parameter IODATA    = 8'h 08, // One word per 32 IOs
-    parameter IOCONFIG  = 8'h 20,
-    parameter IO_PADS   = 32,     // Number of IO control registers (may be > 32)
-    parameter PWR_PADS  = 32  	  // Number of power control registers (always < 32)
+    parameter IOCONFIG  = 8'h 20
 )(
     input wb_clk_i,
     input wb_rst_i,
@@ -31,11 +29,11 @@ module mprj_ctrl_wb #(
     output jtag_oenb_state,
 
     // Read/write data to each GPIO pad from management SoC
-    input [IO_PADS-1:0] mgmt_gpio_in,
-    output [IO_PADS-1:0] mgmt_gpio_out,
+    input [`MPRJ_IO_PADS-1:0] mgmt_gpio_in,
+    output [`MPRJ_IO_PADS-1:0] mgmt_gpio_out,
 
     // Write data to power controls
-    output [PWR_PADS-1:0] pwr_ctrl_out
+    output [`MPRJ_PWR_PADS-1:0] pwr_ctrl_out
 );
     wire resetn;
     wire valid;
@@ -53,9 +51,7 @@ module mprj_ctrl_wb #(
         .XFER(XFER),
 	.PWRDATA(PWRDATA),
 	.IODATA(IODATA),
-        .IOCONFIG(IOCONFIG),
-	.IO_PADS(IO_PADS),
-        .PWR_PADS(PWR_PADS)
+        .IOCONFIG(IOCONFIG)
     ) mprj_ctrl (
         .clk(wb_clk_i),
         .resetn(resetn),
@@ -84,8 +80,6 @@ module mprj_ctrl #(
     parameter PWRDATA   = 8'h 04,
     parameter IODATA    = 8'h 08,
     parameter IOCONFIG  = 8'h 20,
-    parameter IO_PADS   = 32,
-    parameter PWR_PADS  = 32,
     parameter IO_CTRL_BITS = 13
 )(
     input clk,
@@ -103,8 +97,8 @@ module mprj_ctrl #(
     output serial_data_out,
     output sdo_oenb_state,
     output jtag_oenb_state,
-    input  [IO_PADS-1:0] mgmt_gpio_in,
-    output [IO_PADS-1:0] mgmt_gpio_out
+    input  [`MPRJ_IO_PADS-1:0] mgmt_gpio_in,
+    output [`MPRJ_IO_PADS-1:0] mgmt_gpio_out
 );
 
 `define IDLE	2'b00
@@ -112,26 +106,26 @@ module mprj_ctrl #(
 `define XBYTE	2'b10
 `define LOAD	2'b11
 
-    localparam IO_WORDS = (IO_PADS % 32 != 0) + (IO_PADS / 32);
+    localparam IO_WORDS = (`MPRJ_IO_PADS % 32 != 0) + (`MPRJ_IO_PADS / 32);
 
     localparam IO_BASE_ADR = (BASE_ADR | IOCONFIG);
 
     localparam OEB = 1;			// Offset of output enable in shift register.
     localparam INP_DIS = 3;		// Offset of input disable in shift register. 
 
-    reg  [IO_CTRL_BITS-1:0] io_ctrl[IO_PADS-1:0];  // I/O control, 1 word per gpio pad
-    reg  [IO_PADS-1:0] mgmt_gpio_outr; 	 // I/O write data, 1 bit per gpio pad
-    wire [IO_PADS-1:0] mgmt_gpio_out;	 // I/O write data output when input disabled
-    reg  [PWR_PADS-1:0] pwr_ctrl_out;	 // Power write data, 1 bit per power pad
+    reg  [IO_CTRL_BITS-1:0] io_ctrl[`MPRJ_IO_PADS-1:0];  // I/O control, 1 word per gpio pad
+    reg  [`MPRJ_IO_PADS-1:0] mgmt_gpio_outr; 	 // I/O write data, 1 bit per gpio pad
+    wire [`MPRJ_IO_PADS-1:0] mgmt_gpio_out;	 // I/O write data output when input disabled
+    reg  [`MPRJ_PWR_PADS-1:0] pwr_ctrl_out;	 // Power write data, 1 bit per power pad
     reg xfer_ctrl;			 // Transfer control (1 bit)
 
     wire [IO_WORDS-1:0] io_data_sel;	// wishbone selects
     wire pwr_data_sel;
     wire xfer_sel;
-    wire [IO_PADS-1:0] io_ctrl_sel;
+    wire [`MPRJ_IO_PADS-1:0] io_ctrl_sel;
     wire [31:0] iomem_rdata_pre;
 
-    wire [IO_PADS-1:0] mgmt_gpio_in;
+    wire [`MPRJ_IO_PADS-1:0] mgmt_gpio_in;
 
     wire sdo_oenb_state, jtag_oenb_state;
 
@@ -143,7 +137,7 @@ module mprj_ctrl #(
     assign jtag_oenb_state = io_ctrl[0][OEB];
     assign sdo_oenb_state = io_ctrl[1][OEB];
 
-    `define wtop (((i+1)*32 > IO_PADS) ? IO_PADS-1 : (i+1)*32-1)
+    `define wtop (((i+1)*32 > `MPRJ_IO_PADS) ? `MPRJ_IO_PADS-1 : (i+1)*32-1)
     `define wbot (i*32)
     `define rtop (`wtop - `wbot)
 
@@ -159,7 +153,7 @@ module mprj_ctrl #(
     	    assign io_data_sel[i] = (iomem_addr[7:0] == (IODATA + i*4)); 
 	end
 
-        for (i=0; i<IO_PADS; i=i+1) begin
+        for (i=0; i<`MPRJ_IO_PADS; i=i+1) begin
             assign io_ctrl_sel[i] = (iomem_addr[7:0] == (IO_BASE_ADR[7:0] + i*4)); 
     	    assign mgmt_gpio_out[i] = (io_ctrl[i][INP_DIS] == 1'b1) ?
 			mgmt_gpio_outr[i] : 1'bz;
@@ -180,7 +174,7 @@ module mprj_ctrl #(
 	    assign iomem_rdata_pre = (io_data_sel[i]) ?  mgmt_gpio_in[`wtop:`wbot] : 'bz;
 	end
 
-        for (i=0; i<IO_PADS; i=i+1) begin
+        for (i=0; i<`MPRJ_IO_PADS; i=i+1) begin
              assign iomem_rdata_pre = (io_ctrl_sel[i]) ? io_ctrl[i] : 'bz;
 	end
     endgenerate
@@ -215,7 +209,7 @@ module mprj_ctrl #(
 		if (xfer_sel) begin
 		    if (iomem_wstrb[0]) xfer_ctrl <= iomem_wdata[0];
 		end else if (pwr_data_sel) begin
-                    if (iomem_wstrb[0]) pwr_ctrl_out <= iomem_wdata[PWR_PADS-1:0];
+                    if (iomem_wstrb[0]) pwr_ctrl_out <= iomem_wdata[`MPRJ_PWR_PADS-1:0];
 		end
 	    end else begin
 		xfer_ctrl <= 1'b0;	// Immediately self-resetting
@@ -244,7 +238,7 @@ module mprj_ctrl #(
 	    end
 	end
 
-        for (i=0; i<IO_PADS; i=i+1) begin
+        for (i=0; i<`MPRJ_IO_PADS; i=i+1) begin
              always @(posedge clk) begin
                 if (!resetn) begin
 		    // NOTE:  This initialization must match the defaults passed
@@ -288,14 +282,14 @@ module mprj_ctrl #(
 
 	    xfer_state <= `IDLE;
 	    xfer_count <= 4'd0;
-	    pad_count  <= IO_PADS;
+	    pad_count  <= `MPRJ_IO_PADS;
 	    serial_resetn <= 1'b0;
 	    serial_clock <= 1'b0;
 
 	end else begin
 
 	    if (xfer_state == `IDLE) begin
-	    	pad_count  <= IO_PADS;
+	    	pad_count  <= `MPRJ_IO_PADS;
 	    	serial_resetn <= 1'b1;
 		serial_clock <= 1'b0;
 		if (xfer_ctrl == 1'b1) begin

@@ -14,8 +14,6 @@
  */
 
 module user_project_wrapper #(
-    parameter IO_PADS = 38,
-    parameter PWR_PADS = 4,
     parameter BITS = 32
 )(
     inout vdda1,	// User area 1 3.3V supply
@@ -45,9 +43,9 @@ module user_project_wrapper #(
     input  [127:0] la_oen,
 
     // IOs
-    input  [IO_PADS-1:0] io_in,
-    output [IO_PADS-1:0] io_out,
-    output [IO_PADS-1:0] io_oeb,
+    input  [`MPRJ_IO_PADS-1:0] io_in,
+    output [`MPRJ_IO_PADS-1:0] io_out,
+    output [`MPRJ_IO_PADS-1:0] io_oeb,
 
     // Independent clock (on independent integer divider)
     input   user_clock2
@@ -57,10 +55,7 @@ module user_project_wrapper #(
     /* User project is instantiated  here   */
     /*--------------------------------------*/
 
-    user_proj_example #(
-	.IO_PADS(IO_PADS),
-	.PWR_PADS(PWR_PADS)
-    ) mprj ( 
+    user_proj_example mprj (
 	.vdda1(vdda1),	// User area 1 3.3V power
 	.vdda2(vdda2),	// User area 2 3.3V power
 	.vssa1(vssa1),	// User area 1 analog ground
@@ -75,7 +70,7 @@ module user_project_wrapper #(
     	.wb_clk_i(wb_clk_i),
     	.wb_rst_i(wb_rst_i),
 
-	// MGMT SoC Wishbone Slave 
+	// MGMT SoC Wishbone Slave
 
 	.wbs_cyc_i(wbs_cyc_i),
 	.wbs_stb_i(wbs_stb_i),

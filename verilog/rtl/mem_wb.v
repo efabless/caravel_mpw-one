@@ -1,6 +1,4 @@
-module mem_wb # (
-    parameter integer MEM_WORDS = 256
-) (
+module mem_wb (
     input wb_clk_i,
     input wb_rst_i,
 
@@ -50,7 +48,11 @@ module mem_wb # (
 
 `endif
 
-    soc_mem mem(
+    soc_mem
+`ifndef USE_OPENRAM
+    #(.WORDS(`MEM_WORDS))
+`endif
+     mem (
         .clk(wb_clk_i),
         .ena(valid),
         .wen(wen),

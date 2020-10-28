@@ -1,7 +1,4 @@
-module mgmt_core #(
-	parameter MPRJ_IO_PADS = 32,
-	parameter MPRJ_PWR_PADS = 32
-) (
+module mgmt_core (
 `ifdef LVS
 	inout vdd1v8,	   
 	inout vss,
@@ -43,9 +40,9 @@ module mgmt_core #(
 	output jtag_out,
 	output jtag_outenb,
 	// User Project Control Signals
-	input [MPRJ_IO_PADS-1:0] mgmt_in_data,
-	output [MPRJ_IO_PADS-1:0] mgmt_out_data,
-	output [MPRJ_PWR_PADS-1:0] pwr_ctrl_out,
+	input [`MPRJ_IO_PADS-1:0] mgmt_in_data,
+	output [`MPRJ_IO_PADS-1:0] mgmt_out_data,
+	output [`MPRJ_PWR_PADS-1:0] pwr_ctrl_out,
 	input mprj_vcc_pwrgood,
 	input mprj2_vcc_pwrgood,
 	input mprj_vdd_pwrgood,
@@ -139,11 +136,7 @@ module mgmt_core #(
 	// the pad.  All others have OEB controlled by the configuration bit
 	// in the control block.
 
-	mgmt_soc #(
-	    .MPRJ_IO_PADS(MPRJ_IO_PADS),
-	    .MPRJ_PWR_PADS(MPRJ_PWR_PADS)
-	) soc (
-	
+	mgmt_soc soc (
     	    `ifdef LVS
         	.vdd1v8(vdd1v8),
         	.vss(vss),

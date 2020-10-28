@@ -12,13 +12,10 @@
 
 `timescale 1 ns / 1 ps
 
-`define USE_OPENRAM
 `define USE_POWER_PINS
 `define UNIT_DELAY #1
 
-`define MPRJ_IO_PADS 38
-`define MPRJ_PWR_PADS 4		/* vdda1, vccd1, vdda2, vccd2 */
-
+`include "defines.v"
 `include "pads.v"
 
 /* NOTE: Need to pass the PDK root directory to iverilog with option -I */
@@ -316,10 +313,7 @@ module caravel (
 	wire	    mprj_vdd_pwrgood;
 	wire	    mprj2_vdd_pwrgood;
 
-    mgmt_core #(
-	.MPRJ_IO_PADS(`MPRJ_IO_PADS),
-	.MPRJ_PWR_PADS(`MPRJ_PWR_PADS)
-    ) soc (
+    mgmt_core soc (
 	`ifdef LVS
 		.vdd(vccd),
 		.vss(vssa),
@@ -434,10 +428,7 @@ module caravel (
 	/* Wrapper module around the user project 	*/
 	/*----------------------------------------------*/
 
-	user_project_wrapper #(
-	    .IO_PADS(`MPRJ_IO_PADS),
-	    .PWR_PADS(`MPRJ_PWR_PADS)
-	) mprj ( 
+	user_project_wrapper mprj ( 
 		.vdda1(vdda1),	// User area 1 3.3V power
 		.vdda2(vdda2),	// User area 2 3.3V power
 		.vssa1(vssa1),	// User area 1 analog ground

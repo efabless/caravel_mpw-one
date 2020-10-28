@@ -44,10 +44,7 @@
 `include "convert_gpio_sigs.v"
 `include "mem_synth_wb.v"
 
-module mgmt_soc #(
-    parameter MPRJ_IO_PADS = 32,
-    parameter MPRJ_PWR_PADS = 32
-) (
+module mgmt_soc (
 `ifdef LVS
     inout vdd1v8,	    /* 1.8V domain */
     inout vss,
@@ -81,9 +78,9 @@ module mgmt_soc #(
     output mprj_io_loader_data,
 
     // User Project pad data (when management SoC controls the pad)
-    input [MPRJ_IO_PADS-1:0] mgmt_in_data,
-    output [MPRJ_IO_PADS-1:0] mgmt_out_data,
-    output [MPRJ_PWR_PADS-1:0] pwr_ctrl_out,
+    input [`MPRJ_IO_PADS-1:0] mgmt_in_data,
+    output [`MPRJ_IO_PADS-1:0] mgmt_out_data,
+    output [`MPRJ_PWR_PADS-1:0] pwr_ctrl_out,
 
     // IRQ
     input  irq_spi,		// IRQ from standalone SPI
@@ -144,9 +141,7 @@ module mgmt_soc #(
     output [31:0] mprj_dat_o
 );
     /* Memory reverted back to 256 words while memory has to be synthesized */
-    parameter integer MEM_WORDS = 256;
-    parameter integer MEM_SYNTH_WORDS = 1024;
-    parameter [31:0] STACKADDR = (4*(MEM_WORDS + MEM_SYNTH_WORDS));       // end of memory
+    parameter [31:0] STACKADDR = (4*(`MEM_WORDS + `MEM_SYNTH_WORDS));       // end of memory
     parameter [31:0] PROGADDR_RESET = 32'h 1000_0000; 
     parameter [31:0] PROGADDR_IRQ   = 32'h 0000_0000;
 
@@ -660,13 +655,13 @@ module mgmt_soc #(
     wire mprj_ctrl_stb_i;
     wire mprj_ctrl_ack_o;
     wire [31:0] mprj_ctrl_dat_o;
-    wire [MPRJ_IO_PADS-1:0] mgmt_out_pre;
+    wire [`MPRJ_IO_PADS-1:0] mgmt_out_pre;
 
     // Bits assigned to specific functions as outputs prevent the
     // mprj GPIO-as-output from applying data when that function
     // is active
 
-    assign mgmt_out_data[MPRJ_IO_PADS-1:16] = mgmt_out_pre[MPRJ_IO_PADS-1:16];
+    assign mgmt_out_data[`MPRJ_IO_PADS-1:16] = mgmt_out_pre[`MPRJ_IO_PADS-1:16];
 
     // Routing of output monitors (PLL, trap, clk1, clk2)
     assign mgmt_out_data[15] = clk2_output_dest ? user_clk : mgmt_out_pre[15];
@@ -678,9 +673,7 @@ module mgmt_soc #(
     assign mgmt_out_data[5:0] = mgmt_out_pre[5:0];
 
     mprj_ctrl_wb #(
-        .BASE_ADR(MPRJ_CTRL_ADR),
-        .IO_PADS(MPRJ_IO_PADS),
-        .PWR_PADS(MPRJ_PWR_PADS)
+        .BASE_ADR(MPRJ_CTRL_ADR)
     ) mprj_ctrl (
         .wb_clk_i(wb_clk_i),
         .wb_rst_i(wb_rst_i),
@@ -709,9 +702,7 @@ module mgmt_soc #(
     wire mem_ack_o;
     wire [31:0] mem_dat_o;
 
-    mem_wb #(
-        .MEM_WORDS(MEM_WORDS)
-    ) soc_mem (
+    mem_wb soc_mem (
         .wb_clk_i(wb_clk_i),
         .wb_rst_i(wb_rst_i),
 
@@ -731,9 +722,7 @@ module mgmt_soc #(
     wire mem_synth_ack_o;
     wire [31:0] mem_synth_dat_o;
 
-    mem_synth_wb #(
-        .MEM_WORDS(MEM_SYNTH_WORDS)
-    ) soc_mem_synth (
+    mem_synth_wb soc_mem_synth (
         .wb_clk_i(wb_clk_i),
         .wb_rst_i(wb_rst_i),
         .wb_adr_i(cpu_adr_o), 
