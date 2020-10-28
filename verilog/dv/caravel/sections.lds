@@ -1,6 +1,6 @@
 MEMORY {
 	FLASH (rx)	: ORIGIN = 0x10000000, LENGTH = 0x400000 	/* 4MB */
-	RAM(xrw)	: ORIGIN = 0x00000000, LENGTH = 0x1400		/* 1280 words (5 KB) */ 
+	RAM(xrw)	: ORIGIN = 0x00000000, LENGTH = 0x0400		/* 256 words (1 KB) */ 
 }
 
 SECTIONS {

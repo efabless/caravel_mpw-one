@@ -22,10 +22,6 @@ module mem_wb (
 
     assign wen = wb_sel_i & {4{ram_wen}} ;
 
-`ifndef USE_OPENRAM
-    assign wb_ack_o = valid;
-`else
-
     /*
         Ack Generation
             - write transaction: asserted upon receiving adr_i & dat_i 
@@ -46,8 +42,6 @@ module mem_wb (
         end
     end
 
-`endif
-
     soc_mem
 `ifndef USE_OPENRAM
     #(.WORDS(`MEM_WORDS))
@@ -56,7 +50,7 @@ module mem_wb (
         .clk(wb_clk_i),
         .ena(valid),
         .wen(wen),
-        .addr(wb_adr_i[23:2]),
+        .addr(wb_adr_i[9:2]),
         .wdata(wb_dat_i),
         .rdata(wb_dat_o)
     );
@@ -66,14 +60,14 @@ endmodule
 module soc_mem 
 `ifndef USE_OPENRAM
 #(
-    parameter integer WORDS = 8192
+    parameter integer WORDS = 256
 )
 `endif
  ( 
     input clk,
     input ena,
     input [3:0] wen,
-    input [21:0] addr,
+    input [7:0] addr,
     input [31:0] wdata,
     output[31:0] rdata
 );
