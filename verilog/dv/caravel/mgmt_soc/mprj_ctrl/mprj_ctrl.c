@@ -3,7 +3,7 @@
 // --------------------------------------------------------
 
 /*
- *	Mega-Project IO Control Test
+ *	User Project IO Control Test
  */
 
 void main()

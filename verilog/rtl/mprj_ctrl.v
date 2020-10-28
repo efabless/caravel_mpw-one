@@ -129,6 +129,7 @@ module mprj_ctrl #(
     wire pwr_data_sel;
     wire xfer_sel;
     wire [IO_PADS-1:0] io_ctrl_sel;
+    wire [31:0] iomem_rdata_pre;
 
     wire [IO_PADS-1:0] mgmt_gpio_in;
 
@@ -142,10 +143,16 @@ module mprj_ctrl #(
     assign jtag_oenb_state = io_ctrl[0][OEB];
     assign sdo_oenb_state = io_ctrl[1][OEB];
 
-    assign xfer_sel = (iomem_addr[7:0] == XFER);
-    assign pwr_data_sel = (iomem_addr[7:0] == PWRDATA);
+    `define wtop (((i+1)*32 > IO_PADS) ? IO_PADS-1 : (i+1)*32-1)
+    `define wbot (i*32)
+    `define rtop (`wtop - `wbot)
 
     genvar i;
+
+    // Assign selection bits per address
+
+    assign xfer_sel = (iomem_addr[7:0] == XFER);
+    assign pwr_data_sel = (iomem_addr[7:0] == PWRDATA);
 
     generate
         for (i=0; i<IO_WORDS; i=i+1) begin
@@ -159,7 +166,44 @@ module mprj_ctrl #(
         end
     endgenerate
 
-    // I/O transfer of xfer bit.  Also handles iomem_ready signal and power data.
+    // Set selection and iomem_rdata_pre
+
+    assign selected = xfer_sel || pwr_data_sel || (|io_data_sel) || (|io_ctrl_sel);
+
+    assign iomem_rdata_pre = (selected == 0) ? 0 :
+			     (xfer_sel) ? {31'b0, busy} : 
+			     (pwr_data_sel) ? pwr_ctrl_out :
+			     'bz;
+
+    generate 
+        for (i=0; i<IO_WORDS; i=i+1) begin
+	    assign iomem_rdata_pre = (io_data_sel[i]) ?  mgmt_gpio_in[`wtop:`wbot] : 'bz;
+	end
+
+        for (i=0; i<IO_PADS; i=i+1) begin
+             assign iomem_rdata_pre = (io_ctrl_sel[i]) ? io_ctrl[i] : 'bz;
+	end
+    endgenerate
+
+    // General I/O transfer
+
+    always @(posedge clk) begin
+	if (!resetn) begin
+            iomem_rdata <= 0;
+	    iomem_ready <= 0;
+	end else begin
+	    iomem_ready <= 0;
+	    if (iomem_valid && !iomem_ready && iomem_addr[31:8] == BASE_ADR[31:8]) begin
+		iomem_ready <= 1'b 1;
+
+		if (selected) begin
+		    iomem_rdata <= iomem_rdata_pre;
+		end
+	    end
+	end
+    end
+
+    // I/O write of xfer bit.  Also handles iomem_ready signal and power data.
 
     always @(posedge clk) begin
 	if (!resetn) begin
@@ -168,13 +212,9 @@ module mprj_ctrl #(
 	end else begin
 	    iomem_ready <= 0;
 	    if (iomem_valid && !iomem_ready && iomem_addr[31:8] == BASE_ADR[31:8]) begin
-		iomem_ready <= 1'b 1;
-
 		if (xfer_sel) begin
-		    iomem_rdata <= {31'd0, busy};
 		    if (iomem_wstrb[0]) xfer_ctrl <= iomem_wdata[0];
 		end else if (pwr_data_sel) begin
-                    iomem_rdata <= pwr_ctrl_out;
                     if (iomem_wstrb[0]) pwr_ctrl_out <= iomem_wdata[PWR_PADS-1:0];
 		end
 	    end else begin
@@ -186,10 +226,6 @@ module mprj_ctrl #(
     // I/O transfer of gpio data to/from user project region under management
     // SoC control
 
-    `define wtop (((i+1)*32 > IO_PADS) ? IO_PADS-1 : (i+1)*32-1)
-    `define wbot (i*32)
-    `define rtop (`wtop - `wbot)
-
     generate 
         for (i=0; i<IO_WORDS; i=i+1) begin
 	    always @(posedge clk) begin
@@ -199,7 +235,6 @@ module mprj_ctrl #(
 		    if (iomem_valid && !iomem_ready && iomem_addr[31:8] ==
 					BASE_ADR[31:8]) begin
 			if (io_data_sel[i]) begin
-			    iomem_rdata <= mgmt_gpio_in[`wtop:`wbot];
 			    if (iomem_wstrb[0]) begin
 				mgmt_gpio_outr[`wtop:`wbot] <= iomem_wdata[`rtop:0];
 			    end
@@ -224,7 +259,6 @@ module mprj_ctrl #(
                     if (iomem_valid && !iomem_ready &&
 					iomem_addr[31:8] == BASE_ADR[31:8]) begin
                         if (io_ctrl_sel[i]) begin
-                            iomem_rdata <= io_ctrl[i];
 			    // NOTE:  Byte-wide write to io_ctrl is prohibited
                             if (iomem_wstrb[0])
 				io_ctrl[i] <= iomem_wdata[IO_CTRL_BITS-1:0];
@@ -240,11 +274,6 @@ module mprj_ctrl #(
     reg [1:0]  xfer_state;
     reg	       serial_clock;
     reg	       serial_resetn;
-
-    // NOTE:  Ignoring power control bits for now. . .  need to revisit.
-    // Depends on how the power pads are arranged among the GPIO, and
-    // whether or not switching will be internal and under the control
-    // of the SoC.
 
     reg [IO_CTRL_BITS-1:0] serial_data_staging;
 

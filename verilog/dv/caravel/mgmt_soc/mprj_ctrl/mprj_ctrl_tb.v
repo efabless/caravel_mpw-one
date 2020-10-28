@@ -39,43 +39,43 @@ module mprj_ctrl_tb;
 			$display("+1000 cycles");
 		end
 		$display("%c[1;31m",27);
-		$display ("Monitor: Timeout, Test Mega-Project (RTL) Failed");
+		$display ("Monitor: Timeout, Test User Project (RTL) Failed");
 		 $display("%c[0m",27);
 		$finish;
 	end
 
 	always @(checkbits) begin
 		if(checkbits == 4'h5) begin
-			$display("Mega-Project control Test started");
+			$display("User Project control Test started");
 		end else if(checkbits == 4'h6) begin
 			$display("%c[1;31m",27);
-			$display("Monitor: IO control R/W failed");
+			$display("Monitor: IO control R/W failed (check 6)");
 			$display("%c[0m",27);
 			$finish;
 		end else if(checkbits == 4'h7) begin
-			$display("Monitor: IO control R/W passed");
+			$display("Monitor: IO control R/W passed (check 7)");
 		end else if(checkbits == 4'h8) begin
             		$display("%c[1;31m",27);
-			$display("Monitor: power control R/W failed");
+			$display("Monitor: power control R/W failed (check 8)");
 			$display("%c[0m",27);
 			$finish;
         	end else if(checkbits == 4'h9) begin
-			$display("Monitor: power control R/W passed");
+			$display("Monitor: power control R/W passed (check 9)");
 		end else if(checkbits == 4'ha) begin
             		$display("%c[1;31m",27);
-			$display("Monitor: power control R/W failed");
+			$display("Monitor: power control R/W failed (check 10)");
 			$display("%c[0m",27);
 			$finish;
         	end else if(checkbits == 4'hb) begin
-			$display("Monitor: power control R/W passed");
+			$display("Monitor: power control R/W passed (check 11)");
 		end else if(checkbits == 4'hc) begin
             		$display("%c[1;31m",27);
-			$display("Monitor: power control R/W failed");
+			$display("Monitor: power control R/W failed (check 12)");
 			$display("%c[0m",27);
 			$finish;
         	end else if(checkbits == 4'hd) begin
-			$display("Monitor: power control R/W passed");
-            		$display("Monitor: Mega-Project control (RTL) test passed.");
+			$display("Monitor: power control R/W passed (check 13)");
+            		$display("Monitor: User Project control (RTL) test passed.");
             		$finish;
         	end			
 	end
