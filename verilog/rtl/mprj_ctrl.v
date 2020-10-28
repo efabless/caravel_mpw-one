@@ -122,6 +122,7 @@ module mprj_ctrl #(
     wire [IO_WORDS-1:0] io_data_sel;	// wishbone selects
     wire pwr_data_sel;
     wire xfer_sel;
+    wire busy;
     wire [`MPRJ_IO_PADS-1:0] io_ctrl_sel;
     wire [31:0] iomem_rdata_pre;
 
@@ -164,18 +165,20 @@ module mprj_ctrl #(
 
     assign selected = xfer_sel || pwr_data_sel || (|io_data_sel) || (|io_ctrl_sel);
 
-    assign iomem_rdata_pre = (selected == 0) ? 0 :
+    assign iomem_rdata_pre = (selected == 0) ? 'b0 :
 			     (xfer_sel) ? {31'b0, busy} : 
-			     (pwr_data_sel) ? pwr_ctrl_out :
-			     'bz;
+			     (pwr_data_sel) ? {{(32-`MPRJ_PWR_PADS){1'b0}},
+					pwr_ctrl_out} : 'bz;
 
     generate 
         for (i=0; i<IO_WORDS; i=i+1) begin
-	    assign iomem_rdata_pre = (io_data_sel[i]) ?  mgmt_gpio_in[`wtop:`wbot] : 'bz;
+	    assign iomem_rdata_pre = (io_data_sel[i]) ?
+			{{(31-`rtop){1'b0}}, mgmt_gpio_in[`wtop:`wbot]} : 'bz;
 	end
 
         for (i=0; i<`MPRJ_IO_PADS; i=i+1) begin
-             assign iomem_rdata_pre = (io_ctrl_sel[i]) ? io_ctrl[i] : 'bz;
+             assign iomem_rdata_pre = (io_ctrl_sel[i]) ?
+			{{(32-IO_CTRL_BITS){1'b0}}, io_ctrl[i]} : 'bz;
 	end
     endgenerate
 
@@ -272,7 +275,6 @@ module mprj_ctrl #(
     reg [IO_CTRL_BITS-1:0] serial_data_staging;
 
     wire       serial_data_out;
-    wire       busy;
 
     assign serial_data_out = serial_data_staging[IO_CTRL_BITS-1];
     assign busy = (xfer_state != `IDLE);
