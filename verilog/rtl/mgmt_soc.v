@@ -137,7 +137,20 @@ module mgmt_soc (
     output mprj_we_o,
     output [3:0] mprj_sel_o,
     output [31:0] mprj_adr_o,
-    output [31:0] mprj_dat_o
+    output [31:0] mprj_dat_o,
+
+    // MGMT area R/W interface for mgmt RAM
+    output [`MGMT_BLOCKS-1:0] mgmt_ena, 
+    output [(`MGMT_BLOCKS*4)-1:0] mgmt_wen_mask,
+    output [`MGMT_BLOCKS-1:0] mgmt_wen,
+    output [7:0] mgmt_addr,
+    output [31:0] mgmt_wdata,
+    input  [(`MGMT_BLOCKS*32)-1:0] mgmt_rdata,
+
+    // MGMT area RO interface for user RAM 
+    output [`USER_BLOCKS-1:0] user_ena,
+    output [7:0] user_addr,
+    input  [(`USER_BLOCKS*32)-1:0] user_rdata
 );
     /* Memory reverted back to 256 words while memory has to be synthesized */
     parameter [31:0] STACKADDR = (4*(`MEM_WORDS));       // end of memory
@@ -146,6 +159,8 @@ module mgmt_soc (
 
     // Slaves Base Addresses
     parameter RAM_BASE_ADR    = 32'h 0000_0000;
+    parameter EXT_MRAM_BASE_ADR = 32'h 0100_0000;
+    parameter EXT_URAM_BASE_ADR = 32'h 0200_0000;
     parameter FLASH_BASE_ADR  = 32'h 1000_0000;
     parameter UART_BASE_ADR   = 32'h 2000_0000;
     parameter GPIO_BASE_ADR   = 32'h 2100_0000;
@@ -157,7 +172,7 @@ module mgmt_soc (
     parameter FLASH_CTRL_CFG  = 32'h 2D00_0000;
     parameter SYS_BASE_ADR    = 32'h 2F00_0000;
     parameter MPRJ_BASE_ADR   = 32'h 3000_0000;   // WB MI A
-
+    
     // UART
     parameter UART_CLK_DIV = 8'h00;
     parameter UART_DATA    = 8'h04;
@@ -198,12 +213,27 @@ module mgmt_soc (
     parameter TRAP_OUT      = 8'h08;
     parameter IRQ_SRC       = 8'h0c;
 
+    // Storage area RAM blocks
+    parameter [(`MGMT_BLOCKS*24)-1:0] MGMT_BLOCKS_ADR = {
+        {24'h 10_0000},
+        {24'h 00_0000}
+    };
+
+    parameter [(`USER_BLOCKS*24)-1:0] USER_BLOCKS_ADR = {
+        {24'h 30_0000},
+        {24'h 20_0000},
+        {24'h 10_0000},
+        {24'h 00_0000}
+    };
+
     // Wishbone Interconnect 
     localparam ADR_WIDTH = 32;
     localparam DAT_WIDTH = 32;
-    localparam NUM_SLAVES = 12;
+    localparam NUM_SLAVES = 14;
 
     parameter [NUM_SLAVES*ADR_WIDTH-1: 0] ADR_MASK = {
+        {8'hFF, {ADR_WIDTH-8{1'b0}}},
+        {8'hFF, {ADR_WIDTH-8{1'b0}}},
         {8'hFF, {ADR_WIDTH-8{1'b0}}},
         {8'hFF, {ADR_WIDTH-8{1'b0}}},
         {8'hFF, {ADR_WIDTH-8{1'b0}}},
@@ -230,6 +260,8 @@ module mgmt_soc (
         {GPIO_BASE_ADR},
         {UART_BASE_ADR},
         {FLASH_BASE_ADR},
+        {EXT_URAM_BASE_ADR},
+        {EXT_MRAM_BASE_ADR},
         {RAM_BASE_ADR}
     };
 
@@ -713,6 +745,51 @@ module mgmt_soc (
         .wb_dat_o(mem_dat_o)
     );
 
+    wire uram_stb_i;
+    wire mram_stb_i;
+    wire uram_ack_o;
+    wire mram_ack_o;
+    wire [31:0] mram_dat_o;
+    wire [31:0] uram_dat_o;
+
+    // Storage area wishbone brige
+    storage_bridge_wb #(
+        .USER_BLOCKS(`USER_BLOCKS),
+        .MGMT_BLOCKS(`MGMT_BLOCKS),
+        .MGMT_BASE_ADR(EXT_MRAM_BASE_ADR),
+        .USER_BASE_ADR(EXT_URAM_BASE_ADR),
+        .MGMT_BLOCKS_ADR(MGMT_BLOCKS_ADR),
+        .USER_BLOCKS_ADR(USER_BLOCKS_ADR)
+    ) wb_bridge (
+        .wb_clk_i(wb_clk_i),
+        .wb_rst_i(wb_rst_i),
+
+        .wb_adr_i(cpu_adr_o),
+        .wb_dat_i(cpu_dat_o),
+        .wb_sel_i(cpu_sel_o),
+        .wb_we_i(cpu_we_o),
+        .wb_cyc_i(cpu_cyc_o),
+        .wb_stb_i({uram_stb_i, mram_stb_i}),
+        .wb_ack_o({uram_ack_o, mram_ack_o}),
+        .wb_mgmt_dat_o(mram_dat_o),
+
+        // MGMT_AREA RO WB Interface  
+        .wb_user_dat_o(uram_dat_o),
+
+        // MGMT Area native memory interface
+        .mgmt_ena(mgmt_ena), 
+        .mgmt_wen_mask(mgmt_wen_mask),
+        .mgmt_wen(mgmt_wen),
+        .mgmt_addr(mgmt_addr),
+        .mgmt_wdata(mgmt_wdata),
+        .mgmt_rdata(mgmt_rdata),
+
+        // MGMT_AREA RO interface 
+        .mgmt_user_ena(user_ena),
+        .mgmt_user_addr(user_addr),
+        .mgmt_user_rdata(user_rdata)
+    );
+
     // Wishbone intercon logic
     wb_intercon #(
         .AW(ADR_WIDTH),
@@ -732,17 +809,17 @@ module mgmt_soc (
 		mprj_stb_o, mprj_ctrl_stb_i, la_stb_i, 
 		spi_master_stb_i, counter_timer1_stb_i, counter_timer0_stb_i,
 		gpio_stb_i, uart_stb_i,
-		spimemio_flash_stb_i, mem_stb_i }), 
+		spimemio_flash_stb_i,uram_stb_i, mram_stb_i, mem_stb_i }), 
         .wbs_dat_i({ sys_dat_o, spimemio_cfg_dat_o,
 		mprj_dat_i, mprj_ctrl_dat_o, la_dat_o,
 		spi_master_dat_o, counter_timer1_dat_o, counter_timer0_dat_o,
 		gpio_dat_o, uart_dat_o,
-		spimemio_flash_dat_o, mem_dat_o }),
+		spimemio_flash_dat_o, uram_dat_o, mram_dat_o, mem_dat_o }),
         .wbs_ack_i({ sys_ack_o, spimemio_cfg_ack_o,
 		mprj_ack_i, mprj_ctrl_ack_o, la_ack_o,
 		spi_master_ack_o, counter_timer1_ack_o, counter_timer0_ack_o,
 		gpio_ack_o, uart_ack_o,
-		spimemio_flash_ack_o,  mem_ack_o })
+		spimemio_flash_ack_o, uram_ack_o, mram_ack_o, mem_ack_o })
     );
 
 endmodule

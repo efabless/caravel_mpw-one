@@ -65,7 +65,20 @@ module mgmt_core (
     	output core_rstn,
 
 	// Metal programmed user ID / mask revision vector
-	input [31:0] mask_rev
+	input [31:0] mask_rev,
+	
+    // MGMT area R/W interface for mgmt RAM
+    output [`MGMT_BLOCKS-1:0] mgmt_ena, 
+    output [(`MGMT_BLOCKS*4)-1:0] mgmt_wen_mask,
+    output [`MGMT_BLOCKS-1:0] mgmt_wen,
+    output [7:0] mgmt_addr,
+    output [31:0] mgmt_wdata,
+    input  [(`MGMT_BLOCKS*32)-1:0] mgmt_rdata,
+
+    // MGMT area RO interface for user RAM 
+    output [`USER_BLOCKS-1:0] user_ena,
+    output [7:0] user_addr,
+    input  [(`USER_BLOCKS*32)-1:0] user_rdata
 );
     	wire ext_clk_sel;
     	wire pll_clk, pll_clk90;
@@ -212,7 +225,18 @@ module mgmt_core (
 		.mprj_adr_o(mprj_adr_o),
 		.mprj_dat_o(mprj_dat_o),
 		.mprj_ack_i(mprj_ack_i),
-		.mprj_dat_i(mprj_dat_i)
+		.mprj_dat_i(mprj_dat_i),
+    	// MGMT area R/W interface for mgmt RAM
+    	.mgmt_ena(mgmt_ena), 
+    	.mgmt_wen_mask(mgmt_wen_mask),
+    	.mgmt_wen(mgmt_wen),
+    	.mgmt_addr(mgmt_addr),
+    	.mgmt_wdata(mgmt_wdata),
+    	.mgmt_rdata(mgmt_rdata),
+    	// MGMT area RO interface for user RAM 
+    	.user_ena(user_ena),
+    	.user_addr(user_addr),
+    	.user_rdata(user_rdata)
     	);
     
     	digital_pll pll (
