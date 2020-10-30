@@ -1,17 +1,20 @@
 
 `define MGMT_BLOCKS 2
 `define USER_BLOCKS 4
+`define MGMT_BASE_ADR 32'h 0100_0000
+`define USER_BASE_ADR 32'h 0200_0000
 
-`define BASE_ADR { \
-    {8'h07, {24{1'b0}} }, \   
-    {8'h06, {24{1'b0}} }, \     
-    {8'h05, {24{1'b0}} }, \    
-    {8'h04, {24{1'b0}} }, \    
-    {8'h03, {24{1'b0}} }, \    
-    {8'h02, {24{1'b0}} }, \
-    {8'h01, {24{1'b0}} }  \
+`define MGMT_BLOCKS_ADR { \
+    {24'h 10_0000}, \     
+    {24'h 00_0000} \   
 }\
 
+`define USER_BLOCKS_ADR { \
+    {24'h 00_0000}, \
+    {24'h 10_0000}, \
+    {24'h 20_0000}, \
+    {24'h 30_0000} \    
+}\
 
 // `define DBG
 `include "sram_1rw1r_32_256_8_sky130.v"
@@ -95,7 +98,10 @@ module storage_tb;
     end
 
     reg [31:0] ref_data [255: 0];
-    reg [32*(`MGMT_BLOCKS+`USER_BLOCKS)-1:0] base_adr = `BASE_ADR;
+    reg [24*(`MGMT_BLOCKS)-1:0] mgmt_blocks_adr = `MGMT_BLOCKS_ADR;
+    reg [24*(`USER_BLOCKS)-1:0] user_blocks_adr = `USER_BLOCKS_ADR;
+
+
     reg [31:0] block_adr;
     integer i,j;
 
@@ -112,7 +118,7 @@ module storage_tb;
                 if (i == 0) begin
                     ref_data[j] = $urandom_range(0, 2**30);
                 end
-                block_adr = base_adr[32*i+:32] + j;
+                block_adr = mgmt_blocks_adr[24*i+:24] + j | `MGMT_BASE_ADR;
                 mgmt_write(block_adr, ref_data[j]);
                 #2;
             end
@@ -120,7 +126,7 @@ module storage_tb;
         
         for (i = 0; i< `MGMT_BLOCKS; i = i +1) begin
             for ( j = 0; j < 100; j = j + 1) begin 
-                block_adr = base_adr[32*i+:32] + j;
+                block_adr = mgmt_blocks_adr[24*i+:24] + j | `MGMT_BASE_ADR;
                 mgmt_read(block_adr, 0);
                 if (wb_mgmt_dat_o !== ref_data[j]) begin
                     $display("Monitor: MGMT R/W Operation Failed");
@@ -155,7 +161,7 @@ module storage_tb;
                     $finish;
                 end
 
-                block_adr = base_adr[32*(i+`MGMT_BLOCKS)+:32] + j;
+                block_adr = user_blocks_adr[24*i+:24] + j | `USER_BASE_ADR;
                 mgmt_read(block_adr,1);
                 if(wb_user_dat_o !== ref_data[j])begin
                     $display("Monitor: MGMT RO Operation Failed");
@@ -264,7 +270,10 @@ module storage_tb;
     storage_bridge_wb #(
         .USER_BLOCKS(`USER_BLOCKS),
         .MGMT_BLOCKS(`MGMT_BLOCKS),
-        .BASE_ADDR(`BASE_ADR)
+        .MGMT_BASE_ADR(`MGMT_BASE_ADR),
+        .USER_BASE_ADR(`USER_BASE_ADR),
+        .MGMT_BLOCKS_ADR(`MGMT_BLOCKS_ADR),
+        .USER_BLOCKS_ADR(`USER_BLOCKS_ADR)
     ) wb_bridge (
         .wb_clk_i(wb_clk_i),
         .wb_rst_i(wb_rst_i),

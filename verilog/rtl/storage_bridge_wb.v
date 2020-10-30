@@ -1,8 +1,10 @@
 module storage_bridge_wb #(
     parameter USER_BLOCKS = 4, 
-    parameter MGMT_BLOCKS = 2
+    parameter MGMT_BLOCKS = 2,
+    parameter MGMT_BASE_ADR = 32'h 0100_0000,
+    parameter USER_BASE_ADR = 32'h 0200_0000
 ) (
-    // MGMT_AREA R/W WB Interface (#of WB Slaves = MGMT_BLOCKS )
+    // MGMT_AREA R/W WB Interface
     input wb_clk_i,
     input wb_rst_i,
 
@@ -15,7 +17,7 @@ module storage_bridge_wb #(
     output reg [1:0] wb_ack_o,
     output reg [31:0] wb_mgmt_dat_o,
 
-    // MGMT_AREA RO WB Interface (USER_BLOCKS)  
+    // MGMT_AREA RO WB Interface   
     output reg [31:0] wb_user_dat_o,
 
     // MGMT Area native memory interface
@@ -26,25 +28,25 @@ module storage_bridge_wb #(
     output [31:0] mgmt_wdata,
     input  [(MGMT_BLOCKS*32)-1:0] mgmt_rdata,
 
-    // MGMT_AREA RO Interface (USER_BLOCKS)
+    // MGMT_AREA RO Interface 
     output [USER_BLOCKS-1:0] mgmt_user_ena,
     output [7:0] mgmt_user_addr,
     input  [(USER_BLOCKS*32)-1:0] mgmt_user_rdata
 );
 
-    localparam RAM_BLOCKS = USER_BLOCKS + MGMT_BLOCKS; 
-    parameter [(RAM_BLOCKS*32)-1:0] BASE_ADDR = {
-        // User partition
-        {32'h 0700_0000},
-        {32'h 0600_0000},
-        {32'h 0500_0000},
-        {32'h 0400_0000},
-        {32'h 0300_0000},
-        // MGMT partition
-        {32'h 0200_0000},
-        {32'h 0100_0000}
+    parameter [(MGMT_BLOCKS*24)-1:0] MGMT_BLOCKS_ADR = {
+        {24'h 10_0000},
+        {24'h 00_0000}
     };
-    parameter ADR_MASK = 32'h FF00_0000;
+
+    parameter [(USER_BLOCKS*24)-1:0] USER_BLOCKS_ADR = {
+        {24'h 30_0000},
+        {24'h 20_0000},
+        {24'h 10_0000},
+        {24'h 00_0000}
+    };
+
+    parameter ADR_MASK = 24'h FF_0000;
 
     wire [1:0] valid;
     wire [1:0] wen;
@@ -68,23 +70,29 @@ module storage_bridge_wb #(
     end
     
     // Address decoding
-    wire [RAM_BLOCKS-1: 0] ram_sel;
+    wire [MGMT_BLOCKS-1: 0] mgmt_sel;
+    wire [USER_BLOCKS-1: 0] user_sel;
+
+    wire [23:0] test = (wb_adr_i[23:0] & ADR_MASK);
+    wire iste = test ==  MGMT_BLOCKS_ADR[23:0];
     genvar iS;
     generate
-        for (iS = 0; iS < RAM_BLOCKS; iS = iS + 1) begin
-            assign ram_sel[iS] = 
-                ((wb_adr_i & ADR_MASK) == BASE_ADDR[(iS+1)*32-1:iS*32]);
+        for (iS = 0; iS < MGMT_BLOCKS; iS = iS + 1) begin
+            assign mgmt_sel[iS] = 
+                ((wb_adr_i[23:0] & ADR_MASK) == MGMT_BLOCKS_ADR[(iS+1)*24-1:iS*24]);
+        end
+        for (iS = 0; iS < USER_BLOCKS; iS = iS + 1) begin
+            assign user_sel[iS] = 
+                ((wb_adr_i[23:0] & ADR_MASK) == USER_BLOCKS_ADR[(iS+1)*24-1:iS*24]);
         end
     endgenerate
 
     // Management SoC interface
-    assign mgmt_ena = valid[0] ? ~ram_sel[1:0] : {MGMT_BLOCKS{1'b1}}; 
+    assign mgmt_ena = valid[0] ? ~mgmt_sel : {MGMT_BLOCKS{1'b1}}; 
     assign mgmt_wen = ~{MGMT_BLOCKS{wen[0]}};
     assign mgmt_wen_mask = {MGMT_BLOCKS{wen_mask[3:0]}};
     assign mgmt_addr = wb_adr_i[7:0];
     assign mgmt_wdata = wb_dat_i[31:0];
-
-    wire [1:0] mgmt_sel = ram_sel[1:0];
 
     integer i;
     always @(*) begin
@@ -94,11 +102,9 @@ module storage_bridge_wb #(
     end
 
     // User Interface
-    assign mgmt_user_ena = valid[1] ? ~ram_sel[5:2] : {USER_BLOCKS{1'b1}}; 
+    assign mgmt_user_ena = valid[1] ? ~user_sel : {USER_BLOCKS{1'b1}}; 
     assign mgmt_user_addr = wb_adr_i[7:0];
     
-    wire [3:0] user_sel = ram_sel [5:2];
-
     integer j;
     always @(*) begin
         wb_user_dat_o = {32{1'b0}};
