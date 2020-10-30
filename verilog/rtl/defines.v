@@ -8,3 +8,7 @@
 // Type and size of soc_mem
 // `define USE_OPENRAM
 `define MEM_WORDS 256
+
+// Number of RAM blocks for the mgmt_core
+`define MGMT_BLOCKS 2
+`define USER_BLOCKS 4

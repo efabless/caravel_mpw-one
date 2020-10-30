@@ -41,15 +41,18 @@
 `include "gpio_control_block.v"
 `include "clock_div.v"
 `include "simple_por.v"
+`include "storage_bridge_wb.v"
+`include "sram_1rw1r_32_256_8_sky130.v"
+`include "storage.v"
 
 /*------------------------------*/
 /* Include user project here	*/
 /*------------------------------*/
 `include "user_proj_example.v"
 
-`ifdef USE_OPENRAM
-    `include "sram_1rw1r_32_256_8_sky130.v"
-`endif
+// `ifdef USE_OPENRAM
+//     `include "sram_1rw1r_32_256_8_sky130.v"
+// `endif
 
 module caravel (
     inout vddio,	// Common 3.3V padframe/ESD power
@@ -313,6 +316,30 @@ module caravel (
 	wire	    mprj_vdd_pwrgood;
 	wire	    mprj2_vdd_pwrgood;
 
+	// Storage area
+	// Management R/W interface 
+	wire [`MGMT_BLOCKS-1:0] mgmt_ena; 
+    wire [`MGMT_BLOCKS-1:0] mgmt_wen;
+    wire [(`MGMT_BLOCKS*4)-1:0] mgmt_wen_mask;
+    wire [7:0] mgmt_addr;
+    wire [31:0] mgmt_wdata;
+    wire [(`MGMT_BLOCKS*32)-1:0] mgmt_rdata;
+	// Management RO interface
+	wire [`USER_BLOCKS-1:0] mgmt_user_ena; 
+    wire [7:0] mgmt_user_addr;
+    wire [(`USER_BLOCKS*32)-1:0] mgmt_user_rdata;
+	// User R/W interface
+	wire [`USER_BLOCKS-1:0] user_ena;
+    wire [`USER_BLOCKS-1:0] user_wen;
+    wire [(`USER_BLOCKS*4)-1:0] user_wen_mask;
+    wire [7:0] user_addr;
+    wire [31:0] user_wdata;
+    wire [(`USER_BLOCKS*32)-1:0] user_rdata;
+    // User RO interface
+    wire [`MGMT_BLOCKS-1:0] user_mgmt_ena;
+    wire [7:0] user_mgmt_addr;
+    wire [(`MGMT_BLOCKS*32)-1:0] user_mgmt_rdata;
+
     mgmt_core soc (
 	`ifdef LVS
 		.vdd(vccd),
@@ -377,7 +404,18 @@ module caravel (
 		.mprj_ack_i(mprj_ack_i_core),
 		.mprj_dat_i(mprj_dat_i_core),
 		// mask data
-		.mask_rev(mask_rev)
+		.mask_rev(mask_rev),
+		// MGMT area R/W interface for mgmt RAM
+    	.mgmt_ena(mgmt_ena), 
+    	.mgmt_wen_mask(mgmt_wen_mask),
+    	.mgmt_wen(mgmt_wen),
+    	.mgmt_addr(mgmt_addr),
+    	.mgmt_wdata(mgmt_wdata),
+    	.mgmt_rdata(mgmt_rdata),
+    	// MGMT area RO interface for user RAM 
+    	.user_ena(mgmt_user_ena),
+    	.user_addr(mgmt_user_addr),
+    	.user_rdata(mgmt_user_rdata)
     	);
 
 	/* Clock and reset to user space are passed through a tristate	*/
@@ -599,5 +637,36 @@ module caravel (
 		.A(rstb_h),
 		.X(rstb_l)
     );
+
+	// Storage area
+	storage #(
+		.MGMT_BLOCKS(`MGMT_BLOCKS),
+		.USER_BLOCKS(`USER_BLOCKS)
+	) storage(
+		.mgmt_clk(caravel_clk),
+        .mgmt_ena(mgmt_ena),
+        .mgmt_wen(mgmt_wen),
+        .mgmt_wen_mask(mgmt_wen_mask),
+        .mgmt_addr(mgmt_addr),
+        .mgmt_wdata(mgmt_wdata),
+        .mgmt_rdata(mgmt_rdata),
+        // Management RO interface  
+        .mgmt_user_ena(mgmt_user_ena),
+        .mgmt_user_addr(mgmt_user_addr),
+        .mgmt_user_rdata(mgmt_user_rdata),
+       
+	    // User R/W interface
+        .user_clk(caravel_clk2),
+        .user_ena(user_ena),
+        .user_wen(user_wen),
+        .user_wen_mask(user_wen_mask),
+        .user_addr(user_addr), 
+        .user_wdata(user_wdata),
+        .user_rdata(user_rdata),
+        // User RO interface
+        .user_mgmt_ena(user_mgmt_ena),
+        .user_mgmt_addr(user_mgmt_addr),
+        .user_mgmt_rdata(user_mgmt_rdata)
+	);
 
 endmodule
