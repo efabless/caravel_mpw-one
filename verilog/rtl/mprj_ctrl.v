@@ -124,7 +124,7 @@ module mprj_ctrl #(
     wire xfer_sel;
     wire busy;
     wire [`MPRJ_IO_PADS-1:0] io_ctrl_sel;
-    wire [31:0] iomem_rdata_pre;
+    reg [31:0] iomem_rdata_pre;
 
     wire [`MPRJ_IO_PADS-1:0] mgmt_gpio_in;
 
@@ -165,22 +165,40 @@ module mprj_ctrl #(
 
     assign selected = xfer_sel || pwr_data_sel || (|io_data_sel) || (|io_ctrl_sel);
 
-    assign iomem_rdata_pre = (selected == 0) ? 'b0 :
-			     (xfer_sel) ? {31'b0, busy} : 
-			     (pwr_data_sel) ? {{(32-`MPRJ_PWR_PADS){1'b0}},
-					pwr_ctrl_out} : 'bz;
+    wire [31:0] io_data_arr[0:IO_WORDS-1];
+    wire [31:0] io_ctrl_arr[0:`MPRJ_IO_PADS-1];
+    generate
+            for (i=0; i<IO_WORDS; i=i+1) begin
+                assign io_data_arr[i] = {{(31-`rtop){1'b0}}, mgmt_gpio_in[`wtop:`wbot]};
 
-    generate 
-        for (i=0; i<IO_WORDS; i=i+1) begin
-	    assign iomem_rdata_pre = (io_data_sel[i]) ?
-			{{(31-`rtop){1'b0}}, mgmt_gpio_in[`wtop:`wbot]} : 'bz;
-	end
-
-        for (i=0; i<`MPRJ_IO_PADS; i=i+1) begin
-             assign iomem_rdata_pre = (io_ctrl_sel[i]) ?
-			{{(32-IO_CTRL_BITS){1'b0}}, io_ctrl[i]} : 'bz;
-	end
+            end
+            for (i=0; i<`MPRJ_IO_PADS; i=i+1) begin
+                assign io_ctrl_arr[i] = {{(32-IO_CTRL_BITS){1'b0}}, io_ctrl[i]};
+            end
     endgenerate
+
+
+    integer j;
+    always @ * begin
+        iomem_rdata_pre = 'b0;
+        if (xfer_sel) begin
+            iomem_rdata_pre = {31'b0, busy};
+        end else if (pwr_data_sel) begin
+            iomem_rdata_pre = {{(32-`MPRJ_PWR_PADS){1'b0}}, pwr_ctrl_out};
+        end else if (|io_data_sel) begin
+            for (j=0; j<IO_WORDS; j=j+1) begin
+                if (io_data_sel[j]) begin
+                    iomem_rdata_pre = io_data_arr[j];
+                end
+            end
+        end else begin
+            for (j=0; j<`MPRJ_IO_PADS; j=j+1) begin
+                if (io_ctrl_sel[j]) begin
+                    iomem_rdata_pre = io_ctrl_arr[j];
+                end
+            end
+        end
+    end
 
     // General I/O transfer
 
