@@ -225,7 +225,6 @@ module mprj_ctrl #(
 	    xfer_ctrl <= 0;
             pwr_ctrl_out <= 0;
 	end else begin
-	    iomem_ready <= 0;
 	    if (iomem_valid && !iomem_ready && iomem_addr[31:8] == BASE_ADR[31:8]) begin
 		if (xfer_sel) begin
 		    if (iomem_wstrb[0]) xfer_ctrl <= iomem_wdata[0];
