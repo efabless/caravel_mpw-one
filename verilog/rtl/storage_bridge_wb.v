@@ -1,5 +1,5 @@
 module storage_bridge_wb #(
-    parameter USER_BLOCKS = 4, 
+    parameter USER_BLOCKS = 6, 
     parameter MGMT_BLOCKS = 2,
     parameter MGMT_BASE_ADR = 32'h 0100_0000,
     parameter USER_BASE_ADR = 32'h 0200_0000
@@ -40,6 +40,8 @@ module storage_bridge_wb #(
     };
 
     parameter [(USER_BLOCKS*24)-1:0] USER_BLOCKS_ADR = {
+        {24'h 50_0000},
+        {24'h 40_0000},
         {24'h 30_0000},
         {24'h 20_0000},
         {24'h 10_0000},

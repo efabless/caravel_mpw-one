@@ -11,4 +11,4 @@
 
 // Number of RAM blocks for the mgmt_core
 `define MGMT_BLOCKS 2
-`define USER_BLOCKS 4
+`define USER_BLOCKS 6

@@ -3,7 +3,7 @@
    Management area has R/W access for MGMT_BLOCKS and RO access for USER_BLOCKS */
 
 module storage #(
-    parameter USER_BLOCKS = 4,  // R/W access
+    parameter USER_BLOCKS = 6,  // R/W access
     parameter MGMT_BLOCKS = 2   // R/W access
 ) (
     // MGMT_AREA R/W Interface (MGMT_BLOCKS)
