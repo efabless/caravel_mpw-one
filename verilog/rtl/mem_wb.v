@@ -13,6 +13,9 @@ module mem_wb (
     output [31:0] wb_dat_o
     
 );
+
+    localparam ADR_WIDTH = $clog2(`MEM_WORDS);
+
     wire valid;
     wire ram_wen;
     wire [3:0] wen; // write enable
@@ -44,13 +47,16 @@ module mem_wb (
 
     soc_mem
 `ifndef USE_OPENRAM
-    #(.WORDS(`MEM_WORDS))
+    #(
+        .WORDS(`MEM_WORDS),
+        .ADR_WIDTH(ADR_WIDTH)
+    )
 `endif
      mem (
         .clk(wb_clk_i),
         .ena(valid),
         .wen(wen),
-        .addr(wb_adr_i[9:2]),
+        .addr(wb_adr_i[ADR_WIDTH+1:2]),
         .wdata(wb_dat_i),
         .rdata(wb_dat_o)
     );
@@ -60,14 +66,15 @@ endmodule
 module soc_mem 
 `ifndef USE_OPENRAM
 #(
-    parameter integer WORDS = 256
+    parameter integer WORDS = 256,
+    parameter ADR_WIDTH = 8
 )
 `endif
  ( 
     input clk,
     input ena,
     input [3:0] wen,
-    input [7:0] addr,
+    input [ADR_WIDTH-1:0] addr,
     input [31:0] wdata,
     output[31:0] rdata
 );
