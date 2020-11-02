@@ -220,6 +220,8 @@ module mgmt_soc (
     };
 
     parameter [(`USER_BLOCKS*24)-1:0] USER_BLOCKS_ADR = {
+        {24'h 50_0000}, 
+        {24'h 40_0000},
         {24'h 30_0000},
         {24'h 20_0000},
         {24'h 10_0000},
