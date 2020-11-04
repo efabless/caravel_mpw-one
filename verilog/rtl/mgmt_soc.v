@@ -681,6 +681,13 @@ module mgmt_soc (
         .la_oen(la_oen)
     );
     
+    // User project WB MI A port
+    assign mprj_cyc_o = cpu_cyc_o;
+    assign mprj_we_o  = cpu_we_o;
+    assign mprj_sel_o = cpu_sel_o;
+    assign mprj_adr_o = cpu_adr_o;
+    assign mprj_dat_o = cpu_dat_o;
+
     // WB Slave User Project Control
     wire mprj_ctrl_stb_i;
     wire mprj_ctrl_ack_o;
