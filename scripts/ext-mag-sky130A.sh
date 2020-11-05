@@ -13,7 +13,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-# To call: ./ext-gds-sky130A.sh <target_path> <design_name> <pdk-root> [<output_path> default is <target_path>/results/]
+# To call: ./ext-mag-sky130A.sh <target_path> <design_name> <pdk-root> [<output_path> default is <target_path>/results/]
 
 export TARGET_DIR=$1
 export DESIGN_NAME=$2
