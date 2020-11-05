@@ -13,11 +13,11 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-# To call: ./run_drc_checks.sh <target_path> <design_name> <pdk-path> <target-type> <output_path>
+# To call: ./magic-drc.sh <target_path> <design_name> <pdk-root> <target-type> <pdk-name> <output_path>
 
 export TARGET_DIR=$1
 export DESIGN_NAME=$2
-export PDKPATH=$3
+export PDK_ROOT=$3
 export TARGET_TYPE=$4
 export PDK=$5
 export OUT_DIR=${6:-$TARGET_DIR/results/}
@@ -27,7 +27,7 @@ then
     mkdir $OUT_DIR
 fi
 echo "Running Magic..."
-export MAGIC_MAGICRC=$PDKPATH/$PDK/libs.tech/magic/sky130A.magicrc
+export MAGIC_MAGICRC=$PDK_ROOT/$PDK/libs.tech/magic/sky130A.magicrc
 
 magic \
     -noconsole \
