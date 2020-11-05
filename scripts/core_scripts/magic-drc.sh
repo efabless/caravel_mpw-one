@@ -20,12 +20,9 @@ export DESIGN_NAME=$2
 export PDK_ROOT=$3
 export TARGET_TYPE=$4
 export PDK=$5
-export OUT_DIR=${6:-$TARGET_DIR/results/}
+export OUT_DIR=$6
+export TCL_CALL_PATH=${7:-$(pwd)}
 
-if ! [[ -d "$OUT_DIR" ]]
-then
-    mkdir $OUT_DIR
-fi
 echo "Running Magic..."
 export MAGIC_MAGICRC=$PDK_ROOT/$PDK/libs.tech/magic/sky130A.magicrc
 
@@ -33,7 +30,7 @@ magic \
     -noconsole \
     -dnull \
     -rcfile $MAGIC_MAGICRC \
-    $(pwd)/magic-drc.tcl \
+    $TCL_CALL_PATH/magic-drc.tcl \
     </dev/null \
     |& tee $OUT_DIR/magic_drc.log
 

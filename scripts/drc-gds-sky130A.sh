@@ -19,9 +19,11 @@ export TARGET_DIR=$1
 export DESIGN_NAME=$2
 export PDK_ROOT=$3
 export OUT_DIR=${4:-$TARGET_DIR/results/}
+export TCL_CALL_PATH=$(pwd)/core_scripts
 
 if ! [[ -d "$OUT_DIR" ]]
 then
     mkdir $OUT_DIR
 fi
-bash ./magic-drc.sh $TARGET_DIR $DESIGN_NAME $PDK_ROOT "gds" "sky130A" $OUT_DIR
+
+bash ./core_scripts/magic-drc.sh $TARGET_DIR $DESIGN_NAME $PDK_ROOT "gds" "sky130A" $OUT_DIR $TCL_CALL_PATH
