@@ -25,4 +25,4 @@ if ! [[ -d "$OUT_DIR" ]]
 then
     mkdir $OUT_DIR
 fi
-bash ./core_scripts/magic-drc.sh $TARGET_DIR $DESIGN_NAME $PDK_ROOT "mag" "sky130A" $OUT_DIR $TCL_CALL_PATH
+bash ./core_scripts/magic-drc.sh $TARGET_DIR $DESIGN_NAME $PDK_ROOT "def" "sky130A" $OUT_DIR $TCL_CALL_PATH
