@@ -18,7 +18,6 @@ if { $::env(TARGET_TYPE) == "gds"} {
 	if { $::env(TARGET_TYPE) == "mag" } {
 		load $::env(TARGET_DIR)/$::env(DESIGN_NAME).mag
 	} else {
-		lef read $::env(TECH_LEF)
 		def read $::env(TARGET_DIR)/$::env(DESIGN_NAME).def
 	}
 }
