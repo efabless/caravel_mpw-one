@@ -3,7 +3,10 @@ set script_dir [file dirname [file normalize [info script]]]
 set ::env(DESIGN_NAME) user_project_wrapper
 set ::env(FP_PIN_ORDER_CFG) $script_dir/pin_order.cfg
 
-set ::env(VERILOG_FILES) "$script_dir/../../verilog/rtl/user_project_wrapper.v $script_dir/../../verilog/rtl/user_proj_example.v"
+set ::env(VERILOG_FILES) "\
+	$script_dir/../../verilog/rtl/defines.v \
+	$script_dir/../../verilog/rtl/user_project_wrapper.v \
+	$script_dir/../../verilog/rtl/user_proj_example.v"
 
 set ::env(CLOCK_PORT) "user_clock2"
 set ::env(CLOCK_NET) "mprj.clk"

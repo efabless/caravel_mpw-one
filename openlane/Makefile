@@ -1,6 +1,10 @@
-BLOCKS = chip_io user_project_wrapper digital_pll mgmt_core
+BLOCKS = $(shell find * -maxdepth 0 -type d)
 CONFIG = $(foreach block,$(BLOCKS), ./$(block)/config.tcl)
 CLEAN = $(foreach block,$(BLOCKS), clean-$(block))
+
+OPENLANE_IMAGE_NAME ?= openlane:rc4
+OPENLANE_BASIC_COMMAND = "cd /project/openlane && flow.tcl -design ./$* -save_path .. -save -tag $* -overwrite"
+OPENLANE_INTERACTIVE_COMMAND = "cd /project/openlane && flow.tcl -it -file ./$*/interactive.tcl"
 
 all: $(BLOCKS)
 
@@ -13,13 +17,29 @@ ifeq ($(OPENLANE_ROOT),)
 	@echo "Please export OPENLANE_ROOT"
 	@exit 1
 endif
+ifeq ($(PDK_ROOT),)
+	@echo "Please export PDK_ROOT"
+	@exit 1
+endif
 	@echo "###############################################"
 	@sleep 1
-	if [[ -f ./$*/interactive.tcl ]]; then\
-		${OPENLANE_ROOT}/flow.tcl -it -file ./$*/interactive.tcl;\
+
+	@if [[ -f ./$*/interactive.tcl ]]; then\
+		docker run -it -v $(OPENLANE_ROOT):/openLANE_flow \
+		-v $(PDK_ROOT):$(PDK_ROOT) \
+		-v $(PWD)/..:/project \
+		-e PDK_ROOT=$(PDK_ROOT) \
+		-u $(shell id -u $(USER)):$(shell id -g $(USER)) \
+		$(OPENLANE_IMAGE_NAME) sh -c $(OPENLANE_INTERACTIVE_COMMAND);\
 	else\
-		${OPENLANE_ROOT}/flow.tcl -design ./$* -save_path .. -save -tag $* -overwrite;\
+		docker run -it -v $(OPENLANE_ROOT):/openLANE_flow \
+		-v $(PDK_ROOT):$(PDK_ROOT) \
+		-v $(PWD)/..:/project \
+		-e PDK_ROOT=$(PDK_ROOT) \
+		-u $(shell id -u $(USER)):$(shell id -g $(USER)) \
+		$(OPENLANE_IMAGE_NAME) sh -c $(OPENLANE_BASIC_COMMAND);\
 	fi
+
 
 FORCE:
 

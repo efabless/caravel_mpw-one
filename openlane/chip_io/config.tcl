@@ -3,6 +3,7 @@ set script_dir [file dirname [file normalize [info script]]]
 set ::env(DESIGN_NAME) chip_io
 
 set ::env(VERILOG_FILES) "\
+	$script_dir/../../verilog/rtl/defines.v\
 	$script_dir/../../verilog/rtl/pads.v\
 	$script_dir/../../verilog/rtl/mprj_io.v\
 	$script_dir/../../verilog/rtl/chip_io.v"
@@ -16,3 +17,5 @@ set ::env(USE_GPIO_PADS) 1
 
 set ::env(FP_SIZING) absolute
 set ::env(DIE_AREA) "0 0 3200 5300"
+
+set ::env(MAGIC_WRITE_FULL_LEF) 1
