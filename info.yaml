@@ -13,6 +13,6 @@ project:
     - "Test Harness"
   category: "Test Harness"
   top_level_netlist: "verilog/rtl/caravel.v"
-  user_top_netlist: "verilog/rtl/user_proj_example.v"
+  user_level_netlist: "verilog/rtl/user_proj_wrapper.v"
   version: "1.00"
   cover_image: "doc/ciic_harness.png"
