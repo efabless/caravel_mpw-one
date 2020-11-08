@@ -91,7 +91,7 @@ module user_proj_example #(
     ) counter(
         .clk(clk),
         .reset(rst),
-        .ready(wbs_ack_i),
+        .ready(wbs_ack_o),
         .valid(valid),
         .rdata(rdata),
         .wdata(wbs_dat_i),
