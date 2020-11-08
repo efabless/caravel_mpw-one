@@ -42,6 +42,7 @@
 `include "clock_div.v"
 `include "simple_por.v"
 `include "storage_bridge_wb.v"
+`include "DFFRAM.v"
 `include "sram_1rw1r_32_256_8_sky130.v"
 `include "storage.v"
 
