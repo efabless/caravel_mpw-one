@@ -320,27 +320,16 @@ module caravel (
 
 	// Storage area
 	// Management R/W interface 
-	wire [`MGMT_BLOCKS-1:0] mgmt_ena; 
-    wire [`MGMT_BLOCKS-1:0] mgmt_wen;
-    wire [(`MGMT_BLOCKS*4)-1:0] mgmt_wen_mask;
+	wire [`RAM_BLOCKS-1:0] mgmt_ena; 
+    wire [`RAM_BLOCKS-1:0] mgmt_wen;
+    wire [(`RAM_BLOCKS*4)-1:0] mgmt_wen_mask;
     wire [7:0] mgmt_addr;
     wire [31:0] mgmt_wdata;
-    wire [(`MGMT_BLOCKS*32)-1:0] mgmt_rdata;
+    wire [(`RAM_BLOCKS*32)-1:0] mgmt_rdata;
 	// Management RO interface
-	wire [`USER_BLOCKS-1:0] mgmt_user_ena; 
-    wire [7:0] mgmt_user_addr;
-    wire [(`USER_BLOCKS*32)-1:0] mgmt_user_rdata;
-	// User R/W interface
-	wire [`USER_BLOCKS-1:0] user_ena;
-    wire [`USER_BLOCKS-1:0] user_wen;
-    wire [(`USER_BLOCKS*4)-1:0] user_wen_mask;
-    wire [7:0] user_addr;
-    wire [31:0] user_wdata;
-    wire [(`USER_BLOCKS*32)-1:0] user_rdata;
-    // User RO interface
-    wire [`MGMT_BLOCKS-1:0] user_mgmt_ena;
-    wire [7:0] user_mgmt_addr;
-    wire [(`MGMT_BLOCKS*32)-1:0] user_mgmt_rdata;
+	wire mgmt_ena_ro; 
+    wire [7:0] mgmt_addr_ro;
+    wire [31:0] mgmt_rdata_ro;
 
     mgmt_core soc (
 	`ifdef LVS
@@ -407,17 +396,17 @@ module caravel (
 		.mprj_dat_i(mprj_dat_i_core),
 		// mask data
 		.mask_rev(mask_rev),
-		// MGMT area R/W interface for mgmt RAM
+		// MGMT area R/W interface 
     	.mgmt_ena(mgmt_ena), 
     	.mgmt_wen_mask(mgmt_wen_mask),
     	.mgmt_wen(mgmt_wen),
     	.mgmt_addr(mgmt_addr),
     	.mgmt_wdata(mgmt_wdata),
     	.mgmt_rdata(mgmt_rdata),
-    	// MGMT area RO interface for user RAM 
-    	.user_ena(mgmt_user_ena),
-    	.user_addr(mgmt_user_addr),
-    	.user_rdata(mgmt_user_rdata)
+    	// MGMT area RO interface
+    	.mgmt_ena_ro(mgmt_ena_ro),
+    	.mgmt_addr_ro(mgmt_addr_ro),
+    	.mgmt_rdata_ro(mgmt_rdata_ro)
     	);
 
 	/* Clock and reset to user space are passed through a tristate	*/
@@ -641,10 +630,7 @@ module caravel (
     );
 
 	// Storage area
-	storage #(
-		.MGMT_BLOCKS(`MGMT_BLOCKS),
-		.USER_BLOCKS(`USER_BLOCKS)
-	) storage(
+	storage storage(
 		.mgmt_clk(caravel_clk),
         .mgmt_ena(mgmt_ena),
         .mgmt_wen(mgmt_wen),
@@ -653,22 +639,9 @@ module caravel (
         .mgmt_wdata(mgmt_wdata),
         .mgmt_rdata(mgmt_rdata),
         // Management RO interface  
-        .mgmt_user_ena(mgmt_user_ena),
-        .mgmt_user_addr(mgmt_user_addr),
-        .mgmt_user_rdata(mgmt_user_rdata),
-       
-	    // User R/W interface
-        .user_clk(caravel_clk2),
-        .user_ena(user_ena),
-        .user_wen(user_wen),
-        .user_wen_mask(user_wen_mask),
-        .user_addr(user_addr), 
-        .user_wdata(user_wdata),
-        .user_rdata(user_rdata),
-        // User RO interface
-        .user_mgmt_ena(user_mgmt_ena),
-        .user_mgmt_addr(user_mgmt_addr),
-        .user_mgmt_rdata(user_mgmt_rdata)
+        .mgmt_ena_ro(mgmt_ena_ro),
+        .mgmt_addr_ro(mgmt_addr_ro),
+        .mgmt_rdata_ro(mgmt_rdata_ro)
 	);
 
 endmodule
