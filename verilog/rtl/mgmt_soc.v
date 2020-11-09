@@ -740,6 +740,10 @@ module mgmt_soc (
     wire [31:0] mem_dat_o;
 
     mem_wb soc_mem (
+    `ifdef LVS
+        .VPWR(vdd1v8),
+        .VGND(vss),
+    `endif
         .wb_clk_i(wb_clk_i),
         .wb_rst_i(wb_rst_i),
 

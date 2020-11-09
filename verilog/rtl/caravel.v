@@ -43,6 +43,7 @@
 `include "simple_por.v"
 `include "storage_bridge_wb.v"
 `include "DFFRAM.v"
+`include "DFFRAMBB.v"
 `include "sram_1rw1r_32_256_8_sky130.v"
 `include "storage.v"
 
@@ -343,7 +344,7 @@ module caravel (
 
     mgmt_core soc (
 	`ifdef LVS
-		.vdd(vccd),
+		.vdd1v8(vccd),
 		.vss(vssa),
 	`endif
 		// GPIO (1 pin)
@@ -523,10 +524,10 @@ module caravel (
 	.OENB_INIT(1'b1)	// Enable output signaling from wire
     ) gpio_control_bidir [1:0] (
     	`ifdef LVS
-             inout vccd,
-             inout vssd,
-             inout vccd1,
-             inout vssd1,
+			.vccd(vccd),
+			.vssd(vssd),
+			.vccd1(vccd1),
+			.vssd1(vssd1),
         `endif
 
     	// Management Soc-facing signals
@@ -564,10 +565,10 @@ module caravel (
 
     gpio_control_block gpio_control_in [`MPRJ_IO_PADS-1:2] (
     	`ifdef LVS
-             inout vccd,
-             inout vssd,
-             inout vccd1,
-             inout vssd1,
+            .vccd(vccd),
+			.vssd(vssd),
+			.vccd1(vccd1),
+			.vssd1(vssd1),
         `endif
 
     	// Management Soc-facing signals
