@@ -3,7 +3,7 @@
 .SUFFIXES:
 .SILENT: clean all
 
-PATTERNS = gpio mem uart perf hkspi sysctrl mprj_ctrl pass_thru timer timer2 pll
+PATTERNS = gpio mem uart perf hkspi sysctrl mprj_ctrl pass_thru timer timer2 pll storage
 
 all:  ${PATTERNS}
 	for i in ${PATTERNS}; do \
