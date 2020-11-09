@@ -1,4 +1,8 @@
 module mem_wb (
+`ifdef LVS
+    input VPWR,
+    input VGND,
+`endif
     input wb_clk_i,
     input wb_rst_i,
 
@@ -53,6 +57,10 @@ module mem_wb (
     )
 `endif
      mem (
+    `ifdef LVS
+        .VPWR(VPWR),
+        .VGND(VGND),
+    `endif
         .clk(wb_clk_i),
         .ena(valid),
         .wen(wen),
@@ -71,6 +79,10 @@ module soc_mem
 )
 `endif
  ( 
+`ifdef LVS
+    input VPWR,
+    input VGND,
+`endif
     input clk,
     input ena,
     input [3:0] wen,
@@ -81,6 +93,10 @@ module soc_mem
 
 `ifndef USE_OPENRAM
     DFFRAM SRAM (
+    `ifdef LVS
+        .VPWR(VPWR),
+        .VGND(VGND),
+    `endif
         .CLK(clk),
         .WE(wen),
         .EN(ena),
