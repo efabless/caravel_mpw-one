@@ -68,17 +68,17 @@ module mgmt_core (
 	input [31:0] mask_rev,
 	
     // MGMT area R/W interface for mgmt RAM
-    output [`MGMT_BLOCKS-1:0] mgmt_ena, 
-    output [(`MGMT_BLOCKS*4)-1:0] mgmt_wen_mask,
-    output [`MGMT_BLOCKS-1:0] mgmt_wen,
+    output [`RAM_BLOCKS-1:0] mgmt_ena, 
+    output [(`RAM_BLOCKS*4)-1:0] mgmt_wen_mask,
+    output [`RAM_BLOCKS-1:0] mgmt_wen,
     output [7:0] mgmt_addr,
     output [31:0] mgmt_wdata,
-    input  [(`MGMT_BLOCKS*32)-1:0] mgmt_rdata,
+    input  [(`RAM_BLOCKS*32)-1:0] mgmt_rdata,
 
     // MGMT area RO interface for user RAM 
-    output [`USER_BLOCKS-1:0] user_ena,
-    output [7:0] user_addr,
-    input  [(`USER_BLOCKS*32)-1:0] user_rdata
+    output mgmt_ena_ro,
+    output [7:0] mgmt_addr_ro,
+    input  [31:0] mgmt_rdata_ro
 );
     	wire ext_clk_sel;
     	wire pll_clk, pll_clk90;
@@ -234,9 +234,9 @@ module mgmt_core (
     	.mgmt_wdata(mgmt_wdata),
     	.mgmt_rdata(mgmt_rdata),
     	// MGMT area RO interface for user RAM 
-    	.user_ena(user_ena),
-    	.user_addr(user_addr),
-    	.user_rdata(user_rdata)
+    	.mgmt_ena_ro(mgmt_ena_ro),
+    	.mgmt_addr_ro(mgmt_addr_ro),
+    	.mgmt_rdata_ro(mgmt_rdata_ro)
     	);
     
     	digital_pll pll (

@@ -40,12 +40,12 @@ void main()
 
     // Test Management R/W block0
     for (i=0; i<10; i++){
-        ram_addr = &reg_mgmt_block0 + i;
+        ram_addr = &reg_rw_block0 + i;
         *ram_addr = i*5000 + 10000;
     }
 	
     for (i=0; i<10; i++){
-        ram_addr = &reg_mgmt_block0 + i;
+        ram_addr = &reg_rw_block0 + i;
         if ((i*5000+10000) != *ram_addr) 
 	    reg_mprj_datal = 0xAB400000;
     }
@@ -55,12 +55,12 @@ void main()
     // Test Management R/W block1
     reg_mprj_datal = 0xA0200000;
     for (i=0; i<10; i++){
-        ram_addr = &reg_mgmt_block1 + i;
+        ram_addr = &reg_rw_block1 + i;
         *ram_addr = i*5000 + 10000;
     }
 	
     for (i=0; i<10; i++){
-        ram_addr = &reg_mgmt_block1 + i;
+        ram_addr = &reg_rw_block1 + i;
         if ((i*5000+10000) != *ram_addr) 
 	    reg_mprj_datal = 0xAB200000;
     }

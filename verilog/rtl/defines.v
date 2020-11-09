@@ -11,6 +11,6 @@
 // don't change the following without double checking addr widths
 `define MEM_WORDS 256
 
-// Number of RAM blocks for the mgmt_core
-`define MGMT_BLOCKS 2
-`define USER_BLOCKS 6
+// not really parameterized but just to easily keep track of the number
+// of ram_block across different modules
+`define RAM_BLOCKS 2
