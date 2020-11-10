@@ -1,7 +1,7 @@
 // This routine synchronizes the 
 
 module caravel_clocking(
-`ifdef LVS
+`ifdef USE_POWER_PINS
     input vdd1v8,
     input vss,
 `endif

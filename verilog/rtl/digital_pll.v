@@ -5,13 +5,13 @@
 `include "ring_osc2x13.v"
 
 module digital_pll(
-`ifdef LVS
+`ifdef USE_POWER_PINS
     vdd,
     vss,
 `endif
     resetb, enable, osc, clockp, div, dco, ext_trim);
 
-`ifdef LVS
+`ifdef USE_POWER_PINS
     input vdd;
     input vss;
 `endif
