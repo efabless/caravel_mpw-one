@@ -17,8 +17,8 @@ pdngen::specify_grid stdcell {
 }
 
 pdngen::specify_grid macro {
-    power_pins "VPWR VDD"
-    ground_pins "VGND VSS"
+    power_pins "VPWR VDD vdd"
+    ground_pins "VGND VSS gnd"
     blockages "li1 met1 met2 met3 met4"
     straps { 
     } 
