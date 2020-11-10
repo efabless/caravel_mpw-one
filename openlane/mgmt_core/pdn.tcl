@@ -25,7 +25,7 @@ pdngen::specify_grid macro {
     connect {{met4_PIN_ver met5}}
 }
 
-set ::halo 10
+set ::halo 5
 
 # POWER or GROUND #Std. cell rails starting with power or ground rails at the bottom of the core area
 set ::rails_start_with "POWER" ;
