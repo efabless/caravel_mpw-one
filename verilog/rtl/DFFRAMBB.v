@@ -1,8 +1,16 @@
 /*
-    Building blocks for DFF based RAM compiler for SKY130 
+    Building blocks for DFF based RAM compiler for SKY130A 
+    BYTE        :   8 memory cells used as a building block for WORD module
     WORD        :   32-bit memory word with select and byte-level WE
+    DEC6x64     :   2x4 Binary Decoder
     DEC6x64     :   6x64 Binary decoder
-    SRAM64x32   :   Tri-state based 64x32 DFF RAM 
+    MUX4x1_32   :   32-bit 4x1 MUX
+    MUX2x1_32   :   32-bit 2x1 MUX
+    SRAM64x32   :   Tri-state buffers based 64x32 DFF RAM 
+    DFFRAM_COL4 :   A single column of 4 SRAM64x32 blocks using 4x1 multiplexors
+*/
+/*
+    Author: Mohamed Shalan (mshalan@aucegypt.edu)
 */
 
 module BYTE (
@@ -22,8 +30,8 @@ module BYTE (
     wire        SEL_B;
     wire        GCLK;
 
-    sky130_fd_sc_hd__inv_1 INV( 
-    `ifdef USE_POWER_PINS
+    sky130_fd_sc_hd__inv_1 INV(
+     `ifdef USE_POWER_PINS
         .VPWR(VPWR),
         .VGND(VGND),
         .VPB(VPWR),
@@ -32,7 +40,7 @@ module BYTE (
         .Y(SEL_B),
         .A(SEL)
     );
-   
+
     sky130_fd_sc_hd__and2_1 CGAND( 
     `ifdef USE_POWER_PINS
         .VPWR(VPWR),
@@ -54,23 +62,24 @@ module BYTE (
     `endif
         .CLK(CLK),
         .GCLK(GCLK),
-        .GATE(we_wire)
+        .GATE(we_wire) 
     );
 
     generate 
         genvar i;
         for(i=0; i<8; i=i+1) begin : BIT
-            sky130_fd_sc_hd__dfxtp_1 FF ( 
+            sky130_fd_sc_hd__dfxtp_1 FF (
             `ifdef USE_POWER_PINS
                 .VPWR(VPWR),
                 .VGND(VGND),
                 .VPB(VPWR),
                 .VNB(VGND),
-            `endif
+            `endif 
                 .D(Di[i]),
                 .Q(q_wire[i]),
                 .CLK(GCLK)
             );
+
             sky130_fd_sc_hd__ebufn_2 OBUF ( 
             `ifdef USE_POWER_PINS
                 .VPWR(VPWR),
@@ -82,6 +91,7 @@ module BYTE (
                 .Z(Do[i]),
                 .TE_B(SEL_B)
             );
+
         end
     endgenerate 
 
@@ -100,53 +110,70 @@ module WORD32 (
     output [31:0] Do
 );
 
-    BYTE B0 ( 
+    BYTE B0 (
     `ifdef USE_POWER_PINS
         .VPWR(VPWR),
         .VGND(VGND),
-    `endif
-        .CLK(CLK),
-        .WE(WE[0]),
-        .SEL(SEL),
-        .Di(Di[7:0]),
-        .Do(Do[7:0]) 
-    );
+    `endif 
+        .CLK(CLK), .WE(WE[0]), .SEL(SEL), .Di(Di[7:0]), .Do(Do[7:0]) );
+    
     BYTE B1 ( 
     `ifdef USE_POWER_PINS
-        .VPWR(VPWR),
+        .VPWR(VPWR), 
         .VGND(VGND),
     `endif
-        .CLK(CLK),
-        .WE(WE[1]),
-        .SEL(SEL),
-        .Di(Di[15:8]), 
-        .Do(Do[15:8])
-    );
+        .CLK(CLK), .WE(WE[1]), .SEL(SEL), .Di(Di[15:8]), .Do(Do[15:8]) );
+    
     BYTE B2 ( 
     `ifdef USE_POWER_PINS
         .VPWR(VPWR),
         .VGND(VGND),
     `endif
-        .CLK(CLK), 
-        .WE(WE[2]),
-        .SEL(SEL),
-        .Di(Di[23:16]),
-        .Do(Do[23:16]) 
-    );
-
+        .CLK(CLK), .WE(WE[2]), .SEL(SEL), .Di(Di[23:16]), .Do(Do[23:16]) );
+    
     BYTE B3 ( 
     `ifdef USE_POWER_PINS
         .VPWR(VPWR),
         .VGND(VGND),
     `endif
-        .CLK(CLK),
-        .WE(WE[3]),
-        .SEL(SEL),
-        .Di(Di[31:24]),
-        .Do(Do[31:24]) 
-    );
+        .CLK(CLK), .WE(WE[3]), .SEL(SEL), .Di(Di[31:24]), .Do(Do[31:24]) );
     
 endmodule 
+
+module DEC1x2 (
+`ifdef USE_POWER_PINS
+    input VPWR,
+    input VGND,
+`endif
+    input           EN,
+    input   [0:0]   A,
+    output  [1:0]   SEL
+);
+    sky130_fd_sc_hd__and2b_2    AND1 ( 
+     `ifdef USE_POWER_PINS
+        .VPWR(VPWR),
+        .VGND(VGND),
+        .VPB(VPWR),
+        .VNB(VGND),
+    `endif
+        .X(SEL[0]),
+        .A_N(A),
+        .B(EN)
+    );
+
+    sky130_fd_sc_hd__and2_2     AND3 ( 
+    `ifdef USE_POWER_PINS
+        .VPWR(VPWR),
+        .VGND(VGND),
+        .VPB(VPWR),
+        .VNB(VGND),
+    `endif
+        .X(SEL[1]),
+        .A(A),
+        .B(A[0])
+    );
+    
+endmodule
 
 module DEC2x4 (
 `ifdef USE_POWER_PINS
@@ -157,8 +184,8 @@ module DEC2x4 (
     input   [1:0]   A,
     output  [3:0]   SEL
 );
-    sky130_fd_sc_hd__nor3b_2 AND0 ( 
-    `ifdef USE_POWER_PINS
+    sky130_fd_sc_hd__nor3b_4    AND0 ( 
+     `ifdef USE_POWER_PINS
         .VPWR(VPWR),
         .VGND(VGND),
         .VPB(VPWR),
@@ -169,21 +196,22 @@ module DEC2x4 (
         .B(A[1]),
         .C_N(EN)
     );
-    sky130_fd_sc_hd__and3b_2    AND1 ( 
-    `ifdef USE_POWER_PINS
+
+    sky130_fd_sc_hd__and3b_4    AND1 (
+     `ifdef USE_POWER_PINS
         .VPWR(VPWR),
         .VGND(VGND),
         .VPB(VPWR),
         .VNB(VGND),
-    `endif
+    `endif 
         .X(SEL[1]),
         .A_N(A[1]),
         .B(A[0]),
         .C(EN) 
     );
-    
-    sky130_fd_sc_hd__and3b_2 AND2 ( 
-    `ifdef USE_POWER_PINS
+
+    sky130_fd_sc_hd__and3b_4    AND2 ( 
+     `ifdef USE_POWER_PINS
         .VPWR(VPWR),
         .VGND(VGND),
         .VPB(VPWR),
@@ -192,18 +220,18 @@ module DEC2x4 (
         .X(SEL[2]),
         .A_N(A[0]),
         .B(A[1]),
-        .C(EN) 
+        .C(EN)
     );
-
-    sky130_fd_sc_hd__and3_2 AND3 ( 
-    `ifdef USE_POWER_PINS
+   
+    sky130_fd_sc_hd__and3_4     AND3 ( 
+     `ifdef USE_POWER_PINS
         .VPWR(VPWR),
         .VGND(VGND),
         .VPB(VPWR),
         .VNB(VGND),
     `endif
         .X(SEL[3]),
-        .A(A[1]), 
+        .A(A[1]),
         .B(A[0]),
         .C(EN) 
     );
@@ -219,7 +247,7 @@ module DEC3x8 (
     input [2:0]     A,
     output [7:0]    SEL
 );
-    sky130_fd_sc_hd__nor4b_2   AND0  ( 
+    sky130_fd_sc_hd__nor4b_2   AND0 ( 
     `ifdef USE_POWER_PINS
         .VPWR(VPWR),
         .VGND(VGND),
@@ -229,7 +257,7 @@ module DEC3x8 (
         .Y(SEL[0]),
         .A(A[0]),
         .B(A[1]),
-        .C(A[2]), 
+        .C(A[2]),
         .D_N(EN)
     ); // 000
 
@@ -244,7 +272,7 @@ module DEC3x8 (
         .A_N(A[2]),
         .B_N(A[1]),
         .C(A[0]),
-        .D(EN) 
+        .D(EN)
     ); // 001
 
     sky130_fd_sc_hd__and4bb_2   AND2 ( 
@@ -261,50 +289,50 @@ module DEC3x8 (
         .D(EN) 
     ); // 010
 
-    sky130_fd_sc_hd__and4b_2    AND3 (
+    sky130_fd_sc_hd__and4b_2    AND3 ( 
     `ifdef USE_POWER_PINS
         .VPWR(VPWR),
         .VGND(VGND),
         .VPB(VPWR),
         .VNB(VGND),
-    `endif 
+    `endif
         .X(SEL[3]),
         .A_N(A[2]),
         .B(A[1]),
         .C(A[0]),
         .D(EN) 
     );   // 011
-    
-    sky130_fd_sc_hd__and4bb_2   AND4 (  
+
+    sky130_fd_sc_hd__and4bb_2   AND4 ( 
     `ifdef USE_POWER_PINS
         .VPWR(VPWR),
         .VGND(VGND),
         .VPB(VPWR),
         .VNB(VGND),
-    `endif  
+    `endif
         .X(SEL[4]),
         .A_N(A[0]),
         .B_N(A[1]),
         .C(A[2]),
         .D(EN) 
     ); // 100
-    
-    sky130_fd_sc_hd__and4b_2  AND5 (  
-    `ifdef USE_POWER_PINS
+
+    sky130_fd_sc_hd__and4b_2    AND5 ( 
+     `ifdef USE_POWER_PINS
         .VPWR(VPWR),
         .VGND(VGND),
         .VPB(VPWR),
         .VNB(VGND),
-    `endif  
+    `endif
         .X(SEL[5]),
         .A_N(A[1]),
         .B(A[0]),
         .C(A[2]),
-        .D(EN) 
+        .D(EN)
     );   // 101
-    
-    sky130_fd_sc_hd__and4b_2    AND6 (  
-    `ifdef USE_POWER_PINS
+
+    sky130_fd_sc_hd__and4b_2    AND6 ( 
+     `ifdef USE_POWER_PINS
         .VPWR(VPWR),
         .VGND(VGND),
         .VPB(VPWR),
@@ -312,22 +340,22 @@ module DEC3x8 (
     `endif
         .X(SEL[6]),
         .A_N(A[0]),
-        .B(A[1]),
+        .B(A[1]), 
         .C(A[2]),
-        .D(EN)
+        .D(EN) 
     );   // 110
-   
-    sky130_fd_sc_hd__and4_2     AND7 (  
+
+    sky130_fd_sc_hd__and4_2     AND7 ( 
     `ifdef USE_POWER_PINS
         .VPWR(VPWR),
         .VGND(VGND),
         .VPB(VPWR),
         .VNB(VGND),
-    `endif 
+    `endif
         .X(SEL[7]),
         .A(A[0]),
         .B(A[1]),
-        .C(A[2]),
+        .C(A[2]), 
         .D(EN)
     ); // 111
 endmodule
@@ -343,12 +371,28 @@ module DEC6x64 (
     output  [63:0] SEL
 );
     wire [7:0] SEL0_w ;
+    wire [2:0] A_buf;
+    
     DEC3x8 DEC_L0 ( 
     `ifdef USE_POWER_PINS
         .VPWR(VPWR),
         .VGND(VGND),
     `endif
-        .EN(EN), .A(A[5:3]), .SEL(SEL0_w) );
+        .EN(EN),
+        .A(A[5:3]),
+        .SEL(SEL0_w)
+    );
+
+    sky130_fd_sc_hd__clkbuf_16 ABUF[2:0] (
+    `ifdef USE_POWER_PINS
+        .VPWR(VPWR),
+        .VGND(VGND),
+        .VPB(VPWR),
+        .VNB(VGND),
+    `endif
+        .X(A_buf),
+        .A(A[2:0])
+    );
 
     generate
         genvar i;
@@ -358,9 +402,36 @@ module DEC6x64 (
                 .VPWR(VPWR),
                 .VGND(VGND),
             `endif
-                .EN(SEL0_w[i]), .A(A[2:0]), .SEL(SEL[7+8*i: 8*i]) );
+                .EN(SEL0_w[i]),
+                .A(A_buf),
+                .SEL(SEL[7+8*i: 8*i])
+            );
         end
     endgenerate
+endmodule
+
+module MUX2x1_32(
+`ifdef USE_POWER_PINS
+    input VPWR,
+    input VGND,
+`endif
+    input   [31:0]      A0, A1,
+    input   [0:0]       S,
+    output  [31:0]      X
+);
+    sky130_fd_sc_hd__mux2_1 MUX[31:0] (
+    `ifdef USE_POWER_PINS
+        .VPWR(VPWR),
+        .VGND(VGND),
+        .VPB(VPWR),
+        .VNB(VGND),
+    `endif
+        .A0(A0),
+        .A1(A1),
+        .S(S[0]),
+        .X(X)
+    );
+
 endmodule
 
 module MUX4x1_32(
@@ -372,14 +443,32 @@ module MUX4x1_32(
     input   [1:0]       S,
     output  [31:0]      X
 );
-    sky130_fd_sc_hd__mux4_1 MUX[31:0] (  
+    sky130_fd_sc_hd__mux4_1 MUX[31:0] (
     `ifdef USE_POWER_PINS
         .VPWR(VPWR),
         .VGND(VGND),
         .VPB(VPWR),
         .VNB(VGND),
-    `endif  
-        .A0(A0), .A1(A1), .A2(A2), .A3(A3), .S0(S[0]), .S1(S[1]), .X(X) );
+    `endif
+        .A0(A0), 
+        .A1(A1),
+        .A2(A2),
+        .A3(A3),
+        .S0(S[0]),
+        .S1(S[1]),
+        .X(X)
+    );
+endmodule
+
+module PASS (
+`ifdef USE_POWER_PINS
+    input VPWR,
+    input VGND,
+`endif
+    input [31:0] A,
+    output [31:0] X
+);
+    assign X = A;
 endmodule
 
 module SRAM64x32(
@@ -401,7 +490,7 @@ module SRAM64x32(
     wire            CLK_buf;
     wire [3:0]      WE_buf;
 
-    sky130_fd_sc_hd__clkbuf_16 CLKBUF (  
+    sky130_fd_sc_hd__clkbuf_16 CLKBUF (
     `ifdef USE_POWER_PINS
         .VPWR(VPWR),
         .VGND(VGND),
@@ -411,25 +500,25 @@ module SRAM64x32(
         .X(CLK_buf),
         .A(CLK)
     );
-
-    sky130_fd_sc_hd__clkbuf_16 WEBUF[3:0] (  
+    
+    sky130_fd_sc_hd__clkbuf_16 WEBUF[3:0] (
     `ifdef USE_POWER_PINS
         .VPWR(VPWR),
         .VGND(VGND),
         .VPB(VPWR),
         .VNB(VGND),
-    `endif  
+    `endif
         .X(WE_buf),
         .A(WE)
     );
 
-    sky130_fd_sc_hd__clkbuf_16 DIBUF[31:0] (  
+    sky130_fd_sc_hd__clkbuf_16 DIBUF[31:0] (
     `ifdef USE_POWER_PINS
         .VPWR(VPWR),
         .VGND(VGND),
         .VPB(VPWR),
         .VNB(VGND),
-    `endif  
+    `endif
         .X(Di_buf),
         .A(Di)
     );
@@ -462,34 +551,218 @@ module SRAM64x32(
     endgenerate
 
     // Ensure that the Do_pre lines are not floating when EN = 0
-    sky130_fd_sc_hd__ebufn_4 FLOATBUF[31:0] (  
+    wire lo;
+    wire float_buf_en;
+    sky130_fd_sc_hd__clkbuf_4 FBUFENBUF( 
     `ifdef USE_POWER_PINS
         .VPWR(VPWR),
         .VGND(VGND),
         .VPB(VPWR),
         .VNB(VGND),
-    `endif  
-        .A({32{EN}}),
+    `endif
+        .X(float_buf_en),
+        .A(EN)
+    );
+
+    sky130_fd_sc_hd__conb_1 TIE (
+    `ifdef USE_POWER_PINS
+        .VPWR(VPWR),
+        .VGND(VGND),
+        .VPB(VPWR),
+        .VNB(VGND),
+    `endif
+        .LO(lo),
+        .HI()
+    );
+
+    sky130_fd_sc_hd__ebufn_4 FLOATBUF[31:0] ( 
+    `ifdef USE_POWER_PINS
+        .VPWR(VPWR),
+        .VGND(VGND),
+        .VPB(VPWR),
+        .VNB(VGND),
+    `endif
+        .A( lo ),
         .Z(Do_pre),
-        .TE_B({32{EN}})
+        .TE_B(float_buf_en)
     );
 
     generate 
         //genvar i;
         for(i=0; i<32; i=i+1) begin : OUT
             sky130_fd_sc_hd__dfxtp_1 FF ( 
-             `ifdef USE_POWER_PINS
+            `ifdef USE_POWER_PINS
                 .VPWR(VPWR),
                 .VGND(VGND),
                 .VPB(VPWR),
                 .VNB(VGND),
-             `endif  
+            `endif
                 .D(Do_pre[i]),
                 .Q(Do[i]),
                 .CLK(CLK)
             );
         end
     endgenerate 
+
+endmodule
+
+module DFFRAM_COL4 
+(
+`ifdef USE_POWER_PINS
+    VPWR,
+    VGND,
+`endif
+    CLK,
+    WE,
+    EN,
+    Di,
+    Do,
+    A
+);
+
+    input           CLK;
+    input   [3:0]   WE;
+    input           EN;
+    input   [31:0]  Di;
+    output  [31:0]  Do;
+    input   [7:0]   A;
+
+`ifdef USE_POWER_PINS
+    input VPWR;
+    input VGND;
+`endif
+
+    wire [31:0]     Di_buf;
+    wire [31:0]     Do_pre;
+    wire            CLK_buf;
+    wire [3:0]      WE_buf;
+    wire [5:3]      A_buf;
+
+    wire [31:0]     Do_B_0_0;
+    wire [31:0]     Do_B_0_1;
+    wire [31:0]     Do_B_0_2;
+    wire [31:0]     Do_B_0_3;
+
+    wire [3:0]      row_sel;
+
+    sky130_fd_sc_hd__clkbuf_8 CLKBUF (
+    `ifdef USE_POWER_PINS
+        .VPWR(VPWR),
+        .VGND(VGND),
+        .VPB(VPWR),
+        .VNB(VGND),
+    `endif
+        .X(CLK_buf),
+        .A(CLK)
+    );
+
+    sky130_fd_sc_hd__clkbuf_8 WEBUF[3:0] (
+    `ifdef USE_POWER_PINS
+        .VPWR(VPWR),
+        .VGND(VGND),
+        .VPB(VPWR),
+        .VNB(VGND),
+    `endif
+        .X(WE_buf),
+        .A(WE)
+    );
+
+    sky130_fd_sc_hd__clkbuf_8 DIBUF[31:0] (
+    `ifdef USE_POWER_PINS
+        .VPWR(VPWR),
+        .VGND(VGND),
+        .VPB(VPWR),
+        .VNB(VGND),
+    `endif
+        .X(Di_buf), 
+        .A(Di)
+    );
+
+    sky130_fd_sc_hd__clkbuf_16 ABUF[2:0] ( 
+    `ifdef USE_POWER_PINS
+        .VPWR(VPWR),
+        .VGND(VGND),
+        .VPB(VPWR),
+        .VNB(VGND),
+    `endif
+        .X(A_buf),
+        .A(A[5:3])
+    );
+    
+    DEC2x4 DEC ( 
+    `ifdef USE_POWER_PINS
+        .VPWR(VPWR), 
+        .VGND(VGND),
+    `endif
+        .EN(EN),
+        .A(A[7:6]),
+        .SEL(row_sel)
+    );
+
+    SRAM64x32 B_0_0 ( 
+    `ifdef USE_POWER_PINS
+        .VPWR(VPWR),
+        .VGND(VGND),
+    `endif
+        .CLK(CLK_buf),
+        .WE(WE_buf),
+        .EN(row_sel[0]),
+        .Di(Di_buf),
+        .Do(Do_B_0_0),
+        .A({A_buf,A[2:0]})
+    );
+
+    SRAM64x32 B_0_1 ( 
+    `ifdef USE_POWER_PINS
+        .VPWR(VPWR), 
+        .VGND(VGND),
+    `endif
+        .CLK(CLK_buf),
+        .WE(WE_buf),
+        .EN(row_sel[1]),
+        .Di(Di_buf),
+        .Do(Do_B_0_1),
+        .A({A_buf,A[2:0]})
+    );
+
+    SRAM64x32 B_0_2 ( 
+    `ifdef USE_POWER_PINS
+        .VPWR(VPWR),
+        .VGND(VGND),
+    `endif
+        .CLK(CLK_buf),
+        .WE(WE_buf),
+        .EN(row_sel[2]),
+        .Di(Di_buf),
+        .Do(Do_B_0_2), 
+        .A({A_buf,A[2:0]}) 
+    );
+
+    SRAM64x32 B_0_3 ( 
+    `ifdef USE_POWER_PINS
+        .VPWR(VPWR),
+        .VGND(VGND),
+    `endif
+        .CLK(CLK_buf),
+        .WE(WE_buf),
+        .EN(row_sel[3]),
+        .Di(Di_buf),
+        .Do(Do_B_0_3),
+        .A({A_buf,A[2:0]})
+    );
+
+    MUX4x1_32 MUX ( 
+    `ifdef USE_POWER_PINS
+        .VPWR(VPWR),
+        .VGND(VGND),
+    `endif
+        .A0(Do_B_0_0),
+        .A1(Do_B_0_1),
+        .A2(Do_B_0_2),
+        .A3(Do_B_0_3),
+        .S(A[7:6]),
+        .X(Do)
+    );
 
 endmodule
 

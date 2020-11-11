@@ -11,6 +11,10 @@
 // don't change the following without double checking addr widths
 `define MEM_WORDS 256
 
+// Number of columns in the custom memory; takes one of three values:
+// 1 column : 1 KB, 2 column: 2 KB, 4 column: 4KB
+`define COLS 1
+
 // not really parameterized but just to easily keep track of the number
 // of ram_block across different modules
 `define RAM_BLOCKS 2
