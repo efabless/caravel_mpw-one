@@ -48,7 +48,7 @@
 //------------------------------------------------------------
 
 module housekeeping_spi(
-`ifdef LVS
+`ifdef USE_POWER_PINS
     vdd, vss, 
 `endif
     RSTB, SCK, SDI, CSB, SDO, sdo_enb,
@@ -61,7 +61,7 @@ module housekeeping_spi(
     pass_thru_user_sdi, pass_thru_user_sdo
 );
 
-`ifdef LVS
+`ifdef USE_POWER_PINS
     inout vdd;	    // 3.3V supply
     inout vss;	    // common ground
 `endif

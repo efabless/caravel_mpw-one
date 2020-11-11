@@ -332,7 +332,7 @@ module caravel (
     wire [31:0] mgmt_rdata_ro;
 
     mgmt_core soc (
-	`ifdef LVS
+	`ifdef USE_POWER_PINS
 		.vdd1v8(vccd),
 		.vss(vssa),
 	`endif
@@ -512,7 +512,7 @@ module caravel (
 	.DM_INIT(3'b110),	// Mode = output, strong up/down
 	.OENB_INIT(1'b1)	// Enable output signaling from wire
     ) gpio_control_bidir [1:0] (
-    	`ifdef LVS
+    	`ifdef USE_POWER_PINS
 			.vccd(vccd),
 			.vssd(vssd),
 			.vccd1(vccd1),
@@ -553,7 +553,7 @@ module caravel (
     );
 
     gpio_control_block gpio_control_in [`MPRJ_IO_PADS-1:2] (
-    	`ifdef LVS
+    	`ifdef USE_POWER_PINS
             .vccd(vccd),
 			.vssd(vssd),
 			.vccd1(vccd1),

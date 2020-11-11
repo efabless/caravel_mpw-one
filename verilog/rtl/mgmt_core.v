@@ -1,5 +1,5 @@
 module mgmt_core (
-`ifdef LVS
+`ifdef USE_POWER_PINS
 	inout vdd1v8,	   
 	inout vss,
 `endif
@@ -106,7 +106,7 @@ module mgmt_core (
 	assign jtag_out = (jtag_oenb_state == 1'b0) ? mgmt_out_data[0] : jtag_out_pre;
 
 	caravel_clocking clocking(
-	`ifdef LVS
+	`ifdef USE_POWER_PINS
 		.vdd1v8(vdd1v8),
 		.vss(vss),
 	`endif		
@@ -150,7 +150,7 @@ module mgmt_core (
 	// in the control block.
 
 	mgmt_soc soc (
-    	    `ifdef LVS
+    	    `ifdef USE_POWER_PINS
         	.vdd1v8(vdd1v8),
         	.vss(vss),
     	    `endif
@@ -240,7 +240,7 @@ module mgmt_core (
     	);
     
     	digital_pll pll (
-	    `ifdef LVS
+	    `ifdef USE_POWER_PINS
 		.vdd(vdd1v8),
 		.vss(vss),
 	    `endif
@@ -255,7 +255,7 @@ module mgmt_core (
 
 	// Housekeeping SPI (SPI slave module)
 	housekeeping_spi housekeeping (
-	    `ifdef LVS
+	    `ifdef USE_POWER_PINS
 		.vdd(vdd1v8),
 		.vss(vss),
 	    `endif

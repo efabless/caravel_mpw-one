@@ -1,5 +1,5 @@
 module mem_wb (
-`ifdef LVS
+`ifdef USE_POWER_PINS
     input VPWR,
     input VGND,
 `endif
@@ -57,7 +57,7 @@ module mem_wb (
     )
 `endif
      mem (
-    `ifdef LVS
+    `ifdef USE_POWER_PINS
         .VPWR(VPWR),
         .VGND(VGND),
     `endif
@@ -79,7 +79,7 @@ module soc_mem
 )
 `endif
  ( 
-`ifdef LVS
+`ifdef USE_POWER_PINS
     input VPWR,
     input VGND,
 `endif
@@ -93,7 +93,7 @@ module soc_mem
 
 `ifndef USE_OPENRAM
     DFFRAM SRAM (
-    `ifdef LVS
+    `ifdef USE_POWER_PINS
         .VPWR(VPWR),
         .VGND(VGND),
     `endif

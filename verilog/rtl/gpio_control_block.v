@@ -43,7 +43,7 @@ module gpio_control_block #(
     parameter ASEL_INIT = 1'b0,
     parameter APOL_INIT = 1'b0
 ) (
-    `ifdef LVS
+    `ifdef USE_POWER_PINS
          inout vccd,
          inout vssd,
          inout vccd1,

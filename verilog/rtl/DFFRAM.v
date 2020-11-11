@@ -1,7 +1,7 @@
 `ifndef USE_CUSTOM_DFFRAM
 
 module DFFRAM(
-`ifdef LVS
+`ifdef USE_POWER_PINS
     input VPWR,
     input VGND,
 `endif
@@ -31,14 +31,16 @@ endmodule
 
 module DFFRAM #( parameter COLS=1, parameter ROWS=4)
 (
+`ifdef USE_POWER_PINS
+    VPWR,
+    VGND,
+`endif
     CLK,
     WE,
     EN,
     Di,
     Do,
-    A,
-    VPWR,
-    VGND
+    A
 );
 
     input           CLK;
@@ -48,9 +50,11 @@ module DFFRAM #( parameter COLS=1, parameter ROWS=4)
     output  [31:0]  Do;
     input   [7:0]   A;
 
+`ifdef USE_POWER_PINS
     input VPWR;
     input VGND;
-    
+`endif
+
     wire [31:0]     Di_buf;
     wire [31:0]     Do_pre;
     wire            CLK_buf;
@@ -63,20 +67,80 @@ module DFFRAM #( parameter COLS=1, parameter ROWS=4)
 
     wire [3:0]      row_sel;
 
-    sky130_fd_sc_hd__clkbuf_8 CLKBUF ( .VPWR(VPWR), .VGND(VGND), .VPB(VPWR), .VNB(VGND), .X(CLK_buf), .A(CLK));
-    sky130_fd_sc_hd__clkbuf_8 WEBUF[3:0] ( .VPWR(VPWR), .VGND(VGND), .VPB(VPWR), .VNB(VGND), .X(WE_buf), .A(WE));
-    sky130_fd_sc_hd__clkbuf_8 DIBUF[31:0] ( .VPWR(VPWR), .VGND(VGND), .VPB(VPWR), .VNB(VGND), .X(Di_buf), .A(Di));
+    sky130_fd_sc_hd__clkbuf_8 CLKBUF ( 
+    `ifdef USE_POWER_PINS
+        .VPWR(VPWR),
+        .VGND(VGND),
+        .VPB(VPWR),
+        .VNB(VGND),
+    `endif
+        .X(CLK_buf),
+        .A(CLK)
+    );
 
-    DEC2x4 DEC ( .VPWR(VPWR), .VGND(VGND), .EN(EN), .A(A[7:6]), .SEL(row_sel) );
+    sky130_fd_sc_hd__clkbuf_8 WEBUF[3:0] ( 
+    `ifdef USE_POWER_PINS
+        .VPWR(VPWR),
+        .VGND(VGND),
+        .VPB(VPWR),
+        .VNB(VGND),
+    `endif
+        .X(WE_buf),
+        .A(WE)
+    );
 
-    SRAM64x32 B_0_0 ( .VPWR(VPWR), .VGND(VGND), .CLK(CLK_buf), .WE(WE_buf), .EN(row_sel[0]), .Di(Di_buf), .Do(Do_B_0_0), .A(A[5:0]) );
-    SRAM64x32 B_0_1 ( .VPWR(VPWR), .VGND(VGND), .CLK(CLK_buf), .WE(WE_buf), .EN(row_sel[1]), .Di(Di_buf), .Do(Do_B_0_1), .A(A[5:0]) );
-    SRAM64x32 B_0_2 ( .VPWR(VPWR), .VGND(VGND), .CLK(CLK_buf), .WE(WE_buf), .EN(row_sel[2]), .Di(Di_buf), .Do(Do_B_0_2), .A(A[5:0]) );
-    SRAM64x32 B_0_3 ( .VPWR(VPWR), .VGND(VGND), .CLK(CLK_buf), .WE(WE_buf), .EN(row_sel[3]), .Di(Di_buf), .Do(Do_B_0_3), .A(A[5:0]) );
+    sky130_fd_sc_hd__clkbuf_8 DIBUF[31:0] ( 
+    `ifdef USE_POWER_PINS
+        .VPWR(VPWR),
+        .VGND(VGND),
+        .VPB(VPWR),
+        .VNB(VGND),
+    `endif 
+        .X(Di_buf),
+        .A(Di)
+    );
 
-    MUX4x1_32 MUX1 ( .VPWR(VPWR), .VGND(VGND), .A0(Do_B_0_0), .A1(Do_B_0_1), .A2(Do_B_0_2), .A3(Do_B_0_3), .S(A[7:6]), .X(Do_pre) );
+    DEC2x4 DEC ( 
+    `ifdef USE_POWER_PINS
+        .VPWR(VPWR), .VGND(VGND),
+    `endif
+        .EN(EN), .A(A[7:6]), .SEL(row_sel) );
 
-    sky130_fd_sc_hd__clkbuf_4 DOBUF[31:0] ( .VPWR(VPWR), .VGND(VGND), .VPB(VPWR), .VNB(VGND), .X(Do), .A(Do_pre));
+    SRAM64x32 B_0_0 ( 
+    `ifdef USE_POWER_PINS
+        .VPWR(VPWR), .VGND(VGND),
+    `endif
+        .CLK(CLK_buf), .WE(WE_buf), .EN(row_sel[0]), .Di(Di_buf), .Do(Do_B_0_0), .A(A[5:0]) );
+    SRAM64x32 B_0_1 ( 
+    `ifdef USE_POWER_PINS
+        .VPWR(VPWR), .VGND(VGND),
+    `endif
+        .CLK(CLK_buf), .WE(WE_buf), .EN(row_sel[1]), .Di(Di_buf), .Do(Do_B_0_1), .A(A[5:0]) );
+    SRAM64x32 B_0_2 ( 
+    `ifdef USE_POWER_PINS
+        .VPWR(VPWR), .VGND(VGND),
+    `endif
+        .CLK(CLK_buf), .WE(WE_buf), .EN(row_sel[2]), .Di(Di_buf), .Do(Do_B_0_2), .A(A[5:0]) );
+    SRAM64x32 B_0_3 ( 
+    `ifdef USE_POWER_PINS
+        .VPWR(VPWR), .VGND(VGND),
+    `endif
+        .CLK(CLK_buf), .WE(WE_buf), .EN(row_sel[3]), .Di(Di_buf), .Do(Do_B_0_3), .A(A[5:0]) );
+
+    MUX4x1_32 MUX1 ( 
+    `ifdef USE_POWER_PINS
+        .VPWR(VPWR), .VGND(VGND),
+    `endif
+        .A0(Do_B_0_0), .A1(Do_B_0_1), .A2(Do_B_0_2), .A3(Do_B_0_3), .S(A[7:6]), .X(Do_pre) );
+
+    sky130_fd_sc_hd__clkbuf_4 DOBUF[31:0] ( 
+    `ifdef USE_POWER_PINS
+        .VPWR(VPWR),
+        .VGND(VGND),
+        .VPB(VPWR),
+        .VNB(VGND),
+    `endif
+        .X(Do), .A(Do_pre));
 
 endmodule
 

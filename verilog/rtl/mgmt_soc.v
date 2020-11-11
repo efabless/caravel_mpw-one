@@ -44,7 +44,7 @@
 `include "convert_gpio_sigs.v"
 
 module mgmt_soc (
-`ifdef LVS
+`ifdef USE_POWER_PINS
     inout vdd1v8,	    /* 1.8V domain */
     inout vss,
 `endif
@@ -735,7 +735,7 @@ module mgmt_soc (
     wire [31:0] mem_dat_o;
 
     mem_wb soc_mem (
-    `ifdef LVS
+    `ifdef USE_POWER_PINS
         .VPWR(vdd1v8),
         .VGND(vss),
     `endif

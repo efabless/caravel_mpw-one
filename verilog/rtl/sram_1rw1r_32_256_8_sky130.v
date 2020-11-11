@@ -4,7 +4,7 @@
 // Write size: 8
 
 module sram_1rw1r_32_256_8_sky130(
-`ifdef LVS
+`ifdef USE_POWER_PINS
 	vdd,
 	gnd,
 `endif
@@ -21,7 +21,7 @@ module sram_1rw1r_32_256_8_sky130(
   // FIXME: This delay is arbitrary.
   parameter DELAY = 3 ;
 
-`ifdef LVS
+`ifdef USE_POWER_PINS
   inout vdd;
   inout gnd;
 `endif
