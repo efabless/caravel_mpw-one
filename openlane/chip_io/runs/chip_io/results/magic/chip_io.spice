@@ -1,0 +1,2141 @@
+* NGSPICE file created from chip_io.ext - technology: sky130A
+
+* Black-box entry subcircuit for sky130_ef_io__gpiov2_pad abstract view
+.subckt sky130_ef_io__gpiov2_pad AMUXBUS_A AMUXBUS_B ANALOG_EN ANALOG_POL ANALOG_SEL
++ DM[2] DM[1] DM[0] ENABLE_H ENABLE_INP_H ENABLE_VDDA_H ENABLE_VDDIO ENABLE_VSWITCH_H
++ HLD_H_N HLD_OVR IB_MODE_SEL IN IN_H INP_DIS OE_N OUT PAD PAD_A_ESD_0_H PAD_A_ESD_1_H
++ PAD_A_NOESD_H SLOW TIE_HI_ESD TIE_LO_ESD VCCD VCCHIB VDDA VDDIO VDDIO_Q VSSA VSSD
++ VSSIO VSSIO_Q VSWITCH VTRIP_SEL
+.ends
+
+* Black-box entry subcircuit for sky130_ef_io__com_bus_slice_20um abstract view
+.subckt sky130_ef_io__com_bus_slice_20um AMUXBUS_A AMUXBUS_B VSSA VDDA VSWITCH VDDIO_Q
++ VCCHIB VDDIO VCCD VSSIO VSSD VSSIO_Q
+.ends
+
+* Black-box entry subcircuit for sky130_ef_io__com_bus_slice_1um abstract view
+.subckt sky130_ef_io__com_bus_slice_1um AMUXBUS_A AMUXBUS_B VSSA VDDA VSWITCH VDDIO_Q
++ VCCHIB VDDIO VCCD VSSIO VSSD VSSIO_Q
+.ends
+
+* Black-box entry subcircuit for sky130_ef_io__vccd_lvc_pad abstract view
+.subckt sky130_ef_io__vccd_lvc_pad AMUXBUS_A AMUXBUS_B DRN_LVC1 DRN_LVC2 SRC_BDY_LVC1
++ SRC_BDY_LVC2 BDY2_B2B VSSA VDDA VSWITCH VDDIO_Q VCCHIB VDDIO VCCD VSSIO VSSD VSSIO_Q
+.ends
+
+* Black-box entry subcircuit for sky130_ef_io__com_bus_slice_5um abstract view
+.subckt sky130_ef_io__com_bus_slice_5um AMUXBUS_A AMUXBUS_B VSSA VDDA VSWITCH VDDIO_Q
++ VCCHIB VDDIO VCCD VSSIO VSSD VSSIO_Q
+.ends
+
+* Black-box entry subcircuit for sky130_ef_io__com_bus_slice_10um abstract view
+.subckt sky130_ef_io__com_bus_slice_10um AMUXBUS_A AMUXBUS_B VSSA VDDA VSWITCH VDDIO_Q
++ VCCHIB VDDIO VCCD VSSIO VSSD VSSIO_Q
+.ends
+
+* Black-box entry subcircuit for sky130_ef_io__corner_pad abstract view
+.subckt sky130_ef_io__corner_pad AMUXBUS_A AMUXBUS_B VSSA VDDA VSWITCH VDDIO_Q VCCHIB
++ VDDIO VCCD VSSIO VSSD VSSIO_Q
+.ends
+
+* Black-box entry subcircuit for sky130_ef_io__vddio_hvc_pad abstract view
+.subckt sky130_ef_io__vddio_hvc_pad AMUXBUS_A AMUXBUS_B DRN_HVC SRC_BDY_HVC VSSA VDDA
++ VSWITCH VDDIO_Q VCCHIB VDDIO VCCD VSSIO VSSD VSSIO_Q
+.ends
+
+* Black-box entry subcircuit for sky130_ef_io__vssio_hvc_pad abstract view
+.subckt sky130_ef_io__vssio_hvc_pad AMUXBUS_A AMUXBUS_B DRN_HVC SRC_BDY_HVC VSSA VDDA
++ VSWITCH VDDIO_Q VCCHIB VDDIO VCCD VSSIO VSSD VSSIO_Q
+.ends
+
+* Black-box entry subcircuit for sky130_ef_io__vdda_hvc_pad abstract view
+.subckt sky130_ef_io__vdda_hvc_pad AMUXBUS_A AMUXBUS_B DRN_HVC SRC_BDY_HVC VSSA VDDA
++ VSWITCH VDDIO_Q VCCHIB VDDIO VCCD VSSIO VSSD VSSIO_Q
+.ends
+
+* Black-box entry subcircuit for sky130_ef_io__vssa_hvc_pad abstract view
+.subckt sky130_ef_io__vssa_hvc_pad AMUXBUS_A AMUXBUS_B DRN_HVC SRC_BDY_HVC VSSA VDDA
++ VSWITCH VDDIO_Q VCCHIB VDDIO VCCD VSSIO VSSD VSSIO_Q
+.ends
+
+* Black-box entry subcircuit for sky130_fd_io__top_xres4v2 abstract view
+.subckt sky130_fd_io__top_xres4v2 AMUXBUS_A AMUXBUS_B DISABLE_PULLUP_H ENABLE_H ENABLE_VDDIO
++ EN_VDDIO_SIG_H FILT_IN_H INP_SEL_H PAD PAD_A_ESD_H PULLUP_H TIE_HI_ESD TIE_LO_ESD
++ TIE_WEAK_HI_H XRES_H_N VCCD VCCHIB VDDA VDDIO VDDIO_Q VSSA VSSD VSSIO VSSIO_Q VSWITCH
+.ends
+
+* Black-box entry subcircuit for sky130_ef_io__vssd_lvc_pad abstract view
+.subckt sky130_ef_io__vssd_lvc_pad AMUXBUS_A AMUXBUS_B DRN_LVC1 DRN_LVC2 SRC_BDY_LVC1
++ SRC_BDY_LVC2 BDY2_B2B VSSA VDDA VSWITCH VDDIO_Q VCCHIB VDDIO VCCD VSSIO VSSD VSSIO_Q
+.ends
+
+.subckt chip_io clock clock_core flash_clk flash_clk_core flash_clk_ieb_core flash_clk_oeb_core
++ flash_csb flash_csb_core flash_csb_ieb_core flash_csb_oeb_core flash_io0 flash_io0_di_core
++ flash_io0_do_core flash_io0_ieb_core flash_io0_oeb_core flash_io1 flash_io1_di_core
++ flash_io1_do_core flash_io1_ieb_core flash_io1_oeb_core gpio gpio_in_core gpio_inenb_core
++ gpio_mode0_core gpio_mode1_core gpio_out_core gpio_outenb_core mprj_io[0] mprj_io[10]
++ mprj_io[11] mprj_io[12] mprj_io[13] mprj_io[14] mprj_io[15] mprj_io[16] mprj_io[17]
++ mprj_io[18] mprj_io[19] mprj_io[1] mprj_io[20] mprj_io[21] mprj_io[22] mprj_io[23]
++ mprj_io[24] mprj_io[25] mprj_io[26] mprj_io[27] mprj_io[28] mprj_io[29] mprj_io[2]
++ mprj_io[30] mprj_io[31] mprj_io[32] mprj_io[33] mprj_io[34] mprj_io[35] mprj_io[36]
++ mprj_io[37] mprj_io[3] mprj_io[4] mprj_io[5] mprj_io[6] mprj_io[7] mprj_io[8] mprj_io[9]
++ mprj_io_analog_en[0] mprj_io_analog_en[10] mprj_io_analog_en[11] mprj_io_analog_en[12]
++ mprj_io_analog_en[13] mprj_io_analog_en[14] mprj_io_analog_en[15] mprj_io_analog_en[16]
++ mprj_io_analog_en[17] mprj_io_analog_en[18] mprj_io_analog_en[19] mprj_io_analog_en[1]
++ mprj_io_analog_en[20] mprj_io_analog_en[21] mprj_io_analog_en[22] mprj_io_analog_en[23]
++ mprj_io_analog_en[24] mprj_io_analog_en[25] mprj_io_analog_en[26] mprj_io_analog_en[27]
++ mprj_io_analog_en[28] mprj_io_analog_en[29] mprj_io_analog_en[2] mprj_io_analog_en[30]
++ mprj_io_analog_en[31] mprj_io_analog_en[32] mprj_io_analog_en[33] mprj_io_analog_en[34]
++ mprj_io_analog_en[35] mprj_io_analog_en[36] mprj_io_analog_en[37] mprj_io_analog_en[3]
++ mprj_io_analog_en[4] mprj_io_analog_en[5] mprj_io_analog_en[6] mprj_io_analog_en[7]
++ mprj_io_analog_en[8] mprj_io_analog_en[9] mprj_io_analog_pol[0] mprj_io_analog_pol[10]
++ mprj_io_analog_pol[11] mprj_io_analog_pol[12] mprj_io_analog_pol[13] mprj_io_analog_pol[14]
++ mprj_io_analog_pol[15] mprj_io_analog_pol[16] mprj_io_analog_pol[17] mprj_io_analog_pol[18]
++ mprj_io_analog_pol[19] mprj_io_analog_pol[1] mprj_io_analog_pol[20] mprj_io_analog_pol[21]
++ mprj_io_analog_pol[22] mprj_io_analog_pol[23] mprj_io_analog_pol[24] mprj_io_analog_pol[25]
++ mprj_io_analog_pol[26] mprj_io_analog_pol[27] mprj_io_analog_pol[28] mprj_io_analog_pol[29]
++ mprj_io_analog_pol[2] mprj_io_analog_pol[30] mprj_io_analog_pol[31] mprj_io_analog_pol[32]
++ mprj_io_analog_pol[33] mprj_io_analog_pol[34] mprj_io_analog_pol[35] mprj_io_analog_pol[36]
++ mprj_io_analog_pol[37] mprj_io_analog_pol[3] mprj_io_analog_pol[4] mprj_io_analog_pol[5]
++ mprj_io_analog_pol[6] mprj_io_analog_pol[7] mprj_io_analog_pol[8] mprj_io_analog_pol[9]
++ mprj_io_analog_sel[0] mprj_io_analog_sel[10] mprj_io_analog_sel[11] mprj_io_analog_sel[12]
++ mprj_io_analog_sel[13] mprj_io_analog_sel[14] mprj_io_analog_sel[15] mprj_io_analog_sel[16]
++ mprj_io_analog_sel[17] mprj_io_analog_sel[18] mprj_io_analog_sel[19] mprj_io_analog_sel[1]
++ mprj_io_analog_sel[20] mprj_io_analog_sel[21] mprj_io_analog_sel[22] mprj_io_analog_sel[23]
++ mprj_io_analog_sel[24] mprj_io_analog_sel[25] mprj_io_analog_sel[26] mprj_io_analog_sel[27]
++ mprj_io_analog_sel[28] mprj_io_analog_sel[29] mprj_io_analog_sel[2] mprj_io_analog_sel[30]
++ mprj_io_analog_sel[31] mprj_io_analog_sel[32] mprj_io_analog_sel[33] mprj_io_analog_sel[34]
++ mprj_io_analog_sel[35] mprj_io_analog_sel[36] mprj_io_analog_sel[37] mprj_io_analog_sel[3]
++ mprj_io_analog_sel[4] mprj_io_analog_sel[5] mprj_io_analog_sel[6] mprj_io_analog_sel[7]
++ mprj_io_analog_sel[8] mprj_io_analog_sel[9] mprj_io_dm[0] mprj_io_dm[100] mprj_io_dm[101]
++ mprj_io_dm[102] mprj_io_dm[103] mprj_io_dm[104] mprj_io_dm[105] mprj_io_dm[106]
++ mprj_io_dm[107] mprj_io_dm[108] mprj_io_dm[109] mprj_io_dm[10] mprj_io_dm[110] mprj_io_dm[111]
++ mprj_io_dm[112] mprj_io_dm[113] mprj_io_dm[11] mprj_io_dm[12] mprj_io_dm[13] mprj_io_dm[14]
++ mprj_io_dm[15] mprj_io_dm[16] mprj_io_dm[17] mprj_io_dm[18] mprj_io_dm[19] mprj_io_dm[1]
++ mprj_io_dm[20] mprj_io_dm[21] mprj_io_dm[22] mprj_io_dm[23] mprj_io_dm[24] mprj_io_dm[25]
++ mprj_io_dm[26] mprj_io_dm[27] mprj_io_dm[28] mprj_io_dm[29] mprj_io_dm[2] mprj_io_dm[30]
++ mprj_io_dm[31] mprj_io_dm[32] mprj_io_dm[33] mprj_io_dm[34] mprj_io_dm[35] mprj_io_dm[36]
++ mprj_io_dm[37] mprj_io_dm[38] mprj_io_dm[39] mprj_io_dm[3] mprj_io_dm[40] mprj_io_dm[41]
++ mprj_io_dm[42] mprj_io_dm[43] mprj_io_dm[44] mprj_io_dm[45] mprj_io_dm[46] mprj_io_dm[47]
++ mprj_io_dm[48] mprj_io_dm[49] mprj_io_dm[4] mprj_io_dm[50] mprj_io_dm[51] mprj_io_dm[52]
++ mprj_io_dm[53] mprj_io_dm[54] mprj_io_dm[55] mprj_io_dm[56] mprj_io_dm[57] mprj_io_dm[58]
++ mprj_io_dm[59] mprj_io_dm[5] mprj_io_dm[60] mprj_io_dm[61] mprj_io_dm[62] mprj_io_dm[63]
++ mprj_io_dm[64] mprj_io_dm[65] mprj_io_dm[66] mprj_io_dm[67] mprj_io_dm[68] mprj_io_dm[69]
++ mprj_io_dm[6] mprj_io_dm[70] mprj_io_dm[71] mprj_io_dm[72] mprj_io_dm[73] mprj_io_dm[74]
++ mprj_io_dm[75] mprj_io_dm[76] mprj_io_dm[77] mprj_io_dm[78] mprj_io_dm[79] mprj_io_dm[7]
++ mprj_io_dm[80] mprj_io_dm[81] mprj_io_dm[82] mprj_io_dm[83] mprj_io_dm[84] mprj_io_dm[85]
++ mprj_io_dm[86] mprj_io_dm[87] mprj_io_dm[88] mprj_io_dm[89] mprj_io_dm[8] mprj_io_dm[90]
++ mprj_io_dm[91] mprj_io_dm[92] mprj_io_dm[93] mprj_io_dm[94] mprj_io_dm[95] mprj_io_dm[96]
++ mprj_io_dm[97] mprj_io_dm[98] mprj_io_dm[99] mprj_io_dm[9] mprj_io_enh[0] mprj_io_enh[10]
++ mprj_io_enh[11] mprj_io_enh[12] mprj_io_enh[13] mprj_io_enh[14] mprj_io_enh[15]
++ mprj_io_enh[16] mprj_io_enh[17] mprj_io_enh[18] mprj_io_enh[19] mprj_io_enh[1] mprj_io_enh[20]
++ mprj_io_enh[21] mprj_io_enh[22] mprj_io_enh[23] mprj_io_enh[24] mprj_io_enh[25]
++ mprj_io_enh[26] mprj_io_enh[27] mprj_io_enh[28] mprj_io_enh[29] mprj_io_enh[2] mprj_io_enh[30]
++ mprj_io_enh[31] mprj_io_enh[32] mprj_io_enh[33] mprj_io_enh[34] mprj_io_enh[35]
++ mprj_io_enh[36] mprj_io_enh[37] mprj_io_enh[3] mprj_io_enh[4] mprj_io_enh[5] mprj_io_enh[6]
++ mprj_io_enh[7] mprj_io_enh[8] mprj_io_enh[9] mprj_io_hldh_n[0] mprj_io_hldh_n[10]
++ mprj_io_hldh_n[11] mprj_io_hldh_n[12] mprj_io_hldh_n[13] mprj_io_hldh_n[14] mprj_io_hldh_n[15]
++ mprj_io_hldh_n[16] mprj_io_hldh_n[17] mprj_io_hldh_n[18] mprj_io_hldh_n[19] mprj_io_hldh_n[1]
++ mprj_io_hldh_n[20] mprj_io_hldh_n[21] mprj_io_hldh_n[22] mprj_io_hldh_n[23] mprj_io_hldh_n[24]
++ mprj_io_hldh_n[25] mprj_io_hldh_n[26] mprj_io_hldh_n[27] mprj_io_hldh_n[28] mprj_io_hldh_n[29]
++ mprj_io_hldh_n[2] mprj_io_hldh_n[30] mprj_io_hldh_n[31] mprj_io_hldh_n[32] mprj_io_hldh_n[33]
++ mprj_io_hldh_n[34] mprj_io_hldh_n[35] mprj_io_hldh_n[36] mprj_io_hldh_n[37] mprj_io_hldh_n[3]
++ mprj_io_hldh_n[4] mprj_io_hldh_n[5] mprj_io_hldh_n[6] mprj_io_hldh_n[7] mprj_io_hldh_n[8]
++ mprj_io_hldh_n[9] mprj_io_holdover[0] mprj_io_holdover[10] mprj_io_holdover[11]
++ mprj_io_holdover[12] mprj_io_holdover[13] mprj_io_holdover[14] mprj_io_holdover[15]
++ mprj_io_holdover[16] mprj_io_holdover[17] mprj_io_holdover[18] mprj_io_holdover[19]
++ mprj_io_holdover[1] mprj_io_holdover[20] mprj_io_holdover[21] mprj_io_holdover[22]
++ mprj_io_holdover[23] mprj_io_holdover[24] mprj_io_holdover[25] mprj_io_holdover[26]
++ mprj_io_holdover[27] mprj_io_holdover[28] mprj_io_holdover[29] mprj_io_holdover[2]
++ mprj_io_holdover[30] mprj_io_holdover[31] mprj_io_holdover[32] mprj_io_holdover[33]
++ mprj_io_holdover[34] mprj_io_holdover[35] mprj_io_holdover[36] mprj_io_holdover[37]
++ mprj_io_holdover[3] mprj_io_holdover[4] mprj_io_holdover[5] mprj_io_holdover[6]
++ mprj_io_holdover[7] mprj_io_holdover[8] mprj_io_holdover[9] mprj_io_ib_mode_sel[0]
++ mprj_io_ib_mode_sel[10] mprj_io_ib_mode_sel[11] mprj_io_ib_mode_sel[12] mprj_io_ib_mode_sel[13]
++ mprj_io_ib_mode_sel[14] mprj_io_ib_mode_sel[15] mprj_io_ib_mode_sel[16] mprj_io_ib_mode_sel[17]
++ mprj_io_ib_mode_sel[18] mprj_io_ib_mode_sel[19] mprj_io_ib_mode_sel[1] mprj_io_ib_mode_sel[20]
++ mprj_io_ib_mode_sel[21] mprj_io_ib_mode_sel[22] mprj_io_ib_mode_sel[23] mprj_io_ib_mode_sel[24]
++ mprj_io_ib_mode_sel[25] mprj_io_ib_mode_sel[26] mprj_io_ib_mode_sel[27] mprj_io_ib_mode_sel[28]
++ mprj_io_ib_mode_sel[29] mprj_io_ib_mode_sel[2] mprj_io_ib_mode_sel[30] mprj_io_ib_mode_sel[31]
++ mprj_io_ib_mode_sel[32] mprj_io_ib_mode_sel[33] mprj_io_ib_mode_sel[34] mprj_io_ib_mode_sel[35]
++ mprj_io_ib_mode_sel[36] mprj_io_ib_mode_sel[37] mprj_io_ib_mode_sel[3] mprj_io_ib_mode_sel[4]
++ mprj_io_ib_mode_sel[5] mprj_io_ib_mode_sel[6] mprj_io_ib_mode_sel[7] mprj_io_ib_mode_sel[8]
++ mprj_io_ib_mode_sel[9] mprj_io_inp_dis[0] mprj_io_inp_dis[10] mprj_io_inp_dis[11]
++ mprj_io_inp_dis[12] mprj_io_inp_dis[13] mprj_io_inp_dis[14] mprj_io_inp_dis[15]
++ mprj_io_inp_dis[16] mprj_io_inp_dis[17] mprj_io_inp_dis[18] mprj_io_inp_dis[19]
++ mprj_io_inp_dis[1] mprj_io_inp_dis[20] mprj_io_inp_dis[21] mprj_io_inp_dis[22] mprj_io_inp_dis[23]
++ mprj_io_inp_dis[24] mprj_io_inp_dis[25] mprj_io_inp_dis[26] mprj_io_inp_dis[27]
++ mprj_io_inp_dis[28] mprj_io_inp_dis[29] mprj_io_inp_dis[2] mprj_io_inp_dis[30] mprj_io_inp_dis[31]
++ mprj_io_inp_dis[32] mprj_io_inp_dis[33] mprj_io_inp_dis[34] mprj_io_inp_dis[35]
++ mprj_io_inp_dis[36] mprj_io_inp_dis[37] mprj_io_inp_dis[3] mprj_io_inp_dis[4] mprj_io_inp_dis[5]
++ mprj_io_inp_dis[6] mprj_io_inp_dis[7] mprj_io_inp_dis[8] mprj_io_inp_dis[9] mprj_io_oeb[0]
++ mprj_io_oeb[10] mprj_io_oeb[11] mprj_io_oeb[12] mprj_io_oeb[13] mprj_io_oeb[14]
++ mprj_io_oeb[15] mprj_io_oeb[16] mprj_io_oeb[17] mprj_io_oeb[18] mprj_io_oeb[19]
++ mprj_io_oeb[1] mprj_io_oeb[20] mprj_io_oeb[21] mprj_io_oeb[22] mprj_io_oeb[23] mprj_io_oeb[24]
++ mprj_io_oeb[25] mprj_io_oeb[26] mprj_io_oeb[27] mprj_io_oeb[28] mprj_io_oeb[29]
++ mprj_io_oeb[2] mprj_io_oeb[30] mprj_io_oeb[31] mprj_io_oeb[32] mprj_io_oeb[33] mprj_io_oeb[34]
++ mprj_io_oeb[35] mprj_io_oeb[36] mprj_io_oeb[37] mprj_io_oeb[3] mprj_io_oeb[4] mprj_io_oeb[5]
++ mprj_io_oeb[6] mprj_io_oeb[7] mprj_io_oeb[8] mprj_io_oeb[9] mprj_io_out[0] mprj_io_out[10]
++ mprj_io_out[11] mprj_io_out[12] mprj_io_out[13] mprj_io_out[14] mprj_io_out[15]
++ mprj_io_out[16] mprj_io_out[17] mprj_io_out[18] mprj_io_out[19] mprj_io_out[1] mprj_io_out[20]
++ mprj_io_out[21] mprj_io_out[22] mprj_io_out[23] mprj_io_out[24] mprj_io_out[25]
++ mprj_io_out[26] mprj_io_out[27] mprj_io_out[28] mprj_io_out[29] mprj_io_out[2] mprj_io_out[30]
++ mprj_io_out[31] mprj_io_out[32] mprj_io_out[33] mprj_io_out[34] mprj_io_out[35]
++ mprj_io_out[36] mprj_io_out[37] mprj_io_out[3] mprj_io_out[4] mprj_io_out[5] mprj_io_out[6]
++ mprj_io_out[7] mprj_io_out[8] mprj_io_out[9] mprj_io_slow_sel[0] mprj_io_slow_sel[10]
++ mprj_io_slow_sel[11] mprj_io_slow_sel[12] mprj_io_slow_sel[13] mprj_io_slow_sel[14]
++ mprj_io_slow_sel[15] mprj_io_slow_sel[16] mprj_io_slow_sel[17] mprj_io_slow_sel[18]
++ mprj_io_slow_sel[19] mprj_io_slow_sel[1] mprj_io_slow_sel[20] mprj_io_slow_sel[21]
++ mprj_io_slow_sel[22] mprj_io_slow_sel[23] mprj_io_slow_sel[24] mprj_io_slow_sel[25]
++ mprj_io_slow_sel[26] mprj_io_slow_sel[27] mprj_io_slow_sel[28] mprj_io_slow_sel[29]
++ mprj_io_slow_sel[2] mprj_io_slow_sel[30] mprj_io_slow_sel[31] mprj_io_slow_sel[32]
++ mprj_io_slow_sel[33] mprj_io_slow_sel[34] mprj_io_slow_sel[35] mprj_io_slow_sel[36]
++ mprj_io_slow_sel[37] mprj_io_slow_sel[3] mprj_io_slow_sel[4] mprj_io_slow_sel[5]
++ mprj_io_slow_sel[6] mprj_io_slow_sel[7] mprj_io_slow_sel[8] mprj_io_slow_sel[9]
++ mprj_io_vtrip_sel[0] mprj_io_vtrip_sel[10] mprj_io_vtrip_sel[11] mprj_io_vtrip_sel[12]
++ mprj_io_vtrip_sel[13] mprj_io_vtrip_sel[14] mprj_io_vtrip_sel[15] mprj_io_vtrip_sel[16]
++ mprj_io_vtrip_sel[17] mprj_io_vtrip_sel[18] mprj_io_vtrip_sel[19] mprj_io_vtrip_sel[1]
++ mprj_io_vtrip_sel[20] mprj_io_vtrip_sel[21] mprj_io_vtrip_sel[22] mprj_io_vtrip_sel[23]
++ mprj_io_vtrip_sel[24] mprj_io_vtrip_sel[25] mprj_io_vtrip_sel[26] mprj_io_vtrip_sel[27]
++ mprj_io_vtrip_sel[28] mprj_io_vtrip_sel[29] mprj_io_vtrip_sel[2] mprj_io_vtrip_sel[30]
++ mprj_io_vtrip_sel[31] mprj_io_vtrip_sel[32] mprj_io_vtrip_sel[33] mprj_io_vtrip_sel[34]
++ mprj_io_vtrip_sel[35] mprj_io_vtrip_sel[36] mprj_io_vtrip_sel[37] mprj_io_vtrip_sel[3]
++ mprj_io_vtrip_sel[4] mprj_io_vtrip_sel[5] mprj_io_vtrip_sel[6] mprj_io_vtrip_sel[7]
++ mprj_io_vtrip_sel[8] mprj_io_vtrip_sel[9] mprj_io_in[0] mprj_io_in[10] mprj_io_in[11]
++ mprj_io_in[12] mprj_io_in[13] mprj_io_in[14] mprj_io_in[15] mprj_io_in[16] mprj_io_in[17]
++ mprj_io_in[18] mprj_io_in[19] mprj_io_in[1] mprj_io_in[20] mprj_io_in[21] mprj_io_in[22]
++ mprj_io_in[23] mprj_io_in[24] mprj_io_in[25] mprj_io_in[26] mprj_io_in[27] mprj_io_in[28]
++ mprj_io_in[29] mprj_io_in[2] mprj_io_in[30] mprj_io_in[31] mprj_io_in[32] mprj_io_in[33]
++ mprj_io_in[34] mprj_io_in[35] mprj_io_in[36] mprj_io_in[37] mprj_io_in[3] mprj_io_in[4]
++ mprj_io_in[5] mprj_io_in[6] mprj_io_in[7] mprj_io_in[8] mprj_io_in[9] por porb_h
++ resetb resetb_core_h vccd1 vccd1 vccd1 vdda1 vdda1 vdda1 vddio vssa1 vssa1 vssa1
++ vssd1 vssd1 vssd1 vssio
+Xclock_pad FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B clock_pad/ANALOG_EN clock_pad/ANALOG_POL
++ clock_pad/ANALOG_SEL clock_pad/DM[2] clock_pad/DM[1] clock_pad/DM[0] clock_pad/ENABLE_H
++ clock_pad/ENABLE_INP_H clock_pad/ENABLE_VDDA_H clock_pad/ENABLE_VDDIO clock_pad/ENABLE_VSWITCH_H
++ clock_pad/HLD_H_N clock_pad/HLD_OVR clock_pad/IB_MODE_SEL clock_core clock_pad/IN_H
++ por clock_pad/OE_N clock_pad/OUT clock clock_pad/PAD_A_ESD_0_H clock_pad/PAD_A_ESD_1_H
++ clock_pad/PAD_A_NOESD_H clock_pad/SLOW clock_pad/TIE_HI_ESD clock_pad/TIE_LO_ESD
++ vccd1 FILLER_9/VCCHIB vdda1 vddio FILLER_9/VDDIO_Q vssa1 vssd1 vssio FILLER_9/VSSIO_Q
++ FILLER_9/VSWITCH clock_pad/VTRIP_SEL sky130_ef_io__gpiov2_pad
+XFILLER_570 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_592 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_1um
+Xmprj_pads.area2_io_pad\[17\] FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B mprj_io_analog_en[35]
++ mprj_io_analog_pol[35] mprj_io_analog_sel[35] mprj_io_dm[107] mprj_io_dm[106] mprj_io_dm[105]
++ mprj_io_enh[35] mprj_pads.area2_io_pad\[17\]/ENABLE_INP_H mprj_pads.area2_io_pad\[17\]/ENABLE_VDDA_H
++ mprj_pads.area2_io_pad\[17\]/ENABLE_VDDIO mprj_pads.area2_io_pad\[17\]/ENABLE_VSWITCH_H
++ mprj_io_hldh_n[35] mprj_io_holdover[35] mprj_io_ib_mode_sel[35] mprj_io_in[35] mprj_pads.area2_io_pad\[17\]/IN_H
++ mprj_io_inp_dis[35] mprj_io_oeb[35] mprj_io_out[35] mprj_io[35] mprj_pads.area2_io_pad\[17\]/PAD_A_ESD_0_H
++ mprj_pads.area2_io_pad\[17\]/PAD_A_ESD_1_H mprj_pads.area2_io_pad\[17\]/PAD_A_NOESD_H
++ mprj_io_slow_sel[35] mprj_pads.area2_io_pad\[17\]/TIE_HI_ESD mprj_pads.area2_io_pad\[17\]/TIE_LO_ESD
++ vccd1 FILLER_9/VCCHIB vdda1 vddio FILLER_9/VDDIO_Q vssa1 vssd1 vssio FILLER_9/VSSIO_Q
++ FILLER_9/VSWITCH mprj_io_vtrip_sel[35] sky130_ef_io__gpiov2_pad
+XFILLER_25 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_14 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_69 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_58 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_47 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_36 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+Xmgmt_vccd_lvclamp_pad FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B mgmt_vccd_lvclamp_pad/DRN_LVC1
++ mgmt_vccd_lvclamp_pad/DRN_LVC2 mgmt_vccd_lvclamp_pad/SRC_BDY_LVC1 mgmt_vccd_lvclamp_pad/SRC_BDY_LVC2
++ mgmt_vccd_lvclamp_pad/BDY2_B2B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q FILLER_9/VCCHIB
++ vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__vccd_lvc_pad
+Xmprj_pads.area2_io_pad\[7\] FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B mprj_io_analog_en[25]
++ mprj_io_analog_pol[25] mprj_io_analog_sel[25] mprj_io_dm[77] mprj_io_dm[76] mprj_io_dm[75]
++ mprj_io_enh[25] mprj_pads.area2_io_pad\[7\]/ENABLE_INP_H mprj_pads.area2_io_pad\[7\]/ENABLE_VDDA_H
++ mprj_pads.area2_io_pad\[7\]/ENABLE_VDDIO mprj_pads.area2_io_pad\[7\]/ENABLE_VSWITCH_H
++ mprj_io_hldh_n[25] mprj_io_holdover[25] mprj_io_ib_mode_sel[25] mprj_io_in[25] mprj_pads.area2_io_pad\[7\]/IN_H
++ mprj_io_inp_dis[25] mprj_io_oeb[25] mprj_io_out[25] mprj_io[25] mprj_pads.area2_io_pad\[7\]/PAD_A_ESD_0_H
++ mprj_pads.area2_io_pad\[7\]/PAD_A_ESD_1_H mprj_pads.area2_io_pad\[7\]/PAD_A_NOESD_H
++ mprj_io_slow_sel[25] mprj_pads.area2_io_pad\[7\]/TIE_HI_ESD mprj_pads.area2_io_pad\[7\]/TIE_LO_ESD
++ vccd1 FILLER_9/VCCHIB vdda1 vddio FILLER_9/VDDIO_Q vssa1 vssd1 vssio FILLER_9/VSSIO_Q
++ FILLER_9/VSWITCH mprj_io_vtrip_sel[25] sky130_ef_io__gpiov2_pad
+XFILLER_207 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_218 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_229 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_774 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_5um
+XFILLER_763 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_1um
+XFILLER_741 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_730 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_560 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_571 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_582 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_593 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_1um
+XFILLER_390 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+Xmprj_pads.area1_io_pad\[7\] FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B mprj_io_analog_en[7]
++ mprj_io_analog_pol[7] mprj_io_analog_sel[7] mprj_io_dm[23] mprj_io_dm[22] mprj_io_dm[21]
++ mprj_io_enh[7] mprj_pads.area1_io_pad\[7\]/ENABLE_INP_H mprj_pads.area1_io_pad\[7\]/ENABLE_VDDA_H
++ mprj_pads.area1_io_pad\[7\]/ENABLE_VDDIO mprj_pads.area1_io_pad\[7\]/ENABLE_VSWITCH_H
++ mprj_io_hldh_n[7] mprj_io_holdover[7] mprj_io_ib_mode_sel[7] mprj_io_in[7] mprj_pads.area1_io_pad\[7\]/IN_H
++ mprj_io_inp_dis[7] mprj_io_oeb[7] mprj_io_out[7] mprj_io[7] mprj_pads.area1_io_pad\[7\]/PAD_A_ESD_0_H
++ mprj_pads.area1_io_pad\[7\]/PAD_A_ESD_1_H mprj_pads.area1_io_pad\[7\]/PAD_A_NOESD_H
++ mprj_io_slow_sel[7] mprj_pads.area1_io_pad\[7\]/TIE_HI_ESD mprj_pads.area1_io_pad\[7\]/TIE_LO_ESD
++ vccd1 FILLER_9/VCCHIB vdda1 vddio FILLER_9/VDDIO_Q vssa1 vssd1 vssio FILLER_9/VSSIO_Q
++ FILLER_9/VSWITCH mprj_io_vtrip_sel[7] sky130_ef_io__gpiov2_pad
+XFILLER_59 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_48 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_37 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_26 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_15 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_208 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_219 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_775 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_1um
+XFILLER_764 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_1um
+XFILLER_753 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_742 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_731 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_720 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_550 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_10um
+XFILLER_561 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_572 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_583 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_594 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_1um
+XFILLER_391 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_380 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+Xmprj_pads.area1_io_pad\[11\] FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B mprj_io_analog_en[11]
++ mprj_io_analog_pol[11] mprj_io_analog_sel[11] mprj_io_dm[35] mprj_io_dm[34] mprj_io_dm[33]
++ mprj_io_enh[11] mprj_pads.area1_io_pad\[11\]/ENABLE_INP_H mprj_pads.area1_io_pad\[11\]/ENABLE_VDDA_H
++ mprj_pads.area1_io_pad\[11\]/ENABLE_VDDIO mprj_pads.area1_io_pad\[11\]/ENABLE_VSWITCH_H
++ mprj_io_hldh_n[11] mprj_io_holdover[11] mprj_io_ib_mode_sel[11] mprj_io_in[11] mprj_pads.area1_io_pad\[11\]/IN_H
++ mprj_io_inp_dis[11] mprj_io_oeb[11] mprj_io_out[11] mprj_io[11] mprj_pads.area1_io_pad\[11\]/PAD_A_ESD_0_H
++ mprj_pads.area1_io_pad\[11\]/PAD_A_ESD_1_H mprj_pads.area1_io_pad\[11\]/PAD_A_NOESD_H
++ mprj_io_slow_sel[11] mprj_pads.area1_io_pad\[11\]/TIE_HI_ESD mprj_pads.area1_io_pad\[11\]/TIE_LO_ESD
++ vccd1 FILLER_9/VCCHIB vdda1 vddio FILLER_9/VDDIO_Q vssa1 vssd1 vssio FILLER_9/VSSIO_Q
++ FILLER_9/VSWITCH mprj_io_vtrip_sel[11] sky130_ef_io__gpiov2_pad
+XFILLER_49 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_38 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_27 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_16 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_209 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_776 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_1um
+XFILLER_754 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_743 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_732 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_721 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_10um
+XFILLER_710 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_1um
+XFILLER_540 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_1um
+XFILLER_551 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_5um
+XFILLER_562 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_573 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_584 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_370 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_5um
+XFILLER_392 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_381 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+Xmprj_pads.area2_io_pad\[15\] FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B mprj_io_analog_en[33]
++ mprj_io_analog_pol[33] mprj_io_analog_sel[33] mprj_io_dm[101] mprj_io_dm[100] mprj_io_dm[99]
++ mprj_io_enh[33] mprj_pads.area2_io_pad\[15\]/ENABLE_INP_H mprj_pads.area2_io_pad\[15\]/ENABLE_VDDA_H
++ mprj_pads.area2_io_pad\[15\]/ENABLE_VDDIO mprj_pads.area2_io_pad\[15\]/ENABLE_VSWITCH_H
++ mprj_io_hldh_n[33] mprj_io_holdover[33] mprj_io_ib_mode_sel[33] mprj_io_in[33] mprj_pads.area2_io_pad\[15\]/IN_H
++ mprj_io_inp_dis[33] mprj_io_oeb[33] mprj_io_out[33] mprj_io[33] mprj_pads.area2_io_pad\[15\]/PAD_A_ESD_0_H
++ mprj_pads.area2_io_pad\[15\]/PAD_A_ESD_1_H mprj_pads.area2_io_pad\[15\]/PAD_A_NOESD_H
++ mprj_io_slow_sel[33] mprj_pads.area2_io_pad\[15\]/TIE_HI_ESD mprj_pads.area2_io_pad\[15\]/TIE_LO_ESD
++ vccd1 FILLER_9/VCCHIB vdda1 vddio FILLER_9/VDDIO_Q vssa1 vssd1 vssio FILLER_9/VSSIO_Q
++ FILLER_9/VSWITCH mprj_io_vtrip_sel[33] sky130_ef_io__gpiov2_pad
+XFILLER_39 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_28 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_17 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+Xmprj_pads.area2_io_pad\[5\] FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B mprj_io_analog_en[23]
++ mprj_io_analog_pol[23] mprj_io_analog_sel[23] mprj_io_dm[71] mprj_io_dm[70] mprj_io_dm[69]
++ mprj_io_enh[23] mprj_pads.area2_io_pad\[5\]/ENABLE_INP_H mprj_pads.area2_io_pad\[5\]/ENABLE_VDDA_H
++ mprj_pads.area2_io_pad\[5\]/ENABLE_VDDIO mprj_pads.area2_io_pad\[5\]/ENABLE_VSWITCH_H
++ mprj_io_hldh_n[23] mprj_io_holdover[23] mprj_io_ib_mode_sel[23] mprj_io_in[23] mprj_pads.area2_io_pad\[5\]/IN_H
++ mprj_io_inp_dis[23] mprj_io_oeb[23] mprj_io_out[23] mprj_io[23] mprj_pads.area2_io_pad\[5\]/PAD_A_ESD_0_H
++ mprj_pads.area2_io_pad\[5\]/PAD_A_ESD_1_H mprj_pads.area2_io_pad\[5\]/PAD_A_NOESD_H
++ mprj_io_slow_sel[23] mprj_pads.area2_io_pad\[5\]/TIE_HI_ESD mprj_pads.area2_io_pad\[5\]/TIE_LO_ESD
++ vccd1 FILLER_9/VCCHIB vdda1 vddio FILLER_9/VDDIO_Q vssa1 vssd1 vssio FILLER_9/VSSIO_Q
++ FILLER_9/VSWITCH mprj_io_vtrip_sel[23] sky130_ef_io__gpiov2_pad
+XFILLER_777 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_1um
+XFILLER_766 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_755 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_744 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_733 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_722 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_5um
+XFILLER_711 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_1um
+XFILLER_530 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_541 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_1um
+XFILLER_552 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_1um
+XFILLER_563 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_10um
+XFILLER_574 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_585 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_596 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_393 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_382 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_5um
+XFILLER_360 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_1um
+XFILLER_371 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_1um
+XFILLER_190 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_1um
+XFILLER_29 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_18 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+Xmprj_pads.area1_io_pad\[5\] FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B mprj_io_analog_en[5]
++ mprj_io_analog_pol[5] mprj_io_analog_sel[5] mprj_io_dm[17] mprj_io_dm[16] mprj_io_dm[15]
++ mprj_io_enh[5] mprj_pads.area1_io_pad\[5\]/ENABLE_INP_H mprj_pads.area1_io_pad\[5\]/ENABLE_VDDA_H
++ mprj_pads.area1_io_pad\[5\]/ENABLE_VDDIO mprj_pads.area1_io_pad\[5\]/ENABLE_VSWITCH_H
++ mprj_io_hldh_n[5] mprj_io_holdover[5] mprj_io_ib_mode_sel[5] mprj_io_in[5] mprj_pads.area1_io_pad\[5\]/IN_H
++ mprj_io_inp_dis[5] mprj_io_oeb[5] mprj_io_out[5] mprj_io[5] mprj_pads.area1_io_pad\[5\]/PAD_A_ESD_0_H
++ mprj_pads.area1_io_pad\[5\]/PAD_A_ESD_1_H mprj_pads.area1_io_pad\[5\]/PAD_A_NOESD_H
++ mprj_io_slow_sel[5] mprj_pads.area1_io_pad\[5\]/TIE_HI_ESD mprj_pads.area1_io_pad\[5\]/TIE_LO_ESD
++ vccd1 FILLER_9/VCCHIB vdda1 vddio FILLER_9/VDDIO_Q vssa1 vssd1 vssio FILLER_9/VSSIO_Q
++ FILLER_9/VSWITCH mprj_io_vtrip_sel[5] sky130_ef_io__gpiov2_pad
+XFILLER_734 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_10um
+XFILLER_723 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_1um
+XFILLER_712 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_1um
+XFILLER_701 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_778 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_1um
+XFILLER_767 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_756 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_745 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_520 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_531 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_553 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_1um
+XFILLER_564 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_5um
+XFILLER_575 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_586 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_597 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_394 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_5um
+XFILLER_383 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_1um
+XFILLER_361 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_1um
+XFILLER_372 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_1um
+XFILLER_19 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_191 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_1um
+XFILLER_180 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_1um
+XFILLER_768 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_757 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_746 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_735 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_5um
+XFILLER_724 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_1um
+XFILLER_702 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_510 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_521 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_532 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_543 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_554 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_1um
+XFILLER_565 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_1um
+XFILLER_576 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_10um
+XFILLER_587 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_598 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+Xuser2_corner FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__corner_pad
+Xmgmt_vddio_hvclamp_pad\[0\] FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B mgmt_vddio_hvclamp_pad\[0\]/DRN_HVC
++ mgmt_vddio_hvclamp_pad\[0\]/SRC_BDY_HVC vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__vddio_hvc_pad
+XFILLER_395 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_1um
+XFILLER_384 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_1um
+XFILLER_340 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_351 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_373 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_1um
+Xmprj_pads.area2_io_pad\[13\] FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B mprj_io_analog_en[31]
++ mprj_io_analog_pol[31] mprj_io_analog_sel[31] mprj_io_dm[95] mprj_io_dm[94] mprj_io_dm[93]
++ mprj_io_enh[31] mprj_pads.area2_io_pad\[13\]/ENABLE_INP_H mprj_pads.area2_io_pad\[13\]/ENABLE_VDDA_H
++ mprj_pads.area2_io_pad\[13\]/ENABLE_VDDIO mprj_pads.area2_io_pad\[13\]/ENABLE_VSWITCH_H
++ mprj_io_hldh_n[31] mprj_io_holdover[31] mprj_io_ib_mode_sel[31] mprj_io_in[31] mprj_pads.area2_io_pad\[13\]/IN_H
++ mprj_io_inp_dis[31] mprj_io_oeb[31] mprj_io_out[31] mprj_io[31] mprj_pads.area2_io_pad\[13\]/PAD_A_ESD_0_H
++ mprj_pads.area2_io_pad\[13\]/PAD_A_ESD_1_H mprj_pads.area2_io_pad\[13\]/PAD_A_NOESD_H
++ mprj_io_slow_sel[31] mprj_pads.area2_io_pad\[13\]/TIE_HI_ESD mprj_pads.area2_io_pad\[13\]/TIE_LO_ESD
++ vccd1 FILLER_9/VCCHIB vdda1 vddio FILLER_9/VDDIO_Q vssa1 vssd1 vssio FILLER_9/VSSIO_Q
++ FILLER_9/VSWITCH mprj_io_vtrip_sel[31] sky130_ef_io__gpiov2_pad
+Xmgmt_vssio_hvclamp_pad\[1\] FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B mgmt_vssio_hvclamp_pad\[1\]/DRN_HVC
++ mgmt_vssio_hvclamp_pad\[1\]/SRC_BDY_HVC vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__vssio_hvc_pad
+XFILLER_769 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_758 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_747 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_10um
+XFILLER_736 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_1um
+XFILLER_725 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_1um
+XFILLER_714 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_703 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+Xmprj_pads.area2_io_pad\[3\] FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B mprj_io_analog_en[21]
++ mprj_io_analog_pol[21] mprj_io_analog_sel[21] mprj_io_dm[65] mprj_io_dm[64] mprj_io_dm[63]
++ mprj_io_enh[21] mprj_pads.area2_io_pad\[3\]/ENABLE_INP_H mprj_pads.area2_io_pad\[3\]/ENABLE_VDDA_H
++ mprj_pads.area2_io_pad\[3\]/ENABLE_VDDIO mprj_pads.area2_io_pad\[3\]/ENABLE_VSWITCH_H
++ mprj_io_hldh_n[21] mprj_io_holdover[21] mprj_io_ib_mode_sel[21] mprj_io_in[21] mprj_pads.area2_io_pad\[3\]/IN_H
++ mprj_io_inp_dis[21] mprj_io_oeb[21] mprj_io_out[21] mprj_io[21] mprj_pads.area2_io_pad\[3\]/PAD_A_ESD_0_H
++ mprj_pads.area2_io_pad\[3\]/PAD_A_ESD_1_H mprj_pads.area2_io_pad\[3\]/PAD_A_NOESD_H
++ mprj_io_slow_sel[21] mprj_pads.area2_io_pad\[3\]/TIE_HI_ESD mprj_pads.area2_io_pad\[3\]/TIE_LO_ESD
++ vccd1 FILLER_9/VCCHIB vdda1 vddio FILLER_9/VDDIO_Q vssa1 vssd1 vssio FILLER_9/VSSIO_Q
++ FILLER_9/VSWITCH mprj_io_vtrip_sel[21] sky130_ef_io__gpiov2_pad
+XFILLER_500 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_5um
+XFILLER_511 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_10um
+XFILLER_522 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_533 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_544 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_566 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_1um
+XFILLER_577 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_5um
+XFILLER_588 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_599 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_396 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_1um
+XFILLER_385 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_1um
+XFILLER_330 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_341 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_352 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_363 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_193 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_182 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_171 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+Xmprj_pads.area1_io_pad\[3\] FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B mprj_io_analog_en[3]
++ mprj_io_analog_pol[3] mprj_io_analog_sel[3] mprj_io_dm[11] mprj_io_dm[10] mprj_io_dm[9]
++ mprj_io_enh[3] mprj_pads.area1_io_pad\[3\]/ENABLE_INP_H mprj_pads.area1_io_pad\[3\]/ENABLE_VDDA_H
++ mprj_pads.area1_io_pad\[3\]/ENABLE_VDDIO mprj_pads.area1_io_pad\[3\]/ENABLE_VSWITCH_H
++ mprj_io_hldh_n[3] mprj_io_holdover[3] mprj_io_ib_mode_sel[3] mprj_io_in[3] mprj_pads.area1_io_pad\[3\]/IN_H
++ mprj_io_inp_dis[3] mprj_io_oeb[3] mprj_io_out[3] mprj_io[3] mprj_pads.area1_io_pad\[3\]/PAD_A_ESD_0_H
++ mprj_pads.area1_io_pad\[3\]/PAD_A_ESD_1_H mprj_pads.area1_io_pad\[3\]/PAD_A_NOESD_H
++ mprj_io_slow_sel[3] mprj_pads.area1_io_pad\[3\]/TIE_HI_ESD mprj_pads.area1_io_pad\[3\]/TIE_LO_ESD
++ vccd1 FILLER_9/VCCHIB vdda1 vddio FILLER_9/VDDIO_Q vssa1 vssd1 vssio FILLER_9/VSSIO_Q
++ FILLER_9/VSWITCH mprj_io_vtrip_sel[3] sky130_ef_io__gpiov2_pad
+XFILLER_759 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_748 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_5um
+XFILLER_737 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_1um
+XFILLER_715 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_704 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_501 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_1um
+XFILLER_512 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_5um
+XFILLER_523 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_534 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_545 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_556 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_567 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_1um
+XFILLER_578 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_1um
+XFILLER_589 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_10um
+XFILLER_375 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_320 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_331 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_342 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_353 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_364 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_397 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_1um
+XFILLER_194 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_183 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_172 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_161 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_150 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_749 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_1um
+XFILLER_738 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_1um
+XFILLER_727 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_716 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_705 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+Xuser2_vdda_hvclamp_pad FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B user2_vdda_hvclamp_pad/DRN_HVC
++ user2_vdda_hvclamp_pad/SRC_BDY_HVC vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__vdda_hvc_pad
+XFILLER_502 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_1um
+XFILLER_513 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_1um
+XFILLER_524 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_10um
+XFILLER_535 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_546 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_557 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_579 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_1um
+XFILLER_387 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_376 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_310 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_321 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_332 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_343 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_354 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_365 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_195 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_184 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_173 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_162 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_151 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_140 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+Xmprj_pads.area2_io_pad\[11\] FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B mprj_io_analog_en[29]
++ mprj_io_analog_pol[29] mprj_io_analog_sel[29] mprj_io_dm[89] mprj_io_dm[88] mprj_io_dm[87]
++ mprj_io_enh[29] mprj_pads.area2_io_pad\[11\]/ENABLE_INP_H mprj_pads.area2_io_pad\[11\]/ENABLE_VDDA_H
++ mprj_pads.area2_io_pad\[11\]/ENABLE_VDDIO mprj_pads.area2_io_pad\[11\]/ENABLE_VSWITCH_H
++ mprj_io_hldh_n[29] mprj_io_holdover[29] mprj_io_ib_mode_sel[29] mprj_io_in[29] mprj_pads.area2_io_pad\[11\]/IN_H
++ mprj_io_inp_dis[29] mprj_io_oeb[29] mprj_io_out[29] mprj_io[29] mprj_pads.area2_io_pad\[11\]/PAD_A_ESD_0_H
++ mprj_pads.area2_io_pad\[11\]/PAD_A_ESD_1_H mprj_pads.area2_io_pad\[11\]/PAD_A_NOESD_H
++ mprj_io_slow_sel[29] mprj_pads.area2_io_pad\[11\]/TIE_HI_ESD mprj_pads.area2_io_pad\[11\]/TIE_LO_ESD
++ vccd1 FILLER_9/VCCHIB vdda1 vddio FILLER_9/VDDIO_Q vssa1 vssd1 vssio FILLER_9/VSSIO_Q
++ FILLER_9/VSWITCH mprj_io_vtrip_sel[29] sky130_ef_io__gpiov2_pad
+XFILLER_728 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_717 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_706 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_503 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_1um
+XFILLER_514 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_1um
+XFILLER_525 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_5um
+XFILLER_536 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_547 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_558 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_569 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+Xmprj_pads.area2_io_pad\[1\] FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B mprj_io_analog_en[19]
++ mprj_io_analog_pol[19] mprj_io_analog_sel[19] mprj_io_dm[59] mprj_io_dm[58] mprj_io_dm[57]
++ mprj_io_enh[19] mprj_pads.area2_io_pad\[1\]/ENABLE_INP_H mprj_pads.area2_io_pad\[1\]/ENABLE_VDDA_H
++ mprj_pads.area2_io_pad\[1\]/ENABLE_VDDIO mprj_pads.area2_io_pad\[1\]/ENABLE_VSWITCH_H
++ mprj_io_hldh_n[19] mprj_io_holdover[19] mprj_io_ib_mode_sel[19] mprj_io_in[19] mprj_pads.area2_io_pad\[1\]/IN_H
++ mprj_io_inp_dis[19] mprj_io_oeb[19] mprj_io_out[19] mprj_io[19] mprj_pads.area2_io_pad\[1\]/PAD_A_ESD_0_H
++ mprj_pads.area2_io_pad\[1\]/PAD_A_ESD_1_H mprj_pads.area2_io_pad\[1\]/PAD_A_NOESD_H
++ mprj_io_slow_sel[19] mprj_pads.area2_io_pad\[1\]/TIE_HI_ESD mprj_pads.area2_io_pad\[1\]/TIE_LO_ESD
++ vccd1 FILLER_9/VCCHIB vdda1 vddio FILLER_9/VDDIO_Q vssa1 vssd1 vssio FILLER_9/VSSIO_Q
++ FILLER_9/VSWITCH mprj_io_vtrip_sel[19] sky130_ef_io__gpiov2_pad
+XFILLER_399 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_388 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_377 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_300 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_5um
+XFILLER_311 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_5um
+XFILLER_322 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_333 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_344 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_355 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_366 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_141 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_130 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_196 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_185 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_174 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_163 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_152 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_729 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_718 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_707 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+Xmprj_pads.area1_io_pad\[1\] FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B mprj_io_analog_en[1]
++ mprj_io_analog_pol[1] mprj_io_analog_sel[1] mprj_io_dm[5] mprj_io_dm[4] mprj_io_dm[3]
++ mprj_io_enh[1] mprj_pads.area1_io_pad\[1\]/ENABLE_INP_H mprj_pads.area1_io_pad\[1\]/ENABLE_VDDA_H
++ mprj_pads.area1_io_pad\[1\]/ENABLE_VDDIO mprj_pads.area1_io_pad\[1\]/ENABLE_VSWITCH_H
++ mprj_io_hldh_n[1] mprj_io_holdover[1] mprj_io_ib_mode_sel[1] mprj_io_in[1] mprj_pads.area1_io_pad\[1\]/IN_H
++ mprj_io_inp_dis[1] mprj_io_oeb[1] mprj_io_out[1] mprj_io[1] mprj_pads.area1_io_pad\[1\]/PAD_A_ESD_0_H
++ mprj_pads.area1_io_pad\[1\]/PAD_A_ESD_1_H mprj_pads.area1_io_pad\[1\]/PAD_A_NOESD_H
++ mprj_io_slow_sel[1] mprj_pads.area1_io_pad\[1\]/TIE_HI_ESD mprj_pads.area1_io_pad\[1\]/TIE_LO_ESD
++ vccd1 FILLER_9/VCCHIB vdda1 vddio FILLER_9/VDDIO_Q vssa1 vssd1 vssio FILLER_9/VSSIO_Q
++ FILLER_9/VSWITCH mprj_io_vtrip_sel[1] sky130_ef_io__gpiov2_pad
+XFILLER_504 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_515 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_1um
+XFILLER_526 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_1um
+XFILLER_537 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_10um
+XFILLER_548 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_559 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_389 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_378 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_301 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_1um
+XFILLER_312 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_1um
+XFILLER_323 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_5um
+XFILLER_334 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_345 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_356 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_367 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_197 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_186 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_175 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_164 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_153 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_142 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_131 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_120 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+Xgpio_pad FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B gpio_pad/ANALOG_EN gpio_pad/ANALOG_POL
++ gpio_pad/ANALOG_SEL gpio_mode1_core gpio_pad/DM[1] gpio_mode0_core gpio_pad/ENABLE_H
++ gpio_pad/ENABLE_INP_H gpio_pad/ENABLE_VDDA_H gpio_pad/ENABLE_VDDIO gpio_pad/ENABLE_VSWITCH_H
++ gpio_pad/HLD_H_N gpio_pad/HLD_OVR gpio_pad/IB_MODE_SEL gpio_in_core gpio_pad/IN_H
++ gpio_inenb_core gpio_outenb_core gpio_out_core gpio gpio_pad/PAD_A_ESD_0_H gpio_pad/PAD_A_ESD_1_H
++ gpio_pad/PAD_A_NOESD_H gpio_pad/SLOW gpio_pad/TIE_HI_ESD gpio_pad/TIE_LO_ESD vccd1
++ FILLER_9/VCCHIB vdda1 vddio FILLER_9/VDDIO_Q vssa1 vssd1 vssio FILLER_9/VSSIO_Q
++ FILLER_9/VSWITCH gpio_pad/VTRIP_SEL sky130_ef_io__gpiov2_pad
+XFILLER_719 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_708 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_10um
+XFILLER_505 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_527 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_1um
+XFILLER_538 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_5um
+XFILLER_549 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_379 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_302 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_1um
+XFILLER_313 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_1um
+XFILLER_324 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_1um
+XFILLER_335 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_5um
+XFILLER_346 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_357 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_368 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_110 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+Xmprj_pads.area1_io_pad\[16\] FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B mprj_io_analog_en[16]
++ mprj_io_analog_pol[16] mprj_io_analog_sel[16] mprj_io_dm[50] mprj_io_dm[49] mprj_io_dm[48]
++ mprj_io_enh[16] mprj_pads.area1_io_pad\[16\]/ENABLE_INP_H mprj_pads.area1_io_pad\[16\]/ENABLE_VDDA_H
++ mprj_pads.area1_io_pad\[16\]/ENABLE_VDDIO mprj_pads.area1_io_pad\[16\]/ENABLE_VSWITCH_H
++ mprj_io_hldh_n[16] mprj_io_holdover[16] mprj_io_ib_mode_sel[16] mprj_io_in[16] mprj_pads.area1_io_pad\[16\]/IN_H
++ mprj_io_inp_dis[16] mprj_io_oeb[16] mprj_io_out[16] mprj_io[16] mprj_pads.area1_io_pad\[16\]/PAD_A_ESD_0_H
++ mprj_pads.area1_io_pad\[16\]/PAD_A_ESD_1_H mprj_pads.area1_io_pad\[16\]/PAD_A_NOESD_H
++ mprj_io_slow_sel[16] mprj_pads.area1_io_pad\[16\]/TIE_HI_ESD mprj_pads.area1_io_pad\[16\]/TIE_LO_ESD
++ vccd1 FILLER_9/VCCHIB vdda1 vddio FILLER_9/VDDIO_Q vssa1 vssd1 vssio FILLER_9/VSSIO_Q
++ FILLER_9/VSWITCH mprj_io_vtrip_sel[16] sky130_ef_io__gpiov2_pad
+XFILLER_198 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_187 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_176 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_165 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_154 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_143 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_132 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_121 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+Xuser1_vdda_hvclamp_pad\[0\] FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B user1_vdda_hvclamp_pad\[0\]/DRN_HVC
++ user1_vdda_hvclamp_pad\[0\]/SRC_BDY_HVC vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__vdda_hvc_pad
+XFILLER_709 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_5um
+XFILLER_506 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_517 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_528 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_1um
+XFILLER_539 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_1um
+XFILLER_314 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_1um
+XFILLER_325 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_1um
+XFILLER_336 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_1um
+XFILLER_347 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_5um
+XFILLER_358 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_5um
+XFILLER_369 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_111 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_100 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_199 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_188 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_177 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_166 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_155 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_144 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_133 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_122 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+Xuser2_vccd_lvclamp_pad FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B user2_vccd_lvclamp_pad/DRN_LVC1
++ user2_vccd_lvclamp_pad/DRN_LVC2 user2_vccd_lvclamp_pad/SRC_BDY_LVC1 user2_vccd_lvclamp_pad/SRC_BDY_LVC2
++ user2_vccd_lvclamp_pad/BDY2_B2B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q FILLER_9/VCCHIB
++ vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__vccd_lvc_pad
+XFILLER_507 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_518 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_304 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_326 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_1um
+XFILLER_337 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_1um
+XFILLER_348 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_1um
+XFILLER_359 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_1um
+Xmgmt_vssa_hvclamp_pad FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B mgmt_vssa_hvclamp_pad/DRN_HVC
++ mgmt_vssa_hvclamp_pad/SRC_BDY_HVC vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__vssa_hvc_pad
+XFILLER_112 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_101 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_189 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_178 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_167 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_156 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_145 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_134 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_123 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+Xmgmt_corner\[1\] FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH
++ FILLER_9/VDDIO_Q FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__corner_pad
+XFILLER_690 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+Xuser1_vssa_hvclamp_pad\[1\] FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B user1_vssa_hvclamp_pad\[1\]/DRN_HVC
++ user1_vssa_hvclamp_pad\[1\]/SRC_BDY_HVC vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__vssa_hvc_pad
+XFILLER_508 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_519 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_305 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_316 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_338 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_1um
+XFILLER_349 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_1um
+XFILLER_113 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_102 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_157 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_146 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_135 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_124 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_691 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_680 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_179 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_1um
+XFILLER_168 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+Xmprj_pads.area1_io_pad\[14\] FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B mprj_io_analog_en[14]
++ mprj_io_analog_pol[14] mprj_io_analog_sel[14] mprj_io_dm[44] mprj_io_dm[43] mprj_io_dm[42]
++ mprj_io_enh[14] mprj_pads.area1_io_pad\[14\]/ENABLE_INP_H mprj_pads.area1_io_pad\[14\]/ENABLE_VDDA_H
++ mprj_pads.area1_io_pad\[14\]/ENABLE_VDDIO mprj_pads.area1_io_pad\[14\]/ENABLE_VSWITCH_H
++ mprj_io_hldh_n[14] mprj_io_holdover[14] mprj_io_ib_mode_sel[14] mprj_io_in[14] mprj_pads.area1_io_pad\[14\]/IN_H
++ mprj_io_inp_dis[14] mprj_io_oeb[14] mprj_io_out[14] mprj_io[14] mprj_pads.area1_io_pad\[14\]/PAD_A_ESD_0_H
++ mprj_pads.area1_io_pad\[14\]/PAD_A_ESD_1_H mprj_pads.area1_io_pad\[14\]/PAD_A_NOESD_H
++ mprj_io_slow_sel[14] mprj_pads.area1_io_pad\[14\]/TIE_HI_ESD mprj_pads.area1_io_pad\[14\]/TIE_LO_ESD
++ vccd1 FILLER_9/VCCHIB vdda1 vddio FILLER_9/VDDIO_Q vssa1 vssd1 vssio FILLER_9/VSSIO_Q
++ FILLER_9/VSWITCH mprj_io_vtrip_sel[14] sky130_ef_io__gpiov2_pad
+XFILLER_509 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_306 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_317 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_328 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_114 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_103 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_169 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_1um
+XFILLER_158 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_1um
+XFILLER_147 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_1um
+XFILLER_136 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_1um
+XFILLER_125 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_692 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_681 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_10um
+XFILLER_670 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_1um
+Xmprj_pads.area2_io_pad\[18\] FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B mprj_io_analog_en[36]
++ mprj_io_analog_pol[36] mprj_io_analog_sel[36] mprj_io_dm[110] mprj_io_dm[109] mprj_io_dm[108]
++ mprj_io_enh[36] mprj_pads.area2_io_pad\[18\]/ENABLE_INP_H mprj_pads.area2_io_pad\[18\]/ENABLE_VDDA_H
++ mprj_pads.area2_io_pad\[18\]/ENABLE_VDDIO mprj_pads.area2_io_pad\[18\]/ENABLE_VSWITCH_H
++ mprj_io_hldh_n[36] mprj_io_holdover[36] mprj_io_ib_mode_sel[36] mprj_io_in[36] mprj_pads.area2_io_pad\[18\]/IN_H
++ mprj_io_inp_dis[36] mprj_io_oeb[36] mprj_io_out[36] mprj_io[36] mprj_pads.area2_io_pad\[18\]/PAD_A_ESD_0_H
++ mprj_pads.area2_io_pad\[18\]/PAD_A_ESD_1_H mprj_pads.area2_io_pad\[18\]/PAD_A_NOESD_H
++ mprj_io_slow_sel[36] mprj_pads.area2_io_pad\[18\]/TIE_HI_ESD mprj_pads.area2_io_pad\[18\]/TIE_LO_ESD
++ vccd1 FILLER_9/VCCHIB vdda1 vddio FILLER_9/VDDIO_Q vssa1 vssd1 vssio FILLER_9/VSSIO_Q
++ FILLER_9/VSWITCH mprj_io_vtrip_sel[36] sky130_ef_io__gpiov2_pad
+Xmprj_pads.area2_io_pad\[8\] FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B mprj_io_analog_en[26]
++ mprj_io_analog_pol[26] mprj_io_analog_sel[26] mprj_io_dm[80] mprj_io_dm[79] mprj_io_dm[78]
++ mprj_io_enh[26] mprj_pads.area2_io_pad\[8\]/ENABLE_INP_H mprj_pads.area2_io_pad\[8\]/ENABLE_VDDA_H
++ mprj_pads.area2_io_pad\[8\]/ENABLE_VDDIO mprj_pads.area2_io_pad\[8\]/ENABLE_VSWITCH_H
++ mprj_io_hldh_n[26] mprj_io_holdover[26] mprj_io_ib_mode_sel[26] mprj_io_in[26] mprj_pads.area2_io_pad\[8\]/IN_H
++ mprj_io_inp_dis[26] mprj_io_oeb[26] mprj_io_out[26] mprj_io[26] mprj_pads.area2_io_pad\[8\]/PAD_A_ESD_0_H
++ mprj_pads.area2_io_pad\[8\]/PAD_A_ESD_1_H mprj_pads.area2_io_pad\[8\]/PAD_A_NOESD_H
++ mprj_io_slow_sel[26] mprj_pads.area2_io_pad\[8\]/TIE_HI_ESD mprj_pads.area2_io_pad\[8\]/TIE_LO_ESD
++ vccd1 FILLER_9/VCCHIB vdda1 vddio FILLER_9/VDDIO_Q vssa1 vssd1 vssio FILLER_9/VSSIO_Q
++ FILLER_9/VSWITCH mprj_io_vtrip_sel[26] sky130_ef_io__gpiov2_pad
+XFILLER_307 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_318 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_329 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_115 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_104 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_159 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_1um
+XFILLER_148 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_1um
+XFILLER_137 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_1um
+XFILLER_126 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_1um
+XFILLER_693 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_682 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_5um
+XFILLER_671 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_1um
+XFILLER_490 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_1um
+Xmprj_pads.area1_io_pad\[8\] FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B mprj_io_analog_en[8]
++ mprj_io_analog_pol[8] mprj_io_analog_sel[8] mprj_io_dm[26] mprj_io_dm[25] mprj_io_dm[24]
++ mprj_io_enh[8] mprj_pads.area1_io_pad\[8\]/ENABLE_INP_H mprj_pads.area1_io_pad\[8\]/ENABLE_VDDA_H
++ mprj_pads.area1_io_pad\[8\]/ENABLE_VDDIO mprj_pads.area1_io_pad\[8\]/ENABLE_VSWITCH_H
++ mprj_io_hldh_n[8] mprj_io_holdover[8] mprj_io_ib_mode_sel[8] mprj_io_in[8] mprj_pads.area1_io_pad\[8\]/IN_H
++ mprj_io_inp_dis[8] mprj_io_oeb[8] mprj_io_out[8] mprj_io[8] mprj_pads.area1_io_pad\[8\]/PAD_A_ESD_0_H
++ mprj_pads.area1_io_pad\[8\]/PAD_A_ESD_1_H mprj_pads.area1_io_pad\[8\]/PAD_A_NOESD_H
++ mprj_io_slow_sel[8] mprj_pads.area1_io_pad\[8\]/TIE_HI_ESD mprj_pads.area1_io_pad\[8\]/TIE_LO_ESD
++ vccd1 FILLER_9/VCCHIB vdda1 vddio FILLER_9/VDDIO_Q vssa1 vssd1 vssio FILLER_9/VSSIO_Q
++ FILLER_9/VSWITCH mprj_io_vtrip_sel[8] sky130_ef_io__gpiov2_pad
+Xresetb_pad FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B resetb_pad/DISABLE_PULLUP_H porb_h
++ resetb_pad/ENABLE_VDDIO resetb_pad/EN_VDDIO_SIG_H resetb_pad/FILT_IN_H resetb_pad/INP_SEL_H
++ resetb resetb_pad/PAD_A_ESD_H resetb_pad/PULLUP_H resetb_pad/TIE_HI_ESD resetb_pad/TIE_LO_ESD
++ resetb_pad/TIE_WEAK_HI_H resetb_core_h vccd1 FILLER_9/VCCHIB vdda1 vddio FILLER_9/VDDIO_Q
++ vssa1 vssd1 vssio FILLER_9/VSSIO_Q FILLER_9/VSWITCH sky130_fd_io__top_xres4v2
+XFILLER_308 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_319 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_116 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_105 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_694 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_683 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_1um
+XFILLER_672 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_1um
+XFILLER_661 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_650 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_491 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_1um
+Xmprj_pads.area1_io_pad\[12\] FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B mprj_io_analog_en[12]
++ mprj_io_analog_pol[12] mprj_io_analog_sel[12] mprj_io_dm[38] mprj_io_dm[37] mprj_io_dm[36]
++ mprj_io_enh[12] mprj_pads.area1_io_pad\[12\]/ENABLE_INP_H mprj_pads.area1_io_pad\[12\]/ENABLE_VDDA_H
++ mprj_pads.area1_io_pad\[12\]/ENABLE_VDDIO mprj_pads.area1_io_pad\[12\]/ENABLE_VSWITCH_H
++ mprj_io_hldh_n[12] mprj_io_holdover[12] mprj_io_ib_mode_sel[12] mprj_io_in[12] mprj_pads.area1_io_pad\[12\]/IN_H
++ mprj_io_inp_dis[12] mprj_io_oeb[12] mprj_io_out[12] mprj_io[12] mprj_pads.area1_io_pad\[12\]/PAD_A_ESD_0_H
++ mprj_pads.area1_io_pad\[12\]/PAD_A_ESD_1_H mprj_pads.area1_io_pad\[12\]/PAD_A_NOESD_H
++ mprj_io_slow_sel[12] mprj_pads.area1_io_pad\[12\]/TIE_HI_ESD mprj_pads.area1_io_pad\[12\]/TIE_LO_ESD
++ vccd1 FILLER_9/VCCHIB vdda1 vddio FILLER_9/VDDIO_Q vssa1 vssd1 vssio FILLER_9/VSSIO_Q
++ FILLER_9/VSWITCH mprj_io_vtrip_sel[12] sky130_ef_io__gpiov2_pad
+XFILLER_309 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_117 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_1um
+XFILLER_106 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_139 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_128 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_695 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_10um
+XFILLER_684 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_1um
+XFILLER_662 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_651 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_640 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_481 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_470 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+Xmprj_pads.area2_io_pad\[16\] FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B mprj_io_analog_en[34]
++ mprj_io_analog_pol[34] mprj_io_analog_sel[34] mprj_io_dm[104] mprj_io_dm[103] mprj_io_dm[102]
++ mprj_io_enh[34] mprj_pads.area2_io_pad\[16\]/ENABLE_INP_H mprj_pads.area2_io_pad\[16\]/ENABLE_VDDA_H
++ mprj_pads.area2_io_pad\[16\]/ENABLE_VDDIO mprj_pads.area2_io_pad\[16\]/ENABLE_VSWITCH_H
++ mprj_io_hldh_n[34] mprj_io_holdover[34] mprj_io_ib_mode_sel[34] mprj_io_in[34] mprj_pads.area2_io_pad\[16\]/IN_H
++ mprj_io_inp_dis[34] mprj_io_oeb[34] mprj_io_out[34] mprj_io[34] mprj_pads.area2_io_pad\[16\]/PAD_A_ESD_0_H
++ mprj_pads.area2_io_pad\[16\]/PAD_A_ESD_1_H mprj_pads.area2_io_pad\[16\]/PAD_A_NOESD_H
++ mprj_io_slow_sel[34] mprj_pads.area2_io_pad\[16\]/TIE_HI_ESD mprj_pads.area2_io_pad\[16\]/TIE_LO_ESD
++ vccd1 FILLER_9/VCCHIB vdda1 vddio FILLER_9/VDDIO_Q vssa1 vssd1 vssio FILLER_9/VSSIO_Q
++ FILLER_9/VSWITCH mprj_io_vtrip_sel[34] sky130_ef_io__gpiov2_pad
+Xmprj_pads.area2_io_pad\[6\] FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B mprj_io_analog_en[24]
++ mprj_io_analog_pol[24] mprj_io_analog_sel[24] mprj_io_dm[74] mprj_io_dm[73] mprj_io_dm[72]
++ mprj_io_enh[24] mprj_pads.area2_io_pad\[6\]/ENABLE_INP_H mprj_pads.area2_io_pad\[6\]/ENABLE_VDDA_H
++ mprj_pads.area2_io_pad\[6\]/ENABLE_VDDIO mprj_pads.area2_io_pad\[6\]/ENABLE_VSWITCH_H
++ mprj_io_hldh_n[24] mprj_io_holdover[24] mprj_io_ib_mode_sel[24] mprj_io_in[24] mprj_pads.area2_io_pad\[6\]/IN_H
++ mprj_io_inp_dis[24] mprj_io_oeb[24] mprj_io_out[24] mprj_io[24] mprj_pads.area2_io_pad\[6\]/PAD_A_ESD_0_H
++ mprj_pads.area2_io_pad\[6\]/PAD_A_ESD_1_H mprj_pads.area2_io_pad\[6\]/PAD_A_NOESD_H
++ mprj_io_slow_sel[24] mprj_pads.area2_io_pad\[6\]/TIE_HI_ESD mprj_pads.area2_io_pad\[6\]/TIE_LO_ESD
++ vccd1 FILLER_9/VCCHIB vdda1 vddio FILLER_9/VDDIO_Q vssa1 vssd1 vssio FILLER_9/VSSIO_Q
++ FILLER_9/VSWITCH mprj_io_vtrip_sel[24] sky130_ef_io__gpiov2_pad
+Xflash_csb_pad FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B flash_csb_pad/ANALOG_EN flash_csb_pad/ANALOG_POL
++ flash_csb_pad/ANALOG_SEL flash_csb_pad/DM[2] flash_csb_pad/DM[1] flash_csb_pad/DM[0]
++ flash_csb_pad/ENABLE_H flash_csb_pad/ENABLE_INP_H flash_csb_pad/ENABLE_VDDA_H flash_csb_pad/ENABLE_VDDIO
++ flash_csb_pad/ENABLE_VSWITCH_H flash_csb_pad/HLD_H_N flash_csb_pad/HLD_OVR flash_csb_pad/IB_MODE_SEL
++ flash_csb_pad/IN flash_csb_pad/IN_H flash_csb_ieb_core flash_csb_oeb_core flash_csb_core
++ flash_csb flash_csb_pad/PAD_A_ESD_0_H flash_csb_pad/PAD_A_ESD_1_H flash_csb_pad/PAD_A_NOESD_H
++ flash_csb_pad/SLOW flash_csb_pad/TIE_HI_ESD flash_csb_pad/TIE_LO_ESD vccd1 FILLER_9/VCCHIB
++ vdda1 vddio FILLER_9/VDDIO_Q vssa1 vssd1 vssio FILLER_9/VSSIO_Q FILLER_9/VSWITCH
++ flash_csb_pad/VTRIP_SEL sky130_ef_io__gpiov2_pad
+XFILLER_107 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_129 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_118 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_696 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_5um
+XFILLER_685 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_1um
+XFILLER_674 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_663 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_652 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_641 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_630 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_5um
+XFILLER_493 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_482 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_471 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_460 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_290 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_1um
+Xmprj_pads.area1_io_pad\[6\] FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B mprj_io_analog_en[6]
++ mprj_io_analog_pol[6] mprj_io_analog_sel[6] mprj_io_dm[20] mprj_io_dm[19] mprj_io_dm[18]
++ mprj_io_enh[6] mprj_pads.area1_io_pad\[6\]/ENABLE_INP_H mprj_pads.area1_io_pad\[6\]/ENABLE_VDDA_H
++ mprj_pads.area1_io_pad\[6\]/ENABLE_VDDIO mprj_pads.area1_io_pad\[6\]/ENABLE_VSWITCH_H
++ mprj_io_hldh_n[6] mprj_io_holdover[6] mprj_io_ib_mode_sel[6] mprj_io_in[6] mprj_pads.area1_io_pad\[6\]/IN_H
++ mprj_io_inp_dis[6] mprj_io_oeb[6] mprj_io_out[6] mprj_io[6] mprj_pads.area1_io_pad\[6\]/PAD_A_ESD_0_H
++ mprj_pads.area1_io_pad\[6\]/PAD_A_ESD_1_H mprj_pads.area1_io_pad\[6\]/PAD_A_NOESD_H
++ mprj_io_slow_sel[6] mprj_pads.area1_io_pad\[6\]/TIE_HI_ESD mprj_pads.area1_io_pad\[6\]/TIE_LO_ESD
++ vccd1 FILLER_9/VCCHIB vdda1 vddio FILLER_9/VDDIO_Q vssa1 vssd1 vssio FILLER_9/VSSIO_Q
++ FILLER_9/VSWITCH mprj_io_vtrip_sel[6] sky130_ef_io__gpiov2_pad
+Xuser1_vssd_lvclmap_pad FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B user1_vssd_lvclmap_pad/DRN_LVC1
++ user1_vssd_lvclmap_pad/DRN_LVC2 user1_vssd_lvclmap_pad/SRC_BDY_LVC1 user1_vssd_lvclmap_pad/SRC_BDY_LVC2
++ user1_vssd_lvclmap_pad/BDY2_B2B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q FILLER_9/VCCHIB
++ vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__vssd_lvc_pad
+XFILLER_119 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_697 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_1um
+XFILLER_686 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_1um
+XFILLER_675 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_664 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_653 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_642 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_10um
+XFILLER_631 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_1um
+XFILLER_620 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_1um
+XFILLER_494 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_483 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_472 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_461 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_450 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_291 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_1um
+Xmprj_pads.area1_io_pad\[10\] FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B mprj_io_analog_en[10]
++ mprj_io_analog_pol[10] mprj_io_analog_sel[10] mprj_io_dm[32] mprj_io_dm[31] mprj_io_dm[30]
++ mprj_io_enh[10] mprj_pads.area1_io_pad\[10\]/ENABLE_INP_H mprj_pads.area1_io_pad\[10\]/ENABLE_VDDA_H
++ mprj_pads.area1_io_pad\[10\]/ENABLE_VDDIO mprj_pads.area1_io_pad\[10\]/ENABLE_VSWITCH_H
++ mprj_io_hldh_n[10] mprj_io_holdover[10] mprj_io_ib_mode_sel[10] mprj_io_in[10] mprj_pads.area1_io_pad\[10\]/IN_H
++ mprj_io_inp_dis[10] mprj_io_oeb[10] mprj_io_out[10] mprj_io[10] mprj_pads.area1_io_pad\[10\]/PAD_A_ESD_0_H
++ mprj_pads.area1_io_pad\[10\]/PAD_A_ESD_1_H mprj_pads.area1_io_pad\[10\]/PAD_A_NOESD_H
++ mprj_io_slow_sel[10] mprj_pads.area1_io_pad\[10\]/TIE_HI_ESD mprj_pads.area1_io_pad\[10\]/TIE_LO_ESD
++ vccd1 FILLER_9/VCCHIB vdda1 vddio FILLER_9/VDDIO_Q vssa1 vssd1 vssio FILLER_9/VSSIO_Q
++ FILLER_9/VSWITCH mprj_io_vtrip_sel[10] sky130_ef_io__gpiov2_pad
+Xflash_io1_pad FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B flash_io1_pad/ANALOG_EN flash_io1_pad/ANALOG_POL
++ flash_io1_pad/ANALOG_SEL flash_io1_pad/DM[2] flash_io1_pad/DM[1] flash_io1_pad/DM[0]
++ flash_io1_pad/ENABLE_H flash_io1_pad/ENABLE_INP_H flash_io1_pad/ENABLE_VDDA_H flash_io1_pad/ENABLE_VDDIO
++ flash_io1_pad/ENABLE_VSWITCH_H flash_io1_pad/HLD_H_N flash_io1_pad/HLD_OVR flash_io1_pad/IB_MODE_SEL
++ flash_io1_di_core flash_io1_pad/IN_H flash_io1_ieb_core flash_io1_oeb_core flash_io1_do_core
++ flash_io1 flash_io1_pad/PAD_A_ESD_0_H flash_io1_pad/PAD_A_ESD_1_H flash_io1_pad/PAD_A_NOESD_H
++ flash_io1_pad/SLOW flash_io1_pad/TIE_HI_ESD flash_io1_pad/TIE_LO_ESD vccd1 FILLER_9/VCCHIB
++ vdda1 vddio FILLER_9/VDDIO_Q vssa1 vssd1 vssio FILLER_9/VSSIO_Q FILLER_9/VSWITCH
++ flash_io1_pad/VTRIP_SEL sky130_ef_io__gpiov2_pad
+XFILLER_109 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_698 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_1um
+XFILLER_676 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_665 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_654 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_643 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_5um
+XFILLER_632 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_1um
+XFILLER_610 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+Xmgmt_vddio_hvclamp_pad\[1\] FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B mgmt_vddio_hvclamp_pad\[1\]/DRN_HVC
++ mgmt_vddio_hvclamp_pad\[1\]/SRC_BDY_HVC vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__vddio_hvc_pad
+XFILLER_495 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_484 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_473 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_462 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_451 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_440 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+Xmgmt_vssd_lvclmap_pad FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B mgmt_vssd_lvclmap_pad/DRN_LVC1
++ mgmt_vssd_lvclmap_pad/DRN_LVC2 mgmt_vssd_lvclmap_pad/SRC_BDY_LVC1 mgmt_vssd_lvclmap_pad/SRC_BDY_LVC2
++ mgmt_vssd_lvclmap_pad/BDY2_B2B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q FILLER_9/VCCHIB
++ vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__vssd_lvc_pad
+XFILLER_270 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_281 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+Xmprj_pads.area2_io_pad\[14\] FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B mprj_io_analog_en[32]
++ mprj_io_analog_pol[32] mprj_io_analog_sel[32] mprj_io_dm[98] mprj_io_dm[97] mprj_io_dm[96]
++ mprj_io_enh[32] mprj_pads.area2_io_pad\[14\]/ENABLE_INP_H mprj_pads.area2_io_pad\[14\]/ENABLE_VDDA_H
++ mprj_pads.area2_io_pad\[14\]/ENABLE_VDDIO mprj_pads.area2_io_pad\[14\]/ENABLE_VSWITCH_H
++ mprj_io_hldh_n[32] mprj_io_holdover[32] mprj_io_ib_mode_sel[32] mprj_io_in[32] mprj_pads.area2_io_pad\[14\]/IN_H
++ mprj_io_inp_dis[32] mprj_io_oeb[32] mprj_io_out[32] mprj_io[32] mprj_pads.area2_io_pad\[14\]/PAD_A_ESD_0_H
++ mprj_pads.area2_io_pad\[14\]/PAD_A_ESD_1_H mprj_pads.area2_io_pad\[14\]/PAD_A_NOESD_H
++ mprj_io_slow_sel[32] mprj_pads.area2_io_pad\[14\]/TIE_HI_ESD mprj_pads.area2_io_pad\[14\]/TIE_LO_ESD
++ vccd1 FILLER_9/VCCHIB vdda1 vddio FILLER_9/VDDIO_Q vssa1 vssd1 vssio FILLER_9/VSSIO_Q
++ FILLER_9/VSWITCH mprj_io_vtrip_sel[32] sky130_ef_io__gpiov2_pad
+Xmprj_pads.area2_io_pad\[4\] FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B mprj_io_analog_en[22]
++ mprj_io_analog_pol[22] mprj_io_analog_sel[22] mprj_io_dm[68] mprj_io_dm[67] mprj_io_dm[66]
++ mprj_io_enh[22] mprj_pads.area2_io_pad\[4\]/ENABLE_INP_H mprj_pads.area2_io_pad\[4\]/ENABLE_VDDA_H
++ mprj_pads.area2_io_pad\[4\]/ENABLE_VDDIO mprj_pads.area2_io_pad\[4\]/ENABLE_VSWITCH_H
++ mprj_io_hldh_n[22] mprj_io_holdover[22] mprj_io_ib_mode_sel[22] mprj_io_in[22] mprj_pads.area2_io_pad\[4\]/IN_H
++ mprj_io_inp_dis[22] mprj_io_oeb[22] mprj_io_out[22] mprj_io[22] mprj_pads.area2_io_pad\[4\]/PAD_A_ESD_0_H
++ mprj_pads.area2_io_pad\[4\]/PAD_A_ESD_1_H mprj_pads.area2_io_pad\[4\]/PAD_A_NOESD_H
++ mprj_io_slow_sel[22] mprj_pads.area2_io_pad\[4\]/TIE_HI_ESD mprj_pads.area2_io_pad\[4\]/TIE_LO_ESD
++ vccd1 FILLER_9/VCCHIB vdda1 vddio FILLER_9/VDDIO_Q vssa1 vssd1 vssio FILLER_9/VSSIO_Q
++ FILLER_9/VSWITCH mprj_io_vtrip_sel[22] sky130_ef_io__gpiov2_pad
+XFILLER_699 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_1um
+XFILLER_688 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_677 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_666 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_655 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_10um
+XFILLER_644 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_1um
+XFILLER_600 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_611 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_622 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_633 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_1um
+XFILLER_496 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_485 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_474 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_463 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_452 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_441 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_5um
+XFILLER_430 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_1um
+XFILLER_260 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_271 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_282 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_293 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+Xmprj_pads.area1_io_pad\[4\] FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B mprj_io_analog_en[4]
++ mprj_io_analog_pol[4] mprj_io_analog_sel[4] mprj_io_dm[14] mprj_io_dm[13] mprj_io_dm[12]
++ mprj_io_enh[4] mprj_pads.area1_io_pad\[4\]/ENABLE_INP_H mprj_pads.area1_io_pad\[4\]/ENABLE_VDDA_H
++ mprj_pads.area1_io_pad\[4\]/ENABLE_VDDIO mprj_pads.area1_io_pad\[4\]/ENABLE_VSWITCH_H
++ mprj_io_hldh_n[4] mprj_io_holdover[4] mprj_io_ib_mode_sel[4] mprj_io_in[4] mprj_pads.area1_io_pad\[4\]/IN_H
++ mprj_io_inp_dis[4] mprj_io_oeb[4] mprj_io_out[4] mprj_io[4] mprj_pads.area1_io_pad\[4\]/PAD_A_ESD_0_H
++ mprj_pads.area1_io_pad\[4\]/PAD_A_ESD_1_H mprj_pads.area1_io_pad\[4\]/PAD_A_NOESD_H
++ mprj_io_slow_sel[4] mprj_pads.area1_io_pad\[4\]/TIE_HI_ESD mprj_pads.area1_io_pad\[4\]/TIE_LO_ESD
++ vccd1 FILLER_9/VCCHIB vdda1 vddio FILLER_9/VDDIO_Q vssa1 vssd1 vssio FILLER_9/VSSIO_Q
++ FILLER_9/VSWITCH mprj_io_vtrip_sel[4] sky130_ef_io__gpiov2_pad
+XFILLER_689 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_678 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_667 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_656 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_5um
+XFILLER_645 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_1um
+XFILLER_601 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_612 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_623 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_90 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_497 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_486 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_475 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_464 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_5um
+XFILLER_453 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_5um
+XFILLER_442 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_1um
+XFILLER_431 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_1um
+XFILLER_420 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_1um
+XFILLER_250 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_261 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_272 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_283 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_294 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_679 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_668 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_10um
+XFILLER_657 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_1um
+XFILLER_646 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_1um
+XFILLER_635 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_602 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_613 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_624 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_91 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_498 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_487 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_476 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_5um
+XFILLER_465 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_1um
+XFILLER_454 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_1um
+XFILLER_443 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_1um
+XFILLER_432 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_1um
+XFILLER_410 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_240 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_251 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_262 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_273 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_284 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_295 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+Xmprj_pads.area2_io_pad\[12\] FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B mprj_io_analog_en[30]
++ mprj_io_analog_pol[30] mprj_io_analog_sel[30] mprj_io_dm[92] mprj_io_dm[91] mprj_io_dm[90]
++ mprj_io_enh[30] mprj_pads.area2_io_pad\[12\]/ENABLE_INP_H mprj_pads.area2_io_pad\[12\]/ENABLE_VDDA_H
++ mprj_pads.area2_io_pad\[12\]/ENABLE_VDDIO mprj_pads.area2_io_pad\[12\]/ENABLE_VSWITCH_H
++ mprj_io_hldh_n[30] mprj_io_holdover[30] mprj_io_ib_mode_sel[30] mprj_io_in[30] mprj_pads.area2_io_pad\[12\]/IN_H
++ mprj_io_inp_dis[30] mprj_io_oeb[30] mprj_io_out[30] mprj_io[30] mprj_pads.area2_io_pad\[12\]/PAD_A_ESD_0_H
++ mprj_pads.area2_io_pad\[12\]/PAD_A_ESD_1_H mprj_pads.area2_io_pad\[12\]/PAD_A_NOESD_H
++ mprj_io_slow_sel[30] mprj_pads.area2_io_pad\[12\]/TIE_HI_ESD mprj_pads.area2_io_pad\[12\]/TIE_LO_ESD
++ vccd1 FILLER_9/VCCHIB vdda1 vddio FILLER_9/VDDIO_Q vssa1 vssd1 vssio FILLER_9/VSSIO_Q
++ FILLER_9/VSWITCH mprj_io_vtrip_sel[30] sky130_ef_io__gpiov2_pad
+Xmgmt_vssio_hvclamp_pad\[0\] FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B mgmt_vssio_hvclamp_pad\[0\]/DRN_HVC
++ mgmt_vssio_hvclamp_pad\[0\]/SRC_BDY_HVC vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__vssio_hvc_pad
+XFILLER_603 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_10um
+XFILLER_614 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_625 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_669 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_5um
+XFILLER_658 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_1um
+XFILLER_636 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_92 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_81 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+Xmprj_pads.area2_io_pad\[2\] FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B mprj_io_analog_en[20]
++ mprj_io_analog_pol[20] mprj_io_analog_sel[20] mprj_io_dm[62] mprj_io_dm[61] mprj_io_dm[60]
++ mprj_io_enh[20] mprj_pads.area2_io_pad\[2\]/ENABLE_INP_H mprj_pads.area2_io_pad\[2\]/ENABLE_VDDA_H
++ mprj_pads.area2_io_pad\[2\]/ENABLE_VDDIO mprj_pads.area2_io_pad\[2\]/ENABLE_VSWITCH_H
++ mprj_io_hldh_n[20] mprj_io_holdover[20] mprj_io_ib_mode_sel[20] mprj_io_in[20] mprj_pads.area2_io_pad\[2\]/IN_H
++ mprj_io_inp_dis[20] mprj_io_oeb[20] mprj_io_out[20] mprj_io[20] mprj_pads.area2_io_pad\[2\]/PAD_A_ESD_0_H
++ mprj_pads.area2_io_pad\[2\]/PAD_A_ESD_1_H mprj_pads.area2_io_pad\[2\]/PAD_A_NOESD_H
++ mprj_io_slow_sel[20] mprj_pads.area2_io_pad\[2\]/TIE_HI_ESD mprj_pads.area2_io_pad\[2\]/TIE_LO_ESD
++ vccd1 FILLER_9/VCCHIB vdda1 vddio FILLER_9/VDDIO_Q vssa1 vssd1 vssio FILLER_9/VSSIO_Q
++ FILLER_9/VSWITCH mprj_io_vtrip_sel[20] sky130_ef_io__gpiov2_pad
+XFILLER_499 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_488 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_5um
+XFILLER_477 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_1um
+XFILLER_466 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_1um
+XFILLER_455 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_1um
+XFILLER_444 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_1um
+XFILLER_422 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_411 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_400 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_230 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_241 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_252 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_263 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_274 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_285 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_296 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+Xuser2_vssa_hvclamp_pad FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B user2_vssa_hvclamp_pad/DRN_HVC
++ user2_vssa_hvclamp_pad/SRC_BDY_HVC vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__vssa_hvc_pad
+Xmprj_pads.area1_io_pad\[2\] FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B mprj_io_analog_en[2]
++ mprj_io_analog_pol[2] mprj_io_analog_sel[2] mprj_io_dm[8] mprj_io_dm[7] mprj_io_dm[6]
++ mprj_io_enh[2] mprj_pads.area1_io_pad\[2\]/ENABLE_INP_H mprj_pads.area1_io_pad\[2\]/ENABLE_VDDA_H
++ mprj_pads.area1_io_pad\[2\]/ENABLE_VDDIO mprj_pads.area1_io_pad\[2\]/ENABLE_VSWITCH_H
++ mprj_io_hldh_n[2] mprj_io_holdover[2] mprj_io_ib_mode_sel[2] mprj_io_in[2] mprj_pads.area1_io_pad\[2\]/IN_H
++ mprj_io_inp_dis[2] mprj_io_oeb[2] mprj_io_out[2] mprj_io[2] mprj_pads.area1_io_pad\[2\]/PAD_A_ESD_0_H
++ mprj_pads.area1_io_pad\[2\]/PAD_A_ESD_1_H mprj_pads.area1_io_pad\[2\]/PAD_A_NOESD_H
++ mprj_io_slow_sel[2] mprj_pads.area1_io_pad\[2\]/TIE_HI_ESD mprj_pads.area1_io_pad\[2\]/TIE_LO_ESD
++ vccd1 FILLER_9/VCCHIB vdda1 vddio FILLER_9/VDDIO_Q vssa1 vssd1 vssio FILLER_9/VSSIO_Q
++ FILLER_9/VSWITCH mprj_io_vtrip_sel[2] sky130_ef_io__gpiov2_pad
+XFILLER_5 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_659 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_1um
+XFILLER_648 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_637 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_604 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_5um
+XFILLER_615 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_626 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_93 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_82 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_71 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_60 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_1um
+XFILLER_489 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_1um
+XFILLER_478 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_1um
+XFILLER_467 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_1um
+XFILLER_434 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_423 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_412 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_401 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_220 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_231 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_242 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_253 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_5um
+XFILLER_264 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_5um
+XFILLER_275 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_286 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_297 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_6 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_649 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_638 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_605 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_1um
+XFILLER_616 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_10um
+XFILLER_627 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_94 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_83 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_72 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_50 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_479 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_1um
+XFILLER_457 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_446 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_435 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_424 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_413 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_402 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_210 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_221 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_232 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_243 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_254 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_1um
+XFILLER_265 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_1um
+XFILLER_276 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_5um
+XFILLER_287 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_298 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+Xmprj_pads.area1_io_pad\[17\] FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B mprj_io_analog_en[17]
++ mprj_io_analog_pol[17] mprj_io_analog_sel[17] mprj_io_dm[53] mprj_io_dm[52] mprj_io_dm[51]
++ mprj_io_enh[17] mprj_pads.area1_io_pad\[17\]/ENABLE_INP_H mprj_pads.area1_io_pad\[17\]/ENABLE_VDDA_H
++ mprj_pads.area1_io_pad\[17\]/ENABLE_VDDIO mprj_pads.area1_io_pad\[17\]/ENABLE_VSWITCH_H
++ mprj_io_hldh_n[17] mprj_io_holdover[17] mprj_io_ib_mode_sel[17] mprj_io_in[17] mprj_pads.area1_io_pad\[17\]/IN_H
++ mprj_io_inp_dis[17] mprj_io_oeb[17] mprj_io_out[17] mprj_io[17] mprj_pads.area1_io_pad\[17\]/PAD_A_ESD_0_H
++ mprj_pads.area1_io_pad\[17\]/PAD_A_ESD_1_H mprj_pads.area1_io_pad\[17\]/PAD_A_NOESD_H
++ mprj_io_slow_sel[17] mprj_pads.area1_io_pad\[17\]/TIE_HI_ESD mprj_pads.area1_io_pad\[17\]/TIE_LO_ESD
++ vccd1 FILLER_9/VCCHIB vdda1 vddio FILLER_9/VDDIO_Q vssa1 vssd1 vssio FILLER_9/VSSIO_Q
++ FILLER_9/VSWITCH mprj_io_vtrip_sel[17] sky130_ef_io__gpiov2_pad
+Xuser1_vdda_hvclamp_pad\[1\] FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B user1_vdda_hvclamp_pad\[1\]/DRN_HVC
++ user1_vdda_hvclamp_pad\[1\]/SRC_BDY_HVC vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__vdda_hvc_pad
+Xmprj_pads.area2_io_pad\[10\] FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B mprj_io_analog_en[28]
++ mprj_io_analog_pol[28] mprj_io_analog_sel[28] mprj_io_dm[86] mprj_io_dm[85] mprj_io_dm[84]
++ mprj_io_enh[28] mprj_pads.area2_io_pad\[10\]/ENABLE_INP_H mprj_pads.area2_io_pad\[10\]/ENABLE_VDDA_H
++ mprj_pads.area2_io_pad\[10\]/ENABLE_VDDIO mprj_pads.area2_io_pad\[10\]/ENABLE_VSWITCH_H
++ mprj_io_hldh_n[28] mprj_io_holdover[28] mprj_io_ib_mode_sel[28] mprj_io_in[28] mprj_pads.area2_io_pad\[10\]/IN_H
++ mprj_io_inp_dis[28] mprj_io_oeb[28] mprj_io_out[28] mprj_io[28] mprj_pads.area2_io_pad\[10\]/PAD_A_ESD_0_H
++ mprj_pads.area2_io_pad\[10\]/PAD_A_ESD_1_H mprj_pads.area2_io_pad\[10\]/PAD_A_NOESD_H
++ mprj_io_slow_sel[28] mprj_pads.area2_io_pad\[10\]/TIE_HI_ESD mprj_pads.area2_io_pad\[10\]/TIE_LO_ESD
++ vccd1 FILLER_9/VCCHIB vdda1 vddio FILLER_9/VDDIO_Q vssa1 vssd1 vssio FILLER_9/VSSIO_Q
++ FILLER_9/VSWITCH mprj_io_vtrip_sel[28] sky130_ef_io__gpiov2_pad
+XFILLER_7 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_639 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_628 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_606 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_1um
+XFILLER_617 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_5um
+XFILLER_95 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_84 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_73 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_62 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_40 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_469 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_458 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_447 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_436 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_425 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_414 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_403 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+Xmprj_pads.area2_io_pad\[0\] FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B mprj_io_analog_en[18]
++ mprj_io_analog_pol[18] mprj_io_analog_sel[18] mprj_io_dm[56] mprj_io_dm[55] mprj_io_dm[54]
++ mprj_io_enh[18] mprj_pads.area2_io_pad\[0\]/ENABLE_INP_H mprj_pads.area2_io_pad\[0\]/ENABLE_VDDA_H
++ mprj_pads.area2_io_pad\[0\]/ENABLE_VDDIO mprj_pads.area2_io_pad\[0\]/ENABLE_VSWITCH_H
++ mprj_io_hldh_n[18] mprj_io_holdover[18] mprj_io_ib_mode_sel[18] mprj_io_in[18] mprj_pads.area2_io_pad\[0\]/IN_H
++ mprj_io_inp_dis[18] mprj_io_oeb[18] mprj_io_out[18] mprj_io[18] mprj_pads.area2_io_pad\[0\]/PAD_A_ESD_0_H
++ mprj_pads.area2_io_pad\[0\]/PAD_A_ESD_1_H mprj_pads.area2_io_pad\[0\]/PAD_A_NOESD_H
++ mprj_io_slow_sel[18] mprj_pads.area2_io_pad\[0\]/TIE_HI_ESD mprj_pads.area2_io_pad\[0\]/TIE_LO_ESD
++ vccd1 FILLER_9/VCCHIB vdda1 vddio FILLER_9/VDDIO_Q vssa1 vssd1 vssio FILLER_9/VSSIO_Q
++ FILLER_9/VSWITCH mprj_io_vtrip_sel[18] sky130_ef_io__gpiov2_pad
+XFILLER_200 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_211 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_222 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_1um
+XFILLER_233 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_1um
+XFILLER_244 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_1um
+XFILLER_255 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_1um
+XFILLER_266 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_1um
+XFILLER_277 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_1um
+XFILLER_288 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_5um
+XFILLER_299 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_8 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_629 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_10um
+XFILLER_607 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_1um
+XFILLER_618 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_1um
+XFILLER_96 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_85 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_74 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_63 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_52 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_41 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_1um
+XFILLER_30 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+Xmprj_pads.area1_io_pad\[0\] FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B mprj_io_analog_en[0]
++ mprj_io_analog_pol[0] mprj_io_analog_sel[0] mprj_io_dm[2] mprj_io_dm[1] mprj_io_dm[0]
++ mprj_io_enh[0] mprj_pads.area1_io_pad\[0\]/ENABLE_INP_H mprj_pads.area1_io_pad\[0\]/ENABLE_VDDA_H
++ mprj_pads.area1_io_pad\[0\]/ENABLE_VDDIO mprj_pads.area1_io_pad\[0\]/ENABLE_VSWITCH_H
++ mprj_io_hldh_n[0] mprj_io_holdover[0] mprj_io_ib_mode_sel[0] mprj_io_in[0] mprj_pads.area1_io_pad\[0\]/IN_H
++ mprj_io_inp_dis[0] mprj_io_oeb[0] mprj_io_out[0] mprj_io[0] mprj_pads.area1_io_pad\[0\]/PAD_A_ESD_0_H
++ mprj_pads.area1_io_pad\[0\]/PAD_A_ESD_1_H mprj_pads.area1_io_pad\[0\]/PAD_A_NOESD_H
++ mprj_io_slow_sel[0] mprj_pads.area1_io_pad\[0\]/TIE_HI_ESD mprj_pads.area1_io_pad\[0\]/TIE_LO_ESD
++ vccd1 FILLER_9/VCCHIB vdda1 vddio FILLER_9/VDDIO_Q vssa1 vssd1 vssio FILLER_9/VSSIO_Q
++ FILLER_9/VSWITCH mprj_io_vtrip_sel[0] sky130_ef_io__gpiov2_pad
+XFILLER_459 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_448 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_437 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_426 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_415 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_404 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_201 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_1um
+XFILLER_212 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_1um
+XFILLER_223 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_1um
+XFILLER_234 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_1um
+XFILLER_245 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_1um
+XFILLER_267 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_1um
+XFILLER_278 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_1um
+XFILLER_289 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_1um
+XFILLER_9 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_619 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_1um
+XFILLER_97 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_86 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_75 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_64 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_53 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_31 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_20 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_449 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_438 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_427 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_416 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_405 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_202 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_1um
+XFILLER_246 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_257 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_279 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_1um
+Xmgmt_vdda_hvclamp_pad FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B mgmt_vdda_hvclamp_pad/DRN_HVC
++ mgmt_vdda_hvclamp_pad/SRC_BDY_HVC vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__vdda_hvc_pad
+Xmprj_pads.area1_io_pad\[15\] FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B mprj_io_analog_en[15]
++ mprj_io_analog_pol[15] mprj_io_analog_sel[15] mprj_io_dm[47] mprj_io_dm[46] mprj_io_dm[45]
++ mprj_io_enh[15] mprj_pads.area1_io_pad\[15\]/ENABLE_INP_H mprj_pads.area1_io_pad\[15\]/ENABLE_VDDA_H
++ mprj_pads.area1_io_pad\[15\]/ENABLE_VDDIO mprj_pads.area1_io_pad\[15\]/ENABLE_VSWITCH_H
++ mprj_io_hldh_n[15] mprj_io_holdover[15] mprj_io_ib_mode_sel[15] mprj_io_in[15] mprj_pads.area1_io_pad\[15\]/IN_H
++ mprj_io_inp_dis[15] mprj_io_oeb[15] mprj_io_out[15] mprj_io[15] mprj_pads.area1_io_pad\[15\]/PAD_A_ESD_0_H
++ mprj_pads.area1_io_pad\[15\]/PAD_A_ESD_1_H mprj_pads.area1_io_pad\[15\]/PAD_A_NOESD_H
++ mprj_io_slow_sel[15] mprj_pads.area1_io_pad\[15\]/TIE_HI_ESD mprj_pads.area1_io_pad\[15\]/TIE_LO_ESD
++ vccd1 FILLER_9/VCCHIB vdda1 vddio FILLER_9/VDDIO_Q vssa1 vssd1 vssio FILLER_9/VSSIO_Q
++ FILLER_9/VSWITCH mprj_io_vtrip_sel[15] sky130_ef_io__gpiov2_pad
+XFILLER_609 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_98 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_1um
+XFILLER_87 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_76 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_65 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_54 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_43 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_21 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_10 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_439 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_428 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_417 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_5um
+XFILLER_406 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_5um
+XFILLER_214 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_225 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_236 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_247 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_258 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_269 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_770 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+Xmprj_pads.area2_io_pad\[19\] FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B mprj_io_analog_en[37]
++ mprj_io_analog_pol[37] mprj_io_analog_sel[37] mprj_io_dm[113] mprj_io_dm[112] mprj_io_dm[111]
++ mprj_io_enh[37] mprj_pads.area2_io_pad\[19\]/ENABLE_INP_H mprj_pads.area2_io_pad\[19\]/ENABLE_VDDA_H
++ mprj_pads.area2_io_pad\[19\]/ENABLE_VDDIO mprj_pads.area2_io_pad\[19\]/ENABLE_VSWITCH_H
++ mprj_io_hldh_n[37] mprj_io_holdover[37] mprj_io_ib_mode_sel[37] mprj_io_in[37] mprj_pads.area2_io_pad\[19\]/IN_H
++ mprj_io_inp_dis[37] mprj_io_oeb[37] mprj_io_out[37] mprj_io[37] mprj_pads.area2_io_pad\[19\]/PAD_A_ESD_0_H
++ mprj_pads.area2_io_pad\[19\]/PAD_A_ESD_1_H mprj_pads.area2_io_pad\[19\]/PAD_A_NOESD_H
++ mprj_io_slow_sel[37] mprj_pads.area2_io_pad\[19\]/TIE_HI_ESD mprj_pads.area2_io_pad\[19\]/TIE_LO_ESD
++ vccd1 FILLER_9/VCCHIB vdda1 vddio FILLER_9/VDDIO_Q vssa1 vssd1 vssio FILLER_9/VSSIO_Q
++ FILLER_9/VSWITCH mprj_io_vtrip_sel[37] sky130_ef_io__gpiov2_pad
+Xmprj_pads.area2_io_pad\[9\] FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B mprj_io_analog_en[27]
++ mprj_io_analog_pol[27] mprj_io_analog_sel[27] mprj_io_dm[83] mprj_io_dm[82] mprj_io_dm[81]
++ mprj_io_enh[27] mprj_pads.area2_io_pad\[9\]/ENABLE_INP_H mprj_pads.area2_io_pad\[9\]/ENABLE_VDDA_H
++ mprj_pads.area2_io_pad\[9\]/ENABLE_VDDIO mprj_pads.area2_io_pad\[9\]/ENABLE_VSWITCH_H
++ mprj_io_hldh_n[27] mprj_io_holdover[27] mprj_io_ib_mode_sel[27] mprj_io_in[27] mprj_pads.area2_io_pad\[9\]/IN_H
++ mprj_io_inp_dis[27] mprj_io_oeb[27] mprj_io_out[27] mprj_io[27] mprj_pads.area2_io_pad\[9\]/PAD_A_ESD_0_H
++ mprj_pads.area2_io_pad\[9\]/PAD_A_ESD_1_H mprj_pads.area2_io_pad\[9\]/PAD_A_NOESD_H
++ mprj_io_slow_sel[27] mprj_pads.area2_io_pad\[9\]/TIE_HI_ESD mprj_pads.area2_io_pad\[9\]/TIE_LO_ESD
++ vccd1 FILLER_9/VCCHIB vdda1 vddio FILLER_9/VDDIO_Q vssa1 vssd1 vssio FILLER_9/VSSIO_Q
++ FILLER_9/VSWITCH mprj_io_vtrip_sel[27] sky130_ef_io__gpiov2_pad
+Xflash_io0_pad FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B flash_io0_pad/ANALOG_EN flash_io0_pad/ANALOG_POL
++ flash_io0_pad/ANALOG_SEL flash_io0_pad/DM[2] flash_io0_pad/DM[1] flash_io0_pad/DM[0]
++ flash_io0_pad/ENABLE_H flash_io0_pad/ENABLE_INP_H flash_io0_pad/ENABLE_VDDA_H flash_io0_pad/ENABLE_VDDIO
++ flash_io0_pad/ENABLE_VSWITCH_H flash_io0_pad/HLD_H_N flash_io0_pad/HLD_OVR flash_io0_pad/IB_MODE_SEL
++ flash_io0_di_core flash_io0_pad/IN_H flash_io0_ieb_core flash_io0_oeb_core flash_io0_do_core
++ flash_io0 flash_io0_pad/PAD_A_ESD_0_H flash_io0_pad/PAD_A_ESD_1_H flash_io0_pad/PAD_A_NOESD_H
++ flash_io0_pad/SLOW flash_io0_pad/TIE_HI_ESD flash_io0_pad/TIE_LO_ESD vccd1 FILLER_9/VCCHIB
++ vdda1 vddio FILLER_9/VDDIO_Q vssa1 vssd1 vssio FILLER_9/VSSIO_Q FILLER_9/VSWITCH
++ flash_io0_pad/VTRIP_SEL sky130_ef_io__gpiov2_pad
+XFILLER_88 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_77 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_66 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_55 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_44 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_33 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_22 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_1um
+XFILLER_11 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_407 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_1um
+XFILLER_429 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_5um
+XFILLER_418 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_1um
+XFILLER_204 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_215 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_226 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_237 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_248 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_259 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_771 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_760 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_10um
+Xmgmt_corner\[0\] FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH
++ FILLER_9/VDDIO_Q FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__corner_pad
+XFILLER_590 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_5um
+Xuser1_vssa_hvclamp_pad\[0\] FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B user1_vssa_hvclamp_pad\[0\]/DRN_HVC
++ user1_vssa_hvclamp_pad\[0\]/SRC_BDY_HVC vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__vssa_hvc_pad
+Xmprj_pads.area1_io_pad\[9\] FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B mprj_io_analog_en[9]
++ mprj_io_analog_pol[9] mprj_io_analog_sel[9] mprj_io_dm[29] mprj_io_dm[28] mprj_io_dm[27]
++ mprj_io_enh[9] mprj_pads.area1_io_pad\[9\]/ENABLE_INP_H mprj_pads.area1_io_pad\[9\]/ENABLE_VDDA_H
++ mprj_pads.area1_io_pad\[9\]/ENABLE_VDDIO mprj_pads.area1_io_pad\[9\]/ENABLE_VSWITCH_H
++ mprj_io_hldh_n[9] mprj_io_holdover[9] mprj_io_ib_mode_sel[9] mprj_io_in[9] mprj_pads.area1_io_pad\[9\]/IN_H
++ mprj_io_inp_dis[9] mprj_io_oeb[9] mprj_io_out[9] mprj_io[9] mprj_pads.area1_io_pad\[9\]/PAD_A_ESD_0_H
++ mprj_pads.area1_io_pad\[9\]/PAD_A_ESD_1_H mprj_pads.area1_io_pad\[9\]/PAD_A_NOESD_H
++ mprj_io_slow_sel[9] mprj_pads.area1_io_pad\[9\]/TIE_HI_ESD mprj_pads.area1_io_pad\[9\]/TIE_LO_ESD
++ vccd1 FILLER_9/VCCHIB vdda1 vddio FILLER_9/VDDIO_Q vssa1 vssd1 vssio FILLER_9/VSSIO_Q
++ FILLER_9/VSWITCH mprj_io_vtrip_sel[9] sky130_ef_io__gpiov2_pad
+XFILLER_78 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_67 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_56 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_45 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_34 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_12 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_419 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_1um
+XFILLER_408 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_1um
+Xflash_clk_pad FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B flash_clk_pad/ANALOG_EN flash_clk_pad/ANALOG_POL
++ flash_clk_pad/ANALOG_SEL flash_clk_pad/DM[2] flash_clk_pad/DM[1] flash_clk_pad/DM[0]
++ flash_clk_pad/ENABLE_H flash_clk_pad/ENABLE_INP_H flash_clk_pad/ENABLE_VDDA_H flash_clk_pad/ENABLE_VDDIO
++ flash_clk_pad/ENABLE_VSWITCH_H flash_clk_pad/HLD_H_N flash_clk_pad/HLD_OVR flash_clk_pad/IB_MODE_SEL
++ flash_clk_pad/IN flash_clk_pad/IN_H flash_clk_ieb_core flash_clk_oeb_core flash_clk_core
++ flash_clk flash_clk_pad/PAD_A_ESD_0_H flash_clk_pad/PAD_A_ESD_1_H flash_clk_pad/PAD_A_NOESD_H
++ flash_clk_pad/SLOW flash_clk_pad/TIE_HI_ESD flash_clk_pad/TIE_LO_ESD vccd1 FILLER_9/VCCHIB
++ vdda1 vddio FILLER_9/VDDIO_Q vssa1 vssd1 vssio FILLER_9/VSSIO_Q FILLER_9/VSWITCH
++ flash_clk_pad/VTRIP_SEL sky130_ef_io__gpiov2_pad
+XFILLER_205 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_216 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_227 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_238 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_249 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_772 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_761 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_5um
+XFILLER_750 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_1um
+Xuser1_vccd_lvclamp_pad FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B user1_vccd_lvclamp_pad/DRN_LVC1
++ user1_vccd_lvclamp_pad/DRN_LVC2 user1_vccd_lvclamp_pad/SRC_BDY_LVC1 user1_vccd_lvclamp_pad/SRC_BDY_LVC2
++ user1_vccd_lvclamp_pad/BDY2_B2B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q FILLER_9/VCCHIB
++ vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__vccd_lvc_pad
+XFILLER_580 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_1um
+XFILLER_591 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_1um
+Xmprj_pads.area1_io_pad\[13\] FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B mprj_io_analog_en[13]
++ mprj_io_analog_pol[13] mprj_io_analog_sel[13] mprj_io_dm[41] mprj_io_dm[40] mprj_io_dm[39]
++ mprj_io_enh[13] mprj_pads.area1_io_pad\[13\]/ENABLE_INP_H mprj_pads.area1_io_pad\[13\]/ENABLE_VDDA_H
++ mprj_pads.area1_io_pad\[13\]/ENABLE_VDDIO mprj_pads.area1_io_pad\[13\]/ENABLE_VSWITCH_H
++ mprj_io_hldh_n[13] mprj_io_holdover[13] mprj_io_ib_mode_sel[13] mprj_io_in[13] mprj_pads.area1_io_pad\[13\]/IN_H
++ mprj_io_inp_dis[13] mprj_io_oeb[13] mprj_io_out[13] mprj_io[13] mprj_pads.area1_io_pad\[13\]/PAD_A_ESD_0_H
++ mprj_pads.area1_io_pad\[13\]/PAD_A_ESD_1_H mprj_pads.area1_io_pad\[13\]/PAD_A_NOESD_H
++ mprj_io_slow_sel[13] mprj_pads.area1_io_pad\[13\]/TIE_HI_ESD mprj_pads.area1_io_pad\[13\]/TIE_LO_ESD
++ vccd1 FILLER_9/VCCHIB vdda1 vddio FILLER_9/VDDIO_Q vssa1 vssd1 vssio FILLER_9/VSSIO_Q
++ FILLER_9/VSWITCH mprj_io_vtrip_sel[13] sky130_ef_io__gpiov2_pad
+XFILLER_79 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_1um
+XFILLER_68 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_57 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_46 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_35 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_24 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+Xuser1_corner FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__corner_pad
+XFILLER_206 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_217 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_228 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+XFILLER_239 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+Xuser2_vssd_lvclmap_pad FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B user2_vssd_lvclmap_pad/DRN_LVC1
++ user2_vssd_lvclmap_pad/DRN_LVC2 user2_vssd_lvclmap_pad/SRC_BDY_LVC1 user2_vssd_lvclmap_pad/SRC_BDY_LVC2
++ user2_vssd_lvclmap_pad/BDY2_B2B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q FILLER_9/VCCHIB
++ vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__vssd_lvc_pad
+XFILLER_773 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_10um
+XFILLER_762 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_1um
+XFILLER_751 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_1um
+XFILLER_740 FILLER_9/AMUXBUS_A FILLER_9/AMUXBUS_B vssa1 vdda1 FILLER_9/VSWITCH FILLER_9/VDDIO_Q
++ FILLER_9/VCCHIB vddio vccd1 vssio vssd1 FILLER_9/VSSIO_Q sky130_ef_io__com_bus_slice_20um
+.ends
+

@@ -1,0 +1,51 @@
+Startpoint: resetb (input port clocked by clock)
+Endpoint: _63984_ (recovery check against rising-edge clock clock)
+Path Group: **async_default**
+Path Type: max
+
+  Delay    Time   Description
+---------------------------------------------------------
+   0.00    0.00   clock clock (rise edge)
+   0.00    0.00   clock network delay (ideal)
+  10.00   10.00 ^ input external delay
+   0.34   10.34 ^ resetb (in)
+   0.00   10.34 ^ _63984_/SET_B (sky130_fd_sc_hd__dfstp_4)
+          10.34   data arrival time
+
+  50.00   50.00   clock clock (rise edge)
+   0.00   50.00   clock network delay (ideal)
+   0.00   50.00   clock reconvergence pessimism
+          50.00 ^ _63984_/CLK (sky130_fd_sc_hd__dfstp_4)
+   0.18   50.18   library recovery time
+          50.18   data required time
+---------------------------------------------------------
+          50.18   data required time
+         -10.34   data arrival time
+---------------------------------------------------------
+          39.84   slack (MET)
+
+
+Startpoint: clock (clock source 'clock')
+Endpoint: mgmt_out_data[14] (output port clocked by clock)
+Path Group: clock
+Path Type: max
+
+  Delay    Time   Description
+---------------------------------------------------------
+  25.00   25.00   clock clock (fall edge)
+   3.57   28.57   clock network delay
+          28.57 v mgmt_out_data[14] (out)
+          28.57   data arrival time
+
+  50.00   50.00   clock clock (rise edge)
+   0.00   50.00   clock network delay (ideal)
+   0.00   50.00   clock reconvergence pessimism
+ -10.00   40.00   output external delay
+          40.00   data required time
+---------------------------------------------------------
+          40.00   data required time
+         -28.57   data arrival time
+---------------------------------------------------------
+          11.43   slack (MET)
+
+

@@ -1,0 +1,1463 @@
+VERSION 5.7 ;
+  NOWIREEXTENSIONATPIN ON ;
+  DIVIDERCHAR "/" ;
+  BUSBITCHARS "[]" ;
+MACRO storage
+  CLASS BLOCK ;
+  FOREIGN storage ;
+  ORIGIN 0.000 0.000 ;
+  SIZE 444.670 BY 946.170 ;
+  PIN mgmt_addr[0]
+    DIRECTION INPUT ;
+    PORT
+      LAYER met3 ;
+        RECT 442.270 1.730 444.670 2.330 ;
+    END
+  END mgmt_addr[0]
+  PIN mgmt_addr[1]
+    DIRECTION INPUT ;
+    PORT
+      LAYER met3 ;
+        RECT 442.270 7.170 444.670 7.770 ;
+    END
+  END mgmt_addr[1]
+  PIN mgmt_addr[2]
+    DIRECTION INPUT ;
+    PORT
+      LAYER met3 ;
+        RECT 442.270 13.290 444.670 13.890 ;
+    END
+  END mgmt_addr[2]
+  PIN mgmt_addr[3]
+    DIRECTION INPUT ;
+    PORT
+      LAYER met3 ;
+        RECT 442.270 19.410 444.670 20.010 ;
+    END
+  END mgmt_addr[3]
+  PIN mgmt_addr[4]
+    DIRECTION INPUT ;
+    PORT
+      LAYER met3 ;
+        RECT 442.270 25.530 444.670 26.130 ;
+    END
+  END mgmt_addr[4]
+  PIN mgmt_addr[5]
+    DIRECTION INPUT ;
+    PORT
+      LAYER met3 ;
+        RECT 442.270 31.650 444.670 32.250 ;
+    END
+  END mgmt_addr[5]
+  PIN mgmt_addr[6]
+    DIRECTION INPUT ;
+    PORT
+      LAYER met3 ;
+        RECT 442.270 37.770 444.670 38.370 ;
+    END
+  END mgmt_addr[6]
+  PIN mgmt_addr[7]
+    DIRECTION INPUT ;
+    PORT
+      LAYER met3 ;
+        RECT 442.270 43.210 444.670 43.810 ;
+    END
+  END mgmt_addr[7]
+  PIN mgmt_addr_ro[0]
+    DIRECTION INPUT ;
+    PORT
+      LAYER met3 ;
+        RECT 442.270 49.330 444.670 49.930 ;
+    END
+  END mgmt_addr_ro[0]
+  PIN mgmt_addr_ro[1]
+    DIRECTION INPUT ;
+    PORT
+      LAYER met3 ;
+        RECT 442.270 55.450 444.670 56.050 ;
+    END
+  END mgmt_addr_ro[1]
+  PIN mgmt_addr_ro[2]
+    DIRECTION INPUT ;
+    PORT
+      LAYER met3 ;
+        RECT 442.270 61.570 444.670 62.170 ;
+    END
+  END mgmt_addr_ro[2]
+  PIN mgmt_addr_ro[3]
+    DIRECTION INPUT ;
+    PORT
+      LAYER met3 ;
+        RECT 442.270 67.690 444.670 68.290 ;
+    END
+  END mgmt_addr_ro[3]
+  PIN mgmt_addr_ro[4]
+    DIRECTION INPUT ;
+    PORT
+      LAYER met3 ;
+        RECT 442.270 73.810 444.670 74.410 ;
+    END
+  END mgmt_addr_ro[4]
+  PIN mgmt_addr_ro[5]
+    DIRECTION INPUT ;
+    PORT
+      LAYER met3 ;
+        RECT 442.270 79.250 444.670 79.850 ;
+    END
+  END mgmt_addr_ro[5]
+  PIN mgmt_addr_ro[6]
+    DIRECTION INPUT ;
+    PORT
+      LAYER met3 ;
+        RECT 442.270 85.370 444.670 85.970 ;
+    END
+  END mgmt_addr_ro[6]
+  PIN mgmt_addr_ro[7]
+    DIRECTION INPUT ;
+    PORT
+      LAYER met3 ;
+        RECT 442.270 91.490 444.670 92.090 ;
+    END
+  END mgmt_addr_ro[7]
+  PIN mgmt_clk
+    DIRECTION INPUT ;
+    PORT
+      LAYER met3 ;
+        RECT 442.270 97.610 444.670 98.210 ;
+    END
+  END mgmt_clk
+  PIN mgmt_ena[0]
+    DIRECTION INPUT ;
+    PORT
+      LAYER met3 ;
+        RECT 442.270 103.730 444.670 104.330 ;
+    END
+  END mgmt_ena[0]
+  PIN mgmt_ena[1]
+    DIRECTION INPUT ;
+    PORT
+      LAYER met3 ;
+        RECT 442.270 109.850 444.670 110.450 ;
+    END
+  END mgmt_ena[1]
+  PIN mgmt_ena_ro
+    DIRECTION INPUT ;
+    PORT
+      LAYER met3 ;
+        RECT 442.270 115.290 444.670 115.890 ;
+    END
+  END mgmt_ena_ro
+  PIN mgmt_rdata[0]
+    DIRECTION OUTPUT TRISTATE ;
+    PORT
+      LAYER met3 ;
+        RECT 442.270 121.410 444.670 122.010 ;
+    END
+  END mgmt_rdata[0]
+  PIN mgmt_rdata[10]
+    DIRECTION OUTPUT TRISTATE ;
+    PORT
+      LAYER met3 ;
+        RECT 442.270 181.930 444.670 182.530 ;
+    END
+  END mgmt_rdata[10]
+  PIN mgmt_rdata[11]
+    DIRECTION OUTPUT TRISTATE ;
+    PORT
+      LAYER met3 ;
+        RECT 442.270 188.050 444.670 188.650 ;
+    END
+  END mgmt_rdata[11]
+  PIN mgmt_rdata[12]
+    DIRECTION OUTPUT TRISTATE ;
+    PORT
+      LAYER met3 ;
+        RECT 442.270 193.490 444.670 194.090 ;
+    END
+  END mgmt_rdata[12]
+  PIN mgmt_rdata[13]
+    DIRECTION OUTPUT TRISTATE ;
+    PORT
+      LAYER met3 ;
+        RECT 442.270 199.610 444.670 200.210 ;
+    END
+  END mgmt_rdata[13]
+  PIN mgmt_rdata[14]
+    DIRECTION OUTPUT TRISTATE ;
+    PORT
+      LAYER met3 ;
+        RECT 442.270 205.730 444.670 206.330 ;
+    END
+  END mgmt_rdata[14]
+  PIN mgmt_rdata[15]
+    DIRECTION OUTPUT TRISTATE ;
+    PORT
+      LAYER met3 ;
+        RECT 442.270 211.850 444.670 212.450 ;
+    END
+  END mgmt_rdata[15]
+  PIN mgmt_rdata[16]
+    DIRECTION OUTPUT TRISTATE ;
+    PORT
+      LAYER met3 ;
+        RECT 442.270 217.970 444.670 218.570 ;
+    END
+  END mgmt_rdata[16]
+  PIN mgmt_rdata[17]
+    DIRECTION OUTPUT TRISTATE ;
+    PORT
+      LAYER met3 ;
+        RECT 442.270 224.090 444.670 224.690 ;
+    END
+  END mgmt_rdata[17]
+  PIN mgmt_rdata[18]
+    DIRECTION OUTPUT TRISTATE ;
+    PORT
+      LAYER met3 ;
+        RECT 442.270 229.530 444.670 230.130 ;
+    END
+  END mgmt_rdata[18]
+  PIN mgmt_rdata[19]
+    DIRECTION OUTPUT TRISTATE ;
+    PORT
+      LAYER met3 ;
+        RECT 442.270 235.650 444.670 236.250 ;
+    END
+  END mgmt_rdata[19]
+  PIN mgmt_rdata[1]
+    DIRECTION OUTPUT TRISTATE ;
+    PORT
+      LAYER met3 ;
+        RECT 442.270 127.530 444.670 128.130 ;
+    END
+  END mgmt_rdata[1]
+  PIN mgmt_rdata[20]
+    DIRECTION OUTPUT TRISTATE ;
+    PORT
+      LAYER met3 ;
+        RECT 442.270 241.770 444.670 242.370 ;
+    END
+  END mgmt_rdata[20]
+  PIN mgmt_rdata[21]
+    DIRECTION OUTPUT TRISTATE ;
+    PORT
+      LAYER met3 ;
+        RECT 442.270 247.890 444.670 248.490 ;
+    END
+  END mgmt_rdata[21]
+  PIN mgmt_rdata[22]
+    DIRECTION OUTPUT TRISTATE ;
+    PORT
+      LAYER met3 ;
+        RECT 442.270 254.010 444.670 254.610 ;
+    END
+  END mgmt_rdata[22]
+  PIN mgmt_rdata[23]
+    DIRECTION OUTPUT TRISTATE ;
+    PORT
+      LAYER met3 ;
+        RECT 442.270 260.130 444.670 260.730 ;
+    END
+  END mgmt_rdata[23]
+  PIN mgmt_rdata[24]
+    DIRECTION OUTPUT TRISTATE ;
+    PORT
+      LAYER met3 ;
+        RECT 442.270 266.250 444.670 266.850 ;
+    END
+  END mgmt_rdata[24]
+  PIN mgmt_rdata[25]
+    DIRECTION OUTPUT TRISTATE ;
+    PORT
+      LAYER met3 ;
+        RECT 442.270 271.690 444.670 272.290 ;
+    END
+  END mgmt_rdata[25]
+  PIN mgmt_rdata[26]
+    DIRECTION OUTPUT TRISTATE ;
+    PORT
+      LAYER met3 ;
+        RECT 442.270 277.810 444.670 278.410 ;
+    END
+  END mgmt_rdata[26]
+  PIN mgmt_rdata[27]
+    DIRECTION OUTPUT TRISTATE ;
+    PORT
+      LAYER met3 ;
+        RECT 442.270 283.930 444.670 284.530 ;
+    END
+  END mgmt_rdata[27]
+  PIN mgmt_rdata[28]
+    DIRECTION OUTPUT TRISTATE ;
+    PORT
+      LAYER met3 ;
+        RECT 442.270 290.050 444.670 290.650 ;
+    END
+  END mgmt_rdata[28]
+  PIN mgmt_rdata[29]
+    DIRECTION OUTPUT TRISTATE ;
+    PORT
+      LAYER met3 ;
+        RECT 442.270 296.170 444.670 296.770 ;
+    END
+  END mgmt_rdata[29]
+  PIN mgmt_rdata[2]
+    DIRECTION OUTPUT TRISTATE ;
+    PORT
+      LAYER met3 ;
+        RECT 442.270 133.650 444.670 134.250 ;
+    END
+  END mgmt_rdata[2]
+  PIN mgmt_rdata[30]
+    DIRECTION OUTPUT TRISTATE ;
+    PORT
+      LAYER met3 ;
+        RECT 442.270 302.290 444.670 302.890 ;
+    END
+  END mgmt_rdata[30]
+  PIN mgmt_rdata[31]
+    DIRECTION OUTPUT TRISTATE ;
+    PORT
+      LAYER met3 ;
+        RECT 442.270 307.730 444.670 308.330 ;
+    END
+  END mgmt_rdata[31]
+  PIN mgmt_rdata[32]
+    DIRECTION OUTPUT TRISTATE ;
+    PORT
+      LAYER met3 ;
+        RECT 442.270 313.850 444.670 314.450 ;
+    END
+  END mgmt_rdata[32]
+  PIN mgmt_rdata[33]
+    DIRECTION OUTPUT TRISTATE ;
+    PORT
+      LAYER met3 ;
+        RECT 442.270 319.970 444.670 320.570 ;
+    END
+  END mgmt_rdata[33]
+  PIN mgmt_rdata[34]
+    DIRECTION OUTPUT TRISTATE ;
+    PORT
+      LAYER met3 ;
+        RECT 442.270 326.090 444.670 326.690 ;
+    END
+  END mgmt_rdata[34]
+  PIN mgmt_rdata[35]
+    DIRECTION OUTPUT TRISTATE ;
+    PORT
+      LAYER met3 ;
+        RECT 442.270 332.210 444.670 332.810 ;
+    END
+  END mgmt_rdata[35]
+  PIN mgmt_rdata[36]
+    DIRECTION OUTPUT TRISTATE ;
+    PORT
+      LAYER met3 ;
+        RECT 442.270 338.330 444.670 338.930 ;
+    END
+  END mgmt_rdata[36]
+  PIN mgmt_rdata[37]
+    DIRECTION OUTPUT TRISTATE ;
+    PORT
+      LAYER met3 ;
+        RECT 442.270 343.770 444.670 344.370 ;
+    END
+  END mgmt_rdata[37]
+  PIN mgmt_rdata[38]
+    DIRECTION OUTPUT TRISTATE ;
+    PORT
+      LAYER met3 ;
+        RECT 442.270 349.890 444.670 350.490 ;
+    END
+  END mgmt_rdata[38]
+  PIN mgmt_rdata[39]
+    DIRECTION OUTPUT TRISTATE ;
+    PORT
+      LAYER met3 ;
+        RECT 442.270 356.010 444.670 356.610 ;
+    END
+  END mgmt_rdata[39]
+  PIN mgmt_rdata[3]
+    DIRECTION OUTPUT TRISTATE ;
+    PORT
+      LAYER met3 ;
+        RECT 442.270 139.770 444.670 140.370 ;
+    END
+  END mgmt_rdata[3]
+  PIN mgmt_rdata[40]
+    DIRECTION OUTPUT TRISTATE ;
+    PORT
+      LAYER met3 ;
+        RECT 442.270 362.130 444.670 362.730 ;
+    END
+  END mgmt_rdata[40]
+  PIN mgmt_rdata[41]
+    DIRECTION OUTPUT TRISTATE ;
+    PORT
+      LAYER met3 ;
+        RECT 442.270 368.250 444.670 368.850 ;
+    END
+  END mgmt_rdata[41]
+  PIN mgmt_rdata[42]
+    DIRECTION OUTPUT TRISTATE ;
+    PORT
+      LAYER met3 ;
+        RECT 442.270 374.370 444.670 374.970 ;
+    END
+  END mgmt_rdata[42]
+  PIN mgmt_rdata[43]
+    DIRECTION OUTPUT TRISTATE ;
+    PORT
+      LAYER met3 ;
+        RECT 442.270 380.490 444.670 381.090 ;
+    END
+  END mgmt_rdata[43]
+  PIN mgmt_rdata[44]
+    DIRECTION OUTPUT TRISTATE ;
+    PORT
+      LAYER met3 ;
+        RECT 442.270 385.930 444.670 386.530 ;
+    END
+  END mgmt_rdata[44]
+  PIN mgmt_rdata[45]
+    DIRECTION OUTPUT TRISTATE ;
+    PORT
+      LAYER met3 ;
+        RECT 442.270 392.050 444.670 392.650 ;
+    END
+  END mgmt_rdata[45]
+  PIN mgmt_rdata[46]
+    DIRECTION OUTPUT TRISTATE ;
+    PORT
+      LAYER met3 ;
+        RECT 442.270 398.170 444.670 398.770 ;
+    END
+  END mgmt_rdata[46]
+  PIN mgmt_rdata[47]
+    DIRECTION OUTPUT TRISTATE ;
+    PORT
+      LAYER met3 ;
+        RECT 442.270 404.290 444.670 404.890 ;
+    END
+  END mgmt_rdata[47]
+  PIN mgmt_rdata[48]
+    DIRECTION OUTPUT TRISTATE ;
+    PORT
+      LAYER met3 ;
+        RECT 442.270 410.410 444.670 411.010 ;
+    END
+  END mgmt_rdata[48]
+  PIN mgmt_rdata[49]
+    DIRECTION OUTPUT TRISTATE ;
+    PORT
+      LAYER met3 ;
+        RECT 442.270 416.530 444.670 417.130 ;
+    END
+  END mgmt_rdata[49]
+  PIN mgmt_rdata[4]
+    DIRECTION OUTPUT TRISTATE ;
+    PORT
+      LAYER met3 ;
+        RECT 442.270 145.890 444.670 146.490 ;
+    END
+  END mgmt_rdata[4]
+  PIN mgmt_rdata[50]
+    DIRECTION OUTPUT TRISTATE ;
+    PORT
+      LAYER met3 ;
+        RECT 442.270 421.970 444.670 422.570 ;
+    END
+  END mgmt_rdata[50]
+  PIN mgmt_rdata[51]
+    DIRECTION OUTPUT TRISTATE ;
+    PORT
+      LAYER met3 ;
+        RECT 442.270 428.090 444.670 428.690 ;
+    END
+  END mgmt_rdata[51]
+  PIN mgmt_rdata[52]
+    DIRECTION OUTPUT TRISTATE ;
+    PORT
+      LAYER met3 ;
+        RECT 442.270 434.210 444.670 434.810 ;
+    END
+  END mgmt_rdata[52]
+  PIN mgmt_rdata[53]
+    DIRECTION OUTPUT TRISTATE ;
+    PORT
+      LAYER met3 ;
+        RECT 442.270 440.330 444.670 440.930 ;
+    END
+  END mgmt_rdata[53]
+  PIN mgmt_rdata[54]
+    DIRECTION OUTPUT TRISTATE ;
+    PORT
+      LAYER met3 ;
+        RECT 442.270 446.450 444.670 447.050 ;
+    END
+  END mgmt_rdata[54]
+  PIN mgmt_rdata[55]
+    DIRECTION OUTPUT TRISTATE ;
+    PORT
+      LAYER met3 ;
+        RECT 442.270 452.570 444.670 453.170 ;
+    END
+  END mgmt_rdata[55]
+  PIN mgmt_rdata[56]
+    DIRECTION OUTPUT TRISTATE ;
+    PORT
+      LAYER met3 ;
+        RECT 442.270 458.010 444.670 458.610 ;
+    END
+  END mgmt_rdata[56]
+  PIN mgmt_rdata[57]
+    DIRECTION OUTPUT TRISTATE ;
+    PORT
+      LAYER met3 ;
+        RECT 442.270 464.130 444.670 464.730 ;
+    END
+  END mgmt_rdata[57]
+  PIN mgmt_rdata[58]
+    DIRECTION OUTPUT TRISTATE ;
+    PORT
+      LAYER met3 ;
+        RECT 442.270 470.250 444.670 470.850 ;
+    END
+  END mgmt_rdata[58]
+  PIN mgmt_rdata[59]
+    DIRECTION OUTPUT TRISTATE ;
+    PORT
+      LAYER met3 ;
+        RECT 442.270 476.370 444.670 476.970 ;
+    END
+  END mgmt_rdata[59]
+  PIN mgmt_rdata[5]
+    DIRECTION OUTPUT TRISTATE ;
+    PORT
+      LAYER met3 ;
+        RECT 442.270 152.010 444.670 152.610 ;
+    END
+  END mgmt_rdata[5]
+  PIN mgmt_rdata[60]
+    DIRECTION OUTPUT TRISTATE ;
+    PORT
+      LAYER met3 ;
+        RECT 442.270 482.490 444.670 483.090 ;
+    END
+  END mgmt_rdata[60]
+  PIN mgmt_rdata[61]
+    DIRECTION OUTPUT TRISTATE ;
+    PORT
+      LAYER met3 ;
+        RECT 442.270 488.610 444.670 489.210 ;
+    END
+  END mgmt_rdata[61]
+  PIN mgmt_rdata[62]
+    DIRECTION OUTPUT TRISTATE ;
+    PORT
+      LAYER met3 ;
+        RECT 442.270 494.730 444.670 495.330 ;
+    END
+  END mgmt_rdata[62]
+  PIN mgmt_rdata[63]
+    DIRECTION OUTPUT TRISTATE ;
+    PORT
+      LAYER met3 ;
+        RECT 442.270 500.170 444.670 500.770 ;
+    END
+  END mgmt_rdata[63]
+  PIN mgmt_rdata[6]
+    DIRECTION OUTPUT TRISTATE ;
+    PORT
+      LAYER met3 ;
+        RECT 442.270 157.450 444.670 158.050 ;
+    END
+  END mgmt_rdata[6]
+  PIN mgmt_rdata[7]
+    DIRECTION OUTPUT TRISTATE ;
+    PORT
+      LAYER met3 ;
+        RECT 442.270 163.570 444.670 164.170 ;
+    END
+  END mgmt_rdata[7]
+  PIN mgmt_rdata[8]
+    DIRECTION OUTPUT TRISTATE ;
+    PORT
+      LAYER met3 ;
+        RECT 442.270 169.690 444.670 170.290 ;
+    END
+  END mgmt_rdata[8]
+  PIN mgmt_rdata[9]
+    DIRECTION OUTPUT TRISTATE ;
+    PORT
+      LAYER met3 ;
+        RECT 442.270 175.810 444.670 176.410 ;
+    END
+  END mgmt_rdata[9]
+  PIN mgmt_rdata_ro[0]
+    DIRECTION OUTPUT TRISTATE ;
+    PORT
+      LAYER met3 ;
+        RECT 442.270 506.290 444.670 506.890 ;
+    END
+  END mgmt_rdata_ro[0]
+  PIN mgmt_rdata_ro[10]
+    DIRECTION OUTPUT TRISTATE ;
+    PORT
+      LAYER met3 ;
+        RECT 442.270 566.810 444.670 567.410 ;
+    END
+  END mgmt_rdata_ro[10]
+  PIN mgmt_rdata_ro[11]
+    DIRECTION OUTPUT TRISTATE ;
+    PORT
+      LAYER met3 ;
+        RECT 442.270 572.250 444.670 572.850 ;
+    END
+  END mgmt_rdata_ro[11]
+  PIN mgmt_rdata_ro[12]
+    DIRECTION OUTPUT TRISTATE ;
+    PORT
+      LAYER met3 ;
+        RECT 442.270 578.370 444.670 578.970 ;
+    END
+  END mgmt_rdata_ro[12]
+  PIN mgmt_rdata_ro[13]
+    DIRECTION OUTPUT TRISTATE ;
+    PORT
+      LAYER met3 ;
+        RECT 442.270 584.490 444.670 585.090 ;
+    END
+  END mgmt_rdata_ro[13]
+  PIN mgmt_rdata_ro[14]
+    DIRECTION OUTPUT TRISTATE ;
+    PORT
+      LAYER met3 ;
+        RECT 442.270 590.610 444.670 591.210 ;
+    END
+  END mgmt_rdata_ro[14]
+  PIN mgmt_rdata_ro[15]
+    DIRECTION OUTPUT TRISTATE ;
+    PORT
+      LAYER met3 ;
+        RECT 442.270 596.730 444.670 597.330 ;
+    END
+  END mgmt_rdata_ro[15]
+  PIN mgmt_rdata_ro[16]
+    DIRECTION OUTPUT TRISTATE ;
+    PORT
+      LAYER met3 ;
+        RECT 442.270 602.850 444.670 603.450 ;
+    END
+  END mgmt_rdata_ro[16]
+  PIN mgmt_rdata_ro[17]
+    DIRECTION OUTPUT TRISTATE ;
+    PORT
+      LAYER met3 ;
+        RECT 442.270 608.970 444.670 609.570 ;
+    END
+  END mgmt_rdata_ro[17]
+  PIN mgmt_rdata_ro[18]
+    DIRECTION OUTPUT TRISTATE ;
+    PORT
+      LAYER met3 ;
+        RECT 442.270 614.410 444.670 615.010 ;
+    END
+  END mgmt_rdata_ro[18]
+  PIN mgmt_rdata_ro[19]
+    DIRECTION OUTPUT TRISTATE ;
+    PORT
+      LAYER met3 ;
+        RECT 442.270 620.530 444.670 621.130 ;
+    END
+  END mgmt_rdata_ro[19]
+  PIN mgmt_rdata_ro[1]
+    DIRECTION OUTPUT TRISTATE ;
+    PORT
+      LAYER met3 ;
+        RECT 442.270 512.410 444.670 513.010 ;
+    END
+  END mgmt_rdata_ro[1]
+  PIN mgmt_rdata_ro[20]
+    DIRECTION OUTPUT TRISTATE ;
+    PORT
+      LAYER met3 ;
+        RECT 442.270 626.650 444.670 627.250 ;
+    END
+  END mgmt_rdata_ro[20]
+  PIN mgmt_rdata_ro[21]
+    DIRECTION OUTPUT TRISTATE ;
+    PORT
+      LAYER met3 ;
+        RECT 442.270 632.770 444.670 633.370 ;
+    END
+  END mgmt_rdata_ro[21]
+  PIN mgmt_rdata_ro[22]
+    DIRECTION OUTPUT TRISTATE ;
+    PORT
+      LAYER met3 ;
+        RECT 442.270 638.890 444.670 639.490 ;
+    END
+  END mgmt_rdata_ro[22]
+  PIN mgmt_rdata_ro[23]
+    DIRECTION OUTPUT TRISTATE ;
+    PORT
+      LAYER met3 ;
+        RECT 442.270 645.010 444.670 645.610 ;
+    END
+  END mgmt_rdata_ro[23]
+  PIN mgmt_rdata_ro[24]
+    DIRECTION OUTPUT TRISTATE ;
+    PORT
+      LAYER met3 ;
+        RECT 442.270 650.450 444.670 651.050 ;
+    END
+  END mgmt_rdata_ro[24]
+  PIN mgmt_rdata_ro[25]
+    DIRECTION OUTPUT TRISTATE ;
+    PORT
+      LAYER met3 ;
+        RECT 442.270 656.570 444.670 657.170 ;
+    END
+  END mgmt_rdata_ro[25]
+  PIN mgmt_rdata_ro[26]
+    DIRECTION OUTPUT TRISTATE ;
+    PORT
+      LAYER met3 ;
+        RECT 442.270 662.690 444.670 663.290 ;
+    END
+  END mgmt_rdata_ro[26]
+  PIN mgmt_rdata_ro[27]
+    DIRECTION OUTPUT TRISTATE ;
+    PORT
+      LAYER met3 ;
+        RECT 442.270 668.810 444.670 669.410 ;
+    END
+  END mgmt_rdata_ro[27]
+  PIN mgmt_rdata_ro[28]
+    DIRECTION OUTPUT TRISTATE ;
+    PORT
+      LAYER met3 ;
+        RECT 442.270 674.930 444.670 675.530 ;
+    END
+  END mgmt_rdata_ro[28]
+  PIN mgmt_rdata_ro[29]
+    DIRECTION OUTPUT TRISTATE ;
+    PORT
+      LAYER met3 ;
+        RECT 442.270 681.050 444.670 681.650 ;
+    END
+  END mgmt_rdata_ro[29]
+  PIN mgmt_rdata_ro[2]
+    DIRECTION OUTPUT TRISTATE ;
+    PORT
+      LAYER met3 ;
+        RECT 442.270 518.530 444.670 519.130 ;
+    END
+  END mgmt_rdata_ro[2]
+  PIN mgmt_rdata_ro[30]
+    DIRECTION OUTPUT TRISTATE ;
+    PORT
+      LAYER met3 ;
+        RECT 442.270 686.490 444.670 687.090 ;
+    END
+  END mgmt_rdata_ro[30]
+  PIN mgmt_rdata_ro[31]
+    DIRECTION OUTPUT TRISTATE ;
+    PORT
+      LAYER met3 ;
+        RECT 442.270 692.610 444.670 693.210 ;
+    END
+  END mgmt_rdata_ro[31]
+  PIN mgmt_rdata_ro[3]
+    DIRECTION OUTPUT TRISTATE ;
+    PORT
+      LAYER met3 ;
+        RECT 442.270 524.650 444.670 525.250 ;
+    END
+  END mgmt_rdata_ro[3]
+  PIN mgmt_rdata_ro[4]
+    DIRECTION OUTPUT TRISTATE ;
+    PORT
+      LAYER met3 ;
+        RECT 442.270 530.770 444.670 531.370 ;
+    END
+  END mgmt_rdata_ro[4]
+  PIN mgmt_rdata_ro[5]
+    DIRECTION OUTPUT TRISTATE ;
+    PORT
+      LAYER met3 ;
+        RECT 442.270 536.210 444.670 536.810 ;
+    END
+  END mgmt_rdata_ro[5]
+  PIN mgmt_rdata_ro[6]
+    DIRECTION OUTPUT TRISTATE ;
+    PORT
+      LAYER met3 ;
+        RECT 442.270 542.330 444.670 542.930 ;
+    END
+  END mgmt_rdata_ro[6]
+  PIN mgmt_rdata_ro[7]
+    DIRECTION OUTPUT TRISTATE ;
+    PORT
+      LAYER met3 ;
+        RECT 442.270 548.450 444.670 549.050 ;
+    END
+  END mgmt_rdata_ro[7]
+  PIN mgmt_rdata_ro[8]
+    DIRECTION OUTPUT TRISTATE ;
+    PORT
+      LAYER met3 ;
+        RECT 442.270 554.570 444.670 555.170 ;
+    END
+  END mgmt_rdata_ro[8]
+  PIN mgmt_rdata_ro[9]
+    DIRECTION OUTPUT TRISTATE ;
+    PORT
+      LAYER met3 ;
+        RECT 442.270 560.690 444.670 561.290 ;
+    END
+  END mgmt_rdata_ro[9]
+  PIN mgmt_wdata[0]
+    DIRECTION INPUT ;
+    PORT
+      LAYER met3 ;
+        RECT 442.270 698.730 444.670 699.330 ;
+    END
+  END mgmt_wdata[0]
+  PIN mgmt_wdata[10]
+    DIRECTION INPUT ;
+    PORT
+      LAYER met3 ;
+        RECT 442.270 759.250 444.670 759.850 ;
+    END
+  END mgmt_wdata[10]
+  PIN mgmt_wdata[11]
+    DIRECTION INPUT ;
+    PORT
+      LAYER met3 ;
+        RECT 442.270 764.690 444.670 765.290 ;
+    END
+  END mgmt_wdata[11]
+  PIN mgmt_wdata[12]
+    DIRECTION INPUT ;
+    PORT
+      LAYER met3 ;
+        RECT 442.270 770.810 444.670 771.410 ;
+    END
+  END mgmt_wdata[12]
+  PIN mgmt_wdata[13]
+    DIRECTION INPUT ;
+    PORT
+      LAYER met3 ;
+        RECT 442.270 776.930 444.670 777.530 ;
+    END
+  END mgmt_wdata[13]
+  PIN mgmt_wdata[14]
+    DIRECTION INPUT ;
+    PORT
+      LAYER met3 ;
+        RECT 442.270 783.050 444.670 783.650 ;
+    END
+  END mgmt_wdata[14]
+  PIN mgmt_wdata[15]
+    DIRECTION INPUT ;
+    PORT
+      LAYER met3 ;
+        RECT 442.270 789.170 444.670 789.770 ;
+    END
+  END mgmt_wdata[15]
+  PIN mgmt_wdata[16]
+    DIRECTION INPUT ;
+    PORT
+      LAYER met3 ;
+        RECT 442.270 795.290 444.670 795.890 ;
+    END
+  END mgmt_wdata[16]
+  PIN mgmt_wdata[17]
+    DIRECTION INPUT ;
+    PORT
+      LAYER met3 ;
+        RECT 442.270 800.730 444.670 801.330 ;
+    END
+  END mgmt_wdata[17]
+  PIN mgmt_wdata[18]
+    DIRECTION INPUT ;
+    PORT
+      LAYER met3 ;
+        RECT 442.270 806.850 444.670 807.450 ;
+    END
+  END mgmt_wdata[18]
+  PIN mgmt_wdata[19]
+    DIRECTION INPUT ;
+    PORT
+      LAYER met3 ;
+        RECT 442.270 812.970 444.670 813.570 ;
+    END
+  END mgmt_wdata[19]
+  PIN mgmt_wdata[1]
+    DIRECTION INPUT ;
+    PORT
+      LAYER met3 ;
+        RECT 442.270 704.850 444.670 705.450 ;
+    END
+  END mgmt_wdata[1]
+  PIN mgmt_wdata[20]
+    DIRECTION INPUT ;
+    PORT
+      LAYER met3 ;
+        RECT 442.270 819.090 444.670 819.690 ;
+    END
+  END mgmt_wdata[20]
+  PIN mgmt_wdata[21]
+    DIRECTION INPUT ;
+    PORT
+      LAYER met3 ;
+        RECT 442.270 825.210 444.670 825.810 ;
+    END
+  END mgmt_wdata[21]
+  PIN mgmt_wdata[22]
+    DIRECTION INPUT ;
+    PORT
+      LAYER met3 ;
+        RECT 442.270 831.330 444.670 831.930 ;
+    END
+  END mgmt_wdata[22]
+  PIN mgmt_wdata[23]
+    DIRECTION INPUT ;
+    PORT
+      LAYER met3 ;
+        RECT 442.270 837.450 444.670 838.050 ;
+    END
+  END mgmt_wdata[23]
+  PIN mgmt_wdata[24]
+    DIRECTION INPUT ;
+    PORT
+      LAYER met3 ;
+        RECT 442.270 842.890 444.670 843.490 ;
+    END
+  END mgmt_wdata[24]
+  PIN mgmt_wdata[25]
+    DIRECTION INPUT ;
+    PORT
+      LAYER met3 ;
+        RECT 442.270 849.010 444.670 849.610 ;
+    END
+  END mgmt_wdata[25]
+  PIN mgmt_wdata[26]
+    DIRECTION INPUT ;
+    PORT
+      LAYER met3 ;
+        RECT 442.270 855.130 444.670 855.730 ;
+    END
+  END mgmt_wdata[26]
+  PIN mgmt_wdata[27]
+    DIRECTION INPUT ;
+    PORT
+      LAYER met3 ;
+        RECT 442.270 861.250 444.670 861.850 ;
+    END
+  END mgmt_wdata[27]
+  PIN mgmt_wdata[28]
+    DIRECTION INPUT ;
+    PORT
+      LAYER met3 ;
+        RECT 442.270 867.370 444.670 867.970 ;
+    END
+  END mgmt_wdata[28]
+  PIN mgmt_wdata[29]
+    DIRECTION INPUT ;
+    PORT
+      LAYER met3 ;
+        RECT 442.270 873.490 444.670 874.090 ;
+    END
+  END mgmt_wdata[29]
+  PIN mgmt_wdata[2]
+    DIRECTION INPUT ;
+    PORT
+      LAYER met3 ;
+        RECT 442.270 710.970 444.670 711.570 ;
+    END
+  END mgmt_wdata[2]
+  PIN mgmt_wdata[30]
+    DIRECTION INPUT ;
+    PORT
+      LAYER met3 ;
+        RECT 442.270 878.930 444.670 879.530 ;
+    END
+  END mgmt_wdata[30]
+  PIN mgmt_wdata[31]
+    DIRECTION INPUT ;
+    PORT
+      LAYER met3 ;
+        RECT 442.270 885.050 444.670 885.650 ;
+    END
+  END mgmt_wdata[31]
+  PIN mgmt_wdata[3]
+    DIRECTION INPUT ;
+    PORT
+      LAYER met3 ;
+        RECT 442.270 717.090 444.670 717.690 ;
+    END
+  END mgmt_wdata[3]
+  PIN mgmt_wdata[4]
+    DIRECTION INPUT ;
+    PORT
+      LAYER met3 ;
+        RECT 442.270 723.210 444.670 723.810 ;
+    END
+  END mgmt_wdata[4]
+  PIN mgmt_wdata[5]
+    DIRECTION INPUT ;
+    PORT
+      LAYER met3 ;
+        RECT 442.270 728.650 444.670 729.250 ;
+    END
+  END mgmt_wdata[5]
+  PIN mgmt_wdata[6]
+    DIRECTION INPUT ;
+    PORT
+      LAYER met3 ;
+        RECT 442.270 734.770 444.670 735.370 ;
+    END
+  END mgmt_wdata[6]
+  PIN mgmt_wdata[7]
+    DIRECTION INPUT ;
+    PORT
+      LAYER met3 ;
+        RECT 442.270 740.890 444.670 741.490 ;
+    END
+  END mgmt_wdata[7]
+  PIN mgmt_wdata[8]
+    DIRECTION INPUT ;
+    PORT
+      LAYER met3 ;
+        RECT 442.270 747.010 444.670 747.610 ;
+    END
+  END mgmt_wdata[8]
+  PIN mgmt_wdata[9]
+    DIRECTION INPUT ;
+    PORT
+      LAYER met3 ;
+        RECT 442.270 753.130 444.670 753.730 ;
+    END
+  END mgmt_wdata[9]
+  PIN mgmt_wen[0]
+    DIRECTION INPUT ;
+    PORT
+      LAYER met3 ;
+        RECT 442.270 891.170 444.670 891.770 ;
+    END
+  END mgmt_wen[0]
+  PIN mgmt_wen[1]
+    DIRECTION INPUT ;
+    PORT
+      LAYER met3 ;
+        RECT 442.270 897.290 444.670 897.890 ;
+    END
+  END mgmt_wen[1]
+  PIN mgmt_wen_mask[0]
+    DIRECTION INPUT ;
+    PORT
+      LAYER met3 ;
+        RECT 442.270 903.410 444.670 904.010 ;
+    END
+  END mgmt_wen_mask[0]
+  PIN mgmt_wen_mask[1]
+    DIRECTION INPUT ;
+    PORT
+      LAYER met3 ;
+        RECT 442.270 909.530 444.670 910.130 ;
+    END
+  END mgmt_wen_mask[1]
+  PIN mgmt_wen_mask[2]
+    DIRECTION INPUT ;
+    PORT
+      LAYER met3 ;
+        RECT 442.270 914.970 444.670 915.570 ;
+    END
+  END mgmt_wen_mask[2]
+  PIN mgmt_wen_mask[3]
+    DIRECTION INPUT ;
+    PORT
+      LAYER met3 ;
+        RECT 442.270 921.090 444.670 921.690 ;
+    END
+  END mgmt_wen_mask[3]
+  PIN mgmt_wen_mask[4]
+    DIRECTION INPUT ;
+    PORT
+      LAYER met3 ;
+        RECT 442.270 927.210 444.670 927.810 ;
+    END
+  END mgmt_wen_mask[4]
+  PIN mgmt_wen_mask[5]
+    DIRECTION INPUT ;
+    PORT
+      LAYER met3 ;
+        RECT 442.270 933.330 444.670 933.930 ;
+    END
+  END mgmt_wen_mask[5]
+  PIN mgmt_wen_mask[6]
+    DIRECTION INPUT ;
+    PORT
+      LAYER met3 ;
+        RECT 442.270 939.450 444.670 940.050 ;
+    END
+  END mgmt_wen_mask[6]
+  PIN mgmt_wen_mask[7]
+    DIRECTION INPUT ;
+    PORT
+      LAYER met3 ;
+        RECT 442.270 945.570 444.670 946.170 ;
+    END
+  END mgmt_wen_mask[7]
+  PIN VPWR
+    DIRECTION INPUT ;
+    USE POWER ;
+    PORT
+      LAYER met5 ;
+        RECT 0.190 25.460 439.030 27.060 ;
+    END
+  END VPWR
+  PIN VGND
+    DIRECTION INPUT ;
+    USE GROUND ;
+    PORT
+      LAYER met5 ;
+        RECT 0.190 50.460 439.030 52.060 ;
+    END
+  END VGND
+  OBS
+      LAYER li1 ;
+        RECT 0.190 2.795 439.030 940.005 ;
+      LAYER met1 ;
+        RECT 0.190 0.030 439.030 942.770 ;
+      LAYER met2 ;
+        RECT 4.450 0.000 435.930 946.055 ;
+      LAYER met3 ;
+        RECT 4.390 945.170 441.870 946.035 ;
+        RECT 4.390 940.450 442.270 945.170 ;
+        RECT 4.390 939.050 441.870 940.450 ;
+        RECT 4.390 934.330 442.270 939.050 ;
+        RECT 4.390 932.930 441.870 934.330 ;
+        RECT 4.390 928.210 442.270 932.930 ;
+        RECT 4.390 926.810 441.870 928.210 ;
+        RECT 4.390 922.090 442.270 926.810 ;
+        RECT 4.390 920.690 441.870 922.090 ;
+        RECT 4.390 915.970 442.270 920.690 ;
+        RECT 4.390 914.570 441.870 915.970 ;
+        RECT 4.390 910.530 442.270 914.570 ;
+        RECT 4.390 909.130 441.870 910.530 ;
+        RECT 4.390 904.410 442.270 909.130 ;
+        RECT 4.390 903.010 441.870 904.410 ;
+        RECT 4.390 898.290 442.270 903.010 ;
+        RECT 4.390 896.890 441.870 898.290 ;
+        RECT 4.390 892.170 442.270 896.890 ;
+        RECT 4.390 890.770 441.870 892.170 ;
+        RECT 4.390 886.050 442.270 890.770 ;
+        RECT 4.390 884.650 441.870 886.050 ;
+        RECT 4.390 879.930 442.270 884.650 ;
+        RECT 4.390 878.530 441.870 879.930 ;
+        RECT 4.390 874.490 442.270 878.530 ;
+        RECT 4.390 873.090 441.870 874.490 ;
+        RECT 4.390 868.370 442.270 873.090 ;
+        RECT 4.390 866.970 441.870 868.370 ;
+        RECT 4.390 862.250 442.270 866.970 ;
+        RECT 4.390 860.850 441.870 862.250 ;
+        RECT 4.390 856.130 442.270 860.850 ;
+        RECT 4.390 854.730 441.870 856.130 ;
+        RECT 4.390 850.010 442.270 854.730 ;
+        RECT 4.390 848.610 441.870 850.010 ;
+        RECT 4.390 843.890 442.270 848.610 ;
+        RECT 4.390 842.490 441.870 843.890 ;
+        RECT 4.390 838.450 442.270 842.490 ;
+        RECT 4.390 837.050 441.870 838.450 ;
+        RECT 4.390 832.330 442.270 837.050 ;
+        RECT 4.390 830.930 441.870 832.330 ;
+        RECT 4.390 826.210 442.270 830.930 ;
+        RECT 4.390 824.810 441.870 826.210 ;
+        RECT 4.390 820.090 442.270 824.810 ;
+        RECT 4.390 818.690 441.870 820.090 ;
+        RECT 4.390 813.970 442.270 818.690 ;
+        RECT 4.390 812.570 441.870 813.970 ;
+        RECT 4.390 807.850 442.270 812.570 ;
+        RECT 4.390 806.450 441.870 807.850 ;
+        RECT 4.390 801.730 442.270 806.450 ;
+        RECT 4.390 800.330 441.870 801.730 ;
+        RECT 4.390 796.290 442.270 800.330 ;
+        RECT 4.390 794.890 441.870 796.290 ;
+        RECT 4.390 790.170 442.270 794.890 ;
+        RECT 4.390 788.770 441.870 790.170 ;
+        RECT 4.390 784.050 442.270 788.770 ;
+        RECT 4.390 782.650 441.870 784.050 ;
+        RECT 4.390 777.930 442.270 782.650 ;
+        RECT 4.390 776.530 441.870 777.930 ;
+        RECT 4.390 771.810 442.270 776.530 ;
+        RECT 4.390 770.410 441.870 771.810 ;
+        RECT 4.390 765.690 442.270 770.410 ;
+        RECT 4.390 764.290 441.870 765.690 ;
+        RECT 4.390 760.250 442.270 764.290 ;
+        RECT 4.390 758.850 441.870 760.250 ;
+        RECT 4.390 754.130 442.270 758.850 ;
+        RECT 4.390 752.730 441.870 754.130 ;
+        RECT 4.390 748.010 442.270 752.730 ;
+        RECT 4.390 746.610 441.870 748.010 ;
+        RECT 4.390 741.890 442.270 746.610 ;
+        RECT 4.390 740.490 441.870 741.890 ;
+        RECT 4.390 735.770 442.270 740.490 ;
+        RECT 4.390 734.370 441.870 735.770 ;
+        RECT 4.390 729.650 442.270 734.370 ;
+        RECT 4.390 728.250 441.870 729.650 ;
+        RECT 4.390 724.210 442.270 728.250 ;
+        RECT 4.390 722.810 441.870 724.210 ;
+        RECT 4.390 718.090 442.270 722.810 ;
+        RECT 4.390 716.690 441.870 718.090 ;
+        RECT 4.390 711.970 442.270 716.690 ;
+        RECT 4.390 710.570 441.870 711.970 ;
+        RECT 4.390 705.850 442.270 710.570 ;
+        RECT 4.390 704.450 441.870 705.850 ;
+        RECT 4.390 699.730 442.270 704.450 ;
+        RECT 4.390 698.330 441.870 699.730 ;
+        RECT 4.390 693.610 442.270 698.330 ;
+        RECT 4.390 692.210 441.870 693.610 ;
+        RECT 4.390 687.490 442.270 692.210 ;
+        RECT 4.390 686.090 441.870 687.490 ;
+        RECT 4.390 682.050 442.270 686.090 ;
+        RECT 4.390 680.650 441.870 682.050 ;
+        RECT 4.390 675.930 442.270 680.650 ;
+        RECT 4.390 674.530 441.870 675.930 ;
+        RECT 4.390 669.810 442.270 674.530 ;
+        RECT 4.390 668.410 441.870 669.810 ;
+        RECT 4.390 663.690 442.270 668.410 ;
+        RECT 4.390 662.290 441.870 663.690 ;
+        RECT 4.390 657.570 442.270 662.290 ;
+        RECT 4.390 656.170 441.870 657.570 ;
+        RECT 4.390 651.450 442.270 656.170 ;
+        RECT 4.390 650.050 441.870 651.450 ;
+        RECT 4.390 646.010 442.270 650.050 ;
+        RECT 4.390 644.610 441.870 646.010 ;
+        RECT 4.390 639.890 442.270 644.610 ;
+        RECT 4.390 638.490 441.870 639.890 ;
+        RECT 4.390 633.770 442.270 638.490 ;
+        RECT 4.390 632.370 441.870 633.770 ;
+        RECT 4.390 627.650 442.270 632.370 ;
+        RECT 4.390 626.250 441.870 627.650 ;
+        RECT 4.390 621.530 442.270 626.250 ;
+        RECT 4.390 620.130 441.870 621.530 ;
+        RECT 4.390 615.410 442.270 620.130 ;
+        RECT 4.390 614.010 441.870 615.410 ;
+        RECT 4.390 609.970 442.270 614.010 ;
+        RECT 4.390 608.570 441.870 609.970 ;
+        RECT 4.390 603.850 442.270 608.570 ;
+        RECT 4.390 602.450 441.870 603.850 ;
+        RECT 4.390 597.730 442.270 602.450 ;
+        RECT 4.390 596.330 441.870 597.730 ;
+        RECT 4.390 591.610 442.270 596.330 ;
+        RECT 4.390 590.210 441.870 591.610 ;
+        RECT 4.390 585.490 442.270 590.210 ;
+        RECT 4.390 584.090 441.870 585.490 ;
+        RECT 4.390 579.370 442.270 584.090 ;
+        RECT 4.390 577.970 441.870 579.370 ;
+        RECT 4.390 573.250 442.270 577.970 ;
+        RECT 4.390 571.850 441.870 573.250 ;
+        RECT 4.390 567.810 442.270 571.850 ;
+        RECT 4.390 566.410 441.870 567.810 ;
+        RECT 4.390 561.690 442.270 566.410 ;
+        RECT 4.390 560.290 441.870 561.690 ;
+        RECT 4.390 555.570 442.270 560.290 ;
+        RECT 4.390 554.170 441.870 555.570 ;
+        RECT 4.390 549.450 442.270 554.170 ;
+        RECT 4.390 548.050 441.870 549.450 ;
+        RECT 4.390 543.330 442.270 548.050 ;
+        RECT 4.390 541.930 441.870 543.330 ;
+        RECT 4.390 537.210 442.270 541.930 ;
+        RECT 4.390 535.810 441.870 537.210 ;
+        RECT 4.390 531.770 442.270 535.810 ;
+        RECT 4.390 530.370 441.870 531.770 ;
+        RECT 4.390 525.650 442.270 530.370 ;
+        RECT 4.390 524.250 441.870 525.650 ;
+        RECT 4.390 519.530 442.270 524.250 ;
+        RECT 4.390 518.130 441.870 519.530 ;
+        RECT 4.390 513.410 442.270 518.130 ;
+        RECT 4.390 512.010 441.870 513.410 ;
+        RECT 4.390 507.290 442.270 512.010 ;
+        RECT 4.390 505.890 441.870 507.290 ;
+        RECT 4.390 501.170 442.270 505.890 ;
+        RECT 4.390 499.770 441.870 501.170 ;
+        RECT 4.390 495.730 442.270 499.770 ;
+        RECT 4.390 494.330 441.870 495.730 ;
+        RECT 4.390 489.610 442.270 494.330 ;
+        RECT 4.390 488.210 441.870 489.610 ;
+        RECT 4.390 483.490 442.270 488.210 ;
+        RECT 4.390 482.090 441.870 483.490 ;
+        RECT 4.390 477.370 442.270 482.090 ;
+        RECT 4.390 475.970 441.870 477.370 ;
+        RECT 4.390 471.250 442.270 475.970 ;
+        RECT 4.390 469.850 441.870 471.250 ;
+        RECT 4.390 465.130 442.270 469.850 ;
+        RECT 4.390 463.730 441.870 465.130 ;
+        RECT 4.390 459.010 442.270 463.730 ;
+        RECT 4.390 457.610 441.870 459.010 ;
+        RECT 4.390 453.570 442.270 457.610 ;
+        RECT 4.390 452.170 441.870 453.570 ;
+        RECT 4.390 447.450 442.270 452.170 ;
+        RECT 4.390 446.050 441.870 447.450 ;
+        RECT 4.390 441.330 442.270 446.050 ;
+        RECT 4.390 439.930 441.870 441.330 ;
+        RECT 4.390 435.210 442.270 439.930 ;
+        RECT 4.390 433.810 441.870 435.210 ;
+        RECT 4.390 429.090 442.270 433.810 ;
+        RECT 4.390 427.690 441.870 429.090 ;
+        RECT 4.390 422.970 442.270 427.690 ;
+        RECT 4.390 421.570 441.870 422.970 ;
+        RECT 4.390 417.530 442.270 421.570 ;
+        RECT 4.390 416.130 441.870 417.530 ;
+        RECT 4.390 411.410 442.270 416.130 ;
+        RECT 4.390 410.010 441.870 411.410 ;
+        RECT 4.390 405.290 442.270 410.010 ;
+        RECT 4.390 403.890 441.870 405.290 ;
+        RECT 4.390 399.170 442.270 403.890 ;
+        RECT 4.390 397.770 441.870 399.170 ;
+        RECT 4.390 393.050 442.270 397.770 ;
+        RECT 4.390 391.650 441.870 393.050 ;
+        RECT 4.390 386.930 442.270 391.650 ;
+        RECT 4.390 385.530 441.870 386.930 ;
+        RECT 4.390 381.490 442.270 385.530 ;
+        RECT 4.390 380.090 441.870 381.490 ;
+        RECT 4.390 375.370 442.270 380.090 ;
+        RECT 4.390 373.970 441.870 375.370 ;
+        RECT 4.390 369.250 442.270 373.970 ;
+        RECT 4.390 367.850 441.870 369.250 ;
+        RECT 4.390 363.130 442.270 367.850 ;
+        RECT 4.390 361.730 441.870 363.130 ;
+        RECT 4.390 357.010 442.270 361.730 ;
+        RECT 4.390 355.610 441.870 357.010 ;
+        RECT 4.390 350.890 442.270 355.610 ;
+        RECT 4.390 349.490 441.870 350.890 ;
+        RECT 4.390 344.770 442.270 349.490 ;
+        RECT 4.390 343.370 441.870 344.770 ;
+        RECT 4.390 339.330 442.270 343.370 ;
+        RECT 4.390 337.930 441.870 339.330 ;
+        RECT 4.390 333.210 442.270 337.930 ;
+        RECT 4.390 331.810 441.870 333.210 ;
+        RECT 4.390 327.090 442.270 331.810 ;
+        RECT 4.390 325.690 441.870 327.090 ;
+        RECT 4.390 320.970 442.270 325.690 ;
+        RECT 4.390 319.570 441.870 320.970 ;
+        RECT 4.390 314.850 442.270 319.570 ;
+        RECT 4.390 313.450 441.870 314.850 ;
+        RECT 4.390 308.730 442.270 313.450 ;
+        RECT 4.390 307.330 441.870 308.730 ;
+        RECT 4.390 303.290 442.270 307.330 ;
+        RECT 4.390 301.890 441.870 303.290 ;
+        RECT 4.390 297.170 442.270 301.890 ;
+        RECT 4.390 295.770 441.870 297.170 ;
+        RECT 4.390 291.050 442.270 295.770 ;
+        RECT 4.390 289.650 441.870 291.050 ;
+        RECT 4.390 284.930 442.270 289.650 ;
+        RECT 4.390 283.530 441.870 284.930 ;
+        RECT 4.390 278.810 442.270 283.530 ;
+        RECT 4.390 277.410 441.870 278.810 ;
+        RECT 4.390 272.690 442.270 277.410 ;
+        RECT 4.390 271.290 441.870 272.690 ;
+        RECT 4.390 267.250 442.270 271.290 ;
+        RECT 4.390 265.850 441.870 267.250 ;
+        RECT 4.390 261.130 442.270 265.850 ;
+        RECT 4.390 259.730 441.870 261.130 ;
+        RECT 4.390 255.010 442.270 259.730 ;
+        RECT 4.390 253.610 441.870 255.010 ;
+        RECT 4.390 248.890 442.270 253.610 ;
+        RECT 4.390 247.490 441.870 248.890 ;
+        RECT 4.390 242.770 442.270 247.490 ;
+        RECT 4.390 241.370 441.870 242.770 ;
+        RECT 4.390 236.650 442.270 241.370 ;
+        RECT 4.390 235.250 441.870 236.650 ;
+        RECT 4.390 230.530 442.270 235.250 ;
+        RECT 4.390 229.130 441.870 230.530 ;
+        RECT 4.390 225.090 442.270 229.130 ;
+        RECT 4.390 223.690 441.870 225.090 ;
+        RECT 4.390 218.970 442.270 223.690 ;
+        RECT 4.390 217.570 441.870 218.970 ;
+        RECT 4.390 212.850 442.270 217.570 ;
+        RECT 4.390 211.450 441.870 212.850 ;
+        RECT 4.390 206.730 442.270 211.450 ;
+        RECT 4.390 205.330 441.870 206.730 ;
+        RECT 4.390 200.610 442.270 205.330 ;
+        RECT 4.390 199.210 441.870 200.610 ;
+        RECT 4.390 194.490 442.270 199.210 ;
+        RECT 4.390 193.090 441.870 194.490 ;
+        RECT 4.390 189.050 442.270 193.090 ;
+        RECT 4.390 187.650 441.870 189.050 ;
+        RECT 4.390 182.930 442.270 187.650 ;
+        RECT 4.390 181.530 441.870 182.930 ;
+        RECT 4.390 176.810 442.270 181.530 ;
+        RECT 4.390 175.410 441.870 176.810 ;
+        RECT 4.390 170.690 442.270 175.410 ;
+        RECT 4.390 169.290 441.870 170.690 ;
+        RECT 4.390 164.570 442.270 169.290 ;
+        RECT 4.390 163.170 441.870 164.570 ;
+        RECT 4.390 158.450 442.270 163.170 ;
+        RECT 4.390 157.050 441.870 158.450 ;
+        RECT 4.390 153.010 442.270 157.050 ;
+        RECT 4.390 151.610 441.870 153.010 ;
+        RECT 4.390 146.890 442.270 151.610 ;
+        RECT 4.390 145.490 441.870 146.890 ;
+        RECT 4.390 140.770 442.270 145.490 ;
+        RECT 4.390 139.370 441.870 140.770 ;
+        RECT 4.390 134.650 442.270 139.370 ;
+        RECT 4.390 133.250 441.870 134.650 ;
+        RECT 4.390 128.530 442.270 133.250 ;
+        RECT 4.390 127.130 441.870 128.530 ;
+        RECT 4.390 122.410 442.270 127.130 ;
+        RECT 4.390 121.010 441.870 122.410 ;
+        RECT 4.390 116.290 442.270 121.010 ;
+        RECT 4.390 114.890 441.870 116.290 ;
+        RECT 4.390 110.850 442.270 114.890 ;
+        RECT 4.390 109.450 441.870 110.850 ;
+        RECT 4.390 104.730 442.270 109.450 ;
+        RECT 4.390 103.330 441.870 104.730 ;
+        RECT 4.390 98.610 442.270 103.330 ;
+        RECT 4.390 97.210 441.870 98.610 ;
+        RECT 4.390 92.490 442.270 97.210 ;
+        RECT 4.390 91.090 441.870 92.490 ;
+        RECT 4.390 86.370 442.270 91.090 ;
+        RECT 4.390 84.970 441.870 86.370 ;
+        RECT 4.390 80.250 442.270 84.970 ;
+        RECT 4.390 78.850 441.870 80.250 ;
+        RECT 4.390 74.810 442.270 78.850 ;
+        RECT 4.390 73.410 441.870 74.810 ;
+        RECT 4.390 68.690 442.270 73.410 ;
+        RECT 4.390 67.290 441.870 68.690 ;
+        RECT 4.390 62.570 442.270 67.290 ;
+        RECT 4.390 61.170 441.870 62.570 ;
+        RECT 4.390 56.450 442.270 61.170 ;
+        RECT 4.390 55.050 441.870 56.450 ;
+        RECT 4.390 50.330 442.270 55.050 ;
+        RECT 4.390 48.930 441.870 50.330 ;
+        RECT 4.390 44.210 442.270 48.930 ;
+        RECT 4.390 42.810 441.870 44.210 ;
+        RECT 4.390 38.770 442.270 42.810 ;
+        RECT 4.390 37.370 441.870 38.770 ;
+        RECT 4.390 32.650 442.270 37.370 ;
+        RECT 4.390 31.250 441.870 32.650 ;
+        RECT 4.390 26.530 442.270 31.250 ;
+        RECT 4.390 25.130 441.870 26.530 ;
+        RECT 4.390 20.410 442.270 25.130 ;
+        RECT 4.390 19.010 441.870 20.410 ;
+        RECT 4.390 14.290 442.270 19.010 ;
+        RECT 4.390 12.890 441.870 14.290 ;
+        RECT 4.390 8.170 442.270 12.890 ;
+        RECT 4.390 6.770 441.870 8.170 ;
+        RECT 4.390 2.730 442.270 6.770 ;
+        RECT 4.390 1.330 441.870 2.730 ;
+        RECT 4.390 0.505 442.270 1.330 ;
+      LAYER met4 ;
+        RECT 4.390 0.505 435.990 939.915 ;
+      LAYER met5 ;
+        RECT 0.190 75.460 439.030 927.060 ;
+  END
+END storage
+END LIBRARY
+

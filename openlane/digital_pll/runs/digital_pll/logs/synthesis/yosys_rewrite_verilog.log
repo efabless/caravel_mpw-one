@@ -1,0 +1,403 @@
+
+ /----------------------------------------------------------------------------\
+ |                                                                            |
+ |  yosys -- Yosys Open SYnthesis Suite                                       |
+ |                                                                            |
+ |  Copyright (C) 2012 - 2020  Claire Wolf <claire@symbioticeda.com>          |
+ |                                                                            |
+ |  Permission to use, copy, modify, and/or distribute this software for any  |
+ |  purpose with or without fee is hereby granted, provided that the above    |
+ |  copyright notice and this permission notice appear in all copies.         |
+ |                                                                            |
+ |  THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES  |
+ |  WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF          |
+ |  MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR   |
+ |  ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES    |
+ |  WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN     |
+ |  ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF   |
+ |  OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.            |
+ |                                                                            |
+ \----------------------------------------------------------------------------/
+
+ Yosys 0.9+3621 (git sha1 84e9fa7, gcc 8.3.1 -fPIC -Os)
+
+[TCL: yosys -import] Command name collision: found pre-existing command `cd' -> skip.
+[TCL: yosys -import] Command name collision: found pre-existing command `eval' -> skip.
+[TCL: yosys -import] Command name collision: found pre-existing command `exec' -> skip.
+[TCL: yosys -import] Command name collision: found pre-existing command `read' -> skip.
+[TCL: yosys -import] Command name collision: found pre-existing command `trace' -> skip.
+
+1. Executing Verilog-2005 frontend: /openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/results/lvs/digital_pll.lvs.powered.v
+Parsing Verilog input from `/openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/results/lvs/digital_pll.lvs.powered.v' to AST representation.
+Generating RTLIL representation for module `\digital_pll'.
+/openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/results/lvs/digital_pll.lvs.powered.v:20: Warning: Identifier `\pll_control.count0[4]' is implicitly declared.
+/openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/results/lvs/digital_pll.lvs.powered.v:21: Warning: Identifier `\_043_' is implicitly declared.
+/openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/results/lvs/digital_pll.lvs.powered.v:24: Warning: Identifier `\pll_control.count1[4]' is implicitly declared.
+/openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/results/lvs/digital_pll.lvs.powered.v:25: Warning: Identifier `\_044_' is implicitly declared.
+/openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/results/lvs/digital_pll.lvs.powered.v:28: Warning: Identifier `\pll_control.count0[3]' is implicitly declared.
+/openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/results/lvs/digital_pll.lvs.powered.v:29: Warning: Identifier `\_045_' is implicitly declared.
+/openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/results/lvs/digital_pll.lvs.powered.v:32: Warning: Identifier `\pll_control.count1[3]' is implicitly declared.
+/openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/results/lvs/digital_pll.lvs.powered.v:33: Warning: Identifier `\_046_' is implicitly declared.
+/openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/results/lvs/digital_pll.lvs.powered.v:36: Warning: Identifier `\pll_control.count0[2]' is implicitly declared.
+/openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/results/lvs/digital_pll.lvs.powered.v:37: Warning: Identifier `\_047_' is implicitly declared.
+/openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/results/lvs/digital_pll.lvs.powered.v:40: Warning: Identifier `\pll_control.count1[2]' is implicitly declared.
+/openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/results/lvs/digital_pll.lvs.powered.v:41: Warning: Identifier `\_048_' is implicitly declared.
+/openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/results/lvs/digital_pll.lvs.powered.v:44: Warning: Identifier `\pll_control.count0[1]' is implicitly declared.
+/openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/results/lvs/digital_pll.lvs.powered.v:45: Warning: Identifier `\_049_' is implicitly declared.
+/openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/results/lvs/digital_pll.lvs.powered.v:48: Warning: Identifier `\pll_control.count1[1]' is implicitly declared.
+/openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/results/lvs/digital_pll.lvs.powered.v:49: Warning: Identifier `\_050_' is implicitly declared.
+/openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/results/lvs/digital_pll.lvs.powered.v:52: Warning: Identifier `\pll_control.count0[0]' is implicitly declared.
+/openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/results/lvs/digital_pll.lvs.powered.v:53: Warning: Identifier `\_051_' is implicitly declared.
+/openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/results/lvs/digital_pll.lvs.powered.v:56: Warning: Identifier `\pll_control.prep[1]' is implicitly declared.
+/openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/results/lvs/digital_pll.lvs.powered.v:57: Warning: Identifier `\_052_' is implicitly declared.
+/openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/results/lvs/digital_pll.lvs.powered.v:60: Warning: Identifier `\pll_control.tint[4]' is implicitly declared.
+/openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/results/lvs/digital_pll.lvs.powered.v:61: Warning: Identifier `\_053_' is implicitly declared.
+/openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/results/lvs/digital_pll.lvs.powered.v:64: Warning: Identifier `\pll_control.tint[3]' is implicitly declared.
+/openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/results/lvs/digital_pll.lvs.powered.v:65: Warning: Identifier `\_054_' is implicitly declared.
+/openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/results/lvs/digital_pll.lvs.powered.v:68: Warning: Identifier `\pll_control.tint[2]' is implicitly declared.
+/openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/results/lvs/digital_pll.lvs.powered.v:69: Warning: Identifier `\_055_' is implicitly declared.
+/openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/results/lvs/digital_pll.lvs.powered.v:72: Warning: Identifier `\pll_control.tint[1]' is implicitly declared.
+/openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/results/lvs/digital_pll.lvs.powered.v:73: Warning: Identifier `\_056_' is implicitly declared.
+/openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/results/lvs/digital_pll.lvs.powered.v:76: Warning: Identifier `\pll_control.tint[0]' is implicitly declared.
+/openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/results/lvs/digital_pll.lvs.powered.v:77: Warning: Identifier `\_057_' is implicitly declared.
+/openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/results/lvs/digital_pll.lvs.powered.v:80: Warning: Identifier `\pll_control.tval[1]' is implicitly declared.
+/openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/results/lvs/digital_pll.lvs.powered.v:81: Warning: Identifier `\_058_' is implicitly declared.
+/openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/results/lvs/digital_pll.lvs.powered.v:84: Warning: Identifier `\pll_control.tval[0]' is implicitly declared.
+/openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/results/lvs/digital_pll.lvs.powered.v:85: Warning: Identifier `\_059_' is implicitly declared.
+/openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/results/lvs/digital_pll.lvs.powered.v:89: Warning: Identifier `\_060_' is implicitly declared.
+/openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/results/lvs/digital_pll.lvs.powered.v:93: Warning: Identifier `\_061_' is implicitly declared.
+/openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/results/lvs/digital_pll.lvs.powered.v:97: Warning: Identifier `\_062_' is implicitly declared.
+/openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/results/lvs/digital_pll.lvs.powered.v:100: Warning: Identifier `\pll_control.oscbuf[1]' is implicitly declared.
+/openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/results/lvs/digital_pll.lvs.powered.v:101: Warning: Identifier `\pll_control.oscbuf[2]' is implicitly declared.
+/openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/results/lvs/digital_pll.lvs.powered.v:102: Warning: Identifier `\_063_' is implicitly declared.
+/openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/results/lvs/digital_pll.lvs.powered.v:106: Warning: Identifier `\_064_' is implicitly declared.
+/openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/results/lvs/digital_pll.lvs.powered.v:113: Warning: Identifier `\_042_' is implicitly declared.
+/openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/results/lvs/digital_pll.lvs.powered.v:118: Warning: Identifier `\ringosc.iss.reset' is implicitly declared.
+/openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/results/lvs/digital_pll.lvs.powered.v:124: Warning: Identifier `\_021_' is implicitly declared.
+/openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/results/lvs/digital_pll.lvs.powered.v:131: Warning: Identifier `\_041_' is implicitly declared.
+/openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/results/lvs/digital_pll.lvs.powered.v:138: Warning: Identifier `\_040_' is implicitly declared.
+/openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/results/lvs/digital_pll.lvs.powered.v:145: Warning: Identifier `\_039_' is implicitly declared.
+/openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/results/lvs/digital_pll.lvs.powered.v:150: Warning: Identifier `\pll_control.count1[0]' is implicitly declared.
+/openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/results/lvs/digital_pll.lvs.powered.v:152: Warning: Identifier `\_038_' is implicitly declared.
+/openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/results/lvs/digital_pll.lvs.powered.v:157: Warning: Identifier `\pll_control.prep[2]' is implicitly declared.
+/openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/results/lvs/digital_pll.lvs.powered.v:159: Warning: Identifier `\_037_' is implicitly declared.
+/openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/results/lvs/digital_pll.lvs.powered.v:164: Warning: Identifier `\pll_control.prep[0]' is implicitly declared.
+/openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/results/lvs/digital_pll.lvs.powered.v:166: Warning: Identifier `\_036_' is implicitly declared.
+/openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/results/lvs/digital_pll.lvs.powered.v:171: Warning: Identifier `\_035_' is implicitly declared.
+/openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/results/lvs/digital_pll.lvs.powered.v:178: Warning: Identifier `\_065_' is implicitly declared.
+/openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/results/lvs/digital_pll.lvs.powered.v:183: Warning: Identifier `\_066_' is implicitly declared.
+/openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/results/lvs/digital_pll.lvs.powered.v:190: Warning: Identifier `\_067_' is implicitly declared.
+/openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/results/lvs/digital_pll.lvs.powered.v:195: Warning: Identifier `\_068_' is implicitly declared.
+/openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/results/lvs/digital_pll.lvs.powered.v:200: Warning: Identifier `\_069_' is implicitly declared.
+/openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/results/lvs/digital_pll.lvs.powered.v:206: Warning: Identifier `\_070_' is implicitly declared.
+/openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/results/lvs/digital_pll.lvs.powered.v:211: Warning: Identifier `\_071_' is implicitly declared.
+/openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/results/lvs/digital_pll.lvs.powered.v:217: Warning: Identifier `\_072_' is implicitly declared.
+/openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/results/lvs/digital_pll.lvs.powered.v:222: Warning: Identifier `\_073_' is implicitly declared.
+/openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/results/lvs/digital_pll.lvs.powered.v:228: Warning: Identifier `\_074_' is implicitly declared.
+/openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/results/lvs/digital_pll.lvs.powered.v:233: Warning: Identifier `\_075_' is implicitly declared.
+/openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/results/lvs/digital_pll.lvs.powered.v:240: Warning: Identifier `\_076_' is implicitly declared.
+/openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/results/lvs/digital_pll.lvs.powered.v:247: Warning: Identifier `\_077_' is implicitly declared.
+/openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/results/lvs/digital_pll.lvs.powered.v:254: Warning: Identifier `\_078_' is implicitly declared.
+/openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/results/lvs/digital_pll.lvs.powered.v:260: Warning: Identifier `\_079_' is implicitly declared.
+/openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/results/lvs/digital_pll.lvs.powered.v:265: Warning: Identifier `\_080_' is implicitly declared.
+/openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/results/lvs/digital_pll.lvs.powered.v:270: Warning: Identifier `\_081_' is implicitly declared.
+/openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/results/lvs/digital_pll.lvs.powered.v:276: Warning: Identifier `\_082_' is implicitly declared.
+/openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/results/lvs/digital_pll.lvs.powered.v:281: Warning: Identifier `\_083_' is implicitly declared.
+/openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/results/lvs/digital_pll.lvs.powered.v:288: Warning: Identifier `\_084_' is implicitly declared.
+/openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/results/lvs/digital_pll.lvs.powered.v:292: Warning: Identifier `\_085_' is implicitly declared.
+/openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/results/lvs/digital_pll.lvs.powered.v:298: Warning: Identifier `\_086_' is implicitly declared.
+/openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/results/lvs/digital_pll.lvs.powered.v:305: Warning: Identifier `\_087_' is implicitly declared.
+/openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/results/lvs/digital_pll.lvs.powered.v:312: Warning: Identifier `\_088_' is implicitly declared.
+/openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/results/lvs/digital_pll.lvs.powered.v:319: Warning: Identifier `\_089_' is implicitly declared.
+/openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/results/lvs/digital_pll.lvs.powered.v:324: Warning: Identifier `\_090_' is implicitly declared.
+/openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/results/lvs/digital_pll.lvs.powered.v:330: Warning: Identifier `\_091_' is implicitly declared.
+/openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/results/lvs/digital_pll.lvs.powered.v:336: Warning: Identifier `\_092_' is implicitly declared.
+/openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/results/lvs/digital_pll.lvs.powered.v:343: Warning: Identifier `\_093_' is implicitly declared.
+/openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/results/lvs/digital_pll.lvs.powered.v:349: Warning: Identifier `\_094_' is implicitly declared.
+/openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/results/lvs/digital_pll.lvs.powered.v:354: Warning: Identifier `\_095_' is implicitly declared.
+/openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/results/lvs/digital_pll.lvs.powered.v:358: Warning: Identifier `\_096_' is implicitly declared.
+/openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/results/lvs/digital_pll.lvs.powered.v:363: Warning: Identifier `\_097_' is implicitly declared.
+/openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/results/lvs/digital_pll.lvs.powered.v:368: Warning: Identifier `\_098_' is implicitly declared.
+/openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/results/lvs/digital_pll.lvs.powered.v:372: Warning: Identifier `\_099_' is implicitly declared.
+/openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/results/lvs/digital_pll.lvs.powered.v:379: Warning: Identifier `\_100_' is implicitly declared.
+/openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/results/lvs/digital_pll.lvs.powered.v:386: Warning: Identifier `\_101_' is implicitly declared.
+/openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/results/lvs/digital_pll.lvs.powered.v:392: Warning: Identifier `\_102_' is implicitly declared.
+/openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/results/lvs/digital_pll.lvs.powered.v:399: Warning: Identifier `\_103_' is implicitly declared.
+/openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/results/lvs/digital_pll.lvs.powered.v:406: Warning: Identifier `\_104_' is implicitly declared.
+/openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/results/lvs/digital_pll.lvs.powered.v:412: Warning: Identifier `\_105_' is implicitly declared.
+/openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/results/lvs/digital_pll.lvs.powered.v:419: Warning: Identifier `\_106_' is implicitly declared.
+/openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/results/lvs/digital_pll.lvs.powered.v:425: Warning: Identifier `\_107_' is implicitly declared.
+/openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/results/lvs/digital_pll.lvs.powered.v:431: Warning: Identifier `\_108_' is implicitly declared.
+/openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/results/lvs/digital_pll.lvs.powered.v:436: Warning: Identifier `\_109_' is implicitly declared.
+/openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/results/lvs/digital_pll.lvs.powered.v:440: Warning: Identifier `\_110_' is implicitly declared.
+/openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/results/lvs/digital_pll.lvs.powered.v:447: Warning: Identifier `\_111_' is implicitly declared.
+/openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/results/lvs/digital_pll.lvs.powered.v:452: Warning: Identifier `\_112_' is implicitly declared.
+/openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/results/lvs/digital_pll.lvs.powered.v:458: Warning: Identifier `\_113_' is implicitly declared.
+/openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/results/lvs/digital_pll.lvs.powered.v:465: Warning: Identifier `\_114_' is implicitly declared.
+/openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/results/lvs/digital_pll.lvs.powered.v:469: Warning: Identifier `\_115_' is implicitly declared.
+/openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/results/lvs/digital_pll.lvs.powered.v:474: Warning: Identifier `\_116_' is implicitly declared.
+/openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/results/lvs/digital_pll.lvs.powered.v:478: Warning: Identifier `\_117_' is implicitly declared.
+/openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/results/lvs/digital_pll.lvs.powered.v:483: Warning: Identifier `\_118_' is implicitly declared.
+/openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/results/lvs/digital_pll.lvs.powered.v:487: Warning: Identifier `\_119_' is implicitly declared.
+/openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/results/lvs/digital_pll.lvs.powered.v:492: Warning: Identifier `\_120_' is implicitly declared.
+/openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/results/lvs/digital_pll.lvs.powered.v:500: Warning: Identifier `\_121_' is implicitly declared.
+/openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/results/lvs/digital_pll.lvs.powered.v:507: Warning: Identifier `\_122_' is implicitly declared.
+/openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/results/lvs/digital_pll.lvs.powered.v:514: Warning: Identifier `\_123_' is implicitly declared.
+/openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/results/lvs/digital_pll.lvs.powered.v:518: Warning: Identifier `\_124_' is implicitly declared.
+/openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/results/lvs/digital_pll.lvs.powered.v:526: Warning: Identifier `\_125_' is implicitly declared.
+/openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/results/lvs/digital_pll.lvs.powered.v:533: Warning: Identifier `\_126_' is implicitly declared.
+/openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/results/lvs/digital_pll.lvs.powered.v:538: Warning: Identifier `\_127_' is implicitly declared.
+/openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/results/lvs/digital_pll.lvs.powered.v:543: Warning: Identifier `\_128_' is implicitly declared.
+/openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/results/lvs/digital_pll.lvs.powered.v:551: Warning: Identifier `\_034_' is implicitly declared.
+/openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/results/lvs/digital_pll.lvs.powered.v:556: Warning: Identifier `\_129_' is implicitly declared.
+/openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/results/lvs/digital_pll.lvs.powered.v:562: Warning: Identifier `\_130_' is implicitly declared.
+/openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/results/lvs/digital_pll.lvs.powered.v:567: Warning: Identifier `\_131_' is implicitly declared.
+/openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/results/lvs/digital_pll.lvs.powered.v:572: Warning: Identifier `\_132_' is implicitly declared.
+/openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/results/lvs/digital_pll.lvs.powered.v:580: Warning: Identifier `\_033_' is implicitly declared.
+/openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/results/lvs/digital_pll.lvs.powered.v:585: Warning: Identifier `\_133_' is implicitly declared.
+/openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/results/lvs/digital_pll.lvs.powered.v:593: Warning: Identifier `\_032_' is implicitly declared.
+/openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/results/lvs/digital_pll.lvs.powered.v:600: Warning: Identifier `\_134_' is implicitly declared.
+/openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/results/lvs/digital_pll.lvs.powered.v:605: Warning: Identifier `\_135_' is implicitly declared.
+/openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/results/lvs/digital_pll.lvs.powered.v:611: Warning: Identifier `\_136_' is implicitly declared.
+/openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/results/lvs/digital_pll.lvs.powered.v:616: Warning: Identifier `\_137_' is implicitly declared.
+/openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/results/lvs/digital_pll.lvs.powered.v:621: Warning: Identifier `\_138_' is implicitly declared.
+/openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/results/lvs/digital_pll.lvs.powered.v:629: Warning: Identifier `\_031_' is implicitly declared.
+/openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/results/lvs/digital_pll.lvs.powered.v:634: Warning: Identifier `\_139_' is implicitly declared.
+/openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/results/lvs/digital_pll.lvs.powered.v:642: Warning: Identifier `\_030_' is implicitly declared.
+/openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/results/lvs/digital_pll.lvs.powered.v:647: Warning: Identifier `\_140_' is implicitly declared.
+/openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/results/lvs/digital_pll.lvs.powered.v:655: Warning: Identifier `\_029_' is implicitly declared.
+/openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/results/lvs/digital_pll.lvs.powered.v:660: Warning: Identifier `\_141_' is implicitly declared.
+/openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/results/lvs/digital_pll.lvs.powered.v:666: Warning: Identifier `\_028_' is implicitly declared.
+/openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/results/lvs/digital_pll.lvs.powered.v:671: Warning: Identifier `\_142_' is implicitly declared.
+/openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/results/lvs/digital_pll.lvs.powered.v:677: Warning: Identifier `\_143_' is implicitly declared.
+/openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/results/lvs/digital_pll.lvs.powered.v:682: Warning: Identifier `\_144_' is implicitly declared.
+/openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/results/lvs/digital_pll.lvs.powered.v:688: Warning: Identifier `\_027_' is implicitly declared.
+/openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/results/lvs/digital_pll.lvs.powered.v:694: Warning: Identifier `\_145_' is implicitly declared.
+/openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/results/lvs/digital_pll.lvs.powered.v:700: Warning: Identifier `\_026_' is implicitly declared.
+/openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/results/lvs/digital_pll.lvs.powered.v:707: Warning: Identifier `\_146_' is implicitly declared.
+/openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/results/lvs/digital_pll.lvs.powered.v:712: Warning: Identifier `\_147_' is implicitly declared.
+/openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/results/lvs/digital_pll.lvs.powered.v:718: Warning: Identifier `\_148_' is implicitly declared.
+/openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/results/lvs/digital_pll.lvs.powered.v:723: Warning: Identifier `\_025_' is implicitly declared.
+/openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/results/lvs/digital_pll.lvs.powered.v:728: Warning: Identifier `\_149_' is implicitly declared.
+/openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/results/lvs/digital_pll.lvs.powered.v:734: Warning: Identifier `\_150_' is implicitly declared.
+/openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/results/lvs/digital_pll.lvs.powered.v:739: Warning: Identifier `\_024_' is implicitly declared.
+/openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/results/lvs/digital_pll.lvs.powered.v:746: Warning: Identifier `\_023_' is implicitly declared.
+/openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/results/lvs/digital_pll.lvs.powered.v:751: Warning: Identifier `\_151_' is implicitly declared.
+/openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/results/lvs/digital_pll.lvs.powered.v:757: Warning: Identifier `\ringosc.dstage[0].id.trim[0]' is implicitly declared.
+/openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/results/lvs/digital_pll.lvs.powered.v:763: Warning: Identifier `\_152_' is implicitly declared.
+/openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/results/lvs/digital_pll.lvs.powered.v:767: Warning: Identifier `\_153_' is implicitly declared.
+/openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/results/lvs/digital_pll.lvs.powered.v:772: Warning: Identifier `\_154_' is implicitly declared.
+/openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/results/lvs/digital_pll.lvs.powered.v:776: Warning: Identifier `\_155_' is implicitly declared.
+/openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/results/lvs/digital_pll.lvs.powered.v:783: Warning: Identifier `\_156_' is implicitly declared.
+/openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/results/lvs/digital_pll.lvs.powered.v:790: Warning: Identifier `\_157_' is implicitly declared.
+/openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/results/lvs/digital_pll.lvs.powered.v:797: Warning: Identifier `\_158_' is implicitly declared.
+/openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/results/lvs/digital_pll.lvs.powered.v:802: Warning: Identifier `\_159_' is implicitly declared.
+/openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/results/lvs/digital_pll.lvs.powered.v:810: Warning: Identifier `\_160_' is implicitly declared.
+/openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/results/lvs/digital_pll.lvs.powered.v:815: Warning: Identifier `\_161_' is implicitly declared.
+/openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/results/lvs/digital_pll.lvs.powered.v:821: Warning: Identifier `\_162_' is implicitly declared.
+/openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/results/lvs/digital_pll.lvs.powered.v:826: Warning: Identifier `\_163_' is implicitly declared.
+/openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/results/lvs/digital_pll.lvs.powered.v:831: Warning: Identifier `\_164_' is implicitly declared.
+/openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/results/lvs/digital_pll.lvs.powered.v:835: Warning: Identifier `\_165_' is implicitly declared.
+/openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/results/lvs/digital_pll.lvs.powered.v:840: Warning: Identifier `\_166_' is implicitly declared.
+/openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/results/lvs/digital_pll.lvs.powered.v:845: Warning: Identifier `\_167_' is implicitly declared.
+/openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/results/lvs/digital_pll.lvs.powered.v:850: Warning: Identifier `\_168_' is implicitly declared.
+/openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/results/lvs/digital_pll.lvs.powered.v:856: Warning: Identifier `\ringosc.dstage[1].id.trim[0]' is implicitly declared.
+/openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/results/lvs/digital_pll.lvs.powered.v:861: Warning: Identifier `\_169_' is implicitly declared.
+/openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/results/lvs/digital_pll.lvs.powered.v:866: Warning: Identifier `\_170_' is implicitly declared.
+/openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/results/lvs/digital_pll.lvs.powered.v:873: Warning: Identifier `\_171_' is implicitly declared.
+/openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/results/lvs/digital_pll.lvs.powered.v:880: Warning: Identifier `\_172_' is implicitly declared.
+/openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/results/lvs/digital_pll.lvs.powered.v:885: Warning: Identifier `\_173_' is implicitly declared.
+/openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/results/lvs/digital_pll.lvs.powered.v:890: Warning: Identifier `\_174_' is implicitly declared.
+/openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/results/lvs/digital_pll.lvs.powered.v:895: Warning: Identifier `\_175_' is implicitly declared.
+/openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/results/lvs/digital_pll.lvs.powered.v:900: Warning: Identifier `\_176_' is implicitly declared.
+/openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/results/lvs/digital_pll.lvs.powered.v:904: Warning: Identifier `\_177_' is implicitly declared.
+/openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/results/lvs/digital_pll.lvs.powered.v:910: Warning: Identifier `\ringosc.dstage[2].id.trim[0]' is implicitly declared.
+/openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/results/lvs/digital_pll.lvs.powered.v:917: Warning: Identifier `\_178_' is implicitly declared.
+/openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/results/lvs/digital_pll.lvs.powered.v:922: Warning: Identifier `\_179_' is implicitly declared.
+/openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/results/lvs/digital_pll.lvs.powered.v:928: Warning: Identifier `\ringosc.dstage[3].id.trim[0]' is implicitly declared.
+/openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/results/lvs/digital_pll.lvs.powered.v:934: Warning: Identifier `\_180_' is implicitly declared.
+/openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/results/lvs/digital_pll.lvs.powered.v:941: Warning: Identifier `\ringosc.dstage[4].id.trim[0]' is implicitly declared.
+/openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/results/lvs/digital_pll.lvs.powered.v:947: Warning: Identifier `\ringosc.dstage[5].id.trim[0]' is implicitly declared.
+/openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/results/lvs/digital_pll.lvs.powered.v:953: Warning: Identifier `\ringosc.dstage[6].id.trim[0]' is implicitly declared.
+/openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/results/lvs/digital_pll.lvs.powered.v:958: Warning: Identifier `\_181_' is implicitly declared.
+/openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/results/lvs/digital_pll.lvs.powered.v:963: Warning: Identifier `\_182_' is implicitly declared.
+/openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/results/lvs/digital_pll.lvs.powered.v:970: Warning: Identifier `\_183_' is implicitly declared.
+/openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/results/lvs/digital_pll.lvs.powered.v:975: Warning: Identifier `\_184_' is implicitly declared.
+/openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/results/lvs/digital_pll.lvs.powered.v:980: Warning: Identifier `\_185_' is implicitly declared.
+/openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/results/lvs/digital_pll.lvs.powered.v:987: Warning: Identifier `\_186_' is implicitly declared.
+/openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/results/lvs/digital_pll.lvs.powered.v:992: Warning: Identifier `\_187_' is implicitly declared.
+/openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/results/lvs/digital_pll.lvs.powered.v:999: Warning: Identifier `\_188_' is implicitly declared.
+/openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/results/lvs/digital_pll.lvs.powered.v:1005: Warning: Identifier `\ringosc.dstage[7].id.trim[0]' is implicitly declared.
+/openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/results/lvs/digital_pll.lvs.powered.v:1011: Warning: Identifier `\ringosc.dstage[8].id.trim[0]' is implicitly declared.
+/openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/results/lvs/digital_pll.lvs.powered.v:1017: Warning: Identifier `\_189_' is implicitly declared.
+/openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/results/lvs/digital_pll.lvs.powered.v:1023: Warning: Identifier `\ringosc.dstage[9].id.trim[0]' is implicitly declared.
+/openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/results/lvs/digital_pll.lvs.powered.v:1029: Warning: Identifier `\ringosc.dstage[10].id.trim[0]' is implicitly declared.
+/openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/results/lvs/digital_pll.lvs.powered.v:1034: Warning: Identifier `\_190_' is implicitly declared.
+/openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/results/lvs/digital_pll.lvs.powered.v:1040: Warning: Identifier `\ringosc.dstage[11].id.trim[0]' is implicitly declared.
+/openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/results/lvs/digital_pll.lvs.powered.v:1046: Warning: Identifier `\ringosc.iss.trim[0]' is implicitly declared.
+/openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/results/lvs/digital_pll.lvs.powered.v:1053: Warning: Identifier `\_191_' is implicitly declared.
+/openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/results/lvs/digital_pll.lvs.powered.v:1061: Warning: Identifier `\ringosc.dstage[0].id.trim[1]' is implicitly declared.
+/openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/results/lvs/digital_pll.lvs.powered.v:1068: Warning: Identifier `\_192_' is implicitly declared.
+/openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/results/lvs/digital_pll.lvs.powered.v:1073: Warning: Identifier `\_193_' is implicitly declared.
+/openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/results/lvs/digital_pll.lvs.powered.v:1080: Warning: Identifier `\_194_' is implicitly declared.
+/openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/results/lvs/digital_pll.lvs.powered.v:1087: Warning: Identifier `\_195_' is implicitly declared.
+/openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/results/lvs/digital_pll.lvs.powered.v:1092: Warning: Identifier `\_196_' is implicitly declared.
+/openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/results/lvs/digital_pll.lvs.powered.v:1099: Warning: Identifier `\_197_' is implicitly declared.
+/openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/results/lvs/digital_pll.lvs.powered.v:1106: Warning: Identifier `\_198_' is implicitly declared.
+/openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/results/lvs/digital_pll.lvs.powered.v:1113: Warning: Identifier `\_199_' is implicitly declared.
+/openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/results/lvs/digital_pll.lvs.powered.v:1118: Warning: Identifier `\_200_' is implicitly declared.
+/openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/results/lvs/digital_pll.lvs.powered.v:1125: Warning: Identifier `\_201_' is implicitly declared.
+/openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/results/lvs/digital_pll.lvs.powered.v:1132: Warning: Identifier `\_202_' is implicitly declared.
+/openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/results/lvs/digital_pll.lvs.powered.v:1140: Warning: Identifier `\_203_' is implicitly declared.
+/openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/results/lvs/digital_pll.lvs.powered.v:1145: Warning: Identifier `\_204_' is implicitly declared.
+/openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/results/lvs/digital_pll.lvs.powered.v:1152: Warning: Identifier `\_205_' is implicitly declared.
+/openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/results/lvs/digital_pll.lvs.powered.v:1159: Warning: Identifier `\_206_' is implicitly declared.
+/openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/results/lvs/digital_pll.lvs.powered.v:1164: Warning: Identifier `\_207_' is implicitly declared.
+/openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/results/lvs/digital_pll.lvs.powered.v:1170: Warning: Identifier `\ringosc.dstage[1].id.trim[1]' is implicitly declared.
+/openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/results/lvs/digital_pll.lvs.powered.v:1175: Warning: Identifier `\_208_' is implicitly declared.
+/openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/results/lvs/digital_pll.lvs.powered.v:1181: Warning: Identifier `\_209_' is implicitly declared.
+/openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/results/lvs/digital_pll.lvs.powered.v:1188: Warning: Identifier `\_210_' is implicitly declared.
+/openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/results/lvs/digital_pll.lvs.powered.v:1193: Warning: Identifier `\_211_' is implicitly declared.
+/openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/results/lvs/digital_pll.lvs.powered.v:1199: Warning: Identifier `\ringosc.dstage[2].id.trim[1]' is implicitly declared.
+/openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/results/lvs/digital_pll.lvs.powered.v:1204: Warning: Identifier `\_212_' is implicitly declared.
+/openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/results/lvs/digital_pll.lvs.powered.v:1209: Warning: Identifier `\_213_' is implicitly declared.
+/openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/results/lvs/digital_pll.lvs.powered.v:1214: Warning: Identifier `\_214_' is implicitly declared.
+/openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/results/lvs/digital_pll.lvs.powered.v:1219: Warning: Identifier `\_215_' is implicitly declared.
+/openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/results/lvs/digital_pll.lvs.powered.v:1226: Warning: Identifier `\_216_' is implicitly declared.
+/openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/results/lvs/digital_pll.lvs.powered.v:1232: Warning: Identifier `\ringosc.dstage[3].id.trim[1]' is implicitly declared.
+/openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/results/lvs/digital_pll.lvs.powered.v:1237: Warning: Identifier `\_217_' is implicitly declared.
+/openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/results/lvs/digital_pll.lvs.powered.v:1244: Warning: Identifier `\_218_' is implicitly declared.
+/openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/results/lvs/digital_pll.lvs.powered.v:1251: Warning: Identifier `\_219_' is implicitly declared.
+/openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/results/lvs/digital_pll.lvs.powered.v:1258: Warning: Identifier `\_220_' is implicitly declared.
+/openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/results/lvs/digital_pll.lvs.powered.v:1265: Warning: Identifier `\_221_' is implicitly declared.
+/openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/results/lvs/digital_pll.lvs.powered.v:1270: Warning: Identifier `\_222_' is implicitly declared.
+/openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/results/lvs/digital_pll.lvs.powered.v:1277: Warning: Identifier `\_223_' is implicitly declared.
+/openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/results/lvs/digital_pll.lvs.powered.v:1283: Warning: Identifier `\ringosc.dstage[4].id.trim[1]' is implicitly declared.
+/openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/results/lvs/digital_pll.lvs.powered.v:1289: Warning: Identifier `\_224_' is implicitly declared.
+/openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/results/lvs/digital_pll.lvs.powered.v:1296: Warning: Identifier `\_225_' is implicitly declared.
+/openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/results/lvs/digital_pll.lvs.powered.v:1301: Warning: Identifier `\_226_' is implicitly declared.
+/openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/results/lvs/digital_pll.lvs.powered.v:1307: Warning: Identifier `\ringosc.dstage[5].id.trim[1]' is implicitly declared.
+/openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/results/lvs/digital_pll.lvs.powered.v:1312: Warning: Identifier `\_227_' is implicitly declared.
+/openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/results/lvs/digital_pll.lvs.powered.v:1317: Warning: Identifier `\_228_' is implicitly declared.
+/openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/results/lvs/digital_pll.lvs.powered.v:1323: Warning: Identifier `\ringosc.dstage[6].id.trim[1]' is implicitly declared.
+/openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/results/lvs/digital_pll.lvs.powered.v:1328: Warning: Identifier `\_229_' is implicitly declared.
+/openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/results/lvs/digital_pll.lvs.powered.v:1333: Warning: Identifier `\_230_' is implicitly declared.
+/openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/results/lvs/digital_pll.lvs.powered.v:1337: Warning: Identifier `\_231_' is implicitly declared.
+/openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/results/lvs/digital_pll.lvs.powered.v:1344: Warning: Identifier `\_232_' is implicitly declared.
+/openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/results/lvs/digital_pll.lvs.powered.v:1351: Warning: Identifier `\_233_' is implicitly declared.
+/openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/results/lvs/digital_pll.lvs.powered.v:1357: Warning: Identifier `\ringosc.dstage[7].id.trim[1]' is implicitly declared.
+/openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/results/lvs/digital_pll.lvs.powered.v:1362: Warning: Identifier `\_234_' is implicitly declared.
+/openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/results/lvs/digital_pll.lvs.powered.v:1367: Warning: Identifier `\_235_' is implicitly declared.
+/openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/results/lvs/digital_pll.lvs.powered.v:1374: Warning: Identifier `\_236_' is implicitly declared.
+/openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/results/lvs/digital_pll.lvs.powered.v:1380: Warning: Identifier `\ringosc.dstage[8].id.trim[1]' is implicitly declared.
+/openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/results/lvs/digital_pll.lvs.powered.v:1386: Warning: Identifier `\_237_' is implicitly declared.
+/openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/results/lvs/digital_pll.lvs.powered.v:1393: Warning: Identifier `\_238_' is implicitly declared.
+/openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/results/lvs/digital_pll.lvs.powered.v:1399: Warning: Identifier `\ringosc.dstage[9].id.trim[1]' is implicitly declared.
+/openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/results/lvs/digital_pll.lvs.powered.v:1406: Warning: Identifier `\ringosc.dstage[10].id.trim[1]' is implicitly declared.
+/openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/results/lvs/digital_pll.lvs.powered.v:1413: Warning: Identifier `\_239_' is implicitly declared.
+/openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/results/lvs/digital_pll.lvs.powered.v:1420: Warning: Identifier `\_240_' is implicitly declared.
+/openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/results/lvs/digital_pll.lvs.powered.v:1428: Warning: Identifier `\ringosc.dstage[11].id.trim[1]' is implicitly declared.
+/openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/results/lvs/digital_pll.lvs.powered.v:1435: Warning: Identifier `\_241_' is implicitly declared.
+/openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/results/lvs/digital_pll.lvs.powered.v:1442: Warning: Identifier `\_242_' is implicitly declared.
+/openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/results/lvs/digital_pll.lvs.powered.v:1448: Warning: Identifier `\ringosc.iss.trim[1]' is implicitly declared.
+/openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/results/lvs/digital_pll.lvs.powered.v:1452: Warning: Identifier `\_020_' is implicitly declared.
+/openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/results/lvs/digital_pll.lvs.powered.v:1456: Warning: Identifier `\_019_' is implicitly declared.
+/openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/results/lvs/digital_pll.lvs.powered.v:1460: Warning: Identifier `\_018_' is implicitly declared.
+/openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/results/lvs/digital_pll.lvs.powered.v:1464: Warning: Identifier `\_017_' is implicitly declared.
+/openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/results/lvs/digital_pll.lvs.powered.v:1468: Warning: Identifier `\_016_' is implicitly declared.
+/openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/results/lvs/digital_pll.lvs.powered.v:1472: Warning: Identifier `\_015_' is implicitly declared.
+/openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/results/lvs/digital_pll.lvs.powered.v:1476: Warning: Identifier `\_014_' is implicitly declared.
+/openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/results/lvs/digital_pll.lvs.powered.v:1480: Warning: Identifier `\_013_' is implicitly declared.
+/openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/results/lvs/digital_pll.lvs.powered.v:1484: Warning: Identifier `\_012_' is implicitly declared.
+/openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/results/lvs/digital_pll.lvs.powered.v:1488: Warning: Identifier `\_011_' is implicitly declared.
+/openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/results/lvs/digital_pll.lvs.powered.v:1492: Warning: Identifier `\_010_' is implicitly declared.
+/openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/results/lvs/digital_pll.lvs.powered.v:1496: Warning: Identifier `\_009_' is implicitly declared.
+/openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/results/lvs/digital_pll.lvs.powered.v:1500: Warning: Identifier `\_008_' is implicitly declared.
+/openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/results/lvs/digital_pll.lvs.powered.v:1504: Warning: Identifier `\_007_' is implicitly declared.
+/openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/results/lvs/digital_pll.lvs.powered.v:1508: Warning: Identifier `\_006_' is implicitly declared.
+/openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/results/lvs/digital_pll.lvs.powered.v:1512: Warning: Identifier `\_005_' is implicitly declared.
+/openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/results/lvs/digital_pll.lvs.powered.v:1516: Warning: Identifier `\_004_' is implicitly declared.
+/openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/results/lvs/digital_pll.lvs.powered.v:1520: Warning: Identifier `\_003_' is implicitly declared.
+/openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/results/lvs/digital_pll.lvs.powered.v:1524: Warning: Identifier `\_002_' is implicitly declared.
+/openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/results/lvs/digital_pll.lvs.powered.v:1528: Warning: Identifier `\_001_' is implicitly declared.
+/openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/results/lvs/digital_pll.lvs.powered.v:1532: Warning: Identifier `\_000_' is implicitly declared.
+/openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/results/lvs/digital_pll.lvs.powered.v:1536: Warning: Identifier `\_022_' is implicitly declared.
+/openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/results/lvs/digital_pll.lvs.powered.v:1539: Warning: Identifier `\pll_control.clock' is implicitly declared.
+/openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/results/lvs/digital_pll.lvs.powered.v:1544: Warning: Identifier `\pll_control.oscbuf[0]' is implicitly declared.
+/openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/results/lvs/digital_pll.lvs.powered.v:1681: Warning: Identifier `\ringosc.dstage[0].id.in' is implicitly declared.
+/openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/results/lvs/digital_pll.lvs.powered.v:1682: Warning: Identifier `\ringosc.dstage[0].id.ts' is implicitly declared.
+/openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/results/lvs/digital_pll.lvs.powered.v:1686: Warning: Identifier `\ringosc.dstage[0].id.d0' is implicitly declared.
+/openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/results/lvs/digital_pll.lvs.powered.v:1689: Warning: Identifier `\ringosc.dstage[0].id.d2' is implicitly declared.
+/openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/results/lvs/digital_pll.lvs.powered.v:1691: Warning: Identifier `\ringosc.dstage[0].id.out' is implicitly declared.
+/openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/results/lvs/digital_pll.lvs.powered.v:1696: Warning: Identifier `\ringosc.dstage[0].id.d1' is implicitly declared.
+/openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/results/lvs/digital_pll.lvs.powered.v:1713: Warning: Identifier `\ringosc.dstage[10].id.in' is implicitly declared.
+/openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/results/lvs/digital_pll.lvs.powered.v:1714: Warning: Identifier `\ringosc.dstage[10].id.ts' is implicitly declared.
+/openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/results/lvs/digital_pll.lvs.powered.v:1718: Warning: Identifier `\ringosc.dstage[10].id.d0' is implicitly declared.
+/openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/results/lvs/digital_pll.lvs.powered.v:1721: Warning: Identifier `\ringosc.dstage[10].id.d2' is implicitly declared.
+/openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/results/lvs/digital_pll.lvs.powered.v:1723: Warning: Identifier `\ringosc.dstage[10].id.out' is implicitly declared.
+/openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/results/lvs/digital_pll.lvs.powered.v:1728: Warning: Identifier `\ringosc.dstage[10].id.d1' is implicitly declared.
+/openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/results/lvs/digital_pll.lvs.powered.v:1746: Warning: Identifier `\ringosc.dstage[11].id.ts' is implicitly declared.
+/openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/results/lvs/digital_pll.lvs.powered.v:1750: Warning: Identifier `\ringosc.dstage[11].id.d0' is implicitly declared.
+/openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/results/lvs/digital_pll.lvs.powered.v:1753: Warning: Identifier `\ringosc.dstage[11].id.d2' is implicitly declared.
+/openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/results/lvs/digital_pll.lvs.powered.v:1755: Warning: Identifier `\ringosc.dstage[11].id.out' is implicitly declared.
+/openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/results/lvs/digital_pll.lvs.powered.v:1760: Warning: Identifier `\ringosc.dstage[11].id.d1' is implicitly declared.
+/openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/results/lvs/digital_pll.lvs.powered.v:1778: Warning: Identifier `\ringosc.dstage[1].id.ts' is implicitly declared.
+/openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/results/lvs/digital_pll.lvs.powered.v:1782: Warning: Identifier `\ringosc.dstage[1].id.d0' is implicitly declared.
+/openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/results/lvs/digital_pll.lvs.powered.v:1785: Warning: Identifier `\ringosc.dstage[1].id.d2' is implicitly declared.
+/openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/results/lvs/digital_pll.lvs.powered.v:1787: Warning: Identifier `\ringosc.dstage[1].id.out' is implicitly declared.
+/openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/results/lvs/digital_pll.lvs.powered.v:1792: Warning: Identifier `\ringosc.dstage[1].id.d1' is implicitly declared.
+/openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/results/lvs/digital_pll.lvs.powered.v:1810: Warning: Identifier `\ringosc.dstage[2].id.ts' is implicitly declared.
+/openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/results/lvs/digital_pll.lvs.powered.v:1814: Warning: Identifier `\ringosc.dstage[2].id.d0' is implicitly declared.
+/openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/results/lvs/digital_pll.lvs.powered.v:1817: Warning: Identifier `\ringosc.dstage[2].id.d2' is implicitly declared.
+/openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/results/lvs/digital_pll.lvs.powered.v:1819: Warning: Identifier `\ringosc.dstage[2].id.out' is implicitly declared.
+/openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/results/lvs/digital_pll.lvs.powered.v:1824: Warning: Identifier `\ringosc.dstage[2].id.d1' is implicitly declared.
+/openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/results/lvs/digital_pll.lvs.powered.v:1842: Warning: Identifier `\ringosc.dstage[3].id.ts' is implicitly declared.
+/openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/results/lvs/digital_pll.lvs.powered.v:1846: Warning: Identifier `\ringosc.dstage[3].id.d0' is implicitly declared.
+/openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/results/lvs/digital_pll.lvs.powered.v:1849: Warning: Identifier `\ringosc.dstage[3].id.d2' is implicitly declared.
+/openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/results/lvs/digital_pll.lvs.powered.v:1851: Warning: Identifier `\ringosc.dstage[3].id.out' is implicitly declared.
+/openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/results/lvs/digital_pll.lvs.powered.v:1856: Warning: Identifier `\ringosc.dstage[3].id.d1' is implicitly declared.
+/openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/results/lvs/digital_pll.lvs.powered.v:1874: Warning: Identifier `\ringosc.dstage[4].id.ts' is implicitly declared.
+/openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/results/lvs/digital_pll.lvs.powered.v:1878: Warning: Identifier `\ringosc.dstage[4].id.d0' is implicitly declared.
+/openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/results/lvs/digital_pll.lvs.powered.v:1881: Warning: Identifier `\ringosc.dstage[4].id.d2' is implicitly declared.
+/openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/results/lvs/digital_pll.lvs.powered.v:1883: Warning: Identifier `\ringosc.dstage[4].id.out' is implicitly declared.
+/openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/results/lvs/digital_pll.lvs.powered.v:1888: Warning: Identifier `\ringosc.dstage[4].id.d1' is implicitly declared.
+/openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/results/lvs/digital_pll.lvs.powered.v:1906: Warning: Identifier `\ringosc.dstage[5].id.ts' is implicitly declared.
+/openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/results/lvs/digital_pll.lvs.powered.v:1910: Warning: Identifier `\ringosc.dstage[5].id.d0' is implicitly declared.
+/openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/results/lvs/digital_pll.lvs.powered.v:1913: Warning: Identifier `\ringosc.dstage[5].id.d2' is implicitly declared.
+/openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/results/lvs/digital_pll.lvs.powered.v:1915: Warning: Identifier `\ringosc.dstage[5].id.out' is implicitly declared.
+/openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/results/lvs/digital_pll.lvs.powered.v:1920: Warning: Identifier `\ringosc.dstage[5].id.d1' is implicitly declared.
+/openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/results/lvs/digital_pll.lvs.powered.v:1938: Warning: Identifier `\ringosc.dstage[6].id.ts' is implicitly declared.
+/openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/results/lvs/digital_pll.lvs.powered.v:1942: Warning: Identifier `\ringosc.dstage[6].id.d0' is implicitly declared.
+/openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/results/lvs/digital_pll.lvs.powered.v:1945: Warning: Identifier `\ringosc.dstage[6].id.d2' is implicitly declared.
+/openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/results/lvs/digital_pll.lvs.powered.v:1947: Warning: Identifier `\ringosc.dstage[6].id.out' is implicitly declared.
+/openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/results/lvs/digital_pll.lvs.powered.v:1952: Warning: Identifier `\ringosc.dstage[6].id.d1' is implicitly declared.
+/openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/results/lvs/digital_pll.lvs.powered.v:1970: Warning: Identifier `\ringosc.dstage[7].id.ts' is implicitly declared.
+/openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/results/lvs/digital_pll.lvs.powered.v:1974: Warning: Identifier `\ringosc.dstage[7].id.d0' is implicitly declared.
+/openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/results/lvs/digital_pll.lvs.powered.v:1977: Warning: Identifier `\ringosc.dstage[7].id.d2' is implicitly declared.
+/openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/results/lvs/digital_pll.lvs.powered.v:1979: Warning: Identifier `\ringosc.dstage[7].id.out' is implicitly declared.
+/openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/results/lvs/digital_pll.lvs.powered.v:1984: Warning: Identifier `\ringosc.dstage[7].id.d1' is implicitly declared.
+/openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/results/lvs/digital_pll.lvs.powered.v:2002: Warning: Identifier `\ringosc.dstage[8].id.ts' is implicitly declared.
+/openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/results/lvs/digital_pll.lvs.powered.v:2006: Warning: Identifier `\ringosc.dstage[8].id.d0' is implicitly declared.
+/openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/results/lvs/digital_pll.lvs.powered.v:2009: Warning: Identifier `\ringosc.dstage[8].id.d2' is implicitly declared.
+/openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/results/lvs/digital_pll.lvs.powered.v:2011: Warning: Identifier `\ringosc.dstage[8].id.out' is implicitly declared.
+/openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/results/lvs/digital_pll.lvs.powered.v:2016: Warning: Identifier `\ringosc.dstage[8].id.d1' is implicitly declared.
+/openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/results/lvs/digital_pll.lvs.powered.v:2034: Warning: Identifier `\ringosc.dstage[9].id.ts' is implicitly declared.
+/openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/results/lvs/digital_pll.lvs.powered.v:2038: Warning: Identifier `\ringosc.dstage[9].id.d0' is implicitly declared.
+/openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/results/lvs/digital_pll.lvs.powered.v:2041: Warning: Identifier `\ringosc.dstage[9].id.d2' is implicitly declared.
+/openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/results/lvs/digital_pll.lvs.powered.v:2048: Warning: Identifier `\ringosc.dstage[9].id.d1' is implicitly declared.
+/openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/results/lvs/digital_pll.lvs.powered.v:2066: Warning: Identifier `\ringosc.c[0]' is implicitly declared.
+/openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/results/lvs/digital_pll.lvs.powered.v:2074: Warning: Identifier `\ringosc.c[1]' is implicitly declared.
+/openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/results/lvs/digital_pll.lvs.powered.v:2081: Warning: Identifier `\ringosc.iss.one' is implicitly declared.
+/openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/results/lvs/digital_pll.lvs.powered.v:2086: Warning: Identifier `\ringosc.iss.ctrl0' is implicitly declared.
+/openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/results/lvs/digital_pll.lvs.powered.v:2090: Warning: Identifier `\ringosc.iss.d0' is implicitly declared.
+/openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/results/lvs/digital_pll.lvs.powered.v:2093: Warning: Identifier `\ringosc.iss.d2' is implicitly declared.
+/openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/results/lvs/digital_pll.lvs.powered.v:2100: Warning: Identifier `\ringosc.iss.d1' is implicitly declared.
+Successfully finished Verilog frontend.
+
+2. Executing Verilog backend.
+Dumping module `\digital_pll'.
+
+Warnings: 362 unique messages, 362 total
+End of script. Logfile hash: 34fde03a07, CPU: user 1.21s system 0.02s, MEM: 19.70 MB peak
+Yosys 0.9+3621 (git sha1 84e9fa7, gcc 8.3.1 -fPIC -Os)
+Time spent: 75% 2x write_verilog (0 sec), 24% 2x read_verilog (0 sec)
