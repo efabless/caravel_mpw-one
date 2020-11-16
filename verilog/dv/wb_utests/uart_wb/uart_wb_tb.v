@@ -19,6 +19,9 @@ module uart_wb_tb;
 
 	wire wb_ack_o;
 	wire [31:0] wb_dat_o;
+
+    wire tbuart_rx;
+	wire ser_rx;
   
     initial begin
         wb_clk_i = 0; 

@@ -45,6 +45,7 @@ module simpleuart_wb # (
     wire [31:0] simpleuart_reg_div_do;
     wire [31:0] simpleuart_reg_dat_do;
     wire [31:0] simpleuart_reg_cfg_do;
+    wire reg_dat_wait;
 
     wire resetn = ~wb_rst_i;
     wire valid = wb_stb_i && wb_cyc_i; 
@@ -125,6 +126,8 @@ module simpleuart (
     reg [3:0] send_bitcnt;
     reg [31:0] send_divcnt;
     reg send_dummy;
+
+    wire reg_ena_do;
 
     assign reg_div_do = cfg_divider;
     assign reg_ena_do = {31'd0, enabled};
