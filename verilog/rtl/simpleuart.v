@@ -1,3 +1,4 @@
+`default_nettype none
 /*
  *  PicoSoC - A simple example SoC using PicoRV32
  *

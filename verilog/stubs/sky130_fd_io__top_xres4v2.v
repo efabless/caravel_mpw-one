@@ -1,3 +1,4 @@
+`default_nettype none
 /*
  * Copyright 2020 The SkyWater PDK Authors
  *

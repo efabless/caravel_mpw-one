@@ -1,3 +1,4 @@
+`default_nettype none
 module chip_io(
 	// Package Pins
 	inout  vddio,		// Common padframe/ESD supply

@@ -1,3 +1,4 @@
+`default_nettype none
 module mprj_ctrl_wb #(
     parameter BASE_ADR  = 32'h 2300_0000,
     parameter XFER      = 8'h 00,

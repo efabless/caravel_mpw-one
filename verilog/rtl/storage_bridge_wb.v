@@ -1,3 +1,4 @@
+`default_nettype none
 module storage_bridge_wb (
     // MGMT_AREA R/W WB Interface
     input wb_clk_i,

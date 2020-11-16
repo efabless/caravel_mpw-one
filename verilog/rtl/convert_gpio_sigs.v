@@ -1,3 +1,4 @@
+`default_nettype none
 /* Convert the standard set of GPIO signals: input, output, output_enb,
  * pullup, and pulldown into the set needed by the s8 GPIO pads:
  * input, output, output_enb, input_enb, mode.  Note that dm[2] on

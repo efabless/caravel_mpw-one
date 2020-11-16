@@ -1,3 +1,4 @@
+`default_nettype none
 /* 
  *---------------------------------------------------------------------
  * See gpio_control_block for description.  This module is like

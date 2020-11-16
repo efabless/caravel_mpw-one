@@ -1,3 +1,4 @@
+`default_nettype none
 //-------------------------------------
 // SPI controller for Caravel (PicoSoC)
 //-------------------------------------

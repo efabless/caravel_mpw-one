@@ -1,3 +1,4 @@
+`default_nettype none
  
 module storage (
     // MGMT_AREA R/W Interface 

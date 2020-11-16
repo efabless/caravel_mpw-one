@@ -1,3 +1,4 @@
+`default_nettype none
 /*	
  *	StriVe housekeeping pass-thru mode SPI testbench.
  */
