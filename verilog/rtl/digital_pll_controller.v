@@ -1,3 +1,4 @@
+`default_nettype none
 // (True) digital PLL
 //
 // Output goes to a trimmable ring oscillator (see documentation).

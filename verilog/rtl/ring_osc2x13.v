@@ -1,3 +1,4 @@
+`default_nettype none
 // Tunable ring oscillator---synthesizable (physical) version.
 //
 // NOTE:  This netlist cannot be simulated correctly due to lack

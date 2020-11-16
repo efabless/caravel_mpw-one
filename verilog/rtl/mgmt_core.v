@@ -1,3 +1,4 @@
+`default_nettype none
 module mgmt_core (
 `ifdef USE_POWER_PINS
 	inout vdd1v8,	   

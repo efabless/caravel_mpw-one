@@ -1,3 +1,4 @@
+`default_nettype none
 /* Simple 32-bit counter-timer for Caravel. */
 
 /* Counter acts as low 32 bits of a 64-bit counter

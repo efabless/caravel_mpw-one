@@ -1,3 +1,4 @@
+`default_nettype none
 /*
  *  PicoRV32 -- A Small RISC-V (RV32I) Processor Core
  *

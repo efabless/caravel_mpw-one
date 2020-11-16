@@ -1,3 +1,4 @@
+`default_nettype none
 /*--------------------------------------------------------------*/
 /* caravel, a project harness for the Google/SkyWater sky130	*/
 /* fabrication process and open source PDK			*/

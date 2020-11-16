@@ -1,3 +1,4 @@
+`default_nettype none
 /*----------------------------------------------------------------------*/
 /* Buffers protecting the management region from the user region.	*/
 /* This mainly consists of tristate buffers that are enabled by a	*/

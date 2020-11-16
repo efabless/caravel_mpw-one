@@ -1,3 +1,4 @@
+`default_nettype none
 // This routine synchronizes the 
 
 module caravel_clocking(

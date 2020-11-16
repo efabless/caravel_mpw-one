@@ -1,3 +1,4 @@
+`default_nettype none
 module la_wb # (
     parameter BASE_ADR  = 32'h 2200_0000,
     parameter LA_DATA_0 = 8'h00,

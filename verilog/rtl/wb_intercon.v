@@ -1,3 +1,4 @@
+`default_nettype none
 module wb_intercon #(
     parameter DW = 32,          // Data Width
     parameter AW = 32,          // Address Width

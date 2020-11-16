@@ -1,3 +1,4 @@
+`default_nettype none
 /* Integer-N clock divider */
  
 module clock_div #(

@@ -1,3 +1,4 @@
+`default_nettype none
 // This module represents an unprogrammed mask revision
 // block that is configured with via programming on the
 // chip top level.  This value is passed to the block as

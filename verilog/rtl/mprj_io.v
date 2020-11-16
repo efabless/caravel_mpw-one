@@ -1,3 +1,4 @@
+`default_nettype none
 module mprj_io #(
     parameter AREA1PADS = 18	// Highest numbered pad in area 1
 ) (

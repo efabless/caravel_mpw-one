@@ -1,3 +1,4 @@
+`default_nettype none
 // OpenRAM SRAM model
 // Words: 256
 // Word size: 32

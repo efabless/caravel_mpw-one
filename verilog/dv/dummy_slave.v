@@ -1,3 +1,4 @@
+`default_nettype none
 module dummy_slave(
     input wb_clk_i,
     input wb_rst_i,
