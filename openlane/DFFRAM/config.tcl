@@ -5,7 +5,8 @@ set ::env(DESIGN_NAME) DFFRAM
 # Change if needed
 set ::env(VERILOG_FILES) "\
 	$script_dir/../../verilog/rtl/defines.v\
-	$script_dir/../../verilog/rtl/DFFRAM.v"
+	$script_dir/../../verilog/rtl/DFFRAM.v\
+	$script_dir/../../verilog/rtl/DFFRAMBB.v"
 
 set ::env(SYNTH_TOP_LEVEL) 1
 set ::env(SYNTH_READ_BLACKBOX_LIB) 1
