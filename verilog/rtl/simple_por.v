@@ -2,9 +2,12 @@
 `timescale 1 ns / 1 ps
 
 module simple_por(
-    input vdd3v3,
-    input vss,
-    output porb_h
+    inout vdd3v3,
+    inout vdd1v8,
+    inout vss,
+    output porb_h,
+    output porb_l,
+    output por_l
 );
 
     wire mid, porb_h;
@@ -30,22 +33,41 @@ module simple_por(
 
     // Instantiate two shmitt trigger buffers in series
 
-    sky130_fd_sc_hvl__schmittbuf hystbuf1 (
+    sky130_fd_sc_hvl__schmittbuf_1 hystbuf1 (
+`ifdef USE_POWER_PINS
 	.VPWR(vdd3v3),
 	.VGND(vss),
 	.VPB(vdd3v3),
 	.VNB(vss),
+`endif
 	.A(inode),
 	.X(mid)
     );
 
-    sky130_fd_sc_hvl__schmittbuf hystbuf2 (
+    sky130_fd_sc_hvl__schmittbuf_1 hystbuf2 (
+`ifdef USE_POWER_PINS
 	.VPWR(vdd3v3),
 	.VGND(vss),
 	.VPB(vdd3v3),
 	.VNB(vss),
+`endif
 	.A(mid),
 	.X(porb_h)
     );
 
+    sky130_fd_sc_hvl__lsbufhv2lv_1 porb_level (
+`ifdef USE_POWER_PINS
+	.VPWR(vdd3v3),
+	.VPB(vdd3v3),
+	.LVPWR(vdd1v8),
+	.VNB(vss),
+	.VGND(vss),
+`endif
+	.A(porb_h),
+	.X(porb_l)
+    );
+
+    // since this is behavioral anyway, but this should be
+    // replaced by a proper inverter
+    assign por_l = porb_l;
 endmodule

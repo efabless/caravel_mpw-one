@@ -251,7 +251,7 @@ module caravel (
 	.flash_io1_do_core(flash_io1_do_core),
 	.flash_io0_di_core(flash_io0_di_core),
 	.flash_io1_di_core(flash_io1_di_core),
-	.por(~porb_l),
+	.por(por_l),
 	.mprj_io_in(mprj_io_in),
 	.mprj_io_out(mprj_io_out),
 	.mprj_io_oeb(mprj_io_oeb),
@@ -308,6 +308,7 @@ module caravel (
 	wire 	    mprj_clock;
 	wire 	    mprj_clock2;
 	wire 	    mprj_resetn;
+	wire 	    mprj_reset;
 	wire 	    mprj_cyc_o_user;
 	wire 	    mprj_stb_o_user;
 	wire 	    mprj_we_o_user;
@@ -440,6 +441,7 @@ module caravel (
 		.user_clock(mprj_clock),
 		.user_clock2(mprj_clock2),
 		.user_resetn(mprj_resetn),
+		.user_reset(mprj_reset),
 		.mprj_cyc_o_user(mprj_cyc_o_user),
 		.mprj_stb_o_user(mprj_stb_o_user),
 		.mprj_we_o_user(mprj_we_o_user),
@@ -469,7 +471,7 @@ module caravel (
 		.vssd2(vssd2),	// User area 2 digital ground
 
     		.wb_clk_i(mprj_clock),
-    		.wb_rst_i(!mprj_resetn),
+    		.wb_rst_i(mprj_reset),
 		// MGMT SoC Wishbone Slave 
 		.wbs_cyc_i(mprj_cyc_o_user),
 		.wbs_stb_i(mprj_stb_o_user),
@@ -594,16 +596,6 @@ module caravel (
     	.pad_gpio_in(mprj_io_in[(`MPRJ_IO_PADS-1):2])
     );
 
-    sky130_fd_sc_hvl__lsbufhv2lv porb_level (
-		.VPWR(vddio),
-		.VPB(vddio),
-		.LVPWR(vccd),
-		.VNB(vssio),
-		.VGND(vssio),
-		.A(porb_h),
-		.X(porb_l)
-    );
-
     user_id_programming #(
 	.USER_PROJECT_ID(USER_PROJECT_ID)
     ) user_id_value (
@@ -620,12 +612,14 @@ module caravel (
     );
 
     // XRES (chip input pin reset) reset level converter
-    sky130_fd_sc_hvl__lsbufhv2lv rstb_level (
+    sky130_fd_sc_hvl__lsbufhv2lv_1 rstb_level (
+`ifdef USE_POWER_PINS
 		.VPWR(vddio),
 		.VPB(vddio),
 		.LVPWR(vccd),
 		.VNB(vssio),
 		.VGND(vssio),
+`endif
 		.A(rstb_h),
 		.X(rstb_l)
     );

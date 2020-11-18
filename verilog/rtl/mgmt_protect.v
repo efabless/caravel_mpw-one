@@ -41,6 +41,7 @@ module mgmt_protect (
     output 	  user_clock,
     output 	  user_clock2,
     output 	  user_resetn,
+    output 	  user_reset,
     output 	  mprj_cyc_o_user,
     output 	  mprj_stb_o_user,
     output 	  mprj_we_o_user,
@@ -68,19 +69,23 @@ module mgmt_protect (
 	wire user2_vdd_powergood;
 
         sky130_fd_sc_hd__conb_1 mprj_logic_high [74:0] (
+`ifdef USE_POWER_PINS
                 .VPWR(vccd1),
                 .VGND(vssd1),
                 .VPB(vccd1),
                 .VNB(vssd1),
+`endif
                 .HI(mprj_logic1),
                 .LO()
         );
 
         sky130_fd_sc_hd__conb_1 mprj2_logic_high (
+`ifdef USE_POWER_PINS
                 .VPWR(vccd2),
                 .VGND(vssd2),
                 .VPB(vccd2),
                 .VNB(vssd2),
+`endif
                 .HI(mprj2_logic1),
                 .LO()
         );
@@ -88,130 +93,158 @@ module mgmt_protect (
 	// Logic high in the VDDA (3.3V) domains
 
         sky130_fd_sc_hvl__conb_1 mprj_logic_high_hvl (
+`ifdef USE_POWER_PINS
                 .VPWR(vdda1),
                 .VGND(vssa1),
                 .VPB(vdda1),
                 .VNB(vssa1),
+`endif
                 .HI(mprj_vdd_logic1_h),
                 .LO()
         );
 
         sky130_fd_sc_hvl__conb_1 mprj2_logic_high_hvl (
+`ifdef USE_POWER_PINS
                 .VPWR(vdda2),
                 .VGND(vssa2),
                 .VPB(vdda2),
                 .VNB(vssa2),
+`endif
                 .HI(mprj2_vdd_logic1_h),
                 .LO()
         );
 
 	// Level shift the logic high signals into the 1.8V domain
 
-	sky130_fd_sc_hvl__lsbufhv2lv mprj_logic_high_lv (
+	sky130_fd_sc_hvl__lsbufhv2lv_1 mprj_logic_high_lv (
+`ifdef USE_POWER_PINS
 		.VPWR(vdda1),
 		.VGND(vssd),
 		.LVPWR(vccd),
 		.VPB(vdda1),
 		.VNB(vssd),
+`endif
 		.X(mprj_vdd_logic1),
 		.A(mprj_vdd_logic1_h)
 	);
 
-	sky130_fd_sc_hvl__lsbufhv2lv mprj2_logic_high_lv (
+	sky130_fd_sc_hvl__lsbufhv2lv_1 mprj2_logic_high_lv (
+`ifdef USE_POWER_PINS
 		.VPWR(vdda2),
 		.VGND(vssd),
 		.LVPWR(vccd),
 		.VPB(vdda2),
 		.VNB(vssd),
+`endif
 		.X(mprj2_vdd_logic1),
 		.A(mprj2_vdd_logic1_h)
 	);
 
         sky130_fd_sc_hd__einvp_8 mprj_rstn_buf (
+`ifdef USE_POWER_PINS
                 .VPWR(vccd),
                 .VGND(vssd),
                 .VPB(vccd),
                 .VNB(vssd),
+`endif
                 .Z(user_resetn),
                 .A(~caravel_rstn),
                 .TE(mprj_logic1[0])
         );
 
+        assign user_reset = ~user_resetn;
+
         sky130_fd_sc_hd__einvp_8 mprj_clk_buf (
+`ifdef USE_POWER_PINS
                 .VPWR(vccd),
                 .VGND(vssd),
                 .VPB(vccd),
                 .VNB(vssd),
+`endif
                 .Z(user_clock),
                 .A(~caravel_clk),
                 .TE(mprj_logic1[1])
         );
 
         sky130_fd_sc_hd__einvp_8 mprj_clk2_buf (
+`ifdef USE_POWER_PINS
                 .VPWR(vccd),
                 .VGND(vssd),
                 .VPB(vccd),
                 .VNB(vssd),
+`endif
                 .Z(user_clock2),
                 .A(~caravel_clk2),
                 .TE(mprj_logic1[2])
         );
 
         sky130_fd_sc_hd__einvp_8 mprj_cyc_buf (
+`ifdef USE_POWER_PINS
                 .VPWR(vccd),
                 .VGND(vssd),
                 .VPB(vccd),
                 .VNB(vssd),
+`endif
                 .Z(mprj_cyc_o_user),
                 .A(~mprj_cyc_o_core),
                 .TE(mprj_logic1[3])
         );
 
         sky130_fd_sc_hd__einvp_8 mprj_stb_buf (
+`ifdef USE_POWER_PINS
                 .VPWR(vccd),
                 .VGND(vssd),
                 .VPB(vccd),
                 .VNB(vssd),
+`endif
                 .Z(mprj_stb_o_user),
                 .A(~mprj_stb_o_core),
                 .TE(mprj_logic1[4])
         );
 
         sky130_fd_sc_hd__einvp_8 mprj_we_buf (
+`ifdef USE_POWER_PINS
                 .VPWR(vccd),
                 .VGND(vssd),
                 .VPB(vccd),
                 .VNB(vssd),
+`endif
                 .Z(mprj_we_o_user),
                 .A(~mprj_we_o_core),
                 .TE(mprj_logic1[5])
         );
 
         sky130_fd_sc_hd__einvp_8 mprj_sel_buf [3:0] (
+`ifdef USE_POWER_PINS
                 .VPWR(vccd),
                 .VGND(vssd),
                 .VPB(vccd),
                 .VNB(vssd),
+`endif
                 .Z(mprj_sel_o_user),
                 .A(~mprj_sel_o_core),
                 .TE(mprj_logic1[9:6])
         );
 
         sky130_fd_sc_hd__einvp_8 mprj_adr_buf [31:0] (
+`ifdef USE_POWER_PINS
                 .VPWR(vccd),
                 .VGND(vssd),
                 .VPB(vccd),
                 .VNB(vssd),
+`endif
                 .Z(mprj_adr_o_user),
                 .A(~mprj_adr_o_core),
                 .TE(mprj_logic1[41:10])
         );
 
         sky130_fd_sc_hd__einvp_8 mprj_dat_buf [31:0] (
+`ifdef USE_POWER_PINS
                 .VPWR(vccd),
                 .VGND(vssd),
                 .VPB(vccd),
                 .VNB(vssd),
+`endif
                 .Z(mprj_dat_o_user),
                 .A(~mprj_dat_o_core),
                 .TE(mprj_logic1[73:42])
@@ -224,10 +257,12 @@ module mgmt_protect (
 	/* power-down of vccd1.					*/
 
         sky130_fd_sc_hd__einvp_8 la_buf [127:0] (
+`ifdef USE_POWER_PINS
                 .VPWR(vccd),
                 .VGND(vssd),
                 .VPB(vccd),
                 .VNB(vssd),
+`endif
                 .Z(la_data_in_mprj),
                 .A(~la_output_core),
                 .TE(~la_oen)
@@ -238,37 +273,45 @@ module mgmt_protect (
 	/* signal, make sure that it is buffered properly.		*/
 
         sky130_fd_sc_hd__buf_8 mprj_pwrgood (
+`ifdef USE_POWER_PINS
                 .VPWR(vccd),
                 .VGND(vssd),
                 .VPB(vccd),
                 .VNB(vssd),
+`endif
                 .A(mprj_logic1[74]),
                 .X(user1_vcc_powergood)
 	);
 
         sky130_fd_sc_hd__buf_8 mprj2_pwrgood (
+`ifdef USE_POWER_PINS
                 .VPWR(vccd),
                 .VGND(vssd),
                 .VPB(vccd),
                 .VNB(vssd),
+`endif
                 .A(mprj2_logic1),
                 .X(user2_vcc_powergood)
 	);
 
         sky130_fd_sc_hd__buf_8 mprj_vdd_pwrgood (
+`ifdef USE_POWER_PINS
                 .VPWR(vccd),
                 .VGND(vssd),
                 .VPB(vccd),
                 .VNB(vssd),
+`endif
                 .A(mprj_vdd_logic1),
                 .X(user_vdd_powergood)
 	);
 
         sky130_fd_sc_hd__buf_8 mprj2_vdd_pwrgood (
+`ifdef USE_POWER_PINS
                 .VPWR(vccd),
                 .VGND(vssd),
                 .VPB(vccd),
                 .VNB(vssd),
+`endif
                 .A(mprj2_vdd_logic1),
                 .X(user2_vdd_powergood)
 	);
