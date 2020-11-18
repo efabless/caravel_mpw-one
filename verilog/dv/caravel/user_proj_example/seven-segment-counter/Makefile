@@ -1,14 +1,15 @@
 FIRMWARE_PATH = ../..
 RTL_PATH = ../../../../rtl
 IP_PATH = ../../../../ip
+#MP_PATH = ../../../../rtl/multi_project_harness
 BEHAVIOURAL_MODELS = ../../ 
 
-TOOLCHAIN_PREFIX?=/ef/apps/bin/riscv32-unknown-elf-
-PDK_PATH?=/ef/tech/SW/sky130A
+TOOLCHAIN_PREFIX?=/opt/riscv64-unknown-elf-gcc-8.3.0-2020.04.1-x86_64-linux-ubuntu14/bin/riscv64-unknown-elf-
+PDK_PATH?=~/work/asic-workshop/pdks/sky130A
 
 .SUFFIXES:
 
-PATTERN = gpio
+PATTERN = seven_segment
 
 all:  ${PATTERN:=.vcd}
 
@@ -39,4 +40,3 @@ clean:
 	rm -f *.elf *.hex *.bin *.vvp *.vcd *.log
 
 .PHONY: clean hex all
-
