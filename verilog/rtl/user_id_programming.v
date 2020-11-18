@@ -18,10 +18,12 @@ module user_id_programming #(
     // For the mask revision input, use an array of digital constant logic cells
 
     sky130_fd_sc_hd__conb_1 mask_rev_value [31:0] (
+`ifdef USE_POWER_PINS
             .VPWR(vdd1v8),
             .VPB(vdd1v8),
             .VNB(vss),
             .VGND(vss),
+`endif
             .HI(user_proj_id_high),
             .LO(user_proj_id_low)
     );
