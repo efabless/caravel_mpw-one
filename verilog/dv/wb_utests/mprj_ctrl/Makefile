@@ -1,17 +1,16 @@
 .SUFFIXES:
 
 PATTERN = mprj_ctrl
+SIM?=icarus
+INCDIRS += ../ ../../ ../../../rtl
 
 all:  ${PATTERN:=.vcd}
 
-%.vvp: %_tb.v
-	iverilog  -I ../../../rtl \
-	$< -o $@
-
-%.vcd: %.vvp
-	vvp $<
-
-clean:
+clean::
 	rm -f *.vvp *.vcd *.log
 
 .PHONY: clean all
+
+# Bring in sim-specific rules
+include ../common/$(SIM).mk
+

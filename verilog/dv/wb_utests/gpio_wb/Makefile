@@ -1,17 +1,17 @@
 .SUFFIXES:
 
 PATTERN = gpio_wb
+SIM?=icarus
 
 all:  ${PATTERN:=.vcd}
 
-%.vvp: %_tb.v
-	iverilog -I .. -I ../../../rtl \
-	$< -o $@
+INCDIRS += ../ ../../../rtl
 
-%.vcd: %.vvp
-	vvp $<
-
-clean:
+clean::
 	rm -f *.vvp *.vcd
 
 .PHONY: clean all
+
+# Bring in sim-specific rules
+include ../common/$(SIM).mk
+

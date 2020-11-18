@@ -6,6 +6,7 @@ BEHAVIOURAL_MODELS = ../../
 
 GCC_PATH?=/ef/apps/bin
 PDK_PATH?=/ef/tech/SW/sky130A
+SIM?=icarus
 
 .SUFFIXES:
 
@@ -15,13 +16,9 @@ all:  ${PATTERN:=.vcd}
 
 hex:  ${PATTERN:=.hex}
 
-%.vvp: %_tb.v %.hex
-	iverilog -DFUNCTIONAL -I $(BEHAVIOURAL_MODELS) \
-	-I $(PDK_PATH) -I $(IP_PATH) -I $(RTL_PATH) \
-	$< -o $@
+DEFINES += FUNCTIONAL
+INCDIRS += $(BEHAVIOURAL_MODELS) $(PDK_PATH) $(IP_PATH) $(RTL_PATH)
 
-%.vcd: %.vvp
-	vvp $<
 
 %.elf: %.c $(FIRMWARE_PATH)/sections.lds $(FIRMWARE_PATH)/start.s
 	${GCC_PATH}/riscv32-unknown-elf-gcc -march=rv32imc -Wl,-Bstatic,-T,$(FIRMWARE_PATH)/sections.lds,--strip-debug -ffreestanding -nostdlib -o $@ $(FIRMWARE_PATH)/start.s $<
@@ -36,8 +33,11 @@ hex:  ${PATTERN:=.hex}
 
 # ---- Clean ----
 
-clean:
+clean::
 	rm -f *.elf *.hex *.bin *.vvp *.vcd *.log
 
 .PHONY: clean hex all
+
+# Bring in simulator-specific rules
+include ../../common/$(SIM).mk
 
