@@ -1,5 +1,5 @@
 #****************************************************************************
-#* Sim support makefile for Icarus Verilog
+#* Sim support makefile for Mentor Questa
 #*
 #* Variables:
 #* - INCDIRS - List of include-path directories
@@ -27,4 +27,3 @@ VLOG_SUPPRESS = 2388,2248,2892
 
 clean ::
 	rm -rf transcript work *.questa design.bin qwave.db
-
