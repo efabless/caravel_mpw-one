@@ -1,622 +1,1995 @@
 VERSION 5.8 ;
 DIVIDERCHAR "/" ;
 BUSBITCHARS "[]" ;
-DESIGN user_project_wrapper_empty ;
+DESIGN user_project_wrapper ;
 UNITS DISTANCE MICRONS 1000 ;
-DIEAREA ( 0 0 ) ( 2700000 2700000 ) ;
-PINS 613 ;
-    - io_in[0] + NET io_in[0] + DIRECTION INPUT + USE SIGNAL + PLACED ( 2698800 28220 ) N + LAYER met3 ( -1200 -300 ) ( 1200 300 ) ;
-    - io_in[10] + NET io_in[10] + DIRECTION INPUT + USE SIGNAL + PLACED ( 2698800 1828180 ) N + LAYER met3 ( -1200 -300 ) ( 1200 300 ) ;
-    - io_in[11] + NET io_in[11] + DIRECTION INPUT + USE SIGNAL + PLACED ( 2698800 1996820 ) N + LAYER met3 ( -1200 -300 ) ( 1200 300 ) ;
-    - io_in[12] + NET io_in[12] + DIRECTION INPUT + USE SIGNAL + PLACED ( 2698800 2165460 ) N + LAYER met3 ( -1200 -300 ) ( 1200 300 ) ;
-    - io_in[13] + NET io_in[13] + DIRECTION INPUT + USE SIGNAL + PLACED ( 2698800 2334100 ) N + LAYER met3 ( -1200 -300 ) ( 1200 300 ) ;
-    - io_in[14] + NET io_in[14] + DIRECTION INPUT + USE SIGNAL + PLACED ( 2698800 2559180 ) N + LAYER met3 ( -1200 -300 ) ( 1200 300 ) ;
-    - io_in[15] + NET io_in[15] + DIRECTION INPUT + USE SIGNAL + PLACED ( 2651670 2698800 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - io_in[16] + NET io_in[16] + DIRECTION INPUT + USE SIGNAL + PLACED ( 2265730 2698800 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - io_in[17] + NET io_in[17] + DIRECTION INPUT + USE SIGNAL + PLACED ( 1976390 2698800 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - io_in[18] + NET io_in[18] + DIRECTION INPUT + USE SIGNAL + PLACED ( 1687050 2698800 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - io_in[19] + NET io_in[19] + DIRECTION INPUT + USE SIGNAL + PLACED ( 1398170 2698800 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - io_in[1] + NET io_in[1] + DIRECTION INPUT + USE SIGNAL + PLACED ( 2698800 196860 ) N + LAYER met3 ( -1200 -300 ) ( 1200 300 ) ;
-    - io_in[20] + NET io_in[20] + DIRECTION INPUT + USE SIGNAL + PLACED ( 1108830 2698800 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - io_in[21] + NET io_in[21] + DIRECTION INPUT + USE SIGNAL + PLACED ( 819490 2698800 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - io_in[22] + NET io_in[22] + DIRECTION INPUT + USE SIGNAL + PLACED ( 530150 2698800 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - io_in[23] + NET io_in[23] + DIRECTION INPUT + USE SIGNAL + PLACED ( 240810 2698800 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - io_in[24] + NET io_in[24] + DIRECTION INPUT + USE SIGNAL + PLACED ( 1200 2670700 ) N + LAYER met3 ( -1200 -300 ) ( 1200 300 ) ;
-    - io_in[25] + NET io_in[25] + DIRECTION INPUT + USE SIGNAL + PLACED ( 1200 2377620 ) N + LAYER met3 ( -1200 -300 ) ( 1200 300 ) ;
-    - io_in[26] + NET io_in[26] + DIRECTION INPUT + USE SIGNAL + PLACED ( 1200 2201500 ) N + LAYER met3 ( -1200 -300 ) ( 1200 300 ) ;
-    - io_in[27] + NET io_in[27] + DIRECTION INPUT + USE SIGNAL + PLACED ( 1200 2025380 ) N + LAYER met3 ( -1200 -300 ) ( 1200 300 ) ;
-    - io_in[28] + NET io_in[28] + DIRECTION INPUT + USE SIGNAL + PLACED ( 1200 1849260 ) N + LAYER met3 ( -1200 -300 ) ( 1200 300 ) ;
-    - io_in[29] + NET io_in[29] + DIRECTION INPUT + USE SIGNAL + PLACED ( 1200 1673140 ) N + LAYER met3 ( -1200 -300 ) ( 1200 300 ) ;
-    - io_in[2] + NET io_in[2] + DIRECTION INPUT + USE SIGNAL + PLACED ( 2698800 365500 ) N + LAYER met3 ( -1200 -300 ) ( 1200 300 ) ;
-    - io_in[30] + NET io_in[30] + DIRECTION INPUT + USE SIGNAL + PLACED ( 1200 1497020 ) N + LAYER met3 ( -1200 -300 ) ( 1200 300 ) ;
-    - io_in[31] + NET io_in[31] + DIRECTION INPUT + USE SIGNAL + PLACED ( 1200 1320900 ) N + LAYER met3 ( -1200 -300 ) ( 1200 300 ) ;
-    - io_in[32] + NET io_in[32] + DIRECTION INPUT + USE SIGNAL + PLACED ( 1200 1027140 ) N + LAYER met3 ( -1200 -300 ) ( 1200 300 ) ;
-    - io_in[33] + NET io_in[33] + DIRECTION INPUT + USE SIGNAL + PLACED ( 1200 851020 ) N + LAYER met3 ( -1200 -300 ) ( 1200 300 ) ;
-    - io_in[34] + NET io_in[34] + DIRECTION INPUT + USE SIGNAL + PLACED ( 1200 674900 ) N + LAYER met3 ( -1200 -300 ) ( 1200 300 ) ;
-    - io_in[35] + NET io_in[35] + DIRECTION INPUT + USE SIGNAL + PLACED ( 1200 498780 ) N + LAYER met3 ( -1200 -300 ) ( 1200 300 ) ;
-    - io_in[36] + NET io_in[36] + DIRECTION INPUT + USE SIGNAL + PLACED ( 1200 322660 ) N + LAYER met3 ( -1200 -300 ) ( 1200 300 ) ;
-    - io_in[37] + NET io_in[37] + DIRECTION INPUT + USE SIGNAL + PLACED ( 1200 146540 ) N + LAYER met3 ( -1200 -300 ) ( 1200 300 ) ;
-    - io_in[3] + NET io_in[3] + DIRECTION INPUT + USE SIGNAL + PLACED ( 2698800 534140 ) N + LAYER met3 ( -1200 -300 ) ( 1200 300 ) ;
-    - io_in[4] + NET io_in[4] + DIRECTION INPUT + USE SIGNAL + PLACED ( 2698800 702780 ) N + LAYER met3 ( -1200 -300 ) ( 1200 300 ) ;
-    - io_in[5] + NET io_in[5] + DIRECTION INPUT + USE SIGNAL + PLACED ( 2698800 871420 ) N + LAYER met3 ( -1200 -300 ) ( 1200 300 ) ;
-    - io_in[6] + NET io_in[6] + DIRECTION INPUT + USE SIGNAL + PLACED ( 2698800 1040740 ) N + LAYER met3 ( -1200 -300 ) ( 1200 300 ) ;
-    - io_in[7] + NET io_in[7] + DIRECTION INPUT + USE SIGNAL + PLACED ( 2698800 1321580 ) N + LAYER met3 ( -1200 -300 ) ( 1200 300 ) ;
-    - io_in[8] + NET io_in[8] + DIRECTION INPUT + USE SIGNAL + PLACED ( 2698800 1490220 ) N + LAYER met3 ( -1200 -300 ) ( 1200 300 ) ;
-    - io_in[9] + NET io_in[9] + DIRECTION INPUT + USE SIGNAL + PLACED ( 2698800 1659540 ) N + LAYER met3 ( -1200 -300 ) ( 1200 300 ) ;
-    - io_oeb[0] + NET io_oeb[0] + DIRECTION OUTPUT + USE SIGNAL + PLACED ( 2698800 140420 ) N + LAYER met3 ( -1200 -300 ) ( 1200 300 ) ;
-    - io_oeb[10] + NET io_oeb[10] + DIRECTION OUTPUT + USE SIGNAL + PLACED ( 2698800 1940380 ) N + LAYER met3 ( -1200 -300 ) ( 1200 300 ) ;
-    - io_oeb[11] + NET io_oeb[11] + DIRECTION OUTPUT + USE SIGNAL + PLACED ( 2698800 2109020 ) N + LAYER met3 ( -1200 -300 ) ( 1200 300 ) ;
-    - io_oeb[12] + NET io_oeb[12] + DIRECTION OUTPUT + USE SIGNAL + PLACED ( 2698800 2278340 ) N + LAYER met3 ( -1200 -300 ) ( 1200 300 ) ;
-    - io_oeb[13] + NET io_oeb[13] + DIRECTION OUTPUT + USE SIGNAL + PLACED ( 2698800 2446980 ) N + LAYER met3 ( -1200 -300 ) ( 1200 300 ) ;
-    - io_oeb[14] + NET io_oeb[14] + DIRECTION OUTPUT + USE SIGNAL + PLACED ( 2698800 2672060 ) N + LAYER met3 ( -1200 -300 ) ( 1200 300 ) ;
-    - io_oeb[15] + NET io_oeb[15] + DIRECTION OUTPUT + USE SIGNAL + PLACED ( 2458930 2698800 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - io_oeb[16] + NET io_oeb[16] + DIRECTION OUTPUT + USE SIGNAL + PLACED ( 2072990 2698800 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - io_oeb[17] + NET io_oeb[17] + DIRECTION OUTPUT + USE SIGNAL + PLACED ( 1783650 2698800 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - io_oeb[18] + NET io_oeb[18] + DIRECTION OUTPUT + USE SIGNAL + PLACED ( 1494310 2698800 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - io_oeb[19] + NET io_oeb[19] + DIRECTION OUTPUT + USE SIGNAL + PLACED ( 1204970 2698800 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - io_oeb[1] + NET io_oeb[1] + DIRECTION OUTPUT + USE SIGNAL + PLACED ( 2698800 309060 ) N + LAYER met3 ( -1200 -300 ) ( 1200 300 ) ;
-    - io_oeb[20] + NET io_oeb[20] + DIRECTION OUTPUT + USE SIGNAL + PLACED ( 915630 2698800 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - io_oeb[21] + NET io_oeb[21] + DIRECTION OUTPUT + USE SIGNAL + PLACED ( 626290 2698800 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - io_oeb[22] + NET io_oeb[22] + DIRECTION OUTPUT + USE SIGNAL + PLACED ( 336950 2698800 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - io_oeb[23] + NET io_oeb[23] + DIRECTION OUTPUT + USE SIGNAL + PLACED ( 48070 2698800 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - io_oeb[24] + NET io_oeb[24] + DIRECTION OUTPUT + USE SIGNAL + PLACED ( 1200 2553740 ) N + LAYER met3 ( -1200 -300 ) ( 1200 300 ) ;
-    - io_oeb[25] + NET io_oeb[25] + DIRECTION OUTPUT + USE SIGNAL + PLACED ( 1200 2259980 ) N + LAYER met3 ( -1200 -300 ) ( 1200 300 ) ;
-    - io_oeb[26] + NET io_oeb[26] + DIRECTION OUTPUT + USE SIGNAL + PLACED ( 1200 2083860 ) N + LAYER met3 ( -1200 -300 ) ( 1200 300 ) ;
-    - io_oeb[27] + NET io_oeb[27] + DIRECTION OUTPUT + USE SIGNAL + PLACED ( 1200 1907740 ) N + LAYER met3 ( -1200 -300 ) ( 1200 300 ) ;
-    - io_oeb[28] + NET io_oeb[28] + DIRECTION OUTPUT + USE SIGNAL + PLACED ( 1200 1731620 ) N + LAYER met3 ( -1200 -300 ) ( 1200 300 ) ;
-    - io_oeb[29] + NET io_oeb[29] + DIRECTION OUTPUT + USE SIGNAL + PLACED ( 1200 1555500 ) N + LAYER met3 ( -1200 -300 ) ( 1200 300 ) ;
-    - io_oeb[2] + NET io_oeb[2] + DIRECTION OUTPUT + USE SIGNAL + PLACED ( 2698800 477700 ) N + LAYER met3 ( -1200 -300 ) ( 1200 300 ) ;
-    - io_oeb[30] + NET io_oeb[30] + DIRECTION OUTPUT + USE SIGNAL + PLACED ( 1200 1379380 ) N + LAYER met3 ( -1200 -300 ) ( 1200 300 ) ;
-    - io_oeb[31] + NET io_oeb[31] + DIRECTION OUTPUT + USE SIGNAL + PLACED ( 1200 1203260 ) N + LAYER met3 ( -1200 -300 ) ( 1200 300 ) ;
-    - io_oeb[32] + NET io_oeb[32] + DIRECTION OUTPUT + USE SIGNAL + PLACED ( 1200 909500 ) N + LAYER met3 ( -1200 -300 ) ( 1200 300 ) ;
-    - io_oeb[33] + NET io_oeb[33] + DIRECTION OUTPUT + USE SIGNAL + PLACED ( 1200 733380 ) N + LAYER met3 ( -1200 -300 ) ( 1200 300 ) ;
-    - io_oeb[34] + NET io_oeb[34] + DIRECTION OUTPUT + USE SIGNAL + PLACED ( 1200 557260 ) N + LAYER met3 ( -1200 -300 ) ( 1200 300 ) ;
-    - io_oeb[35] + NET io_oeb[35] + DIRECTION OUTPUT + USE SIGNAL + PLACED ( 1200 381140 ) N + LAYER met3 ( -1200 -300 ) ( 1200 300 ) ;
-    - io_oeb[36] + NET io_oeb[36] + DIRECTION OUTPUT + USE SIGNAL + PLACED ( 1200 205020 ) N + LAYER met3 ( -1200 -300 ) ( 1200 300 ) ;
-    - io_oeb[37] + NET io_oeb[37] + DIRECTION OUTPUT + USE SIGNAL + PLACED ( 1200 29580 ) N + LAYER met3 ( -1200 -300 ) ( 1200 300 ) ;
-    - io_oeb[3] + NET io_oeb[3] + DIRECTION OUTPUT + USE SIGNAL + PLACED ( 2698800 647020 ) N + LAYER met3 ( -1200 -300 ) ( 1200 300 ) ;
-    - io_oeb[4] + NET io_oeb[4] + DIRECTION OUTPUT + USE SIGNAL + PLACED ( 2698800 815660 ) N + LAYER met3 ( -1200 -300 ) ( 1200 300 ) ;
-    - io_oeb[5] + NET io_oeb[5] + DIRECTION OUTPUT + USE SIGNAL + PLACED ( 2698800 984300 ) N + LAYER met3 ( -1200 -300 ) ( 1200 300 ) ;
-    - io_oeb[6] + NET io_oeb[6] + DIRECTION OUTPUT + USE SIGNAL + PLACED ( 2698800 1152940 ) N + LAYER met3 ( -1200 -300 ) ( 1200 300 ) ;
-    - io_oeb[7] + NET io_oeb[7] + DIRECTION OUTPUT + USE SIGNAL + PLACED ( 2698800 1434460 ) N + LAYER met3 ( -1200 -300 ) ( 1200 300 ) ;
-    - io_oeb[8] + NET io_oeb[8] + DIRECTION OUTPUT + USE SIGNAL + PLACED ( 2698800 1603100 ) N + LAYER met3 ( -1200 -300 ) ( 1200 300 ) ;
-    - io_oeb[9] + NET io_oeb[9] + DIRECTION OUTPUT + USE SIGNAL + PLACED ( 2698800 1771740 ) N + LAYER met3 ( -1200 -300 ) ( 1200 300 ) ;
-    - io_out[0] + NET io_out[0] + DIRECTION OUTPUT + USE SIGNAL + PLACED ( 2698800 83980 ) N + LAYER met3 ( -1200 -300 ) ( 1200 300 ) ;
-    - io_out[10] + NET io_out[10] + DIRECTION OUTPUT + USE SIGNAL + PLACED ( 2698800 1884620 ) N + LAYER met3 ( -1200 -300 ) ( 1200 300 ) ;
-    - io_out[11] + NET io_out[11] + DIRECTION OUTPUT + USE SIGNAL + PLACED ( 2698800 2053260 ) N + LAYER met3 ( -1200 -300 ) ( 1200 300 ) ;
-    - io_out[12] + NET io_out[12] + DIRECTION OUTPUT + USE SIGNAL + PLACED ( 2698800 2221900 ) N + LAYER met3 ( -1200 -300 ) ( 1200 300 ) ;
-    - io_out[13] + NET io_out[13] + DIRECTION OUTPUT + USE SIGNAL + PLACED ( 2698800 2390540 ) N + LAYER met3 ( -1200 -300 ) ( 1200 300 ) ;
-    - io_out[14] + NET io_out[14] + DIRECTION OUTPUT + USE SIGNAL + PLACED ( 2698800 2615620 ) N + LAYER met3 ( -1200 -300 ) ( 1200 300 ) ;
-    - io_out[15] + NET io_out[15] + DIRECTION OUTPUT + USE SIGNAL + PLACED ( 2555070 2698800 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - io_out[16] + NET io_out[16] + DIRECTION OUTPUT + USE SIGNAL + PLACED ( 2169590 2698800 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - io_out[17] + NET io_out[17] + DIRECTION OUTPUT + USE SIGNAL + PLACED ( 1880250 2698800 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - io_out[18] + NET io_out[18] + DIRECTION OUTPUT + USE SIGNAL + PLACED ( 1590910 2698800 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - io_out[19] + NET io_out[19] + DIRECTION OUTPUT + USE SIGNAL + PLACED ( 1301570 2698800 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - io_out[1] + NET io_out[1] + DIRECTION OUTPUT + USE SIGNAL + PLACED ( 2698800 252620 ) N + LAYER met3 ( -1200 -300 ) ( 1200 300 ) ;
-    - io_out[20] + NET io_out[20] + DIRECTION OUTPUT + USE SIGNAL + PLACED ( 1012230 2698800 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - io_out[21] + NET io_out[21] + DIRECTION OUTPUT + USE SIGNAL + PLACED ( 722890 2698800 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - io_out[22] + NET io_out[22] + DIRECTION OUTPUT + USE SIGNAL + PLACED ( 433550 2698800 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - io_out[23] + NET io_out[23] + DIRECTION OUTPUT + USE SIGNAL + PLACED ( 144210 2698800 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - io_out[24] + NET io_out[24] + DIRECTION OUTPUT + USE SIGNAL + PLACED ( 1200 2612220 ) N + LAYER met3 ( -1200 -300 ) ( 1200 300 ) ;
-    - io_out[25] + NET io_out[25] + DIRECTION OUTPUT + USE SIGNAL + PLACED ( 1200 2318460 ) N + LAYER met3 ( -1200 -300 ) ( 1200 300 ) ;
-    - io_out[26] + NET io_out[26] + DIRECTION OUTPUT + USE SIGNAL + PLACED ( 1200 2142340 ) N + LAYER met3 ( -1200 -300 ) ( 1200 300 ) ;
-    - io_out[27] + NET io_out[27] + DIRECTION OUTPUT + USE SIGNAL + PLACED ( 1200 1966220 ) N + LAYER met3 ( -1200 -300 ) ( 1200 300 ) ;
-    - io_out[28] + NET io_out[28] + DIRECTION OUTPUT + USE SIGNAL + PLACED ( 1200 1790100 ) N + LAYER met3 ( -1200 -300 ) ( 1200 300 ) ;
-    - io_out[29] + NET io_out[29] + DIRECTION OUTPUT + USE SIGNAL + PLACED ( 1200 1613980 ) N + LAYER met3 ( -1200 -300 ) ( 1200 300 ) ;
-    - io_out[2] + NET io_out[2] + DIRECTION OUTPUT + USE SIGNAL + PLACED ( 2698800 421940 ) N + LAYER met3 ( -1200 -300 ) ( 1200 300 ) ;
-    - io_out[30] + NET io_out[30] + DIRECTION OUTPUT + USE SIGNAL + PLACED ( 1200 1437860 ) N + LAYER met3 ( -1200 -300 ) ( 1200 300 ) ;
-    - io_out[31] + NET io_out[31] + DIRECTION OUTPUT + USE SIGNAL + PLACED ( 1200 1261740 ) N + LAYER met3 ( -1200 -300 ) ( 1200 300 ) ;
-    - io_out[32] + NET io_out[32] + DIRECTION OUTPUT + USE SIGNAL + PLACED ( 1200 968660 ) N + LAYER met3 ( -1200 -300 ) ( 1200 300 ) ;
-    - io_out[33] + NET io_out[33] + DIRECTION OUTPUT + USE SIGNAL + PLACED ( 1200 792540 ) N + LAYER met3 ( -1200 -300 ) ( 1200 300 ) ;
-    - io_out[34] + NET io_out[34] + DIRECTION OUTPUT + USE SIGNAL + PLACED ( 1200 616420 ) N + LAYER met3 ( -1200 -300 ) ( 1200 300 ) ;
-    - io_out[35] + NET io_out[35] + DIRECTION OUTPUT + USE SIGNAL + PLACED ( 1200 440300 ) N + LAYER met3 ( -1200 -300 ) ( 1200 300 ) ;
-    - io_out[36] + NET io_out[36] + DIRECTION OUTPUT + USE SIGNAL + PLACED ( 1200 264180 ) N + LAYER met3 ( -1200 -300 ) ( 1200 300 ) ;
-    - io_out[37] + NET io_out[37] + DIRECTION OUTPUT + USE SIGNAL + PLACED ( 1200 88060 ) N + LAYER met3 ( -1200 -300 ) ( 1200 300 ) ;
-    - io_out[3] + NET io_out[3] + DIRECTION OUTPUT + USE SIGNAL + PLACED ( 2698800 590580 ) N + LAYER met3 ( -1200 -300 ) ( 1200 300 ) ;
-    - io_out[4] + NET io_out[4] + DIRECTION OUTPUT + USE SIGNAL + PLACED ( 2698800 759220 ) N + LAYER met3 ( -1200 -300 ) ( 1200 300 ) ;
-    - io_out[5] + NET io_out[5] + DIRECTION OUTPUT + USE SIGNAL + PLACED ( 2698800 927860 ) N + LAYER met3 ( -1200 -300 ) ( 1200 300 ) ;
-    - io_out[6] + NET io_out[6] + DIRECTION OUTPUT + USE SIGNAL + PLACED ( 2698800 1096500 ) N + LAYER met3 ( -1200 -300 ) ( 1200 300 ) ;
-    - io_out[7] + NET io_out[7] + DIRECTION OUTPUT + USE SIGNAL + PLACED ( 2698800 1378020 ) N + LAYER met3 ( -1200 -300 ) ( 1200 300 ) ;
-    - io_out[8] + NET io_out[8] + DIRECTION OUTPUT + USE SIGNAL + PLACED ( 2698800 1546660 ) N + LAYER met3 ( -1200 -300 ) ( 1200 300 ) ;
-    - io_out[9] + NET io_out[9] + DIRECTION OUTPUT + USE SIGNAL + PLACED ( 2698800 1715300 ) N + LAYER met3 ( -1200 -300 ) ( 1200 300 ) ;
-    - la_data_in[0] + NET la_data_in[0] + DIRECTION INPUT + USE SIGNAL + PLACED ( 585350 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_data_in[100] + NET la_data_in[100] + DIRECTION INPUT + USE SIGNAL + PLACED ( 2234910 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_data_in[101] + NET la_data_in[101] + DIRECTION INPUT + USE SIGNAL + PLACED ( 2251470 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_data_in[102] + NET la_data_in[102] + DIRECTION INPUT + USE SIGNAL + PLACED ( 2268030 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_data_in[103] + NET la_data_in[103] + DIRECTION INPUT + USE SIGNAL + PLACED ( 2284590 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_data_in[104] + NET la_data_in[104] + DIRECTION INPUT + USE SIGNAL + PLACED ( 2301150 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_data_in[105] + NET la_data_in[105] + DIRECTION INPUT + USE SIGNAL + PLACED ( 2317710 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_data_in[106] + NET la_data_in[106] + DIRECTION INPUT + USE SIGNAL + PLACED ( 2334270 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_data_in[107] + NET la_data_in[107] + DIRECTION INPUT + USE SIGNAL + PLACED ( 2350370 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_data_in[108] + NET la_data_in[108] + DIRECTION INPUT + USE SIGNAL + PLACED ( 2366930 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_data_in[109] + NET la_data_in[109] + DIRECTION INPUT + USE SIGNAL + PLACED ( 2383490 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_data_in[10] + NET la_data_in[10] + DIRECTION INPUT + USE SIGNAL + PLACED ( 750030 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_data_in[110] + NET la_data_in[110] + DIRECTION INPUT + USE SIGNAL + PLACED ( 2400050 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_data_in[111] + NET la_data_in[111] + DIRECTION INPUT + USE SIGNAL + PLACED ( 2416610 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_data_in[112] + NET la_data_in[112] + DIRECTION INPUT + USE SIGNAL + PLACED ( 2433170 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_data_in[113] + NET la_data_in[113] + DIRECTION INPUT + USE SIGNAL + PLACED ( 2449730 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_data_in[114] + NET la_data_in[114] + DIRECTION INPUT + USE SIGNAL + PLACED ( 2465830 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_data_in[115] + NET la_data_in[115] + DIRECTION INPUT + USE SIGNAL + PLACED ( 2482390 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_data_in[116] + NET la_data_in[116] + DIRECTION INPUT + USE SIGNAL + PLACED ( 2498950 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_data_in[117] + NET la_data_in[117] + DIRECTION INPUT + USE SIGNAL + PLACED ( 2515510 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_data_in[118] + NET la_data_in[118] + DIRECTION INPUT + USE SIGNAL + PLACED ( 2532070 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_data_in[119] + NET la_data_in[119] + DIRECTION INPUT + USE SIGNAL + PLACED ( 2548630 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_data_in[11] + NET la_data_in[11] + DIRECTION INPUT + USE SIGNAL + PLACED ( 766590 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_data_in[120] + NET la_data_in[120] + DIRECTION INPUT + USE SIGNAL + PLACED ( 2565190 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_data_in[121] + NET la_data_in[121] + DIRECTION INPUT + USE SIGNAL + PLACED ( 2581290 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_data_in[122] + NET la_data_in[122] + DIRECTION INPUT + USE SIGNAL + PLACED ( 2597850 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_data_in[123] + NET la_data_in[123] + DIRECTION INPUT + USE SIGNAL + PLACED ( 2614410 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_data_in[124] + NET la_data_in[124] + DIRECTION INPUT + USE SIGNAL + PLACED ( 2630970 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_data_in[125] + NET la_data_in[125] + DIRECTION INPUT + USE SIGNAL + PLACED ( 2647530 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_data_in[126] + NET la_data_in[126] + DIRECTION INPUT + USE SIGNAL + PLACED ( 2664090 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_data_in[127] + NET la_data_in[127] + DIRECTION INPUT + USE SIGNAL + PLACED ( 2680650 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_data_in[12] + NET la_data_in[12] + DIRECTION INPUT + USE SIGNAL + PLACED ( 783150 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_data_in[13] + NET la_data_in[13] + DIRECTION INPUT + USE SIGNAL + PLACED ( 799710 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_data_in[14] + NET la_data_in[14] + DIRECTION INPUT + USE SIGNAL + PLACED ( 816270 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_data_in[15] + NET la_data_in[15] + DIRECTION INPUT + USE SIGNAL + PLACED ( 832830 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_data_in[16] + NET la_data_in[16] + DIRECTION INPUT + USE SIGNAL + PLACED ( 849390 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_data_in[17] + NET la_data_in[17] + DIRECTION INPUT + USE SIGNAL + PLACED ( 865490 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_data_in[18] + NET la_data_in[18] + DIRECTION INPUT + USE SIGNAL + PLACED ( 882050 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_data_in[19] + NET la_data_in[19] + DIRECTION INPUT + USE SIGNAL + PLACED ( 898610 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_data_in[1] + NET la_data_in[1] + DIRECTION INPUT + USE SIGNAL + PLACED ( 601910 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_data_in[20] + NET la_data_in[20] + DIRECTION INPUT + USE SIGNAL + PLACED ( 915170 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_data_in[21] + NET la_data_in[21] + DIRECTION INPUT + USE SIGNAL + PLACED ( 931730 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_data_in[22] + NET la_data_in[22] + DIRECTION INPUT + USE SIGNAL + PLACED ( 948290 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_data_in[23] + NET la_data_in[23] + DIRECTION INPUT + USE SIGNAL + PLACED ( 964850 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_data_in[24] + NET la_data_in[24] + DIRECTION INPUT + USE SIGNAL + PLACED ( 981410 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_data_in[25] + NET la_data_in[25] + DIRECTION INPUT + USE SIGNAL + PLACED ( 997510 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_data_in[26] + NET la_data_in[26] + DIRECTION INPUT + USE SIGNAL + PLACED ( 1014070 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_data_in[27] + NET la_data_in[27] + DIRECTION INPUT + USE SIGNAL + PLACED ( 1030630 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_data_in[28] + NET la_data_in[28] + DIRECTION INPUT + USE SIGNAL + PLACED ( 1047190 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_data_in[29] + NET la_data_in[29] + DIRECTION INPUT + USE SIGNAL + PLACED ( 1063750 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_data_in[2] + NET la_data_in[2] + DIRECTION INPUT + USE SIGNAL + PLACED ( 618010 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_data_in[30] + NET la_data_in[30] + DIRECTION INPUT + USE SIGNAL + PLACED ( 1080310 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_data_in[31] + NET la_data_in[31] + DIRECTION INPUT + USE SIGNAL + PLACED ( 1096870 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_data_in[32] + NET la_data_in[32] + DIRECTION INPUT + USE SIGNAL + PLACED ( 1112970 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_data_in[33] + NET la_data_in[33] + DIRECTION INPUT + USE SIGNAL + PLACED ( 1129530 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_data_in[34] + NET la_data_in[34] + DIRECTION INPUT + USE SIGNAL + PLACED ( 1146090 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_data_in[35] + NET la_data_in[35] + DIRECTION INPUT + USE SIGNAL + PLACED ( 1162650 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_data_in[36] + NET la_data_in[36] + DIRECTION INPUT + USE SIGNAL + PLACED ( 1179210 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_data_in[37] + NET la_data_in[37] + DIRECTION INPUT + USE SIGNAL + PLACED ( 1195770 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_data_in[38] + NET la_data_in[38] + DIRECTION INPUT + USE SIGNAL + PLACED ( 1212330 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_data_in[39] + NET la_data_in[39] + DIRECTION INPUT + USE SIGNAL + PLACED ( 1228890 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_data_in[3] + NET la_data_in[3] + DIRECTION INPUT + USE SIGNAL + PLACED ( 634570 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_data_in[40] + NET la_data_in[40] + DIRECTION INPUT + USE SIGNAL + PLACED ( 1244990 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_data_in[41] + NET la_data_in[41] + DIRECTION INPUT + USE SIGNAL + PLACED ( 1261550 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_data_in[42] + NET la_data_in[42] + DIRECTION INPUT + USE SIGNAL + PLACED ( 1278110 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_data_in[43] + NET la_data_in[43] + DIRECTION INPUT + USE SIGNAL + PLACED ( 1294670 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_data_in[44] + NET la_data_in[44] + DIRECTION INPUT + USE SIGNAL + PLACED ( 1311230 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_data_in[45] + NET la_data_in[45] + DIRECTION INPUT + USE SIGNAL + PLACED ( 1327790 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_data_in[46] + NET la_data_in[46] + DIRECTION INPUT + USE SIGNAL + PLACED ( 1344350 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_data_in[47] + NET la_data_in[47] + DIRECTION INPUT + USE SIGNAL + PLACED ( 1360450 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_data_in[48] + NET la_data_in[48] + DIRECTION INPUT + USE SIGNAL + PLACED ( 1377010 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_data_in[49] + NET la_data_in[49] + DIRECTION INPUT + USE SIGNAL + PLACED ( 1393570 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_data_in[4] + NET la_data_in[4] + DIRECTION INPUT + USE SIGNAL + PLACED ( 651130 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_data_in[50] + NET la_data_in[50] + DIRECTION INPUT + USE SIGNAL + PLACED ( 1410130 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_data_in[51] + NET la_data_in[51] + DIRECTION INPUT + USE SIGNAL + PLACED ( 1426690 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_data_in[52] + NET la_data_in[52] + DIRECTION INPUT + USE SIGNAL + PLACED ( 1443250 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_data_in[53] + NET la_data_in[53] + DIRECTION INPUT + USE SIGNAL + PLACED ( 1459810 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_data_in[54] + NET la_data_in[54] + DIRECTION INPUT + USE SIGNAL + PLACED ( 1475910 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_data_in[55] + NET la_data_in[55] + DIRECTION INPUT + USE SIGNAL + PLACED ( 1492470 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_data_in[56] + NET la_data_in[56] + DIRECTION INPUT + USE SIGNAL + PLACED ( 1509030 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_data_in[57] + NET la_data_in[57] + DIRECTION INPUT + USE SIGNAL + PLACED ( 1525590 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_data_in[58] + NET la_data_in[58] + DIRECTION INPUT + USE SIGNAL + PLACED ( 1542150 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_data_in[59] + NET la_data_in[59] + DIRECTION INPUT + USE SIGNAL + PLACED ( 1558710 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_data_in[5] + NET la_data_in[5] + DIRECTION INPUT + USE SIGNAL + PLACED ( 667690 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_data_in[60] + NET la_data_in[60] + DIRECTION INPUT + USE SIGNAL + PLACED ( 1575270 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_data_in[61] + NET la_data_in[61] + DIRECTION INPUT + USE SIGNAL + PLACED ( 1591830 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_data_in[62] + NET la_data_in[62] + DIRECTION INPUT + USE SIGNAL + PLACED ( 1607930 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_data_in[63] + NET la_data_in[63] + DIRECTION INPUT + USE SIGNAL + PLACED ( 1624490 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_data_in[64] + NET la_data_in[64] + DIRECTION INPUT + USE SIGNAL + PLACED ( 1641050 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_data_in[65] + NET la_data_in[65] + DIRECTION INPUT + USE SIGNAL + PLACED ( 1657610 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_data_in[66] + NET la_data_in[66] + DIRECTION INPUT + USE SIGNAL + PLACED ( 1674170 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_data_in[67] + NET la_data_in[67] + DIRECTION INPUT + USE SIGNAL + PLACED ( 1690730 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_data_in[68] + NET la_data_in[68] + DIRECTION INPUT + USE SIGNAL + PLACED ( 1707290 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_data_in[69] + NET la_data_in[69] + DIRECTION INPUT + USE SIGNAL + PLACED ( 1723390 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_data_in[6] + NET la_data_in[6] + DIRECTION INPUT + USE SIGNAL + PLACED ( 684250 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_data_in[70] + NET la_data_in[70] + DIRECTION INPUT + USE SIGNAL + PLACED ( 1739950 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_data_in[71] + NET la_data_in[71] + DIRECTION INPUT + USE SIGNAL + PLACED ( 1756510 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_data_in[72] + NET la_data_in[72] + DIRECTION INPUT + USE SIGNAL + PLACED ( 1773070 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_data_in[73] + NET la_data_in[73] + DIRECTION INPUT + USE SIGNAL + PLACED ( 1789630 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_data_in[74] + NET la_data_in[74] + DIRECTION INPUT + USE SIGNAL + PLACED ( 1806190 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_data_in[75] + NET la_data_in[75] + DIRECTION INPUT + USE SIGNAL + PLACED ( 1822750 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_data_in[76] + NET la_data_in[76] + DIRECTION INPUT + USE SIGNAL + PLACED ( 1839310 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_data_in[77] + NET la_data_in[77] + DIRECTION INPUT + USE SIGNAL + PLACED ( 1855410 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_data_in[78] + NET la_data_in[78] + DIRECTION INPUT + USE SIGNAL + PLACED ( 1871970 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_data_in[79] + NET la_data_in[79] + DIRECTION INPUT + USE SIGNAL + PLACED ( 1888530 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_data_in[7] + NET la_data_in[7] + DIRECTION INPUT + USE SIGNAL + PLACED ( 700810 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_data_in[80] + NET la_data_in[80] + DIRECTION INPUT + USE SIGNAL + PLACED ( 1905090 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_data_in[81] + NET la_data_in[81] + DIRECTION INPUT + USE SIGNAL + PLACED ( 1921650 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_data_in[82] + NET la_data_in[82] + DIRECTION INPUT + USE SIGNAL + PLACED ( 1938210 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_data_in[83] + NET la_data_in[83] + DIRECTION INPUT + USE SIGNAL + PLACED ( 1954770 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_data_in[84] + NET la_data_in[84] + DIRECTION INPUT + USE SIGNAL + PLACED ( 1970870 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_data_in[85] + NET la_data_in[85] + DIRECTION INPUT + USE SIGNAL + PLACED ( 1987430 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_data_in[86] + NET la_data_in[86] + DIRECTION INPUT + USE SIGNAL + PLACED ( 2003990 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_data_in[87] + NET la_data_in[87] + DIRECTION INPUT + USE SIGNAL + PLACED ( 2020550 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_data_in[88] + NET la_data_in[88] + DIRECTION INPUT + USE SIGNAL + PLACED ( 2037110 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_data_in[89] + NET la_data_in[89] + DIRECTION INPUT + USE SIGNAL + PLACED ( 2053670 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_data_in[8] + NET la_data_in[8] + DIRECTION INPUT + USE SIGNAL + PLACED ( 717370 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_data_in[90] + NET la_data_in[90] + DIRECTION INPUT + USE SIGNAL + PLACED ( 2070230 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_data_in[91] + NET la_data_in[91] + DIRECTION INPUT + USE SIGNAL + PLACED ( 2086790 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_data_in[92] + NET la_data_in[92] + DIRECTION INPUT + USE SIGNAL + PLACED ( 2102890 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_data_in[93] + NET la_data_in[93] + DIRECTION INPUT + USE SIGNAL + PLACED ( 2119450 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_data_in[94] + NET la_data_in[94] + DIRECTION INPUT + USE SIGNAL + PLACED ( 2136010 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_data_in[95] + NET la_data_in[95] + DIRECTION INPUT + USE SIGNAL + PLACED ( 2152570 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_data_in[96] + NET la_data_in[96] + DIRECTION INPUT + USE SIGNAL + PLACED ( 2169130 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_data_in[97] + NET la_data_in[97] + DIRECTION INPUT + USE SIGNAL + PLACED ( 2185690 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_data_in[98] + NET la_data_in[98] + DIRECTION INPUT + USE SIGNAL + PLACED ( 2202250 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_data_in[99] + NET la_data_in[99] + DIRECTION INPUT + USE SIGNAL + PLACED ( 2218350 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_data_in[9] + NET la_data_in[9] + DIRECTION INPUT + USE SIGNAL + PLACED ( 733930 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_data_out[0] + NET la_data_out[0] + DIRECTION OUTPUT + USE SIGNAL + PLACED ( 590870 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_data_out[100] + NET la_data_out[100] + DIRECTION OUTPUT + USE SIGNAL + PLACED ( 2240430 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_data_out[101] + NET la_data_out[101] + DIRECTION OUTPUT + USE SIGNAL + PLACED ( 2256990 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_data_out[102] + NET la_data_out[102] + DIRECTION OUTPUT + USE SIGNAL + PLACED ( 2273550 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_data_out[103] + NET la_data_out[103] + DIRECTION OUTPUT + USE SIGNAL + PLACED ( 2290110 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_data_out[104] + NET la_data_out[104] + DIRECTION OUTPUT + USE SIGNAL + PLACED ( 2306670 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_data_out[105] + NET la_data_out[105] + DIRECTION OUTPUT + USE SIGNAL + PLACED ( 2323230 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_data_out[106] + NET la_data_out[106] + DIRECTION OUTPUT + USE SIGNAL + PLACED ( 2339330 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_data_out[107] + NET la_data_out[107] + DIRECTION OUTPUT + USE SIGNAL + PLACED ( 2355890 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_data_out[108] + NET la_data_out[108] + DIRECTION OUTPUT + USE SIGNAL + PLACED ( 2372450 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_data_out[109] + NET la_data_out[109] + DIRECTION OUTPUT + USE SIGNAL + PLACED ( 2389010 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_data_out[10] + NET la_data_out[10] + DIRECTION OUTPUT + USE SIGNAL + PLACED ( 755550 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_data_out[110] + NET la_data_out[110] + DIRECTION OUTPUT + USE SIGNAL + PLACED ( 2405570 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_data_out[111] + NET la_data_out[111] + DIRECTION OUTPUT + USE SIGNAL + PLACED ( 2422130 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_data_out[112] + NET la_data_out[112] + DIRECTION OUTPUT + USE SIGNAL + PLACED ( 2438690 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_data_out[113] + NET la_data_out[113] + DIRECTION OUTPUT + USE SIGNAL + PLACED ( 2455250 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_data_out[114] + NET la_data_out[114] + DIRECTION OUTPUT + USE SIGNAL + PLACED ( 2471350 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_data_out[115] + NET la_data_out[115] + DIRECTION OUTPUT + USE SIGNAL + PLACED ( 2487910 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_data_out[116] + NET la_data_out[116] + DIRECTION OUTPUT + USE SIGNAL + PLACED ( 2504470 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_data_out[117] + NET la_data_out[117] + DIRECTION OUTPUT + USE SIGNAL + PLACED ( 2521030 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_data_out[118] + NET la_data_out[118] + DIRECTION OUTPUT + USE SIGNAL + PLACED ( 2537590 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_data_out[119] + NET la_data_out[119] + DIRECTION OUTPUT + USE SIGNAL + PLACED ( 2554150 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_data_out[11] + NET la_data_out[11] + DIRECTION OUTPUT + USE SIGNAL + PLACED ( 772110 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_data_out[120] + NET la_data_out[120] + DIRECTION OUTPUT + USE SIGNAL + PLACED ( 2570710 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_data_out[121] + NET la_data_out[121] + DIRECTION OUTPUT + USE SIGNAL + PLACED ( 2586810 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_data_out[122] + NET la_data_out[122] + DIRECTION OUTPUT + USE SIGNAL + PLACED ( 2603370 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_data_out[123] + NET la_data_out[123] + DIRECTION OUTPUT + USE SIGNAL + PLACED ( 2619930 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_data_out[124] + NET la_data_out[124] + DIRECTION OUTPUT + USE SIGNAL + PLACED ( 2636490 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_data_out[125] + NET la_data_out[125] + DIRECTION OUTPUT + USE SIGNAL + PLACED ( 2653050 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_data_out[126] + NET la_data_out[126] + DIRECTION OUTPUT + USE SIGNAL + PLACED ( 2669610 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_data_out[127] + NET la_data_out[127] + DIRECTION OUTPUT + USE SIGNAL + PLACED ( 2686170 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_data_out[12] + NET la_data_out[12] + DIRECTION OUTPUT + USE SIGNAL + PLACED ( 788670 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_data_out[13] + NET la_data_out[13] + DIRECTION OUTPUT + USE SIGNAL + PLACED ( 805230 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_data_out[14] + NET la_data_out[14] + DIRECTION OUTPUT + USE SIGNAL + PLACED ( 821790 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_data_out[15] + NET la_data_out[15] + DIRECTION OUTPUT + USE SIGNAL + PLACED ( 838350 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_data_out[16] + NET la_data_out[16] + DIRECTION OUTPUT + USE SIGNAL + PLACED ( 854910 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_data_out[17] + NET la_data_out[17] + DIRECTION OUTPUT + USE SIGNAL + PLACED ( 871010 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_data_out[18] + NET la_data_out[18] + DIRECTION OUTPUT + USE SIGNAL + PLACED ( 887570 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_data_out[19] + NET la_data_out[19] + DIRECTION OUTPUT + USE SIGNAL + PLACED ( 904130 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_data_out[1] + NET la_data_out[1] + DIRECTION OUTPUT + USE SIGNAL + PLACED ( 607430 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_data_out[20] + NET la_data_out[20] + DIRECTION OUTPUT + USE SIGNAL + PLACED ( 920690 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_data_out[21] + NET la_data_out[21] + DIRECTION OUTPUT + USE SIGNAL + PLACED ( 937250 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_data_out[22] + NET la_data_out[22] + DIRECTION OUTPUT + USE SIGNAL + PLACED ( 953810 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_data_out[23] + NET la_data_out[23] + DIRECTION OUTPUT + USE SIGNAL + PLACED ( 970370 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_data_out[24] + NET la_data_out[24] + DIRECTION OUTPUT + USE SIGNAL + PLACED ( 986470 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_data_out[25] + NET la_data_out[25] + DIRECTION OUTPUT + USE SIGNAL + PLACED ( 1003030 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_data_out[26] + NET la_data_out[26] + DIRECTION OUTPUT + USE SIGNAL + PLACED ( 1019590 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_data_out[27] + NET la_data_out[27] + DIRECTION OUTPUT + USE SIGNAL + PLACED ( 1036150 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_data_out[28] + NET la_data_out[28] + DIRECTION OUTPUT + USE SIGNAL + PLACED ( 1052710 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_data_out[29] + NET la_data_out[29] + DIRECTION OUTPUT + USE SIGNAL + PLACED ( 1069270 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_data_out[2] + NET la_data_out[2] + DIRECTION OUTPUT + USE SIGNAL + PLACED ( 623530 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_data_out[30] + NET la_data_out[30] + DIRECTION OUTPUT + USE SIGNAL + PLACED ( 1085830 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_data_out[31] + NET la_data_out[31] + DIRECTION OUTPUT + USE SIGNAL + PLACED ( 1102390 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_data_out[32] + NET la_data_out[32] + DIRECTION OUTPUT + USE SIGNAL + PLACED ( 1118490 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_data_out[33] + NET la_data_out[33] + DIRECTION OUTPUT + USE SIGNAL + PLACED ( 1135050 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_data_out[34] + NET la_data_out[34] + DIRECTION OUTPUT + USE SIGNAL + PLACED ( 1151610 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_data_out[35] + NET la_data_out[35] + DIRECTION OUTPUT + USE SIGNAL + PLACED ( 1168170 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_data_out[36] + NET la_data_out[36] + DIRECTION OUTPUT + USE SIGNAL + PLACED ( 1184730 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_data_out[37] + NET la_data_out[37] + DIRECTION OUTPUT + USE SIGNAL + PLACED ( 1201290 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_data_out[38] + NET la_data_out[38] + DIRECTION OUTPUT + USE SIGNAL + PLACED ( 1217850 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_data_out[39] + NET la_data_out[39] + DIRECTION OUTPUT + USE SIGNAL + PLACED ( 1233950 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_data_out[3] + NET la_data_out[3] + DIRECTION OUTPUT + USE SIGNAL + PLACED ( 640090 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_data_out[40] + NET la_data_out[40] + DIRECTION OUTPUT + USE SIGNAL + PLACED ( 1250510 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_data_out[41] + NET la_data_out[41] + DIRECTION OUTPUT + USE SIGNAL + PLACED ( 1267070 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_data_out[42] + NET la_data_out[42] + DIRECTION OUTPUT + USE SIGNAL + PLACED ( 1283630 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_data_out[43] + NET la_data_out[43] + DIRECTION OUTPUT + USE SIGNAL + PLACED ( 1300190 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_data_out[44] + NET la_data_out[44] + DIRECTION OUTPUT + USE SIGNAL + PLACED ( 1316750 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_data_out[45] + NET la_data_out[45] + DIRECTION OUTPUT + USE SIGNAL + PLACED ( 1333310 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_data_out[46] + NET la_data_out[46] + DIRECTION OUTPUT + USE SIGNAL + PLACED ( 1349870 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_data_out[47] + NET la_data_out[47] + DIRECTION OUTPUT + USE SIGNAL + PLACED ( 1365970 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_data_out[48] + NET la_data_out[48] + DIRECTION OUTPUT + USE SIGNAL + PLACED ( 1382530 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_data_out[49] + NET la_data_out[49] + DIRECTION OUTPUT + USE SIGNAL + PLACED ( 1399090 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_data_out[4] + NET la_data_out[4] + DIRECTION OUTPUT + USE SIGNAL + PLACED ( 656650 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_data_out[50] + NET la_data_out[50] + DIRECTION OUTPUT + USE SIGNAL + PLACED ( 1415650 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_data_out[51] + NET la_data_out[51] + DIRECTION OUTPUT + USE SIGNAL + PLACED ( 1432210 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_data_out[52] + NET la_data_out[52] + DIRECTION OUTPUT + USE SIGNAL + PLACED ( 1448770 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_data_out[53] + NET la_data_out[53] + DIRECTION OUTPUT + USE SIGNAL + PLACED ( 1465330 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_data_out[54] + NET la_data_out[54] + DIRECTION OUTPUT + USE SIGNAL + PLACED ( 1481430 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_data_out[55] + NET la_data_out[55] + DIRECTION OUTPUT + USE SIGNAL + PLACED ( 1497990 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_data_out[56] + NET la_data_out[56] + DIRECTION OUTPUT + USE SIGNAL + PLACED ( 1514550 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_data_out[57] + NET la_data_out[57] + DIRECTION OUTPUT + USE SIGNAL + PLACED ( 1531110 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_data_out[58] + NET la_data_out[58] + DIRECTION OUTPUT + USE SIGNAL + PLACED ( 1547670 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_data_out[59] + NET la_data_out[59] + DIRECTION OUTPUT + USE SIGNAL + PLACED ( 1564230 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_data_out[5] + NET la_data_out[5] + DIRECTION OUTPUT + USE SIGNAL + PLACED ( 673210 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_data_out[60] + NET la_data_out[60] + DIRECTION OUTPUT + USE SIGNAL + PLACED ( 1580790 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_data_out[61] + NET la_data_out[61] + DIRECTION OUTPUT + USE SIGNAL + PLACED ( 1597350 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_data_out[62] + NET la_data_out[62] + DIRECTION OUTPUT + USE SIGNAL + PLACED ( 1613450 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_data_out[63] + NET la_data_out[63] + DIRECTION OUTPUT + USE SIGNAL + PLACED ( 1630010 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_data_out[64] + NET la_data_out[64] + DIRECTION OUTPUT + USE SIGNAL + PLACED ( 1646570 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_data_out[65] + NET la_data_out[65] + DIRECTION OUTPUT + USE SIGNAL + PLACED ( 1663130 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_data_out[66] + NET la_data_out[66] + DIRECTION OUTPUT + USE SIGNAL + PLACED ( 1679690 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_data_out[67] + NET la_data_out[67] + DIRECTION OUTPUT + USE SIGNAL + PLACED ( 1696250 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_data_out[68] + NET la_data_out[68] + DIRECTION OUTPUT + USE SIGNAL + PLACED ( 1712810 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_data_out[69] + NET la_data_out[69] + DIRECTION OUTPUT + USE SIGNAL + PLACED ( 1728910 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_data_out[6] + NET la_data_out[6] + DIRECTION OUTPUT + USE SIGNAL + PLACED ( 689770 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_data_out[70] + NET la_data_out[70] + DIRECTION OUTPUT + USE SIGNAL + PLACED ( 1745470 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_data_out[71] + NET la_data_out[71] + DIRECTION OUTPUT + USE SIGNAL + PLACED ( 1762030 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_data_out[72] + NET la_data_out[72] + DIRECTION OUTPUT + USE SIGNAL + PLACED ( 1778590 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_data_out[73] + NET la_data_out[73] + DIRECTION OUTPUT + USE SIGNAL + PLACED ( 1795150 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_data_out[74] + NET la_data_out[74] + DIRECTION OUTPUT + USE SIGNAL + PLACED ( 1811710 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_data_out[75] + NET la_data_out[75] + DIRECTION OUTPUT + USE SIGNAL + PLACED ( 1828270 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_data_out[76] + NET la_data_out[76] + DIRECTION OUTPUT + USE SIGNAL + PLACED ( 1844370 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_data_out[77] + NET la_data_out[77] + DIRECTION OUTPUT + USE SIGNAL + PLACED ( 1860930 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_data_out[78] + NET la_data_out[78] + DIRECTION OUTPUT + USE SIGNAL + PLACED ( 1877490 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_data_out[79] + NET la_data_out[79] + DIRECTION OUTPUT + USE SIGNAL + PLACED ( 1894050 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_data_out[7] + NET la_data_out[7] + DIRECTION OUTPUT + USE SIGNAL + PLACED ( 706330 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_data_out[80] + NET la_data_out[80] + DIRECTION OUTPUT + USE SIGNAL + PLACED ( 1910610 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_data_out[81] + NET la_data_out[81] + DIRECTION OUTPUT + USE SIGNAL + PLACED ( 1927170 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_data_out[82] + NET la_data_out[82] + DIRECTION OUTPUT + USE SIGNAL + PLACED ( 1943730 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_data_out[83] + NET la_data_out[83] + DIRECTION OUTPUT + USE SIGNAL + PLACED ( 1960290 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_data_out[84] + NET la_data_out[84] + DIRECTION OUTPUT + USE SIGNAL + PLACED ( 1976390 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_data_out[85] + NET la_data_out[85] + DIRECTION OUTPUT + USE SIGNAL + PLACED ( 1992950 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_data_out[86] + NET la_data_out[86] + DIRECTION OUTPUT + USE SIGNAL + PLACED ( 2009510 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_data_out[87] + NET la_data_out[87] + DIRECTION OUTPUT + USE SIGNAL + PLACED ( 2026070 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_data_out[88] + NET la_data_out[88] + DIRECTION OUTPUT + USE SIGNAL + PLACED ( 2042630 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_data_out[89] + NET la_data_out[89] + DIRECTION OUTPUT + USE SIGNAL + PLACED ( 2059190 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_data_out[8] + NET la_data_out[8] + DIRECTION OUTPUT + USE SIGNAL + PLACED ( 722890 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_data_out[90] + NET la_data_out[90] + DIRECTION OUTPUT + USE SIGNAL + PLACED ( 2075750 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_data_out[91] + NET la_data_out[91] + DIRECTION OUTPUT + USE SIGNAL + PLACED ( 2091850 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_data_out[92] + NET la_data_out[92] + DIRECTION OUTPUT + USE SIGNAL + PLACED ( 2108410 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_data_out[93] + NET la_data_out[93] + DIRECTION OUTPUT + USE SIGNAL + PLACED ( 2124970 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_data_out[94] + NET la_data_out[94] + DIRECTION OUTPUT + USE SIGNAL + PLACED ( 2141530 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_data_out[95] + NET la_data_out[95] + DIRECTION OUTPUT + USE SIGNAL + PLACED ( 2158090 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_data_out[96] + NET la_data_out[96] + DIRECTION OUTPUT + USE SIGNAL + PLACED ( 2174650 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_data_out[97] + NET la_data_out[97] + DIRECTION OUTPUT + USE SIGNAL + PLACED ( 2191210 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_data_out[98] + NET la_data_out[98] + DIRECTION OUTPUT + USE SIGNAL + PLACED ( 2207770 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_data_out[99] + NET la_data_out[99] + DIRECTION OUTPUT + USE SIGNAL + PLACED ( 2223870 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_data_out[9] + NET la_data_out[9] + DIRECTION OUTPUT + USE SIGNAL + PLACED ( 738990 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_oen[0] + NET la_oen[0] + DIRECTION INPUT + USE SIGNAL + PLACED ( 596390 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_oen[100] + NET la_oen[100] + DIRECTION INPUT + USE SIGNAL + PLACED ( 2245950 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_oen[101] + NET la_oen[101] + DIRECTION INPUT + USE SIGNAL + PLACED ( 2262510 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_oen[102] + NET la_oen[102] + DIRECTION INPUT + USE SIGNAL + PLACED ( 2279070 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_oen[103] + NET la_oen[103] + DIRECTION INPUT + USE SIGNAL + PLACED ( 2295630 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_oen[104] + NET la_oen[104] + DIRECTION INPUT + USE SIGNAL + PLACED ( 2312190 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_oen[105] + NET la_oen[105] + DIRECTION INPUT + USE SIGNAL + PLACED ( 2328750 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_oen[106] + NET la_oen[106] + DIRECTION INPUT + USE SIGNAL + PLACED ( 2344850 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_oen[107] + NET la_oen[107] + DIRECTION INPUT + USE SIGNAL + PLACED ( 2361410 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_oen[108] + NET la_oen[108] + DIRECTION INPUT + USE SIGNAL + PLACED ( 2377970 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_oen[109] + NET la_oen[109] + DIRECTION INPUT + USE SIGNAL + PLACED ( 2394530 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_oen[10] + NET la_oen[10] + DIRECTION INPUT + USE SIGNAL + PLACED ( 761070 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_oen[110] + NET la_oen[110] + DIRECTION INPUT + USE SIGNAL + PLACED ( 2411090 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_oen[111] + NET la_oen[111] + DIRECTION INPUT + USE SIGNAL + PLACED ( 2427650 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_oen[112] + NET la_oen[112] + DIRECTION INPUT + USE SIGNAL + PLACED ( 2444210 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_oen[113] + NET la_oen[113] + DIRECTION INPUT + USE SIGNAL + PLACED ( 2460310 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_oen[114] + NET la_oen[114] + DIRECTION INPUT + USE SIGNAL + PLACED ( 2476870 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_oen[115] + NET la_oen[115] + DIRECTION INPUT + USE SIGNAL + PLACED ( 2493430 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_oen[116] + NET la_oen[116] + DIRECTION INPUT + USE SIGNAL + PLACED ( 2509990 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_oen[117] + NET la_oen[117] + DIRECTION INPUT + USE SIGNAL + PLACED ( 2526550 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_oen[118] + NET la_oen[118] + DIRECTION INPUT + USE SIGNAL + PLACED ( 2543110 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_oen[119] + NET la_oen[119] + DIRECTION INPUT + USE SIGNAL + PLACED ( 2559670 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_oen[11] + NET la_oen[11] + DIRECTION INPUT + USE SIGNAL + PLACED ( 777630 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_oen[120] + NET la_oen[120] + DIRECTION INPUT + USE SIGNAL + PLACED ( 2576230 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_oen[121] + NET la_oen[121] + DIRECTION INPUT + USE SIGNAL + PLACED ( 2592330 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_oen[122] + NET la_oen[122] + DIRECTION INPUT + USE SIGNAL + PLACED ( 2608890 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_oen[123] + NET la_oen[123] + DIRECTION INPUT + USE SIGNAL + PLACED ( 2625450 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_oen[124] + NET la_oen[124] + DIRECTION INPUT + USE SIGNAL + PLACED ( 2642010 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_oen[125] + NET la_oen[125] + DIRECTION INPUT + USE SIGNAL + PLACED ( 2658570 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_oen[126] + NET la_oen[126] + DIRECTION INPUT + USE SIGNAL + PLACED ( 2675130 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_oen[127] + NET la_oen[127] + DIRECTION INPUT + USE SIGNAL + PLACED ( 2691690 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_oen[12] + NET la_oen[12] + DIRECTION INPUT + USE SIGNAL + PLACED ( 794190 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_oen[13] + NET la_oen[13] + DIRECTION INPUT + USE SIGNAL + PLACED ( 810750 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_oen[14] + NET la_oen[14] + DIRECTION INPUT + USE SIGNAL + PLACED ( 827310 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_oen[15] + NET la_oen[15] + DIRECTION INPUT + USE SIGNAL + PLACED ( 843870 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_oen[16] + NET la_oen[16] + DIRECTION INPUT + USE SIGNAL + PLACED ( 860430 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_oen[17] + NET la_oen[17] + DIRECTION INPUT + USE SIGNAL + PLACED ( 876530 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_oen[18] + NET la_oen[18] + DIRECTION INPUT + USE SIGNAL + PLACED ( 893090 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_oen[19] + NET la_oen[19] + DIRECTION INPUT + USE SIGNAL + PLACED ( 909650 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_oen[1] + NET la_oen[1] + DIRECTION INPUT + USE SIGNAL + PLACED ( 612950 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_oen[20] + NET la_oen[20] + DIRECTION INPUT + USE SIGNAL + PLACED ( 926210 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_oen[21] + NET la_oen[21] + DIRECTION INPUT + USE SIGNAL + PLACED ( 942770 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_oen[22] + NET la_oen[22] + DIRECTION INPUT + USE SIGNAL + PLACED ( 959330 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_oen[23] + NET la_oen[23] + DIRECTION INPUT + USE SIGNAL + PLACED ( 975890 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_oen[24] + NET la_oen[24] + DIRECTION INPUT + USE SIGNAL + PLACED ( 991990 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_oen[25] + NET la_oen[25] + DIRECTION INPUT + USE SIGNAL + PLACED ( 1008550 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_oen[26] + NET la_oen[26] + DIRECTION INPUT + USE SIGNAL + PLACED ( 1025110 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_oen[27] + NET la_oen[27] + DIRECTION INPUT + USE SIGNAL + PLACED ( 1041670 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_oen[28] + NET la_oen[28] + DIRECTION INPUT + USE SIGNAL + PLACED ( 1058230 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_oen[29] + NET la_oen[29] + DIRECTION INPUT + USE SIGNAL + PLACED ( 1074790 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_oen[2] + NET la_oen[2] + DIRECTION INPUT + USE SIGNAL + PLACED ( 629050 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_oen[30] + NET la_oen[30] + DIRECTION INPUT + USE SIGNAL + PLACED ( 1091350 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_oen[31] + NET la_oen[31] + DIRECTION INPUT + USE SIGNAL + PLACED ( 1107450 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_oen[32] + NET la_oen[32] + DIRECTION INPUT + USE SIGNAL + PLACED ( 1124010 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_oen[33] + NET la_oen[33] + DIRECTION INPUT + USE SIGNAL + PLACED ( 1140570 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_oen[34] + NET la_oen[34] + DIRECTION INPUT + USE SIGNAL + PLACED ( 1157130 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_oen[35] + NET la_oen[35] + DIRECTION INPUT + USE SIGNAL + PLACED ( 1173690 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_oen[36] + NET la_oen[36] + DIRECTION INPUT + USE SIGNAL + PLACED ( 1190250 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_oen[37] + NET la_oen[37] + DIRECTION INPUT + USE SIGNAL + PLACED ( 1206810 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_oen[38] + NET la_oen[38] + DIRECTION INPUT + USE SIGNAL + PLACED ( 1223370 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_oen[39] + NET la_oen[39] + DIRECTION INPUT + USE SIGNAL + PLACED ( 1239470 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_oen[3] + NET la_oen[3] + DIRECTION INPUT + USE SIGNAL + PLACED ( 645610 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_oen[40] + NET la_oen[40] + DIRECTION INPUT + USE SIGNAL + PLACED ( 1256030 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_oen[41] + NET la_oen[41] + DIRECTION INPUT + USE SIGNAL + PLACED ( 1272590 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_oen[42] + NET la_oen[42] + DIRECTION INPUT + USE SIGNAL + PLACED ( 1289150 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_oen[43] + NET la_oen[43] + DIRECTION INPUT + USE SIGNAL + PLACED ( 1305710 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_oen[44] + NET la_oen[44] + DIRECTION INPUT + USE SIGNAL + PLACED ( 1322270 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_oen[45] + NET la_oen[45] + DIRECTION INPUT + USE SIGNAL + PLACED ( 1338830 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_oen[46] + NET la_oen[46] + DIRECTION INPUT + USE SIGNAL + PLACED ( 1354930 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_oen[47] + NET la_oen[47] + DIRECTION INPUT + USE SIGNAL + PLACED ( 1371490 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_oen[48] + NET la_oen[48] + DIRECTION INPUT + USE SIGNAL + PLACED ( 1388050 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_oen[49] + NET la_oen[49] + DIRECTION INPUT + USE SIGNAL + PLACED ( 1404610 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_oen[4] + NET la_oen[4] + DIRECTION INPUT + USE SIGNAL + PLACED ( 662170 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_oen[50] + NET la_oen[50] + DIRECTION INPUT + USE SIGNAL + PLACED ( 1421170 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_oen[51] + NET la_oen[51] + DIRECTION INPUT + USE SIGNAL + PLACED ( 1437730 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_oen[52] + NET la_oen[52] + DIRECTION INPUT + USE SIGNAL + PLACED ( 1454290 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_oen[53] + NET la_oen[53] + DIRECTION INPUT + USE SIGNAL + PLACED ( 1470850 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_oen[54] + NET la_oen[54] + DIRECTION INPUT + USE SIGNAL + PLACED ( 1486950 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_oen[55] + NET la_oen[55] + DIRECTION INPUT + USE SIGNAL + PLACED ( 1503510 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_oen[56] + NET la_oen[56] + DIRECTION INPUT + USE SIGNAL + PLACED ( 1520070 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_oen[57] + NET la_oen[57] + DIRECTION INPUT + USE SIGNAL + PLACED ( 1536630 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_oen[58] + NET la_oen[58] + DIRECTION INPUT + USE SIGNAL + PLACED ( 1553190 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_oen[59] + NET la_oen[59] + DIRECTION INPUT + USE SIGNAL + PLACED ( 1569750 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_oen[5] + NET la_oen[5] + DIRECTION INPUT + USE SIGNAL + PLACED ( 678730 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_oen[60] + NET la_oen[60] + DIRECTION INPUT + USE SIGNAL + PLACED ( 1586310 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_oen[61] + NET la_oen[61] + DIRECTION INPUT + USE SIGNAL + PLACED ( 1602410 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_oen[62] + NET la_oen[62] + DIRECTION INPUT + USE SIGNAL + PLACED ( 1618970 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_oen[63] + NET la_oen[63] + DIRECTION INPUT + USE SIGNAL + PLACED ( 1635530 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_oen[64] + NET la_oen[64] + DIRECTION INPUT + USE SIGNAL + PLACED ( 1652090 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_oen[65] + NET la_oen[65] + DIRECTION INPUT + USE SIGNAL + PLACED ( 1668650 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_oen[66] + NET la_oen[66] + DIRECTION INPUT + USE SIGNAL + PLACED ( 1685210 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_oen[67] + NET la_oen[67] + DIRECTION INPUT + USE SIGNAL + PLACED ( 1701770 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_oen[68] + NET la_oen[68] + DIRECTION INPUT + USE SIGNAL + PLACED ( 1718330 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_oen[69] + NET la_oen[69] + DIRECTION INPUT + USE SIGNAL + PLACED ( 1734430 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_oen[6] + NET la_oen[6] + DIRECTION INPUT + USE SIGNAL + PLACED ( 695290 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_oen[70] + NET la_oen[70] + DIRECTION INPUT + USE SIGNAL + PLACED ( 1750990 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_oen[71] + NET la_oen[71] + DIRECTION INPUT + USE SIGNAL + PLACED ( 1767550 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_oen[72] + NET la_oen[72] + DIRECTION INPUT + USE SIGNAL + PLACED ( 1784110 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_oen[73] + NET la_oen[73] + DIRECTION INPUT + USE SIGNAL + PLACED ( 1800670 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_oen[74] + NET la_oen[74] + DIRECTION INPUT + USE SIGNAL + PLACED ( 1817230 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_oen[75] + NET la_oen[75] + DIRECTION INPUT + USE SIGNAL + PLACED ( 1833790 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_oen[76] + NET la_oen[76] + DIRECTION INPUT + USE SIGNAL + PLACED ( 1849890 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_oen[77] + NET la_oen[77] + DIRECTION INPUT + USE SIGNAL + PLACED ( 1866450 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_oen[78] + NET la_oen[78] + DIRECTION INPUT + USE SIGNAL + PLACED ( 1883010 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_oen[79] + NET la_oen[79] + DIRECTION INPUT + USE SIGNAL + PLACED ( 1899570 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_oen[7] + NET la_oen[7] + DIRECTION INPUT + USE SIGNAL + PLACED ( 711850 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_oen[80] + NET la_oen[80] + DIRECTION INPUT + USE SIGNAL + PLACED ( 1916130 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_oen[81] + NET la_oen[81] + DIRECTION INPUT + USE SIGNAL + PLACED ( 1932690 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_oen[82] + NET la_oen[82] + DIRECTION INPUT + USE SIGNAL + PLACED ( 1949250 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_oen[83] + NET la_oen[83] + DIRECTION INPUT + USE SIGNAL + PLACED ( 1965810 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_oen[84] + NET la_oen[84] + DIRECTION INPUT + USE SIGNAL + PLACED ( 1981910 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_oen[85] + NET la_oen[85] + DIRECTION INPUT + USE SIGNAL + PLACED ( 1998470 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_oen[86] + NET la_oen[86] + DIRECTION INPUT + USE SIGNAL + PLACED ( 2015030 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_oen[87] + NET la_oen[87] + DIRECTION INPUT + USE SIGNAL + PLACED ( 2031590 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_oen[88] + NET la_oen[88] + DIRECTION INPUT + USE SIGNAL + PLACED ( 2048150 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_oen[89] + NET la_oen[89] + DIRECTION INPUT + USE SIGNAL + PLACED ( 2064710 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_oen[8] + NET la_oen[8] + DIRECTION INPUT + USE SIGNAL + PLACED ( 728410 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_oen[90] + NET la_oen[90] + DIRECTION INPUT + USE SIGNAL + PLACED ( 2081270 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_oen[91] + NET la_oen[91] + DIRECTION INPUT + USE SIGNAL + PLACED ( 2097370 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_oen[92] + NET la_oen[92] + DIRECTION INPUT + USE SIGNAL + PLACED ( 2113930 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_oen[93] + NET la_oen[93] + DIRECTION INPUT + USE SIGNAL + PLACED ( 2130490 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_oen[94] + NET la_oen[94] + DIRECTION INPUT + USE SIGNAL + PLACED ( 2147050 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_oen[95] + NET la_oen[95] + DIRECTION INPUT + USE SIGNAL + PLACED ( 2163610 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_oen[96] + NET la_oen[96] + DIRECTION INPUT + USE SIGNAL + PLACED ( 2180170 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_oen[97] + NET la_oen[97] + DIRECTION INPUT + USE SIGNAL + PLACED ( 2196730 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_oen[98] + NET la_oen[98] + DIRECTION INPUT + USE SIGNAL + PLACED ( 2212830 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_oen[99] + NET la_oen[99] + DIRECTION INPUT + USE SIGNAL + PLACED ( 2229390 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - la_oen[9] + NET la_oen[9] + DIRECTION INPUT + USE SIGNAL + PLACED ( 744510 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - user_clock2 + NET user_clock2 + DIRECTION INPUT + USE SIGNAL + PLACED ( 2697210 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - vccd1 + NET vccd1 + DIRECTION INOUT + USE SIGNAL + PLACED ( 2698800 2503420 ) N + LAYER met3 ( -1200 -300 ) ( 1200 300 ) ;
-    - vccd2 + NET vccd2 + DIRECTION INOUT + USE SIGNAL + PLACED ( 1200 2494580 ) N + LAYER met3 ( -1200 -300 ) ( 1200 300 ) ;
-    - vdda1 + NET vdda1 + DIRECTION INOUT + USE SIGNAL + PLACED ( 2698800 1265820 ) N + LAYER met3 ( -1200 -300 ) ( 1200 300 ) ;
-    - vdda2 + NET vdda2 + DIRECTION INOUT + USE SIGNAL + PLACED ( 1200 1144780 ) N + LAYER met3 ( -1200 -300 ) ( 1200 300 ) ;
-    - vssa1 + NET vssa1 + DIRECTION INOUT + USE SIGNAL + PLACED ( 2362330 2698800 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - vssa2 + NET vssa2 + DIRECTION INOUT + USE SIGNAL + PLACED ( 1200 2436100 ) N + LAYER met3 ( -1200 -300 ) ( 1200 300 ) ;
-    - vssd1 + NET vssd1 + DIRECTION INOUT + USE SIGNAL + PLACED ( 2698800 1209380 ) N + LAYER met3 ( -1200 -300 ) ( 1200 300 ) ;
-    - vssd2 + NET vssd2 + DIRECTION INOUT + USE SIGNAL + PLACED ( 1200 1085620 ) N + LAYER met3 ( -1200 -300 ) ( 1200 300 ) ;
-    - wb_clk_i + NET wb_clk_i + DIRECTION INPUT + USE SIGNAL + PLACED ( 2530 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - wb_rst_i + NET wb_rst_i + DIRECTION INPUT + USE SIGNAL + PLACED ( 7590 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - wbs_ack_o + NET wbs_ack_o + DIRECTION OUTPUT + USE SIGNAL + PLACED ( 13110 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - wbs_adr_i[0] + NET wbs_adr_i[0] + DIRECTION INPUT + USE SIGNAL + PLACED ( 35190 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - wbs_adr_i[10] + NET wbs_adr_i[10] + DIRECTION INPUT + USE SIGNAL + PLACED ( 222410 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - wbs_adr_i[11] + NET wbs_adr_i[11] + DIRECTION INPUT + USE SIGNAL + PLACED ( 238970 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - wbs_adr_i[12] + NET wbs_adr_i[12] + DIRECTION INPUT + USE SIGNAL + PLACED ( 255070 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - wbs_adr_i[13] + NET wbs_adr_i[13] + DIRECTION INPUT + USE SIGNAL + PLACED ( 271630 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - wbs_adr_i[14] + NET wbs_adr_i[14] + DIRECTION INPUT + USE SIGNAL + PLACED ( 288190 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - wbs_adr_i[15] + NET wbs_adr_i[15] + DIRECTION INPUT + USE SIGNAL + PLACED ( 304750 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - wbs_adr_i[16] + NET wbs_adr_i[16] + DIRECTION INPUT + USE SIGNAL + PLACED ( 321310 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - wbs_adr_i[17] + NET wbs_adr_i[17] + DIRECTION INPUT + USE SIGNAL + PLACED ( 337870 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - wbs_adr_i[18] + NET wbs_adr_i[18] + DIRECTION INPUT + USE SIGNAL + PLACED ( 354430 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - wbs_adr_i[19] + NET wbs_adr_i[19] + DIRECTION INPUT + USE SIGNAL + PLACED ( 370530 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - wbs_adr_i[1] + NET wbs_adr_i[1] + DIRECTION INPUT + USE SIGNAL + PLACED ( 57270 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - wbs_adr_i[20] + NET wbs_adr_i[20] + DIRECTION INPUT + USE SIGNAL + PLACED ( 387090 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - wbs_adr_i[21] + NET wbs_adr_i[21] + DIRECTION INPUT + USE SIGNAL + PLACED ( 403650 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - wbs_adr_i[22] + NET wbs_adr_i[22] + DIRECTION INPUT + USE SIGNAL + PLACED ( 420210 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - wbs_adr_i[23] + NET wbs_adr_i[23] + DIRECTION INPUT + USE SIGNAL + PLACED ( 436770 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - wbs_adr_i[24] + NET wbs_adr_i[24] + DIRECTION INPUT + USE SIGNAL + PLACED ( 453330 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - wbs_adr_i[25] + NET wbs_adr_i[25] + DIRECTION INPUT + USE SIGNAL + PLACED ( 469890 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - wbs_adr_i[26] + NET wbs_adr_i[26] + DIRECTION INPUT + USE SIGNAL + PLACED ( 486450 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - wbs_adr_i[27] + NET wbs_adr_i[27] + DIRECTION INPUT + USE SIGNAL + PLACED ( 502550 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - wbs_adr_i[28] + NET wbs_adr_i[28] + DIRECTION INPUT + USE SIGNAL + PLACED ( 519110 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - wbs_adr_i[29] + NET wbs_adr_i[29] + DIRECTION INPUT + USE SIGNAL + PLACED ( 535670 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - wbs_adr_i[2] + NET wbs_adr_i[2] + DIRECTION INPUT + USE SIGNAL + PLACED ( 79350 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - wbs_adr_i[30] + NET wbs_adr_i[30] + DIRECTION INPUT + USE SIGNAL + PLACED ( 552230 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - wbs_adr_i[31] + NET wbs_adr_i[31] + DIRECTION INPUT + USE SIGNAL + PLACED ( 568790 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - wbs_adr_i[3] + NET wbs_adr_i[3] + DIRECTION INPUT + USE SIGNAL + PLACED ( 101430 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - wbs_adr_i[4] + NET wbs_adr_i[4] + DIRECTION INPUT + USE SIGNAL + PLACED ( 123510 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - wbs_adr_i[5] + NET wbs_adr_i[5] + DIRECTION INPUT + USE SIGNAL + PLACED ( 139610 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - wbs_adr_i[6] + NET wbs_adr_i[6] + DIRECTION INPUT + USE SIGNAL + PLACED ( 156170 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - wbs_adr_i[7] + NET wbs_adr_i[7] + DIRECTION INPUT + USE SIGNAL + PLACED ( 172730 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - wbs_adr_i[8] + NET wbs_adr_i[8] + DIRECTION INPUT + USE SIGNAL + PLACED ( 189290 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - wbs_adr_i[9] + NET wbs_adr_i[9] + DIRECTION INPUT + USE SIGNAL + PLACED ( 205850 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - wbs_cyc_i + NET wbs_cyc_i + DIRECTION INPUT + USE SIGNAL + PLACED ( 18630 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - wbs_dat_i[0] + NET wbs_dat_i[0] + DIRECTION INPUT + USE SIGNAL + PLACED ( 40710 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - wbs_dat_i[10] + NET wbs_dat_i[10] + DIRECTION INPUT + USE SIGNAL + PLACED ( 227930 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - wbs_dat_i[11] + NET wbs_dat_i[11] + DIRECTION INPUT + USE SIGNAL + PLACED ( 244490 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - wbs_dat_i[12] + NET wbs_dat_i[12] + DIRECTION INPUT + USE SIGNAL + PLACED ( 260590 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - wbs_dat_i[13] + NET wbs_dat_i[13] + DIRECTION INPUT + USE SIGNAL + PLACED ( 277150 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - wbs_dat_i[14] + NET wbs_dat_i[14] + DIRECTION INPUT + USE SIGNAL + PLACED ( 293710 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - wbs_dat_i[15] + NET wbs_dat_i[15] + DIRECTION INPUT + USE SIGNAL + PLACED ( 310270 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - wbs_dat_i[16] + NET wbs_dat_i[16] + DIRECTION INPUT + USE SIGNAL + PLACED ( 326830 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - wbs_dat_i[17] + NET wbs_dat_i[17] + DIRECTION INPUT + USE SIGNAL + PLACED ( 343390 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - wbs_dat_i[18] + NET wbs_dat_i[18] + DIRECTION INPUT + USE SIGNAL + PLACED ( 359950 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - wbs_dat_i[19] + NET wbs_dat_i[19] + DIRECTION INPUT + USE SIGNAL + PLACED ( 376050 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - wbs_dat_i[1] + NET wbs_dat_i[1] + DIRECTION INPUT + USE SIGNAL + PLACED ( 62790 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - wbs_dat_i[20] + NET wbs_dat_i[20] + DIRECTION INPUT + USE SIGNAL + PLACED ( 392610 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - wbs_dat_i[21] + NET wbs_dat_i[21] + DIRECTION INPUT + USE SIGNAL + PLACED ( 409170 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - wbs_dat_i[22] + NET wbs_dat_i[22] + DIRECTION INPUT + USE SIGNAL + PLACED ( 425730 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - wbs_dat_i[23] + NET wbs_dat_i[23] + DIRECTION INPUT + USE SIGNAL + PLACED ( 442290 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - wbs_dat_i[24] + NET wbs_dat_i[24] + DIRECTION INPUT + USE SIGNAL + PLACED ( 458850 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - wbs_dat_i[25] + NET wbs_dat_i[25] + DIRECTION INPUT + USE SIGNAL + PLACED ( 475410 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - wbs_dat_i[26] + NET wbs_dat_i[26] + DIRECTION INPUT + USE SIGNAL + PLACED ( 491970 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - wbs_dat_i[27] + NET wbs_dat_i[27] + DIRECTION INPUT + USE SIGNAL + PLACED ( 508070 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - wbs_dat_i[28] + NET wbs_dat_i[28] + DIRECTION INPUT + USE SIGNAL + PLACED ( 524630 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - wbs_dat_i[29] + NET wbs_dat_i[29] + DIRECTION INPUT + USE SIGNAL + PLACED ( 541190 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - wbs_dat_i[2] + NET wbs_dat_i[2] + DIRECTION INPUT + USE SIGNAL + PLACED ( 84870 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - wbs_dat_i[30] + NET wbs_dat_i[30] + DIRECTION INPUT + USE SIGNAL + PLACED ( 557750 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - wbs_dat_i[31] + NET wbs_dat_i[31] + DIRECTION INPUT + USE SIGNAL + PLACED ( 574310 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - wbs_dat_i[3] + NET wbs_dat_i[3] + DIRECTION INPUT + USE SIGNAL + PLACED ( 106950 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - wbs_dat_i[4] + NET wbs_dat_i[4] + DIRECTION INPUT + USE SIGNAL + PLACED ( 128570 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - wbs_dat_i[5] + NET wbs_dat_i[5] + DIRECTION INPUT + USE SIGNAL + PLACED ( 145130 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - wbs_dat_i[6] + NET wbs_dat_i[6] + DIRECTION INPUT + USE SIGNAL + PLACED ( 161690 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - wbs_dat_i[7] + NET wbs_dat_i[7] + DIRECTION INPUT + USE SIGNAL + PLACED ( 178250 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - wbs_dat_i[8] + NET wbs_dat_i[8] + DIRECTION INPUT + USE SIGNAL + PLACED ( 194810 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - wbs_dat_i[9] + NET wbs_dat_i[9] + DIRECTION INPUT + USE SIGNAL + PLACED ( 211370 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - wbs_dat_o[0] + NET wbs_dat_o[0] + DIRECTION OUTPUT + USE SIGNAL + PLACED ( 46230 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - wbs_dat_o[10] + NET wbs_dat_o[10] + DIRECTION OUTPUT + USE SIGNAL + PLACED ( 233450 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - wbs_dat_o[11] + NET wbs_dat_o[11] + DIRECTION OUTPUT + USE SIGNAL + PLACED ( 249550 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - wbs_dat_o[12] + NET wbs_dat_o[12] + DIRECTION OUTPUT + USE SIGNAL + PLACED ( 266110 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - wbs_dat_o[13] + NET wbs_dat_o[13] + DIRECTION OUTPUT + USE SIGNAL + PLACED ( 282670 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - wbs_dat_o[14] + NET wbs_dat_o[14] + DIRECTION OUTPUT + USE SIGNAL + PLACED ( 299230 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - wbs_dat_o[15] + NET wbs_dat_o[15] + DIRECTION OUTPUT + USE SIGNAL + PLACED ( 315790 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - wbs_dat_o[16] + NET wbs_dat_o[16] + DIRECTION OUTPUT + USE SIGNAL + PLACED ( 332350 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - wbs_dat_o[17] + NET wbs_dat_o[17] + DIRECTION OUTPUT + USE SIGNAL + PLACED ( 348910 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - wbs_dat_o[18] + NET wbs_dat_o[18] + DIRECTION OUTPUT + USE SIGNAL + PLACED ( 365470 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - wbs_dat_o[19] + NET wbs_dat_o[19] + DIRECTION OUTPUT + USE SIGNAL + PLACED ( 381570 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - wbs_dat_o[1] + NET wbs_dat_o[1] + DIRECTION OUTPUT + USE SIGNAL + PLACED ( 68310 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - wbs_dat_o[20] + NET wbs_dat_o[20] + DIRECTION OUTPUT + USE SIGNAL + PLACED ( 398130 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - wbs_dat_o[21] + NET wbs_dat_o[21] + DIRECTION OUTPUT + USE SIGNAL + PLACED ( 414690 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - wbs_dat_o[22] + NET wbs_dat_o[22] + DIRECTION OUTPUT + USE SIGNAL + PLACED ( 431250 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - wbs_dat_o[23] + NET wbs_dat_o[23] + DIRECTION OUTPUT + USE SIGNAL + PLACED ( 447810 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - wbs_dat_o[24] + NET wbs_dat_o[24] + DIRECTION OUTPUT + USE SIGNAL + PLACED ( 464370 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - wbs_dat_o[25] + NET wbs_dat_o[25] + DIRECTION OUTPUT + USE SIGNAL + PLACED ( 480930 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - wbs_dat_o[26] + NET wbs_dat_o[26] + DIRECTION OUTPUT + USE SIGNAL + PLACED ( 497030 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - wbs_dat_o[27] + NET wbs_dat_o[27] + DIRECTION OUTPUT + USE SIGNAL + PLACED ( 513590 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - wbs_dat_o[28] + NET wbs_dat_o[28] + DIRECTION OUTPUT + USE SIGNAL + PLACED ( 530150 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - wbs_dat_o[29] + NET wbs_dat_o[29] + DIRECTION OUTPUT + USE SIGNAL + PLACED ( 546710 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - wbs_dat_o[2] + NET wbs_dat_o[2] + DIRECTION OUTPUT + USE SIGNAL + PLACED ( 90390 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - wbs_dat_o[30] + NET wbs_dat_o[30] + DIRECTION OUTPUT + USE SIGNAL + PLACED ( 563270 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - wbs_dat_o[31] + NET wbs_dat_o[31] + DIRECTION OUTPUT + USE SIGNAL + PLACED ( 579830 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - wbs_dat_o[3] + NET wbs_dat_o[3] + DIRECTION OUTPUT + USE SIGNAL + PLACED ( 112470 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - wbs_dat_o[4] + NET wbs_dat_o[4] + DIRECTION OUTPUT + USE SIGNAL + PLACED ( 134090 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - wbs_dat_o[5] + NET wbs_dat_o[5] + DIRECTION OUTPUT + USE SIGNAL + PLACED ( 150650 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - wbs_dat_o[6] + NET wbs_dat_o[6] + DIRECTION OUTPUT + USE SIGNAL + PLACED ( 167210 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - wbs_dat_o[7] + NET wbs_dat_o[7] + DIRECTION OUTPUT + USE SIGNAL + PLACED ( 183770 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - wbs_dat_o[8] + NET wbs_dat_o[8] + DIRECTION OUTPUT + USE SIGNAL + PLACED ( 200330 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - wbs_dat_o[9] + NET wbs_dat_o[9] + DIRECTION OUTPUT + USE SIGNAL + PLACED ( 216890 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - wbs_sel_i[0] + NET wbs_sel_i[0] + DIRECTION INPUT + USE SIGNAL + PLACED ( 51750 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - wbs_sel_i[1] + NET wbs_sel_i[1] + DIRECTION INPUT + USE SIGNAL + PLACED ( 73830 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - wbs_sel_i[2] + NET wbs_sel_i[2] + DIRECTION INPUT + USE SIGNAL + PLACED ( 95910 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - wbs_sel_i[3] + NET wbs_sel_i[3] + DIRECTION INPUT + USE SIGNAL + PLACED ( 117990 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - wbs_stb_i + NET wbs_stb_i + DIRECTION INPUT + USE SIGNAL + PLACED ( 24150 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - wbs_we_i + NET wbs_we_i + DIRECTION INPUT + USE SIGNAL + PLACED ( 29670 1200 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
+
+DIEAREA ( 0 0 ) ( 2920000 3520000 ) ;
+
+VIAS 5 ;
+- via2_FR 
++ RECT met2 ( -140 -185 ) ( 140 185 ) 
++ RECT via2 ( -100 -100 ) ( 100 100 ) 
++ RECT met3 ( -165 -165 ) ( 165 165 ) 
+ 
+ ;
+- via4_FR 
++ RECT met4 ( -590 -590 ) ( 590 590 ) 
++ RECT via4 ( -400 -400 ) ( 400 400 ) 
++ RECT met5 ( -710 -710 ) ( 710 710 ) 
+ 
+ ;
+- via4_2000x2000 
+ 
++ VIARULE M4M5_PR
+  + CUTSIZE 800 800
+  + LAYERS met4 via4 met5
+  + CUTSPACING 800 800
+  + ENCLOSURE 600 600 600 600
+ ;
+- via4_2000x1600 
+ 
++ VIARULE M4M5_PR
+  + CUTSIZE 800 800
+  + LAYERS met4 via4 met5
+  + CUTSPACING 800 800
+  + ENCLOSURE 600 400 600 400
+ ;
+- via4_1600x1600 
+ 
++ VIARULE M4M5_PR
+  + CUTSIZE 800 800
+  + LAYERS met4 via4 met5
+  + CUTSPACING 800 800
+  + ENCLOSURE 400 400 400 400
+ ;
+END VIAS
+
+PINS 607 ;
+- io_in[0] + NET io_in[0] + DIRECTION INPUT + USE SIGNAL 
+  + LAYER met3 ( -1200 -300 ) ( 1200 300 )
+  + PLACED ( 2918800 39100 ) N ;
+- io_in[10] + NET io_in[10] + DIRECTION INPUT + USE SIGNAL 
+  + LAYER met3 ( -1200 -300 ) ( 1200 300 )
+  + PLACED ( 2918800 2385100 ) N ;
+- io_in[11] + NET io_in[11] + DIRECTION INPUT + USE SIGNAL 
+  + LAYER met3 ( -1200 -300 ) ( 1200 300 )
+  + PLACED ( 2918800 2619700 ) N ;
+- io_in[12] + NET io_in[12] + DIRECTION INPUT + USE SIGNAL 
+  + LAYER met3 ( -1200 -300 ) ( 1200 300 )
+  + PLACED ( 2918800 2854300 ) N ;
+- io_in[13] + NET io_in[13] + DIRECTION INPUT + USE SIGNAL 
+  + LAYER met3 ( -1200 -300 ) ( 1200 300 )
+  + PLACED ( 2918800 3088900 ) N ;
+- io_in[14] + NET io_in[14] + DIRECTION INPUT + USE SIGNAL 
+  + LAYER met3 ( -1200 -300 ) ( 1200 300 )
+  + PLACED ( 2918800 3323500 ) N ;
+- io_in[15] + NET io_in[15] + DIRECTION INPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 2865570 3518800 ) N ;
+- io_in[16] + NET io_in[16] + DIRECTION INPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 2541270 3518800 ) N ;
+- io_in[17] + NET io_in[17] + DIRECTION INPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 2216970 3518800 ) N ;
+- io_in[18] + NET io_in[18] + DIRECTION INPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 1892210 3518800 ) N ;
+- io_in[19] + NET io_in[19] + DIRECTION INPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 1567910 3518800 ) N ;
+- io_in[1] + NET io_in[1] + DIRECTION INPUT + USE SIGNAL 
+  + LAYER met3 ( -1200 -300 ) ( 1200 300 )
+  + PLACED ( 2918800 273700 ) N ;
+- io_in[20] + NET io_in[20] + DIRECTION INPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 1243610 3518800 ) N ;
+- io_in[21] + NET io_in[21] + DIRECTION INPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 918850 3518800 ) N ;
+- io_in[22] + NET io_in[22] + DIRECTION INPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 594550 3518800 ) N ;
+- io_in[23] + NET io_in[23] + DIRECTION INPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 270250 3518800 ) N ;
+- io_in[24] + NET io_in[24] + DIRECTION INPUT + USE SIGNAL 
+  + LAYER met3 ( -1200 -300 ) ( 1200 300 )
+  + PLACED ( 1200 3477180 ) N ;
+- io_in[25] + NET io_in[25] + DIRECTION INPUT + USE SIGNAL 
+  + LAYER met3 ( -1200 -300 ) ( 1200 300 )
+  + PLACED ( 1200 3226260 ) N ;
+- io_in[26] + NET io_in[26] + DIRECTION INPUT + USE SIGNAL 
+  + LAYER met3 ( -1200 -300 ) ( 1200 300 )
+  + PLACED ( 1200 2974660 ) N ;
+- io_in[27] + NET io_in[27] + DIRECTION INPUT + USE SIGNAL 
+  + LAYER met3 ( -1200 -300 ) ( 1200 300 )
+  + PLACED ( 1200 2723060 ) N ;
+- io_in[28] + NET io_in[28] + DIRECTION INPUT + USE SIGNAL 
+  + LAYER met3 ( -1200 -300 ) ( 1200 300 )
+  + PLACED ( 1200 2471460 ) N ;
+- io_in[29] + NET io_in[29] + DIRECTION INPUT + USE SIGNAL 
+  + LAYER met3 ( -1200 -300 ) ( 1200 300 )
+  + PLACED ( 1200 2220540 ) N ;
+- io_in[2] + NET io_in[2] + DIRECTION INPUT + USE SIGNAL 
+  + LAYER met3 ( -1200 -300 ) ( 1200 300 )
+  + PLACED ( 2918800 508300 ) N ;
+- io_in[30] + NET io_in[30] + DIRECTION INPUT + USE SIGNAL 
+  + LAYER met3 ( -1200 -300 ) ( 1200 300 )
+  + PLACED ( 1200 1968940 ) N ;
+- io_in[31] + NET io_in[31] + DIRECTION INPUT + USE SIGNAL 
+  + LAYER met3 ( -1200 -300 ) ( 1200 300 )
+  + PLACED ( 1200 1717340 ) N ;
+- io_in[32] + NET io_in[32] + DIRECTION INPUT + USE SIGNAL 
+  + LAYER met3 ( -1200 -300 ) ( 1200 300 )
+  + PLACED ( 1200 1466420 ) N ;
+- io_in[33] + NET io_in[33] + DIRECTION INPUT + USE SIGNAL 
+  + LAYER met3 ( -1200 -300 ) ( 1200 300 )
+  + PLACED ( 1200 1214820 ) N ;
+- io_in[34] + NET io_in[34] + DIRECTION INPUT + USE SIGNAL 
+  + LAYER met3 ( -1200 -300 ) ( 1200 300 )
+  + PLACED ( 1200 963220 ) N ;
+- io_in[35] + NET io_in[35] + DIRECTION INPUT + USE SIGNAL 
+  + LAYER met3 ( -1200 -300 ) ( 1200 300 )
+  + PLACED ( 1200 711620 ) N ;
+- io_in[36] + NET io_in[36] + DIRECTION INPUT + USE SIGNAL 
+  + LAYER met3 ( -1200 -300 ) ( 1200 300 )
+  + PLACED ( 1200 460700 ) N ;
+- io_in[37] + NET io_in[37] + DIRECTION INPUT + USE SIGNAL 
+  + LAYER met3 ( -1200 -300 ) ( 1200 300 )
+  + PLACED ( 1200 209100 ) N ;
+- io_in[3] + NET io_in[3] + DIRECTION INPUT + USE SIGNAL 
+  + LAYER met3 ( -1200 -300 ) ( 1200 300 )
+  + PLACED ( 2918800 742900 ) N ;
+- io_in[4] + NET io_in[4] + DIRECTION INPUT + USE SIGNAL 
+  + LAYER met3 ( -1200 -300 ) ( 1200 300 )
+  + PLACED ( 2918800 977500 ) N ;
+- io_in[5] + NET io_in[5] + DIRECTION INPUT + USE SIGNAL 
+  + LAYER met3 ( -1200 -300 ) ( 1200 300 )
+  + PLACED ( 2918800 1212100 ) N ;
+- io_in[6] + NET io_in[6] + DIRECTION INPUT + USE SIGNAL 
+  + LAYER met3 ( -1200 -300 ) ( 1200 300 )
+  + PLACED ( 2918800 1446700 ) N ;
+- io_in[7] + NET io_in[7] + DIRECTION INPUT + USE SIGNAL 
+  + LAYER met3 ( -1200 -300 ) ( 1200 300 )
+  + PLACED ( 2918800 1681300 ) N ;
+- io_in[8] + NET io_in[8] + DIRECTION INPUT + USE SIGNAL 
+  + LAYER met3 ( -1200 -300 ) ( 1200 300 )
+  + PLACED ( 2918800 1915900 ) N ;
+- io_in[9] + NET io_in[9] + DIRECTION INPUT + USE SIGNAL 
+  + LAYER met3 ( -1200 -300 ) ( 1200 300 )
+  + PLACED ( 2918800 2150500 ) N ;
+- io_oeb[0] + NET io_oeb[0] + DIRECTION OUTPUT + USE SIGNAL 
+  + LAYER met3 ( -1200 -300 ) ( 1200 300 )
+  + PLACED ( 2918800 195500 ) N ;
+- io_oeb[10] + NET io_oeb[10] + DIRECTION OUTPUT + USE SIGNAL 
+  + LAYER met3 ( -1200 -300 ) ( 1200 300 )
+  + PLACED ( 2918800 2541500 ) N ;
+- io_oeb[11] + NET io_oeb[11] + DIRECTION OUTPUT + USE SIGNAL 
+  + LAYER met3 ( -1200 -300 ) ( 1200 300 )
+  + PLACED ( 2918800 2776100 ) N ;
+- io_oeb[12] + NET io_oeb[12] + DIRECTION OUTPUT + USE SIGNAL 
+  + LAYER met3 ( -1200 -300 ) ( 1200 300 )
+  + PLACED ( 2918800 3010700 ) N ;
+- io_oeb[13] + NET io_oeb[13] + DIRECTION OUTPUT + USE SIGNAL 
+  + LAYER met3 ( -1200 -300 ) ( 1200 300 )
+  + PLACED ( 2918800 3245300 ) N ;
+- io_oeb[14] + NET io_oeb[14] + DIRECTION OUTPUT + USE SIGNAL 
+  + LAYER met3 ( -1200 -300 ) ( 1200 300 )
+  + PLACED ( 2918800 3479900 ) N ;
+- io_oeb[15] + NET io_oeb[15] + DIRECTION OUTPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 2649370 3518800 ) N ;
+- io_oeb[16] + NET io_oeb[16] + DIRECTION OUTPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 2325070 3518800 ) N ;
+- io_oeb[17] + NET io_oeb[17] + DIRECTION OUTPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 2000770 3518800 ) N ;
+- io_oeb[18] + NET io_oeb[18] + DIRECTION OUTPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 1676010 3518800 ) N ;
+- io_oeb[19] + NET io_oeb[19] + DIRECTION OUTPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 1351710 3518800 ) N ;
+- io_oeb[1] + NET io_oeb[1] + DIRECTION OUTPUT + USE SIGNAL 
+  + LAYER met3 ( -1200 -300 ) ( 1200 300 )
+  + PLACED ( 2918800 430100 ) N ;
+- io_oeb[20] + NET io_oeb[20] + DIRECTION OUTPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 1027410 3518800 ) N ;
+- io_oeb[21] + NET io_oeb[21] + DIRECTION OUTPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 702650 3518800 ) N ;
+- io_oeb[22] + NET io_oeb[22] + DIRECTION OUTPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 378350 3518800 ) N ;
+- io_oeb[23] + NET io_oeb[23] + DIRECTION OUTPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 54050 3518800 ) N ;
+- io_oeb[24] + NET io_oeb[24] + DIRECTION OUTPUT + USE SIGNAL 
+  + LAYER met3 ( -1200 -300 ) ( 1200 300 )
+  + PLACED ( 1200 3309900 ) N ;
+- io_oeb[25] + NET io_oeb[25] + DIRECTION OUTPUT + USE SIGNAL 
+  + LAYER met3 ( -1200 -300 ) ( 1200 300 )
+  + PLACED ( 1200 3058300 ) N ;
+- io_oeb[26] + NET io_oeb[26] + DIRECTION OUTPUT + USE SIGNAL 
+  + LAYER met3 ( -1200 -300 ) ( 1200 300 )
+  + PLACED ( 1200 2806700 ) N ;
+- io_oeb[27] + NET io_oeb[27] + DIRECTION OUTPUT + USE SIGNAL 
+  + LAYER met3 ( -1200 -300 ) ( 1200 300 )
+  + PLACED ( 1200 2555780 ) N ;
+- io_oeb[28] + NET io_oeb[28] + DIRECTION OUTPUT + USE SIGNAL 
+  + LAYER met3 ( -1200 -300 ) ( 1200 300 )
+  + PLACED ( 1200 2304180 ) N ;
+- io_oeb[29] + NET io_oeb[29] + DIRECTION OUTPUT + USE SIGNAL 
+  + LAYER met3 ( -1200 -300 ) ( 1200 300 )
+  + PLACED ( 1200 2052580 ) N ;
+- io_oeb[2] + NET io_oeb[2] + DIRECTION OUTPUT + USE SIGNAL 
+  + LAYER met3 ( -1200 -300 ) ( 1200 300 )
+  + PLACED ( 2918800 664700 ) N ;
+- io_oeb[30] + NET io_oeb[30] + DIRECTION OUTPUT + USE SIGNAL 
+  + LAYER met3 ( -1200 -300 ) ( 1200 300 )
+  + PLACED ( 1200 1801660 ) N ;
+- io_oeb[31] + NET io_oeb[31] + DIRECTION OUTPUT + USE SIGNAL 
+  + LAYER met3 ( -1200 -300 ) ( 1200 300 )
+  + PLACED ( 1200 1550060 ) N ;
+- io_oeb[32] + NET io_oeb[32] + DIRECTION OUTPUT + USE SIGNAL 
+  + LAYER met3 ( -1200 -300 ) ( 1200 300 )
+  + PLACED ( 1200 1298460 ) N ;
+- io_oeb[33] + NET io_oeb[33] + DIRECTION OUTPUT + USE SIGNAL 
+  + LAYER met3 ( -1200 -300 ) ( 1200 300 )
+  + PLACED ( 1200 1046860 ) N ;
+- io_oeb[34] + NET io_oeb[34] + DIRECTION OUTPUT + USE SIGNAL 
+  + LAYER met3 ( -1200 -300 ) ( 1200 300 )
+  + PLACED ( 1200 795940 ) N ;
+- io_oeb[35] + NET io_oeb[35] + DIRECTION OUTPUT + USE SIGNAL 
+  + LAYER met3 ( -1200 -300 ) ( 1200 300 )
+  + PLACED ( 1200 544340 ) N ;
+- io_oeb[36] + NET io_oeb[36] + DIRECTION OUTPUT + USE SIGNAL 
+  + LAYER met3 ( -1200 -300 ) ( 1200 300 )
+  + PLACED ( 1200 292740 ) N ;
+- io_oeb[37] + NET io_oeb[37] + DIRECTION OUTPUT + USE SIGNAL 
+  + LAYER met3 ( -1200 -300 ) ( 1200 300 )
+  + PLACED ( 1200 41820 ) N ;
+- io_oeb[3] + NET io_oeb[3] + DIRECTION OUTPUT + USE SIGNAL 
+  + LAYER met3 ( -1200 -300 ) ( 1200 300 )
+  + PLACED ( 2918800 899300 ) N ;
+- io_oeb[4] + NET io_oeb[4] + DIRECTION OUTPUT + USE SIGNAL 
+  + LAYER met3 ( -1200 -300 ) ( 1200 300 )
+  + PLACED ( 2918800 1133900 ) N ;
+- io_oeb[5] + NET io_oeb[5] + DIRECTION OUTPUT + USE SIGNAL 
+  + LAYER met3 ( -1200 -300 ) ( 1200 300 )
+  + PLACED ( 2918800 1368500 ) N ;
+- io_oeb[6] + NET io_oeb[6] + DIRECTION OUTPUT + USE SIGNAL 
+  + LAYER met3 ( -1200 -300 ) ( 1200 300 )
+  + PLACED ( 2918800 1603100 ) N ;
+- io_oeb[7] + NET io_oeb[7] + DIRECTION OUTPUT + USE SIGNAL 
+  + LAYER met3 ( -1200 -300 ) ( 1200 300 )
+  + PLACED ( 2918800 1837700 ) N ;
+- io_oeb[8] + NET io_oeb[8] + DIRECTION OUTPUT + USE SIGNAL 
+  + LAYER met3 ( -1200 -300 ) ( 1200 300 )
+  + PLACED ( 2918800 2072300 ) N ;
+- io_oeb[9] + NET io_oeb[9] + DIRECTION OUTPUT + USE SIGNAL 
+  + LAYER met3 ( -1200 -300 ) ( 1200 300 )
+  + PLACED ( 2918800 2306900 ) N ;
+- io_out[0] + NET io_out[0] + DIRECTION OUTPUT + USE SIGNAL 
+  + LAYER met3 ( -1200 -300 ) ( 1200 300 )
+  + PLACED ( 2918800 117300 ) N ;
+- io_out[10] + NET io_out[10] + DIRECTION OUTPUT + USE SIGNAL 
+  + LAYER met3 ( -1200 -300 ) ( 1200 300 )
+  + PLACED ( 2918800 2463300 ) N ;
+- io_out[11] + NET io_out[11] + DIRECTION OUTPUT + USE SIGNAL 
+  + LAYER met3 ( -1200 -300 ) ( 1200 300 )
+  + PLACED ( 2918800 2697900 ) N ;
+- io_out[12] + NET io_out[12] + DIRECTION OUTPUT + USE SIGNAL 
+  + LAYER met3 ( -1200 -300 ) ( 1200 300 )
+  + PLACED ( 2918800 2932500 ) N ;
+- io_out[13] + NET io_out[13] + DIRECTION OUTPUT + USE SIGNAL 
+  + LAYER met3 ( -1200 -300 ) ( 1200 300 )
+  + PLACED ( 2918800 3167100 ) N ;
+- io_out[14] + NET io_out[14] + DIRECTION OUTPUT + USE SIGNAL 
+  + LAYER met3 ( -1200 -300 ) ( 1200 300 )
+  + PLACED ( 2918800 3401700 ) N ;
+- io_out[15] + NET io_out[15] + DIRECTION OUTPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 2757470 3518800 ) N ;
+- io_out[16] + NET io_out[16] + DIRECTION OUTPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 2433170 3518800 ) N ;
+- io_out[17] + NET io_out[17] + DIRECTION OUTPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 2108870 3518800 ) N ;
+- io_out[18] + NET io_out[18] + DIRECTION OUTPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 1784110 3518800 ) N ;
+- io_out[19] + NET io_out[19] + DIRECTION OUTPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 1459810 3518800 ) N ;
+- io_out[1] + NET io_out[1] + DIRECTION OUTPUT + USE SIGNAL 
+  + LAYER met3 ( -1200 -300 ) ( 1200 300 )
+  + PLACED ( 2918800 351900 ) N ;
+- io_out[20] + NET io_out[20] + DIRECTION OUTPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 1135510 3518800 ) N ;
+- io_out[21] + NET io_out[21] + DIRECTION OUTPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 810750 3518800 ) N ;
+- io_out[22] + NET io_out[22] + DIRECTION OUTPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 486450 3518800 ) N ;
+- io_out[23] + NET io_out[23] + DIRECTION OUTPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 162150 3518800 ) N ;
+- io_out[24] + NET io_out[24] + DIRECTION OUTPUT + USE SIGNAL 
+  + LAYER met3 ( -1200 -300 ) ( 1200 300 )
+  + PLACED ( 1200 3393540 ) N ;
+- io_out[25] + NET io_out[25] + DIRECTION OUTPUT + USE SIGNAL 
+  + LAYER met3 ( -1200 -300 ) ( 1200 300 )
+  + PLACED ( 1200 3141940 ) N ;
+- io_out[26] + NET io_out[26] + DIRECTION OUTPUT + USE SIGNAL 
+  + LAYER met3 ( -1200 -300 ) ( 1200 300 )
+  + PLACED ( 1200 2891020 ) N ;
+- io_out[27] + NET io_out[27] + DIRECTION OUTPUT + USE SIGNAL 
+  + LAYER met3 ( -1200 -300 ) ( 1200 300 )
+  + PLACED ( 1200 2639420 ) N ;
+- io_out[28] + NET io_out[28] + DIRECTION OUTPUT + USE SIGNAL 
+  + LAYER met3 ( -1200 -300 ) ( 1200 300 )
+  + PLACED ( 1200 2387820 ) N ;
+- io_out[29] + NET io_out[29] + DIRECTION OUTPUT + USE SIGNAL 
+  + LAYER met3 ( -1200 -300 ) ( 1200 300 )
+  + PLACED ( 1200 2136220 ) N ;
+- io_out[2] + NET io_out[2] + DIRECTION OUTPUT + USE SIGNAL 
+  + LAYER met3 ( -1200 -300 ) ( 1200 300 )
+  + PLACED ( 2918800 586500 ) N ;
+- io_out[30] + NET io_out[30] + DIRECTION OUTPUT + USE SIGNAL 
+  + LAYER met3 ( -1200 -300 ) ( 1200 300 )
+  + PLACED ( 1200 1885300 ) N ;
+- io_out[31] + NET io_out[31] + DIRECTION OUTPUT + USE SIGNAL 
+  + LAYER met3 ( -1200 -300 ) ( 1200 300 )
+  + PLACED ( 1200 1633700 ) N ;
+- io_out[32] + NET io_out[32] + DIRECTION OUTPUT + USE SIGNAL 
+  + LAYER met3 ( -1200 -300 ) ( 1200 300 )
+  + PLACED ( 1200 1382100 ) N ;
+- io_out[33] + NET io_out[33] + DIRECTION OUTPUT + USE SIGNAL 
+  + LAYER met3 ( -1200 -300 ) ( 1200 300 )
+  + PLACED ( 1200 1131180 ) N ;
+- io_out[34] + NET io_out[34] + DIRECTION OUTPUT + USE SIGNAL 
+  + LAYER met3 ( -1200 -300 ) ( 1200 300 )
+  + PLACED ( 1200 879580 ) N ;
+- io_out[35] + NET io_out[35] + DIRECTION OUTPUT + USE SIGNAL 
+  + LAYER met3 ( -1200 -300 ) ( 1200 300 )
+  + PLACED ( 1200 627980 ) N ;
+- io_out[36] + NET io_out[36] + DIRECTION OUTPUT + USE SIGNAL 
+  + LAYER met3 ( -1200 -300 ) ( 1200 300 )
+  + PLACED ( 1200 376380 ) N ;
+- io_out[37] + NET io_out[37] + DIRECTION OUTPUT + USE SIGNAL 
+  + LAYER met3 ( -1200 -300 ) ( 1200 300 )
+  + PLACED ( 1200 125460 ) N ;
+- io_out[3] + NET io_out[3] + DIRECTION OUTPUT + USE SIGNAL 
+  + LAYER met3 ( -1200 -300 ) ( 1200 300 )
+  + PLACED ( 2918800 821100 ) N ;
+- io_out[4] + NET io_out[4] + DIRECTION OUTPUT + USE SIGNAL 
+  + LAYER met3 ( -1200 -300 ) ( 1200 300 )
+  + PLACED ( 2918800 1055700 ) N ;
+- io_out[5] + NET io_out[5] + DIRECTION OUTPUT + USE SIGNAL 
+  + LAYER met3 ( -1200 -300 ) ( 1200 300 )
+  + PLACED ( 2918800 1290300 ) N ;
+- io_out[6] + NET io_out[6] + DIRECTION OUTPUT + USE SIGNAL 
+  + LAYER met3 ( -1200 -300 ) ( 1200 300 )
+  + PLACED ( 2918800 1524900 ) N ;
+- io_out[7] + NET io_out[7] + DIRECTION OUTPUT + USE SIGNAL 
+  + LAYER met3 ( -1200 -300 ) ( 1200 300 )
+  + PLACED ( 2918800 1759500 ) N ;
+- io_out[8] + NET io_out[8] + DIRECTION OUTPUT + USE SIGNAL 
+  + LAYER met3 ( -1200 -300 ) ( 1200 300 )
+  + PLACED ( 2918800 1994100 ) N ;
+- io_out[9] + NET io_out[9] + DIRECTION OUTPUT + USE SIGNAL 
+  + LAYER met3 ( -1200 -300 ) ( 1200 300 )
+  + PLACED ( 2918800 2228700 ) N ;
+- la_data_in[0] + NET la_data_in[0] + DIRECTION INPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 633190 1200 ) N ;
+- la_data_in[100] + NET la_data_in[100] + DIRECTION INPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 2417530 1200 ) N ;
+- la_data_in[101] + NET la_data_in[101] + DIRECTION INPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 2435010 1200 ) N ;
+- la_data_in[102] + NET la_data_in[102] + DIRECTION INPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 2452950 1200 ) N ;
+- la_data_in[103] + NET la_data_in[103] + DIRECTION INPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 2470890 1200 ) N ;
+- la_data_in[104] + NET la_data_in[104] + DIRECTION INPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 2488830 1200 ) N ;
+- la_data_in[105] + NET la_data_in[105] + DIRECTION INPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 2506310 1200 ) N ;
+- la_data_in[106] + NET la_data_in[106] + DIRECTION INPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 2524250 1200 ) N ;
+- la_data_in[107] + NET la_data_in[107] + DIRECTION INPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 2542190 1200 ) N ;
+- la_data_in[108] + NET la_data_in[108] + DIRECTION INPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 2560130 1200 ) N ;
+- la_data_in[109] + NET la_data_in[109] + DIRECTION INPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 2578070 1200 ) N ;
+- la_data_in[10] + NET la_data_in[10] + DIRECTION INPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 811670 1200 ) N ;
+- la_data_in[110] + NET la_data_in[110] + DIRECTION INPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 2595550 1200 ) N ;
+- la_data_in[111] + NET la_data_in[111] + DIRECTION INPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 2613490 1200 ) N ;
+- la_data_in[112] + NET la_data_in[112] + DIRECTION INPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 2631430 1200 ) N ;
+- la_data_in[113] + NET la_data_in[113] + DIRECTION INPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 2649370 1200 ) N ;
+- la_data_in[114] + NET la_data_in[114] + DIRECTION INPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 2667310 1200 ) N ;
+- la_data_in[115] + NET la_data_in[115] + DIRECTION INPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 2684790 1200 ) N ;
+- la_data_in[116] + NET la_data_in[116] + DIRECTION INPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 2702730 1200 ) N ;
+- la_data_in[117] + NET la_data_in[117] + DIRECTION INPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 2720670 1200 ) N ;
+- la_data_in[118] + NET la_data_in[118] + DIRECTION INPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 2738610 1200 ) N ;
+- la_data_in[119] + NET la_data_in[119] + DIRECTION INPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 2756090 1200 ) N ;
+- la_data_in[11] + NET la_data_in[11] + DIRECTION INPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 829610 1200 ) N ;
+- la_data_in[120] + NET la_data_in[120] + DIRECTION INPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 2774030 1200 ) N ;
+- la_data_in[121] + NET la_data_in[121] + DIRECTION INPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 2791970 1200 ) N ;
+- la_data_in[122] + NET la_data_in[122] + DIRECTION INPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 2809910 1200 ) N ;
+- la_data_in[123] + NET la_data_in[123] + DIRECTION INPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 2827850 1200 ) N ;
+- la_data_in[124] + NET la_data_in[124] + DIRECTION INPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 2845330 1200 ) N ;
+- la_data_in[125] + NET la_data_in[125] + DIRECTION INPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 2863270 1200 ) N ;
+- la_data_in[126] + NET la_data_in[126] + DIRECTION INPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 2881210 1200 ) N ;
+- la_data_in[127] + NET la_data_in[127] + DIRECTION INPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 2899150 1200 ) N ;
+- la_data_in[12] + NET la_data_in[12] + DIRECTION INPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 847090 1200 ) N ;
+- la_data_in[13] + NET la_data_in[13] + DIRECTION INPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 865030 1200 ) N ;
+- la_data_in[14] + NET la_data_in[14] + DIRECTION INPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 882970 1200 ) N ;
+- la_data_in[15] + NET la_data_in[15] + DIRECTION INPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 900910 1200 ) N ;
+- la_data_in[16] + NET la_data_in[16] + DIRECTION INPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 918850 1200 ) N ;
+- la_data_in[17] + NET la_data_in[17] + DIRECTION INPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 936330 1200 ) N ;
+- la_data_in[18] + NET la_data_in[18] + DIRECTION INPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 954270 1200 ) N ;
+- la_data_in[19] + NET la_data_in[19] + DIRECTION INPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 972210 1200 ) N ;
+- la_data_in[1] + NET la_data_in[1] + DIRECTION INPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 651130 1200 ) N ;
+- la_data_in[20] + NET la_data_in[20] + DIRECTION INPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 990150 1200 ) N ;
+- la_data_in[21] + NET la_data_in[21] + DIRECTION INPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 1007630 1200 ) N ;
+- la_data_in[22] + NET la_data_in[22] + DIRECTION INPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 1025570 1200 ) N ;
+- la_data_in[23] + NET la_data_in[23] + DIRECTION INPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 1043510 1200 ) N ;
+- la_data_in[24] + NET la_data_in[24] + DIRECTION INPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 1061450 1200 ) N ;
+- la_data_in[25] + NET la_data_in[25] + DIRECTION INPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 1079390 1200 ) N ;
+- la_data_in[26] + NET la_data_in[26] + DIRECTION INPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 1096870 1200 ) N ;
+- la_data_in[27] + NET la_data_in[27] + DIRECTION INPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 1114810 1200 ) N ;
+- la_data_in[28] + NET la_data_in[28] + DIRECTION INPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 1132750 1200 ) N ;
+- la_data_in[29] + NET la_data_in[29] + DIRECTION INPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 1150690 1200 ) N ;
+- la_data_in[2] + NET la_data_in[2] + DIRECTION INPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 669070 1200 ) N ;
+- la_data_in[30] + NET la_data_in[30] + DIRECTION INPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 1168630 1200 ) N ;
+- la_data_in[31] + NET la_data_in[31] + DIRECTION INPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 1186110 1200 ) N ;
+- la_data_in[32] + NET la_data_in[32] + DIRECTION INPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 1204050 1200 ) N ;
+- la_data_in[33] + NET la_data_in[33] + DIRECTION INPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 1221990 1200 ) N ;
+- la_data_in[34] + NET la_data_in[34] + DIRECTION INPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 1239930 1200 ) N ;
+- la_data_in[35] + NET la_data_in[35] + DIRECTION INPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 1257410 1200 ) N ;
+- la_data_in[36] + NET la_data_in[36] + DIRECTION INPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 1275350 1200 ) N ;
+- la_data_in[37] + NET la_data_in[37] + DIRECTION INPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 1293290 1200 ) N ;
+- la_data_in[38] + NET la_data_in[38] + DIRECTION INPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 1311230 1200 ) N ;
+- la_data_in[39] + NET la_data_in[39] + DIRECTION INPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 1329170 1200 ) N ;
+- la_data_in[3] + NET la_data_in[3] + DIRECTION INPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 686550 1200 ) N ;
+- la_data_in[40] + NET la_data_in[40] + DIRECTION INPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 1346650 1200 ) N ;
+- la_data_in[41] + NET la_data_in[41] + DIRECTION INPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 1364590 1200 ) N ;
+- la_data_in[42] + NET la_data_in[42] + DIRECTION INPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 1382530 1200 ) N ;
+- la_data_in[43] + NET la_data_in[43] + DIRECTION INPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 1400470 1200 ) N ;
+- la_data_in[44] + NET la_data_in[44] + DIRECTION INPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 1418410 1200 ) N ;
+- la_data_in[45] + NET la_data_in[45] + DIRECTION INPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 1435890 1200 ) N ;
+- la_data_in[46] + NET la_data_in[46] + DIRECTION INPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 1453830 1200 ) N ;
+- la_data_in[47] + NET la_data_in[47] + DIRECTION INPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 1471770 1200 ) N ;
+- la_data_in[48] + NET la_data_in[48] + DIRECTION INPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 1489710 1200 ) N ;
+- la_data_in[49] + NET la_data_in[49] + DIRECTION INPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 1507190 1200 ) N ;
+- la_data_in[4] + NET la_data_in[4] + DIRECTION INPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 704490 1200 ) N ;
+- la_data_in[50] + NET la_data_in[50] + DIRECTION INPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 1525130 1200 ) N ;
+- la_data_in[51] + NET la_data_in[51] + DIRECTION INPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 1543070 1200 ) N ;
+- la_data_in[52] + NET la_data_in[52] + DIRECTION INPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 1561010 1200 ) N ;
+- la_data_in[53] + NET la_data_in[53] + DIRECTION INPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 1578950 1200 ) N ;
+- la_data_in[54] + NET la_data_in[54] + DIRECTION INPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 1596430 1200 ) N ;
+- la_data_in[55] + NET la_data_in[55] + DIRECTION INPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 1614370 1200 ) N ;
+- la_data_in[56] + NET la_data_in[56] + DIRECTION INPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 1632310 1200 ) N ;
+- la_data_in[57] + NET la_data_in[57] + DIRECTION INPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 1650250 1200 ) N ;
+- la_data_in[58] + NET la_data_in[58] + DIRECTION INPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 1668190 1200 ) N ;
+- la_data_in[59] + NET la_data_in[59] + DIRECTION INPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 1685670 1200 ) N ;
+- la_data_in[5] + NET la_data_in[5] + DIRECTION INPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 722430 1200 ) N ;
+- la_data_in[60] + NET la_data_in[60] + DIRECTION INPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 1703610 1200 ) N ;
+- la_data_in[61] + NET la_data_in[61] + DIRECTION INPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 1721550 1200 ) N ;
+- la_data_in[62] + NET la_data_in[62] + DIRECTION INPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 1739490 1200 ) N ;
+- la_data_in[63] + NET la_data_in[63] + DIRECTION INPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 1756970 1200 ) N ;
+- la_data_in[64] + NET la_data_in[64] + DIRECTION INPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 1774910 1200 ) N ;
+- la_data_in[65] + NET la_data_in[65] + DIRECTION INPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 1792850 1200 ) N ;
+- la_data_in[66] + NET la_data_in[66] + DIRECTION INPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 1810790 1200 ) N ;
+- la_data_in[67] + NET la_data_in[67] + DIRECTION INPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 1828730 1200 ) N ;
+- la_data_in[68] + NET la_data_in[68] + DIRECTION INPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 1846210 1200 ) N ;
+- la_data_in[69] + NET la_data_in[69] + DIRECTION INPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 1864150 1200 ) N ;
+- la_data_in[6] + NET la_data_in[6] + DIRECTION INPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 740370 1200 ) N ;
+- la_data_in[70] + NET la_data_in[70] + DIRECTION INPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 1882090 1200 ) N ;
+- la_data_in[71] + NET la_data_in[71] + DIRECTION INPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 1900030 1200 ) N ;
+- la_data_in[72] + NET la_data_in[72] + DIRECTION INPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 1917970 1200 ) N ;
+- la_data_in[73] + NET la_data_in[73] + DIRECTION INPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 1935450 1200 ) N ;
+- la_data_in[74] + NET la_data_in[74] + DIRECTION INPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 1953390 1200 ) N ;
+- la_data_in[75] + NET la_data_in[75] + DIRECTION INPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 1971330 1200 ) N ;
+- la_data_in[76] + NET la_data_in[76] + DIRECTION INPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 1989270 1200 ) N ;
+- la_data_in[77] + NET la_data_in[77] + DIRECTION INPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 2006750 1200 ) N ;
+- la_data_in[78] + NET la_data_in[78] + DIRECTION INPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 2024690 1200 ) N ;
+- la_data_in[79] + NET la_data_in[79] + DIRECTION INPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 2042630 1200 ) N ;
+- la_data_in[7] + NET la_data_in[7] + DIRECTION INPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 757850 1200 ) N ;
+- la_data_in[80] + NET la_data_in[80] + DIRECTION INPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 2060570 1200 ) N ;
+- la_data_in[81] + NET la_data_in[81] + DIRECTION INPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 2078510 1200 ) N ;
+- la_data_in[82] + NET la_data_in[82] + DIRECTION INPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 2095990 1200 ) N ;
+- la_data_in[83] + NET la_data_in[83] + DIRECTION INPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 2113930 1200 ) N ;
+- la_data_in[84] + NET la_data_in[84] + DIRECTION INPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 2131870 1200 ) N ;
+- la_data_in[85] + NET la_data_in[85] + DIRECTION INPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 2149810 1200 ) N ;
+- la_data_in[86] + NET la_data_in[86] + DIRECTION INPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 2167750 1200 ) N ;
+- la_data_in[87] + NET la_data_in[87] + DIRECTION INPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 2185230 1200 ) N ;
+- la_data_in[88] + NET la_data_in[88] + DIRECTION INPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 2203170 1200 ) N ;
+- la_data_in[89] + NET la_data_in[89] + DIRECTION INPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 2221110 1200 ) N ;
+- la_data_in[8] + NET la_data_in[8] + DIRECTION INPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 775790 1200 ) N ;
+- la_data_in[90] + NET la_data_in[90] + DIRECTION INPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 2239050 1200 ) N ;
+- la_data_in[91] + NET la_data_in[91] + DIRECTION INPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 2256530 1200 ) N ;
+- la_data_in[92] + NET la_data_in[92] + DIRECTION INPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 2274470 1200 ) N ;
+- la_data_in[93] + NET la_data_in[93] + DIRECTION INPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 2292410 1200 ) N ;
+- la_data_in[94] + NET la_data_in[94] + DIRECTION INPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 2310350 1200 ) N ;
+- la_data_in[95] + NET la_data_in[95] + DIRECTION INPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 2328290 1200 ) N ;
+- la_data_in[96] + NET la_data_in[96] + DIRECTION INPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 2345770 1200 ) N ;
+- la_data_in[97] + NET la_data_in[97] + DIRECTION INPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 2363710 1200 ) N ;
+- la_data_in[98] + NET la_data_in[98] + DIRECTION INPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 2381650 1200 ) N ;
+- la_data_in[99] + NET la_data_in[99] + DIRECTION INPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 2399590 1200 ) N ;
+- la_data_in[9] + NET la_data_in[9] + DIRECTION INPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 793730 1200 ) N ;
+- la_data_out[0] + NET la_data_out[0] + DIRECTION OUTPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 639170 1200 ) N ;
+- la_data_out[100] + NET la_data_out[100] + DIRECTION OUTPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 2423050 1200 ) N ;
+- la_data_out[101] + NET la_data_out[101] + DIRECTION OUTPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 2440990 1200 ) N ;
+- la_data_out[102] + NET la_data_out[102] + DIRECTION OUTPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 2458930 1200 ) N ;
+- la_data_out[103] + NET la_data_out[103] + DIRECTION OUTPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 2476870 1200 ) N ;
+- la_data_out[104] + NET la_data_out[104] + DIRECTION OUTPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 2494810 1200 ) N ;
+- la_data_out[105] + NET la_data_out[105] + DIRECTION OUTPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 2512290 1200 ) N ;
+- la_data_out[106] + NET la_data_out[106] + DIRECTION OUTPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 2530230 1200 ) N ;
+- la_data_out[107] + NET la_data_out[107] + DIRECTION OUTPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 2548170 1200 ) N ;
+- la_data_out[108] + NET la_data_out[108] + DIRECTION OUTPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 2566110 1200 ) N ;
+- la_data_out[109] + NET la_data_out[109] + DIRECTION OUTPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 2584050 1200 ) N ;
+- la_data_out[10] + NET la_data_out[10] + DIRECTION OUTPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 817650 1200 ) N ;
+- la_data_out[110] + NET la_data_out[110] + DIRECTION OUTPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 2601530 1200 ) N ;
+- la_data_out[111] + NET la_data_out[111] + DIRECTION OUTPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 2619470 1200 ) N ;
+- la_data_out[112] + NET la_data_out[112] + DIRECTION OUTPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 2637410 1200 ) N ;
+- la_data_out[113] + NET la_data_out[113] + DIRECTION OUTPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 2655350 1200 ) N ;
+- la_data_out[114] + NET la_data_out[114] + DIRECTION OUTPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 2672830 1200 ) N ;
+- la_data_out[115] + NET la_data_out[115] + DIRECTION OUTPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 2690770 1200 ) N ;
+- la_data_out[116] + NET la_data_out[116] + DIRECTION OUTPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 2708710 1200 ) N ;
+- la_data_out[117] + NET la_data_out[117] + DIRECTION OUTPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 2726650 1200 ) N ;
+- la_data_out[118] + NET la_data_out[118] + DIRECTION OUTPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 2744590 1200 ) N ;
+- la_data_out[119] + NET la_data_out[119] + DIRECTION OUTPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 2762070 1200 ) N ;
+- la_data_out[11] + NET la_data_out[11] + DIRECTION OUTPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 835590 1200 ) N ;
+- la_data_out[120] + NET la_data_out[120] + DIRECTION OUTPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 2780010 1200 ) N ;
+- la_data_out[121] + NET la_data_out[121] + DIRECTION OUTPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 2797950 1200 ) N ;
+- la_data_out[122] + NET la_data_out[122] + DIRECTION OUTPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 2815890 1200 ) N ;
+- la_data_out[123] + NET la_data_out[123] + DIRECTION OUTPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 2833830 1200 ) N ;
+- la_data_out[124] + NET la_data_out[124] + DIRECTION OUTPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 2851310 1200 ) N ;
+- la_data_out[125] + NET la_data_out[125] + DIRECTION OUTPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 2869250 1200 ) N ;
+- la_data_out[126] + NET la_data_out[126] + DIRECTION OUTPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 2887190 1200 ) N ;
+- la_data_out[127] + NET la_data_out[127] + DIRECTION OUTPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 2905130 1200 ) N ;
+- la_data_out[12] + NET la_data_out[12] + DIRECTION OUTPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 853070 1200 ) N ;
+- la_data_out[13] + NET la_data_out[13] + DIRECTION OUTPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 871010 1200 ) N ;
+- la_data_out[14] + NET la_data_out[14] + DIRECTION OUTPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 888950 1200 ) N ;
+- la_data_out[15] + NET la_data_out[15] + DIRECTION OUTPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 906890 1200 ) N ;
+- la_data_out[16] + NET la_data_out[16] + DIRECTION OUTPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 924370 1200 ) N ;
+- la_data_out[17] + NET la_data_out[17] + DIRECTION OUTPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 942310 1200 ) N ;
+- la_data_out[18] + NET la_data_out[18] + DIRECTION OUTPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 960250 1200 ) N ;
+- la_data_out[19] + NET la_data_out[19] + DIRECTION OUTPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 978190 1200 ) N ;
+- la_data_out[1] + NET la_data_out[1] + DIRECTION OUTPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 657110 1200 ) N ;
+- la_data_out[20] + NET la_data_out[20] + DIRECTION OUTPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 996130 1200 ) N ;
+- la_data_out[21] + NET la_data_out[21] + DIRECTION OUTPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 1013610 1200 ) N ;
+- la_data_out[22] + NET la_data_out[22] + DIRECTION OUTPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 1031550 1200 ) N ;
+- la_data_out[23] + NET la_data_out[23] + DIRECTION OUTPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 1049490 1200 ) N ;
+- la_data_out[24] + NET la_data_out[24] + DIRECTION OUTPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 1067430 1200 ) N ;
+- la_data_out[25] + NET la_data_out[25] + DIRECTION OUTPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 1085370 1200 ) N ;
+- la_data_out[26] + NET la_data_out[26] + DIRECTION OUTPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 1102850 1200 ) N ;
+- la_data_out[27] + NET la_data_out[27] + DIRECTION OUTPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 1120790 1200 ) N ;
+- la_data_out[28] + NET la_data_out[28] + DIRECTION OUTPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 1138730 1200 ) N ;
+- la_data_out[29] + NET la_data_out[29] + DIRECTION OUTPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 1156670 1200 ) N ;
+- la_data_out[2] + NET la_data_out[2] + DIRECTION OUTPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 674590 1200 ) N ;
+- la_data_out[30] + NET la_data_out[30] + DIRECTION OUTPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 1174150 1200 ) N ;
+- la_data_out[31] + NET la_data_out[31] + DIRECTION OUTPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 1192090 1200 ) N ;
+- la_data_out[32] + NET la_data_out[32] + DIRECTION OUTPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 1210030 1200 ) N ;
+- la_data_out[33] + NET la_data_out[33] + DIRECTION OUTPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 1227970 1200 ) N ;
+- la_data_out[34] + NET la_data_out[34] + DIRECTION OUTPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 1245910 1200 ) N ;
+- la_data_out[35] + NET la_data_out[35] + DIRECTION OUTPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 1263390 1200 ) N ;
+- la_data_out[36] + NET la_data_out[36] + DIRECTION OUTPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 1281330 1200 ) N ;
+- la_data_out[37] + NET la_data_out[37] + DIRECTION OUTPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 1299270 1200 ) N ;
+- la_data_out[38] + NET la_data_out[38] + DIRECTION OUTPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 1317210 1200 ) N ;
+- la_data_out[39] + NET la_data_out[39] + DIRECTION OUTPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 1335150 1200 ) N ;
+- la_data_out[3] + NET la_data_out[3] + DIRECTION OUTPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 692530 1200 ) N ;
+- la_data_out[40] + NET la_data_out[40] + DIRECTION OUTPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 1352630 1200 ) N ;
+- la_data_out[41] + NET la_data_out[41] + DIRECTION OUTPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 1370570 1200 ) N ;
+- la_data_out[42] + NET la_data_out[42] + DIRECTION OUTPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 1388510 1200 ) N ;
+- la_data_out[43] + NET la_data_out[43] + DIRECTION OUTPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 1406450 1200 ) N ;
+- la_data_out[44] + NET la_data_out[44] + DIRECTION OUTPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 1423930 1200 ) N ;
+- la_data_out[45] + NET la_data_out[45] + DIRECTION OUTPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 1441870 1200 ) N ;
+- la_data_out[46] + NET la_data_out[46] + DIRECTION OUTPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 1459810 1200 ) N ;
+- la_data_out[47] + NET la_data_out[47] + DIRECTION OUTPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 1477750 1200 ) N ;
+- la_data_out[48] + NET la_data_out[48] + DIRECTION OUTPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 1495690 1200 ) N ;
+- la_data_out[49] + NET la_data_out[49] + DIRECTION OUTPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 1513170 1200 ) N ;
+- la_data_out[4] + NET la_data_out[4] + DIRECTION OUTPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 710470 1200 ) N ;
+- la_data_out[50] + NET la_data_out[50] + DIRECTION OUTPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 1531110 1200 ) N ;
+- la_data_out[51] + NET la_data_out[51] + DIRECTION OUTPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 1549050 1200 ) N ;
+- la_data_out[52] + NET la_data_out[52] + DIRECTION OUTPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 1566990 1200 ) N ;
+- la_data_out[53] + NET la_data_out[53] + DIRECTION OUTPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 1584930 1200 ) N ;
+- la_data_out[54] + NET la_data_out[54] + DIRECTION OUTPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 1602410 1200 ) N ;
+- la_data_out[55] + NET la_data_out[55] + DIRECTION OUTPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 1620350 1200 ) N ;
+- la_data_out[56] + NET la_data_out[56] + DIRECTION OUTPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 1638290 1200 ) N ;
+- la_data_out[57] + NET la_data_out[57] + DIRECTION OUTPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 1656230 1200 ) N ;
+- la_data_out[58] + NET la_data_out[58] + DIRECTION OUTPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 1673710 1200 ) N ;
+- la_data_out[59] + NET la_data_out[59] + DIRECTION OUTPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 1691650 1200 ) N ;
+- la_data_out[5] + NET la_data_out[5] + DIRECTION OUTPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 728410 1200 ) N ;
+- la_data_out[60] + NET la_data_out[60] + DIRECTION OUTPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 1709590 1200 ) N ;
+- la_data_out[61] + NET la_data_out[61] + DIRECTION OUTPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 1727530 1200 ) N ;
+- la_data_out[62] + NET la_data_out[62] + DIRECTION OUTPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 1745470 1200 ) N ;
+- la_data_out[63] + NET la_data_out[63] + DIRECTION OUTPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 1762950 1200 ) N ;
+- la_data_out[64] + NET la_data_out[64] + DIRECTION OUTPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 1780890 1200 ) N ;
+- la_data_out[65] + NET la_data_out[65] + DIRECTION OUTPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 1798830 1200 ) N ;
+- la_data_out[66] + NET la_data_out[66] + DIRECTION OUTPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 1816770 1200 ) N ;
+- la_data_out[67] + NET la_data_out[67] + DIRECTION OUTPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 1834710 1200 ) N ;
+- la_data_out[68] + NET la_data_out[68] + DIRECTION OUTPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 1852190 1200 ) N ;
+- la_data_out[69] + NET la_data_out[69] + DIRECTION OUTPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 1870130 1200 ) N ;
+- la_data_out[6] + NET la_data_out[6] + DIRECTION OUTPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 746350 1200 ) N ;
+- la_data_out[70] + NET la_data_out[70] + DIRECTION OUTPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 1888070 1200 ) N ;
+- la_data_out[71] + NET la_data_out[71] + DIRECTION OUTPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 1906010 1200 ) N ;
+- la_data_out[72] + NET la_data_out[72] + DIRECTION OUTPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 1923490 1200 ) N ;
+- la_data_out[73] + NET la_data_out[73] + DIRECTION OUTPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 1941430 1200 ) N ;
+- la_data_out[74] + NET la_data_out[74] + DIRECTION OUTPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 1959370 1200 ) N ;
+- la_data_out[75] + NET la_data_out[75] + DIRECTION OUTPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 1977310 1200 ) N ;
+- la_data_out[76] + NET la_data_out[76] + DIRECTION OUTPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 1995250 1200 ) N ;
+- la_data_out[77] + NET la_data_out[77] + DIRECTION OUTPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 2012730 1200 ) N ;
+- la_data_out[78] + NET la_data_out[78] + DIRECTION OUTPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 2030670 1200 ) N ;
+- la_data_out[79] + NET la_data_out[79] + DIRECTION OUTPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 2048610 1200 ) N ;
+- la_data_out[7] + NET la_data_out[7] + DIRECTION OUTPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 763830 1200 ) N ;
+- la_data_out[80] + NET la_data_out[80] + DIRECTION OUTPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 2066550 1200 ) N ;
+- la_data_out[81] + NET la_data_out[81] + DIRECTION OUTPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 2084490 1200 ) N ;
+- la_data_out[82] + NET la_data_out[82] + DIRECTION OUTPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 2101970 1200 ) N ;
+- la_data_out[83] + NET la_data_out[83] + DIRECTION OUTPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 2119910 1200 ) N ;
+- la_data_out[84] + NET la_data_out[84] + DIRECTION OUTPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 2137850 1200 ) N ;
+- la_data_out[85] + NET la_data_out[85] + DIRECTION OUTPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 2155790 1200 ) N ;
+- la_data_out[86] + NET la_data_out[86] + DIRECTION OUTPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 2173270 1200 ) N ;
+- la_data_out[87] + NET la_data_out[87] + DIRECTION OUTPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 2191210 1200 ) N ;
+- la_data_out[88] + NET la_data_out[88] + DIRECTION OUTPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 2209150 1200 ) N ;
+- la_data_out[89] + NET la_data_out[89] + DIRECTION OUTPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 2227090 1200 ) N ;
+- la_data_out[8] + NET la_data_out[8] + DIRECTION OUTPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 781770 1200 ) N ;
+- la_data_out[90] + NET la_data_out[90] + DIRECTION OUTPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 2245030 1200 ) N ;
+- la_data_out[91] + NET la_data_out[91] + DIRECTION OUTPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 2262510 1200 ) N ;
+- la_data_out[92] + NET la_data_out[92] + DIRECTION OUTPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 2280450 1200 ) N ;
+- la_data_out[93] + NET la_data_out[93] + DIRECTION OUTPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 2298390 1200 ) N ;
+- la_data_out[94] + NET la_data_out[94] + DIRECTION OUTPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 2316330 1200 ) N ;
+- la_data_out[95] + NET la_data_out[95] + DIRECTION OUTPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 2334270 1200 ) N ;
+- la_data_out[96] + NET la_data_out[96] + DIRECTION OUTPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 2351750 1200 ) N ;
+- la_data_out[97] + NET la_data_out[97] + DIRECTION OUTPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 2369690 1200 ) N ;
+- la_data_out[98] + NET la_data_out[98] + DIRECTION OUTPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 2387630 1200 ) N ;
+- la_data_out[99] + NET la_data_out[99] + DIRECTION OUTPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 2405570 1200 ) N ;
+- la_data_out[9] + NET la_data_out[9] + DIRECTION OUTPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 799710 1200 ) N ;
+- la_oen[0] + NET la_oen[0] + DIRECTION INPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 645150 1200 ) N ;
+- la_oen[100] + NET la_oen[100] + DIRECTION INPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 2429030 1200 ) N ;
+- la_oen[101] + NET la_oen[101] + DIRECTION INPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 2446970 1200 ) N ;
+- la_oen[102] + NET la_oen[102] + DIRECTION INPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 2464910 1200 ) N ;
+- la_oen[103] + NET la_oen[103] + DIRECTION INPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 2482850 1200 ) N ;
+- la_oen[104] + NET la_oen[104] + DIRECTION INPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 2500790 1200 ) N ;
+- la_oen[105] + NET la_oen[105] + DIRECTION INPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 2518270 1200 ) N ;
+- la_oen[106] + NET la_oen[106] + DIRECTION INPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 2536210 1200 ) N ;
+- la_oen[107] + NET la_oen[107] + DIRECTION INPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 2554150 1200 ) N ;
+- la_oen[108] + NET la_oen[108] + DIRECTION INPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 2572090 1200 ) N ;
+- la_oen[109] + NET la_oen[109] + DIRECTION INPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 2589570 1200 ) N ;
+- la_oen[10] + NET la_oen[10] + DIRECTION INPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 823630 1200 ) N ;
+- la_oen[110] + NET la_oen[110] + DIRECTION INPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 2607510 1200 ) N ;
+- la_oen[111] + NET la_oen[111] + DIRECTION INPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 2625450 1200 ) N ;
+- la_oen[112] + NET la_oen[112] + DIRECTION INPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 2643390 1200 ) N ;
+- la_oen[113] + NET la_oen[113] + DIRECTION INPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 2661330 1200 ) N ;
+- la_oen[114] + NET la_oen[114] + DIRECTION INPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 2678810 1200 ) N ;
+- la_oen[115] + NET la_oen[115] + DIRECTION INPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 2696750 1200 ) N ;
+- la_oen[116] + NET la_oen[116] + DIRECTION INPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 2714690 1200 ) N ;
+- la_oen[117] + NET la_oen[117] + DIRECTION INPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 2732630 1200 ) N ;
+- la_oen[118] + NET la_oen[118] + DIRECTION INPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 2750570 1200 ) N ;
+- la_oen[119] + NET la_oen[119] + DIRECTION INPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 2768050 1200 ) N ;
+- la_oen[11] + NET la_oen[11] + DIRECTION INPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 841110 1200 ) N ;
+- la_oen[120] + NET la_oen[120] + DIRECTION INPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 2785990 1200 ) N ;
+- la_oen[121] + NET la_oen[121] + DIRECTION INPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 2803930 1200 ) N ;
+- la_oen[122] + NET la_oen[122] + DIRECTION INPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 2821870 1200 ) N ;
+- la_oen[123] + NET la_oen[123] + DIRECTION INPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 2839350 1200 ) N ;
+- la_oen[124] + NET la_oen[124] + DIRECTION INPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 2857290 1200 ) N ;
+- la_oen[125] + NET la_oen[125] + DIRECTION INPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 2875230 1200 ) N ;
+- la_oen[126] + NET la_oen[126] + DIRECTION INPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 2893170 1200 ) N ;
+- la_oen[127] + NET la_oen[127] + DIRECTION INPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 2911110 1200 ) N ;
+- la_oen[12] + NET la_oen[12] + DIRECTION INPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 859050 1200 ) N ;
+- la_oen[13] + NET la_oen[13] + DIRECTION INPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 876990 1200 ) N ;
+- la_oen[14] + NET la_oen[14] + DIRECTION INPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 894930 1200 ) N ;
+- la_oen[15] + NET la_oen[15] + DIRECTION INPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 912870 1200 ) N ;
+- la_oen[16] + NET la_oen[16] + DIRECTION INPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 930350 1200 ) N ;
+- la_oen[17] + NET la_oen[17] + DIRECTION INPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 948290 1200 ) N ;
+- la_oen[18] + NET la_oen[18] + DIRECTION INPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 966230 1200 ) N ;
+- la_oen[19] + NET la_oen[19] + DIRECTION INPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 984170 1200 ) N ;
+- la_oen[1] + NET la_oen[1] + DIRECTION INPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 663090 1200 ) N ;
+- la_oen[20] + NET la_oen[20] + DIRECTION INPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 1002110 1200 ) N ;
+- la_oen[21] + NET la_oen[21] + DIRECTION INPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 1019590 1200 ) N ;
+- la_oen[22] + NET la_oen[22] + DIRECTION INPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 1037530 1200 ) N ;
+- la_oen[23] + NET la_oen[23] + DIRECTION INPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 1055470 1200 ) N ;
+- la_oen[24] + NET la_oen[24] + DIRECTION INPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 1073410 1200 ) N ;
+- la_oen[25] + NET la_oen[25] + DIRECTION INPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 1090890 1200 ) N ;
+- la_oen[26] + NET la_oen[26] + DIRECTION INPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 1108830 1200 ) N ;
+- la_oen[27] + NET la_oen[27] + DIRECTION INPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 1126770 1200 ) N ;
+- la_oen[28] + NET la_oen[28] + DIRECTION INPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 1144710 1200 ) N ;
+- la_oen[29] + NET la_oen[29] + DIRECTION INPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 1162650 1200 ) N ;
+- la_oen[2] + NET la_oen[2] + DIRECTION INPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 680570 1200 ) N ;
+- la_oen[30] + NET la_oen[30] + DIRECTION INPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 1180130 1200 ) N ;
+- la_oen[31] + NET la_oen[31] + DIRECTION INPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 1198070 1200 ) N ;
+- la_oen[32] + NET la_oen[32] + DIRECTION INPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 1216010 1200 ) N ;
+- la_oen[33] + NET la_oen[33] + DIRECTION INPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 1233950 1200 ) N ;
+- la_oen[34] + NET la_oen[34] + DIRECTION INPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 1251890 1200 ) N ;
+- la_oen[35] + NET la_oen[35] + DIRECTION INPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 1269370 1200 ) N ;
+- la_oen[36] + NET la_oen[36] + DIRECTION INPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 1287310 1200 ) N ;
+- la_oen[37] + NET la_oen[37] + DIRECTION INPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 1305250 1200 ) N ;
+- la_oen[38] + NET la_oen[38] + DIRECTION INPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 1323190 1200 ) N ;
+- la_oen[39] + NET la_oen[39] + DIRECTION INPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 1340670 1200 ) N ;
+- la_oen[3] + NET la_oen[3] + DIRECTION INPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 698510 1200 ) N ;
+- la_oen[40] + NET la_oen[40] + DIRECTION INPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 1358610 1200 ) N ;
+- la_oen[41] + NET la_oen[41] + DIRECTION INPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 1376550 1200 ) N ;
+- la_oen[42] + NET la_oen[42] + DIRECTION INPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 1394490 1200 ) N ;
+- la_oen[43] + NET la_oen[43] + DIRECTION INPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 1412430 1200 ) N ;
+- la_oen[44] + NET la_oen[44] + DIRECTION INPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 1429910 1200 ) N ;
+- la_oen[45] + NET la_oen[45] + DIRECTION INPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 1447850 1200 ) N ;
+- la_oen[46] + NET la_oen[46] + DIRECTION INPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 1465790 1200 ) N ;
+- la_oen[47] + NET la_oen[47] + DIRECTION INPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 1483730 1200 ) N ;
+- la_oen[48] + NET la_oen[48] + DIRECTION INPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 1501670 1200 ) N ;
+- la_oen[49] + NET la_oen[49] + DIRECTION INPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 1519150 1200 ) N ;
+- la_oen[4] + NET la_oen[4] + DIRECTION INPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 716450 1200 ) N ;
+- la_oen[50] + NET la_oen[50] + DIRECTION INPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 1537090 1200 ) N ;
+- la_oen[51] + NET la_oen[51] + DIRECTION INPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 1555030 1200 ) N ;
+- la_oen[52] + NET la_oen[52] + DIRECTION INPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 1572970 1200 ) N ;
+- la_oen[53] + NET la_oen[53] + DIRECTION INPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 1590450 1200 ) N ;
+- la_oen[54] + NET la_oen[54] + DIRECTION INPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 1608390 1200 ) N ;
+- la_oen[55] + NET la_oen[55] + DIRECTION INPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 1626330 1200 ) N ;
+- la_oen[56] + NET la_oen[56] + DIRECTION INPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 1644270 1200 ) N ;
+- la_oen[57] + NET la_oen[57] + DIRECTION INPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 1662210 1200 ) N ;
+- la_oen[58] + NET la_oen[58] + DIRECTION INPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 1679690 1200 ) N ;
+- la_oen[59] + NET la_oen[59] + DIRECTION INPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 1697630 1200 ) N ;
+- la_oen[5] + NET la_oen[5] + DIRECTION INPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 734390 1200 ) N ;
+- la_oen[60] + NET la_oen[60] + DIRECTION INPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 1715570 1200 ) N ;
+- la_oen[61] + NET la_oen[61] + DIRECTION INPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 1733510 1200 ) N ;
+- la_oen[62] + NET la_oen[62] + DIRECTION INPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 1751450 1200 ) N ;
+- la_oen[63] + NET la_oen[63] + DIRECTION INPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 1768930 1200 ) N ;
+- la_oen[64] + NET la_oen[64] + DIRECTION INPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 1786870 1200 ) N ;
+- la_oen[65] + NET la_oen[65] + DIRECTION INPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 1804810 1200 ) N ;
+- la_oen[66] + NET la_oen[66] + DIRECTION INPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 1822750 1200 ) N ;
+- la_oen[67] + NET la_oen[67] + DIRECTION INPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 1840230 1200 ) N ;
+- la_oen[68] + NET la_oen[68] + DIRECTION INPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 1858170 1200 ) N ;
+- la_oen[69] + NET la_oen[69] + DIRECTION INPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 1876110 1200 ) N ;
+- la_oen[6] + NET la_oen[6] + DIRECTION INPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 752330 1200 ) N ;
+- la_oen[70] + NET la_oen[70] + DIRECTION INPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 1894050 1200 ) N ;
+- la_oen[71] + NET la_oen[71] + DIRECTION INPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 1911990 1200 ) N ;
+- la_oen[72] + NET la_oen[72] + DIRECTION INPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 1929470 1200 ) N ;
+- la_oen[73] + NET la_oen[73] + DIRECTION INPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 1947410 1200 ) N ;
+- la_oen[74] + NET la_oen[74] + DIRECTION INPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 1965350 1200 ) N ;
+- la_oen[75] + NET la_oen[75] + DIRECTION INPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 1983290 1200 ) N ;
+- la_oen[76] + NET la_oen[76] + DIRECTION INPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 2001230 1200 ) N ;
+- la_oen[77] + NET la_oen[77] + DIRECTION INPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 2018710 1200 ) N ;
+- la_oen[78] + NET la_oen[78] + DIRECTION INPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 2036650 1200 ) N ;
+- la_oen[79] + NET la_oen[79] + DIRECTION INPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 2054590 1200 ) N ;
+- la_oen[7] + NET la_oen[7] + DIRECTION INPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 769810 1200 ) N ;
+- la_oen[80] + NET la_oen[80] + DIRECTION INPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 2072530 1200 ) N ;
+- la_oen[81] + NET la_oen[81] + DIRECTION INPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 2090010 1200 ) N ;
+- la_oen[82] + NET la_oen[82] + DIRECTION INPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 2107950 1200 ) N ;
+- la_oen[83] + NET la_oen[83] + DIRECTION INPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 2125890 1200 ) N ;
+- la_oen[84] + NET la_oen[84] + DIRECTION INPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 2143830 1200 ) N ;
+- la_oen[85] + NET la_oen[85] + DIRECTION INPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 2161770 1200 ) N ;
+- la_oen[86] + NET la_oen[86] + DIRECTION INPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 2179250 1200 ) N ;
+- la_oen[87] + NET la_oen[87] + DIRECTION INPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 2197190 1200 ) N ;
+- la_oen[88] + NET la_oen[88] + DIRECTION INPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 2215130 1200 ) N ;
+- la_oen[89] + NET la_oen[89] + DIRECTION INPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 2233070 1200 ) N ;
+- la_oen[8] + NET la_oen[8] + DIRECTION INPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 787750 1200 ) N ;
+- la_oen[90] + NET la_oen[90] + DIRECTION INPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 2251010 1200 ) N ;
+- la_oen[91] + NET la_oen[91] + DIRECTION INPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 2268490 1200 ) N ;
+- la_oen[92] + NET la_oen[92] + DIRECTION INPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 2286430 1200 ) N ;
+- la_oen[93] + NET la_oen[93] + DIRECTION INPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 2304370 1200 ) N ;
+- la_oen[94] + NET la_oen[94] + DIRECTION INPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 2322310 1200 ) N ;
+- la_oen[95] + NET la_oen[95] + DIRECTION INPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 2339790 1200 ) N ;
+- la_oen[96] + NET la_oen[96] + DIRECTION INPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 2357730 1200 ) N ;
+- la_oen[97] + NET la_oen[97] + DIRECTION INPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 2375670 1200 ) N ;
+- la_oen[98] + NET la_oen[98] + DIRECTION INPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 2393610 1200 ) N ;
+- la_oen[99] + NET la_oen[99] + DIRECTION INPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 2411550 1200 ) N ;
+- la_oen[9] + NET la_oen[9] + DIRECTION INPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 805690 1200 ) N ;
+- user_clock2 + NET user_clock2 + DIRECTION INPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 2917090 1200 ) N ;
+- wb_clk_i + NET wb_clk_i + DIRECTION INPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 2990 1200 ) N ;
+- wb_rst_i + NET wb_rst_i + DIRECTION INPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 8510 1200 ) N ;
+- wbs_ack_o + NET wbs_ack_o + DIRECTION OUTPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 14490 1200 ) N ;
+- wbs_adr_i[0] + NET wbs_adr_i[0] + DIRECTION INPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 38410 1200 ) N ;
+- wbs_adr_i[10] + NET wbs_adr_i[10] + DIRECTION INPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 240810 1200 ) N ;
+- wbs_adr_i[11] + NET wbs_adr_i[11] + DIRECTION INPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 258290 1200 ) N ;
+- wbs_adr_i[12] + NET wbs_adr_i[12] + DIRECTION INPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 276230 1200 ) N ;
+- wbs_adr_i[13] + NET wbs_adr_i[13] + DIRECTION INPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 294170 1200 ) N ;
+- wbs_adr_i[14] + NET wbs_adr_i[14] + DIRECTION INPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 312110 1200 ) N ;
+- wbs_adr_i[15] + NET wbs_adr_i[15] + DIRECTION INPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 330050 1200 ) N ;
+- wbs_adr_i[16] + NET wbs_adr_i[16] + DIRECTION INPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 347530 1200 ) N ;
+- wbs_adr_i[17] + NET wbs_adr_i[17] + DIRECTION INPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 365470 1200 ) N ;
+- wbs_adr_i[18] + NET wbs_adr_i[18] + DIRECTION INPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 383410 1200 ) N ;
+- wbs_adr_i[19] + NET wbs_adr_i[19] + DIRECTION INPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 401350 1200 ) N ;
+- wbs_adr_i[1] + NET wbs_adr_i[1] + DIRECTION INPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 62330 1200 ) N ;
+- wbs_adr_i[20] + NET wbs_adr_i[20] + DIRECTION INPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 419290 1200 ) N ;
+- wbs_adr_i[21] + NET wbs_adr_i[21] + DIRECTION INPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 436770 1200 ) N ;
+- wbs_adr_i[22] + NET wbs_adr_i[22] + DIRECTION INPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 454710 1200 ) N ;
+- wbs_adr_i[23] + NET wbs_adr_i[23] + DIRECTION INPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 472650 1200 ) N ;
+- wbs_adr_i[24] + NET wbs_adr_i[24] + DIRECTION INPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 490590 1200 ) N ;
+- wbs_adr_i[25] + NET wbs_adr_i[25] + DIRECTION INPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 508070 1200 ) N ;
+- wbs_adr_i[26] + NET wbs_adr_i[26] + DIRECTION INPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 526010 1200 ) N ;
+- wbs_adr_i[27] + NET wbs_adr_i[27] + DIRECTION INPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 543950 1200 ) N ;
+- wbs_adr_i[28] + NET wbs_adr_i[28] + DIRECTION INPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 561890 1200 ) N ;
+- wbs_adr_i[29] + NET wbs_adr_i[29] + DIRECTION INPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 579830 1200 ) N ;
+- wbs_adr_i[2] + NET wbs_adr_i[2] + DIRECTION INPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 86250 1200 ) N ;
+- wbs_adr_i[30] + NET wbs_adr_i[30] + DIRECTION INPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 597310 1200 ) N ;
+- wbs_adr_i[31] + NET wbs_adr_i[31] + DIRECTION INPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 615250 1200 ) N ;
+- wbs_adr_i[3] + NET wbs_adr_i[3] + DIRECTION INPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 109710 1200 ) N ;
+- wbs_adr_i[4] + NET wbs_adr_i[4] + DIRECTION INPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 133630 1200 ) N ;
+- wbs_adr_i[5] + NET wbs_adr_i[5] + DIRECTION INPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 151570 1200 ) N ;
+- wbs_adr_i[6] + NET wbs_adr_i[6] + DIRECTION INPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 169510 1200 ) N ;
+- wbs_adr_i[7] + NET wbs_adr_i[7] + DIRECTION INPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 186990 1200 ) N ;
+- wbs_adr_i[8] + NET wbs_adr_i[8] + DIRECTION INPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 204930 1200 ) N ;
+- wbs_adr_i[9] + NET wbs_adr_i[9] + DIRECTION INPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 222870 1200 ) N ;
+- wbs_cyc_i + NET wbs_cyc_i + DIRECTION INPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 20470 1200 ) N ;
+- wbs_dat_i[0] + NET wbs_dat_i[0] + DIRECTION INPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 44390 1200 ) N ;
+- wbs_dat_i[10] + NET wbs_dat_i[10] + DIRECTION INPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 246790 1200 ) N ;
+- wbs_dat_i[11] + NET wbs_dat_i[11] + DIRECTION INPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 264270 1200 ) N ;
+- wbs_dat_i[12] + NET wbs_dat_i[12] + DIRECTION INPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 282210 1200 ) N ;
+- wbs_dat_i[13] + NET wbs_dat_i[13] + DIRECTION INPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 300150 1200 ) N ;
+- wbs_dat_i[14] + NET wbs_dat_i[14] + DIRECTION INPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 318090 1200 ) N ;
+- wbs_dat_i[15] + NET wbs_dat_i[15] + DIRECTION INPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 336030 1200 ) N ;
+- wbs_dat_i[16] + NET wbs_dat_i[16] + DIRECTION INPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 353510 1200 ) N ;
+- wbs_dat_i[17] + NET wbs_dat_i[17] + DIRECTION INPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 371450 1200 ) N ;
+- wbs_dat_i[18] + NET wbs_dat_i[18] + DIRECTION INPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 389390 1200 ) N ;
+- wbs_dat_i[19] + NET wbs_dat_i[19] + DIRECTION INPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 407330 1200 ) N ;
+- wbs_dat_i[1] + NET wbs_dat_i[1] + DIRECTION INPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 68310 1200 ) N ;
+- wbs_dat_i[20] + NET wbs_dat_i[20] + DIRECTION INPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 424810 1200 ) N ;
+- wbs_dat_i[21] + NET wbs_dat_i[21] + DIRECTION INPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 442750 1200 ) N ;
+- wbs_dat_i[22] + NET wbs_dat_i[22] + DIRECTION INPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 460690 1200 ) N ;
+- wbs_dat_i[23] + NET wbs_dat_i[23] + DIRECTION INPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 478630 1200 ) N ;
+- wbs_dat_i[24] + NET wbs_dat_i[24] + DIRECTION INPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 496570 1200 ) N ;
+- wbs_dat_i[25] + NET wbs_dat_i[25] + DIRECTION INPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 514050 1200 ) N ;
+- wbs_dat_i[26] + NET wbs_dat_i[26] + DIRECTION INPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 531990 1200 ) N ;
+- wbs_dat_i[27] + NET wbs_dat_i[27] + DIRECTION INPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 549930 1200 ) N ;
+- wbs_dat_i[28] + NET wbs_dat_i[28] + DIRECTION INPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 567870 1200 ) N ;
+- wbs_dat_i[29] + NET wbs_dat_i[29] + DIRECTION INPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 585810 1200 ) N ;
+- wbs_dat_i[2] + NET wbs_dat_i[2] + DIRECTION INPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 91770 1200 ) N ;
+- wbs_dat_i[30] + NET wbs_dat_i[30] + DIRECTION INPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 603290 1200 ) N ;
+- wbs_dat_i[31] + NET wbs_dat_i[31] + DIRECTION INPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 621230 1200 ) N ;
+- wbs_dat_i[3] + NET wbs_dat_i[3] + DIRECTION INPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 115690 1200 ) N ;
+- wbs_dat_i[4] + NET wbs_dat_i[4] + DIRECTION INPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 139610 1200 ) N ;
+- wbs_dat_i[5] + NET wbs_dat_i[5] + DIRECTION INPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 157550 1200 ) N ;
+- wbs_dat_i[6] + NET wbs_dat_i[6] + DIRECTION INPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 175030 1200 ) N ;
+- wbs_dat_i[7] + NET wbs_dat_i[7] + DIRECTION INPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 192970 1200 ) N ;
+- wbs_dat_i[8] + NET wbs_dat_i[8] + DIRECTION INPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 210910 1200 ) N ;
+- wbs_dat_i[9] + NET wbs_dat_i[9] + DIRECTION INPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 228850 1200 ) N ;
+- wbs_dat_o[0] + NET wbs_dat_o[0] + DIRECTION OUTPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 50370 1200 ) N ;
+- wbs_dat_o[10] + NET wbs_dat_o[10] + DIRECTION OUTPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 252770 1200 ) N ;
+- wbs_dat_o[11] + NET wbs_dat_o[11] + DIRECTION OUTPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 270250 1200 ) N ;
+- wbs_dat_o[12] + NET wbs_dat_o[12] + DIRECTION OUTPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 288190 1200 ) N ;
+- wbs_dat_o[13] + NET wbs_dat_o[13] + DIRECTION OUTPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 306130 1200 ) N ;
+- wbs_dat_o[14] + NET wbs_dat_o[14] + DIRECTION OUTPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 324070 1200 ) N ;
+- wbs_dat_o[15] + NET wbs_dat_o[15] + DIRECTION OUTPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 341550 1200 ) N ;
+- wbs_dat_o[16] + NET wbs_dat_o[16] + DIRECTION OUTPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 359490 1200 ) N ;
+- wbs_dat_o[17] + NET wbs_dat_o[17] + DIRECTION OUTPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 377430 1200 ) N ;
+- wbs_dat_o[18] + NET wbs_dat_o[18] + DIRECTION OUTPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 395370 1200 ) N ;
+- wbs_dat_o[19] + NET wbs_dat_o[19] + DIRECTION OUTPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 413310 1200 ) N ;
+- wbs_dat_o[1] + NET wbs_dat_o[1] + DIRECTION OUTPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 74290 1200 ) N ;
+- wbs_dat_o[20] + NET wbs_dat_o[20] + DIRECTION OUTPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 430790 1200 ) N ;
+- wbs_dat_o[21] + NET wbs_dat_o[21] + DIRECTION OUTPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 448730 1200 ) N ;
+- wbs_dat_o[22] + NET wbs_dat_o[22] + DIRECTION OUTPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 466670 1200 ) N ;
+- wbs_dat_o[23] + NET wbs_dat_o[23] + DIRECTION OUTPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 484610 1200 ) N ;
+- wbs_dat_o[24] + NET wbs_dat_o[24] + DIRECTION OUTPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 502550 1200 ) N ;
+- wbs_dat_o[25] + NET wbs_dat_o[25] + DIRECTION OUTPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 520030 1200 ) N ;
+- wbs_dat_o[26] + NET wbs_dat_o[26] + DIRECTION OUTPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 537970 1200 ) N ;
+- wbs_dat_o[27] + NET wbs_dat_o[27] + DIRECTION OUTPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 555910 1200 ) N ;
+- wbs_dat_o[28] + NET wbs_dat_o[28] + DIRECTION OUTPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 573850 1200 ) N ;
+- wbs_dat_o[29] + NET wbs_dat_o[29] + DIRECTION OUTPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 591330 1200 ) N ;
+- wbs_dat_o[2] + NET wbs_dat_o[2] + DIRECTION OUTPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 97750 1200 ) N ;
+- wbs_dat_o[30] + NET wbs_dat_o[30] + DIRECTION OUTPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 609270 1200 ) N ;
+- wbs_dat_o[31] + NET wbs_dat_o[31] + DIRECTION OUTPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 627210 1200 ) N ;
+- wbs_dat_o[3] + NET wbs_dat_o[3] + DIRECTION OUTPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 121670 1200 ) N ;
+- wbs_dat_o[4] + NET wbs_dat_o[4] + DIRECTION OUTPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 145590 1200 ) N ;
+- wbs_dat_o[5] + NET wbs_dat_o[5] + DIRECTION OUTPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 163530 1200 ) N ;
+- wbs_dat_o[6] + NET wbs_dat_o[6] + DIRECTION OUTPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 181010 1200 ) N ;
+- wbs_dat_o[7] + NET wbs_dat_o[7] + DIRECTION OUTPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 198950 1200 ) N ;
+- wbs_dat_o[8] + NET wbs_dat_o[8] + DIRECTION OUTPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 216890 1200 ) N ;
+- wbs_dat_o[9] + NET wbs_dat_o[9] + DIRECTION OUTPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 234830 1200 ) N ;
+- wbs_sel_i[0] + NET wbs_sel_i[0] + DIRECTION INPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 56350 1200 ) N ;
+- wbs_sel_i[1] + NET wbs_sel_i[1] + DIRECTION INPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 80270 1200 ) N ;
+- wbs_sel_i[2] + NET wbs_sel_i[2] + DIRECTION INPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 103730 1200 ) N ;
+- wbs_sel_i[3] + NET wbs_sel_i[3] + DIRECTION INPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 127650 1200 ) N ;
+- wbs_stb_i + NET wbs_stb_i + DIRECTION INPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 26450 1200 ) N ;
+- wbs_we_i + NET wbs_we_i + DIRECTION INPUT + USE SIGNAL 
+  + LAYER met2 ( -140 -1200 ) ( 140 1200 )
+  + PLACED ( 32430 1200 ) N ;
+- vccd1 + NET vccd1 + DIRECTION INPUT + USE SIGNAL 
+  + LAYER met5 ( -1458290 -1000 ) ( 1458290 1000 )
+  + FIXED ( 1459810 7880 ) N + SPECIAL ;
+- vssd1 + NET vssd1 + DIRECTION INPUT + USE SIGNAL 
+  + LAYER met5 ( -1462290 -1000 ) ( 1462290 1000 )
+  + FIXED ( 1459810 3880 ) N + SPECIAL ;
 END PINS
+
+SPECIALNETS 2 ;
+- vccd1 ( PIN vccd1 ) 
+  + ROUTED met4 0 + SHAPE STRIPE ( 1171310 2172050 ) via4_1600x1600 
+    NEW met4 0 + SHAPE STRIPE ( 1171310 2018870 ) via4_1600x1600 
+    NEW met4 0 + SHAPE STRIPE ( 1171310 1865690 ) via4_1600x1600 
+    NEW met4 0 + SHAPE STRIPE ( 1171310 1712510 ) via4_1600x1600 
+    NEW met4 0 + SHAPE STRIPE ( 2917100 3511800 ) via4_2000x2000 
+    NEW met4 0 + SHAPE STRIPE ( 2520 3511800 ) via4_2000x2000 
+    NEW met4 0 + SHAPE STRIPE ( 2917100 3397490 ) via4_2000x1600 
+    NEW met4 0 + SHAPE STRIPE ( 2520 3397490 ) via4_2000x1600 
+    NEW met4 0 + SHAPE STRIPE ( 2917100 3244310 ) via4_2000x1600 
+    NEW met4 0 + SHAPE STRIPE ( 2520 3244310 ) via4_2000x1600 
+    NEW met4 0 + SHAPE STRIPE ( 2917100 3091130 ) via4_2000x1600 
+    NEW met4 0 + SHAPE STRIPE ( 2520 3091130 ) via4_2000x1600 
+    NEW met4 0 + SHAPE STRIPE ( 2917100 2937950 ) via4_2000x1600 
+    NEW met4 0 + SHAPE STRIPE ( 2520 2937950 ) via4_2000x1600 
+    NEW met4 0 + SHAPE STRIPE ( 2917100 2784770 ) via4_2000x1600 
+    NEW met4 0 + SHAPE STRIPE ( 2520 2784770 ) via4_2000x1600 
+    NEW met4 0 + SHAPE STRIPE ( 2917100 2631590 ) via4_2000x1600 
+    NEW met4 0 + SHAPE STRIPE ( 2520 2631590 ) via4_2000x1600 
+    NEW met4 0 + SHAPE STRIPE ( 2917100 2478410 ) via4_2000x1600 
+    NEW met4 0 + SHAPE STRIPE ( 2520 2478410 ) via4_2000x1600 
+    NEW met4 0 + SHAPE STRIPE ( 2917100 2325230 ) via4_2000x1600 
+    NEW met4 0 + SHAPE STRIPE ( 2520 2325230 ) via4_2000x1600 
+    NEW met4 0 + SHAPE STRIPE ( 2917100 2172050 ) via4_2000x1600 
+    NEW met4 0 + SHAPE STRIPE ( 2520 2172050 ) via4_2000x1600 
+    NEW met4 0 + SHAPE STRIPE ( 2917100 2018870 ) via4_2000x1600 
+    NEW met4 0 + SHAPE STRIPE ( 2520 2018870 ) via4_2000x1600 
+    NEW met4 0 + SHAPE STRIPE ( 2917100 1865690 ) via4_2000x1600 
+    NEW met4 0 + SHAPE STRIPE ( 2520 1865690 ) via4_2000x1600 
+    NEW met4 0 + SHAPE STRIPE ( 2917100 1712510 ) via4_2000x1600 
+    NEW met4 0 + SHAPE STRIPE ( 2520 1712510 ) via4_2000x1600 
+    NEW met4 0 + SHAPE STRIPE ( 2917100 1559330 ) via4_2000x1600 
+    NEW met4 0 + SHAPE STRIPE ( 2520 1559330 ) via4_2000x1600 
+    NEW met4 0 + SHAPE STRIPE ( 2917100 1406150 ) via4_2000x1600 
+    NEW met4 0 + SHAPE STRIPE ( 2520 1406150 ) via4_2000x1600 
+    NEW met4 0 + SHAPE STRIPE ( 2917100 1252970 ) via4_2000x1600 
+    NEW met4 0 + SHAPE STRIPE ( 2520 1252970 ) via4_2000x1600 
+    NEW met4 0 + SHAPE STRIPE ( 2917100 1099790 ) via4_2000x1600 
+    NEW met4 0 + SHAPE STRIPE ( 2520 1099790 ) via4_2000x1600 
+    NEW met4 0 + SHAPE STRIPE ( 2917100 946610 ) via4_2000x1600 
+    NEW met4 0 + SHAPE STRIPE ( 2520 946610 ) via4_2000x1600 
+    NEW met4 0 + SHAPE STRIPE ( 2917100 793430 ) via4_2000x1600 
+    NEW met4 0 + SHAPE STRIPE ( 2520 793430 ) via4_2000x1600 
+    NEW met4 0 + SHAPE STRIPE ( 2917100 640250 ) via4_2000x1600 
+    NEW met4 0 + SHAPE STRIPE ( 2520 640250 ) via4_2000x1600 
+    NEW met4 0 + SHAPE STRIPE ( 2917100 487070 ) via4_2000x1600 
+    NEW met4 0 + SHAPE STRIPE ( 2520 487070 ) via4_2000x1600 
+    NEW met4 0 + SHAPE STRIPE ( 2917100 333890 ) via4_2000x1600 
+    NEW met4 0 + SHAPE STRIPE ( 2520 333890 ) via4_2000x1600 
+    NEW met4 0 + SHAPE STRIPE ( 2917100 180710 ) via4_2000x1600 
+    NEW met4 0 + SHAPE STRIPE ( 2520 180710 ) via4_2000x1600 
+    NEW met4 0 + SHAPE STRIPE ( 2917100 27530 ) via4_2000x1600 
+    NEW met4 0 + SHAPE STRIPE ( 2520 27530 ) via4_2000x1600 
+    NEW met4 0 + SHAPE STRIPE ( 2917100 7880 ) via4_2000x2000 
+    NEW met4 0 + SHAPE STRIPE ( 2520 7880 ) via4_2000x2000 
+    NEW met5 2000 + SHAPE STRIPE ( 1520 3511800 ) ( 2918100 3511800 ) 
+    NEW met5 2000 + SHAPE STRIPE ( 1520 7880 ) ( 2918100 7880 ) 
+    NEW met4 2000 + SHAPE STRIPE ( 2917100 6880 ) ( 2917100 3512800 ) 
+    NEW met4 2000 + SHAPE STRIPE ( 2520 6880 ) ( 2520 3512800 )
+  + USE POWER ;
+- vssd1 ( PIN vssd1 ) 
+  + ROUTED met4 0 + SHAPE STRIPE ( 1248110 2248640 ) via4_1600x1600 
+    NEW met4 0 + SHAPE STRIPE ( 1248110 2095460 ) via4_1600x1600 
+    NEW met4 0 + SHAPE STRIPE ( 1248110 1942280 ) via4_1600x1600 
+    NEW met4 0 + SHAPE STRIPE ( 1248110 1789100 ) via4_1600x1600 
+    NEW met4 0 + SHAPE STRIPE ( 2921100 3515800 ) via4_2000x2000 
+    NEW met4 0 + SHAPE STRIPE ( -1480 3515800 ) via4_2000x2000 
+    NEW met4 0 + SHAPE STRIPE ( 2921100 3474080 ) via4_2000x1600 
+    NEW met4 0 + SHAPE STRIPE ( -1480 3474080 ) via4_2000x1600 
+    NEW met4 0 + SHAPE STRIPE ( 2921100 3320900 ) via4_2000x1600 
+    NEW met4 0 + SHAPE STRIPE ( -1480 3320900 ) via4_2000x1600 
+    NEW met4 0 + SHAPE STRIPE ( 2921100 3167720 ) via4_2000x1600 
+    NEW met4 0 + SHAPE STRIPE ( -1480 3167720 ) via4_2000x1600 
+    NEW met4 0 + SHAPE STRIPE ( 2921100 3014540 ) via4_2000x1600 
+    NEW met4 0 + SHAPE STRIPE ( -1480 3014540 ) via4_2000x1600 
+    NEW met4 0 + SHAPE STRIPE ( 2921100 2861360 ) via4_2000x1600 
+    NEW met4 0 + SHAPE STRIPE ( -1480 2861360 ) via4_2000x1600 
+    NEW met4 0 + SHAPE STRIPE ( 2921100 2708180 ) via4_2000x1600 
+    NEW met4 0 + SHAPE STRIPE ( -1480 2708180 ) via4_2000x1600 
+    NEW met4 0 + SHAPE STRIPE ( 2921100 2555000 ) via4_2000x1600 
+    NEW met4 0 + SHAPE STRIPE ( -1480 2555000 ) via4_2000x1600 
+    NEW met4 0 + SHAPE STRIPE ( 2921100 2401820 ) via4_2000x1600 
+    NEW met4 0 + SHAPE STRIPE ( -1480 2401820 ) via4_2000x1600 
+    NEW met4 0 + SHAPE STRIPE ( 2921100 2248640 ) via4_2000x1600 
+    NEW met4 0 + SHAPE STRIPE ( -1480 2248640 ) via4_2000x1600 
+    NEW met4 0 + SHAPE STRIPE ( 2921100 2095460 ) via4_2000x1600 
+    NEW met4 0 + SHAPE STRIPE ( -1480 2095460 ) via4_2000x1600 
+    NEW met4 0 + SHAPE STRIPE ( 2921100 1942280 ) via4_2000x1600 
+    NEW met4 0 + SHAPE STRIPE ( -1480 1942280 ) via4_2000x1600 
+    NEW met4 0 + SHAPE STRIPE ( 2921100 1789100 ) via4_2000x1600 
+    NEW met4 0 + SHAPE STRIPE ( -1480 1789100 ) via4_2000x1600 
+    NEW met4 0 + SHAPE STRIPE ( 2921100 1635920 ) via4_2000x1600 
+    NEW met4 0 + SHAPE STRIPE ( -1480 1635920 ) via4_2000x1600 
+    NEW met4 0 + SHAPE STRIPE ( 2921100 1482740 ) via4_2000x1600 
+    NEW met4 0 + SHAPE STRIPE ( -1480 1482740 ) via4_2000x1600 
+    NEW met4 0 + SHAPE STRIPE ( 2921100 1329560 ) via4_2000x1600 
+    NEW met4 0 + SHAPE STRIPE ( -1480 1329560 ) via4_2000x1600 
+    NEW met4 0 + SHAPE STRIPE ( 2921100 1176380 ) via4_2000x1600 
+    NEW met4 0 + SHAPE STRIPE ( -1480 1176380 ) via4_2000x1600 
+    NEW met4 0 + SHAPE STRIPE ( 2921100 1023200 ) via4_2000x1600 
+    NEW met4 0 + SHAPE STRIPE ( -1480 1023200 ) via4_2000x1600 
+    NEW met4 0 + SHAPE STRIPE ( 2921100 870020 ) via4_2000x1600 
+    NEW met4 0 + SHAPE STRIPE ( -1480 870020 ) via4_2000x1600 
+    NEW met4 0 + SHAPE STRIPE ( 2921100 716840 ) via4_2000x1600 
+    NEW met4 0 + SHAPE STRIPE ( -1480 716840 ) via4_2000x1600 
+    NEW met4 0 + SHAPE STRIPE ( 2921100 563660 ) via4_2000x1600 
+    NEW met4 0 + SHAPE STRIPE ( -1480 563660 ) via4_2000x1600 
+    NEW met4 0 + SHAPE STRIPE ( 2921100 410480 ) via4_2000x1600 
+    NEW met4 0 + SHAPE STRIPE ( -1480 410480 ) via4_2000x1600 
+    NEW met4 0 + SHAPE STRIPE ( 2921100 257300 ) via4_2000x1600 
+    NEW met4 0 + SHAPE STRIPE ( -1480 257300 ) via4_2000x1600 
+    NEW met4 0 + SHAPE STRIPE ( 2921100 104120 ) via4_2000x1600 
+    NEW met4 0 + SHAPE STRIPE ( -1480 104120 ) via4_2000x1600 
+    NEW met4 0 + SHAPE STRIPE ( 2921100 3880 ) via4_2000x2000 
+    NEW met4 0 + SHAPE STRIPE ( -1480 3880 ) via4_2000x2000 
+    NEW met5 2000 + SHAPE STRIPE ( -2480 3515800 ) ( 2922100 3515800 ) 
+    NEW met5 2000 + SHAPE STRIPE ( -2480 3880 ) ( 2922100 3880 ) 
+    NEW met4 2000 + SHAPE STRIPE ( 2921100 2880 ) ( 2921100 3516800 ) 
+    NEW met4 2000 + SHAPE STRIPE ( -1480 2880 ) ( -1480 3516800 )
+  + USE GROUND ;
+END SPECIALNETS
+
 END DESIGN
