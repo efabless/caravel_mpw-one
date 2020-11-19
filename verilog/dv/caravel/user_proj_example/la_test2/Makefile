@@ -25,18 +25,22 @@ hex:  ${PATTERN:=.hex}
 
 %.elf: %.c $(FIRMWARE_PATH)/sections.lds $(FIRMWARE_PATH)/start.s
 <<<<<<< HEAD
+<<<<<<< HEAD
 	${GCC_PATH}/${GCC_PREFIX}-unknown-elf-gcc -march=rv32imc -Wl,-Bstatic,-T,$(FIRMWARE_PATH)/sections.lds,--strip-debug -ffreestanding -nostdlib -o $@ $(FIRMWARE_PATH)/start.s $<
 =======
 	${GCC_PATH}/${GCC_PREFIX}-gcc -march=rv32imc -mabi=ilp32 -Wl,-Bstatic,-T,$(FIRMWARE_PATH)/sections.lds,--strip-debug -ffreestanding -nostdlib -o $@ $(FIRMWARE_PATH)/start.s $<
 >>>>>>> 6000cbf... Updates to the Makefiles for easier passing of user-specific variables,
+=======
+	${GCC_PATH}/${GCC_PREFIX}-gcc -march=rv32imc -Wl,-Bstatic,-T,$(FIRMWARE_PATH)/sections.lds,--strip-debug -ffreestanding -nostdlib -o $@ $(FIRMWARE_PATH)/start.s $<
+>>>>>>> 9bc2778... Corrections to the management protection buffer block, and a couple of corrections
 
 %.hex: %.elf
-	${GCC_PATH}/${GCC_PREFIX}-unknown-elf-objcopy -O verilog $< $@ 
+	${GCC_PATH}/${GCC_PREFIX}-objcopy -O verilog $< $@ 
 	# to fix flash base address
 	sed -i 's/@10000000/@00000000/g' $@
 
 %.bin: %.elf
-	${GCC_PATH}/${GCC_PREFIX}-unknown-elf-objcopy -O binary $< /dev/stdout | tail -c +1048577 > $@
+	${GCC_PATH}/${GCC_PREFIX}-objcopy -O binary $< /dev/stdout | tail -c +1048577 > $@
 
 # ---- Clean ----
 

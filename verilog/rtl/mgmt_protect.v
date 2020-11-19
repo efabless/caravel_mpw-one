@@ -35,8 +35,17 @@ module mgmt_protect (
     input [3:0]   mprj_sel_o_core,
     input [31:0]  mprj_adr_o_core,
     input [31:0]  mprj_dat_o_core,
-    input [127:0] la_output_core,
-    input [127:0] la_oen,
+
+    // All signal in/out directions are the reverse of the signal
+    // names at the buffer intrface.
+
+    output [127:0] la_data_in_mprj,
+    input  [127:0] la_data_out_mprj,
+    input  [127:0] la_oen_mprj,
+
+    input  [127:0] la_data_out_core,
+    output [127:0] la_data_in_core,
+    output [127:0] la_oen_core,
 
     output 	  user_clock,
     output 	  user_clock2,
@@ -48,15 +57,14 @@ module mgmt_protect (
     output [3:0]  mprj_sel_o_user,
     output [31:0] mprj_adr_o_user,
     output [31:0] mprj_dat_o_user,
-    output [127:0] la_data_in_mprj,
     output	  user1_vcc_powergood,
     output	  user2_vcc_powergood,
     output	  user1_vdd_powergood,
     output	  user2_vdd_powergood
 );
 
-	wire [74:0] mprj_logic1;
-	wire mprj2_logic1;
+	wire [458:0] mprj_logic1;
+	wire	     mprj2_logic1;
 
 	wire mprj_vdd_logic1_h;
 	wire mprj2_vdd_logic1_h;
@@ -68,7 +76,7 @@ module mgmt_protect (
 	wire user1_vdd_powergood;
 	wire user2_vdd_powergood;
 
-        sky130_fd_sc_hd__conb_1 mprj_logic_high [74:0] (
+        sky130_fd_sc_hd__conb_1 mprj_logic_high [458:0] (
 `ifdef USE_POWER_PINS
                 .VPWR(vccd1),
                 .VGND(vssd1),
@@ -140,6 +148,30 @@ module mgmt_protect (
 		.A(mprj2_vdd_logic1_h)
 	);
 
+	// Buffering from the user side to the management side.
+	// NOTE:  This is intended to be better protected, by a full
+	// chain of an lv-to-hv buffer followed by an hv-to-lv buffer.
+	// This serves as a placeholder until that configuration is
+	// checked and characterized.  The function below forces the
+	// data input to the management core to be a solid logic 0 when
+	// the user project is powered down.
+
+	sky130_fd_sc_hd__nor2b_4 user_to_mprj_in_buffers [127:0] (
+`ifdef USE_POWER_PINS
+                .VPWR(vccd),
+                .VGND(vssd),
+                .VPB(vccd),
+                .VNB(vssd),
+`endif
+		.Y(la_data_in_mprj),
+		.A(mprj_logic1[457:330]),
+		.B_N(~la_data_out_core)
+	);
+
+	// The remaining circuitry guards against the management
+	// SoC dumping current into the user project area when
+	// the user project area is powered down.
+	
         sky130_fd_sc_hd__einvp_8 mprj_rstn_buf (
 `ifdef USE_POWER_PINS
                 .VPWR(vccd),
@@ -250,11 +282,8 @@ module mgmt_protect (
                 .TE(mprj_logic1[73:42])
         );
 
-	/* The LA buffers are controlled from the user side, so	*/
-	/* it is only necessary to make sure that the function	*/
-	/* is inverting the OEB signal and using positive-sense	*/
-	/* enable, so that the buffer is disabled on user-side	*/
-	/* power-down of vccd1.					*/
+	/* Project data out from the managment side to the user project	*/
+	/* area when the user project is powered down.			*/
 
         sky130_fd_sc_hd__einvp_8 la_buf [127:0] (
 `ifdef USE_POWER_PINS
@@ -263,10 +292,25 @@ module mgmt_protect (
                 .VPB(vccd),
                 .VNB(vssd),
 `endif
-                .Z(la_data_in_mprj),
-                .A(~la_output_core),
-                .TE(~la_oen)
+                .Z(la_data_in_core),
+                .A(~la_data_out_mprj),
+                .TE(mprj_logic1[201:74])
         );
+
+	/* Project data out enable (bar) from the managment side to the	*/
+	/* user project	area when the user project is powered down.	*/
+
+	sky130_fd_sc_hd__einvp_8 user_to_mprj_oen_buffers [127:0] (
+`ifdef USE_POWER_PINS
+                .VPWR(vccd),
+                .VGND(vssd),
+                .VPB(vccd),
+                .VNB(vssd),
+`endif
+		.Z(la_oen_core),
+		.A(~la_oen_mprj),
+                .TE(mprj_logic1[329:202])
+	);
 
 	/* The conb cell output is a resistive connection directly to	*/
 	/* the power supply, so when returning the user1_powergood	*/
@@ -279,7 +323,7 @@ module mgmt_protect (
                 .VPB(vccd),
                 .VNB(vssd),
 `endif
-                .A(mprj_logic1[74]),
+                .A(mprj_logic1[458]),
                 .X(user1_vcc_powergood)
 	);
 
@@ -290,7 +334,7 @@ module mgmt_protect (
                 .VPB(vccd),
                 .VNB(vssd),
 `endif
-                .A(mprj2_logic1),
+                .A(mprj2_vdd_logic1),
                 .X(user2_vcc_powergood)
 	);
 

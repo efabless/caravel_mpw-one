@@ -91,6 +91,8 @@ module io_ports_tb;
 	wire flash_io0;
 	wire flash_io1;
 
+	wire USER_VDD1V8;
+	wire USER_VDD3V3;
 	wire VDD1V8;
     	wire VDD3V3;
 	wire VSS;
