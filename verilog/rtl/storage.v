@@ -43,3 +43,4 @@ module storage (
     );  
 
 endmodule
+`default_nettype wire

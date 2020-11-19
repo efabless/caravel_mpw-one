@@ -1,4 +1,4 @@
-`default_nettype none
+// `default_nettype none
 module mprj_io #(
     parameter AREA1PADS = 18	// Highest numbered pad in area 1
 ) (
@@ -23,7 +23,6 @@ module mprj_io #(
     input analog_a,
     input analog_b,
     input porb_h,
-    input por,
     inout [`MPRJ_IO_PADS-1:0] io,
     input [`MPRJ_IO_PADS-1:0] io_out,
     input [`MPRJ_IO_PADS-1:0] oeb,
@@ -38,10 +37,12 @@ module mprj_io #(
     input [`MPRJ_IO_PADS-1:0] analog_sel,
     input [`MPRJ_IO_PADS-1:0] analog_pol,
     input [`MPRJ_IO_PADS*3-1:0] dm,
-    output [`MPRJ_IO_PADS-1:0] io_in
+    output [`MPRJ_IO_PADS-1:0] io_in,
+    inout [`MPRJ_IO_PADS-8:0] analog_io
 );
 
     wire [`MPRJ_IO_PADS-1:0] loop1_io;
+    wire [6:0] no_connect;
 
     sky130_ef_io__gpiov2_pad  area1_io_pad [AREA1PADS - 1:0] (
 	`USER1_ABUTMENT_PINS
@@ -66,7 +67,7 @@ module mprj_io #(
 	    .ANALOG_POL(analog_pol[AREA1PADS - 1:0]),
 	    .DM(dm[AREA1PADS*3 - 1:0]),
 	    .PAD_A_NOESD_H(),
-	    .PAD_A_ESD_0_H(),
+	    .PAD_A_ESD_0_H({analog_io[AREA1PADS - 8:0], no_connect}),
 	    .PAD_A_ESD_1_H(),
 	    .IN(io_in[AREA1PADS - 1:0]),
 	    .IN_H(),
@@ -97,7 +98,7 @@ module mprj_io #(
 	    .ANALOG_POL(analog_pol[`MPRJ_IO_PADS - 1:AREA1PADS]),
 	    .DM(dm[`MPRJ_IO_PADS*3 - 1:AREA1PADS*3]),
 	    .PAD_A_NOESD_H(),
-	    .PAD_A_ESD_0_H(),
+	    .PAD_A_ESD_0_H(analog_io[`MPRJ_IO_PADS - 8:AREA1PADS - 7]),
 	    .PAD_A_ESD_1_H(),
 	    .IN(io_in[`MPRJ_IO_PADS - 1:AREA1PADS]),
 	    .IN_H(),
@@ -106,3 +107,4 @@ module mprj_io #(
     );
 
 endmodule
+// `default_nettype wire

@@ -111,6 +111,11 @@ module sysctrl #(
     wire usr1_vdd_pwrgood;
     wire usr2_vdd_pwrgood;
 
+    wire pwrgood_sel;
+    wire clk_out_sel;
+    wire trap_out_sel;
+    wire irq_sel;
+
     assign pwrgood_sel  = (iomem_addr[7:0] == PWRGOOD);
     assign clk_out_sel  = (iomem_addr[7:0] == CLK_OUT);
     assign trap_out_sel = (iomem_addr[7:0] == TRAP_OUT);
@@ -157,3 +162,4 @@ module sysctrl #(
     end
 
 endmodule
+`default_nettype wire

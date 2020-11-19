@@ -476,3 +476,4 @@ module housekeeping_spi_slave(reset, SCK, SDI, CSB, SDO,
     end			// always @ SCK
 
 endmodule // housekeeping_spi_slave
+`default_nettype wire

@@ -123,3 +123,4 @@ module soc_mem
 `endif
 
 endmodule
+`default_nettype wire

@@ -102,6 +102,7 @@ module simple_spi_master_wb #(
     wire [1:0] reg_cfg_we = (simple_spi_master_reg_cfg_sel) ?
 		(wb_sel_i[1:0] & {2{wb_we_i}}): 2'b00;
     wire reg_dat_we = (simple_spi_master_reg_dat_sel) ? (wb_sel_i[0] & wb_we_i): 1'b0;
+    wire reg_dat_wait;
 
     wire [31:0] mem_wdata = wb_dat_i;
     wire reg_dat_re = simple_spi_master_reg_dat_sel && !wb_sel_i && ~wb_we_i;
@@ -388,3 +389,4 @@ module simple_spi_master (
     end // always
  
 endmodule
+`default_nettype wire

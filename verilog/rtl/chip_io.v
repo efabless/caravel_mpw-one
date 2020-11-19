@@ -1,4 +1,4 @@
-`default_nettype none
+// `default_nettype none
 module chip_io(
 	// Package Pins
 	inout  vddio,		// Common padframe/ESD supply
@@ -25,6 +25,7 @@ module chip_io(
 	inout  flash_io1,
 	// Chip Core Interface
 	input  porb_h,
+	input  por,
 	output resetb_core_h,
 	output clock_core,
 	input  gpio_out_core,
@@ -47,8 +48,6 @@ module chip_io(
 	input  flash_io1_do_core,
 	output flash_io0_di_core,
 	output flash_io1_di_core,
-	// porbh, returned to the I/O level shifted down and inverted
-	input  por,
 	// User project IOs
 	inout [`MPRJ_IO_PADS-1:0] mprj_io,
 	input [`MPRJ_IO_PADS-1:0] mprj_io_out,
@@ -64,7 +63,10 @@ module chip_io(
     	input [`MPRJ_IO_PADS-1:0] mprj_io_analog_sel,
     	input [`MPRJ_IO_PADS-1:0] mprj_io_analog_pol,
     	input [`MPRJ_IO_PADS*3-1:0] mprj_io_dm,
-	output [`MPRJ_IO_PADS-1:0] mprj_io_in
+	output [`MPRJ_IO_PADS-1:0] mprj_io_in,
+	// User project direct access to gpio pad connections for analog
+	// (all but the lowest-numbered 7 pads)
+	inout [`MPRJ_IO_PADS-8:0] mprj_analog_io
 );
 
 	wire analog_a, analog_b;
@@ -271,7 +273,6 @@ module chip_io(
 		.analog_a(analog_a),
 		.analog_b(analog_b),
 		.porb_h(porb_h),
-		.por(por),
 		.io(mprj_io),
 		.io_out(mprj_io_out),
 		.oeb(mprj_io_oeb),
@@ -286,7 +287,9 @@ module chip_io(
 		.analog_sel(mprj_io_analog_sel),
 		.analog_pol(mprj_io_analog_pol),
 		.dm(mprj_io_dm),
-		.io_in(mprj_io_in)
+		.io_in(mprj_io_in),
+		.analog_io(mprj_analog_io)
 	);
 
 endmodule
+// `default_nettype wire

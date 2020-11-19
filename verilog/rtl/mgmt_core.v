@@ -85,15 +85,19 @@ module mgmt_core (
     	wire pll_clk, pll_clk90;
     	wire ext_reset;
 	wire hk_connect;
+	wire trap;
+	wire irq_spi;
 
 	// JTAG (to be implemented)
 	wire jtag_out;
 	wire jtag_out_pre = 1'b0;
 	wire jtag_outenb = 1'b1;
+	wire jtag_oenb_state;
 
 	// SDO
 	wire sdo_out;
 	wire sdo_out_pre;
+	wire sdo_oenb_state;
 
 	// Housekeeping SPI vectors
 	wire [4:0]  spi_pll_div;
@@ -123,6 +127,18 @@ module mgmt_core (
 		.user_clk(user_clk),
 		.resetb_sync(core_rstn)
 	);
+
+	// These wires are defined in the SoC but are not being used because
+	// the SoC flash is reduced to a 2-pin I/O
+	wire flash_io2_oeb, flash_io3_oeb;
+	wire flash_io2_ieb, flash_io3_ieb;
+	wire flash_io2_di, flash_io3_di;
+	wire flash_io2_do, flash_io3_do;
+
+	wire pass_thru_mgmt_sdo, pass_thru_mgmt_csb;
+	wire pass_thru_mgmt_sck, pass_thru_mgmt_sdi;
+	wire pass_thru_reset;
+	wire spi_pll_ena, spi_pll_dco_ena;
 
 	// The following functions are connected to specific user project
 	// area pins, when under control of the management area (during
@@ -289,3 +305,4 @@ module mgmt_core (
 	);
 
 endmodule
+`default_nettype wire

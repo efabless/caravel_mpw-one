@@ -220,3 +220,4 @@ module simpleuart (
         end
     end
 endmodule
+`default_nettype wire

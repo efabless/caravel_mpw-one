@@ -153,3 +153,4 @@ module storage_tb;
 	);
 
 endmodule
+`default_nettype wire

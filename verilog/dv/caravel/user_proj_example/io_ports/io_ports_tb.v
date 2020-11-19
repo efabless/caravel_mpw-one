@@ -138,3 +138,4 @@ module io_ports_tb;
 	);
 
 endmodule
+`default_nettype wire

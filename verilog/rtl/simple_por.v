@@ -69,5 +69,6 @@ module simple_por(
 
     // since this is behavioral anyway, but this should be
     // replaced by a proper inverter
-    assign por_l = porb_l;
+    assign por_l = ~porb_l;
 endmodule
+`default_nettype wire

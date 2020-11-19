@@ -166,3 +166,4 @@ module mem_tb;
 	);
 
 endmodule
+`default_nettype wire

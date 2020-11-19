@@ -117,6 +117,7 @@ reg	   stop_out;		// Stop condition flag
 wire [31:0] value_cur_plus;	// Next value, on up-count
 wire [31:0] value_cur_minus;	// Next value, on down-count
 wire	    is_offset;
+wire	    loc_enable;
 
 reg enable;	// Enable (start) the counter/timer
 reg lastenable;	// Previous state of enable (catch rising/falling edge)
@@ -307,3 +308,4 @@ always @(posedge clkin or negedge resetn) begin
 end
 
 endmodule
+`default_nettype wire

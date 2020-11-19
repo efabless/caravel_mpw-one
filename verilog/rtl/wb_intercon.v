@@ -56,3 +56,4 @@ module wb_intercon #(
     end
  
 endmodule
+`default_nettype wire

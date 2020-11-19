@@ -138,3 +138,4 @@ module gpio #(
     end
 
 endmodule
+`default_nettype wire

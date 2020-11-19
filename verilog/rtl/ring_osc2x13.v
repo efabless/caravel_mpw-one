@@ -9,7 +9,7 @@ module delay_stage(in, trim, out);
     input [1:0] trim;
     output out;
 
-    wire d0, d1, d2;
+    wire d0, d1, d2, ts;
 
     sky130_fd_sc_hd__clkbuf_2 delaybuf0 (
 	.A(in),
@@ -232,3 +232,4 @@ module ring_osc2x13(reset, trim, clockp);
 `endif // !FUNCTIONAL
 
 endmodule
+`default_nettype wire

@@ -267,3 +267,4 @@ module pass_thru_tb;
 	);
 		
 endmodule
+`default_nettype wire

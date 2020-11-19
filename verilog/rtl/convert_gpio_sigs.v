@@ -33,4 +33,4 @@ module convert_gpio_sigs (
     assign gpio_mode0_pad = gpio_outenb;
 
 endmodule
-
+`default_nettype wire

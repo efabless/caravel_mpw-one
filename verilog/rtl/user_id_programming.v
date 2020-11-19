@@ -37,3 +37,4 @@ module user_id_programming #(
     endgenerate
 
 endmodule
+`default_nettype wire

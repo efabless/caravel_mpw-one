@@ -125,6 +125,7 @@ module gpio_control_block #(
 
     wire user_gpio_in;
     wire gpio_in_unbuf;
+    wire gpio_logic1;
 
     /* Serial shift for the above (latched) values */
     reg [PAD_CTRL_BITS-1:0] shift_register;
@@ -232,3 +233,4 @@ module gpio_control_block #(
     );
 
 endmodule
+`default_nettype wire

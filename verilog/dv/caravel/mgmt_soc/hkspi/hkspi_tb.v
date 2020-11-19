@@ -294,3 +294,4 @@ module hkspi_tb;
 	);
 		
 endmodule
+`default_nettype wire

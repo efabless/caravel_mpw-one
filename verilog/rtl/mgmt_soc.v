@@ -321,6 +321,10 @@ module mgmt_soc (
     wire irq_spi_master;
     wire irq_counter_timer0;
     wire irq_counter_timer1;
+    wire ser_tx;
+
+    wire wb_clk_i;
+    wire wb_rst_i;
 
     assign irq_stall = 0;
     assign irq_7 = (irq_7_inputsrc == 1'b1) ? mgmt_in_data[7] : 1'b0;
@@ -352,6 +356,7 @@ module mgmt_soc (
     wire cpu_stb_o;
     wire [31:0] cpu_dat_o;
     wire cpu_ack_i;
+    wire mem_instr;
     
     picorv32_wb #(
         .STACKADDR(STACKADDR),
@@ -845,3 +850,4 @@ module mgmt_soc_regs (
     assign rdata1 = regs[raddr1[4:0]];
     assign rdata2 = regs[raddr2[4:0]];
 endmodule
+`default_nettype wire

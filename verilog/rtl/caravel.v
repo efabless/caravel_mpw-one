@@ -1,4 +1,4 @@
-`default_nettype none
+// `default_nettype none
 /*--------------------------------------------------------------*/
 /* caravel, a project harness for the Google/SkyWater sky130	*/
 /* fabrication process and open source PDK			*/
@@ -157,6 +157,7 @@ module caravel (
     wire [`MPRJ_IO_PADS-1:0] user_io_oeb;
     wire [`MPRJ_IO_PADS-1:0] user_io_in;
     wire [`MPRJ_IO_PADS-1:0] user_io_out;
+    wire [`MPRJ_IO_PADS-8:0] user_analog_io;
 
     /* Padframe control signals */
     wire [`MPRJ_IO_PADS-1:0] gpio_serial_link;
@@ -186,15 +187,30 @@ module caravel (
     wire [`MPRJ_IO_PADS-3:0] mgmt_io_nc3;	/* no-connects */
     wire [1:0] mgmt_io_nc2;			/* no-connects */
 
+    wire clock_core;
+
     // Power-on-reset signal.  The reset pad generates the sense-inverted
     // reset at 3.3V.  The 1.8V signal and the inverted 1.8V signal are
     // derived.
 
     wire porb_h;
     wire porb_l;
+    wire por_l;
 
     wire rstb_h;
     wire rstb_l;
+
+    wire flash_clk_core,     flash_csb_core;
+    wire flash_clk_oeb_core, flash_csb_oeb_core;
+    wire flash_clk_ieb_core, flash_csb_ieb_core;
+    wire flash_io0_oeb_core, flash_io1_oeb_core;
+    wire flash_io2_oeb_core, flash_io3_oeb_core;
+    wire flash_io0_ieb_core, flash_io1_ieb_core;
+    wire flash_io2_ieb_core, flash_io3_ieb_core;
+    wire flash_io0_do_core,  flash_io1_do_core;
+    wire flash_io2_do_core,  flash_io3_do_core;
+    wire flash_io0_di_core,  flash_io1_di_core;
+    wire flash_io2_di_core,  flash_io3_di_core;
 
     // To be considered:  Master hold signal on all user pads (?)
     // For now, set holdh_n to 1 (NOTE:  This is in the 3.3V domain)
@@ -229,6 +245,7 @@ module caravel (
 	.flash_io1(flash_io1),
 	// SoC Core Interface
 	.porb_h(porb_h),
+	.por(por_l),
 	.resetb_core_h(rstb_h),
 	.clock_core(clock_core),
 	.gpio_out_core(gpio_out_core),
@@ -251,7 +268,6 @@ module caravel (
 	.flash_io1_do_core(flash_io1_do_core),
 	.flash_io0_di_core(flash_io0_di_core),
 	.flash_io1_di_core(flash_io1_di_core),
-	.por(por_l),
 	.mprj_io_in(mprj_io_in),
 	.mprj_io_out(mprj_io_out),
 	.mprj_io_oeb(mprj_io_oeb),
@@ -265,7 +281,8 @@ module caravel (
 	.mprj_io_analog_en(mprj_io_analog_en),
 	.mprj_io_analog_sel(mprj_io_analog_sel),
 	.mprj_io_analog_pol(mprj_io_analog_pol),
-	.mprj_io_dm(mprj_io_dm)
+	.mprj_io_dm(mprj_io_dm),
+	.mprj_analog_io(user_analog_io)
     );
 
     // SoC core
@@ -489,6 +506,7 @@ module caravel (
 		.io_in (user_io_in),
     		.io_out(user_io_out),
     		.io_oeb(user_io_oeb),
+		.analog_io(user_analog_io),
 		// Independent clock
 		.user_clock2(mprj_clock2)
 	);
@@ -607,8 +625,11 @@ module caravel (
     // Power-on-reset circuit
     simple_por por (
 		.vdd3v3(vddio),
+		.vdd1v8(vccd),
 		.vss(vssio),
-		.porb_h(porb_h)
+		.porb_h(porb_h),
+		.porb_l(porb_l),
+		.por_l(por_l)
     );
 
     // XRES (chip input pin reset) reset level converter
@@ -640,3 +661,4 @@ module caravel (
 	);
 
 endmodule
+// `default_nettype wire

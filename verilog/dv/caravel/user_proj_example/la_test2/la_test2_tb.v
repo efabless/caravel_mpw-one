@@ -111,3 +111,4 @@ module la_test2_tb;
 	);
 
 endmodule
+`default_nettype wire

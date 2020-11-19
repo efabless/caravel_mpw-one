@@ -94,3 +94,4 @@ module storage_bridge_wb (
     assign wb_ro_dat_o = mgmt_rdata_ro;
 
 endmodule
+`default_nettype wire

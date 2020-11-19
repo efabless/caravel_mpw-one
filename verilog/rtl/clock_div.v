@@ -1,5 +1,5 @@
-`default_nettype none
 /* Integer-N clock divider */
+`default_nettype none
  
 module clock_div #(
     parameter SIZE = 3		// Number of bits for the divider value
@@ -194,3 +194,4 @@ module even #(
     end
  
 endmodule //even
+`default_nettype wire

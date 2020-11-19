@@ -188,3 +188,4 @@ module sysctrl_tb;
 	);
 
 endmodule
+`default_nettype wire

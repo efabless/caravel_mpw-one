@@ -53,3 +53,4 @@ module digital_pll(
     );
 
 endmodule
+`default_nettype wire

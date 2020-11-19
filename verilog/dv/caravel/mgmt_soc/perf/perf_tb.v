@@ -142,3 +142,4 @@ module perf_tb;
 	);
 
 endmodule
+`default_nettype wire

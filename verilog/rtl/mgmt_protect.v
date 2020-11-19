@@ -302,7 +302,7 @@ module mgmt_protect (
                 .VNB(vssd),
 `endif
                 .A(mprj_vdd_logic1),
-                .X(user_vdd_powergood)
+                .X(user1_vdd_powergood)
 	);
 
         sky130_fd_sc_hd__buf_8 mprj2_vdd_pwrgood (
@@ -316,3 +316,4 @@ module mgmt_protect (
                 .X(user2_vdd_powergood)
 	);
 endmodule
+`default_nettype wire

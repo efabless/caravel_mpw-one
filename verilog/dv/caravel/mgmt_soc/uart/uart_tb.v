@@ -137,3 +137,4 @@ module uart_tb;
 	);
 		
 endmodule
+`default_nettype wire

@@ -740,3 +740,4 @@ module spimemio_xfer (
     end
 endmodule
 
+`default_nettype wire

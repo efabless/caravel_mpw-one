@@ -20,6 +20,9 @@ module caravel_clocking(
 );
 
     wire pll_clk_sel;
+    wire pll_clk_divided;
+    wire pll_clk90_divided;
+    wire core_ext_clk;
     reg  use_pll_first;
     reg  use_pll_second;
     reg	 ext_clk_syncd_pre;
@@ -90,3 +93,4 @@ module caravel_clocking(
     assign resetb_sync = ~(reset_delay[0] | ext_reset);
 
 endmodule
+`default_nettype wire

@@ -118,3 +118,4 @@ module digital_pll_controller(reset, clock, osc, div, trim);
     end
 
 endmodule	// digital_pll_controller
+`default_nettype wire

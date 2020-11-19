@@ -120,3 +120,4 @@ module la_test1_tb;
 	);
 
 endmodule
+`default_nettype wire

@@ -276,3 +276,4 @@ always @(posedge clkin or negedge resetn) begin
 end
 
 endmodule
+`default_nettype wire

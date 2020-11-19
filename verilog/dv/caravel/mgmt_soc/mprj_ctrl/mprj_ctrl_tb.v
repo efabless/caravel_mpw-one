@@ -146,3 +146,4 @@ module mprj_ctrl_tb;
 	);
 
 endmodule
+`default_nettype wire

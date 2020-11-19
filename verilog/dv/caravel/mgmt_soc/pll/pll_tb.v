@@ -135,3 +135,4 @@ module pll_tb;
 	);
 
 endmodule
+`default_nettype wire
