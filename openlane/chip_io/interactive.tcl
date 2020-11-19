@@ -4,6 +4,12 @@ set script_dir [file dirname [file normalize [info script]]]
 prep -design $script_dir -tag chip_io -overwrite
 set save_path $script_dir/../..
 
+# set ::env(SYNTH_DEFINES) ""
+# verilog_elaborate
+# init_floorplan
+# file copy $::env(CURRENT_DEF) $::env(TMP_DIR)/lvs.def
+
+set ::env(SYNTH_DEFINES) "TOP_ROUTING"
 verilog_elaborate
 
 init_floorplan
@@ -18,30 +24,52 @@ exec -ignorestderr python3 $::env(SCRIPTS_DIR)/padringer.py\
 
 set_def $::env(RESULTS_DIR)/floorplan/padframe.def
 
+# modify to a different file
+remove_pins -input $::env(CURRENT_DEF)
 
-label_macro_pins\
-	-lef $::env(MERGED_LEF_UNPADDED)\
-	-netlist_def $::env(CURRENT_DEF)\
-	-pad_pin_name "PAD"\
-	-extra_args {-v\
-	--map mgmt_vdda_hvclamp_pad VDDA vdda INOUT\
-	--map user1_vdda_hvclamp_pad\\\[0\\] VDDA vdda1 INOUT\
-	--map user2_vdda_hvclamp_pad VDDA vdda2 INOUT\
-	--map mgmt_vssa_hvclamp_pad VSSA vssa INOUT\
-	--map user1_vssa_hvclamp_pad\\\[0\\] VSSA vssa1 INOUT\
-	--map user2_vssa_hvclamp_pad VSSA vssa2 INOUT\
-	--map mgmt_vccd_lvclamp_pad VCCD vccd INOUT\
-	--map user1_vccd_lvclamp_pad VCCD vccd1 INOUT\
-	--map user2_vccd_lvclamp_pad VCCD vccd2 INOUT\
-	--map mgmt_vssd_lvclmap_pad VSSD vssd INOUT\
-	--map user1_vssd_lvclmap_pad VSSD vssd1 INOUT\
-	--map user2_vssd_lvclmap_pad VSSD vssd2 INOUT\
-	--map mgmt_vddio_hvclamp_pad\\\[0\\] VDDIO vddio INOUT\
-	--map mgmt_vssio_hvclamp_pad\\\[0\\] VSSIO vssio INOUT}
+remove_empty_nets -input $::env(CURRENT_DEF)
+
+add_macro_obs \
+	-defFile $::env(CURRENT_DEF) \
+	-lefFile $::env(MERGED_LEF_UNPADDED) \
+	-obstruction core_obs \
+	-placementX 500 \
+	-placementY 500 \
+	-sizeWidth 2200 \
+	-sizeHeight 4300 \
+	-fixed 1 \
+	-layerNames "met1 met2 met3 met4 met5"
+
+
+li1_hack_start
+global_routing
+detailed_routing
+li1_hack_end
+
+# label_macro_pins\
+# 	-lef $::env(MERGED_LEF_UNPADDED)\
+# 	-netlist_def $::env(CURRENT_DEF)\
+# 	-pad_pin_name "PAD"\
+# 	-extra_args {-v\
+# 	--map mgmt_vdda_hvclamp_pad VDDA vdda INOUT\
+# 	--map user1_vdda_hvclamp_pad\\\[0\\] VDDA vdda1 INOUT\
+# 	--map user2_vdda_hvclamp_pad VDDA vdda2 INOUT\
+# 	--map mgmt_vssa_hvclamp_pad VSSA vssa INOUT\
+# 	--map user1_vssa_hvclamp_pad\\\[0\\] VSSA vssa1 INOUT\
+# 	--map user2_vssa_hvclamp_pad VSSA vssa2 INOUT\
+# 	--map mgmt_vccd_lvclamp_pad VCCD vccd INOUT\
+# 	--map user1_vccd_lvclamp_pad VCCD vccd1 INOUT\
+# 	--map user2_vccd_lvclamp_pad VCCD vccd2 INOUT\
+# 	--map mgmt_vssd_lvclmap_pad VSSD vssd INOUT\
+# 	--map user1_vssd_lvclmap_pad VSSD vssd1 INOUT\
+# 	--map user2_vssd_lvclmap_pad VSSD vssd2 INOUT\
+# 	--map mgmt_vddio_hvclamp_pad\\\[0\\] VDDIO vddio INOUT\
+# 	--map mgmt_vssio_hvclamp_pad\\\[0\\] VSSIO vssio INOUT}
+
 
 run_magic
 
-run_magic_drc
+# run_magic_drc
 
 save_views       -lef_path $::env(magic_result_file_tag).lef \
                  -def_path $::env(CURRENT_DEF) \
@@ -51,5 +79,5 @@ save_views       -lef_path $::env(magic_result_file_tag).lef \
                  -tag $::env(RUN_TAG)
 
 
-run_magic_spice_export
-run_lvs
+# run_magic_spice_export
+# run_lvs
