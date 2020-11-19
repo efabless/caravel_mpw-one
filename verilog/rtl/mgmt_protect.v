@@ -76,6 +76,8 @@ module mgmt_protect (
 	wire user1_vdd_powergood;
 	wire user2_vdd_powergood;
 
+	wire [127:0] la_data_in_mprj_bar;
+
         sky130_fd_sc_hd__conb_1 mprj_logic_high [458:0] (
 `ifdef USE_POWER_PINS
                 .VPWR(vccd1),
@@ -156,7 +158,19 @@ module mgmt_protect (
 	// data input to the management core to be a solid logic 0 when
 	// the user project is powered down.
 
-	sky130_fd_sc_hd__nor2b_4 user_to_mprj_in_buffers [127:0] (
+	sky130_fd_sc_hd__nand2_4 user_to_mprj_in_gates [127:0] (
+`ifdef USE_POWER_PINS
+                .VPWR(vccd),
+                .VGND(vssd),
+                .VPB(vccd),
+                .VNB(vssd),
+`endif
+		.Y(la_data_in_mprj_bar),
+		.A(la_data_out_core),
+		.B(mprj_logic1[457:330])
+	);
+
+	sky130_fd_sc_hd__inv_8 user_to_mprj_in_buffers [127:0] (
 `ifdef USE_POWER_PINS
                 .VPWR(vccd),
                 .VGND(vssd),
@@ -164,8 +178,7 @@ module mgmt_protect (
                 .VNB(vssd),
 `endif
 		.Y(la_data_in_mprj),
-		.A(mprj_logic1[457:330]),
-		.B_N(~la_data_out_core)
+		.A(la_data_in_mprj_bar)
 	);
 
 	// The remaining circuitry guards against the management
