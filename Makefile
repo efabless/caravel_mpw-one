@@ -6,6 +6,22 @@ LARGE_FILES_GZ := $(addsuffix .gz, $(LARGE_FILES))
 ARCHIVES := $(shell find . -type f -name "*.gz")
 ARCHIVE_SOURCES := $(basename $(ARCHIVES))
 
+ifndef PDK_ROOT
+$(error PDK_ROOT is undefined, please export it before running make)
+endif
+
+.DEFAULT_GOAL := ship
+
+# We need portable GDS_FILE pointers...
+.PHONY: ship
+ship: uncompress
+	@echo "###############################################"
+	@echo "Generating Caravel GDS (sources are in the 'gds' directory)"
+	@sleep 1
+	@cd mag && MAGTYPE=mag magic -rcfile ${PDK_ROOT}/sky130A/libs.tech/magic/current/sky130A.magicrc -noc -dnull mag2gds.tcl < /dev/null
+	mv mag/caravel_out.gds gds
+
+
 .PHONY: clean
 clean:
 	echo "clean"
@@ -19,10 +35,8 @@ verify:
 
 
 $(LARGE_FILES_GZ): %.gz: %
-	@if [ $(suffix $<) == ".gz" ]; then\
-		echo "Warning: $< is already compressed. Skipping...";\
-	else\
-		gzip $< > /dev/null &&\
+	@if ! [ $(suffix $<) == ".gz" ]; then\
+		gzip -n $< > /dev/null &&\
 		echo "$< -> $@";\
 	fi
 
@@ -34,7 +48,7 @@ compress: $(LARGE_FILES_GZ)
 
 
 $(ARCHIVE_SOURCES): %: %.gz
-	@gzip -d $< &&\
+	gzip -d $< &&\
 	echo "$< -> $@"
 
 .PHONY: uncompress
