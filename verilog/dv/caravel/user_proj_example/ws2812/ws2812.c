@@ -33,8 +33,8 @@ void main()
     /* 
     Inputs
 
-    0   clock
-    1   reset
+    system clock
+    system reset
 
 
     Outputs
@@ -42,8 +42,6 @@ void main()
     2 data for ws2812
     */
 
-	reg_mprj_io_0 =  GPIO_MODE_USER_STD_INPUT_NOPULL;
-    reg_mprj_io_1 =  GPIO_MODE_USER_STD_INPUT_NOPULL;
     reg_mprj_io_2 =  GPIO_MODE_USER_STD_OUTPUT;
 
     /* Apply configuration */

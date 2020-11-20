@@ -31,8 +31,8 @@ void main()
     /* 
     Inputs
 
-    0   clock
-    1   reset
+    system clock
+    system reset
     2   adj hours
     3   adj min
     4   adj sec
@@ -45,8 +45,6 @@ void main()
     7-12 rrggbb
     */
 
-	reg_mprj_io_0 =  GPIO_MODE_USER_STD_INPUT_NOPULL;
-    reg_mprj_io_1 =  GPIO_MODE_USER_STD_INPUT_NOPULL;
     reg_mprj_io_2 =  GPIO_MODE_USER_STD_INPUT_NOPULL;
     reg_mprj_io_3 =  GPIO_MODE_USER_STD_INPUT_NOPULL;
     reg_mprj_io_4 =  GPIO_MODE_USER_STD_INPUT_NOPULL;
