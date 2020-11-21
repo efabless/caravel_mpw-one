@@ -7,7 +7,7 @@
 */
 
 #define PROJECT 3
-#define NUMNODES 2
+#define NUMNODES 4
 
 void main()
 {
@@ -44,27 +44,12 @@ void main()
     */
 
 	volatile uint32_t *io = &reg_mprj_io_0;
-#ifndef notdef
 	for (int i = 0; i < NUMNODES; i++) {
 		for (int j = 0; j <= 12; j += 6)
 			io[i + j] = GPIO_MODE_USER_STD_INPUT_NOPULL;
 		for (int j = 18; j <= 30; j += 6)
 			io[i + j] = GPIO_MODE_USER_STD_OUTPUT;
 	}
-#else
-	reg_mprj_io_0 = GPIO_MODE_USER_STD_INPUT_NOPULL;
-	reg_mprj_io_1 = GPIO_MODE_USER_STD_INPUT_NOPULL;
-	reg_mprj_io_6 = GPIO_MODE_USER_STD_INPUT_NOPULL;
-	reg_mprj_io_7 = GPIO_MODE_USER_STD_INPUT_NOPULL;
-	reg_mprj_io_12 = GPIO_MODE_USER_STD_INPUT_NOPULL;
-	reg_mprj_io_13 = GPIO_MODE_USER_STD_INPUT_NOPULL;
-	reg_mprj_io_18 = GPIO_MODE_USER_STD_OUTPUT;
-	reg_mprj_io_19 = GPIO_MODE_USER_STD_OUTPUT;
-	reg_mprj_io_24 = GPIO_MODE_USER_STD_OUTPUT;
-	reg_mprj_io_25 = GPIO_MODE_USER_STD_OUTPUT;
-	reg_mprj_io_30 = GPIO_MODE_USER_STD_OUTPUT;
-	reg_mprj_io_31 = GPIO_MODE_USER_STD_OUTPUT;
-#endif
 			
     /* Apply configuration */
     reg_mprj_xfer = 1;
