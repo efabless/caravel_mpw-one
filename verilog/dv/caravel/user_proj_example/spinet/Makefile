@@ -24,7 +24,7 @@ hex:  ${PATTERN:=.hex}
 	vvp $<
 
 %.elf: %.c $(FIRMWARE_PATH)/sections.lds $(FIRMWARE_PATH)/start.s
-	$(TOOLCHAIN_PREFIX)gcc -mabi=ilp32 -march=rv32imc -Wl,-Bstatic,-T,$(FIRMWARE_PATH)/sections.lds,--strip-debug -ffreestanding -nostdlib -o $@ $(FIRMWARE_PATH)/start.s $<
+	$(TOOLCHAIN_PREFIX)gcc -O2 -mabi=ilp32 -march=rv32imc -Wl,-Bstatic,-T,$(FIRMWARE_PATH)/sections.lds,--strip-debug -ffreestanding -nostdlib -o $@ $(FIRMWARE_PATH)/start.s $<
 
 %.hex: %.elf
 	$(TOOLCHAIN_PREFIX)objcopy -O verilog $< $@

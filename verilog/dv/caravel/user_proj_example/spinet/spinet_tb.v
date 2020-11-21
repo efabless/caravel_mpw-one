@@ -50,7 +50,7 @@ module spinet_tb;
 		$dumpvars(0, spinet_tb);
 
 		// Repeat cycles of 1000 clock edges as needed to complete testbench
-		repeat (30) begin
+		repeat (15) begin
 			repeat (1000) @(posedge clock);
 		end
 		$display("%c[1;31m",27);
@@ -61,36 +61,40 @@ module spinet_tb;
 
 	reg [15:0] snd, rcv;
 	initial begin
-		// Wait for initial reset (not clear what signal to wait for?)
-		#1000;
-		// Node 2 sends one packet to node 4
-		snd <= {2'b10,3'h4,3'h2,8'h42};
-		#100 ss[2] <= 0;
+		// Wait for initial reset
+		wait (uut.la_data_in_mprj[0] === 1'b1);
+		wait (uut.la_data_in_mprj[0] === 1'b0);
+		// Node 0 sends one packet to node 1
+		snd <= {2'b10,3'h1,3'h0,8'h42};
+		#100 ss[0] <= 0;
 		#50;
 		repeat (16) begin
-			mosi[2] <= snd[15];
-			#50 sck[2] <= 1;
-			rcv <= {rcv[15:0],miso[2]};
-			#50 sck[2] <= 0;
+			#50 mosi[0] <= snd[15];
+			sck[0] <= 1;
+			#50 rcv <= {rcv[14:0],miso[0]};
+			sck[0] <= 0;
 			snd <= snd << 1;
 		end
-		#100 ss[2] <= 1;
-		// Wait for node 4 to see RXRDY
-		wait (rxrdy[4] != 0)
-		// Node 4 reads the packet
+		#100 ss[0] <= 1;
+		// Wait for node 1 to see RXRDY
+		wait (rxrdy[1] != 0)
+		// Node 1 reads the packet
 		snd <= 0;
-		ss[4] <= 0;
+		ss[1] <= 0;
 		#50
 		repeat (16) begin
-			mosi[4] <= snd[15];
-			#50 sck[4] <= 1;
-			rcv <= {rcv[15:0],miso[4]};
-			#50 sck[4] <= 0;
+			#50 mosi[1] <= snd[15];
+			sck[1] <= 1;
+			#50 rcv <= {rcv[14:0],miso[1]};
+			sck[1] <= 0;
 			snd <= snd << 1;
 		end
-		#100 ss[4] <= 1;
-		$display("received: %x", rcv);
-		$display("Monitor: Test Passed");
+		#100 ss[1] <= 1;
+		$display("received: %h", rcv);
+		if (rcv == {2'b10,3'h1,3'h0,8'h42})
+			$display("Monitor: Test Passed");
+		else
+			$display("Monitor: Test Failed");
 	        $finish;
 	end
 
