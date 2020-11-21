@@ -3,12 +3,9 @@ RTL_PATH = ../../../../rtl
 IP_PATH = ../../../../ip
 BEHAVIOURAL_MODELS = ../../ 
 
-GCC_PATH?=/Users/dan.rodrigues/opt/riscv-none-embed-gcc/8.3.0-1.1/bin
-# GCC_PREFIX?=riscv32-unknown-elf
-# PDK_PATH?=/ef/tech/SW/sky130A
-
-GCC_PREFIX=riscv-none-embed
-PDK_PATH?=/Users/dan.rodrigues/hw/sky130A
+GCC_PATH?=/ef/apps/bin
+GCC_PREFIX?=riscv32-unknown-elf
+PDK_PATH?=/ef/tech/SW/sky130A
 
 .SUFFIXES:
 
@@ -32,7 +29,7 @@ hex:  ${PATTERN:=.hex}
 %.hex: %.elf
 	${GCC_PATH}/${GCC_PREFIX}-objcopy -O verilog $< $@ 
 	# to fix flash base address
-	gsed -i 's/@10000000/@00000000/g' $@
+	sed -i 's/@10000000/@00000000/g' $@
 
 %.bin: %.elf
 	${GCC_PATH}/${GCC_PREFIX}-objcopy -O binary $< /dev/stdout | tail -c +1048577 > $@
