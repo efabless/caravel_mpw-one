@@ -31,7 +31,10 @@ Xcap2 vcap vss sky130_fd_pr__cap_mim_m3_2 l=30 w=30
 
 * Note: 20 resistors of length 25um connected in series
 Xres1 vdda vin vss sky130_fd_pr__res_xhigh_po_0p69 l=500
-Xres2 vin vss vss sky130_fd_pr__res_xhigh_po_0p69 l=149
+* Note: 6 resistors of length 25um connected in series
+Xres2 vin vss vss sky130_fd_pr__res_xhigh_po_0p69 l=150
+* Note: 2 dummy resistors of length 25um
+Xres3 vss vss vss sky130_fd_pr__res_xhigh_po_0p69 l=50
 
 * Triple current mirror, ratios 8:1, 7:1, and 7:1, with p-cascodes
 *   D     G     S     B
@@ -58,6 +61,9 @@ Xlv1 out vss vss vccd vccd por_l sky130_fd_sc_hvl__buf_8
 
 * Level shift down (inverter)
 Xlv2 out vss vss vccd vccd porb_l sky130_fd_sc_hvl__inv_8
+
+* Fill cell
+Xfill vss vss vccd vccd sky130_fd_sc_hvl__fill_4
 
 * No tap cell in library?
 * Xtap vdda vss sky130_fd_sc_hvl__tapvpwrvgnd_1
