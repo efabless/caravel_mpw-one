@@ -1,7 +1,10 @@
 magic
 tech sky130A
 magscale 1 2
-timestamp 1605995445
+timestamp 1606063140
+<< error_p >>
+rect -221 351 -220 397
+rect -193 379 -192 419
 << nwell >>
 rect -338 -497 338 497
 << mvpmos >>
@@ -53,9 +56,8 @@ rect -80 -297 80 -281
 rect -64 247 64 281
 rect -64 -281 64 -247
 << locali >>
-rect -260 385 -164 419
-rect 164 385 260 419
-rect -260 323 -226 385
+rect -260 385 -181 419
+rect 181 385 260 419
 rect 226 323 260 385
 rect -80 247 -64 281
 rect 64 247 80 281
@@ -70,20 +72,28 @@ rect 226 -385 260 -323
 rect -260 -419 -164 -385
 rect 164 -419 260 -385
 << viali >>
-rect -260 -52 -226 256
+rect -181 385 -164 419
+rect -164 385 164 419
+rect 164 385 181 419
+rect -260 323 -226 385
+rect -260 38 -226 323
 rect -64 247 64 281
 rect -126 -188 -92 188
 rect 92 -188 126 188
 rect -64 -281 64 -247
 << metal1 >>
+rect -193 419 193 425
+rect -266 385 -220 397
+rect -266 38 -260 385
+rect -226 38 -220 385
+rect -193 385 -181 419
+rect 181 385 193 419
+rect -193 379 193 385
 rect -76 281 76 287
-rect -266 256 -220 268
-rect -266 -52 -260 256
-rect -226 -52 -220 256
 rect -76 247 -64 281
 rect 64 247 76 281
 rect -76 241 76 247
-rect -266 -64 -220 -52
+rect -266 26 -220 38
 rect -132 188 -86 200
 rect -132 -188 -126 188
 rect -92 -188 -86 188
@@ -99,6 +109,6 @@ rect -76 -287 76 -281
 << properties >>
 string gencell sky130_fd_pr__pfet_g5v0d10v5
 string FIXED_BBOX -243 -402 243 402
-string parameters w 2.00 l 0.80 m 1 nf 1 diffcov 100 polycov 100 guard 1 glc 1 grc 1 gtc 1 gbc 1 tbcov 100 rlcov 100 topc 1 botc 1 poverlap 0 doverlap 1 lmin 0.50 wmin 0.42 compatible {sky130_fd_pr__pfet_01v8  sky130_fd_pr__pfet_01v8_lvt sky130_fd_pr__pfet_01v8_hvt  sky130_fd_pr__pfet_g5v0d10v5} full_metal 1 viagl +40 viagr 0 viagt 0 viagb 0 viagate 100 viadrn 100 viasrc 100
+string parameters w 2.00 l 0.80 m 1 nf 1 diffcov 100 polycov 100 guard 1 glc 1 grc 1 gtc 1 gbc 1 tbcov 100 rlcov 100 topc 1 botc 1 poverlap 0 doverlap 1 lmin 0.50 wmin 0.42 compatible {sky130_fd_pr__pfet_01v8  sky130_fd_pr__pfet_01v8_lvt sky130_fd_pr__pfet_01v8_hvt  sky130_fd_pr__pfet_g5v0d10v5} full_metal 1 viagl -45 viagr 0 viagt 80 viagb 0 viagate 100 viadrn 100 viasrc 100
 string library sky130
 << end >>

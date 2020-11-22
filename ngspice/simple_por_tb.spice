@@ -16,10 +16,10 @@
 Vpwr vdda vss DC=0 PWL(0.0 0 100u 0 5m 3.3)
 Vdig vccd vss DC=0 PWL(0.0 0 300u 0 5.3m 1.8)
 Rgnd vss 0 0.01
-Cload1 por_h  vss 1E-12
+Cload1 porb_h  vss 1E-12
 Cload2 por_l  vss 1E-12
 Cload3 porb_l vss 1E-12
-Xpor vdda vccd vss por_h por_l porb_l simple_por
+Xpor vdda vccd vss porb_h por_l porb_l simple_por
 *----------------------------
 
 *----------------------------
@@ -27,7 +27,7 @@ Xpor vdda vccd vss por_h por_l porb_l simple_por
 *----------------------------
 .control
 tran 10u 20m
-plot por_h
+plot porb_h
 plot por_l
 plot porb_l
 .endc
