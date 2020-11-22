@@ -18,19 +18,20 @@ module spinet_tb;
 	localparam N = 6;
 
 	// SPI signals for each node
-	reg  [N-1:0] mosi, sck, ss;
-	wire [N-1:0]miso, txrdy, rxrdy;
-	assign mprj_io[5:0]   = mosi;
-	assign mprj_io[11:6]  = sck;
-	assign mprj_io[17:12] = ss;
+	reg mosi0, sck0, ss0;
+	wire [N-1:0] mosi, sck, ss;
+	wire [N-1:0] miso, txrdy, rxrdy;
+	assign mprj_io[5:0]   = {mosi[5:1],mosi0};
+	assign mprj_io[11:6]  = {sck[5:1],sck0};
+	assign mprj_io[17:12] = {ss[5:1],ss0};
 	assign miso  = mprj_io[23:18];
 	assign txrdy = mprj_io[29:24];
 	assign rxrdy = mprj_io[35:30];
 
 	initial begin
-		sck = 0;
-		ss = ~0;
-		mosi = 0;
+		sck0 = 0;
+		ss0 = ~0;
+		mosi0 = 0;
 	end
 
 	// External clock is used by default.  Make this artificially fast for the
@@ -50,7 +51,7 @@ module spinet_tb;
 		$dumpvars(0, spinet_tb);
 
 		// Repeat cycles of 1000 clock edges as needed to complete testbench
-		repeat (15) begin
+		repeat (50) begin
 			repeat (1000) @(posedge clock);
 		end
 		$display("%c[1;31m",27);
@@ -59,44 +60,61 @@ module spinet_tb;
 		$finish;
 	end
 
-	reg [15:0] snd, rcv;
+	reg [15:0] snd, rcv, sent;
+	reg [N-1:0] echoed = 1;
 	initial begin
 		// Wait for initial reset
 		wait (uut.la_data_in_mprj[0] === 1'b1);
 		wait (uut.la_data_in_mprj[0] === 1'b0);
-		// Node 0 sends one packet to node 1
-		snd <= {2'b10,3'h1,3'h0,8'h42};
-		#100 ss[0] <= 0;
-		#50;
-		repeat (16) begin
-			#50 mosi[0] <= snd[15];
-			sck[0] <= 1;
-			#50 rcv <= {rcv[14:0],miso[0]};
-			sck[0] <= 0;
-			snd <= snd << 1;
+		// Node 0 sends one packet to each other node
+		for (integer i = 1; i < N; i = i + 1) begin
+			snd <= {2'b10,3'h0,3'h0,8'h40};
+			snd[13:11] <= i;
+			snd[2:0] <= i;
+			#100 ss0 <= 0;
+			sent <= snd;
+			#50;
+			repeat (16) begin
+				#50 mosi0 <= snd[15];
+				sck0 <= 1;
+				#50 rcv <= {rcv[14:0],miso[0]};
+				sck0 <= 0;
+				snd <= snd << 1;
+			end
+			#100 ss0 <= 1;
+			$display("sent %h received: %h", sent, rcv);
+			if (rcv[15])
+				echoed[rcv[10:8]] = 1;
+			
 		end
-		#100 ss[0] <= 1;
-		// Wait for node 1 to see RXRDY
-		wait (rxrdy[1] != 0)
-		// Node 1 reads the packet
+		#100 ss0 <= 1;
+		// Read packets echoed back by other nodes
 		snd <= 0;
-		ss[1] <= 0;
-		#50
-		repeat (16) begin
-			#50 mosi[1] <= snd[15];
-			sck[1] <= 1;
-			#50 rcv <= {rcv[14:0],miso[1]};
-			sck[1] <= 0;
-			snd <= snd << 1;
+		while (&echoed == 0) begin
+			wait (rxrdy[0] === 1'b1);
+			ss0 <= 0;
+			#50;
+			repeat (16) begin
+				#50 mosi0 <= snd[15];
+				sck0 <= 1;
+				#50 rcv <= {rcv[14:0],miso[0]};
+				sck0 <= 0;
+				snd <= snd << 1;
+			end
+			sent <= snd;
+			#100 ss0 <= 1;
+			$display("sent %h received: %h", sent, rcv);
+			if (rcv[15])
+				echoed[rcv[10:8]] = 1;
 		end
-		#100 ss[1] <= 1;
-		$display("received: %h", rcv);
-		if (rcv == {2'b10,3'h1,3'h0,8'h42})
-			$display("Monitor: Test Passed");
-		else
-			$display("Monitor: Test Failed");
-	        $finish;
+		$display("Monitor: Test Passed");
+	    $finish;
 	end
+
+	genvar node;
+	generate for (node = 1; node < N; node = node + 1)
+		echo ECHO (mosi[node], sck[node], ss[node], miso[node], txrdy[node], rxrdy[node]);
+	endgenerate
 
 	initial begin
 		RSTB <= 1'b0;
@@ -175,5 +193,48 @@ module spinet_tb;
 		.io2(),			// not used
 		.io3()			// not used
 	);
+
+endmodule
+
+// SPI host emulation to read and echo packets
+module echo (
+	output reg mosi,
+	output reg sck,
+	output reg ss,
+	input miso,
+	input txrdy,
+	input rxrdy);
+
+	reg [15:0] pkt = 0;
+	initial begin
+		ss = 1;
+		sck = 0;
+		mosi = 0;
+	end
+	always @(posedge rxrdy) begin
+		// receive a packet
+		ss <= 0;
+		sck <= 0;
+		mosi <= 0;
+		#50;
+		repeat (16) begin
+			#50 sck <= 1;
+			#50 pkt <= {pkt[14:0],miso};
+			sck <= 0;
+		end
+		#100 ss <= 1;
+		// swap sender and receiver address
+		pkt[13:8] <= {pkt[10:8],pkt[13:11]};
+		// send the packet back
+		#50 ss <= 0;
+		#50;
+		repeat (16) begin
+			#50 mosi <= pkt[15];
+			sck <= 1;
+			#50 sck <= 0;
+			pkt <= pkt << 1;
+		end
+		#100 ss <= 1;
+	end
 
 endmodule

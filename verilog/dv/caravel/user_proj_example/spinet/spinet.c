@@ -7,7 +7,7 @@
 */
 
 #define PROJECT 3
-#define NUMNODES 4
+#define NUMNODES 6
 
 void main()
 {
