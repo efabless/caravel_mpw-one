@@ -1,14 +1,23 @@
 magic
 tech sky130A
 magscale 1 2
-timestamp 1605927685
+timestamp 1605995445
 << error_s >>
+rect -4389 9085 -4379 9131
+rect -4361 9057 -4351 9159
+rect -4073 9057 -4066 9159
+rect -4045 9085 -4038 9131
+rect -1626 9085 -1613 9131
+rect -1598 9057 -1585 9159
 rect -592 8620 -576 8678
 rect 26 8666 30 8678
 rect 38 8632 42 8666
+rect -5119 8532 -5112 8578
+rect -5091 8504 -5084 8605
 rect -404 8054 -392 8100
 rect -125 8074 -121 8108
 << pwell >>
+rect -7384 8100 -7328 8110
 rect -5312 7347 -5094 7557
 << locali >>
 rect -7906 8982 -7699 9791
@@ -17,7 +26,7 @@ rect -4804 8982 -1313 8986
 rect -7906 8906 -1313 8982
 rect -7906 8836 -787 8906
 rect -4804 8732 -787 8836
-rect -7912 7919 -7737 8709
+rect -7912 7919 -7726 8710
 rect -4804 8536 -1313 8732
 rect -4940 7919 -1313 8369
 rect -7912 7674 2913 7919
@@ -57,6 +66,8 @@ rect 2708 1696 2888 1912
 rect -5299 7360 -5107 7546
 rect 2254 7128 2392 7560
 << metal1 >>
+rect -7034 9616 -5348 9660
+rect -3564 9612 -2090 9656
 rect -1167 9603 2564 9740
 rect -1167 9579 -783 9603
 rect -7662 9555 -7565 9557
@@ -64,10 +75,14 @@ rect -7662 9170 -7534 9555
 rect -7220 9423 -5026 9559
 rect -7345 9184 -5310 9319
 rect -4854 9189 -4547 9335
-rect -7662 8091 -7565 9170
+rect -7662 8652 -7565 9170
+rect -7034 9084 -5348 9128
 rect -4361 8875 -4291 9566
 rect -5465 8805 -4291 8875
+rect -7662 8500 -7584 8652
+rect -7662 8104 -7565 8500
 rect -7502 7475 -7448 8564
+rect -7066 8534 -5592 8578
 rect -7384 8276 -7213 8503
 rect -5465 8483 -5395 8805
 rect -4361 8804 -4291 8805
@@ -76,11 +91,14 @@ rect -5091 8696 -5021 8704
 rect -4148 8696 -4066 9575
 rect -3738 9403 -1776 9564
 rect -3881 9176 -2045 9336
+rect -3568 9084 -2094 9128
 rect -5091 8605 -4066 8696
 rect -7384 8110 -5287 8276
-rect -7384 7864 -7213 8110
+rect -7384 8100 -7213 8110
 rect -5091 8104 -5005 8605
 rect -1598 8249 -1516 9575
+rect -7342 7864 -7213 8100
+rect -7066 8020 -5592 8064
 rect -1167 7664 -943 9579
 rect -789 8765 2570 9020
 rect -789 8632 2734 8765
@@ -111,64 +129,64 @@ rect 15 581 71 1381
 rect 219 581 275 1381
 << metal3 >>
 rect 3560 3862 4360 3982
-use sky130_fd_pr__nfet_g5v0d10v5_BN2NTK  sky130_fd_pr__nfet_g5v0d10v5_BN2NTK_0
-timestamp 1605923309
-transform 1 0 -5189 0 1 8299
-box -308 -458 308 458
-use sky130_fd_pr__nfet_g5v0d10v5_BN2NTK  sky130_fd_pr__nfet_g5v0d10v5_BN2NTK_1
-timestamp 1605923309
-transform -1 0 -7477 0 1 8299
-box -308 -458 308 458
-use sky130_fd_pr__nfet_g5v0d10v5_BGRBXK  sky130_fd_pr__nfet_g5v0d10v5_BGRBXK_0
-timestamp 1605923309
-transform 1 0 -6333 0 1 8299
+use sky130_fd_pr__pfet_g5v0d10v5_6UDFJU  sky130_fd_pr__pfet_g5v0d10v5_6UDFJU_0
+timestamp 1605994897
+transform 1 0 -6190 0 1 9372
+box -1101 -497 1101 497
+use sky130_fd_pr__pfet_g5v0d10v5_6E4TNU  sky130_fd_pr__pfet_g5v0d10v5_6E4TNU_0
+timestamp 1605994897
+transform 1 0 -7439 0 1 9372
+box -338 -497 338 497
+use sky130_fd_pr__nfet_g5v0d10v5_CWNXJM  sky130_fd_pr__nfet_g5v0d10v5_CWNXJM_0
+timestamp 1605994897
+transform 1 0 -6332 0 1 8300
 box -962 -458 962 458
+use sky130_fd_pr__nfet_g5v0d10v5_ZK8HQC  sky130_fd_pr__nfet_g5v0d10v5_ZK8HQC_1
+timestamp 1605994897
+transform -1 0 -7476 0 1 8300
+box -308 -458 308 458
+use sky130_fd_pr__pfet_g5v0d10v5_ZPXEXA  sky130_fd_pr__pfet_g5v0d10v5_ZPXEXA_0
+timestamp 1605995445
+transform 1 0 -2829 0 1 9372
+box -992 -497 992 497
+use sky130_fd_pr__pfet_g5v0d10v5_Z95PRA  sky130_fd_pr__pfet_g5v0d10v5_Z95PRA_0
+timestamp 1605995445
+transform 1 0 -4941 0 1 9372
+box -338 -497 338 497
+use sky130_fd_pr__pfet_g5v0d10v5_6E4TNU  sky130_fd_pr__pfet_g5v0d10v5_6E4TNU_2
+timestamp 1605994897
+transform 1 0 -4455 0 1 9372
+box -338 -497 338 497
+use sky130_fd_pr__pfet_g5v0d10v5_6E4TNU  sky130_fd_pr__pfet_g5v0d10v5_6E4TNU_3
+timestamp 1605994897
+transform 1 0 -3969 0 1 9372
+box -338 -497 338 497
+use sky130_fd_pr__nfet_g5v0d10v5_ZK8HQC  sky130_fd_pr__nfet_g5v0d10v5_ZK8HQC_0
+timestamp 1605994897
+transform 1 0 -5188 0 1 8300
+box -308 -458 308 458
+use sky130_fd_pr__pfet_g5v0d10v5_6E4TNU  sky130_fd_pr__pfet_g5v0d10v5_6E4TNU_4
+timestamp 1605994897
+transform 1 0 -1689 0 1 9372
+box -338 -497 338 497
 use sky130_fd_sc_hvl__schmittbuf_1  sky130_fd_sc_hvl__schmittbuf_1_0 ~/projects/efabless/tech/SW/sky130A/libs.ref/sky130_fd_sc_hvl/mag
-timestamp 1605926584
+timestamp 1605995445
 transform 1 0 -790 0 1 7935
 box -66 -23 1122 897
 use sky130_fd_sc_hvl__buf_8  sky130_fd_sc_hvl__buf_8_0 ~/projects/efabless/tech/SW/sky130A/libs.ref/sky130_fd_sc_hvl/mag
-timestamp 1605926584
+timestamp 1605995445
 transform 1 0 266 0 1 7935
 box -66 -23 1986 897
-use sky130_fd_sc_hvl__fill_4  sky130_fd_sc_hvl__fill_4_0 ~/projects/efabless/tech/SW/sky130A/libs.ref/sky130_fd_sc_hvl/mag
-timestamp 1605926584
-transform 1 0 2186 0 1 7935
-box -66 -23 450 897
-use sky130_fd_pr__pfet_g5v0d10v5_625PAY  sky130_fd_pr__pfet_g5v0d10v5_625PAY_3
-timestamp 1605926584
-transform 1 0 -4941 0 1 9372
-box -338 -497 338 497
-use sky130_fd_pr__pfet_g5v0d10v5_625PDX  sky130_fd_pr__pfet_g5v0d10v5_625PDX_0
-timestamp 1605926584
-transform 1 0 -6190 0 1 9372
-box -1101 -497 1101 497
-use sky130_fd_pr__pfet_g5v0d10v5_625PAY  sky130_fd_pr__pfet_g5v0d10v5_625PAY_4
-timestamp 1605926584
-transform 1 0 -7439 0 1 9372
-box -338 -497 338 497
-use sky130_fd_pr__pfet_g5v0d10v5_625P8Z  sky130_fd_pr__pfet_g5v0d10v5_625P8Z_0
-timestamp 1605926584
-transform 1 0 -2829 0 1 9372
-box -992 -497 992 497
-use sky130_fd_pr__pfet_g5v0d10v5_625PAY  sky130_fd_pr__pfet_g5v0d10v5_625PAY_0
-timestamp 1605926584
-transform 1 0 -3969 0 1 9372
-box -338 -497 338 497
-use sky130_fd_pr__pfet_g5v0d10v5_625PAY  sky130_fd_pr__pfet_g5v0d10v5_625PAY_2
-timestamp 1605926584
-transform 1 0 -4455 0 1 9372
-box -338 -497 338 497
-use sky130_fd_pr__pfet_g5v0d10v5_625PAY  sky130_fd_pr__pfet_g5v0d10v5_625PAY_1
-timestamp 1605926584
-transform 1 0 -1689 0 1 9372
-box -338 -497 338 497
 use sky130_fd_sc_hvl__buf_8  sky130_fd_sc_hvl__buf_8_1
-timestamp 1605926584
+timestamp 1605995445
 transform 1 0 -790 0 -1 9703
 box -66 -23 1986 897
+use sky130_fd_sc_hvl__fill_4  sky130_fd_sc_hvl__fill_4_0 ~/projects/efabless/tech/SW/sky130A/libs.ref/sky130_fd_sc_hvl/mag
+timestamp 1605995445
+transform 1 0 2186 0 1 7935
+box -66 -23 450 897
 use sky130_fd_sc_hvl__inv_8  sky130_fd_sc_hvl__inv_8_0 ~/projects/efabless/tech/SW/sky130A/libs.ref/sky130_fd_sc_hvl/mag
-timestamp 1605926584
+timestamp 1605995445
 transform 1 0 1130 0 -1 9703
 box -66 -23 1506 897
 use sky130_fd_pr__res_xhigh_po_0p69_LV2JUS  sky130_fd_pr__res_xhigh_po_0p69_LV2JUS_0
