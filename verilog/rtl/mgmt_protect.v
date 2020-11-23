@@ -102,53 +102,19 @@ module mgmt_protect (
 
 	// Logic high in the VDDA (3.3V) domains
 
-        sky130_fd_sc_hvl__conb_1 mprj_logic_high_hvl (
+	mgmt_protect_hv powergood_check (
 `ifdef USE_POWER_PINS
-                .VPWR(vdda1),
-                .VGND(vssa1),
-                .VPB(vdda1),
-                .VNB(vssa1),
+	    .vccd(vccd),
+	    .vssd(vssd),
+	    .vdda1(vdda1),
+	    .vssa1(vssa1),
+	    .vdda2(vdda2),
+	    .vssa2(vssa2),
 `endif
-                .HI(mprj_vdd_logic1_h),
-                .LO()
-        );
-
-        sky130_fd_sc_hvl__conb_1 mprj2_logic_high_hvl (
-`ifdef USE_POWER_PINS
-                .VPWR(vdda2),
-                .VGND(vssa2),
-                .VPB(vdda2),
-                .VNB(vssa2),
-`endif
-                .HI(mprj2_vdd_logic1_h),
-                .LO()
-        );
-
-	// Level shift the logic high signals into the 1.8V domain
-
-	sky130_fd_sc_hvl__lsbufhv2lv_1 mprj_logic_high_lv (
-`ifdef USE_POWER_PINS
-		.VPWR(vdda1),
-		.VGND(vssd),
-		.LVPWR(vccd),
-		.VPB(vdda1),
-		.VNB(vssd),
-`endif
-		.X(mprj_vdd_logic1),
-		.A(mprj_vdd_logic1_h)
+	    .mprj_vdd_logic1(mprj_vdd_logic1),
+	    .mprj2_vdd_logic1(mprj2_vdd_logic1)
 	);
 
-	sky130_fd_sc_hvl__lsbufhv2lv_1 mprj2_logic_high_lv (
-`ifdef USE_POWER_PINS
-		.VPWR(vdda2),
-		.VGND(vssd),
-		.LVPWR(vccd),
-		.VPB(vdda2),
-		.VNB(vssd),
-`endif
-		.X(mprj2_vdd_logic1),
-		.A(mprj2_vdd_logic1_h)
-	);
 
 	// Buffering from the user side to the management side.
 	// NOTE:  This is intended to be better protected, by a full

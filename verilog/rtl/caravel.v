@@ -35,6 +35,7 @@
 `include "caravel_clocking.v"
 `include "mgmt_core.v"
 `include "mgmt_protect.v"
+`include "mgmt_protect_hv.v"
 `include "mprj_io.v"
 `include "chip_io.v"
 `include "user_id_programming.v"
