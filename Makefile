@@ -18,8 +18,7 @@ ship: uncompress
 	@echo "###############################################"
 	@echo "Generating Caravel GDS (sources are in the 'gds' directory)"
 	@sleep 1
-	@cd mag && MAGTYPE=mag magic -rcfile ${PDK_ROOT}/sky130A/libs.tech/magic/current/sky130A.magicrc -noc -dnull mag2gds.tcl < /dev/null
-	mv mag/caravel_out.gds gds
+	@cd gds && MAGTYPE=mag magic -rcfile ${PDK_ROOT}/sky130A/libs.tech/magic/current/sky130A.magicrc -noc -dnull gen_caravel.tcl < /dev/null
 
 
 
@@ -36,7 +35,7 @@ verify:
 
 
 $(LARGE_FILES_GZ): %.gz: %
-	if ! [ $(suffix $<) == ".gz" ]; then\
+	@if ! [ $(suffix $<) == ".gz" ]; then\
 		gzip -n --best $< > /dev/null &&\
 		echo "$< -> $@";\
 	fi
