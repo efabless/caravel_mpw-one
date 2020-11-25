@@ -1,0 +1,5148 @@
+VERSION 5.7 ;
+  NOWIREEXTENSIONATPIN ON ;
+  DIVIDERCHAR "/" ;
+  BUSBITCHARS "[]" ;
+MACRO chip_io
+  CLASS BLOCK ;
+  FOREIGN chip_io ;
+  ORIGIN 0.000 0.000 ;
+  SIZE 3588.000 BY 5188.000 ;
+  PIN clock
+    PORT
+      LAYER met5 ;
+        RECT 938.200 32.990 1000.800 95.440 ;
+    END
+  END clock
+  PIN clock_core
+    PORT
+      LAYER met2 ;
+        RECT 936.635 208.565 936.915 210.965 ;
+    END
+  END clock_core
+  PIN por
+    PORT
+      LAYER met2 ;
+        RECT 970.215 208.565 970.495 210.965 ;
+    END
+  END por
+  PIN flash_clk
+    PORT
+      LAYER met5 ;
+        RECT 1755.200 32.990 1817.800 95.440 ;
+    END
+  END flash_clk
+  PIN flash_clk_core
+    PORT
+      LAYER met2 ;
+        RECT 1808.835 208.565 1809.115 210.965 ;
+    END
+  END flash_clk_core
+  PIN flash_clk_ieb_core
+    PORT
+      LAYER met2 ;
+        RECT 1787.215 208.565 1787.495 210.965 ;
+    END
+  END flash_clk_ieb_core
+  PIN flash_clk_oeb_core
+    PORT
+      LAYER met2 ;
+        RECT 1824.475 208.565 1824.755 210.965 ;
+    END
+  END flash_clk_oeb_core
+  PIN flash_csb
+    PORT
+      LAYER met5 ;
+        RECT 1481.200 32.990 1543.800 95.440 ;
+    END
+  END flash_csb
+  PIN flash_csb_core
+    PORT
+      LAYER met2 ;
+        RECT 1534.835 208.565 1535.115 210.965 ;
+    END
+  END flash_csb_core
+  PIN flash_csb_ieb_core
+    PORT
+      LAYER met2 ;
+        RECT 1513.215 208.565 1513.495 210.965 ;
+    END
+  END flash_csb_ieb_core
+  PIN flash_csb_oeb_core
+    PORT
+      LAYER met2 ;
+        RECT 1550.475 208.565 1550.755 210.965 ;
+    END
+  END flash_csb_oeb_core
+  PIN flash_io0
+    PORT
+      LAYER met5 ;
+        RECT 2029.200 32.990 2091.800 95.440 ;
+    END
+  END flash_io0
+  PIN flash_io0_di_core
+    PORT
+      LAYER met2 ;
+        RECT 2027.635 208.565 2027.915 210.965 ;
+    END
+  END flash_io0_di_core
+  PIN flash_io0_do_core
+    PORT
+      LAYER met2 ;
+        RECT 2082.835 208.565 2083.115 210.965 ;
+    END
+  END flash_io0_do_core
+  PIN flash_io0_ieb_core
+    PORT
+      LAYER met1 ;
+        RECT 2046.610 209.340 2046.930 209.400 ;
+        RECT 2061.790 209.340 2062.110 209.400 ;
+        RECT 2077.430 209.340 2077.750 209.400 ;
+        RECT 2046.610 209.200 2077.750 209.340 ;
+        RECT 2046.610 209.140 2046.930 209.200 ;
+        RECT 2061.790 209.140 2062.110 209.200 ;
+        RECT 2077.430 209.140 2077.750 209.200 ;
+      LAYER via ;
+        RECT 2046.640 209.140 2046.900 209.400 ;
+        RECT 2061.820 209.140 2062.080 209.400 ;
+        RECT 2077.460 209.140 2077.720 209.400 ;
+      LAYER met2 ;
+        RECT 2046.035 209.170 2046.315 210.965 ;
+        RECT 2046.640 209.170 2046.900 209.430 ;
+        RECT 2046.035 209.110 2046.900 209.170 ;
+        RECT 2061.215 209.170 2061.495 210.965 ;
+        RECT 2061.820 209.170 2062.080 209.430 ;
+        RECT 2061.215 209.110 2062.080 209.170 ;
+        RECT 2076.855 209.170 2077.135 210.965 ;
+        RECT 2077.460 209.170 2077.720 209.430 ;
+        RECT 2076.855 209.110 2077.720 209.170 ;
+        RECT 2046.035 209.030 2046.840 209.110 ;
+        RECT 2061.215 209.030 2062.020 209.110 ;
+        RECT 2076.855 209.030 2077.660 209.110 ;
+        RECT 2046.035 208.565 2046.315 209.030 ;
+        RECT 2061.215 208.565 2061.495 209.030 ;
+        RECT 2076.855 208.565 2077.135 209.030 ;
+    END
+  END flash_io0_ieb_core
+  PIN flash_io0_oeb_core
+    PORT
+      LAYER met1 ;
+        RECT 2055.810 209.680 2056.130 209.740 ;
+        RECT 2055.810 209.540 2078.120 209.680 ;
+        RECT 2055.810 209.480 2056.130 209.540 ;
+        RECT 2077.980 209.340 2078.120 209.540 ;
+        RECT 2097.670 209.340 2097.990 209.400 ;
+        RECT 2077.980 209.200 2097.990 209.340 ;
+        RECT 2097.670 209.140 2097.990 209.200 ;
+      LAYER via ;
+        RECT 2055.840 209.480 2056.100 209.740 ;
+        RECT 2097.700 209.140 2097.960 209.400 ;
+      LAYER met2 ;
+        RECT 2055.235 209.170 2055.515 210.965 ;
+        RECT 2055.840 209.450 2056.100 209.770 ;
+        RECT 2055.900 209.170 2056.040 209.450 ;
+        RECT 2055.235 209.030 2056.040 209.170 ;
+        RECT 2097.700 209.170 2097.960 209.430 ;
+        RECT 2098.475 209.170 2098.755 210.965 ;
+        RECT 2097.700 209.110 2098.755 209.170 ;
+        RECT 2097.760 209.030 2098.755 209.110 ;
+        RECT 2055.235 208.565 2055.515 209.030 ;
+        RECT 2098.475 208.565 2098.755 209.030 ;
+    END
+  END flash_io0_oeb_core
+  PIN flash_io1
+    PORT
+      LAYER met5 ;
+        RECT 2303.200 32.990 2365.800 95.440 ;
+    END
+  END flash_io1
+  PIN flash_io1_di_core
+    PORT
+      LAYER met2 ;
+        RECT 2301.635 208.565 2301.915 210.965 ;
+    END
+  END flash_io1_di_core
+  PIN flash_io1_do_core
+    PORT
+      LAYER met2 ;
+        RECT 2356.835 208.565 2357.115 210.965 ;
+    END
+  END flash_io1_do_core
+  PIN flash_io1_ieb_core
+    PORT
+      LAYER met1 ;
+        RECT 2320.770 209.000 2321.090 209.060 ;
+        RECT 2335.950 209.000 2336.270 209.060 ;
+        RECT 2350.210 209.000 2350.530 209.060 ;
+        RECT 2320.770 208.860 2350.530 209.000 ;
+        RECT 2320.770 208.800 2321.090 208.860 ;
+        RECT 2335.950 208.800 2336.270 208.860 ;
+        RECT 2350.210 208.800 2350.530 208.860 ;
+      LAYER via ;
+        RECT 2320.800 208.800 2321.060 209.060 ;
+        RECT 2335.980 208.800 2336.240 209.060 ;
+        RECT 2350.240 208.800 2350.500 209.060 ;
+      LAYER met2 ;
+        RECT 2320.035 209.170 2320.315 210.965 ;
+        RECT 2335.215 209.170 2335.495 210.965 ;
+        RECT 2350.855 209.170 2351.135 210.965 ;
+        RECT 2320.035 209.090 2321.000 209.170 ;
+        RECT 2335.215 209.090 2336.180 209.170 ;
+        RECT 2350.300 209.090 2351.135 209.170 ;
+        RECT 2320.035 209.030 2321.060 209.090 ;
+        RECT 2320.035 208.565 2320.315 209.030 ;
+        RECT 2320.800 208.770 2321.060 209.030 ;
+        RECT 2335.215 209.030 2336.240 209.090 ;
+        RECT 2335.215 208.565 2335.495 209.030 ;
+        RECT 2335.980 208.770 2336.240 209.030 ;
+        RECT 2350.240 209.030 2351.135 209.090 ;
+        RECT 2350.240 208.770 2350.500 209.030 ;
+        RECT 2350.855 208.565 2351.135 209.030 ;
+    END
+  END flash_io1_ieb_core
+  PIN flash_io1_oeb_core
+    PORT
+      LAYER met1 ;
+        RECT 2329.970 209.680 2330.290 209.740 ;
+        RECT 2371.830 209.680 2372.150 209.740 ;
+        RECT 2329.970 209.540 2372.150 209.680 ;
+        RECT 2329.970 209.480 2330.290 209.540 ;
+        RECT 2371.830 209.480 2372.150 209.540 ;
+      LAYER via ;
+        RECT 2330.000 209.480 2330.260 209.740 ;
+        RECT 2371.860 209.480 2372.120 209.740 ;
+      LAYER met2 ;
+        RECT 2329.235 209.170 2329.515 210.965 ;
+        RECT 2330.000 209.450 2330.260 209.770 ;
+        RECT 2371.860 209.450 2372.120 209.770 ;
+        RECT 2330.060 209.170 2330.200 209.450 ;
+        RECT 2329.235 209.030 2330.200 209.170 ;
+        RECT 2371.920 209.170 2372.060 209.450 ;
+        RECT 2372.475 209.170 2372.755 210.965 ;
+        RECT 2371.920 209.030 2372.755 209.170 ;
+        RECT 2329.235 208.565 2329.515 209.030 ;
+        RECT 2372.475 208.565 2372.755 209.030 ;
+    END
+  END flash_io1_oeb_core
+  PIN gpio
+    PORT
+      LAYER met5 ;
+        RECT 2577.200 32.990 2639.800 95.440 ;
+    END
+  END gpio
+  PIN gpio_in_core
+    PORT
+      LAYER met2 ;
+        RECT 2575.635 208.565 2575.915 210.965 ;
+    END
+  END gpio_in_core
+  PIN gpio_inenb_core
+    PORT
+      LAYER met2 ;
+        RECT 2609.215 208.565 2609.495 210.965 ;
+    END
+  END gpio_inenb_core
+  PIN gpio_mode0_core
+    PORT
+      LAYER met2 ;
+        RECT 2603.235 208.565 2603.515 210.965 ;
+    END
+  END gpio_mode0_core
+  PIN gpio_mode1_core
+    PORT
+      LAYER met1 ;
+        RECT 2594.470 209.340 2594.790 209.400 ;
+        RECT 2624.370 209.340 2624.690 209.400 ;
+        RECT 2594.470 209.200 2624.690 209.340 ;
+        RECT 2594.470 209.140 2594.790 209.200 ;
+        RECT 2624.370 209.140 2624.690 209.200 ;
+      LAYER via ;
+        RECT 2594.500 209.140 2594.760 209.400 ;
+        RECT 2624.400 209.140 2624.660 209.400 ;
+      LAYER met2 ;
+        RECT 2594.035 209.170 2594.315 210.965 ;
+        RECT 2594.500 209.170 2594.760 209.430 ;
+        RECT 2594.035 209.110 2594.760 209.170 ;
+        RECT 2624.400 209.170 2624.660 209.430 ;
+        RECT 2624.855 209.170 2625.135 210.965 ;
+        RECT 2624.400 209.110 2625.135 209.170 ;
+        RECT 2594.035 209.030 2594.700 209.110 ;
+        RECT 2624.460 209.030 2625.135 209.110 ;
+        RECT 2594.035 208.565 2594.315 209.030 ;
+        RECT 2624.855 208.565 2625.135 209.030 ;
+    END
+  END gpio_mode1_core
+  PIN gpio_out_core
+    PORT
+      LAYER met2 ;
+        RECT 2630.835 208.565 2631.115 210.965 ;
+    END
+  END gpio_out_core
+  PIN gpio_outenb_core
+    PORT
+      LAYER met2 ;
+        RECT 2646.475 208.565 2646.755 210.965 ;
+    END
+  END gpio_outenb_core
+  PIN vccd
+    PORT
+      LAYER met5 ;
+        RECT 30.430 349.315 97.860 405.955 ;
+    END
+  END vccd
+  PIN vdda
+    PORT
+      LAYER met5 ;
+        RECT 3120.200 33.375 3182.900 95.990 ;
+    END
+  END vdda
+  PIN vddio
+    PORT
+      LAYER met5 ;
+        RECT 33.375 557.100 95.990 619.800 ;
+    END
+  END vddio
+  PIN vssa
+    PORT
+      LAYER met5 ;
+        RECT 400.200 33.375 462.900 95.990 ;
+    END
+  END vssa
+  PIN vssd
+    PORT
+      LAYER met5 ;
+        RECT 1215.045 30.430 1271.685 97.860 ;
+    END
+  END vssd
+  PIN vssio
+    PORT
+      LAYER met5 ;
+        RECT 1673.100 5092.010 1735.800 5154.625 ;
+    END
+  END vssio
+  PIN mprj_io_analog_en[0]
+    PORT
+      LAYER met2 ;
+        RECT 3377.035 529.015 3379.435 529.295 ;
+    END
+  END mprj_io_analog_en[0]
+  PIN mprj_io_analog_pol[0]
+    PORT
+      LAYER met2 ;
+        RECT 3377.035 535.455 3379.435 535.735 ;
+    END
+  END mprj_io_analog_pol[0]
+  PIN mprj_io_analog_sel[0]
+    PORT
+      LAYER met2 ;
+        RECT 3377.035 550.635 3379.435 550.915 ;
+    END
+  END mprj_io_analog_sel[0]
+  PIN mprj_io_dm[0]
+    PORT
+      LAYER met2 ;
+        RECT 3377.035 532.235 3379.435 532.515 ;
+    END
+  END mprj_io_dm[0]
+  PIN mprj_io_dm[1]
+    PORT
+      LAYER met2 ;
+        RECT 3377.035 523.035 3379.435 523.315 ;
+    END
+  END mprj_io_dm[1]
+  PIN mprj_io_dm[2]
+    PORT
+      LAYER met2 ;
+        RECT 3377.035 553.855 3379.435 554.135 ;
+    END
+  END mprj_io_dm[2]
+  PIN mprj_io_enh[0]
+    PORT
+      LAYER met2 ;
+        RECT 3377.035 544.655 3379.435 544.935 ;
+    END
+  END mprj_io_enh[0]
+  PIN mprj_io_hldh_n[0]
+    PORT
+      LAYER met2 ;
+        RECT 3377.035 547.875 3379.435 548.155 ;
+    END
+  END mprj_io_hldh_n[0]
+  PIN mprj_io_holdover[0]
+    PORT
+      LAYER met2 ;
+        RECT 3377.035 557.075 3379.435 557.355 ;
+    END
+  END mprj_io_holdover[0]
+  PIN mprj_io_ib_mode_sel[0]
+    PORT
+      LAYER met2 ;
+        RECT 3377.035 572.255 3379.435 572.535 ;
+    END
+  END mprj_io_ib_mode_sel[0]
+  PIN mprj_io_inp_dis[0]
+    PORT
+      LAYER met2 ;
+        RECT 3377.035 538.215 3379.435 538.495 ;
+    END
+  END mprj_io_inp_dis[0]
+  PIN mprj_io_oeb[0]
+    PORT
+      LAYER met2 ;
+        RECT 3377.035 575.475 3379.435 575.755 ;
+    END
+  END mprj_io_oeb[0]
+  PIN mprj_io_out[0]
+    PORT
+      LAYER met2 ;
+        RECT 3377.035 559.835 3379.435 560.115 ;
+    END
+  END mprj_io_out[0]
+  PIN mprj_io_slow_sel[0]
+    PORT
+      LAYER met2 ;
+        RECT 3377.035 513.835 3379.435 514.115 ;
+    END
+  END mprj_io_slow_sel[0]
+  PIN mprj_io_vtrip_sel[0]
+    PORT
+      LAYER met2 ;
+        RECT 3377.035 569.035 3379.435 569.315 ;
+    END
+  END mprj_io_vtrip_sel[0]
+  PIN mprj_io_in[0]
+    PORT
+      LAYER met2 ;
+        RECT 3377.035 504.635 3379.435 504.915 ;
+    END
+  END mprj_io_in[0]
+  PIN mprj_io_analog_en[10]
+    PORT
+      LAYER met2 ;
+        RECT 3377.035 3445.015 3379.435 3445.295 ;
+    END
+  END mprj_io_analog_en[10]
+  PIN mprj_io_analog_pol[10]
+    PORT
+      LAYER met2 ;
+        RECT 3377.035 3451.455 3379.435 3451.735 ;
+    END
+  END mprj_io_analog_pol[10]
+  PIN mprj_io_analog_sel[10]
+    PORT
+      LAYER met2 ;
+        RECT 3377.035 3466.635 3379.435 3466.915 ;
+    END
+  END mprj_io_analog_sel[10]
+  PIN mprj_io_dm[30]
+    PORT
+      LAYER met2 ;
+        RECT 3377.035 3448.235 3379.435 3448.515 ;
+    END
+  END mprj_io_dm[30]
+  PIN mprj_io_dm[31]
+    PORT
+      LAYER met2 ;
+        RECT 3377.035 3439.035 3379.435 3439.315 ;
+    END
+  END mprj_io_dm[31]
+  PIN mprj_io_dm[32]
+    PORT
+      LAYER met2 ;
+        RECT 3377.035 3469.855 3379.435 3470.135 ;
+    END
+  END mprj_io_dm[32]
+  PIN mprj_io_enh[10]
+    PORT
+      LAYER met2 ;
+        RECT 3377.035 3460.655 3379.435 3460.935 ;
+    END
+  END mprj_io_enh[10]
+  PIN mprj_io_hldh_n[10]
+    PORT
+      LAYER met2 ;
+        RECT 3377.035 3463.875 3379.435 3464.155 ;
+    END
+  END mprj_io_hldh_n[10]
+  PIN mprj_io_holdover[10]
+    PORT
+      LAYER met2 ;
+        RECT 3377.035 3473.075 3379.435 3473.355 ;
+    END
+  END mprj_io_holdover[10]
+  PIN mprj_io_ib_mode_sel[10]
+    PORT
+      LAYER met2 ;
+        RECT 3377.035 3488.255 3379.435 3488.535 ;
+    END
+  END mprj_io_ib_mode_sel[10]
+  PIN mprj_io_inp_dis[10]
+    PORT
+      LAYER met2 ;
+        RECT 3377.035 3454.215 3379.435 3454.495 ;
+    END
+  END mprj_io_inp_dis[10]
+  PIN mprj_io_oeb[10]
+    PORT
+      LAYER met2 ;
+        RECT 3377.035 3491.475 3379.435 3491.755 ;
+    END
+  END mprj_io_oeb[10]
+  PIN mprj_io_out[10]
+    PORT
+      LAYER met2 ;
+        RECT 3377.035 3475.835 3379.435 3476.115 ;
+    END
+  END mprj_io_out[10]
+  PIN mprj_io_slow_sel[10]
+    PORT
+      LAYER met2 ;
+        RECT 3377.035 3429.835 3379.435 3430.115 ;
+    END
+  END mprj_io_slow_sel[10]
+  PIN mprj_io_vtrip_sel[10]
+    PORT
+      LAYER met2 ;
+        RECT 3377.035 3485.035 3379.435 3485.315 ;
+    END
+  END mprj_io_vtrip_sel[10]
+  PIN mprj_io_in[10]
+    PORT
+      LAYER met2 ;
+        RECT 3377.035 3420.635 3379.435 3420.915 ;
+    END
+  END mprj_io_in[10]
+  PIN mprj_io_analog_en[11]
+    PORT
+      LAYER met2 ;
+        RECT 3377.035 3670.015 3379.435 3670.295 ;
+    END
+  END mprj_io_analog_en[11]
+  PIN mprj_io_analog_pol[11]
+    PORT
+      LAYER met2 ;
+        RECT 3377.035 3676.455 3379.435 3676.735 ;
+    END
+  END mprj_io_analog_pol[11]
+  PIN mprj_io_analog_sel[11]
+    PORT
+      LAYER met2 ;
+        RECT 3377.035 3691.635 3379.435 3691.915 ;
+    END
+  END mprj_io_analog_sel[11]
+  PIN mprj_io_dm[33]
+    PORT
+      LAYER met2 ;
+        RECT 3377.035 3673.235 3379.435 3673.515 ;
+    END
+  END mprj_io_dm[33]
+  PIN mprj_io_dm[34]
+    PORT
+      LAYER met2 ;
+        RECT 3377.035 3664.035 3379.435 3664.315 ;
+    END
+  END mprj_io_dm[34]
+  PIN mprj_io_dm[35]
+    PORT
+      LAYER met2 ;
+        RECT 3377.035 3694.855 3379.435 3695.135 ;
+    END
+  END mprj_io_dm[35]
+  PIN mprj_io_enh[11]
+    PORT
+      LAYER met2 ;
+        RECT 3377.035 3685.655 3379.435 3685.935 ;
+    END
+  END mprj_io_enh[11]
+  PIN mprj_io_hldh_n[11]
+    PORT
+      LAYER met2 ;
+        RECT 3377.035 3688.875 3379.435 3689.155 ;
+    END
+  END mprj_io_hldh_n[11]
+  PIN mprj_io_holdover[11]
+    PORT
+      LAYER met2 ;
+        RECT 3377.035 3698.075 3379.435 3698.355 ;
+    END
+  END mprj_io_holdover[11]
+  PIN mprj_io_ib_mode_sel[11]
+    PORT
+      LAYER met2 ;
+        RECT 3377.035 3713.255 3379.435 3713.535 ;
+    END
+  END mprj_io_ib_mode_sel[11]
+  PIN mprj_io_inp_dis[11]
+    PORT
+      LAYER met2 ;
+        RECT 3377.035 3679.215 3379.435 3679.495 ;
+    END
+  END mprj_io_inp_dis[11]
+  PIN mprj_io_oeb[11]
+    PORT
+      LAYER met2 ;
+        RECT 3377.035 3716.475 3379.435 3716.755 ;
+    END
+  END mprj_io_oeb[11]
+  PIN mprj_io_out[11]
+    PORT
+      LAYER met2 ;
+        RECT 3377.035 3700.835 3379.435 3701.115 ;
+    END
+  END mprj_io_out[11]
+  PIN mprj_io_slow_sel[11]
+    PORT
+      LAYER met2 ;
+        RECT 3377.035 3654.835 3379.435 3655.115 ;
+    END
+  END mprj_io_slow_sel[11]
+  PIN mprj_io_vtrip_sel[11]
+    PORT
+      LAYER met2 ;
+        RECT 3377.035 3710.035 3379.435 3710.315 ;
+    END
+  END mprj_io_vtrip_sel[11]
+  PIN mprj_io_in[11]
+    PORT
+      LAYER met2 ;
+        RECT 3377.035 3645.635 3379.435 3645.915 ;
+    END
+  END mprj_io_in[11]
+  PIN mprj_io_analog_en[12]
+    PORT
+      LAYER met2 ;
+        RECT 3377.035 3895.015 3379.435 3895.295 ;
+    END
+  END mprj_io_analog_en[12]
+  PIN mprj_io_analog_pol[12]
+    PORT
+      LAYER met2 ;
+        RECT 3377.035 3901.455 3379.435 3901.735 ;
+    END
+  END mprj_io_analog_pol[12]
+  PIN mprj_io_analog_sel[12]
+    PORT
+      LAYER met2 ;
+        RECT 3377.035 3916.635 3379.435 3916.915 ;
+    END
+  END mprj_io_analog_sel[12]
+  PIN mprj_io_dm[36]
+    PORT
+      LAYER met2 ;
+        RECT 3377.035 3898.235 3379.435 3898.515 ;
+    END
+  END mprj_io_dm[36]
+  PIN mprj_io_dm[37]
+    PORT
+      LAYER met2 ;
+        RECT 3377.035 3889.035 3379.435 3889.315 ;
+    END
+  END mprj_io_dm[37]
+  PIN mprj_io_dm[38]
+    PORT
+      LAYER met2 ;
+        RECT 3377.035 3919.855 3379.435 3920.135 ;
+    END
+  END mprj_io_dm[38]
+  PIN mprj_io_enh[12]
+    PORT
+      LAYER met2 ;
+        RECT 3377.035 3910.655 3379.435 3910.935 ;
+    END
+  END mprj_io_enh[12]
+  PIN mprj_io_hldh_n[12]
+    PORT
+      LAYER met2 ;
+        RECT 3377.035 3913.875 3379.435 3914.155 ;
+    END
+  END mprj_io_hldh_n[12]
+  PIN mprj_io_holdover[12]
+    PORT
+      LAYER met2 ;
+        RECT 3377.035 3923.075 3379.435 3923.355 ;
+    END
+  END mprj_io_holdover[12]
+  PIN mprj_io_ib_mode_sel[12]
+    PORT
+      LAYER met2 ;
+        RECT 3377.035 3938.255 3379.435 3938.535 ;
+    END
+  END mprj_io_ib_mode_sel[12]
+  PIN mprj_io_inp_dis[12]
+    PORT
+      LAYER met2 ;
+        RECT 3377.035 3904.215 3379.435 3904.495 ;
+    END
+  END mprj_io_inp_dis[12]
+  PIN mprj_io_oeb[12]
+    PORT
+      LAYER met2 ;
+        RECT 3377.035 3941.475 3379.435 3941.755 ;
+    END
+  END mprj_io_oeb[12]
+  PIN mprj_io_out[12]
+    PORT
+      LAYER met2 ;
+        RECT 3377.035 3925.835 3379.435 3926.115 ;
+    END
+  END mprj_io_out[12]
+  PIN mprj_io_slow_sel[12]
+    PORT
+      LAYER met2 ;
+        RECT 3377.035 3879.835 3379.435 3880.115 ;
+    END
+  END mprj_io_slow_sel[12]
+  PIN mprj_io_vtrip_sel[12]
+    PORT
+      LAYER met2 ;
+        RECT 3377.035 3935.035 3379.435 3935.315 ;
+    END
+  END mprj_io_vtrip_sel[12]
+  PIN mprj_io_in[12]
+    PORT
+      LAYER met2 ;
+        RECT 3377.035 3870.635 3379.435 3870.915 ;
+    END
+  END mprj_io_in[12]
+  PIN mprj_io_analog_en[13]
+    PORT
+      LAYER met2 ;
+        RECT 3377.035 4341.015 3379.435 4341.295 ;
+    END
+  END mprj_io_analog_en[13]
+  PIN mprj_io_analog_pol[13]
+    PORT
+      LAYER met2 ;
+        RECT 3377.035 4347.455 3379.435 4347.735 ;
+    END
+  END mprj_io_analog_pol[13]
+  PIN mprj_io_analog_sel[13]
+    PORT
+      LAYER met2 ;
+        RECT 3377.035 4362.635 3379.435 4362.915 ;
+    END
+  END mprj_io_analog_sel[13]
+  PIN mprj_io_dm[39]
+    PORT
+      LAYER met2 ;
+        RECT 3377.035 4344.235 3379.435 4344.515 ;
+    END
+  END mprj_io_dm[39]
+  PIN mprj_io_dm[40]
+    PORT
+      LAYER met2 ;
+        RECT 3377.035 4335.035 3379.435 4335.315 ;
+    END
+  END mprj_io_dm[40]
+  PIN mprj_io_dm[41]
+    PORT
+      LAYER met2 ;
+        RECT 3377.035 4365.855 3379.435 4366.135 ;
+    END
+  END mprj_io_dm[41]
+  PIN mprj_io_enh[13]
+    PORT
+      LAYER met2 ;
+        RECT 3377.035 4356.655 3379.435 4356.935 ;
+    END
+  END mprj_io_enh[13]
+  PIN mprj_io_hldh_n[13]
+    PORT
+      LAYER met2 ;
+        RECT 3377.035 4359.875 3379.435 4360.155 ;
+    END
+  END mprj_io_hldh_n[13]
+  PIN mprj_io_holdover[13]
+    PORT
+      LAYER met2 ;
+        RECT 3377.035 4369.075 3379.435 4369.355 ;
+    END
+  END mprj_io_holdover[13]
+  PIN mprj_io_ib_mode_sel[13]
+    PORT
+      LAYER met2 ;
+        RECT 3377.035 4384.255 3379.435 4384.535 ;
+    END
+  END mprj_io_ib_mode_sel[13]
+  PIN mprj_io_inp_dis[13]
+    PORT
+      LAYER met2 ;
+        RECT 3377.035 4350.215 3379.435 4350.495 ;
+    END
+  END mprj_io_inp_dis[13]
+  PIN mprj_io_oeb[13]
+    PORT
+      LAYER met2 ;
+        RECT 3377.035 4387.475 3379.435 4387.755 ;
+    END
+  END mprj_io_oeb[13]
+  PIN mprj_io_out[13]
+    PORT
+      LAYER met2 ;
+        RECT 3377.035 4371.835 3379.435 4372.115 ;
+    END
+  END mprj_io_out[13]
+  PIN mprj_io_slow_sel[13]
+    PORT
+      LAYER met2 ;
+        RECT 3377.035 4325.835 3379.435 4326.115 ;
+    END
+  END mprj_io_slow_sel[13]
+  PIN mprj_io_vtrip_sel[13]
+    PORT
+      LAYER met2 ;
+        RECT 3377.035 4381.035 3379.435 4381.315 ;
+    END
+  END mprj_io_vtrip_sel[13]
+  PIN mprj_io_in[13]
+    PORT
+      LAYER met2 ;
+        RECT 3377.035 4316.635 3379.435 4316.915 ;
+    END
+  END mprj_io_in[13]
+  PIN mprj_io_analog_en[14]
+    PORT
+      LAYER met2 ;
+        RECT 3377.035 4787.015 3379.435 4787.295 ;
+    END
+  END mprj_io_analog_en[14]
+  PIN mprj_io_analog_pol[14]
+    PORT
+      LAYER met2 ;
+        RECT 3377.035 4793.455 3379.435 4793.735 ;
+    END
+  END mprj_io_analog_pol[14]
+  PIN mprj_io_analog_sel[14]
+    PORT
+      LAYER met2 ;
+        RECT 3377.035 4808.635 3379.435 4808.915 ;
+    END
+  END mprj_io_analog_sel[14]
+  PIN mprj_io_dm[42]
+    PORT
+      LAYER met2 ;
+        RECT 3377.035 4790.235 3379.435 4790.515 ;
+    END
+  END mprj_io_dm[42]
+  PIN mprj_io_dm[43]
+    PORT
+      LAYER met2 ;
+        RECT 3377.035 4781.035 3379.435 4781.315 ;
+    END
+  END mprj_io_dm[43]
+  PIN mprj_io_dm[44]
+    PORT
+      LAYER met2 ;
+        RECT 3377.035 4811.855 3379.435 4812.135 ;
+    END
+  END mprj_io_dm[44]
+  PIN mprj_io_enh[14]
+    PORT
+      LAYER met2 ;
+        RECT 3377.035 4802.655 3379.435 4802.935 ;
+    END
+  END mprj_io_enh[14]
+  PIN mprj_io_hldh_n[14]
+    PORT
+      LAYER met2 ;
+        RECT 3377.035 4805.875 3379.435 4806.155 ;
+    END
+  END mprj_io_hldh_n[14]
+  PIN mprj_io_holdover[14]
+    PORT
+      LAYER met2 ;
+        RECT 3377.035 4815.075 3379.435 4815.355 ;
+    END
+  END mprj_io_holdover[14]
+  PIN mprj_io_ib_mode_sel[14]
+    PORT
+      LAYER met2 ;
+        RECT 3377.035 4830.255 3379.435 4830.535 ;
+    END
+  END mprj_io_ib_mode_sel[14]
+  PIN mprj_io_inp_dis[14]
+    PORT
+      LAYER met2 ;
+        RECT 3377.035 4796.215 3379.435 4796.495 ;
+    END
+  END mprj_io_inp_dis[14]
+  PIN mprj_io_oeb[14]
+    PORT
+      LAYER met2 ;
+        RECT 3377.035 4833.475 3379.435 4833.755 ;
+    END
+  END mprj_io_oeb[14]
+  PIN mprj_io_out[14]
+    PORT
+      LAYER met2 ;
+        RECT 3377.035 4817.835 3379.435 4818.115 ;
+    END
+  END mprj_io_out[14]
+  PIN mprj_io_slow_sel[14]
+    PORT
+      LAYER met2 ;
+        RECT 3377.035 4771.835 3379.435 4772.115 ;
+    END
+  END mprj_io_slow_sel[14]
+  PIN mprj_io_vtrip_sel[14]
+    PORT
+      LAYER met2 ;
+        RECT 3377.035 4827.035 3379.435 4827.315 ;
+    END
+  END mprj_io_vtrip_sel[14]
+  PIN mprj_io_in[14]
+    PORT
+      LAYER met2 ;
+        RECT 3377.035 4762.635 3379.435 4762.915 ;
+    END
+  END mprj_io_in[14]
+  PIN mprj_io[15]
+    PORT
+      LAYER met5 ;
+        RECT 3141.200 5092.560 3203.800 5155.010 ;
+    END
+  END mprj_io[15]
+  PIN mprj_io_analog_en[15]
+    PORT
+      LAYER met2 ;
+        RECT 3180.705 4977.035 3180.985 4979.435 ;
+    END
+  END mprj_io_analog_en[15]
+  PIN mprj_io_analog_pol[15]
+    PORT
+      LAYER met2 ;
+        RECT 3174.265 4977.035 3174.545 4979.435 ;
+    END
+  END mprj_io_analog_pol[15]
+  PIN mprj_io_analog_sel[15]
+    PORT
+      LAYER met2 ;
+        RECT 3159.085 4977.035 3159.365 4979.435 ;
+    END
+  END mprj_io_analog_sel[15]
+  PIN mprj_io_dm[45]
+    PORT
+      LAYER met2 ;
+        RECT 3177.485 4977.035 3177.765 4979.435 ;
+    END
+  END mprj_io_dm[45]
+  PIN mprj_io_dm[46]
+    PORT
+      LAYER met2 ;
+        RECT 3186.685 4977.035 3186.965 4979.435 ;
+    END
+  END mprj_io_dm[46]
+  PIN mprj_io_dm[47]
+    PORT
+      LAYER met2 ;
+        RECT 3155.865 4977.035 3156.145 4979.435 ;
+    END
+  END mprj_io_dm[47]
+  PIN mprj_io_enh[15]
+    PORT
+      LAYER met2 ;
+        RECT 3165.065 4977.035 3165.345 4979.435 ;
+    END
+  END mprj_io_enh[15]
+  PIN mprj_io_hldh_n[15]
+    PORT
+      LAYER met2 ;
+        RECT 3161.845 4977.035 3162.125 4979.435 ;
+    END
+  END mprj_io_hldh_n[15]
+  PIN mprj_io_holdover[15]
+    PORT
+      LAYER met2 ;
+        RECT 3152.645 4977.035 3152.925 4979.435 ;
+    END
+  END mprj_io_holdover[15]
+  PIN mprj_io_ib_mode_sel[15]
+    PORT
+      LAYER met2 ;
+        RECT 3137.465 4977.035 3137.745 4979.435 ;
+    END
+  END mprj_io_ib_mode_sel[15]
+  PIN mprj_io_inp_dis[15]
+    PORT
+      LAYER met2 ;
+        RECT 3171.505 4977.035 3171.785 4979.435 ;
+    END
+  END mprj_io_inp_dis[15]
+  PIN mprj_io_oeb[15]
+    PORT
+      LAYER met2 ;
+        RECT 3134.245 4977.035 3134.525 4979.435 ;
+    END
+  END mprj_io_oeb[15]
+  PIN mprj_io_out[15]
+    PORT
+      LAYER met2 ;
+        RECT 3149.885 4977.035 3150.165 4979.435 ;
+    END
+  END mprj_io_out[15]
+  PIN mprj_io_slow_sel[15]
+    PORT
+      LAYER met2 ;
+        RECT 3195.885 4977.035 3196.165 4979.435 ;
+    END
+  END mprj_io_slow_sel[15]
+  PIN mprj_io_vtrip_sel[15]
+    PORT
+      LAYER met2 ;
+        RECT 3140.685 4977.035 3140.965 4979.435 ;
+    END
+  END mprj_io_vtrip_sel[15]
+  PIN mprj_io_in[15]
+    PORT
+      LAYER met2 ;
+        RECT 3205.085 4977.035 3205.365 4979.435 ;
+    END
+  END mprj_io_in[15]
+  PIN mprj_io[16]
+    PORT
+      LAYER met5 ;
+        RECT 2632.200 5092.560 2694.800 5155.010 ;
+    END
+  END mprj_io[16]
+  PIN mprj_io_analog_en[16]
+    PORT
+      LAYER met2 ;
+        RECT 2671.705 4977.035 2671.985 4979.435 ;
+    END
+  END mprj_io_analog_en[16]
+  PIN mprj_io_analog_pol[16]
+    PORT
+      LAYER met2 ;
+        RECT 2665.265 4977.035 2665.545 4979.435 ;
+    END
+  END mprj_io_analog_pol[16]
+  PIN mprj_io_analog_sel[16]
+    PORT
+      LAYER met2 ;
+        RECT 2650.085 4977.035 2650.365 4979.435 ;
+    END
+  END mprj_io_analog_sel[16]
+  PIN mprj_io_dm[48]
+    PORT
+      LAYER met2 ;
+        RECT 2668.485 4977.035 2668.765 4979.435 ;
+    END
+  END mprj_io_dm[48]
+  PIN mprj_io_dm[49]
+    PORT
+      LAYER met2 ;
+        RECT 2677.685 4977.035 2677.965 4979.435 ;
+    END
+  END mprj_io_dm[49]
+  PIN mprj_io_dm[50]
+    PORT
+      LAYER met2 ;
+        RECT 2646.865 4977.035 2647.145 4979.435 ;
+    END
+  END mprj_io_dm[50]
+  PIN mprj_io_enh[16]
+    PORT
+      LAYER met2 ;
+        RECT 2656.065 4977.035 2656.345 4979.435 ;
+    END
+  END mprj_io_enh[16]
+  PIN mprj_io_hldh_n[16]
+    PORT
+      LAYER met2 ;
+        RECT 2652.845 4977.035 2653.125 4979.435 ;
+    END
+  END mprj_io_hldh_n[16]
+  PIN mprj_io_holdover[16]
+    PORT
+      LAYER met2 ;
+        RECT 2643.645 4977.035 2643.925 4979.435 ;
+    END
+  END mprj_io_holdover[16]
+  PIN mprj_io_ib_mode_sel[16]
+    PORT
+      LAYER met2 ;
+        RECT 2628.465 4977.035 2628.745 4979.435 ;
+    END
+  END mprj_io_ib_mode_sel[16]
+  PIN mprj_io_inp_dis[16]
+    PORT
+      LAYER met2 ;
+        RECT 2662.505 4977.035 2662.785 4979.435 ;
+    END
+  END mprj_io_inp_dis[16]
+  PIN mprj_io_oeb[16]
+    PORT
+      LAYER met2 ;
+        RECT 2625.245 4977.035 2625.525 4979.435 ;
+    END
+  END mprj_io_oeb[16]
+  PIN mprj_io_out[16]
+    PORT
+      LAYER met2 ;
+        RECT 2640.885 4977.035 2641.165 4979.435 ;
+    END
+  END mprj_io_out[16]
+  PIN mprj_io_slow_sel[16]
+    PORT
+      LAYER met2 ;
+        RECT 2686.885 4977.035 2687.165 4979.435 ;
+    END
+  END mprj_io_slow_sel[16]
+  PIN mprj_io_vtrip_sel[16]
+    PORT
+      LAYER met2 ;
+        RECT 2631.685 4977.035 2631.965 4979.435 ;
+    END
+  END mprj_io_vtrip_sel[16]
+  PIN mprj_io_in[16]
+    PORT
+      LAYER met2 ;
+        RECT 2696.085 4977.035 2696.365 4979.435 ;
+    END
+  END mprj_io_in[16]
+  PIN mprj_io[17]
+    PORT
+      LAYER met5 ;
+        RECT 2375.200 5092.560 2437.800 5155.010 ;
+    END
+  END mprj_io[17]
+  PIN mprj_io_analog_en[17]
+    PORT
+      LAYER met2 ;
+        RECT 2414.705 4977.035 2414.985 4979.435 ;
+    END
+  END mprj_io_analog_en[17]
+  PIN mprj_io_analog_pol[17]
+    PORT
+      LAYER met2 ;
+        RECT 2408.265 4977.035 2408.545 4979.435 ;
+    END
+  END mprj_io_analog_pol[17]
+  PIN mprj_io_analog_sel[17]
+    PORT
+      LAYER met2 ;
+        RECT 2393.085 4977.035 2393.365 4979.435 ;
+    END
+  END mprj_io_analog_sel[17]
+  PIN mprj_io_dm[51]
+    PORT
+      LAYER met2 ;
+        RECT 2411.485 4977.035 2411.765 4979.435 ;
+    END
+  END mprj_io_dm[51]
+  PIN mprj_io_dm[52]
+    PORT
+      LAYER met2 ;
+        RECT 2420.685 4977.035 2420.965 4979.435 ;
+    END
+  END mprj_io_dm[52]
+  PIN mprj_io_dm[53]
+    PORT
+      LAYER met2 ;
+        RECT 2389.865 4977.035 2390.145 4979.435 ;
+    END
+  END mprj_io_dm[53]
+  PIN mprj_io_enh[17]
+    PORT
+      LAYER met2 ;
+        RECT 2399.065 4977.035 2399.345 4979.435 ;
+    END
+  END mprj_io_enh[17]
+  PIN mprj_io_hldh_n[17]
+    PORT
+      LAYER met2 ;
+        RECT 2395.845 4977.035 2396.125 4979.435 ;
+    END
+  END mprj_io_hldh_n[17]
+  PIN mprj_io_holdover[17]
+    PORT
+      LAYER met2 ;
+        RECT 2386.645 4977.035 2386.925 4979.435 ;
+    END
+  END mprj_io_holdover[17]
+  PIN mprj_io_ib_mode_sel[17]
+    PORT
+      LAYER met2 ;
+        RECT 2371.465 4977.035 2371.745 4979.435 ;
+    END
+  END mprj_io_ib_mode_sel[17]
+  PIN mprj_io_inp_dis[17]
+    PORT
+      LAYER met2 ;
+        RECT 2405.505 4977.035 2405.785 4979.435 ;
+    END
+  END mprj_io_inp_dis[17]
+  PIN mprj_io_oeb[17]
+    PORT
+      LAYER met2 ;
+        RECT 2368.245 4977.035 2368.525 4979.435 ;
+    END
+  END mprj_io_oeb[17]
+  PIN mprj_io_out[17]
+    PORT
+      LAYER met2 ;
+        RECT 2383.885 4977.035 2384.165 4979.435 ;
+    END
+  END mprj_io_out[17]
+  PIN mprj_io_slow_sel[17]
+    PORT
+      LAYER met2 ;
+        RECT 2429.885 4977.035 2430.165 4979.435 ;
+    END
+  END mprj_io_slow_sel[17]
+  PIN mprj_io_vtrip_sel[17]
+    PORT
+      LAYER met2 ;
+        RECT 2374.685 4977.035 2374.965 4979.435 ;
+    END
+  END mprj_io_vtrip_sel[17]
+  PIN mprj_io_in[17]
+    PORT
+      LAYER met2 ;
+        RECT 2439.085 4977.035 2439.365 4979.435 ;
+    END
+  END mprj_io_in[17]
+  PIN mprj_io_analog_en[1]
+    PORT
+      LAYER met2 ;
+        RECT 3377.035 755.015 3379.435 755.295 ;
+    END
+  END mprj_io_analog_en[1]
+  PIN mprj_io_analog_pol[1]
+    PORT
+      LAYER met2 ;
+        RECT 3377.035 761.455 3379.435 761.735 ;
+    END
+  END mprj_io_analog_pol[1]
+  PIN mprj_io_analog_sel[1]
+    PORT
+      LAYER met2 ;
+        RECT 3377.035 776.635 3379.435 776.915 ;
+    END
+  END mprj_io_analog_sel[1]
+  PIN mprj_io_dm[3]
+    PORT
+      LAYER met2 ;
+        RECT 3377.035 758.235 3379.435 758.515 ;
+    END
+  END mprj_io_dm[3]
+  PIN mprj_io_dm[4]
+    PORT
+      LAYER met2 ;
+        RECT 3377.035 749.035 3379.435 749.315 ;
+    END
+  END mprj_io_dm[4]
+  PIN mprj_io_dm[5]
+    PORT
+      LAYER met2 ;
+        RECT 3377.035 779.855 3379.435 780.135 ;
+    END
+  END mprj_io_dm[5]
+  PIN mprj_io_enh[1]
+    PORT
+      LAYER met2 ;
+        RECT 3377.035 770.655 3379.435 770.935 ;
+    END
+  END mprj_io_enh[1]
+  PIN mprj_io_hldh_n[1]
+    PORT
+      LAYER met2 ;
+        RECT 3377.035 773.875 3379.435 774.155 ;
+    END
+  END mprj_io_hldh_n[1]
+  PIN mprj_io_holdover[1]
+    PORT
+      LAYER met2 ;
+        RECT 3377.035 783.075 3379.435 783.355 ;
+    END
+  END mprj_io_holdover[1]
+  PIN mprj_io_ib_mode_sel[1]
+    PORT
+      LAYER met2 ;
+        RECT 3377.035 798.255 3379.435 798.535 ;
+    END
+  END mprj_io_ib_mode_sel[1]
+  PIN mprj_io_inp_dis[1]
+    PORT
+      LAYER met2 ;
+        RECT 3377.035 764.215 3379.435 764.495 ;
+    END
+  END mprj_io_inp_dis[1]
+  PIN mprj_io_oeb[1]
+    PORT
+      LAYER met2 ;
+        RECT 3377.035 801.475 3379.435 801.755 ;
+    END
+  END mprj_io_oeb[1]
+  PIN mprj_io_out[1]
+    PORT
+      LAYER met2 ;
+        RECT 3377.035 785.835 3379.435 786.115 ;
+    END
+  END mprj_io_out[1]
+  PIN mprj_io_slow_sel[1]
+    PORT
+      LAYER met2 ;
+        RECT 3377.035 739.835 3379.435 740.115 ;
+    END
+  END mprj_io_slow_sel[1]
+  PIN mprj_io_vtrip_sel[1]
+    PORT
+      LAYER met2 ;
+        RECT 3377.035 795.035 3379.435 795.315 ;
+    END
+  END mprj_io_vtrip_sel[1]
+  PIN mprj_io_in[1]
+    PORT
+      LAYER met2 ;
+        RECT 3377.035 730.635 3379.435 730.915 ;
+    END
+  END mprj_io_in[1]
+  PIN mprj_io_analog_en[2]
+    PORT
+      LAYER met2 ;
+        RECT 3377.035 980.015 3379.435 980.295 ;
+    END
+  END mprj_io_analog_en[2]
+  PIN mprj_io_analog_pol[2]
+    PORT
+      LAYER met2 ;
+        RECT 3377.035 986.455 3379.435 986.735 ;
+    END
+  END mprj_io_analog_pol[2]
+  PIN mprj_io_analog_sel[2]
+    PORT
+      LAYER met2 ;
+        RECT 3377.035 1001.635 3379.435 1001.915 ;
+    END
+  END mprj_io_analog_sel[2]
+  PIN mprj_io_dm[6]
+    PORT
+      LAYER met2 ;
+        RECT 3377.035 983.235 3379.435 983.515 ;
+    END
+  END mprj_io_dm[6]
+  PIN mprj_io_dm[7]
+    PORT
+      LAYER met2 ;
+        RECT 3377.035 974.035 3379.435 974.315 ;
+    END
+  END mprj_io_dm[7]
+  PIN mprj_io_dm[8]
+    PORT
+      LAYER met2 ;
+        RECT 3377.035 1004.855 3379.435 1005.135 ;
+    END
+  END mprj_io_dm[8]
+  PIN mprj_io_enh[2]
+    PORT
+      LAYER met2 ;
+        RECT 3377.035 995.655 3379.435 995.935 ;
+    END
+  END mprj_io_enh[2]
+  PIN mprj_io_hldh_n[2]
+    PORT
+      LAYER met2 ;
+        RECT 3377.035 998.875 3379.435 999.155 ;
+    END
+  END mprj_io_hldh_n[2]
+  PIN mprj_io_holdover[2]
+    PORT
+      LAYER met2 ;
+        RECT 3377.035 1008.075 3379.435 1008.355 ;
+    END
+  END mprj_io_holdover[2]
+  PIN mprj_io_ib_mode_sel[2]
+    PORT
+      LAYER met2 ;
+        RECT 3377.035 1023.255 3379.435 1023.535 ;
+    END
+  END mprj_io_ib_mode_sel[2]
+  PIN mprj_io_inp_dis[2]
+    PORT
+      LAYER met2 ;
+        RECT 3377.035 989.215 3379.435 989.495 ;
+    END
+  END mprj_io_inp_dis[2]
+  PIN mprj_io_oeb[2]
+    PORT
+      LAYER met2 ;
+        RECT 3377.035 1026.475 3379.435 1026.755 ;
+    END
+  END mprj_io_oeb[2]
+  PIN mprj_io_out[2]
+    PORT
+      LAYER met2 ;
+        RECT 3377.035 1010.835 3379.435 1011.115 ;
+    END
+  END mprj_io_out[2]
+  PIN mprj_io_slow_sel[2]
+    PORT
+      LAYER met2 ;
+        RECT 3377.035 964.835 3379.435 965.115 ;
+    END
+  END mprj_io_slow_sel[2]
+  PIN mprj_io_vtrip_sel[2]
+    PORT
+      LAYER met2 ;
+        RECT 3377.035 1020.035 3379.435 1020.315 ;
+    END
+  END mprj_io_vtrip_sel[2]
+  PIN mprj_io_in[2]
+    PORT
+      LAYER met2 ;
+        RECT 3377.035 955.635 3379.435 955.915 ;
+    END
+  END mprj_io_in[2]
+  PIN mprj_io_analog_en[3]
+    PORT
+      LAYER met2 ;
+        RECT 3377.035 1206.015 3379.435 1206.295 ;
+    END
+  END mprj_io_analog_en[3]
+  PIN mprj_io_analog_pol[3]
+    PORT
+      LAYER met2 ;
+        RECT 3377.035 1212.455 3379.435 1212.735 ;
+    END
+  END mprj_io_analog_pol[3]
+  PIN mprj_io_analog_sel[3]
+    PORT
+      LAYER met2 ;
+        RECT 3377.035 1227.635 3379.435 1227.915 ;
+    END
+  END mprj_io_analog_sel[3]
+  PIN mprj_io_dm[10]
+    PORT
+      LAYER met2 ;
+        RECT 3377.035 1200.035 3379.435 1200.315 ;
+    END
+  END mprj_io_dm[10]
+  PIN mprj_io_dm[11]
+    PORT
+      LAYER met2 ;
+        RECT 3377.035 1230.855 3379.435 1231.135 ;
+    END
+  END mprj_io_dm[11]
+  PIN mprj_io_dm[9]
+    PORT
+      LAYER met2 ;
+        RECT 3377.035 1209.235 3379.435 1209.515 ;
+    END
+  END mprj_io_dm[9]
+  PIN mprj_io_enh[3]
+    PORT
+      LAYER met2 ;
+        RECT 3377.035 1221.655 3379.435 1221.935 ;
+    END
+  END mprj_io_enh[3]
+  PIN mprj_io_hldh_n[3]
+    PORT
+      LAYER met2 ;
+        RECT 3377.035 1224.875 3379.435 1225.155 ;
+    END
+  END mprj_io_hldh_n[3]
+  PIN mprj_io_holdover[3]
+    PORT
+      LAYER met2 ;
+        RECT 3377.035 1234.075 3379.435 1234.355 ;
+    END
+  END mprj_io_holdover[3]
+  PIN mprj_io_ib_mode_sel[3]
+    PORT
+      LAYER met2 ;
+        RECT 3377.035 1249.255 3379.435 1249.535 ;
+    END
+  END mprj_io_ib_mode_sel[3]
+  PIN mprj_io_inp_dis[3]
+    PORT
+      LAYER met2 ;
+        RECT 3377.035 1215.215 3379.435 1215.495 ;
+    END
+  END mprj_io_inp_dis[3]
+  PIN mprj_io_oeb[3]
+    PORT
+      LAYER met2 ;
+        RECT 3377.035 1252.475 3379.435 1252.755 ;
+    END
+  END mprj_io_oeb[3]
+  PIN mprj_io_out[3]
+    PORT
+      LAYER met2 ;
+        RECT 3377.035 1236.835 3379.435 1237.115 ;
+    END
+  END mprj_io_out[3]
+  PIN mprj_io_slow_sel[3]
+    PORT
+      LAYER met2 ;
+        RECT 3377.035 1190.835 3379.435 1191.115 ;
+    END
+  END mprj_io_slow_sel[3]
+  PIN mprj_io_vtrip_sel[3]
+    PORT
+      LAYER met2 ;
+        RECT 3377.035 1246.035 3379.435 1246.315 ;
+    END
+  END mprj_io_vtrip_sel[3]
+  PIN mprj_io_in[3]
+    PORT
+      LAYER met2 ;
+        RECT 3377.035 1181.635 3379.435 1181.915 ;
+    END
+  END mprj_io_in[3]
+  PIN mprj_io_analog_en[4]
+    PORT
+      LAYER met2 ;
+        RECT 3377.035 1431.015 3379.435 1431.295 ;
+    END
+  END mprj_io_analog_en[4]
+  PIN mprj_io_analog_pol[4]
+    PORT
+      LAYER met2 ;
+        RECT 3377.035 1437.455 3379.435 1437.735 ;
+    END
+  END mprj_io_analog_pol[4]
+  PIN mprj_io_analog_sel[4]
+    PORT
+      LAYER met2 ;
+        RECT 3377.035 1452.635 3379.435 1452.915 ;
+    END
+  END mprj_io_analog_sel[4]
+  PIN mprj_io_dm[12]
+    PORT
+      LAYER met2 ;
+        RECT 3377.035 1434.235 3379.435 1434.515 ;
+    END
+  END mprj_io_dm[12]
+  PIN mprj_io_dm[13]
+    PORT
+      LAYER met2 ;
+        RECT 3377.035 1425.035 3379.435 1425.315 ;
+    END
+  END mprj_io_dm[13]
+  PIN mprj_io_dm[14]
+    PORT
+      LAYER met2 ;
+        RECT 3377.035 1455.855 3379.435 1456.135 ;
+    END
+  END mprj_io_dm[14]
+  PIN mprj_io_enh[4]
+    PORT
+      LAYER met2 ;
+        RECT 3377.035 1446.655 3379.435 1446.935 ;
+    END
+  END mprj_io_enh[4]
+  PIN mprj_io_hldh_n[4]
+    PORT
+      LAYER met2 ;
+        RECT 3377.035 1449.875 3379.435 1450.155 ;
+    END
+  END mprj_io_hldh_n[4]
+  PIN mprj_io_holdover[4]
+    PORT
+      LAYER met2 ;
+        RECT 3377.035 1459.075 3379.435 1459.355 ;
+    END
+  END mprj_io_holdover[4]
+  PIN mprj_io_ib_mode_sel[4]
+    PORT
+      LAYER met2 ;
+        RECT 3377.035 1474.255 3379.435 1474.535 ;
+    END
+  END mprj_io_ib_mode_sel[4]
+  PIN mprj_io_inp_dis[4]
+    PORT
+      LAYER met2 ;
+        RECT 3377.035 1440.215 3379.435 1440.495 ;
+    END
+  END mprj_io_inp_dis[4]
+  PIN mprj_io_oeb[4]
+    PORT
+      LAYER met2 ;
+        RECT 3377.035 1477.475 3379.435 1477.755 ;
+    END
+  END mprj_io_oeb[4]
+  PIN mprj_io_out[4]
+    PORT
+      LAYER met2 ;
+        RECT 3377.035 1461.835 3379.435 1462.115 ;
+    END
+  END mprj_io_out[4]
+  PIN mprj_io_slow_sel[4]
+    PORT
+      LAYER met2 ;
+        RECT 3377.035 1415.835 3379.435 1416.115 ;
+    END
+  END mprj_io_slow_sel[4]
+  PIN mprj_io_vtrip_sel[4]
+    PORT
+      LAYER met2 ;
+        RECT 3377.035 1471.035 3379.435 1471.315 ;
+    END
+  END mprj_io_vtrip_sel[4]
+  PIN mprj_io_in[4]
+    PORT
+      LAYER met2 ;
+        RECT 3377.035 1406.635 3379.435 1406.915 ;
+    END
+  END mprj_io_in[4]
+  PIN mprj_io_analog_en[5]
+    PORT
+      LAYER met2 ;
+        RECT 3377.035 1656.015 3379.435 1656.295 ;
+    END
+  END mprj_io_analog_en[5]
+  PIN mprj_io_analog_pol[5]
+    PORT
+      LAYER met2 ;
+        RECT 3377.035 1662.455 3379.435 1662.735 ;
+    END
+  END mprj_io_analog_pol[5]
+  PIN mprj_io_analog_sel[5]
+    PORT
+      LAYER met2 ;
+        RECT 3377.035 1677.635 3379.435 1677.915 ;
+    END
+  END mprj_io_analog_sel[5]
+  PIN mprj_io_dm[15]
+    PORT
+      LAYER met2 ;
+        RECT 3377.035 1659.235 3379.435 1659.515 ;
+    END
+  END mprj_io_dm[15]
+  PIN mprj_io_dm[16]
+    PORT
+      LAYER met2 ;
+        RECT 3377.035 1650.035 3379.435 1650.315 ;
+    END
+  END mprj_io_dm[16]
+  PIN mprj_io_dm[17]
+    PORT
+      LAYER met2 ;
+        RECT 3377.035 1680.855 3379.435 1681.135 ;
+    END
+  END mprj_io_dm[17]
+  PIN mprj_io_enh[5]
+    PORT
+      LAYER met2 ;
+        RECT 3377.035 1671.655 3379.435 1671.935 ;
+    END
+  END mprj_io_enh[5]
+  PIN mprj_io_hldh_n[5]
+    PORT
+      LAYER met2 ;
+        RECT 3377.035 1674.875 3379.435 1675.155 ;
+    END
+  END mprj_io_hldh_n[5]
+  PIN mprj_io_holdover[5]
+    PORT
+      LAYER met2 ;
+        RECT 3377.035 1684.075 3379.435 1684.355 ;
+    END
+  END mprj_io_holdover[5]
+  PIN mprj_io_ib_mode_sel[5]
+    PORT
+      LAYER met2 ;
+        RECT 3377.035 1699.255 3379.435 1699.535 ;
+    END
+  END mprj_io_ib_mode_sel[5]
+  PIN mprj_io_inp_dis[5]
+    PORT
+      LAYER met2 ;
+        RECT 3377.035 1665.215 3379.435 1665.495 ;
+    END
+  END mprj_io_inp_dis[5]
+  PIN mprj_io_oeb[5]
+    PORT
+      LAYER met2 ;
+        RECT 3377.035 1702.475 3379.435 1702.755 ;
+    END
+  END mprj_io_oeb[5]
+  PIN mprj_io_out[5]
+    PORT
+      LAYER met2 ;
+        RECT 3377.035 1686.835 3379.435 1687.115 ;
+    END
+  END mprj_io_out[5]
+  PIN mprj_io_slow_sel[5]
+    PORT
+      LAYER met2 ;
+        RECT 3377.035 1640.835 3379.435 1641.115 ;
+    END
+  END mprj_io_slow_sel[5]
+  PIN mprj_io_vtrip_sel[5]
+    PORT
+      LAYER met2 ;
+        RECT 3377.035 1696.035 3379.435 1696.315 ;
+    END
+  END mprj_io_vtrip_sel[5]
+  PIN mprj_io_in[5]
+    PORT
+      LAYER met2 ;
+        RECT 3377.035 1631.635 3379.435 1631.915 ;
+    END
+  END mprj_io_in[5]
+  PIN mprj_io_analog_en[6]
+    PORT
+      LAYER met2 ;
+        RECT 3377.035 1882.015 3379.435 1882.295 ;
+    END
+  END mprj_io_analog_en[6]
+  PIN mprj_io_analog_pol[6]
+    PORT
+      LAYER met2 ;
+        RECT 3377.035 1888.455 3379.435 1888.735 ;
+    END
+  END mprj_io_analog_pol[6]
+  PIN mprj_io_analog_sel[6]
+    PORT
+      LAYER met2 ;
+        RECT 3377.035 1903.635 3379.435 1903.915 ;
+    END
+  END mprj_io_analog_sel[6]
+  PIN mprj_io_dm[18]
+    PORT
+      LAYER met2 ;
+        RECT 3377.035 1885.235 3379.435 1885.515 ;
+    END
+  END mprj_io_dm[18]
+  PIN mprj_io_dm[19]
+    PORT
+      LAYER met2 ;
+        RECT 3377.035 1876.035 3379.435 1876.315 ;
+    END
+  END mprj_io_dm[19]
+  PIN mprj_io_dm[20]
+    PORT
+      LAYER met2 ;
+        RECT 3377.035 1906.855 3379.435 1907.135 ;
+    END
+  END mprj_io_dm[20]
+  PIN mprj_io_enh[6]
+    PORT
+      LAYER met2 ;
+        RECT 3377.035 1897.655 3379.435 1897.935 ;
+    END
+  END mprj_io_enh[6]
+  PIN mprj_io_hldh_n[6]
+    PORT
+      LAYER met2 ;
+        RECT 3377.035 1900.875 3379.435 1901.155 ;
+    END
+  END mprj_io_hldh_n[6]
+  PIN mprj_io_holdover[6]
+    PORT
+      LAYER met2 ;
+        RECT 3377.035 1910.075 3379.435 1910.355 ;
+    END
+  END mprj_io_holdover[6]
+  PIN mprj_io_ib_mode_sel[6]
+    PORT
+      LAYER met2 ;
+        RECT 3377.035 1925.255 3379.435 1925.535 ;
+    END
+  END mprj_io_ib_mode_sel[6]
+  PIN mprj_io_inp_dis[6]
+    PORT
+      LAYER met2 ;
+        RECT 3377.035 1891.215 3379.435 1891.495 ;
+    END
+  END mprj_io_inp_dis[6]
+  PIN mprj_io_oeb[6]
+    PORT
+      LAYER met2 ;
+        RECT 3377.035 1928.475 3379.435 1928.755 ;
+    END
+  END mprj_io_oeb[6]
+  PIN mprj_io_out[6]
+    PORT
+      LAYER met2 ;
+        RECT 3377.035 1912.835 3379.435 1913.115 ;
+    END
+  END mprj_io_out[6]
+  PIN mprj_io_slow_sel[6]
+    PORT
+      LAYER met2 ;
+        RECT 3377.035 1866.835 3379.435 1867.115 ;
+    END
+  END mprj_io_slow_sel[6]
+  PIN mprj_io_vtrip_sel[6]
+    PORT
+      LAYER met2 ;
+        RECT 3377.035 1922.035 3379.435 1922.315 ;
+    END
+  END mprj_io_vtrip_sel[6]
+  PIN mprj_io_in[6]
+    PORT
+      LAYER met2 ;
+        RECT 3377.035 1857.635 3379.435 1857.915 ;
+    END
+  END mprj_io_in[6]
+  PIN mprj_io_analog_en[7]
+    PORT
+      LAYER met2 ;
+        RECT 3377.035 2768.015 3379.435 2768.295 ;
+    END
+  END mprj_io_analog_en[7]
+  PIN mprj_io_analog_pol[7]
+    PORT
+      LAYER met2 ;
+        RECT 3377.035 2774.455 3379.435 2774.735 ;
+    END
+  END mprj_io_analog_pol[7]
+  PIN mprj_io_analog_sel[7]
+    PORT
+      LAYER met2 ;
+        RECT 3377.035 2789.635 3379.435 2789.915 ;
+    END
+  END mprj_io_analog_sel[7]
+  PIN mprj_io_dm[21]
+    PORT
+      LAYER met2 ;
+        RECT 3377.035 2771.235 3379.435 2771.515 ;
+    END
+  END mprj_io_dm[21]
+  PIN mprj_io_dm[22]
+    PORT
+      LAYER met2 ;
+        RECT 3377.035 2762.035 3379.435 2762.315 ;
+    END
+  END mprj_io_dm[22]
+  PIN mprj_io_dm[23]
+    PORT
+      LAYER met2 ;
+        RECT 3377.035 2792.855 3379.435 2793.135 ;
+    END
+  END mprj_io_dm[23]
+  PIN mprj_io_enh[7]
+    PORT
+      LAYER met2 ;
+        RECT 3377.035 2783.655 3379.435 2783.935 ;
+    END
+  END mprj_io_enh[7]
+  PIN mprj_io_hldh_n[7]
+    PORT
+      LAYER met2 ;
+        RECT 3377.035 2786.875 3379.435 2787.155 ;
+    END
+  END mprj_io_hldh_n[7]
+  PIN mprj_io_holdover[7]
+    PORT
+      LAYER met2 ;
+        RECT 3377.035 2796.075 3379.435 2796.355 ;
+    END
+  END mprj_io_holdover[7]
+  PIN mprj_io_ib_mode_sel[7]
+    PORT
+      LAYER met2 ;
+        RECT 3377.035 2811.255 3379.435 2811.535 ;
+    END
+  END mprj_io_ib_mode_sel[7]
+  PIN mprj_io_inp_dis[7]
+    PORT
+      LAYER met2 ;
+        RECT 3377.035 2777.215 3379.435 2777.495 ;
+    END
+  END mprj_io_inp_dis[7]
+  PIN mprj_io_oeb[7]
+    PORT
+      LAYER met2 ;
+        RECT 3377.035 2814.475 3379.435 2814.755 ;
+    END
+  END mprj_io_oeb[7]
+  PIN mprj_io_out[7]
+    PORT
+      LAYER met2 ;
+        RECT 3377.035 2798.835 3379.435 2799.115 ;
+    END
+  END mprj_io_out[7]
+  PIN mprj_io_slow_sel[7]
+    PORT
+      LAYER met2 ;
+        RECT 3377.035 2752.835 3379.435 2753.115 ;
+    END
+  END mprj_io_slow_sel[7]
+  PIN mprj_io_vtrip_sel[7]
+    PORT
+      LAYER met2 ;
+        RECT 3377.035 2808.035 3379.435 2808.315 ;
+    END
+  END mprj_io_vtrip_sel[7]
+  PIN mprj_io_in[7]
+    PORT
+      LAYER met2 ;
+        RECT 3377.035 2743.635 3379.435 2743.915 ;
+    END
+  END mprj_io_in[7]
+  PIN mprj_io_analog_en[8]
+    PORT
+      LAYER met2 ;
+        RECT 3377.035 2994.015 3379.435 2994.295 ;
+    END
+  END mprj_io_analog_en[8]
+  PIN mprj_io_analog_pol[8]
+    PORT
+      LAYER met2 ;
+        RECT 3377.035 3000.455 3379.435 3000.735 ;
+    END
+  END mprj_io_analog_pol[8]
+  PIN mprj_io_analog_sel[8]
+    PORT
+      LAYER met2 ;
+        RECT 3377.035 3015.635 3379.435 3015.915 ;
+    END
+  END mprj_io_analog_sel[8]
+  PIN mprj_io_dm[24]
+    PORT
+      LAYER met2 ;
+        RECT 3377.035 2997.235 3379.435 2997.515 ;
+    END
+  END mprj_io_dm[24]
+  PIN mprj_io_dm[25]
+    PORT
+      LAYER met2 ;
+        RECT 3377.035 2988.035 3379.435 2988.315 ;
+    END
+  END mprj_io_dm[25]
+  PIN mprj_io_dm[26]
+    PORT
+      LAYER met2 ;
+        RECT 3377.035 3018.855 3379.435 3019.135 ;
+    END
+  END mprj_io_dm[26]
+  PIN mprj_io_enh[8]
+    PORT
+      LAYER met2 ;
+        RECT 3377.035 3009.655 3379.435 3009.935 ;
+    END
+  END mprj_io_enh[8]
+  PIN mprj_io_hldh_n[8]
+    PORT
+      LAYER met2 ;
+        RECT 3377.035 3012.875 3379.435 3013.155 ;
+    END
+  END mprj_io_hldh_n[8]
+  PIN mprj_io_holdover[8]
+    PORT
+      LAYER met2 ;
+        RECT 3377.035 3022.075 3379.435 3022.355 ;
+    END
+  END mprj_io_holdover[8]
+  PIN mprj_io_ib_mode_sel[8]
+    PORT
+      LAYER met2 ;
+        RECT 3377.035 3037.255 3379.435 3037.535 ;
+    END
+  END mprj_io_ib_mode_sel[8]
+  PIN mprj_io_inp_dis[8]
+    PORT
+      LAYER met2 ;
+        RECT 3377.035 3003.215 3379.435 3003.495 ;
+    END
+  END mprj_io_inp_dis[8]
+  PIN mprj_io_oeb[8]
+    PORT
+      LAYER met2 ;
+        RECT 3377.035 3040.475 3379.435 3040.755 ;
+    END
+  END mprj_io_oeb[8]
+  PIN mprj_io_out[8]
+    PORT
+      LAYER met2 ;
+        RECT 3377.035 3024.835 3379.435 3025.115 ;
+    END
+  END mprj_io_out[8]
+  PIN mprj_io_slow_sel[8]
+    PORT
+      LAYER met2 ;
+        RECT 3377.035 2978.835 3379.435 2979.115 ;
+    END
+  END mprj_io_slow_sel[8]
+  PIN mprj_io_vtrip_sel[8]
+    PORT
+      LAYER met2 ;
+        RECT 3377.035 3034.035 3379.435 3034.315 ;
+    END
+  END mprj_io_vtrip_sel[8]
+  PIN mprj_io_in[8]
+    PORT
+      LAYER met2 ;
+        RECT 3377.035 2969.635 3379.435 2969.915 ;
+    END
+  END mprj_io_in[8]
+  PIN mprj_io_analog_en[9]
+    PORT
+      LAYER met2 ;
+        RECT 3377.035 3219.015 3379.435 3219.295 ;
+    END
+  END mprj_io_analog_en[9]
+  PIN mprj_io_analog_pol[9]
+    PORT
+      LAYER met2 ;
+        RECT 3377.035 3225.455 3379.435 3225.735 ;
+    END
+  END mprj_io_analog_pol[9]
+  PIN mprj_io_analog_sel[9]
+    PORT
+      LAYER met2 ;
+        RECT 3377.035 3240.635 3379.435 3240.915 ;
+    END
+  END mprj_io_analog_sel[9]
+  PIN mprj_io_dm[27]
+    PORT
+      LAYER met2 ;
+        RECT 3377.035 3222.235 3379.435 3222.515 ;
+    END
+  END mprj_io_dm[27]
+  PIN mprj_io_dm[28]
+    PORT
+      LAYER met2 ;
+        RECT 3377.035 3213.035 3379.435 3213.315 ;
+    END
+  END mprj_io_dm[28]
+  PIN mprj_io_dm[29]
+    PORT
+      LAYER met2 ;
+        RECT 3377.035 3243.855 3379.435 3244.135 ;
+    END
+  END mprj_io_dm[29]
+  PIN mprj_io_enh[9]
+    PORT
+      LAYER met2 ;
+        RECT 3377.035 3234.655 3379.435 3234.935 ;
+    END
+  END mprj_io_enh[9]
+  PIN mprj_io_hldh_n[9]
+    PORT
+      LAYER met2 ;
+        RECT 3377.035 3237.875 3379.435 3238.155 ;
+    END
+  END mprj_io_hldh_n[9]
+  PIN mprj_io_holdover[9]
+    PORT
+      LAYER met2 ;
+        RECT 3377.035 3247.075 3379.435 3247.355 ;
+    END
+  END mprj_io_holdover[9]
+  PIN mprj_io_ib_mode_sel[9]
+    PORT
+      LAYER met2 ;
+        RECT 3377.035 3262.255 3379.435 3262.535 ;
+    END
+  END mprj_io_ib_mode_sel[9]
+  PIN mprj_io_inp_dis[9]
+    PORT
+      LAYER met2 ;
+        RECT 3377.035 3228.215 3379.435 3228.495 ;
+    END
+  END mprj_io_inp_dis[9]
+  PIN mprj_io_oeb[9]
+    PORT
+      LAYER met2 ;
+        RECT 3377.035 3265.475 3379.435 3265.755 ;
+    END
+  END mprj_io_oeb[9]
+  PIN mprj_io_out[9]
+    PORT
+      LAYER met2 ;
+        RECT 3377.035 3249.835 3379.435 3250.115 ;
+    END
+  END mprj_io_out[9]
+  PIN mprj_io_slow_sel[9]
+    PORT
+      LAYER met2 ;
+        RECT 3377.035 3203.835 3379.435 3204.115 ;
+    END
+  END mprj_io_slow_sel[9]
+  PIN mprj_io_vtrip_sel[9]
+    PORT
+      LAYER met2 ;
+        RECT 3377.035 3259.035 3379.435 3259.315 ;
+    END
+  END mprj_io_vtrip_sel[9]
+  PIN mprj_io_in[9]
+    PORT
+      LAYER met2 ;
+        RECT 3377.035 3194.635 3379.435 3194.915 ;
+    END
+  END mprj_io_in[9]
+  PIN mprj_io[18]
+    PORT
+      LAYER met5 ;
+        RECT 1930.200 5092.560 1992.800 5155.010 ;
+    END
+  END mprj_io[18]
+  PIN mprj_io_analog_en[18]
+    PORT
+      LAYER met2 ;
+        RECT 1969.705 4977.035 1969.985 4979.435 ;
+    END
+  END mprj_io_analog_en[18]
+  PIN mprj_io_analog_pol[18]
+    PORT
+      LAYER met2 ;
+        RECT 1963.265 4977.035 1963.545 4979.435 ;
+    END
+  END mprj_io_analog_pol[18]
+  PIN mprj_io_analog_sel[18]
+    PORT
+      LAYER met2 ;
+        RECT 1948.085 4977.035 1948.365 4979.435 ;
+    END
+  END mprj_io_analog_sel[18]
+  PIN mprj_io_dm[54]
+    PORT
+      LAYER met2 ;
+        RECT 1966.485 4977.035 1966.765 4979.435 ;
+    END
+  END mprj_io_dm[54]
+  PIN mprj_io_dm[55]
+    PORT
+      LAYER met2 ;
+        RECT 1975.685 4977.035 1975.965 4979.435 ;
+    END
+  END mprj_io_dm[55]
+  PIN mprj_io_dm[56]
+    PORT
+      LAYER met2 ;
+        RECT 1944.865 4977.035 1945.145 4979.435 ;
+    END
+  END mprj_io_dm[56]
+  PIN mprj_io_enh[18]
+    PORT
+      LAYER met2 ;
+        RECT 1954.065 4977.035 1954.345 4979.435 ;
+    END
+  END mprj_io_enh[18]
+  PIN mprj_io_hldh_n[18]
+    PORT
+      LAYER met2 ;
+        RECT 1950.845 4977.035 1951.125 4979.435 ;
+    END
+  END mprj_io_hldh_n[18]
+  PIN mprj_io_holdover[18]
+    PORT
+      LAYER met2 ;
+        RECT 1941.645 4977.035 1941.925 4979.435 ;
+    END
+  END mprj_io_holdover[18]
+  PIN mprj_io_ib_mode_sel[18]
+    PORT
+      LAYER met2 ;
+        RECT 1926.465 4977.035 1926.745 4979.435 ;
+    END
+  END mprj_io_ib_mode_sel[18]
+  PIN mprj_io_inp_dis[18]
+    PORT
+      LAYER met2 ;
+        RECT 1960.505 4977.035 1960.785 4979.435 ;
+    END
+  END mprj_io_inp_dis[18]
+  PIN mprj_io_oeb[18]
+    PORT
+      LAYER met2 ;
+        RECT 1923.245 4977.035 1923.525 4979.435 ;
+    END
+  END mprj_io_oeb[18]
+  PIN mprj_io_out[18]
+    PORT
+      LAYER met2 ;
+        RECT 1938.885 4977.035 1939.165 4979.435 ;
+    END
+  END mprj_io_out[18]
+  PIN mprj_io_slow_sel[18]
+    PORT
+      LAYER met2 ;
+        RECT 1984.885 4977.035 1985.165 4979.435 ;
+    END
+  END mprj_io_slow_sel[18]
+  PIN mprj_io_vtrip_sel[18]
+    PORT
+      LAYER met2 ;
+        RECT 1929.685 4977.035 1929.965 4979.435 ;
+    END
+  END mprj_io_vtrip_sel[18]
+  PIN mprj_io_in[18]
+    PORT
+      LAYER met2 ;
+        RECT 1994.085 4977.035 1994.365 4979.435 ;
+    END
+  END mprj_io_in[18]
+  PIN mprj_io[28]
+    PORT
+      LAYER met5 ;
+        RECT 32.990 3285.200 95.440 3347.800 ;
+    END
+  END mprj_io[28]
+  PIN mprj_io_analog_en[28]
+    PORT
+      LAYER met2 ;
+        RECT 208.565 3324.705 210.965 3324.985 ;
+    END
+  END mprj_io_analog_en[28]
+  PIN mprj_io_analog_pol[28]
+    PORT
+      LAYER met2 ;
+        RECT 208.565 3318.265 210.965 3318.545 ;
+    END
+  END mprj_io_analog_pol[28]
+  PIN mprj_io_analog_sel[28]
+    PORT
+      LAYER met2 ;
+        RECT 208.565 3303.085 210.965 3303.365 ;
+    END
+  END mprj_io_analog_sel[28]
+  PIN mprj_io_dm[84]
+    PORT
+      LAYER met2 ;
+        RECT 208.565 3321.485 210.965 3321.765 ;
+    END
+  END mprj_io_dm[84]
+  PIN mprj_io_dm[85]
+    PORT
+      LAYER met2 ;
+        RECT 208.565 3330.685 210.965 3330.965 ;
+    END
+  END mprj_io_dm[85]
+  PIN mprj_io_dm[86]
+    PORT
+      LAYER met2 ;
+        RECT 208.565 3299.865 210.965 3300.145 ;
+    END
+  END mprj_io_dm[86]
+  PIN mprj_io_enh[28]
+    PORT
+      LAYER met2 ;
+        RECT 208.565 3309.065 210.965 3309.345 ;
+    END
+  END mprj_io_enh[28]
+  PIN mprj_io_hldh_n[28]
+    PORT
+      LAYER met2 ;
+        RECT 208.565 3305.845 210.965 3306.125 ;
+    END
+  END mprj_io_hldh_n[28]
+  PIN mprj_io_holdover[28]
+    PORT
+      LAYER met2 ;
+        RECT 208.565 3296.645 210.965 3296.925 ;
+    END
+  END mprj_io_holdover[28]
+  PIN mprj_io_ib_mode_sel[28]
+    PORT
+      LAYER met2 ;
+        RECT 208.565 3281.465 210.965 3281.745 ;
+    END
+  END mprj_io_ib_mode_sel[28]
+  PIN mprj_io_inp_dis[28]
+    PORT
+      LAYER met2 ;
+        RECT 208.565 3315.505 210.965 3315.785 ;
+    END
+  END mprj_io_inp_dis[28]
+  PIN mprj_io_oeb[28]
+    PORT
+      LAYER met2 ;
+        RECT 208.565 3278.245 210.965 3278.525 ;
+    END
+  END mprj_io_oeb[28]
+  PIN mprj_io_out[28]
+    PORT
+      LAYER met2 ;
+        RECT 208.565 3293.885 210.965 3294.165 ;
+    END
+  END mprj_io_out[28]
+  PIN mprj_io_slow_sel[28]
+    PORT
+      LAYER met2 ;
+        RECT 208.565 3339.885 210.965 3340.165 ;
+    END
+  END mprj_io_slow_sel[28]
+  PIN mprj_io_vtrip_sel[28]
+    PORT
+      LAYER met2 ;
+        RECT 208.565 3284.685 210.965 3284.965 ;
+    END
+  END mprj_io_vtrip_sel[28]
+  PIN mprj_io_in[28]
+    PORT
+      LAYER met2 ;
+        RECT 208.565 3349.085 210.965 3349.365 ;
+    END
+  END mprj_io_in[28]
+  PIN mprj_io[29]
+    PORT
+      LAYER met5 ;
+        RECT 32.990 3069.200 95.440 3131.800 ;
+    END
+  END mprj_io[29]
+  PIN mprj_io_analog_en[29]
+    PORT
+      LAYER met2 ;
+        RECT 208.565 3108.705 210.965 3108.985 ;
+    END
+  END mprj_io_analog_en[29]
+  PIN mprj_io_analog_pol[29]
+    PORT
+      LAYER met2 ;
+        RECT 208.565 3102.265 210.965 3102.545 ;
+    END
+  END mprj_io_analog_pol[29]
+  PIN mprj_io_analog_sel[29]
+    PORT
+      LAYER met2 ;
+        RECT 208.565 3087.085 210.965 3087.365 ;
+    END
+  END mprj_io_analog_sel[29]
+  PIN mprj_io_dm[87]
+    PORT
+      LAYER met2 ;
+        RECT 208.565 3105.485 210.965 3105.765 ;
+    END
+  END mprj_io_dm[87]
+  PIN mprj_io_dm[88]
+    PORT
+      LAYER met2 ;
+        RECT 208.565 3114.685 210.965 3114.965 ;
+    END
+  END mprj_io_dm[88]
+  PIN mprj_io_dm[89]
+    PORT
+      LAYER met2 ;
+        RECT 208.565 3083.865 210.965 3084.145 ;
+    END
+  END mprj_io_dm[89]
+  PIN mprj_io_enh[29]
+    PORT
+      LAYER met2 ;
+        RECT 208.565 3093.065 210.965 3093.345 ;
+    END
+  END mprj_io_enh[29]
+  PIN mprj_io_hldh_n[29]
+    PORT
+      LAYER met2 ;
+        RECT 208.565 3089.845 210.965 3090.125 ;
+    END
+  END mprj_io_hldh_n[29]
+  PIN mprj_io_holdover[29]
+    PORT
+      LAYER met2 ;
+        RECT 208.565 3080.645 210.965 3080.925 ;
+    END
+  END mprj_io_holdover[29]
+  PIN mprj_io_ib_mode_sel[29]
+    PORT
+      LAYER met2 ;
+        RECT 208.565 3065.465 210.965 3065.745 ;
+    END
+  END mprj_io_ib_mode_sel[29]
+  PIN mprj_io_inp_dis[29]
+    PORT
+      LAYER met2 ;
+        RECT 208.565 3099.505 210.965 3099.785 ;
+    END
+  END mprj_io_inp_dis[29]
+  PIN mprj_io_oeb[29]
+    PORT
+      LAYER met2 ;
+        RECT 208.565 3062.245 210.965 3062.525 ;
+    END
+  END mprj_io_oeb[29]
+  PIN mprj_io_out[29]
+    PORT
+      LAYER met2 ;
+        RECT 208.565 3077.885 210.965 3078.165 ;
+    END
+  END mprj_io_out[29]
+  PIN mprj_io_slow_sel[29]
+    PORT
+      LAYER met2 ;
+        RECT 208.565 3123.885 210.965 3124.165 ;
+    END
+  END mprj_io_slow_sel[29]
+  PIN mprj_io_vtrip_sel[29]
+    PORT
+      LAYER met2 ;
+        RECT 208.565 3068.685 210.965 3068.965 ;
+    END
+  END mprj_io_vtrip_sel[29]
+  PIN mprj_io_in[29]
+    PORT
+      LAYER met2 ;
+        RECT 208.565 3133.085 210.965 3133.365 ;
+    END
+  END mprj_io_in[29]
+  PIN mprj_io[30]
+    PORT
+      LAYER met5 ;
+        RECT 32.990 2853.200 95.440 2915.800 ;
+    END
+  END mprj_io[30]
+  PIN mprj_io_analog_en[30]
+    PORT
+      LAYER met2 ;
+        RECT 208.565 2892.705 210.965 2892.985 ;
+    END
+  END mprj_io_analog_en[30]
+  PIN mprj_io_analog_pol[30]
+    PORT
+      LAYER met2 ;
+        RECT 208.565 2886.265 210.965 2886.545 ;
+    END
+  END mprj_io_analog_pol[30]
+  PIN mprj_io_analog_sel[30]
+    PORT
+      LAYER met2 ;
+        RECT 208.565 2871.085 210.965 2871.365 ;
+    END
+  END mprj_io_analog_sel[30]
+  PIN mprj_io_dm[90]
+    PORT
+      LAYER met2 ;
+        RECT 208.565 2889.485 210.965 2889.765 ;
+    END
+  END mprj_io_dm[90]
+  PIN mprj_io_dm[91]
+    PORT
+      LAYER met2 ;
+        RECT 208.565 2898.685 210.965 2898.965 ;
+    END
+  END mprj_io_dm[91]
+  PIN mprj_io_dm[92]
+    PORT
+      LAYER met2 ;
+        RECT 208.565 2867.865 210.965 2868.145 ;
+    END
+  END mprj_io_dm[92]
+  PIN mprj_io_enh[30]
+    PORT
+      LAYER met2 ;
+        RECT 208.565 2877.065 210.965 2877.345 ;
+    END
+  END mprj_io_enh[30]
+  PIN mprj_io_hldh_n[30]
+    PORT
+      LAYER met2 ;
+        RECT 208.565 2873.845 210.965 2874.125 ;
+    END
+  END mprj_io_hldh_n[30]
+  PIN mprj_io_holdover[30]
+    PORT
+      LAYER met2 ;
+        RECT 208.565 2864.645 210.965 2864.925 ;
+    END
+  END mprj_io_holdover[30]
+  PIN mprj_io_ib_mode_sel[30]
+    PORT
+      LAYER met2 ;
+        RECT 208.565 2849.465 210.965 2849.745 ;
+    END
+  END mprj_io_ib_mode_sel[30]
+  PIN mprj_io_inp_dis[30]
+    PORT
+      LAYER met2 ;
+        RECT 208.565 2883.505 210.965 2883.785 ;
+    END
+  END mprj_io_inp_dis[30]
+  PIN mprj_io_oeb[30]
+    PORT
+      LAYER met2 ;
+        RECT 208.565 2846.245 210.965 2846.525 ;
+    END
+  END mprj_io_oeb[30]
+  PIN mprj_io_out[30]
+    PORT
+      LAYER met2 ;
+        RECT 208.565 2861.885 210.965 2862.165 ;
+    END
+  END mprj_io_out[30]
+  PIN mprj_io_slow_sel[30]
+    PORT
+      LAYER met2 ;
+        RECT 208.565 2907.885 210.965 2908.165 ;
+    END
+  END mprj_io_slow_sel[30]
+  PIN mprj_io_vtrip_sel[30]
+    PORT
+      LAYER met2 ;
+        RECT 208.565 2852.685 210.965 2852.965 ;
+    END
+  END mprj_io_vtrip_sel[30]
+  PIN mprj_io_in[30]
+    PORT
+      LAYER met2 ;
+        RECT 208.565 2917.085 210.965 2917.365 ;
+    END
+  END mprj_io_in[30]
+  PIN mprj_io[31]
+    PORT
+      LAYER met5 ;
+        RECT 32.990 2637.200 95.440 2699.800 ;
+    END
+  END mprj_io[31]
+  PIN mprj_io_analog_en[31]
+    PORT
+      LAYER met2 ;
+        RECT 208.565 2676.705 210.965 2676.985 ;
+    END
+  END mprj_io_analog_en[31]
+  PIN mprj_io_analog_pol[31]
+    PORT
+      LAYER met2 ;
+        RECT 208.565 2670.265 210.965 2670.545 ;
+    END
+  END mprj_io_analog_pol[31]
+  PIN mprj_io_analog_sel[31]
+    PORT
+      LAYER met2 ;
+        RECT 208.565 2655.085 210.965 2655.365 ;
+    END
+  END mprj_io_analog_sel[31]
+  PIN mprj_io_dm[93]
+    PORT
+      LAYER met2 ;
+        RECT 208.565 2673.485 210.965 2673.765 ;
+    END
+  END mprj_io_dm[93]
+  PIN mprj_io_dm[94]
+    PORT
+      LAYER met2 ;
+        RECT 208.565 2682.685 210.965 2682.965 ;
+    END
+  END mprj_io_dm[94]
+  PIN mprj_io_dm[95]
+    PORT
+      LAYER met2 ;
+        RECT 208.565 2651.865 210.965 2652.145 ;
+    END
+  END mprj_io_dm[95]
+  PIN mprj_io_enh[31]
+    PORT
+      LAYER met2 ;
+        RECT 208.565 2661.065 210.965 2661.345 ;
+    END
+  END mprj_io_enh[31]
+  PIN mprj_io_hldh_n[31]
+    PORT
+      LAYER met2 ;
+        RECT 208.565 2657.845 210.965 2658.125 ;
+    END
+  END mprj_io_hldh_n[31]
+  PIN mprj_io_holdover[31]
+    PORT
+      LAYER met2 ;
+        RECT 208.565 2648.645 210.965 2648.925 ;
+    END
+  END mprj_io_holdover[31]
+  PIN mprj_io_ib_mode_sel[31]
+    PORT
+      LAYER met2 ;
+        RECT 208.565 2633.465 210.965 2633.745 ;
+    END
+  END mprj_io_ib_mode_sel[31]
+  PIN mprj_io_inp_dis[31]
+    PORT
+      LAYER met2 ;
+        RECT 208.565 2667.505 210.965 2667.785 ;
+    END
+  END mprj_io_inp_dis[31]
+  PIN mprj_io_oeb[31]
+    PORT
+      LAYER met2 ;
+        RECT 208.565 2630.245 210.965 2630.525 ;
+    END
+  END mprj_io_oeb[31]
+  PIN mprj_io_out[31]
+    PORT
+      LAYER met2 ;
+        RECT 208.565 2645.885 210.965 2646.165 ;
+    END
+  END mprj_io_out[31]
+  PIN mprj_io_slow_sel[31]
+    PORT
+      LAYER met2 ;
+        RECT 208.565 2691.885 210.965 2692.165 ;
+    END
+  END mprj_io_slow_sel[31]
+  PIN mprj_io_vtrip_sel[31]
+    PORT
+      LAYER met2 ;
+        RECT 208.565 2636.685 210.965 2636.965 ;
+    END
+  END mprj_io_vtrip_sel[31]
+  PIN mprj_io_in[31]
+    PORT
+      LAYER met2 ;
+        RECT 208.565 2701.085 210.965 2701.365 ;
+    END
+  END mprj_io_in[31]
+  PIN mprj_io[32]
+    PORT
+      LAYER met5 ;
+        RECT 32.990 1999.200 95.440 2061.800 ;
+    END
+  END mprj_io[32]
+  PIN mprj_io_analog_en[32]
+    PORT
+      LAYER met2 ;
+        RECT 208.565 2038.705 210.965 2038.985 ;
+    END
+  END mprj_io_analog_en[32]
+  PIN mprj_io_analog_pol[32]
+    PORT
+      LAYER met2 ;
+        RECT 208.565 2032.265 210.965 2032.545 ;
+    END
+  END mprj_io_analog_pol[32]
+  PIN mprj_io_analog_sel[32]
+    PORT
+      LAYER met2 ;
+        RECT 208.565 2017.085 210.965 2017.365 ;
+    END
+  END mprj_io_analog_sel[32]
+  PIN mprj_io_dm[96]
+    PORT
+      LAYER met2 ;
+        RECT 208.565 2035.485 210.965 2035.765 ;
+    END
+  END mprj_io_dm[96]
+  PIN mprj_io_dm[97]
+    PORT
+      LAYER met2 ;
+        RECT 208.565 2044.685 210.965 2044.965 ;
+    END
+  END mprj_io_dm[97]
+  PIN mprj_io_dm[98]
+    PORT
+      LAYER met2 ;
+        RECT 208.565 2013.865 210.965 2014.145 ;
+    END
+  END mprj_io_dm[98]
+  PIN mprj_io_enh[32]
+    PORT
+      LAYER met2 ;
+        RECT 208.565 2023.065 210.965 2023.345 ;
+    END
+  END mprj_io_enh[32]
+  PIN mprj_io_hldh_n[32]
+    PORT
+      LAYER met2 ;
+        RECT 208.565 2019.845 210.965 2020.125 ;
+    END
+  END mprj_io_hldh_n[32]
+  PIN mprj_io_holdover[32]
+    PORT
+      LAYER met2 ;
+        RECT 208.565 2010.645 210.965 2010.925 ;
+    END
+  END mprj_io_holdover[32]
+  PIN mprj_io_ib_mode_sel[32]
+    PORT
+      LAYER met2 ;
+        RECT 208.565 1995.465 210.965 1995.745 ;
+    END
+  END mprj_io_ib_mode_sel[32]
+  PIN mprj_io_inp_dis[32]
+    PORT
+      LAYER met2 ;
+        RECT 208.565 2029.505 210.965 2029.785 ;
+    END
+  END mprj_io_inp_dis[32]
+  PIN mprj_io_oeb[32]
+    PORT
+      LAYER met2 ;
+        RECT 208.565 1992.245 210.965 1992.525 ;
+    END
+  END mprj_io_oeb[32]
+  PIN mprj_io_out[32]
+    PORT
+      LAYER met2 ;
+        RECT 208.565 2007.885 210.965 2008.165 ;
+    END
+  END mprj_io_out[32]
+  PIN mprj_io_slow_sel[32]
+    PORT
+      LAYER met2 ;
+        RECT 208.565 2053.885 210.965 2054.165 ;
+    END
+  END mprj_io_slow_sel[32]
+  PIN mprj_io_vtrip_sel[32]
+    PORT
+      LAYER met2 ;
+        RECT 208.565 1998.685 210.965 1998.965 ;
+    END
+  END mprj_io_vtrip_sel[32]
+  PIN mprj_io_in[32]
+    PORT
+      LAYER met2 ;
+        RECT 208.565 2063.085 210.965 2063.365 ;
+    END
+  END mprj_io_in[32]
+  PIN mprj_io[33]
+    PORT
+      LAYER met5 ;
+        RECT 32.990 1783.200 95.440 1845.800 ;
+    END
+  END mprj_io[33]
+  PIN mprj_io_analog_en[33]
+    PORT
+      LAYER met2 ;
+        RECT 208.565 1822.705 210.965 1822.985 ;
+    END
+  END mprj_io_analog_en[33]
+  PIN mprj_io_analog_pol[33]
+    PORT
+      LAYER met2 ;
+        RECT 208.565 1816.265 210.965 1816.545 ;
+    END
+  END mprj_io_analog_pol[33]
+  PIN mprj_io_analog_sel[33]
+    PORT
+      LAYER met2 ;
+        RECT 208.565 1801.085 210.965 1801.365 ;
+    END
+  END mprj_io_analog_sel[33]
+  PIN mprj_io_dm[100]
+    PORT
+      LAYER met2 ;
+        RECT 208.565 1828.685 210.965 1828.965 ;
+    END
+  END mprj_io_dm[100]
+  PIN mprj_io_dm[101]
+    PORT
+      LAYER met2 ;
+        RECT 208.565 1797.865 210.965 1798.145 ;
+    END
+  END mprj_io_dm[101]
+  PIN mprj_io_dm[99]
+    PORT
+      LAYER met2 ;
+        RECT 208.565 1819.485 210.965 1819.765 ;
+    END
+  END mprj_io_dm[99]
+  PIN mprj_io_enh[33]
+    PORT
+      LAYER met2 ;
+        RECT 208.565 1807.065 210.965 1807.345 ;
+    END
+  END mprj_io_enh[33]
+  PIN mprj_io_hldh_n[33]
+    PORT
+      LAYER met2 ;
+        RECT 208.565 1803.845 210.965 1804.125 ;
+    END
+  END mprj_io_hldh_n[33]
+  PIN mprj_io_holdover[33]
+    PORT
+      LAYER met2 ;
+        RECT 208.565 1794.645 210.965 1794.925 ;
+    END
+  END mprj_io_holdover[33]
+  PIN mprj_io_ib_mode_sel[33]
+    PORT
+      LAYER met2 ;
+        RECT 208.565 1779.465 210.965 1779.745 ;
+    END
+  END mprj_io_ib_mode_sel[33]
+  PIN mprj_io_inp_dis[33]
+    PORT
+      LAYER met2 ;
+        RECT 208.565 1813.505 210.965 1813.785 ;
+    END
+  END mprj_io_inp_dis[33]
+  PIN mprj_io_oeb[33]
+    PORT
+      LAYER met2 ;
+        RECT 208.565 1776.245 210.965 1776.525 ;
+    END
+  END mprj_io_oeb[33]
+  PIN mprj_io_out[33]
+    PORT
+      LAYER met2 ;
+        RECT 208.565 1791.885 210.965 1792.165 ;
+    END
+  END mprj_io_out[33]
+  PIN mprj_io_slow_sel[33]
+    PORT
+      LAYER met2 ;
+        RECT 208.565 1837.885 210.965 1838.165 ;
+    END
+  END mprj_io_slow_sel[33]
+  PIN mprj_io_vtrip_sel[33]
+    PORT
+      LAYER met2 ;
+        RECT 208.565 1782.685 210.965 1782.965 ;
+    END
+  END mprj_io_vtrip_sel[33]
+  PIN mprj_io_in[33]
+    PORT
+      LAYER met2 ;
+        RECT 208.565 1847.085 210.965 1847.365 ;
+    END
+  END mprj_io_in[33]
+  PIN mprj_io[34]
+    PORT
+      LAYER met5 ;
+        RECT 32.990 1567.200 95.440 1629.800 ;
+    END
+  END mprj_io[34]
+  PIN mprj_io_analog_en[34]
+    PORT
+      LAYER met2 ;
+        RECT 208.565 1606.705 210.965 1606.985 ;
+    END
+  END mprj_io_analog_en[34]
+  PIN mprj_io_analog_pol[34]
+    PORT
+      LAYER met2 ;
+        RECT 208.565 1600.265 210.965 1600.545 ;
+    END
+  END mprj_io_analog_pol[34]
+  PIN mprj_io_analog_sel[34]
+    PORT
+      LAYER met2 ;
+        RECT 208.565 1585.085 210.965 1585.365 ;
+    END
+  END mprj_io_analog_sel[34]
+  PIN mprj_io_dm[102]
+    PORT
+      LAYER met2 ;
+        RECT 208.565 1603.485 210.965 1603.765 ;
+    END
+  END mprj_io_dm[102]
+  PIN mprj_io_dm[103]
+    PORT
+      LAYER met2 ;
+        RECT 208.565 1612.685 210.965 1612.965 ;
+    END
+  END mprj_io_dm[103]
+  PIN mprj_io_dm[104]
+    PORT
+      LAYER met2 ;
+        RECT 208.565 1581.865 210.965 1582.145 ;
+    END
+  END mprj_io_dm[104]
+  PIN mprj_io_enh[34]
+    PORT
+      LAYER met2 ;
+        RECT 208.565 1591.065 210.965 1591.345 ;
+    END
+  END mprj_io_enh[34]
+  PIN mprj_io_hldh_n[34]
+    PORT
+      LAYER met2 ;
+        RECT 208.565 1587.845 210.965 1588.125 ;
+    END
+  END mprj_io_hldh_n[34]
+  PIN mprj_io_holdover[34]
+    PORT
+      LAYER met2 ;
+        RECT 208.565 1578.645 210.965 1578.925 ;
+    END
+  END mprj_io_holdover[34]
+  PIN mprj_io_ib_mode_sel[34]
+    PORT
+      LAYER met2 ;
+        RECT 208.565 1563.465 210.965 1563.745 ;
+    END
+  END mprj_io_ib_mode_sel[34]
+  PIN mprj_io_inp_dis[34]
+    PORT
+      LAYER met2 ;
+        RECT 208.565 1597.505 210.965 1597.785 ;
+    END
+  END mprj_io_inp_dis[34]
+  PIN mprj_io_oeb[34]
+    PORT
+      LAYER met2 ;
+        RECT 208.565 1560.245 210.965 1560.525 ;
+    END
+  END mprj_io_oeb[34]
+  PIN mprj_io_out[34]
+    PORT
+      LAYER met2 ;
+        RECT 208.565 1575.885 210.965 1576.165 ;
+    END
+  END mprj_io_out[34]
+  PIN mprj_io_slow_sel[34]
+    PORT
+      LAYER met2 ;
+        RECT 208.565 1621.885 210.965 1622.165 ;
+    END
+  END mprj_io_slow_sel[34]
+  PIN mprj_io_vtrip_sel[34]
+    PORT
+      LAYER met2 ;
+        RECT 208.565 1566.685 210.965 1566.965 ;
+    END
+  END mprj_io_vtrip_sel[34]
+  PIN mprj_io_in[34]
+    PORT
+      LAYER met2 ;
+        RECT 208.565 1631.085 210.965 1631.365 ;
+    END
+  END mprj_io_in[34]
+  PIN mprj_io[35]
+    PORT
+      LAYER met5 ;
+        RECT 32.990 1351.200 95.440 1413.800 ;
+    END
+  END mprj_io[35]
+  PIN mprj_io_analog_en[35]
+    PORT
+      LAYER met2 ;
+        RECT 208.565 1390.705 210.965 1390.985 ;
+    END
+  END mprj_io_analog_en[35]
+  PIN mprj_io_analog_pol[35]
+    PORT
+      LAYER met2 ;
+        RECT 208.565 1384.265 210.965 1384.545 ;
+    END
+  END mprj_io_analog_pol[35]
+  PIN mprj_io_analog_sel[35]
+    PORT
+      LAYER met2 ;
+        RECT 208.565 1369.085 210.965 1369.365 ;
+    END
+  END mprj_io_analog_sel[35]
+  PIN mprj_io_dm[105]
+    PORT
+      LAYER met2 ;
+        RECT 208.565 1387.485 210.965 1387.765 ;
+    END
+  END mprj_io_dm[105]
+  PIN mprj_io_dm[106]
+    PORT
+      LAYER met2 ;
+        RECT 208.565 1396.685 210.965 1396.965 ;
+    END
+  END mprj_io_dm[106]
+  PIN mprj_io_dm[107]
+    PORT
+      LAYER met2 ;
+        RECT 208.565 1365.865 210.965 1366.145 ;
+    END
+  END mprj_io_dm[107]
+  PIN mprj_io_enh[35]
+    PORT
+      LAYER met2 ;
+        RECT 208.565 1375.065 210.965 1375.345 ;
+    END
+  END mprj_io_enh[35]
+  PIN mprj_io_hldh_n[35]
+    PORT
+      LAYER met2 ;
+        RECT 208.565 1371.845 210.965 1372.125 ;
+    END
+  END mprj_io_hldh_n[35]
+  PIN mprj_io_holdover[35]
+    PORT
+      LAYER met2 ;
+        RECT 208.565 1362.645 210.965 1362.925 ;
+    END
+  END mprj_io_holdover[35]
+  PIN mprj_io_ib_mode_sel[35]
+    PORT
+      LAYER met2 ;
+        RECT 208.565 1347.465 210.965 1347.745 ;
+    END
+  END mprj_io_ib_mode_sel[35]
+  PIN mprj_io_inp_dis[35]
+    PORT
+      LAYER met2 ;
+        RECT 208.565 1381.505 210.965 1381.785 ;
+    END
+  END mprj_io_inp_dis[35]
+  PIN mprj_io_oeb[35]
+    PORT
+      LAYER met2 ;
+        RECT 208.565 1344.245 210.965 1344.525 ;
+    END
+  END mprj_io_oeb[35]
+  PIN mprj_io_out[35]
+    PORT
+      LAYER met2 ;
+        RECT 208.565 1359.885 210.965 1360.165 ;
+    END
+  END mprj_io_out[35]
+  PIN mprj_io_slow_sel[35]
+    PORT
+      LAYER met2 ;
+        RECT 208.565 1405.885 210.965 1406.165 ;
+    END
+  END mprj_io_slow_sel[35]
+  PIN mprj_io_vtrip_sel[35]
+    PORT
+      LAYER met2 ;
+        RECT 208.565 1350.685 210.965 1350.965 ;
+    END
+  END mprj_io_vtrip_sel[35]
+  PIN mprj_io_in[35]
+    PORT
+      LAYER met2 ;
+        RECT 208.565 1415.085 210.965 1415.365 ;
+    END
+  END mprj_io_in[35]
+  PIN mprj_io[36]
+    PORT
+      LAYER met5 ;
+        RECT 32.990 1135.200 95.440 1197.800 ;
+    END
+  END mprj_io[36]
+  PIN mprj_io_analog_en[36]
+    PORT
+      LAYER met2 ;
+        RECT 208.565 1174.705 210.965 1174.985 ;
+    END
+  END mprj_io_analog_en[36]
+  PIN mprj_io_analog_pol[36]
+    PORT
+      LAYER met2 ;
+        RECT 208.565 1168.265 210.965 1168.545 ;
+    END
+  END mprj_io_analog_pol[36]
+  PIN mprj_io_analog_sel[36]
+    PORT
+      LAYER met2 ;
+        RECT 208.565 1153.085 210.965 1153.365 ;
+    END
+  END mprj_io_analog_sel[36]
+  PIN mprj_io_dm[108]
+    PORT
+      LAYER met2 ;
+        RECT 208.565 1171.485 210.965 1171.765 ;
+    END
+  END mprj_io_dm[108]
+  PIN mprj_io_dm[109]
+    PORT
+      LAYER met2 ;
+        RECT 208.565 1180.685 210.965 1180.965 ;
+    END
+  END mprj_io_dm[109]
+  PIN mprj_io_dm[110]
+    PORT
+      LAYER met2 ;
+        RECT 208.565 1149.865 210.965 1150.145 ;
+    END
+  END mprj_io_dm[110]
+  PIN mprj_io_enh[36]
+    PORT
+      LAYER met2 ;
+        RECT 208.565 1159.065 210.965 1159.345 ;
+    END
+  END mprj_io_enh[36]
+  PIN mprj_io_hldh_n[36]
+    PORT
+      LAYER met2 ;
+        RECT 208.565 1155.845 210.965 1156.125 ;
+    END
+  END mprj_io_hldh_n[36]
+  PIN mprj_io_holdover[36]
+    PORT
+      LAYER met2 ;
+        RECT 208.565 1146.645 210.965 1146.925 ;
+    END
+  END mprj_io_holdover[36]
+  PIN mprj_io_ib_mode_sel[36]
+    PORT
+      LAYER met2 ;
+        RECT 208.565 1131.465 210.965 1131.745 ;
+    END
+  END mprj_io_ib_mode_sel[36]
+  PIN mprj_io_inp_dis[36]
+    PORT
+      LAYER met2 ;
+        RECT 208.565 1165.505 210.965 1165.785 ;
+    END
+  END mprj_io_inp_dis[36]
+  PIN mprj_io_oeb[36]
+    PORT
+      LAYER met2 ;
+        RECT 208.565 1128.245 210.965 1128.525 ;
+    END
+  END mprj_io_oeb[36]
+  PIN mprj_io_out[36]
+    PORT
+      LAYER met2 ;
+        RECT 208.565 1143.885 210.965 1144.165 ;
+    END
+  END mprj_io_out[36]
+  PIN mprj_io_slow_sel[36]
+    PORT
+      LAYER met2 ;
+        RECT 208.565 1189.885 210.965 1190.165 ;
+    END
+  END mprj_io_slow_sel[36]
+  PIN mprj_io_vtrip_sel[36]
+    PORT
+      LAYER met2 ;
+        RECT 208.565 1134.685 210.965 1134.965 ;
+    END
+  END mprj_io_vtrip_sel[36]
+  PIN mprj_io_in[36]
+    PORT
+      LAYER met2 ;
+        RECT 208.565 1199.085 210.965 1199.365 ;
+    END
+  END mprj_io_in[36]
+  PIN mprj_io[37]
+    PORT
+      LAYER met5 ;
+        RECT 32.990 919.200 95.440 981.800 ;
+    END
+  END mprj_io[37]
+  PIN mprj_io_analog_en[37]
+    PORT
+      LAYER met2 ;
+        RECT 208.565 958.705 210.965 958.985 ;
+    END
+  END mprj_io_analog_en[37]
+  PIN mprj_io_analog_pol[37]
+    PORT
+      LAYER met2 ;
+        RECT 208.565 952.265 210.965 952.545 ;
+    END
+  END mprj_io_analog_pol[37]
+  PIN mprj_io_analog_sel[37]
+    PORT
+      LAYER met2 ;
+        RECT 208.565 937.085 210.965 937.365 ;
+    END
+  END mprj_io_analog_sel[37]
+  PIN mprj_io_dm[111]
+    PORT
+      LAYER met2 ;
+        RECT 208.565 955.485 210.965 955.765 ;
+    END
+  END mprj_io_dm[111]
+  PIN mprj_io_dm[112]
+    PORT
+      LAYER met2 ;
+        RECT 208.565 964.685 210.965 964.965 ;
+    END
+  END mprj_io_dm[112]
+  PIN mprj_io_dm[113]
+    PORT
+      LAYER met2 ;
+        RECT 208.565 933.865 210.965 934.145 ;
+    END
+  END mprj_io_dm[113]
+  PIN mprj_io_enh[37]
+    PORT
+      LAYER met2 ;
+        RECT 208.565 943.065 210.965 943.345 ;
+    END
+  END mprj_io_enh[37]
+  PIN mprj_io_hldh_n[37]
+    PORT
+      LAYER met2 ;
+        RECT 208.565 939.845 210.965 940.125 ;
+    END
+  END mprj_io_hldh_n[37]
+  PIN mprj_io_holdover[37]
+    PORT
+      LAYER met2 ;
+        RECT 208.565 930.645 210.965 930.925 ;
+    END
+  END mprj_io_holdover[37]
+  PIN mprj_io_ib_mode_sel[37]
+    PORT
+      LAYER met2 ;
+        RECT 208.565 915.465 210.965 915.745 ;
+    END
+  END mprj_io_ib_mode_sel[37]
+  PIN mprj_io_inp_dis[37]
+    PORT
+      LAYER met2 ;
+        RECT 208.565 949.505 210.965 949.785 ;
+    END
+  END mprj_io_inp_dis[37]
+  PIN mprj_io_oeb[37]
+    PORT
+      LAYER met2 ;
+        RECT 208.565 912.245 210.965 912.525 ;
+    END
+  END mprj_io_oeb[37]
+  PIN mprj_io_out[37]
+    PORT
+      LAYER met2 ;
+        RECT 208.565 927.885 210.965 928.165 ;
+    END
+  END mprj_io_out[37]
+  PIN mprj_io_slow_sel[37]
+    PORT
+      LAYER met2 ;
+        RECT 208.565 973.885 210.965 974.165 ;
+    END
+  END mprj_io_slow_sel[37]
+  PIN mprj_io_vtrip_sel[37]
+    PORT
+      LAYER met2 ;
+        RECT 208.565 918.685 210.965 918.965 ;
+    END
+  END mprj_io_vtrip_sel[37]
+  PIN mprj_io_in[37]
+    PORT
+      LAYER met2 ;
+        RECT 208.565 983.085 210.965 983.365 ;
+    END
+  END mprj_io_in[37]
+  PIN mprj_io[19]
+    PORT
+      LAYER met5 ;
+        RECT 1421.200 5092.560 1483.800 5155.010 ;
+    END
+  END mprj_io[19]
+  PIN mprj_io_analog_en[19]
+    PORT
+      LAYER met2 ;
+        RECT 1460.705 4977.035 1460.985 4979.435 ;
+    END
+  END mprj_io_analog_en[19]
+  PIN mprj_io_analog_pol[19]
+    PORT
+      LAYER met2 ;
+        RECT 1454.265 4977.035 1454.545 4979.435 ;
+    END
+  END mprj_io_analog_pol[19]
+  PIN mprj_io_analog_sel[19]
+    PORT
+      LAYER met2 ;
+        RECT 1439.085 4977.035 1439.365 4979.435 ;
+    END
+  END mprj_io_analog_sel[19]
+  PIN mprj_io_dm[57]
+    PORT
+      LAYER met2 ;
+        RECT 1457.485 4977.035 1457.765 4979.435 ;
+    END
+  END mprj_io_dm[57]
+  PIN mprj_io_dm[58]
+    PORT
+      LAYER met2 ;
+        RECT 1466.685 4977.035 1466.965 4979.435 ;
+    END
+  END mprj_io_dm[58]
+  PIN mprj_io_dm[59]
+    PORT
+      LAYER met2 ;
+        RECT 1435.865 4977.035 1436.145 4979.435 ;
+    END
+  END mprj_io_dm[59]
+  PIN mprj_io_enh[19]
+    PORT
+      LAYER met2 ;
+        RECT 1445.065 4977.035 1445.345 4979.435 ;
+    END
+  END mprj_io_enh[19]
+  PIN mprj_io_hldh_n[19]
+    PORT
+      LAYER met2 ;
+        RECT 1441.845 4977.035 1442.125 4979.435 ;
+    END
+  END mprj_io_hldh_n[19]
+  PIN mprj_io_holdover[19]
+    PORT
+      LAYER met2 ;
+        RECT 1432.645 4977.035 1432.925 4979.435 ;
+    END
+  END mprj_io_holdover[19]
+  PIN mprj_io_ib_mode_sel[19]
+    PORT
+      LAYER met2 ;
+        RECT 1417.465 4977.035 1417.745 4979.435 ;
+    END
+  END mprj_io_ib_mode_sel[19]
+  PIN mprj_io_inp_dis[19]
+    PORT
+      LAYER met2 ;
+        RECT 1451.505 4977.035 1451.785 4979.435 ;
+    END
+  END mprj_io_inp_dis[19]
+  PIN mprj_io_oeb[19]
+    PORT
+      LAYER met2 ;
+        RECT 1414.245 4977.035 1414.525 4979.435 ;
+    END
+  END mprj_io_oeb[19]
+  PIN mprj_io_out[19]
+    PORT
+      LAYER met2 ;
+        RECT 1429.885 4977.035 1430.165 4979.435 ;
+    END
+  END mprj_io_out[19]
+  PIN mprj_io_slow_sel[19]
+    PORT
+      LAYER met2 ;
+        RECT 1475.885 4977.035 1476.165 4979.435 ;
+    END
+  END mprj_io_slow_sel[19]
+  PIN mprj_io_vtrip_sel[19]
+    PORT
+      LAYER met2 ;
+        RECT 1420.685 4977.035 1420.965 4979.435 ;
+    END
+  END mprj_io_vtrip_sel[19]
+  PIN mprj_io_in[19]
+    PORT
+      LAYER met2 ;
+        RECT 1485.085 4977.035 1485.365 4979.435 ;
+    END
+  END mprj_io_in[19]
+  PIN mprj_io[20]
+    PORT
+      LAYER met5 ;
+        RECT 1163.200 5092.560 1225.800 5155.010 ;
+    END
+  END mprj_io[20]
+  PIN mprj_io_analog_en[20]
+    PORT
+      LAYER met2 ;
+        RECT 1202.705 4977.035 1202.985 4979.435 ;
+    END
+  END mprj_io_analog_en[20]
+  PIN mprj_io_analog_pol[20]
+    PORT
+      LAYER met2 ;
+        RECT 1196.265 4977.035 1196.545 4979.435 ;
+    END
+  END mprj_io_analog_pol[20]
+  PIN mprj_io_analog_sel[20]
+    PORT
+      LAYER met2 ;
+        RECT 1181.085 4977.035 1181.365 4979.435 ;
+    END
+  END mprj_io_analog_sel[20]
+  PIN mprj_io_dm[60]
+    PORT
+      LAYER met2 ;
+        RECT 1199.485 4977.035 1199.765 4979.435 ;
+    END
+  END mprj_io_dm[60]
+  PIN mprj_io_dm[61]
+    PORT
+      LAYER met2 ;
+        RECT 1208.685 4977.035 1208.965 4979.435 ;
+    END
+  END mprj_io_dm[61]
+  PIN mprj_io_dm[62]
+    PORT
+      LAYER met2 ;
+        RECT 1177.865 4977.035 1178.145 4979.435 ;
+    END
+  END mprj_io_dm[62]
+  PIN mprj_io_enh[20]
+    PORT
+      LAYER met2 ;
+        RECT 1187.065 4977.035 1187.345 4979.435 ;
+    END
+  END mprj_io_enh[20]
+  PIN mprj_io_hldh_n[20]
+    PORT
+      LAYER met2 ;
+        RECT 1183.845 4977.035 1184.125 4979.435 ;
+    END
+  END mprj_io_hldh_n[20]
+  PIN mprj_io_holdover[20]
+    PORT
+      LAYER met2 ;
+        RECT 1174.645 4977.035 1174.925 4979.435 ;
+    END
+  END mprj_io_holdover[20]
+  PIN mprj_io_ib_mode_sel[20]
+    PORT
+      LAYER met2 ;
+        RECT 1159.465 4977.035 1159.745 4979.435 ;
+    END
+  END mprj_io_ib_mode_sel[20]
+  PIN mprj_io_inp_dis[20]
+    PORT
+      LAYER met2 ;
+        RECT 1193.505 4977.035 1193.785 4979.435 ;
+    END
+  END mprj_io_inp_dis[20]
+  PIN mprj_io_oeb[20]
+    PORT
+      LAYER met2 ;
+        RECT 1156.245 4977.035 1156.525 4979.435 ;
+    END
+  END mprj_io_oeb[20]
+  PIN mprj_io_out[20]
+    PORT
+      LAYER met2 ;
+        RECT 1171.885 4977.035 1172.165 4979.435 ;
+    END
+  END mprj_io_out[20]
+  PIN mprj_io_slow_sel[20]
+    PORT
+      LAYER met2 ;
+        RECT 1217.885 4977.035 1218.165 4979.435 ;
+    END
+  END mprj_io_slow_sel[20]
+  PIN mprj_io_vtrip_sel[20]
+    PORT
+      LAYER met2 ;
+        RECT 1162.685 4977.035 1162.965 4979.435 ;
+    END
+  END mprj_io_vtrip_sel[20]
+  PIN mprj_io_in[20]
+    PORT
+      LAYER met2 ;
+        RECT 1227.085 4977.035 1227.365 4979.435 ;
+    END
+  END mprj_io_in[20]
+  PIN mprj_io[21]
+    PORT
+      LAYER met5 ;
+        RECT 906.200 5092.560 968.800 5155.010 ;
+    END
+  END mprj_io[21]
+  PIN mprj_io_analog_en[21]
+    PORT
+      LAYER met2 ;
+        RECT 945.705 4977.035 945.985 4979.435 ;
+    END
+  END mprj_io_analog_en[21]
+  PIN mprj_io_analog_pol[21]
+    PORT
+      LAYER met2 ;
+        RECT 939.265 4977.035 939.545 4979.435 ;
+    END
+  END mprj_io_analog_pol[21]
+  PIN mprj_io_analog_sel[21]
+    PORT
+      LAYER met2 ;
+        RECT 924.085 4977.035 924.365 4979.435 ;
+    END
+  END mprj_io_analog_sel[21]
+  PIN mprj_io_dm[63]
+    PORT
+      LAYER met2 ;
+        RECT 942.485 4977.035 942.765 4979.435 ;
+    END
+  END mprj_io_dm[63]
+  PIN mprj_io_dm[64]
+    PORT
+      LAYER met2 ;
+        RECT 951.685 4977.035 951.965 4979.435 ;
+    END
+  END mprj_io_dm[64]
+  PIN mprj_io_dm[65]
+    PORT
+      LAYER met2 ;
+        RECT 920.865 4977.035 921.145 4979.435 ;
+    END
+  END mprj_io_dm[65]
+  PIN mprj_io_enh[21]
+    PORT
+      LAYER met2 ;
+        RECT 930.065 4977.035 930.345 4979.435 ;
+    END
+  END mprj_io_enh[21]
+  PIN mprj_io_hldh_n[21]
+    PORT
+      LAYER met2 ;
+        RECT 926.845 4977.035 927.125 4979.435 ;
+    END
+  END mprj_io_hldh_n[21]
+  PIN mprj_io_holdover[21]
+    PORT
+      LAYER met2 ;
+        RECT 917.645 4977.035 917.925 4979.435 ;
+    END
+  END mprj_io_holdover[21]
+  PIN mprj_io_ib_mode_sel[21]
+    PORT
+      LAYER met2 ;
+        RECT 902.465 4977.035 902.745 4979.435 ;
+    END
+  END mprj_io_ib_mode_sel[21]
+  PIN mprj_io_inp_dis[21]
+    PORT
+      LAYER met2 ;
+        RECT 936.505 4977.035 936.785 4979.435 ;
+    END
+  END mprj_io_inp_dis[21]
+  PIN mprj_io_oeb[21]
+    PORT
+      LAYER met2 ;
+        RECT 899.245 4977.035 899.525 4979.435 ;
+    END
+  END mprj_io_oeb[21]
+  PIN mprj_io_out[21]
+    PORT
+      LAYER met2 ;
+        RECT 914.885 4977.035 915.165 4979.435 ;
+    END
+  END mprj_io_out[21]
+  PIN mprj_io_slow_sel[21]
+    PORT
+      LAYER met2 ;
+        RECT 960.885 4977.035 961.165 4979.435 ;
+    END
+  END mprj_io_slow_sel[21]
+  PIN mprj_io_vtrip_sel[21]
+    PORT
+      LAYER met2 ;
+        RECT 905.685 4977.035 905.965 4979.435 ;
+    END
+  END mprj_io_vtrip_sel[21]
+  PIN mprj_io_in[21]
+    PORT
+      LAYER met2 ;
+        RECT 970.085 4977.035 970.365 4979.435 ;
+    END
+  END mprj_io_in[21]
+  PIN mprj_io[22]
+    PORT
+      LAYER met5 ;
+        RECT 649.200 5092.560 711.800 5155.010 ;
+    END
+  END mprj_io[22]
+  PIN mprj_io_analog_en[22]
+    PORT
+      LAYER met2 ;
+        RECT 688.705 4977.035 688.985 4979.435 ;
+    END
+  END mprj_io_analog_en[22]
+  PIN mprj_io_analog_pol[22]
+    PORT
+      LAYER met2 ;
+        RECT 682.265 4977.035 682.545 4979.435 ;
+    END
+  END mprj_io_analog_pol[22]
+  PIN mprj_io_analog_sel[22]
+    PORT
+      LAYER met2 ;
+        RECT 667.085 4977.035 667.365 4979.435 ;
+    END
+  END mprj_io_analog_sel[22]
+  PIN mprj_io_dm[66]
+    PORT
+      LAYER met2 ;
+        RECT 685.485 4977.035 685.765 4979.435 ;
+    END
+  END mprj_io_dm[66]
+  PIN mprj_io_dm[67]
+    PORT
+      LAYER met2 ;
+        RECT 694.685 4977.035 694.965 4979.435 ;
+    END
+  END mprj_io_dm[67]
+  PIN mprj_io_dm[68]
+    PORT
+      LAYER met2 ;
+        RECT 663.865 4977.035 664.145 4979.435 ;
+    END
+  END mprj_io_dm[68]
+  PIN mprj_io_enh[22]
+    PORT
+      LAYER met2 ;
+        RECT 673.065 4977.035 673.345 4979.435 ;
+    END
+  END mprj_io_enh[22]
+  PIN mprj_io_hldh_n[22]
+    PORT
+      LAYER met2 ;
+        RECT 669.845 4977.035 670.125 4979.435 ;
+    END
+  END mprj_io_hldh_n[22]
+  PIN mprj_io_holdover[22]
+    PORT
+      LAYER met2 ;
+        RECT 660.645 4977.035 660.925 4979.435 ;
+    END
+  END mprj_io_holdover[22]
+  PIN mprj_io_ib_mode_sel[22]
+    PORT
+      LAYER met2 ;
+        RECT 645.465 4977.035 645.745 4979.435 ;
+    END
+  END mprj_io_ib_mode_sel[22]
+  PIN mprj_io_inp_dis[22]
+    PORT
+      LAYER met2 ;
+        RECT 679.505 4977.035 679.785 4979.435 ;
+    END
+  END mprj_io_inp_dis[22]
+  PIN mprj_io_oeb[22]
+    PORT
+      LAYER met2 ;
+        RECT 642.245 4977.035 642.525 4979.435 ;
+    END
+  END mprj_io_oeb[22]
+  PIN mprj_io_out[22]
+    PORT
+      LAYER met2 ;
+        RECT 657.885 4977.035 658.165 4979.435 ;
+    END
+  END mprj_io_out[22]
+  PIN mprj_io_slow_sel[22]
+    PORT
+      LAYER met2 ;
+        RECT 703.885 4977.035 704.165 4979.435 ;
+    END
+  END mprj_io_slow_sel[22]
+  PIN mprj_io_vtrip_sel[22]
+    PORT
+      LAYER met2 ;
+        RECT 648.685 4977.035 648.965 4979.435 ;
+    END
+  END mprj_io_vtrip_sel[22]
+  PIN mprj_io_in[22]
+    PORT
+      LAYER met2 ;
+        RECT 713.085 4977.035 713.365 4979.435 ;
+    END
+  END mprj_io_in[22]
+  PIN mprj_io[23]
+    PORT
+      LAYER met5 ;
+        RECT 392.200 5092.560 454.800 5155.010 ;
+    END
+  END mprj_io[23]
+  PIN mprj_io_analog_en[23]
+    PORT
+      LAYER met2 ;
+        RECT 431.705 4977.035 431.985 4979.435 ;
+    END
+  END mprj_io_analog_en[23]
+  PIN mprj_io_analog_pol[23]
+    PORT
+      LAYER met2 ;
+        RECT 425.265 4977.035 425.545 4979.435 ;
+    END
+  END mprj_io_analog_pol[23]
+  PIN mprj_io_analog_sel[23]
+    PORT
+      LAYER met2 ;
+        RECT 410.085 4977.035 410.365 4979.435 ;
+    END
+  END mprj_io_analog_sel[23]
+  PIN mprj_io_dm[69]
+    PORT
+      LAYER met2 ;
+        RECT 428.485 4977.035 428.765 4979.435 ;
+    END
+  END mprj_io_dm[69]
+  PIN mprj_io_dm[70]
+    PORT
+      LAYER met2 ;
+        RECT 437.685 4977.035 437.965 4979.435 ;
+    END
+  END mprj_io_dm[70]
+  PIN mprj_io_dm[71]
+    PORT
+      LAYER met2 ;
+        RECT 406.865 4977.035 407.145 4979.435 ;
+    END
+  END mprj_io_dm[71]
+  PIN mprj_io_enh[23]
+    PORT
+      LAYER met2 ;
+        RECT 416.065 4977.035 416.345 4979.435 ;
+    END
+  END mprj_io_enh[23]
+  PIN mprj_io_hldh_n[23]
+    PORT
+      LAYER met2 ;
+        RECT 412.845 4977.035 413.125 4979.435 ;
+    END
+  END mprj_io_hldh_n[23]
+  PIN mprj_io_holdover[23]
+    PORT
+      LAYER met2 ;
+        RECT 403.645 4977.035 403.925 4979.435 ;
+    END
+  END mprj_io_holdover[23]
+  PIN mprj_io_ib_mode_sel[23]
+    PORT
+      LAYER met2 ;
+        RECT 388.465 4977.035 388.745 4979.435 ;
+    END
+  END mprj_io_ib_mode_sel[23]
+  PIN mprj_io_inp_dis[23]
+    PORT
+      LAYER met2 ;
+        RECT 422.505 4977.035 422.785 4979.435 ;
+    END
+  END mprj_io_inp_dis[23]
+  PIN mprj_io_oeb[23]
+    PORT
+      LAYER met2 ;
+        RECT 385.245 4977.035 385.525 4979.435 ;
+    END
+  END mprj_io_oeb[23]
+  PIN mprj_io_out[23]
+    PORT
+      LAYER met2 ;
+        RECT 400.885 4977.035 401.165 4979.435 ;
+    END
+  END mprj_io_out[23]
+  PIN mprj_io_slow_sel[23]
+    PORT
+      LAYER met2 ;
+        RECT 446.885 4977.035 447.165 4979.435 ;
+    END
+  END mprj_io_slow_sel[23]
+  PIN mprj_io_vtrip_sel[23]
+    PORT
+      LAYER met2 ;
+        RECT 391.685 4977.035 391.965 4979.435 ;
+    END
+  END mprj_io_vtrip_sel[23]
+  PIN mprj_io_in[23]
+    PORT
+      LAYER met2 ;
+        RECT 456.085 4977.035 456.365 4979.435 ;
+    END
+  END mprj_io_in[23]
+  PIN mprj_io[24]
+    PORT
+      LAYER met5 ;
+        RECT 32.990 4782.200 95.440 4844.800 ;
+    END
+  END mprj_io[24]
+  PIN mprj_io_analog_en[24]
+    PORT
+      LAYER met2 ;
+        RECT 208.565 4821.705 210.965 4821.985 ;
+    END
+  END mprj_io_analog_en[24]
+  PIN mprj_io_analog_pol[24]
+    PORT
+      LAYER met2 ;
+        RECT 208.565 4815.265 210.965 4815.545 ;
+    END
+  END mprj_io_analog_pol[24]
+  PIN mprj_io_analog_sel[24]
+    PORT
+      LAYER met2 ;
+        RECT 208.565 4800.085 210.965 4800.365 ;
+    END
+  END mprj_io_analog_sel[24]
+  PIN mprj_io_dm[72]
+    PORT
+      LAYER met2 ;
+        RECT 208.565 4818.485 210.965 4818.765 ;
+    END
+  END mprj_io_dm[72]
+  PIN mprj_io_dm[73]
+    PORT
+      LAYER met2 ;
+        RECT 208.565 4827.685 210.965 4827.965 ;
+    END
+  END mprj_io_dm[73]
+  PIN mprj_io_dm[74]
+    PORT
+      LAYER met2 ;
+        RECT 208.565 4796.865 210.965 4797.145 ;
+    END
+  END mprj_io_dm[74]
+  PIN mprj_io_enh[24]
+    PORT
+      LAYER met2 ;
+        RECT 208.565 4806.065 210.965 4806.345 ;
+    END
+  END mprj_io_enh[24]
+  PIN mprj_io_hldh_n[24]
+    PORT
+      LAYER met2 ;
+        RECT 208.565 4802.845 210.965 4803.125 ;
+    END
+  END mprj_io_hldh_n[24]
+  PIN mprj_io_holdover[24]
+    PORT
+      LAYER met2 ;
+        RECT 208.565 4793.645 210.965 4793.925 ;
+    END
+  END mprj_io_holdover[24]
+  PIN mprj_io_ib_mode_sel[24]
+    PORT
+      LAYER met2 ;
+        RECT 208.565 4778.465 210.965 4778.745 ;
+    END
+  END mprj_io_ib_mode_sel[24]
+  PIN mprj_io_inp_dis[24]
+    PORT
+      LAYER met2 ;
+        RECT 208.565 4812.505 210.965 4812.785 ;
+    END
+  END mprj_io_inp_dis[24]
+  PIN mprj_io_oeb[24]
+    PORT
+      LAYER met2 ;
+        RECT 208.565 4775.245 210.965 4775.525 ;
+    END
+  END mprj_io_oeb[24]
+  PIN mprj_io_out[24]
+    PORT
+      LAYER met2 ;
+        RECT 208.565 4790.885 210.965 4791.165 ;
+    END
+  END mprj_io_out[24]
+  PIN mprj_io_slow_sel[24]
+    PORT
+      LAYER met2 ;
+        RECT 208.565 4836.885 210.965 4837.165 ;
+    END
+  END mprj_io_slow_sel[24]
+  PIN mprj_io_vtrip_sel[24]
+    PORT
+      LAYER met2 ;
+        RECT 208.565 4781.685 210.965 4781.965 ;
+    END
+  END mprj_io_vtrip_sel[24]
+  PIN mprj_io_in[24]
+    PORT
+      LAYER met2 ;
+        RECT 208.565 4846.085 210.965 4846.365 ;
+    END
+  END mprj_io_in[24]
+  PIN mprj_io[25]
+    PORT
+      LAYER met5 ;
+        RECT 32.990 3933.200 95.440 3995.800 ;
+    END
+  END mprj_io[25]
+  PIN mprj_io_analog_en[25]
+    PORT
+      LAYER met2 ;
+        RECT 208.565 3972.705 210.965 3972.985 ;
+    END
+  END mprj_io_analog_en[25]
+  PIN mprj_io_analog_pol[25]
+    PORT
+      LAYER met2 ;
+        RECT 208.565 3966.265 210.965 3966.545 ;
+    END
+  END mprj_io_analog_pol[25]
+  PIN mprj_io_analog_sel[25]
+    PORT
+      LAYER met2 ;
+        RECT 208.565 3951.085 210.965 3951.365 ;
+    END
+  END mprj_io_analog_sel[25]
+  PIN mprj_io_dm[75]
+    PORT
+      LAYER met2 ;
+        RECT 208.565 3969.485 210.965 3969.765 ;
+    END
+  END mprj_io_dm[75]
+  PIN mprj_io_dm[76]
+    PORT
+      LAYER met2 ;
+        RECT 208.565 3978.685 210.965 3978.965 ;
+    END
+  END mprj_io_dm[76]
+  PIN mprj_io_dm[77]
+    PORT
+      LAYER met2 ;
+        RECT 208.565 3947.865 210.965 3948.145 ;
+    END
+  END mprj_io_dm[77]
+  PIN mprj_io_enh[25]
+    PORT
+      LAYER met2 ;
+        RECT 208.565 3957.065 210.965 3957.345 ;
+    END
+  END mprj_io_enh[25]
+  PIN mprj_io_hldh_n[25]
+    PORT
+      LAYER met2 ;
+        RECT 208.565 3953.845 210.965 3954.125 ;
+    END
+  END mprj_io_hldh_n[25]
+  PIN mprj_io_holdover[25]
+    PORT
+      LAYER met2 ;
+        RECT 208.565 3944.645 210.965 3944.925 ;
+    END
+  END mprj_io_holdover[25]
+  PIN mprj_io_ib_mode_sel[25]
+    PORT
+      LAYER met2 ;
+        RECT 208.565 3929.465 210.965 3929.745 ;
+    END
+  END mprj_io_ib_mode_sel[25]
+  PIN mprj_io_inp_dis[25]
+    PORT
+      LAYER met2 ;
+        RECT 208.565 3963.505 210.965 3963.785 ;
+    END
+  END mprj_io_inp_dis[25]
+  PIN mprj_io_oeb[25]
+    PORT
+      LAYER met2 ;
+        RECT 208.565 3926.245 210.965 3926.525 ;
+    END
+  END mprj_io_oeb[25]
+  PIN mprj_io_out[25]
+    PORT
+      LAYER met2 ;
+        RECT 208.565 3941.885 210.965 3942.165 ;
+    END
+  END mprj_io_out[25]
+  PIN mprj_io_slow_sel[25]
+    PORT
+      LAYER met2 ;
+        RECT 208.565 3987.885 210.965 3988.165 ;
+    END
+  END mprj_io_slow_sel[25]
+  PIN mprj_io_vtrip_sel[25]
+    PORT
+      LAYER met2 ;
+        RECT 208.565 3932.685 210.965 3932.965 ;
+    END
+  END mprj_io_vtrip_sel[25]
+  PIN mprj_io_in[25]
+    PORT
+      LAYER met2 ;
+        RECT 208.565 3997.085 210.965 3997.365 ;
+    END
+  END mprj_io_in[25]
+  PIN mprj_io[26]
+    PORT
+      LAYER met5 ;
+        RECT 32.990 3717.200 95.440 3779.800 ;
+    END
+  END mprj_io[26]
+  PIN mprj_io_analog_en[26]
+    PORT
+      LAYER met2 ;
+        RECT 208.565 3756.705 210.965 3756.985 ;
+    END
+  END mprj_io_analog_en[26]
+  PIN mprj_io_analog_pol[26]
+    PORT
+      LAYER met2 ;
+        RECT 208.565 3750.265 210.965 3750.545 ;
+    END
+  END mprj_io_analog_pol[26]
+  PIN mprj_io_analog_sel[26]
+    PORT
+      LAYER met2 ;
+        RECT 208.565 3735.085 210.965 3735.365 ;
+    END
+  END mprj_io_analog_sel[26]
+  PIN mprj_io_dm[78]
+    PORT
+      LAYER met2 ;
+        RECT 208.565 3753.485 210.965 3753.765 ;
+    END
+  END mprj_io_dm[78]
+  PIN mprj_io_dm[79]
+    PORT
+      LAYER met2 ;
+        RECT 208.565 3762.685 210.965 3762.965 ;
+    END
+  END mprj_io_dm[79]
+  PIN mprj_io_dm[80]
+    PORT
+      LAYER met2 ;
+        RECT 208.565 3731.865 210.965 3732.145 ;
+    END
+  END mprj_io_dm[80]
+  PIN mprj_io_enh[26]
+    PORT
+      LAYER met2 ;
+        RECT 208.565 3741.065 210.965 3741.345 ;
+    END
+  END mprj_io_enh[26]
+  PIN mprj_io_hldh_n[26]
+    PORT
+      LAYER met2 ;
+        RECT 208.565 3737.845 210.965 3738.125 ;
+    END
+  END mprj_io_hldh_n[26]
+  PIN mprj_io_holdover[26]
+    PORT
+      LAYER met2 ;
+        RECT 208.565 3728.645 210.965 3728.925 ;
+    END
+  END mprj_io_holdover[26]
+  PIN mprj_io_ib_mode_sel[26]
+    PORT
+      LAYER met2 ;
+        RECT 208.565 3713.465 210.965 3713.745 ;
+    END
+  END mprj_io_ib_mode_sel[26]
+  PIN mprj_io_inp_dis[26]
+    PORT
+      LAYER met2 ;
+        RECT 208.565 3747.505 210.965 3747.785 ;
+    END
+  END mprj_io_inp_dis[26]
+  PIN mprj_io_oeb[26]
+    PORT
+      LAYER met2 ;
+        RECT 208.565 3710.245 210.965 3710.525 ;
+    END
+  END mprj_io_oeb[26]
+  PIN mprj_io_out[26]
+    PORT
+      LAYER met2 ;
+        RECT 208.565 3725.885 210.965 3726.165 ;
+    END
+  END mprj_io_out[26]
+  PIN mprj_io_slow_sel[26]
+    PORT
+      LAYER met2 ;
+        RECT 208.565 3771.885 210.965 3772.165 ;
+    END
+  END mprj_io_slow_sel[26]
+  PIN mprj_io_vtrip_sel[26]
+    PORT
+      LAYER met2 ;
+        RECT 208.565 3716.685 210.965 3716.965 ;
+    END
+  END mprj_io_vtrip_sel[26]
+  PIN mprj_io_in[26]
+    PORT
+      LAYER met2 ;
+        RECT 208.565 3781.085 210.965 3781.365 ;
+    END
+  END mprj_io_in[26]
+  PIN mprj_io[27]
+    PORT
+      LAYER met5 ;
+        RECT 32.990 3501.200 95.440 3563.800 ;
+    END
+  END mprj_io[27]
+  PIN mprj_io_analog_en[27]
+    PORT
+      LAYER met2 ;
+        RECT 208.565 3540.705 210.965 3540.985 ;
+    END
+  END mprj_io_analog_en[27]
+  PIN mprj_io_analog_pol[27]
+    PORT
+      LAYER met2 ;
+        RECT 208.565 3534.265 210.965 3534.545 ;
+    END
+  END mprj_io_analog_pol[27]
+  PIN mprj_io_analog_sel[27]
+    PORT
+      LAYER met2 ;
+        RECT 208.565 3519.085 210.965 3519.365 ;
+    END
+  END mprj_io_analog_sel[27]
+  PIN mprj_io_dm[81]
+    PORT
+      LAYER met2 ;
+        RECT 208.565 3537.485 210.965 3537.765 ;
+    END
+  END mprj_io_dm[81]
+  PIN mprj_io_dm[82]
+    PORT
+      LAYER met2 ;
+        RECT 208.565 3546.685 210.965 3546.965 ;
+    END
+  END mprj_io_dm[82]
+  PIN mprj_io_dm[83]
+    PORT
+      LAYER met2 ;
+        RECT 208.565 3515.865 210.965 3516.145 ;
+    END
+  END mprj_io_dm[83]
+  PIN mprj_io_enh[27]
+    PORT
+      LAYER met2 ;
+        RECT 208.565 3525.065 210.965 3525.345 ;
+    END
+  END mprj_io_enh[27]
+  PIN mprj_io_hldh_n[27]
+    PORT
+      LAYER met2 ;
+        RECT 208.565 3521.845 210.965 3522.125 ;
+    END
+  END mprj_io_hldh_n[27]
+  PIN mprj_io_holdover[27]
+    PORT
+      LAYER met2 ;
+        RECT 208.565 3512.645 210.965 3512.925 ;
+    END
+  END mprj_io_holdover[27]
+  PIN mprj_io_ib_mode_sel[27]
+    PORT
+      LAYER met2 ;
+        RECT 208.565 3497.465 210.965 3497.745 ;
+    END
+  END mprj_io_ib_mode_sel[27]
+  PIN mprj_io_inp_dis[27]
+    PORT
+      LAYER met2 ;
+        RECT 208.565 3531.505 210.965 3531.785 ;
+    END
+  END mprj_io_inp_dis[27]
+  PIN mprj_io_oeb[27]
+    PORT
+      LAYER met2 ;
+        RECT 208.565 3494.245 210.965 3494.525 ;
+    END
+  END mprj_io_oeb[27]
+  PIN mprj_io_out[27]
+    PORT
+      LAYER met2 ;
+        RECT 208.565 3509.885 210.965 3510.165 ;
+    END
+  END mprj_io_out[27]
+  PIN mprj_io_slow_sel[27]
+    PORT
+      LAYER met2 ;
+        RECT 208.565 3555.885 210.965 3556.165 ;
+    END
+  END mprj_io_slow_sel[27]
+  PIN mprj_io_vtrip_sel[27]
+    PORT
+      LAYER met2 ;
+        RECT 208.565 3500.685 210.965 3500.965 ;
+    END
+  END mprj_io_vtrip_sel[27]
+  PIN mprj_io_in[27]
+    PORT
+      LAYER met2 ;
+        RECT 208.565 3565.085 210.965 3565.365 ;
+    END
+  END mprj_io_in[27]
+  PIN porb_h
+    PORT
+      LAYER met1 ;
+        RECT 2318.930 4961.520 2319.250 4961.580 ;
+        RECT 2377.350 4961.520 2377.670 4961.580 ;
+        RECT 2414.610 4961.520 2414.930 4961.580 ;
+        RECT 2318.930 4961.380 2414.930 4961.520 ;
+        RECT 2318.930 4961.320 2319.250 4961.380 ;
+        RECT 2377.350 4961.320 2377.670 4961.380 ;
+        RECT 2414.610 4961.320 2414.930 4961.380 ;
+        RECT 651.430 4954.380 651.750 4954.440 ;
+        RECT 2097.670 4954.380 2097.990 4954.440 ;
+        RECT 2193.350 4954.380 2193.670 4954.440 ;
+        RECT 650.600 4954.240 652.120 4954.380 ;
+        RECT 650.600 4954.100 650.740 4954.240 ;
+        RECT 651.430 4954.180 651.750 4954.240 ;
+        RECT 395.210 4954.040 395.530 4954.100 ;
+        RECT 552.070 4954.040 552.390 4954.100 ;
+        RECT 395.210 4953.900 552.390 4954.040 ;
+        RECT 395.210 4953.840 395.530 4953.900 ;
+        RECT 552.070 4953.840 552.390 4953.900 ;
+        RECT 650.510 4953.840 650.830 4954.100 ;
+        RECT 651.980 4954.040 652.120 4954.240 ;
+        RECT 2097.670 4954.240 2193.670 4954.380 ;
+        RECT 2097.670 4954.180 2097.990 4954.240 ;
+        RECT 2193.350 4954.180 2193.670 4954.240 ;
+        RECT 2251.310 4954.380 2251.630 4954.440 ;
+        RECT 2318.010 4954.380 2318.330 4954.440 ;
+        RECT 2251.310 4954.240 2318.330 4954.380 ;
+        RECT 2251.310 4954.180 2251.630 4954.240 ;
+        RECT 2318.010 4954.180 2318.330 4954.240 ;
+        RECT 716.290 4954.040 716.610 4954.100 ;
+        RECT 651.980 4953.900 716.610 4954.040 ;
+        RECT 716.290 4953.840 716.610 4953.900 ;
+        RECT 869.010 4954.040 869.330 4954.100 ;
+        RECT 896.610 4954.040 896.930 4954.100 ;
+        RECT 869.010 4953.900 896.930 4954.040 ;
+        RECT 869.010 4953.840 869.330 4953.900 ;
+        RECT 896.610 4953.840 896.930 4953.900 ;
+        RECT 1234.710 4954.040 1235.030 4954.100 ;
+        RECT 1423.310 4954.040 1423.630 4954.100 ;
+        RECT 1434.810 4954.040 1435.130 4954.100 ;
+        RECT 1234.710 4953.900 1435.130 4954.040 ;
+        RECT 1234.710 4953.840 1235.030 4953.900 ;
+        RECT 1423.310 4953.840 1423.630 4953.900 ;
+        RECT 1434.810 4953.840 1435.130 4953.900 ;
+        RECT 938.010 4953.700 938.330 4953.760 ;
+        RECT 938.470 4953.700 938.790 4953.760 ;
+        RECT 938.010 4953.560 938.790 4953.700 ;
+        RECT 938.010 4953.500 938.330 4953.560 ;
+        RECT 938.470 4953.500 938.790 4953.560 ;
+        RECT 1014.370 4953.700 1014.690 4953.760 ;
+        RECT 1165.250 4953.700 1165.570 4953.760 ;
+        RECT 1014.370 4953.560 1165.570 4953.700 ;
+        RECT 1014.370 4953.500 1014.690 4953.560 ;
+        RECT 1165.250 4953.500 1165.570 4953.560 ;
+        RECT 2414.610 4953.700 2414.930 4953.760 ;
+        RECT 2634.490 4953.700 2634.810 4953.760 ;
+        RECT 3143.250 4953.700 3143.570 4953.760 ;
+        RECT 2414.610 4953.560 3143.570 4953.700 ;
+        RECT 2414.610 4953.500 2414.930 4953.560 ;
+        RECT 2634.490 4953.500 2634.810 4953.560 ;
+        RECT 3143.250 4953.500 3143.570 4953.560 ;
+        RECT 1959.300 4953.220 2027.980 4953.360 ;
+        RECT 552.530 4953.020 552.850 4953.080 ;
+        RECT 650.510 4953.020 650.830 4953.080 ;
+        RECT 552.530 4952.880 650.830 4953.020 ;
+        RECT 552.530 4952.820 552.850 4952.880 ;
+        RECT 650.510 4952.820 650.830 4952.880 ;
+        RECT 896.610 4953.020 896.930 4953.080 ;
+        RECT 908.570 4953.020 908.890 4953.080 ;
+        RECT 1932.530 4953.020 1932.850 4953.080 ;
+        RECT 1959.300 4953.020 1959.440 4953.220 ;
+        RECT 896.610 4952.880 908.890 4953.020 ;
+        RECT 1932.095 4952.880 1959.440 4953.020 ;
+        RECT 896.610 4952.820 896.930 4952.880 ;
+        RECT 908.570 4952.820 908.890 4952.880 ;
+        RECT 1932.530 4952.820 1932.850 4952.880 ;
+        RECT 1434.810 4952.680 1435.130 4952.740 ;
+        RECT 1932.620 4952.680 1932.760 4952.820 ;
+        RECT 1434.810 4952.540 1932.760 4952.680 ;
+        RECT 2027.840 4952.680 2027.980 4953.220 ;
+        RECT 2097.670 4953.020 2097.990 4953.080 ;
+        RECT 2028.760 4952.880 2097.990 4953.020 ;
+        RECT 2028.760 4952.680 2028.900 4952.880 ;
+        RECT 2097.670 4952.820 2097.990 4952.880 ;
+        RECT 2193.810 4953.020 2194.130 4953.080 ;
+        RECT 2251.310 4953.020 2251.630 4953.080 ;
+        RECT 2193.810 4952.880 2251.630 4953.020 ;
+        RECT 2193.810 4952.820 2194.130 4952.880 ;
+        RECT 2251.310 4952.820 2251.630 4952.880 ;
+        RECT 2027.840 4952.540 2028.900 4952.680 ;
+        RECT 1434.810 4952.480 1435.130 4952.540 ;
+        RECT 716.290 4952.340 716.610 4952.400 ;
+        RECT 800.470 4952.340 800.790 4952.400 ;
+        RECT 716.290 4952.200 800.790 4952.340 ;
+        RECT 716.290 4952.140 716.610 4952.200 ;
+        RECT 800.470 4952.140 800.790 4952.200 ;
+        RECT 908.570 4952.340 908.890 4952.400 ;
+        RECT 938.010 4952.340 938.330 4952.400 ;
+        RECT 908.570 4952.200 938.330 4952.340 ;
+        RECT 908.570 4952.140 908.890 4952.200 ;
+        RECT 938.010 4952.140 938.330 4952.200 ;
+        RECT 938.470 4952.340 938.790 4952.400 ;
+        RECT 1014.370 4952.340 1014.690 4952.400 ;
+        RECT 938.470 4952.200 1014.690 4952.340 ;
+        RECT 938.470 4952.140 938.790 4952.200 ;
+        RECT 1014.370 4952.140 1014.690 4952.200 ;
+        RECT 1165.250 4952.340 1165.570 4952.400 ;
+        RECT 1234.710 4952.340 1235.030 4952.400 ;
+        RECT 1165.250 4952.200 1235.030 4952.340 ;
+        RECT 1165.250 4952.140 1165.570 4952.200 ;
+        RECT 1234.710 4952.140 1235.030 4952.200 ;
+        RECT 212.130 4950.640 212.450 4950.700 ;
+        RECT 395.210 4950.640 395.530 4950.700 ;
+        RECT 212.130 4950.500 395.530 4950.640 ;
+        RECT 212.130 4950.440 212.450 4950.500 ;
+        RECT 395.210 4950.440 395.530 4950.500 ;
+        RECT 3143.250 4950.440 3143.570 4950.700 ;
+        RECT 3143.340 4950.300 3143.480 4950.440 ;
+        RECT 3367.270 4950.300 3367.590 4950.360 ;
+        RECT 3143.340 4950.160 3367.590 4950.300 ;
+        RECT 3367.270 4950.100 3367.590 4950.160 ;
+        RECT 3367.270 4826.540 3367.590 4826.600 ;
+        RECT 3376.930 4826.540 3377.250 4826.600 ;
+        RECT 3367.270 4826.400 3377.250 4826.540 ;
+        RECT 3367.270 4826.340 3367.590 4826.400 ;
+        RECT 3376.930 4826.340 3377.250 4826.400 ;
+        RECT 208.910 4782.340 209.230 4782.400 ;
+        RECT 212.130 4782.340 212.450 4782.400 ;
+        RECT 208.910 4782.200 212.450 4782.340 ;
+        RECT 208.910 4782.140 209.230 4782.200 ;
+        RECT 212.130 4782.140 212.450 4782.200 ;
+        RECT 3365.890 4540.260 3366.210 4540.320 ;
+        RECT 3367.270 4540.260 3367.590 4540.320 ;
+        RECT 3365.890 4540.120 3367.590 4540.260 ;
+        RECT 3365.890 4540.060 3366.210 4540.120 ;
+        RECT 3367.270 4540.060 3367.590 4540.120 ;
+        RECT 3365.890 4444.040 3366.210 4444.100 ;
+        RECT 3367.270 4444.040 3367.590 4444.100 ;
+        RECT 3365.890 4443.900 3367.590 4444.040 ;
+        RECT 3365.890 4443.840 3366.210 4443.900 ;
+        RECT 3367.270 4443.840 3367.590 4443.900 ;
+        RECT 3368.650 4347.140 3368.970 4347.200 ;
+        RECT 3376.010 4347.140 3376.330 4347.200 ;
+        RECT 3368.650 4347.000 3376.330 4347.140 ;
+        RECT 3368.650 4346.940 3368.970 4347.000 ;
+        RECT 3376.010 4346.940 3376.330 4347.000 ;
+        RECT 3367.730 4181.560 3368.050 4181.620 ;
+        RECT 3367.730 4181.420 3368.420 4181.560 ;
+        RECT 3367.730 4181.360 3368.050 4181.420 ;
+        RECT 3368.280 4181.280 3368.420 4181.420 ;
+        RECT 3368.190 4181.020 3368.510 4181.280 ;
+        RECT 3367.730 4154.020 3368.050 4154.080 ;
+        RECT 3368.190 4154.020 3368.510 4154.080 ;
+        RECT 3367.730 4153.880 3368.510 4154.020 ;
+        RECT 3367.730 4153.820 3368.050 4153.880 ;
+        RECT 3368.190 4153.820 3368.510 4153.880 ;
+        RECT 3367.730 4105.400 3368.050 4105.460 ;
+        RECT 3370.490 4105.400 3370.810 4105.460 ;
+        RECT 3367.730 4105.260 3370.810 4105.400 ;
+        RECT 3367.730 4105.200 3368.050 4105.260 ;
+        RECT 3370.490 4105.200 3370.810 4105.260 ;
+        RECT 3370.490 3988.100 3370.810 3988.160 ;
+        RECT 3376.470 3988.100 3376.790 3988.160 ;
+        RECT 3370.490 3987.960 3376.790 3988.100 ;
+        RECT 3370.490 3987.900 3370.810 3987.960 ;
+        RECT 3376.470 3987.900 3376.790 3987.960 ;
+        RECT 211.210 3936.080 211.530 3936.140 ;
+        RECT 213.050 3936.080 213.370 3936.140 ;
+        RECT 211.210 3935.940 213.370 3936.080 ;
+        RECT 211.210 3935.880 211.530 3935.940 ;
+        RECT 213.050 3935.880 213.370 3935.940 ;
+        RECT 3370.030 3932.340 3370.350 3932.400 ;
+        RECT 3376.470 3932.340 3376.790 3932.400 ;
+        RECT 3370.030 3932.200 3376.790 3932.340 ;
+        RECT 3370.030 3932.140 3370.350 3932.200 ;
+        RECT 3376.470 3932.140 3376.790 3932.200 ;
+        RECT 3367.730 3843.260 3368.050 3843.320 ;
+        RECT 3370.030 3843.260 3370.350 3843.320 ;
+        RECT 3367.730 3843.120 3370.350 3843.260 ;
+        RECT 3367.730 3843.060 3368.050 3843.120 ;
+        RECT 3370.030 3843.060 3370.350 3843.120 ;
+        RECT 208.910 3722.220 209.230 3722.280 ;
+        RECT 213.050 3722.220 213.370 3722.280 ;
+        RECT 208.910 3722.080 213.370 3722.220 ;
+        RECT 208.910 3722.020 209.230 3722.080 ;
+        RECT 213.050 3722.020 213.370 3722.080 ;
+        RECT 3367.730 3709.640 3368.050 3709.700 ;
+        RECT 3370.950 3709.640 3371.270 3709.700 ;
+        RECT 3376.930 3709.640 3377.250 3709.700 ;
+        RECT 3367.730 3709.500 3377.250 3709.640 ;
+        RECT 3367.730 3709.440 3368.050 3709.500 ;
+        RECT 3370.950 3709.440 3371.270 3709.500 ;
+        RECT 3376.930 3709.440 3377.250 3709.500 ;
+        RECT 3370.030 3602.200 3370.350 3602.260 ;
+        RECT 3370.950 3602.200 3371.270 3602.260 ;
+        RECT 3370.030 3602.060 3371.270 3602.200 ;
+        RECT 3370.030 3602.000 3370.350 3602.060 ;
+        RECT 3370.950 3602.000 3371.270 3602.060 ;
+        RECT 3370.030 3553.580 3370.350 3553.640 ;
+        RECT 3376.470 3553.580 3376.790 3553.640 ;
+        RECT 3370.030 3553.440 3376.790 3553.580 ;
+        RECT 3370.030 3553.380 3370.350 3553.440 ;
+        RECT 3376.470 3553.380 3376.790 3553.440 ;
+        RECT 208.910 3504.280 209.230 3504.340 ;
+        RECT 213.050 3504.280 213.370 3504.340 ;
+        RECT 208.910 3504.140 213.370 3504.280 ;
+        RECT 208.910 3504.080 209.230 3504.140 ;
+        RECT 213.050 3504.080 213.370 3504.140 ;
+        RECT 3368.190 3479.800 3368.510 3479.860 ;
+        RECT 3376.930 3479.800 3377.250 3479.860 ;
+        RECT 3368.190 3479.660 3377.250 3479.800 ;
+        RECT 3368.190 3479.600 3368.510 3479.660 ;
+        RECT 3376.930 3479.600 3377.250 3479.660 ;
+        RECT 208.910 3285.660 209.230 3285.720 ;
+        RECT 211.670 3285.660 211.990 3285.720 ;
+        RECT 213.050 3285.660 213.370 3285.720 ;
+        RECT 208.910 3285.520 213.370 3285.660 ;
+        RECT 208.910 3285.460 209.230 3285.520 ;
+        RECT 211.670 3285.460 211.990 3285.520 ;
+        RECT 213.050 3285.460 213.370 3285.520 ;
+        RECT 3368.190 3258.800 3368.510 3258.860 ;
+        RECT 3376.930 3258.800 3377.250 3258.860 ;
+        RECT 3368.190 3258.660 3377.250 3258.800 ;
+        RECT 3368.190 3258.600 3368.510 3258.660 ;
+        RECT 3376.930 3258.600 3377.250 3258.660 ;
+        RECT 211.670 3166.320 211.990 3166.380 ;
+        RECT 213.050 3166.320 213.370 3166.380 ;
+        RECT 211.670 3166.180 213.370 3166.320 ;
+        RECT 211.670 3166.120 211.990 3166.180 ;
+        RECT 213.050 3166.120 213.370 3166.180 ;
+        RECT 209.370 3072.480 209.690 3072.540 ;
+        RECT 211.210 3072.480 211.530 3072.540 ;
+        RECT 213.050 3072.480 213.370 3072.540 ;
+        RECT 209.370 3072.340 213.370 3072.480 ;
+        RECT 209.370 3072.280 209.690 3072.340 ;
+        RECT 211.210 3072.280 211.530 3072.340 ;
+        RECT 213.050 3072.280 213.370 3072.340 ;
+        RECT 3368.190 3033.720 3368.510 3033.780 ;
+        RECT 3376.930 3033.720 3377.250 3033.780 ;
+        RECT 3368.190 3033.580 3377.250 3033.720 ;
+        RECT 3368.190 3033.520 3368.510 3033.580 ;
+        RECT 3376.930 3033.520 3377.250 3033.580 ;
+        RECT 211.210 2921.180 211.530 2921.240 ;
+        RECT 213.050 2921.180 213.370 2921.240 ;
+        RECT 211.210 2921.040 213.370 2921.180 ;
+        RECT 211.210 2920.980 211.530 2921.040 ;
+        RECT 213.050 2920.980 213.370 2921.040 ;
+        RECT 208.910 2858.280 209.230 2858.340 ;
+        RECT 213.050 2858.280 213.370 2858.340 ;
+        RECT 208.910 2858.140 213.370 2858.280 ;
+        RECT 208.910 2858.080 209.230 2858.140 ;
+        RECT 213.050 2858.080 213.370 2858.140 ;
+        RECT 3368.190 2807.620 3368.510 2807.680 ;
+        RECT 3376.930 2807.620 3377.250 2807.680 ;
+        RECT 3368.190 2807.480 3377.250 2807.620 ;
+        RECT 3368.190 2807.420 3368.510 2807.480 ;
+        RECT 3376.930 2807.420 3377.250 2807.480 ;
+        RECT 208.910 2642.380 209.230 2642.440 ;
+        RECT 212.130 2642.380 212.450 2642.440 ;
+        RECT 213.050 2642.380 213.370 2642.440 ;
+        RECT 208.910 2642.240 213.370 2642.380 ;
+        RECT 208.910 2642.180 209.230 2642.240 ;
+        RECT 212.130 2642.180 212.450 2642.240 ;
+        RECT 213.050 2642.180 213.370 2642.240 ;
+        RECT 209.830 2000.800 210.150 2000.860 ;
+        RECT 212.130 2000.800 212.450 2000.860 ;
+        RECT 209.830 2000.660 212.450 2000.800 ;
+        RECT 209.830 2000.600 210.150 2000.660 ;
+        RECT 212.130 2000.600 212.450 2000.660 ;
+        RECT 3367.730 1920.220 3368.050 1920.280 ;
+        RECT 3376.930 1920.220 3377.250 1920.280 ;
+        RECT 3367.730 1920.080 3377.250 1920.220 ;
+        RECT 3367.730 1920.020 3368.050 1920.080 ;
+        RECT 3376.930 1920.020 3377.250 1920.080 ;
+        RECT 208.910 1783.540 209.230 1783.600 ;
+        RECT 212.130 1783.540 212.450 1783.600 ;
+        RECT 208.910 1783.400 212.450 1783.540 ;
+        RECT 208.910 1783.340 209.230 1783.400 ;
+        RECT 212.130 1783.340 212.450 1783.400 ;
+        RECT 208.910 1569.000 209.230 1569.060 ;
+        RECT 212.130 1569.000 212.450 1569.060 ;
+        RECT 208.910 1568.860 212.450 1569.000 ;
+        RECT 208.910 1568.800 209.230 1568.860 ;
+        RECT 212.130 1568.800 212.450 1568.860 ;
+        RECT 212.130 1539.760 212.450 1539.820 ;
+        RECT 213.510 1539.760 213.830 1539.820 ;
+        RECT 212.130 1539.620 213.830 1539.760 ;
+        RECT 212.130 1539.560 212.450 1539.620 ;
+        RECT 213.510 1539.560 213.830 1539.620 ;
+        RECT 3369.110 1465.980 3369.430 1466.040 ;
+        RECT 3376.930 1465.980 3377.250 1466.040 ;
+        RECT 3369.110 1465.840 3377.250 1465.980 ;
+        RECT 3369.110 1465.780 3369.430 1465.840 ;
+        RECT 3376.930 1465.780 3377.250 1465.840 ;
+        RECT 213.510 1411.040 213.830 1411.300 ;
+        RECT 213.600 1410.280 213.740 1411.040 ;
+        RECT 213.510 1410.020 213.830 1410.280 ;
+        RECT 208.910 1351.400 209.230 1351.460 ;
+        RECT 211.670 1351.400 211.990 1351.460 ;
+        RECT 213.510 1351.400 213.830 1351.460 ;
+        RECT 208.910 1351.260 213.830 1351.400 ;
+        RECT 208.910 1351.200 209.230 1351.260 ;
+        RECT 211.670 1351.200 211.990 1351.260 ;
+        RECT 213.510 1351.200 213.830 1351.260 ;
+        RECT 3369.110 1240.900 3369.430 1240.960 ;
+        RECT 3376.930 1240.900 3377.250 1240.960 ;
+        RECT 3369.110 1240.760 3377.250 1240.900 ;
+        RECT 3369.110 1240.700 3369.430 1240.760 ;
+        RECT 3376.930 1240.700 3377.250 1240.760 ;
+        RECT 211.670 1235.120 211.990 1235.180 ;
+        RECT 213.510 1235.120 213.830 1235.180 ;
+        RECT 211.670 1234.980 213.830 1235.120 ;
+        RECT 211.670 1234.920 211.990 1234.980 ;
+        RECT 213.510 1234.920 213.830 1234.980 ;
+        RECT 208.910 1140.260 209.230 1140.320 ;
+        RECT 212.130 1140.260 212.450 1140.320 ;
+        RECT 213.510 1140.260 213.830 1140.320 ;
+        RECT 208.910 1140.120 213.830 1140.260 ;
+        RECT 208.910 1140.060 209.230 1140.120 ;
+        RECT 212.130 1140.060 212.450 1140.120 ;
+        RECT 213.510 1140.060 213.830 1140.120 ;
+        RECT 3367.730 1019.560 3368.050 1019.620 ;
+        RECT 3369.110 1019.560 3369.430 1019.620 ;
+        RECT 3376.930 1019.560 3377.250 1019.620 ;
+        RECT 3367.730 1019.420 3377.250 1019.560 ;
+        RECT 3367.730 1019.360 3368.050 1019.420 ;
+        RECT 3369.110 1019.360 3369.430 1019.420 ;
+        RECT 3376.930 1019.360 3377.250 1019.420 ;
+        RECT 211.210 921.300 211.530 921.360 ;
+        RECT 212.130 921.300 212.450 921.360 ;
+        RECT 211.210 921.160 212.450 921.300 ;
+        RECT 211.210 921.100 211.530 921.160 ;
+        RECT 212.130 921.100 212.450 921.160 ;
+        RECT 3367.730 791.760 3368.050 791.820 ;
+        RECT 3376.930 791.760 3377.250 791.820 ;
+        RECT 3367.730 791.620 3377.250 791.760 ;
+        RECT 3367.730 791.560 3368.050 791.620 ;
+        RECT 3376.930 791.560 3377.250 791.620 ;
+        RECT 3367.730 563.960 3368.050 564.020 ;
+        RECT 3376.930 563.960 3377.250 564.020 ;
+        RECT 3367.730 563.820 3377.250 563.960 ;
+        RECT 3367.730 563.760 3368.050 563.820 ;
+        RECT 3376.930 563.760 3377.250 563.820 ;
+        RECT 2637.250 239.260 2637.570 239.320 ;
+        RECT 3367.730 239.260 3368.050 239.320 ;
+        RECT 2637.250 239.120 3368.050 239.260 ;
+        RECT 2637.250 239.060 2637.570 239.120 ;
+        RECT 3367.730 239.060 3368.050 239.120 ;
+        RECT 998.270 236.540 998.590 236.600 ;
+        RECT 998.270 236.400 1380.300 236.540 ;
+        RECT 998.270 236.340 998.590 236.400 ;
+        RECT 1380.160 236.200 1380.300 236.400 ;
+        RECT 1380.160 236.060 1428.600 236.200 ;
+        RECT 1428.460 235.520 1428.600 236.060 ;
+        RECT 2341.470 235.860 2341.790 235.920 ;
+        RECT 2637.250 235.860 2637.570 235.920 ;
+        RECT 2089.480 235.720 2637.570 235.860 ;
+        RECT 2089.480 235.580 2089.620 235.720 ;
+        RECT 2341.470 235.660 2341.790 235.720 ;
+        RECT 2637.250 235.660 2637.570 235.720 ;
+        RECT 1519.450 235.520 1519.770 235.580 ;
+        RECT 1541.070 235.520 1541.390 235.580 ;
+        RECT 1793.610 235.520 1793.930 235.580 ;
+        RECT 1815.230 235.520 1815.550 235.580 ;
+        RECT 2067.770 235.520 2068.090 235.580 ;
+        RECT 2089.390 235.520 2089.710 235.580 ;
+        RECT 1428.460 235.380 2089.710 235.520 ;
+        RECT 1519.450 235.320 1519.770 235.380 ;
+        RECT 1541.070 235.320 1541.390 235.380 ;
+        RECT 1793.610 235.320 1793.930 235.380 ;
+        RECT 1815.230 235.320 1815.550 235.380 ;
+        RECT 2067.770 235.320 2068.090 235.380 ;
+        RECT 2089.390 235.320 2089.710 235.380 ;
+        RECT 211.210 228.380 211.530 228.440 ;
+        RECT 725.490 228.380 725.810 228.440 ;
+        RECT 211.210 228.240 725.810 228.380 ;
+        RECT 211.210 228.180 211.530 228.240 ;
+        RECT 725.490 228.180 725.810 228.240 ;
+        RECT 725.490 221.240 725.810 221.300 ;
+        RECT 976.650 221.240 976.970 221.300 ;
+        RECT 725.490 221.100 976.970 221.240 ;
+        RECT 725.490 221.040 725.810 221.100 ;
+        RECT 976.650 221.040 976.970 221.100 ;
+        RECT 2616.090 209.680 2616.410 209.740 ;
+        RECT 2636.790 209.680 2637.110 209.740 ;
+        RECT 2616.090 209.540 2637.110 209.680 ;
+        RECT 2616.090 209.480 2616.410 209.540 ;
+        RECT 2636.790 209.480 2637.110 209.540 ;
+        RECT 977.110 209.340 977.430 209.400 ;
+        RECT 997.810 209.340 998.130 209.400 ;
+        RECT 977.110 209.200 998.130 209.340 ;
+        RECT 977.110 209.140 977.430 209.200 ;
+        RECT 997.810 209.140 998.130 209.200 ;
+        RECT 2342.390 209.340 2342.710 209.400 ;
+        RECT 2362.630 209.340 2362.950 209.400 ;
+        RECT 2342.390 209.200 2362.950 209.340 ;
+        RECT 2342.390 209.140 2342.710 209.200 ;
+        RECT 2362.630 209.140 2362.950 209.200 ;
+      LAYER via ;
+        RECT 2318.960 4961.320 2319.220 4961.580 ;
+        RECT 2377.380 4961.320 2377.640 4961.580 ;
+        RECT 2414.640 4961.320 2414.900 4961.580 ;
+        RECT 651.460 4954.180 651.720 4954.440 ;
+        RECT 395.240 4953.840 395.500 4954.100 ;
+        RECT 552.100 4953.840 552.360 4954.100 ;
+        RECT 650.540 4953.840 650.800 4954.100 ;
+        RECT 2097.700 4954.180 2097.960 4954.440 ;
+        RECT 2193.380 4954.180 2193.640 4954.440 ;
+        RECT 2251.340 4954.180 2251.600 4954.440 ;
+        RECT 2318.040 4954.180 2318.300 4954.440 ;
+        RECT 716.320 4953.840 716.580 4954.100 ;
+        RECT 869.040 4953.840 869.300 4954.100 ;
+        RECT 896.640 4953.840 896.900 4954.100 ;
+        RECT 1234.740 4953.840 1235.000 4954.100 ;
+        RECT 1423.340 4953.840 1423.600 4954.100 ;
+        RECT 1434.840 4953.840 1435.100 4954.100 ;
+        RECT 938.040 4953.500 938.300 4953.760 ;
+        RECT 938.500 4953.500 938.760 4953.760 ;
+        RECT 1014.400 4953.500 1014.660 4953.760 ;
+        RECT 1165.280 4953.500 1165.540 4953.760 ;
+        RECT 2414.640 4953.500 2414.900 4953.760 ;
+        RECT 2634.520 4953.500 2634.780 4953.760 ;
+        RECT 3143.280 4953.500 3143.540 4953.760 ;
+        RECT 552.560 4952.820 552.820 4953.080 ;
+        RECT 650.540 4952.820 650.800 4953.080 ;
+        RECT 896.640 4952.820 896.900 4953.080 ;
+        RECT 908.600 4952.820 908.860 4953.080 ;
+        RECT 1932.560 4952.820 1932.820 4953.080 ;
+        RECT 1434.840 4952.480 1435.100 4952.740 ;
+        RECT 2097.700 4952.820 2097.960 4953.080 ;
+        RECT 2193.840 4952.820 2194.100 4953.080 ;
+        RECT 2251.340 4952.820 2251.600 4953.080 ;
+        RECT 716.320 4952.140 716.580 4952.400 ;
+        RECT 800.500 4952.140 800.760 4952.400 ;
+        RECT 908.600 4952.140 908.860 4952.400 ;
+        RECT 938.040 4952.140 938.300 4952.400 ;
+        RECT 938.500 4952.140 938.760 4952.400 ;
+        RECT 1014.400 4952.140 1014.660 4952.400 ;
+        RECT 1165.280 4952.140 1165.540 4952.400 ;
+        RECT 1234.740 4952.140 1235.000 4952.400 ;
+        RECT 212.160 4950.440 212.420 4950.700 ;
+        RECT 395.240 4950.440 395.500 4950.700 ;
+        RECT 3143.280 4950.440 3143.540 4950.700 ;
+        RECT 3367.300 4950.100 3367.560 4950.360 ;
+        RECT 3367.300 4826.340 3367.560 4826.600 ;
+        RECT 3376.960 4826.340 3377.220 4826.600 ;
+        RECT 208.940 4782.140 209.200 4782.400 ;
+        RECT 212.160 4782.140 212.420 4782.400 ;
+        RECT 3365.920 4540.060 3366.180 4540.320 ;
+        RECT 3367.300 4540.060 3367.560 4540.320 ;
+        RECT 3365.920 4443.840 3366.180 4444.100 ;
+        RECT 3367.300 4443.840 3367.560 4444.100 ;
+        RECT 3368.680 4346.940 3368.940 4347.200 ;
+        RECT 3376.040 4346.940 3376.300 4347.200 ;
+        RECT 3367.760 4181.360 3368.020 4181.620 ;
+        RECT 3368.220 4181.020 3368.480 4181.280 ;
+        RECT 3367.760 4153.820 3368.020 4154.080 ;
+        RECT 3368.220 4153.820 3368.480 4154.080 ;
+        RECT 3367.760 4105.200 3368.020 4105.460 ;
+        RECT 3370.520 4105.200 3370.780 4105.460 ;
+        RECT 3370.520 3987.900 3370.780 3988.160 ;
+        RECT 3376.500 3987.900 3376.760 3988.160 ;
+        RECT 211.240 3935.880 211.500 3936.140 ;
+        RECT 213.080 3935.880 213.340 3936.140 ;
+        RECT 3370.060 3932.140 3370.320 3932.400 ;
+        RECT 3376.500 3932.140 3376.760 3932.400 ;
+        RECT 3367.760 3843.060 3368.020 3843.320 ;
+        RECT 3370.060 3843.060 3370.320 3843.320 ;
+        RECT 208.940 3722.020 209.200 3722.280 ;
+        RECT 213.080 3722.020 213.340 3722.280 ;
+        RECT 3367.760 3709.440 3368.020 3709.700 ;
+        RECT 3370.980 3709.440 3371.240 3709.700 ;
+        RECT 3376.960 3709.440 3377.220 3709.700 ;
+        RECT 3370.060 3602.000 3370.320 3602.260 ;
+        RECT 3370.980 3602.000 3371.240 3602.260 ;
+        RECT 3370.060 3553.380 3370.320 3553.640 ;
+        RECT 3376.500 3553.380 3376.760 3553.640 ;
+        RECT 208.940 3504.080 209.200 3504.340 ;
+        RECT 213.080 3504.080 213.340 3504.340 ;
+        RECT 3368.220 3479.600 3368.480 3479.860 ;
+        RECT 3376.960 3479.600 3377.220 3479.860 ;
+        RECT 208.940 3285.460 209.200 3285.720 ;
+        RECT 211.700 3285.460 211.960 3285.720 ;
+        RECT 213.080 3285.460 213.340 3285.720 ;
+        RECT 3368.220 3258.600 3368.480 3258.860 ;
+        RECT 3376.960 3258.600 3377.220 3258.860 ;
+        RECT 211.700 3166.120 211.960 3166.380 ;
+        RECT 213.080 3166.120 213.340 3166.380 ;
+        RECT 209.400 3072.280 209.660 3072.540 ;
+        RECT 211.240 3072.280 211.500 3072.540 ;
+        RECT 213.080 3072.280 213.340 3072.540 ;
+        RECT 3368.220 3033.520 3368.480 3033.780 ;
+        RECT 3376.960 3033.520 3377.220 3033.780 ;
+        RECT 211.240 2920.980 211.500 2921.240 ;
+        RECT 213.080 2920.980 213.340 2921.240 ;
+        RECT 208.940 2858.080 209.200 2858.340 ;
+        RECT 213.080 2858.080 213.340 2858.340 ;
+        RECT 3368.220 2807.420 3368.480 2807.680 ;
+        RECT 3376.960 2807.420 3377.220 2807.680 ;
+        RECT 208.940 2642.180 209.200 2642.440 ;
+        RECT 212.160 2642.180 212.420 2642.440 ;
+        RECT 213.080 2642.180 213.340 2642.440 ;
+        RECT 209.860 2000.600 210.120 2000.860 ;
+        RECT 212.160 2000.600 212.420 2000.860 ;
+        RECT 3367.760 1920.020 3368.020 1920.280 ;
+        RECT 3376.960 1920.020 3377.220 1920.280 ;
+        RECT 208.940 1783.340 209.200 1783.600 ;
+        RECT 212.160 1783.340 212.420 1783.600 ;
+        RECT 208.940 1568.800 209.200 1569.060 ;
+        RECT 212.160 1568.800 212.420 1569.060 ;
+        RECT 212.160 1539.560 212.420 1539.820 ;
+        RECT 213.540 1539.560 213.800 1539.820 ;
+        RECT 3369.140 1465.780 3369.400 1466.040 ;
+        RECT 3376.960 1465.780 3377.220 1466.040 ;
+        RECT 213.540 1411.040 213.800 1411.300 ;
+        RECT 213.540 1410.020 213.800 1410.280 ;
+        RECT 208.940 1351.200 209.200 1351.460 ;
+        RECT 211.700 1351.200 211.960 1351.460 ;
+        RECT 213.540 1351.200 213.800 1351.460 ;
+        RECT 3369.140 1240.700 3369.400 1240.960 ;
+        RECT 3376.960 1240.700 3377.220 1240.960 ;
+        RECT 211.700 1234.920 211.960 1235.180 ;
+        RECT 213.540 1234.920 213.800 1235.180 ;
+        RECT 208.940 1140.060 209.200 1140.320 ;
+        RECT 212.160 1140.060 212.420 1140.320 ;
+        RECT 213.540 1140.060 213.800 1140.320 ;
+        RECT 3367.760 1019.360 3368.020 1019.620 ;
+        RECT 3369.140 1019.360 3369.400 1019.620 ;
+        RECT 3376.960 1019.360 3377.220 1019.620 ;
+        RECT 211.240 921.100 211.500 921.360 ;
+        RECT 212.160 921.100 212.420 921.360 ;
+        RECT 3367.760 791.560 3368.020 791.820 ;
+        RECT 3376.960 791.560 3377.220 791.820 ;
+        RECT 3367.760 563.760 3368.020 564.020 ;
+        RECT 3376.960 563.760 3377.220 564.020 ;
+        RECT 2637.280 239.060 2637.540 239.320 ;
+        RECT 3367.760 239.060 3368.020 239.320 ;
+        RECT 998.300 236.340 998.560 236.600 ;
+        RECT 2341.500 235.660 2341.760 235.920 ;
+        RECT 2637.280 235.660 2637.540 235.920 ;
+        RECT 1519.480 235.320 1519.740 235.580 ;
+        RECT 1541.100 235.320 1541.360 235.580 ;
+        RECT 1793.640 235.320 1793.900 235.580 ;
+        RECT 1815.260 235.320 1815.520 235.580 ;
+        RECT 2067.800 235.320 2068.060 235.580 ;
+        RECT 2089.420 235.320 2089.680 235.580 ;
+        RECT 211.240 228.180 211.500 228.440 ;
+        RECT 725.520 228.180 725.780 228.440 ;
+        RECT 725.520 221.040 725.780 221.300 ;
+        RECT 976.680 221.040 976.940 221.300 ;
+        RECT 2616.120 209.480 2616.380 209.740 ;
+        RECT 2636.820 209.480 2637.080 209.740 ;
+        RECT 977.140 209.140 977.400 209.400 ;
+        RECT 997.840 209.140 998.100 209.400 ;
+        RECT 2342.420 209.140 2342.680 209.400 ;
+        RECT 2362.660 209.140 2362.920 209.400 ;
+      LAYER met2 ;
+        RECT 394.445 4977.260 394.725 4979.435 ;
+        RECT 394.380 4977.035 394.725 4977.260 ;
+        RECT 651.445 4977.035 651.725 4979.435 ;
+        RECT 908.445 4977.330 908.725 4979.435 ;
+        RECT 1165.445 4977.330 1165.725 4979.435 ;
+        RECT 908.445 4977.035 908.800 4977.330 ;
+        RECT 394.380 4961.010 394.520 4977.035 ;
+        RECT 394.380 4960.870 395.440 4961.010 ;
+        RECT 395.300 4954.130 395.440 4960.870 ;
+        RECT 651.520 4954.470 651.660 4977.035 ;
+        RECT 651.460 4954.150 651.720 4954.470 ;
+        RECT 395.240 4953.810 395.500 4954.130 ;
+        RECT 552.100 4953.810 552.360 4954.130 ;
+        RECT 650.540 4953.810 650.800 4954.130 ;
+        RECT 716.320 4953.810 716.580 4954.130 ;
+        RECT 869.040 4953.810 869.300 4954.130 ;
+        RECT 896.640 4953.810 896.900 4954.130 ;
+        RECT 395.300 4950.730 395.440 4953.810 ;
+        RECT 552.160 4953.530 552.300 4953.810 ;
+        RECT 552.160 4953.390 552.760 4953.530 ;
+        RECT 552.620 4953.110 552.760 4953.390 ;
+        RECT 650.600 4953.110 650.740 4953.810 ;
+        RECT 552.560 4952.790 552.820 4953.110 ;
+        RECT 650.540 4952.790 650.800 4953.110 ;
+        RECT 716.380 4952.430 716.520 4953.810 ;
+        RECT 869.100 4953.645 869.240 4953.810 ;
+        RECT 800.490 4953.275 800.770 4953.645 ;
+        RECT 869.030 4953.275 869.310 4953.645 ;
+        RECT 800.560 4952.430 800.700 4953.275 ;
+        RECT 896.700 4953.110 896.840 4953.810 ;
+        RECT 908.660 4953.110 908.800 4977.035 ;
+        RECT 1165.340 4977.035 1165.725 4977.330 ;
+        RECT 1423.445 4977.260 1423.725 4979.435 ;
+        RECT 1423.400 4977.035 1423.725 4977.260 ;
+        RECT 1932.445 4977.260 1932.725 4979.435 ;
+        RECT 2377.445 4977.260 2377.725 4979.435 ;
+        RECT 1932.445 4977.035 1932.760 4977.260 ;
+        RECT 1165.340 4953.790 1165.480 4977.035 ;
+        RECT 1423.400 4954.130 1423.540 4977.035 ;
+        RECT 1234.740 4953.810 1235.000 4954.130 ;
+        RECT 1423.340 4953.810 1423.600 4954.130 ;
+        RECT 1434.840 4953.810 1435.100 4954.130 ;
+        RECT 938.040 4953.470 938.300 4953.790 ;
+        RECT 938.500 4953.470 938.760 4953.790 ;
+        RECT 1014.400 4953.470 1014.660 4953.790 ;
+        RECT 1165.280 4953.470 1165.540 4953.790 ;
+        RECT 896.640 4952.790 896.900 4953.110 ;
+        RECT 908.600 4952.790 908.860 4953.110 ;
+        RECT 908.660 4952.430 908.800 4952.790 ;
+        RECT 938.100 4952.430 938.240 4953.470 ;
+        RECT 938.560 4952.430 938.700 4953.470 ;
+        RECT 1014.460 4952.430 1014.600 4953.470 ;
+        RECT 1165.340 4952.430 1165.480 4953.470 ;
+        RECT 1234.800 4952.430 1234.940 4953.810 ;
+        RECT 1434.900 4952.770 1435.040 4953.810 ;
+        RECT 1932.620 4953.110 1932.760 4977.035 ;
+        RECT 2377.440 4977.035 2377.725 4977.260 ;
+        RECT 2634.445 4977.035 2634.725 4979.435 ;
+        RECT 3143.445 4977.330 3143.725 4979.435 ;
+        RECT 3143.340 4977.035 3143.725 4977.330 ;
+        RECT 2377.440 4961.610 2377.580 4977.035 ;
+        RECT 2318.960 4961.290 2319.220 4961.610 ;
+        RECT 2377.380 4961.290 2377.640 4961.610 ;
+        RECT 2414.640 4961.290 2414.900 4961.610 ;
+        RECT 2097.700 4954.150 2097.960 4954.470 ;
+        RECT 2193.380 4954.150 2193.640 4954.470 ;
+        RECT 2251.340 4954.150 2251.600 4954.470 ;
+        RECT 2318.040 4954.210 2318.300 4954.470 ;
+        RECT 2319.020 4954.210 2319.160 4961.290 ;
+        RECT 2318.040 4954.150 2319.160 4954.210 ;
+        RECT 2097.760 4953.110 2097.900 4954.150 ;
+        RECT 1932.560 4952.790 1932.820 4953.110 ;
+        RECT 2097.700 4952.790 2097.960 4953.110 ;
+        RECT 2193.440 4952.850 2193.580 4954.150 ;
+        RECT 2251.400 4953.110 2251.540 4954.150 ;
+        RECT 2318.100 4954.070 2319.160 4954.150 ;
+        RECT 2414.700 4953.790 2414.840 4961.290 ;
+        RECT 2634.580 4953.790 2634.720 4977.035 ;
+        RECT 3143.340 4953.790 3143.480 4977.035 ;
+        RECT 2414.640 4953.470 2414.900 4953.790 ;
+        RECT 2634.520 4953.470 2634.780 4953.790 ;
+        RECT 3143.280 4953.470 3143.540 4953.790 ;
+        RECT 2193.840 4952.850 2194.100 4953.110 ;
+        RECT 2193.440 4952.790 2194.100 4952.850 ;
+        RECT 2251.340 4952.790 2251.600 4953.110 ;
+        RECT 1434.840 4952.450 1435.100 4952.770 ;
+        RECT 2193.440 4952.710 2194.040 4952.790 ;
+        RECT 716.320 4952.110 716.580 4952.430 ;
+        RECT 800.500 4952.110 800.760 4952.430 ;
+        RECT 908.600 4952.110 908.860 4952.430 ;
+        RECT 938.040 4952.110 938.300 4952.430 ;
+        RECT 938.500 4952.110 938.760 4952.430 ;
+        RECT 1014.400 4952.110 1014.660 4952.430 ;
+        RECT 1165.280 4952.110 1165.540 4952.430 ;
+        RECT 1234.740 4952.110 1235.000 4952.430 ;
+        RECT 3143.340 4950.730 3143.480 4953.470 ;
+        RECT 212.160 4950.410 212.420 4950.730 ;
+        RECT 395.240 4950.410 395.500 4950.730 ;
+        RECT 3143.280 4950.410 3143.540 4950.730 ;
+        RECT 208.565 4784.445 210.965 4784.725 ;
+        RECT 209.000 4782.430 209.140 4784.445 ;
+        RECT 212.220 4782.430 212.360 4950.410 ;
+        RECT 3367.300 4950.070 3367.560 4950.390 ;
+        RECT 3367.360 4826.630 3367.500 4950.070 ;
+        RECT 3367.300 4826.310 3367.560 4826.630 ;
+        RECT 3376.960 4826.310 3377.220 4826.630 ;
+        RECT 208.940 4782.110 209.200 4782.430 ;
+        RECT 212.160 4782.110 212.420 4782.430 ;
+        RECT 212.220 3940.330 212.360 4782.110 ;
+        RECT 3367.360 4540.350 3367.500 4826.310 ;
+        RECT 3377.020 4824.555 3377.160 4826.310 ;
+        RECT 3377.020 4824.415 3379.435 4824.555 ;
+        RECT 3377.035 4824.275 3379.435 4824.415 ;
+        RECT 3365.920 4540.030 3366.180 4540.350 ;
+        RECT 3367.300 4540.030 3367.560 4540.350 ;
+        RECT 3365.980 4444.130 3366.120 4540.030 ;
+        RECT 3365.920 4443.810 3366.180 4444.130 ;
+        RECT 3367.300 4443.810 3367.560 4444.130 ;
+        RECT 3367.360 4443.645 3367.500 4443.810 ;
+        RECT 3367.290 4443.275 3367.570 4443.645 ;
+        RECT 3376.490 4443.275 3376.770 4443.645 ;
+        RECT 3376.560 4378.485 3376.700 4443.275 ;
+        RECT 3377.035 4378.485 3379.435 4378.555 ;
+        RECT 3376.100 4378.345 3379.435 4378.485 ;
+        RECT 3376.100 4347.230 3376.240 4378.345 ;
+        RECT 3377.035 4378.275 3379.435 4378.345 ;
+        RECT 3368.680 4346.910 3368.940 4347.230 ;
+        RECT 3376.040 4346.910 3376.300 4347.230 ;
+        RECT 3368.740 4277.610 3368.880 4346.910 ;
+        RECT 3368.280 4277.470 3368.880 4277.610 ;
+        RECT 3368.280 4250.410 3368.420 4277.470 ;
+        RECT 3367.820 4250.270 3368.420 4250.410 ;
+        RECT 3367.820 4181.650 3367.960 4250.270 ;
+        RECT 3367.760 4181.330 3368.020 4181.650 ;
+        RECT 3368.220 4180.990 3368.480 4181.310 ;
+        RECT 3368.280 4154.110 3368.420 4180.990 ;
+        RECT 3367.760 4153.790 3368.020 4154.110 ;
+        RECT 3368.220 4153.790 3368.480 4154.110 ;
+        RECT 3367.820 4105.490 3367.960 4153.790 ;
+        RECT 3367.760 4105.170 3368.020 4105.490 ;
+        RECT 3370.520 4105.170 3370.780 4105.490 ;
+        RECT 3370.580 3988.190 3370.720 4105.170 ;
+        RECT 3370.520 3987.870 3370.780 3988.190 ;
+        RECT 3376.500 3987.870 3376.760 3988.190 ;
+        RECT 211.300 3940.190 212.360 3940.330 ;
+        RECT 211.300 3936.250 211.440 3940.190 ;
+        RECT 209.000 3936.170 211.440 3936.250 ;
+        RECT 209.000 3936.110 211.500 3936.170 ;
+        RECT 209.000 3935.725 209.140 3936.110 ;
+        RECT 211.240 3935.850 211.500 3936.110 ;
+        RECT 213.080 3935.850 213.340 3936.170 ;
+        RECT 208.565 3935.445 210.965 3935.725 ;
+        RECT 211.300 3935.695 211.440 3935.850 ;
+        RECT 208.610 3935.430 209.140 3935.445 ;
+        RECT 213.140 3722.310 213.280 3935.850 ;
+        RECT 3376.560 3932.485 3376.700 3987.870 ;
+        RECT 3377.035 3932.485 3379.435 3932.555 ;
+        RECT 3376.560 3932.430 3379.435 3932.485 ;
+        RECT 3370.060 3932.110 3370.320 3932.430 ;
+        RECT 3376.500 3932.345 3379.435 3932.430 ;
+        RECT 3376.500 3932.110 3376.760 3932.345 ;
+        RECT 3377.035 3932.275 3379.435 3932.345 ;
+        RECT 3370.120 3843.350 3370.260 3932.110 ;
+        RECT 3376.560 3931.930 3376.700 3932.110 ;
+        RECT 3367.760 3843.030 3368.020 3843.350 ;
+        RECT 3370.060 3843.030 3370.320 3843.350 ;
+        RECT 208.940 3721.990 209.200 3722.310 ;
+        RECT 213.080 3721.990 213.340 3722.310 ;
+        RECT 209.000 3719.725 209.140 3721.990 ;
+        RECT 208.565 3719.445 210.965 3719.725 ;
+        RECT 213.140 3504.370 213.280 3721.990 ;
+        RECT 3367.820 3709.730 3367.960 3843.030 ;
+        RECT 3367.760 3709.410 3368.020 3709.730 ;
+        RECT 3370.980 3709.410 3371.240 3709.730 ;
+        RECT 3376.960 3709.410 3377.220 3709.730 ;
+        RECT 3371.040 3602.290 3371.180 3709.410 ;
+        RECT 3377.020 3707.555 3377.160 3709.410 ;
+        RECT 3377.020 3707.415 3379.435 3707.555 ;
+        RECT 3377.035 3707.275 3379.435 3707.415 ;
+        RECT 3370.060 3601.970 3370.320 3602.290 ;
+        RECT 3370.980 3601.970 3371.240 3602.290 ;
+        RECT 3370.120 3553.670 3370.260 3601.970 ;
+        RECT 3370.060 3553.350 3370.320 3553.670 ;
+        RECT 3376.500 3553.350 3376.760 3553.670 ;
+        RECT 208.940 3504.050 209.200 3504.370 ;
+        RECT 213.080 3504.050 213.340 3504.370 ;
+        RECT 209.000 3503.770 209.140 3504.050 ;
+        RECT 208.610 3503.725 209.140 3503.770 ;
+        RECT 208.565 3503.445 210.965 3503.725 ;
+        RECT 208.565 3287.445 210.965 3287.725 ;
+        RECT 208.610 3287.390 209.140 3287.445 ;
+        RECT 209.000 3285.750 209.140 3287.390 ;
+        RECT 213.140 3285.750 213.280 3504.050 ;
+        RECT 3376.560 3482.485 3376.700 3553.350 ;
+        RECT 3377.035 3482.485 3379.435 3482.555 ;
+        RECT 3376.560 3482.345 3379.435 3482.485 ;
+        RECT 3377.020 3482.275 3379.435 3482.345 ;
+        RECT 3377.020 3479.890 3377.160 3482.275 ;
+        RECT 3368.220 3479.570 3368.480 3479.890 ;
+        RECT 3376.960 3479.570 3377.220 3479.890 ;
+        RECT 208.940 3285.430 209.200 3285.750 ;
+        RECT 211.700 3285.430 211.960 3285.750 ;
+        RECT 213.080 3285.430 213.340 3285.750 ;
+        RECT 211.760 3166.410 211.900 3285.430 ;
+        RECT 3368.280 3258.890 3368.420 3479.570 ;
+        RECT 3368.220 3258.570 3368.480 3258.890 ;
+        RECT 3376.960 3258.570 3377.220 3258.890 ;
+        RECT 211.700 3166.090 211.960 3166.410 ;
+        RECT 213.080 3166.090 213.340 3166.410 ;
+        RECT 213.140 3072.570 213.280 3166.090 ;
+        RECT 209.400 3072.250 209.660 3072.570 ;
+        RECT 211.240 3072.250 211.500 3072.570 ;
+        RECT 213.080 3072.250 213.340 3072.570 ;
+        RECT 209.460 3071.725 209.600 3072.250 ;
+        RECT 208.565 3071.445 210.965 3071.725 ;
+        RECT 211.300 2921.270 211.440 3072.250 ;
+        RECT 3368.280 3033.810 3368.420 3258.570 ;
+        RECT 3377.020 3256.555 3377.160 3258.570 ;
+        RECT 3377.020 3256.415 3379.435 3256.555 ;
+        RECT 3377.035 3256.275 3379.435 3256.415 ;
+        RECT 3368.220 3033.490 3368.480 3033.810 ;
+        RECT 3376.960 3033.490 3377.220 3033.810 ;
+        RECT 211.240 2920.950 211.500 2921.270 ;
+        RECT 213.080 2920.950 213.340 2921.270 ;
+        RECT 213.140 2858.370 213.280 2920.950 ;
+        RECT 208.940 2858.050 209.200 2858.370 ;
+        RECT 213.080 2858.050 213.340 2858.370 ;
+        RECT 209.000 2855.730 209.140 2858.050 ;
+        RECT 208.610 2855.725 209.140 2855.730 ;
+        RECT 208.565 2855.445 210.965 2855.725 ;
+        RECT 213.140 2642.470 213.280 2858.050 ;
+        RECT 3368.280 2807.710 3368.420 3033.490 ;
+        RECT 3377.020 3031.555 3377.160 3033.490 ;
+        RECT 3377.020 3031.415 3379.435 3031.555 ;
+        RECT 3377.035 3031.275 3379.435 3031.415 ;
+        RECT 3368.220 2807.390 3368.480 2807.710 ;
+        RECT 3376.960 2807.390 3377.220 2807.710 ;
+        RECT 3377.020 2805.555 3377.160 2807.390 ;
+        RECT 3377.020 2805.340 3379.435 2805.555 ;
+        RECT 3377.035 2805.275 3379.435 2805.340 ;
+        RECT 208.940 2642.150 209.200 2642.470 ;
+        RECT 212.160 2642.150 212.420 2642.470 ;
+        RECT 213.080 2642.150 213.340 2642.470 ;
+        RECT 209.000 2639.725 209.140 2642.150 ;
+        RECT 208.565 2639.445 210.965 2639.725 ;
+        RECT 208.565 2001.445 210.965 2001.725 ;
+        RECT 209.920 2000.890 210.060 2001.445 ;
+        RECT 212.220 2000.890 212.360 2642.150 ;
+        RECT 209.860 2000.570 210.120 2000.890 ;
+        RECT 212.160 2000.570 212.420 2000.890 ;
+        RECT 208.565 1785.445 210.965 1785.725 ;
+        RECT 209.000 1783.630 209.140 1785.445 ;
+        RECT 212.220 1783.630 212.360 2000.570 ;
+        RECT 3367.760 1919.990 3368.020 1920.310 ;
+        RECT 3376.960 1919.990 3377.220 1920.310 ;
+        RECT 208.940 1783.310 209.200 1783.630 ;
+        RECT 212.160 1783.310 212.420 1783.630 ;
+        RECT 208.565 1569.445 210.965 1569.725 ;
+        RECT 209.000 1569.090 209.140 1569.445 ;
+        RECT 212.220 1569.090 212.360 1783.310 ;
+        RECT 3367.820 1693.725 3367.960 1919.990 ;
+        RECT 3377.020 1919.555 3377.160 1919.990 ;
+        RECT 3377.020 1919.300 3379.435 1919.555 ;
+        RECT 3377.035 1919.275 3379.435 1919.300 ;
+        RECT 3367.750 1693.355 3368.030 1693.725 ;
+        RECT 3376.950 1693.555 3377.230 1693.725 ;
+        RECT 3376.950 1693.355 3379.435 1693.555 ;
+        RECT 208.940 1568.770 209.200 1569.090 ;
+        RECT 212.160 1568.770 212.420 1569.090 ;
+        RECT 212.220 1539.850 212.360 1568.770 ;
+        RECT 212.160 1539.530 212.420 1539.850 ;
+        RECT 213.540 1539.530 213.800 1539.850 ;
+        RECT 213.600 1411.330 213.740 1539.530 ;
+        RECT 3367.820 1466.490 3367.960 1693.355 ;
+        RECT 3377.035 1693.275 3379.435 1693.355 ;
+        RECT 3377.035 1468.460 3379.435 1468.555 ;
+        RECT 3377.020 1468.275 3379.435 1468.460 ;
+        RECT 3367.820 1466.350 3369.340 1466.490 ;
+        RECT 3369.200 1466.070 3369.340 1466.350 ;
+        RECT 3377.020 1466.070 3377.160 1468.275 ;
+        RECT 3369.140 1465.750 3369.400 1466.070 ;
+        RECT 3376.960 1465.750 3377.220 1466.070 ;
+        RECT 213.540 1411.010 213.800 1411.330 ;
+        RECT 213.540 1409.990 213.800 1410.310 ;
+        RECT 208.565 1353.445 210.965 1353.725 ;
+        RECT 209.000 1351.490 209.140 1353.445 ;
+        RECT 213.600 1351.490 213.740 1409.990 ;
+        RECT 208.940 1351.170 209.200 1351.490 ;
+        RECT 211.700 1351.170 211.960 1351.490 ;
+        RECT 213.540 1351.170 213.800 1351.490 ;
+        RECT 211.760 1235.210 211.900 1351.170 ;
+        RECT 3369.200 1240.990 3369.340 1465.750 ;
+        RECT 3377.035 1243.380 3379.435 1243.555 ;
+        RECT 3377.020 1243.275 3379.435 1243.380 ;
+        RECT 3377.020 1240.990 3377.160 1243.275 ;
+        RECT 3369.140 1240.670 3369.400 1240.990 ;
+        RECT 3376.960 1240.670 3377.220 1240.990 ;
+        RECT 211.700 1234.890 211.960 1235.210 ;
+        RECT 213.540 1234.890 213.800 1235.210 ;
+        RECT 213.600 1140.350 213.740 1234.890 ;
+        RECT 208.940 1140.030 209.200 1140.350 ;
+        RECT 212.160 1140.030 212.420 1140.350 ;
+        RECT 213.540 1140.030 213.800 1140.350 ;
+        RECT 209.000 1137.725 209.140 1140.030 ;
+        RECT 208.565 1137.445 210.965 1137.725 ;
+        RECT 208.565 921.445 210.965 921.725 ;
+        RECT 209.460 921.130 209.600 921.445 ;
+        RECT 211.300 921.390 211.440 921.545 ;
+        RECT 212.220 921.390 212.360 1140.030 ;
+        RECT 3369.200 1019.650 3369.340 1240.670 ;
+        RECT 3367.760 1019.330 3368.020 1019.650 ;
+        RECT 3369.140 1019.330 3369.400 1019.650 ;
+        RECT 3376.960 1019.330 3377.220 1019.650 ;
+        RECT 211.240 921.130 211.500 921.390 ;
+        RECT 209.460 921.070 211.500 921.130 ;
+        RECT 212.160 921.070 212.420 921.390 ;
+        RECT 209.460 920.990 211.440 921.070 ;
+        RECT 211.300 228.470 211.440 920.990 ;
+        RECT 3367.820 791.850 3367.960 1019.330 ;
+        RECT 3377.020 1017.555 3377.160 1019.330 ;
+        RECT 3377.020 1017.415 3379.435 1017.555 ;
+        RECT 3377.035 1017.275 3379.435 1017.415 ;
+        RECT 3377.035 792.540 3379.435 792.555 ;
+        RECT 3377.020 792.275 3379.435 792.540 ;
+        RECT 3377.020 791.850 3377.160 792.275 ;
+        RECT 3367.760 791.530 3368.020 791.850 ;
+        RECT 3376.960 791.530 3377.220 791.850 ;
+        RECT 3367.820 564.050 3367.960 791.530 ;
+        RECT 3377.035 566.415 3379.435 566.555 ;
+        RECT 3377.020 566.275 3379.435 566.415 ;
+        RECT 3377.020 564.050 3377.160 566.275 ;
+        RECT 3367.760 563.730 3368.020 564.050 ;
+        RECT 3376.960 563.730 3377.220 564.050 ;
+        RECT 3367.820 239.350 3367.960 563.730 ;
+        RECT 2637.280 239.030 2637.540 239.350 ;
+        RECT 3367.760 239.030 3368.020 239.350 ;
+        RECT 998.300 236.310 998.560 236.630 ;
+        RECT 211.240 228.150 211.500 228.470 ;
+        RECT 725.520 228.150 725.780 228.470 ;
+        RECT 725.580 221.330 725.720 228.150 ;
+        RECT 725.520 221.010 725.780 221.330 ;
+        RECT 976.680 221.010 976.940 221.330 ;
+        RECT 725.580 201.010 725.720 221.010 ;
+        RECT 976.740 210.965 976.880 221.010 ;
+        RECT 998.360 210.965 998.500 236.310 ;
+        RECT 2637.340 235.950 2637.480 239.030 ;
+        RECT 2341.500 235.630 2341.760 235.950 ;
+        RECT 2637.280 235.630 2637.540 235.950 ;
+        RECT 1519.480 235.290 1519.740 235.610 ;
+        RECT 1541.100 235.290 1541.360 235.610 ;
+        RECT 1793.640 235.290 1793.900 235.610 ;
+        RECT 1815.260 235.290 1815.520 235.610 ;
+        RECT 2067.800 235.290 2068.060 235.610 ;
+        RECT 2089.420 235.290 2089.680 235.610 ;
+        RECT 1519.540 210.965 1519.680 235.290 ;
+        RECT 1541.160 210.965 1541.300 235.290 ;
+        RECT 1793.700 210.965 1793.840 235.290 ;
+        RECT 1815.320 210.965 1815.460 235.290 ;
+        RECT 2067.860 210.965 2068.000 235.290 ;
+        RECT 2089.480 210.965 2089.620 235.290 ;
+        RECT 976.655 209.170 976.935 210.965 ;
+        RECT 977.140 209.170 977.400 209.430 ;
+        RECT 976.655 209.110 977.400 209.170 ;
+        RECT 997.840 209.170 998.100 209.430 ;
+        RECT 998.275 209.170 998.555 210.965 ;
+        RECT 997.840 209.110 998.555 209.170 ;
+        RECT 976.655 209.030 977.340 209.110 ;
+        RECT 997.900 209.030 998.555 209.110 ;
+        RECT 1519.540 209.030 1519.935 210.965 ;
+        RECT 1541.160 209.030 1541.555 210.965 ;
+        RECT 976.655 208.565 976.935 209.030 ;
+        RECT 998.275 208.565 998.555 209.030 ;
+        RECT 1519.655 208.565 1519.935 209.030 ;
+        RECT 1541.275 208.565 1541.555 209.030 ;
+        RECT 1793.655 208.565 1793.935 210.965 ;
+        RECT 1815.275 208.565 1815.555 210.965 ;
+        RECT 2067.655 209.100 2068.000 210.965 ;
+        RECT 2089.275 209.100 2089.620 210.965 ;
+        RECT 2341.560 210.965 2341.700 235.630 ;
+        RECT 2637.340 210.965 2637.480 235.630 ;
+        RECT 2341.560 209.170 2341.935 210.965 ;
+        RECT 2342.420 209.170 2342.680 209.430 ;
+        RECT 2341.560 209.110 2342.680 209.170 ;
+        RECT 2362.660 209.170 2362.920 209.430 ;
+        RECT 2363.275 209.170 2363.555 210.965 ;
+        RECT 2362.660 209.110 2363.555 209.170 ;
+        RECT 2067.655 208.565 2067.935 209.100 ;
+        RECT 2089.275 208.565 2089.555 209.100 ;
+        RECT 2341.560 209.030 2342.620 209.110 ;
+        RECT 2362.720 209.030 2363.555 209.110 ;
+        RECT 2341.655 208.565 2341.935 209.030 ;
+        RECT 2363.275 208.565 2363.555 209.030 ;
+        RECT 2615.655 209.170 2615.935 210.965 ;
+        RECT 2637.275 209.850 2637.555 210.965 ;
+        RECT 2636.880 209.770 2637.555 209.850 ;
+        RECT 2616.120 209.450 2616.380 209.770 ;
+        RECT 2636.820 209.710 2637.555 209.770 ;
+        RECT 2636.820 209.450 2637.080 209.710 ;
+        RECT 2616.180 209.170 2616.320 209.450 ;
+        RECT 2615.655 209.030 2616.320 209.170 ;
+        RECT 2615.655 208.565 2615.935 209.030 ;
+        RECT 2637.275 208.565 2637.555 209.710 ;
+        RECT 725.515 200.870 725.720 201.010 ;
+        RECT 725.515 200.000 725.655 200.870 ;
+        RECT 725.455 198.530 725.715 200.000 ;
+      LAYER via2 ;
+        RECT 800.490 4953.320 800.770 4953.600 ;
+        RECT 869.030 4953.320 869.310 4953.600 ;
+        RECT 3367.290 4443.320 3367.570 4443.600 ;
+        RECT 3376.490 4443.320 3376.770 4443.600 ;
+        RECT 3367.750 1693.400 3368.030 1693.680 ;
+        RECT 3376.950 1693.400 3377.230 1693.680 ;
+      LAYER met3 ;
+        RECT 800.465 4953.610 800.795 4953.625 ;
+        RECT 869.005 4953.610 869.335 4953.625 ;
+        RECT 800.465 4953.310 869.335 4953.610 ;
+        RECT 800.465 4953.295 800.795 4953.310 ;
+        RECT 869.005 4953.295 869.335 4953.310 ;
+        RECT 3367.265 4443.610 3367.595 4443.625 ;
+        RECT 3376.465 4443.610 3376.795 4443.625 ;
+        RECT 3367.265 4443.310 3376.795 4443.610 ;
+        RECT 3367.265 4443.295 3367.595 4443.310 ;
+        RECT 3376.465 4443.295 3376.795 4443.310 ;
+        RECT 3367.725 1693.690 3368.055 1693.705 ;
+        RECT 3376.925 1693.690 3377.255 1693.705 ;
+        RECT 3367.725 1693.390 3377.255 1693.690 ;
+        RECT 3367.725 1693.375 3368.055 1693.390 ;
+        RECT 3376.925 1693.375 3377.255 1693.390 ;
+    END
+  END porb_h
+  PIN resetb
+    PORT
+      LAYER met5 ;
+        RECT 683.565 35.715 720.750 91.545 ;
+    END
+  END resetb
+  PIN resetb_core_h
+    PORT
+      LAYER met3 ;
+        RECT 708.335 190.155 709.065 200.000 ;
+        RECT 708.335 189.855 709.365 190.155 ;
+        RECT 708.335 189.555 709.100 189.855 ;
+        RECT 709.365 189.555 709.830 189.855 ;
+        RECT 708.335 189.090 709.830 189.555 ;
+        RECT 709.100 185.230 709.830 189.090 ;
+    END
+  END resetb_core_h
+  PIN vssa1
+    PORT
+      LAYER met5 ;
+        RECT 2884.100 5092.010 2946.800 5154.625 ;
+    END
+  END vssa1
+  PIN vccd2
+    PORT
+      LAYER met5 ;
+        RECT 30.430 4569.315 97.860 4625.955 ;
+    END
+  END vccd2
+  PIN vdda2
+    PORT
+      LAYER met5 ;
+        RECT 33.375 2421.100 95.990 2483.800 ;
+    END
+  END vdda2
+  PIN vssa2
+    PORT
+      LAYER met5 ;
+        RECT 33.375 4144.100 95.990 4206.800 ;
+    END
+  END vssa2
+  PIN vssd2
+    PORT
+      LAYER met5 ;
+        RECT 30.430 2213.315 97.860 2269.955 ;
+    END
+  END vssd2
+  OBS
+  END
+END chip_io
+END LIBRARY
+
