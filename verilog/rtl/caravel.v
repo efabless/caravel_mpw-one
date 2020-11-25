@@ -622,16 +622,20 @@ module caravel (
     user_id_programming #(
 	.USER_PROJECT_ID(USER_PROJECT_ID)
     ) user_id_value (
+`ifdef USE_POWER_PINS
 	.vdd1v8(vccd),
 	.vss(vssd),
+`endif
 	.mask_rev(mask_rev)
     );
 
     // Power-on-reset circuit
     simple_por por (
+`ifdef USE_POWER_PINS
 		.vdd3v3(vddio),
 		.vdd1v8(vccd),
 		.vss(vssio),
+`endif
 		.porb_h(porb_h),
 		.porb_l(porb_l),
 		.por_l(por_l)

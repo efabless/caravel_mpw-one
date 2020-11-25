@@ -2,9 +2,11 @@
 `timescale 1 ns / 1 ps
 
 module simple_por(
+`ifdef USE_POWER_PINS
     inout vdd3v3,
     inout vdd1v8,
     inout vss,
+`endif
     output porb_h,
     output porb_l,
     output por_l
