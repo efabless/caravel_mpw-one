@@ -1,0 +1,28 @@
+*---------------------------------------------------------------------------
+* All-digital Frequency-locked loop
+*---------------------------------------------------------------------------
+* To make this simulatable, the circuit is broken into the ring oscillator
+* and controller, separately, with the controller converted into an xspice
+* model.
+*
+* For simplicity, the DCO mode has been removed, so no external trim with
+* multiplexer.  Also no multiplexer on the internal reset.
+*---------------------------------------------------------------------------
+
+.include "digital_pll_controller.xspice"
+.include "ring_osc2x13.spice"
+
+.subckt digital_pll vdd vss reset osc clockp1 clockp0 div4 div3 div2 div1 div0
+
+X0 vdd vss clockp0 div0 div1 div2 div3 div4 osc reset trim0 trim1 trim2 trim3
++ trim4 trim5 trim6 trim7 trim8 trim9 trim10 trim11 trim12 trim13 trim14
++ trim15 trim16 trim17 trim18 trim19 trim20 trim21 trim22 trim23 trim24
++ trim25 digital_pll_controller
+
+X1 vdd vss clockp0 clockp1 reset trim0 trim1 trim2 trim3 trim4 trim5 trim6 trim7
++ trim8 trim9 trim10 trim11 trim12 trim13 trim14 trim15 trim16 trim17 trim18
++ trim19 trim20 trim21 trim22 trim23 trim24 trim25 ring_osc2x13
+
+.ends
+
+

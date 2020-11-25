@@ -1,0 +1,49 @@
+*--------------------------------
+* Complete Digital PLL testbench
+*--------------------------------
+
+.lib "/home/tim/projects/efabless/tech/SW/sky130A/libs.tech/ngspice/sky130.lib.spice" tt
+
+.include "/home/tim/projects/efabless/tech/SW/sky130A/libs.ref/sky130_fd_sc_hd/spice/sky130_fd_sc_hd.spice"
+
+.include "digital_pll.spice"
+
+.option TEMP=27
+* .option RELTOL=1.0E-2
+
+* Instantiate the digital PLL
+
+X0 vdd vss reset osc clkp1 clkp0 div4 div3 div2 div1 div0 digital_pll
+
+* Power supply (note that all logic is 1.8V here)
+
+V0 vdd vss PWL(0.0 0.0 25n 1.8)
+V1 vss 0 0.0
+
+* Fixed divider value (connect resistors to power or ground)
+* divider value = 16  (10MHz * 16 = 160MHz clock)
+
+R0 div4 vdd 1
+R1 div3 gnd 1
+R2 div2 gnd 1
+R3 div1 gnd 1
+R4 div0 gnd 1
+
+* Run oscillator at 10MHz
+* Because DFFs don't handle reclocking well, keep the edges sharp.
+
+V2 osc vss PULSE(0.0 1.8 5n 10p 10p 50n 100n)
+
+* Reset pulse
+V3 reset vss PWL(0.0 1.8 0.1u 1.8 0.101u 0.0)
+
+* Transient analysis.  Note that trim updates every four cycles, or about
+* three updates per microsecond.  To update all 17 trim bits requires
+* 6us.
+
+.control
+tran 1n 8u
+plot V(osc)
+plot V(clkp0) V(clkp1)
+.endc
+.end

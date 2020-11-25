@@ -1,0 +1,248 @@
+*SPICE netlist created from verilog structural netlist module ring_osc2x13 by vlog2Spice (qflow)
+* Warning: This file contains [] array delimiters in net names.
+* Note: Library sky130_fd_sc_hd.spice has been removed;  reference library as an
+* include file from the testbench instead.
+
+.subckt ring_osc2x13 VPB VGND clockp[0] clockp[1] reset trim[0] trim[1]
++ trim[2] trim[3] trim[4] trim[5] trim[6] trim[7] trim[8] trim[9]
++ trim[10] trim[11] trim[12] trim[13] trim[14] trim[15] trim[16] trim[17]
++ trim[18] trim[19] trim[20] trim[21] trim[22] trim[23] trim[24] trim[25]
++ 
+
+X_1_ _0_[0] VGND VGND VPB VPB clockp[0] sky130_fd_sc_hd__buf_2
+X_2_ _0_[1] VGND VGND VPB VPB clockp[1] sky130_fd_sc_hd__buf_2
+X\dstage[0].id.delaybuf0  \dstage[0].id.in\ VGND VGND VPB VPB \dstage[0].id.ts\ sky130_fd_sc_hd__clkbuf_2
+X\dstage[0].id.delaybuf1  \dstage[0].id.ts\ VGND VGND VPB VPB \dstage[0].id.d0\ sky130_fd_sc_hd__clkbuf_1
+X\dstage[0].id.delayen0  \dstage[0].id.d2\ trim[0] VGND VGND VPB VPB 
++ \dstage[0].id.out\
++ sky130_fd_sc_hd__einvp_2
+X\dstage[0].id.delayen1  \dstage[0].id.d0\ trim[13] VGND VGND VPB VPB 
++ \dstage[0].id.d1\
++ sky130_fd_sc_hd__einvp_2
+X\dstage[0].id.delayenb0  \dstage[0].id.ts\ trim[0] VGND VGND VPB VPB 
++ \dstage[0].id.out\
++ sky130_fd_sc_hd__einvn_8
+X\dstage[0].id.delayenb1  \dstage[0].id.ts\ trim[13] VGND VGND VPB VPB 
++ \dstage[0].id.d1\
++ sky130_fd_sc_hd__einvn_4
+X\dstage[0].id.delayint0  \dstage[0].id.d1\ VGND VGND VPB VPB \dstage[0].id.d2\ sky130_fd_sc_hd__clkinv_1
+X\dstage[10].id.delaybuf0  \dstage[10].id.in\ VGND VGND VPB VPB \dstage[10].id.ts\ sky130_fd_sc_hd__clkbuf_2
+X\dstage[10].id.delaybuf1  \dstage[10].id.ts\ VGND VGND VPB VPB \dstage[10].id.d0\ sky130_fd_sc_hd__clkbuf_1
+X\dstage[10].id.delayen0  \dstage[10].id.d2\ trim[10] VGND VGND VPB VPB 
++ \dstage[10].id.out\
++ sky130_fd_sc_hd__einvp_2
+X\dstage[10].id.delayen1  \dstage[10].id.d0\ trim[23] VGND VGND VPB VPB 
++ \dstage[10].id.d1\
++ sky130_fd_sc_hd__einvp_2
+X\dstage[10].id.delayenb0  \dstage[10].id.ts\ trim[10] VGND VGND VPB VPB 
++ \dstage[10].id.out\
++ sky130_fd_sc_hd__einvn_8
+X\dstage[10].id.delayenb1  \dstage[10].id.ts\ trim[23] VGND VGND VPB VPB 
++ \dstage[10].id.d1\
++ sky130_fd_sc_hd__einvn_4
+X\dstage[10].id.delayint0  \dstage[10].id.d1\ VGND VGND VPB VPB \dstage[10].id.d2\ sky130_fd_sc_hd__clkinv_1
+X\dstage[11].id.delaybuf0  \dstage[10].id.out\ VGND VGND VPB VPB \dstage[11].id.ts\ sky130_fd_sc_hd__clkbuf_2
+X\dstage[11].id.delaybuf1  \dstage[11].id.ts\ VGND VGND VPB VPB \dstage[11].id.d0\ sky130_fd_sc_hd__clkbuf_1
+X\dstage[11].id.delayen0  \dstage[11].id.d2\ trim[11] VGND VGND VPB VPB 
++ \dstage[11].id.out\
++ sky130_fd_sc_hd__einvp_2
+X\dstage[11].id.delayen1  \dstage[11].id.d0\ trim[24] VGND VGND VPB VPB 
++ \dstage[11].id.d1\
++ sky130_fd_sc_hd__einvp_2
+X\dstage[11].id.delayenb0  \dstage[11].id.ts\ trim[11] VGND VGND VPB VPB 
++ \dstage[11].id.out\
++ sky130_fd_sc_hd__einvn_8
+X\dstage[11].id.delayenb1  \dstage[11].id.ts\ trim[24] VGND VGND VPB VPB 
++ \dstage[11].id.d1\
++ sky130_fd_sc_hd__einvn_4
+X\dstage[11].id.delayint0  \dstage[11].id.d1\ VGND VGND VPB VPB \dstage[11].id.d2\ sky130_fd_sc_hd__clkinv_1
+X\dstage[1].id.delaybuf0  \dstage[0].id.out\ VGND VGND VPB VPB \dstage[1].id.ts\ sky130_fd_sc_hd__clkbuf_2
+X\dstage[1].id.delaybuf1  \dstage[1].id.ts\ VGND VGND VPB VPB \dstage[1].id.d0\ sky130_fd_sc_hd__clkbuf_1
+X\dstage[1].id.delayen0  \dstage[1].id.d2\ trim[1] VGND VGND VPB VPB 
++ \dstage[1].id.out\
++ sky130_fd_sc_hd__einvp_2
+X\dstage[1].id.delayen1  \dstage[1].id.d0\ trim[14] VGND VGND VPB VPB 
++ \dstage[1].id.d1\
++ sky130_fd_sc_hd__einvp_2
+X\dstage[1].id.delayenb0  \dstage[1].id.ts\ trim[1] VGND VGND VPB VPB 
++ \dstage[1].id.out\
++ sky130_fd_sc_hd__einvn_8
+X\dstage[1].id.delayenb1  \dstage[1].id.ts\ trim[14] VGND VGND VPB VPB 
++ \dstage[1].id.d1\
++ sky130_fd_sc_hd__einvn_4
+X\dstage[1].id.delayint0  \dstage[1].id.d1\ VGND VGND VPB VPB \dstage[1].id.d2\ sky130_fd_sc_hd__clkinv_1
+X\dstage[2].id.delaybuf0  \dstage[1].id.out\ VGND VGND VPB VPB \dstage[2].id.ts\ sky130_fd_sc_hd__clkbuf_2
+X\dstage[2].id.delaybuf1  \dstage[2].id.ts\ VGND VGND VPB VPB \dstage[2].id.d0\ sky130_fd_sc_hd__clkbuf_1
+X\dstage[2].id.delayen0  \dstage[2].id.d2\ trim[2] VGND VGND VPB VPB 
++ \dstage[2].id.out\
++ sky130_fd_sc_hd__einvp_2
+X\dstage[2].id.delayen1  \dstage[2].id.d0\ trim[15] VGND VGND VPB VPB 
++ \dstage[2].id.d1\
++ sky130_fd_sc_hd__einvp_2
+X\dstage[2].id.delayenb0  \dstage[2].id.ts\ trim[2] VGND VGND VPB VPB 
++ \dstage[2].id.out\
++ sky130_fd_sc_hd__einvn_8
+X\dstage[2].id.delayenb1  \dstage[2].id.ts\ trim[15] VGND VGND VPB VPB 
++ \dstage[2].id.d1\
++ sky130_fd_sc_hd__einvn_4
+X\dstage[2].id.delayint0  \dstage[2].id.d1\ VGND VGND VPB VPB \dstage[2].id.d2\ sky130_fd_sc_hd__clkinv_1
+X\dstage[3].id.delaybuf0  \dstage[2].id.out\ VGND VGND VPB VPB \dstage[3].id.ts\ sky130_fd_sc_hd__clkbuf_2
+X\dstage[3].id.delaybuf1  \dstage[3].id.ts\ VGND VGND VPB VPB \dstage[3].id.d0\ sky130_fd_sc_hd__clkbuf_1
+X\dstage[3].id.delayen0  \dstage[3].id.d2\ trim[3] VGND VGND VPB VPB 
++ \dstage[3].id.out\
++ sky130_fd_sc_hd__einvp_2
+X\dstage[3].id.delayen1  \dstage[3].id.d0\ trim[16] VGND VGND VPB VPB 
++ \dstage[3].id.d1\
++ sky130_fd_sc_hd__einvp_2
+X\dstage[3].id.delayenb0  \dstage[3].id.ts\ trim[3] VGND VGND VPB VPB 
++ \dstage[3].id.out\
++ sky130_fd_sc_hd__einvn_8
+X\dstage[3].id.delayenb1  \dstage[3].id.ts\ trim[16] VGND VGND VPB VPB 
++ \dstage[3].id.d1\
++ sky130_fd_sc_hd__einvn_4
+X\dstage[3].id.delayint0  \dstage[3].id.d1\ VGND VGND VPB VPB \dstage[3].id.d2\ sky130_fd_sc_hd__clkinv_1
+X\dstage[4].id.delaybuf0  \dstage[3].id.out\ VGND VGND VPB VPB \dstage[4].id.ts\ sky130_fd_sc_hd__clkbuf_2
+X\dstage[4].id.delaybuf1  \dstage[4].id.ts\ VGND VGND VPB VPB \dstage[4].id.d0\ sky130_fd_sc_hd__clkbuf_1
+X\dstage[4].id.delayen0  \dstage[4].id.d2\ trim[4] VGND VGND VPB VPB 
++ \dstage[4].id.out\
++ sky130_fd_sc_hd__einvp_2
+X\dstage[4].id.delayen1  \dstage[4].id.d0\ trim[17] VGND VGND VPB VPB 
++ \dstage[4].id.d1\
++ sky130_fd_sc_hd__einvp_2
+X\dstage[4].id.delayenb0  \dstage[4].id.ts\ trim[4] VGND VGND VPB VPB 
++ \dstage[4].id.out\
++ sky130_fd_sc_hd__einvn_8
+X\dstage[4].id.delayenb1  \dstage[4].id.ts\ trim[17] VGND VGND VPB VPB 
++ \dstage[4].id.d1\
++ sky130_fd_sc_hd__einvn_4
+X\dstage[4].id.delayint0  \dstage[4].id.d1\ VGND VGND VPB VPB \dstage[4].id.d2\ sky130_fd_sc_hd__clkinv_1
+X\dstage[5].id.delaybuf0  \dstage[4].id.out\ VGND VGND VPB VPB \dstage[5].id.ts\ sky130_fd_sc_hd__clkbuf_2
+X\dstage[5].id.delaybuf1  \dstage[5].id.ts\ VGND VGND VPB VPB \dstage[5].id.d0\ sky130_fd_sc_hd__clkbuf_1
+X\dstage[5].id.delayen0  \dstage[5].id.d2\ trim[5] VGND VGND VPB VPB 
++ \dstage[5].id.out\
++ sky130_fd_sc_hd__einvp_2
+X\dstage[5].id.delayen1  \dstage[5].id.d0\ trim[18] VGND VGND VPB VPB 
++ \dstage[5].id.d1\
++ sky130_fd_sc_hd__einvp_2
+X\dstage[5].id.delayenb0  \dstage[5].id.ts\ trim[5] VGND VGND VPB VPB 
++ \dstage[5].id.out\
++ sky130_fd_sc_hd__einvn_8
+X\dstage[5].id.delayenb1  \dstage[5].id.ts\ trim[18] VGND VGND VPB VPB 
++ \dstage[5].id.d1\
++ sky130_fd_sc_hd__einvn_4
+X\dstage[5].id.delayint0  \dstage[5].id.d1\ VGND VGND VPB VPB \dstage[5].id.d2\ sky130_fd_sc_hd__clkinv_1
+X\dstage[6].id.delaybuf0  \dstage[5].id.out\ VGND VGND VPB VPB \dstage[6].id.ts\ sky130_fd_sc_hd__clkbuf_2
+X\dstage[6].id.delaybuf1  \dstage[6].id.ts\ VGND VGND VPB VPB \dstage[6].id.d0\ sky130_fd_sc_hd__clkbuf_1
+X\dstage[6].id.delayen0  \dstage[6].id.d2\ trim[6] VGND VGND VPB VPB 
++ \dstage[6].id.out\
++ sky130_fd_sc_hd__einvp_2
+X\dstage[6].id.delayen1  \dstage[6].id.d0\ trim[19] VGND VGND VPB VPB 
++ \dstage[6].id.d1\
++ sky130_fd_sc_hd__einvp_2
+X\dstage[6].id.delayenb0  \dstage[6].id.ts\ trim[6] VGND VGND VPB VPB 
++ \dstage[6].id.out\
++ sky130_fd_sc_hd__einvn_8
+X\dstage[6].id.delayenb1  \dstage[6].id.ts\ trim[19] VGND VGND VPB VPB 
++ \dstage[6].id.d1\
++ sky130_fd_sc_hd__einvn_4
+X\dstage[6].id.delayint0  \dstage[6].id.d1\ VGND VGND VPB VPB \dstage[6].id.d2\ sky130_fd_sc_hd__clkinv_1
+X\dstage[7].id.delaybuf0  \dstage[6].id.out\ VGND VGND VPB VPB \dstage[7].id.ts\ sky130_fd_sc_hd__clkbuf_2
+X\dstage[7].id.delaybuf1  \dstage[7].id.ts\ VGND VGND VPB VPB \dstage[7].id.d0\ sky130_fd_sc_hd__clkbuf_1
+X\dstage[7].id.delayen0  \dstage[7].id.d2\ trim[7] VGND VGND VPB VPB 
++ \dstage[7].id.out\
++ sky130_fd_sc_hd__einvp_2
+X\dstage[7].id.delayen1  \dstage[7].id.d0\ trim[20] VGND VGND VPB VPB 
++ \dstage[7].id.d1\
++ sky130_fd_sc_hd__einvp_2
+X\dstage[7].id.delayenb0  \dstage[7].id.ts\ trim[7] VGND VGND VPB VPB 
++ \dstage[7].id.out\
++ sky130_fd_sc_hd__einvn_8
+X\dstage[7].id.delayenb1  \dstage[7].id.ts\ trim[20] VGND VGND VPB VPB 
++ \dstage[7].id.d1\
++ sky130_fd_sc_hd__einvn_4
+X\dstage[7].id.delayint0  \dstage[7].id.d1\ VGND VGND VPB VPB \dstage[7].id.d2\ sky130_fd_sc_hd__clkinv_1
+X\dstage[8].id.delaybuf0  \dstage[7].id.out\ VGND VGND VPB VPB \dstage[8].id.ts\ sky130_fd_sc_hd__clkbuf_2
+X\dstage[8].id.delaybuf1  \dstage[8].id.ts\ VGND VGND VPB VPB \dstage[8].id.d0\ sky130_fd_sc_hd__clkbuf_1
+X\dstage[8].id.delayen0  \dstage[8].id.d2\ trim[8] VGND VGND VPB VPB 
++ \dstage[8].id.out\
++ sky130_fd_sc_hd__einvp_2
+X\dstage[8].id.delayen1  \dstage[8].id.d0\ trim[21] VGND VGND VPB VPB 
++ \dstage[8].id.d1\
++ sky130_fd_sc_hd__einvp_2
+X\dstage[8].id.delayenb0  \dstage[8].id.ts\ trim[8] VGND VGND VPB VPB 
++ \dstage[8].id.out\
++ sky130_fd_sc_hd__einvn_8
+X\dstage[8].id.delayenb1  \dstage[8].id.ts\ trim[21] VGND VGND VPB VPB 
++ \dstage[8].id.d1\
++ sky130_fd_sc_hd__einvn_4
+X\dstage[8].id.delayint0  \dstage[8].id.d1\ VGND VGND VPB VPB \dstage[8].id.d2\ sky130_fd_sc_hd__clkinv_1
+X\dstage[9].id.delaybuf0  \dstage[8].id.out\ VGND VGND VPB VPB \dstage[9].id.ts\ sky130_fd_sc_hd__clkbuf_2
+X\dstage[9].id.delaybuf1  \dstage[9].id.ts\ VGND VGND VPB VPB \dstage[9].id.d0\ sky130_fd_sc_hd__clkbuf_1
+X\dstage[9].id.delayen0  \dstage[9].id.d2\ trim[9] VGND VGND VPB VPB 
++ \dstage[10].id.in\
++ sky130_fd_sc_hd__einvp_2
+X\dstage[9].id.delayen1  \dstage[9].id.d0\ trim[22] VGND VGND VPB VPB 
++ \dstage[9].id.d1\
++ sky130_fd_sc_hd__einvp_2
+X\dstage[9].id.delayenb0  \dstage[9].id.ts\ trim[9] VGND VGND VPB VPB 
++ \dstage[10].id.in\
++ sky130_fd_sc_hd__einvn_8
+X\dstage[9].id.delayenb1  \dstage[9].id.ts\ trim[22] VGND VGND VPB VPB 
++ \dstage[9].id.d1\
++ sky130_fd_sc_hd__einvn_4
+X\dstage[9].id.delayint0  \dstage[9].id.d1\ VGND VGND VPB VPB \dstage[9].id.d2\ sky130_fd_sc_hd__clkinv_1
+Xibufp00 \dstage[0].id.in\ VGND VGND VPB VPB c[0] sky130_fd_sc_hd__clkinv_2
+Xibufp01 c[0] VGND VGND VPB VPB _0_[0] sky130_fd_sc_hd__clkinv_8
+Xibufp10 \dstage[5].id.out\ VGND VGND VPB VPB c[1] sky130_fd_sc_hd__clkinv_2
+Xibufp11 c[1] VGND VGND VPB VPB _0_[1] sky130_fd_sc_hd__clkinv_8
+X\iss.const1  VGND VGND VPB VPB \iss.one\ _noconnect_1_ sky130_fd_sc_hd__conb_1
+X\iss.ctrlen0  reset trim[12] VGND VGND VPB VPB 
++ \iss.ctrl0\
++ sky130_fd_sc_hd__or2_2
+X\iss.delaybuf0  \dstage[11].id.out\ VGND VGND VPB VPB \iss.d0\ sky130_fd_sc_hd__clkbuf_1
+X\iss.delayen0  \iss.d2\ trim[12] VGND VGND VPB VPB 
++ \dstage[0].id.in\
++ sky130_fd_sc_hd__einvp_2
+X\iss.delayen1  \iss.d0\ trim[25] VGND VGND VPB VPB 
++ \iss.d1\
++ sky130_fd_sc_hd__einvp_2
+X\iss.delayenb0  \dstage[11].id.out\ \iss.ctrl0\ VGND VGND VPB VPB 
++ \dstage[0].id.in\
++ sky130_fd_sc_hd__einvn_8
+X\iss.delayenb1  \dstage[11].id.out\ trim[25] VGND VGND VPB VPB 
++ \iss.d1\
++ sky130_fd_sc_hd__einvn_4
+X\iss.delayint0  \iss.d1\ VGND VGND VPB VPB \iss.d2\ sky130_fd_sc_hd__clkinv_1
+X\iss.reseten0  \iss.one\ reset VGND VGND VPB VPB 
++ \dstage[0].id.in\
++ sky130_fd_sc_hd__einvp_1
+Xantenna_0 reset VGND VGND VPB VPB sky130_fd_sc_hd__diode_2
+Xantenna_1[25] trim[25] VGND VGND VPB VPB sky130_fd_sc_hd__diode_2
+Xantenna_1[24] trim[24] VGND VGND VPB VPB sky130_fd_sc_hd__diode_2
+Xantenna_1[23] trim[23] VGND VGND VPB VPB sky130_fd_sc_hd__diode_2
+Xantenna_1[22] trim[22] VGND VGND VPB VPB sky130_fd_sc_hd__diode_2
+Xantenna_1[21] trim[21] VGND VGND VPB VPB sky130_fd_sc_hd__diode_2
+Xantenna_1[20] trim[20] VGND VGND VPB VPB sky130_fd_sc_hd__diode_2
+Xantenna_1[19] trim[19] VGND VGND VPB VPB sky130_fd_sc_hd__diode_2
+Xantenna_1[18] trim[18] VGND VGND VPB VPB sky130_fd_sc_hd__diode_2
+Xantenna_1[17] trim[17] VGND VGND VPB VPB sky130_fd_sc_hd__diode_2
+Xantenna_1[16] trim[16] VGND VGND VPB VPB sky130_fd_sc_hd__diode_2
+Xantenna_1[15] trim[15] VGND VGND VPB VPB sky130_fd_sc_hd__diode_2
+Xantenna_1[14] trim[14] VGND VGND VPB VPB sky130_fd_sc_hd__diode_2
+Xantenna_1[13] trim[13] VGND VGND VPB VPB sky130_fd_sc_hd__diode_2
+Xantenna_1[12] trim[12] VGND VGND VPB VPB sky130_fd_sc_hd__diode_2
+Xantenna_1[11] trim[11] VGND VGND VPB VPB sky130_fd_sc_hd__diode_2
+Xantenna_1[10] trim[10] VGND VGND VPB VPB sky130_fd_sc_hd__diode_2
+Xantenna_1[9] trim[9] VGND VGND VPB VPB sky130_fd_sc_hd__diode_2
+Xantenna_1[8] trim[8] VGND VGND VPB VPB sky130_fd_sc_hd__diode_2
+Xantenna_1[7] trim[7] VGND VGND VPB VPB sky130_fd_sc_hd__diode_2
+Xantenna_1[6] trim[6] VGND VGND VPB VPB sky130_fd_sc_hd__diode_2
+Xantenna_1[5] trim[5] VGND VGND VPB VPB sky130_fd_sc_hd__diode_2
+Xantenna_1[4] trim[4] VGND VGND VPB VPB sky130_fd_sc_hd__diode_2
+Xantenna_1[3] trim[3] VGND VGND VPB VPB sky130_fd_sc_hd__diode_2
+Xantenna_1[2] trim[2] VGND VGND VPB VPB sky130_fd_sc_hd__diode_2
+Xantenna_1[1] trim[1] VGND VGND VPB VPB sky130_fd_sc_hd__diode_2
+Xantenna_1[0] trim[0] VGND VGND VPB VPB sky130_fd_sc_hd__diode_2
+
+.ends
+.end

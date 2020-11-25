@@ -1,0 +1,42 @@
+* Ring oscillator testbench---simple check of ring oscillator
+* at several trim levels
+
+.lib "/home/tim/projects/efabless/tech/SW/sky130A/libs.tech/ngspice/sky130.lib.spice" tt
+
+.include "/home/tim/projects/efabless/tech/SW/sky130A/libs.ref/sky130_fd_sc_hd/spice/sky130_fd_sc_hd.spice"
+
+.include "ring_osc2x13.spice"
+
+.option TEMP=27
+* .option RELTOL=1.0E-1
+* .option RSHUNT=1.0E20
+
+* Instantiate the ring oscillator
+* Tie trims together in four sets
+
+X0 vdd vss clockp0 clockp1 reset trim0 trim1 trim0 trim1 trim0 trim1 trim0
++ trim1 trim0 trim1 trim0 trim1 trim0 trim3 trim2 trim3 trim2 trim3 trim2
++ trim3 trim2 trim3 trim2 trim3 trim2 trim3 ring_osc2x13
+
+* Power supply (note that all logic is 1.8V here)
+
+V0 vdd vss PWL(0n 0.0 30n 1.8)
+V1 vss 0 0.0
+
+* Trim values (connect resistors to power or ground)
+* divider value = 12
+
+V2 trim0 gnd PULSE(0.0 1.8 200n 2n 2n 1u 2u)
+V3 trim1 gnd PULSE(0.0 1.8 400n 2n 2n 1u 2u)
+V4 trim2 gnd PULSE(0.0 1.8 600n 2n 2n 1u 2u)
+V5 trim3 gnd PULSE(0.0 1.8 800n 2n 2n 1u 2u)
+
+* Reset
+V6 reset gnd PWL(0n 1.8 48n 1.8 50n 0.0)
+
+* Transient analysis
+.control
+tran 100p 1u
+plot V(clockp0) V(clockp1)
+.endc
+.end
