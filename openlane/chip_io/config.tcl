@@ -15,7 +15,18 @@ set ::env(DESIGN_IS_PADFRAME) 1
 set ::env(SYNTH_FLAT_TOP) 1
 set ::env(USE_GPIO_PADS) 1
 
+
 set ::env(FP_SIZING) absolute
-set ::env(DIE_AREA) "0 0 3200 5300"
+
+set fd [open "$script_dir/../chip_dimensions.txt" "r"]
+set ::env(DIE_AREA) [read $fd]
+close $fd
+
 
 set ::env(MAGIC_WRITE_FULL_LEF) 1
+
+set ::env(DIODE_INSERTION_STRATEGY) 0
+set ::env(GLB_RT_TILES) 12
+set ::env(GLB_RT_UNIDIRECTIONAL) 0
+# set ::env(GLB_RT_ALLOW_CONGESTION) 1
+# set ::env(GLB_RT_OVERFLOW_ITERS) 150

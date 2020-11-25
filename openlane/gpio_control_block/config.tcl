@@ -12,4 +12,13 @@ set ::env(CLOCK_PORT) "serial_clock"
 set ::env(CLOCK_PERIOD) "10"
 
 set ::env(FP_SIZING) absolute
-set ::env(DIE_AREA) "0 0 50 125"
+set ::env(DIE_AREA) "0 0 175 95"
+
+set ::env(PL_TARGET_DENSITY) 0.4
+set ::env(PL_BASIC_PLACEMENT) 1
+
+# set ::env(FP_IO_VEXTEND) 20
+# set ::env(FP_IO_HEXTEND) 20
+set ::env(RIGHT_MARGIN_MULT) 272
+set ::env(FP_IO_HLENGTH) 200
+set ::env(GLB_RT_MAXLAYER) 4
