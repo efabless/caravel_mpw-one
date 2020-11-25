@@ -1,5 +1,5 @@
 
-Magic 8.3 revision 64 - Compiled on Fri Oct  9 12:13:18 UTC 2020.
+Magic 8.3 revision 87 - Compiled on Mon Nov 23 17:53:03 UTC 2020.
 Starting magic under Tcl interpreter
 Using the terminal as the console.
 Using NULL graphics device.
@@ -9,50 +9,21 @@ Sourcing design .magicrc for technology sky130A ...
 Input style sky130: scaleFactor=2, multiplier=2
 Scaled tech values by 2 / 1 to match internal grid scaling
 Loading sky130A Device Generator Menu ...
-Loading "/openLANE_flow/scripts/magic.tcl" from command line.
-Reading LEF data from file /home/xrex/usr/devel/pdks/sky130A/libs.ref/sky130_fd_sc_hd/techlef/sky130_fd_sc_hd.tlef.
-This action cannot be undone.
-LEF read, Line 77 (Message): Unknown keyword "ANTENNAMODEL" in LEF file; ignoring.
-LEF read, Line 78 (Message): Unknown keyword "ANTENNADIFFSIDEAREARATIO" in LEF file; ignoring.
-LEF read, Line 111 (Message): Unknown keyword "ANTENNAMODEL" in LEF file; ignoring.
-LEF read, Line 112 (Message): Unknown keyword "ANTENNADIFFSIDEAREARATIO" in LEF file; ignoring.
-LEF read, Line 118 (Message): Unknown keyword "MAXIMUMDENSITY" in LEF file; ignoring.
-LEF read, Line 119 (Message): Unknown keyword "DENSITYCHECKWINDOW" in LEF file; ignoring.
-LEF read, Line 120 (Message): Unknown keyword "DENSITYCHECKSTEP" in LEF file; ignoring.
-LEF read, Line 159 (Message): Unknown keyword "ANTENNAMODEL" in LEF file; ignoring.
-LEF read, Line 160 (Message): Unknown keyword "ANTENNADIFFSIDEAREARATIO" in LEF file; ignoring.
-LEF read, Line 162 (Message): Unknown keyword "MAXIMUMDENSITY" in LEF file; ignoring.
-LEF read, Line 163 (Message): Unknown keyword "DENSITYCHECKWINDOW" in LEF file; ignoring.
-LEF read, Line 164 (Message): Unknown keyword "DENSITYCHECKSTEP" in LEF file; ignoring.
-LEF read, Line 200 (Message): Unknown keyword "ANTENNAMODEL" in LEF file; ignoring.
-LEF read, Line 201 (Message): Unknown keyword "ANTENNADIFFSIDEAREARATIO" in LEF file; ignoring.
-LEF read, Line 203 (Message): Unknown keyword "MAXIMUMDENSITY" in LEF file; ignoring.
-LEF read, Line 204 (Message): Unknown keyword "DENSITYCHECKWINDOW" in LEF file; ignoring.
-LEF read, Line 205 (Message): Unknown keyword "DENSITYCHECKSTEP" in LEF file; ignoring.
-LEF read, Line 241 (Message): Unknown keyword "ANTENNAMODEL" in LEF file; ignoring.
-LEF read, Line 242 (Message): Unknown keyword "ANTENNADIFFSIDEAREARATIO" in LEF file; ignoring.
-LEF read, Line 244 (Message): Unknown keyword "MAXIMUMDENSITY" in LEF file; ignoring.
-LEF read, Line 245 (Message): Unknown keyword "DENSITYCHECKWINDOW" in LEF file; ignoring.
-LEF read, Line 246 (Message): Unknown keyword "DENSITYCHECKSTEP" in LEF file; ignoring.
-LEF read, Line 282 (Message): Unknown keyword "ANTENNAMODEL" in LEF file; ignoring.
-LEF read, Line 283 (Message): Unknown keyword "ANTENNADIFFSIDEAREARATIO" in LEF file; ignoring.
-LEF read: Processed 789 lines.
-Reading DEF data from file /project/openlane/user_id_programming/runs/user_id_programming/results/routing/user_id_programming.def.
-This action cannot be undone.
-  Processed 6 vias total.
-  Processed 112 subcell instances total.
-  Processed 36 pins total.
-  Processed 2 special nets total.
-  Processed 66 nets total.
-DEF read: Processed 772 lines.
-[INFO]: Zeroizing Origin
-[INFO]: Current Box Values: 0 0 7109 9253
-[INFO]: Saving .mag view With BBox Values: 0 0 7109 9253
-[INFO]: GDS Write Complete
-[INFO]: Writing abstract LEF
-Generating LEF output /project/openlane/user_id_programming/runs/user_id_programming/results/magic/user_id_programming.lef for cell user_id_programming:
-Diagnostic:  Write LEF header for cell user_id_programming
-Diagnostic:  Writing LEF output for cell user_id_programming
-Diagnostic:  Scale value is 0.005000
-[INFO]: LEF Write Complete
+Loading "/openLANE_flow/scripts/magic_mag.tcl" from command line.
+Box tool must be present
+[INFO]: Saving .mag view With BBox Values: 
+Warning: Calma reading is not undoable!  I hope that's OK.
+Library written using GDS-II Release 3.0
+Library name: user_id_programming
+Reading "sky130_fd_sc_hd__fill_2".
+Reading "sky130_fd_sc_hd__decap_3".
+Reading "sky130_fd_sc_hd__decap_8".
+Reading "sky130_fd_sc_hd__fill_1".
+Reading "sky130_fd_sc_hd__conb_1".
+Reading "sky130_fd_sc_hd__decap_6".
+Reading "sky130_fd_sc_hd__decap_12".
+Reading "sky130_fd_sc_hd__decap_4".
+Reading "sky130_fd_sc_hd__tapvpwrvgnd_1".
+Reading "user_id_programming".
+    100 uses
 [INFO]: MAGIC TAPEOUT STEP DONE

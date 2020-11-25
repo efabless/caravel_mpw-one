@@ -385,10 +385,10 @@ Removed 0 unused modules.
 
 === user_id_programming ===
 
-   Number of wires:                  5
-   Number of wire bits:             98
-   Number of public wires:           5
-   Number of public wire bits:      98
+   Number of wires:                  3
+   Number of wire bits:             96
+   Number of public wires:           3
+   Number of public wire bits:      96
    Number of memories:               0
    Number of memory bits:            0
    Number of processes:              0
@@ -443,10 +443,10 @@ Removed 0 unused cells and 1 unused wires.
 
 === user_id_programming ===
 
-   Number of wires:                  4
-   Number of wire bits:             66
-   Number of public wires:           4
-   Number of public wire bits:      66
+   Number of wires:                  2
+   Number of wire bits:             64
+   Number of public wires:           2
+   Number of public wire bits:      64
    Number of memories:               0
    Number of memory bits:            0
    Number of processes:              0
@@ -485,10 +485,10 @@ Mapping DFF cells in module `\user_id_programming':
 
 === user_id_programming ===
 
-   Number of wires:                  4
-   Number of wire bits:             66
-   Number of public wires:           4
-   Number of public wire bits:      66
+   Number of wires:                  2
+   Number of wire bits:             64
+   Number of public wires:           2
+   Number of public wire bits:      64
    Number of memories:               0
    Number of memory bits:            0
    Number of processes:              0
@@ -497,7 +497,7 @@ Mapping DFF cells in module `\user_id_programming':
 
 12. Executing ABC pass (technology mapping using ABC).
 
-12.1. Extracting gate netlist of module `\user_id_programming' to `/tmp/yosys-abc-ash1Kr/input.blif'..
+12.1. Extracting gate netlist of module `\user_id_programming' to `/tmp/yosys-abc-O7MXe7/input.blif'..
 Extracted 0 gates and 0 wires to a netlist network with 0 inputs and 0 outputs.
 Don't call ABC as there is nothing to map.
 Removing temp directory.
@@ -521,10 +521,10 @@ found and reported 0 problems.
 
 === user_id_programming ===
 
-   Number of wires:                 35
-   Number of wire bits:             66
-   Number of public wires:          35
-   Number of public wire bits:      66
+   Number of wires:                 33
+   Number of wire bits:             64
+   Number of public wires:          33
+   Number of public wire bits:      64
    Number of memories:               0
    Number of memory bits:            0
    Number of processes:              0
@@ -536,6 +536,6 @@ found and reported 0 problems.
 20. Executing Verilog backend.
 Dumping module `\user_id_programming'.
 
-End of script. Logfile hash: 1a1d76ca05, CPU: user 0.78s system 0.02s, MEM: 43.93 MB peak
+End of script. Logfile hash: 235bb5ed9f, CPU: user 0.85s system 0.03s, MEM: 43.77 MB peak
 Yosys 0.9+3621 (git sha1 84e9fa7, gcc 8.3.1 -fPIC -Os)
-Time spent: 36% 2x read_liberty (0 sec), 35% 4x stat (0 sec), ...
+Time spent: 37% 2x read_liberty (0 sec), 36% 4x stat (0 sec), ...

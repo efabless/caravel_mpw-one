@@ -13,3 +13,6 @@ set ::env(CELL_PAD) 0
 
 set ::env(FP_CORE_UTIL) 20
 set ::env(PL_RANDOM_GLB_PLACEMENT) 1
+
+set ::env(BOTTOM_MARGIN_MULT) 2
+set ::env(TOP_MARGIN_MULT) 2

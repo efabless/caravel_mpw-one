@@ -1,5 +1,5 @@
 
-Magic 8.3 revision 64 - Compiled on Fri Oct  9 12:13:18 UTC 2020.
+Magic 8.3 revision 87 - Compiled on Mon Nov 23 17:53:03 UTC 2020.
 Starting magic under Tcl interpreter
 Using the terminal as the console.
 Using NULL graphics device.
@@ -40,20 +40,20 @@ LEF read: Processed 789 lines.
 Reading DEF data from file /project/openlane/user_id_programming/runs/user_id_programming/results/routing/user_id_programming.def.
 This action cannot be undone.
   Processed 6 vias total.
-  Processed 112 subcell instances total.
-  Processed 36 pins total.
+  Processed 113 subcell instances total.
+  Processed 34 pins total.
   Processed 2 special nets total.
-  Processed 66 nets total.
-DEF read: Processed 772 lines.
+  Processed 64 nets total.
+DEF read: Processed 746 lines.
+Extracting sky130_fd_sc_hd__decap_12 into sky130_fd_sc_hd__decap_12.ext:
+Extracting sky130_fd_sc_hd__decap_4 into sky130_fd_sc_hd__decap_4.ext:
+Extracting sky130_fd_sc_hd__tapvpwrvgnd_1 into sky130_fd_sc_hd__tapvpwrvgnd_1.ext:
 Extracting sky130_fd_sc_hd__decap_6 into sky130_fd_sc_hd__decap_6.ext:
 Extracting sky130_fd_sc_hd__fill_2 into sky130_fd_sc_hd__fill_2.ext:
-Extracting sky130_fd_sc_hd__tapvpwrvgnd_1 into sky130_fd_sc_hd__tapvpwrvgnd_1.ext:
 Extracting sky130_fd_sc_hd__decap_8 into sky130_fd_sc_hd__decap_8.ext:
 Extracting sky130_fd_sc_hd__fill_1 into sky130_fd_sc_hd__fill_1.ext:
-Extracting sky130_fd_sc_hd__decap_4 into sky130_fd_sc_hd__decap_4.ext:
-Extracting sky130_fd_sc_hd__decap_12 into sky130_fd_sc_hd__decap_12.ext:
 Extracting sky130_fd_sc_hd__decap_3 into sky130_fd_sc_hd__decap_3.ext:
 Extracting sky130_fd_sc_hd__conb_1 into sky130_fd_sc_hd__conb_1.ext:
 Extracting user_id_programming into user_id_programming.ext:
 exttospice finished.
-Using technology "sky130A", version 20200927
+Using technology "sky130A", version 1.0.73-5-g748e1a9
