@@ -2,7 +2,7 @@ BLOCKS = $(shell find * -maxdepth 0 -type d)
 CONFIG = $(foreach block,$(BLOCKS), ./$(block)/config.tcl)
 CLEAN = $(foreach block,$(BLOCKS), clean-$(block))
 
-OPENLANE_IMAGE_NAME ?= openlane:rc4
+OPENLANE_IMAGE_NAME ?= openlane:rc5
 OPENLANE_BASIC_COMMAND = "cd /project/openlane && flow.tcl -design ./$* -save_path .. -save -tag $* -overwrite"
 OPENLANE_INTERACTIVE_COMMAND = "cd /project/openlane && flow.tcl -it -file ./$*/interactive.tcl"
 
@@ -24,7 +24,7 @@ endif
 	@echo "###############################################"
 	@sleep 1
 
-	@if [[ -f ./$*/interactive.tcl ]]; then\
+	@if [ -f ./$*/interactive.tcl ]; then\
 		docker run -it -v $(OPENLANE_ROOT):/openLANE_flow \
 		-v $(PDK_ROOT):$(PDK_ROOT) \
 		-v $(PWD)/..:/project \
