@@ -6,6 +6,20 @@ A template SoC for Google SKY130 free shuttles. It is still WIP. The current SoC
 <img src="/doc/ciic_harness.png" width="75%" height="75%"> 
 </p>
 
+## Getting Started:
+
+Start by cloning the repo and uncompressing the files.
+```bash
+git clone https://github.com/efabless/caravel.git
+cd caravel
+make uncompress
+```
+
+Then, you can learn more about the caravel chip by watching these video:
+- Caravel User Project Features -- https://youtu.be/zJhnmilXGPo
+- Aboard Caravel -- How to put your design on Caravel? -- https://youtu.be/9QV8SDelURk
+- Things to Clarify About Caravel -- What versions to use with Caravel? -- https://youtu.be/-LZ522mxXMw
+
 ## Managment SoC
 The managment SoC runs firmware that can be used to:
 - Configure Mega Project I/O pads

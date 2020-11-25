@@ -6,15 +6,14 @@ LARGE_FILES_GZ := $(addsuffix .gz, $(LARGE_FILES))
 ARCHIVES := $(shell find . -type f -name "*.gz")
 ARCHIVE_SOURCES := $(basename $(ARCHIVES))
 
-ifndef PDK_ROOT
-$(error PDK_ROOT is undefined, please export it before running make)
-endif
 
 .DEFAULT_GOAL := ship
-
 # We need portable GDS_FILE pointers...
 .PHONY: ship
 ship: uncompress
+	ifndef PDK_ROOT
+	$(error PDK_ROOT is undefined, please export it before running make)
+	endif
 	@echo "###############################################"
 	@echo "Generating Caravel GDS (sources are in the 'gds' directory)"
 	@sleep 1
