@@ -15,7 +15,16 @@ module seven_segment_tb;
     wire [37:0] mprj_io;
     wire [6:0] segments;
 
-    assign segments = mprj_io[8:2];
+    
+    assign segments = { 
+        uut.gpio_control_in[8].pad_gpio_out,
+        uut.gpio_control_in[7].pad_gpio_out,
+        uut.gpio_control_in[6].pad_gpio_out,
+        uut.gpio_control_in[5].pad_gpio_out,
+        uut.gpio_control_in[4].pad_gpio_out,
+        uut.gpio_control_in[3].pad_gpio_out,
+        uut.gpio_control_in[2].pad_gpio_out
+        };
 
     // External clock is used by default.  Make this artificially fast for the
     // simulation.  Normally this would be a slow clock and the digital PLL
@@ -88,13 +97,13 @@ module seven_segment_tb;
     end
     */
 
-        wire flash_csb;
+    wire flash_csb;
     wire flash_clk;
     wire flash_io0;
     wire flash_io1;
 
     wire VDD1V8;
-        wire VDD3V3;
+    wire VDD3V3;
     wire VSS;
     
     assign VDD3V3 = power1;
@@ -120,7 +129,7 @@ module seven_segment_tb;
         .vssd2    (VSS),
         .clock    (clock),
         .gpio     (gpio),
-            .mprj_io  (mprj_io),
+        .mprj_io  (mprj_io),
         .flash_csb(flash_csb),
         .flash_clk(flash_clk),
         .flash_io0(flash_io0),
