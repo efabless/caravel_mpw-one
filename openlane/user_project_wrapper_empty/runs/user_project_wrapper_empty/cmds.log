@@ -1,0 +1,36 @@
+Thu Nov 26 18:55:53 UTC 2020 - Executing "/openLANE_flow/scripts/mergeLef.py -i /home/xrex/usr/devel/pdks/sky130A/libs.ref/sky130_fd_sc_hd/techlef/sky130_fd_sc_hd.tlef {/home/xrex/usr/devel/pdks/sky130A/libs.ref/sky130_fd_sc_hd/lef/sky130_fd_sc_hd.lef /home/xrex/usr/devel/pdks/sky130A/libs.ref/sky130_fd_sc_hd/lef/sky130_ef_sc_hd__fakediode_2.lef} -o /project/openlane/user_project_wrapper_empty/runs/user_project_wrapper_empty/tmp/merged_unpadded.lef |& tee >&@stdout"
+
+Thu Nov 26 18:55:53 UTC 2020 - Executing "/openLANE_flow/scripts/mergeLef.py -i /project/openlane/user_project_wrapper_empty/runs/user_project_wrapper_empty/tmp/merged_unpadded.lef /project/openlane/user_project_wrapper_empty/../../lef/user_proj_example.lef -o /project/openlane/user_project_wrapper_empty/runs/user_project_wrapper_empty/tmp/merged_unpadded.lef |& tee >&@stdout"
+
+Thu Nov 26 18:55:53 UTC 2020 - Executing "/openLANE_flow/scripts/libtrim.pl /home/xrex/usr/devel/pdks/sky130A/libs.ref/sky130_fd_sc_hd/lib/sky130_fd_sc_hd__tt_025C_1v80.lib /home/xrex/usr/devel/pdks/sky130A/libs.tech/openlane/sky130_fd_sc_hd/no_synth.cells > /project/openlane/user_project_wrapper_empty/runs/user_project_wrapper_empty/tmp/trimmed.lib"
+
+Thu Nov 26 18:55:54 UTC 2020 - Executing "yosys -c /openLANE_flow/scripts/synth_top.tcl -l /project/openlane/user_project_wrapper_empty/runs/user_project_wrapper_empty/logs/synthesis/yosys.log |& tee >&@stdout"
+
+Thu Nov 26 18:55:54 UTC 2020 - Executing "sed -i -e {s/\(set ::env(CURRENT_NETLIST)\).*/\1 \/project\/openlane\/user_project_wrapper_empty\/runs\/user_project_wrapper_empty\/results\/synthesis\/user_project_wrapper.synthesis.v/} /project/openlane/user_project_wrapper_empty/runs/user_project_wrapper_empty/config.tcl"
+
+Thu Nov 26 18:55:54 UTC 2020 - Executing "sed -i -e {s/\(set ::env(PREV_NETLIST)\).*/\1 0/} /project/openlane/user_project_wrapper_empty/runs/user_project_wrapper_empty/config.tcl"
+
+Thu Nov 26 18:55:54 UTC 2020 - Executing "openroad -exit /openLANE_flow/scripts/openroad/or_floorplan.tcl |& tee >&@stdout /project/openlane/user_project_wrapper_empty/runs/user_project_wrapper_empty/logs/floorplan/verilog2def.openroad.log"
+
+Thu Nov 26 18:55:54 UTC 2020 - Executing "python3 /openLANE_flow/scripts/io_place.py --input-lef /project/openlane/user_project_wrapper_empty/runs/user_project_wrapper_empty/tmp/merged.lef --input-def /project/openlane/user_project_wrapper_empty/runs/user_project_wrapper_empty/tmp/floorplan/verilog2def_openroad.def --config /project/openlane/user_project_wrapper_empty/pin_order.cfg --hor-layer 4 --ver-layer 3 --ver-width-mult 4 --hor-width-mult 4 --hor-extension 4.8 --ver-extension 4.8 --length 2.4 -o /project/openlane/user_project_wrapper_empty/runs/user_project_wrapper_empty/tmp/floorplan/ioPlacer.def |& tee /project/openlane/user_project_wrapper_empty/runs/user_project_wrapper_empty/logs/floorplan/place_io_ol.log >&@stdout"
+
+Thu Nov 26 18:55:55 UTC 2020 - Executing "python3 /openLANE_flow/scripts/addObstruction.py -d /project/openlane/user_project_wrapper_empty/runs/user_project_wrapper_empty/tmp/floorplan/ioPlacer.def -l /project/openlane/user_project_wrapper_empty/runs/user_project_wrapper_empty/tmp/merged_unpadded.lef -obs core_obs -ln met1 met2 met3 met4 met5 -px 2.4 -py 2.4 -sw 2915.2 -sh 3515.2 -db 1000 -f"
+
+Thu Nov 26 18:55:55 UTC 2020 - Executing "openroad -exit /openLANE_flow/scripts/new_pdn.tcl |& tee >&@stdout /project/openlane/user_project_wrapper_empty/runs/user_project_wrapper_empty/logs/floorplan/pdn.log"
+
+Thu Nov 26 18:55:56 UTC 2020 - Executing "openroad -exit /openLANE_flow/scripts/new_pdn.tcl |& tee >&@stdout /project/openlane/user_project_wrapper_empty/runs/user_project_wrapper_empty/logs/floorplan/pdn.log"
+
+Thu Nov 26 18:55:56 UTC 2020 - Executing "openroad -exit /openLANE_flow/scripts/new_pdn.tcl |& tee >&@stdout /project/openlane/user_project_wrapper_empty/runs/user_project_wrapper_empty/logs/floorplan/pdn.log"
+
+Thu Nov 26 18:55:57 UTC 2020 - Executing "openroad -exit /openLANE_flow/scripts/new_pdn.tcl |& tee >&@stdout /project/openlane/user_project_wrapper_empty/runs/user_project_wrapper_empty/logs/floorplan/pdn.log"
+
+Thu Nov 26 18:55:57 UTC 2020 - Executing "/openLANE_flow/scripts/remove_nets.sh /project/openlane/user_project_wrapper_empty/runs/user_project_wrapper_empty/tmp/floorplan/pdn.def"
+
+Thu Nov 26 18:55:57 UTC 2020 - Executing "/openLANE_flow/scripts/remove_components.sh /project/openlane/user_project_wrapper_empty/runs/user_project_wrapper_empty/tmp/floorplan/pdn.def"
+
+Thu Nov 26 18:55:57 UTC 2020 - Executing "magic -noconsole -dnull -rcfile /home/xrex/usr/devel/pdks/sky130A/libs.tech/magic/sky130A.magicrc /openLANE_flow/scripts/magic.tcl </dev/null |& tee >&@stdout /project/openlane/user_project_wrapper_empty/runs/user_project_wrapper_empty/logs/magic/magic.log"
+
+Thu Nov 26 18:55:59 UTC 2020 - Executing "magic -noconsole -dnull -rcfile /home/xrex/usr/devel/pdks/sky130A/libs.tech/magic/sky130A.magicrc /openLANE_flow/scripts/magic_mag.tcl </dev/null |& tee >&@stdout /project/openlane/user_project_wrapper_empty/runs/user_project_wrapper_empty/logs/magic/magic.log"
+
+Thu Nov 26 18:55:59 UTC 2020 - Executing "magic -noconsole -dnull -rcfile /home/xrex/usr/devel/pdks/sky130A/libs.tech/magic/sky130A.magicrc /openLANE_flow/scripts/magic_maglef.tcl </dev/null |& tee >&@stdout /project/openlane/user_project_wrapper_empty/runs/user_project_wrapper_empty/logs/magic/magic.maglef.log"
+

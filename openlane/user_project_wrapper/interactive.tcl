@@ -14,6 +14,10 @@ add_macro_placement mprj 1150 1700 N
 
 manual_macro_placement f
 
+set ::env(PDN_CFG) $script_dir/pdn1.tcl
+gen_pdn
+
+set ::env(PDN_CFG) $script_dir/pdn2.tcl
 gen_pdn
 
 global_routing_or

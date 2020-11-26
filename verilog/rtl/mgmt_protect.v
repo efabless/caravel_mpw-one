@@ -15,6 +15,7 @@
 /*----------------------------------------------------------------------*/
 
 module mgmt_protect (
+`ifdef USE_POWER_PINS
     inout	  vccd,
     inout	  vssd,
     inout	  vccd1,
@@ -25,6 +26,7 @@ module mgmt_protect (
     inout	  vssa1,
     inout	  vdda2,
     inout	  vssa2,
+`endif
 
     input 	  caravel_clk,
     input 	  caravel_clk2,
