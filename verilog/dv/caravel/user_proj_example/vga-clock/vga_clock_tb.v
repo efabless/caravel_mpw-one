@@ -71,20 +71,15 @@ module vga_clock_tb;
         wait(uut.mprj.mprj.proj_2.reset == 1);
         wait(uut.mprj.mprj.proj_2.reset == 0);
 
-        // press a button
+        // press all the buttons! button clk_en deboucing is slow so don't want to wait around
         adj_hrs = 1;
-        wait(uut.mprj.mprj.proj_2.hrs_u == 1);
-        adj_hrs = 0;
-        $display ("adjusted hours ok");
-
         adj_min = 1;
-        wait(uut.mprj.mprj.proj_2.min_u == 1);
-        adj_min = 0;
-        $display ("adjusted min ok");
-
         adj_sec = 1;
+        wait(uut.mprj.mprj.proj_2.hrs_u == 1);
+        $display ("adjusted hours ok");
+        wait(uut.mprj.mprj.proj_2.min_u == 1);
+        $display ("adjusted min ok");
         wait(uut.mprj.mprj.proj_2.sec_u == 1);
-        adj_sec = 0;
         $display ("adjusted sec ok");
         
     end
@@ -121,8 +116,8 @@ module vga_clock_tb;
     
     assign VDD3V3 = power1;
     assign VDD1V8 = power2;
-    assign USER_VDD3V3 = power3;
-    assign USER_VDD1V8 = power4;
+    wire USER_VDD3V3 = power3;
+    wire USER_VDD1V8 = power4;
     assign VSS = 1'b0;
 
     caravel uut (

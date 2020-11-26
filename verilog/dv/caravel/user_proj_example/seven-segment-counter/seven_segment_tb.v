@@ -108,8 +108,8 @@ module seven_segment_tb;
     
     assign VDD3V3 = power1;
     assign VDD1V8 = power2;
-    assign USER_VDD3V3 = power3;
-    assign USER_VDD1V8 = power4;
+    wire USER_VDD3V3 = power3;
+    wire USER_VDD1V8 = power4;
     assign VSS = 1'b0;
 
     caravel uut (
