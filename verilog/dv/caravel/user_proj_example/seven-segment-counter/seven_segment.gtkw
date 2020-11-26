@@ -1,15 +1,15 @@
 [*]
 [*] GTKWave Analyzer v3.3.108 (w)1999-2020 BSI
-[*] Thu Nov 26 09:42:48 2020
+[*] Thu Nov 26 10:51:35 2020
 [*]
 [dumpfile] "/home/matt/work/asic-workshop/caravel/verilog/dv/caravel/user_proj_example/seven-segment-counter/seven_segment.vcd"
-[dumpfile_mtime] "Thu Nov 26 09:21:48 2020"
-[dumpfile_size] 194118743
+[dumpfile_mtime] "Thu Nov 26 10:46:55 2020"
+[dumpfile_size] 101432617
 [savefile] "/home/matt/work/asic-workshop/caravel/verilog/dv/caravel/user_proj_example/seven-segment-counter/seven_segment.gtkw"
-[timestart] 242220000
+[timestart] 141660000
 [size] 2371 1293
-[pos] 76 53
-*-22.000000 245760000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[pos] -1 -1
+*-24.000000 192362500 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
 [treeopen] seven_segment_tb.
 [treeopen] seven_segment_tb.uut.
 [treeopen] seven_segment_tb.uut.gpio_control_bidir[0].
@@ -298,13 +298,26 @@ seven_segment_tb.uut.mprj.mprj.proj_0.led_out[6:0]
 -group_end
 @1000200
 -seven seg
-@28
+@29
 seven_segment_tb.uut.gpio_control_in[8].pad_gpio_out
+@28
 seven_segment_tb.uut.gpio_control_in[7].pad_gpio_out
 seven_segment_tb.uut.gpio_control_in[6].pad_gpio_out
 seven_segment_tb.uut.gpio_control_in[5].pad_gpio_out
 seven_segment_tb.uut.gpio_control_in[4].pad_gpio_out
 seven_segment_tb.uut.gpio_control_in[3].pad_gpio_out
 seven_segment_tb.uut.gpio_control_in[2].pad_gpio_out
+@800022
+seven_segment_tb.segments[6:0]
+@28
+(0)seven_segment_tb.segments[6:0]
+(1)seven_segment_tb.segments[6:0]
+(2)seven_segment_tb.segments[6:0]
+(3)seven_segment_tb.segments[6:0]
+(4)seven_segment_tb.segments[6:0]
+(5)seven_segment_tb.segments[6:0]
+(6)seven_segment_tb.segments[6:0]
+@1001200
+-group_end
 [pattern_trace] 1
 [pattern_trace] 0

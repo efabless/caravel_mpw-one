@@ -17,13 +17,13 @@ module seven_segment_tb;
 
     
     assign segments = { 
-        uut.gpio_control_in[8].pad_gpio_out,
-        uut.gpio_control_in[7].pad_gpio_out,
-        uut.gpio_control_in[6].pad_gpio_out,
-        uut.gpio_control_in[5].pad_gpio_out,
-        uut.gpio_control_in[4].pad_gpio_out,
-        uut.gpio_control_in[3].pad_gpio_out,
-        uut.gpio_control_in[2].pad_gpio_out
+        uut.gpio_control_in[14].pad_gpio_out,
+        uut.gpio_control_in[13].pad_gpio_out,
+        uut.gpio_control_in[12].pad_gpio_out,
+        uut.gpio_control_in[11].pad_gpio_out,
+        uut.gpio_control_in[10].pad_gpio_out,
+        uut.gpio_control_in[ 9].pad_gpio_out,
+        uut.gpio_control_in[ 8].pad_gpio_out
         };
 
     // External clock is used by default.  Make this artificially fast for the
