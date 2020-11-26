@@ -37,5 +37,9 @@ To generate the final GDS, run this command:
 
 # Todo
 
-* when the toolchain is fully working, generate the GDS and add it to the repo
-* info.yaml : update user_level_netlist
+* when the toolchain is working, generate the GDS and add it to the repo
+* info.yaml : update user_level_netlist field
+* add some logo art
+* test input pins in the system simulation
+* how clean does the DRC result need to be?
+* adapt ws2812 for default 10mhz clock rate or be able to update the timing reg
