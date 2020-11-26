@@ -15,19 +15,19 @@ cd caravel
 make uncompress
 ```
 
+Install the required version of the PDK by running the following commands:
+
+```bash
+export PDK_ROOT=<The place where you want to install the pdk>
+make pdk
+```
+
 Then, you can learn more about the caravel chip by watching these video:
 - Caravel User Project Features -- https://youtu.be/zJhnmilXGPo
 - Aboard Caravel -- How to put your design on Caravel? -- https://youtu.be/9QV8SDelURk
 - Things to Clarify About Caravel -- What versions to use with Caravel? -- https://youtu.be/-LZ522mxXMw
 
 ## Aboard Caravel:
-### Versions:
-- [OpenLANE](https://github.com/efabless/openlane) rc4 or rc5.
-- latest [Skywater-pdk](https://github.com/google/skywater-pdk).
-    - sky130_fd_sc_hd
-    - sky130_fd_sc_hvl
-    - sky130_fd_io
-- latest [open_pdks](https://github.com/RTimothyEdwards/open_pdks).
 
 Your area is the full user_project_wrapper, so feel free to add your project there or create a differnt macro and harden it seperately then insert it into the user_project_wrapper.
 
@@ -41,7 +41,7 @@ Then, you will need to put your design aboard the Caravel chip. In the Caravel d
 Run the following command:
 
 ```bash
-export PDK_ROOT=<The place where the installed pdk resides>
+export PDK_ROOT=<The place where the installed pdk resides. The same PDK_ROOT used in the pdk installation step>
 make
 ```
 
