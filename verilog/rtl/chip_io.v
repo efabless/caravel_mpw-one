@@ -81,33 +81,68 @@ module chip_io(
 	// rails and grounds, and one back-to-back diode which connects
 	// between the first LV clamp ground and any other ground.
 
-    	sky130_ef_io__vddio_hvc_pad mgmt_vddio_hvclamp_pad [1:0] (
+    	sky130_ef_io__vddio_hvc_pad mgmt_vddio_hvclamp_pad[0] (
 		`MGMT_ABUTMENT_PINS
+`ifdef TOP_ROUTING
+		.VDDIO(vddio),
+`endif
+		`HVCLAMP_PINS(vddio, vssio)
+    	);
+
+	// lies in user area 2
+    	sky130_ef_io__vddio_hvc_pad mgmt_vddio_hvclamp_pad[1] (
+		`USER2_ABUTMENT_PINS
+`ifdef TOP_ROUTING
+		.VDDIO(vddio),
+`endif
 		`HVCLAMP_PINS(vddio, vssio)
     	);
 
     	sky130_ef_io__vdda_hvc_pad mgmt_vdda_hvclamp_pad (
 		`MGMT_ABUTMENT_PINS
+`ifdef TOP_ROUTING
+		.VDDA(vdda),
+`endif
 		`HVCLAMP_PINS(vdda, vssa)
     	);
 
     	sky130_ef_io__vccd_lvc_pad mgmt_vccd_lvclamp_pad (
 		`MGMT_ABUTMENT_PINS
+`ifdef TOP_ROUTING
+		.VCCD(vccd),
+`endif
 		`LVCLAMP_PINS(vccd, vssio, vccd, vssd, vssa)
     	);
 
-    	sky130_ef_io__vssio_hvc_pad mgmt_vssio_hvclamp_pad [1:0] (
+    	sky130_ef_io__vssio_hvc_pad mgmt_vssio_hvclamp_pad[0] (
 		`MGMT_ABUTMENT_PINS
+`ifdef TOP_ROUTING
+		.VSSIO(vssio),
+`endif
+		`HVCLAMP_PINS(vddio, vssio)
+    	);
+
+    	sky130_ef_io__vssio_hvc_pad mgmt_vssio_hvclamp_pad[1] (
+		`USER2_ABUTMENT_PINS
+`ifdef TOP_ROUTING
+		.VSSIO(vssio),
+`endif
 		`HVCLAMP_PINS(vddio, vssio)
     	);
 
     	sky130_ef_io__vssa_hvc_pad mgmt_vssa_hvclamp_pad (
 		`MGMT_ABUTMENT_PINS
+`ifdef TOP_ROUTING
+		.VSSA(vssa),
+`endif
 		`HVCLAMP_PINS(vdda, vssa)
     	);
 
     	sky130_ef_io__vssd_lvc_pad mgmt_vssd_lvclmap_pad (
 		`MGMT_ABUTMENT_PINS
+`ifdef TOP_ROUTING
+		.VSSD(vssd),
+`endif
 		`LVCLAMP_PINS(vccd, vssio, vccd, vssd, vssa)
     	);
 
@@ -116,21 +151,33 @@ module chip_io(
 
     	sky130_ef_io__vdda_hvc_pad user1_vdda_hvclamp_pad [1:0] (
 		`USER1_ABUTMENT_PINS
+`ifdef TOP_ROUTING
+		.VDDA(vdda1),
+`endif
 		`HVCLAMP_PINS(vdda1, vssa1)
     	);
 
     	sky130_ef_io__vccd_lvc_pad user1_vccd_lvclamp_pad (
 		`USER1_ABUTMENT_PINS
+`ifdef TOP_ROUTING
+		.VCCD(vccd1),
+`endif
 		`LVCLAMP_PINS(vccd1, vssd1, vccd1, vssd, vssio)
     	);
 
     	sky130_ef_io__vssa_hvc_pad user1_vssa_hvclamp_pad [1:0] (
 		`USER1_ABUTMENT_PINS
+`ifdef TOP_ROUTING
+		.VSSA(vssa1),
+`endif
 		`HVCLAMP_PINS(vdda1, vssa1)
     	);
 
     	sky130_ef_io__vssd_lvc_pad user1_vssd_lvclmap_pad (
 		`USER1_ABUTMENT_PINS
+`ifdef TOP_ROUTING
+		.VSSD(vssd1),
+`endif
 		`LVCLAMP_PINS(vccd1, vssd1, vccd1, vssd, vssio)
     	);
 
@@ -139,39 +186,51 @@ module chip_io(
 
     	sky130_ef_io__vdda_hvc_pad user2_vdda_hvclamp_pad (
 		`USER2_ABUTMENT_PINS
+`ifdef TOP_ROUTING
+		.VDDA(vdda2),
+`endif
 		`HVCLAMP_PINS(vdda2, vssa2)
     	);
 
     	sky130_ef_io__vccd_lvc_pad user2_vccd_lvclamp_pad (
 		`USER2_ABUTMENT_PINS
+`ifdef TOP_ROUTING
+		.VCCD(vccd2),
+`endif
 		`LVCLAMP_PINS(vccd2, vssd2, vccd2, vssd, vssio)
     	);
 
     	sky130_ef_io__vssa_hvc_pad user2_vssa_hvclamp_pad (
 		`USER2_ABUTMENT_PINS
+`ifdef TOP_ROUTING
+		.VSSA(vssa2),
+`endif
 		`HVCLAMP_PINS(vdda2, vssa2)
     	);
 
     	sky130_ef_io__vssd_lvc_pad user2_vssd_lvclmap_pad (
 		`USER2_ABUTMENT_PINS
+`ifdef TOP_ROUTING
+		.VSSD(vssd2),
+`endif
 		`LVCLAMP_PINS(vccd2, vssd2, vccd2, vssd, vssio)
     	);
 
 	wire [2:0] dm_all =
     		{gpio_mode1_core, gpio_mode1_core, gpio_mode0_core};
-	wire[2:0] flash_io0_mode = 
+	wire[2:0] flash_io0_mode =
 		{flash_io0_ieb_core, flash_io0_ieb_core, flash_io0_oeb_core};
-	wire[2:0] flash_io1_mode = 
+	wire[2:0] flash_io1_mode =
 		{flash_io1_ieb_core, flash_io1_ieb_core, flash_io1_oeb_core};
 
 	// Management clock input pad
-	`INPUT_PAD(clock, clock_core); 	    
+	`INPUT_PAD(clock, clock_core);
 
     	// Management GPIO pad
 	`INOUT_PAD(
 		gpio, gpio_in_core, gpio_out_core,
 		gpio_inenb_core, gpio_outenb_core, dm_all);
-	
+
 	// Management Flash SPI pads
 	`INOUT_PAD(
 		flash_io0, flash_io0_di_core, flash_io0_do_core,
@@ -180,7 +239,7 @@ module chip_io(
 		flash_io1, flash_io1_di_core, flash_io1_do_core,
 		flash_io1_ieb_core, flash_io1_oeb_core, flash_io1_mode);
 
-	`OUTPUT_PAD(flash_csb, flash_csb_core, flash_csb_ieb_core, flash_csb_oeb_core);  
+	`OUTPUT_PAD(flash_csb, flash_csb_core, flash_csb_ieb_core, flash_csb_oeb_core);
 	`OUTPUT_PAD(flash_clk, flash_clk_core, flash_clk_ieb_core, flash_clk_oeb_core);
 
 	// NOTE:  The analog_out pad from the raven chip has been replaced by
@@ -188,6 +247,7 @@ module chip_io(
     	// power-on-reset circuit.  The XRES pad is used for providing a glitch-
     	// free reset.
 
+	wire xresloop;
 	sky130_fd_io__top_xres4v2 resetb_pad (
 		`MGMT_ABUTMENT_PINS 
 		`ifndef	TOP_ROUTING
@@ -208,24 +268,29 @@ module chip_io(
     	);
 
 	// Corner cells (These are overlay cells;  it is not clear what is normally
-    	// supposed to go under them.)  
+    	// supposed to go under them.)
 
-	`ifndef TOP_ROUTING   
 	    sky130_ef_io__corner_pad mgmt_corner [1:0] (
+`ifndef TOP_ROUTING
 		.VSSIO(vssio),
 		.VDDIO(vddio),
 		.VDDIO_Q(vddio_q),
 		.VSSIO_Q(vssio_q),
 		.AMUXBUS_A(analog_a),
 		.AMUXBUS_B(analog_b),
-		.VSSD(vssio),
-		.VSSA(vssio),
+		.VSSD(vssd),
+		.VSSA(vssa),
 		.VSWITCH(vddio),
 		.VDDA(vdda),
 		.VCCD(vccd),
 		.VCCHIB(vccd)
+`else
+		.VCCHIB()
+`endif
+
     	    );
 	    sky130_ef_io__corner_pad user1_corner (
+`ifndef TOP_ROUTING
 		.VSSIO(vssio),
 		.VDDIO(vddio),
 		.VDDIO_Q(vddio_q),
@@ -238,8 +303,12 @@ module chip_io(
 		.VDDA(vdda1),
 		.VCCD(vccd1),
 		.VCCHIB(vccd)
+`else
+		.VCCHIB()
+`endif
     	    );
 	    sky130_ef_io__corner_pad user2_corner (
+`ifndef TOP_ROUTING
 		.VSSIO(vssio),
 		.VDDIO(vddio),
 		.VDDIO_Q(vddio_q),
@@ -252,8 +321,10 @@ module chip_io(
 		.VDDA(vdda2),
 		.VCCD(vccd2),
 		.VCCHIB(vccd)
+`else
+		.VCCHIB()
+`endif
     	    );
-	`endif
 
 	mprj_io mprj_pads(
 		.vddio(vddio),

@@ -23,6 +23,7 @@
 
 `include "libs.ref/sky130_fd_io/verilog/sky130_fd_io.v"
 `include "libs.ref/sky130_fd_io/verilog/sky130_ef_io.v"
+`include "libs.tech/openlane/custom_cells/verilog/sky130_ef_io__gpiov2_pad_wrapped.v"
 
 `include "libs.ref/sky130_fd_sc_hd/verilog/primitives.v"
 `include "libs.ref/sky130_fd_sc_hd/verilog/sky130_fd_sc_hd.v"
@@ -181,8 +182,8 @@ module caravel (
     // irq 	 = mprj_io[7]		(input)
 
     wire [`MPRJ_IO_PADS-1:0] mgmt_io_in;
-    wire jtag_out, sdo_out; 		
-    wire jtag_outenb, sdo_outenb; 
+    wire jtag_out, sdo_out;
+    wire jtag_outenb, sdo_outenb;
 
     wire [`MPRJ_IO_PADS-3:0] mgmt_io_nc1;	/* no-connects */
     wire [`MPRJ_IO_PADS-3:0] mgmt_io_nc3;	/* no-connects */
@@ -340,15 +341,15 @@ module caravel (
 	wire	    mprj2_vdd_pwrgood;
 
 	// Storage area
-	// Management R/W interface 
-	wire [`RAM_BLOCKS-1:0] mgmt_ena; 
+	// Management R/W interface
+	wire [`RAM_BLOCKS-1:0] mgmt_ena;
     wire [`RAM_BLOCKS-1:0] mgmt_wen;
     wire [(`RAM_BLOCKS*4)-1:0] mgmt_wen_mask;
     wire [7:0] mgmt_addr;
     wire [31:0] mgmt_wdata;
     wire [(`RAM_BLOCKS*32)-1:0] mgmt_rdata;
 	// Management RO interface
-	wire mgmt_ena_ro; 
+	wire mgmt_ena_ro;
     wire [7:0] mgmt_addr_ro;
     wire [31:0] mgmt_rdata_ro;
 
@@ -387,7 +388,7 @@ module caravel (
         	.core_clk(caravel_clk),
         	.user_clk(caravel_clk2),
         	.core_rstn(caravel_rstn),
-		// Logic Analyzer 
+		// Logic Analyzer
 		.la_input(la_data_in_mprj),
 		.la_output(la_data_out_mprj),
 		.la_oen(la_oen_mprj),
@@ -417,8 +418,8 @@ module caravel (
 		.mprj_dat_i(mprj_dat_i_core),
 		// mask data
 		.mask_rev(mask_rev),
-		// MGMT area R/W interface 
-    	.mgmt_ena(mgmt_ena), 
+		// MGMT area R/W interface
+    	.mgmt_ena(mgmt_ena),
     	.mgmt_wen_mask(mgmt_wen_mask),
     	.mgmt_wen(mgmt_wen),
     	.mgmt_addr(mgmt_addr),
@@ -477,12 +478,13 @@ module caravel (
 		.user2_vdd_powergood(mprj2_vdd_pwrgood)
 	);
 
-	
+
 	/*----------------------------------------------*/
 	/* Wrapper module around the user project 	*/
 	/*----------------------------------------------*/
 
-	user_project_wrapper mprj ( 
+	user_project_wrapper mprj (
+    	`ifdef USE_POWER_PINS
 		.vdda1(vdda1),	// User area 1 3.3V power
 		.vdda2(vdda2),	// User area 2 3.3V power
 		.vssa1(vssa1),	// User area 1 analog ground
@@ -491,10 +493,11 @@ module caravel (
 		.vccd2(vccd2),	// User area 2 1.8V power
 		.vssd1(vssd1),	// User area 1 digital ground
 		.vssd2(vssd2),	// User area 2 digital ground
+        `endif
 
     		.wb_clk_i(mprj_clock),
     		.wb_rst_i(mprj_reset),
-		// MGMT SoC Wishbone Slave 
+		// MGMT SoC Wishbone Slave
 		.wbs_cyc_i(mprj_cyc_o_user),
 		.wbs_stb_i(mprj_stb_o_user),
 		.wbs_we_i(mprj_we_o_user),
@@ -663,7 +666,7 @@ module caravel (
         .mgmt_addr(mgmt_addr),
         .mgmt_wdata(mgmt_wdata),
         .mgmt_rdata(mgmt_rdata),
-        // Management RO interface  
+        // Management RO interface
         .mgmt_ena_ro(mgmt_ena_ro),
         .mgmt_addr_ro(mgmt_addr_ro),
         .mgmt_rdata_ro(mgmt_rdata_ro)
