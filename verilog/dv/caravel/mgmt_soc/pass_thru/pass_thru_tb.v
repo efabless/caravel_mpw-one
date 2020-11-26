@@ -1,3 +1,4 @@
+`default_nettype none
 /*	
  *	StriVe housekeeping pass-thru mode SPI testbench.
  */
@@ -266,3 +267,4 @@ module pass_thru_tb;
 	);
 		
 endmodule
+`default_nettype wire

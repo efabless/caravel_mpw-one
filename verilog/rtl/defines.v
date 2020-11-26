@@ -1,3 +1,4 @@
+`default_nettype none
 // Global parameters
 
 `define MPRJ_IO_PADS 38

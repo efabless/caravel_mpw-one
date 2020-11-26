@@ -1,3 +1,4 @@
+`default_nettype none
 module mprj_ctrl_wb #(
     parameter BASE_ADR  = 32'h 2300_0000,
     parameter XFER      = 8'h 00,
@@ -123,6 +124,7 @@ module mprj_ctrl #(
     wire pwr_data_sel;
     wire xfer_sel;
     wire busy;
+    wire selected;
     wire [`MPRJ_IO_PADS-1:0] io_ctrl_sel;
     reg [31:0] iomem_rdata_pre;
 
@@ -364,3 +366,4 @@ module mprj_ctrl #(
     end
 
 endmodule
+`default_nettype wire

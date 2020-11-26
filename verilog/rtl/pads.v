@@ -1,3 +1,4 @@
+// `default_nettype none
 `ifndef TOP_ROUTING 
 	`define USER1_ABUTMENT_PINS \
 	.AMUXBUS_A(analog_a),\
@@ -152,3 +153,4 @@
 		.TIE_HI_ESD(), \
 		.TIE_LO_ESD(loop_``X) )
 
+// `default_nettype wire

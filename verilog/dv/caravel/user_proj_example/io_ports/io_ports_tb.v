@@ -1,3 +1,4 @@
+`default_nettype none
 
 `timescale 1 ns / 1 ps
 
@@ -137,3 +138,4 @@ module io_ports_tb;
 	);
 
 endmodule
+`default_nettype wire

@@ -1,3 +1,4 @@
+`default_nettype none
 /*
  *  PicoRV32 -- A Small RISC-V (RV32I) Processor Core
  *
@@ -23,7 +24,6 @@
 /* verilator lint_off CASEINCOMPLETE */
 
 `timescale 1 ns / 1 ps
-// `default_nettype none
 // `define DEBUGNETS
 // `define DEBUGREGS
 // `define DEBUGASM
@@ -3042,3 +3042,4 @@ module picorv32_wb #(
 		end
 	end
 endmodule
+`default_nettype wire

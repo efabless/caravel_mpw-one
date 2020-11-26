@@ -1,3 +1,4 @@
+`default_nettype none
 module gpio_wb # (
     parameter BASE_ADR  = 32'h 2100_0000,
     parameter GPIO_DATA = 8'h 00,
@@ -137,3 +138,4 @@ module gpio #(
     end
 
 endmodule
+`default_nettype wire

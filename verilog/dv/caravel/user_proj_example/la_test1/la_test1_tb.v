@@ -1,3 +1,4 @@
+`default_nettype none
 
 `timescale 1 ns / 1 ps
 
@@ -119,3 +120,4 @@ module la_test1_tb;
 	);
 
 endmodule
+`default_nettype wire

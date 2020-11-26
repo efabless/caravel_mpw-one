@@ -1,3 +1,4 @@
+`default_nettype none
 /*
  *-------------------------------------------------------------
  *
@@ -151,3 +152,4 @@ module counter #(
     endgenerate
 
 endmodule
+`default_nettype wire

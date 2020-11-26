@@ -1,3 +1,4 @@
+`default_nettype none
 /*
  *  StriVe - A full example SoC using PicoRV32 in SkyWater s8
  *
@@ -63,6 +64,7 @@ module gpio_tb;
 	wire flash_clk;
 	wire flash_io0;
 	wire flash_io1;
+	wire gpio;
 
 	reg RSTB;
 
@@ -178,3 +180,4 @@ module gpio_tb;
 	);
 
 endmodule
+`default_nettype wire

@@ -1,3 +1,4 @@
+`default_nettype none
 // OpenRAM SRAM model
 // Words: 256
 // Word size: 32
@@ -114,3 +115,4 @@ reg [DATA_WIDTH-1:0]    mem [0:RAM_DEPTH-1];
   end
 
 endmodule
+`default_nettype wire

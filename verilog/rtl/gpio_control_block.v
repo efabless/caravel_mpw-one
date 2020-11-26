@@ -1,3 +1,4 @@
+`default_nettype none
 /* 
  *---------------------------------------------------------------------
  * See gpio_control_block for description.  This module is like
@@ -124,6 +125,7 @@ module gpio_control_block #(
 
     wire user_gpio_in;
     wire gpio_in_unbuf;
+    wire gpio_logic1;
 
     /* Serial shift for the above (latched) values */
     reg [PAD_CTRL_BITS-1:0] shift_register;
@@ -208,22 +210,27 @@ module gpio_control_block #(
     /* Buffer user_gpio_in with an enable that is set by the user domain vccd */
 
     sky130_fd_sc_hd__conb_1 gpio_logic_high (
+`ifdef USE_POWER_PINS
             .VPWR(vccd1),
             .VGND(vssd1),
             .VPB(vccd1),
             .VNB(vssd1),
+`endif
             .HI(gpio_logic1),
             .LO()
     );
 
     sky130_fd_sc_hd__einvp_8 gpio_in_buf (
+`ifdef USE_POWER_PINS
             .VPWR(vccd),
             .VGND(vssd),
             .VPB(vccd),
             .VNB(vssd),
+`endif
             .Z(user_gpio_in),
             .A(~gpio_in_unbuf),
             .TE(gpio_logic1)
     );
 
 endmodule
+`default_nettype wire

@@ -1,3 +1,4 @@
+`default_nettype none
 /*
  *  StriVe - A full example SoC using PicoRV32 in SkyWater s8
  *
@@ -61,6 +62,7 @@ module timer2_tb;
 	wire flash_clk;
 	wire flash_io0;
 	wire flash_io1;
+	wire gpio;
 
 	// Monitor
 	initial begin
@@ -207,3 +209,4 @@ module timer2_tb;
 	);
 
 endmodule
+`default_nettype wire

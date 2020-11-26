@@ -12,12 +12,10 @@ The managment SoC runs firmware that can be used to:
 - Observe and control Mega Project signals (through on-chip logic analyzer probes)
 - Control the Mega Project power supply
 
-The memory map of the management SoC is given below <br>
-(NOTE:  This needs updating;  see the [README file](verilog/rtl/README) for an updated list.)
-<img src="/doc/mgmt_soc_memory_map.png" width="40%" height="40%">
+The memory map of the management SoC can be found [here](verilog/rtl/README)
 
 ## Mega Project Area
-This is the user space. It has limited silicon area (TBD, about 2.8mm x 2.8mm) as well as a fixed number of I/O pads (37) and power pads (10).  See [the Caravel  premliminary datasheet](doc/caravel_datasheet.pdf) for details.
+This is the user space. It has limited silicon area (TBD, about 3.1mm x 3.8mm) as well as a fixed number of I/O pads (37) and power pads (10).  See [the Caravel  premliminary datasheet](doc/caravel_datasheet.pdf) for details.
 The repository contains a [sample mega project](/verilog/rtl/user_proj_example.v) that contains a binary 32-bit up counter.  </br>
 
 <p align=”center”>

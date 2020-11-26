@@ -1,3 +1,4 @@
+`default_nettype none
 // `define DBG
 
 `define STORAGE_BASE_ADR  32'h0100_0000

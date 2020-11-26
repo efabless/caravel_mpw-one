@@ -1,3 +1,4 @@
+`default_nettype none
 /*
  *  StriVe - A full example SoC using PicoRV32 in SkyWater s8
  *
@@ -152,3 +153,4 @@ module storage_tb;
 	);
 
 endmodule
+`default_nettype wire

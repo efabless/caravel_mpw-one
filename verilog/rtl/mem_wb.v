@@ -1,3 +1,4 @@
+`default_nettype none
 module mem_wb (
 `ifdef USE_POWER_PINS
     input VPWR,
@@ -122,3 +123,4 @@ module soc_mem
 `endif
 
 endmodule
+`default_nettype wire

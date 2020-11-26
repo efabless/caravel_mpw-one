@@ -1,3 +1,4 @@
+// `default_nettype none
 /*--------------------------------------------------------------*/
 /* caravel, a project harness for the Google/SkyWater sky130	*/
 /* fabrication process and open source PDK			*/
@@ -156,6 +157,7 @@ module caravel (
     wire [`MPRJ_IO_PADS-1:0] user_io_oeb;
     wire [`MPRJ_IO_PADS-1:0] user_io_in;
     wire [`MPRJ_IO_PADS-1:0] user_io_out;
+    wire [`MPRJ_IO_PADS-8:0] user_analog_io;
 
     /* Padframe control signals */
     wire [`MPRJ_IO_PADS-1:0] gpio_serial_link;
@@ -185,15 +187,30 @@ module caravel (
     wire [`MPRJ_IO_PADS-3:0] mgmt_io_nc3;	/* no-connects */
     wire [1:0] mgmt_io_nc2;			/* no-connects */
 
+    wire clock_core;
+
     // Power-on-reset signal.  The reset pad generates the sense-inverted
     // reset at 3.3V.  The 1.8V signal and the inverted 1.8V signal are
     // derived.
 
     wire porb_h;
     wire porb_l;
+    wire por_l;
 
     wire rstb_h;
     wire rstb_l;
+
+    wire flash_clk_core,     flash_csb_core;
+    wire flash_clk_oeb_core, flash_csb_oeb_core;
+    wire flash_clk_ieb_core, flash_csb_ieb_core;
+    wire flash_io0_oeb_core, flash_io1_oeb_core;
+    wire flash_io2_oeb_core, flash_io3_oeb_core;
+    wire flash_io0_ieb_core, flash_io1_ieb_core;
+    wire flash_io2_ieb_core, flash_io3_ieb_core;
+    wire flash_io0_do_core,  flash_io1_do_core;
+    wire flash_io2_do_core,  flash_io3_do_core;
+    wire flash_io0_di_core,  flash_io1_di_core;
+    wire flash_io2_di_core,  flash_io3_di_core;
 
     // To be considered:  Master hold signal on all user pads (?)
     // For now, set holdh_n to 1 (NOTE:  This is in the 3.3V domain)
@@ -228,6 +245,7 @@ module caravel (
 	.flash_io1(flash_io1),
 	// SoC Core Interface
 	.porb_h(porb_h),
+	.por(por_l),
 	.resetb_core_h(rstb_h),
 	.clock_core(clock_core),
 	.gpio_out_core(gpio_out_core),
@@ -250,7 +268,6 @@ module caravel (
 	.flash_io1_do_core(flash_io1_do_core),
 	.flash_io0_di_core(flash_io0_di_core),
 	.flash_io1_di_core(flash_io1_di_core),
-	.por(~porb_l),
 	.mprj_io_in(mprj_io_in),
 	.mprj_io_out(mprj_io_out),
 	.mprj_io_oeb(mprj_io_oeb),
@@ -264,7 +281,8 @@ module caravel (
 	.mprj_io_analog_en(mprj_io_analog_en),
 	.mprj_io_analog_sel(mprj_io_analog_sel),
 	.mprj_io_analog_pol(mprj_io_analog_pol),
-	.mprj_io_dm(mprj_io_dm)
+	.mprj_io_dm(mprj_io_dm),
+	.mprj_analog_io(user_analog_io)
     );
 
     // SoC core
@@ -307,6 +325,7 @@ module caravel (
 	wire 	    mprj_clock;
 	wire 	    mprj_clock2;
 	wire 	    mprj_resetn;
+	wire 	    mprj_reset;
 	wire 	    mprj_cyc_o_user;
 	wire 	    mprj_stb_o_user;
 	wire 	    mprj_we_o_user;
@@ -439,6 +458,7 @@ module caravel (
 		.user_clock(mprj_clock),
 		.user_clock2(mprj_clock2),
 		.user_resetn(mprj_resetn),
+		.user_reset(mprj_reset),
 		.mprj_cyc_o_user(mprj_cyc_o_user),
 		.mprj_stb_o_user(mprj_stb_o_user),
 		.mprj_we_o_user(mprj_we_o_user),
@@ -468,7 +488,7 @@ module caravel (
 		.vssd2(vssd2),	// User area 2 digital ground
 
     		.wb_clk_i(mprj_clock),
-    		.wb_rst_i(!mprj_resetn),
+    		.wb_rst_i(mprj_reset),
 		// MGMT SoC Wishbone Slave 
 		.wbs_cyc_i(mprj_cyc_o_user),
 		.wbs_stb_i(mprj_stb_o_user),
@@ -486,6 +506,7 @@ module caravel (
 		.io_in (user_io_in),
     		.io_out(user_io_out),
     		.io_oeb(user_io_oeb),
+		.analog_io(user_analog_io),
 		// Independent clock
 		.user_clock2(mprj_clock2)
 	);
@@ -593,16 +614,6 @@ module caravel (
     	.pad_gpio_in(mprj_io_in[(`MPRJ_IO_PADS-1):2])
     );
 
-    sky130_fd_sc_hvl__lsbufhv2lv porb_level (
-		.VPWR(vddio),
-		.VPB(vddio),
-		.LVPWR(vccd),
-		.VNB(vssio),
-		.VGND(vssio),
-		.A(porb_h),
-		.X(porb_l)
-    );
-
     user_id_programming #(
 	.USER_PROJECT_ID(USER_PROJECT_ID)
     ) user_id_value (
@@ -614,17 +625,22 @@ module caravel (
     // Power-on-reset circuit
     simple_por por (
 		.vdd3v3(vddio),
+		.vdd1v8(vccd),
 		.vss(vssio),
-		.porb_h(porb_h)
+		.porb_h(porb_h),
+		.porb_l(porb_l),
+		.por_l(por_l)
     );
 
     // XRES (chip input pin reset) reset level converter
-    sky130_fd_sc_hvl__lsbufhv2lv rstb_level (
+    sky130_fd_sc_hvl__lsbufhv2lv_1 rstb_level (
+`ifdef USE_POWER_PINS
 		.VPWR(vddio),
 		.VPB(vddio),
 		.LVPWR(vccd),
 		.VNB(vssio),
 		.VGND(vssio),
+`endif
 		.A(rstb_h),
 		.X(rstb_l)
     );
@@ -645,3 +661,4 @@ module caravel (
 	);
 
 endmodule
+// `default_nettype wire
