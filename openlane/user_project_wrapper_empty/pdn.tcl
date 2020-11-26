@@ -5,14 +5,14 @@ set ::ground_nets $::env(_GND_NET_NAME)
 pdngen::specify_grid stdcell {
     name grid
 	core_ring {
-		met5 {width 2 spacing 2 core_offset $::env(_H_OFFSET)}
-		met4 {width 2 spacing 2 core_offset $::env(_V_OFFSET)}
+		met5 {width $::env(_WIDTH) spacing $::env(_SPACING) core_offset $::env(_H_OFFSET)}
+		met4 {width $::env(_WIDTH) spacing $::env(_SPACING) core_offset $::env(_V_OFFSET)}
 	}
 	rails {
 	}
     straps {
-	    met4 {width 2 pitch $::env(_V_PITCH) offset $::env(_V_PDN_OFFSET)}
-	    met5 {width 2 pitch $::env(_H_PITCH) offset $::env(_H_PDN_OFFSET)}
+	    met4 {width $::env(_WIDTH) pitch $::env(_V_PITCH) offset $::env(_V_PDN_OFFSET)}
+	    met5 {width $::env(_WIDTH) pitch $::env(_H_PITCH) offset $::env(_H_PDN_OFFSET)}
     }
     connect {{met4 met5}}
 }

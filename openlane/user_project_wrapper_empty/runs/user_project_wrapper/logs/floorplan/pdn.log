@@ -26,12 +26,12 @@ Notice 0: Finished DEF file: /project/openlane/user_project_wrapper_empty/runs/u
 [INFO] [PDNG-0011] ****** INFO ******
 Type: stdcell, grid
     Core Rings
-      Layer: met5 -  width: 2.000  spacing: 2.000  core_offset: 38.000 
-      Layer: met4 -  width: 2.000  spacing: 2.000  core_offset: 38.000 
+      Layer: met5 -  width: 3.000  spacing: 1.600  core_offset: 41.600 
+      Layer: met4 -  width: 3.000  spacing: 1.600  core_offset: 41.600 
     Stdcell Rails
     Straps
-      Layer: met4 -  width: 2.000  pitch: 100.000  offset: 28.800 
-      Layer: met5 -  width: 2.000  pitch: 100.000  offset: 28.800 
+      Layer: met4 -  width: 3.000  pitch: 180.000  offset: 54.000 
+      Layer: met5 -  width: 3.000  pitch: 180.000  offset: 54.000 
     Connect: {met4 met5}
 Type: macro, macro_1
     Instance: obs_core_obs
