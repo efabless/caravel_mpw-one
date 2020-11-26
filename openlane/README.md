@@ -4,10 +4,17 @@ You can utilize the Makefile existing here in this directory to do that.
 
 But, first you need to specify 3 things:
 ```bash
-export IMAGE_NAME=openlane:<the openlane tag/version you are using>
+export OPENLANE_TAG=<the openlane tag/version you are using. This could be rc4 or rc5 based on when you cloned openlane and what branch you are using.>
 export PDK_ROOT=<The location where the pdk is installed>
 export OPENLANE_ROOT=<the absolute path to the cloned openlane directory>
 ```
+
+If you don't have openlane already, then you can get it from [here](https://github.com/efabless/openlane). Alternatively, you can clone and build the openlane master through:
+```bash
+    make openlane
+```
+
+**NOTE:** We are developing caravel using openlane:rc5 which is the current develop branch. openlane:rc5 will be merged to master once the caravel chip is finalized.
 
 Then, you have two options:
 1. Create a macro for your design and harden it, then insert it into user_project_wrapper.
@@ -25,6 +32,9 @@ This could be done by creating a directory for your design here in this director
 set script_dir [file dirname [file normalize [info script]]]
 
 set ::env(DESIGN_NAME) <Your Design Name>
+
+set ::env(DESIGN_IS_CORE) 0
+set ::env(FP_PDN_CORE_RING) 0
 
 set ::env(VERILOG_FILES) "$script_dir/../../verilog/rtl/<Your RTL.v>"
 
@@ -49,6 +59,7 @@ Then, follow the instructions given in Option 2.
 ```tcl
 set ::env(CLOCK_NET) "mprj.clk"
 
+set ::env(DESIGN_IS_CORE) 0
 
 set ::env(VERILOG_FILES) "\
 	$script_dir/../../verilog/rtl/defines.v \
@@ -74,6 +85,7 @@ set ::env(EXTRA_GDS_FILES) "\
 
 6. Go back to the main [README.md](../README.md) and continue the process of boarding the chip.
 
+**NOTE:** In both cases you might have other macros inside your design. In which case, you may need to have some special power configurations. This is covered [here](https://github.com/efabless/openlane/blob/develop/doc/hardening_macros.md#power-grid-pdn).
 
 ## Extra Pointers:
 
@@ -84,3 +96,4 @@ set ::env(EXTRA_GDS_FILES) "\
 - [Here](https://github.com/efabless/openlane/blob/master/doc/advanced_readme.md) you can learn how to write an interactive script.
 - [Here](https://github.com/efabless/openlane/blob/master/doc/OpenLANE_commands.md) you can find a full documentation for all OpenLANE commands.
 - [This documentation](https://github.com/efabless/openlane/blob/master/regression_results/README.md) describes how to use the exploration script to achieve an LVS/DRC clean design.
+- [This documentation](https://github.com/efabless/openlane/blob/develop/doc/hardening_macros.md) walks you through hardening a macro and all the decisions you should make. However, this is still on the develop branch of openlane and so may contain configuration references that are yet to come to master. For example, `FP_CONTEXT_DEF` and `FP_CONTEXT_DEF`.
