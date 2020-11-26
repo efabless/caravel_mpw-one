@@ -4,6 +4,8 @@
 * This is a fork of caravel with https://github.com/mattvenn/mpw-multi-project-harness added to /verilog/rtl/
 * user_project_wrapper is then adjusted to instantiate https://github.com/mattvenn/mpw-multi-project-harness/blob/main/multi_project_harness.v
 
+![multi project harness](doc/multi-project-harness.png)
+
 # Sub projects
 
 See https://github.com/mattvenn/mpw-multi-project-harness/blob/main/.gitmodules
