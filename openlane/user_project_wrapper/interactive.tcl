@@ -10,7 +10,7 @@ init_floorplan
 
 place_io_ol
 
-add_macro_placement mprj 1150 1700 N
+add_macro_placement mprj 500 500 N
 
 manual_macro_placement f
 
