@@ -16,9 +16,28 @@ module vga_clock_tb;
     wire [5:0] rrggbb;
     wire hsync, vsync;
 
-    assign hsync = mprj_io[5];
-    assign vsync = mprj_io[6];
-    assign rrggbb = mprj_io[12:7];
+    assign hsync = uut.gpio_control_in[11].pad_gpio_out;
+    assign vsync = uut.gpio_control_in[12].pad_gpio_out;
+    assign rrggbb = {
+        uut.gpio_control_in[13].pad_gpio_out,
+        uut.gpio_control_in[14].pad_gpio_out,
+        uut.gpio_control_in[15].pad_gpio_out,
+        uut.gpio_control_in[16].pad_gpio_out,
+        uut.gpio_control_in[17].pad_gpio_out,
+        uut.gpio_control_in[18].pad_gpio_out
+    };
+
+    reg adj_hrs = 0;
+    reg adj_min = 0;
+    reg adj_sec = 0;
+   assign mprj_io[8] = adj_hrs;
+   assign mprj_io[9] = adj_min;
+   assign mprj_io[10] = adj_sec;
+/* this doesn't work
+    assign uut.gpio_control_in[ 8].pad_gpio_in = adj_hrs;
+    assign uut.gpio_control_in[ 9].pad_gpio_in = adj_min;
+    assign uut.gpio_control_in[10].pad_gpio_in = adj_sec;
+    */
 
     // External clock is used by default.  Make this artificially fast for the
     // simulation.  Normally this would be a slow clock and the digital PLL
@@ -43,6 +62,31 @@ module vga_clock_tb;
         $display ("Monitor: Timeout, Test Mega-Project IO Ports (RTL) Failed");
         $display("%c[0m",27);
         $finish;
+    end
+
+    initial begin
+        // wait for reset, we have 2 before the project is ready
+        wait(uut.mprj.mprj.proj_2.reset == 1);
+        wait(uut.mprj.mprj.proj_2.reset == 0);
+        wait(uut.mprj.mprj.proj_2.reset == 1);
+        wait(uut.mprj.mprj.proj_2.reset == 0);
+
+        // press a button
+        adj_hrs = 1;
+        wait(uut.mprj.mprj.proj_2.hrs_u == 1);
+        adj_hrs = 0;
+        $display ("adjusted hours ok");
+
+        adj_min = 1;
+        wait(uut.mprj.mprj.proj_2.min_u == 1);
+        adj_min = 0;
+        $display ("adjusted min ok");
+
+        adj_sec = 1;
+        wait(uut.mprj.mprj.proj_2.sec_u == 1);
+        adj_sec = 0;
+        $display ("adjusted sec ok");
+        
     end
 
     initial begin
@@ -98,7 +142,7 @@ module vga_clock_tb;
         .vssd2    (VSS),
         .clock    (clock),
         .gpio     (gpio),
-            .mprj_io  (mprj_io),
+        .mprj_io  (mprj_io),
         .flash_csb(flash_csb),
         .flash_clk(flash_clk),
         .flash_io0(flash_io0),

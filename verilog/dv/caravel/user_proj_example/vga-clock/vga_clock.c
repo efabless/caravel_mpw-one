@@ -1,5 +1,7 @@
 #include "../../defs.h"
 
+#define reg_mprj_oeb0 (*(volatile uint32_t*)0x30000004)
+#define reg_mprj_oeb1 (*(volatile uint32_t*)0x30000008)
 /*
 	IO Test:
 		- Configures MPRJ pins
@@ -33,31 +35,30 @@ void main()
 
     system clock
     system reset
-    2   adj hours
-    3   adj min
-    4   adj sec
-
+    8   adj hours
+    9   adj min
+    10   adj sec
 
     Outputs
 
-    5   hsync
-    6   vsync
-    7-12 rrggbb
+    11   hsync
+    12   vsync
+    13-18 rrggbb
     */
 
-    reg_mprj_io_2 =  GPIO_MODE_USER_STD_INPUT_NOPULL;
-    reg_mprj_io_3 =  GPIO_MODE_USER_STD_INPUT_NOPULL;
-    reg_mprj_io_4 =  GPIO_MODE_USER_STD_INPUT_NOPULL;
+    reg_mprj_io_8  =  GPIO_MODE_USER_STD_INPUT_NOPULL;
+    reg_mprj_io_9  =  GPIO_MODE_USER_STD_INPUT_NOPULL;
+    reg_mprj_io_10 =  GPIO_MODE_USER_STD_INPUT_NOPULL;
 
-    reg_mprj_io_5 =  GPIO_MODE_USER_STD_OUTPUT;
-    reg_mprj_io_6 =  GPIO_MODE_USER_STD_OUTPUT;
-
-    reg_mprj_io_7 =  GPIO_MODE_USER_STD_OUTPUT;
-    reg_mprj_io_8 =  GPIO_MODE_USER_STD_OUTPUT;
-    reg_mprj_io_9 =  GPIO_MODE_USER_STD_OUTPUT;
-    reg_mprj_io_10 =  GPIO_MODE_USER_STD_OUTPUT;
     reg_mprj_io_11 =  GPIO_MODE_USER_STD_OUTPUT;
     reg_mprj_io_12 =  GPIO_MODE_USER_STD_OUTPUT;
+
+    reg_mprj_io_13 =  GPIO_MODE_USER_STD_OUTPUT;
+    reg_mprj_io_14 =  GPIO_MODE_USER_STD_OUTPUT;
+    reg_mprj_io_15 =  GPIO_MODE_USER_STD_OUTPUT;
+    reg_mprj_io_16 =  GPIO_MODE_USER_STD_OUTPUT;
+    reg_mprj_io_17 =  GPIO_MODE_USER_STD_OUTPUT;
+    reg_mprj_io_18 =  GPIO_MODE_USER_STD_OUTPUT;
 
     /* Apply configuration */
     reg_mprj_xfer = 1;
@@ -65,6 +66,9 @@ void main()
 
     // change to project 2
     reg_mprj_slave = 2;
+
+    // setup oeb, low for output, high for input
+    reg_mprj_oeb0 = (1 << 8) + (1 << 9) + (1 << 10);
 
     // use logic analyser to reset the design
     reg_la0_ena  = 0x00000000; // bits 31:0 outputs
