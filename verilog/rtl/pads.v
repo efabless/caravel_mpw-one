@@ -60,7 +60,7 @@
 
 `define INPUT_PAD(X,Y) \
 	wire loop_``X; \
-	sky130_ef_io__gpiov2_pad X``_pad ( \
+	sky130_ef_io__gpiov2_pad_wrapped X``_pad ( \
 	`MGMT_ABUTMENT_PINS \
 	`ifndef	TOP_ROUTING \
 		.PAD(X), \
@@ -92,7 +92,7 @@
 
 `define OUTPUT_PAD(X,Y,INPUT_DIS,OUT_EN_N) \
 	wire loop_``X; \
-	sky130_ef_io__gpiov2_pad X``_pad ( \
+	sky130_ef_io__gpiov2_pad_wrapped X``_pad ( \
 	`MGMT_ABUTMENT_PINS \
 	`ifndef	TOP_ROUTING \
 		.PAD(X), \
@@ -123,7 +123,8 @@
 		.TIE_LO_ESD(loop_``X)) 
 
 `define INOUT_PAD(X,Y,Y_OUT,INPUT_DIS,OUT_EN_N,MODE) \
-	sky130_ef_io__gpiov2_pad X``_pad ( \
+	wire loop_``X; \
+	sky130_ef_io__gpiov2_pad_wrapped X``_pad ( \
 	`MGMT_ABUTMENT_PINS \
 	`ifndef	TOP_ROUTING \
 		.PAD(X),\
