@@ -3,6 +3,8 @@
 #define PROJECT 5
 #define NB_OUTPUTS 28
 
+#define reg_mprj_oeb0 (*(volatile uint32_t*)0x30000004)
+
 /*
 	IO Test:
 		- Configures MPRJ pins
@@ -29,7 +31,7 @@ void main()
 
     /*
     Inputs
-    system clock
+    36 - 2^15Hz crystal clock
     system reset_n
 
     Outputs
@@ -42,6 +44,8 @@ void main()
     for (int i = 8 ; i < 8+NB_OUTPUTS ; i++) {
         io[i] = GPIO_MODE_USER_STD_OUTPUT;
     }
+    io[36] = GPIO_MODE_USER_STD_INPUT_NOPULL;
+
     // for (int i = 0; i < NUMNODES; i++) {
     // 	for (int j = 0; j <= 1; j += 6)
     // 		io[i + j] = GPIO_MODE_USER_STD_INPUT_NOPULL;
@@ -55,6 +59,8 @@ void main()
 
     // change to project
     reg_mprj_slave = PROJECT;
+
+    // reg_mprj_oeb0 = (1 << 36);
 
     // use logic analyser bit 0 as reset
     reg_la0_ena  = 0x00000000; // bits 31:0 outputs

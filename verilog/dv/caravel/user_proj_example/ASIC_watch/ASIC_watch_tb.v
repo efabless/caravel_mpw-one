@@ -13,6 +13,10 @@ module ASIC_watch_tb;
 
     wire gpio;
     wire [37:0] mprj_io;
+    // inputs
+    reg clk_32768;
+
+    // outputs
     wire [6:0] segment_hxxx;
     wire [6:0] segment_xhxx;
     wire [6:0] segment_xxhx;
@@ -50,14 +54,18 @@ module ASIC_watch_tb;
     assign segment_xxxh[5] = uut.gpio_control_in[34].pad_gpio_out;
     assign segment_xxxh[6] = uut.gpio_control_in[35].pad_gpio_out;
 
+    assign mprj_io[36] = clk_32768;
+
     // External clock is used by default.  Make this artificially fast for the
     // simulation.  Normally this would be a slow clock and the digital PLL
     // would be the fast clock.
 
     always #12.5 clock <= (clock === 1'b0);
+    always #12.5 clk_32768 <= (clk_32768 === 1'b0);
 
     initial begin
         clock = 0;
+	clk_32768 = 0;
     end
 
 
