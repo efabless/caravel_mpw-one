@@ -9,6 +9,8 @@ export PDK_ROOT=<The location where the pdk is installed>
 export OPENLANE_ROOT=<the absolute path to the cloned openlane directory>
 ```
 
+**NOTE:** we recommend using openlane:rc4. Note the following [FAQ](https://github.com/efabless/openlane/wiki#why-am-i-getting-n-well-related-drc-violations-from-magic-when-using-the-latest-version-of-the-skywater-pdk).
+
 If you don't have openlane already, then you can get it from [here](https://github.com/efabless/openlane). Alternatively, you can clone and build the openlane master through:
 ```bash
     make openlane
@@ -35,6 +37,7 @@ set ::env(DESIGN_NAME) <Your Design Name>
 
 set ::env(DESIGN_IS_CORE) 0
 set ::env(FP_PDN_CORE_RING) 0
+set ::env(GLB_RT_MAXLAYER) 5
 
 set ::env(VERILOG_FILES) "$script_dir/../../verilog/rtl/<Your RTL.v>"
 
@@ -51,6 +54,8 @@ make <your design directory name>
 
 Then, follow the instructions given in Option 2.
 
+**NOTE:** You might have other macros inside your design. In which case, you may need to have some special power configurations. This is covered [here](https://github.com/efabless/openlane/blob/develop/doc/hardening_macros.md#power-grid-pdn).
+
 ## Option 2:
 
 1. Add your design to the RTL of the [user_project_wrapper](../verilog/rtl/user_project_wrapper.v).
@@ -58,8 +63,6 @@ Then, follow the instructions given in Option 2.
 2. Modify the configuration file [here](./user_project_wrapper/config.tcl) to include any extra files you may need. Make sure to change these accordingly:
 ```tcl
 set ::env(CLOCK_NET) "mprj.clk"
-
-set ::env(DESIGN_IS_CORE) 0
 
 set ::env(VERILOG_FILES) "\
 	$script_dir/../../verilog/rtl/defines.v \

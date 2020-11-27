@@ -29,14 +29,14 @@ Then, you can learn more about the caravel chip by watching these video:
 
 ## Aboard Caravel:
 
-Your area is the full user_project_wrapper, so feel free to add your project there or create a differnt macro and harden it seperately then insert it into the user_project_wrapper.
+Your area is the full user_project_wrapper, so feel free to add your project there or create a differnt macro and harden it seperately then insert it into the user_project_wrapper. For example, if your design is analog or you're using a different tool other than OpenLANE.
 
 If you will use OpenLANE to harden your design, go through the instructions in this [README.md][0].
 
-Then, you will need to put your design aboard the Caravel chip. In the Caravel directory, make sure you have the following:
+Then, you will need to put your design aboard the Caravel chip. Make sure you have the following:
 
 - Magic installed on your machine. We may provide a Dockerized version later.
-- You have your user_project_wrapper.gds under `./gds/` directory.
+- You have your user_project_wrapper.gds under `./gds/` in the Caravel directory.
 
 Run the following command:
 
@@ -45,7 +45,7 @@ export PDK_ROOT=<The place where the installed pdk resides. The same PDK_ROOT us
 make
 ```
 
-This should merge the GDSes using magic and you'll end up with your version of `./gds/caravel.gds`.
+This should merge the GDSes using magic and you'll end up with your version of `./gds/caravel.gds`. You should expect hundred of thousands of magic DRC violations with the current "development" state of caravel.
 
 ## Managment SoC
 The managment SoC runs firmware that can be used to:
