@@ -13,6 +13,42 @@ module ASIC_watch_tb;
 
     wire gpio;
     wire [37:0] mprj_io;
+    wire [6:0] segment_hxxx;
+    wire [6:0] segment_xhxx;
+    wire [6:0] segment_xxhx;
+    wire [6:0] segment_xxxh;
+
+    assign segment_hxxx[0] = uut.gpio_control_in[8].pad_gpio_out;
+    assign segment_hxxx[1] = uut.gpio_control_in[9].pad_gpio_out;
+    assign segment_hxxx[2] = uut.gpio_control_in[10].pad_gpio_out;
+    assign segment_hxxx[3] = uut.gpio_control_in[11].pad_gpio_out;
+    assign segment_hxxx[4] = uut.gpio_control_in[12].pad_gpio_out;
+    assign segment_hxxx[5] = uut.gpio_control_in[13].pad_gpio_out;
+    assign segment_hxxx[6] = uut.gpio_control_in[14].pad_gpio_out;
+
+    assign segment_xhxx[0] = uut.gpio_control_in[15].pad_gpio_out;
+    assign segment_xhxx[1] = uut.gpio_control_in[16].pad_gpio_out;
+    assign segment_xhxx[2] = uut.gpio_control_in[17].pad_gpio_out;
+    assign segment_xhxx[3] = uut.gpio_control_in[18].pad_gpio_out;
+    assign segment_xhxx[4] = uut.gpio_control_in[19].pad_gpio_out;
+    assign segment_xhxx[5] = uut.gpio_control_in[20].pad_gpio_out;
+    assign segment_xhxx[6] = uut.gpio_control_in[21].pad_gpio_out;
+
+    assign segment_xxhx[0] = uut.gpio_control_in[22].pad_gpio_out;
+    assign segment_xxhx[1] = uut.gpio_control_in[23].pad_gpio_out;
+    assign segment_xxhx[2] = uut.gpio_control_in[24].pad_gpio_out;
+    assign segment_xxhx[3] = uut.gpio_control_in[25].pad_gpio_out;
+    assign segment_xxhx[4] = uut.gpio_control_in[26].pad_gpio_out;
+    assign segment_xxhx[5] = uut.gpio_control_in[27].pad_gpio_out;
+    assign segment_xxhx[6] = uut.gpio_control_in[28].pad_gpio_out;
+
+    assign segment_xxxh[0] = uut.gpio_control_in[29].pad_gpio_out;
+    assign segment_xxxh[1] = uut.gpio_control_in[30].pad_gpio_out;
+    assign segment_xxxh[2] = uut.gpio_control_in[31].pad_gpio_out;
+    assign segment_xxxh[3] = uut.gpio_control_in[32].pad_gpio_out;
+    assign segment_xxxh[4] = uut.gpio_control_in[33].pad_gpio_out;
+    assign segment_xxxh[5] = uut.gpio_control_in[34].pad_gpio_out;
+    assign segment_xxxh[6] = uut.gpio_control_in[35].pad_gpio_out;
 
     // External clock is used by default.  Make this artificially fast for the
     // simulation.  Normally this would be a slow clock and the digital PLL
@@ -69,7 +105,7 @@ module ASIC_watch_tb;
     wire VDD1V8;
     wire VDD3V3;
     wire VSS;
-    
+
     assign VDD3V3 = power1;
     assign VDD1V8 = power2;
     wire USER_VDD3V3 = power3;
@@ -93,7 +129,7 @@ module ASIC_watch_tb;
         .vssd2    (VSS),
         .clock    (clock),
         .gpio     (gpio),
-            .mprj_io  (mprj_io),
+        .mprj_io  (mprj_io),
         .flash_csb(flash_csb),
         .flash_clk(flash_clk),
         .flash_io0(flash_io0),
