@@ -4,14 +4,13 @@ You can utilize the Makefile existing here in this directory to do that.
 
 But, first you need to specify 3 things:
 ```bash
-export OPENLANE_TAG=<the openlane tag/version you are using. This could be rc4 or rc5 based on when you cloned openlane and what branch you are using.>
 export PDK_ROOT=<The location where the pdk is installed>
-export OPENLANE_ROOT=<the absolute path to the cloned openlane directory>
+export OPENLANE_ROOT=<the absolute path to the openlane directory cloned or to be cloned>
 ```
 
-**NOTE:** we recommend using openlane:rc4. Note the following [FAQ](https://github.com/efabless/openlane/wiki#why-am-i-getting-n-well-related-drc-violations-from-magic-when-using-the-latest-version-of-the-skywater-pdk).
+**NOTE:** rc5 and caravel are still WIP so expect to run into some issues when using it.
 
-If you don't have openlane already, then you can get it from [here](https://github.com/efabless/openlane). Alternatively, you can clone and build the openlane master through:
+If you don't have openlane already, then you can get it from [here](https://github.com/efabless/openlane). Alternatively, you can clone and build the openlane develop branch through:
 ```bash
     make openlane
 ```
@@ -99,4 +98,4 @@ set ::env(EXTRA_GDS_FILES) "\
 - [Here](https://github.com/efabless/openlane/blob/master/doc/advanced_readme.md) you can learn how to write an interactive script.
 - [Here](https://github.com/efabless/openlane/blob/master/doc/OpenLANE_commands.md) you can find a full documentation for all OpenLANE commands.
 - [This documentation](https://github.com/efabless/openlane/blob/master/regression_results/README.md) describes how to use the exploration script to achieve an LVS/DRC clean design.
-- [This documentation](https://github.com/efabless/openlane/blob/develop/doc/hardening_macros.md) walks you through hardening a macro and all the decisions you should make. However, this is still on the develop branch of openlane and so may contain configuration references that are yet to come to master. For example, `FP_CONTEXT_DEF` and `FP_CONTEXT_DEF`.
+- [This documentation](https://github.com/efabless/openlane/blob/develop/doc/hardening_macros.md) walks you through hardening a macro and all the decisions you should make.
