@@ -31,7 +31,7 @@ echo "# Installing xschem sky130"
 git clone https://github.com/StefanSchippers/xschem_sky130.git
 
 echo "# copiando libreria"
-cp xschem/sky130.lib ~/skywater_pdk/skywater-pdk/libraries/sky130_fd_pr/latest/models/corners/
+cp ~/fulgor-opamp-sky130/xschem/sky130.lib ~/skywater_pdk/skywater-pdk/libraries/sky130_fd_pr/latest/models/corners/
 #echo "# Installing sample designs"
 #mkdir samples
 #cd samples
