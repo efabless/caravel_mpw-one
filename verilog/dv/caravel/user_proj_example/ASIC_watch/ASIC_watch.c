@@ -3,8 +3,6 @@
 #define PROJECT 5
 #define NB_OUTPUTS 28
 
-#define reg_mprj_oeb0 (*(volatile uint32_t*)0x30000004)
-#define reg_mprj_oeb1 (*(volatile uint32_t*)0x30000008)
 /*
 	IO Test:
 		- Configures MPRJ pins
@@ -57,9 +55,6 @@ void main()
 
     // change to project
     reg_mprj_slave = PROJECT;
-
-    // setup oeb, low for output, high for input
-    reg_mprj_oeb0 = (1 << 8) + (1 << 9) + (1 << 10);
 
     // use logic analyser bit 0 as reset
     reg_la0_ena  = 0x00000000; // bits 31:0 outputs
