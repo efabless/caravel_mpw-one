@@ -1,17 +1,18 @@
-OpenROAD 0.9.0 e582f2522b
+OpenROAD 0.9.0 d03ebfc244
 This program is licensed under the BSD-3 license. See the LICENSE file for details. 
 Components of this program may be licensed under more restrictive licenses which must be honored.
+Error: cannot open '/.openroad'.
 Notice 0: Reading LEF file:  /project/openlane/mgmt_core/runs/mgmt_core/tmp/merged_unpadded.lef
 Notice 0:     Created 13 technology layers
 Notice 0:     Created 25 technology vias
-Notice 0:     Created 439 library cells
+Notice 0:     Created 440 library cells
 Notice 0: Finished LEF file:  /project/openlane/mgmt_core/runs/mgmt_core/tmp/merged_unpadded.lef
 Notice 0: 
 Reading DEF file: /project/openlane/mgmt_core/runs/mgmt_core/results/cts/mgmt_core.cts.def
 Notice 0: Design: mgmt_core
-Notice 0:     Created 959 pins.
-Notice 0:     Created 54636 components and 300962 component-terminals.
-Notice 0:     Created 37215 nets and 116324 connections.
+Notice 0:     Created 794 pins.
+Notice 0:     Created 52881 components and 289462 component-terminals.
+Notice 0:     Created 35192 nets and 112064 connections.
 Notice 0: Finished DEF file: /project/openlane/mgmt_core/runs/mgmt_core/results/cts/mgmt_core.cts.def
 [INFO] [PDNG-0016] Power Delivery Network Generator: Generating PDN
 [INFO] [PDNG-0016]   config: /project/openlane/mgmt_core/pdn.tcl
@@ -35,6 +36,6 @@ Type: macro, macro_1
 [WARN] [PDNG-0040] No via added at (14.36 256.4 34.36 257.86) because the full height of met5 (1.6) is not covered by the overlap
 [WARN] [PDNG-0040] No via added at (109.88 256.4 111.48 257.86) because the full height of met5 (1.6) is not covered by the overlap
 [WARN] [PDNG-0040] No via added at (159.88 256.4 161.48 257.86) because the full height of met5 (1.6) is not covered by the overlap
-[WARN] [PDNG-0040] No via added at (221.2 256.4 241.2 257.86) because the full height of met5 (1.6) is not covered by the overlap
+[WARN] [PDNG-0040] No via added at (200.04 256.4 220.04 257.86) because the full height of met5 (1.6) is not covered by the overlap
 [INFO] [PDNG-0034]   - grid for instance soc.soc_mem.mem.SRAM
 [INFO] [PDNG-0015] Writing to database

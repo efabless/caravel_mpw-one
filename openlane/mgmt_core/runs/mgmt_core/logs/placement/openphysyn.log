@@ -1,24 +1,24 @@
-[OpenPhySyn] [2020-11-09 20:54:42.186] [info] Loaded 6 transforms.
-[OpenPhySyn] [2020-11-09 20:54:42.552] [info] OpenPhySyn: 1.8.1
+[OpenPhySyn] [2020-11-27 19:52:29.244] [info] Loaded 6 transforms.
+[OpenPhySyn] [2020-11-27 19:52:29.822] [info] OpenPhySyn: 1.8.1
 Warning: /project/openlane/mgmt_core/runs/mgmt_core/tmp/opt.lib, line 32 default_operating_condition ss_100C_1v60 not found.
 Notice 0: Reading LEF file:  /project/openlane/mgmt_core/runs/mgmt_core/tmp/merged_unpadded.lef
 Notice 0:     Created 13 technology layers
 Notice 0:     Created 25 technology vias
-Notice 0:     Created 439 library cells
+Notice 0:     Created 440 library cells
 Notice 0: Finished LEF file:  /project/openlane/mgmt_core/runs/mgmt_core/tmp/merged_unpadded.lef
 Notice 0: 
 Reading DEF file: /project/openlane/mgmt_core/runs/mgmt_core/tmp/placement/replace.def
 Notice 0: Design: mgmt_core
-Notice 0:     Created 959 pins.
-Notice 0:     Created 52926 components and 290702 component-terminals.
-Notice 0:     Created 35505 nets and 112904 connections.
+Notice 0:     Created 794 pins.
+Notice 0:     Created 52746 components and 288652 component-terminals.
+Notice 0:     Created 35057 nets and 111794 connections.
 Notice 0: Finished DEF file: /project/openlane/mgmt_core/runs/mgmt_core/tmp/placement/replace.def
 [INFO]: Setting output delay to: 10.0
 [INFO]: Setting input delay to: 10.0
 [INFO]: Setting load to: 0.01765
 =============== Initial Reports =============
-Startpoint: _63984_ (rising edge-triggered flip-flop clocked by clock)
-Endpoint: _64386_ (recovery check against rising-edge clock clock)
+Startpoint: _63413_ (rising edge-triggered flip-flop clocked by clock)
+Endpoint: _63805_ (recovery check against rising-edge clock clock)
 Path Group: **async_default**
 Path Type: max
 
@@ -26,30 +26,30 @@ Path Type: max
 ---------------------------------------------------------
    0.00    0.00   clock clock (rise edge)
    0.00    0.00   clock network delay (ideal)
-   0.00    0.00 ^ _63984_/CLK (sky130_fd_sc_hd__dfstp_4)
-   0.88    0.88 v _63984_/Q (sky130_fd_sc_hd__dfstp_4)
-   1.15    2.03 v _61021_/X (sky130_fd_sc_hd__or4_4)
-   0.25    2.28 ^ _61022_/Y (sky130_fd_sc_hd__inv_2)
-   0.56    2.85 ^ _61023_/X (sky130_fd_sc_hd__buf_2)
-   0.47    3.31 ^ _61024_/X (sky130_fd_sc_hd__buf_2)
-   0.83    4.14 ^ _61025_/X (sky130_fd_sc_hd__buf_2)
-   0.71    4.85 ^ _61026_/X (sky130_fd_sc_hd__buf_2)
-   0.77    5.62 ^ _61027_/X (sky130_fd_sc_hd__buf_2)
-   6.57   12.19 ^ _61028_/X (sky130_fd_sc_hd__buf_2)
-   0.51   12.70 ^ _64386_/RESET_B (sky130_fd_sc_hd__dfrtp_4)
-          12.70   data arrival time
+   0.00    0.00 ^ _63413_/CLK (sky130_fd_sc_hd__dfstp_4)
+   0.90    0.90 v _63413_/Q (sky130_fd_sc_hd__dfstp_4)
+   0.99    1.89 v _58002_/X (sky130_fd_sc_hd__or4_4)
+   0.52    2.41 ^ _58003_/Y (sky130_fd_sc_hd__inv_2)
+   0.53    2.94 ^ _58004_/X (sky130_fd_sc_hd__buf_2)
+   0.46    3.40 ^ _58005_/X (sky130_fd_sc_hd__buf_2)
+   0.37    3.77 ^ _58006_/X (sky130_fd_sc_hd__buf_2)
+   0.47    4.24 ^ _58007_/X (sky130_fd_sc_hd__buf_2)
+   0.51    4.75 ^ _58008_/X (sky130_fd_sc_hd__buf_2)
+   5.86   10.61 ^ _58009_/X (sky130_fd_sc_hd__buf_2)
+   0.85   11.46 ^ _63805_/RESET_B (sky130_fd_sc_hd__dfrtp_4)
+          11.46   data arrival time
 
   50.00   50.00   clock clock (rise edge)
    0.00   50.00   clock network delay (ideal)
    0.00   50.00   clock reconvergence pessimism
-          50.00 ^ _64386_/CLK (sky130_fd_sc_hd__dfrtp_4)
-  -4.92   45.08   library recovery time
-          45.08   data required time
+          50.00 ^ _63805_/CLK (sky130_fd_sc_hd__dfrtp_4)
+  -4.90   45.10   library recovery time
+          45.10   data required time
 ---------------------------------------------------------
-          45.08   data required time
-         -12.70   data arrival time
+          45.10   data required time
+         -11.46   data arrival time
 ---------------------------------------------------------
-          32.38   slack (MET)
+          33.64   slack (MET)
 
 
 Startpoint: clock (clock source 'clock')
@@ -60,9 +60,9 @@ Path Type: max
   Delay    Time   Description
 ---------------------------------------------------------
   25.00   25.00   clock clock (fall edge)
-  38.56   63.56   clock network delay
-          63.56 v mgmt_out_data[14] (out)
-          63.56   data arrival time
+  25.64   50.64   clock network delay
+          50.64 v mgmt_out_data[14] (out)
+          50.64   data arrival time
 
   50.00   50.00   clock clock (rise edge)
    0.00   50.00   clock network delay (ideal)
@@ -71,285 +71,310 @@ Path Type: max
           40.00   data required time
 ---------------------------------------------------------
           40.00   data required time
-         -63.56   data arrival time
+         -50.64   data arrival time
 ---------------------------------------------------------
-         -23.56   slack (VIOLATED)
+         -10.64   slack (VIOLATED)
 
 
 max slew
 
 Pin                                    Limit    Slew   Slack
 ------------------------------------------------------------
-_64387_/SET_B                           1.50   10.54   -9.04 (VIOLATED)
-_64386_/RESET_B                         1.50   10.54   -9.04 (VIOLATED)
-_64389_/RESET_B                         1.50   10.54   -9.04 (VIOLATED)
-_64388_/SET_B                           1.50   10.54   -9.04 (VIOLATED)
-_64391_/SET_B                           1.50   10.54   -9.04 (VIOLATED)
-_64390_/RESET_B                         1.50   10.54   -9.04 (VIOLATED)
-_64927_/RESET_B                         1.50   10.54   -9.04 (VIOLATED)
-_64928_/RESET_B                         1.50   10.54   -9.04 (VIOLATED)
-_64250_/RESET_B                         1.50   10.54   -9.04 (VIOLATED)
-_64249_/RESET_B                         1.50   10.54   -9.04 (VIOLATED)
-_64247_/RESET_B                         1.50   10.53   -9.03 (VIOLATED)
-_64248_/RESET_B                         1.50   10.53   -9.03 (VIOLATED)
-_64385_/RESET_B                         1.50   10.53   -9.03 (VIOLATED)
-_64384_/RESET_B                         1.50   10.53   -9.03 (VIOLATED)
-_64023_/SET_B                           1.50   10.53   -9.03 (VIOLATED)
-_64026_/RESET_B                         1.50   10.53   -9.03 (VIOLATED)
-_61005_/A                               1.50   10.53   -9.03 (VIOLATED)
-_64024_/RESET_B                         1.50   10.53   -9.03 (VIOLATED)
-_64025_/RESET_B                         1.50   10.53   -9.03 (VIOLATED)
-_64299_/SET_B                           1.50   10.53   -9.03 (VIOLATED)
-_64298_/SET_B                           1.50   10.53   -9.03 (VIOLATED)
-_64043_/RESET_B                         1.50   10.53   -9.03 (VIOLATED)
-_64311_/RESET_B                         1.50   10.53   -9.03 (VIOLATED)
-_64296_/SET_B                           1.50   10.53   -9.03 (VIOLATED)
-_64295_/SET_B                           1.50   10.53   -9.03 (VIOLATED)
-_64289_/SET_B                           1.50   10.52   -9.02 (VIOLATED)
-_50908_/A2                              1.50   10.52   -9.02 (VIOLATED)
-_64302_/RESET_B                         1.50   10.52   -9.02 (VIOLATED)
-_64300_/RESET_B                         1.50   10.52   -9.02 (VIOLATED)
-_64301_/RESET_B                         1.50   10.52   -9.02 (VIOLATED)
-_64288_/RESET_B                         1.50   10.52   -9.02 (VIOLATED)
-_64290_/SET_B                           1.50   10.52   -9.02 (VIOLATED)
-_64304_/RESET_B                         1.50   10.52   -9.02 (VIOLATED)
-_64303_/RESET_B                         1.50   10.52   -9.02 (VIOLATED)
-_64291_/SET_B                           1.50   10.52   -9.02 (VIOLATED)
-_64975_/RESET_B                         1.50   10.52   -9.02 (VIOLATED)
-_64292_/SET_B                           1.50   10.52   -9.02 (VIOLATED)
-_64305_/RESET_B                         1.50   10.52   -9.02 (VIOLATED)
-_64294_/SET_B                           1.50   10.52   -9.02 (VIOLATED)
-_65295_/RESET_B                         1.50   10.52   -9.02 (VIOLATED)
-_64293_/SET_B                           1.50   10.52   -9.02 (VIOLATED)
-_64309_/RESET_B                         1.50   10.52   -9.02 (VIOLATED)
-_64973_/RESET_B                         1.50   10.52   -9.02 (VIOLATED)
-_65774_/RESET_B                         1.50   10.52   -9.02 (VIOLATED)
-_64974_/RESET_B                         1.50   10.52   -9.02 (VIOLATED)
-_65775_/RESET_B                         1.50   10.52   -9.02 (VIOLATED)
-_65776_/RESET_B                         1.50   10.52   -9.02 (VIOLATED)
-_64306_/RESET_B                         1.50   10.52   -9.02 (VIOLATED)
-_64307_/RESET_B                         1.50   10.52   -9.02 (VIOLATED)
-_64308_/RESET_B                         1.50   10.52   -9.02 (VIOLATED)
-_64310_/RESET_B                         1.50   10.52   -9.02 (VIOLATED)
-_65312_/SET_B                           1.50   10.52   -9.02 (VIOLATED)
-_65313_/SET_B                           1.50   10.52   -9.02 (VIOLATED)
-_65314_/SET_B                           1.50   10.52   -9.02 (VIOLATED)
-_64040_/RESET_B                         1.50   10.52   -9.02 (VIOLATED)
-_65302_/RESET_B                         1.50   10.52   -9.02 (VIOLATED)
-_65303_/RESET_B                         1.50   10.52   -9.02 (VIOLATED)
-_64297_/RESET_B                         1.50   10.52   -9.02 (VIOLATED)
-_65296_/RESET_B                         1.50   10.52   -9.02 (VIOLATED)
-_65309_/SET_B                           1.50   10.52   -9.02 (VIOLATED)
-_65310_/SET_B                           1.50   10.52   -9.02 (VIOLATED)
-_65311_/SET_B                           1.50   10.52   -9.02 (VIOLATED)
-_65308_/SET_B                           1.50   10.52   -9.02 (VIOLATED)
-_65307_/SET_B                           1.50   10.52   -9.02 (VIOLATED)
-_65292_/RESET_B                         1.50   10.52   -9.02 (VIOLATED)
-_64321_/RESET_B                         1.50   10.52   -9.02 (VIOLATED)
-_65306_/RESET_B                         1.50   10.52   -9.02 (VIOLATED)
-_65297_/RESET_B                         1.50   10.52   -9.02 (VIOLATED)
-_65260_/RESET_B                         1.50   10.52   -9.02 (VIOLATED)
-_65777_/RESET_B                         1.50   10.52   -9.02 (VIOLATED)
-_65244_/RESET_B                         1.50   10.52   -9.02 (VIOLATED)
-_65764_/RESET_B                         1.50   10.52   -9.02 (VIOLATED)
-_65765_/RESET_B                         1.50   10.52   -9.02 (VIOLATED)
-_65766_/RESET_B                         1.50   10.52   -9.02 (VIOLATED)
-_65768_/RESET_B                         1.50   10.52   -9.02 (VIOLATED)
-_65245_/RESET_B                         1.50   10.52   -9.02 (VIOLATED)
-_65767_/RESET_B                         1.50   10.52   -9.02 (VIOLATED)
-_65246_/RESET_B                         1.50   10.52   -9.02 (VIOLATED)
-_64968_/RESET_B                         1.50   10.52   -9.02 (VIOLATED)
-_65769_/RESET_B                         1.50   10.52   -9.02 (VIOLATED)
-_64969_/RESET_B                         1.50   10.52   -9.02 (VIOLATED)
-_64972_/RESET_B                         1.50   10.52   -9.02 (VIOLATED)
-_65770_/RESET_B                         1.50   10.52   -9.02 (VIOLATED)
-_65773_/RESET_B                         1.50   10.52   -9.02 (VIOLATED)
-_64971_/RESET_B                         1.50   10.52   -9.02 (VIOLATED)
-_65772_/RESET_B                         1.50   10.52   -9.02 (VIOLATED)
-_64970_/RESET_B                         1.50   10.52   -9.02 (VIOLATED)
-_65771_/RESET_B                         1.50   10.52   -9.02 (VIOLATED)
-_64033_/RESET_B                         1.50   10.52   -9.02 (VIOLATED)
-_64952_/RESET_B                         1.50   10.52   -9.02 (VIOLATED)
-_64953_/RESET_B                         1.50   10.52   -9.02 (VIOLATED)
-_64954_/RESET_B                         1.50   10.52   -9.02 (VIOLATED)
-_65293_/RESET_B                         1.50   10.52   -9.02 (VIOLATED)
-_65250_/RESET_B                         1.50   10.52   -9.02 (VIOLATED)
-_65251_/RESET_B                         1.50   10.52   -9.02 (VIOLATED)
-_65392_/RESET_B                         1.50   10.52   -9.02 (VIOLATED)
-_65249_/RESET_B                         1.50   10.52   -9.02 (VIOLATED)
-_65294_/RESET_B                         1.50   10.52   -9.02 (VIOLATED)
-_65248_/RESET_B                         1.50   10.52   -9.02 (VIOLATED)
-_65304_/RESET_B                         1.50   10.51   -9.01 (VIOLATED)
-_64041_/RESET_B                         1.50   10.51   -9.01 (VIOLATED)
-_64042_/RESET_B                         1.50   10.51   -9.01 (VIOLATED)
-_65305_/RESET_B                         1.50   10.51   -9.01 (VIOLATED)
-_44587_/B1                              1.50   10.51   -9.01 (VIOLATED)
-_64039_/RESET_B                         1.50   10.51   -9.01 (VIOLATED)
-_65298_/RESET_B                         1.50   10.51   -9.01 (VIOLATED)
-_65299_/SET_B                           1.50   10.51   -9.01 (VIOLATED)
-_65253_/RESET_B                         1.50   10.51   -9.01 (VIOLATED)
-_64955_/RESET_B                         1.50   10.51   -9.01 (VIOLATED)
-_65254_/RESET_B                         1.50   10.51   -9.01 (VIOLATED)
-_64037_/RESET_B                         1.50   10.51   -9.01 (VIOLATED)
-_65300_/RESET_B                         1.50   10.51   -9.01 (VIOLATED)
-_65252_/RESET_B                         1.50   10.51   -9.01 (VIOLATED)
-_64038_/RESET_B                         1.50   10.51   -9.01 (VIOLATED)
-_65301_/RESET_B                         1.50   10.51   -9.01 (VIOLATED)
-_65255_/RESET_B                         1.50   10.51   -9.01 (VIOLATED)
-_64956_/RESET_B                         1.50   10.51   -9.01 (VIOLATED)
-_64035_/RESET_B                         1.50   10.51   -9.01 (VIOLATED)
-_64036_/RESET_B                         1.50   10.51   -9.01 (VIOLATED)
-_65780_/RESET_B                         1.50   10.51   -9.01 (VIOLATED)
-_65810_/RESET_B                         1.50   10.51   -9.01 (VIOLATED)
-_65811_/RESET_B                         1.50   10.51   -9.01 (VIOLATED)
-_65812_/RESET_B                         1.50   10.51   -9.01 (VIOLATED)
-_65813_/RESET_B                         1.50   10.51   -9.01 (VIOLATED)
-_65781_/RESET_B                         1.50   10.51   -9.01 (VIOLATED)
-_65782_/RESET_B                         1.50   10.51   -9.01 (VIOLATED)
-_65257_/RESET_B                         1.50   10.51   -9.01 (VIOLATED)
-_65783_/RESET_B                         1.50   10.51   -9.01 (VIOLATED)
-_65784_/RESET_B                         1.50   10.51   -9.01 (VIOLATED)
-_65785_/RESET_B                         1.50   10.51   -9.01 (VIOLATED)
-_65817_/RESET_B                         1.50   10.51   -9.01 (VIOLATED)
-_65816_/RESET_B                         1.50   10.51   -9.01 (VIOLATED)
-_65814_/RESET_B                         1.50   10.51   -9.01 (VIOLATED)
-_65786_/RESET_B                         1.50   10.51   -9.01 (VIOLATED)
-_65787_/RESET_B                         1.50   10.51   -9.01 (VIOLATED)
-_65818_/RESET_B                         1.50   10.51   -9.01 (VIOLATED)
-_65819_/RESET_B                         1.50   10.51   -9.01 (VIOLATED)
-_65821_/RESET_B                         1.50   10.51   -9.01 (VIOLATED)
-_65820_/RESET_B                         1.50   10.51   -9.01 (VIOLATED)
-_65256_/RESET_B                         1.50   10.51   -9.01 (VIOLATED)
-_64957_/RESET_B                         1.50   10.51   -9.01 (VIOLATED)
-_65815_/RESET_B                         1.50   10.51   -9.01 (VIOLATED)
-_65809_/RESET_B                         1.50   10.51   -9.01 (VIOLATED)
-_65808_/RESET_B                         1.50   10.51   -9.01 (VIOLATED)
-_65258_/RESET_B                         1.50   10.51   -9.01 (VIOLATED)
-_65259_/RESET_B                         1.50   10.51   -9.01 (VIOLATED)
-_65807_/RESET_B                         1.50   10.51   -9.01 (VIOLATED)
-_65824_/RESET_B                         1.50   10.51   -9.01 (VIOLATED)
-_65825_/RESET_B                         1.50   10.51   -9.01 (VIOLATED)
-_65791_/RESET_B                         1.50   10.51   -9.01 (VIOLATED)
-_65823_/RESET_B                         1.50   10.51   -9.01 (VIOLATED)
-_65279_/RESET_B                         1.50   10.51   -9.01 (VIOLATED)
-_65788_/RESET_B                         1.50   10.51   -9.01 (VIOLATED)
-_65789_/RESET_B                         1.50   10.51   -9.01 (VIOLATED)
-_65790_/RESET_B                         1.50   10.51   -9.01 (VIOLATED)
-_65822_/RESET_B                         1.50   10.51   -9.01 (VIOLATED)
-_65806_/RESET_B                         1.50   10.51   -9.01 (VIOLATED)
-_65802_/RESET_B                         1.50   10.51   -9.01 (VIOLATED)
-_65278_/RESET_B                         1.50   10.51   -9.01 (VIOLATED)
-_64958_/RESET_B                         1.50   10.51   -9.01 (VIOLATED)
-_65276_/RESET_B                         1.50   10.51   -9.01 (VIOLATED)
-_65277_/RESET_B                         1.50   10.51   -9.01 (VIOLATED)
-_65280_/RESET_B                         1.50   10.51   -9.01 (VIOLATED)
-_65281_/RESET_B                         1.50   10.51   -9.01 (VIOLATED)
-_65274_/RESET_B                         1.50   10.51   -9.01 (VIOLATED)
-_65275_/RESET_B                         1.50   10.51   -9.01 (VIOLATED)
-_65271_/RESET_B                         1.50   10.51   -9.01 (VIOLATED)
-_65778_/RESET_B                         1.50   10.51   -9.01 (VIOLATED)
-_65779_/RESET_B                         1.50   10.51   -9.01 (VIOLATED)
-_65803_/RESET_B                         1.50   10.51   -9.01 (VIOLATED)
-_65805_/RESET_B                         1.50   10.51   -9.01 (VIOLATED)
-_65804_/RESET_B                         1.50   10.51   -9.01 (VIOLATED)
-_65273_/RESET_B                         1.50   10.51   -9.01 (VIOLATED)
-_65272_/RESET_B                         1.50   10.51   -9.01 (VIOLATED)
-_64959_/RESET_B                         1.50   10.51   -9.01 (VIOLATED)
-_65261_/RESET_B                         1.50   10.51   -9.01 (VIOLATED)
-_65270_/RESET_B                         1.50   10.51   -9.01 (VIOLATED)
-_64034_/RESET_B                         1.50   10.51   -9.01 (VIOLATED)
-_65833_/RESET_B                         1.50   10.51   -9.01 (VIOLATED)
-_65792_/RESET_B                         1.50   10.51   -9.01 (VIOLATED)
-_65826_/RESET_B                         1.50   10.51   -9.01 (VIOLATED)
-_65793_/RESET_B                         1.50   10.51   -9.01 (VIOLATED)
-_65827_/RESET_B                         1.50   10.51   -9.01 (VIOLATED)
-_65831_/RESET_B                         1.50   10.51   -9.01 (VIOLATED)
-_64980_/RESET_B                         1.50   10.51   -9.01 (VIOLATED)
-_64981_/RESET_B                         1.50   10.51   -9.01 (VIOLATED)
-_65834_/RESET_B                         1.50   10.51   -9.01 (VIOLATED)
-_65836_/RESET_B                         1.50   10.51   -9.01 (VIOLATED)
-_65832_/RESET_B                         1.50   10.51   -9.01 (VIOLATED)
-_64982_/RESET_B                         1.50   10.51   -9.01 (VIOLATED)
-_64983_/RESET_B                         1.50   10.51   -9.01 (VIOLATED)
-_65835_/RESET_B                         1.50   10.51   -9.01 (VIOLATED)
-_65830_/RESET_B                         1.50   10.51   -9.01 (VIOLATED)
-_65504_/RESET_B                         1.50   10.51   -9.01 (VIOLATED)
-_65829_/RESET_B                         1.50   10.51   -9.01 (VIOLATED)
-_65828_/RESET_B                         1.50   10.51   -9.01 (VIOLATED)
-_64978_/RESET_B                         1.50   10.51   -9.01 (VIOLATED)
-_64979_/RESET_B                         1.50   10.51   -9.01 (VIOLATED)
-_65508_/RESET_B                         1.50   10.51   -9.01 (VIOLATED)
-_65509_/RESET_B                         1.50   10.51   -9.01 (VIOLATED)
-_65510_/RESET_B                         1.50   10.51   -9.01 (VIOLATED)
-_65511_/RESET_B                         1.50   10.51   -9.01 (VIOLATED)
-_65800_/RESET_B                         1.50   10.51   -9.01 (VIOLATED)
-_65801_/RESET_B                         1.50   10.51   -9.01 (VIOLATED)
-_65799_/RESET_B                         1.50   10.51   -9.01 (VIOLATED)
-_65798_/RESET_B                         1.50   10.51   -9.01 (VIOLATED)
-_65505_/RESET_B                         1.50   10.51   -9.01 (VIOLATED)
-_65796_/RESET_B                         1.50   10.51   -9.01 (VIOLATED)
-_65797_/RESET_B                         1.50   10.51   -9.01 (VIOLATED)
-_65761_/RESET_B                         1.50   10.50   -9.00 (VIOLATED)
-_65239_/RESET_B                         1.50   10.50   -9.00 (VIOLATED)
-_65240_/RESET_B                         1.50   10.50   -9.00 (VIOLATED)
-_65241_/RESET_B                         1.50   10.50   -9.00 (VIOLATED)
-_65242_/RESET_B                         1.50   10.50   -9.00 (VIOLATED)
-_65243_/RESET_B                         1.50   10.50   -9.00 (VIOLATED)
-_65762_/RESET_B                         1.50   10.50   -9.00 (VIOLATED)
-_65763_/RESET_B                         1.50   10.50   -9.00 (VIOLATED)
-_65794_/RESET_B                         1.50   10.50   -9.00 (VIOLATED)
-_65795_/RESET_B                         1.50   10.50   -9.00 (VIOLATED)
-_65506_/RESET_B                         1.50   10.50   -9.00 (VIOLATED)
-_64976_/RESET_B                         1.50   10.50   -9.00 (VIOLATED)
-_64977_/RESET_B                         1.50   10.50   -9.00 (VIOLATED)
-_65507_/RESET_B                         1.50   10.50   -9.00 (VIOLATED)
-_61028_/X                               1.51   10.50   -8.99 (VIOLATED)
-_61005_/Y                               1.50    1.83   -0.34 (VIOLATED)
-_51744_/B2                              1.50    1.63   -0.13 (VIOLATED)
-_51712_/B2                              1.50    1.63   -0.13 (VIOLATED)
-_51676_/B2                              1.50    1.63   -0.13 (VIOLATED)
-_52484_/B                               1.50    1.60   -0.10 (VIOLATED)
-_51675_/X                               1.51    1.60   -0.09 (VIOLATED)
+_63802_/SET_B                           1.50   10.50   -9.00 (VIOLATED)
+_63805_/RESET_B                         1.50   10.50   -9.00 (VIOLATED)
+_63804_/RESET_B                         1.50   10.50   -9.00 (VIOLATED)
+_63801_/RESET_B                         1.50   10.50   -9.00 (VIOLATED)
+_63810_/RESET_B                         1.50   10.50   -9.00 (VIOLATED)
+_64319_/RESET_B                         1.50   10.50   -9.00 (VIOLATED)
+_63811_/RESET_B                         1.50   10.50   -9.00 (VIOLATED)
+_63803_/SET_B                           1.50   10.50   -9.00 (VIOLATED)
+_63806_/SET_B                           1.50   10.50   -9.00 (VIOLATED)
+_63807_/RESET_B                         1.50   10.50   -9.00 (VIOLATED)
+_63808_/RESET_B                         1.50   10.50   -9.00 (VIOLATED)
+_63809_/RESET_B                         1.50   10.50   -9.00 (VIOLATED)
+_63812_/RESET_B                         1.50   10.50   -9.00 (VIOLATED)
+_63813_/RESET_B                         1.50   10.50   -9.00 (VIOLATED)
+_57986_/A                               1.50   10.50   -9.00 (VIOLATED)
+_64664_/RESET_B                         1.50   10.49   -8.99 (VIOLATED)
+_41869_/B1                              1.50   10.49   -8.99 (VIOLATED)
+_64663_/RESET_B                         1.50   10.49   -8.99 (VIOLATED)
+_65082_/RESET_B                         1.50   10.49   -8.99 (VIOLATED)
+_65083_/RESET_B                         1.50   10.49   -8.99 (VIOLATED)
+_65084_/RESET_B                         1.50   10.49   -8.99 (VIOLATED)
+_65085_/RESET_B                         1.50   10.49   -8.99 (VIOLATED)
+_64665_/RESET_B                         1.50   10.49   -8.99 (VIOLATED)
+_64666_/RESET_B                         1.50   10.49   -8.99 (VIOLATED)
+_64667_/RESET_B                         1.50   10.49   -8.99 (VIOLATED)
+_64668_/RESET_B                         1.50   10.49   -8.99 (VIOLATED)
+_65087_/RESET_B                         1.50   10.49   -8.99 (VIOLATED)
+_65086_/RESET_B                         1.50   10.49   -8.99 (VIOLATED)
+_64670_/RESET_B                         1.50   10.48   -8.98 (VIOLATED)
+_64669_/RESET_B                         1.50   10.48   -8.98 (VIOLATED)
+_65088_/RESET_B                         1.50   10.48   -8.98 (VIOLATED)
+_65089_/RESET_B                         1.50   10.48   -8.98 (VIOLATED)
+_65079_/RESET_B                         1.50   10.48   -8.98 (VIOLATED)
+_64662_/RESET_B                         1.50   10.48   -8.98 (VIOLATED)
+_65080_/RESET_B                         1.50   10.48   -8.98 (VIOLATED)
+_65081_/RESET_B                         1.50   10.48   -8.98 (VIOLATED)
+_64661_/RESET_B                         1.50   10.48   -8.98 (VIOLATED)
+_65107_/RESET_B                         1.50   10.48   -8.98 (VIOLATED)
+_65108_/RESET_B                         1.50   10.48   -8.98 (VIOLATED)
+_65111_/RESET_B                         1.50   10.48   -8.98 (VIOLATED)
+_65112_/RESET_B                         1.50   10.48   -8.98 (VIOLATED)
+_65104_/RESET_B                         1.50   10.48   -8.98 (VIOLATED)
+_65103_/RESET_B                         1.50   10.48   -8.98 (VIOLATED)
+_65115_/RESET_B                         1.50   10.48   -8.98 (VIOLATED)
+_65116_/RESET_B                         1.50   10.48   -8.98 (VIOLATED)
+_65117_/RESET_B                         1.50   10.48   -8.98 (VIOLATED)
+_65118_/RESET_B                         1.50   10.48   -8.98 (VIOLATED)
+_65101_/RESET_B                         1.50   10.48   -8.98 (VIOLATED)
+_65099_/RESET_B                         1.50   10.48   -8.98 (VIOLATED)
+_65100_/RESET_B                         1.50   10.48   -8.98 (VIOLATED)
+_65102_/RESET_B                         1.50   10.48   -8.98 (VIOLATED)
+_65109_/RESET_B                         1.50   10.48   -8.98 (VIOLATED)
+_65110_/RESET_B                         1.50   10.48   -8.98 (VIOLATED)
+_65113_/RESET_B                         1.50   10.48   -8.98 (VIOLATED)
+_65114_/RESET_B                         1.50   10.48   -8.98 (VIOLATED)
+_65132_/RESET_B                         1.50   10.48   -8.98 (VIOLATED)
+_65133_/RESET_B                         1.50   10.48   -8.98 (VIOLATED)
+_65134_/RESET_B                         1.50   10.48   -8.98 (VIOLATED)
+_65105_/RESET_B                         1.50   10.48   -8.98 (VIOLATED)
+_65106_/RESET_B                         1.50   10.48   -8.98 (VIOLATED)
+_65137_/RESET_B                         1.50   10.48   -8.98 (VIOLATED)
+_65136_/RESET_B                         1.50   10.48   -8.98 (VIOLATED)
+_65135_/RESET_B                         1.50   10.48   -8.98 (VIOLATED)
+_65131_/RESET_B                         1.50   10.48   -8.98 (VIOLATED)
+_64671_/RESET_B                         1.50   10.48   -8.98 (VIOLATED)
+_64672_/RESET_B                         1.50   10.48   -8.98 (VIOLATED)
+_65090_/RESET_B                         1.50   10.48   -8.98 (VIOLATED)
+_64673_/RESET_B                         1.50   10.48   -8.98 (VIOLATED)
+_64674_/RESET_B                         1.50   10.48   -8.98 (VIOLATED)
+_65091_/RESET_B                         1.50   10.48   -8.98 (VIOLATED)
+_64718_/RESET_B                         1.50   10.48   -8.98 (VIOLATED)
+_64730_/RESET_B                         1.50   10.47   -8.97 (VIOLATED)
+_63738_/RESET_B                         1.50   10.47   -8.97 (VIOLATED)
+_64716_/RESET_B                         1.50   10.47   -8.97 (VIOLATED)
+_64721_/RESET_B                         1.50   10.47   -8.97 (VIOLATED)
+_65138_/RESET_B                         1.50   10.47   -8.97 (VIOLATED)
+_65130_/RESET_B                         1.50   10.47   -8.97 (VIOLATED)
+_65129_/RESET_B                         1.50   10.47   -8.97 (VIOLATED)
+_65098_/RESET_B                         1.50   10.47   -8.97 (VIOLATED)
+_65097_/RESET_B                         1.50   10.47   -8.97 (VIOLATED)
+_65128_/RESET_B                         1.50   10.47   -8.97 (VIOLATED)
+_65096_/RESET_B                         1.50   10.47   -8.97 (VIOLATED)
+_64695_/RESET_B                         1.50   10.47   -8.97 (VIOLATED)
+_65095_/RESET_B                         1.50   10.47   -8.97 (VIOLATED)
+_65139_/RESET_B                         1.50   10.47   -8.97 (VIOLATED)
+_65140_/RESET_B                         1.50   10.47   -8.97 (VIOLATED)
+_64720_/RESET_B                         1.50   10.46   -8.96 (VIOLATED)
+_64675_/RESET_B                         1.50   10.46   -8.96 (VIOLATED)
+_64717_/RESET_B                         1.50   10.46   -8.96 (VIOLATED)
+_64676_/RESET_B                         1.50   10.46   -8.96 (VIOLATED)
+_65093_/RESET_B                         1.50   10.46   -8.96 (VIOLATED)
+_64396_/RESET_B                         1.50   10.46   -8.96 (VIOLATED)
+_65078_/RESET_B                         1.50   10.46   -8.96 (VIOLATED)
+_64660_/RESET_B                         1.50   10.46   -8.96 (VIOLATED)
+_64395_/RESET_B                         1.50   10.46   -8.96 (VIOLATED)
+_64659_/RESET_B                         1.50   10.46   -8.96 (VIOLATED)
+_64393_/RESET_B                         1.50   10.46   -8.96 (VIOLATED)
+_64394_/RESET_B                         1.50   10.46   -8.96 (VIOLATED)
+_64658_/RESET_B                         1.50   10.46   -8.96 (VIOLATED)
+_64657_/RESET_B                         1.50   10.46   -8.96 (VIOLATED)
+_63463_/RESET_B                         1.50   10.46   -8.96 (VIOLATED)
+_65092_/RESET_B                         1.50   10.46   -8.96 (VIOLATED)
+_65151_/RESET_B                         1.50   10.46   -8.96 (VIOLATED)
+_65153_/RESET_B                         1.50   10.46   -8.96 (VIOLATED)
+_65152_/RESET_B                         1.50   10.46   -8.96 (VIOLATED)
+_64682_/RESET_B                         1.50   10.46   -8.96 (VIOLATED)
+_64691_/RESET_B                         1.50   10.45   -8.95 (VIOLATED)
+_64391_/RESET_B                         1.50   10.45   -8.95 (VIOLATED)
+_64392_/RESET_B                         1.50   10.45   -8.95 (VIOLATED)
+_64655_/RESET_B                         1.50   10.45   -8.95 (VIOLATED)
+_64656_/RESET_B                         1.50   10.45   -8.95 (VIOLATED)
+_64653_/RESET_B                         1.50   10.45   -8.95 (VIOLATED)
+_64654_/RESET_B                         1.50   10.45   -8.95 (VIOLATED)
+_64798_/RESET_B                         1.50   10.45   -8.95 (VIOLATED)
+_64679_/RESET_B                         1.50   10.45   -8.95 (VIOLATED)
+_65141_/RESET_B                         1.50   10.45   -8.95 (VIOLATED)
+_65142_/RESET_B                         1.50   10.45   -8.95 (VIOLATED)
+_65127_/RESET_B                         1.50   10.45   -8.95 (VIOLATED)
+_64692_/RESET_B                         1.50   10.45   -8.95 (VIOLATED)
+_64694_/RESET_B                         1.50   10.45   -8.95 (VIOLATED)
+_63464_/RESET_B                         1.50   10.45   -8.95 (VIOLATED)
+_65121_/RESET_B                         1.50   10.45   -8.95 (VIOLATED)
+_65120_/RESET_B                         1.50   10.45   -8.95 (VIOLATED)
+_65119_/RESET_B                         1.50   10.45   -8.95 (VIOLATED)
+_64696_/RESET_B                         1.50   10.45   -8.95 (VIOLATED)
+_64693_/RESET_B                         1.50   10.45   -8.95 (VIOLATED)
+_63715_/SET_B                           1.50   10.45   -8.95 (VIOLATED)
+_63716_/SET_B                           1.50   10.45   -8.95 (VIOLATED)
+_63473_/RESET_B                         1.50   10.45   -8.95 (VIOLATED)
+_63454_/RESET_B                         1.50   10.45   -8.95 (VIOLATED)
+_63452_/SET_B                           1.50   10.44   -8.94 (VIOLATED)
+_64737_/SET_B                           1.50   10.44   -8.94 (VIOLATED)
+_64738_/SET_B                           1.50   10.44   -8.94 (VIOLATED)
+_63455_/RESET_B                         1.50   10.44   -8.94 (VIOLATED)
+_63453_/RESET_B                         1.50   10.44   -8.94 (VIOLATED)
+_64722_/RESET_B                         1.50   10.44   -8.94 (VIOLATED)
+_64723_/SET_B                           1.50   10.44   -8.94 (VIOLATED)
+_64680_/RESET_B                         1.50   10.44   -8.94 (VIOLATED)
+_65094_/RESET_B                         1.50   10.44   -8.94 (VIOLATED)
+_64681_/RESET_B                         1.50   10.44   -8.94 (VIOLATED)
+_64397_/RESET_B                         1.50   10.44   -8.94 (VIOLATED)
+_64389_/RESET_B                         1.50   10.44   -8.94 (VIOLATED)
+_64390_/RESET_B                         1.50   10.44   -8.94 (VIOLATED)
+_64725_/RESET_B                         1.50   10.44   -8.94 (VIOLATED)
+_64726_/RESET_B                         1.50   10.44   -8.94 (VIOLATED)
+_64727_/RESET_B                         1.50   10.44   -8.94 (VIOLATED)
+_64724_/RESET_B                         1.50   10.44   -8.94 (VIOLATED)
+_64729_/RESET_B                         1.50   10.44   -8.94 (VIOLATED)
+_65123_/RESET_B                         1.50   10.43   -8.93 (VIOLATED)
+_65124_/RESET_B                         1.50   10.43   -8.93 (VIOLATED)
+_65125_/RESET_B                         1.50   10.43   -8.93 (VIOLATED)
+_65126_/RESET_B                         1.50   10.43   -8.93 (VIOLATED)
+_65150_/RESET_B                         1.50   10.43   -8.93 (VIOLATED)
+_65149_/RESET_B                         1.50   10.43   -8.93 (VIOLATED)
+_65145_/RESET_B                         1.50   10.43   -8.93 (VIOLATED)
+_65146_/RESET_B                         1.50   10.43   -8.93 (VIOLATED)
+_65147_/RESET_B                         1.50   10.43   -8.93 (VIOLATED)
+_65143_/RESET_B                         1.50   10.43   -8.93 (VIOLATED)
+_65144_/RESET_B                         1.50   10.43   -8.93 (VIOLATED)
+_65148_/RESET_B                         1.50   10.43   -8.93 (VIOLATED)
+_64399_/RESET_B                         1.50   10.43   -8.93 (VIOLATED)
+_64398_/RESET_B                         1.50   10.43   -8.93 (VIOLATED)
+_64401_/RESET_B                         1.50   10.43   -8.93 (VIOLATED)
+_64402_/RESET_B                         1.50   10.43   -8.93 (VIOLATED)
+_64687_/RESET_B                         1.50   10.43   -8.93 (VIOLATED)
+_64688_/RESET_B                         1.50   10.43   -8.93 (VIOLATED)
+_65122_/RESET_B                         1.50   10.43   -8.93 (VIOLATED)
+_64697_/RESET_B                         1.50   10.43   -8.93 (VIOLATED)
+_64698_/RESET_B                         1.50   10.43   -8.93 (VIOLATED)
+_63719_/RESET_B                         1.50   10.43   -8.93 (VIOLATED)
+_64699_/RESET_B                         1.50   10.43   -8.93 (VIOLATED)
+_64700_/RESET_B                         1.50   10.43   -8.93 (VIOLATED)
+_63717_/RESET_B                         1.50   10.43   -8.93 (VIOLATED)
+_63718_/RESET_B                         1.50   10.43   -8.93 (VIOLATED)
+_63720_/RESET_B                         1.50   10.43   -8.93 (VIOLATED)
+_64701_/RESET_B                         1.50   10.43   -8.93 (VIOLATED)
+_64702_/RESET_B                         1.50   10.43   -8.93 (VIOLATED)
+_64704_/RESET_B                         1.50   10.43   -8.93 (VIOLATED)
+_64728_/RESET_B                         1.50   10.43   -8.93 (VIOLATED)
+_64703_/RESET_B                         1.50   10.43   -8.93 (VIOLATED)
+_63705_/RESET_B                         1.50   10.43   -8.93 (VIOLATED)
+_63724_/RESET_B                         1.50   10.43   -8.93 (VIOLATED)
+_63725_/RESET_B                         1.50   10.43   -8.93 (VIOLATED)
+_63727_/RESET_B                         1.50   10.43   -8.93 (VIOLATED)
+_63722_/RESET_B                         1.50   10.43   -8.93 (VIOLATED)
+_63723_/RESET_B                         1.50   10.43   -8.93 (VIOLATED)
+_64719_/RESET_B                         1.50   10.43   -8.93 (VIOLATED)
+_64735_/SET_B                           1.50   10.43   -8.93 (VIOLATED)
+_64736_/SET_B                           1.50   10.43   -8.93 (VIOLATED)
+_63472_/RESET_B                         1.50   10.43   -8.93 (VIOLATED)
+_63728_/RESET_B                         1.50   10.43   -8.93 (VIOLATED)
+_63471_/RESET_B                         1.50   10.43   -8.93 (VIOLATED)
+_64734_/SET_B                           1.50   10.43   -8.93 (VIOLATED)
+_63707_/SET_B                           1.50   10.43   -8.93 (VIOLATED)
+_63721_/RESET_B                         1.50   10.43   -8.93 (VIOLATED)
+_63726_/RESET_B                         1.50   10.43   -8.93 (VIOLATED)
+_63708_/SET_B                           1.50   10.43   -8.93 (VIOLATED)
+_64731_/SET_B                           1.50   10.43   -8.93 (VIOLATED)
+_64733_/SET_B                           1.50   10.42   -8.92 (VIOLATED)
+_64403_/RESET_B                         1.50   10.42   -8.92 (VIOLATED)
+_64404_/RESET_B                         1.50   10.42   -8.92 (VIOLATED)
+_63468_/RESET_B                         1.50   10.42   -8.92 (VIOLATED)
+_64689_/RESET_B                         1.50   10.42   -8.92 (VIOLATED)
+_63467_/RESET_B                         1.50   10.42   -8.92 (VIOLATED)
+_63470_/RESET_B                         1.50   10.42   -8.92 (VIOLATED)
+_63714_/RESET_B                         1.50   10.42   -8.92 (VIOLATED)
+_63709_/SET_B                           1.50   10.42   -8.92 (VIOLATED)
+_63710_/SET_B                           1.50   10.42   -8.92 (VIOLATED)
+_63712_/SET_B                           1.50   10.42   -8.92 (VIOLATED)
+_63711_/SET_B                           1.50   10.42   -8.92 (VIOLATED)
+_63713_/SET_B                           1.50   10.42   -8.92 (VIOLATED)
+_63706_/SET_B                           1.50   10.42   -8.92 (VIOLATED)
+_64732_/SET_B                           1.50   10.42   -8.92 (VIOLATED)
+_63469_/RESET_B                         1.50   10.42   -8.92 (VIOLATED)
+_64690_/RESET_B                         1.50   10.42   -8.92 (VIOLATED)
+_63465_/RESET_B                         1.50   10.42   -8.92 (VIOLATED)
+_63466_/RESET_B                         1.50   10.42   -8.92 (VIOLATED)
+_64686_/RESET_B                         1.50   10.42   -8.92 (VIOLATED)
+_64684_/RESET_B                         1.50   10.42   -8.92 (VIOLATED)
+_64685_/RESET_B                         1.50   10.42   -8.92 (VIOLATED)
+_64400_/RESET_B                         1.50   10.42   -8.92 (VIOLATED)
+_64683_/RESET_B                         1.50   10.42   -8.92 (VIOLATED)
+_38134_/B1                              1.50   10.40   -8.90 (VIOLATED)
+_58009_/X                               1.51   10.40   -8.89 (VIOLATED)
+_61498_/A                               1.50    1.62   -0.12 (VIOLATED)
+_58371_/A                               1.50    1.62   -0.12 (VIOLATED)
+_58201_/A                               1.50    1.62   -0.12 (VIOLATED)
+_34549_/A                               1.50    1.61   -0.11 (VIOLATED)
+_58262_/B1                              1.50    1.61   -0.11 (VIOLATED)
+_43632_/A                               1.50    1.61   -0.11 (VIOLATED)
+_43818_/B1                              1.50    1.61   -0.11 (VIOLATED)
+_34002_/A                               1.50    1.61   -0.11 (VIOLATED)
+_64622_/Q                               1.51    1.61   -0.10 (VIOLATED)
+_58259_/X                               1.51    1.61   -0.10 (VIOLATED)
+_58387_/A                               1.50    1.57   -0.07 (VIOLATED)
+_61497_/A                               1.50    1.57   -0.07 (VIOLATED)
+_58213_/A                               1.50    1.57   -0.07 (VIOLATED)
+_61482_/A                               1.50    1.56   -0.06 (VIOLATED)
+_64621_/Q                               1.51    1.56   -0.06 (VIOLATED)
+_60503_/A                               1.50    1.56   -0.06 (VIOLATED)
+_58246_/A                               1.50    1.55   -0.05 (VIOLATED)
+_38314_/B1                              1.50    1.55   -0.05 (VIOLATED)
+_34605_/A                               1.50    1.54   -0.04 (VIOLATED)
+_64606_/Q                               1.51    1.54   -0.04 (VIOLATED)
+_61488_/A                               1.50    1.53   -0.03 (VIOLATED)
+_60510_/A                               1.50    1.52   -0.02 (VIOLATED)
+_58087_/A                               1.50    1.52   -0.02 (VIOLATED)
+_58441_/A                               1.50    1.52   -0.02 (VIOLATED)
+_58272_/A                               1.50    1.52   -0.02 (VIOLATED)
+_61480_/A                               1.50    1.52   -0.02 (VIOLATED)
+_34590_/A1                              1.50    1.51   -0.01 (VIOLATED)
+_38351_/B1                              1.50    1.51   -0.01 (VIOLATED)
+_34614_/A                               1.50    1.51   -0.01 (VIOLATED)
+_64612_/Q                               1.51    1.51   -0.01 (VIOLATED)
+_64604_/Q                               1.51    1.51   -0.00 (VIOLATED)
+_61487_/A                               1.50    1.50   -0.00 (VIOLATED)
+_58447_/A                               1.50    1.50   -0.00 (VIOLATED)
 
 max capacitance
 
 Pin                                    Limit     Cap   Slack
 ------------------------------------------------------------
-_61028_/X                               0.20    0.78   -0.59 (VIOLATED)
+_58009_/X                               0.20    0.78   -0.59 (VIOLATED)
 
 Capacitance violations: 1
-Transition violations: 230
-wns -23.56
-tns -43.99
-Initial area: 8710001 um2
+Transition violations: 257
+wns -10.64
+tns -14.78
+Initial area: 8577562 um2
 OpenPhySyn timing repair:
-[OpenPhySyn] [2020-11-09 20:54:50.605] [info] Invoking repair_timing transform
-[OpenPhySyn] [2020-11-09 20:54:50.871] [info] Buffer library: sky130_fd_sc_hd__buf_4, sky130_fd_sc_hd__buf_2, sky130_fd_sc_hd__buf_8
-[OpenPhySyn] [2020-11-09 20:54:50.871] [info] Inverter library: None
-[OpenPhySyn] [2020-11-09 20:54:50.871] [info] Buffering: enabled
-[OpenPhySyn] [2020-11-09 20:54:50.871] [info] Driver sizing: enabled
-[OpenPhySyn] [2020-11-09 20:54:50.871] [info] Pin-swapping: enabled
-[OpenPhySyn] [2020-11-09 20:54:50.871] [info] Mode: Timing-Driven
-[OpenPhySyn] [2020-11-09 20:54:50.871] [info] Iteration 1
-[OpenPhySyn] [2020-11-09 20:54:57.373] [info] Found 8 negative slack paths
-[OpenPhySyn] [2020-11-09 20:54:57.373] [warning] Top-level
-[OpenPhySyn] [2020-11-09 20:55:08.384] [info] Runtime: 17s
-[OpenPhySyn] [2020-11-09 20:55:08.384] [info] Buffers: 1707
-[OpenPhySyn] [2020-11-09 20:55:08.384] [info] Resize up: 2
-[OpenPhySyn] [2020-11-09 20:55:08.384] [info] Resize down: 0
-[OpenPhySyn] [2020-11-09 20:55:08.384] [info] Pin Swap: 1
-[OpenPhySyn] [2020-11-09 20:55:08.384] [info] Buffered nets: 5
-[OpenPhySyn] [2020-11-09 20:55:08.384] [info] Fanout violations: 0
-[OpenPhySyn] [2020-11-09 20:55:08.384] [info] Transition violations: 230
-[OpenPhySyn] [2020-11-09 20:55:08.384] [info] Capacitance violations: 1
-[OpenPhySyn] [2020-11-09 20:55:08.384] [info] Slack gain: 3.524e-09
-[OpenPhySyn] [2020-11-09 20:55:08.384] [info] Initial area: 871000
-[OpenPhySyn] [2020-11-09 20:55:08.384] [info] New area: 879889
-[OpenPhySyn] [2020-11-09 20:55:08.384] [info] Finished repair_timing transform (1710)
-Added/updated 1710 cells
+[OpenPhySyn] [2020-11-27 19:52:44.711] [info] Invoking repair_timing transform
+[OpenPhySyn] [2020-11-27 19:52:45.123] [info] Buffer library: sky130_fd_sc_hd__buf_4, sky130_fd_sc_hd__buf_2, sky130_fd_sc_hd__buf_8
+[OpenPhySyn] [2020-11-27 19:52:45.123] [info] Inverter library: None
+[OpenPhySyn] [2020-11-27 19:52:45.123] [info] Buffering: enabled
+[OpenPhySyn] [2020-11-27 19:52:45.123] [info] Driver sizing: enabled
+[OpenPhySyn] [2020-11-27 19:52:45.123] [info] Pin-swapping: enabled
+[OpenPhySyn] [2020-11-27 19:52:45.123] [info] Mode: Timing-Driven
+[OpenPhySyn] [2020-11-27 19:52:45.123] [info] Iteration 1
+[OpenPhySyn] [2020-11-27 19:53:00.163] [info] Runtime: 15s
+[OpenPhySyn] [2020-11-27 19:53:00.163] [info] Buffers: 132
+[OpenPhySyn] [2020-11-27 19:53:00.163] [info] Resize up: 1
+[OpenPhySyn] [2020-11-27 19:53:00.163] [info] Resize down: 0
+[OpenPhySyn] [2020-11-27 19:53:00.163] [info] Pin Swap: 0
+[OpenPhySyn] [2020-11-27 19:53:00.163] [info] Buffered nets: 8
+[OpenPhySyn] [2020-11-27 19:53:00.163] [info] Fanout violations: 0
+[OpenPhySyn] [2020-11-27 19:53:00.163] [info] Transition violations: 257
+[OpenPhySyn] [2020-11-27 19:53:00.163] [info] Capacitance violations: 1
+[OpenPhySyn] [2020-11-27 19:53:00.163] [info] Slack gain: 2.14811e-09
+[OpenPhySyn] [2020-11-27 19:53:00.163] [info] Initial area: 857756
+[OpenPhySyn] [2020-11-27 19:53:00.164] [info] New area: 858554
+[OpenPhySyn] [2020-11-27 19:53:00.164] [info] Finished repair_timing transform (133)
+Added/updated 133 cells
 =============== Final Reports =============
 Startpoint: resetb (input port clocked by clock)
-Endpoint: _63984_ (recovery check against rising-edge clock clock)
+Endpoint: _63414_ (recovery check against rising-edge clock clock)
 Path Group: **async_default**
 Path Type: max
 
@@ -358,21 +383,21 @@ Path Type: max
    0.00    0.00   clock clock (rise edge)
    0.00    0.00   clock network delay (ideal)
   10.00   10.00 ^ input external delay
-   0.34   10.34 ^ resetb (in)
-   0.00   10.34 ^ _63984_/SET_B (sky130_fd_sc_hd__dfstp_4)
-          10.34   data arrival time
+   0.50   10.50 ^ resetb (in)
+   0.00   10.50 ^ _63414_/SET_B (sky130_fd_sc_hd__dfstp_4)
+          10.50   data arrival time
 
   50.00   50.00   clock clock (rise edge)
    0.00   50.00   clock network delay (ideal)
    0.00   50.00   clock reconvergence pessimism
-          50.00 ^ _63984_/CLK (sky130_fd_sc_hd__dfstp_4)
-   0.18   50.18   library recovery time
-          50.18   data required time
+          50.00 ^ _63414_/CLK (sky130_fd_sc_hd__dfstp_4)
+   0.14   50.14   library recovery time
+          50.14   data required time
 ---------------------------------------------------------
-          50.18   data required time
-         -10.34   data arrival time
+          50.14   data required time
+         -10.50   data arrival time
 ---------------------------------------------------------
-          39.84   slack (MET)
+          39.64   slack (MET)
 
 
 Startpoint: clock (clock source 'clock')
@@ -383,9 +408,9 @@ Path Type: max
   Delay    Time   Description
 ---------------------------------------------------------
   25.00   25.00   clock clock (fall edge)
-   3.57   28.57   clock network delay
-          28.57 v mgmt_out_data[14] (out)
-          28.57   data arrival time
+  12.19   37.19   clock network delay
+          37.19 v mgmt_out_data[14] (out)
+          37.19   data arrival time
 
   50.00   50.00   clock clock (rise edge)
    0.00   50.00   clock network delay (ideal)
@@ -394,14 +419,14 @@ Path Type: max
           40.00   data required time
 ---------------------------------------------------------
           40.00   data required time
-         -28.57   data arrival time
+         -37.19   data arrival time
 ---------------------------------------------------------
-          11.43   slack (MET)
+           2.81   slack (MET)
 
 
 Capacitance violations: 0
 Transition violations: 0
 wns 0.00
 tns 0.00
-Final area: 8798891 um2
+Final area: 8585540 um2
 Export optimized design

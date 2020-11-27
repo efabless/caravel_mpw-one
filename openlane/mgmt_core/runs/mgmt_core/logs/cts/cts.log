@@ -1,18 +1,19 @@
-OpenROAD 0.9.0 e582f2522b
+OpenROAD 0.9.0 d03ebfc244
 This program is licensed under the BSD-3 license. See the LICENSE file for details. 
 Components of this program may be licensed under more restrictive licenses which must be honored.
+Error: cannot open '/.openroad'.
 Notice 0: Reading LEF file:  /project/openlane/mgmt_core/runs/mgmt_core/tmp/merged_unpadded.lef
 Notice 0:     Created 13 technology layers
 Notice 0:     Created 25 technology vias
-Notice 0:     Created 439 library cells
+Notice 0:     Created 440 library cells
 Notice 0: Finished LEF file:  /project/openlane/mgmt_core/runs/mgmt_core/tmp/merged_unpadded.lef
-Warning: /home/xrex/usr/devel/pdks/sky130A/libs.ref/sky130_fd_sc_hd/lib/sky130_fd_sc_hd__tt_025C_1v80.lib, line 31 default_operating_condition tt_025C_1v80 not found.
+Warning: /home/aag/current_pdk/sky130A/libs.ref/sky130_fd_sc_hd/lib/sky130_fd_sc_hd__tt_025C_1v80.lib, line 31 default_operating_condition tt_025C_1v80 not found.
 Notice 0: 
 Reading DEF file: /project/openlane/mgmt_core/runs/mgmt_core/results/placement/mgmt_core.placement.def
 Notice 0: Design: mgmt_core
-Notice 0:     Created 959 pins.
-Notice 0:     Created 54633 components and 300944 component-terminals.
-Notice 0:     Created 37212 nets and 116318 connections.
+Notice 0:     Created 794 pins.
+Notice 0:     Created 52878 components and 289444 component-terminals.
+Notice 0:     Created 35189 nets and 112058 connections.
 Notice 0: Finished DEF file: /project/openlane/mgmt_core/runs/mgmt_core/results/placement/mgmt_core.placement.def
 [INFO]: Setting output delay to: 10.0
 [INFO]: Setting input delay to: 10.0
@@ -35,11 +36,11 @@ Number of created patterns = 300000.
 Number of created patterns = 313632.
  Compiling LUT
     Min. len    Max. len    Min. cap    Max. cap   Min. slew   Max. slew
-           2           8           1          39           1         366
+           2           8           1          39           1         318
     [WARNING] 6336 wires are pure wire and no slew degration.
     TritonCTS forced slew degradation on these wires.
     Num wire segments: 313632
-    Num keys in characterization LUT: 2073
+    Num keys in characterization LUT: 2039
     Actual min input cap: 2
  **********************
  *  Find clock roots  *
@@ -65,17 +66,16 @@ Number of created patterns = 313632.
     Tot. number of sinks: 3
     Number of static layers: 0
  Wire segment unit: 13000 dbu (13 um)
- Original sink region: [(60920, 159115), (111910, 304990)]
- Normalized sink region: [(4.68615, 12.2396), (8.60846, 23.4608)]
-    Width:  3.92231
-    Height: 11.2212
- [WARNING] Creating fake entries in the LUT.
+ Original sink region: [(104550, 304990), (316530, 376715)]
+ Normalized sink region: [(8.04231, 23.4608), (24.3485, 28.9781)]
+    Width:  16.3062
+    Height: 5.51731
  Level 1
-    Direction: Vertical
+    Direction: Horizontal
     # sinks per sub-region: 2
-    Sub-region size: 3.92231 X 5.61058
-    Segment length (rounded): 1
-    Key: 313864 outSlew: 11 load: 1 length: 1 isBuffered: 1
+    Sub-region size: 8.15308 X 5.51731
+    Segment length (rounded): 4
+    Key: 328 outSlew: 11 load: 1 length: 4 isBuffered: 1
  Stop criterion found. Max number of sinks is (15)
  Building clock sub nets...
  Number of sinks covered: 3
@@ -83,7 +83,7 @@ Number of created patterns = 313632.
  ****************
  * Post CTS opt *
  ****************
- Avg. source sink dist: 80234.3 dbu.
+ Avg. source sink dist: 122530 dbu.
  Num outlier sinks: 0
  ********************
  * Write data to DB *
@@ -100,24 +100,24 @@ Number of created patterns = 313632.
 Warning: could not find power special net
 Design Stats
 --------------------------------
-total instances         54636
+total instances         52881
 multi row instances         0
-fixed instances         17964
-nets                    37215
+fixed instances         18072
+nets                    35192
 design area          1768316.0 u^2
-fixed area            29568.8 u^2
-movable area         412376.8 u^2
-utilization                24 %
-utilization padded         24 %
+fixed area            28734.9 u^2
+movable area         400457.8 u^2
+utilization                23 %
+utilization padded         23 %
 rows                      304
 row height                2.7 u
 
 Placement Analysis
 --------------------------------
-total displacement       17.7 u
+total displacement      116.1 u
 average displacement      0.0 u
-max displacement          3.2 u
-original HPWL        2726124.1 u
-legalized HPWL       2726150.4 u
-delta HPWL                  0 %
+max displacement         80.6 u
+original HPWL        2433224.2 u
+legalized HPWL       2433176.0 u
+delta HPWL                 -0 %
 

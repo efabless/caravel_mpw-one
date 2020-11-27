@@ -1,21 +1,7 @@
 
-25. Executing CHECK pass (checking for obvious problems).
+26. Executing CHECK pass (checking for obvious problems).
 checking module mgmt_core..
-Warning: Wire mgmt_core.\user_ena [5] is used but has no driver.
-Warning: Wire mgmt_core.\user_ena [4] is used but has no driver.
-Warning: Wire mgmt_core.\user_ena [3] is used but has no driver.
-Warning: Wire mgmt_core.\user_ena [2] is used but has no driver.
-Warning: Wire mgmt_core.\user_ena [1] is used but has no driver.
-Warning: Wire mgmt_core.\user_ena [0] is used but has no driver.
 Warning: Wire mgmt_core.\user_clk is used but has no driver.
-Warning: Wire mgmt_core.\user_addr [7] is used but has no driver.
-Warning: Wire mgmt_core.\user_addr [6] is used but has no driver.
-Warning: Wire mgmt_core.\user_addr [5] is used but has no driver.
-Warning: Wire mgmt_core.\user_addr [4] is used but has no driver.
-Warning: Wire mgmt_core.\user_addr [3] is used but has no driver.
-Warning: Wire mgmt_core.\user_addr [2] is used but has no driver.
-Warning: Wire mgmt_core.\user_addr [1] is used but has no driver.
-Warning: Wire mgmt_core.\user_addr [0] is used but has no driver.
 Warning: Wire mgmt_core.\sdo_outenb is used but has no driver.
 Warning: Wire mgmt_core.\sdo_out is used but has no driver.
 Warning: Wire mgmt_core.\pwr_ctrl_out [3] is used but has no driver.
@@ -86,6 +72,8 @@ Warning: Wire mgmt_core.\mprj_adr_o [13] is used but has no driver.
 Warning: Wire mgmt_core.\mprj_adr_o [12] is used but has no driver.
 Warning: Wire mgmt_core.\mprj_adr_o [11] is used but has no driver.
 Warning: Wire mgmt_core.\mprj_adr_o [10] is used but has no driver.
+Warning: Wire mgmt_core.\mprj_adr_o [9] is used but has no driver.
+Warning: Wire mgmt_core.\mprj_adr_o [8] is used but has no driver.
 Warning: Wire mgmt_core.\mprj_adr_o [7] is used but has no driver.
 Warning: Wire mgmt_core.\mprj_adr_o [6] is used but has no driver.
 Warning: Wire mgmt_core.\mprj_adr_o [5] is used but has no driver.
@@ -142,10 +130,17 @@ Warning: Wire mgmt_core.\mgmt_out_data [3] is used but has no driver.
 Warning: Wire mgmt_core.\mgmt_out_data [2] is used but has no driver.
 Warning: Wire mgmt_core.\mgmt_out_data [1] is used but has no driver.
 Warning: Wire mgmt_core.\mgmt_out_data [0] is used but has no driver.
+Warning: Wire mgmt_core.\mgmt_ena_ro is used but has no driver.
 Warning: Wire mgmt_core.\mgmt_ena [1] is used but has no driver.
 Warning: Wire mgmt_core.\mgmt_ena [0] is used but has no driver.
-Warning: Wire mgmt_core.\mgmt_addr [1] is used but has no driver.
-Warning: Wire mgmt_core.\mgmt_addr [0] is used but has no driver.
+Warning: Wire mgmt_core.\mgmt_addr_ro [7] is used but has no driver.
+Warning: Wire mgmt_core.\mgmt_addr_ro [6] is used but has no driver.
+Warning: Wire mgmt_core.\mgmt_addr_ro [5] is used but has no driver.
+Warning: Wire mgmt_core.\mgmt_addr_ro [4] is used but has no driver.
+Warning: Wire mgmt_core.\mgmt_addr_ro [3] is used but has no driver.
+Warning: Wire mgmt_core.\mgmt_addr_ro [2] is used but has no driver.
+Warning: Wire mgmt_core.\mgmt_addr_ro [1] is used but has no driver.
+Warning: Wire mgmt_core.\mgmt_addr_ro [0] is used but has no driver.
 Warning: Wire mgmt_core.\la_output [127] is used but has no driver.
 Warning: Wire mgmt_core.\la_output [126] is used but has no driver.
 Warning: Wire mgmt_core.\la_output [125] is used but has no driver.
@@ -460,14 +455,14 @@ Warning: Wire mgmt_core.\mgmt_wdata [2] is used but has no driver.
 Warning: Wire mgmt_core.\mgmt_wdata [1] is used but has no driver.
 Warning: Wire mgmt_core.\mgmt_wdata [0] is used but has no driver.
 Warning: Wire mgmt_core.\core_clk is used but has no driver.
-Warning: Wire mgmt_core.\mprj_adr_o [9] is used but has no driver.
-Warning: Wire mgmt_core.\mprj_adr_o [8] is used but has no driver.
 Warning: Wire mgmt_core.\mgmt_addr [7] is used but has no driver.
 Warning: Wire mgmt_core.\mgmt_addr [6] is used but has no driver.
 Warning: Wire mgmt_core.\mgmt_addr [5] is used but has no driver.
 Warning: Wire mgmt_core.\mgmt_addr [4] is used but has no driver.
 Warning: Wire mgmt_core.\mgmt_addr [3] is used but has no driver.
 Warning: Wire mgmt_core.\mgmt_addr [2] is used but has no driver.
+Warning: Wire mgmt_core.\mgmt_addr [1] is used but has no driver.
+Warning: Wire mgmt_core.\mgmt_addr [0] is used but has no driver.
 Warning: Wire mgmt_core.\housekeeping.pll_trim[25] is used but has no driver.
 Warning: Wire mgmt_core.\housekeeping.pll_trim[24] is used but has no driver.
 Warning: Wire mgmt_core.\housekeeping.pll_trim[23] is used but has no driver.
@@ -501,4 +496,4 @@ Warning: Wire mgmt_core.\housekeeping.pll_div[2] is used but has no driver.
 Warning: Wire mgmt_core.\housekeeping.pll_div[1] is used but has no driver.
 Warning: Wire mgmt_core.\housekeeping.pll_div[0] is used but has no driver.
 Warning: Wire mgmt_core.\housekeeping.pll_dco_ena is used but has no driver.
-found and reported 500 problems.
+found and reported 495 problems.

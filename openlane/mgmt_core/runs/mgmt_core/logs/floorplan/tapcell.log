@@ -1,25 +1,26 @@
-OpenROAD 0.9.0 e582f2522b
+OpenROAD 0.9.0 d03ebfc244
 This program is licensed under the BSD-3 license. See the LICENSE file for details. 
 Components of this program may be licensed under more restrictive licenses which must be honored.
+Error: cannot open '/.openroad'.
 Notice 0: Reading LEF file:  /project/openlane/mgmt_core/runs/mgmt_core/tmp/merged_unpadded.lef
 Notice 0:     Created 13 technology layers
 Notice 0:     Created 25 technology vias
-Notice 0:     Created 439 library cells
+Notice 0:     Created 440 library cells
 Notice 0: Finished LEF file:  /project/openlane/mgmt_core/runs/mgmt_core/tmp/merged_unpadded.lef
 Notice 0: 
-Reading DEF file: /project/openlane/mgmt_core/runs/mgmt_core/tmp/placement/replace.def.macro_placement.def
+Reading DEF file: /project/openlane/mgmt_core/runs/mgmt_core/tmp/floorplan/verilog2def_openroad.def.macro_placement.def
 Notice 0: Design: mgmt_core
-Notice 0:     Created 959 pins.
-Notice 0:     Created 34964 components and 252770 component-terminals.
-Notice 0:     Created 35505 nets and 112904 connections.
-Notice 0: Finished DEF file: /project/openlane/mgmt_core/runs/mgmt_core/tmp/placement/replace.def.macro_placement.def
+Notice 0:     Created 794 pins.
+Notice 0:     Created 34676 components and 250504 component-terminals.
+Notice 0:     Created 35057 nets and 111794 connections.
+Notice 0: Finished DEF file: /project/openlane/mgmt_core/runs/mgmt_core/tmp/floorplan/verilog2def_openroad.def.macro_placement.def
 Running tapcell...
 Step 1: Cut rows...
 [INFO] Macro blocks found: 2
 [INFO] #Original rows: 304
-[INFO] #Cut rows: 286
+[INFO] #Cut rows: 278
 Step 2: Insert endcaps...
 [INFO] #Endcaps inserted: 1004
 Step 3: Insert tapcells...
-[INFO] #Tapcells inserted: 16958
+[INFO] #Tapcells inserted: 17066
 Running tapcell... Done!

@@ -1,0 +1,54 @@
+OpenROAD 0.9.0 d03ebfc244
+This program is licensed under the BSD-3 license. See the LICENSE file for details. 
+Components of this program may be licensed under more restrictive licenses which must be honored.
+Error: cannot open '/.openroad'.
+Notice 0: Reading LEF file:  /project/openlane/mgmt_core/runs/mgmt_core/tmp/top_level.lef
+Notice 0: 1000000 lines parsed!
+Notice 0: 2000000 lines parsed!
+Notice 0: 3000000 lines parsed!
+Notice 0: 4000000 lines parsed!
+Notice 0:     Created 13 technology layers
+Notice 0:     Created 25 technology vias
+Notice 0:     Created 77 library cells
+Notice 0: Finished LEF file:  /project/openlane/mgmt_core/runs/mgmt_core/tmp/top_level.lef
+Notice 0: Reading LEF file:  /project/openlane/mgmt_core/runs/mgmt_core/tmp/merged.lef
+Notice 0: warning: duplicate VIARULE (L1M1_PR) ignoring...Notice 0: warning: duplicate VIARULE (L1M1_PR_R) ignoring...Notice 0: warning: duplicate VIARULE (L1M1_PR_M) ignoring...Notice 0: warning: duplicate VIARULE (L1M1_PR_MR) ignoring...Notice 0: warning: duplicate VIARULE (L1M1_PR_C) ignoring...Notice 0: warning: duplicate VIARULE (M1M2_PR) ignoring...Notice 0: warning: duplicate VIARULE (M1M2_PR_R) ignoring...Notice 0: warning: duplicate VIARULE (M1M2_PR_M) ignoring...Notice 0: warning: duplicate VIARULE (M1M2_PR_MR) ignoring...Notice 0: warning: duplicate VIARULE (M1M2_PR_C) ignoring...Notice 0: warning: duplicate VIARULE (M2M3_PR) ignoring...Notice 0: warning: duplicate VIARULE (M2M3_PR_R) ignoring...Notice 0: warning: duplicate VIARULE (M2M3_PR_M) ignoring...Notice 0: warning: duplicate VIARULE (M2M3_PR_MR) ignoring...Notice 0: warning: duplicate VIARULE (M2M3_PR_C) ignoring...Notice 0: warning: duplicate VIARULE (M3M4_PR) ignoring...Notice 0: warning: duplicate VIARULE (M3M4_PR_R) ignoring...Notice 0: warning: duplicate VIARULE (M3M4_PR_M) ignoring...Notice 0: warning: duplicate VIARULE (M3M4_PR_MR) ignoring...Notice 0: warning: duplicate VIARULE (M3M4_PR_C) ignoring...Notice 0: warning: duplicate VIARULE (M4M5_PR) ignoring...Notice 0: warning: duplicate VIARULE (M4M5_PR_R) ignoring...Notice 0: warning: duplicate VIARULE (M4M5_PR_M) ignoring...Notice 0: warning: duplicate VIARULE (M4M5_PR_MR) ignoring...Notice 0: warning: duplicate VIARULE (M4M5_PR_C) ignoring...Notice 0:     Created 440 library cells
+Notice 0: Finished LEF file:  /project/openlane/mgmt_core/runs/mgmt_core/tmp/merged.lef
+Notice 0: 
+Reading DEF file: /project/openlane/mgmt_core/runs/mgmt_core/tmp/floorplan/ioPlacer.context.def
+Notice 0: Design: mgmt_core
+Notice 0:     Created 794 pins.
+Notice 0:     Created 34721 components and 253544 component-terminals.
+Notice 0:     Created 35057 nets and 951 connections.
+Notice 0: Finished DEF file: /project/openlane/mgmt_core/runs/mgmt_core/tmp/floorplan/ioPlacer.context.def
+[ERROR] Macro pll is not placed
+[ERROR] Macro soc.soc_mem.mem.SRAM is not placed
+#Macro blocks found: 43
+Using 5u default boundaries offset
+Using 2 tracks default min distance between IO pins
+ > Running IO placement
+ * Num of slots          5900
+ * Num of I/O            794
+ * Num of I/O w/sink     711
+ * Num of I/O w/o sink   83
+ * Slots Per Section     2
+ * Slots Increase Factor 0.01
+ * Usage Per Section     0.8
+ * Usage Increase Factor 0.01
+ * Force Pin Spread      1
+
+Tentative 0 to setup sections
+ * Num of slots          5900
+ * Num of I/O            794
+ * Num of I/O w/sink     711
+ * Num of I/O w/o sink   83
+ * Slots Per Section     2
+ * Slots Increase Factor 0.01
+ * Usage Per Section     0.8
+ * Usage Increase Factor 0.01
+ * Force Pin Spread      1
+
+ > Successfully assigned I/O pins
+Warning: Number of sections is 2950 while the maximum recommended value is 600 this may negatively affect performance
+
+ > IO placement done.

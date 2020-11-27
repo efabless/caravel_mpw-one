@@ -1,45 +1,46 @@
-OpenROAD 0.9.0 e582f2522b
+OpenROAD 0.9.0 d03ebfc244
 This program is licensed under the BSD-3 license. See the LICENSE file for details. 
 Components of this program may be licensed under more restrictive licenses which must be honored.
+Error: cannot open '/.openroad'.
 Notice 0: Reading LEF file:  /project/openlane/mgmt_core/runs/mgmt_core/tmp/merged_unpadded.lef
 Notice 0:     Created 13 technology layers
 Notice 0:     Created 25 technology vias
-Notice 0:     Created 439 library cells
+Notice 0:     Created 440 library cells
 Notice 0: Finished LEF file:  /project/openlane/mgmt_core/runs/mgmt_core/tmp/merged_unpadded.lef
 Notice 0: 
 Reading DEF file: /project/openlane/mgmt_core/runs/mgmt_core/tmp/floorplan/pdn.def
 Notice 0: Design: mgmt_core
-Notice 0:     Created 961 pins.
-Notice 0:     Created 54636 components and 300962 component-terminals.
+Notice 0:     Created 796 pins.
+Notice 0:     Created 52881 components and 289462 component-terminals.
 Notice 0:     Created 2 special nets and 0 connections.
-Notice 0:     Created 37215 nets and 116324 connections.
+Notice 0:     Created 35192 nets and 112064 connections.
 Notice 0: Finished DEF file: /project/openlane/mgmt_core/runs/mgmt_core/tmp/floorplan/pdn.def
 [INFO]: Inserting sky130_fd_sc_hd__diode_2...
 [WARN]: Skipping VPWR
 [WARN]: Skipping VGND
 
-[INFO]: 79600 of sky130_fd_sc_hd__diode_2 inserted!
+[INFO]: 77203 of sky130_fd_sc_hd__diode_2 inserted!
 [INFO]: Legalizing...
 Design Stats
 --------------------------------
-total instances        134236
+total instances        130084
 multi row instances         0
-fixed instances         17964
-nets                    37217
+fixed instances         18072
+nets                    35194
 design area          1768316.0 u^2
-fixed area            29568.8 u^2
-movable area         611567.8 u^2
-utilization                35 %
-utilization padded         47 %
+fixed area            28734.9 u^2
+movable area         593650.6 u^2
+utilization                34 %
+utilization padded         45 %
 rows                      304
 row height                2.7 u
 
 Placement Analysis
 --------------------------------
-total displacement   345908.2 u
-average displacement      2.6 u
-max displacement        189.7 u
-original HPWL        2769508.2 u
-legalized HPWL       2866368.7 u
-delta HPWL                  3 %
+total displacement   386208.6 u
+average displacement      3.0 u
+max displacement        169.0 u
+original HPWL        2474819.3 u
+legalized HPWL       2600317.3 u
+delta HPWL                  5 %
 

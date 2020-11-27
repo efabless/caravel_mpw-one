@@ -1,18 +1,18 @@
-OpenSTA 2.2.0 0d73b5b65a Copyright (c) 2019, Parallax Software, Inc.
+OpenSTA 2.2.0 7662c12482 Copyright (c) 2019, Parallax Software, Inc.
 License GPLv3: GNU GPL version 3 <http://gnu.org/licenses/gpl.html>
 
 This is free software, and you are free to change and redistribute it
 under certain conditions; type `show_copying' for details. 
 This program comes with ABSOLUTELY NO WARRANTY; for details type `show_warranty'.
-Warning: /home/xrex/usr/devel/pdks/sky130A/libs.ref/sky130_fd_sc_hd/lib/sky130_fd_sc_hd__ff_n40C_1v95.lib, line 31 default_operating_condition ff_n40C_1v95 not found.
-Warning: /home/xrex/usr/devel/pdks/sky130A/libs.ref/sky130_fd_sc_hd/lib/sky130_fd_sc_hd__ss_100C_1v60.lib, line 32 default_operating_condition ss_100C_1v60 not found.
-Warning: /project/openlane/mgmt_core/runs/mgmt_core/results/synthesis/mgmt_core.synthesis_optimized.v, line 112913 module digital_pll not found.  Creating black box for pll.
-Warning: /project/openlane/mgmt_core/runs/mgmt_core/results/synthesis/mgmt_core.synthesis_optimized.v, line 112950 module DFFRAM not found.  Creating black box for \soc.soc_mem.mem.SRAM .
-Warning: /project/openlane/mgmt_core/runs/mgmt_core/results/synthesis/mgmt_core.synthesis_optimized.v, line 114032 module sky130_fd_sc_hd__tapvpwrvgnd_1 not found.  Creating black box for PHY_1004.
+Error: cannot open '/.sta'.
+Warning: /home/aag/current_pdk/sky130A/libs.ref/sky130_fd_sc_hd/lib/sky130_fd_sc_hd__ff_n40C_1v95.lib, line 31 default_operating_condition ff_n40C_1v95 not found.
+Warning: /home/aag/current_pdk/sky130A/libs.ref/sky130_fd_sc_hd/lib/sky130_fd_sc_hd__ss_100C_1v60.lib, line 32 default_operating_condition ss_100C_1v60 not found.
+Warning: /project/openlane/mgmt_core/runs/mgmt_core/results/synthesis/mgmt_core.synthesis_optimized.v, line 111803 module digital_pll not found.  Creating black box for pll.
+Warning: /project/openlane/mgmt_core/runs/mgmt_core/results/synthesis/mgmt_core.synthesis_optimized.v, line 111840 module DFFRAM not found.  Creating black box for \soc.soc_mem.mem.SRAM .
+Warning: /project/openlane/mgmt_core/runs/mgmt_core/results/synthesis/mgmt_core.synthesis_optimized.v, line 112922 module sky130_fd_sc_hd__tapvpwrvgnd_1 not found.  Creating black box for PHY_1004.
 create_clock [get_ports $::env(CLOCK_PORT)]  -name $::env(CLOCK_PORT)  -period $::env(CLOCK_PERIOD)
-set IO_PCT  0.2
-set input_delay_value [expr $::env(CLOCK_PERIOD) * $IO_PCT]
-set output_delay_value [expr $::env(CLOCK_PERIOD) * $IO_PCT]
+set input_delay_value [expr $::env(CLOCK_PERIOD) * $::env(IO_PCT)]
+set output_delay_value [expr $::env(CLOCK_PERIOD) * $::env(IO_PCT)]
 puts "\[INFO\]: Setting output delay to: $output_delay_value"
 [INFO]: Setting output delay to: 10.0
 puts "\[INFO\]: Setting input delay to: $input_delay_value"
