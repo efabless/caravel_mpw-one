@@ -82,7 +82,7 @@ value="
 .options TEMP = 65.0
 
 * Include Models
-.lib /home/dhernando/projects/foundry/skywater-pdk/libraries/sky130_fd_pr/latest/models/corners/sky130.lib TT
+.lib ~/skywater_pdk/skywater-pdk/libraries/sky130_fd_pr/latest/models/corners/sky130.lib TT
 
 * OP Parameters & Singals to save
 .save all
@@ -106,13 +106,13 @@ value="
   *print PM*180/PI
   *meas ac GM find vdb(vout) when vp(vout)=0
   plot vdb(vout) \{vp(vout)*180/PI\}
-  write ~/Documentos/opamp-sky130-fulgor/xschem/sim_results/opamp_closeloop_ac1.raw
+  write ~/fulgor-opamp-sky130/xschem/sim_results/opamp_closeloop_ac1.raw
   
   reset
   tran 0.01u 11u
   setplot tran1
   plot v(vsen) v(vout)
-  write ~/Documentos/opamp-sky130-fulgor/xschem/sim_results/opamp_closeloop_tran1.raw
+  write ~/fulgor-opamp-sky130/xschem/sim_results/opamp_closeloop_tran1.raw
 
   reset    
   noise v(vout) V4 dec 100 1k 10G 1
@@ -124,13 +124,13 @@ value="
   *plot inoise_total onoise_total
   print inoise_total
   print onoise_total
-  write ~/Documentos/opamp-sky130-fulgor/xschem/sim_results/opamp_closeloop_noise.raw
+  write ~/fulgor-opamp-sky130/xschem/sim_results/opamp_closeloop_noise.raw
   
   reset
   op
   setplot op1
   print vout  
-  write ~/Documentos/opamp-sky130-fulgor/xschem/sim_results/opamp_closeloop_op1.raw
+  write ~/fulgor-opamp-sky130/xschem/sim_results/opamp_closeloop_op1.raw
   
 .endc
 
