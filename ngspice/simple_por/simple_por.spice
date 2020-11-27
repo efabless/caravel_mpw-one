@@ -34,7 +34,7 @@ Xres1 vdd3v3 vin vss sky130_fd_pr__res_xhigh_po_0p69 l=500
 * Note: 6 resistors of length 25um connected in series
 Xres2 vin vss vss sky130_fd_pr__res_xhigh_po_0p69 l=150
 * Note: 2 dummy resistors of length 25um
-Xres3 vss vss vss sky130_fd_pr__res_xhigh_po_0p69 l=50
+Xres3 vss vss vss sky130_fd_pr__res_xhigh_po_0p69 l=25 m=2
 
 * Triple current mirror, ratios 8:1, 7:1, and 7:1, with p-cascodes
 *   D     G     S      B
