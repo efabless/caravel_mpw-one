@@ -11,74 +11,60 @@ init_floorplan
 
 add_macro_placement padframe 0 0 N
 add_macro_placement storage 280.650 263.920 N
-add_macro_placement soc 1059.120 274.435 N
-add_macro_placement mprj 374.750 1349.705 N
+add_macro_placement soc 1004.950 292.4900 N
+add_macro_placement mprj 326.385 1349.705 N
 add_macro_placement mgmt_buffers 1066.855 1223.255 N
 add_macro_placement rstb_level 767.850 211.805 N
-add_macro_placement user_id_value 778.715 1158.940 N
+add_macro_placement user_id_value 791.230 1236.990 N
 add_macro_placement por 905.435 1237.260 N
 
 # west
-# gpio_control_blocks: 37 ... 32
-set x 39.250
-set y 994.760
-set pitch 223
-set orient N
-for {set i 37} {$i >= 32} {incr i -1} {
-	add_macro_placement "gpio_control_in\\\[$i\\\]" $x $y $orient
-	set y [expr {$y + $pitch}]
-}
+set west_x 42.835
+add_macro_placement "gpio_control_in\\\[37\\\]" $west_x 1013.000 R0
+add_macro_placement "gpio_control_in\\\[36\\\]" $west_x 1229.000 R0
+add_macro_placement "gpio_control_in\\\[35\\\]" $west_x 1445.000 R0
+add_macro_placement "gpio_control_in\\\[34\\\]" $west_x 1661.000 R0
+add_macro_placement "gpio_control_in\\\[33\\\]" $west_x 1877.000 R0
+add_macro_placement "gpio_control_in\\\[32\\\]" $west_x 2093.000 R0
+add_macro_placement "gpio_control_in\\\[31\\\]" $west_x 2731.000 R0
 
-# gpio_control_in: 31 ... 25
-set y [expr {$y + 2 * $pitch}]
-for {set i 31} {$i >= 25} {incr i -1} {
-	add_macro_placement "gpio_control_in\\\[$i\\\]" $x $y $orient
-	set y [expr {$y + $pitch}]
-}
-
-# gpio_control_in: 24
-set y [expr {$y + $pitch}]
-add_macro_placement "gpio_control_in\\\[24\\\]" $x $y $orient
-
-# east
-# gpio_control_bidir: 0 ... 1
-set x 3373.015
-set y 588.645
-set pitch 233
-set orient MY
-for {set i 0} {$i <= 1} {incr i} {
-	add_macro_placement "gpio_control_bidir\\\[$i\\\]" $x $y $orient
-	set y [expr {$y + $pitch}]
-}
-
-# gpio_control_in: 2 ... 6
-for {set i 2} {$i <= 6} {incr i} {
-	add_macro_placement "gpio_control_in\\\[$i\\\]" $x $y $orient
-	set y [expr {$y + $pitch}]
-}
-
-set y [expr {$y + $pitch}]
-# gpio_control_in: 7 ... 13
-for {set i 7} {$i <= 13} {incr i} {
-	add_macro_placement "gpio_control_in\\\[$i\\\]" $x $y $orient
-	set y [expr {$y + $pitch}]
-}
-
-# gpio_control_in: 14
-set y [expr {$y + 2 * $pitch - 7}]
-add_macro_placement "gpio_control_in\\\[14\\\]" $x $y $orient
+add_macro_placement "gpio_control_in\\\[30\\\]" $west_x 2947.000 R0
+add_macro_placement "gpio_control_in\\\[29\\\]" $west_x 3163.000 R0
+add_macro_placement "gpio_control_in\\\[28\\\]" $west_x 3379.000 R0
+add_macro_placement "gpio_control_in\\\[27\\\]" $west_x 3595.000 R0
+add_macro_placement "gpio_control_in\\\[26\\\]" $west_x 3811.000 R0
+add_macro_placement "gpio_control_in\\\[25\\\]" $west_x 4027.000 R0
+add_macro_placement "gpio_control_in\\\[24\\\]" $west_x 4449.000 R0
 
 # north
-# gpio_control_in: 23 ... 15
-set x 480.150
-set y 4979.065
-set pitch 273
-set orient R270
-for {set i 23} {$i >= 15} {incr i -1} {
-	add_macro_placement "gpio_control_in\\\[$i\\\]" $x $y $orient
-	set x [expr {$x + $pitch}]
-}
+set north_y 4979.065
+add_macro_placement "gpio_control_in\\\[23\\\]" 486.000 $north_y R270
+add_macro_placement "gpio_control_in\\\[22\\\]" 743.000 $north_y R270
+add_macro_placement "gpio_control_in\\\[21\\\]" 1000.000 $north_y R270
+add_macro_placement "gpio_control_in\\\[20\\\]" 1257.000 $north_y R270
+add_macro_placement "gpio_control_in\\\[19\\\]" 1515.000 $north_y R270
+add_macro_placement "gpio_control_in\\\[18\\\]" 1767.000 $north_y R270
+add_macro_placement "gpio_control_in\\\[17\\\]" 2104.000 $north_y R270
+add_macro_placement "gpio_control_in\\\[16\\\]" 2489.000 $north_y R270
+add_macro_placement "gpio_control_in\\\[15\\\]" 2746.000 $north_y R270
 
+# east
+set east_x 3373.015
+add_macro_placement "gpio_control_bidir\\\[0\\\]" $east_x 605.000 MY
+add_macro_placement "gpio_control_bidir\\\[1\\\]" $east_x 831.000 MY
+add_macro_placement "gpio_control_in\\\[2\\\]" $east_x 1056.000 MY
+add_macro_placement "gpio_control_in\\\[3\\\]" $east_x 1282.000 MY
+add_macro_placement "gpio_control_in\\\[4\\\]" $east_x 1507.000 MY
+add_macro_placement "gpio_control_in\\\[5\\\]" $east_x 1732.000 MY
+add_macro_placement "gpio_control_in\\\[6\\\]" $east_x 1958.000 MY
+add_macro_placement "gpio_control_in\\\[7\\\]" $east_x 2399.000 MY
+add_macro_placement "gpio_control_in\\\[8\\\]" $east_x 2619.000 MY
+add_macro_placement "gpio_control_in\\\[9\\\]" $east_x 2844.000 MY
+add_macro_placement "gpio_control_in\\\[10\\\]" $east_x 3070.000 MY
+add_macro_placement "gpio_control_in\\\[11\\\]" $east_x 3295.000 MY
+add_macro_placement "gpio_control_in\\\[12\\\]" $east_x 3521.000 MY
+add_macro_placement "gpio_control_in\\\[13\\\]" $east_x 3746.000 MY
+add_macro_placement "gpio_control_in\\\[14\\\]" $east_x 4638.000 MY
 
 manual_macro_placement f
 
@@ -86,10 +72,10 @@ manual_macro_placement f
 remove_pins -input $::env(CURRENT_DEF)
 remove_empty_nets -input $::env(CURRENT_DEF)
 
-# li1_hack_start
+li1_hack_start
 global_routing
 detailed_routing
-# li1_hack_end
+li1_hack_end
 
 run_magic
 

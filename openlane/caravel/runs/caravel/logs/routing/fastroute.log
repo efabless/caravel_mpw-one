@@ -1,0 +1,3304 @@
+OpenROAD 0.9.0 d03ebfc244
+This program is licensed under the BSD-3 license. See the LICENSE file for details. 
+Components of this program may be licensed under more restrictive licenses which must be honored.
+Error: cannot open '/.openroad'.
+Warning: /home/xrex/usr/devel/pdks/sky130A/libs.ref/sky130_fd_sc_hvl/lib/sky130_fd_sc_hvl__tt_025C_3v30.lib, line 35 default_operating_condition tt_025C_3v30 not found.
+Warning: /home/xrex/usr/devel/pdks/sky130A/libs.ref/sky130_fd_sc_hvl/lib/sky130_fd_sc_hvl__tt_025C_3v30_lv1v80.lib, line 31 default_operating_condition tt_025C_3v30_lv1v80 not found.
+Notice 0: Reading LEF file:  /project/openlane/caravel/runs/caravel/tmp/merged_unpadded.lef
+Notice 0: error: undefined layer (M4M5_PR_C) referenced
+Notice 0: error: undefined layer (M4M5_PR_C) referenced
+Notice 0: error: undefined layer (M4M5_PR_C) referenced
+Notice 0: error: undefined layer (M4M5_PR_C) referenced
+Notice 0: error: undefined layer (M4M5_PR_C) referenced
+Notice 0: error: undefined layer (M4M5_PR_C) referenced
+Notice 0: error: undefined layer (M4M5_PR_C) referenced
+Notice 0: error: undefined layer (M4M5_PR_C) referenced
+Notice 0:     Created 13 technology layers
+Notice 0:     Created 25 technology vias
+Notice 0:     Created 79 library cells
+Notice 0: Finished LEF file:  /project/openlane/caravel/runs/caravel/tmp/merged_unpadded.lef
+Notice 0: 
+Reading DEF file: /project/openlane/caravel/runs/caravel/tmp/floorplan/verilog2def_openroad.def.macro_placement.def
+Notice 0: Design: caravel
+Notice 0:     Created 47 components and 4064 component-terminals.
+Notice 0:     Created 1244 nets and 2710 connections.
+Notice 0: Finished DEF file: /project/openlane/caravel/runs/caravel/tmp/floorplan/verilog2def_openroad.def.macro_placement.def
+[PARAMS] Min routing layer: 2
+[PARAMS] Max routing layer: 6
+[PARAMS] Global adjustment: 0
+[PARAMS] Unidirectional routing: 1
+[PARAMS] Grid origin: (-1, -1)
+[INFO] #DB Obstructions: 0
+[WARNING] Found obstacle outside die area in instance obs_li1
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[WARNING] Found obstacle outside die area in instance padframe
+[INFO] #DB Obstacles: 17940
+[INFO] #DB Macros: 47
+[INFO] Found 0 clock nets
+[INFO] Minimum degree: 2
+[INFO] Maximum degree: 40
+[INFO] Processing 109 obstacles on layer 1
+[INFO] Processing 1961 obstacles on layer 2
+[INFO] Processing 7992 obstacles on layer 3
+[INFO] Processing 4667 obstacles on layer 4
+[INFO] Processing 4447 obstacles on layer 5
+[INFO] Processing 3028 obstacles on layer 6
+[INFO] Reducing resources of layer 1 by 99%
+[INFO] WIRELEN : 136822, WIRELEN1 : 0
+[INFO] NumSeg  : 1452
+[INFO] NumShift: 0
+First L Route
+[INFO] WIRELEN : 136813, WIRELEN1 : 136813
+[INFO] NumSeg  : 1453
+[INFO] NumShift: 1
+[Overflow Report] Total hCap    : 2742430
+[Overflow Report] Total vCap    : 1722178
+[Overflow Report] Total Usage   : 136813
+[Overflow Report] Max H Overflow: 20
+[Overflow Report] Max V Overflow: 15
+[Overflow Report] Max Overflow  : 20
+[Overflow Report] Num Overflow e: 35945
+[Overflow Report] H   Overflow  : 27183
+[Overflow Report] V   Overflow  : 19303
+[Overflow Report] Final Overflow: 46486
+
+Second L Route
+[Overflow Report] Total hCap    : 2742430
+[Overflow Report] Total vCap    : 1722178
+[Overflow Report] Total Usage   : 136813
+[Overflow Report] Max H Overflow: 19
+[Overflow Report] Max V Overflow: 15
+[Overflow Report] Max Overflow  : 19
+[Overflow Report] Num Overflow e: 35498
+[Overflow Report] H   Overflow  : 26751
+[Overflow Report] V   Overflow  : 19027
+[Overflow Report] Final Overflow: 45778
+
+First Z Route
+[Overflow Report] Total hCap    : 2742430
+[Overflow Report] Total vCap    : 1722178
+[Overflow Report] Total Usage   : 136813
+[Overflow Report] Max H Overflow: 5
+[Overflow Report] Max V Overflow: 25
+[Overflow Report] Max Overflow  : 25
+[Overflow Report] Num Overflow e: 16317
+[Overflow Report] H   Overflow  : 9383
+[Overflow Report] V   Overflow  : 13375
+[Overflow Report] Final Overflow: 22758
+
+[INFO] LV routing round 0, enlarge 10 
+[INFO] 10 threshold, 10 expand
+[Overflow Report] total Usage   : 137897
+[Overflow Report] Max H Overflow: 2
+[Overflow Report] Max V Overflow: 5
+[Overflow Report] Max Overflow  : 5
+[Overflow Report] Num Overflow e: 6703
+[Overflow Report] H   Overflow  : 893
+[Overflow Report] V   Overflow  : 6656
+[Overflow Report] Final Overflow: 7549
+
+[INFO] LV routing round 1, enlarge 15 
+[INFO] 5 threshold, 15 expand
+[Overflow Report] total Usage   : 137801
+[Overflow Report] Max H Overflow: 2
+[Overflow Report] Max V Overflow: 4
+[Overflow Report] Max Overflow  : 4
+[Overflow Report] Num Overflow e: 6440
+[Overflow Report] H   Overflow  : 892
+[Overflow Report] V   Overflow  : 6810
+[Overflow Report] Final Overflow: 7702
+
+[INFO] LV routing round 2, enlarge 20 
+[INFO] 1 threshold, 20 expand
+[Overflow Report] total Usage   : 137789
+[Overflow Report] Max H Overflow: 2
+[Overflow Report] Max V Overflow: 4
+[Overflow Report] Max Overflow  : 4
+[Overflow Report] Num Overflow e: 6447
+[Overflow Report] H   Overflow  : 894
+[Overflow Report] V   Overflow  : 6802
+[Overflow Report] Final Overflow: 7696
+
+Running extra iterations to remove overflow...
+Update congestion history type 1
+[INFO] iteration 1, enlarge 25, costheight 6, threshold 10 via cost 2 
+[INFO] log_coef 0.838120, healingTrigger 0 cost_step 2 L 1 cost_type 1 updatetype 1
+[Overflow Report] total Usage   : 139383
+[Overflow Report] Max H Overflow: 2
+[Overflow Report] Max V Overflow: 3
+[Overflow Report] Max Overflow  : 3
+[Overflow Report] Num Overflow e: 4158
+[Overflow Report] H   Overflow  : 98
+[Overflow Report] V   Overflow  : 4121
+[Overflow Report] Final Overflow: 4219
+
+Update congestion history type 1
+[INFO] iteration 2, enlarge 35, costheight 8, threshold 6 via cost 2 
+[INFO] log_coef 0.953011, healingTrigger 0 cost_step 2 L 1 cost_type 1 updatetype 1
+[Overflow Report] total Usage   : 139396
+[Overflow Report] Max H Overflow: 2
+[Overflow Report] Max V Overflow: 3
+[Overflow Report] Max Overflow  : 3
+[Overflow Report] Num Overflow e: 4054
+[Overflow Report] H   Overflow  : 23
+[Overflow Report] V   Overflow  : 4081
+[Overflow Report] Final Overflow: 4104
+
+Update congestion history type 1
+[INFO] iteration 3, enlarge 45, costheight 15, threshold 2 via cost 2 
+[INFO] log_coef 0.953011, healingTrigger 0 cost_step 2 L 1 cost_type 1 updatetype 1
+[Overflow Report] total Usage   : 139546
+[Overflow Report] Max H Overflow: 2
+[Overflow Report] Max V Overflow: 3
+[Overflow Report] Max Overflow  : 3
+[Overflow Report] Num Overflow e: 4035
+[Overflow Report] H   Overflow  : 21
+[Overflow Report] V   Overflow  : 4065
+[Overflow Report] Final Overflow: 4086
+
+Update congestion history type 1
+[INFO] iteration 4, enlarge 55, costheight 22, threshold 0 via cost 2 
+[INFO] log_coef 0.953011, healingTrigger 0 cost_step 2 L 1 cost_type 1 updatetype 1
+[Overflow Report] total Usage   : 139590
+[Overflow Report] Max H Overflow: 2
+[Overflow Report] Max V Overflow: 3
+[Overflow Report] Max Overflow  : 3
+[Overflow Report] Num Overflow e: 4027
+[Overflow Report] H   Overflow  : 18
+[Overflow Report] V   Overflow  : 4058
+[Overflow Report] Final Overflow: 4076
+
+Update congestion history type 1
+[INFO] iteration 5, enlarge 65, costheight 29, threshold 0 via cost 2 
+[INFO] log_coef 0.953011, healingTrigger 0 cost_step 2 L 1 cost_type 1 updatetype 1
+[Overflow Report] total Usage   : 139732
+[Overflow Report] Max H Overflow: 2
+[Overflow Report] Max V Overflow: 3
+[Overflow Report] Max Overflow  : 3
+[Overflow Report] Num Overflow e: 3542
+[Overflow Report] H   Overflow  : 29
+[Overflow Report] V   Overflow  : 3561
+[Overflow Report] Final Overflow: 3590
+
+Update congestion history type 1
+[INFO] iteration 6, enlarge 75, costheight 36, threshold 0 via cost 2 
+[INFO] log_coef 0.953011, healingTrigger 0 cost_step 2 L 1 cost_type 1 updatetype 1
+[Overflow Report] total Usage   : 139931
+[Overflow Report] Max H Overflow: 2
+[Overflow Report] Max V Overflow: 3
+[Overflow Report] Max Overflow  : 3
+[Overflow Report] Num Overflow e: 3057
+[Overflow Report] H   Overflow  : 32
+[Overflow Report] V   Overflow  : 3077
+[Overflow Report] Final Overflow: 3109
+
+Update congestion history type 1
+[INFO] iteration 7, enlarge 85, costheight 43, threshold 0 via cost 2 
+[INFO] log_coef 0.953011, healingTrigger 0 cost_step 2 L 1 cost_type 1 updatetype 1
+[Overflow Report] total Usage   : 139946
+[Overflow Report] Max H Overflow: 2
+[Overflow Report] Max V Overflow: 3
+[Overflow Report] Max Overflow  : 3
+[Overflow Report] Num Overflow e: 3059
+[Overflow Report] H   Overflow  : 38
+[Overflow Report] V   Overflow  : 3070
+[Overflow Report] Final Overflow: 3108
+
+Update congestion history type 1
+[INFO] iteration 8, enlarge 95, costheight 50, threshold 0 via cost 2 
+[INFO] log_coef 0.953011, healingTrigger 0 cost_step 2 L 0 cost_type 1 updatetype 2
+[Overflow Report] total Usage   : 140089
+[Overflow Report] Max H Overflow: 1
+[Overflow Report] Max V Overflow: 3
+[Overflow Report] Max Overflow  : 3
+[Overflow Report] Num Overflow e: 2548
+[Overflow Report] H   Overflow  : 11
+[Overflow Report] V   Overflow  : 2588
+[Overflow Report] Final Overflow: 2599
+
+Update congestion history type 2
+[INFO] iteration 9, enlarge 105, costheight 57, threshold 0 via cost 2 
+[INFO] log_coef 0.953011, healingTrigger 0 cost_step 2 L 1 cost_type 1 updatetype 2
+[Overflow Report] total Usage   : 140748
+[Overflow Report] Max H Overflow: 2
+[Overflow Report] Max V Overflow: 3
+[Overflow Report] Max Overflow  : 3
+[Overflow Report] Num Overflow e: 1093
+[Overflow Report] H   Overflow  : 24
+[Overflow Report] V   Overflow  : 1114
+[Overflow Report] Final Overflow: 1138
+
+Update congestion history type 2
+[INFO] iteration 10, enlarge 110, costheight 59, threshold 0 via cost 2 
+[INFO] log_coef 0.953011, healingTrigger 0 cost_step 2 L 1 cost_type 1 updatetype 2
+[Overflow Report] total Usage   : 141155
+[Overflow Report] Max H Overflow: 1
+[Overflow Report] Max V Overflow: 3
+[Overflow Report] Max Overflow  : 3
+[Overflow Report] Num Overflow e: 104
+[Overflow Report] H   Overflow  : 11
+[Overflow Report] V   Overflow  : 144
+[Overflow Report] Final Overflow: 155
+
+Update congestion history type 2
+[INFO] iteration 11, enlarge 115, costheight 64, threshold 0 via cost 2 
+[INFO] log_coef 0.953011, healingTrigger 0 cost_step 5 L 1 cost_type 1 updatetype 2
+[Overflow Report] total Usage   : 141179
+[Overflow Report] Max H Overflow: 1
+[Overflow Report] Max V Overflow: 3
+[Overflow Report] Max Overflow  : 3
+[Overflow Report] Num Overflow e: 110
+[Overflow Report] H   Overflow  : 19
+[Overflow Report] V   Overflow  : 141
+[Overflow Report] Final Overflow: 160
+
+Update congestion history type 2
+[INFO] iteration 12, enlarge 120, costheight 74, threshold 0 via cost 0 
+[INFO] log_coef 0.953011, healingTrigger 1 cost_step 5 L 1 cost_type 1 updatetype 2
+[Overflow Report] total Usage   : 141121
+[Overflow Report] Max H Overflow: 2
+[Overflow Report] Max V Overflow: 3
+[Overflow Report] Max Overflow  : 3
+[Overflow Report] Num Overflow e: 112
+[Overflow Report] H   Overflow  : 21
+[Overflow Report] V   Overflow  : 139
+[Overflow Report] Final Overflow: 160
+
+Update congestion history type 2
+[INFO] iteration 13, enlarge 125, costheight 84, threshold 0 via cost 0 
+[INFO] log_coef 0.953011, healingTrigger 2 cost_step 5 L 1 cost_type 1 updatetype 2
+[Overflow Report] total Usage   : 141104
+[Overflow Report] Max H Overflow: 1
+[Overflow Report] Max V Overflow: 3
+[Overflow Report] Max Overflow  : 3
+[Overflow Report] Num Overflow e: 115
+[Overflow Report] H   Overflow  : 23
+[Overflow Report] V   Overflow  : 142
+[Overflow Report] Final Overflow: 165
+
+Update congestion history type 2
+[INFO] iteration 14, enlarge 130, costheight 94, threshold 0 via cost 0 
+[INFO] log_coef 0.953011, healingTrigger 3 cost_step 5 L 1 cost_type 1 updatetype 2
+[Overflow Report] total Usage   : 141115
+[Overflow Report] Max H Overflow: 1
+[Overflow Report] Max V Overflow: 3
+[Overflow Report] Max Overflow  : 3
+[Overflow Report] Num Overflow e: 114
+[Overflow Report] H   Overflow  : 21
+[Overflow Report] V   Overflow  : 142
+[Overflow Report] Final Overflow: 163
+
+Update congestion history type 2
+[INFO] iteration 15, enlarge 135, costheight 104, threshold 0 via cost 0 
+[INFO] log_coef 0.953011, healingTrigger 3 cost_step 5 L 1 cost_type 1 updatetype 2
+[Overflow Report] total Usage   : 141127
+[Overflow Report] Max H Overflow: 1
+[Overflow Report] Max V Overflow: 3
+[Overflow Report] Max Overflow  : 3
+[Overflow Report] Num Overflow e: 106
+[Overflow Report] H   Overflow  : 12
+[Overflow Report] V   Overflow  : 143
+[Overflow Report] Final Overflow: 155
+
+Update congestion history type 2
+[INFO] iteration 16, enlarge 140, costheight 114, threshold 0 via cost 0 
+[INFO] log_coef 0.953011, healingTrigger 3 cost_step 5 L 1 cost_type 1 updatetype 2
+[Overflow Report] total Usage   : 141190
+[Overflow Report] Max H Overflow: 2
+[Overflow Report] Max V Overflow: 2
+[Overflow Report] Max Overflow  : 2
+[Overflow Report] Num Overflow e: 148
+[Overflow Report] H   Overflow  : 58
+[Overflow Report] V   Overflow  : 139
+[Overflow Report] Final Overflow: 197
+
+Update congestion history type 2
+[INFO] iteration 17, enlarge 145, costheight 124, threshold 0 via cost 0 
+[INFO] log_coef 1.181232, healingTrigger 4 cost_step 5 L 1 cost_type 1 updatetype 2
+[Overflow Report] total Usage   : 141073
+[Overflow Report] Max H Overflow: 2
+[Overflow Report] Max V Overflow: 3
+[Overflow Report] Max Overflow  : 3
+[Overflow Report] Num Overflow e: 117
+[Overflow Report] H   Overflow  : 26
+[Overflow Report] V   Overflow  : 143
+[Overflow Report] Final Overflow: 169
+
+Update congestion history type 2
+[INFO] iteration 18, enlarge 150, costheight 134, threshold 0 via cost 0 
+[INFO] log_coef 1.181232, healingTrigger 4 cost_step 5 L 1 cost_type 1 updatetype 2
+[Overflow Report] total Usage   : 141126
+[Overflow Report] Max H Overflow: 2
+[Overflow Report] Max V Overflow: 2
+[Overflow Report] Max Overflow  : 2
+[Overflow Report] Num Overflow e: 157
+[Overflow Report] H   Overflow  : 57
+[Overflow Report] V   Overflow  : 144
+[Overflow Report] Final Overflow: 201
+
+Update congestion history type 2
+[INFO] iteration 19, enlarge 155, costheight 144, threshold 0 via cost 0 
+[INFO] log_coef 1.181232, healingTrigger 5 cost_step 5 L 1 cost_type 1 updatetype 2
+[Overflow Report] total Usage   : 141102
+[Overflow Report] Max H Overflow: 2
+[Overflow Report] Max V Overflow: 3
+[Overflow Report] Max Overflow  : 3
+[Overflow Report] Num Overflow e: 139
+[Overflow Report] H   Overflow  : 49
+[Overflow Report] V   Overflow  : 136
+[Overflow Report] Final Overflow: 185
+
+Update congestion history type 2
+[INFO] iteration 20, enlarge 160, costheight 154, threshold 0 via cost 0 
+[INFO] log_coef 1.181232, healingTrigger 5 cost_step 5 L 1 cost_type 1 updatetype 2
+[Overflow Report] total Usage   : 141151
+[Overflow Report] Max H Overflow: 2
+[Overflow Report] Max V Overflow: 3
+[Overflow Report] Max Overflow  : 3
+[Overflow Report] Num Overflow e: 153
+[Overflow Report] H   Overflow  : 55
+[Overflow Report] V   Overflow  : 144
+[Overflow Report] Final Overflow: 199
+
+Update congestion history type 2
+[INFO] iteration 21, enlarge 165, costheight 164, threshold 0 via cost 0 
+[INFO] log_coef 1.181232, healingTrigger 6 cost_step 5 L 1 cost_type 1 updatetype 2
+[Overflow Report] total Usage   : 141113
+[Overflow Report] Max H Overflow: 2
+[Overflow Report] Max V Overflow: 3
+[Overflow Report] Max Overflow  : 3
+[Overflow Report] Num Overflow e: 138
+[Overflow Report] H   Overflow  : 53
+[Overflow Report] V   Overflow  : 137
+[Overflow Report] Final Overflow: 190
+
+Update congestion history type 2
+[INFO] iteration 22, enlarge 170, costheight 174, threshold 0 via cost 0 
+[INFO] log_coef 1.181232, healingTrigger 6 cost_step 5 L 1 cost_type 1 updatetype 2
+[Overflow Report] total Usage   : 141171
+[Overflow Report] Max H Overflow: 2
+[Overflow Report] Max V Overflow: 3
+[Overflow Report] Max Overflow  : 3
+[Overflow Report] Num Overflow e: 162
+[Overflow Report] H   Overflow  : 66
+[Overflow Report] V   Overflow  : 142
+[Overflow Report] Final Overflow: 208
+
+Update congestion history type 2
+[INFO] iteration 23, enlarge 175, costheight 184, threshold 0 via cost 0 
+[INFO] log_coef 1.181232, healingTrigger 7 cost_step 5 L 1 cost_type 1 updatetype 2
+[Overflow Report] total Usage   : 141119
+[Overflow Report] Max H Overflow: 2
+[Overflow Report] Max V Overflow: 3
+[Overflow Report] Max Overflow  : 3
+[Overflow Report] Num Overflow e: 158
+[Overflow Report] H   Overflow  : 58
+[Overflow Report] V   Overflow  : 140
+[Overflow Report] Final Overflow: 198
+
+Update congestion history type 2
+[INFO] iteration 24, enlarge 180, costheight 194, threshold 0 via cost 0 
+[INFO] log_coef 1.181232, healingTrigger 7 cost_step 5 L 1 cost_type 1 updatetype 2
+[Overflow Report] total Usage   : 141190
+[Overflow Report] Max H Overflow: 2
+[Overflow Report] Max V Overflow: 3
+[Overflow Report] Max Overflow  : 3
+[Overflow Report] Num Overflow e: 176
+[Overflow Report] H   Overflow  : 82
+[Overflow Report] V   Overflow  : 140
+[Overflow Report] Final Overflow: 222
+
+Update congestion history type 2
+[INFO] iteration 25, enlarge 185, costheight 204, threshold 0 via cost 0 
+[INFO] log_coef 1.181232, healingTrigger 8 cost_step 5 L 1 cost_type 1 updatetype 2
+[Overflow Report] total Usage   : 141147
+[Overflow Report] Max H Overflow: 3
+[Overflow Report] Max V Overflow: 3
+[Overflow Report] Max Overflow  : 3
+[Overflow Report] Num Overflow e: 186
+[Overflow Report] H   Overflow  : 83
+[Overflow Report] V   Overflow  : 145
+[Overflow Report] Final Overflow: 228
+
+Update congestion history type 2
+[INFO] iteration 26, enlarge 190, costheight 214, threshold 0 via cost 0 
+[INFO] log_coef 1.181232, healingTrigger 9 cost_step 5 L 1 cost_type 1 updatetype 2
+[Overflow Report] total Usage   : 141177
+[Overflow Report] Max H Overflow: 2
+[Overflow Report] Max V Overflow: 3
+[Overflow Report] Max Overflow  : 3
+[Overflow Report] Num Overflow e: 183
+[Overflow Report] H   Overflow  : 80
+[Overflow Report] V   Overflow  : 146
+[Overflow Report] Final Overflow: 226
+
+Update congestion history type 2
+[INFO] iteration 27, enlarge 195, costheight 224, threshold 0 via cost 0 
+[INFO] log_coef 1.181232, healingTrigger 9 cost_step 5 L 1 cost_type 1 updatetype 2
+[Overflow Report] total Usage   : 141186
+[Overflow Report] Max H Overflow: 2
+[Overflow Report] Max V Overflow: 3
+[Overflow Report] Max Overflow  : 3
+[Overflow Report] Num Overflow e: 188
+[Overflow Report] H   Overflow  : 93
+[Overflow Report] V   Overflow  : 139
+[Overflow Report] Final Overflow: 232
+
+Update congestion history type 2
+[INFO] iteration 28, enlarge 200, costheight 234, threshold 0 via cost 0 
+[INFO] log_coef 1.181232, healingTrigger 10 cost_step 5 L 1 cost_type 1 updatetype 2
+[Overflow Report] total Usage   : 141215
+[Overflow Report] Max H Overflow: 2
+[Overflow Report] Max V Overflow: 2
+[Overflow Report] Max Overflow  : 2
+[Overflow Report] Num Overflow e: 187
+[Overflow Report] H   Overflow  : 79
+[Overflow Report] V   Overflow  : 147
+[Overflow Report] Final Overflow: 226
+
+Update congestion history type 2
+[INFO] iteration 29, enlarge 205, costheight 244, threshold 0 via cost 0 
+[INFO] log_coef 1.181232, healingTrigger 10 cost_step 5 L 1 cost_type 1 updatetype 2
+[Overflow Report] total Usage   : 141196
+[Overflow Report] Max H Overflow: 2
+[Overflow Report] Max V Overflow: 2
+[Overflow Report] Max Overflow  : 2
+[Overflow Report] Num Overflow e: 207
+[Overflow Report] H   Overflow  : 99
+[Overflow Report] V   Overflow  : 145
+[Overflow Report] Final Overflow: 244
+
+Update congestion history type 2
+[INFO] iteration 30, enlarge 210, costheight 254, threshold 0 via cost 0 
+[INFO] log_coef 1.181232, healingTrigger 11 cost_step 5 L 1 cost_type 1 updatetype 2
+[Overflow Report] total Usage   : 141240
+[Overflow Report] Max H Overflow: 2
+[Overflow Report] Max V Overflow: 3
+[Overflow Report] Max Overflow  : 3
+[Overflow Report] Num Overflow e: 204
+[Overflow Report] H   Overflow  : 95
+[Overflow Report] V   Overflow  : 147
+[Overflow Report] Final Overflow: 242
+
+Update congestion history type 2
+[INFO] iteration 31, enlarge 215, costheight 264, threshold 0 via cost 0 
+[INFO] log_coef 1.181232, healingTrigger 11 cost_step 5 L 1 cost_type 1 updatetype 2
+[Overflow Report] total Usage   : 141219
+[Overflow Report] Max H Overflow: 3
+[Overflow Report] Max V Overflow: 3
+[Overflow Report] Max Overflow  : 3
+[Overflow Report] Num Overflow e: 210
+[Overflow Report] H   Overflow  : 106
+[Overflow Report] V   Overflow  : 146
+[Overflow Report] Final Overflow: 252
+
+Update congestion history type 2
+[INFO] iteration 32, enlarge 220, costheight 274, threshold 0 via cost 0 
+[INFO] log_coef 1.181232, healingTrigger 12 cost_step 5 L 1 cost_type 1 updatetype 2
+[Overflow Report] total Usage   : 141252
+[Overflow Report] Max H Overflow: 2
+[Overflow Report] Max V Overflow: 3
+[Overflow Report] Max Overflow  : 3
+[Overflow Report] Num Overflow e: 206
+[Overflow Report] H   Overflow  : 100
+[Overflow Report] V   Overflow  : 149
+[Overflow Report] Final Overflow: 249
+
+Update congestion history type 2
+[INFO] iteration 33, enlarge 225, costheight 284, threshold 0 via cost 0 
+[INFO] log_coef 1.181232, healingTrigger 12 cost_step 5 L 1 cost_type 1 updatetype 2
+[Overflow Report] total Usage   : 141183
+[Overflow Report] Max H Overflow: 2
+[Overflow Report] Max V Overflow: 3
+[Overflow Report] Max Overflow  : 3
+[Overflow Report] Num Overflow e: 214
+[Overflow Report] H   Overflow  : 107
+[Overflow Report] V   Overflow  : 144
+[Overflow Report] Final Overflow: 251
+
+Update congestion history type 2
+[INFO] iteration 34, enlarge 230, costheight 294, threshold 0 via cost 0 
+[INFO] log_coef 1.181232, healingTrigger 13 cost_step 5 L 1 cost_type 1 updatetype 2
+[Overflow Report] total Usage   : 141287
+[Overflow Report] Max H Overflow: 3
+[Overflow Report] Max V Overflow: 3
+[Overflow Report] Max Overflow  : 3
+[Overflow Report] Num Overflow e: 231
+[Overflow Report] H   Overflow  : 122
+[Overflow Report] V   Overflow  : 150
+[Overflow Report] Final Overflow: 272
+
+Update congestion history type 2
+[INFO] iteration 35, enlarge 235, costheight 304, threshold 0 via cost 0 
+[INFO] log_coef 1.181232, healingTrigger 14 cost_step 5 L 1 cost_type 1 updatetype 2
+[Overflow Report] total Usage   : 141230
+[Overflow Report] Max H Overflow: 2
+[Overflow Report] Max V Overflow: 3
+[Overflow Report] Max Overflow  : 3
+[Overflow Report] Num Overflow e: 243
+[Overflow Report] H   Overflow  : 127
+[Overflow Report] V   Overflow  : 153
+[Overflow Report] Final Overflow: 280
+
+Update congestion history type 2
+[INFO] iteration 36, enlarge 240, costheight 314, threshold 0 via cost 0 
+[INFO] log_coef 1.181232, healingTrigger 15 cost_step 5 L 1 cost_type 1 updatetype 2
+[Overflow Report] total Usage   : 141297
+[Overflow Report] Max H Overflow: 3
+[Overflow Report] Max V Overflow: 3
+[Overflow Report] Max Overflow  : 3
+[Overflow Report] Num Overflow e: 251
+[Overflow Report] H   Overflow  : 131
+[Overflow Report] V   Overflow  : 153
+[Overflow Report] Final Overflow: 284
+
+Update congestion history type 2
+[INFO] iteration 37, enlarge 245, costheight 324, threshold 0 via cost 0 
+[INFO] log_coef 1.181232, healingTrigger 16 cost_step 5 L 1 cost_type 1 updatetype 2
+[Overflow Report] total Usage   : 141233
+[Overflow Report] Max H Overflow: 3
+[Overflow Report] Max V Overflow: 3
+[Overflow Report] Max Overflow  : 3
+[Overflow Report] Num Overflow e: 229
+[Overflow Report] H   Overflow  : 120
+[Overflow Report] V   Overflow  : 151
+[Overflow Report] Final Overflow: 271
+
+Update congestion history type 2
+[INFO] iteration 38, enlarge 249, costheight 334, threshold 0 via cost 0 
+[INFO] log_coef 1.181232, healingTrigger 16 cost_step 5 L 1 cost_type 1 updatetype 2
+[Overflow Report] total Usage   : 141320
+[Overflow Report] Max H Overflow: 2
+[Overflow Report] Max V Overflow: 3
+[Overflow Report] Max Overflow  : 3
+[Overflow Report] Num Overflow e: 266
+[Overflow Report] H   Overflow  : 141
+[Overflow Report] V   Overflow  : 160
+[Overflow Report] Final Overflow: 301
+
+Update congestion history type 2
+[INFO] iteration 39, enlarge 249, costheight 344, threshold 0 via cost 0 
+[INFO] log_coef 1.181232, healingTrigger 17 cost_step 5 L 1 cost_type 1 updatetype 2
+[Overflow Report] total Usage   : 141221
+[Overflow Report] Max H Overflow: 2
+[Overflow Report] Max V Overflow: 3
+[Overflow Report] Max Overflow  : 3
+[Overflow Report] Num Overflow e: 260
+[Overflow Report] H   Overflow  : 139
+[Overflow Report] V   Overflow  : 151
+[Overflow Report] Final Overflow: 290
+
+Update congestion history type 2
+[INFO] iteration 40, enlarge 249, costheight 354, threshold 0 via cost 0 
+[INFO] log_coef 1.181232, healingTrigger 17 cost_step 5 L 1 cost_type 1 updatetype 2
+[Overflow Report] total Usage   : 141276
+[Overflow Report] Max H Overflow: 2
+[Overflow Report] Max V Overflow: 3
+[Overflow Report] Max Overflow  : 3
+[Overflow Report] Num Overflow e: 251
+[Overflow Report] H   Overflow  : 125
+[Overflow Report] V   Overflow  : 159
+[Overflow Report] Final Overflow: 284
+
+Update congestion history type 2
+[INFO] iteration 41, enlarge 249, costheight 364, threshold 0 via cost 0 
+[INFO] log_coef 1.181232, healingTrigger 17 cost_step 5 L 1 cost_type 1 updatetype 2
+[Overflow Report] total Usage   : 141200
+[Overflow Report] Max H Overflow: 2
+[Overflow Report] Max V Overflow: 3
+[Overflow Report] Max Overflow  : 3
+[Overflow Report] Num Overflow e: 258
+[Overflow Report] H   Overflow  : 139
+[Overflow Report] V   Overflow  : 157
+[Overflow Report] Final Overflow: 296
+
+Update congestion history type 2
+[INFO] iteration 42, enlarge 249, costheight 374, threshold 0 via cost 0 
+[INFO] log_coef 1.181232, healingTrigger 18 cost_step 5 L 1 cost_type 1 updatetype 2
+[Overflow Report] total Usage   : 141350
+[Overflow Report] Max H Overflow: 2
+[Overflow Report] Max V Overflow: 3
+[Overflow Report] Max Overflow  : 3
+[Overflow Report] Num Overflow e: 274
+[Overflow Report] H   Overflow  : 149
+[Overflow Report] V   Overflow  : 161
+[Overflow Report] Final Overflow: 310
+
+Update congestion history type 2
+[INFO] iteration 43, enlarge 249, costheight 384, threshold 0 via cost 0 
+[INFO] log_coef 1.181232, healingTrigger 19 cost_step 5 L 1 cost_type 1 updatetype 2
+[Overflow Report] total Usage   : 141257
+[Overflow Report] Max H Overflow: 2
+[Overflow Report] Max V Overflow: 3
+[Overflow Report] Max Overflow  : 3
+[Overflow Report] Num Overflow e: 263
+[Overflow Report] H   Overflow  : 135
+[Overflow Report] V   Overflow  : 159
+[Overflow Report] Final Overflow: 294
+
+Update congestion history type 2
+[INFO] iteration 44, enlarge 249, costheight 394, threshold 0 via cost 0 
+[INFO] log_coef 1.181232, healingTrigger 19 cost_step 5 L 1 cost_type 1 updatetype 2
+[Overflow Report] total Usage   : 141351
+[Overflow Report] Max H Overflow: 3
+[Overflow Report] Max V Overflow: 3
+[Overflow Report] Max Overflow  : 3
+[Overflow Report] Num Overflow e: 288
+[Overflow Report] H   Overflow  : 150
+[Overflow Report] V   Overflow  : 170
+[Overflow Report] Final Overflow: 320
+
+Update congestion history type 2
+[INFO] iteration 45, enlarge 249, costheight 404, threshold 0 via cost 0 
+[INFO] log_coef 1.181232, healingTrigger 20 cost_step 5 L 1 cost_type 1 updatetype 2
+[Overflow Report] total Usage   : 141280
+[Overflow Report] Max H Overflow: 3
+[Overflow Report] Max V Overflow: 4
+[Overflow Report] Max Overflow  : 4
+[Overflow Report] Num Overflow e: 266
+[Overflow Report] H   Overflow  : 154
+[Overflow Report] V   Overflow  : 156
+[Overflow Report] Final Overflow: 310
+
+Update congestion history type 2
+[INFO] iteration 46, enlarge 249, costheight 414, threshold 0 via cost 0 
+[INFO] log_coef 1.181232, healingTrigger 20 cost_step 5 L 1 cost_type 1 updatetype 2
+[Overflow Report] total Usage   : 141335
+[Overflow Report] Max H Overflow: 2
+[Overflow Report] Max V Overflow: 3
+[Overflow Report] Max Overflow  : 3
+[Overflow Report] Num Overflow e: 267
+[Overflow Report] H   Overflow  : 137
+[Overflow Report] V   Overflow  : 170
+[Overflow Report] Final Overflow: 307
+
+Update congestion history type 2
+[INFO] iteration 47, enlarge 249, costheight 424, threshold 0 via cost 0 
+[INFO] log_coef 1.181232, healingTrigger 20 cost_step 5 L 1 cost_type 1 updatetype 2
+[Overflow Report] total Usage   : 141265
+[Overflow Report] Max H Overflow: 2
+[Overflow Report] Max V Overflow: 3
+[Overflow Report] Max Overflow  : 3
+[Overflow Report] Num Overflow e: 273
+[Overflow Report] H   Overflow  : 154
+[Overflow Report] V   Overflow  : 153
+[Overflow Report] Final Overflow: 307
+
+Update congestion history type 2
+[INFO] iteration 48, enlarge 249, costheight 434, threshold 0 via cost 0 
+[INFO] log_coef 1.181232, healingTrigger 21 cost_step 5 L 1 cost_type 1 updatetype 2
+[Overflow Report] total Usage   : 141356
+[Overflow Report] Max H Overflow: 3
+[Overflow Report] Max V Overflow: 3
+[Overflow Report] Max Overflow  : 3
+[Overflow Report] Num Overflow e: 282
+[Overflow Report] H   Overflow  : 148
+[Overflow Report] V   Overflow  : 174
+[Overflow Report] Final Overflow: 322
+
+Update congestion history type 2
+[INFO] iteration 49, enlarge 249, costheight 444, threshold 0 via cost 0 
+[INFO] log_coef 1.181232, healingTrigger 22 cost_step 5 L 1 cost_type 1 updatetype 2
+[Overflow Report] total Usage   : 141244
+[Overflow Report] Max H Overflow: 3
+[Overflow Report] Max V Overflow: 3
+[Overflow Report] Max Overflow  : 3
+[Overflow Report] Num Overflow e: 259
+[Overflow Report] H   Overflow  : 148
+[Overflow Report] V   Overflow  : 155
+[Overflow Report] Final Overflow: 303
+
+Update congestion history type 2
+[INFO] iteration 50, enlarge 249, costheight 454, threshold 0 via cost 0 
+[INFO] log_coef 1.181232, healingTrigger 22 cost_step 5 L 1 cost_type 1 updatetype 2
+[Overflow Report] total Usage   : 141349
+[Overflow Report] Max H Overflow: 3
+[Overflow Report] Max V Overflow: 4
+[Overflow Report] Max Overflow  : 4
+[Overflow Report] Num Overflow e: 289
+[Overflow Report] H   Overflow  : 161
+[Overflow Report] V   Overflow  : 172
+[Overflow Report] Final Overflow: 333
+
+Warning: Global routing finished with overflow
+
+
+ minimal ofl 155, occuring at round 10
+
+Usage checked
+Maze routing finished
+[INFO] P3 runtime: 23.980000 sec
+[INFO] Final 2D results: 
+[Overflow Report] total Usage   : 141349
+[Overflow Report] Max H Overflow: 3
+[Overflow Report] Max V Overflow: 4
+[Overflow Report] Max Overflow  : 4
+[Overflow Report] Num Overflow e: 289
+[Overflow Report] H   Overflow  : 161
+[Overflow Report] V   Overflow  : 172
+[Overflow Report] Final Overflow: 333
+
+Layer Assignment Begins
+Layer assignment finished
+[INFO] 2D + Layer Assignment Runtime: 28.620001 sec
+[INFO] Via related to pin nodes 5383
+[INFO] Via related stiner nodes 178
+Via filling finished
+
+Final usage/overflow report: 
+[INFO] Usage per layer: 
+    Layer 1 usage: 3
+    Layer 2 usage: 77894
+    Layer 3 usage: 46672
+    Layer 4 usage: 9459
+    Layer 5 usage: 6853
+    Layer 6 usage: 468
+
+[INFO] Capacity per layer: 
+    Layer 1 capacity: 0
+    Layer 2 capacity: 1724707
+    Layer 3 capacity: 1335349
+    Layer 4 capacity: 855181
+    Layer 5 capacity: 386829
+    Layer 6 capacity: 162542
+
+[INFO] Use percentage per layer: 
+    Layer 1 use percentage: 0.0%
+    Layer 2 use percentage: 4.52%
+    Layer 3 use percentage: 3.50%
+    Layer 4 use percentage: 1.11%
+    Layer 5 use percentage: 1.77%
+    Layer 6 use percentage: 0.29%
+
+[INFO] Overflow per layer: 
+    Layer 1 overflow: 3
+    Layer 2 overflow: 72
+    Layer 3 overflow: 77
+    Layer 4 overflow: 34
+    Layer 5 overflow: 96
+    Layer 6 overflow: 51
+
+[Overflow Report] Total Usage   : 141349
+[Overflow Report] Total Capacity: 4464608
+[Overflow Report] Max H Overflow: 3
+[Overflow Report] Max V Overflow: 3
+[Overflow Report] Max Overflow  : 3
+[Overflow Report] H   Overflow  : 161
+[Overflow Report] V   Overflow  : 172
+[Overflow Report] Final Overflow: 333
+
+[INFO] Final usage          : 141349
+[INFO] Final number of vias : 8728
+[INFO] Final usage 3D       : 167533
+[INFO] Total wirelength: 1112083 um
+[INFO] Num routed nets: 1244
+[WARN]: No CLOCK_PORT found. Skipping STA...
