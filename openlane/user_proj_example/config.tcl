@@ -6,6 +6,7 @@ set ::env(VERILOG_FILES) "\
 	$script_dir/../../verilog/rtl/defines.v \
 	$script_dir/../../verilog/rtl/user_proj_example.v"
 
+set ::env(CLOCK_PORT) ""
 set ::env(CLOCK_NET) "counter.clk"
 set ::env(CLOCK_PERIOD) "10"
 
