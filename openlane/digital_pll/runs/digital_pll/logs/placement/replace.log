@@ -1,100 +1,92 @@
-OpenROAD 0.9.0 e582f2522b
+OpenROAD 0.9.0 d03ebfc244
 This program is licensed under the BSD-3 license. See the LICENSE file for details. 
 Components of this program may be licensed under more restrictive licenses which must be honored.
-Notice 0: Reading LEF file:  /openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/tmp/merged_unpadded.lef
-Notice 0:     Created 11 technology layers
+Error: cannot open '/.openroad'.
+Notice 0: Reading LEF file:  /project/openlane/digital_pll/runs/digital_pll/tmp/merged_unpadded.lef
+Notice 0:     Created 13 technology layers
 Notice 0:     Created 25 technology vias
-Notice 0:     Created 437 library cells
-Notice 0: Finished LEF file:  /openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/tmp/merged_unpadded.lef
+Notice 0:     Created 438 library cells
+Notice 0: Finished LEF file:  /project/openlane/digital_pll/runs/digital_pll/tmp/merged_unpadded.lef
 Notice 0: 
-Reading DEF file: /openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/results/floorplan/digital_pll.floorplan.def
+Reading DEF file: /project/openlane/digital_pll/runs/digital_pll/results/floorplan/digital_pll.floorplan.def
 Notice 0: Design: digital_pll
 Notice 0:     Created 37 pins.
-Notice 0:     Created 657 components and 2635 component-terminals.
-Notice 0:     Created 399 nets and 1320 connections.
-Notice 0: Finished DEF file: /openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/results/floorplan/digital_pll.floorplan.def
+Notice 0:     Created 588 components and 3491 component-terminals.
+Notice 0:     Created 415 nets and 1360 connections.
+Notice 0: Finished DEF file: /project/openlane/digital_pll/runs/digital_pll/results/floorplan/digital_pll.floorplan.def
 [INFO] DBU = 1000
 [INFO] SiteSize = (460, 2720)
 [INFO] CoreAreaLxLy = (5520, 10880)
-[INFO] CoreAreaUxUy = (122360, 127840)
-[INFO] NumInstances = 657
-[INFO] NumPlaceInstances = 391
-[INFO] NumFixedInstances = 266
+[INFO] CoreAreaUxUy = (101200, 106080)
+[INFO] NumInstances = 588
+[INFO] NumPlaceInstances = 407
+[INFO] NumFixedInstances = 181
 [INFO] NumDummyInstances = 0
-[INFO] NumNets = 399
-[INFO] NumPins = 1357
+[INFO] NumNets = 415
+[INFO] NumPins = 1397
 [INFO] DieAreaLxLy = (0, 0)
-[INFO] DieAreaUxUy = (128205, 138925)
+[INFO] DieAreaUxUy = (107040, 117760)
 [INFO] CoreAreaLxLy = (5520, 10880)
-[INFO] CoreAreaUxUy = (122360, 127840)
-[INFO] CoreArea = 13665606400
-[INFO] NonPlaceInstsArea = 548025600
-[INFO] PlaceInstsArea = 4907206400
-[INFO] Util(%) = 37.409386
-[INFO] StdInstsArea = 4907206400
+[INFO] CoreAreaUxUy = (101200, 106080)
+[INFO] CoreArea = 9108736000
+[INFO] NonPlaceInstsArea = 401635200
+[INFO] PlaceInstsArea = 4608169600
+[INFO] Util(%) = 52.924271
+[INFO] StdInstsArea = 4608169600
 [INFO] MacroInstsArea = 0
-[InitialPlace]  Iter: 1 CG Error: 9.07291e-08 HPWL: 8510935
-[InitialPlace]  Iter: 2 CG Error: 1.08554e-07 HPWL: 7551106
-[InitialPlace]  Iter: 3 CG Error: 3.58893e-08 HPWL: 7577907
-[InitialPlace]  Iter: 4 CG Error: 7.62758e-08 HPWL: 7586893
-[InitialPlace]  Iter: 5 CG Error: 9.26014e-08 HPWL: 7594502
-[INFO] FillerInit: NumGCells = 581
-[INFO] FillerInit: NumGNets = 399
-[INFO] FillerInit: NumGPins = 1357
+[InitialPlace]  Iter: 1 CG Error: 1.1611e-07 HPWL: 7822000
+[InitialPlace]  Iter: 2 CG Error: 1.07283e-07 HPWL: 7025288
+[InitialPlace]  Iter: 3 CG Error: 5.97527e-08 HPWL: 7058255
+[InitialPlace]  Iter: 4 CG Error: 5.606e-08 HPWL: 7081751
+[InitialPlace]  Iter: 5 CG Error: 1.00711e-07 HPWL: 7078364
+[INFO] FillerInit: NumGCells = 423
+[INFO] FillerInit: NumGNets = 415
+[INFO] FillerInit: NumGPins = 1397
 [INFO] TargetDensity = 0.550000
-[INFO] AveragePlaceInstArea = 12550400
-[INFO] IdealBinArea = 22818908
-[INFO] IdealBinCnt = 598
-[INFO] TotalBinArea = 13665606400
+[INFO] AveragePlaceInstArea = 11322284
+[INFO] IdealBinArea = 20585970
+[INFO] IdealBinCnt = 442
+[INFO] TotalBinArea = 9108736000
 [INFO] BinCnt = (16, 16)
-[INFO] BinSize = (7303, 7310)
+[INFO] BinSize = (5980, 5950)
 [INFO] NumBins = 256
-[NesterovSolve] Iter: 1 overflow: 0.829049 HPWL: 5120479
-[NesterovSolve] Iter: 10 overflow: 0.659243 HPWL: 6422500
-[NesterovSolve] Iter: 20 overflow: 0.645066 HPWL: 6376095
-[NesterovSolve] Iter: 30 overflow: 0.639655 HPWL: 6359602
-[NesterovSolve] Iter: 40 overflow: 0.639009 HPWL: 6355749
-[NesterovSolve] Iter: 50 overflow: 0.639255 HPWL: 6356390
-[NesterovSolve] Iter: 60 overflow: 0.639833 HPWL: 6356298
-[NesterovSolve] Iter: 70 overflow: 0.639345 HPWL: 6354037
-[NesterovSolve] Iter: 80 overflow: 0.638459 HPWL: 6354082
-[NesterovSolve] Iter: 90 overflow: 0.63835 HPWL: 6354720
-[NesterovSolve] Iter: 100 overflow: 0.638407 HPWL: 6354278
-[NesterovSolve] Iter: 110 overflow: 0.638583 HPWL: 6354843
-[NesterovSolve] Iter: 120 overflow: 0.63842 HPWL: 6355911
-[NesterovSolve] Iter: 130 overflow: 0.637903 HPWL: 6357122
-[NesterovSolve] Iter: 140 overflow: 0.637205 HPWL: 6360954
-[NesterovSolve] Iter: 150 overflow: 0.636317 HPWL: 6366812
-[NesterovSolve] Iter: 160 overflow: 0.63491 HPWL: 6375721
-[NesterovSolve] Iter: 170 overflow: 0.632598 HPWL: 6386753
-[NesterovSolve] Iter: 180 overflow: 0.628515 HPWL: 6399743
-[NesterovSolve] Iter: 190 overflow: 0.618267 HPWL: 6418631
-[NesterovSolve] Iter: 200 overflow: 0.607508 HPWL: 6453097
-[NesterovSolve] Iter: 210 overflow: 0.59483 HPWL: 6507751
-[NesterovSolve] Iter: 220 overflow: 0.57804 HPWL: 6568625
-[NesterovSolve] Iter: 230 overflow: 0.55541 HPWL: 6671420
-[NesterovSolve] Iter: 240 overflow: 0.527597 HPWL: 6779189
-[NesterovSolve] Iter: 250 overflow: 0.488521 HPWL: 6864908
-[NesterovSolve] Iter: 260 overflow: 0.448009 HPWL: 6870369
-[NesterovSolve] Iter: 270 overflow: 0.411036 HPWL: 6921435
-[NesterovSolve] Iter: 280 overflow: 0.371938 HPWL: 7007490
-[NesterovSolve] Iter: 290 overflow: 0.333982 HPWL: 7099616
-[NesterovSolve] Iter: 300 overflow: 0.298876 HPWL: 7183504
-[NesterovSolve] Iter: 310 overflow: 0.259567 HPWL: 7236857
-[NesterovSolve] Iter: 320 overflow: 0.228557 HPWL: 7325040
-[NesterovSolve] Iter: 330 overflow: 0.201717 HPWL: 7429722
-[NesterovSolve] Iter: 340 overflow: 0.168847 HPWL: 7491825
-[NesterovSolve] Iter: 350 overflow: 0.143018 HPWL: 7541160
-[NesterovSolve] Iter: 360 overflow: 0.123883 HPWL: 7593098
-[NesterovSolve] Iter: 370 overflow: 0.0987641 HPWL: 7634093
-[NesterovSolve] Finished with Overflow: 0.0987641
-Warning: /home/ag/pdks/sky130A/libs.ref/sky130_fd_sc_hd/lib/sky130_fd_sc_hd__ss_100C_1v60.lib, line 32 default_operating_condition ss_100C_1v60 not found.
-Warning: Liberty cell sky130_fd_sc_hd__lpflow_lsbuf_lh_hl_isowell_tap_1 pin VPB missing from LEF macro
-Warning: Liberty cell sky130_fd_sc_hd__lpflow_lsbuf_lh_hl_isowell_tap_2 pin VPB missing from LEF macro
-Warning: Liberty cell sky130_fd_sc_hd__lpflow_lsbuf_lh_hl_isowell_tap_4 pin VPB missing from LEF macro
-Warning: Liberty cell sky130_fd_sc_hd__lpflow_lsbuf_lh_isowell_tap_1 pin VPB missing from LEF macro
-Warning: Liberty cell sky130_fd_sc_hd__lpflow_lsbuf_lh_isowell_tap_2 pin VPB missing from LEF macro
-Warning: Liberty cell sky130_fd_sc_hd__lpflow_lsbuf_lh_isowell_tap_4 pin VPB missing from LEF macro
-Warning: /home/ag/pdks/sky130A/libs.ref/sky130_fd_sc_hd/lib/sky130_fd_sc_hd__ff_n40C_1v95.lib, line 31 default_operating_condition ff_n40C_1v95 not found.
-create_clock [get_ports $::env(CLOCK_PORT)]  -name $::env(CLOCK_PORT)  -period $::env(CLOCK_PERIOD)
-Error: base.sdc, 1 can't read "::env(CLOCK_PORT)": no such variable
+[NesterovSolve] Iter: 1 overflow: 0.856109 HPWL: 4180548
+[NesterovSolve] Iter: 10 overflow: 0.721742 HPWL: 5386576
+[NesterovSolve] Iter: 20 overflow: 0.703258 HPWL: 5374776
+[NesterovSolve] Iter: 30 overflow: 0.701594 HPWL: 5360865
+[NesterovSolve] Iter: 40 overflow: 0.697983 HPWL: 5360593
+[NesterovSolve] Iter: 50 overflow: 0.698556 HPWL: 5361412
+[NesterovSolve] Iter: 60 overflow: 0.699539 HPWL: 5362654
+[NesterovSolve] Iter: 70 overflow: 0.699965 HPWL: 5361451
+[NesterovSolve] Iter: 80 overflow: 0.699611 HPWL: 5361430
+[NesterovSolve] Iter: 90 overflow: 0.699239 HPWL: 5362074
+[NesterovSolve] Iter: 100 overflow: 0.699214 HPWL: 5362534
+[NesterovSolve] Iter: 110 overflow: 0.699194 HPWL: 5363354
+[NesterovSolve] Iter: 120 overflow: 0.698726 HPWL: 5365046
+[NesterovSolve] Iter: 130 overflow: 0.697699 HPWL: 5367509
+[NesterovSolve] Iter: 140 overflow: 0.696611 HPWL: 5371284
+[NesterovSolve] Iter: 150 overflow: 0.695106 HPWL: 5377492
+[NesterovSolve] Iter: 160 overflow: 0.692934 HPWL: 5387718
+[NesterovSolve] Iter: 170 overflow: 0.688854 HPWL: 5404147
+[NesterovSolve] Iter: 180 overflow: 0.683017 HPWL: 5429528
+[NesterovSolve] Iter: 190 overflow: 0.670485 HPWL: 5464500
+[NesterovSolve] Iter: 200 overflow: 0.656119 HPWL: 5513783
+[NesterovSolve] Iter: 210 overflow: 0.64214 HPWL: 5593339
+[NesterovSolve] Iter: 220 overflow: 0.617634 HPWL: 5699603
+[NesterovSolve] Iter: 230 overflow: 0.598603 HPWL: 5825501
+[NesterovSolve] Iter: 240 overflow: 0.562756 HPWL: 5978800
+[NesterovSolve] Iter: 250 overflow: 0.530348 HPWL: 6140962
+[NesterovSolve] Iter: 260 overflow: 0.48611 HPWL: 6244660
+[NesterovSolve] Iter: 270 overflow: 0.444138 HPWL: 6377717
+[NesterovSolve] Iter: 280 overflow: 0.403462 HPWL: 6500746
+[NesterovSolve] Iter: 290 overflow: 0.359972 HPWL: 6635104
+[NesterovSolve] Iter: 300 overflow: 0.317424 HPWL: 6778747
+[NesterovSolve] Iter: 310 overflow: 0.285751 HPWL: 6863371
+[NesterovSolve] Iter: 320 overflow: 0.248489 HPWL: 6977692
+[NesterovSolve] Iter: 330 overflow: 0.212521 HPWL: 7068513
+[NesterovSolve] Iter: 340 overflow: 0.178892 HPWL: 7147063
+[NesterovSolve] Iter: 350 overflow: 0.15394 HPWL: 7224786
+[NesterovSolve] Iter: 360 overflow: 0.127744 HPWL: 7266757
+[NesterovSolve] Iter: 370 overflow: 0.112711 HPWL: 7313313
+[NesterovSolve] Finished with Overflow: 0.0997845
+[WARN]: No CLOCK_PORT found. Skipping STA...

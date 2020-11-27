@@ -1,33 +1,28 @@
-OpenROAD 0.9.0 e582f2522b
+OpenROAD 0.9.0 d03ebfc244
 This program is licensed under the BSD-3 license. See the LICENSE file for details. 
 Components of this program may be licensed under more restrictive licenses which must be honored.
-Warning: /home/ag/pdks/sky130A/libs.ref/sky130_fd_sc_hd/lib/sky130_fd_sc_hd__tt_025C_1v80.lib, line 31 default_operating_condition tt_025C_1v80 not found.
-Notice 0: Reading LEF file:  /openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/tmp/merged_unpadded.lef
-Notice 0:     Created 11 technology layers
+Error: cannot open '/.openroad'.
+Warning: /home/aag/current_pdk/sky130A/libs.ref/sky130_fd_sc_hd/lib/sky130_fd_sc_hd__tt_025C_1v80.lib, line 31 default_operating_condition tt_025C_1v80 not found.
+Notice 0: Reading LEF file:  /project/openlane/digital_pll/runs/digital_pll/tmp/merged_unpadded.lef
+Notice 0:     Created 13 technology layers
 Notice 0:     Created 25 technology vias
-Notice 0:     Created 437 library cells
-Notice 0: Finished LEF file:  /openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/tmp/merged_unpadded.lef
-Warning: LEF macro sky130_fd_sc_hd__lpflow_lsbuf_lh_hl_isowell_tap_1 pin VPB missing from liberty cell
-Warning: LEF macro sky130_fd_sc_hd__lpflow_lsbuf_lh_hl_isowell_tap_2 pin VPB missing from liberty cell
-Warning: LEF macro sky130_fd_sc_hd__lpflow_lsbuf_lh_hl_isowell_tap_4 pin VPB missing from liberty cell
-Warning: LEF macro sky130_fd_sc_hd__lpflow_lsbuf_lh_isowell_tap_1 pin VPB missing from liberty cell
-Warning: LEF macro sky130_fd_sc_hd__lpflow_lsbuf_lh_isowell_tap_2 pin VPB missing from liberty cell
-Warning: LEF macro sky130_fd_sc_hd__lpflow_lsbuf_lh_isowell_tap_4 pin VPB missing from liberty cell
+Notice 0:     Created 438 library cells
+Notice 0: Finished LEF file:  /project/openlane/digital_pll/runs/digital_pll/tmp/merged_unpadded.lef
 Notice 0: 
-Reading DEF file: /openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/tmp/routing/fastroute.def
+Reading DEF file: /project/openlane/digital_pll/runs/digital_pll/tmp/routing/fastroute.def
 Notice 0: Design: digital_pll
 Notice 0:     Created 39 pins.
-Notice 0:     Created 1647 components and 4615 component-terminals.
+Notice 0:     Created 588 components and 3491 component-terminals.
 Notice 0:     Created 2 special nets and 0 connections.
-Notice 0:     Created 399 nets and 1320 connections.
-Notice 0: Finished DEF file: /openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/tmp/routing/fastroute.def
+Notice 0:     Created 415 nets and 1360 connections.
+Notice 0: Finished DEF file: /project/openlane/digital_pll/runs/digital_pll/tmp/routing/fastroute.def
 [PARAMS] Min routing layer: 2
-[PARAMS] Max routing layer: 6
+[PARAMS] Max routing layer: 5
 [PARAMS] Global adjustment: 0
 [PARAMS] Unidirectional routing: 1
 [PARAMS] Grid origin: (-1, -1)
 [INFO] #DB Obstructions: 0
-[INFO] #DB Obstacles: 38059
+[INFO] #DB Obstacles: 18371
 [INFO] #DB Macros: 0
 [WARNING] Net VPWR has wires outside die area
 [WARNING] Net VPWR has wires outside die area
@@ -43,24 +38,23 @@ Notice 0: Finished DEF file: /openLANE_flow/designs/caravel/openlane/digital_pll
 [WARNING] Net VGND has wires outside die area
 [INFO] Found 0 clock nets
 [INFO] Minimum degree: 2
-[INFO] Maximum degree: 29
-[INFO] Processing 19726 obstacles in layer 1
-[INFO] Processing 3908 obstacles in layer 2
-[INFO] Processing 4 obstacles in layer 4
-[INFO] Processing 8 obstacles in layer 5
+[INFO] Maximum degree: 25
+[INFO] Processing 13628 obstacles on layer 1
+[INFO] Processing 1742 obstacles on layer 2
+[INFO] Processing 4 obstacles on layer 4
+[INFO] Processing 8 obstacles on layer 5
 [INFO] Reducing resources of layer 1 by 99%
-[INFO] Reducing resources of layer 2 by 20%
-[INFO] Reducing resources of layer 3 by 20%
-[INFO] WIRELEN : 1488, WIRELEN1 : 0
-[INFO] NumSeg  : 867
+[INFO] Reducing resources of layer 5 by 10%
+[INFO] WIRELEN : 1447, WIRELEN1 : 0
+[INFO] NumSeg  : 860
 [INFO] NumShift: 0
 First L Route
-[INFO] WIRELEN : 1487, WIRELEN1 : 1487
-[INFO] NumSeg  : 859
-[INFO] NumShift: 17
-[Overflow Report] Total hCap    : 7618
-[Overflow Report] Total vCap    : 4921
-[Overflow Report] Total Usage   : 1487
+[INFO] WIRELEN : 1446, WIRELEN1 : 1446
+[INFO] NumSeg  : 855
+[INFO] NumShift: 14
+[Overflow Report] Total hCap    : 5955
+[Overflow Report] Total vCap    : 3888
+[Overflow Report] Total Usage   : 1446
 [Overflow Report] Max H Overflow: 0
 [Overflow Report] Max V Overflow: 0
 [Overflow Report] Max Overflow  : 0
@@ -70,9 +64,9 @@ First L Route
 [Overflow Report] Final Overflow: 0
 
 Second L Route
-[Overflow Report] Total hCap    : 7618
-[Overflow Report] Total vCap    : 4921
-[Overflow Report] Total Usage   : 1487
+[Overflow Report] Total hCap    : 5955
+[Overflow Report] Total vCap    : 3888
+[Overflow Report] Total Usage   : 1446
 [Overflow Report] Max H Overflow: 0
 [Overflow Report] Max V Overflow: 0
 [Overflow Report] Max Overflow  : 0
@@ -82,9 +76,9 @@ Second L Route
 [Overflow Report] Final Overflow: 0
 
 First Z Route
-[Overflow Report] Total hCap    : 7618
-[Overflow Report] Total vCap    : 4921
-[Overflow Report] Total Usage   : 1487
+[Overflow Report] Total hCap    : 5955
+[Overflow Report] Total vCap    : 3888
+[Overflow Report] Total Usage   : 1446
 [Overflow Report] Max H Overflow: 0
 [Overflow Report] Max V Overflow: 0
 [Overflow Report] Max Overflow  : 0
@@ -95,7 +89,7 @@ First Z Route
 
 [INFO] LV routing round 0, enlarge 10 
 [INFO] 10 threshold, 10 expand
-[Overflow Report] total Usage   : 1487
+[Overflow Report] total Usage   : 1446
 [Overflow Report] Max H Overflow: 0
 [Overflow Report] Max V Overflow: 0
 [Overflow Report] Max Overflow  : 0
@@ -106,7 +100,7 @@ First Z Route
 
 [INFO] LV routing round 1, enlarge 15 
 [INFO] 5 threshold, 15 expand
-[Overflow Report] total Usage   : 1487
+[Overflow Report] total Usage   : 1446
 [Overflow Report] Max H Overflow: 0
 [Overflow Report] Max V Overflow: 0
 [Overflow Report] Max Overflow  : 0
@@ -117,7 +111,7 @@ First Z Route
 
 [INFO] LV routing round 2, enlarge 20 
 [INFO] 1 threshold, 20 expand
-[Overflow Report] total Usage   : 1487
+[Overflow Report] total Usage   : 1446
 [Overflow Report] Max H Overflow: 0
 [Overflow Report] Max V Overflow: 0
 [Overflow Report] Max Overflow  : 0
@@ -130,7 +124,7 @@ Usage checked
 Maze routing finished
 [INFO] P3 runtime: 0.000000 sec
 [INFO] Final 2D results: 
-[Overflow Report] total Usage   : 1487
+[Overflow Report] total Usage   : 1446
 [Overflow Report] Max H Overflow: 0
 [Overflow Report] Max V Overflow: 0
 [Overflow Report] Max Overflow  : 0
@@ -141,38 +135,35 @@ Maze routing finished
 
 Layer Assignment Begins
 Layer assignment finished
-[INFO] 2D + Layer Assignment Runtime: 7.890000 sec
+[INFO] 2D + Layer Assignment Runtime: 8.450000 sec
 Post Processing Begins 
 Post Processsing finished
  Starting via filling
-[INFO] Via related to pin nodes 1773
-[INFO] Via related stiner nodes 57
+[INFO] Via related to pin nodes 1782
+[INFO] Via related stiner nodes 65
 Via filling finished
 
 Final usage/overflow report: 
 [INFO] Usage per layer: 
     Layer 1 usage: 0
-    Layer 2 usage: 816
-    Layer 3 usage: 683
+    Layer 2 usage: 811
+    Layer 3 usage: 644
     Layer 4 usage: 0
     Layer 5 usage: 0
-    Layer 6 usage: 0
 
 [INFO] Capacity per layer: 
     Layer 1 capacity: 0
-    Layer 2 capacity: 3672
-    Layer 3 capacity: 4294
-    Layer 4 capacity: 3300
-    Layer 5 capacity: 627
-    Layer 6 capacity: 646
+    Layer 2 capacity: 3683
+    Layer 3 capacity: 3696
+    Layer 4 capacity: 2272
+    Layer 5 capacity: 192
 
 [INFO] Use percentage per layer: 
     Layer 1 use percentage: 0.0%
-    Layer 2 use percentage: 22.22%
-    Layer 3 use percentage: 15.91%
+    Layer 2 use percentage: 22.02%
+    Layer 3 use percentage: 17.42%
     Layer 4 use percentage: 0.00%
     Layer 5 use percentage: 0.00%
-    Layer 6 use percentage: 0.00%
 
 [INFO] Overflow per layer: 
     Layer 1 overflow: 0
@@ -180,10 +171,9 @@ Final usage/overflow report:
     Layer 3 overflow: 0
     Layer 4 overflow: 0
     Layer 5 overflow: 0
-    Layer 6 overflow: 0
 
-[Overflow Report] Total Usage   : 1499
-[Overflow Report] Total Capacity: 12539
+[Overflow Report] Total Usage   : 1455
+[Overflow Report] Total Capacity: 9843
 [Overflow Report] Max H Overflow: 0
 [Overflow Report] Max V Overflow: 0
 [Overflow Report] Max Overflow  : 0
@@ -191,12 +181,9 @@ Final usage/overflow report:
 [Overflow Report] V   Overflow  : 0
 [Overflow Report] Final Overflow: 0
 
-[INFO] Final usage          : 1499
-[INFO] Final number of vias : 1985
-[INFO] Final usage 3D       : 7454
-[INFO] Total wirelength: 18043 um
-[INFO] Num routed nets: 399
-Warning: /home/ag/pdks/sky130A/libs.ref/sky130_fd_sc_hd/lib/sky130_fd_sc_hd__ss_100C_1v60.lib, line 32 default_operating_condition ss_100C_1v60 not found.
-Warning: /home/ag/pdks/sky130A/libs.ref/sky130_fd_sc_hd/lib/sky130_fd_sc_hd__ff_n40C_1v95.lib, line 31 default_operating_condition ff_n40C_1v95 not found.
-create_clock [get_ports $::env(CLOCK_PORT)]  -name $::env(CLOCK_PORT)  -period $::env(CLOCK_PERIOD)
-Error: base.sdc, 1 can't read "::env(CLOCK_PORT)": no such variable
+[INFO] Final usage          : 1455
+[INFO] Final number of vias : 1993
+[INFO] Final usage 3D       : 7434
+[INFO] Total wirelength: 17684 um
+[INFO] Num routed nets: 415
+[WARN]: No CLOCK_PORT found. Skipping STA...

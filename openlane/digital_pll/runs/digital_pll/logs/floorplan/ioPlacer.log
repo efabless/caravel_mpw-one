@@ -1,24 +1,24 @@
-OpenROAD 0.9.0 e582f2522b
+OpenROAD 0.9.0 d03ebfc244
 This program is licensed under the BSD-3 license. See the LICENSE file for details. 
 Components of this program may be licensed under more restrictive licenses which must be honored.
-Notice 0: Reading LEF file:  /openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/tmp/merged.lef
-Notice 0:     Created 11 technology layers
+Error: cannot open '/.openroad'.
+Notice 0: Reading LEF file:  /project/openlane/digital_pll/runs/digital_pll/tmp/merged.lef
+Notice 0:     Created 13 technology layers
 Notice 0:     Created 25 technology vias
-Notice 0:     Created 437 library cells
-Notice 0: Finished LEF file:  /openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/tmp/merged.lef
+Notice 0:     Created 438 library cells
+Notice 0: Finished LEF file:  /project/openlane/digital_pll/runs/digital_pll/tmp/merged.lef
 Notice 0: 
-Reading DEF file: /openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/tmp/floorplan/verilog2def_openroad.def
+Reading DEF file: /project/openlane/digital_pll/runs/digital_pll/tmp/floorplan/verilog2def_openroad.def
 Notice 0: Design: digital_pll
 Notice 0:     Created 37 pins.
-Notice 0:     Created 391 components and 2103 component-terminals.
-Notice 0:     Created 399 nets and 1320 connections.
-Notice 0: Finished DEF file: /openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/tmp/floorplan/verilog2def_openroad.def
+Notice 0:     Created 407 components and 2989 component-terminals.
+Notice 0:     Created 415 nets and 1360 connections.
+Notice 0: Finished DEF file: /project/openlane/digital_pll/runs/digital_pll/tmp/floorplan/verilog2def_openroad.def
 #Macro blocks found: 0
-Warning: using the default boundaries offset (5 microns)
-Warning: using the default min distance between IO pins (2 tracks)
-WARNING: force pin spread option has no effect when using random pin placement
+Using 5u default boundaries offset
+Using 2 tracks default min distance between IO pins
  > Running IO placement
- * Num of slots          458
+ * Num of slots          382
  * Num of I/O            37
  * Num of I/O w/sink     37
  * Num of I/O w/o sink   0
@@ -28,6 +28,6 @@ WARNING: force pin spread option has no effect when using random pin placement
  * Usage Increase Factor 0.01
  * Force Pin Spread      1
 
-WARNING: running random pin placement
+Random pin placement
 RandomMode Even
  > IO placement done.

@@ -13,7 +13,7 @@ drc euclidean on
 
 # Allow override of PDK path from environment variable PDKPATH
 if {[catch {set PDKPATH $env(PDKPATH)}]} {
-    set PDKPATH "/home/aag/latest_pdk/sky130A"
+    set PDKPATH "/home/aag/current_pdk/sky130A"
 }
 
 # loading technology
@@ -37,7 +37,7 @@ set SUB VSUBS
 # from environment variable MAGTYPE
 
 if {[catch {set MAGTYPE $env(MAGTYPE)}]} {
-   set MAGTYPE maglef
+   set MAGTYPE mag
 }
 
 # add path to reference cells
@@ -52,6 +52,7 @@ if {[file isdir ${PDKPATH}/libs.ref/${MAGTYPE}]} {
     addpath ${PDKPATH}/libs.ref/${MAGTYPE}/sky130_fd_sc_ls
     addpath ${PDKPATH}/libs.ref/${MAGTYPE}/sky130_fd_sc_ms
     addpath ${PDKPATH}/libs.ref/${MAGTYPE}/sky130_osu_sc
+    addpath ${PDKPATH}/libs.ref/${MAGTYPE}/sky130_osu_sc_t18
 } else {
     addpath ${PDKPATH}/libs.ref/sky130_fd_pr/${MAGTYPE}
     addpath ${PDKPATH}/libs.ref/sky130_fd_io/${MAGTYPE}
@@ -63,6 +64,7 @@ if {[file isdir ${PDKPATH}/libs.ref/${MAGTYPE}]} {
     addpath ${PDKPATH}/libs.ref/sky130_fd_sc_ls/${MAGTYPE}
     addpath ${PDKPATH}/libs.ref/sky130_fd_sc_ms/${MAGTYPE}
     addpath ${PDKPATH}/libs.ref/sky130_osu_sc/${MAGTYPE}
+    addpath ${PDKPATH}/libs.ref/sky130_osu_sc_t18/${MAGTYPE}
 }
 
 # add path to GDS cells

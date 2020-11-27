@@ -1,20 +1,21 @@
-OpenROAD 0.9.0 e582f2522b
+OpenROAD 0.9.0 d03ebfc244
 This program is licensed under the BSD-3 license. See the LICENSE file for details. 
 Components of this program may be licensed under more restrictive licenses which must be honored.
-Notice 0: Reading LEF file:  /openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/tmp/merged_unpadded.lef
-Notice 0:     Created 11 technology layers
+Error: cannot open '/.openroad'.
+Notice 0: Reading LEF file:  /project/openlane/digital_pll/runs/digital_pll/tmp/merged_unpadded.lef
+Notice 0:     Created 13 technology layers
 Notice 0:     Created 25 technology vias
-Notice 0:     Created 437 library cells
-Notice 0: Finished LEF file:  /openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/tmp/merged_unpadded.lef
+Notice 0:     Created 438 library cells
+Notice 0: Finished LEF file:  /project/openlane/digital_pll/runs/digital_pll/tmp/merged_unpadded.lef
 Notice 0: 
-Reading DEF file: /openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/results/placement/digital_pll.placement.def
+Reading DEF file: /project/openlane/digital_pll/runs/digital_pll/results/placement/digital_pll.placement.def
 Notice 0: Design: digital_pll
 Notice 0:     Created 37 pins.
-Notice 0:     Created 657 components and 2635 component-terminals.
-Notice 0:     Created 399 nets and 1320 connections.
-Notice 0: Finished DEF file: /openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/results/placement/digital_pll.placement.def
+Notice 0:     Created 588 components and 3491 component-terminals.
+Notice 0:     Created 415 nets and 1360 connections.
+Notice 0: Finished DEF file: /project/openlane/digital_pll/runs/digital_pll/results/placement/digital_pll.placement.def
 [INFO] [PDNG-0016] Power Delivery Network Generator: Generating PDN
-[INFO] [PDNG-0016]   config: /openLANE_flow/designs/caravel/openlane/digital_pll/pdn.tcl
+[INFO] [PDNG-0016]   config: /project/openlane/digital_pll/pdn.tcl
 [INFO] [PDNG-0008] Design Name is digital_pll
 [INFO] [PDNG-0009] Reading technology data
 [WARN] [PDNG-0018] No macro grid specifications found - no straps added
