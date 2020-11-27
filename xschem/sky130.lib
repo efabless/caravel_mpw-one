@@ -1,0 +1,100 @@
+* Copyright 2020 The SkyWater PDK Authors
+*
+* Licensed under the Apache License, Version 2.0 (the "License");
+* you may not use this file except in compliance with the License.
+* You may obtain a copy of the License at
+*
+*     https://www.apache.org/licenses/LICENSE-2.0
+*
+* Unless required by applicable law or agreed to in writing, software
+* distributed under the License is distributed on an "AS IS" BASIS,
+* WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+* See the License for the specific language governing permissions and
+* limitations under the License.
+
+******* SkyWater sky130 model library *********
+
+* Typical corner (tt)
+.lib tt
+* nfet
+.include "../../cells/nfet_01v8/sky130_fd_pr__nfet_01v8__tt.pm3.spice"
+.include "../../cells/nfet_01v8/sky130_fd_pr__nfet_01v8__mismatch.corner.spice"
+* pfet
+.include "../../cells/pfet_01v8/sky130_fd_pr__pfet_01v8__tt.pm3.spice"
+.include "../../cells/pfet_01v8/sky130_fd_pr__pfet_01v8__mismatch.corner.spice"
+* others
+.include "tt/nonfet.spice"
+.include "../all.spice"
+.include "tt/rf.spice"
+* R+C
+.include "../r+c/res_typical__cap_typical.spice"
+.include "../r+c/res_typical__cap_typical__lin.spice"
+.endl
+
+* Slow-Fast corner (sf)
+.lib sf
+* nfet
+.include "../../cells/nfet_01v8/sky130_fd_pr__nfet_01v8__sf.pm3.spice"
+.include "../../cells/nfet_01v8/sky130_fd_pr__nfet_01v8__mismatch.corner.spice"
+* pfet
+.include "../../cells/pfet_01v8/sky130_fd_pr__pfet_01v8__sf.pm3.spice"
+.include "../../cells/pfet_01v8/sky130_fd_pr__pfet_01v8__mismatch.corner.spice"
+* others
+.include "sf/nonfet.spice"
+.include "../all.spice"
+.include "sf/rf.spice"
+* R+C
+.include "../r+c/res_typical__cap_typical.spice"
+.include "../r+c/res_typical__cap_typical__lin.spice"
+.endl
+
+* Fast-Fast corner (ff)
+.lib ff
+* nfet
+.include "../../cells/nfet_01v8/sky130_fd_pr__nfet_01v8__ff.pm3.spice"
+.include "../../cells/nfet_01v8/sky130_fd_pr__nfet_01v8__mismatch.corner.spice"
+* pfet
+.include "../../cells/pfet_01v8/sky130_fd_pr__pfet_01v8__ff.pm3.spice"
+.include "../../cells/pfet_01v8/sky130_fd_pr__pfet_01v8__mismatch.corner.spice"
+* others 
+.include "ff/nonfet.spice"
+.include "../all.spice"
+.include "ff/rf.spice"
+* R+C
+.include "../r+c/res_typical__cap_typical.spice"
+.include "../r+c/res_typical__cap_typical__lin.spice"
+.endl
+
+* Slow-Slow corner (ss)
+.lib ss
+* nfet
+.include "../../cells/nfet_01v8/sky130_fd_pr__nfet_01v8__ss.pm3.spice"
+.include "../../cells/nfet_01v8/sky130_fd_pr__nfet_01v8__mismatch.corner.spice"
+* pfet
+.include "../../cells/pfet_01v8/sky130_fd_pr__pfet_01v8__ss.pm3.spice"
+.include "../../cells/pfet_01v8/sky130_fd_pr__pfet_01v8__mismatch.corner.spice"
+* others
+.include "ss/nonfet.spice"
+.include "../all.spice"
+.include "ss/rf.spice"
+* R+C
+.include "../r+c/res_typical__cap_typical.spice"
+.include "../r+c/res_typical__cap_typical__lin.spice"
+.endl
+
+* Fast-Slow corner (fs)
+.lib fs
+* nfet
+.include "../../cells/nfet_01v8/sky130_fd_pr__nfet_01v8__fs.pm3.spice"
+.include "../../cells/nfet_01v8/sky130_fd_pr__nfet_01v8__mismatch.corner.spice"
+* pfet
+.include "../../cells/pfet_01v8/sky130_fd_pr__pfet_01v8__fs.pm3.spice"
+.include "../../cells/pfet_01v8/sky130_fd_pr__pfet_01v8__mismatch.corner.spice"
+* others
+.include "fs/nonfet.spice"
+.include "../all.spice"
+.include "fs/rf.spice"
+* R+C
+.include "../r+c/res_typical__cap_typical.spice"
+.include "../r+c/res_typical__cap_typical__lin.spice"
+.endl

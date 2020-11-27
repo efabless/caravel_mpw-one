@@ -1,3 +1,6 @@
+# opamp-sky130-fulgor
+Test Chip General Purpose OpAmp using Skywater SKY130 PDK 
+
 # CIIC Harness  
 
 A template SoC for Google SKY130 free shuttles. It is still WIP. The current SoC architecture is given below.

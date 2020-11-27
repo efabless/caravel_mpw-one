@@ -1,18 +1,20 @@
 --- 
 project: 
-  description: "A template SoC for Google sponsored Open MPW shuttles for SKY130."
+  description: "Operational amplifier (opamp) based on the Miller topology designed in Skywater SKY130 CMOS process."
   foundry: "SkyWater"
-  git_url: "https://github.com/efabless/caravel.git"
-  organization: "Efabless"
-  organization_url: "http://efabless.com"
-  owner: "Tim Edwards"
+  git_url: "https://github.com/diegohernando/fulgor-opamp-sky130.git"
+  organization: "Fundación Fulgor"
+  organization_url: "http://www.fundacionfulgor.org.ar/sitio/index.php"
+  owner: "Diego Hernando"
   process: "SKY130"
-  project_name: "Caravel"
+  project_name: "fulgor-opamp-sky130"
   tags: 
     - "Open MPW"
-    - "Test Harness"
-  category: "Test Harness"
-  top_level_netlist: "verilog/rtl/caravel.v"
-  user_level_netlist: "verilog/gl/user_project_wrapper.v"
+    - "Miller opamp"
+ # Los siguientes campos deben completarse
+ # category: "Test Harness"
+ # top_level_netlist: "verilog/rtl/caravel.v"
+ # user_level_netlist: "verilog/gl/user_project_wrapper.v"
   version: "1.00"
-  cover_image: "doc/ciic_harness.png"
+ # cover_image: "doc/ciic_harness.png"
+

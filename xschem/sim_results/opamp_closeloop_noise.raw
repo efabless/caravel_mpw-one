@@ -1,0 +1,356 @@
+Title: **.subckt opamp_closeloop
+Date: Fri Nov 27 12:02:06  2020
+Plotname: Integrated Noise
+Flags: real
+No. Variables: 341
+No. Points: 1
+Variables:
+	0	onoise_total.m.x1.xm6.msky130_fd_pr__nfet_01v8.rd	voltage
+	1	@m.x1.xm1.msky130_fd_pr__pfet_01v8[gds]	admittance
+	2	@m.x1.xm1.msky130_fd_pr__pfet_01v8[gm]	admittance
+	3	i(@m.x1.xm1.msky130_fd_pr__pfet_01v8[id])	current
+	4	@m.x1.xm1.msky130_fd_pr__pfet_01v8[vds]	voltage
+	5	@m.x1.xm1.msky130_fd_pr__pfet_01v8[vdsat]	voltage
+	6	@m.x1.xm1.msky130_fd_pr__pfet_01v8[vgs]	voltage
+	7	@m.x1.xm1.msky130_fd_pr__pfet_01v8[vth]	voltage
+	8	@m.x1.xm2.msky130_fd_pr__pfet_01v8[gds]	admittance
+	9	@m.x1.xm2.msky130_fd_pr__pfet_01v8[gm]	admittance
+	10	i(@m.x1.xm2.msky130_fd_pr__pfet_01v8[id])	current
+	11	@m.x1.xm2.msky130_fd_pr__pfet_01v8[vds]	voltage
+	12	@m.x1.xm2.msky130_fd_pr__pfet_01v8[vdsat]	voltage
+	13	@m.x1.xm2.msky130_fd_pr__pfet_01v8[vgs]	voltage
+	14	@m.x1.xm2.msky130_fd_pr__pfet_01v8[vth]	voltage
+	15	@m.x1.xm3.msky130_fd_pr__nfet_01v8[gds]	admittance
+	16	@m.x1.xm3.msky130_fd_pr__nfet_01v8[gm]	admittance
+	17	i(@m.x1.xm3.msky130_fd_pr__nfet_01v8[id])	current
+	18	@m.x1.xm3.msky130_fd_pr__nfet_01v8[vds]	voltage
+	19	@m.x1.xm3.msky130_fd_pr__nfet_01v8[vdsat]	voltage
+	20	@m.x1.xm3.msky130_fd_pr__nfet_01v8[vgs]	voltage
+	21	@m.x1.xm3.msky130_fd_pr__nfet_01v8[vth]	voltage
+	22	@m.x1.xm4.msky130_fd_pr__nfet_01v8[gds]	admittance
+	23	@m.x1.xm4.msky130_fd_pr__nfet_01v8[gm]	admittance
+	24	i(@m.x1.xm4.msky130_fd_pr__nfet_01v8[id])	current
+	25	@m.x1.xm4.msky130_fd_pr__nfet_01v8[vds]	voltage
+	26	@m.x1.xm4.msky130_fd_pr__nfet_01v8[vdsat]	voltage
+	27	@m.x1.xm4.msky130_fd_pr__nfet_01v8[vgs]	voltage
+	28	@m.x1.xm4.msky130_fd_pr__nfet_01v8[vth]	voltage
+	29	@m.x1.xm5.msky130_fd_pr__pfet_01v8[gds]	admittance
+	30	@m.x1.xm5.msky130_fd_pr__pfet_01v8[gm]	admittance
+	31	i(@m.x1.xm5.msky130_fd_pr__pfet_01v8[id])	current
+	32	@m.x1.xm5.msky130_fd_pr__pfet_01v8[vds]	voltage
+	33	@m.x1.xm5.msky130_fd_pr__pfet_01v8[vdsat]	voltage
+	34	@m.x1.xm5.msky130_fd_pr__pfet_01v8[vgs]	voltage
+	35	@m.x1.xm5.msky130_fd_pr__pfet_01v8[vth]	voltage
+	36	@m.x1.xm6.msky130_fd_pr__nfet_01v8[gds]	admittance
+	37	@m.x1.xm6.msky130_fd_pr__nfet_01v8[gm]	admittance
+	38	i(@m.x1.xm6.msky130_fd_pr__nfet_01v8[id])	current
+	39	@m.x1.xm6.msky130_fd_pr__nfet_01v8[vds]	voltage
+	40	@m.x1.xm6.msky130_fd_pr__nfet_01v8[vdsat]	voltage
+	41	@m.x1.xm6.msky130_fd_pr__nfet_01v8[vgs]	voltage
+	42	@m.x1.xm6.msky130_fd_pr__nfet_01v8[vth]	voltage
+	43	@m.x1.xm7.msky130_fd_pr__pfet_01v8[gds]	admittance
+	44	@m.x1.xm7.msky130_fd_pr__pfet_01v8[gm]	admittance
+	45	i(@m.x1.xm7.msky130_fd_pr__pfet_01v8[id])	current
+	46	@m.x1.xm7.msky130_fd_pr__pfet_01v8[vds]	voltage
+	47	@m.x1.xm7.msky130_fd_pr__pfet_01v8[vdsat]	voltage
+	48	@m.x1.xm7.msky130_fd_pr__pfet_01v8[vgs]	voltage
+	49	@m.x1.xm7.msky130_fd_pr__pfet_01v8[vth]	voltage
+	50	@m.x1.xm8.msky130_fd_pr__pfet_01v8[gds]	admittance
+	51	@m.x1.xm8.msky130_fd_pr__pfet_01v8[gm]	admittance
+	52	i(@m.x1.xm8.msky130_fd_pr__pfet_01v8[id])	current
+	53	@m.x1.xm8.msky130_fd_pr__pfet_01v8[vds]	voltage
+	54	@m.x1.xm8.msky130_fd_pr__pfet_01v8[vdsat]	voltage
+	55	@m.x1.xm8.msky130_fd_pr__pfet_01v8[vgs]	voltage
+	56	@m.x1.xm8.msky130_fd_pr__pfet_01v8[vth]	voltage
+	57	@m.x1.xm9.msky130_fd_pr__nfet_01v8[gds]	admittance
+	58	@m.x1.xm9.msky130_fd_pr__nfet_01v8[gm]	admittance
+	59	i(@m.x1.xm9.msky130_fd_pr__nfet_01v8[id])	current
+	60	@m.x1.xm9.msky130_fd_pr__nfet_01v8[vds]	voltage
+	61	@m.x1.xm9.msky130_fd_pr__nfet_01v8[vdsat]	voltage
+	62	@m.x1.xm9.msky130_fd_pr__nfet_01v8[vgs]	voltage
+	63	@m.x1.xm9.msky130_fd_pr__nfet_01v8[vth]	voltage
+	64	inoise_total	voltage
+	65	inoise_total.m.x1.xm1.msky130_fd_pr__pfet_01v8	voltage
+	66	inoise_total.m.x1.xm1.msky130_fd_pr__pfet_01v8.1overf	voltage
+	67	inoise_total.m.x1.xm1.msky130_fd_pr__pfet_01v8.id	voltage
+	68	inoise_total.m.x1.xm1.msky130_fd_pr__pfet_01v8.igb	voltage
+	69	inoise_total.m.x1.xm1.msky130_fd_pr__pfet_01v8.igd	voltage
+	70	inoise_total.m.x1.xm1.msky130_fd_pr__pfet_01v8.igs	voltage
+	71	inoise_total.m.x1.xm1.msky130_fd_pr__pfet_01v8.rbdb	voltage
+	72	inoise_total.m.x1.xm1.msky130_fd_pr__pfet_01v8.rbpb	voltage
+	73	inoise_total.m.x1.xm1.msky130_fd_pr__pfet_01v8.rbpd	voltage
+	74	inoise_total.m.x1.xm1.msky130_fd_pr__pfet_01v8.rbps	voltage
+	75	inoise_total.m.x1.xm1.msky130_fd_pr__pfet_01v8.rbsb	voltage
+	76	inoise_total.m.x1.xm1.msky130_fd_pr__pfet_01v8.rd	voltage
+	77	inoise_total.m.x1.xm1.msky130_fd_pr__pfet_01v8.rg	voltage
+	78	inoise_total.m.x1.xm1.msky130_fd_pr__pfet_01v8.rs	voltage
+	79	inoise_total.m.x1.xm2.msky130_fd_pr__pfet_01v8	voltage
+	80	inoise_total.m.x1.xm2.msky130_fd_pr__pfet_01v8.1overf	voltage
+	81	inoise_total.m.x1.xm2.msky130_fd_pr__pfet_01v8.id	voltage
+	82	inoise_total.m.x1.xm2.msky130_fd_pr__pfet_01v8.igb	voltage
+	83	inoise_total.m.x1.xm2.msky130_fd_pr__pfet_01v8.igd	voltage
+	84	inoise_total.m.x1.xm2.msky130_fd_pr__pfet_01v8.igs	voltage
+	85	inoise_total.m.x1.xm2.msky130_fd_pr__pfet_01v8.rbdb	voltage
+	86	inoise_total.m.x1.xm2.msky130_fd_pr__pfet_01v8.rbpb	voltage
+	87	inoise_total.m.x1.xm2.msky130_fd_pr__pfet_01v8.rbpd	voltage
+	88	inoise_total.m.x1.xm2.msky130_fd_pr__pfet_01v8.rbps	voltage
+	89	inoise_total.m.x1.xm2.msky130_fd_pr__pfet_01v8.rbsb	voltage
+	90	inoise_total.m.x1.xm2.msky130_fd_pr__pfet_01v8.rd	voltage
+	91	inoise_total.m.x1.xm2.msky130_fd_pr__pfet_01v8.rg	voltage
+	92	inoise_total.m.x1.xm2.msky130_fd_pr__pfet_01v8.rs	voltage
+	93	inoise_total.m.x1.xm3.msky130_fd_pr__nfet_01v8	voltage
+	94	inoise_total.m.x1.xm3.msky130_fd_pr__nfet_01v8.1overf	voltage
+	95	inoise_total.m.x1.xm3.msky130_fd_pr__nfet_01v8.id	voltage
+	96	inoise_total.m.x1.xm3.msky130_fd_pr__nfet_01v8.igb	voltage
+	97	inoise_total.m.x1.xm3.msky130_fd_pr__nfet_01v8.igd	voltage
+	98	inoise_total.m.x1.xm3.msky130_fd_pr__nfet_01v8.igs	voltage
+	99	inoise_total.m.x1.xm3.msky130_fd_pr__nfet_01v8.rbdb	voltage
+	100	inoise_total.m.x1.xm3.msky130_fd_pr__nfet_01v8.rbpb	voltage
+	101	inoise_total.m.x1.xm3.msky130_fd_pr__nfet_01v8.rbpd	voltage
+	102	inoise_total.m.x1.xm3.msky130_fd_pr__nfet_01v8.rbps	voltage
+	103	inoise_total.m.x1.xm3.msky130_fd_pr__nfet_01v8.rbsb	voltage
+	104	inoise_total.m.x1.xm3.msky130_fd_pr__nfet_01v8.rd	voltage
+	105	inoise_total.m.x1.xm3.msky130_fd_pr__nfet_01v8.rg	voltage
+	106	inoise_total.m.x1.xm3.msky130_fd_pr__nfet_01v8.rs	voltage
+	107	inoise_total.m.x1.xm4.msky130_fd_pr__nfet_01v8	voltage
+	108	inoise_total.m.x1.xm4.msky130_fd_pr__nfet_01v8.1overf	voltage
+	109	inoise_total.m.x1.xm4.msky130_fd_pr__nfet_01v8.id	voltage
+	110	inoise_total.m.x1.xm4.msky130_fd_pr__nfet_01v8.igb	voltage
+	111	inoise_total.m.x1.xm4.msky130_fd_pr__nfet_01v8.igd	voltage
+	112	inoise_total.m.x1.xm4.msky130_fd_pr__nfet_01v8.igs	voltage
+	113	inoise_total.m.x1.xm4.msky130_fd_pr__nfet_01v8.rbdb	voltage
+	114	inoise_total.m.x1.xm4.msky130_fd_pr__nfet_01v8.rbpb	voltage
+	115	inoise_total.m.x1.xm4.msky130_fd_pr__nfet_01v8.rbpd	voltage
+	116	inoise_total.m.x1.xm4.msky130_fd_pr__nfet_01v8.rbps	voltage
+	117	inoise_total.m.x1.xm4.msky130_fd_pr__nfet_01v8.rbsb	voltage
+	118	inoise_total.m.x1.xm4.msky130_fd_pr__nfet_01v8.rd	voltage
+	119	inoise_total.m.x1.xm4.msky130_fd_pr__nfet_01v8.rg	voltage
+	120	inoise_total.m.x1.xm4.msky130_fd_pr__nfet_01v8.rs	voltage
+	121	inoise_total.m.x1.xm5.msky130_fd_pr__pfet_01v8	voltage
+	122	inoise_total.m.x1.xm5.msky130_fd_pr__pfet_01v8.1overf	voltage
+	123	inoise_total.m.x1.xm5.msky130_fd_pr__pfet_01v8.id	voltage
+	124	inoise_total.m.x1.xm5.msky130_fd_pr__pfet_01v8.igb	voltage
+	125	inoise_total.m.x1.xm5.msky130_fd_pr__pfet_01v8.igd	voltage
+	126	inoise_total.m.x1.xm5.msky130_fd_pr__pfet_01v8.igs	voltage
+	127	inoise_total.m.x1.xm5.msky130_fd_pr__pfet_01v8.rbdb	voltage
+	128	inoise_total.m.x1.xm5.msky130_fd_pr__pfet_01v8.rbpb	voltage
+	129	inoise_total.m.x1.xm5.msky130_fd_pr__pfet_01v8.rbpd	voltage
+	130	inoise_total.m.x1.xm5.msky130_fd_pr__pfet_01v8.rbps	voltage
+	131	inoise_total.m.x1.xm5.msky130_fd_pr__pfet_01v8.rbsb	voltage
+	132	inoise_total.m.x1.xm5.msky130_fd_pr__pfet_01v8.rd	voltage
+	133	inoise_total.m.x1.xm5.msky130_fd_pr__pfet_01v8.rg	voltage
+	134	inoise_total.m.x1.xm5.msky130_fd_pr__pfet_01v8.rs	voltage
+	135	inoise_total.m.x1.xm6.msky130_fd_pr__nfet_01v8	voltage
+	136	inoise_total.m.x1.xm6.msky130_fd_pr__nfet_01v8.1overf	voltage
+	137	inoise_total.m.x1.xm6.msky130_fd_pr__nfet_01v8.id	voltage
+	138	inoise_total.m.x1.xm6.msky130_fd_pr__nfet_01v8.igb	voltage
+	139	inoise_total.m.x1.xm6.msky130_fd_pr__nfet_01v8.igd	voltage
+	140	inoise_total.m.x1.xm6.msky130_fd_pr__nfet_01v8.igs	voltage
+	141	inoise_total.m.x1.xm6.msky130_fd_pr__nfet_01v8.rbdb	voltage
+	142	inoise_total.m.x1.xm6.msky130_fd_pr__nfet_01v8.rbpb	voltage
+	143	inoise_total.m.x1.xm6.msky130_fd_pr__nfet_01v8.rbpd	voltage
+	144	inoise_total.m.x1.xm6.msky130_fd_pr__nfet_01v8.rbps	voltage
+	145	inoise_total.m.x1.xm6.msky130_fd_pr__nfet_01v8.rbsb	voltage
+	146	inoise_total.m.x1.xm6.msky130_fd_pr__nfet_01v8.rd	voltage
+	147	inoise_total.m.x1.xm6.msky130_fd_pr__nfet_01v8.rg	voltage
+	148	inoise_total.m.x1.xm6.msky130_fd_pr__nfet_01v8.rs	voltage
+	149	inoise_total.m.x1.xm7.msky130_fd_pr__pfet_01v8	voltage
+	150	inoise_total.m.x1.xm7.msky130_fd_pr__pfet_01v8.1overf	voltage
+	151	inoise_total.m.x1.xm7.msky130_fd_pr__pfet_01v8.id	voltage
+	152	inoise_total.m.x1.xm7.msky130_fd_pr__pfet_01v8.igb	voltage
+	153	inoise_total.m.x1.xm7.msky130_fd_pr__pfet_01v8.igd	voltage
+	154	inoise_total.m.x1.xm7.msky130_fd_pr__pfet_01v8.igs	voltage
+	155	inoise_total.m.x1.xm7.msky130_fd_pr__pfet_01v8.rbdb	voltage
+	156	inoise_total.m.x1.xm7.msky130_fd_pr__pfet_01v8.rbpb	voltage
+	157	inoise_total.m.x1.xm7.msky130_fd_pr__pfet_01v8.rbpd	voltage
+	158	inoise_total.m.x1.xm7.msky130_fd_pr__pfet_01v8.rbps	voltage
+	159	inoise_total.m.x1.xm7.msky130_fd_pr__pfet_01v8.rbsb	voltage
+	160	inoise_total.m.x1.xm7.msky130_fd_pr__pfet_01v8.rd	voltage
+	161	inoise_total.m.x1.xm7.msky130_fd_pr__pfet_01v8.rg	voltage
+	162	inoise_total.m.x1.xm7.msky130_fd_pr__pfet_01v8.rs	voltage
+	163	inoise_total.m.x1.xm8.msky130_fd_pr__pfet_01v8	voltage
+	164	inoise_total.m.x1.xm8.msky130_fd_pr__pfet_01v8.1overf	voltage
+	165	inoise_total.m.x1.xm8.msky130_fd_pr__pfet_01v8.id	voltage
+	166	inoise_total.m.x1.xm8.msky130_fd_pr__pfet_01v8.igb	voltage
+	167	inoise_total.m.x1.xm8.msky130_fd_pr__pfet_01v8.igd	voltage
+	168	inoise_total.m.x1.xm8.msky130_fd_pr__pfet_01v8.igs	voltage
+	169	inoise_total.m.x1.xm8.msky130_fd_pr__pfet_01v8.rbdb	voltage
+	170	inoise_total.m.x1.xm8.msky130_fd_pr__pfet_01v8.rbpb	voltage
+	171	inoise_total.m.x1.xm8.msky130_fd_pr__pfet_01v8.rbpd	voltage
+	172	inoise_total.m.x1.xm8.msky130_fd_pr__pfet_01v8.rbps	voltage
+	173	inoise_total.m.x1.xm8.msky130_fd_pr__pfet_01v8.rbsb	voltage
+	174	inoise_total.m.x1.xm8.msky130_fd_pr__pfet_01v8.rd	voltage
+	175	inoise_total.m.x1.xm8.msky130_fd_pr__pfet_01v8.rg	voltage
+	176	inoise_total.m.x1.xm8.msky130_fd_pr__pfet_01v8.rs	voltage
+	177	inoise_total.m.x1.xm9.msky130_fd_pr__nfet_01v8	voltage
+	178	inoise_total.m.x1.xm9.msky130_fd_pr__nfet_01v8.1overf	voltage
+	179	inoise_total.m.x1.xm9.msky130_fd_pr__nfet_01v8.id	voltage
+	180	inoise_total.m.x1.xm9.msky130_fd_pr__nfet_01v8.igb	voltage
+	181	inoise_total.m.x1.xm9.msky130_fd_pr__nfet_01v8.igd	voltage
+	182	inoise_total.m.x1.xm9.msky130_fd_pr__nfet_01v8.igs	voltage
+	183	inoise_total.m.x1.xm9.msky130_fd_pr__nfet_01v8.rbdb	voltage
+	184	inoise_total.m.x1.xm9.msky130_fd_pr__nfet_01v8.rbpb	voltage
+	185	inoise_total.m.x1.xm9.msky130_fd_pr__nfet_01v8.rbpd	voltage
+	186	inoise_total.m.x1.xm9.msky130_fd_pr__nfet_01v8.rbps	voltage
+	187	inoise_total.m.x1.xm9.msky130_fd_pr__nfet_01v8.rbsb	voltage
+	188	inoise_total.m.x1.xm9.msky130_fd_pr__nfet_01v8.rd	voltage
+	189	inoise_total.m.x1.xm9.msky130_fd_pr__nfet_01v8.rg	voltage
+	190	inoise_total.m.x1.xm9.msky130_fd_pr__nfet_01v8.rs	voltage
+	191	inoise_total_r.x1.xc1.rs1	voltage
+	192	inoise_total_r.x1.xc1.rs1_1overf	voltage
+	193	inoise_total_r.x1.xc1.rs1_thermal	voltage
+	194	inoise_total_r.x1.xc1.rs2	voltage
+	195	inoise_total_r.x1.xc1.rs2_1overf	voltage
+	196	inoise_total_r.x1.xc1.rs2_thermal	voltage
+	197	inoise_total_r1	voltage
+	198	inoise_total_r1_1overf	voltage
+	199	inoise_total_r1_thermal	voltage
+	200	inoise_total_r3	voltage
+	201	inoise_total_r3_1overf	voltage
+	202	inoise_total_r3_thermal	voltage
+	203	onoise_total	voltage
+	204	onoise_total.m.x1.xm1.msky130_fd_pr__pfet_01v8	voltage
+	205	onoise_total.m.x1.xm1.msky130_fd_pr__pfet_01v8.1overf	voltage
+	206	onoise_total.m.x1.xm1.msky130_fd_pr__pfet_01v8.id	voltage
+	207	onoise_total.m.x1.xm1.msky130_fd_pr__pfet_01v8.igb	voltage
+	208	onoise_total.m.x1.xm1.msky130_fd_pr__pfet_01v8.igd	voltage
+	209	onoise_total.m.x1.xm1.msky130_fd_pr__pfet_01v8.igs	voltage
+	210	onoise_total.m.x1.xm1.msky130_fd_pr__pfet_01v8.rbdb	voltage
+	211	onoise_total.m.x1.xm1.msky130_fd_pr__pfet_01v8.rbpb	voltage
+	212	onoise_total.m.x1.xm1.msky130_fd_pr__pfet_01v8.rbpd	voltage
+	213	onoise_total.m.x1.xm1.msky130_fd_pr__pfet_01v8.rbps	voltage
+	214	onoise_total.m.x1.xm1.msky130_fd_pr__pfet_01v8.rbsb	voltage
+	215	onoise_total.m.x1.xm1.msky130_fd_pr__pfet_01v8.rd	voltage
+	216	onoise_total.m.x1.xm1.msky130_fd_pr__pfet_01v8.rg	voltage
+	217	onoise_total.m.x1.xm1.msky130_fd_pr__pfet_01v8.rs	voltage
+	218	onoise_total.m.x1.xm2.msky130_fd_pr__pfet_01v8	voltage
+	219	onoise_total.m.x1.xm2.msky130_fd_pr__pfet_01v8.1overf	voltage
+	220	onoise_total.m.x1.xm2.msky130_fd_pr__pfet_01v8.id	voltage
+	221	onoise_total.m.x1.xm2.msky130_fd_pr__pfet_01v8.igb	voltage
+	222	onoise_total.m.x1.xm2.msky130_fd_pr__pfet_01v8.igd	voltage
+	223	onoise_total.m.x1.xm2.msky130_fd_pr__pfet_01v8.igs	voltage
+	224	onoise_total.m.x1.xm2.msky130_fd_pr__pfet_01v8.rbdb	voltage
+	225	onoise_total.m.x1.xm2.msky130_fd_pr__pfet_01v8.rbpb	voltage
+	226	onoise_total.m.x1.xm2.msky130_fd_pr__pfet_01v8.rbpd	voltage
+	227	onoise_total.m.x1.xm2.msky130_fd_pr__pfet_01v8.rbps	voltage
+	228	onoise_total.m.x1.xm2.msky130_fd_pr__pfet_01v8.rbsb	voltage
+	229	onoise_total.m.x1.xm2.msky130_fd_pr__pfet_01v8.rd	voltage
+	230	onoise_total.m.x1.xm2.msky130_fd_pr__pfet_01v8.rg	voltage
+	231	onoise_total.m.x1.xm2.msky130_fd_pr__pfet_01v8.rs	voltage
+	232	onoise_total.m.x1.xm3.msky130_fd_pr__nfet_01v8	voltage
+	233	onoise_total.m.x1.xm3.msky130_fd_pr__nfet_01v8.1overf	voltage
+	234	onoise_total.m.x1.xm3.msky130_fd_pr__nfet_01v8.id	voltage
+	235	onoise_total.m.x1.xm3.msky130_fd_pr__nfet_01v8.igb	voltage
+	236	onoise_total.m.x1.xm3.msky130_fd_pr__nfet_01v8.igd	voltage
+	237	onoise_total.m.x1.xm3.msky130_fd_pr__nfet_01v8.igs	voltage
+	238	onoise_total.m.x1.xm3.msky130_fd_pr__nfet_01v8.rbdb	voltage
+	239	onoise_total.m.x1.xm3.msky130_fd_pr__nfet_01v8.rbpb	voltage
+	240	onoise_total.m.x1.xm3.msky130_fd_pr__nfet_01v8.rbpd	voltage
+	241	onoise_total.m.x1.xm3.msky130_fd_pr__nfet_01v8.rbps	voltage
+	242	onoise_total.m.x1.xm3.msky130_fd_pr__nfet_01v8.rbsb	voltage
+	243	onoise_total.m.x1.xm3.msky130_fd_pr__nfet_01v8.rd	voltage
+	244	onoise_total.m.x1.xm3.msky130_fd_pr__nfet_01v8.rg	voltage
+	245	onoise_total.m.x1.xm3.msky130_fd_pr__nfet_01v8.rs	voltage
+	246	onoise_total.m.x1.xm4.msky130_fd_pr__nfet_01v8	voltage
+	247	onoise_total.m.x1.xm4.msky130_fd_pr__nfet_01v8.1overf	voltage
+	248	onoise_total.m.x1.xm4.msky130_fd_pr__nfet_01v8.id	voltage
+	249	onoise_total.m.x1.xm4.msky130_fd_pr__nfet_01v8.igb	voltage
+	250	onoise_total.m.x1.xm4.msky130_fd_pr__nfet_01v8.igd	voltage
+	251	onoise_total.m.x1.xm4.msky130_fd_pr__nfet_01v8.igs	voltage
+	252	onoise_total.m.x1.xm4.msky130_fd_pr__nfet_01v8.rbdb	voltage
+	253	onoise_total.m.x1.xm4.msky130_fd_pr__nfet_01v8.rbpb	voltage
+	254	onoise_total.m.x1.xm4.msky130_fd_pr__nfet_01v8.rbpd	voltage
+	255	onoise_total.m.x1.xm4.msky130_fd_pr__nfet_01v8.rbps	voltage
+	256	onoise_total.m.x1.xm4.msky130_fd_pr__nfet_01v8.rbsb	voltage
+	257	onoise_total.m.x1.xm4.msky130_fd_pr__nfet_01v8.rd	voltage
+	258	onoise_total.m.x1.xm4.msky130_fd_pr__nfet_01v8.rg	voltage
+	259	onoise_total.m.x1.xm4.msky130_fd_pr__nfet_01v8.rs	voltage
+	260	onoise_total.m.x1.xm5.msky130_fd_pr__pfet_01v8	voltage
+	261	onoise_total.m.x1.xm5.msky130_fd_pr__pfet_01v8.1overf	voltage
+	262	onoise_total.m.x1.xm5.msky130_fd_pr__pfet_01v8.id	voltage
+	263	onoise_total.m.x1.xm5.msky130_fd_pr__pfet_01v8.igb	voltage
+	264	onoise_total.m.x1.xm5.msky130_fd_pr__pfet_01v8.igd	voltage
+	265	onoise_total.m.x1.xm5.msky130_fd_pr__pfet_01v8.igs	voltage
+	266	onoise_total.m.x1.xm5.msky130_fd_pr__pfet_01v8.rbdb	voltage
+	267	onoise_total.m.x1.xm5.msky130_fd_pr__pfet_01v8.rbpb	voltage
+	268	onoise_total.m.x1.xm5.msky130_fd_pr__pfet_01v8.rbpd	voltage
+	269	onoise_total.m.x1.xm5.msky130_fd_pr__pfet_01v8.rbps	voltage
+	270	onoise_total.m.x1.xm5.msky130_fd_pr__pfet_01v8.rbsb	voltage
+	271	onoise_total.m.x1.xm5.msky130_fd_pr__pfet_01v8.rd	voltage
+	272	onoise_total.m.x1.xm5.msky130_fd_pr__pfet_01v8.rg	voltage
+	273	onoise_total.m.x1.xm5.msky130_fd_pr__pfet_01v8.rs	voltage
+	274	onoise_total.m.x1.xm6.msky130_fd_pr__nfet_01v8	voltage
+	275	onoise_total.m.x1.xm6.msky130_fd_pr__nfet_01v8.1overf	voltage
+	276	onoise_total.m.x1.xm6.msky130_fd_pr__nfet_01v8.id	voltage
+	277	onoise_total.m.x1.xm6.msky130_fd_pr__nfet_01v8.igb	voltage
+	278	onoise_total.m.x1.xm6.msky130_fd_pr__nfet_01v8.igd	voltage
+	279	onoise_total.m.x1.xm6.msky130_fd_pr__nfet_01v8.igs	voltage
+	280	onoise_total.m.x1.xm6.msky130_fd_pr__nfet_01v8.rbdb	voltage
+	281	onoise_total.m.x1.xm6.msky130_fd_pr__nfet_01v8.rbpb	voltage
+	282	onoise_total.m.x1.xm6.msky130_fd_pr__nfet_01v8.rbpd	voltage
+	283	onoise_total.m.x1.xm6.msky130_fd_pr__nfet_01v8.rbps	voltage
+	284	onoise_total.m.x1.xm6.msky130_fd_pr__nfet_01v8.rbsb	voltage
+	285	onoise_total.m.x1.xm6.msky130_fd_pr__nfet_01v8.rg	voltage
+	286	onoise_total.m.x1.xm6.msky130_fd_pr__nfet_01v8.rs	voltage
+	287	onoise_total.m.x1.xm7.msky130_fd_pr__pfet_01v8	voltage
+	288	onoise_total.m.x1.xm7.msky130_fd_pr__pfet_01v8.1overf	voltage
+	289	onoise_total.m.x1.xm7.msky130_fd_pr__pfet_01v8.id	voltage
+	290	onoise_total.m.x1.xm7.msky130_fd_pr__pfet_01v8.igb	voltage
+	291	onoise_total.m.x1.xm7.msky130_fd_pr__pfet_01v8.igd	voltage
+	292	onoise_total.m.x1.xm7.msky130_fd_pr__pfet_01v8.igs	voltage
+	293	onoise_total.m.x1.xm7.msky130_fd_pr__pfet_01v8.rbdb	voltage
+	294	onoise_total.m.x1.xm7.msky130_fd_pr__pfet_01v8.rbpb	voltage
+	295	onoise_total.m.x1.xm7.msky130_fd_pr__pfet_01v8.rbpd	voltage
+	296	onoise_total.m.x1.xm7.msky130_fd_pr__pfet_01v8.rbps	voltage
+	297	onoise_total.m.x1.xm7.msky130_fd_pr__pfet_01v8.rbsb	voltage
+	298	onoise_total.m.x1.xm7.msky130_fd_pr__pfet_01v8.rd	voltage
+	299	onoise_total.m.x1.xm7.msky130_fd_pr__pfet_01v8.rg	voltage
+	300	onoise_total.m.x1.xm7.msky130_fd_pr__pfet_01v8.rs	voltage
+	301	onoise_total.m.x1.xm8.msky130_fd_pr__pfet_01v8	voltage
+	302	onoise_total.m.x1.xm8.msky130_fd_pr__pfet_01v8.1overf	voltage
+	303	onoise_total.m.x1.xm8.msky130_fd_pr__pfet_01v8.id	voltage
+	304	onoise_total.m.x1.xm8.msky130_fd_pr__pfet_01v8.igb	voltage
+	305	onoise_total.m.x1.xm8.msky130_fd_pr__pfet_01v8.igd	voltage
+	306	onoise_total.m.x1.xm8.msky130_fd_pr__pfet_01v8.igs	voltage
+	307	onoise_total.m.x1.xm8.msky130_fd_pr__pfet_01v8.rbdb	voltage
+	308	onoise_total.m.x1.xm8.msky130_fd_pr__pfet_01v8.rbpb	voltage
+	309	onoise_total.m.x1.xm8.msky130_fd_pr__pfet_01v8.rbpd	voltage
+	310	onoise_total.m.x1.xm8.msky130_fd_pr__pfet_01v8.rbps	voltage
+	311	onoise_total.m.x1.xm8.msky130_fd_pr__pfet_01v8.rbsb	voltage
+	312	onoise_total.m.x1.xm8.msky130_fd_pr__pfet_01v8.rd	voltage
+	313	onoise_total.m.x1.xm8.msky130_fd_pr__pfet_01v8.rg	voltage
+	314	onoise_total.m.x1.xm8.msky130_fd_pr__pfet_01v8.rs	voltage
+	315	onoise_total.m.x1.xm9.msky130_fd_pr__nfet_01v8	voltage
+	316	onoise_total.m.x1.xm9.msky130_fd_pr__nfet_01v8.1overf	voltage
+	317	onoise_total.m.x1.xm9.msky130_fd_pr__nfet_01v8.id	voltage
+	318	onoise_total.m.x1.xm9.msky130_fd_pr__nfet_01v8.igb	voltage
+	319	onoise_total.m.x1.xm9.msky130_fd_pr__nfet_01v8.igd	voltage
+	320	onoise_total.m.x1.xm9.msky130_fd_pr__nfet_01v8.igs	voltage
+	321	onoise_total.m.x1.xm9.msky130_fd_pr__nfet_01v8.rbdb	voltage
+	322	onoise_total.m.x1.xm9.msky130_fd_pr__nfet_01v8.rbpb	voltage
+	323	onoise_total.m.x1.xm9.msky130_fd_pr__nfet_01v8.rbpd	voltage
+	324	onoise_total.m.x1.xm9.msky130_fd_pr__nfet_01v8.rbps	voltage
+	325	onoise_total.m.x1.xm9.msky130_fd_pr__nfet_01v8.rbsb	voltage
+	326	onoise_total.m.x1.xm9.msky130_fd_pr__nfet_01v8.rd	voltage
+	327	onoise_total.m.x1.xm9.msky130_fd_pr__nfet_01v8.rg	voltage
+	328	onoise_total.m.x1.xm9.msky130_fd_pr__nfet_01v8.rs	voltage
+	329	onoise_total_r.x1.xc1.rs1	voltage
+	330	onoise_total_r.x1.xc1.rs1_1overf	voltage
+	331	onoise_total_r.x1.xc1.rs1_thermal	voltage
+	332	onoise_total_r.x1.xc1.rs2	voltage
+	333	onoise_total_r.x1.xc1.rs2_1overf	voltage
+	334	onoise_total_r.x1.xc1.rs2_thermal	voltage
+	335	onoise_total_r1	voltage
+	336	onoise_total_r1_1overf	voltage
+	337	onoise_total_r1_thermal	voltage
+	338	onoise_total_r3	voltage
+	339	onoise_total_r3_1overf	voltage
+	340	onoise_total_r3_thermal	voltage
+Binary:
+ñXÇ™j=>PûÉ¨N)÷>jðGr"wT?#²áõ['?Ê>#Žà/î?Â‘v;<ö°?îÒËyLBè?ýÏeÅsë?v©.ƒ}ƒ÷>Z‚Å T?¥‰@X[Q?qdŠ>í?ºîJ!±?²p«Jè?Ò*ïÁtë?›n™Zücö>ZEm#C¡Z?¥Ð}#_'?GŠc´ã?6ªP˜@—°?Q›$øc´ã??·ßRûã?(¶3Â)ö>âN!³ÏZ?¼Ò¡?^Q?{o>²¹¥ä?Öq®ºš°?}ÀT÷c´ã?=(j~±ùã?l(Ž¢BW?¾SÚV}w^?0Ë:_<&?¨=x»HÕÎ?&ÛE{uÇÃ?Ï @n)Íî?øøç@‹ë?>!D•ÍE#?>ï‘M‘? ¢mô}P?|íÌ¿ö¡é?©å¤¶?âç§¹¥ä? ò§¨ã?z2¨Ñ°ç&?Ä¸•ÒA†?¦{Aò}P?ØN&Qž÷ï?ˆ7V·jÄ?ÍJ‡7)Íî?Léqë?De‡^xò>-9Ä4²¶Q?Dl³ â6? «Áß'Íî?ÝOË
+
+Ä??p½9)Íî?Îå|!së?ß2b]`?ŒcÒ¬¿«=,t"E©¿’=   À¬T"¾ï¾êÑlÞÌ?7@8…ïyò?ê?ölüê?‡/šÛÿá?ù÷°™‚?z¬‚Ï“ƒ?7F ’‚?                        ¢;q€ñn8?¯Áf9/?Ç’áÄ'?£@{9?üý‰T9?ºBß-úü>        L|øà,{p>‰DžßÔë¡?Áý‘µQÁ+?+´Ÿý:Ú¡?                        ‚ønà>“c?a˜¿{S?íÝ³~ßàS? Ÿ‰É!{C?ÌÙ)ë{C?e”–+n(?        ^CëŠöš>"l—VŽ??bß®R?5ä¾Æš<Ž?                        nÅ«VÃm2?Ý®ÝuîÓ.?ž>Þ¿'?ß‹ÒýâÓ?S]ï Ô?âÁX¸×î>        š+§­°‘>Âdc±Á±?[‘SG0t?øý(éU´±?                        ó5mwbX?QqÏJ8N?´ €E?½u/ÐF8>?æš|¥W8>?_¼­°ïf!?        2•CN”q®>\Äb‰1u?ƒM£&—t?&Äê3àt?                        Æeå˜è7?97¶ÅˆˆD?åêý€u1?›((¨Žˆ4?L&öu†ˆ4?‘ßù/ð>        Q_¹6i·>}*ÞÝ?¬(´E1Èž?y|›GËÈÝ?                        V>Ð$Ø‰?%%ÕÛ(Iƒ?Ž1„÷ïq?—v;96Is?#¡ð*Is?æêã„>›J?        Ðc
+g¶×>¡Ù¹ýÐÑ?LûL9üTh?r8Bí›ÍÑ?                        aI£hZ}?tbMŽZw?ÄoM6cîf?•µôi[g?CtÞE_g?y)EX'>?        Âøqò Ì>R-»»Ð_°?®¼ÿ¹L?í<Zì]°?                        BÂ?eÉ	R?Ñ›òŸw8Q?èã†& 3?{ÆÀi8A?DXIÔˆ8A?äGºbS?        Ðj)¥OÙ·>×·ñ²–¸?9-L»ô=*™Î“–¸?                        ¤®ý—r¢;?AØ².°/?¶‘wÆ(?:r</4?·…*¥÷ï,?NN*ƒ	?        ˆúö}³®S?ÒN•à¾Þ=?        ÒN•à¾Þ=?X½Rˆ¼?        X½Rˆ¼?fÓ$ãÎU4?        fÓ$ãÎU4?›"ÿöDA£?        ›"ÿöDA£?1R1ºÑ??ng±3?f°0˜äû>’2fD·A?                        ‰ó/7†>jÀ÷Ú#•>~ßš9T…>ìÞ™òÚ#…>nL¡ûÚ#…>Ã;N+Ñï2>        
+Ä£ôðó=¹Ô?; ×‰‘Þû>qäÞ?                        
+õuð¯s…>;§;¿x”>bÙ7:¾„>ÙŠO¿x„>»<Þ¿x„>£0å¶2>        cíÉeòäó=l£#Î¬4?²¤ÑaG<1?(D›8uÖ&?                        ÕváòŒ,™>“7êuz©>-f[<c™>Y\êoz™>Úmô{z™>Œ+ü×ä11>        ŒrÒ/àk$>©{=<5? ”&íÈµ1? õÜ†o'?                        ª›=Šuê™>¡éu©Ø©>ƒ|¿á™>igÐ©Ø™>ø.C©Ø™>D0uçÛ6>        ’l«%>?zÁÜànÞ>²®Èâ¯²>À çxÞ>                        ;ÆáH`>“¿5Ê§?o>œpWg^>X7ÛÍ¦?_>»íCÎ¨?_>EeMC >        ]ZødŸBâ=þ&¿´ýþ>®l®í¦å>Íè«Êe	ý>                        !À{QÑ‹‚>Rô¥1>v‰Œ³}>6÷…Ì2}>Vúœ 2}>        âŽE«ÍTý=:3¥nñ>è˜Ü°Ç½¹>X·Ë2[ñ>                        •	ëÒex>ØÊL3”„>"ó$:cåt>ÙL“·3”t>Ëã3”t>å£¦ôÈ)0>        N~(RP»ô=»>‡AèÈ?|~$DÙÙÌ>}½—Âf²?                        (M÷Ö.ƒ>%ö_.â’>ätRy`Ò‚>ãéäþâ‚>¢xÇ^â‚>óÆ?ŽË!>        
+CK™Ç>ø¨âŸ’þ>	/ib=Ë±É¬’þ>                        ……àÌo1>³á#ì'>äƒEÍ#á>¬„A‚á>>o‡WûÃ/>±EÞ>P>        ýjJÜ¡—>æþÔ:Ü‚>        æþÔ:Ü‚>Õp¶„¡	d>        Õp¶„¡	d>)«mf?        )«mf?tíýbü>        tíýbü>
