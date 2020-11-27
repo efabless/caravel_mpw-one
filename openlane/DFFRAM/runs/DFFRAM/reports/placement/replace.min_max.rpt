@@ -1,6 +1,7 @@
-Startpoint: B_0_2.WORD[41].W.B3.BIT[7].FF
+Startpoint: COLUMN[0].RAMCOLS/B_0_3/WORD[17].W/B1/BIT[3].FF
             (rising edge-triggered flip-flop clocked by CLK)
-Endpoint: B_0_2.OUT[31].FF (rising edge-triggered flip-flop clocked by CLK)
+Endpoint: COLUMN[0].RAMCOLS/B_0_3/OUT[11].FF
+          (rising edge-triggered flip-flop clocked by CLK)
 Path Group: CLK
 Path Type: min
 
@@ -8,16 +9,16 @@ Path Type: min
 ---------------------------------------------------------
    0.00    0.00   clock CLK (rise edge)
    0.00    0.00   clock network delay (ideal)
-   0.00    0.00 ^ B_0_2.WORD[41].W.B3.BIT[7].FF/CLK (sky130_fd_sc_hd__dfxtp_1)
-   0.17    0.17 ^ B_0_2.WORD[41].W.B3.BIT[7].FF/Q (sky130_fd_sc_hd__dfxtp_1)
-   0.04    0.21 ^ B_0_2.WORD[41].W.B3.BIT[7].OBUF/Z (sky130_fd_sc_hd__ebufn_2)
-   0.00    0.21 ^ B_0_2.OUT[31].FF/D (sky130_fd_sc_hd__dfxtp_1)
+   0.00    0.00 ^ COLUMN[0].RAMCOLS/B_0_3/WORD[17].W/B1/BIT[3].FF/CLK (sky130_fd_sc_hd__dfxtp_1)
+   0.17    0.17 ^ COLUMN[0].RAMCOLS/B_0_3/WORD[17].W/B1/BIT[3].FF/Q (sky130_fd_sc_hd__dfxtp_1)
+   0.04    0.21 ^ COLUMN[0].RAMCOLS/B_0_3/WORD[17].W/B1/BIT[3].OBUF/Z (sky130_fd_sc_hd__ebufn_2)
+   0.00    0.21 ^ COLUMN[0].RAMCOLS/B_0_3/OUT[11].FF/D (sky130_fd_sc_hd__dfxtp_1)
            0.21   data arrival time
 
    0.00    0.00   clock CLK (rise edge)
    0.00    0.00   clock network delay (ideal)
    0.00    0.00   clock reconvergence pessimism
-           0.00 ^ B_0_2.OUT[31].FF/CLK (sky130_fd_sc_hd__dfxtp_1)
+           0.00 ^ COLUMN[0].RAMCOLS/B_0_3/OUT[11].FF/CLK (sky130_fd_sc_hd__dfxtp_1)
   -0.02   -0.02   library hold time
           -0.02   data required time
 ---------------------------------------------------------
@@ -27,8 +28,9 @@ Path Type: min
            0.23   slack (MET)
 
 
-Startpoint: A[6] (input port clocked by CLK)
-Endpoint: B_0_0.OUT[11].FF (rising edge-triggered flip-flop clocked by CLK)
+Startpoint: EN (input port clocked by CLK)
+Endpoint: COLUMN[0].RAMCOLS/B_0_0/OUT[25].FF
+          (rising edge-triggered flip-flop clocked by CLK)
 Path Group: CLK
 Path Type: max
 
@@ -36,26 +38,27 @@ Path Type: max
 ---------------------------------------------------------
    0.00    0.00   clock CLK (rise edge)
    0.00    0.00   clock network delay (ideal)
-   2.00    2.00 v input external delay
-   0.10    2.10 v A[6] (in)
-   7.27    9.36 ^ DEC.AND0/Y (sky130_fd_sc_hd__nor3b_2)
-   2.67   12.03 ^ B_0_0.DEC.DEC_L0.AND0/Y (sky130_fd_sc_hd__nor4b_2)
-   1.85   13.88 ^ B_0_0.DEC.DEC_L1[0].U.AND0/Y (sky130_fd_sc_hd__nor4b_2)
-   1.09   14.97 v B_0_0.WORD[0].W.B1.INV/Y (sky130_fd_sc_hd__inv_1)
-   0.42   15.39 v B_0_0.WORD[0].W.B1.BIT[3].OBUF/Z (sky130_fd_sc_hd__ebufn_2)
-   0.02   15.41 v B_0_0.OUT[11].FF/D (sky130_fd_sc_hd__dfxtp_1)
-          15.41   data arrival time
+   2.00    2.00 ^ input external delay
+   0.00    2.00 ^ EN (in)
+   0.47    2.47 ^ ENBUF/X (sky130_fd_sc_hd__clkbuf_4)
+   0.66    3.13 ^ COLUMN[0].RAMCOLS/DEC/AND0/Y (sky130_fd_sc_hd__nor3b_4)
+   0.69    3.81 ^ COLUMN[0].RAMCOLS/B_0_0/DEC/DEC_L0/AND1/X (sky130_fd_sc_hd__and4bb_2)
+   1.75    5.57 ^ COLUMN[0].RAMCOLS/B_0_0/DEC/DEC_L1[1].U/AND0/Y (sky130_fd_sc_hd__nor4b_2)
+   1.05    6.62 v COLUMN[0].RAMCOLS/B_0_0/WORD[8].W/B3/INV/Y (sky130_fd_sc_hd__inv_1)
+   0.39    7.01 v COLUMN[0].RAMCOLS/B_0_0/WORD[8].W/B3/BIT[1].OBUF/Z (sky130_fd_sc_hd__ebufn_2)
+   0.04    7.05 v COLUMN[0].RAMCOLS/B_0_0/OUT[25].FF/D (sky130_fd_sc_hd__dfxtp_1)
+           7.05   data arrival time
 
   10.00   10.00   clock CLK (rise edge)
    0.00   10.00   clock network delay (ideal)
    0.00   10.00   clock reconvergence pessimism
-          10.00 ^ B_0_0.OUT[11].FF/CLK (sky130_fd_sc_hd__dfxtp_1)
+          10.00 ^ COLUMN[0].RAMCOLS/B_0_0/OUT[25].FF/CLK (sky130_fd_sc_hd__dfxtp_1)
   -0.26    9.74   library setup time
            9.74   data required time
 ---------------------------------------------------------
            9.74   data required time
-         -15.41   data arrival time
+          -7.05   data arrival time
 ---------------------------------------------------------
-          -5.66   slack (VIOLATED)
+           2.69   slack (MET)
 
 

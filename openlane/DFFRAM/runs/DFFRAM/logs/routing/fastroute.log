@@ -1,118 +1,103 @@
-OpenROAD 0.9.0 e582f2522b
+OpenROAD 0.9.0 d03ebfc244
 This program is licensed under the BSD-3 license. See the LICENSE file for details. 
 Components of this program may be licensed under more restrictive licenses which must be honored.
+Error: cannot open '/.openroad'.
+Warning: /home/aag/current_pdk/sky130A/libs.ref/sky130_fd_sc_hd/lib/sky130_fd_sc_hd__tt_025C_1v80.lib, line 31 default_operating_condition tt_025C_1v80 not found.
 Notice 0: Reading LEF file:  /project/openlane/DFFRAM/runs/DFFRAM/tmp/merged_unpadded.lef
 Notice 0:     Created 13 technology layers
 Notice 0:     Created 25 technology vias
-Notice 0:     Created 437 library cells
+Notice 0:     Created 438 library cells
 Notice 0: Finished LEF file:  /project/openlane/DFFRAM/runs/DFFRAM/tmp/merged_unpadded.lef
 Notice 0: 
 Reading DEF file: /project/openlane/DFFRAM/runs/DFFRAM/tmp/floorplan/pdn.def
 Notice 0: Design: DFFRAM
 Notice 0:     Created 80 pins.
-Notice 0:     Created 25483 components and 152438 component-terminals.
+Notice 0:     Created 25507 components and 152582 component-terminals.
 Notice 0:     Created 2 special nets and 0 connections.
-Notice 0:     Created 12107 nets and 60226 connections.
+Notice 0:     Created 12163 nets and 60270 connections.
 Notice 0: Finished DEF file: /project/openlane/DFFRAM/runs/DFFRAM/tmp/floorplan/pdn.def
-[WARNING] Specified layer 6 for adjustment is greater than max routing layer 5 and will be ignored
 [PARAMS] Min routing layer: 2
 [PARAMS] Max routing layer: 5
 [PARAMS] Global adjustment: 0
 [PARAMS] Unidirectional routing: 1
 [PARAMS] Grid origin: (-1, -1)
 [INFO] #DB Obstructions: 0
-[INFO] #DB Obstacles: 1477356
+[INFO] #DB Obstacles: 1478621
 [INFO] #DB Macros: 0
 [INFO] Found 0 clock nets
 [INFO] Minimum degree: 2
 [INFO] Maximum degree: 257
-[INFO] Processing 920517 obstacles in layer 1
-[INFO] Processing 215056 obstacles in layer 2
-[INFO] Processing 10 obstacles in layer 5
-[INFO] Reducing resources of layer 2 by 20%
-[INFO] Reducing resources of layer 3 by 20%
-[INFO] Reducing resources of layer 4 by 20%
-[INFO] Reducing resources of layer 5 by 20%
-[INFO] WIRELEN : 90906, WIRELEN1 : 0
-[INFO] NumSeg  : 44616
+[INFO] Processing 921456 obstacles on layer 1
+[INFO] Processing 215104 obstacles on layer 2
+[INFO] Processing 10 obstacles on layer 5
+[INFO] Reducing resources of layer 1 by 99%
+[INFO] WIRELEN : 90962, WIRELEN1 : 0
+[INFO] NumSeg  : 44846
 [INFO] NumShift: 0
 First L Route
-[INFO] WIRELEN : 90350, WIRELEN1 : 90350
-[INFO] NumSeg  : 44737
-[INFO] NumShift: 1700
-[Overflow Report] Total hCap    : 151116
-[Overflow Report] Total vCap    : 138320
-[Overflow Report] Total Usage   : 90350
-[Overflow Report] Max H Overflow: 11
-[Overflow Report] Max V Overflow: 9
-[Overflow Report] Max Overflow  : 11
-[Overflow Report] Num Overflow e: 71
-[Overflow Report] H   Overflow  : 299
-[Overflow Report] V   Overflow  : 64
-[Overflow Report] Final Overflow: 363
+[INFO] WIRELEN : 90554, WIRELEN1 : 90554
+[INFO] NumSeg  : 44886
+[INFO] NumShift: 1760
+[Overflow Report] Total hCap    : 192440
+[Overflow Report] Total vCap    : 178445
+[Overflow Report] Total Usage   : 90554
+[Overflow Report] Max H Overflow: 0
+[Overflow Report] Max V Overflow: 0
+[Overflow Report] Max Overflow  : 0
+[Overflow Report] Num Overflow e: 0
+[Overflow Report] H   Overflow  : 0
+[Overflow Report] V   Overflow  : 0
+[Overflow Report] Final Overflow: 0
 
 Second L Route
-[Overflow Report] Total hCap    : 151116
-[Overflow Report] Total vCap    : 138320
-[Overflow Report] Total Usage   : 90350
-[Overflow Report] Max H Overflow: 11
-[Overflow Report] Max V Overflow: 9
-[Overflow Report] Max Overflow  : 11
-[Overflow Report] Num Overflow e: 70
-[Overflow Report] H   Overflow  : 298
-[Overflow Report] V   Overflow  : 64
-[Overflow Report] Final Overflow: 362
+[Overflow Report] Total hCap    : 192440
+[Overflow Report] Total vCap    : 178445
+[Overflow Report] Total Usage   : 90554
+[Overflow Report] Max H Overflow: 0
+[Overflow Report] Max V Overflow: 0
+[Overflow Report] Max Overflow  : 0
+[Overflow Report] Num Overflow e: 0
+[Overflow Report] H   Overflow  : 0
+[Overflow Report] V   Overflow  : 0
+[Overflow Report] Final Overflow: 0
 
 First Z Route
-[Overflow Report] Total hCap    : 151116
-[Overflow Report] Total vCap    : 138320
-[Overflow Report] Total Usage   : 90350
-[Overflow Report] Max H Overflow: 11
-[Overflow Report] Max V Overflow: 9
-[Overflow Report] Max Overflow  : 11
-[Overflow Report] Num Overflow e: 72
-[Overflow Report] H   Overflow  : 301
-[Overflow Report] V   Overflow  : 64
-[Overflow Report] Final Overflow: 365
+[Overflow Report] Total hCap    : 192440
+[Overflow Report] Total vCap    : 178445
+[Overflow Report] Total Usage   : 90554
+[Overflow Report] Max H Overflow: 0
+[Overflow Report] Max V Overflow: 0
+[Overflow Report] Max Overflow  : 0
+[Overflow Report] Num Overflow e: 0
+[Overflow Report] H   Overflow  : 0
+[Overflow Report] V   Overflow  : 0
+[Overflow Report] Final Overflow: 0
 
 [INFO] LV routing round 0, enlarge 10 
 [INFO] 10 threshold, 10 expand
-[Overflow Report] total Usage   : 90386
-[Overflow Report] Max H Overflow: 11
-[Overflow Report] Max V Overflow: 9
-[Overflow Report] Max Overflow  : 11
-[Overflow Report] Num Overflow e: 58
-[Overflow Report] H   Overflow  : 232
-[Overflow Report] V   Overflow  : 64
-[Overflow Report] Final Overflow: 296
+[Overflow Report] total Usage   : 90554
+[Overflow Report] Max H Overflow: 0
+[Overflow Report] Max V Overflow: 0
+[Overflow Report] Max Overflow  : 0
+[Overflow Report] Num Overflow e: 0
+[Overflow Report] H   Overflow  : 0
+[Overflow Report] V   Overflow  : 0
+[Overflow Report] Final Overflow: 0
 
 [INFO] LV routing round 1, enlarge 15 
 [INFO] 5 threshold, 15 expand
-[Overflow Report] total Usage   : 90392
-[Overflow Report] Max H Overflow: 11
-[Overflow Report] Max V Overflow: 9
-[Overflow Report] Max Overflow  : 11
-[Overflow Report] Num Overflow e: 57
-[Overflow Report] H   Overflow  : 212
-[Overflow Report] V   Overflow  : 64
-[Overflow Report] Final Overflow: 276
+[Overflow Report] total Usage   : 90554
+[Overflow Report] Max H Overflow: 0
+[Overflow Report] Max V Overflow: 0
+[Overflow Report] Max Overflow  : 0
+[Overflow Report] Num Overflow e: 0
+[Overflow Report] H   Overflow  : 0
+[Overflow Report] V   Overflow  : 0
+[Overflow Report] Final Overflow: 0
 
 [INFO] LV routing round 2, enlarge 20 
 [INFO] 1 threshold, 20 expand
-[Overflow Report] total Usage   : 90450
-[Overflow Report] Max H Overflow: 9
-[Overflow Report] Max V Overflow: 8
-[Overflow Report] Max Overflow  : 9
-[Overflow Report] Num Overflow e: 55
-[Overflow Report] H   Overflow  : 168
-[Overflow Report] V   Overflow  : 63
-[Overflow Report] Final Overflow: 231
-
-Running extra iterations to remove overflow...
-Update congestion history type 1
-[INFO] iteration 1, enlarge 20, costheight 9, threshold 10 via cost 2 
-[INFO] log_coef 0.625543, healingTrigger 0 cost_step 5 L 1 cost_type 1 updatetype 1
-[Overflow Report] total Usage   : 90556
+[Overflow Report] total Usage   : 90554
 [Overflow Report] Max H Overflow: 0
 [Overflow Report] Max V Overflow: 0
 [Overflow Report] Max Overflow  : 0
@@ -123,9 +108,9 @@ Update congestion history type 1
 
 Usage checked
 Maze routing finished
-[INFO] P3 runtime: 0.010000 sec
+[INFO] P3 runtime: 0.000000 sec
 [INFO] Final 2D results: 
-[Overflow Report] total Usage   : 90556
+[Overflow Report] total Usage   : 90554
 [Overflow Report] Max H Overflow: 0
 [Overflow Report] Max V Overflow: 0
 [Overflow Report] Max Overflow  : 0
@@ -136,35 +121,35 @@ Maze routing finished
 
 Layer Assignment Begins
 Layer assignment finished
-[INFO] 2D + Layer Assignment Runtime: 4.710000 sec
+[INFO] 2D + Layer Assignment Runtime: 8.670000 sec
 Post Processing Begins 
 Post Processsing finished
  Starting via filling
-[INFO] Via related to pin nodes 72567
-[INFO] Via related stiner nodes 7270
+[INFO] Via related to pin nodes 71714
+[INFO] Via related stiner nodes 7281
 Via filling finished
 
 Final usage/overflow report: 
 [INFO] Usage per layer: 
     Layer 1 usage: 0
-    Layer 2 usage: 44957
-    Layer 3 usage: 40660
-    Layer 4 usage: 4831
-    Layer 5 usage: 380
+    Layer 2 usage: 47692
+    Layer 3 usage: 41013
+    Layer 4 usage: 2077
+    Layer 5 usage: 75
 
 [INFO] Capacity per layer: 
     Layer 1 capacity: 0
-    Layer 2 capacity: 85953
-    Layer 3 capacity: 98025
-    Layer 4 capacity: 65163
-    Layer 5 capacity: 40295
+    Layer 2 capacity: 111227
+    Layer 3 capacity: 122100
+    Layer 4 capacity: 81213
+    Layer 5 capacity: 56345
 
 [INFO] Use percentage per layer: 
     Layer 1 use percentage: 0.0%
-    Layer 2 use percentage: 52.30%
-    Layer 3 use percentage: 41.48%
-    Layer 4 use percentage: 7.41%
-    Layer 5 use percentage: 0.94%
+    Layer 2 use percentage: 42.88%
+    Layer 3 use percentage: 33.59%
+    Layer 4 use percentage: 2.56%
+    Layer 5 use percentage: 0.13%
 
 [INFO] Overflow per layer: 
     Layer 1 overflow: 0
@@ -173,8 +158,8 @@ Final usage/overflow report:
     Layer 4 overflow: 0
     Layer 5 overflow: 0
 
-[Overflow Report] Total Usage   : 90828
-[Overflow Report] Total Capacity: 289436
+[Overflow Report] Total Usage   : 90857
+[Overflow Report] Total Capacity: 370885
 [Overflow Report] Max H Overflow: 0
 [Overflow Report] Max V Overflow: 0
 [Overflow Report] Max Overflow  : 0
@@ -182,8 +167,89 @@ Final usage/overflow report:
 [Overflow Report] V   Overflow  : 0
 [Overflow Report] Final Overflow: 0
 
-[INFO] Final usage          : 90828
-[INFO] Final number of vias : 84983
-[INFO] Final usage 3D       : 345777
-[INFO] Total wirelength: 972396 um
-[INFO] Num routed nets: 12107
+[INFO] Final usage          : 90857
+[INFO] Final number of vias : 84006
+[INFO] Final usage 3D       : 342875
+[INFO] Total wirelength: 972430 um
+[INFO] Num routed nets: 12131
+Warning: /home/aag/current_pdk/sky130A/libs.ref/sky130_fd_sc_hd/lib/sky130_fd_sc_hd__ss_100C_1v60.lib, line 32 default_operating_condition ss_100C_1v60 not found.
+Warning: /home/aag/current_pdk/sky130A/libs.ref/sky130_fd_sc_hd/lib/sky130_fd_sc_hd__ff_n40C_1v95.lib, line 31 default_operating_condition ff_n40C_1v95 not found.
+create_clock [get_ports $::env(CLOCK_PORT)]  -name $::env(CLOCK_PORT)  -period $::env(CLOCK_PERIOD)
+set input_delay_value [expr $::env(CLOCK_PERIOD) * $::env(IO_PCT)]
+set output_delay_value [expr $::env(CLOCK_PERIOD) * $::env(IO_PCT)]
+puts "\[INFO\]: Setting output delay to: $output_delay_value"
+[INFO]: Setting output delay to: 2.0
+puts "\[INFO\]: Setting input delay to: $input_delay_value"
+[INFO]: Setting input delay to: 2.0
+set clk_indx [lsearch [all_inputs] [get_port $::env(CLOCK_PORT)]]
+#set rst_indx [lsearch [all_inputs] [get_port resetn]]
+set all_inputs_wo_clk [lreplace [all_inputs] $clk_indx $clk_indx]
+#set all_inputs_wo_clk_rst [lreplace $all_inputs_wo_clk $rst_indx $rst_indx]
+set all_inputs_wo_clk_rst $all_inputs_wo_clk
+# correct resetn
+set_input_delay $input_delay_value  -clock [get_clocks $::env(CLOCK_PORT)] $all_inputs_wo_clk_rst
+#set_input_delay 0.0 -clock [get_clocks $::env(CLOCK_PORT)] {resetn}
+set_output_delay $output_delay_value  -clock [get_clocks $::env(CLOCK_PORT)] [all_outputs]
+# TODO set this as parameter
+set_driving_cell -lib_cell $::env(SYNTH_DRIVING_CELL) -pin $::env(SYNTH_DRIVING_CELL_PIN) [all_inputs]
+set cap_load [expr $::env(SYNTH_CAP_LOAD) / 1000.0]
+puts "\[INFO\]: Setting load to: $cap_load"
+[INFO]: Setting load to: 0.01765
+set_load  $cap_load [all_outputs]
+Warning: missing route to pin COLUMN\[0\].RAMCOLS/B_0_0/WORD\[57\].W/B3/CG/CLK
+Warning: missing route to pin COLUMN\[0\].RAMCOLS/B_0_0/WORD\[55\].W/B1/CG/CLK
+Warning: missing route to pin COLUMN\[0\].RAMCOLS/B_0_0/WORD\[53\].W/B3/CG/CLK
+Warning: missing route to pin COLUMN\[0\].RAMCOLS/B_0_0/WORD\[49\].W/B2/CG/CLK
+Warning: missing route to pin COLUMN\[0\].RAMCOLS/B_0_0/WORD\[48\].W/B3/CG/CLK
+Warning: missing route to pin COLUMN\[0\].RAMCOLS/B_0_0/WORD\[43\].W/B0/CG/CLK
+Warning: missing route to pin COLUMN\[0\].RAMCOLS/B_0_0/WORD\[30\].W/B3/CG/CLK
+Warning: missing route to pin COLUMN\[0\].RAMCOLS/B_0_0/WORD\[23\].W/B2/CG/CLK
+Warning: missing route to pin COLUMN\[0\].RAMCOLS/B_0_0/WORD\[1\].W/B2/CG/CLK
+Warning: missing route to pin COLUMN\[0\].RAMCOLS/B_0_0/WORD\[11\].W/B2/CG/CLK
+Warning: missing route to pin COLUMN\[0\].RAMCOLS/B_0_1/WORD\[6\].W/B0/CG/CLK
+Warning: missing route to pin COLUMN\[0\].RAMCOLS/B_0_1/WORD\[63\].W/B0/CG/CLK
+Warning: missing route to pin COLUMN\[0\].RAMCOLS/B_0_1/WORD\[51\].W/B1/CG/CLK
+Warning: missing route to pin COLUMN\[0\].RAMCOLS/B_0_1/WORD\[48\].W/B1/CG/CLK
+Warning: missing route to pin COLUMN\[0\].RAMCOLS/B_0_1/WORD\[45\].W/B1/CG/CLK
+Warning: missing route to pin COLUMN\[0\].RAMCOLS/B_0_1/WORD\[40\].W/B1/CG/CLK
+Warning: missing route to pin COLUMN\[0\].RAMCOLS/B_0_1/WORD\[39\].W/B2/CG/CLK
+Warning: missing route to pin COLUMN\[0\].RAMCOLS/B_0_1/WORD\[35\].W/B3/CG/CLK
+Warning: missing route to pin COLUMN\[0\].RAMCOLS/B_0_1/WORD\[28\].W/B0/CG/CLK
+Warning: missing route to pin COLUMN\[0\].RAMCOLS/B_0_1/WORD\[22\].W/B2/CG/CLK
+Warning: missing route to pin COLUMN\[0\].RAMCOLS/B_0_1/WORD\[15\].W/B3/CG/CLK
+Warning: missing route to pin COLUMN\[0\].RAMCOLS/B_0_1/WORD\[12\].W/B0/CG/CLK
+Warning: missing route to pin COLUMN\[0\].RAMCOLS/B_0_1/WORD\[11\].W/B1/CG/CLK
+Warning: missing route to pin COLUMN\[0\].RAMCOLS/B_0_1/WORD\[0\].W/B1/CG/CLK
+Warning: missing route to pin COLUMN\[0\].RAMCOLS/B_0_1/WORD\[0\].W/B0/CG/CLK
+Warning: missing route to pin COLUMN\[0\].RAMCOLS/B_0_2/WORD\[8\].W/B0/CG/CLK
+Warning: missing route to pin COLUMN\[0\].RAMCOLS/B_0_2/WORD\[63\].W/B3/CG/CLK
+Warning: missing route to pin COLUMN\[0\].RAMCOLS/B_0_2/WORD\[62\].W/B1/CG/CLK
+Warning: missing route to pin COLUMN\[0\].RAMCOLS/B_0_2/WORD\[60\].W/B2/CG/CLK
+Warning: missing route to pin COLUMN\[0\].RAMCOLS/B_0_2/WORD\[60\].W/B1/CG/CLK
+Warning: missing route to pin COLUMN\[0\].RAMCOLS/B_0_2/WORD\[58\].W/B1/CG/CLK
+Warning: missing route to pin COLUMN\[0\].RAMCOLS/B_0_2/WORD\[58\].W/B0/CG/CLK
+Warning: missing route to pin COLUMN\[0\].RAMCOLS/B_0_2/WORD\[50\].W/B2/CG/CLK
+Warning: missing route to pin COLUMN\[0\].RAMCOLS/B_0_2/WORD\[45\].W/B1/CG/CLK
+Warning: missing route to pin COLUMN\[0\].RAMCOLS/B_0_2/WORD\[44\].W/B2/CG/CLK
+Warning: missing route to pin COLUMN\[0\].RAMCOLS/B_0_2/WORD\[43\].W/B0/CG/CLK
+Warning: missing route to pin COLUMN\[0\].RAMCOLS/B_0_2/WORD\[40\].W/B3/CG/CLK
+Warning: missing route to pin COLUMN\[0\].RAMCOLS/B_0_2/WORD\[2\].W/B1/CG/CLK
+Warning: missing route to pin COLUMN\[0\].RAMCOLS/B_0_2/WORD\[29\].W/B0/CG/CLK
+Warning: missing route to pin COLUMN\[0\].RAMCOLS/B_0_2/WORD\[24\].W/B2/CG/CLK
+Warning: missing route to pin COLUMN\[0\].RAMCOLS/B_0_2/WORD\[1\].W/B3/CG/CLK
+Warning: missing route to pin COLUMN\[0\].RAMCOLS/B_0_2/WORD\[14\].W/B2/CG/CLK
+Warning: missing route to pin COLUMN\[0\].RAMCOLS/B_0_3/WORD\[5\].W/B1/CG/CLK
+Warning: missing route to pin COLUMN\[0\].RAMCOLS/B_0_3/WORD\[57\].W/B0/CG/CLK
+Warning: missing route to pin COLUMN\[0\].RAMCOLS/B_0_3/WORD\[56\].W/B3/CG/CLK
+Warning: missing route to pin COLUMN\[0\].RAMCOLS/B_0_3/WORD\[50\].W/B3/CG/CLK
+Warning: missing route to pin COLUMN\[0\].RAMCOLS/B_0_3/WORD\[4\].W/B1/CG/CLK
+Warning: missing route to pin COLUMN\[0\].RAMCOLS/B_0_3/WORD\[48\].W/B0/CG/CLK
+Warning: missing route to pin COLUMN\[0\].RAMCOLS/B_0_3/WORD\[47\].W/B0/CG/CLK
+Warning: missing route to pin COLUMN\[0\].RAMCOLS/B_0_3/WORD\[42\].W/B2/CG/CLK
+Warning: missing route to pin COLUMN\[0\].RAMCOLS/B_0_3/WORD\[38\].W/B2/CG/CLK
+Warning: missing route to pin COLUMN\[0\].RAMCOLS/B_0_3/WORD\[37\].W/B1/CG/CLK
+Warning: missing route to pin COLUMN\[0\].RAMCOLS/B_0_3/WORD\[35\].W/B0/CG/CLK
+Warning: missing route to pin COLUMN\[0\].RAMCOLS/B_0_3/WORD\[31\].W/B0/CG/CLK
+Warning: missing route to pin COLUMN\[0\].RAMCOLS/B_0_3/WORD\[25\].W/B2/CG/CLK
+Warning: missing route to pin COLUMN\[0\].RAMCOLS/B_0_3/WORD\[13\].W/B1/CG/CLK
+Warning: missing route to pin COLUMN\[0\].RAMCOLS/B_0_3/WORD\[12\].W/B2/CG/CLK

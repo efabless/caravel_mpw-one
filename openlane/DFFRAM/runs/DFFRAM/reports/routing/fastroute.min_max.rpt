@@ -1,0 +1,64 @@
+Startpoint: COLUMN[0].RAMCOLS/B_0_2/WORD[10].W/B0/BIT[7].FF
+            (rising edge-triggered flip-flop clocked by CLK)
+Endpoint: COLUMN[0].RAMCOLS/B_0_2/OUT[7].FF
+          (rising edge-triggered flip-flop clocked by CLK)
+Path Group: CLK
+Path Type: min
+
+  Delay    Time   Description
+---------------------------------------------------------
+   0.00    0.00   clock CLK (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.00    0.00 ^ COLUMN[0].RAMCOLS/B_0_2/WORD[10].W/B0/BIT[7].FF/CLK (sky130_fd_sc_hd__dfxtp_1)
+   0.21    0.21 v COLUMN[0].RAMCOLS/B_0_2/WORD[10].W/B0/BIT[7].FF/Q (sky130_fd_sc_hd__dfxtp_1)
+   0.06    0.27 v COLUMN[0].RAMCOLS/B_0_2/WORD[10].W/B0/BIT[7].OBUF/Z (sky130_fd_sc_hd__ebufn_2)
+   0.01    0.28 v COLUMN[0].RAMCOLS/B_0_2/OUT[7].FF/D (sky130_fd_sc_hd__dfxtp_1)
+           0.28   data arrival time
+
+   0.00    0.00   clock CLK (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.00    0.00   clock reconvergence pessimism
+           0.00 ^ COLUMN[0].RAMCOLS/B_0_2/OUT[7].FF/CLK (sky130_fd_sc_hd__dfxtp_1)
+   0.00    0.00   library hold time
+           0.00   data required time
+---------------------------------------------------------
+           0.00   data required time
+          -0.28   data arrival time
+---------------------------------------------------------
+           0.28   slack (MET)
+
+
+Startpoint: EN (input port clocked by CLK)
+Endpoint: COLUMN[0].RAMCOLS/B_0_0/OUT[26].FF
+          (rising edge-triggered flip-flop clocked by CLK)
+Path Group: CLK
+Path Type: max
+
+  Delay    Time   Description
+---------------------------------------------------------
+   0.00    0.00   clock CLK (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   2.00    2.00 ^ input external delay
+   0.03    2.03 ^ EN (in)
+   0.48    2.51 ^ ENBUF/X (sky130_fd_sc_hd__clkbuf_4)
+   0.69    3.20 ^ COLUMN[0].RAMCOLS/DEC/AND0/Y (sky130_fd_sc_hd__nor3b_4)
+   0.73    3.93 ^ COLUMN[0].RAMCOLS/B_0_0/DEC/DEC_L0/AND1/X (sky130_fd_sc_hd__and4bb_2)
+   1.83    5.76 ^ COLUMN[0].RAMCOLS/B_0_0/DEC/DEC_L1[1].U/AND0/Y (sky130_fd_sc_hd__nor4b_2)
+   1.26    7.02 v COLUMN[0].RAMCOLS/B_0_0/WORD[8].W/B3/INV/Y (sky130_fd_sc_hd__inv_1)
+   0.42    7.44 v COLUMN[0].RAMCOLS/B_0_0/WORD[8].W/B3/BIT[2].OBUF/Z (sky130_fd_sc_hd__ebufn_2)
+   0.15    7.60 v COLUMN[0].RAMCOLS/B_0_0/OUT[26].FF/D (sky130_fd_sc_hd__dfxtp_1)
+           7.60   data arrival time
+
+  10.00   10.00   clock CLK (rise edge)
+   0.00   10.00   clock network delay (ideal)
+   0.00   10.00   clock reconvergence pessimism
+          10.00 ^ COLUMN[0].RAMCOLS/B_0_0/OUT[26].FF/CLK (sky130_fd_sc_hd__dfxtp_1)
+  -0.07    9.93   library setup time
+           9.93   data required time
+---------------------------------------------------------
+           9.93   data required time
+          -7.60   data arrival time
+---------------------------------------------------------
+           2.34   slack (MET)
+
+

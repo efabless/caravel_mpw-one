@@ -1,5 +1,5 @@
 
-Magic 8.3 revision 64 - Compiled on Fri Oct  9 12:13:18 UTC 2020.
+Magic 8.3 revision 89 - Compiled on Wed Nov 25 19:11:09 UTC 2020.
 Starting magic under Tcl interpreter
 Using the terminal as the console.
 Using NULL graphics device.
@@ -9,50 +9,439 @@ Sourcing design .magicrc for technology sky130A ...
 Input style sky130: scaleFactor=2, multiplier=2
 Scaled tech values by 2 / 1 to match internal grid scaling
 Loading sky130A Device Generator Menu ...
-Loading "/openLANE_flow/scripts/magic.tcl" from command line.
-Reading LEF data from file /home/xrex/usr/devel/pdks/sky130A/libs.ref/sky130_fd_sc_hd/techlef/sky130_fd_sc_hd.tlef.
-This action cannot be undone.
-LEF read, Line 77 (Message): Unknown keyword "ANTENNAMODEL" in LEF file; ignoring.
-LEF read, Line 78 (Message): Unknown keyword "ANTENNADIFFSIDEAREARATIO" in LEF file; ignoring.
-LEF read, Line 111 (Message): Unknown keyword "ANTENNAMODEL" in LEF file; ignoring.
-LEF read, Line 112 (Message): Unknown keyword "ANTENNADIFFSIDEAREARATIO" in LEF file; ignoring.
-LEF read, Line 118 (Message): Unknown keyword "MAXIMUMDENSITY" in LEF file; ignoring.
-LEF read, Line 119 (Message): Unknown keyword "DENSITYCHECKWINDOW" in LEF file; ignoring.
-LEF read, Line 120 (Message): Unknown keyword "DENSITYCHECKSTEP" in LEF file; ignoring.
-LEF read, Line 159 (Message): Unknown keyword "ANTENNAMODEL" in LEF file; ignoring.
-LEF read, Line 160 (Message): Unknown keyword "ANTENNADIFFSIDEAREARATIO" in LEF file; ignoring.
-LEF read, Line 162 (Message): Unknown keyword "MAXIMUMDENSITY" in LEF file; ignoring.
-LEF read, Line 163 (Message): Unknown keyword "DENSITYCHECKWINDOW" in LEF file; ignoring.
-LEF read, Line 164 (Message): Unknown keyword "DENSITYCHECKSTEP" in LEF file; ignoring.
-LEF read, Line 200 (Message): Unknown keyword "ANTENNAMODEL" in LEF file; ignoring.
-LEF read, Line 201 (Message): Unknown keyword "ANTENNADIFFSIDEAREARATIO" in LEF file; ignoring.
-LEF read, Line 203 (Message): Unknown keyword "MAXIMUMDENSITY" in LEF file; ignoring.
-LEF read, Line 204 (Message): Unknown keyword "DENSITYCHECKWINDOW" in LEF file; ignoring.
-LEF read, Line 205 (Message): Unknown keyword "DENSITYCHECKSTEP" in LEF file; ignoring.
-LEF read, Line 241 (Message): Unknown keyword "ANTENNAMODEL" in LEF file; ignoring.
-LEF read, Line 242 (Message): Unknown keyword "ANTENNADIFFSIDEAREARATIO" in LEF file; ignoring.
-LEF read, Line 244 (Message): Unknown keyword "MAXIMUMDENSITY" in LEF file; ignoring.
-LEF read, Line 245 (Message): Unknown keyword "DENSITYCHECKWINDOW" in LEF file; ignoring.
-LEF read, Line 246 (Message): Unknown keyword "DENSITYCHECKSTEP" in LEF file; ignoring.
-LEF read, Line 282 (Message): Unknown keyword "ANTENNAMODEL" in LEF file; ignoring.
-LEF read, Line 283 (Message): Unknown keyword "ANTENNADIFFSIDEAREARATIO" in LEF file; ignoring.
-LEF read: Processed 789 lines.
-Reading DEF data from file /project/openlane/DFFRAM/runs/DFFRAM/results/routing/DFFRAM.def.
-This action cannot be undone.
-  Processed 5 vias total.
-  Processed 40286 subcell instances total.
-  Processed 80 pins total.
-  Processed 2 special nets total.
-  Processed 12107 nets total.
-DEF read: Processed 374393 lines.
-[INFO]: Zeroizing Origin
-[INFO]: Current Box Values: 0 0 149023 105000
-[INFO]: Saving .mag view With BBox Values: 0 0 149023 105000
-[INFO]: GDS Write Complete
-[INFO]: Writing abstract LEF
-Generating LEF output /project/openlane/DFFRAM/runs/DFFRAM/results/magic/DFFRAM.lef for cell DFFRAM:
-Diagnostic:  Write LEF header for cell DFFRAM
-Diagnostic:  Writing LEF output for cell DFFRAM
-Diagnostic:  Scale value is 0.005000
-[INFO]: LEF Write Complete
+Loading "/openLANE_flow/scripts/magic_mag.tcl" from command line.
+Box tool must be present
+[INFO]: Saving .mag view With BBox Values: 
+Warning: Calma reading is not undoable!  I hope that's OK.
+Library written using GDS-II Release 3.0
+Library name: DFFRAM
+Reading "sky130_fd_sc_hd__decap_12".
+Reading "sky130_fd_sc_hd__fill_1".
+Reading "sky130_fd_sc_hd__decap_3".
+Reading "sky130_fd_sc_hd__clkbuf_4".
+Reading "sky130_fd_sc_hd__decap_8".
+Reading "sky130_fd_sc_hd__tapvpwrvgnd_1".
+Reading "sky130_fd_sc_hd__fill_2".
+Reading "sky130_fd_sc_hd__decap_6".
+Reading "sky130_fd_sc_hd__ebufn_2".
+Reading "sky130_fd_sc_hd__dfxtp_1".
+Reading "sky130_fd_sc_hd__decap_4".
+Reading "sky130_fd_sc_hd__and2_1".
+Reading "sky130_fd_sc_hd__dlclkp_1".
+Reading "sky130_fd_sc_hd__inv_1".
+Reading "sky130_fd_sc_hd__clkbuf_16".
+Reading "sky130_fd_sc_hd__nor4b_2".
+Reading "sky130_fd_sc_hd__and4b_2".
+Reading "sky130_fd_sc_hd__and4bb_2".
+Reading "sky130_fd_sc_hd__and4_2".
+Reading "sky130_fd_sc_hd__ebufn_4".
+Reading "sky130_fd_sc_hd__and3b_4".
+Reading "sky130_fd_sc_hd__mux4_1".
+Reading "sky130_fd_sc_hd__conb_1".
+Reading "sky130_fd_sc_hd__clkbuf_8".
+Reading "sky130_fd_sc_hd__nor3b_4".
+Reading "sky130_fd_sc_hd__and3_4".
+Reading "DFFRAM".
+    100 uses
+    200 uses
+    300 uses
+    400 uses
+    500 uses
+    600 uses
+    700 uses
+    800 uses
+    900 uses
+    1000 uses
+    1100 uses
+    1200 uses
+    1300 uses
+    1400 uses
+    1500 uses
+    1600 uses
+    1700 uses
+    1800 uses
+    1900 uses
+    2000 uses
+    2100 uses
+    2200 uses
+    2300 uses
+    2400 uses
+    2500 uses
+    2600 uses
+    2700 uses
+    2800 uses
+    2900 uses
+    3000 uses
+    3100 uses
+    3200 uses
+    3300 uses
+    3400 uses
+    3500 uses
+    3600 uses
+    3700 uses
+    3800 uses
+    3900 uses
+    4000 uses
+    4100 uses
+    4200 uses
+    4300 uses
+    4400 uses
+    4500 uses
+    4600 uses
+    4700 uses
+    4800 uses
+    4900 uses
+    5000 uses
+    5100 uses
+    5200 uses
+    5300 uses
+    5400 uses
+    5500 uses
+    5600 uses
+    5700 uses
+    5800 uses
+    5900 uses
+    6000 uses
+    6100 uses
+    6200 uses
+    6300 uses
+    6400 uses
+    6500 uses
+    6600 uses
+    6700 uses
+    6800 uses
+    6900 uses
+    7000 uses
+    7100 uses
+    7200 uses
+    7300 uses
+    7400 uses
+    7500 uses
+    7600 uses
+    7700 uses
+    7800 uses
+    7900 uses
+    8000 uses
+    8100 uses
+    8200 uses
+    8300 uses
+    8400 uses
+    8500 uses
+    8600 uses
+    8700 uses
+    8800 uses
+    8900 uses
+    9000 uses
+    9100 uses
+    9200 uses
+    9300 uses
+    9400 uses
+    9500 uses
+    9600 uses
+    9700 uses
+    9800 uses
+    9900 uses
+    10000 uses
+    10100 uses
+    10200 uses
+    10300 uses
+    10400 uses
+    10500 uses
+    10600 uses
+    10700 uses
+    10800 uses
+    10900 uses
+    11000 uses
+    11100 uses
+    11200 uses
+    11300 uses
+    11400 uses
+    11500 uses
+    11600 uses
+    11700 uses
+    11800 uses
+    11900 uses
+    12000 uses
+    12100 uses
+    12200 uses
+    12300 uses
+    12400 uses
+    12500 uses
+    12600 uses
+    12700 uses
+    12800 uses
+    12900 uses
+    13000 uses
+    13100 uses
+    13200 uses
+    13300 uses
+    13400 uses
+    13500 uses
+    13600 uses
+    13700 uses
+    13800 uses
+    13900 uses
+    14000 uses
+    14100 uses
+    14200 uses
+    14300 uses
+    14400 uses
+    14500 uses
+    14600 uses
+    14700 uses
+    14800 uses
+    14900 uses
+    15000 uses
+    15100 uses
+    15200 uses
+    15300 uses
+    15400 uses
+    15500 uses
+    15600 uses
+    15700 uses
+    15800 uses
+    15900 uses
+    16000 uses
+    16100 uses
+    16200 uses
+    16300 uses
+    16400 uses
+    16500 uses
+    16600 uses
+    16700 uses
+    16800 uses
+    16900 uses
+    17000 uses
+    17100 uses
+    17200 uses
+    17300 uses
+    17400 uses
+    17500 uses
+    17600 uses
+    17700 uses
+    17800 uses
+    17900 uses
+    18000 uses
+    18100 uses
+    18200 uses
+    18300 uses
+    18400 uses
+    18500 uses
+    18600 uses
+    18700 uses
+    18800 uses
+    18900 uses
+    19000 uses
+    19100 uses
+    19200 uses
+    19300 uses
+    19400 uses
+    19500 uses
+    19600 uses
+    19700 uses
+    19800 uses
+    19900 uses
+    20000 uses
+    20100 uses
+    20200 uses
+    20300 uses
+    20400 uses
+    20500 uses
+    20600 uses
+    20700 uses
+    20800 uses
+    20900 uses
+    21000 uses
+    21100 uses
+    21200 uses
+    21300 uses
+    21400 uses
+    21500 uses
+    21600 uses
+    21700 uses
+    21800 uses
+    21900 uses
+    22000 uses
+    22100 uses
+    22200 uses
+    22300 uses
+    22400 uses
+    22500 uses
+    22600 uses
+    22700 uses
+    22800 uses
+    22900 uses
+    23000 uses
+    23100 uses
+    23200 uses
+    23300 uses
+    23400 uses
+    23500 uses
+    23600 uses
+    23700 uses
+    23800 uses
+    23900 uses
+    24000 uses
+    24100 uses
+    24200 uses
+    24300 uses
+    24400 uses
+    24500 uses
+    24600 uses
+    24700 uses
+    24800 uses
+    24900 uses
+    25000 uses
+    25100 uses
+    25200 uses
+    25300 uses
+    25400 uses
+    25500 uses
+    25600 uses
+    25700 uses
+    25800 uses
+    25900 uses
+    26000 uses
+    26100 uses
+    26200 uses
+    26300 uses
+    26400 uses
+    26500 uses
+    26600 uses
+    26700 uses
+    26800 uses
+    26900 uses
+    27000 uses
+    27100 uses
+    27200 uses
+    27300 uses
+    27400 uses
+    27500 uses
+    27600 uses
+    27700 uses
+    27800 uses
+    27900 uses
+    28000 uses
+    28100 uses
+    28200 uses
+    28300 uses
+    28400 uses
+    28500 uses
+    28600 uses
+    28700 uses
+    28800 uses
+    28900 uses
+    29000 uses
+    29100 uses
+    29200 uses
+    29300 uses
+    29400 uses
+    29500 uses
+    29600 uses
+    29700 uses
+    29800 uses
+    29900 uses
+    30000 uses
+    30100 uses
+    30200 uses
+    30300 uses
+    30400 uses
+    30500 uses
+    30600 uses
+    30700 uses
+    30800 uses
+    30900 uses
+    31000 uses
+    31100 uses
+    31200 uses
+    31300 uses
+    31400 uses
+    31500 uses
+    31600 uses
+    31700 uses
+    31800 uses
+    31900 uses
+    32000 uses
+    32100 uses
+    32200 uses
+    32300 uses
+    32400 uses
+    32500 uses
+    32600 uses
+    32700 uses
+    32800 uses
+    32900 uses
+    33000 uses
+    33100 uses
+    33200 uses
+    33300 uses
+    33400 uses
+    33500 uses
+    33600 uses
+    33700 uses
+    33800 uses
+    33900 uses
+    34000 uses
+    34100 uses
+    34200 uses
+    34300 uses
+    34400 uses
+    34500 uses
+    34600 uses
+    34700 uses
+    34800 uses
+    34900 uses
+    35000 uses
+    35100 uses
+    35200 uses
+    35300 uses
+    35400 uses
+    35500 uses
+    35600 uses
+    35700 uses
+    35800 uses
+    35900 uses
+    36000 uses
+    36100 uses
+    36200 uses
+    36300 uses
+    36400 uses
+    36500 uses
+    36600 uses
+    36700 uses
+    36800 uses
+    36900 uses
+    37000 uses
+    37100 uses
+    37200 uses
+    37300 uses
+    37400 uses
+    37500 uses
+    37600 uses
+    37700 uses
+    37800 uses
+    37900 uses
+    38000 uses
+    38100 uses
+    38200 uses
+    38300 uses
+    38400 uses
+    38500 uses
+    38600 uses
+    38700 uses
+    38800 uses
+    38900 uses
+    39000 uses
+    39100 uses
+    39200 uses
+    39300 uses
+    39400 uses
+    39500 uses
+    39600 uses
+    39700 uses
+    39800 uses
+    39900 uses
+    40000 uses
+    40100 uses
+    40200 uses
 [INFO]: MAGIC TAPEOUT STEP DONE
