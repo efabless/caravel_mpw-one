@@ -93,9 +93,9 @@ XM1 vbn vin_n vp vp sky130_fd_pr__pfet_01v8 W=3 L=0.3 ad='W * 0.29' pd='2 * (W +
 XM2 voe1 vin_p vp vp sky130_fd_pr__pfet_01v8 W=3 L=0.3 ad='W * 0.29' pd='2 * (W + 0.29)' as='W * 0.29'
 + ps='2 * (W + 0.29)' nrd='0.29 / W' nrs='0.29 / W' sa=0 sb=0 sd=0 nf=1 mult=200 m=200 
 XM3 vbn vbn vss vss sky130_fd_pr__nfet_01v8 W=3 L=0.3 ad='W * 0.29' pd='2 * (W + 0.29)' as='W * 0.29'
-+ ps='2 * (W + 0.29)' nrd='0.29 / W' nrs='0.29 / W' sa=0 sb=0 sd=0 nf=1 mult=40 m=40 
++ ps='2 * (W + 0.29)' nrd='0.29 / W' nrs='0.29 / W' sa=0 sb=0 sd=0 nf=1 mult=30 m=30 
 XM4 voe1 vbn vss vss sky130_fd_pr__nfet_01v8 W=3 L=0.3 ad='W * 0.29' pd='2 * (W + 0.29)' as='W * 0.29'
-+ ps='2 * (W + 0.29)' nrd='0.29 / W' nrs='0.29 / W' sa=0 sb=0 sd=0 nf=1 mult=40 m=40 
++ ps='2 * (W + 0.29)' nrd='0.29 / W' nrs='0.29 / W' sa=0 sb=0 sd=0 nf=1 mult=30 m=30 
 XM5 vp iref vdd vdd sky130_fd_pr__pfet_01v8 W=3 L=0.3 ad='W * 0.29' pd='2 * (W + 0.29)' as='W * 0.29'
 + ps='2 * (W + 0.29)' nrd='0.29 / W' nrs='0.29 / W' sa=0 sb=0 sd=0 nf=1 mult=30 m=30 
 XM7 vout iref vdd vdd sky130_fd_pr__pfet_01v8 W=3 L=0.3 ad='W * 0.29' pd='2 * (W + 0.29)' as='W * 0.29'
