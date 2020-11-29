@@ -4,7 +4,8 @@
 #define NB_OUTPUTS 28
 
 #define reg_mprj_oeb0 (*(volatile uint32_t*)0x30000004)
-
+#define reg_mprj_oeb1 (*(volatile uint32_t*)0x30000008)
+#define reg_mprj_ws2812 (*(volatile uint32_t*)0x30000500)
 /*
 	IO Test:
 		- Configures MPRJ pins
@@ -31,28 +32,23 @@ void main()
 
     /*
     Inputs
-    36 - 2^15Hz crystal clock
-    system reset_n
+    36 - Safe mode
+    37 - 2^15Hz crystal clock
 
     Outputs
     8  - 14 segment_hxxx
     15 - 21 segment_xhxx
-    22 - 28 segment_xxhx
-    29 - 35 segment_xxxh
+    22 - 28 segment_xxmx
+    29 - 35 segment_xxxm
     */
     volatile uint32_t *io = &reg_mprj_io_0;
     for (int i = 8 ; i < 8+NB_OUTPUTS ; i++) {
         io[i] = GPIO_MODE_USER_STD_OUTPUT;
     }
+
     io[36] = GPIO_MODE_USER_STD_INPUT_NOPULL;
-
-    // for (int i = 0; i < NUMNODES; i++) {
-    // 	for (int j = 0; j <= 1; j += 6)
-    // 		io[i + j] = GPIO_MODE_USER_STD_INPUT_NOPULL;
-    // 	for (int j = 1; j <= 29; j += 6)
-    // 		io[i + j] = GPIO_MODE_USER_STD_OUTPUT;
-    // }
-
+    io[37] = GPIO_MODE_USER_STD_INPUT_NOPULL;
+    
     /* Apply configuration */
     reg_mprj_xfer = 1;
     while (reg_mprj_xfer == 1);
@@ -60,7 +56,7 @@ void main()
     // change to project
     reg_mprj_slave = PROJECT;
 
-    // reg_mprj_oeb0 = (1 << 36);
+    reg_mprj_oeb1 = (1 << 4) + (1 << 5); //GPIO 36 and 37 as inputs
 
     // use logic analyser bit 0 as reset
     reg_la0_ena  = 0x00000000; // bits 31:0 outputs

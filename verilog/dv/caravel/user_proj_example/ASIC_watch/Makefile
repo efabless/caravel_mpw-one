@@ -4,7 +4,7 @@ IP_PATH = ../../../../ip
 #MP_PATH = ../../../../rtl/multi_project_harness
 BEHAVIOURAL_MODELS = ../../ 
 
-TOOLCHAIN_PREFIX?=/home/bscuser/programs/RISCV-GNU/bin/riscv64-unknown-elf-
+TOOLCHAIN_PREFIX?=/opt/riscv32ic/bin/riscv32-unknown-elf-
 PDK_PATH?=/home/bscuser/hacking/skywater-pdk
 
 .SUFFIXES:
