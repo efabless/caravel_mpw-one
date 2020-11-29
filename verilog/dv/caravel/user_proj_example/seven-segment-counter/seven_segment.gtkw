@@ -1,0 +1,314 @@
+[*]
+[*] GTKWave Analyzer v3.3.108 (w)1999-2020 BSI
+[*] Thu Nov 26 15:54:45 2020
+[*]
+[dumpfile] "/home/matt/work/asic-workshop/caravel/verilog/dv/caravel/user_proj_example/seven-segment-counter/seven_segment.vcd"
+[dumpfile_mtime] "Thu Nov 26 15:53:35 2020"
+[dumpfile_size] 101461023
+[savefile] "/home/matt/work/asic-workshop/caravel/verilog/dv/caravel/user_proj_example/seven-segment-counter/seven_segment.gtkw"
+[timestart] 0
+[size] 2488 1529
+[pos] -1 -1
+*-26.000000 192362500 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] seven_segment_tb.
+[treeopen] seven_segment_tb.uut.
+[treeopen] seven_segment_tb.uut.gpio_control_bidir[0].
+[treeopen] seven_segment_tb.uut.gpio_control_bidir[0].gpio_in_buf.
+[treeopen] seven_segment_tb.uut.gpio_control_bidir[0].gpio_logic_high.
+[treeopen] seven_segment_tb.uut.gpio_control_in[2].
+[treeopen] seven_segment_tb.uut.gpio_control_in[3].
+[treeopen] seven_segment_tb.uut.gpio_control_in[4].
+[treeopen] seven_segment_tb.uut.gpio_control_in[4].gpio_in_buf.
+[treeopen] seven_segment_tb.uut.gpio_control_in[4].gpio_logic_high.
+[treeopen] seven_segment_tb.uut.gpio_control_in[8].
+[treeopen] seven_segment_tb.uut.gpio_control_in[9].
+[treeopen] seven_segment_tb.uut.mprj.
+[treeopen] seven_segment_tb.uut.mprj.mprj.
+[treeopen] seven_segment_tb.uut.mprj.mprj.proj_0.
+[treeopen] seven_segment_tb.uut.soc.
+[treeopen] seven_segment_tb.uut.soc.housekeeping.
+[treeopen] seven_segment_tb.uut.soc.soc.
+[treeopen] seven_segment_tb.uut.soc.soc.cpu.
+[treeopen] seven_segment_tb.uut.soc.soc.cpu.picorv32_core.
+[treeopen] seven_segment_tb.uut.soc.soc.gpio_wb.
+[treeopen] seven_segment_tb.uut.soc.soc.mprj_ctrl.
+[sst_width] 719
+[signals_width] 1098
+[sst_expanded] 1
+[sst_vpaned_height] 710
+@28
+seven_segment_tb.clock
+seven_segment_tb.RSTB
+@200
+-
+@800200
+-wbs
+@28
+seven_segment_tb.uut.mprj.mprj.wb_rst_i
+seven_segment_tb.uut.mprj.mprj.wb_clk_i
+seven_segment_tb.uut.mprj.mprj.wbs_ack_o
+@22
+seven_segment_tb.uut.mprj.mprj.wbs_adr_i[31:0]
+@28
+seven_segment_tb.uut.mprj.mprj.wbs_cyc_i
+@24
+seven_segment_tb.uut.mprj.mprj.wbs_dat_i[31:0]
+@22
+seven_segment_tb.uut.mprj.mprj.wbs_dat_o[31:0]
+seven_segment_tb.uut.mprj.mprj.wbs_sel_i[3:0]
+@28
+seven_segment_tb.uut.mprj.mprj.wbs_stb_i
+seven_segment_tb.uut.mprj.mprj.wbs_we_i
+@1000200
+-wbs
+@800200
+-multi proj control
+@28
+seven_segment_tb.uut.soc.soc.mprj_ctrl.mprj_ctrl.xfer_ctrl
+@1000200
+-multi proj control
+@800200
+-la
+@22
+seven_segment_tb.uut.mprj.mprj.la_data_in[127:0]
+seven_segment_tb.uut.mprj.mprj.la_data_out[127:0]
+seven_segment_tb.uut.mprj.mprj.la_oen[127:0]
+@1000200
+-la
+@22
+seven_segment_tb.uut.soc.soc.cpu.picorv32_core.next_insn_opcode[31:0]
+@200
+-
+@800200
+-multi project
+@22
+seven_segment_tb.uut.mprj.mprj.active_project[7:0]
+@28
+seven_segment_tb.uut.mprj.mprj.wb_rst_i
+@c00022
+seven_segment_tb.uut.mprj.io_in[37:0]
+@28
+(0)seven_segment_tb.uut.mprj.io_in[37:0]
+(1)seven_segment_tb.uut.mprj.io_in[37:0]
+(2)seven_segment_tb.uut.mprj.io_in[37:0]
+(3)seven_segment_tb.uut.mprj.io_in[37:0]
+(4)seven_segment_tb.uut.mprj.io_in[37:0]
+(5)seven_segment_tb.uut.mprj.io_in[37:0]
+(6)seven_segment_tb.uut.mprj.io_in[37:0]
+(7)seven_segment_tb.uut.mprj.io_in[37:0]
+(8)seven_segment_tb.uut.mprj.io_in[37:0]
+(9)seven_segment_tb.uut.mprj.io_in[37:0]
+(10)seven_segment_tb.uut.mprj.io_in[37:0]
+(11)seven_segment_tb.uut.mprj.io_in[37:0]
+(12)seven_segment_tb.uut.mprj.io_in[37:0]
+(13)seven_segment_tb.uut.mprj.io_in[37:0]
+(14)seven_segment_tb.uut.mprj.io_in[37:0]
+(15)seven_segment_tb.uut.mprj.io_in[37:0]
+(16)seven_segment_tb.uut.mprj.io_in[37:0]
+(17)seven_segment_tb.uut.mprj.io_in[37:0]
+(18)seven_segment_tb.uut.mprj.io_in[37:0]
+(19)seven_segment_tb.uut.mprj.io_in[37:0]
+(20)seven_segment_tb.uut.mprj.io_in[37:0]
+(21)seven_segment_tb.uut.mprj.io_in[37:0]
+(22)seven_segment_tb.uut.mprj.io_in[37:0]
+(23)seven_segment_tb.uut.mprj.io_in[37:0]
+(24)seven_segment_tb.uut.mprj.io_in[37:0]
+(25)seven_segment_tb.uut.mprj.io_in[37:0]
+(26)seven_segment_tb.uut.mprj.io_in[37:0]
+(27)seven_segment_tb.uut.mprj.io_in[37:0]
+(28)seven_segment_tb.uut.mprj.io_in[37:0]
+(29)seven_segment_tb.uut.mprj.io_in[37:0]
+(30)seven_segment_tb.uut.mprj.io_in[37:0]
+(31)seven_segment_tb.uut.mprj.io_in[37:0]
+(32)seven_segment_tb.uut.mprj.io_in[37:0]
+(33)seven_segment_tb.uut.mprj.io_in[37:0]
+(34)seven_segment_tb.uut.mprj.io_in[37:0]
+(35)seven_segment_tb.uut.mprj.io_in[37:0]
+(36)seven_segment_tb.uut.mprj.io_in[37:0]
+(37)seven_segment_tb.uut.mprj.io_in[37:0]
+@1401200
+-group_end
+@800022
+seven_segment_tb.uut.mprj.mprj.io_out[37:0]
+@28
+(0)seven_segment_tb.uut.mprj.mprj.io_out[37:0]
+(1)seven_segment_tb.uut.mprj.mprj.io_out[37:0]
+(2)seven_segment_tb.uut.mprj.mprj.io_out[37:0]
+(3)seven_segment_tb.uut.mprj.mprj.io_out[37:0]
+(4)seven_segment_tb.uut.mprj.mprj.io_out[37:0]
+(5)seven_segment_tb.uut.mprj.mprj.io_out[37:0]
+(6)seven_segment_tb.uut.mprj.mprj.io_out[37:0]
+(7)seven_segment_tb.uut.mprj.mprj.io_out[37:0]
+(8)seven_segment_tb.uut.mprj.mprj.io_out[37:0]
+(9)seven_segment_tb.uut.mprj.mprj.io_out[37:0]
+(10)seven_segment_tb.uut.mprj.mprj.io_out[37:0]
+(11)seven_segment_tb.uut.mprj.mprj.io_out[37:0]
+(12)seven_segment_tb.uut.mprj.mprj.io_out[37:0]
+(13)seven_segment_tb.uut.mprj.mprj.io_out[37:0]
+(14)seven_segment_tb.uut.mprj.mprj.io_out[37:0]
+(15)seven_segment_tb.uut.mprj.mprj.io_out[37:0]
+(16)seven_segment_tb.uut.mprj.mprj.io_out[37:0]
+(17)seven_segment_tb.uut.mprj.mprj.io_out[37:0]
+(18)seven_segment_tb.uut.mprj.mprj.io_out[37:0]
+(19)seven_segment_tb.uut.mprj.mprj.io_out[37:0]
+(20)seven_segment_tb.uut.mprj.mprj.io_out[37:0]
+(21)seven_segment_tb.uut.mprj.mprj.io_out[37:0]
+(22)seven_segment_tb.uut.mprj.mprj.io_out[37:0]
+(23)seven_segment_tb.uut.mprj.mprj.io_out[37:0]
+(24)seven_segment_tb.uut.mprj.mprj.io_out[37:0]
+(25)seven_segment_tb.uut.mprj.mprj.io_out[37:0]
+(26)seven_segment_tb.uut.mprj.mprj.io_out[37:0]
+(27)seven_segment_tb.uut.mprj.mprj.io_out[37:0]
+(28)seven_segment_tb.uut.mprj.mprj.io_out[37:0]
+(29)seven_segment_tb.uut.mprj.mprj.io_out[37:0]
+(30)seven_segment_tb.uut.mprj.mprj.io_out[37:0]
+(31)seven_segment_tb.uut.mprj.mprj.io_out[37:0]
+(32)seven_segment_tb.uut.mprj.mprj.io_out[37:0]
+(33)seven_segment_tb.uut.mprj.mprj.io_out[37:0]
+(34)seven_segment_tb.uut.mprj.mprj.io_out[37:0]
+(35)seven_segment_tb.uut.mprj.mprj.io_out[37:0]
+(36)seven_segment_tb.uut.mprj.mprj.io_out[37:0]
+(37)seven_segment_tb.uut.mprj.mprj.io_out[37:0]
+@1001200
+-group_end
+@22
+seven_segment_tb.uut.mprj.mprj.io_oeb[37:0]
+@1000200
+-multi project
+@c00022
+seven_segment_tb.mprj_io[37:0]
+@28
+(0)seven_segment_tb.mprj_io[37:0]
+(1)seven_segment_tb.mprj_io[37:0]
+(2)seven_segment_tb.mprj_io[37:0]
+(3)seven_segment_tb.mprj_io[37:0]
+(4)seven_segment_tb.mprj_io[37:0]
+(5)seven_segment_tb.mprj_io[37:0]
+(6)seven_segment_tb.mprj_io[37:0]
+(7)seven_segment_tb.mprj_io[37:0]
+(8)seven_segment_tb.mprj_io[37:0]
+(9)seven_segment_tb.mprj_io[37:0]
+(10)seven_segment_tb.mprj_io[37:0]
+(11)seven_segment_tb.mprj_io[37:0]
+(12)seven_segment_tb.mprj_io[37:0]
+(13)seven_segment_tb.mprj_io[37:0]
+(14)seven_segment_tb.mprj_io[37:0]
+(15)seven_segment_tb.mprj_io[37:0]
+(16)seven_segment_tb.mprj_io[37:0]
+(17)seven_segment_tb.mprj_io[37:0]
+(18)seven_segment_tb.mprj_io[37:0]
+(19)seven_segment_tb.mprj_io[37:0]
+(20)seven_segment_tb.mprj_io[37:0]
+(21)seven_segment_tb.mprj_io[37:0]
+(22)seven_segment_tb.mprj_io[37:0]
+(23)seven_segment_tb.mprj_io[37:0]
+(24)seven_segment_tb.mprj_io[37:0]
+(25)seven_segment_tb.mprj_io[37:0]
+(26)seven_segment_tb.mprj_io[37:0]
+(27)seven_segment_tb.mprj_io[37:0]
+(28)seven_segment_tb.mprj_io[37:0]
+(29)seven_segment_tb.mprj_io[37:0]
+(30)seven_segment_tb.mprj_io[37:0]
+(31)seven_segment_tb.mprj_io[37:0]
+(32)seven_segment_tb.mprj_io[37:0]
+(33)seven_segment_tb.mprj_io[37:0]
+(34)seven_segment_tb.mprj_io[37:0]
+(35)seven_segment_tb.mprj_io[37:0]
+(36)seven_segment_tb.mprj_io[37:0]
+(37)seven_segment_tb.mprj_io[37:0]
+@c00022
+seven_segment_tb.uut.mprj.mprj.io_out[37:0]
+@28
+(0)seven_segment_tb.uut.mprj.mprj.io_out[37:0]
+(1)seven_segment_tb.uut.mprj.mprj.io_out[37:0]
+(2)seven_segment_tb.uut.mprj.mprj.io_out[37:0]
+(3)seven_segment_tb.uut.mprj.mprj.io_out[37:0]
+(4)seven_segment_tb.uut.mprj.mprj.io_out[37:0]
+(5)seven_segment_tb.uut.mprj.mprj.io_out[37:0]
+(6)seven_segment_tb.uut.mprj.mprj.io_out[37:0]
+(7)seven_segment_tb.uut.mprj.mprj.io_out[37:0]
+(8)seven_segment_tb.uut.mprj.mprj.io_out[37:0]
+(9)seven_segment_tb.uut.mprj.mprj.io_out[37:0]
+(10)seven_segment_tb.uut.mprj.mprj.io_out[37:0]
+(11)seven_segment_tb.uut.mprj.mprj.io_out[37:0]
+(12)seven_segment_tb.uut.mprj.mprj.io_out[37:0]
+(13)seven_segment_tb.uut.mprj.mprj.io_out[37:0]
+(14)seven_segment_tb.uut.mprj.mprj.io_out[37:0]
+(15)seven_segment_tb.uut.mprj.mprj.io_out[37:0]
+(16)seven_segment_tb.uut.mprj.mprj.io_out[37:0]
+(17)seven_segment_tb.uut.mprj.mprj.io_out[37:0]
+(18)seven_segment_tb.uut.mprj.mprj.io_out[37:0]
+(19)seven_segment_tb.uut.mprj.mprj.io_out[37:0]
+(20)seven_segment_tb.uut.mprj.mprj.io_out[37:0]
+(21)seven_segment_tb.uut.mprj.mprj.io_out[37:0]
+(22)seven_segment_tb.uut.mprj.mprj.io_out[37:0]
+(23)seven_segment_tb.uut.mprj.mprj.io_out[37:0]
+(24)seven_segment_tb.uut.mprj.mprj.io_out[37:0]
+(25)seven_segment_tb.uut.mprj.mprj.io_out[37:0]
+(26)seven_segment_tb.uut.mprj.mprj.io_out[37:0]
+(27)seven_segment_tb.uut.mprj.mprj.io_out[37:0]
+(28)seven_segment_tb.uut.mprj.mprj.io_out[37:0]
+(29)seven_segment_tb.uut.mprj.mprj.io_out[37:0]
+(30)seven_segment_tb.uut.mprj.mprj.io_out[37:0]
+(31)seven_segment_tb.uut.mprj.mprj.io_out[37:0]
+(32)seven_segment_tb.uut.mprj.mprj.io_out[37:0]
+(33)seven_segment_tb.uut.mprj.mprj.io_out[37:0]
+(34)seven_segment_tb.uut.mprj.mprj.io_out[37:0]
+(35)seven_segment_tb.uut.mprj.mprj.io_out[37:0]
+(36)seven_segment_tb.uut.mprj.mprj.io_out[37:0]
+(37)seven_segment_tb.uut.mprj.mprj.io_out[37:0]
+@1401200
+-group_end
+@22
+seven_segment_tb.uut.mprj.mprj.io_oeb[37:0]
+seven_segment_tb.uut.mprj.mprj.io_in[37:0]
+@1401200
+-group_end
+@800200
+-seven seg
+@28
+seven_segment_tb.uut.mprj.mprj.proj_0.clk
+@22
+seven_segment_tb.uut.mprj.mprj.proj_0.second_counter[23:0]
+@24
+seven_segment_tb.uut.mprj.mprj.proj_0.compare[23:0]
+@28
+seven_segment_tb.uut.mprj.mprj.proj_0.reset
+@800022
+seven_segment_tb.uut.mprj.mprj.proj_0.digit[3:0]
+@28
+(0)seven_segment_tb.uut.mprj.mprj.proj_0.digit[3:0]
+(1)seven_segment_tb.uut.mprj.mprj.proj_0.digit[3:0]
+(2)seven_segment_tb.uut.mprj.mprj.proj_0.digit[3:0]
+(3)seven_segment_tb.uut.mprj.mprj.proj_0.digit[3:0]
+@200
+-
+@800022
+seven_segment_tb.uut.mprj.mprj.proj_0.led_out[6:0]
+@28
+(0)seven_segment_tb.uut.mprj.mprj.proj_0.led_out[6:0]
+(1)seven_segment_tb.uut.mprj.mprj.proj_0.led_out[6:0]
+(2)seven_segment_tb.uut.mprj.mprj.proj_0.led_out[6:0]
+(3)seven_segment_tb.uut.mprj.mprj.proj_0.led_out[6:0]
+(4)seven_segment_tb.uut.mprj.mprj.proj_0.led_out[6:0]
+(5)seven_segment_tb.uut.mprj.mprj.proj_0.led_out[6:0]
+(6)seven_segment_tb.uut.mprj.mprj.proj_0.led_out[6:0]
+@1001200
+-group_end
+-group_end
+@1000200
+-seven seg
+@800022
+seven_segment_tb.segments[6:0]
+@28
+(0)seven_segment_tb.segments[6:0]
+(1)seven_segment_tb.segments[6:0]
+(2)seven_segment_tb.segments[6:0]
+(3)seven_segment_tb.segments[6:0]
+(4)seven_segment_tb.segments[6:0]
+(5)seven_segment_tb.segments[6:0]
+(6)seven_segment_tb.segments[6:0]
+@1001200
+-group_end
+[pattern_trace] 1
+[pattern_trace] 0

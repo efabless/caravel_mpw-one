@@ -51,7 +51,7 @@
 /*------------------------------*/
 /* Include user project here	*/
 /*------------------------------*/
-`include "user_proj_example.v"
+`include "multi_project_harness/includes.v"
 
 // `ifdef USE_OPENRAM
 //     `include "sram_1rw1r_32_256_8_sky130.v"
