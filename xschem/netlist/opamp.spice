@@ -21,7 +21,7 @@ XM8 iref iref vdd vdd sky130_fd_pr__pfet_01v8 W=3 L=0.3 ad='W * 0.29' pd='2 * (W
 + ps='2 * (W + 0.29)' nrd='0.29 / W' nrs='0.29 / W' sa=0 sb=0 sd=0 nf=1 mult=15 m=15 
 XM9 net1 vdd voe1 vss sky130_fd_pr__nfet_01v8 W=0.75 L=0.15 ad='W * 0.29' pd='2 * (W + 0.29)' as='W * 0.29'
 + ps='2 * (W + 0.29)' nrd='0.29 / W' nrs='0.29 / W' sa=0 sb=0 sd=0 nf=1 mult=6 m=6 
-XC1 net1 vout sky130_fd_pr__cap_mim_m3_1 W=15 L=15 MF=7 m=7
+XC1 net1 vout sky130_fd_pr__cap_mim_m3_1 W=15 L=17.55 MF=6 m=6
 XM6 vout voe1 vss vss sky130_fd_pr__nfet_01v8 W=4.5 L=0.45 ad='W * 0.29' pd='2 * (W + 0.29)' as='W * 0.29'
 + ps='2 * (W + 0.29)' nrd='0.29 / W' nrs='0.29 / W' sa=0 sb=0 sd=0 nf=1 mult=150 m=150 
 **.ends

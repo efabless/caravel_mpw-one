@@ -1,7 +1,6 @@
 #Configure xschem project directory to use sky130 symbols
 set XSCHEM_LIBRARY_PATH {}
 append XSCHEM_LIBRARY_PATH :${XSCHEM_SHAREDIR}/xschem_library
-append XSCHEM_LIBRARY_PATH :/home/dhernando/projects/xschem_sky130
-append XSCHEM_LIBRARY_PATH :/home/dhernando/Documentos/opamp-sky130-fulgor/xschem/sch
-append XSCHEM_LIBRARY_PATH :/home/dhernando/Documentos/opamp-sky130-fulgor/xschem/sym
+append XSCHEM_LIBRARY_PATH :~/skywater_pdk/xschem_sky130
+append XSCHEM_LIBRARY_PATH :~/fulgor-opamp-sky130/xschem/sch
 

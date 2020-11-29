@@ -97,7 +97,7 @@ ad="'W * 0.29'" pd="'2 * (W + 0.29)'"
 as="'W * 0.29'" ps="'2 * (W + 0.29)'"
 nrd="'0.29 / W'" nrs="'0.29 / W'"
 sa=0 sb=0 sd=0
-nf=1 mult=40
+nf=1 mult=30
 model=nfet_01v8
 spiceprefix=X
 }
@@ -108,7 +108,7 @@ ad="'W * 0.29'" pd="'2 * (W + 0.29)'"
 as="'W * 0.29'" ps="'2 * (W + 0.29)'"
 nrd="'0.29 / W'" nrs="'0.29 / W'"
 sa=0 sb=0 sd=0
-nf=1 mult=40
+nf=1 mult=30
 model=nfet_01v8
 spiceprefix=X
 }
