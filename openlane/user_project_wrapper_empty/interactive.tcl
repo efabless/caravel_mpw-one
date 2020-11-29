@@ -21,32 +21,9 @@ add_macro_obs \
 	-fixed 1 \
 	-layerNames "met1 met2 met3 met4 met5"
 
-set ::env(_SPACING) 1.6
-set ::env(_WIDTH) 3
+exec -ignorestderr openroad -exit $script_dir/gen_pdn.tcl
 
-set power_domains [list {vccd1 vssd1} {vccd2 vssd2} {vdda1 vssa1} {vdda2 vssa2}]
-
-set ::env(_VDD_NET_NAME) vccd1
-set ::env(_GND_NET_NAME) vssd1
-set ::env(_V_OFFSET) 14
-set ::env(_H_OFFSET) $::env(_V_OFFSET)
-set ::env(_V_PITCH) 180
-set ::env(_H_PITCH) 180
-set ::env(_V_PDN_OFFSET) 0
-set ::env(_H_PDN_OFFSET) 0
-
-foreach domain $power_domains {
-	set ::env(_VDD_NET_NAME) [lindex $domain 0]
-	set ::env(_GND_NET_NAME) [lindex $domain 1]
-	gen_pdn
-
-	set ::env(_V_OFFSET) \
-		[expr $::env(_V_OFFSET) + 2*($::env(_WIDTH)+$::env(_SPACING))]
-	set ::env(_H_OFFSET) \
-		[expr $::env(_H_OFFSET) + 2*($::env(_WIDTH)+$::env(_SPACING))]
-	set ::env(_V_PDN_OFFSET) [expr $::env(_V_PDN_OFFSET)+6*$::env(_WIDTH)]
-	set ::env(_H_PDN_OFFSET) [expr $::env(_H_PDN_OFFSET)+6*$::env(_WIDTH)]
-}
+set_def $::env(pdn_tmp_file_tag).def
 
 # making it "empty"
 remove_nets -input $::env(CURRENT_DEF)
@@ -71,4 +48,4 @@ exec python3 $::env(OPENLANE_ROOT)/scripts/rectify.py $llx $lly $urx $ury \
 	< $::env(magic_result_file_tag).lef \
 	| python3 $::env(OPENLANE_ROOT)/scripts/obs.py {*}$::env(DIE_AREA) \
 	> $::env(magic_result_file_tag).obstructed.lef
-file copy $::env(magic_result_file_tag).obstructed.lef $save_path/lef
+file copy -force $::env(magic_result_file_tag).obstructed.lef $save_path/lef

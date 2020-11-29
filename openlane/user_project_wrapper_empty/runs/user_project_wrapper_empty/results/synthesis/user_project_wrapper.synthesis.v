@@ -9,14 +9,6 @@ module user_project_wrapper(wb_clk_i, wb_rst_i, wbs_stb_i, wbs_cyc_i, wbs_we_i, 
   output [127:0] la_data_out;
   input [127:0] la_oen;
   input user_clock2;
-  wire vccd1;
-  wire vccd2;
-  wire vdda1;
-  wire vdda2;
-  wire vssa1;
-  wire vssa2;
-  wire vssd1;
-  wire vssd2;
   input wb_clk_i;
   input wb_rst_i;
   output wbs_ack_o;
@@ -34,14 +26,6 @@ module user_project_wrapper(wb_clk_i, wb_rst_i, wbs_stb_i, wbs_cyc_i, wbs_we_i, 
     .la_data_in(la_data_in),
     .la_data_out(la_data_out),
     .la_oen(la_oen),
-    .vccd1(vccd1),
-    .vccd2(vccd2),
-    .vdda1(vdda1),
-    .vdda2(vdda2),
-    .vssa1(vssa1),
-    .vssa2(vssa2),
-    .vssd1(vssd1),
-    .vssd2(vssd2),
     .wb_clk_i(wb_clk_i),
     .wb_rst_i(wb_rst_i),
     .wbs_ack_o(wbs_ack_o),
