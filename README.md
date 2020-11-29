@@ -1,6 +1,28 @@
-# opamp-sky130-fulgor
-Test Chip General Purpose OpAmp using Skywater SKY130 PDK 
+# Prerequisites and Installation
+In order to edit and simulate the schematics and the layout the following tools need to be installed:
+ - [xschem](http://repo.hu/projects/xschem/) - A schematic capture tool that allows to run simulations using ngspice.
+ - [ngspice](http://ngspice.sourceforge.net/) - A circuit simulator.
+ - [magic](http://opencircuitdesign.com/magic/index.html) - A VLSI layout tool.
+ 
+After cloning this repository and installing the previous mencioned tools, the PDK form SkyWater needs to be installed. In order to do that, run the [install_pdk](install_pdk.sh) script in the repo. This script clones the following repositories:
+ - [Google-Skywater 130nm Open Source PDK](https://github.com/google/skywater-pdk)
+ - [Open PDK](http://opencircuitdesign.com/open_pdks/) - Standard layout files for the Google-Skywater 130nm Open Source PDK.
+ - [Xschem SKY130 PDK Symbols](https://github.com/StefanSchippers/xschem_sky130) - Xschem symbol libraries for the Google-Skywater 130nm Open Source PDK.
 
+# General Purpose Open Source Operational Amplifier (OpAmp)
+This project is a test chip, which contains several two stages operationals amplifiers with Miller compensation. This is an all analog desing implemented on the [Google-Skywater 130nm Open Source PDK](https://skywater-pdk.readthedocs.io/en/latest/). It is an Open Source project under[Apache License 2.0] (LICENSE).
+
+The OpAmp desing is located in an Open Source SoC Harness obtained from the [efabless](https://efabless.com/) [Caravel Project](https://github.com/efabless/caravel). 
+
+# OpAmp Desing
+## General Specifications:
+ - V_{dd}
+ - I_{ref}
+ - Power Consumption
+ - DC Gain 
+ - Bandwidth
+ - Chip Area
+ 
 # CIIC Harness  
 
 A template SoC for Google SKY130 free shuttles. It is still WIP. The current SoC architecture is given below.
