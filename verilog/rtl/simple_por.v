@@ -2,9 +2,11 @@
 `timescale 1 ns / 1 ps
 
 module simple_por(
+`ifdef USE_POWER_PINS
     inout vdd3v3,
     inout vdd1v8,
     inout vss,
+`endif
     output porb_h,
     output porb_l,
     output por_l
@@ -22,7 +24,8 @@ module simple_por(
     end 
 
     // Emulate current source on capacitor as a 500ns delay either up or
-    // down.
+    // down.  Note that this is sped way up for verilog simulation;  the
+    // actual circuit is set to a 15ms delay.
 
     always @(posedge vdd3v3) begin
 	#500 inode <= 1'b1;

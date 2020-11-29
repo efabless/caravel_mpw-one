@@ -1,0 +1,21 @@
+* Simple testbench mainly to check SPICE model conversion from CDL
+* Plots the transient response of the smallest inverter in the HD standard cell library
+
+.lib "/home/tim/projects/efabless/tech/SW/sky130A/libs.tech/ngspice/sky130.lib.spice" tt
+.include "/home/tim/projects/efabless/tech/SW/sky130A/libs.ref/sky130_fd_sc_hd/spice/sky130_fd_sc_hd.spice"
+
+* .option TEMP=27
+
+X0 in vss vss vdd vdd out sky130_fd_sc_hd__inv_1
+
+V0 vdd vss PWL(0n 0.0 30n 1.8)
+V1 vss 0 0.0
+
+Vin in vss PWL(0n 0.0 100n 0.0 500n 1.8)
+
+* Transient analysis
+.control
+tran 1n 1u
+plot V(in) V(out)
+.endc
+.end

@@ -1,0 +1,64 @@
+* Ring oscillator testbench---simple check of ring oscillator
+* at several trim levels
+
+.lib "/home/tim/projects/efabless/tech/SW/sky130A/libs.tech/ngspice/sky130.lib.spice" tt
+
+.include "/home/tim/projects/efabless/tech/SW/sky130A/libs.ref/sky130_fd_sc_hd/spice/sky130_fd_sc_hd.spice"
+
+.include "ring_osc2x13.spice"
+
+.option TEMP=27
+* .option RELTOL=1.0E-1
+* .option RSHUNT=1.0E20
+
+* Instantiate the ring oscillator
+* Tie trims together in four sets
+
+X0 vdd vss clockp0 clockp1 reset trim00 trim01 trim02 trim03 trim04 trim05 trim06
++ trim07 trim08 trim09 trim10 trim11 trim12 trim13 trim14 trim15 trim16 trim17
++ trim18 trim19 trim20 trim21 trim22 trim23 trim24 trim25 ring_osc2x13
+
+* Power supply (note that all logic is 1.8V here)
+
+V00 vdd vss PWL(0n 0.0 30n 1.8)
+V01 vss 0 0.0
+
+* Trim values (connect resistors to power or ground)
+* divider value = 12
+
+V02 trim00 gnd PULSE(0.0 1.8 40n 2n 2n 1u 2u)
+V03 trim01 gnd PULSE(0.0 1.8 80n 2n 2n 1u 2u)
+V04 trim02 gnd PULSE(0.0 1.8 120n 2n 2n 1u 2u)
+V05 trim03 gnd PULSE(0.0 1.8 160n 2n 2n 1u 2u)
+V06 trim04 gnd PULSE(0.0 1.8 200n 2n 2n 1u 2u)
+V07 trim05 gnd PULSE(0.0 1.8 240n 2n 2n 1u 2u)
+V08 trim06 gnd PULSE(0.0 1.8 280n 2n 2n 1u 2u)
+V09 trim07 gnd PULSE(0.0 1.8 320n 2n 2n 1u 2u)
+V10 trim08 gnd PULSE(0.0 1.8 360n 2n 2n 1u 2u)
+V11 trim09 gnd PULSE(0.0 1.8 400n 2n 2n 1u 2u)
+V12 trim10 gnd PULSE(0.0 1.8 440n 2n 2n 1u 2u)
+V13 trim11 gnd PULSE(0.0 1.8 480n 2n 2n 1u 2u)
+V14 trim12 gnd PULSE(0.0 1.8 520n 2n 2n 1u 2u)
+V15 trim13 gnd PULSE(0.0 1.8 560n 2n 2n 1u 2u)
+V16 trim14 gnd PULSE(0.0 1.8 600n 2n 2n 1u 2u)
+V17 trim15 gnd PULSE(0.0 1.8 640n 2n 2n 1u 2u)
+V18 trim16 gnd PULSE(0.0 1.8 680n 2n 2n 1u 2u)
+V19 trim17 gnd PULSE(0.0 1.8 720n 2n 2n 1u 2u)
+V20 trim18 gnd PULSE(0.0 1.8 760n 2n 2n 1u 2u)
+V21 trim19 gnd PULSE(0.0 1.8 800n 2n 2n 1u 2u)
+V22 trim20 gnd PULSE(0.0 1.8 840n 2n 2n 1u 2u)
+V23 trim21 gnd PULSE(0.0 1.8 880n 2n 2n 1u 2u)
+V24 trim22 gnd PULSE(0.0 1.8 920n 2n 2n 1u 2u)
+V25 trim23 gnd PULSE(0.0 1.8 960n 2n 2n 1u 2u)
+V26 trim24 gnd PULSE(0.0 1.8 800n 2n 2n 1u 2u)
+V27 trim25 gnd PULSE(0.0 1.8 840n 2n 2n 1u 2u)
+
+* Reset
+V6 reset gnd PWL(0n 1.8 8n 1.8 10n 0.0)
+
+* Transient analysis
+.control
+tran 100p 1u
+plot V(clockp0) V(clockp1)
+.endc
+.end

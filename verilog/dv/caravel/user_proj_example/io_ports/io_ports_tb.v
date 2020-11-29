@@ -86,20 +86,16 @@ module io_ports_tb;
 		#1 $display("MPRJ-IO state = %b ", mprj_io[7:0]);
 	end
 
-    	wire flash_csb;
+	wire flash_csb;
 	wire flash_clk;
 	wire flash_io0;
 	wire flash_io1;
 
-	wire VDD1V8;
-    	wire VDD3V3;
-	wire VSS;
-    
-	assign VDD3V3 = power1;
-	assign VDD1V8 = power2;
-	assign USER_VDD3V3 = power3;
-	assign USER_VDD1V8 = power4;
-	assign VSS = 1'b0;
+	wire VDD3V3 = power1;
+	wire VDD1V8 = power2;
+	wire USER_VDD3V3 = power3;
+	wire USER_VDD1V8 = power4;
+	wire VSS = 1'b0;
 
 	caravel uut (
 		.vddio	  (VDD3V3),

@@ -18,21 +18,21 @@ hex:  ${PATTERN:=.hex}
 %.vvp: %_tb.v %.hex
 	iverilog -DFUNCTIONAL -I $(BEHAVIOURAL_MODELS) \
 	-I $(PDK_PATH) -I $(IP_PATH) -I $(RTL_PATH) \
-	$< -o $@
+	-o $@ $<
 
 %.vcd: %.vvp
 	vvp $<
 
 %.elf: %.c $(FIRMWARE_PATH)/sections.lds $(FIRMWARE_PATH)/start.s
-	${GCC_PATH}/${GCC_PREFIX}-unknown-elf-gcc -march=rv32imc -Wl,-Bstatic,-T,$(FIRMWARE_PATH)/sections.lds,--strip-debug -ffreestanding -nostdlib -o $@ $(FIRMWARE_PATH)/start.s $<
+	${GCC_PATH}/${GCC_PREFIX}-gcc -march=rv32imc -mabi=ilp32 -Wl,-Bstatic,-T,$(FIRMWARE_PATH)/sections.lds,--strip-debug -ffreestanding -nostdlib -o $@ $(FIRMWARE_PATH)/start.s $<
 
 %.hex: %.elf
-	${GCC_PATH}/${GCC_PREFIX}-unknown-elf-objcopy -O verilog $< $@ 
+	${GCC_PATH}/${GCC_PREFIX}-objcopy -O verilog $< $@ 
 	# to fix flash base address
 	sed -i 's/@10000000/@00000000/g' $@
 
 %.bin: %.elf
-	${GCC_PATH}/${GCC_PREFIX}-unknown-elf-objcopy -O binary $< /dev/stdout | tail -c +1048577 > $@
+	${GCC_PATH}/${GCC_PREFIX}-objcopy -O binary $< /dev/stdout | tail -c +1048577 > $@
 
 # ---- Clean ----
 

@@ -1,0 +1,36 @@
+*-------------------------------------------------------------------
+* Simple POR circuit for Caravel
+*-------------------------------------------------------------------
+*
+* Architecture: see simple_por.spice
+* Response of this circuit by ngspice simulation is a ~15ms delay.
+*-------------------------------------------------------------------
+
+.lib /home/tim/projects/efabless/tech/SW/sky130A/libs.tech/ngspice/sky130.lib.spice tt
+.include /home/tim/projects/efabless/tech/SW/sky130A/libs.ref/sky130_fd_sc_hvl/spice/sky130_fd_sc_hvl.spice
+.include simple_por.spice
+
+*----------------------------
+* Testbench circuit
+*----------------------------
+Vpwr vdda vss DC=0 PWL(0.0 0 100u 0 5m 3.3)
+Vdig vccd vss DC=0 PWL(0.0 0 300u 0 5.3m 1.8)
+Rgnd vss 0 0.01
+Cload1 porb_h  vss 1E-12
+Cload2 por_l  vss 1E-12
+Cload3 porb_l vss 1E-12
+Xpor vdda vccd vss porb_h por_l porb_l simple_por
+*----------------------------
+
+*----------------------------
+* Testbench control
+*----------------------------
+.control
+tran 10u 20m
+plot porb_h
+plot por_l
+plot porb_l
+.endc
+
+.end
+

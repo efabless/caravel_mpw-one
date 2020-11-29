@@ -1,8 +1,4 @@
-module user_id_programming (vdd1v8,
-    vss,
-    mask_rev);
- inout vdd1v8;
- inout vss;
+module user_id_programming (mask_rev);
  output [31:0] mask_rev;
 
  sky130_fd_sc_hd__conb_1 \mask_rev_value[0]  (.HI(\user_proj_id_high[0] ),

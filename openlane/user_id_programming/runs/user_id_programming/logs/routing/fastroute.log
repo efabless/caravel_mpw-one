@@ -1,19 +1,20 @@
-OpenROAD 0.9.0 e582f2522b
+OpenROAD 0.9.0 d03ebfc244
 This program is licensed under the BSD-3 license. See the LICENSE file for details. 
 Components of this program may be licensed under more restrictive licenses which must be honored.
+Error: cannot open '/.openroad'.
 Warning: /home/xrex/usr/devel/pdks/sky130A/libs.ref/sky130_fd_sc_hd/lib/sky130_fd_sc_hd__tt_025C_1v80.lib, line 31 default_operating_condition tt_025C_1v80 not found.
 Notice 0: Reading LEF file:  /project/openlane/user_id_programming/runs/user_id_programming/tmp/merged_unpadded.lef
 Notice 0:     Created 13 technology layers
 Notice 0:     Created 25 technology vias
-Notice 0:     Created 437 library cells
+Notice 0:     Created 438 library cells
 Notice 0: Finished LEF file:  /project/openlane/user_id_programming/runs/user_id_programming/tmp/merged_unpadded.lef
 Notice 0: 
 Reading DEF file: /project/openlane/user_id_programming/runs/user_id_programming/tmp/floorplan/pdn.def
 Notice 0: Design: user_id_programming
-Notice 0:     Created 36 pins.
+Notice 0:     Created 34 pins.
 Notice 0:     Created 55 components and 274 component-terminals.
-Notice 0:     Created 2 special nets and 0 connections.
-Notice 0:     Created 66 nets and 64 connections.
+Notice 0:     Created 2 special nets and 210 connections.
+Notice 0:     Created 64 nets and 64 connections.
 Notice 0: Finished DEF file: /project/openlane/user_id_programming/runs/user_id_programming/tmp/floorplan/pdn.def
 [PARAMS] Min routing layer: 2
 [PARAMS] Max routing layer: 6
@@ -26,26 +27,21 @@ Notice 0: Finished DEF file: /project/openlane/user_id_programming/runs/user_id_
 [INFO] Found 0 clock nets
 [INFO] Minimum degree: 2
 [INFO] Maximum degree: 2
-[INFO] Processing 320 obstacles in layer 1
-[INFO] Processing 120 obstacles in layer 2
-[INFO] Processing 5 obstacles in layer 5
-[INFO] Processing 5 obstacles in layer 6
+[INFO] Processing 320 obstacles on layer 1
+[INFO] Processing 120 obstacles on layer 2
+[INFO] Processing 5 obstacles on layer 5
+[INFO] Processing 5 obstacles on layer 6
 [INFO] Reducing resources of layer 1 by 99%
-[INFO] Reducing resources of layer 2 by 20%
-[INFO] Reducing resources of layer 3 by 20%
-[INFO] Reducing resources of layer 4 by 20%
-[INFO] Reducing resources of layer 5 by 10%
-[INFO] Reducing resources of layer 6 by 10%
-[INFO] WIRELEN : 76, WIRELEN1 : 0
+[INFO] WIRELEN : 62, WIRELEN1 : 0
 [INFO] NumSeg  : 29
 [INFO] NumShift: 0
 First L Route
-[INFO] WIRELEN : 76, WIRELEN1 : 76
+[INFO] WIRELEN : 62, WIRELEN1 : 62
 [INFO] NumSeg  : 29
 [INFO] NumShift: 0
-[Overflow Report] Total hCap    : 630
-[Overflow Report] Total vCap    : 455
-[Overflow Report] Total Usage   : 76
+[Overflow Report] Total hCap    : 562
+[Overflow Report] Total vCap    : 424
+[Overflow Report] Total Usage   : 62
 [Overflow Report] Max H Overflow: 0
 [Overflow Report] Max V Overflow: 0
 [Overflow Report] Max Overflow  : 0
@@ -55,9 +51,9 @@ First L Route
 [Overflow Report] Final Overflow: 0
 
 Second L Route
-[Overflow Report] Total hCap    : 630
-[Overflow Report] Total vCap    : 455
-[Overflow Report] Total Usage   : 76
+[Overflow Report] Total hCap    : 562
+[Overflow Report] Total vCap    : 424
+[Overflow Report] Total Usage   : 62
 [Overflow Report] Max H Overflow: 0
 [Overflow Report] Max V Overflow: 0
 [Overflow Report] Max Overflow  : 0
@@ -67,9 +63,9 @@ Second L Route
 [Overflow Report] Final Overflow: 0
 
 First Z Route
-[Overflow Report] Total hCap    : 630
-[Overflow Report] Total vCap    : 455
-[Overflow Report] Total Usage   : 76
+[Overflow Report] Total hCap    : 562
+[Overflow Report] Total vCap    : 424
+[Overflow Report] Total Usage   : 62
 [Overflow Report] Max H Overflow: 0
 [Overflow Report] Max V Overflow: 0
 [Overflow Report] Max Overflow  : 0
@@ -80,7 +76,7 @@ First Z Route
 
 [INFO] LV routing round 0, enlarge 10 
 [INFO] 10 threshold, 10 expand
-[Overflow Report] total Usage   : 76
+[Overflow Report] total Usage   : 62
 [Overflow Report] Max H Overflow: 0
 [Overflow Report] Max V Overflow: 0
 [Overflow Report] Max Overflow  : 0
@@ -91,7 +87,7 @@ First Z Route
 
 [INFO] LV routing round 1, enlarge 15 
 [INFO] 5 threshold, 15 expand
-[Overflow Report] total Usage   : 76
+[Overflow Report] total Usage   : 62
 [Overflow Report] Max H Overflow: 0
 [Overflow Report] Max V Overflow: 0
 [Overflow Report] Max Overflow  : 0
@@ -102,7 +98,7 @@ First Z Route
 
 [INFO] LV routing round 2, enlarge 20 
 [INFO] 1 threshold, 20 expand
-[Overflow Report] total Usage   : 76
+[Overflow Report] total Usage   : 62
 [Overflow Report] Max H Overflow: 0
 [Overflow Report] Max V Overflow: 0
 [Overflow Report] Max Overflow  : 0
@@ -115,7 +111,7 @@ Usage checked
 Maze routing finished
 [INFO] P3 runtime: 0.000000 sec
 [INFO] Final 2D results: 
-[Overflow Report] total Usage   : 76
+[Overflow Report] total Usage   : 62
 [Overflow Report] Max H Overflow: 0
 [Overflow Report] Max V Overflow: 0
 [Overflow Report] Max Overflow  : 0
@@ -130,31 +126,31 @@ Layer assignment finished
 Post Processing Begins 
 Post Processsing finished
  Starting via filling
-[INFO] Via related to pin nodes 87
+[INFO] Via related to pin nodes 85
 [INFO] Via related stiner nodes 0
 Via filling finished
 
 Final usage/overflow report: 
 [INFO] Usage per layer: 
     Layer 1 usage: 0
-    Layer 2 usage: 40
-    Layer 3 usage: 36
+    Layer 2 usage: 36
+    Layer 3 usage: 26
     Layer 4 usage: 0
     Layer 5 usage: 0
     Layer 6 usage: 0
 
 [INFO] Capacity per layer: 
     Layer 1 capacity: 0
-    Layer 2 capacity: 382
-    Layer 3 capacity: 315
-    Layer 4 capacity: 220
-    Layer 5 capacity: 140
-    Layer 6 capacity: 28
+    Layer 2 capacity: 334
+    Layer 3 capacity: 300
+    Layer 4 capacity: 196
+    Layer 5 capacity: 124
+    Layer 6 capacity: 32
 
 [INFO] Use percentage per layer: 
     Layer 1 use percentage: 0.0%
-    Layer 2 use percentage: 10.47%
-    Layer 3 use percentage: 11.43%
+    Layer 2 use percentage: 10.78%
+    Layer 3 use percentage: 8.67%
     Layer 4 use percentage: 0.00%
     Layer 5 use percentage: 0.00%
     Layer 6 use percentage: 0.00%
@@ -167,8 +163,8 @@ Final usage/overflow report:
     Layer 5 overflow: 0
     Layer 6 overflow: 0
 
-[Overflow Report] Total Usage   : 76
-[Overflow Report] Total Capacity: 1085
+[Overflow Report] Total Usage   : 62
+[Overflow Report] Total Capacity: 986
 [Overflow Report] Max H Overflow: 0
 [Overflow Report] Max V Overflow: 0
 [Overflow Report] Max Overflow  : 0
@@ -176,12 +172,15 @@ Final usage/overflow report:
 [Overflow Report] V   Overflow  : 0
 [Overflow Report] Final Overflow: 0
 
-[INFO] Final usage          : 76
-[INFO] Final number of vias : 108
-[INFO] Final usage 3D       : 400
-[INFO] Total wirelength: 1497 um
+[INFO] Final usage          : 62
+[INFO] Final number of vias : 100
+[INFO] Final usage 3D       : 362
+[INFO] Total wirelength: 1380 um
+Notice 0: Split top of 1 T shapes.
+Notice 0: Split top of 1 T shapes.
 Notice 0: Split top of 1 T shapes.
 Repairing antennas...
 [WARNING]No OR_DEFAULT vias defined
 [INFO] #Antenna violations: 0
 [INFO] Num routed nets: 32
+[WARN]: No CLOCK_PORT found. Skipping STA...

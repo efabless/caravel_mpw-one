@@ -1,21 +1,21 @@
 
-Cell sky130_fd_sc_hd__conb_1 disconnected node: HI
-Cell sky130_fd_sc_hd__conb_1 disconnected node: LO
 Cell sky130_fd_sc_hd__conb_1 disconnected node: VGND
 Cell sky130_fd_sc_hd__conb_1 disconnected node: VNB
 Cell sky130_fd_sc_hd__conb_1 disconnected node: VPB
 Cell sky130_fd_sc_hd__conb_1 disconnected node: VPWR
+Cell sky130_fd_sc_hd__conb_1 disconnected node: HI
+Cell sky130_fd_sc_hd__conb_1 disconnected node: LO
 Warning: Equate pins:  cell sky130_fd_sc_hd__conb_1 has no definition, treated as a black box.
 
 Subcircuit pins:
 Circuit 1: sky130_fd_sc_hd__conb_1         |Circuit 2: sky130_fd_sc_hd__conb_1         
 -------------------------------------------|-------------------------------------------
-HI                                         |HI                                         
-LO                                         |LO                                         
 VGND                                       |VGND                                       
 VNB                                        |VNB                                        
 VPB                                        |VPB                                        
 VPWR                                       |VPWR                                       
+HI                                         |HI                                         
+LO                                         |LO                                         
 ---------------------------------------------------------------------------------------
 Cell pin lists are equivalent.
 Device classes sky130_fd_sc_hd__conb_1 and sky130_fd_sc_hd__conb_1 are equivalent.
@@ -32,12 +32,6 @@ VPWR                                       |VPWR
 ---------------------------------------------------------------------------------------
 Cell pin lists are equivalent.
 Device classes sky130_fd_sc_hd__tapvpwrvgnd_1 and sky130_fd_sc_hd__tapvpwrvgnd_1 are equivalent.
-
-Cell user_id_programming disconnected node: vdd1v8
-Cell user_id_programming disconnected node: vss
-
-Cell user_id_programming disconnected node: vdd1v8
-Cell user_id_programming disconnected node: vss
 
 Subcircuit summary:
 Circuit 1: user_id_programming             |Circuit 2: user_id_programming             

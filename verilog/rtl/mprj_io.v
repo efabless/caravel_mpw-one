@@ -44,7 +44,7 @@ module mprj_io #(
     wire [`MPRJ_IO_PADS-1:0] loop1_io;
     wire [6:0] no_connect;
 
-    sky130_ef_io__gpiov2_pad  area1_io_pad [AREA1PADS - 1:0] (
+    sky130_ef_io__gpiov2_pad_wrapped  area1_io_pad [AREA1PADS - 1:0] (
 	`USER1_ABUTMENT_PINS
 	`ifndef	TOP_ROUTING
 	    .PAD(io[AREA1PADS - 1:0]),
@@ -75,7 +75,7 @@ module mprj_io #(
 	    .TIE_LO_ESD(loop1_io[AREA1PADS - 1:0])
     );
 
-    sky130_ef_io__gpiov2_pad area2_io_pad [`MPRJ_IO_PADS - AREA1PADS - 1:0] (
+    sky130_ef_io__gpiov2_pad_wrapped area2_io_pad [`MPRJ_IO_PADS - AREA1PADS - 1:0] (
 	`USER2_ABUTMENT_PINS
 	`ifndef	TOP_ROUTING
 	    .PAD(io[`MPRJ_IO_PADS - 1:AREA1PADS]),

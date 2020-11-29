@@ -1,25 +1,14 @@
-OpenROAD 0.9.0 e582f2522b
+OpenROAD 0.9.0 d03ebfc244
 This program is licensed under the BSD-3 license. See the LICENSE file for details. 
 Components of this program may be licensed under more restrictive licenses which must be honored.
-Warning: /home/ag/pdks/sky130A/libs.ref/sky130_fd_sc_hd/lib/sky130_fd_sc_hd__tt_025C_1v80.lib, line 31 default_operating_condition tt_025C_1v80 not found.
-Notice 0: Reading LEF file:  /openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/tmp/merged.lef
-Notice 0:     Created 11 technology layers
+Error: cannot open '/.openroad'.
+Warning: /home/aag/current_pdk/sky130A/libs.ref/sky130_fd_sc_hd/lib/sky130_fd_sc_hd__tt_025C_1v80.lib, line 31 default_operating_condition tt_025C_1v80 not found.
+Notice 0: Reading LEF file:  /project/openlane/digital_pll/runs/digital_pll/tmp/merged_unpadded.lef
+Notice 0:     Created 13 technology layers
 Notice 0:     Created 25 technology vias
-Notice 0:     Created 437 library cells
-Notice 0: Finished LEF file:  /openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/tmp/merged.lef
-Warning: LEF macro sky130_fd_sc_hd__lpflow_lsbuf_lh_hl_isowell_tap_1 pin VPB missing from liberty cell
-Warning: LEF macro sky130_fd_sc_hd__lpflow_lsbuf_lh_hl_isowell_tap_2 pin VPB missing from liberty cell
-Warning: LEF macro sky130_fd_sc_hd__lpflow_lsbuf_lh_hl_isowell_tap_4 pin VPB missing from liberty cell
-Warning: LEF macro sky130_fd_sc_hd__lpflow_lsbuf_lh_isowell_tap_1 pin VPB missing from liberty cell
-Warning: LEF macro sky130_fd_sc_hd__lpflow_lsbuf_lh_isowell_tap_2 pin VPB missing from liberty cell
-Warning: LEF macro sky130_fd_sc_hd__lpflow_lsbuf_lh_isowell_tap_4 pin VPB missing from liberty cell
-Warning: LEF macro sky130_fd_sc_hd__lpflow_lsbuf_lh_hl_isowell_tap_1 pin VPB missing from liberty cell
-Warning: LEF macro sky130_fd_sc_hd__lpflow_lsbuf_lh_hl_isowell_tap_2 pin VPB missing from liberty cell
-Warning: LEF macro sky130_fd_sc_hd__lpflow_lsbuf_lh_hl_isowell_tap_4 pin VPB missing from liberty cell
-Warning: LEF macro sky130_fd_sc_hd__lpflow_lsbuf_lh_isowell_tap_1 pin VPB missing from liberty cell
-Warning: LEF macro sky130_fd_sc_hd__lpflow_lsbuf_lh_isowell_tap_2 pin VPB missing from liberty cell
-Warning: LEF macro sky130_fd_sc_hd__lpflow_lsbuf_lh_isowell_tap_4 pin VPB missing from liberty cell
-Info: Added 43 rows of 254 sites.
+Notice 0:     Created 438 library cells
+Notice 0: Finished LEF file:  /project/openlane/digital_pll/runs/digital_pll/tmp/merged_unpadded.lef
+Info: Added 35 rows of 208 sites.
 [INFO] Extracting DIE_AREA and CORE_AREA from the floorplan
-[INFO] Floorplanned on a die area of 0.0 0.0 128.205 138.925 (microns). Saving to /openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/reports/floorplan/verilog2def.die_area.rpt.
-[INFO] Floorplanned on a core area of 5.52 10.88 122.36 127.84 (microns). Saving to /openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/reports/floorplan/verilog2def.core_area.rpt.
+[INFO] Floorplanned on a die area of 0.0 0.0 107.04 117.76 (microns). Saving to /project/openlane/digital_pll/runs/digital_pll/reports/floorplan/verilog2def.die_area.rpt.
+[INFO] Floorplanned on a core area of 5.52 10.88 101.2 106.08 (microns). Saving to /project/openlane/digital_pll/runs/digital_pll/reports/floorplan/verilog2def.core_area.rpt.

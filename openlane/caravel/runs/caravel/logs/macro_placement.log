@@ -1,21 +1,25 @@
 Notice 0: Reading LEF file:  /project/openlane/caravel/runs/caravel/tmp/merged.lef
-Notice 0: 1000000 lines parsed!
-Notice 0: 2000000 lines parsed!
-Notice 0: 3000000 lines parsed!
-Notice 0: 4000000 lines parsed!
+Notice 0: error: undefined layer (M4M5_PR_C) referenced
+Notice 0: error: undefined layer (M4M5_PR_C) referenced
+Notice 0: error: undefined layer (M4M5_PR_C) referenced
+Notice 0: error: undefined layer (M4M5_PR_C) referenced
+Notice 0: error: undefined layer (M4M5_PR_C) referenced
+Notice 0: error: undefined layer (M4M5_PR_C) referenced
+Notice 0: error: undefined layer (M4M5_PR_C) referenced
+Notice 0: error: undefined layer (M4M5_PR_C) referenced
 Notice 0:     Created 13 technology layers
 Notice 0:     Created 25 technology vias
-Notice 0:     Created 77 library cells
+Notice 0:     Created 78 library cells
 Notice 0: Finished LEF file:  /project/openlane/caravel/runs/caravel/tmp/merged.lef
 Notice 0: 
 Reading DEF file: /project/openlane/caravel/runs/caravel/tmp/floorplan/verilog2def_openroad.def
 Notice 0: Design: caravel
 Notice 0:     Created 63 pins.
-Notice 0:     Created 47 components and 4006 component-terminals.
-Notice 0:     Created 1705 nets and 3668 connections.
+Notice 0:     Created 46 components and 4064 component-terminals.
+Notice 0:     Created 1994 nets and 3460 connections.
 Notice 0: Finished DEF file: /project/openlane/caravel/runs/caravel/tmp/floorplan/verilog2def_openroad.def
 Placing the following macros:
-{'padframe': ['0', '0', 'N'], 'storage': ['279960', '219360', 'N'], 'soc': ['813755', '226905', 'N'], 'mprj': ['251520', '1279800', 'N'], 'mgmt_buffers': ['887200', '1158940', 'N'], 'porb_level': ['778715', '1099725', 'N'], 'rstb_level': ['826125', '1099725', 'N'], 'user_id_value': ['778715', '1158940', 'N'], 'por': ['2903225', '2184205', 'N'], 'gpio_control_in\\[37\\]': ['38560', '1119130', 'N'], 'gpio_control_in\\[36\\]': ['38560', '1346130', 'N'], 'gpio_control_in\\[35\\]': ['38560', '1573130', 'N'], 'gpio_control_in\\[34\\]': ['38560', '1800130', 'N'], 'gpio_control_in\\[33\\]': ['38560', '2027130', 'N'], 'gpio_control_in\\[32\\]': ['38560', '2254130', 'N'], 'gpio_control_in\\[31\\]': ['38560', '2935130', 'N'], 'gpio_control_in\\[30\\]': ['38560', '3162130', 'N'], 'gpio_control_in\\[29\\]': ['38560', '3389130', 'N'], 'gpio_control_in\\[28\\]': ['38560', '3616130', 'N'], 'gpio_control_in\\[27\\]': ['38560', '3843130', 'N'], 'gpio_control_in\\[26\\]': ['38560', '4070130', 'N'], 'gpio_control_in\\[25\\]': ['38560', '4297130', 'N'], 'gpio_control_in\\[24\\]': ['38560', '4751130', 'N'], 'gpio_control_bidir\\[0\\]': ['3111080', '696300', 'N'], 'gpio_control_bidir\\[1\\]': ['3111080', '934300', 'N'], 'gpio_control_in\\[2\\]': ['3111080', '1172300', 'N'], 'gpio_control_in\\[3\\]': ['3111080', '1410300', 'N'], 'gpio_control_in\\[4\\]': ['3111080', '1648300', 'N'], 'gpio_control_in\\[5\\]': ['3111080', '1886300', 'N'], 'gpio_control_in\\[6\\]': ['3111080', '2124300', 'N'], 'gpio_control_in\\[7\\]': ['3111080', '2600300', 'N'], 'gpio_control_in\\[8\\]': ['3111080', '2838300', 'N'], 'gpio_control_in\\[9\\]': ['3111080', '3076300', 'N'], 'gpio_control_in\\[10\\]': ['3111080', '3314300', 'N'], 'gpio_control_in\\[11\\]': ['3111080', '3552300', 'N'], 'gpio_control_in\\[12\\]': ['3111080', '3790300', 'N'], 'gpio_control_in\\[13\\]': ['3111080', '4028300', 'N'], 'gpio_control_in\\[14\\]': ['3111080', '4735300', 'N'], 'gpio_control_in\\[23\\]': ['468460', '5207760', 'R270'], 'gpio_control_in\\[22\\]': ['709460', '5207760', 'R270'], 'gpio_control_in\\[21\\]': ['950460', '5207760', 'R270'], 'gpio_control_in\\[20\\]': ['1191460', '5207760', 'R270'], 'gpio_control_in\\[19\\]': ['1432460', '5207760', 'R270'], 'gpio_control_in\\[18\\]': ['1673460', '5207760', 'R270'], 'gpio_control_in\\[17\\]': ['1914460', '5207760', 'R270'], 'gpio_control_in\\[16\\]': ['2155460', '5207760', 'R270'], 'gpio_control_in\\[15\\]': ['2396460', '5207760', 'R270']}
+{'padframe': ['0', '0', 'N'], 'storage': ['280650', '263920', 'N'], 'soc': ['1004950', '292490', 'N'], 'mprj': ['326385', '1349705', 'N'], 'mgmt_buffers': ['1066855', '1223255', 'N'], 'rstb_level': ['767850', '211805', 'N'], 'user_id_value': ['791230', '1236990', 'N'], 'por': ['905435', '1237260', 'N'], 'gpio_control_in\\[37\\]': ['42835', '1013000', 'R0'], 'gpio_control_in\\[36\\]': ['42835', '1229000', 'R0'], 'gpio_control_in\\[35\\]': ['42835', '1445000', 'R0'], 'gpio_control_in\\[34\\]': ['42835', '1661000', 'R0'], 'gpio_control_in\\[33\\]': ['42835', '1877000', 'R0'], 'gpio_control_in\\[32\\]': ['42835', '2093000', 'R0'], 'gpio_control_in\\[31\\]': ['42835', '2731000', 'R0'], 'gpio_control_in\\[30\\]': ['42835', '2947000', 'R0'], 'gpio_control_in\\[29\\]': ['42835', '3163000', 'R0'], 'gpio_control_in\\[28\\]': ['42835', '3379000', 'R0'], 'gpio_control_in\\[27\\]': ['42835', '3595000', 'R0'], 'gpio_control_in\\[26\\]': ['42835', '3811000', 'R0'], 'gpio_control_in\\[25\\]': ['42835', '4027000', 'R0'], 'gpio_control_in\\[24\\]': ['42835', '4449000', 'R0'], 'gpio_control_in\\[23\\]': ['486000', '4979065', 'R270'], 'gpio_control_in\\[22\\]': ['743000', '4979065', 'R270'], 'gpio_control_in\\[21\\]': ['1000000', '4979065', 'R270'], 'gpio_control_in\\[20\\]': ['1257000', '4979065', 'R270'], 'gpio_control_in\\[19\\]': ['1515000', '4979065', 'R270'], 'gpio_control_in\\[18\\]': ['1767000', '4979065', 'R270'], 'gpio_control_in\\[17\\]': ['2104000', '4979065', 'R270'], 'gpio_control_in\\[16\\]': ['2489000', '4979065', 'R270'], 'gpio_control_in\\[15\\]': ['2746000', '4979065', 'R270'], 'gpio_control_bidir\\[0\\]': ['3373015', '605000', 'MY'], 'gpio_control_bidir\\[1\\]': ['3373015', '831000', 'MY'], 'gpio_control_in\\[2\\]': ['3373015', '1056000', 'MY'], 'gpio_control_in\\[3\\]': ['3373015', '1282000', 'MY'], 'gpio_control_in\\[4\\]': ['3373015', '1507000', 'MY'], 'gpio_control_in\\[5\\]': ['3373015', '1732000', 'MY'], 'gpio_control_in\\[6\\]': ['3373015', '1958000', 'MY'], 'gpio_control_in\\[7\\]': ['3373015', '2399000', 'MY'], 'gpio_control_in\\[8\\]': ['3373015', '2619000', 'MY'], 'gpio_control_in\\[9\\]': ['3373015', '2844000', 'MY'], 'gpio_control_in\\[10\\]': ['3373015', '3070000', 'MY'], 'gpio_control_in\\[11\\]': ['3373015', '3295000', 'MY'], 'gpio_control_in\\[12\\]': ['3373015', '3521000', 'MY'], 'gpio_control_in\\[13\\]': ['3373015', '3746000', 'MY'], 'gpio_control_in\\[14\\]': ['3373015', '4638000', 'MY']}
 Design name: caravel
 Placing gpio_control_bidir\[0\]
 Placing gpio_control_bidir\[1\]
@@ -59,9 +63,8 @@ Placing mgmt_buffers
 Placing mprj
 Placing padframe
 Placing por
-Placing porb_level
 Placing rstb_level
 Placing soc
 Placing storage
 Placing user_id_value
-Successfully placed 47 instances
+Successfully placed 46 instances

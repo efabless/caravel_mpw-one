@@ -38,7 +38,7 @@ set ::env(FP_PDN_HOFFSET) "16.65"
 set ::env(FP_PDN_HPITCH) "153.18"
 set ::env(FP_TAPCELL_DIST) "14"
 # Placement config
-set ::env(PL_TARGET_DENSITY) "0.4"
+set ::env(PL_TARGET_DENSITY) "0.55"
 set ::env(PL_TIME_DRIVEN) "0"
 set ::env(PL_LIB) "/home/xrex/usr/devel/pdks/sky130A/libs.ref/sky130_fd_sc_hd/lib/sky130_fd_sc_hd__tt_025C_1v80.lib"
 set ::env(PL_BASIC_PLACEMENT) "0"

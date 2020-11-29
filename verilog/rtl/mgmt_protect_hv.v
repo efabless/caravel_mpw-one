@@ -1,0 +1,79 @@
+`default_nettype none
+/*----------------------------------------------------------------------*/
+/* mgmt_protect_hv:							*/
+/*									*/
+/* High voltage (3.3V) part of the mgmt_protect module.  Split out into	*/
+/* a separate module and file so that the synthesis tools can handle it	*/
+/* separately from the rest, since it uses a different standard cell	*/
+/* library.  See the file mgmt_protect.v for a full description of the	*/
+/* whole management protection method.					*/
+/*----------------------------------------------------------------------*/
+
+module mgmt_protect_hv (
+    inout	vccd,
+    inout	vssd,
+    inout	vdda1,
+    inout	vssa1,
+    inout	vdda2,
+    inout	vssa2,
+
+    output	mprj_vdd_logic1,
+    output	mprj2_vdd_logic1
+
+);
+
+    wire mprj_vdd_logic1_h;
+    wire mprj2_vdd_logic1_h;
+
+    // Logic high in the VDDA (3.3V) domains
+
+    sky130_fd_sc_hvl__conb_1 mprj_logic_high_hvl (
+`ifdef USE_POWER_PINS
+        .VPWR(vdda1),
+        .VGND(vssa1),
+        .VPB(vdda1),
+        .VNB(vssa1),
+`endif
+        .HI(mprj_vdd_logic1_h),
+        .LO()
+    );
+
+    sky130_fd_sc_hvl__conb_1 mprj2_logic_high_hvl (
+`ifdef USE_POWER_PINS
+        .VPWR(vdda2),
+        .VGND(vssa2),
+        .VPB(vdda2),
+        .VNB(vssa2),
+`endif
+        .HI(mprj2_vdd_logic1_h),
+        .LO()
+    );
+
+    // Level shift the logic high signals into the 1.8V domain
+
+    sky130_fd_sc_hvl__lsbufhv2lv_1 mprj_logic_high_lv (
+`ifdef USE_POWER_PINS
+	.VPWR(vdda1),
+	.VGND(vssd),
+	.LVPWR(vccd),
+	.VPB(vdda1),
+	.VNB(vssd),
+`endif
+	.X(mprj_vdd_logic1),
+	.A(mprj_vdd_logic1_h)
+    );
+
+    sky130_fd_sc_hvl__lsbufhv2lv_1 mprj2_logic_high_lv (
+`ifdef USE_POWER_PINS
+	.VPWR(vdda2),
+	.VGND(vssd),
+	.LVPWR(vccd),
+	.VPB(vdda2),
+	.VNB(vssd),
+`endif
+	.X(mprj2_vdd_logic1),
+	.A(mprj2_vdd_logic1_h)
+    );
+
+endmodule
+`default_nettype wire

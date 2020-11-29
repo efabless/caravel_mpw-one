@@ -1,0 +1,1027 @@
+
+reading lef ...
+
+units:       1000
+#layers:     13
+#macros:     79
+#vias:       25
+#viarulegen: 25
+
+reading def ...
+
+design:      caravel
+die area:    ( 0 0 ) ( 3588000 5188000 )
+trackPts:    12
+defvias:     0
+#components: 47
+#terminals:  0
+#snets:      0
+#nets:       1244
+
+reading guide ...
+
+#guides:     11742
+Warning: met2 does not have viaDef align with layer direction, generating new viaDef via2_FR...
+Warning: met4 does not have viaDef align with layer direction, generating new viaDef via4_FR...
+done initConstraintLayerIdx
+List of default vias:
+  Layer mcon
+    default via: L1M1_PR_MR
+  Layer via
+    default via: M1M2_PR
+  Layer via2
+    default via: via2_FR
+  Layer via3
+    default via: M3M4_PR_M
+  Layer via4
+    default via: via4_FR
+Writing reference output def...
+
+libcell analysis ...
+
+instance analysis ...
+#unique instances = 46
+
+init region query ...
+  complete FR_MASTERSLICE
+  complete FR_VIA
+  complete li1
+  complete mcon
+  complete met1
+  complete via
+  complete met2
+  complete via2
+  complete met3
+  complete via3
+  complete met4
+  complete via4
+  complete met5
+
+FR_MASTERSLICE shape region query size = 0
+FR_VIA shape region query size = 0
+li1 shape region query size = 109
+mcon shape region query size = 0
+met1 shape region query size = 1961
+via shape region query size = 715
+met2 shape region query size = 7992
+via2 shape region query size = 130
+met3 shape region query size = 4667
+via3 shape region query size = 194
+met4 shape region query size = 4447
+via4 shape region query size = 0
+met5 shape region query size = 4564
+
+
+start pin access
+  complete 100 pins
+  complete 200 pins
+  complete 300 pins
+  complete 400 pins
+  complete 500 pins
+  complete 600 pins
+  complete 700 pins
+  complete 800 pins
+  complete 900 pins
+  complete 1000 pins
+  complete 2000 pins
+  complete 3000 pins
+  complete 3954 pins
+  complete 0 unique inst patterns
+  complete 0 groups
+Expt1 runtime (pin-level access point gen): 29.9983
+Expt2 runtime (design-level access pattern gen): 0.000433596
+#scanned instances     = 47
+#unique  instances     = 46
+#stdCellGenAp          = 0
+#stdCellValidPlanarAp  = 0
+#stdCellValidViaAp     = 0
+#stdCellPinNoAp        = 0
+#stdCellPinCnt         = 0
+#instTermValidViaApCnt = 0
+#macroGenAp            = 348799
+#macroValidPlanarAp    = 348549
+#macroValidViaAp       = 13360
+#macroNoAp             = 0
+
+complete pin access
+cpu time = 00:01:04, elapsed time = 00:00:30, memory = 72.09 (MB), peak = 72.28 (MB)
+
+post process guides ...
+GCELLGRID X -1 DO 720 STEP 7200 ;
+GCELLGRID Y -1 DO 498 STEP 7200 ;
+  complete 10000 orig guides
+  complete FR_MASTERSLICE
+  complete FR_VIA
+  complete li1
+  complete mcon
+  complete met1
+  complete via
+  complete met2
+  complete via2
+  complete met3
+  complete via3
+  complete met4
+  complete via4
+  complete met5
+
+building cmap ... 
+
+init guide query ...
+  complete FR_MASTERSLICE (guide)
+  complete FR_VIA (guide)
+  complete li1 (guide)
+  complete mcon (guide)
+  complete met1 (guide)
+  complete via (guide)
+  complete met2 (guide)
+  complete via2 (guide)
+  complete met3 (guide)
+  complete via3 (guide)
+  complete met4 (guide)
+  complete via4 (guide)
+  complete met5 (guide)
+
+FR_MASTERSLICE guide region query size = 0
+FR_VIA guide region query size = 0
+li1 guide region query size = 0
+mcon guide region query size = 0
+met1 guide region query size = 1644
+via guide region query size = 0
+met2 guide region query size = 3515
+via2 guide region query size = 0
+met3 guide region query size = 1691
+via3 guide region query size = 0
+met4 guide region query size = 344
+via4 guide region query size = 0
+met5 guide region query size = 21
+
+init gr pin query ...
+
+
+start track assignment
+Done with 3859 vertical wires in 10 frboxes and 3356 horizontal wires in 15 frboxes.
+Done with 1487 vertical wires in 10 frboxes and 655 horizontal wires in 15 frboxes.
+
+complete track assignment
+cpu time = 00:00:01, elapsed time = 00:00:01, memory = 246.79 (MB), peak = 280.36 (MB)
+
+post processing ...
+
+start routing data preparation
+initVia2ViaMinLen_minSpc li1 (d2d, d2u, u2d, u2u) = (0, 0, 0, 370)
+initVia2ViaMinLen_minSpc met1 (d2d, d2u, u2d, u2u) = (430, 445, 445, 460)
+initVia2ViaMinLen_minSpc met2 (d2d, d2u, u2d, u2u) = (460, 485, 485, 630)
+initVia2ViaMinLen_minSpc met3 (d2d, d2u, u2d, u2u) = (630, 655, 655, 680)
+initVia2ViaMinLen_minSpc met4 (d2d, d2u, u2d, u2u) = (630, 1055, 1055, 3020)
+initVia2ViaMinLen_minSpc met5 (d2d, d2u, u2d, u2u) = (1480, 0, 0, 0)
+initVia2ViaMinLen_minimumcut li1 (d2d, d2u, u2d, u2u) = (0, 0, 0, 370)
+initVia2ViaMinLen_minimumcut li1 zerolen (b, b, b, b) = (1, 1, 1, 1)
+initVia2ViaMinLen_minimumcut met1 (d2d, d2u, u2d, u2u) = (430, 445, 445, 460)
+initVia2ViaMinLen_minimumcut met1 zerolen (b, b, b, b) = (1, 1, 1, 1)
+initVia2ViaMinLen_minimumcut met2 (d2d, d2u, u2d, u2u) = (460, 485, 485, 630)
+initVia2ViaMinLen_minimumcut met2 zerolen (b, b, b, b) = (1, 1, 1, 1)
+initVia2ViaMinLen_minimumcut met3 (d2d, d2u, u2d, u2u) = (630, 655, 655, 680)
+initVia2ViaMinLen_minimumcut met3 zerolen (b, b, b, b) = (1, 1, 1, 1)
+initVia2ViaMinLen_minimumcut met4 (d2d, d2u, u2d, u2u) = (630, 1055, 1055, 3020)
+initVia2ViaMinLen_minimumcut met4 zerolen (b, b, b, b) = (1, 1, 1, 1)
+initVia2ViaMinLen_minimumcut met5 (d2d, d2u, u2d, u2u) = (1480, 0, 0, 0)
+initVia2ViaMinLen_minimumcut met5 zerolen (b, b, b, b) = (1, 1, 1, 1)
+initVia2ViaMinLenNew_minSpc li1 (d2d-x, d2d-y, d2u-x, d2u-y, u2d-x, u2d-y, u2u-x, u2u-y) = (0, 0, 0, 0, 0, 0, 430, 370)
+initVia2ViaMinLenNew_minSpc met1 (d2d-x, d2d-y, d2u-x, d2u-y, u2d-x, u2d-y, u2u-x, u2u-y) = (430, 370, 445, 385, 445, 385, 460, 460)
+initVia2ViaMinLenNew_minSpc met2 (d2d-x, d2d-y, d2u-x, d2u-y, u2d-x, u2d-y, u2u-x, u2u-y) = (460, 460, 410, 485, 410, 485, 630, 630)
+initVia2ViaMinLenNew_minSpc met3 (d2d-x, d2d-y, d2u-x, d2u-y, u2d-x, u2d-y, u2u-x, u2u-y) = (630, 630, 655, 625, 655, 625, 680, 630)
+initVia2ViaMinLenNew_minSpc met4 (d2d-x, d2d-y, d2u-x, d2u-y, u2d-x, u2d-y, u2u-x, u2u-y) = (680, 630, 1055, 1055, 1055, 1055, 3020, 3020)
+initVia2ViaMinLenNew_minSpc met5 (d2d-x, d2d-y, d2u-x, d2u-y, u2d-x, u2d-y, u2u-x, u2u-y) = (1480, 1480, 0, 0, 0, 0, 0, 0)
+initVia2ViaMinLenNew_minimumcut li1 (d2d-x, d2d-y, d2u-x, d2u-y, u2d-x, u2d-y, u2u-x, u2u-y) = (0, 0, 0, 0, 0, 0, 430, 370)
+initVia2ViaMinLenNew_minimumcut met1 (d2d-x, d2d-y, d2u-x, d2u-y, u2d-x, u2d-y, u2u-x, u2u-y) = (430, 370, 445, 385, 445, 385, 460, 460)
+initVia2ViaMinLenNew_minimumcut met2 (d2d-x, d2d-y, d2u-x, d2u-y, u2d-x, u2d-y, u2u-x, u2u-y) = (460, 460, 410, 485, 410, 485, 630, 630)
+initVia2ViaMinLenNew_minimumcut met3 (d2d-x, d2d-y, d2u-x, d2u-y, u2d-x, u2d-y, u2u-x, u2u-y) = (630, 630, 655, 625, 655, 625, 680, 630)
+initVia2ViaMinLenNew_minimumcut met4 (d2d-x, d2d-y, d2u-x, d2u-y, u2d-x, u2d-y, u2u-x, u2u-y) = (680, 630, 1055, 1055, 1055, 1055, 3020, 3020)
+initVia2ViaMinLenNew_minimumcut met5 (d2d-x, d2d-y, d2u-x, d2u-y, u2d-x, u2d-y, u2u-x, u2u-y) = (1480, 1480, 0, 0, 0, 0, 0, 0)
+initVia2ViaMinLenNew_cutSpc li1 (d2d-x, d2d-y, d2u-x, d2u-y, u2d-x, u2d-y, u2u-x, u2u-y) = (0, 0, 0, 0, 0, 0, 430, 370)
+initVia2ViaMinLenNew_cutSpc met1 (d2d-x, d2d-y, d2u-x, d2u-y, u2d-x, u2d-y, u2u-x, u2u-y) = (430, 370, 445, 385, 445, 385, 460, 460)
+initVia2ViaMinLenNew_cutSpc met2 (d2d-x, d2d-y, d2u-x, d2u-y, u2d-x, u2d-y, u2u-x, u2u-y) = (460, 460, 410, 485, 410, 485, 630, 630)
+initVia2ViaMinLenNew_cutSpc met3 (d2d-x, d2d-y, d2u-x, d2u-y, u2d-x, u2d-y, u2u-x, u2u-y) = (630, 630, 655, 625, 655, 625, 680, 630)
+initVia2ViaMinLenNew_cutSpc met4 (d2d-x, d2d-y, d2u-x, d2u-y, u2d-x, u2d-y, u2u-x, u2u-y) = (680, 630, 1055, 1055, 1055, 1055, 3020, 3020)
+initVia2ViaMinLenNew_cutSpc met5 (d2d-x, d2d-y, d2u-x, d2u-y, u2d-x, u2d-y, u2u-x, u2u-y) = (1600, 1600, 0, 0, 0, 0, 0, 0)
+cpu time = 00:00:00, elapsed time = 00:00:00, memory = 265.36 (MB), peak = 280.36 (MB)
+
+start detail routing ...
+start 0th optimization iteration ...
+    completing 10% with 0 violations
+    elapsed time = 00:00:09, memory = 354.11 (MB)
+    completing 20% with 4109 violations
+    elapsed time = 00:00:19, memory = 341.67 (MB)
+    completing 30% with 7544 violations
+    elapsed time = 00:00:28, memory = 334.24 (MB)
+    completing 40% with 9549 violations
+    elapsed time = 00:00:39, memory = 315.96 (MB)
+    completing 50% with 9549 violations
+    elapsed time = 00:00:49, memory = 363.20 (MB)
+    completing 60% with 10365 violations
+    elapsed time = 00:00:58, memory = 359.06 (MB)
+    completing 70% with 9650 violations
+    elapsed time = 00:01:08, memory = 339.16 (MB)
+    completing 80% with 9590 violations
+    elapsed time = 00:01:16, memory = 334.59 (MB)
+    completing 90% with 7567 violations
+    elapsed time = 00:01:26, memory = 318.96 (MB)
+    completing 100% with 6184 violations
+    elapsed time = 00:01:36, memory = 308.00 (MB)
+  number of violations = 7444
+cpu time = 00:04:44, elapsed time = 00:01:36, memory = 577.89 (MB), peak = 594.68 (MB)
+total wire length = 997992 um
+total wire length on LAYER li1 = 0 um
+total wire length on LAYER met1 = 552425 um
+total wire length on LAYER met2 = 341013 um
+total wire length on LAYER met3 = 55340 um
+total wire length on LAYER met4 = 46004 um
+total wire length on LAYER met5 = 3208 um
+total number of vias = 6853
+up-via summary (total 6853):
+
+-----------------------
+ FR_MASTERSLICE       0
+            li1       0
+           met1    4203
+           met2    1840
+           met3     740
+           met4      70
+-----------------------
+                   6853
+
+
+start 1st optimization iteration ...
+    completing 10% with 7444 violations
+    elapsed time = 00:00:09, memory = 627.26 (MB)
+    completing 20% with 6365 violations
+    elapsed time = 00:00:17, memory = 610.10 (MB)
+    completing 30% with 5618 violations
+    elapsed time = 00:00:26, memory = 608.86 (MB)
+    completing 40% with 4410 violations
+    elapsed time = 00:00:35, memory = 589.45 (MB)
+    completing 50% with 4410 violations
+    elapsed time = 00:00:43, memory = 633.05 (MB)
+    completing 60% with 3646 violations
+    elapsed time = 00:00:50, memory = 627.36 (MB)
+    completing 70% with 3212 violations
+    elapsed time = 00:00:59, memory = 611.96 (MB)
+    completing 80% with 2344 violations
+    elapsed time = 00:01:08, memory = 605.96 (MB)
+    completing 90% with 1540 violations
+    elapsed time = 00:01:17, memory = 593.92 (MB)
+    completing 100% with 786 violations
+    elapsed time = 00:01:25, memory = 577.93 (MB)
+  number of violations = 786
+cpu time = 00:04:06, elapsed time = 00:01:25, memory = 578.06 (MB), peak = 652.11 (MB)
+total wire length = 990790 um
+total wire length on LAYER li1 = 0 um
+total wire length on LAYER met1 = 548949 um
+total wire length on LAYER met2 = 339103 um
+total wire length on LAYER met3 = 54143 um
+total wire length on LAYER met4 = 45772 um
+total wire length on LAYER met5 = 2821 um
+total number of vias = 6420
+up-via summary (total 6420):
+
+-----------------------
+ FR_MASTERSLICE       0
+            li1       0
+           met1    3994
+           met2    1720
+           met3     685
+           met4      21
+-----------------------
+                   6420
+
+
+start 2nd optimization iteration ...
+    completing 10% with 786 violations
+    elapsed time = 00:00:00, memory = 589.63 (MB)
+    completing 20% with 818 violations
+    elapsed time = 00:00:01, memory = 585.29 (MB)
+    completing 30% with 788 violations
+    elapsed time = 00:00:02, memory = 589.80 (MB)
+    completing 40% with 775 violations
+    elapsed time = 00:00:03, memory = 588.71 (MB)
+    completing 50% with 775 violations
+    elapsed time = 00:00:03, memory = 585.36 (MB)
+    completing 60% with 781 violations
+    elapsed time = 00:00:04, memory = 591.09 (MB)
+    completing 70% with 746 violations
+    elapsed time = 00:00:04, memory = 586.86 (MB)
+    completing 80% with 726 violations
+    elapsed time = 00:00:05, memory = 587.43 (MB)
+    completing 90% with 641 violations
+    elapsed time = 00:00:06, memory = 588.42 (MB)
+    completing 100% with 522 violations
+    elapsed time = 00:00:07, memory = 578.15 (MB)
+  number of violations = 533
+cpu time = 00:00:20, elapsed time = 00:00:07, memory = 591.30 (MB), peak = 652.11 (MB)
+total wire length = 987959 um
+total wire length on LAYER li1 = 0 um
+total wire length on LAYER met1 = 548314 um
+total wire length on LAYER met2 = 337554 um
+total wire length on LAYER met3 = 53750 um
+total wire length on LAYER met4 = 45609 um
+total wire length on LAYER met5 = 2730 um
+total number of vias = 6366
+up-via summary (total 6366):
+
+-----------------------
+ FR_MASTERSLICE       0
+            li1       0
+           met1    3992
+           met2    1666
+           met3     699
+           met4       9
+-----------------------
+                   6366
+
+
+start 3rd optimization iteration ...
+    completing 10% with 533 violations
+    elapsed time = 00:00:03, memory = 601.44 (MB)
+    completing 20% with 480 violations
+    elapsed time = 00:00:04, memory = 601.55 (MB)
+    completing 30% with 433 violations
+    elapsed time = 00:00:06, memory = 601.78 (MB)
+    completing 40% with 367 violations
+    elapsed time = 00:00:06, memory = 591.36 (MB)
+    completing 50% with 367 violations
+    elapsed time = 00:00:07, memory = 597.99 (MB)
+    completing 60% with 291 violations
+    elapsed time = 00:00:08, memory = 603.54 (MB)
+    completing 70% with 242 violations
+    elapsed time = 00:00:09, memory = 603.78 (MB)
+    completing 80% with 216 violations
+    elapsed time = 00:00:10, memory = 591.36 (MB)
+    completing 90% with 200 violations
+    elapsed time = 00:00:10, memory = 599.52 (MB)
+    completing 100% with 171 violations
+    elapsed time = 00:00:11, memory = 593.79 (MB)
+  number of violations = 171
+cpu time = 00:00:32, elapsed time = 00:00:11, memory = 580.57 (MB), peak = 652.11 (MB)
+total wire length = 987746 um
+total wire length on LAYER li1 = 0 um
+total wire length on LAYER met1 = 547996 um
+total wire length on LAYER met2 = 337375 um
+total wire length on LAYER met3 = 54201 um
+total wire length on LAYER met4 = 45430 um
+total wire length on LAYER met5 = 2743 um
+total number of vias = 6774
+up-via summary (total 6774):
+
+-----------------------
+ FR_MASTERSLICE       0
+            li1       0
+           met1    4205
+           met2    1779
+           met3     779
+           met4      11
+-----------------------
+                   6774
+
+
+start 4th optimization iteration ...
+    completing 10% with 171 violations
+    elapsed time = 00:00:00, memory = 588.15 (MB)
+    completing 20% with 122 violations
+    elapsed time = 00:00:01, memory = 586.88 (MB)
+    completing 30% with 111 violations
+    elapsed time = 00:00:01, memory = 587.48 (MB)
+    completing 40% with 93 violations
+    elapsed time = 00:00:02, memory = 578.15 (MB)
+    completing 50% with 93 violations
+    elapsed time = 00:00:02, memory = 584.75 (MB)
+    completing 60% with 90 violations
+    elapsed time = 00:00:02, memory = 588.58 (MB)
+    completing 70% with 80 violations
+    elapsed time = 00:00:02, memory = 587.56 (MB)
+    completing 80% with 60 violations
+    elapsed time = 00:00:03, memory = 581.16 (MB)
+    completing 90% with 60 violations
+    elapsed time = 00:00:03, memory = 581.16 (MB)
+    completing 100% with 56 violations
+    elapsed time = 00:00:03, memory = 578.15 (MB)
+  number of violations = 56
+cpu time = 00:00:08, elapsed time = 00:00:03, memory = 586.91 (MB), peak = 652.11 (MB)
+total wire length = 987803 um
+total wire length on LAYER li1 = 0 um
+total wire length on LAYER met1 = 547724 um
+total wire length on LAYER met2 = 337253 um
+total wire length on LAYER met3 = 54498 um
+total wire length on LAYER met4 = 45584 um
+total wire length on LAYER met5 = 2743 um
+total number of vias = 6954
+up-via summary (total 6954):
+
+-----------------------
+ FR_MASTERSLICE       0
+            li1       0
+           met1    4316
+           met2    1820
+           met3     807
+           met4      11
+-----------------------
+                   6954
+
+
+start 5th optimization iteration ...
+    completing 10% with 56 violations
+    elapsed time = 00:00:00, memory = 594.33 (MB)
+    completing 20% with 46 violations
+    elapsed time = 00:00:00, memory = 593.80 (MB)
+    completing 30% with 42 violations
+    elapsed time = 00:00:00, memory = 595.33 (MB)
+    completing 40% with 38 violations
+    elapsed time = 00:00:00, memory = 587.11 (MB)
+    completing 50% with 38 violations
+    elapsed time = 00:00:00, memory = 587.11 (MB)
+    completing 60% with 38 violations
+    elapsed time = 00:00:00, memory = 587.11 (MB)
+    completing 70% with 37 violations
+    elapsed time = 00:00:01, memory = 594.14 (MB)
+    completing 80% with 26 violations
+    elapsed time = 00:00:01, memory = 594.19 (MB)
+    completing 90% with 16 violations
+    elapsed time = 00:00:01, memory = 594.25 (MB)
+    completing 100% with 15 violations
+    elapsed time = 00:00:01, memory = 593.84 (MB)
+  number of violations = 15
+cpu time = 00:00:03, elapsed time = 00:00:01, memory = 593.84 (MB), peak = 652.11 (MB)
+total wire length = 987812 um
+total wire length on LAYER li1 = 0 um
+total wire length on LAYER met1 = 547597 um
+total wire length on LAYER met2 = 337229 um
+total wire length on LAYER met3 = 54628 um
+total wire length on LAYER met4 = 45614 um
+total wire length on LAYER met5 = 2743 um
+total number of vias = 6988
+up-via summary (total 6988):
+
+-----------------------
+ FR_MASTERSLICE       0
+            li1       0
+           met1    4336
+           met2    1833
+           met3     808
+           met4      11
+-----------------------
+                   6988
+
+
+start 6th optimization iteration ...
+    completing 10% with 15 violations
+    elapsed time = 00:00:00, memory = 595.88 (MB)
+    completing 20% with 12 violations
+    elapsed time = 00:00:00, memory = 590.68 (MB)
+    completing 30% with 12 violations
+    elapsed time = 00:00:00, memory = 594.32 (MB)
+    completing 40% with 7 violations
+    elapsed time = 00:00:00, memory = 594.10 (MB)
+    completing 50% with 7 violations
+    elapsed time = 00:00:00, memory = 594.10 (MB)
+    completing 60% with 7 violations
+    elapsed time = 00:00:00, memory = 594.10 (MB)
+    completing 70% with 7 violations
+    elapsed time = 00:00:00, memory = 594.10 (MB)
+    completing 80% with 7 violations
+    elapsed time = 00:00:00, memory = 594.10 (MB)
+    completing 90% with 5 violations
+    elapsed time = 00:00:00, memory = 590.53 (MB)
+    completing 100% with 5 violations
+    elapsed time = 00:00:00, memory = 590.53 (MB)
+  number of violations = 5
+cpu time = 00:00:02, elapsed time = 00:00:01, memory = 590.53 (MB), peak = 652.11 (MB)
+total wire length = 987779 um
+total wire length on LAYER li1 = 0 um
+total wire length on LAYER met1 = 547520 um
+total wire length on LAYER met2 = 337220 um
+total wire length on LAYER met3 = 54677 um
+total wire length on LAYER met4 = 45618 um
+total wire length on LAYER met5 = 2743 um
+total number of vias = 6994
+up-via summary (total 6994):
+
+-----------------------
+ FR_MASTERSLICE       0
+            li1       0
+           met1    4336
+           met2    1835
+           met3     812
+           met4      11
+-----------------------
+                   6994
+
+
+start 7th optimization iteration ...
+    completing 10% with 5 violations
+    elapsed time = 00:00:00, memory = 595.42 (MB)
+    completing 20% with 4 violations
+    elapsed time = 00:00:00, memory = 594.27 (MB)
+    completing 30% with 4 violations
+    elapsed time = 00:00:00, memory = 593.69 (MB)
+    completing 40% with 4 violations
+    elapsed time = 00:00:00, memory = 594.19 (MB)
+    completing 50% with 4 violations
+    elapsed time = 00:00:00, memory = 594.19 (MB)
+    completing 60% with 4 violations
+    elapsed time = 00:00:00, memory = 594.19 (MB)
+    completing 70% with 4 violations
+    elapsed time = 00:00:00, memory = 594.19 (MB)
+    completing 80% with 4 violations
+    elapsed time = 00:00:00, memory = 594.19 (MB)
+    completing 90% with 4 violations
+    elapsed time = 00:00:00, memory = 594.19 (MB)
+    completing 100% with 4 violations
+    elapsed time = 00:00:00, memory = 594.19 (MB)
+  number of violations = 4
+cpu time = 00:00:01, elapsed time = 00:00:00, memory = 594.19 (MB), peak = 652.11 (MB)
+total wire length = 987781 um
+total wire length on LAYER li1 = 0 um
+total wire length on LAYER met1 = 547523 um
+total wire length on LAYER met2 = 337219 um
+total wire length on LAYER met3 = 54677 um
+total wire length on LAYER met4 = 45618 um
+total wire length on LAYER met5 = 2743 um
+total number of vias = 6998
+up-via summary (total 6998):
+
+-----------------------
+ FR_MASTERSLICE       0
+            li1       0
+           met1    4340
+           met2    1835
+           met3     812
+           met4      11
+-----------------------
+                   6998
+
+
+start 8th optimization iteration ...
+    completing 10% with 4 violations
+    elapsed time = 00:00:00, memory = 594.45 (MB)
+    completing 20% with 3 violations
+    elapsed time = 00:00:00, memory = 594.56 (MB)
+    completing 30% with 3 violations
+    elapsed time = 00:00:00, memory = 594.04 (MB)
+    completing 40% with 3 violations
+    elapsed time = 00:00:00, memory = 594.15 (MB)
+    completing 50% with 3 violations
+    elapsed time = 00:00:00, memory = 594.15 (MB)
+    completing 60% with 3 violations
+    elapsed time = 00:00:00, memory = 594.15 (MB)
+    completing 70% with 3 violations
+    elapsed time = 00:00:00, memory = 594.15 (MB)
+    completing 80% with 3 violations
+    elapsed time = 00:00:00, memory = 594.15 (MB)
+    completing 90% with 3 violations
+    elapsed time = 00:00:00, memory = 594.15 (MB)
+    completing 100% with 3 violations
+    elapsed time = 00:00:00, memory = 594.15 (MB)
+  number of violations = 3
+cpu time = 00:00:01, elapsed time = 00:00:00, memory = 594.15 (MB), peak = 652.11 (MB)
+total wire length = 987767 um
+total wire length on LAYER li1 = 0 um
+total wire length on LAYER met1 = 547503 um
+total wire length on LAYER met2 = 337158 um
+total wire length on LAYER met3 = 54679 um
+total wire length on LAYER met4 = 45683 um
+total wire length on LAYER met5 = 2743 um
+total number of vias = 7000
+up-via summary (total 7000):
+
+-----------------------
+ FR_MASTERSLICE       0
+            li1       0
+           met1    4334
+           met2    1839
+           met3     816
+           met4      11
+-----------------------
+                   7000
+
+
+start 9th optimization iteration ...
+    completing 10% with 3 violations
+    elapsed time = 00:00:00, memory = 594.15 (MB)
+    completing 20% with 3 violations
+    elapsed time = 00:00:00, memory = 594.15 (MB)
+    completing 30% with 3 violations
+    elapsed time = 00:00:00, memory = 594.15 (MB)
+    completing 40% with 3 violations
+    elapsed time = 00:00:00, memory = 594.15 (MB)
+    completing 50% with 3 violations
+    elapsed time = 00:00:00, memory = 594.15 (MB)
+    completing 60% with 3 violations
+    elapsed time = 00:00:00, memory = 595.59 (MB)
+    completing 70% with 3 violations
+    elapsed time = 00:00:00, memory = 594.16 (MB)
+    completing 80% with 3 violations
+    elapsed time = 00:00:00, memory = 593.75 (MB)
+    completing 90% with 3 violations
+    elapsed time = 00:00:00, memory = 590.41 (MB)
+    completing 100% with 3 violations
+    elapsed time = 00:00:00, memory = 590.41 (MB)
+  number of violations = 3
+cpu time = 00:00:01, elapsed time = 00:00:00, memory = 590.41 (MB), peak = 652.11 (MB)
+total wire length = 987767 um
+total wire length on LAYER li1 = 0 um
+total wire length on LAYER met1 = 547505 um
+total wire length on LAYER met2 = 337190 um
+total wire length on LAYER met3 = 54677 um
+total wire length on LAYER met4 = 45651 um
+total wire length on LAYER met5 = 2743 um
+total number of vias = 6994
+up-via summary (total 6994):
+
+-----------------------
+ FR_MASTERSLICE       0
+            li1       0
+           met1    4332
+           met2    1837
+           met3     814
+           met4      11
+-----------------------
+                   6994
+
+
+start 10th optimization iteration ...
+    completing 10% with 3 violations
+    elapsed time = 00:00:00, memory = 590.40 (MB)
+    completing 20% with 3 violations
+    elapsed time = 00:00:00, memory = 590.50 (MB)
+    completing 30% with 3 violations
+    elapsed time = 00:00:00, memory = 593.85 (MB)
+    completing 40% with 3 violations
+    elapsed time = 00:00:00, memory = 594.23 (MB)
+    completing 50% with 3 violations
+    elapsed time = 00:00:00, memory = 594.23 (MB)
+    completing 60% with 3 violations
+    elapsed time = 00:00:00, memory = 594.23 (MB)
+    completing 70% with 3 violations
+    elapsed time = 00:00:00, memory = 594.23 (MB)
+    completing 80% with 3 violations
+    elapsed time = 00:00:00, memory = 594.23 (MB)
+    completing 90% with 3 violations
+    elapsed time = 00:00:00, memory = 594.23 (MB)
+    completing 100% with 3 violations
+    elapsed time = 00:00:00, memory = 594.23 (MB)
+  number of violations = 3
+cpu time = 00:00:01, elapsed time = 00:00:00, memory = 594.23 (MB), peak = 652.11 (MB)
+total wire length = 987767 um
+total wire length on LAYER li1 = 0 um
+total wire length on LAYER met1 = 547505 um
+total wire length on LAYER met2 = 337190 um
+total wire length on LAYER met3 = 54677 um
+total wire length on LAYER met4 = 45651 um
+total wire length on LAYER met5 = 2743 um
+total number of vias = 6994
+up-via summary (total 6994):
+
+-----------------------
+ FR_MASTERSLICE       0
+            li1       0
+           met1    4332
+           met2    1837
+           met3     814
+           met4      11
+-----------------------
+                   6994
+
+
+start 11th optimization iteration ...
+    completing 10% with 3 violations
+    elapsed time = 00:00:00, memory = 597.02 (MB)
+    completing 20% with 2 violations
+    elapsed time = 00:00:00, memory = 594.52 (MB)
+    completing 30% with 2 violations
+    elapsed time = 00:00:00, memory = 594.52 (MB)
+    completing 40% with 0 violations
+    elapsed time = 00:00:00, memory = 594.36 (MB)
+    completing 50% with 0 violations
+    elapsed time = 00:00:00, memory = 594.36 (MB)
+    completing 60% with 0 violations
+    elapsed time = 00:00:00, memory = 594.36 (MB)
+    completing 70% with 0 violations
+    elapsed time = 00:00:00, memory = 594.36 (MB)
+    completing 80% with 0 violations
+    elapsed time = 00:00:00, memory = 594.36 (MB)
+    completing 90% with 0 violations
+    elapsed time = 00:00:00, memory = 594.36 (MB)
+    completing 100% with 0 violations
+    elapsed time = 00:00:00, memory = 594.36 (MB)
+  number of violations = 0
+cpu time = 00:00:01, elapsed time = 00:00:00, memory = 594.36 (MB), peak = 652.11 (MB)
+total wire length = 987768 um
+total wire length on LAYER li1 = 0 um
+total wire length on LAYER met1 = 547506 um
+total wire length on LAYER met2 = 337188 um
+total wire length on LAYER met3 = 54678 um
+total wire length on LAYER met4 = 45651 um
+total wire length on LAYER met5 = 2743 um
+total number of vias = 6994
+up-via summary (total 6994):
+
+-----------------------
+ FR_MASTERSLICE       0
+            li1       0
+           met1    4330
+           met2    1839
+           met3     814
+           met4      11
+-----------------------
+                   6994
+
+
+start 17th optimization iteration ...
+    completing 10% with 0 violations
+    elapsed time = 00:00:00, memory = 594.36 (MB)
+    completing 20% with 0 violations
+    elapsed time = 00:00:00, memory = 594.36 (MB)
+    completing 30% with 0 violations
+    elapsed time = 00:00:00, memory = 594.36 (MB)
+    completing 40% with 0 violations
+    elapsed time = 00:00:00, memory = 594.36 (MB)
+    completing 50% with 0 violations
+    elapsed time = 00:00:00, memory = 594.36 (MB)
+    completing 60% with 0 violations
+    elapsed time = 00:00:00, memory = 594.36 (MB)
+    completing 70% with 0 violations
+    elapsed time = 00:00:00, memory = 594.36 (MB)
+    completing 80% with 0 violations
+    elapsed time = 00:00:00, memory = 594.36 (MB)
+    completing 90% with 0 violations
+    elapsed time = 00:00:00, memory = 594.36 (MB)
+    completing 100% with 0 violations
+    elapsed time = 00:00:00, memory = 594.36 (MB)
+  number of violations = 0
+cpu time = 00:00:01, elapsed time = 00:00:00, memory = 594.36 (MB), peak = 652.11 (MB)
+total wire length = 987768 um
+total wire length on LAYER li1 = 0 um
+total wire length on LAYER met1 = 547506 um
+total wire length on LAYER met2 = 337188 um
+total wire length on LAYER met3 = 54678 um
+total wire length on LAYER met4 = 45651 um
+total wire length on LAYER met5 = 2743 um
+total number of vias = 6994
+up-via summary (total 6994):
+
+-----------------------
+ FR_MASTERSLICE       0
+            li1       0
+           met1    4330
+           met2    1839
+           met3     814
+           met4      11
+-----------------------
+                   6994
+
+
+start 25th optimization iteration ...
+    completing 10% with 0 violations
+    elapsed time = 00:00:00, memory = 594.36 (MB)
+    completing 20% with 0 violations
+    elapsed time = 00:00:00, memory = 594.36 (MB)
+    completing 30% with 0 violations
+    elapsed time = 00:00:00, memory = 594.36 (MB)
+    completing 40% with 0 violations
+    elapsed time = 00:00:00, memory = 594.36 (MB)
+    completing 50% with 0 violations
+    elapsed time = 00:00:00, memory = 594.36 (MB)
+    completing 60% with 0 violations
+    elapsed time = 00:00:00, memory = 594.36 (MB)
+    completing 70% with 0 violations
+    elapsed time = 00:00:00, memory = 594.36 (MB)
+    completing 80% with 0 violations
+    elapsed time = 00:00:00, memory = 594.36 (MB)
+    completing 90% with 0 violations
+    elapsed time = 00:00:00, memory = 594.36 (MB)
+    completing 100% with 0 violations
+    elapsed time = 00:00:00, memory = 594.36 (MB)
+  number of violations = 0
+cpu time = 00:00:01, elapsed time = 00:00:00, memory = 594.36 (MB), peak = 652.11 (MB)
+total wire length = 987768 um
+total wire length on LAYER li1 = 0 um
+total wire length on LAYER met1 = 547506 um
+total wire length on LAYER met2 = 337188 um
+total wire length on LAYER met3 = 54678 um
+total wire length on LAYER met4 = 45651 um
+total wire length on LAYER met5 = 2743 um
+total number of vias = 6994
+up-via summary (total 6994):
+
+-----------------------
+ FR_MASTERSLICE       0
+            li1       0
+           met1    4330
+           met2    1839
+           met3     814
+           met4      11
+-----------------------
+                   6994
+
+
+start 33rd optimization iteration ...
+    completing 10% with 0 violations
+    elapsed time = 00:00:00, memory = 594.36 (MB)
+    completing 20% with 0 violations
+    elapsed time = 00:00:00, memory = 594.36 (MB)
+    completing 30% with 0 violations
+    elapsed time = 00:00:00, memory = 594.36 (MB)
+    completing 40% with 0 violations
+    elapsed time = 00:00:00, memory = 594.36 (MB)
+    completing 50% with 0 violations
+    elapsed time = 00:00:00, memory = 594.36 (MB)
+    completing 60% with 0 violations
+    elapsed time = 00:00:00, memory = 594.36 (MB)
+    completing 70% with 0 violations
+    elapsed time = 00:00:00, memory = 594.36 (MB)
+    completing 80% with 0 violations
+    elapsed time = 00:00:01, memory = 594.36 (MB)
+    completing 90% with 0 violations
+    elapsed time = 00:00:01, memory = 594.36 (MB)
+    completing 100% with 0 violations
+    elapsed time = 00:00:01, memory = 594.36 (MB)
+  number of violations = 0
+cpu time = 00:00:04, elapsed time = 00:00:01, memory = 594.36 (MB), peak = 652.11 (MB)
+total wire length = 987768 um
+total wire length on LAYER li1 = 0 um
+total wire length on LAYER met1 = 547506 um
+total wire length on LAYER met2 = 337188 um
+total wire length on LAYER met3 = 54678 um
+total wire length on LAYER met4 = 45651 um
+total wire length on LAYER met5 = 2743 um
+total number of vias = 6994
+up-via summary (total 6994):
+
+-----------------------
+ FR_MASTERSLICE       0
+            li1       0
+           met1    4330
+           met2    1839
+           met3     814
+           met4      11
+-----------------------
+                   6994
+
+
+start 41st optimization iteration ...
+    completing 10% with 0 violations
+    elapsed time = 00:00:00, memory = 594.36 (MB)
+    completing 20% with 0 violations
+    elapsed time = 00:00:00, memory = 594.36 (MB)
+    completing 30% with 0 violations
+    elapsed time = 00:00:00, memory = 594.36 (MB)
+    completing 40% with 0 violations
+    elapsed time = 00:00:00, memory = 594.36 (MB)
+    completing 50% with 0 violations
+    elapsed time = 00:00:00, memory = 594.36 (MB)
+    completing 60% with 0 violations
+    elapsed time = 00:00:00, memory = 594.36 (MB)
+    completing 70% with 0 violations
+    elapsed time = 00:00:01, memory = 594.36 (MB)
+    completing 80% with 0 violations
+    elapsed time = 00:00:01, memory = 594.36 (MB)
+    completing 90% with 0 violations
+    elapsed time = 00:00:01, memory = 594.36 (MB)
+    completing 100% with 0 violations
+    elapsed time = 00:00:01, memory = 594.36 (MB)
+  number of violations = 0
+cpu time = 00:00:04, elapsed time = 00:00:01, memory = 594.36 (MB), peak = 652.11 (MB)
+total wire length = 987768 um
+total wire length on LAYER li1 = 0 um
+total wire length on LAYER met1 = 547506 um
+total wire length on LAYER met2 = 337188 um
+total wire length on LAYER met3 = 54678 um
+total wire length on LAYER met4 = 45651 um
+total wire length on LAYER met5 = 2743 um
+total number of vias = 6994
+up-via summary (total 6994):
+
+-----------------------
+ FR_MASTERSLICE       0
+            li1       0
+           met1    4330
+           met2    1839
+           met3     814
+           met4      11
+-----------------------
+                   6994
+
+
+start 49th optimization iteration ...
+    completing 10% with 0 violations
+    elapsed time = 00:00:00, memory = 594.36 (MB)
+    completing 20% with 0 violations
+    elapsed time = 00:00:00, memory = 594.36 (MB)
+    completing 30% with 0 violations
+    elapsed time = 00:00:00, memory = 594.36 (MB)
+    completing 40% with 0 violations
+    elapsed time = 00:00:00, memory = 594.36 (MB)
+    completing 50% with 0 violations
+    elapsed time = 00:00:00, memory = 594.36 (MB)
+    completing 60% with 0 violations
+    elapsed time = 00:00:00, memory = 594.36 (MB)
+    completing 70% with 0 violations
+    elapsed time = 00:00:01, memory = 594.36 (MB)
+    completing 80% with 0 violations
+    elapsed time = 00:00:01, memory = 594.36 (MB)
+    completing 90% with 0 violations
+    elapsed time = 00:00:01, memory = 594.36 (MB)
+    completing 100% with 0 violations
+    elapsed time = 00:00:01, memory = 594.36 (MB)
+  number of violations = 0
+cpu time = 00:00:04, elapsed time = 00:00:01, memory = 594.36 (MB), peak = 652.11 (MB)
+total wire length = 987768 um
+total wire length on LAYER li1 = 0 um
+total wire length on LAYER met1 = 547506 um
+total wire length on LAYER met2 = 337188 um
+total wire length on LAYER met3 = 54678 um
+total wire length on LAYER met4 = 45651 um
+total wire length on LAYER met5 = 2743 um
+total number of vias = 6994
+up-via summary (total 6994):
+
+-----------------------
+ FR_MASTERSLICE       0
+            li1       0
+           met1    4330
+           met2    1839
+           met3     814
+           met4      11
+-----------------------
+                   6994
+
+
+start 57th optimization iteration ...
+    completing 10% with 0 violations
+    elapsed time = 00:00:00, memory = 594.36 (MB)
+    completing 20% with 0 violations
+    elapsed time = 00:00:00, memory = 594.36 (MB)
+    completing 30% with 0 violations
+    elapsed time = 00:00:00, memory = 594.36 (MB)
+    completing 40% with 0 violations
+    elapsed time = 00:00:00, memory = 594.36 (MB)
+    completing 50% with 0 violations
+    elapsed time = 00:00:00, memory = 594.36 (MB)
+    completing 60% with 0 violations
+    elapsed time = 00:00:00, memory = 594.36 (MB)
+    completing 70% with 0 violations
+    elapsed time = 00:00:01, memory = 594.36 (MB)
+    completing 80% with 0 violations
+    elapsed time = 00:00:01, memory = 594.36 (MB)
+    completing 90% with 0 violations
+    elapsed time = 00:00:01, memory = 594.36 (MB)
+    completing 100% with 0 violations
+    elapsed time = 00:00:01, memory = 594.36 (MB)
+  number of violations = 0
+cpu time = 00:00:04, elapsed time = 00:00:01, memory = 594.36 (MB), peak = 652.11 (MB)
+total wire length = 987768 um
+total wire length on LAYER li1 = 0 um
+total wire length on LAYER met1 = 547506 um
+total wire length on LAYER met2 = 337188 um
+total wire length on LAYER met3 = 54678 um
+total wire length on LAYER met4 = 45651 um
+total wire length on LAYER met5 = 2743 um
+total number of vias = 6994
+up-via summary (total 6994):
+
+-----------------------
+ FR_MASTERSLICE       0
+            li1       0
+           met1    4330
+           met2    1839
+           met3     814
+           met4      11
+-----------------------
+                   6994
+
+
+complete detail routing
+total wire length = 987768 um
+total wire length on LAYER li1 = 0 um
+total wire length on LAYER met1 = 547506 um
+total wire length on LAYER met2 = 337188 um
+total wire length on LAYER met3 = 54678 um
+total wire length on LAYER met4 = 45651 um
+total wire length on LAYER met5 = 2743 um
+total number of vias = 6994
+up-via summary (total 6994):
+
+-----------------------
+ FR_MASTERSLICE       0
+            li1       0
+           met1    4330
+           met2    1839
+           met3     814
+           met4      11
+-----------------------
+                   6994
+
+cpu time = 00:10:28, elapsed time = 00:03:38, memory = 594.36 (MB), peak = 652.11 (MB)
+
+post processing ...
+
+Runtime taken (hrt): 283.692

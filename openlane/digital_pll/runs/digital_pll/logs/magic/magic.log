@@ -1,5 +1,5 @@
 
-Magic 8.3 revision 64 - Compiled on Fri Oct  9 12:13:18 UTC 2020.
+Magic 8.3 revision 87 - Compiled on Mon Nov 23 17:53:03 UTC 2020.
 Starting magic under Tcl interpreter
 Using the terminal as the console.
 Using NULL graphics device.
@@ -9,95 +9,63 @@ Sourcing design .magicrc for technology sky130A ...
 Input style sky130: scaleFactor=2, multiplier=2
 Scaled tech values by 2 / 1 to match internal grid scaling
 Loading sky130A Device Generator Menu ...
-Loading "/openLANE_flow/scripts/magic.tcl" from command line.
-Reading LEF data from file /home/ag/pdks/sky130A/libs.ref/sky130_fd_sc_hd/techlef/sky130_fd_sc_hd.tlef.
-This action cannot be undone.
-LEF read, Line 61 (Message): Unknown keyword "ANTENNAMODEL" in LEF file; ignoring.
-LEF read, Line 62 (Message): Unknown keyword "ANTENNADIFFSIDEAREARATIO" in LEF file; ignoring.
-LEF read, Line 95 (Message): Unknown keyword "ANTENNAMODEL" in LEF file; ignoring.
-LEF read, Line 96 (Message): Unknown keyword "ANTENNADIFFSIDEAREARATIO" in LEF file; ignoring.
-LEF read, Line 102 (Message): Unknown keyword "MAXIMUMDENSITY" in LEF file; ignoring.
-LEF read, Line 103 (Message): Unknown keyword "DENSITYCHECKWINDOW" in LEF file; ignoring.
-LEF read, Line 104 (Message): Unknown keyword "DENSITYCHECKSTEP" in LEF file; ignoring.
-LEF read, Line 142 (Message): Unknown keyword "ANTENNAMODEL" in LEF file; ignoring.
-LEF read, Line 143 (Message): Unknown keyword "ANTENNADIFFSIDEAREARATIO" in LEF file; ignoring.
-LEF read, Line 145 (Message): Unknown keyword "MAXIMUMDENSITY" in LEF file; ignoring.
-LEF read, Line 146 (Message): Unknown keyword "DENSITYCHECKWINDOW" in LEF file; ignoring.
-LEF read, Line 147 (Message): Unknown keyword "DENSITYCHECKSTEP" in LEF file; ignoring.
-LEF read, Line 183 (Message): Unknown keyword "ANTENNAMODEL" in LEF file; ignoring.
-LEF read, Line 184 (Message): Unknown keyword "ANTENNADIFFSIDEAREARATIO" in LEF file; ignoring.
-LEF read, Line 186 (Message): Unknown keyword "MAXIMUMDENSITY" in LEF file; ignoring.
-LEF read, Line 187 (Message): Unknown keyword "DENSITYCHECKWINDOW" in LEF file; ignoring.
-LEF read, Line 188 (Message): Unknown keyword "DENSITYCHECKSTEP" in LEF file; ignoring.
-LEF read, Line 224 (Message): Unknown keyword "ANTENNAMODEL" in LEF file; ignoring.
-LEF read, Line 225 (Message): Unknown keyword "ANTENNADIFFSIDEAREARATIO" in LEF file; ignoring.
-LEF read, Line 227 (Message): Unknown keyword "MAXIMUMDENSITY" in LEF file; ignoring.
-LEF read, Line 228 (Message): Unknown keyword "DENSITYCHECKWINDOW" in LEF file; ignoring.
-LEF read, Line 229 (Message): Unknown keyword "DENSITYCHECKSTEP" in LEF file; ignoring.
-LEF read, Line 265 (Message): Unknown keyword "ANTENNAMODEL" in LEF file; ignoring.
-LEF read, Line 266 (Message): Unknown keyword "ANTENNADIFFSIDEAREARATIO" in LEF file; ignoring.
-LEF read: Processed 772 lines.
-Reading DEF data from file /openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/results/routing/digital_pll.def.
-This action cannot be undone.
-  Processed 7 vias total.
-  Processed 1647 subcell instances total.
-  Processed 39 pins total.
-  Processed 2 special nets total.
-  Processed 399 nets total.
-DEF read: Processed 8732 lines.
-[INFO]: Zeroizing Origin
-[INFO]: Current Box Values: 0 0 45368 45392
-[INFO]: Saving .mag view With BBox Values: 0 0 45368 45392
-Calma output error:  Can't find GDS file "/home/aag/latest_pdk/sky130A/libs.ref/sky130_fd_sc_hd/gds/sky130_fd_sc_hd.gds" for vendor cell "sky130_fd_sc_hd__decap_12".  Using magic's internal definition
-Calma output error:  Can't find GDS file "/home/aag/latest_pdk/sky130A/libs.ref/sky130_fd_sc_hd/gds/sky130_fd_sc_hd.gds" for vendor cell "sky130_fd_sc_hd__decap_3".  Using magic's internal definition
-Calma output error:  Can't find GDS file "/home/aag/latest_pdk/sky130A/libs.ref/sky130_fd_sc_hd/gds/sky130_fd_sc_hd.gds" for vendor cell "sky130_fd_sc_hd__fill_1".  Using magic's internal definition
-Calma output error:  Can't find GDS file "/home/aag/latest_pdk/sky130A/libs.ref/sky130_fd_sc_hd/gds/sky130_fd_sc_hd.gds" for vendor cell "sky130_fd_sc_hd__decap_6".  Using magic's internal definition
-Calma output error:  Can't find GDS file "/home/aag/latest_pdk/sky130A/libs.ref/sky130_fd_sc_hd/gds/sky130_fd_sc_hd.gds" for vendor cell "sky130_fd_sc_hd__decap_8".  Using magic's internal definition
-Calma output error:  Can't find GDS file "/home/aag/latest_pdk/sky130A/libs.ref/sky130_fd_sc_hd/gds/sky130_fd_sc_hd.gds" for vendor cell "sky130_fd_sc_hd__decap_4".  Using magic's internal definition
-Calma output error:  Can't find GDS file "/home/aag/latest_pdk/sky130A/libs.ref/sky130_fd_sc_hd/gds/sky130_fd_sc_hd.gds" for vendor cell "sky130_fd_sc_hd__tapvpwrvgnd_1".  Using magic's internal definition
-Calma output error:  Can't find GDS file "/home/aag/latest_pdk/sky130A/libs.ref/sky130_fd_sc_hd/gds/sky130_fd_sc_hd.gds" for vendor cell "sky130_fd_sc_hd__dfrtp_4".  Using magic's internal definition
-Calma output error:  Can't find GDS file "/home/aag/latest_pdk/sky130A/libs.ref/sky130_fd_sc_hd/gds/sky130_fd_sc_hd.gds" for vendor cell "sky130_fd_sc_hd__inv_8".  Using magic's internal definition
-Calma output error:  Can't find GDS file "/home/aag/latest_pdk/sky130A/libs.ref/sky130_fd_sc_hd/gds/sky130_fd_sc_hd.gds" for vendor cell "sky130_fd_sc_hd__buf_1".  Using magic's internal definition
-Calma output error:  Can't find GDS file "/home/aag/latest_pdk/sky130A/libs.ref/sky130_fd_sc_hd/gds/sky130_fd_sc_hd.gds" for vendor cell "sky130_fd_sc_hd__fill_2".  Using magic's internal definition
-Calma output error:  Can't find GDS file "/home/aag/latest_pdk/sky130A/libs.ref/sky130_fd_sc_hd/gds/sky130_fd_sc_hd.gds" for vendor cell "sky130_fd_sc_hd__o22a_4".  Using magic's internal definition
-Calma output error:  Can't find GDS file "/home/aag/latest_pdk/sky130A/libs.ref/sky130_fd_sc_hd/gds/sky130_fd_sc_hd.gds" for vendor cell "sky130_fd_sc_hd__a2bb2o_4".  Using magic's internal definition
-Calma output error:  Can't find GDS file "/home/aag/latest_pdk/sky130A/libs.ref/sky130_fd_sc_hd/gds/sky130_fd_sc_hd.gds" for vendor cell "sky130_fd_sc_hd__a21oi_4".  Using magic's internal definition
-Calma output error:  Can't find GDS file "/home/aag/latest_pdk/sky130A/libs.ref/sky130_fd_sc_hd/gds/sky130_fd_sc_hd.gds" for vendor cell "sky130_fd_sc_hd__clkinv_8".  Using magic's internal definition
-Calma output error:  Can't find GDS file "/home/aag/latest_pdk/sky130A/libs.ref/sky130_fd_sc_hd/gds/sky130_fd_sc_hd.gds" for vendor cell "sky130_fd_sc_hd__o21ai_4".  Using magic's internal definition
-Calma output error:  Can't find GDS file "/home/aag/latest_pdk/sky130A/libs.ref/sky130_fd_sc_hd/gds/sky130_fd_sc_hd.gds" for vendor cell "sky130_fd_sc_hd__a21o_4".  Using magic's internal definition
-Calma output error:  Can't find GDS file "/home/aag/latest_pdk/sky130A/libs.ref/sky130_fd_sc_hd/gds/sky130_fd_sc_hd.gds" for vendor cell "sky130_fd_sc_hd__clkinv_2".  Using magic's internal definition
-Calma output error:  Can't find GDS file "/home/aag/latest_pdk/sky130A/libs.ref/sky130_fd_sc_hd/gds/sky130_fd_sc_hd.gds" for vendor cell "sky130_fd_sc_hd__and2_4".  Using magic's internal definition
-Calma output error:  Can't find GDS file "/home/aag/latest_pdk/sky130A/libs.ref/sky130_fd_sc_hd/gds/sky130_fd_sc_hd.gds" for vendor cell "sky130_fd_sc_hd__o21a_4".  Using magic's internal definition
-Calma output error:  Can't find GDS file "/home/aag/latest_pdk/sky130A/libs.ref/sky130_fd_sc_hd/gds/sky130_fd_sc_hd.gds" for vendor cell "sky130_fd_sc_hd__or2_4".  Using magic's internal definition
-Calma output error:  Can't find GDS file "/home/aag/latest_pdk/sky130A/libs.ref/sky130_fd_sc_hd/gds/sky130_fd_sc_hd.gds" for vendor cell "sky130_fd_sc_hd__a211o_4".  Using magic's internal definition
-Calma output error:  Can't find GDS file "/home/aag/latest_pdk/sky130A/libs.ref/sky130_fd_sc_hd/gds/sky130_fd_sc_hd.gds" for vendor cell "sky130_fd_sc_hd__and4_4".  Using magic's internal definition
-Calma output error:  Can't find GDS file "/home/aag/latest_pdk/sky130A/libs.ref/sky130_fd_sc_hd/gds/sky130_fd_sc_hd.gds" for vendor cell "sky130_fd_sc_hd__a21bo_4".  Using magic's internal definition
-Calma output error:  Can't find GDS file "/home/aag/latest_pdk/sky130A/libs.ref/sky130_fd_sc_hd/gds/sky130_fd_sc_hd.gds" for vendor cell "sky130_fd_sc_hd__xor2_4".  Using magic's internal definition
-Calma output error:  Can't find GDS file "/home/aag/latest_pdk/sky130A/libs.ref/sky130_fd_sc_hd/gds/sky130_fd_sc_hd.gds" for vendor cell "sky130_fd_sc_hd__nor4_4".  Using magic's internal definition
-Calma output error:  Can't find GDS file "/home/aag/latest_pdk/sky130A/libs.ref/sky130_fd_sc_hd/gds/sky130_fd_sc_hd.gds" for vendor cell "sky130_fd_sc_hd__nor3_4".  Using magic's internal definition
-Calma output error:  Can't find GDS file "/home/aag/latest_pdk/sky130A/libs.ref/sky130_fd_sc_hd/gds/sky130_fd_sc_hd.gds" for vendor cell "sky130_fd_sc_hd__nor2_4".  Using magic's internal definition
-Calma output error:  Can't find GDS file "/home/aag/latest_pdk/sky130A/libs.ref/sky130_fd_sc_hd/gds/sky130_fd_sc_hd.gds" for vendor cell "sky130_fd_sc_hd__nand2_4".  Using magic's internal definition
-Calma output error:  Can't find GDS file "/home/aag/latest_pdk/sky130A/libs.ref/sky130_fd_sc_hd/gds/sky130_fd_sc_hd.gds" for vendor cell "sky130_fd_sc_hd__and3_4".  Using magic's internal definition
-Calma output error:  Can't find GDS file "/home/aag/latest_pdk/sky130A/libs.ref/sky130_fd_sc_hd/gds/sky130_fd_sc_hd.gds" for vendor cell "sky130_fd_sc_hd__xnor2_4".  Using magic's internal definition
-Calma output error:  Can't find GDS file "/home/aag/latest_pdk/sky130A/libs.ref/sky130_fd_sc_hd/gds/sky130_fd_sc_hd.gds" for vendor cell "sky130_fd_sc_hd__clkbuf_1".  Using magic's internal definition
-Calma output error:  Can't find GDS file "/home/aag/latest_pdk/sky130A/libs.ref/sky130_fd_sc_hd/gds/sky130_fd_sc_hd.gds" for vendor cell "sky130_fd_sc_hd__or3_4".  Using magic's internal definition
-Calma output error:  Can't find GDS file "/home/aag/latest_pdk/sky130A/libs.ref/sky130_fd_sc_hd/gds/sky130_fd_sc_hd.gds" for vendor cell "sky130_fd_sc_hd__nand4_4".  Using magic's internal definition
-Calma output error:  Can't find GDS file "/home/aag/latest_pdk/sky130A/libs.ref/sky130_fd_sc_hd/gds/sky130_fd_sc_hd.gds" for vendor cell "sky130_fd_sc_hd__einvp_2".  Using magic's internal definition
-Calma output error:  Can't find GDS file "/home/aag/latest_pdk/sky130A/libs.ref/sky130_fd_sc_hd/gds/sky130_fd_sc_hd.gds" for vendor cell "sky130_fd_sc_hd__einvn_4".  Using magic's internal definition
-Calma output error:  Can't find GDS file "/home/aag/latest_pdk/sky130A/libs.ref/sky130_fd_sc_hd/gds/sky130_fd_sc_hd.gds" for vendor cell "sky130_fd_sc_hd__clkinv_1".  Using magic's internal definition
-Calma output error:  Can't find GDS file "/home/aag/latest_pdk/sky130A/libs.ref/sky130_fd_sc_hd/gds/sky130_fd_sc_hd.gds" for vendor cell "sky130_fd_sc_hd__conb_1".  Using magic's internal definition
-Calma output error:  Can't find GDS file "/home/aag/latest_pdk/sky130A/libs.ref/sky130_fd_sc_hd/gds/sky130_fd_sc_hd.gds" for vendor cell "sky130_fd_sc_hd__einvn_8".  Using magic's internal definition
-Calma output error:  Can't find GDS file "/home/aag/latest_pdk/sky130A/libs.ref/sky130_fd_sc_hd/gds/sky130_fd_sc_hd.gds" for vendor cell "sky130_fd_sc_hd__einvp_1".  Using magic's internal definition
-Calma output error:  Can't find GDS file "/home/aag/latest_pdk/sky130A/libs.ref/sky130_fd_sc_hd/gds/sky130_fd_sc_hd.gds" for vendor cell "sky130_fd_sc_hd__or2_2".  Using magic's internal definition
-Calma output error:  Can't find GDS file "/home/aag/latest_pdk/sky130A/libs.ref/sky130_fd_sc_hd/gds/sky130_fd_sc_hd.gds" for vendor cell "sky130_fd_sc_hd__a32o_4".  Using magic's internal definition
-Calma output error:  Can't find GDS file "/home/aag/latest_pdk/sky130A/libs.ref/sky130_fd_sc_hd/gds/sky130_fd_sc_hd.gds" for vendor cell "sky130_fd_sc_hd__clkbuf_2".  Using magic's internal definition
-Calma output error:  Can't find GDS file "/home/aag/latest_pdk/sky130A/libs.ref/sky130_fd_sc_hd/gds/sky130_fd_sc_hd.gds" for vendor cell "sky130_fd_sc_hd__or4_4".  Using magic's internal definition
-Calma output error:  Can't find GDS file "/home/aag/latest_pdk/sky130A/libs.ref/sky130_fd_sc_hd/gds/sky130_fd_sc_hd.gds" for vendor cell "sky130_fd_sc_hd__o32a_4".  Using magic's internal definition
-Calma output error:  Can't find GDS file "/home/aag/latest_pdk/sky130A/libs.ref/sky130_fd_sc_hd/gds/sky130_fd_sc_hd.gds" for vendor cell "sky130_fd_sc_hd__buf_2".  Using magic's internal definition
-[INFO]: GDS Write Complete
-Generating LEF output /openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/results/magic/digital_pll.lef for cell digital_pll:
-Diagnostic:  Write LEF header for cell digital_pll
-Diagnostic:  Writing LEF output for cell digital_pll
-Diagnostic:  Scale value is 0.005000
-[INFO]: LEF Write Complete
+Loading "/openLANE_flow/scripts/magic_mag.tcl" from command line.
+Box tool must be present
+[INFO]: Saving .mag view With BBox Values: 
+Warning: Calma reading is not undoable!  I hope that's OK.
+Library written using GDS-II Release 3.0
+Library name: digital_pll
+Reading "sky130_fd_sc_hd__decap_6".
+Reading "sky130_fd_sc_hd__decap_4".
+Reading "sky130_fd_sc_hd__decap_12".
+Reading "sky130_fd_sc_hd__decap_3".
+Reading "sky130_fd_sc_hd__o22a_4".
+Reading "sky130_fd_sc_hd__inv_2".
+Reading "sky130_fd_sc_hd__fill_2".
+Reading "sky130_fd_sc_hd__decap_8".
+Reading "sky130_fd_sc_hd__tapvpwrvgnd_1".
+Reading "sky130_fd_sc_hd__dfrtp_4".
+Reading "sky130_fd_sc_hd__a2bb2o_4".
+Reading "sky130_fd_sc_hd__fill_1".
+Reading "sky130_fd_sc_hd__buf_2".
+Reading "sky130_fd_sc_hd__o21a_4".
+Reading "sky130_fd_sc_hd__and2_4".
+Reading "sky130_fd_sc_hd__clkinv_8".
+Reading "sky130_fd_sc_hd__o21ai_4".
+Reading "sky130_fd_sc_hd__a211o_4".
+Reading "sky130_fd_sc_hd__a21o_4".
+Reading "sky130_fd_sc_hd__clkinv_2".
+Reading "sky130_fd_sc_hd__or2_4".
+Reading "sky130_fd_sc_hd__clkinv_1".
+Reading "sky130_fd_sc_hd__or4_4".
+Reading "sky130_fd_sc_hd__nor2_4".
+Reading "sky130_fd_sc_hd__and3_4".
+Reading "sky130_fd_sc_hd__and4_4".
+Reading "sky130_fd_sc_hd__a22oi_4".
+Reading "sky130_fd_sc_hd__clkbuf_1".
+Reading "sky130_fd_sc_hd__a21bo_4".
+Reading "sky130_fd_sc_hd__nand2_4".
+Reading "sky130_fd_sc_hd__einvp_2".
+Reading "sky130_fd_sc_hd__or3_4".
+Reading "sky130_fd_sc_hd__einvn_8".
+Reading "sky130_fd_sc_hd__a32o_4".
+Reading "sky130_fd_sc_hd__einvn_4".
+Reading "sky130_fd_sc_hd__clkbuf_2".
+Reading "sky130_fd_sc_hd__or2_2".
+Reading "sky130_fd_sc_hd__conb_1".
+Reading "sky130_fd_sc_hd__einvp_1".
+Reading "sky130_fd_sc_hd__o32a_4".
+Reading "digital_pll".
+    100 uses
+    200 uses
+    300 uses
+    400 uses
+    500 uses
+    600 uses
+    700 uses
+    800 uses
+    900 uses
+    1000 uses
+    1100 uses
+    1200 uses
 [INFO]: MAGIC TAPEOUT STEP DONE

@@ -7,8 +7,10 @@
 module user_id_programming #(
     parameter [ 0:0] USER_PROJECT_ID = 32'h0
 ) (
+`ifdef USE_POWER_PINS
     inout vdd1v8,
     inout vss,
+`endif
     output [31:0] mask_rev
 );
     wire [31:0] mask_rev;

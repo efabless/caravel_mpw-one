@@ -1,27 +1,26 @@
 
-21. Printing statistics.
+22. Printing statistics.
 
 === caravel ===
 
-   Number of wires:               2093
-   Number of wire bits:           2133
-   Number of public wires:        2093
-   Number of public wire bits:    2133
+   Number of wires:               2262
+   Number of wire bits:           2302
+   Number of public wires:        2262
+   Number of public wire bits:    2302
    Number of memories:               0
    Number of memory bits:            0
    Number of processes:              0
-   Number of cells:                 47
+   Number of cells:                 46
      chip_io                         1
      gpio_control_block             38
      mgmt_core                       1
      mgmt_protect                    1
      simple_por                      1
-     sky130_fd_sc_hvl__lsbufhv2lv_1      2
+     sky130_fd_sc_hvl__lsbufhv2lv_1_wrapped      1
      storage                         1
      user_id_programming             1
      user_project_wrapper            1
 
-   Area for cell type \sky130_fd_sc_hvl__lsbufhv2lv_1 is unknown!
    Area for cell type \chip_io is unknown!
    Area for cell type \mgmt_core is unknown!
    Area for cell type \storage is unknown!
@@ -30,4 +29,5 @@
    Area for cell type \gpio_control_block is unknown!
    Area for cell type \user_id_programming is unknown!
    Area for cell type \simple_por is unknown!
+   Area for cell type \sky130_fd_sc_hvl__lsbufhv2lv_1_wrapped is unknown!
 

@@ -81,69 +81,59 @@ Parsing Verilog input from `/project/openlane/caravel/../../verilog//rtl/simple_
 Generating RTLIL representation for module `\simple_por'.
 Successfully finished Verilog frontend.
 
-13. Executing Verilog-2005 frontend: /project/openlane/caravel/../../verilog//rtl/caravel.v
-Parsing Verilog input from `/project/openlane/caravel/../../verilog//rtl/caravel.v' to AST representation.
-Generating RTLIL representation for module `\caravel'.
-/project/openlane/caravel/../../verilog//rtl/caravel.v:234: Warning: Identifier `\clock_core' is implicitly declared.
-/project/openlane/caravel/../../verilog//rtl/caravel.v:241: Warning: Identifier `\flash_csb_core' is implicitly declared.
-/project/openlane/caravel/../../verilog//rtl/caravel.v:242: Warning: Identifier `\flash_clk_core' is implicitly declared.
-/project/openlane/caravel/../../verilog//rtl/caravel.v:243: Warning: Identifier `\flash_csb_oeb_core' is implicitly declared.
-/project/openlane/caravel/../../verilog//rtl/caravel.v:244: Warning: Identifier `\flash_clk_oeb_core' is implicitly declared.
-/project/openlane/caravel/../../verilog//rtl/caravel.v:245: Warning: Identifier `\flash_io0_oeb_core' is implicitly declared.
-/project/openlane/caravel/../../verilog//rtl/caravel.v:246: Warning: Identifier `\flash_io1_oeb_core' is implicitly declared.
-/project/openlane/caravel/../../verilog//rtl/caravel.v:247: Warning: Identifier `\flash_csb_ieb_core' is implicitly declared.
-/project/openlane/caravel/../../verilog//rtl/caravel.v:248: Warning: Identifier `\flash_clk_ieb_core' is implicitly declared.
-/project/openlane/caravel/../../verilog//rtl/caravel.v:249: Warning: Identifier `\flash_io0_ieb_core' is implicitly declared.
-/project/openlane/caravel/../../verilog//rtl/caravel.v:250: Warning: Identifier `\flash_io1_ieb_core' is implicitly declared.
-/project/openlane/caravel/../../verilog//rtl/caravel.v:251: Warning: Identifier `\flash_io0_do_core' is implicitly declared.
-/project/openlane/caravel/../../verilog//rtl/caravel.v:252: Warning: Identifier `\flash_io1_do_core' is implicitly declared.
-/project/openlane/caravel/../../verilog//rtl/caravel.v:253: Warning: Identifier `\flash_io0_di_core' is implicitly declared.
-/project/openlane/caravel/../../verilog//rtl/caravel.v:254: Warning: Identifier `\flash_io1_di_core' is implicitly declared.
+13. Executing Verilog-2005 frontend: /project/openlane/caravel/../../verilog//rtl/sky130_fd_sc_hvl__lsbufhv2lv_1_wrapped.v
+Parsing Verilog input from `/project/openlane/caravel/../../verilog//rtl/sky130_fd_sc_hvl__lsbufhv2lv_1_wrapped.v' to AST representation.
+Generating RTLIL representation for module `\sky130_fd_sc_hvl__lsbufhv2lv_1_wrapped'.
 Successfully finished Verilog frontend.
 
-14. Generating Graphviz representation of design.
+14. Executing Verilog-2005 frontend: /project/openlane/caravel/../../verilog//rtl/caravel.v
+Parsing Verilog input from `/project/openlane/caravel/../../verilog//rtl/caravel.v' to AST representation.
+Generating RTLIL representation for module `\caravel'.
+Successfully finished Verilog frontend.
+
+15. Generating Graphviz representation of design.
 Writing dot description to `/project/openlane/caravel/runs/caravel/tmp/synthesis/hierarchy.dot'.
 Dumping module caravel to page 1.
 
-15. Executing HIERARCHY pass (managing design hierarchy).
+16. Executing HIERARCHY pass (managing design hierarchy).
 
-15.1. Analyzing design hierarchy..
+16.1. Analyzing design hierarchy..
 Top module:  \caravel
 
-15.2. Analyzing design hierarchy..
+16.2. Analyzing design hierarchy..
 Top module:  \caravel
 Removed 0 unused modules.
 
-16. Executing FLATTEN pass (flatten design).
+17. Executing FLATTEN pass (flatten design).
 
-17. Printing statistics.
+18. Printing statistics.
 
 === caravel ===
 
-   Number of wires:                128
-   Number of wire bits:           2133
-   Number of public wires:         128
-   Number of public wire bits:    2133
+   Number of wires:                140
+   Number of wire bits:           2302
+   Number of public wires:         140
+   Number of public wire bits:    2302
    Number of memories:               0
    Number of memory bits:            0
    Number of processes:              0
-   Number of cells:                 47
+   Number of cells:                 46
      chip_io                         1
      gpio_control_block             38
      mgmt_core                       1
      mgmt_protect                    1
      simple_por                      1
-     sky130_fd_sc_hvl__lsbufhv2lv_1      2
+     sky130_fd_sc_hvl__lsbufhv2lv_1_wrapped      1
      storage                         1
      user_id_programming             1
      user_project_wrapper            1
 
-18. Executing SPLITNETS pass (splitting up multi-bit signals).
+19. Executing SPLITNETS pass (splitting up multi-bit signals).
 
-19. Executing OPT_CLEAN pass (remove unused cells and wires).
+20. Executing OPT_CLEAN pass (remove unused cells and wires).
 Finding unused cells or wires in module \caravel..
 
-20. Executing CHECK pass (checking for obvious problems).
+21. Executing CHECK pass (checking for obvious problems).
 checking module caravel..
 Warning: multiple conflicting drivers for caravel.\mgmt_io_in[9]:
     port mgmt_gpio_in[0] of cell gpio_control_in[9] (gpio_control_block)
@@ -255,29 +245,28 @@ Warning: multiple conflicting drivers for caravel.\mgmt_io_in[10]:
     port mgmt_out_data[10] of cell soc (mgmt_core)
 found and reported 36 problems.
 
-21. Printing statistics.
+22. Printing statistics.
 
 === caravel ===
 
-   Number of wires:               2093
-   Number of wire bits:           2133
-   Number of public wires:        2093
-   Number of public wire bits:    2133
+   Number of wires:               2262
+   Number of wire bits:           2302
+   Number of public wires:        2262
+   Number of public wire bits:    2302
    Number of memories:               0
    Number of memory bits:            0
    Number of processes:              0
-   Number of cells:                 47
+   Number of cells:                 46
      chip_io                         1
      gpio_control_block             38
      mgmt_core                       1
      mgmt_protect                    1
      simple_por                      1
-     sky130_fd_sc_hvl__lsbufhv2lv_1      2
+     sky130_fd_sc_hvl__lsbufhv2lv_1_wrapped      1
      storage                         1
      user_id_programming             1
      user_project_wrapper            1
 
-   Area for cell type \sky130_fd_sc_hvl__lsbufhv2lv_1 is unknown!
    Area for cell type \chip_io is unknown!
    Area for cell type \mgmt_core is unknown!
    Area for cell type \storage is unknown!
@@ -286,11 +275,12 @@ found and reported 36 problems.
    Area for cell type \gpio_control_block is unknown!
    Area for cell type \user_id_programming is unknown!
    Area for cell type \simple_por is unknown!
+   Area for cell type \sky130_fd_sc_hvl__lsbufhv2lv_1_wrapped is unknown!
 
-22. Executing Verilog backend.
+23. Executing Verilog backend.
 Dumping module `\caravel'.
 
-Warnings: 51 unique messages, 51 total
-End of script. Logfile hash: 694837da9e, CPU: user 0.65s system 0.01s, MEM: 26.47 MB peak
+Warnings: 36 unique messages, 36 total
+End of script. Logfile hash: d61c85f712, CPU: user 0.69s system 0.03s, MEM: 26.56 MB peak
 Yosys 0.9+3621 (git sha1 84e9fa7, gcc 8.3.1 -fPIC -Os)
-Time spent: 42% 2x write_verilog (0 sec), 19% 4x read_liberty (0 sec), ...
+Time spent: 42% 2x write_verilog (0 sec), 18% 4x read_liberty (0 sec), ...

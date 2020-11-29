@@ -5,13 +5,13 @@ Generating JSON file result
 Reading netlist file /project/openlane/user_id_programming/runs/user_id_programming/results/magic/user_id_programming.spice
 Reading netlist file /project/openlane/user_id_programming/runs/user_id_programming/results/lvs/user_id_programming.lvs.powered.v
 Warning:  A case-insensitive file has been read and so the	verilog file must be treated case-insensitive to match.
+Creating placeholder cell definition for module sky130_fd_sc_hd__decap_3.
 Creating placeholder cell definition for module sky130_fd_sc_hd__decap_8.
 Creating placeholder cell definition for module sky130_fd_sc_hd__fill_2.
-Creating placeholder cell definition for module sky130_fd_sc_hd__decap_3.
-Creating placeholder cell definition for module sky130_fd_sc_hd__decap_12.
 Creating placeholder cell definition for module sky130_fd_sc_hd__fill_1.
-Creating placeholder cell definition for module sky130_fd_sc_hd__decap_6.
 Creating placeholder cell definition for module sky130_fd_sc_hd__decap_4.
+Creating placeholder cell definition for module sky130_fd_sc_hd__decap_6.
+Creating placeholder cell definition for module sky130_fd_sc_hd__decap_12.
 Creating placeholder cell definition for module sky130_fd_sc_hd__tapvpwrvgnd_1.
 Creating placeholder cell definition for module sky130_fd_sc_hd__conb_1.
 Reading setup file /home/xrex/usr/devel/pdks/sky130A/libs.tech/netgen/sky130A_setup.tcl
@@ -37,12 +37,12 @@ Contents of circuit 1:  Circuit: 'user_id_programming'
 Circuit user_id_programming contains 37 device instances.
   Class: sky130_fd_sc_hd__conb_1 instances:  32
   Class: sky130_fd_sc_hd__tapvpwrvgnd_1 instances:   5
-Circuit contains 66 nets, and 2 disconnected pins.
+Circuit contains 66 nets.
 Contents of circuit 2:  Circuit: 'user_id_programming'
 Circuit user_id_programming contains 37 device instances.
   Class: sky130_fd_sc_hd__conb_1 instances:  32
   Class: sky130_fd_sc_hd__tapvpwrvgnd_1 instances:   5
-Circuit contains 66 nets, and 2 disconnected pins.
+Circuit contains 66 nets.
 
 Circuit 1 contains 37 devices, Circuit 2 contains 37 devices.
 Circuit 1 contains 66 nets,    Circuit 2 contains 66 nets.

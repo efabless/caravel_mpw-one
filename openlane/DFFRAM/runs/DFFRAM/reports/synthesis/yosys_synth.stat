@@ -1,31 +1,184 @@
 
-5. Printing statistics.
+7. Printing statistics.
 
-=== DFFRAM ===
+=== PASS ===
 
-   Number of wires:              12035
-   Number of wire bits:          12107
-   Number of public wires:       12035
-   Number of public wire bits:   12107
+   Number of wires:                  2
+   Number of wire bits:             64
+   Number of public wires:           2
+   Number of public wire bits:      64
    Number of memories:               0
    Number of memory bits:            0
    Number of processes:              0
-   Number of cells:              20253
+   Number of cells:                  0
+
+=== MUX4x1_32 ===
+
+   Number of wires:                  6
+   Number of wire bits:            162
+   Number of public wires:           6
+   Number of public wire bits:     162
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                 32
+     sky130_fd_sc_hd__mux4_1        32
+
+=== DFFRAM_COL4 ===
+
+   Number of wires:                 16
+   Number of wire bits:            282
+   Number of public wires:          16
+   Number of public wire bits:     282
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                 46
+     DEC2x4                          1
+     MUX4x1_32                       1
+     SRAM64x32                       4
+     sky130_fd_sc_hd__clkbuf_16      3
+     sky130_fd_sc_hd__clkbuf_8      37
+
+=== DEC6x64 ===
+
+   Number of wires:                  5
+   Number of wire bits:             82
+   Number of public wires:           5
+   Number of public wire bits:      82
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                 12
+     DEC3x8                          9
+     sky130_fd_sc_hd__clkbuf_16      3
+
+=== DEC3x8 ===
+
+   Number of wires:                  3
+   Number of wire bits:             12
+   Number of public wires:           3
+   Number of public wire bits:      12
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                  8
+     sky130_fd_sc_hd__and4_2         1
+     sky130_fd_sc_hd__and4b_2        3
+     sky130_fd_sc_hd__and4bb_2       3
+     sky130_fd_sc_hd__nor4b_2        1
+
+=== DEC2x4 ===
+
+   Number of wires:                  3
+   Number of wire bits:              7
+   Number of public wires:           3
+   Number of public wire bits:       7
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                  4
+     sky130_fd_sc_hd__and3_4         1
+     sky130_fd_sc_hd__and3b_4        2
+     sky130_fd_sc_hd__nor3b_4        1
+
+=== SRAM64x32 ===
+
+   Number of wires:                 13
+   Number of wire bits:            211
+   Number of public wires:          13
+   Number of public wire bits:     211
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                168
+     DEC6x64                         1
+     WORD32                         64
+     sky130_fd_sc_hd__clkbuf_16     37
+     sky130_fd_sc_hd__clkbuf_4       1
+     sky130_fd_sc_hd__conb_1         1
+     sky130_fd_sc_hd__dfxtp_1       32
+     sky130_fd_sc_hd__ebufn_4       32
+
+=== WORD32 ===
+
+   Number of wires:                  5
+   Number of wire bits:             70
+   Number of public wires:           5
+   Number of public wire bits:      70
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                  4
+     BYTE                            4
+
+=== BYTE ===
+
+   Number of wires:                  9
+   Number of wire bits:             30
+   Number of public wires:           9
+   Number of public wire bits:      30
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                 19
+     sky130_fd_sc_hd__and2_1         1
+     sky130_fd_sc_hd__dfxtp_1        8
+     sky130_fd_sc_hd__dlclkp_1       1
+     sky130_fd_sc_hd__ebufn_2        8
+     sky130_fd_sc_hd__inv_1          1
+
+=== DFFRAM ===
+
+   Number of wires:                  9
+   Number of wire bits:            143
+   Number of public wires:           9
+   Number of public wire bits:     143
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                 35
+     DFFRAM_COL4                     1
+     PASS                            1
+     sky130_fd_sc_hd__clkbuf_4      33
+
+=== design hierarchy ===
+
+   DFFRAM                            1
+     DFFRAM_COL4                     1
+       DEC2x4                        1
+       MUX4x1_32                     1
+       SRAM64x32                     4
+         DEC6x64                     1
+           DEC3x8                    9
+         WORD32                     64
+           BYTE                      4
+     PASS                            1
+
+   Number of wires:              10712
+   Number of wire bits:          50902
+   Number of public wires:       10712
+   Number of public wire bits:   50902
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:              20277
      sky130_fd_sc_hd__and2_1      1024
-     sky130_fd_sc_hd__and3_2         1
-     sky130_fd_sc_hd__and3b_2        2
+     sky130_fd_sc_hd__and3_4         1
+     sky130_fd_sc_hd__and3b_4        2
      sky130_fd_sc_hd__and4_2        36
      sky130_fd_sc_hd__and4b_2      108
      sky130_fd_sc_hd__and4bb_2     108
-     sky130_fd_sc_hd__clkbuf_16    148
-     sky130_fd_sc_hd__clkbuf_4      32
+     sky130_fd_sc_hd__clkbuf_16    163
+     sky130_fd_sc_hd__clkbuf_4      37
      sky130_fd_sc_hd__clkbuf_8      37
+     sky130_fd_sc_hd__conb_1         4
      sky130_fd_sc_hd__dfxtp_1     8320
      sky130_fd_sc_hd__dlclkp_1    1024
      sky130_fd_sc_hd__ebufn_2     8192
      sky130_fd_sc_hd__ebufn_4      128
      sky130_fd_sc_hd__inv_1       1024
      sky130_fd_sc_hd__mux4_1        32
-     sky130_fd_sc_hd__nor3b_2        1
+     sky130_fd_sc_hd__nor3b_4        1
      sky130_fd_sc_hd__nor4b_2       36
 

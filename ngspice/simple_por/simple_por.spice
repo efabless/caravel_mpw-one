@@ -1,0 +1,73 @@
+*-------------------------------------------------------------------
+* Simple POR circuit for Caravel
+*-------------------------------------------------------------------
+*
+* Architecture:
+*
+*    Resistive divider sets mvnfet transistor gate voltage to ??V
+*    mvnfet current is 240nA nominal
+*    mvnfet drives current mirror at 1/400x to 600pA through mvpfet
+*    current feeds 1.84pF capacitor (double MiM at 30um x 30um)
+*    voltage across capacitor is input to chain of two schmitt trigger
+*    inverters.
+*
+* 	Q = C * V = I * dt
+* 
+*	t = C * V / I = 1.84pF * 3.3V / 600pA = 10ms
+* 
+*   ~400x step-down done by mirroring 1:8, 1:7, 1:7 (= 392)
+*
+* From DC sweep test result, V = 0.7575 on the transtor gate at vin
+* Resistor divider at fraction 0.23.
+* This yields resistor lengths of 500 on top, 149 on the bottom
+*
+* Actual response of this circuit by ngspice simulation is 15ms.
+*-------------------------------------------------------------------
+
+.subckt simple_por vdd3v3 vdd1v8 vss porb_h por_l porb_l
+
+Xcap1 vcap vss sky130_fd_pr__cap_mim_m3_1 l=30 w=30
+Xcap2 vss vcap sky130_fd_pr__cap_mim_m3_2 l=30 w=30
+
+* Note: 20 resistors of length 25um connected in series
+Xres1 vdd3v3 vin vss sky130_fd_pr__res_xhigh_po_0p69 l=500
+* Note: 6 resistors of length 25um connected in series
+Xres2 vin vss vss sky130_fd_pr__res_xhigh_po_0p69 l=150
+* Note: 2 dummy resistors of length 25um
+Xres3 vss vss vss sky130_fd_pr__res_xhigh_po_0p69 l=25 m=2
+
+* Triple current mirror, ratios 8:1, 7:1, and 7:1, with p-cascodes
+*   D     G     S      B
+Xm1 casc1 vin   vss    vss    sky130_fd_pr__nfet_g5v0d10v5 w=2 l=0.8 m=1
+Xc1 mir1  casc1 casc1  vdd3v3 sky130_fd_pr__pfet_g5v0d10v5 w=2 l=0.8 m=1
+Xm2 mir1  mir1  vdd3v3 vdd3v3 sky130_fd_pr__pfet_g5v0d10v5 w=2 l=0.8 m=8
+Xm3 mir2  mir1  vdd3v3 vdd3v3 sky130_fd_pr__pfet_g5v0d10v5 w=2 l=0.8 m=1
+Xc2 casc2 casc1 mir2   vdd3v3 sky130_fd_pr__pfet_g5v0d10v5 w=2 l=0.8 m=1 
+Xm4 casc2 casc2 vss    vss    sky130_fd_pr__nfet_g5v0d10v5 w=2 l=0.8 m=7
+Xm5 casc3 casc2 vss    vss    sky130_fd_pr__nfet_g5v0d10v5 w=2 l=0.8 m=1
+Xc3 mir3  casc3 casc3  vdd3v3 sky130_fd_pr__pfet_g5v0d10v5 w=2 l=0.8 m=1  
+Xm6 mir3  mir3  vdd3v3 vdd3v3 sky130_fd_pr__pfet_g5v0d10v5 w=2 l=0.8 m=7
+Xm7 mir4  mir3  vdd3v3 vdd3v3 sky130_fd_pr__pfet_g5v0d10v5 w=2 l=0.8 m=1
+Xc4 vcap  casc3 mir4   vdd3v3 sky130_fd_pr__pfet_g5v0d10v5 w=2 l=0.8 m=1 
+
+* Buffered with schmitt trigger buffer
+Xtrig vcap vss vss vdd3v3 vdd3v3 out sky130_fd_sc_hvl__schmittbuf_1
+
+* High voltage output (buffer)
+Xbuf out vss vss vdd3v3 vdd3v3 porb_h sky130_fd_sc_hvl__buf_8
+
+* Level shift down (buffer)
+Xlv1 out vss vss vdd1v8 vdd1v8 porb_l sky130_fd_sc_hvl__buf_8
+
+* Level shift down (inverter)
+Xlv2 out vss vss vdd1v8 vdd1v8 por_l sky130_fd_sc_hvl__inv_8
+
+* Fill cell
+Xfill vss vss vdd3v3 vdd3v3 sky130_fd_sc_hvl__fill_4
+
+* No tap cell in library?
+* Xtap vdd3v3 vss sky130_fd_sc_hvl__tapvpwrvgnd_1
+
+.ends
+
+.end

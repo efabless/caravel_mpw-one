@@ -1,18 +1,18 @@
-[OpenPhySyn] [2020-11-03 13:59:01.601] [info] Loaded 6 transforms.
-[OpenPhySyn] [2020-11-03 13:59:02.245] [info] OpenPhySyn: 1.8.1
-Warning: /openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/tmp/opt.lib, line 32 default_operating_condition ss_100C_1v60 not found.
-Notice 0: Reading LEF file:  /openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/tmp/merged_unpadded.lef
-Notice 0:     Created 11 technology layers
+[OpenPhySyn] [2020-11-27 18:21:07.883] [info] Loaded 6 transforms.
+[OpenPhySyn] [2020-11-27 18:21:08.477] [info] OpenPhySyn: 1.8.1
+Warning: /project/openlane/digital_pll/runs/digital_pll/tmp/opt.lib, line 32 default_operating_condition ss_100C_1v60 not found.
+Notice 0: Reading LEF file:  /project/openlane/digital_pll/runs/digital_pll/tmp/merged_unpadded.lef
+Notice 0:     Created 13 technology layers
 Notice 0:     Created 25 technology vias
-Notice 0:     Created 437 library cells
-Notice 0: Finished LEF file:  /openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/tmp/merged_unpadded.lef
+Notice 0:     Created 438 library cells
+Notice 0: Finished LEF file:  /project/openlane/digital_pll/runs/digital_pll/tmp/merged_unpadded.lef
 Notice 0: 
-Reading DEF file: /openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/tmp/placement/replace.def
+Reading DEF file: /project/openlane/digital_pll/runs/digital_pll/tmp/placement/replace.def
 Notice 0: Design: digital_pll
 Notice 0:     Created 37 pins.
-Notice 0:     Created 657 components and 2635 component-terminals.
-Notice 0:     Created 399 nets and 1320 connections.
-Notice 0: Finished DEF file: /openLANE_flow/designs/caravel/openlane/digital_pll/runs/digital_pll/tmp/placement/replace.def
+Notice 0:     Created 588 components and 3491 component-terminals.
+Notice 0:     Created 415 nets and 1360 connections.
+Notice 0: Finished DEF file: /project/openlane/digital_pll/runs/digital_pll/tmp/placement/replace.def
 Error: base.sdc, 1 can't read "::env(CLOCK_PORT)": no such variable
 =============== Initial Reports =============
 No paths found.
@@ -20,30 +20,30 @@ Capacitance violations: 0
 Transition violations: 0
 wns 0.00
 tns 0.00
-Initial area: 54552 um2
+Initial area: 50098 um2
 OpenPhySyn timing repair:
-[OpenPhySyn] [2020-11-03 13:59:10.675] [info] Invoking repair_timing transform
-[OpenPhySyn] [2020-11-03 13:59:10.684] [info] Buffer library: sky130_fd_sc_hd__buf_4, sky130_fd_sc_hd__buf_8, sky130_fd_sc_hd__buf_1
-[OpenPhySyn] [2020-11-03 13:59:10.684] [info] Inverter library: None
-[OpenPhySyn] [2020-11-03 13:59:10.685] [info] Buffering: enabled
-[OpenPhySyn] [2020-11-03 13:59:10.685] [info] Driver sizing: enabled
-[OpenPhySyn] [2020-11-03 13:59:10.685] [info] Pin-swapping: enabled
-[OpenPhySyn] [2020-11-03 13:59:10.685] [info] Mode: Timing-Driven
-[OpenPhySyn] [2020-11-03 13:59:10.685] [info] Iteration 1
-[OpenPhySyn] [2020-11-03 13:59:10.798] [info] No more violations or cannot find more optimal buffer
-[OpenPhySyn] [2020-11-03 13:59:10.798] [info] Runtime: 0s
-[OpenPhySyn] [2020-11-03 13:59:10.798] [info] Buffers: 0
-[OpenPhySyn] [2020-11-03 13:59:10.798] [info] Resize up: 0
-[OpenPhySyn] [2020-11-03 13:59:10.798] [info] Resize down: 0
-[OpenPhySyn] [2020-11-03 13:59:10.798] [info] Pin Swap: 0
-[OpenPhySyn] [2020-11-03 13:59:10.798] [info] Buffered nets: 0
-[OpenPhySyn] [2020-11-03 13:59:10.798] [info] Fanout violations: 0
-[OpenPhySyn] [2020-11-03 13:59:10.798] [info] Transition violations: 0
-[OpenPhySyn] [2020-11-03 13:59:10.798] [info] Capacitance violations: 0
-[OpenPhySyn] [2020-11-03 13:59:10.798] [info] Slack gain: 0.0
-[OpenPhySyn] [2020-11-03 13:59:10.798] [info] Initial area: 5455
-[OpenPhySyn] [2020-11-03 13:59:10.798] [info] New area: 5455
-[OpenPhySyn] [2020-11-03 13:59:10.798] [info] Finished repair_timing transform (0)
+[OpenPhySyn] [2020-11-27 18:21:17.266] [info] Invoking repair_timing transform
+[OpenPhySyn] [2020-11-27 18:21:17.275] [info] Buffer library: sky130_fd_sc_hd__buf_4, sky130_fd_sc_hd__buf_8, sky130_fd_sc_hd__buf_2
+[OpenPhySyn] [2020-11-27 18:21:17.275] [info] Inverter library: None
+[OpenPhySyn] [2020-11-27 18:21:17.275] [info] Buffering: enabled
+[OpenPhySyn] [2020-11-27 18:21:17.275] [info] Driver sizing: enabled
+[OpenPhySyn] [2020-11-27 18:21:17.275] [info] Pin-swapping: enabled
+[OpenPhySyn] [2020-11-27 18:21:17.275] [info] Mode: Timing-Driven
+[OpenPhySyn] [2020-11-27 18:21:17.275] [info] Iteration 1
+[OpenPhySyn] [2020-11-27 18:21:17.394] [info] No more violations or cannot find more optimal buffer
+[OpenPhySyn] [2020-11-27 18:21:17.394] [info] Runtime: 0s
+[OpenPhySyn] [2020-11-27 18:21:17.394] [info] Buffers: 0
+[OpenPhySyn] [2020-11-27 18:21:17.394] [info] Resize up: 0
+[OpenPhySyn] [2020-11-27 18:21:17.394] [info] Resize down: 0
+[OpenPhySyn] [2020-11-27 18:21:17.394] [info] Pin Swap: 0
+[OpenPhySyn] [2020-11-27 18:21:17.394] [info] Buffered nets: 0
+[OpenPhySyn] [2020-11-27 18:21:17.394] [info] Fanout violations: 0
+[OpenPhySyn] [2020-11-27 18:21:17.394] [info] Transition violations: 0
+[OpenPhySyn] [2020-11-27 18:21:17.394] [info] Capacitance violations: 0
+[OpenPhySyn] [2020-11-27 18:21:17.394] [info] Slack gain: 0.0
+[OpenPhySyn] [2020-11-27 18:21:17.394] [info] Initial area: 5010
+[OpenPhySyn] [2020-11-27 18:21:17.394] [info] New area: 5010
+[OpenPhySyn] [2020-11-27 18:21:17.394] [info] Finished repair_timing transform (0)
 Added/updated 0 cells
 =============== Final Reports =============
 No paths found.
@@ -51,5 +51,5 @@ Capacitance violations: 0
 Transition violations: 0
 wns 0.00
 tns 0.00
-Final area: 54552 um2
+Final area: 50098 um2
 Export optimized design

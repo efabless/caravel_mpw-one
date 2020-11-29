@@ -1,2 +1,0 @@
-set_driving_cell sky130_fd_sc_hvl__inv_16
-set_load 35.49
