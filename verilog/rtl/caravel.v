@@ -49,6 +49,7 @@
 `include "DFFRAMBB.v"
 `include "sram_1rw1r_32_256_8_sky130.v"
 `include "storage.v"
+`include "sky130_fd_sc_hvl__lsbufhv2lv_1_wrapped.v"
 
 /*------------------------------*/
 /* Include user project here	*/
@@ -647,7 +648,7 @@ module caravel (
     );
 
     // XRES (chip input pin reset) reset level converter
-    sky130_fd_sc_hvl__lsbufhv2lv_1 rstb_level (
+    sky130_fd_sc_hvl__lsbufhv2lv_1_wrapped rstb_level (
 `ifdef USE_POWER_PINS
 		.VPWR(vddio),
 		.VPB(vddio),
