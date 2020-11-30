@@ -14,7 +14,7 @@
 # limitations under the License.
 export TARGET_PATH=$(pwd)
 cd open_mpw_precheck
-docker run -it -v $(pwd):/usr/local/bin -v $TARGET_PATH:$TARGET_PATH -u $(id -u $USER):$(id -g $USER) open_mpw_prechecker:latest bash -c "python3 open_mpw_prechecker.py -t $TARGET_PATH"
+docker run -v $(pwd):/usr/local/bin -v $TARGET_PATH:$TARGET_PATH -u $(id -u $USER):$(id -g $USER) open_mpw_prechecker:latest bash -c "python3 open_mpw_prechecker.py -t $TARGET_PATH"
 output=$TARGET_PATH/checks/full_log.log
 
 cnt=$(grep -c -i "DRC violations" $output)
