@@ -26,27 +26,33 @@ set ::env(VERILOG_FILES_BLACKBOX) "\
 	$verilog_root/rtl/mgmt_protect.v \
 	$verilog_root/rtl/gpio_control_block.v \
 	$verilog_root/rtl/user_id_programming.v \
-	$verilog_root/rtl/simple_por.v"
+	$verilog_root/rtl/simple_por.v\
+	$verilog_root/rtl/sky130_fd_sc_hvl__lsbufhv2lv_1_wrapped.v \
+	"
 
 set ::env(EXTRA_LEFS) "\
 	$lef_root/chip_io.lef \
 	$lef_root/mgmt_core.lef \
 	$lef_root/storage.lef \
-	$lef_root/user_project_wrapper.lef \
+	$lef_root/user_project_wrapper.obstructed.lef \
 	$lef_root/mgmt_protect.lef \
 	$lef_root/gpio_control_block.lef \
 	$lef_root/user_id_programming.lef \
-	$lef_root/simple_por.lef"
+	$lef_root/simple_por.lef\
+	$lef_root/sky130_fd_sc_hvl__lsbufhv2lv_1_wrapped.lef\
+	"
 
 set ::env(EXTRA_GDS_FILES) "\
 	$gds_root/chip_io.gds \
 	$gds_root/mgmt_core.gds \
 	$gds_root/storage.gds \
-	$gds_root/user_project_wrapper.gds \
+	$gds_root/user_project_wrapper_empty.gds \
 	$gds_root/mgmt_protect.gds \
 	$gds_root/gpio_control_block.gds \
 	$gds_root/user_id_programming.gds \
-	$gds_root/simple_por.gds"
+	$gds_root/simple_por.gds\
+	$gds_root/sky130_fd_sc_hvl__lsbufhv2lv_1_wrapped.gds\
+	"
 
 # # !!!
 # if { [info exists ::env(LVS_RUN_DIR)] || [info exists ::env(CONNECTIVITY_RUN)] } {
@@ -73,7 +79,8 @@ set ::env(DIODE_INSERTION_STRATEGY) 0
 
 set ::env(GLB_RT_ALLOW_CONGESTION) 1
 set ::env(GLB_RT_OVERFLOW_ITERS) 50
-set ::env(GLB_RT_TILES) 15
+set ::env(GLB_RT_TILES) 30
+set ::env(GLB_RT_MAXLAYER) 5
 
 set ::env(FILL_INSERTION) 0
 
