@@ -12,7 +12,7 @@ set ::env(PDN_CFG) $script_dir/pdn.tcl
 
 set ::env(FP_VERTICAL_HALO) 6
 #set ::env(FP_PIN_ORDER_CFG) $script_dir/pin_order.cfg
-set ::env(FP_CONTEXT_DEF) $script_dir/../caravel/runs/caravel/tmp/floorplan/verilog2def_openroad.def
+set ::env(FP_CONTEXT_DEF) $script_dir/../caravel/runs/caravel/tmp/floorplan/verilog2def_openroad.def.macro_placement.def
 set ::env(FP_CONTEXT_LEF) $script_dir/../caravel/runs/caravel/tmp/merged_unpadded.lef
 set ::env(FP_SIZING) absolute
 set ::env(DIE_AREA) "0 0 2150 850"
