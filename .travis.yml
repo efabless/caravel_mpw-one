@@ -30,10 +30,9 @@ os:
 jobs:
   include:
     - name: "The Precheck Test"
-      env: TEST_SET=spm
 
 install:
   - sh .travisCI/travisBuild.sh
 
 script:
-  - bash .travisCI/runPrecheck.sh
+  - travis_wait 70 bash .travisCI/runPrecheck.sh
