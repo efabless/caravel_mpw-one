@@ -3154,7 +3154,6 @@ rlabel metal5 s 1104 2512 5980 2832 4 VGND
 port 34 nsew
 << properties >>
 string FIXED_BBOX 0 0 7109 7077
-string GDS_FILE /project/openlane/user_id_programming/runs/user_id_programming/results/magic/user_id_programming.gds
-string GDS_START 24124
-string GDS_END 90784
+string GDS_FILE ../gds/user_id_programming.gds
+string GDS_START 0
 << end >>
