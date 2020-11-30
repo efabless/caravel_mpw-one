@@ -52,6 +52,17 @@ add_macro_obs \
 	-fixed 1 \
 	-layerNames "met1 met2 met3 met4 met5"
 
+add_macro_obs \
+	-defFile $::env(CURRENT_DEF) \
+	-lefFile $::env(MERGED_LEF_UNPADDED) \
+	-obstruction gpio_m3_pins \
+	-placementX 469.965 \
+	-placementY 4972.585 \
+	-sizeWidth 1149.480 \
+	-sizeHeight 16.200 \
+	-fixed 1 \
+	-layerNames "met3"
+
 li1_hack_start
 global_routing
 detailed_routing

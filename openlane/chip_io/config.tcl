@@ -26,7 +26,7 @@ close $fd
 set ::env(MAGIC_WRITE_FULL_LEF) 1
 
 set ::env(DIODE_INSERTION_STRATEGY) 0
-set ::env(GLB_RT_TILES) 12
+set ::env(GLB_RT_TILES) 30
 set ::env(GLB_RT_UNIDIRECTIONAL) 0
 # set ::env(GLB_RT_ALLOW_CONGESTION) 1
 # set ::env(GLB_RT_OVERFLOW_ITERS) 150
