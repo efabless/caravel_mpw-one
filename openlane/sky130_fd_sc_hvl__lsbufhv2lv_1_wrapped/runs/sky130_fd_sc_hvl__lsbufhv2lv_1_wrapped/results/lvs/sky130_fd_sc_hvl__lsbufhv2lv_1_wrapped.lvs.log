@@ -1,0 +1,48 @@
+
+Cell sky130_fd_sc_hvl__lsbufhv2lv_1 disconnected node: A
+Cell sky130_fd_sc_hvl__lsbufhv2lv_1 disconnected node: LVPWR
+Cell sky130_fd_sc_hvl__lsbufhv2lv_1 disconnected node: VGND
+Cell sky130_fd_sc_hvl__lsbufhv2lv_1 disconnected node: VNB
+Cell sky130_fd_sc_hvl__lsbufhv2lv_1 disconnected node: VPB
+Cell sky130_fd_sc_hvl__lsbufhv2lv_1 disconnected node: VPWR
+Cell sky130_fd_sc_hvl__lsbufhv2lv_1 disconnected node: X
+Warning: Equate pins:  cell sky130_fd_sc_hvl__lsbufhv2lv_1 has no definition, treated as a black box.
+
+Subcircuit pins:
+Circuit 1: sky130_fd_sc_hvl__lsbufhv2lv_1  |Circuit 2: sky130_fd_sc_hvl__lsbufhv2lv_1  
+-------------------------------------------|-------------------------------------------
+A                                          |A                                          
+LVPWR                                      |LVPWR                                      
+VGND                                       |VGND                                       
+VNB                                        |VNB                                        
+VPB                                        |VPB                                        
+VPWR                                       |VPWR                                       
+X                                          |X                                          
+---------------------------------------------------------------------------------------
+Cell pin lists are equivalent.
+Device classes sky130_fd_sc_hvl__lsbufhv2lv_1 and sky130_fd_sc_hvl__lsbufhv2lv_1 are equivalent.
+
+Subcircuit summary:
+Circuit 1: sky130_fd_sc_hvl__lsbufhv2lv_1_ |Circuit 2: sky130_fd_sc_hvl__lsbufhv2lv_1_ 
+-------------------------------------------|-------------------------------------------
+sky130_fd_sc_hvl__lsbufhv2lv_1 (1)         |sky130_fd_sc_hvl__lsbufhv2lv_1 (1)         
+Number of devices: 1                       |Number of devices: 1                       
+Number of nets: 6 **Mismatch**             |Number of nets: 4 **Mismatch**             
+---------------------------------------------------------------------------------------
+NET mismatches: Class fragments follow (with fanout counts):
+Circuit 1: sky130_fd_sc_hvl__lsbufhv2lv_1_ |Circuit 2: sky130_fd_sc_hvl__lsbufhv2lv_1_ 
+
+---------------------------------------------------------------------------------------
+Net: FILLER_1_8/VPB                        |Net: VPWR                                  
+  sky130_fd_sc_hvl__lsbufhv2lv_1/VPB = 1   |  sky130_fd_sc_hvl__lsbufhv2lv_1/LVPWR = 1 
+                                           |  sky130_fd_sc_hvl__lsbufhv2lv_1/VPB = 1   
+                                           |  sky130_fd_sc_hvl__lsbufhv2lv_1/VPWR = 1  
+                                           |                                           
+Net: lvlshiftdown/LVPWR                    |(no matching net)                          
+  sky130_fd_sc_hvl__lsbufhv2lv_1/LVPWR = 1 |                                           
+                                           |                                           
+Net: lvlshiftdown/VPWR                     |(no matching net)                          
+  sky130_fd_sc_hvl__lsbufhv2lv_1/VPWR = 1  |                                           
+---------------------------------------------------------------------------------------
+Netlists do not match.
+Netlists do not match.

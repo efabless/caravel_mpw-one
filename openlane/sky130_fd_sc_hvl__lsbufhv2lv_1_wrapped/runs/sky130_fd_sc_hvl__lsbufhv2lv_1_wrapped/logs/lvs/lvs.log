@@ -1,0 +1,38 @@
+Netgen 1.5.157 compiled on Fri Oct  9 13:50:13 UTC 2020
+Warning: netgen command 'format' use fully-qualified name '::netgen::format'
+Warning: netgen command 'global' use fully-qualified name '::netgen::global'
+Generating JSON file result
+Reading netlist file /project/openlane/sky130_fd_sc_hvl__lsbufhv2lv_1_wrapped/runs/sky130_fd_sc_hvl__lsbufhv2lv_1_wrapped/results/magic/sky130_fd_sc_hvl__lsbufhv2lv_1_wrapped.spice
+Reading netlist file /project/openlane/sky130_fd_sc_hvl__lsbufhv2lv_1_wrapped/runs/sky130_fd_sc_hvl__lsbufhv2lv_1_wrapped/results/lvs/sky130_fd_sc_hvl__lsbufhv2lv_1_wrapped.lvs.powered.v
+Warning:  A case-insensitive file has been read and so the	verilog file must be treated case-insensitive to match.
+Creating placeholder cell definition for module sky130_fd_sc_hvl__decap_8.
+Creating placeholder cell definition for module sky130_fd_sc_hvl__decap_4.
+Creating placeholder cell definition for module sky130_fd_sc_hvl__fill_2.
+Creating placeholder cell definition for module sky130_fd_sc_hvl__fill_1.
+Creating placeholder cell definition for module sky130_fd_sc_hvl__lsbufhv2lv_1.
+Reading setup file /home/xrex/usr/devel/pdks/sky130A/libs.tech/netgen/sky130A_setup.tcl
+Comparison output logged to file /project/openlane/sky130_fd_sc_hvl__lsbufhv2lv_1_wrapped/runs/sky130_fd_sc_hvl__lsbufhv2lv_1_wrapped/results/lvs/sky130_fd_sc_hvl__lsbufhv2lv_1_wrapped.lvs.log
+Logging to file "/project/openlane/sky130_fd_sc_hvl__lsbufhv2lv_1_wrapped/runs/sky130_fd_sc_hvl__lsbufhv2lv_1_wrapped/results/lvs/sky130_fd_sc_hvl__lsbufhv2lv_1_wrapped.lvs.log" enabled
+Contents of circuit 1:  Circuit: 'sky130_fd_sc_hvl__lsbufhv2lv_1'
+Circuit sky130_fd_sc_hvl__lsbufhv2lv_1 contains 0 device instances.
+Circuit contains 0 nets, and 7 disconnected pins.
+Contents of circuit 2:  Circuit: 'sky130_fd_sc_hvl__lsbufhv2lv_1'
+Circuit sky130_fd_sc_hvl__lsbufhv2lv_1 contains 0 device instances.
+Circuit contains 0 nets.
+
+Circuit sky130_fd_sc_hvl__lsbufhv2lv_1 contains no devices.
+Contents of circuit 1:  Circuit: 'sky130_fd_sc_hvl__lsbufhv2lv_1_wrapped'
+Circuit sky130_fd_sc_hvl__lsbufhv2lv_1_wrapped contains 1 device instances.
+  Class: sky130_fd_sc_hvl__lsbufhv2lv_1 instances:   1
+Circuit contains 13 nets.
+Contents of circuit 2:  Circuit: 'sky130_fd_sc_hvl__lsbufhv2lv_1_wrapped'
+Circuit sky130_fd_sc_hvl__lsbufhv2lv_1_wrapped contains 1 device instances.
+  Class: sky130_fd_sc_hvl__lsbufhv2lv_1 instances:   1
+Circuit contains 4 nets.
+
+Circuit 1 contains 1 devices, Circuit 2 contains 1 devices.
+Circuit 1 contains 6 nets,    Circuit 2 contains 4 nets. *** MISMATCH ***
+
+Result: Netlists do not match.
+Logging to file "/project/openlane/sky130_fd_sc_hvl__lsbufhv2lv_1_wrapped/runs/sky130_fd_sc_hvl__lsbufhv2lv_1_wrapped/results/lvs/sky130_fd_sc_hvl__lsbufhv2lv_1_wrapped.lvs.log" disabled
+LVS Done.

@@ -1,0 +1,60 @@
+VERSION 5.7 ;
+  NOWIREEXTENSIONATPIN ON ;
+  DIVIDERCHAR "/" ;
+  BUSBITCHARS "[]" ;
+MACRO sky130_fd_sc_hvl__lsbufhv2lv_1_wrapped
+  CLASS BLOCK ;
+  FOREIGN sky130_fd_sc_hvl__lsbufhv2lv_1_wrapped ;
+  ORIGIN 0.000 -0.005 ;
+  SIZE 25.620 BY 25.415 ;
+  PIN A
+    DIRECTION INPUT ;
+    PORT
+      LAYER met2 ;
+        RECT 21.550 21.420 21.830 25.420 ;
+    END
+  END A
+  PIN X
+    DIRECTION OUTPUT TRISTATE ;
+    PORT
+      LAYER met2 ;
+        RECT 3.310 0.420 3.590 4.420 ;
+    END
+  END X
+  PIN VPWR
+    DIRECTION INPUT ;
+    USE POWER ;
+    PORT
+      LAYER met1 ;
+        RECT 0.330 16.445 25.290 16.955 ;
+    END
+  END VPWR
+  PIN VGND
+    DIRECTION INPUT ;
+    USE GROUND ;
+    PORT
+      LAYER met1 ;
+        RECT 0.330 24.585 25.290 25.095 ;
+    END
+  END VGND
+  OBS
+      LAYER li1 ;
+        RECT 0.330 0.335 25.290 20.855 ;
+      LAYER met1 ;
+        RECT 0.330 17.235 25.290 20.885 ;
+        RECT 0.330 0.165 25.290 16.165 ;
+      LAYER met2 ;
+        RECT 3.320 21.140 21.270 25.095 ;
+        RECT 22.110 21.140 22.300 25.095 ;
+        RECT 3.320 4.700 22.300 21.140 ;
+        RECT 3.870 0.165 22.300 4.700 ;
+      LAYER met3 ;
+        RECT 3.695 0.255 21.960 25.005 ;
+      LAYER met4 ;
+        RECT 3.695 0.165 21.960 25.095 ;
+      LAYER met5 ;
+        RECT 0.330 3.530 25.290 21.795 ;
+  END
+END sky130_fd_sc_hvl__lsbufhv2lv_1_wrapped
+END LIBRARY
+

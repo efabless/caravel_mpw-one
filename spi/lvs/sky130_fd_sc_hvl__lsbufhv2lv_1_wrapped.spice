@@ -1,0 +1,47 @@
+* NGSPICE file created from sky130_fd_sc_hvl__lsbufhv2lv_1_wrapped.ext - technology: sky130A
+
+* Black-box entry subcircuit for sky130_fd_sc_hvl__decap_8 abstract view
+.subckt sky130_fd_sc_hvl__decap_8 VGND VNB VPB VPWR
+.ends
+
+* Black-box entry subcircuit for sky130_fd_sc_hvl__decap_4 abstract view
+.subckt sky130_fd_sc_hvl__decap_4 VGND VNB VPB VPWR
+.ends
+
+* Black-box entry subcircuit for sky130_fd_sc_hvl__fill_1 abstract view
+.subckt sky130_fd_sc_hvl__fill_1 VGND VNB VPB VPWR
+.ends
+
+* Black-box entry subcircuit for sky130_fd_sc_hvl__fill_2 abstract view
+.subckt sky130_fd_sc_hvl__fill_2 VGND VNB VPB VPWR
+.ends
+
+* Black-box entry subcircuit for sky130_fd_sc_hvl__lsbufhv2lv_1 abstract view
+.subckt sky130_fd_sc_hvl__lsbufhv2lv_1 A LVPWR VGND VNB VPB VPWR X
+.ends
+
+.subckt sky130_fd_sc_hvl__lsbufhv2lv_1_wrapped A X VPWR VGND
+XFILLER_0_24 FILLER_0_0/VGND FILLER_0_0/VNB VPWR VPWR sky130_fd_sc_hvl__decap_8
+XFILLER_0_48 FILLER_0_0/VGND FILLER_0_0/VNB VPWR VPWR sky130_fd_sc_hvl__decap_4
+XFILLER_1_0 VGND VGND FILLER_1_8/VPB FILLER_1_0/VPWR sky130_fd_sc_hvl__decap_8
+XFILLER_0_16 FILLER_0_0/VGND FILLER_0_0/VNB VPWR VPWR sky130_fd_sc_hvl__decap_8
+XFILLER_1_51 VGND VGND FILLER_1_8/VPB FILLER_1_51/VPWR sky130_fd_sc_hvl__fill_1
+XFILLER_1_31 VGND VGND FILLER_1_8/VPB FILLER_1_51/VPWR sky130_fd_sc_hvl__decap_8
+XFILLER_1_8 VGND VGND FILLER_1_8/VPB FILLER_1_0/VPWR sky130_fd_sc_hvl__decap_4
+XFILLER_1_12 VGND VGND FILLER_1_8/VPB FILLER_1_0/VPWR sky130_fd_sc_hvl__fill_2
+XFILLER_1_47 VGND VGND FILLER_1_8/VPB FILLER_1_51/VPWR sky130_fd_sc_hvl__decap_4
+XFILLER_1_39 VGND VGND FILLER_1_8/VPB FILLER_1_51/VPWR sky130_fd_sc_hvl__decap_8
+XFILLER_2_40 FILLER_2_0/VGND FILLER_2_0/VNB VPWR VPWR sky130_fd_sc_hvl__decap_8
+XFILLER_2_0 FILLER_2_0/VGND FILLER_2_0/VNB VPWR VPWR sky130_fd_sc_hvl__decap_8
+XFILLER_2_32 FILLER_2_0/VGND FILLER_2_0/VNB VPWR VPWR sky130_fd_sc_hvl__decap_8
+XFILLER_0_0 FILLER_0_0/VGND FILLER_0_0/VNB VPWR VPWR sky130_fd_sc_hvl__decap_8
+XFILLER_2_24 FILLER_2_0/VGND FILLER_2_0/VNB VPWR VPWR sky130_fd_sc_hvl__decap_8
+XFILLER_2_48 FILLER_2_0/VGND FILLER_2_0/VNB VPWR VPWR sky130_fd_sc_hvl__decap_4
+XFILLER_2_16 FILLER_2_0/VGND FILLER_2_0/VNB VPWR VPWR sky130_fd_sc_hvl__decap_8
+XFILLER_2_8 FILLER_2_0/VGND FILLER_2_0/VNB VPWR VPWR sky130_fd_sc_hvl__decap_8
+XFILLER_0_8 FILLER_0_0/VGND FILLER_0_0/VNB VPWR VPWR sky130_fd_sc_hvl__decap_8
+Xlvlshiftdown A lvlshiftdown/LVPWR VPWR VPWR FILLER_1_8/VPB lvlshiftdown/VPWR X sky130_fd_sc_hvl__lsbufhv2lv_1
+XFILLER_0_40 FILLER_0_0/VGND FILLER_0_0/VNB VPWR VPWR sky130_fd_sc_hvl__decap_8
+XFILLER_0_32 FILLER_0_0/VGND FILLER_0_0/VNB VPWR VPWR sky130_fd_sc_hvl__decap_8
+.ends
+

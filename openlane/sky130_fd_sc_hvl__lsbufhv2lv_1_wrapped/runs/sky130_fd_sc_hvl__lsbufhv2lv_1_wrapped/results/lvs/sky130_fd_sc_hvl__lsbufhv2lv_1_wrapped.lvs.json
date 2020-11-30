@@ -1,0 +1,87 @@
+[
+  {
+   "pins": [
+      [
+        "A",
+        "LVPWR",
+        "VGND",
+        "VNB",
+        "VPB",
+        "VPWR",
+        "X"
+      ], [
+        "A",
+        "LVPWR",
+        "VGND",
+        "VNB",
+        "VPB",
+        "VPWR",
+        "X"
+      ]
+   ]
+  },
+  {
+   "name": [
+      "sky130_fd_sc_hvl__lsbufhv2lv_1_wrapped",
+      "sky130_fd_sc_hvl__lsbufhv2lv_1_wrapped"
+   ],
+   "devices": [
+       [
+         ["sky130_fd_sc_hvl__lsbufhv2lv_1", 1 ]
+       ], [
+         ["sky130_fd_sc_hvl__lsbufhv2lv_1", 1 ]
+       ]
+   ],
+   "nets": [
+    6,
+    4
+   ],
+   "badnets": [
+      [
+        [
+          [
+            "FILLER_1_8/VPB",
+            [
+              [ "sky130_fd_sc_hvl__lsbufhv2lv_1", "VPB", 1 ]
+            ]
+          ],
+          [
+            "lvlshiftdown/LVPWR",
+            [
+              [ "sky130_fd_sc_hvl__lsbufhv2lv_1", "LVPWR", 1 ]
+            ]
+          ],
+          [
+            "lvlshiftdown/VPWR",
+            [
+              [ "sky130_fd_sc_hvl__lsbufhv2lv_1", "VPWR", 1 ]
+            ]
+          ]
+        ], [
+          [
+            "VPWR",
+            [
+              [ "sky130_fd_sc_hvl__lsbufhv2lv_1", "LVPWR", 1 ],
+              [ "sky130_fd_sc_hvl__lsbufhv2lv_1", "VPB", 1 ],
+              [ "sky130_fd_sc_hvl__lsbufhv2lv_1", "VPWR", 1 ]
+            ]
+          ],
+          [
+            "(no matching net)",
+            [
+              [ "", "", 0 ]
+            ]
+          ],
+          [
+            "(no matching net)",
+            [
+              [ "", "", 0 ]
+            ]
+          ]
+        ]
+      ]
+   ],
+   "badelements": [
+   ]
+  }
+]

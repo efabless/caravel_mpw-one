@@ -1,0 +1,36 @@
+
+Magic 8.3 revision 87 - Compiled on Mon Nov 23 17:53:03 UTC 2020.
+Starting magic under Tcl interpreter
+Using the terminal as the console.
+Using NULL graphics device.
+Processing system .magicrc file
+Sourcing design .magicrc for technology sky130A ...
+2 Magic internal units = 1 Lambda
+Input style sky130: scaleFactor=2, multiplier=2
+Scaled tech values by 2 / 1 to match internal grid scaling
+Loading sky130A Device Generator Menu ...
+Loading "/openLANE_flow/scripts/magic_drc.tcl" from command line.
+Warning: Calma reading is not undoable!  I hope that's OK.
+Library written using GDS-II Release 3.0
+Library name: sky130_fd_sc_hvl__lsbufhv2lv_1_wrapped
+Reading "sky130_fd_sc_hvl__decap_8".
+CIF file read warning: CIF style sky130: units rescaled by factor of 5 / 1
+Error while reading cell "sky130_fd_sc_hvl__decap_8" (byte position 6932): Unknown layer/datatype in boundary, layer=236 type=0
+Reading "sky130_fd_sc_hvl__decap_4".
+Error while reading cell "sky130_fd_sc_hvl__decap_4" (byte position 9116): Unknown layer/datatype in boundary, layer=236 type=0
+Reading "sky130_fd_sc_hvl__fill_2".
+Error while reading cell "sky130_fd_sc_hvl__fill_2" (byte position 13344): Unknown layer/datatype in boundary, layer=236 type=0
+Reading "sky130_fd_sc_hvl__lsbufhv2lv_1".
+Error while reading cell "sky130_fd_sc_hvl__lsbufhv2lv_1" (byte position 29090): Unknown layer/datatype in boundary, layer=236 type=0
+Reading "sky130_fd_sc_hvl__fill_1".
+Error while reading cell "sky130_fd_sc_hvl__fill_1" (byte position 34916): Unknown layer/datatype in boundary, layer=236 type=0
+Reading "sky130_fd_sc_hvl__lsbufhv2lv_1_wrapped".
+[INFO]: Loading sky130_fd_sc_hvl__lsbufhv2lv_1_wrapped
+
+DRC style is now "drc(full)"
+Loading DRC CIF style.
+[INFO]: COUNT: 38
+[INFO]: Should be divided by 3 or 4
+[INFO]: DRC Checking DONE (/project/openlane/sky130_fd_sc_hvl__lsbufhv2lv_1_wrapped/runs/sky130_fd_sc_hvl__lsbufhv2lv_1_wrapped/logs/magic/magic.drc)
+[INFO]: Saving mag view with DRC errors(/project/openlane/sky130_fd_sc_hvl__lsbufhv2lv_1_wrapped/runs/sky130_fd_sc_hvl__lsbufhv2lv_1_wrapped/results/magic/sky130_fd_sc_hvl__lsbufhv2lv_1_wrapped.drc.mag)
+[INFO]: Saved

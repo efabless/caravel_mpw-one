@@ -1,0 +1,10 @@
+digraph "sky130_fd_sc_hvl__lsbufhv2lv_1_wrapped" {
+label="sky130_fd_sc_hvl__lsbufhv2lv_1_wrapped";
+rankdir="LR";
+remincross=true;
+n1 [ shape=octagon, label="A", color="black", fontcolor="black" ];
+n2 [ shape=octagon, label="X", color="black", fontcolor="black" ];
+c3 [ shape=record, label="{{<p1> A}|lvlshiftdown\nsky130_fd_sc_hvl__lsbufhv2lv_1|{<p2> X}}" ];
+n1:e -> c3:p1:w [color="black", label=""];
+c3:p2:e -> n2:w [color="black", label=""];
+}

@@ -1,0 +1,76 @@
+Fri Nov 27 17:21:58 UTC 2020 - Executing "/openLANE_flow/scripts/mergeLef.py -i /home/xrex/usr/devel/pdks/sky130A/libs.ref/sky130_fd_sc_hvl/techlef/sky130_fd_sc_hvl.tlef /home/xrex/usr/devel/pdks/sky130A/libs.ref/sky130_fd_sc_hvl/lef/sky130_fd_sc_hvl.lef -o /project/openlane/sky130_fd_sc_hvl__lsbufhv2lv_1_wrapped/runs/sky130_fd_sc_hvl__lsbufhv2lv_1_wrapped/tmp/merged_unpadded.lef |& tee >&@stdout"
+
+Fri Nov 27 17:21:58 UTC 2020 - Executing "/openLANE_flow/scripts/libtrim.pl { /home/xrex/usr/devel/pdks/sky130A/libs.ref/sky130_fd_sc_hvl/lib/sky130_fd_sc_hvl__tt_025C_3v30.lib  /home/xrex/usr/devel/pdks/sky130A/libs.ref/sky130_fd_sc_hvl/lib/sky130_fd_sc_hvl__tt_025C_3v30_lv1v80.lib } /home/xrex/usr/devel/pdks/sky130A/libs.tech/openlane/sky130_fd_sc_hvl/no_synth.cells > /project/openlane/sky130_fd_sc_hvl__lsbufhv2lv_1_wrapped/runs/sky130_fd_sc_hvl__lsbufhv2lv_1_wrapped/tmp/trimmed.lib"
+
+Fri Nov 27 17:21:58 UTC 2020 - Executing "yosys -c /openLANE_flow/scripts/synth.tcl -l /project/openlane/sky130_fd_sc_hvl__lsbufhv2lv_1_wrapped/runs/sky130_fd_sc_hvl__lsbufhv2lv_1_wrapped/logs/synthesis/yosys.log |& tee >&@stdout"
+
+Fri Nov 27 17:21:58 UTC 2020 - Executing "sed -i -e {s/\(set ::env(CURRENT_NETLIST)\).*/\1 \/project\/openlane\/sky130_fd_sc_hvl__lsbufhv2lv_1_wrapped\/runs\/sky130_fd_sc_hvl__lsbufhv2lv_1_wrapped\/results\/synthesis\/sky130_fd_sc_hvl__lsbufhv2lv_1_wrapped.synthesis.v/} /project/openlane/sky130_fd_sc_hvl__lsbufhv2lv_1_wrapped/runs/sky130_fd_sc_hvl__lsbufhv2lv_1_wrapped/config.tcl"
+
+Fri Nov 27 17:21:58 UTC 2020 - Executing "sed -i -e {s/\(set ::env(PREV_NETLIST)\).*/\1 0/} /project/openlane/sky130_fd_sc_hvl__lsbufhv2lv_1_wrapped/runs/sky130_fd_sc_hvl__lsbufhv2lv_1_wrapped/config.tcl"
+
+Fri Nov 27 17:21:58 UTC 2020 - Executing "openroad -exit /openLANE_flow/scripts/openroad/or_floorplan.tcl |& tee >&@stdout /project/openlane/sky130_fd_sc_hvl__lsbufhv2lv_1_wrapped/runs/sky130_fd_sc_hvl__lsbufhv2lv_1_wrapped/logs/floorplan/verilog2def.openroad.log"
+
+Fri Nov 27 17:21:59 UTC 2020 - Executing "openroad -exit /openLANE_flow/scripts/openroad/or_ioplacer.tcl |& tee >&@stdout /project/openlane/sky130_fd_sc_hvl__lsbufhv2lv_1_wrapped/runs/sky130_fd_sc_hvl__lsbufhv2lv_1_wrapped/logs/floorplan/ioPlacer.log"
+
+Fri Nov 27 17:21:59 UTC 2020 - Executing "python3 /openLANE_flow/scripts/random_place.py --lef /project/openlane/sky130_fd_sc_hvl__lsbufhv2lv_1_wrapped/runs/sky130_fd_sc_hvl__lsbufhv2lv_1_wrapped/tmp/merged_unpadded.lef --input-def /project/openlane/sky130_fd_sc_hvl__lsbufhv2lv_1_wrapped/runs/sky130_fd_sc_hvl__lsbufhv2lv_1_wrapped/tmp/floorplan/ioPlacer.def --output-def /project/openlane/sky130_fd_sc_hvl__lsbufhv2lv_1_wrapped/runs/sky130_fd_sc_hvl__lsbufhv2lv_1_wrapped/tmp/placement/replace.def |& tee >&@stdout /project/openlane/sky130_fd_sc_hvl__lsbufhv2lv_1_wrapped/runs/sky130_fd_sc_hvl__lsbufhv2lv_1_wrapped/logs/placement/replace.log"
+
+Fri Nov 27 17:21:59 UTC 2020 - Executing "/openLANE_flow/scripts/libtrim.pl /home/xrex/usr/devel/pdks/sky130A/libs.ref/sky130_fd_sc_hvl/lib/sky130_fd_sc_hvl__ss_150C_1v65.lib /home/xrex/usr/devel/pdks/sky130A/libs.tech/openlane/sky130_fd_sc_hvl/no_synth.cells > /project/openlane/sky130_fd_sc_hvl__lsbufhv2lv_1_wrapped/runs/sky130_fd_sc_hvl__lsbufhv2lv_1_wrapped/tmp/opt.lib"
+
+Fri Nov 27 17:21:59 UTC 2020 - Executing "Psn /openLANE_flow/scripts/openPhySyn.tcl |& tee >&@stdout /project/openlane/sky130_fd_sc_hvl__lsbufhv2lv_1_wrapped/runs/sky130_fd_sc_hvl__lsbufhv2lv_1_wrapped/logs/placement/openphysyn.log"
+
+Fri Nov 27 17:22:00 UTC 2020 - Executing "openroad -exit /openLANE_flow/scripts/openroad/or_write_verilog.tcl |& tee >&@stdout /project/openlane/sky130_fd_sc_hvl__lsbufhv2lv_1_wrapped/runs/sky130_fd_sc_hvl__lsbufhv2lv_1_wrapped/logs/write_verilog.log"
+
+Fri Nov 27 17:22:00 UTC 2020 - Executing "sed -i -e {s/\(set ::env(CURRENT_NETLIST)\).*/\1 \/project\/openlane\/sky130_fd_sc_hvl__lsbufhv2lv_1_wrapped\/runs\/sky130_fd_sc_hvl__lsbufhv2lv_1_wrapped\/results\/synthesis\/sky130_fd_sc_hvl__lsbufhv2lv_1_wrapped.synthesis_optimized.v/} /project/openlane/sky130_fd_sc_hvl__lsbufhv2lv_1_wrapped/runs/sky130_fd_sc_hvl__lsbufhv2lv_1_wrapped/config.tcl"
+
+Fri Nov 27 17:22:00 UTC 2020 - Executing "sed -i -e {s/\(set ::env(PREV_NETLIST)\).*/\1 \/project\/openlane\/sky130_fd_sc_hvl__lsbufhv2lv_1_wrapped\/runs\/sky130_fd_sc_hvl__lsbufhv2lv_1_wrapped\/results\/synthesis\/sky130_fd_sc_hvl__lsbufhv2lv_1_wrapped.synthesis.v/} /project/openlane/sky130_fd_sc_hvl__lsbufhv2lv_1_wrapped/runs/sky130_fd_sc_hvl__lsbufhv2lv_1_wrapped/config.tcl"
+
+Fri Nov 27 17:22:00 UTC 2020 - Executing "openroad -exit /openLANE_flow/scripts/openroad/or_opendp.tcl |& tee >&@stdout /project/openlane/sky130_fd_sc_hvl__lsbufhv2lv_1_wrapped/runs/sky130_fd_sc_hvl__lsbufhv2lv_1_wrapped/logs/placement/opendp.log"
+
+Fri Nov 27 17:22:01 UTC 2020 - Executing "openroad -exit /openLANE_flow/scripts/new_pdn.tcl |& tee >&@stdout /project/openlane/sky130_fd_sc_hvl__lsbufhv2lv_1_wrapped/runs/sky130_fd_sc_hvl__lsbufhv2lv_1_wrapped/logs/floorplan/pdn.log"
+
+Fri Nov 27 17:22:01 UTC 2020 - Executing "openroad -exit /openLANE_flow/scripts/openroad/or_route.tcl |& tee >&@stdout /project/openlane/sky130_fd_sc_hvl__lsbufhv2lv_1_wrapped/runs/sky130_fd_sc_hvl__lsbufhv2lv_1_wrapped/logs/routing/fastroute.log"
+
+Fri Nov 27 17:22:02 UTC 2020 - Executing "openroad -exit /openLANE_flow/scripts/openroad/or_route.tcl |& tee >&@stdout /project/openlane/sky130_fd_sc_hvl__lsbufhv2lv_1_wrapped/runs/sky130_fd_sc_hvl__lsbufhv2lv_1_wrapped/logs/routing/fastroute_post_antenna.log"
+
+Fri Nov 27 17:22:02 UTC 2020 - Executing "openroad -exit /openLANE_flow/scripts/openroad/or_fill.tcl |& tee >&@stdout /project/openlane/sky130_fd_sc_hvl__lsbufhv2lv_1_wrapped/runs/sky130_fd_sc_hvl__lsbufhv2lv_1_wrapped/logs/routing/addspacers.log"
+
+Fri Nov 27 17:22:03 UTC 2020 - Executing "openroad -exit /openLANE_flow/scripts/openroad/or_write_verilog.tcl |& tee >&@stdout /project/openlane/sky130_fd_sc_hvl__lsbufhv2lv_1_wrapped/runs/sky130_fd_sc_hvl__lsbufhv2lv_1_wrapped/logs/write_verilog.log"
+
+Fri Nov 27 17:22:03 UTC 2020 - Executing "sed -i -e {s/\(set ::env(CURRENT_NETLIST)\).*/\1 \/project\/openlane\/sky130_fd_sc_hvl__lsbufhv2lv_1_wrapped\/runs\/sky130_fd_sc_hvl__lsbufhv2lv_1_wrapped\/results\/synthesis\/sky130_fd_sc_hvl__lsbufhv2lv_1_wrapped.synthesis_preroute.v/} /project/openlane/sky130_fd_sc_hvl__lsbufhv2lv_1_wrapped/runs/sky130_fd_sc_hvl__lsbufhv2lv_1_wrapped/config.tcl"
+
+Fri Nov 27 17:22:03 UTC 2020 - Executing "sed -i -e {s/\(set ::env(PREV_NETLIST)\).*/\1 \/project\/openlane\/sky130_fd_sc_hvl__lsbufhv2lv_1_wrapped\/runs\/sky130_fd_sc_hvl__lsbufhv2lv_1_wrapped\/results\/synthesis\/sky130_fd_sc_hvl__lsbufhv2lv_1_wrapped.synthesis_optimized.v/} /project/openlane/sky130_fd_sc_hvl__lsbufhv2lv_1_wrapped/runs/sky130_fd_sc_hvl__lsbufhv2lv_1_wrapped/config.tcl"
+
+Fri Nov 27 17:22:03 UTC 2020 - Executing "envsubst < /openLANE_flow/scripts/tritonRoute.param > /project/openlane/sky130_fd_sc_hvl__lsbufhv2lv_1_wrapped/runs/sky130_fd_sc_hvl__lsbufhv2lv_1_wrapped/tmp/routing/tritonRoute.param"
+
+Fri Nov 27 17:22:03 UTC 2020 - Executing "TritonRoute /project/openlane/sky130_fd_sc_hvl__lsbufhv2lv_1_wrapped/runs/sky130_fd_sc_hvl__lsbufhv2lv_1_wrapped/tmp/routing/tritonRoute.param |& tee >&@stdout /project/openlane/sky130_fd_sc_hvl__lsbufhv2lv_1_wrapped/runs/sky130_fd_sc_hvl__lsbufhv2lv_1_wrapped/logs/routing/tritonRoute.log"
+
+Fri Nov 27 17:22:04 UTC 2020 - Executing "python3 /openLANE_flow/scripts/tr2klayout.py -i /project/openlane/sky130_fd_sc_hvl__lsbufhv2lv_1_wrapped/runs/sky130_fd_sc_hvl__lsbufhv2lv_1_wrapped/reports/routing/tritonRoute.drc -o /project/openlane/sky130_fd_sc_hvl__lsbufhv2lv_1_wrapped/runs/sky130_fd_sc_hvl__lsbufhv2lv_1_wrapped/reports/routing/tritonRoute.klayout.xml --design-name sky130_fd_sc_hvl__lsbufhv2lv_1_wrapped"
+
+Fri Nov 27 17:22:05 UTC 2020 - Executing "python3 /openLANE_flow/scripts/spef_extractor/main.py -l /project/openlane/sky130_fd_sc_hvl__lsbufhv2lv_1_wrapped/runs/sky130_fd_sc_hvl__lsbufhv2lv_1_wrapped/tmp/merged_unpadded.lef -d /project/openlane/sky130_fd_sc_hvl__lsbufhv2lv_1_wrapped/runs/sky130_fd_sc_hvl__lsbufhv2lv_1_wrapped/results/routing/sky130_fd_sc_hvl__lsbufhv2lv_1_wrapped.def -mw PI -ec 1 |& tee >&@stdout /project/openlane/sky130_fd_sc_hvl__lsbufhv2lv_1_wrapped/runs/sky130_fd_sc_hvl__lsbufhv2lv_1_wrapped/logs/routing/spef_extraction.log"
+
+Fri Nov 27 17:22:05 UTC 2020 - Executing "python3 /openLANE_flow/scripts/write_powered_def.py -d /project/openlane/sky130_fd_sc_hvl__lsbufhv2lv_1_wrapped/runs/sky130_fd_sc_hvl__lsbufhv2lv_1_wrapped/results/routing/sky130_fd_sc_hvl__lsbufhv2lv_1_wrapped.def -l /project/openlane/sky130_fd_sc_hvl__lsbufhv2lv_1_wrapped/runs/sky130_fd_sc_hvl__lsbufhv2lv_1_wrapped/tmp/merged.lef -v VPWR -g VGND -o /project/openlane/sky130_fd_sc_hvl__lsbufhv2lv_1_wrapped/runs/sky130_fd_sc_hvl__lsbufhv2lv_1_wrapped/tmp/routing/sky130_fd_sc_hvl__lsbufhv2lv_1_wrapped.powered.def |& tee >&@stdout /project/openlane/sky130_fd_sc_hvl__lsbufhv2lv_1_wrapped/runs/sky130_fd_sc_hvl__lsbufhv2lv_1_wrapped/logs/lvs/write_powered_verilog.log"
+
+Fri Nov 27 17:22:05 UTC 2020 - Executing "openroad -exit /openLANE_flow/scripts/openroad/or_write_verilog.tcl |& tee >&@stdout /project/openlane/sky130_fd_sc_hvl__lsbufhv2lv_1_wrapped/runs/sky130_fd_sc_hvl__lsbufhv2lv_1_wrapped/logs/write_verilog.log"
+
+Fri Nov 27 17:22:05 UTC 2020 - Executing "yosys -c /openLANE_flow/scripts/yosys_rewrite_verilog.tcl -l /project/openlane/sky130_fd_sc_hvl__lsbufhv2lv_1_wrapped/runs/sky130_fd_sc_hvl__lsbufhv2lv_1_wrapped/logs/synthesis/yosys_rewrite_verilog.log"
+
+Fri Nov 27 17:22:05 UTC 2020 - Executing "sed -i -e {s/\(set ::env(CURRENT_NETLIST)\).*/\1 \/project\/openlane\/sky130_fd_sc_hvl__lsbufhv2lv_1_wrapped\/runs\/sky130_fd_sc_hvl__lsbufhv2lv_1_wrapped\/results\/lvs\/sky130_fd_sc_hvl__lsbufhv2lv_1_wrapped.lvs.powered.v/} /project/openlane/sky130_fd_sc_hvl__lsbufhv2lv_1_wrapped/runs/sky130_fd_sc_hvl__lsbufhv2lv_1_wrapped/config.tcl"
+
+Fri Nov 27 17:22:05 UTC 2020 - Executing "sed -i -e {s/\(set ::env(PREV_NETLIST)\).*/\1 \/project\/openlane\/sky130_fd_sc_hvl__lsbufhv2lv_1_wrapped\/runs\/sky130_fd_sc_hvl__lsbufhv2lv_1_wrapped\/results\/synthesis\/sky130_fd_sc_hvl__lsbufhv2lv_1_wrapped.synthesis_preroute.v/} /project/openlane/sky130_fd_sc_hvl__lsbufhv2lv_1_wrapped/runs/sky130_fd_sc_hvl__lsbufhv2lv_1_wrapped/config.tcl"
+
+Fri Nov 27 17:22:05 UTC 2020 - Executing "magic -noconsole -dnull -rcfile /home/xrex/usr/devel/pdks/sky130A/libs.tech/magic/sky130A.magicrc /openLANE_flow/scripts/magic.tcl </dev/null |& tee >&@stdout /project/openlane/sky130_fd_sc_hvl__lsbufhv2lv_1_wrapped/runs/sky130_fd_sc_hvl__lsbufhv2lv_1_wrapped/logs/magic/magic.log"
+
+Fri Nov 27 17:22:06 UTC 2020 - Executing "magic -noconsole -dnull -rcfile /home/xrex/usr/devel/pdks/sky130A/libs.tech/magic/sky130A.magicrc /openLANE_flow/scripts/magic_mag.tcl </dev/null |& tee >&@stdout /project/openlane/sky130_fd_sc_hvl__lsbufhv2lv_1_wrapped/runs/sky130_fd_sc_hvl__lsbufhv2lv_1_wrapped/logs/magic/magic.log"
+
+Fri Nov 27 17:22:06 UTC 2020 - Executing "magic -noconsole -dnull -rcfile /home/xrex/usr/devel/pdks/sky130A/libs.tech/magic/sky130A.magicrc /openLANE_flow/scripts/magic_maglef.tcl </dev/null |& tee >&@stdout /project/openlane/sky130_fd_sc_hvl__lsbufhv2lv_1_wrapped/runs/sky130_fd_sc_hvl__lsbufhv2lv_1_wrapped/logs/magic/magic.maglef.log"
+
+Fri Nov 27 17:22:06 UTC 2020 - Executing "magic -noconsole -dnull -rcfile /home/xrex/usr/devel/pdks/sky130A/libs.tech/magic/sky130A.magicrc /project/openlane/sky130_fd_sc_hvl__lsbufhv2lv_1_wrapped/runs/sky130_fd_sc_hvl__lsbufhv2lv_1_wrapped/tmp/magic_spice.tcl </dev/null |& tee >&@stdout /project/openlane/sky130_fd_sc_hvl__lsbufhv2lv_1_wrapped/runs/sky130_fd_sc_hvl__lsbufhv2lv_1_wrapped/logs/magic/magic_spice.log"
+
+Fri Nov 27 17:22:06 UTC 2020 - Executing "magic -noconsole -dnull -rcfile /home/xrex/usr/devel/pdks/sky130A/libs.tech/magic/sky130A.magicrc /openLANE_flow/scripts/magic_drc.tcl </dev/null |& tee >&@stdout /project/openlane/sky130_fd_sc_hvl__lsbufhv2lv_1_wrapped/runs/sky130_fd_sc_hvl__lsbufhv2lv_1_wrapped/logs/magic/magic.drc.log"
+
+Fri Nov 27 17:22:07 UTC 2020 - Executing "netgen -batch lvs {/project/openlane/sky130_fd_sc_hvl__lsbufhv2lv_1_wrapped/runs/sky130_fd_sc_hvl__lsbufhv2lv_1_wrapped/results/magic/sky130_fd_sc_hvl__lsbufhv2lv_1_wrapped.spice sky130_fd_sc_hvl__lsbufhv2lv_1_wrapped} {/project/openlane/sky130_fd_sc_hvl__lsbufhv2lv_1_wrapped/runs/sky130_fd_sc_hvl__lsbufhv2lv_1_wrapped/results/lvs/sky130_fd_sc_hvl__lsbufhv2lv_1_wrapped.lvs.powered.v sky130_fd_sc_hvl__lsbufhv2lv_1_wrapped} /home/xrex/usr/devel/pdks/sky130A/libs.tech/netgen/sky130A_setup.tcl /project/openlane/sky130_fd_sc_hvl__lsbufhv2lv_1_wrapped/runs/sky130_fd_sc_hvl__lsbufhv2lv_1_wrapped/results/lvs/sky130_fd_sc_hvl__lsbufhv2lv_1_wrapped.lvs.log -json |& tee >&@stdout /project/openlane/sky130_fd_sc_hvl__lsbufhv2lv_1_wrapped/runs/sky130_fd_sc_hvl__lsbufhv2lv_1_wrapped/logs/lvs/lvs.log"
+
+Fri Nov 27 17:22:07 UTC 2020 - Executing "openroad -exit /openLANE_flow/scripts/openroad/or_antenna_check.tcl |& tee >&@stdout /project/openlane/sky130_fd_sc_hvl__lsbufhv2lv_1_wrapped/runs/sky130_fd_sc_hvl__lsbufhv2lv_1_wrapped/logs/routing/or_antenna.log"
+
+Fri Nov 27 17:22:08 UTC 2020 - Executing "python3 /openLANE_flow/report_generation_wrapper.py -d /project/openlane/sky130_fd_sc_hvl__lsbufhv2lv_1_wrapped -dn sky130_fd_sc_hvl__lsbufhv2lv_1_wrapped -t sky130_fd_sc_hvl__lsbufhv2lv_1_wrapped -o /project/openlane/sky130_fd_sc_hvl__lsbufhv2lv_1_wrapped/runs/sky130_fd_sc_hvl__lsbufhv2lv_1_wrapped/reports/final_summary_report.csv -r /project/openlane/sky130_fd_sc_hvl__lsbufhv2lv_1_wrapped/runs/sky130_fd_sc_hvl__lsbufhv2lv_1_wrapped"
+
