@@ -1,5 +1,5 @@
 Startpoint: resetb (input port clocked by clock)
-Endpoint: _63414_ (recovery check against rising-edge clock clock)
+Endpoint: _63413_ (recovery check against rising-edge clock clock)
 Path Group: **async_default**
 Path Type: max
 
@@ -8,21 +8,21 @@ Path Type: max
    0.00    0.00   clock clock (rise edge)
    0.00    0.00   clock network delay (ideal)
   10.00   10.00 ^ input external delay
-   0.50   10.50 ^ resetb (in)
-   0.00   10.50 ^ _63414_/SET_B (sky130_fd_sc_hd__dfstp_4)
-          10.50   data arrival time
+   0.68   10.68 ^ resetb (in)
+   0.00   10.68 ^ _63413_/SET_B (sky130_fd_sc_hd__dfstp_4)
+          10.68   data arrival time
 
   50.00   50.00   clock clock (rise edge)
    0.00   50.00   clock network delay (ideal)
    0.00   50.00   clock reconvergence pessimism
-          50.00 ^ _63414_/CLK (sky130_fd_sc_hd__dfstp_4)
-   0.14   50.14   library recovery time
-          50.14   data required time
+          50.00 ^ _63413_/CLK (sky130_fd_sc_hd__dfstp_4)
+   0.11   50.11   library recovery time
+          50.11   data required time
 ---------------------------------------------------------
-          50.14   data required time
-         -10.50   data arrival time
+          50.11   data required time
+         -10.68   data arrival time
 ---------------------------------------------------------
-          39.64   slack (MET)
+          39.43   slack (MET)
 
 
 Startpoint: clock (clock source 'clock')
@@ -33,9 +33,9 @@ Path Type: max
   Delay    Time   Description
 ---------------------------------------------------------
   25.00   25.00   clock clock (fall edge)
-  12.19   37.19   clock network delay
-          37.19 v mgmt_out_data[14] (out)
-          37.19   data arrival time
+   3.55   28.55   clock network delay
+          28.55 v mgmt_out_data[14] (out)
+          28.55   data arrival time
 
   50.00   50.00   clock clock (rise edge)
    0.00   50.00   clock network delay (ideal)
@@ -44,8 +44,8 @@ Path Type: max
           40.00   data required time
 ---------------------------------------------------------
           40.00   data required time
-         -37.19   data arrival time
+         -28.55   data arrival time
 ---------------------------------------------------------
-           2.81   slack (MET)
+          11.45   slack (MET)
 
 

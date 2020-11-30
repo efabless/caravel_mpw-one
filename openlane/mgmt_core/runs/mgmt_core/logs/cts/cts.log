@@ -7,13 +7,14 @@ Notice 0:     Created 13 technology layers
 Notice 0:     Created 25 technology vias
 Notice 0:     Created 440 library cells
 Notice 0: Finished LEF file:  /project/openlane/mgmt_core/runs/mgmt_core/tmp/merged_unpadded.lef
-Warning: /home/aag/current_pdk/sky130A/libs.ref/sky130_fd_sc_hd/lib/sky130_fd_sc_hd__tt_025C_1v80.lib, line 31 default_operating_condition tt_025C_1v80 not found.
+Warning: /home/xrex/usr/devel/pdks/sky130A/libs.ref/sky130_fd_sc_hd/lib/sky130_fd_sc_hd__tt_025C_1v80.lib, line 31 default_operating_condition tt_025C_1v80 not found.
 Notice 0: 
 Reading DEF file: /project/openlane/mgmt_core/runs/mgmt_core/results/placement/mgmt_core.placement.def
 Notice 0: Design: mgmt_core
-Notice 0:     Created 794 pins.
-Notice 0:     Created 52878 components and 289444 component-terminals.
-Notice 0:     Created 35189 nets and 112058 connections.
+Notice 0:     Created 796 pins.
+Notice 0:     Created 54642 components and 299480 component-terminals.
+Notice 0:     Created 2 special nets and 0 connections.
+Notice 0:     Created 36737 nets and 115154 connections.
 Notice 0: Finished DEF file: /project/openlane/mgmt_core/runs/mgmt_core/results/placement/mgmt_core.placement.def
 [INFO]: Setting output delay to: 10.0
 [INFO]: Setting input delay to: 10.0
@@ -66,16 +67,17 @@ Number of created patterns = 313632.
     Tot. number of sinks: 3
     Number of static layers: 0
  Wire segment unit: 13000 dbu (13 um)
- Original sink region: [(104550, 304990), (316530, 376715)]
- Normalized sink region: [(8.04231, 23.4608), (24.3485, 28.9781)]
-    Width:  16.3062
-    Height: 5.51731
+ Original sink region: [(1598240, 50505), (1777035, 59470)]
+ Normalized sink region: [(122.942, 3.885), (136.695, 4.57462)]
+    Width:  13.7535
+    Height: 0.689615
+ [WARNING] Creating fake entries in the LUT.
  Level 1
     Direction: Horizontal
     # sinks per sub-region: 2
-    Sub-region size: 8.15308 X 5.51731
-    Segment length (rounded): 4
-    Key: 328 outSlew: 11 load: 1 length: 4 isBuffered: 1
+    Sub-region size: 6.87673 X 0.689615
+    Segment length (rounded): 1
+    Key: 313864 outSlew: 11 load: 1 length: 1 isBuffered: 1
  Stop criterion found. Max number of sinks is (15)
  Building clock sub nets...
  Number of sinks covered: 3
@@ -83,7 +85,7 @@ Number of created patterns = 313632.
  ****************
  * Post CTS opt *
  ****************
- Avg. source sink dist: 122530 dbu.
+ Avg. source sink dist: 66732.3 dbu.
  Num outlier sinks: 0
  ********************
  * Write data to DB *
@@ -97,16 +99,15 @@ Number of created patterns = 313632.
     Max level of the clock tree: 1.
  ... End of TritonCTS execution.
 [INFO]: Legalizing...
-Warning: could not find power special net
 Design Stats
 --------------------------------
-total instances         52881
+total instances         54645
 multi row instances         0
-fixed instances         18072
-nets                    35192
+fixed instances         18288
+nets                    36742
 design area          1768316.0 u^2
-fixed area            28734.9 u^2
-movable area         400457.8 u^2
+fixed area            29400.5 u^2
+movable area         408465.5 u^2
 utilization                23 %
 utilization padded         23 %
 rows                      304
@@ -114,10 +115,10 @@ row height                2.7 u
 
 Placement Analysis
 --------------------------------
-total displacement      116.1 u
+total displacement       55.6 u
 average displacement      0.0 u
-max displacement         80.6 u
-original HPWL        2433224.2 u
-legalized HPWL       2433176.0 u
+max displacement         30.0 u
+original HPWL        2860521.0 u
+legalized HPWL       2860513.8 u
 delta HPWL                 -0 %
 

@@ -10,31 +10,31 @@ Notice 0: Finished LEF file:  /project/openlane/mgmt_core/runs/mgmt_core/tmp/mer
 Notice 0: 
 Reading DEF file: /project/openlane/mgmt_core/runs/mgmt_core/tmp/placement/openphysyn.def
 Notice 0: Design: mgmt_core
-Notice 0:     Created 794 pins.
-Notice 0:     Created 52878 components and 289444 component-terminals.
-Notice 0:     Created 35189 nets and 112058 connections.
+Notice 0:     Created 796 pins.
+Notice 0:     Created 54642 components and 299480 component-terminals.
+Notice 0:     Created 2 special nets and 0 connections.
+Notice 0:     Created 36737 nets and 115154 connections.
 Notice 0: Finished DEF file: /project/openlane/mgmt_core/runs/mgmt_core/tmp/placement/openphysyn.def
-Warning: could not find power special net
 Design Stats
 --------------------------------
-total instances         52878
+total instances         54642
 multi row instances         0
-fixed instances         18072
-nets                    35189
+fixed instances         18288
+nets                    36739
 design area          1768316.0 u^2
-fixed area            28734.9 u^2
-movable area         400425.3 u^2
+fixed area            29400.5 u^2
+movable area         408433.0 u^2
 utilization                23 %
-utilization padded         33 %
+utilization padded         34 %
 rows                      304
 row height                2.7 u
 
 Placement Analysis
 --------------------------------
-total displacement   128168.2 u
-average displacement      2.4 u
-max displacement        182.5 u
-original HPWL        2339791.1 u
-legalized HPWL       2432894.6 u
+total displacement   142559.5 u
+average displacement      2.6 u
+max displacement        236.2 u
+original HPWL        2756337.4 u
+legalized HPWL       2860425.8 u
 delta HPWL                  4 %
 

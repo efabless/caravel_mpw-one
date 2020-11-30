@@ -8009,24 +8009,24 @@ Mapping DFF cells in module `\mgmt_core':
 
 20. Executing ABC pass (technology mapping using ABC).
 
-20.1. Extracting gate netlist of module `\mgmt_core' to `/tmp/yosys-abc-dQM7Ns/input.blif'..
+20.1. Extracting gate netlist of module `\mgmt_core' to `/tmp/yosys-abc-BEDAcD/input.blif'..
 Extracted 24886 gates and 29115 wires to a netlist network with 4227 inputs and 4046 outputs.
 
 20.1.1. Executing ABC.
-Running ABC command: /build/bin/yosys-abc -s -f /tmp/yosys-abc-dQM7Ns/abc.script 2>&1
-ABC: ABC command line: "source /tmp/yosys-abc-dQM7Ns/abc.script".
+Running ABC command: /build/bin/yosys-abc -s -f /tmp/yosys-abc-BEDAcD/abc.script 2>&1
+ABC: ABC command line: "source /tmp/yosys-abc-BEDAcD/abc.script".
 ABC: 
-ABC: + read_blif /tmp/yosys-abc-dQM7Ns/input.blif 
+ABC: + read_blif /tmp/yosys-abc-BEDAcD/input.blif 
 ABC: + read_lib -w /project/openlane/mgmt_core/runs/mgmt_core/tmp/trimmed.lib 
-ABC: Parsing finished successfully.  Parsing time =     0.03 sec
+ABC: Parsing finished successfully.  Parsing time =     0.02 sec
 ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfbbn_2".
 ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfrbp_2".
 ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfrtp_4".
 ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfstp_4".
 ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfxbp_2".
 ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfxtp_4".
-ABC: Library "sky130_fd_sc_hd__tt_025C_1v80" from "/project/openlane/mgmt_core/runs/mgmt_core/tmp/trimmed.lib" has 43 cells (6 skipped: 6 seq; 0 tri-state; 0 no func; 0 dont_use).  Time =     0.04 sec
-ABC: Memory =    1.82 MB. Time =     0.04 sec
+ABC: Library "sky130_fd_sc_hd__tt_025C_1v80" from "/project/openlane/mgmt_core/runs/mgmt_core/tmp/trimmed.lib" has 43 cells (6 skipped: 6 seq; 0 tri-state; 0 no func; 0 dont_use).  Time =     0.03 sec
+ABC: Memory =    1.82 MB. Time =     0.03 sec
 ABC: + read_constr -v /project/openlane/mgmt_core/runs/mgmt_core/tmp/synthesis/yosys.sdc 
 ABC: Setting driving cell to be "sky130_fd_sc_hd__inv_8".
 ABC: Setting output load to be 17.650000.
@@ -11846,7 +11846,7 @@ ABC: Path 64 --   24835 : 3    1 sky130_fd_sc_hd__o21a_4 A =  15.01  Df =12524.6
 ABC: Start-point = pi3967 (\soc.cpu.picorv32_core.count_cycle [1]).  End-point = po1836 ($auto$rtlil.cc:2290:MuxGate$90069).
 ABC: + print_stats -m 
 ABC: netlist                       : i/o = 4227/ 4046  lat =    0  nd = 30744  edge =  68827  area =305393.20  delay =75.00  lev = 75
-ABC: + write_blif /tmp/yosys-abc-dQM7Ns/output.blif 
+ABC: + write_blif /tmp/yosys-abc-BEDAcD/output.blif 
 
 20.1.2. Re-integrating ABC results.
 ABC RESULTS:   sky130_fd_sc_hd__a2111o_4 cells:       22
@@ -12499,6 +12499,6 @@ found and reported 495 problems.
 Dumping module `\mgmt_core'.
 
 Warnings: 555 unique messages, 562 total
-End of script. Logfile hash: 3b22e6efac, CPU: user 72.52s system 0.41s, MEM: 222.62 MB peak
+End of script. Logfile hash: f172ea2f4b, CPU: user 42.95s system 0.17s, MEM: 219.17 MB peak
 Yosys 0.9+3621 (git sha1 84e9fa7, gcc 8.3.1 -fPIC -Os)
-Time spent: 38% 2x abc (45 sec), 17% 44x opt_expr (19 sec), ...
+Time spent: 43% 2x abc (32 sec), 14% 44x opt_expr (10 sec), ...

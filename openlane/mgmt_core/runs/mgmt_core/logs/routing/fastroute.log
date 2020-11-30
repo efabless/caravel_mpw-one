@@ -2,120 +2,293 @@ OpenROAD 0.9.0 d03ebfc244
 This program is licensed under the BSD-3 license. See the LICENSE file for details. 
 Components of this program may be licensed under more restrictive licenses which must be honored.
 Error: cannot open '/.openroad'.
-Warning: /home/aag/current_pdk/sky130A/libs.ref/sky130_fd_sc_hd/lib/sky130_fd_sc_hd__tt_025C_1v80.lib, line 31 default_operating_condition tt_025C_1v80 not found.
+Warning: /home/xrex/usr/devel/pdks/sky130A/libs.ref/sky130_fd_sc_hd/lib/sky130_fd_sc_hd__tt_025C_1v80.lib, line 31 default_operating_condition tt_025C_1v80 not found.
 Notice 0: Reading LEF file:  /project/openlane/mgmt_core/runs/mgmt_core/tmp/merged_unpadded.lef
 Notice 0:     Created 13 technology layers
 Notice 0:     Created 25 technology vias
 Notice 0:     Created 440 library cells
 Notice 0: Finished LEF file:  /project/openlane/mgmt_core/runs/mgmt_core/tmp/merged_unpadded.lef
 Notice 0: 
-Reading DEF file: /project/openlane/mgmt_core/runs/mgmt_core/tmp/placement/diodes.def
+Reading DEF file: /project/openlane/mgmt_core/runs/mgmt_core/tmp/routing/addspacers.def
 Notice 0: Design: mgmt_core
 Notice 0: 		Created 100000 Insts
+Notice 0: 		Created 200000 Insts
 Notice 0:     Created 796 pins.
-Notice 0:     Created 130084 components and 675477 component-terminals.
+Notice 0:     Created 261753 components and 1206681 component-terminals.
 Notice 0:     Created 2 special nets and 0 connections.
-Notice 0:     Created 35192 nets and 189267 connections.
-Notice 0: Finished DEF file: /project/openlane/mgmt_core/runs/mgmt_core/tmp/placement/diodes.def
+Notice 0:     Created 36740 nets and 193911 connections.
+Notice 0: Finished DEF file: /project/openlane/mgmt_core/runs/mgmt_core/tmp/routing/addspacers.def
 [PARAMS] Min routing layer: 2
 [PARAMS] Max routing layer: 6
 [PARAMS] Global adjustment: 0
 [PARAMS] Unidirectional routing: 1
 [PARAMS] Grid origin: (-1, -1)
 [INFO] #DB Obstructions: 0
-[INFO] #DB Obstacles: 2118540
+[INFO] #DB Obstacles: 3699388
 [INFO] #DB Macros: 2
 [INFO] Found 0 clock nets
 [INFO] Minimum degree: 2
-[INFO] Maximum degree: 7400
-[INFO] Processing 1448309 obstacles on layer 1
-[INFO] Processing 327752 obstacles on layer 2
+[INFO] Maximum degree: 419
+[INFO] Processing 1938110 obstacles on layer 1
+[INFO] Processing 591169 obstacles on layer 2
 [INFO] Processing 185 obstacles on layer 3
 [INFO] Processing 95 obstacles on layer 4
-[INFO] Processing 141 obstacles on layer 5
+[INFO] Processing 132 obstacles on layer 5
 [INFO] Processing 11 obstacles on layer 6
 [INFO] Reducing resources of layer 1 by 99%
+[INFO] Reducing resources of layer 2 by 20%
+[INFO] Reducing resources of layer 3 by 20%
+[INFO] Reducing resources of layer 4 by 20%
 [INFO] Reducing resources of layer 5 by 10%
-[INFO] WIRELEN : 432606, WIRELEN1 : 0
-[INFO] NumSeg  : 122879
+[INFO] Reducing resources of layer 6 by 10%
+[INFO] WIRELEN : 381907, WIRELEN1 : 0
+[INFO] NumSeg  : 107150
 [INFO] NumShift: 0
 First L Route
-[INFO] WIRELEN : 432886, WIRELEN1 : 432886
-[INFO] NumSeg  : 122500
-[INFO] NumShift: 3332
-[Overflow Report] Total hCap    : 833396
-[Overflow Report] Total vCap    : 672095
-[Overflow Report] Total Usage   : 432886
-[Overflow Report] Max H Overflow: 24
-[Overflow Report] Max V Overflow: 3
-[Overflow Report] Max Overflow  : 24
-[Overflow Report] Num Overflow e: 2013
-[Overflow Report] H   Overflow  : 3339
-[Overflow Report] V   Overflow  : 1097
-[Overflow Report] Final Overflow: 4436
+[INFO] WIRELEN : 382201, WIRELEN1 : 382201
+[INFO] NumSeg  : 106819
+[INFO] NumShift: 2782
+[Overflow Report] Total hCap    : 479529
+[Overflow Report] Total vCap    : 446864
+[Overflow Report] Total Usage   : 382201
+[Overflow Report] Max H Overflow: 43
+[Overflow Report] Max V Overflow: 8
+[Overflow Report] Max Overflow  : 43
+[Overflow Report] Num Overflow e: 8670
+[Overflow Report] H   Overflow  : 22477
+[Overflow Report] V   Overflow  : 2684
+[Overflow Report] Final Overflow: 25161
 
 Second L Route
-[Overflow Report] Total hCap    : 833396
-[Overflow Report] Total vCap    : 672095
-[Overflow Report] Total Usage   : 432886
-[Overflow Report] Max H Overflow: 24
-[Overflow Report] Max V Overflow: 3
-[Overflow Report] Max Overflow  : 24
-[Overflow Report] Num Overflow e: 1812
-[Overflow Report] H   Overflow  : 3129
-[Overflow Report] V   Overflow  : 923
-[Overflow Report] Final Overflow: 4052
+[Overflow Report] Total hCap    : 479529
+[Overflow Report] Total vCap    : 446864
+[Overflow Report] Total Usage   : 382201
+[Overflow Report] Max H Overflow: 44
+[Overflow Report] Max V Overflow: 8
+[Overflow Report] Max Overflow  : 44
+[Overflow Report] Num Overflow e: 8521
+[Overflow Report] H   Overflow  : 22267
+[Overflow Report] V   Overflow  : 2603
+[Overflow Report] Final Overflow: 24870
 
 First Z Route
-[Overflow Report] Total hCap    : 833396
-[Overflow Report] Total vCap    : 672095
-[Overflow Report] Total Usage   : 432886
-[Overflow Report] Max H Overflow: 24
-[Overflow Report] Max V Overflow: 5
-[Overflow Report] Max Overflow  : 24
-[Overflow Report] Num Overflow e: 796
-[Overflow Report] H   Overflow  : 1974
-[Overflow Report] V   Overflow  : 268
-[Overflow Report] Final Overflow: 2242
+[Overflow Report] Total hCap    : 479529
+[Overflow Report] Total vCap    : 446864
+[Overflow Report] Total Usage   : 382201
+[Overflow Report] Max H Overflow: 43
+[Overflow Report] Max V Overflow: 3
+[Overflow Report] Max Overflow  : 43
+[Overflow Report] Num Overflow e: 7938
+[Overflow Report] H   Overflow  : 19365
+[Overflow Report] V   Overflow  : 1671
+[Overflow Report] Final Overflow: 21036
 
 [INFO] LV routing round 0, enlarge 10 
 [INFO] 10 threshold, 10 expand
-[Overflow Report] total Usage   : 435724
-[Overflow Report] Max H Overflow: 5
-[Overflow Report] Max V Overflow: 2
-[Overflow Report] Max Overflow  : 5
-[Overflow Report] Num Overflow e: 141
-[Overflow Report] H   Overflow  : 56
-[Overflow Report] V   Overflow  : 139
-[Overflow Report] Final Overflow: 195
+[Overflow Report] total Usage   : 391843
+[Overflow Report] Max H Overflow: 15
+[Overflow Report] Max V Overflow: 10
+[Overflow Report] Max Overflow  : 15
+[Overflow Report] Num Overflow e: 6934
+[Overflow Report] H   Overflow  : 7152
+[Overflow Report] V   Overflow  : 2632
+[Overflow Report] Final Overflow: 9784
 
 [INFO] LV routing round 1, enlarge 15 
 [INFO] 5 threshold, 15 expand
-[Overflow Report] total Usage   : 434782
-[Overflow Report] Max H Overflow: 3
-[Overflow Report] Max V Overflow: 2
-[Overflow Report] Max Overflow  : 3
-[Overflow Report] Num Overflow e: 131
-[Overflow Report] H   Overflow  : 31
-[Overflow Report] V   Overflow  : 137
-[Overflow Report] Final Overflow: 168
+[Overflow Report] total Usage   : 392593
+[Overflow Report] Max H Overflow: 13
+[Overflow Report] Max V Overflow: 10
+[Overflow Report] Max Overflow  : 13
+[Overflow Report] Num Overflow e: 6866
+[Overflow Report] H   Overflow  : 6078
+[Overflow Report] V   Overflow  : 2678
+[Overflow Report] Final Overflow: 8756
 
 [INFO] LV routing round 2, enlarge 20 
 [INFO] 1 threshold, 20 expand
-[Overflow Report] total Usage   : 434692
-[Overflow Report] Max H Overflow: 2
-[Overflow Report] Max V Overflow: 2
-[Overflow Report] Max Overflow  : 2
-[Overflow Report] Num Overflow e: 133
-[Overflow Report] H   Overflow  : 29
-[Overflow Report] V   Overflow  : 137
-[Overflow Report] Final Overflow: 166
+[Overflow Report] total Usage   : 392851
+[Overflow Report] Max H Overflow: 10
+[Overflow Report] Max V Overflow: 9
+[Overflow Report] Max Overflow  : 10
+[Overflow Report] Num Overflow e: 6675
+[Overflow Report] H   Overflow  : 5315
+[Overflow Report] V   Overflow  : 2787
+[Overflow Report] Final Overflow: 8102
 
 Running extra iterations to remove overflow...
 Update congestion history type 1
-[INFO] iteration 1, enlarge 20, costheight 9, threshold 10 via cost 2 
+[INFO] iteration 1, enlarge 25, costheight 6, threshold 10 via cost 2 
+[INFO] log_coef 0.605586, healingTrigger 0 cost_step 2 L 1 cost_type 1 updatetype 1
+[Overflow Report] total Usage   : 397936
+[Overflow Report] Max H Overflow: 5
+[Overflow Report] Max V Overflow: 3
+[Overflow Report] Max Overflow  : 5
+[Overflow Report] Num Overflow e: 2563
+[Overflow Report] H   Overflow  : 2225
+[Overflow Report] V   Overflow  : 753
+[Overflow Report] Final Overflow: 2978
+
+Update congestion history type 1
+[INFO] iteration 2, enlarge 35, costheight 8, threshold 6 via cost 2 
+[INFO] log_coef 0.766449, healingTrigger 0 cost_step 2 L 1 cost_type 1 updatetype 1
+[Overflow Report] total Usage   : 400135
+[Overflow Report] Max H Overflow: 4
+[Overflow Report] Max V Overflow: 2
+[Overflow Report] Max Overflow  : 4
+[Overflow Report] Num Overflow e: 1158
+[Overflow Report] H   Overflow  : 778
+[Overflow Report] V   Overflow  : 471
+[Overflow Report] Final Overflow: 1249
+
+Update congestion history type 1
+[INFO] iteration 3, enlarge 40, costheight 10, threshold 2 via cost 2 
+[INFO] log_coef 0.838120, healingTrigger 0 cost_step 2 L 1 cost_type 1 updatetype 1
+[Overflow Report] total Usage   : 401731
+[Overflow Report] Max H Overflow: 3
+[Overflow Report] Max V Overflow: 2
+[Overflow Report] Max Overflow  : 3
+[Overflow Report] Num Overflow e: 365
+[Overflow Report] H   Overflow  : 280
+[Overflow Report] V   Overflow  : 122
+[Overflow Report] Final Overflow: 402
+
+Update congestion history type 1
+[INFO] iteration 4, enlarge 45, costheight 15, threshold 0 via cost 2 
+[INFO] log_coef 0.953011, healingTrigger 0 cost_step 5 L 1 cost_type 1 updatetype 1
+[Overflow Report] total Usage   : 403189
+[Overflow Report] Max H Overflow: 4
+[Overflow Report] Max V Overflow: 2
+[Overflow Report] Max Overflow  : 4
+[Overflow Report] Num Overflow e: 200
+[Overflow Report] H   Overflow  : 148
+[Overflow Report] V   Overflow  : 72
+[Overflow Report] Final Overflow: 220
+
+Update congestion history type 1
+[INFO] iteration 5, enlarge 50, costheight 20, threshold 0 via cost 2 
+[INFO] log_coef 0.953011, healingTrigger 0 cost_step 5 L 1 cost_type 1 updatetype 1
+[Overflow Report] total Usage   : 403825
+[Overflow Report] Max H Overflow: 3
+[Overflow Report] Max V Overflow: 1
+[Overflow Report] Max Overflow  : 3
+[Overflow Report] Num Overflow e: 144
+[Overflow Report] H   Overflow  : 87
+[Overflow Report] V   Overflow  : 69
+[Overflow Report] Final Overflow: 156
+
+Update congestion history type 1
+[INFO] iteration 6, enlarge 55, costheight 30, threshold 0 via cost 2 
+[INFO] log_coef 0.953011, healingTrigger 0 cost_step 5 L 1 cost_type 1 updatetype 1
+[Overflow Report] total Usage   : 405282
+[Overflow Report] Max H Overflow: 2
+[Overflow Report] Max V Overflow: 2
+[Overflow Report] Max Overflow  : 2
+[Overflow Report] Num Overflow e: 86
+[Overflow Report] H   Overflow  : 37
+[Overflow Report] V   Overflow  : 55
+[Overflow Report] Final Overflow: 92
+
+Update congestion history type 1
+[INFO] iteration 7, enlarge 60, costheight 35, threshold 0 via cost 2 
 [INFO] log_coef 1.181232, healingTrigger 0 cost_step 5 L 1 cost_type 1 updatetype 1
-[Overflow Report] total Usage   : 434928
+[Overflow Report] total Usage   : 405665
+[Overflow Report] Max H Overflow: 1
+[Overflow Report] Max V Overflow: 1
+[Overflow Report] Max Overflow  : 1
+[Overflow Report] Num Overflow e: 65
+[Overflow Report] H   Overflow  : 19
+[Overflow Report] V   Overflow  : 46
+[Overflow Report] Final Overflow: 65
+
+Update congestion history type 1
+[INFO] iteration 8, enlarge 65, costheight 45, threshold 0 via cost 2 
+[INFO] log_coef 2.000000, healingTrigger 0 cost_step 5 L 0 cost_type 1 updatetype 2
+[Overflow Report] total Usage   : 405991
+[Overflow Report] Max H Overflow: 1
+[Overflow Report] Max V Overflow: 1
+[Overflow Report] Max Overflow  : 1
+[Overflow Report] Num Overflow e: 14
+[Overflow Report] H   Overflow  : 9
+[Overflow Report] V   Overflow  : 5
+[Overflow Report] Final Overflow: 14
+
+Update congestion history type 2
+[INFO] iteration 9, enlarge 70, costheight 50, threshold 0 via cost 2 
+[INFO] log_coef 2.000000, healingTrigger 0 cost_step 5 L 1 cost_type 1 updatetype 2
+[Overflow Report] total Usage   : 406238
+[Overflow Report] Max H Overflow: 1
+[Overflow Report] Max V Overflow: 1
+[Overflow Report] Max Overflow  : 1
+[Overflow Report] Num Overflow e: 10
+[Overflow Report] H   Overflow  : 5
+[Overflow Report] V   Overflow  : 5
+[Overflow Report] Final Overflow: 10
+
+Update congestion history type 2
+[INFO] iteration 10, enlarge 75, costheight 60, threshold 0 via cost 2 
+[INFO] log_coef 2.000000, healingTrigger 0 cost_step 5 L 1 cost_type 1 updatetype 2
+[Overflow Report] total Usage   : 406385
+[Overflow Report] Max H Overflow: 1
+[Overflow Report] Max V Overflow: 1
+[Overflow Report] Max Overflow  : 1
+[Overflow Report] Num Overflow e: 6
+[Overflow Report] H   Overflow  : 2
+[Overflow Report] V   Overflow  : 4
+[Overflow Report] Final Overflow: 6
+
+Update congestion history type 2
+[INFO] iteration 11, enlarge 80, costheight 65, threshold 0 via cost 2 
+[INFO] log_coef 2.000000, healingTrigger 0 cost_step 5 L 1 cost_type 1 updatetype 2
+[Overflow Report] total Usage   : 406401
+[Overflow Report] Max H Overflow: 1
+[Overflow Report] Max V Overflow: 1
+[Overflow Report] Max Overflow  : 1
+[Overflow Report] Num Overflow e: 6
+[Overflow Report] H   Overflow  : 2
+[Overflow Report] V   Overflow  : 4
+[Overflow Report] Final Overflow: 6
+
+Update congestion history type 2
+[INFO] iteration 12, enlarge 85, costheight 75, threshold 0 via cost 0 
+[INFO] log_coef 2.000000, healingTrigger 1 cost_step 5 L 1 cost_type 1 updatetype 2
+[Overflow Report] total Usage   : 406625
+[Overflow Report] Max H Overflow: 0
+[Overflow Report] Max V Overflow: 1
+[Overflow Report] Max Overflow  : 1
+[Overflow Report] Num Overflow e: 4
+[Overflow Report] H   Overflow  : 0
+[Overflow Report] V   Overflow  : 4
+[Overflow Report] Final Overflow: 4
+
+Update congestion history type 2
+[INFO] iteration 13, enlarge 90, costheight 80, threshold 0 via cost 0 
+[INFO] log_coef 2.000000, healingTrigger 1 cost_step 5 L 1 cost_type 1 updatetype 2
+[Overflow Report] total Usage   : 406678
+[Overflow Report] Max H Overflow: 1
+[Overflow Report] Max V Overflow: 0
+[Overflow Report] Max Overflow  : 1
+[Overflow Report] Num Overflow e: 1
+[Overflow Report] H   Overflow  : 1
+[Overflow Report] V   Overflow  : 0
+[Overflow Report] Final Overflow: 1
+
+Update congestion history type 2
+[INFO] iteration 14, enlarge 95, costheight 85, threshold 0 via cost 0 
+[INFO] log_coef 2.000000, healingTrigger 1 cost_step 5 L 1 cost_type 1 updatetype 2
+[Overflow Report] total Usage   : 406706
+[Overflow Report] Max H Overflow: 1
+[Overflow Report] Max V Overflow: 0
+[Overflow Report] Max Overflow  : 1
+[Overflow Report] Num Overflow e: 1
+[Overflow Report] H   Overflow  : 1
+[Overflow Report] V   Overflow  : 0
+[Overflow Report] Final Overflow: 1
+
+Update congestion history type 2
+[INFO] iteration 15, enlarge 100, costheight 95, threshold 0 via cost 0 
+[INFO] log_coef 2.000000, healingTrigger 2 cost_step 5 L 1 cost_type 1 updatetype 2
+[Overflow Report] total Usage   : 406723
 [Overflow Report] Max H Overflow: 0
 [Overflow Report] Max V Overflow: 0
 [Overflow Report] Max Overflow  : 0
@@ -126,9 +299,9 @@ Update congestion history type 1
 
 Usage checked
 Maze routing finished
-[INFO] P3 runtime: 0.060000 sec
+[INFO] P3 runtime: 4.910000 sec
 [INFO] Final 2D results: 
-[Overflow Report] total Usage   : 434928
+[Overflow Report] total Usage   : 406723
 [Overflow Report] Max H Overflow: 0
 [Overflow Report] Max V Overflow: 0
 [Overflow Report] Max Overflow  : 0
@@ -139,38 +312,38 @@ Maze routing finished
 
 Layer Assignment Begins
 Layer assignment finished
-[INFO] 2D + Layer Assignment Runtime: 9.360000 sec
+[INFO] 2D + Layer Assignment Runtime: 9.670000 sec
 Post Processing Begins 
 Post Processsing finished
  Starting via filling
-[INFO] Via related to pin nodes 227310
-[INFO] Via related stiner nodes 9912
+[INFO] Via related to pin nodes 214364
+[INFO] Via related stiner nodes 6739
 Via filling finished
 
 Final usage/overflow report: 
 [INFO] Usage per layer: 
     Layer 1 usage: 0
-    Layer 2 usage: 218077
-    Layer 3 usage: 136549
-    Layer 4 usage: 75987
-    Layer 5 usage: 2306
-    Layer 6 usage: 3175
+    Layer 2 usage: 170015
+    Layer 3 usage: 106171
+    Layer 4 usage: 102725
+    Layer 5 usage: 14113
+    Layer 6 usage: 14041
 
 [INFO] Capacity per layer: 
     Layer 1 capacity: 0
-    Layer 2 capacity: 481182
-    Layer 3 capacity: 474700
-    Layer 4 capacity: 308058
-    Layer 5 capacity: 197395
-    Layer 6 capacity: 44156
+    Layer 2 capacity: 266146
+    Layer 3 capacity: 287234
+    Layer 4 capacity: 186809
+    Layer 5 capacity: 159630
+    Layer 6 capacity: 26574
 
 [INFO] Use percentage per layer: 
     Layer 1 use percentage: 0.0%
-    Layer 2 use percentage: 45.32%
-    Layer 3 use percentage: 28.77%
-    Layer 4 use percentage: 24.67%
-    Layer 5 use percentage: 1.17%
-    Layer 6 use percentage: 7.19%
+    Layer 2 use percentage: 63.88%
+    Layer 3 use percentage: 36.96%
+    Layer 4 use percentage: 54.99%
+    Layer 5 use percentage: 8.84%
+    Layer 6 use percentage: 52.84%
 
 [INFO] Overflow per layer: 
     Layer 1 overflow: 0
@@ -180,8 +353,8 @@ Final usage/overflow report:
     Layer 5 overflow: 0
     Layer 6 overflow: 0
 
-[Overflow Report] Total Usage   : 436094
-[Overflow Report] Total Capacity: 1505491
+[Overflow Report] Total Usage   : 407065
+[Overflow Report] Total Capacity: 926393
 [Overflow Report] Max H Overflow: 0
 [Overflow Report] Max V Overflow: 0
 [Overflow Report] Max Overflow  : 0
@@ -189,38 +362,8 @@ Final usage/overflow report:
 [Overflow Report] V   Overflow  : 0
 [Overflow Report] Final Overflow: 0
 
-[INFO] Final usage          : 436094
-[INFO] Final number of vias : 260434
-[INFO] Final usage 3D       : 1217396
-[INFO] Total wirelength: 3762557 um
-[INFO] Num routed nets: 35180
-Warning: /home/aag/current_pdk/sky130A/libs.ref/sky130_fd_sc_hd/lib/sky130_fd_sc_hd__ss_100C_1v60.lib, line 32 default_operating_condition ss_100C_1v60 not found.
-Warning: /home/aag/current_pdk/sky130A/libs.ref/sky130_fd_sc_hd/lib/sky130_fd_sc_hd__ff_n40C_1v95.lib, line 31 default_operating_condition ff_n40C_1v95 not found.
-create_clock [get_ports $::env(CLOCK_PORT)]  -name $::env(CLOCK_PORT)  -period $::env(CLOCK_PERIOD)
-set input_delay_value [expr $::env(CLOCK_PERIOD) * $::env(IO_PCT)]
-set output_delay_value [expr $::env(CLOCK_PERIOD) * $::env(IO_PCT)]
-puts "\[INFO\]: Setting output delay to: $output_delay_value"
-[INFO]: Setting output delay to: 10.0
-puts "\[INFO\]: Setting input delay to: $input_delay_value"
-[INFO]: Setting input delay to: 10.0
-set clk_indx [lsearch [all_inputs] [get_port $::env(CLOCK_PORT)]]
-#set rst_indx [lsearch [all_inputs] [get_port resetn]]
-set all_inputs_wo_clk [lreplace [all_inputs] $clk_indx $clk_indx]
-#set all_inputs_wo_clk_rst [lreplace $all_inputs_wo_clk $rst_indx $rst_indx]
-set all_inputs_wo_clk_rst $all_inputs_wo_clk
-# correct resetn
-set_input_delay $input_delay_value  -clock [get_clocks $::env(CLOCK_PORT)] $all_inputs_wo_clk_rst
-#set_input_delay 0.0 -clock [get_clocks $::env(CLOCK_PORT)] {resetn}
-set_output_delay $output_delay_value  -clock [get_clocks $::env(CLOCK_PORT)] [all_outputs]
-# TODO set this as parameter
-set_driving_cell -lib_cell $::env(SYNTH_DRIVING_CELL) -pin $::env(SYNTH_DRIVING_CELL_PIN) [all_inputs]
-set cap_load [expr $::env(SYNTH_CAP_LOAD) / 1000.0]
-puts "\[INFO\]: Setting load to: $cap_load"
-[INFO]: Setting load to: 0.01765
-set_load  $cap_load [all_outputs]
-Warning: missing route to pin _65252_/SET_B
-Warning: missing route to pin _65251_/SET_B
-Warning: missing route to pin _63401_/RESET_B
-Warning: missing route to pin _64679_/RESET_B
-Warning: missing route to pin _64658_/RESET_B
-Warning: missing route to pin _64398_/RESET_B
+[INFO] Final usage          : 407065
+[INFO] Final number of vias : 246150
+[INFO] Final usage 3D       : 1145515
+[INFO] Total wirelength: 4470728 um
+[INFO] Num routed nets: 36728
