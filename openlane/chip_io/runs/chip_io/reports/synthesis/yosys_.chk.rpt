@@ -1,4 +1,6 @@
 
-12. Executing CHECK pass (checking for obvious problems).
+14. Executing CHECK pass (checking for obvious problems).
 checking module chip_io..
-found and reported 0 problems.
+Warning: Wire chip_io.\flash_csb is used but has no driver.
+Warning: Wire chip_io.\flash_clk is used but has no driver.
+found and reported 2 problems.

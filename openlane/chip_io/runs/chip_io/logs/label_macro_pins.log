@@ -1,28 +1,30 @@
-Notice 0: Reading LEF file:  /project/openlane/chip_io/runs/chip_io/tmp/merged_unpadded.lef
+Notice 0: Reading LEF file:  /project/openlane/chip_io/runs/chip_io/tmp/lvs.lef
 Notice 0:     Created 13 technology layers
 Notice 0:     Created 25 technology vias
-Notice 0:     Created 476 library cells
-Notice 0: Finished LEF file:  /project/openlane/chip_io/runs/chip_io/tmp/merged_unpadded.lef
+Notice 0:     Created 482 library cells
+Notice 0: Finished LEF file:  /project/openlane/chip_io/runs/chip_io/tmp/lvs.lef
 Notice 0: 
-Reading DEF file: /project/openlane/chip_io/runs/chip_io/results/floorplan/padframe.def
+Reading DEF file: /project/openlane/chip_io/runs/chip_io/tmp/lvs.def
 Notice 0: Design: chip_io
-Notice 0:     Created 691 pins.
-Notice 0:     Created 778 components and 10591 component-terminals.
-Notice 0:     Created 740 nets and 1835 connections.
-Notice 0: Finished DEF file: /project/openlane/chip_io/runs/chip_io/results/floorplan/padframe.def
-Notice 0: Reading LEF file:  /project/openlane/chip_io/runs/chip_io/tmp/merged_unpadded.lef
+Notice 0:     Created 722 pins.
+Notice 0:     Created 67 components and 2059 component-terminals.
+Notice 0:     Created 778 nets and 1873 connections.
+Notice 0: Finished DEF file: /project/openlane/chip_io/runs/chip_io/tmp/lvs.def
+Notice 0: Reading LEF file:  /project/openlane/chip_io/runs/chip_io/tmp/lvs.lef
 Notice 0:     Created 13 technology layers
 Notice 0:     Created 25 technology vias
-Notice 0:     Created 476 library cells
-Notice 0: Finished LEF file:  /project/openlane/chip_io/runs/chip_io/tmp/merged_unpadded.lef
+Notice 0:     Created 482 library cells
+Notice 0: Finished LEF file:  /project/openlane/chip_io/runs/chip_io/tmp/lvs.lef
 Notice 0: 
-Reading DEF file: /project/openlane/chip_io/runs/chip_io/results/floorplan/padframe.def
+Reading DEF file: /project/openlane/chip_io/runs/chip_io/results/routing/chip_io.def
 Notice 0: Design: chip_io
-Notice 0:     Created 691 pins.
-Notice 0:     Created 778 components and 10591 component-terminals.
-Notice 0:     Created 740 nets and 1835 connections.
-Notice 0: Finished DEF file: /project/openlane/chip_io/runs/chip_io/results/floorplan/padframe.def
-/project/openlane/chip_io/runs/chip_io/tmp/merged_unpadded.lef
+Notice 0: error: unknown library cell referenced (obs) for instance (obs_li1)
+Notice 0: error: unknown library cell referenced (obs_gpio_m3_pins) for instance (obs_gpio_m3_pins)
+Notice 0: error: unknown library cell referenced (obs_core_obs) for instance (obs_core_obs)
+Notice 0:     Created 818 components and 11059 component-terminals.
+Notice 0:     Created 65 nets and 378 connections.
+Notice 0: Finished DEF file: /project/openlane/chip_io/runs/chip_io/results/routing/chip_io.def
+/project/openlane/chip_io/runs/chip_io/tmp/lvs.lef
 Labeling  clock ( clock - clock_pad / PAD )
 Warning: net clock_core has a BTerm but no ITerms that match PAD_PIN_NAME
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
@@ -134,6 +136,161 @@ Warning: net gpio_outenb_core has a BTerm but no ITerms that match PAD_PIN_NAME
 Warning: will label the first ITerm on the net!!!
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 Labeling  gpio_outenb_core ( gpio_outenb_core - gpio_pad / OE_N )
+Warning: net mprj_analog_io[0] has a BTerm but no ITerms that match PAD_PIN_NAME
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+Warning: will label the first ITerm on the net!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+Labeling  mprj_analog_io[0] ( mprj_analog_io[0] - mprj_pads.area1_io_pad\[7\] / PAD_A_ESD_0_H )
+Warning: net mprj_analog_io[10] has a BTerm but no ITerms that match PAD_PIN_NAME
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+Warning: will label the first ITerm on the net!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+Labeling  mprj_analog_io[10] ( mprj_analog_io[10] - mprj_pads.area1_io_pad\[17\] / PAD_A_ESD_0_H )
+Warning: net mprj_analog_io[11] has a BTerm but no ITerms that match PAD_PIN_NAME
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+Warning: will label the first ITerm on the net!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+Labeling  mprj_analog_io[11] ( mprj_analog_io[11] - mprj_pads.area2_io_pad\[0\] / PAD_A_ESD_0_H )
+Warning: net mprj_analog_io[12] has a BTerm but no ITerms that match PAD_PIN_NAME
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+Warning: will label the first ITerm on the net!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+Labeling  mprj_analog_io[12] ( mprj_analog_io[12] - mprj_pads.area2_io_pad\[1\] / PAD_A_ESD_0_H )
+Warning: net mprj_analog_io[13] has a BTerm but no ITerms that match PAD_PIN_NAME
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+Warning: will label the first ITerm on the net!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+Labeling  mprj_analog_io[13] ( mprj_analog_io[13] - mprj_pads.area2_io_pad\[2\] / PAD_A_ESD_0_H )
+Warning: net mprj_analog_io[14] has a BTerm but no ITerms that match PAD_PIN_NAME
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+Warning: will label the first ITerm on the net!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+Labeling  mprj_analog_io[14] ( mprj_analog_io[14] - mprj_pads.area2_io_pad\[3\] / PAD_A_ESD_0_H )
+Warning: net mprj_analog_io[15] has a BTerm but no ITerms that match PAD_PIN_NAME
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+Warning: will label the first ITerm on the net!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+Labeling  mprj_analog_io[15] ( mprj_analog_io[15] - mprj_pads.area2_io_pad\[4\] / PAD_A_ESD_0_H )
+Warning: net mprj_analog_io[16] has a BTerm but no ITerms that match PAD_PIN_NAME
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+Warning: will label the first ITerm on the net!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+Labeling  mprj_analog_io[16] ( mprj_analog_io[16] - mprj_pads.area2_io_pad\[5\] / PAD_A_ESD_0_H )
+Warning: net mprj_analog_io[17] has a BTerm but no ITerms that match PAD_PIN_NAME
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+Warning: will label the first ITerm on the net!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+Labeling  mprj_analog_io[17] ( mprj_analog_io[17] - mprj_pads.area2_io_pad\[6\] / PAD_A_ESD_0_H )
+Warning: net mprj_analog_io[18] has a BTerm but no ITerms that match PAD_PIN_NAME
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+Warning: will label the first ITerm on the net!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+Labeling  mprj_analog_io[18] ( mprj_analog_io[18] - mprj_pads.area2_io_pad\[7\] / PAD_A_ESD_0_H )
+Warning: net mprj_analog_io[19] has a BTerm but no ITerms that match PAD_PIN_NAME
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+Warning: will label the first ITerm on the net!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+Labeling  mprj_analog_io[19] ( mprj_analog_io[19] - mprj_pads.area2_io_pad\[8\] / PAD_A_ESD_0_H )
+Warning: net mprj_analog_io[1] has a BTerm but no ITerms that match PAD_PIN_NAME
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+Warning: will label the first ITerm on the net!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+Labeling  mprj_analog_io[1] ( mprj_analog_io[1] - mprj_pads.area1_io_pad\[8\] / PAD_A_ESD_0_H )
+Warning: net mprj_analog_io[20] has a BTerm but no ITerms that match PAD_PIN_NAME
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+Warning: will label the first ITerm on the net!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+Labeling  mprj_analog_io[20] ( mprj_analog_io[20] - mprj_pads.area2_io_pad\[9\] / PAD_A_ESD_0_H )
+Warning: net mprj_analog_io[21] has a BTerm but no ITerms that match PAD_PIN_NAME
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+Warning: will label the first ITerm on the net!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+Labeling  mprj_analog_io[21] ( mprj_analog_io[21] - mprj_pads.area2_io_pad\[10\] / PAD_A_ESD_0_H )
+Warning: net mprj_analog_io[22] has a BTerm but no ITerms that match PAD_PIN_NAME
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+Warning: will label the first ITerm on the net!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+Labeling  mprj_analog_io[22] ( mprj_analog_io[22] - mprj_pads.area2_io_pad\[11\] / PAD_A_ESD_0_H )
+Warning: net mprj_analog_io[23] has a BTerm but no ITerms that match PAD_PIN_NAME
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+Warning: will label the first ITerm on the net!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+Labeling  mprj_analog_io[23] ( mprj_analog_io[23] - mprj_pads.area2_io_pad\[12\] / PAD_A_ESD_0_H )
+Warning: net mprj_analog_io[24] has a BTerm but no ITerms that match PAD_PIN_NAME
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+Warning: will label the first ITerm on the net!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+Labeling  mprj_analog_io[24] ( mprj_analog_io[24] - mprj_pads.area2_io_pad\[13\] / PAD_A_ESD_0_H )
+Warning: net mprj_analog_io[25] has a BTerm but no ITerms that match PAD_PIN_NAME
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+Warning: will label the first ITerm on the net!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+Labeling  mprj_analog_io[25] ( mprj_analog_io[25] - mprj_pads.area2_io_pad\[14\] / PAD_A_ESD_0_H )
+Warning: net mprj_analog_io[26] has a BTerm but no ITerms that match PAD_PIN_NAME
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+Warning: will label the first ITerm on the net!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+Labeling  mprj_analog_io[26] ( mprj_analog_io[26] - mprj_pads.area2_io_pad\[15\] / PAD_A_ESD_0_H )
+Warning: net mprj_analog_io[27] has a BTerm but no ITerms that match PAD_PIN_NAME
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+Warning: will label the first ITerm on the net!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+Labeling  mprj_analog_io[27] ( mprj_analog_io[27] - mprj_pads.area2_io_pad\[16\] / PAD_A_ESD_0_H )
+Warning: net mprj_analog_io[28] has a BTerm but no ITerms that match PAD_PIN_NAME
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+Warning: will label the first ITerm on the net!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+Labeling  mprj_analog_io[28] ( mprj_analog_io[28] - mprj_pads.area2_io_pad\[17\] / PAD_A_ESD_0_H )
+Warning: net mprj_analog_io[29] has a BTerm but no ITerms that match PAD_PIN_NAME
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+Warning: will label the first ITerm on the net!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+Labeling  mprj_analog_io[29] ( mprj_analog_io[29] - mprj_pads.area2_io_pad\[18\] / PAD_A_ESD_0_H )
+Warning: net mprj_analog_io[2] has a BTerm but no ITerms that match PAD_PIN_NAME
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+Warning: will label the first ITerm on the net!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+Labeling  mprj_analog_io[2] ( mprj_analog_io[2] - mprj_pads.area1_io_pad\[9\] / PAD_A_ESD_0_H )
+Warning: net mprj_analog_io[30] has a BTerm but no ITerms that match PAD_PIN_NAME
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+Warning: will label the first ITerm on the net!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+Labeling  mprj_analog_io[30] ( mprj_analog_io[30] - mprj_pads.area2_io_pad\[19\] / PAD_A_ESD_0_H )
+Warning: net mprj_analog_io[3] has a BTerm but no ITerms that match PAD_PIN_NAME
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+Warning: will label the first ITerm on the net!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+Labeling  mprj_analog_io[3] ( mprj_analog_io[3] - mprj_pads.area1_io_pad\[10\] / PAD_A_ESD_0_H )
+Warning: net mprj_analog_io[4] has a BTerm but no ITerms that match PAD_PIN_NAME
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+Warning: will label the first ITerm on the net!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+Labeling  mprj_analog_io[4] ( mprj_analog_io[4] - mprj_pads.area1_io_pad\[11\] / PAD_A_ESD_0_H )
+Warning: net mprj_analog_io[5] has a BTerm but no ITerms that match PAD_PIN_NAME
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+Warning: will label the first ITerm on the net!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+Labeling  mprj_analog_io[5] ( mprj_analog_io[5] - mprj_pads.area1_io_pad\[12\] / PAD_A_ESD_0_H )
+Warning: net mprj_analog_io[6] has a BTerm but no ITerms that match PAD_PIN_NAME
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+Warning: will label the first ITerm on the net!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+Labeling  mprj_analog_io[6] ( mprj_analog_io[6] - mprj_pads.area1_io_pad\[13\] / PAD_A_ESD_0_H )
+Warning: net mprj_analog_io[7] has a BTerm but no ITerms that match PAD_PIN_NAME
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+Warning: will label the first ITerm on the net!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+Labeling  mprj_analog_io[7] ( mprj_analog_io[7] - mprj_pads.area1_io_pad\[14\] / PAD_A_ESD_0_H )
+Warning: net mprj_analog_io[8] has a BTerm but no ITerms that match PAD_PIN_NAME
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+Warning: will label the first ITerm on the net!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+Labeling  mprj_analog_io[8] ( mprj_analog_io[8] - mprj_pads.area1_io_pad\[15\] / PAD_A_ESD_0_H )
+Warning: net mprj_analog_io[9] has a BTerm but no ITerms that match PAD_PIN_NAME
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+Warning: will label the first ITerm on the net!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+Labeling  mprj_analog_io[9] ( mprj_analog_io[9] - mprj_pads.area1_io_pad\[16\] / PAD_A_ESD_0_H )
 Labeling  mprj_io[0] ( mprj_io[0] - mprj_pads.area1_io_pad\[0\] / PAD )
 Labeling  mprj_io[10] ( mprj_io[10] - mprj_pads.area1_io_pad\[10\] / PAD )
 Labeling  mprj_io[11] ( mprj_io[11] - mprj_pads.area1_io_pad\[11\] / PAD )
@@ -3242,1389 +3399,1452 @@ vssd handled by an external mapping; skipping...
 vssd1 handled by an external mapping; skipping...
 vssd2 handled by an external mapping; skipping...
 vssio handled by an external mapping; skipping...
+set()
 Labeling 59 pads
-Labeling 691 pad pins
-{'clock_pad': [('PAD', 'clock', 'INPUT'), ('IN', 'clock_core', 'OUTPUT'), ('INP_DIS', 'por', 'INPUT')], 'flash_clk_pad': [('PAD', 'flash_clk', 'OUTPUT'), ('OUT', 'flash_clk_core', 'INPUT'), ('INP_DIS', 'flash_clk_ieb_core', 'INPUT'), ('OE_N', 'flash_clk_oeb_core', 'INPUT')], 'flash_csb_pad': [('PAD', 'flash_csb', 'OUTPUT'), ('OUT', 'flash_csb_core', 'INPUT'), ('INP_DIS', 'flash_csb_ieb_core', 'INPUT'), ('OE_N', 'flash_csb_oeb_core', 'INPUT')], 'flash_io0_pad': [('PAD', 'flash_io0', 'INOUT'), ('IN', 'flash_io0_di_core', 'OUTPUT'), ('OUT', 'flash_io0_do_core', 'INPUT'), ('INP_DIS', 'flash_io0_ieb_core', 'INPUT'), ('OE_N', 'flash_io0_oeb_core', 'INPUT')], 'flash_io1_pad': [('PAD', 'flash_io1', 'INOUT'), ('IN', 'flash_io1_di_core', 'OUTPUT'), ('OUT', 'flash_io1_do_core', 'INPUT'), ('INP_DIS', 'flash_io1_ieb_core', 'INPUT'), ('OE_N', 'flash_io1_oeb_core', 'INPUT')], 'gpio_pad': [('PAD', 'gpio', 'INOUT'), ('IN', 'gpio_in_core', 'OUTPUT'), ('INP_DIS', 'gpio_inenb_core', 'INPUT'), ('DM[0]', 'gpio_mode0_core', 'INPUT'), ('DM[2]', 'gpio_mode1_core', 'INPUT'), ('OUT', 'gpio_out_core', 'INPUT'), ('OE_N', 'gpio_outenb_core', 'INPUT')], 'mprj_pads.area1_io_pad\\[0\\]': [('PAD', 'mprj_io[0]', 'INOUT'), ('ANALOG_EN', 'mprj_io_analog_en[0]', 'INPUT'), ('ANALOG_POL', 'mprj_io_analog_pol[0]', 'INPUT'), ('ANALOG_SEL', 'mprj_io_analog_sel[0]', 'INPUT'), ('DM[0]', 'mprj_io_dm[0]', 'INPUT'), ('DM[1]', 'mprj_io_dm[1]', 'INPUT'), ('DM[2]', 'mprj_io_dm[2]', 'INPUT'), ('ENABLE_H', 'mprj_io_enh[0]', 'INPUT'), ('HLD_H_N', 'mprj_io_hldh_n[0]', 'INPUT'), ('HLD_OVR', 'mprj_io_holdover[0]', 'INPUT'), ('IB_MODE_SEL', 'mprj_io_ib_mode_sel[0]', 'INPUT'), ('INP_DIS', 'mprj_io_inp_dis[0]', 'INPUT'), ('OE_N', 'mprj_io_oeb[0]', 'INPUT'), ('OUT', 'mprj_io_out[0]', 'INPUT'), ('SLOW', 'mprj_io_slow_sel[0]', 'INPUT'), ('VTRIP_SEL', 'mprj_io_vtrip_sel[0]', 'INPUT'), ('IN', 'mprj_io_in[0]', 'OUTPUT')], 'mprj_pads.area1_io_pad\\[10\\]': [('PAD', 'mprj_io[10]', 'INOUT'), ('ANALOG_EN', 'mprj_io_analog_en[10]', 'INPUT'), ('ANALOG_POL', 'mprj_io_analog_pol[10]', 'INPUT'), ('ANALOG_SEL', 'mprj_io_analog_sel[10]', 'INPUT'), ('DM[0]', 'mprj_io_dm[30]', 'INPUT'), ('DM[1]', 'mprj_io_dm[31]', 'INPUT'), ('DM[2]', 'mprj_io_dm[32]', 'INPUT'), ('ENABLE_H', 'mprj_io_enh[10]', 'INPUT'), ('HLD_H_N', 'mprj_io_hldh_n[10]', 'INPUT'), ('HLD_OVR', 'mprj_io_holdover[10]', 'INPUT'), ('IB_MODE_SEL', 'mprj_io_ib_mode_sel[10]', 'INPUT'), ('INP_DIS', 'mprj_io_inp_dis[10]', 'INPUT'), ('OE_N', 'mprj_io_oeb[10]', 'INPUT'), ('OUT', 'mprj_io_out[10]', 'INPUT'), ('SLOW', 'mprj_io_slow_sel[10]', 'INPUT'), ('VTRIP_SEL', 'mprj_io_vtrip_sel[10]', 'INPUT'), ('IN', 'mprj_io_in[10]', 'OUTPUT')], 'mprj_pads.area1_io_pad\\[11\\]': [('PAD', 'mprj_io[11]', 'INOUT'), ('ANALOG_EN', 'mprj_io_analog_en[11]', 'INPUT'), ('ANALOG_POL', 'mprj_io_analog_pol[11]', 'INPUT'), ('ANALOG_SEL', 'mprj_io_analog_sel[11]', 'INPUT'), ('DM[0]', 'mprj_io_dm[33]', 'INPUT'), ('DM[1]', 'mprj_io_dm[34]', 'INPUT'), ('DM[2]', 'mprj_io_dm[35]', 'INPUT'), ('ENABLE_H', 'mprj_io_enh[11]', 'INPUT'), ('HLD_H_N', 'mprj_io_hldh_n[11]', 'INPUT'), ('HLD_OVR', 'mprj_io_holdover[11]', 'INPUT'), ('IB_MODE_SEL', 'mprj_io_ib_mode_sel[11]', 'INPUT'), ('INP_DIS', 'mprj_io_inp_dis[11]', 'INPUT'), ('OE_N', 'mprj_io_oeb[11]', 'INPUT'), ('OUT', 'mprj_io_out[11]', 'INPUT'), ('SLOW', 'mprj_io_slow_sel[11]', 'INPUT'), ('VTRIP_SEL', 'mprj_io_vtrip_sel[11]', 'INPUT'), ('IN', 'mprj_io_in[11]', 'OUTPUT')], 'mprj_pads.area1_io_pad\\[12\\]': [('PAD', 'mprj_io[12]', 'INOUT'), ('ANALOG_EN', 'mprj_io_analog_en[12]', 'INPUT'), ('ANALOG_POL', 'mprj_io_analog_pol[12]', 'INPUT'), ('ANALOG_SEL', 'mprj_io_analog_sel[12]', 'INPUT'), ('DM[0]', 'mprj_io_dm[36]', 'INPUT'), ('DM[1]', 'mprj_io_dm[37]', 'INPUT'), ('DM[2]', 'mprj_io_dm[38]', 'INPUT'), ('ENABLE_H', 'mprj_io_enh[12]', 'INPUT'), ('HLD_H_N', 'mprj_io_hldh_n[12]', 'INPUT'), ('HLD_OVR', 'mprj_io_holdover[12]', 'INPUT'), ('IB_MODE_SEL', 'mprj_io_ib_mode_sel[12]', 'INPUT'), ('INP_DIS', 'mprj_io_inp_dis[12]', 'INPUT'), ('OE_N', 'mprj_io_oeb[12]', 'INPUT'), ('OUT', 'mprj_io_out[12]', 'INPUT'), ('SLOW', 'mprj_io_slow_sel[12]', 'INPUT'), ('VTRIP_SEL', 'mprj_io_vtrip_sel[12]', 'INPUT'), ('IN', 'mprj_io_in[12]', 'OUTPUT')], 'mprj_pads.area1_io_pad\\[13\\]': [('PAD', 'mprj_io[13]', 'INOUT'), ('ANALOG_EN', 'mprj_io_analog_en[13]', 'INPUT'), ('ANALOG_POL', 'mprj_io_analog_pol[13]', 'INPUT'), ('ANALOG_SEL', 'mprj_io_analog_sel[13]', 'INPUT'), ('DM[0]', 'mprj_io_dm[39]', 'INPUT'), ('DM[1]', 'mprj_io_dm[40]', 'INPUT'), ('DM[2]', 'mprj_io_dm[41]', 'INPUT'), ('ENABLE_H', 'mprj_io_enh[13]', 'INPUT'), ('HLD_H_N', 'mprj_io_hldh_n[13]', 'INPUT'), ('HLD_OVR', 'mprj_io_holdover[13]', 'INPUT'), ('IB_MODE_SEL', 'mprj_io_ib_mode_sel[13]', 'INPUT'), ('INP_DIS', 'mprj_io_inp_dis[13]', 'INPUT'), ('OE_N', 'mprj_io_oeb[13]', 'INPUT'), ('OUT', 'mprj_io_out[13]', 'INPUT'), ('SLOW', 'mprj_io_slow_sel[13]', 'INPUT'), ('VTRIP_SEL', 'mprj_io_vtrip_sel[13]', 'INPUT'), ('IN', 'mprj_io_in[13]', 'OUTPUT')], 'mprj_pads.area1_io_pad\\[14\\]': [('PAD', 'mprj_io[14]', 'INOUT'), ('ANALOG_EN', 'mprj_io_analog_en[14]', 'INPUT'), ('ANALOG_POL', 'mprj_io_analog_pol[14]', 'INPUT'), ('ANALOG_SEL', 'mprj_io_analog_sel[14]', 'INPUT'), ('DM[0]', 'mprj_io_dm[42]', 'INPUT'), ('DM[1]', 'mprj_io_dm[43]', 'INPUT'), ('DM[2]', 'mprj_io_dm[44]', 'INPUT'), ('ENABLE_H', 'mprj_io_enh[14]', 'INPUT'), ('HLD_H_N', 'mprj_io_hldh_n[14]', 'INPUT'), ('HLD_OVR', 'mprj_io_holdover[14]', 'INPUT'), ('IB_MODE_SEL', 'mprj_io_ib_mode_sel[14]', 'INPUT'), ('INP_DIS', 'mprj_io_inp_dis[14]', 'INPUT'), ('OE_N', 'mprj_io_oeb[14]', 'INPUT'), ('OUT', 'mprj_io_out[14]', 'INPUT'), ('SLOW', 'mprj_io_slow_sel[14]', 'INPUT'), ('VTRIP_SEL', 'mprj_io_vtrip_sel[14]', 'INPUT'), ('IN', 'mprj_io_in[14]', 'OUTPUT')], 'mprj_pads.area1_io_pad\\[15\\]': [('PAD', 'mprj_io[15]', 'INOUT'), ('ANALOG_EN', 'mprj_io_analog_en[15]', 'INPUT'), ('ANALOG_POL', 'mprj_io_analog_pol[15]', 'INPUT'), ('ANALOG_SEL', 'mprj_io_analog_sel[15]', 'INPUT'), ('DM[0]', 'mprj_io_dm[45]', 'INPUT'), ('DM[1]', 'mprj_io_dm[46]', 'INPUT'), ('DM[2]', 'mprj_io_dm[47]', 'INPUT'), ('ENABLE_H', 'mprj_io_enh[15]', 'INPUT'), ('HLD_H_N', 'mprj_io_hldh_n[15]', 'INPUT'), ('HLD_OVR', 'mprj_io_holdover[15]', 'INPUT'), ('IB_MODE_SEL', 'mprj_io_ib_mode_sel[15]', 'INPUT'), ('INP_DIS', 'mprj_io_inp_dis[15]', 'INPUT'), ('OE_N', 'mprj_io_oeb[15]', 'INPUT'), ('OUT', 'mprj_io_out[15]', 'INPUT'), ('SLOW', 'mprj_io_slow_sel[15]', 'INPUT'), ('VTRIP_SEL', 'mprj_io_vtrip_sel[15]', 'INPUT'), ('IN', 'mprj_io_in[15]', 'OUTPUT')], 'mprj_pads.area1_io_pad\\[16\\]': [('PAD', 'mprj_io[16]', 'INOUT'), ('ANALOG_EN', 'mprj_io_analog_en[16]', 'INPUT'), ('ANALOG_POL', 'mprj_io_analog_pol[16]', 'INPUT'), ('ANALOG_SEL', 'mprj_io_analog_sel[16]', 'INPUT'), ('DM[0]', 'mprj_io_dm[48]', 'INPUT'), ('DM[1]', 'mprj_io_dm[49]', 'INPUT'), ('DM[2]', 'mprj_io_dm[50]', 'INPUT'), ('ENABLE_H', 'mprj_io_enh[16]', 'INPUT'), ('HLD_H_N', 'mprj_io_hldh_n[16]', 'INPUT'), ('HLD_OVR', 'mprj_io_holdover[16]', 'INPUT'), ('IB_MODE_SEL', 'mprj_io_ib_mode_sel[16]', 'INPUT'), ('INP_DIS', 'mprj_io_inp_dis[16]', 'INPUT'), ('OE_N', 'mprj_io_oeb[16]', 'INPUT'), ('OUT', 'mprj_io_out[16]', 'INPUT'), ('SLOW', 'mprj_io_slow_sel[16]', 'INPUT'), ('VTRIP_SEL', 'mprj_io_vtrip_sel[16]', 'INPUT'), ('IN', 'mprj_io_in[16]', 'OUTPUT')], 'mprj_pads.area1_io_pad\\[17\\]': [('PAD', 'mprj_io[17]', 'INOUT'), ('ANALOG_EN', 'mprj_io_analog_en[17]', 'INPUT'), ('ANALOG_POL', 'mprj_io_analog_pol[17]', 'INPUT'), ('ANALOG_SEL', 'mprj_io_analog_sel[17]', 'INPUT'), ('DM[0]', 'mprj_io_dm[51]', 'INPUT'), ('DM[1]', 'mprj_io_dm[52]', 'INPUT'), ('DM[2]', 'mprj_io_dm[53]', 'INPUT'), ('ENABLE_H', 'mprj_io_enh[17]', 'INPUT'), ('HLD_H_N', 'mprj_io_hldh_n[17]', 'INPUT'), ('HLD_OVR', 'mprj_io_holdover[17]', 'INPUT'), ('IB_MODE_SEL', 'mprj_io_ib_mode_sel[17]', 'INPUT'), ('INP_DIS', 'mprj_io_inp_dis[17]', 'INPUT'), ('OE_N', 'mprj_io_oeb[17]', 'INPUT'), ('OUT', 'mprj_io_out[17]', 'INPUT'), ('SLOW', 'mprj_io_slow_sel[17]', 'INPUT'), ('VTRIP_SEL', 'mprj_io_vtrip_sel[17]', 'INPUT'), ('IN', 'mprj_io_in[17]', 'OUTPUT')], 'mprj_pads.area2_io_pad\\[0\\]': [('PAD', 'mprj_io[18]', 'INOUT'), ('ANALOG_EN', 'mprj_io_analog_en[18]', 'INPUT'), ('ANALOG_POL', 'mprj_io_analog_pol[18]', 'INPUT'), ('ANALOG_SEL', 'mprj_io_analog_sel[18]', 'INPUT'), ('DM[0]', 'mprj_io_dm[54]', 'INPUT'), ('DM[1]', 'mprj_io_dm[55]', 'INPUT'), ('DM[2]', 'mprj_io_dm[56]', 'INPUT'), ('ENABLE_H', 'mprj_io_enh[18]', 'INPUT'), ('HLD_H_N', 'mprj_io_hldh_n[18]', 'INPUT'), ('HLD_OVR', 'mprj_io_holdover[18]', 'INPUT'), ('IB_MODE_SEL', 'mprj_io_ib_mode_sel[18]', 'INPUT'), ('INP_DIS', 'mprj_io_inp_dis[18]', 'INPUT'), ('OE_N', 'mprj_io_oeb[18]', 'INPUT'), ('OUT', 'mprj_io_out[18]', 'INPUT'), ('SLOW', 'mprj_io_slow_sel[18]', 'INPUT'), ('VTRIP_SEL', 'mprj_io_vtrip_sel[18]', 'INPUT'), ('IN', 'mprj_io_in[18]', 'OUTPUT')], 'mprj_pads.area2_io_pad\\[1\\]': [('PAD', 'mprj_io[19]', 'INOUT'), ('ANALOG_EN', 'mprj_io_analog_en[19]', 'INPUT'), ('ANALOG_POL', 'mprj_io_analog_pol[19]', 'INPUT'), ('ANALOG_SEL', 'mprj_io_analog_sel[19]', 'INPUT'), ('DM[0]', 'mprj_io_dm[57]', 'INPUT'), ('DM[1]', 'mprj_io_dm[58]', 'INPUT'), ('DM[2]', 'mprj_io_dm[59]', 'INPUT'), ('ENABLE_H', 'mprj_io_enh[19]', 'INPUT'), ('HLD_H_N', 'mprj_io_hldh_n[19]', 'INPUT'), ('HLD_OVR', 'mprj_io_holdover[19]', 'INPUT'), ('IB_MODE_SEL', 'mprj_io_ib_mode_sel[19]', 'INPUT'), ('INP_DIS', 'mprj_io_inp_dis[19]', 'INPUT'), ('OE_N', 'mprj_io_oeb[19]', 'INPUT'), ('OUT', 'mprj_io_out[19]', 'INPUT'), ('SLOW', 'mprj_io_slow_sel[19]', 'INPUT'), ('VTRIP_SEL', 'mprj_io_vtrip_sel[19]', 'INPUT'), ('IN', 'mprj_io_in[19]', 'OUTPUT')], 'mprj_pads.area1_io_pad\\[1\\]': [('PAD', 'mprj_io[1]', 'INOUT'), ('ANALOG_EN', 'mprj_io_analog_en[1]', 'INPUT'), ('ANALOG_POL', 'mprj_io_analog_pol[1]', 'INPUT'), ('ANALOG_SEL', 'mprj_io_analog_sel[1]', 'INPUT'), ('DM[0]', 'mprj_io_dm[3]', 'INPUT'), ('DM[1]', 'mprj_io_dm[4]', 'INPUT'), ('DM[2]', 'mprj_io_dm[5]', 'INPUT'), ('ENABLE_H', 'mprj_io_enh[1]', 'INPUT'), ('HLD_H_N', 'mprj_io_hldh_n[1]', 'INPUT'), ('HLD_OVR', 'mprj_io_holdover[1]', 'INPUT'), ('IB_MODE_SEL', 'mprj_io_ib_mode_sel[1]', 'INPUT'), ('INP_DIS', 'mprj_io_inp_dis[1]', 'INPUT'), ('OE_N', 'mprj_io_oeb[1]', 'INPUT'), ('OUT', 'mprj_io_out[1]', 'INPUT'), ('SLOW', 'mprj_io_slow_sel[1]', 'INPUT'), ('VTRIP_SEL', 'mprj_io_vtrip_sel[1]', 'INPUT'), ('IN', 'mprj_io_in[1]', 'OUTPUT')], 'mprj_pads.area2_io_pad\\[2\\]': [('PAD', 'mprj_io[20]', 'INOUT'), ('ANALOG_EN', 'mprj_io_analog_en[20]', 'INPUT'), ('ANALOG_POL', 'mprj_io_analog_pol[20]', 'INPUT'), ('ANALOG_SEL', 'mprj_io_analog_sel[20]', 'INPUT'), ('DM[0]', 'mprj_io_dm[60]', 'INPUT'), ('DM[1]', 'mprj_io_dm[61]', 'INPUT'), ('DM[2]', 'mprj_io_dm[62]', 'INPUT'), ('ENABLE_H', 'mprj_io_enh[20]', 'INPUT'), ('HLD_H_N', 'mprj_io_hldh_n[20]', 'INPUT'), ('HLD_OVR', 'mprj_io_holdover[20]', 'INPUT'), ('IB_MODE_SEL', 'mprj_io_ib_mode_sel[20]', 'INPUT'), ('INP_DIS', 'mprj_io_inp_dis[20]', 'INPUT'), ('OE_N', 'mprj_io_oeb[20]', 'INPUT'), ('OUT', 'mprj_io_out[20]', 'INPUT'), ('SLOW', 'mprj_io_slow_sel[20]', 'INPUT'), ('VTRIP_SEL', 'mprj_io_vtrip_sel[20]', 'INPUT'), ('IN', 'mprj_io_in[20]', 'OUTPUT')], 'mprj_pads.area2_io_pad\\[3\\]': [('PAD', 'mprj_io[21]', 'INOUT'), ('ANALOG_EN', 'mprj_io_analog_en[21]', 'INPUT'), ('ANALOG_POL', 'mprj_io_analog_pol[21]', 'INPUT'), ('ANALOG_SEL', 'mprj_io_analog_sel[21]', 'INPUT'), ('DM[0]', 'mprj_io_dm[63]', 'INPUT'), ('DM[1]', 'mprj_io_dm[64]', 'INPUT'), ('DM[2]', 'mprj_io_dm[65]', 'INPUT'), ('ENABLE_H', 'mprj_io_enh[21]', 'INPUT'), ('HLD_H_N', 'mprj_io_hldh_n[21]', 'INPUT'), ('HLD_OVR', 'mprj_io_holdover[21]', 'INPUT'), ('IB_MODE_SEL', 'mprj_io_ib_mode_sel[21]', 'INPUT'), ('INP_DIS', 'mprj_io_inp_dis[21]', 'INPUT'), ('OE_N', 'mprj_io_oeb[21]', 'INPUT'), ('OUT', 'mprj_io_out[21]', 'INPUT'), ('SLOW', 'mprj_io_slow_sel[21]', 'INPUT'), ('VTRIP_SEL', 'mprj_io_vtrip_sel[21]', 'INPUT'), ('IN', 'mprj_io_in[21]', 'OUTPUT')], 'mprj_pads.area2_io_pad\\[4\\]': [('PAD', 'mprj_io[22]', 'INOUT'), ('ANALOG_EN', 'mprj_io_analog_en[22]', 'INPUT'), ('ANALOG_POL', 'mprj_io_analog_pol[22]', 'INPUT'), ('ANALOG_SEL', 'mprj_io_analog_sel[22]', 'INPUT'), ('DM[0]', 'mprj_io_dm[66]', 'INPUT'), ('DM[1]', 'mprj_io_dm[67]', 'INPUT'), ('DM[2]', 'mprj_io_dm[68]', 'INPUT'), ('ENABLE_H', 'mprj_io_enh[22]', 'INPUT'), ('HLD_H_N', 'mprj_io_hldh_n[22]', 'INPUT'), ('HLD_OVR', 'mprj_io_holdover[22]', 'INPUT'), ('IB_MODE_SEL', 'mprj_io_ib_mode_sel[22]', 'INPUT'), ('INP_DIS', 'mprj_io_inp_dis[22]', 'INPUT'), ('OE_N', 'mprj_io_oeb[22]', 'INPUT'), ('OUT', 'mprj_io_out[22]', 'INPUT'), ('SLOW', 'mprj_io_slow_sel[22]', 'INPUT'), ('VTRIP_SEL', 'mprj_io_vtrip_sel[22]', 'INPUT'), ('IN', 'mprj_io_in[22]', 'OUTPUT')], 'mprj_pads.area2_io_pad\\[5\\]': [('PAD', 'mprj_io[23]', 'INOUT'), ('ANALOG_EN', 'mprj_io_analog_en[23]', 'INPUT'), ('ANALOG_POL', 'mprj_io_analog_pol[23]', 'INPUT'), ('ANALOG_SEL', 'mprj_io_analog_sel[23]', 'INPUT'), ('DM[0]', 'mprj_io_dm[69]', 'INPUT'), ('DM[1]', 'mprj_io_dm[70]', 'INPUT'), ('DM[2]', 'mprj_io_dm[71]', 'INPUT'), ('ENABLE_H', 'mprj_io_enh[23]', 'INPUT'), ('HLD_H_N', 'mprj_io_hldh_n[23]', 'INPUT'), ('HLD_OVR', 'mprj_io_holdover[23]', 'INPUT'), ('IB_MODE_SEL', 'mprj_io_ib_mode_sel[23]', 'INPUT'), ('INP_DIS', 'mprj_io_inp_dis[23]', 'INPUT'), ('OE_N', 'mprj_io_oeb[23]', 'INPUT'), ('OUT', 'mprj_io_out[23]', 'INPUT'), ('SLOW', 'mprj_io_slow_sel[23]', 'INPUT'), ('VTRIP_SEL', 'mprj_io_vtrip_sel[23]', 'INPUT'), ('IN', 'mprj_io_in[23]', 'OUTPUT')], 'mprj_pads.area2_io_pad\\[6\\]': [('PAD', 'mprj_io[24]', 'INOUT'), ('ANALOG_EN', 'mprj_io_analog_en[24]', 'INPUT'), ('ANALOG_POL', 'mprj_io_analog_pol[24]', 'INPUT'), ('ANALOG_SEL', 'mprj_io_analog_sel[24]', 'INPUT'), ('DM[0]', 'mprj_io_dm[72]', 'INPUT'), ('DM[1]', 'mprj_io_dm[73]', 'INPUT'), ('DM[2]', 'mprj_io_dm[74]', 'INPUT'), ('ENABLE_H', 'mprj_io_enh[24]', 'INPUT'), ('HLD_H_N', 'mprj_io_hldh_n[24]', 'INPUT'), ('HLD_OVR', 'mprj_io_holdover[24]', 'INPUT'), ('IB_MODE_SEL', 'mprj_io_ib_mode_sel[24]', 'INPUT'), ('INP_DIS', 'mprj_io_inp_dis[24]', 'INPUT'), ('OE_N', 'mprj_io_oeb[24]', 'INPUT'), ('OUT', 'mprj_io_out[24]', 'INPUT'), ('SLOW', 'mprj_io_slow_sel[24]', 'INPUT'), ('VTRIP_SEL', 'mprj_io_vtrip_sel[24]', 'INPUT'), ('IN', 'mprj_io_in[24]', 'OUTPUT')], 'mprj_pads.area2_io_pad\\[7\\]': [('PAD', 'mprj_io[25]', 'INOUT'), ('ANALOG_EN', 'mprj_io_analog_en[25]', 'INPUT'), ('ANALOG_POL', 'mprj_io_analog_pol[25]', 'INPUT'), ('ANALOG_SEL', 'mprj_io_analog_sel[25]', 'INPUT'), ('DM[0]', 'mprj_io_dm[75]', 'INPUT'), ('DM[1]', 'mprj_io_dm[76]', 'INPUT'), ('DM[2]', 'mprj_io_dm[77]', 'INPUT'), ('ENABLE_H', 'mprj_io_enh[25]', 'INPUT'), ('HLD_H_N', 'mprj_io_hldh_n[25]', 'INPUT'), ('HLD_OVR', 'mprj_io_holdover[25]', 'INPUT'), ('IB_MODE_SEL', 'mprj_io_ib_mode_sel[25]', 'INPUT'), ('INP_DIS', 'mprj_io_inp_dis[25]', 'INPUT'), ('OE_N', 'mprj_io_oeb[25]', 'INPUT'), ('OUT', 'mprj_io_out[25]', 'INPUT'), ('SLOW', 'mprj_io_slow_sel[25]', 'INPUT'), ('VTRIP_SEL', 'mprj_io_vtrip_sel[25]', 'INPUT'), ('IN', 'mprj_io_in[25]', 'OUTPUT')], 'mprj_pads.area2_io_pad\\[8\\]': [('PAD', 'mprj_io[26]', 'INOUT'), ('ANALOG_EN', 'mprj_io_analog_en[26]', 'INPUT'), ('ANALOG_POL', 'mprj_io_analog_pol[26]', 'INPUT'), ('ANALOG_SEL', 'mprj_io_analog_sel[26]', 'INPUT'), ('DM[0]', 'mprj_io_dm[78]', 'INPUT'), ('DM[1]', 'mprj_io_dm[79]', 'INPUT'), ('DM[2]', 'mprj_io_dm[80]', 'INPUT'), ('ENABLE_H', 'mprj_io_enh[26]', 'INPUT'), ('HLD_H_N', 'mprj_io_hldh_n[26]', 'INPUT'), ('HLD_OVR', 'mprj_io_holdover[26]', 'INPUT'), ('IB_MODE_SEL', 'mprj_io_ib_mode_sel[26]', 'INPUT'), ('INP_DIS', 'mprj_io_inp_dis[26]', 'INPUT'), ('OE_N', 'mprj_io_oeb[26]', 'INPUT'), ('OUT', 'mprj_io_out[26]', 'INPUT'), ('SLOW', 'mprj_io_slow_sel[26]', 'INPUT'), ('VTRIP_SEL', 'mprj_io_vtrip_sel[26]', 'INPUT'), ('IN', 'mprj_io_in[26]', 'OUTPUT')], 'mprj_pads.area2_io_pad\\[9\\]': [('PAD', 'mprj_io[27]', 'INOUT'), ('ANALOG_EN', 'mprj_io_analog_en[27]', 'INPUT'), ('ANALOG_POL', 'mprj_io_analog_pol[27]', 'INPUT'), ('ANALOG_SEL', 'mprj_io_analog_sel[27]', 'INPUT'), ('DM[0]', 'mprj_io_dm[81]', 'INPUT'), ('DM[1]', 'mprj_io_dm[82]', 'INPUT'), ('DM[2]', 'mprj_io_dm[83]', 'INPUT'), ('ENABLE_H', 'mprj_io_enh[27]', 'INPUT'), ('HLD_H_N', 'mprj_io_hldh_n[27]', 'INPUT'), ('HLD_OVR', 'mprj_io_holdover[27]', 'INPUT'), ('IB_MODE_SEL', 'mprj_io_ib_mode_sel[27]', 'INPUT'), ('INP_DIS', 'mprj_io_inp_dis[27]', 'INPUT'), ('OE_N', 'mprj_io_oeb[27]', 'INPUT'), ('OUT', 'mprj_io_out[27]', 'INPUT'), ('SLOW', 'mprj_io_slow_sel[27]', 'INPUT'), ('VTRIP_SEL', 'mprj_io_vtrip_sel[27]', 'INPUT'), ('IN', 'mprj_io_in[27]', 'OUTPUT')], 'mprj_pads.area2_io_pad\\[10\\]': [('PAD', 'mprj_io[28]', 'INOUT'), ('ANALOG_EN', 'mprj_io_analog_en[28]', 'INPUT'), ('ANALOG_POL', 'mprj_io_analog_pol[28]', 'INPUT'), ('ANALOG_SEL', 'mprj_io_analog_sel[28]', 'INPUT'), ('DM[0]', 'mprj_io_dm[84]', 'INPUT'), ('DM[1]', 'mprj_io_dm[85]', 'INPUT'), ('DM[2]', 'mprj_io_dm[86]', 'INPUT'), ('ENABLE_H', 'mprj_io_enh[28]', 'INPUT'), ('HLD_H_N', 'mprj_io_hldh_n[28]', 'INPUT'), ('HLD_OVR', 'mprj_io_holdover[28]', 'INPUT'), ('IB_MODE_SEL', 'mprj_io_ib_mode_sel[28]', 'INPUT'), ('INP_DIS', 'mprj_io_inp_dis[28]', 'INPUT'), ('OE_N', 'mprj_io_oeb[28]', 'INPUT'), ('OUT', 'mprj_io_out[28]', 'INPUT'), ('SLOW', 'mprj_io_slow_sel[28]', 'INPUT'), ('VTRIP_SEL', 'mprj_io_vtrip_sel[28]', 'INPUT'), ('IN', 'mprj_io_in[28]', 'OUTPUT')], 'mprj_pads.area2_io_pad\\[11\\]': [('PAD', 'mprj_io[29]', 'INOUT'), ('ANALOG_EN', 'mprj_io_analog_en[29]', 'INPUT'), ('ANALOG_POL', 'mprj_io_analog_pol[29]', 'INPUT'), ('ANALOG_SEL', 'mprj_io_analog_sel[29]', 'INPUT'), ('DM[0]', 'mprj_io_dm[87]', 'INPUT'), ('DM[1]', 'mprj_io_dm[88]', 'INPUT'), ('DM[2]', 'mprj_io_dm[89]', 'INPUT'), ('ENABLE_H', 'mprj_io_enh[29]', 'INPUT'), ('HLD_H_N', 'mprj_io_hldh_n[29]', 'INPUT'), ('HLD_OVR', 'mprj_io_holdover[29]', 'INPUT'), ('IB_MODE_SEL', 'mprj_io_ib_mode_sel[29]', 'INPUT'), ('INP_DIS', 'mprj_io_inp_dis[29]', 'INPUT'), ('OE_N', 'mprj_io_oeb[29]', 'INPUT'), ('OUT', 'mprj_io_out[29]', 'INPUT'), ('SLOW', 'mprj_io_slow_sel[29]', 'INPUT'), ('VTRIP_SEL', 'mprj_io_vtrip_sel[29]', 'INPUT'), ('IN', 'mprj_io_in[29]', 'OUTPUT')], 'mprj_pads.area1_io_pad\\[2\\]': [('PAD', 'mprj_io[2]', 'INOUT'), ('ANALOG_EN', 'mprj_io_analog_en[2]', 'INPUT'), ('ANALOG_POL', 'mprj_io_analog_pol[2]', 'INPUT'), ('ANALOG_SEL', 'mprj_io_analog_sel[2]', 'INPUT'), ('DM[0]', 'mprj_io_dm[6]', 'INPUT'), ('DM[1]', 'mprj_io_dm[7]', 'INPUT'), ('DM[2]', 'mprj_io_dm[8]', 'INPUT'), ('ENABLE_H', 'mprj_io_enh[2]', 'INPUT'), ('HLD_H_N', 'mprj_io_hldh_n[2]', 'INPUT'), ('HLD_OVR', 'mprj_io_holdover[2]', 'INPUT'), ('IB_MODE_SEL', 'mprj_io_ib_mode_sel[2]', 'INPUT'), ('INP_DIS', 'mprj_io_inp_dis[2]', 'INPUT'), ('OE_N', 'mprj_io_oeb[2]', 'INPUT'), ('OUT', 'mprj_io_out[2]', 'INPUT'), ('SLOW', 'mprj_io_slow_sel[2]', 'INPUT'), ('VTRIP_SEL', 'mprj_io_vtrip_sel[2]', 'INPUT'), ('IN', 'mprj_io_in[2]', 'OUTPUT')], 'mprj_pads.area2_io_pad\\[12\\]': [('PAD', 'mprj_io[30]', 'INOUT'), ('ANALOG_EN', 'mprj_io_analog_en[30]', 'INPUT'), ('ANALOG_POL', 'mprj_io_analog_pol[30]', 'INPUT'), ('ANALOG_SEL', 'mprj_io_analog_sel[30]', 'INPUT'), ('DM[0]', 'mprj_io_dm[90]', 'INPUT'), ('DM[1]', 'mprj_io_dm[91]', 'INPUT'), ('DM[2]', 'mprj_io_dm[92]', 'INPUT'), ('ENABLE_H', 'mprj_io_enh[30]', 'INPUT'), ('HLD_H_N', 'mprj_io_hldh_n[30]', 'INPUT'), ('HLD_OVR', 'mprj_io_holdover[30]', 'INPUT'), ('IB_MODE_SEL', 'mprj_io_ib_mode_sel[30]', 'INPUT'), ('INP_DIS', 'mprj_io_inp_dis[30]', 'INPUT'), ('OE_N', 'mprj_io_oeb[30]', 'INPUT'), ('OUT', 'mprj_io_out[30]', 'INPUT'), ('SLOW', 'mprj_io_slow_sel[30]', 'INPUT'), ('VTRIP_SEL', 'mprj_io_vtrip_sel[30]', 'INPUT'), ('IN', 'mprj_io_in[30]', 'OUTPUT')], 'mprj_pads.area2_io_pad\\[13\\]': [('PAD', 'mprj_io[31]', 'INOUT'), ('ANALOG_EN', 'mprj_io_analog_en[31]', 'INPUT'), ('ANALOG_POL', 'mprj_io_analog_pol[31]', 'INPUT'), ('ANALOG_SEL', 'mprj_io_analog_sel[31]', 'INPUT'), ('DM[0]', 'mprj_io_dm[93]', 'INPUT'), ('DM[1]', 'mprj_io_dm[94]', 'INPUT'), ('DM[2]', 'mprj_io_dm[95]', 'INPUT'), ('ENABLE_H', 'mprj_io_enh[31]', 'INPUT'), ('HLD_H_N', 'mprj_io_hldh_n[31]', 'INPUT'), ('HLD_OVR', 'mprj_io_holdover[31]', 'INPUT'), ('IB_MODE_SEL', 'mprj_io_ib_mode_sel[31]', 'INPUT'), ('INP_DIS', 'mprj_io_inp_dis[31]', 'INPUT'), ('OE_N', 'mprj_io_oeb[31]', 'INPUT'), ('OUT', 'mprj_io_out[31]', 'INPUT'), ('SLOW', 'mprj_io_slow_sel[31]', 'INPUT'), ('VTRIP_SEL', 'mprj_io_vtrip_sel[31]', 'INPUT'), ('IN', 'mprj_io_in[31]', 'OUTPUT')], 'mprj_pads.area2_io_pad\\[14\\]': [('PAD', 'mprj_io[32]', 'INOUT'), ('ANALOG_EN', 'mprj_io_analog_en[32]', 'INPUT'), ('ANALOG_POL', 'mprj_io_analog_pol[32]', 'INPUT'), ('ANALOG_SEL', 'mprj_io_analog_sel[32]', 'INPUT'), ('DM[0]', 'mprj_io_dm[96]', 'INPUT'), ('DM[1]', 'mprj_io_dm[97]', 'INPUT'), ('DM[2]', 'mprj_io_dm[98]', 'INPUT'), ('ENABLE_H', 'mprj_io_enh[32]', 'INPUT'), ('HLD_H_N', 'mprj_io_hldh_n[32]', 'INPUT'), ('HLD_OVR', 'mprj_io_holdover[32]', 'INPUT'), ('IB_MODE_SEL', 'mprj_io_ib_mode_sel[32]', 'INPUT'), ('INP_DIS', 'mprj_io_inp_dis[32]', 'INPUT'), ('OE_N', 'mprj_io_oeb[32]', 'INPUT'), ('OUT', 'mprj_io_out[32]', 'INPUT'), ('SLOW', 'mprj_io_slow_sel[32]', 'INPUT'), ('VTRIP_SEL', 'mprj_io_vtrip_sel[32]', 'INPUT'), ('IN', 'mprj_io_in[32]', 'OUTPUT')], 'mprj_pads.area2_io_pad\\[15\\]': [('PAD', 'mprj_io[33]', 'INOUT'), ('ANALOG_EN', 'mprj_io_analog_en[33]', 'INPUT'), ('ANALOG_POL', 'mprj_io_analog_pol[33]', 'INPUT'), ('ANALOG_SEL', 'mprj_io_analog_sel[33]', 'INPUT'), ('DM[1]', 'mprj_io_dm[100]', 'INPUT'), ('DM[2]', 'mprj_io_dm[101]', 'INPUT'), ('DM[0]', 'mprj_io_dm[99]', 'INPUT'), ('ENABLE_H', 'mprj_io_enh[33]', 'INPUT'), ('HLD_H_N', 'mprj_io_hldh_n[33]', 'INPUT'), ('HLD_OVR', 'mprj_io_holdover[33]', 'INPUT'), ('IB_MODE_SEL', 'mprj_io_ib_mode_sel[33]', 'INPUT'), ('INP_DIS', 'mprj_io_inp_dis[33]', 'INPUT'), ('OE_N', 'mprj_io_oeb[33]', 'INPUT'), ('OUT', 'mprj_io_out[33]', 'INPUT'), ('SLOW', 'mprj_io_slow_sel[33]', 'INPUT'), ('VTRIP_SEL', 'mprj_io_vtrip_sel[33]', 'INPUT'), ('IN', 'mprj_io_in[33]', 'OUTPUT')], 'mprj_pads.area2_io_pad\\[16\\]': [('PAD', 'mprj_io[34]', 'INOUT'), ('ANALOG_EN', 'mprj_io_analog_en[34]', 'INPUT'), ('ANALOG_POL', 'mprj_io_analog_pol[34]', 'INPUT'), ('ANALOG_SEL', 'mprj_io_analog_sel[34]', 'INPUT'), ('DM[0]', 'mprj_io_dm[102]', 'INPUT'), ('DM[1]', 'mprj_io_dm[103]', 'INPUT'), ('DM[2]', 'mprj_io_dm[104]', 'INPUT'), ('ENABLE_H', 'mprj_io_enh[34]', 'INPUT'), ('HLD_H_N', 'mprj_io_hldh_n[34]', 'INPUT'), ('HLD_OVR', 'mprj_io_holdover[34]', 'INPUT'), ('IB_MODE_SEL', 'mprj_io_ib_mode_sel[34]', 'INPUT'), ('INP_DIS', 'mprj_io_inp_dis[34]', 'INPUT'), ('OE_N', 'mprj_io_oeb[34]', 'INPUT'), ('OUT', 'mprj_io_out[34]', 'INPUT'), ('SLOW', 'mprj_io_slow_sel[34]', 'INPUT'), ('VTRIP_SEL', 'mprj_io_vtrip_sel[34]', 'INPUT'), ('IN', 'mprj_io_in[34]', 'OUTPUT')], 'mprj_pads.area2_io_pad\\[17\\]': [('PAD', 'mprj_io[35]', 'INOUT'), ('ANALOG_EN', 'mprj_io_analog_en[35]', 'INPUT'), ('ANALOG_POL', 'mprj_io_analog_pol[35]', 'INPUT'), ('ANALOG_SEL', 'mprj_io_analog_sel[35]', 'INPUT'), ('DM[0]', 'mprj_io_dm[105]', 'INPUT'), ('DM[1]', 'mprj_io_dm[106]', 'INPUT'), ('DM[2]', 'mprj_io_dm[107]', 'INPUT'), ('ENABLE_H', 'mprj_io_enh[35]', 'INPUT'), ('HLD_H_N', 'mprj_io_hldh_n[35]', 'INPUT'), ('HLD_OVR', 'mprj_io_holdover[35]', 'INPUT'), ('IB_MODE_SEL', 'mprj_io_ib_mode_sel[35]', 'INPUT'), ('INP_DIS', 'mprj_io_inp_dis[35]', 'INPUT'), ('OE_N', 'mprj_io_oeb[35]', 'INPUT'), ('OUT', 'mprj_io_out[35]', 'INPUT'), ('SLOW', 'mprj_io_slow_sel[35]', 'INPUT'), ('VTRIP_SEL', 'mprj_io_vtrip_sel[35]', 'INPUT'), ('IN', 'mprj_io_in[35]', 'OUTPUT')], 'mprj_pads.area2_io_pad\\[18\\]': [('PAD', 'mprj_io[36]', 'INOUT'), ('ANALOG_EN', 'mprj_io_analog_en[36]', 'INPUT'), ('ANALOG_POL', 'mprj_io_analog_pol[36]', 'INPUT'), ('ANALOG_SEL', 'mprj_io_analog_sel[36]', 'INPUT'), ('DM[0]', 'mprj_io_dm[108]', 'INPUT'), ('DM[1]', 'mprj_io_dm[109]', 'INPUT'), ('DM[2]', 'mprj_io_dm[110]', 'INPUT'), ('ENABLE_H', 'mprj_io_enh[36]', 'INPUT'), ('HLD_H_N', 'mprj_io_hldh_n[36]', 'INPUT'), ('HLD_OVR', 'mprj_io_holdover[36]', 'INPUT'), ('IB_MODE_SEL', 'mprj_io_ib_mode_sel[36]', 'INPUT'), ('INP_DIS', 'mprj_io_inp_dis[36]', 'INPUT'), ('OE_N', 'mprj_io_oeb[36]', 'INPUT'), ('OUT', 'mprj_io_out[36]', 'INPUT'), ('SLOW', 'mprj_io_slow_sel[36]', 'INPUT'), ('VTRIP_SEL', 'mprj_io_vtrip_sel[36]', 'INPUT'), ('IN', 'mprj_io_in[36]', 'OUTPUT')], 'mprj_pads.area2_io_pad\\[19\\]': [('PAD', 'mprj_io[37]', 'INOUT'), ('ANALOG_EN', 'mprj_io_analog_en[37]', 'INPUT'), ('ANALOG_POL', 'mprj_io_analog_pol[37]', 'INPUT'), ('ANALOG_SEL', 'mprj_io_analog_sel[37]', 'INPUT'), ('DM[0]', 'mprj_io_dm[111]', 'INPUT'), ('DM[1]', 'mprj_io_dm[112]', 'INPUT'), ('DM[2]', 'mprj_io_dm[113]', 'INPUT'), ('ENABLE_H', 'mprj_io_enh[37]', 'INPUT'), ('HLD_H_N', 'mprj_io_hldh_n[37]', 'INPUT'), ('HLD_OVR', 'mprj_io_holdover[37]', 'INPUT'), ('IB_MODE_SEL', 'mprj_io_ib_mode_sel[37]', 'INPUT'), ('INP_DIS', 'mprj_io_inp_dis[37]', 'INPUT'), ('OE_N', 'mprj_io_oeb[37]', 'INPUT'), ('OUT', 'mprj_io_out[37]', 'INPUT'), ('SLOW', 'mprj_io_slow_sel[37]', 'INPUT'), ('VTRIP_SEL', 'mprj_io_vtrip_sel[37]', 'INPUT'), ('IN', 'mprj_io_in[37]', 'OUTPUT')], 'mprj_pads.area1_io_pad\\[3\\]': [('PAD', 'mprj_io[3]', 'INOUT'), ('ANALOG_EN', 'mprj_io_analog_en[3]', 'INPUT'), ('ANALOG_POL', 'mprj_io_analog_pol[3]', 'INPUT'), ('ANALOG_SEL', 'mprj_io_analog_sel[3]', 'INPUT'), ('DM[1]', 'mprj_io_dm[10]', 'INPUT'), ('DM[2]', 'mprj_io_dm[11]', 'INPUT'), ('DM[0]', 'mprj_io_dm[9]', 'INPUT'), ('ENABLE_H', 'mprj_io_enh[3]', 'INPUT'), ('HLD_H_N', 'mprj_io_hldh_n[3]', 'INPUT'), ('HLD_OVR', 'mprj_io_holdover[3]', 'INPUT'), ('IB_MODE_SEL', 'mprj_io_ib_mode_sel[3]', 'INPUT'), ('INP_DIS', 'mprj_io_inp_dis[3]', 'INPUT'), ('OE_N', 'mprj_io_oeb[3]', 'INPUT'), ('OUT', 'mprj_io_out[3]', 'INPUT'), ('SLOW', 'mprj_io_slow_sel[3]', 'INPUT'), ('VTRIP_SEL', 'mprj_io_vtrip_sel[3]', 'INPUT'), ('IN', 'mprj_io_in[3]', 'OUTPUT')], 'mprj_pads.area1_io_pad\\[4\\]': [('PAD', 'mprj_io[4]', 'INOUT'), ('ANALOG_EN', 'mprj_io_analog_en[4]', 'INPUT'), ('ANALOG_POL', 'mprj_io_analog_pol[4]', 'INPUT'), ('ANALOG_SEL', 'mprj_io_analog_sel[4]', 'INPUT'), ('DM[0]', 'mprj_io_dm[12]', 'INPUT'), ('DM[1]', 'mprj_io_dm[13]', 'INPUT'), ('DM[2]', 'mprj_io_dm[14]', 'INPUT'), ('ENABLE_H', 'mprj_io_enh[4]', 'INPUT'), ('HLD_H_N', 'mprj_io_hldh_n[4]', 'INPUT'), ('HLD_OVR', 'mprj_io_holdover[4]', 'INPUT'), ('IB_MODE_SEL', 'mprj_io_ib_mode_sel[4]', 'INPUT'), ('INP_DIS', 'mprj_io_inp_dis[4]', 'INPUT'), ('OE_N', 'mprj_io_oeb[4]', 'INPUT'), ('OUT', 'mprj_io_out[4]', 'INPUT'), ('SLOW', 'mprj_io_slow_sel[4]', 'INPUT'), ('VTRIP_SEL', 'mprj_io_vtrip_sel[4]', 'INPUT'), ('IN', 'mprj_io_in[4]', 'OUTPUT')], 'mprj_pads.area1_io_pad\\[5\\]': [('PAD', 'mprj_io[5]', 'INOUT'), ('ANALOG_EN', 'mprj_io_analog_en[5]', 'INPUT'), ('ANALOG_POL', 'mprj_io_analog_pol[5]', 'INPUT'), ('ANALOG_SEL', 'mprj_io_analog_sel[5]', 'INPUT'), ('DM[0]', 'mprj_io_dm[15]', 'INPUT'), ('DM[1]', 'mprj_io_dm[16]', 'INPUT'), ('DM[2]', 'mprj_io_dm[17]', 'INPUT'), ('ENABLE_H', 'mprj_io_enh[5]', 'INPUT'), ('HLD_H_N', 'mprj_io_hldh_n[5]', 'INPUT'), ('HLD_OVR', 'mprj_io_holdover[5]', 'INPUT'), ('IB_MODE_SEL', 'mprj_io_ib_mode_sel[5]', 'INPUT'), ('INP_DIS', 'mprj_io_inp_dis[5]', 'INPUT'), ('OE_N', 'mprj_io_oeb[5]', 'INPUT'), ('OUT', 'mprj_io_out[5]', 'INPUT'), ('SLOW', 'mprj_io_slow_sel[5]', 'INPUT'), ('VTRIP_SEL', 'mprj_io_vtrip_sel[5]', 'INPUT'), ('IN', 'mprj_io_in[5]', 'OUTPUT')], 'mprj_pads.area1_io_pad\\[6\\]': [('PAD', 'mprj_io[6]', 'INOUT'), ('ANALOG_EN', 'mprj_io_analog_en[6]', 'INPUT'), ('ANALOG_POL', 'mprj_io_analog_pol[6]', 'INPUT'), ('ANALOG_SEL', 'mprj_io_analog_sel[6]', 'INPUT'), ('DM[0]', 'mprj_io_dm[18]', 'INPUT'), ('DM[1]', 'mprj_io_dm[19]', 'INPUT'), ('DM[2]', 'mprj_io_dm[20]', 'INPUT'), ('ENABLE_H', 'mprj_io_enh[6]', 'INPUT'), ('HLD_H_N', 'mprj_io_hldh_n[6]', 'INPUT'), ('HLD_OVR', 'mprj_io_holdover[6]', 'INPUT'), ('IB_MODE_SEL', 'mprj_io_ib_mode_sel[6]', 'INPUT'), ('INP_DIS', 'mprj_io_inp_dis[6]', 'INPUT'), ('OE_N', 'mprj_io_oeb[6]', 'INPUT'), ('OUT', 'mprj_io_out[6]', 'INPUT'), ('SLOW', 'mprj_io_slow_sel[6]', 'INPUT'), ('VTRIP_SEL', 'mprj_io_vtrip_sel[6]', 'INPUT'), ('IN', 'mprj_io_in[6]', 'OUTPUT')], 'mprj_pads.area1_io_pad\\[7\\]': [('PAD', 'mprj_io[7]', 'INOUT'), ('ANALOG_EN', 'mprj_io_analog_en[7]', 'INPUT'), ('ANALOG_POL', 'mprj_io_analog_pol[7]', 'INPUT'), ('ANALOG_SEL', 'mprj_io_analog_sel[7]', 'INPUT'), ('DM[0]', 'mprj_io_dm[21]', 'INPUT'), ('DM[1]', 'mprj_io_dm[22]', 'INPUT'), ('DM[2]', 'mprj_io_dm[23]', 'INPUT'), ('ENABLE_H', 'mprj_io_enh[7]', 'INPUT'), ('HLD_H_N', 'mprj_io_hldh_n[7]', 'INPUT'), ('HLD_OVR', 'mprj_io_holdover[7]', 'INPUT'), ('IB_MODE_SEL', 'mprj_io_ib_mode_sel[7]', 'INPUT'), ('INP_DIS', 'mprj_io_inp_dis[7]', 'INPUT'), ('OE_N', 'mprj_io_oeb[7]', 'INPUT'), ('OUT', 'mprj_io_out[7]', 'INPUT'), ('SLOW', 'mprj_io_slow_sel[7]', 'INPUT'), ('VTRIP_SEL', 'mprj_io_vtrip_sel[7]', 'INPUT'), ('IN', 'mprj_io_in[7]', 'OUTPUT')], 'mprj_pads.area1_io_pad\\[8\\]': [('PAD', 'mprj_io[8]', 'INOUT'), ('ANALOG_EN', 'mprj_io_analog_en[8]', 'INPUT'), ('ANALOG_POL', 'mprj_io_analog_pol[8]', 'INPUT'), ('ANALOG_SEL', 'mprj_io_analog_sel[8]', 'INPUT'), ('DM[0]', 'mprj_io_dm[24]', 'INPUT'), ('DM[1]', 'mprj_io_dm[25]', 'INPUT'), ('DM[2]', 'mprj_io_dm[26]', 'INPUT'), ('ENABLE_H', 'mprj_io_enh[8]', 'INPUT'), ('HLD_H_N', 'mprj_io_hldh_n[8]', 'INPUT'), ('HLD_OVR', 'mprj_io_holdover[8]', 'INPUT'), ('IB_MODE_SEL', 'mprj_io_ib_mode_sel[8]', 'INPUT'), ('INP_DIS', 'mprj_io_inp_dis[8]', 'INPUT'), ('OE_N', 'mprj_io_oeb[8]', 'INPUT'), ('OUT', 'mprj_io_out[8]', 'INPUT'), ('SLOW', 'mprj_io_slow_sel[8]', 'INPUT'), ('VTRIP_SEL', 'mprj_io_vtrip_sel[8]', 'INPUT'), ('IN', 'mprj_io_in[8]', 'OUTPUT')], 'mprj_pads.area1_io_pad\\[9\\]': [('PAD', 'mprj_io[9]', 'INOUT'), ('ANALOG_EN', 'mprj_io_analog_en[9]', 'INPUT'), ('ANALOG_POL', 'mprj_io_analog_pol[9]', 'INPUT'), ('ANALOG_SEL', 'mprj_io_analog_sel[9]', 'INPUT'), ('DM[0]', 'mprj_io_dm[27]', 'INPUT'), ('DM[1]', 'mprj_io_dm[28]', 'INPUT'), ('DM[2]', 'mprj_io_dm[29]', 'INPUT'), ('ENABLE_H', 'mprj_io_enh[9]', 'INPUT'), ('HLD_H_N', 'mprj_io_hldh_n[9]', 'INPUT'), ('HLD_OVR', 'mprj_io_holdover[9]', 'INPUT'), ('IB_MODE_SEL', 'mprj_io_ib_mode_sel[9]', 'INPUT'), ('INP_DIS', 'mprj_io_inp_dis[9]', 'INPUT'), ('OE_N', 'mprj_io_oeb[9]', 'INPUT'), ('OUT', 'mprj_io_out[9]', 'INPUT'), ('SLOW', 'mprj_io_slow_sel[9]', 'INPUT'), ('VTRIP_SEL', 'mprj_io_vtrip_sel[9]', 'INPUT'), ('IN', 'mprj_io_in[9]', 'OUTPUT')], 'resetb_pad': [('ENABLE_H', 'porb_h', 'INPUT'), ('PAD', 'resetb', 'INPUT'), ('XRES_H_N', 'resetb_core_h', 'OUTPUT')], 'mgmt_vdda_hvclamp_pad': [('VDDA', 'vdda', 'INOUT')], 'user1_vdda_hvclamp_pad\\[0\\]': [('VDDA', 'vdda1', 'INOUT')], 'user2_vdda_hvclamp_pad': [('VDDA', 'vdda2', 'INOUT')], 'mgmt_vssa_hvclamp_pad': [('VSSA', 'vssa', 'INOUT')], 'user1_vssa_hvclamp_pad\\[0\\]': [('VSSA', 'vssa1', 'INOUT')], 'user2_vssa_hvclamp_pad': [('VSSA', 'vssa2', 'INOUT')], 'mgmt_vccd_lvclamp_pad': [('VCCD', 'vccd', 'INOUT')], 'user1_vccd_lvclamp_pad': [('VCCD', 'vccd1', 'INOUT')], 'user2_vccd_lvclamp_pad': [('VCCD', 'vccd2', 'INOUT')], 'mgmt_vssd_lvclmap_pad': [('VSSD', 'vssd', 'INOUT')], 'user1_vssd_lvclmap_pad': [('VSSD', 'vssd1', 'INOUT')], 'user2_vssd_lvclmap_pad': [('VSSD', 'vssd2', 'INOUT')], 'mgmt_vddio_hvclamp_pad\\[0\\]': [('VDDIO', 'vddio', 'INOUT')], 'mgmt_vssio_hvclamp_pad\\[0\\]': [('VSSIO', 'vssio', 'INOUT')]}
+Labeling 722 pad pins
+{'clock_pad': [('PAD', 'clock', 'INPUT'), ('IN', 'clock_core', 'OUTPUT'), ('INP_DIS', 'por', 'INPUT')], 'flash_clk_pad': [('PAD', 'flash_clk', 'OUTPUT'), ('OUT', 'flash_clk_core', 'INPUT'), ('INP_DIS', 'flash_clk_ieb_core', 'INPUT'), ('OE_N', 'flash_clk_oeb_core', 'INPUT')], 'flash_csb_pad': [('PAD', 'flash_csb', 'OUTPUT'), ('OUT', 'flash_csb_core', 'INPUT'), ('INP_DIS', 'flash_csb_ieb_core', 'INPUT'), ('OE_N', 'flash_csb_oeb_core', 'INPUT')], 'flash_io0_pad': [('PAD', 'flash_io0', 'INOUT'), ('IN', 'flash_io0_di_core', 'OUTPUT'), ('OUT', 'flash_io0_do_core', 'INPUT'), ('INP_DIS', 'flash_io0_ieb_core', 'INPUT'), ('OE_N', 'flash_io0_oeb_core', 'INPUT')], 'flash_io1_pad': [('PAD', 'flash_io1', 'INOUT'), ('IN', 'flash_io1_di_core', 'OUTPUT'), ('OUT', 'flash_io1_do_core', 'INPUT'), ('INP_DIS', 'flash_io1_ieb_core', 'INPUT'), ('OE_N', 'flash_io1_oeb_core', 'INPUT')], 'gpio_pad': [('PAD', 'gpio', 'INOUT'), ('IN', 'gpio_in_core', 'OUTPUT'), ('INP_DIS', 'gpio_inenb_core', 'INPUT'), ('DM[0]', 'gpio_mode0_core', 'INPUT'), ('DM[2]', 'gpio_mode1_core', 'INPUT'), ('OUT', 'gpio_out_core', 'INPUT'), ('OE_N', 'gpio_outenb_core', 'INPUT')], 'mprj_pads.area1_io_pad\\[7\\]': [('PAD_A_ESD_0_H', 'mprj_analog_io[0]', 'INOUT'), ('PAD', 'mprj_io[7]', 'INOUT'), ('ANALOG_EN', 'mprj_io_analog_en[7]', 'INPUT'), ('ANALOG_POL', 'mprj_io_analog_pol[7]', 'INPUT'), ('ANALOG_SEL', 'mprj_io_analog_sel[7]', 'INPUT'), ('DM[0]', 'mprj_io_dm[21]', 'INPUT'), ('DM[1]', 'mprj_io_dm[22]', 'INPUT'), ('DM[2]', 'mprj_io_dm[23]', 'INPUT'), ('ENABLE_H', 'mprj_io_enh[7]', 'INPUT'), ('HLD_H_N', 'mprj_io_hldh_n[7]', 'INPUT'), ('HLD_OVR', 'mprj_io_holdover[7]', 'INPUT'), ('IB_MODE_SEL', 'mprj_io_ib_mode_sel[7]', 'INPUT'), ('INP_DIS', 'mprj_io_inp_dis[7]', 'INPUT'), ('OE_N', 'mprj_io_oeb[7]', 'INPUT'), ('OUT', 'mprj_io_out[7]', 'INPUT'), ('SLOW', 'mprj_io_slow_sel[7]', 'INPUT'), ('VTRIP_SEL', 'mprj_io_vtrip_sel[7]', 'INPUT'), ('IN', 'mprj_io_in[7]', 'OUTPUT')], 'mprj_pads.area1_io_pad\\[17\\]': [('PAD_A_ESD_0_H', 'mprj_analog_io[10]', 'INOUT'), ('PAD', 'mprj_io[17]', 'INOUT'), ('ANALOG_EN', 'mprj_io_analog_en[17]', 'INPUT'), ('ANALOG_POL', 'mprj_io_analog_pol[17]', 'INPUT'), ('ANALOG_SEL', 'mprj_io_analog_sel[17]', 'INPUT'), ('DM[0]', 'mprj_io_dm[51]', 'INPUT'), ('DM[1]', 'mprj_io_dm[52]', 'INPUT'), ('DM[2]', 'mprj_io_dm[53]', 'INPUT'), ('ENABLE_H', 'mprj_io_enh[17]', 'INPUT'), ('HLD_H_N', 'mprj_io_hldh_n[17]', 'INPUT'), ('HLD_OVR', 'mprj_io_holdover[17]', 'INPUT'), ('IB_MODE_SEL', 'mprj_io_ib_mode_sel[17]', 'INPUT'), ('INP_DIS', 'mprj_io_inp_dis[17]', 'INPUT'), ('OE_N', 'mprj_io_oeb[17]', 'INPUT'), ('OUT', 'mprj_io_out[17]', 'INPUT'), ('SLOW', 'mprj_io_slow_sel[17]', 'INPUT'), ('VTRIP_SEL', 'mprj_io_vtrip_sel[17]', 'INPUT'), ('IN', 'mprj_io_in[17]', 'OUTPUT')], 'mprj_pads.area2_io_pad\\[0\\]': [('PAD_A_ESD_0_H', 'mprj_analog_io[11]', 'INOUT'), ('PAD', 'mprj_io[18]', 'INOUT'), ('ANALOG_EN', 'mprj_io_analog_en[18]', 'INPUT'), ('ANALOG_POL', 'mprj_io_analog_pol[18]', 'INPUT'), ('ANALOG_SEL', 'mprj_io_analog_sel[18]', 'INPUT'), ('DM[0]', 'mprj_io_dm[54]', 'INPUT'), ('DM[1]', 'mprj_io_dm[55]', 'INPUT'), ('DM[2]', 'mprj_io_dm[56]', 'INPUT'), ('ENABLE_H', 'mprj_io_enh[18]', 'INPUT'), ('HLD_H_N', 'mprj_io_hldh_n[18]', 'INPUT'), ('HLD_OVR', 'mprj_io_holdover[18]', 'INPUT'), ('IB_MODE_SEL', 'mprj_io_ib_mode_sel[18]', 'INPUT'), ('INP_DIS', 'mprj_io_inp_dis[18]', 'INPUT'), ('OE_N', 'mprj_io_oeb[18]', 'INPUT'), ('OUT', 'mprj_io_out[18]', 'INPUT'), ('SLOW', 'mprj_io_slow_sel[18]', 'INPUT'), ('VTRIP_SEL', 'mprj_io_vtrip_sel[18]', 'INPUT'), ('IN', 'mprj_io_in[18]', 'OUTPUT')], 'mprj_pads.area2_io_pad\\[1\\]': [('PAD_A_ESD_0_H', 'mprj_analog_io[12]', 'INOUT'), ('PAD', 'mprj_io[19]', 'INOUT'), ('ANALOG_EN', 'mprj_io_analog_en[19]', 'INPUT'), ('ANALOG_POL', 'mprj_io_analog_pol[19]', 'INPUT'), ('ANALOG_SEL', 'mprj_io_analog_sel[19]', 'INPUT'), ('DM[0]', 'mprj_io_dm[57]', 'INPUT'), ('DM[1]', 'mprj_io_dm[58]', 'INPUT'), ('DM[2]', 'mprj_io_dm[59]', 'INPUT'), ('ENABLE_H', 'mprj_io_enh[19]', 'INPUT'), ('HLD_H_N', 'mprj_io_hldh_n[19]', 'INPUT'), ('HLD_OVR', 'mprj_io_holdover[19]', 'INPUT'), ('IB_MODE_SEL', 'mprj_io_ib_mode_sel[19]', 'INPUT'), ('INP_DIS', 'mprj_io_inp_dis[19]', 'INPUT'), ('OE_N', 'mprj_io_oeb[19]', 'INPUT'), ('OUT', 'mprj_io_out[19]', 'INPUT'), ('SLOW', 'mprj_io_slow_sel[19]', 'INPUT'), ('VTRIP_SEL', 'mprj_io_vtrip_sel[19]', 'INPUT'), ('IN', 'mprj_io_in[19]', 'OUTPUT')], 'mprj_pads.area2_io_pad\\[2\\]': [('PAD_A_ESD_0_H', 'mprj_analog_io[13]', 'INOUT'), ('PAD', 'mprj_io[20]', 'INOUT'), ('ANALOG_EN', 'mprj_io_analog_en[20]', 'INPUT'), ('ANALOG_POL', 'mprj_io_analog_pol[20]', 'INPUT'), ('ANALOG_SEL', 'mprj_io_analog_sel[20]', 'INPUT'), ('DM[0]', 'mprj_io_dm[60]', 'INPUT'), ('DM[1]', 'mprj_io_dm[61]', 'INPUT'), ('DM[2]', 'mprj_io_dm[62]', 'INPUT'), ('ENABLE_H', 'mprj_io_enh[20]', 'INPUT'), ('HLD_H_N', 'mprj_io_hldh_n[20]', 'INPUT'), ('HLD_OVR', 'mprj_io_holdover[20]', 'INPUT'), ('IB_MODE_SEL', 'mprj_io_ib_mode_sel[20]', 'INPUT'), ('INP_DIS', 'mprj_io_inp_dis[20]', 'INPUT'), ('OE_N', 'mprj_io_oeb[20]', 'INPUT'), ('OUT', 'mprj_io_out[20]', 'INPUT'), ('SLOW', 'mprj_io_slow_sel[20]', 'INPUT'), ('VTRIP_SEL', 'mprj_io_vtrip_sel[20]', 'INPUT'), ('IN', 'mprj_io_in[20]', 'OUTPUT')], 'mprj_pads.area2_io_pad\\[3\\]': [('PAD_A_ESD_0_H', 'mprj_analog_io[14]', 'INOUT'), ('PAD', 'mprj_io[21]', 'INOUT'), ('ANALOG_EN', 'mprj_io_analog_en[21]', 'INPUT'), ('ANALOG_POL', 'mprj_io_analog_pol[21]', 'INPUT'), ('ANALOG_SEL', 'mprj_io_analog_sel[21]', 'INPUT'), ('DM[0]', 'mprj_io_dm[63]', 'INPUT'), ('DM[1]', 'mprj_io_dm[64]', 'INPUT'), ('DM[2]', 'mprj_io_dm[65]', 'INPUT'), ('ENABLE_H', 'mprj_io_enh[21]', 'INPUT'), ('HLD_H_N', 'mprj_io_hldh_n[21]', 'INPUT'), ('HLD_OVR', 'mprj_io_holdover[21]', 'INPUT'), ('IB_MODE_SEL', 'mprj_io_ib_mode_sel[21]', 'INPUT'), ('INP_DIS', 'mprj_io_inp_dis[21]', 'INPUT'), ('OE_N', 'mprj_io_oeb[21]', 'INPUT'), ('OUT', 'mprj_io_out[21]', 'INPUT'), ('SLOW', 'mprj_io_slow_sel[21]', 'INPUT'), ('VTRIP_SEL', 'mprj_io_vtrip_sel[21]', 'INPUT'), ('IN', 'mprj_io_in[21]', 'OUTPUT')], 'mprj_pads.area2_io_pad\\[4\\]': [('PAD_A_ESD_0_H', 'mprj_analog_io[15]', 'INOUT'), ('PAD', 'mprj_io[22]', 'INOUT'), ('ANALOG_EN', 'mprj_io_analog_en[22]', 'INPUT'), ('ANALOG_POL', 'mprj_io_analog_pol[22]', 'INPUT'), ('ANALOG_SEL', 'mprj_io_analog_sel[22]', 'INPUT'), ('DM[0]', 'mprj_io_dm[66]', 'INPUT'), ('DM[1]', 'mprj_io_dm[67]', 'INPUT'), ('DM[2]', 'mprj_io_dm[68]', 'INPUT'), ('ENABLE_H', 'mprj_io_enh[22]', 'INPUT'), ('HLD_H_N', 'mprj_io_hldh_n[22]', 'INPUT'), ('HLD_OVR', 'mprj_io_holdover[22]', 'INPUT'), ('IB_MODE_SEL', 'mprj_io_ib_mode_sel[22]', 'INPUT'), ('INP_DIS', 'mprj_io_inp_dis[22]', 'INPUT'), ('OE_N', 'mprj_io_oeb[22]', 'INPUT'), ('OUT', 'mprj_io_out[22]', 'INPUT'), ('SLOW', 'mprj_io_slow_sel[22]', 'INPUT'), ('VTRIP_SEL', 'mprj_io_vtrip_sel[22]', 'INPUT'), ('IN', 'mprj_io_in[22]', 'OUTPUT')], 'mprj_pads.area2_io_pad\\[5\\]': [('PAD_A_ESD_0_H', 'mprj_analog_io[16]', 'INOUT'), ('PAD', 'mprj_io[23]', 'INOUT'), ('ANALOG_EN', 'mprj_io_analog_en[23]', 'INPUT'), ('ANALOG_POL', 'mprj_io_analog_pol[23]', 'INPUT'), ('ANALOG_SEL', 'mprj_io_analog_sel[23]', 'INPUT'), ('DM[0]', 'mprj_io_dm[69]', 'INPUT'), ('DM[1]', 'mprj_io_dm[70]', 'INPUT'), ('DM[2]', 'mprj_io_dm[71]', 'INPUT'), ('ENABLE_H', 'mprj_io_enh[23]', 'INPUT'), ('HLD_H_N', 'mprj_io_hldh_n[23]', 'INPUT'), ('HLD_OVR', 'mprj_io_holdover[23]', 'INPUT'), ('IB_MODE_SEL', 'mprj_io_ib_mode_sel[23]', 'INPUT'), ('INP_DIS', 'mprj_io_inp_dis[23]', 'INPUT'), ('OE_N', 'mprj_io_oeb[23]', 'INPUT'), ('OUT', 'mprj_io_out[23]', 'INPUT'), ('SLOW', 'mprj_io_slow_sel[23]', 'INPUT'), ('VTRIP_SEL', 'mprj_io_vtrip_sel[23]', 'INPUT'), ('IN', 'mprj_io_in[23]', 'OUTPUT')], 'mprj_pads.area2_io_pad\\[6\\]': [('PAD_A_ESD_0_H', 'mprj_analog_io[17]', 'INOUT'), ('PAD', 'mprj_io[24]', 'INOUT'), ('ANALOG_EN', 'mprj_io_analog_en[24]', 'INPUT'), ('ANALOG_POL', 'mprj_io_analog_pol[24]', 'INPUT'), ('ANALOG_SEL', 'mprj_io_analog_sel[24]', 'INPUT'), ('DM[0]', 'mprj_io_dm[72]', 'INPUT'), ('DM[1]', 'mprj_io_dm[73]', 'INPUT'), ('DM[2]', 'mprj_io_dm[74]', 'INPUT'), ('ENABLE_H', 'mprj_io_enh[24]', 'INPUT'), ('HLD_H_N', 'mprj_io_hldh_n[24]', 'INPUT'), ('HLD_OVR', 'mprj_io_holdover[24]', 'INPUT'), ('IB_MODE_SEL', 'mprj_io_ib_mode_sel[24]', 'INPUT'), ('INP_DIS', 'mprj_io_inp_dis[24]', 'INPUT'), ('OE_N', 'mprj_io_oeb[24]', 'INPUT'), ('OUT', 'mprj_io_out[24]', 'INPUT'), ('SLOW', 'mprj_io_slow_sel[24]', 'INPUT'), ('VTRIP_SEL', 'mprj_io_vtrip_sel[24]', 'INPUT'), ('IN', 'mprj_io_in[24]', 'OUTPUT')], 'mprj_pads.area2_io_pad\\[7\\]': [('PAD_A_ESD_0_H', 'mprj_analog_io[18]', 'INOUT'), ('PAD', 'mprj_io[25]', 'INOUT'), ('ANALOG_EN', 'mprj_io_analog_en[25]', 'INPUT'), ('ANALOG_POL', 'mprj_io_analog_pol[25]', 'INPUT'), ('ANALOG_SEL', 'mprj_io_analog_sel[25]', 'INPUT'), ('DM[0]', 'mprj_io_dm[75]', 'INPUT'), ('DM[1]', 'mprj_io_dm[76]', 'INPUT'), ('DM[2]', 'mprj_io_dm[77]', 'INPUT'), ('ENABLE_H', 'mprj_io_enh[25]', 'INPUT'), ('HLD_H_N', 'mprj_io_hldh_n[25]', 'INPUT'), ('HLD_OVR', 'mprj_io_holdover[25]', 'INPUT'), ('IB_MODE_SEL', 'mprj_io_ib_mode_sel[25]', 'INPUT'), ('INP_DIS', 'mprj_io_inp_dis[25]', 'INPUT'), ('OE_N', 'mprj_io_oeb[25]', 'INPUT'), ('OUT', 'mprj_io_out[25]', 'INPUT'), ('SLOW', 'mprj_io_slow_sel[25]', 'INPUT'), ('VTRIP_SEL', 'mprj_io_vtrip_sel[25]', 'INPUT'), ('IN', 'mprj_io_in[25]', 'OUTPUT')], 'mprj_pads.area2_io_pad\\[8\\]': [('PAD_A_ESD_0_H', 'mprj_analog_io[19]', 'INOUT'), ('PAD', 'mprj_io[26]', 'INOUT'), ('ANALOG_EN', 'mprj_io_analog_en[26]', 'INPUT'), ('ANALOG_POL', 'mprj_io_analog_pol[26]', 'INPUT'), ('ANALOG_SEL', 'mprj_io_analog_sel[26]', 'INPUT'), ('DM[0]', 'mprj_io_dm[78]', 'INPUT'), ('DM[1]', 'mprj_io_dm[79]', 'INPUT'), ('DM[2]', 'mprj_io_dm[80]', 'INPUT'), ('ENABLE_H', 'mprj_io_enh[26]', 'INPUT'), ('HLD_H_N', 'mprj_io_hldh_n[26]', 'INPUT'), ('HLD_OVR', 'mprj_io_holdover[26]', 'INPUT'), ('IB_MODE_SEL', 'mprj_io_ib_mode_sel[26]', 'INPUT'), ('INP_DIS', 'mprj_io_inp_dis[26]', 'INPUT'), ('OE_N', 'mprj_io_oeb[26]', 'INPUT'), ('OUT', 'mprj_io_out[26]', 'INPUT'), ('SLOW', 'mprj_io_slow_sel[26]', 'INPUT'), ('VTRIP_SEL', 'mprj_io_vtrip_sel[26]', 'INPUT'), ('IN', 'mprj_io_in[26]', 'OUTPUT')], 'mprj_pads.area1_io_pad\\[8\\]': [('PAD_A_ESD_0_H', 'mprj_analog_io[1]', 'INOUT'), ('PAD', 'mprj_io[8]', 'INOUT'), ('ANALOG_EN', 'mprj_io_analog_en[8]', 'INPUT'), ('ANALOG_POL', 'mprj_io_analog_pol[8]', 'INPUT'), ('ANALOG_SEL', 'mprj_io_analog_sel[8]', 'INPUT'), ('DM[0]', 'mprj_io_dm[24]', 'INPUT'), ('DM[1]', 'mprj_io_dm[25]', 'INPUT'), ('DM[2]', 'mprj_io_dm[26]', 'INPUT'), ('ENABLE_H', 'mprj_io_enh[8]', 'INPUT'), ('HLD_H_N', 'mprj_io_hldh_n[8]', 'INPUT'), ('HLD_OVR', 'mprj_io_holdover[8]', 'INPUT'), ('IB_MODE_SEL', 'mprj_io_ib_mode_sel[8]', 'INPUT'), ('INP_DIS', 'mprj_io_inp_dis[8]', 'INPUT'), ('OE_N', 'mprj_io_oeb[8]', 'INPUT'), ('OUT', 'mprj_io_out[8]', 'INPUT'), ('SLOW', 'mprj_io_slow_sel[8]', 'INPUT'), ('VTRIP_SEL', 'mprj_io_vtrip_sel[8]', 'INPUT'), ('IN', 'mprj_io_in[8]', 'OUTPUT')], 'mprj_pads.area2_io_pad\\[9\\]': [('PAD_A_ESD_0_H', 'mprj_analog_io[20]', 'INOUT'), ('PAD', 'mprj_io[27]', 'INOUT'), ('ANALOG_EN', 'mprj_io_analog_en[27]', 'INPUT'), ('ANALOG_POL', 'mprj_io_analog_pol[27]', 'INPUT'), ('ANALOG_SEL', 'mprj_io_analog_sel[27]', 'INPUT'), ('DM[0]', 'mprj_io_dm[81]', 'INPUT'), ('DM[1]', 'mprj_io_dm[82]', 'INPUT'), ('DM[2]', 'mprj_io_dm[83]', 'INPUT'), ('ENABLE_H', 'mprj_io_enh[27]', 'INPUT'), ('HLD_H_N', 'mprj_io_hldh_n[27]', 'INPUT'), ('HLD_OVR', 'mprj_io_holdover[27]', 'INPUT'), ('IB_MODE_SEL', 'mprj_io_ib_mode_sel[27]', 'INPUT'), ('INP_DIS', 'mprj_io_inp_dis[27]', 'INPUT'), ('OE_N', 'mprj_io_oeb[27]', 'INPUT'), ('OUT', 'mprj_io_out[27]', 'INPUT'), ('SLOW', 'mprj_io_slow_sel[27]', 'INPUT'), ('VTRIP_SEL', 'mprj_io_vtrip_sel[27]', 'INPUT'), ('IN', 'mprj_io_in[27]', 'OUTPUT')], 'mprj_pads.area2_io_pad\\[10\\]': [('PAD_A_ESD_0_H', 'mprj_analog_io[21]', 'INOUT'), ('PAD', 'mprj_io[28]', 'INOUT'), ('ANALOG_EN', 'mprj_io_analog_en[28]', 'INPUT'), ('ANALOG_POL', 'mprj_io_analog_pol[28]', 'INPUT'), ('ANALOG_SEL', 'mprj_io_analog_sel[28]', 'INPUT'), ('DM[0]', 'mprj_io_dm[84]', 'INPUT'), ('DM[1]', 'mprj_io_dm[85]', 'INPUT'), ('DM[2]', 'mprj_io_dm[86]', 'INPUT'), ('ENABLE_H', 'mprj_io_enh[28]', 'INPUT'), ('HLD_H_N', 'mprj_io_hldh_n[28]', 'INPUT'), ('HLD_OVR', 'mprj_io_holdover[28]', 'INPUT'), ('IB_MODE_SEL', 'mprj_io_ib_mode_sel[28]', 'INPUT'), ('INP_DIS', 'mprj_io_inp_dis[28]', 'INPUT'), ('OE_N', 'mprj_io_oeb[28]', 'INPUT'), ('OUT', 'mprj_io_out[28]', 'INPUT'), ('SLOW', 'mprj_io_slow_sel[28]', 'INPUT'), ('VTRIP_SEL', 'mprj_io_vtrip_sel[28]', 'INPUT'), ('IN', 'mprj_io_in[28]', 'OUTPUT')], 'mprj_pads.area2_io_pad\\[11\\]': [('PAD_A_ESD_0_H', 'mprj_analog_io[22]', 'INOUT'), ('PAD', 'mprj_io[29]', 'INOUT'), ('ANALOG_EN', 'mprj_io_analog_en[29]', 'INPUT'), ('ANALOG_POL', 'mprj_io_analog_pol[29]', 'INPUT'), ('ANALOG_SEL', 'mprj_io_analog_sel[29]', 'INPUT'), ('DM[0]', 'mprj_io_dm[87]', 'INPUT'), ('DM[1]', 'mprj_io_dm[88]', 'INPUT'), ('DM[2]', 'mprj_io_dm[89]', 'INPUT'), ('ENABLE_H', 'mprj_io_enh[29]', 'INPUT'), ('HLD_H_N', 'mprj_io_hldh_n[29]', 'INPUT'), ('HLD_OVR', 'mprj_io_holdover[29]', 'INPUT'), ('IB_MODE_SEL', 'mprj_io_ib_mode_sel[29]', 'INPUT'), ('INP_DIS', 'mprj_io_inp_dis[29]', 'INPUT'), ('OE_N', 'mprj_io_oeb[29]', 'INPUT'), ('OUT', 'mprj_io_out[29]', 'INPUT'), ('SLOW', 'mprj_io_slow_sel[29]', 'INPUT'), ('VTRIP_SEL', 'mprj_io_vtrip_sel[29]', 'INPUT'), ('IN', 'mprj_io_in[29]', 'OUTPUT')], 'mprj_pads.area2_io_pad\\[12\\]': [('PAD_A_ESD_0_H', 'mprj_analog_io[23]', 'INOUT'), ('PAD', 'mprj_io[30]', 'INOUT'), ('ANALOG_EN', 'mprj_io_analog_en[30]', 'INPUT'), ('ANALOG_POL', 'mprj_io_analog_pol[30]', 'INPUT'), ('ANALOG_SEL', 'mprj_io_analog_sel[30]', 'INPUT'), ('DM[0]', 'mprj_io_dm[90]', 'INPUT'), ('DM[1]', 'mprj_io_dm[91]', 'INPUT'), ('DM[2]', 'mprj_io_dm[92]', 'INPUT'), ('ENABLE_H', 'mprj_io_enh[30]', 'INPUT'), ('HLD_H_N', 'mprj_io_hldh_n[30]', 'INPUT'), ('HLD_OVR', 'mprj_io_holdover[30]', 'INPUT'), ('IB_MODE_SEL', 'mprj_io_ib_mode_sel[30]', 'INPUT'), ('INP_DIS', 'mprj_io_inp_dis[30]', 'INPUT'), ('OE_N', 'mprj_io_oeb[30]', 'INPUT'), ('OUT', 'mprj_io_out[30]', 'INPUT'), ('SLOW', 'mprj_io_slow_sel[30]', 'INPUT'), ('VTRIP_SEL', 'mprj_io_vtrip_sel[30]', 'INPUT'), ('IN', 'mprj_io_in[30]', 'OUTPUT')], 'mprj_pads.area2_io_pad\\[13\\]': [('PAD_A_ESD_0_H', 'mprj_analog_io[24]', 'INOUT'), ('PAD', 'mprj_io[31]', 'INOUT'), ('ANALOG_EN', 'mprj_io_analog_en[31]', 'INPUT'), ('ANALOG_POL', 'mprj_io_analog_pol[31]', 'INPUT'), ('ANALOG_SEL', 'mprj_io_analog_sel[31]', 'INPUT'), ('DM[0]', 'mprj_io_dm[93]', 'INPUT'), ('DM[1]', 'mprj_io_dm[94]', 'INPUT'), ('DM[2]', 'mprj_io_dm[95]', 'INPUT'), ('ENABLE_H', 'mprj_io_enh[31]', 'INPUT'), ('HLD_H_N', 'mprj_io_hldh_n[31]', 'INPUT'), ('HLD_OVR', 'mprj_io_holdover[31]', 'INPUT'), ('IB_MODE_SEL', 'mprj_io_ib_mode_sel[31]', 'INPUT'), ('INP_DIS', 'mprj_io_inp_dis[31]', 'INPUT'), ('OE_N', 'mprj_io_oeb[31]', 'INPUT'), ('OUT', 'mprj_io_out[31]', 'INPUT'), ('SLOW', 'mprj_io_slow_sel[31]', 'INPUT'), ('VTRIP_SEL', 'mprj_io_vtrip_sel[31]', 'INPUT'), ('IN', 'mprj_io_in[31]', 'OUTPUT')], 'mprj_pads.area2_io_pad\\[14\\]': [('PAD_A_ESD_0_H', 'mprj_analog_io[25]', 'INOUT'), ('PAD', 'mprj_io[32]', 'INOUT'), ('ANALOG_EN', 'mprj_io_analog_en[32]', 'INPUT'), ('ANALOG_POL', 'mprj_io_analog_pol[32]', 'INPUT'), ('ANALOG_SEL', 'mprj_io_analog_sel[32]', 'INPUT'), ('DM[0]', 'mprj_io_dm[96]', 'INPUT'), ('DM[1]', 'mprj_io_dm[97]', 'INPUT'), ('DM[2]', 'mprj_io_dm[98]', 'INPUT'), ('ENABLE_H', 'mprj_io_enh[32]', 'INPUT'), ('HLD_H_N', 'mprj_io_hldh_n[32]', 'INPUT'), ('HLD_OVR', 'mprj_io_holdover[32]', 'INPUT'), ('IB_MODE_SEL', 'mprj_io_ib_mode_sel[32]', 'INPUT'), ('INP_DIS', 'mprj_io_inp_dis[32]', 'INPUT'), ('OE_N', 'mprj_io_oeb[32]', 'INPUT'), ('OUT', 'mprj_io_out[32]', 'INPUT'), ('SLOW', 'mprj_io_slow_sel[32]', 'INPUT'), ('VTRIP_SEL', 'mprj_io_vtrip_sel[32]', 'INPUT'), ('IN', 'mprj_io_in[32]', 'OUTPUT')], 'mprj_pads.area2_io_pad\\[15\\]': [('PAD_A_ESD_0_H', 'mprj_analog_io[26]', 'INOUT'), ('PAD', 'mprj_io[33]', 'INOUT'), ('ANALOG_EN', 'mprj_io_analog_en[33]', 'INPUT'), ('ANALOG_POL', 'mprj_io_analog_pol[33]', 'INPUT'), ('ANALOG_SEL', 'mprj_io_analog_sel[33]', 'INPUT'), ('DM[1]', 'mprj_io_dm[100]', 'INPUT'), ('DM[2]', 'mprj_io_dm[101]', 'INPUT'), ('DM[0]', 'mprj_io_dm[99]', 'INPUT'), ('ENABLE_H', 'mprj_io_enh[33]', 'INPUT'), ('HLD_H_N', 'mprj_io_hldh_n[33]', 'INPUT'), ('HLD_OVR', 'mprj_io_holdover[33]', 'INPUT'), ('IB_MODE_SEL', 'mprj_io_ib_mode_sel[33]', 'INPUT'), ('INP_DIS', 'mprj_io_inp_dis[33]', 'INPUT'), ('OE_N', 'mprj_io_oeb[33]', 'INPUT'), ('OUT', 'mprj_io_out[33]', 'INPUT'), ('SLOW', 'mprj_io_slow_sel[33]', 'INPUT'), ('VTRIP_SEL', 'mprj_io_vtrip_sel[33]', 'INPUT'), ('IN', 'mprj_io_in[33]', 'OUTPUT')], 'mprj_pads.area2_io_pad\\[16\\]': [('PAD_A_ESD_0_H', 'mprj_analog_io[27]', 'INOUT'), ('PAD', 'mprj_io[34]', 'INOUT'), ('ANALOG_EN', 'mprj_io_analog_en[34]', 'INPUT'), ('ANALOG_POL', 'mprj_io_analog_pol[34]', 'INPUT'), ('ANALOG_SEL', 'mprj_io_analog_sel[34]', 'INPUT'), ('DM[0]', 'mprj_io_dm[102]', 'INPUT'), ('DM[1]', 'mprj_io_dm[103]', 'INPUT'), ('DM[2]', 'mprj_io_dm[104]', 'INPUT'), ('ENABLE_H', 'mprj_io_enh[34]', 'INPUT'), ('HLD_H_N', 'mprj_io_hldh_n[34]', 'INPUT'), ('HLD_OVR', 'mprj_io_holdover[34]', 'INPUT'), ('IB_MODE_SEL', 'mprj_io_ib_mode_sel[34]', 'INPUT'), ('INP_DIS', 'mprj_io_inp_dis[34]', 'INPUT'), ('OE_N', 'mprj_io_oeb[34]', 'INPUT'), ('OUT', 'mprj_io_out[34]', 'INPUT'), ('SLOW', 'mprj_io_slow_sel[34]', 'INPUT'), ('VTRIP_SEL', 'mprj_io_vtrip_sel[34]', 'INPUT'), ('IN', 'mprj_io_in[34]', 'OUTPUT')], 'mprj_pads.area2_io_pad\\[17\\]': [('PAD_A_ESD_0_H', 'mprj_analog_io[28]', 'INOUT'), ('PAD', 'mprj_io[35]', 'INOUT'), ('ANALOG_EN', 'mprj_io_analog_en[35]', 'INPUT'), ('ANALOG_POL', 'mprj_io_analog_pol[35]', 'INPUT'), ('ANALOG_SEL', 'mprj_io_analog_sel[35]', 'INPUT'), ('DM[0]', 'mprj_io_dm[105]', 'INPUT'), ('DM[1]', 'mprj_io_dm[106]', 'INPUT'), ('DM[2]', 'mprj_io_dm[107]', 'INPUT'), ('ENABLE_H', 'mprj_io_enh[35]', 'INPUT'), ('HLD_H_N', 'mprj_io_hldh_n[35]', 'INPUT'), ('HLD_OVR', 'mprj_io_holdover[35]', 'INPUT'), ('IB_MODE_SEL', 'mprj_io_ib_mode_sel[35]', 'INPUT'), ('INP_DIS', 'mprj_io_inp_dis[35]', 'INPUT'), ('OE_N', 'mprj_io_oeb[35]', 'INPUT'), ('OUT', 'mprj_io_out[35]', 'INPUT'), ('SLOW', 'mprj_io_slow_sel[35]', 'INPUT'), ('VTRIP_SEL', 'mprj_io_vtrip_sel[35]', 'INPUT'), ('IN', 'mprj_io_in[35]', 'OUTPUT')], 'mprj_pads.area2_io_pad\\[18\\]': [('PAD_A_ESD_0_H', 'mprj_analog_io[29]', 'INOUT'), ('PAD', 'mprj_io[36]', 'INOUT'), ('ANALOG_EN', 'mprj_io_analog_en[36]', 'INPUT'), ('ANALOG_POL', 'mprj_io_analog_pol[36]', 'INPUT'), ('ANALOG_SEL', 'mprj_io_analog_sel[36]', 'INPUT'), ('DM[0]', 'mprj_io_dm[108]', 'INPUT'), ('DM[1]', 'mprj_io_dm[109]', 'INPUT'), ('DM[2]', 'mprj_io_dm[110]', 'INPUT'), ('ENABLE_H', 'mprj_io_enh[36]', 'INPUT'), ('HLD_H_N', 'mprj_io_hldh_n[36]', 'INPUT'), ('HLD_OVR', 'mprj_io_holdover[36]', 'INPUT'), ('IB_MODE_SEL', 'mprj_io_ib_mode_sel[36]', 'INPUT'), ('INP_DIS', 'mprj_io_inp_dis[36]', 'INPUT'), ('OE_N', 'mprj_io_oeb[36]', 'INPUT'), ('OUT', 'mprj_io_out[36]', 'INPUT'), ('SLOW', 'mprj_io_slow_sel[36]', 'INPUT'), ('VTRIP_SEL', 'mprj_io_vtrip_sel[36]', 'INPUT'), ('IN', 'mprj_io_in[36]', 'OUTPUT')], 'mprj_pads.area1_io_pad\\[9\\]': [('PAD_A_ESD_0_H', 'mprj_analog_io[2]', 'INOUT'), ('PAD', 'mprj_io[9]', 'INOUT'), ('ANALOG_EN', 'mprj_io_analog_en[9]', 'INPUT'), ('ANALOG_POL', 'mprj_io_analog_pol[9]', 'INPUT'), ('ANALOG_SEL', 'mprj_io_analog_sel[9]', 'INPUT'), ('DM[0]', 'mprj_io_dm[27]', 'INPUT'), ('DM[1]', 'mprj_io_dm[28]', 'INPUT'), ('DM[2]', 'mprj_io_dm[29]', 'INPUT'), ('ENABLE_H', 'mprj_io_enh[9]', 'INPUT'), ('HLD_H_N', 'mprj_io_hldh_n[9]', 'INPUT'), ('HLD_OVR', 'mprj_io_holdover[9]', 'INPUT'), ('IB_MODE_SEL', 'mprj_io_ib_mode_sel[9]', 'INPUT'), ('INP_DIS', 'mprj_io_inp_dis[9]', 'INPUT'), ('OE_N', 'mprj_io_oeb[9]', 'INPUT'), ('OUT', 'mprj_io_out[9]', 'INPUT'), ('SLOW', 'mprj_io_slow_sel[9]', 'INPUT'), ('VTRIP_SEL', 'mprj_io_vtrip_sel[9]', 'INPUT'), ('IN', 'mprj_io_in[9]', 'OUTPUT')], 'mprj_pads.area2_io_pad\\[19\\]': [('PAD_A_ESD_0_H', 'mprj_analog_io[30]', 'INOUT'), ('PAD', 'mprj_io[37]', 'INOUT'), ('ANALOG_EN', 'mprj_io_analog_en[37]', 'INPUT'), ('ANALOG_POL', 'mprj_io_analog_pol[37]', 'INPUT'), ('ANALOG_SEL', 'mprj_io_analog_sel[37]', 'INPUT'), ('DM[0]', 'mprj_io_dm[111]', 'INPUT'), ('DM[1]', 'mprj_io_dm[112]', 'INPUT'), ('DM[2]', 'mprj_io_dm[113]', 'INPUT'), ('ENABLE_H', 'mprj_io_enh[37]', 'INPUT'), ('HLD_H_N', 'mprj_io_hldh_n[37]', 'INPUT'), ('HLD_OVR', 'mprj_io_holdover[37]', 'INPUT'), ('IB_MODE_SEL', 'mprj_io_ib_mode_sel[37]', 'INPUT'), ('INP_DIS', 'mprj_io_inp_dis[37]', 'INPUT'), ('OE_N', 'mprj_io_oeb[37]', 'INPUT'), ('OUT', 'mprj_io_out[37]', 'INPUT'), ('SLOW', 'mprj_io_slow_sel[37]', 'INPUT'), ('VTRIP_SEL', 'mprj_io_vtrip_sel[37]', 'INPUT'), ('IN', 'mprj_io_in[37]', 'OUTPUT')], 'mprj_pads.area1_io_pad\\[10\\]': [('PAD_A_ESD_0_H', 'mprj_analog_io[3]', 'INOUT'), ('PAD', 'mprj_io[10]', 'INOUT'), ('ANALOG_EN', 'mprj_io_analog_en[10]', 'INPUT'), ('ANALOG_POL', 'mprj_io_analog_pol[10]', 'INPUT'), ('ANALOG_SEL', 'mprj_io_analog_sel[10]', 'INPUT'), ('DM[0]', 'mprj_io_dm[30]', 'INPUT'), ('DM[1]', 'mprj_io_dm[31]', 'INPUT'), ('DM[2]', 'mprj_io_dm[32]', 'INPUT'), ('ENABLE_H', 'mprj_io_enh[10]', 'INPUT'), ('HLD_H_N', 'mprj_io_hldh_n[10]', 'INPUT'), ('HLD_OVR', 'mprj_io_holdover[10]', 'INPUT'), ('IB_MODE_SEL', 'mprj_io_ib_mode_sel[10]', 'INPUT'), ('INP_DIS', 'mprj_io_inp_dis[10]', 'INPUT'), ('OE_N', 'mprj_io_oeb[10]', 'INPUT'), ('OUT', 'mprj_io_out[10]', 'INPUT'), ('SLOW', 'mprj_io_slow_sel[10]', 'INPUT'), ('VTRIP_SEL', 'mprj_io_vtrip_sel[10]', 'INPUT'), ('IN', 'mprj_io_in[10]', 'OUTPUT')], 'mprj_pads.area1_io_pad\\[11\\]': [('PAD_A_ESD_0_H', 'mprj_analog_io[4]', 'INOUT'), ('PAD', 'mprj_io[11]', 'INOUT'), ('ANALOG_EN', 'mprj_io_analog_en[11]', 'INPUT'), ('ANALOG_POL', 'mprj_io_analog_pol[11]', 'INPUT'), ('ANALOG_SEL', 'mprj_io_analog_sel[11]', 'INPUT'), ('DM[0]', 'mprj_io_dm[33]', 'INPUT'), ('DM[1]', 'mprj_io_dm[34]', 'INPUT'), ('DM[2]', 'mprj_io_dm[35]', 'INPUT'), ('ENABLE_H', 'mprj_io_enh[11]', 'INPUT'), ('HLD_H_N', 'mprj_io_hldh_n[11]', 'INPUT'), ('HLD_OVR', 'mprj_io_holdover[11]', 'INPUT'), ('IB_MODE_SEL', 'mprj_io_ib_mode_sel[11]', 'INPUT'), ('INP_DIS', 'mprj_io_inp_dis[11]', 'INPUT'), ('OE_N', 'mprj_io_oeb[11]', 'INPUT'), ('OUT', 'mprj_io_out[11]', 'INPUT'), ('SLOW', 'mprj_io_slow_sel[11]', 'INPUT'), ('VTRIP_SEL', 'mprj_io_vtrip_sel[11]', 'INPUT'), ('IN', 'mprj_io_in[11]', 'OUTPUT')], 'mprj_pads.area1_io_pad\\[12\\]': [('PAD_A_ESD_0_H', 'mprj_analog_io[5]', 'INOUT'), ('PAD', 'mprj_io[12]', 'INOUT'), ('ANALOG_EN', 'mprj_io_analog_en[12]', 'INPUT'), ('ANALOG_POL', 'mprj_io_analog_pol[12]', 'INPUT'), ('ANALOG_SEL', 'mprj_io_analog_sel[12]', 'INPUT'), ('DM[0]', 'mprj_io_dm[36]', 'INPUT'), ('DM[1]', 'mprj_io_dm[37]', 'INPUT'), ('DM[2]', 'mprj_io_dm[38]', 'INPUT'), ('ENABLE_H', 'mprj_io_enh[12]', 'INPUT'), ('HLD_H_N', 'mprj_io_hldh_n[12]', 'INPUT'), ('HLD_OVR', 'mprj_io_holdover[12]', 'INPUT'), ('IB_MODE_SEL', 'mprj_io_ib_mode_sel[12]', 'INPUT'), ('INP_DIS', 'mprj_io_inp_dis[12]', 'INPUT'), ('OE_N', 'mprj_io_oeb[12]', 'INPUT'), ('OUT', 'mprj_io_out[12]', 'INPUT'), ('SLOW', 'mprj_io_slow_sel[12]', 'INPUT'), ('VTRIP_SEL', 'mprj_io_vtrip_sel[12]', 'INPUT'), ('IN', 'mprj_io_in[12]', 'OUTPUT')], 'mprj_pads.area1_io_pad\\[13\\]': [('PAD_A_ESD_0_H', 'mprj_analog_io[6]', 'INOUT'), ('PAD', 'mprj_io[13]', 'INOUT'), ('ANALOG_EN', 'mprj_io_analog_en[13]', 'INPUT'), ('ANALOG_POL', 'mprj_io_analog_pol[13]', 'INPUT'), ('ANALOG_SEL', 'mprj_io_analog_sel[13]', 'INPUT'), ('DM[0]', 'mprj_io_dm[39]', 'INPUT'), ('DM[1]', 'mprj_io_dm[40]', 'INPUT'), ('DM[2]', 'mprj_io_dm[41]', 'INPUT'), ('ENABLE_H', 'mprj_io_enh[13]', 'INPUT'), ('HLD_H_N', 'mprj_io_hldh_n[13]', 'INPUT'), ('HLD_OVR', 'mprj_io_holdover[13]', 'INPUT'), ('IB_MODE_SEL', 'mprj_io_ib_mode_sel[13]', 'INPUT'), ('INP_DIS', 'mprj_io_inp_dis[13]', 'INPUT'), ('OE_N', 'mprj_io_oeb[13]', 'INPUT'), ('OUT', 'mprj_io_out[13]', 'INPUT'), ('SLOW', 'mprj_io_slow_sel[13]', 'INPUT'), ('VTRIP_SEL', 'mprj_io_vtrip_sel[13]', 'INPUT'), ('IN', 'mprj_io_in[13]', 'OUTPUT')], 'mprj_pads.area1_io_pad\\[14\\]': [('PAD_A_ESD_0_H', 'mprj_analog_io[7]', 'INOUT'), ('PAD', 'mprj_io[14]', 'INOUT'), ('ANALOG_EN', 'mprj_io_analog_en[14]', 'INPUT'), ('ANALOG_POL', 'mprj_io_analog_pol[14]', 'INPUT'), ('ANALOG_SEL', 'mprj_io_analog_sel[14]', 'INPUT'), ('DM[0]', 'mprj_io_dm[42]', 'INPUT'), ('DM[1]', 'mprj_io_dm[43]', 'INPUT'), ('DM[2]', 'mprj_io_dm[44]', 'INPUT'), ('ENABLE_H', 'mprj_io_enh[14]', 'INPUT'), ('HLD_H_N', 'mprj_io_hldh_n[14]', 'INPUT'), ('HLD_OVR', 'mprj_io_holdover[14]', 'INPUT'), ('IB_MODE_SEL', 'mprj_io_ib_mode_sel[14]', 'INPUT'), ('INP_DIS', 'mprj_io_inp_dis[14]', 'INPUT'), ('OE_N', 'mprj_io_oeb[14]', 'INPUT'), ('OUT', 'mprj_io_out[14]', 'INPUT'), ('SLOW', 'mprj_io_slow_sel[14]', 'INPUT'), ('VTRIP_SEL', 'mprj_io_vtrip_sel[14]', 'INPUT'), ('IN', 'mprj_io_in[14]', 'OUTPUT')], 'mprj_pads.area1_io_pad\\[15\\]': [('PAD_A_ESD_0_H', 'mprj_analog_io[8]', 'INOUT'), ('PAD', 'mprj_io[15]', 'INOUT'), ('ANALOG_EN', 'mprj_io_analog_en[15]', 'INPUT'), ('ANALOG_POL', 'mprj_io_analog_pol[15]', 'INPUT'), ('ANALOG_SEL', 'mprj_io_analog_sel[15]', 'INPUT'), ('DM[0]', 'mprj_io_dm[45]', 'INPUT'), ('DM[1]', 'mprj_io_dm[46]', 'INPUT'), ('DM[2]', 'mprj_io_dm[47]', 'INPUT'), ('ENABLE_H', 'mprj_io_enh[15]', 'INPUT'), ('HLD_H_N', 'mprj_io_hldh_n[15]', 'INPUT'), ('HLD_OVR', 'mprj_io_holdover[15]', 'INPUT'), ('IB_MODE_SEL', 'mprj_io_ib_mode_sel[15]', 'INPUT'), ('INP_DIS', 'mprj_io_inp_dis[15]', 'INPUT'), ('OE_N', 'mprj_io_oeb[15]', 'INPUT'), ('OUT', 'mprj_io_out[15]', 'INPUT'), ('SLOW', 'mprj_io_slow_sel[15]', 'INPUT'), ('VTRIP_SEL', 'mprj_io_vtrip_sel[15]', 'INPUT'), ('IN', 'mprj_io_in[15]', 'OUTPUT')], 'mprj_pads.area1_io_pad\\[16\\]': [('PAD_A_ESD_0_H', 'mprj_analog_io[9]', 'INOUT'), ('PAD', 'mprj_io[16]', 'INOUT'), ('ANALOG_EN', 'mprj_io_analog_en[16]', 'INPUT'), ('ANALOG_POL', 'mprj_io_analog_pol[16]', 'INPUT'), ('ANALOG_SEL', 'mprj_io_analog_sel[16]', 'INPUT'), ('DM[0]', 'mprj_io_dm[48]', 'INPUT'), ('DM[1]', 'mprj_io_dm[49]', 'INPUT'), ('DM[2]', 'mprj_io_dm[50]', 'INPUT'), ('ENABLE_H', 'mprj_io_enh[16]', 'INPUT'), ('HLD_H_N', 'mprj_io_hldh_n[16]', 'INPUT'), ('HLD_OVR', 'mprj_io_holdover[16]', 'INPUT'), ('IB_MODE_SEL', 'mprj_io_ib_mode_sel[16]', 'INPUT'), ('INP_DIS', 'mprj_io_inp_dis[16]', 'INPUT'), ('OE_N', 'mprj_io_oeb[16]', 'INPUT'), ('OUT', 'mprj_io_out[16]', 'INPUT'), ('SLOW', 'mprj_io_slow_sel[16]', 'INPUT'), ('VTRIP_SEL', 'mprj_io_vtrip_sel[16]', 'INPUT'), ('IN', 'mprj_io_in[16]', 'OUTPUT')], 'mprj_pads.area1_io_pad\\[0\\]': [('PAD', 'mprj_io[0]', 'INOUT'), ('ANALOG_EN', 'mprj_io_analog_en[0]', 'INPUT'), ('ANALOG_POL', 'mprj_io_analog_pol[0]', 'INPUT'), ('ANALOG_SEL', 'mprj_io_analog_sel[0]', 'INPUT'), ('DM[0]', 'mprj_io_dm[0]', 'INPUT'), ('DM[1]', 'mprj_io_dm[1]', 'INPUT'), ('DM[2]', 'mprj_io_dm[2]', 'INPUT'), ('ENABLE_H', 'mprj_io_enh[0]', 'INPUT'), ('HLD_H_N', 'mprj_io_hldh_n[0]', 'INPUT'), ('HLD_OVR', 'mprj_io_holdover[0]', 'INPUT'), ('IB_MODE_SEL', 'mprj_io_ib_mode_sel[0]', 'INPUT'), ('INP_DIS', 'mprj_io_inp_dis[0]', 'INPUT'), ('OE_N', 'mprj_io_oeb[0]', 'INPUT'), ('OUT', 'mprj_io_out[0]', 'INPUT'), ('SLOW', 'mprj_io_slow_sel[0]', 'INPUT'), ('VTRIP_SEL', 'mprj_io_vtrip_sel[0]', 'INPUT'), ('IN', 'mprj_io_in[0]', 'OUTPUT')], 'mprj_pads.area1_io_pad\\[1\\]': [('PAD', 'mprj_io[1]', 'INOUT'), ('ANALOG_EN', 'mprj_io_analog_en[1]', 'INPUT'), ('ANALOG_POL', 'mprj_io_analog_pol[1]', 'INPUT'), ('ANALOG_SEL', 'mprj_io_analog_sel[1]', 'INPUT'), ('DM[0]', 'mprj_io_dm[3]', 'INPUT'), ('DM[1]', 'mprj_io_dm[4]', 'INPUT'), ('DM[2]', 'mprj_io_dm[5]', 'INPUT'), ('ENABLE_H', 'mprj_io_enh[1]', 'INPUT'), ('HLD_H_N', 'mprj_io_hldh_n[1]', 'INPUT'), ('HLD_OVR', 'mprj_io_holdover[1]', 'INPUT'), ('IB_MODE_SEL', 'mprj_io_ib_mode_sel[1]', 'INPUT'), ('INP_DIS', 'mprj_io_inp_dis[1]', 'INPUT'), ('OE_N', 'mprj_io_oeb[1]', 'INPUT'), ('OUT', 'mprj_io_out[1]', 'INPUT'), ('SLOW', 'mprj_io_slow_sel[1]', 'INPUT'), ('VTRIP_SEL', 'mprj_io_vtrip_sel[1]', 'INPUT'), ('IN', 'mprj_io_in[1]', 'OUTPUT')], 'mprj_pads.area1_io_pad\\[2\\]': [('PAD', 'mprj_io[2]', 'INOUT'), ('ANALOG_EN', 'mprj_io_analog_en[2]', 'INPUT'), ('ANALOG_POL', 'mprj_io_analog_pol[2]', 'INPUT'), ('ANALOG_SEL', 'mprj_io_analog_sel[2]', 'INPUT'), ('DM[0]', 'mprj_io_dm[6]', 'INPUT'), ('DM[1]', 'mprj_io_dm[7]', 'INPUT'), ('DM[2]', 'mprj_io_dm[8]', 'INPUT'), ('ENABLE_H', 'mprj_io_enh[2]', 'INPUT'), ('HLD_H_N', 'mprj_io_hldh_n[2]', 'INPUT'), ('HLD_OVR', 'mprj_io_holdover[2]', 'INPUT'), ('IB_MODE_SEL', 'mprj_io_ib_mode_sel[2]', 'INPUT'), ('INP_DIS', 'mprj_io_inp_dis[2]', 'INPUT'), ('OE_N', 'mprj_io_oeb[2]', 'INPUT'), ('OUT', 'mprj_io_out[2]', 'INPUT'), ('SLOW', 'mprj_io_slow_sel[2]', 'INPUT'), ('VTRIP_SEL', 'mprj_io_vtrip_sel[2]', 'INPUT'), ('IN', 'mprj_io_in[2]', 'OUTPUT')], 'mprj_pads.area1_io_pad\\[3\\]': [('PAD', 'mprj_io[3]', 'INOUT'), ('ANALOG_EN', 'mprj_io_analog_en[3]', 'INPUT'), ('ANALOG_POL', 'mprj_io_analog_pol[3]', 'INPUT'), ('ANALOG_SEL', 'mprj_io_analog_sel[3]', 'INPUT'), ('DM[1]', 'mprj_io_dm[10]', 'INPUT'), ('DM[2]', 'mprj_io_dm[11]', 'INPUT'), ('DM[0]', 'mprj_io_dm[9]', 'INPUT'), ('ENABLE_H', 'mprj_io_enh[3]', 'INPUT'), ('HLD_H_N', 'mprj_io_hldh_n[3]', 'INPUT'), ('HLD_OVR', 'mprj_io_holdover[3]', 'INPUT'), ('IB_MODE_SEL', 'mprj_io_ib_mode_sel[3]', 'INPUT'), ('INP_DIS', 'mprj_io_inp_dis[3]', 'INPUT'), ('OE_N', 'mprj_io_oeb[3]', 'INPUT'), ('OUT', 'mprj_io_out[3]', 'INPUT'), ('SLOW', 'mprj_io_slow_sel[3]', 'INPUT'), ('VTRIP_SEL', 'mprj_io_vtrip_sel[3]', 'INPUT'), ('IN', 'mprj_io_in[3]', 'OUTPUT')], 'mprj_pads.area1_io_pad\\[4\\]': [('PAD', 'mprj_io[4]', 'INOUT'), ('ANALOG_EN', 'mprj_io_analog_en[4]', 'INPUT'), ('ANALOG_POL', 'mprj_io_analog_pol[4]', 'INPUT'), ('ANALOG_SEL', 'mprj_io_analog_sel[4]', 'INPUT'), ('DM[0]', 'mprj_io_dm[12]', 'INPUT'), ('DM[1]', 'mprj_io_dm[13]', 'INPUT'), ('DM[2]', 'mprj_io_dm[14]', 'INPUT'), ('ENABLE_H', 'mprj_io_enh[4]', 'INPUT'), ('HLD_H_N', 'mprj_io_hldh_n[4]', 'INPUT'), ('HLD_OVR', 'mprj_io_holdover[4]', 'INPUT'), ('IB_MODE_SEL', 'mprj_io_ib_mode_sel[4]', 'INPUT'), ('INP_DIS', 'mprj_io_inp_dis[4]', 'INPUT'), ('OE_N', 'mprj_io_oeb[4]', 'INPUT'), ('OUT', 'mprj_io_out[4]', 'INPUT'), ('SLOW', 'mprj_io_slow_sel[4]', 'INPUT'), ('VTRIP_SEL', 'mprj_io_vtrip_sel[4]', 'INPUT'), ('IN', 'mprj_io_in[4]', 'OUTPUT')], 'mprj_pads.area1_io_pad\\[5\\]': [('PAD', 'mprj_io[5]', 'INOUT'), ('ANALOG_EN', 'mprj_io_analog_en[5]', 'INPUT'), ('ANALOG_POL', 'mprj_io_analog_pol[5]', 'INPUT'), ('ANALOG_SEL', 'mprj_io_analog_sel[5]', 'INPUT'), ('DM[0]', 'mprj_io_dm[15]', 'INPUT'), ('DM[1]', 'mprj_io_dm[16]', 'INPUT'), ('DM[2]', 'mprj_io_dm[17]', 'INPUT'), ('ENABLE_H', 'mprj_io_enh[5]', 'INPUT'), ('HLD_H_N', 'mprj_io_hldh_n[5]', 'INPUT'), ('HLD_OVR', 'mprj_io_holdover[5]', 'INPUT'), ('IB_MODE_SEL', 'mprj_io_ib_mode_sel[5]', 'INPUT'), ('INP_DIS', 'mprj_io_inp_dis[5]', 'INPUT'), ('OE_N', 'mprj_io_oeb[5]', 'INPUT'), ('OUT', 'mprj_io_out[5]', 'INPUT'), ('SLOW', 'mprj_io_slow_sel[5]', 'INPUT'), ('VTRIP_SEL', 'mprj_io_vtrip_sel[5]', 'INPUT'), ('IN', 'mprj_io_in[5]', 'OUTPUT')], 'mprj_pads.area1_io_pad\\[6\\]': [('PAD', 'mprj_io[6]', 'INOUT'), ('ANALOG_EN', 'mprj_io_analog_en[6]', 'INPUT'), ('ANALOG_POL', 'mprj_io_analog_pol[6]', 'INPUT'), ('ANALOG_SEL', 'mprj_io_analog_sel[6]', 'INPUT'), ('DM[0]', 'mprj_io_dm[18]', 'INPUT'), ('DM[1]', 'mprj_io_dm[19]', 'INPUT'), ('DM[2]', 'mprj_io_dm[20]', 'INPUT'), ('ENABLE_H', 'mprj_io_enh[6]', 'INPUT'), ('HLD_H_N', 'mprj_io_hldh_n[6]', 'INPUT'), ('HLD_OVR', 'mprj_io_holdover[6]', 'INPUT'), ('IB_MODE_SEL', 'mprj_io_ib_mode_sel[6]', 'INPUT'), ('INP_DIS', 'mprj_io_inp_dis[6]', 'INPUT'), ('OE_N', 'mprj_io_oeb[6]', 'INPUT'), ('OUT', 'mprj_io_out[6]', 'INPUT'), ('SLOW', 'mprj_io_slow_sel[6]', 'INPUT'), ('VTRIP_SEL', 'mprj_io_vtrip_sel[6]', 'INPUT'), ('IN', 'mprj_io_in[6]', 'OUTPUT')], 'resetb_pad': [('ENABLE_H', 'porb_h', 'INPUT'), ('PAD', 'resetb', 'INPUT'), ('XRES_H_N', 'resetb_core_h', 'OUTPUT')], 'mgmt_vdda_hvclamp_pad': [('VDDA', 'vdda', 'INOUT')], 'user1_vdda_hvclamp_pad\\[0\\]': [('VDDA', 'vdda1', 'INOUT')], 'user2_vdda_hvclamp_pad': [('VDDA', 'vdda2', 'INOUT')], 'mgmt_vssa_hvclamp_pad': [('VSSA', 'vssa', 'INOUT')], 'user1_vssa_hvclamp_pad\\[0\\]': [('VSSA', 'vssa1', 'INOUT')], 'user2_vssa_hvclamp_pad': [('VSSA', 'vssa2', 'INOUT')], 'mgmt_vccd_lvclamp_pad': [('VCCD', 'vccd', 'INOUT')], 'user1_vccd_lvclamp_pad': [('VCCD', 'vccd1', 'INOUT')], 'user2_vccd_lvclamp_pad': [('VCCD', 'vccd2', 'INOUT')], 'mgmt_vssd_lvclmap_pad': [('VSSD', 'vssd', 'INOUT')], 'user1_vssd_lvclmap_pad': [('VSSD', 'vssd1', 'INOUT')], 'user2_vssd_lvclmap_pad': [('VSSD', 'vssd2', 'INOUT')], 'mgmt_vddio_hvclamp_pad\\[0\\]': [('VDDIO', 'vddio', 'INOUT')], 'mgmt_vssio_hvclamp_pad\\[0\\]': [('VSSIO', 'vssio', 'INOUT')]}
 Found:  clock_pad PAD clock
-872500 64215
+969500 64215
 Found:  clock_pad IN clock_core
-835595 105220
+936775 209765
 Found:  clock_pad INP_DIS por
-869625 197455
+970355 209765
 Found:  flash_clk_pad PAD flash_clk
-1592500 64215
+1786500 64215
 Found:  flash_clk_pad OUT flash_clk_core
-1612515 196787
+1808975 209765
 Found:  flash_clk_pad INP_DIS flash_clk_ieb_core
-1589625 197455
+1787355 209765
 Found:  flash_clk_pad OE_N flash_clk_oeb_core
-1631510 197762
+1824615 209765
 Found:  flash_csb_pad PAD flash_csb
-1350500 64215
+1512500 64215
 Found:  flash_csb_pad OUT flash_csb_core
-1370515 196787
+1534975 209765
 Found:  flash_csb_pad INP_DIS flash_csb_ieb_core
-1347625 197455
+1513355 209765
 Found:  flash_csb_pad OE_N flash_csb_oeb_core
-1389510 197762
+1550615 209765
 Found:  flash_io0_pad PAD flash_io0
-1834500 64215
+2060500 64215
 Found:  flash_io0_pad IN flash_io0_di_core
-1797595 105220
+2027775 209765
 Found:  flash_io0_pad OUT flash_io0_do_core
-1854515 196787
+2082975 209765
 Found:  flash_io0_pad INP_DIS flash_io0_ieb_core
-1831625 197455
+2061355 209765
 Found:  flash_io0_pad OE_N flash_io0_oeb_core
-1873510 197762
+2098615 209765
 Found:  flash_io1_pad PAD flash_io1
-2076500 64215
+2334500 64215
 Found:  flash_io1_pad IN flash_io1_di_core
-2039595 105220
+2301775 209765
 Found:  flash_io1_pad OUT flash_io1_do_core
-2096515 196787
+2356975 209765
 Found:  flash_io1_pad INP_DIS flash_io1_ieb_core
-2073625 197455
+2335355 209765
 Found:  flash_io1_pad OE_N flash_io1_oeb_core
-2115510 197762
+2372615 209765
 Found:  gpio_pad PAD gpio
-2317500 64215
+2608500 64215
 Found:  gpio_pad IN gpio_in_core
-2280595 105220
+2575775 209765
 Found:  gpio_pad INP_DIS gpio_inenb_core
-2314625 197455
+2609355 209765
 Found:  gpio_pad DM[0] gpio_mode0_core
-2310015 199727
+2603375 209765
 Found:  gpio_pad DM[2] gpio_mode1_core
-2331380 197965
+2624995 209765
 Found:  gpio_pad OUT gpio_out_core
-2337515 196787
+2630975 209765
 Found:  gpio_pad OE_N gpio_outenb_core
-2356510 197762
+2646615 209765
 Found:  mgmt_vccd_lvclamp_pad VCCD vccd
-64145 388635
+64145 377635
 Found:  mgmt_vdda_hvclamp_pad VDDA vdda
-2796550 64682
+3151550 64682
 Found:  mgmt_vddio_hvclamp_pad\[0\] VDDIO vddio
-64682 611450
+64682 588450
 Found:  mgmt_vssa_hvclamp_pad VSSA vssa
-398550 64682
+431550 64682
 Found:  mgmt_vssd_lvclmap_pad VSSD vssd
-1114365 64145
+1243365 64145
 Found:  mgmt_vssio_hvclamp_pad\[0\] VSSIO vssio
-1604450 5235317
+1704450 5123317
 Found:  mprj_pads.area1_io_pad\[0\] PAD mprj_io[0]
-3135785 395500
+3523785 537500
 Found:  mprj_pads.area1_io_pad\[0\] ANALOG_EN mprj_io_analog_en[0]
-3000652 375440
+3378235 529155
 Found:  mprj_pads.area1_io_pad\[0\] ANALOG_POL mprj_io_analog_pol[0]
-3018402 391970
+3378235 535595
 Found:  mprj_pads.area1_io_pad\[0\] ANALOG_SEL mprj_io_analog_sel[0]
-3001132 407120
+3378235 550775
 Found:  mprj_pads.area1_io_pad\[0\] DM[0] mprj_io_dm[0]
-3000272 388015
+3378235 532375
 Found:  mprj_pads.area1_io_pad\[0\] DM[1] mprj_io_dm[1]
-3000597 371035
+3378235 523175
 Found:  mprj_pads.area1_io_pad\[0\] DM[2] mprj_io_dm[2]
-3002035 409380
+3378235 553995
 Found:  mprj_pads.area1_io_pad\[0\] ENABLE_H mprj_io_enh[0]
-3000775 402410
+3378235 544795
 Found:  mprj_pads.area1_io_pad\[0\] HLD_H_N mprj_io_hldh_n[0]
-3001670 406055
+3378235 548015
 Found:  mprj_pads.area1_io_pad\[0\] HLD_OVR mprj_io_holdover[0]
-3001352 411270
+3378235 557215
 Found:  mprj_pads.area1_io_pad\[0\] IB_MODE_SEL mprj_io_ib_mode_sel[0]
-3002237 432465
+3378235 572395
 Found:  mprj_pads.area1_io_pad\[0\] INP_DIS mprj_io_inp_dis[0]
-3002545 392625
+3378235 538355
 Found:  mprj_pads.area1_io_pad\[0\] OE_N mprj_io_oeb[0]
-3002237 434510
+3378235 575615
 Found:  mprj_pads.area1_io_pad\[0\] OUT mprj_io_out[0]
-3003212 415515
+3378235 559975
 Found:  mprj_pads.area1_io_pad\[0\] SLOW mprj_io_slow_sel[0]
-3000592 360260
+3378235 513975
 Found:  mprj_pads.area1_io_pad\[0\] VTRIP_SEL mprj_io_vtrip_sel[0]
-3000775 431740
+3378235 569175
 Found:  mprj_pads.area1_io_pad\[0\] IN mprj_io_in[0]
-3094780 358595
+3378235 504775
+Found:  mprj_pads.area1_io_pad\[10\] PAD_A_ESD_0_H mprj_analog_io[3]
+3378235 3433195
 Found:  mprj_pads.area1_io_pad\[10\] PAD mprj_io[10]
-3135785 3476500
+3523785 3453500
 Found:  mprj_pads.area1_io_pad\[10\] ANALOG_EN mprj_io_analog_en[10]
-3000652 3456440
+3378235 3445155
 Found:  mprj_pads.area1_io_pad\[10\] ANALOG_POL mprj_io_analog_pol[10]
-3018402 3472970
+3378235 3451595
 Found:  mprj_pads.area1_io_pad\[10\] ANALOG_SEL mprj_io_analog_sel[10]
-3001132 3488120
+3378235 3466775
 Found:  mprj_pads.area1_io_pad\[10\] DM[0] mprj_io_dm[30]
-3000272 3469015
+3378235 3448375
 Found:  mprj_pads.area1_io_pad\[10\] DM[1] mprj_io_dm[31]
-3000597 3452035
+3378235 3439175
 Found:  mprj_pads.area1_io_pad\[10\] DM[2] mprj_io_dm[32]
-3002035 3490380
+3378235 3469995
 Found:  mprj_pads.area1_io_pad\[10\] ENABLE_H mprj_io_enh[10]
-3000775 3483410
+3378235 3460795
 Found:  mprj_pads.area1_io_pad\[10\] HLD_H_N mprj_io_hldh_n[10]
-3001670 3487055
+3378235 3464015
 Found:  mprj_pads.area1_io_pad\[10\] HLD_OVR mprj_io_holdover[10]
-3001352 3492270
+3378235 3473215
 Found:  mprj_pads.area1_io_pad\[10\] IB_MODE_SEL mprj_io_ib_mode_sel[10]
-3002237 3513465
+3378235 3488395
 Found:  mprj_pads.area1_io_pad\[10\] INP_DIS mprj_io_inp_dis[10]
-3002545 3473625
+3378235 3454355
 Found:  mprj_pads.area1_io_pad\[10\] OE_N mprj_io_oeb[10]
-3002237 3515510
+3378235 3491615
 Found:  mprj_pads.area1_io_pad\[10\] OUT mprj_io_out[10]
-3003212 3496515
+3378235 3475975
 Found:  mprj_pads.area1_io_pad\[10\] SLOW mprj_io_slow_sel[10]
-3000592 3441260
+3378235 3429975
 Found:  mprj_pads.area1_io_pad\[10\] VTRIP_SEL mprj_io_vtrip_sel[10]
-3000775 3512740
+3378235 3485175
 Found:  mprj_pads.area1_io_pad\[10\] IN mprj_io_in[10]
-3094780 3439595
+3378235 3420775
+Found:  mprj_pads.area1_io_pad\[11\] PAD_A_ESD_0_H mprj_analog_io[4]
+3378235 3658195
 Found:  mprj_pads.area1_io_pad\[11\] PAD mprj_io[11]
-3135785 3714500
+3523785 3678500
 Found:  mprj_pads.area1_io_pad\[11\] ANALOG_EN mprj_io_analog_en[11]
-3000652 3694440
+3378235 3670155
 Found:  mprj_pads.area1_io_pad\[11\] ANALOG_POL mprj_io_analog_pol[11]
-3018402 3710970
+3378235 3676595
 Found:  mprj_pads.area1_io_pad\[11\] ANALOG_SEL mprj_io_analog_sel[11]
-3001132 3726120
+3378235 3691775
 Found:  mprj_pads.area1_io_pad\[11\] DM[0] mprj_io_dm[33]
-3000272 3707015
+3378235 3673375
 Found:  mprj_pads.area1_io_pad\[11\] DM[1] mprj_io_dm[34]
-3000597 3690035
+3378235 3664175
 Found:  mprj_pads.area1_io_pad\[11\] DM[2] mprj_io_dm[35]
-3002035 3728380
+3378235 3694995
 Found:  mprj_pads.area1_io_pad\[11\] ENABLE_H mprj_io_enh[11]
-3000775 3721410
+3378235 3685795
 Found:  mprj_pads.area1_io_pad\[11\] HLD_H_N mprj_io_hldh_n[11]
-3001670 3725055
+3378235 3689015
 Found:  mprj_pads.area1_io_pad\[11\] HLD_OVR mprj_io_holdover[11]
-3001352 3730270
+3378235 3698215
 Found:  mprj_pads.area1_io_pad\[11\] IB_MODE_SEL mprj_io_ib_mode_sel[11]
-3002237 3751465
+3378235 3713395
 Found:  mprj_pads.area1_io_pad\[11\] INP_DIS mprj_io_inp_dis[11]
-3002545 3711625
+3378235 3679355
 Found:  mprj_pads.area1_io_pad\[11\] OE_N mprj_io_oeb[11]
-3002237 3753510
+3378235 3716615
 Found:  mprj_pads.area1_io_pad\[11\] OUT mprj_io_out[11]
-3003212 3734515
+3378235 3700975
 Found:  mprj_pads.area1_io_pad\[11\] SLOW mprj_io_slow_sel[11]
-3000592 3679260
+3378235 3654975
 Found:  mprj_pads.area1_io_pad\[11\] VTRIP_SEL mprj_io_vtrip_sel[11]
-3000775 3750740
+3378235 3710175
 Found:  mprj_pads.area1_io_pad\[11\] IN mprj_io_in[11]
-3094780 3677595
+3378235 3645775
+Found:  mprj_pads.area1_io_pad\[12\] PAD_A_ESD_0_H mprj_analog_io[5]
+3378235 3883195
 Found:  mprj_pads.area1_io_pad\[12\] PAD mprj_io[12]
-3135785 3952500
+3523785 3903500
 Found:  mprj_pads.area1_io_pad\[12\] ANALOG_EN mprj_io_analog_en[12]
-3000652 3932440
+3378235 3895155
 Found:  mprj_pads.area1_io_pad\[12\] ANALOG_POL mprj_io_analog_pol[12]
-3018402 3948970
+3378235 3901595
 Found:  mprj_pads.area1_io_pad\[12\] ANALOG_SEL mprj_io_analog_sel[12]
-3001132 3964120
+3378235 3916775
 Found:  mprj_pads.area1_io_pad\[12\] DM[0] mprj_io_dm[36]
-3000272 3945015
+3378235 3898375
 Found:  mprj_pads.area1_io_pad\[12\] DM[1] mprj_io_dm[37]
-3000597 3928035
+3378235 3889175
 Found:  mprj_pads.area1_io_pad\[12\] DM[2] mprj_io_dm[38]
-3002035 3966380
+3378235 3919995
 Found:  mprj_pads.area1_io_pad\[12\] ENABLE_H mprj_io_enh[12]
-3000775 3959410
+3378235 3910795
 Found:  mprj_pads.area1_io_pad\[12\] HLD_H_N mprj_io_hldh_n[12]
-3001670 3963055
+3378235 3914015
 Found:  mprj_pads.area1_io_pad\[12\] HLD_OVR mprj_io_holdover[12]
-3001352 3968270
+3378235 3923215
 Found:  mprj_pads.area1_io_pad\[12\] IB_MODE_SEL mprj_io_ib_mode_sel[12]
-3002237 3989465
+3378235 3938395
 Found:  mprj_pads.area1_io_pad\[12\] INP_DIS mprj_io_inp_dis[12]
-3002545 3949625
+3378235 3904355
 Found:  mprj_pads.area1_io_pad\[12\] OE_N mprj_io_oeb[12]
-3002237 3991510
+3378235 3941615
 Found:  mprj_pads.area1_io_pad\[12\] OUT mprj_io_out[12]
-3003212 3972515
+3378235 3925975
 Found:  mprj_pads.area1_io_pad\[12\] SLOW mprj_io_slow_sel[12]
-3000592 3917260
+3378235 3879975
 Found:  mprj_pads.area1_io_pad\[12\] VTRIP_SEL mprj_io_vtrip_sel[12]
-3000775 3988740
+3378235 3935175
 Found:  mprj_pads.area1_io_pad\[12\] IN mprj_io_in[12]
-3094780 3915595
+3378235 3870775
+Found:  mprj_pads.area1_io_pad\[13\] PAD_A_ESD_0_H mprj_analog_io[6]
+3378235 4329195
 Found:  mprj_pads.area1_io_pad\[13\] PAD mprj_io[13]
-3135785 4423500
+3523785 4349500
 Found:  mprj_pads.area1_io_pad\[13\] ANALOG_EN mprj_io_analog_en[13]
-3000652 4403440
+3378235 4341155
 Found:  mprj_pads.area1_io_pad\[13\] ANALOG_POL mprj_io_analog_pol[13]
-3018402 4419970
+3378235 4347595
 Found:  mprj_pads.area1_io_pad\[13\] ANALOG_SEL mprj_io_analog_sel[13]
-3001132 4435120
+3378235 4362775
 Found:  mprj_pads.area1_io_pad\[13\] DM[0] mprj_io_dm[39]
-3000272 4416015
+3378235 4344375
 Found:  mprj_pads.area1_io_pad\[13\] DM[1] mprj_io_dm[40]
-3000597 4399035
+3378235 4335175
 Found:  mprj_pads.area1_io_pad\[13\] DM[2] mprj_io_dm[41]
-3002035 4437380
+3378235 4365995
 Found:  mprj_pads.area1_io_pad\[13\] ENABLE_H mprj_io_enh[13]
-3000775 4430410
+3378235 4356795
 Found:  mprj_pads.area1_io_pad\[13\] HLD_H_N mprj_io_hldh_n[13]
-3001670 4434055
+3378235 4360015
 Found:  mprj_pads.area1_io_pad\[13\] HLD_OVR mprj_io_holdover[13]
-3001352 4439270
+3378235 4369215
 Found:  mprj_pads.area1_io_pad\[13\] IB_MODE_SEL mprj_io_ib_mode_sel[13]
-3002237 4460465
+3378235 4384395
 Found:  mprj_pads.area1_io_pad\[13\] INP_DIS mprj_io_inp_dis[13]
-3002545 4420625
+3378235 4350355
 Found:  mprj_pads.area1_io_pad\[13\] OE_N mprj_io_oeb[13]
-3002237 4462510
+3378235 4387615
 Found:  mprj_pads.area1_io_pad\[13\] OUT mprj_io_out[13]
-3003212 4443515
+3378235 4371975
 Found:  mprj_pads.area1_io_pad\[13\] SLOW mprj_io_slow_sel[13]
-3000592 4388260
+3378235 4325975
 Found:  mprj_pads.area1_io_pad\[13\] VTRIP_SEL mprj_io_vtrip_sel[13]
-3000775 4459740
+3378235 4381175
 Found:  mprj_pads.area1_io_pad\[13\] IN mprj_io_in[13]
-3094780 4386595
+3378235 4316775
+Found:  mprj_pads.area1_io_pad\[14\] PAD_A_ESD_0_H mprj_analog_io[7]
+3378235 4775195
 Found:  mprj_pads.area1_io_pad\[14\] PAD mprj_io[14]
-3135785 4894500
+3523785 4795500
 Found:  mprj_pads.area1_io_pad\[14\] ANALOG_EN mprj_io_analog_en[14]
-3000652 4874440
+3378235 4787155
 Found:  mprj_pads.area1_io_pad\[14\] ANALOG_POL mprj_io_analog_pol[14]
-3018402 4890970
+3378235 4793595
 Found:  mprj_pads.area1_io_pad\[14\] ANALOG_SEL mprj_io_analog_sel[14]
-3001132 4906120
+3378235 4808775
 Found:  mprj_pads.area1_io_pad\[14\] DM[0] mprj_io_dm[42]
-3000272 4887015
+3378235 4790375
 Found:  mprj_pads.area1_io_pad\[14\] DM[1] mprj_io_dm[43]
-3000597 4870035
+3378235 4781175
 Found:  mprj_pads.area1_io_pad\[14\] DM[2] mprj_io_dm[44]
-3002035 4908380
+3378235 4811995
 Found:  mprj_pads.area1_io_pad\[14\] ENABLE_H mprj_io_enh[14]
-3000775 4901410
+3378235 4802795
 Found:  mprj_pads.area1_io_pad\[14\] HLD_H_N mprj_io_hldh_n[14]
-3001670 4905055
+3378235 4806015
 Found:  mprj_pads.area1_io_pad\[14\] HLD_OVR mprj_io_holdover[14]
-3001352 4910270
+3378235 4815215
 Found:  mprj_pads.area1_io_pad\[14\] IB_MODE_SEL mprj_io_ib_mode_sel[14]
-3002237 4931465
+3378235 4830395
 Found:  mprj_pads.area1_io_pad\[14\] INP_DIS mprj_io_inp_dis[14]
-3002545 4891625
+3378235 4796355
 Found:  mprj_pads.area1_io_pad\[14\] OE_N mprj_io_oeb[14]
-3002237 4933510
+3378235 4833615
 Found:  mprj_pads.area1_io_pad\[14\] OUT mprj_io_out[14]
-3003212 4914515
+3378235 4817975
 Found:  mprj_pads.area1_io_pad\[14\] SLOW mprj_io_slow_sel[14]
-3000592 4859260
+3378235 4771975
 Found:  mprj_pads.area1_io_pad\[14\] VTRIP_SEL mprj_io_vtrip_sel[14]
-3000775 4930740
+3378235 4827175
 Found:  mprj_pads.area1_io_pad\[14\] IN mprj_io_in[14]
-3094780 4857595
+3378235 4762775
+Found:  mprj_pads.area1_io_pad\[15\] PAD_A_ESD_0_H mprj_analog_io[8]
+3192805 4978235
 Found:  mprj_pads.area1_io_pad\[15\] PAD mprj_io[15]
-2801500 5235785
+3172500 5123785
 Found:  mprj_pads.area1_io_pad\[15\] ANALOG_EN mprj_io_analog_en[15]
-2821560 5100652
+3180845 4978235
 Found:  mprj_pads.area1_io_pad\[15\] ANALOG_POL mprj_io_analog_pol[15]
-2805030 5118402
+3174405 4978235
 Found:  mprj_pads.area1_io_pad\[15\] ANALOG_SEL mprj_io_analog_sel[15]
-2789880 5101132
+3159225 4978235
 Found:  mprj_pads.area1_io_pad\[15\] DM[0] mprj_io_dm[45]
-2808985 5100272
+3177625 4978235
 Found:  mprj_pads.area1_io_pad\[15\] DM[1] mprj_io_dm[46]
-2825965 5100597
+3186825 4978235
 Found:  mprj_pads.area1_io_pad\[15\] DM[2] mprj_io_dm[47]
-2787620 5102035
+3156005 4978235
 Found:  mprj_pads.area1_io_pad\[15\] ENABLE_H mprj_io_enh[15]
-2794590 5100775
+3165205 4978235
 Found:  mprj_pads.area1_io_pad\[15\] HLD_H_N mprj_io_hldh_n[15]
-2790945 5101670
+3161985 4978235
 Found:  mprj_pads.area1_io_pad\[15\] HLD_OVR mprj_io_holdover[15]
-2785730 5101352
+3152785 4978235
 Found:  mprj_pads.area1_io_pad\[15\] IB_MODE_SEL mprj_io_ib_mode_sel[15]
-2764535 5102237
+3137605 4978235
 Found:  mprj_pads.area1_io_pad\[15\] INP_DIS mprj_io_inp_dis[15]
-2804375 5102545
+3171645 4978235
 Found:  mprj_pads.area1_io_pad\[15\] OE_N mprj_io_oeb[15]
-2762490 5102237
+3134385 4978235
 Found:  mprj_pads.area1_io_pad\[15\] OUT mprj_io_out[15]
-2781485 5103212
+3150025 4978235
 Found:  mprj_pads.area1_io_pad\[15\] SLOW mprj_io_slow_sel[15]
-2836740 5100592
+3196025 4978235
 Found:  mprj_pads.area1_io_pad\[15\] VTRIP_SEL mprj_io_vtrip_sel[15]
-2765260 5100775
+3140825 4978235
 Found:  mprj_pads.area1_io_pad\[15\] IN mprj_io_in[15]
-2838405 5194780
+3205225 4978235
+Found:  mprj_pads.area1_io_pad\[16\] PAD_A_ESD_0_H mprj_analog_io[9]
+2683805 4978235
 Found:  mprj_pads.area1_io_pad\[16\] PAD mprj_io[16]
-2325500 5235785
+2663500 5123785
 Found:  mprj_pads.area1_io_pad\[16\] ANALOG_EN mprj_io_analog_en[16]
-2345560 5100652
+2671845 4978235
 Found:  mprj_pads.area1_io_pad\[16\] ANALOG_POL mprj_io_analog_pol[16]
-2329030 5118402
+2665405 4978235
 Found:  mprj_pads.area1_io_pad\[16\] ANALOG_SEL mprj_io_analog_sel[16]
-2313880 5101132
+2650225 4978235
 Found:  mprj_pads.area1_io_pad\[16\] DM[0] mprj_io_dm[48]
-2332985 5100272
+2668625 4978235
 Found:  mprj_pads.area1_io_pad\[16\] DM[1] mprj_io_dm[49]
-2349965 5100597
+2677825 4978235
 Found:  mprj_pads.area1_io_pad\[16\] DM[2] mprj_io_dm[50]
-2311620 5102035
+2647005 4978235
 Found:  mprj_pads.area1_io_pad\[16\] ENABLE_H mprj_io_enh[16]
-2318590 5100775
+2656205 4978235
 Found:  mprj_pads.area1_io_pad\[16\] HLD_H_N mprj_io_hldh_n[16]
-2314945 5101670
+2652985 4978235
 Found:  mprj_pads.area1_io_pad\[16\] HLD_OVR mprj_io_holdover[16]
-2309730 5101352
+2643785 4978235
 Found:  mprj_pads.area1_io_pad\[16\] IB_MODE_SEL mprj_io_ib_mode_sel[16]
-2288535 5102237
+2628605 4978235
 Found:  mprj_pads.area1_io_pad\[16\] INP_DIS mprj_io_inp_dis[16]
-2328375 5102545
+2662645 4978235
 Found:  mprj_pads.area1_io_pad\[16\] OE_N mprj_io_oeb[16]
-2286490 5102237
+2625385 4978235
 Found:  mprj_pads.area1_io_pad\[16\] OUT mprj_io_out[16]
-2305485 5103212
+2641025 4978235
 Found:  mprj_pads.area1_io_pad\[16\] SLOW mprj_io_slow_sel[16]
-2360740 5100592
+2687025 4978235
 Found:  mprj_pads.area1_io_pad\[16\] VTRIP_SEL mprj_io_vtrip_sel[16]
-2289260 5100775
+2631825 4978235
 Found:  mprj_pads.area1_io_pad\[16\] IN mprj_io_in[16]
-2362405 5194780
+2696225 4978235
+Found:  mprj_pads.area1_io_pad\[17\] PAD_A_ESD_0_H mprj_analog_io[10]
+2426805 4978235
 Found:  mprj_pads.area1_io_pad\[17\] PAD mprj_io[17]
-2085500 5235785
+2406500 5123785
 Found:  mprj_pads.area1_io_pad\[17\] ANALOG_EN mprj_io_analog_en[17]
-2105560 5100652
+2414845 4978235
 Found:  mprj_pads.area1_io_pad\[17\] ANALOG_POL mprj_io_analog_pol[17]
-2089030 5118402
+2408405 4978235
 Found:  mprj_pads.area1_io_pad\[17\] ANALOG_SEL mprj_io_analog_sel[17]
-2073880 5101132
+2393225 4978235
 Found:  mprj_pads.area1_io_pad\[17\] DM[0] mprj_io_dm[51]
-2092985 5100272
+2411625 4978235
 Found:  mprj_pads.area1_io_pad\[17\] DM[1] mprj_io_dm[52]
-2109965 5100597
+2420825 4978235
 Found:  mprj_pads.area1_io_pad\[17\] DM[2] mprj_io_dm[53]
-2071620 5102035
+2390005 4978235
 Found:  mprj_pads.area1_io_pad\[17\] ENABLE_H mprj_io_enh[17]
-2078590 5100775
+2399205 4978235
 Found:  mprj_pads.area1_io_pad\[17\] HLD_H_N mprj_io_hldh_n[17]
-2074945 5101670
+2395985 4978235
 Found:  mprj_pads.area1_io_pad\[17\] HLD_OVR mprj_io_holdover[17]
-2069730 5101352
+2386785 4978235
 Found:  mprj_pads.area1_io_pad\[17\] IB_MODE_SEL mprj_io_ib_mode_sel[17]
-2048535 5102237
+2371605 4978235
 Found:  mprj_pads.area1_io_pad\[17\] INP_DIS mprj_io_inp_dis[17]
-2088375 5102545
+2405645 4978235
 Found:  mprj_pads.area1_io_pad\[17\] OE_N mprj_io_oeb[17]
-2046490 5102237
+2368385 4978235
 Found:  mprj_pads.area1_io_pad\[17\] OUT mprj_io_out[17]
-2065485 5103212
+2384025 4978235
 Found:  mprj_pads.area1_io_pad\[17\] SLOW mprj_io_slow_sel[17]
-2120740 5100592
+2430025 4978235
 Found:  mprj_pads.area1_io_pad\[17\] VTRIP_SEL mprj_io_vtrip_sel[17]
-2049260 5100775
+2374825 4978235
 Found:  mprj_pads.area1_io_pad\[17\] IN mprj_io_in[17]
-2122405 5194780
+2439225 4978235
 Found:  mprj_pads.area1_io_pad\[1\] PAD mprj_io[1]
-3135785 633500
+3523785 763500
 Found:  mprj_pads.area1_io_pad\[1\] ANALOG_EN mprj_io_analog_en[1]
-3000652 613440
+3378235 755155
 Found:  mprj_pads.area1_io_pad\[1\] ANALOG_POL mprj_io_analog_pol[1]
-3018402 629970
+3378235 761595
 Found:  mprj_pads.area1_io_pad\[1\] ANALOG_SEL mprj_io_analog_sel[1]
-3001132 645120
+3378235 776775
 Found:  mprj_pads.area1_io_pad\[1\] DM[0] mprj_io_dm[3]
-3000272 626015
+3378235 758375
 Found:  mprj_pads.area1_io_pad\[1\] DM[1] mprj_io_dm[4]
-3000597 609035
+3378235 749175
 Found:  mprj_pads.area1_io_pad\[1\] DM[2] mprj_io_dm[5]
-3002035 647380
+3378235 779995
 Found:  mprj_pads.area1_io_pad\[1\] ENABLE_H mprj_io_enh[1]
-3000775 640410
+3378235 770795
 Found:  mprj_pads.area1_io_pad\[1\] HLD_H_N mprj_io_hldh_n[1]
-3001670 644055
+3378235 774015
 Found:  mprj_pads.area1_io_pad\[1\] HLD_OVR mprj_io_holdover[1]
-3001352 649270
+3378235 783215
 Found:  mprj_pads.area1_io_pad\[1\] IB_MODE_SEL mprj_io_ib_mode_sel[1]
-3002237 670465
+3378235 798395
 Found:  mprj_pads.area1_io_pad\[1\] INP_DIS mprj_io_inp_dis[1]
-3002545 630625
+3378235 764355
 Found:  mprj_pads.area1_io_pad\[1\] OE_N mprj_io_oeb[1]
-3002237 672510
+3378235 801615
 Found:  mprj_pads.area1_io_pad\[1\] OUT mprj_io_out[1]
-3003212 653515
+3378235 785975
 Found:  mprj_pads.area1_io_pad\[1\] SLOW mprj_io_slow_sel[1]
-3000592 598260
+3378235 739975
 Found:  mprj_pads.area1_io_pad\[1\] VTRIP_SEL mprj_io_vtrip_sel[1]
-3000775 669740
+3378235 795175
 Found:  mprj_pads.area1_io_pad\[1\] IN mprj_io_in[1]
-3094780 596595
+3378235 730775
 Found:  mprj_pads.area1_io_pad\[2\] PAD mprj_io[2]
-3135785 871500
+3523785 988500
 Found:  mprj_pads.area1_io_pad\[2\] ANALOG_EN mprj_io_analog_en[2]
-3000652 851440
+3378235 980155
 Found:  mprj_pads.area1_io_pad\[2\] ANALOG_POL mprj_io_analog_pol[2]
-3018402 867970
+3378235 986595
 Found:  mprj_pads.area1_io_pad\[2\] ANALOG_SEL mprj_io_analog_sel[2]
-3001132 883120
+3378235 1001775
 Found:  mprj_pads.area1_io_pad\[2\] DM[0] mprj_io_dm[6]
-3000272 864015
+3378235 983375
 Found:  mprj_pads.area1_io_pad\[2\] DM[1] mprj_io_dm[7]
-3000597 847035
+3378235 974175
 Found:  mprj_pads.area1_io_pad\[2\] DM[2] mprj_io_dm[8]
-3002035 885380
+3378235 1004995
 Found:  mprj_pads.area1_io_pad\[2\] ENABLE_H mprj_io_enh[2]
-3000775 878410
+3378235 995795
 Found:  mprj_pads.area1_io_pad\[2\] HLD_H_N mprj_io_hldh_n[2]
-3001670 882055
+3378235 999015
 Found:  mprj_pads.area1_io_pad\[2\] HLD_OVR mprj_io_holdover[2]
-3001352 887270
+3378235 1008215
 Found:  mprj_pads.area1_io_pad\[2\] IB_MODE_SEL mprj_io_ib_mode_sel[2]
-3002237 908465
+3378235 1023395
 Found:  mprj_pads.area1_io_pad\[2\] INP_DIS mprj_io_inp_dis[2]
-3002545 868625
+3378235 989355
 Found:  mprj_pads.area1_io_pad\[2\] OE_N mprj_io_oeb[2]
-3002237 910510
+3378235 1026615
 Found:  mprj_pads.area1_io_pad\[2\] OUT mprj_io_out[2]
-3003212 891515
+3378235 1010975
 Found:  mprj_pads.area1_io_pad\[2\] SLOW mprj_io_slow_sel[2]
-3000592 836260
+3378235 964975
 Found:  mprj_pads.area1_io_pad\[2\] VTRIP_SEL mprj_io_vtrip_sel[2]
-3000775 907740
+3378235 1020175
 Found:  mprj_pads.area1_io_pad\[2\] IN mprj_io_in[2]
-3094780 834595
+3378235 955775
 Found:  mprj_pads.area1_io_pad\[3\] PAD mprj_io[3]
-3135785 1109500
+3523785 1214500
 Found:  mprj_pads.area1_io_pad\[3\] ANALOG_EN mprj_io_analog_en[3]
-3000652 1089440
+3378235 1206155
 Found:  mprj_pads.area1_io_pad\[3\] ANALOG_POL mprj_io_analog_pol[3]
-3018402 1105970
+3378235 1212595
 Found:  mprj_pads.area1_io_pad\[3\] ANALOG_SEL mprj_io_analog_sel[3]
-3001132 1121120
+3378235 1227775
 Found:  mprj_pads.area1_io_pad\[3\] DM[1] mprj_io_dm[10]
-3000597 1085035
+3378235 1200175
 Found:  mprj_pads.area1_io_pad\[3\] DM[2] mprj_io_dm[11]
-3002035 1123380
+3378235 1230995
 Found:  mprj_pads.area1_io_pad\[3\] DM[0] mprj_io_dm[9]
-3000272 1102015
+3378235 1209375
 Found:  mprj_pads.area1_io_pad\[3\] ENABLE_H mprj_io_enh[3]
-3000775 1116410
+3378235 1221795
 Found:  mprj_pads.area1_io_pad\[3\] HLD_H_N mprj_io_hldh_n[3]
-3001670 1120055
+3378235 1225015
 Found:  mprj_pads.area1_io_pad\[3\] HLD_OVR mprj_io_holdover[3]
-3001352 1125270
+3378235 1234215
 Found:  mprj_pads.area1_io_pad\[3\] IB_MODE_SEL mprj_io_ib_mode_sel[3]
-3002237 1146465
+3378235 1249395
 Found:  mprj_pads.area1_io_pad\[3\] INP_DIS mprj_io_inp_dis[3]
-3002545 1106625
+3378235 1215355
 Found:  mprj_pads.area1_io_pad\[3\] OE_N mprj_io_oeb[3]
-3002237 1148510
+3378235 1252615
 Found:  mprj_pads.area1_io_pad\[3\] OUT mprj_io_out[3]
-3003212 1129515
+3378235 1236975
 Found:  mprj_pads.area1_io_pad\[3\] SLOW mprj_io_slow_sel[3]
-3000592 1074260
+3378235 1190975
 Found:  mprj_pads.area1_io_pad\[3\] VTRIP_SEL mprj_io_vtrip_sel[3]
-3000775 1145740
+3378235 1246175
 Found:  mprj_pads.area1_io_pad\[3\] IN mprj_io_in[3]
-3094780 1072595
+3378235 1181775
 Found:  mprj_pads.area1_io_pad\[4\] PAD mprj_io[4]
-3135785 1347500
+3523785 1439500
 Found:  mprj_pads.area1_io_pad\[4\] ANALOG_EN mprj_io_analog_en[4]
-3000652 1327440
+3378235 1431155
 Found:  mprj_pads.area1_io_pad\[4\] ANALOG_POL mprj_io_analog_pol[4]
-3018402 1343970
+3378235 1437595
 Found:  mprj_pads.area1_io_pad\[4\] ANALOG_SEL mprj_io_analog_sel[4]
-3001132 1359120
+3378235 1452775
 Found:  mprj_pads.area1_io_pad\[4\] DM[0] mprj_io_dm[12]
-3000272 1340015
+3378235 1434375
 Found:  mprj_pads.area1_io_pad\[4\] DM[1] mprj_io_dm[13]
-3000597 1323035
+3378235 1425175
 Found:  mprj_pads.area1_io_pad\[4\] DM[2] mprj_io_dm[14]
-3002035 1361380
+3378235 1455995
 Found:  mprj_pads.area1_io_pad\[4\] ENABLE_H mprj_io_enh[4]
-3000775 1354410
+3378235 1446795
 Found:  mprj_pads.area1_io_pad\[4\] HLD_H_N mprj_io_hldh_n[4]
-3001670 1358055
+3378235 1450015
 Found:  mprj_pads.area1_io_pad\[4\] HLD_OVR mprj_io_holdover[4]
-3001352 1363270
+3378235 1459215
 Found:  mprj_pads.area1_io_pad\[4\] IB_MODE_SEL mprj_io_ib_mode_sel[4]
-3002237 1384465
+3378235 1474395
 Found:  mprj_pads.area1_io_pad\[4\] INP_DIS mprj_io_inp_dis[4]
-3002545 1344625
+3378235 1440355
 Found:  mprj_pads.area1_io_pad\[4\] OE_N mprj_io_oeb[4]
-3002237 1386510
+3378235 1477615
 Found:  mprj_pads.area1_io_pad\[4\] OUT mprj_io_out[4]
-3003212 1367515
+3378235 1461975
 Found:  mprj_pads.area1_io_pad\[4\] SLOW mprj_io_slow_sel[4]
-3000592 1312260
+3378235 1415975
 Found:  mprj_pads.area1_io_pad\[4\] VTRIP_SEL mprj_io_vtrip_sel[4]
-3000775 1383740
+3378235 1471175
 Found:  mprj_pads.area1_io_pad\[4\] IN mprj_io_in[4]
-3094780 1310595
+3378235 1406775
 Found:  mprj_pads.area1_io_pad\[5\] PAD mprj_io[5]
-3135785 1585500
+3523785 1664500
 Found:  mprj_pads.area1_io_pad\[5\] ANALOG_EN mprj_io_analog_en[5]
-3000652 1565440
+3378235 1656155
 Found:  mprj_pads.area1_io_pad\[5\] ANALOG_POL mprj_io_analog_pol[5]
-3018402 1581970
+3378235 1662595
 Found:  mprj_pads.area1_io_pad\[5\] ANALOG_SEL mprj_io_analog_sel[5]
-3001132 1597120
+3378235 1677775
 Found:  mprj_pads.area1_io_pad\[5\] DM[0] mprj_io_dm[15]
-3000272 1578015
+3378235 1659375
 Found:  mprj_pads.area1_io_pad\[5\] DM[1] mprj_io_dm[16]
-3000597 1561035
+3378235 1650175
 Found:  mprj_pads.area1_io_pad\[5\] DM[2] mprj_io_dm[17]
-3002035 1599380
+3378235 1680995
 Found:  mprj_pads.area1_io_pad\[5\] ENABLE_H mprj_io_enh[5]
-3000775 1592410
+3378235 1671795
 Found:  mprj_pads.area1_io_pad\[5\] HLD_H_N mprj_io_hldh_n[5]
-3001670 1596055
+3378235 1675015
 Found:  mprj_pads.area1_io_pad\[5\] HLD_OVR mprj_io_holdover[5]
-3001352 1601270
+3378235 1684215
 Found:  mprj_pads.area1_io_pad\[5\] IB_MODE_SEL mprj_io_ib_mode_sel[5]
-3002237 1622465
+3378235 1699395
 Found:  mprj_pads.area1_io_pad\[5\] INP_DIS mprj_io_inp_dis[5]
-3002545 1582625
+3378235 1665355
 Found:  mprj_pads.area1_io_pad\[5\] OE_N mprj_io_oeb[5]
-3002237 1624510
+3378235 1702615
 Found:  mprj_pads.area1_io_pad\[5\] OUT mprj_io_out[5]
-3003212 1605515
+3378235 1686975
 Found:  mprj_pads.area1_io_pad\[5\] SLOW mprj_io_slow_sel[5]
-3000592 1550260
+3378235 1640975
 Found:  mprj_pads.area1_io_pad\[5\] VTRIP_SEL mprj_io_vtrip_sel[5]
-3000775 1621740
+3378235 1696175
 Found:  mprj_pads.area1_io_pad\[5\] IN mprj_io_in[5]
-3094780 1548595
+3378235 1631775
 Found:  mprj_pads.area1_io_pad\[6\] PAD mprj_io[6]
-3135785 1824500
+3523785 1890500
 Found:  mprj_pads.area1_io_pad\[6\] ANALOG_EN mprj_io_analog_en[6]
-3000652 1804440
+3378235 1882155
 Found:  mprj_pads.area1_io_pad\[6\] ANALOG_POL mprj_io_analog_pol[6]
-3018402 1820970
+3378235 1888595
 Found:  mprj_pads.area1_io_pad\[6\] ANALOG_SEL mprj_io_analog_sel[6]
-3001132 1836120
+3378235 1903775
 Found:  mprj_pads.area1_io_pad\[6\] DM[0] mprj_io_dm[18]
-3000272 1817015
+3378235 1885375
 Found:  mprj_pads.area1_io_pad\[6\] DM[1] mprj_io_dm[19]
-3000597 1800035
+3378235 1876175
 Found:  mprj_pads.area1_io_pad\[6\] DM[2] mprj_io_dm[20]
-3002035 1838380
+3378235 1906995
 Found:  mprj_pads.area1_io_pad\[6\] ENABLE_H mprj_io_enh[6]
-3000775 1831410
+3378235 1897795
 Found:  mprj_pads.area1_io_pad\[6\] HLD_H_N mprj_io_hldh_n[6]
-3001670 1835055
+3378235 1901015
 Found:  mprj_pads.area1_io_pad\[6\] HLD_OVR mprj_io_holdover[6]
-3001352 1840270
+3378235 1910215
 Found:  mprj_pads.area1_io_pad\[6\] IB_MODE_SEL mprj_io_ib_mode_sel[6]
-3002237 1861465
+3378235 1925395
 Found:  mprj_pads.area1_io_pad\[6\] INP_DIS mprj_io_inp_dis[6]
-3002545 1821625
+3378235 1891355
 Found:  mprj_pads.area1_io_pad\[6\] OE_N mprj_io_oeb[6]
-3002237 1863510
+3378235 1928615
 Found:  mprj_pads.area1_io_pad\[6\] OUT mprj_io_out[6]
-3003212 1844515
+3378235 1912975
 Found:  mprj_pads.area1_io_pad\[6\] SLOW mprj_io_slow_sel[6]
-3000592 1789260
+3378235 1866975
 Found:  mprj_pads.area1_io_pad\[6\] VTRIP_SEL mprj_io_vtrip_sel[6]
-3000775 1860740
+3378235 1922175
 Found:  mprj_pads.area1_io_pad\[6\] IN mprj_io_in[6]
-3094780 1787595
+3378235 1857775
+Found:  mprj_pads.area1_io_pad\[7\] PAD_A_ESD_0_H mprj_analog_io[0]
+3378235 2756195
 Found:  mprj_pads.area1_io_pad\[7\] PAD mprj_io[7]
-3135785 2761500
+3523785 2776500
 Found:  mprj_pads.area1_io_pad\[7\] ANALOG_EN mprj_io_analog_en[7]
-3000652 2741440
+3378235 2768155
 Found:  mprj_pads.area1_io_pad\[7\] ANALOG_POL mprj_io_analog_pol[7]
-3018402 2757970
+3378235 2774595
 Found:  mprj_pads.area1_io_pad\[7\] ANALOG_SEL mprj_io_analog_sel[7]
-3001132 2773120
+3378235 2789775
 Found:  mprj_pads.area1_io_pad\[7\] DM[0] mprj_io_dm[21]
-3000272 2754015
+3378235 2771375
 Found:  mprj_pads.area1_io_pad\[7\] DM[1] mprj_io_dm[22]
-3000597 2737035
+3378235 2762175
 Found:  mprj_pads.area1_io_pad\[7\] DM[2] mprj_io_dm[23]
-3002035 2775380
+3378235 2792995
 Found:  mprj_pads.area1_io_pad\[7\] ENABLE_H mprj_io_enh[7]
-3000775 2768410
+3378235 2783795
 Found:  mprj_pads.area1_io_pad\[7\] HLD_H_N mprj_io_hldh_n[7]
-3001670 2772055
+3378235 2787015
 Found:  mprj_pads.area1_io_pad\[7\] HLD_OVR mprj_io_holdover[7]
-3001352 2777270
+3378235 2796215
 Found:  mprj_pads.area1_io_pad\[7\] IB_MODE_SEL mprj_io_ib_mode_sel[7]
-3002237 2798465
+3378235 2811395
 Found:  mprj_pads.area1_io_pad\[7\] INP_DIS mprj_io_inp_dis[7]
-3002545 2758625
+3378235 2777355
 Found:  mprj_pads.area1_io_pad\[7\] OE_N mprj_io_oeb[7]
-3002237 2800510
+3378235 2814615
 Found:  mprj_pads.area1_io_pad\[7\] OUT mprj_io_out[7]
-3003212 2781515
+3378235 2798975
 Found:  mprj_pads.area1_io_pad\[7\] SLOW mprj_io_slow_sel[7]
-3000592 2726260
+3378235 2752975
 Found:  mprj_pads.area1_io_pad\[7\] VTRIP_SEL mprj_io_vtrip_sel[7]
-3000775 2797740
+3378235 2808175
 Found:  mprj_pads.area1_io_pad\[7\] IN mprj_io_in[7]
-3094780 2724595
+3378235 2743775
+Found:  mprj_pads.area1_io_pad\[8\] PAD_A_ESD_0_H mprj_analog_io[1]
+3378235 2982195
 Found:  mprj_pads.area1_io_pad\[8\] PAD mprj_io[8]
-3135785 2999500
+3523785 3002500
 Found:  mprj_pads.area1_io_pad\[8\] ANALOG_EN mprj_io_analog_en[8]
-3000652 2979440
+3378235 2994155
 Found:  mprj_pads.area1_io_pad\[8\] ANALOG_POL mprj_io_analog_pol[8]
-3018402 2995970
+3378235 3000595
 Found:  mprj_pads.area1_io_pad\[8\] ANALOG_SEL mprj_io_analog_sel[8]
-3001132 3011120
+3378235 3015775
 Found:  mprj_pads.area1_io_pad\[8\] DM[0] mprj_io_dm[24]
-3000272 2992015
+3378235 2997375
 Found:  mprj_pads.area1_io_pad\[8\] DM[1] mprj_io_dm[25]
-3000597 2975035
+3378235 2988175
 Found:  mprj_pads.area1_io_pad\[8\] DM[2] mprj_io_dm[26]
-3002035 3013380
+3378235 3018995
 Found:  mprj_pads.area1_io_pad\[8\] ENABLE_H mprj_io_enh[8]
-3000775 3006410
+3378235 3009795
 Found:  mprj_pads.area1_io_pad\[8\] HLD_H_N mprj_io_hldh_n[8]
-3001670 3010055
+3378235 3013015
 Found:  mprj_pads.area1_io_pad\[8\] HLD_OVR mprj_io_holdover[8]
-3001352 3015270
+3378235 3022215
 Found:  mprj_pads.area1_io_pad\[8\] IB_MODE_SEL mprj_io_ib_mode_sel[8]
-3002237 3036465
+3378235 3037395
 Found:  mprj_pads.area1_io_pad\[8\] INP_DIS mprj_io_inp_dis[8]
-3002545 2996625
+3378235 3003355
 Found:  mprj_pads.area1_io_pad\[8\] OE_N mprj_io_oeb[8]
-3002237 3038510
+3378235 3040615
 Found:  mprj_pads.area1_io_pad\[8\] OUT mprj_io_out[8]
-3003212 3019515
+3378235 3024975
 Found:  mprj_pads.area1_io_pad\[8\] SLOW mprj_io_slow_sel[8]
-3000592 2964260
+3378235 2978975
 Found:  mprj_pads.area1_io_pad\[8\] VTRIP_SEL mprj_io_vtrip_sel[8]
-3000775 3035740
+3378235 3034175
 Found:  mprj_pads.area1_io_pad\[8\] IN mprj_io_in[8]
-3094780 2962595
+3378235 2969775
+Found:  mprj_pads.area1_io_pad\[9\] PAD_A_ESD_0_H mprj_analog_io[2]
+3378235 3207195
 Found:  mprj_pads.area1_io_pad\[9\] PAD mprj_io[9]
-3135785 3237500
+3523785 3227500
 Found:  mprj_pads.area1_io_pad\[9\] ANALOG_EN mprj_io_analog_en[9]
-3000652 3217440
+3378235 3219155
 Found:  mprj_pads.area1_io_pad\[9\] ANALOG_POL mprj_io_analog_pol[9]
-3018402 3233970
+3378235 3225595
 Found:  mprj_pads.area1_io_pad\[9\] ANALOG_SEL mprj_io_analog_sel[9]
-3001132 3249120
+3378235 3240775
 Found:  mprj_pads.area1_io_pad\[9\] DM[0] mprj_io_dm[27]
-3000272 3230015
+3378235 3222375
 Found:  mprj_pads.area1_io_pad\[9\] DM[1] mprj_io_dm[28]
-3000597 3213035
+3378235 3213175
 Found:  mprj_pads.area1_io_pad\[9\] DM[2] mprj_io_dm[29]
-3002035 3251380
+3378235 3243995
 Found:  mprj_pads.area1_io_pad\[9\] ENABLE_H mprj_io_enh[9]
-3000775 3244410
+3378235 3234795
 Found:  mprj_pads.area1_io_pad\[9\] HLD_H_N mprj_io_hldh_n[9]
-3001670 3248055
+3378235 3238015
 Found:  mprj_pads.area1_io_pad\[9\] HLD_OVR mprj_io_holdover[9]
-3001352 3253270
+3378235 3247215
 Found:  mprj_pads.area1_io_pad\[9\] IB_MODE_SEL mprj_io_ib_mode_sel[9]
-3002237 3274465
+3378235 3262395
 Found:  mprj_pads.area1_io_pad\[9\] INP_DIS mprj_io_inp_dis[9]
-3002545 3234625
+3378235 3228355
 Found:  mprj_pads.area1_io_pad\[9\] OE_N mprj_io_oeb[9]
-3002237 3276510
+3378235 3265615
 Found:  mprj_pads.area1_io_pad\[9\] OUT mprj_io_out[9]
-3003212 3257515
+3378235 3249975
 Found:  mprj_pads.area1_io_pad\[9\] SLOW mprj_io_slow_sel[9]
-3000592 3202260
+3378235 3203975
 Found:  mprj_pads.area1_io_pad\[9\] VTRIP_SEL mprj_io_vtrip_sel[9]
-3000775 3273740
+3378235 3259175
 Found:  mprj_pads.area1_io_pad\[9\] IN mprj_io_in[9]
-3094780 3200595
+3378235 3194775
+Found:  mprj_pads.area2_io_pad\[0\] PAD_A_ESD_0_H mprj_analog_io[11]
+1981805 4978235
 Found:  mprj_pads.area2_io_pad\[0\] PAD mprj_io[18]
-1844500 5235785
+1961500 5123785
 Found:  mprj_pads.area2_io_pad\[0\] ANALOG_EN mprj_io_analog_en[18]
-1864560 5100652
+1969845 4978235
 Found:  mprj_pads.area2_io_pad\[0\] ANALOG_POL mprj_io_analog_pol[18]
-1848030 5118402
+1963405 4978235
 Found:  mprj_pads.area2_io_pad\[0\] ANALOG_SEL mprj_io_analog_sel[18]
-1832880 5101132
+1948225 4978235
 Found:  mprj_pads.area2_io_pad\[0\] DM[0] mprj_io_dm[54]
-1851985 5100272
+1966625 4978235
 Found:  mprj_pads.area2_io_pad\[0\] DM[1] mprj_io_dm[55]
-1868965 5100597
+1975825 4978235
 Found:  mprj_pads.area2_io_pad\[0\] DM[2] mprj_io_dm[56]
-1830620 5102035
+1945005 4978235
 Found:  mprj_pads.area2_io_pad\[0\] ENABLE_H mprj_io_enh[18]
-1837590 5100775
+1954205 4978235
 Found:  mprj_pads.area2_io_pad\[0\] HLD_H_N mprj_io_hldh_n[18]
-1833945 5101670
+1950985 4978235
 Found:  mprj_pads.area2_io_pad\[0\] HLD_OVR mprj_io_holdover[18]
-1828730 5101352
+1941785 4978235
 Found:  mprj_pads.area2_io_pad\[0\] IB_MODE_SEL mprj_io_ib_mode_sel[18]
-1807535 5102237
+1926605 4978235
 Found:  mprj_pads.area2_io_pad\[0\] INP_DIS mprj_io_inp_dis[18]
-1847375 5102545
+1960645 4978235
 Found:  mprj_pads.area2_io_pad\[0\] OE_N mprj_io_oeb[18]
-1805490 5102237
+1923385 4978235
 Found:  mprj_pads.area2_io_pad\[0\] OUT mprj_io_out[18]
-1824485 5103212
+1939025 4978235
 Found:  mprj_pads.area2_io_pad\[0\] SLOW mprj_io_slow_sel[18]
-1879740 5100592
+1985025 4978235
 Found:  mprj_pads.area2_io_pad\[0\] VTRIP_SEL mprj_io_vtrip_sel[18]
-1808260 5100775
+1929825 4978235
 Found:  mprj_pads.area2_io_pad\[0\] IN mprj_io_in[18]
-1881405 5194780
+1994225 4978235
+Found:  mprj_pads.area2_io_pad\[10\] PAD_A_ESD_0_H mprj_analog_io[21]
+209765 3336805
 Found:  mprj_pads.area2_io_pad\[10\] PAD mprj_io[28]
-64215 3334500
+64215 3316500
 Found:  mprj_pads.area2_io_pad\[10\] ANALOG_EN mprj_io_analog_en[28]
-199347 3354560
+209765 3324845
 Found:  mprj_pads.area2_io_pad\[10\] ANALOG_POL mprj_io_analog_pol[28]
-181597 3338030
+209765 3318405
 Found:  mprj_pads.area2_io_pad\[10\] ANALOG_SEL mprj_io_analog_sel[28]
-198867 3322880
+209765 3303225
 Found:  mprj_pads.area2_io_pad\[10\] DM[0] mprj_io_dm[84]
-199727 3341985
+209765 3321625
 Found:  mprj_pads.area2_io_pad\[10\] DM[1] mprj_io_dm[85]
-199402 3358965
+209765 3330825
 Found:  mprj_pads.area2_io_pad\[10\] DM[2] mprj_io_dm[86]
-197965 3320620
+209765 3300005
 Found:  mprj_pads.area2_io_pad\[10\] ENABLE_H mprj_io_enh[28]
-199225 3327590
+209765 3309205
 Found:  mprj_pads.area2_io_pad\[10\] HLD_H_N mprj_io_hldh_n[28]
-198330 3323945
+209765 3305985
 Found:  mprj_pads.area2_io_pad\[10\] HLD_OVR mprj_io_holdover[28]
-198647 3318730
+209765 3296785
 Found:  mprj_pads.area2_io_pad\[10\] IB_MODE_SEL mprj_io_ib_mode_sel[28]
-197762 3297535
+209765 3281605
 Found:  mprj_pads.area2_io_pad\[10\] INP_DIS mprj_io_inp_dis[28]
-197455 3337375
+209765 3315645
 Found:  mprj_pads.area2_io_pad\[10\] OE_N mprj_io_oeb[28]
-197762 3295490
+209765 3278385
 Found:  mprj_pads.area2_io_pad\[10\] OUT mprj_io_out[28]
-196787 3314485
+209765 3294025
 Found:  mprj_pads.area2_io_pad\[10\] SLOW mprj_io_slow_sel[28]
-199407 3369740
+209765 3340025
 Found:  mprj_pads.area2_io_pad\[10\] VTRIP_SEL mprj_io_vtrip_sel[28]
-199225 3298260
+209765 3284825
 Found:  mprj_pads.area2_io_pad\[10\] IN mprj_io_in[28]
-105220 3371405
+209765 3349225
+Found:  mprj_pads.area2_io_pad\[11\] PAD_A_ESD_0_H mprj_analog_io[22]
+209765 3120805
 Found:  mprj_pads.area2_io_pad\[11\] PAD mprj_io[29]
-64215 3107500
+64215 3100500
 Found:  mprj_pads.area2_io_pad\[11\] ANALOG_EN mprj_io_analog_en[29]
-199347 3127560
+209765 3108845
 Found:  mprj_pads.area2_io_pad\[11\] ANALOG_POL mprj_io_analog_pol[29]
-181597 3111030
+209765 3102405
 Found:  mprj_pads.area2_io_pad\[11\] ANALOG_SEL mprj_io_analog_sel[29]
-198867 3095880
+209765 3087225
 Found:  mprj_pads.area2_io_pad\[11\] DM[0] mprj_io_dm[87]
-199727 3114985
+209765 3105625
 Found:  mprj_pads.area2_io_pad\[11\] DM[1] mprj_io_dm[88]
-199402 3131965
+209765 3114825
 Found:  mprj_pads.area2_io_pad\[11\] DM[2] mprj_io_dm[89]
-197965 3093620
+209765 3084005
 Found:  mprj_pads.area2_io_pad\[11\] ENABLE_H mprj_io_enh[29]
-199225 3100590
+209765 3093205
 Found:  mprj_pads.area2_io_pad\[11\] HLD_H_N mprj_io_hldh_n[29]
-198330 3096945
+209765 3089985
 Found:  mprj_pads.area2_io_pad\[11\] HLD_OVR mprj_io_holdover[29]
-198647 3091730
+209765 3080785
 Found:  mprj_pads.area2_io_pad\[11\] IB_MODE_SEL mprj_io_ib_mode_sel[29]
-197762 3070535
+209765 3065605
 Found:  mprj_pads.area2_io_pad\[11\] INP_DIS mprj_io_inp_dis[29]
-197455 3110375
+209765 3099645
 Found:  mprj_pads.area2_io_pad\[11\] OE_N mprj_io_oeb[29]
-197762 3068490
+209765 3062385
 Found:  mprj_pads.area2_io_pad\[11\] OUT mprj_io_out[29]
-196787 3087485
+209765 3078025
 Found:  mprj_pads.area2_io_pad\[11\] SLOW mprj_io_slow_sel[29]
-199407 3142740
+209765 3124025
 Found:  mprj_pads.area2_io_pad\[11\] VTRIP_SEL mprj_io_vtrip_sel[29]
-199225 3071260
+209765 3068825
 Found:  mprj_pads.area2_io_pad\[11\] IN mprj_io_in[29]
-105220 3144405
+209765 3133225
+Found:  mprj_pads.area2_io_pad\[12\] PAD_A_ESD_0_H mprj_analog_io[23]
+209765 2904805
 Found:  mprj_pads.area2_io_pad\[12\] PAD mprj_io[30]
-64215 2879500
+64215 2884500
 Found:  mprj_pads.area2_io_pad\[12\] ANALOG_EN mprj_io_analog_en[30]
-199347 2899560
+209765 2892845
 Found:  mprj_pads.area2_io_pad\[12\] ANALOG_POL mprj_io_analog_pol[30]
-181597 2883030
+209765 2886405
 Found:  mprj_pads.area2_io_pad\[12\] ANALOG_SEL mprj_io_analog_sel[30]
-198867 2867880
+209765 2871225
 Found:  mprj_pads.area2_io_pad\[12\] DM[0] mprj_io_dm[90]
-199727 2886985
+209765 2889625
 Found:  mprj_pads.area2_io_pad\[12\] DM[1] mprj_io_dm[91]
-199402 2903965
+209765 2898825
 Found:  mprj_pads.area2_io_pad\[12\] DM[2] mprj_io_dm[92]
-197965 2865620
+209765 2868005
 Found:  mprj_pads.area2_io_pad\[12\] ENABLE_H mprj_io_enh[30]
-199225 2872590
+209765 2877205
 Found:  mprj_pads.area2_io_pad\[12\] HLD_H_N mprj_io_hldh_n[30]
-198330 2868945
+209765 2873985
 Found:  mprj_pads.area2_io_pad\[12\] HLD_OVR mprj_io_holdover[30]
-198647 2863730
+209765 2864785
 Found:  mprj_pads.area2_io_pad\[12\] IB_MODE_SEL mprj_io_ib_mode_sel[30]
-197762 2842535
+209765 2849605
 Found:  mprj_pads.area2_io_pad\[12\] INP_DIS mprj_io_inp_dis[30]
-197455 2882375
+209765 2883645
 Found:  mprj_pads.area2_io_pad\[12\] OE_N mprj_io_oeb[30]
-197762 2840490
+209765 2846385
 Found:  mprj_pads.area2_io_pad\[12\] OUT mprj_io_out[30]
-196787 2859485
+209765 2862025
 Found:  mprj_pads.area2_io_pad\[12\] SLOW mprj_io_slow_sel[30]
-199407 2914740
+209765 2908025
 Found:  mprj_pads.area2_io_pad\[12\] VTRIP_SEL mprj_io_vtrip_sel[30]
-199225 2843260
+209765 2852825
 Found:  mprj_pads.area2_io_pad\[12\] IN mprj_io_in[30]
-105220 2916405
+209765 2917225
+Found:  mprj_pads.area2_io_pad\[13\] PAD_A_ESD_0_H mprj_analog_io[24]
+209765 2688805
 Found:  mprj_pads.area2_io_pad\[13\] PAD mprj_io[31]
-64215 2651500
+64215 2668500
 Found:  mprj_pads.area2_io_pad\[13\] ANALOG_EN mprj_io_analog_en[31]
-199347 2671560
+209765 2676845
 Found:  mprj_pads.area2_io_pad\[13\] ANALOG_POL mprj_io_analog_pol[31]
-181597 2655030
+209765 2670405
 Found:  mprj_pads.area2_io_pad\[13\] ANALOG_SEL mprj_io_analog_sel[31]
-198867 2639880
+209765 2655225
 Found:  mprj_pads.area2_io_pad\[13\] DM[0] mprj_io_dm[93]
-199727 2658985
+209765 2673625
 Found:  mprj_pads.area2_io_pad\[13\] DM[1] mprj_io_dm[94]
-199402 2675965
+209765 2682825
 Found:  mprj_pads.area2_io_pad\[13\] DM[2] mprj_io_dm[95]
-197965 2637620
+209765 2652005
 Found:  mprj_pads.area2_io_pad\[13\] ENABLE_H mprj_io_enh[31]
-199225 2644590
+209765 2661205
 Found:  mprj_pads.area2_io_pad\[13\] HLD_H_N mprj_io_hldh_n[31]
-198330 2640945
+209765 2657985
 Found:  mprj_pads.area2_io_pad\[13\] HLD_OVR mprj_io_holdover[31]
-198647 2635730
+209765 2648785
 Found:  mprj_pads.area2_io_pad\[13\] IB_MODE_SEL mprj_io_ib_mode_sel[31]
-197762 2614535
+209765 2633605
 Found:  mprj_pads.area2_io_pad\[13\] INP_DIS mprj_io_inp_dis[31]
-197455 2654375
+209765 2667645
 Found:  mprj_pads.area2_io_pad\[13\] OE_N mprj_io_oeb[31]
-197762 2612490
+209765 2630385
 Found:  mprj_pads.area2_io_pad\[13\] OUT mprj_io_out[31]
-196787 2631485
+209765 2646025
 Found:  mprj_pads.area2_io_pad\[13\] SLOW mprj_io_slow_sel[31]
-199407 2686740
+209765 2692025
 Found:  mprj_pads.area2_io_pad\[13\] VTRIP_SEL mprj_io_vtrip_sel[31]
-199225 2615260
+209765 2636825
 Found:  mprj_pads.area2_io_pad\[13\] IN mprj_io_in[31]
-105220 2688405
+209765 2701225
+Found:  mprj_pads.area2_io_pad\[14\] PAD_A_ESD_0_H mprj_analog_io[25]
+209765 2050805
 Found:  mprj_pads.area2_io_pad\[14\] PAD mprj_io[32]
-64215 1978500
+64215 2030500
 Found:  mprj_pads.area2_io_pad\[14\] ANALOG_EN mprj_io_analog_en[32]
-199347 1998560
+209765 2038845
 Found:  mprj_pads.area2_io_pad\[14\] ANALOG_POL mprj_io_analog_pol[32]
-181597 1982030
+209765 2032405
 Found:  mprj_pads.area2_io_pad\[14\] ANALOG_SEL mprj_io_analog_sel[32]
-198867 1966880
+209765 2017225
 Found:  mprj_pads.area2_io_pad\[14\] DM[0] mprj_io_dm[96]
-199727 1985985
+209765 2035625
 Found:  mprj_pads.area2_io_pad\[14\] DM[1] mprj_io_dm[97]
-199402 2002965
+209765 2044825
 Found:  mprj_pads.area2_io_pad\[14\] DM[2] mprj_io_dm[98]
-197965 1964620
+209765 2014005
 Found:  mprj_pads.area2_io_pad\[14\] ENABLE_H mprj_io_enh[32]
-199225 1971590
+209765 2023205
 Found:  mprj_pads.area2_io_pad\[14\] HLD_H_N mprj_io_hldh_n[32]
-198330 1967945
+209765 2019985
 Found:  mprj_pads.area2_io_pad\[14\] HLD_OVR mprj_io_holdover[32]
-198647 1962730
+209765 2010785
 Found:  mprj_pads.area2_io_pad\[14\] IB_MODE_SEL mprj_io_ib_mode_sel[32]
-197762 1941535
+209765 1995605
 Found:  mprj_pads.area2_io_pad\[14\] INP_DIS mprj_io_inp_dis[32]
-197455 1981375
+209765 2029645
 Found:  mprj_pads.area2_io_pad\[14\] OE_N mprj_io_oeb[32]
-197762 1939490
+209765 1992385
 Found:  mprj_pads.area2_io_pad\[14\] OUT mprj_io_out[32]
-196787 1958485
+209765 2008025
 Found:  mprj_pads.area2_io_pad\[14\] SLOW mprj_io_slow_sel[32]
-199407 2013740
+209765 2054025
 Found:  mprj_pads.area2_io_pad\[14\] VTRIP_SEL mprj_io_vtrip_sel[32]
-199225 1942260
+209765 1998825
 Found:  mprj_pads.area2_io_pad\[14\] IN mprj_io_in[32]
-105220 2015405
+209765 2063225
+Found:  mprj_pads.area2_io_pad\[15\] PAD_A_ESD_0_H mprj_analog_io[26]
+209765 1834805
 Found:  mprj_pads.area2_io_pad\[15\] PAD mprj_io[33]
-64215 1750500
+64215 1814500
 Found:  mprj_pads.area2_io_pad\[15\] ANALOG_EN mprj_io_analog_en[33]
-199347 1770560
+209765 1822845
 Found:  mprj_pads.area2_io_pad\[15\] ANALOG_POL mprj_io_analog_pol[33]
-181597 1754030
+209765 1816405
 Found:  mprj_pads.area2_io_pad\[15\] ANALOG_SEL mprj_io_analog_sel[33]
-198867 1738880
+209765 1801225
 Found:  mprj_pads.area2_io_pad\[15\] DM[1] mprj_io_dm[100]
-199402 1774965
+209765 1828825
 Found:  mprj_pads.area2_io_pad\[15\] DM[2] mprj_io_dm[101]
-197965 1736620
+209765 1798005
 Found:  mprj_pads.area2_io_pad\[15\] DM[0] mprj_io_dm[99]
-199727 1757985
+209765 1819625
 Found:  mprj_pads.area2_io_pad\[15\] ENABLE_H mprj_io_enh[33]
-199225 1743590
+209765 1807205
 Found:  mprj_pads.area2_io_pad\[15\] HLD_H_N mprj_io_hldh_n[33]
-198330 1739945
+209765 1803985
 Found:  mprj_pads.area2_io_pad\[15\] HLD_OVR mprj_io_holdover[33]
-198647 1734730
+209765 1794785
 Found:  mprj_pads.area2_io_pad\[15\] IB_MODE_SEL mprj_io_ib_mode_sel[33]
-197762 1713535
+209765 1779605
 Found:  mprj_pads.area2_io_pad\[15\] INP_DIS mprj_io_inp_dis[33]
-197455 1753375
+209765 1813645
 Found:  mprj_pads.area2_io_pad\[15\] OE_N mprj_io_oeb[33]
-197762 1711490
+209765 1776385
 Found:  mprj_pads.area2_io_pad\[15\] OUT mprj_io_out[33]
-196787 1730485
+209765 1792025
 Found:  mprj_pads.area2_io_pad\[15\] SLOW mprj_io_slow_sel[33]
-199407 1785740
+209765 1838025
 Found:  mprj_pads.area2_io_pad\[15\] VTRIP_SEL mprj_io_vtrip_sel[33]
-199225 1714260
+209765 1782825
 Found:  mprj_pads.area2_io_pad\[15\] IN mprj_io_in[33]
-105220 1787405
+209765 1847225
+Found:  mprj_pads.area2_io_pad\[16\] PAD_A_ESD_0_H mprj_analog_io[27]
+209765 1618805
 Found:  mprj_pads.area2_io_pad\[16\] PAD mprj_io[34]
-64215 1522500
+64215 1598500
 Found:  mprj_pads.area2_io_pad\[16\] ANALOG_EN mprj_io_analog_en[34]
-199347 1542560
+209765 1606845
 Found:  mprj_pads.area2_io_pad\[16\] ANALOG_POL mprj_io_analog_pol[34]
-181597 1526030
+209765 1600405
 Found:  mprj_pads.area2_io_pad\[16\] ANALOG_SEL mprj_io_analog_sel[34]
-198867 1510880
+209765 1585225
 Found:  mprj_pads.area2_io_pad\[16\] DM[0] mprj_io_dm[102]
-199727 1529985
+209765 1603625
 Found:  mprj_pads.area2_io_pad\[16\] DM[1] mprj_io_dm[103]
-199402 1546965
+209765 1612825
 Found:  mprj_pads.area2_io_pad\[16\] DM[2] mprj_io_dm[104]
-197965 1508620
+209765 1582005
 Found:  mprj_pads.area2_io_pad\[16\] ENABLE_H mprj_io_enh[34]
-199225 1515590
+209765 1591205
 Found:  mprj_pads.area2_io_pad\[16\] HLD_H_N mprj_io_hldh_n[34]
-198330 1511945
+209765 1587985
 Found:  mprj_pads.area2_io_pad\[16\] HLD_OVR mprj_io_holdover[34]
-198647 1506730
+209765 1578785
 Found:  mprj_pads.area2_io_pad\[16\] IB_MODE_SEL mprj_io_ib_mode_sel[34]
-197762 1485535
+209765 1563605
 Found:  mprj_pads.area2_io_pad\[16\] INP_DIS mprj_io_inp_dis[34]
-197455 1525375
+209765 1597645
 Found:  mprj_pads.area2_io_pad\[16\] OE_N mprj_io_oeb[34]
-197762 1483490
+209765 1560385
 Found:  mprj_pads.area2_io_pad\[16\] OUT mprj_io_out[34]
-196787 1502485
+209765 1576025
 Found:  mprj_pads.area2_io_pad\[16\] SLOW mprj_io_slow_sel[34]
-199407 1557740
+209765 1622025
 Found:  mprj_pads.area2_io_pad\[16\] VTRIP_SEL mprj_io_vtrip_sel[34]
-199225 1486260
+209765 1566825
 Found:  mprj_pads.area2_io_pad\[16\] IN mprj_io_in[34]
-105220 1559405
+209765 1631225
+Found:  mprj_pads.area2_io_pad\[17\] PAD_A_ESD_0_H mprj_analog_io[28]
+209765 1402805
 Found:  mprj_pads.area2_io_pad\[17\] PAD mprj_io[35]
-64215 1294500
+64215 1382500
 Found:  mprj_pads.area2_io_pad\[17\] ANALOG_EN mprj_io_analog_en[35]
-199347 1314560
+209765 1390845
 Found:  mprj_pads.area2_io_pad\[17\] ANALOG_POL mprj_io_analog_pol[35]
-181597 1298030
+209765 1384405
 Found:  mprj_pads.area2_io_pad\[17\] ANALOG_SEL mprj_io_analog_sel[35]
-198867 1282880
+209765 1369225
 Found:  mprj_pads.area2_io_pad\[17\] DM[0] mprj_io_dm[105]
-199727 1301985
+209765 1387625
 Found:  mprj_pads.area2_io_pad\[17\] DM[1] mprj_io_dm[106]
-199402 1318965
+209765 1396825
 Found:  mprj_pads.area2_io_pad\[17\] DM[2] mprj_io_dm[107]
-197965 1280620
+209765 1366005
 Found:  mprj_pads.area2_io_pad\[17\] ENABLE_H mprj_io_enh[35]
-199225 1287590
+209765 1375205
 Found:  mprj_pads.area2_io_pad\[17\] HLD_H_N mprj_io_hldh_n[35]
-198330 1283945
+209765 1371985
 Found:  mprj_pads.area2_io_pad\[17\] HLD_OVR mprj_io_holdover[35]
-198647 1278730
+209765 1362785
 Found:  mprj_pads.area2_io_pad\[17\] IB_MODE_SEL mprj_io_ib_mode_sel[35]
-197762 1257535
+209765 1347605
 Found:  mprj_pads.area2_io_pad\[17\] INP_DIS mprj_io_inp_dis[35]
-197455 1297375
+209765 1381645
 Found:  mprj_pads.area2_io_pad\[17\] OE_N mprj_io_oeb[35]
-197762 1255490
+209765 1344385
 Found:  mprj_pads.area2_io_pad\[17\] OUT mprj_io_out[35]
-196787 1274485
+209765 1360025
 Found:  mprj_pads.area2_io_pad\[17\] SLOW mprj_io_slow_sel[35]
-199407 1329740
+209765 1406025
 Found:  mprj_pads.area2_io_pad\[17\] VTRIP_SEL mprj_io_vtrip_sel[35]
-199225 1258260
+209765 1350825
 Found:  mprj_pads.area2_io_pad\[17\] IN mprj_io_in[35]
-105220 1331405
+209765 1415225
+Found:  mprj_pads.area2_io_pad\[18\] PAD_A_ESD_0_H mprj_analog_io[29]
+209765 1186805
 Found:  mprj_pads.area2_io_pad\[18\] PAD mprj_io[36]
-64215 1067500
+64215 1166500
 Found:  mprj_pads.area2_io_pad\[18\] ANALOG_EN mprj_io_analog_en[36]
-199347 1087560
+209765 1174845
 Found:  mprj_pads.area2_io_pad\[18\] ANALOG_POL mprj_io_analog_pol[36]
-181597 1071030
+209765 1168405
 Found:  mprj_pads.area2_io_pad\[18\] ANALOG_SEL mprj_io_analog_sel[36]
-198867 1055880
+209765 1153225
 Found:  mprj_pads.area2_io_pad\[18\] DM[0] mprj_io_dm[108]
-199727 1074985
+209765 1171625
 Found:  mprj_pads.area2_io_pad\[18\] DM[1] mprj_io_dm[109]
-199402 1091965
+209765 1180825
 Found:  mprj_pads.area2_io_pad\[18\] DM[2] mprj_io_dm[110]
-197965 1053620
+209765 1150005
 Found:  mprj_pads.area2_io_pad\[18\] ENABLE_H mprj_io_enh[36]
-199225 1060590
+209765 1159205
 Found:  mprj_pads.area2_io_pad\[18\] HLD_H_N mprj_io_hldh_n[36]
-198330 1056945
+209765 1155985
 Found:  mprj_pads.area2_io_pad\[18\] HLD_OVR mprj_io_holdover[36]
-198647 1051730
+209765 1146785
 Found:  mprj_pads.area2_io_pad\[18\] IB_MODE_SEL mprj_io_ib_mode_sel[36]
-197762 1030535
+209765 1131605
 Found:  mprj_pads.area2_io_pad\[18\] INP_DIS mprj_io_inp_dis[36]
-197455 1070375
+209765 1165645
 Found:  mprj_pads.area2_io_pad\[18\] OE_N mprj_io_oeb[36]
-197762 1028490
+209765 1128385
 Found:  mprj_pads.area2_io_pad\[18\] OUT mprj_io_out[36]
-196787 1047485
+209765 1144025
 Found:  mprj_pads.area2_io_pad\[18\] SLOW mprj_io_slow_sel[36]
-199407 1102740
+209765 1190025
 Found:  mprj_pads.area2_io_pad\[18\] VTRIP_SEL mprj_io_vtrip_sel[36]
-199225 1031260
+209765 1134825
 Found:  mprj_pads.area2_io_pad\[18\] IN mprj_io_in[36]
-105220 1104405
+209765 1199225
+Found:  mprj_pads.area2_io_pad\[19\] PAD_A_ESD_0_H mprj_analog_io[30]
+209765 970805
 Found:  mprj_pads.area2_io_pad\[19\] PAD mprj_io[37]
-64215 839500
+64215 950500
 Found:  mprj_pads.area2_io_pad\[19\] ANALOG_EN mprj_io_analog_en[37]
-199347 859560
+209765 958845
 Found:  mprj_pads.area2_io_pad\[19\] ANALOG_POL mprj_io_analog_pol[37]
-181597 843030
+209765 952405
 Found:  mprj_pads.area2_io_pad\[19\] ANALOG_SEL mprj_io_analog_sel[37]
-198867 827880
+209765 937225
 Found:  mprj_pads.area2_io_pad\[19\] DM[0] mprj_io_dm[111]
-199727 846985
+209765 955625
 Found:  mprj_pads.area2_io_pad\[19\] DM[1] mprj_io_dm[112]
-199402 863965
+209765 964825
 Found:  mprj_pads.area2_io_pad\[19\] DM[2] mprj_io_dm[113]
-197965 825620
+209765 934005
 Found:  mprj_pads.area2_io_pad\[19\] ENABLE_H mprj_io_enh[37]
-199225 832590
+209765 943205
 Found:  mprj_pads.area2_io_pad\[19\] HLD_H_N mprj_io_hldh_n[37]
-198330 828945
+209765 939985
 Found:  mprj_pads.area2_io_pad\[19\] HLD_OVR mprj_io_holdover[37]
-198647 823730
+209765 930785
 Found:  mprj_pads.area2_io_pad\[19\] IB_MODE_SEL mprj_io_ib_mode_sel[37]
-197762 802535
+209765 915605
 Found:  mprj_pads.area2_io_pad\[19\] INP_DIS mprj_io_inp_dis[37]
-197455 842375
+209765 949645
 Found:  mprj_pads.area2_io_pad\[19\] OE_N mprj_io_oeb[37]
-197762 800490
+209765 912385
 Found:  mprj_pads.area2_io_pad\[19\] OUT mprj_io_out[37]
-196787 819485
+209765 928025
 Found:  mprj_pads.area2_io_pad\[19\] SLOW mprj_io_slow_sel[37]
-199407 874740
+209765 974025
 Found:  mprj_pads.area2_io_pad\[19\] VTRIP_SEL mprj_io_vtrip_sel[37]
-199225 803260
+209765 918825
 Found:  mprj_pads.area2_io_pad\[19\] IN mprj_io_in[37]
-105220 876405
+209765 983225
+Found:  mprj_pads.area2_io_pad\[1\] PAD_A_ESD_0_H mprj_analog_io[12]
+1472805 4978235
 Found:  mprj_pads.area2_io_pad\[1\] PAD mprj_io[19]
-1368500 5235785
+1452500 5123785
 Found:  mprj_pads.area2_io_pad\[1\] ANALOG_EN mprj_io_analog_en[19]
-1388560 5100652
+1460845 4978235
 Found:  mprj_pads.area2_io_pad\[1\] ANALOG_POL mprj_io_analog_pol[19]
-1372030 5118402
+1454405 4978235
 Found:  mprj_pads.area2_io_pad\[1\] ANALOG_SEL mprj_io_analog_sel[19]
-1356880 5101132
+1439225 4978235
 Found:  mprj_pads.area2_io_pad\[1\] DM[0] mprj_io_dm[57]
-1375985 5100272
+1457625 4978235
 Found:  mprj_pads.area2_io_pad\[1\] DM[1] mprj_io_dm[58]
-1392965 5100597
+1466825 4978235
 Found:  mprj_pads.area2_io_pad\[1\] DM[2] mprj_io_dm[59]
-1354620 5102035
+1436005 4978235
 Found:  mprj_pads.area2_io_pad\[1\] ENABLE_H mprj_io_enh[19]
-1361590 5100775
+1445205 4978235
 Found:  mprj_pads.area2_io_pad\[1\] HLD_H_N mprj_io_hldh_n[19]
-1357945 5101670
+1441985 4978235
 Found:  mprj_pads.area2_io_pad\[1\] HLD_OVR mprj_io_holdover[19]
-1352730 5101352
+1432785 4978235
 Found:  mprj_pads.area2_io_pad\[1\] IB_MODE_SEL mprj_io_ib_mode_sel[19]
-1331535 5102237
+1417605 4978235
 Found:  mprj_pads.area2_io_pad\[1\] INP_DIS mprj_io_inp_dis[19]
-1371375 5102545
+1451645 4978235
 Found:  mprj_pads.area2_io_pad\[1\] OE_N mprj_io_oeb[19]
-1329490 5102237
+1414385 4978235
 Found:  mprj_pads.area2_io_pad\[1\] OUT mprj_io_out[19]
-1348485 5103212
+1430025 4978235
 Found:  mprj_pads.area2_io_pad\[1\] SLOW mprj_io_slow_sel[19]
-1403740 5100592
+1476025 4978235
 Found:  mprj_pads.area2_io_pad\[1\] VTRIP_SEL mprj_io_vtrip_sel[19]
-1332260 5100775
+1420825 4978235
 Found:  mprj_pads.area2_io_pad\[1\] IN mprj_io_in[19]
-1405405 5194780
+1485225 4978235
+Found:  mprj_pads.area2_io_pad\[2\] PAD_A_ESD_0_H mprj_analog_io[13]
+1214805 4978235
 Found:  mprj_pads.area2_io_pad\[2\] PAD mprj_io[20]
-1128500 5235785
+1194500 5123785
 Found:  mprj_pads.area2_io_pad\[2\] ANALOG_EN mprj_io_analog_en[20]
-1148560 5100652
+1202845 4978235
 Found:  mprj_pads.area2_io_pad\[2\] ANALOG_POL mprj_io_analog_pol[20]
-1132030 5118402
+1196405 4978235
 Found:  mprj_pads.area2_io_pad\[2\] ANALOG_SEL mprj_io_analog_sel[20]
-1116880 5101132
+1181225 4978235
 Found:  mprj_pads.area2_io_pad\[2\] DM[0] mprj_io_dm[60]
-1135985 5100272
+1199625 4978235
 Found:  mprj_pads.area2_io_pad\[2\] DM[1] mprj_io_dm[61]
-1152965 5100597
+1208825 4978235
 Found:  mprj_pads.area2_io_pad\[2\] DM[2] mprj_io_dm[62]
-1114620 5102035
+1178005 4978235
 Found:  mprj_pads.area2_io_pad\[2\] ENABLE_H mprj_io_enh[20]
-1121590 5100775
+1187205 4978235
 Found:  mprj_pads.area2_io_pad\[2\] HLD_H_N mprj_io_hldh_n[20]
-1117945 5101670
+1183985 4978235
 Found:  mprj_pads.area2_io_pad\[2\] HLD_OVR mprj_io_holdover[20]
-1112730 5101352
+1174785 4978235
 Found:  mprj_pads.area2_io_pad\[2\] IB_MODE_SEL mprj_io_ib_mode_sel[20]
-1091535 5102237
+1159605 4978235
 Found:  mprj_pads.area2_io_pad\[2\] INP_DIS mprj_io_inp_dis[20]
-1131375 5102545
+1193645 4978235
 Found:  mprj_pads.area2_io_pad\[2\] OE_N mprj_io_oeb[20]
-1089490 5102237
+1156385 4978235
 Found:  mprj_pads.area2_io_pad\[2\] OUT mprj_io_out[20]
-1108485 5103212
+1172025 4978235
 Found:  mprj_pads.area2_io_pad\[2\] SLOW mprj_io_slow_sel[20]
-1163740 5100592
+1218025 4978235
 Found:  mprj_pads.area2_io_pad\[2\] VTRIP_SEL mprj_io_vtrip_sel[20]
-1092260 5100775
+1162825 4978235
 Found:  mprj_pads.area2_io_pad\[2\] IN mprj_io_in[20]
-1165405 5194780
+1227225 4978235
+Found:  mprj_pads.area2_io_pad\[3\] PAD_A_ESD_0_H mprj_analog_io[14]
+957805 4978235
 Found:  mprj_pads.area2_io_pad\[3\] PAD mprj_io[21]
-887500 5235785
+937500 5123785
 Found:  mprj_pads.area2_io_pad\[3\] ANALOG_EN mprj_io_analog_en[21]
-907560 5100652
+945845 4978235
 Found:  mprj_pads.area2_io_pad\[3\] ANALOG_POL mprj_io_analog_pol[21]
-891030 5118402
+939405 4978235
 Found:  mprj_pads.area2_io_pad\[3\] ANALOG_SEL mprj_io_analog_sel[21]
-875880 5101132
+924225 4978235
 Found:  mprj_pads.area2_io_pad\[3\] DM[0] mprj_io_dm[63]
-894985 5100272
+942625 4978235
 Found:  mprj_pads.area2_io_pad\[3\] DM[1] mprj_io_dm[64]
-911965 5100597
+951825 4978235
 Found:  mprj_pads.area2_io_pad\[3\] DM[2] mprj_io_dm[65]
-873620 5102035
+921005 4978235
 Found:  mprj_pads.area2_io_pad\[3\] ENABLE_H mprj_io_enh[21]
-880590 5100775
+930205 4978235
 Found:  mprj_pads.area2_io_pad\[3\] HLD_H_N mprj_io_hldh_n[21]
-876945 5101670
+926985 4978235
 Found:  mprj_pads.area2_io_pad\[3\] HLD_OVR mprj_io_holdover[21]
-871730 5101352
+917785 4978235
 Found:  mprj_pads.area2_io_pad\[3\] IB_MODE_SEL mprj_io_ib_mode_sel[21]
-850535 5102237
+902605 4978235
 Found:  mprj_pads.area2_io_pad\[3\] INP_DIS mprj_io_inp_dis[21]
-890375 5102545
+936645 4978235
 Found:  mprj_pads.area2_io_pad\[3\] OE_N mprj_io_oeb[21]
-848490 5102237
+899385 4978235
 Found:  mprj_pads.area2_io_pad\[3\] OUT mprj_io_out[21]
-867485 5103212
+915025 4978235
 Found:  mprj_pads.area2_io_pad\[3\] SLOW mprj_io_slow_sel[21]
-922740 5100592
+961025 4978235
 Found:  mprj_pads.area2_io_pad\[3\] VTRIP_SEL mprj_io_vtrip_sel[21]
-851260 5100775
+905825 4978235
 Found:  mprj_pads.area2_io_pad\[3\] IN mprj_io_in[21]
-924405 5194780
+970225 4978235
+Found:  mprj_pads.area2_io_pad\[4\] PAD_A_ESD_0_H mprj_analog_io[15]
+700805 4978235
 Found:  mprj_pads.area2_io_pad\[4\] PAD mprj_io[22]
-647500 5235785
+680500 5123785
 Found:  mprj_pads.area2_io_pad\[4\] ANALOG_EN mprj_io_analog_en[22]
-667560 5100652
+688845 4978235
 Found:  mprj_pads.area2_io_pad\[4\] ANALOG_POL mprj_io_analog_pol[22]
-651030 5118402
+682405 4978235
 Found:  mprj_pads.area2_io_pad\[4\] ANALOG_SEL mprj_io_analog_sel[22]
-635880 5101132
+667225 4978235
 Found:  mprj_pads.area2_io_pad\[4\] DM[0] mprj_io_dm[66]
-654985 5100272
+685625 4978235
 Found:  mprj_pads.area2_io_pad\[4\] DM[1] mprj_io_dm[67]
-671965 5100597
+694825 4978235
 Found:  mprj_pads.area2_io_pad\[4\] DM[2] mprj_io_dm[68]
-633620 5102035
+664005 4978235
 Found:  mprj_pads.area2_io_pad\[4\] ENABLE_H mprj_io_enh[22]
-640590 5100775
+673205 4978235
 Found:  mprj_pads.area2_io_pad\[4\] HLD_H_N mprj_io_hldh_n[22]
-636945 5101670
+669985 4978235
 Found:  mprj_pads.area2_io_pad\[4\] HLD_OVR mprj_io_holdover[22]
-631730 5101352
+660785 4978235
 Found:  mprj_pads.area2_io_pad\[4\] IB_MODE_SEL mprj_io_ib_mode_sel[22]
-610535 5102237
+645605 4978235
 Found:  mprj_pads.area2_io_pad\[4\] INP_DIS mprj_io_inp_dis[22]
-650375 5102545
+679645 4978235
 Found:  mprj_pads.area2_io_pad\[4\] OE_N mprj_io_oeb[22]
-608490 5102237
+642385 4978235
 Found:  mprj_pads.area2_io_pad\[4\] OUT mprj_io_out[22]
-627485 5103212
+658025 4978235
 Found:  mprj_pads.area2_io_pad\[4\] SLOW mprj_io_slow_sel[22]
-682740 5100592
+704025 4978235
 Found:  mprj_pads.area2_io_pad\[4\] VTRIP_SEL mprj_io_vtrip_sel[22]
-611260 5100775
+648825 4978235
 Found:  mprj_pads.area2_io_pad\[4\] IN mprj_io_in[22]
-684405 5194780
+713225 4978235
+Found:  mprj_pads.area2_io_pad\[5\] PAD_A_ESD_0_H mprj_analog_io[16]
+443805 4978235
 Found:  mprj_pads.area2_io_pad\[5\] PAD mprj_io[23]
-406500 5235785
+423500 5123785
 Found:  mprj_pads.area2_io_pad\[5\] ANALOG_EN mprj_io_analog_en[23]
-426560 5100652
+431845 4978235
 Found:  mprj_pads.area2_io_pad\[5\] ANALOG_POL mprj_io_analog_pol[23]
-410030 5118402
+425405 4978235
 Found:  mprj_pads.area2_io_pad\[5\] ANALOG_SEL mprj_io_analog_sel[23]
-394880 5101132
+410225 4978235
 Found:  mprj_pads.area2_io_pad\[5\] DM[0] mprj_io_dm[69]
-413985 5100272
+428625 4978235
 Found:  mprj_pads.area2_io_pad\[5\] DM[1] mprj_io_dm[70]
-430965 5100597
+437825 4978235
 Found:  mprj_pads.area2_io_pad\[5\] DM[2] mprj_io_dm[71]
-392620 5102035
+407005 4978235
 Found:  mprj_pads.area2_io_pad\[5\] ENABLE_H mprj_io_enh[23]
-399590 5100775
+416205 4978235
 Found:  mprj_pads.area2_io_pad\[5\] HLD_H_N mprj_io_hldh_n[23]
-395945 5101670
+412985 4978235
 Found:  mprj_pads.area2_io_pad\[5\] HLD_OVR mprj_io_holdover[23]
-390730 5101352
+403785 4978235
 Found:  mprj_pads.area2_io_pad\[5\] IB_MODE_SEL mprj_io_ib_mode_sel[23]
-369535 5102237
+388605 4978235
 Found:  mprj_pads.area2_io_pad\[5\] INP_DIS mprj_io_inp_dis[23]
-409375 5102545
+422645 4978235
 Found:  mprj_pads.area2_io_pad\[5\] OE_N mprj_io_oeb[23]
-367490 5102237
+385385 4978235
 Found:  mprj_pads.area2_io_pad\[5\] OUT mprj_io_out[23]
-386485 5103212
+401025 4978235
 Found:  mprj_pads.area2_io_pad\[5\] SLOW mprj_io_slow_sel[23]
-441740 5100592
+447025 4978235
 Found:  mprj_pads.area2_io_pad\[5\] VTRIP_SEL mprj_io_vtrip_sel[23]
-370260 5100775
+391825 4978235
 Found:  mprj_pads.area2_io_pad\[5\] IN mprj_io_in[23]
-443405 5194780
+456225 4978235
+Found:  mprj_pads.area2_io_pad\[6\] PAD_A_ESD_0_H mprj_analog_io[17]
+209765 4833805
 Found:  mprj_pads.area2_io_pad\[6\] PAD mprj_io[24]
-64215 4914500
+64215 4813500
 Found:  mprj_pads.area2_io_pad\[6\] ANALOG_EN mprj_io_analog_en[24]
-199347 4934560
+209765 4821845
 Found:  mprj_pads.area2_io_pad\[6\] ANALOG_POL mprj_io_analog_pol[24]
-181597 4918030
+209765 4815405
 Found:  mprj_pads.area2_io_pad\[6\] ANALOG_SEL mprj_io_analog_sel[24]
-198867 4902880
+209765 4800225
 Found:  mprj_pads.area2_io_pad\[6\] DM[0] mprj_io_dm[72]
-199727 4921985
+209765 4818625
 Found:  mprj_pads.area2_io_pad\[6\] DM[1] mprj_io_dm[73]
-199402 4938965
+209765 4827825
 Found:  mprj_pads.area2_io_pad\[6\] DM[2] mprj_io_dm[74]
-197965 4900620
+209765 4797005
 Found:  mprj_pads.area2_io_pad\[6\] ENABLE_H mprj_io_enh[24]
-199225 4907590
+209765 4806205
 Found:  mprj_pads.area2_io_pad\[6\] HLD_H_N mprj_io_hldh_n[24]
-198330 4903945
+209765 4802985
 Found:  mprj_pads.area2_io_pad\[6\] HLD_OVR mprj_io_holdover[24]
-198647 4898730
+209765 4793785
 Found:  mprj_pads.area2_io_pad\[6\] IB_MODE_SEL mprj_io_ib_mode_sel[24]
-197762 4877535
+209765 4778605
 Found:  mprj_pads.area2_io_pad\[6\] INP_DIS mprj_io_inp_dis[24]
-197455 4917375
+209765 4812645
 Found:  mprj_pads.area2_io_pad\[6\] OE_N mprj_io_oeb[24]
-197762 4875490
+209765 4775385
 Found:  mprj_pads.area2_io_pad\[6\] OUT mprj_io_out[24]
-196787 4894485
+209765 4791025
 Found:  mprj_pads.area2_io_pad\[6\] SLOW mprj_io_slow_sel[24]
-199407 4949740
+209765 4837025
 Found:  mprj_pads.area2_io_pad\[6\] VTRIP_SEL mprj_io_vtrip_sel[24]
-199225 4878260
+209765 4781825
 Found:  mprj_pads.area2_io_pad\[6\] IN mprj_io_in[24]
-105220 4951405
+209765 4846225
+Found:  mprj_pads.area2_io_pad\[7\] PAD_A_ESD_0_H mprj_analog_io[18]
+209765 3984805
 Found:  mprj_pads.area2_io_pad\[7\] PAD mprj_io[25]
-64215 4018500
+64215 3964500
 Found:  mprj_pads.area2_io_pad\[7\] ANALOG_EN mprj_io_analog_en[25]
-199347 4038560
+209765 3972845
 Found:  mprj_pads.area2_io_pad\[7\] ANALOG_POL mprj_io_analog_pol[25]
-181597 4022030
+209765 3966405
 Found:  mprj_pads.area2_io_pad\[7\] ANALOG_SEL mprj_io_analog_sel[25]
-198867 4006880
+209765 3951225
 Found:  mprj_pads.area2_io_pad\[7\] DM[0] mprj_io_dm[75]
-199727 4025985
+209765 3969625
 Found:  mprj_pads.area2_io_pad\[7\] DM[1] mprj_io_dm[76]
-199402 4042965
+209765 3978825
 Found:  mprj_pads.area2_io_pad\[7\] DM[2] mprj_io_dm[77]
-197965 4004620
+209765 3948005
 Found:  mprj_pads.area2_io_pad\[7\] ENABLE_H mprj_io_enh[25]
-199225 4011590
+209765 3957205
 Found:  mprj_pads.area2_io_pad\[7\] HLD_H_N mprj_io_hldh_n[25]
-198330 4007945
+209765 3953985
 Found:  mprj_pads.area2_io_pad\[7\] HLD_OVR mprj_io_holdover[25]
-198647 4002730
+209765 3944785
 Found:  mprj_pads.area2_io_pad\[7\] IB_MODE_SEL mprj_io_ib_mode_sel[25]
-197762 3981535
+209765 3929605
 Found:  mprj_pads.area2_io_pad\[7\] INP_DIS mprj_io_inp_dis[25]
-197455 4021375
+209765 3963645
 Found:  mprj_pads.area2_io_pad\[7\] OE_N mprj_io_oeb[25]
-197762 3979490
+209765 3926385
 Found:  mprj_pads.area2_io_pad\[7\] OUT mprj_io_out[25]
-196787 3998485
+209765 3942025
 Found:  mprj_pads.area2_io_pad\[7\] SLOW mprj_io_slow_sel[25]
-199407 4053740
+209765 3988025
 Found:  mprj_pads.area2_io_pad\[7\] VTRIP_SEL mprj_io_vtrip_sel[25]
-199225 3982260
+209765 3932825
 Found:  mprj_pads.area2_io_pad\[7\] IN mprj_io_in[25]
-105220 4055405
+209765 3997225
+Found:  mprj_pads.area2_io_pad\[8\] PAD_A_ESD_0_H mprj_analog_io[19]
+209765 3768805
 Found:  mprj_pads.area2_io_pad\[8\] PAD mprj_io[26]
-64215 3790500
+64215 3748500
 Found:  mprj_pads.area2_io_pad\[8\] ANALOG_EN mprj_io_analog_en[26]
-199347 3810560
+209765 3756845
 Found:  mprj_pads.area2_io_pad\[8\] ANALOG_POL mprj_io_analog_pol[26]
-181597 3794030
+209765 3750405
 Found:  mprj_pads.area2_io_pad\[8\] ANALOG_SEL mprj_io_analog_sel[26]
-198867 3778880
+209765 3735225
 Found:  mprj_pads.area2_io_pad\[8\] DM[0] mprj_io_dm[78]
-199727 3797985
+209765 3753625
 Found:  mprj_pads.area2_io_pad\[8\] DM[1] mprj_io_dm[79]
-199402 3814965
+209765 3762825
 Found:  mprj_pads.area2_io_pad\[8\] DM[2] mprj_io_dm[80]
-197965 3776620
+209765 3732005
 Found:  mprj_pads.area2_io_pad\[8\] ENABLE_H mprj_io_enh[26]
-199225 3783590
+209765 3741205
 Found:  mprj_pads.area2_io_pad\[8\] HLD_H_N mprj_io_hldh_n[26]
-198330 3779945
+209765 3737985
 Found:  mprj_pads.area2_io_pad\[8\] HLD_OVR mprj_io_holdover[26]
-198647 3774730
+209765 3728785
 Found:  mprj_pads.area2_io_pad\[8\] IB_MODE_SEL mprj_io_ib_mode_sel[26]
-197762 3753535
+209765 3713605
 Found:  mprj_pads.area2_io_pad\[8\] INP_DIS mprj_io_inp_dis[26]
-197455 3793375
+209765 3747645
 Found:  mprj_pads.area2_io_pad\[8\] OE_N mprj_io_oeb[26]
-197762 3751490
+209765 3710385
 Found:  mprj_pads.area2_io_pad\[8\] OUT mprj_io_out[26]
-196787 3770485
+209765 3726025
 Found:  mprj_pads.area2_io_pad\[8\] SLOW mprj_io_slow_sel[26]
-199407 3825740
+209765 3772025
 Found:  mprj_pads.area2_io_pad\[8\] VTRIP_SEL mprj_io_vtrip_sel[26]
-199225 3754260
+209765 3716825
 Found:  mprj_pads.area2_io_pad\[8\] IN mprj_io_in[26]
-105220 3827405
+209765 3781225
+Found:  mprj_pads.area2_io_pad\[9\] PAD_A_ESD_0_H mprj_analog_io[20]
+209765 3552805
 Found:  mprj_pads.area2_io_pad\[9\] PAD mprj_io[27]
-64215 3562500
+64215 3532500
 Found:  mprj_pads.area2_io_pad\[9\] ANALOG_EN mprj_io_analog_en[27]
-199347 3582560
+209765 3540845
 Found:  mprj_pads.area2_io_pad\[9\] ANALOG_POL mprj_io_analog_pol[27]
-181597 3566030
+209765 3534405
 Found:  mprj_pads.area2_io_pad\[9\] ANALOG_SEL mprj_io_analog_sel[27]
-198867 3550880
+209765 3519225
 Found:  mprj_pads.area2_io_pad\[9\] DM[0] mprj_io_dm[81]
-199727 3569985
+209765 3537625
 Found:  mprj_pads.area2_io_pad\[9\] DM[1] mprj_io_dm[82]
-199402 3586965
+209765 3546825
 Found:  mprj_pads.area2_io_pad\[9\] DM[2] mprj_io_dm[83]
-197965 3548620
+209765 3516005
 Found:  mprj_pads.area2_io_pad\[9\] ENABLE_H mprj_io_enh[27]
-199225 3555590
+209765 3525205
 Found:  mprj_pads.area2_io_pad\[9\] HLD_H_N mprj_io_hldh_n[27]
-198330 3551945
+209765 3521985
 Found:  mprj_pads.area2_io_pad\[9\] HLD_OVR mprj_io_holdover[27]
-198647 3546730
+209765 3512785
 Found:  mprj_pads.area2_io_pad\[9\] IB_MODE_SEL mprj_io_ib_mode_sel[27]
-197762 3525535
+209765 3497605
 Found:  mprj_pads.area2_io_pad\[9\] INP_DIS mprj_io_inp_dis[27]
-197455 3565375
+209765 3531645
 Found:  mprj_pads.area2_io_pad\[9\] OE_N mprj_io_oeb[27]
-197762 3523490
+209765 3494385
 Found:  mprj_pads.area2_io_pad\[9\] OUT mprj_io_out[27]
-196787 3542485
+209765 3510025
 Found:  mprj_pads.area2_io_pad\[9\] SLOW mprj_io_slow_sel[27]
-199407 3597740
+209765 3556025
 Found:  mprj_pads.area2_io_pad\[9\] VTRIP_SEL mprj_io_vtrip_sel[27]
-199225 3526260
+209765 3500825
 Found:  mprj_pads.area2_io_pad\[9\] IN mprj_io_in[27]
-105220 3599405
+209765 3565225
 Found:  resetb_pad ENABLE_H porb_h
-660585 199265
+725585 199265
 Found:  resetb_pad PAD resetb
-635550 64682
+702157 63630
 Found:  resetb_pad XRES_H_N resetb_core_h
-643700 195077
+708700 195077
 Found:  user1_vccd_lvclamp_pad VCCD vccd1
-3135855 4661365
+3523855 4575365
 Found:  user1_vdda_hvclamp_pad\[0\] VDDA vdda1
-3135317 4190550
+3523317 4129550
 Found:  user1_vssa_hvclamp_pad\[0\] VSSA vssa1
-2561450 5235317
+2915450 5123317
 Found:  user1_vssd_lvclmap_pad VSSD vssd1
-3135855 2295365
+3523855 2336365
 Found:  user2_vccd_lvclamp_pad VCCD vccd2
-64145 4686635
+64145 4597635
 Found:  user2_vdda_hvclamp_pad VDDA vdda2
-64682 2423450
+64682 2452450
 Found:  user2_vssa_hvclamp_pad VSSA vssa2
-64682 4240450
+64682 4175450
 Found:  user2_vssd_lvclmap_pad VSSD vssd2
-64145 2200635
-Writing /project/openlane/chip_io/runs/chip_io/results/floorplan/padframe.def
+64145 2241635
+Writing /project/openlane/chip_io/runs/chip_io/results/routing/chip_io.def

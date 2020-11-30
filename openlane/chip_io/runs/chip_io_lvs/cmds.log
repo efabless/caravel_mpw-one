@@ -1,0 +1,16 @@
+Fri Nov 27 16:12:39 UTC 2020 - Executing "/openLANE_flow/scripts/mergeLef.py -i /home/xrex/usr/devel/pdks/sky130A/libs.ref/sky130_fd_sc_hd/techlef/sky130_fd_sc_hd.tlef {/home/xrex/usr/devel/pdks/sky130A/libs.ref/sky130_fd_sc_hd/lef/sky130_fd_sc_hd.lef /home/xrex/usr/devel/pdks/sky130A/libs.ref/sky130_fd_sc_hd/lef/sky130_ef_sc_hd__fakediode_2.lef} -o /project/openlane/chip_io/runs/chip_io_lvs/tmp/merged_unpadded.lef |& tee >&@stdout"
+
+Fri Nov 27 16:12:39 UTC 2020 - Executing "/openLANE_flow/scripts/mergeLef.py -i /project/openlane/chip_io/runs/chip_io_lvs/tmp/merged.lef.old /home/xrex/usr/devel/pdks/sky130A/libs.ref/sky130_fd_io/lef/sky130_fd_io.lef /home/xrex/usr/devel/pdks/sky130A/libs.ref/sky130_fd_io/lef/sky130_ef_io.lef -o /project/openlane/chip_io/runs/chip_io_lvs/tmp/merged.lef"
+
+Fri Nov 27 16:12:40 UTC 2020 - Executing "/openLANE_flow/scripts/mergeLef.py -i /project/openlane/chip_io/runs/chip_io_lvs/tmp/merged_unpadded.lef.old /home/xrex/usr/devel/pdks/sky130A/libs.ref/sky130_fd_io/lef/sky130_fd_io.lef /home/xrex/usr/devel/pdks/sky130A/libs.ref/sky130_fd_io/lef/sky130_ef_io.lef -o /project/openlane/chip_io/runs/chip_io_lvs/tmp/merged_unpadded.lef"
+
+Fri Nov 27 16:12:40 UTC 2020 - Executing "/openLANE_flow/scripts/libtrim.pl /home/xrex/usr/devel/pdks/sky130A/libs.ref/sky130_fd_sc_hd/lib/sky130_fd_sc_hd__tt_025C_1v80.lib /home/xrex/usr/devel/pdks/sky130A/libs.tech/openlane/sky130_fd_sc_hd/no_synth.cells > /project/openlane/chip_io/runs/chip_io_lvs/tmp/trimmed.lib"
+
+Fri Nov 27 16:12:40 UTC 2020 - Executing "yosys -c /openLANE_flow/scripts/synth_top.tcl -l /project/openlane/chip_io/runs/chip_io_lvs/logs/synthesis/yosys.log |& tee >&@stdout"
+
+Fri Nov 27 16:12:40 UTC 2020 - Executing "sed -i -e {s/\(set ::env(CURRENT_NETLIST)\).*/\1 \/project\/openlane\/chip_io\/runs\/chip_io_lvs\/results\/synthesis\/chip_io.synthesis.v/} /project/openlane/chip_io/runs/chip_io_lvs/config.tcl"
+
+Fri Nov 27 16:12:40 UTC 2020 - Executing "sed -i -e {s/\(set ::env(PREV_NETLIST)\).*/\1 0/} /project/openlane/chip_io/runs/chip_io_lvs/config.tcl"
+
+Fri Nov 27 16:12:40 UTC 2020 - Executing "openroad -exit /openLANE_flow/scripts/openroad/or_floorplan.tcl |& tee >&@stdout /project/openlane/chip_io/runs/chip_io_lvs/logs/floorplan/verilog2def.openroad.log"
+
