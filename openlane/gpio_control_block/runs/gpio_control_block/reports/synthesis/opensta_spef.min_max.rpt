@@ -6,9 +6,9 @@ Path Type: min
   Delay    Time   Description
 ---------------------------------------------------------
    0.00    0.00   clock serial_clock (rise edge)
-   0.44    0.44   clock network delay
-           0.44 ^ _107_/RESET_B (sky130_fd_sc_hd__dfrtp_4)
-           0.44   data arrival time
+   0.46    0.46   clock network delay
+           0.46 ^ _107_/RESET_B (sky130_fd_sc_hd__dfrtp_4)
+           0.46   data arrival time
 
    0.00    0.00   clock serial_clock (rise edge)
    0.00    0.00   clock network delay (ideal)
@@ -18,9 +18,9 @@ Path Type: min
            0.19   data required time
 ---------------------------------------------------------
            0.19   data required time
-          -0.44   data arrival time
+          -0.46   data arrival time
 ---------------------------------------------------------
-           0.25   slack (MET)
+           0.27   slack (MET)
 
 
 Startpoint: resetn (input port clocked by serial_clock)
@@ -34,7 +34,7 @@ Path Type: min
    0.00    0.00   clock network delay (ideal)
    2.00    2.00 ^ input external delay
    0.01    2.01 ^ resetn (in)
-   0.01    2.02 v _078_/Y (sky130_fd_sc_hd__inv_2)
+   0.02    2.02 v _078_/Y (sky130_fd_sc_hd__inv_2)
    0.00    2.02 v _079_/B (sky130_fd_sc_hd__and2_4)
            2.02   data arrival time
 
@@ -51,8 +51,8 @@ Path Type: min
           -2.98   slack (VIOLATED)
 
 
-Startpoint: _101_ (rising edge-triggered flip-flop clocked by serial_clock)
-Endpoint: _093_ (rising edge-triggered flip-flop clocked by serial_clock)
+Startpoint: _105_ (rising edge-triggered flip-flop clocked by serial_clock)
+Endpoint: _089_ (rising edge-triggered flip-flop clocked by serial_clock)
 Path Group: serial_clock
 Path Type: min
 
@@ -60,15 +60,15 @@ Path Type: min
 ---------------------------------------------------------
    0.00    0.00   clock serial_clock (rise edge)
    0.00    0.00   clock network delay (ideal)
-   0.00    0.00 ^ _101_/CLK (sky130_fd_sc_hd__dfrtp_4)
-   0.22    0.22 ^ _101_/Q (sky130_fd_sc_hd__dfrtp_4)
-   0.00    0.22 ^ _093_/D (sky130_fd_sc_hd__dfrtp_4)
+   0.00    0.00 ^ _105_/CLK (sky130_fd_sc_hd__dfrtp_4)
+   0.22    0.22 ^ _105_/Q (sky130_fd_sc_hd__dfrtp_4)
+   0.00    0.22 ^ _089_/D (sky130_fd_sc_hd__dfstp_4)
            0.22   data arrival time
 
    0.00    0.00   clock serial_clock (rise edge)
    0.00    0.00   clock network delay (ideal)
    0.00    0.00   clock reconvergence pessimism
-           0.00 ^ _093_/CLK (sky130_fd_sc_hd__dfrtp_4)
+           0.00 ^ _089_/CLK (sky130_fd_sc_hd__dfstp_4)
   -0.02   -0.02   library hold time
           -0.02   data required time
 ---------------------------------------------------------
@@ -79,7 +79,7 @@ Path Type: min
 
 
 Startpoint: resetn (input port clocked by serial_clock)
-Endpoint: _088_ (recovery check against rising-edge clock serial_clock)
+Endpoint: _089_ (recovery check against rising-edge clock serial_clock)
 Path Group: **async_default**
 Path Type: max
 
@@ -89,24 +89,24 @@ Path Type: max
    0.00    0.00   clock network delay (ideal)
    2.00    2.00 ^ input external delay
    0.01    2.01 ^ resetn (in)
-   0.16    2.17 ^ _039_/X (sky130_fd_sc_hd__or2_4)
-   0.21    2.38 ^ _040_/X (sky130_fd_sc_hd__buf_2)
-   0.25    2.63 ^ _058_/X (sky130_fd_sc_hd__buf_2)
-   0.20    2.83 ^ _062_/X (sky130_fd_sc_hd__buf_2)
-   0.00    2.83 ^ _088_/SET_B (sky130_fd_sc_hd__dfstp_4)
-           2.83   data arrival time
+   0.18    2.20 ^ _039_/X (sky130_fd_sc_hd__or2_4)
+   0.20    2.40 ^ _040_/X (sky130_fd_sc_hd__buf_2)
+   0.28    2.68 ^ _058_/X (sky130_fd_sc_hd__buf_2)
+   0.25    2.92 ^ _061_/X (sky130_fd_sc_hd__buf_2)
+   0.00    2.92 ^ _089_/SET_B (sky130_fd_sc_hd__dfstp_4)
+           2.92   data arrival time
 
   10.00   10.00   clock serial_clock (rise edge)
    0.00   10.00   clock network delay (ideal)
    0.00   10.00   clock reconvergence pessimism
-          10.00 ^ _088_/CLK (sky130_fd_sc_hd__dfstp_4)
+          10.00 ^ _089_/CLK (sky130_fd_sc_hd__dfstp_4)
    0.25   10.25   library recovery time
           10.25   data required time
 ---------------------------------------------------------
           10.25   data required time
-          -2.83   data arrival time
+          -2.92   data arrival time
 ---------------------------------------------------------
-           7.42   slack (MET)
+           7.32   slack (MET)
 
 
 Startpoint: resetn (input port clocked by serial_clock)
@@ -118,11 +118,11 @@ Path Type: max
 ---------------------------------------------------------
    0.00    0.00   clock serial_clock (rise edge)
    0.00    0.00   clock network delay (ideal)
-   2.00    2.00 ^ input external delay
-   0.01    2.01 ^ resetn (in)
-   0.04    2.05 v _078_/Y (sky130_fd_sc_hd__inv_2)
-   0.00    2.05 v _079_/B (sky130_fd_sc_hd__and2_4)
-           2.05   data arrival time
+   2.00    2.00 v input external delay
+   0.01    2.01 v resetn (in)
+   0.06    2.06 ^ _078_/Y (sky130_fd_sc_hd__inv_2)
+   0.00    2.06 ^ _079_/B (sky130_fd_sc_hd__and2_4)
+           2.06   data arrival time
 
   10.00   10.00   clock serial_clock (rise edge)
    0.00   10.00   clock network delay (ideal)
@@ -132,9 +132,9 @@ Path Type: max
           10.00   data required time
 ---------------------------------------------------------
           10.00   data required time
-          -2.05   data arrival time
+          -2.06   data arrival time
 ---------------------------------------------------------
-           7.95   slack (MET)
+           7.94   slack (MET)
 
 
 Startpoint: mgmt_gpio_oeb (input port clocked by serial_clock)
@@ -148,9 +148,9 @@ Path Type: max
    0.00    0.00   clock network delay (ideal)
    2.00    2.00 v input external delay
    0.01    2.01 v mgmt_gpio_oeb (in)
-   0.26    2.26 v _073_/X (sky130_fd_sc_hd__and3_4)
-   0.44    2.70 v _074_/X (sky130_fd_sc_hd__or2_4)
-   0.51    3.21 v _076_/X (sky130_fd_sc_hd__a32o_4)
+   0.25    2.26 v _073_/X (sky130_fd_sc_hd__and3_4)
+   0.43    2.69 v _074_/X (sky130_fd_sc_hd__or2_4)
+   0.52    3.21 v _076_/X (sky130_fd_sc_hd__a32o_4)
    0.00    3.21 v pad_gpio_out (out)
            3.21   data arrival time
 

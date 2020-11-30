@@ -66,6 +66,7 @@ if {[file isdir ${PDKPATH}/libs.ref/${MAGTYPE}]} {
     addpath ${PDKPATH}/libs.ref/sky130_osu_sc/${MAGTYPE}
     addpath ${PDKPATH}/libs.ref/sky130_osu_sc_t18/${MAGTYPE}
 }
+addpath ${PDKPATH}/libs.tech/openlane/custom_cells/${MAGTYPE}
 
 # add path to GDS cells
 

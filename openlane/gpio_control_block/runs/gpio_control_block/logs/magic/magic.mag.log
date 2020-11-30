@@ -1,0 +1,69 @@
+
+Magic 8.3 revision 64 - Compiled on Fri Oct  9 12:13:18 UTC 2020.
+Starting magic under Tcl interpreter
+Using the terminal as the console.
+Using NULL graphics device.
+Processing system .magicrc file
+Sourcing design .magicrc for technology sky130A ...
+2 Magic internal units = 1 Lambda
+Input style sky130: scaleFactor=2, multiplier=2
+Scaled tech values by 2 / 1 to match internal grid scaling
+Loading sky130A Device Generator Menu ...
+Loading "/openLANE_flow/scripts/magic_mag.tcl" from command line.
+Warning: Calma reading is not undoable!  I hope that's OK.
+Library written using GDS-II Release 3.0
+Library name: gpio_control_block
+Reading "sky130_fd_sc_hd__decap_12".
+Error while reading cell "sky130_fd_sc_hd__decap_12" (byte position 150): Unknown layer/datatype in boundary, layer=236 type=0
+Reading "sky130_fd_sc_hd__decap_3".
+Error while reading cell "sky130_fd_sc_hd__decap_3" (byte position 4284): Unknown layer/datatype in boundary, layer=236 type=0
+Reading "sky130_fd_sc_hd__decap_4".
+Error while reading cell "sky130_fd_sc_hd__decap_4" (byte position 6946): Unknown layer/datatype in boundary, layer=236 type=0
+Reading "sky130_fd_sc_hd__tapvpwrvgnd_1".
+Reading "sky130_fd_sc_hd__decap_6".
+Error while reading cell "sky130_fd_sc_hd__decap_6" (byte position 11418): Unknown layer/datatype in boundary, layer=236 type=0
+Reading "sky130_fd_sc_hd__decap_8".
+Error while reading cell "sky130_fd_sc_hd__decap_8" (byte position 14560): Unknown layer/datatype in boundary, layer=236 type=0
+Reading "sky130_fd_sc_hd__buf_2".
+Error while reading cell "sky130_fd_sc_hd__buf_2" (byte position 18084): Unknown layer/datatype in boundary, layer=236 type=0
+Reading "sky130_fd_sc_hd__fill_2".
+Reading "sky130_fd_sc_hd__and2_4".
+Error while reading cell "sky130_fd_sc_hd__and2_4" (byte position 23988): Unknown layer/datatype in boundary, layer=236 type=0
+Reading "sky130_fd_sc_hd__fill_1".
+Reading "sky130_fd_sc_hd__dfrtp_4".
+Error while reading cell "sky130_fd_sc_hd__dfrtp_4" (byte position 31014): Unknown layer/datatype in boundary, layer=236 type=0
+Moving label "" from corelocali to locali in cell sky130_fd_sc_hd__dfrtp_4.
+Reading "sky130_fd_sc_hd__clkbuf_1".
+Error while reading cell "sky130_fd_sc_hd__clkbuf_1" (byte position 48864): Unknown layer/datatype in boundary, layer=236 type=0
+Reading "sky130_fd_sc_hd__inv_2".
+Error while reading cell "sky130_fd_sc_hd__inv_2" (byte position 52668): Unknown layer/datatype in boundary, layer=236 type=0
+Reading "sky130_fd_sc_hd__or2_4".
+Error while reading cell "sky130_fd_sc_hd__or2_4" (byte position 56470): Unknown layer/datatype in boundary, layer=236 type=0
+Moving label "" from corelocali to locali in cell sky130_fd_sc_hd__or2_4.
+Reading "sky130_fd_sc_hd__nand2_4".
+Error while reading cell "sky130_fd_sc_hd__nand2_4" (byte position 62228): Unknown layer/datatype in boundary, layer=236 type=0
+Moving label "" from corelocali to locali in cell sky130_fd_sc_hd__nand2_4.
+Reading "sky130_fd_sc_hd__and3_4".
+Error while reading cell "sky130_fd_sc_hd__and3_4" (byte position 69866): Unknown layer/datatype in boundary, layer=236 type=0
+Moving label "" from corelocali to locali in cell sky130_fd_sc_hd__and3_4.
+Moving label "" from corelocali to locali in cell sky130_fd_sc_hd__and3_4.
+Moving label "" from corelocali to locali in cell sky130_fd_sc_hd__and3_4.
+Moving label "" from corelocali to locali in cell sky130_fd_sc_hd__and3_4.
+Moving label "" from corelocali to locali in cell sky130_fd_sc_hd__and3_4.
+Reading "sky130_fd_sc_hd__a32o_4".
+Error while reading cell "sky130_fd_sc_hd__a32o_4" (byte position 76758): Unknown layer/datatype in boundary, layer=236 type=0
+Reading "sky130_fd_sc_hd__dfstp_4".
+Error while reading cell "sky130_fd_sc_hd__dfstp_4" (byte position 88950): Unknown layer/datatype in boundary, layer=236 type=0
+Reading "sky130_fd_sc_hd__clkbuf_16".
+Error while reading cell "sky130_fd_sc_hd__clkbuf_16" (byte position 106682): Unknown layer/datatype in boundary, layer=236 type=0
+Reading "sky130_fd_sc_hd__diode_2".
+Error while reading cell "sky130_fd_sc_hd__diode_2" (byte position 119410): Unknown layer/datatype in boundary, layer=236 type=0
+Reading "sky130_fd_sc_hd__einvp_8".
+Error while reading cell "sky130_fd_sc_hd__einvp_8" (byte position 122896): Unknown layer/datatype in boundary, layer=236 type=0
+Reading "sky130_fd_sc_hd__conb_1".
+Error while reading cell "sky130_fd_sc_hd__conb_1" (byte position 135574): Unknown layer/datatype in boundary, layer=236 type=0
+Reading "gpio_control_block".
+    100 uses
+    200 uses
+    300 uses
+[INFO]: DONE GENERATING MAG VIEW

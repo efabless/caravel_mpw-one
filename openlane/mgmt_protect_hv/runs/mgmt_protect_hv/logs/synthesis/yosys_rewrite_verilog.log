@@ -1,0 +1,43 @@
+
+ /----------------------------------------------------------------------------\
+ |                                                                            |
+ |  yosys -- Yosys Open SYnthesis Suite                                       |
+ |                                                                            |
+ |  Copyright (C) 2012 - 2020  Claire Wolf <claire@symbioticeda.com>          |
+ |                                                                            |
+ |  Permission to use, copy, modify, and/or distribute this software for any  |
+ |  purpose with or without fee is hereby granted, provided that the above    |
+ |  copyright notice and this permission notice appear in all copies.         |
+ |                                                                            |
+ |  THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES  |
+ |  WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF          |
+ |  MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR   |
+ |  ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES    |
+ |  WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN     |
+ |  ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF   |
+ |  OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.            |
+ |                                                                            |
+ \----------------------------------------------------------------------------/
+
+ Yosys 0.9+3621 (git sha1 84e9fa7, gcc 8.3.1 -fPIC -Os)
+
+[TCL: yosys -import] Command name collision: found pre-existing command `cd' -> skip.
+[TCL: yosys -import] Command name collision: found pre-existing command `eval' -> skip.
+[TCL: yosys -import] Command name collision: found pre-existing command `exec' -> skip.
+[TCL: yosys -import] Command name collision: found pre-existing command `read' -> skip.
+[TCL: yosys -import] Command name collision: found pre-existing command `trace' -> skip.
+
+1. Executing Verilog-2005 frontend: /project/openlane/mgmt_protect_hv/runs/mgmt_protect_hv/results/lvs/mgmt_protect_hv.lvs.powered.v
+Parsing Verilog input from `/project/openlane/mgmt_protect_hv/runs/mgmt_protect_hv/results/lvs/mgmt_protect_hv.lvs.powered.v' to AST representation.
+Generating RTLIL representation for module `\mgmt_protect_hv'.
+/project/openlane/mgmt_protect_hv/runs/mgmt_protect_hv/results/lvs/mgmt_protect_hv.lvs.powered.v:10: Warning: Identifier `\mprj2_vdd_logic1_h' is implicitly declared.
+/project/openlane/mgmt_protect_hv/runs/mgmt_protect_hv/results/lvs/mgmt_protect_hv.lvs.powered.v:22: Warning: Identifier `\mprj_vdd_logic1_h' is implicitly declared.
+Successfully finished Verilog frontend.
+
+2. Executing Verilog backend.
+Dumping module `\mgmt_protect_hv'.
+
+Warnings: 2 unique messages, 2 total
+End of script. Logfile hash: 09733cede6, CPU: user 0.02s system 0.00s, MEM: 7.59 MB peak
+Yosys 0.9+3621 (git sha1 84e9fa7, gcc 8.3.1 -fPIC -Os)
+Time spent: 78% 2x write_verilog (0 sec), 21% 2x read_verilog (0 sec)

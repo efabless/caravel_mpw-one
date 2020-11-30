@@ -45,19 +45,6 @@ VPWR                                       |VPWR
 Cell pin lists are equivalent.
 Device classes sky130_fd_sc_hd__dfrtp_4 and sky130_fd_sc_hd__dfrtp_4 are equivalent.
 
-Cell sky130_fd_sc_hd__tapvpwrvgnd_1 disconnected node: VGND
-Cell sky130_fd_sc_hd__tapvpwrvgnd_1 disconnected node: VPWR
-Warning: Equate pins:  cell sky130_fd_sc_hd__tapvpwrvgnd_1 has no definition, treated as a black box.
-
-Subcircuit pins:
-Circuit 1: sky130_fd_sc_hd__tapvpwrvgnd_1  |Circuit 2: sky130_fd_sc_hd__tapvpwrvgnd_1  
--------------------------------------------|-------------------------------------------
-VGND                                       |VGND                                       
-VPWR                                       |VPWR                                       
----------------------------------------------------------------------------------------
-Cell pin lists are equivalent.
-Device classes sky130_fd_sc_hd__tapvpwrvgnd_1 and sky130_fd_sc_hd__tapvpwrvgnd_1 are equivalent.
-
 Cell sky130_fd_sc_hd__and2_4 disconnected node: A
 Cell sky130_fd_sc_hd__and2_4 disconnected node: B
 Cell sky130_fd_sc_hd__and2_4 disconnected node: X
@@ -246,6 +233,19 @@ VPWR                                       |VPWR
 Cell pin lists are equivalent.
 Device classes sky130_fd_sc_hd__clkbuf_1 and sky130_fd_sc_hd__clkbuf_1 are equivalent.
 
+Cell sky130_fd_sc_hd__tapvpwrvgnd_1 disconnected node: VGND
+Cell sky130_fd_sc_hd__tapvpwrvgnd_1 disconnected node: VPWR
+Warning: Equate pins:  cell sky130_fd_sc_hd__tapvpwrvgnd_1 has no definition, treated as a black box.
+
+Subcircuit pins:
+Circuit 1: sky130_fd_sc_hd__tapvpwrvgnd_1  |Circuit 2: sky130_fd_sc_hd__tapvpwrvgnd_1  
+-------------------------------------------|-------------------------------------------
+VGND                                       |VGND                                       
+VPWR                                       |VPWR                                       
+---------------------------------------------------------------------------------------
+Cell pin lists are equivalent.
+Device classes sky130_fd_sc_hd__tapvpwrvgnd_1 and sky130_fd_sc_hd__tapvpwrvgnd_1 are equivalent.
+
 Cell sky130_fd_sc_hd__conb_1 disconnected node: HI
 Cell sky130_fd_sc_hd__conb_1 disconnected node: LO
 Cell sky130_fd_sc_hd__conb_1 disconnected node: VGND
@@ -312,12 +312,30 @@ VPWR                                       |VPWR
 Cell pin lists are equivalent.
 Device classes sky130_fd_sc_hd__clkbuf_16 and sky130_fd_sc_hd__clkbuf_16 are equivalent.
 
+Cell sky130_fd_sc_hd__diode_2 disconnected node: DIODE
+Cell sky130_fd_sc_hd__diode_2 disconnected node: VGND
+Cell sky130_fd_sc_hd__diode_2 disconnected node: VNB
+Cell sky130_fd_sc_hd__diode_2 disconnected node: VPB
+Cell sky130_fd_sc_hd__diode_2 disconnected node: VPWR
+Warning: Equate pins:  cell sky130_fd_sc_hd__diode_2 has no definition, treated as a black box.
+
+Subcircuit pins:
+Circuit 1: sky130_fd_sc_hd__diode_2        |Circuit 2: sky130_fd_sc_hd__diode_2        
+-------------------------------------------|-------------------------------------------
+DIODE                                      |DIODE                                      
+VGND                                       |VGND                                       
+VNB                                        |VNB                                        
+VPB                                        |VPB                                        
+VPWR                                       |VPWR                                       
+---------------------------------------------------------------------------------------
+Cell pin lists are equivalent.
+Device classes sky130_fd_sc_hd__diode_2 and sky130_fd_sc_hd__diode_2 are equivalent.
+
 Subcircuit summary:
 Circuit 1: gpio_control_block              |Circuit 2: gpio_control_block              
 -------------------------------------------|-------------------------------------------
 sky130_fd_sc_hd__buf_2 (31)                |sky130_fd_sc_hd__buf_2 (31)                
 sky130_fd_sc_hd__dfrtp_4 (23)              |sky130_fd_sc_hd__dfrtp_4 (23)              
-sky130_fd_sc_hd__tapvpwrvgnd_1 (39)        |sky130_fd_sc_hd__tapvpwrvgnd_1 (39)        
 sky130_fd_sc_hd__and2_4 (2)                |sky130_fd_sc_hd__and2_4 (2)                
 sky130_fd_sc_hd__inv_2 (3)                 |sky130_fd_sc_hd__inv_2 (3)                 
 sky130_fd_sc_hd__nand2_4 (2)               |sky130_fd_sc_hd__nand2_4 (2)               
@@ -326,10 +344,12 @@ sky130_fd_sc_hd__einvp_8 (1)               |sky130_fd_sc_hd__einvp_8 (1)
 sky130_fd_sc_hd__or2_4 (2)                 |sky130_fd_sc_hd__or2_4 (2)                 
 sky130_fd_sc_hd__and3_4 (1)                |sky130_fd_sc_hd__and3_4 (1)                
 sky130_fd_sc_hd__clkbuf_1 (2)              |sky130_fd_sc_hd__clkbuf_1 (2)              
+sky130_fd_sc_hd__tapvpwrvgnd_1 (40)        |sky130_fd_sc_hd__tapvpwrvgnd_1 (40)        
 sky130_fd_sc_hd__conb_1 (1)                |sky130_fd_sc_hd__conb_1 (1)                
 sky130_fd_sc_hd__dfstp_4 (3)               |sky130_fd_sc_hd__dfstp_4 (3)               
 sky130_fd_sc_hd__clkbuf_16 (1)             |sky130_fd_sc_hd__clkbuf_16 (1)             
-Number of devices: 113                     |Number of devices: 113                     
+sky130_fd_sc_hd__diode_2 (1)               |sky130_fd_sc_hd__diode_2 (1)               
+Number of devices: 115                     |Number of devices: 115                     
 Number of nets: 84                         |Number of nets: 84                         
 ---------------------------------------------------------------------------------------
 Resolving automorphisms by property value.
@@ -348,15 +368,15 @@ pad_gpio_out                               |pad_gpio_out
 mgmt_gpio_in                               |mgmt_gpio_in                               
 pad_gpio_slow_sel                          |pad_gpio_slow_sel                          
 pad_gpio_vtrip_sel                         |pad_gpio_vtrip_sel                         
+pad_gpio_holdover                          |pad_gpio_holdover                          
 pad_gpio_inenb                             |pad_gpio_inenb                             
 pad_gpio_ib_mode_sel                       |pad_gpio_ib_mode_sel                       
 pad_gpio_ana_en                            |pad_gpio_ana_en                            
 pad_gpio_ana_sel                           |pad_gpio_ana_sel                           
-pad_gpio_holdover                          |pad_gpio_holdover                          
 pad_gpio_ana_pol                           |pad_gpio_ana_pol                           
-serial_data_in                             |serial_data_in                             
 serial_clock                               |serial_clock                               
 user_gpio_in                               |user_gpio_in                               
+serial_data_in                             |serial_data_in                             
 resetn                                     |resetn                                     
 mgmt_gpio_oeb                              |mgmt_gpio_oeb                              
 pad_gpio_dm[2]                             |pad_gpio_dm[2]                             

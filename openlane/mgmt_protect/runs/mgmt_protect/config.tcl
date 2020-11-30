@@ -38,7 +38,7 @@ set ::env(FP_PDN_HOFFSET) "16.65"
 set ::env(FP_PDN_HPITCH) "153.18"
 set ::env(FP_TAPCELL_DIST) "14"
 # Placement config
-set ::env(PL_TARGET_DENSITY) "0.4"
+set ::env(PL_TARGET_DENSITY) "0.55"
 set ::env(PL_TIME_DRIVEN) "0"
 set ::env(PL_LIB) "/home/xrex/usr/devel/pdks/sky130A/libs.ref/sky130_fd_sc_hd/lib/sky130_fd_sc_hd__tt_025C_1v80.lib"
 set ::env(PL_BASIC_PLACEMENT) "0"
@@ -60,7 +60,7 @@ set ::env(GLB_RT_L2_ADJUSTMENT) "0"
 set ::env(GLB_RT_MINLAYER) "1"
 set ::env(GLB_RT_MAXLAYER) "6"
 set ::env(GLB_RT_UNIDIRECTIONAL) "1"
-set ::env(GLB_RT_ALLOW_CONGESTION) "0"
+set ::env(GLB_RT_ALLOW_CONGESTION) "1"
 set ::env(GLB_RT_OVERFLOW_ITERS) "50"
 set ::env(GLB_RT_TILES) "15"
 set ::env(GLB_RT_ESTIMATE_PARASITICS) "0"
@@ -74,11 +74,11 @@ set ::env(RUN_ROUTING_DETAILED) "1"
 set ::env(CLOCK_TREE_SYNTH) "1"
 set ::env(LEC_ENABLE) "0"
 set ::env(FILL_INSERTION) "1"
-set ::env(DIODE_INSERTION_STRATEGY) "3"
+set ::env(DIODE_INSERTION_STRATEGY) "1"
 set ::env(CHECK_ASSIGN_STATEMENTS) "0"
 set ::env(CHECK_UNMAPPED_CELLS) "1"
 set ::env(USE_ARC_ANTENNA_CHECK) "1"
 set ::env(RUN_SPEF_EXTRACTION) "1"
-set ::env(CURRENT_DEF) /project/openlane/mgmt_protect/runs/mgmt_protect/tmp/floorplan/ioPlacer.def
-set ::env(CURRENT_NETLIST) /project/openlane/mgmt_protect/runs/mgmt_protect/results/synthesis/mgmt_protect.synthesis.v
-set ::env(PREV_NETLIST) 0
+set ::env(CURRENT_DEF) /project/openlane/mgmt_protect/runs/mgmt_protect/results/routing/mgmt_protect.def
+set ::env(CURRENT_NETLIST) /project/openlane/mgmt_protect/runs/mgmt_protect/results/lvs/mgmt_protect.lvs.powered.v
+set ::env(PREV_NETLIST) /project/openlane/mgmt_protect/runs/mgmt_protect/results/synthesis/mgmt_protect.synthesis_preroute.v

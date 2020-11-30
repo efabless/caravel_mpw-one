@@ -10,7 +10,7 @@ Notice 0:
 Reading DEF file: /project/openlane/gpio_control_block/runs/gpio_control_block/results/cts/gpio_control_block.cts.def
 Notice 0: Design: gpio_control_block
 Notice 0:     Created 24 pins.
-Notice 0:     Created 187 components and 887 component-terminals.
+Notice 0:     Created 166 components and 801 component-terminals.
 Notice 0:     Created 82 nets and 216 connections.
 Notice 0: Finished DEF file: /project/openlane/gpio_control_block/runs/gpio_control_block/results/cts/gpio_control_block.cts.def
 [INFO] [PDNG-0016] Power Delivery Network Generator: Generating PDN
@@ -22,8 +22,8 @@ Type: stdcell, grid
     Stdcell Rails
       Layer: met1 -  width: 0.480  pitch: 2.720  offset: 0.000 
     Straps
-      Layer: met4 -  width: 1.600  pitch: 12.987  offset: 6.493 
-      Layer: met5 -  width: 1.600  pitch: 34.413  offset: 17.207 
+      Layer: met4 -  width: 1.600  pitch: 14.787  offset: 7.393 
+      Layer: met5 -  width: 1.600  pitch: 24.413  offset: 12.207 
     Connect: {met1 met4} {met4 met5}
 Type: macro, macro_1
     Macro orientation: R0 R180 MX MY R90 R270 MXR90 MYR90

@@ -1,0 +1,45 @@
+magic
+tech sky130A
+magscale 1 2
+timestamp 1606523612
+<< obsli1 >>
+rect 66 797 4866 4087
+<< metal1 >>
+rect 66 4019 4866 4121
+rect 66 3205 4866 3307
+<< obsm1 >>
+rect 66 4177 4866 4207
+rect 66 3363 4866 3963
+rect 66 763 4866 3149
+<< metal2 >>
+rect 4214 4200 4270 5000
+rect 566 0 622 800
+<< obsm2 >>
+rect 280 4144 4158 4213
+rect 280 856 4268 4144
+rect 280 763 510 856
+rect 678 763 4268 856
+<< obsm3 >>
+rect 707 781 4232 4103
+<< obsm4 >>
+rect 707 763 4232 4121
+<< obsm5 >>
+rect 66 1165 4866 3733
+<< labels >>
+rlabel metal2 s 4214 4200 4270 5000 6 mprj2_vdd_logic1
+port 1 nsew default output
+rlabel metal2 s 566 0 622 800 6 mprj_vdd_logic1
+port 2 nsew default output
+rlabel metal1 s 66 4019 4866 4121 6 VPWR
+port 3 nsew power input
+rlabel metal1 s 66 3205 4866 3307 6 VGND
+port 4 nsew ground input
+<< properties >>
+string LEFclass BLOCK
+string FIXED_BBOX 0 0 4932 5000
+string LEFview TRUE
+string GDS_FILE /project/openlane/mgmt_protect_hv/runs/mgmt_protect_hv/results/magic/mgmt_protect_hv.gds
+string GDS_END 62758
+string GDS_START 42692
+<< end >>
+

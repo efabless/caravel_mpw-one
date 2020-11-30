@@ -18,6 +18,8 @@ gds read storage.gds
 
 gds read user_id_programming.gds
 
+gds read sky130_fd_sc_hvl__lsbufhv2lv_1_wrapped.gds
+
 # Your project goes aboard here
 gds read user_project_wrapper.gds
 

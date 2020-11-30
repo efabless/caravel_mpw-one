@@ -1,0 +1,49 @@
+Netgen 1.5.157 compiled on Fri Oct  9 13:50:13 UTC 2020
+Warning: netgen command 'format' use fully-qualified name '::netgen::format'
+Warning: netgen command 'global' use fully-qualified name '::netgen::global'
+Generating JSON file result
+Reading netlist file /project/openlane/mgmt_protect_hv/runs/mgmt_protect_hv/results/magic/mgmt_protect_hv.spice
+Reading netlist file /project/openlane/mgmt_protect_hv/runs/mgmt_protect_hv/results/lvs/mgmt_protect_hv.lvs.powered.v
+Warning:  A case-insensitive file has been read and so the	verilog file must be treated case-insensitive to match.
+Creating placeholder cell definition for module sky130_fd_sc_hvl__decap_8.
+Creating placeholder cell definition for module sky130_fd_sc_hvl__fill_2.
+Creating placeholder cell definition for module sky130_fd_sc_hvl__decap_4.
+Creating placeholder cell definition for module sky130_fd_sc_hvl__fill_1.
+Creating placeholder cell definition for module sky130_fd_sc_hvl__conb_1.
+Creating placeholder cell definition for module sky130_fd_sc_hvl__lsbufhv2lv_1.
+Reading setup file /home/xrex/usr/devel/pdks/sky130A/libs.tech/netgen/sky130A_setup.tcl
+Comparison output logged to file /project/openlane/mgmt_protect_hv/runs/mgmt_protect_hv/results/lvs/mgmt_protect_hv.lvs.log
+Logging to file "/project/openlane/mgmt_protect_hv/runs/mgmt_protect_hv/results/lvs/mgmt_protect_hv.lvs.log" enabled
+Contents of circuit 1:  Circuit: 'sky130_fd_sc_hvl__conb_1'
+Circuit sky130_fd_sc_hvl__conb_1 contains 0 device instances.
+Circuit contains 0 nets, and 6 disconnected pins.
+Contents of circuit 2:  Circuit: 'sky130_fd_sc_hvl__conb_1'
+Circuit sky130_fd_sc_hvl__conb_1 contains 0 device instances.
+Circuit contains 0 nets.
+
+Circuit sky130_fd_sc_hvl__conb_1 contains no devices.
+Contents of circuit 1:  Circuit: 'sky130_fd_sc_hvl__lsbufhv2lv_1'
+Circuit sky130_fd_sc_hvl__lsbufhv2lv_1 contains 0 device instances.
+Circuit contains 0 nets, and 7 disconnected pins.
+Contents of circuit 2:  Circuit: 'sky130_fd_sc_hvl__lsbufhv2lv_1'
+Circuit sky130_fd_sc_hvl__lsbufhv2lv_1 contains 0 device instances.
+Circuit contains 0 nets.
+
+Circuit sky130_fd_sc_hvl__lsbufhv2lv_1 contains no devices.
+Contents of circuit 1:  Circuit: 'mgmt_protect_hv'
+Circuit mgmt_protect_hv contains 4 device instances.
+  Class: sky130_fd_sc_hvl__lsbufhv2lv_1 instances:   2
+  Class: sky130_fd_sc_hvl__conb_1 instances:   2
+Circuit contains 10 nets.
+Contents of circuit 2:  Circuit: 'mgmt_protect_hv'
+Circuit mgmt_protect_hv contains 4 device instances.
+  Class: sky130_fd_sc_hvl__lsbufhv2lv_1 instances:   2
+  Class: sky130_fd_sc_hvl__conb_1 instances:   2
+Circuit contains 6 nets.
+
+Circuit 1 contains 4 devices, Circuit 2 contains 4 devices.
+Circuit 1 contains 8 nets,    Circuit 2 contains 6 nets. *** MISMATCH ***
+
+Result: Netlists do not match.
+Logging to file "/project/openlane/mgmt_protect_hv/runs/mgmt_protect_hv/results/lvs/mgmt_protect_hv.lvs.log" disabled
+LVS Done.

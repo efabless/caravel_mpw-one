@@ -1,0 +1,78 @@
+Sat Nov 28 00:33:24 UTC 2020 - Executing "/openLANE_flow/scripts/mergeLef.py -i /home/xrex/usr/devel/pdks/sky130A/libs.ref/sky130_fd_sc_hvl/techlef/sky130_fd_sc_hvl.tlef /home/xrex/usr/devel/pdks/sky130A/libs.ref/sky130_fd_sc_hvl/lef/sky130_fd_sc_hvl.lef -o /project/openlane/mgmt_protect_hv/runs/mgmt_protect_hv/tmp/merged_unpadded.lef |& tee >&@stdout"
+
+Sat Nov 28 00:33:24 UTC 2020 - Executing "/openLANE_flow/scripts/libtrim.pl { /home/xrex/usr/devel/pdks/sky130A/libs.ref/sky130_fd_sc_hvl/lib/sky130_fd_sc_hvl__tt_025C_3v30.lib  /home/xrex/usr/devel/pdks/sky130A/libs.ref/sky130_fd_sc_hvl/lib/sky130_fd_sc_hvl__tt_025C_3v30_lv1v80.lib } /home/xrex/usr/devel/pdks/sky130A/libs.tech/openlane/sky130_fd_sc_hvl/no_synth.cells > /project/openlane/mgmt_protect_hv/runs/mgmt_protect_hv/tmp/trimmed.lib"
+
+Sat Nov 28 00:33:24 UTC 2020 - Executing "yosys -c /openLANE_flow/scripts/synth_top.tcl -l /project/openlane/mgmt_protect_hv/runs/mgmt_protect_hv/logs/synthesis/yosys.log |& tee >&@stdout"
+
+Sat Nov 28 00:33:24 UTC 2020 - Executing "sed -i -e {s/\(set ::env(CURRENT_NETLIST)\).*/\1 \/project\/openlane\/mgmt_protect_hv\/runs\/mgmt_protect_hv\/results\/synthesis\/mgmt_protect_hv.synthesis.v/} /project/openlane/mgmt_protect_hv/runs/mgmt_protect_hv/config.tcl"
+
+Sat Nov 28 00:33:24 UTC 2020 - Executing "sed -i -e {s/\(set ::env(PREV_NETLIST)\).*/\1 0/} /project/openlane/mgmt_protect_hv/runs/mgmt_protect_hv/config.tcl"
+
+Sat Nov 28 00:33:24 UTC 2020 - Executing "sed -ie /defparam/d /project/openlane/mgmt_protect_hv/runs/mgmt_protect_hv/results/synthesis/mgmt_protect_hv.synthesis.v"
+
+Sat Nov 28 00:33:24 UTC 2020 - Executing "openroad -exit /openLANE_flow/scripts/openroad/or_floorplan.tcl |& tee >&@stdout /project/openlane/mgmt_protect_hv/runs/mgmt_protect_hv/logs/floorplan/verilog2def.openroad.log"
+
+Sat Nov 28 00:33:25 UTC 2020 - Executing "openroad -exit /openLANE_flow/scripts/openroad/or_ioplacer.tcl |& tee >&@stdout /project/openlane/mgmt_protect_hv/runs/mgmt_protect_hv/logs/floorplan/ioPlacer.log"
+
+Sat Nov 28 00:33:25 UTC 2020 - Executing "openroad -exit /openLANE_flow/scripts/new_pdn.tcl |& tee >&@stdout /project/openlane/mgmt_protect_hv/runs/mgmt_protect_hv/logs/floorplan/pdn.log"
+
+Sat Nov 28 00:33:26 UTC 2020 - Executing "python3 /openLANE_flow/scripts/random_place.py --lef /project/openlane/mgmt_protect_hv/runs/mgmt_protect_hv/tmp/merged_unpadded.lef --input-def /project/openlane/mgmt_protect_hv/runs/mgmt_protect_hv/tmp/floorplan/pdn.def --output-def /project/openlane/mgmt_protect_hv/runs/mgmt_protect_hv/tmp/placement/replace.def |& tee >&@stdout /project/openlane/mgmt_protect_hv/runs/mgmt_protect_hv/logs/placement/replace.log"
+
+Sat Nov 28 00:33:26 UTC 2020 - Executing "/openLANE_flow/scripts/libtrim.pl /home/xrex/usr/devel/pdks/sky130A/libs.ref/sky130_fd_sc_hvl/lib/sky130_fd_sc_hvl__ss_150C_1v65.lib /home/xrex/usr/devel/pdks/sky130A/libs.tech/openlane/sky130_fd_sc_hvl/no_synth.cells > /project/openlane/mgmt_protect_hv/runs/mgmt_protect_hv/tmp/opt.lib"
+
+Sat Nov 28 00:33:26 UTC 2020 - Executing "Psn /openLANE_flow/scripts/openPhySyn.tcl |& tee >&@stdout /project/openlane/mgmt_protect_hv/runs/mgmt_protect_hv/logs/placement/openphysyn.log"
+
+Sat Nov 28 00:33:26 UTC 2020 - Executing "openroad -exit /openLANE_flow/scripts/openroad/or_write_verilog.tcl |& tee >&@stdout /project/openlane/mgmt_protect_hv/runs/mgmt_protect_hv/logs/write_verilog.log"
+
+Sat Nov 28 00:33:27 UTC 2020 - Executing "sed -i -e {s/\(set ::env(CURRENT_NETLIST)\).*/\1 \/project\/openlane\/mgmt_protect_hv\/runs\/mgmt_protect_hv\/results\/synthesis\/mgmt_protect_hv.synthesis_optimized.v/} /project/openlane/mgmt_protect_hv/runs/mgmt_protect_hv/config.tcl"
+
+Sat Nov 28 00:33:27 UTC 2020 - Executing "sed -i -e {s/\(set ::env(PREV_NETLIST)\).*/\1 \/project\/openlane\/mgmt_protect_hv\/runs\/mgmt_protect_hv\/results\/synthesis\/mgmt_protect_hv.synthesis.v/} /project/openlane/mgmt_protect_hv/runs/mgmt_protect_hv/config.tcl"
+
+Sat Nov 28 00:33:27 UTC 2020 - Executing "openroad -exit /openLANE_flow/scripts/openroad/or_opendp.tcl |& tee >&@stdout /project/openlane/mgmt_protect_hv/runs/mgmt_protect_hv/logs/placement/opendp.log"
+
+Sat Nov 28 00:33:27 UTC 2020 - Executing "openroad -exit /openLANE_flow/scripts/openroad/or_route.tcl |& tee >&@stdout /project/openlane/mgmt_protect_hv/runs/mgmt_protect_hv/logs/routing/fastroute.log"
+
+Sat Nov 28 00:33:28 UTC 2020 - Executing "openroad -exit /openLANE_flow/scripts/openroad/or_route.tcl |& tee >&@stdout /project/openlane/mgmt_protect_hv/runs/mgmt_protect_hv/logs/routing/fastroute_post_antenna.log"
+
+Sat Nov 28 00:33:28 UTC 2020 - Executing "openroad -exit /openLANE_flow/scripts/openroad/or_fill.tcl |& tee >&@stdout /project/openlane/mgmt_protect_hv/runs/mgmt_protect_hv/logs/routing/addspacers.log"
+
+Sat Nov 28 00:33:29 UTC 2020 - Executing "openroad -exit /openLANE_flow/scripts/openroad/or_write_verilog.tcl |& tee >&@stdout /project/openlane/mgmt_protect_hv/runs/mgmt_protect_hv/logs/write_verilog.log"
+
+Sat Nov 28 00:33:29 UTC 2020 - Executing "sed -i -e {s/\(set ::env(CURRENT_NETLIST)\).*/\1 \/project\/openlane\/mgmt_protect_hv\/runs\/mgmt_protect_hv\/results\/synthesis\/mgmt_protect_hv.synthesis_preroute.v/} /project/openlane/mgmt_protect_hv/runs/mgmt_protect_hv/config.tcl"
+
+Sat Nov 28 00:33:29 UTC 2020 - Executing "sed -i -e {s/\(set ::env(PREV_NETLIST)\).*/\1 \/project\/openlane\/mgmt_protect_hv\/runs\/mgmt_protect_hv\/results\/synthesis\/mgmt_protect_hv.synthesis_optimized.v/} /project/openlane/mgmt_protect_hv/runs/mgmt_protect_hv/config.tcl"
+
+Sat Nov 28 00:33:29 UTC 2020 - Executing "envsubst < /openLANE_flow/scripts/tritonRoute.param > /project/openlane/mgmt_protect_hv/runs/mgmt_protect_hv/tmp/routing/tritonRoute.param"
+
+Sat Nov 28 00:33:29 UTC 2020 - Executing "TritonRoute /project/openlane/mgmt_protect_hv/runs/mgmt_protect_hv/tmp/routing/tritonRoute.param |& tee >&@stdout /project/openlane/mgmt_protect_hv/runs/mgmt_protect_hv/logs/routing/tritonRoute.log"
+
+Sat Nov 28 00:33:31 UTC 2020 - Executing "python3 /openLANE_flow/scripts/tr2klayout.py -i /project/openlane/mgmt_protect_hv/runs/mgmt_protect_hv/reports/routing/tritonRoute.drc -o /project/openlane/mgmt_protect_hv/runs/mgmt_protect_hv/reports/routing/tritonRoute.klayout.xml --design-name mgmt_protect_hv"
+
+Sat Nov 28 00:33:31 UTC 2020 - Executing "python3 /openLANE_flow/scripts/spef_extractor/main.py -l /project/openlane/mgmt_protect_hv/runs/mgmt_protect_hv/tmp/merged_unpadded.lef -d /project/openlane/mgmt_protect_hv/runs/mgmt_protect_hv/results/routing/mgmt_protect_hv.def -mw PI -ec 1 |& tee >&@stdout /project/openlane/mgmt_protect_hv/runs/mgmt_protect_hv/logs/routing/spef_extraction.log"
+
+Sat Nov 28 00:33:31 UTC 2020 - Executing "python3 /openLANE_flow/scripts/write_powered_def.py -d /project/openlane/mgmt_protect_hv/runs/mgmt_protect_hv/results/routing/mgmt_protect_hv.def -l /project/openlane/mgmt_protect_hv/runs/mgmt_protect_hv/tmp/merged.lef -v VPWR -g VGND -o /project/openlane/mgmt_protect_hv/runs/mgmt_protect_hv/tmp/routing/mgmt_protect_hv.powered.def |& tee >&@stdout /project/openlane/mgmt_protect_hv/runs/mgmt_protect_hv/logs/lvs/write_powered_verilog.log"
+
+Sat Nov 28 00:33:31 UTC 2020 - Executing "openroad -exit /openLANE_flow/scripts/openroad/or_write_verilog.tcl |& tee >&@stdout /project/openlane/mgmt_protect_hv/runs/mgmt_protect_hv/logs/write_verilog.log"
+
+Sat Nov 28 00:33:31 UTC 2020 - Executing "yosys -c /openLANE_flow/scripts/yosys_rewrite_verilog.tcl -l /project/openlane/mgmt_protect_hv/runs/mgmt_protect_hv/logs/synthesis/yosys_rewrite_verilog.log"
+
+Sat Nov 28 00:33:31 UTC 2020 - Executing "sed -i -e {s/\(set ::env(CURRENT_NETLIST)\).*/\1 \/project\/openlane\/mgmt_protect_hv\/runs\/mgmt_protect_hv\/results\/lvs\/mgmt_protect_hv.lvs.powered.v/} /project/openlane/mgmt_protect_hv/runs/mgmt_protect_hv/config.tcl"
+
+Sat Nov 28 00:33:31 UTC 2020 - Executing "sed -i -e {s/\(set ::env(PREV_NETLIST)\).*/\1 \/project\/openlane\/mgmt_protect_hv\/runs\/mgmt_protect_hv\/results\/synthesis\/mgmt_protect_hv.synthesis_preroute.v/} /project/openlane/mgmt_protect_hv/runs/mgmt_protect_hv/config.tcl"
+
+Sat Nov 28 00:33:31 UTC 2020 - Executing "magic -noconsole -dnull -rcfile /home/xrex/usr/devel/pdks/sky130A/libs.tech/magic/sky130A.magicrc /openLANE_flow/scripts/magic.tcl </dev/null |& tee >&@stdout /project/openlane/mgmt_protect_hv/runs/mgmt_protect_hv/logs/magic/magic.log"
+
+Sat Nov 28 00:33:32 UTC 2020 - Executing "magic -noconsole -dnull -rcfile /home/xrex/usr/devel/pdks/sky130A/libs.tech/magic/sky130A.magicrc /openLANE_flow/scripts/magic_mag.tcl </dev/null |& tee >&@stdout /project/openlane/mgmt_protect_hv/runs/mgmt_protect_hv/logs/magic/magic.log"
+
+Sat Nov 28 00:33:32 UTC 2020 - Executing "magic -noconsole -dnull -rcfile /home/xrex/usr/devel/pdks/sky130A/libs.tech/magic/sky130A.magicrc /openLANE_flow/scripts/magic_maglef.tcl </dev/null |& tee >&@stdout /project/openlane/mgmt_protect_hv/runs/mgmt_protect_hv/logs/magic/magic.maglef.log"
+
+Sat Nov 28 00:33:32 UTC 2020 - Executing "magic -noconsole -dnull -rcfile /home/xrex/usr/devel/pdks/sky130A/libs.tech/magic/sky130A.magicrc /project/openlane/mgmt_protect_hv/runs/mgmt_protect_hv/tmp/magic_spice.tcl </dev/null |& tee >&@stdout /project/openlane/mgmt_protect_hv/runs/mgmt_protect_hv/logs/magic/magic_spice.log"
+
+Sat Nov 28 00:33:32 UTC 2020 - Executing "magic -noconsole -dnull -rcfile /home/xrex/usr/devel/pdks/sky130A/libs.tech/magic/sky130A.magicrc /openLANE_flow/scripts/magic_drc.tcl </dev/null |& tee >&@stdout /project/openlane/mgmt_protect_hv/runs/mgmt_protect_hv/logs/magic/magic.drc.log"
+
+Sat Nov 28 00:33:33 UTC 2020 - Executing "netgen -batch lvs {/project/openlane/mgmt_protect_hv/runs/mgmt_protect_hv/results/magic/mgmt_protect_hv.spice mgmt_protect_hv} {/project/openlane/mgmt_protect_hv/runs/mgmt_protect_hv/results/lvs/mgmt_protect_hv.lvs.powered.v mgmt_protect_hv} /home/xrex/usr/devel/pdks/sky130A/libs.tech/netgen/sky130A_setup.tcl /project/openlane/mgmt_protect_hv/runs/mgmt_protect_hv/results/lvs/mgmt_protect_hv.lvs.log -json |& tee >&@stdout /project/openlane/mgmt_protect_hv/runs/mgmt_protect_hv/logs/lvs/lvs.log"
+
+Sat Nov 28 00:33:33 UTC 2020 - Executing "openroad -exit /openLANE_flow/scripts/openroad/or_antenna_check.tcl |& tee >&@stdout /project/openlane/mgmt_protect_hv/runs/mgmt_protect_hv/logs/routing/or_antenna.log"
+
+Sat Nov 28 00:33:34 UTC 2020 - Executing "python3 /openLANE_flow/report_generation_wrapper.py -d /project/openlane/mgmt_protect_hv -dn mgmt_protect_hv -t mgmt_protect_hv -o /project/openlane/mgmt_protect_hv/runs/mgmt_protect_hv/reports/final_summary_report.csv -r /project/openlane/mgmt_protect_hv/runs/mgmt_protect_hv"
+

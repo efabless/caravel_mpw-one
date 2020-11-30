@@ -1,0 +1,58 @@
+* NGSPICE file created from mgmt_protect_hv.ext - technology: sky130A
+
+* Black-box entry subcircuit for sky130_fd_sc_hvl__decap_8 abstract view
+.subckt sky130_fd_sc_hvl__decap_8 VGND VNB VPB VPWR
+.ends
+
+* Black-box entry subcircuit for sky130_fd_sc_hvl__fill_2 abstract view
+.subckt sky130_fd_sc_hvl__fill_2 VGND VNB VPB VPWR
+.ends
+
+* Black-box entry subcircuit for sky130_fd_sc_hvl__conb_1 abstract view
+.subckt sky130_fd_sc_hvl__conb_1 VGND VNB VPB VPWR HI LO
+.ends
+
+* Black-box entry subcircuit for sky130_fd_sc_hvl__decap_4 abstract view
+.subckt sky130_fd_sc_hvl__decap_4 VGND VNB VPB VPWR
+.ends
+
+* Black-box entry subcircuit for sky130_fd_sc_hvl__fill_1 abstract view
+.subckt sky130_fd_sc_hvl__fill_1 VGND VNB VPB VPWR
+.ends
+
+* Black-box entry subcircuit for sky130_fd_sc_hvl__lsbufhv2lv_1 abstract view
+.subckt sky130_fd_sc_hvl__lsbufhv2lv_1 A LVPWR VGND VNB VPB VPWR X
+.ends
+
+.subckt mgmt_protect_hv mprj2_vdd_logic1 mprj_vdd_logic1 VPWR VGND
+XFILLER_3_24 VGND VGND VPWR VPWR sky130_fd_sc_hvl__decap_8
+XFILLER_0_24 VGND VGND VPWR VPWR sky130_fd_sc_hvl__decap_8
+XFILLER_3_48 VGND VGND VPWR VPWR sky130_fd_sc_hvl__fill_2
+XFILLER_0_48 VGND VGND VPWR VPWR sky130_fd_sc_hvl__fill_2
+XFILLER_3_16 VGND VGND VPWR VPWR sky130_fd_sc_hvl__decap_8
+XFILLER_0_16 VGND VGND VPWR VPWR sky130_fd_sc_hvl__decap_8
+Xmprj2_logic_high_hvl VGND VGND VPWR VPWR mprj2_logic_high_lv/A mprj2_logic_high_hvl/LO
++ sky130_fd_sc_hvl__conb_1
+XFILLER_3_8 VGND VGND VPWR VPWR sky130_fd_sc_hvl__decap_8
+XFILLER_1_5 VGND VGND VPWR VPWR sky130_fd_sc_hvl__decap_4
+Xmprj_logic_high_hvl VGND VGND VPWR VPWR mprj_logic_high_lv/A mprj_logic_high_hvl/LO
++ sky130_fd_sc_hvl__conb_1
+XFILLER_1_48 VGND VGND VPWR VPWR sky130_fd_sc_hvl__fill_2
+XFILLER_2_0 VGND VGND VPWR VPWR sky130_fd_sc_hvl__decap_8
+XFILLER_2_43 VGND VGND VPWR VPWR sky130_fd_sc_hvl__decap_4
+XFILLER_0_0 VGND VGND VPWR VPWR sky130_fd_sc_hvl__decap_8
+XFILLER_2_47 VGND VGND VPWR VPWR sky130_fd_sc_hvl__fill_2
+XFILLER_2_49 VGND VGND VPWR VPWR sky130_fd_sc_hvl__fill_1
+XFILLER_2_8 VGND VGND VPWR VPWR sky130_fd_sc_hvl__fill_1
+XFILLER_0_8 VGND VGND VPWR VPWR sky130_fd_sc_hvl__decap_8
+XFILLER_3_40 VGND VGND VPWR VPWR sky130_fd_sc_hvl__decap_8
+XFILLER_0_40 VGND VGND VPWR VPWR sky130_fd_sc_hvl__decap_8
+XFILLER_0_32 VGND VGND VPWR VPWR sky130_fd_sc_hvl__decap_8
+XFILLER_3_32 VGND VGND VPWR VPWR sky130_fd_sc_hvl__decap_8
+Xmprj_logic_high_lv mprj_logic_high_lv/A mprj_logic_high_lv/LVPWR VGND VGND VPWR VPWR
++ mprj_vdd_logic1 sky130_fd_sc_hvl__lsbufhv2lv_1
+Xmprj2_logic_high_lv mprj2_logic_high_lv/A mprj2_logic_high_lv/LVPWR VGND VGND VPWR
++ VPWR mprj2_vdd_logic1 sky130_fd_sc_hvl__lsbufhv2lv_1
+XFILLER_3_0 VGND VGND VPWR VPWR sky130_fd_sc_hvl__decap_8
+.ends
+

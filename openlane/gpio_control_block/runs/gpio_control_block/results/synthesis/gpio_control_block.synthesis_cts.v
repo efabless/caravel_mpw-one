@@ -43,7 +43,7 @@ module gpio_control_block (mgmt_gpio_in,
  input user_gpio_out;
  output [2:0] pad_gpio_dm;
 
- sky130_fd_sc_hd__or2_4 _039_ (.A(clknet_1_0_0_serial_clock),
+ sky130_fd_sc_hd__or2_4 _039_ (.A(clknet_1_1_0_serial_clock),
     .B(resetn),
     .X(_027_));
  sky130_fd_sc_hd__buf_2 _040_ (.A(_027_),
@@ -137,7 +137,7 @@ module gpio_control_block (mgmt_gpio_in,
     .Y(_000_));
  sky130_fd_sc_hd__inv_2 _078_ (.A(resetn),
     .Y(_038_));
- sky130_fd_sc_hd__and2_4 _079_ (.A(clknet_1_0_0_serial_clock),
+ sky130_fd_sc_hd__and2_4 _079_ (.A(clknet_1_1_0_serial_clock),
     .B(_038_),
     .X(load_data));
  sky130_fd_sc_hd__and2_4 _080_ (.A(mgmt_ena),
@@ -200,11 +200,11 @@ module gpio_control_block (mgmt_gpio_in,
  sky130_fd_sc_hd__dfrtp_4 _095_ (.D(serial_data_in),
     .Q(\shift_register[0] ),
     .RESET_B(_014_),
-    .CLK(clknet_1_0_0_serial_clock));
+    .CLK(clknet_1_1_0_serial_clock));
  sky130_fd_sc_hd__dfrtp_4 _096_ (.D(\shift_register[0] ),
     .Q(\shift_register[1] ),
     .RESET_B(_015_),
-    .CLK(clknet_1_0_0_serial_clock));
+    .CLK(clknet_1_1_0_serial_clock));
  sky130_fd_sc_hd__dfrtp_4 _097_ (.D(\shift_register[1] ),
     .Q(\shift_register[2] ),
     .RESET_B(_016_),
@@ -212,11 +212,11 @@ module gpio_control_block (mgmt_gpio_in,
  sky130_fd_sc_hd__dfrtp_4 _098_ (.D(\shift_register[2] ),
     .Q(\shift_register[3] ),
     .RESET_B(_017_),
-    .CLK(clknet_1_1_0_serial_clock));
+    .CLK(clknet_1_0_0_serial_clock));
  sky130_fd_sc_hd__dfrtp_4 _099_ (.D(\shift_register[3] ),
     .Q(\shift_register[4] ),
     .RESET_B(_018_),
-    .CLK(clknet_1_1_0_serial_clock));
+    .CLK(clknet_1_0_0_serial_clock));
  sky130_fd_sc_hd__dfrtp_4 _100_ (.D(\shift_register[4] ),
     .Q(\shift_register[5] ),
     .RESET_B(_019_),
@@ -305,28 +305,28 @@ module gpio_control_block (mgmt_gpio_in,
  sky130_fd_sc_hd__decap_3 PHY_49 ();
  sky130_fd_sc_hd__decap_3 PHY_50 ();
  sky130_fd_sc_hd__decap_3 PHY_51 ();
- sky130_fd_sc_hd__decap_3 PHY_52 ();
- sky130_fd_sc_hd__decap_3 PHY_53 ();
- sky130_fd_sc_hd__decap_3 PHY_54 ();
- sky130_fd_sc_hd__decap_3 PHY_55 ();
- sky130_fd_sc_hd__decap_3 PHY_56 ();
- sky130_fd_sc_hd__decap_3 PHY_57 ();
- sky130_fd_sc_hd__decap_3 PHY_58 ();
- sky130_fd_sc_hd__decap_3 PHY_59 ();
- sky130_fd_sc_hd__decap_3 PHY_60 ();
- sky130_fd_sc_hd__decap_3 PHY_61 ();
- sky130_fd_sc_hd__decap_3 PHY_62 ();
- sky130_fd_sc_hd__decap_3 PHY_63 ();
- sky130_fd_sc_hd__decap_3 PHY_64 ();
- sky130_fd_sc_hd__decap_3 PHY_65 ();
- sky130_fd_sc_hd__decap_3 PHY_66 ();
- sky130_fd_sc_hd__decap_3 PHY_67 ();
- sky130_fd_sc_hd__decap_3 PHY_68 ();
- sky130_fd_sc_hd__decap_3 PHY_69 ();
- sky130_fd_sc_hd__decap_3 PHY_70 ();
- sky130_fd_sc_hd__decap_3 PHY_71 ();
- sky130_fd_sc_hd__decap_3 PHY_72 ();
- sky130_fd_sc_hd__decap_3 PHY_73 ();
+ sky130_fd_sc_hd__tapvpwrvgnd_1 PHY_52 ();
+ sky130_fd_sc_hd__tapvpwrvgnd_1 PHY_53 ();
+ sky130_fd_sc_hd__tapvpwrvgnd_1 PHY_54 ();
+ sky130_fd_sc_hd__tapvpwrvgnd_1 PHY_55 ();
+ sky130_fd_sc_hd__tapvpwrvgnd_1 PHY_56 ();
+ sky130_fd_sc_hd__tapvpwrvgnd_1 PHY_57 ();
+ sky130_fd_sc_hd__tapvpwrvgnd_1 PHY_58 ();
+ sky130_fd_sc_hd__tapvpwrvgnd_1 PHY_59 ();
+ sky130_fd_sc_hd__tapvpwrvgnd_1 PHY_60 ();
+ sky130_fd_sc_hd__tapvpwrvgnd_1 PHY_61 ();
+ sky130_fd_sc_hd__tapvpwrvgnd_1 PHY_62 ();
+ sky130_fd_sc_hd__tapvpwrvgnd_1 PHY_63 ();
+ sky130_fd_sc_hd__tapvpwrvgnd_1 PHY_64 ();
+ sky130_fd_sc_hd__tapvpwrvgnd_1 PHY_65 ();
+ sky130_fd_sc_hd__tapvpwrvgnd_1 PHY_66 ();
+ sky130_fd_sc_hd__tapvpwrvgnd_1 PHY_67 ();
+ sky130_fd_sc_hd__tapvpwrvgnd_1 PHY_68 ();
+ sky130_fd_sc_hd__tapvpwrvgnd_1 PHY_69 ();
+ sky130_fd_sc_hd__tapvpwrvgnd_1 PHY_70 ();
+ sky130_fd_sc_hd__tapvpwrvgnd_1 PHY_71 ();
+ sky130_fd_sc_hd__tapvpwrvgnd_1 PHY_72 ();
+ sky130_fd_sc_hd__tapvpwrvgnd_1 PHY_73 ();
  sky130_fd_sc_hd__tapvpwrvgnd_1 PHY_74 ();
  sky130_fd_sc_hd__tapvpwrvgnd_1 PHY_75 ();
  sky130_fd_sc_hd__tapvpwrvgnd_1 PHY_76 ();
@@ -345,27 +345,6 @@ module gpio_control_block (mgmt_gpio_in,
  sky130_fd_sc_hd__tapvpwrvgnd_1 PHY_89 ();
  sky130_fd_sc_hd__tapvpwrvgnd_1 PHY_90 ();
  sky130_fd_sc_hd__tapvpwrvgnd_1 PHY_91 ();
- sky130_fd_sc_hd__tapvpwrvgnd_1 PHY_92 ();
- sky130_fd_sc_hd__tapvpwrvgnd_1 PHY_93 ();
- sky130_fd_sc_hd__tapvpwrvgnd_1 PHY_94 ();
- sky130_fd_sc_hd__tapvpwrvgnd_1 PHY_95 ();
- sky130_fd_sc_hd__tapvpwrvgnd_1 PHY_96 ();
- sky130_fd_sc_hd__tapvpwrvgnd_1 PHY_97 ();
- sky130_fd_sc_hd__tapvpwrvgnd_1 PHY_98 ();
- sky130_fd_sc_hd__tapvpwrvgnd_1 PHY_99 ();
- sky130_fd_sc_hd__tapvpwrvgnd_1 PHY_100 ();
- sky130_fd_sc_hd__tapvpwrvgnd_1 PHY_101 ();
- sky130_fd_sc_hd__tapvpwrvgnd_1 PHY_102 ();
- sky130_fd_sc_hd__tapvpwrvgnd_1 PHY_103 ();
- sky130_fd_sc_hd__tapvpwrvgnd_1 PHY_104 ();
- sky130_fd_sc_hd__tapvpwrvgnd_1 PHY_105 ();
- sky130_fd_sc_hd__tapvpwrvgnd_1 PHY_106 ();
- sky130_fd_sc_hd__tapvpwrvgnd_1 PHY_107 ();
- sky130_fd_sc_hd__tapvpwrvgnd_1 PHY_108 ();
- sky130_fd_sc_hd__tapvpwrvgnd_1 PHY_109 ();
- sky130_fd_sc_hd__tapvpwrvgnd_1 PHY_110 ();
- sky130_fd_sc_hd__tapvpwrvgnd_1 PHY_111 ();
- sky130_fd_sc_hd__tapvpwrvgnd_1 PHY_112 ();
  sky130_fd_sc_hd__clkbuf_16 clkbuf_0_serial_clock (.A(serial_clock),
     .X(clknet_0_serial_clock));
  sky130_fd_sc_hd__clkbuf_1 clkbuf_1_0_0_serial_clock (.A(clknet_0_serial_clock),

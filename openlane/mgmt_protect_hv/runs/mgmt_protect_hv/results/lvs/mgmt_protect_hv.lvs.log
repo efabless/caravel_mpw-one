@@ -1,0 +1,183 @@
+
+Cell sky130_fd_sc_hvl__conb_1 disconnected node: VGND
+Cell sky130_fd_sc_hvl__conb_1 disconnected node: VNB
+Cell sky130_fd_sc_hvl__conb_1 disconnected node: VPB
+Cell sky130_fd_sc_hvl__conb_1 disconnected node: VPWR
+Cell sky130_fd_sc_hvl__conb_1 disconnected node: HI
+Cell sky130_fd_sc_hvl__conb_1 disconnected node: LO
+Warning: Equate pins:  cell sky130_fd_sc_hvl__conb_1 has no definition, treated as a black box.
+
+Subcircuit pins:
+Circuit 1: sky130_fd_sc_hvl__conb_1        |Circuit 2: sky130_fd_sc_hvl__conb_1        
+-------------------------------------------|-------------------------------------------
+VGND                                       |VGND                                       
+VNB                                        |VNB                                        
+VPB                                        |VPB                                        
+VPWR                                       |VPWR                                       
+HI                                         |HI                                         
+---------------------------------------------------------------------------------------
+Cell pin lists are equivalent.
+Device classes sky130_fd_sc_hvl__conb_1 and sky130_fd_sc_hvl__conb_1 are equivalent.
+
+Cell sky130_fd_sc_hvl__lsbufhv2lv_1 disconnected node: A
+Cell sky130_fd_sc_hvl__lsbufhv2lv_1 disconnected node: LVPWR
+Cell sky130_fd_sc_hvl__lsbufhv2lv_1 disconnected node: VGND
+Cell sky130_fd_sc_hvl__lsbufhv2lv_1 disconnected node: VNB
+Cell sky130_fd_sc_hvl__lsbufhv2lv_1 disconnected node: VPB
+Cell sky130_fd_sc_hvl__lsbufhv2lv_1 disconnected node: VPWR
+Cell sky130_fd_sc_hvl__lsbufhv2lv_1 disconnected node: X
+Warning: Equate pins:  cell sky130_fd_sc_hvl__lsbufhv2lv_1 has no definition, treated as a black box.
+
+Subcircuit pins:
+Circuit 1: sky130_fd_sc_hvl__lsbufhv2lv_1  |Circuit 2: sky130_fd_sc_hvl__lsbufhv2lv_1  
+-------------------------------------------|-------------------------------------------
+A                                          |A                                          
+LVPWR                                      |LVPWR                                      
+VGND                                       |VGND                                       
+VNB                                        |VNB                                        
+VPB                                        |VPB                                        
+VPWR                                       |VPWR                                       
+X                                          |X                                          
+---------------------------------------------------------------------------------------
+Cell pin lists are equivalent.
+Device classes sky130_fd_sc_hvl__lsbufhv2lv_1 and sky130_fd_sc_hvl__lsbufhv2lv_1 are equivalent.
+
+Subcircuit summary:
+Circuit 1: mgmt_protect_hv                 |Circuit 2: mgmt_protect_hv                 
+-------------------------------------------|-------------------------------------------
+sky130_fd_sc_hvl__conb_1 (2)               |sky130_fd_sc_hvl__conb_1 (2)               
+sky130_fd_sc_hvl__lsbufhv2lv_1 (2)         |sky130_fd_sc_hvl__lsbufhv2lv_1 (2)         
+Number of devices: 4                       |Number of devices: 4                       
+Number of nets: 8 **Mismatch**             |Number of nets: 6 **Mismatch**             
+---------------------------------------------------------------------------------------
+NET mismatches: Class fragments follow (with fanout counts):
+Circuit 1: mgmt_protect_hv                 |Circuit 2: mgmt_protect_hv                 
+
+---------------------------------------------------------------------------------------
+Net: VPWR                                  |Net: VPWR                                  
+  sky130_fd_sc_hvl__conb_1/VPB = 2         |  sky130_fd_sc_hvl__conb_1/VPB = 2         
+  sky130_fd_sc_hvl__conb_1/VPWR = 2        |  sky130_fd_sc_hvl__conb_1/VPWR = 2        
+  sky130_fd_sc_hvl__lsbufhv2lv_1/VPB = 2   |  sky130_fd_sc_hvl__lsbufhv2lv_1/LVPWR = 2 
+  sky130_fd_sc_hvl__lsbufhv2lv_1/VPWR = 2  |  sky130_fd_sc_hvl__lsbufhv2lv_1/VPB = 2   
+                                           |  sky130_fd_sc_hvl__lsbufhv2lv_1/VPWR = 2  
+---------------------------------------------------------------------------------------
+
+---------------------------------------------------------------------------------------
+Net: mprj_vdd_logic1                       |(no matching net)                          
+  sky130_fd_sc_hvl__lsbufhv2lv_1/X = 1     |                                           
+                                           |                                           
+Net: mprj2_vdd_logic1                      |(no matching net)                          
+  sky130_fd_sc_hvl__lsbufhv2lv_1/X = 1     |                                           
+---------------------------------------------------------------------------------------
+
+---------------------------------------------------------------------------------------
+(no matching net)                          |Net: mprj2_vdd_logic1                      
+                                           |  sky130_fd_sc_hvl__lsbufhv2lv_1/X = 1     
+                                           |                                           
+(no matching net)                          |Net: mprj_vdd_logic1                       
+                                           |  sky130_fd_sc_hvl__lsbufhv2lv_1/X = 1     
+---------------------------------------------------------------------------------------
+
+---------------------------------------------------------------------------------------
+Net: mprj2_logic_high_lv/LVPWR             |(no matching net)                          
+  sky130_fd_sc_hvl__lsbufhv2lv_1/LVPWR = 1 |                                           
+                                           |                                           
+Net: mprj_logic_high_lv/LVPWR              |(no matching net)                          
+  sky130_fd_sc_hvl__lsbufhv2lv_1/LVPWR = 1 |                                           
+---------------------------------------------------------------------------------------
+
+---------------------------------------------------------------------------------------
+(no matching net)                          |Net: mprj_vdd_logic1_h                     
+                                           |  sky130_fd_sc_hvl__conb_1/HI = 1          
+                                           |  sky130_fd_sc_hvl__lsbufhv2lv_1/A = 1     
+                                           |                                           
+(no matching net)                          |Net: mprj2_vdd_logic1_h                    
+                                           |  sky130_fd_sc_hvl__conb_1/HI = 1          
+                                           |  sky130_fd_sc_hvl__lsbufhv2lv_1/A = 1     
+---------------------------------------------------------------------------------------
+
+---------------------------------------------------------------------------------------
+Net: mprj_logic_high_lv/A                  |(no matching net)                          
+  sky130_fd_sc_hvl__conb_1/HI = 1          |                                           
+  sky130_fd_sc_hvl__lsbufhv2lv_1/A = 1     |                                           
+                                           |                                           
+Net: mprj2_logic_high_lv/A                 |(no matching net)                          
+  sky130_fd_sc_hvl__conb_1/HI = 1          |                                           
+  sky130_fd_sc_hvl__lsbufhv2lv_1/A = 1     |                                           
+---------------------------------------------------------------------------------------
+DEVICE mismatches: Class fragments follow (with node fanout counts):
+Circuit 1: mgmt_protect_hv                 |Circuit 2: mgmt_protect_hv                 
+
+---------------------------------------------------------------------------------------
+(no matching instance)                     |Instance: mprj_logic_high_lv               
+                                           |  A = 2                                    
+                                           |  LVPWR = 10                               
+                                           |  VGND = 8                                 
+                                           |  VNB = 8                                  
+                                           |  VPB = 10                                 
+                                           |  VPWR = 10                                
+                                           |  X = 1                                    
+                                           |                                           
+(no matching instance)                     |Instance: mprj2_logic_high_lv              
+                                           |  A = 2                                    
+                                           |  LVPWR = 10                               
+                                           |  VGND = 8                                 
+                                           |  VNB = 8                                  
+                                           |  VPB = 10                                 
+                                           |  VPWR = 10                                
+                                           |  X = 1                                    
+---------------------------------------------------------------------------------------
+
+---------------------------------------------------------------------------------------
+Instance: sky130_fd_sc_hvl__lsbufhv2lv_1mp |(no matching instance)                     
+  A = 2                                    |                                           
+  LVPWR = 1                                |                                           
+  VGND = 8                                 |                                           
+  VNB = 8                                  |                                           
+  VPB = 8                                  |                                           
+  VPWR = 8                                 |                                           
+  X = 1                                    |                                           
+                                           |                                           
+Instance: sky130_fd_sc_hvl__lsbufhv2lv_1mp |(no matching instance)                     
+  A = 2                                    |                                           
+  LVPWR = 1                                |                                           
+  VGND = 8                                 |                                           
+  VNB = 8                                  |                                           
+  VPB = 8                                  |                                           
+  VPWR = 8                                 |                                           
+  X = 1                                    |                                           
+---------------------------------------------------------------------------------------
+
+---------------------------------------------------------------------------------------
+Instance: sky130_fd_sc_hvl__conb_1mprj2_lo |(no matching instance)                     
+  VGND = 8                                 |                                           
+  VNB = 8                                  |                                           
+  VPB = 8                                  |                                           
+  VPWR = 8                                 |                                           
+  HI = 2                                   |                                           
+                                           |                                           
+Instance: sky130_fd_sc_hvl__conb_1mprj_log |(no matching instance)                     
+  VGND = 8                                 |                                           
+  VNB = 8                                  |                                           
+  VPB = 8                                  |                                           
+  VPWR = 8                                 |                                           
+  HI = 2                                   |                                           
+---------------------------------------------------------------------------------------
+
+---------------------------------------------------------------------------------------
+(no matching instance)                     |Instance: mprj2_logic_high_hvl             
+                                           |  VGND = 8                                 
+                                           |  VNB = 8                                  
+                                           |  VPB = 10                                 
+                                           |  VPWR = 10                                
+                                           |  HI = 2                                   
+                                           |                                           
+(no matching instance)                     |Instance: mprj_logic_high_hvl              
+                                           |  VGND = 8                                 
+                                           |  VNB = 8                                  
+                                           |  VPB = 10                                 
+                                           |  VPWR = 10                                
+                                           |  HI = 2                                   
+---------------------------------------------------------------------------------------
+Netlists do not match.
+Netlists do not match.

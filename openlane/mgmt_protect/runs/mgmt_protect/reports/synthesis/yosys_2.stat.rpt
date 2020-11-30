@@ -1,25 +1,25 @@
 
-22. Printing statistics.
+21. Printing statistics.
 
 === mgmt_protect ===
 
-   Number of wires:                443
-   Number of wire bits:            954
-   Number of public wires:         113
-   Number of public wire bits:     624
+   Number of wires:                948
+   Number of wire bits:           1840
+   Number of public wires:         618
+   Number of public wire bits:    1510
    Number of memories:               0
    Number of memory bits:            0
    Number of processes:              0
-   Number of cells:                614
-     sky130_fd_sc_hd__buf_8          3
-     sky130_fd_sc_hd__conb_1        77
-     sky130_fd_sc_hd__einvp_8      202
-     sky130_fd_sc_hd__inv_2        330
-     sky130_fd_sc_hvl__conb_1        1
-     sky130_fd_sc_hvl__lsbufhv2lv_1      1
+   Number of cells:               1381
+     mgmt_protect_hv                 1
+     sky130_fd_sc_hd__buf_8          4
+     sky130_fd_sc_hd__conb_1       459
+     sky130_fd_sc_hd__einvp_8      330
+     sky130_fd_sc_hd__inv_2        331
+     sky130_fd_sc_hd__inv_8        128
+     sky130_fd_sc_hd__nand2_4      128
 
-   Area for cell type \sky130_fd_sc_hvl__conb_1 is unknown!
-   Area for cell type \sky130_fd_sc_hvl__lsbufhv2lv_1 is unknown!
+   Area for cell type \mgmt_protect_hv is unknown!
 
-   Chip area for module '\mgmt_protect': 6122.121600
+   Chip area for module '\mgmt_protect': 13340.294400
 

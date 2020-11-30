@@ -44,17 +44,6 @@
   {
    "pins": [
       [
-        "VGND",
-        "VPWR"
-      ], [
-        "VGND",
-        "VPWR"
-      ]
-   ]
-  },
-  {
-   "pins": [
-      [
         "A",
         "B",
         "X",
@@ -227,6 +216,17 @@
   {
    "pins": [
       [
+        "VGND",
+        "VPWR"
+      ], [
+        "VGND",
+        "VPWR"
+      ]
+   ]
+  },
+  {
+   "pins": [
+      [
         "HI",
         "VGND",
         "VNB",
@@ -276,6 +276,23 @@
       ], [
         "A",
         "X",
+        "VGND",
+        "VNB",
+        "VPB",
+        "VPWR"
+      ]
+   ]
+  },
+  {
+   "pins": [
+      [
+        "DIODE",
+        "VGND",
+        "VNB",
+        "VPB",
+        "VPWR"
+      ], [
+        "DIODE",
         "VGND",
         "VNB",
         "VPB",
@@ -292,7 +309,6 @@
        [
          ["sky130_fd_sc_hd__buf_2", 31],
          ["sky130_fd_sc_hd__dfrtp_4", 23],
-         ["sky130_fd_sc_hd__tapvpwrvgnd_1", 39],
          ["sky130_fd_sc_hd__and2_4", 2],
          ["sky130_fd_sc_hd__inv_2", 3],
          ["sky130_fd_sc_hd__nand2_4", 2],
@@ -301,13 +317,14 @@
          ["sky130_fd_sc_hd__or2_4", 2],
          ["sky130_fd_sc_hd__and3_4", 1],
          ["sky130_fd_sc_hd__clkbuf_1", 2],
+         ["sky130_fd_sc_hd__tapvpwrvgnd_1", 40],
          ["sky130_fd_sc_hd__conb_1", 1],
          ["sky130_fd_sc_hd__dfstp_4", 3],
-         ["sky130_fd_sc_hd__clkbuf_16", 1 ]
+         ["sky130_fd_sc_hd__clkbuf_16", 1],
+         ["sky130_fd_sc_hd__diode_2", 1 ]
        ], [
          ["sky130_fd_sc_hd__buf_2", 31 ],
          ["sky130_fd_sc_hd__dfrtp_4", 23 ],
-         ["sky130_fd_sc_hd__tapvpwrvgnd_1", 39 ],
          ["sky130_fd_sc_hd__and2_4", 2 ],
          ["sky130_fd_sc_hd__inv_2", 3 ],
          ["sky130_fd_sc_hd__nand2_4", 2 ],
@@ -316,9 +333,11 @@
          ["sky130_fd_sc_hd__or2_4", 2 ],
          ["sky130_fd_sc_hd__and3_4", 1 ],
          ["sky130_fd_sc_hd__clkbuf_1", 2 ],
+         ["sky130_fd_sc_hd__tapvpwrvgnd_1", 40 ],
          ["sky130_fd_sc_hd__conb_1", 1 ],
          ["sky130_fd_sc_hd__dfstp_4", 3 ],
-         ["sky130_fd_sc_hd__clkbuf_16", 1 ]
+         ["sky130_fd_sc_hd__clkbuf_16", 1 ],
+         ["sky130_fd_sc_hd__diode_2", 1 ]
        ]
    ],
    "nets": [
@@ -339,15 +358,15 @@
         "mgmt_gpio_in",
         "pad_gpio_slow_sel",
         "pad_gpio_vtrip_sel",
+        "pad_gpio_holdover",
         "pad_gpio_inenb",
         "pad_gpio_ib_mode_sel",
         "pad_gpio_ana_en",
         "pad_gpio_ana_sel",
-        "pad_gpio_holdover",
         "pad_gpio_ana_pol",
-        "serial_data_in",
         "serial_clock",
         "user_gpio_in",
+        "serial_data_in",
         "resetn",
         "mgmt_gpio_oeb",
         "pad_gpio_dm[2]",
@@ -366,15 +385,15 @@
         "mgmt_gpio_in",
         "pad_gpio_slow_sel",
         "pad_gpio_vtrip_sel",
+        "pad_gpio_holdover",
         "pad_gpio_inenb",
         "pad_gpio_ib_mode_sel",
         "pad_gpio_ana_en",
         "pad_gpio_ana_sel",
-        "pad_gpio_holdover",
         "pad_gpio_ana_pol",
-        "serial_data_in",
         "serial_clock",
         "user_gpio_in",
+        "serial_data_in",
         "resetn",
         "mgmt_gpio_oeb",
         "pad_gpio_dm[2]",

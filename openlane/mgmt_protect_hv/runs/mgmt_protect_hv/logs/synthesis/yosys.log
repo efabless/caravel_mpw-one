@@ -1,0 +1,106 @@
+
+ /----------------------------------------------------------------------------\
+ |                                                                            |
+ |  yosys -- Yosys Open SYnthesis Suite                                       |
+ |                                                                            |
+ |  Copyright (C) 2012 - 2020  Claire Wolf <claire@symbioticeda.com>          |
+ |                                                                            |
+ |  Permission to use, copy, modify, and/or distribute this software for any  |
+ |  purpose with or without fee is hereby granted, provided that the above    |
+ |  copyright notice and this permission notice appear in all copies.         |
+ |                                                                            |
+ |  THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES  |
+ |  WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF          |
+ |  MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR   |
+ |  ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES    |
+ |  WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN     |
+ |  ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF   |
+ |  OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.            |
+ |                                                                            |
+ \----------------------------------------------------------------------------/
+
+ Yosys 0.9+3621 (git sha1 84e9fa7, gcc 8.3.1 -fPIC -Os)
+
+[TCL: yosys -import] Command name collision: found pre-existing command `cd' -> skip.
+[TCL: yosys -import] Command name collision: found pre-existing command `eval' -> skip.
+[TCL: yosys -import] Command name collision: found pre-existing command `exec' -> skip.
+[TCL: yosys -import] Command name collision: found pre-existing command `read' -> skip.
+[TCL: yosys -import] Command name collision: found pre-existing command `trace' -> skip.
+
+1. Executing Liberty frontend.
+Imported 57 cell types from liberty file.
+
+2. Executing Liberty frontend.
+Imported 8 cell types from liberty file.
+
+3. Executing Verilog-2005 frontend: /project/openlane/mgmt_protect_hv/../../verilog/rtl/defines.v
+Parsing Verilog input from `/project/openlane/mgmt_protect_hv/../../verilog/rtl/defines.v' to AST representation.
+Successfully finished Verilog frontend.
+
+4. Executing Verilog-2005 frontend: /project/openlane/mgmt_protect_hv/../../verilog/rtl/mgmt_protect_hv.v
+Parsing Verilog input from `/project/openlane/mgmt_protect_hv/../../verilog/rtl/mgmt_protect_hv.v' to AST representation.
+Generating RTLIL representation for module `\mgmt_protect_hv'.
+Successfully finished Verilog frontend.
+
+5. Generating Graphviz representation of design.
+Writing dot description to `/project/openlane/mgmt_protect_hv/runs/mgmt_protect_hv/tmp/synthesis/hierarchy.dot'.
+Dumping module mgmt_protect_hv to page 1.
+
+6. Executing HIERARCHY pass (managing design hierarchy).
+
+6.1. Analyzing design hierarchy..
+Top module:  \mgmt_protect_hv
+
+6.2. Analyzing design hierarchy..
+Top module:  \mgmt_protect_hv
+Removed 0 unused modules.
+
+7. Printing statistics.
+
+=== mgmt_protect_hv ===
+
+   Number of wires:                  4
+   Number of wire bits:              4
+   Number of public wires:           4
+   Number of public wire bits:       4
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                  4
+     sky130_fd_sc_hvl__conb_1        2
+     sky130_fd_sc_hvl__lsbufhv2lv_1      2
+
+8. Executing SPLITNETS pass (splitting up multi-bit signals).
+
+9. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \mgmt_protect_hv..
+
+10. Executing CHECK pass (checking for obvious problems).
+checking module mgmt_protect_hv..
+found and reported 0 problems.
+
+11. Printing statistics.
+
+=== mgmt_protect_hv ===
+
+   Number of wires:                  4
+   Number of wire bits:              4
+   Number of public wires:           4
+   Number of public wire bits:       4
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                  4
+     sky130_fd_sc_hvl__conb_1        2
+     sky130_fd_sc_hvl__lsbufhv2lv_1      2
+
+   Area for cell type \sky130_fd_sc_hvl__lsbufhv2lv_1 is unknown!
+
+   Chip area for module '\mgmt_protect_hv': 19.536000
+
+12. Executing Verilog backend.
+Dumping module `\mgmt_protect_hv'.
+
+End of script. Logfile hash: 8b1a2bf723, CPU: user 0.25s system 0.01s, MEM: 21.05 MB peak
+Yosys 0.9+3621 (git sha1 84e9fa7, gcc 8.3.1 -fPIC -Os)
+Time spent: 50% 4x read_liberty (0 sec), 47% 2x stat (0 sec), ...

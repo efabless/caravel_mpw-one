@@ -1,0 +1,392 @@
+[
+  {
+   "pins": [
+      [
+        "VGND",
+        "VNB",
+        "VPB",
+        "VPWR",
+        "HI"
+      ], [
+        "VGND",
+        "VNB",
+        "VPB",
+        "VPWR",
+        "HI"
+      ]
+   ]
+  },
+  {
+   "pins": [
+      [
+        "A",
+        "LVPWR",
+        "VGND",
+        "VNB",
+        "VPB",
+        "VPWR",
+        "X"
+      ], [
+        "A",
+        "LVPWR",
+        "VGND",
+        "VNB",
+        "VPB",
+        "VPWR",
+        "X"
+      ]
+   ]
+  },
+  {
+   "name": [
+      "mgmt_protect_hv",
+      "mgmt_protect_hv"
+   ],
+   "devices": [
+       [
+         ["sky130_fd_sc_hvl__conb_1", 2],
+         ["sky130_fd_sc_hvl__lsbufhv2lv_1", 2 ]
+       ], [
+         ["sky130_fd_sc_hvl__conb_1", 2 ],
+         ["sky130_fd_sc_hvl__lsbufhv2lv_1", 2 ]
+       ]
+   ],
+   "nets": [
+    8,
+    6
+   ],
+   "badnets": [
+      [
+        [
+          [
+            "VPWR",
+            [
+              [ "sky130_fd_sc_hvl__conb_1", "VPB", 2 ],
+              [ "sky130_fd_sc_hvl__conb_1", "VPWR", 2 ],
+              [ "sky130_fd_sc_hvl__lsbufhv2lv_1", "VPB", 2 ],
+              [ "sky130_fd_sc_hvl__lsbufhv2lv_1", "VPWR", 2 ]
+            ]
+          ]
+        ], [
+          [
+            "VPWR",
+            [
+              [ "sky130_fd_sc_hvl__conb_1", "VPB", 2 ],
+              [ "sky130_fd_sc_hvl__conb_1", "VPWR", 2 ],
+              [ "sky130_fd_sc_hvl__lsbufhv2lv_1", "LVPWR", 2 ],
+              [ "sky130_fd_sc_hvl__lsbufhv2lv_1", "VPB", 2 ],
+              [ "sky130_fd_sc_hvl__lsbufhv2lv_1", "VPWR", 2 ]
+            ]
+          ]
+        ]
+      ],
+      [
+        [
+          [
+            "mprj_vdd_logic1",
+            [
+              [ "sky130_fd_sc_hvl__lsbufhv2lv_1", "X", 1 ]
+            ]
+          ],
+          [
+            "mprj2_vdd_logic1",
+            [
+              [ "sky130_fd_sc_hvl__lsbufhv2lv_1", "X", 1 ]
+            ]
+          ]
+        ], [
+          [
+            "(no matching net)",
+            [
+              [ "", "", 0 ]
+            ]
+          ],
+          [
+            "(no matching net)",
+            [
+              [ "", "", 0 ]
+            ]
+          ]
+        ]
+      ],
+      [
+        [
+          [
+            "(no matching net)",
+            [
+              [ "", "", 0 ]
+            ]
+          ],
+          [
+            "(no matching net)",
+            [
+              [ "", "", 0 ]
+            ]
+          ]
+        ], [
+          [
+            "mprj2_vdd_logic1",
+            [
+              [ "sky130_fd_sc_hvl__lsbufhv2lv_1", "X", 1 ]
+            ]
+          ],
+          [
+            "mprj_vdd_logic1",
+            [
+              [ "sky130_fd_sc_hvl__lsbufhv2lv_1", "X", 1 ]
+            ]
+          ]
+        ]
+      ],
+      [
+        [
+          [
+            "mprj2_logic_high_lv/LVPWR",
+            [
+              [ "sky130_fd_sc_hvl__lsbufhv2lv_1", "LVPWR", 1 ]
+            ]
+          ],
+          [
+            "mprj_logic_high_lv/LVPWR",
+            [
+              [ "sky130_fd_sc_hvl__lsbufhv2lv_1", "LVPWR", 1 ]
+            ]
+          ]
+        ], [
+          [
+            "(no matching net)",
+            [
+              [ "", "", 0 ]
+            ]
+          ],
+          [
+            "(no matching net)",
+            [
+              [ "", "", 0 ]
+            ]
+          ]
+        ]
+      ],
+      [
+        [
+          [
+            "(no matching net)",
+            [
+              [ "", "", 0 ]
+            ]
+          ],
+          [
+            "(no matching net)",
+            [
+              [ "", "", 0 ]
+            ]
+          ]
+        ], [
+          [
+            "mprj_vdd_logic1_h",
+            [
+              [ "sky130_fd_sc_hvl__conb_1", "HI", 1 ],
+              [ "sky130_fd_sc_hvl__lsbufhv2lv_1", "A", 1 ]
+            ]
+          ],
+          [
+            "mprj2_vdd_logic1_h",
+            [
+              [ "sky130_fd_sc_hvl__conb_1", "HI", 1 ],
+              [ "sky130_fd_sc_hvl__lsbufhv2lv_1", "A", 1 ]
+            ]
+          ]
+        ]
+      ],
+      [
+        [
+          [
+            "mprj_logic_high_lv/A",
+            [
+              [ "sky130_fd_sc_hvl__conb_1", "HI", 1 ],
+              [ "sky130_fd_sc_hvl__lsbufhv2lv_1", "A", 1 ]
+            ]
+          ],
+          [
+            "mprj2_logic_high_lv/A",
+            [
+              [ "sky130_fd_sc_hvl__conb_1", "HI", 1 ],
+              [ "sky130_fd_sc_hvl__lsbufhv2lv_1", "A", 1 ]
+            ]
+          ]
+        ], [
+          [
+            "(no matching net)",
+            [
+              [ "", "", 0 ]
+            ]
+          ],
+          [
+            "(no matching net)",
+            [
+              [ "", "", 0 ]
+            ]
+          ]
+        ]
+      ]
+   ],
+   "badelements": [
+      [
+        [
+          [
+            "(no matching instance)",
+            [
+              [ "", 0 ]
+            ]
+          ],
+          [
+            "(no matching instance)",
+            [
+              [ "", 0 ]
+            ]
+          ]
+        ], [
+          [
+            "mprj_logic_high_lv",
+            [
+              [ "A", 2 ],
+              [ "LVPWR", 10 ],
+              [ "VGND", 8 ],
+              [ "VNB", 8 ],
+              [ "VPB", 10 ],
+              [ "VPWR", 10 ],
+              [ "X", 1 ]
+            ]
+          ],
+          [
+            "mprj2_logic_high_lv",
+            [
+              [ "A", 2 ],
+              [ "LVPWR", 10 ],
+              [ "VGND", 8 ],
+              [ "VNB", 8 ],
+              [ "VPB", 10 ],
+              [ "VPWR", 10 ],
+              [ "X", 1 ]
+            ]
+          ]
+        ]
+      ],
+      [
+        [
+          [
+            "sky130_fd_sc_hvl__lsbufhv2lv_1mprj2_logic_high_lv",
+            [
+              [ "A", 2 ],
+              [ "LVPWR", 1 ],
+              [ "VGND", 8 ],
+              [ "VNB", 8 ],
+              [ "VPB", 8 ],
+              [ "VPWR", 8 ],
+              [ "X", 1 ]
+            ]
+          ],
+          [
+            "sky130_fd_sc_hvl__lsbufhv2lv_1mprj_logic_high_lv",
+            [
+              [ "A", 2 ],
+              [ "LVPWR", 1 ],
+              [ "VGND", 8 ],
+              [ "VNB", 8 ],
+              [ "VPB", 8 ],
+              [ "VPWR", 8 ],
+              [ "X", 1 ]
+            ]
+          ]
+        ], [
+          [
+            "(no matching instance)",
+            [
+              [ "", 0 ]
+            ]
+          ],
+          [
+            "(no matching instance)",
+            [
+              [ "", 0 ]
+            ]
+          ]
+        ]
+      ],
+      [
+        [
+          [
+            "sky130_fd_sc_hvl__conb_1mprj2_logic_high_hvl",
+            [
+              [ "VGND", 8 ],
+              [ "VNB", 8 ],
+              [ "VPB", 8 ],
+              [ "VPWR", 8 ],
+              [ "HI", 2 ]
+            ]
+          ],
+          [
+            "sky130_fd_sc_hvl__conb_1mprj_logic_high_hvl",
+            [
+              [ "VGND", 8 ],
+              [ "VNB", 8 ],
+              [ "VPB", 8 ],
+              [ "VPWR", 8 ],
+              [ "HI", 2 ]
+            ]
+          ]
+        ], [
+          [
+            "(no matching instance)",
+            [
+              [ "", 0 ]
+            ]
+          ],
+          [
+            "(no matching instance)",
+            [
+              [ "", 0 ]
+            ]
+          ]
+        ]
+      ],
+      [
+        [
+          [
+            "(no matching instance)",
+            [
+              [ "", 0 ]
+            ]
+          ],
+          [
+            "(no matching instance)",
+            [
+              [ "", 0 ]
+            ]
+          ]
+        ], [
+          [
+            "mprj2_logic_high_hvl",
+            [
+              [ "VGND", 8 ],
+              [ "VNB", 8 ],
+              [ "VPB", 10 ],
+              [ "VPWR", 10 ],
+              [ "HI", 2 ]
+            ]
+          ],
+          [
+            "mprj_logic_high_hvl",
+            [
+              [ "VGND", 8 ],
+              [ "VNB", 8 ],
+              [ "VPB", 10 ],
+              [ "VPWR", 10 ],
+              [ "HI", 2 ]
+            ]
+          ]
+        ]
+      ]
+   ]
+  }
+]

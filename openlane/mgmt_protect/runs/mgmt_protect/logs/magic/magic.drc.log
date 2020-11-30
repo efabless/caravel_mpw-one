@@ -1,0 +1,142 @@
+
+Magic 8.3 revision 87 - Compiled on Mon Nov 23 17:53:03 UTC 2020.
+Starting magic under Tcl interpreter
+Using the terminal as the console.
+Using NULL graphics device.
+Processing system .magicrc file
+Sourcing design .magicrc for technology sky130A ...
+2 Magic internal units = 1 Lambda
+Input style sky130: scaleFactor=2, multiplier=2
+Scaled tech values by 2 / 1 to match internal grid scaling
+Loading sky130A Device Generator Menu ...
+Loading "/openLANE_flow/scripts/magic_drc.tcl" from command line.
+Warning: Calma reading is not undoable!  I hope that's OK.
+Library written using GDS-II Release 3.0
+Library name: mgmt_protect
+Reading "sky130_fd_sc_hd__decap_4".
+Error while reading cell "sky130_fd_sc_hd__decap_4" (byte position 142): Unknown layer/datatype in boundary, layer=236 type=0
+Reading "sky130_fd_sc_hd__decap_12".
+Error while reading cell "sky130_fd_sc_hd__decap_12" (byte position 2934): Unknown layer/datatype in boundary, layer=236 type=0
+Reading "sky130_fd_sc_hd__decap_3".
+Error while reading cell "sky130_fd_sc_hd__decap_3" (byte position 7068): Unknown layer/datatype in boundary, layer=236 type=0
+Reading "sky130_fd_sc_hd__decap_8".
+Error while reading cell "sky130_fd_sc_hd__decap_8" (byte position 9730): Unknown layer/datatype in boundary, layer=236 type=0
+Reading "sky130_fd_sc_hd__fill_1".
+Reading "sky130_fd_sc_hd__conb_1".
+Error while reading cell "sky130_fd_sc_hd__conb_1" (byte position 14540): Unknown layer/datatype in boundary, layer=236 type=0
+Reading "sky130_fd_sc_hd__fill_2".
+Reading "sky130_fd_sc_hd__diode_2".
+Error while reading cell "sky130_fd_sc_hd__diode_2" (byte position 19312): Unknown layer/datatype in boundary, layer=236 type=0
+Reading "sky130_fd_sc_hd__tapvpwrvgnd_1".
+Reading "sky130_fd_sc_hd__einvp_8".
+Error while reading cell "sky130_fd_sc_hd__einvp_8" (byte position 24480): Unknown layer/datatype in boundary, layer=236 type=0
+Reading "sky130_fd_sc_hd__inv_2".
+Error while reading cell "sky130_fd_sc_hd__inv_2" (byte position 37156): Unknown layer/datatype in boundary, layer=236 type=0
+Reading "sky130_fd_sc_hd__decap_6".
+Error while reading cell "sky130_fd_sc_hd__decap_6" (byte position 40960): Unknown layer/datatype in boundary, layer=236 type=0
+Reading "sky130_fd_sc_hd__nand2_4".
+Error while reading cell "sky130_fd_sc_hd__nand2_4" (byte position 44102): Unknown layer/datatype in boundary, layer=236 type=0
+Reading "sky130_fd_sc_hd__inv_8".
+Error while reading cell "sky130_fd_sc_hd__inv_8" (byte position 51738): Unknown layer/datatype in boundary, layer=236 type=0
+Reading "sky130_fd_sc_hvl__decap_8".
+CIF file read warning: CIF style sky130: units rescaled by factor of 5 / 1
+Error while reading cell "sky130_fd_sc_hvl__decap_8" (byte position 66058): Unknown layer/datatype in boundary, layer=236 type=0
+Reading "sky130_fd_sc_hvl__fill_2".
+Error while reading cell "sky130_fd_sc_hvl__fill_2" (byte position 67662): Unknown layer/datatype in boundary, layer=236 type=0
+Reading "sky130_fd_sc_hvl__conb_1".
+Error while reading cell "sky130_fd_sc_hvl__conb_1" (byte position 71474): Unknown layer/datatype in boundary, layer=236 type=0
+Reading "sky130_fd_sc_hvl__decap_4".
+Error while reading cell "sky130_fd_sc_hvl__decap_4" (byte position 77928): Unknown layer/datatype in boundary, layer=236 type=0
+Reading "sky130_fd_sc_hvl__fill_1".
+Error while reading cell "sky130_fd_sc_hvl__fill_1" (byte position 82156): Unknown layer/datatype in boundary, layer=236 type=0
+Reading "sky130_fd_sc_hvl__lsbufhv2lv_1".
+Error while reading cell "sky130_fd_sc_hvl__lsbufhv2lv_1" (byte position 97518): Unknown layer/datatype in boundary, layer=236 type=0
+Reading "mgmt_protect_hv".
+Reading "sky130_fd_sc_hd__buf_8".
+Error while reading cell "sky130_fd_sc_hd__buf_8" (byte position 121976): Unknown layer/datatype in boundary, layer=236 type=0
+Reading "mgmt_protect".
+    100 uses
+    200 uses
+    300 uses
+    400 uses
+    500 uses
+    600 uses
+    700 uses
+    800 uses
+    900 uses
+    1000 uses
+    1100 uses
+    1200 uses
+    1300 uses
+    1400 uses
+    1500 uses
+    1600 uses
+    1700 uses
+    1800 uses
+    1900 uses
+    2000 uses
+    2100 uses
+    2200 uses
+    2300 uses
+    2400 uses
+    2500 uses
+    2600 uses
+    2700 uses
+    2800 uses
+    2900 uses
+    3000 uses
+    3100 uses
+    3200 uses
+    3300 uses
+    3400 uses
+    3500 uses
+    3600 uses
+    3700 uses
+    3800 uses
+    3900 uses
+    4000 uses
+    4100 uses
+    4200 uses
+    4300 uses
+    4400 uses
+    4500 uses
+    4600 uses
+    4700 uses
+    4800 uses
+    4900 uses
+    5000 uses
+    5100 uses
+    5200 uses
+    5300 uses
+    5400 uses
+    5500 uses
+    5600 uses
+    5700 uses
+    5800 uses
+    5900 uses
+    6000 uses
+    6100 uses
+    6200 uses
+    6300 uses
+    6400 uses
+    6500 uses
+    6600 uses
+    6700 uses
+    6800 uses
+    6900 uses
+    7000 uses
+    7100 uses
+    7200 uses
+    7300 uses
+    7400 uses
+    7500 uses
+    7600 uses
+[INFO]: Loading mgmt_protect
+
+DRC style is now "drc(full)"
+Loading DRC CIF style.
+[INFO]: COUNT: 36080
+[INFO]: Should be divided by 3 or 4
+[INFO]: DRC Checking DONE (/project/openlane/mgmt_protect/runs/mgmt_protect/logs/magic/magic.drc)
+[INFO]: Saving mag view with DRC errors(/project/openlane/mgmt_protect/runs/mgmt_protect/results/magic/mgmt_protect.drc.mag)
+[INFO]: Saved

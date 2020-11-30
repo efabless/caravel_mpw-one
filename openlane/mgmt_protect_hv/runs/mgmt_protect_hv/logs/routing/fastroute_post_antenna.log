@@ -1,0 +1,181 @@
+OpenROAD 0.9.0 d03ebfc244
+This program is licensed under the BSD-3 license. See the LICENSE file for details. 
+Components of this program may be licensed under more restrictive licenses which must be honored.
+Error: cannot open '/.openroad'.
+Warning: /home/xrex/usr/devel/pdks/sky130A/libs.ref/sky130_fd_sc_hvl/lib/sky130_fd_sc_hvl__tt_025C_3v30.lib, line 35 default_operating_condition tt_025C_3v30 not found.
+Warning: /home/xrex/usr/devel/pdks/sky130A/libs.ref/sky130_fd_sc_hvl/lib/sky130_fd_sc_hvl__tt_025C_3v30_lv1v80.lib, line 31 default_operating_condition tt_025C_3v30_lv1v80 not found.
+Notice 0: Reading LEF file:  /project/openlane/mgmt_protect_hv/runs/mgmt_protect_hv/tmp/merged_unpadded.lef
+Notice 0:     Created 13 technology layers
+Notice 0:     Created 25 technology vias
+Notice 0:     Created 69 library cells
+Notice 0: Finished LEF file:  /project/openlane/mgmt_protect_hv/runs/mgmt_protect_hv/tmp/merged_unpadded.lef
+Notice 0: 
+Reading DEF file: /project/openlane/mgmt_protect_hv/runs/mgmt_protect_hv/tmp/routing/fastroute.def
+Notice 0: Design: mgmt_protect_hv
+Notice 0:     Created 4 pins.
+Notice 0:     Created 4 components and 26 component-terminals.
+Notice 0:     Created 2 special nets and 18 connections.
+Notice 0:     Created 4 nets and 6 connections.
+Notice 0: Finished DEF file: /project/openlane/mgmt_protect_hv/runs/mgmt_protect_hv/tmp/routing/fastroute.def
+[PARAMS] Min routing layer: 2
+[PARAMS] Max routing layer: 6
+[PARAMS] Global adjustment: 0
+[PARAMS] Unidirectional routing: 1
+[PARAMS] Grid origin: (-1, -1)
+[INFO] #DB Obstructions: 0
+[INFO] #DB Obstacles: 228
+[INFO] #DB Macros: 0
+[INFO] Found 0 clock nets
+[INFO] Minimum degree: 2
+[INFO] Maximum degree: 2
+[INFO] Processing 106 obstacles on layer 1
+[INFO] Processing 29 obstacles on layer 2
+[INFO] Processing 5 obstacles on layer 5
+[INFO] Processing 5 obstacles on layer 6
+[INFO] Reducing resources of layer 1 by 99%
+[INFO] WIRELEN : 6, WIRELEN1 : 0
+[INFO] NumSeg  : 3
+[INFO] NumShift: 0
+First L Route
+[INFO] WIRELEN : 6, WIRELEN1 : 6
+[INFO] NumSeg  : 3
+[INFO] NumShift: 0
+[Overflow Report] Total hCap    : 188
+[Overflow Report] Total vCap    : 138
+[Overflow Report] Total Usage   : 6
+[Overflow Report] Max H Overflow: 0
+[Overflow Report] Max V Overflow: 0
+[Overflow Report] Max Overflow  : 0
+[Overflow Report] Num Overflow e: 0
+[Overflow Report] H   Overflow  : 0
+[Overflow Report] V   Overflow  : 0
+[Overflow Report] Final Overflow: 0
+
+Second L Route
+[Overflow Report] Total hCap    : 188
+[Overflow Report] Total vCap    : 138
+[Overflow Report] Total Usage   : 6
+[Overflow Report] Max H Overflow: 0
+[Overflow Report] Max V Overflow: 0
+[Overflow Report] Max Overflow  : 0
+[Overflow Report] Num Overflow e: 0
+[Overflow Report] H   Overflow  : 0
+[Overflow Report] V   Overflow  : 0
+[Overflow Report] Final Overflow: 0
+
+First Z Route
+[Overflow Report] Total hCap    : 188
+[Overflow Report] Total vCap    : 138
+[Overflow Report] Total Usage   : 6
+[Overflow Report] Max H Overflow: 0
+[Overflow Report] Max V Overflow: 0
+[Overflow Report] Max Overflow  : 0
+[Overflow Report] Num Overflow e: 0
+[Overflow Report] H   Overflow  : 0
+[Overflow Report] V   Overflow  : 0
+[Overflow Report] Final Overflow: 0
+
+[INFO] LV routing round 0, enlarge 10 
+[INFO] 10 threshold, 10 expand
+[Overflow Report] total Usage   : 6
+[Overflow Report] Max H Overflow: 0
+[Overflow Report] Max V Overflow: 0
+[Overflow Report] Max Overflow  : 0
+[Overflow Report] Num Overflow e: 0
+[Overflow Report] H   Overflow  : 0
+[Overflow Report] V   Overflow  : 0
+[Overflow Report] Final Overflow: 0
+
+[INFO] LV routing round 1, enlarge 15 
+[INFO] 5 threshold, 15 expand
+[Overflow Report] total Usage   : 6
+[Overflow Report] Max H Overflow: 0
+[Overflow Report] Max V Overflow: 0
+[Overflow Report] Max Overflow  : 0
+[Overflow Report] Num Overflow e: 0
+[Overflow Report] H   Overflow  : 0
+[Overflow Report] V   Overflow  : 0
+[Overflow Report] Final Overflow: 0
+
+[INFO] LV routing round 2, enlarge 20 
+[INFO] 1 threshold, 20 expand
+[Overflow Report] total Usage   : 6
+[Overflow Report] Max H Overflow: 0
+[Overflow Report] Max V Overflow: 0
+[Overflow Report] Max Overflow  : 0
+[Overflow Report] Num Overflow e: 0
+[Overflow Report] H   Overflow  : 0
+[Overflow Report] V   Overflow  : 0
+[Overflow Report] Final Overflow: 0
+
+Usage checked
+Maze routing finished
+[INFO] P3 runtime: 0.000000 sec
+[INFO] Final 2D results: 
+[Overflow Report] total Usage   : 6
+[Overflow Report] Max H Overflow: 0
+[Overflow Report] Max V Overflow: 0
+[Overflow Report] Max Overflow  : 0
+[Overflow Report] Num Overflow e: 0
+[Overflow Report] H   Overflow  : 0
+[Overflow Report] V   Overflow  : 0
+[Overflow Report] Final Overflow: 0
+
+Layer Assignment Begins
+Layer assignment finished
+[INFO] 2D + Layer Assignment Runtime: 0.000000 sec
+Post Processing Begins 
+Post Processsing finished
+ Starting via filling
+[INFO] Via related to pin nodes 8
+[INFO] Via related stiner nodes 0
+Via filling finished
+
+Final usage/overflow report: 
+[INFO] Usage per layer: 
+    Layer 1 usage: 0
+    Layer 2 usage: 4
+    Layer 3 usage: 2
+    Layer 4 usage: 0
+    Layer 5 usage: 0
+    Layer 6 usage: 0
+
+[INFO] Capacity per layer: 
+    Layer 1 capacity: 0
+    Layer 2 capacity: 112
+    Layer 3 capacity: 100
+    Layer 4 capacity: 64
+    Layer 5 capacity: 38
+    Layer 6 capacity: 12
+
+[INFO] Use percentage per layer: 
+    Layer 1 use percentage: 0.0%
+    Layer 2 use percentage: 3.57%
+    Layer 3 use percentage: 2.00%
+    Layer 4 use percentage: 0.00%
+    Layer 5 use percentage: 0.00%
+    Layer 6 use percentage: 0.00%
+
+[INFO] Overflow per layer: 
+    Layer 1 overflow: 0
+    Layer 2 overflow: 0
+    Layer 3 overflow: 0
+    Layer 4 overflow: 0
+    Layer 5 overflow: 0
+    Layer 6 overflow: 0
+
+[Overflow Report] Total Usage   : 6
+[Overflow Report] Total Capacity: 326
+[Overflow Report] Max H Overflow: 0
+[Overflow Report] Max V Overflow: 0
+[Overflow Report] Max Overflow  : 0
+[Overflow Report] H   Overflow  : 0
+[Overflow Report] V   Overflow  : 0
+[Overflow Report] Final Overflow: 0
+
+[INFO] Final usage          : 6
+[INFO] Final number of vias : 10
+[INFO] Final usage 3D       : 36
+[INFO] Total wirelength: 122 um
+[INFO] Num routed nets: 4
+[WARN]: No CLOCK_PORT found. Skipping STA...

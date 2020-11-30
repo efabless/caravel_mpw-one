@@ -2287,8 +2287,6 @@ module caravel(vddio, vssio, vdda, vssa, vccd, vssd, vdda1, vdda2, vssa1, vssa2,
     .user_gpio_oeb(\user_io_oeb[0] ),
     .user_gpio_out(\user_io_out[0] )
   );
-  defparam \gpio_control_bidir[0] .DM_INIT = 3'b110;
-  defparam \gpio_control_bidir[0] .OENB_INIT = 1'b1;
   gpio_control_block \gpio_control_bidir[1]  (
     .mgmt_gpio_in(\mgmt_io_in[1] ),
     .mgmt_gpio_oeb(sdo_outenb),
@@ -2313,8 +2311,6 @@ module caravel(vddio, vssio, vdda, vssa, vccd, vssd, vdda1, vdda2, vssa1, vssa2,
     .user_gpio_oeb(\user_io_oeb[1] ),
     .user_gpio_out(\user_io_out[1] )
   );
-  defparam \gpio_control_bidir[1] .DM_INIT = 3'b110;
-  defparam \gpio_control_bidir[1] .OENB_INIT = 1'b1;
   gpio_control_block \gpio_control_in[10]  (
     .mgmt_gpio_in(\mgmt_io_in[10] ),
     .mgmt_gpio_oeb(1'b1),
@@ -3380,7 +3376,6 @@ module caravel(vddio, vssio, vdda, vssa, vccd, vssd, vdda1, vdda2, vssa1, vssa2,
   user_id_programming user_id_value (
     .mask_rev({ \mask_rev[31] , \mask_rev[30] , \mask_rev[29] , \mask_rev[28] , \mask_rev[27] , \mask_rev[26] , \mask_rev[25] , \mask_rev[24] , \mask_rev[23] , \mask_rev[22] , \mask_rev[21] , \mask_rev[20] , \mask_rev[19] , \mask_rev[18] , \mask_rev[17] , \mask_rev[16] , \mask_rev[15] , \mask_rev[14] , \mask_rev[13] , \mask_rev[12] , \mask_rev[11] , \mask_rev[10] , \mask_rev[9] , \mask_rev[8] , \mask_rev[7] , \mask_rev[6] , \mask_rev[5] , \mask_rev[4] , \mask_rev[3] , \mask_rev[2] , \mask_rev[1] , \mask_rev[0]  })
   );
-  defparam user_id_value.USER_PROJECT_ID = 32'b00000000000000000000000000000000;
   assign \gpio_serial_link_shifted[37]  = \gpio_serial_link[36] ;
   assign \gpio_serial_link_shifted[36]  = \gpio_serial_link[35] ;
   assign \gpio_serial_link_shifted[35]  = \gpio_serial_link[34] ;

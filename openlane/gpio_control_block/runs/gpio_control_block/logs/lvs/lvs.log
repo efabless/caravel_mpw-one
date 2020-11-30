@@ -5,11 +5,12 @@ Generating JSON file result
 Reading netlist file /project/openlane/gpio_control_block/runs/gpio_control_block/results/magic/gpio_control_block.spice
 Reading netlist file /project/openlane/gpio_control_block/runs/gpio_control_block/results/lvs/gpio_control_block.lvs.powered.v
 Warning:  A case-insensitive file has been read and so the	verilog file must be treated case-insensitive to match.
+Creating placeholder cell definition for module sky130_fd_sc_hd__diode_2.
 Creating placeholder cell definition for module sky130_fd_sc_hd__decap_12.
 Creating placeholder cell definition for module sky130_fd_sc_hd__decap_4.
 Creating placeholder cell definition for module sky130_fd_sc_hd__decap_6.
-Creating placeholder cell definition for module sky130_fd_sc_hd__decap_3.
 Creating placeholder cell definition for module sky130_fd_sc_hd__decap_8.
+Creating placeholder cell definition for module sky130_fd_sc_hd__decap_3.
 Creating placeholder cell definition for module sky130_fd_sc_hd__fill_1.
 Creating placeholder cell definition for module sky130_fd_sc_hd__fill_2.
 Creating placeholder cell definition for module sky130_fd_sc_hd__tapvpwrvgnd_1.
@@ -45,14 +46,6 @@ Circuit sky130_fd_sc_hd__dfrtp_4 contains 0 device instances.
 Circuit contains 0 nets.
 
 Circuit sky130_fd_sc_hd__dfrtp_4 contains no devices.
-Contents of circuit 1:  Circuit: 'sky130_fd_sc_hd__tapvpwrvgnd_1'
-Circuit sky130_fd_sc_hd__tapvpwrvgnd_1 contains 0 device instances.
-Circuit contains 0 nets, and 2 disconnected pins.
-Contents of circuit 2:  Circuit: 'sky130_fd_sc_hd__tapvpwrvgnd_1'
-Circuit sky130_fd_sc_hd__tapvpwrvgnd_1 contains 0 device instances.
-Circuit contains 0 nets.
-
-Circuit sky130_fd_sc_hd__tapvpwrvgnd_1 contains no devices.
 Contents of circuit 1:  Circuit: 'sky130_fd_sc_hd__and2_4'
 Circuit sky130_fd_sc_hd__and2_4 contains 0 device instances.
 Circuit contains 0 nets, and 7 disconnected pins.
@@ -117,6 +110,14 @@ Circuit sky130_fd_sc_hd__clkbuf_1 contains 0 device instances.
 Circuit contains 0 nets.
 
 Circuit sky130_fd_sc_hd__clkbuf_1 contains no devices.
+Contents of circuit 1:  Circuit: 'sky130_fd_sc_hd__tapvpwrvgnd_1'
+Circuit sky130_fd_sc_hd__tapvpwrvgnd_1 contains 0 device instances.
+Circuit contains 0 nets, and 2 disconnected pins.
+Contents of circuit 2:  Circuit: 'sky130_fd_sc_hd__tapvpwrvgnd_1'
+Circuit sky130_fd_sc_hd__tapvpwrvgnd_1 contains 0 device instances.
+Circuit contains 0 nets.
+
+Circuit sky130_fd_sc_hd__tapvpwrvgnd_1 contains no devices.
 Contents of circuit 1:  Circuit: 'sky130_fd_sc_hd__conb_1'
 Circuit sky130_fd_sc_hd__conb_1 contains 0 device instances.
 Circuit contains 0 nets, and 6 disconnected pins.
@@ -141,8 +142,16 @@ Circuit sky130_fd_sc_hd__clkbuf_16 contains 0 device instances.
 Circuit contains 0 nets.
 
 Circuit sky130_fd_sc_hd__clkbuf_16 contains no devices.
+Contents of circuit 1:  Circuit: 'sky130_fd_sc_hd__diode_2'
+Circuit sky130_fd_sc_hd__diode_2 contains 0 device instances.
+Circuit contains 0 nets, and 5 disconnected pins.
+Contents of circuit 2:  Circuit: 'sky130_fd_sc_hd__diode_2'
+Circuit sky130_fd_sc_hd__diode_2 contains 0 device instances.
+Circuit contains 0 nets.
+
+Circuit sky130_fd_sc_hd__diode_2 contains no devices.
 Contents of circuit 1:  Circuit: 'gpio_control_block'
-Circuit gpio_control_block contains 113 device instances.
+Circuit gpio_control_block contains 115 device instances.
   Class: sky130_fd_sc_hd__clkbuf_16 instances:   1
   Class: sky130_fd_sc_hd__buf_2 instances:  31
   Class: sky130_fd_sc_hd__dfstp_4 instances:   3
@@ -155,11 +164,12 @@ Circuit gpio_control_block contains 113 device instances.
   Class: sky130_fd_sc_hd__einvp_8 instances:   1
   Class: sky130_fd_sc_hd__nand2_4 instances:   2
   Class: sky130_fd_sc_hd__and2_4 instances:   2
+  Class: sky130_fd_sc_hd__diode_2 instances:   1
   Class: sky130_fd_sc_hd__a32o_4 instances:   2
-  Class: sky130_fd_sc_hd__tapvpwrvgnd_1 instances:  39
+  Class: sky130_fd_sc_hd__tapvpwrvgnd_1 instances:  40
 Circuit contains 85 nets.
 Contents of circuit 2:  Circuit: 'gpio_control_block'
-Circuit gpio_control_block contains 113 device instances.
+Circuit gpio_control_block contains 115 device instances.
   Class: sky130_fd_sc_hd__clkbuf_16 instances:   1
   Class: sky130_fd_sc_hd__buf_2 instances:  31
   Class: sky130_fd_sc_hd__dfstp_4 instances:   3
@@ -172,11 +182,12 @@ Circuit gpio_control_block contains 113 device instances.
   Class: sky130_fd_sc_hd__einvp_8 instances:   1
   Class: sky130_fd_sc_hd__nand2_4 instances:   2
   Class: sky130_fd_sc_hd__and2_4 instances:   2
+  Class: sky130_fd_sc_hd__diode_2 instances:   1
   Class: sky130_fd_sc_hd__a32o_4 instances:   2
-  Class: sky130_fd_sc_hd__tapvpwrvgnd_1 instances:  39
+  Class: sky130_fd_sc_hd__tapvpwrvgnd_1 instances:  40
 Circuit contains 84 nets.
 
-Circuit 1 contains 113 devices, Circuit 2 contains 113 devices.
+Circuit 1 contains 115 devices, Circuit 2 contains 115 devices.
 Circuit 1 contains 84 nets,    Circuit 2 contains 84 nets.
 
 Circuits match with 1 symmetry.

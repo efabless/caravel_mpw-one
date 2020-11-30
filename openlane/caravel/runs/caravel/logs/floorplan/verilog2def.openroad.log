@@ -5,29 +5,10 @@ Error: cannot open '/.openroad'.
 Warning: /home/xrex/usr/devel/pdks/sky130A/libs.ref/sky130_fd_sc_hvl/lib/sky130_fd_sc_hvl__tt_025C_3v30.lib, line 35 default_operating_condition tt_025C_3v30 not found.
 Warning: /home/xrex/usr/devel/pdks/sky130A/libs.ref/sky130_fd_sc_hvl/lib/sky130_fd_sc_hvl__tt_025C_3v30_lv1v80.lib, line 31 default_operating_condition tt_025C_3v30_lv1v80 not found.
 Notice 0: Reading LEF file:  /project/openlane/caravel/runs/caravel/tmp/merged_unpadded.lef
-Notice 0: error: undefined layer (M4M5_PR_C) referenced
-Notice 0: error: undefined layer (M4M5_PR_C) referenced
-Notice 0: error: undefined layer (M4M5_PR_C) referenced
-Notice 0: error: undefined layer (M4M5_PR_C) referenced
-Notice 0: error: undefined layer (M4M5_PR_C) referenced
-Notice 0: error: undefined layer (M4M5_PR_C) referenced
-Notice 0: error: undefined layer (M4M5_PR_C) referenced
-Notice 0: error: undefined layer (M4M5_PR_C) referenced
 Notice 0:     Created 13 technology layers
 Notice 0:     Created 25 technology vias
 Notice 0:     Created 78 library cells
 Notice 0: Finished LEF file:  /project/openlane/caravel/runs/caravel/tmp/merged_unpadded.lef
-Warning: /project/openlane/caravel/runs/caravel/results/synthesis/caravel.synthesis.v, line 3182 instance mgmt_buffers port la_data_in_core not found.
-Warning: /project/openlane/caravel/runs/caravel/results/synthesis/caravel.synthesis.v, line 3182 instance mgmt_buffers port la_data_out_core not found.
-Warning: /project/openlane/caravel/runs/caravel/results/synthesis/caravel.synthesis.v, line 3182 instance mgmt_buffers port la_data_out_mprj not found.
-Warning: /project/openlane/caravel/runs/caravel/results/synthesis/caravel.synthesis.v, line 3182 instance mgmt_buffers port la_oen_core not found.
-Warning: /project/openlane/caravel/runs/caravel/results/synthesis/caravel.synthesis.v, line 3182 instance mgmt_buffers port la_oen_mprj not found.
-Warning: /project/openlane/caravel/runs/caravel/results/synthesis/caravel.synthesis.v, line 3182 instance mgmt_buffers port user_reset not found.
-Warning: /project/openlane/caravel/runs/caravel/results/synthesis/caravel.synthesis.v, line 3296 instance por port por_l not found.
-Warning: /project/openlane/caravel/runs/caravel/results/synthesis/caravel.synthesis.v, line 3296 instance por port porb_l not found.
-Warning: /project/openlane/caravel/runs/caravel/results/synthesis/caravel.synthesis.v, line 3305 instance soc port mgmt_addr_ro not found.
-Warning: /project/openlane/caravel/runs/caravel/results/synthesis/caravel.synthesis.v, line 3305 instance soc port mgmt_ena_ro not found.
-Warning: /project/openlane/caravel/runs/caravel/results/synthesis/caravel.synthesis.v, line 3305 instance soc port mgmt_rdata_ro not found.
 Warning: LEF master gpio_control_block has no liberty cell.
 Warning: LEF master mgmt_protect has no liberty cell.
 Warning: LEF master user_project_wrapper has no liberty cell.

@@ -36,9 +36,8 @@ Successfully finished Verilog frontend.
 
 3. Executing Verilog-2005 frontend: /project/openlane/gpio_control_block/../../verilog/rtl/gpio_control_block.v
 Parsing SystemVerilog input from `/project/openlane/gpio_control_block/../../verilog/rtl/gpio_control_block.v' to AST representation.
-Warning: Yosys has only limited support for tri-state logic at the moment. (/project/openlane/gpio_control_block/../../verilog/rtl/gpio_control_block.v:198)
+Warning: Yosys has only limited support for tri-state logic at the moment. (/project/openlane/gpio_control_block/../../verilog/rtl/gpio_control_block.v:199)
 Generating RTLIL representation for module `\gpio_control_block'.
-/project/openlane/gpio_control_block/../../verilog/rtl/gpio_control_block.v:217: Warning: Identifier `\gpio_logic1' is implicitly declared.
 Successfully finished Verilog frontend.
 
 4. Generating Graphviz representation of design.
@@ -71,8 +70,8 @@ Removed 0 unused modules.
 Cleaned up 0 empty switches.
 
 6.2.2. Executing PROC_RMDEAD pass (remove dead branches from decision trees).
-Marked 1 switch rules as full_case in process $proc$/project/openlane/gpio_control_block/../../verilog/rtl/gpio_control_block.v:150$8 in module gpio_control_block.
-Marked 1 switch rules as full_case in process $proc$/project/openlane/gpio_control_block/../../verilog/rtl/gpio_control_block.v:140$6 in module gpio_control_block.
+Marked 1 switch rules as full_case in process $proc$/project/openlane/gpio_control_block/../../verilog/rtl/gpio_control_block.v:151$8 in module gpio_control_block.
+Marked 1 switch rules as full_case in process $proc$/project/openlane/gpio_control_block/../../verilog/rtl/gpio_control_block.v:141$6 in module gpio_control_block.
 Removed a total of 0 dead cases.
 
 6.2.3. Executing PROC_PRUNE pass (remove redundant assignments in processes).
@@ -82,11 +81,11 @@ Promoted 0 assignments to connections.
 6.2.4. Executing PROC_INIT pass (extract init attributes).
 
 6.2.5. Executing PROC_ARST pass (detect async resets in processes).
-Found async reset \int_reset in `\gpio_control_block.$proc$/project/openlane/gpio_control_block/../../verilog/rtl/gpio_control_block.v:150$8'.
-Found async reset \int_reset in `\gpio_control_block.$proc$/project/openlane/gpio_control_block/../../verilog/rtl/gpio_control_block.v:140$6'.
+Found async reset \int_reset in `\gpio_control_block.$proc$/project/openlane/gpio_control_block/../../verilog/rtl/gpio_control_block.v:151$8'.
+Found async reset \int_reset in `\gpio_control_block.$proc$/project/openlane/gpio_control_block/../../verilog/rtl/gpio_control_block.v:141$6'.
 
 6.2.6. Executing PROC_MUX pass (convert decision trees to multiplexers).
-Creating decoders for process `\gpio_control_block.$proc$/project/openlane/gpio_control_block/../../verilog/rtl/gpio_control_block.v:150$8'.
+Creating decoders for process `\gpio_control_block.$proc$/project/openlane/gpio_control_block/../../verilog/rtl/gpio_control_block.v:151$8'.
      1/11: $0\gpio_dm[2:0]
      2/11: $0\gpio_vtrip_sel[0:0]
      3/11: $0\gpio_slow_sel[0:0]
@@ -98,40 +97,40 @@ Creating decoders for process `\gpio_control_block.$proc$/project/openlane/gpio_
      9/11: $0\gpio_holdover[0:0]
     10/11: $0\gpio_outenb[0:0]
     11/11: $0\mgmt_ena[0:0]
-Creating decoders for process `\gpio_control_block.$proc$/project/openlane/gpio_control_block/../../verilog/rtl/gpio_control_block.v:140$6'.
+Creating decoders for process `\gpio_control_block.$proc$/project/openlane/gpio_control_block/../../verilog/rtl/gpio_control_block.v:141$6'.
      1/1: $0\shift_register[12:0]
 
 6.2.7. Executing PROC_DLATCH pass (convert process syncs to latches).
 
 6.2.8. Executing PROC_DFF pass (convert process syncs to FFs).
-Creating register for signal `\gpio_control_block.\mgmt_ena' using process `\gpio_control_block.$proc$/project/openlane/gpio_control_block/../../verilog/rtl/gpio_control_block.v:150$8'.
+Creating register for signal `\gpio_control_block.\mgmt_ena' using process `\gpio_control_block.$proc$/project/openlane/gpio_control_block/../../verilog/rtl/gpio_control_block.v:151$8'.
   created $adff cell `$procdff$24' with positive edge clock and positive level reset.
-Creating register for signal `\gpio_control_block.\gpio_holdover' using process `\gpio_control_block.$proc$/project/openlane/gpio_control_block/../../verilog/rtl/gpio_control_block.v:150$8'.
+Creating register for signal `\gpio_control_block.\gpio_holdover' using process `\gpio_control_block.$proc$/project/openlane/gpio_control_block/../../verilog/rtl/gpio_control_block.v:151$8'.
   created $adff cell `$procdff$25' with positive edge clock and positive level reset.
-Creating register for signal `\gpio_control_block.\gpio_slow_sel' using process `\gpio_control_block.$proc$/project/openlane/gpio_control_block/../../verilog/rtl/gpio_control_block.v:150$8'.
+Creating register for signal `\gpio_control_block.\gpio_slow_sel' using process `\gpio_control_block.$proc$/project/openlane/gpio_control_block/../../verilog/rtl/gpio_control_block.v:151$8'.
   created $adff cell `$procdff$26' with positive edge clock and positive level reset.
-Creating register for signal `\gpio_control_block.\gpio_vtrip_sel' using process `\gpio_control_block.$proc$/project/openlane/gpio_control_block/../../verilog/rtl/gpio_control_block.v:150$8'.
+Creating register for signal `\gpio_control_block.\gpio_vtrip_sel' using process `\gpio_control_block.$proc$/project/openlane/gpio_control_block/../../verilog/rtl/gpio_control_block.v:151$8'.
   created $adff cell `$procdff$27' with positive edge clock and positive level reset.
-Creating register for signal `\gpio_control_block.\gpio_inenb' using process `\gpio_control_block.$proc$/project/openlane/gpio_control_block/../../verilog/rtl/gpio_control_block.v:150$8'.
+Creating register for signal `\gpio_control_block.\gpio_inenb' using process `\gpio_control_block.$proc$/project/openlane/gpio_control_block/../../verilog/rtl/gpio_control_block.v:151$8'.
   created $adff cell `$procdff$28' with positive edge clock and positive level reset.
-Creating register for signal `\gpio_control_block.\gpio_ib_mode_sel' using process `\gpio_control_block.$proc$/project/openlane/gpio_control_block/../../verilog/rtl/gpio_control_block.v:150$8'.
+Creating register for signal `\gpio_control_block.\gpio_ib_mode_sel' using process `\gpio_control_block.$proc$/project/openlane/gpio_control_block/../../verilog/rtl/gpio_control_block.v:151$8'.
   created $adff cell `$procdff$29' with positive edge clock and positive level reset.
-Creating register for signal `\gpio_control_block.\gpio_outenb' using process `\gpio_control_block.$proc$/project/openlane/gpio_control_block/../../verilog/rtl/gpio_control_block.v:150$8'.
+Creating register for signal `\gpio_control_block.\gpio_outenb' using process `\gpio_control_block.$proc$/project/openlane/gpio_control_block/../../verilog/rtl/gpio_control_block.v:151$8'.
   created $adff cell `$procdff$30' with positive edge clock and positive level reset.
-Creating register for signal `\gpio_control_block.\gpio_dm' using process `\gpio_control_block.$proc$/project/openlane/gpio_control_block/../../verilog/rtl/gpio_control_block.v:150$8'.
+Creating register for signal `\gpio_control_block.\gpio_dm' using process `\gpio_control_block.$proc$/project/openlane/gpio_control_block/../../verilog/rtl/gpio_control_block.v:151$8'.
   created $adff cell `$procdff$31' with positive edge clock and positive level reset.
-Creating register for signal `\gpio_control_block.\gpio_ana_en' using process `\gpio_control_block.$proc$/project/openlane/gpio_control_block/../../verilog/rtl/gpio_control_block.v:150$8'.
+Creating register for signal `\gpio_control_block.\gpio_ana_en' using process `\gpio_control_block.$proc$/project/openlane/gpio_control_block/../../verilog/rtl/gpio_control_block.v:151$8'.
   created $adff cell `$procdff$32' with positive edge clock and positive level reset.
-Creating register for signal `\gpio_control_block.\gpio_ana_sel' using process `\gpio_control_block.$proc$/project/openlane/gpio_control_block/../../verilog/rtl/gpio_control_block.v:150$8'.
+Creating register for signal `\gpio_control_block.\gpio_ana_sel' using process `\gpio_control_block.$proc$/project/openlane/gpio_control_block/../../verilog/rtl/gpio_control_block.v:151$8'.
   created $adff cell `$procdff$33' with positive edge clock and positive level reset.
-Creating register for signal `\gpio_control_block.\gpio_ana_pol' using process `\gpio_control_block.$proc$/project/openlane/gpio_control_block/../../verilog/rtl/gpio_control_block.v:150$8'.
+Creating register for signal `\gpio_control_block.\gpio_ana_pol' using process `\gpio_control_block.$proc$/project/openlane/gpio_control_block/../../verilog/rtl/gpio_control_block.v:151$8'.
   created $adff cell `$procdff$34' with positive edge clock and positive level reset.
-Creating register for signal `\gpio_control_block.\shift_register' using process `\gpio_control_block.$proc$/project/openlane/gpio_control_block/../../verilog/rtl/gpio_control_block.v:140$6'.
+Creating register for signal `\gpio_control_block.\shift_register' using process `\gpio_control_block.$proc$/project/openlane/gpio_control_block/../../verilog/rtl/gpio_control_block.v:141$6'.
   created $adff cell `$procdff$35' with positive edge clock and positive level reset.
 
 6.2.9. Executing PROC_CLEAN pass (remove empty switches from decision trees).
-Removing empty process `gpio_control_block.$proc$/project/openlane/gpio_control_block/../../verilog/rtl/gpio_control_block.v:150$8'.
-Removing empty process `gpio_control_block.$proc$/project/openlane/gpio_control_block/../../verilog/rtl/gpio_control_block.v:140$6'.
+Removing empty process `gpio_control_block.$proc$/project/openlane/gpio_control_block/../../verilog/rtl/gpio_control_block.v:151$8'.
+Removing empty process `gpio_control_block.$proc$/project/openlane/gpio_control_block/../../verilog/rtl/gpio_control_block.v:141$6'.
 Cleaned up 0 empty switches.
 
 6.3. Executing FLATTEN pass (flatten design).
@@ -268,7 +267,7 @@ Optimizing module gpio_control_block.
 6.9.9. Finished OPT passes. (There is nothing left to do.)
 
 6.10. Executing WREDUCE pass (reducing word size of cells).
-Removed top 1 bits (of 2) from port B of cell gpio_control_block.$eq$/project/openlane/gpio_control_block/../../verilog/rtl/gpio_control_block.v:204$18 ($eq).
+Removed top 1 bits (of 2) from port B of cell gpio_control_block.$eq$/project/openlane/gpio_control_block/../../verilog/rtl/gpio_control_block.v:205$18 ($eq).
 
 6.11. Executing PEEPOPT pass (run peephole optimizers).
 
@@ -653,14 +652,14 @@ Mapping DFF cells in module `\gpio_control_block':
 
 13. Executing ABC pass (technology mapping using ABC).
 
-13.1. Extracting gate netlist of module `\gpio_control_block' to `/tmp/yosys-abc-hjZJiv/input.blif'..
+13.1. Extracting gate netlist of module `\gpio_control_block' to `/tmp/yosys-abc-cynOzn/input.blif'..
 Extracted 37 gates and 49 wires to a netlist network with 12 inputs and 31 outputs.
 
 13.1.1. Executing ABC.
-Running ABC command: /build/bin/yosys-abc -s -f /tmp/yosys-abc-hjZJiv/abc.script 2>&1
-ABC: ABC command line: "source /tmp/yosys-abc-hjZJiv/abc.script".
+Running ABC command: /build/bin/yosys-abc -s -f /tmp/yosys-abc-cynOzn/abc.script 2>&1
+ABC: ABC command line: "source /tmp/yosys-abc-cynOzn/abc.script".
 ABC: 
-ABC: + read_blif /tmp/yosys-abc-hjZJiv/input.blif 
+ABC: + read_blif /tmp/yosys-abc-cynOzn/input.blif 
 ABC: + read_lib -w /project/openlane/gpio_control_block/runs/gpio_control_block/tmp/trimmed.lib 
 ABC: Parsing finished successfully.  Parsing time =     0.02 sec
 ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfbbn_2".
@@ -709,7 +708,7 @@ ABC: Path  4 --      81 : 5    1 sky130_fd_sc_hd__a32o_4 A =  21.27  Df = 728.1 
 ABC: Start-point = pi5 (\pad_gpio_dm [2]).  End-point = po26 (\pad_gpio_out).
 ABC: + print_stats -m 
 ABC: netlist                       : i/o =   12/   31  lat =    0  nd =    43  edge =     59  area =277.61  delay = 4.00  lev = 4
-ABC: + write_blif /tmp/yosys-abc-hjZJiv/output.blif 
+ABC: + write_blif /tmp/yosys-abc-cynOzn/output.blif 
 
 13.1.2. Re-integrating ABC results.
 ABC RESULTS:   sky130_fd_sc_hd__a32o_4 cells:        2
@@ -770,7 +769,7 @@ found and reported 0 problems.
 21. Executing Verilog backend.
 Dumping module `\gpio_control_block'.
 
-Warnings: 2 unique messages, 2 total
-End of script. Logfile hash: 667d7243bb, CPU: user 0.83s system 0.03s, MEM: 44.18 MB peak
+Warnings: 1 unique messages, 1 total
+End of script. Logfile hash: 43ae35894e, CPU: user 0.83s system 0.02s, MEM: 44.12 MB peak
 Yosys 0.9+3621 (git sha1 84e9fa7, gcc 8.3.1 -fPIC -Os)
-Time spent: 28% 4x stat (0 sec), 27% 2x read_liberty (0 sec), ...
+Time spent: 28% 4x stat (0 sec), 28% 2x read_liberty (0 sec), ...

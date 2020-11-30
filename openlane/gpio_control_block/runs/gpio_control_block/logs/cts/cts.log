@@ -11,7 +11,7 @@ Notice 0:
 Reading DEF file: /project/openlane/gpio_control_block/runs/gpio_control_block/results/placement/gpio_control_block.placement.def
 Notice 0: Design: gpio_control_block
 Notice 0:     Created 24 pins.
-Notice 0:     Created 184 components and 869 component-terminals.
+Notice 0:     Created 163 components and 783 component-terminals.
 Notice 0:     Created 79 nets and 210 connections.
 Notice 0: Finished DEF file: /project/openlane/gpio_control_block/runs/gpio_control_block/results/placement/gpio_control_block.placement.def
 [INFO]: Setting output delay to: 2.0
@@ -65,15 +65,15 @@ Number of created patterns = 313632.
     Tot. number of sinks: 15
     Number of static layers: 0
  Wire segment unit: 13000 dbu (13 um)
- Original sink region: [(7165, 17735), (25892, 99340)]
- Normalized sink region: [(0.551154, 1.36423), (1.99169, 7.64154)]
-    Width:  1.44054
-    Height: 6.27731
+ Original sink region: [(13160, 20340), (34305, 69300)]
+ Normalized sink region: [(1.01231, 1.56462), (2.63885, 5.33077)]
+    Width:  1.62654
+    Height: 3.76615
  [WARNING] Creating fake entries in the LUT.
  Level 1
     Direction: Vertical
     # sinks per sub-region: 8
-    Sub-region size: 1.44054 X 3.13865
+    Sub-region size: 1.62654 X 1.88308
     Segment length (rounded): 1
     Key: 216280 outSlew: 11 load: 1 length: 1 isBuffered: 1
  Stop criterion found. Max number of sinks is (15)
@@ -83,7 +83,7 @@ Number of created patterns = 313632.
  ****************
  * Post CTS opt *
  ****************
- Avg. source sink dist: 21193 dbu.
+ Avg. source sink dist: 14020.5 dbu.
  Num outlier sinks: 0
  ********************
  * Write data to DB *
@@ -93,31 +93,31 @@ Number of created patterns = 313632.
     Minimum number of buffers in the clock path: 2.
     Maximum number of buffers in the clock path: 2.
     Created 3 clock nets.
-    Fanout distribution for the current clock = 7:1, 8:1.
+    Fanout distribution for the current clock = 6:1, 9:1.
     Max level of the clock tree: 1.
  ... End of TritonCTS execution.
 [INFO]: Legalizing...
 Warning: could not find power special net
 Design Stats
 --------------------------------
-total instances           187
+total instances           166
 multi row instances         0
-fixed instances           113
+fixed instances            92
 nets                       82
-design area            3888.7 u^2
-fixed area              326.6 u^2
+design area            3123.0 u^2
+fixed area              245.2 u^2
 movable area           1088.5 u^2
-utilization                31 %
-utilization padded         31 %
-rows                       37
+utilization                38 %
+utilization padded         39 %
+rows                       26
 row height                2.7 u
 
 Placement Analysis
 --------------------------------
-total displacement       13.5 u
-average displacement      0.1 u
-max displacement          7.0 u
-original HPWL          2295.7 u
-legalized HPWL         2299.8 u
-delta HPWL                  0 %
+total displacement       39.1 u
+average displacement      0.2 u
+max displacement         11.2 u
+original HPWL          4310.0 u
+legalized HPWL         4336.1 u
+delta HPWL                  1 %
 

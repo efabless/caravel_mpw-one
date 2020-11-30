@@ -1,0 +1,89 @@
+OpenROAD 0.9.0 d03ebfc244
+This program is licensed under the BSD-3 license. See the LICENSE file for details. 
+Components of this program may be licensed under more restrictive licenses which must be honored.
+Error: cannot open '/.openroad'.
+Notice 0: Reading LEF file:  /project/openlane/mgmt_protect/runs/mgmt_protect/tmp/merged_unpadded.lef
+Notice 0:     Created 13 technology layers
+Notice 0:     Created 25 technology vias
+Notice 0:     Created 439 library cells
+Notice 0: Finished LEF file:  /project/openlane/mgmt_protect/runs/mgmt_protect/tmp/merged_unpadded.lef
+Notice 0: 
+Reading DEF file: /project/openlane/mgmt_protect/runs/mgmt_protect/tmp/floorplan/pdn.def
+Notice 0: Design: mgmt_protect
+Notice 0:     Created 967 pins.
+Notice 0:     Created 2103 components and 10326 component-terminals.
+Notice 0:     Created 2 special nets and 7106 connections.
+Notice 0:     Created 1840 nets and 2761 connections.
+Notice 0: Finished DEF file: /project/openlane/mgmt_protect/runs/mgmt_protect/tmp/floorplan/pdn.def
+[INFO] DBU = 1000
+[INFO] SiteSize = (460, 2720)
+[INFO] CoreAreaLxLy = (1840, 2720)
+[INFO] CoreAreaUxUy = (847780, 59840)
+[INFO] NumInstances = 2127
+[INFO] NumPlaceInstances = 1380
+[INFO] NumFixedInstances = 723
+[INFO] NumDummyInstances = 24
+[INFO] NumNets = 1840
+[INFO] NumPins = 3682
+[INFO] DieAreaLxLy = (0, 0)
+[INFO] DieAreaUxUy = (850000, 65000)
+[INFO] CoreAreaLxLy = (1840, 2720)
+[INFO] CoreAreaUxUy = (847780, 59840)
+[INFO] CoreArea = 48320092800
+[INFO] NonPlaceInstsArea = 2736032800
+[INFO] PlaceInstsArea = 13340294400
+[INFO] Util(%) = 29.265261
+[INFO] StdInstsArea = 13340294400
+[INFO] MacroInstsArea = 0
+[InitialPlace]  Iter: 1 CG Error: 1.75663e-05 HPWL: 301467023
+[InitialPlace]  Iter: 2 CG Error: 1.17508e-07 HPWL: 109173455
+[InitialPlace]  Iter: 3 CG Error: 9.53335e-08 HPWL: 108922751
+[InitialPlace]  Iter: 4 CG Error: 7.96885e-08 HPWL: 108780121
+[InitialPlace]  Iter: 5 CG Error: 1.01292e-07 HPWL: 108673589
+[INFO] FillerInit: NumGCells = 2644
+[INFO] FillerInit: NumGNets = 1840
+[INFO] FillerInit: NumGPins = 3682
+[INFO] TargetDensity = 0.550000
+[INFO] AveragePlaceInstArea = 9666880
+[INFO] IdealBinArea = 17576146
+[INFO] IdealBinCnt = 2749
+[INFO] TotalBinArea = 48320092800
+[INFO] BinCnt = (32, 32)
+[INFO] BinSize = (26436, 1785)
+[INFO] NumBins = 1024
+[NesterovSolve] Iter: 1 overflow: 0.618277 HPWL: 105563418
+[NesterovSolve] Iter: 10 overflow: 0.670346 HPWL: 97195274
+[NesterovSolve] Iter: 20 overflow: 0.6862 HPWL: 96379541
+[NesterovSolve] Iter: 30 overflow: 0.679811 HPWL: 96084056
+[NesterovSolve] Iter: 40 overflow: 0.679921 HPWL: 96114480
+[NesterovSolve] Iter: 50 overflow: 0.679594 HPWL: 96098354
+[NesterovSolve] Iter: 60 overflow: 0.67866 HPWL: 95938135
+[NesterovSolve] Iter: 70 overflow: 0.677173 HPWL: 95971360
+[NesterovSolve] Iter: 80 overflow: 0.677032 HPWL: 95904676
+[NesterovSolve] Iter: 90 overflow: 0.68005 HPWL: 95928354
+[NesterovSolve] Iter: 100 overflow: 0.693107 HPWL: 95945613
+[NesterovSolve] Iter: 110 overflow: 0.703591 HPWL: 96070967
+[NesterovSolve] Iter: 120 overflow: 0.712992 HPWL: 96117680
+[NesterovSolve] Iter: 130 overflow: 0.69519 HPWL: 96032429
+[NesterovSolve] Iter: 140 overflow: 0.676739 HPWL: 96074674
+[NesterovSolve] Iter: 150 overflow: 0.644316 HPWL: 96189245
+[NesterovSolve] Iter: 160 overflow: 0.622604 HPWL: 96227136
+[NesterovSolve] Iter: 170 overflow: 0.591787 HPWL: 96365301
+[NesterovSolve] Iter: 180 overflow: 0.563683 HPWL: 96506178
+[NesterovSolve] Iter: 190 overflow: 0.526586 HPWL: 96716312
+[NesterovSolve] Iter: 200 overflow: 0.475469 HPWL: 96948731
+[NesterovSolve] Iter: 210 overflow: 0.434772 HPWL: 96890592
+[NesterovSolve] Iter: 220 overflow: 0.399701 HPWL: 97015474
+[NesterovSolve] Iter: 230 overflow: 0.379501 HPWL: 97078873
+[NesterovSolve] Iter: 240 overflow: 0.350897 HPWL: 97167307
+[NesterovSolve] Iter: 250 overflow: 0.317732 HPWL: 97191476
+[NesterovSolve] Iter: 260 overflow: 0.280685 HPWL: 97173627
+[NesterovSolve] Iter: 270 overflow: 0.25432 HPWL: 97526402
+[NesterovSolve] Iter: 280 overflow: 0.223062 HPWL: 98565508
+[NesterovSolve] Iter: 290 overflow: 0.187497 HPWL: 99801689
+[NesterovSolve] Iter: 300 overflow: 0.172469 HPWL: 100989634
+[NesterovSolve] Iter: 310 overflow: 0.148536 HPWL: 102773850
+[NesterovSolve] Iter: 320 overflow: 0.120936 HPWL: 104550959
+[NesterovSolve] Iter: 330 overflow: 0.094263 HPWL: 106257963
+[NesterovSolve] Finished with Overflow: 0.094263
+[WARN]: No CLOCK_PORT found. Skipping STA...

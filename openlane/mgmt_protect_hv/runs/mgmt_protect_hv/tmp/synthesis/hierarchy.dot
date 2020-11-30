@@ -1,0 +1,23 @@
+digraph "mgmt_protect_hv" {
+label="mgmt_protect_hv";
+rankdir="LR";
+remincross=true;
+n1 [ shape=diamond, label="mprj2_vdd_logic1_h", color="black", fontcolor="black" ];
+n2 [ shape=diamond, label="mprj_vdd_logic1_h", color="black", fontcolor="black" ];
+n3 [ shape=octagon, label="mprj2_vdd_logic1", color="black", fontcolor="black" ];
+n4 [ shape=octagon, label="mprj_vdd_logic1", color="black", fontcolor="black" ];
+c7 [ shape=record, label="{{<p5> A}|mprj2_logic_high_lv\nsky130_fd_sc_hvl__lsbufhv2lv_1|{<p6> X}}" ];
+c8 [ shape=record, label="{{<p5> A}|mprj_logic_high_lv\nsky130_fd_sc_hvl__lsbufhv2lv_1|{<p6> X}}" ];
+v0 [ label="" ];
+c11 [ shape=record, label="{{}|mprj2_logic_high_hvl\nsky130_fd_sc_hvl__conb_1|{<p9> HI|<p10> LO}}" ];
+v1 [ label="" ];
+c12 [ shape=record, label="{{}|mprj_logic_high_hvl\nsky130_fd_sc_hvl__conb_1|{<p9> HI|<p10> LO}}" ];
+c11:p9:e -> n1:w [color="black", label=""];
+n1:e -> c7:p5:w [color="black", label=""];
+c12:p9:e -> n2:w [color="black", label=""];
+n2:e -> c8:p5:w [color="black", label=""];
+c7:p6:e -> n3:w [color="black", label=""];
+c8:p6:e -> n4:w [color="black", label=""];
+c11:p10:e -> v0:w [color="black", label=""];
+c12:p10:e -> v1:w [color="black", label=""];
+}

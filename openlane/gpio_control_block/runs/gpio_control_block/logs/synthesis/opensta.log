@@ -7,9 +7,8 @@ This program comes with ABSOLUTELY NO WARRANTY; for details type `show_warranty'
 Warning: /home/xrex/usr/devel/pdks/sky130A/libs.ref/sky130_fd_sc_hd/lib/sky130_fd_sc_hd__ff_n40C_1v95.lib, line 31 default_operating_condition ff_n40C_1v95 not found.
 Warning: /home/xrex/usr/devel/pdks/sky130A/libs.ref/sky130_fd_sc_hd/lib/sky130_fd_sc_hd__ss_100C_1v60.lib, line 32 default_operating_condition ss_100C_1v60 not found.
 create_clock [get_ports $::env(CLOCK_PORT)]  -name $::env(CLOCK_PORT)  -period $::env(CLOCK_PERIOD)
-set IO_PCT  0.2
-set input_delay_value [expr $::env(CLOCK_PERIOD) * $IO_PCT]
-set output_delay_value [expr $::env(CLOCK_PERIOD) * $IO_PCT]
+set input_delay_value [expr $::env(CLOCK_PERIOD) * $::env(IO_PCT)]
+set output_delay_value [expr $::env(CLOCK_PERIOD) * $::env(IO_PCT)]
 puts "\[INFO\]: Setting output delay to: $output_delay_value"
 [INFO]: Setting output delay to: 2.0
 puts "\[INFO\]: Setting input delay to: $input_delay_value"

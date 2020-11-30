@@ -10,87 +10,57 @@ Notice 0:
 Reading DEF file: /project/openlane/gpio_control_block/runs/gpio_control_block/results/floorplan/gpio_control_block.floorplan.def
 Notice 0: Design: gpio_control_block
 Notice 0:     Created 24 pins.
-Notice 0:     Created 184 components and 869 component-terminals.
+Notice 0:     Created 163 components and 783 component-terminals.
 Notice 0:     Created 79 nets and 210 connections.
 Notice 0: Finished DEF file: /project/openlane/gpio_control_block/runs/gpio_control_block/results/floorplan/gpio_control_block.floorplan.def
 [INFO] DBU = 1000
 [INFO] SiteSize = (460, 2720)
 [INFO] CoreAreaLxLy = (5520, 10880)
-[INFO] CoreAreaUxUy = (44160, 111520)
-[INFO] NumInstances = 184
+[INFO] CoreAreaUxUy = (49680, 81600)
+[INFO] NumInstances = 163
 [INFO] NumPlaceInstances = 71
-[INFO] NumFixedInstances = 113
+[INFO] NumFixedInstances = 92
 [INFO] NumDummyInstances = 0
 [INFO] NumNets = 79
 [INFO] NumPins = 234
 [INFO] DieAreaLxLy = (0, 0)
-[INFO] DieAreaUxUy = (50000, 125000)
+[INFO] DieAreaUxUy = (175000, 95000)
 [INFO] CoreAreaLxLy = (5520, 10880)
-[INFO] CoreAreaUxUy = (44160, 111520)
-[INFO] CoreArea = 3888729600
-[INFO] NonPlaceInstsArea = 326563200
+[INFO] CoreAreaUxUy = (49680, 81600)
+[INFO] CoreArea = 3122995200
+[INFO] NonPlaceInstsArea = 245235200
 [INFO] PlaceInstsArea = 1056012800
-[INFO] Util(%) = 29.645241
+[INFO] Util(%) = 36.695652
 [INFO] StdInstsArea = 1056012800
 [INFO] MacroInstsArea = 0
-[InitialPlace]  Iter: 1 CG Error: 5.96127e-08 HPWL: 2755260
-[InitialPlace]  Iter: 2 CG Error: 7.9809e-08 HPWL: 2108311
-[InitialPlace]  Iter: 3 CG Error: 1.07406e-07 HPWL: 2083743
-[InitialPlace]  Iter: 4 CG Error: 9.84881e-08 HPWL: 2075830
-[InitialPlace]  Iter: 5 CG Error: 5.4329e-08 HPWL: 2090671
-[INFO] FillerInit: NumGCells = 96
+[InitialPlace]  Iter: 1 CG Error: 6.34609e-08 HPWL: 5988180
+[InitialPlace]  Iter: 2 CG Error: 7.24026e-08 HPWL: 4198379
+[InitialPlace]  Iter: 3 CG Error: 8.2169e-08 HPWL: 4192359
+[InitialPlace]  Iter: 4 CG Error: 9.17372e-08 HPWL: 4192710
+[InitialPlace]  Iter: 5 CG Error: 8.62562e-08 HPWL: 4190771
+[INFO] FillerInit: NumGCells = 77
 [INFO] FillerInit: NumGNets = 79
 [INFO] FillerInit: NumGPins = 234
 [INFO] TargetDensity = 0.400000
 [INFO] AveragePlaceInstArea = 14873419
 [INFO] IdealBinArea = 37183548
-[INFO] IdealBinCnt = 104
-[INFO] TotalBinArea = 3888729600
-[INFO] BinCnt = (8, 8)
-[INFO] BinSize = (4830, 12580)
-[INFO] NumBins = 64
-[NesterovSolve] Iter: 1 overflow: 0.716024 HPWL: 1645114
-[NesterovSolve] Iter: 10 overflow: 0.512432 HPWL: 1681770
-[NesterovSolve] Iter: 20 overflow: 0.52128 HPWL: 1668274
-[NesterovSolve] Iter: 30 overflow: 0.51834 HPWL: 1670243
-[NesterovSolve] Iter: 40 overflow: 0.519353 HPWL: 1669607
-[NesterovSolve] Iter: 50 overflow: 0.518947 HPWL: 1669544
-[NesterovSolve] Iter: 60 overflow: 0.518926 HPWL: 1669616
-[NesterovSolve] Iter: 70 overflow: 0.518885 HPWL: 1669641
-[NesterovSolve] Iter: 80 overflow: 0.518833 HPWL: 1669703
-[NesterovSolve] Iter: 90 overflow: 0.518738 HPWL: 1669885
-[NesterovSolve] Iter: 100 overflow: 0.518578 HPWL: 1670166
-[NesterovSolve] Iter: 110 overflow: 0.518356 HPWL: 1670566
-[NesterovSolve] Iter: 120 overflow: 0.517999 HPWL: 1671146
-[NesterovSolve] Iter: 130 overflow: 0.517481 HPWL: 1671892
-[NesterovSolve] Iter: 140 overflow: 0.516643 HPWL: 1672627
-[NesterovSolve] Iter: 150 overflow: 0.515323 HPWL: 1673341
-[NesterovSolve] Iter: 160 overflow: 0.513236 HPWL: 1675130
-[NesterovSolve] Iter: 170 overflow: 0.509813 HPWL: 1677592
-[NesterovSolve] Iter: 180 overflow: 0.504135 HPWL: 1681836
-[NesterovSolve] Iter: 190 overflow: 0.495303 HPWL: 1688285
-[NesterovSolve] Iter: 200 overflow: 0.481582 HPWL: 1697651
-[NesterovSolve] Iter: 210 overflow: 0.467044 HPWL: 1710193
-[NesterovSolve] Iter: 220 overflow: 0.451798 HPWL: 1726231
-[NesterovSolve] Iter: 230 overflow: 0.432508 HPWL: 1743714
-[NesterovSolve] Iter: 240 overflow: 0.405889 HPWL: 1759411
-[NesterovSolve] Iter: 250 overflow: 0.370759 HPWL: 1770472
-[NesterovSolve] Iter: 260 overflow: 0.323659 HPWL: 1776103
-[NesterovSolve] Iter: 270 overflow: 0.269617 HPWL: 1785204
-[NesterovSolve] Iter: 280 overflow: 0.227204 HPWL: 1791089
-[NesterovSolve] Iter: 290 overflow: 0.209177 HPWL: 1804786
-[NesterovSolve] Iter: 300 overflow: 0.18507 HPWL: 1816280
-[NesterovSolve] Iter: 310 overflow: 0.172118 HPWL: 1825103
-[NesterovSolve] Iter: 320 overflow: 0.157863 HPWL: 1830034
-[NesterovSolve] Iter: 330 overflow: 0.143281 HPWL: 1839455
-[NesterovSolve] Iter: 340 overflow: 0.120663 HPWL: 1842028
-[NesterovSolve] Finished with Overflow: 0.099295
+[INFO] IdealBinCnt = 83
+[INFO] TotalBinArea = 3122995200
+[INFO] BinCnt = (64, 64)
+[INFO] BinSize = (690, 1105)
+[INFO] NumBins = 4096
+[NesterovSolve] Iter: 1 overflow: 0.921829 HPWL: 2537273
+[NesterovSolve] Iter: 10 overflow: 0.880087 HPWL: 2505154
+[NesterovSolve] Iter: 20 overflow: 0.881818 HPWL: 2502236
+[NesterovSolve] Iter: 30 overflow: 0.881345 HPWL: 2502512
+[NesterovSolve] Iter: 40 overflow: 0.881332 HPWL: 2502442
+[NesterovSolve] Iter: 50 overflow: 0.881407 HPWL: 2502543
+[NesterovSolve] Finished with Overflow: 0.881401
 Warning: /home/xrex/usr/devel/pdks/sky130A/libs.ref/sky130_fd_sc_hd/lib/sky130_fd_sc_hd__ss_100C_1v60.lib, line 32 default_operating_condition ss_100C_1v60 not found.
 Warning: /home/xrex/usr/devel/pdks/sky130A/libs.ref/sky130_fd_sc_hd/lib/sky130_fd_sc_hd__ff_n40C_1v95.lib, line 31 default_operating_condition ff_n40C_1v95 not found.
 create_clock [get_ports $::env(CLOCK_PORT)]  -name $::env(CLOCK_PORT)  -period $::env(CLOCK_PERIOD)
-set IO_PCT  0.2
-set input_delay_value [expr $::env(CLOCK_PERIOD) * $IO_PCT]
-set output_delay_value [expr $::env(CLOCK_PERIOD) * $IO_PCT]
+set input_delay_value [expr $::env(CLOCK_PERIOD) * $::env(IO_PCT)]
+set output_delay_value [expr $::env(CLOCK_PERIOD) * $::env(IO_PCT)]
 puts "\[INFO\]: Setting output delay to: $output_delay_value"
 [INFO]: Setting output delay to: 2.0
 puts "\[INFO\]: Setting input delay to: $input_delay_value"

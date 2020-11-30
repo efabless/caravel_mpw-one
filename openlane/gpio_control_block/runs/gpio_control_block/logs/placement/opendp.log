@@ -10,30 +10,30 @@ Notice 0:
 Reading DEF file: /project/openlane/gpio_control_block/runs/gpio_control_block/tmp/placement/openphysyn.def
 Notice 0: Design: gpio_control_block
 Notice 0:     Created 24 pins.
-Notice 0:     Created 184 components and 869 component-terminals.
+Notice 0:     Created 163 components and 783 component-terminals.
 Notice 0:     Created 79 nets and 210 connections.
 Notice 0: Finished DEF file: /project/openlane/gpio_control_block/runs/gpio_control_block/tmp/placement/openphysyn.def
 Warning: could not find power special net
 Design Stats
 --------------------------------
-total instances           184
+total instances           163
 multi row instances         0
-fixed instances           113
+fixed instances            92
 nets                       79
-design area            3888.7 u^2
-fixed area              326.6 u^2
+design area            3123.0 u^2
+fixed area              245.2 u^2
 movable area           1056.0 u^2
-utilization                30 %
-utilization padded         50 %
-rows                       37
+utilization                37 %
+utilization padded         61 %
+rows                       26
 row height                2.7 u
 
 Placement Analysis
 --------------------------------
-total displacement      381.4 u
-average displacement      2.1 u
-max displacement         15.4 u
-original HPWL          1848.8 u
-legalized HPWL         2215.5 u
-delta HPWL                 20 %
+total displacement     1817.5 u
+average displacement     11.2 u
+max displacement         43.1 u
+original HPWL          2505.3 u
+legalized HPWL         4239.5 u
+delta HPWL                 69 %
 
