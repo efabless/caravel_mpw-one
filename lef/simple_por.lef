@@ -6,58 +6,66 @@ MACRO simple_por
   CLASS BLOCK ;
   FOREIGN simple_por ;
   ORIGIN 0.000 0.000 ;
-  SIZE 21.800 BY 45.820 ;
-  PIN porb_h
-    DIRECTION OUTPUT TRISTATE ;
-    PORT
-      LAYER met2 ;
-        RECT 3.840 41.820 4.120 45.820 ;
-    END
-  END porb_h
+  SIZE 56.720 BY 41.690 ;
   PIN vdd3v3
-    DIRECTION INPUT ;
     PORT
-      LAYER met2 ;
-        RECT 0.000 0.000 0.280 4.000 ;
+      LAYER met4 ;
+        RECT 0.190 39.825 0.365 41.415 ;
     END
   END vdd3v3
-  PIN vss
-    DIRECTION INPUT ;
+  PIN vdd1v8
     PORT
-      LAYER met3 ;
-        RECT 17.800 19.310 21.800 19.910 ;
+      LAYER met4 ;
+        RECT 54.010 39.810 55.900 41.455 ;
+    END
+  END vdd1v8
+  PIN vss
+    PORT
+      LAYER met4 ;
+        RECT 0.190 36.275 21.750 38.275 ;
     END
   END vss
-  PIN VPWR
-    DIRECTION INPUT ;
-    USE POWER ;
+  PIN porb_h
     PORT
-      LAYER met5 ;
-        RECT 2.780 17.260 15.740 18.860 ;
+      LAYER met3 ;
+        RECT 54.545 33.825 56.710 34.170 ;
     END
-  END VPWR
-  PIN VGND
-    DIRECTION INPUT ;
-    USE GROUND ;
+  END porb_h
+  PIN por_l
     PORT
-      LAYER met5 ;
-        RECT 2.780 19.295 15.740 20.895 ;
+      LAYER met3 ;
+        RECT 53.960 37.455 56.720 37.755 ;
     END
-  END VGND
+  END por_l
+  PIN porb_l
+    PORT
+      LAYER met3 ;
+        RECT 51.855 39.280 56.715 39.580 ;
+    END
+  END porb_l
   OBS
       LAYER li1 ;
-        RECT 2.780 16.195 15.740 28.575 ;
+        RECT 0.175 0.180 54.300 41.440 ;
       LAYER met1 ;
-        RECT 2.780 16.025 15.740 28.745 ;
+        RECT 0.125 0.055 54.575 41.430 ;
       LAYER met2 ;
-        RECT 4.400 41.540 14.320 41.820 ;
-        RECT 3.850 16.025 14.320 41.540 ;
+        RECT 0.190 30.880 54.590 41.435 ;
       LAYER met3 ;
-        RECT 4.140 16.115 14.380 28.655 ;
+        RECT 0.190 39.980 54.590 41.415 ;
+        RECT 0.190 38.880 51.455 39.980 ;
+        RECT 0.190 38.155 54.590 38.880 ;
+        RECT 0.190 37.055 53.560 38.155 ;
+        RECT 0.190 34.570 54.590 37.055 ;
+        RECT 0.190 33.425 54.145 34.570 ;
+        RECT 0.190 0.255 54.590 33.425 ;
       LAYER met4 ;
-        RECT 4.140 16.025 14.380 28.745 ;
+        RECT 0.765 39.425 53.610 41.455 ;
+        RECT 0.365 39.410 53.610 39.425 ;
+        RECT 0.365 38.675 55.890 39.410 ;
+        RECT 22.150 35.875 55.890 38.675 ;
+        RECT 0.365 0.255 55.890 35.875 ;
       LAYER met5 ;
-        RECT 2.780 22.495 15.740 27.000 ;
+        RECT 21.565 0.250 55.855 38.895 ;
   END
 END simple_por
 END LIBRARY
