@@ -2,7 +2,7 @@
 
 You can utilize the Makefile existing here in this directory to do that.
 
-But, first you need to specify 3 things:
+But, first you need to specify 2 things:
 ```bash
 export PDK_ROOT=<The location where the pdk is installed>
 export OPENLANE_ROOT=<the absolute path to the openlane directory cloned or to be cloned>
