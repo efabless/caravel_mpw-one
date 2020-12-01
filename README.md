@@ -15,6 +15,11 @@ cd caravel
 make uncompress
 ```
 
+Then you need to install the open_pdks prerequisite:
+ - [Magic VLSI Layout Tool](http://opencircuitdesign.com/magic/index.html) is needed to run open_pdks -- version >= 8.3.60*
+
+ > \* Note: You can avoid the need for the magic prerequisite by using the openlane docker to do the installation step in open_pdks. This [file](https://github.com/efabless/openlane/blob/develop/travisCI/travisBuild.sh) shows how.
+
 Install the required version of the PDK by running the following commands:
 
 ```bash
