@@ -1,8 +1,8 @@
 `default_nettype none
 module mgmt_core (
 `ifdef USE_POWER_PINS
-	inout vdd1v8,	   
-	inout vss,
+	inout VPWR,	   
+	inout VGND,
 `endif
 	// GPIO (dedicated pad)
 	output gpio_out_pad,		// Connect to out on gpio pad
@@ -168,8 +168,8 @@ module mgmt_core (
 
 	mgmt_soc soc (
     	    `ifdef USE_POWER_PINS
-        	.vdd1v8(vdd1v8),
-        	.vss(vss),
+        	.vdd1v8(VPWR),
+        	.vss(VGND),
     	    `endif
 		.clk(core_clk),
 		.resetn(core_rstn),

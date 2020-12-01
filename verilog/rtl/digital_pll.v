@@ -7,14 +7,14 @@
 
 module digital_pll(
 `ifdef USE_POWER_PINS
-    vdd,
-    vss,
+    VPWR,
+    VGND,
 `endif
     resetb, enable, osc, clockp, div, dco, ext_trim);
 
 `ifdef USE_POWER_PINS
-    input vdd;
-    input vss;
+    input VPWR;
+    input VGND;
 `endif
 
     input	 resetb;	// Sense negative reset
