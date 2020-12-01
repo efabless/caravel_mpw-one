@@ -17,6 +17,12 @@ cd open_mpw_precheck
 docker run -v $(pwd):/usr/local/bin -v $TARGET_PATH:$TARGET_PATH -u $(id -u $USER):$(id -g $USER) open_mpw_prechecker:latest bash -c "python3 open_mpw_prechecker.py --skip_drc -t $TARGET_PATH"
 output=$TARGET_PATH/checks/full_log.log
 
+gzipped_file=$TARGET_PATH/checks/full_log.log.gz
+
+if [[ -f $gzipped_file ]]; then
+    gzip -d $gzipped_file
+fi
+
 cnt=$(grep -c -i "All Checks PASSED" $output)
 if ! [[ $cnt ]]; then cnt=0; fi
 
