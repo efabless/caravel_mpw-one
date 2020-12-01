@@ -112,8 +112,8 @@ module mgmt_core (
 
 	caravel_clocking clocking(
 	`ifdef USE_POWER_PINS
-		.vdd1v8(vdd1v8),
-		.vss(vss),
+		.vdd1v8(VPWR),
+		.vss(VGND),
 	`endif		
 		.ext_clk_sel(ext_clk_sel),
 		.ext_clk(clock),
@@ -258,8 +258,8 @@ module mgmt_core (
     
     	digital_pll pll (
 	    `ifdef USE_POWER_PINS
-		.vdd(vdd1v8),
-		.vss(vss),
+		.VPWR(VPWR),
+		.VGND(VGND),
 	    `endif
 		.resetb(resetb),
 		.enable(spi_pll_ena),
@@ -273,8 +273,8 @@ module mgmt_core (
 	// Housekeeping SPI (SPI slave module)
 	housekeeping_spi housekeeping (
 	    `ifdef USE_POWER_PINS
-		.vdd(vdd1v8),
-		.vss(vss),
+		.vdd(VPWR),
+		.vss(VGND),
 	    `endif
 	    .RSTB(porb),
 	    .SCK((hk_connect) ? mgmt_out_data[4] : mgmt_in_data[4]),
