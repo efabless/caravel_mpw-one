@@ -1,5 +1,7 @@
-FILE_SIZE_LIMIT_MB = 10
-LARGE_FILES := $(shell find . -type f -size +$(FILE_SIZE_LIMIT_MB)M -not -path "./.git/*")
+# cannot commit files larger than 100 MB to GitHub 
+FILE_SIZE_LIMIT_MB = 100
+LARGE_FILES := $(shell find ./gds -type f -name "*.gds")
+LARGE_FILES += $(shell find . -type f -size +$(FILE_SIZE_LIMIT_MB)M -not -path "./.git/*" -not -path "./gds/*")
 
 LARGE_FILES_GZ := $(addsuffix .gz, $(LARGE_FILES))
 

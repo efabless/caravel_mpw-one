@@ -13,8 +13,11 @@
 
 `timescale 1 ns / 1 ps
 
-`define USE_POWER_PINS
 `define UNIT_DELAY #1
+
+`ifdef SIM
+
+`define USE_POWER_PINS
 
 `include "defines.v"
 `include "pads.v"
@@ -64,6 +67,7 @@
 // `ifdef USE_OPENRAM
 //     `include "sram_1rw1r_32_256_8_sky130.v"
 // `endif
+`endif
 
 module caravel (
     inout vddio,	// Common 3.3V padframe/ESD power
