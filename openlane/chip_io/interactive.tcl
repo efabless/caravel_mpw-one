@@ -97,9 +97,10 @@ save_views       -lef_path $::env(magic_result_file_tag).lef \
                  -def_path $::env(CURRENT_DEF) \
                  -gds_path $::env(magic_result_file_tag).gds \
                  -mag_path $::env(magic_result_file_tag).mag \
+                 -maglef_path $::env(magic_result_file_tag).lef.mag \
+				 -verilog_path $::env(CURRENT_NETLIST) \
                  -save_path $save_path \
                  -tag $::env(RUN_TAG)
-
 
 run_magic_spice_export
 run_lvs $::env(magic_result_file_tag).spice $::env(TMP_DIR)/lvs.v

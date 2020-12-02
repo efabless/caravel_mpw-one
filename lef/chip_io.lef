@@ -331,7 +331,7 @@ MACRO chip_io
     DIRECTION INOUT ;
     PORT
       LAYER met3 ;
-        RECT 180.200 601.390 200.000 625.290 ;
+        RECT 180.200 601.390 200.00 625.290 ;
     END
   END vddio
   PIN vssa
@@ -14347,6 +14347,8 @@ MACRO chip_io
       LAYER met3 ;
         RECT 3386.690 726.430 3588.000 805.690 ;
         RECT 0.000 600.990 179.800 625.290 ;
+      LAYER met3 ;
+        RECT 180.200 601.390 200.000 625.290 ;
       LAYER met3 ;
         RECT 0.000 600.290 197.275 600.990 ;
       LAYER met3 ;
