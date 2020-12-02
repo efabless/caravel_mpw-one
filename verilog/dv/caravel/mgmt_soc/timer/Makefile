@@ -16,9 +16,15 @@ all:  ${PATTERN:=.vcd}
 hex:  ${PATTERN:=.hex}
 
 %.vvp: %_tb.v %.hex
+ifeq ($(SIM),RTL)
 	iverilog -DFUNCTIONAL -I $(BEHAVIOURAL_MODELS) \
 	-I $(PDK_PATH) -I $(IP_PATH) -I $(RTL_PATH) \
-	$< -o $@
+	$< -o $@ 
+else  
+	iverilog -DFUNCTIONAL -DGL -I $(BEHAVIOURAL_MODELS) \
+	-I $(PDK_PATH) -I $(IP_PATH) -I $(VERILOG_PATH) -I $(RTL_PATH) \
+	$< -o $@ 
+endif
 
 %.vcd: %.vvp
 	vvp $<

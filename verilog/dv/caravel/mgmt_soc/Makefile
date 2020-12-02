@@ -7,7 +7,8 @@ PATTERNS = gpio mem uart perf hkspi sysctrl mprj_ctrl pass_thru timer timer2 pll
 
 all:  ${PATTERNS}
 	for i in ${PATTERNS}; do \
-		( cd $$i && make -f Makefile $${i}.vcd &> verify.log && grep Monitor verify.log) ; \
+		( cd $$i && SIM=RTL make -f Makefile $${i}.vcd &> verify.log && grep Monitor verify.log) ; \
+		( cd $$i && SIM=GL make -f Makefile $${i}.vcd &> verify.log && grep Monitor verify.log) ; \
 	done
 
 clean:  ${PATTERNS}

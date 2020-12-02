@@ -165,65 +165,183 @@ module hkspi_tb;
 	    read_byte(tbdata);
 
 	    $display("Read register 0 = 0x%02x (should be 0x00)", tbdata);
-		if(tbdata !== 8'h00) begin $display("Monitor: Test HK SPI (RTL) Failed"); $finish; end
+		if(tbdata !== 8'h00) begin 
+			`ifdef GL
+				$display("Monitor: Test HK SPI (GL) Failed"); $finish; 
+			`else
+				$display("Monitor: Test HK SPI (RTL) Failed"); $finish; 
+			`endif
+		end
 	    read_byte(tbdata);
 	    $display("Read register 1 = 0x%02x (should be 0x04)", tbdata);
-		if(tbdata !== 8'h04) begin $display("Monitor: Test HK SPI (RTL) Failed"); $finish; end
+		if(tbdata !== 8'h04) begin 
+			`ifdef GL
+				$display("Monitor: Test HK SPI (GL) Failed"); $finish; 
+			`else
+				$display("Monitor: Test HK SPI (RTL) Failed"); $finish; 
+			`endif
+		end
 	    read_byte(tbdata);
 	    $display("Read register 2 = 0x%02x (should be 0x56)", tbdata);
-		if(tbdata !== 8'h56) begin $display("Monitor: Test HK SPI (RTL) Failed, %02x", tbdata); $finish; end
+		if(tbdata !== 8'h56) begin
+			`ifdef GL
+				$display("Monitor: Test HK SPI (GL) Failed, %02x", tbdata); $finish; 
+			`else
+				$display("Monitor: Test HK SPI (RTL) Failed, %02x", tbdata); $finish; 
+			`endif
+		end
 	    read_byte(tbdata);
 	    $display("Read register 3 = 0x%02x (should be 0x10)", tbdata);
-		if(tbdata !== 8'h10) begin $display("Monitor: Test HK SPI (RTL) Failed"); $finish; end
+		if(tbdata !== 8'h10) begin 
+			`ifdef GL
+				$display("Monitor: Test HK SPI (GL) Failed, %02x", tbdata); $finish; 
+			`else
+				$display("Monitor: Test HK SPI (RTL) Failed, %02x", tbdata); $finish; 
+			`endif
+		end
 	    read_byte(tbdata);
 	    $display("Read register 4 = 0x%02x (should be 0x00)", tbdata);
-		if(tbdata !== 8'h00) begin $display("Monitor: Test HK SPI (RTL) Failed"); $finish; end
+		if(tbdata !== 8'h00) begin 
+			`ifdef GL
+				$display("Monitor: Test HK SPI (GL) Failed"); $finish; 
+			`else
+				$display("Monitor: Test HK SPI (RTL) Failed"); $finish; 
+			`endif
+		end
 	    read_byte(tbdata);
 	    $display("Read register 5 = 0x%02x (should be 0x00)", tbdata);
-		if(tbdata !== 8'h00) begin $display("Monitor: Test HK SPI (RTL) Failed"); $finish; end
+		if(tbdata !== 8'h00) begin 
+			`ifdef GL
+				$display("Monitor: Test HK SPI (GL) Failed"); $finish; 
+			`else
+				$display("Monitor: Test HK SPI (RTL) Failed"); $finish; 
+			`endif
+		end
 	    read_byte(tbdata);
 	    $display("Read register 6 = 0x%02x (should be 0x00)", tbdata);
-		if(tbdata !== 8'h00) begin $display("Monitor: Test HK SPI (RTL) Failed"); $finish; end
+		if(tbdata !== 8'h00) begin 
+			`ifdef GL
+				$display("Monitor: Test HK SPI (GL) Failed"); $finish; 
+			`else
+				$display("Monitor: Test HK SPI (RTL) Failed"); $finish; 
+			`endif
+		end
 	    read_byte(tbdata);
 	    $display("Read register 7 = 0x%02x (should be 0x00)", tbdata);
-		if(tbdata !== 8'h00) begin $display("Monitor: Test HK SPI (RTL) Failed"); $finish; end
+		if(tbdata !== 8'h00) begin 
+			`ifdef GL
+				$display("Monitor: Test HK SPI (GL) Failed"); $finish; 
+			`else
+				$display("Monitor: Test HK SPI (RTL) Failed"); $finish; 
+			`endif
+		end
 	    read_byte(tbdata);
 	    $display("Read register 8 = 0x%02x (should be 0x02)", tbdata);
-		if(tbdata !== 8'h02) begin $display("Monitor: Test HK SPI (RTL) Failed"); $finish; end
+		if(tbdata !== 8'h02) begin 
+			`ifdef GL
+				$display("Monitor: Test HK SPI (GL) Failed"); $finish; 
+			`else
+				$display("Monitor: Test HK SPI (RTL) Failed"); $finish; 
+			`endif
+		end
 	    read_byte(tbdata);
 	    $display("Read register 9 = 0x%02x (should be 0x01)", tbdata);
-		if(tbdata !== 8'h01) begin $display("Monitor: Test HK SPI (RTL) Failed"); $finish; end
+		if(tbdata !== 8'h01) begin 
+			`ifdef GL
+				$display("Monitor: Test HK SPI (GL) Failed"); $finish; 
+			`else
+				$display("Monitor: Test HK SPI (RTL) Failed"); $finish; 
+			`endif
+		end
 	    read_byte(tbdata);
 	    $display("Read register 10 = 0x%02x (should be 0x00)", tbdata);
-		if(tbdata !== 8'h00) begin $display("Monitor: Test HK SPI (RTL) Failed"); $finish; end
+		if(tbdata !== 8'h00) begin 
+			`ifdef GL
+				$display("Monitor: Test HK SPI (GL) Failed"); $finish; 
+			`else
+				$display("Monitor: Test HK SPI (RTL) Failed"); $finish; 
+			`endif
+		end
 	    read_byte(tbdata);
 	    $display("Read register 11 = 0x%02x (should be 0x00)", tbdata);
-		if(tbdata !== 8'h00) begin $display("Monitor: Test HK SPI (RTL) Failed"); $finish; end
+		if(tbdata !== 8'h00) begin 
+			`ifdef GL
+				$display("Monitor: Test HK SPI (GL) Failed"); $finish; 
+			`else
+				$display("Monitor: Test HK SPI (RTL) Failed"); $finish; 
+			`endif
+		end
 	    read_byte(tbdata);
 	    $display("Read register 12 = 0x%02x (should be 0x00)", tbdata);
-		if(tbdata !== 8'h00) begin $display("Monitor: Test HK SPI (RTL) Failed"); $finish; end
+		if(tbdata !== 8'h00) begin 
+			`ifdef GL
+				$display("Monitor: Test HK SPI (GL) Failed"); $finish; 
+			`else
+				$display("Monitor: Test HK SPI (RTL) Failed"); $finish; 
+			`endif
+		end
 	    read_byte(tbdata);
 	    $display("Read register 13 = 0x%02x (should be 0xff)", tbdata);
-		if(tbdata !== 8'hff) begin $display("Monitor: Test HK SPI (RTL) Failed"); $finish; end
+		if(tbdata !== 8'hff) begin 
+			`ifdef GL
+				$display("Monitor: Test HK SPI (GL) Failed"); $finish; 
+			`else
+				$display("Monitor: Test HK SPI (RTL) Failed"); $finish; 
+			`endif
+		end
 	    read_byte(tbdata);
 	    $display("Read register 14 = 0x%02x (should be 0xef)", tbdata);
-		if(tbdata !== 8'hef) begin $display("Monitor: Test HK SPI (RTL) Failed"); $finish; end
+		if(tbdata !== 8'hef) begin 
+			`ifdef GL
+				$display("Monitor: Test HK SPI (GL) Failed"); $finish; 
+			`else
+				$display("Monitor: Test HK SPI (RTL) Failed"); $finish; 
+			`endif
+		end
 	    read_byte(tbdata);
 	    $display("Read register 15 = 0x%02x (should be 0xff)", tbdata);
-		if(tbdata !== 8'hff) begin $display("Monitor: Test HK SPI (RTL) Failed"); $finish; end
+		if(tbdata !== 8'hff) begin 
+			`ifdef GL
+				$display("Monitor: Test HK SPI (GL) Failed"); $finish; 
+			`else
+				$display("Monitor: Test HK SPI (RTL) Failed"); $finish; 
+			`endif
+		end
 	    read_byte(tbdata);
 	    $display("Read register 16 = 0x%02x (should be 0x03)", tbdata);
-		if(tbdata !== 8'h03) begin $display("Monitor: Test HK SPI (RTL) Failed"); $finish; end
+		if(tbdata !== 8'h03) begin 
+			`ifdef GL
+				$display("Monitor: Test HK SPI (GL) Failed"); $finish; 
+			`else
+				$display("Monitor: Test HK SPI (RTL) Failed"); $finish; 
+			`endif
+		end
 	    read_byte(tbdata);
 	    $display("Read register 17 = 0x%02x (should be 0x12)", tbdata);
-		if(tbdata !== 8'h12) begin $display("Monitor: Test HK SPI (RTL) Failed"); $finish; end
+		if(tbdata !== 8'h12) begin 
+			`ifdef GL
+				$display("Monitor: Test HK SPI (GL) Failed"); $finish; 
+			`else
+				$display("Monitor: Test HK SPI (RTL) Failed"); $finish; 
+			`endif
+		end
 	    read_byte(tbdata);
 	    $display("Read register 18 = 0x%02x (should be 0x04)", tbdata);
-		if(tbdata !== 8'h04) begin $display("Monitor: Test HK SPI (RTL) Failed"); $finish; end
+		if(tbdata !== 8'h04) begin 
+			`ifdef GL
+				$display("Monitor: Test HK SPI (GL) Failed"); $finish; 
+			`else
+				$display("Monitor: Test HK SPI (RTL) Failed"); $finish; 
+			`endif
+		end
 		
         end_csb();
 
-		$display("Monitor: Test HK SPI (RTL) Passed");
+		`ifdef GL
+			$display("Monitor: Test HK SPI (GL) Passed");
+		`else
+			$display("Monitor: Test HK SPI (RTL) Passed");
+		`endif
 
 	    #10000;
  	    $finish;

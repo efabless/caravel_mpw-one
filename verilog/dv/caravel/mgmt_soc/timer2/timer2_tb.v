@@ -46,7 +46,11 @@ module timer2_tb;
 			$display("+1000 cycles");
 		end
 		$display("%c[1;31m",27);
-		$display ("Monitor: Timeout, Test GPIO (RTL) Failed");
+		`ifdef GL
+			$display ("Monitor: Timeout, Test Timer2 (GL) Failed");
+		`else
+			$display ("Monitor: Timeout, Test Timer2 (RTL) Failed");
+		`endif
 		$display("%c[0m",27);
 		$finish;
 	end
@@ -67,8 +71,11 @@ module timer2_tb;
 	// Monitor
 	initial begin
 		wait(checkbits == 6'h0a);
-		$display("Monitor: Test Timer2 (RTL) Started");
-
+		`ifdef GL
+			$display("Monitor: Test Timer2 (GL) Started");
+		`else
+			$display("Monitor: Test Timer2 (RTL) Started");
+		`endif
 		/* Add checks here */
 		wait(checkbits == 6'h01);
 		$display("   countbits = 0x%x (should be 0xdcba7cf3)", countbits);
@@ -129,7 +136,11 @@ module timer2_tb;
 		    $finish;
 		end
 
-		$display("Monitor: Test Timer2 (RTL) Passed");
+		`ifdef GL
+			$display("Monitor: Test Timer2 (GL) Passed");
+		`else
+			$display("Monitor: Test Timer2 (RTL) Passed");
+		`endif
 		$finish;
 	end
 
