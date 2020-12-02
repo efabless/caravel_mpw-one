@@ -4,7 +4,7 @@ The directory includes three tests for the counter mega-project example:
 
 1) IO Ports Test: 
 
-	* Configures the Mega-project lower 8 IO pins as outputs
+	* Configures the user space lower 8 IO pins as outputs
 	* Observes the counter value through the configured pins in the testbench
 
  2) Logic Analyzer Test 1:
