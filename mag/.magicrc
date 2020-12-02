@@ -8,12 +8,12 @@ if {[lindex $scalefac 1] < 2} {
     scalegrid 1 2
 }
 
-# drc off
-drc euclidean on
+drc off
+# drc euclidean on
 
 # Allow override of PDK path from environment variable PDKPATH
 if {[catch {set PDKPATH $env(PDKPATH)}]} {
-    set PDKPATH "/home/tim/projects/efabless/tech/SW/sky130A"
+    set PDKPATH "$::env(PDK_ROOT)/sky130A"
 }
 
 # loading technology
@@ -39,6 +39,9 @@ set SUB VSUBS
 if {[catch {set MAGTYPE $env(MAGTYPE)}]} {
    set MAGTYPE maglef
 }
+
+	path search [concat "../$MAGTYPE" [path search]]
+
 
 # add path to reference cells
 if {[file isdir ${PDKPATH}/libs.ref/${MAGTYPE}]} {
