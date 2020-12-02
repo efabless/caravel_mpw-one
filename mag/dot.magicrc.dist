@@ -1,4 +1,10 @@
+#---------------------------------------------------------------------
+# 1) must set the variable PDK_ROOT
+#---------------------------------------------------------------------
+
 puts stdout "Sourcing design .magicrc for technology sky130A ..."
+
+#---------------------------------------------------------------------
 
 # Put grid on 0.005 pitch.  This is important, as some commands don't
 # rescale the grid automatically (such as lef read?).
@@ -7,41 +13,61 @@ set scalefac [tech lambda]
 if {[lindex $scalefac 1] < 2} {
     scalegrid 1 2
 }
-
-drc off
-# drc euclidean on
-
+#---------------------------------------------------------------------
+#
+# Allow override of DRC on/off from environment variable DRC
+#
+#---------------------------------------------------------------------
+if {[catch {set DRC $env(DRC)}]} {
+    # default value
+    	drc  off
+} else {
+	drc style drc(full)
+	drc euclidean on
+	sdrc $DRC
+}
+#
+#---------------------------------------------------------------------
 # Allow override of PDK path from environment variable PDKPATH
+#
 if {[catch {set PDKPATH $env(PDKPATH)}]} {
     set PDKPATH "$::env(PDK_ROOT)/sky130A"
 }
-
+#---------------------------------------------------------------------
 # loading technology
 tech load $PDKPATH/libs.tech/magic/current/sky130A.tech
 
+#---------------------------------------------------------------------
 # load device generator
 source $PDKPATH/libs.tech/magic/current/sky130A.tcl
 
+#---------------------------------------------------------------------
 # load bind keys (optional)
 # source $PDKPATH/libs.tech/magic/current/sky130A-BindKeys
 
+#---------------------------------------------------------------------
 # set units to lambda grid 
 snap lambda
+
+#---------------------------------------------------------------------
 
 # set sky130 standard power, ground, and substrate names
 set VDD VPWR
 set GND VGND
 set SUB VSUBS
 
+#---------------------------------------------------------------------
+
 # Allow override of type of magic library views used, "mag" or "maglef",
-# from environment variable MAGTYPE
+# from environment variable MAGTYPE. Deafault value is MAGTYPE=maglef
 
 if {[catch {set MAGTYPE $env(MAGTYPE)}]} {
    set MAGTYPE maglef
 }
 
-	path search [concat "../$MAGTYPE" [path search]]
+path search [concat "../$MAGTYPE" [path search]]
 
+#---------------------------------------------------------------------
 
 # add path to reference cells
 if {[file isdir ${PDKPATH}/libs.ref/${MAGTYPE}]} {
@@ -69,6 +95,8 @@ if {[file isdir ${PDKPATH}/libs.ref/${MAGTYPE}]} {
 }
 
 # add path to GDS cells
+
+    addpath ../gds
 
 # add path to IP from catalog.  This procedure defined in the PDK script.
 catch {magic::query_mylib_ip}

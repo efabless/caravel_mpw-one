@@ -1,0 +1,142 @@
+magic
+tech sky130A
+magscale 1 2
+timestamp 1606790298
+<< obsli1 >>
+rect 38 1879 11417 16057
+<< obsm1 >>
+rect 38 1848 24128 16372
+<< obsm2 >>
+rect 518 23 24124 18321
+<< metal3 >>
+rect 9934 18224 33934 18344
+rect 9934 17408 33934 17528
+rect 9934 16592 33934 16712
+rect 9934 15776 33934 15896
+rect 9934 14960 33934 15080
+rect 9934 14280 33934 14400
+rect 9934 13464 33934 13584
+rect 9934 12648 33934 12768
+rect 9934 11832 33934 11952
+rect 9934 11016 33934 11136
+rect 9934 10200 33934 10320
+rect 9934 9520 33934 9640
+rect 9934 8704 33934 8824
+rect 9934 7888 33934 8008
+rect 9934 7072 33934 7192
+rect 9934 6256 33934 6376
+rect 9934 5440 33934 5560
+rect 9934 4760 33934 4880
+rect 9934 3944 33934 4064
+rect 9934 3128 33934 3248
+rect 9934 2312 33934 2432
+rect 9934 1496 33934 1616
+rect 9934 680 33934 800
+rect 9934 0 33934 120
+<< obsm3 >>
+rect 1356 15976 9934 16073
+rect 1356 15696 9854 15976
+rect 1356 15160 9934 15696
+rect 1356 14880 9854 15160
+rect 1356 14480 9934 14880
+rect 1356 14200 9854 14480
+rect 1356 13664 9934 14200
+rect 1356 13384 9854 13664
+rect 1356 12848 9934 13384
+rect 1356 12568 9854 12848
+rect 1356 12032 9934 12568
+rect 1356 11752 9854 12032
+rect 1356 11216 9934 11752
+rect 1356 10936 9854 11216
+rect 1356 10400 9934 10936
+rect 1356 10120 9854 10400
+rect 1356 9720 9934 10120
+rect 1356 9440 9854 9720
+rect 1356 8904 9934 9440
+rect 1356 8624 9854 8904
+rect 1356 8088 9934 8624
+rect 1356 7808 9854 8088
+rect 1356 7272 9934 7808
+rect 1356 6992 9854 7272
+rect 1356 6456 9934 6992
+rect 1356 6176 9854 6456
+rect 1356 5640 9934 6176
+rect 1356 5360 9854 5640
+rect 1356 4960 9934 5360
+rect 1356 4680 9854 4960
+rect 1356 4144 9934 4680
+rect 1356 3864 9854 4144
+rect 1356 3328 9934 3864
+rect 1356 3048 9854 3328
+rect 1356 2512 9934 3048
+rect 1356 2232 9854 2512
+rect 1356 1863 9934 2232
+<< obsm4 >>
+rect 1356 1848 7591 16088
+<< metal5 >>
+rect 38 6571 8870 6891
+rect 38 4129 8870 4449
+<< obsm5 >>
+rect 38 7211 8870 14214
+<< labels >>
+rlabel metal3 s 9934 0 33934 120 6 mgmt_gpio_in
+port 1 nsew
+rlabel metal3 s 9934 680 33934 800 6 mgmt_gpio_oeb
+port 2 nsew
+rlabel metal3 s 9934 1496 33934 1616 6 mgmt_gpio_out
+port 3 nsew
+rlabel metal3 s 9934 2312 33934 2432 6 pad_gpio_ana_en
+port 4 nsew
+rlabel metal3 s 9934 3128 33934 3248 6 pad_gpio_ana_pol
+port 5 nsew
+rlabel metal3 s 9934 3944 33934 4064 6 pad_gpio_ana_sel
+port 6 nsew
+rlabel metal3 s 9934 4760 33934 4880 6 pad_gpio_dm[0]
+port 7 nsew
+rlabel metal3 s 9934 5440 33934 5560 6 pad_gpio_dm[1]
+port 8 nsew
+rlabel metal3 s 9934 6256 33934 6376 6 pad_gpio_dm[2]
+port 9 nsew
+rlabel metal3 s 9934 7072 33934 7192 6 pad_gpio_holdover
+port 10 nsew
+rlabel metal3 s 9934 7888 33934 8008 6 pad_gpio_ib_mode_sel
+port 11 nsew
+rlabel metal3 s 9934 8704 33934 8824 6 pad_gpio_in
+port 12 nsew
+rlabel metal3 s 9934 9520 33934 9640 6 pad_gpio_inenb
+port 13 nsew
+rlabel metal3 s 9934 10200 33934 10320 6 pad_gpio_out
+port 14 nsew
+rlabel metal3 s 9934 11016 33934 11136 6 pad_gpio_outenb
+port 15 nsew
+rlabel metal3 s 9934 11832 33934 11952 6 pad_gpio_slow_sel
+port 16 nsew
+rlabel metal3 s 9934 12648 33934 12768 6 pad_gpio_vtrip_sel
+port 17 nsew
+rlabel metal3 s 9934 13464 33934 13584 6 resetn
+port 18 nsew
+rlabel metal3 s 9934 14280 33934 14400 6 serial_clock
+port 19 nsew
+rlabel metal3 s 9934 14960 33934 15080 6 serial_data_in
+port 20 nsew
+rlabel metal3 s 9934 15776 33934 15896 6 serial_data_out
+port 21 nsew
+rlabel metal3 s 9934 16592 33934 16712 6 user_gpio_in
+port 22 nsew
+rlabel metal3 s 9934 17408 33934 17528 6 user_gpio_oeb
+port 23 nsew
+rlabel metal3 s 9934 18224 33934 18344 6 user_gpio_out
+port 24 nsew
+rlabel metal5 s 38 4129 8870 4449 6 VPWR
+port 25 nsew power default
+rlabel metal5 s 38 6571 8870 6891 6 VGND
+port 26 nsew ground default
+<< properties >>
+string LEFclass BLOCK
+string FIXED_BBOX 0 0 33934 18344
+string LEFview TRUE
+string GDS_FILE gpio_control_block.gds
+string GDS_END 380356
+string GDS_START 138912
+<< end >>
+
