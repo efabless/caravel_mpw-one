@@ -5,7 +5,7 @@ Organized into two subdirectories:
   * wb_utests: contains unit tests for the wishbone components residing at the management SoC private bus
 
 <pre>
-├── harness
+├── caravel
 │   ├── mgmt_soc
 │   ├── user_proj_example
 └── wb_utests
