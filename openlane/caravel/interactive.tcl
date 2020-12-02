@@ -10,13 +10,13 @@ verilog_elaborate
 init_floorplan
 
 add_macro_placement padframe 0 0 N
-add_macro_placement storage 280.650 263.920 N
-add_macro_placement soc 1004.950 292.4900 N
-add_macro_placement mprj 326.385 1349.705 N
-add_macro_placement mgmt_buffers 1066.855 1223.255 N
-add_macro_placement rstb_level 767.850 211.805 N
-add_macro_placement user_id_value 791.230 1236.990 N
-add_macro_placement por 905.435 1237.260 N
+add_macro_placement storage 260.155 306.960 N
+add_macro_placement soc 1022.750 268.500 N
+add_macro_placement mprj 326.385 1382.010 N
+add_macro_placement mgmt_buffers 1440.500 1198.735 N
+add_macro_placement rstb_level 773.765 257.020 N
+add_macro_placement user_id_value 3283.125 404.630 N
+add_macro_placement por 3270.880 520.985 N
 
 # west
 set west_x 42.835
@@ -83,5 +83,7 @@ save_views       -lef_path $::env(magic_result_file_tag).lef \
                  -def_path $::env(tritonRoute_result_file_tag).def \
                  -gds_path $::env(magic_result_file_tag).gds \
                  -mag_path $::env(magic_result_file_tag).mag \
+                 -maglef_path $::env(magic_result_file_tag).lef.mag \
+				 -verilog_path $::env(CURRENT_NETLIST) \
                  -save_path $save_path \
                  -tag $::env(RUN_TAG)

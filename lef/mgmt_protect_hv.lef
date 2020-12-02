@@ -1,0 +1,61 @@
+VERSION 5.7 ;
+  NOWIREEXTENSIONATPIN ON ;
+  DIVIDERCHAR "/" ;
+  BUSBITCHARS "[]" ;
+MACRO mgmt_protect_hv
+  CLASS BLOCK ;
+  FOREIGN mgmt_protect_hv ;
+  ORIGIN 0.000 0.000 ;
+  SIZE 24.660 BY 25.000 ;
+  PIN mprj2_vdd_logic1
+    DIRECTION OUTPUT TRISTATE ;
+    PORT
+      LAYER met2 ;
+        RECT 21.070 21.000 21.350 25.000 ;
+    END
+  END mprj2_vdd_logic1
+  PIN mprj_vdd_logic1
+    DIRECTION OUTPUT TRISTATE ;
+    PORT
+      LAYER met2 ;
+        RECT 2.830 0.000 3.110 4.000 ;
+    END
+  END mprj_vdd_logic1
+  PIN VPWR
+    DIRECTION INPUT ;
+    USE POWER ;
+    PORT
+      LAYER met1 ;
+        RECT 0.330 20.095 24.330 20.605 ;
+    END
+  END VPWR
+  PIN VGND
+    DIRECTION INPUT ;
+    USE GROUND ;
+    PORT
+      LAYER met1 ;
+        RECT 0.330 16.025 24.330 16.535 ;
+    END
+  END VGND
+  OBS
+      LAYER li1 ;
+        RECT 0.330 3.985 24.330 20.435 ;
+      LAYER met1 ;
+        RECT 0.330 20.885 24.330 21.035 ;
+        RECT 0.330 16.815 24.330 19.815 ;
+        RECT 0.330 3.815 24.330 15.745 ;
+      LAYER met2 ;
+        RECT 1.400 20.720 20.790 21.065 ;
+        RECT 1.400 4.280 21.340 20.720 ;
+        RECT 1.400 3.815 2.550 4.280 ;
+        RECT 3.390 3.815 21.340 4.280 ;
+      LAYER met3 ;
+        RECT 3.535 3.905 21.160 20.515 ;
+      LAYER met4 ;
+        RECT 3.535 3.815 21.160 20.605 ;
+      LAYER met5 ;
+        RECT 0.330 5.825 24.330 18.665 ;
+  END
+END mgmt_protect_hv
+END LIBRARY
+

@@ -1,0 +1,56 @@
+magic
+tech sky130A
+magscale 1 2
+timestamp 1606790297
+<< obsli1 >>
+rect 35 36 10860 8288
+<< obsm1 >>
+rect 25 11 10915 8286
+<< obsm2 >>
+rect 38 6176 10918 8287
+<< metal3 >>
+rect 10371 7856 11343 7916
+rect 10792 7491 11344 7551
+rect 10901 6765 11342 6834
+<< obsm3 >>
+rect 38 7996 10918 8283
+rect 38 7776 10291 7996
+rect 38 7631 10918 7776
+rect 38 7411 10712 7631
+rect 38 6914 10918 7411
+rect 38 6685 10821 6914
+rect 38 51 10918 6685
+<< metal4 >>
+rect 38 7965 101 8283
+rect 10772 7962 11180 8291
+rect 38 7255 4377 7655
+<< obsm4 >>
+rect 181 7885 10692 8291
+rect 101 7882 10692 7885
+rect 101 7735 11178 7882
+rect 4457 7175 11178 7735
+rect 101 51 11178 7175
+<< obsm5 >>
+rect 4313 50 11171 7779
+<< labels >>
+rlabel metal4 s 38 7965 101 8283 6 vdd3v3
+port 1 nsew
+rlabel metal4 s 10772 7962 11180 8291 6 vdd1v8
+port 2 nsew
+rlabel metal4 s 38 7255 4377 7655 6 vss
+port 3 nsew
+rlabel metal3 s 10901 6765 11342 6834 6 porb_h
+port 4 nsew
+rlabel metal3 s 10792 7491 11344 7551 6 por_l
+port 5 nsew
+rlabel metal3 s 10371 7856 11343 7916 6 porb_l
+port 6 nsew
+<< properties >>
+string LEFclass BLOCK
+string FIXED_BBOX 0 0 11344 8338
+string LEFview TRUE
+string GDS_FILE simple_por.gds
+string GDS_END 386480
+string GDS_START 263388
+<< end >>
+

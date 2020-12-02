@@ -1,12 +1,17 @@
 magic
 tech sky130A
 magscale 1 2
-timestamp 1606502073
+timestamp 1606688983
 << nwell >>
 rect 70 7344 6652 7795
+rect 7401 6799 10893 7301
 << pwell >>
 rect 463 6569 519 6579
 rect 2635 5816 2853 6026
+<< mvpsubdiff >>
+rect 7438 7387 10856 7455
+<< mvnsubdiff >>
+rect 7467 7201 10827 7235
 << locali >>
 rect 41 8275 183 8288
 rect 41 8190 57 8275
@@ -549,23 +554,23 @@ timestamp 1606063140
 transform 1 0 6158 0 1 7841
 box -338 -497 338 497
 use sky130_fd_sc_hvl__buf_8  sky130_fd_sc_hvl__buf_8_0 ~/projects/efabless/tech/SW/sky130A/libs.ref/sky130_fd_sc_hvl/mag
-timestamp 1606502073
+timestamp 1606688983
 transform 1 0 8523 0 1 6404
 box -66 -23 1986 897
 use sky130_fd_sc_hvl__buf_8  sky130_fd_sc_hvl__buf_8_1
-timestamp 1606502073
+timestamp 1606688983
 transform 1 0 7477 0 1 7438
 box -66 -23 1986 897
 use sky130_fd_sc_hvl__schmittbuf_1  sky130_fd_sc_hvl__schmittbuf_1_0 ~/projects/efabless/tech/SW/sky130A/libs.ref/sky130_fd_sc_hvl/mag
-timestamp 1606502073
+timestamp 1606688983
 transform 1 0 7467 0 1 6404
 box -66 -23 1122 897
 use sky130_fd_sc_hvl__inv_8  sky130_fd_sc_hvl__inv_8_0 ~/projects/efabless/tech/SW/sky130A/libs.ref/sky130_fd_sc_hvl/mag
-timestamp 1606502073
+timestamp 1606688983
 transform 1 0 9397 0 1 7438
 box -66 -23 1506 897
 use sky130_fd_sc_hvl__fill_4  sky130_fd_sc_hvl__fill_4_0 ~/projects/efabless/tech/SW/sky130A/libs.ref/sky130_fd_sc_hvl/mag
-timestamp 1606502073
+timestamp 1606688983
 transform 1 0 10443 0 1 6404
 box -66 -23 450 897
 use sky130_fd_pr__res_xhigh_po_0p69_S5N9F3  sky130_fd_pr__res_xhigh_po_0p69_S5N9F3_0
@@ -581,19 +586,18 @@ timestamp 1606502073
 transform -1 0 7027 0 1 3151
 box -3136 -3100 3136 3100
 << labels >>
-flabel metal2 8467 7364 8467 7364 0 FreeSans 320 0 0 0 out
 flabel metal4 s 38 7965 73 8283 0 FreeSans 320 0 0 0 vdd3v3
 port 0 nsew
 flabel metal4 s 38 7255 232 7655 0 FreeSans 320 0 0 0 vss
 port 2 nsew
-flabel metal3 10969 6765 11342 6834 0 FreeSans 320 0 0 0 porb_h
-port 3 nsew
 flabel metal4 s 10974 7962 11180 8291 0 FreeSans 320 0 0 0 vdd1v8
 port 1 nsew
 flabel metal3 11189 7491 11344 7551 0 FreeSans 320 0 0 0 por_l
 port 4 nsew
 flabel metal3 11188 7856 11343 7916 0 FreeSans 320 0 0 0 porb_l
 port 5 nsew
+flabel metal3 10969 6765 11342 6834 0 FreeSans 320 0 0 0 porb_h
+port 3 nsew
 << properties >>
 string FIXED_BBOX 0 0 11344 8338
 << end >>

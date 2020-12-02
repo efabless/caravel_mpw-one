@@ -81,7 +81,7 @@ module chip_io(
 	// rails and grounds, and one back-to-back diode which connects
 	// between the first LV clamp ground and any other ground.
 
-    	sky130_ef_io__vddio_hvc_pad mgmt_vddio_hvclamp_pad[0] (
+    	sky130_ef_io__vddio_hvc_pad \mgmt_vddio_hvclamp_pad[0]  (
 		`MGMT_ABUTMENT_PINS
 `ifdef TOP_ROUTING
 		.VDDIO(vddio),
@@ -90,7 +90,7 @@ module chip_io(
     	);
 
 	// lies in user area 2
-    	sky130_ef_io__vddio_hvc_pad mgmt_vddio_hvclamp_pad[1] (
+    	sky130_ef_io__vddio_hvc_pad \mgmt_vddio_hvclamp_pad[1]  (
 		`USER2_ABUTMENT_PINS
 `ifdef TOP_ROUTING
 		.VDDIO(vddio),
@@ -114,7 +114,7 @@ module chip_io(
 		`LVCLAMP_PINS(vccd, vssio, vccd, vssd, vssa)
     	);
 
-    	sky130_ef_io__vssio_hvc_pad mgmt_vssio_hvclamp_pad[0] (
+    	sky130_ef_io__vssio_hvc_pad \mgmt_vssio_hvclamp_pad[0]  (
 		`MGMT_ABUTMENT_PINS
 `ifdef TOP_ROUTING
 		.VSSIO(vssio),
@@ -122,7 +122,7 @@ module chip_io(
 		`HVCLAMP_PINS(vddio, vssio)
     	);
 
-    	sky130_ef_io__vssio_hvc_pad mgmt_vssio_hvclamp_pad[1] (
+    	sky130_ef_io__vssio_hvc_pad \mgmt_vssio_hvclamp_pad[1]  (
 		`USER2_ABUTMENT_PINS
 `ifdef TOP_ROUTING
 		.VSSIO(vssio),
@@ -249,7 +249,7 @@ module chip_io(
 
 	wire xresloop;
 	sky130_fd_io__top_xres4v2 resetb_pad (
-		`MGMT_ABUTMENT_PINS 
+		`MGMT_ABUTMENT_PINS
 		`ifndef	TOP_ROUTING
 		    .PAD(resetb),
 		`endif
