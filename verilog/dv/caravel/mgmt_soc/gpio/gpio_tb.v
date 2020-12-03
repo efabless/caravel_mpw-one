@@ -46,8 +46,12 @@ module gpio_tb;
 			$display("+1000 cycles");
 		end
 		$display("%c[1;31m",27);
-		$display ("Monitor: Timeout, Test GPIO (RTL) Failed");
-		 $display("%c[0m",27);
+		`ifdef GL
+			$display ("Monitor: Timeout, Test GPIO (GL) Failed");
+		`else
+			$display ("Monitor: Timeout, Test GPIO (RTL) Failed");
+		`endif
+		$display("%c[0m",27);
 		$finish;
 	end
 
@@ -96,7 +100,11 @@ module gpio_tb;
 		wait(checkbits_hi == 8'h02);
 		wait(checkbits[7:0]  == 8'h03);
 		wait(checkbits_hi == 8'h04);
-		$display("Monitor: Test GPIO (RTL) Passed");
+		`ifdef GL
+			$display("Monitor: Test GPIO (GL) Passed");
+		`else
+			$display("Monitor: Test GPIO (RTL) Passed");
+		`endif
 		$finish;
 	end
 
