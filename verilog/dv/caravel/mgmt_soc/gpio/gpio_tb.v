@@ -63,6 +63,7 @@ module gpio_tb;
 	assign mprj_io[23:16] = checkbits_lo;
 	assign checkbits = mprj_io[31:16];
 	assign checkbits_hi = checkbits[15:8];
+	assign mprj_io[3] = 1'b1;       // Force CSB high.
 
 	wire flash_csb;
 	wire flash_clk;
