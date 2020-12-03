@@ -13,8 +13,10 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 export TARGET_PATH=$(pwd)
+cd ..
 export PDK_ROOT=$(pwd)/pdks
-cd open_mpw_precheck
+cd $TARGET_PATH/open_mpw_precheck/
+
 docker run -v $(pwd):/usr/local/bin -v $TARGET_PATH:$TARGET_PATH -v $PDK_ROOT:$PDK_ROOT -u $(id -u $USER):$(id -g $USER) open_mpw_prechecker:latest bash -c "python3 open_mpw_prechecker.py --skip_drc -p $PDK_ROOT -t $TARGET_PATH"
 output=$TARGET_PATH/checks/full_log.log
 
