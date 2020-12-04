@@ -31,7 +31,8 @@ Then, you can learn more about the caravel chip by watching these video:
 - Caravel User Project Features -- https://youtu.be/zJhnmilXGPo
 - Aboard Caravel -- How to put your design on Caravel? -- https://youtu.be/9QV8SDelURk
 - Things to Clarify About Caravel -- What versions to use with Caravel? -- https://youtu.be/-LZ522mxXMw
-
+    - You could only use openlane:rc5
+    - Make sure you have the commit hashes provided here inside the [Makefile](./Makefile)
 ## Aboard Caravel:
 
 Your area is the full user_project_wrapper, so feel free to add your project there or create a differnt macro and harden it seperately then insert it into the user_project_wrapper. For example, if your design is analog or you're using a different tool other than OpenLANE.
@@ -79,6 +80,20 @@ exit
 ```
 
 This should merge the GDSes using magic and you'll end up with your version of `./gds/caravel.gds`. You should expect hundred of thousands of magic DRC violations with the current "development" state of caravel.
+
+## Required Directory Structure
+
+- ./gds/ : includes all the gds files used or produced from the project.
+- ./def/ : includes all the def files used or produced from the project.
+- ./lef/ : includes all the lef files used or produced from the project.
+- ./mag/ : includes all the mag files used or produced from the project.
+- ./maglef/ : includes all the maglef files used or produced from the project.
+- ./spi/lvs/ : includes all the maglef files used or produced from the project.
+- ./verilog/dv/ : includes all the simulation test benches and how to run them. 
+- ./verilog/gl/ : includes all the synthesized/elaborated netlists. 
+- ./verilog/rtl/ : includes all the Verilog RTLs and source files.
+- ./openlane/`<macro>`/ : includes all configuration files used to run openlane on your project.
+- info.yaml: includes all the info required in [this example](info.yaml). Please make sure that you are pointing to an elaborated caravel netlist as well as a synthesized gate-level-netlist for the user_project_wrapper
 
 ## Managment SoC
 The managment SoC runs firmware that can be used to:

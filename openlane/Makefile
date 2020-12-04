@@ -47,7 +47,7 @@ ifeq ($(OPENLANE_ROOT),)
 	@echo "Please export OPENLANE_ROOT"
 	@exit 1
 endif
-	git clone https://github.com/efabless/openlane.git --branch=develop $(OPENLANE_ROOT) && \
+	git clone https://github.com/efabless/openlane.git --branch=master $(OPENLANE_ROOT) && \
 		cd $(OPENLANE_ROOT) && \
 		make openlane
 
