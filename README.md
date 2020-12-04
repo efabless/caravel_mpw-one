@@ -44,7 +44,7 @@ Then, you will need to put your design aboard the Caravel chip. Make sure you ha
 - [Magic VLSI Layout Tool](http://opencircuitdesign.com/magic/index.html) installed on your machine. We may provide a Dockerized version later.\*
 - You have your user_project_wrapper.gds under `./gds/` in the Caravel directory.
 
- > \* **Note:** You can avoid the need for the magic prerequisite by using the openlane docker to run the make step. This [section](#running-make-using-openlane's-magic) shows how.
+ > \* **Note:** You can avoid the need for the magic prerequisite by using the openlane docker to run the make step. This [section](#running-make-using-openlane-magic) shows how.
 
 Run the following command:
 
@@ -55,7 +55,7 @@ make
 
 This should merge the GDSes using magic and you'll end up with your version of `./gds/caravel.gds`. You should expect hundred of thousands of magic DRC violations with the current "development" state of caravel.
 
-## Running Make using OpenLANE's Magic
+## Running Make using OpenLANE Magic
 
 To use the magic installed inside Openlane to complete the final GDS streaming out step, export the following:
 
