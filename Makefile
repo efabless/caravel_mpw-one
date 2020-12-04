@@ -8,6 +8,7 @@ LARGE_FILES_GZ := $(addsuffix .gz, $(LARGE_FILES))
 ARCHIVES := $(shell find . -type f -name "*.gz")
 ARCHIVE_SOURCES := $(basename $(ARCHIVES))
 
+
 # PDK setup configs
 THREADS ?= $(shell nproc)
 STD_CELL_LIBRARY ?= sky130_fd_sc_hd
@@ -61,6 +62,38 @@ $(ARCHIVE_SOURCES): %: %.gz
 uncompress: $(ARCHIVE_SOURCES)
 	@echo "All files are uncompressed!"
 
+
+# LVS
+NETGEN_SETUP=$(PDK_ROOT)/sky130A/libs.tech/netgen/sky130A_setup.tcl
+
+BLOCKS = $(shell cd openlane && find * -maxdepth 0 -type d)
+LVS_BLOCKS = $(foreach block, $(BLOCKS), lvs-$(block))
+$(LVS_BLOCKS): lvs-% : ./mag/%.mag ./verilog/gl/%.v ./spi/lvs/%.spice
+	echo "Extracting $*"
+	mkdir -p ./mag/tmp
+	echo "load $* -dereference;\
+		extract no all;\
+		extract do local;\
+		extract;\
+		ext2spice lvs;\
+		ext2spice;\
+		feedback save extract_$*.log;\
+		exit;" > ./mag/extract_$*.tcl
+	cd mag && MAGTYPE=maglef magic -rcfile ${PDK_ROOT}/sky130A/libs.tech/magic/current/sky130A.magicrc -noc -dnull extract_$*.tcl
+	mv ./mag/$*.spice ./spi/lvs
+	mv -f ./mag/extract_$*.{tcl,log} ./mag/*.ext ./mag/tmp
+	####
+	mkdir -p ./spi/lvs/tmp
+	sh ./spi/lvs/run_lvs.sh ./verilog/gl/$*.v ./spi/lvs/$*.spice $*
+	mv -f ./spi/lvs/*{.out,.json,.log} ./spi/lvs/tmp
+	
+
+.PHONY: help
+help:
+	@$(MAKE) -pRrq -f $(lastword $(MAKEFILE_LIST)) : 2>/dev/null | awk -v RS= -F: '/^# File/,/^# Finished Make data base/ {if ($$1 !~ "^[#.]") {print $$1}}' | sort | egrep -v -e '^[^[:alnum:]]' -e '^$@$$'
+
+		
+###########################################################################
 .PHONY: pdk
 pdk: skywater-pdk skywater-library open_pdks build-pdk
 
