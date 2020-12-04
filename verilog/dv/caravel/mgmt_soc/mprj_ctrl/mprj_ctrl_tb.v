@@ -118,6 +118,8 @@ module mprj_ctrl_tb;
 	assign VDD1V8 = power2;
 	assign VSS = 1'b0;
 
+	assign user_io[3] = 1'b1;
+	
 	caravel uut (
 		.vddio	  (VDD3V3),
 		.vssio	  (VSS),

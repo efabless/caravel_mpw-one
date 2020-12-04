@@ -144,6 +144,8 @@ module storage_tb;
 	assign VDD3V3 = power1;
 	assign VDD1V8 = power2;
 
+	assign mprj_io[3] = 1'b1;  // Force CSB high.
+
 	caravel uut (
 		.vddio	  (VDD3V3),
 		.vssio	  (VSS),
