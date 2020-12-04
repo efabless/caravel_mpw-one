@@ -2269,6 +2269,7 @@ module picorv32_pcpi_mul #(
 		mul_finish <= 0;
 		if (!resetn) begin
 			mul_waiting <= 1;
+			mul_counter <= 0;
 		end else
 		if (mul_waiting) begin
 			if (instr_rs1_signed)
