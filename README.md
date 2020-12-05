@@ -6,7 +6,10 @@ A template SoC for Google SKY130 free shuttles. It is still WIP. The current SoC
 <img src="/doc/ciic_harness.png" width="75%" height="75%"> 
 </p>
 
+
 ## Getting Started:
+
+* For information on tooling and versioning, please refer to [this][1].
 
 Start by cloning the repo and uncompressing the files.
 ```bash
@@ -117,3 +120,4 @@ The firmware running on the Management Area SoC, configures the I/O pads used by
 3. Configure the User Project I/O pads as o/p. Use the Chip LA to control the clock source and reset signals and observe the counter value for five clock cylcles:  [LA_Test2](verilog/dv/caravel/user_proj_example/la_test2).
 
 [0]: openlane/README.md
+[1]: mpw-one-a.md
