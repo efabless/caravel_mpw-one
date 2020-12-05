@@ -64,11 +64,9 @@ uncompress: $(ARCHIVE_SOURCES)
 
 
 # LVS
-NETGEN_SETUP=$(PDK_ROOT)/sky130A/libs.tech/netgen/sky130A_setup.tcl
-
 BLOCKS = $(shell cd openlane && find * -maxdepth 0 -type d)
 LVS_BLOCKS = $(foreach block, $(BLOCKS), lvs-$(block))
-$(LVS_BLOCKS): lvs-% : ./mag/%.mag ./verilog/gl/%.v ./spi/lvs/%.spice
+$(LVS_BLOCKS): lvs-% : ./mag/%.mag ./verilog/gl/%.v
 	echo "Extracting $*"
 	mkdir -p ./mag/tmp
 	echo "load $* -dereference;\
@@ -85,7 +83,7 @@ $(LVS_BLOCKS): lvs-% : ./mag/%.mag ./verilog/gl/%.v ./spi/lvs/%.spice
 	####
 	mkdir -p ./spi/lvs/tmp
 	sh ./spi/lvs/run_lvs.sh ./verilog/gl/$*.v ./spi/lvs/$*.spice $*
-	mv -f ./spi/lvs/*{.out,.json,.log} ./spi/lvs/tmp
+	mv -f ./spi/lvs/*{.out,.json,.log} ./spi/lvs/tmp 2> /dev/null || true
 	
 
 .PHONY: help
