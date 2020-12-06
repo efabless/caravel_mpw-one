@@ -59,7 +59,11 @@ module mem_tb;
 			//$display("+1000 cycles");
 		end
 		$display("%c[1;31m",27);
-		$display ("Monitor: Timeout, Test MEM (RTL) Failed");
+		`ifdef GL
+			$display ("Monitor: Timeout, Test MEM (GL) Failed");
+		`else
+			$display ("Monitor: Timeout, Test MEM (RTL) Failed");
+		`endif
 		$display("%c[0m",27);
 		$finish;
 	end
@@ -86,36 +90,60 @@ module mem_tb;
 		end
 		else if(checkbits == 16'hAB40) begin
 			$display("%c[1;31m",27);
-			$display("Monitor: Test MEM (RTL) [word rw] failed");
+			`ifdef GL
+				$display("Monitor: Test MEM (GL) [word rw] failed");
+			`else
+				$display("Monitor: Test MEM (RTL) [word rw] failed");
+			`endif
 			$display("%c[0m",27);
 			$finish;
 		end
 		else if(checkbits == 16'hAB41) begin
-			$display("Monitor: Test MEM (RTL) [word rw]  passed");
+			`ifdef GL
+				$display("Monitor: Test MEM (GL) [word rw]  passed");
+			`else
+				$display("Monitor: Test MEM (RTL) [word rw]  passed");
+			`endif
 		end
 		else if(checkbits == 16'hA020) begin
 			$display("Mem Test (short rw) started");
 		end
 		else if(checkbits == 16'hAB20) begin
 			$display("%c[1;31m",27);
-			$display("Monitor: Test MEM (RTL) [short rw] failed");
+			`ifdef GL
+				$display("Monitor: Test MEM (GL) [short rw] failed");
+			`else
+				$display("Monitor: Test MEM (RTL) [short rw] failed");
+			`endif
 			$display("%c[0m",27);
 			$finish;
 		end
 		else if(checkbits == 16'hAB21) begin
-			$display("Monitor: Test MEM (RTL) [short rw]  passed");
+			`ifdef GL
+				$display("Monitor: Test MEM (GL) [short rw]  passed");
+			`else
+				$display("Monitor: Test MEM (RTL) [short rw]  passed");
+			`endif
 		end
 		else if(checkbits == 16'hA010) begin
 			$display("Mem Test (byte rw) started");
 		end
 		else if(checkbits == 16'hAB10) begin
 			$display("%c[1;31m",27);
-			$display("Monitor: Test MEM (RTL) [byte rw] failed");
+			`ifdef GL
+				$display("Monitor: Test MEM (GL) [byte rw] failed");
+			`else
+				$display("Monitor: Test MEM (RTL) [byte rw] failed");
+			`endif
 			$display("%c[0m",27);
 			$finish;
 		end
 		else if(checkbits == 16'hAB11) begin
-			$display("Monitor: Test MEM (RTL) [byte rw] passed");
+			`ifdef GL
+				$display("Monitor: Test MEM (GL) [byte rw] passed");
+			`else
+				$display("Monitor: Test MEM (RTL) [byte rw] passed");
+			`endif
 			$finish;
 		end
 
@@ -128,6 +156,8 @@ module mem_tb;
 	assign VSS = 1'b0;
 	assign VDD3V3 = power1;
 	assign VDD1V8 = power2;
+
+	assign mprj_io[3] = 1'b1;       // Force CSB high.
 
 	caravel uut (
 		.vddio	  (VDD3V3),

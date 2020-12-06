@@ -6,7 +6,10 @@ A template SoC for Google SKY130 free shuttles. It is still WIP. The current SoC
 <img src="/doc/ciic_harness.png" width="75%" height="75%"> 
 </p>
 
+
 ## Getting Started:
+
+* For information on tooling and versioning, please refer to [this][1].
 
 Start by cloning the repo and uncompressing the files.
 ```bash
@@ -31,7 +34,8 @@ Then, you can learn more about the caravel chip by watching these video:
 - Caravel User Project Features -- https://youtu.be/zJhnmilXGPo
 - Aboard Caravel -- How to put your design on Caravel? -- https://youtu.be/9QV8SDelURk
 - Things to Clarify About Caravel -- What versions to use with Caravel? -- https://youtu.be/-LZ522mxXMw
-
+    - You could only use openlane:rc5
+    - Make sure you have the commit hashes provided here inside the [Makefile](./Makefile)
 ## Aboard Caravel:
 
 Your area is the full user_project_wrapper, so feel free to add your project there or create a differnt macro and harden it seperately then insert it into the user_project_wrapper. For example, if your design is analog or you're using a different tool other than OpenLANE.
@@ -43,7 +47,7 @@ Then, you will need to put your design aboard the Caravel chip. Make sure you ha
 - [Magic VLSI Layout Tool](http://opencircuitdesign.com/magic/index.html) installed on your machine. We may provide a Dockerized version later.\*
 - You have your user_project_wrapper.gds under `./gds/` in the Caravel directory.
 
- > \* **Note:** You can avoid the need for the magic prerequisite by using the openlane docker to run the make step. This [section](#running-make-using-openlane's-magic) shows how.
+ > \* **Note:** You can avoid the need for the magic prerequisite by using the openlane docker to run the make step. This [section](#running-make-using-openlane-magic) shows how.
 
 Run the following command:
 
@@ -54,7 +58,7 @@ make
 
 This should merge the GDSes using magic and you'll end up with your version of `./gds/caravel.gds`. You should expect hundred of thousands of magic DRC violations with the current "development" state of caravel.
 
-## Running Make using OpenLANE's Magic
+## Running Make using OpenLANE Magic
 
 To use the magic installed inside Openlane to complete the final GDS streaming out step, export the following:
 
@@ -80,6 +84,20 @@ exit
 
 This should merge the GDSes using magic and you'll end up with your version of `./gds/caravel.gds`. You should expect hundred of thousands of magic DRC violations with the current "development" state of caravel.
 
+## Required Directory Structure
+
+- ./gds/ : includes all the gds files used or produced from the project.
+- ./def/ : includes all the def files used or produced from the project.
+- ./lef/ : includes all the lef files used or produced from the project.
+- ./mag/ : includes all the mag files used or produced from the project.
+- ./maglef/ : includes all the maglef files used or produced from the project.
+- ./spi/lvs/ : includes all the maglef files used or produced from the project.
+- ./verilog/dv/ : includes all the simulation test benches and how to run them. 
+- ./verilog/gl/ : includes all the synthesized/elaborated netlists. 
+- ./verilog/rtl/ : includes all the Verilog RTLs and source files.
+- ./openlane/`<macro>`/ : includes all configuration files used to run openlane on your project.
+- info.yaml: includes all the info required in [this example](info.yaml). Please make sure that you are pointing to an elaborated caravel netlist as well as a synthesized gate-level-netlist for the user_project_wrapper
+
 ## Managment SoC
 The managment SoC runs firmware that can be used to:
 - Configure User Project I/O pads
@@ -102,3 +120,4 @@ The firmware running on the Management Area SoC, configures the I/O pads used by
 3. Configure the User Project I/O pads as o/p. Use the Chip LA to control the clock source and reset signals and observe the counter value for five clock cylcles:  [LA_Test2](verilog/dv/caravel/user_proj_example/la_test2).
 
 [0]: openlane/README.md
+[1]: mpw-one-a.md

@@ -82,7 +82,11 @@ module uart_tb;
 			$display("UART Test started");
 		end
 		else if(checkbits == 16'hAB00) begin
-			$display("UART Test passed");
+			`ifdef GL
+				$display("UART Test (GL) passed");
+			`else
+				$display("UART Test (RTL) passed");
+			`endif
 			$finish;
 		end
 	end
@@ -94,6 +98,8 @@ module uart_tb;
 	assign VDD3V3 = power1;
 	assign VDD1V8 = power2;
 	assign VSS = 1'b0;
+	
+	assign mprj_io[3] = 1'b1;  // Force CSB high.
 
 	caravel uut (
 		.vddio	  (VDD3V3),

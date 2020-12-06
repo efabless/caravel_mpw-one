@@ -73,4 +73,3 @@ void main()
 
     reg_mprj_datal = 0xAB110000;
 }
-

@@ -46,7 +46,11 @@ module timer_tb;
 			$display("+1000 cycles");
 		end
 		$display("%c[1;31m",27);
-		$display ("Monitor: Timeout, Test GPIO (RTL) Failed");
+		`ifdef GL
+			$display ("Monitor: Timeout, Test GPIO (GL) Failed");
+		`else
+			$display ("Monitor: Timeout, Test GPIO (RTL) Failed");
+		`endif
 		 $display("%c[0m",27);
 		$finish;
 	end
@@ -67,41 +71,48 @@ module timer_tb;
 	// Monitor
 	initial begin
 		wait(checkbits == 6'h0a);
-		$display("Monitor: Test Timer (RTL) Started");
-
+		`ifdef GL
+			$display("Monitor: Test Timer (GL) Started");
+		`else 
+			$display("Monitor: Test Timer (RTL) Started");
+		`endif
 		/* Add checks here */
 		wait(checkbits == 6'h01);
 		$display("   countbits = 0x%x (should be 0xdcba7cf3)", countbits);
 		if(countbits !== 32'hdcba7cf3) begin
-		    $display("Monitor: Test Timer (RTL) Failed");
+		    $display("Monitor: Test Timer Failed");
 		    $finish;
 		end
 		wait(checkbits == 6'h02);
 		$display("   countbits = 0x%x (should be 0x11)", countbits);
 		if(countbits !== 32'h11) begin
-		    $display("Monitor: Test Timer (RTL) Failed");
+		    $display("Monitor: Test Timer Failed");
 		    $finish;
 		end
 		wait(checkbits == 6'h03);
 		$display("   countbits = %x (should be 0x0f)", countbits);
 		if(countbits !== 32'h0f) begin
-		    $display("Monitor: Test Timer (RTL) Failed");
+		    $display("Monitor: Test Timer Failed");
 		    $finish;
 		end
 		wait(checkbits == 6'h04);
 		$display("   countbits = %x (should be 0x0f)", countbits);
 		if(countbits !== 32'h0f) begin
-		    $display("Monitor: Test Timer (RTL) Failed");
+		    $display("Monitor: Test Timer Failed");
 		    $finish;
 		end
 		wait(checkbits == 6'h05);
 		$display("   countbits = %x (should be 0x12b4)", countbits);
 		if(countbits !== 32'h12b4) begin
-		    $display("Monitor: Test Timer (RTL) Failed");
+		    $display("Monitor: Test Timer Failed");
 		    $finish;
 		end
-
-		$display("Monitor: Test Timer (RTL) Passed");
+		
+		`ifdef GL
+			$display("Monitor: Test Timer (GL) Passed");
+		`else
+			$display("Monitor: Test Timer (RTL) Passed");
+		`endif
 		$finish;
 	end
 

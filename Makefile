@@ -8,13 +8,14 @@ LARGE_FILES_GZ := $(addsuffix .gz, $(LARGE_FILES))
 ARCHIVES := $(shell find . -type f -name "*.gz")
 ARCHIVE_SOURCES := $(basename $(ARCHIVES))
 
+
 # PDK setup configs
 THREADS ?= $(shell nproc)
 STD_CELL_LIBRARY ?= sky130_fd_sc_hd
 SPECIAL_VOLTAGE_LIBRARY ?= sky130_fd_sc_hvl
 IO_LIBRARY ?= sky130_fd_io
 SKYWATER_COMMIT ?= 3d7617a1acb92ea883539bcf22a632d6361a5de4
-OPEN_PDKS_COMMIT ?= 3959de867a4acb6867df376dac495e33bb0734f1
+OPEN_PDKS_COMMIT ?= b184e85de7629b8c87087a46b79eb45e7f7cd383
 
 .DEFAULT_GOAL := ship
 # We need portable GDS_FILE pointers...
@@ -61,6 +62,36 @@ $(ARCHIVE_SOURCES): %: %.gz
 uncompress: $(ARCHIVE_SOURCES)
 	@echo "All files are uncompressed!"
 
+
+# LVS
+BLOCKS = $(shell cd openlane && find * -maxdepth 0 -type d)
+LVS_BLOCKS = $(foreach block, $(BLOCKS), lvs-$(block))
+$(LVS_BLOCKS): lvs-% : ./mag/%.mag ./verilog/gl/%.v
+	echo "Extracting $*"
+	mkdir -p ./mag/tmp
+	echo "load $* -dereference;\
+		extract no all;\
+		extract do local;\
+		extract;\
+		ext2spice lvs;\
+		ext2spice;\
+		feedback save extract_$*.log;\
+		exit;" > ./mag/extract_$*.tcl
+	cd mag && MAGTYPE=maglef magic -rcfile ${PDK_ROOT}/sky130A/libs.tech/magic/current/sky130A.magicrc -noc -dnull extract_$*.tcl
+	mv ./mag/$*.spice ./spi/lvs
+	mv -f ./mag/extract_$*.{tcl,log} ./mag/*.ext ./mag/tmp
+	####
+	mkdir -p ./spi/lvs/tmp
+	sh ./spi/lvs/run_lvs.sh ./verilog/gl/$*.v ./spi/lvs/$*.spice $*
+	mv -f ./spi/lvs/*{.out,.json,.log} ./spi/lvs/tmp 2> /dev/null || true
+	
+
+.PHONY: help
+help:
+	@$(MAKE) -pRrq -f $(lastword $(MAKEFILE_LIST)) : 2>/dev/null | awk -v RS= -F: '/^# File/,/^# Finished Make data base/ {if ($$1 !~ "^[#.]") {print $$1}}' | sort | egrep -v -e '^[^[:alnum:]]' -e '^$@$$'
+
+		
+###########################################################################
 .PHONY: pdk
 pdk: skywater-pdk skywater-library open_pdks build-pdk
 

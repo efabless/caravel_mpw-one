@@ -42,7 +42,11 @@ module pll_tb;
 			$display("+1000 cycles");
 		end
 		$display("%c[1;31m",27);
-		$display ("Monitor: Timeout, Test PLL (RTL) Failed");
+		`ifdef GL
+			$display ("Monitor: Timeout, Test PLL (GL) Failed");
+		`else
+			$display ("Monitor: Timeout, Test PLL (RTL) Failed");
+		`endif
 		 $display("%c[0m",27);
 		$finish;
 	end
@@ -50,7 +54,11 @@ module pll_tb;
 	// Monitor
 	initial begin
 	    wait(checkbits == 16'hA040);
-            $display("Monitor: Test PLL (RTL) Started");
+		`ifdef GL
+			$display("Monitor: Test PLL (GL) Started");
+		`else
+			$display("Monitor: Test PLL (RTL) Started");
+		`endif
 
 	    wait(checkbits == 16'hA041);
             // $display("   SPI value = 0x%x (should be 0x04)", spivalue);
@@ -66,7 +74,11 @@ module pll_tb;
             // end
 
 	    wait(checkbits == 16'hA090);
-            $display("Monitor: Test PLL (RTL) Passed");
+		`ifdef GL
+            $display("Monitor: Test PLL (GL) Passed");
+		`else
+		    $display("Monitor: Test PLL (RTL) Passed");
+		`endif
             $finish;
 	end
 
@@ -97,6 +109,8 @@ module pll_tb;
 	assign VDD3V3 = power1;
 	assign VDD1V8 = power2;
 	assign VSS = 1'b0;
+
+	assign mprj_io[3] = 1'b1;  // Force CSB high.
 
 	caravel uut (
 		.vddio	  (VDD3V3),

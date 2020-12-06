@@ -1,0 +1,41 @@
+magic
+tech sky130A
+magscale 1 2
+timestamp 1607107367
+<< obsli1 >>
+rect 66 67 5058 4171
+<< metal1 >>
+rect 66 4917 5058 5019
+rect 66 3289 5058 3391
+<< obsm1 >>
+rect 66 3447 5058 4177
+rect 66 33 5058 3233
+<< metal2 >>
+rect 4310 4284 4366 5084
+rect 662 84 718 884
+<< obsm2 >>
+rect 664 4228 4254 5019
+rect 4422 4228 4460 5019
+rect 664 940 4460 4228
+rect 774 33 4460 940
+<< obsm3 >>
+rect 739 51 4392 5001
+<< obsm4 >>
+rect 739 33 4392 5019
+<< obsm5 >>
+rect 66 706 5058 4359
+<< labels >>
+rlabel metal2 s 4310 4284 4366 5084 6 A
+port 1 nsew
+rlabel metal2 s 662 84 718 884 6 X
+port 2 nsew
+rlabel metal1 s 66 3289 5058 3391 6 VPWR
+port 3 nsew power default
+rlabel metal1 s 66 4917 5058 5019 6 VGND
+port 4 nsew ground default
+<< properties >>
+string LEFclass BLOCK
+string FIXED_BBOX 0 1 5124 5084
+string LEFview TRUE
+<< end >>
+

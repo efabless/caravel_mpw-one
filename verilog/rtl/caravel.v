@@ -550,8 +550,8 @@ module caravel (
     // SDO).  The rest are configured to be default (input).
 
     gpio_control_block #(
-	.DM_INIT(3'b110),	// Mode = output, strong up/down
-	.OENB_INIT(1'b1)	// Enable output signaling from wire
+	.DM_INIT(`DM_INIT),	// Mode = output, strong up/down
+	.OENB_INIT(`OENB_INIT)	// Enable output signaling from wire
     ) gpio_control_bidir [1:0] (
     	`ifdef USE_POWER_PINS
 			.vccd(vccd),

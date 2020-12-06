@@ -40,8 +40,12 @@ module mprj_ctrl_tb;
 			$display("+1000 cycles");
 		end
 		$display("%c[1;31m",27);
-		$display ("Monitor: Timeout, Test User Project (RTL) Failed");
-		 $display("%c[0m",27);
+		`ifdef GL
+			$display ("Monitor: Timeout, Test User Project (GL) Failed");
+		`else
+			$display ("Monitor: Timeout, Test User Project (RTL) Failed");
+		`endif
+		$display("%c[0m",27);
 		$finish;
 	end
 
@@ -75,9 +79,14 @@ module mprj_ctrl_tb;
 			$display("%c[0m",27);
 			$finish;
         	end else if(checkbits == 4'hd) begin
+
 			$display("Monitor: power control R/W passed (check 13)");
-            		$display("Monitor: User Project control (RTL) test passed.");
-            		$finish;
+			`ifdef GL
+            	$display("Monitor: User Project control (GL) test passed.");
+			`else
+			    $display("Monitor: User Project control (RTL) test passed.");
+			`endif
+            $finish;
         	end			
 	end
 
@@ -109,6 +118,8 @@ module mprj_ctrl_tb;
 	assign VDD1V8 = power2;
 	assign VSS = 1'b0;
 
+	assign user_io[3] = 1'b1;
+	
 	caravel uut (
 		.vddio	  (VDD3V3),
 		.vssio	  (VSS),

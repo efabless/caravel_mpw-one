@@ -63,7 +63,11 @@ module perf_tb;
 			kcycles <= kcycles + 1;
 		end
 		$display("%c[1;31m",27);
-		$display ("Monitor: Timeout, Test Performance (RTL) Failed");
+		`ifdef GL
+			$display ("Monitor: Timeout, Test Performance (GL) Failed");
+		`else
+			$display ("Monitor: Timeout, Test Performance (RTL) Failed");
+		`endif
 		$display("%c[0m",27);
 		$finish;
 	end
@@ -92,7 +96,11 @@ module perf_tb;
 		end
 		else if(checkbits == 16'hAB00) begin
 			//$display("Monitor: number of cycles/100 iterations: %d KCycles", kcycles);
-			$display("Monitor: Test Performance (RTL) passed [%0d KCycles]", kcycles);
+			`ifdef GL
+				$display("Monitor: Test Performance (GL) passed [%0d KCycles]", kcycles);
+			`else
+				$display("Monitor: Test Performance (RTL) passed [%0d KCycles]", kcycles);
+			`endif
 			$finish;
 		end
 	end
@@ -104,6 +112,8 @@ module perf_tb;
 	assign VDD3V3 = power1;
 	assign VDD1V8 = power2;
 	assign VSS = 1'b0;
+
+	assign mprj_io[3] = 1'b1;       // Force CSB high.
 
 	caravel uut (
 		.vddio	  (VDD3V3),

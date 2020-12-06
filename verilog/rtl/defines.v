@@ -19,3 +19,10 @@
 // not really parameterized but just to easily keep track of the number
 // of ram_block across different modules
 `define RAM_BLOCKS 2
+
+// Clock divisor default value
+`define CLK_DIV 3'b010
+
+// GPIO conrol default mode and enable
+`define DM_INIT 3'b110
+`define OENB_INIT 1'b1

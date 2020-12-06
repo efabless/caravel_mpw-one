@@ -38,8 +38,8 @@ module gpio_control_block #(
     parameter TRIP_INIT = 1'b0,
     parameter IB_INIT = 1'b0,
     parameter IENB_INIT = 1'b0,
-    parameter OENB_INIT = 1'b1,
-    parameter DM_INIT = 3'b001,
+    parameter OENB_INIT = `OENB_INIT,
+    parameter DM_INIT = `DM_INIT,
     parameter AENA_INIT = 1'b0,
     parameter ASEL_INIT = 1'b0,
     parameter APOL_INIT = 1'b0

@@ -59,7 +59,11 @@ module storage_tb;
 			//$display("+1000 cycles");
 		end
 		$display("%c[1;31m",27);
-		$display ("Monitor: Timeout, Test Storage (RTL) Failed");
+		`ifdef GL
+			$display ("Monitor: Timeout, Test Storage (GL) Failed");
+		`else
+			$display ("Monitor: Timeout, Test Storage (RTL) Failed");
+		`endif
 		$display("%c[0m",27);
 		$finish;
 	end
@@ -82,28 +86,52 @@ module storage_tb;
 
 	always @(checkbits) begin
 		if(checkbits == 16'hA040) begin
-			$display("Mem Test storage MGMT block0 (RTL) [word rw] started");
+			`ifdef GL
+				$display("Mem Test storage MGMT block0 (GL) [word rw] started");
+			`else
+				$display("Mem Test storage MGMT block0 (RTL) [word rw] started");
+			`endif
 		end
 		else if(checkbits == 16'hAB40) begin
 			$display("%c[1;31m",27);
-			$display("Monitor: Test storage MGMT block0 (RTL) [word rw] failed");
+			`ifdef GL
+				$display("Monitor: Test storage MGMT block0 (GL) [word rw] failed");
+			`else
+				$display("Monitor: Test storage MGMT block0 (RTL) [word rw] failed");
+			`endif
 			$display("%c[0m",27);
 			$finish;
 		end
 		else if(checkbits == 16'hAB41) begin
-			$display("Monitor: Test storage MGMT block0 (RTL) [word rw]  passed");
+			`ifdef GL
+				$display("Monitor: Test storage MGMT block0 (GL) [word rw]  passed");
+			`else
+				$display("Monitor: Test storage MGMT block0 (RTL) [word rw]  passed");
+			`endif
 		end
 		else if(checkbits == 16'hA020) begin
-			$display("Mem Test storage MGMT block1 (RTL) [word rw] started");
+			`ifdef GL
+				$display("Mem Test storage MGMT block1 (GL) [word rw] started");
+			`else
+				$display("Mem Test storage MGMT block1 (RTL) [word rw] started");
+			`endif
 		end
 		else if(checkbits == 16'hAB20) begin
 			$display("%c[1;31m",27);
-			$display("Monitor: Test storage MGMT block1 (RTL) [word rw] failed");
+			`ifdef GL
+				$display("Monitor: Test storage MGMT block1 (GL) [word rw] failed");
+			`else
+				$display("Monitor: Test storage MGMT block1 (RTL) [word rw] failed");
+			`endif
 			$display("%c[0m",27);
 			$finish;
 		end
 		else if(checkbits == 16'hAB21) begin
-			$display("Monitor: Test storage MGMT block1 (RTL) [word rw]  passed");
+			`ifdef GL
+				$display("Monitor: Test storage MGMT block1 (GL) [word rw]  passed");
+			`else
+				$display("Monitor: Test storage MGMT block1 (RTL) [word rw]  passed");
+			`endif
             $finish;
 		end
 	end
@@ -115,6 +143,8 @@ module storage_tb;
 	assign VSS = 1'b0;
 	assign VDD3V3 = power1;
 	assign VDD1V8 = power2;
+
+	assign mprj_io[3] = 1'b1;  // Force CSB high.
 
 	caravel uut (
 		.vddio	  (VDD3V3),
