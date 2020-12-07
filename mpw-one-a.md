@@ -5,13 +5,17 @@
 Please stick to version `v0.0.0-303-g3d7617a`
 (commit hash: `3d7617a1acb92ea883539bcf22a632d6361a5de4`)
 ```
-git clone https://github.com/google/skywater-pdk.git
-cd skywater-pdk
-git checkout v0.0.0-303-g3d7617a
+git clone https://github.com/google/skywater-pdk.git 
+cd skywater-pdk 
+git checkout v0.0.0-303-g3d7617a 
 git submodule update --init libraries/sky130_fd_sc_hd/latest
 git submodule update --init libraries/sky130_fd_sc_hvl/latest
-...
+git submodule update --init libraries/sky130_fd_sc_hs/latest
+git submodule update --init libraries/sky130_fd_sc_ms/latest
+git submodule update --init libraries/sky130_fd_sc_ls/latest
+git submodule update --init libraries/sky130_fd_sc_hdll/latest
 git submodule update --init libraries/sky130_fd_io/latest
+make timing
 ```
 
 ## open_pdks:
