@@ -3,6 +3,17 @@ Quick start
 
 This section describes how to get going with the `efabless/caravel repository <https://github.com/efabless/caravel>`_ by adding a user project to the harness and merging the ``.gds`` files to create your own ``caravel.gds``.
 
+Building the example user project
+---------------------------------
+
+Building the example user project works without any configuration needed. Just cd into ``openlane`` and run make und the wanted targets:
+
+.. code-block:: bash
+
+   cd openlane
+   make user_proj_example
+   make user_project_wrapper
+
 Prerequisites
 -------------
 
