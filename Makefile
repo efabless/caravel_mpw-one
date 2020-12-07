@@ -1,4 +1,4 @@
-# cannot commit files larger than 100 MB to GitHub 
+# cannot commit files larger than 100 MB to GitHub
 FILE_SIZE_LIMIT_MB = 100
 LARGE_FILES := $(shell find ./gds -type f -name "*.gds")
 LARGE_FILES += $(shell find . -type f -size +$(FILE_SIZE_LIMIT_MB)M -not -path "./.git/*" -not -path "./gds/*" -not -path "./openlane/*")
@@ -7,7 +7,6 @@ LARGE_FILES_GZ := $(addsuffix .gz, $(LARGE_FILES))
 
 ARCHIVES := $(shell find . -type f -name "*.gz")
 ARCHIVE_SOURCES := $(basename $(ARCHIVES))
-
 
 # PDK setup configs
 THREADS ?= $(shell nproc)
@@ -133,6 +132,11 @@ build-pdk: check-env $(PDK_ROOT)/open_pdks $(PDK_ROOT)/skywater-pdk
 		$(MAKE) veryclean && \
 		$(MAKE) && \
 		$(MAKE) install-local
+
+.RECIPE: manifest
+manifest:
+	cd verilog/rtl/ && \
+	find * -type f ! -name "user_*.v" ! -name "README" ! -name "defines.v" -exec shasum {} \; > manifest
 
 check-env:
 ifndef PDK_ROOT
