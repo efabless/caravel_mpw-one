@@ -7,6 +7,8 @@ GCC_PATH?=/ef/apps/bin
 GCC_PREFIX?=riscv32-unknown-elf
 PDK_PATH?=/ef/tech/SW/sky130A
 
+SPOOF_FAST_FLASH=
+
 .SUFFIXES:
 
 PATTERN = la_test2
@@ -15,8 +17,9 @@ all:  ${PATTERN:=.vcd}
 
 hex:  ${PATTERN:=.hex}
 
+spoof_var := $(if $(SPOOF_FAST_FLASH),-DSPOOF_FAST_FLASH=\"$(PATTERN).hex\",)
 %.vvp: %_tb.v %.hex
-	iverilog -DFUNCTIONAL -I $(BEHAVIOURAL_MODELS) \
+	iverilog $(spoof_var) -DFUNCTIONAL -I $(BEHAVIOURAL_MODELS) \
 	-I $(PDK_PATH) -I $(IP_PATH) -I $(RTL_PATH) \
 	-o $@ $<
 

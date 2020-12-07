@@ -73,6 +73,69 @@ module spimemio_wb (
     input  flash_io3_di
 
 );
+
+`ifdef SPOOF_FAST_FLASH
+	assign wb_cfg_ack_o = 0;
+	assign wb_cfg_dat_o = 0;
+
+	assign pass_thru_sdo = 0;
+	assign flash_csb = 0;
+	assign flash_clk = 0;
+	assign flash_csb_oeb = 0;
+	assign flash_clk_oeb = 0;
+	assign flash_io0_oeb = 0;
+	assign flash_io1_oeb = 0;
+	assign flash_io2_oeb = 0;
+	assign flash_io3_oeb = 0;
+	assign flash_csb_ieb = 0;
+	assign flash_clk_ieb = 0;
+	assign flash_io0_ieb = 0;
+	assign flash_io1_ieb = 0;
+	assign flash_io2_ieb = 0;
+	assign flash_io3_ieb = 0;
+	assign flash_io0_do = 0;
+	assign flash_io1_do = 0;
+	assign flash_io2_do = 0;
+	assign flash_io3_do = 0;
+
+	// 16 MB (128Mb) Flash
+	reg [7:0] memory [0:16*1024*1024-1];
+
+	reg ack_reg;
+	reg [31:0] dat_reg;
+
+	assign wb_flash_ack_o = ack_reg;
+	assign wb_flash_dat_o = dat_reg;
+
+	wire [31:0] adr = {7'b0, wb_adr_i[23:0]};
+
+	initial begin
+		$display("============================================================");
+		$display("Spoofing flash from file %s", `SPOOF_FAST_FLASH);
+		$display("Warning: this is experimental and \ndoes not match exact hardware behavior");
+		$display("(assumes that flash base is a multiple of 0x1000000)");
+		$display("============================================================");
+		$readmemh(`SPOOF_FAST_FLASH, memory);
+	end
+
+	always @(posedge wb_clk_i) begin
+		if (wb_cyc_i & wb_cfg_stb_i) $error("wb_cfg_stb_i unsupported in SPOOF_FAST_FLASH mode. Please use normal flash emulation.");
+		if (pass_thru) $error("pass_thru unsupported in SPOOF_FAST_FLASH mode. Please use normal flash emulation.");
+
+		ack_reg <= 0;
+
+		if (wb_cyc_i & wb_flash_stb_i & ~wb_flash_ack_o) begin
+			ack_reg <= 1;
+			dat_reg <= {memory[adr+3], memory[adr+2], memory[adr+1], memory[adr+0]};
+
+			if (wb_we_i & wb_sel_i[0]) memory[adr+0] <= wb_dat_i[7:0];
+			if (wb_we_i & wb_sel_i[1]) memory[adr+1] <= wb_dat_i[15:8];
+			if (wb_we_i & wb_sel_i[2]) memory[adr+2] <= wb_dat_i[23:16];
+			if (wb_we_i & wb_sel_i[3]) memory[adr+3] <= wb_dat_i[31:24];
+		end
+	end
+
+`else
     wire spimem_ready;
     wire [23:0] mem_addr;
     wire [31:0] spimem_rdata;
@@ -141,6 +204,7 @@ module spimemio_wb (
 	.pass_thru_sdi(pass_thru_sdi),
 	.pass_thru_sdo(pass_thru_sdo)
     );
+`endif
 
 endmodule
 
