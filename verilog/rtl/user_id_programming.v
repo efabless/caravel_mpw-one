@@ -8,8 +8,8 @@ module user_id_programming #(
     parameter [ 0:0] USER_PROJECT_ID = 32'h0
 ) (
 `ifdef USE_POWER_PINS
-    inout vdd1v8,
-    inout vss,
+    inout VPWR,
+    inout VGND,
 `endif
     output [31:0] mask_rev
 );
@@ -21,10 +21,10 @@ module user_id_programming #(
 
     sky130_fd_sc_hd__conb_1 mask_rev_value [31:0] (
 `ifdef USE_POWER_PINS
-            .VPWR(vdd1v8),
-            .VPB(vdd1v8),
-            .VNB(vss),
-            .VGND(vss),
+            .VPWR(VPWR),
+            .VPB(VPWR),
+            .VNB(VGND),
+            .VGND(VGND),
 `endif
             .HI(user_proj_id_high),
             .LO(user_proj_id_low)
