@@ -7,3 +7,4 @@ Efabless Caravel "harness" SoC
 
    introduction
    description
+   pinout
