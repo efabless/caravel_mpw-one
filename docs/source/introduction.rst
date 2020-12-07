@@ -7,4 +7,5 @@ The Caravel harness comprises a small RISC-V microprocessor based on the simple 
 The documentation contains the following chapters:
 
 * :doc:`description` contains the general information about the Efabless Caravel "harness" SoC,
+* :doc:`quick-start` contains the minimal set of actions to get going with the project,
 * :doc:`pinout` describes the pinout of the SoC,

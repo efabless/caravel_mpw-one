@@ -7,4 +7,5 @@ Efabless Caravel "harness" SoC
 
    introduction
    description
+   quick-start
    pinout
