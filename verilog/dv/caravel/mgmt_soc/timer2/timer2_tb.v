@@ -78,14 +78,14 @@ module timer2_tb;
 		`endif
 		/* Add checks here */
 		wait(checkbits == 6'h01);
-		$display("   countbits = 0x%x (should be 0xdcba7cf3)", countbits);
-		if(countbits !== 32'hdcba7cf3) begin
+		$display("   countbits = 0x%x (should be 0xdcba7cfb)", countbits);
+		if(countbits !== 32'hdcba7cfb) begin
 		    $display("Monitor: Test Timer2 (RTL) Failed");
 		    $finish;
 		end
 		wait(checkbits == 6'h02);
-		$display("   countbits = 0x%x (should be 0x11)", countbits);
-		if(countbits !== 32'h11) begin
+		$display("   countbits = 0x%x (should be 0x19)", countbits);
+		if(countbits !== 32'h19) begin
 		    $display("Monitor: Test Timer2 (RTL) Failed");
 		    $finish;
 		end
@@ -102,22 +102,22 @@ module timer2_tb;
 		    $finish;
 		end
 		wait(checkbits == 6'h05);
-		$display("   countbits = %x (should be 0x12b4)", countbits);
-		if(countbits !== 32'h12b4) begin
+		$display("   countbits = %x (should be 0x12bc)", countbits);
+		if(countbits !== 32'h12bc) begin
 		    $display("Monitor: Test Timer2 (RTL) Failed");
 		    $finish;
 		end
 
 		wait(checkbits == 6'h06);
-		$display("   countbits = %x (should be 0x0055)", countbits);
-		if(countbits !== 32'h0055) begin
+		$display("   countbits = %x (should be 0x005d)", countbits);
+		if(countbits !== 32'h005d) begin
 		    $display("Monitor: Test Timer2 (RTL) Failed");
 		    $finish;
 		end
 
 		wait(checkbits == 6'h07);
-		$display("   countbits = %x (should be 0x0000)", countbits);
-		if(countbits !== 32'h0000) begin
+		$display("   countbits = %x (should be 0x0008)", countbits);
+		if(countbits !== 32'h0008) begin
 		    $display("Monitor: Test Timer2 (RTL) Failed");
 		    $finish;
 		end
@@ -130,8 +130,8 @@ module timer2_tb;
 		end
 
 		wait(checkbits == 6'h10);
-		$display("   countbits = %x (should be 0x0002)", countbits);
-		if(countbits !== 32'h0002) begin
+		$display("   countbits = %x (should be 0x000a)", countbits);
+		if(countbits !== 32'h000a) begin
 		    $display("Monitor: Test Timer2 (RTL) Failed");
 		    $finish;
 		end
@@ -170,6 +170,8 @@ module timer2_tb;
 	assign VDD3V3 = power1;
 	assign VDD1V8 = power2;
 	assign VSS = 1'b0;
+	
+	assign mprj_io[3] = 1'b1;  // Force CSB high.
 
 	// These are the mappings of mprj_io GPIO pads that are set to
 	// specific functions on startup:
