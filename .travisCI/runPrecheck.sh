@@ -26,6 +26,8 @@ if [[ -f $gzipped_file ]]; then
     gzip -d $gzipped_file
 fi
 
+grep "Violation Message" $output
+
 cnt=$(grep -c -i "DRC violations" $output)
 if ! [[ $cnt ]]; then cnt=0; fi
 if [[ $cnt -eq 2 ]]; then exit 0; fi
