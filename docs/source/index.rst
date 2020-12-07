@@ -6,3 +6,4 @@ Efabless Caravel "harness" SoC
    :maxdepth: 2
 
    introduction
+   description
