@@ -23,9 +23,9 @@ jobs:
           path: open_mpw_precheck
 
       # = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
-      # Uncommet this to Ship or merge desings before commit
+      # Uncomment this to Ship or merge desings before commit
       # = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
-      # - name: Design manupulation before prechecker
+      # - name: Design modification before prechecker
       #   uses: ganeshgore/docker-run-action@49cd3a1
       #   with:
       #     image: goreganesh/open_mpw_prechecker
