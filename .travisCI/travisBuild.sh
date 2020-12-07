@@ -15,8 +15,9 @@
 
 export TARGET_PATH=$(pwd)
 git clone https://github.com/efabless/open_mpw_precheck.git
-cd open_mpw_precheck/dependencies
-sh build-docker.sh
+
+docker pull efabless/open_mpw_precheck:latest
+
 cd $TARGET_PATH/..
 export PDK_ROOT=$(pwd)/pdks
 mkdir $PDK_ROOT
