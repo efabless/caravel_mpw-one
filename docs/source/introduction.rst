@@ -9,3 +9,4 @@ The documentation contains the following chapters:
 * :doc:`description` contains the general information about the Efabless Caravel "harness" SoC,
 * :doc:`quick-start` contains the minimal set of actions to get going with the project,
 * :doc:`pinout` describes the pinout of the SoC,
+* :doc:`gpio` describes GPIO and its registers,

@@ -9,3 +9,4 @@ Efabless Caravel "harness" SoC
    description
    quick-start
    pinout
+   gpio
