@@ -54,37 +54,166 @@ Register descriptions
 ``reg_gpio_data``
 -----------------
 
-TODO
+Base address: ``0x21000000``
+
+.. wavedrom::
+
+     { "reg": [
+         {"name": "GPIO input/output", "bits": 16},
+         {"name": "GPIO output readback", "bits": 16}],
+     }
+
+
+* Writing to the address low bit always sets the registered value at the GPIO.
+* Writing to address bit 16 has no effect.
+* Reading from the address low bit reads the value at the chip pin.
+* Reading from address bit 16 reads the value at the multiplexer output (see :ref:`gpio_structure`).
 
 .. _reg_gpio_ena:
 
 ``reg_gpio_ena``
 ----------------
 
-TODO
+Base address: ``0x21000004``
+
+.. wavedrom::
+
+     { "reg": [
+         {"name": "GPIO output enable", "bits": 16},
+         {"name": "(undefined, reads zero)", "bits": 16, "type": 1}],
+     }
+
+* Bit 0 corresponds to the GPIO channel enable.
+* Bit value 1 indicates an output channel; 0 indicates an input.
 
 .. _reg_gpio_pu:
 
 ``reg_gpio_pu``
 ---------------
 
+Base address: ``0x21000008``
+
+.. wavedrom::
+
+     { "reg": [
+         {"name": "GPIO pin pull-up", "bits": 16},
+         {"name": "(undefined, reads zero)", "bits": 16, "type": 1}],
+     }
+
+* Bit 0 corresponds to the GPIO channel pull-up state.
+* Bit value 1 indicates pullup is active; 0 indicates pullup is inactive.
+
 .. _reg_gpio_pd:
 
 ``reg_gpio_pd``
 ---------------
+
+Base address: ``0x2100000c``
+
+.. wavedrom::
+
+     { "reg": [
+         {"name": "GPIO pin pull-down (inverted)", "bits": 16},
+         {"name": "(undefined, reads zero)", "bits": 16, "type": 1}],
+     }
+
+.. attention::
+
+    The statement below (second sentence) seems to be invalid.
+
+* Bit 0 corresponds to the GPIO channel pull-down state.
+* Bit value 1 indicates pullup is active; 0 indicates pulldown is inactive.
 
 .. _reg_pll_out_dest:
 
 ``reg_pll_out_dest``
 --------------------
 
+Base address: ``0x2f000000``
+
+.. wavedrom::
+
+     { "reg": [
+         {"name": "PLL clock dest.", "bits": 8},
+         {"name": "(undefined, reads zero)", "bits": 24, "type": 1}],
+     }
+
+The low bit of this register directs the output of the core clock to the GPIO channel, according to the :ref:`reg_pll_out_dest_table`.
+
+.. list-table:: ``reg_pll_out_dest`` register settings
+    :name: reg_pll_out_dest_table
+    :header-rows: 1
+
+    * - Register byte
+      - ``0x2f000000`` value
+      - Clock output directed to this channel
+    * - 0
+      - ``0``
+      - (none)
+    * - 1
+      - ``1``
+      - Core PLL clock to GPIO output
+
+Note that a high rate core clock (e.g. 80MHz) may be unable to generate a full swing on the GPIO output.
+
 .. _reg_trap_out_dest:
 
 ``reg_trap_out_dest``
 ---------------------
+
+Base address: ``0x2f000004``
+
+.. wavedrom::
+
+     { "reg": [
+         {"name": "trap signal dest.", "bits": 8},
+         {"name": "(undefined, reads zero)", "bits": 24, "type": 1}],
+     }
+
+The low bit of this register directs the output of the processor trap signal to the GPIO channel, according to the :ref:`reg_trap_out_dest_table`.
+
+
+.. list-table:: ``reg_trap_out_dest`` register settings
+    :name: reg_trap_out_dest_table
+    :header-rows: 1
+
+    * - Register byte
+      - ``0x2f000004`` value
+      - Trap signal output directed to this channel
+    * - 0
+      - ``0``
+      - (none)
+    * - 1
+      - ``1``
+      - GPIO
 
 .. _reg_irq7_source:
 
 ``reg_irq7_source``
 -------------------
 
+Base address: ``0x2f000008``
+
+.. wavedrom::
+
+     { "reg": [
+         {"name": "IRQ 7 source", "bits": 8},
+         {"name": "(undefined, reads zero)", "bits": 24, "type": 1}],
+     }
+
+The low bit of this register directs the input of the GPIO to the processor's IRQ7 channel, according to the :ref:`reg_irq7_source_table`.
+
+
+.. list-table:: ``reg_irq7_source`` register settings
+    :name: reg_irq7_source_table
+    :header-rows: 1
+
+    * - Register byte
+      - ``0x2f000008`` value
+      - This channel directed to IRQ channel 7
+    * - 0
+      - ``00``
+      - (none)
+    * - 1
+      - ``01``
+      - GPIO
