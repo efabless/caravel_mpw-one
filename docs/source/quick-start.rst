@@ -31,13 +31,13 @@ Adding a user project
 ---------------------
 
 Requirements
-````````````
+^^^^^^^^^^^^
 
 In the current version of Caravel the top level module of your design needs to be compatible with the interface required by `user_project_wrapper <https://github.com/efabless/caravel/blob/develop/verilog/rtl/user_project_wrapper.v>`. Make sure that your design uses the same ports as ``user_proj_example``.
 
 
 Adding a new design
-```````````````````
+^^^^^^^^^^^^^^^^^^^
 
 To add a user project, there are multiple possible ways:
 
@@ -63,7 +63,7 @@ To create your own design go into ``openlane`` and create a new directory named 
    cp user_proj_example/config.tcl user_proj/
 
 Configuration
-`````````````
+^^^^^^^^^^^^^
 
 Configuration options and their parameters can be found in the `OpenLANE repository <https://github.com/efabless/openlane/tree/master/configuration>`_.
 
@@ -121,7 +121,7 @@ After building your design you can add it to ``user_project_wrapper``, which tak
 In many cases it will be sufficient, to just replace ``user_proj_example`` with the name of your user project. For ``VERILOG_FILES_BLACKBOX`` you need to provide the path to the source file of your top level module.
 
 Placement macro
-```````````````
+^^^^^^^^^^^^^^^
 
 If your design is different in size to the example you should adjust the position, where your module will be placed inside the wrapper. This can be done in ``user_project_wrapper/interactive.tcl``:
 
@@ -132,7 +132,7 @@ If your design is different in size to the example you should adjust the positio
 In this case 850/1100 specify the X/Y position of the macro. The size of the wrapper can be found in ``user_project_wrapper/config.tcl``, with that and the size of your design you can figure out, where you need to place your design.
 
 Building the wrapper
-````````````````````
+^^^^^^^^^^^^^^^^^^^^
 
 After modifying the configuration files of the wrapper you can build it to produce a wrapper, which contains your design:
 
@@ -149,3 +149,24 @@ To build the whole Caravel system you just need to run make in the root of the r
 .. code-block:: bash
 
    make
+
+Troubleshooting
+---------------
+
+Common error messages/warnings
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Pin mprj/xxx is outside die area
+""""""""""""""""""""""""""""""""
+
+Either your design is too big for the wrapper or you need to adjust the position of your design in the wrapper. See :ref:`Placement macro`.
+
+No clock nets have been found
+"""""""""""""""""""""""""""""
+
+``CLOCK_PORT`` in your config.tcl is not set propertly.
+
+Design congestion too high
+""""""""""""""""""""""""""
+
+Reduce ``PL_TARGET_DENSITY``.
