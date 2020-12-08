@@ -136,7 +136,12 @@ build-pdk: check-env $(PDK_ROOT)/open_pdks $(PDK_ROOT)/skywater-pdk
 .RECIPE: manifest
 manifest:
 	cd verilog/rtl/ && \
-	find * -type f ! -name "user_*.v" ! -name "manifest" ! -name "README" ! -name "defines.v" -exec shasum {} \; > manifest
+	find * -type f ! -name "user_*.v" ! -name "manifest" ! -name "README" ! -name "defines.v" -exec shasum {} \; > manifest && \
+	cd ../../maglef/ && \
+	shasum *.mag > manifest && \
+	cd ../mag/ && \
+	shasum caravel.mag .magicrc > manifest
+
 
 check-env:
 ifndef PDK_ROOT
