@@ -10,3 +10,4 @@ Efabless Caravel "harness" SoC
    quick-start
    pinout
    gpio
+   housekeeping-spi
