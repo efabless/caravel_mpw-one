@@ -56,7 +56,7 @@ export PDK_ROOT=<The place where the installed pdk resides. The same PDK_ROOT us
 make
 ```
 
-This should merge the GDSes using magic and you'll end up with your version of `./gds/caravel.gds`. You should expect hundred of thousands of magic DRC violations with the current "development" state of caravel.
+This should merge the GDSes using magic and you'll end up with your version of `./gds/caravel.gds`. You should expect ~100 magic DRC violations with the current "development" state of caravel.
 
 ## Running Make using OpenLANE Magic
 
@@ -82,7 +82,7 @@ make
 exit
 ```
 
-This should merge the GDSes using magic and you'll end up with your version of `./gds/caravel.gds`. You should expect hundred of thousands of magic DRC violations with the current "development" state of caravel.
+This should merge the GDSes using magic and you'll end up with your version of `./gds/caravel.gds`. You should expect ~100 magic DRC violations with the current "development" state of caravel.
 
 ## Required Directory Structure
 
