@@ -6,7 +6,7 @@ This section describes how to get going with the `efabless/caravel repository <h
 Building the example user project
 ---------------------------------
 
-Building the example user project works without any configuration needed. Just cd into ``openlane`` and run make und the wanted targets:
+Building the example user project works without any configuration needed. Just cd into ``openlane`` and run ``make`` on the wanted targets:
 
 .. code-block:: bash
 
@@ -33,7 +33,7 @@ Adding a user project
 Requirements
 ^^^^^^^^^^^^
 
-In the current version of Caravel the top level module of your design needs to be compatible with the interface required by `user_project_wrapper <https://github.com/efabless/caravel/blob/develop/verilog/rtl/user_project_wrapper.v>`. Make sure that your design uses the same ports as ``user_proj_example``.
+In the current version of Caravel the top level module of your design needs to be compatible with the interface required by `user_project_wrapper <https://github.com/efabless/caravel/blob/develop/verilog/rtl/user_project_wrapper.v>`_. Make sure that your design uses the same ports as ``user_proj_example``.
 
 
 Adding a new design
@@ -54,7 +54,7 @@ In this guide we will focus on the first option, creating a new design. A design
 
 The configuration file contains configuration options and parameters, as well as the path to the source files, which are not located inside the design folder, but rather at the top level of the repository in ``verilog/rtl``.
 
-To create your own design go into ``openlane`` and create a new directory named like your design with the appropriate config file. The name of the directory should be the same as the top level module of your design. You can copy the config file from user_proj_example, as it provides a good starting point for your own configuration.
+To create your own design go into ``openlane`` and create a new directory named like your design with the appropriate config file. The name of the directory  should be the same as the top level module of your design. You can copy the config file from ``user_proj_example``, as it provides a good starting point for your own configuration.
 
 .. code-block:: bash
 
@@ -67,7 +67,7 @@ Configuration
 
 Configuration options and their parameters can be found in the `OpenLANE repository <https://github.com/efabless/openlane/tree/master/configuration>`_.
 
-It is recommended to create a new subdirectory for your source files under ``verilog/rtl``, if you have more than one source file and place them there. Alternatively you can just place them in ``verilog/rtl``. After adding your source files you have to provide the path to them in your ``config.tcl``:
+It is recommended to create a new subdirectory for your source files under ``verilog/rtl`` if you have more than one source file and place them there. Alternatively you can just place them in ``verilog/rtl``. After adding your source files you have to provide the path to them in your ``config.tcl``:
 
 .. code-block:: tcl
 
@@ -93,7 +93,7 @@ To build your design go into ``openlane`` and run make with your design name as 
    cd openlane
    make user_proj
 
-This will run your design throught the OpenLANE workflow and if successfull produce a ``.gds`` file of your project. The subdirectory ``runs/user_proj`` will be created in your designs folder, which contains the results of the run. The following result files are important:
+This will run your design throught the OpenLANE workflow and if successfull produce a ``.gds`` file of your project. The subdirectory ``runs/user_proj`` will be created in your designs folder, which contains the results of the run. The following result files in ``runs/user_proj/`` are important:
 
 * ``user_proj/runs/user_proj/reports/final_summary_report.csv``: Contains the results of the run including violations
 * ``user_proj/runs/user_proj/results/magic/user_proj.lef``
@@ -104,7 +104,7 @@ The ``.gds`` and ``.lef`` files can also be found in the ``gds`` and ``lef`` dir
 Adding your design to the wrapper
 ---------------------------------
 
-After building your design you can add it to ``user_project_wrapper``, which takes the ``.gds`` and ``.lef`` files your produced by building your design. To achieve this, we need to adjust a few configuration options in ``user_project_wrapper/config.tcl``:
+After building your design you can add it to ``user_project_wrapper``, which takes the ``.gds`` and ``.lef`` files you produced by building your design. To achieve this, we need to adjust a few configuration options in ``user_project_wrapper/config.tcl``:
 
 .. code-block:: tcl
 
@@ -150,6 +150,8 @@ To build the whole Caravel system you just need to run make in the root of the r
 
    make
 
+The resulting ``.gds`` file can be found in ``gds/caravel.gds``.
+
 Troubleshooting
 ---------------
 
@@ -159,7 +161,7 @@ Common error messages/warnings
 Pin mprj/xxx is outside die area
 """"""""""""""""""""""""""""""""
 
-Either your design is too big for the wrapper or you need to adjust the position of your design in the wrapper. See :ref:`Placement macro`.
+Either your design is too big for the wrapper or you need to adjust the position of your design in the wrapper. See `Placement macro <#Placement Macro>`_.
 
 No clock nets have been found
 """""""""""""""""""""""""""""
