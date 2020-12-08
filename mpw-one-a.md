@@ -5,9 +5,9 @@
 Please stick to version `v0.0.0-303-g3d7617a`
 (commit hash: `3d7617a1acb92ea883539bcf22a632d6361a5de4`)
 ```
-git clone https://github.com/google/skywater-pdk.git 
-cd skywater-pdk 
-git checkout v0.0.0-303-g3d7617a 
+git clone https://github.com/google/skywater-pdk.git
+cd skywater-pdk
+git checkout v0.0.0-303-g3d7617a
 git submodule update --init libraries/sky130_fd_sc_hd/latest
 git submodule update --init libraries/sky130_fd_sc_hvl/latest
 git submodule update --init libraries/sky130_fd_sc_hs/latest
@@ -20,14 +20,14 @@ make timing
 
 ## open_pdks:
 
-Please stick to the `mpw-one-a` tag.
+Please stick to the [mpw-one-a](https://github.com/RTimothyEdwards/open_pdks/tree/mpw-one-a) tag.
 ```
 git clone https://github.com/RTimothyEdwards/open_pdks.git -b mpw-one-a
 ```
 
 ## OpenLane:
 
-Please stick to the `mpw-one-a` tag.
+Please stick to the [mpw-one-a](https://github.com/efabless/openlane/tree/mpw-one-a) tag.
 ```
 git clone https://github.com/efabless/openlane.git -b mpw-one-a
 ```
@@ -44,11 +44,17 @@ cd openlane
 make
 ```
 
-## Caravel: 
+## Caravel:
 
 Please stick to the `mpw-one-a` tag.
 ```
 git clone https://github.com/efabless/caravel.git -b mpw-one-a
+```
+
+## Open_mpw_precheck:
+Please run the offline [precheck](https://github.com/efabless/open_mpw_precheck):
+```
+git clone https://github.com/efabless/open_mpw_precheck.git
 ```
 
 ## Notes
