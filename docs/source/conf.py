@@ -49,6 +49,7 @@ html_theme_options = {
         ("GitHub", "https://github.com/efabless/caravel", True, 'code'),
     ],
     'hide_symbiflow_links': True,
+    'license_url' : 'https://www.apache.org/licenses/LICENSE-2.0',
 }
 
 # The theme to use for HTML and HTML Help pages.  See the documentation for

@@ -2,12 +2,31 @@
 Efabless Caravel "harness" SoC
 ==============================
 
-.. toctree::
-   :maxdepth: 2
+.. image:: _static/Google_logo.svg
+    :width: 45 %
 
-   introduction
+.. image:: _static/plus.png
+    :width: 5 %
+
+.. image:: _static/efabless_lg_logo.png
+    :width: 45 %
+
+.. include:: introduction.rst
+
+.. toctree::
+   :hidden:
+   :maxdepth: 1
+
    description
-   quick-start
    pinout
    gpio
    housekeeping-spi
+   quick-start
+
+.. figure:: _static/caravel_harness_die.svg
+    :width: 30 %
+    :align: left
+    :alt: Caravel harness die
+
+
+
