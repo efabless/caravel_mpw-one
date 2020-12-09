@@ -42,6 +42,10 @@ Your area is the full user_project_wrapper, so feel free to add your project the
 
 If you will use OpenLANE to harden your design, go through the instructions in this [README.md][0].
 
+You must copy your synthesized gate-level-netlist for `user_project_wrapper` to `verilog/gl/` and overwrite `user_project_wrapper.v`. Otherwise, you can point to it in [info.yaml](info.yaml).
+
+> Note: If you're using openlane to harden your design, you should find the synthesized gate-level-netlist here: `openlane/user_project_wrapper/runs/user_project_wrapper/results/synthesis/user_project_wrapper.synthesis.v`.
+
 Then, you will need to put your design aboard the Caravel chip. Make sure you have the following:
 
 - [Magic VLSI Layout Tool](http://opencircuitdesign.com/magic/index.html) installed on your machine. We may provide a Dockerized version later.\*
