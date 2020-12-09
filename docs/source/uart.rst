@@ -1,0 +1,73 @@
+UART interface
+==============
+
+The UART is a standard 2-pin serial interface that can communicate with the most similar interfaces at a fixed baud rate.
+Although the UART operates independently of the CPU, data transfers are blocking operations which will generate CPU wait states until the data transfer is completed.
+
+Related pins
+------------
+
+* :ref:`SER_TX <ser_tx>` - F7,
+* :ref:`SER_RX <ser_rx>` - E7.
+
+UART control register
+---------------------
+
+The behaviour of the UART can be modified by changing values in the registers described below.
+
+``reg_uart_clkdiv``
+~~~~~~~~~~~~~~~~~~~
+
+Base address: ``0x20000000``
+
+.. wavedrom::
+
+     { "reg": [
+         {"name": "UART clock divider", "bits": 32}],
+     }
+
+The entire 32bit word encodes the number of CPU core cycles to divide down to get the UART data bit rate (baud rate).
+The default value is 1.
+
+For example, if the external crystal is 12.5MHz, then the core CPU clock runs at 100MHz.
+To get 9600 baud rate, you need to set::
+
+    100E6 / 9600 = 10417 (0x28B1)
+
+``reg_uart_data``
+~~~~~~~~~~~~~~~~~
+
+Base address: ``0x20000004``
+
+.. wavedrom::
+
+     { "reg": [
+         {"name": "UART data", "bits": 8},
+         {"name": "(unused, value is 0x0)", "type": 1, "bits": 24}],
+     }
+
+Writing a value to this register will immediately start a data transfer on the :ref:`SER_TX <ser_tx>` pin.
+If the UART write operation is pending, then the CPU will be blocked with wait states until the transfer is complete before starting the new write operation.
+This makes the UART transmit a relatively expensive operation on the CPU, but avoids the necessity of buffering data and checking for buffer overflow.
+
+Reading a value from this register:
+
+* returns ``255 (0xff)`` if no valid data byte is in the receive buffer, or
+* returns the value of the received buffer otherwise, and
+* clears the receive buffer for additional reads.
+
+.. note:: There is no FIFO associated with the UART.
+
+``reg_uart_enable``
+~~~~~~~~~~~~~~~~~~~
+
+Base address: ``0x20000008``
+
+.. wavedrom::
+
+     { "reg": [
+         {"name": "UART enable", "bits": 8},
+         {"name": "(unused, value is 0x0)", "type": 1, "bits": 24}],
+     }
+
+The UART must be enabled to run (disabled by default).

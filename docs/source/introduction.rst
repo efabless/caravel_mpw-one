@@ -12,4 +12,5 @@ The documentation contains the following chapters:
 * :doc:`housekeeping-spi` describes the SPI slave that can be accessed from a remote host,
 * :doc:`qspi-flash` describes the QSPI flash controller,
 * :doc:`external-clock` describes  the source external clock for the CPU,
+* :doc:`uart` describes the UART interface,
 * :doc:`quick-start` contains the minimal set of actions to get going with the project,
