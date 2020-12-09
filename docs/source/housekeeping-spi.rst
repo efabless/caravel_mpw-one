@@ -5,6 +5,14 @@ The "housekeeping" SPI is an SPI slave that can be accessed from a remote host t
 The SPI implementation is mode 0, with new data on ``SDI`` captured on the ``SCK`` rising edge, and output data presented on the falling edge of ``SCK`` (to be sampled on the next ``SCK`` rising edge).
 The SPI pins are shared with user area GPIO.
 
+Related pins
+------------
+
+* :ref:`SDI <sdi>` - F9,
+* :ref:`CSB <csb>` - E8,
+* :ref:`SCK <sck>` - F8,
+* :ref:`SDO <sdo>` - E9.
+
 SPI protocol definition
 -----------------------
 
