@@ -22,6 +22,7 @@ Efabless Caravel "harness" SoC
    gpio
    housekeeping-spi
    qspi-flash
+   external-clock
    quick-start
 
 .. figure:: _static/caravel_harness_die.svg
