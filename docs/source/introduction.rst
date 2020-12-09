@@ -11,3 +11,4 @@ The documentation contains the following chapters:
 * :doc:`gpio` describes GPIO and its registers,
 * :doc:`housekeeping-spi` describes the SPI slave that can be accessed from a remote host,
 * :doc:`quick-start` contains the minimal set of actions to get going with the project,
+

@@ -28,5 +28,3 @@ Efabless Caravel "harness" SoC
     :align: left
     :alt: Caravel harness die
 
-
-
