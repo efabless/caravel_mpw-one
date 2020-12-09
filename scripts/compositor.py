@@ -74,7 +74,7 @@ if __name__ == '__main__':
 
         # Now go back to the project top level and place the fill cell.
         print('load ' + project, file=ofile)
-	print('select top cell', file=ofile)	
+        print('select top cell', file=ofile)	
         print('getcell ' + project + '_fill_pattern child 0 0', file=ofile)
 
         # Move existing origin to (6um, 6um) for seal ring placement
