@@ -3,6 +3,13 @@ Pinout description
 
 This section describes lists the pinout for the SoC, and provides the description for pins.
 
+Ball assignment (6x10 WLCSP)
+----------------------------
+
+.. figure:: _static/package_as_viewed_from_the_bottom.svg
+    :width: 30%
+    :align: left
+
 Pinout (6x10 WLCSP)
 -------------------
 
@@ -129,8 +136,8 @@ Pinout (6x10 WLCSP)
       - :ref:`resetb <resetb>`
       - :ref:`vccd <vccd>`
 
-Pin description
----------------
+Pin description (6x10 WLCSP)
+----------------------------
 
 .. list-table:: Pin description
     :name: pin-description
@@ -352,6 +359,6 @@ Pin description
     * - Standard package
       - WLCSP (bump bond)
     * - Package size
-      - 3.2mm x 5.3mm
+      - 3.2 mm x 5.3 mm
     * - Bump pitch
-      - 0.5mm
+      - 0.5 mm
