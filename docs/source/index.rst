@@ -21,10 +21,10 @@ Efabless Caravel "harness" SoC
    pinout
    gpio
    housekeeping-spi
+   qspi-flash
    quick-start
 
 .. figure:: _static/caravel_harness_die.svg
     :width: 30 %
     :align: left
     :alt: Caravel harness die
-

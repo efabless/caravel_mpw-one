@@ -10,5 +10,5 @@ The documentation contains the following chapters:
 * :doc:`pinout` describes the pinout of the SoC,
 * :doc:`gpio` describes GPIO and its registers,
 * :doc:`housekeeping-spi` describes the SPI slave that can be accessed from a remote host,
+* :doc:`qspi-flash` describes the QSPI flash controller,
 * :doc:`quick-start` contains the minimal set of actions to get going with the project,
-
