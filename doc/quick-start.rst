@@ -51,10 +51,11 @@ In this guide we will focus on the first option, creating a new design. A design
 
    openlane/design_name
    ├── config.tcl
+   └── pinout.cfg
 
-The configuration file contains configuration options and parameters, as well as the path to the source files, which are not located inside the design folder, but rather at the top level of the repository in ``verilog/rtl``.
+The configuration file ``config.tcl`` contains configuration options and parameters, as well as the path to the source files, which are not located inside the design folder, but rather at the top level of the repository in ``verilog/rtl``. The ``pinout.cfg`` contains the pin configuration, which you should copy from ``user_proj_example`` without modifying it.
 
-To create your own design go into ``openlane`` and create a new directory named like your design with the appropriate config file. The name of the directory  should be the same as the top level module of your design. You can copy the config file from ``user_proj_example``, as it provides a good starting point for your own configuration.
+To create your own design go into ``openlane`` and create a new directory named like your design with the appropriate config file and copy ``pinout.cfg`` from ``user_proj_example``. The name of the directory  should be the same as the top level module of your design. You can also copy the config file from ``user_proj_example``, as it provides a good starting point for your own configuration.
 
 .. code-block:: bash
 
@@ -161,7 +162,7 @@ Common error messages/warnings
 Pin mprj/xxx is outside die area
 """"""""""""""""""""""""""""""""
 
-Either your design is too big for the wrapper or you need to adjust the position of your design in the wrapper. See `Placement macro <#Placement Macro>`_.
+Either your design is too big for the wrapper or you need to adjust the position of your design in the wrapper. See `Placement macro <#placement-macro>`_.
 
 No clock nets have been found
 """""""""""""""""""""""""""""
