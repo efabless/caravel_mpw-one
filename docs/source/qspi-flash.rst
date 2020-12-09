@@ -42,6 +42,8 @@ QSPI control register
 
 The behaviour of the QSPI flash controller can be modified by changing values in the register below:
 
+Base address: ``0x2d000000``
+
 .. wavedrom::
 
      { "reg": [
