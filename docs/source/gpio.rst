@@ -49,6 +49,13 @@ Register descriptions
       - ``0x2f000008``
       - IRQ 7 input source (low bit)
 
+.. note::
+    
+    In the registers description below, each register is shown as 32 bits corresponding
+    to the data bus width of the wishbone bus. Depending on the instruction and data type,
+    the entire 32-bit register can be read in one instruction, or one 16-bit word,
+    or one 8-bit byte.
+
 .. _reg_gpio_data:
 
 ``reg_gpio_data``
@@ -138,6 +145,8 @@ Base address: ``0x2f000000``
          {"name": "(undefined, reads zero)", "bits": 24, "type": 1}],
      }
 
+|
+
 The low bit of this register directs the output of the core clock to the GPIO channel, according to the :ref:`reg_pll_out_dest_table`.
 
 .. list-table:: ``reg_pll_out_dest`` register settings
@@ -154,7 +163,7 @@ The low bit of this register directs the output of the core clock to the GPIO ch
       - ``1``
       - Core PLL clock to GPIO output
 
-Note that a high rate core clock (e.g. 80MHz) may be unable to generate a full swing on the GPIO output.
+.. note :: High rate core clock (e.g. 80MHz) may be unable to generate a full swing on the GPIO output.
 
 .. _reg_trap_out_dest:
 
@@ -169,6 +178,8 @@ Base address: ``0x2f000004``
          {"name": "trap signal dest.", "bits": 8},
          {"name": "(undefined, reads zero)", "bits": 24, "type": 1}],
      }
+
+|
 
 The low bit of this register directs the output of the processor trap signal to the GPIO channel, according to the :ref:`reg_trap_out_dest_table`.
 
@@ -200,6 +211,8 @@ Base address: ``0x2f000008``
          {"name": "IRQ 7 source", "bits": 8},
          {"name": "(undefined, reads zero)", "bits": 24, "type": 1}],
      }
+
+|
 
 The low bit of this register directs the input of the GPIO to the processor's IRQ7 channel, according to the :ref:`reg_irq7_source_table`.
 
