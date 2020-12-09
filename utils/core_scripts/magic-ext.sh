@@ -12,6 +12,7 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
+# SPDX-License-Identifier: Apache-2.0
 
 # To call: ./magic-ext.sh <target_path> <design_name> <pdk-root> <target-type> <pdk-name> <output_path>
 
