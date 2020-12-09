@@ -1,6 +1,15 @@
 QSPI Flash interface
 ====================
 
+Related pins
+------------
+
+* :ref:`flash_io[1:0] <flash_io>` - D9 and D10, respectively,
+* :ref:`flash_csb <flash_csb>` - C10,
+* :ref:`flash_clk <flash_clk>` - D8.
+
+Description
+-----------
 
 The QSPI flash controller is automatically enabled on power-up, and will immediately initiate a read sequence in single-bit mode with pin "flash io0" acting as ``SDI`` (data from flash to CPU) and pin "flash io1" acting as ``SDO`` (data from CPU to flash).
 Protocol is to, e.g., Cypress S25FL256L.
