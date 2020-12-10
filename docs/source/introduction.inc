@@ -25,4 +25,5 @@ The documentation contains the following chapters:
 * :doc:`irq` describes the interrups,
 * :doc:`sram` describes management and storage area SRAM,
 * :doc:`quick-start` contains the minimal set of actions to get going with the project,
+* :doc:`programming` shows how to get started with programming on Caravel chip,
 * :doc:`further-work` lists things to be added to the documentation.

@@ -29,6 +29,7 @@ Efabless Caravel "harness" SoC
    irq
    sram
    quick-start
+   programming
    further-work
 
 .. figure:: _static/caravel_harness_die.svg
