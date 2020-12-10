@@ -27,6 +27,7 @@ Efabless Caravel "harness" SoC
    spi
    counter-timers
    irq
+   sram
    quick-start
 
 .. figure:: _static/caravel_harness_die.svg

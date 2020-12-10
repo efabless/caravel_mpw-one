@@ -16,4 +16,5 @@ The documentation contains the following chapters:
 * :doc:`spi` describes the SPI configuration,
 * :doc:`counter-timers` describes two counter/timers blocks,
 * :doc:`irq` describes the interrups,
+* :doc:`sram` describes management and storage area SRAM,
 * :doc:`quick-start` contains the minimal set of actions to get going with the project.
