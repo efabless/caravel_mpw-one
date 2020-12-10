@@ -31,6 +31,7 @@ Efabless Caravel "harness" SoC
    quick-start
    programming
    memory-mapped-io-summary
+   maximum-ratings
    references
    further-work
 
