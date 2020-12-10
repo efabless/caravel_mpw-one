@@ -11,7 +11,7 @@ Efabless Caravel "harness" SoC
 .. image:: _static/efabless_lg_logo.png
     :width: 45 %
 
-.. include:: introduction.rst
+.. include:: introduction.inc
 
 .. toctree::
    :hidden:
