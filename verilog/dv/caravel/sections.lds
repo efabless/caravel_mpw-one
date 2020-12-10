@@ -55,4 +55,9 @@ SECTIONS {
 		. = ALIGN(4);
 		_heap_start = .;
 	} >RAM
+
+	/DISCARD/ :
+	{
+		*(.note.gnu.build-id)
+	}
 }
