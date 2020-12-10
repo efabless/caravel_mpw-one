@@ -1,0 +1,141 @@
+magic
+tech sky130A
+magscale 1 2
+timestamp 1607547388
+<< obsli1 >>
+rect 960 67 39936 4171
+<< obsm1 >>
+rect 784 33 39936 4205
+<< metal2 >>
+rect 7437 33 7497 4205
+rect 7837 84 7897 4154
+rect 8237 84 8297 4154
+rect 13943 33 14003 4205
+rect 14343 84 14403 4154
+rect 14743 84 14803 4154
+rect 20450 33 20510 4205
+rect 20850 84 20910 4154
+rect 21250 84 21310 4154
+rect 26957 33 27017 4205
+rect 27357 84 27417 4154
+rect 27757 84 27817 4154
+rect 33463 33 33523 4205
+rect 33863 84 33923 4154
+rect 34263 84 34323 4154
+<< obsm2 >>
+rect 788 33 7381 4205
+rect 7553 33 7781 4205
+rect 7953 33 8181 4205
+rect 8353 33 13887 4205
+rect 14059 33 14287 4205
+rect 14459 33 14687 4205
+rect 14859 33 20394 4205
+rect 20566 33 20794 4205
+rect 20966 33 21194 4205
+rect 21366 33 26901 4205
+rect 27073 33 27301 4205
+rect 27473 33 27701 4205
+<< metal3 >>
+rect 0 3724 800 3844
+rect 960 3769 39936 3829
+rect 960 3646 39936 3706
+rect 960 3369 39936 3429
+rect 960 3040 39936 3100
+rect 960 2918 39936 2978
+rect 960 2640 39936 2700
+rect 960 2311 39936 2371
+rect 960 2189 39936 2249
+rect 960 1911 39936 1971
+rect 960 1583 39936 1643
+rect 960 1460 39936 1520
+rect 960 1183 39936 1243
+rect 0 764 800 884
+rect 960 732 39936 792
+<< obsm3 >>
+rect 800 3566 880 3644
+rect 800 3509 39936 3566
+rect 800 3289 880 3509
+rect 800 3180 39936 3289
+rect 800 2838 880 3180
+rect 800 2780 39936 2838
+rect 800 2560 880 2780
+rect 800 2451 39936 2560
+rect 800 2109 880 2451
+rect 800 2051 39936 2109
+rect 800 1831 880 2051
+rect 800 1723 39936 1831
+rect 800 1380 880 1723
+rect 800 1323 39936 1380
+rect 800 1103 880 1323
+rect 800 964 39936 1103
+rect 880 872 39936 964
+<< labels >>
+rlabel metal3 s 0 764 800 884 6 mprj2_vdd_logic1
+port 1 nsew signal output
+rlabel metal3 s 0 3724 800 3844 6 mprj_vdd_logic1
+port 2 nsew signal output
+rlabel metal2 s 33463 33 33523 4205 6 vccd
+port 3 nsew power bidirectional
+rlabel metal2 s 20450 33 20510 4205 6 vccd
+port 4 nsew power bidirectional
+rlabel metal2 s 7437 33 7497 4205 6 vccd
+port 5 nsew power bidirectional
+rlabel metal3 s 960 3646 39936 3706 6 vccd
+port 6 nsew power bidirectional
+rlabel metal3 s 960 2189 39936 2249 6 vccd
+port 7 nsew power bidirectional
+rlabel metal3 s 960 732 39936 792 6 vccd
+port 8 nsew power bidirectional
+rlabel metal2 s 26957 33 27017 4205 6 vssd
+port 9 nsew ground bidirectional
+rlabel metal2 s 13943 33 14003 4205 6 vssd
+port 10 nsew ground bidirectional
+rlabel metal3 s 960 2918 39936 2978 6 vssd
+port 11 nsew ground bidirectional
+rlabel metal3 s 960 1460 39936 1520 6 vssd
+port 12 nsew ground bidirectional
+rlabel metal2 s 33863 84 33923 4154 6 vdda1
+port 13 nsew power bidirectional
+rlabel metal2 s 20850 84 20910 4154 6 vdda1
+port 14 nsew power bidirectional
+rlabel metal2 s 7837 84 7897 4154 6 vdda1
+port 15 nsew power bidirectional
+rlabel metal3 s 960 2640 39936 2700 6 vdda1
+port 16 nsew power bidirectional
+rlabel metal3 s 960 1183 39936 1243 6 vdda1
+port 17 nsew power bidirectional
+rlabel metal2 s 27357 84 27417 4154 6 vssa1
+port 18 nsew ground bidirectional
+rlabel metal2 s 14343 84 14403 4154 6 vssa1
+port 19 nsew ground bidirectional
+rlabel metal3 s 960 3369 39936 3429 6 vssa1
+port 20 nsew ground bidirectional
+rlabel metal3 s 960 1911 39936 1971 6 vssa1
+port 21 nsew ground bidirectional
+rlabel metal2 s 34263 84 34323 4154 6 vdda2
+port 22 nsew power bidirectional
+rlabel metal2 s 21250 84 21310 4154 6 vdda2
+port 23 nsew power bidirectional
+rlabel metal2 s 8237 84 8297 4154 6 vdda2
+port 24 nsew power bidirectional
+rlabel metal3 s 960 3040 39936 3100 6 vdda2
+port 25 nsew power bidirectional
+rlabel metal3 s 960 1583 39936 1643 6 vdda2
+port 26 nsew power bidirectional
+rlabel metal2 s 27757 84 27817 4154 6 vssa2
+port 27 nsew ground bidirectional
+rlabel metal2 s 14743 84 14803 4154 6 vssa2
+port 28 nsew ground bidirectional
+rlabel metal3 s 960 3769 39936 3829 6 vssa2
+port 29 nsew ground bidirectional
+rlabel metal3 s 960 2311 39936 2371 6 vssa2
+port 30 nsew ground bidirectional
+<< properties >>
+string LEFclass BLOCK
+string FIXED_BBOX 0 1 40002 4205
+string LEFview TRUE
+string GDS_FILE /project/openlane/mgmt_protect_hv/runs/mgmt_protect_hv/results/magic/mgmt_protect_hv.gds
+string GDS_END 79880
+string GDS_START 42692
+<< end >>
+
