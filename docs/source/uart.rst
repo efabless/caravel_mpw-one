@@ -10,8 +10,8 @@ Related pins
 * :ref:`SER_TX <ser_tx>` - F7,
 * :ref:`SER_RX <ser_rx>` - E7.
 
-UART control register
----------------------
+UART control registers
+----------------------
 
 The behaviour of the UART can be modified by changing values in the registers described below.
 
@@ -25,16 +25,18 @@ Base address: ``0x20000000``
 .. wavedrom::
 
      { "reg": [
-         {"name": "UART clock divider", "bits": 32}],
+         {"name": "UART clock divider", "bits": 32}]
      }
+
+|
 
 The entire 32bit word encodes the number of CPU core cycles to divide down to get the UART data bit rate (baud rate).
 The default value is 1.
 
-For example, if the external crystal is 12.5MHz, then the core CPU clock runs at 100MHz.
+For example, if the external crystal is 12.5 MHz, then the core CPU clock runs at 100 MHz.
 To get 9600 baud rate, you need to set::
 
-    100E6 / 9600 = 10417 (0x28B1)
+    100 000 000 / 9600 = 10417 (0x28B1)
 
 .. _reg_uart_data:
 
@@ -47,8 +49,10 @@ Base address: ``0x20000004``
 
      { "reg": [
          {"name": "UART data", "bits": 8},
-         {"name": "(unused, value is 0x0)", "type": 1, "bits": 24}],
+         {"name": "(unused, value is 0x0)", "type": 1, "bits": 24}]
      }
+
+|
 
 Writing a value to this register will immediately start a data transfer on the :ref:`SER_TX <ser_tx>` pin.
 If the UART write operation is pending, then the CPU will be blocked with wait states until the transfer is complete before starting the new write operation.
@@ -73,7 +77,9 @@ Base address: ``0x20000008``
 
      { "reg": [
          {"name": "UART enable", "bits": 8},
-         {"name": "(unused, value is 0x0)", "type": 1, "bits": 24}],
+         {"name": "(unused, value is 0x0)", "type": 1, "bits": 24}]
      }
+
+|
 
 The UART must be enabled to run (disabled by default).

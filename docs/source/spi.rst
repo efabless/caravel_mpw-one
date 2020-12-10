@@ -30,7 +30,7 @@ Base address: ``0x24000000``
          {"bits": 1, "type": 2},
          {"bits": 1, "type": 2},
          {"bits": 1, "type": 2},
-         {"name": "(undefined, reads zero)", "type": 1, "bits": 16}],
+         {"name": "(undefined, reads zero)", "type": 1, "bits": 16}]
      }
 
 .. list-table:: Configuration bit definitions
@@ -103,7 +103,7 @@ Base address: ``0x24000004``
 
      { "reg": [
          {"name": "SPI data", "bits": 8},
-         {"name": "(undefined, reads zero)", "type": 1, "bits": 24}],
+         {"name": "(undefined, reads zero)", "type": 1, "bits": 24}]
      }
 
 The byte at ``0x24000004`` holds the SPI data (either read or write).

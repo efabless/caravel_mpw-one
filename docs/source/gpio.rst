@@ -67,7 +67,7 @@ Base address: ``0x21000000``
 
      { "reg": [
          {"name": "GPIO input/output", "bits": 16},
-         {"name": "GPIO output readback", "bits": 16}],
+         {"name": "GPIO output readback", "bits": 16}]
      }
 
 |
@@ -88,7 +88,7 @@ Base address: ``0x21000004``
 
      { "reg": [
          {"name": "GPIO output enable", "bits": 16},
-         {"name": "(undefined, reads zero)", "bits": 16, "type": 1}],
+         {"name": "(undefined, reads zero)", "bits": 16, "type": 1}]
      }
 
 |
@@ -107,7 +107,7 @@ Base address: ``0x21000008``
 
      { "reg": [
          {"name": "GPIO pin pull-up", "bits": 16},
-         {"name": "(undefined, reads zero)", "bits": 16, "type": 1}],
+         {"name": "(undefined, reads zero)", "bits": 16, "type": 1}]
      }
 
 |
@@ -126,7 +126,7 @@ Base address: ``0x2100000c``
 
      { "reg": [
          {"name": "GPIO pin pull-down (inverted)", "bits": 16},
-         {"name": "(undefined, reads zero)", "bits": 16, "type": 1}],
+         {"name": "(undefined, reads zero)", "bits": 16, "type": 1}]
      }
 
 |
@@ -149,7 +149,7 @@ Base address: ``0x2f000000``
 
      { "reg": [
          {"name": "PLL clock dest.", "bits": 8},
-         {"name": "(undefined, reads zero)", "bits": 24, "type": 1}],
+         {"name": "(undefined, reads zero)", "bits": 24, "type": 1}]
      }
 
 |
@@ -185,7 +185,7 @@ Base address: ``0x2f000004``
 
      { "reg": [
          {"name": "trap signal dest.", "bits": 8},
-         {"name": "(undefined, reads zero)", "bits": 24, "type": 1}],
+         {"name": "(undefined, reads zero)", "bits": 24, "type": 1}]
      }
 
 |
@@ -216,7 +216,7 @@ Base address: ``0x2f000008``
 
      { "reg": [
          {"name": "IRQ 7 source", "bits": 8},
-         {"name": "(undefined, reads zero)", "bits": 24, "type": 1}],
+         {"name": "(undefined, reads zero)", "bits": 24, "type": 1}]
      }
 
 |
@@ -316,7 +316,7 @@ Each of 38 ``mprj_io`` GPIOs has a configuration register.
          {"bits": 1, "type": 2},
          {"bits": 1, "type": 2},
          {"name": "mode", "bits": 3, "type": 1},
-         {"bits": 19, "type": 1}],
+         {"bits": 19, "type": 1}]
      }
 
 |

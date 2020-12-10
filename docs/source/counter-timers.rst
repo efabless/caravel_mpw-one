@@ -38,7 +38,7 @@ Base address: ``0x22000000``
 
      { "reg": [
          {"name": "Timer config", "bits": 8},
-         {"name": "(undefined, reads zero)", "bits": 24, "type": 1}],
+         {"name": "(undefined, reads zero)", "bits": 24, "type": 1}]
      }
 
 .. list-table:: Timer 0 configuration bit definitions
@@ -80,7 +80,7 @@ Base address: ``0x22000004``
 .. wavedrom::
 
      { "reg": [
-         {"name": "Timer value", "bits": 32}],
+         {"name": "Timer value", "bits": 32}]
      }
 
 The value in this register is the current value of the counter.
@@ -97,7 +97,7 @@ Base address: ``0x22000008``
 .. wavedrom::
 
      { "reg": [
-         {"name": "Timer data", "bits": 32}],
+         {"name": "Timer data", "bits": 32}]
      }
 
 The value in this register is the reset value for the comparator.
@@ -118,7 +118,7 @@ Base address: ``0x23000000``
 
      { "reg": [
          {"name": "Timer config", "bits": 8},
-         {"name": "(undefined, reads zero)", "bits": 24, "type": 1}],
+         {"name": "(undefined, reads zero)", "bits": 24, "type": 1}]
      }
 
 .. list-table:: Timer 1 configuration bit definitions
@@ -160,7 +160,7 @@ Base address: ``0x23000004``
 .. wavedrom::
 
      { "reg": [
-         {"name": "Timer value", "bits": 32}],
+         {"name": "Timer value", "bits": 32}]
      }
 
 The value in this register is the current value of the counter.
@@ -177,7 +177,7 @@ Base address: ``0x23000008``
 .. wavedrom::
 
      { "reg": [
-         {"name": "Timer data", "bits": 32}],
+         {"name": "Timer data", "bits": 32}]
      }
 
 The value in this register is the reset value for the comparator.
