@@ -29,6 +29,7 @@ author = 'efabless'
 # ones.
 extensions = [
   'sphinxcontrib.wavedrom',
+  'sphinx.ext.mathjax',
   'sphinx.ext.todo'
 ]
 
@@ -63,3 +64,5 @@ html_theme = 'sphinx_symbiflow_theme'
 html_static_path = ['_static']
 
 todo_include_todos = True
+
+numfig = True

@@ -27,5 +27,6 @@ The documentation contains the following chapters:
 * :doc:`quick-start` contains the minimal set of actions to get going with the project,
 * :doc:`programming` shows how to get started with programming on Caravel chip,
 * :doc:`memory-mapped-io-summary` lists the memory mapped I/O registers by address,
+* :doc:`maximum-ratings` lists the parameters and their ranges at which the device operates correctly,
 * :doc:`references` contains list of references,
 * :doc:`further-work` lists things to be added to the documentation.

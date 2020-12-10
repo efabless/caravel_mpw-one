@@ -16,8 +16,11 @@ Ball assignment (6x10 WLCSP)
 ----------------------------
 
 .. figure:: _static/package_as_viewed_from_the_bottom.svg
+    :name: ball_assignment
     :width: 30%
-    :align: left
+    :align: center
+
+    Ball assignment (6x10 WLCSP)
 
 Pinout (6x10 WLCSP)
 -------------------
