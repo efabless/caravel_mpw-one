@@ -11,6 +11,8 @@ Related pins
 - :ref:`SCK <sck>` - F8,
 - :ref:`SDO <sdo>` - F9.
 
+.. _reg_spi_config:
+
 ``reg_spi_config``
 ------------------
 
@@ -86,6 +88,8 @@ Base address: ``0x24000000``
 .. note::
 
     All configuration bits other than the prescaler default to value zero.
+
+.. _reg_spi_data:
 
 ``reg_spi_data``
 ----------------

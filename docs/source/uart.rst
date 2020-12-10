@@ -15,6 +15,8 @@ UART control register
 
 The behaviour of the UART can be modified by changing values in the registers described below.
 
+.. _reg_uart_clkdiv:
+
 ``reg_uart_clkdiv``
 ~~~~~~~~~~~~~~~~~~~
 
@@ -33,6 +35,8 @@ For example, if the external crystal is 12.5MHz, then the core CPU clock runs at
 To get 9600 baud rate, you need to set::
 
     100E6 / 9600 = 10417 (0x28B1)
+
+.. _reg_uart_data:
 
 ``reg_uart_data``
 ~~~~~~~~~~~~~~~~~
@@ -57,6 +61,8 @@ Reading a value from this register:
 * clears the receive buffer for additional reads.
 
 .. note:: There is no FIFO associated with the UART.
+
+.. _reg_uart_enable:
 
 ``reg_uart_enable``
 ~~~~~~~~~~~~~~~~~~~

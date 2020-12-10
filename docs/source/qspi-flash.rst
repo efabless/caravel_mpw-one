@@ -37,8 +37,8 @@ The QSPI flash continues to read bytes, either sequentially on the same command,
 
 .. _reg_spictrl:
 
-QSPI control register
----------------------
+``reg_spictrl`` QSPI control register
+-------------------------------------
 
 The behaviour of the QSPI flash controller can be modified by changing values in the register below:
 
