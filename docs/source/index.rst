@@ -25,6 +25,8 @@ Efabless Caravel "harness" SoC
    external-clock
    uart
    spi
+   counter-timers
+   irq
    quick-start
 
 .. figure:: _static/caravel_harness_die.svg

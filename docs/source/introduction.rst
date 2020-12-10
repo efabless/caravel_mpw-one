@@ -14,4 +14,6 @@ The documentation contains the following chapters:
 * :doc:`external-clock` describes  the source external clock for the CPU,
 * :doc:`uart` describes the UART interface,
 * :doc:`spi` describes the SPI configuration,
-* :doc:`quick-start` contains the minimal set of actions to get going with the project,
+* :doc:`counter-timers` describes two counter/timers blocks,
+* :doc:`irq` describes the interrups,
+* :doc:`quick-start` contains the minimal set of actions to get going with the project.
