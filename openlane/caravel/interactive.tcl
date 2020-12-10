@@ -25,13 +25,13 @@ verilog_elaborate
 init_floorplan
 
 add_macro_placement padframe 0 0 N
-add_macro_placement storage 260.155 306.960 N
-add_macro_placement soc 1022.750 268.500 N
-add_macro_placement mprj 326.385 1382.010 N
-add_macro_placement mgmt_buffers 1440.500 1198.735 N
-add_macro_placement rstb_level 773.765 257.020 N
-add_macro_placement user_id_value 3283.125 404.630 N
-add_macro_placement por 3270.880 520.985 N
+add_macro_placement storage 260.160 265.780 N
+add_macro_placement soc 1052.000 268.500 N
+add_macro_placement mprj 326.540 1383.040 N
+add_macro_placement mgmt_buffers 1078.980 1236.460 N
+add_macro_placement rstb_level 773.760 257.020 S
+add_macro_placement user_id_value 3283.120 404.630 N
+add_macro_placement por 3270.880 522.690 N
 
 # west
 set west_x 42.835
@@ -49,7 +49,7 @@ add_macro_placement "gpio_control_in\\\[28\\\]" $west_x 3379.000 R0
 add_macro_placement "gpio_control_in\\\[27\\\]" $west_x 3595.000 R0
 add_macro_placement "gpio_control_in\\\[26\\\]" $west_x 3811.000 R0
 add_macro_placement "gpio_control_in\\\[25\\\]" $west_x 4027.000 R0
-add_macro_placement "gpio_control_in\\\[24\\\]" $west_x 4449.000 R0
+add_macro_placement "gpio_control_in\\\[24\\\]" $west_x 4656.120 R0
 
 # north
 set north_y 4979.065
@@ -86,6 +86,17 @@ manual_macro_placement f
 # modify to a different file
 remove_pins -input $::env(CURRENT_DEF)
 remove_empty_nets -input $::env(CURRENT_DEF)
+
+# add_macro_obs \
+# 	-defFile $::env(CURRENT_DEF) \
+# 	-lefFile $::env(MERGED_LEF_UNPADDED) \
+# 	-obstruction vddio_obs \
+# 	-placementX 103.405 \
+# 	-placementY 627.150 \
+# 	-sizeWidth 94.500 \
+# 	-sizeHeight 258.825 \
+# 	-fixed 1 \
+# 	-layerNames "met1 met2 met3 met4 met5"
 
 li1_hack_start
 global_routing
