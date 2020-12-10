@@ -89,7 +89,7 @@ Memory Mapped I/O summary
     * - ``0x2f 00 00 00``
       - :ref:`reg_pll_out_dest`
     * - ``0x2f 00 00 04``
-      - :ref:`reg_trap_out_rest`
+      - :ref:`reg_trap_out_dest`
     * - ``0x2f 00 00 08``
       - :ref:`reg_irq7_source`
     * - ``0x30 00 00 0``
