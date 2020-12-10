@@ -50,7 +50,7 @@ Base address: ``0x24000000``
       - SPI interrupt enable
       - 0 - interrupt disabled.
 
-        1 - interrupt enabled.
+        1 - interrupt enabled - SPI valid read triggers interrupt in channel 9 (check :ref:`cpu_irq_channel_definitions`).
     * - 13
       - SPI system enable
       - 0 - SPI disabled.
@@ -63,19 +63,19 @@ Base address: ``0x24000000``
         1 - apply :ref:`CSB <csb>` until stream bit is cleared (manually).
     * - 11
       - mode
-      - 0 - read and change data on opposite :ref:`SCK <sck>` edges.
+      - 0 - read and change data on opposite :ref:`SCK <sck>` edges (default).
 
         1 - read and change data on the same :ref:`SCK <sck>` edges.
     * - 10
       - invert :ref:`SCK <sck>`
-      - 0 - normal :ref:`SCK <sck>`
+      - 0 - normal :ref:`SCK <sck>` (default).
 
-        1 - inverted :ref:`SCK <sck>`
+        1 - inverted :ref:`SCK <sck>`.
     * - 9
       - invert :ref:`CSB <csb>`
-      - 0 - normal :ref:`CSB <csb>`
+      - 0 - normal :ref:`CSB <csb>` (default).
 
-        1 - inverted :ref:`CSB <csb>`
+        1 - inverted :ref:`CSB <csb>`.
     * - 8
       - MLB
       - 0 - MSB first
@@ -84,6 +84,9 @@ Base address: ``0x24000000``
     * - 7-0
       - prescaler
       - count (in master clock cycles) of 1/2 :ref:`SCK <sck>` cycle.
+        The formula for SPI clock rate: ``SPI clock rate = 2 * core_clock / (prescaler + 1)``.
+        
+        Default is 2.
 
 .. note::
 

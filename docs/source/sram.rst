@@ -1,12 +1,16 @@
 SRAM
 ====
 
+.. _management-area-sram:
+
 Management area SRAM
 --------------------
 
 The Caravel chip has an on-board memory of 256 words of width 32 bits.
 The memory is located at address ``0``.
 There are additional blocks of memory above this area, size and location TDB.
+
+.. _storage-area-sram:
 
 Storage area SRAM
 -----------------

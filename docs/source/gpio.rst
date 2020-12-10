@@ -70,6 +70,7 @@ Base address: ``0x21000000``
          {"name": "GPIO output readback", "bits": 16}],
      }
 
+|
 
 * Writing to the address low bit always sets the registered value at the GPIO.
 * Writing to address bit 16 has no effect.
@@ -90,6 +91,8 @@ Base address: ``0x21000004``
          {"name": "(undefined, reads zero)", "bits": 16, "type": 1}],
      }
 
+|
+
 * Bit 0 corresponds to the GPIO channel enable.
 * Bit value 1 indicates an output channel; 0 indicates an input.
 
@@ -107,6 +110,8 @@ Base address: ``0x21000008``
          {"name": "(undefined, reads zero)", "bits": 16, "type": 1}],
      }
 
+|
+
 * Bit 0 corresponds to the GPIO channel pull-up state.
 * Bit value 1 indicates pullup is active; 0 indicates pullup is inactive.
 
@@ -123,6 +128,8 @@ Base address: ``0x2100000c``
          {"name": "GPIO pin pull-down (inverted)", "bits": 16},
          {"name": "(undefined, reads zero)", "bits": 16, "type": 1}],
      }
+
+|
 
 .. attention::
 
@@ -147,23 +154,25 @@ Base address: ``0x2f000000``
 
 |
 
+The PLL clock (crystal oscillator clock multiplied up by PLL) can be viewed on the GPIO pin.
+The GPIO pin cannot be used as general-purpose I/O when selected for PLL clock output.
+
 The low bit of this register directs the output of the core clock to the GPIO channel, according to the :ref:`reg_pll_out_dest_table`.
 
 .. list-table:: ``reg_pll_out_dest`` register settings
     :name: reg_pll_out_dest_table
     :header-rows: 1
 
-    * - Register byte
-      - ``0x2f000000`` value
+    * - ``0x2f000000`` value
       - Clock output directed to this channel
-    * - 0
-      - ``0``
+    * - ``0``
       - (none)
-    * - 1
-      - ``1``
+    * - ``1``
       - Core PLL clock to GPIO output
 
-.. note :: High rate core clock (e.g. 80MHz) may be unable to generate a full swing on the GPIO output.
+.. note::
+    
+    High rate core clock (e.g. 80MHz) may be unable to generate a full swing on the GPIO output, but is detectable.
 
 .. _reg_trap_out_dest:
 
@@ -181,6 +190,7 @@ Base address: ``0x2f000004``
 
 |
 
+The CPU fault state (trap) can be viewed at the GPIO pin as a way to monitor the CPU trap state externally.
 The low bit of this register directs the output of the processor trap signal to the GPIO channel, according to the :ref:`reg_trap_out_dest_table`.
 
 
@@ -188,14 +198,11 @@ The low bit of this register directs the output of the processor trap signal to 
     :name: reg_trap_out_dest_table
     :header-rows: 1
 
-    * - Register byte
-      - ``0x2f000004`` value
+    * - ``0x2f000004`` value
       - Trap signal output directed to this channel
-    * - 0
-      - ``0``
+    * - ``0``
       - (none)
-    * - 1
-      - ``1``
+    * - ``1``
       - GPIO
 
 .. _reg_irq7_source:
@@ -214,6 +221,8 @@ Base address: ``0x2f000008``
 
 |
 
+The GPIO input can be used as an IRQ event source and passed to the CPU through IRQ channel 7 (see :doc:`irq`).
+When used as an IRQ source, the GPIO pin must be configured as an input.
 The low bit of this register directs the input of the GPIO to the processor's IRQ7 channel, according to the :ref:`reg_irq7_source_table`.
 
 

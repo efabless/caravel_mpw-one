@@ -56,7 +56,7 @@ This makes the UART transmit a relatively expensive operation on the CPU, but av
 
 Reading a value from this register:
 
-* returns ``255 (0xff)`` if no valid data byte is in the receive buffer, or
+* returns ``255 (0xff)`` if no valid data byte is in the receive buffer (the whole register has value ``0xffffffff``), or
 * returns the value of the received buffer otherwise, and
 * clears the receive buffer for additional reads.
 

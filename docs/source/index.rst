@@ -30,6 +30,7 @@ Efabless Caravel "harness" SoC
    sram
    quick-start
    programming
+   memory-mapped-io-summary
    references
    further-work
 

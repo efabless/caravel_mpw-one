@@ -16,6 +16,9 @@ Protocol is to, e.g., Cypress S25FL256L.
 
 The initial SPI instruction sequence is described in :ref:`initial_spi_instruction_sequence`.
 
+.. attention::
+    Is this program start address sequence valid? should we send 10, 00, 00, 00?
+
 .. list-table:: Initial SPI instruction sequence
     :name: initial_spi_instruction_sequence
     :widths: auto
@@ -60,6 +63,11 @@ Base address: ``0x2d000000``
        "config": {"bits": 32, "hspace": "width", "lanes": 2, "fontsize": 8}
      }
 
+.. attention::
+    
+    In the memory mapped I/O description the 31 bit is described as MEMIO enable (reset = 1) 0 = bit-bang mode.
+    I am not sure how it corresponds to the below description.
+
 .. list-table:: ``reg_spictrl`` register description
     :name: reg_spictrl_description
     :header-rows: 1
@@ -73,22 +81,22 @@ Base address: ``0x2d000000``
       - QSPI flash interface enable
     * - 22-20
       - 0
-      - Access mode (see :ref:`reg_spictrl_access_mode_values`)
+      - Access mode, consisting of DDR enable, QSPI enable and CRM enable (see :ref:`reg_spictrl_access_mode_values`)
     * - 19-16
       - 8
-      - Dummy clock cycle count
+      - Dummy clock cycle count/Read latency cycles
     * - 11-8
       - 0
-      - Bit-bang ``OE_FLASH_IO[3:0]``
+      - Bit-bang ``OE_FLASH_IO[3:0]`` I/O output enable
     * - 5
       - 0
-      - Bit-bang ``FLASH_CSB``
+      - Bit-bang ``FLASH_CSB`` chip select bit
     * - 4
       - 0
-      - Bit-bang ``FLASH_CLK``
+      - Bit-bang ``FLASH_CLK`` serial clock line
     * - 3-0
       - 0
-      - Bit-bang ``FLASH_IO[3:0]``
+      - Bit-bang ``FLASH_IO[3:0]`` data bits
 
 QSPI access modes
 -----------------
@@ -108,3 +116,7 @@ All additional modes (QSPI dual and quad modes) cannot be used, as the managemen
 
 The SPI flash can be accessed by bit banging when the enable is off.
 To do this from the CPU, the entire routine to access the SPI flash must be read into SRAM and executed from the SRAM.
+
+.. note::
+
+    To sum up, the DDR enable, QSPI enable and CRM enable bits cannot be used due to the limited number of data pins.
