@@ -22,16 +22,21 @@ Base address: ``0x24000000``
 
      { "reg": [
          {"name": "prescaler", "bits": 8},
-         {"bits": 1, "type": 2},
-         {"bits": 1, "type": 2},
-         {"bits": 1, "type": 2},
-         {"bits": 1, "type": 2},
-         {"bits": 1, "type": 2},
-         {"bits": 1, "type": 2},
-         {"bits": 1, "type": 2},
-         {"bits": 1, "type": 2},
-         {"name": "(undefined, reads zero)", "type": 1, "bits": 16}]
+         {"bits": 1, "name": "MLB"},
+         {"bits": 1, "name": "invCSB"},
+         {"bits": 1, "name": "invSCK"},
+         {"bits": 1, "name": "mode"},
+         {"bits": 1, "name": "stream"},
+         {"bits": 1, "name": "SPI_IE"},
+         {"bits": 1, "name": "SPI_INT"},
+         {"bits": 1, "name": "SPI_HK"},
+         {"name": "(undefined, reads zero)", "type": 1, "bits": 16}],
+        "config": {"bits": 32, "hspace": 55*32, "vspace": 40, "lanes": 1} 
      }
+
+
+..       "config": {"bits": 32, "hspace": 55*32, "vspace": 40, "lanes": 1, "fontsize": 9} 
+
 
 .. list-table:: Configuration bit definitions
     :name: spi_configuration_bit_definitions
@@ -43,39 +48,39 @@ Base address: ``0x24000000``
       - Values
     * - 15
       - Housekeeping
-      - 0 - SPI master connected to external pins.
+      - 0 - SPI master connected to external pins
 
-        1 - SPI master connected directly to housekeeping SPI.
+        1 - SPI master connected directly to housekeeping SPI
     * - 14
       - SPI interrupt enable
-      - 0 - interrupt disabled.
+      - 0 - interrupt disabled
 
-        1 - interrupt enabled - SPI valid read triggers interrupt in channel 9 (check :ref:`cpu_irq_channel_definitions`).
+        1 - interrupt enabled ( :ref:`IRQ channel 9 <cpu_irq_channel_definitions>` )
     * - 13
       - SPI system enable
-      - 0 - SPI disabled.
+      - 0 - SPI disabled
 
-        1 - SPI enabled.
+        1 - SPI enabled
     * - 12
       - stream
-      - 0 - apply/release :ref:`CSB <csb>` separately for each byte.
+      - 0 - apply/release :ref:`CSB <csb>` separately for each byte
 
-        1 - apply :ref:`CSB <csb>` until stream bit is cleared (manually).
+        1 - apply :ref:`CSB <csb>` until stream bit is cleared (manually)
     * - 11
       - mode
-      - 0 - read and change data on opposite :ref:`SCK <sck>` edges (default).
+      - 0 - read and change data on opposite :ref:`SCK <sck>` edges (default)
 
-        1 - read and change data on the same :ref:`SCK <sck>` edges.
+        1 - read and change data on the same :ref:`SCK <sck>` edges
     * - 10
       - invert :ref:`SCK <sck>`
-      - 0 - normal :ref:`SCK <sck>` (default).
+      - 0 - normal :ref:`SCK <sck>` (default)
 
-        1 - inverted :ref:`SCK <sck>`.
+        1 - inverted :ref:`SCK <sck>`
     * - 9
       - invert :ref:`CSB <csb>`
-      - 0 - normal :ref:`CSB <csb>` (default).
+      - 0 - normal :ref:`CSB <csb>` (low is active, default)
 
-        1 - inverted :ref:`CSB <csb>`.
+        1 - inverted :ref:`CSB <csb>` (high is active)
     * - 8
       - MLB
       - 0 - MSB first
@@ -83,10 +88,10 @@ Base address: ``0x24000000``
         1 - LSB first
     * - 7-0
       - prescaler
-      - count (in master clock cycles) of 1/2 :ref:`SCK <sck>` cycle.
-        The formula for SPI clock rate: ``SPI clock rate = 2 * core_clock / (prescaler + 1)``.
-        
-        Default is 2.
+      - count (in master clock cycles) of 1/2 :ref:`SCK <sck>` cycle
+        (default value 2). Clock rate formula:
+        `SPI clock rate = 2 * core_clock / (prescaler + 1)`
+     
 
 .. note::
 
@@ -105,6 +110,8 @@ Base address: ``0x24000004``
          {"name": "SPI data", "bits": 8},
          {"name": "(undefined, reads zero)", "type": 1, "bits": 24}]
      }
+
+|
 
 The byte at ``0x24000004`` holds the SPI data (either read or write).
 
