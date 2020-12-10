@@ -22,6 +22,7 @@ Each byte is input most-significant-bit first.
 Every command sequence requires one command word (8 bits), followed by one address word (8 bits), followed by one or more data words (8 bits each), according to the data transfer modes described in :ref:`housekeeping_spi_modes`.
 
 .. figure:: _static/housekeeping_spi_signalling.svg
+    :width: 100%    
     :name: housekeeping_spi_signalling
     :alt: Housekeeping SPI signalling
     :align: center
@@ -72,17 +73,19 @@ The first transferred byte is the command word, interpreted according to the :re
     * - ``11nnn000``
       - Simultaneous Read/Write in n-byte mode (up to 7 bytes)
 
+.. note:: All other words are reserved and act as no-operation if not defined by the SPI slave module.
+
 .. _housekeeping_spi_modes:
 
 Housekeeping SPI modes
 ----------------------
 
-The two basic modes of operation are "streaming mode" and "n-byte mode".
+The two basic modes of operation are **streaming mode** and **n-byte mode**.
 
-In "streaming mode" operation, the data is sent or received continuously, one byte at a time, with the internal address incrementing for each byte.
+In **streaming mode** operation, the data is sent or received continuously, one byte at a time, with the internal address incrementing for each byte.
 Streaming mode operation continues until ``CSB`` is raised to end the transfer.
 
-In "n-byte mode" operation, the number of bytes to be read and/or written is encoded in the command word, and may have a value from 1 to 7 (note that a value of zero implies streaming mode).
+In **n-byte mode** operation, the number of bytes to be read and/or written is encoded in the command word, and may have a value from 1 to 7 (note that a value of zero implies streaming mode).
 After ``n`` bytes have been read and/or written, the SPI returns to waiting for the next command.
 No toggling of CSB is required to end the command or to initiate the following command.
 
@@ -119,12 +122,7 @@ All other functions are purely for test and debug.
 
 The housekeeping SPI can be accessed by the CPU from a running program by enabling the SPI master, and enabling the bit that connects the internal SPI master directly to the housekeeping SPI.
 This configuration then allows a program to read, for example, the user project ID of the chip.
-
-.. attention::
-
-   Add reference.
-
-See the SPI master description for details.
+See the :doc:`SPI master description <spi>` for details.
 
 .. figure:: _static/housekeeping_spi_register_map.svg
     :name: housekeeping_spi_register_map
@@ -142,7 +140,7 @@ See the SPI master description for details.
       - Register address
       - Description
     * - manufacturer_ID
-      - ``0x01`` (low 4 bits) and ``0x02``
+      - ``0x01`` `(low 4 bits)` and ``0x02``
       - The 12-bit manufacturer ID for efabless is ``0x456``
     * - product_ID
       - ``0x03``
@@ -151,48 +149,48 @@ See the SPI master description for details.
       - ``0x04`` to ``0x07``
       - The 4-byte (32bit) user project ID is metal-mask programmed on each project before tapeout, with a unique number given to each user project.
     * - PLL enable
-      - ``0x08`` bit 0
+      - ``0x08`` `bit 0`
       - This bit enables the digital frequency-locked-loop clock multiplier.
         The enable should be applied prior to turning off the PLL bypass to allow the PLL time to stabilize before using it to drive the CPU clock.
     * - PLL DCO enable
-      - ``0x08`` bit 1
+      - ``0x08`` `bit 1`
       - The PLL can be run in DCO mode, in which the feedback loop to the driving clock is removed, and the system operates in free-running mode, driven by the ring oscillator which can be tuned between approximately 90 to 200MHz by setting the trim bits (:ref:`check PLL trim <housekeeping_reg_pll_trim>`)
     * - PLL bypass
-      - ``0x09`` bit 0
+      - ``0x09`` `bit 0`
       - When enabled, the PLL bypass switches the clock source of the CPU from the PLL output to the external CMOS clock (pin ``C9``).
         The default value is ``0x1`` (CPU clock source is the external CMOS clock).
     * - CPU IRQ
-      - ``0x0A`` bit 0
+      - ``0x0A`` `bit 0`
       - This is a dedicated manual interrupt driving the CPU IRQ channel 6.
         The bit is not self-resetting, so while the rising edge will trigger an interrupt, the signal must be manually set to zero before it can trigger another interrupt.
     * - CPU reset
-      - ``0x0B`` bit 0
+      - ``0x0B`` `bit 0`
       - The CPU reset bit puts the entire CPU into a reset state.
         This bit is not self-resetting and must be set back to zero manually to clear the reset state
     * - CPU trap
-      - ``0x0C`` bit 0
+      - ``0x0C`` `bit 0`
       - If the CPU has stopped after encountering an error, it will raise the trap signal.
         The trap signal can be configured to be read from a GPIO pin, but as the GPIO state is potentially unknowable, the housekeeping SPI can be used to determine the true trap state.
     * - .. _housekeeping_reg_pll_trim:
 
         PLL trim
-      - ``0x0D`` (all bits) to ``0x10`` (lower two bits)
+      - ``0x0D`` `(all bits)` to ``0x10`` `(lower two bits)`
       - The 26-bit trim value can adjust the DCO frequency over a factor of about two from the slowest (trim value ``0x3ffffff``) to the fastest (trim value ``0x0``).
         Default value is ``0x3ffefff`` (slow trim, ``-1``).
         Note that this is a thermometer-code trim, where each bit provides an additional (approximately) 250ps delay (on top of a fixed delay of 4.67ns).
         The fastest output frequency is approximately 215MHz while the slowest output frequency is approximately 90MHz.
     * - PLL output divider
-      - ``0x11`` bits 2-0
+      - ``0x11`` `bits 2-0`
       - The PLL output can be divided down by an integer divider to provide the core clock frequency.
         This 3-bit divider can generate a clock divided by 2 to 7.
         Values 0 and 1 both pass the undivided PLL clock directly to the core (and should not be used, as the processor does not operate at these frequencies).
     * - PLL output divider (2)
-      - ``0x11`` bits 5-3
+      - ``0x11`` `bits 5-3`
       - The PLL 90-degree phase output is passed through an independent 3-bit integer clock divider and provided to the user project space as a secondary clock.
         Values 0 and 1 both pass the undivided PLL clock, while values 2 to 7 pass the clock divided by 2 to 7, respectively.
     * - PLL feedback divider
-      - ``0x12`` bits 4-0
+      - ``0x12`` `bits 4-0`
       - The PLL operates by comparing the input clock (pin ``C9``) rate to the rate of the PLL clock divided by the feedback divider value (when running in PLL mode, not DCO mode).
-        The feedback divider must be set such that the external clock rate multiplied by the feedback divider value falls between 90 and 214MHz (preferably centered on this range, or approximately 150MHz).
-        For example, when using an 8MHz external clock, the divider should be set to 19 (``19 * 8 = 152``).
-        The DCO range and the number of bits of the feedback divider implies that the external clock should be no slower than around 4 to 5MHz.
+        The feedback divider must be set such that the external clock rate multiplied by the feedback divider value falls between 90 and 214 MHz (preferably centered on this range, or approximately 150 MHz).
+        For example, when using an 8 MHz external clock, the divider should be set to 19 (``19 * 8 = 152``).
+        The DCO range and the number of bits of the feedback divider implies that the external clock should be no slower than around 4 to 5 MHz.
