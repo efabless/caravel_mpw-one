@@ -30,7 +30,7 @@ set ::env(FP_VERTICAL_HALO) 6
 set ::env(FP_CONTEXT_DEF) $script_dir/../caravel/runs/caravel/tmp/floorplan/verilog2def_openroad.def.macro_placement.def
 set ::env(FP_CONTEXT_LEF) $script_dir/../caravel/runs/caravel/tmp/merged_unpadded.lef
 set ::env(FP_SIZING) absolute
-set ::env(DIE_AREA) "0 0 2150 850"
+set ::env(DIE_AREA) "0 0 2150 900"
 
 
 set ::env(MACRO_PLACEMENT_CFG) $script_dir/macro_placement.cfg

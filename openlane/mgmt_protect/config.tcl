@@ -35,17 +35,47 @@ set ::env(SYNTH_READ_BLACKBOX_LIB) 1
 # there is $not...
 # set ::env(SYNTH_TOP_LEVEL) 1
 
-# set ::env(FP_PIN_ORDER_CFG) $script_dir/pin_order.cfg
-set ::env(FP_CONTEXT_DEF) $script_dir/../caravel/runs/caravel/tmp/floorplan/verilog2def_openroad.def.macro_placement.def
-set ::env(FP_CONTEXT_LEF) $script_dir/../caravel/runs/caravel/tmp/merged_unpadded.lef
+set ::env(SYNTH_USE_PG_PINS_DEFINES) "USE_POWER_PINS"
+set ::env(FP_PIN_ORDER_CFG) $script_dir/pin_order.cfg
+# set ::env(FP_CONTEXT_DEF) $script_dir/../caravel/runs/caravel/tmp/floorplan/verilog2def_openroad.def.macro_placement.def
+# set ::env(FP_CONTEXT_LEF) $script_dir/../caravel/runs/caravel/tmp/merged_unpadded.lef
 
 set ::env(FP_SIZING) absolute
-set ::env(DIE_AREA) "0 0 850 65"
-set ::env(BOTTOM_MARGIN_MULT) 1
-set ::env(TOP_MARGIN_MULT) 1
-set ::env(LEFT_MARGIN_MULT) 4
-set ::env(RIGHT_MARGIN_MULT) 4
+set ::env(DIE_AREA) "0 0 1000 55"
+set ::env(BOTTOM_MARGIN_MULT) 2
+set ::env(TOP_MARGIN_MULT) 2
+set ::env(LEFT_MARGIN_MULT) 12
+set ::env(RIGHT_MARGIN_MULT) 12
+
+set ::env(FP_IO_VEXTEND) 2
+set ::env(FP_IO_HEXTEND) 2
+
+
+set ::env(PDN_CFG) $script_dir/pdn.tcl
+set ::env(FP_PDN_AUTO_ADJUST) 0
+set ::env(FP_PDN_CORE_RING) 1
+set ::env(FP_PDN_CORE_RING_VSPACING) 0.4
+set ::env(FP_PDN_CORE_RING_HSPACING) 0.4
+set ::env(FP_PDN_VOFFSET) 15
+set ::env(FP_PDN_HOFFSET) 32.88
+set ::env(FP_PDN_CORE_RING_VWIDTH) 0.3
+set ::env(FP_PDN_CORE_RING_HWIDTH) 0.3
+set ::env(FP_PDN_CORE_RING_VOFFSET) 7
+set ::env(FP_PDN_CORE_RING_HOFFSET) 7
+set ::env(FP_PDN_VWIDTH) 0.3
+set ::env(FP_PDN_HWIDTH) 0.3
+set ::env(FP_PDN_VPITCH) 200
+set ::env(FP_PDN_HPITCH) 5.44
+
+set ::env(FP_PDN_LOWER_LAYER) met4
+set ::env(FP_PDN_UPPER_LAYER) met3
+set ::env(GLB_RT_MAXLAYER) 5
+set ::env(GLB_RT_OBS) "met5 $::env(DIE_AREA)"
+
+set ::env(FP_VERTICAL_HALO) 0
+
+set ::env(PL_TARGET_DENSITY) 0.55
 
 set ::env(MACRO_PLACEMENT_CFG) $script_dir/macro_placement.cfg
-set ::env(GLB_RT_ALLOW_CONGESTION) 1
-set ::env(DIODE_INSERTION_STRATEGY) 1
+set ::env(GLB_RT_ALLOW_CONGESTION) 0
+set ::env(DIODE_INSERTION_STRATEGY) 3
