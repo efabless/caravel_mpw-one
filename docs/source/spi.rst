@@ -31,11 +31,8 @@ Base address: ``0x24000000``
          {"bits": 1, "name": "SPI_INT"},
          {"bits": 1, "name": "SPI_HK"},
          {"name": "(undefined, reads zero)", "type": 1, "bits": 16}],
-        "config": {"bits": 32, "hspace": 55*32, "vspace": 40, "lanes": 1} 
+        "config": {"bits": 32, "hspace": 1760, "vspace": 40, "lanes": 1} 
      }
-
-
-..       "config": {"bits": 32, "hspace": 55*32, "vspace": 40, "lanes": 1, "fontsize": 9} 
 
 
 .. list-table:: Configuration bit definitions

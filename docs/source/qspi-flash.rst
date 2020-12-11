@@ -61,7 +61,7 @@ Base address: ``0x2d000000``
          {"name": "QSPI ACCESS MODE", "bits": 3},
          {"bits": 8, "type": 1},
          {"name": "QSPI_EN", "bits": 1}],
-       "config": {"bits": 32, "hspace": 55*32, "vspace": 40, "lanes": 1, "fontsize": 9}  
+       "config": {"bits": 32, "hspace": 1760, "vspace": 40, "lanes": 1, "fontsize": 9}  
    }
 
 .. attention::
