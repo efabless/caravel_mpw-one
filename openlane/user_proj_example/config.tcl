@@ -29,9 +29,11 @@ set ::env(FP_SIZING) absolute
 set ::env(DIE_AREA) "0 0 600 600"
 set ::env(DESIGN_IS_CORE) 0
 
+
+set ::env(VDD_NETS) [list {vccd1} {vccd2} {vdda1} {vdda2}]
+set ::env(GND_NETS) [list {vssd1} {vssd2} {vssa1} {vssa2}]
+
 set ::env(FP_PIN_ORDER_CFG) $script_dir/pin_order.cfg
-# set ::env(FP_CONTEXT_DEF) $script_dir/../user_project_wrapper/runs/user_project_wrapper/tmp/floorplan/ioPlacer.def.macro_placement.def
-# set ::env(FP_CONTEXT_LEF) $script_dir/../user_project_wrapper/runs/user_project_wrapper/tmp/merged_unpadded.lef
 
 set ::env(PL_BASIC_PLACEMENT) 1
 set ::env(PL_TARGET_DENSITY) 0.15
