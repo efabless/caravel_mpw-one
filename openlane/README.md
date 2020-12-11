@@ -25,18 +25,18 @@ export PDK_ROOT=<The location where the pdk is installed>
 export OPENLANE_ROOT=<the absolute path to the openlane directory cloned or to be cloned>
 ```
 
-**NOTE:** rc5 and caravel are still WIP so expect to run into some issues when using it.
+**NOTE:** rc6 and caravel are still WIP so expect to run into some issues when using it.
 
-If you don't have openlane already, then you can get it from [here](https://github.com/efabless/openlane) and checkout out to `rc5` tag. Alternatively, you can clone and build openlane through:
+If you don't have openlane already, then you can get it from [here](https://github.com/efabless/openlane) and checkout out to `develop`. Alternatively, you can clone and build openlane through:
 ```bash
     make openlane
 ```
 
-**NOTE:** We are developing caravel using openlane:rc5 which is the current master branch.
+**NOTE:** We are developing caravel using openlane:rc6 which is the current master branch.
 
-**NOTE:** rc5 (current openlane master) and rc4 (previous openlane master) are using two different concepts of cell padding. rc4 is modifying the LEF, while rc5 is relying on openroad to handle the cell padding. Also, rc4 is using the standalone version of openDP while rc5 is using the one integrated in the openroad app. This affects the concept of PL_TARGET_DENSITY and while in rc4 it was preferred to have PL_TARGET_DENSITY=(FP_CORE_UTIL-(5\~10)/100). Now, in rc5 it is preferred to be  PL_TARGET_DENSITY=(FP_CORE_UTIL+(1\~5)/100).
-FP_CORE_UTIL should be relaxed as well as it became more representative of the actual core utilization, which wasn't so much the case earlier. So, the perception of these two variables as well as CELL_PAD changed between rc4 and rc5 which necessitates a change in the configurations of almost every single design.
-CELL_PAD should be 4~6 for the skywater libraries in rc5 unlike rc4 which was 8.
+**NOTE:** rc6 (current openlane develop) and rc4 (previous openlane master) are using two different concepts of cell padding. rc4 is modifying the LEF, while rc6 is relying on openroad to handle the cell padding. Also, rc4 is using the standalone version of openDP while rc6 is using the one integrated in the openroad app. This affects the concept of PL_TARGET_DENSITY and while in rc4 it was preferred to have PL_TARGET_DENSITY=(FP_CORE_UTIL-(5\~10)/100). Now, in rc6 it is preferred to be  PL_TARGET_DENSITY=(FP_CORE_UTIL+(1\~5)/100).
+FP_CORE_UTIL should be relaxed as well as it became more representative of the actual core utilization, which wasn't so much the case earlier. So, the perception of these two variables as well as CELL_PAD changed between rc4 and rc6 which necessitates a change in the configurations of almost every single design.
+CELL_PAD should be 4~6 for the skywater libraries in rc6 unlike rc4 which was 8.
 
 Then, you have two options:
 1. Create a macro for your design and harden it, then insert it into user_project_wrapper.
