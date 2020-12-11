@@ -7,7 +7,7 @@ Absolute maximum ratings
     :widths: auto
     :delim: ;
 
-    Type ; minimum ; typical ; maximum units
+    Type ; minimum ; typical ; maximum ; units
     Supply voltage (VDDIO) ; 1.8 ; 3.3 ; 5.0 ; V
     Core digital supply voltage (VCCD) ; 1.62 ; 1.8 ; 1.98 ; V
     Junction temperature ; -40 ; 27 ; 100 ; :math:`^{\circ} C`
