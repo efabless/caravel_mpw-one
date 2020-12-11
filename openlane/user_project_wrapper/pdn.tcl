@@ -37,8 +37,8 @@ pdngen::specify_grid macro {
     power_pins $::env(_VDD_NET_NAME)
     ground_pins $::env(_GND_NET_NAME)
     blockages "li1 met1 met2 met3 met4 met5"
-    straps { 
-    } 
+    straps {
+    }
     connect {}
 }
 
@@ -47,8 +47,8 @@ pdngen::specify_grid macro {
     power_pins $::env(_VDD_NET_NAME)
     ground_pins $::env(_GND_NET_NAME)
     blockages ""
-    straps { 
-    } 
+    straps {
+    }
     connect {}
 }
 

@@ -13,6 +13,8 @@
 # limitations under the License.
 # SPDX-License-Identifier: Apache-2.0
 
+# This file is no longer used. But it's kept here for reference.
+
 package require openlane
 set script_dir [file dirname [file normalize [info script]]]
 
