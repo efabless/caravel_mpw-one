@@ -24,7 +24,6 @@ The documentation contains the following chapters:
 * :doc:`counter-timers` describes two counter/timers blocks,
 * :doc:`irq` describes the interrups,
 * :doc:`sram` describes management and storage area SRAM,
-* :doc:`quick-start` contains the minimal set of actions to get going with the project,
 * :doc:`programming` shows how to get started with programming on Caravel chip,
 * :doc:`memory-mapped-io-summary` lists the memory mapped I/O registers by address,
 * :doc:`maximum-ratings` lists the parameters and their ranges at which the device operates correctly,

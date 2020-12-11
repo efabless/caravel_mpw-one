@@ -28,7 +28,6 @@ Efabless Caravel "harness" SoC
    counter-timers
    irq
    sram
-   quick-start
    programming
    memory-mapped-io-summary
    maximum-ratings
