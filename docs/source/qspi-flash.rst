@@ -41,8 +41,9 @@ or issuing a new read command to read from a new address.
 
 .. _reg_spictrl:
 
-``reg_spictrl`` QSPI control register
--------------------------------------
+``reg_spictrl``
+---------------
+**QSPI control register**
 
 The behaviour of the QSPI flash controller can be modified by changing values in the register below:
 
