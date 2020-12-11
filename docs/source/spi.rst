@@ -23,15 +23,15 @@ Base address: ``0x24000000``
      { "reg": [
          {"name": "prescaler", "bits": 8},
          {"bits": 1, "name": "MLB"},
-         {"bits": 1, "name": "invCSB"},
-         {"bits": 1, "name": "invSCK"},
-         {"bits": 1, "name": "mode"},
-         {"bits": 1, "name": "stream"},
-         {"bits": 1, "name": "SPI_IE"},
-         {"bits": 1, "name": "SPI_INT"},
-         {"bits": 1, "name": "SPI_HK"},
+         {"bits": 1, "name": "nCSB"},
+         {"bits": 1, "name": "nSCK"},
+         {"bits": 1, "name": "MOD"},
+         {"bits": 1, "name": "STM"},
+         {"bits": 1, "name": "IE"},
+         {"bits": 1, "name": "INT"},
+         {"bits": 1, "name": "HK"},
          {"name": "(undefined, reads zero)", "type": 1, "bits": 16}],
-        "config": {"bits": 32, "hspace": 1760, "vspace": 40, "lanes": 1} 
+        "config": {"hspace": 1400}        
      }
 
 
