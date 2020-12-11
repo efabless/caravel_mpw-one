@@ -30,6 +30,7 @@ Efabless Caravel "harness" SoC
    sram
    programming
    memory-mapped-io-summary
+   supplementary-figures
    maximum-ratings
    references
    further-work
