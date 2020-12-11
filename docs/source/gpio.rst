@@ -131,9 +131,7 @@ Base address: ``0x2100000c``
 
 |
 
-.. attention::
-
-    The statement below (second sentence) seems to be invalid.
+.. todo:: The statement below (second sentence) seems to be invalid.
 
 * Bit 0 corresponds to the GPIO channel pull-down state.
 * Bit value 1 indicates pullup is active; 0 indicates pulldown is inactive.
@@ -243,7 +241,7 @@ The low bit of this register directs the input of the GPIO to the processor's IR
 User project area GPIO
 ~~~~~~~~~~~~~~~~~~~~~~
 
-.. attention::
+.. todo::
 
     This section is based on Memory mapped I/O summary by address from PDF documentation.
     It needs some elaboration.
@@ -321,7 +319,9 @@ Each of 38 ``mprj_io`` GPIOs has a configuration register.
 
 |
 
-.. attention:: There are lots of missing default values and setting descriptions below that need to be filled.
+.. todo:: Missing default values
+
+.. todo:: Missing setting descriptions
 
 .. list-table:: ``mprj_io[i]`` control register descriptions
     :name: reg_mprj_io_configure_description
@@ -365,4 +365,4 @@ Each of 38 ``mprj_io`` GPIOs has a configuration register.
       - 1
       - management control enable (0 - user control, 1 - management control)
 
-.. attention:: The digital mode values are not described in the documentation.
+.. todo:: Missing *digital mode* description 

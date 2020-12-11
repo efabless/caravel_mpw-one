@@ -3,14 +3,10 @@ Pinout description
 
 This section describes lists the pinout for the SoC, and provides the description for pins.
 
-.. attention::
+.. todo::
 
-    There are some inconsistencies between Pinout and Pin description in the PDF.
-    For example, both flash io1:0 and flash2 io1:0 are told to be located at E3, F4 in the Pin description, but in the Pinout (and later in the documentation) the flash io1:0 is told to be in D10 and D9).
-    I list below the found inconsistencies in the pin description:
-
-    * I changed flash_io[1:0] pin# in Pin description to D9 and D10.
-    * I changed flash_csb pin# in Pin description to C10.
+    Verify `flash_io[1:0]`, `flash_csb`, `flash2_io[1:0]`, `flash2_csb` pins.
+    There was inconsistency (Pinout vs Pin description) in source PDF.
 
 Ball assignment (6x10 WLCSP)
 ----------------------------

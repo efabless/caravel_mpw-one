@@ -103,7 +103,7 @@ There are two pass-thru modes.
 The first one corresponds to the primary SPI flash used by the management SoC.
 The second one corresponds to a secondary optional SPI flash that can be defined in the user project.
 
-.. attention::
+.. todo::
     The below sentence may require some rephrasing.
 
 The pass-thru mode allows a communications chip external to the Caravel chip program either SPI flash chip from a host computer without requiring separate external access to the SPI flash.

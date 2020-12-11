@@ -68,6 +68,6 @@ html_theme = 'sphinx_symbiflow_theme'
 # so a file named "default.css" will overwrite the builtin "default.css".
 html_static_path = ['_static']
 
-todo_include_todos = True
+todo_include_todos = False
 
 numfig = True

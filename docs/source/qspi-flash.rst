@@ -65,11 +65,6 @@ Base address: ``0x2d000000``
        "config": {"bits": 32, "hspace": 1760, "vspace": 40, "lanes": 1, "fontsize": 9}  
    }
 
-.. attention::
-    
-    In the memory mapped I/O description the 31 bit is described as MEMIO enable 
-    (reset = 1, 0 = bit-bang mode).
-
 .. list-table:: ``reg_spictrl`` register description
     :name: reg_spictrl_description
     :header-rows: 1
