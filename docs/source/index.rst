@@ -11,7 +11,7 @@ Efabless Caravel "harness" SoC
 .. image:: _static/efabless_lg_logo.png
     :width: 45 %
 
-.. include:: introduction.inc
+.. include:: introduction.rst
 
 .. toctree::
    :hidden:
@@ -38,3 +38,7 @@ Efabless Caravel "harness" SoC
     :width: 30 %
     :align: left
     :alt: Caravel harness die
+
+    Caravel harness die (3.2 mm x 5.3 mm)
+
+
