@@ -1,4 +1,4 @@
-Supplemenatry figures
+Supplementary figures
 =====================
 
 GPIO pads - management and user IO
