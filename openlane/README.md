@@ -27,14 +27,14 @@ export OPENLANE_ROOT=<the absolute path to the openlane directory cloned or to b
 
 **NOTE:** rc6 and caravel are still WIP so expect to run into some issues when using it.
 
-If you don't have openlane already, then you can get it from [here](https://github.com/efabless/openlane) and checkout out to `develop`. Alternatively, you can clone and build openlane through:
+If you don't have openlane already, then you can get it from [here](https://github.com/efabless/openlane). Alternatively, you can clone and build openlane through:
 ```bash
     make openlane
 ```
 
 **NOTE:** We are developing caravel using openlane:rc6 which is the current master branch.
 
-**NOTE:** rc6 (current openlane develop) and rc4 (previous openlane master) are using two different concepts of cell padding. rc4 is modifying the LEF, while rc6 is relying on openroad to handle the cell padding. Also, rc4 is using the standalone version of openDP while rc6 is using the one integrated in the openroad app. This affects the concept of PL_TARGET_DENSITY and while in rc4 it was preferred to have PL_TARGET_DENSITY=(FP_CORE_UTIL-(5\~10)/100). Now, in rc6 it is preferred to be  PL_TARGET_DENSITY=(FP_CORE_UTIL+(1\~5)/100).
+**NOTE:** rc6 (current openlane master) and rc4 (previous openlane master) are using two different concepts of cell padding. rc4 is modifying the LEF, while rc6 is relying on openroad to handle the cell padding. Also, rc4 is using the standalone version of openDP while rc6 is using the one integrated in the openroad app. This affects the concept of PL_TARGET_DENSITY and while in rc4 it was preferred to have PL_TARGET_DENSITY=(FP_CORE_UTIL-(5\~10)/100). Now, in rc6 it is preferred to be  PL_TARGET_DENSITY=(FP_CORE_UTIL+(1\~5)/100).
 FP_CORE_UTIL should be relaxed as well as it became more representative of the actual core utilization, which wasn't so much the case earlier. So, the perception of these two variables as well as CELL_PAD changed between rc4 and rc6 which necessitates a change in the configurations of almost every single design.
 CELL_PAD should be 4~6 for the skywater libraries in rc6 unlike rc4 which was 8.
 
@@ -100,21 +100,27 @@ set ::env(EXTRA_GDS_FILES) "\
 ```
 **NOTE:** Don't change the size or the pin order!
 
-3. If your design has standard cells then you need to replace `verilog_elaborate` with `run_synthesis` [here](./user_project_wrapper/interactive.tcl).
+3. If your design has standard cells then you need to modify the configuration file [here](./user_project_wrapper/config.tcl) to remove or change these configs accordingly:
+```tcl
+# The following is because there are no std cells in the example wrapper project.
+set ::env(SYNTH_TOP_LEVEL) 1
+set ::env(PL_RANDOM_GLB_PLACEMENT) 1
+set ::env(PL_OPENPHYSYN_OPTIMIZATIONS) 0
+set ::env(DIODE_INSERTION_STRATEGY) 0
+set ::env(FILL_INSERTION) 0
+set ::env(TAP_DECAP_INSERTION) 0
+set ::env(CLOCK_TREE_SYNTH) 0
+```
 
-4. If your design has standard cells then you need to replace `init_floorplan; place_io_ol;` with `run_floorplan` [here](./user_project_wrapper/interactive.tcl).
- 
-5. If your design has standard cells then add `run_placement` after `manual_macro_placement f` [here](./user_project_wrapper/interactive.tcl).
+4. Remove this line `set ::env(MACRO_PLACEMENT_CFG) $script_dir/macro.cfg` from the configuration file [here](./user_project_wrapper/config.tcl) entirely if you have no macros. Alternatively, if you do have macros inside your design, then control their placement by modifying [this file](./user_project_wrapper/macro.cfg)
 
-6. Remove this line `add_macro_placement mprj 1150 1700 N` from the interactive script [here](./user_project_wrapper/interactive.tcl) and replace it with the placement for your macro instances. Or, remove it entirely if you have no macros, along with this line `manual_macro_placement f`.
+5. Run your design through the flow: `make user_project_wrapper`
 
-7. Run your design through the flow: `make user_project_wrapper`
+6. You may want to take a look at the [Extra Pointers](#extra-pointers) to apply any necessary changes to the interactive script.
 
-8. You may want to take a look at the [Extra Pointers](#extra-pointers) to apply any necessary changes to the interactive script.
+7. Re-iterate until you have what you want.
 
-8. Re-iterate until you have what you want.
-
-9. Go back to the main [README.md](../README.md) and continue the process of boarding the chip.
+8. Go back to the main [README.md](../README.md) and continue the process of boarding the chip.
 
 **NOTE:** In both cases you might have other macros inside your design. In which case, you may need to have some special power configurations. This is covered [here](https://github.com/efabless/openlane/blob/master/doc/hardening_macros.md#power-grid-pdn).
 

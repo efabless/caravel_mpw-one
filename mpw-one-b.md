@@ -38,18 +38,18 @@ make timing
 
 ## open_pdks:
 
-Please stick to the [mpw-one-a](https://github.com/RTimothyEdwards/open_pdks/tree/mpw-one-a) tag.
+Please stick to the [1.0.85](https://github.com/RTimothyEdwards/open_pdks/tree/1.0.85) tag.
 ```
-git clone https://github.com/RTimothyEdwards/open_pdks.git -b mpw-one-a
+git clone https://github.com/RTimothyEdwards/open_pdks.git -b 1.0.85
 ```
 
 ## OpenLane:
 
-Please stick to the [mpw-one-a](https://github.com/efabless/openlane/tree/mpw-one-a) tag.
+Please stick to the [mpw-one-b](https://github.com/efabless/openlane/tree/mpw-one-b) tag.
 ```
-git clone https://github.com/efabless/openlane.git -b mpw-one-a
+git clone https://github.com/efabless/openlane.git -b mpw-one-b
 ```
-Note that the `mpw-one-a` tag is equivalent to the `rc5` tag. Also, note that
+Note that the `mpw-one-b` tag is equivalent to the `rc6` tag. Also, note that
 running `make` inside the openlane directory will automatically grab the right
 versions of `open_pdks` and `skywater-pdk` as listed above and install them to
 PDK_ROOT.
@@ -64,9 +64,9 @@ make
 
 ## Caravel:
 
-Please stick to the `mpw-one-a` tag.
+Please stick to the `mpw-one-b` tag.
 ```
-git clone https://github.com/efabless/caravel.git -b mpw-one-a
+git clone https://github.com/efabless/caravel.git -b mpw-one-b
 ```
 
 ## Open_mpw_precheck:

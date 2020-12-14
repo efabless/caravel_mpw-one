@@ -51,7 +51,7 @@ Then, you can learn more about the caravel chip by watching these video:
 - Caravel User Project Features -- https://youtu.be/zJhnmilXGPo
 - Aboard Caravel -- How to put your design on Caravel? -- https://youtu.be/9QV8SDelURk
 - Things to Clarify About Caravel -- What versions to use with Caravel? -- https://youtu.be/-LZ522mxXMw
-    - You could only use openlane:rc5
+    - You could only use openlane:rc6
     - Make sure you have the commit hashes provided here inside the [Makefile](./Makefile)
 ## Aboard Caravel:
 
@@ -61,7 +61,7 @@ If you will use OpenLANE to harden your design, go through the instructions in t
 
 You must copy your synthesized gate-level-netlist for `user_project_wrapper` to `verilog/gl/` and overwrite `user_project_wrapper.v`. Otherwise, you can point to it in [info.yaml](info.yaml).
 
-> Note: If you're using openlane to harden your design, you should find the synthesized gate-level-netlist here: `openlane/user_project_wrapper/runs/user_project_wrapper/results/synthesis/user_project_wrapper.synthesis.v`.
+> Note: If you're using openlane to harden your design, this should happen automatically.
 
 Then, you will need to put your design aboard the Caravel chip. Make sure you have the following:
 
@@ -86,7 +86,7 @@ To use the magic installed inside Openlane to complete the final GDS streaming o
 ```bash
 export PDK_ROOT=<The location where the pdk is installed>
 export OPENLANE_ROOT=<the absolute path to the openlane directory cloned or to be cloned>
-export IMAGE_NAME=<the openlane image name installed on your machine. Preferably openlane:rc5>
+export IMAGE_NAME=<the openlane image name installed on your machine. Preferably openlane:rc6>
 export CARAVEL_PATH=$(pwd)
 ```
 
@@ -141,4 +141,4 @@ The firmware running on the Management Area SoC, configures the I/O pads used by
 3. Configure the User Project I/O pads as o/p. Use the Chip LA to control the clock source and reset signals and observe the counter value for five clock cylcles:  [LA_Test2](verilog/dv/caravel/user_proj_example/la_test2).
 
 [0]: openlane/README.md
-[1]: mpw-one-a.md
+[1]: mpw-one-b.md
