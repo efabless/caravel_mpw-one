@@ -52,6 +52,11 @@ set ::env(FILL_INSERTION) 0
 set ::env(TAP_DECAP_INSERTION) 0
 set ::env(CLOCK_TREE_SYNTH) 0
 
+# Need to fix a FastRoute bug for this to work, but it's good
+# for a sense of "isolation"
+set ::env(MAGIC_ZEROIZE_ORIGIN) 0
+set ::env(MAGIC_WRITE_FULL_LEF) 1
+
 # Area Configurations. DON'T TOUCH.
 set ::env(FP_SIZING) absolute
 set ::env(DIE_AREA) "0 0 2920 3520"
@@ -77,6 +82,7 @@ set ::env(GND_NETS) [list {vssd1} {vssd2} {vssa1} {vssa2}]
 set ::env(SYNTH_USE_PG_PINS_DEFINES) "USE_POWER_PINS"
 #set ::env(PDN_CFG) $script_dir/pdn.tcl
 
+# Pin Configurations. DON'T TOUCH
 set ::env(FP_PIN_ORDER_CFG) $script_dir/pin_order.cfg
 set ::env(FP_DEF_TEMPLATE) $script_dir/../../def/user_project_wrapper_empty.def
 set ::unit 2.4
@@ -89,9 +95,4 @@ set ::env(FP_IO_VTHICKNESS_MULT) 4
 set ::env(FP_IO_HTHICKNESS_MULT) 4
 
 
-
-# Need to fix a FastRoute bug for this to work, but it's good
-# for a sense of "isolation"
-set ::env(MAGIC_ZEROIZE_ORIGIN) 0
-set ::env(MAGIC_WRITE_FULL_LEF) 1
 
