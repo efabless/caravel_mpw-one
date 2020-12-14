@@ -25,7 +25,7 @@ export PDK_ROOT=<The location where the pdk is installed>
 export OPENLANE_ROOT=<the absolute path to the openlane directory cloned or to be cloned>
 ```
 
-**NOTE:** rc6 and caravel are still WIP so expect to run into some issues when using it.
+**NOTE:** caravel is still a WIP so expect to run into some issues when using it.
 
 If you don't have openlane already, then you can get it from [here](https://github.com/efabless/openlane). Alternatively, you can clone and build openlane through:
 ```bash

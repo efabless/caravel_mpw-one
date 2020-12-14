@@ -38,7 +38,7 @@ make uncompress
 Then you need to install the open_pdks prerequisite:
  - [Magic VLSI Layout Tool](http://opencircuitdesign.com/magic/index.html) is needed to run open_pdks -- version >= 8.3.60*
 
- > \* Note: You can avoid the need for the magic prerequisite by using the openlane docker to do the installation step in open_pdks. This could be done by cloning [openlane](https://github.com/efabless/openlane/tree/master) and running this [script](https://github.com/efabless/openlane/blob/master/travisCI/travisBuild.sh) in the openlane root directrory.
+ > \* Note: You can avoid the need for the magic prerequisite by using the openlane docker to do the installation step in open_pdks. This could be done by cloning [openlane](https://github.com/efabless/openlane/tree/master) and following the instructions given there to use the Makefile.
 
 Install the required version of the PDK by running the following commands:
 
@@ -77,7 +77,7 @@ export PDK_ROOT=<The place where the installed pdk resides. The same PDK_ROOT us
 make
 ```
 
-This should merge the GDSes using magic and you'll end up with your version of `./gds/caravel.gds`. You should expect ~100 magic DRC violations with the current "development" state of caravel.
+This should merge the GDSes using magic and you'll end up with your version of `./gds/caravel.gds`. You should expect ~90 magic DRC violations with the current "development" state of caravel.
 
 ## Running Make using OpenLANE Magic
 
@@ -103,7 +103,7 @@ make
 exit
 ```
 
-This should merge the GDSes using magic and you'll end up with your version of `./gds/caravel.gds`. You should expect ~100 magic DRC violations with the current "development" state of caravel.
+This should merge the GDSes using magic and you'll end up with your version of `./gds/caravel.gds`. You should expect ~90 magic DRC violations with the current "development" state of caravel.
 
 ## Required Directory Structure
 

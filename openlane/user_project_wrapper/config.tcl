@@ -21,17 +21,23 @@ set ::env(DESIGN_NAME) user_project_wrapper
 
 
 # User Configurations
-set ::env(MACRO_PLACEMENT_CFG) $script_dir/macro.cfg
 
+## Source Verilog Files
+set ::env(VERILOG_FILES) "\
+	$script_dir/../../verilog/rtl/defines.v \
+	$script_dir/../../verilog/rtl/user_project_wrapper.v"
+
+## Clock configurations
 set ::env(CLOCK_PORT) "user_clock2"
 set ::env(CLOCK_NET) "mprj.clk"
 
 set ::env(CLOCK_PERIOD) "10"
 
-set ::env(VERILOG_FILES) "\
-	$script_dir/../../verilog/rtl/defines.v \
-	$script_dir/../../verilog/rtl/user_project_wrapper.v"
+## Internal Macros
+### Macro Placement
+set ::env(MACRO_PLACEMENT_CFG) $script_dir/macro.cfg
 
+### Black-box verilog and views
 set ::env(VERILOG_FILES_BLACKBOX) "\
 	$script_dir/../../verilog/rtl/defines.v \
 	$script_dir/../../verilog/rtl/user_proj_example.v"
@@ -57,6 +63,9 @@ set ::env(CLOCK_TREE_SYNTH) 0
 set ::env(MAGIC_ZEROIZE_ORIGIN) 0
 set ::env(MAGIC_WRITE_FULL_LEF) 1
 
+
+# DON'T TOUCH THE FOLLOWING SECTIONS
+
 # Area Configurations. DON'T TOUCH.
 set ::env(FP_SIZING) absolute
 set ::env(DIE_AREA) "0 0 2920 3520"
@@ -76,11 +85,11 @@ set ::env(FP_PDN_HSPACING) [expr 5*$::env(FP_PDN_CORE_RING_HWIDTH)]
 set ::env(FP_PDN_CORE_RING_VOFFSET) 0
 set ::env(FP_PDN_CORE_RING_HOFFSET) $::env(FP_PDN_CORE_RING_VOFFSET)
 
-
 set ::env(VDD_NETS) [list {vccd1} {vccd2} {vdda1} {vdda2}]
 set ::env(GND_NETS) [list {vssd1} {vssd2} {vssa1} {vssa2}]
 set ::env(SYNTH_USE_PG_PINS_DEFINES) "USE_POWER_PINS"
-#set ::env(PDN_CFG) $script_dir/pdn.tcl
+
+set ::env(RUN_CVC) 0
 
 # Pin Configurations. DON'T TOUCH
 set ::env(FP_PIN_ORDER_CFG) $script_dir/pin_order.cfg
