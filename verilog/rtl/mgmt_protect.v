@@ -330,7 +330,7 @@ module mgmt_protect (
                 .VPB(vccd),
                 .VNB(vssd),
 `endif
-                .A(mprj2_vdd_logic1),
+                .A(mprj2_logic1),
                 .X(user2_vcc_powergood)
 	);
 
