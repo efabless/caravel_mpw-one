@@ -13,13 +13,28 @@
 # limitations under the License.
 # SPDX-License-Identifier: Apache-2.0
 
+# This is an analog design. It will be designed by hand.
+# This is a placeholder to get things going.
 set script_dir [file dirname [file normalize [info script]]]
+# User config
+set ::env(DESIGN_NAME) mprj2_logic_high
 
-set ::env(DESIGN_NAME) mgmt_protect_hv
+# Change if needed
+set ::env(VERILOG_FILES) $script_dir/../../verilog/rtl/mprj2_logic_high.v
+set ::env(SYNTH_READ_BLACKBOX_LIB) 1
 
-set ::env(STD_CELL_LIBRARY) sky130_fd_sc_hvl
+set ::env(FP_PIN_ORDER_CFG) $script_dir/pin_order.cfg
 
-set ::env(DESIGN_IS_CORE) 1
+# Fill this
+set ::env(CLOCK_TREE_SYNTH) 0
+
+set ::env(CELL_PAD) 0
+
+set ::env(PL_RANDOM_GLB_PLACEMENT) 1
+
+set ::env(VDD_NETS) "vccd2"
+set ::env(GND_NETS) "vssd2"
+
 set ::env(FP_PDN_LOWER_LAYER) met2
 set ::env(FP_PDN_UPPER_LAYER) met3
 set ::env(FP_PDN_AUTO_ADJUST) 0
@@ -35,32 +50,10 @@ set ::env(FP_PDN_VPITCH) 80
 set ::env(FP_PDN_HPITCH) 10.8
 
 set ::env(GLB_RT_MAXLAYER) 4
-# set ::env(FP_PDN_CORE_RING) 1
-set ::env(SYNTH_USE_PG_PINS_DEFINES) "USE_POWER_PINS"
-set ::env(VERILOG_FILES) "\
-	$script_dir/../../verilog/rtl/defines.v\
-	$script_dir/../../verilog/rtl/mgmt_protect_hv.v"
-
-set ::env(SYNTH_READ_BLACKBOX_LIB) 1
-
-set ::env(SYNTH_TOP_LEVEL) 1
 
 set ::env(FP_SIZING) absolute
-set ::env(DIE_AREA) "0 0 150 20"
-
-set ::env(FP_PIN_ORDER_CFG) $script_dir/pin_order.cfg
-
-set ::env(CLOCK_TREE_SYNTH) 0
-
-set ::env(CELL_PAD) 0
-
-set ::env(PL_RANDOM_GLB_PLACEMENT) 1
-
+set ::env(DIE_AREA) "0 0 120 15"
 set ::env(BOTTOM_MARGIN_MULT) 1
-set ::env(TOP_MARGIN_MULT) 0
-set ::env(LEFT_MARGIN_MULT) 10
+set ::env(TOP_MARGIN_MULT) 1
+set ::env(LEFT_MARGIN_MULT) 0
 set ::env(RIGHT_MARGIN_MULT) 0
-
-set ::env(PLACE_SITE) "unithv"
-set ::env(PLACE_SITE_WIDTH) 0.480
-set ::env(PLACE_SITE_HEIGHT) 4.07
