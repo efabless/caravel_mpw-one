@@ -95,26 +95,20 @@ module mgmt_protect (
 
 	wire [127:0] la_data_in_mprj_bar;
 
-        sky130_fd_sc_hd__conb_1 mprj_logic_high [458:0] (
+        mprj_logic_high mprj_logic_high_inst (
 `ifdef USE_POWER_PINS
-                .VPWR(vccd1),
-                .VGND(vssd1),
-                .VPB(vccd1),
-                .VNB(vssd1),
+                .vccd1(vccd1),
+                .vssd1(vssd1),
 `endif
-                .HI(mprj_logic1),
-                .LO()
+                .HI(mprj_logic1)
         );
 
-        sky130_fd_sc_hd__conb_1 mprj2_logic_high (
+        mprj2_logic_high mprj2_logic_high_inst (
 `ifdef USE_POWER_PINS
-                .VPWR(vccd2),
-                .VGND(vssd2),
-                .VPB(vccd2),
-                .VNB(vssd2),
+                .vccd2(vccd2),
+                .vssd2(vssd2),
 `endif
-                .HI(mprj2_logic1),
-                .LO()
+                .HI(mprj2_logic1)
         );
 
 	// Logic high in the VDDA (3.3V) domains
