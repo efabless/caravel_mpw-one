@@ -97,6 +97,7 @@ set ::env(GLB_RT_OVERFLOW_ITERS) 50
 set ::env(GLB_RT_TILES) 30
 set ::env(GLB_RT_MAXLAYER) 5
 # set ::env(ROUTING_OPT_ITERS) 7
+# set ::env(GLB_RT_UNIDIRECTIONAL) 0
 
 set ::env(FILL_INSERTION) 0
 

@@ -26,12 +26,12 @@ init_floorplan
 
 add_macro_placement padframe 0 0 N
 add_macro_placement storage 260.160 265.780 N
-add_macro_placement soc 1052.000 268.500 N
-add_macro_placement mprj 326.540 1383.040 N
-add_macro_placement mgmt_buffers 1078.980 1236.460 N
-add_macro_placement rstb_level 773.760 257.020 S
+add_macro_placement soc 1052.110 268.010 N
+add_macro_placement mprj 326.540 1393.580 N
+add_macro_placement mgmt_buffers 1060.900 1234.240 N
+add_macro_placement rstb_level 664.480 234.780  S
 add_macro_placement user_id_value 3283.120 404.630 N
-add_macro_placement por 3270.880 522.690 N
+add_macro_placement por 3270.880 522.711 MX
 
 # west
 set west_x 42.835
@@ -87,16 +87,16 @@ manual_macro_placement f
 remove_pins -input $::env(CURRENT_DEF)
 remove_empty_nets -input $::env(CURRENT_DEF)
 
-# add_macro_obs \
-# 	-defFile $::env(CURRENT_DEF) \
-# 	-lefFile $::env(MERGED_LEF_UNPADDED) \
-# 	-obstruction vddio_obs \
-# 	-placementX 103.405 \
-# 	-placementY 627.150 \
-# 	-sizeWidth 94.500 \
-# 	-sizeHeight 258.825 \
-# 	-fixed 1 \
-# 	-layerNames "met1 met2 met3 met4 met5"
+add_macro_obs \
+	-defFile $::env(CURRENT_DEF) \
+	-lefFile $::env(MERGED_LEF_UNPADDED) \
+	-obstruction vddio_obs \
+	-placementX 103.400 \
+	-placementY 607.150 \
+	-sizeWidth 94.500 \
+	-sizeHeight 30 \
+	-fixed 1 \
+	-layerNames "met2 met4"
 
 li1_hack_start
 global_routing
@@ -109,7 +109,6 @@ save_views       -lef_path $::env(magic_result_file_tag).lef \
                  -def_path $::env(tritonRoute_result_file_tag).def \
                  -gds_path $::env(magic_result_file_tag).gds \
                  -mag_path $::env(magic_result_file_tag).mag \
-                 -maglef_path $::env(magic_result_file_tag).lef.mag \
 				 -verilog_path $::env(CURRENT_NETLIST) \
                  -save_path $save_path \
                  -tag $::env(RUN_TAG)
