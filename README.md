@@ -105,6 +105,11 @@ exit
 
 This should merge the GDSes using magic and you'll end up with your version of `./gds/caravel.gds`. You should expect ~90 magic DRC violations with the current "development" state of caravel.
 
+
+## IMPORTANT:
+
+Please make sure to run `make compress` before commiting anything to your repository. Avoid having 2 versions of the gds/user_project_wrapper.gds or gds/caravel.gds one compressed and the other not compressed.
+
 ## Required Directory Structure
 
 - ./gds/ : includes all the gds files used or produced from the project.
