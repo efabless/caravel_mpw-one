@@ -19,7 +19,7 @@
 
 A template SoC for Google SKY130 free shuttles. It is still WIP. The current SoC architecture is given below.
 
-<p align=”center”>
+<p align="center">
 <img src="/doc/ciic_harness.png" width="75%" height="75%"> 
 </p>
 
@@ -136,7 +136,7 @@ The memory map of the management SoC can be found [here](verilog/rtl/README)
 This is the user space. It has limited silicon area (TBD, about 3.1mm x 3.8mm) as well as a fixed number of I/O pads (37) and power pads (10).  See [the Caravel  premliminary datasheet](doc/caravel_datasheet.pdf) for details.
 The repository contains a [sample user project](/verilog/rtl/user_proj_example.v) that contains a binary 32-bit up counter.  </br>
 
-<p align=”center”>
+<p align="center">
 <img src="/doc/counter_32.png" width="50%" height="50%">
 </p>
 
