@@ -42,6 +42,13 @@ module mgmt_protect_hv (
     wire mprj_vdd_logic1_h;
     wire mprj2_vdd_logic1_h;
 
+`ifdef USE_POWER_PINS
+    // This is to emulate the substrate shorting grounds together for LVS
+    // purposes
+    assign vssa2 = vssa1;
+    assign vssa1 = vssd;
+`endif
+
     // Logic high in the VDDA (3.3V) domains
 
     sky130_fd_sc_hvl__conb_1 mprj_logic_high_hvl (
@@ -91,6 +98,6 @@ module mgmt_protect_hv (
 	.X(mprj2_vdd_logic1),
 	.A(mprj2_vdd_logic1_h)
     );
-
 endmodule
+
 `default_nettype wire
