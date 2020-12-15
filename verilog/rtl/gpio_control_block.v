@@ -210,9 +210,12 @@ module gpio_control_block #(
 
     /* Implement pad control behavior depending on state of mgmt_ena */
 
-    assign gpio_in_unbuf =    (mgmt_ena) ? 1'b0 : pad_gpio_in;
-    assign mgmt_gpio_in =    (mgmt_ena) ? ((gpio_inenb == 1'b0) ?
-					pad_gpio_in : 1'bz) : 1'b0;
+//    assign gpio_in_unbuf =    (mgmt_ena) ? 1'b0 : pad_gpio_in;
+//    assign mgmt_gpio_in =    (mgmt_ena) ? ((gpio_inenb == 1'b0) ?
+//					pad_gpio_in : 1'bz) : 1'b0;
+
+    assign gpio_in_unbuf =   pad_gpio_in;
+    assign mgmt_gpio_in =    (gpio_inenb == 1'b0) ?  pad_gpio_in : 1'bz;
 
     assign pad_gpio_outenb =  (mgmt_ena) ? ((mgmt_gpio_oeb == 1'b1) ? gpio_outenb :
 					1'b0) : user_gpio_oeb;
