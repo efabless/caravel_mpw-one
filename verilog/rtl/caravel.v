@@ -1,4 +1,18 @@
 // `default_nettype none
+// SPDX-FileCopyrightText: 2020 Efabless Corporation
+//
+// Licensed under the Apache License, Version 2.0 (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+//
+//      http://www.apache.org/licenses/LICENSE-2.0
+//
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an "AS IS" BASIS,
+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+// See the License for the specific language governing permissions and
+// limitations under the License.
+// SPDX-License-Identifier: Apache-2.0
 /*--------------------------------------------------------------*/
 /* caravel, a project harness for the Google/SkyWater sky130	*/
 /* fabrication process and open source PDK			*/
@@ -35,29 +49,36 @@
 
 `ifdef GL
 	`include "gl/mgmt_core.v"
+	`include "gl/digital_pll.v"
+	`include "gl/DFFRAM.v"
+	`include "gl/storage.v"
+	`include "gl/user_id_programming.v"
+	`include "gl/chip_io.v"
 `else
 	`include "mgmt_soc.v"
 	`include "housekeeping_spi.v"
 	`include "caravel_clocking.v"
 	`include "mgmt_core.v"
+	`include "digital_pll.v"
+	`include "DFFRAM.v"
+	`include "DFFRAMBB.v"
+	`include "storage.v"
+	`include "user_id_programming.v"
+	`include "clock_div.v"
+	`include "storage_bridge_wb.v"
+	`include "mprj_io.v"
+	`include "chip_io.v"
 `endif
 
-`include "digital_pll.v"
+`include "mprj_logic_high.v"
+`include "mprj2_logic_high.v"
+`include "sky130_fd_sc_hvl__lsbufhv2lv_1_wrapped.v"
 `include "mgmt_protect.v"
 `include "mgmt_protect_hv.v"
-`include "mprj_io.v"
-`include "chip_io.v"
-`include "user_id_programming.v"
 `include "user_project_wrapper.v"
 `include "gpio_control_block.v"
-`include "clock_div.v"
 `include "simple_por.v"
-`include "storage_bridge_wb.v"
-`include "DFFRAM.v"
-`include "DFFRAMBB.v"
 `include "sram_1rw1r_32_256_8_sky130.v"
-`include "storage.v"
-`include "sky130_fd_sc_hvl__lsbufhv2lv_1_wrapped.v"
 
 /*------------------------------*/
 /* Include user project here	*/
@@ -569,6 +590,9 @@ module caravel (
 	.mgmt_gpio_out({sdo_out, jtag_out}),
 	.mgmt_gpio_oeb({sdo_outenb, jtag_outenb}),
 
+        .one(),
+        .zero(),
+
     	// Serial data chain for pad configuration
     	.serial_data_in(gpio_serial_link_shifted[1:0]),
     	.serial_data_out(gpio_serial_link[1:0]),
@@ -593,6 +617,7 @@ module caravel (
     	.pad_gpio_in(mprj_io_in[1:0])
     );
 
+    wire [`MPRJ_IO_PADS-1:2] one_loop;
     gpio_control_block gpio_control_in [`MPRJ_IO_PADS-1:2] (
     	`ifdef USE_POWER_PINS
             .vccd(vccd),
@@ -608,7 +633,10 @@ module caravel (
 
 	.mgmt_gpio_in(mgmt_io_in[(`MPRJ_IO_PADS-1):2]),
 	.mgmt_gpio_out(mgmt_io_in[(`MPRJ_IO_PADS-1):2]),
-	.mgmt_gpio_oeb(1'b1),
+	.mgmt_gpio_oeb(one_loop),
+
+        .one(one_loop),
+        .zero(),
 
     	// Serial data chain for pad configuration
     	.serial_data_in(gpio_serial_link_shifted[(`MPRJ_IO_PADS-1):2]),
@@ -638,8 +666,8 @@ module caravel (
 	.USER_PROJECT_ID(USER_PROJECT_ID)
     ) user_id_value (
 `ifdef USE_POWER_PINS
-	.vdd1v8(vccd),
-	.vss(vssd),
+	.VPWR(vccd),
+	.VGND(vssd),
 `endif
 	.mask_rev(mask_rev)
     );

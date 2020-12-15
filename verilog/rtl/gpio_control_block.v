@@ -1,3 +1,18 @@
+// SPDX-FileCopyrightText: 2020 Efabless Corporation
+//
+// Licensed under the Apache License, Version 2.0 (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+//
+//      http://www.apache.org/licenses/LICENSE-2.0
+//
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an "AS IS" BASIS,
+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+// See the License for the specific language governing permissions and
+// limitations under the License.
+// SPDX-License-Identifier: Apache-2.0
+
 `default_nettype none
 /* 
  *---------------------------------------------------------------------
@@ -80,7 +95,12 @@ module gpio_control_block #(
     output [2:0] pad_gpio_dm,
     output       pad_gpio_outenb,
     output	 pad_gpio_out,
-    input	 pad_gpio_in
+    input	 pad_gpio_in,
+
+    // to provide a way to automatically disable/enable output
+    // from the outside with needing a conb cell
+    output	 one,
+    output	 zero
 );
 
     /* Parameters defining the bit offset of each function in the chain */
@@ -122,6 +142,8 @@ module gpio_control_block #(
     wire        pad_gpio_outenb;
     wire	pad_gpio_out;
     wire	pad_gpio_in;
+    wire	one;
+    wire	zero;
 
     wire user_gpio_in;
     wire gpio_in_unbuf;
@@ -195,9 +217,12 @@ module gpio_control_block #(
 
     /* Implement pad control behavior depending on state of mgmt_ena */
 
-    assign gpio_in_unbuf =    (mgmt_ena) ? 1'b0 : pad_gpio_in;
-    assign mgmt_gpio_in =    (mgmt_ena) ? ((gpio_inenb == 1'b0) ?
-					pad_gpio_in : 1'bz) : 1'b0;
+//    assign gpio_in_unbuf =    (mgmt_ena) ? 1'b0 : pad_gpio_in;
+//    assign mgmt_gpio_in =    (mgmt_ena) ? ((gpio_inenb == 1'b0) ?
+//					pad_gpio_in : 1'bz) : 1'b0;
+
+    assign gpio_in_unbuf =   pad_gpio_in;
+    assign mgmt_gpio_in =    (gpio_inenb == 1'b0) ?  pad_gpio_in : 1'bz;
 
     assign pad_gpio_outenb =  (mgmt_ena) ? ((mgmt_gpio_oeb == 1'b1) ? gpio_outenb :
 					1'b0) : user_gpio_oeb;
@@ -230,6 +255,17 @@ module gpio_control_block #(
             .Z(user_gpio_in),
             .A(~gpio_in_unbuf),
             .TE(gpio_logic1)
+    );
+
+    sky130_fd_sc_hd__conb_1 const_source (
+`ifdef USE_POWER_PINS
+            .VPWR(vccd),
+            .VGND(vssd),
+            .VPB(vccd),
+            .VNB(vssd),
+`endif
+            .HI(one),
+            .LO(zero)
     );
 
 endmodule

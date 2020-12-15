@@ -62,6 +62,8 @@ module timer_tb;
 	assign checkbits = mprj_io[37:32];
 	assign countbits = mprj_io[31:0];
 
+	assign mprj_io[3] = 1'b1;  // Force CSB high.
+
 	wire flash_csb;
 	wire flash_clk;
 	wire flash_io0;
@@ -78,32 +80,32 @@ module timer_tb;
 		`endif
 		/* Add checks here */
 		wait(checkbits == 6'h01);
-		$display("   countbits = 0x%x (should be 0xdcba7cf3)", countbits);
-		if(countbits !== 32'hdcba7cf3) begin
+		$display("   countbits = 0x%x (should be 0xdcba7cfb)", countbits);
+		if(countbits !== 32'hdcba7cfb) begin
 		    $display("Monitor: Test Timer Failed");
 		    $finish;
 		end
 		wait(checkbits == 6'h02);
-		$display("   countbits = 0x%x (should be 0x11)", countbits);
-		if(countbits !== 32'h11) begin
+		$display("   countbits = 0x%x (should be 0x19)", countbits);
+		if(countbits !== 32'h19) begin
 		    $display("Monitor: Test Timer Failed");
 		    $finish;
 		end
 		wait(checkbits == 6'h03);
 		$display("   countbits = %x (should be 0x0f)", countbits);
-		if(countbits !== 32'h0f) begin
+		if(countbits !== ((32'h0f) | (3'b100))) begin
 		    $display("Monitor: Test Timer Failed");
 		    $finish;
 		end
 		wait(checkbits == 6'h04);
 		$display("   countbits = %x (should be 0x0f)", countbits);
-		if(countbits !== 32'h0f) begin
+		if(countbits !== ((32'h0f) | (3'b100))) begin
 		    $display("Monitor: Test Timer Failed");
 		    $finish;
 		end
 		wait(checkbits == 6'h05);
-		$display("   countbits = %x (should be 0x12b4)", countbits);
-		if(countbits !== 32'h12b4) begin
+		$display("   countbits = %x (should be 0x12bc)", countbits);
+		if(countbits !== 32'h12bc) begin
 		    $display("Monitor: Test Timer Failed");
 		    $finish;
 		end

@@ -1,3 +1,18 @@
+# SPDX-FileCopyrightText: 2020 Efabless Corporation
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#      http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+# SPDX-License-Identifier: Apache-2.0
+
 package require openlane
 set script_dir [file dirname [file normalize [info script]]]
 prep -design $script_dir -tag caravel -overwrite
@@ -10,13 +25,13 @@ verilog_elaborate
 init_floorplan
 
 add_macro_placement padframe 0 0 N
-add_macro_placement storage 260.155 306.960 N
-add_macro_placement soc 1022.750 268.500 N
-add_macro_placement mprj 326.385 1382.010 N
-add_macro_placement mgmt_buffers 1440.500 1198.735 N
-add_macro_placement rstb_level 773.765 257.020 N
-add_macro_placement user_id_value 3283.125 404.630 N
-add_macro_placement por 3270.880 520.985 N
+add_macro_placement storage 260.160 265.780 N
+add_macro_placement soc 1052.110 268.010 N
+add_macro_placement mprj 326.540 1393.580 N
+add_macro_placement mgmt_buffers 1060.900 1234.240 N
+add_macro_placement rstb_level 664.480 234.780  S
+add_macro_placement user_id_value 3283.120 404.630 N
+add_macro_placement por 3270.880 522.711 MX
 
 # west
 set west_x 42.835
@@ -34,7 +49,7 @@ add_macro_placement "gpio_control_in\\\[28\\\]" $west_x 3379.000 R0
 add_macro_placement "gpio_control_in\\\[27\\\]" $west_x 3595.000 R0
 add_macro_placement "gpio_control_in\\\[26\\\]" $west_x 3811.000 R0
 add_macro_placement "gpio_control_in\\\[25\\\]" $west_x 4027.000 R0
-add_macro_placement "gpio_control_in\\\[24\\\]" $west_x 4449.000 R0
+add_macro_placement "gpio_control_in\\\[24\\\]" $west_x 4656.120 R0
 
 # north
 set north_y 4979.065
@@ -72,6 +87,17 @@ manual_macro_placement f
 remove_pins -input $::env(CURRENT_DEF)
 remove_empty_nets -input $::env(CURRENT_DEF)
 
+add_macro_obs \
+	-defFile $::env(CURRENT_DEF) \
+	-lefFile $::env(MERGED_LEF_UNPADDED) \
+	-obstruction vddio_obs \
+	-placementX 103.400 \
+	-placementY 607.150 \
+	-sizeWidth 94.500 \
+	-sizeHeight 30 \
+	-fixed 1 \
+	-layerNames "met2 met4"
+
 li1_hack_start
 global_routing
 detailed_routing
@@ -83,7 +109,6 @@ save_views       -lef_path $::env(magic_result_file_tag).lef \
                  -def_path $::env(tritonRoute_result_file_tag).def \
                  -gds_path $::env(magic_result_file_tag).gds \
                  -mag_path $::env(magic_result_file_tag).mag \
-                 -maglef_path $::env(magic_result_file_tag).lef.mag \
 				 -verilog_path $::env(CURRENT_NETLIST) \
                  -save_path $save_path \
                  -tag $::env(RUN_TAG)

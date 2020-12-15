@@ -4,16 +4,16 @@
 .subckt sky130_fd_sc_hvl__decap_8 VGND VNB VPB VPWR
 .ends
 
-* Black-box entry subcircuit for sky130_fd_sc_hvl__fill_2 abstract view
-.subckt sky130_fd_sc_hvl__fill_2 VGND VNB VPB VPWR
+* Black-box entry subcircuit for sky130_fd_sc_hvl__decap_4 abstract view
+.subckt sky130_fd_sc_hvl__decap_4 VGND VNB VPB VPWR
 .ends
 
 * Black-box entry subcircuit for sky130_fd_sc_hvl__conb_1 abstract view
 .subckt sky130_fd_sc_hvl__conb_1 VGND VNB VPB VPWR HI LO
 .ends
 
-* Black-box entry subcircuit for sky130_fd_sc_hvl__decap_4 abstract view
-.subckt sky130_fd_sc_hvl__decap_4 VGND VNB VPB VPWR
+* Black-box entry subcircuit for sky130_fd_sc_hvl__fill_2 abstract view
+.subckt sky130_fd_sc_hvl__fill_2 VGND VNB VPB VPWR
 .ends
 
 * Black-box entry subcircuit for sky130_fd_sc_hvl__fill_1 abstract view
@@ -24,35 +24,126 @@
 .subckt sky130_fd_sc_hvl__lsbufhv2lv_1 A LVPWR VGND VNB VPB VPWR X
 .ends
 
-.subckt mgmt_protect_hv mprj2_vdd_logic1 mprj_vdd_logic1 VPWR VGND
-XFILLER_3_24 VGND VGND VPWR VPWR sky130_fd_sc_hvl__decap_8
-XFILLER_0_24 VGND VGND VPWR VPWR sky130_fd_sc_hvl__decap_8
-XFILLER_3_48 VGND VGND VPWR VPWR sky130_fd_sc_hvl__fill_2
-XFILLER_0_48 VGND VGND VPWR VPWR sky130_fd_sc_hvl__fill_2
-XFILLER_3_16 VGND VGND VPWR VPWR sky130_fd_sc_hvl__decap_8
-XFILLER_0_16 VGND VGND VPWR VPWR sky130_fd_sc_hvl__decap_8
-Xmprj2_logic_high_hvl VGND VGND VPWR VPWR mprj2_logic_high_lv/A mprj2_logic_high_hvl/LO
+.subckt mgmt_protect_hv mprj2_vdd_logic1 mprj_vdd_logic1 vccd vssd vdda1 vssa1 vdda2
++ vssa2
+XFILLER_0_24 vssd vssd vccd vccd sky130_fd_sc_hvl__decap_8
+XFILLER_2_187 vssd vssd vccd vccd sky130_fd_sc_hvl__decap_8
+XFILLER_0_296 vssd vssd vccd vccd sky130_fd_sc_hvl__decap_4
+XFILLER_2_155 vssd vssd vccd vccd sky130_fd_sc_hvl__decap_8
+XFILLER_0_264 vssd vssd vccd vccd sky130_fd_sc_hvl__decap_8
+XFILLER_0_48 vssd vssd vccd vccd sky130_fd_sc_hvl__decap_8
+XFILLER_2_123 vssd vssd vccd vccd sky130_fd_sc_hvl__decap_8
+XFILLER_1_0 vssd vssd vccd vccd sky130_fd_sc_hvl__decap_8
+XFILLER_0_232 vssd vssd vccd vccd sky130_fd_sc_hvl__decap_8
+XFILLER_0_16 vssd vssd vccd vccd sky130_fd_sc_hvl__decap_8
+XFILLER_2_179 vssd vssd vccd vccd sky130_fd_sc_hvl__decap_8
+XFILLER_0_288 vssd vssd vccd vccd sky130_fd_sc_hvl__decap_8
+XFILLER_1_70 vssd vssd vccd vccd sky130_fd_sc_hvl__decap_8
+XFILLER_0_200 vssd vssd vccd vccd sky130_fd_sc_hvl__decap_8
+XFILLER_2_147 vssd vssd vccd vccd sky130_fd_sc_hvl__decap_8
+XFILLER_1_180 vssd vssd vccd vccd sky130_fd_sc_hvl__decap_8
+XFILLER_0_256 vssd vssd vccd vccd sky130_fd_sc_hvl__decap_8
+XFILLER_2_115 vssd vssd vccd vccd sky130_fd_sc_hvl__decap_8
+XFILLER_0_224 vssd vssd vccd vccd sky130_fd_sc_hvl__decap_8
+XFILLER_1_40 vssd vssd vccd vccd sky130_fd_sc_hvl__decap_8
+XFILLER_1_62 vssd vssd vccd vccd sky130_fd_sc_hvl__decap_8
+Xmprj2_logic_high_hvl vssd vssd vccd vccd mprj2_logic_high_lv/A mprj2_logic_high_hvl/LO
 + sky130_fd_sc_hvl__conb_1
-XFILLER_3_8 VGND VGND VPWR VPWR sky130_fd_sc_hvl__decap_8
-XFILLER_1_5 VGND VGND VPWR VPWR sky130_fd_sc_hvl__decap_4
-Xmprj_logic_high_hvl VGND VGND VPWR VPWR mprj_logic_high_lv/A mprj_logic_high_hvl/LO
+XFILLER_2_139 vssd vssd vccd vccd sky130_fd_sc_hvl__decap_8
+XFILLER_1_172 vssd vssd vccd vccd sky130_fd_sc_hvl__decap_8
+XFILLER_0_248 vssd vssd vccd vccd sky130_fd_sc_hvl__decap_8
+XFILLER_2_107 vssd vssd vccd vccd sky130_fd_sc_hvl__decap_8
+XFILLER_1_140 vssd vssd vccd vccd sky130_fd_sc_hvl__decap_8
+XFILLER_0_216 vssd vssd vccd vccd sky130_fd_sc_hvl__decap_8
+XFILLER_1_300 vssd vssd vccd vccd sky130_fd_sc_hvl__fill_2
+XFILLER_1_196 vssd vssd vccd vccd sky130_fd_sc_hvl__decap_8
+XFILLER_1_32 vssd vssd vccd vccd sky130_fd_sc_hvl__decap_8
+XFILLER_1_8 vssd vssd vccd vccd sky130_fd_sc_hvl__decap_8
+XFILLER_1_99 vssd vssd vccd vccd sky130_fd_sc_hvl__decap_8
+XFILLER_1_131 vssd vssd vccd vccd sky130_fd_sc_hvl__decap_4
+XFILLER_1_164 vssd vssd vccd vccd sky130_fd_sc_hvl__decap_8
+XFILLER_1_56 vssd vssd vccd vccd sky130_fd_sc_hvl__fill_1
+XFILLER_1_78 vssd vssd vccd vccd sky130_fd_sc_hvl__decap_4
+XFILLER_0_208 vssd vssd vccd vccd sky130_fd_sc_hvl__decap_8
+XFILLER_1_188 vssd vssd vccd vccd sky130_fd_sc_hvl__decap_8
+XFILLER_1_24 vssd vssd vccd vccd sky130_fd_sc_hvl__decap_8
+Xmprj_logic_high_hvl vssd vssd vccd vccd mprj_logic_high_lv/A mprj_logic_high_hvl/LO
 + sky130_fd_sc_hvl__conb_1
-XFILLER_1_48 VGND VGND VPWR VPWR sky130_fd_sc_hvl__fill_2
-XFILLER_2_0 VGND VGND VPWR VPWR sky130_fd_sc_hvl__decap_8
-XFILLER_2_43 VGND VGND VPWR VPWR sky130_fd_sc_hvl__decap_4
-XFILLER_0_0 VGND VGND VPWR VPWR sky130_fd_sc_hvl__decap_8
-XFILLER_2_47 VGND VGND VPWR VPWR sky130_fd_sc_hvl__fill_2
-XFILLER_2_49 VGND VGND VPWR VPWR sky130_fd_sc_hvl__fill_1
-XFILLER_2_8 VGND VGND VPWR VPWR sky130_fd_sc_hvl__fill_1
-XFILLER_0_8 VGND VGND VPWR VPWR sky130_fd_sc_hvl__decap_8
-XFILLER_3_40 VGND VGND VPWR VPWR sky130_fd_sc_hvl__decap_8
-XFILLER_0_40 VGND VGND VPWR VPWR sky130_fd_sc_hvl__decap_8
-XFILLER_0_32 VGND VGND VPWR VPWR sky130_fd_sc_hvl__decap_8
-XFILLER_3_32 VGND VGND VPWR VPWR sky130_fd_sc_hvl__decap_8
-Xmprj_logic_high_lv mprj_logic_high_lv/A mprj_logic_high_lv/LVPWR VGND VGND VPWR VPWR
+XFILLER_1_123 vssd vssd vccd vccd sky130_fd_sc_hvl__decap_8
+XFILLER_1_156 vssd vssd vccd vccd sky130_fd_sc_hvl__decap_8
+XFILLER_2_251 vssd vssd vccd vccd sky130_fd_sc_hvl__decap_8
+XFILLER_1_48 vssd vssd vccd vccd sky130_fd_sc_hvl__decap_8
+XFILLER_2_80 vssd vssd vccd vccd sky130_fd_sc_hvl__fill_2
+XFILLER_1_16 vssd vssd vccd vccd sky130_fd_sc_hvl__decap_8
+XFILLER_2_275 vssd vssd vccd vccd sky130_fd_sc_hvl__decap_8
+XFILLER_1_115 vssd vssd vccd vccd sky130_fd_sc_hvl__decap_8
+XFILLER_1_148 vssd vssd vccd vccd sky130_fd_sc_hvl__decap_8
+XFILLER_0_192 vssd vssd vccd vccd sky130_fd_sc_hvl__decap_8
+XFILLER_2_243 vssd vssd vccd vccd sky130_fd_sc_hvl__decap_8
+XFILLER_0_160 vssd vssd vccd vccd sky130_fd_sc_hvl__decap_8
+XFILLER_2_72 vssd vssd vccd vccd sky130_fd_sc_hvl__decap_8
+XFILLER_2_211 vssd vssd vccd vccd sky130_fd_sc_hvl__decap_8
+XFILLER_2_267 vssd vssd vccd vccd sky130_fd_sc_hvl__decap_8
+XFILLER_2_0 vssd vssd vccd vccd sky130_fd_sc_hvl__decap_8
+XFILLER_2_40 vssd vssd vccd vccd sky130_fd_sc_hvl__decap_8
+XFILLER_1_107 vssd vssd vccd vccd sky130_fd_sc_hvl__decap_8
+XFILLER_0_184 vssd vssd vccd vccd sky130_fd_sc_hvl__decap_8
+XFILLER_2_235 vssd vssd vccd vccd sky130_fd_sc_hvl__decap_8
+XFILLER_0_300 vssd vssd vccd vccd sky130_fd_sc_hvl__fill_2
+XFILLER_0_152 vssd vssd vccd vccd sky130_fd_sc_hvl__decap_8
+XFILLER_1_280 vssd vssd vccd vccd sky130_fd_sc_hvl__fill_2
+XFILLER_2_64 vssd vssd vccd vccd sky130_fd_sc_hvl__decap_8
+XFILLER_2_203 vssd vssd vccd vccd sky130_fd_sc_hvl__decap_8
+XFILLER_0_120 vssd vssd vccd vccd sky130_fd_sc_hvl__decap_8
+XFILLER_2_259 vssd vssd vccd vccd sky130_fd_sc_hvl__decap_8
+XFILLER_2_32 vssd vssd vccd vccd sky130_fd_sc_hvl__decap_8
+XFILLER_0_0 vssd vssd vccd vccd sky130_fd_sc_hvl__decap_8
+XFILLER_0_176 vssd vssd vccd vccd sky130_fd_sc_hvl__decap_8
+XFILLER_1_282 vssd vssd vccd vccd sky130_fd_sc_hvl__fill_1
+XFILLER_1_260 vssd vssd vccd vccd sky130_fd_sc_hvl__decap_8
+XFILLER_2_99 vssd vssd vccd vccd sky130_fd_sc_hvl__decap_8
+XFILLER_2_227 vssd vssd vccd vccd sky130_fd_sc_hvl__decap_8
+XFILLER_0_144 vssd vssd vccd vccd sky130_fd_sc_hvl__decap_8
+XFILLER_2_56 vssd vssd vccd vccd sky130_fd_sc_hvl__decap_8
+XFILLER_0_112 vssd vssd vccd vccd sky130_fd_sc_hvl__decap_8
+XFILLER_2_24 vssd vssd vccd vccd sky130_fd_sc_hvl__decap_8
+XFILLER_0_168 vssd vssd vccd vccd sky130_fd_sc_hvl__decap_8
+XFILLER_2_219 vssd vssd vccd vccd sky130_fd_sc_hvl__decap_8
+XFILLER_1_252 vssd vssd vccd vccd sky130_fd_sc_hvl__decap_8
+XFILLER_0_80 vssd vssd vccd vccd sky130_fd_sc_hvl__decap_8
+XFILLER_0_136 vssd vssd vccd vccd sky130_fd_sc_hvl__decap_8
+XFILLER_2_48 vssd vssd vccd vccd sky130_fd_sc_hvl__decap_8
+XFILLER_1_220 vssd vssd vccd vccd sky130_fd_sc_hvl__decap_8
+XFILLER_2_8 vssd vssd vccd vccd sky130_fd_sc_hvl__decap_8
+XFILLER_0_104 vssd vssd vccd vccd sky130_fd_sc_hvl__decap_8
+XFILLER_1_276 vssd vssd vccd vccd sky130_fd_sc_hvl__decap_4
+XFILLER_2_16 vssd vssd vccd vccd sky130_fd_sc_hvl__decap_8
+XFILLER_1_244 vssd vssd vccd vccd sky130_fd_sc_hvl__decap_8
+XFILLER_0_72 vssd vssd vccd vccd sky130_fd_sc_hvl__decap_8
+XFILLER_0_128 vssd vssd vccd vccd sky130_fd_sc_hvl__decap_8
+XFILLER_1_212 vssd vssd vccd vccd sky130_fd_sc_hvl__decap_8
+XFILLER_0_8 vssd vssd vccd vccd sky130_fd_sc_hvl__decap_8
+XFILLER_0_40 vssd vssd vccd vccd sky130_fd_sc_hvl__decap_8
+XFILLER_1_268 vssd vssd vccd vccd sky130_fd_sc_hvl__decap_8
+XFILLER_0_96 vssd vssd vccd vccd sky130_fd_sc_hvl__decap_8
+XFILLER_2_171 vssd vssd vccd vccd sky130_fd_sc_hvl__decap_8
+XFILLER_0_280 vssd vssd vccd vccd sky130_fd_sc_hvl__decap_8
+XFILLER_1_236 vssd vssd vccd vccd sky130_fd_sc_hvl__decap_8
+XFILLER_0_64 vssd vssd vccd vccd sky130_fd_sc_hvl__decap_8
+XFILLER_1_204 vssd vssd vccd vccd sky130_fd_sc_hvl__decap_8
+XFILLER_0_32 vssd vssd vccd vccd sky130_fd_sc_hvl__decap_8
+XFILLER_2_195 vssd vssd vccd vccd sky130_fd_sc_hvl__decap_8
+XFILLER_2_300 vssd vssd vccd vccd sky130_fd_sc_hvl__fill_2
+Xmprj_logic_high_lv mprj_logic_high_lv/A mprj_logic_high_lv/LVPWR vssd vssd vccd vccd
 + mprj_vdd_logic1 sky130_fd_sc_hvl__lsbufhv2lv_1
-Xmprj2_logic_high_lv mprj2_logic_high_lv/A mprj2_logic_high_lv/LVPWR VGND VGND VPWR
-+ VPWR mprj2_vdd_logic1 sky130_fd_sc_hvl__lsbufhv2lv_1
-XFILLER_3_0 VGND VGND VPWR VPWR sky130_fd_sc_hvl__decap_8
+XFILLER_0_88 vssd vssd vccd vccd sky130_fd_sc_hvl__decap_8
+XFILLER_2_163 vssd vssd vccd vccd sky130_fd_sc_hvl__decap_8
+XFILLER_1_228 vssd vssd vccd vccd sky130_fd_sc_hvl__decap_8
+XFILLER_0_272 vssd vssd vccd vccd sky130_fd_sc_hvl__decap_8
+Xmprj2_logic_high_lv mprj2_logic_high_lv/A mprj2_logic_high_lv/LVPWR vssd vssd vccd
++ vccd mprj2_vdd_logic1 sky130_fd_sc_hvl__lsbufhv2lv_1
+XFILLER_2_131 vssd vssd vccd vccd sky130_fd_sc_hvl__decap_8
+XFILLER_0_56 vssd vssd vccd vccd sky130_fd_sc_hvl__decap_8
+XFILLER_0_240 vssd vssd vccd vccd sky130_fd_sc_hvl__decap_8
 .ends
 

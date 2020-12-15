@@ -1,3 +1,18 @@
+# SPDX-FileCopyrightText: 2020 Efabless Corporation
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#      http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+# SPDX-License-Identifier: Apache-2.0
+
 package require openlane
 set script_dir [file dirname [file normalize [info script]]]
 set save_path $script_dir/../..
@@ -45,21 +60,65 @@ add_macro_obs \
 	-defFile $::env(CURRENT_DEF) \
 	-lefFile $::env(MERGED_LEF_UNPADDED) \
 	-obstruction core_obs \
-	-placementX 230 \
-	-placementY 240 \
-	-sizeWidth 3132 \
-	-sizeHeight 4710 \
+	-placementX 225 \
+	-placementY 235 \
+	-sizeWidth 3140 \
+	-sizeHeight 4715 \
 	-fixed 1 \
 	-layerNames "met1 met2 met3 met4 met5"
 
 add_macro_obs \
 	-defFile $::env(CURRENT_DEF) \
 	-lefFile $::env(MERGED_LEF_UNPADDED) \
-	-obstruction gpio_m3_pins \
+	-obstruction gpio_m3_pins_north \
 	-placementX 469.965 \
 	-placementY 4972.585 \
 	-sizeWidth 1149.480 \
 	-sizeHeight 16.200 \
+	-fixed 1 \
+	-layerNames "met3"
+
+add_macro_obs \
+	-defFile $::env(CURRENT_DEF) \
+	-lefFile $::env(MERGED_LEF_UNPADDED) \
+	-obstruction gpio_m3_pins_west_0 \
+	-placementX 198.400 \
+	-placementY 1002.125 \
+	-sizeWidth 16.785 \
+	-sizeHeight 1200 \
+	-fixed 1 \
+	-layerNames "met3"
+
+add_macro_obs \
+	-defFile $::env(CURRENT_DEF) \
+	-lefFile $::env(MERGED_LEF_UNPADDED) \
+	-obstruction gpio_m3_pins_west_1 \
+	-placementX 198.400 \
+	-placementY 2726.820 \
+	-sizeWidth 16.785 \
+	-sizeHeight 1400 \
+	-fixed 1 \
+	-layerNames "met3"
+
+add_macro_obs \
+	-defFile $::env(CURRENT_DEF) \
+	-lefFile $::env(MERGED_LEF_UNPADDED) \
+	-obstruction gpio_m3_pins_west_2 \
+	-placementX 198.400 \
+	-placementY 4641.655 \
+	-sizeWidth 16.785 \
+	-sizeHeight 113.650 \
+	-fixed 1 \
+	-layerNames "met3"
+
+add_macro_obs \
+	-defFile $::env(CURRENT_DEF) \
+	-lefFile $::env(MERGED_LEF_UNPADDED) \
+	-obstruction gpio_m3_pins_east \
+	-placementX 3370.840 \
+	-placementY 600.050 \
+	-sizeWidth 16.170 \
+	-sizeHeight 4131.940 \
 	-fixed 1 \
 	-layerNames "met3"
 
@@ -98,7 +157,7 @@ save_views       -lef_path $::env(magic_result_file_tag).lef \
                  -gds_path $::env(magic_result_file_tag).gds \
                  -mag_path $::env(magic_result_file_tag).mag \
                  -maglef_path $::env(magic_result_file_tag).lef.mag \
-				 -verilog_path $::env(TMP)/lvs.v \
+				 -verilog_path $::env(TMP_DIR)/lvs.v \
                  -save_path $save_path \
                  -tag $::env(RUN_TAG)
 
