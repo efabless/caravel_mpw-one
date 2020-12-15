@@ -590,6 +590,9 @@ module caravel (
 	.mgmt_gpio_out({sdo_out, jtag_out}),
 	.mgmt_gpio_oeb({sdo_outenb, jtag_outenb}),
 
+        .one(),
+        .zero(),
+
     	// Serial data chain for pad configuration
     	.serial_data_in(gpio_serial_link_shifted[1:0]),
     	.serial_data_out(gpio_serial_link[1:0]),
@@ -614,6 +617,7 @@ module caravel (
     	.pad_gpio_in(mprj_io_in[1:0])
     );
 
+    wire [`MPRJ_IO_PADS-1:2] one_loop;
     gpio_control_block gpio_control_in [`MPRJ_IO_PADS-1:2] (
     	`ifdef USE_POWER_PINS
             .vccd(vccd),
@@ -629,7 +633,10 @@ module caravel (
 
 	.mgmt_gpio_in(mgmt_io_in[(`MPRJ_IO_PADS-1):2]),
 	.mgmt_gpio_out(mgmt_io_in[(`MPRJ_IO_PADS-1):2]),
-	.mgmt_gpio_oeb(1'b1),
+	.mgmt_gpio_oeb(one_loop),
+
+        .one(one_loop),
+        .zero(),
 
     	// Serial data chain for pad configuration
     	.serial_data_in(gpio_serial_link_shifted[(`MPRJ_IO_PADS-1):2]),

@@ -95,7 +95,12 @@ module gpio_control_block #(
     output [2:0] pad_gpio_dm,
     output       pad_gpio_outenb,
     output	 pad_gpio_out,
-    input	 pad_gpio_in
+    input	 pad_gpio_in,
+
+    // to provide a way to automatically disable/enable output
+    // from the outside with needing a conb cell
+    output	 one,
+    output	 zero
 );
 
     /* Parameters defining the bit offset of each function in the chain */
@@ -137,6 +142,8 @@ module gpio_control_block #(
     wire        pad_gpio_outenb;
     wire	pad_gpio_out;
     wire	pad_gpio_in;
+    wire	one;
+    wire	zero;
 
     wire user_gpio_in;
     wire gpio_in_unbuf;
@@ -248,6 +255,17 @@ module gpio_control_block #(
             .Z(user_gpio_in),
             .A(~gpio_in_unbuf),
             .TE(gpio_logic1)
+    );
+
+    sky130_fd_sc_hd__conb_1 const_source (
+`ifdef USE_POWER_PINS
+            .VPWR(vccd),
+            .VGND(vssd),
+            .VPB(vccd),
+            .VNB(vssd),
+`endif
+            .HI(one),
+            .LO(zero)
     );
 
 endmodule
