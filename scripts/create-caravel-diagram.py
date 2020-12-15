@@ -7,6 +7,27 @@ from tempfile import mkstemp
 import re
 
 
+def remove_inouts(jsonpath, replacewith='input'):
+    """Replaces inouts with either input or output statements.
+
+    Netlistsvg does not parse inout ports as for now, so they need to be
+    replaced with either input or output to produce a diagram.
+
+    Parameters
+    ----------
+    jsonpath : str
+        Path to JSON file to fix
+    replacewith : str
+        The string to replace 'inout', can be 'input' or 'output'
+    """
+    assert replacewith in ['input', 'output']
+    with open(jsonpath, 'r') as withinouts:
+        lines = withinouts.readlines()
+    with open(jsonpath, 'w') as withoutinouts:
+        for line in lines:
+            withoutinouts.write(re.sub('inout', replacewith, line))
+
+
 def main(argv):
     parser = argparse.ArgumentParser(argv[0])
     parser.add_argument(
@@ -32,6 +53,12 @@ def main(argv):
         help='Path to netlistsvg executable',
         type=Path,
         default='netlistsvg')
+    parser.add_argument(
+        '--inouts-as',
+        help='To what kind of IO should inout ports be replaced',
+        choices=['input', 'output'],
+        default='input'
+    )
 
     args = parser.parse_args(argv[1:])
 
@@ -64,11 +91,8 @@ def main(argv):
         print(result.stdout.decode())
         exitcode = result.returncode
     else:
-        with open(jsonpath, 'r') as unclean:
-            lines = unclean.readlines()
-        with open(jsonpath, 'w') as cleaned:
-            for line in lines:
-                cleaned.write(re.sub('inout', 'input', line))
+        # TODO once netlistsvg supports inout ports, this should be removed
+        remove_inouts(jsonpath, args.inouts_as)
         command = f'{args.netlistsvg_executable} {jsonpath} -o {args.output}'
         result = subprocess.run(
             command.split(),
@@ -82,6 +106,7 @@ def main(argv):
 
     os.unlink(jsonpath)
     sys.exit(exitcode)
+
 
 if __name__ == '__main__':
     sys.exit(main(sys.argv))
