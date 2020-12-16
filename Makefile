@@ -111,7 +111,16 @@ $(LVS_BLOCKS): lvs-% : ./mag/%.mag ./verilog/gl/%.v
 	python3 ./scripts/count_lvs.py -f ./verilog/gl/$*.v_comp.json
 	mv -f ./verilog/gl/*{.out,.json,.log} ./spi/lvs/tmp 2> /dev/null || true
 	@echo "Comparison result: ./spi/lvs/tmp/$*.v_comp.out"
-	
+
+# DRC
+BLOCKS = $(shell cd openlane && find * -maxdepth 0 -type d)
+DRC_BLOCKS = $(foreach block, $(BLOCKS), drc-$(block))
+$(DRC_BLOCKS): drc-% : ./gds/%.gds
+	echo "Running DRC on $*"
+	mkdir -p ./gds/tmp
+	cd gds && export DESIGN_IN_DRC=$* && export MAGTYPE=mag; magic -rcfile ${PDK_ROOT}/sky130A/libs.tech/magic/current/sky130A.magicrc -noc -dnull drc_on_gds.tcl < /dev/null
+	@echo "DRC result: ./gds/tmp/$*.drc"
+
 
 .PHONY: help
 help:
