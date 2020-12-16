@@ -1,5 +1,3 @@
-
-set ::env(DESIGN_IN_DRC) [lindex $argv 0]
 gds read $::env(DESIGN_IN_DRC).gds
 set fout [open ./tmp/$::env(DESIGN_IN_DRC).drc w]
 set oscale [cif scale out]
