@@ -955,11 +955,11 @@ module mgmt_protect(caravel_clk, caravel_clk2, caravel_rstn, mprj_cyc_o_core, mp
   input vccd2;
   input vdda1;
   input vdda2;
+  input vssd2;
   input vssa1;
   input vssa2;
   input vssd;
   input vssd1;
-  input vssd2;
   sky130_fd_sc_hd__diode_2 ANTENNA__330__A (
     .DIODE(la_oen_mprj[62]),
     .VGND(vssd),
@@ -52557,4 +52557,8 @@ module mgmt_protect(caravel_clk, caravel_clk2, caravel_rstn, mprj_cyc_o_core, mp
     .VPWR(vccd),
     .Z(la_oen_core[9])
   );
+  assign vssa1 = vssd;
+  assign vssa2 = vssd;
+  assign vssd1 = vssd;
+  assign vssd2 = vssd;
 endmodule
