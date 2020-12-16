@@ -85,20 +85,32 @@ $(LVS_BLOCKS): lvs-% : ./mag/%.mag ./verilog/gl/%.v
 	echo "Extracting $*"
 	mkdir -p ./mag/tmp
 	echo "load $* -dereference;\
+		select top cell;\
+		foreach cell [cellname list children] {\
+			load \$$cell -dereference;\
+			property LEFview TRUE;\
+		};\
+		load $* -dereference;\
+		select top cell;\
 		extract no all;\
 		extract do local;\
+		extract unique;\
 		extract;\
 		ext2spice lvs;\
-		ext2spice;\
+		ext2spice $*.ext;\
 		feedback save extract_$*.log;\
 		exit;" > ./mag/extract_$*.tcl
-	cd mag && MAGTYPE=maglef magic -rcfile ${PDK_ROOT}/sky130A/libs.tech/magic/current/sky130A.magicrc -noc -dnull extract_$*.tcl
+	cd mag && export MAGTYPE=maglef; magic -rcfile ${PDK_ROOT}/sky130A/libs.tech/magic/current/sky130A.magicrc -noc -dnull extract_$*.tcl < /dev/null
 	mv ./mag/$*.spice ./spi/lvs
-	mv -f ./mag/extract_$*.{tcl,log} ./mag/*.ext ./mag/tmp
+	rm ./mag/*.ext
+	mv -f ./mag/extract_$*.{tcl,log} ./mag/tmp
 	####
 	mkdir -p ./spi/lvs/tmp
-	sh ./spi/lvs/run_lvs.sh ./verilog/gl/$*.v ./spi/lvs/$*.spice $*
-	mv -f ./spi/lvs/*{.out,.json,.log} ./spi/lvs/tmp 2> /dev/null || true
+	sh ./spi/lvs/run_lvs.sh ./spi/lvs/$*.spice ./verilog/gl/$*.v $*
+	@echo ""
+	python3 ./scripts/count_lvs.py -f ./verilog/gl/$*.v_comp.json
+	mv -f ./verilog/gl/*{.out,.json,.log} ./spi/lvs/tmp 2> /dev/null || true
+	@echo "Comparison result: ./spi/lvs/tmp/$*.v_comp.out"
 	
 
 .PHONY: help
