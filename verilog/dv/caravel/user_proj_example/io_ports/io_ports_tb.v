@@ -22,8 +22,8 @@
 
 module io_ports_tb;
 	reg clock;
-    	reg RSTB;
-    	reg CSB;
+	reg RSTB;
+	reg CSB;
 	reg power1, power2;
 	reg power3, power4;
 
@@ -57,7 +57,11 @@ module io_ports_tb;
 			// $display("+1000 cycles");
 		end
 		$display("%c[1;31m",27);
-		$display ("Monitor: Timeout, Test Mega-Project IO Ports (RTL) Failed");
+		`ifdef GL
+			$display ("Monitor: Timeout, Test Mega-Project IO Ports (GL) Failed");
+		`else
+			$display ("Monitor: Timeout, Test Mega-Project IO Ports (RTL) Failed");
+		`endif
 		$display("%c[0m",27);
 		$finish;
 	end
@@ -76,8 +80,12 @@ module io_ports_tb;
             wait(mprj_io_0 == 8'h0A);   
 	    wait(mprj_io_0 == 8'hFF);
 	    wait(mprj_io_0 == 8'h00);
-
-	    $display("Monitor: Test 1 Mega-Project IO (RTL) Passed");
+		
+		`ifdef GL
+	    	$display("Monitor: Test 1 Mega-Project IO (GL) Passed");
+		`else
+		    $display("Monitor: Test 1 Mega-Project IO (RTL) Passed");
+		`endif
 	    $finish;
 	end
 
