@@ -1983,6 +1983,42 @@ module caravel(vddio, vssio, vdda, vssa, vccd, vssd, vdda1, vdda2, vssa1, vssa2,
   wire mprj_vdd_pwrgood;
   wire mprj_we_o_core;
   wire mprj_we_o_user;
+  wire \one_loop[10] ;
+  wire \one_loop[11] ;
+  wire \one_loop[12] ;
+  wire \one_loop[13] ;
+  wire \one_loop[14] ;
+  wire \one_loop[15] ;
+  wire \one_loop[16] ;
+  wire \one_loop[17] ;
+  wire \one_loop[18] ;
+  wire \one_loop[19] ;
+  wire \one_loop[20] ;
+  wire \one_loop[21] ;
+  wire \one_loop[22] ;
+  wire \one_loop[23] ;
+  wire \one_loop[24] ;
+  wire \one_loop[25] ;
+  wire \one_loop[26] ;
+  wire \one_loop[27] ;
+  wire \one_loop[28] ;
+  wire \one_loop[29] ;
+  wire \one_loop[2] ;
+  wire \one_loop[30] ;
+  wire \one_loop[31] ;
+  wire \one_loop[32] ;
+  wire \one_loop[33] ;
+  wire \one_loop[34] ;
+  wire \one_loop[35] ;
+  wire \one_loop[36] ;
+  wire \one_loop[37] ;
+  wire \one_loop[3] ;
+  wire \one_loop[4] ;
+  wire \one_loop[5] ;
+  wire \one_loop[6] ;
+  wire \one_loop[7] ;
+  wire \one_loop[8] ;
+  wire \one_loop[9] ;
   wire por_l;
   wire porb_h;
   wire porb_l;
@@ -2267,6 +2303,7 @@ module caravel(vddio, vssio, vdda, vssa, vccd, vssd, vdda1, vdda2, vssa1, vssa2,
     .mgmt_gpio_in(\mgmt_io_in[0] ),
     .mgmt_gpio_oeb(jtag_outenb),
     .mgmt_gpio_out(jtag_out),
+    .one(),
     .pad_gpio_ana_en(\mprj_io_analog_en[0] ),
     .pad_gpio_ana_pol(\mprj_io_analog_pol[0] ),
     .pad_gpio_ana_sel(\mprj_io_analog_sel[0] ),
@@ -2285,12 +2322,14 @@ module caravel(vddio, vssio, vdda, vssa, vccd, vssd, vdda1, vdda2, vssa1, vssa2,
     .serial_data_out(\gpio_serial_link[0] ),
     .user_gpio_in(\user_io_in[0] ),
     .user_gpio_oeb(\user_io_oeb[0] ),
-    .user_gpio_out(\user_io_out[0] )
+    .user_gpio_out(\user_io_out[0] ),
+    .zero()
   );
   gpio_control_block \gpio_control_bidir[1]  (
     .mgmt_gpio_in(\mgmt_io_in[1] ),
     .mgmt_gpio_oeb(sdo_outenb),
     .mgmt_gpio_out(sdo_out),
+    .one(),
     .pad_gpio_ana_en(\mprj_io_analog_en[1] ),
     .pad_gpio_ana_pol(\mprj_io_analog_pol[1] ),
     .pad_gpio_ana_sel(\mprj_io_analog_sel[1] ),
@@ -2309,12 +2348,14 @@ module caravel(vddio, vssio, vdda, vssa, vccd, vssd, vdda1, vdda2, vssa1, vssa2,
     .serial_data_out(\gpio_serial_link[1] ),
     .user_gpio_in(\user_io_in[1] ),
     .user_gpio_oeb(\user_io_oeb[1] ),
-    .user_gpio_out(\user_io_out[1] )
+    .user_gpio_out(\user_io_out[1] ),
+    .zero()
   );
   gpio_control_block \gpio_control_in[10]  (
     .mgmt_gpio_in(\mgmt_io_in[10] ),
-    .mgmt_gpio_oeb(1'b1),
+    .mgmt_gpio_oeb(\one_loop[10] ),
     .mgmt_gpio_out(\mgmt_io_in[10] ),
+    .one(\one_loop[10] ),
     .pad_gpio_ana_en(\mprj_io_analog_en[10] ),
     .pad_gpio_ana_pol(\mprj_io_analog_pol[10] ),
     .pad_gpio_ana_sel(\mprj_io_analog_sel[10] ),
@@ -2333,12 +2374,14 @@ module caravel(vddio, vssio, vdda, vssa, vccd, vssd, vdda1, vdda2, vssa1, vssa2,
     .serial_data_out(\gpio_serial_link[10] ),
     .user_gpio_in(\user_io_in[10] ),
     .user_gpio_oeb(\user_io_oeb[10] ),
-    .user_gpio_out(\user_io_out[10] )
+    .user_gpio_out(\user_io_out[10] ),
+    .zero()
   );
   gpio_control_block \gpio_control_in[11]  (
     .mgmt_gpio_in(\mgmt_io_in[11] ),
-    .mgmt_gpio_oeb(1'b1),
+    .mgmt_gpio_oeb(\one_loop[11] ),
     .mgmt_gpio_out(\mgmt_io_in[11] ),
+    .one(\one_loop[11] ),
     .pad_gpio_ana_en(\mprj_io_analog_en[11] ),
     .pad_gpio_ana_pol(\mprj_io_analog_pol[11] ),
     .pad_gpio_ana_sel(\mprj_io_analog_sel[11] ),
@@ -2357,12 +2400,14 @@ module caravel(vddio, vssio, vdda, vssa, vccd, vssd, vdda1, vdda2, vssa1, vssa2,
     .serial_data_out(\gpio_serial_link[11] ),
     .user_gpio_in(\user_io_in[11] ),
     .user_gpio_oeb(\user_io_oeb[11] ),
-    .user_gpio_out(\user_io_out[11] )
+    .user_gpio_out(\user_io_out[11] ),
+    .zero()
   );
   gpio_control_block \gpio_control_in[12]  (
     .mgmt_gpio_in(\mgmt_io_in[12] ),
-    .mgmt_gpio_oeb(1'b1),
+    .mgmt_gpio_oeb(\one_loop[12] ),
     .mgmt_gpio_out(\mgmt_io_in[12] ),
+    .one(\one_loop[12] ),
     .pad_gpio_ana_en(\mprj_io_analog_en[12] ),
     .pad_gpio_ana_pol(\mprj_io_analog_pol[12] ),
     .pad_gpio_ana_sel(\mprj_io_analog_sel[12] ),
@@ -2381,12 +2426,14 @@ module caravel(vddio, vssio, vdda, vssa, vccd, vssd, vdda1, vdda2, vssa1, vssa2,
     .serial_data_out(\gpio_serial_link[12] ),
     .user_gpio_in(\user_io_in[12] ),
     .user_gpio_oeb(\user_io_oeb[12] ),
-    .user_gpio_out(\user_io_out[12] )
+    .user_gpio_out(\user_io_out[12] ),
+    .zero()
   );
   gpio_control_block \gpio_control_in[13]  (
     .mgmt_gpio_in(\mgmt_io_in[13] ),
-    .mgmt_gpio_oeb(1'b1),
+    .mgmt_gpio_oeb(\one_loop[13] ),
     .mgmt_gpio_out(\mgmt_io_in[13] ),
+    .one(\one_loop[13] ),
     .pad_gpio_ana_en(\mprj_io_analog_en[13] ),
     .pad_gpio_ana_pol(\mprj_io_analog_pol[13] ),
     .pad_gpio_ana_sel(\mprj_io_analog_sel[13] ),
@@ -2405,12 +2452,14 @@ module caravel(vddio, vssio, vdda, vssa, vccd, vssd, vdda1, vdda2, vssa1, vssa2,
     .serial_data_out(\gpio_serial_link[13] ),
     .user_gpio_in(\user_io_in[13] ),
     .user_gpio_oeb(\user_io_oeb[13] ),
-    .user_gpio_out(\user_io_out[13] )
+    .user_gpio_out(\user_io_out[13] ),
+    .zero()
   );
   gpio_control_block \gpio_control_in[14]  (
     .mgmt_gpio_in(\mgmt_io_in[14] ),
-    .mgmt_gpio_oeb(1'b1),
+    .mgmt_gpio_oeb(\one_loop[14] ),
     .mgmt_gpio_out(\mgmt_io_in[14] ),
+    .one(\one_loop[14] ),
     .pad_gpio_ana_en(\mprj_io_analog_en[14] ),
     .pad_gpio_ana_pol(\mprj_io_analog_pol[14] ),
     .pad_gpio_ana_sel(\mprj_io_analog_sel[14] ),
@@ -2429,12 +2478,14 @@ module caravel(vddio, vssio, vdda, vssa, vccd, vssd, vdda1, vdda2, vssa1, vssa2,
     .serial_data_out(\gpio_serial_link[14] ),
     .user_gpio_in(\user_io_in[14] ),
     .user_gpio_oeb(\user_io_oeb[14] ),
-    .user_gpio_out(\user_io_out[14] )
+    .user_gpio_out(\user_io_out[14] ),
+    .zero()
   );
   gpio_control_block \gpio_control_in[15]  (
     .mgmt_gpio_in(\mgmt_io_in[15] ),
-    .mgmt_gpio_oeb(1'b1),
+    .mgmt_gpio_oeb(\one_loop[15] ),
     .mgmt_gpio_out(\mgmt_io_in[15] ),
+    .one(\one_loop[15] ),
     .pad_gpio_ana_en(\mprj_io_analog_en[15] ),
     .pad_gpio_ana_pol(\mprj_io_analog_pol[15] ),
     .pad_gpio_ana_sel(\mprj_io_analog_sel[15] ),
@@ -2453,12 +2504,14 @@ module caravel(vddio, vssio, vdda, vssa, vccd, vssd, vdda1, vdda2, vssa1, vssa2,
     .serial_data_out(\gpio_serial_link[15] ),
     .user_gpio_in(\user_io_in[15] ),
     .user_gpio_oeb(\user_io_oeb[15] ),
-    .user_gpio_out(\user_io_out[15] )
+    .user_gpio_out(\user_io_out[15] ),
+    .zero()
   );
   gpio_control_block \gpio_control_in[16]  (
     .mgmt_gpio_in(\mgmt_io_in[16] ),
-    .mgmt_gpio_oeb(1'b1),
+    .mgmt_gpio_oeb(\one_loop[16] ),
     .mgmt_gpio_out(\mgmt_io_in[16] ),
+    .one(\one_loop[16] ),
     .pad_gpio_ana_en(\mprj_io_analog_en[16] ),
     .pad_gpio_ana_pol(\mprj_io_analog_pol[16] ),
     .pad_gpio_ana_sel(\mprj_io_analog_sel[16] ),
@@ -2477,12 +2530,14 @@ module caravel(vddio, vssio, vdda, vssa, vccd, vssd, vdda1, vdda2, vssa1, vssa2,
     .serial_data_out(\gpio_serial_link[16] ),
     .user_gpio_in(\user_io_in[16] ),
     .user_gpio_oeb(\user_io_oeb[16] ),
-    .user_gpio_out(\user_io_out[16] )
+    .user_gpio_out(\user_io_out[16] ),
+    .zero()
   );
   gpio_control_block \gpio_control_in[17]  (
     .mgmt_gpio_in(\mgmt_io_in[17] ),
-    .mgmt_gpio_oeb(1'b1),
+    .mgmt_gpio_oeb(\one_loop[17] ),
     .mgmt_gpio_out(\mgmt_io_in[17] ),
+    .one(\one_loop[17] ),
     .pad_gpio_ana_en(\mprj_io_analog_en[17] ),
     .pad_gpio_ana_pol(\mprj_io_analog_pol[17] ),
     .pad_gpio_ana_sel(\mprj_io_analog_sel[17] ),
@@ -2501,12 +2556,14 @@ module caravel(vddio, vssio, vdda, vssa, vccd, vssd, vdda1, vdda2, vssa1, vssa2,
     .serial_data_out(\gpio_serial_link[17] ),
     .user_gpio_in(\user_io_in[17] ),
     .user_gpio_oeb(\user_io_oeb[17] ),
-    .user_gpio_out(\user_io_out[17] )
+    .user_gpio_out(\user_io_out[17] ),
+    .zero()
   );
   gpio_control_block \gpio_control_in[18]  (
     .mgmt_gpio_in(\mgmt_io_in[18] ),
-    .mgmt_gpio_oeb(1'b1),
+    .mgmt_gpio_oeb(\one_loop[18] ),
     .mgmt_gpio_out(\mgmt_io_in[18] ),
+    .one(\one_loop[18] ),
     .pad_gpio_ana_en(\mprj_io_analog_en[18] ),
     .pad_gpio_ana_pol(\mprj_io_analog_pol[18] ),
     .pad_gpio_ana_sel(\mprj_io_analog_sel[18] ),
@@ -2525,12 +2582,14 @@ module caravel(vddio, vssio, vdda, vssa, vccd, vssd, vdda1, vdda2, vssa1, vssa2,
     .serial_data_out(\gpio_serial_link[18] ),
     .user_gpio_in(\user_io_in[18] ),
     .user_gpio_oeb(\user_io_oeb[18] ),
-    .user_gpio_out(\user_io_out[18] )
+    .user_gpio_out(\user_io_out[18] ),
+    .zero()
   );
   gpio_control_block \gpio_control_in[19]  (
     .mgmt_gpio_in(\mgmt_io_in[19] ),
-    .mgmt_gpio_oeb(1'b1),
+    .mgmt_gpio_oeb(\one_loop[19] ),
     .mgmt_gpio_out(\mgmt_io_in[19] ),
+    .one(\one_loop[19] ),
     .pad_gpio_ana_en(\mprj_io_analog_en[19] ),
     .pad_gpio_ana_pol(\mprj_io_analog_pol[19] ),
     .pad_gpio_ana_sel(\mprj_io_analog_sel[19] ),
@@ -2549,12 +2608,14 @@ module caravel(vddio, vssio, vdda, vssa, vccd, vssd, vdda1, vdda2, vssa1, vssa2,
     .serial_data_out(\gpio_serial_link[19] ),
     .user_gpio_in(\user_io_in[19] ),
     .user_gpio_oeb(\user_io_oeb[19] ),
-    .user_gpio_out(\user_io_out[19] )
+    .user_gpio_out(\user_io_out[19] ),
+    .zero()
   );
   gpio_control_block \gpio_control_in[20]  (
     .mgmt_gpio_in(\mgmt_io_in[20] ),
-    .mgmt_gpio_oeb(1'b1),
+    .mgmt_gpio_oeb(\one_loop[20] ),
     .mgmt_gpio_out(\mgmt_io_in[20] ),
+    .one(\one_loop[20] ),
     .pad_gpio_ana_en(\mprj_io_analog_en[20] ),
     .pad_gpio_ana_pol(\mprj_io_analog_pol[20] ),
     .pad_gpio_ana_sel(\mprj_io_analog_sel[20] ),
@@ -2573,12 +2634,14 @@ module caravel(vddio, vssio, vdda, vssa, vccd, vssd, vdda1, vdda2, vssa1, vssa2,
     .serial_data_out(\gpio_serial_link[20] ),
     .user_gpio_in(\user_io_in[20] ),
     .user_gpio_oeb(\user_io_oeb[20] ),
-    .user_gpio_out(\user_io_out[20] )
+    .user_gpio_out(\user_io_out[20] ),
+    .zero()
   );
   gpio_control_block \gpio_control_in[21]  (
     .mgmt_gpio_in(\mgmt_io_in[21] ),
-    .mgmt_gpio_oeb(1'b1),
+    .mgmt_gpio_oeb(\one_loop[21] ),
     .mgmt_gpio_out(\mgmt_io_in[21] ),
+    .one(\one_loop[21] ),
     .pad_gpio_ana_en(\mprj_io_analog_en[21] ),
     .pad_gpio_ana_pol(\mprj_io_analog_pol[21] ),
     .pad_gpio_ana_sel(\mprj_io_analog_sel[21] ),
@@ -2597,12 +2660,14 @@ module caravel(vddio, vssio, vdda, vssa, vccd, vssd, vdda1, vdda2, vssa1, vssa2,
     .serial_data_out(\gpio_serial_link[21] ),
     .user_gpio_in(\user_io_in[21] ),
     .user_gpio_oeb(\user_io_oeb[21] ),
-    .user_gpio_out(\user_io_out[21] )
+    .user_gpio_out(\user_io_out[21] ),
+    .zero()
   );
   gpio_control_block \gpio_control_in[22]  (
     .mgmt_gpio_in(\mgmt_io_in[22] ),
-    .mgmt_gpio_oeb(1'b1),
+    .mgmt_gpio_oeb(\one_loop[22] ),
     .mgmt_gpio_out(\mgmt_io_in[22] ),
+    .one(\one_loop[22] ),
     .pad_gpio_ana_en(\mprj_io_analog_en[22] ),
     .pad_gpio_ana_pol(\mprj_io_analog_pol[22] ),
     .pad_gpio_ana_sel(\mprj_io_analog_sel[22] ),
@@ -2621,12 +2686,14 @@ module caravel(vddio, vssio, vdda, vssa, vccd, vssd, vdda1, vdda2, vssa1, vssa2,
     .serial_data_out(\gpio_serial_link[22] ),
     .user_gpio_in(\user_io_in[22] ),
     .user_gpio_oeb(\user_io_oeb[22] ),
-    .user_gpio_out(\user_io_out[22] )
+    .user_gpio_out(\user_io_out[22] ),
+    .zero()
   );
   gpio_control_block \gpio_control_in[23]  (
     .mgmt_gpio_in(\mgmt_io_in[23] ),
-    .mgmt_gpio_oeb(1'b1),
+    .mgmt_gpio_oeb(\one_loop[23] ),
     .mgmt_gpio_out(\mgmt_io_in[23] ),
+    .one(\one_loop[23] ),
     .pad_gpio_ana_en(\mprj_io_analog_en[23] ),
     .pad_gpio_ana_pol(\mprj_io_analog_pol[23] ),
     .pad_gpio_ana_sel(\mprj_io_analog_sel[23] ),
@@ -2645,12 +2712,14 @@ module caravel(vddio, vssio, vdda, vssa, vccd, vssd, vdda1, vdda2, vssa1, vssa2,
     .serial_data_out(\gpio_serial_link[23] ),
     .user_gpio_in(\user_io_in[23] ),
     .user_gpio_oeb(\user_io_oeb[23] ),
-    .user_gpio_out(\user_io_out[23] )
+    .user_gpio_out(\user_io_out[23] ),
+    .zero()
   );
   gpio_control_block \gpio_control_in[24]  (
     .mgmt_gpio_in(\mgmt_io_in[24] ),
-    .mgmt_gpio_oeb(1'b1),
+    .mgmt_gpio_oeb(\one_loop[24] ),
     .mgmt_gpio_out(\mgmt_io_in[24] ),
+    .one(\one_loop[24] ),
     .pad_gpio_ana_en(\mprj_io_analog_en[24] ),
     .pad_gpio_ana_pol(\mprj_io_analog_pol[24] ),
     .pad_gpio_ana_sel(\mprj_io_analog_sel[24] ),
@@ -2669,12 +2738,14 @@ module caravel(vddio, vssio, vdda, vssa, vccd, vssd, vdda1, vdda2, vssa1, vssa2,
     .serial_data_out(\gpio_serial_link[24] ),
     .user_gpio_in(\user_io_in[24] ),
     .user_gpio_oeb(\user_io_oeb[24] ),
-    .user_gpio_out(\user_io_out[24] )
+    .user_gpio_out(\user_io_out[24] ),
+    .zero()
   );
   gpio_control_block \gpio_control_in[25]  (
     .mgmt_gpio_in(\mgmt_io_in[25] ),
-    .mgmt_gpio_oeb(1'b1),
+    .mgmt_gpio_oeb(\one_loop[25] ),
     .mgmt_gpio_out(\mgmt_io_in[25] ),
+    .one(\one_loop[25] ),
     .pad_gpio_ana_en(\mprj_io_analog_en[25] ),
     .pad_gpio_ana_pol(\mprj_io_analog_pol[25] ),
     .pad_gpio_ana_sel(\mprj_io_analog_sel[25] ),
@@ -2693,12 +2764,14 @@ module caravel(vddio, vssio, vdda, vssa, vccd, vssd, vdda1, vdda2, vssa1, vssa2,
     .serial_data_out(\gpio_serial_link[25] ),
     .user_gpio_in(\user_io_in[25] ),
     .user_gpio_oeb(\user_io_oeb[25] ),
-    .user_gpio_out(\user_io_out[25] )
+    .user_gpio_out(\user_io_out[25] ),
+    .zero()
   );
   gpio_control_block \gpio_control_in[26]  (
     .mgmt_gpio_in(\mgmt_io_in[26] ),
-    .mgmt_gpio_oeb(1'b1),
+    .mgmt_gpio_oeb(\one_loop[26] ),
     .mgmt_gpio_out(\mgmt_io_in[26] ),
+    .one(\one_loop[26] ),
     .pad_gpio_ana_en(\mprj_io_analog_en[26] ),
     .pad_gpio_ana_pol(\mprj_io_analog_pol[26] ),
     .pad_gpio_ana_sel(\mprj_io_analog_sel[26] ),
@@ -2717,12 +2790,14 @@ module caravel(vddio, vssio, vdda, vssa, vccd, vssd, vdda1, vdda2, vssa1, vssa2,
     .serial_data_out(\gpio_serial_link[26] ),
     .user_gpio_in(\user_io_in[26] ),
     .user_gpio_oeb(\user_io_oeb[26] ),
-    .user_gpio_out(\user_io_out[26] )
+    .user_gpio_out(\user_io_out[26] ),
+    .zero()
   );
   gpio_control_block \gpio_control_in[27]  (
     .mgmt_gpio_in(\mgmt_io_in[27] ),
-    .mgmt_gpio_oeb(1'b1),
+    .mgmt_gpio_oeb(\one_loop[27] ),
     .mgmt_gpio_out(\mgmt_io_in[27] ),
+    .one(\one_loop[27] ),
     .pad_gpio_ana_en(\mprj_io_analog_en[27] ),
     .pad_gpio_ana_pol(\mprj_io_analog_pol[27] ),
     .pad_gpio_ana_sel(\mprj_io_analog_sel[27] ),
@@ -2741,12 +2816,14 @@ module caravel(vddio, vssio, vdda, vssa, vccd, vssd, vdda1, vdda2, vssa1, vssa2,
     .serial_data_out(\gpio_serial_link[27] ),
     .user_gpio_in(\user_io_in[27] ),
     .user_gpio_oeb(\user_io_oeb[27] ),
-    .user_gpio_out(\user_io_out[27] )
+    .user_gpio_out(\user_io_out[27] ),
+    .zero()
   );
   gpio_control_block \gpio_control_in[28]  (
     .mgmt_gpio_in(\mgmt_io_in[28] ),
-    .mgmt_gpio_oeb(1'b1),
+    .mgmt_gpio_oeb(\one_loop[28] ),
     .mgmt_gpio_out(\mgmt_io_in[28] ),
+    .one(\one_loop[28] ),
     .pad_gpio_ana_en(\mprj_io_analog_en[28] ),
     .pad_gpio_ana_pol(\mprj_io_analog_pol[28] ),
     .pad_gpio_ana_sel(\mprj_io_analog_sel[28] ),
@@ -2765,12 +2842,14 @@ module caravel(vddio, vssio, vdda, vssa, vccd, vssd, vdda1, vdda2, vssa1, vssa2,
     .serial_data_out(\gpio_serial_link[28] ),
     .user_gpio_in(\user_io_in[28] ),
     .user_gpio_oeb(\user_io_oeb[28] ),
-    .user_gpio_out(\user_io_out[28] )
+    .user_gpio_out(\user_io_out[28] ),
+    .zero()
   );
   gpio_control_block \gpio_control_in[29]  (
     .mgmt_gpio_in(\mgmt_io_in[29] ),
-    .mgmt_gpio_oeb(1'b1),
+    .mgmt_gpio_oeb(\one_loop[29] ),
     .mgmt_gpio_out(\mgmt_io_in[29] ),
+    .one(\one_loop[29] ),
     .pad_gpio_ana_en(\mprj_io_analog_en[29] ),
     .pad_gpio_ana_pol(\mprj_io_analog_pol[29] ),
     .pad_gpio_ana_sel(\mprj_io_analog_sel[29] ),
@@ -2789,12 +2868,14 @@ module caravel(vddio, vssio, vdda, vssa, vccd, vssd, vdda1, vdda2, vssa1, vssa2,
     .serial_data_out(\gpio_serial_link[29] ),
     .user_gpio_in(\user_io_in[29] ),
     .user_gpio_oeb(\user_io_oeb[29] ),
-    .user_gpio_out(\user_io_out[29] )
+    .user_gpio_out(\user_io_out[29] ),
+    .zero()
   );
   gpio_control_block \gpio_control_in[2]  (
     .mgmt_gpio_in(\mgmt_io_in[2] ),
-    .mgmt_gpio_oeb(1'b1),
+    .mgmt_gpio_oeb(\one_loop[2] ),
     .mgmt_gpio_out(\mgmt_io_in[2] ),
+    .one(\one_loop[2] ),
     .pad_gpio_ana_en(\mprj_io_analog_en[2] ),
     .pad_gpio_ana_pol(\mprj_io_analog_pol[2] ),
     .pad_gpio_ana_sel(\mprj_io_analog_sel[2] ),
@@ -2813,12 +2894,14 @@ module caravel(vddio, vssio, vdda, vssa, vccd, vssd, vdda1, vdda2, vssa1, vssa2,
     .serial_data_out(\gpio_serial_link[2] ),
     .user_gpio_in(\user_io_in[2] ),
     .user_gpio_oeb(\user_io_oeb[2] ),
-    .user_gpio_out(\user_io_out[2] )
+    .user_gpio_out(\user_io_out[2] ),
+    .zero()
   );
   gpio_control_block \gpio_control_in[30]  (
     .mgmt_gpio_in(\mgmt_io_in[30] ),
-    .mgmt_gpio_oeb(1'b1),
+    .mgmt_gpio_oeb(\one_loop[30] ),
     .mgmt_gpio_out(\mgmt_io_in[30] ),
+    .one(\one_loop[30] ),
     .pad_gpio_ana_en(\mprj_io_analog_en[30] ),
     .pad_gpio_ana_pol(\mprj_io_analog_pol[30] ),
     .pad_gpio_ana_sel(\mprj_io_analog_sel[30] ),
@@ -2837,12 +2920,14 @@ module caravel(vddio, vssio, vdda, vssa, vccd, vssd, vdda1, vdda2, vssa1, vssa2,
     .serial_data_out(\gpio_serial_link[30] ),
     .user_gpio_in(\user_io_in[30] ),
     .user_gpio_oeb(\user_io_oeb[30] ),
-    .user_gpio_out(\user_io_out[30] )
+    .user_gpio_out(\user_io_out[30] ),
+    .zero()
   );
   gpio_control_block \gpio_control_in[31]  (
     .mgmt_gpio_in(\mgmt_io_in[31] ),
-    .mgmt_gpio_oeb(1'b1),
+    .mgmt_gpio_oeb(\one_loop[31] ),
     .mgmt_gpio_out(\mgmt_io_in[31] ),
+    .one(\one_loop[31] ),
     .pad_gpio_ana_en(\mprj_io_analog_en[31] ),
     .pad_gpio_ana_pol(\mprj_io_analog_pol[31] ),
     .pad_gpio_ana_sel(\mprj_io_analog_sel[31] ),
@@ -2861,12 +2946,14 @@ module caravel(vddio, vssio, vdda, vssa, vccd, vssd, vdda1, vdda2, vssa1, vssa2,
     .serial_data_out(\gpio_serial_link[31] ),
     .user_gpio_in(\user_io_in[31] ),
     .user_gpio_oeb(\user_io_oeb[31] ),
-    .user_gpio_out(\user_io_out[31] )
+    .user_gpio_out(\user_io_out[31] ),
+    .zero()
   );
   gpio_control_block \gpio_control_in[32]  (
     .mgmt_gpio_in(\mgmt_io_in[32] ),
-    .mgmt_gpio_oeb(1'b1),
+    .mgmt_gpio_oeb(\one_loop[32] ),
     .mgmt_gpio_out(\mgmt_io_in[32] ),
+    .one(\one_loop[32] ),
     .pad_gpio_ana_en(\mprj_io_analog_en[32] ),
     .pad_gpio_ana_pol(\mprj_io_analog_pol[32] ),
     .pad_gpio_ana_sel(\mprj_io_analog_sel[32] ),
@@ -2885,12 +2972,14 @@ module caravel(vddio, vssio, vdda, vssa, vccd, vssd, vdda1, vdda2, vssa1, vssa2,
     .serial_data_out(\gpio_serial_link[32] ),
     .user_gpio_in(\user_io_in[32] ),
     .user_gpio_oeb(\user_io_oeb[32] ),
-    .user_gpio_out(\user_io_out[32] )
+    .user_gpio_out(\user_io_out[32] ),
+    .zero()
   );
   gpio_control_block \gpio_control_in[33]  (
     .mgmt_gpio_in(\mgmt_io_in[33] ),
-    .mgmt_gpio_oeb(1'b1),
+    .mgmt_gpio_oeb(\one_loop[33] ),
     .mgmt_gpio_out(\mgmt_io_in[33] ),
+    .one(\one_loop[33] ),
     .pad_gpio_ana_en(\mprj_io_analog_en[33] ),
     .pad_gpio_ana_pol(\mprj_io_analog_pol[33] ),
     .pad_gpio_ana_sel(\mprj_io_analog_sel[33] ),
@@ -2909,12 +2998,14 @@ module caravel(vddio, vssio, vdda, vssa, vccd, vssd, vdda1, vdda2, vssa1, vssa2,
     .serial_data_out(\gpio_serial_link[33] ),
     .user_gpio_in(\user_io_in[33] ),
     .user_gpio_oeb(\user_io_oeb[33] ),
-    .user_gpio_out(\user_io_out[33] )
+    .user_gpio_out(\user_io_out[33] ),
+    .zero()
   );
   gpio_control_block \gpio_control_in[34]  (
     .mgmt_gpio_in(\mgmt_io_in[34] ),
-    .mgmt_gpio_oeb(1'b1),
+    .mgmt_gpio_oeb(\one_loop[34] ),
     .mgmt_gpio_out(\mgmt_io_in[34] ),
+    .one(\one_loop[34] ),
     .pad_gpio_ana_en(\mprj_io_analog_en[34] ),
     .pad_gpio_ana_pol(\mprj_io_analog_pol[34] ),
     .pad_gpio_ana_sel(\mprj_io_analog_sel[34] ),
@@ -2933,12 +3024,14 @@ module caravel(vddio, vssio, vdda, vssa, vccd, vssd, vdda1, vdda2, vssa1, vssa2,
     .serial_data_out(\gpio_serial_link[34] ),
     .user_gpio_in(\user_io_in[34] ),
     .user_gpio_oeb(\user_io_oeb[34] ),
-    .user_gpio_out(\user_io_out[34] )
+    .user_gpio_out(\user_io_out[34] ),
+    .zero()
   );
   gpio_control_block \gpio_control_in[35]  (
     .mgmt_gpio_in(\mgmt_io_in[35] ),
-    .mgmt_gpio_oeb(1'b1),
+    .mgmt_gpio_oeb(\one_loop[35] ),
     .mgmt_gpio_out(\mgmt_io_in[35] ),
+    .one(\one_loop[35] ),
     .pad_gpio_ana_en(\mprj_io_analog_en[35] ),
     .pad_gpio_ana_pol(\mprj_io_analog_pol[35] ),
     .pad_gpio_ana_sel(\mprj_io_analog_sel[35] ),
@@ -2957,12 +3050,14 @@ module caravel(vddio, vssio, vdda, vssa, vccd, vssd, vdda1, vdda2, vssa1, vssa2,
     .serial_data_out(\gpio_serial_link[35] ),
     .user_gpio_in(\user_io_in[35] ),
     .user_gpio_oeb(\user_io_oeb[35] ),
-    .user_gpio_out(\user_io_out[35] )
+    .user_gpio_out(\user_io_out[35] ),
+    .zero()
   );
   gpio_control_block \gpio_control_in[36]  (
     .mgmt_gpio_in(\mgmt_io_in[36] ),
-    .mgmt_gpio_oeb(1'b1),
+    .mgmt_gpio_oeb(\one_loop[36] ),
     .mgmt_gpio_out(\mgmt_io_in[36] ),
+    .one(\one_loop[36] ),
     .pad_gpio_ana_en(\mprj_io_analog_en[36] ),
     .pad_gpio_ana_pol(\mprj_io_analog_pol[36] ),
     .pad_gpio_ana_sel(\mprj_io_analog_sel[36] ),
@@ -2981,12 +3076,14 @@ module caravel(vddio, vssio, vdda, vssa, vccd, vssd, vdda1, vdda2, vssa1, vssa2,
     .serial_data_out(\gpio_serial_link[36] ),
     .user_gpio_in(\user_io_in[36] ),
     .user_gpio_oeb(\user_io_oeb[36] ),
-    .user_gpio_out(\user_io_out[36] )
+    .user_gpio_out(\user_io_out[36] ),
+    .zero()
   );
   gpio_control_block \gpio_control_in[37]  (
     .mgmt_gpio_in(\mgmt_io_in[37] ),
-    .mgmt_gpio_oeb(1'b1),
+    .mgmt_gpio_oeb(\one_loop[37] ),
     .mgmt_gpio_out(\mgmt_io_in[37] ),
+    .one(\one_loop[37] ),
     .pad_gpio_ana_en(\mprj_io_analog_en[37] ),
     .pad_gpio_ana_pol(\mprj_io_analog_pol[37] ),
     .pad_gpio_ana_sel(\mprj_io_analog_sel[37] ),
@@ -3005,12 +3102,14 @@ module caravel(vddio, vssio, vdda, vssa, vccd, vssd, vdda1, vdda2, vssa1, vssa2,
     .serial_data_out(\gpio_serial_link[37] ),
     .user_gpio_in(\user_io_in[37] ),
     .user_gpio_oeb(\user_io_oeb[37] ),
-    .user_gpio_out(\user_io_out[37] )
+    .user_gpio_out(\user_io_out[37] ),
+    .zero()
   );
   gpio_control_block \gpio_control_in[3]  (
     .mgmt_gpio_in(\mgmt_io_in[3] ),
-    .mgmt_gpio_oeb(1'b1),
+    .mgmt_gpio_oeb(\one_loop[3] ),
     .mgmt_gpio_out(\mgmt_io_in[3] ),
+    .one(\one_loop[3] ),
     .pad_gpio_ana_en(\mprj_io_analog_en[3] ),
     .pad_gpio_ana_pol(\mprj_io_analog_pol[3] ),
     .pad_gpio_ana_sel(\mprj_io_analog_sel[3] ),
@@ -3029,12 +3128,14 @@ module caravel(vddio, vssio, vdda, vssa, vccd, vssd, vdda1, vdda2, vssa1, vssa2,
     .serial_data_out(\gpio_serial_link[3] ),
     .user_gpio_in(\user_io_in[3] ),
     .user_gpio_oeb(\user_io_oeb[3] ),
-    .user_gpio_out(\user_io_out[3] )
+    .user_gpio_out(\user_io_out[3] ),
+    .zero()
   );
   gpio_control_block \gpio_control_in[4]  (
     .mgmt_gpio_in(\mgmt_io_in[4] ),
-    .mgmt_gpio_oeb(1'b1),
+    .mgmt_gpio_oeb(\one_loop[4] ),
     .mgmt_gpio_out(\mgmt_io_in[4] ),
+    .one(\one_loop[4] ),
     .pad_gpio_ana_en(\mprj_io_analog_en[4] ),
     .pad_gpio_ana_pol(\mprj_io_analog_pol[4] ),
     .pad_gpio_ana_sel(\mprj_io_analog_sel[4] ),
@@ -3053,12 +3154,14 @@ module caravel(vddio, vssio, vdda, vssa, vccd, vssd, vdda1, vdda2, vssa1, vssa2,
     .serial_data_out(\gpio_serial_link[4] ),
     .user_gpio_in(\user_io_in[4] ),
     .user_gpio_oeb(\user_io_oeb[4] ),
-    .user_gpio_out(\user_io_out[4] )
+    .user_gpio_out(\user_io_out[4] ),
+    .zero()
   );
   gpio_control_block \gpio_control_in[5]  (
     .mgmt_gpio_in(\mgmt_io_in[5] ),
-    .mgmt_gpio_oeb(1'b1),
+    .mgmt_gpio_oeb(\one_loop[5] ),
     .mgmt_gpio_out(\mgmt_io_in[5] ),
+    .one(\one_loop[5] ),
     .pad_gpio_ana_en(\mprj_io_analog_en[5] ),
     .pad_gpio_ana_pol(\mprj_io_analog_pol[5] ),
     .pad_gpio_ana_sel(\mprj_io_analog_sel[5] ),
@@ -3077,12 +3180,14 @@ module caravel(vddio, vssio, vdda, vssa, vccd, vssd, vdda1, vdda2, vssa1, vssa2,
     .serial_data_out(\gpio_serial_link[5] ),
     .user_gpio_in(\user_io_in[5] ),
     .user_gpio_oeb(\user_io_oeb[5] ),
-    .user_gpio_out(\user_io_out[5] )
+    .user_gpio_out(\user_io_out[5] ),
+    .zero()
   );
   gpio_control_block \gpio_control_in[6]  (
     .mgmt_gpio_in(\mgmt_io_in[6] ),
-    .mgmt_gpio_oeb(1'b1),
+    .mgmt_gpio_oeb(\one_loop[6] ),
     .mgmt_gpio_out(\mgmt_io_in[6] ),
+    .one(\one_loop[6] ),
     .pad_gpio_ana_en(\mprj_io_analog_en[6] ),
     .pad_gpio_ana_pol(\mprj_io_analog_pol[6] ),
     .pad_gpio_ana_sel(\mprj_io_analog_sel[6] ),
@@ -3101,12 +3206,14 @@ module caravel(vddio, vssio, vdda, vssa, vccd, vssd, vdda1, vdda2, vssa1, vssa2,
     .serial_data_out(\gpio_serial_link[6] ),
     .user_gpio_in(\user_io_in[6] ),
     .user_gpio_oeb(\user_io_oeb[6] ),
-    .user_gpio_out(\user_io_out[6] )
+    .user_gpio_out(\user_io_out[6] ),
+    .zero()
   );
   gpio_control_block \gpio_control_in[7]  (
     .mgmt_gpio_in(\mgmt_io_in[7] ),
-    .mgmt_gpio_oeb(1'b1),
+    .mgmt_gpio_oeb(\one_loop[7] ),
     .mgmt_gpio_out(\mgmt_io_in[7] ),
+    .one(\one_loop[7] ),
     .pad_gpio_ana_en(\mprj_io_analog_en[7] ),
     .pad_gpio_ana_pol(\mprj_io_analog_pol[7] ),
     .pad_gpio_ana_sel(\mprj_io_analog_sel[7] ),
@@ -3125,12 +3232,14 @@ module caravel(vddio, vssio, vdda, vssa, vccd, vssd, vdda1, vdda2, vssa1, vssa2,
     .serial_data_out(\gpio_serial_link[7] ),
     .user_gpio_in(\user_io_in[7] ),
     .user_gpio_oeb(\user_io_oeb[7] ),
-    .user_gpio_out(\user_io_out[7] )
+    .user_gpio_out(\user_io_out[7] ),
+    .zero()
   );
   gpio_control_block \gpio_control_in[8]  (
     .mgmt_gpio_in(\mgmt_io_in[8] ),
-    .mgmt_gpio_oeb(1'b1),
+    .mgmt_gpio_oeb(\one_loop[8] ),
     .mgmt_gpio_out(\mgmt_io_in[8] ),
+    .one(\one_loop[8] ),
     .pad_gpio_ana_en(\mprj_io_analog_en[8] ),
     .pad_gpio_ana_pol(\mprj_io_analog_pol[8] ),
     .pad_gpio_ana_sel(\mprj_io_analog_sel[8] ),
@@ -3149,12 +3258,14 @@ module caravel(vddio, vssio, vdda, vssa, vccd, vssd, vdda1, vdda2, vssa1, vssa2,
     .serial_data_out(\gpio_serial_link[8] ),
     .user_gpio_in(\user_io_in[8] ),
     .user_gpio_oeb(\user_io_oeb[8] ),
-    .user_gpio_out(\user_io_out[8] )
+    .user_gpio_out(\user_io_out[8] ),
+    .zero()
   );
   gpio_control_block \gpio_control_in[9]  (
     .mgmt_gpio_in(\mgmt_io_in[9] ),
-    .mgmt_gpio_oeb(1'b1),
+    .mgmt_gpio_oeb(\one_loop[9] ),
     .mgmt_gpio_out(\mgmt_io_in[9] ),
+    .one(\one_loop[9] ),
     .pad_gpio_ana_en(\mprj_io_analog_en[9] ),
     .pad_gpio_ana_pol(\mprj_io_analog_pol[9] ),
     .pad_gpio_ana_sel(\mprj_io_analog_sel[9] ),
@@ -3173,7 +3284,8 @@ module caravel(vddio, vssio, vdda, vssa, vccd, vssd, vdda1, vdda2, vssa1, vssa2,
     .serial_data_out(\gpio_serial_link[9] ),
     .user_gpio_in(\user_io_in[9] ),
     .user_gpio_oeb(\user_io_oeb[9] ),
-    .user_gpio_out(\user_io_out[9] )
+    .user_gpio_out(\user_io_out[9] ),
+    .zero()
   );
   mgmt_protect mgmt_buffers (
     .caravel_clk(caravel_clk),
@@ -3376,6 +3488,19 @@ module caravel(vddio, vssio, vdda, vssa, vccd, vssd, vdda1, vdda2, vssa1, vssa2,
   user_id_programming user_id_value (
     .mask_rev({ \mask_rev[31] , \mask_rev[30] , \mask_rev[29] , \mask_rev[28] , \mask_rev[27] , \mask_rev[26] , \mask_rev[25] , \mask_rev[24] , \mask_rev[23] , \mask_rev[22] , \mask_rev[21] , \mask_rev[20] , \mask_rev[19] , \mask_rev[18] , \mask_rev[17] , \mask_rev[16] , \mask_rev[15] , \mask_rev[14] , \mask_rev[13] , \mask_rev[12] , \mask_rev[11] , \mask_rev[10] , \mask_rev[9] , \mask_rev[8] , \mask_rev[7] , \mask_rev[6] , \mask_rev[5] , \mask_rev[4] , \mask_rev[3] , \mask_rev[2] , \mask_rev[1] , \mask_rev[0]  })
   );
+  assign \gpio_serial_link_shifted[37]  = \gpio_serial_link[36] ;
+  assign \gpio_serial_link_shifted[36]  = \gpio_serial_link[35] ;
+  assign \gpio_serial_link_shifted[35]  = \gpio_serial_link[34] ;
+  assign \gpio_serial_link_shifted[34]  = \gpio_serial_link[33] ;
+  assign \gpio_serial_link_shifted[33]  = \gpio_serial_link[32] ;
+  assign \gpio_serial_link_shifted[32]  = \gpio_serial_link[31] ;
+  assign \gpio_serial_link_shifted[31]  = \gpio_serial_link[30] ;
+  assign \gpio_serial_link_shifted[30]  = \gpio_serial_link[29] ;
+  assign \gpio_serial_link_shifted[29]  = \gpio_serial_link[28] ;
+  assign \gpio_serial_link_shifted[28]  = \gpio_serial_link[27] ;
+  assign \gpio_serial_link_shifted[27]  = \gpio_serial_link[26] ;
+  assign \gpio_serial_link_shifted[26]  = \gpio_serial_link[25] ;
+  assign \gpio_serial_link_shifted[25]  = \gpio_serial_link[24] ;
   assign \gpio_serial_link_shifted[24]  = \gpio_serial_link[23] ;
   assign \gpio_serial_link_shifted[23]  = \gpio_serial_link[22] ;
   assign \gpio_serial_link_shifted[22]  = \gpio_serial_link[21] ;
@@ -3437,57 +3562,44 @@ module caravel(vddio, vssio, vdda, vssa, vccd, vssd, vdda1, vdda2, vssa1, vssa2,
   assign \mprj_io_enh[3]  = \mprj_io_enh[0] ;
   assign \mprj_io_enh[2]  = \mprj_io_enh[0] ;
   assign \mprj_io_enh[1]  = \mprj_io_enh[0] ;
+  assign \mprj_io_hldh_n[37]  = vddio;
   assign \mprj_io_hldh_n[36]  = vddio;
   assign \mprj_io_hldh_n[35]  = vddio;
   assign \mprj_io_hldh_n[34]  = vddio;
   assign \mprj_io_hldh_n[33]  = vddio;
+  assign \mprj_io_hldh_n[32]  = vddio;
+  assign \mprj_io_hldh_n[31]  = vddio;
+  assign \mprj_io_hldh_n[30]  = vddio;
+  assign \mprj_io_hldh_n[29]  = vddio;
+  assign \mprj_io_hldh_n[28]  = vddio;
+  assign \mprj_io_hldh_n[27]  = vddio;
+  assign \mprj_io_hldh_n[26]  = vddio;
+  assign \mprj_io_hldh_n[25]  = vddio;
+  assign \mprj_io_hldh_n[24]  = vddio;
+  assign \mprj_io_hldh_n[23]  = vddio;
+  assign \mprj_io_hldh_n[22]  = vddio;
+  assign \mprj_io_hldh_n[21]  = vddio;
+  assign \mprj_io_hldh_n[20]  = vddio;
+  assign \mprj_io_hldh_n[19]  = vddio;
+  assign \mprj_io_hldh_n[18]  = vddio;
+  assign \mprj_io_hldh_n[17]  = vddio;
+  assign \mprj_io_hldh_n[16]  = vddio;
+  assign \mprj_io_hldh_n[15]  = vddio;
+  assign \mprj_io_hldh_n[14]  = vddio;
   assign \mprj_io_hldh_n[13]  = vddio;
   assign \mprj_io_hldh_n[12]  = vddio;
   assign \mprj_io_hldh_n[11]  = vddio;
-  assign \mprj_io_hldh_n[32]  = vddio;
-  assign \mprj_io_hldh_n[31]  = vddio;
-  assign \mprj_io_hldh_n[15]  = vddio;
-  assign \mprj_io_hldh_n[14]  = vddio;
-  assign \gpio_serial_link_shifted[30]  = \gpio_serial_link[29] ;
-  assign \gpio_serial_link_shifted[34]  = \gpio_serial_link[33] ;
-  assign \gpio_serial_link_shifted[33]  = \gpio_serial_link[32] ;
-  assign \mprj_io_hldh_n[30]  = vddio;
-  assign \gpio_serial_link_shifted[28]  = \gpio_serial_link[27] ;
-  assign \gpio_serial_link_shifted[27]  = \gpio_serial_link[26] ;
-  assign \gpio_serial_link_shifted[29]  = \gpio_serial_link[28] ;
-  assign \mprj_io_hldh_n[28]  = vddio;
-  assign \mprj_io_hldh_n[25]  = vddio;
-  assign \mprj_io_hldh_n[24]  = vddio;
-  assign \mprj_io_hldh_n[21]  = vddio;
-  assign \mprj_io_hldh_n[20]  = vddio;
   assign \mprj_io_hldh_n[10]  = vddio;
-  assign \mprj_io_hldh_n[27]  = vddio;
-  assign \mprj_io_hldh_n[26]  = vddio;
-  assign \gpio_serial_link_shifted[36]  = \gpio_serial_link[35] ;
-  assign \mprj_io_hldh_n[22]  = vddio;
-  assign porb_h = \mprj_io_enh[0] ;
-  assign \mprj_io_hldh_n[23]  = vddio;
-  assign \mprj_io_hldh_n[19]  = vddio;
-  assign \mprj_io_hldh_n[18]  = vddio;
-  assign \gpio_serial_link_shifted[35]  = \gpio_serial_link[34] ;
-  assign \gpio_serial_link_shifted[32]  = \gpio_serial_link[31] ;
-  assign \gpio_serial_link_shifted[31]  = \gpio_serial_link[30] ;
+  assign \mprj_io_hldh_n[9]  = vddio;
+  assign \mprj_io_hldh_n[8]  = vddio;
   assign \mprj_io_hldh_n[7]  = vddio;
   assign \mprj_io_hldh_n[6]  = vddio;
-  assign \gpio_serial_link_shifted[26]  = \gpio_serial_link[25] ;
-  assign \gpio_serial_link_shifted[25]  = \gpio_serial_link[24] ;
   assign \mprj_io_hldh_n[5]  = vddio;
   assign \mprj_io_hldh_n[4]  = vddio;
   assign \mprj_io_hldh_n[3]  = vddio;
   assign \mprj_io_hldh_n[2]  = vddio;
   assign \mprj_io_hldh_n[1]  = vddio;
-  assign \mprj_io_hldh_n[17]  = vddio;
-  assign \mprj_io_hldh_n[16]  = vddio;
   assign \mprj_io_hldh_n[0]  = vddio;
-  assign \mprj_io_hldh_n[29]  = vddio;
-  assign \gpio_serial_link_shifted[37]  = \gpio_serial_link[36] ;
-  assign \mprj_io_hldh_n[9]  = vddio;
-  assign \mprj_io_hldh_n[8]  = vddio;
-  assign \mprj_io_hldh_n[37]  = vddio;
+  assign porb_h = \mprj_io_enh[0] ;
   assign mprj_io_loader_data = \gpio_serial_link_shifted[0] ;
 endmodule
