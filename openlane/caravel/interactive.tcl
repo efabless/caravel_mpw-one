@@ -26,12 +26,12 @@ init_floorplan
 
 add_macro_placement padframe 0 0 N
 add_macro_placement storage 260.160 265.780 N
-add_macro_placement soc 1052.110 268.010 N
-add_macro_placement mprj 326.540 1393.580 N
-add_macro_placement mgmt_buffers 1060.900 1234.240 N
+add_macro_placement soc 1052.170 268.010 N
+add_macro_placement mprj 326.540 1393.590 N
+add_macro_placement mgmt_buffers 1060.900 1234.180 N
 add_macro_placement rstb_level 664.480 234.780  S
 add_macro_placement user_id_value 3283.120 404.630 N
-add_macro_placement por 3270.880 522.711 MX
+add_macro_placement por 3270.730 522.721 MX
 
 # west
 set west_x 42.835
