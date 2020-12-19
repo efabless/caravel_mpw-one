@@ -296,7 +296,7 @@ if __name__ == '__main__':
         vlines = ifile.read().splitlines()
         outlines = []
         for line in vlines:
-            oline = re.sub("parameter USER_PROJECT_ID = 32'h00000000;",
+            oline = re.sub("parameter USER_PROJECT_ID = 32'h[0-9A-F]+;",
 			"parameter USER_PROJECT_ID = 32'h" + user_id_value + ";",
 			line)
             if oline != line:
@@ -322,7 +322,7 @@ if __name__ == '__main__':
         for line in maglines:
             if 'alphaX_' in line:
                 dchar = user_id_value[digit].upper()
-                oline = re.sub('alpha_0', 'alpha_' + dchar, line)
+                oline = re.sub('alpha_[0-9A-F]', 'alpha_' + dchar, line)
                 outlines.append(oline)
                 digit += 1
             else:
