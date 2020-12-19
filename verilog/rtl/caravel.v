@@ -124,7 +124,7 @@ module caravel (
     //------------------------------------------------------------
     // This value is uniquely defined for each user project.
     //------------------------------------------------------------
-    parameter USER_PROJECT_ID = 32'h0;
+    parameter USER_PROJECT_ID = 32'h00000000;
 
     // These pins are overlaid on mprj_io space.  They have the function
     // below when the management processor is in reset, or in the default

@@ -109,9 +109,8 @@ if __name__ == '__main__':
         else:
             arguments.append(option)
 
-    if len(arguments) != 1 and len(arguments) != 2:
-        if len(arguments) != 0:
-            print("Wrong number of arguments given to cleanup_unref.py.")
+    if len(arguments) > 2:
+        print("Wrong number of arguments given to cleanup_unref.py.")
         usage()
         sys.exit(0)
 
@@ -131,7 +130,9 @@ if __name__ == '__main__':
         except:
             user_project_path = arguments[0]
 
-    if len(arguments) == 2:
+    if len(arguments) == 0:
+        user_project_path = os.getcwd()
+    elif len(arguments) == 2:
         user_project_path = arguments[1]
     elif user_project_path == None:
         user_project_path = arguments[0]
@@ -149,9 +150,13 @@ if __name__ == '__main__':
             with open(user_project_path + '/info.yaml', 'r') as ifile:
                 infolines = ifile.read().splitlines()
                 for line in infolines:
-                    key, value = line.split(':').trim()
-                    if key == 'project_id':
-                        user_id_value = value.trim('"')
+                    kvpair = line.split(':')
+                    if len(kvpair) == 2:
+                        key = kvpair[0].strip()
+                        value = kvpair[1].strip()
+                        if key == 'project_id':
+                            user_id_value = value.strip('"')
+                            break
 
             if not user_id_value:
                 print('Error:  No project_id key:value pair found in project info.yaml.')
@@ -281,22 +286,32 @@ if __name__ == '__main__':
             
     else:
         print('There were errors in processing.  No file written.')
+        print('Ending process.')
         sys.exit(1)
 
     print('Step 2:  Add user project ID parameter to verilog.')
 
+    changed = False
     with open(vpath + '/rtl/caravel.v', 'r') as ifile:
         vlines = ifile.read().splitlines()
         outlines = []
         for line in vlines:
-            oline = re.sub("parameter USER_PROJECT_ID = 32'h0;",
+            oline = re.sub("parameter USER_PROJECT_ID = 32'h00000000;",
 			"parameter USER_PROJECT_ID = 32'h" + user_id_value + ";",
 			line)
+            if oline != line:
+                changed = True
             outlines.append(oline)
 
-    with open(vpath + '/rtl/caravel.v', 'w') as ofile:
-        for line in outlines:
-            print(line, file=ofile)
+    if changed:
+        with open(vpath + '/rtl/caravel.v', 'w') as ofile:
+            for line in outlines:
+                print(line, file=ofile)
+            print('Done!')
+    else:
+        print('Error:  No substitutions done on verilog/rtl/caravel.v.')
+        print('Ending process.')
+        sys.exit(1)
 
     print('Step 3:  Add user project ID text to top level layout.')
 
@@ -305,7 +320,7 @@ if __name__ == '__main__':
         outlines = []
         digit = 0
         for line in maglines:
-            if 'alpha_0' in line:
+            if 'alphaX_' in line:
                 dchar = user_id_value[digit].upper()
                 oline = re.sub('alpha_0', 'alpha_' + dchar, line)
                 outlines.append(oline)
@@ -313,8 +328,14 @@ if __name__ == '__main__':
             else:
                 outlines.append(line)
 
-    with open(magpath + '/user_id_textblock.mag', 'w') as ofile:
-        for line in outlines:
-            print(line, file=ofile)
+    if digit == 8:
+        with open(magpath + '/user_id_textblock.mag', 'w') as ofile:
+            for line in outlines:
+                print(line, file=ofile)
+        print('Done!')
+    elif digit == 0:
+        print('Error:  No digits were replaced in the layout.')
+    else:
+        print('Error:  Only ' + str(digit) + ' digits were replaced in the layout.')
 
     sys.exit(0)
