@@ -110,7 +110,7 @@ if __name__ == '__main__':
             arguments.append(option)
 
     if len(arguments) > 2:
-        print("Wrong number of arguments given to cleanup_unref.py.")
+        print("Wrong number of arguments given to set_user_id.py.")
         usage()
         sys.exit(0)
 

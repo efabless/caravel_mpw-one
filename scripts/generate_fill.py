@@ -26,14 +26,17 @@ import re
 import subprocess
 
 def usage():
-    print("generate_fill.py [layout_name] [-keep]")
+    print("Usage:")
+    print("generate_fill.py [<path_to_project>] [-keep]")
+    print("")
+    print("where:")
+    print("    <path_to_project> is the path to the project top level directory.")
+    print("")
+    print("  If <path_to_project> is not given, then it is assumed to be the cwd.")
+    print("  If '-keep' is specified, then keep the generation script.")
     return 0
 
 if __name__ == '__main__':
-
-    if len(sys.argv) == 1:
-        usage()
-        sys.exit(0)
 
     optionlist = []
     arguments = []
@@ -50,22 +53,47 @@ if __name__ == '__main__':
     if len(arguments) > 1:
         print("Wrong number of arguments given to generate_fill.py.")
         usage()
-        sys.exit(0)
+        sys.exit(1)
 
     if len(arguments) == 1:
-        project = arguments[0]
+        user_project_path = arguments[0]
     else:
-        project = 'caravel'
+        user_project_path = os.getcwd()
+
+    if not os.path.isdir(user_project_path):
+        print('Error:  Project path "' + user_project_path + '" does not exist or is not readable.')
+        sys.exit(1)
+
+    # Check for valid user ID
+    user_id_value = None
+    if os.path.isfile(user_project_path + '/info.yaml'):
+        with open(user_project_path + '/info.yaml', 'r') as ifile:
+            infolines = ifile.read().splitlines()
+            for line in infolines:
+                kvpair = line.split(':')
+                if len(kvpair) == 2:
+                    key = kvpair[0].strip()
+                    value = kvpair[1].strip()
+                    if key == 'project_id':
+                        user_id_value = value.strip('"')
+                        break
+
+    project = 'caravel'
+    if user_id_value:
+        project_with_id = project + '_' + user_id_value
+    else:
+        print('Error:  No project_id found in info.yaml file.')
+        sys.exit(1)
 
     if '-debug' in optionlist:
         debugmode = True
     if '-keep' in optionlist:
         keepmode = True
 
-    magdir = '../mag'
-    rcfile = magdir + '/.magicrc'
+    magpath = user_project_path + '/mag'
+    rcfile = magpath + '/.magicrc'
 
-    with open(magdir + '/generate_fill.tcl', 'w') as ofile:
+    with open(magpath + '/generate_fill.tcl', 'w') as ofile:
         print('#!/bin/env wish', file=ofile)
         print('drc off', file=ofile)
         print('load ' + project + ' -dereference', file=ofile)
@@ -74,25 +102,25 @@ if __name__ == '__main__':
 
         # Flatten into a cell with a new name
         print('puts stdout "Flattening layout. . . "', file=ofile)
-        print('flatten -nolabels ' + project + '_fill_pattern', file=ofile)
-        print('load ' + project + '_fill_pattern', file=ofile)
+        print('flatten -nolabels ' + project_with_id + '_fill_pattern', file=ofile)
+        print('load ' + project_with_id + '_fill_pattern', file=ofile)
 
         # Remove any GDS_FILE reference
         print('property GDS_FILE ""', file=ofile)
         print('cif ostyle wafflefill', file=ofile)
         print('puts stdout "Writing GDS. . . "', file=ofile)
-        print('gds write ../gds/' + project + '_fill_pattern.gds', file=ofile)
+        print('gds write ../gds/' + project_with_id + '_fill_pattern.gds', file=ofile)
         print('quit -noprompt', file=ofile)
 
     myenv = os.environ.copy()
     myenv['MAGTYPE'] = 'mag'
 
     mproc = subprocess.run(['magic', '-dnull', '-noconsole',
-		'-rcfile', rcfile, magdir + '/generate_fill.tcl'],
+		'-rcfile', rcfile, magpath + '/generate_fill.tcl'],
 		stdin = subprocess.DEVNULL,
 		stdout = subprocess.PIPE,
 		stderr = subprocess.PIPE,
-		cwd = magdir,
+		cwd = magpath,
 		env = myenv,
 		universal_newlines = True)
     if mproc.stdout:
@@ -106,6 +134,6 @@ if __name__ == '__main__':
             print('ERROR:  Magic exited with status ' + str(mproc.returncode))
 
     if not keepmode:
-        os.remove(magdir + '/generate_fill.tcl')
+        os.remove(magpath + '/generate_fill.tcl')
 
     exit(0)
