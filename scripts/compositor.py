@@ -156,9 +156,21 @@ if __name__ == '__main__':
         for line in mproc.stdout.splitlines():
             print(line)
     if mproc.stderr:
-        print('Error message output from magic:')
+        # NOTE:  Until there is a "load -quiet" option in magic, loading
+        # a new cell generates an error.  This code ignores the error.
+        newlines = []
         for line in mproc.stderr.splitlines():
-            print(line)
+            if line.endswith("_fill_pattern.mag couldn't be read"):
+                continue
+            if line.startswith("No such file or directory"):
+                continue
+            else:
+                newlines.append(line)
+
+        if len(newlines) > 0:
+            print('Error message output from magic:')
+            for line in newlines:
+                print(line)
         if mproc.returncode != 0:
             print('ERROR:  Magic exited with status ' + str(mproc.returncode))
 
