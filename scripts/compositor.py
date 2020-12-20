@@ -142,6 +142,8 @@ if __name__ == '__main__':
     # Abstract views are appropriate for final composition
     myenv['MAGTYPE'] = 'maglef'
 
+    print('Building final GDS file ' + project_with_id + '.gds', flush=True)
+
     mproc = subprocess.run(['magic', '-dnull', '-noconsole',
 		'-rcfile', rcfile, magpath + '/compose_final.tcl'],
 		stdin = subprocess.DEVNULL,
@@ -163,4 +165,5 @@ if __name__ == '__main__':
     if not keepmode:
         os.remove(magpath + '/compose_final.tcl')
 
+    print('Done!')
     exit(0)

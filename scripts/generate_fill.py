@@ -115,6 +115,10 @@ if __name__ == '__main__':
     myenv = os.environ.copy()
     myenv['MAGTYPE'] = 'mag'
 
+    # Diagnostic
+    print('This script will generate file ' + project_with_id + '_fill_pattern.gds')
+    print('Now generating fill patterns.  This may take. . . quite. . . a while.', flush=True)
+
     mproc = subprocess.run(['magic', '-dnull', '-noconsole',
 		'-rcfile', rcfile, magpath + '/generate_fill.tcl'],
 		stdin = subprocess.DEVNULL,
@@ -136,4 +140,5 @@ if __name__ == '__main__':
     if not keepmode:
         os.remove(magpath + '/generate_fill.tcl')
 
+    print('Done!')
     exit(0)
