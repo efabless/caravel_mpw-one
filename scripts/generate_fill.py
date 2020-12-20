@@ -75,7 +75,7 @@ if __name__ == '__main__':
                     key = kvpair[0].strip()
                     value = kvpair[1].strip()
                     if key == 'project_id':
-                        user_id_value = value.strip('"')
+                        user_id_value = value.strip('"\'')
                         break
 
     project = 'caravel'
