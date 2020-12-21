@@ -22,6 +22,8 @@
  *
  *  Also: Made ram_wenb a 4-bit bus so that the memory access can be made
  *  byte-wide for byte-wide instructions.
+ *
+ *  SPDX-License-Identifier: ISC
  */
 
 `ifdef PICORV32_V
