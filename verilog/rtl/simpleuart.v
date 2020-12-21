@@ -1,5 +1,6 @@
 `default_nettype none
 /*
+ *  SPDX-FileCopyrightText: 2015 Clifford Wolf
  *  PicoSoC - A simple example SoC using PicoRV32
  *
  *  Copyright (C) 2017  Clifford Wolf <clifford@clifford.at>

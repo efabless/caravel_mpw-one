@@ -1,5 +1,6 @@
 `default_nettype none
 /*
+ *  SPDX-FileCopyrightText: 2015 Clifford Wolf
  *  PicoRV32 -- A Small RISC-V (RV32I) Processor Core
  *
  *  Copyright (C) 2015  Clifford Wolf <clifford@clifford.at>
