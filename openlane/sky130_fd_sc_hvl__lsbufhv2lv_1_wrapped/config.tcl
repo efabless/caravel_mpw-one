@@ -31,13 +31,31 @@ set ::env(CELL_PAD) 0
 
 set ::env(PL_RANDOM_GLB_PLACEMENT) 1
 
-set ::env(FP_SIZING) absolute
-set ::env(DIE_AREA) "0 0 25 25"
-set ::env(BOTTOM_MARGIN_MULT) 0
-set ::env(TOP_MARGIN_MULT) 0
-set ::env(LEFT_MARGIN_MULT) 0
-set ::env(RIGHT_MARGIN_MULT) 0
+set ::env(FP_PDN_AUTO_ADJUST) 0
+set ::env(DESIGN_IS_CORE) 0
 
-set ::env(PLACE_SITE) "unithvdbl"
+set ::env(FP_PDN_VOFFSET) 2
+
+set ::env(FP_PDN_VWIDTH) 0.9
+set ::env(FP_PDN_VPITCH) 13
+set ::env(FP_PDN_VSPACING) 3.5
+
+set ::env(FP_SIZING) absolute
+set ::env(DIE_AREA) "0 0 20 17"
+set ::env(BOTTOM_MARGIN_MULT) 1
+set ::env(TOP_MARGIN_MULT) 0
+set ::env(LEFT_MARGIN_MULT) 5
+set ::env(RIGHT_MARGIN_MULT) 5
+
+set ::env(PLACE_SITE) "unithv"
 set ::env(PLACE_SITE_WIDTH) 0.480
-set ::env(PLACE_SITE_HEIGHT) 8.14
+set ::env(PLACE_SITE_HEIGHT) 4.07
+
+set ::env(SYNTH_USE_PG_PINS_DEFINES) "USE_POWER_PINS"
+
+set ::env(DIODE_INSERTION_STRATEGY) 4
+
+set ::env(FP_IO_VEXTEND) 2
+set ::env(FP_IO_HEXTEND) 2
+
+set ::env(GLB_RT_TILES) 10
