@@ -688,9 +688,7 @@ module caravel (
     sky130_fd_sc_hvl__lsbufhv2lv_1_wrapped rstb_level (
 `ifdef USE_POWER_PINS
 		.VPWR(vddio),
-		.VPB(vddio),
 		.LVPWR(vccd),
-		.VNB(vssio),
 		.VGND(vssio),
 `endif
 		.A(rstb_h),
