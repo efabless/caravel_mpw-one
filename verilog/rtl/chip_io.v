@@ -121,9 +121,8 @@ module chip_io(
     	sky130_ef_io__vccd_lvc_clamped_pad mgmt_vccd_lvclamp_pad (
 		`MGMT_ABUTMENT_PINS
 `ifdef TOP_ROUTING
-		.VCCD(vccd),
+		.VCCD(vccd)
 `endif
-		`LVCLAMP_PINS(vccd, vssio, vccd, vssd, vssa)
     	);
 
     	sky130_ef_io__vssio_hvc_clamped_pad \mgmt_vssio_hvclamp_pad[0]  (
