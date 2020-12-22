@@ -158,6 +158,7 @@ save_views       -lef_path $::env(magic_result_file_tag).lef \
                  -mag_path $::env(magic_result_file_tag).mag \
                  -maglef_path $::env(magic_result_file_tag).lef.mag \
 				 -verilog_path $::env(TMP_DIR)/lvs.v \
+				 -spice_path $::env(magic_result_file_tag).spice \
                  -save_path $save_path \
                  -tag $::env(RUN_TAG)
 

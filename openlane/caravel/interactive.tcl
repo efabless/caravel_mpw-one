@@ -143,13 +143,15 @@ label_macro_pins\
 
 run_magic
 
+run_magic_spice_export
+
 save_views       -lef_path $::env(magic_result_file_tag).lef \
                  -def_path $::env(tritonRoute_result_file_tag).def \
                  -gds_path $::env(magic_result_file_tag).gds \
                  -mag_path $::env(magic_result_file_tag).mag \
 				 -verilog_path $::env(TMP_DIR)/lvs.v \
+				 -spice_path $::env(magic_result_file_tag).spice \
                  -save_path $save_path \
                  -tag $::env(RUN_TAG)
 
-run_magic_spice_export
 run_lvs $::env(magic_result_file_tag).spice $::env(TMP_DIR)/lvs.v
