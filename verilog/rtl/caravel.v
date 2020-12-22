@@ -387,7 +387,7 @@ module caravel (
     mgmt_core soc (
 	`ifdef USE_POWER_PINS
 		.VPWR(vccd),
-		.VGND(vssa),
+		.VGND(vssd),
 	`endif
 		// GPIO (1 pin)
 		.gpio_out_pad(gpio_out_core),

@@ -3585,7 +3585,7 @@ module caravel(vddio, vssio, vdda, vssa, vccd, vssd, vdda1, vdda2, vssa1, vssa2,
     .X(rstb_l)
   );
   mgmt_core soc (
-    .VGND(vssa),
+    .VGND(vssd),
     .VPWR(vccd),
     .clock(clock_core),
     .core_clk(caravel_clk),
