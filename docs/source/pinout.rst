@@ -269,25 +269,25 @@ Pin description (6x10 WLCSP)
 
         ``spi_sdo``
       - Digital out
-      - Serial interface master data output
+      - Serial interface controller data output
     * - F8
       - .. _spi_sck:
 
         ``spi_sck``
       - Digital out
-      - Serial interface master clock
+      - Serial interface controller clock
     * - E8
       - .. _spi_csb:
 
         ``spi_csb``
       - Digital out
-      - Serial interface master chip select
+      - Serial interface controller chip select
     * - E9
       - .. _spi_sdi:
 
         ``spi_sdi``
       - Digital in
-      - Serial interface masterdata input
+      - Serial interface controller data input
     * - C4
       - .. _vddio:
 

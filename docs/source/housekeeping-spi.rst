@@ -1,7 +1,7 @@
 Housekeeping SPI
 ================
 
-The "housekeeping" SPI is an SPI slave that can be accessed from a remote host through a standard 4-pin serial interface.
+The "housekeeping" SPI is an SPI responder that can be accessed from a remote host through a standard 4-pin serial interface.
 The SPI implementation is mode 0, with new data on ``SDI`` captured on the ``SCK`` rising edge, and output data presented on the falling edge of ``SCK`` (to be sampled on the next ``SCK`` rising edge).
 The SPI pins are shared with user area GPIO.
 
@@ -73,7 +73,7 @@ The first transferred byte is the command word, interpreted according to the :re
     * - ``11nnn000``
       - Simultaneous Read/Write in n-byte mode (up to 7 bytes)
 
-.. note:: All other words are reserved and act as no-operation if not defined by the SPI slave module.
+.. note:: All other words are reserved and act as no-operation if not defined by the SPI responder module.
 
 .. _housekeeping_spi_modes:
 
@@ -120,9 +120,9 @@ Some control registers in the housekeeping SPI affect the behaviour of the CPU i
 Under normal working conditions, the SPI should not need to be accessed unless it is to adjust the clock speed of the CPU.
 All other functions are purely for test and debug.
 
-The housekeeping SPI can be accessed by the CPU from a running program by enabling the SPI master, and enabling the bit that connects the internal SPI master directly to the housekeeping SPI.
+The housekeeping SPI can be accessed by the CPU from a running program by enabling the SPI controller, and enabling the bit that connects the internal SPI controller directly to the housekeeping SPI.
 This configuration then allows a program to read, for example, the user project ID of the chip.
-See the :doc:`SPI master description <spi>` for details.
+See the :doc:`SPI controller description <spi>` for details.
 
 .. figure:: _static/housekeeping_spi_register_map.svg
     :name: housekeeping_spi_register_map

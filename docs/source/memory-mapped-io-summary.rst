@@ -47,9 +47,9 @@ Memory Mapped I/O summary
     * - `0x 23 00 00 08`
       - Counter/Timer 1 reset value (:ref:`reg_timer1_data`)
     * - `0x 24 00 00 00`
-      - SPI master configuration register (:ref:`reg_spi_config`)
+      - SPI controller configuration register (:ref:`reg_spi_config`)
     * - `0x 24 00 00 08`
-      - SPI master data register (:ref:`reg_spi_data`)
+      - SPI controller data register (:ref:`reg_spi_data`)
     * - `0x 25 00 00 00`
       - Logic Analyzer Data 0
     * - `0x 25 00 00 04`
@@ -94,12 +94,12 @@ Memory Mapped I/O summary
       - IRQ 7 input source (:ref:`reg_irq7_source`)
     * - `0x 30 00 00 0`
       - User area base.
-        A user project may define additional Wishbone slave modules starting at this address.
+        A user project may define additional Wishbone responder modules starting at this address.
     * - `0x 80 00 00 00`
       - QSPI controller
     * - `0x 90 00 00 00`
       - :ref:`storage-area-sram`
     * - `0x a0 00 00 00`
-      - Any slave 1
+      - Any responder 1
     * - `0x b0 00 00 00`
-      - Any slave 2
+      - Any responder 2

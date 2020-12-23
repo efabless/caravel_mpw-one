@@ -19,7 +19,7 @@ The documentation contains the following chapters:
 * :doc:`description` contains the general information about the Efabless Caravel "harness" SoC,
 * :doc:`pinout` describes the pinout of the SoC,
 * :doc:`gpio` describes GPIO and its registers,
-* :doc:`housekeeping-spi` describes the SPI slave that can be accessed from a remote host,
+* :doc:`housekeeping-spi` describes the SPI responder that can be accessed from a remote host,
 * :doc:`qspi-flash` describes the QSPI flash controller,
 * :doc:`external-clock` describes  the source external clock for the CPU,
 * :doc:`uart` describes the UART interface,

@@ -19,7 +19,7 @@ Functions/features of the SoC include:
 
 * 1 SPI flash controller,
 * 1 UART,
-* 1 SPI master,
+* 1 SPI controller,
 * 2 counter-timers,
 * 1 dedicated GPIO channel,
 * 27 shared GPIO channels,

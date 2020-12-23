@@ -1,5 +1,5 @@
-SPI Master
-==========
+SPI Controller
+==============
 
 This section describes the SPI configuration registers.
 
@@ -45,9 +45,9 @@ Base address: ``0x24000000``
       - Values
     * - 15
       - Housekeeping
-      - 0 - SPI master connected to external pins
+      - 0 - SPI controller connected to external pins
 
-        1 - SPI master connected directly to housekeeping SPI
+        1 - SPI controller connected directly to housekeeping SPI
     * - 14
       - SPI interrupt enable
       - 0 - interrupt disabled
@@ -85,7 +85,7 @@ Base address: ``0x24000000``
         1 - LSB first
     * - 7-0
       - prescaler
-      - count (in master clock cycles) of 1/2 :ref:`SCK <sck>` cycle
+      - count (in controller clock cycles) of 1/2 :ref:`SCK <sck>` cycle
         (default value 2). Clock rate formula:
         `SPI clock rate = 2 * core_clock / (prescaler + 1)`
      
@@ -112,7 +112,7 @@ Base address: ``0x24000004``
 
 The byte at ``0x24000004`` holds the SPI data (either read or write).
 
-Reading to and writing from the SPI master is simply a matter of setting the required values in the configuration register, and writing values to or reading from ``reg_spi_data``.
+Reading to and writing from the SPI controller is simply a matter of setting the required values in the configuration register, and writing values to or reading from ``reg_spi_data``.
 The protocol is similar to the UART.
 
 A write operation will stall the CPU if an incomplete SPI transmission is still in progress.
@@ -123,4 +123,4 @@ Therefore SPI reads and writes are relatively expensive operations that tie up t
 
 .. note::
 
-    There is no FIFO associated with the SPI master.
+    There is no FIFO associated with the SPI controller.

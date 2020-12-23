@@ -23,7 +23,7 @@ All IRQ channels not in the :ref:`cpu_irq_channel_definitions` always have value
     * - 7
       - Assignable interrupt (see :ref:`reg_irq7_source`)
     * - 9
-      - SPI master data available, when enabled (see :ref:`reg_spi_config`) 
+      - SPI controller data available, when enabled (see :ref:`reg_spi_config`) 
     * - 10
       - Timer 0 expired, when enabled (see :ref:`reg_timer0_config`)
     * - 11
