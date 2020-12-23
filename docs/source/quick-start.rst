@@ -1,5 +1,5 @@
-Quick start
-===========
+User project quick start guide
+==============================
 
 This section describes how to get going with the `efabless/caravel repository <https://github.com/efabless/caravel>`_ by adding a user project to the harness and merging the ``.gds`` files to create your own ``caravel.gds``.
 
