@@ -15,6 +15,8 @@
 #
 # SPDX-License-Identifier: Apache-2.0
 -->
+[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0) [![Documentation Status](https://readthedocs.org/projects/caravel-harness/badge/?version=latest)](https://caravel-harness.readthedocs.io/en/latest/?badge=latest) [![Build Status](https://travis-ci.com/efabless/openlane.svg?branch=master)](https://travis-ci.com/efabless/openlane)
+
 # CIIC Harness  
 
 A template SoC for Google SKY130 free shuttles. It is still WIP. The current SoC architecture is given below.
@@ -23,6 +25,7 @@ A template SoC for Google SKY130 free shuttles. It is still WIP. The current SoC
 <img src="/doc/ciic_harness.png" width="75%" height="75%"> 
 </p>
 
+Datasheet and detailed documentation exists here: https://caravel-harness.readthedocs.io/en/develop/
 
 ## Getting Started:
 

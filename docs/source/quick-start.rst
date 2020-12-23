@@ -124,11 +124,11 @@ In many cases it will be sufficient, to just replace ``user_proj_example`` with 
 Placement macro
 ^^^^^^^^^^^^^^^
 
-If your design is different in size to the example you should adjust the position, where your module will be placed inside the wrapper. This can be done in ``user_project_wrapper/interactive.tcl``:
+If your design is different in size to the example you should adjust the position, where your module will be placed inside the wrapper. This can be done in ``user_project_wrapper/macro.cfg``:
 
 .. code-block:: tcl
 
-   add_macro_placement mprj 850 1100 N
+   mprj 850 1100 N
 
 In this case 850/1100 specify the X/Y position of the macro. The size of the wrapper can be found in ``user_project_wrapper/config.tcl``, with that and the size of your design you can figure out, where you need to place your design.
 
