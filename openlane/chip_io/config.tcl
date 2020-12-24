@@ -46,3 +46,5 @@ set ::env(GLB_RT_MAXLAYER) 4
 set ::env(GLB_RT_UNIDIRECTIONAL) 0
 # set ::env(GLB_RT_ALLOW_CONGESTION) 1
 # set ::env(GLB_RT_OVERFLOW_ITERS) 150
+
+set ::env(LVS_CONNECT_BY_LABEL) 1
