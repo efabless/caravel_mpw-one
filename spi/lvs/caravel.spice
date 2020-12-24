@@ -1655,8 +1655,8 @@ Xmprj mprj/analog_io[0] mprj/analog_io[10] mprj/analog_io[11] mprj/analog_io[12]
 + soc/mprj_dat_i[27] soc/mprj_dat_i[28] soc/mprj_dat_i[29] soc/mprj_dat_i[2] soc/mprj_dat_i[30]
 + soc/mprj_dat_i[31] soc/mprj_dat_i[3] soc/mprj_dat_i[4] soc/mprj_dat_i[5] soc/mprj_dat_i[6]
 + soc/mprj_dat_i[7] soc/mprj_dat_i[8] soc/mprj_dat_i[9] mprj/wbs_sel_i[0] mprj/wbs_sel_i[1]
-+ mprj/wbs_sel_i[2] mprj/wbs_sel_i[3] mprj/wbs_stb_i mprj/wbs_we_i mprj/vccd1 mprj/vssd1
-+ mprj/vccd2 mprj/vssd2 mprj/vdda1 mprj/vssa1 mprj/vdda2 mprj/vssa2 user_project_wrapper
++ mprj/wbs_sel_i[2] mprj/wbs_sel_i[3] mprj/wbs_stb_i mprj/wbs_we_i vccd1 vssd1 vccd2
++ vssd2 vdda1 vssa1 vdda2 vssa2 user_project_wrapper
 Xgpio_control_in\[14\] soc/mgmt_in_data[14] gpio_control_in\[14\]/one soc/mgmt_in_data[14]
 + gpio_control_in\[14\]/one padframe/mprj_io_analog_en[14] padframe/mprj_io_analog_pol[14]
 + padframe/mprj_io_analog_sel[14] padframe/mprj_io_dm[42] padframe/mprj_io_dm[43]
