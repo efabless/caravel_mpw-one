@@ -1051,7 +1051,7 @@ Xsoc soc/clock soc/core_clk soc/core_rstn soc/flash_clk soc/flash_clk_ieb soc/fl
 + soc/mprj_io_loader_resetn soc/mprj_sel_o[0] soc/mprj_sel_o[1] soc/mprj_sel_o[2]
 + soc/mprj_sel_o[3] soc/mprj_stb_o soc/mprj_vcc_pwrgood soc/mprj_vdd_pwrgood soc/mprj_we_o
 + soc/porb pwr_ctrl_out[0] pwr_ctrl_out[1] pwr_ctrl_out[2] pwr_ctrl_out[3] soc/resetb
-+ soc/sdo_out soc/sdo_outenb soc/user_clk soc/VPWR soc/VGND mgmt_core
++ soc/sdo_out soc/sdo_outenb soc/user_clk vccd vssd mgmt_core
 Xgpio_control_in\[19\] soc/mgmt_in_data[19] gpio_control_in\[19\]/one soc/mgmt_in_data[19]
 + gpio_control_in\[19\]/one padframe/mprj_io_analog_en[19] padframe/mprj_io_analog_pol[19]
 + padframe/mprj_io_analog_sel[19] padframe/mprj_io_dm[57] padframe/mprj_io_dm[58]
@@ -1072,7 +1072,7 @@ Xgpio_control_in\[31\] soc/mgmt_in_data[31] gpio_control_in\[31\]/one soc/mgmt_i
 + mprj/io_in[31] mprj/io_oeb[31] mprj/io_out[31] gpio_control_in\[31\]/zero gpio_control_in\[31\]/vccd
 + gpio_control_in\[31\]/vssd gpio_control_in\[31\]/vccd1 gpio_control_in\[31\]/vssd1
 + gpio_control_block
-Xpor por/vdd3v3 por/vdd1v8 por/vss por/porb_h por/por_l soc/porb simple_por
+Xpor vddio vccd vssio por/porb_h por/por_l soc/porb simple_por
 Xgpio_control_in\[24\] soc/mgmt_in_data[24] gpio_control_in\[24\]/one soc/mgmt_in_data[24]
 + gpio_control_in\[24\]/one padframe/mprj_io_analog_en[24] padframe/mprj_io_analog_pol[24]
 + padframe/mprj_io_analog_sel[24] padframe/mprj_io_dm[72] padframe/mprj_io_dm[73]
@@ -1138,8 +1138,7 @@ Xuser_id_value soc/mask_rev[0] soc/mask_rev[10] soc/mask_rev[11] soc/mask_rev[12
 + soc/mask_rev[22] soc/mask_rev[23] soc/mask_rev[24] soc/mask_rev[25] soc/mask_rev[26]
 + soc/mask_rev[27] soc/mask_rev[28] soc/mask_rev[29] soc/mask_rev[2] soc/mask_rev[30]
 + soc/mask_rev[31] soc/mask_rev[3] soc/mask_rev[4] soc/mask_rev[5] soc/mask_rev[6]
-+ soc/mask_rev[7] soc/mask_rev[8] soc/mask_rev[9] user_id_value/VPWR user_id_value/VGND
-+ user_id_programming
++ soc/mask_rev[7] soc/mask_rev[8] soc/mask_rev[9] vccd vssd user_id_programming
 Xgpio_control_in\[20\] soc/mgmt_in_data[20] gpio_control_in\[20\]/one soc/mgmt_in_data[20]
 + gpio_control_in\[20\]/one padframe/mprj_io_analog_en[20] padframe/mprj_io_analog_pol[20]
 + padframe/mprj_io_analog_sel[20] padframe/mprj_io_dm[60] padframe/mprj_io_dm[61]
@@ -1409,11 +1408,9 @@ Xmgmt_buffers soc/core_clk soc/user_clk soc/core_rstn mprj/la_data_in[0] mprj/la
 + soc/mprj_sel_o[3] mprj/wbs_sel_i[0] mprj/wbs_sel_i[1] mprj/wbs_sel_i[2] mprj/wbs_sel_i[3]
 + soc/mprj_stb_o mprj/wbs_stb_i soc/mprj_we_o mprj/wbs_we_i soc/mprj_vcc_pwrgood soc/mprj_vdd_pwrgood
 + soc/mprj2_vcc_pwrgood soc/mprj2_vdd_pwrgood mprj/wb_clk_i mprj/user_clock2 mprj/wb_rst_i
-+ mgmt_buffers/user_resetn mgmt_buffers/vccd mgmt_buffers/vssd mgmt_buffers/vccd1
-+ mgmt_buffers/vssd1 mgmt_buffers/vccd2 mgmt_buffers/vssd2 mgmt_buffers/vdda1 mgmt_buffers/vssa1
-+ mgmt_buffers/vdda2 mgmt_buffers/vssa2 mgmt_protect
-Xrstb_level rstb_level/A soc/resetb rstb_level/VPWR rstb_level/VGND rstb_level/LVPWR
-+ rstb_level/LVGND sky130_fd_sc_hvl__lsbufhv2lv_1_wrapped
++ mgmt_buffers/user_resetn vccd vssd vccd1 vssd1 vccd2 vssd2 vdda1 vssa1 vdda2 vssa2
++ mgmt_protect
+Xrstb_level rstb_level/A soc/resetb vddio vssio vccd rstb_level/LVGND sky130_fd_sc_hvl__lsbufhv2lv_1_wrapped
 Xgpio_control_in\[27\] soc/mgmt_in_data[27] gpio_control_in\[27\]/one soc/mgmt_in_data[27]
 + gpio_control_in\[27\]/one padframe/mprj_io_analog_en[27] padframe/mprj_io_analog_pol[27]
 + padframe/mprj_io_analog_sel[27] padframe/mprj_io_dm[81] padframe/mprj_io_dm[82]
@@ -1740,8 +1737,7 @@ Xstorage soc/mgmt_addr[0] soc/mgmt_addr[1] soc/mgmt_addr[2] soc/mgmt_addr[3] soc
 + soc/mgmt_wdata[3] soc/mgmt_wdata[4] soc/mgmt_wdata[5] soc/mgmt_wdata[6] soc/mgmt_wdata[7]
 + soc/mgmt_wdata[8] soc/mgmt_wdata[9] soc/mgmt_wen[0] soc/mgmt_wen[1] soc/mgmt_wen_mask[0]
 + soc/mgmt_wen_mask[1] soc/mgmt_wen_mask[2] soc/mgmt_wen_mask[3] soc/mgmt_wen_mask[4]
-+ soc/mgmt_wen_mask[5] soc/mgmt_wen_mask[6] soc/mgmt_wen_mask[7] storage/VPWR storage/VGND
-+ storage
++ soc/mgmt_wen_mask[5] soc/mgmt_wen_mask[6] soc/mgmt_wen_mask[7] vccd vssd storage
 Xgpio_control_in\[35\] soc/mgmt_in_data[35] gpio_control_in\[35\]/one soc/mgmt_in_data[35]
 + gpio_control_in\[35\]/one padframe/mprj_io_analog_en[35] padframe/mprj_io_analog_pol[35]
 + padframe/mprj_io_analog_sel[35] padframe/mprj_io_dm[105] padframe/mprj_io_dm[106]
