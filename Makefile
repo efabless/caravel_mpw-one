@@ -157,6 +157,15 @@ $(DRC_BLOCKS): drc-% : ./gds/%.gds
 	cd gds && export DESIGN_IN_DRC=$* && export MAGTYPE=mag; magic -rcfile ${PDK_ROOT}/sky130A/libs.tech/magic/current/sky130A.magicrc -noc -dnull drc_on_gds.tcl < /dev/null
 	@echo "DRC result: ./gds/tmp/$*.drc"
 
+# Antenna
+BLOCKS = $(shell cd openlane && find * -maxdepth 0 -type d)
+ANTENNA_BLOCKS = $(foreach block, $(BLOCKS), antenna-$(block))
+$(ANTENNA_BLOCKS): antenna-% : ./gds/%.gds
+	echo "Running Antenna Checks on $*"
+	mkdir -p ./gds/tmp
+	cd gds && export DESIGN_IN_ANTENNA=$* && export MAGTYPE=mag; magic -rcfile ${PDK_ROOT}/sky130A/libs.tech/magic/current/sky130A.magicrc -noc -dnull antenna_on_gds.tcl < /dev/null 2>&1 | tee ./tmp/$*.antenna
+	@echo "Antenna result: ./gds/tmp/$*.antenna"
+
 mag2gds: check-env
 	echo "\
 		gds readonly true; \
