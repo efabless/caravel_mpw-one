@@ -243,3 +243,9 @@ check-env:
 ifndef PDK_ROOT
 	$(error PDK_ROOT is undefined, please export it before running make)
 endif
+
+# Make README.rst
+README.rst: README.src.rst docs/source/getting_started.rst docs/source/tool_versioning.rst Makefile
+	pip -q install rst_include && \
+	rm -f README.rst && \
+		rst_include include README.src.rst - > README.rst
