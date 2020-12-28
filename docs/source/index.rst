@@ -38,9 +38,9 @@ Efabless Caravel "harness" SoC
    :maxdepth: 1
 
    description
-   getting_started
+   getting-started
    quick-start
-   caravel_with_openlane
+   caravel-with-openlane
    pinout
    gpio
    housekeeping-spi

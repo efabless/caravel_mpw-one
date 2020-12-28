@@ -215,4 +215,4 @@ counter. Three firmware examples are provided:
    value for five clock cylcles:
    `LA\_Test2 <https://github.com/efabless/caravel/blob/master/verilog/dv/caravel/user_proj_example/la_test2>`__.
 
-.. include:: ./tool_versioning.rst
+.. include:: ./tool-versioning.rst

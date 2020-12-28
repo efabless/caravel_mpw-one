@@ -19,4 +19,4 @@
    -->
 
 
-.. include:: ../docs/source/caravel_with_openlane.rst
+.. include:: ../docs/source/caravel-with-openlane.rst

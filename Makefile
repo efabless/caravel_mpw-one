@@ -245,7 +245,7 @@ ifndef PDK_ROOT
 endif
 
 # Make README.rst
-README.rst: README.src.rst docs/source/getting_started.rst docs/source/tool_versioning.rst openlane/README.src.rst docs/source/caravel_with_openlane.rst Makefile
+README.rst: README.src.rst docs/source/getting-started.rst docs/source/tool-versioning.rst openlane/README.src.rst docs/source/caravel-with-openlane.rst Makefile
 	pip -q install rst_include && \
 	rm -f README.rst && \
 		rst_include include README.src.rst - | sed -e's@\.\/\_static@\/docs\/source\/\_static@g' > README.rst && \
