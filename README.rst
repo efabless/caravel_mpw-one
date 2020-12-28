@@ -18,10 +18,10 @@
    # SPDX-License-Identifier: Apache-2.0
    -->
 
-|License| |Documentation Status| |Build Status|
-
 CIIC Harness
 ============
+
+|License| |Documentation Status| |Build Status|
 
 A template SoC for Google SKY130 free shuttles. It is still WIP. The
 current SoC architecture is given below.
@@ -29,7 +29,7 @@ current SoC architecture is given below.
 .. raw:: html
 
    <p align="center">
-   <img src="/doc/ciic_harness.png" width="75%" height="75%">
+   <img src="/docs/source/_static/ciic_harness.png" width="75%" height="75%">
    </p>
 
 Datasheet and detailed documentation exists here:
@@ -39,7 +39,7 @@ Getting Started:
 ----------------
 
 -  For information on tooling and versioning, please refer to
-   `this <mpw-one-b.md>`__.
+   `this <mpw-one-b.rst>`__.
 
 Start by cloning the repo and uncompressing the files.
 
@@ -214,7 +214,7 @@ The repository contains a `sample user project </verilog/rtl/user_proj_example.v
 .. raw:: html
 
    <p align="center">
-   <img src="/doc/counter_32.png" width="50%" height="50%">
+   <img src="/docs/source/_static/counter_32.png" width="50%" height="50%">
    </p>
 
 The firmware running on the Management Area SoC, configures the I/O pads
