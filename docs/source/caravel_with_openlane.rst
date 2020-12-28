@@ -18,26 +18,6 @@
    # SPDX-License-Identifier: Apache-2.0
    -->
 
-.. raw:: html
-
-   <!---
-   # SPDX-FileCopyrightText: 2020 Efabless Corporation
-   #
-   # Licensed under the Apache License, Version 2.0 (the "License");
-   # you may not use this file except in compliance with the License.
-   # You may obtain a copy of the License at
-   #
-   #      http://www.apache.org/licenses/LICENSE-2.0
-   #
-   # Unless required by applicable law or agreed to in writing, software
-   # distributed under the License is distributed on an "AS IS" BASIS,
-   # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-   # See the License for the specific language governing permissions and
-   # limitations under the License.
-   #
-   # SPDX-License-Identifier: Apache-2.0
-   -->
-
 .. _carave-with-openlane:
 
 Using OpenLANE to Harden Your Design
@@ -138,9 +118,9 @@ Option 2
 --------
 
 #. Add your design to the RTL of the
-   `user\_project\_wrapper <../verilog/rtl/user_project_wrapper.v>`__.
+   `user\_project\_wrapper <https://github.com/efabless/caravel/blob/master/verilog/rtl/user_project_wrapper.v>`__.
 
-#. Modify the configuration file `here <./user_project_wrapper/config.tcl>`__ to include any extra
+#. Modify the configuration file `here <https://github.com/efabless/caravel/blob/master/openlane/user_project_wrapper/config.tcl>`__ to include any extra
    files you may need. Make sure to change these accordingly:
 
 .. code:: tcl
@@ -165,7 +145,7 @@ Option 2
 | **NOTE:** Don't change the size or the pin order!
 
 #. If your design has standard cells then you need to modify the
-   configuration file `here <./user_project_wrapper/config.tcl>`__ to
+   configuration file `here <https://github.com/efabless/caravel/blob/master/openlane/user_project_wrapper/config.tcl>`__ to
    remove or change these configs accordingly:
 
    .. code:: tcl
@@ -181,10 +161,10 @@ Option 2
 
 #. Remove this line
    ``set ::env(MACRO_PLACEMENT_CFG) $script_dir/macro.cfg`` from the
-   configuration file `here <./user_project_wrapper/config.tcl>`__
+   configuration file `here <https://github.com/efabless/caravel/blob/master/openlane/user_project_wrapper/config.tcl>`__
    entirely if you have no macros. Alternatively, if you do have macros
    inside your design, then control their placement by modifying `this
-   file <./user_project_wrapper/macro.cfg>`__
+   file <https://github.com/efabless/caravel/blob/master/openlane/user_project_wrapper/macro.cfg>`__
 
 #. Run your design through the flow: ``make user_project_wrapper``
 
@@ -194,7 +174,7 @@ Option 2
 
 #. Re-iterate until you have what you want.
 
-#. Go back to the main `README.rst <../README.rst>`__ and continue the
+#. Go back to the main :ref:`getting-started` and continue the
    process of boarding the chip.
 
 **NOTE:** In both cases you might have other macros inside your design.
