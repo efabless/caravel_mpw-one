@@ -29,7 +29,7 @@ The Caravel harness comprises a small RISC-V microprocessor based on the simple 
       :name: caravel_management_soc_simplified_block_diagram
       :alt: Caravel management SoC simplified block diagram
       :align: center
-            
+
       Caravel management SoC simplified block diagram
 
 |
@@ -37,6 +37,10 @@ The Caravel harness comprises a small RISC-V microprocessor based on the simple 
 The documentation contains the following chapters:
 
 * :doc:`description` contains the general information about the Efabless Caravel "harness" SoC,
+* :doc:`getting-started` contains the general information about how to use the Efabless Caravel "harness" SoC,
+* :doc:`tool-versioning` contains the tool versions prefered for usage with the current Efabless Caravel "harness" SoC,
+* :doc:`quick-start` contains a guide on how to get quickly started with using Efabless Caravel "harness" SoC without many details,
+* :doc:`caravel-with-openlane` contains information on how to build your user project with OpenLANE inside the Efabless Caravel "harness" SoC,
 * :doc:`pinout` describes the pinout of the SoC,
 * :doc:`gpio` describes GPIO and its registers,
 * :doc:`housekeeping-spi` describes the SPI responder that can be accessed from a remote host,
@@ -50,7 +54,7 @@ The documentation contains the following chapters:
 * :doc:`programming` shows how to get started with programming on Caravel chip,
 * :doc:`quick-start` shows how to add custom user project to Caravel harness,
 * :doc:`memory-mapped-io-summary` lists the memory mapped I/O registers by address,
-* :doc:`supplementary-figures` provides supplementary internal structure and die arrangement figures 
+* :doc:`supplementary-figures` provides supplementary internal structure and die arrangement figures
 * :doc:`maximum-ratings` lists the parameters and their ranges at which the device operates correctly,
 * :doc:`references` contains list of references,
 * :doc:`further-work` lists things to be added to the documentation.
