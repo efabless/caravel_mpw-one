@@ -157,6 +157,18 @@ $(DRC_BLOCKS): drc-% : ./gds/%.gds
 	cd gds && export DESIGN_IN_DRC=$* && export MAGTYPE=mag; magic -rcfile ${PDK_ROOT}/sky130A/libs.tech/magic/current/sky130A.magicrc -noc -dnull drc_on_gds.tcl < /dev/null
 	@echo "DRC result: ./gds/tmp/$*.drc"
 
+mag2gds: check-env
+	echo "\
+		gds readonly true; \
+		gds rescale false; \
+		load caravel -dereference;\
+		select top cell;\
+		gds write caravel.gds; \
+		exit;" > ./mag/mag2gds_caravel.tcl
+	@cd mag && PDKPATH=${PDK_ROOT}/sky130A magic -noc -dnull mag2gds_caravel.tcl < /dev/null
+	@rm ./mag/mag2gds_caravel.tcl
+	mv -f ./gds/caravel.gds ./gds/caravel.old.gds
+	mv ./mag/caravel.gds ./gds
 
 .PHONY: help
 help:
