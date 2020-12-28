@@ -38,6 +38,9 @@ Efabless Caravel "harness" SoC
    :maxdepth: 1
 
    description
+   getting_started
+   tool-versioning
+   quick-start
    pinout
    gpio
    housekeeping-spi
@@ -49,7 +52,6 @@ Efabless Caravel "harness" SoC
    irq
    sram
    programming
-   quick-start
    memory-mapped-io-summary
    supplementary-figures
    maximum-ratings
