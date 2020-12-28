@@ -50,7 +50,7 @@ If you have followed the Getting Started Guide you should have all of these inst
 Adding a user project
 ---------------------
 
-For a more detailed documentation on using openlane with caravel check `this documentation <https://github.com/efabless/caravel/blob/develop/openlane/README.rst>`__.
+For a more detailed documentation on using openlane with caravel check this documentation :ref:`carave-with-openlane`.
 
 Requirements
 ^^^^^^^^^^^^
@@ -194,4 +194,4 @@ No clock nets have been found
 Design congestion too high
 """"""""""""""""""""""""""
 
-Reduce ``PL_TARGET_DENSITY``.
+Reduce ``PL_TARGET_DENSITY`` and/or ``FP_CORE_UTIL`` and/or ``CELL_PAD``.

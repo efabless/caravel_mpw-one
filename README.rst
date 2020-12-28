@@ -54,6 +54,7 @@ https://caravel-harness.readthedocs.io/en/develop/
    #
    # SPDX-License-Identifier: Apache-2.0
    -->
+.. _getting-started:
 
 Getting Started
 ===============
@@ -233,7 +234,7 @@ The repository contains a `sample user project <https://github.com/efabless/cara
 .. raw:: html
 
    <p align="center">
-   <img src="./_static/counter_32.png" width="50%" height="50%">
+   <img src="/docs/source/_static/counter_32.png" width="50%" height="50%">
    </p>
 
 The firmware running on the Management Area SoC, configures the I/O pads

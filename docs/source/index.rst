@@ -39,8 +39,8 @@ Efabless Caravel "harness" SoC
 
    description
    getting_started
-   tool-versioning
    quick-start
+   caravel_with_openlane
    pinout
    gpio
    housekeeping-spi
