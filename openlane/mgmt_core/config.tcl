@@ -25,10 +25,11 @@ set ::env(SYNTH_MAX_FANOUT) 4
 set ::env(FP_PDN_VPITCH) 50
 set ::env(PDN_CFG) $script_dir/pdn.tcl
 
+set ::env(FP_DEF_TEMPLATE) $script_dir/../../def/mgmt_core.def
 set ::env(FP_VERTICAL_HALO) 6
 #set ::env(FP_PIN_ORDER_CFG) $script_dir/pin_order.cfg
-set ::env(FP_CONTEXT_DEF) $script_dir/../caravel/runs/caravel/tmp/floorplan/verilog2def_openroad.def.macro_placement.def
-set ::env(FP_CONTEXT_LEF) $script_dir/../caravel/runs/caravel/tmp/merged_unpadded.lef
+#set ::env(FP_CONTEXT_DEF) $script_dir/../caravel/runs/caravel/tmp/floorplan/verilog2def_openroad.def.macro_placement.def
+#set ::env(FP_CONTEXT_LEF) $script_dir/../caravel/runs/caravel/tmp/merged_unpadded.lef
 set ::env(FP_SIZING) absolute
 set ::env(DIE_AREA) "0 0 2150 900"
 
@@ -40,9 +41,15 @@ set ::env(PL_OPENPHYSYN_OPTIMIZATIONS) 1
 set ::env(CELL_PAD) 4
 
 set ::env(GLB_RT_ADJUSTMENT) 0
+set ::env(GLB_RT_L2_ADJUSTMENT) 0.2
+set ::env(GLB_RT_L3_ADJUSTMENT) 0.25
+set ::env(GLB_RT_L4_ADJUSTMENT) 0.2
+set ::env(GLB_RT_L5_ADJUSTMENT) 0.1
+set ::env(GLB_RT_L6_ADJUSTMENT) 0.1
 set ::env(GLB_RT_TILES) 14
+set ::env(GLB_RT_MAXLAYER) 5
 
-set ::env(DIODE_INSERTION_STRATEGY) 1
+set ::env(DIODE_INSERTION_STRATEGY) 4
 
 set ::env(VERILOG_FILES) "\
 	$script_dir/../../verilog/rtl/defines.v\
