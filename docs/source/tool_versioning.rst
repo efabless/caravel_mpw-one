@@ -18,11 +18,13 @@
    # SPDX-License-Identifier: Apache-2.0
    -->
 
+.. _tool-versioning:
+
 Repositories and versions to use
 ================================
 
-skywater-pdk:
--------------
+skywater-pdk
+------------
 
 | Please stick to version ``v0.0.0-303-g3d7617a``
 | (commit hash: ``3d7617a1acb92ea883539bcf22a632d6361a5de4``)
@@ -41,8 +43,8 @@ skywater-pdk:
     git submodule update --init libraries/sky130_fd_io/latest
     make timing
 
-open\_pdks:
------------
+open\_pdks
+----------
 
 Please stick to the
 `1.0.85 <https://github.com/RTimothyEdwards/open_pdks/tree/1.0.85>`__
@@ -52,8 +54,8 @@ tag.
 
     git clone https://github.com/RTimothyEdwards/open_pdks.git -b 1.0.85
 
-OpenLane:
----------
+OpenLane
+--------
 
 Please stick to the
 `mpw-one-b <https://github.com/efabless/openlane/tree/mpw-one-b>`__ tag.
@@ -74,8 +76,8 @@ Please stick to the
     cd openlane
     make
 
-Caravel:
---------
+Caravel
+-------
 
 Please stick to the ``mpw-one-b`` tag.
 
@@ -83,8 +85,8 @@ Please stick to the ``mpw-one-b`` tag.
 
     git clone https://github.com/efabless/caravel.git -b mpw-one-b
 
-Open\_mpw\_precheck:
---------------------
+Open\_mpw\_precheck
+-------------------
 
 Please run the offline
 `precheck <https://github.com/efabless/open_mpw_precheck>`__:
