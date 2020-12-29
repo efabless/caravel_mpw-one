@@ -34,6 +34,8 @@ The Caravel harness comprises a small RISC-V microprocessor based on the simple 
 
 |
 
+The Github Repo could be found here: https://github.com/efabless/caravel/
+
 The documentation contains the following chapters:
 
 * :doc:`description` contains the general information about the Efabless Caravel "harness" SoC,
