@@ -25,13 +25,16 @@ echo "Running make README.rst"
 make README.rst
 
 echo "New git status"
-A=$(git diff)
+TMP_FILE=git_dif_tmp_file
+git diff > $TMP_FILE
 
 git status
 
 echo "git diff:"
-echo $A
+cat $TMP_FILE
 
-cnt=$(echo $A | wc -l)
-if [[ $cnt -gt 0 ]]; then exit 2; fi
+cnt=$(cat $TMP_FILE | wc -l)
+echo $cnt
+rm -f $TMP_FILE
+if [[ $cnt -gt 1 ]]; then exit 2; fi
 exit 0
