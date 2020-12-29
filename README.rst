@@ -59,7 +59,7 @@ https://caravel-harness.readthedocs.io/en/develop/
 Getting Started
 ===============
 
--  For information on tooling and versioning, please refer to :ref:`tool-versioning`.
+-  For information on tooling and versioning, please refer to `tool-versioning`_.
 
 Start by cloning the repo and uncompressing the files.
 
@@ -75,7 +75,7 @@ Then you need to install the open\_pdks prerequisite:
    Tool <http://opencircuitdesign.com/magic/index.html>`__ is needed to
    run open\_pdks -- version >= 8.3.60\*
 
-   .. note::
+   **NOTE:**
 
       You can avoid the need for the magic prerequisite by using
       the openlane docker to do the installation step in open\_pdks. This
@@ -119,7 +119,7 @@ You must copy your synthesized gate-level-netlist for
 ``user_project_wrapper.v``. Otherwise, you can point to it in
 `info.yaml <https://github.com/efabless/caravel/blob/master/info.yaml>`__.
 
-.. note::
+**NOTE:**
 
     If you're using openlane to harden your design, this should
     happen automatically.
@@ -133,7 +133,7 @@ sure you have the following:
 -  You have your user\_project\_wrapper.gds under ``./gds/`` in the
    Caravel directory.
 
-.. note::
+**NOTE:**
 
     You can avoid the need for the magic prerequisite by
     using the openlane docker to run the make step. This
@@ -146,9 +146,7 @@ Run the following command:
     export PDK_ROOT=<The place where the installed pdk resides. The same PDK_ROOT used in the pdk installation step>
     make
 
-This should merge the GDSes using magic and you'll end up with your
-version of ``./gds/caravel.gds``. You should expect ^90 magic DRC
-violations with the current "development" state of caravel.
+|Expectation_DRC|
 
 Running Make using OpenLANE Magic
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -177,9 +175,7 @@ Finally, once inside the docker run the following commands:
     make
     exit
 
-This should merge the GDSes using magic and you'll end up with your
-version of ``./gds/caravel.gds``. You should expect ~90 magic DRC
-violations with the current "development" state of caravel.
+|Expectation_DRC|
 
 IMPORTANT
 ^^^^^^^^^
@@ -324,7 +320,7 @@ Please stick to the
 
     git clone https://github.com/efabless/openlane.git -b mpw-one-b
 
-.. note::
+**NOTE:**
 
         Note that the ``mpw-one-b`` tag is equivalent to the ``rc6`` tag.
 
@@ -375,6 +371,8 @@ Notes
 -  | If you already have a clean working tree in a previously cloned repository from
    |  those listed above, what you need to do is:
    |  ``git pull   git checkout tag``
+
+.. |Expectation_DRC| replace:: This should merge the GDSes using magic and you'll end up with your version of ``./gds/caravel.gds``. You should expect ^40 magic DRC violations with the current "development" state of caravel.
 
 .. |License| image:: https://img.shields.io/github/license/efabless/caravel
    :alt: GitHub license - Apache 2.0

@@ -52,7 +52,7 @@ But, first you need to specify 2 things:
     export PDK_ROOT=<The location where the pdk is installed>
     export OPENLANE_ROOT=<the absolute path to the openlane directory cloned or to be cloned>
 
-.. warning::
+**WARNING:**
 
       caravel is still a WIP so expect to run into some issues when using it.
 
@@ -64,11 +64,11 @@ clone and build openlane through:
 
         make openlane
 
-.. note::
+**NOTE:**
 
       We are developing caravel using openlane:rc6 which is the current master branch.
 
-.. note::
+**NOTE:**
 
       rc6 (current openlane master) and rc4 (previous openlane
       master) are using two different concepts of cell padding. rc4 is
@@ -94,7 +94,7 @@ Then, you have two options:
 #. Flatten your design with the user\_project\_wrapper and harden them
    as one.
 
-.. note::
+**NOTE:**
 
       The OpenLANE documentation should cover everything you might
       need to create your design. You can find that
@@ -136,7 +136,7 @@ After that, run the following command:
 
 Then, follow the instructions given in Option 2.
 
-.. note::
+**NOTE:**
 
       You might have other macros inside your design. In which case,
       you may need to have some special power configurations. This is covered
@@ -202,13 +202,13 @@ Option 2
 #. Go back to the main `README.rst <../README.rst>`__ and continue the
    process of boarding the chip.
 
-.. note::
+**NOTE:**
 
     In both cases you might have other macros inside your design.
     In which case, you may need to have some special power configurations.
     This is covered `here <https://github.com/efabless/openlane/blob/master/doc/hardening_macros.md#power-grid-pdn>`__.
 
-.. warning::
+**WARNING:**
 
     Don't change the size or the pin order!
 

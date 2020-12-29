@@ -248,10 +248,18 @@ endif
 README.rst: README.src.rst docs/source/getting-started.rst docs/source/tool-versioning.rst openlane/README.src.rst docs/source/caravel-with-openlane.rst Makefile
 	pip -q install rst_include && \
 	rm -f README.rst && \
-		rst_include include README.src.rst - | sed -e's@\.\/\_static@\/docs\/source\/\_static@g' > README.rst && \
+		rst_include include README.src.rst - | \
+			sed \
+				-e's@\.\/\_static@\/docs\/source\/\_static@g' \
+				-e's@:ref:`tool-versioning`@`tool-versioning`_@g' \
+				-e's@.. note::@**NOTE:**@g' \
+				-e's@.. warning::@**WARNING:**@g' \
+				> README.rst && \
 		rst_include include openlane/README.src.rst - | \
 			sed \
 				-e's@https://github.com/efabless/caravel/blob/master/verilog@../verilog@g' \
 				-e's@:ref:`getting-started`@`README.rst <../README.rst>`__@g' \
 				-e's@https://github.com/efabless/caravel/blob/master/openlane/@./@g' \
+				-e's@.. note::@**NOTE:**@g' \
+				-e's@.. warning::@**WARNING:**@g' \
 				> openlane/README.rst
