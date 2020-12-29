@@ -31,7 +31,7 @@ All IRQ channels not in the :ref:`cpu_irq_channel_definitions` always have value
     :name: cpu_irq_channel_definitions
     :header-rows: 1
     :widths: auto
-    
+
     * - IRQ channel
       - description
     * - 4
@@ -43,7 +43,7 @@ All IRQ channels not in the :ref:`cpu_irq_channel_definitions` always have value
     * - 7
       - Assignable interrupt (see :ref:`reg_irq7_source`)
     * - 9
-      - SPI controller data available, when enabled (see :ref:`reg_spi_config`) 
+      - SPI controller data available, when enabled (see :ref:`reg_spi_config`)
     * - 10
       - Timer 0 expired, when enabled (see :ref:`reg_timer0_config`)
     * - 11
@@ -51,6 +51,6 @@ All IRQ channels not in the :ref:`cpu_irq_channel_definitions` always have value
 
 The Caravel PicoRV32 implementation does not enable IRQ QREGS (see `PicoRV32 description <https://github.com/cliffordwolf/picorv32>`__).
 
-The handling of interrupts is beyond the scope of this document 
+The handling of interrupts is beyond the scope of this document
 (see `RISC-V instruction set description <https://riscv.org/technical/specifications/>`_).
 All interrupts are masked and must be enabled in software.

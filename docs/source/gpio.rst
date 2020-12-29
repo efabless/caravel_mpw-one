@@ -70,7 +70,7 @@ Register descriptions
       - IRQ 7 input source (low bit)
 
 .. note::
-    
+
     In the registers description below, each register is shown as 32 bits corresponding
     to the data bus width of the wishbone bus. Depending on the instruction and data type,
     the entire 32-bit register can be read in one instruction, or one 16-bit word,
@@ -189,7 +189,7 @@ The low bit of this register directs the output of the core clock to the GPIO ch
       - Core PLL clock to GPIO output
 
 .. note::
-    
+
     High rate core clock (e.g. 80MHz) may be unable to generate a full swing on the GPIO output, but is detectable.
 
 .. _reg_trap_out_dest:
@@ -278,7 +278,7 @@ Each of 38 ``mprj_io`` GPIOs has a configuration register.
     :widths: auto
     :header-rows: 1
     :delim: ;
-    
+
     User project area GPIO ; Address
 
     ``mprj_io[00]`` ; ``0x2600000c``
@@ -385,4 +385,4 @@ Each of 38 ``mprj_io`` GPIOs has a configuration register.
       - 1
       - management control enable (0 - user control, 1 - management control)
 
-.. todo:: Missing *digital mode* description 
+.. todo:: Missing *digital mode* description

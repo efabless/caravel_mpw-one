@@ -32,8 +32,9 @@ But, first you need to specify 2 things:
     export PDK_ROOT=<The location where the pdk is installed>
     export OPENLANE_ROOT=<the absolute path to the openlane directory cloned or to be cloned>
 
-**NOTE:** caravel is still a WIP so expect to run into some issues when
-using it.
+.. warning::
+
+      caravel is still a WIP so expect to run into some issues when using it.
 
 If you don't have openlane already, then you can get it from
 `here <https://github.com/efabless/openlane>`__. Alternatively, you can
@@ -43,24 +44,27 @@ clone and build openlane through:
 
         make openlane
 
-**NOTE:** We are developing caravel using openlane:rc6 which is the
-current master branch.
+.. note::
 
-**NOTE:** rc6 (current openlane master) and rc4 (previous openlane
-master) are using two different concepts of cell padding. rc4 is
-modifying the LEF, while rc6 is relying on openroad to handle the cell
-padding. Also, rc4 is using the standalone version of openDP while rc6
-is using the one integrated in the openroad app. This affects the
-concept of PL\_TARGET\_DENSITY and while in rc4 it was preferred to have
-PL\_TARGET\_DENSITY=(FP\_CORE\_UTIL-(5\~10)/100). Now, in rc6 it is
-preferred to be PL\_TARGET\_DENSITY=(FP\_CORE\_UTIL+(1\~5)/100).
-| FP\_CORE\_UTIL should be relaxed as well as it became more
-representative of the actual core utilization, which wasn't so much the
-case earlier. So, the perception of these two variables as well as
-CELL\_PAD changed between rc4 and rc6 which necessitates a change in the
-configurations of almost every single design.
-| CELL\_PAD should be 4\~6 for the skywater libraries in rc6 unlike rc4
-which was 8.
+      We are developing caravel using openlane:rc6 which is the current master branch.
+
+.. note::
+
+      rc6 (current openlane master) and rc4 (previous openlane
+      master) are using two different concepts of cell padding. rc4 is
+      modifying the LEF, while rc6 is relying on openroad to handle the cell
+      padding. Also, rc4 is using the standalone version of openDP while rc6
+      is using the one integrated in the openroad app. This affects the
+      concept of PL\_TARGET\_DENSITY and while in rc4 it was preferred to have
+      PL\_TARGET\_DENSITY=(FP\_CORE\_UTIL-(5\~10)/100). Now, in rc6 it is
+      preferred to be PL\_TARGET\_DENSITY=(FP\_CORE\_UTIL+(1\~5)/100).
+      | FP\_CORE\_UTIL should be relaxed as well as it became more
+      representative of the actual core utilization, which wasn't so much the
+      case earlier. So, the perception of these two variables as well as
+      CELL\_PAD changed between rc4 and rc6 which necessitates a change in the
+      configurations of almost every single design.
+      | CELL\_PAD should be 4\~6 for the skywater libraries in rc6 unlike rc4
+      which was 8.
 
 Then, you have two options:
 
@@ -70,9 +74,11 @@ Then, you have two options:
 #. Flatten your design with the user\_project\_wrapper and harden them
    as one.
 
-**NOTE:** The OpenLANE documentation should cover everything you might
-need to create your design. You can find that
-`here <https://github.com/efabless/openlane/blob/master/README.md>`__.
+.. note::
+
+      The OpenLANE documentation should cover everything you might
+      need to create your design. You can find that
+      `here <https://github.com/efabless/openlane/blob/master/README.md>`__.
 
 Option 1
 --------
@@ -110,9 +116,11 @@ After that, run the following command:
 
 Then, follow the instructions given in Option 2.
 
-**NOTE:** You might have other macros inside your design. In which case,
-you may need to have some special power configurations. This is covered
-`here <https://github.com/efabless/openlane/blob/master/doc/hardening_macros.md#power-grid-pdn>`__.
+.. note::
+
+      You might have other macros inside your design. In which case,
+      you may need to have some special power configurations. This is covered
+      `here <https://github.com/efabless/openlane/blob/master/doc/hardening_macros.md#power-grid-pdn>`__.
 
 Option 2
 --------
@@ -123,26 +131,23 @@ Option 2
 #. Modify the configuration file `here <https://github.com/efabless/caravel/blob/master/openlane/user_project_wrapper/config.tcl>`__ to include any extra
    files you may need. Make sure to change these accordingly:
 
-.. code:: tcl
+   .. code:: tcl
 
-   set ::env(CLOCK_NET) "mprj.clk"
-   set ::env(VERILOG_FILES) "\\
-         $script_dir/../../verilog/rtl/defines.v \\
-         $script_dir/../../verilog/rtl/user_project_wrapper.v"
+      set ::env(CLOCK_NET) "mprj.clk"
+      set ::env(VERILOG_FILES) " \
+            $script_dir/../../verilog/rtl/defines.v \
+            $script_dir/../../verilog/rtl/user_project_wrapper.v"
 
-   set ::env(VERILOG_FILES_BLACKBOX) "\\
-         $script_dir/../../verilog/rtl/defines.v \\
-         $script_dir/../../verilog/rtl/user_proj_example.v"
+      set ::env(VERILOG_FILES_BLACKBOX) " \
+            $script_dir/../../verilog/rtl/defines.v \
+            $script_dir/../../verilog/rtl/user_proj_example.v"
 
-   set ::env(EXTRA_LEFS) "\\
-      $script_dir/../../lef/user_proj_example.lef"
+      set ::env(EXTRA_LEFS) " \
+         $script_dir/../../lef/user_proj_example.lef"
 
-   set ::env(EXTRA_GDS_FILES) "\\
-      $script_dir/../../gds/user_proj_example.gds"
+      set ::env(EXTRA_GDS_FILES) " \
+         $script_dir/../../gds/user_proj_example.gds"
 
-
-
-| **NOTE:** Don't change the size or the pin order!
 
 #. If your design has standard cells then you need to modify the
    configuration file `here <https://github.com/efabless/caravel/blob/master/openlane/user_project_wrapper/config.tcl>`__ to
@@ -177,10 +182,16 @@ Option 2
 #. Go back to the main :ref:`getting-started` and continue the
    process of boarding the chip.
 
-**NOTE:** In both cases you might have other macros inside your design.
-In which case, you may need to have some special power configurations.
-This is covered
-`here <https://github.com/efabless/openlane/blob/master/doc/hardening_macros.md#power-grid-pdn>`__.
+.. note::
+
+    In both cases you might have other macros inside your design.
+    In which case, you may need to have some special power configurations.
+    This is covered `here <https://github.com/efabless/openlane/blob/master/doc/hardening_macros.md#power-grid-pdn>`__.
+
+.. warning::
+
+    Don't change the size or the pin order!
+
 
 Extra Pointers
 --------------

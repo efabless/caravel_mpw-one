@@ -31,9 +31,9 @@ Related pins
 Description
 -----------
 
-The QSPI flash controller is automatically enabled on power-up, and will 
-immediately initiate a read sequence in single-bit mode 
-with pin :ref:`flash_io0 <flash_io>` acting as ``SDI`` (data from flash to CPU) 
+The QSPI flash controller is automatically enabled on power-up, and will
+immediately initiate a read sequence in single-bit mode
+with pin :ref:`flash_io0 <flash_io>` acting as ``SDI`` (data from flash to CPU)
 and pin :ref:`flash_io1 <flash_io>` acting as ``SDO`` (data from CPU to flash).
 Protocol is according to, e.g., `Cypress S25FL256L <https://www.cypress.com/file/316171/download>`_.
 
@@ -56,7 +56,7 @@ The initial SPI instruction sequence is :ref:`as follows: <initial_spi_instructi
     * - ``0x00``
       -
 
-The QSPI flash continues to read bytes, either sequentially on the same command, 
+The QSPI flash continues to read bytes, either sequentially on the same command,
 or issuing a new read command to read from a new address.
 
 .. _reg_spictrl:
@@ -129,11 +129,11 @@ QSPI access modes
       - ``001``
       - Single bit per clock (same as 0)
 
-All additional modes (QSPI dual and quad modes) cannot be used, 
+All additional modes (QSPI dual and quad modes) cannot be used,
 as the management SoC only has pins for data lines 0 and 1.
 
 The SPI flash can be accessed by bit banging when the enable is off.
-To do this from the CPU, the entire routine to access the SPI flash 
+To do this from the CPU, the entire routine to access the SPI flash
 must be read into SRAM and executed from the SRAM.
 
 .. note::

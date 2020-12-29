@@ -72,17 +72,17 @@ Base address: ``0x22000000``
     * - 3
       - Counter/timer enable
       - 0 - counter/timer disabled
-        
+
         1 - counter/timer enabled
     * - 2
       - One-shot mode
       - 0 - continuous mode
-      
+
         1 - one-shot mode
     * - 1
       - Updown
       - 0 - count down
-      
+
         1 - count up
     * - 0
       - Interrupt enable
@@ -156,17 +156,17 @@ Base address: ``0x23000000``
     * - 3
       - Counter/timer enable
       - 0 - counter/timer disabled
-        
+
         1 - counter/timer enabled
     * - 2
       - One-shot mode
       - 0 - continuous mode
-      
+
         1 - one-shot mode
     * - 1
       - Updown
       - 0 - count down
-      
+
         1 - count up
     * - 0
       - Interrupt enable

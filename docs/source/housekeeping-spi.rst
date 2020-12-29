@@ -42,7 +42,7 @@ Each byte is input most-significant-bit first.
 Every command sequence requires one command word (8 bits), followed by one address word (8 bits), followed by one or more data words (8 bits each), according to the data transfer modes described in :ref:`housekeeping_spi_modes`.
 
 .. figure:: _static/housekeeping_spi_signalling.svg
-    :width: 100%    
+    :width: 100%
     :name: housekeeping_spi_signalling
     :alt: Housekeeping SPI signalling
     :align: center

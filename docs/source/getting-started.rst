@@ -38,11 +38,13 @@ Then you need to install the open\_pdks prerequisite:
    Tool <http://opencircuitdesign.com/magic/index.html>`__ is needed to
    run open\_pdks -- version >= 8.3.60\*
 
-    \* Note: You can avoid the need for the magic prerequisite by using
-    the openlane docker to do the installation step in open\_pdks. This
-    could be done by cloning
-    `openlane <https://github.com/efabless/openlane/tree/master>`__ and
-    following the instructions given there to use the Makefile.
+   .. note::
+
+      You can avoid the need for the magic prerequisite by using
+      the openlane docker to do the installation step in open\_pdks. This
+      could be done by cloning
+      `openlane <https://github.com/efabless/openlane/tree/master>`__ and
+      following the instructions given there to use the Makefile.
 
 Install the required version of the PDK by running the following
 commands:
@@ -80,7 +82,9 @@ You must copy your synthesized gate-level-netlist for
 ``user_project_wrapper.v``. Otherwise, you can point to it in
 `info.yaml <https://github.com/efabless/caravel/blob/master/info.yaml>`__.
 
-    Note: If you're using openlane to harden your design, this should
+.. note::
+
+    If you're using openlane to harden your design, this should
     happen automatically.
 
 Then, you will need to put your design aboard the Caravel chip. Make
@@ -92,7 +96,9 @@ sure you have the following:
 -  You have your user\_project\_wrapper.gds under ``./gds/`` in the
    Caravel directory.
 
-    \* **Note:** You can avoid the need for the magic prerequisite by
+.. note::
+
+    You can avoid the need for the magic prerequisite by
     using the openlane docker to run the make step. This
     `section <#running-make-using-openlane-magic>`__ shows how.
 

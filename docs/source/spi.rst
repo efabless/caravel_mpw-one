@@ -51,7 +51,7 @@ Base address: ``0x24000000``
          {"bits": 1, "name": "INT"},
          {"bits": 1, "name": "HK"},
          {"name": "(undefined, reads zero)", "type": 1, "bits": 16}],
-        "config": {"hspace": 1400}        
+        "config": {"hspace": 1400}
      }
 
 
@@ -108,7 +108,7 @@ Base address: ``0x24000000``
       - count (in controller clock cycles) of 1/2 :ref:`SCK <sck>` cycle
         (default value 2). Clock rate formula:
         `SPI clock rate = 2 * core_clock / (prescaler + 1)`
-     
+
 
 .. note::
 

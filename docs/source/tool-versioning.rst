@@ -64,7 +64,9 @@ Please stick to the
 
     git clone https://github.com/efabless/openlane.git -b mpw-one-b
 
-| Note that the ``mpw-one-b`` tag is equivalent to the ``rc6`` tag.
+.. note::
+
+        Note that the ``mpw-one-b`` tag is equivalent to the ``rc6`` tag.
 
 | Also, note that running ``make`` inside the openlane directory will automatically grab the right versions of ``open_pdks`` and ``skywater-pdk`` as listed above and install them to PDK\_ROOT.
 
