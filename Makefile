@@ -164,6 +164,7 @@ $(ANTENNA_BLOCKS): antenna-% : ./gds/%.gds
 	echo "Running Antenna Checks on $*"
 	mkdir -p ./gds/tmp
 	cd gds && export DESIGN_IN_ANTENNA=$* && export MAGTYPE=mag; magic -rcfile ${PDK_ROOT}/sky130A/libs.tech/magic/current/sky130A.magicrc -noc -dnull antenna_on_gds.tcl < /dev/null 2>&1 | tee ./tmp/$*.antenna
+	mv -f ./gds/*.ext ./gds/tmp/
 	@echo "Antenna result: ./gds/tmp/$*.antenna"
 
 mag2gds: check-env
