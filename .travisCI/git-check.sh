@@ -29,7 +29,9 @@ A=$(git diff)
 
 git status
 
+echo "git diff:"
+echo $A
+
 cnt=$(echo $A | wc -l)
-if [[ $cnt -gt 0 ]]; then exit -1; fi
-echo "YES!"
+if [[ $cnt -gt 0 ]]; then exit 2; fi
 exit 0
