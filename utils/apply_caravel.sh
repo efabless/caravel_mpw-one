@@ -21,8 +21,11 @@ original_caravel=$2
 
 find $original_caravel/def/* -type f ! -name "user_project_wrapper.def" ! -name "user_proj_example.def" -exec cp {} $target_project/def \;
 find $original_caravel/lef/* -type f ! -name "user_project_wrapper.lef" ! -name "user_proj_example.lef" -exec cp {} $target_project/lef \;
-find $original_caravel/gds/* -type f ! -name "user_project_wrapper.gds" ! -name "user_proj_example.gds" -exec cp {} $target_project/gds \;
+find $original_caravel/gds/* -type f ! -name "user_project_wrapper.gds.gz" ! -name "user_proj_example.gds.gz" ! -name "user_project_wrapper.gds" ! -name "user_proj_example.gds" -exec cp {} $target_project/gds \;
 find $original_caravel/mag/* -type f ! -name "user_project_wrapper.mag" ! -name "user_proj_example.mag" -exec cp {} $target_project/mag \;
+cp $original_caravel/mag/.magicrc $target_project/mag/
+mkdir -p $target_project/mag/hexdigits/
+mv $target_project/mag/alpha_*.mag $target_project/mag/hexdigits/
 cp $original_caravel/maglef/* $target_project/maglef
 cp -r $original_caravel/ngspice/digital_pll $target_project/ngspice/digital_pll
 cp -r $original_caravel/ngspice/simple_por $target_project/ngspice/simple_por
@@ -34,7 +37,7 @@ find $original_caravel/verilog/gl/* -type f ! -name "user_project_wrapper.v" ! -
 cp $original_caravel/verilog/stubs/*.v $target_project/verilog/stubs/
 cp -r $original_caravel/verilog/dv/caravel $target_project/verilog/dv/caravel
 cp -r $original_caravel/verilog/dv/wb_utests $target_project/verilog/dv/wb_utests
-cp $original_caravel/verilog/dv/dummy_slave.v $target_project/verilog/dv/dummy_slave.v 
+cp $original_caravel/verilog/dv/dummy_slave.v $target_project/verilog/dv/dummy_slave.v
 
 echo "You'll have to manually copy the openlane/user_project_wrapper configs based on your preference."
 echo "You'll have to manually copy the openlane/Makefile based on your preference."
