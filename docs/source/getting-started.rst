@@ -109,9 +109,7 @@ Run the following command:
     export PDK_ROOT=<The place where the installed pdk resides. The same PDK_ROOT used in the pdk installation step>
     make
 
-This should merge the GDSes using magic and you'll end up with your
-version of ``./gds/caravel.gds``. You should expect ^90 magic DRC
-violations with the current "development" state of caravel.
+|Expectation_DRC|
 
 Running Make using OpenLANE Magic
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -140,9 +138,7 @@ Finally, once inside the docker run the following commands:
     make
     exit
 
-This should merge the GDSes using magic and you'll end up with your
-version of ``./gds/caravel.gds``. You should expect ~90 magic DRC
-violations with the current "development" state of caravel.
+|Expectation_DRC|
 
 IMPORTANT
 ^^^^^^^^^
@@ -222,3 +218,5 @@ counter. Three firmware examples are provided:
    `LA\_Test2 <https://github.com/efabless/caravel/blob/master/verilog/dv/caravel/user_proj_example/la_test2>`__.
 
 .. include:: ./tool-versioning.rst
+
+.. |Expectation_DRC| replace:: This should merge the GDSes using magic and you'll end up with your version of ``./gds/caravel.gds``. You should expect ^40 magic DRC violations with the current "development" state of caravel.
