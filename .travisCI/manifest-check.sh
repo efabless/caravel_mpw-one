@@ -13,30 +13,14 @@
 # limitations under the License.
 # SPDX-License-Identifier: Apache-2.0
 
-language: python
-
-branches:
-  only:
-    - develop
-    - master
-    - staging
-    - /^(?i:develop)-.*$/
-
-services:
-    - docker
-
-os:
-  - linux
-
-jobs:
-  include:
-    - name: "The Precheck Test"
-      install: sh .travisCI/travisBuild.sh
-      script: bash .travisCI/runPrecheck.sh
-    - name: "The README.rst Consistency Test"
-      script: bash .travisCI/git-check.sh
-    - name: "The Manifest Test"
-      script:
-        - bash .travisCI/manifest-check.sh mag/
-        - bash .travisCI/manifest-check.sh maglef/
-        - bash .travisCI/manifest-check.sh verilog/rtl/
+TARGET_PATH=$(pwd)/$1
+OUT_FILE=tmp_manifest_output_file
+echo "Going into $TARGET_PATH"
+cd $TARGET_PATH
+echo "Running shasum checks"
+shasum -c manifest > $OUT_FILE
+cat $OUT_FILE
+cnt=$(grep "FAILED" $OUT_FILE | wc -l)
+rm -f $OUT_FILE
+if [[ $cnt -eq 0 ]]; then exit 0; fi
+exit 2;
