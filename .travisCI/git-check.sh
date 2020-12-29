@@ -1,3 +1,4 @@
+#!/bin/bash
 # SPDX-FileCopyrightText: 2020 Efabless Corporation
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,26 +14,22 @@
 # limitations under the License.
 # SPDX-License-Identifier: Apache-2.0
 
-language: python
+set -e
 
-branches:
-  only:
-    - develop
-    - master
-    - staging
-    - /^(?i:develop)-.*$/
+echo "Current git status"
 
-services:
-    - docker
+git status
 
-os:
-  - linux
+echo "Running make README.rst"
 
-jobs:
-  include:
-    - name: "The Precheck Test"
-      install: sh .travisCI/travisBuild.sh
-      script: bash .travisCI/runPrecheck.sh
-    - name: "The README.rst Consistency Test"
-      script: bash .travisCI/runPrecheck.sh
-    
+make README.rst
+
+echo "New git status"
+A=$(git diff)
+
+git status
+
+cnt=$(echo $A | wc -l)
+if [[ $cnt -gt 0 ]]; then exit -1; fi
+echo "YES!"
+exit 0
