@@ -31,8 +31,8 @@ os:
 jobs:
   include:
     - name: "The Precheck Test"
-      install: sh .travisCI/travisBuild.sh
-      script: bash .travisCI/runPrecheck.sh
+      install: sh .travisCI/precheckBuild.sh
+      script: bash .travisCI/run-precheck.sh
     - name: "The README.rst Consistency Test"
       script: bash .travisCI/git-check.sh
     - name: "The Manifest Test"
