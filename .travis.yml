@@ -40,3 +40,6 @@ jobs:
         - bash .travisCI/manifest-check.sh mag/
         - bash .travisCI/manifest-check.sh maglef/
         - bash .travisCI/manifest-check.sh verilog/rtl/
+    - name: "The LVS Test"
+      install: sh .travisCI/lvsBuild.sh
+      script: bash .travisCI/lvs-check.sh

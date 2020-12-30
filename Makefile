@@ -108,7 +108,7 @@ $(LVS_BLOCKS): lvs-% : ./mag/%.mag ./verilog/gl/%.v
 	mkdir -p ./spi/lvs/tmp
 	sh ./spi/lvs/run_lvs.sh ./spi/lvs/$*.spice ./verilog/gl/$*.v $*
 	@echo ""
-	python3 ./scripts/count_lvs.py -f ./verilog/gl/$*.v_comp.json
+	python3 ./scripts/count_lvs.py -f ./verilog/gl/$*.v_comp.json | tee ./spi/lvs/tmp/$*.lvs.summary.log
 	mv -f ./verilog/gl/*{.out,.json,.log} ./spi/lvs/tmp 2> /dev/null || true
 	@echo ""
 	@echo "LVS: ./spi/lvs/$*.spice vs. ./verilog/gl/$*.v"
@@ -142,7 +142,7 @@ $(LVS_MAGLEF_BLOCKS): lvs-maglef-% : ./mag/%.mag ./verilog/gl/%.v
 	mkdir -p ./spi/lvs/tmp
 	sh ./spi/lvs/run_lvs.sh ./spi/lvs/$*.spice ./verilog/gl/$*.v $*
 	@echo ""
-	python3 ./scripts/count_lvs.py -f ./verilog/gl/$*.v_comp.json
+	python3 ./scripts/count_lvs.py -f ./verilog/gl/$*.v_comp.json | tee ./spi/lvs/tmp/$*.maglef.lvs.summary.log
 	mv -f ./verilog/gl/*{.out,.json,.log} ./spi/lvs/tmp 2> /dev/null || true
 	@echo ""
 	@echo "LVS: ./spi/lvs/$*.spice vs. ./verilog/gl/$*.v"
