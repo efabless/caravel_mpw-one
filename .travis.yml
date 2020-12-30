@@ -33,6 +33,12 @@ jobs:
     - name: "The Precheck Test"
       install: sh .travisCI/precheckBuild.sh
       script: bash .travisCI/run-precheck.sh
+    - name: "The LVS Test"
+      install: sh .travisCI/lvsBuild.sh > dumpfile
+      script: bash .travisCI/run_wrapper.sh .travisCI/lvs-check.sh
+    - name: "The MAGLEF LVS Test"
+      install: sh .travisCI/lvsBuild.sh
+      script: bash .travisCI/maglef-lvs-check.sh
     - name: "The README.rst Consistency Test"
       script: bash .travisCI/git-check.sh
     - name: "The Manifest Test"
@@ -40,9 +46,3 @@ jobs:
         - bash .travisCI/manifest-check.sh mag/
         - bash .travisCI/manifest-check.sh maglef/
         - bash .travisCI/manifest-check.sh verilog/rtl/
-    - name: "The LVS Test"
-      install: sh .travisCI/lvsBuild.sh > dumpfile
-      script: bash .travisCI/run_wrapper.sh .travisCI/lvs-check.sh
-    - name: "The MAGLEF LVS Test"
-      install: sh .travisCI/lvsBuild.sh
-      script: bash .travisCI/maglef-lvs-check.sh

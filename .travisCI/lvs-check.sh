@@ -37,5 +37,5 @@ echo "LVS summary:"
 cat $lvs_report
 echo "Total Count: $lvs_total_errors"
 
-
-exit 0
+if [[ $lvs_total_errors -gt 6 ]]; then exit 0; fi
+exit 2

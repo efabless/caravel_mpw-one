@@ -43,7 +43,7 @@ trap 'error_handler' ERR
 
 # Set up a repeating loop to send some output to Travis.
 
-bash -c "while true; do echo \$(date) - building ...; sleep $PING_SLEEP; done" &
+bash -c "while true; do echo \$(date) - running ...; sleep $PING_SLEEP; done" &
 PING_LOOP_PID=$!
 
 # My build is using maven, but you could build anything with this, E.g.
