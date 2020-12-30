@@ -20,29 +20,12 @@ export PDK_ROOT=$(pwd)/../pdks
 make uncompress
 export CARAVEL_PATH=$(pwd)
 
-# MAGLEF LVS
-echo "Running Abstract (maglef) LVS:"
-docker run -it -v $RUN_ROOT:/openLANE_flow -v $PDK_ROOT:$PDK_ROOT -e PDK_ROOT=$PDK_ROOT -u $(id -u $USER):$(id -g $USER) $IMAGE_NAME  bash -c "cd $CARAVEL_PATH; make lvs-maglef-caravel"
-
-lvs_report=$CARAVEL_PATH/spi/lvs/tmp/caravel.maglef.lvs.summary.log
-if ! [[ -f "$lvs_report" ]]; then
-        lvs_total_errors=$(grep "Total errors =" $lvs_report -s | tail -1 | sed -r 's/[^0-9]*//g')
-        if ! [[ $lvs_total_errors ]]; then lvs_total_errors=0; fi
-else
-        echo "lvs check failed due to netgen failure";
-        exit 2;
-fi
-
-echo "Maglef LVS summary:"
-cat $lvs_report
-echo "Total Count: $lvs_total_errors"
-
 # LVS
 echo "Running Full LVS:"
 docker run -it -v $CARAVEL_PATH:$CARAVEL_PATH -e CARAVEL_PATH=$CARAVEL_PATH -v $PDK_ROOT:$PDK_ROOT -e PDK_ROOT=$PDK_ROOT -u $(id -u $USER):$(id -g $USER) $IMAGE_NAME  bash -c "cd $CARAVEL_PATH; make lvs-caravel"
 
 lvs_report=$CARAVEL_PATH/spi/lvs/tmp/caravel.lvs.summary.log
-if ! [[ -f "$lvs_report" ]]; then
+if [ -f $lvs_report ]; then
         lvs_total_errors=$(grep "Total errors =" $lvs_report -s | tail -1 | sed -r 's/[^0-9]*//g')
         if ! [[ $lvs_total_errors ]]; then lvs_total_errors=0; fi
 else
