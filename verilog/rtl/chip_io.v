@@ -250,7 +250,7 @@ module chip_io(
 	sky130_fd_io__top_xres4v2 resetb_pad (
 		`MGMT_ABUTMENT_PINS
 		`ifndef	TOP_ROUTING
-		    .PAD(resetb),
+		    ,.PAD(resetb),
 		`endif
 		.TIE_WEAK_HI_H(xresloop),   // Loop-back connection to pad through pad_a_esd_h
 		.TIE_HI_ESD(),
