@@ -1,7 +1,9 @@
 magic
 tech sky130A
 magscale 1 2
-timestamp 1606854216
+timestamp 1609344298
+<< obsactive >>
+rect 1000 1000 76296 90247
 << obsli1 >>
 rect 1000 1000 76296 90247
 << obsm1 >>
@@ -416,10 +418,9 @@ port 123 nsew ground bidirectional
 << properties >>
 string LEFclass BLOCK
 string FIXED_BBOX 0 0 77296 91247
+string GDS_FILE ../gds/sram_1rw1r_32_256_8_sky130.gds
+string GDS_START 13275442
+string GDS_END 13299042
 string LEFsymmetry X Y R90
 string LEFview TRUE
-string GDS_FILE ../gds/sram_1rw1r_32_256_8_sky130.gds
-string GDS_END 13299042
-string GDS_START 13275442
 << end >>
-
