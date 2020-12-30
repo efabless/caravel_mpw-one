@@ -39,6 +39,7 @@ Efabless Caravel "harness" SoC
 
    description
    getting-started
+   tool-versioning
    quick-start
    caravel-with-openlane
    pinout

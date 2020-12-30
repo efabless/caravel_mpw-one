@@ -252,7 +252,7 @@ README.rst: README.src.rst docs/source/getting-started.rst docs/source/tool-vers
 		rst_include include README.src.rst - | \
 			sed \
 				-e's@\.\/\_static@\/docs\/source\/\_static@g' \
-				-e's@:ref:`tool-versioning`@`tool-versioning`_@g' \
+				-e's@:doc:`tool-versioning`@`tool-versioning.rst <./docs/source/tool-versioning.rst>`__@g' \
 				-e's@.. note::@**NOTE:**@g' \
 				-e's@.. warning::@**WARNING:**@g' \
 				> README.rst && \

@@ -18,8 +18,6 @@
    # SPDX-License-Identifier: Apache-2.0
    -->
 
-.. _tool-versioning:
-
 Repositories and versions to use
 ================================
 

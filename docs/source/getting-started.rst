@@ -22,7 +22,7 @@
 Getting Started
 ===============
 
--  For information on tooling and versioning, please refer to :ref:`tool-versioning`.
+-  For information on tooling and versioning, please refer to :doc:`tool-versioning`.
 
 Start by cloning the repo and uncompressing the files.
 
@@ -216,7 +216,5 @@ counter. Three firmware examples are provided:
    control the clock source and reset signals and observe the counter
    value for five clock cylcles:
    `LA\_Test2 <https://github.com/efabless/caravel/blob/master/verilog/dv/caravel/user_proj_example/la_test2>`__.
-
-.. include:: ./tool-versioning.rst
 
 .. |Expectation_DRC| replace:: This should merge the GDSes using magic and you'll end up with your version of ``./gds/caravel.gds``. You should expect ^40 magic DRC violations with the current "development" state of caravel.
