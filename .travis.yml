@@ -42,7 +42,7 @@ jobs:
         - bash .travisCI/manifest-check.sh verilog/rtl/
     - name: "The LVS Test"
       install: sh .travisCI/lvsBuild.sh > dumpfile
-      script: bash .travisCI/lvs-check.sh
+      script: bash .travisCI/run_wrapper.sh .travisCI/lvs-check.sh
     - name: "The MAGLEF LVS Test"
-      install: sh .travisCI/lvsBuild.sh > dumpfile
+      install: sh .travisCI/lvsBuild.sh
       script: bash .travisCI/maglef-lvs-check.sh
