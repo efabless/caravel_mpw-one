@@ -37,22 +37,5 @@ echo "Maglef LVS summary:"
 cat $lvs_report
 echo "Total Count: $lvs_total_errors"
 
-# LVS
-echo "Running Full LVS:"
-docker run -it -v $CARAVEL_PATH:$CARAVEL_PATH -e CARAVEL_PATH=$CARAVEL_PATH -v $PDK_ROOT:$PDK_ROOT -e PDK_ROOT=$PDK_ROOT -u $(id -u $USER):$(id -g $USER) $IMAGE_NAME  bash -c "cd $CARAVEL_PATH; make lvs-caravel"
-
-lvs_report=$CARAVEL_PATH/spi/lvs/tmp/caravel.lvs.summary.log
-if ! [[ -f "$lvs_report" ]]; then
-        lvs_total_errors=$(grep "Total errors =" $lvs_report -s | tail -1 | sed -r 's/[^0-9]*//g')
-        if ! [[ $lvs_total_errors ]]; then lvs_total_errors=0; fi
-else
-        echo "lvs check failed due to netgen failure";
-        exit 2;
-fi
-
-echo "LVS summary:"
-cat $lvs_report
-echo "Total Count: $lvs_total_errors"
-
-
-exit 0
+if [[ $lvs_total_errors -eq 0 ]]; then exit 0; fi
+exit 2
