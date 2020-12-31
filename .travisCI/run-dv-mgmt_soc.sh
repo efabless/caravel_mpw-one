@@ -16,34 +16,17 @@
 
 PDK_PATH=$1
 TARGET_PATH=$2
-OUT_FILE=$TARGET_PATH/mgmt_soc_dv.out
+
+MGMT_SOC_PATTERNS_1=(gpio uart perf hkspi sysctrl mem)
+MGMT_SOC_PATTERNS_2=(mprj_ctrl pass_thru timer timer2 pll storage)
+
+bash $TARGET_PATH/.travisCI/run-dv_mgmt_soc_set.sh $PDK_PATH "${MGMT_SOC_PATTERNS_1[@]}" 1 $TARGET_PATH &
+bash $TARGET_PATH/.travisCI/run-dv_mgmt_soc_set.sh $PDK_PATH "${MGMT_SOC_PATTERNS_2[@]}" 2 $TARGET_PATH &
+wait
+
+VERDICT_FILE_1=$TARGET_PATH/mgmt_soc_verdict.1.out
+VERDICT_FILE_2=$TARGET_PATH/mgmt_soc_verdict.2.out
 VERDICT_FILE=$TARGET_PATH/mgmt_soc_verdict.out
-MGMT_SOC_PATTERNS=(gpio mem uart perf hkspi sysctrl mprj_ctrl pass_thru timer timer2 pll storage)
 
-
-cd $TARGET_PATH/verilog/dv/caravel/mgmt_soc;
-touch $OUT_FILE
-for PATTERN in ${MGMT_SOC_PATTERNS[*]}
-do
-    echo "Executing DV on $PATTERN";
-    cd $PATTERN;
-    for x in RTL GL
-    do
-        export SIM=$x
-        echo "Running $SIM.."
-        logFile=$TARGET_PATH/mgmt_soc_$PATTERN.$SIM.dv.out
-        make 2>&1 | tee $logFile
-        grep "Monitor" $logFile >> $OUT_FILE
-        make clean
-    done
-    cd ..;
-done
-
-cat $OUT_FILE
-
-cnt=$(grep "Passed" $OUT_FILE | wc -l)
-
-len=${#MGMT_SOC_PATTERNS[@]}
-if [[ $cnt -gt $len ]]; then echo "PASS" > $VERDICT_FILE; exit 0 fi
-
-echo "FAIL" > $VERDICT_FILE
+cat $VERDICT_FILE_1 > $VERDICT_FILE
+cat $VERDICT_FILE_2 >> $VERDICT_FILE
