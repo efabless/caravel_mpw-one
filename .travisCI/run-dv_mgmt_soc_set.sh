@@ -13,7 +13,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 # SPDX-License-Identifier: Apache-2.0
-export RUN_WRAPPER=$TARGET_PATH/.travisCI/run_wrapper.sh
 
 PDK_PATH=$1; shift
 array=( "$@" )
@@ -29,6 +28,8 @@ echo "arg3=$ID"
 echo "arg2=$TARGET_PATH"
 echo "array contains:"
 printf "%s\n" "${array[@]}"
+
+export RUN_WRAPPER=$TARGET_PATH/.travisCI/run_wrapper.sh
 
 OUT_FILE=$TARGET_PATH/mgmt_soc_dv.$ID.out
 VERDICT_FILE=$TARGET_PATH/mgmt_soc_verdict.$ID.out

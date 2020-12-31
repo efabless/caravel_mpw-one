@@ -17,7 +17,7 @@
 PDK_PATH=$1
 TARGET_PATH=$2
 
-MGMT_SOC_PATTERNS_1=(gpio uart perf hkspi sysctrl mem)
+MGMT_SOC_PATTERNS_1=(gpio perf hkspi sysctrl mem uart)
 MGMT_SOC_PATTERNS_2=(mprj_ctrl pass_thru timer timer2 pll storage)
 
 bash $TARGET_PATH/.travisCI/run-dv_mgmt_soc_set.sh $PDK_PATH "${MGMT_SOC_PATTERNS_1[@]}" 1 $TARGET_PATH &
