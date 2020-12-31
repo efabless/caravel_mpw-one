@@ -21,7 +21,6 @@
  *
  *  SPDX-License-Identifier: ISC
  */
- */
 
 `timescale 1 ns / 1 ps
 
