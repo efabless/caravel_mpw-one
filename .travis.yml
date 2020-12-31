@@ -31,33 +31,43 @@ os:
 jobs:
   include:
     - name: "The Precheck Test"
-      install: sh .travisCI/precheckBuild.sh
-      script: bash .travisCI/run-precheck.sh
+      install: sh .travisCI/precheck/precheckBuild.sh
+      script: bash .travisCI/precheck/run-precheck.sh
     - name: "The LVS Test"
-      install: bash .travisCI/bash_run_wrapper.sh .travisCI/pdkBuild.sh
-      script: bash .travisCI/bash_run_wrapper.sh .travisCI/lvs-check.sh
+      install: bash .travisCI/utils/bash_run_wrapper.sh .travisCI/utils/pdkBuild.sh
+      script: bash .travisCI/utils/bash_run_wrapper.sh .travisCI/lvs/lvs-check.sh
     - name: "The MAGLEF LVS Test"
-      install: sh .travisCI/pdkBuild.sh
-      script: bash .travisCI/maglef-lvs-check.sh
+      install: sh .travisCI/utils/bash_run_wrapper.sh
+      script: bash .travisCI/lvs/maglef-lvs-check.sh
     - name: "The mgmt_soc DV Test: Set 1"
-      install: bash .travisCI/bash_run_wrapper.sh .travisCI/pdkBuild.sh
-      script: bash .travisCI/dv-check-wrapper.sh mgmt_soc 1
+      install: bash .travisCI/utils/bash_run_wrapper.sh .travisCI/utils/pdkBuild.sh
+      script: bash .travisCI/dv/dv-check-wrapper.sh mgmt_soc 1
     - name: "The mgmt_soc DV Test: Set 2"
-      install: bash .travisCI/bash_run_wrapper.sh .travisCI/pdkBuild.sh
-      script: bash .travisCI/dv-check-wrapper.sh mgmt_soc 2
+      install: bash .travisCI/utils/bash_run_wrapper.sh .travisCI/utils/pdkBuild.sh
+      script: bash .travisCI/dv/dv-check-wrapper.sh mgmt_soc 2
     - name: "The mgmt_soc DV Test: Set 3"
-      install: bash .travisCI/bash_run_wrapper.sh .travisCI/pdkBuild.sh
-      script: bash .travisCI/dv-check-wrapper.sh mgmt_soc 3
+      install: bash .travisCI/utils/bash_run_wrapper.sh .travisCI/utils/pdkBuild.sh
+      script: bash .travisCI/dv/dv-check-wrapper.sh mgmt_soc 3
     - name: "The user_proj_example DV Test: Set 1"
-      install: bash .travisCI/bash_run_wrapper.sh .travisCI/pdkBuild.sh
-      script: bash .travisCI/dv-check-wrapper.sh user_proj_example 1
+      install: bash .travisCI/utils/bash_run_wrapper.sh .travisCI/utils/pdkBuild.sh
+      script: bash .travisCI/dv/dv-check-wrapper.sh user_proj_example 1
     - name: "The user_proj_example DV Test: Set 2"
-      install: bash .travisCI/bash_run_wrapper.sh .travisCI/pdkBuild.sh
-      script: bash .travisCI/dv-check-wrapper.sh user_proj_example 2
+      install: bash .travisCI/utils/bash_run_wrapper.sh .travisCI/utils/pdkBuild.sh
+      script: bash .travisCI/dv/dv-check-wrapper.sh user_proj_example 2
+    - name: "The wb_utests DV Test: Set 1"
+      install: bash .travisCI/utils/bash_run_wrapper.sh .travisCI/utils/pdkBuild.sh
+      script: bash .travisCI/dv/dv-check-wrapper.sh wb_utests 1
+    - name: "The wb_utests DV Test: Set 2"
+      install: bash .travisCI/utils/bash_run_wrapper.sh .travisCI/utils/pdkBuild.sh
+      script: bash .travisCI/dv/dv-check-wrapper.sh wb_utests 2
     - name: "The README.rst Consistency Test"
-      script: bash .travisCI/git-check.sh
+      script: bash .travisCI/base_checks/git-check.sh
     - name: "The Manifest Test"
       script:
-        - bash .travisCI/manifest-check.sh mag/
-        - bash .travisCI/manifest-check.sh maglef/
-        - bash .travisCI/manifest-check.sh verilog/rtl/
+        - bash .travisCI/base_checks/manifest-check.sh mag/
+        - bash .travisCI/base_checks/manifest-check.sh maglef/
+        - bash .travisCI/base_checks/manifest-check.sh verilog/rtl/
+  allow_failures:
+    - name: "The wb_utests DV Test: Set 2"
+      install: bash .travisCI/utils/bash_run_wrapper.sh .travisCI/utils/pdkBuild.sh
+      script: bash .travisCI/dv/dv-check-wrapper.sh wb_utests 2

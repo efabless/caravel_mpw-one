@@ -27,19 +27,19 @@ OUT_FILE=$TARGET_PATH/$TARGET_DV\_dv.$ID.out
 case $ID in
 
   1)
-    bash $TARGET_PATH/.travisCI/run-dv-set.sh $PDK_PATH "${MGMT_SOC_PATTERNS_1[@]}" mgmt_soc 1 $TARGET_PATH 
+    bash $TARGET_PATH/.travisCI/dv/run-dv-set.sh $PDK_PATH "${MGMT_SOC_PATTERNS_1[@]}" caravel mgmt_soc 1 $TARGET_PATH 
     len=${#MGMT_SOC_PATTERNS_1[@]}
     tot=$(( 2*(len+2) ))
     ;;
 
   2)
-    bash $TARGET_PATH/.travisCI/run-dv-set.sh $PDK_PATH "${MGMT_SOC_PATTERNS_2[@]}" mgmt_soc 2 $TARGET_PATH
+    bash $TARGET_PATH/.travisCI/dv/run-dv-set.sh $PDK_PATH "${MGMT_SOC_PATTERNS_2[@]}" caravel mgmt_soc 2 $TARGET_PATH
     len=${#MGMT_SOC_PATTERNS_2[@]}
     tot=$(( 2*len ))
     ;;
 
   3)
-    bash $TARGET_PATH/.travisCI/run-dv-set.sh $PDK_PATH "${MGMT_SOC_PATTERNS_3[@]}" mgmt_soc 3 $TARGET_PATH
+    bash $TARGET_PATH/.travisCI/dv/run-dv-set.sh $PDK_PATH "${MGMT_SOC_PATTERNS_3[@]}" caravel mgmt_soc 3 $TARGET_PATH
     len=${#MGMT_SOC_PATTERNS_3[@]}
     tot=$(( 2*len ))
     ;;

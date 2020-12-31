@@ -17,24 +17,25 @@
 PDK_PATH=$1
 TARGET_PATH=$2
 ID=$3
+WB_UTESTS_PATTERNS_1=(intercon_wb spimemio_wb storage_wb uart_wb)
+WB_UTESTS_PATTERNS_2=(gpio_wb la_wb mem_wb mprj_ctrl sysctrl_wb spi_sysctrl_wb)
 
-USER_PROJ_EXAMPLE_PATTERNS_1=(io_ports la_test2)
-USER_PROJ_EXAMPLE_PATTERNS_2=(la_test1)
 
- 
-VERDICT_FILE=$TARGET_PATH/user_proj_example_verdict.out
+VERDICT_FILE=$TARGET_PATH/wb_utests_verdict.out
 OUT_FILE=$TARGET_PATH/$TARGET_DV\_dv.$ID.out
 
 case $ID in
 
   1)
-    bash $TARGET_PATH/.travisCI/run-dv-set.sh $PDK_PATH "${USER_PROJ_EXAMPLE_PATTERNS_1[@]}" user_proj_example 1 $TARGET_PATH 
-    len=${#USER_PROJ_EXAMPLE_PATTERNS_1[@]}
+    bash $TARGET_PATH/.travisCI/dv/run-dv-set.sh $PDK_PATH "${WB_UTESTS_PATTERNS_1[@]}" . wb_utests 1 $TARGET_PATH 
+    len=${#WB_UTESTS_PATTERNS_1[@]}
+    tot=$(( 2*(len+2) ))
     ;;
 
   2)
-    bash $TARGET_PATH/.travisCI/run-dv-set.sh $PDK_PATH "${USER_PROJ_EXAMPLE_PATTERNS_2[@]}" user_proj_example 2 $TARGET_PATH
-    len=${#USER_PROJ_EXAMPLE_PATTERNS_2[@]}
+    bash $TARGET_PATH/.travisCI/dv/run-dv-set.sh $PDK_PATH "${WB_UTESTS_PATTERNS_2[@]}" . wb_utests 2 $TARGET_PATH
+    len=${#WB_UTESTS_PATTERNS_2[@]}
+    tot=$(( 2*len ))
     ;;
 
   *)
@@ -43,7 +44,6 @@ case $ID in
     ;;
 esac
 
-tot=$(( 2*len ))
 cnt=$(grep -i "Passed" $OUT_FILE | wc -l)
 
 
@@ -59,4 +59,3 @@ echo "Total Verdict File:"
 cat $VERDICT_FILE
 
 exit 0
-

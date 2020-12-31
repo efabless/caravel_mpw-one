@@ -25,18 +25,23 @@ unset PATTERNS[$last_idx]
 last_idx=$(( ${#PATTERNS[@]} - 1 ))
 TARGET_DV=${PATTERNS[$last_idx]}
 unset PATTERNS[$last_idx]
+last_idx=$(( ${#PATTERNS[@]} - 1 ))
+PARENT=${PATTERNS[$last_idx]}
+unset PATTERNS[$last_idx]
+
 
 echo "arg1=$PDK_PATH"
-echo "arg2=$TARGET_DV"
-echo "arg3=$ID"
-echo "arg4=$TARGET_PATH"
+echo "arg2=$PARENT"
+echo "arg3=$TARGET_DV"
+echo "arg4=$ID"
+echo "arg5=$TARGET_PATH"
 echo "PATTERNS contains:"
 printf "%s\n" "${PATTERNS[@]}"
 
-export RUN_WRAPPER=$TARGET_PATH/.travisCI/run_wrapper.sh
+export RUN_WRAPPER=$TARGET_PATH/utils/.travisCI/run_wrapper.sh
 
 OUT_FILE=$TARGET_PATH/$TARGET_DV\_dv.$ID.out
-cd $TARGET_PATH/verilog/dv/caravel/$TARGET_DV;
+cd $TARGET_PATH/verilog/dv/$PARENT/$TARGET_DV;
 touch $OUT_FILE
 for PATTERN in ${PATTERNS[*]}
 do
