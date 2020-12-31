@@ -34,19 +34,19 @@ jobs:
       install: sh .travisCI/precheckBuild.sh
       script: bash .travisCI/run-precheck.sh
     - name: "The LVS Test"
-      install: bash .travisCI/run_wrapper.sh .travisCI/pdkBuild.sh
-      script: bash .travisCI/run_wrapper.sh .travisCI/lvs-check.sh
+      install: bash .travisCI/bash_run_wrapper.sh .travisCI/pdkBuild.sh
+      script: bash .travisCI/bash_run_wrapper.sh .travisCI/lvs-check.sh
     - name: "The MAGLEF LVS Test"
       install: sh .travisCI/pdkBuild.sh
       script: bash .travisCI/maglef-lvs-check.sh
     - name: "The Dummy DV Test"
-      install: bash .travisCI/run_wrapper.sh .travisCI/pdkBuild.sh
+      install: bash .travisCI/bash_run_wrapper.sh .travisCI/pdkBuild.sh
       script: bash .travisCI/dummy_make_verify.sh
     - name: "The mgmt_soc DV Test"
-      install: bash .travisCI/run_wrapper.sh .travisCI/pdkBuild.sh
+      install: bash .travisCI/bash_run_wrapper.sh .travisCI/pdkBuild.sh
       script: bash .travisCI/dv-check-wrapper.sh mgmt_soc
     - name: "The user_proj_example DV Test"
-      install: bash .travisCI/run_wrapper.sh .travisCI/pdkBuild.sh
+      install: bash .travisCI/bash_run_wrapper.sh .travisCI/pdkBuild.sh
       script: bash .travisCI/dv-check-wrapper.sh user_proj_example
     - name: "The README.rst Consistency Test"
       script: bash .travisCI/git-check.sh

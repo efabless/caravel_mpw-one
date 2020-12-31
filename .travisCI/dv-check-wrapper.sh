@@ -13,17 +13,19 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 # SPDX-License-Identifier: Apache-2.0
+export RUN_WRAPPER=$TARGET_PATH/travisCI/run_wrapper.sh
+
 
 target_dv=$1
 
-docker pull efabless/dv_setup:latest
+bash $RUN_WRAPPER "docker pull efabless/dv_setup:latest"
 
 export PDK_PATH=$(pwd)/../pdks/sky130A
 
 export TARGET_PATH=$(pwd)
 docker run -it -v $TARGET_PATH:$TARGET_PATH -v $PDK_PATH:$PDK_PATH \
             -e TARGET_PATH=$TARGET_PATH -e PDK_PATH=$PDK_PATH \
-            -u $(id -u $USER):$(id -g $USER) efabless/dv:latest \
+            -u $(id -u $USER):$(id -g $USER) efabless/dv_setup:latest \
             bash -c "bash $TARGET_PATH/.travisCI/run-dv-$target_dv.sh $PDK_PATH $TARGET_PATH"
 
 echo "DONE!"
