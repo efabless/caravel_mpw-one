@@ -15,53 +15,46 @@
 # SPDX-License-Identifier: Apache-2.0
 
 PDK_PATH=$1; shift
-MGMT_SOC_PATTERNS=( "$@" )
-last_idx=$(( ${#MGMT_SOC_PATTERNS[@]} - 1 ))
-TARGET_PATH=${MGMT_SOC_PATTERNS[$last_idx]}
-unset MGMT_SOC_PATTERNS[$last_idx]
-last_idx=$(( ${#MGMT_SOC_PATTERNS[@]} - 1 ))
-ID=${MGMT_SOC_PATTERNS[$last_idx]}
-unset MGMT_SOC_PATTERNS[$last_idx]
+PATTERNS=( "$@" )
+last_idx=$(( ${#PATTERNS[@]} - 1 ))
+TARGET_PATH=${PATTERNS[$last_idx]}
+unset PATTERNS[$last_idx]
+last_idx=$(( ${#PATTERNS[@]} - 1 ))
+ID=${PATTERNS[$last_idx]}
+unset PATTERNS[$last_idx]
+last_idx=$(( ${#PATTERNS[@]} - 1 ))
+TARGET_DV=${PATTERNS[$last_idx]}
+unset PATTERNS[$last_idx]
 
 echo "arg1=$PDK_PATH"
+echo "arg2=$TARGET_DV"
 echo "arg3=$ID"
-echo "arg2=$TARGET_PATH"
-echo "MGMT_SOC_PATTERNS contains:"
-printf "%s\n" "${MGMT_SOC_PATTERNS[@]}"
+echo "arg4=$TARGET_PATH"
+echo "PATTERNS contains:"
+printf "%s\n" "${PATTERNS[@]}"
 
 export RUN_WRAPPER=$TARGET_PATH/.travisCI/run_wrapper.sh
 
-OUT_FILE=$TARGET_PATH/mgmt_soc_dv.$ID.out
-VERDICT_FILE=$TARGET_PATH/mgmt_soc_verdict.$ID.out
-cd $TARGET_PATH/verilog/dv/caravel/mgmt_soc;
+OUT_FILE=$TARGET_PATH/$TARGET_DV\_dv.$ID.out
+cd $TARGET_PATH/verilog/dv/caravel/$TARGET_DV;
 touch $OUT_FILE
-for PATTERN in ${MGMT_SOC_PATTERNS[*]}
+for PATTERN in ${PATTERNS[*]}
 do
     echo "Executing DV on $PATTERN";
     cd $PATTERN;
     for x in RTL GL
     do
         export SIM=$x
-        echo "Running $SIM.."
-        logFile=$TARGET_PATH/mgmt_soc_$PATTERN.$SIM.dv.out
+        echo "Running $PATTERN $SIM.."
+        logFile=$TARGET_PATH/$TARGET_DV\_$PATTERN.$SIM.dv.out
         bash $RUN_WRAPPER "make" 2>&1 | tee $logFile
         grep "Monitor" $logFile >> $OUT_FILE
         make clean
     done
+    echo "Execution Done on $PATTERN!"
     cd ..;
 done
 
 cat $OUT_FILE
-
-cnt=$(grep "Passed" $OUT_FILE | wc -l)
-
-len=${#MGMT_SOC_PATTERNS[@]}
-tot=$(( 2*len ))
-echo "array length: $len"
-echo "total passed expected: $tot"
-echo "passed found: $cnt"
-if [[ $cnt -gt $tot ]]; then echo "PASS" > $VERDICT_FILE; exit 0 fi
-
-echo "FAIL" > $VERDICT_FILE
 
 exit 0

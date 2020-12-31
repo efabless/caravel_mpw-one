@@ -21,13 +21,14 @@ export TARGET_PATH=$(pwd)
 export RUN_WRAPPER=$TARGET_PATH/.travisCI/run_wrapper.sh
 
 target_dv=$1
+target_id=$2
 
 bash $RUN_WRAPPER "docker pull efabless/dv_setup:latest"
 
 docker run -it -v $TARGET_PATH:$TARGET_PATH -v $PDK_PATH:$PDK_PATH \
             -e TARGET_PATH=$TARGET_PATH -e PDK_PATH=$PDK_PATH \
             -u $(id -u $USER):$(id -g $USER) efabless/dv_setup:latest \
-            bash -c "bash $TARGET_PATH/.travisCI/run-dv-$target_dv.sh $PDK_PATH $TARGET_PATH"
+            bash -c "bash $TARGET_PATH/.travisCI/run-dv-$target_dv.sh $PDK_PATH $TARGET_PATH $target_id"
 
 echo "DONE!"
 

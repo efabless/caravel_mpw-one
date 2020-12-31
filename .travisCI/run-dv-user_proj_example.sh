@@ -16,40 +16,47 @@
 
 PDK_PATH=$1
 TARGET_PATH=$2
-OUT_FILE=$TARGET_PATH/user_proj_example_dv.out
+ID=$3
+
+USER_PROJ_EXAMPLE_PATTERNS_1=(io_ports la_test2)
+USER_PROJ_EXAMPLE_PATTERNS_2=(la_test1)
+
+ 
 VERDICT_FILE=$TARGET_PATH/user_proj_example_verdict.out
-USER_PROJ_EXAMPLE_PATTERNS=(io_ports la_test1 la_test2)
+OUT_FILE=$TARGET_PATH/$TARGET_DV\_dv.$ID.out
 
-export RUN_WRAPPER=$TARGET_PATH/.travisCI/run_wrapper.sh
+case $ID in
 
-cd $TARGET_PATH/verilog/dv/caravel/user_proj_example;
-touch $OUT_FILE
-for PATTERN in ${USER_PROJ_EXAMPLE_PATTERNS[*]}
-do
-    echo "Executing DV on $PATTERN";
-    cd $PATTERN;
-    for x in RTL GL
-    do
-        export SIM=$x
-        echo "Running $SIM.."
-        logFile=$TARGET_PATH/user_proj_example_$PATTERN.$SIM.dv.out
-        bash $RUN_WRAPPER "make" 2>&1 | tee $logFile
-        grep "Monitor" $logFile >> $OUT_FILE
-        make clean
-    done
-    cd ..;
-done
+  1)
+    bash $TARGET_PATH/.travisCI/run-dv-set.sh $PDK_PATH "${USER_PROJ_EXAMPLE_PATTERNS_1[@]}" user_proj_example 1 $TARGET_PATH 
+    len=${#USER_PROJ_EXAMPLE_PATTERNS_1[@]}
+    ;;
 
-cat $OUT_FILE
+  2)
+    bash $TARGET_PATH/.travisCI/run-dv-set.sh $PDK_PATH "${USER_PROJ_EXAMPLE_PATTERNS_2[@]}" user_proj_example 2 $TARGET_PATH
+    len=${#USER_PROJ_EXAMPLE_PATTERNS_2[@]}
+    ;;
 
-cnt=$(grep "Passed" $OUT_FILE | wc -l)
+  *)
+    echo -n "unknown ID $ID"
+    exit 2
+    ;;
+esac
 
-len=${#USER_PROJ_EXAMPLE_PATTERNS[@]}
 tot=$(( 2*len ))
+cnt=$(grep -i "Passed" $OUT_FILE | wc -l)
+
+
 echo "array length: $len"
 echo "total passed expected: $tot"
 echo "passed found: $cnt"
-
-if [[ $cnt -eq $tot ]]; then echo "PASS" > $VERDICT_FILE; exit 0 fi
+if [[ $cnt -eq $tot ]]; then echo "PASS" > $VERDICT_FILE; exit 0; fi
 
 echo "FAIL" > $VERDICT_FILE
+
+
+echo "Total Verdict File:"
+cat $VERDICT_FILE
+
+exit 0
+

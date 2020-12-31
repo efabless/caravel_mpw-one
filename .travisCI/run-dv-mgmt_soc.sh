@@ -16,24 +16,52 @@
 
 PDK_PATH=$1
 TARGET_PATH=$2
-
-MGMT_SOC_PATTERNS_1=(gpio perf hkspi sysctrl mem uart)
+ID=$3
+MGMT_SOC_PATTERNS_1=(gpio perf hkspi sysctrl mem)
 MGMT_SOC_PATTERNS_2=(mprj_ctrl pass_thru timer timer2 pll storage)
+MGMT_SOC_PATTERNS_3=(uart)
 
-bash $TARGET_PATH/.travisCI/run-dv_mgmt_soc_set.sh $PDK_PATH "${MGMT_SOC_PATTERNS_1[@]}" 1 $TARGET_PATH &
-bash $TARGET_PATH/.travisCI/run-dv_mgmt_soc_set.sh $PDK_PATH "${MGMT_SOC_PATTERNS_2[@]}" 2 $TARGET_PATH &
-wait
-
-VERDICT_FILE_1=$TARGET_PATH/mgmt_soc_verdict.1.out
-VERDICT_FILE_2=$TARGET_PATH/mgmt_soc_verdict.2.out
 VERDICT_FILE=$TARGET_PATH/mgmt_soc_verdict.out
+OUT_FILE=$TARGET_PATH/$TARGET_DV\_dv.$ID.out
 
-cat $VERDICT_FILE_1 > $VERDICT_FILE
-cat $VERDICT_FILE_2 >> $VERDICT_FILE
+case $ID in
 
-echo "Verdict for set 1:"
-cat $VERDICT_FILE_1
-echo "Verdict for set 2:"
-cat $VERDICT_FILE_2
+  1)
+    bash $TARGET_PATH/.travisCI/run-dv-set.sh $PDK_PATH "${MGMT_SOC_PATTERNS_1[@]}" mgmt_soc 1 $TARGET_PATH 
+    len=${#MGMT_SOC_PATTERNS_1[@]}
+    tot=$(( 2*(len+2) ))
+    ;;
+
+  2)
+    bash $TARGET_PATH/.travisCI/run-dv-set.sh $PDK_PATH "${MGMT_SOC_PATTERNS_2[@]}" mgmt_soc 2 $TARGET_PATH
+    len=${#MGMT_SOC_PATTERNS_2[@]}
+    tot=$(( 2*len ))
+    ;;
+
+  3)
+    bash $TARGET_PATH/.travisCI/run-dv-set.sh $PDK_PATH "${MGMT_SOC_PATTERNS_3[@]}" mgmt_soc 3 $TARGET_PATH
+    len=${#MGMT_SOC_PATTERNS_3[@]}
+    tot=$(( 2*len ))
+    ;;
+
+  *)
+    echo -n "unknown ID $ID"
+    exit 2
+    ;;
+esac
+
+cnt=$(grep -i "Passed" $OUT_FILE | wc -l)
+
+
+echo "array length: $len"
+echo "total passed expected: $tot"
+echo "passed found: $cnt"
+if [[ $cnt -eq $tot ]]; then echo "PASS" > $VERDICT_FILE; exit 0; fi
+
+echo "FAIL" > $VERDICT_FILE
+
+
+echo "Total Verdict File:"
+cat $VERDICT_FILE
 
 exit 0

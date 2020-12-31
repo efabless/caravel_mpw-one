@@ -39,12 +39,21 @@ jobs:
     - name: "The MAGLEF LVS Test"
       install: sh .travisCI/pdkBuild.sh
       script: bash .travisCI/maglef-lvs-check.sh
-    - name: "The mgmt_soc DV Test"
+    - name: "The mgmt_soc DV Test: Set 1"
       install: bash .travisCI/bash_run_wrapper.sh .travisCI/pdkBuild.sh
-      script: bash .travisCI/dv-check-wrapper.sh mgmt_soc
-    - name: "The user_proj_example DV Test"
+      script: bash .travisCI/dv-check-wrapper.sh mgmt_soc 1
+    - name: "The mgmt_soc DV Test: Set 2"
       install: bash .travisCI/bash_run_wrapper.sh .travisCI/pdkBuild.sh
-      script: bash .travisCI/dv-check-wrapper.sh user_proj_example
+      script: bash .travisCI/dv-check-wrapper.sh mgmt_soc 2
+    - name: "The mgmt_soc DV Test: Set 3"
+      install: bash .travisCI/bash_run_wrapper.sh .travisCI/pdkBuild.sh
+      script: bash .travisCI/dv-check-wrapper.sh mgmt_soc 3
+    - name: "The user_proj_example DV Test: Set 1"
+      install: bash .travisCI/bash_run_wrapper.sh .travisCI/pdkBuild.sh
+      script: bash .travisCI/dv-check-wrapper.sh user_proj_example 1
+    - name: "The user_proj_example DV Test: Set 2"
+      install: bash .travisCI/bash_run_wrapper.sh .travisCI/pdkBuild.sh
+      script: bash .travisCI/dv-check-wrapper.sh user_proj_example 2
     - name: "The README.rst Consistency Test"
       script: bash .travisCI/git-check.sh
     - name: "The Manifest Test"
