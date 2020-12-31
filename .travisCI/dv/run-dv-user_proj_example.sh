@@ -23,18 +23,18 @@ USER_PROJ_EXAMPLE_PATTERNS_2=(la_test1)
 
  
 VERDICT_FILE=$TARGET_PATH/user_proj_example_verdict.out
-OUT_FILE=$TARGET_PATH/$TARGET_DV\_dv.$ID.out
+OUT_FILE=$TARGET_PATH/user_proj_example_dv.$ID.out
 
 case $ID in
 
   1)
     bash $TARGET_PATH/.travisCI/dv/run-dv-set.sh $PDK_PATH "${USER_PROJ_EXAMPLE_PATTERNS_1[@]}" caravel user_proj_example 1 $TARGET_PATH 
-    len=${#USER_PROJ_EXAMPLE_PATTERNS_1[@]}
+    export TOTAL=5
     ;;
 
   2)
     bash $TARGET_PATH/.travisCI/dv/run-dv-set.sh $PDK_PATH "${USER_PROJ_EXAMPLE_PATTERNS_2[@]}" caravel user_proj_example 2 $TARGET_PATH
-    len=${#USER_PROJ_EXAMPLE_PATTERNS_2[@]}
+    export TOTAL=3
     ;;
 
   *)
@@ -43,14 +43,12 @@ case $ID in
     ;;
 esac
 
-tot=$(( 2*len ))
 cnt=$(grep -i "Passed" $OUT_FILE | wc -l)
 
 
-echo "array length: $len"
-echo "total passed expected: $tot"
+echo "total passed expected: $TOTAL"
 echo "passed found: $cnt"
-if [[ $cnt -eq $tot ]]; then echo "PASS" > $VERDICT_FILE; exit 0; fi
+if [[ $cnt -eq $TOTAL ]]; then echo "PASS" > $VERDICT_FILE; exit 0; fi
 
 echo "FAIL" > $VERDICT_FILE
 

@@ -22,14 +22,14 @@ WB_UTESTS_PATTERNS_2=(gpio_wb la_wb mem_wb mprj_ctrl sysctrl_wb spi_sysctrl_wb)
 
 
 VERDICT_FILE=$TARGET_PATH/wb_utests_verdict.out
-OUT_FILE=$TARGET_PATH/$TARGET_DV\_dv.$ID.out
+OUT_FILE=$TARGET_PATH/wb_utests_dv.$ID.out
 
 case $ID in
 
   1)
     bash $TARGET_PATH/.travisCI/dv/run-dv-set.sh $PDK_PATH "${WB_UTESTS_PATTERNS_1[@]}" . wb_utests 1 $TARGET_PATH 
     len=${#WB_UTESTS_PATTERNS_1[@]}
-    tot=$(( 2*(len+2) ))
+    tot=$(( 2*(len) ))
     ;;
 
   2)

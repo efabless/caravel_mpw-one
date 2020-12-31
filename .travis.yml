@@ -37,7 +37,7 @@ jobs:
       install: bash .travisCI/utils/bash_run_wrapper.sh .travisCI/utils/pdkBuild.sh
       script: bash .travisCI/utils/bash_run_wrapper.sh .travisCI/lvs/lvs-check.sh
     - name: "The MAGLEF LVS Test"
-      install: sh .travisCI/utils/bash_run_wrapper.sh
+      install: sh .travisCI/utils/bash_run_wrapper.sh .travisCI/utils/pdkBuild.sh
       script: bash .travisCI/lvs/maglef-lvs-check.sh
     - name: "The mgmt_soc DV Test: Set 1"
       install: bash .travisCI/utils/bash_run_wrapper.sh .travisCI/utils/pdkBuild.sh
@@ -48,6 +48,12 @@ jobs:
     - name: "The mgmt_soc DV Test: Set 3"
       install: bash .travisCI/utils/bash_run_wrapper.sh .travisCI/utils/pdkBuild.sh
       script: bash .travisCI/dv/dv-check-wrapper.sh mgmt_soc 3
+    - name: "The mgmt_soc DV Test: Set 4"
+      install: bash .travisCI/utils/bash_run_wrapper.sh .travisCI/utils/pdkBuild.sh
+      script: bash .travisCI/dv/dv-check-wrapper.sh mgmt_soc 4
+    - name: "The mgmt_soc DV Test: Set 5"
+      install: bash .travisCI/utils/bash_run_wrapper.sh .travisCI/utils/pdkBuild.sh
+      script: bash .travisCI/dv/dv-check-wrapper.sh mgmt_soc 5
     - name: "The user_proj_example DV Test: Set 1"
       install: bash .travisCI/utils/bash_run_wrapper.sh .travisCI/utils/pdkBuild.sh
       script: bash .travisCI/dv/dv-check-wrapper.sh user_proj_example 1

@@ -17,9 +17,11 @@
 PDK_PATH=$1
 TARGET_PATH=$2
 ID=$3
-MGMT_SOC_PATTERNS_1=(gpio perf hkspi sysctrl mem)
-MGMT_SOC_PATTERNS_2=(mprj_ctrl pass_thru timer timer2 pll storage)
+MGMT_SOC_PATTERNS_1=(gpio perf hkspi sysctrl)
+MGMT_SOC_PATTERNS_2=(mprj_ctrl pass_thru)
 MGMT_SOC_PATTERNS_3=(uart)
+MGMT_SOC_PATTERNS_4=(timer timer2 pll storage)
+MGMT_SOC_PATTERNS_5=(mem)
 
 VERDICT_FILE=$TARGET_PATH/mgmt_soc_verdict.out
 OUT_FILE=$TARGET_PATH/$TARGET_DV\_dv.$ID.out
@@ -28,20 +30,30 @@ case $ID in
 
   1)
     bash $TARGET_PATH/.travisCI/dv/run-dv-set.sh $PDK_PATH "${MGMT_SOC_PATTERNS_1[@]}" caravel mgmt_soc 1 $TARGET_PATH 
-    len=${#MGMT_SOC_PATTERNS_1[@]}
-    tot=$(( 2*(len+2) ))
+    export TOTAL=12
     ;;
 
   2)
     bash $TARGET_PATH/.travisCI/dv/run-dv-set.sh $PDK_PATH "${MGMT_SOC_PATTERNS_2[@]}" caravel mgmt_soc 2 $TARGET_PATH
     len=${#MGMT_SOC_PATTERNS_2[@]}
-    tot=$(( 2*len ))
+    export TOTAL=18
     ;;
 
   3)
     bash $TARGET_PATH/.travisCI/dv/run-dv-set.sh $PDK_PATH "${MGMT_SOC_PATTERNS_3[@]}" caravel mgmt_soc 3 $TARGET_PATH
-    len=${#MGMT_SOC_PATTERNS_3[@]}
-    tot=$(( 2*len ))
+    export TOTAL=3
+    ;;
+
+  4)
+    bash $TARGET_PATH/.travisCI/dv/run-dv-set.sh $PDK_PATH "${MGMT_SOC_PATTERNS_4[@]}" caravel mgmt_soc 4 $TARGET_PATH
+    len=${#MGMT_SOC_PATTERNS_4[@]}
+    export TOTAL=$(( 2*len ))
+    ;;
+
+  5)
+    bash $TARGET_PATH/.travisCI/dv/run-dv-set.sh $PDK_PATH "${MGMT_SOC_PATTERNS_5[@]}" caravel mgmt_soc 5 $TARGET_PATH
+    len=${#MGMT_SOC_PATTERNS_5[@]}
+    export TOTAL=9
     ;;
 
   *)
@@ -53,10 +65,9 @@ esac
 cnt=$(grep -i "Passed" $OUT_FILE | wc -l)
 
 
-echo "array length: $len"
-echo "total passed expected: $tot"
+echo "total passed expected: $TOTAL"
 echo "passed found: $cnt"
-if [[ $cnt -eq $tot ]]; then echo "PASS" > $VERDICT_FILE; exit 0; fi
+if [[ $cnt -eq $TOTAL ]]; then echo "PASS" > $VERDICT_FILE; exit 0; fi
 
 echo "FAIL" > $VERDICT_FILE
 

@@ -38,7 +38,7 @@ echo "arg5=$TARGET_PATH"
 echo "PATTERNS contains:"
 printf "%s\n" "${PATTERNS[@]}"
 
-export RUN_WRAPPER=$TARGET_PATH/utils/.travisCI/run_wrapper.sh
+export RUN_WRAPPER=$TARGET_PATH/.travisCI/utils/run_wrapper.sh
 
 OUT_FILE=$TARGET_PATH/$TARGET_DV\_dv.$ID.out
 cd $TARGET_PATH/verilog/dv/$PARENT/$TARGET_DV;

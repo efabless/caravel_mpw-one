@@ -35,8 +35,8 @@ echo "DONE!"
 VERDICT_FILE=$TARGET_PATH/$target_dv\_verdict.out
 cat $VERDICT_FILE
 if [ -f $VERDICT_FILE ]; then
-        cnt=$(grep "FAIL" $VERDICT_FILE -s | wc -l)
-        if ! [[ $cnt ]]; then cnt = 0 fi
+        cnt=$(grep "PASS" $VERDICT_FILE -s | wc -l)
+        if ! [[ $cnt ]]; then cnt = 0; fi
 else
         echo "DV check failed due to subscript failure. Please review the logs";
         exit 2;
@@ -44,5 +44,5 @@ fi
 
 echo "Verdict: $cnt"
 
-if [[ $cnt -eq 1 ]]; then exit 2; fi
-exit 0
+if [[ $cnt -eq 1 ]]; then exit 0; fi
+exit 2;
