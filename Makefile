@@ -192,7 +192,7 @@ help:
 		
 ###########################################################################
 .PHONY: pdk
-pdk: skywater-pdk skywater-library open_pdks build-pdk
+pdk: skywater-pdk skywater-library skywater-timing open_pdks build-pdk
 
 $(PDK_ROOT)/skywater-pdk:
 	git clone https://github.com/google/skywater-pdk.git $(PDK_ROOT)/skywater-pdk
@@ -208,9 +208,11 @@ skywater-library: check-env $(PDK_ROOT)/skywater-pdk
 	cd $(PDK_ROOT)/skywater-pdk && \
 		git submodule update --init libraries/$(STD_CELL_LIBRARY)/latest && \
 		git submodule update --init libraries/$(IO_LIBRARY)/latest && \
-		git submodule update --init libraries/$(SPECIAL_VOLTAGE_LIBRARY)/latest && \
-		$(MAKE) -j$(THREADS) timing
+		git submodule update --init libraries/$(SPECIAL_VOLTAGE_LIBRARY)/latest
 
+skywater-timing: check-env $(PDK_ROOT)/skywater-pdk
+	cd $(PDK_ROOT)/skywater-pdk && \
+		$(MAKE) -j$(THREADS) timing
 ### OPEN_PDKS
 $(PDK_ROOT)/open_pdks:
 	git clone https://github.com/RTimothyEdwards/open_pdks.git $(PDK_ROOT)/open_pdks
