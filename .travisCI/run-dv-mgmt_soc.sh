@@ -30,3 +30,10 @@ VERDICT_FILE=$TARGET_PATH/mgmt_soc_verdict.out
 
 cat $VERDICT_FILE_1 > $VERDICT_FILE
 cat $VERDICT_FILE_2 >> $VERDICT_FILE
+
+echo "Verdict for set 1:"
+cat $VERDICT_FILE_1
+echo "Verdict for set 2:"
+cat $VERDICT_FILE_2
+
+exit 0

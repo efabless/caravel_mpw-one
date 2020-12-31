@@ -33,7 +33,7 @@ do
         export SIM=$x
         echo "Running $SIM.."
         logFile=$TARGET_PATH/user_proj_example_$PATTERN.$SIM.dv.out
-        bash $RUN_WRAPPER "make 2>&1 | tee $logFile"
+        bash $RUN_WRAPPER "make" 2>&1 | tee $logFile
         grep "Monitor" $logFile >> $OUT_FILE
         make clean
     done
@@ -45,6 +45,11 @@ cat $OUT_FILE
 cnt=$(grep "Passed" $OUT_FILE | wc -l)
 
 len=${#USER_PROJ_EXAMPLE_PATTERNS[@]}
-if [[ $cnt -gt $len ]]; then echo "PASS" > $VERDICT_FILE; exit 0 fi
+tot=$(( 2*len ))
+echo "array length: $len"
+echo "total passed expected: $tot"
+echo "passed found: $cnt"
+
+if [[ $cnt -eq $tot ]]; then echo "PASS" > $VERDICT_FILE; exit 0 fi
 
 echo "FAIL" > $VERDICT_FILE

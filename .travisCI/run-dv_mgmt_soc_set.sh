@@ -15,19 +15,19 @@
 # SPDX-License-Identifier: Apache-2.0
 
 PDK_PATH=$1; shift
-array=( "$@" )
-last_idx=$(( ${#array[@]} - 1 ))
-TARGET_PATH=${array[$last_idx]}
-unset array[$last_idx]
-last_idx=$(( ${#array[@]} - 1 ))
-ID=${array[$last_idx]}
-unset array[$last_idx]
+MGMT_SOC_PATTERNS=( "$@" )
+last_idx=$(( ${#MGMT_SOC_PATTERNS[@]} - 1 ))
+TARGET_PATH=${MGMT_SOC_PATTERNS[$last_idx]}
+unset MGMT_SOC_PATTERNS[$last_idx]
+last_idx=$(( ${#MGMT_SOC_PATTERNS[@]} - 1 ))
+ID=${MGMT_SOC_PATTERNS[$last_idx]}
+unset MGMT_SOC_PATTERNS[$last_idx]
 
 echo "arg1=$PDK_PATH"
 echo "arg3=$ID"
 echo "arg2=$TARGET_PATH"
-echo "array contains:"
-printf "%s\n" "${array[@]}"
+echo "MGMT_SOC_PATTERNS contains:"
+printf "%s\n" "${MGMT_SOC_PATTERNS[@]}"
 
 export RUN_WRAPPER=$TARGET_PATH/.travisCI/run_wrapper.sh
 
@@ -44,7 +44,7 @@ do
         export SIM=$x
         echo "Running $SIM.."
         logFile=$TARGET_PATH/mgmt_soc_$PATTERN.$SIM.dv.out
-        bash $RUN_WRAPPER "make 2>&1 | tee $logFile"
+        bash $RUN_WRAPPER "make" 2>&1 | tee $logFile
         grep "Monitor" $logFile >> $OUT_FILE
         make clean
     done
@@ -56,6 +56,12 @@ cat $OUT_FILE
 cnt=$(grep "Passed" $OUT_FILE | wc -l)
 
 len=${#MGMT_SOC_PATTERNS[@]}
-if [[ $cnt -gt $len ]]; then echo "PASS" > $VERDICT_FILE; exit 0 fi
+tot=$(( 2*len ))
+echo "array length: $len"
+echo "total passed expected: $tot"
+echo "passed found: $cnt"
+if [[ $cnt -gt $tot ]]; then echo "PASS" > $VERDICT_FILE; exit 0 fi
 
 echo "FAIL" > $VERDICT_FILE
+
+exit 0
