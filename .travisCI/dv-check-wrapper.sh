@@ -14,14 +14,31 @@
 # limitations under the License.
 # SPDX-License-Identifier: Apache-2.0
 
+target_dv=$1
+
 docker pull efabless/dv_setup:latest
 
 export PDK_PATH=$(pwd)/../pdks/sky130A
 
 export TARGET_PATH=$(pwd)
 docker run -it -v $TARGET_PATH:$TARGET_PATH -v $PDK_PATH:$PDK_PATH \
-    -e TARGET_PATH=$TARGET_PATH -e PDK_PATH=$PDK_PATH \
-    -u $(id -u $USER):$(id -g $USER) efabless/dv_setup:latest \
-    bash -c "cd $TARGET_PATH; export THREADS=2; make -j2 verify;"
+            -e TARGET_PATH=$TARGET_PATH -e PDK_PATH=$PDK_PATH \
+            -u $(id -u $USER):$(id -g $USER) efabless/dv:latest \
+            bash -c "bash $TARGET_PATH/.travisCI/run-dv-$target_dv.sh $PDK_PATH $TARGET_PATH"
 
-exit 0
+echo "DONE!"
+
+VERDICT_FILE=$TARGET_PATH/$target_dv\_verdict.out
+cat $VERDICT_FILE
+if [ -f $VERDICT_FILE ]; then
+        cnt=$(grep "PASS" $VERDICT_FILE -s | wc -l)
+        if ! [[ $cnt ]]; then cnt = 0 fi
+else
+        echo "DV check failed due to subscript failure. Please review the logs";
+        exit 2;
+fi
+
+echo "Verdict: $cnt"
+
+if [[ $cnt -eq 1 ]]; then exit 0; fi
+exit 2
