@@ -44,7 +44,10 @@ jobs:
       script: bash .travisCI/dummy_make_verify.sh
     - name: "The mgmt_soc DV Test"
       install: bash .travisCI/run_wrapper.sh .travisCI/pdkBuild.sh
-      script: bash .travisCI/dv_check_wrapper.sh mgmt_soc
+      script: bash .travisCI/dv-check-wrapper.sh mgmt_soc
+    - name: "The user_proj_example DV Test"
+      install: bash .travisCI/run_wrapper.sh .travisCI/pdkBuild.sh
+      script: bash .travisCI/dv-check-wrapper.sh user_proj_example
     - name: "The README.rst Consistency Test"
       script: bash .travisCI/git-check.sh
     - name: "The Manifest Test"
