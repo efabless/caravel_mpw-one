@@ -46,13 +46,18 @@ ship: check-env uncompress
 
 .PHONY: clean
 clean:
-	echo "clean"
-
+	cd ./verilog/dv/caravel/mgmt_soc/ && \
+		$(MAKE) -j$(THREADS) clean
+	cd ./verilog/dv/caravel/user_proj_example/ && \
+		$(MAKE) -j$(THREADS) clean
 
 
 .PHONY: verify
 verify:
-	echo "verify"
+	cd ./verilog/dv/caravel/mgmt_soc/ && \
+		$(MAKE) -j$(THREADS) all
+	cd ./verilog/dv/caravel/user_proj_example/ && \
+		$(MAKE) -j$(THREADS) all
 
 
 

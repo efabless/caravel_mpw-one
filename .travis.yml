@@ -39,6 +39,9 @@ jobs:
     - name: "The MAGLEF LVS Test"
       install: sh .travisCI/pdkBuild.sh
       script: bash .travisCI/maglef-lvs-check.sh
+    - name: "The Dummy DV Test"
+      install: sh .travisCI/pdkBuild.sh
+      script: bash .travisCI/dummy_make_verify.sh
     - name: "The README.rst Consistency Test"
       script: bash .travisCI/git-check.sh
     - name: "The Manifest Test"
