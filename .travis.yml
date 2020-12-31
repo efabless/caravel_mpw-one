@@ -39,9 +39,6 @@ jobs:
     - name: "The MAGLEF LVS Test"
       install: sh .travisCI/pdkBuild.sh
       script: bash .travisCI/maglef-lvs-check.sh
-    - name: "The Dummy DV Test"
-      install: bash .travisCI/bash_run_wrapper.sh .travisCI/pdkBuild.sh
-      script: bash .travisCI/dummy_make_verify.sh
     - name: "The mgmt_soc DV Test"
       install: bash .travisCI/bash_run_wrapper.sh .travisCI/pdkBuild.sh
       script: bash .travisCI/dv-check-wrapper.sh mgmt_soc
