@@ -122,6 +122,7 @@ module intercon_wb_tb;
             end
         end
         $display("Monitor: Test Wishbone Interconnect Success!");
+        $display("Monitor: Test Wishbone Interconnect Passed!");
         $finish;
     end
     

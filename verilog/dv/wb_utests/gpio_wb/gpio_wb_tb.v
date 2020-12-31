@@ -137,6 +137,7 @@ module gpio_wb_tb;
         
         #6;
         $display("Monitor: GPIO WB Success!");
+        $display("Monitor: GPIO WB Passed!");
         $finish;
     end
     

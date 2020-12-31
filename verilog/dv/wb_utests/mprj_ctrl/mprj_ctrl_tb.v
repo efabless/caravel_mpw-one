@@ -98,6 +98,7 @@ module mprj_ctrl_tb;
         end
         
         $display("Success!");
+        $display ("Monitor: Test Mega-Project Control Passed");
         $finish;
     end
 

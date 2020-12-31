@@ -97,6 +97,7 @@ module mem_wb_tb;
         end
         #6;
         $display("Success!");
+        $display ("Monitor: Test Wishbone Memory Passed");
         $finish;
     end
      

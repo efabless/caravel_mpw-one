@@ -125,6 +125,7 @@ module sysctrl_wb_tb;
         end
 
         $display("Success!");
+        $display ("Monitor: Test System Control Passed!");
         $finish;
     end
     

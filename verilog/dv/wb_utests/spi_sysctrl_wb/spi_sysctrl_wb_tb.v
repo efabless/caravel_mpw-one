@@ -164,6 +164,7 @@ module spi_sysctrl_wb_tb;
             $finish;
         end                
         $display("Success!");
+        $display ("Monitor: Test SPI System Control Passed!");
         $finish;
     end
 

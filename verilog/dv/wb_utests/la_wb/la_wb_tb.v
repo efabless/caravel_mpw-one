@@ -164,6 +164,7 @@ module la_wb_tb;
         end
         #6;
         $display("Monitor: Test LA Wishbone Success!");
+        $display("Monitor: Test LA Wishbone Passed!");
         $finish;
     end
     

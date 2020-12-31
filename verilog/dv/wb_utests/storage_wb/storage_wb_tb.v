@@ -133,6 +133,7 @@ module storage_tb;
         end
 
         $display("Success");
+        $display ("Monitor: Test Storage Area Passed");
         $finish;
     end
     
