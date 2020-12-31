@@ -13,7 +13,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 # SPDX-License-Identifier: Apache-2.0
-export RUN_WRAPPER=$TARGET_PATH/travisCI/run_wrapper.sh
+export RUN_WRAPPER=$TARGET_PATH/.travisCI/run_wrapper.sh
 
 PDK_PATH=$1
 TARGET_PATH=$2
