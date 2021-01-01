@@ -29,12 +29,14 @@ case $ID in
 
   1)
     bash $TARGET_PATH/.travisCI/dv/run-dv-set.sh $PDK_PATH "${USER_PROJ_EXAMPLE_PATTERNS_1[@]}" caravel user_proj_example 1 $TARGET_PATH 
-    export TOTAL=5
+    len=${#USER_PROJ_EXAMPLE_PATTERNS_1[@]}
+    export TOTAL=$(( 2*(len) ))
     ;;
 
   2)
     bash $TARGET_PATH/.travisCI/dv/run-dv-set.sh $PDK_PATH "${USER_PROJ_EXAMPLE_PATTERNS_2[@]}" caravel user_proj_example 2 $TARGET_PATH
-    export TOTAL=3
+    len=${#USER_PROJ_EXAMPLE_PATTERNS_2[@]}
+    export TOTAL=$(( 2*(len) ))
     ;;
 
   *)

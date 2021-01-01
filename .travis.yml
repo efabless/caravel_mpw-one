@@ -54,6 +54,9 @@ jobs:
     - name: "The mgmt_soc DV Test: Set 5"
       install: bash .travisCI/utils/bash_run_wrapper.sh .travisCI/utils/pdkBuild.sh
       script: bash .travisCI/dv/dv-check-wrapper.sh mgmt_soc 5
+    - name: "The mgmt_soc DV Test: Set 6"
+      install: bash .travisCI/utils/bash_run_wrapper.sh .travisCI/utils/pdkBuild.sh
+      script: bash .travisCI/dv/dv-check-wrapper.sh mgmt_soc 6
     - name: "The user_proj_example DV Test: Set 1"
       install: bash .travisCI/utils/bash_run_wrapper.sh .travisCI/utils/pdkBuild.sh
       script: bash .travisCI/dv/dv-check-wrapper.sh user_proj_example 1
@@ -77,3 +80,6 @@ jobs:
     - name: "The wb_utests DV Test: Set 2"
       install: bash .travisCI/utils/bash_run_wrapper.sh .travisCI/utils/pdkBuild.sh
       script: bash .travisCI/dv/dv-check-wrapper.sh wb_utests 2
+    - name: "The mgmt_soc DV Test: Set 6"
+      install: bash .travisCI/utils/bash_run_wrapper.sh .travisCI/utils/pdkBuild.sh
+      script: bash .travisCI/dv/dv-check-wrapper.sh mgmt_soc 6
