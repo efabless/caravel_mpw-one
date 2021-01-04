@@ -54,7 +54,6 @@ The documentation contains the following chapters:
 * :doc:`irq` describes the interrups,
 * :doc:`sram` describes management and storage area SRAM,
 * :doc:`programming` shows how to get started with programming on Caravel chip,
-* :doc:`quick-start` shows how to add custom user project to Caravel harness,
 * :doc:`memory-mapped-io-summary` lists the memory mapped I/O registers by address,
 * :doc:`supplementary-figures` provides supplementary internal structure and die arrangement figures
 * :doc:`maximum-ratings` lists the parameters and their ranges at which the device operates correctly,
