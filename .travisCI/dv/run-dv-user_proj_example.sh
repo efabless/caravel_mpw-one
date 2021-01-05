@@ -21,14 +21,14 @@ ID=$3
 USER_PROJ_EXAMPLE_PATTERNS_1=(io_ports la_test2)
 USER_PROJ_EXAMPLE_PATTERNS_2=(la_test1)
 
- 
+
 VERDICT_FILE=$TARGET_PATH/user_proj_example_verdict.out
 OUT_FILE=$TARGET_PATH/user_proj_example_dv.$ID.out
 
 case $ID in
 
   1)
-    bash $TARGET_PATH/.travisCI/dv/run-dv-set.sh $PDK_PATH "${USER_PROJ_EXAMPLE_PATTERNS_1[@]}" caravel user_proj_example 1 $TARGET_PATH 
+    bash $TARGET_PATH/.travisCI/dv/run-dv-set.sh $PDK_PATH "${USER_PROJ_EXAMPLE_PATTERNS_1[@]}" caravel user_proj_example 1 $TARGET_PATH
     len=${#USER_PROJ_EXAMPLE_PATTERNS_1[@]}
     export TOTAL=$(( 2*(len) ))
     ;;

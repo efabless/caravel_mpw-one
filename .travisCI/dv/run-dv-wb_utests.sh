@@ -17,8 +17,8 @@
 PDK_PATH=$1
 TARGET_PATH=$2
 ID=$3
-WB_UTESTS_PATTERNS_1=(intercon_wb spimemio_wb storage_wb uart_wb gpio_wb la_wb mprj_ctrl sysctrl_wb)
-WB_UTESTS_PATTERNS_2=(mem_wb spi_sysctrl_wb)
+WB_UTESTS_PATTERNS_1=(intercon_wb spimemio_wb storage_wb uart_wb gpio_wb la_wb mprj_ctrl sysctrl_wb spi_sysctrl_wb)
+WB_UTESTS_PATTERNS_2=(mem_wb)
 
 
 VERDICT_FILE=$TARGET_PATH/wb_utests_verdict.out
@@ -27,7 +27,7 @@ OUT_FILE=$TARGET_PATH/wb_utests_dv.$ID.out
 case $ID in
 
   1)
-    bash $TARGET_PATH/.travisCI/dv/run-dv-set.sh $PDK_PATH "${WB_UTESTS_PATTERNS_1[@]}" . wb_utests 1 $TARGET_PATH 
+    bash $TARGET_PATH/.travisCI/dv/run-dv-set.sh $PDK_PATH "${WB_UTESTS_PATTERNS_1[@]}" . wb_utests 1 $TARGET_PATH
     len=${#WB_UTESTS_PATTERNS_1[@]}
     tot=$(( 2*(len) ))
     ;;
