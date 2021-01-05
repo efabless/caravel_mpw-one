@@ -18,9 +18,15 @@
 
 `timescale 1 ns / 1 ps
 
-`define USE_OPENRAM
+`define FUNCTIONAL
+`define UNIT_DELAY #1
 
-`include "sram_1rw1r_32_8192_8_sky130.v"
+`include "libs.ref/sky130_fd_sc_hd/verilog/primitives.v"
+`include "libs.ref/sky130_fd_sc_hd/verilog/sky130_fd_sc_hd.v"
+
+`include "defines.v"
+`include "DFFRAMBB.v"
+`include "DFFRAM.v"
 `include "mem_wb.v"
 
 module mem_wb_tb;
