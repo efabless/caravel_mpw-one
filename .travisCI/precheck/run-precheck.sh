@@ -29,7 +29,7 @@ fi
 
 grep "Violation Message" $output
 
-cnt=$(grep -c -i "DRC violations" $output)
+cnt=$(grep -c "{{SUCCESS}} All Checks PASSED!" $output)
 if ! [[ $cnt ]]; then cnt=0; fi
-if [[ $cnt -eq 2 ]]; then exit 0; fi
+if [[ $cnt -eq 1 ]]; then exit 0; fi
 exit 2
