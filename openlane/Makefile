@@ -63,13 +63,13 @@ ifeq ($(OPENLANE_ROOT),)
 	@echo "Please export OPENLANE_ROOT"
 	@exit 1
 endif
-	git clone https://github.com/efabless/openlane.git --branch=master $(OPENLANE_ROOT) && \
+	git clone https://github.com/efabless/openlane.git --branch=$(OPENLANE_TAG) --depth=1 $(OPENLANE_ROOT) && \
 		cd $(OPENLANE_ROOT) && \
 		make openlane
 
 FORCE:
 
-clean: 
+clean:
 	@echo "Use clean_all to clean everything :)"
 
 clean_all: $(CLEAN)
