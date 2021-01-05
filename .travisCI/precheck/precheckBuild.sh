@@ -14,15 +14,23 @@
 # limitations under the License.
 # SPDX-License-Identifier: Apache-2.0
 
+# By default build pdk since we don't need the other script for the main purpose
+export SKIP_PDK_BUILD=${2:-0}
+
 export TARGET_PATH=$(pwd)
 git clone https://github.com/efabless/open_mpw_precheck.git
 
 docker pull efabless/open_mpw_precheck:latest
 
-cd $TARGET_PATH/..
-export PDK_ROOT=$(pwd)/pdks
-mkdir $PDK_ROOT
-cd $TARGET_PATH/open_mpw_precheck/dependencies
-sh build-pdk.sh
-cd $TARGET_DIR
+
+if [ $SKIP_PDK_BUILD -eq 0 ]; then
+    cd $TARGET_PATH/..
+    export PDK_ROOT=$(pwd)/pdks
+    mkdir $PDK_ROOT
+    cd $TARGET_PATH/open_mpw_precheck/dependencies
+    sh build-pdk.sh
+    cd $TARGET_DIR
+
+fi
+
 exit 0
