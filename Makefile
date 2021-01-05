@@ -48,7 +48,7 @@ STD_CELL_LIBRARY ?= sky130_fd_sc_hd
 SPECIAL_VOLTAGE_LIBRARY ?= sky130_fd_sc_hvl
 IO_LIBRARY ?= sky130_fd_io
 SKYWATER_COMMIT ?= 3d7617a1acb92ea883539bcf22a632d6361a5de4
-OPEN_PDKS_COMMIT ?= debc0a49b00d93416e0efd82f26f7604ae1e7a3a
+OPEN_PDKS_COMMIT ?= 49fc7125db927de199d1f69e002beadc0a29881b
 
 .DEFAULT_GOAL := ship
 # We need portable GDS_FILE pointers...
@@ -251,7 +251,7 @@ skywater-timing: check-env $(PDK_ROOT)/skywater-pdk
 		$(MAKE) -j$(THREADS) timing
 ### OPEN_PDKS
 $(PDK_ROOT)/open_pdks:
-	git clone https://github.com/RTimothyEdwards/open_pdks.git $(PDK_ROOT)/open_pdks
+	git clone git://opencircuitdesign.com/open_pdks $(PDK_ROOT)/open_pdks
 
 .PHONY: open_pdks
 open_pdks: check-env $(PDK_ROOT)/open_pdks
