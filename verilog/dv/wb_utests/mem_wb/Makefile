@@ -23,7 +23,7 @@ PATTERN = mem_wb
 all:  ${PATTERN:=.vcd}
 
 %.vvp: %_tb.v
-	iverilog -I $(PDK_PATH) -I .. -I ../../../rtl \
+	iverilog -DFUNCTIONAL -I $(PDK_PATH) -I .. -I ../../../rtl \
 	$< -o $@
 
 %.vcd: %.vvp

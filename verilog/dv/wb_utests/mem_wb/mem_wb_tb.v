@@ -18,7 +18,6 @@
 
 `timescale 1 ns / 1 ps
 
-`define FUNCTIONAL
 `define UNIT_DELAY #1
 
 `include "libs.ref/sky130_fd_sc_hd/verilog/primitives.v"
