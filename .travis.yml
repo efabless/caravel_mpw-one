@@ -80,6 +80,3 @@ jobs:
     - name: "The wb_utests DV Test: Set 2"
       install: bash .travisCI/utils/bash_run_wrapper.sh .travisCI/utils/pdkBuild.sh
       script: bash .travisCI/dv/dv-check-wrapper.sh wb_utests 2
-    - name: "The mgmt_soc DV Test: Set 6"
-      install: bash .travisCI/utils/bash_run_wrapper.sh .travisCI/utils/pdkBuild.sh
-      script: bash .travisCI/dv/dv-check-wrapper.sh mgmt_soc 6
