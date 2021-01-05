@@ -21,8 +21,7 @@ MGMT_SOC_PATTERNS_1=(gpio perf hkspi sysctrl)
 MGMT_SOC_PATTERNS_2=(mprj_ctrl pass_thru storage)
 MGMT_SOC_PATTERNS_3=(uart)
 MGMT_SOC_PATTERNS_4=(timer timer2)
-MGMT_SOC_PATTERNS_5=(mem)
-MGMT_SOC_PATTERNS_6=(pll)
+MGMT_SOC_PATTERNS_5=(mem pll)
 
 VERDICT_FILE=$TARGET_PATH/mgmt_soc_verdict.out
 OUT_FILE=$TARGET_PATH/mgmt_soc_dv.$ID.out
@@ -56,13 +55,7 @@ case $ID in
   5)
     bash $TARGET_PATH/.travisCI/dv/run-dv-set.sh $PDK_PATH "${MGMT_SOC_PATTERNS_5[@]}" caravel mgmt_soc 5 $TARGET_PATH
     len=${#MGMT_SOC_PATTERNS_5[@]}
-    export TOTAL=6
-    ;;
-
-  6)
-    bash $TARGET_PATH/.travisCI/dv/run-dv-set.sh $PDK_PATH "${MGMT_SOC_PATTERNS_6[@]}" caravel mgmt_soc 6 $TARGET_PATH
-    len=${#MGMT_SOC_PATTERNS_6[@]}
-    export TOTAL=$(( 2*len ))
+    export TOTAL=8
     ;;
 
   *)
