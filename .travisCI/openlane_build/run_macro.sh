@@ -13,7 +13,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 # SPDX-License-Identifier: Apache-2.0
-
+export RUN_WRAPPER=$(pwd)/.travisCI/utils/run_wrapper.sh
 export OPENLANE_TAG=staging
 export PDK_ROOT=$(pwd)/../pdks
 export OPENLANE_ROOT=$(pwd)/../openlane
@@ -21,7 +21,8 @@ export TARGET_MACRO=$1
 export logFile=$TARGET_MACRO.run.log
 make uncompress
 cd openlane
-make $TARGET_MACRO 2>&1 | tee $logFile
+
+bash $RUN_WRAPPER "make $TARGET_MACRO" 2>&1 | tee $logFile
 
 cnt=$(grep -c "Flow Completed Without Fatal Errors" $logFile)
 if ! [[ $cnt ]]; then cnt=0; fi

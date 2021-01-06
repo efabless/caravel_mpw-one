@@ -17,7 +17,7 @@ export RUN_ROOT=$(pwd)
 
 
 # By default skip timing since we don't need the libs in any of the CI tests
-export SKIP_TIMING=${2:-1}
+export SKIP_TIMING=${1:-1}
 
 docker pull efabless/openlane:staging
 

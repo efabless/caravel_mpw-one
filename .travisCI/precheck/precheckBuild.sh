@@ -15,7 +15,7 @@
 # SPDX-License-Identifier: Apache-2.0
 
 # By default build pdk since we don't need the other script for the main purpose
-export SKIP_PDK_BUILD=${2:-0}
+export SKIP_PDK_BUILD=${1:-0}
 
 export TARGET_PATH=$(pwd)
 git clone https://github.com/efabless/open_mpw_precheck.git

@@ -83,8 +83,8 @@ jobs:
         - sh .travisCI/precheck/precheckBuild.sh 1
         - bash .travisCI/utils/bash_run_wrapper.sh .travisCI/openlane_build/build_openlane.sh
       script:
-        - bash .travisCI/utils/bash_run_wrapper.sh .travisCI/openlane_build/run_macro.sh user_proj_example
-        - bash .travisCI/utils/bash_run_wrapper.sh .travisCI/openlane_build/run_macro.sh user_project_wrapper
+        - bash .travisCI/openlane_build/run_macro.sh user_proj_example
+        - bash .travisCI/openlane_build/run_macro.sh user_project_wrapper
         - bash .travisCI/utils/bash_run_wrapper.sh .travisCI/openlane_build/run_make_ship.sh
         - bash .travisCI/precheck/run-precheck.sh
   allow_failures:
@@ -94,7 +94,7 @@ jobs:
         - sh .travisCI/precheck/precheckBuild.sh 1
         - bash .travisCI/utils/bash_run_wrapper.sh .travisCI/openlane_build/build_openlane.sh
       script:
-        - bash .travisCI/utils/bash_run_wrapper.sh .travisCI/openlane_build/run_macro.sh user_proj_example
-        - bash .travisCI/utils/bash_run_wrapper.sh .travisCI/openlane_build/run_macro.sh user_project_wrapper
+        - bash .travisCI/openlane_build/run_macro.sh user_proj_example
+        - bash .travisCI/openlane_build/run_macro.sh user_project_wrapper
         - bash .travisCI/utils/bash_run_wrapper.sh .travisCI/openlane_build/run_make_ship.sh
         - bash .travisCI/precheck/run-precheck.sh

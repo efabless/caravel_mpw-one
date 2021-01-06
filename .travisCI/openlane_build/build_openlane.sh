@@ -15,6 +15,7 @@
 # SPDX-License-Identifier: Apache-2.0
 
 export OPENLANE_ROOT=$(pwd)/../openlane
+export PDK_ROOT=$(pwd)/../pdks
 export OPENLANE_TAG=staging
 cd openlane
 make openlane
