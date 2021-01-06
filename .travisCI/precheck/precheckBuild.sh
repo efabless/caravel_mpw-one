@@ -25,7 +25,7 @@ docker pull efabless/open_mpw_precheck:latest
 
 if [ $SKIP_PDK_BUILD -eq 0 ]; then
     cd $TARGET_PATH/..
-    export PDK_ROOT=$(pwd)/pdks
+    export PDK_ROOT=$(pwd)/precheck_pdks
     mkdir $PDK_ROOT
     cd $TARGET_PATH/open_mpw_precheck/dependencies
     sh build-pdk.sh

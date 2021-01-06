@@ -27,6 +27,8 @@ cd openlane
 
 bash $RUN_WRAPPER "make $TARGET_MACRO" 2>&1 | tee $logFile
 
+rm -rf $TARGET_MACRO/runs
+
 cnt=$(grep -c "Flow Completed Without Fatal Errors" $logFile)
 if ! [[ $cnt ]]; then cnt=0; fi
 if [[ $cnt -eq 1 ]]; then exit 0; fi

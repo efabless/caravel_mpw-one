@@ -15,7 +15,7 @@
 # SPDX-License-Identifier: Apache-2.0
 export TARGET_PATH=$(pwd)
 cd ..
-export PDK_ROOT=$(pwd)/pdks
+export PDK_ROOT=$(pwd)/precheck_pdks
 cd $TARGET_PATH/open_mpw_precheck/
 
 docker run -v $(pwd):/usr/local/bin -v $TARGET_PATH:$TARGET_PATH -v $PDK_ROOT:$PDK_ROOT -u $(id -u $USER):$(id -g $USER) efabless/open_mpw_precheck:latest bash -c "python3 open_mpw_prechecker.py -p $PDK_ROOT -t $TARGET_PATH"
