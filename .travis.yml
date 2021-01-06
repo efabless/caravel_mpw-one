@@ -19,7 +19,6 @@ branches:
   only:
     - develop
     - master
-    - staging
     - /^(?i:develop)-.*$/
 
 services:
@@ -39,33 +38,6 @@ jobs:
     - name: "The MAGLEF LVS Test"
       install: sh .travisCI/utils/bash_run_wrapper.sh .travisCI/utils/pdkBuild.sh
       script: bash .travisCI/lvs/maglef-lvs-check.sh
-    - name: "The mgmt_soc DV Test: Set 1"
-      install: bash .travisCI/utils/bash_run_wrapper.sh .travisCI/utils/pdkBuild.sh
-      script: bash .travisCI/dv/dv-check-wrapper.sh mgmt_soc 1
-    - name: "The mgmt_soc DV Test: Set 2"
-      install: bash .travisCI/utils/bash_run_wrapper.sh .travisCI/utils/pdkBuild.sh
-      script: bash .travisCI/dv/dv-check-wrapper.sh mgmt_soc 2
-    - name: "The mgmt_soc DV Test: Set 3"
-      install: bash .travisCI/utils/bash_run_wrapper.sh .travisCI/utils/pdkBuild.sh
-      script: bash .travisCI/dv/dv-check-wrapper.sh mgmt_soc 3
-    - name: "The mgmt_soc DV Test: Set 4"
-      install: bash .travisCI/utils/bash_run_wrapper.sh .travisCI/utils/pdkBuild.sh
-      script: bash .travisCI/dv/dv-check-wrapper.sh mgmt_soc 4
-    - name: "The mgmt_soc DV Test: Set 5"
-      install: bash .travisCI/utils/bash_run_wrapper.sh .travisCI/utils/pdkBuild.sh
-      script: bash .travisCI/dv/dv-check-wrapper.sh mgmt_soc 5
-    - name: "The user_proj_example DV Test: Set 1"
-      install: bash .travisCI/utils/bash_run_wrapper.sh .travisCI/utils/pdkBuild.sh
-      script: bash .travisCI/dv/dv-check-wrapper.sh user_proj_example 1
-    - name: "The user_proj_example DV Test: Set 2"
-      install: bash .travisCI/utils/bash_run_wrapper.sh .travisCI/utils/pdkBuild.sh
-      script: bash .travisCI/dv/dv-check-wrapper.sh user_proj_example 2
-    - name: "The wb_utests DV Test: Set 1"
-      install: bash .travisCI/utils/bash_run_wrapper.sh .travisCI/utils/pdkBuild.sh
-      script: bash .travisCI/dv/dv-check-wrapper.sh wb_utests 1
-    - name: "The wb_utests DV Test: Set 2"
-      install: bash .travisCI/utils/bash_run_wrapper.sh .travisCI/utils/pdkBuild.sh
-      script: bash .travisCI/dv/dv-check-wrapper.sh wb_utests 2
     - name: "The README.rst Consistency Test"
       script: bash .travisCI/base_checks/git-check.sh
     - name: "The Manifest Test"
@@ -73,7 +45,35 @@ jobs:
         - bash .travisCI/base_checks/manifest-check.sh mag/
         - bash .travisCI/base_checks/manifest-check.sh maglef/
         - bash .travisCI/base_checks/manifest-check.sh verilog/rtl/
-  allow_failures:
-    - name: "The wb_utests DV Test: Set 2"
+    - name: "The mgmt_soc DV Test: Set 1"
+      if: branch = master OR type=cron
       install: bash .travisCI/utils/bash_run_wrapper.sh .travisCI/utils/pdkBuild.sh
-      script: bash .travisCI/dv/dv-check-wrapper.sh wb_utests 2
+      script: bash .travisCI/dv/dv-check-wrapper.sh mgmt_soc 1
+    - name: "The mgmt_soc DV Test: Set 2"
+      if: branch = master OR type=cron
+      install: bash .travisCI/utils/bash_run_wrapper.sh .travisCI/utils/pdkBuild.sh
+      script: bash .travisCI/dv/dv-check-wrapper.sh mgmt_soc 2
+    - name: "The mgmt_soc DV Test: Set 3"
+      if: branch = master OR type=cron
+      install: bash .travisCI/utils/bash_run_wrapper.sh .travisCI/utils/pdkBuild.sh
+      script: bash .travisCI/dv/dv-check-wrapper.sh mgmt_soc 3
+    - name: "The mgmt_soc DV Test: Set 4"
+      if: branch = master OR type=cron
+      install: bash .travisCI/utils/bash_run_wrapper.sh .travisCI/utils/pdkBuild.sh
+      script: bash .travisCI/dv/dv-check-wrapper.sh mgmt_soc 4
+    - name: "The mgmt_soc DV Test: Set 5"
+      if: branch = master OR type=cron
+      install: bash .travisCI/utils/bash_run_wrapper.sh .travisCI/utils/pdkBuild.sh
+      script: bash .travisCI/dv/dv-check-wrapper.sh mgmt_soc 5
+    - name: "The user_proj_example DV Test: Set 1"
+      if: branch = master OR type=cron
+      install: bash .travisCI/utils/bash_run_wrapper.sh .travisCI/utils/pdkBuild.sh
+      script: bash .travisCI/dv/dv-check-wrapper.sh user_proj_example 1
+    - name: "The user_proj_example DV Test: Set 2"
+      if: branch = master OR type=cron
+      install: bash .travisCI/utils/bash_run_wrapper.sh .travisCI/utils/pdkBuild.sh
+      script: bash .travisCI/dv/dv-check-wrapper.sh user_proj_example 2
+    - name: "The wb_utests DV Test"
+      if: branch = master OR type=cron
+      install: bash .travisCI/utils/bash_run_wrapper.sh .travisCI/utils/pdkBuild.sh
+      script: bash .travisCI/dv/dv-check-wrapper.sh wb_utests 1

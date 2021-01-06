@@ -59,7 +59,7 @@ module mem_wb_tb;
 
 	initial begin		// Power-up sequence
 		power1 <= 1'b0;
-		#200;
+		#1;
 		power1 <= 1'b1;
 	end
 
