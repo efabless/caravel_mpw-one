@@ -13,10 +13,13 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 # SPDX-License-Identifier: Apache-2.0
-export RUN_WRAPPER=$(pwd)/.travisCI/utils/run_wrapper.sh
+export TARGET_PATH=$(pwd)
+export RUN_WRAPPER=$TARGET_PATH/.travisCI/utils/run_wrapper.sh
 export OPENLANE_TAG=staging
-export PDK_ROOT=$(pwd)/../pdks
-export OPENLANE_ROOT=$(pwd)/../openlane
+cd ..
+export PDK_ROOT=$(pwd)/pdks
+export OPENLANE_ROOT=$(pwd)/openlane
+cd $TARGET_PATH
 export TARGET_MACRO=$1
 export logFile=$TARGET_MACRO.run.log
 make uncompress

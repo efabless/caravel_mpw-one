@@ -14,9 +14,13 @@
 # limitations under the License.
 # SPDX-License-Identifier: Apache-2.0
 
-export OPENLANE_ROOT=$(pwd)/../openlane
-export PDK_ROOT=$(pwd)/../pdks
+export TARGET_PATH=$(pwd)
+cd ..
+export PDK_ROOT=$(pwd)/pdks
+export OPENLANE_ROOT=$(pwd)/openlane
+cd $TARGET_PATH
 export OPENLANE_TAG=staging
+export IMAGE_NAME=openlane:$OPENLANE_TAG
 cd openlane
 make openlane
 exit 0

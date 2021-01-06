@@ -13,11 +13,12 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 # SPDX-License-Identifier: Apache-2.0
-
-export OPENLANE_TAG=staging
-export PDK_ROOT=$(pwd)/../pdks
-export OPENLANE_ROOT=$(pwd)/../openlane
 export CARAVEL_PATH=$(pwd)
+cd ..
+export PDK_ROOT=$(pwd)/pdks
+export OPENLANE_ROOT=$(pwd)/openlane
+cd $CARAVEL_PATH
+export OPENLANE_TAG=staging
 export IMAGE_NAME=openlane:$OPENLANE_TAG
 
 rm -rf maglef/user_proj_example.mag
