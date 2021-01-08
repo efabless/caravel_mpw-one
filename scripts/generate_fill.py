@@ -120,9 +120,12 @@ if __name__ == '__main__':
         print('', file=ofile)
         # Read the user project from GDS, as there is not necessarily a magic database file
         # to go along with this.
-        print('gds read ../gds/user_project_wrapper', file=ofile)
+        # print('gds read ../gds/user_project_wrapper', file=ofile)
         # Now read the full caravel project
-        print('load ' + project + ' -dereference', file=ofile)
+        # print('load ' + project + ' -dereference', file=ofile)
+        print('gds readonly true', file=ofile)
+        print('gds rescale false', file=ofile)
+        print('gds read ../gds/caravel', file=ofile)
         print('select top cell', file=ofile)
         print('expand', file=ofile)
         print('cif ostyle wafflefill(tiled)', file=ofile)
