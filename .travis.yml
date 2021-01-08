@@ -78,17 +78,7 @@ jobs:
       install: bash .travisCI/utils/bash_run_wrapper.sh .travisCI/utils/pdkBuild.sh
       script: bash .travisCI/dv/dv-check-wrapper.sh wb_utests 1
     - name: "The Full User Build Test"
-      install:
-        - bash .travisCI/utils/bash_run_wrapper.sh ".travisCI/utils/pdkBuild.sh 0"
-        - sh .travisCI/precheck/precheckBuild.sh
-        - bash .travisCI/utils/bash_run_wrapper.sh .travisCI/openlane_build/build_openlane.sh
-      script:
-        - bash .travisCI/utils/bash_run_wrapper.sh ".travisCI/openlane_build/run_macro.sh user_proj_example"
-        - bash .travisCI/utils/bash_run_wrapper.sh ".travisCI/openlane_build/run_macro.sh user_project_wrapper"
-        - bash .travisCI/utils/bash_run_wrapper.sh .travisCI/openlane_build/run_make_ship.sh
-        - bash .travisCI/precheck/run-precheck.sh
-  allow_failures:
-    - name: "The Full User Build Test"
+      if: branch = master OR type=cron
       install:
         - bash .travisCI/utils/bash_run_wrapper.sh ".travisCI/utils/pdkBuild.sh 0"
         - sh .travisCI/precheck/precheckBuild.sh
