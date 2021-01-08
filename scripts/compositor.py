@@ -141,6 +141,7 @@ if __name__ == '__main__':
         # Generate final GDS
         print('puts stdout "Writing final GDS. . . "', file=ofile)
         print('flush stdout', file=ofile)
+        print('cif *hier write disable', file=ofile)
         print('gds write ../gds/' + project_with_id + '.gds', file=ofile)
         print('quit -noprompt', file=ofile)
 
