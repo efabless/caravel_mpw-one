@@ -99,7 +99,9 @@ if __name__ == '__main__':
     with open(magpath + '/compose_final.tcl', 'w') as ofile:
         print('#!/bin/env wish', file=ofile)
         print('drc off', file=ofile)
-
+        print('gds readonly true', file=ofile)
+        print('gds rescale false', file=ofile)
+        print('gds read ../gds/user_project_wrapper', file=ofile)
         print('load ' + project + ' -dereference', file=ofile)
         print('select top cell', file=ofile)
 
