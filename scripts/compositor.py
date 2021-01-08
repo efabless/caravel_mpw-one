@@ -99,19 +99,20 @@ if __name__ == '__main__':
     with open(magpath + '/compose_final.tcl', 'w') as ofile:
         print('#!/bin/env wish', file=ofile)
         print('drc off', file=ofile)
-        # print('gds read ../gds/user_project_wrapper', file=ofile)
-        # print('load ' + project + ' -dereference', file=ofile)
-        print('gds readonly true', file=ofile)
-        print('gds rescale false', file=ofile)
-        print('gds read ../gds/caravel', file=ofile)
+
+        # Read project from .mag but set GDS properties so that it points
+        # to the GDS file created by "make ship".
+        print('load ' + project + ' -dereference', file=ofile)
+        print('property GDS_FILE ../gds/' + project + '.gds', file=ofile)
+        print('property GDS_START 0', file=ofile)
         print('select top cell', file=ofile)
+        print('set bbox [box values]', file=ofile)
 
         # Ceate a cell to represent the generated fill.  There are
         # no magic layers corresponding to the fill shape data, and
         # it's gigabytes anyway, so we don't want to deal with any
         # actual data.  So it's just a placeholder.
 
-        print('set bbox [box values]', file=ofile)
         print('load ' + project_with_id + '_fill_pattern', file=ofile)
         print('snap internal', file=ofile)
         print('box values {*}$bbox', file=ofile)
@@ -120,9 +121,11 @@ if __name__ == '__main__':
         print('property GDS_START 0', file=ofile)
         print('property FIXED_BBOX "$bbox"', file=ofile)
 
-        # Now go back to the project top level and place the fill cell.
-        print('load ' + project, file=ofile)
-        print('select top cell', file=ofile)	
+        # Create a new project top level and place the fill cell.
+        print('load ' + project_with_id + ' -quiet', file=ofile)
+        print('box size 0 0', file=ofile)	
+        print('box position 6um 6um', file=ofile)	
+        print('getcell ' + project + ' child 0 0', file=ofile)
         print('getcell ' + project_with_id + '_fill_pattern child 0 0', file=ofile)
 
         # Move existing origin to (6um, 6um) for seal ring placement
