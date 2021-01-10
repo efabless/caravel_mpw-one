@@ -166,6 +166,8 @@ if __name__ == '__main__':
         print('        property GDS_FILE ""', file=ofile)
         # Set boundary using comment layer, to the size of the step box
 	# This corresponds to the "topbox" rule in the wafflefill(tiled) style
+        print('        select top cell', file=ofile)
+        print('        erase comment', file=ofile)
         print('        box values $xlo $ylo $xhi $yhi', file=ofile)
         print('        paint comment', file=ofile)
         print('        puts stdout "Writing GDS. . . "', file=ofile)
