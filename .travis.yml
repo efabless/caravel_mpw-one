@@ -40,6 +40,8 @@ jobs:
       script: bash .travisCI/lvs/maglef-lvs-check.sh
     - name: "The README.rst Consistency Test"
       script: bash .travisCI/base_checks/git-check.sh
+    - name: "The GDS Pointers Test"
+      script: bash .travisCI/base_checks/gds-pointers.sh
     - name: "The Manifest Test"
       script:
         - bash .travisCI/base_checks/manifest-check.sh mag/
