@@ -57,8 +57,18 @@ ship: check-env uncompress
 	@echo "###############################################"
 	@echo "Generating Caravel GDS (sources are in the 'gds' directory)"
 	@sleep 1
-	@cp gds/caravel.gds gds/caravel.old.gds && echo "Copying old Caravel to gds/caravel.old.gds" || true
-	@cd gds && MAGTYPE=mag magic -rcfile ${PDK_ROOT}/sky130A/libs.tech/magic/current/sky130A.magicrc -noc -dnull gen_caravel.tcl < /dev/null
+	@echo "\
+		gds readonly true; \
+		gds rescale false; \
+		gds read ../gds/user_project_wrapper.gds; \
+		load caravel -dereference;\
+		select top cell;\
+		gds write caravel.gds; \
+		exit;" > ./mag/mag2gds_caravel.tcl
+	@cd mag && PDKPATH=${PDK_ROOT}/sky130A magic -noc -dnull mag2gds_caravel.tcl < /dev/null
+	@rm ./mag/mag2gds_caravel.tcl
+	@mv -f ./gds/caravel.gds ./gds/caravel.old.gds
+	mv ./mag/caravel.gds ./gds
 
 
 
@@ -207,19 +217,6 @@ $(ANTENNA_BLOCKS): antenna-% : ./gds/%.gds
 	cd gds && export DESIGN_IN_ANTENNA=$* && export MAGTYPE=mag; magic -rcfile ${PDK_ROOT}/sky130A/libs.tech/magic/current/sky130A.magicrc -noc -dnull antenna_on_gds.tcl < /dev/null 2>&1 | tee ./tmp/$*.antenna
 	mv -f ./gds/*.ext ./gds/tmp/
 	@echo "Antenna result: ./gds/tmp/$*.antenna"
-
-mag2gds: check-env
-	echo "\
-		gds readonly true; \
-		gds rescale false; \
-		load caravel -dereference;\
-		select top cell;\
-		gds write caravel.gds; \
-		exit;" > ./mag/mag2gds_caravel.tcl
-	@cd mag && PDKPATH=${PDK_ROOT}/sky130A magic -noc -dnull mag2gds_caravel.tcl < /dev/null
-	@rm ./mag/mag2gds_caravel.tcl
-	mv -f ./gds/caravel.gds ./gds/caravel.old.gds
-	mv ./mag/caravel.gds ./gds
 
 .PHONY: help
 help:
