@@ -1,4 +1,4 @@
-#!/bin/env python3
+#!/usr/bin/env python3
 # SPDX-FileCopyrightText: 2020 Efabless Corporation
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -123,7 +123,7 @@ if __name__ == '__main__':
 
         # Create a new project top level and place the fill cell.
         print('load ' + project_with_id + ' -quiet', file=ofile)
-        print('box size 0 0', file=ofile)	
+        print('box values 0 0 0 0', file=ofile)	
         print('box position 6um 6um', file=ofile)	
         print('getcell ' + project + ' child 0 0', file=ofile)
         print('getcell ' + project_with_id + '_fill_pattern child 0 0', file=ofile)
