@@ -43,8 +43,7 @@ jobs:
     - name: "The GDS Pointers Test"
       script: bash .travisCI/base_checks/gds-pointers.sh
     - name: "The Manifest Test"
-      script:
-        - bash .travisCI/base_checks/manifest-check.sh
+      script: bash .travisCI/base_checks/manifest-check.sh
     - name: "The mgmt_soc DV Test: Set 1"
       if: branch = master OR type=cron
       install: bash .travisCI/utils/bash_run_wrapper.sh .travisCI/utils/pdkBuild.sh
