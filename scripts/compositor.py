@@ -96,6 +96,13 @@ if __name__ == '__main__':
     magpath = user_project_path + '/mag'
     rcfile = magpath + '/.magicrc'
 
+    # The compositor script will create <project_with_id>.mag, but is uses
+    # "load", so the file must not already exist.
+
+    if os.path.isfile(magpath + '/' + project_with_id + '.mag'):
+        print('Error:  File ' + project_with_id + '.mag exists already!  Exiting. . .')
+        sys.exit(1)
+
     with open(magpath + '/compose_final.tcl', 'w') as ofile:
         print('#!/bin/env wish', file=ofile)
         print('drc off', file=ofile)
