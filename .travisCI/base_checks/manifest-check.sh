@@ -13,7 +13,7 @@
 # limitations under the License.
 # SPDX-License-Identifier: Apache-2.0
 
-TARGET_PATH=$(pwd)/$1
+TARGET_PATH=$(pwd)/
 OUT_FILE=tmp_manifest_output_file
 echo "Going into $TARGET_PATH"
 cd $TARGET_PATH
