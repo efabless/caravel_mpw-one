@@ -153,6 +153,12 @@ if __name__ == '__main__':
         print('puts stdout "YTILES: $ytiles"', file=ofile)
         print('', file=ofile)
 
+        # Need to know what fraction of a full tile is the last row and column
+        print('set xfrac [expr {($xtiles * $stepsizex - $fullwidth + 0.0) / $stepsizex}]', file=ofile)
+        print('set yfrac [expr {($ytiles * $stepsizey - $fullheight + 0.0) / $stepsizey}]', file=ofile)
+        print('puts stdout "XFRAC: $xfrac"', file=ofile)
+        print('puts stdout "YFRAC: $yfrac"', file=ofile)
+
         print('cif ostyle density', file=ofile)
 
         # Process density at steps.  For efficiency, this is done in 70x70 um
@@ -229,6 +235,10 @@ if __name__ == '__main__':
     met3fill = []
     met4fill = []
     met5fill = []
+    xtiles = 0
+    ytiles = 0
+    xfrac = 0.0
+    yfrac = 0.0
 
     while mproc:
         status = mproc.poll()
@@ -270,6 +280,10 @@ if __name__ == '__main__':
                             xtiles = int(dpair[1].strip())
                         elif layer == 'YTILES':
                             ytiles = int(dpair[1].strip())
+                        elif layer == 'XFRAC':
+                            xfrac = float(dpair[1].strip())
+                        elif layer == 'YFRAC':
+                            yfrac = float(dpair[1].strip())
 
                 for line in errlines.splitlines():
                     print(line)
@@ -302,16 +316,32 @@ if __name__ == '__main__':
     print('')
     print('Density results (total tiles = ' + str(total_tiles) + '):')
 
+    # Full areas are 10 x 10 tiles = 100.  But the right and top sides are
+    # not full tiles, so the full area must be prorated.
+
+    sideadjust = 90.0 + (10.0 * xfrac)
+    topadjust = 90.0 + (10.0 * yfrac)
+    corneradjust = 81.0 + (9.0 * xfrac) + (9.0 * yfrac) + (xfrac * yfrac)
+
     print('')
     print('FOM Density:')
     for y in range(0, ytiles - 9):
+        if y == ytiles - 10:
+            atotal = topadjust
+        else:
+            atotal = 100.0
         for x in range(0, xtiles - 9):
+            if x == xtiles - 10:
+                if y == ytiles - 10:
+                    atotal = corneradjust
+                else:
+                    atotal = sideadjust
             fomaccum = 0
             for w in range(y, y + 10):
                 base = xtiles * w + x
                 fomaccum += sum(fomfill[base : base + 10])
                     
-            print('Tile (' + str(x) + ', ' + str(y) + '):   ' + str(fomaccum / 100.0))
+            print('Tile (' + str(x) + ', ' + str(y) + '):   ' + str(fomaccum / atotal))
             if fomaccum < 33.0:
                 print('***Error:  FOM Density < 33%')
             elif fomaccum > 57.0:
@@ -320,24 +350,42 @@ if __name__ == '__main__':
     print('')
     print('POLY Density:')
     for y in range(0, ytiles - 9):
+        if y == ytiles - 10:
+            atotal = topadjust
+        else:
+            atotal = 100.0
         for x in range(0, xtiles - 9):
+            if x == xtiles - 10:
+                if y == ytiles - 10:
+                    atotal = corneradjust
+                else:
+                    atotal = sideadjust
             polyaccum = 0
             for w in range(y, y + 10):
                 base = xtiles * w + x
                 polyaccum += sum(polyfill[base : base + 10])
                     
-            print('Tile (' + str(x) + ', ' + str(y) + '):   ' + str(polyaccum / 100.0))
+            print('Tile (' + str(x) + ', ' + str(y) + '):   ' + str(polyaccum / atotal))
 
     print('')
     print('LI Density:')
     for y in range(0, ytiles - 9):
+        if y == ytiles - 10:
+            atotal = topadjust
+        else:
+            atotal = 100.0
         for x in range(0, xtiles - 9):
+            if x == xtiles - 10:
+                if y == ytiles - 10:
+                    atotal = corneradjust
+                else:
+                    atotal = sideadjust
             liaccum = 0
             for w in range(y, y + 10):
                 base = xtiles * w + x
                 liaccum += sum(lifill[base : base + 10])
                     
-            print('Tile (' + str(x) + ', ' + str(y) + '):   ' + str(liaccum / 100.0))
+            print('Tile (' + str(x) + ', ' + str(y) + '):   ' + str(liaccum / atotal))
             if liaccum < 35.0:
                 print('***Error:  LI Density < 35%')
             elif liaccum > 70.0:
@@ -346,13 +394,22 @@ if __name__ == '__main__':
     print('')
     print('MET1 Density:')
     for y in range(0, ytiles - 9):
+        if y == ytiles - 10:
+            atotal = topadjust
+        else:
+            atotal = 100.0
         for x in range(0, xtiles - 9):
+            if x == xtiles - 10:
+                if y == ytiles - 10:
+                    atotal = corneradjust
+                else:
+                    atotal = sideadjust
             met1accum = 0
             for w in range(y, y + 10):
                 base = xtiles * w + x
                 met1accum += sum(met1fill[base : base + 10])
                     
-            print('Tile (' + str(x) + ', ' + str(y) + '):   ' + str(met1accum / 100.0))
+            print('Tile (' + str(x) + ', ' + str(y) + '):   ' + str(met1accum / atotal))
             if met1accum < 35.0:
                 print('***Error:  MET1 Density < 35%')
             elif met1accum > 70.0:
@@ -361,13 +418,22 @@ if __name__ == '__main__':
     print('')
     print('MET2 Density:')
     for y in range(0, ytiles - 9):
+        if y == ytiles - 10:
+            atotal = topadjust
+        else:
+            atotal = 100.0
         for x in range(0, xtiles - 9):
+            if x == xtiles - 10:
+                if y == ytiles - 10:
+                    atotal = corneradjust
+                else:
+                    atotal = sideadjust
             met2accum = 0
             for w in range(y, y + 10):
                 base = xtiles * w + x
                 met2accum += sum(met2fill[base : base + 10])
                     
-            print('Tile (' + str(x) + ', ' + str(y) + '):   ' + str(met2accum / 100.0))
+            print('Tile (' + str(x) + ', ' + str(y) + '):   ' + str(met2accum / atotal))
             if met2accum < 35.0:
                 print('***Error:  MET2 Density < 35%')
             elif met2accum > 70.0:
@@ -376,13 +442,22 @@ if __name__ == '__main__':
     print('')
     print('MET3 Density:')
     for y in range(0, ytiles - 9):
+        if y == ytiles - 10:
+            atotal = topadjust
+        else:
+            atotal = 100.0
         for x in range(0, xtiles - 9):
+            if x == xtiles - 10:
+                if y == ytiles - 10:
+                    atotal = corneradjust
+                else:
+                    atotal = sideadjust
             met3accum = 0
             for w in range(y, y + 10):
                 base = xtiles * w + x
                 met3accum += sum(met3fill[base : base + 10])
                     
-            print('Tile (' + str(x) + ', ' + str(y) + '):   ' + str(met3accum / 100.0))
+            print('Tile (' + str(x) + ', ' + str(y) + '):   ' + str(met3accum / atotal))
             if met3accum < 35.0:
                 print('***Error:  MET3 Density < 35%')
             elif met3accum > 70.0:
@@ -391,13 +466,22 @@ if __name__ == '__main__':
     print('')
     print('MET4 Density:')
     for y in range(0, ytiles - 9):
+        if y == ytiles - 10:
+            atotal = topadjust
+        else:
+            atotal = 100.0
         for x in range(0, xtiles - 9):
+            if x == xtiles - 10:
+                if y == ytiles - 10:
+                    atotal = corneradjust
+                else:
+                    atotal = sideadjust
             met4accum = 0
             for w in range(y, y + 10):
                 base = xtiles * w + x
                 met4accum += sum(met4fill[base : base + 10])
                     
-            print('Tile (' + str(x) + ', ' + str(y) + '):   ' + str(met4accum / 100.0))
+            print('Tile (' + str(x) + ', ' + str(y) + '):   ' + str(met4accum / atotal))
             if met4accum < 35.0:
                 print('***Error:  MET4 Density < 35%')
             elif met4accum > 70.0:
@@ -406,13 +490,22 @@ if __name__ == '__main__':
     print('')
     print('MET5 Density:')
     for y in range(0, ytiles - 9):
+        if y == ytiles - 10:
+            atotal = topadjust
+        else:
+            atotal = 100.0
         for x in range(0, xtiles - 9):
+            if x == xtiles - 10:
+                if y == ytiles - 10:
+                    atotal = corneradjust
+                else:
+                    atotal = sideadjust
             met5accum = 0
             for w in range(y, y + 10):
                 base = xtiles * w + x
                 met5accum += sum(met5fill[base : base + 10])
                     
-            print('Tile (' + str(x) + ', ' + str(y) + '):   ' + str(met5accum / 100.0))
+            print('Tile (' + str(x) + ', ' + str(y) + '):   ' + str(met5accum / atotal))
             if met5accum < 45.0:
                 print('***Error:  MET5 Density < 45%')
             elif met5accum > 86.0:
