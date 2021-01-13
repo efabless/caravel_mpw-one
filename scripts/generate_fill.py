@@ -151,6 +151,8 @@ if __name__ == '__main__':
         print('        set ylo [expr $ybase + $y * $stepheight]', file=ofile)
         print('        set xhi [expr $xlo + $stepwidth]', file=ofile)
         print('        set yhi [expr $ylo + $stepheight]', file=ofile)
+        print('        if {$xhi > $fullwidth} {set xhi $fullwidth}', file=ofile)
+        print('        if {$yhi > $fullheight} {set yhi $fullheight}', file=ofile)
         print('        box values $xlo $ylo $xhi $yhi', file=ofile)
         # The flattened area must be larger than the fill tile by >1.5um
         print('        box grow c 1.6um', file=ofile)
