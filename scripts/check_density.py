@@ -524,69 +524,61 @@ if __name__ == '__main__':
 
     atotal = ((xtiles - 1.0) * (ytiles - 1.0)) + ((ytiles - 1.0) * xfrac) + ((xtiles - 1.0) * yfrac) + (xfrac * yfrac)
 
-    print('')
-    print('FOM Density:')
     fomaccum = sum(fomfill) / atotal
-    print('Tile (' + str(x) + ', ' + str(y) + '):   ' + str(fomaccum))
+    print('')
+    print('FOM Density: ' + str(fomaccum))
     if fomaccum < 0.33:
         print('***Error:  FOM Density < 33%')
     elif fomaccum > 0.57:
         print('***Error:  FOM Density > 57%')
 
-    print('')
-    print('POLY Density:')
     polyaccum = sum(polyfill) / atotal
-    print('Tile (' + str(x) + ', ' + str(y) + '):   ' + str(polyaccum))
-
     print('')
-    print('LI Density:')
+    print('POLY Density: ' + str(polyaccum))
+
     liaccum = sum(lifill) / atotal
-    print('Tile (' + str(x) + ', ' + str(y) + '):   ' + str(liaccum))
+    print('')
+    print('LI Density: ' + str(liaccum))
     if liaccum < 0.35:
         print('***Error:  LI Density < 35%')
     elif liaccum > 0.70:
         print('***Error:  LI Density > 70%')
 
-    print('')
-    print('MET1 Density:')
     met1accum = sum(met1fill) / atotal
-    print('Tile (' + str(x) + ', ' + str(y) + '):   ' + str(met1accum))
+    print('')
+    print('MET1 Density: ' + str(met1accum))
     if met1accum < 0.35:
         print('***Error:  MET1 Density < 35%')
     elif met1accum > 0.70:
         print('***Error:  MET1 Density > 70%')
 
-    print('')
-    print('MET2 Density:')
     met2accum = sum(met2fill) / atotal
-    print('Tile (' + str(x) + ', ' + str(y) + '):   ' + str(met2accum))
+    print('')
+    print('MET2 Density: ' + str(met2accum))
     if met2accum < 0.35:
         print('***Error:  MET2 Density < 35%')
     elif met2accum > 0.70:
         print('***Error:  MET2 Density > 70%')
 
-    print('')
-    print('MET3 Density:')
     met3accum = sum(met3fill) / atotal
-    print('Tile (' + str(x) + ', ' + str(y) + '):   ' + str(met3accum))
+    print('')
+    print('MET3 Density: ' + str(met3accum))
     if met3accum < 0.35:
         print('***Error:  MET3 Density < 35%')
     elif met3accum > 0.70:
         print('***Error:  MET3 Density > 70%')
 
-    print('')
-    print('MET4 Density:')
     met4accum = sum(met4fill) / atotal
-    print('Tile (' + str(x) + ', ' + str(y) + '):   ' + str(met4accum))
+    print('')
+    print('MET4 Density: ' + str(met4accum))
     if met4accum < 0.35:
         print('***Error:  MET4 Density < 35%')
     elif met4accum > 0.70:
         print('***Error:  MET4 Density > 70%')
 
-    print('')
-    print('MET5 Density:')
     met5accum = sum(met5fill) / atotal
-    print('Tile (' + str(x) + ', ' + str(y) + '):   ' + str(met5accum))
+    print('')
+    print('MET5 Density: ' + str(met5accum))
     if met5accum < 0.45:
         print('***Error:  MET5 Density < 45%')
     elif met5accum > 0.86:
