@@ -136,7 +136,7 @@ if __name__ == '__main__':
         print('getcell ' + project_with_id + '_fill_pattern child 0 0', file=ofile)
 
         # Move existing origin to (6um, 6um) for seal ring placement
-        print('move origin -6um -6um', file=ofile)
+        # print('move origin -6um -6um', file=ofile)
 
         # Read in abstract view of seal ring
         print('box position 0 0', file=ofile)
