@@ -1,3 +1,4 @@
+#!/bin/bash
 # SPDX-FileCopyrightText: 2020 Efabless Corporation
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,10 +18,15 @@ TARGET_PATH=$(pwd)/
 OUT_FILE=tmp_manifest_output_file
 echo "Going into $TARGET_PATH"
 cd $TARGET_PATH
-echo "Running shasum checks"
-shasum -c manifest > $OUT_FILE
-cat $OUT_FILE
-cnt=$(grep "FAILED" $OUT_FILE | wc -l)
-rm -f $OUT_FILE
-if [[ $cnt -eq 0 ]]; then exit 0; fi
-exit 2;
+if [[ -f "manifest" ]]; then
+    echo "Running shasum checks"
+    shasum -c manifest > $OUT_FILE
+    cat $OUT_FILE
+    cnt=$(grep "FAILED" $OUT_FILE | wc -l)
+    rm -f $OUT_FILE
+    if [[ $cnt -eq 0 ]]; then exit 0; fi
+    exit 2;
+else
+    echo "manifest file doesn't exist"
+    exit 2 
+fi
