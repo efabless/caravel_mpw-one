@@ -227,18 +227,7 @@ if __name__ == '__main__':
 
     # Use signal to poll the process and generate any output as it arrives
 
-    fomfill  = []
-    polyfill = []
-    lifill   = []
-    met1fill = []
-    met2fill = []
-    met3fill = []
-    met4fill = []
-    met5fill = []
-    xtiles = 0
-    ytiles = 0
-    xfrac = 0.0
-    yfrac = 0.0
+    dlines = []
 
     while mproc:
         status = mproc.poll()
@@ -252,39 +241,8 @@ if __name__ == '__main__':
                 outlines = output[0]
                 errlines = output[1]
                 for line in outlines.splitlines():
+                    dlines.append(line)
                     print(line)
-                    dpair = line.split(':')
-                    if len(dpair) == 2:
-                        layer = dpair[0]
-                        try:
-                            density = float(dpair[1].strip())
-                        except:
-                            continue
-                        if layer == 'FOM':
-                            fomfill.append(density)
-                        elif layer == 'POLY':
-                            polyfill.append(density)
-                        elif layer == 'LI1':
-                            lifill.append(density)
-                        elif layer == 'MET1':
-                            met1fill.append(density)
-                        elif layer == 'MET2':
-                            met2fill.append(density)
-                        elif layer == 'MET3':
-                            met3fill.append(density)
-                        elif layer == 'MET4':
-                            met4fill.append(density)
-                        elif layer == 'MET5':
-                            met5fill.append(density)
-                        elif layer == 'XTILES':
-                            xtiles = int(dpair[1].strip())
-                        elif layer == 'YTILES':
-                            ytiles = int(dpair[1].strip())
-                        elif layer == 'XFRAC':
-                            xfrac = float(dpair[1].strip())
-                        elif layer == 'YFRAC':
-                            yfrac = float(dpair[1].strip())
-
                 for line in errlines.splitlines():
                     print(line)
                 print('Magic exited with status ' + str(status))
@@ -304,12 +262,63 @@ if __name__ == '__main__':
                 sresult = select.select([mproc.stdout, mproc.stderr], [], [], 0)[0]
                 if mproc.stdout in sresult:
                     outstring = mproc.stdout.readline().strip()
+                    dlines.append(outstring)
                     print(outstring)
                 elif mproc.stderr in sresult:
                     outstring = mproc.stderr.readline().strip()
                     print(outstring)
                 else:
                     break
+
+    fomfill  = []
+    polyfill = []
+    lifill   = []
+    met1fill = []
+    met2fill = []
+    met3fill = []
+    met4fill = []
+    met5fill = []
+    xtiles = 0
+    ytiles = 0
+    xfrac = 0.0
+    yfrac = 0.0
+
+    for line in dlines:
+        dpair = line.split(':')
+        if len(dpair) == 2:
+            layer = dpair[0]
+            try:
+                density = float(dpair[1].strip())
+            except:
+                continue
+            if layer == 'FOM':
+                fomfill.append(density)
+            elif layer == 'POLY':
+                polyfill.append(density)
+            elif layer == 'LI1':
+                lifill.append(density)
+            elif layer == 'MET1':
+                met1fill.append(density)
+            elif layer == 'MET2':
+                met2fill.append(density)
+            elif layer == 'MET3':
+                met3fill.append(density)
+            elif layer == 'MET4':
+                met4fill.append(density)
+            elif layer == 'MET5':
+                met5fill.append(density)
+            elif layer == 'XTILES':
+                xtiles = int(dpair[1].strip())
+            elif layer == 'YTILES':
+                ytiles = int(dpair[1].strip())
+            elif layer == 'XFRAC':
+                xfrac = float(dpair[1].strip())
+            elif layer == 'YFRAC':
+                yfrac = float(dpair[1].strip())
+
+    if ytiles == 0 or xtiles == 0:
+        print('Failed to read XTILES or YTILES from output.')
+        sys.exit(1)
 
     total_tiles = (ytiles - 9) * (xtiles - 9)
 
