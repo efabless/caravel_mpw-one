@@ -71,10 +71,10 @@ module mprj_stimulus_tb;
 
     initial begin
         wait(checkbits == 16'hAB40);
-        $display("mprj_stimulus test started");
+        $display("Monitor: mprj_stimulus test started");
         wait(status == 4'ha);
         wait(status == 4'h5);
-        $display("mprj_stimulus test passed");
+        $display("Monitor: mprj_stimulus test passed");
         #10000;
         $finish;
     end
