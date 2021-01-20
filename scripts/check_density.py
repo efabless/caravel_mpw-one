@@ -259,7 +259,7 @@ if __name__ == '__main__':
                     status = mproc.poll()
                     if status != None:
                         break
-                sresult = select.select([mproc.stdout, mproc.stderr], [], [], 0)[0]
+                sresult = select.select([mproc.stdout, mproc.stderr], [], [], 0.5)[0]
                 if mproc.stdout in sresult:
                     outstring = mproc.stdout.readline().strip()
                     dlines.append(outstring)
