@@ -465,13 +465,13 @@ MACRO gpio_control_block
   END vssd1
   OBS
       LAYER li1 ;
-        RECT 0.460 10.795 35.420 57.205 ;
+        RECT 4.600 10.795 51.835 57.205 ;
       LAYER met1 ;
-        RECT 0.000 5.820 132.410 62.860 ;
+        RECT 4.600 5.820 132.870 62.520 ;
       LAYER met2 ;
-        RECT 0.000 0.835 132.390 68.525 ;
+        RECT 6.080 0.835 132.850 68.525 ;
       LAYER met3 ;
-        RECT 0.000 10.715 26.900 57.360 ;
+        RECT 10.300 10.715 26.900 57.285 ;
   END
 END gpio_control_block
 END LIBRARY
