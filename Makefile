@@ -277,7 +277,6 @@ manifest: mag/ maglef/ verilog/rtl/ scripts/ Makefile
 	find maglef/*.mag -type f ! -name "user_project_wrapper.mag" -exec shasum {} \; >> manifest && \
 	shasum mag/caravel.mag mag/.magicrc >> manifest
 	shasum scripts/set_user_id.py scripts/generate_fill.py scripts/compositor.py >> manifest
-	shasum gds/user_project_wrapper_empty.gds >> manifest
 	shasum lef/user_project_wrapper_empty.lef >> manifest
 
 check-env:
