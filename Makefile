@@ -129,6 +129,30 @@ uncompress: $(SPLIT_FILES_SOURCES) $(ARCHIVE_SOURCES)
 	@echo "All files are uncompressed!"
 
 
+# verify that the wrapper was respected
+xor-wrapper:
+	# first erase the user's user_project_wrapper.gds
+	sh utils/erase_box.sh gds/user_project_wrapper.gds 0 0 2920 3520
+	# do the same for the empty wrapper
+	sh utils/erase_box.sh gds/user_project_wrapper_empty.gds 0 0 2920 3520
+	mkdir -p signoff/user_project_wrapper_xor
+	# XOR the two resulting layouts
+	sh utils/xor.sh \
+		gds/user_project_wrapper_empty_erased.gds gds/user_project_wrapper_erased.gds \
+		user_project_wrapper user_project_wrapper.xor.xml
+	sh utils/xor.sh \
+		gds/user_project_wrapper_empty_erased.gds gds/user_project_wrapper_erased.gds \
+		user_project_wrapper gds/user_project_wrapper.xor.gds > signoff/user_project_wrapper_xor/xor.log
+	rm gds/user_project_wrapper_empty_erased.gds gds/user_project_wrapper_erased.gds
+	mv gds/user_project_wrapper.xor.gds gds/user_project_wrapper.xor.xml signoff/user_project_wrapper_xor
+	python utils/parse_klayout_xor_log.py \
+		-l signoff/user_project_wrapper_xor/xor.log \
+		-o signoff/user_project_wrapper_xor/total.txt
+	# screenshot the result for convenience
+	sh utils/scrotLayout.sh \
+		$(PDK_ROOT)/sky130A/libs.tech/klayout/sky130A.lyt \
+		signoff/user_project_wrapper_xor/user_project_wrapper.xor.gds
+
 # LVS
 BLOCKS = $(shell cd openlane && find * -maxdepth 0 -type d)
 LVS_BLOCKS = $(foreach block, $(BLOCKS), lvs-$(block))
