@@ -84,6 +84,7 @@ if __name__ == '__main__':
     if user_id_value:
         project = 'caravel'
         project_with_id = 'caravel_' + user_id_value
+        user_id_decimal = str(int(user_id_value, 16))
     else:
         print('Error:  No project_id found in info.yaml file.')
         sys.exit(1)
@@ -106,6 +107,8 @@ if __name__ == '__main__':
     with open(magpath + '/compose_final.tcl', 'w') as ofile:
         print('#!/bin/env wish', file=ofile)
         print('drc off', file=ofile)
+        # Set the random seed from the project ID
+        print('random seed ' + user_id_decimal, file=ofile)
 
         # Read project from .mag but set GDS properties so that it points
         # to the GDS file created by "make ship".
