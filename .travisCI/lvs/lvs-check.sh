@@ -14,7 +14,7 @@
 # limitations under the License.
 # SPDX-License-Identifier: Apache-2.0
 
-export IMAGE_NAME=efabless/openlane:staging
+export IMAGE_NAME=efabless/openlane:develop
 export PDK_ROOT=$(pwd)/../pdks
 
 make uncompress

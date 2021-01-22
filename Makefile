@@ -48,7 +48,7 @@ STD_CELL_LIBRARY ?= sky130_fd_sc_hd
 SPECIAL_VOLTAGE_LIBRARY ?= sky130_fd_sc_hvl
 IO_LIBRARY ?= sky130_fd_io
 SKYWATER_COMMIT ?= f6f76f3dc99526c6fc2cfede19b5b1227d4ebde7
-OPEN_PDKS_COMMIT ?= ec43817ed9f58ff83c9d260ce981818023cb6d77
+OPEN_PDKS_COMMIT ?= 95c92cc563e00b3ee3ed9863b352304943e8ff8f
 
 .DEFAULT_GOAL := ship
 # We need portable GDS_FILE pointers...
@@ -58,6 +58,7 @@ ship: check-env uncompress
 	@echo "Generating Caravel GDS (sources are in the 'gds' directory)"
 	@sleep 1
 	@echo "\
+		random seed `scripts/set_user_id.py -report`; \
 		gds readonly true; \
 		gds rescale false; \
 		gds read ../gds/user_project_wrapper.gds; \
@@ -69,8 +70,6 @@ ship: check-env uncompress
 	@rm ./mag/mag2gds_caravel.tcl
 	@mv -f ./gds/caravel.gds ./gds/caravel.old.gds
 	mv ./mag/caravel.gds ./gds
-
-
 
 .PHONY: clean
 clean:

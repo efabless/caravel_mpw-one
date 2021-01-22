@@ -19,12 +19,12 @@ export RUN_ROOT=$(pwd)
 # By default skip timing since we don't need the libs in any of the CI tests
 export SKIP_TIMING=${1:-1}
 
-docker pull efabless/openlane:staging
+docker pull efabless/openlane:develop
 
 cd $RUN_ROOT/..
 export PDK_ROOT=$(pwd)/pdks
 mkdir $PDK_ROOT
-export IMAGE_NAME=efabless/openlane:staging
+export IMAGE_NAME=efabless/openlane:develop
 echo $PDK_ROOT
 echo $RUN_ROOT
 cd $RUN_ROOT

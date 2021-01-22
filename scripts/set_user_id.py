@@ -102,6 +102,7 @@ if __name__ == '__main__':
     arguments = []
 
     debugmode = False
+    reportmode = False
 
     for option in sys.argv[1:]:
         if option.find('-', 0) == 0:
@@ -116,6 +117,8 @@ if __name__ == '__main__':
 
     if '-debug' in optionlist:
         debugmode = True
+    if '-report' in optionlist:
+        reportmode = True
 
     user_id_value = None
     user_project_path = None
@@ -172,6 +175,10 @@ if __name__ == '__main__':
         else:
             print('Error:  No info.yaml file and no user ID argument given.')
             sys.exit(1)
+
+    if reportmode:
+        print(str(user_id_int))
+        sys.exit(0)
 
     print('Setting project user ID to: ' + user_id_value)
 

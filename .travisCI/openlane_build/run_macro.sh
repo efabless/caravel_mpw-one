@@ -15,7 +15,7 @@
 # SPDX-License-Identifier: Apache-2.0
 export TARGET_PATH=$(pwd)
 export RUN_WRAPPER=$TARGET_PATH/.travisCI/utils/run_wrapper.sh
-export OPENLANE_TAG=staging
+export OPENLANE_TAG=develop
 cd ..
 export PDK_ROOT=$(pwd)/pdks
 export OPENLANE_ROOT=$(pwd)/openlane
