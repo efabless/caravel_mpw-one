@@ -58,6 +58,7 @@ ship: check-env uncompress
 	@echo "Generating Caravel GDS (sources are in the 'gds' directory)"
 	@sleep 1
 	@echo "\
+		random seed `scripts/set_user_id.py -report`; \
 		gds readonly true; \
 		gds rescale false; \
 		gds read ../gds/user_project_wrapper.gds; \
@@ -69,8 +70,6 @@ ship: check-env uncompress
 	@rm ./mag/mag2gds_caravel.tcl
 	@mv -f ./gds/caravel.gds ./gds/caravel.old.gds
 	mv ./mag/caravel.gds ./gds
-
-
 
 .PHONY: clean
 clean:
