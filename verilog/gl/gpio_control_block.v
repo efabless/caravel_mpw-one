@@ -1,3 +1,4 @@
+`default_nettype wire
 module gpio_control_block (mgmt_gpio_in,
     mgmt_gpio_oeb,
     mgmt_gpio_out,
