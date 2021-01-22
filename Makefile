@@ -158,7 +158,9 @@ LVS_BLOCKS = $(foreach block, $(BLOCKS), lvs-$(block))
 $(LVS_BLOCKS): lvs-% : ./mag/%.mag ./verilog/gl/%.v
 	echo "Extracting $*"
 	mkdir -p ./mag/tmp
-	echo "load $* -dereference;\
+	echo "addpath hexdigits;\
+		addpath \$$PDKPATH/libs.ref/sky130_ml_xx_hd/mag;\
+		load $* -dereference;\
 		select top cell;\
 		foreach cell [cellname list children] {\
 			load \$$cell -dereference;\
@@ -174,7 +176,9 @@ $(LVS_BLOCKS): lvs-% : ./mag/%.mag ./verilog/gl/%.v
 		ext2spice $*.ext;\
 		feedback save extract_$*.log;\
 		exit;" > ./mag/extract_$*.tcl
-	cd mag && export MAGTYPE=maglef; magic -rcfile ${PDK_ROOT}/sky130A/libs.tech/magic/current/sky130A.magicrc -noc -dnull extract_$*.tcl < /dev/null
+	cd mag && \
+		export MAGTYPE=maglef; \
+		magic -rcfile ${PDK_ROOT}/sky130A/libs.tech/magic/current/sky130A.magicrc -noc -dnull extract_$*.tcl < /dev/null
 	mv ./mag/$*.spice ./spi/lvs
 	rm ./mag/*.ext
 	mv -f ./mag/extract_$*.{tcl,log} ./mag/tmp
