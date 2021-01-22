@@ -47,8 +47,8 @@ THREADS ?= $(shell nproc)
 STD_CELL_LIBRARY ?= sky130_fd_sc_hd
 SPECIAL_VOLTAGE_LIBRARY ?= sky130_fd_sc_hvl
 IO_LIBRARY ?= sky130_fd_io
-SKYWATER_COMMIT ?= 3d7617a1acb92ea883539bcf22a632d6361a5de4
-OPEN_PDKS_COMMIT ?= 49fc7125db927de199d1f69e002beadc0a29881b
+SKYWATER_COMMIT ?= f6f76f3dc99526c6fc2cfede19b5b1227d4ebde7
+OPEN_PDKS_COMMIT ?= ec43817ed9f58ff83c9d260ce981818023cb6d77
 
 .DEFAULT_GOAL := ship
 # We need portable GDS_FILE pointers...
@@ -128,6 +128,30 @@ $(SPLIT_FILES_SOURCES): %: $$(sort $$(wildcard %.$(ARCHIVE_EXT).*.split))
 uncompress: $(SPLIT_FILES_SOURCES) $(ARCHIVE_SOURCES)
 	@echo "All files are uncompressed!"
 
+
+# verify that the wrapper was respected
+xor-wrapper:
+	# first erase the user's user_project_wrapper.gds
+	sh utils/erase_box.sh gds/user_project_wrapper.gds 0 0 2920 3520
+	# do the same for the empty wrapper
+	sh utils/erase_box.sh gds/user_project_wrapper_empty.gds 0 0 2920 3520
+	mkdir -p signoff/user_project_wrapper_xor
+	# XOR the two resulting layouts
+	sh utils/xor.sh \
+		gds/user_project_wrapper_empty_erased.gds gds/user_project_wrapper_erased.gds \
+		user_project_wrapper user_project_wrapper.xor.xml
+	sh utils/xor.sh \
+		gds/user_project_wrapper_empty_erased.gds gds/user_project_wrapper_erased.gds \
+		user_project_wrapper gds/user_project_wrapper.xor.gds > signoff/user_project_wrapper_xor/xor.log
+	rm gds/user_project_wrapper_empty_erased.gds gds/user_project_wrapper_erased.gds
+	mv gds/user_project_wrapper.xor.gds gds/user_project_wrapper.xor.xml signoff/user_project_wrapper_xor
+	python utils/parse_klayout_xor_log.py \
+		-l signoff/user_project_wrapper_xor/xor.log \
+		-o signoff/user_project_wrapper_xor/total.txt
+	# screenshot the result for convenience
+	sh utils/scrotLayout.sh \
+		$(PDK_ROOT)/sky130A/libs.tech/klayout/sky130A.lyt \
+		signoff/user_project_wrapper_xor/user_project_wrapper.xor.gds
 
 # LVS
 BLOCKS = $(shell cd openlane && find * -maxdepth 0 -type d)
@@ -264,11 +288,13 @@ build-pdk: check-env $(PDK_ROOT)/open_pdks $(PDK_ROOT)/skywater-pdk
 		rm -rf $(PDK_ROOT)/sky130A) || \
 		true
 	cd $(PDK_ROOT)/open_pdks && \
-		./configure --enable-sky130-pdk=$(PDK_ROOT)/skywater-pdk/libraries --with-sky130-local-path=$(PDK_ROOT) && \
+		./configure --enable-alpha-lib --enable-sky130-pdk=$(PDK_ROOT)/skywater-pdk/libraries --with-sky130-local-path=$(PDK_ROOT) && \
 		cd sky130 && \
+		sed -i 's/REPO_PATH = ~\/gits/REPO_PATH = \$$\(PDK_ROOT\)\/open_pdks\/libs/g' Makefile && \
 		$(MAKE) veryclean && \
 		$(MAKE) && \
-		$(MAKE) install-local
+		$(MAKE) install-local && \
+		$(MAKE) clean
 
 .RECIPE: manifest
 manifest: mag/ maglef/ verilog/rtl/ scripts/ Makefile
@@ -277,7 +303,7 @@ manifest: mag/ maglef/ verilog/rtl/ scripts/ Makefile
 	find maglef/*.mag -type f ! -name "user_project_wrapper.mag" -exec shasum {} \; >> manifest && \
 	shasum mag/caravel.mag mag/.magicrc >> manifest
 	shasum scripts/set_user_id.py scripts/generate_fill.py scripts/compositor.py >> manifest
-
+	shasum lef/user_project_wrapper_empty.lef >> manifest
 
 check-env:
 ifndef PDK_ROOT

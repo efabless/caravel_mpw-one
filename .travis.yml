@@ -28,6 +28,9 @@ services:
 os:
   - linux
 
+notifications:
+  slack: efabless-team:XAEJOuCet9xQ14EEIO0nNufd
+
 jobs:
   include:
     - name: "The Precheck Test"
