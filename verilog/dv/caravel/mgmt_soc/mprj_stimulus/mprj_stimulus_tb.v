@@ -41,13 +41,12 @@ module mprj_stimulus_tb;
     wire [37:0] mprj_io;
     wire [15:0] checkbits;
     wire [3:0] status;
-    wire [3:0] pwr_ctrl_out;
 
     // Signals Assignment
     assign checkbits  = mprj_io[31:16];
     assign status = mprj_io[37:34];
     assign uart_tx = mprj_io[6];
-    // assign mprj_io[3] = (CSB == 1'b1) ? 1'b1 : 1'bz;
+    assign mprj_io[3] = (CSB == 1'b1) ? 1'b1 : 1'bz;
 
     always #12.5 clock <= (clock === 1'b0);
 
@@ -85,23 +84,17 @@ module mprj_stimulus_tb;
         CSB  <= 1'b1;       // Force CSB high
         #2000;
         RSTB <= 1'b1;       // Release reset
-        #100000;
+        #170000;
         CSB = 1'b0;         // CSB can be released
     end
 
     initial begin		// Power-up sequence
         power1 <= 1'b0;
         power2 <= 1'b0;
-        power3 <= 1'b0;
-        power4 <= 1'b0;
-        #100;
+        #200;
         power1 <= 1'b1;
-        #100;
+        #200;
         power2 <= 1'b1;
-        #100;
-        power3 <= 1'b1;
-        #100;
-        power4 <= 1'b1;
     end
 
     wire flash_csb;
@@ -111,8 +104,6 @@ module mprj_stimulus_tb;
 
     wire VDD3V3 = power1;
     wire VDD1V8 = power2;
-    wire USER_VDD3V3 = power3;
-    wire USER_VDD1V8 = power4;
     wire VSS = 1'b0;
 
     caravel uut (
@@ -122,12 +113,12 @@ module mprj_stimulus_tb;
         .vssa	  (VSS),
         .vccd	  (VDD1V8),
         .vssd	  (VSS),
-        .vdda1    (USER_VDD3V3),
-        .vdda2    (USER_VDD3V3),
+        .vdda1    (VDD3V3),
+        .vdda2    (VDD3V3),
         .vssa1	  (VSS),
         .vssa2	  (VSS),
-        .vccd1	  (USER_VDD1V8),
-        .vccd2	  (USER_VDD1V8),
+        .vccd1	  (VDD1V8),
+        .vccd2	  (VDD1V8),
         .vssd1	  (VSS),
         .vssd2	  (VSS),
         .clock	  (clock),
@@ -137,7 +128,6 @@ module mprj_stimulus_tb;
         .flash_clk(flash_clk),
         .flash_io0(flash_io0),
         .flash_io1(flash_io1),
-        .pwr_ctrl_out(pwr_ctrl_out),
         .resetb	  (RSTB)
     );
 
