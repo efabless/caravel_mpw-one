@@ -44,6 +44,8 @@ set ::env(MACRO_PLACEMENT_CFG) $script_dir/macro_placement.cfg
 set ::env(RIGHT_MARGIN_MULT) 292
 set ::env(FP_IO_HLENGTH) 100
 set ::env(GLB_RT_MAXLAYER) 4
+set ::env(GLB_RT_OBS) \
+	"met5 75 0 170 70, met4 75 0 170 70, met2 75 0 170 70, met1 75 0 170 70, met3 37.035 0 73.89500 70"
 
 set ::env(LEFT_MARGIN_MULT) 10
 set ::env(TOP_MARGIN_MULT) 4
