@@ -90,7 +90,7 @@ verify:
 
 #####
 $(LARGE_FILES_GZ): %.$(ARCHIVE_EXT): %
-	@if ! [ $(suffix $<) == ".$(ARCHIVE_EXT)" ]; then\
+	@if ! [ $(suffix $<) = ".$(ARCHIVE_EXT)" ]; then\
 		$(COMPRESS) $< > /dev/null &&\
 		echo "$< -> $@";\
 	fi
