@@ -272,7 +272,7 @@ skywater-library: check-env $(PDK_ROOT)/skywater-pdk
 
 skywater-timing: check-env $(PDK_ROOT)/skywater-pdk
 	cd $(PDK_ROOT)/skywater-pdk && \
-		$(MAKE) -j$(THREADS) timing
+		$(MAKE) timing
 ### OPEN_PDKS
 $(PDK_ROOT)/open_pdks:
 	git clone git://opencircuitdesign.com/open_pdks $(PDK_ROOT)/open_pdks
