@@ -19,7 +19,6 @@ cd ..
 export PDK_ROOT=$(pwd)/pdks
 export OPENLANE_ROOT=$(pwd)/openlane
 cd $TARGET_PATH
-export OPENLANE_TAG=develop
 export IMAGE_NAME=openlane:$OPENLANE_TAG
 cd openlane
 make openlane

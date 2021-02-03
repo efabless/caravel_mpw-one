@@ -30,6 +30,10 @@ os:
 notifications:
   slack: efabless-team:XAEJOuCet9xQ14EEIO0nNufd
 
+env:
+  global:
+    - OPENLANE_TAG=rc7
+
 jobs:
   include:
     - name: "The Precheck Test"
