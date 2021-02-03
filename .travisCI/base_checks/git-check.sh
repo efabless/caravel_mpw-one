@@ -20,9 +20,12 @@ echo "Current git status"
 
 git status
 
-echo "Running make README.rst"
+echo "Deleting README.rst & openlane/README.rst"
+rm -rf README.rst
+rm -rf openlane/README.rst
 
-make README.rst
+echo "Running make README.rst"
+make README.rst -B
 
 echo "New git status"
 TMP_FILE=git_dif_tmp_file
