@@ -99,7 +99,7 @@ Then, you can learn more about the caravel chip by watching these video:
 -  Things to Clarify About Caravel -- What versions to use with Caravel?
    -- https://youtu.be/-LZ522mxXMw
 
-   -  You could only use openlane:rc6
+   -  You could only use openlane:rc7
    -  Make sure you have the commit hashes provided here inside the
       `Makefile <https://github.com/efabless/caravel/blob/master/Makefile>`__
 

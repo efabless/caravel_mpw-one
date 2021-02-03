@@ -66,24 +66,24 @@ clone and build openlane through:
 
 **NOTE:**
 
-      We are developing caravel using openlane:rc6 which is the current master branch.
+      We are developing caravel using openlane:rc7 which is the current master branch.
 
 **NOTE:**
 
-      rc6 (current openlane master) and rc4 (previous openlane
+      rc7 (current openlane master) and rc4 (previous openlane
       master) are using two different concepts of cell padding. rc4 is
-      modifying the LEF, while rc6 is relying on openroad to handle the cell
-      padding. Also, rc4 is using the standalone version of openDP while rc6
+      modifying the LEF, while rc7 is relying on openroad to handle the cell
+      padding. Also, rc4 is using the standalone version of openDP while rc7
       is using the one integrated in the openroad app. This affects the
       concept of PL\_TARGET\_DENSITY and while in rc4 it was preferred to have
-      PL\_TARGET\_DENSITY=(FP\_CORE\_UTIL-(5\~10)/100). Now, in rc6 it is
+      PL\_TARGET\_DENSITY=(FP\_CORE\_UTIL-(5\~10)/100). Now, in rc7 it is
       preferred to be PL\_TARGET\_DENSITY=(FP\_CORE\_UTIL+(1\~5)/100).
       | FP\_CORE\_UTIL should be relaxed as well as it became more
       representative of the actual core utilization, which wasn't so much the
       case earlier. So, the perception of these two variables as well as
-      CELL\_PAD changed between rc4 and rc6 which necessitates a change in the
+      CELL\_PAD changed between rc4 and rc7 which necessitates a change in the
       configurations of almost every single design.
-      | CELL\_PAD should be 4\~6 for the skywater libraries in rc6 unlike rc4
+      | CELL\_PAD should be 4\~6 for the skywater libraries in rc7 unlike rc4
       which was 8.
 
 Then, you have two options:
@@ -98,7 +98,7 @@ Then, you have two options:
 
       The OpenLANE documentation should cover everything you might
       need to create your design. You can find that
-      `here <https://github.com/efabless/openlane/blob/master/README.md>`__.
+      `here <https://openlane.readthedocs.io/en/latest/>`__.
 
 Option 1
 --------
@@ -106,7 +106,7 @@ Option 1
 This could be done by creating a directory for your design here in this
 directory, and adding a configuration file for it under the same
 directory. You can follow the instructions given
-`here <https://github.com/efabless/openlane#adding-a-design>`__ to
+`here <https://openlane.readthedocs.io/en/latest/#adding-a-design>`__ to
 generate an initial configuration file for your design, or you can start
 with the following:
 
@@ -140,7 +140,7 @@ Then, follow the instructions given in Option 2.
 
       You might have other macros inside your design. In which case,
       you may need to have some special power configurations. This is covered
-      `here <https://github.com/efabless/openlane/blob/master/doc/hardening_macros.md#power-grid-pdn>`__.
+      `here <https://openlane.readthedocs.io/en/latest/docs/source/hardening_macros.html#power-grid-pdn>`__.
 
 Option 2
 --------
@@ -206,7 +206,7 @@ Option 2
 
     In both cases you might have other macros inside your design.
     In which case, you may need to have some special power configurations.
-    This is covered `here <https://github.com/efabless/openlane/blob/master/doc/hardening_macros.md#power-grid-pdn>`__.
+    This is covered `here <https://openlane.readthedocs.io/en/latest/docs/source/hardening_macros.html#power-grid-pdn>`__.
 
 **WARNING:**
 
@@ -218,21 +218,21 @@ Extra Pointers
 
 -  The OpenLANE documentation should cover everything you might need to
    create your design. You can find that
-   `here <https://github.com/efabless/openlane/blob/master/README.md>`__.
+   `here <https://openlane.readthedocs.io/en/latest/>`__.
 -  The OpenLANE `FAQs <https://github.com/efabless/openlane/wiki>`__ can
    guide through your troubles.
--  `Here <https://github.com/efabless/openlane/blob/master/configuration/README.md>`__
+-  `Here <https://openlane.readthedocs.io/en/latest/configuration/README.html>`__
    you can find all the configurations and how to use them.
--  `Here <https://github.com/efabless/openlane/blob/master/doc/advanced_readme.md>`__
+-  `Here <https://openlane.readthedocs.io/en/latest/docs/source/advanced_readme.html>`__
    you can learn how to write an interactive script.
--  `Here <https://github.com/efabless/openlane/blob/master/doc/OpenLANE_commands.md>`__
+-  `Here <https://openlane.readthedocs.io/en/latest/docs/source/OpenLANE_commands.html>`__
    you can find a full documentation for all OpenLANE commands.
 -  `This
-   documentation <https://github.com/efabless/openlane/blob/master/regression_results/README.md>`__
+   documentation <https://openlane.readthedocs.io/en/latest/regression_results/README.html>`__
    describes how to use the exploration script to achieve an LVS/DRC
    clean design.
 -  `This
-   documentation <https://github.com/efabless/openlane/blob/master/doc/hardening_macros.md>`__
+   documentation <https://openlane.readthedocs.io/en/latest/docs/source/hardening_macros.html>`__
    walks you through hardening a macro and all the decisions you should
    make.
 
