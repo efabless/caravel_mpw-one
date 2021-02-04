@@ -52,10 +52,6 @@ But, first you need to specify 2 things:
     export PDK_ROOT=<The location where the pdk is installed>
     export OPENLANE_ROOT=<the absolute path to the openlane directory cloned or to be cloned>
 
-**WARNING:**
-
-      caravel is still a WIP so expect to run into some issues when using it.
-
 If you don't have openlane already, then you can get it from
 `here <https://github.com/efabless/openlane>`__. Alternatively, you can
 clone and build openlane through:
@@ -66,7 +62,7 @@ clone and build openlane through:
 
 **NOTE:**
 
-      We are developing caravel using openlane:rc7 which is the current master branch.
+      We are developing caravel using efabless/openlane:rc7 which is the current master branch.
 
 **NOTE:**
 

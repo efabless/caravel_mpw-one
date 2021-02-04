@@ -99,7 +99,7 @@ Then, you can learn more about the caravel chip by watching these video:
 -  Things to Clarify About Caravel -- What versions to use with Caravel?
    -- https://youtu.be/-LZ522mxXMw
 
-   -  You could only use openlane:rc7
+   -  You could only use efabless/openlane:rc7
    -  Make sure you have the commit hashes provided here inside the
       `Makefile <https://github.com/efabless/caravel/blob/master/Makefile>`__
 
@@ -158,7 +158,7 @@ streaming out step, export the following:
 
     export PDK_ROOT=<The location where the pdk is installed>
     export OPENLANE_ROOT=<the absolute path to the openlane directory cloned or to be cloned>
-    export IMAGE_NAME=<the openlane image name installed on your machine. Preferably openlane:rc6>
+    export IMAGE_NAME=<the openlane image name installed on your machine. Preferably efabless/openlane:rc7>
     export CARAVEL_PATH=$(pwd)
 
 Then, mount the docker:
@@ -254,7 +254,7 @@ counter. Three firmware examples are provided:
    value for five clock cylcles:
    `LA\_Test2 <https://github.com/efabless/caravel/blob/master/verilog/dv/caravel/user_proj_example/la_test2>`__.
 
-.. |Expectation_DRC| replace:: This should merge the GDSes using magic and you'll end up with your version of ``./gds/caravel.gds``. You should expect ^40 magic DRC violations with the current "development" state of caravel.
+.. |Expectation_DRC| replace:: This should merge the GDSes using magic and you'll end up with your version of ``./gds/caravel.gds``. You should expect 0 magic DRC violations with the current state of caravel.
 
 .. |License| image:: https://img.shields.io/github/license/efabless/caravel
    :alt: GitHub license - Apache 2.0
