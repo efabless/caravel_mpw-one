@@ -46,7 +46,7 @@ clone and build openlane through:
 
 .. note::
 
-      We are developing caravel using openlane:rc7 which is the current master branch.
+      We are developing caravel using efabless/openlane:rc7 which is the current master branch.
 
 .. note::
 

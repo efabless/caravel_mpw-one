@@ -62,7 +62,7 @@ Then, you can learn more about the caravel chip by watching these video:
 -  Things to Clarify About Caravel -- What versions to use with Caravel?
    -- https://youtu.be/-LZ522mxXMw
 
-   -  You could only use openlane:rc7
+   -  You could only use efabless/openlane:rc7
    -  Make sure you have the commit hashes provided here inside the
       `Makefile <https://github.com/efabless/caravel/blob/master/Makefile>`__
 
@@ -121,7 +121,7 @@ streaming out step, export the following:
 
     export PDK_ROOT=<The location where the pdk is installed>
     export OPENLANE_ROOT=<the absolute path to the openlane directory cloned or to be cloned>
-    export IMAGE_NAME=<the openlane image name installed on your machine. Preferably openlane:rc6>
+    export IMAGE_NAME=<the openlane image name installed on your machine. Preferably efabless/openlane:rc7>
     export CARAVEL_PATH=$(pwd)
 
 Then, mount the docker:
