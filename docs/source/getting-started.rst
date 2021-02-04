@@ -217,4 +217,4 @@ counter. Three firmware examples are provided:
    value for five clock cylcles:
    `LA\_Test2 <https://github.com/efabless/caravel/blob/master/verilog/dv/caravel/user_proj_example/la_test2>`__.
 
-.. |Expectation_DRC| replace:: This should merge the GDSes using magic and you'll end up with your version of ``./gds/caravel.gds``. You should expect ^40 magic DRC violations with the current "development" state of caravel.
+.. |Expectation_DRC| replace:: This should merge the GDSes using magic and you'll end up with your version of ``./gds/caravel.gds``. You should expect 0 magic DRC violations with the current state of caravel.
