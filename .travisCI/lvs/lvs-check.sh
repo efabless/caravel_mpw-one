@@ -23,7 +23,7 @@ export CARAVEL_PATH=$(pwd)
 # LVS
 BLOCKS=($block)
 if [ $block == all ]; then
-        BLOCKS=$(cd openlane && find * -maxdepth 0 -type d ! -name "caravel" ! -name "chip_io" ! -name "mgmt_core")
+        BLOCKS=$(cd openlane && find * -maxdepth 0 -type d ! -name "caravel" ! -name "chip_io" ! -name "mgmt_core" ! -name "user_project_wrapper_empty")
 fi
 
 echo "Running Full LVS:"
