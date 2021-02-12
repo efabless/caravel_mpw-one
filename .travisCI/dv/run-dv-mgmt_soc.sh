@@ -20,7 +20,7 @@ ID=$3
 MGMT_SOC_PATTERNS_1=(gpio perf hkspi sysctrl)
 MGMT_SOC_PATTERNS_2=(mprj_ctrl pass_thru storage)
 MGMT_SOC_PATTERNS_3=(uart)
-MGMT_SOC_PATTERNS_4=(timer timer2)
+MGMT_SOC_PATTERNS_4=(timer timer2 mprj_stimulus)
 MGMT_SOC_PATTERNS_5=(mem pll)
 
 VERDICT_FILE=$TARGET_PATH/mgmt_soc_verdict.out

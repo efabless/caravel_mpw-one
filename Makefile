@@ -90,7 +90,7 @@ verify:
 
 #####
 $(LARGE_FILES_GZ): %.$(ARCHIVE_EXT): %
-	@if ! [ $(suffix $<) == ".$(ARCHIVE_EXT)" ]; then\
+	@if ! [ $(suffix $<) = ".$(ARCHIVE_EXT)" ]; then\
 		$(COMPRESS) $< > /dev/null &&\
 		echo "$< -> $@";\
 	fi
@@ -151,6 +151,7 @@ xor-wrapper:
 	sh utils/scrotLayout.sh \
 		$(PDK_ROOT)/sky130A/libs.tech/klayout/sky130A.lyt \
 		signoff/user_project_wrapper_xor/user_project_wrapper.xor.gds
+	@cat signoff/user_project_wrapper_xor/total.txt
 
 # LVS
 BLOCKS = $(shell cd openlane && find * -maxdepth 0 -type d)
@@ -191,6 +192,7 @@ $(LVS_BLOCKS): lvs-% : ./mag/%.mag ./verilog/gl/%.v
 	@echo ""
 	@echo "LVS: ./spi/lvs/$*.spice vs. ./verilog/gl/$*.v"
 	@echo "Comparison result: ./spi/lvs/tmp/$*.v_comp.out"
+	@awk '/^NET mismatches/,0' ./spi/lvs/tmp/$*.v_comp.out
 
 # connect-by-label is enabled here!
 LVS_MAGLEF_BLOCKS = $(foreach block, $(BLOCKS), lvs-maglef-$(block))
@@ -225,6 +227,7 @@ $(LVS_MAGLEF_BLOCKS): lvs-maglef-% : ./mag/%.mag ./verilog/gl/%.v
 	@echo ""
 	@echo "LVS: ./spi/lvs/$*.spice vs. ./verilog/gl/$*.v"
 	@echo "Comparison result: ./spi/lvs/tmp/$*.v_comp.out"
+	@awk '/^NET mismatches/,0' ./spi/lvs/tmp/$*.v_comp.out
 
 # DRC
 BLOCKS = $(shell cd openlane && find * -maxdepth 0 -type d)

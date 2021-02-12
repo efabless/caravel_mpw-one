@@ -1,13 +1,13 @@
 magic
 tech sky130A
 magscale 1 2
-timestamp 1608227261
+timestamp 1611581798
 << obsli1 >>
-rect 920 2159 7084 11441
+rect 765 2159 7607 11441
 << obsm1 >>
-rect 920 1164 26482 12572
+rect 753 144 14338 12776
 << obsm2 >>
-rect 1216 167 26478 13705
+rect 1216 138 14334 13705
 << metal3 >>
 rect 14000 13608 34000 13728
 rect 14000 13064 34000 13184
@@ -36,7 +36,7 @@ rect 14000 1096 34000 1216
 rect 14000 552 34000 672
 rect 14000 144 34000 264
 << obsm3 >>
-rect 2060 2143 5380 11457
+rect 2060 2143 7255 11457
 << metal4 >>
 rect -1620 -364 -1300 13964
 rect -960 296 -640 13304
@@ -190,6 +190,6 @@ string LEFclass BLOCK
 string FIXED_BBOX 0 0 34000 14000
 string LEFview TRUE
 string GDS_FILE ../gds/gpio_control_block.gds
-string GDS_END 339438
+string GDS_END 348212
 string GDS_START 146164
 << end >>

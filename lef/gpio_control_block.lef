@@ -8,7 +8,7 @@ MACRO gpio_control_block
   ORIGIN 0.000 0.000 ;
   SIZE 170.000 BY 70.000 ;
   PIN mgmt_gpio_in
-    DIRECTION OUTPUT TRISTATE ;
+    DIRECTION OUTPUT ;
     USE SIGNAL ;
     PORT
       LAYER met3 ;
@@ -32,7 +32,7 @@ MACRO gpio_control_block
     END
   END mgmt_gpio_out
   PIN one
-    DIRECTION OUTPUT TRISTATE ;
+    DIRECTION OUTPUT ;
     USE SIGNAL ;
     PORT
       LAYER met3 ;
@@ -40,7 +40,7 @@ MACRO gpio_control_block
     END
   END one
   PIN pad_gpio_ana_en
-    DIRECTION OUTPUT TRISTATE ;
+    DIRECTION OUTPUT ;
     USE SIGNAL ;
     PORT
       LAYER met3 ;
@@ -48,7 +48,7 @@ MACRO gpio_control_block
     END
   END pad_gpio_ana_en
   PIN pad_gpio_ana_pol
-    DIRECTION OUTPUT TRISTATE ;
+    DIRECTION OUTPUT ;
     USE SIGNAL ;
     PORT
       LAYER met3 ;
@@ -56,7 +56,7 @@ MACRO gpio_control_block
     END
   END pad_gpio_ana_pol
   PIN pad_gpio_ana_sel
-    DIRECTION OUTPUT TRISTATE ;
+    DIRECTION OUTPUT ;
     USE SIGNAL ;
     PORT
       LAYER met3 ;
@@ -64,7 +64,7 @@ MACRO gpio_control_block
     END
   END pad_gpio_ana_sel
   PIN pad_gpio_dm[0]
-    DIRECTION OUTPUT TRISTATE ;
+    DIRECTION OUTPUT ;
     USE SIGNAL ;
     PORT
       LAYER met3 ;
@@ -72,7 +72,7 @@ MACRO gpio_control_block
     END
   END pad_gpio_dm[0]
   PIN pad_gpio_dm[1]
-    DIRECTION OUTPUT TRISTATE ;
+    DIRECTION OUTPUT ;
     USE SIGNAL ;
     PORT
       LAYER met3 ;
@@ -80,7 +80,7 @@ MACRO gpio_control_block
     END
   END pad_gpio_dm[1]
   PIN pad_gpio_dm[2]
-    DIRECTION OUTPUT TRISTATE ;
+    DIRECTION OUTPUT ;
     USE SIGNAL ;
     PORT
       LAYER met3 ;
@@ -88,7 +88,7 @@ MACRO gpio_control_block
     END
   END pad_gpio_dm[2]
   PIN pad_gpio_holdover
-    DIRECTION OUTPUT TRISTATE ;
+    DIRECTION OUTPUT ;
     USE SIGNAL ;
     PORT
       LAYER met3 ;
@@ -96,7 +96,7 @@ MACRO gpio_control_block
     END
   END pad_gpio_holdover
   PIN pad_gpio_ib_mode_sel
-    DIRECTION OUTPUT TRISTATE ;
+    DIRECTION OUTPUT ;
     USE SIGNAL ;
     PORT
       LAYER met3 ;
@@ -112,7 +112,7 @@ MACRO gpio_control_block
     END
   END pad_gpio_in
   PIN pad_gpio_inenb
-    DIRECTION OUTPUT TRISTATE ;
+    DIRECTION OUTPUT ;
     USE SIGNAL ;
     PORT
       LAYER met3 ;
@@ -120,7 +120,7 @@ MACRO gpio_control_block
     END
   END pad_gpio_inenb
   PIN pad_gpio_out
-    DIRECTION OUTPUT TRISTATE ;
+    DIRECTION OUTPUT ;
     USE SIGNAL ;
     PORT
       LAYER met3 ;
@@ -128,7 +128,7 @@ MACRO gpio_control_block
     END
   END pad_gpio_out
   PIN pad_gpio_outenb
-    DIRECTION OUTPUT TRISTATE ;
+    DIRECTION OUTPUT ;
     USE SIGNAL ;
     PORT
       LAYER met3 ;
@@ -136,7 +136,7 @@ MACRO gpio_control_block
     END
   END pad_gpio_outenb
   PIN pad_gpio_slow_sel
-    DIRECTION OUTPUT TRISTATE ;
+    DIRECTION OUTPUT ;
     USE SIGNAL ;
     PORT
       LAYER met3 ;
@@ -144,7 +144,7 @@ MACRO gpio_control_block
     END
   END pad_gpio_slow_sel
   PIN pad_gpio_vtrip_sel
-    DIRECTION OUTPUT TRISTATE ;
+    DIRECTION OUTPUT ;
     USE SIGNAL ;
     PORT
       LAYER met3 ;
@@ -176,7 +176,7 @@ MACRO gpio_control_block
     END
   END serial_data_in
   PIN serial_data_out
-    DIRECTION OUTPUT TRISTATE ;
+    DIRECTION OUTPUT ;
     USE SIGNAL ;
     PORT
       LAYER met3 ;
@@ -184,7 +184,7 @@ MACRO gpio_control_block
     END
   END serial_data_out
   PIN user_gpio_in
-    DIRECTION OUTPUT TRISTATE ;
+    DIRECTION OUTPUT ;
     USE SIGNAL ;
     PORT
       LAYER met3 ;
@@ -208,7 +208,7 @@ MACRO gpio_control_block
     END
   END user_gpio_out
   PIN zero
-    DIRECTION OUTPUT TRISTATE ;
+    DIRECTION OUTPUT ;
     USE SIGNAL ;
     PORT
       LAYER met3 ;
@@ -465,13 +465,13 @@ MACRO gpio_control_block
   END vssd1
   OBS
       LAYER li1 ;
-        RECT 0.460 10.795 35.420 57.205 ;
+        RECT 3.825 10.795 38.035 57.205 ;
       LAYER met1 ;
-        RECT 0.000 5.820 132.410 62.860 ;
+        RECT 3.765 0.720 71.690 63.880 ;
       LAYER met2 ;
-        RECT 0.000 0.835 132.390 68.525 ;
+        RECT 6.080 0.690 71.670 68.525 ;
       LAYER met3 ;
-        RECT 0.000 10.715 26.900 57.360 ;
+        RECT 10.300 10.715 36.275 57.285 ;
   END
 END gpio_control_block
 END LIBRARY
