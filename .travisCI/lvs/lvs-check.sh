@@ -13,7 +13,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 # SPDX-License-Identifier: Apache-2.0
-
+block=$1
 export IMAGE_NAME=efabless/openlane:$OPENLANE_TAG
 export PDK_ROOT=$(pwd)/../pdks
 
@@ -21,21 +21,41 @@ make uncompress
 export CARAVEL_PATH=$(pwd)
 
 # LVS
-echo "Running Full LVS:"
-docker run -it -v $CARAVEL_PATH:$CARAVEL_PATH -e CARAVEL_PATH=$CARAVEL_PATH -v $PDK_ROOT:$PDK_ROOT -e PDK_ROOT=$PDK_ROOT -u $(id -u $USER):$(id -g $USER) $IMAGE_NAME  bash -c "cd $CARAVEL_PATH; make lvs-caravel"
-
-lvs_report=$CARAVEL_PATH/spi/lvs/tmp/caravel.lvs.summary.log
-if [ -f $lvs_report ]; then
-        lvs_total_errors=$(grep "Total errors =" $lvs_report -s | tail -1 | sed -r 's/[^0-9]*//g')
-        if ! [[ $lvs_total_errors ]]; then lvs_total_errors=0; fi
-else
-        echo "lvs check failed due to netgen failure";
-        exit 2;
+BLOCKS=(caravel)
+if [ $block != caravel ]; then
+        BLOCKS=$(cd openlane && find * -maxdepth 0 -type d)
 fi
 
-echo "LVS summary:"
-cat $lvs_report
-echo "Total Count: $lvs_total_errors"
+echo "Running Full LVS:"
+for BLOCK in ${BLOCKS[*]}
+do
+        if [[ $BLOCK != DFFRAM ]]; then
+                echo "Running Full LVS on block $BLOCK:"
+                docker run -it -v $CARAVEL_PATH:$CARAVEL_PATH -e CARAVEL_PATH=$CARAVEL_PATH -v $PDK_ROOT:$PDK_ROOT -e PDK_ROOT=$PDK_ROOT -u $(id -u $USER):$(id -g $USER) $IMAGE_NAME  bash -c "cd $CARAVEL_PATH; make lvs-$BLOCK"
 
-if [[ $lvs_total_errors -gt 6 ]]; then exit 2; fi
+                lvs_report=$CARAVEL_PATH/spi/lvs/tmp/$BLOCK.lvs.summary.log
+                if [ -f $lvs_report ]; then
+                        lvs_total_errors=$(grep "Total errors =" $lvs_report -s | tail -1 | sed -r 's/[^0-9]*//g')
+                        if ! [[ $lvs_total_errors ]]; then lvs_total_errors=0; fi
+                else
+                        echo "lvs check failed due to netgen failure";
+                        exit 2;
+                fi
+
+                echo "LVS summary:"
+                cat $lvs_report
+                echo "Total Count: $lvs_total_errors"
+                if [[ $BLOCK != caravel ]]; then
+                        if [[ $BLOCK != chip_io ]]; then
+                                if [[ $lvs_total_errors -ne 0 ]]; then exit 2; fi
+                        else
+                                if [[ $lvs_total_errors -gt 16 ]]; then exit 2; fi
+                        fi
+                else
+                        if [[ $lvs_total_errors -gt 6 ]]; then exit 2; fi
+                fi
+        fi
+done
+echo "All LVS checks on all blocks passed!"
+
 exit 0
