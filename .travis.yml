@@ -53,7 +53,15 @@ jobs:
       stage: test
       install: bash .travisCI/utils/bash_run_wrapper.sh .travisCI/utils/pdkBuild.sh
       script: bash .travisCI/utils/bash_run_wrapper.sh ".travisCI/lvs/lvs-check.sh caravel"
-    - name: "The Blocks LVS Test"
+    - name: "The chio_io LVS Test"
+      stage: test
+      install: bash .travisCI/utils/bash_run_wrapper.sh .travisCI/utils/pdkBuild.sh
+      script: bash .travisCI/utils/bash_run_wrapper.sh ".travisCI/lvs/lvs-check.sh chip_io"
+    - name: "The mgmt_core LVS Test"
+      stage: test
+      install: bash .travisCI/utils/bash_run_wrapper.sh .travisCI/utils/pdkBuild.sh
+      script: bash .travisCI/utils/bash_run_wrapper.sh ".travisCI/lvs/lvs-check.sh mgmt_core"
+    - name: "The Rest of the Blocks LVS Test"
       stage: test
       install: bash .travisCI/utils/bash_run_wrapper.sh .travisCI/utils/pdkBuild.sh
       script: bash .travisCI/utils/bash_run_wrapper.sh ".travisCI/lvs/lvs-check.sh all"

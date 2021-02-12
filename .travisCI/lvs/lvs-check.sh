@@ -21,9 +21,9 @@ make uncompress
 export CARAVEL_PATH=$(pwd)
 
 # LVS
-BLOCKS=(caravel)
-if [ $block != caravel ]; then
-        BLOCKS=$(cd openlane && find * -maxdepth 0 -type d)
+BLOCKS=($block)
+if [ $block == all ]; then
+        BLOCKS=$(cd openlane && find * -maxdepth 0 -type d ! -name "caravel" ! -name "chip_io" ! -name "mgmt_core")
 fi
 
 echo "Running Full LVS:"
@@ -49,7 +49,7 @@ do
                         if [[ $BLOCK != chip_io ]]; then
                                 if [[ $lvs_total_errors -ne 0 ]]; then exit 2; fi
                         else
-                                if [[ $lvs_total_errors -gt 16 ]]; then exit 2; fi
+                                if [[ $lvs_total_errors -gt 64 ]]; then exit 2; fi
                         fi
                 else
                         if [[ $lvs_total_errors -gt 6 ]]; then exit 2; fi
