@@ -73,6 +73,10 @@ module mprj_stimulus_tb;
         $display("Monitor: mprj_stimulus test started");
         wait(status == 4'ha);
         wait(status == 4'h5);
+	// Value 0009 reflects copying user-controlled outputs to memory and back
+	// to management-controlled outputs.
+        wait(checkbits == 16'h0009);
+        wait(checkbits == 16'hAB51);
         $display("Monitor: mprj_stimulus test passed");
         #10000;
         $finish;
