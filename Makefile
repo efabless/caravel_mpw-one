@@ -272,7 +272,7 @@ skywater-library: check-env $(PDK_ROOT)/skywater-pdk
 
 skywater-timing: check-env $(PDK_ROOT)/skywater-pdk
 	cd $(PDK_ROOT)/skywater-pdk && \
-		$(MAKE) -j$(THREADS) timing
+		$(MAKE) timing
 ### OPEN_PDKS
 $(PDK_ROOT)/open_pdks:
 	git clone git://opencircuitdesign.com/open_pdks $(PDK_ROOT)/open_pdks
@@ -302,7 +302,7 @@ build-pdk: check-env $(PDK_ROOT)/open_pdks $(PDK_ROOT)/skywater-pdk
 .RECIPE: manifest
 manifest: mag/ maglef/ verilog/rtl/ scripts/ Makefile
 	touch manifest && \
-	find verilog/rtl/* -type f ! -name "user_*.v" ! -name "manifest" ! -name "README" ! -name "defines.v" -exec shasum {} \; > manifest && \
+	find verilog/rtl/* -type f ! -name "caravel_netlists.v" ! -name "user_*.v" ! -name "README" ! -name "defines.v" -exec shasum {} \; > manifest && \
 	find maglef/*.mag -type f ! -name "user_project_wrapper.mag" -exec shasum {} \; >> manifest && \
 	shasum mag/caravel.mag mag/.magicrc >> manifest
 	shasum scripts/set_user_id.py scripts/generate_fill.py scripts/compositor.py >> manifest
