@@ -201,6 +201,7 @@ extern uint32_t flashio_worker_end;
 #define GPIO_MODE_USER_STD_INPUT_PULLUP	   0x0c02
 #define GPIO_MODE_USER_STD_OUTPUT	   0x1808
 #define GPIO_MODE_USER_STD_BIDIRECTIONAL   0x1800
+#define GPIO_MODE_USER_STD_OUT_MONITORED   0x1802
 #define GPIO_MODE_USER_STD_ANALOG   	   0x000a
 
 // --------------------------------------------------------
