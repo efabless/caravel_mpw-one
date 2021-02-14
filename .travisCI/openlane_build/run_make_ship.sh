@@ -18,8 +18,7 @@ cd ..
 export PDK_ROOT=$(pwd)/pdks
 export OPENLANE_ROOT=$(pwd)/openlane
 cd $CARAVEL_PATH
-export OPENLANE_TAG=develop
-export IMAGE_NAME=openlane:$OPENLANE_TAG
+export IMAGE_NAME=efabless/openlane:$OPENLANE_TAG
 
 rm -rf maglef/user_proj_example.mag
 rm -rf maglef/user_project_wrapper.mag

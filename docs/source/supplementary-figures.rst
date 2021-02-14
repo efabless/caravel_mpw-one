@@ -61,6 +61,14 @@ Die voltage clamp arrangement
       :alt: Voltage clamp arrangement
       :align: center
 
+Die plot 
+------------------------
+
+.. figure:: _static/caravel.png
+      :name: caravel
+      :alt: Die plot
+      :align: center
+
 Die to WLCSP bond plan
 ------------------------
 

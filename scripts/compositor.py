@@ -123,7 +123,7 @@ if __name__ == '__main__':
         # it's gigabytes anyway, so we don't want to deal with any
         # actual data.  So it's just a placeholder.
 
-        print('load ' + project_with_id + '_fill_pattern', file=ofile)
+        print('load ' + project_with_id + '_fill_pattern -quiet', file=ofile)
         print('snap internal', file=ofile)
         print('box values {*}$bbox', file=ofile)
         print('paint comment', file=ofile)
@@ -151,6 +151,7 @@ if __name__ == '__main__':
         # Generate final GDS
         print('puts stdout "Writing final GDS. . . "', file=ofile)
         print('flush stdout', file=ofile)
+        print('gds undefined allow', file=ofile)
         print('cif *hier write disable', file=ofile)
         print('gds write ../gds/' + project_with_id + '.gds', file=ofile)
         print('quit -noprompt', file=ofile)
