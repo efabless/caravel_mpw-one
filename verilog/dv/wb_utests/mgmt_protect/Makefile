@@ -15,6 +15,10 @@
 # SPDX-License-Identifier: Apache-2.0
 
 PDK_PATH?=/ef/tech/SW/sky130A
+VERILOG_PATH = ../../../
+RTL_PATH = $(VERILOG_PATH)/rtl
+
+SIM ?= RTL
 
 .SUFFIXES:
 
@@ -23,8 +27,13 @@ PATTERN = mgmt_protect
 all:  ${PATTERN:=.vcd}
 
 %.vvp: %_tb.v
-	iverilog -DFUNCTIONAL -I $(PDK_PATH) -I .. -I ../../../rtl \
+ifeq ($(SIM),RTL)
+	iverilog -DFUNCTIONAL -I $(PDK_PATH) -I $(VERILOG_PATH) -I .. -I $(RTL_PATH) \
 	$< -o $@
+else
+	iverilog -DFUNCTIONAL -DGL -I $(PDK_PATH) -I $(VERILOG_PATH) -I .. -I $(RTL_PATH) \
+	$< -o $@
+endif
 
 %.vcd: %.vvp
 	vvp $<

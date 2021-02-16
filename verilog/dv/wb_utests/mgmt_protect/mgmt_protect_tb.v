@@ -29,11 +29,18 @@
 `include "libs.ref/sky130_fd_sc_hvl/verilog/sky130_fd_sc_hvl.v"
 
 `include "defines.v"
-`include "mprj_logic_high.v"
-`include "mprj2_logic_high.v"
 
-`include "mgmt_protect.v"
-`include "mgmt_protect_hv.v"
+`ifdef GL
+    `include "gl/mprj_logic_high.v"
+    `include "gl/mprj2_logic_high.v"
+    `include "gl/mgmt_protect.v"
+    `include "gl/mgmt_protect_hv.v"
+`else
+    `include "mprj_logic_high.v"
+    `include "mprj2_logic_high.v"
+    `include "mgmt_protect.v"
+    `include "mgmt_protect_hv.v"
+`endif 
 
 module mgmt_protect_tb;
 
