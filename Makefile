@@ -77,6 +77,8 @@ clean:
 		$(MAKE) -j$(THREADS) clean
 	cd ./verilog/dv/caravel/user_proj_example/ && \
 		$(MAKE) -j$(THREADS) clean
+	cd ./verilog/dv/wb_utests/ && \
+		$(MAKE) -j$(THREADS) clean
 
 
 .PHONY: verify
@@ -84,6 +86,8 @@ verify:
 	cd ./verilog/dv/caravel/mgmt_soc/ && \
 		$(MAKE) -j$(THREADS) all
 	cd ./verilog/dv/caravel/user_proj_example/ && \
+		$(MAKE) -j$(THREADS) all
+	cd ./verilog/dv/wb_utests/ && \
 		$(MAKE) -j$(THREADS) all
 
 
