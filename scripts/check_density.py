@@ -121,7 +121,8 @@ if __name__ == '__main__':
         print('flush stdout', file=ofile)
         print('update idletasks', file=ofile)
 
-        # Get step box dimensions (700um for size and 70um for step)
+        # Get step box dimensions (700um for size and 70um for FOM step)
+        # Use 350um for stepping on other layers.
         print('box values 0 0 0 0', file=ofile)
         # print('box size 700um 700um', file=ofile)
         # print('set stepbox [box values]', file=ofile)
@@ -135,7 +136,11 @@ if __name__ == '__main__':
 
         print('select top cell', file=ofile)
         print('expand', file=ofile)
+
+        # Modify the box to be inside the seal ring area (shrink 5um)
+        print('box grow c -5um', file=ofile)
         print('set fullbox [box values]', file=ofile)
+
         print('set xmax [lindex $fullbox 2]', file=ofile)
         print('set xmin [lindex $fullbox 0]', file=ofile)
         print('set fullwidth [expr {$xmax - $xmin}]', file=ofile)
@@ -325,6 +330,15 @@ if __name__ == '__main__':
     print('')
     print('Density results (total tiles = ' + str(total_tiles) + '):')
 
+    # For FOM, step at 70um intervals (same as 70um check area)
+    fomstep = 1
+
+    # For poly, step only at 700um intervals (10 * 70um check area)
+    polystep = 10
+
+    # For all metals, step only at 350um intervals (5 * 70um check area)
+    metalstep = 5
+
     # Full areas are 10 x 10 tiles = 100.  But the right and top sides are
     # not full tiles, so the full area must be prorated.
 
@@ -334,12 +348,12 @@ if __name__ == '__main__':
 
     print('')
     print('FOM Density:')
-    for y in range(0, ytiles - 9):
+    for y in range(0, ytiles - 9, fomstep):
         if y == ytiles - 10:
             atotal = topadjust
         else:
             atotal = 100.0
-        for x in range(0, xtiles - 9):
+        for x in range(0, xtiles - 9, fomstep):
             if x == xtiles - 10:
                 if y == ytiles - 10:
                     atotal = corneradjust
@@ -359,12 +373,12 @@ if __name__ == '__main__':
 
     print('')
     print('POLY Density:')
-    for y in range(0, ytiles - 9):
+    for y in range(0, ytiles - 9, polystep):
         if y == ytiles - 10:
             atotal = topadjust
         else:
             atotal = 100.0
-        for x in range(0, xtiles - 9):
+        for x in range(0, xtiles - 9, polystep):
             if x == xtiles - 10:
                 if y == ytiles - 10:
                     atotal = corneradjust
@@ -380,12 +394,12 @@ if __name__ == '__main__':
 
     print('')
     print('LI Density:')
-    for y in range(0, ytiles - 9):
+    for y in range(0, ytiles - 9, metalstep):
         if y == ytiles - 10:
             atotal = topadjust
         else:
             atotal = 100.0
-        for x in range(0, xtiles - 9):
+        for x in range(0, xtiles - 9, metalstep):
             if x == xtiles - 10:
                 if y == ytiles - 10:
                     atotal = corneradjust
@@ -405,12 +419,12 @@ if __name__ == '__main__':
 
     print('')
     print('MET1 Density:')
-    for y in range(0, ytiles - 9):
+    for y in range(0, ytiles - 9, metalstep):
         if y == ytiles - 10:
             atotal = topadjust
         else:
             atotal = 100.0
-        for x in range(0, xtiles - 9):
+        for x in range(0, xtiles - 9, metalstep):
             if x == xtiles - 10:
                 if y == ytiles - 10:
                     atotal = corneradjust
@@ -430,12 +444,12 @@ if __name__ == '__main__':
 
     print('')
     print('MET2 Density:')
-    for y in range(0, ytiles - 9):
+    for y in range(0, ytiles - 9, metalstep):
         if y == ytiles - 10:
             atotal = topadjust
         else:
             atotal = 100.0
-        for x in range(0, xtiles - 9):
+        for x in range(0, xtiles - 9, metalstep):
             if x == xtiles - 10:
                 if y == ytiles - 10:
                     atotal = corneradjust
@@ -455,12 +469,12 @@ if __name__ == '__main__':
 
     print('')
     print('MET3 Density:')
-    for y in range(0, ytiles - 9):
+    for y in range(0, ytiles - 9, metalstep):
         if y == ytiles - 10:
             atotal = topadjust
         else:
             atotal = 100.0
-        for x in range(0, xtiles - 9):
+        for x in range(0, xtiles - 9, metalstep):
             if x == xtiles - 10:
                 if y == ytiles - 10:
                     atotal = corneradjust
@@ -480,12 +494,12 @@ if __name__ == '__main__':
 
     print('')
     print('MET4 Density:')
-    for y in range(0, ytiles - 9):
+    for y in range(0, ytiles - 9, metalstep):
         if y == ytiles - 10:
             atotal = topadjust
         else:
             atotal = 100.0
-        for x in range(0, xtiles - 9):
+        for x in range(0, xtiles - 9, metalstep):
             if x == xtiles - 10:
                 if y == ytiles - 10:
                     atotal = corneradjust
@@ -505,12 +519,12 @@ if __name__ == '__main__':
 
     print('')
     print('MET5 Density:')
-    for y in range(0, ytiles - 9):
+    for y in range(0, ytiles - 9, metalstep):
         if y == ytiles - 10:
             atotal = topadjust
         else:
             atotal = 100.0
-        for x in range(0, xtiles - 9):
+        for x in range(0, xtiles - 9, metalstep):
             if x == xtiles - 10:
                 if y == ytiles - 10:
                     atotal = corneradjust
@@ -594,7 +608,8 @@ if __name__ == '__main__':
         print('***Error:  MET5 Density > 76%')
 
     if not keepmode:
-        os.remove(magpath + '/check_density.tcl')
+        if os.path.isfile(magpath + '/check_density.tcl'):
+            os.remove(magpath + '/check_density.tcl')
 
     print('')
     print('Done!')
