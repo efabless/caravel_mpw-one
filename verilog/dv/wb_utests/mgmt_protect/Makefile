@@ -14,21 +14,22 @@
 #
 # SPDX-License-Identifier: Apache-2.0
 
-# ---- Test patterns for project striVe ----
+PDK_PATH?=/ef/tech/SW/sky130A
 
 .SUFFIXES:
-.SILENT: clean all
 
-PATTERNS = gpio_wb intercon_wb la_wb mem_wb mprj_ctrl spi_sysctrl_wb spimemio_wb uart_wb storage_wb mgmt_protect
+PATTERN = mgmt_protect
 
-all:  ${PATTERNS}
-	for i in ${PATTERNS}; do \
-		( cd $$i && make -f Makefile $${i}.vcd &> verify.log && grep Monitor verify.log) ; \
-	done
+all:  ${PATTERN:=.vcd}
 
-clean:  ${PATTERNS}
-	for i in ${PATTERNS}; do \
-		( cd $$i && make clean ) ; \
-	done
+%.vvp: %_tb.v
+	iverilog -DFUNCTIONAL -I $(PDK_PATH) -I .. -I ../../../rtl \
+	$< -o $@
+
+%.vcd: %.vvp
+	vvp $<
+
+clean:
+	rm -f *.vvp *.vcd
 
 .PHONY: clean all
