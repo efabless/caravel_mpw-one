@@ -48,7 +48,7 @@ STD_CELL_LIBRARY ?= sky130_fd_sc_hd
 SPECIAL_VOLTAGE_LIBRARY ?= sky130_fd_sc_hvl
 IO_LIBRARY ?= sky130_fd_io
 SKYWATER_COMMIT ?= f6f76f3dc99526c6fc2cfede19b5b1227d4ebde7
-OPEN_PDKS_COMMIT ?= 95c92cc563e00b3ee3ed9863b352304943e8ff8f
+OPEN_PDKS_COMMIT ?= 2af86c746ac8933d9c50f92da287bab5e1ec6e62
 
 .DEFAULT_GOAL := ship
 # We need portable GDS_FILE pointers...
