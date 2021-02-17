@@ -13,10 +13,10 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 # SPDX-License-Identifier: Apache-2.0
-
-export PDK_PATH=$(pwd)/../pdks/sky130A
-
 export TARGET_PATH=$(pwd)
+cd ../
+export PDK_PATH=$(pwd)/pdks/sky130A
+cd $TARGET_PATH
 
 export RUN_WRAPPER=$TARGET_PATH/.travisCI/utils/run_wrapper.sh
 

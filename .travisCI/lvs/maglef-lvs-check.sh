@@ -15,10 +15,12 @@
 # SPDX-License-Identifier: Apache-2.0
 
 export IMAGE_NAME=efabless/openlane:$OPENLANE_TAG
-export PDK_ROOT=$(pwd)/../pdks
-
-make uncompress
 export CARAVEL_PATH=$(pwd)
+cd ../
+export PDK_ROOT=$(pwd)/pdks
+cd $CARAVEL_PATH
+export PDKPATH=$PDK_ROOT/sky130A
+make uncompress
 
 # MAGLEF LVS
 echo "Running Abstract (maglef) LVS:"
