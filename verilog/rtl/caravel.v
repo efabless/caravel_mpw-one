@@ -408,6 +408,8 @@ module caravel (
 		.vssd(vssd),
 		.vccd1(vccd1),
 		.vssd1(vssd1),
+		.vccd2(vccd2),
+		.vssd2(vssd2),
 		.vdda1(vdda1),
 		.vssa1(vssa1),
 		.vdda2(vdda2),
