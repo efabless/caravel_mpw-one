@@ -17,7 +17,7 @@
 PDK_PATH=$1
 TARGET_PATH=$2
 ID=$3
-WB_UTESTS_PATTERNS_1=(intercon_wb spimemio_wb storage_wb uart_wb gpio_wb la_wb mprj_ctrl sysctrl_wb spi_sysctrl_wb mem_wb mgmt_protect)
+WB_UTESTS_PATTERNS_1=(intercon_wb spimemio_wb storage_wb uart_wb gpio_wb la_wb mprj_ctrl sysctrl_wb spi_sysctrl_wb mem_wb mgmt_protect chip_io)
 
 VERDICT_FILE=$TARGET_PATH/wb_utests_verdict.out
 OUT_FILE=$TARGET_PATH/wb_utests_dv.$ID.out
