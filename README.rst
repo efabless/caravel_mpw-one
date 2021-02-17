@@ -18,8 +18,8 @@
    # SPDX-License-Identifier: Apache-2.0
    -->
 
-CIIC Harness
-============
+Caravel Harness
+===============
 
 |License| |Documentation Status| |Build Status|
 
@@ -29,11 +29,10 @@ current SoC architecture is given below.
 .. raw:: html
 
    <p align="center">
-   <img src="/docs/source/_static/ciic_harness.png" width="75%" height="75%">
+   <img src="/docs/source/_static/caravel_harness.png" width="75%" height="75%">
    </p>
 
-Datasheet and detailed documentation exists here:
-https://caravel-harness.readthedocs.io/en/develop/
+Datasheet and detailed documentation exists `here <https://caravel-harness.readthedocs.io/>`__
 
 .. raw:: html
 
@@ -112,7 +111,7 @@ insert it into the user\_project\_wrapper. For example, if your design
 is analog or you're using a different tool other than OpenLANE.
 
 If you will use OpenLANE to harden your design, go through the
-instructions in this `README <https://github.com/efabless/caravel/blob/develop/openlane/README.rst>`__.
+instructions in this `README <https://github.com/efabless/caravel/blob/master/openlane/README.rst>`__.
 
 You must copy your synthesized gate-level-netlist for
 ``user_project_wrapper`` to ``verilog/gl/`` and overwrite
@@ -229,7 +228,7 @@ User Project Area
 
 This is the user space. It has limited silicon area (TBD, about 3.1mm x 3.8mm) as well as a fixed number of I/O pads (37) and power pads (10).
 
-See `the Caravel premliminary datasheet` https://caravel-harness.readthedocs.io/en/develop/ for details.
+See `the Caravel premliminary datasheet` https://caravel-harness.readthedocs.io/ for details.
 
 The repository contains a `sample user project <https://github.com/efabless/caravel/blob/master/verilog/rtl/user_proj_example.v>`__ that contains a binary 32-bit up counter.
 
