@@ -55,7 +55,7 @@ For a more detailed documentation on using openlane with caravel check this docu
 Requirements
 ^^^^^^^^^^^^
 
-In the current version of Caravel the top level module of your design needs to be compatible with the interface required by `user_project_wrapper <https://github.com/efabless/caravel/blob/develop/verilog/rtl/user_project_wrapper.v>`_. Make sure that your design uses the same ports as ``user_proj_example``.
+In the current version of Caravel the top level module of your design needs to be compatible with the interface required by `user_project_wrapper <https://github.com/efabless/caravel/blob/master/verilog/rtl/user_project_wrapper.v>`_. Make sure that your design uses the same ports as ``user_proj_example``.
 
 
 Adding a new design

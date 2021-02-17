@@ -18,8 +18,8 @@
    # SPDX-License-Identifier: Apache-2.0
    -->
 
-CIIC Harness
-============
+Caravel Harness
+===============
 
 |License| |Documentation Status| |Build Status|
 
@@ -29,11 +29,10 @@ current SoC architecture is given below.
 .. raw:: html
 
    <p align="center">
-   <img src="/docs/source/_static/ciic_harness.png" width="75%" height="75%">
+   <img src="/docs/source/_static/caravel_harness.png" width="75%" height="75%">
    </p>
 
-Datasheet and detailed documentation exists here:
-https://caravel-harness.readthedocs.io/en/develop/
+Datasheet and detailed documentation exists `here <https://caravel-harness.readthedocs.io/>`__
 
 .. include:: docs/source/getting-started.rst
 

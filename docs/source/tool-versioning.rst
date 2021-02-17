@@ -101,7 +101,7 @@ Notes
    |  require you to reharden your design(s).
 
 -  | If you prefer to re-generate your blocks (using OpenLane), you can refer to
-   |  this `README <https://github.com/efabless/caravel/blob/develop/openlane/README.rst>`__.
+   |  this `README <https://github.com/efabless/caravel/blob/master/openlane/README.rst>`__.
 
 -  | **IMPORTANT**. Do not forget to run ``make uncompress -j4`` in the caravel root
    |  directory before you start working. Likewise, before you commit and push your
