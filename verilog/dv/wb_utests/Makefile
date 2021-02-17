@@ -19,7 +19,7 @@
 .SUFFIXES:
 .SILENT: clean all
 
-PATTERNS = gpio_wb intercon_wb la_wb mem_wb mprj_ctrl spi_sysctrl_wb spimemio_wb uart_wb storage_wb mgmt_protect
+PATTERNS = gpio_wb intercon_wb la_wb mem_wb mprj_ctrl spi_sysctrl_wb spimemio_wb uart_wb storage_wb mgmt_protect chip_io
 
 all:  ${PATTERNS}
 	for i in ${PATTERNS}; do \
