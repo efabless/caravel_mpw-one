@@ -30,11 +30,15 @@
 `ifdef GL
     `include "gl/chip_io.v"
 `else
-    `include "pads.v"
-    `include "mprj_io.v"
-    `include "chip_io.v"
+    `ifdef SPLIT_BUS
+        `include "ports.v"
+        `include "chip_io_split.v"
+    `else
+        `include "pads.v"
+        `include "mprj_io.v"
+        `include "chip_io.v"
+    `endif
 `endif 
-
 
 module chip_io_tb;
     
@@ -94,7 +98,7 @@ module chip_io_tb;
     reg [`MPRJ_IO_PADS-1:0] mprj_io_out;
     
     wire [`MPRJ_IO_PADS-1:0] mprj_io_in;
-    wire [`MPRJ_IO_PADS-8:0] user_analog_io;
+    wire [`MPRJ_IO_PADS-8:0] mprj_analog_io;
 
     always #12.5 clock <= (clock === 1'b0);
 
@@ -106,13 +110,13 @@ module chip_io_tb;
         flash_csb_oeb_core = 0;
         flash_clk_ieb_core = 1;
         flash_clk_oeb_core = 0;
-        mprj_io_ib_mode_sel = {37{1'b0}};
-        mprj_io_vtrip_sel = {37{1'b0}};
-        mprj_io_slow_sel  = {37{1'b0}};
-        mprj_io_holdover  = {37{1'b0}};
-        mprj_io_analog_en  = {37{1'b0}};
-        mprj_io_analog_sel = {37{1'b0}};
-        mprj_io_analog_pol = {37{1'b0}};
+        mprj_io_ib_mode_sel = {38{1'b0}};
+        mprj_io_vtrip_sel = {38{1'b0}};
+        mprj_io_slow_sel  = {38{1'b0}};
+        mprj_io_holdover  = {38{1'b0}};
+        mprj_io_analog_en  = {38{1'b0}};
+        mprj_io_analog_sel = {38{1'b0}};
+        mprj_io_analog_pol = {38{1'b0}};
     end
 
     wire VDD3V3;
@@ -239,11 +243,11 @@ module chip_io_tb;
         end
 
         // User Project Pads - All Outputs
-        mprj_io_bits = {37{1'bz}};
-        mprj_io_out = {5'b10101, 32'hF0F0};
-        mprj_io_oeb = {37{1'b0}};
-        mprj_io_inp_dis = {37{1'b1}};
-        mprj_io_dm = {37{3'b110}};
+        mprj_io_bits = {38{1'bz}};
+        mprj_io_out = {6'b10101, 32'hF0F0};
+        mprj_io_oeb = {38{1'b0}};
+        mprj_io_inp_dis = {38{1'b1}};
+        mprj_io_dm = {38*3{3'b110}};
 
         #25;
         if (mprj_io !== mprj_io_out) begin
@@ -251,11 +255,11 @@ module chip_io_tb;
         end
         
         // User Project Pads - All Inputs
-        mprj_io_bits = {5'b01010, 32'hFF0F};
-        mprj_io_out  = {37{1'b0}};
-        mprj_io_oeb  = {37{1'b1}};
-        mprj_io_inp_dis = {37{1'b0}};
-        mprj_io_dm = {37{3'b001}};
+        mprj_io_bits = {6'b01010, 32'hFF0F};
+        mprj_io_out  = {38{1'b0}};
+        mprj_io_oeb  = {38{1'b1}};
+        mprj_io_inp_dis = {38{1'b0}};
+        mprj_io_dm = {38*3{3'b001}};
 
         #25;
         if (mprj_io_in !== mprj_io_bits) begin
@@ -263,22 +267,22 @@ module chip_io_tb;
         end
         
         // User Project Pads - All Bidirectional
-        mprj_io_bits = {5'b01010, 32'hF00F};  // drive input signal
-        mprj_io_out  = {37{1'bz}}; 
-        mprj_io_oeb  = {37{1'b1}};
-        mprj_io_inp_dis = {37{1'b0}};
-        mprj_io_dm = {37{3'b110}};
+        mprj_io_bits = {6'b01010, 32'hF00F};  // drive input signal
+        mprj_io_out  = {38{1'bz}}; 
+        mprj_io_oeb  = {38{1'b1}};
+        mprj_io_inp_dis = {38{1'b0}};
+        mprj_io_dm = {38{3'b110}};
 
         #25;
         if (mprj_io_in !== mprj_io_bits) begin
             $display("Error: User Project Pads Bidirectional Test Failed."); $finish;
         end
         
-        mprj_io_bits = {37{1'bz}};  
-        mprj_io_out  = {5'b01110, 32'h0FF0};  // drive output signal
-        mprj_io_oeb  = {37{1'b0}};
-        mprj_io_inp_dis = {37{1'b0}};
-        mprj_io_dm = {37{3'b110}};
+        mprj_io_bits = {38{1'bz}};  
+        mprj_io_out  = {6'b01110, 32'h0FF0};  // drive output signal
+        mprj_io_oeb  = {38{1'b0}};
+        mprj_io_inp_dis = {38{1'b0}};
+        mprj_io_dm = {38{3'b110}};
 
         #25;
         if (mprj_io !== mprj_io_out) begin
@@ -310,7 +314,6 @@ module chip_io_tb;
 		.vssd2	  (VSS),
 
         .gpio(gpio),
-        .mprj_io(mprj_io),
         .clock(clock),
         .resetb(RSTB),
         .flash_csb(flash_csb),
@@ -341,7 +344,26 @@ module chip_io_tb;
         .flash_io0_do_core(flash_io0_do_core),
         .flash_io1_do_core(flash_io1_do_core),
         .flash_io0_di_core(flash_io0_di_core),
-        .flash_io1_di_core(flash_io1_di_core),
+        .flash_io1_di_core(flash_io1_di_core),        
+ `ifdef SPLIT_BUS
+        `MPRJ_IO,
+        `MPRJ_IO_IN,
+        `MPRJ_IO_OUT,
+        `MPRJ_IO_OEB,
+        `MPRJ_IO_HLDH_N,
+        `MPRJ_IO_ENH,
+        `MPRJ_IO_INP_DIS,
+        `MPRJ_IO_IB_MODE_SEL,
+        `MPRJ_IO_VTRIP_SEL,
+        `MPRJ_IO_SLOW_SEL,
+        `MPRJ_IO_HOLDOVER,
+        `MPRJ_IO_ANALOG_EN,
+        `MPRJ_IO_ANALOG_SEL,
+        `MPRJ_IO_ANALOG_POL,
+        `MPRJ_IO_DM,
+        `MPRJ_IO_ANALOG
+ `else
+        .mprj_io(mprj_io),
         .mprj_io_in(mprj_io_in),
         .mprj_io_out(mprj_io_out),
         .mprj_io_oeb(mprj_io_oeb),
@@ -356,7 +378,8 @@ module chip_io_tb;
         .mprj_io_analog_sel(mprj_io_analog_sel),
         .mprj_io_analog_pol(mprj_io_analog_pol),
         .mprj_io_dm(mprj_io_dm),
-        .mprj_analog_io(user_analog_io)
+        .mprj_analog_io(mprj_analog_io)
+`endif
     );
 
 endmodule

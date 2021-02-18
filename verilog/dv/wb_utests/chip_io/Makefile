@@ -30,7 +30,12 @@ all:  ${PATTERN:=.vcd}
 ifeq ($(SIM),RTL)
 	iverilog -DFUNCTIONAL -I $(PDK_PATH) -I $(VERILOG_PATH) -I .. -I $(RTL_PATH) \
 	$< -o $@
-else
+endif
+ifeq ($(SIM),SPLIT_BUS)
+	iverilog -DFUNCTIONAL -DSPLIT -I $(PDK_PATH) -I $(VERILOG_PATH) -I .. -I $(RTL_PATH) \
+	$< -o $@
+endif
+ifeq ($(SIM),GL)
 	iverilog -DFUNCTIONAL -DGL -I $(PDK_PATH) -I $(VERILOG_PATH) -I .. -I $(RTL_PATH) \
 	$< -o $@
 endif
