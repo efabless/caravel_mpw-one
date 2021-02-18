@@ -36,11 +36,6 @@ gds read sky130_fd_sc_hvl__lsbufhv2lv_1_wrapped.gds
 gds read user_project_wrapper.gds
 
 load ../mag/caravel.mag -dereference
-property GDS_FILE ""
-property GDS_START ""
-property GDS_END ""
-
-save caravel
 
 select top cell
 

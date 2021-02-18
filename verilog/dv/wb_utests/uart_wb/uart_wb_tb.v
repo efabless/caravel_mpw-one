@@ -103,6 +103,7 @@ module uart_wb_tb;
             $finish;
         end
         $display("Success!");
+        $display("Monitor: Wishbone UART Passed");
         $finish;
     end
     

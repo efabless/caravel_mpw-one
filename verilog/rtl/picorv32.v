@@ -1,5 +1,6 @@
 `default_nettype none
 /*
+ *  SPDX-FileCopyrightText: 2015 Clifford Wolf
  *  PicoRV32 -- A Small RISC-V (RV32I) Processor Core
  *
  *  Copyright (C) 2015  Clifford Wolf <clifford@clifford.at>
@@ -16,6 +17,7 @@
  *  ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
  *  OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
  *
+ *  SPDX-License-Identifier: ISC
  */
 
 /* verilator lint_off WIDTH */

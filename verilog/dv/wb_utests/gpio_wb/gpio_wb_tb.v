@@ -32,7 +32,7 @@ module gpio_wb_tb;
 
     reg [31:0] wb_dat_i;
     reg [31:0] wb_adr_i;
-    reg [15:0] gpio_in_pad;
+    reg gpio_in_pad;
 
     wire wb_ack_o;
     wire [31:0] wb_dat_o;
@@ -71,10 +71,10 @@ module gpio_wb_tb;
     wire [31:0] gpio_pu_adr  = uut.BASE_ADR | uut.GPIO_PU;
     wire [31:0] gpio_pd_adr  = uut.BASE_ADR | uut.GPIO_PD;
 
-    reg [15:0] gpio_data;
-    reg [15:0] gpio_pu; 
-    reg [15:0] gpio_pd; 
-    reg [15:0] gpio_oeb;  
+    reg gpio_data;
+    reg gpio_pu; 
+    reg gpio_pd; 
+    reg gpio_oeb;  
 
     initial begin
         // Reset Operation
@@ -84,59 +84,60 @@ module gpio_wb_tb;
         #2;
 
         // Write to gpio_data reg
-        gpio_in_pad = 16'h FFFF;
-        gpio_data = 16'h A000;
+        gpio_in_pad = 1'b1;
+        gpio_data = 1'b1;
         write(gpio_adr, gpio_data);
        
         #2;
         // Read from gpio_data reg
         read(gpio_adr);
-        if (wb_dat_o !== {gpio_data, gpio_in_pad}) begin
+        if (wb_dat_o !== {30'd0, gpio_data, gpio_in_pad}) begin
             $display("Monitor: Error reading from gpio reg");
             $finish;
         end
         
         #2;
         // Write to pull-up reg
-        gpio_pu = 16'h 000f;
+        gpio_pu = 1'b1;
         write(gpio_pu_adr, gpio_pu);
         
         #2;
         // Read from pull-up reg
         read(gpio_pu_adr);
-        if (wb_dat_o !== {16'd0, gpio_pu}) begin
+        if (wb_dat_o !== {31'd0, gpio_pu}) begin
             $display("Monitor: Error reading from gpio pull-up reg");
             $finish;
         end
 
         #2;
         // Write to pull-down reg
-        gpio_pd = 16'h 00f0;
+        gpio_pd = 1'b1;
         write(gpio_pd_adr, gpio_pd);
         
         #2;
         // Read from pull-down reg
         read(gpio_pd_adr);
-        if (wb_dat_o !== {16'd0, gpio_pd}) begin
+        if (wb_dat_o !== {31'd0, gpio_pd}) begin
             $display("Monitor: Error reading from gpio pull-down reg");
             $finish;
         end
 
         #2;
         // Write to gpio enable reg
-        gpio_oeb = 16'h 00ff;
+        gpio_oeb = 1'b1;
         write(gpio_oeb_adr, gpio_oeb);
         
         #2;
         // Read from gpio enable reg
         read(gpio_oeb_adr);
-        if (wb_dat_o !== {16'd0, gpio_oeb}) begin
+        if (wb_dat_o !== {31'd0, gpio_oeb}) begin
             $display("Monitor: Error reading from gpio output enable reg");
             $finish;
         end
         
         #6;
         $display("Monitor: GPIO WB Success!");
+        $display("Monitor: GPIO WB Passed!");
         $finish;
     end
     

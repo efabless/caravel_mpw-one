@@ -18,6 +18,7 @@
 
 `timescale 1 ns / 1 ps
 
+`include "defines.v"
 `include "mprj_ctrl.v"
 
 module mprj_ctrl_tb;
@@ -49,8 +50,8 @@ module mprj_ctrl_tb;
     always #1 wb_clk_i = ~wb_clk_i;
 
     // Mega Project Control Registers 
-    wire [31:0] mprj_ctrl = uut.BASE_ADR;
-    wire [31:0] pwr_ctrl  = uut.BASE_ADR + uut.IO_PADS*4;
+    wire [31:0] mprj_ctrl = uut.BASE_ADR | uut.IOCONFIG;
+    wire [31:0] pwr_ctrl  = uut.BASE_ADR | uut.PWRDATA;
 
     initial begin
         $dumpfile("mprj_ctrl_tb.vcd");
@@ -75,7 +76,7 @@ module mprj_ctrl_tb;
         wb_rst_i = 0;
         #2;
 
-        for (i=0; i<uut.IO_PADS; i=i+1) begin
+        for (i=0; i<`MPRJ_IO_PADS; i=i+1) begin
             data = $urandom_range(0, 2**(7));
             write(mprj_ctrl+i*4, data);
             #2;
@@ -86,18 +87,18 @@ module mprj_ctrl_tb;
             end
         end
 
-        for (i=0; i<uut.PWR_CTRL; i=i+1) begin
-            data = $urandom_range(0, 2**(7));
-            write(pwr_ctrl+i*4, data);
-            #2;
-            read(pwr_ctrl+i*4);
-            if (wb_dat_o !== data) begin
-                $display("Monitor: R/W from POWER-CTRL Failed.");
-                $finish;
-            end
+        data = $urandom_range(0, 2**(`MPRJ_PWR_PADS-2));
+        write(pwr_ctrl, data);
+        #2;
+        read(pwr_ctrl);
+        if (wb_dat_o !== data) begin
+            $display("Monitor: R/W from POWER-CTRL Failed.");
+            $finish;
         end
+    
         
         $display("Success!");
+        $display ("Monitor: Test Mega-Project Control Passed");
         $finish;
     end
 

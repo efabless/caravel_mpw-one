@@ -17,12 +17,13 @@
 
 `timescale 1 ns / 1 ps
 
-`include "caravel.v"
+`include "caravel_netlists.v"
 `include "spiflash.v"
 
 module io_ports_tb;
 	reg clock;
-    	reg RSTB;
+	reg RSTB;
+	reg CSB;
 	reg power1, power2;
 	reg power3, power4;
 
@@ -31,6 +32,10 @@ module io_ports_tb;
 	wire [7:0] mprj_io_0;
 
 	assign mprj_io_0 = mprj_io[7:0];
+	// assign mprj_io_0 = {mprj_io[8:4],mprj_io[2:0]};
+
+	assign mprj_io[3] = (CSB == 1'b1) ? 1'b1 : 1'bz;
+	// assign mprj_io[3] = 1'b1;
 
 	// External clock is used by default.  Make this artificially fast for the
 	// simulation.  Normally this would be a slow clock and the digital PLL
@@ -52,7 +57,11 @@ module io_ports_tb;
 			// $display("+1000 cycles");
 		end
 		$display("%c[1;31m",27);
-		$display ("Monitor: Timeout, Test Mega-Project IO Ports (RTL) Failed");
+		`ifdef GL
+			$display ("Monitor: Timeout, Test Mega-Project IO Ports (GL) Failed");
+		`else
+			$display ("Monitor: Timeout, Test Mega-Project IO Ports (RTL) Failed");
+		`endif
 		$display("%c[0m",27);
 		$finish;
 	end
@@ -71,15 +80,22 @@ module io_ports_tb;
             wait(mprj_io_0 == 8'h0A);   
 	    wait(mprj_io_0 == 8'hFF);
 	    wait(mprj_io_0 == 8'h00);
-
-	    $display("Monitor: Test 1 Mega-Project IO (RTL) Passed");
+		
+		`ifdef GL
+	    	$display("Monitor: Test 1 Mega-Project IO (GL) Passed");
+		`else
+		    $display("Monitor: Test 1 Mega-Project IO (RTL) Passed");
+		`endif
 	    $finish;
 	end
 
 	initial begin
 		RSTB <= 1'b0;
+		CSB  <= 1'b1;		// Force CSB high
 		#2000;
-		RSTB <= 1'b1;	    // Release reset
+		RSTB <= 1'b1;	    	// Release reset
+		#170000;
+		CSB = 1'b0;		// CSB can be released
 	end
 
 	initial begin		// Power-up sequence
@@ -87,13 +103,13 @@ module io_ports_tb;
 		power2 <= 1'b0;
 		power3 <= 1'b0;
 		power4 <= 1'b0;
-		#200;
+		#100;
 		power1 <= 1'b1;
-		#200;
+		#100;
 		power2 <= 1'b1;
-		#200;
+		#100;
 		power3 <= 1'b1;
-		#200;
+		#100;
 		power4 <= 1'b1;
 	end
 

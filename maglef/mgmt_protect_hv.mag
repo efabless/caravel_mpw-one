@@ -1,7 +1,7 @@
 magic
 tech sky130A
 magscale 1 2
-timestamp 1607953382
+timestamp 1608132867
 << obsli1 >>
 rect 960 797 29952 3273
 << obsm1 >>
@@ -26,13 +26,7 @@ rect 3446 925 3674 2923
 rect 3846 925 10874 2923
 rect 11046 925 11274 2923
 rect 11446 925 11674 2923
-rect 11846 925 18874 2923
-rect 19046 925 19274 2923
-rect 19446 925 19674 2923
-rect 19846 925 26874 2923
-rect 27046 925 27274 2923
-rect 27446 925 27674 2923
-rect 27846 925 28298 2923
+rect 11846 925 18218 2923
 << metal3 >>
 rect 960 3093 29952 3153
 rect 0 2826 800 2946
@@ -104,4 +98,7 @@ port 21 nsew ground bidirectional
 string LEFclass BLOCK
 string FIXED_BBOX 0 0 30000 4000
 string LEFview TRUE
+string GDS_FILE ../gds/mgmt_protect_hv.gds
+string GDS_END 64368
+string GDS_START 42692
 << end >>

@@ -160,6 +160,7 @@ module spimemio_wb_tb;
         end
         
         $display("Success!");
+        $display("Monitor: Wishbone spimemio Passed");
         $finish;
     end
     

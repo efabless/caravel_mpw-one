@@ -17,13 +17,15 @@
 
 `timescale 1 ns / 1 ps
 
-`include "caravel.v"
+`include "caravel_netlists.v"
 `include "spiflash.v"
 `include "tbuart.v"
 
 module la_test1_tb;
 	reg clock;
-    	reg RSTB;
+    reg RSTB;
+	reg CSB;
+
 	reg power1, power2;
 
     	wire gpio;
@@ -40,9 +42,11 @@ module la_test1_tb;
 		clock = 0;
 	end
 
+	assign mprj_io[3] = (CSB == 1'b1) ? 1'b1 : 1'bz;
+
 	initial begin
-		$dumpfile("la_test1.vcd");
-		$dumpvars(0, la_test1_tb);
+		// $dumpfile("la_test1.vcd");
+		// $dumpvars(0, la_test1_tb);
 
 		// Repeat cycles of 1000 clock edges as needed to complete testbench
 		repeat (200) begin
@@ -50,7 +54,11 @@ module la_test1_tb;
 			// $display("+1000 cycles");
 		end
 		$display("%c[1;31m",27);
-		$display ("Monitor: Timeout, Test Mega-Project IO (RTL) Failed");
+		`ifdef GL
+			$display ("Monitor: Timeout, Test LA (GL) Failed");
+		`else
+			$display ("Monitor: Timeout, Test LA (RTL) Failed");
+		`endif
 		$display("%c[0m",27);
 		$finish;
 	end
@@ -66,9 +74,11 @@ module la_test1_tb;
 
 	initial begin
 		RSTB <= 1'b0;
-		#1000;
-		RSTB <= 1'b1;	    // Release reset
+		CSB  <= 1'b1;		// Force CSB high
 		#2000;
+		RSTB <= 1'b1;	    	// Release reset
+		#170000;
+		CSB = 1'b0;		// CSB can be released
 	end
 
 	initial begin		// Power-up sequence

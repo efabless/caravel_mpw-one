@@ -17,7 +17,7 @@
 
 `timescale 1 ns / 1 ps
 
-`include "caravel.v"
+`include "caravel_netlists.v"
 `include "spiflash.v"
 
 module sysctrl_tb;

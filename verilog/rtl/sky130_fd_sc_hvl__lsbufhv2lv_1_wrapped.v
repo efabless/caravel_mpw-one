@@ -20,27 +20,27 @@ module sky130_fd_sc_hvl__lsbufhv2lv_1_wrapped (
 	VPWR ,
 	VGND ,
 	LVPWR,
-	VPB  ,
-	VNB
+	LVGND,
 `endif
 );
 
 output X    ;
 input  A    ;
 `ifdef USE_POWER_PINS
-input  VPWR ;
-input  VGND ;
-input  LVPWR;
-input  VPB  ;
-input  VNB  ;
+inout  VPWR ;
+inout  VGND ;
+inout  LVPWR;
+inout  LVGND;
 `endif
 
 sky130_fd_sc_hvl__lsbufhv2lv_1 lvlshiftdown (
 `ifdef USE_POWER_PINS
 	.VPWR(VPWR),
-	.VPB(VPB),
+	.VPB(VPWR),
+
 	.LVPWR(LVPWR),
-	.VNB(VNB),
+
+	.VNB(VGND),
 	.VGND(VGND),
 `endif
 	.A(A),

@@ -17,12 +17,14 @@
 
 `timescale 1 ns / 1 ps
 
-`include "caravel.v"
+`include "caravel_netlists.v"
 `include "spiflash.v"
 
 module la_test2_tb;
 	reg clock;
-    	reg RSTB;
+	reg RSTB;
+	reg CSB;
+
 	reg power1, power2;
 
     	wire gpio;
@@ -30,6 +32,7 @@ module la_test2_tb;
 	wire [15:0] checkbits;
 
 	assign checkbits = mprj_io[31:16];
+	assign mprj_io[3] = (CSB == 1'b1) ? 1'b1 : 1'bz;
 
 	always #12.5 clock <= (clock === 1'b0);
 
@@ -47,7 +50,11 @@ module la_test2_tb;
 			// $display("+1000 cycles");
 		end
 		$display("%c[1;31m",27);
-		$display ("Monitor: Timeout, Test Mega-Project IO (RTL) Failed");
+		`ifdef GL
+			$display ("Monitor: Timeout, Test Mega-Project IO (GL) Failed");
+		`else
+			$display ("Monitor: Timeout, Test Mega-Project IO (RTL) Failed");
+		`endif
 		$display("%c[0m",27);
 		$finish;
 	end
@@ -62,9 +69,11 @@ module la_test2_tb;
 
 	initial begin
 		RSTB <= 1'b0;
-		#1000;
-		RSTB <= 1'b1;	    // Release reset
+		CSB  <= 1'b1;		// Force CSB high
 		#2000;
+		RSTB <= 1'b1;	    	// Release reset
+		#170000;
+		CSB = 1'b0;		// CSB can be released
 	end
 
 	initial begin		// Power-up sequence

@@ -15,8 +15,23 @@
 
 package require openlane
 set script_dir [file dirname [file normalize [info script]]]
-prep -design $script_dir -tag caravel -overwrite
 set save_path $script_dir/../..
+
+# FOR LVS AND CREATING PORT LABELS
+prep -design $script_dir -tag caravel_lvs -overwrite
+
+set ::env(SYNTH_DEFINES) "USE_POWER_PINS"
+verilog_elaborate
+init_floorplan
+file copy -force $::env(CURRENT_DEF) $::env(TMP_DIR)/lvs.def
+file copy -force $::env(CURRENT_NETLIST) $::env(TMP_DIR)/lvs.v
+
+# ACTUAL CHIP INTEGRATION
+prep -design $script_dir -tag caravel -overwrite
+
+file copy $script_dir/runs/caravel_lvs/tmp/merged_unpadded.lef $::env(TMP_DIR)/lvs.lef
+file copy $script_dir/runs/caravel_lvs/tmp/lvs.def $::env(TMP_DIR)/lvs.def
+file copy $script_dir/runs/caravel_lvs/tmp/lvs.v $::env(TMP_DIR)/lvs.v
 
 set ::env(SYNTH_DEFINES) "TOP_ROUTING"
 verilog_elaborate
@@ -26,12 +41,14 @@ init_floorplan
 
 add_macro_placement padframe 0 0 N
 add_macro_placement storage 260.160 265.780 N
-add_macro_placement soc 1052.110 268.010 N
-add_macro_placement mprj 326.540 1393.580 N
-add_macro_placement mgmt_buffers 1060.900 1234.240 N
-add_macro_placement rstb_level 664.480 234.780  S
+add_macro_placement soc 1052.170 268.010 N
+# add_macro_placement soc 1052.170 267.900 N
+add_macro_placement mprj 326.540 1393.590 N
+add_macro_placement mgmt_buffers 1060.900 1234.180 N
+# add_macro_placement mgmt_buffers 1060.850 1234.090 N
+add_macro_placement rstb_level 708.550 235.440 S
 add_macro_placement user_id_value 3283.120 404.630 N
-add_macro_placement por 3270.880 522.711 MX
+add_macro_placement por 3270.730 522.721 MX
 
 # west
 set west_x 42.835
@@ -98,17 +115,43 @@ add_macro_obs \
 	-fixed 1 \
 	-layerNames "met2 met4"
 
+add_macro_obs \
+	-defFile $::env(CURRENT_DEF) \
+	-lefFile $::env(MERGED_LEF_UNPADDED) \
+	-obstruction vddio_pad_obs \
+	-placementX 33.375 \
+	-placementY 557.100 \
+	-sizeWidth 62.615 \
+	-sizeHeight 62.700 \
+	-fixed 1 \
+	-layerNames "li1 met1 met2 met3 met4 met5"
+
 li1_hack_start
 global_routing
 detailed_routing
 li1_hack_end
 
+label_macro_pins\
+	-lef $::env(TMP_DIR)/lvs.lef\
+	-netlist_def $::env(TMP_DIR)/lvs.def\
+	-extra_args {-v\
+	--map padframe vddio vddio INOUT\
+	--map padframe vssio vssio INOUT\
+	--map padframe vssa vssa INOUT\
+	--map padframe vccd vccd INOUT\
+	--map padframe vssd vssd INOUT}
+
 run_magic
+
+run_magic_spice_export
 
 save_views       -lef_path $::env(magic_result_file_tag).lef \
                  -def_path $::env(tritonRoute_result_file_tag).def \
                  -gds_path $::env(magic_result_file_tag).gds \
                  -mag_path $::env(magic_result_file_tag).mag \
-				 -verilog_path $::env(CURRENT_NETLIST) \
+				 -verilog_path $::env(TMP_DIR)/lvs.v \
+				 -spice_path $::env(magic_result_file_tag).spice \
                  -save_path $save_path \
                  -tag $::env(RUN_TAG)
+
+run_lvs $::env(magic_result_file_tag).spice $::env(TMP_DIR)/lvs.v

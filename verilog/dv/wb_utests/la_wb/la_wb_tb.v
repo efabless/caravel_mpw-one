@@ -89,48 +89,11 @@ module la_wb_tb;
         wb_rst_i = 0; 
         #2;
 
-        // Write to la data registers
-        la_data_0 = $urandom_range(0, 2**32);
-        la_data_1 = $urandom_range(0, 2**32);
-        la_data_2 = $urandom_range(0, 2**32);
-        la_data_3 = $urandom_range(0, 2**32);
-
-        write(la_data_adr_0, la_data_0);
-        write(la_data_adr_1, la_data_1);
-        write(la_data_adr_2, la_data_2);
-        write(la_data_adr_3, la_data_3);
-
-        #2;
-        // Read from la data registers
-        read(la_data_adr_0);
-        if (wb_dat_o !== la_data_0) begin
-            $display("Monitor: Error reading from la data_0 reg");
-            $finish;
-        end
-        
-        read(la_data_adr_1);
-        if (wb_dat_o !== la_data_1) begin
-            $display("Monitor: Error reading from la data_0 reg");
-            $finish;
-        end
-        
-        read(la_data_adr_2);
-        if (wb_dat_o !== la_data_1) begin
-            $display("Monitor: Error reading from la data_0 reg");
-            $finish;
-        end
-
-        read(la_data_adr_3);
-        if (wb_dat_o !== la_data_3) begin
-            $display("Monitor: Error reading from la data_0 reg");
-            $finish;
-        end
-
         // Write to la emable registers
-        la_ena_0 = $urandom_range(0, 2**32);
-        la_ena_1 = $urandom_range(0, 2**32);
-        la_ena_2 = $urandom_range(0, 2**32);
-        la_ena_3 = $urandom_range(0, 2**32);
+        la_ena_0 = 32'h0000_0000;
+        la_ena_1 = 32'h0000_0000;
+        la_ena_2 = 32'h0000_0000;
+        la_ena_3 = 32'h0000_0000;
 
         write(la_ena_adr_0, la_ena_0);
         write(la_ena_adr_1, la_ena_1);
@@ -141,29 +104,72 @@ module la_wb_tb;
         // Read from la data registers
         read(la_ena_adr_0);
         if (wb_dat_o !== la_ena_0) begin
-            $display("Monitor: Error reading from la data_0 reg");
+            $display("Monitor: Error reading from la_ena_0 reg");
             $finish;
         end
         
         read(la_ena_adr_1);
         if (wb_dat_o !== la_ena_1) begin
-            $display("Monitor: Error reading from la data_0 reg");
+            $display("Monitor: Error reading from la_ena_1 reg");
             $finish;
         end
         
         read(la_ena_adr_2);
         if (wb_dat_o !== la_ena_1) begin
-            $display("Monitor: Error reading from la data_0 reg");
+            $display("Monitor: Error reading from la_ena_2 reg");
             $finish;
         end
 
         read(la_ena_adr_3);
         if (wb_dat_o !== la_ena_3) begin
+            $display("Monitor: Error reading from la_ena_3 reg");
+            $finish;
+        end
+
+        // Write to la data registers
+        la_data_0 = $urandom_range(0, 2**30);
+        la_data_1 = $urandom_range(0, 2**30);
+        la_data_2 = $urandom_range(0, 2**30);
+        la_data_3 = $urandom_range(0, 2**30);
+
+        write(la_data_adr_0, la_data_0);
+        write(la_data_adr_1, la_data_1);
+        write(la_data_adr_2, la_data_2);
+        write(la_data_adr_3, la_data_3);
+
+        // #2;
+        // Read from la data registers
+        read(la_data_adr_0);
+        $display("%0b", wb_dat_o);
+        $display("%0b", la_data_0);
+
+        if (wb_dat_o !== la_data_0) begin
             $display("Monitor: Error reading from la data_0 reg");
+            $finish;
+        end
+        
+        read(la_data_adr_1);
+        if (wb_dat_o !== la_data_1) begin
+            $display("Monitor: Error reading from la data_1 reg");
+            $finish;
+        end
+        
+        read(la_data_adr_2);
+        $display("%0b", wb_dat_o);
+        $display("%0b", la_data_0);
+        if (wb_dat_o !== la_data_2) begin
+            $display("Monitor: Error reading from la data_2 reg");
+            $finish;
+        end
+
+        read(la_data_adr_3);
+        if (wb_dat_o !== la_data_3) begin
+            $display("Monitor: Error reading from la data_3 reg");
             $finish;
         end
         #6;
         $display("Monitor: Test LA Wishbone Success!");
+        $display("Monitor: Test LA Wishbone Passed!");
         $finish;
     end
     

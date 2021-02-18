@@ -18,9 +18,15 @@
 
 `timescale 1 ns / 1 ps
 
-`define USE_OPENRAM
+`define UNIT_DELAY #1
+`define USE_POWER_PINS
 
-`include "sram_1rw1r_32_8192_8_sky130.v"
+`include "libs.ref/sky130_fd_sc_hd/verilog/primitives.v"
+`include "libs.ref/sky130_fd_sc_hd/verilog/sky130_fd_sc_hd.v"
+
+`include "defines.v"
+`include "DFFRAMBB.v"
+`include "DFFRAM.v"
 `include "mem_wb.v"
 
 module mem_wb_tb;
@@ -37,9 +43,10 @@ module mem_wb_tb;
 
     wire wb_ack_o;
     wire [31:0] wb_dat_o;
+    reg power1;
 
     initial begin
-        wb_clk_i = 0; 
+        wb_clk_i = 0;
         wb_rst_i = 0;
 
         wb_stb_i = 0;  // master select-signal for the slave
@@ -49,6 +56,17 @@ module mem_wb_tb;
         wb_dat_i = 0;  // input data 32-bits
         wb_sel_i = 0;  // where data is available on data_i 4-bits
     end
+
+	initial begin		// Power-up sequence
+		power1 <= 1'b0;
+		#1;
+		power1 <= 1'b1;
+	end
+
+    wire VPWR;
+	wire VGND;
+	assign VGND = 1'b0;
+	assign VPWR = power1;
 
     always #1 wb_clk_i = ~wb_clk_i;
 
@@ -73,18 +91,18 @@ module mem_wb_tb;
         // Reset Operation
         wb_rst_i = 1;
         #2;
-        wb_rst_i = 0; 
+        wb_rst_i = 0;
         #2;
 
         // Randomly Write to memory array
-        for ( i = 0; i < 1; i = i + 1) begin 
+        for ( i = 0; i < 1; i = i + 1) begin
             ref_data[i] = $urandom_range(0, 2**30);
             write(i, ref_data[i]);
             #2;
         end
 
         #6;
-        for ( i = 0; i < 1; i = i + 1) begin 
+        for ( i = 0; i < 1; i = i + 1) begin
             read(i);
             if (wb_dat_o !== ref_data[i]) begin
                 $display("%c[1;31m",27);
@@ -97,18 +115,19 @@ module mem_wb_tb;
         end
         #6;
         $display("Success!");
+        $display ("Monitor: Test Wishbone Memory Passed");
         $finish;
     end
-     
+
     task write;
         input [32:0] addr;
         input [32:0] data;
-        begin 
+        begin
             @(posedge wb_clk_i) begin
                 wb_stb_i = 1;
                 wb_cyc_i = 1;
-                wb_sel_i = 4'hF; 
-                wb_we_i = 1;     
+                wb_sel_i = 4'hF;
+                wb_we_i = 1;
                 wb_adr_i = addr;
                 wb_dat_i = data;
                 $display("Write Cycle Started.");
@@ -121,10 +140,10 @@ module mem_wb_tb;
             $display("Write Cycle Ended.");
         end
     endtask
-    
+
     task read;
         input [32:0] addr;
-        begin 
+        begin
             @(posedge wb_clk_i) begin
                 wb_stb_i = 1;
                 wb_cyc_i = 1;
@@ -140,19 +159,23 @@ module mem_wb_tb;
             $display("Read Cycle Ended.");
         end
     endtask
-    
+
     mem_wb uut(
+        `ifdef USE_POWER_PINS
+            .VPWR(VPWR),
+            .VGND(VGND),
+        `endif
         .wb_clk_i(wb_clk_i),
         .wb_rst_i(wb_rst_i),
 
-        .wb_adr_i(wb_adr_i), 
+        .wb_adr_i(wb_adr_i),
         .wb_dat_i(wb_dat_i),
         .wb_sel_i(wb_sel_i),
         .wb_we_i(wb_we_i),
         .wb_cyc_i(wb_cyc_i),
         .wb_stb_i(wb_stb_i),
 
-        .wb_ack_o(wb_ack_o), 
+        .wb_ack_o(wb_ack_o),
         .wb_dat_o(wb_dat_o)
     );
 

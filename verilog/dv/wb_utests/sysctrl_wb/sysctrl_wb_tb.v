@@ -62,11 +62,9 @@ module sysctrl_wb_tb;
     integer i;
     
     // System Control Default Register Addresses 
-    wire [31:0] clk1_out_adr   = uut.BASE_ADR | uut.CLK1_OUT;  
-    wire [31:0] clk2_out_adr   = uut.BASE_ADR | uut.CLK2_OUT;  
+    wire [31:0] clk_out_adr  = uut.BASE_ADR | uut.CLK_OUT;  
     wire [31:0] trap_out_adr  = uut.BASE_ADR | uut.TRAP_OUT;
-    wire [31:0] irq7_src_adr  = uut.BASE_ADR | uut.IRQ7_SRC;
-    wire [31:0] irq8_src_adr  = uut.BASE_ADR | uut.IRQ8_SRC;
+    wire [31:0] irq_src_adr  = uut.BASE_ADR | uut.IRQ_SRC;
 
     reg clk1_output_dest;
     reg clk2_output_dest;
@@ -88,21 +86,13 @@ module sysctrl_wb_tb;
         irq_8_inputsrc    = 1'b1;
 
         // Write to System Control Registers
-        write(clk1_out_adr, clk1_output_dest);
-        write(clk2_out_adr, clk2_output_dest);
+        write(clk_out_adr, clk1_output_dest);
         write(trap_out_adr, trap_output_dest);
-        write(irq7_src_adr, irq_7_inputsrc);
-        write(irq8_src_adr, irq_8_inputsrc);
+        write(irq_src_adr,  irq_7_inputsrc);
         #2;
-        read(clk1_out_adr);
+        read(clk_out_adr);
         if (wb_dat_o !== clk1_output_dest) begin
             $display("Error reading CLK1 output destination register.");
-            $finish;
-        end
-
-        read(clk2_out_adr);
-        if (wb_dat_o !== clk2_output_dest) begin
-            $display("Error reading CLK2 output destination register.");
             $finish;
         end
 
@@ -112,19 +102,14 @@ module sysctrl_wb_tb;
             $finish;
         end
 
-        read(irq7_src_adr);
+        read(irq_src_adr);
         if (wb_dat_o !== irq_7_inputsrc) begin
             $display("Error reading IRQ7 input source register.");
             $finish;
         end
 
-        read(irq8_src_adr);
-        if (wb_dat_o !== irq_8_inputsrc) begin
-            $display("Error reading IRQ8 input source register.");
-            $finish;
-        end
-
         $display("Success!");
+        $display ("Monitor: Test System Control Passed!");
         $finish;
     end
     

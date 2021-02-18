@@ -25,71 +25,6 @@
 /*                                                          	*/
 /*--------------------------------------------------------------*/
 
-`timescale 1 ns / 1 ps
-
-`define UNIT_DELAY #1
-
-`ifdef SIM
-
-`define USE_POWER_PINS
-
-`include "defines.v"
-`include "pads.v"
-
-/* NOTE: Need to pass the PDK root directory to iverilog with option -I */
-
-`include "libs.ref/sky130_fd_io/verilog/sky130_fd_io.v"
-`include "libs.ref/sky130_fd_io/verilog/sky130_ef_io.v"
-`include "libs.ref/sky130_fd_io/verilog/sky130_ef_io__gpiov2_pad_wrapped.v"
-
-`include "libs.ref/sky130_fd_sc_hd/verilog/primitives.v"
-`include "libs.ref/sky130_fd_sc_hd/verilog/sky130_fd_sc_hd.v"
-`include "libs.ref/sky130_fd_sc_hvl/verilog/primitives.v"
-`include "libs.ref/sky130_fd_sc_hvl/verilog/sky130_fd_sc_hvl.v"
-
-`ifdef GL
-	`include "gl/mgmt_core.v"
-	`include "gl/digital_pll.v"
-	`include "gl/DFFRAM.v"
-	`include "gl/storage.v"
-	`include "gl/user_id_programming.v"
-	`include "gl/chip_io.v"
-`else
-	`include "mgmt_soc.v"
-	`include "housekeeping_spi.v"
-	`include "caravel_clocking.v"
-	`include "mgmt_core.v"
-	`include "digital_pll.v"
-	`include "DFFRAM.v"
-	`include "DFFRAMBB.v"
-	`include "storage.v"
-	`include "user_id_programming.v"
-	`include "clock_div.v"
-	`include "storage_bridge_wb.v"
-	`include "mprj_io.v"
-	`include "chip_io.v"
-`endif
-
-`include "mprj_logic_high.v"
-`include "mprj2_logic_high.v"
-`include "sky130_fd_sc_hvl__lsbufhv2lv_1_wrapped.v"
-`include "mgmt_protect.v"
-`include "mgmt_protect_hv.v"
-`include "user_project_wrapper.v"
-`include "gpio_control_block.v"
-`include "simple_por.v"
-`include "sram_1rw1r_32_256_8_sky130.v"
-
-/*------------------------------*/
-/* Include user project here	*/
-/*------------------------------*/
-`include "user_proj_example.v"
-
-// `ifdef USE_OPENRAM
-//     `include "sram_1rw1r_32_256_8_sky130.v"
-// `endif
-`endif
-
 module caravel (
     inout vddio,	// Common 3.3V padframe/ESD power
     inout vssio,	// Common padframe/ESD ground
@@ -124,7 +59,7 @@ module caravel (
     //------------------------------------------------------------
     // This value is uniquely defined for each user project.
     //------------------------------------------------------------
-    parameter USER_PROJECT_ID = 32'h0;
+    parameter USER_PROJECT_ID = 32'h00000000;
 
     // These pins are overlaid on mprj_io space.  They have the function
     // below when the management processor is in reset, or in the default
@@ -387,7 +322,7 @@ module caravel (
     mgmt_core soc (
 	`ifdef USE_POWER_PINS
 		.VPWR(vccd),
-		.VGND(vssa),
+		.VGND(vssd),
 	`endif
 		// GPIO (1 pin)
 		.gpio_out_pad(gpio_out_core),
@@ -473,6 +408,8 @@ module caravel (
 		.vssd(vssd),
 		.vccd1(vccd1),
 		.vssd1(vssd1),
+		.vccd2(vccd2),
+		.vssd2(vssd2),
 		.vdda1(vdda1),
 		.vssa1(vssa1),
 		.vdda2(vdda2),
@@ -688,9 +625,7 @@ module caravel (
     sky130_fd_sc_hvl__lsbufhv2lv_1_wrapped rstb_level (
 `ifdef USE_POWER_PINS
 		.VPWR(vddio),
-		.VPB(vddio),
 		.LVPWR(vccd),
-		.VNB(vssio),
 		.VGND(vssio),
 `endif
 		.A(rstb_h),

@@ -96,139 +96,123 @@ module chip_io(
 	// rails and grounds, and one back-to-back diode which connects
 	// between the first LV clamp ground and any other ground.
 
-    	sky130_ef_io__vddio_hvc_pad \mgmt_vddio_hvclamp_pad[0]  (
+    	sky130_ef_io__vddio_hvc_clamped_pad \mgmt_vddio_hvclamp_pad[0]  (
 		`MGMT_ABUTMENT_PINS
 `ifdef TOP_ROUTING
-		.VDDIO(vddio),
+		.VDDIO(vddio)
 `endif
-		`HVCLAMP_PINS(vddio, vssio)
     	);
 
 	// lies in user area 2
-    	sky130_ef_io__vddio_hvc_pad \mgmt_vddio_hvclamp_pad[1]  (
+    	sky130_ef_io__vddio_hvc_clamped_pad \mgmt_vddio_hvclamp_pad[1]  (
 		`USER2_ABUTMENT_PINS
 `ifdef TOP_ROUTING
-		.VDDIO(vddio),
+		.VDDIO(vddio)
 `endif
-		`HVCLAMP_PINS(vddio, vssio)
     	);
 
-    	sky130_ef_io__vdda_hvc_pad mgmt_vdda_hvclamp_pad (
+    	sky130_ef_io__vdda_hvc_clamped_pad mgmt_vdda_hvclamp_pad (
 		`MGMT_ABUTMENT_PINS
 `ifdef TOP_ROUTING
-		.VDDA(vdda),
+		.VDDA(vdda)
 `endif
-		`HVCLAMP_PINS(vdda, vssa)
     	);
 
-    	sky130_ef_io__vccd_lvc_pad mgmt_vccd_lvclamp_pad (
+    	sky130_ef_io__vccd_lvc_clamped_pad mgmt_vccd_lvclamp_pad (
 		`MGMT_ABUTMENT_PINS
 `ifdef TOP_ROUTING
-		.VCCD(vccd),
+		.VCCD(vccd)
 `endif
-		`LVCLAMP_PINS(vccd, vssio, vccd, vssd, vssa)
     	);
 
-    	sky130_ef_io__vssio_hvc_pad \mgmt_vssio_hvclamp_pad[0]  (
+    	sky130_ef_io__vssio_hvc_clamped_pad \mgmt_vssio_hvclamp_pad[0]  (
 		`MGMT_ABUTMENT_PINS
 `ifdef TOP_ROUTING
-		.VSSIO(vssio),
+		.VSSIO(vssio)
 `endif
-		`HVCLAMP_PINS(vddio, vssio)
     	);
 
-    	sky130_ef_io__vssio_hvc_pad \mgmt_vssio_hvclamp_pad[1]  (
+    	sky130_ef_io__vssio_hvc_clamped_pad \mgmt_vssio_hvclamp_pad[1]  (
 		`USER2_ABUTMENT_PINS
 `ifdef TOP_ROUTING
-		.VSSIO(vssio),
+		.VSSIO(vssio)
 `endif
-		`HVCLAMP_PINS(vddio, vssio)
     	);
 
-    	sky130_ef_io__vssa_hvc_pad mgmt_vssa_hvclamp_pad (
+    	sky130_ef_io__vssa_hvc_clamped_pad mgmt_vssa_hvclamp_pad (
 		`MGMT_ABUTMENT_PINS
 `ifdef TOP_ROUTING
-		.VSSA(vssa),
+		.VSSA(vssa)
 `endif
-		`HVCLAMP_PINS(vdda, vssa)
     	);
 
-    	sky130_ef_io__vssd_lvc_pad mgmt_vssd_lvclmap_pad (
+    	sky130_ef_io__vssd_lvc_clamped_pad mgmt_vssd_lvclmap_pad (
 		`MGMT_ABUTMENT_PINS
 `ifdef TOP_ROUTING
-		.VSSD(vssd),
+		.VSSD(vssd)
 `endif
-		`LVCLAMP_PINS(vccd, vssio, vccd, vssd, vssa)
     	);
 
 	// Instantiate power and ground pads for user 1 domain
 	// 8 pads:  vdda, vssa, vccd, vssd;  One each HV and LV clamp.
 
-    	sky130_ef_io__vdda_hvc_pad user1_vdda_hvclamp_pad [1:0] (
+    	sky130_ef_io__vdda_hvc_clamped_pad user1_vdda_hvclamp_pad [1:0] (
 		`USER1_ABUTMENT_PINS
 `ifdef TOP_ROUTING
-		.VDDA(vdda1),
+		.VDDA(vdda1)
 `endif
-		`HVCLAMP_PINS(vdda1, vssa1)
     	);
 
-    	sky130_ef_io__vccd_lvc_pad user1_vccd_lvclamp_pad (
+    	sky130_ef_io__vccd_lvc_clamped2_pad user1_vccd_lvclamp_pad (
 		`USER1_ABUTMENT_PINS
 `ifdef TOP_ROUTING
-		.VCCD(vccd1),
+		.VCCD(vccd1)
 `endif
-		`LVCLAMP_PINS(vccd1, vssd1, vccd1, vssd, vssio)
     	);
 
-    	sky130_ef_io__vssa_hvc_pad user1_vssa_hvclamp_pad [1:0] (
+    	sky130_ef_io__vssa_hvc_clamped_pad user1_vssa_hvclamp_pad [1:0] (
 		`USER1_ABUTMENT_PINS
 `ifdef TOP_ROUTING
-		.VSSA(vssa1),
+		.VSSA(vssa1)
 `endif
-		`HVCLAMP_PINS(vdda1, vssa1)
     	);
 
-    	sky130_ef_io__vssd_lvc_pad user1_vssd_lvclmap_pad (
+    	sky130_ef_io__vssd_lvc_clamped2_pad user1_vssd_lvclmap_pad (
 		`USER1_ABUTMENT_PINS
 `ifdef TOP_ROUTING
-		.VSSD(vssd1),
+		.VSSD(vssd1)
 `endif
-		`LVCLAMP_PINS(vccd1, vssd1, vccd1, vssd, vssio)
     	);
 
 	// Instantiate power and ground pads for user 2 domain
 	// 8 pads:  vdda, vssa, vccd, vssd;  One each HV and LV clamp.
 
-    	sky130_ef_io__vdda_hvc_pad user2_vdda_hvclamp_pad (
+    	sky130_ef_io__vdda_hvc_clamped_pad user2_vdda_hvclamp_pad (
 		`USER2_ABUTMENT_PINS
 `ifdef TOP_ROUTING
-		.VDDA(vdda2),
+		.VDDA(vdda2)
 `endif
-		`HVCLAMP_PINS(vdda2, vssa2)
     	);
 
-    	sky130_ef_io__vccd_lvc_pad user2_vccd_lvclamp_pad (
+    	sky130_ef_io__vccd_lvc_clamped2_pad user2_vccd_lvclamp_pad (
 		`USER2_ABUTMENT_PINS
 `ifdef TOP_ROUTING
-		.VCCD(vccd2),
+		.VCCD(vccd2)
 `endif
-		`LVCLAMP_PINS(vccd2, vssd2, vccd2, vssd, vssio)
     	);
 
-    	sky130_ef_io__vssa_hvc_pad user2_vssa_hvclamp_pad (
+    	sky130_ef_io__vssa_hvc_clamped_pad user2_vssa_hvclamp_pad (
 		`USER2_ABUTMENT_PINS
 `ifdef TOP_ROUTING
-		.VSSA(vssa2),
+		.VSSA(vssa2)
 `endif
-		`HVCLAMP_PINS(vdda2, vssa2)
     	);
 
-    	sky130_ef_io__vssd_lvc_pad user2_vssd_lvclmap_pad (
+    	sky130_ef_io__vssd_lvc_clamped2_pad user2_vssd_lvclmap_pad (
 		`USER2_ABUTMENT_PINS
 `ifdef TOP_ROUTING
-		.VSSD(vssd2),
+		.VSSD(vssd2)
 `endif
-		`LVCLAMP_PINS(vccd2, vssd2, vccd2, vssd, vssio)
     	);
 
 	wire [2:0] dm_all =
@@ -266,7 +250,7 @@ module chip_io(
 	sky130_fd_io__top_xres4v2 resetb_pad (
 		`MGMT_ABUTMENT_PINS
 		`ifndef	TOP_ROUTING
-		    .PAD(resetb),
+		    ,.PAD(resetb),
 		`endif
 		.TIE_WEAK_HI_H(xresloop),   // Loop-back connection to pad through pad_a_esd_h
 		.TIE_HI_ESD(),

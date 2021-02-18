@@ -1,5 +1,6 @@
 `default_nettype none
 /*
+ *  SPDX-FileCopyrightText: 2015 Clifford Wolf
  *  PicoSoC - A simple example SoC using PicoRV32
  *
  *  Copyright (C) 2017  Clifford Wolf <clifford@clifford.at>
@@ -16,6 +17,7 @@
  *  ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
  *  OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
  *
+ *  SPDX-License-Identifier: ISC
  */
 
 module simpleuart_wb # (

@@ -1,5 +1,7 @@
 `default_nettype none
 /*
+ *  SPDX-FileCopyrightText: 2017  Clifford Wolf, 2018  Tim Edwards
+ *
  *  StriVe - A full example SoC using PicoRV32 in SkyWater s8
  *
  *  Copyright (C) 2017  Clifford Wolf <clifford@clifford.at>
@@ -17,11 +19,12 @@
  *  ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
  *  OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
  *
+ *  SPDX-License-Identifier: ISC
  */
 
 `timescale 1 ns / 1 ps
 
-`include "caravel.v"
+`include "caravel_netlists.v"
 `include "spiflash.v"
 
 module mem_tb;

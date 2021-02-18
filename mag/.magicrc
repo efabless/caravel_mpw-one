@@ -71,6 +71,7 @@ if {[file isdir ${PDKPATH}/libs.ref/${MAGTYPE}]} {
     addpath ${PDKPATH}/libs.ref/${MAGTYPE}/sky130_fd_sc_ls
     addpath ${PDKPATH}/libs.ref/${MAGTYPE}/sky130_fd_sc_ms
     addpath ${PDKPATH}/libs.ref/${MAGTYPE}/sky130_osu_sc
+    addpath ${PDKPATH}/libs.ref/mag/sky130_ml_xx_hd
 } else {
     addpath ${PDKPATH}/libs.ref/sky130_fd_pr/${MAGTYPE}
     addpath ${PDKPATH}/libs.ref/sky130_fd_io/${MAGTYPE}
@@ -82,7 +83,10 @@ if {[file isdir ${PDKPATH}/libs.ref/${MAGTYPE}]} {
     addpath ${PDKPATH}/libs.ref/sky130_fd_sc_ls/${MAGTYPE}
     addpath ${PDKPATH}/libs.ref/sky130_fd_sc_ms/${MAGTYPE}
     addpath ${PDKPATH}/libs.ref/sky130_osu_sc/${MAGTYPE}
+    addpath ${PDKPATH}/libs.ref/sky130_ml_xx_hd/mag
 }
+
+addpath hexdigits
 
 # add path to GDS cells
 

@@ -41,6 +41,16 @@ void main()
 
 	*/
 
+	/* Set up the housekeeping SPI to be connected internally so	*/
+	/* that external pin changes don't affect it.			*/
+
+	reg_spimaster_config = 0xa002;	// Enable, prescaler = 2,
+                                        // connect to housekeeping SPI
+
+	// Connect the housekeeping SPI to the SPI master
+	// so that the CSB line is not left floating.  This allows
+	// all of the GPIO pins to be used for user functions.
+
 	// Configure lower 8-IOs as user output
 	// Observe counter value in the testbench
 	reg_mprj_io_0 =  GPIO_MODE_USER_STD_OUTPUT;
