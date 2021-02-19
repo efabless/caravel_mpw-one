@@ -56,6 +56,9 @@ endif
 		-u $(shell id -u $(USER)):$(shell id -g $(USER)) \
 		$(OPENLANE_IMAGE_NAME) sh -c $(OPENLANE_BASIC_COMMAND);\
 	fi
+	mkdir -p ../signoff/$*/
+	cp $*/runs/$*/OPENLANE_VERSION ../signoff/$*/
+	cp $*/runs/$*/PDK_SOURCES ../signoff/$*/
 
 .PHONY: openlane
 openlane:
