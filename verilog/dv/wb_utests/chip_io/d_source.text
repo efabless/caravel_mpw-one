@@ -1,0 +1,11 @@
+* /ef/apps/bin/vcd2ngspice-d_source: conversion of chip_io-exported-single-io.vcd
+* time	"	#	$	%	&	'	(	)	*	+	,	-	.	/	0	1	2	3	4	5	6	7	8	9	:	;	<	=	>	?	@	A	B	C	D	E	F
+* time	AMUXBUS_A	AMUXBUS_B	ANALOG_EN	ANALOG_POL	ANALOG_SEL	DM[2:0]	ENABLE_H	ENABLE_INP_H	ENABLE_VDDA_H	ENABLE_VDDIO	ENABLE_VSWITCH_H	HLD_H_N	HLD_OVR	IB_MODE_SEL	IN	INP_DIS	IN_H	OE_N	OUT	PAD	PAD_A_ESD_0_H	PAD_A_ESD_1_H	PAD_A_NOESD_H	SLOW	TIE_HI_ESD	TIE_LO_ESD	VCCD	VCCHIB	VDDA	VDDIO	VDDIO_Q	VSSA	VSSD	VSSIO	VSSIO_Q	VSWITCH	VTRIP_SEL
+0e-12	z	z	0s	0s	0s	bx	0s	0s	0s	0s	0s	0s	0s	0s	Uu	Uu	Uu	Uu	Uu	Uu	Uu	Uu	Uu	0s	Uu	0s	0s	0s	0s	0s	0s	0s	0s	0s	0s	0s	0s
+200000e-12	z	z	0s	0s	0s	bx	0s	0s	0s	0s	0s	1s	0s	0s	Uu	Uu	0s	Uu	Uu	Uu	Uu	Uu	Uu	0s	1s	0s	0s	0s	1s	1s	1s	0s	0s	0s	0s	1s	0s
+400000e-12	z	z	0s	0s	0s	bx	0s	0s	0s	1s	0s	1s	0s	0s	Uu	Uu	0s	Uu	Uu	Uu	Uu	Uu	Uu	0s	1s	0s	1s	1s	1s	1s	1s	0s	0s	0s	0s	1s	0s
+500000e-12	z	z	0s	0s	0s	bx	1s	0s	1s	1s	0s	1s	0s	0s	Uu	Uu	Uu	Uu	Uu	Uu	Uu	Uu	Uu	0s	1s	0s	1s	1s	1s	1s	1s	0s	0s	0s	0s	1s	0s
+1175000e-12	z	z	0s	0s	0s	b110	1s	0s	1s	1s	0s	1s	0s	0s	0s	1s	0s	0s	0s	0s	0s	0s	0s	0s	1s	0s	1s	1s	1s	1s	1s	0s	0s	0s	0s	1s	0s
+1200000e-12	z	z	0s	0s	0s	b1	1s	0s	1s	1s	0s	1s	0s	0s	1s	0s	1s	1s	0s	1s	1s	1s	1s	0s	1s	0s	1s	1s	1s	1s	1s	0s	0s	0s	0s	1s	0s
+1225000e-12	z	z	0s	0s	0s	b110	1s	0s	1s	1s	0s	1s	0s	0s	1s	0s	1s	1s	z	1s	1s	1s	1s	0s	1s	0s	1s	1s	1s	1s	1s	0s	0s	0s	0s	1s	0s
+1250000e-12	z	z	0s	0s	0s	b110	1s	0s	1s	1s	0s	1s	0s	0s	0s	0s	0s	0s	0s	0s	0s	0s	0s	0s	1s	0s	1s	1s	1s	1s	1s	0s	0s	0s	0s	1s	0s

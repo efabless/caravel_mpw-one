@@ -1,0 +1,89 @@
+$date
+	Fri Feb 19 13:12:16 2021
+$end
+$version
+	GTKWave Analyzer v3.3.98 (w)1999-2019 BSI
+$end
+$timescale
+	1ps
+$end
+$scope module chip_io_tb $end
+$scope module uut $end
+$scope module resetb_pad $end
+$var wire 1 " AMUXBUS_A $end
+$var wire 1 # AMUXBUS_B $end
+$var wire 1 $ DISABLE_PULLUP_H $end
+$var wire 1 % ENABLE_H $end
+$var wire 1 & ENABLE_VDDIO $end
+$var wire 1 ' EN_VDDIO_SIG_H $end
+$var wire 1 ( FILT_IN_H $end
+$var wire 1 ) INP_SEL_H $end
+$var wire 1 * PAD $end
+$var wire 1 + PAD_A_ESD_H $end
+$var wire 1 , PULLUP_H $end
+$var wire 1 - TIE_HI_ESD $end
+$var wire 1 . TIE_LO_ESD $end
+$var wire 1 / TIE_WEAK_HI_H $end
+$var wire 1 0 VCCD $end
+$var wire 1 1 VCCHIB $end
+$var wire 1 2 VDDA $end
+$var wire 1 3 VDDIO $end
+$var wire 1 4 VDDIO_Q $end
+$var wire 1 5 VSSA $end
+$var wire 1 6 VSSD $end
+$var wire 1 7 VSSIO $end
+$var wire 1 8 VSSIO_Q $end
+$var wire 1 9 VSWITCH $end
+$var wire 1 : XRES_H_N $end
+$upscope $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+$dumpvars
+#0
+00
+07
+0*
+0%
+z"
+z#
+02
+0)
+01
+0,
+0&
+03
+04
+06
+0+
+05
+0/
+09
+0'
+08
+0$
+0-
+0(
+x:
+0.
+#200000
+12
+14
+13
+19
+1-
+#201000
+0:
+#400000
+10
+11
+1&
+#500000
+1%
+#1000000
+1+
+1*
+1/
+#1001000
+1:
+#3275000

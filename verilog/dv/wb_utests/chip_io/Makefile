@@ -32,7 +32,7 @@ ifeq ($(SIM),RTL)
 	$< -o $@
 endif
 ifeq ($(SIM),SPLIT_BUS)
-	iverilog -DFUNCTIONAL -DSPLIT -I $(PDK_PATH) -I $(VERILOG_PATH) -I .. -I $(RTL_PATH) \
+	iverilog -DFUNCTIONAL -DSPLIT_BUS -I $(PDK_PATH) -I $(VERILOG_PATH) -I .. -I $(RTL_PATH) \
 	$< -o $@
 endif
 ifeq ($(SIM),GL)

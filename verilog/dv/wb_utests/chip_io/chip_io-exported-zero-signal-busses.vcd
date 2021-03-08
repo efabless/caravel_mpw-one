@@ -1,0 +1,75 @@
+$date
+	Fri Feb 19 12:51:30 2021
+$end
+$version
+	GTKWave Analyzer v3.3.98 (w)1999-2019 BSI
+$end
+$timescale
+	1ps
+$end
+$scope module chip_io_tb $end
+$scope module uut $end
+$var wire 1 " \mprj_io_analog_en[0] $end
+$var wire 1 # \mprj_io_analog_sel[0] $end
+$var wire 1 $ \mprj_io_dm[0] $end
+$var wire 1 % \mprj_io_enh[0] $end
+$var wire 1 & \mprj_io_hldh_n[0] $end
+$var wire 1 ( \mprj_io_inp_dis[0] $end
+$var wire 1 ) \mprj_io_out[0] $end
+$var wire 1 * \mprj_io_slow_sel[0] $end
+$var wire 1 + \mprj_io_vtrip_sel[0] $end
+$var wire 1 . \mprj_pads.analog_a $end
+$var wire 1 - \mprj_pads.analog_b $end
+$var wire 1 , \mprj_pads.analog_en[0] $end
+$var wire 1 / \mprj_pads.analog_sel[0] $end
+$var wire 1 0 \mprj_pads.dm[0] $end
+$var wire 1 1 \mprj_pads.enh[0] $end
+$var wire 1 2 \mprj_pads.hldh_n[0] $end
+$var wire 1 ' \mprj_io_in[0] $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+$dumpvars
+#0
+01
+z.
+02
+0%
+0"
+0#
+0*
+0&
+x'
+0+
+x0
+x(
+z-
+x$
+x)
+0,
+0/
+#200000
+12
+1&
+#500000
+11
+1%
+#1175000
+0'
+1(
+00
+0)
+0$
+#1200000
+1$
+1'
+10
+0(
+#1225000
+00
+z)
+0$
+#1250000
+0)
+0'
+#3275000
