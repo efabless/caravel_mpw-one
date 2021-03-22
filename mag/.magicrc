@@ -87,6 +87,7 @@ if {[file isdir ${PDKPATH}/libs.ref/${MAGTYPE}]} {
 }
 
 addpath hexdigits
+addpath ../subcells/simple_por/mag
 
 # add path to GDS cells
 
