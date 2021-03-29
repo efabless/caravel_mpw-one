@@ -16,7 +16,7 @@
 `default_nettype none
 // Global parameters
 
-`define MPRJ_IO_PADS 43		/* v2 increases user GPIO from 38 to 43 */
+`define MPRJ_IO_PADS 38		/* number of user GPIO pads */
 `define MPRJ_PWR_PADS 4		/* vdda1, vccd1, vdda2, vccd2 */
 
 // Size of soc_mem_synth
