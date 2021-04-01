@@ -42,6 +42,9 @@ LARGE_FILES_GZ_SPLIT := $(addsuffix .$(ARCHIVE_EXT).00.split, $(LARGE_FILES))
 # consider splitting existing archives
 LARGE_FILES_GZ_SPLIT += $(addsuffix .00.split, $(ARCHIVES))
 
+# User ID
+USER_ID ?= 0
+
 # PDK setup configs
 THREADS ?= $(shell nproc)
 STD_CELL_LIBRARY ?= sky130_fd_sc_hd
@@ -288,6 +291,18 @@ $(ANTENNA_BLOCKS): antenna-% : ./gds/%.gds
 .PHONY: help
 help:
 	@$(MAKE) -pRrq -f $(lastword $(MAKEFILE_LIST)) : 2>/dev/null | awk -v RS= -F: '/^# File/,/^# Finished Make data base/ {if ($$1 !~ "^[#.]") {print $$1}}' | sort | egrep -v -e '^[^[:alnum:]]' -e '^$@$$'
+
+.PHONY: generate_fill
+generate_fill:
+	python3 ./scripts/generate_fill.py $(shell pwd)
+
+.PHONY: compose
+compose:
+	python3 ./scripts/compositor.py $(shell pwd)
+
+.PHONY: set_user_id
+set_user_id:
+	python3 ./scripts/set_user_id.py $(USER_ID) $(shell pwd)
 
 
 ###########################################################################
