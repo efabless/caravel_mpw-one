@@ -46,10 +46,6 @@ jobs:
     - name: "The Manifest Test"
       stage: commit-compliance
       script: bash .travisCI/base_checks/manifest-check.sh
-    - name: "The Precheck Test"
-      stage: test
-      install: sh .travisCI/precheck/precheckBuild.sh
-      script: bash .travisCI/precheck/run-precheck.sh
     - name: "The Caravel LVS Test"
       stage: test
       install: bash .travisCI/utils/bash_run_wrapper.sh .travisCI/utils/pdkBuild.sh
@@ -98,30 +94,8 @@ jobs:
       if: branch = master OR type=cron OR type=api
       install: bash .travisCI/utils/bash_run_wrapper.sh .travisCI/utils/pdkBuild.sh
       script: bash .travisCI/dv/dv-check-wrapper.sh mgmt_soc 5
-    - name: "The user_proj_example DV Test: Set 1"
-      stage: test
-      if: branch = master OR type=cron OR type=api
-      install: bash .travisCI/utils/bash_run_wrapper.sh .travisCI/utils/pdkBuild.sh
-      script: bash .travisCI/dv/dv-check-wrapper.sh user_proj_example 1
-    - name: "The user_proj_example DV Test: Set 2"
-      stage: test
-      if: branch = master OR type=cron OR type=api
-      install: bash .travisCI/utils/bash_run_wrapper.sh .travisCI/utils/pdkBuild.sh
-      script: bash .travisCI/dv/dv-check-wrapper.sh user_proj_example 2
     - name: "The wb_utests DV Test"
       stage: test
       if: branch = master OR type=cron OR type=api
       install: bash .travisCI/utils/bash_run_wrapper.sh .travisCI/utils/pdkBuild.sh
       script: bash .travisCI/dv/dv-check-wrapper.sh wb_utests 1
-    - name: "The Full User Build Test"
-      stage: test
-      if: branch = master OR type=cron OR type=api
-      install:
-        - bash .travisCI/utils/bash_run_wrapper.sh ".travisCI/utils/pdkBuild.sh 0"
-        - sh .travisCI/precheck/precheckBuild.sh
-        - bash .travisCI/utils/bash_run_wrapper.sh .travisCI/openlane_build/build_openlane.sh
-      script:
-        - bash .travisCI/utils/bash_run_wrapper.sh ".travisCI/openlane_build/run_macro.sh user_proj_example"
-        - bash .travisCI/utils/bash_run_wrapper.sh ".travisCI/openlane_build/run_macro.sh user_project_wrapper"
-        - bash .travisCI/utils/bash_run_wrapper.sh .travisCI/openlane_build/run_make_ship.sh
-        - bash .travisCI/precheck/run-precheck.sh
