@@ -304,6 +304,11 @@ compose:
 set_user_id:
 	python3 ./scripts/set_user_id.py $(USER_ID) $(shell pwd)
 
+.PHONY: update_caravel
+update_caravel:
+	cd caravel/ && \
+		git checkout master && \
+		git pull
 
 ###########################################################################
 .PHONY: pdk
