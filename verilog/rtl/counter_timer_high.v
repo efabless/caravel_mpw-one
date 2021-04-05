@@ -208,8 +208,9 @@ always @(posedge clkin or negedge resetn) begin
 	    if (reg_dat_we[0] == 1'b1) value_cur[7:0] <= reg_dat_di[7:0];
 
 	end else if (loc_enable == 1'b1) begin
-	    /* IRQ signals one cycle after stop, if IRQ is enabled */
-	    irq_out <= (irq_ena) ? stop_out : 1'b0;
+	    /* IRQ signals one cycle after stop, if IRQ is enabled	*/
+	    /* IRQ lasts for one cycle only.				*/
+	    irq_out <= (irq_ena) ? (stop_out & ~irq_out) : 1'b0;
 
 	    if (updown == 1'b1) begin
 		if (lastenable == 1'b0) begin

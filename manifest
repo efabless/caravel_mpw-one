@@ -5,8 +5,8 @@ b2feeb2a098894d5d731a5b011858a471e855d73  verilog/rtl/caravel_clocking.v
 2f81d7936062037160cfdad06997cc0b84439511  verilog/rtl/chip_io.v
 d772308bd2a72121d7ed9dcdd40c8e6cbbe4b43c  verilog/rtl/clock_div.v
 f937b52e53d45bdbe41bcbd07c65b41104c21756  verilog/rtl/convert_gpio_sigs.v
-a16f89c8efa638eab43641ab7047bb8eeedd6fa6  verilog/rtl/counter_timer_high.v
-d8eab2f4cef158e3c7800778ffc2367ab4abe130  verilog/rtl/counter_timer_low.v
+21204dc96bdb3c1295dd06375293ee3d811d2f7e  verilog/rtl/counter_timer_high.v
+6b9b2ab85a85f73d6ce686c67fc85e59d9623ee6  verilog/rtl/counter_timer_low.v
 fff2d08e49701312c2ebd6714b7425baf83f3d35  verilog/rtl/digital_pll.v
 ce49f9af199b5f16d2c39c417d58e5890bc7bab2  verilog/rtl/digital_pll_controller.v
 73b3cad3a826fabdd8406e1cc54425651de3b711  verilog/rtl/gpio_control_block.v
@@ -20,7 +20,7 @@ ff3e65a783f3807340e25efac9207787d39fb6cd  verilog/rtl/mem_wb.v
 990e80add8b881f67d70eb52663dd885fddb8f7a  verilog/rtl/mgmt_soc.v
 9816acedf3dc3edd193861cc217ec46180ac1cdd  verilog/rtl/mprj2_logic_high.v
 93eb7aa0f8489715145ff0870737fecf8be1fa8c  verilog/rtl/mprj_ctrl.v
-2586a4c06bb540a5ca3803223f972243a2bbc1cc  verilog/rtl/mprj_io.v
+4fb62434bf82c8cd7737afcd2a498d2484ffaaf3  verilog/rtl/mprj_io.v
 d4dba320b923398939fcc45ed9db8ed61d71dcdf  verilog/rtl/mprj_logic_high.v
 eac1e6d413cdfbc2f802e229ae5058828e01be1e  verilog/rtl/pads.v
 b5aff2fda5078cfda377b98337fcc91040815fc2  verilog/rtl/picorv32.v
@@ -49,7 +49,7 @@ aee17d1399cb66772dfaab0b7a844daa47f1ec0b  maglef/sram_1rw1r_32_256_8_sky130.mag
 7d161db43cff1e38961881b94ab1d261e74893ec  maglef/storage.mag
 901cc6df77916c7716aa8721226270dd36749118  maglef/user_id_programming.mag
 10f6352ee314480f3d6a1e92cb9145dfa975951a  mag/caravel.mag
-08dd27da4e7fa8b9757c8ce8c87dc3397f1f0027  mag/.magicrc
+eb1ce99b06df193661ce86ad5256a8eaf20e4134  mag/.magicrc
 9d06bd68e8ec6918cd3ef5467cb8cee44e7e3a26  scripts/set_user_id.py
 b4eed13c2d34aa9e4835d265a7ddcef3c2b1d6bb  scripts/generate_fill.py
 e273cce208fe0508e06b316691ffef1d74161e6c  scripts/compositor.py

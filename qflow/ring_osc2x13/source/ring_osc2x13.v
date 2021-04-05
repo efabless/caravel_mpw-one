@@ -1,1 +1,0 @@
-../../../verilog/rtl/ring_osc2x13.v

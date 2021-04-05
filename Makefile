@@ -42,6 +42,9 @@ LARGE_FILES_GZ_SPLIT := $(addsuffix .$(ARCHIVE_EXT).00.split, $(LARGE_FILES))
 # consider splitting existing archives
 LARGE_FILES_GZ_SPLIT += $(addsuffix .00.split, $(ARCHIVES))
 
+# User ID
+USER_ID ?= 0
+
 # PDK setup configs
 THREADS ?= $(shell nproc)
 STD_CELL_LIBRARY ?= sky130_fd_sc_hd
@@ -198,6 +201,39 @@ $(LVS_BLOCKS): lvs-% : ./mag/%.mag ./verilog/gl/%.v
 	@echo "Comparison result: ./spi/lvs/tmp/$*.v_comp.out"
 	@awk '/^NET mismatches/,0' ./spi/lvs/tmp/$*.v_comp.out
 
+
+LVS_GDS_BLOCKS = $(foreach block, $(BLOCKS), lvs-gds-$(block))
+$(LVS_GDS_BLOCKS): lvs-gds-% : ./gds/%.gds ./verilog/gl/%.v
+	echo "Extracting $*"
+	mkdir -p ./gds/tmp
+	echo "gds read ./$*.gds;\
+		load $* -dereference;\
+		select top cell;\
+		extract no all;\
+		extract do local;\
+		extract unique;\
+		extract;\
+		ext2spice lvs;\
+		ext2spice $*.ext;\
+		feedback save extract_$*.log;\
+		exit;" > ./gds/extract_$*.tcl
+	cd gds && \
+		magic -rcfile ${PDK_ROOT}/sky130A/libs.tech/magic/current/sky130A.magicrc -noc -dnull extract_$*.tcl < /dev/null
+	mv ./gds/$*.spice ./spi/lvs
+	rm ./gds/*.ext
+	mv -f ./gds/extract_$*.{tcl,log} ./gds/tmp
+	####
+	mkdir -p ./spi/lvs/tmp
+	MAGIC_EXT_USE_GDS=1 sh ./spi/lvs/run_lvs.sh ./spi/lvs/$*.spice ./verilog/gl/$*.v $*
+	@echo ""
+	python3 ./scripts/count_lvs.py -f ./verilog/gl/$*.v_comp.json | tee ./spi/lvs/tmp/$*.lvs.summary.log
+	mv -f ./verilog/gl/*{.out,.json,.log} ./spi/lvs/tmp 2> /dev/null || true
+	@echo ""
+	@echo "LVS: ./spi/lvs/$*.spice vs. ./verilog/gl/$*.v"
+	@echo "Comparison result: ./spi/lvs/tmp/$*.v_comp.out"
+	@awk '/^NET mismatches/,0' ./spi/lvs/tmp/$*.v_comp.out
+
+
 # connect-by-label is enabled here!
 LVS_MAGLEF_BLOCKS = $(foreach block, $(BLOCKS), lvs-maglef-$(block))
 $(LVS_MAGLEF_BLOCKS): lvs-maglef-% : ./mag/%.mag ./verilog/gl/%.v
@@ -255,6 +291,18 @@ $(ANTENNA_BLOCKS): antenna-% : ./gds/%.gds
 .PHONY: help
 help:
 	@$(MAKE) -pRrq -f $(lastword $(MAKEFILE_LIST)) : 2>/dev/null | awk -v RS= -F: '/^# File/,/^# Finished Make data base/ {if ($$1 !~ "^[#.]") {print $$1}}' | sort | egrep -v -e '^[^[:alnum:]]' -e '^$@$$'
+
+.PHONY: generate_fill
+generate_fill:
+	python3 ./scripts/generate_fill.py $(shell pwd)
+
+.PHONY: compose
+compose:
+	python3 ./scripts/compositor.py $(shell pwd)
+
+.PHONY: set_user_id
+set_user_id:
+	python3 ./scripts/set_user_id.py $(USER_ID) $(shell pwd)
 
 
 ###########################################################################
