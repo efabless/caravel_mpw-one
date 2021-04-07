@@ -19,8 +19,6 @@
 
 `ifdef SIM
 
-`define USE_POWER_PINS
-
 `include "defines.v"
 `include "pads.v"
 
@@ -48,7 +46,6 @@
     `include "gl/mgmt_protect_hv.v"
 	`include "gl/gpio_control_block.v"
 	`include "gl/sky130_fd_sc_hvl__lsbufhv2lv_1_wrapped.v"
-	`include "gl/user_project_wrapper.v"
     `include "gl/caravel.v"
 `else
 	`include "mgmt_soc.v"
@@ -70,7 +67,6 @@
     `include "mgmt_protect_hv.v"
 	`include "gpio_control_block.v"
     `include "sky130_fd_sc_hvl__lsbufhv2lv_1_wrapped.v"
-    `include "user_project_wrapper.v"
     `include "caravel.v"
 `endif
 

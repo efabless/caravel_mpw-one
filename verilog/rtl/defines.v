@@ -14,7 +14,13 @@
 // SPDX-License-Identifier: Apache-2.0
 
 `default_nettype none
+
+`ifndef __GLOBAL_DEFINE_H
 // Global parameters
+`define __GLOBAL_DEFINE_H
+
+// use powered cell views in the pdk
+`define USE_POWER_PINS     
 
 `define MPRJ_IO_PADS 38		/* number of user GPIO pads */
 `define MPRJ_PWR_PADS 4		/* vdda1, vccd1, vdda2, vccd2 */
@@ -41,3 +47,5 @@
 // GPIO conrol default mode and enable
 `define DM_INIT 3'b110
 `define OENB_INIT 1'b1
+
+`endif // __GLOBAL_DEFINE_H
