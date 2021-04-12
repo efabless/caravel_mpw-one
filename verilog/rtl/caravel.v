@@ -627,7 +627,7 @@ module caravel (
 
     	// Serial data chain for pad configuration
     	.serial_data_in(gpio_serial_link_2_shifted[(`MPRJ_IO_PADS_2-1):0]),
-    	.serial_data_out(gpio_serial_link_2[(`MPRJ_IO_PADS_2-1):0),
+    	.serial_data_out(gpio_serial_link_2[(`MPRJ_IO_PADS_2-1):0]),
 
     	// User-facing signals
     	.user_gpio_out(user_io_out[(`MPRJ_IO_PADS-1):(`MPRJ_IO_PADS_1)]),
