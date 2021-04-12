@@ -16,6 +16,7 @@
 `timescale 1 ns / 1 ps
 
 `define UNIT_DELAY #1
+`define USE_POWER_PINS
 
 `ifdef SIM
 
