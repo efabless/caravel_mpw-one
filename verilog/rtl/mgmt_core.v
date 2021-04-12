@@ -65,7 +65,8 @@ module mgmt_core (
 	input mprj2_vdd_pwrgood,
 	output mprj_io_loader_resetn,
 	output mprj_io_loader_clock,
-	output mprj_io_loader_data,
+	output mprj_io_loader_data_1,
+	output mprj_io_loader_data_2,
 	// WB MI A (User project)
     	input mprj_ack_i,
 	input [31:0] mprj_dat_i,
@@ -244,7 +245,8 @@ module mgmt_core (
 		.mprj2_vdd_pwrgood(mprj2_vdd_pwrgood),
 		.mprj_io_loader_resetn(mprj_io_loader_resetn),
 		.mprj_io_loader_clock(mprj_io_loader_clock),
-		.mprj_io_loader_data(mprj_io_loader_data),
+		.mprj_io_loader_data_1(mprj_io_loader_data_1),
+		.mprj_io_loader_data_2(mprj_io_loader_data_2),
 		// I/O data
 		.mgmt_in_data(mgmt_in_data),
 		.mgmt_out_data(mgmt_out_data),

@@ -37,7 +37,8 @@ module mprj_ctrl_wb #(
     // Output is to serial loader
     output serial_clock,
     output serial_resetn,
-    output serial_data_out,
+    output serial_data_out_1,
+    output serial_data_out_2,
 
     // Pass state of OEB bit on SDO and JTAG back to the core
     // so that the function can be overridden for management output
@@ -80,7 +81,8 @@ module mprj_ctrl_wb #(
 
 	.serial_clock(serial_clock),
 	.serial_resetn(serial_resetn),
-	.serial_data_out(serial_data_out),
+	.serial_data_out_1(serial_data_out_1),
+	.serial_data_out_2(serial_data_out_2),
 	.sdo_oenb_state(sdo_oenb_state),
 	.jtag_oenb_state(jtag_oenb_state),
 	// .mgmt_gpio_io(mgmt_gpio_io)
@@ -110,7 +112,8 @@ module mprj_ctrl #(
 
     output serial_clock,
     output serial_resetn,
-    output serial_data_out,
+    output serial_data_out_1,
+    output serial_data_out_2,
     output sdo_oenb_state,
     output jtag_oenb_state,
     input  [`MPRJ_IO_PADS-1:0] mgmt_gpio_in,
@@ -301,16 +304,20 @@ module mprj_ctrl #(
     endgenerate
 
     reg [3:0]  xfer_count;
-    reg [5:0]  pad_count;
+    reg [4:0]  pad_count_up;
+    reg [4:0]  pad_count_down;
     reg [1:0]  xfer_state;
     reg	       serial_clock;
     reg	       serial_resetn;
 
-    reg [IO_CTRL_BITS-1:0] serial_data_staging;
+    reg [IO_CTRL_BITS-1:0] serial_data_staging_1;
+    reg [IO_CTRL_BITS-1:0] serial_data_staging_2;
 
-    wire       serial_data_out;
+    wire       serial_data_out_1;
+    wire       serial_data_out_2;
 
-    assign serial_data_out = serial_data_staging[IO_CTRL_BITS-1];
+    assign serial_data_out_1 = serial_data_staging_1[IO_CTRL_BITS-1];
+    assign serial_data_out_2 = serial_data_staging_2[IO_CTRL_BITS-1];
     assign busy = (xfer_state != `IDLE);
  
     always @(posedge clk or negedge resetn) begin
@@ -318,14 +325,20 @@ module mprj_ctrl #(
 
 	    xfer_state <= `IDLE;
 	    xfer_count <= 4'd0;
-	    pad_count  <= `MPRJ_IO_PADS;
+	    /* NOTE:  This assumes that MPRJ_IO_PADS_1 and MPRJ_IO_PADS_2 are
+	     * equal, because they get clocked the same number of cycles by
+	     * the same clock signal.  pad_count_down gates the count.
+	     */
+	    pad_count_down <= `MPRJ_IO_PADS_1;
+	    pad_count_up <= 0;
 	    serial_resetn <= 1'b0;
 	    serial_clock <= 1'b0;
 
 	end else begin
 
 	    if (xfer_state == `IDLE) begin
-	    	pad_count  <= `MPRJ_IO_PADS;
+	    	pad_count_down <= `MPRJ_IO_PADS_1;
+	    	pad_count_up <= 0;
 	    	serial_resetn <= 1'b1;
 		serial_clock <= 1'b0;
 		if (xfer_ctrl == 1'b1) begin
@@ -335,15 +348,17 @@ module mprj_ctrl #(
 	    	serial_resetn <= 1'b1;
 		serial_clock <= 1'b0;
 	    	xfer_count <= 6'd0;
-		pad_count <= pad_count - 1;
+		pad_count_down <= pad_count_down - 1;
+		pad_count_up <= pad_count_up + 1;
 		xfer_state <= `XBYTE;
-		serial_data_staging <= io_ctrl[pad_count - 1];
+		serial_data_staging_1 <= io_ctrl[pad_count_down - 1];
+		serial_data_staging_2 <= io_ctrl[pad_count_up - 1];
 	    end else if (xfer_state == `XBYTE) begin
 	    	serial_resetn <= 1'b1;
 		serial_clock <= ~serial_clock;
 		if (serial_clock == 1'b0) begin
 		    if (xfer_count == IO_CTRL_BITS - 1) begin
-			if (pad_count == 0) begin
+			if (pad_count_down == 0) begin
 		    	    xfer_state <= `LOAD;
 			end else begin
 		    	    xfer_state <= `START;
@@ -352,7 +367,8 @@ module mprj_ctrl #(
 		    	xfer_count <= xfer_count + 1;
 		    end
 		end else begin
-		    serial_data_staging <= {serial_data_staging[IO_CTRL_BITS-2:0], 1'b0};
+		    serial_data_staging_1 <= {serial_data_staging_1[IO_CTRL_BITS-2:0], 1'b0};
+		    serial_data_staging_2 <= {serial_data_staging_2[IO_CTRL_BITS-2:0], 1'b0};
 		end
 	    end else if (xfer_state == `LOAD) begin
 		xfer_count <= xfer_count + 1;

@@ -78,7 +78,8 @@ module mgmt_soc (
     input  mprj2_vdd_pwrgood,
     output mprj_io_loader_resetn,
     output mprj_io_loader_clock,
-    output mprj_io_loader_data,
+    output mprj_io_loader_data_1,
+    output mprj_io_loader_data_2,
 
     // User Project pad data (when management SoC controls the pad)
     input [`MPRJ_IO_PADS-1:0] mgmt_in_data,
@@ -730,7 +731,8 @@ module mgmt_soc (
 
 	.serial_clock(mprj_io_loader_clock),
 	.serial_resetn(mprj_io_loader_resetn),
-	.serial_data_out(mprj_io_loader_data),
+	.serial_data_out_1(mprj_io_loader_data_1),
+	.serial_data_out_2(mprj_io_loader_data_2),
 	.sdo_oenb_state(sdo_oenb_state),
 	.jtag_oenb_state(jtag_oenb_state),
 	.mgmt_gpio_out(mgmt_out_pre),
