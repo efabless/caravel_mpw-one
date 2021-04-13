@@ -33,11 +33,16 @@ module mgmt_core (
 	output flash_clk_oeb,
 	output flash_io0_oeb,
 	output flash_io1_oeb,
+	output flash_io2_oeb,	// through GPIO 36
+	output flash_io3_oeb,	// through GPIO 37
 	output flash_csb_ieb,
 	output flash_clk_ieb,
-	output flash_io0_ieb, output flash_io1_ieb,
+	output flash_io0_ieb,
+	output flash_io1_ieb,
 	output flash_io0_do,
 	output flash_io1_do,
+	output flash_io2_do,	// through GPIO 36
+	output flash_io3_do,	// through GPIO 37
 	input flash_io0_di,
 	input flash_io1_di,
 	// Master reset
