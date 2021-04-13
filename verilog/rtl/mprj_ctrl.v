@@ -304,8 +304,8 @@ module mprj_ctrl #(
     endgenerate
 
     reg [3:0]  xfer_count;
-    reg [4:0]  pad_count_up;
-    reg [4:0]  pad_count_down;
+    reg [4:0]  pad_count_1;
+    reg [5:0]  pad_count_2;
     reg [1:0]  xfer_state;
     reg	       serial_clock;
     reg	       serial_resetn;
@@ -327,18 +327,18 @@ module mprj_ctrl #(
 	    xfer_count <= 4'd0;
 	    /* NOTE:  This assumes that MPRJ_IO_PADS_1 and MPRJ_IO_PADS_2 are
 	     * equal, because they get clocked the same number of cycles by
-	     * the same clock signal.  pad_count_down gates the count.
+	     * the same clock signal.  pad_count_2 gates the count for both.
 	     */
-	    pad_count_down <= `MPRJ_IO_PADS_1;
-	    pad_count_up <= 0;
+	    pad_count_1 <= `MPRJ_IO_PADS_1 - 1;
+	    pad_count_2 <= `MPRJ_IO_PADS_1;
 	    serial_resetn <= 1'b0;
 	    serial_clock <= 1'b0;
 
 	end else begin
 
 	    if (xfer_state == `IDLE) begin
-	    	pad_count_down <= `MPRJ_IO_PADS_1;
-	    	pad_count_up <= 0;
+	    	pad_count_1 <= `MPRJ_IO_PADS_1 - 1;
+	    	pad_count_2 <= `MPRJ_IO_PADS_1;
 	    	serial_resetn <= 1'b1;
 		serial_clock <= 1'b0;
 		if (xfer_ctrl == 1'b1) begin
@@ -348,17 +348,17 @@ module mprj_ctrl #(
 	    	serial_resetn <= 1'b1;
 		serial_clock <= 1'b0;
 	    	xfer_count <= 6'd0;
-		pad_count_down <= pad_count_down - 1;
-		pad_count_up <= pad_count_up + 1;
+		pad_count_1 <= pad_count_1 - 1;
+		pad_count_2 <= pad_count_2 + 1;
 		xfer_state <= `XBYTE;
-		serial_data_staging_1 <= io_ctrl[pad_count_down - 1];
-		serial_data_staging_2 <= io_ctrl[pad_count_up - 1];
+		serial_data_staging_1 <= io_ctrl[pad_count_1];
+		serial_data_staging_2 <= io_ctrl[pad_count_2];
 	    end else if (xfer_state == `XBYTE) begin
 	    	serial_resetn <= 1'b1;
 		serial_clock <= ~serial_clock;
 		if (serial_clock == 1'b0) begin
 		    if (xfer_count == IO_CTRL_BITS - 1) begin
-			if (pad_count_down == 0) begin
+			if (pad_count_2 == `MPRJ_IO_PADS) begin
 		    	    xfer_state <= `LOAD;
 			end else begin
 		    	    xfer_state <= `START;
