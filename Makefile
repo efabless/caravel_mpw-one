@@ -73,7 +73,7 @@ ship: check-env uncompress
 		gds read ../$(UPRJ_PATH)/gds/user_project_wrapper.gds; \
 		load caravel -dereference;\
 		select top cell;\
-		gds write ../$(UPRJ_PATH)/caravel.gds; \
+		gds write ../$(UPRJ_PATH)/gds/caravel.gds; \
 		exit;" > $(CARAVEL_MASTER)/mag/mag2gds_caravel.tcl
 ### Runs from UPRJ_PATH
 	@cd $(CARAVEL_MASTER)/mag && PDKPATH=${PDK_ROOT}/sky130A magic -noc -dnull mag2gds_caravel.tcl < /dev/null
