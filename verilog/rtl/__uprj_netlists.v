@@ -1,3 +1,5 @@
+`define USE_POWER_PINS
+
 `include "defines.v"
 
 `ifdef GL
