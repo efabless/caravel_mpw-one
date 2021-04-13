@@ -43,7 +43,7 @@ LARGE_FILES_GZ_SPLIT := $(addsuffix .$(ARCHIVE_EXT).00.split, $(LARGE_FILES))
 LARGE_FILES_GZ_SPLIT += $(addsuffix .00.split, $(ARCHIVES))
 
 # User ID (8 digit value)
-USER_ID ?= 0000010d
+USER_ID ?= 00000000
 
 # Caravel path from user project perspective; (Default: 'caravel', assuming caravel is submoduled inside user project)
 CARAVEL_MASTER ?= caravel
