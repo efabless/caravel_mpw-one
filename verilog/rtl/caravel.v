@@ -499,8 +499,10 @@ module caravel (
 
     assign gpio_serial_link_1_shifted = {gpio_serial_link_1[`MPRJ_IO_PADS_1-2:0],
 					 mprj_io_loader_data_1};
-    assign gpio_serial_link_2_shifted = {gpio_serial_link_2[`MPRJ_IO_PADS_2-2:0],
-					 mprj_io_loader_data_2};
+    // Note that serial_link_2 is backwards compared to serial_link_1, so it
+    // shifts in the other direction.
+    assign gpio_serial_link_2_shifted = {mprj_io_loader_data_2,
+					 gpio_serial_link_2[`MPRJ_IO_PADS_2-1:1]};
 
     // Each control block sits next to an I/O pad in the user area.
     // It gets input through a serial chain from the previous control
