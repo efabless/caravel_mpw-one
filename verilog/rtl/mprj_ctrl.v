@@ -44,6 +44,8 @@ module mprj_ctrl_wb #(
     // so that the function can be overridden for management output
     output sdo_oenb_state,
     output jtag_oenb_state,
+    output flash_io2_oenb_state,
+    output flash_io3_oenb_state,
 
     // Read/write data to each GPIO pad from management SoC
     input [`MPRJ_IO_PADS-1:0] mgmt_gpio_in,
@@ -85,6 +87,8 @@ module mprj_ctrl_wb #(
 	.serial_data_out_2(serial_data_out_2),
 	.sdo_oenb_state(sdo_oenb_state),
 	.jtag_oenb_state(jtag_oenb_state),
+	.flash_io2_oenb_state(flash_io2_oenb_state),
+	.flash_io3_oenb_state(flash_io3_oenb_state),
 	// .mgmt_gpio_io(mgmt_gpio_io)
 	.mgmt_gpio_in(mgmt_gpio_in),
 	.mgmt_gpio_out(mgmt_gpio_out)
@@ -116,6 +120,8 @@ module mprj_ctrl #(
     output serial_data_out_2,
     output sdo_oenb_state,
     output jtag_oenb_state,
+    output flash_io2_oenb_state,
+    output flash_io3_oenb_state,
     input  [`MPRJ_IO_PADS-1:0] mgmt_gpio_in,
     output [`MPRJ_IO_PADS-1:0] mgmt_gpio_out
 );
@@ -149,6 +155,7 @@ module mprj_ctrl #(
     wire [`MPRJ_IO_PADS-1:0] mgmt_gpio_in;
 
     wire sdo_oenb_state, jtag_oenb_state;
+    wire flash_io2_oenb_state, flash_io3_oenb_state;
 
     // JTAG and housekeeping SDO are normally controlled by their respective
     // modules with OEB set to the default 1 value.  If configured for an
@@ -157,6 +164,11 @@ module mprj_ctrl #(
 
     assign jtag_oenb_state = io_ctrl[0][OEB];
     assign sdo_oenb_state = io_ctrl[1][OEB];
+
+    // Likewise for the flash_io2 and flash_io3, although they are configured
+    // as input by default.
+    assign flash_io2_oenb_state = io_ctrl[(`MPRJ_IO_PADS)-2][OEB];
+    assign flash_io3_oenb_state = io_ctrl[(`MPRJ_IO_PADS)-1][OEB];
 
     `define wtop (((i+1)*32 > `MPRJ_IO_PADS) ? `MPRJ_IO_PADS-1 : (i+1)*32-1)
     `define wbot (i*32)
