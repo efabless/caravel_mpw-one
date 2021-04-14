@@ -345,6 +345,8 @@ module mprj_ctrl #(
 	    pad_count_2 <= `MPRJ_IO_PADS_1;
 	    serial_resetn <= 1'b0;
 	    serial_clock <= 1'b0;
+	    serial_data_staging_1 <= 0;
+	    serial_data_staging_2 <= 0;
 
 	end else begin
 
