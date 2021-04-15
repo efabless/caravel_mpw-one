@@ -1,10 +1,14 @@
 d328f88dd48e015bbaa95e0d7c88954343cc5632  verilog/rtl/DFFRAM.v
 dab57f3c5464ce3354219840dae589a3fcd27135  verilog/rtl/DFFRAMBB.v
+d60a8a45853fed3b6f8949615748b2c298e932b1  verilog/rtl/__uprj_analog_netlists.v
 5b8f20f73f6edbbd9566cd5145de6f3ad1e9e351  verilog/rtl/__uprj_netlists.v
+8feacd89161afe8faf553924aaefffd56cd54b84  verilog/rtl/__user_analog_project_wrapper.v
 d375046abc8fddc3cb2edc9343527369ed16b2fd  verilog/rtl/__user_project_wrapper.v
-6d56a30da9c8c0045907a63fb97327c6849c8e1d  verilog/rtl/caravel.v
+2abd9fbc1cd5a11dde923d2a3a14f88dac0c5fd4  verilog/rtl/caravan.v
+713df16b2e6188d3139a65f889f5cfafbd913c96  verilog/rtl/caravel.v
 b2feeb2a098894d5d731a5b011858a471e855d73  verilog/rtl/caravel_clocking.v
 2f81d7936062037160cfdad06997cc0b84439511  verilog/rtl/chip_io.v
+43a9b084f00239da1822fabce5abfc00f679b558  verilog/rtl/chip_io_alt.v
 d772308bd2a72121d7ed9dcdd40c8e6cbbe4b43c  verilog/rtl/clock_div.v
 f937b52e53d45bdbe41bcbd07c65b41104c21756  verilog/rtl/convert_gpio_sigs.v
 21204dc96bdb3c1295dd06375293ee3d811d2f7e  verilog/rtl/counter_timer_high.v
@@ -21,8 +25,8 @@ ff3e65a783f3807340e25efac9207787d39fb6cd  verilog/rtl/mem_wb.v
 3b1ff20593bc386d13f5e2cf1571f08121889957  verilog/rtl/mgmt_protect_hv.v
 8194a86a04c30e16fe3301d238e20d8f3c45d0ea  verilog/rtl/mgmt_soc.v
 9816acedf3dc3edd193861cc217ec46180ac1cdd  verilog/rtl/mprj2_logic_high.v
-49d704f83c04b5d01327f6960ebb9b4501743882  verilog/rtl/mprj_ctrl.v
-4fb62434bf82c8cd7737afcd2a498d2484ffaaf3  verilog/rtl/mprj_io.v
+74cc723706ce46eef0f9a4239b912e40f4af9ed4  verilog/rtl/mprj_ctrl.v
+1d4a4b68fecb7f3b3fc9dfe7081f0f3e4fe2dcb0  verilog/rtl/mprj_io.v
 d4dba320b923398939fcc45ed9db8ed61d71dcdf  verilog/rtl/mprj_logic_high.v
 eac1e6d413cdfbc2f802e229ae5058828e01be1e  verilog/rtl/pads.v
 b5aff2fda5078cfda377b98337fcc91040815fc2  verilog/rtl/picorv32.v

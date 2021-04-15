@@ -1,3 +1,4 @@
+<!---
 # SPDX-FileCopyrightText: 2020 Efabless Corporation
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,23 +14,14 @@
 # limitations under the License.
 #
 # SPDX-License-Identifier: Apache-2.0
+-->
+------------------------------------------------
+Caravan
+basic testbench
+------------------------------------------------
 
-# ---- Test patterns for project striVe ----
+This testbench exercises the basic use of the Caravan analog project
+harness, which is equivalent to the Caravel chip with 11 GPIOs
+removed from the top of the padframe and replaced with straight-through
+connections to pads.
 
-.SUFFIXES:
-.SILENT: clean all
-
-PATTERNS = gpio mem uart perf hkspi sysctrl mprj_ctrl pass_thru timer timer2 pll storage caravan
-
-all:  ${PATTERNS}
-	for i in ${PATTERNS}; do \
-		( cd $$i && SIM=RTL make -f Makefile $${i}.vcd &> verify.log && grep Monitor verify.log) ; \
-		( cd $$i && SIM=GL make -f Makefile $${i}.vcd &> verify.log && grep Monitor verify.log) ; \
-	done
-
-clean:  ${PATTERNS}
-	for i in ${PATTERNS}; do \
-		( cd $$i && make clean ) ; \
-	done
-
-.PHONY: clean all
