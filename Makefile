@@ -123,8 +123,9 @@ $(LARGE_FILES_GZ): %.$(ARCHIVE_EXT): %
 
 $(LARGE_FILES_GZ_SPLIT): %.$(ARCHIVE_EXT).00.split: %.$(ARCHIVE_EXT)
 	@if [ -n "$$(find "$<" -prune -size +$(FILE_SIZE_LIMIT_MB)M)" ]; then\
-		split $< -b $(FILE_SIZE_LIMIT_MB)M $<. -d --additional-suffix=.split &&\
+		split $< -b $(FILE_SIZE_LIMIT_MB)M $<. -d &&\
 		rm $< &&\
+		for file in $$(ls $<.*); do mv "$$file" "$$file.split"; done &&\
 		echo -n "$< -> $$(ls $<.*.split)" | tr '\n' ' ' && echo "";\
 	fi
 
