@@ -42,14 +42,14 @@ LARGE_FILES_GZ_SPLIT := $(addsuffix .$(ARCHIVE_EXT).00.split, $(LARGE_FILES))
 # consider splitting existing archives
 LARGE_FILES_GZ_SPLIT += $(addsuffix .00.split, $(ARCHIVES))
 
-# User ID (8 digit value)
-USER_ID ?= 00000000
-
 # Caravel path from user project perspective; (Default: 'caravel', assuming caravel is submoduled inside user project)
 CARAVEL_MASTER ?= caravel
 
 # User project path from caravel's perspective (Default: '../', assuming caravel is submoduled inside user project)
 UPRJ_PATH ?= ..
+
+# Build tasks such as make ship, make generate_fill, make set_user_id, make final run in the foreground (1) or background (0)
+FOREGROUND ?= 1
 
 # PDK setup configs
 THREADS ?= $(shell nproc)
@@ -63,11 +63,24 @@ OPEN_PDKS_COMMIT ?= ec43817ed9f58ff83c9d260ce981818023cb6d77
 # We need portable GDS_FILE pointers...
 .PHONY: ship
 ship: check-env uncompress
+ifeq ($(FOREGROUND),1)
+	@echo "Running make ship in the foreground..."
+	$(MAKE) __ship
+	@echo "Make ship completed." 2>&1 | tee -a ./signoff/build/make_ship.out
+else
+	@echo "Running make ship in the background..."
+	nohup $(MAKE) __ship >/dev/null 2>&1 &
+	tail -f signoff/build/make_ship.out
+	@echo "Make ship completed."  2>&1 | tee -a ./signoff/build/make_ship.out
+endif
+
+__ship:
 	@echo "###############################################"
 	@echo "Generating Caravel GDS (sources are in the 'gds' directory)"
 	@sleep 1
 #### Runs from the CARAVEL_MASTER mag directory 
 	@echo "\
+		random seed `$(CARAVEL_MASTER)/scripts/set_user_id.py -report`; \
 		gds readonly true; \
 		gds rescale false; \
 		gds read ../$(UPRJ_PATH)/gds/user_project_wrapper.gds; \
@@ -76,7 +89,8 @@ ship: check-env uncompress
 		gds write ../$(UPRJ_PATH)/gds/caravel.gds; \
 		exit;" > $(CARAVEL_MASTER)/mag/mag2gds_caravel.tcl
 ### Runs from UPRJ_PATH
-	@cd $(CARAVEL_MASTER)/mag && PDKPATH=${PDK_ROOT}/sky130A magic -noc -dnull mag2gds_caravel.tcl < /dev/null
+	@mkdir -p ./signoff/build
+	@cd $(CARAVEL_MASTER)/mag && PDKPATH=${PDK_ROOT}/sky130A magic -noc -dnull mag2gds_caravel.tcl 2>&1 | tee ../$(UPRJ_PATH)/signoff/build/make_ship.out
 	@rm $(CARAVEL_MASTER)/mag/mag2gds_caravel.tcl
 
 .PHONY: clean
@@ -141,7 +155,7 @@ uncompress: $(SPLIT_FILES_SOURCES) $(ARCHIVE_SOURCES)
 
 
 # verify that the wrapper was respected
-xor-wrapper:
+xor-wrapper: uncompress
 ### first erase the user's user_project_wrapper.gds
 	sh $(CARAVEL_MASTER)/utils/erase_box.sh gds/user_project_wrapper.gds 0 0 2920 3520
 ### do the same for the empty wrapper
@@ -298,12 +312,36 @@ help:
 	@$(MAKE) -pRrq -f $(lastword $(MAKEFILE_LIST)) : 2>/dev/null | awk -v RS= -F: '/^# File/,/^# Finished Make data base/ {if ($$1 !~ "^[#.]") {print $$1}}' | sort | egrep -v -e '^[^[:alnum:]]' -e '^$@$$'
 
 .PHONY: generate_fill
-generate_fill:
-	cp -r $(CARAVEL_MASTER)/mag/.magicrc $(shell pwd)/mag
-	python3 $(CARAVEL_MASTER)/scripts/generate_fill.py $(shell pwd)
+generate_fill: check-env check-uid uncompress
+ifeq ($(FOREGROUND),1)
+	@echo "Running generate_fill in the foreground..."
+	$(MAKE) __generate_fill
+	@echo "Generate fill completed." 2>&1 | tee -a ./signoff/build/generate_fill.out
+else
+	@echo "Running generate_fill in the background..."
+	@nohup $(MAKE) __generate_fill >/dev/null 2>&1 &
+	tail -f signoff/build/generate_fill.out
+	@echo "Generate fill completed." | tee -a signoff/build/generate_fill.out
+endif
 
-.PHONY: compose
-compose: uncompress
+__generate_fill:
+	@mkdir -p ./signoff/build
+	@cp -r $(CARAVEL_MASTER)/mag/.magicrc $(shell pwd)/mag
+	python3 $(CARAVEL_MASTER)/scripts/generate_fill.py $(USER_ID) $(shell pwd) -dist 2>&1 | tee ./signoff/build/generate_fill.out
+
+
+.PHONY: final
+final: check-env check-uid uncompress
+ifeq ($(FOREGROUND),1)
+	$(MAKE) __final
+	@echo "Final build completed." 2>&1 | tee -a ./signoff/build/final_build.out
+else
+	$(MAKE) __final >/dev/null 2>&1 &
+	tail -f signoff/build/final_build.out
+	@echo "Final build completed." 2>&1 | tee -a ./signoff/build/final_build.out
+endif
+
+__final:
 	mkdir -p ./mag/tmp 
 	cp -r ./mag/*.mag ./mag/tmp
 	cp -r $(CARAVEL_MASTER)/mag/* mag/tmp/
@@ -311,12 +349,23 @@ compose: uncompress
 	sed -i 's@../gds@../../$(CARAVEL_MASTER)/gds@g' ./mag/tmp/*.mag
 	sed -i 's@../maglef@../../$(CARAVEL_MASTER)/maglef@g' ./mag/tmp/caravel.mag
 	sed -i 's@../subcells@../../$(CARAVEL_MASTER)/subcells@g' ./mag/tmp/.magicrc
-	python3 $(CARAVEL_MASTER)/scripts/compositor.py $(shell pwd) $(shell pwd)/mag/tmp $(shell pwd)/gds
+	python3 $(CARAVEL_MASTER)/scripts/compositor.py $(USER_ID) $(shell pwd) $(shell pwd)/mag/tmp $(shell pwd)/gds
 	@rm -rf ./mag/tmp
 
 .PHONY: set_user_id
-set_user_id: uncompress
-	python3 $(CARAVEL_MASTER)/scripts/set_user_id.py $(USER_ID) $(CARAVEL_MASTER)
+set_user_id: check-env check-uid uncompress
+ifeq ($(FOREGROUND),1)
+	$(MAKE) __set_user_id 
+	@echo "Set user ID completed." 2>&1 | tee -a ./signoff/build/set_user_id.out
+else
+	$(MAKE) __set_user_id >/dev/null 2>&1 &
+	tail -f signoff/build/set_user_id.out
+	@echo "Set user ID completed." 2>&1 | tee -a ./signoff/build/set_user_id.out
+endif
+
+__set_user_id: 
+	mkdir -p ./signoff/build
+	python3 $(CARAVEL_MASTER)/scripts/set_user_id.py $(USER_ID) $(CARAVEL_MASTER) 2>&1 | tee ./signoff/build/set_user_id.out
 
 .PHONY: update_caravel
 update_caravel:
@@ -385,6 +434,13 @@ manifest: mag/ maglef/ verilog/rtl/ scripts/ Makefile
 check-env:
 ifndef PDK_ROOT
 	$(error PDK_ROOT is undefined, please export it before running make)
+endif
+
+check-uid:
+ifndef USER_ID
+	$(error USER_ID is undefined, please export it before running make set_user_id)
+else 
+	@echo USER_ID is set to $(USER_ID)
 endif
 
 # Make README.rst
