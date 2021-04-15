@@ -27,6 +27,14 @@
 `define MPRJ_PWR_PADS_2 2	/* vdda2, vccd2 enable/disable control */
 `define MPRJ_PWR_PADS (`MPRJ_PWR_PADS_1 + `MPRJ_PWR_PADS_2)
 
+// Analog pads are only used by the "caravan" module and associated
+// modules such as user_analog_project_wrapper and chip_io_alt.
+
+`define ANALOG_PADS_1 5
+`define ANALOG_PADS_2 6
+
+`define ANALOG_PADS (`ANALOG_PADS_1 + `ANALOG_PADS_2)
+
 // Size of soc_mem_synth
 
 // Type and size of soc_mem

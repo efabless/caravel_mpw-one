@@ -29,11 +29,6 @@
 /*                                                          	*/
 /*--------------------------------------------------------------*/
 
-`define ANALOG_PADS_1 5
-`define ANALOG_PADS_2 6
-
-`define ANALOG_PADS (`ANALOG_PADS_1 + `ANALOG_PADS_2)
-
 /*--------------------------------------------------------------*/
 /* Derived types for the array bounds on the two digital and	*/
 /* two analog pad arrays.  As defined above, the sections have	*/
@@ -56,9 +51,11 @@
 `define ANA2_TOP (`MPRJ_IO_PADS_1 + `ANALOG_PADS_2 - 1)
 `define ANA2_BOT (`MPRJ_IO_PADS_1)
 `define ANA1_TOP (`MPRJ_IO_PADS_1 - 1)
-`define ANA1_BOT (`MPRJ_IO_PADS_1 - ANALOG_PADS_1)
-`define DIG1_TOP (`MPRJ_IO_PADS_1 - ANALOG_PADS_1 - 1)
+`define ANA1_BOT (`MPRJ_IO_PADS_1 - `ANALOG_PADS_1)
+`define DIG1_TOP (`MPRJ_IO_PADS_1 - `ANALOG_PADS_1 - 1)
 `define DIG1_BOT (0)
+
+`define MPRJ_DIG_PADS (`MPRJ_IO_PADS - `ANALOG_PADS)
 
 /*--------------------------------------------------------------*/
 /*--------------------------------------------------------------*/
@@ -177,6 +174,9 @@ module caravan (
     wire [`ANALOG_PADS-1:0] user_clamp_high;
     wire [`ANALOG_PADS-1:0] user_clamp_low;
 
+    // 11 core connections to the analog pads
+    wire [`ANALOG_PADS-1:0] user_analog;
+
     /* Padframe control signals */
     wire [`MPRJ_IO_PADS_1-`ANALOG_PADS_1-1:0] gpio_serial_link_1;
     wire [`MPRJ_IO_PADS_2-`ANALOG_PADS_2-1:0] gpio_serial_link_2;
@@ -234,10 +234,10 @@ module caravan (
     assign mprj_io_hldh_n = {`MPRJ_IO_PADS{vddio}};
     assign mprj_io_enh = {`MPRJ_IO_PADS{porb_h}};
 
-    chip_io_alt padframe #(
+    chip_io_alt #(
 	.ANALOG_PADS_1(`ANALOG_PADS_1),
 	.ANALOG_PADS_2(`ANALOG_PADS_2)
-    ) (
+    ) padframe (
 	// Package Pins
 	.vddio(vddio),
 	.vssio(vssio),
@@ -304,6 +304,7 @@ module caravan (
 	.mprj_io_dm(mprj_io_dm),
 	.mprj_gpio_analog(user_gpio_analog),
 	.mprj_gpio_noesd(user_gpio_noesd),
+	.mprj_analog(user_analog),
 	.mprj_clamp_high(user_clamp_high),
 	.mprj_clamp_low(user_clamp_low)
     );
@@ -546,9 +547,9 @@ module caravan (
     		.io_oeb(user_io_oeb),
 		.gpio_analog(user_gpio_analog),
 		.gpio_noesd(user_gpio_noesd),
-		.clamp_high(user_clamp_high),
-		.clamp_low(user_clamp_low),
-		.user_analog(mprj_io[`ANA2_TOP:`ANA1_BOT]),
+		.io_clamp_high(user_clamp_high),
+		.io_clamp_low(user_clamp_low),
+		.io_analog(user_analog),
 		// Independent clock
 		.user_clock2(mprj_clock2)
 	);
@@ -669,7 +670,7 @@ module caravan (
     	.pad_gpio_ana_en(mprj_io_analog_en[(`MPRJ_IO_PADS_1-`ANALOG_PADS_1-1):2]),
     	.pad_gpio_ana_sel(mprj_io_analog_sel[(`MPRJ_IO_PADS_1-`ANALOG_PADS_1-1):2]),
     	.pad_gpio_ana_pol(mprj_io_analog_pol[(`MPRJ_IO_PADS_1-`ANALOG_PADS_1-1):2]),
-    	.pad_gpio_dm(mprj_io_dm[(`MPRJ_IO_PADS_1*3-1):6]),
+    	.pad_gpio_dm(mprj_io_dm[(`MPRJ_IO_PADS_1-`ANALOG_PADS_1)*3-1:6]),
     	.pad_gpio_outenb(mprj_io_oeb[(`MPRJ_IO_PADS_1-`ANALOG_PADS_1-1):2]),
     	.pad_gpio_out(mprj_io_out[(`MPRJ_IO_PADS_1-`ANALOG_PADS_1-1):2]),
     	.pad_gpio_in(mprj_io_in[(`MPRJ_IO_PADS_1-`ANALOG_PADS_1-1):2])
@@ -703,23 +704,23 @@ module caravan (
     	.serial_data_out(gpio_serial_link_2[(`MPRJ_IO_PADS_2-`ANALOG_PADS_2-1):(`MPRJ_IO_PADS_2-`ANALOG_PADS_2-2)]),
 
     	// User-facing signals
-    	.user_gpio_out(user_io_out[(`MPRJ_IO_PADS-1):(`MPRJ_IO_PADS-2)]),
-    	.user_gpio_oeb(user_io_oeb[(`MPRJ_IO_PADS-1):(`MPRJ_IO_PADS-2)]),
-    	.user_gpio_in(user_io_in[(`MPRJ_IO_PADS-1):(`MPRJ_IO_PADS-2)]),
+    	.user_gpio_out(user_io_out[(`MPRJ_DIG_PADS-1):(`MPRJ_DIG_PADS-2)]),
+    	.user_gpio_oeb(user_io_oeb[(`MPRJ_DIG_PADS-1):(`MPRJ_DIG_PADS-2)]),
+    	.user_gpio_in(user_io_in[(`MPRJ_DIG_PADS-1):(`MPRJ_DIG_PADS-2)]),
 
     	// Pad-facing signals (Pad GPIOv2)
-    	.pad_gpio_inenb(mprj_io_inp_dis[(`MPRJ_IO_PADS-1):(`MPRJ_IO_PADS-2)]),
-    	.pad_gpio_ib_mode_sel(mprj_io_ib_mode_sel[(`MPRJ_IO_PADS-1):(`MPRJ_IO_PADS-2)]),
-    	.pad_gpio_vtrip_sel(mprj_io_vtrip_sel[(`MPRJ_IO_PADS-1):(`MPRJ_IO_PADS-2)]),
-    	.pad_gpio_slow_sel(mprj_io_slow_sel[(`MPRJ_IO_PADS-1):(`MPRJ_IO_PADS-2)]),
-    	.pad_gpio_holdover(mprj_io_holdover[(`MPRJ_IO_PADS-1):(`MPRJ_IO_PADS-2)]),
-    	.pad_gpio_ana_en(mprj_io_analog_en[(`MPRJ_IO_PADS-1):(`MPRJ_IO_PADS-2)]),
-    	.pad_gpio_ana_sel(mprj_io_analog_sel[(`MPRJ_IO_PADS-1):(`MPRJ_IO_PADS-2)]),
-    	.pad_gpio_ana_pol(mprj_io_analog_pol[(`MPRJ_IO_PADS-1):(`MPRJ_IO_PADS-2)]),
-    	.pad_gpio_dm(mprj_io_dm[(`MPRJ_IO_PADS*3-1):(`MPRJ_IO_PADS*3-6)]),
-    	.pad_gpio_outenb(mprj_io_oeb[(`MPRJ_IO_PADS-1):(`MPRJ_IO_PADS-2)]),
-    	.pad_gpio_out(mprj_io_out[(`MPRJ_IO_PADS-1):(`MPRJ_IO_PADS-2)]),
-    	.pad_gpio_in(mprj_io_in[(`MPRJ_IO_PADS-1):(`MPRJ_IO_PADS-2)])
+    	.pad_gpio_inenb(mprj_io_inp_dis[(`MPRJ_DIG_PADS-1):(`MPRJ_DIG_PADS-2)]),
+    	.pad_gpio_ib_mode_sel(mprj_io_ib_mode_sel[(`MPRJ_DIG_PADS-1):(`MPRJ_DIG_PADS-2)]),
+    	.pad_gpio_vtrip_sel(mprj_io_vtrip_sel[(`MPRJ_DIG_PADS-1):(`MPRJ_DIG_PADS-2)]),
+    	.pad_gpio_slow_sel(mprj_io_slow_sel[(`MPRJ_DIG_PADS-1):(`MPRJ_DIG_PADS-2)]),
+    	.pad_gpio_holdover(mprj_io_holdover[(`MPRJ_DIG_PADS-1):(`MPRJ_DIG_PADS-2)]),
+    	.pad_gpio_ana_en(mprj_io_analog_en[(`MPRJ_DIG_PADS-1):(`MPRJ_DIG_PADS-2)]),
+    	.pad_gpio_ana_sel(mprj_io_analog_sel[(`MPRJ_DIG_PADS-1):(`MPRJ_DIG_PADS-2)]),
+    	.pad_gpio_ana_pol(mprj_io_analog_pol[(`MPRJ_DIG_PADS-1):(`MPRJ_DIG_PADS-2)]),
+    	.pad_gpio_dm(mprj_io_dm[(`MPRJ_DIG_PADS*3-1):(`MPRJ_DIG_PADS*3-6)]),
+    	.pad_gpio_outenb(mprj_io_oeb[(`MPRJ_DIG_PADS-1):(`MPRJ_DIG_PADS-2)]),
+    	.pad_gpio_out(mprj_io_out[(`MPRJ_DIG_PADS-1):(`MPRJ_DIG_PADS-2)]),
+    	.pad_gpio_in(mprj_io_in[(`MPRJ_DIG_PADS-1):(`MPRJ_DIG_PADS-2)])
     );
 
     /* Section 2 GPIOs (GPIO 19 to 37) */
@@ -749,23 +750,23 @@ module caravan (
     	.serial_data_out(gpio_serial_link_2[(`MPRJ_IO_PADS_2-`ANALOG_PADS_2-3):0]),
 
     	// User-facing signals
-    	.user_gpio_out(user_io_out[(`MPRJ_IO_PADS-`ANALOG_PADS_2-3):(`MPRJ_IO_PADS_1)]),
-    	.user_gpio_oeb(user_io_oeb[(`MPRJ_IO_PADS-`ANALOG_PADS_2-3):(`MPRJ_IO_PADS_1)]),
-    	.user_gpio_in(user_io_in[(`MPRJ_IO_PADS-`ANALOG_PADS_2-3):(`MPRJ_IO_PADS_1)]),
+    	.user_gpio_out(user_io_out[(`MPRJ_DIG_PADS-3):(`MPRJ_IO_PADS_1-`ANALOG_PADS_1)]),
+    	.user_gpio_oeb(user_io_oeb[(`MPRJ_DIG_PADS-3):(`MPRJ_IO_PADS_1-`ANALOG_PADS_1)]),
+    	.user_gpio_in(user_io_in[(`MPRJ_DIG_PADS-3):(`MPRJ_IO_PADS_1-`ANALOG_PADS_1)]),
 
     	// Pad-facing signals (Pad GPIOv2)
-    	.pad_gpio_inenb(mprj_io_inp_dis[(`MPRJ_IO_PADS-`ANALOG_PADS_2-3):(`MPRJ_IO_PADS_1)]),
-    	.pad_gpio_ib_mode_sel(mprj_io_ib_mode_sel[(`MPRJ_IO_PADS-`ANALOG_PADS_2-3):(`MPRJ_IO_PADS_1)]),
-    	.pad_gpio_vtrip_sel(mprj_io_vtrip_sel[(`MPRJ_IO_PADS-`ANALOG_PADS_2-3):(`MPRJ_IO_PADS_1)]),
-    	.pad_gpio_slow_sel(mprj_io_slow_sel[(`MPRJ_IO_PADS-`ANALOG_PADS_2-3):(`MPRJ_IO_PADS_1)]),
-    	.pad_gpio_holdover(mprj_io_holdover[(`MPRJ_IO_PADS-`ANALOG_PADS_2-3):(`MPRJ_IO_PADS_1)]),
-    	.pad_gpio_ana_en(mprj_io_analog_en[(`MPRJ_IO_PADS-`ANALOG_PADS_2-3):(`MPRJ_IO_PADS_1)]),
-    	.pad_gpio_ana_sel(mprj_io_analog_sel[(`MPRJ_IO_PADS-3):(`MPRJ_IO_PADS_1)]),
-    	.pad_gpio_ana_pol(mprj_io_analog_pol[(`MPRJ_IO_PADS-3):(`MPRJ_IO_PADS_1)]),
-    	.pad_gpio_dm(mprj_io_dm[(`MPRJ_IO_PADS*3-7):(`MPRJ_IO_PADS_1*3)]),
-    	.pad_gpio_outenb(mprj_io_oeb[(`MPRJ_IO_PADS-3):(`MPRJ_IO_PADS_1)]),
-    	.pad_gpio_out(mprj_io_out[(`MPRJ_IO_PADS-3):(`MPRJ_IO_PADS_1)]),
-    	.pad_gpio_in(mprj_io_in[(`MPRJ_IO_PADS-3):(`MPRJ_IO_PADS_1)])
+    	.pad_gpio_inenb(mprj_io_inp_dis[(`MPRJ_DIG_PADS-3):(`MPRJ_IO_PADS_1-`ANALOG_PADS_1)]),
+    	.pad_gpio_ib_mode_sel(mprj_io_ib_mode_sel[(`MPRJ_DIG_PADS-3):(`MPRJ_IO_PADS_1-`ANALOG_PADS_1)]),
+    	.pad_gpio_vtrip_sel(mprj_io_vtrip_sel[(`MPRJ_DIG_PADS-3):(`MPRJ_IO_PADS_1-`ANALOG_PADS_1)]),
+    	.pad_gpio_slow_sel(mprj_io_slow_sel[(`MPRJ_DIG_PADS-3):(`MPRJ_IO_PADS_1-`ANALOG_PADS_1)]),
+    	.pad_gpio_holdover(mprj_io_holdover[(`MPRJ_DIG_PADS-3):(`MPRJ_IO_PADS_1-`ANALOG_PADS_1)]),
+    	.pad_gpio_ana_en(mprj_io_analog_en[(`MPRJ_DIG_PADS-3):(`MPRJ_IO_PADS_1-`ANALOG_PADS_1)]),
+    	.pad_gpio_ana_sel(mprj_io_analog_sel[(`MPRJ_DIG_PADS-3):(`MPRJ_IO_PADS_1-`ANALOG_PADS_1)]),
+    	.pad_gpio_ana_pol(mprj_io_analog_pol[(`MPRJ_DIG_PADS-3):(`MPRJ_IO_PADS_1-`ANALOG_PADS_1)]),
+    	.pad_gpio_dm(mprj_io_dm[((`MPRJ_DIG_PADS)*3-7):((`MPRJ_IO_PADS_1-`ANALOG_PADS_1)*3)]),
+    	.pad_gpio_outenb(mprj_io_oeb[(`MPRJ_DIG_PADS-3):(`MPRJ_IO_PADS_1-`ANALOG_PADS_1)]),
+    	.pad_gpio_out(mprj_io_out[(`MPRJ_DIG_PADS-3):(`MPRJ_IO_PADS_1-`ANALOG_PADS_1)]),
+    	.pad_gpio_in(mprj_io_in[(`MPRJ_DIG_PADS-3):(`MPRJ_IO_PADS_1-`ANALOG_PADS_1)])
     );
 
     user_id_programming #(

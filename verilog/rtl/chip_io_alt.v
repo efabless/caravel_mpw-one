@@ -29,7 +29,7 @@
 
 module chip_io_alt #(
 	parameter ANALOG_PADS_1 = 5,
-	parameter ANALOG_PADS_2 = 6,
+	parameter ANALOG_PADS_2 = 6
 ) (
 	// Package Pins
 	inout  vddio,		// Common padframe/ESD supply
@@ -105,8 +105,11 @@ module chip_io_alt #(
 
 	// User side 1:  Connects to all but the first 7 pads;
 	// User side 2:  Connects to all but the last 2 pads
-	inout [`MPRJ_IO_PADS_1-ANALOG_PADS_1-ANALOG_PADS_2-10:0] mprj_gpio_analog,
-	inout [`MPRJ_IO_PADS_1-ANALOG_PADS_1-ANALOG_PADS_2-10:0] mprj_gpio_noesd,
+	inout [`MPRJ_IO_PADS-ANALOG_PADS_1-ANALOG_PADS_2-10:0] mprj_gpio_analog,
+	inout [`MPRJ_IO_PADS-ANALOG_PADS_1-ANALOG_PADS_2-10:0] mprj_gpio_noesd,
+
+	// Core connections for the analog signals
+	inout [ANALOG_PADS_1+ANALOG_PADS_2-1:0] mprj_analog,
 
 	// These are clamp connections for the clamps in the analog cells, if
 	// they are used for power supplies.
@@ -248,25 +251,25 @@ module chip_io_alt #(
 	// Instantiate analog pads in user area 1 using base hvc power pad
     	sky130_fd_io__top_power_hvc_wpadv2 user1_analog_pad [ANALOG_PADS_1-1:0]  (
 		`USER1_ABUTMENT_PINS
-		`HVCLAMP_PINS(mprj_analog_clamp_high[ANALOG_PADS_1-1:0],
-		   	      mprj_analog_clamp_low[ANALOG_PADS_1-1:0),
-		.P_PAD(mprj_io[`MPRJ_IO_PADS_1-1:`MPRJ_IO_PADS_1-ANALOG_PADS_1]),
-		.P_CORE(mprj_analog[ANALOG_PADS_1-1:0]),
 `ifdef TOP_ROUTING
 		.VDDIO(vddio)
 `endif
+		,`HVCLAMP_PINS(mprj_clamp_high[ANALOG_PADS_1-1:0],
+		   	      mprj_clamp_low[ANALOG_PADS_1-1:0]),
+		.P_PAD(mprj_io[`MPRJ_IO_PADS_1-1:`MPRJ_IO_PADS_1-ANALOG_PADS_1]),
+		.P_CORE(mprj_analog[ANALOG_PADS_1-1:0])
     	);
 
 	// Instantiate analog pads in user area 2 using base hvc power pad
     	sky130_fd_io__top_power_hvc_wpadv2 user2_analog_pad [ANALOG_PADS_2-1:0]  (
 		`USER1_ABUTMENT_PINS
-		`HVCLAMP_PINS(mprj_analog_clamp_high[ANALOG_PADS_2+ANALOG_PADS_1-1:ANALOG_PADS_1],
-		   	      mprj_analog_clamp_low[ANALOG_PADS_2+ANALOG_PADS_1-1:ANALOG_PADS_1),
-		.P_PAD(mprj_io[`MPRJ_IO_PADS_1+ANALOG_PADS_2-1:`MPRJ_IO_PADS_1]),
-		.P_CORE(mprj_analog[ANALOG_PADS_2+ANALOG_PADS_1-1:ANALOG_PADS_1]),
 `ifdef TOP_ROUTING
 		.VDDIO(vddio)
 `endif
+		,`HVCLAMP_PINS(mprj_clamp_high[ANALOG_PADS_2+ANALOG_PADS_1-1:ANALOG_PADS_1],
+		   	      mprj_clamp_low[ANALOG_PADS_2+ANALOG_PADS_1-1:ANALOG_PADS_1]),
+		.P_PAD(mprj_io[`MPRJ_IO_PADS_1+ANALOG_PADS_2-1:`MPRJ_IO_PADS_1]),
+		.P_CORE(mprj_analog[ANALOG_PADS_2+ANALOG_PADS_1-1:ANALOG_PADS_1])
     	);
 
 	wire [2:0] dm_all =
@@ -379,10 +382,10 @@ module chip_io_alt #(
 `endif
     	    );
 
-	mprj_io mprj_pads #(
+	mprj_io #(
 		.AREA1PADS(`MPRJ_IO_PADS_1 - ANALOG_PADS_1),
 		.TOTAL_PADS(`MPRJ_IO_PADS - ANALOG_PADS_1 - ANALOG_PADS_2)
-	) (
+	) mprj_pads (
 		.vddio(vddio),
 		.vssio(vssio),
 		.vccd(vccd),

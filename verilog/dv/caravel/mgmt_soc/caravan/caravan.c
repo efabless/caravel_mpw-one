@@ -26,6 +26,11 @@
  *	pad connections to standalone pads.  This checks the alignment
  *	of signals for mprj_io[14:0] and mprj_io[37:26].
  *
+ *	Note that the low word reg_mprj_data_l occupies mprj_io[31:0],
+ *	so only bits 31-25 and 14-0 are valid.  The upper end is 7 bits,
+ *	preventing the use of 8 bits for checkbits_high.
+ *	
+ *
  *	*** Unfinished work ***
  *
  *	GPIO Test

@@ -126,7 +126,7 @@ module caravel (
     wire [`MPRJ_IO_PADS-1:0] user_io_oeb;
     wire [`MPRJ_IO_PADS-1:0] user_io_in;
     wire [`MPRJ_IO_PADS-1:0] user_io_out;
-    wire [`MPRJ_IO_PADS-8:0] user_analog_io;
+    wire [`MPRJ_IO_PADS-10:0] user_analog_io;
 
     /* Padframe control signals */
     wire [`MPRJ_IO_PADS_1-1:0] gpio_serial_link_1;

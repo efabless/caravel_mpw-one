@@ -68,8 +68,8 @@ module user_project_wrapper #(
     // Analog (direct connection to GPIO pad---use with caution)
     // Note that analog I/O is not available on the 7 lowest-numbered
     // GPIO pads, and so the analog_io indexing is offset from the
-    // GPIO indexing by 7.
-    inout [`MPRJ_IO_PADS-8:0] analog_io,
+    // GPIO indexing by 7 (also upper 2 GPIOs do not have analog_io).
+    inout [`MPRJ_IO_PADS-10:0] analog_io,
 
     // Independent clock (on independent integer divider)
     input   user_clock2

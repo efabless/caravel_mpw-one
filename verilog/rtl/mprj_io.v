@@ -64,8 +64,8 @@ module mprj_io #(
     input [TOTAL_PADS*3-1:0] dm,
     output [TOTAL_PADS-1:0] io_in,
     output [TOTAL_PADS-1:0] io_in_3v3,
-    inout [TOTAL_PADS-8:0] analog_io,
-    inout [TOTAL_PADS-8:0] analog_noesd_io
+    inout [TOTAL_PADS-10:0] analog_io,
+    inout [TOTAL_PADS-10:0] analog_noesd_io
 );
 
     wire [TOTAL_PADS-1:0] loop1_io;

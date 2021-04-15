@@ -24,8 +24,8 @@
 
 `timescale 1 ns / 1 ps
 
-`include "__uprj_netlists.v"
-`include "caravel_netlists.v"
+`include "__uprj_analog_netlists.v"
+`include "caravan_netlists.v"
 `include "spiflash.v"
 
 module caravan_tb;
@@ -59,14 +59,16 @@ module caravan_tb;
 		$finish;
 	end
 
-	wire [37:0] mprj_io;	// Most of these are no-connects
-	wire [15:0] checkbits;
-	reg  [7:0] checkbits_lo;
-	wire [7:0] checkbits_hi;
+	wire [37:0] mprj_io;		// Most of these are no-connects
+	wire [6:0]  checkbits_hi;	// Upper 7 valid GPIO bits
+	wire [13:0] checkbits_lo;	// Lower 14 valid GPIO bits (read)
 
-	assign mprj_io[23:16] = checkbits_lo;
-	assign checkbits = mprj_io[31:16];
-	assign checkbits_hi = checkbits[15:8];
+	reg  [13:0] setbits_lo;		// Lower 14 valid GPIO bits (write)
+
+	assign mprj_io[14:4] = setbits_lo[13:3];
+	assign mprj_io[2:0] = setbits_lo[2:0];
+	assign checkbits_lo = {mprj_io[14:4], mprj_io[2:0]};
+	assign checkbits_hi = mprj_io[31:25];
 	assign mprj_io[3] = 1'b1;       // Force CSB high.
 
 	wire flash_csb;
@@ -79,31 +81,31 @@ module caravan_tb;
 
 	// Transactor
 	initial begin
-		checkbits_lo <= {8{1'bz}};
-		wait(checkbits_hi == 8'hA0);
-		checkbits_lo <= 8'hF0;
-		wait(checkbits_hi == 8'h0B);
-		checkbits_lo <= 8'h0F;
-		wait(checkbits_hi == 8'hAB);
-		checkbits_lo <= 8'h0;
+		setbits_lo <= {14{1'bz}};
+		wait(checkbits_hi == 7'h20);
+		setbits_lo <= 14'h00F0;
+		wait(checkbits_hi == 7'h0B);
+		setbits_lo <= 14'h000F;
+		wait(checkbits_hi == 7'h2B);
+		setbits_lo <= 14'h0000;
 		repeat (1000) @(posedge clock);
-		checkbits_lo <= 8'h1;
+		setbits_lo <= 14'h0001;
 		repeat (1000) @(posedge clock);
-		checkbits_lo <= 8'h3;
+		setbits_lo <= 14'h0003;
 	end
 
 	// Monitor
 	initial begin
-		wait(checkbits_hi == 8'hA0);
-		wait(checkbits[7:0]  == 8'hF0);
+		wait(checkbits_hi == 8'h20);
+		wait(checkbits_lo == 8'h70);
 		wait(checkbits_hi == 8'h0B);
-		wait(checkbits[7:0]  == 8'h0F);
-		wait(checkbits_hi == 8'hAB);
-		wait(checkbits[7:0]  == 8'h00);
+		wait(checkbits_lo == 8'h0F);
+		wait(checkbits_hi == 8'h2B);
+		wait(checkbits_lo == 8'h00);
 		wait(checkbits_hi == 8'h01);
-		wait(checkbits[7:0]  == 8'h01);
+		wait(checkbits_lo == 8'h01);
 		wait(checkbits_hi == 8'h02);
-		wait(checkbits[7:0]  == 8'h03);
+		wait(checkbits_lo == 8'h03);
 		wait(checkbits_hi == 8'h04);
 		`ifdef GL
 			$display("Monitor: Test GPIO (GL) Passed");
@@ -131,8 +133,8 @@ module caravan_tb;
 	end
 		
 
-	always @(checkbits) begin
-		#1 $display("GPIO state = %b (%d - %d)", checkbits,
+	always @(mprj_io) begin
+		#1 $display("GPIO state = %b (%d - %d)", mprj_io,
 				checkbits_hi, checkbits_lo);
 	end
 
@@ -156,7 +158,7 @@ module caravan_tb;
 	// ser_tx    = mgmt_gpio_io[6]              (output)
 	// irq       = mgmt_gpio_io[7]              (input)
 
-	caravel uut (
+	caravan uut (
 		.vddio	  (VDD3V3),
 		.vssio	  (VSS),
 		.vdda	  (VDD3V3),

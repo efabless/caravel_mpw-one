@@ -100,7 +100,7 @@ module user_analog_project_wrapper #(
      * user_analog[10:0]  <--->  mprj_io[25:15]
      *
      */
-    inout [`ANALOG_PADS-1] user_analog,
+    inout [`ANALOG_PADS-1:0] io_analog,
 
     /* Additional power supply ESD clamps, one per analog pad.  The
      * high side should be connected to a 3.3-5.5V power supply.
@@ -110,8 +110,8 @@ module user_analog_project_wrapper #(
      * clamp_low[10:0]    <--->  mprj_io[25:15]
      *
      */
-    inout [`ANALOG_PADS-1] user_clamp_high,
-    inout [`ANALOG_PADS-1] user_clamp_low,
+    inout [`ANALOG_PADS-1:0] io_clamp_high,
+    inout [`ANALOG_PADS-1:0] io_clamp_low,
 
     // Independent clock (on independent integer divider)
     input   user_clock2
