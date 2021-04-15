@@ -365,6 +365,8 @@ endif
 
 __set_user_id: 
 	mkdir -p ./signoff/build
+	# Update info.yaml
+	sed -r "s/^(\s*project_id\s*:\s*).*/\1${USER_ID}/" -i info.yaml
 	python3 $(CARAVEL_MASTER)/scripts/set_user_id.py $(USER_ID) $(CARAVEL_MASTER) 2>&1 | tee ./signoff/build/set_user_id.out
 
 .PHONY: update_caravel
