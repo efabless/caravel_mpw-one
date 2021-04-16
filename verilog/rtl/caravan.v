@@ -34,10 +34,10 @@
 /* two analog pad arrays.  As defined above, the sections have	*/
 /* the number of pads as follows:				*/
 /*								*/
-/*	DIG2 : 12 GPIO pads					*/
+/*	DIG2 : 13 GPIO pads					*/
 /*	ANA2 : 6  analog pads					*/
 /*	ANA1 : 5  analog pads					*/
-/*	DIG1 : 15 GPIO pads					*/
+/*	DIG1 : 14 GPIO pads					*/
 /*								*/
 /* This makes a total of 38 pads = `MPRJ_IO_PADS		*/
 /* The pads are still designated as mprj_io[37:0] around the	*/
@@ -203,6 +203,7 @@ module caravan (
     wire jtag_out, sdo_out;
     wire jtag_outenb, sdo_outenb;
 
+    wire [1:0] mgmt_io_nc1;			/* no-connects */
     wire [1:0] mgmt_io_nc2;			/* no-connects */
 
     wire clock_core;
@@ -424,7 +425,8 @@ module caravan (
 		.mprj_io_loader_data_1(mprj_io_loader_data_1),
 		.mprj_io_loader_data_2(mprj_io_loader_data_2),
 		.mgmt_in_data(mgmt_io_in),
-		.mgmt_out_data({mgmt_io_in[(`MPRJ_IO_PADS-1):2], mgmt_io_nc2}),
+		.mgmt_out_data({mgmt_io_nc1, mgmt_io_in[(`MPRJ_IO_PADS-3):2],
+				mgmt_io_nc2}),
 		.pwr_ctrl_out(pwr_ctrl_out),
 		.sdo_out(sdo_out),
 		.sdo_outenb(sdo_outenb),
@@ -446,16 +448,16 @@ module caravan (
 		// mask data
 		.mask_rev(mask_rev),
 		// MGMT area R/W interface
-    	.mgmt_ena(mgmt_ena),
-    	.mgmt_wen_mask(mgmt_wen_mask),
-    	.mgmt_wen(mgmt_wen),
-    	.mgmt_addr(mgmt_addr),
-    	.mgmt_wdata(mgmt_wdata),
-    	.mgmt_rdata(mgmt_rdata),
-    	// MGMT area RO interface
-    	.mgmt_ena_ro(mgmt_ena_ro),
-    	.mgmt_addr_ro(mgmt_addr_ro),
-    	.mgmt_rdata_ro(mgmt_rdata_ro)
+    		.mgmt_ena(mgmt_ena),
+    		.mgmt_wen_mask(mgmt_wen_mask),
+    		.mgmt_wen(mgmt_wen),
+    		.mgmt_addr(mgmt_addr),
+    		.mgmt_wdata(mgmt_wdata),
+    		.mgmt_rdata(mgmt_rdata),
+    		// MGMT area RO interface
+    		.mgmt_ena_ro(mgmt_ena_ro),
+    		.mgmt_addr_ro(mgmt_addr_ro),
+    		.mgmt_rdata_ro(mgmt_rdata_ro)
     	);
 
 	/* Clock and reset to user space are passed through a tristate	*/
