@@ -20,23 +20,16 @@
 // --------------------------------------------------------
 
 /*
- *	*** WIP ***
- *	Needs to check for the operation of the GPIO around the block of
- *	I/O (mprj_io[25:15]) that have been replaced by straight-through
- *	pad connections to standalone pads.  This checks the alignment
- *	of signals for mprj_io[14:0] and mprj_io[37:26].
+ *	Caravan GPIO Test
  *
- *	Note that the low word reg_mprj_data_l occupies mprj_io[31:0],
- *	so only bits 31-25 and 14-0 are valid.  The upper end is 7 bits,
- *	preventing the use of 8 bits for checkbits_high.
- *	
+ *	This is mainly a test of the digital I/O surrounding the analog
+ *	pinouts on the caravan chip to make sure that they are connected
+ *	properly after the middle GPIO pads and serial loader blocks are
+ *	clipped out from the caravel design.
  *
- *	*** Unfinished work ***
- *
- *	GPIO Test
- *		Tests PU and PD on the lower 8 pins while being driven from outside
- *		Tests Writing to the upper 8 pins
- *		Tests reading from the lower 8 pins
+ *	Tests PU and PD on the lower 8 pins while being driven from outside
+ *	Tests Writing to the upper 8 pins
+ *	Tests reading from the lower 8 pins
  */
 
 void main()
@@ -46,6 +39,20 @@ void main()
 	/* Set data out to zero */
 	reg_mprj_datal = 0;
 
+	/* GPIO 14 to 24 have been replaced by analog and should be set	*/
+	/* to mode output to keep the input from floating.		*/
+	reg_mprj_io_24 = GPIO_MODE_MGMT_STD_OUTPUT;
+	reg_mprj_io_23 = GPIO_MODE_MGMT_STD_OUTPUT;
+	reg_mprj_io_22 = GPIO_MODE_MGMT_STD_OUTPUT;
+	reg_mprj_io_21 = GPIO_MODE_MGMT_STD_OUTPUT;
+	reg_mprj_io_20 = GPIO_MODE_MGMT_STD_OUTPUT;
+	reg_mprj_io_19 = GPIO_MODE_MGMT_STD_OUTPUT;
+	reg_mprj_io_18 = GPIO_MODE_MGMT_STD_OUTPUT;
+	reg_mprj_io_17 = GPIO_MODE_MGMT_STD_OUTPUT;
+	reg_mprj_io_16 = GPIO_MODE_MGMT_STD_OUTPUT;
+	reg_mprj_io_15 = GPIO_MODE_MGMT_STD_OUTPUT;
+	reg_mprj_io_14 = GPIO_MODE_MGMT_STD_OUTPUT;
+
 	/* Lower 8 pins are input and upper 8 pins are output */
 	reg_mprj_io_31 = GPIO_MODE_MGMT_STD_OUTPUT;
 	reg_mprj_io_30 = GPIO_MODE_MGMT_STD_OUTPUT;
@@ -54,16 +61,14 @@ void main()
 	reg_mprj_io_27 = GPIO_MODE_MGMT_STD_OUTPUT;
 	reg_mprj_io_26 = GPIO_MODE_MGMT_STD_OUTPUT;
 	reg_mprj_io_25 = GPIO_MODE_MGMT_STD_OUTPUT;
-	reg_mprj_io_24 = GPIO_MODE_MGMT_STD_OUTPUT;
 
-	reg_mprj_io_23 = GPIO_MODE_MGMT_STD_INPUT_NOPULL;
-	reg_mprj_io_22 = GPIO_MODE_MGMT_STD_INPUT_NOPULL;
-	reg_mprj_io_21 = GPIO_MODE_MGMT_STD_INPUT_NOPULL;
-	reg_mprj_io_20 = GPIO_MODE_MGMT_STD_INPUT_NOPULL;
-	reg_mprj_io_19 = GPIO_MODE_MGMT_STD_INPUT_NOPULL;
-	reg_mprj_io_18 = GPIO_MODE_MGMT_STD_INPUT_NOPULL;
-	reg_mprj_io_17 = GPIO_MODE_MGMT_STD_INPUT_NOPULL;
-	reg_mprj_io_16 = GPIO_MODE_MGMT_STD_INPUT_NOPULL;
+	reg_mprj_io_13 = GPIO_MODE_MGMT_STD_INPUT_NOPULL;
+	reg_mprj_io_12 = GPIO_MODE_MGMT_STD_INPUT_NOPULL;
+	reg_mprj_io_11 = GPIO_MODE_MGMT_STD_INPUT_NOPULL;
+	reg_mprj_io_10 = GPIO_MODE_MGMT_STD_INPUT_NOPULL;
+	reg_mprj_io_9 = GPIO_MODE_MGMT_STD_INPUT_NOPULL;
+	reg_mprj_io_8 = GPIO_MODE_MGMT_STD_INPUT_NOPULL;
+	reg_mprj_io_7 = GPIO_MODE_MGMT_STD_INPUT_NOPULL;
 
 	/* Apply configuration */
 	reg_mprj_xfer = 1;
@@ -72,45 +77,39 @@ void main()
 	// change the pull up and pull down (checked by the TB)
 	reg_mprj_datal = 0xa0000000;
 
-	reg_mprj_io_23 = GPIO_MODE_MGMT_STD_INPUT_PULLDOWN;
-	reg_mprj_io_22 = GPIO_MODE_MGMT_STD_INPUT_PULLDOWN;
-	reg_mprj_io_21 = GPIO_MODE_MGMT_STD_INPUT_PULLDOWN;
-	reg_mprj_io_20 = GPIO_MODE_MGMT_STD_INPUT_PULLDOWN;
-
-	reg_mprj_io_19 = GPIO_MODE_MGMT_STD_INPUT_PULLUP;
-	reg_mprj_io_18 = GPIO_MODE_MGMT_STD_INPUT_PULLUP;
-	reg_mprj_io_17 = GPIO_MODE_MGMT_STD_INPUT_PULLUP;
-	reg_mprj_io_16 = GPIO_MODE_MGMT_STD_INPUT_PULLUP;
+	reg_mprj_io_13 = GPIO_MODE_MGMT_STD_INPUT_PULLDOWN;
+	reg_mprj_io_12 = GPIO_MODE_MGMT_STD_INPUT_PULLDOWN;
+	reg_mprj_io_11 = GPIO_MODE_MGMT_STD_INPUT_PULLDOWN;
+	reg_mprj_io_10 = GPIO_MODE_MGMT_STD_INPUT_PULLDOWN;
+	reg_mprj_io_9 = GPIO_MODE_MGMT_STD_INPUT_PULLUP;
+	reg_mprj_io_8 = GPIO_MODE_MGMT_STD_INPUT_PULLUP;
+	reg_mprj_io_7 = GPIO_MODE_MGMT_STD_INPUT_PULLUP;
 
 	/* Apply configuration */
 	reg_mprj_xfer = 1;
 	while (reg_mprj_xfer == 1);
 
-	reg_mprj_datal = 0x0b000000;
+	reg_mprj_datal = 0x0a000000;
 
-	reg_mprj_io_23 = GPIO_MODE_MGMT_STD_INPUT_PULLUP;
-	reg_mprj_io_22 = GPIO_MODE_MGMT_STD_INPUT_PULLUP;
-	reg_mprj_io_21 = GPIO_MODE_MGMT_STD_INPUT_PULLUP;
-	reg_mprj_io_20 = GPIO_MODE_MGMT_STD_INPUT_PULLUP;
-
-	reg_mprj_io_19 = GPIO_MODE_MGMT_STD_INPUT_PULLDOWN;
-	reg_mprj_io_18 = GPIO_MODE_MGMT_STD_INPUT_PULLDOWN;
-	reg_mprj_io_17 = GPIO_MODE_MGMT_STD_INPUT_PULLDOWN;
-	reg_mprj_io_16 = GPIO_MODE_MGMT_STD_INPUT_PULLDOWN;
+	reg_mprj_io_13 = GPIO_MODE_MGMT_STD_INPUT_PULLUP;
+	reg_mprj_io_12 = GPIO_MODE_MGMT_STD_INPUT_PULLUP;
+	reg_mprj_io_11 = GPIO_MODE_MGMT_STD_INPUT_PULLUP;
+	reg_mprj_io_10 = GPIO_MODE_MGMT_STD_INPUT_PULLUP;
+	reg_mprj_io_9 = GPIO_MODE_MGMT_STD_INPUT_PULLDOWN;
+	reg_mprj_io_8 = GPIO_MODE_MGMT_STD_INPUT_PULLDOWN;
+	reg_mprj_io_7 = GPIO_MODE_MGMT_STD_INPUT_PULLDOWN;
 
 	/* Apply configuration */
 	reg_mprj_xfer = 1;
 	while (reg_mprj_xfer == 1);
 
-	reg_mprj_io_23 = GPIO_MODE_MGMT_STD_INPUT_PULLDOWN;
-	reg_mprj_io_22 = GPIO_MODE_MGMT_STD_INPUT_PULLDOWN;
-	reg_mprj_io_21 = GPIO_MODE_MGMT_STD_INPUT_PULLDOWN;
-	reg_mprj_io_20 = GPIO_MODE_MGMT_STD_INPUT_PULLDOWN;
-
-	reg_mprj_io_19 = GPIO_MODE_MGMT_STD_INPUT_PULLUP;
-	reg_mprj_io_18 = GPIO_MODE_MGMT_STD_INPUT_PULLUP;
-	reg_mprj_io_17 = GPIO_MODE_MGMT_STD_INPUT_PULLUP;
-	reg_mprj_io_16 = GPIO_MODE_MGMT_STD_INPUT_PULLUP;
+	reg_mprj_io_13 = GPIO_MODE_MGMT_STD_INPUT_PULLDOWN;
+	reg_mprj_io_12 = GPIO_MODE_MGMT_STD_INPUT_PULLDOWN;
+	reg_mprj_io_11 = GPIO_MODE_MGMT_STD_INPUT_PULLDOWN;
+	reg_mprj_io_10 = GPIO_MODE_MGMT_STD_INPUT_PULLDOWN;
+	reg_mprj_io_9 = GPIO_MODE_MGMT_STD_INPUT_PULLUP;
+	reg_mprj_io_8 = GPIO_MODE_MGMT_STD_INPUT_PULLUP;
+	reg_mprj_io_7 = GPIO_MODE_MGMT_STD_INPUT_PULLUP;
 
 	/* Apply configuration */
 	reg_mprj_xfer = 1;
@@ -118,11 +117,11 @@ void main()
 
 	// read the lower 8 pins, add 1 then output the result
 	// checked by the TB
-	reg_mprj_datal = 0xab000000;
+	reg_mprj_datal = 0xaa000000;
 
-	while (1){
-		int x = (reg_mprj_datal & 0xff0000) >> 16;
-		reg_mprj_datal = (x+1) << 24;
+	while (1) {
+		int x = (reg_mprj_datal & 0x3f80) >> 7;
+		reg_mprj_datal = (x+1) << 25;
 	}
 }
 

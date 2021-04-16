@@ -61,13 +61,12 @@ module caravan_tb;
 
 	wire [37:0] mprj_io;		// Most of these are no-connects
 	wire [6:0]  checkbits_hi;	// Upper 7 valid GPIO bits
-	wire [13:0] checkbits_lo;	// Lower 14 valid GPIO bits (read)
+	wire [7:0]  checkbits_lo;	// Lower 6 valid GPIO bits (read)
 
-	reg  [13:0] setbits_lo;		// Lower 14 valid GPIO bits (write)
+	reg  [7:0] setbits_lo;		// Lower 6 valid GPIO bits (write)
 
-	assign mprj_io[14:4] = setbits_lo[13:3];
-	assign mprj_io[2:0] = setbits_lo[2:0];
-	assign checkbits_lo = {mprj_io[14:4], mprj_io[2:0]};
+	assign mprj_io[13:7] = setbits_lo;
+	assign checkbits_lo = mprj_io[13:7];
 	assign checkbits_hi = mprj_io[31:25];
 	assign mprj_io[3] = 1'b1;       // Force CSB high.
 
@@ -81,32 +80,49 @@ module caravan_tb;
 
 	// Transactor
 	initial begin
-		setbits_lo <= {14{1'bz}};
-		wait(checkbits_hi == 7'h20);
-		setbits_lo <= 14'h00F0;
-		wait(checkbits_hi == 7'h0B);
-		setbits_lo <= 14'h000F;
-		wait(checkbits_hi == 7'h2B);
-		setbits_lo <= 14'h0000;
+		setbits_lo <= {7{1'bz}};
+		wait(checkbits_hi == 7'h50);
+		repeat (500) @(posedge clock);
+		setbits_lo <= 7'h30;
+		wait(checkbits_hi == 7'h05);
+		repeat (500) @(posedge clock);
+		setbits_lo <= 7'h0f;
+		wait(checkbits_hi == 7'h55);
 		repeat (1000) @(posedge clock);
-		setbits_lo <= 14'h0001;
-		repeat (1000) @(posedge clock);
-		setbits_lo <= 14'h0003;
+		setbits_lo <= 7'h00;
+		repeat (1300) @(posedge clock);
+		setbits_lo <= 7'h01;
+		repeat (1300) @(posedge clock);
+		setbits_lo <= 7'h03;
 	end
 
 	// Monitor
 	initial begin
-		wait(checkbits_hi == 8'h20);
-		wait(checkbits_lo == 8'h70);
-		wait(checkbits_hi == 8'h0B);
-		wait(checkbits_lo == 8'h0F);
-		wait(checkbits_hi == 8'h2B);
-		wait(checkbits_lo == 8'h00);
-		wait(checkbits_hi == 8'h01);
-		wait(checkbits_lo == 8'h01);
-		wait(checkbits_hi == 8'h02);
-		wait(checkbits_lo == 8'h03);
-		wait(checkbits_hi == 8'h04);
+		wait(checkbits_hi == 7'h50);	// 1st pull test
+		`ifdef GL
+			$display("Monitor: Test GPIO (GL) Started");
+		`else
+			$display("Monitor: Test GPIO (RTL) Started");
+		`endif
+		wait(checkbits_lo == 7'h30);	// (1st pull test result)
+		$display("Monitor: Check 1 seen");
+		wait(checkbits_hi == 7'h05);	// 2nd pull test
+		$display("Monitor: Check 2 seen");
+		wait(checkbits_lo == 7'h0F);	// (2nd pull test result)
+		$display("Monitor: Check 3 seen");
+		wait(checkbits_hi == 7'h55);	// loopback test
+		$display("Monitor: Check 4 seen");
+		wait(checkbits_lo == 7'h00);	// 1st value set
+		$display("Monitor: Check 5 seen");
+		wait(checkbits_hi == 7'h01);	// 1st loopback read
+		$display("Monitor: Check 6 seen");
+		wait(checkbits_lo == 7'h01);	// 2nd value set
+		$display("Monitor: Check 7 seen");
+		wait(checkbits_hi == 7'h02);	// 2nd loopback read
+		$display("Monitor: Check 8 seen");
+		wait(checkbits_lo == 7'h03);	// 3rd value set
+		$display("Monitor: Check 9 seen");
+		wait(checkbits_hi == 7'h04);	// 3rd loopback read
 		`ifdef GL
 			$display("Monitor: Test GPIO (GL) Passed");
 		`else
