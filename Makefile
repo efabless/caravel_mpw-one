@@ -43,7 +43,7 @@ LARGE_FILES_GZ_SPLIT := $(addsuffix .$(ARCHIVE_EXT).00.split, $(LARGE_FILES))
 LARGE_FILES_GZ_SPLIT += $(addsuffix .00.split, $(ARCHIVES))
 
 # Caravel path from user project perspective; (Default: 'caravel', assuming caravel is submoduled inside user project)
-CARAVEL_MASTER ?= caravel
+CARAVEL_ROOT ?= caravel
 
 # User project path from caravel's perspective (Default: '../', assuming caravel is submoduled inside user project)
 UPRJ_PATH ?= ..
@@ -78,20 +78,20 @@ __ship:
 	@echo "###############################################"
 	@echo "Generating Caravel GDS (sources are in the 'gds' directory)"
 	@sleep 1
-#### Runs from the CARAVEL_MASTER mag directory 
+#### Runs from the CARAVEL_ROOT mag directory 
 	@echo "\
-		random seed `$(CARAVEL_MASTER)/scripts/set_user_id.py -report`; \
+		random seed `$(CARAVEL_ROOT)/scripts/set_user_id.py -report`; \
 		gds readonly true; \
 		gds rescale false; \
 		gds read ../$(UPRJ_PATH)/gds/user_project_wrapper.gds; \
 		load caravel -dereference;\
 		select top cell;\
 		gds write ../$(UPRJ_PATH)/gds/caravel.gds; \
-		exit;" > $(CARAVEL_MASTER)/mag/mag2gds_caravel.tcl
+		exit;" > $(CARAVEL_ROOT)/mag/mag2gds_caravel.tcl
 ### Runs from UPRJ_PATH
 	@mkdir -p ./signoff/build
-	@cd $(CARAVEL_MASTER)/mag && PDKPATH=${PDK_ROOT}/sky130A magic -noc -dnull mag2gds_caravel.tcl 2>&1 | tee ../$(UPRJ_PATH)/signoff/build/make_ship.out
-	@rm $(CARAVEL_MASTER)/mag/mag2gds_caravel.tcl
+	@cd $(CARAVEL_ROOT)/mag && PDKPATH=${PDK_ROOT}/sky130A magic -noc -dnull mag2gds_caravel.tcl 2>&1 | tee ../$(UPRJ_PATH)/signoff/build/make_ship.out
+	@rm $(CARAVEL_ROOT)/mag/mag2gds_caravel.tcl
 
 .PHONY: clean
 clean:
@@ -158,24 +158,24 @@ uncompress: $(SPLIT_FILES_SOURCES) $(ARCHIVE_SOURCES)
 # verify that the wrapper was respected
 xor-wrapper: uncompress
 ### first erase the user's user_project_wrapper.gds
-	sh $(CARAVEL_MASTER)/utils/erase_box.sh gds/user_project_wrapper.gds 0 0 2920 3520
+	sh $(CARAVEL_ROOT)/utils/erase_box.sh gds/user_project_wrapper.gds 0 0 2920 3520
 ### do the same for the empty wrapper
-	sh $(CARAVEL_MASTER)/utils/erase_box.sh $(CARAVEL_MASTER)/gds/user_project_wrapper_empty.gds 0 0 2920 3520
+	sh $(CARAVEL_ROOT)/utils/erase_box.sh $(CARAVEL_ROOT)/gds/user_project_wrapper_empty.gds 0 0 2920 3520
 	mkdir -p signoff/user_project_wrapper_xor
 ### XOR the two resulting layouts
-	sh $(CARAVEL_MASTER)/utils/xor.sh \
-		$(CARAVEL_MASTER)/gds/user_project_wrapper_empty_erased.gds gds/user_project_wrapper_erased.gds \
+	sh $(CARAVEL_ROOT)/utils/xor.sh \
+		$(CARAVEL_ROOT)/gds/user_project_wrapper_empty_erased.gds gds/user_project_wrapper_erased.gds \
 		user_project_wrapper user_project_wrapper.xor.xml
-	sh $(CARAVEL_MASTER)/utils/xor.sh \
-		$(CARAVEL_MASTER)/gds/user_project_wrapper_empty_erased.gds gds/user_project_wrapper_erased.gds \
+	sh $(CARAVEL_ROOT)/utils/xor.sh \
+		$(CARAVEL_ROOT)/gds/user_project_wrapper_empty_erased.gds gds/user_project_wrapper_erased.gds \
 		user_project_wrapper gds/user_project_wrapper.xor.gds > signoff/user_project_wrapper_xor/xor.log
-	rm $(CARAVEL_MASTER)/gds/user_project_wrapper_empty_erased.gds gds/user_project_wrapper_erased.gds
+#rm $(CARAVEL_ROOT)/gds/user_project_wrapper_empty_erased.gds gds/user_project_wrapper_erased.gds
 	mv gds/user_project_wrapper.xor.gds gds/user_project_wrapper.xor.xml signoff/user_project_wrapper_xor
-	python $(CARAVEL_MASTER)/utils/parse_klayout_xor_log.py \
+	python $(CARAVEL_ROOT)/utils/parse_klayout_xor_log.py \
 		-l signoff/user_project_wrapper_xor/xor.log \
 		-o signoff/user_project_wrapper_xor/total.txt
 ### screenshot the result for convenience
-	sh $(CARAVEL_MASTER)/utils/scrotLayout.sh \
+	sh $(CARAVEL_ROOT)/utils/scrotLayout.sh \
 		$(PDK_ROOT)/sky130A/libs.tech/klayout/sky130A.lyt \
 		signoff/user_project_wrapper_xor/user_project_wrapper.xor.gds
 	@cat signoff/user_project_wrapper_xor/total.txt
@@ -327,8 +327,8 @@ endif
 
 __generate_fill:
 	@mkdir -p ./signoff/build
-	@cp -r $(CARAVEL_MASTER)/mag/.magicrc $(shell pwd)/mag
-	python3 $(CARAVEL_MASTER)/scripts/generate_fill.py $(USER_ID) $(shell pwd) -dist 2>&1 | tee ./signoff/build/generate_fill.out
+	@cp -r $(CARAVEL_ROOT)/mag/.magicrc $(shell pwd)/mag
+	python3 $(CARAVEL_ROOT)/scripts/generate_fill.py $(USER_ID) $(shell pwd) -dist 2>&1 | tee ./signoff/build/generate_fill.out
 
 
 .PHONY: final
@@ -345,12 +345,12 @@ endif
 __final:
 	mkdir -p ./mag/tmp 
 	cp -r ./mag/*.mag ./mag/tmp
-	cp -r $(CARAVEL_MASTER)/mag/* mag/tmp/
-	cp -r $(CARAVEL_MASTER)/mag/.magicrc mag/tmp/
-	sed -i 's@../gds@../../$(CARAVEL_MASTER)/gds@g' ./mag/tmp/*.mag
-	sed -i 's@../maglef@../../$(CARAVEL_MASTER)/maglef@g' ./mag/tmp/caravel.mag
-	sed -i 's@../subcells@../../$(CARAVEL_MASTER)/subcells@g' ./mag/tmp/.magicrc
-	python3 $(CARAVEL_MASTER)/scripts/compositor.py $(USER_ID) $(shell pwd) $(shell pwd)/mag/tmp $(shell pwd)/gds
+	cp -r $(CARAVEL_ROOT)/mag/* mag/tmp/
+	cp -r $(CARAVEL_ROOT)/mag/.magicrc mag/tmp/
+	sed -i 's@../gds@../../$(CARAVEL_ROOT)/gds@g' ./mag/tmp/*.mag
+	sed -i 's@../maglef@../../$(CARAVEL_ROOT)/maglef@g' ./mag/tmp/caravel.mag
+	sed -i 's@../subcells@../../$(CARAVEL_ROOT)/subcells@g' ./mag/tmp/.magicrc
+	python3 $(CARAVEL_ROOT)/scripts/compositor.py $(USER_ID) $(shell pwd) $(shell pwd)/mag/tmp $(shell pwd)/gds
 	@rm -rf ./mag/tmp
 
 .PHONY: set_user_id
@@ -368,7 +368,7 @@ __set_user_id:
 	mkdir -p ./signoff/build
 	# Update info.yaml
 	sed -r "s/^(\s*project_id\s*:\s*).*/\1${USER_ID}/" -i info.yaml
-	python3 $(CARAVEL_MASTER)/scripts/set_user_id.py $(USER_ID) $(CARAVEL_MASTER) 2>&1 | tee ./signoff/build/set_user_id.out
+	python3 $(CARAVEL_ROOT)/scripts/set_user_id.py $(USER_ID) $(CARAVEL_ROOT) 2>&1 | tee ./signoff/build/set_user_id.out
 
 .PHONY: update_caravel
 update_caravel:
