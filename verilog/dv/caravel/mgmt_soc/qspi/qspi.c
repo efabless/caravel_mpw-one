@@ -33,10 +33,6 @@ void main()
 	/* Set data out to zero */
 	reg_mprj_datal = 0;
 
-	/* Prepare GPIO channels 36 and 37 for SPI flash access */
-	reg_mprj_io_37 = GPIO_MODE_MGMT_FULL_BIDIRECTIONAL;
-	reg_mprj_io_36 = GPIO_MODE_MGMT_FULL_BIDIRECTIONAL;
-
 	/* Lower 8 pins are input and upper 8 pins are output */
 	reg_mprj_io_31 = GPIO_MODE_MGMT_STD_OUTPUT;
 	reg_mprj_io_30 = GPIO_MODE_MGMT_STD_OUTPUT;

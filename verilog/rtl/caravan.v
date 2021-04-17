@@ -202,9 +202,9 @@ module caravan (
     wire [`MPRJ_IO_PADS-1:0] mgmt_io_in;
     wire jtag_out, sdo_out;
     wire jtag_outenb, sdo_outenb;
+    wire gpio_flash_io2_out, gpio_flash_io3_out;
 
-    wire [1:0] mgmt_io_nc1;			/* no-connects */
-    wire [1:0] mgmt_io_nc2;			/* no-connects */
+    wire [1:0] mgmt_io_nc;			/* no-connects */
 
     wire clock_core;
 
@@ -425,8 +425,9 @@ module caravan (
 		.mprj_io_loader_data_1(mprj_io_loader_data_1),
 		.mprj_io_loader_data_2(mprj_io_loader_data_2),
 		.mgmt_in_data(mgmt_io_in),
-		.mgmt_out_data({mgmt_io_nc1, mgmt_io_in[(`MPRJ_IO_PADS-3):2],
-				mgmt_io_nc2}),
+		.mgmt_out_data({gpio_flash_io3_out, gpio_flash_io2_out,
+				mgmt_io_in[(`MPRJ_IO_PADS-3):2],
+				mgmt_io_nc}),
 		.pwr_ctrl_out(pwr_ctrl_out),
 		.sdo_out(sdo_out),
 		.sdo_outenb(sdo_outenb),
@@ -680,6 +681,7 @@ module caravan (
 
     /* Last two GPIOs (flash_io2 and flash_io3) */
     gpio_control_block #(
+	.DM_INIT(`DM_INIT),	// Mode = output, strong up/down
 	.OENB_INIT(`OENB_INIT)	// Enable output signaling from wire
     ) gpio_control_bidir_2 [1:0] (
     	`ifdef USE_POWER_PINS
@@ -695,7 +697,7 @@ module caravan (
     	.serial_clock(mprj_io_loader_clock),
 
     	.mgmt_gpio_in(mgmt_io_in[(`DIG2_TOP):(`DIG2_TOP-1)]),
-   	.mgmt_gpio_out({flash_io3_do_core, flash_io2_do_core}),
+   	.mgmt_gpio_out({gpio_flash_io3_out, gpio_flash_io2_out}),
    	.mgmt_gpio_oeb({flash_io3_oeb_core, flash_io2_oeb_core}),
 
         .one(),

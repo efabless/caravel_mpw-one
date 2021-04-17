@@ -195,8 +195,6 @@ extern uint32_t flashio_worker_end;
 #define GPIO_MODE_MGMT_STD_OUTPUT	   0x1809
 #define GPIO_MODE_MGMT_STD_BIDIRECTIONAL   0x1801
 #define GPIO_MODE_MGMT_STD_ANALOG   	   0x000b
-// Use this only on SDO, JTAG, and flash io2 and io3
-#define GPIO_MODE_MGMT_FULL_BIDIRECTIONAL  0x1803
 
 #define GPIO_MODE_USER_STD_INPUT_NOPULL	   0x0402
 #define GPIO_MODE_USER_STD_INPUT_PULLDOWN  0x0802

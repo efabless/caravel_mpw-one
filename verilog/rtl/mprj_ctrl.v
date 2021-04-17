@@ -296,7 +296,7 @@ module mprj_ctrl #(
 		    // NOTE:  This initialization must match the defaults passed
 		    // to the control blocks.  Specifically, 0x1803 is for a
 		    // bidirectional pad, and 0x0403 is for a simple input pad
-		    if (i < 2) begin
+		    if ((i < 2) || (i >= `MPRJ_IO_PADS - 2)) begin
                     	io_ctrl[i] <= 'h1803;
 		    end else begin
                     	io_ctrl[i] <= 'h0403;
