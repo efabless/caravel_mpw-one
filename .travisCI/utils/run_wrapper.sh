@@ -1,4 +1,3 @@
-
 #!/bin/bash
 # SPDX-FileCopyrightText: 2020 Efabless Corporation
 #
