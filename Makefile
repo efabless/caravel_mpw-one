@@ -42,11 +42,13 @@ LARGE_FILES_GZ_SPLIT := $(addsuffix .$(ARCHIVE_EXT).00.split, $(LARGE_FILES))
 # consider splitting existing archives
 LARGE_FILES_GZ_SPLIT += $(addsuffix .00.split, $(ARCHIVES))
 
-# Caravel path from user project perspective; (Default: 'caravel', assuming caravel is submoduled inside user project)
-CARAVEL_ROOT ?= caravel
+# Caravel Root (Default: pwd)
+# Need to be overwritten if running the makefile from UPRJ_ROOT,
+# If caravel is sub-moduled in the user project, run export CARAVEL_ROOT=$(pwd)/caravel
+CARAVEL_ROOT ?= $(shell pwd)
 
-# User project path from caravel's perspective (Default: '../', assuming caravel is submoduled inside user project)
-UPRJ_PATH ?= ..
+# User project root
+UPRJ_ROOT ?= $(shell pwd)
 
 # Build tasks such as make ship, make generate_fill, make set_user_id, make final run in the foreground (1) or background (0)
 FOREGROUND ?= 1
@@ -83,33 +85,29 @@ __ship:
 		random seed `$(CARAVEL_ROOT)/scripts/set_user_id.py -report`; \
 		gds readonly true; \
 		gds rescale false; \
-		gds read ../$(UPRJ_PATH)/gds/user_project_wrapper.gds; \
+		gds read $(UPRJ_ROOT)/gds/user_project_wrapper.gds; \
 		load caravel -dereference;\
 		select top cell;\
-		gds write ../$(UPRJ_PATH)/gds/caravel.gds; \
+		gds write $(UPRJ_ROOT)/gds/caravel.gds; \
 		exit;" > $(CARAVEL_ROOT)/mag/mag2gds_caravel.tcl
-### Runs from UPRJ_PATH
+### Runs from UPRJ_ROOT
 	@mkdir -p ./signoff/build
-	@cd $(CARAVEL_ROOT)/mag && PDKPATH=${PDK_ROOT}/sky130A magic -noc -dnull mag2gds_caravel.tcl 2>&1 | tee ../$(UPRJ_PATH)/signoff/build/make_ship.out
+	@cd $(CARAVEL_ROOT)/mag && PDKPATH=${PDK_ROOT}/sky130A magic -noc -dnull mag2gds_caravel.tcl 2>&1 | tee $(UPRJ_ROOT)/signoff/build/make_ship.out
 	@rm $(CARAVEL_ROOT)/mag/mag2gds_caravel.tcl
 
 .PHONY: clean
 clean:
-	cd ./verilog/dv/caravel/mgmt_soc/ && \
+	cd $(CARAVEL_ROOT)/verilog/dv/caravel/mgmt_soc/ && \
 		$(MAKE) -j$(THREADS) clean
-	cd ./verilog/dv/caravel/user_proj_example/ && \
-		$(MAKE) -j$(THREADS) clean
-	cd ./verilog/dv/wb_utests/ && \
+	cd $(CARAVEL_ROOT)/verilog/dv/wb_utests/ && \
 		$(MAKE) -j$(THREADS) clean
 
 
 .PHONY: verify
 verify:
-	cd ./verilog/dv/caravel/mgmt_soc/ && \
+	cd $(CARAVEL_ROOT)/verilog/dv/caravel/mgmt_soc/ && \
 		$(MAKE) -j$(THREADS) all
-	cd ./verilog/dv/caravel/user_proj_example/ && \
-		$(MAKE) -j$(THREADS) all
-	cd ./verilog/dv/wb_utests/ && \
+	cd $(CARAVEL_ROOT)/verilog/dv/wb_utests/ && \
 		$(MAKE) -j$(THREADS) all
 
 
@@ -168,8 +166,8 @@ xor-wrapper: uncompress
 		user_project_wrapper user_project_wrapper.xor.xml
 	sh $(CARAVEL_ROOT)/utils/xor.sh \
 		$(CARAVEL_ROOT)/gds/user_project_wrapper_empty_erased.gds gds/user_project_wrapper_erased.gds \
-		user_project_wrapper gds/user_project_wrapper.xor.gds > signoff/user_project_wrapper_xor/xor.log
-#rm $(CARAVEL_ROOT)/gds/user_project_wrapper_empty_erased.gds gds/user_project_wrapper_erased.gds
+		user_project_wrapper gds/user_project_wrapper.xor.gds > signoff/user_project_wrapper_xor/xor.log 
+	rm $(CARAVEL_ROOT)/gds/user_project_wrapper_empty_erased.gds gds/user_project_wrapper_erased.gds
 	mv gds/user_project_wrapper.xor.gds gds/user_project_wrapper.xor.xml signoff/user_project_wrapper_xor
 	python $(CARAVEL_ROOT)/utils/parse_klayout_xor_log.py \
 		-l signoff/user_project_wrapper_xor/xor.log \
@@ -186,7 +184,7 @@ LVS_BLOCKS = $(foreach block, $(BLOCKS), lvs-$(block))
 $(LVS_BLOCKS): lvs-% : ./mag/%.mag ./verilog/gl/%.v
 	echo "Extracting $*"
 	mkdir -p ./mag/tmp
-	echo "addpath hexdigits;\
+	echo "addpath $(CARAVEL_ROOT)/mag/hexdigits;\
 		addpath \$$PDKPATH/libs.ref/sky130_ml_xx_hd/mag;\
 		load $* -dereference;\
 		select top cell;\
@@ -209,13 +207,16 @@ $(LVS_BLOCKS): lvs-% : ./mag/%.mag ./verilog/gl/%.v
 		magic -rcfile ${PDK_ROOT}/sky130A/libs.tech/magic/current/sky130A.magicrc -noc -dnull extract_$*.tcl < /dev/null
 	mv ./mag/$*.spice ./spi/lvs
 	rm ./mag/*.ext
-	mv -f ./mag/extract_$*.{tcl,log} ./mag/tmp
+	mv -f ./mag/extract_$*.tcl ./mag/tmp
+	mv -f ./mag/extract_$*.log ./mag/tmp
 	####
 	mkdir -p ./spi/lvs/tmp
-	sh ./spi/lvs/run_lvs.sh ./spi/lvs/$*.spice ./verilog/gl/$*.v $*
+	sh $(CARAVEL_ROOT)/spi/lvs/run_lvs.sh ./spi/lvs/$*.spice ./verilog/gl/$*.v $*
 	@echo ""
-	python3 ./scripts/count_lvs.py -f ./verilog/gl/$*.v_comp.json | tee ./spi/lvs/tmp/$*.lvs.summary.log
-	mv -f ./verilog/gl/*{.out,.json,.log} ./spi/lvs/tmp 2> /dev/null || true
+	python3 $(CARAVEL_ROOT)/scripts/count_lvs.py -f ./verilog/gl/$*.v_comp.json | tee ./spi/lvs/tmp/$*.lvs.summary.log
+	mv -f ./verilog/gl/*.out ./spi/lvs/tmp 2> /dev/null || true
+	mv -f ./verilog/gl/*.json ./spi/lvs/tmp 2> /dev/null || true
+	mv -f ./verilog/gl/*.log ./spi/lvs/tmp 2> /dev/null || true
 	@echo ""
 	@echo "LVS: ./spi/lvs/$*.spice vs. ./verilog/gl/$*.v"
 	@echo "Comparison result: ./spi/lvs/tmp/$*.v_comp.out"
@@ -241,13 +242,16 @@ $(LVS_GDS_BLOCKS): lvs-gds-% : ./gds/%.gds ./verilog/gl/%.v
 		magic -rcfile ${PDK_ROOT}/sky130A/libs.tech/magic/current/sky130A.magicrc -noc -dnull extract_$*.tcl < /dev/null
 	mv ./gds/$*.spice ./spi/lvs
 	rm ./gds/*.ext
-	mv -f ./gds/extract_$*.{tcl,log} ./gds/tmp
+	mv -f ./gds/extract_$*.tcl ./gds/tmp
+	mv -f ./gds/extract_$*.log ./gds/tmp
 	####
 	mkdir -p ./spi/lvs/tmp
-	MAGIC_EXT_USE_GDS=1 sh ./spi/lvs/run_lvs.sh ./spi/lvs/$*.spice ./verilog/gl/$*.v $*
+	MAGIC_EXT_USE_GDS=1 sh $(CARAVEL_ROOT)/spi/lvs/run_lvs.sh ./spi/lvs/$*.spice ./verilog/gl/$*.v $*
 	@echo ""
-	python3 ./scripts/count_lvs.py -f ./verilog/gl/$*.v_comp.json | tee ./spi/lvs/tmp/$*.lvs.summary.log
-	mv -f ./verilog/gl/*{.out,.json,.log} ./spi/lvs/tmp 2> /dev/null || true
+	python3 $(CARAVEL_ROOT)/scripts/count_lvs.py -f ./verilog/gl/$*.v_comp.json | tee ./spi/lvs/tmp/$*.lvs.summary.log
+	mv -f ./verilog/gl/*.out ./spi/lvs/tmp 2> /dev/null || true
+	mv -f ./verilog/gl/*.json ./spi/lvs/tmp 2> /dev/null || true
+	mv -f ./verilog/gl/*.log ./spi/lvs/tmp 2> /dev/null || true
 	@echo ""
 	@echo "LVS: ./spi/lvs/$*.spice vs. ./verilog/gl/$*.v"
 	@echo "Comparison result: ./spi/lvs/tmp/$*.v_comp.out"
@@ -295,7 +299,7 @@ DRC_BLOCKS = $(foreach block, $(BLOCKS), drc-$(block))
 $(DRC_BLOCKS): drc-% : ./gds/%.gds
 	echo "Running DRC on $*"
 	mkdir -p ./gds/tmp
-	cd gds && export DESIGN_IN_DRC=$* && export MAGTYPE=mag; magic -rcfile ${PDK_ROOT}/sky130A/libs.tech/magic/current/sky130A.magicrc -noc -dnull drc_on_gds.tcl < /dev/null
+	cd gds && export DESIGN_IN_DRC=$* && export MAGTYPE=mag; magic -rcfile ${PDK_ROOT}/sky130A/libs.tech/magic/current/sky130A.magicrc -noc -dnull ../$(CARAVEL_ROOT)/gds/drc_on_gds.tcl < /dev/null
 	@echo "DRC result: ./gds/tmp/$*.drc"
 
 # Antenna
@@ -304,7 +308,7 @@ ANTENNA_BLOCKS = $(foreach block, $(BLOCKS), antenna-$(block))
 $(ANTENNA_BLOCKS): antenna-% : ./gds/%.gds
 	echo "Running Antenna Checks on $*"
 	mkdir -p ./gds/tmp
-	cd gds && export DESIGN_IN_ANTENNA=$* && export MAGTYPE=mag; magic -rcfile ${PDK_ROOT}/sky130A/libs.tech/magic/current/sky130A.magicrc -noc -dnull antenna_on_gds.tcl < /dev/null 2>&1 | tee ./tmp/$*.antenna
+	cd gds && export DESIGN_IN_ANTENNA=$* && export MAGTYPE=mag; magic -rcfile ${PDK_ROOT}/sky130A/libs.tech/magic/current/sky130A.magicrc -noc -dnull ../$(CARAVEL_ROOT)/gds/antenna_on_gds.tcl < /dev/null 2>&1 | tee ./tmp/$*.antenna
 	mv -f ./gds/*.ext ./gds/tmp/
 	@echo "Antenna result: ./gds/tmp/$*.antenna"
 
