@@ -30,6 +30,12 @@ void main()
 {
 	int i;
 
+	/* Set SPI flash latency to 8 for use with the spiflash.v
+	 * module (note that spiflash.v does not have configuration
+	 * registers emulated, so the external flash cannot be
+	 * changed from its default of 8).
+	 */
+
 	/* Set data out to zero */
 	reg_mprj_datal = 0;
 
@@ -79,7 +85,7 @@ void main()
 	while (reg_mprj_xfer == 1);
 
 	/* Now run QSPI + CRM */
-	reg_spictrl = 0x803c0000;	// QSPI + CRM
+	reg_spictrl = 0x80380000;	// QSPI + CRM
 
 	reg_mprj_datal = 0x0b000000;
 
@@ -98,7 +104,7 @@ void main()
 	while (reg_mprj_xfer == 1);
 
 	/* Now run QSPI + DDR + CRM */
-	reg_spictrl = 0x807c0000;	// QSPI + DDR + CRM
+	reg_spictrl = 0x80780000;	// QSPI + DDR + CRM
 
 	reg_mprj_io_23 = GPIO_MODE_MGMT_STD_INPUT_PULLDOWN;
 	reg_mprj_io_22 = GPIO_MODE_MGMT_STD_INPUT_PULLDOWN;
