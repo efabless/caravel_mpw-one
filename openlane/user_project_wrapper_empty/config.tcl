@@ -20,7 +20,6 @@ set ::env(DESIGN_NAME) user_project_wrapper
 
 set ::env(CHECK_POWER_GRID) 0
 
-set ::env(PDN_CFG) $script_dir/pdn.tcl; 
 
 set ::env(GLB_RT_OBS) "met1 0 0 $::env(DIE_AREA),\
 					   met2 0 0 $::env(DIE_AREA),\
