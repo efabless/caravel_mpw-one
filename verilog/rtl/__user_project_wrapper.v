@@ -74,4 +74,8 @@ module user_project_wrapper #(
     // Independent clock (on independent integer divider)
     input   user_clock2
 );
+
+// Dummy assignment so that we can take it through the openlane flow
+assign io_out = io_in;
+
 endmodule	// user_project_wrapper

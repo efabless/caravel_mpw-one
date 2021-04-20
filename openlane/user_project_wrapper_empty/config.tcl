@@ -20,7 +20,7 @@ set ::env(DESIGN_NAME) user_project_wrapper
 
 set ::env(CHECK_POWER_GRID) 0
 
-set ::env(PDN_CFG) $script_dir/pdn.tcl; # this removes stripes and keeps the ring
+set ::env(PDN_CFG) $script_dir/pdn.tcl; 
 
 set ::env(GLB_RT_OBS) "met1 0 0 $::env(DIE_AREA),\
 					   met2 0 0 $::env(DIE_AREA),\
@@ -40,14 +40,4 @@ set ::env(MAGIC_WRITE_FULL_LEF) 1
 
 set ::env(VERILOG_FILES) "\
 	$script_dir/../../verilog/rtl/defines.v \
-	$script_dir/../../verilog/rtl/user_project_wrapper.v"
-
-set ::env(VERILOG_FILES_BLACKBOX) "\
-	$script_dir/../../verilog/rtl/defines.v \
-	$script_dir/../../verilog/rtl/user_proj_example.v"
-
-set ::env(EXTRA_LEFS) "\
-	$script_dir/../../lef/user_proj_example.lef"
-
-set ::env(EXTRA_GDS_FILES) "\
-	$script_dir/../../gds/user_proj_example.gds"
+	$script_dir/../../verilog/rtl/__user_project_wrapper.v"
