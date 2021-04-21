@@ -54,7 +54,11 @@ module storage (
         .wmask0(mgmt_wen_mask[7:4]),
         .addr0(mgmt_addr),
         .din0(mgmt_wdata),
-        .dout0(mgmt_rdata[63:32])
+        .dout0(mgmt_rdata[63:32]),
+        .clk1(1'b0),
+        .csb1(1'b1), 
+        .addr1(8'b0),
+        .dout1()
     );  
 
 endmodule
