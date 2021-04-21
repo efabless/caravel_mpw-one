@@ -58,8 +58,9 @@ THREADS ?= $(shell nproc)
 STD_CELL_LIBRARY ?= sky130_fd_sc_hd
 SPECIAL_VOLTAGE_LIBRARY ?= sky130_fd_sc_hvl
 IO_LIBRARY ?= sky130_fd_io
-SKYWATER_COMMIT ?= f6f76f3dc99526c6fc2cfede19b5b1227d4ebde7
-OPEN_PDKS_COMMIT ?= ec43817ed9f58ff83c9d260ce981818023cb6d77
+PRIMITIVES_LIBRARY ?= sky130_fd_pr
+SKYWATER_COMMIT ?= db2e06709dc3d876aa6b74a5f3893fa5f1bc2a6e
+OPEN_PDKS_COMMIT ?= f788cea5d98d99a6cf3a7510a478e1de01a33b07
 INSTALL_SRAM ?= disabled
 
 .DEFAULT_GOAL := ship
@@ -383,7 +384,7 @@ update_caravel:
 
 ###########################################################################
 .PHONY: pdk
-pdk: skywater-pdk skywater-library skywater-timing open_pdks build-pdk
+pdk: skywater-pdk skywater-library skywater-timing open_pdks build-pdk gen-sources
 
 $(PDK_ROOT)/skywater-pdk:
 	git clone https://github.com/google/skywater-pdk.git $(PDK_ROOT)/skywater-pdk
@@ -399,7 +400,15 @@ skywater-library: check-env $(PDK_ROOT)/skywater-pdk
 	cd $(PDK_ROOT)/skywater-pdk && \
 		git submodule update --init libraries/$(STD_CELL_LIBRARY)/latest && \
 		git submodule update --init libraries/$(IO_LIBRARY)/latest && \
-		git submodule update --init libraries/$(SPECIAL_VOLTAGE_LIBRARY)/latest
+		git submodule update --init libraries/$(SPECIAL_VOLTAGE_LIBRARY)/latest && \
+		git submodule update --init libraries/$(PRIMITIVES_LIBRARY)/latest
+
+gen-sources: $(PDK_ROOT)/sky130A
+	touch $(PDK_ROOT)/sky130A/SOURCES
+	echo -ne "skywater-pdk " >> $(PDK_ROOT)/sky130A/SOURCES
+	cd $(PDK_ROOT)/skywater-pdk && git rev-parse HEAD >> $(PDK_ROOT)/sky130A/SOURCES
+	echo -ne "open_pdks " >> $(PDK_ROOT)/sky130A/SOURCES
+	cd $(PDK_ROOT)/open_pdks && git rev-parse HEAD >> $(PDK_ROOT)/sky130A/SOURCES
 
 skywater-timing: check-env $(PDK_ROOT)/skywater-pdk
 	cd $(PDK_ROOT)/skywater-pdk && \
@@ -424,7 +433,6 @@ build-pdk: check-env $(PDK_ROOT)/open_pdks $(PDK_ROOT)/skywater-pdk
 	cd $(PDK_ROOT)/open_pdks && \
 		./configure --enable-alpha-lib --enable-sky130-pdk=$(PDK_ROOT)/skywater-pdk/libraries --with-sky130-local-path=$(PDK_ROOT) --enable-sram-sky130=$(INSTALL_SRAM) && \
 		cd sky130 && \
-		sed -i 's/REPO_PATH = ~\/gits/REPO_PATH = \$$\(PDK_ROOT\)\/open_pdks\/libs/g' Makefile && \
 		$(MAKE) veryclean && \
 		$(MAKE) && \
 		$(MAKE) install-local && \
