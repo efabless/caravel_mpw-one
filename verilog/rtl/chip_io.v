@@ -81,7 +81,7 @@ module chip_io(
 	output [`MPRJ_IO_PADS-1:0] mprj_io_in,
 	// User project direct access to gpio pad connections for analog
 	// (all but the lowest-numbered 7 pads)
-	inout [`MPRJ_IO_PADS-8:0] mprj_analog_io
+	inout [`MPRJ_IO_PADS-10:0] mprj_analog_io
 );
 
 	wire analog_a, analog_b;

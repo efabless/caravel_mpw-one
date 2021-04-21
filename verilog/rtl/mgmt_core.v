@@ -33,11 +33,16 @@ module mgmt_core (
 	output flash_clk_oeb,
 	output flash_io0_oeb,
 	output flash_io1_oeb,
+	output flash_io2_oeb,	// through GPIO 36
+	output flash_io3_oeb,	// through GPIO 37
 	output flash_csb_ieb,
 	output flash_clk_ieb,
-	output flash_io0_ieb, output flash_io1_ieb,
+	output flash_io0_ieb,
+	output flash_io1_ieb,
 	output flash_io0_do,
 	output flash_io1_do,
+	output flash_io2_do,	// through GPIO 36
+	output flash_io3_do,	// through GPIO 37
 	input flash_io0_di,
 	input flash_io1_di,
 	// Master reset
@@ -65,7 +70,8 @@ module mgmt_core (
 	input mprj2_vdd_pwrgood,
 	output mprj_io_loader_resetn,
 	output mprj_io_loader_clock,
-	output mprj_io_loader_data,
+	output mprj_io_loader_data_1,
+	output mprj_io_loader_data_2,
 	// WB MI A (User project)
     	input mprj_ack_i,
 	input [31:0] mprj_dat_i,
@@ -244,7 +250,8 @@ module mgmt_core (
 		.mprj2_vdd_pwrgood(mprj2_vdd_pwrgood),
 		.mprj_io_loader_resetn(mprj_io_loader_resetn),
 		.mprj_io_loader_clock(mprj_io_loader_clock),
-		.mprj_io_loader_data(mprj_io_loader_data),
+		.mprj_io_loader_data_1(mprj_io_loader_data_1),
+		.mprj_io_loader_data_2(mprj_io_loader_data_2),
 		// I/O data
 		.mgmt_in_data(mgmt_in_data),
 		.mgmt_out_data(mgmt_out_data),

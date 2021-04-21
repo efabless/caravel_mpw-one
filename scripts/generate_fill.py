@@ -29,11 +29,13 @@ import multiprocessing
 
 def usage():
     print("Usage:")
-    print("generate_fill.py [<path_to_project>] [-keep] [-test] [-dist]")
+    print("generate_fill.py [<user_id_value>] [<path_to_project>] [-keep] [-test] [-dist]")
     print("")
     print("where:")
+    print("    <user_id_value>   is a character string of eight hex digits, and")
     print("    <path_to_project> is the path to the project top level directory.")
     print("")
+    print("  If <user_id_value> is not given, then it must exist in the info.yaml file.")
     print("  If <path_to_project> is not given, then it is assumed to be the cwd.")
     print("  If '-keep' is specified, then keep the generation script.")
     print("  If '-test' is specified, then create but do not run the generation script.")
@@ -88,12 +90,29 @@ if __name__ == '__main__':
         else:
             arguments.append(option)
 
-    if len(arguments) > 1:
+    if len(arguments) > 2:
         print("Wrong number of arguments given to generate_fill.py.")
         usage()
         sys.exit(1)
 
-    if len(arguments) == 1:
+    user_id_value = None
+    user_project_path = None
+    
+    if len(arguments) > 0:
+        user_id_value = arguments[0]
+
+        # Convert to binary
+        try:
+            user_id_int = int('0x' + user_id_value, 0)
+            user_id_bits = '{0:032b}'.format(user_id_int)
+        except:
+            user_project_path = arguments[0]
+
+    if len(arguments) == 0:
+        user_project_path = os.getcwd() 
+    elif len(arguments) == 2:
+        user_project_path = arguments[1]
+    elif user_project_path == None:
         user_project_path = arguments[0]
     else:
         user_project_path = os.getcwd()
@@ -103,18 +122,18 @@ if __name__ == '__main__':
         sys.exit(1)
 
     # Check for valid user ID
-    user_id_value = None
-    if os.path.isfile(user_project_path + '/info.yaml'):
-        with open(user_project_path + '/info.yaml', 'r') as ifile:
-            infolines = ifile.read().splitlines()
-            for line in infolines:
-                kvpair = line.split(':')
-                if len(kvpair) == 2:
-                    key = kvpair[0].strip()
-                    value = kvpair[1].strip()
-                    if key == 'project_id':
-                        user_id_value = value.strip('"\'')
-                        break
+    if not user_id_value:
+        if os.path.isfile(user_project_path + '/info.yaml'):
+            with open(user_project_path + '/info.yaml', 'r') as ifile:
+                infolines = ifile.read().splitlines()
+                for line in infolines:
+                    kvpair = line.split(':')
+                    if len(kvpair) == 2:
+                        key = kvpair[0].strip()
+                        value = kvpair[1].strip()
+                        if key == 'project_id':
+                            user_id_value = value.strip('"\'')
+                            break
 
     project = 'caravel'
     if user_id_value:

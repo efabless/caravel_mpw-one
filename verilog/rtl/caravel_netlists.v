@@ -16,10 +16,9 @@
 `timescale 1 ns / 1 ps
 
 `define UNIT_DELAY #1
+`define USE_POWER_PINS
 
 `ifdef SIM
-
-`define USE_POWER_PINS
 
 `include "defines.v"
 `include "pads.v"
@@ -48,7 +47,6 @@
     `include "gl/mgmt_protect_hv.v"
 	`include "gl/gpio_control_block.v"
 	`include "gl/sky130_fd_sc_hvl__lsbufhv2lv_1_wrapped.v"
-	`include "gl/user_project_wrapper.v"
     `include "gl/caravel.v"
 `else
 	`include "mgmt_soc.v"
@@ -70,19 +68,10 @@
     `include "mgmt_protect_hv.v"
 	`include "gpio_control_block.v"
     `include "sky130_fd_sc_hvl__lsbufhv2lv_1_wrapped.v"
-	`include "user_project_wrapper.v"
     `include "caravel.v"
 `endif
 
 `include "simple_por.v"
 `include "sram_1rw1r_32_256_8_sky130.v"
 
-/*------------------------------*/
-/* Include user project here	*/
-/*------------------------------*/
-`include "user_proj_example.v"
-
-// `ifdef USE_OPENRAM
-//     `include "sram_1rw1r_32_256_8_sky130.v"
-// `endif
 `endif

@@ -14,49 +14,36 @@
 # SPDX-License-Identifier: Apache-2.0
 
 # Power nets
-set ::power_nets $::env(_VDD_NET_NAME)
-set ::ground_nets $::env(_GND_NET_NAME)
+if { ! [info exists ::env(VDD_NET)] } {
+	set ::env(VDD_NET) $::env(VDD_PIN)
+}
+
+if { ! [info exists ::env(GND_NET)] } {
+	set ::env(GND_NET) $::env(GND_PIN)
+}
+
+set ::power_nets $::env(VDD_NET)
+set ::ground_nets $::env(GND_NET)
+
 
 pdngen::specify_grid stdcell {
     name grid
 	core_ring {
-		met5 {width $::env(_WIDTH) spacing $::env(_SPACING) core_offset $::env(_H_OFFSET)}
-		met4 {width $::env(_WIDTH) spacing $::env(_SPACING) core_offset $::env(_V_OFFSET)}
+		$::env(FP_PDN_LOWER_LAYER) {width $::env(FP_PDN_CORE_RING_VWIDTH) spacing $::env(FP_PDN_CORE_RING_VSPACING) core_offset $::env(FP_PDN_CORE_RING_VOFFSET)}
+		$::env(FP_PDN_UPPER_LAYER) {width $::env(FP_PDN_CORE_RING_HWIDTH) spacing $::env(FP_PDN_CORE_RING_HSPACING) core_offset $::env(FP_PDN_CORE_RING_HOFFSET)}
+
 	}
 	rails {
 	}
     straps {
-	    met4 {width $::env(_WIDTH) pitch $::env(_V_PITCH) offset $::env(_V_PDN_OFFSET)}
-	    met5 {width $::env(_WIDTH) pitch $::env(_H_PITCH) offset $::env(_H_PDN_OFFSET)}
+  		met4 {width $::env(FP_PDN_VWIDTH) pitch $::env(FP_PDN_VPITCH) offset $::env(FP_PDN_VOFFSET)}
+	    met5 {width $::env(FP_PDN_HWIDTH) pitch $::env(FP_PDN_HPITCH) offset $::env(FP_PDN_HOFFSET)}
     }
     connect {{met4 met5}}
 }
-
-pdngen::specify_grid macro {
-	instance "obs_core_obs"
-    power_pins $::env(_VDD_NET_NAME)
-    ground_pins $::env(_GND_NET_NAME)
-    blockages "li1 met1 met2 met3 met4 met5"
-    straps { 
-    } 
-    connect {}
-}
-
-
-pdngen::specify_grid macro {
-    power_pins $::env(_VDD_NET_NAME)
-    ground_pins $::env(_GND_NET_NAME)
-    blockages ""
-    straps { 
-    } 
-    connect {}
-}
-
-set ::halo 0
 
 # POWER or GROUND #Std. cell rails starting with power or ground rails at the bottom of the core area
 set ::rails_start_with "POWER" ;
 
 # POWER or GROUND #Upper metal stripes starting with power or ground rails at the left/bottom of the core area
 set ::stripes_start_with "POWER" ;
-

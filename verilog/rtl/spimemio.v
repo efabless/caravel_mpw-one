@@ -39,6 +39,7 @@ module spimemio_wb (
     output [31:0] wb_flash_dat_o,
     output [31:0] wb_cfg_dat_o,
 
+    output quad_mode,
     input  pass_thru,
     input  pass_thru_csb,
     input  pass_thru_sck,
@@ -83,6 +84,7 @@ module spimemio_wb (
     wire spimemio_cfgreg_sel;
     wire valid;
     wire resetn;
+    wire quad_mode;
 
     assign resetn = ~wb_rst_i;
     assign valid = wb_cyc_i && wb_flash_stb_i;    
@@ -137,6 +139,7 @@ module spimemio_wb (
         .cfgreg_di(wb_dat_i),
         .cfgreg_do(spimemio_cfgreg_do),
 
+	.quad_mode(quad_mode),
 	.pass_thru(pass_thru),
 	.pass_thru_csb(pass_thru_csb),
 	.pass_thru_sck(pass_thru_sck),
@@ -187,6 +190,8 @@ module spimemio (
     input  [31:0] cfgreg_di,
     output [31:0] cfgreg_do,
 
+    output quad_mode,
+
     input  pass_thru,
     input  pass_thru_csb,
     input  pass_thru_sck,
@@ -206,6 +211,7 @@ module spimemio (
     wire       dout_valid;
     wire [7:0] dout_data;
     wire [3:0] dout_tag;
+    wire       quad_mode;
 
     reg [23:0] buffer;
 
@@ -306,6 +312,8 @@ module spimemio (
     wire pass_thru_sck;
     wire pass_thru_sdi;
     wire pass_thru_sdo;
+
+    assign quad_mode = config_qspi;
 
     assign flash_csb = (pass_thru) ? pass_thru_csb : (config_en ? xfer_csb : config_csb);
     assign flash_clk = (pass_thru) ? pass_thru_sck : (config_en ? xfer_clk : config_clk);

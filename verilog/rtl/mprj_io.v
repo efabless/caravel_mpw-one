@@ -14,8 +14,18 @@
 // SPDX-License-Identifier: Apache-2.0
 
 // `default_nettype none
+
+/* Define the array of GPIO pads.  Note that the analog project support
+ * version of caravel (caravan) defines fewer GPIO and replaces them
+ * with analog in the chip_io_alt module.  Because the pad signalling
+ * remains the same, `MPRJ_IO_PADS does not change, so a local parameter
+ * is made that can be made smaller than `MPRJ_IO_PADS to accommodate
+ * the analog pads.
+ */
+
 module mprj_io #(
-    parameter AREA1PADS = 22	// Highest numbered pad in area 1
+    parameter AREA1PADS = `MPRJ_IO_PADS_1,
+    parameter TOTAL_PADS = `MPRJ_IO_PADS
 ) (
     inout vddio,
     inout vssio,
@@ -38,26 +48,29 @@ module mprj_io #(
     input analog_a,
     input analog_b,
     input porb_h,
-    inout [`MPRJ_IO_PADS-1:0] io,
-    input [`MPRJ_IO_PADS-1:0] io_out,
-    input [`MPRJ_IO_PADS-1:0] oeb,
-    input [`MPRJ_IO_PADS-1:0] hldh_n,
-    input [`MPRJ_IO_PADS-1:0] enh,
-    input [`MPRJ_IO_PADS-1:0] inp_dis,
-    input [`MPRJ_IO_PADS-1:0] ib_mode_sel,
-    input [`MPRJ_IO_PADS-1:0] vtrip_sel,
-    input [`MPRJ_IO_PADS-1:0] slow_sel,
-    input [`MPRJ_IO_PADS-1:0] holdover,
-    input [`MPRJ_IO_PADS-1:0] analog_en,
-    input [`MPRJ_IO_PADS-1:0] analog_sel,
-    input [`MPRJ_IO_PADS-1:0] analog_pol,
-    input [`MPRJ_IO_PADS*3-1:0] dm,
-    output [`MPRJ_IO_PADS-1:0] io_in,
-    inout [`MPRJ_IO_PADS-8:0] analog_io
+    inout [TOTAL_PADS-1:0] io,
+    input [TOTAL_PADS-1:0] io_out,
+    input [TOTAL_PADS-1:0] oeb,
+    input [TOTAL_PADS-1:0] hldh_n,
+    input [TOTAL_PADS-1:0] enh,
+    input [TOTAL_PADS-1:0] inp_dis,
+    input [TOTAL_PADS-1:0] ib_mode_sel,
+    input [TOTAL_PADS-1:0] vtrip_sel,
+    input [TOTAL_PADS-1:0] slow_sel,
+    input [TOTAL_PADS-1:0] holdover,
+    input [TOTAL_PADS-1:0] analog_en,
+    input [TOTAL_PADS-1:0] analog_sel,
+    input [TOTAL_PADS-1:0] analog_pol,
+    input [TOTAL_PADS*3-1:0] dm,
+    output [TOTAL_PADS-1:0] io_in,
+    output [TOTAL_PADS-1:0] io_in_3v3,
+    inout [TOTAL_PADS-10:0] analog_io,
+    inout [TOTAL_PADS-10:0] analog_noesd_io
 );
 
-    wire [`MPRJ_IO_PADS-1:0] loop1_io;
-    wire [6:0] no_connect;
+    wire [TOTAL_PADS-1:0] loop1_io;
+    wire [6:0] no_connect_1a, no_connect_1b;
+    wire [1:0] no_connect_2a, no_connect_2b;
 
     sky130_ef_io__gpiov2_pad_wrapped  area1_io_pad [AREA1PADS - 1:0] (
 	`USER1_ABUTMENT_PINS
@@ -81,44 +94,44 @@ module mprj_io #(
 	    .ANALOG_SEL(analog_sel[AREA1PADS - 1:0]),
 	    .ANALOG_POL(analog_pol[AREA1PADS - 1:0]),
 	    .DM(dm[AREA1PADS*3 - 1:0]),
-	    .PAD_A_NOESD_H(),
-	    .PAD_A_ESD_0_H({analog_io[AREA1PADS - 8:0], no_connect}),
+	    .PAD_A_NOESD_H({analog_noesd_io[AREA1PADS - 8:0], no_connect_1a}),
+	    .PAD_A_ESD_0_H({analog_io[AREA1PADS - 8:0], no_connect_1b}),
 	    .PAD_A_ESD_1_H(),
 	    .IN(io_in[AREA1PADS - 1:0]),
-	    .IN_H(),
+	    .IN_H(io_in_3v3[AREA1PADS - 1:0]),
 	    .TIE_HI_ESD(),
 	    .TIE_LO_ESD(loop1_io[AREA1PADS - 1:0])
     );
 
-    sky130_ef_io__gpiov2_pad_wrapped area2_io_pad [`MPRJ_IO_PADS - AREA1PADS - 1:0] (
+    sky130_ef_io__gpiov2_pad_wrapped area2_io_pad [TOTAL_PADS - AREA1PADS - 1:0] (
 	`USER2_ABUTMENT_PINS
 	`ifndef	TOP_ROUTING
-	    ,.PAD(io[`MPRJ_IO_PADS - 1:AREA1PADS]),
+	    ,.PAD(io[TOTAL_PADS - 1:AREA1PADS]),
 	`endif
-	    .OUT(io_out[`MPRJ_IO_PADS - 1:AREA1PADS]),
-	    .OE_N(oeb[`MPRJ_IO_PADS - 1:AREA1PADS]),
-	    .HLD_H_N(hldh_n[`MPRJ_IO_PADS - 1:AREA1PADS]),
-	    .ENABLE_H(enh[`MPRJ_IO_PADS - 1:AREA1PADS]),
-	    .ENABLE_INP_H(loop1_io[`MPRJ_IO_PADS - 1:AREA1PADS]),
+	    .OUT(io_out[TOTAL_PADS - 1:AREA1PADS]),
+	    .OE_N(oeb[TOTAL_PADS - 1:AREA1PADS]),
+	    .HLD_H_N(hldh_n[TOTAL_PADS - 1:AREA1PADS]),
+	    .ENABLE_H(enh[TOTAL_PADS - 1:AREA1PADS]),
+	    .ENABLE_INP_H(loop1_io[TOTAL_PADS - 1:AREA1PADS]),
 	    .ENABLE_VDDA_H(porb_h),
 	    .ENABLE_VSWITCH_H(vssio),
 	    .ENABLE_VDDIO(vccd),
-	    .INP_DIS(inp_dis[`MPRJ_IO_PADS - 1:AREA1PADS]),
-	    .IB_MODE_SEL(ib_mode_sel[`MPRJ_IO_PADS - 1:AREA1PADS]),
-	    .VTRIP_SEL(vtrip_sel[`MPRJ_IO_PADS - 1:AREA1PADS]),
-	    .SLOW(slow_sel[`MPRJ_IO_PADS - 1:AREA1PADS]),
-	    .HLD_OVR(holdover[`MPRJ_IO_PADS - 1:AREA1PADS]),
-	    .ANALOG_EN(analog_en[`MPRJ_IO_PADS - 1:AREA1PADS]),
-	    .ANALOG_SEL(analog_sel[`MPRJ_IO_PADS - 1:AREA1PADS]),
-	    .ANALOG_POL(analog_pol[`MPRJ_IO_PADS - 1:AREA1PADS]),
-	    .DM(dm[`MPRJ_IO_PADS*3 - 1:AREA1PADS*3]),
-	    .PAD_A_NOESD_H(),
-	    .PAD_A_ESD_0_H(analog_io[`MPRJ_IO_PADS - 8:AREA1PADS - 7]),
+	    .INP_DIS(inp_dis[TOTAL_PADS - 1:AREA1PADS]),
+	    .IB_MODE_SEL(ib_mode_sel[TOTAL_PADS - 1:AREA1PADS]),
+	    .VTRIP_SEL(vtrip_sel[TOTAL_PADS - 1:AREA1PADS]),
+	    .SLOW(slow_sel[TOTAL_PADS - 1:AREA1PADS]),
+	    .HLD_OVR(holdover[TOTAL_PADS - 1:AREA1PADS]),
+	    .ANALOG_EN(analog_en[TOTAL_PADS - 1:AREA1PADS]),
+	    .ANALOG_SEL(analog_sel[TOTAL_PADS - 1:AREA1PADS]),
+	    .ANALOG_POL(analog_pol[TOTAL_PADS - 1:AREA1PADS]),
+	    .DM(dm[TOTAL_PADS*3 - 1:AREA1PADS*3]),
+	    .PAD_A_NOESD_H({no_connect_2a, analog_noesd_io[TOTAL_PADS - 10:AREA1PADS - 7]}),
+	    .PAD_A_ESD_0_H({no_connect_2b, analog_io[TOTAL_PADS - 10:AREA1PADS - 7]}),
 	    .PAD_A_ESD_1_H(),
-	    .IN(io_in[`MPRJ_IO_PADS - 1:AREA1PADS]),
-	    .IN_H(),
+	    .IN(io_in[TOTAL_PADS - 1:AREA1PADS]),
+	    .IN_H(io_in_3v3[TOTAL_PADS - 1:AREA1PADS]),
 	    .TIE_HI_ESD(),
-	    .TIE_LO_ESD(loop1_io[`MPRJ_IO_PADS - 1:AREA1PADS])
+	    .TIE_LO_ESD(loop1_io[TOTAL_PADS - 1:AREA1PADS])
     );
 
 endmodule

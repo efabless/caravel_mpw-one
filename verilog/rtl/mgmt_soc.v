@@ -78,7 +78,8 @@ module mgmt_soc (
     input  mprj2_vdd_pwrgood,
     output mprj_io_loader_resetn,
     output mprj_io_loader_clock,
-    output mprj_io_loader_data,
+    output mprj_io_loader_data_1,
+    output mprj_io_loader_data_2,
 
     // User Project pad data (when management SoC controls the pad)
     input [`MPRJ_IO_PADS-1:0] mgmt_in_data,
@@ -128,6 +129,9 @@ module mgmt_soc (
     // State of JTAG and SDO pins (override for management output use)
     output sdo_oenb_state,
     output jtag_oenb_state,
+    // State of flash_io2 and flash_io3 pins (override for management output use)
+    output flash_io2_oenb_state,
+    output flash_io3_oenb_state,
     // SPI master->slave direct link
     output hk_connect,
     // User clock monitoring
@@ -286,6 +290,8 @@ module mgmt_soc (
     // trap_mon	 = mgmt_in_data[13]	 (output)
     // clk1_mon	 = mgmt_in_data[14]	 (output)
     // clk2_mon	 = mgmt_in_data[15]	 (output)
+    // flash_io2 = mgmt_in_data[36]	 (inout)    (management area flash)
+    // flash_io3 = mgmt_in_data[37]	 (inout)    (management area flash)
 
     // OEB lines for [0] and [1] are the only ones connected directly to
     // the pad.  All others have OEB controlled by the configuration bit
@@ -395,6 +401,7 @@ module mgmt_soc (
     wire spimemio_cfg_stb_i;
     wire spimemio_cfg_ack_o;
     wire [31:0] spimemio_cfg_dat_o;
+    wire spimemio_quad_mode;
 
     spimemio_wb spimemio (
         .wb_clk_i(wb_clk_i),
@@ -416,6 +423,7 @@ module mgmt_soc (
         .wb_cfg_ack_o(spimemio_cfg_ack_o),
         .wb_cfg_dat_o(spimemio_cfg_dat_o),
 
+	.quad_mode(spimemio_quad_mode),
 	.pass_thru(pass_thru_mgmt),
 	.pass_thru_csb(pass_thru_mgmt_csb),
 	.pass_thru_sck(pass_thru_mgmt_sck),
@@ -430,26 +438,26 @@ module mgmt_soc (
 
         .flash_io0_oeb (flash_io0_oeb),
         .flash_io1_oeb (flash_io1_oeb),
-        .flash_io2_oeb (flash_io2_oeb),
-        .flash_io3_oeb (flash_io3_oeb),
+        .flash_io2_oeb (flash_io2_oeb),		// through GPIO 36
+        .flash_io3_oeb (flash_io3_oeb),		// through GPIO 37
 
         .flash_csb_ieb (flash_csb_ieb),
         .flash_clk_ieb (flash_clk_ieb),
 
         .flash_io0_ieb (flash_io0_ieb),
         .flash_io1_ieb (flash_io1_ieb),
-        .flash_io2_ieb (flash_io2_ieb),
-        .flash_io3_ieb (flash_io3_ieb),
+        .flash_io2_ieb (),			// unused
+        .flash_io3_ieb (),			// unused
 
         .flash_io0_do (flash_io0_do),
         .flash_io1_do (flash_io1_do),
-        .flash_io2_do (flash_io2_do),
-        .flash_io3_do (flash_io3_do),
+        .flash_io2_do (flash_io2_do),		// through GPIO 36
+        .flash_io3_do (flash_io3_do),		// through GPIO 37
 
         .flash_io0_di (flash_io0_di),
         .flash_io1_di (flash_io1_di),
-        .flash_io2_di (flash_io2_di),
-        .flash_io3_di (flash_io3_di)
+        .flash_io2_di (mgmt_in_data[(`MPRJ_IO_PADS)-2]),
+        .flash_io3_di (mgmt_in_data[(`MPRJ_IO_PADS)-1])
     );
 
     // Wishbone Slave uart	
@@ -702,7 +710,13 @@ module mgmt_soc (
     // mprj GPIO-as-output from applying data when that function
     // is active
 
-    assign mgmt_out_data[`MPRJ_IO_PADS-1:16] = mgmt_out_pre[`MPRJ_IO_PADS-1:16];
+    assign mgmt_out_data[`MPRJ_IO_PADS-3:16] = mgmt_out_pre[`MPRJ_IO_PADS-3:16];
+
+    // spimemio module controls last two data out lines when in quad mode.
+    // These go to GPIO 36 and 37.  The input and OEB lines are routed
+    // individually and have their own independent signal names.
+    assign mgmt_out_data[`MPRJ_IO_PADS-1] = spimemio_quad_mode ? flash_io3_do : mgmt_out_pre[`MPRJ_IO_PADS-1];
+    assign mgmt_out_data[`MPRJ_IO_PADS-2] = spimemio_quad_mode ? flash_io2_do : mgmt_out_pre[`MPRJ_IO_PADS-2];
 
     // Routing of output monitors (PLL, trap, clk1, clk2)
     assign mgmt_out_data[15] = clk2_output_dest ? user_clk : mgmt_out_pre[15];
@@ -730,9 +744,12 @@ module mgmt_soc (
 
 	.serial_clock(mprj_io_loader_clock),
 	.serial_resetn(mprj_io_loader_resetn),
-	.serial_data_out(mprj_io_loader_data),
+	.serial_data_out_1(mprj_io_loader_data_1),
+	.serial_data_out_2(mprj_io_loader_data_2),
 	.sdo_oenb_state(sdo_oenb_state),
 	.jtag_oenb_state(jtag_oenb_state),
+	.flash_io2_oenb_state(flash_io2_oenb_state),
+	.flash_io3_oenb_state(flash_io3_oenb_state),
 	.mgmt_gpio_out(mgmt_out_pre),
 	.mgmt_gpio_in(mgmt_in_data),
 	.pwr_ctrl_out(pwr_ctrl_out)

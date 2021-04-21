@@ -72,6 +72,13 @@ Special-use pins for the management SoC:
 	mprj_io[10]	user flash IO0
 	mprj_io[11]	user flash IO1
 
+    The last 2 GPIO pins can be used by the management SoC to drive the SPI flash
+    io2 and io3 pins for quad and DDR access, although they are set as inputs by
+    default and whenever the SPI flash is not in quad mode:
+
+	mprj_io[36]	SPI flash io2
+	mprj_io[37]	SPI flash io3
+
     The user may additionally use any available GPIO for the SPI flash IO2 and IO3
     lines;  the pass-through mode only uses the basic 4-pin SPI mode.
 
