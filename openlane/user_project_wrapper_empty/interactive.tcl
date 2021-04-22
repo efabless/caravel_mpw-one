@@ -35,7 +35,7 @@ place_io_ol
 # 	-obstruction core_obs \
 # 	-placementX $::env(FP_IO_HLENGTH) \
 # 	-placementY $::env(FP_IO_VLENGTH) \
-# 	-sizeWidth [expr [lindex $::env(DIE_AREA) 2]-$::env(FP_IO_HLENGTH)*2] \
+# 	-sizeWidth  [expr [lindex $::env(DIE_AREA) 2]-$::env(FP_IO_HLENGTH)*2] \
 # 	-sizeHeight [expr [lindex $::env(DIE_AREA) 3]-$::env(FP_IO_VLENGTH)*2] \
 # 	-fixed 1 \
 # 	-layerNames "met1 met2 met3 met4 met5"

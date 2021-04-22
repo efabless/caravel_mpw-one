@@ -18,7 +18,7 @@ source $script_dir/fixed_wrapper_cfgs.tcl
 
 set ::env(DESIGN_NAME) user_project_wrapper
 
-set ::env(CHECK_POWER_GRID) 0
+set ::env(FP_PDN_CHECK_NODES) 0
 
 
 set ::env(GLB_RT_OBS) "met1 0 0 $::env(DIE_AREA),\
