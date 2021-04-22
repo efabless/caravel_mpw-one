@@ -442,10 +442,10 @@ build-pdk: check-env $(PDK_ROOT)/open_pdks $(PDK_ROOT)/skywater-pdk
 manifest: mag/ maglef/ verilog/rtl/ scripts/ Makefile
 	touch manifest && \
 	find verilog/rtl/* -type f ! -name "caravel_netlists.v" ! -name "user_*.v" ! -name "README" ! -name "defines.v" -exec shasum {} \; > manifest && \
-	find maglef/*.mag -type f ! -name "user_project_wrapper.mag" -exec shasum {} \; >> manifest && \
-	shasum mag/caravel.mag mag/.magicrc >> manifest
+	# find maglef/*.mag -type f ! -name "user_project_wrapper.mag" -exec shasum {} \; >> manifest && \
+	# shasum mag/caravel.mag mag/.magicrc >> manifest
 	shasum scripts/set_user_id.py scripts/generate_fill.py scripts/compositor.py >> manifest
-	shasum lef/user_project_wrapper_empty.lef >> manifest
+	# shasum lef/user_project_wrapper_empty.lef >> manifest
 
 check-env:
 ifndef PDK_ROOT
