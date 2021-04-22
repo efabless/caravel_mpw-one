@@ -55,7 +55,7 @@ jobs:
           git remote add parent https://github.com/efabless/caravel
           git pull parent master
           git fetch --all --tags
-          git filter-repo --path openlane/user_project_wrapper_empty --path openlane/Makefile --path gds/user_project_wrapper_empty.gds.gz --path lef/user_project_wrapper.lef --path verilog/ --path info.yaml --path Makefile --path scripts/ --path utils/ --path LICENSE --path manifest --force
+          git filter-repo --path openlane/user_project_wrapper_empty --path openlane/Makefile --path gds/user_project_wrapper_empty.gds.gz --path verilog/ --path info.yaml --path Makefile --path scripts/ --path utils/ --path LICENSE --path manifest --force
           git remote add caravel_lite git@github.com:efabless/caravel-lite.git
           git push --force caravel_lite main
           git push --tags caravel_lite main
