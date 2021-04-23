@@ -18,8 +18,9 @@ module mprj_ctrl_wb #(
     parameter BASE_ADR  = 32'h 2300_0000,
     parameter XFER      = 8'h 00,
     parameter PWRDATA   = 8'h 04,
-    parameter IODATA    = 8'h 08, // One word per 32 IOs
-    parameter IOCONFIG  = 8'h 20
+    parameter IRQDATA   = 8'h 08,
+    parameter IODATA    = 8'h 0c, // One word per 32 IOs
+    parameter IOCONFIG  = 8'h 24
 )(
     input wb_clk_i,
     input wb_rst_i,
@@ -52,7 +53,10 @@ module mprj_ctrl_wb #(
     output [`MPRJ_IO_PADS-1:0] mgmt_gpio_out,
 
     // Write data to power controls
-    output [`MPRJ_PWR_PADS-1:0] pwr_ctrl_out
+    output [`MPRJ_PWR_PADS-1:0] pwr_ctrl_out,
+
+    // Enable user project IRQ signals to management SoC
+    output [2:0] user_irq_ena
 );
     wire resetn;
     wire valid;
@@ -69,6 +73,7 @@ module mprj_ctrl_wb #(
         .BASE_ADR(BASE_ADR),
         .XFER(XFER),
 	.PWRDATA(PWRDATA),
+	.IRQDATA(IRQDATA),
 	.IODATA(IODATA),
         .IOCONFIG(IOCONFIG)
     ) mprj_ctrl (
@@ -91,7 +96,12 @@ module mprj_ctrl_wb #(
 	.flash_io3_oenb_state(flash_io3_oenb_state),
 	// .mgmt_gpio_io(mgmt_gpio_io)
 	.mgmt_gpio_in(mgmt_gpio_in),
-	.mgmt_gpio_out(mgmt_gpio_out)
+	.mgmt_gpio_out(mgmt_gpio_out),
+
+    	// Write data to power controls
+ 	.pwr_ctrl_out(pwr_ctrl_out),
+    	// Enable user project IRQ signals to management SoC
+	.user_irq_ena(user_irq_ena)
     );
 
 endmodule
@@ -100,8 +110,9 @@ module mprj_ctrl #(
     parameter BASE_ADR  = 32'h 2300_0000,
     parameter XFER      = 8'h 00,
     parameter PWRDATA   = 8'h 04,
-    parameter IODATA    = 8'h 08,
-    parameter IOCONFIG  = 8'h 20,
+    parameter IRQDATA   = 8'h 08,
+    parameter IODATA    = 8'h 0c,
+    parameter IOCONFIG  = 8'h 24,
     parameter IO_CTRL_BITS = 13
 )(
     input clk,
@@ -123,7 +134,9 @@ module mprj_ctrl #(
     output flash_io2_oenb_state,
     output flash_io3_oenb_state,
     input  [`MPRJ_IO_PADS-1:0] mgmt_gpio_in,
-    output [`MPRJ_IO_PADS-1:0] mgmt_gpio_out
+    output [`MPRJ_IO_PADS-1:0] mgmt_gpio_out,
+    output [`MPRJ_PWR_PADS-1:0] pwr_ctrl_out,
+    output [2:0] user_irq_ena
 );
 
 `define IDLE	2'b00
@@ -142,10 +155,12 @@ module mprj_ctrl #(
     reg  [`MPRJ_IO_PADS-1:0] mgmt_gpio_outr; 	 // I/O write data, 1 bit per gpio pad
     wire [`MPRJ_IO_PADS-1:0] mgmt_gpio_out;	 // I/O write data output when input disabled
     reg  [`MPRJ_PWR_PADS-1:0] pwr_ctrl_out;	 // Power write data, 1 bit per power pad
+    reg  [2:0] user_irq_ena;		 // Enable user to raise IRQs
     reg xfer_ctrl;			 // Transfer control (1 bit)
 
     wire [IO_WORDS-1:0] io_data_sel;	// wishbone selects
     wire pwr_data_sel;
+    wire irq_data_sel;
     wire xfer_sel;
     wire busy;
     wire selected;
@@ -180,6 +195,7 @@ module mprj_ctrl #(
 
     assign xfer_sel = (iomem_addr[7:0] == XFER);
     assign pwr_data_sel = (iomem_addr[7:0] == PWRDATA);
+    assign irq_data_sel = (iomem_addr[7:0] == IRQDATA);
 
     generate
         for (i=0; i<IO_WORDS; i=i+1) begin
@@ -195,7 +211,7 @@ module mprj_ctrl #(
 
     // Set selection and iomem_rdata_pre
 
-    assign selected = xfer_sel || pwr_data_sel || (|io_data_sel) || (|io_ctrl_sel);
+    assign selected = xfer_sel || pwr_data_sel || irq_data_sel || (|io_data_sel) || (|io_ctrl_sel);
 
     wire [31:0] io_data_arr[0:IO_WORDS-1];
     wire [31:0] io_ctrl_arr[0:`MPRJ_IO_PADS-1];
@@ -217,6 +233,8 @@ module mprj_ctrl #(
             iomem_rdata_pre = {31'b0, busy};
         end else if (pwr_data_sel) begin
             iomem_rdata_pre = {{(32-`MPRJ_PWR_PADS){1'b0}}, pwr_ctrl_out};
+        end else if (irq_data_sel) begin
+            iomem_rdata_pre = {29'b0, user_irq_ena};
         end else if (|io_data_sel) begin
             for (j=0; j<IO_WORDS; j=j+1) begin
                 if (io_data_sel[j]) begin
@@ -256,12 +274,15 @@ module mprj_ctrl #(
 	if (!resetn) begin
 	    xfer_ctrl <= 0;
             pwr_ctrl_out <= 0;
+	    user_irq_ena <= 0;
 	end else begin
 	    if (iomem_valid && !iomem_ready && iomem_addr[31:8] == BASE_ADR[31:8]) begin
 		if (xfer_sel) begin
 		    if (iomem_wstrb[0]) xfer_ctrl <= iomem_wdata[0];
 		end else if (pwr_data_sel) begin
                     if (iomem_wstrb[0]) pwr_ctrl_out <= iomem_wdata[`MPRJ_PWR_PADS-1:0];
+		end else if (irq_data_sel) begin
+                    if (iomem_wstrb[0]) user_irq_ena <= iomem_wdata[2:0];
 		end
 	    end else begin
 		xfer_ctrl <= 1'b0;	// Immediately self-resetting

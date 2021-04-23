@@ -54,7 +54,7 @@ module user_analog_project_wrapper #(
     // Logic Analyzer Signals
     input  [127:0] la_data_in,
     output [127:0] la_data_out,
-    input  [127:0] la_oen,
+    input  [127:0] la_oenb,
 
     /* GPIOs.  There are 27 GPIOs, on either side of the analog.
      * These have the following mapping to the GPIO padframe pins
