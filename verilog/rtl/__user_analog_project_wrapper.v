@@ -106,12 +106,12 @@ module user_analog_project_wrapper #(
      * high side should be connected to a 3.3-5.5V power supply.
      * The low side should be connected to ground.
      *
-     * clamp_high[10:0]   <--->  mprj_io[24:14]
-     * clamp_low[10:0]    <--->  mprj_io[24:14]
+     * clamp_high[2:0]   <--->  mprj_io[20:18]
+     * clamp_low[2:0]    <--->  mprj_io[20:18]
      *
      */
-    inout [`ANALOG_PADS-1:0] io_clamp_high,
-    inout [`ANALOG_PADS-1:0] io_clamp_low,
+    inout [2:0] io_clamp_high,
+    inout [2:0] io_clamp_low,
 
     // Independent clock (on independent integer divider)
     input   user_clock2

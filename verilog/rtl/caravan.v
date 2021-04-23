@@ -170,9 +170,9 @@ module caravan (
     wire [`MPRJ_IO_PADS-`ANALOG_PADS-10:0] user_gpio_analog;
     wire [`MPRJ_IO_PADS-`ANALOG_PADS-10:0] user_gpio_noesd;
 
-    // 11 power supply ESD clamps for user applications
-    wire [`ANALOG_PADS-1:0] user_clamp_high;
-    wire [`ANALOG_PADS-1:0] user_clamp_low;
+    // 3 power supply ESD clamps for user applications
+    wire [2:0] user_clamp_high;
+    wire [2:0] user_clamp_low;
 
     // 11 core connections to the analog pads
     wire [`ANALOG_PADS-1:0] user_analog;
