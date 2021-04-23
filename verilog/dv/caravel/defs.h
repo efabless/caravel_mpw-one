@@ -61,6 +61,8 @@ extern uint32_t flashio_worker_end;
 #define reg_la2_iena (*(volatile uint32_t*)0x25000028)
 #define reg_la3_iena (*(volatile uint32_t*)0x2500002c)
 
+#define reg_la_sample (*(volatile uint32_t*)0x25000030)
+
 // User Project Control (0x2300_0000)
 #define reg_mprj_xfer (*(volatile uint32_t*)0x26000000)
 #define reg_mprj_pwr  (*(volatile uint32_t*)0x26000004)

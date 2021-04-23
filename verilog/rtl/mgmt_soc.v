@@ -221,6 +221,7 @@ module mgmt_soc (
     parameter LA_IENA_1  = 8'h24;
     parameter LA_IENA_2  = 8'h28;
     parameter LA_IENA_3  = 8'h2c;
+    parameter LA_SAMPLE  = 8'h30;
     
     // System Control Registers
     parameter PWRGOOD       = 8'h00;
@@ -686,7 +687,8 @@ module mgmt_soc (
         .LA_IENA_0(LA_IENA_0),
         .LA_IENA_1(LA_IENA_1),
         .LA_IENA_2(LA_IENA_2),
-        .LA_IENA_3(LA_IENA_3)
+        .LA_IENA_3(LA_IENA_3),
+        .LA_SAMPLE(LA_SAMPLE)
     ) la (
         .wb_clk_i(wb_clk_i),
         .wb_rst_i(wb_rst_i),

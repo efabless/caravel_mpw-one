@@ -27,7 +27,8 @@ module la_wb # (
     parameter LA_IENA_0 = 8'h20,
     parameter LA_IENA_1 = 8'h24,
     parameter LA_IENA_2 = 8'h28,
-    parameter LA_IENA_3 = 8'h2c
+    parameter LA_IENA_3 = 8'h2c,
+    parameter LA_SAMPLE = 8'h30
 ) (
     input wb_clk_i,
     input wb_rst_i,
@@ -72,7 +73,8 @@ module la_wb # (
         .LA_IENA_0(LA_IENA_0),
         .LA_IENA_1(LA_IENA_1),
         .LA_IENA_2(LA_IENA_2),
-        .LA_IENA_3(LA_IENA_3)
+        .LA_IENA_3(LA_IENA_3),
+        .LA_SAMPLE(LA_SAMPLE)
     ) la_ctrl (
         .clk(wb_clk_i),
         .resetn(resetn),
@@ -103,7 +105,8 @@ module la #(
     parameter LA_IENA_0  = 8'h20,
     parameter LA_IENA_1  = 8'h24,
     parameter LA_IENA_2  = 8'h28,
-    parameter LA_IENA_3  = 8'h2c
+    parameter LA_IENA_3  = 8'h2c,
+    parameter LA_SAMPLE  = 8'h30
 ) (
     input clk,
     input resetn,
@@ -140,6 +143,12 @@ module la #(
     wire [3:0] la_data_sel;
     wire [3:0] la_oenb_sel;
     wire [3:0] la_iena_sel;
+    wire       la_sample_sel;
+
+    wire [31:0] la_sample_mask_0;
+    wire [31:0] la_sample_mask_1;
+    wire [31:0] la_sample_mask_2;
+    wire [31:0] la_sample_mask_3;
 
     assign la_data = {la_data_3, la_data_2, la_data_1, la_data_0};
     assign la_oenb = {la_oenb_3, la_oenb_2, la_oenb_1, la_oenb_0};
@@ -165,6 +174,12 @@ module la #(
         (iomem_addr[7:0] == LA_IENA_1),
         (iomem_addr[7:0] == LA_IENA_0)
     };
+
+    assign la_sample_sel = (iomem_addr[7:0] == LA_SAMPLE);
+    assign la_sample_mask_3 = (la_oenb_3 & la_iena_3);
+    assign la_sample_mask_2 = (la_oenb_2 & la_iena_2);
+    assign la_sample_mask_1 = (la_oenb_1 & la_iena_1);
+    assign la_sample_mask_0 = (la_oenb_0 & la_iena_0);
 
     always @(posedge clk) begin
         if (!resetn) begin
@@ -274,6 +289,13 @@ module la #(
                     if (iomem_wstrb[1]) la_iena_3[15: 8] <= iomem_wdata[15: 8];
                     if (iomem_wstrb[2]) la_iena_3[23:16] <= iomem_wdata[23:16];
                     if (iomem_wstrb[3]) la_iena_3[31:24] <= iomem_wdata[31:24];
+                end else if (la_sample_sel) begin
+		    /* Simultaneous data capture:   Sample all inputs	  */
+		    /* for which input is enabled and output is disabled. */
+                    la_data_0 <= la_data_in[31:0]   & la_sample_mask_0;
+                    la_data_1 <= la_data_in[63:32]  & la_sample_mask_1;
+                    la_data_2 <= la_data_in[95:64]  & la_sample_mask_2;
+                    la_data_3 <= la_data_in[127:96] & la_sample_mask_3;
                 end 
             end
         end
