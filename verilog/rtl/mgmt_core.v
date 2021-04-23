@@ -85,6 +85,7 @@ module mgmt_core (
     	output core_clk,
     	output user_clk,
     	output core_rstn,
+	input [2:0] user_irq,
 
 	// Metal programmed user ID / mask revision vector
 	input [31:0] mask_rev,
@@ -252,6 +253,8 @@ module mgmt_core (
 		.mprj_io_loader_clock(mprj_io_loader_clock),
 		.mprj_io_loader_data_1(mprj_io_loader_data_1),
 		.mprj_io_loader_data_2(mprj_io_loader_data_2),
+		// User project IRQ
+		.user_irq(user_irq),
 		// I/O data
 		.mgmt_in_data(mgmt_in_data),
 		.mgmt_out_data(mgmt_out_data),

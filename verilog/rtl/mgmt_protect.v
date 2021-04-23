@@ -52,6 +52,7 @@ module mgmt_protect (
     input [3:0]   mprj_sel_o_core,
     input [31:0]  mprj_adr_o_core,
     input [31:0]  mprj_dat_o_core,
+    input [2:0]	  user_irq_core,
 
     // All signal in/out directions are the reverse of the signal
     // names at the buffer intrface.
@@ -74,13 +75,14 @@ module mgmt_protect (
     output [3:0]  mprj_sel_o_user,
     output [31:0] mprj_adr_o_user,
     output [31:0] mprj_dat_o_user,
+    output [2:0]  user_irq,
     output	  user1_vcc_powergood,
     output	  user2_vcc_powergood,
     output	  user1_vdd_powergood,
     output	  user2_vdd_powergood
 );
 
-	wire [458:0] mprj_logic1;
+	wire [461:0] mprj_logic1;
 	wire	     mprj2_logic1;
 
 	wire mprj_vdd_logic1_h;
@@ -94,6 +96,7 @@ module mgmt_protect (
 	wire user2_vdd_powergood;
 
 	wire [127:0] la_data_in_mprj_bar;
+	wire [2:0] user_irq_bar;
 
         mprj_logic_high mprj_logic_high_inst (
 `ifdef USE_POWER_PINS
@@ -156,6 +159,31 @@ module mgmt_protect (
 `endif
 		.Y(la_data_in_mprj),
 		.A(la_data_in_mprj_bar)
+	);
+
+	// Protection, similar to the above, for the three user IRQ lines
+
+	sky130_fd_sc_hd__nand2_4 user_irq_gates [2:0] (
+`ifdef USE_POWER_PINS
+                .VPWR(vccd),
+                .VGND(vssd),
+                .VPB(vccd),
+                .VNB(vssd),
+`endif
+		.Y(user_irq_bar),
+		.A(user_irq_core),
+		.B(mprj_logic1[460:458])
+	);
+
+	sky130_fd_sc_hd__inv_8 user_irq_buffers [2:0] (
+`ifdef USE_POWER_PINS
+                .VPWR(vccd),
+                .VGND(vssd),
+                .VPB(vccd),
+                .VNB(vssd),
+`endif
+		.Y(user_irq),
+		.A(user_irq_bar)
 	);
 
 	// The remaining circuitry guards against the management
@@ -313,7 +341,7 @@ module mgmt_protect (
                 .VPB(vccd),
                 .VNB(vssd),
 `endif
-                .A(mprj_logic1[458]),
+                .A(mprj_logic1[461]),
                 .X(user1_vcc_powergood)
 	);
 

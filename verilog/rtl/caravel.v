@@ -266,6 +266,8 @@ module caravel (
     wire [127:0] la_data_out_user; // From MPRJ to CPU
     wire [127:0] la_oen_user;      // From CPU to MPRJ
     wire [127:0] la_oen_mprj;	   // From CPU to MPRJ
+    wire [2:0]   user_irq;	   // From MRPJ to CPU
+    wire [2:0]   user_irq_core;
 
     // WB MI A (User Project)
     wire mprj_cyc_o_core;
@@ -353,6 +355,8 @@ module caravel (
         	.core_clk(caravel_clk),
         	.user_clk(caravel_clk2),
         	.core_rstn(caravel_rstn),
+		// IRQ
+		.user_irq(user_irq),
 		// Logic Analyzer
 		.la_input(la_data_in_mprj),
 		.la_output(la_data_out_mprj),
@@ -430,6 +434,7 @@ module caravel (
 		.mprj_sel_o_core(mprj_sel_o_core),
 		.mprj_adr_o_core(mprj_adr_o_core),
 		.mprj_dat_o_core(mprj_dat_o_core),
+		.user_irq_core(user_irq_core),
 		.la_data_out_core(la_data_out_user),
 		.la_data_out_mprj(la_data_out_mprj),
 		.la_data_in_core(la_data_in_user),
@@ -447,6 +452,7 @@ module caravel (
 		.mprj_sel_o_user(mprj_sel_o_user),
 		.mprj_adr_o_user(mprj_adr_o_user),
 		.mprj_dat_o_user(mprj_dat_o_user),
+		.user_irq(user_irq),
 		.user1_vcc_powergood(mprj_vcc_pwrgood),
 		.user2_vcc_powergood(mprj2_vcc_pwrgood),
 		.user1_vdd_powergood(mprj_vdd_pwrgood),
@@ -491,7 +497,9 @@ module caravel (
     		.io_oeb(user_io_oeb),
 		.analog_io(user_analog_io),
 		// Independent clock
-		.user_clock2(mprj_clock2)
+		.user_clock2(mprj_clock2),
+		// IRQ
+		.user_irq(user_irq_core)
 	);
 
 	/*--------------------------------------*/

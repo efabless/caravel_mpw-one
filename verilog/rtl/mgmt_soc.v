@@ -88,6 +88,7 @@ module mgmt_soc (
 
     // IRQ
     input  irq_spi,		// IRQ from standalone SPI
+    input [2:0] user_irq,	// IRQ from user project
 
     // Flash memory control (SPI master)
     output flash_csb,
@@ -345,9 +346,11 @@ module mgmt_soc (
         irq[4] = irq_uart;
         irq[6] = irq_spi;
         irq[7] = irq_7;
+        irq[8] = irq_8;
         irq[9] = irq_spi_master;
         irq[10] = irq_counter_timer0;
         irq[11] = irq_counter_timer1;
+	irq[14:12] = user_irq;
     end
 
     // Assumption : no syscon module and wb_clk is the clock coming from the

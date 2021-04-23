@@ -114,6 +114,9 @@ module user_analog_project_wrapper #(
     inout [2:0] io_clamp_low,
 
     // Independent clock (on independent integer divider)
-    input   user_clock2
+    input   user_clock2,
+
+    // User maskable interrupt signals
+    output [2:0] user_irq
 );
 endmodule	// user_analog_project_wrapper

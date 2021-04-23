@@ -72,7 +72,10 @@ module user_project_wrapper #(
     inout [`MPRJ_IO_PADS-10:0] analog_io,
 
     // Independent clock (on independent integer divider)
-    input   user_clock2
+    input   user_clock2,
+
+    // User maskable interrupt signals
+    output [2:0] user_irq
 );
 
 // Dummy assignment so that we can take it through the openlane flow
