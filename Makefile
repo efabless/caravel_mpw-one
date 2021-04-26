@@ -180,6 +180,31 @@ xor-wrapper: uncompress
 		signoff/user_project_wrapper_xor/user_project_wrapper.xor.gds
 	@cat signoff/user_project_wrapper_xor/total.txt
 
+# verify that the wrapper was respected
+xor-analog-wrapper: uncompress
+### first erase the user's user_project_wrapper.gds
+	sh $(CARAVEL_ROOT)/utils/erase_box.sh gds/user_analog_project_wrapper.gds 0 0 2920 3520
+### do the same for the empty wrapper
+	sh $(CARAVEL_ROOT)/utils/erase_box.sh $(CARAVEL_ROOT)/gds/user_analog_project_wrapper_empty.gds 0 0 2920 3520
+	mkdir -p signoff/user_analog_project_wrapper_xor
+### XOR the two resulting layouts
+	sh $(CARAVEL_ROOT)/utils/xor.sh \
+		$(CARAVEL_ROOT)/gds/user_analog_project_wrapper_empty_erased.gds gds/user_analog_project_wrapper_erased.gds \
+		user_analog_project_wrapper user_analog_project_wrapper.xor.xml
+	sh $(CARAVEL_ROOT)/utils/xor.sh \
+		$(CARAVEL_ROOT)/gds/user_analog_project_wrapper_empty_erased.gds gds/user_analog_project_wrapper_erased.gds \
+		user_analog_project_wrapper gds/user_analog_project_wrapper.xor.gds > signoff/user_analog_project_wrapper_xor/xor.log 
+	rm $(CARAVEL_ROOT)/gds/user_analog_project_wrapper_empty_erased.gds gds/user_analog_project_wrapper_erased.gds
+	mv gds/user_analog_project_wrapper.xor.gds gds/user_analog_project_wrapper.xor.xml signoff/user_analog_project_wrapper_xor
+	python $(CARAVEL_ROOT)/utils/parse_klayout_xor_log.py \
+		-l signoff/user_analog_project_wrapper_xor/xor.log \
+		-o signoff/user_analog_project_wrapper_xor/total.txt
+### screenshot the result for convenience
+	sh $(CARAVEL_ROOT)/utils/scrotLayout.sh \
+		$(PDK_ROOT)/sky130A/libs.tech/klayout/sky130A.lyt \
+		signoff/user_analog_project_wrapper_xor/user_analog_project_wrapper.xor.gds
+	@cat signoff/user_analog_project_wrapper_xor/total.txt
+
 # LVS
 BLOCKS = $(shell cd openlane && find * -maxdepth 0 -type d)
 LVS_BLOCKS = $(foreach block, $(BLOCKS), lvs-$(block))
@@ -415,7 +440,7 @@ skywater-timing: check-env $(PDK_ROOT)/skywater-pdk
 		$(MAKE) timing
 ### OPEN_PDKS
 $(PDK_ROOT)/open_pdks:
-	git clone git://opencircuitdesign.com/open_pdks $(PDK_ROOT)/open_pdks
+	git clone https://github.com/RTimothyEdwards/open_pdks.git $(PDK_ROOT)/open_pdks
 
 .PHONY: open_pdks
 open_pdks: check-env $(PDK_ROOT)/open_pdks
