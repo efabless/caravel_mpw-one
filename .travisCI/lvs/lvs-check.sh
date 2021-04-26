@@ -31,7 +31,7 @@ fi
 echo "Running Full LVS:"
 for BLOCK in ${BLOCKS[*]}
 do
-        if [[ $BLOCK != DFFRAM ]] && [[ $BLOCK != user_analog_project_wrapper_empty]]; then
+        if [ $BLOCK != DFFRAM ] && [ $BLOCK != user_analog_project_wrapper_empty ]; then
                 echo "Running Full LVS on block $BLOCK:"
                 docker run -it -v $CARAVEL_PATH:$CARAVEL_PATH -e CARAVEL_PATH=$CARAVEL_PATH -v $PDK_ROOT:$PDK_ROOT -e PDK_ROOT=$PDK_ROOT -u $(id -u $USER):$(id -g $USER) $IMAGE_NAME  bash -c "cd $CARAVEL_PATH; make lvs-$BLOCK"
 
