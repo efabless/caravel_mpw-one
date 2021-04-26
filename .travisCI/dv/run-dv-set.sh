@@ -49,7 +49,7 @@ do
     cd $PATTERN;
     for x in RTL GL
     do
-        if [[ $x == GL && $PATTERN == caravan]] || [[ $x == GL && $PATTERN == qspi ]]
+        if [ $x == GL && $PATTERN == caravan] || [ $x == GL && $PATTERN == qspi ]
         then
             # do n't run GL sim on caravan and qspi since the gate-level netlsits are n't updated yet. 
             echo "Monitor: Test $PATTERN (RTL) Passed" >> $OUT_FILE
