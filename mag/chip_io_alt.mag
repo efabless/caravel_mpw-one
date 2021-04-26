@@ -9914,7 +9914,7 @@ use sky130_ef_io__com_bus_slice_10um  FILLER_598
 timestamp 1619135798
 transform 0 -1 39593 1 0 951000
 box 0 0 2000 39593
-use sky130_fd_io__analog_pad  user2_analog_pad[5] $PDKPATH/libs.ref/sky130_fd_io/mag
+use sky130_ef_io__analog_pad  user2_analog_pad\[5\] $PDKPATH/libs.ref/sky130_fd_io/maglef
 timestamp 1619135793
 transform 0 -1 40000 1 0 955106
 box 0 0 15000 40000
@@ -10046,7 +10046,7 @@ use sky130_ef_io__com_bus_slice_10um  FILLER_13
 timestamp 1619135798
 transform 1 0 72800 0 1 998007
 box 0 0 2000 39593
-use sky130_fd_io__analog_pad  user2_analog_pad[4]
+use sky130_ef_io__analog_pad  user2_analog_pad\[4\]
 timestamp 1619135793
 transform 1 0 77200 0 1 997600
 box 0 0 15000 40000
@@ -10102,7 +10102,7 @@ use sky130_ef_io__com_bus_slice_1um  FILLER_29
 timestamp 1619135798
 transform 1 0 127400 0 1 998007
 box 0 0 200 39593
-use sky130_fd_io__analog_pad  user2_analog_pad[3]
+use sky130_ef_io__analog_pad  user2_analog_pad\[3\]
 timestamp 1619135793
 transform 1 0 128600 0 1 997600
 box 0 0 15000 40000
@@ -10134,7 +10134,7 @@ use sky130_ef_io__com_bus_slice_20um  FILLER_37
 timestamp 1619135798
 transform 1 0 167600 0 1 998007
 box 0 0 4000 39593
-use sky130_fd_io__analog_pad  user2_analog_pad[2]
+use sky130_ef_io__analog_pad  user2_analog_pad\[2\]
 timestamp 1619135793
 transform 1 0 180000 0 1 997600
 box 0 0 15000 40000
@@ -10214,7 +10214,7 @@ use sky130_ef_io__com_bus_slice_10um  FILLER_52
 timestamp 1619135798
 transform 1 0 227000 0 1 998007
 box 0 0 2000 39593
-use sky130_fd_io__top_power_hvc_wpadv2  user2_analog_pad[1] $PDKPATH/libs.ref/sky130_fd_io/mag
+use sky130_fd_io__top_power_hvc_wpadv2  user2_analog_pad\[1\] $PDKPATH/libs.ref/sky130_fd_io/maglef
 timestamp 1619135793
 transform 1 0 231400 0 1 997600
 box 0 0 15000 40000
@@ -10274,7 +10274,7 @@ use sky130_ef_io__com_bus_slice_10um  FILLER_65
 timestamp 1619135798
 transform 1 0 278400 0 1 998007
 box 0 0 2000 39593
-use sky130_fd_io__top_power_hvc_wpadv2  user2_analog_pad[0]
+use sky130_fd_io__top_power_hvc_wpadv2  user2_analog_pad\[0\]
 timestamp 1619135793
 transform 1 0 283000 0 1 997600
 box 0 0 15000 40000
@@ -10498,7 +10498,7 @@ use sky130_ef_io__com_bus_slice_10um  FILLER_119
 timestamp 1619135798
 transform 1 0 469200 0 1 998007
 box 0 0 2000 39593
-use sky130_fd_io__analog_pad  user1_analog_pad[3]
+use sky130_ef_io__analog_pad  user1_analog_pad\[3\]
 timestamp 1619135793
 transform 1 0 473800 0 1 997600
 box 0 0 15000 40000
@@ -10554,7 +10554,7 @@ use sky130_ef_io__com_bus_slice_1um  FILLER_136
 timestamp 1619135798
 transform 1 0 524000 0 1 998007
 box 0 0 200 39593
-use sky130_fd_io__analog_pad  user1_analog_pad[2]
+use sky130_ef_io__analog_pad  user1_analog_pad\[2\]
 timestamp 1619135793
 transform 1 0 525200 0 1 997600
 box 0 0 15000 40000
@@ -10662,7 +10662,7 @@ use sky130_ef_io__com_bus_slice_10um  FILLER_159
 timestamp 1619135798
 transform 1 0 622600 0 1 998007
 box 0 0 2000 39593
-use sky130_fd_io__analog_pad  user1_analog_pad[1]
+use sky130_ef_io__analog_pad  user1_analog_pad\[1\]
 timestamp 1619135793
 transform 1 0 627000 0 1 997600
 box 0 0 15000 40000
@@ -10754,7 +10754,7 @@ use sky130_ef_io__com_bus_slice_1um  FILLER_176
 timestamp 1619135798
 transform 1 0 677400 0 1 998007
 box 0 0 200 39593
-use sky130_fd_io__analog_pad  user1_analog_pad[0]
+use sky130_ef_io__analog_pad  user1_analog_pad\[0\]
 timestamp 1619135793
 transform 0 1 677694 -1 0 966506
 box 0 0 15000 40000
