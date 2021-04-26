@@ -59,8 +59,8 @@ STD_CELL_LIBRARY ?= sky130_fd_sc_hd
 SPECIAL_VOLTAGE_LIBRARY ?= sky130_fd_sc_hvl
 IO_LIBRARY ?= sky130_fd_io
 PRIMITIVES_LIBRARY ?= sky130_fd_pr
-SKYWATER_COMMIT ?= db2e06709dc3d876aa6b74a5f3893fa5f1bc2a6e
-OPEN_PDKS_COMMIT ?= f788cea5d98d99a6cf3a7510a478e1de01a33b07
+SKYWATER_COMMIT ?= bb2f842ac8d1b750677ca25bc71fb312859edb82
+OPEN_PDKS_COMMIT ?= cdfec5e6a6a9869c1b234fb7e6ac69d0b6b451c9
 INSTALL_SRAM ?= disabled
 
 .DEFAULT_GOAL := ship
@@ -392,7 +392,7 @@ $(PDK_ROOT)/skywater-pdk:
 .PHONY: skywater-pdk
 skywater-pdk: check-env $(PDK_ROOT)/skywater-pdk
 	cd $(PDK_ROOT)/skywater-pdk && \
-		git checkout master && git pull && \
+		git checkout main && git pull && \
 		git checkout -qf $(SKYWATER_COMMIT)
 
 .PHONY: skywater-library
