@@ -119,4 +119,8 @@ module user_analog_project_wrapper #(
     // User maskable interrupt signals
     output [2:0] user_irq
 );
+
+// Dummy assignment so that we can take it through the openlane flow
+assign io_out = io_in;
+
 endmodule	// user_analog_project_wrapper

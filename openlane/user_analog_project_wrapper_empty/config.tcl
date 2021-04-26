@@ -16,7 +16,7 @@
 set script_dir [file dirname [file normalize [info script]]]
 source $script_dir/fixed_wrapper_cfgs.tcl
 
-set ::env(DESIGN_NAME) user_project_wrapper
+set ::env(DESIGN_NAME) user_analog_project_wrapper
 
 set ::env(FP_PDN_CHECK_NODES) 0
 
@@ -28,8 +28,8 @@ set ::env(GLB_RT_OBS) "met1 0 0 $::env(DIE_AREA),\
 					   met4 0 0 $::env(DIE_AREA),\
 					   met5 0 0 $::env(DIE_AREA)"
 
-set ::env(CLOCK_PORT) "user_clock2"
-set ::env(CLOCK_NET) "mprj.clk"
+set ::env(CLOCK_PORT) "wb_clk_i"
+set ::env(CLOCK_NET)  "wb_clk_i"
 
 set ::env(CLOCK_PERIOD) "10"
 
@@ -40,4 +40,4 @@ set ::env(MAGIC_WRITE_FULL_LEF) 1
 
 set ::env(VERILOG_FILES) "\
 	$script_dir/../../verilog/rtl/defines.v \
-	$script_dir/../../verilog/rtl/__user_project_wrapper.v"
+	$script_dir/../../verilog/rtl/__user_analog_project_wrapper.v"
