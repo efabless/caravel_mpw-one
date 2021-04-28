@@ -18,21 +18,32 @@
    # SPDX-License-Identifier: Apache-2.0
    -->
 
-Caravel Harness
-===============
+Table of contents
+=================
 
-|License| |Documentation Status| |Build Status|
+-  `Overview <#overview>`__
+-  `Caravel Architecture <#caravel-architecture>`__
+-  `Quick Start for User Projects  <#quick-start-for-user-projects>`__
 
-A template SoC for Google SKY130 free shuttles. It is still WIP. The
+   - `Digital User Project <#digital-user-project>`__
+   - `Analog User Project <#analog-user-project>`__
+
+-  `Required Directory Structure <#required-directory-structure>`__
+-  `Additional Material <#additional-material>`__
+
+Overview
+========
+
+Caravel is a template SoC for Google SKY130 free shuttles. The
 current SoC architecture is given below.
 
 .. raw:: html
 
    <p align="center">
-   <img src="/docs/source/_static/caravel_harness.png" width="75%" height="75%">
+   <img src="/docs/source/_static/caravel_harness.png" width="50%" height="50%">
    </p>
 
-Datasheet and detailed documentation exists `here <https://caravel-harness.readthedocs.io/>`__
+Datasheet and detailed documentation exist `here <https://caravel-harness.readthedocs.io/>`__
 
 .. include:: docs/source/getting-started.rst
 
