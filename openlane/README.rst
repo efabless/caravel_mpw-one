@@ -38,7 +38,27 @@
    # SPDX-License-Identifier: Apache-2.0
    -->
 
-.. _carave-with-openlane:
+.. raw:: html
+
+   <!---
+   # SPDX-FileCopyrightText: 2020 Efabless Corporation
+   #
+   # Licensed under the Apache License, Version 2.0 (the "License");
+   # you may not use this file except in compliance with the License.
+   # You may obtain a copy of the License at
+   #
+   #      http://www.apache.org/licenses/LICENSE-2.0
+   #
+   # Unless required by applicable law or agreed to in writing, software
+   # distributed under the License is distributed on an "AS IS" BASIS,
+   # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+   # See the License for the specific language governing permissions and
+   # limitations under the License.
+   #
+   # SPDX-License-Identifier: Apache-2.0
+   -->
+
+.. _caravel-with-openlane:
 
 Using OpenLANE to Harden Your Design
 ====================================
@@ -57,7 +77,7 @@ If you don't have openlane already, then you can get it from
 
 **NOTE:**
 
-      We are developing caravel using the latest openlane release v0.12. This will be continuously updated to the latest openlane tag until we reach a stable version of caravel. 
+      We are developing caravel using the latest openlane release v0.12. This will be continuously updated to the latest openlane tag until we reach a stable version of caravel.
 
 Then, you have two options:
 
@@ -73,7 +93,7 @@ Then, you have two options:
       need to create your design. You can find that
       `here <https://openlane.readthedocs.io/en/latest/>`__.
 
-Option 1: Inserting your design macro it into the wrapper
+Option 1: Inserting your design macro into the wrapper
 ----------------------------------------------------------
 
 This could be done by creating a directory for your design under the ``<your_user_project_root>/openlane/<my-design>`` and adding a configuration file for it under the same
