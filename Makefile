@@ -307,13 +307,14 @@ $(LVS_MAGLEF_BLOCKS): lvs-maglef-% : ./mag/%.mag ./verilog/gl/%.v
 		exit;" > ./mag/extract_$*.tcl
 	cd mag && export MAGTYPE=maglef; magic -noc -dnull extract_$*.tcl < /dev/null
 	mv ./mag/$*.spice ./spi/lvs
-	rm ./maglef/*.ext
-	mv -f ./mag/extract_$*.{tcl,log} ./maglef/tmp
+	rm ./mag/*.ext
+	mv -f ./mag/extract_$*.tcl ./maglef/tmp
+	mv -f ./mag/extract_$*.log ./maglef/tmp
 	####
 	mkdir -p ./spi/lvs/tmp
-	sh ./spi/lvs/run_lvs.sh ./spi/lvs/$*.spice ./verilog/gl/$*.v $*
+	sh $(CARAVEL_ROOT)/spi/lvs/run_lvs.sh ./spi/lvs/$*.spice ./verilog/gl/$*.v $*
 	@echo ""
-	python3 ./scripts/count_lvs.py -f ./verilog/gl/$*.v_comp.json | tee ./spi/lvs/tmp/$*.maglef.lvs.summary.log
+	python3 $(CARAVEL_ROOT)/scripts/count_lvs.py -f ./verilog/gl/$*.v_comp.json | tee ./spi/lvs/tmp/$*.maglef.lvs.summary.log
 	mv -f ./verilog/gl/*{.out,.json,.log} ./spi/lvs/tmp 2> /dev/null || true
 	@echo ""
 	@echo "LVS: ./spi/lvs/$*.spice vs. ./verilog/gl/$*.v"
@@ -326,7 +327,7 @@ DRC_BLOCKS = $(foreach block, $(BLOCKS), drc-$(block))
 $(DRC_BLOCKS): drc-% : ./gds/%.gds
 	echo "Running DRC on $*"
 	mkdir -p ./gds/tmp
-	cd gds && export DESIGN_IN_DRC=$* && export MAGTYPE=mag; magic -rcfile ${PDK_ROOT}/sky130A/libs.tech/magic/sky130A.magicrc -noc -dnull ../$(CARAVEL_ROOT)/gds/drc_on_gds.tcl < /dev/null
+	cd gds && export DESIGN_IN_DRC=$* && export MAGTYPE=mag; magic -rcfile ${PDK_ROOT}/sky130A/libs.tech/magic/sky130A.magicrc -noc -dnull $(CARAVEL_ROOT)/gds/drc_on_gds.tcl < /dev/null
 	@echo "DRC result: ./gds/tmp/$*.drc"
 
 # Antenna
@@ -335,7 +336,7 @@ ANTENNA_BLOCKS = $(foreach block, $(BLOCKS), antenna-$(block))
 $(ANTENNA_BLOCKS): antenna-% : ./gds/%.gds
 	echo "Running Antenna Checks on $*"
 	mkdir -p ./gds/tmp
-	cd gds && export DESIGN_IN_ANTENNA=$* && export MAGTYPE=mag; magic -rcfile ${PDK_ROOT}/sky130A/libs.tech/magic/sky130A.magicrc -noc -dnull ../$(CARAVEL_ROOT)/gds/antenna_on_gds.tcl < /dev/null 2>&1 | tee ./tmp/$*.antenna
+	cd gds && export DESIGN_IN_ANTENNA=$* && export MAGTYPE=mag; magic -rcfile ${PDK_ROOT}/sky130A/libs.tech/magic/sky130A.magicrc -noc -dnull $(CARAVEL_ROOT)/gds/antenna_on_gds.tcl < /dev/null 2>&1 | tee ./tmp/$*.antenna
 	mv -f ./gds/*.ext ./gds/tmp/
 	@echo "Antenna result: ./gds/tmp/$*.antenna"
 
