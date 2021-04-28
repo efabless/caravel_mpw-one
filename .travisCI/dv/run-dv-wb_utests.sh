@@ -27,7 +27,7 @@ case $ID in
   1)
     bash $TARGET_PATH/.travisCI/dv/run-dv-set.sh $PDK_PATH "${WB_UTESTS_PATTERNS_1[@]}" . wb_utests 1 $TARGET_PATH
     len=${#WB_UTESTS_PATTERNS_1[@]}
-    tot=$(( 2*(len) ))
+    tot=$(( len ))
     ;;
 
   *)
