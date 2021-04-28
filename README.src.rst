@@ -18,6 +18,11 @@
    # SPDX-License-Identifier: Apache-2.0
    -->
 
+Caravel Harness
+===============
+
+|License| |Documentation Status| |Build Status|
+
 Table of contents
 =================
 
