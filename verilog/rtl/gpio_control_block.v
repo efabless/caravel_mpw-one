@@ -67,10 +67,10 @@ module gpio_control_block #(
     `endif
 
     // Management Soc-facing signals
-    input  	 resetn,		// Global reset, locally propagated
-    output  	 resetn_out,
-    input  	 serial_clock,		// Global clock, locally propatated
-    input  	 serial_clock_out,
+    input  	     resetn,		// Global reset, locally propagated
+    output       resetn_out,
+    input  	     serial_clock,		// Global clock, locally propatated
+    output  	 serial_clock_out,
 
     output       mgmt_gpio_in,		// Management from pad (input only)
     input        mgmt_gpio_out,		// Management to pad (output only)
