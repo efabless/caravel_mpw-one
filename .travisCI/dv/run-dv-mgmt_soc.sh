@@ -37,7 +37,7 @@ case $ID in
   2)
     bash $TARGET_PATH/.travisCI/dv/run-dv-set.sh $PDK_PATH "${MGMT_SOC_PATTERNS_2[@]}" caravel mgmt_soc 2 $TARGET_PATH
     len=${#MGMT_SOC_PATTERNS_2[@]}
-    export TOTAL=16
+    export TOTAL=8
     ;;
 
   3)
@@ -55,7 +55,7 @@ case $ID in
   5)
     bash $TARGET_PATH/.travisCI/dv/run-dv-set.sh $PDK_PATH "${MGMT_SOC_PATTERNS_5[@]}" caravel mgmt_soc 5 $TARGET_PATH
     len=${#MGMT_SOC_PATTERNS_5[@]}
-    export TOTAL=3
+    export TOTAL=5
     ;;
 
   *)
