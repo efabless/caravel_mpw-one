@@ -54,12 +54,11 @@ tag.
 OpenLane
 --------
 
-Please stick to the
-`mpw-two-a <https://github.com/efabless/openlane/tree/mpw-two-a>`__ tag.
+It is advised to always grab the latest ` tag <https://github.com/efabless/openlane/tags>`__ of openlane. 
 
 .. code:: bash
 
-    git clone https://github.com/efabless/openlane.git -b mpw-two-a
+    git clone https://github.com/efabless/openlane.git -b <latest-tag>
 
 
 Caravel/Caravel-lite
