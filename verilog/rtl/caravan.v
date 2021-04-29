@@ -136,12 +136,6 @@ module caravan (
     wire gpio_outenb_core;
     wire gpio_inenb_core;
 
-    // User Project Control (pad-facing)
-    wire mprj_io_loader_resetn;
-    wire mprj_io_loader_clock;
-    wire mprj_io_loader_data_1;		/* user1 side serial loader */
-    wire mprj_io_loader_data_2;		/* user2 side serial loader */
-
     // 27 GPIO pads with full controls
     wire [`MPRJ_IO_PADS-`ANALOG_PADS-1:0] mprj_io_hldh_n;
     wire [`MPRJ_IO_PADS-`ANALOG_PADS-1:0] mprj_io_enh;
@@ -170,9 +164,9 @@ module caravan (
     wire [`MPRJ_IO_PADS-`ANALOG_PADS-10:0] user_gpio_analog;
     wire [`MPRJ_IO_PADS-`ANALOG_PADS-10:0] user_gpio_noesd;
 
-    // 11 power supply ESD clamps for user applications
-    wire [`ANALOG_PADS-1:0] user_clamp_high;
-    wire [`ANALOG_PADS-1:0] user_clamp_low;
+    // 3 power supply ESD clamps for user applications
+    wire [2:0] user_clamp_high;
+    wire [2:0] user_clamp_low;
 
     // 11 core connections to the analog pads
     wire [`ANALOG_PADS-1:0] user_analog;
@@ -180,9 +174,10 @@ module caravan (
     /* Padframe control signals */
     wire [`MPRJ_IO_PADS_1-`ANALOG_PADS_1-1:0] gpio_serial_link_1;
     wire [`MPRJ_IO_PADS_2-`ANALOG_PADS_2-1:0] gpio_serial_link_2;
-
-    wire mgmt_serial_clock;
-    wire mgmt_serial_resetn;
+    wire mprj_io_loader_resetn;
+    wire mprj_io_loader_clock;
+    wire mprj_io_loader_data_1;		/* user1 side serial loader */
+    wire mprj_io_loader_data_2;		/* user2 side serial loader */
 
     // User Project Control management I/O
     // There are two types of GPIO connections:
@@ -322,8 +317,13 @@ module caravan (
     wire [127:0] la_data_in_mprj;  // From MPRJ to CPU
     wire [127:0] la_data_out_mprj; // From CPU to MPRJ
     wire [127:0] la_data_out_user; // From MPRJ to CPU
-    wire [127:0] la_oen_user;      // From CPU to MPRJ
-    wire [127:0] la_oen_mprj;	   // From CPU to MPRJ
+    wire [127:0] la_oenb_user;     // From CPU to MPRJ
+    wire [127:0] la_oenb_mprj;	   // From CPU to MPRJ
+    wire [127:0] la_iena_mprj;     // From CPU only
+
+    wire [2:0]   user_irq;	   // From MPRJ to CPU
+    wire [2:0]   user_irq_core;
+    wire [2:0]   user_irq_ena;
 
     // WB MI A (User Project)
     wire mprj_cyc_o_core;
@@ -411,10 +411,14 @@ module caravan (
         	.core_clk(caravel_clk),
         	.user_clk(caravel_clk2),
         	.core_rstn(caravel_rstn),
+		// IRQ
+		.user_irq(user_irq),
+		.user_irq_ena(user_irq_ena),
 		// Logic Analyzer
 		.la_input(la_data_in_mprj),
 		.la_output(la_data_out_mprj),
-		.la_oen(la_oen_mprj),
+		.la_oenb(la_oenb_mprj),
+		.la_iena(la_iena_mprj),
 		// User Project IO Control
 		.mprj_vcc_pwrgood(mprj_vcc_pwrgood),
 		.mprj2_vcc_pwrgood(mprj2_vcc_pwrgood),
@@ -489,12 +493,15 @@ module caravan (
 		.mprj_sel_o_core(mprj_sel_o_core),
 		.mprj_adr_o_core(mprj_adr_o_core),
 		.mprj_dat_o_core(mprj_dat_o_core),
+		.user_irq_core(user_irq_core),
 		.la_data_out_core(la_data_out_user),
 		.la_data_out_mprj(la_data_out_mprj),
 		.la_data_in_core(la_data_in_user),
 		.la_data_in_mprj(la_data_in_mprj),
-		.la_oen_mprj(la_oen_mprj),
-		.la_oen_core(la_oen_user),
+		.la_oenb_mprj(la_oenb_mprj),
+		.la_oenb_core(la_oenb_user),
+		.la_iena_mprj(la_iena_mprj),
+		.user_irq_ena(user_irq_ena),
 
 		.user_clock(mprj_clock),
 		.user_clock2(mprj_clock2),
@@ -506,6 +513,7 @@ module caravan (
 		.mprj_sel_o_user(mprj_sel_o_user),
 		.mprj_adr_o_user(mprj_adr_o_user),
 		.mprj_dat_o_user(mprj_dat_o_user),
+		.user_irq(user_irq),
 		.user1_vcc_powergood(mprj_vcc_pwrgood),
 		.user2_vcc_powergood(mprj2_vcc_pwrgood),
 		.user1_vdd_powergood(mprj_vdd_pwrgood),
@@ -543,9 +551,10 @@ module caravan (
 		// Logic Analyzer
 		.la_data_in(la_data_in_user),
 		.la_data_out(la_data_out_user),
-		.la_oen(la_oen_user),
+		.la_oenb(la_oenb_user),
 		// IO Pads
 		.io_in (user_io_in),
+		.io_in_3v3 (user_io_in_3v3),
     		.io_out(user_io_out),
     		.io_oeb(user_io_oeb),
 		.gpio_analog(user_gpio_analog),
@@ -554,7 +563,9 @@ module caravan (
 		.io_clamp_low(user_clamp_low),
 		.io_analog(user_analog),
 		// Independent clock
-		.user_clock2(mprj_clock2)
+		.user_clock2(mprj_clock2),
+		// IRQ
+		.user_irq(user_irq_core)
 	);
 
 	/*--------------------------------------*/
@@ -570,6 +581,25 @@ module caravan (
     // shifts in the other direction.
     assign gpio_serial_link_2_shifted = {mprj_io_loader_data_2,
 					 gpio_serial_link_2[`MPRJ_IO_PADS_2-`ANALOG_PADS_2-1:1]};
+
+    // Propagating clock and reset to mitigate timing and fanout issues
+    wire [`MPRJ_IO_PADS_1-1:0] gpio_clock_1;
+    wire [`MPRJ_IO_PADS_2-1:0] gpio_clock_2;
+    wire [`MPRJ_IO_PADS_1-1:0] gpio_resetn_1;
+    wire [`MPRJ_IO_PADS_2-1:0] gpio_resetn_2;
+    wire [`MPRJ_IO_PADS_1-1:0] gpio_clock_1_shifted;
+    wire [`MPRJ_IO_PADS_2-1:0] gpio_clock_2_shifted;
+    wire [`MPRJ_IO_PADS_1-1:0] gpio_resetn_1_shifted;
+    wire [`MPRJ_IO_PADS_2-1:0] gpio_resetn_2_shifted;
+
+    assign gpio_clock_1_shifted = {gpio_clock_1[`MPRJ_IO_PADS_1-`ANALOG_PADS_1-2:0],
+				mprj_io_loader_clock};
+    assign gpio_clock_2_shifted = {mprj_io_loader_clock,
+				gpio_clock_2[`MPRJ_IO_PADS_2-`ANALOG_PADS_2-1:1]};
+    assign gpio_resetn_1_shifted = {gpio_resetn_1[`MPRJ_IO_PADS_1-`ANALOG_PADS_1-2:0],
+				mprj_io_loader_resetn};
+    assign gpio_resetn_2_shifted = {mprj_io_loader_resetn,
+				gpio_resetn_2[`MPRJ_IO_PADS_2-`ANALOG_PADS_2-1:1]};
 
     // Each control block sits next to an I/O pad in the user area.
     // It gets input through a serial chain from the previous control
@@ -599,8 +629,11 @@ module caravan (
 
     	// Management Soc-facing signals
 
-    	.resetn(mprj_io_loader_resetn),
-    	.serial_clock(mprj_io_loader_clock),
+	.resetn(gpio_resetn_1_shifted[1:0]),
+	.serial_clock(gpio_clock_1_shifted[1:0]),
+
+	.resetn_out(gpio_resetn_1[1:0]),
+	.serial_clock_out(gpio_clock_1[1:0]),
 
     	.mgmt_gpio_in(mgmt_io_in[1:0]),
 	.mgmt_gpio_out({sdo_out, jtag_out}),
@@ -645,8 +678,11 @@ module caravan (
 
     	// Management Soc-facing signals
 
-    	.resetn(mprj_io_loader_resetn),
-    	.serial_clock(mprj_io_loader_clock),
+	.resetn(gpio_resetn_1_shifted[(`MPRJ_IO_PADS_1-`ANALOG_PADS_1-1):2]),
+	.serial_clock(gpio_clock_1_shifted[(`MPRJ_IO_PADS_1-`ANALOG_PADS_1-1):2]),
+
+	.resetn_out(gpio_resetn_1[(`MPRJ_IO_PADS_1-`ANALOG_PADS_1-1):2]),
+	.serial_clock_out(gpio_clock_1[(`MPRJ_IO_PADS_1-`ANALOG_PADS_1-1):2]),
 
 	.mgmt_gpio_in(mgmt_io_in[`DIG1_TOP:2]),
 	.mgmt_gpio_out(mgmt_io_in[`DIG1_TOP:2]),
@@ -693,8 +729,11 @@ module caravan (
 
     	// Management Soc-facing signals
 
-    	.resetn(mprj_io_loader_resetn),
-    	.serial_clock(mprj_io_loader_clock),
+	.resetn(gpio_resetn_1_shifted[(`MPRJ_IO_PADS_2-`ANALOG_PADS_2-1):(`MPRJ_IO_PADS_2-`ANALOG_PADS_2-2)]),
+	.serial_clock(gpio_clock_1_shifted[(`MPRJ_IO_PADS_2-`ANALOG_PADS_2-1):(`MPRJ_IO_PADS_2-`ANALOG_PADS_2-2)]),
+
+	.resetn_out(gpio_resetn_1[(`MPRJ_IO_PADS_2-`ANALOG_PADS_2-1):(`MPRJ_IO_PADS_2-`ANALOG_PADS_2-2)]),
+	.serial_clock_out(gpio_clock_1[(`MPRJ_IO_PADS_2-`ANALOG_PADS_2-1):(`MPRJ_IO_PADS_2-`ANALOG_PADS_2-2)]),
 
     	.mgmt_gpio_in(mgmt_io_in[(`DIG2_TOP):(`DIG2_TOP-1)]),
    	.mgmt_gpio_out({gpio_flash_io3_out, gpio_flash_io2_out}),
@@ -739,8 +778,11 @@ module caravan (
 
     	// Management Soc-facing signals
 
-    	.resetn(mprj_io_loader_resetn),
-    	.serial_clock(mprj_io_loader_clock),
+	.resetn(gpio_resetn_1_shifted[(`MPRJ_IO_PADS_2-`ANALOG_PADS_2-3):0]),
+	.serial_clock(gpio_clock_1_shifted[(`MPRJ_IO_PADS_2-`ANALOG_PADS_2-3):0]),
+
+	.resetn_out(gpio_resetn_1[(`MPRJ_IO_PADS_2-`ANALOG_PADS_2-3):0]),
+	.serial_clock_out(gpio_clock_1[(`MPRJ_IO_PADS_2-`ANALOG_PADS_2-3):0]),
 
 	.mgmt_gpio_in(mgmt_io_in[(`DIG2_TOP-2):`DIG2_BOT]),
 	.mgmt_gpio_out(mgmt_io_in[(`DIG2_TOP-2):`DIG2_BOT]),

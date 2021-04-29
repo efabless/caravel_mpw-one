@@ -113,8 +113,9 @@ module chip_io_alt #(
 
 	// These are clamp connections for the clamps in the analog cells, if
 	// they are used for power supplies.
-	input [ANALOG_PADS_1+ANALOG_PADS_2-1:0] mprj_clamp_high,
-	input [ANALOG_PADS_1+ANALOG_PADS_2-1:0] mprj_clamp_low
+	// User side 1:  Connects to 
+	input [2:0] mprj_clamp_high,
+	input [2:0] mprj_clamp_low
 );
 
 	wire analog_a, analog_b;
@@ -248,28 +249,47 @@ module chip_io_alt #(
 `endif
     	);
 
-	// Instantiate analog pads in user area 1 using base hvc power pad
-    	sky130_fd_io__top_power_hvc_wpadv2 user1_analog_pad [ANALOG_PADS_1-1:0]  (
+	// Instantiate analog pads in user area 1 using the custom analog pad
+    	sky130_ef_io__analog_pad user1_analog_pad [ANALOG_PADS_1-2:0]  (
 		`USER1_ABUTMENT_PINS
 `ifdef TOP_ROUTING
 		.VDDIO(vddio)
 `endif
-		,`HVCLAMP_PINS(mprj_clamp_high[ANALOG_PADS_1-1:0],
-		   	      mprj_clamp_low[ANALOG_PADS_1-1:0]),
-		.P_PAD(mprj_io[`MPRJ_IO_PADS_1-1:`MPRJ_IO_PADS_1-ANALOG_PADS_1]),
-		.P_CORE(mprj_analog[ANALOG_PADS_1-1:0])
+		,.P_PAD(mprj_io[`MPRJ_IO_PADS_1-1:`MPRJ_IO_PADS_1-ANALOG_PADS_1+1]),
+		.P_CORE(mprj_analog[ANALOG_PADS_1-1:1])
     	);
 
-	// Instantiate analog pads in user area 2 using base hvc power pad
-    	sky130_fd_io__top_power_hvc_wpadv2 user2_analog_pad [ANALOG_PADS_2-1:0]  (
+	// Last analog pad is a power pad, to provide a clamp resource.
+    	sky130_fd_io__top_power_hvc_wpadv2 user1_analog_pad_with_clamp  (
 		`USER1_ABUTMENT_PINS
 `ifdef TOP_ROUTING
 		.VDDIO(vddio)
 `endif
-		,`HVCLAMP_PINS(mprj_clamp_high[ANALOG_PADS_2+ANALOG_PADS_1-1:ANALOG_PADS_1],
-		   	      mprj_clamp_low[ANALOG_PADS_2+ANALOG_PADS_1-1:ANALOG_PADS_1]),
-		.P_PAD(mprj_io[`MPRJ_IO_PADS_1+ANALOG_PADS_2-1:`MPRJ_IO_PADS_1]),
-		.P_CORE(mprj_analog[ANALOG_PADS_2+ANALOG_PADS_1-1:ANALOG_PADS_1])
+		,`HVCLAMP_PINS(mprj_clamp_high[0],
+		   	      mprj_clamp_low[0]),
+		.P_PAD(mprj_io[`MPRJ_IO_PADS_1-ANALOG_PADS_1]),
+		.P_CORE(mprj_analog[0])
+    	);
+
+	// Instantiate analog pads in user area 2 using the custom analog pad.
+    	sky130_ef_io__analog_pad user2_analog_pad [ANALOG_PADS_2-3:0]  (
+		`USER2_ABUTMENT_PINS
+`ifdef TOP_ROUTING
+		.VDDIO(vddio)
+`endif
+		,.P_PAD(mprj_io[`MPRJ_IO_PADS_1+ANALOG_PADS_2-1:`MPRJ_IO_PADS_1+2]),
+		.P_CORE(mprj_analog[ANALOG_PADS_2+ANALOG_PADS_1-1:ANALOG_PADS_1+2])
+    	);
+
+	// Last two analog pads are power pads, to provide clamp resources.
+    	sky130_fd_io__top_power_hvc_wpadv2 user2_analog_pad_with_clamp [1:0] (
+		`USER2_ABUTMENT_PINS
+`ifdef TOP_ROUTING
+		.VDDIO(vddio)
+`endif
+		,`HVCLAMP_PINS(mprj_clamp_high[2:1], mprj_clamp_low[2:1]),
+		.P_PAD(mprj_io[`MPRJ_IO_PADS_1+1:`MPRJ_IO_PADS_1]),
+		.P_CORE(mprj_analog[`ANALOG_PADS_1+1:ANALOG_PADS_1])
     	);
 
 	wire [2:0] dm_all =

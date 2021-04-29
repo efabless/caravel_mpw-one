@@ -53,7 +53,8 @@ module mgmt_core (
 	// LA signals
     	input  [127:0] la_input,           	// From User Project to cpu
     	output [127:0] la_output,          	// From CPU to User Project
-    	output [127:0] la_oen,              // LA output enable  
+    	output [127:0] la_oenb,                 // LA output enable  
+    	output [127:0] la_iena,                 // LA input enable  
 	// Housekeeping SPI
 	output sdo_out,
 	output sdo_outenb,
@@ -85,6 +86,8 @@ module mgmt_core (
     	output core_clk,
     	output user_clk,
     	output core_rstn,
+	input [2:0] user_irq,
+	output [2:0] user_irq_ena,
 
 	// Metal programmed user ID / mask revision vector
 	input [31:0] mask_rev,
@@ -242,7 +245,8 @@ module mgmt_core (
 		// Logic Analyzer
 		.la_input(la_input),
 		.la_output(la_output),
-		.la_oen(la_oen),
+		.la_oenb(la_oenb),
+		.la_iena(la_iena),
 		// User Project I/O Configuration
 		.mprj_vcc_pwrgood(mprj_vcc_pwrgood),
 		.mprj2_vcc_pwrgood(mprj2_vcc_pwrgood),
@@ -252,6 +256,9 @@ module mgmt_core (
 		.mprj_io_loader_clock(mprj_io_loader_clock),
 		.mprj_io_loader_data_1(mprj_io_loader_data_1),
 		.mprj_io_loader_data_2(mprj_io_loader_data_2),
+		// User project IRQ
+		.user_irq(user_irq),
+		.user_irq_ena(user_irq_ena),
 		// I/O data
 		.mgmt_in_data(mgmt_in_data),
 		.mgmt_out_data(mgmt_out_data),

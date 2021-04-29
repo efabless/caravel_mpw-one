@@ -24,14 +24,13 @@ Repositories and versions to use
 skywater-pdk
 ------------
 
-| Please stick to version ``v0.0.0-303-g3d7617a``
-| (commit hash: ``3d7617a1acb92ea883539bcf22a632d6361a5de4``)
+| Please stick to commit hash: ``bb2f842ac8d1b750677ca25bc71fb312859edb82`` |
 
-::
+.. code:: bash
 
     git clone https://github.com/google/skywater-pdk.git
     cd skywater-pdk
-    git checkout v0.0.0-303-g3d7617a
+    git checkout -qf bb2f842ac8d1b750677ca25bc71fb312859edb82
     git submodule update --init libraries/sky130_fd_sc_hd/latest
     git submodule update --init libraries/sky130_fd_sc_hvl/latest
     git submodule update --init libraries/sky130_fd_sc_hs/latest
@@ -45,42 +44,32 @@ open\_pdks
 ----------
 
 Please stick to the
-`1.0.85 <https://github.com/RTimothyEdwards/open_pdks/tree/1.0.85>`__
+`1.0.150 <https://github.com/RTimothyEdwards/open_pdks/tree/1.0.150>`__
 tag.
 
-::
+.. code:: bash
 
-    git clone https://github.com/RTimothyEdwards/open_pdks.git -b 1.0.85
+    git clone https://github.com/RTimothyEdwards/open_pdks.git -b 1.0.150 
 
 OpenLane
 --------
 
-Please stick to the
-`mpw-one-b <https://github.com/efabless/openlane/tree/rc7>`__ tag.
+It is advised to always grab the latest `tag <https://github.com/efabless/openlane/tags>`__ of openlane. 
 
-::
+.. code:: bash
 
-    git clone https://github.com/efabless/openlane.git -b rc7
+    git clone https://github.com/efabless/openlane.git -b <latest-tag>
 
 
-| Also, note that running ``make`` inside the openlane directory will automatically grab the right versions of ``open_pdks`` and ``skywater-pdk`` as listed above and install them to PDK\_ROOT.
+Caravel/Caravel-lite
+--------------------
 
-| For example,
+Please stick to the ``mpw-two-b`` tag.
 
-::
+.. code:: bash
 
-    export PDK_ROOT=$HOME/pdks
-    cd openlane
-    make
-
-Caravel
--------
-
-Please stick to the ``mpw-one-b`` tag.
-
-::
-
-    git clone https://github.com/efabless/caravel.git -b mpw-one-b
+    git clone https://github.com/efabless/caravel.git -b mpw-two-b
+    git clone https://github.com/efabless/caravel-lite.git -b mpw-two-b
 
 Open\_mpw\_precheck
 -------------------
@@ -88,27 +77,27 @@ Open\_mpw\_precheck
 Please run the offline
 `precheck <https://github.com/efabless/open_mpw_precheck>`__:
 
-::
+.. code:: bash
 
     git clone https://github.com/efabless/open_mpw_precheck.git
+
 
 Notes
 -----
 
 -  | If you have already successfully hardened your blocks and have a clean
    |  ``user_project_wrapper``, you don't have to recreate it and can just reuse it.
-   |  No changes have been made to the user project area or to the tools that
+   | This is only if no changes have been made to the user project area or to the tools that
    |  require you to reharden your design(s).
 
--  | If you prefer to re-generate your blocks (using OpenLane), you can refer to
+-  | If you will use openlane to harden your blocks, you can refer to
    |  this `README <https://github.com/efabless/caravel/blob/master/openlane/README.rst>`__.
 
--  | **IMPORTANT**. Do not forget to run ``make uncompress -j4`` in the caravel root
+-  | **IMPORTANT**. Do not forget to run ``make uncompress -j4`` in your user project root
    |  directory before you start working. Likewise, before you commit and push your
    |  changes back, run ``make compress -j4``.
 
 -  | If you already have a clean working tree in a previously cloned repository from
    |  those listed above, what you need to do is:
    |  ``git pull   git checkout tag``
-
 

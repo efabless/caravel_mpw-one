@@ -18,7 +18,27 @@
    # SPDX-License-Identifier: Apache-2.0
    -->
 
-.. _carave-with-openlane:
+.. raw:: html
+
+   <!---
+   # SPDX-FileCopyrightText: 2020 Efabless Corporation
+   #
+   # Licensed under the Apache License, Version 2.0 (the "License");
+   # you may not use this file except in compliance with the License.
+   # You may obtain a copy of the License at
+   #
+   #      http://www.apache.org/licenses/LICENSE-2.0
+   #
+   # Unless required by applicable law or agreed to in writing, software
+   # distributed under the License is distributed on an "AS IS" BASIS,
+   # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+   # See the License for the specific language governing permissions and
+   # limitations under the License.
+   #
+   # SPDX-License-Identifier: Apache-2.0
+   -->
+
+.. _caravel-with-openlane:
 
 Using OpenLANE to Harden Your Design
 ====================================
@@ -33,54 +53,30 @@ But, first you need to specify 2 things:
     export OPENLANE_ROOT=<the absolute path to the openlane directory cloned or to be cloned>
 
 If you don't have openlane already, then you can get it from
-`here <https://github.com/efabless/openlane>`__. Alternatively, you can
-clone and build openlane through:
+`here <https://github.com/efabless/openlane>`__.
 
-.. code:: bash
+**NOTE:**
 
-        make openlane
-
-.. note::
-
-      We are developing caravel using efabless/openlane:rc7.
-
-.. note::
-
-      rc7 (current openlane master) and rc4 (previous openlane
-      master) are using two different concepts of cell padding. rc4 is
-      modifying the LEF, while rc7 is relying on openroad to handle the cell
-      padding. Also, rc4 is using the standalone version of openDP while rc7
-      is using the one integrated in the openroad app. This affects the
-      concept of PL\_TARGET\_DENSITY and while in rc4 it was preferred to have
-      PL\_TARGET\_DENSITY=(FP\_CORE\_UTIL-(5\~10)/100). Now, in rc7 it is
-      preferred to be PL\_TARGET\_DENSITY=(FP\_CORE\_UTIL+(1\~5)/100).
-      | FP\_CORE\_UTIL should be relaxed as well as it became more
-      representative of the actual core utilization, which wasn't so much the
-      case earlier. So, the perception of these two variables as well as
-      CELL\_PAD changed between rc4 and rc7 which necessitates a change in the
-      configurations of almost every single design.
-      | CELL\_PAD should be 4\~6 for the skywater libraries in rc7 unlike rc4
-      which was 8.
+      We are developing caravel using the latest openlane release v0.12. This will be continuously updated to the latest openlane tag until we reach a stable version of caravel. 
 
 Then, you have two options:
 
 #. Create a macro for your design and harden it, then insert it into
-   user\_project\_wrapper.
+   `user_project_wrapper`.
 
-#. Flatten your design with the user\_project\_wrapper and harden them
+#. Flatten your design with the `user_project_wrapper` and harden them
    as one.
 
-.. note::
+**NOTE:**
 
       The OpenLANE documentation should cover everything you might
       need to create your design. You can find that
       `here <https://openlane.readthedocs.io/en/latest/>`__.
 
-Option 1
---------
+Option 1: Inserting your design macro into the wrapper
+----------------------------------------------------------
 
-This could be done by creating a directory for your design here in this
-directory, and adding a configuration file for it under the same
+This could be done by creating a directory for your design under the ``<your_user_project_root>/openlane/<my-design>`` and adding a configuration file for it under the same
 directory. You can follow the instructions given
 `here <https://openlane.readthedocs.io/en/latest/#adding-a-design>`__ to
 generate an initial configuration file for your design, or you can start
@@ -101,10 +97,10 @@ with the following:
     set ::env(CLOCK_PORT) <Clock port name if it exists>
     set ::env(CLOCK_PERIOD) <Desired clock period>
 
-Then you can add them as you see fit to get the desired DRC/LVS clean
+Then you can add any other configurations as you see fit to get the desired DRC/LVS clean
 outcome.
 
-After that, run the following command:
+After that, run the following command from your ``<your_user_project_root>/openlane/``:
 
 .. code:: bash
 
@@ -112,19 +108,19 @@ After that, run the following command:
 
 Then, follow the instructions given in Option 2.
 
-.. note::
+**NOTE:**
 
       You might have other macros inside your design. In which case,
       you may need to have some special power configurations. This is covered
       `here <https://openlane.readthedocs.io/en/latest/docs/source/hardening_macros.html#power-grid-pdn>`__.
 
-Option 2
---------
+Option 2: Flattening your design with the wrapper
+------------------------------------------------
 
 #. Add your design to the RTL of the
-   `user\_project\_wrapper <https://github.com/efabless/caravel/blob/master/verilog/rtl/user_project_wrapper.v>`__.
+   `user_project_wrapper <https://github.com/efabless/caravel_user_project/blob/main/verilog/rtl/user_project_wrapper.v>`__.
 
-#. Modify the configuration file `here <https://github.com/efabless/caravel/blob/master/openlane/user_project_wrapper/config.tcl>`__ to include any extra
+#. Modify the configuration file `here <https://github.com/efabless/caravel_user_project/blob/main/openlane/user_project_wrapper/config.tcl>`__ to include any extra
    files you may need. Make sure to change these accordingly:
 
    .. code:: tcl
@@ -146,7 +142,7 @@ Option 2
 
 
 #. If your design has standard cells then you need to modify the
-   configuration file `here <https://github.com/efabless/caravel/blob/master/openlane/user_project_wrapper/config.tcl>`__ to
+   configuration file `here <https://github.com/efabless/caravel_user_project/blob/main/openlane/user_project_wrapper/config.tcl>`__ to
    remove or change these configs accordingly:
 
    .. code:: tcl
@@ -162,10 +158,10 @@ Option 2
 
 #. Remove this line
    ``set ::env(MACRO_PLACEMENT_CFG) $script_dir/macro.cfg`` from the
-   configuration file `here <https://github.com/efabless/caravel/blob/master/openlane/user_project_wrapper/config.tcl>`__
+   configuration file `here <https://github.com/efabless/caravel_user_project/blob/main/openlane/user_project_wrapper/config.tcl>`__
    entirely if you have no macros. Alternatively, if you do have macros
    inside your design, then control their placement by modifying `this
-   file <https://github.com/efabless/caravel/blob/master/openlane/user_project_wrapper/macro.cfg>`__
+   file <https://github.com/efabless/caravel_user_project/blob/main/openlane/user_project_wrapper/macro.cfg>`__
 
 #. Run your design through the flow: ``make user_project_wrapper``
 
@@ -175,16 +171,13 @@ Option 2
 
 #. Re-iterate until you have what you want.
 
-#. Go back to the main :ref:`getting-started` and continue the
-   process of boarding the chip.
-
-.. note::
+**NOTE:**
 
     In both cases you might have other macros inside your design.
     In which case, you may need to have some special power configurations.
     This is covered `here <https://openlane.readthedocs.io/en/latest/docs/source/hardening_macros.html#power-grid-pdn>`__.
 
-.. warning::
+**WARNING:**
 
     Don't change the size or the pin order!
 
@@ -211,4 +204,3 @@ Extra Pointers
    documentation <https://openlane.readthedocs.io/en/latest/docs/source/hardening_macros.html>`__
    walks you through hardening a macro and all the decisions you should
    make.
-

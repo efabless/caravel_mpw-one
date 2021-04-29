@@ -58,7 +58,7 @@ module user_project_wrapper #(
     // Logic Analyzer Signals
     input  [127:0] la_data_in,
     output [127:0] la_data_out,
-    input  [127:0] la_oen,
+    input  [127:0] la_oenb,
 
     // IOs
     input  [`MPRJ_IO_PADS-1:0] io_in,
@@ -72,7 +72,10 @@ module user_project_wrapper #(
     inout [`MPRJ_IO_PADS-10:0] analog_io,
 
     // Independent clock (on independent integer divider)
-    input   user_clock2
+    input   user_clock2,
+
+    // User maskable interrupt signals
+    output [2:0] user_irq
 );
 
 // Dummy assignment so that we can take it through the openlane flow

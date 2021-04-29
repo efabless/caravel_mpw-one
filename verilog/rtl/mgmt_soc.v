@@ -69,7 +69,8 @@ module mgmt_soc (
     // LA signals
     input  [127:0] la_input,           	// From User Project to cpu
     output [127:0] la_output,          	// From CPU to User Project
-    output [127:0] la_oen,              // LA output enable (active low) 
+    output [127:0] la_oenb,             // LA output enable (active low) 
+    output [127:0] la_iena,             // LA input enable (active high) 
 
     // User Project I/O Configuration (serial load)
     input  mprj_vcc_pwrgood,
@@ -88,6 +89,8 @@ module mgmt_soc (
 
     // IRQ
     input  irq_spi,		// IRQ from standalone SPI
+    input [2:0] user_irq,	// IRQ from user project
+    output [2:0] user_irq_ena,	// enable IRQ from user project
 
     // Flash memory control (SPI master)
     output flash_csb,
@@ -210,10 +213,15 @@ module mgmt_soc (
     parameter LA_DATA_1 = 8'h04;
     parameter LA_DATA_2 = 8'h08;
     parameter LA_DATA_3 = 8'h0c;
-    parameter LA_ENA_0  = 8'h10;
-    parameter LA_ENA_1  = 8'h14;
-    parameter LA_ENA_2  = 8'h18;
-    parameter LA_ENA_3  = 8'h1c;
+    parameter LA_OENB_0  = 8'h10;
+    parameter LA_OENB_1  = 8'h14;
+    parameter LA_OENB_2  = 8'h18;
+    parameter LA_OENB_3  = 8'h1c;
+    parameter LA_IENA_0  = 8'h20;
+    parameter LA_IENA_1  = 8'h24;
+    parameter LA_IENA_2  = 8'h28;
+    parameter LA_IENA_3  = 8'h2c;
+    parameter LA_SAMPLE  = 8'h30;
     
     // System Control Registers
     parameter PWRGOOD       = 8'h00;
@@ -345,9 +353,11 @@ module mgmt_soc (
         irq[4] = irq_uart;
         irq[6] = irq_spi;
         irq[7] = irq_7;
+        irq[8] = irq_8;
         irq[9] = irq_spi_master;
         irq[10] = irq_counter_timer0;
         irq[11] = irq_counter_timer1;
+	irq[14:12] = user_irq;
     end
 
     // Assumption : no syscon module and wb_clk is the clock coming from the
@@ -670,10 +680,15 @@ module mgmt_soc (
         .LA_DATA_0(LA_DATA_0),
         .LA_DATA_1(LA_DATA_1),
         .LA_DATA_3(LA_DATA_3),
-        .LA_ENA_0(LA_ENA_0),
-        .LA_ENA_1(LA_ENA_1),
-        .LA_ENA_2(LA_ENA_2),
-        .LA_ENA_3(LA_ENA_3)
+        .LA_OENB_0(LA_OENB_0),
+        .LA_OENB_1(LA_OENB_1),
+        .LA_OENB_2(LA_OENB_2),
+        .LA_OENB_3(LA_OENB_3),
+        .LA_IENA_0(LA_IENA_0),
+        .LA_IENA_1(LA_IENA_1),
+        .LA_IENA_2(LA_IENA_2),
+        .LA_IENA_3(LA_IENA_3),
+        .LA_SAMPLE(LA_SAMPLE)
     ) la (
         .wb_clk_i(wb_clk_i),
         .wb_rst_i(wb_rst_i),
@@ -690,7 +705,8 @@ module mgmt_soc (
 
         .la_data(la_output),
         .la_data_in(la_input),
-        .la_oen(la_oen)
+        .la_oenb(la_oenb),
+        .la_iena(la_iena)
     );
     
     // User project WB MI A port
@@ -752,7 +768,8 @@ module mgmt_soc (
 	.flash_io3_oenb_state(flash_io3_oenb_state),
 	.mgmt_gpio_out(mgmt_out_pre),
 	.mgmt_gpio_in(mgmt_in_data),
-	.pwr_ctrl_out(pwr_ctrl_out)
+	.pwr_ctrl_out(pwr_ctrl_out),
+	.user_irq_ena(user_irq_ena)
     );
 
     // Wishbone Slave RAM

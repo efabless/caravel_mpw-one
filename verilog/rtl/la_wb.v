@@ -20,10 +20,15 @@ module la_wb # (
     parameter LA_DATA_1 = 8'h04,
     parameter LA_DATA_2 = 8'h08,
     parameter LA_DATA_3 = 8'h0c,
-    parameter LA_ENA_0 = 8'h10,
-    parameter LA_ENA_1 = 8'h14,
-    parameter LA_ENA_2 = 8'h18,
-    parameter LA_ENA_3 = 8'h1c
+    parameter LA_OENB_0 = 8'h10,
+    parameter LA_OENB_1 = 8'h14,
+    parameter LA_OENB_2 = 8'h18,
+    parameter LA_OENB_3 = 8'h1c,
+    parameter LA_IENA_0 = 8'h20,
+    parameter LA_IENA_1 = 8'h24,
+    parameter LA_IENA_2 = 8'h28,
+    parameter LA_IENA_3 = 8'h2c,
+    parameter LA_SAMPLE = 8'h30
 ) (
     input wb_clk_i,
     input wb_rst_i,
@@ -40,7 +45,8 @@ module la_wb # (
 
     input  [127:0] la_data_in, // From MPRJ 
     output [127:0] la_data,
-    output [127:0] la_oen
+    output [127:0] la_oenb,
+    output [127:0] la_iena
 );
 
     wire resetn;
@@ -60,10 +66,15 @@ module la_wb # (
         .LA_DATA_1(LA_DATA_1),
         .LA_DATA_2(LA_DATA_2),
         .LA_DATA_3(LA_DATA_3),
-        .LA_ENA_0(LA_ENA_0),
-        .LA_ENA_1(LA_ENA_1),
-        .LA_ENA_2(LA_ENA_2),
-        .LA_ENA_3(LA_ENA_3)
+        .LA_OENB_0(LA_OENB_0),
+        .LA_OENB_1(LA_OENB_1),
+        .LA_OENB_2(LA_OENB_2),
+        .LA_OENB_3(LA_OENB_3),
+        .LA_IENA_0(LA_IENA_0),
+        .LA_IENA_1(LA_IENA_1),
+        .LA_IENA_2(LA_IENA_2),
+        .LA_IENA_3(LA_IENA_3),
+        .LA_SAMPLE(LA_SAMPLE)
     ) la_ctrl (
         .clk(wb_clk_i),
         .resetn(resetn),
@@ -75,7 +86,8 @@ module la_wb # (
         .iomem_ready(ready),
         .la_data_in(la_data_in),
         .la_data(la_data),
-        .la_oen(la_oen)
+        .la_oenb(la_oenb),
+        .la_iena(la_iena)
     );
     
 endmodule
@@ -86,10 +98,15 @@ module la #(
     parameter LA_DATA_1 = 8'h04,
     parameter LA_DATA_2 = 8'h08,
     parameter LA_DATA_3 = 8'h0c,
-    parameter LA_ENA_0  = 8'h10,
-    parameter LA_ENA_1  = 8'h14,
-    parameter LA_ENA_2  = 8'h18,
-    parameter LA_ENA_3  = 8'h1c
+    parameter LA_OENB_0  = 8'h10,
+    parameter LA_OENB_1  = 8'h14,
+    parameter LA_OENB_2  = 8'h18,
+    parameter LA_OENB_3  = 8'h1c,
+    parameter LA_IENA_0  = 8'h20,
+    parameter LA_IENA_1  = 8'h24,
+    parameter LA_IENA_2  = 8'h28,
+    parameter LA_IENA_3  = 8'h2c,
+    parameter LA_SAMPLE  = 8'h30
 ) (
     input clk,
     input resetn,
@@ -102,9 +119,10 @@ module la #(
     output reg [31:0] iomem_rdata,
     output reg iomem_ready,
 
-    input  [127:0] la_data_in, // From MPRJ 
-    output [127:0] la_data,    // To MPRJ
-    output [127:0] la_oen
+    input  [127:0] la_data_in, 	// From MPRJ 
+    output [127:0] la_data,    	// To MPRJ
+    output [127:0] la_oenb,
+    output [127:0] la_iena
 );
 
     reg [31:0] la_data_0;		
@@ -112,16 +130,29 @@ module la #(
     reg [31:0] la_data_2;		
     reg [31:0] la_data_3; 
 
-    reg [31:0] la_ena_0;		
-    reg [31:0] la_ena_1;		
-    reg [31:0] la_ena_2;		
-    reg [31:0] la_ena_3;    
+    reg [31:0] la_oenb_0;		
+    reg [31:0] la_oenb_1;		
+    reg [31:0] la_oenb_2;		
+    reg [31:0] la_oenb_3;    
+    
+    reg [31:0] la_iena_0;		
+    reg [31:0] la_iena_1;		
+    reg [31:0] la_iena_2;		
+    reg [31:0] la_iena_3;    
     
     wire [3:0] la_data_sel;
-    wire [3:0] la_ena_sel;
+    wire [3:0] la_oenb_sel;
+    wire [3:0] la_iena_sel;
+    wire       la_sample_sel;
+
+    wire [31:0] la_sample_mask_0;
+    wire [31:0] la_sample_mask_1;
+    wire [31:0] la_sample_mask_2;
+    wire [31:0] la_sample_mask_3;
 
     assign la_data = {la_data_3, la_data_2, la_data_1, la_data_0};
-    assign la_oen  = {la_ena_3, la_ena_2, la_ena_1, la_ena_0};
+    assign la_oenb = {la_oenb_3, la_oenb_2, la_oenb_1, la_oenb_0};
+    assign la_iena = {la_iena_3, la_iena_2, la_iena_1, la_iena_0};
 
     assign la_data_sel = {
         (iomem_addr[7:0] == LA_DATA_3),
@@ -130,13 +161,25 @@ module la #(
         (iomem_addr[7:0] == LA_DATA_0)
     };
 
-    assign la_ena_sel = {
-        (iomem_addr[7:0] == LA_ENA_3),
-        (iomem_addr[7:0] == LA_ENA_2),
-        (iomem_addr[7:0] == LA_ENA_1),
-        (iomem_addr[7:0] == LA_ENA_0)
+    assign la_oenb_sel = {
+        (iomem_addr[7:0] == LA_OENB_3),
+        (iomem_addr[7:0] == LA_OENB_2),
+        (iomem_addr[7:0] == LA_OENB_1),
+        (iomem_addr[7:0] == LA_OENB_0)
     };
 
+    assign la_iena_sel = {
+        (iomem_addr[7:0] == LA_IENA_3),
+        (iomem_addr[7:0] == LA_IENA_2),
+        (iomem_addr[7:0] == LA_IENA_1),
+        (iomem_addr[7:0] == LA_IENA_0)
+    };
+
+    assign la_sample_sel = (iomem_addr[7:0] == LA_SAMPLE);
+    assign la_sample_mask_3 = (la_oenb_3 & la_iena_3);
+    assign la_sample_mask_2 = (la_oenb_2 & la_iena_2);
+    assign la_sample_mask_1 = (la_oenb_1 & la_iena_1);
+    assign la_sample_mask_0 = (la_oenb_0 & la_iena_0);
 
     always @(posedge clk) begin
         if (!resetn) begin
@@ -144,17 +187,23 @@ module la #(
             la_data_1 <= 0;
             la_data_2 <= 0;
             la_data_3 <= 0;
-            la_ena_0  <= 32'hFFFF_FFFF;  // default is tri-state buff disabled
-            la_ena_1  <= 32'hFFFF_FFFF;
-            la_ena_2  <= 32'hFFFF_FFFF;
-            la_ena_3  <= 32'hFFFF_FFFF;
+            la_oenb_0  <= 32'hFFFF_FFFF;  // default is tri-state buff disabled
+            la_oenb_1  <= 32'hFFFF_FFFF;
+            la_oenb_2  <= 32'hFFFF_FFFF;
+            la_oenb_3  <= 32'hFFFF_FFFF;
+            la_iena_0  <= 32'h0000_0000;  // default is grounded input
+            la_iena_1  <= 32'h0000_0000;
+            la_iena_2  <= 32'h0000_0000;
+            la_iena_3  <= 32'h0000_0000;
         end else begin
             iomem_ready <= 0;
             if (iomem_valid && !iomem_ready && iomem_addr[31:8] == BASE_ADR[31:8]) begin
                 iomem_ready <= 1'b 1;
+
+		/* NOTE:  Data in and out are independent channels */
                 
                 if (la_data_sel[0]) begin
-                    iomem_rdata <= la_data_0 | (la_data_in[31:0] & la_ena_0);
+                    iomem_rdata <= la_data_in[31:0];
 
                     if (iomem_wstrb[0]) la_data_0[ 7: 0] <= iomem_wdata[ 7: 0];
                     if (iomem_wstrb[1]) la_data_0[15: 8] <= iomem_wdata[15: 8];
@@ -162,7 +211,7 @@ module la #(
                     if (iomem_wstrb[3]) la_data_0[31:24] <= iomem_wdata[31:24];
 
                 end else if (la_data_sel[1]) begin
-                    iomem_rdata <= la_data_1 | (la_data_in[63:32] & la_ena_1);
+                    iomem_rdata <= la_data_in[63:32];
 
                     if (iomem_wstrb[0]) la_data_1[ 7: 0] <= iomem_wdata[ 7: 0];
                     if (iomem_wstrb[1]) la_data_1[15: 8] <= iomem_wdata[15: 8];
@@ -170,7 +219,7 @@ module la #(
                     if (iomem_wstrb[3]) la_data_1[31:24] <= iomem_wdata[31:24];
 
                 end else if (la_data_sel[2]) begin
-                    iomem_rdata <= la_data_2 | (la_data_in[95:64] & la_ena_2);
+                    iomem_rdata <= la_data_in[95:64];
 
                     if (iomem_wstrb[0]) la_data_2[ 7: 0] <= iomem_wdata[ 7: 0];
                     if (iomem_wstrb[1]) la_data_2[15: 8] <= iomem_wdata[15: 8];
@@ -178,40 +227,75 @@ module la #(
                     if (iomem_wstrb[3]) la_data_2[31:24] <= iomem_wdata[31:24];
 
                 end else if (la_data_sel[3]) begin
-                    iomem_rdata <= la_data_3 | (la_data_in[127:96] & la_ena_3);
+                    iomem_rdata <= la_data_in[127:96];
 
                     if (iomem_wstrb[0]) la_data_3[ 7: 0] <= iomem_wdata[ 7: 0];
                     if (iomem_wstrb[1]) la_data_3[15: 8] <= iomem_wdata[15: 8];
                     if (iomem_wstrb[2]) la_data_3[23:16] <= iomem_wdata[23:16];
                     if (iomem_wstrb[3]) la_data_3[31:24] <= iomem_wdata[31:24];
-                end else if (la_ena_sel[0]) begin
-                    iomem_rdata <= la_ena_0;
+                end else if (la_oenb_sel[0]) begin
+                    iomem_rdata <= la_oenb_0;
 
-                    if (iomem_wstrb[0]) la_ena_0[ 7: 0] <= iomem_wdata[ 7: 0];
-                    if (iomem_wstrb[1]) la_ena_0[15: 8] <= iomem_wdata[15: 8];
-                    if (iomem_wstrb[2]) la_ena_0[23:16] <= iomem_wdata[23:16];
-                    if (iomem_wstrb[3]) la_ena_0[31:24] <= iomem_wdata[31:24];
-                end else if (la_ena_sel[1]) begin
-                    iomem_rdata <= la_ena_1;
+                    if (iomem_wstrb[0]) la_oenb_0[ 7: 0] <= iomem_wdata[ 7: 0];
+                    if (iomem_wstrb[1]) la_oenb_0[15: 8] <= iomem_wdata[15: 8];
+                    if (iomem_wstrb[2]) la_oenb_0[23:16] <= iomem_wdata[23:16];
+                    if (iomem_wstrb[3]) la_oenb_0[31:24] <= iomem_wdata[31:24];
+                end else if (la_oenb_sel[1]) begin
+                    iomem_rdata <= la_oenb_1;
 
-                    if (iomem_wstrb[0]) la_ena_1[ 7: 0] <= iomem_wdata[ 7: 0];
-                    if (iomem_wstrb[1]) la_ena_1[15: 8] <= iomem_wdata[15: 8];
-                    if (iomem_wstrb[2]) la_ena_1[23:16] <= iomem_wdata[23:16];
-                    if (iomem_wstrb[3]) la_ena_1[31:24] <= iomem_wdata[31:24];
-                end else if (la_ena_sel[2]) begin
-                    iomem_rdata <= la_ena_2;
+                    if (iomem_wstrb[0]) la_oenb_1[ 7: 0] <= iomem_wdata[ 7: 0];
+                    if (iomem_wstrb[1]) la_oenb_1[15: 8] <= iomem_wdata[15: 8];
+                    if (iomem_wstrb[2]) la_oenb_1[23:16] <= iomem_wdata[23:16];
+                    if (iomem_wstrb[3]) la_oenb_1[31:24] <= iomem_wdata[31:24];
+                end else if (la_oenb_sel[2]) begin
+                    iomem_rdata <= la_oenb_2;
 
-                    if (iomem_wstrb[0]) la_ena_2[ 7: 0] <= iomem_wdata[ 7: 0];
-                    if (iomem_wstrb[1]) la_ena_2[15: 8] <= iomem_wdata[15: 8];
-                    if (iomem_wstrb[2]) la_ena_2[23:16] <= iomem_wdata[23:16];
-                    if (iomem_wstrb[3]) la_ena_2[31:24] <= iomem_wdata[31:24];
-                end else if (la_ena_sel[3]) begin
-                    iomem_rdata <= la_ena_3;
+                    if (iomem_wstrb[0]) la_oenb_2[ 7: 0] <= iomem_wdata[ 7: 0];
+                    if (iomem_wstrb[1]) la_oenb_2[15: 8] <= iomem_wdata[15: 8];
+                    if (iomem_wstrb[2]) la_oenb_2[23:16] <= iomem_wdata[23:16];
+                    if (iomem_wstrb[3]) la_oenb_2[31:24] <= iomem_wdata[31:24];
+                end else if (la_oenb_sel[3]) begin
+                    iomem_rdata <= la_oenb_3;
 
-                    if (iomem_wstrb[0]) la_ena_3[ 7: 0] <= iomem_wdata[ 7: 0];
-                    if (iomem_wstrb[1]) la_ena_3[15: 8] <= iomem_wdata[15: 8];
-                    if (iomem_wstrb[2]) la_ena_3[23:16] <= iomem_wdata[23:16];
-                    if (iomem_wstrb[3]) la_ena_3[31:24] <= iomem_wdata[31:24];
+                    if (iomem_wstrb[0]) la_oenb_3[ 7: 0] <= iomem_wdata[ 7: 0];
+                    if (iomem_wstrb[1]) la_oenb_3[15: 8] <= iomem_wdata[15: 8];
+                    if (iomem_wstrb[2]) la_oenb_3[23:16] <= iomem_wdata[23:16];
+                    if (iomem_wstrb[3]) la_oenb_3[31:24] <= iomem_wdata[31:24];
+                end else if (la_iena_sel[0]) begin
+                    iomem_rdata <= la_iena_0;
+
+                    if (iomem_wstrb[0]) la_iena_0[ 7: 0] <= iomem_wdata[ 7: 0];
+                    if (iomem_wstrb[1]) la_iena_0[15: 8] <= iomem_wdata[15: 8];
+                    if (iomem_wstrb[2]) la_iena_0[23:16] <= iomem_wdata[23:16];
+                    if (iomem_wstrb[3]) la_iena_0[31:24] <= iomem_wdata[31:24];
+                end else if (la_iena_sel[1]) begin
+                    iomem_rdata <= la_iena_1;
+
+                    if (iomem_wstrb[0]) la_iena_1[ 7: 0] <= iomem_wdata[ 7: 0];
+                    if (iomem_wstrb[1]) la_iena_1[15: 8] <= iomem_wdata[15: 8];
+                    if (iomem_wstrb[2]) la_iena_1[23:16] <= iomem_wdata[23:16];
+                    if (iomem_wstrb[3]) la_iena_1[31:24] <= iomem_wdata[31:24];
+                end else if (la_iena_sel[2]) begin
+                    iomem_rdata <= la_iena_2;
+
+                    if (iomem_wstrb[0]) la_iena_2[ 7: 0] <= iomem_wdata[ 7: 0];
+                    if (iomem_wstrb[1]) la_iena_2[15: 8] <= iomem_wdata[15: 8];
+                    if (iomem_wstrb[2]) la_iena_2[23:16] <= iomem_wdata[23:16];
+                    if (iomem_wstrb[3]) la_iena_2[31:24] <= iomem_wdata[31:24];
+                end else if (la_iena_sel[3]) begin
+                    iomem_rdata <= la_iena_3;
+
+                    if (iomem_wstrb[0]) la_iena_3[ 7: 0] <= iomem_wdata[ 7: 0];
+                    if (iomem_wstrb[1]) la_iena_3[15: 8] <= iomem_wdata[15: 8];
+                    if (iomem_wstrb[2]) la_iena_3[23:16] <= iomem_wdata[23:16];
+                    if (iomem_wstrb[3]) la_iena_3[31:24] <= iomem_wdata[31:24];
+                end else if (la_sample_sel) begin
+		    /* Simultaneous data capture:   Sample all inputs	  */
+		    /* for which input is enabled and output is disabled. */
+                    la_data_0 <= la_data_in[31:0]   & la_sample_mask_0;
+                    la_data_1 <= la_data_in[63:32]  & la_sample_mask_1;
+                    la_data_2 <= la_data_in[95:64]  & la_sample_mask_2;
+                    la_data_3 <= la_data_in[127:96] & la_sample_mask_3;
                 end 
             end
         end

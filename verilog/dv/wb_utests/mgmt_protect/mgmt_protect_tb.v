@@ -57,11 +57,12 @@ module mgmt_protect_tb;
 
     wire [127:0] la_data_in_mprj;
     reg  [127:0] la_data_out_mprj;
-    reg  [127:0] la_oen_mprj;
+    reg  [127:0] la_oenb_mprj;
+    reg  [127:0] la_iena_mprj;
 
     reg  [127:0] la_data_out_core;
     wire [127:0] la_data_in_core;
-    wire [127:0] la_oen_core;
+    wire [127:0] la_oenb_core;
 
     wire 	  user_clock;
     wire 	  user_clock2;
@@ -94,7 +95,7 @@ module mgmt_protect_tb;
         mprj_sel_o_core = 0;
 
         la_data_out_mprj = 0;
-        la_oen_mprj      = 0;
+        la_oenb_mprj      = 0;
         la_data_out_core = 0;
     end
 
@@ -163,10 +164,11 @@ module mgmt_protect_tb;
         mprj_sel_o_core = 4'b1010;
         mprj_adr_o_core = 32'hF0F0;
         mprj_dat_o_core = 32'h0F0F;
-        la_data_out_mprj = 128'hF0F0_F0F0_F0F0_F0F0;
-        la_oen_mprj = 128'h0F0F_0F0F_0F0F_0F0F;
+        la_data_out_mprj = 128'hFFFF_FFFF_FFFF_FFFF;
+        la_oenb_mprj = 128'h0000_0000_0000_0000;
         la_data_out_core = 128'h0F0F_FFFF_F0F0_FFFF;
-                
+        la_iena_mprj  = 128'hFFFF_FFFF_FFFF_FFFF;
+
         wait(user1_vdd_powergood === 1'b1);
         wait(user2_vdd_powergood === 1'b1);
         wait(user1_vcc_powergood === 1'b1);
@@ -195,12 +197,13 @@ module mgmt_protect_tb;
             $display("Monitor: Error on mprj_adr_o_user. "); $finish;
         end
         if (la_data_in_core !== la_data_out_mprj) begin 
+            $display("%0h", la_data_in_core);
             $display("Monitor: Error on la_data_in_core. "); $finish;
         end
-        if (la_oen_core !== la_oen_mprj) begin 
-            $display("Monitor: Error on la_oen_core. "); $finish;
+        if (la_oenb_core !== la_oenb_mprj) begin 
+            $display("Monitor: Error on la_oenb_core. "); $finish;
         end
-         if (la_data_in_mprj !== la_data_out_core) begin 
+        if (la_data_in_mprj !== la_data_out_core) begin 
             $display("%0h , %0h", la_data_in_mprj, la_data_out_core);
             $display("Monitor: Error on la_data_in_mprj. "); $finish;
         end
@@ -235,12 +238,13 @@ module mgmt_protect_tb;
 		.mprj_dat_o_core(mprj_dat_o_core),
 
 		.la_data_out_core(la_data_out_core),
-		.la_data_out_mprj(la_data_out_mprj),
 		.la_data_in_core (la_data_in_core),
-		
+		.la_oenb_core(la_oenb_core),
+
         .la_data_in_mprj(la_data_in_mprj),
-		.la_oen_mprj(la_oen_mprj),
-		.la_oen_core(la_oen_core),
+    	.la_data_out_mprj(la_data_out_mprj),
+    	.la_oenb_mprj(la_oenb_mprj),
+        .la_iena_mprj(la_iena_mprj),
 
 		.user_clock (user_clock),
 		.user_clock2(user_clock2),
