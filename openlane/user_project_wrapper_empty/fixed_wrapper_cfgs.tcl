@@ -55,9 +55,6 @@ set ::env(FP_PDN_HPITCH) $::env(FP_PDN_VPITCH)
 set ::env(FP_PDN_VSPACING) [expr 5*$::env(FP_PDN_CORE_RING_VWIDTH)]
 set ::env(FP_PDN_HSPACING) [expr 5*$::env(FP_PDN_CORE_RING_HWIDTH)]
 
-set ::env(FP_HORIZONTAL_HALO) 10
-set ::env(FP_VERTICAL_HALO) $::env(FP_HORIZONTAL_HALO)
-
 set ::env(VDD_NETS) [list {vccd1} {vccd2} {vdda1} {vdda2}]
 set ::env(GND_NETS) [list {vssd1} {vssd2} {vssa1} {vssa2}]
 set ::env(SYNTH_USE_PG_PINS_DEFINES) "USE_POWER_PINS"

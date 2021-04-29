@@ -29,9 +29,9 @@ remove_components -input $::env(CURRENT_DEF)
 
 place_io_ol
 
-apply_route_obs
+# apply_route_obs
 
-run_power_grid_generation
+# run_power_grid_generation
 
 run_magic
 
@@ -42,15 +42,15 @@ save_views       -lef_path $::env(magic_result_file_tag).lef \
                  -save_path $save_path \
                  -tag $::env(RUN_TAG)
 
-# produce "obstructed" LEF to be used for routing
-set gap 0.4
-set llx [expr [lindex $::env(DIE_AREA) 0]-$gap]
-set lly [expr [lindex $::env(DIE_AREA) 1]-$gap]
-set urx [expr [lindex $::env(DIE_AREA) 2]+$gap]
-set ury [expr [lindex $::env(DIE_AREA) 3]+$gap]
-exec python3 $::env(OPENLANE_ROOT)/scripts/rectify.py $llx $lly $urx $ury \
-	< $::env(magic_result_file_tag).lef \
-	| python3 $::env(OPENLANE_ROOT)/scripts/obs.py {*}$::env(DIE_AREA) li1 met1 met2 met3 \
-	| python3 $::env(OPENLANE_ROOT)/scripts/obs.py -42.88 -37.53 2962.50 3557.21 met4 met5 \
-	> $::env(magic_result_file_tag).obstructed.lef
-file copy -force $::env(magic_result_file_tag).obstructed.lef $save_path/lef
+# # produce "obstructed" LEF to be used for routing
+# set gap 0.4
+# set llx [expr [lindex $::env(DIE_AREA) 0]-$gap]
+# set lly [expr [lindex $::env(DIE_AREA) 1]-$gap]
+# set urx [expr [lindex $::env(DIE_AREA) 2]+$gap]
+# set ury [expr [lindex $::env(DIE_AREA) 3]+$gap]
+# exec python3 $::env(OPENLANE_ROOT)/scripts/rectify.py $llx $lly $urx $ury \
+# 	< $::env(magic_result_file_tag).lef \
+# 	| python3 $::env(OPENLANE_ROOT)/scripts/obs.py {*}$::env(DIE_AREA) li1 met1 met2 met3 \
+# 	| python3 $::env(OPENLANE_ROOT)/scripts/obs.py -42.88 -37.53 2962.50 3557.21 met4 met5 \
+# 	> $::env(magic_result_file_tag).obstructed.lef
+# file copy -force $::env(magic_result_file_tag).obstructed.lef $save_path/lef

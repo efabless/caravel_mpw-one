@@ -20,8 +20,6 @@ set ::env(DESIGN_NAME) user_analog_project_wrapper
 
 set ::env(FP_PDN_CHECK_NODES) 0
 
-set ::env(PDN_CFG) $script_dir/pdn.tcl
-
 set ::env(GLB_RT_OBS) "met1 0 0 $::env(DIE_AREA),\
 					   met2 0 0 $::env(DIE_AREA),\
 					   met3 0 0 $::env(DIE_AREA),\
