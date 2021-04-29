@@ -54,7 +54,7 @@ tag.
 OpenLane
 --------
 
-It is advised to always grab the latest ` tag <https://github.com/efabless/openlane/tags>`__ of openlane. 
+It is advised to always grab the latest `tag <https://github.com/efabless/openlane/tags>`__ of openlane. 
 
 .. code:: bash
 
@@ -87,10 +87,10 @@ Notes
 
 -  | If you have already successfully hardened your blocks and have a clean
    |  ``user_project_wrapper``, you don't have to recreate it and can just reuse it.
-   | This is if no changes have been made to the user project area or to the tools that
+   | This is only if no changes have been made to the user project area or to the tools that
    |  require you to reharden your design(s).
 
--  | If you prefer to re-generate your blocks (using OpenLane), you can refer to
+-  | If you will use openlane to harden your blocks, you can refer to
    |  this `README <https://github.com/efabless/caravel/blob/master/openlane/README.rst>`__.
 
 -  | **IMPORTANT**. Do not forget to run ``make uncompress -j4`` in your user project root

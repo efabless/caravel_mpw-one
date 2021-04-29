@@ -97,15 +97,7 @@ Digital user projects should adhere the following requirements:
 Analog User Project
 ------------------
 
-If you are building an analog project for the user space, check a sample project at `caravel_user_project_analog <https://github.com/efabless/caravel_user_project_analog>`__. 
-
-Analog user projects should adhere the following requirements: 
-
-- Top module is named ``user_project_analog_wrapper``
-
-- The ``user_project_analog_wrapper`` adheres to the magview of the empty analog wrapper `mag/user_analog_project_wrapper_empty.mag <mag/user_analog_project_wrapper_empty.mag>`__. 
-
-- The user project repository adheres to the `Required Directory Structure <#required-directory-structure>`__.
+> :construction: Under construction :construction:
 
 ------
 
