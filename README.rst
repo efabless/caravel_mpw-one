@@ -155,9 +155,7 @@ Analog user projects should adhere the following requirements:
 
 - Top module is named ``user_project_analog_wrapper``
 
-- The ``user_project_analog_wrapper`` adheres to the pin order defined at `Analog Wrapper Pin Order <https://github.com/efabless/caravel/blob/develop/openlane/user_analog_project_wrapper_empty/pin_order.cfg>`__.
-
-- The ``user_project_analog_wrapper`` adheres to the fixed design configurations at `Analog Wrapper Fixed Configuration <https://github.com/efabless/caravel/blob/master/openlane/user_project_wrapper_empty/fixed_wrapper_cfgs.tcl>`__.
+- The ``user_project_analog_wrapper`` adheres to the magview of the empty analog wrapper `mag/user_analog_project_wrapper_empty.mag <mag/user_analog_project_wrapper_empty.mag>`__.
 
 - The user project repository adheres to the `Required Directory Structure <#required-directory-structure>`__.
 
