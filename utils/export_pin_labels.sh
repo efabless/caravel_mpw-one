@@ -44,7 +44,7 @@ setlabel rotate 180
 ### Rotate Bottom Labels
 box $6um $7um $8um $9um
 select area
-setlabel rotate 180
+setlabel rotate 90
 ###
 save
 EOF
