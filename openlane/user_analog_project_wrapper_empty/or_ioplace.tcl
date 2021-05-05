@@ -180,22 +180,22 @@ foreach pin [lreverse $east_pins] {
 
 ## West Pins
 set west_pins { 
-    io_analog[10] gpio_analog[7] gpio_noesd[7]
+    io_analog[10]
     vccd2 vccd2_1
     vssa2 vssa2_1
-    gpio_analog[8]  gpio_noesd[8] io_in_3v3[14] io_in[14] io_out[14] io_oeb[14] 
-    gpio_analog[9]  gpio_noesd[9]  io_in_3v3[15] io_in[15] io_out[15] io_oeb[15] 
-    gpio_analog[10] gpio_noesd[10] io_in_3v3[16] io_in[16] io_out[16] io_oeb[16] 
-    gpio_analog[11] gpio_noesd[11] io_in_3v3[17] io_in[17] io_out[17] io_oeb[17] 
-    gpio_analog[12] gpio_noesd[12] io_in_3v3[18] io_in[18] io_out[18] io_oeb[18] 
-    gpio_analog[13] gpio_noesd[13] io_in_3v3[19] io_in[19] io_out[19] io_oeb[19] 
-    gpio_analog[14] gpio_noesd[14] io_in_3v3[20] io_in[20] io_out[20] io_oeb[20] 
+    gpio_analog[7]  gpio_noesd[7]  io_in_3v3[14] io_in[14] io_out[14] io_oeb[14] 
+    gpio_analog[8]  gpio_noesd[8]  io_in_3v3[15] io_in[15] io_out[15] io_oeb[15] 
+    gpio_analog[9]  gpio_noesd[9]  io_in_3v3[16] io_in[16] io_out[16] io_oeb[16] 
+    gpio_analog[10] gpio_noesd[10] io_in_3v3[17] io_in[17] io_out[17] io_oeb[17] 
+    gpio_analog[11] gpio_noesd[11] io_in_3v3[18] io_in[18] io_out[18] io_oeb[18] 
+    gpio_analog[12] gpio_noesd[12] io_in_3v3[19] io_in[19] io_out[19] io_oeb[19] 
+    gpio_analog[13] gpio_noesd[13] io_in_3v3[20] io_in[20] io_out[20] io_oeb[20] 
     vdda2_1 vdda2
     vssd2 vssd2_1
-    gpio_analog[15] gpio_noesd[15] io_in_3v3[21] io_in[21] io_out[21] io_oeb[21] 
-    gpio_analog[16] gpio_noesd[16] io_in_3v3[22] io_in[22] io_out[22] io_oeb[22]
-    gpio_analog[17] gpio_noesd[17] io_in_3v3[23] io_in[23] io_out[23] io_oeb[23] 
-                                   io_in_3v3[24] io_in[24] io_out[24] io_oeb[24] 
+    gpio_analog[14] gpio_noesd[14] io_in_3v3[21] io_in[21] io_out[21] io_oeb[21] 
+    gpio_analog[15] gpio_noesd[15] io_in_3v3[22] io_in[22] io_out[22] io_oeb[22]
+    gpio_analog[16] gpio_noesd[16] io_in_3v3[23] io_in[23] io_out[23] io_oeb[23] 
+    gpio_analog[17] gpio_noesd[17] io_in_3v3[24] io_in[24] io_out[24] io_oeb[24] 
                                    io_in_3v3[25] io_in[25] io_out[25] io_oeb[25] 
                                    io_in_3v3[26] io_in[26] io_out[26] io_oeb[26] 
 }
@@ -205,22 +205,21 @@ set min_distance 5.35
 set spacing_list " 0
                 $min_distance $min_distance $min_distance $min_distance
                 $min_distance $min_distance $min_distance $min_distance
-                $min_distance $min_distance $min_distance 91
+                $min_distance $min_distance $min_distance $min_distance $min_distance 77
+                $min_distance $min_distance $min_distance $min_distance $min_distance 186
+                $min_distance $min_distance $min_distance $min_distance $min_distance 186
+                $min_distance $min_distance $min_distance $min_distance $min_distance 190
+                26 136
+                26 134 
+                $min_distance $min_distance $min_distance $min_distance $min_distance 185
                 $min_distance $min_distance $min_distance $min_distance $min_distance 186
                 $min_distance $min_distance $min_distance $min_distance $min_distance 186
                 $min_distance $min_distance $min_distance $min_distance $min_distance 186
-                26 138
-                26 138 
                 $min_distance $min_distance $min_distance $min_distance $min_distance 186
                 $min_distance $min_distance $min_distance $min_distance $min_distance 186
-                $min_distance $min_distance $min_distance $min_distance $min_distance 186
-                $min_distance $min_distance $min_distance $min_distance $min_distance 186
-                $min_distance $min_distance $min_distance $min_distance $min_distance 186
-                $min_distance $min_distance $min_distance $min_distance $min_distance 186
-                $min_distance $min_distance $min_distance $min_distance $min_distance 184
+                $min_distance $min_distance $min_distance $min_distance $min_distance 189
                 26 348
-                26 138
-                $min_distance $min_distance"
+                26 158"
 
 set offset_y 8
 set size $pin_height
