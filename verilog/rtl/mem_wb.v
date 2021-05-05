@@ -13,7 +13,6 @@
 // limitations under the License.
 // SPDX-License-Identifier: Apache-2.0
 
-`default_nettype none
 module mem_wb (
 `ifdef USE_POWER_PINS
     input VPWR,
@@ -137,4 +136,3 @@ module soc_mem
 `endif
 
 endmodule
-`default_nettype wire

@@ -13,7 +13,6 @@
 // limitations under the License.
 // SPDX-License-Identifier: Apache-2.0
 
-`default_nettype none
 /* 
  *---------------------------------------------------------------------
  * See gpio_control_block for description.  This module is like
@@ -261,4 +260,3 @@ module gpio_control_block #(
     );
 
 endmodule
-`default_nettype wire

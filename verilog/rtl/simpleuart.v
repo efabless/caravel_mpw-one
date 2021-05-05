@@ -1,4 +1,3 @@
-`default_nettype none
 /*
  *  SPDX-FileCopyrightText: 2015 Clifford Wolf
  *  PicoSoC - A simple example SoC using PicoRV32
@@ -219,4 +218,3 @@ module simpleuart (
         end
     end
 endmodule
-`default_nettype wire

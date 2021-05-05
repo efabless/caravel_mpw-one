@@ -1,4 +1,3 @@
-`default_nettype none
 /*
  * SPDX-FileCopyrightText: 2020 The SkyWater PDK Authors
  *

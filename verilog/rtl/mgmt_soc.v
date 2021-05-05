@@ -1,4 +1,3 @@
-`default_nettype none
 /*
  *  SPDX-FileCopyrightText: 2015 Clifford Wolf
  *  PicoSoC - A simple example SoC using PicoRV32
@@ -887,4 +886,3 @@ module mgmt_soc_regs (
     assign rdata1 = regs[raddr1[4:0]];
     assign rdata2 = regs[raddr2[4:0]];
 endmodule
-`default_nettype wire

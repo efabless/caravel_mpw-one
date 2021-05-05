@@ -1,4 +1,3 @@
-`default_nettype none
 /*
  *  SPDX-FileCopyrightText: 2015 Clifford Wolf
  *  PicoSoC - A simple example SoC using PicoRV32
@@ -743,4 +742,3 @@ module spimemio_xfer (
     end
 endmodule
 
-`default_nettype wire

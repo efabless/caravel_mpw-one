@@ -13,7 +13,6 @@
 // limitations under the License.
 // SPDX-License-Identifier: Apache-2.0
 
-`default_nettype none
 `timescale 1 ns / 1 ps
 
 module simple_por(
@@ -89,4 +88,3 @@ module simple_por(
     // replaced by a proper inverter
     assign por_l = ~porb_l;
 endmodule
-`default_nettype wire

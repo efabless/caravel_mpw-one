@@ -1,4 +1,3 @@
-`default_nettype none
 // SPDX-FileCopyrightText: 2019 Efabless Corporation
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
@@ -397,4 +396,3 @@ module simple_spi_master (
     end // always
  
 endmodule
-`default_nettype wire

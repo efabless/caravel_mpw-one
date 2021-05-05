@@ -13,7 +13,6 @@
 // limitations under the License.
 // SPDX-License-Identifier: Apache-2.0
 
-`default_nettype none
 module mgmt_core (
 `ifdef USE_POWER_PINS
 	inout VPWR,	   
@@ -331,4 +330,3 @@ module mgmt_core (
 	);
 
 endmodule
-`default_nettype wire
