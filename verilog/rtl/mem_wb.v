@@ -19,18 +19,18 @@ module mem_wb (
     input VPWR,
     input VGND,
 `endif
-    input wb_clk_i,
-    input wb_rst_i,
+    input  wire wb_clk_i,
+    input  wire wb_rst_i,
 
-    input [31:0] wb_adr_i,
-    input [31:0] wb_dat_i,
-    input [3:0] wb_sel_i,
-    input wb_we_i,
-    input wb_cyc_i,
-    input wb_stb_i,
+    input  wire [31:0]  wb_adr_i,
+    input  wire [31:0]  wb_dat_i,
+    input  wire [3:0]   wb_sel_i,
+    input  wire         wb_we_i,
+    input  wire         wb_cyc_i,
+    input  wire         wb_stb_i,
 
-    output wb_ack_o,
-    output [31:0] wb_dat_o
+    output reg          wb_ack_o,
+    output wire [31:0]  wb_dat_o
     
 );
 
@@ -52,7 +52,6 @@ module mem_wb (
     */ 
 
     reg wb_ack_read;
-    reg wb_ack_o;
 
     always @(posedge wb_clk_i) begin
         if (wb_rst_i == 1'b 1) begin

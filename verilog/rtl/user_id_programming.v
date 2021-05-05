@@ -26,9 +26,8 @@ module user_id_programming #(
     inout VPWR,
     inout VGND,
 `endif
-    output [31:0] mask_rev
+    output wire [31:0] mask_rev
 );
-    wire [31:0] mask_rev;
     wire [31:0] user_proj_id_high;
     wire [31:0] user_proj_id_low;
 

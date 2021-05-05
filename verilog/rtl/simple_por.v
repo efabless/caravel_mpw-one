@@ -22,12 +22,12 @@ module simple_por(
     inout vdd1v8,
     inout vss,
 `endif
-    output porb_h,
-    output porb_l,
-    output por_l
+    output wire porb_h,
+    output wire porb_l,
+    output wire por_l
 );
 
-    wire mid, porb_h;
+    wire mid;
     reg inode;
 
     // This is a behavioral model!  Actual circuit is a resitor dumping

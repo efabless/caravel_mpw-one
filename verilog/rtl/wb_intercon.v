@@ -17,7 +17,23 @@
 module wb_intercon #(
     parameter DW = 32,          // Data Width
     parameter AW = 32,          // Address Width
-    parameter NS = 6           // Number of Slaves
+    parameter NS = 6,           // Number of Slaves
+    parameter [NS*AW-1:0] ADR_MASK = {      // Page & Sub-page bits
+        {8'hFF, {24{1'b0}} },
+        {8'hFF, {24{1'b0}} },
+        {8'hFF, {24{1'b0}} },
+        {8'hFF, {24{1'b0}} },
+        {8'hFF, {24{1'b0}} },
+        {8'hFF, {24{1'b0}} }
+    },
+    parameter [NS*AW-1:0] SLAVE_ADR = {
+        { 32'h2800_0000 },    // Flash Configuration Register
+        { 32'h2200_0000 },    // System Control
+        { 32'h2100_0000 },    // GPIOs
+        { 32'h2000_0000 },    // UART 
+        { 32'h1000_0000 },    // Flash 
+        { 32'h0000_0000 }     // RAM
+    }
 ) (
     // Master Interface
     input [AW-1:0] wbm_adr_i,
@@ -31,23 +47,7 @@ module wb_intercon #(
     input [NS-1:0] wbs_ack_i,
     output [NS-1:0] wbs_stb_o
 );
-    parameter [NS*AW-1:0] ADR_MASK = {      // Page & Sub-page bits
-        {8'hFF, {24{1'b0}} },
-        {8'hFF, {24{1'b0}} },
-        {8'hFF, {24{1'b0}} },
-        {8'hFF, {24{1'b0}} },
-        {8'hFF, {24{1'b0}} },
-        {8'hFF, {24{1'b0}} }
-    };
-    parameter [NS*AW-1:0] SLAVE_ADR = {
-        { 32'h2800_0000 },    // Flash Configuration Register
-        { 32'h2200_0000 },    // System Control
-        { 32'h2100_0000 },    // GPIOs
-        { 32'h2000_0000 },    // UART 
-        { 32'h1000_0000 },    // Flash 
-        { 32'h0000_0000 }     // RAM
-    };
-    
+   
     wire [NS-1: 0] slave_sel;
 
     // Address decoder

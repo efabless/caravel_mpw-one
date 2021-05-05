@@ -148,26 +148,26 @@ module simple_spi_master_wb #(
 endmodule
 
 module simple_spi_master (
-    input        resetn,
-    input        clk,	 // master clock (assume 100MHz)
+    input   wire        resetn,
+    input   wire        clk,	 // master clock (assume 100MHz)
 
-    input  [1:0]  reg_cfg_we,
-    input  [31:0] reg_cfg_di,
-    output [31:0] reg_cfg_do,
+    input   wire  [1:0]  reg_cfg_we,
+    input   wire  [31:0] reg_cfg_di,
+    output  wire  [31:0] reg_cfg_do,
 
-    input  	  reg_dat_we,
-    input  	  reg_dat_re,
-    input  [31:0] reg_dat_di,
-    output [31:0] reg_dat_do,
-    output	  reg_dat_wait,
-    output	  irq_out,
-    output	  err_out,
+    input  	wire  reg_dat_we,
+    input  	wire  reg_dat_re,
+    input   wire  [31:0] reg_dat_di,
+    output  wire  [31:0] reg_dat_do,
+    output	wire  reg_dat_wait,
+    output	wire  irq_out,
+    output	reg   err_out,
 
-    output	 hk_connect,	// Connect to housekeeping SPI
-    input 	 sdi,	 // SPI input
-    output 	 csb,	 // SPI chip select
-    output 	 sck,	 // SPI clock
-    output 	 sdo	 // SPI output
+    output	 wire hk_connect,	// Connect to housekeeping SPI
+    input 	 wire sdi,	 // SPI input
+    output 	 wire csb,	 // SPI chip select
+    output 	 wire sck,	 // SPI clock
+    output 	 wire sdo	 // SPI output
 );
 
     parameter IDLE   = 2'b00;	    
@@ -179,8 +179,7 @@ module simple_spi_master (
     reg 	  isdo, hsck, icsb;
     reg [1:0] state;
     reg 	  isck;
-    reg	  err_out;
- 
+
     reg [7:0]  treg, rreg, d_latched;
     reg [2:0]  nbit;
 
@@ -195,12 +194,7 @@ module simple_spi_master (
     reg	   enable;
     reg	   hkconn;
  
-    wire	  csb;
-    wire	  irq_out;
-    wire	  sck;
-    wire	  sdo;
     wire	  sdoenb;
-    wire	  hk_connect;
 
     // Define behavior for inverted SCK and inverted CSB
     assign    	  csb = (enable == 1'b0) ? 1'bz : (invcsb) ? ~icsb : icsb;
