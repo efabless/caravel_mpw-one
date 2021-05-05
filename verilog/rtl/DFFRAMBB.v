@@ -13,7 +13,6 @@
 // limitations under the License.
 // SPDX-License-Identifier: Apache-2.0
 
-`default_nettype none
 /*
     Building blocks for DFF based RAM compiler for SKY130A 
     BYTE        :   8 memory cells used as a building block for WORD module

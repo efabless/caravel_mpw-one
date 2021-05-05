@@ -13,7 +13,6 @@
 // limitations under the License.
 // SPDX-License-Identifier: Apache-2.0
 
-`default_nettype none
 // This routine synchronizes the 
 
 module caravel_clocking(
@@ -108,4 +107,3 @@ module caravel_clocking(
     assign resetb_sync = ~(reset_delay[0] | ext_reset);
 
 endmodule
-`default_nettype wire

@@ -13,7 +13,6 @@
 // limitations under the License.
 // SPDX-License-Identifier: Apache-2.0
 
-`default_nettype none
 module mprj_ctrl_wb #(
     parameter BASE_ADR  = 32'h 2300_0000,
     parameter XFER      = 8'h 00,
@@ -125,19 +124,21 @@ module mprj_ctrl #(
     output reg [31:0] iomem_rdata,
     output reg iomem_ready,
 
-    output serial_clock,
-    output serial_resetn,
-    output serial_data_out_1,
-    output serial_data_out_2,
-    output sdo_oenb_state,
-    output jtag_oenb_state,
-    output flash_io2_oenb_state,
-    output flash_io3_oenb_state,
-    input  [`MPRJ_IO_PADS-1:0] mgmt_gpio_in,
-    output [`MPRJ_IO_PADS-1:0] mgmt_gpio_out,
-    output [`MPRJ_PWR_PADS-1:0] pwr_ctrl_out,
-    output [2:0] user_irq_ena
+    output reg  serial_clock,
+    output reg  serial_resetn,
+    output wire serial_data_out_1,
+    output wire serial_data_out_2,
+    output wire sdo_oenb_state,
+    output wire jtag_oenb_state,
+    output wire flash_io2_oenb_state,
+    output wire flash_io3_oenb_state,
+    input  wire [`MPRJ_IO_PADS-1:0] mgmt_gpio_in,
+    output wire [`MPRJ_IO_PADS-1:0] mgmt_gpio_out,  // I/O write data output when input disabled
+    output reg  [`MPRJ_PWR_PADS-1:0] pwr_ctrl_out,  // Power write data, 1 bit per power pad    
+    output reg  [2:0] user_irq_ena                  // Enable user to raise IRQs
 );
+
+
 
 `define IDLE	2'b00
 `define START	2'b01
@@ -153,9 +154,6 @@ module mprj_ctrl #(
 
     reg  [IO_CTRL_BITS-1:0] io_ctrl[`MPRJ_IO_PADS-1:0];  // I/O control, 1 word per gpio pad
     reg  [`MPRJ_IO_PADS-1:0] mgmt_gpio_outr; 	 // I/O write data, 1 bit per gpio pad
-    wire [`MPRJ_IO_PADS-1:0] mgmt_gpio_out;	 // I/O write data output when input disabled
-    reg  [`MPRJ_PWR_PADS-1:0] pwr_ctrl_out;	 // Power write data, 1 bit per power pad
-    reg  [2:0] user_irq_ena;		 // Enable user to raise IRQs
     reg xfer_ctrl;			 // Transfer control (1 bit)
 
     wire [IO_WORDS-1:0] io_data_sel;	// wishbone selects
@@ -167,10 +165,7 @@ module mprj_ctrl #(
     wire [`MPRJ_IO_PADS-1:0] io_ctrl_sel;
     reg [31:0] iomem_rdata_pre;
 
-    wire [`MPRJ_IO_PADS-1:0] mgmt_gpio_in;
 
-    wire sdo_oenb_state, jtag_oenb_state;
-    wire flash_io2_oenb_state, flash_io3_oenb_state;
 
     // JTAG and housekeeping SDO are normally controlled by their respective
     // modules with OEB set to the default 1 value.  If configured for an
@@ -340,14 +335,10 @@ module mprj_ctrl #(
     reg [4:0]  pad_count_1;
     reg [5:0]  pad_count_2;
     reg [1:0]  xfer_state;
-    reg	       serial_clock;
-    reg	       serial_resetn;
 
     reg [IO_CTRL_BITS-1:0] serial_data_staging_1;
     reg [IO_CTRL_BITS-1:0] serial_data_staging_2;
 
-    wire       serial_data_out_1;
-    wire       serial_data_out_2;
 
     assign serial_data_out_1 = serial_data_staging_1[IO_CTRL_BITS-1];
     assign serial_data_out_2 = serial_data_staging_2[IO_CTRL_BITS-1];
@@ -432,4 +423,3 @@ module mprj_ctrl #(
     end
 
 endmodule
-`default_nettype wire

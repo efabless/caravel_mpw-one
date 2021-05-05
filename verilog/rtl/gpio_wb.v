@@ -13,7 +13,6 @@
 // limitations under the License.
 // SPDX-License-Identifier: Apache-2.0
 
-`default_nettype none
 module gpio_wb # (
     parameter BASE_ADR  = 32'h 2100_0000,
     parameter GPIO_DATA = 8'h 00,
@@ -98,17 +97,12 @@ module gpio #(
     output reg [31:0] iomem_rdata,
     output reg iomem_ready,
 
-    output gpio,
-    output gpio_oeb,
-    output gpio_pu,
-    output gpio_pd
+    output reg  gpio,       // GPIO output data
+    output reg  gpio_oeb,   // GPIO pull-up enable
+    output reg  gpio_pu,    // GPIO pull-down enable
+    output reg  gpio_pd     // GPIO output enable (sense negative)
 );
-
-    reg gpio;		// GPIO output data
-    reg gpio_pu;		// GPIO pull-up enable
-    reg gpio_pd;		// GPIO pull-down enable
-    reg gpio_oeb;    // GPIO output enable (sense negative)
-    
+ 
     wire gpio_sel;
     wire gpio_oeb_sel;
     wire gpio_pu_sel;  
@@ -153,4 +147,3 @@ module gpio #(
     end
 
 endmodule
-`default_nettype wire

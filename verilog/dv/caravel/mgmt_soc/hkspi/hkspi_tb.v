@@ -13,7 +13,6 @@
 // limitations under the License.
 // SPDX-License-Identifier: Apache-2.0
 
-`default_nettype none
 /*	
 	StriVe housekeeping SPI testbench.
 */
@@ -428,4 +427,3 @@ module hkspi_tb;
 	);
 		
 endmodule
-`default_nettype wire

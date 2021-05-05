@@ -1,4 +1,3 @@
-// `default_nettype none
 // SPDX-FileCopyrightText: 2020 Efabless Corporation
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
@@ -801,4 +800,3 @@ module caravel (
 	);
 
 endmodule
-// `default_nettype wire

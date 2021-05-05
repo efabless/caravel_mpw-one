@@ -13,7 +13,6 @@
 // limitations under the License.
 // SPDX-License-Identifier: Apache-2.0
 
-`default_nettype none
 module dummy_slave(
     input wb_clk_i,
     input wb_rst_i,

@@ -13,7 +13,6 @@
 // limitations under the License.
 // SPDX-License-Identifier: Apache-2.0
 
-`default_nettype none
 module sysctrl_wb #(
     parameter BASE_ADR     = 32'h2F00_0000,
     parameter PWRGOOD	   = 8'h00,
@@ -94,37 +93,26 @@ module sysctrl #(
     parameter TRAP_OUT     = 8'h08,
     parameter IRQ_SRC      = 8'h0c
 ) (
-    input clk,
-    input resetn,
+    input  wire clk,
+    input  wire resetn,
     
-    input [31:0] iomem_addr,
-    input iomem_valid,
-    input [3:0] iomem_wstrb,
-    input [31:0] iomem_wdata,
-    output reg [31:0] iomem_rdata,
-    output reg iomem_ready,
+    input  wire [31:0]  iomem_addr,
+    input  wire         iomem_valid,
+    input  wire [3:0]   iomem_wstrb,
+    input  wire [31:0]  iomem_wdata,
+    output reg  [31:0]  iomem_rdata,
+    output reg          iomem_ready,
 
-    input  usr1_vcc_pwrgood,
-    input  usr2_vcc_pwrgood,
-    input  usr1_vdd_pwrgood,
-    input  usr2_vdd_pwrgood,
-    output clk1_output_dest,
-    output clk2_output_dest,
-    output trap_output_dest,
-    output irq_7_inputsrc,
-    output irq_8_inputsrc
+    input  wire usr1_vcc_pwrgood,
+    input  wire usr2_vcc_pwrgood,
+    input  wire usr1_vdd_pwrgood,
+    input  wire usr2_vdd_pwrgood,
+    output reg  clk1_output_dest,
+    output reg  clk2_output_dest,
+    output reg  trap_output_dest,
+    output reg  irq_7_inputsrc,
+    output reg  irq_8_inputsrc
 ); 
-
-    reg clk1_output_dest;
-    reg clk2_output_dest;
-    reg trap_output_dest;
-    reg irq_7_inputsrc;
-    reg irq_8_inputsrc;
-
-    wire usr1_vcc_pwrgood;
-    wire usr2_vcc_pwrgood;
-    wire usr1_vdd_pwrgood;
-    wire usr2_vdd_pwrgood;
 
     wire pwrgood_sel;
     wire clk_out_sel;
@@ -177,4 +165,3 @@ module sysctrl #(
     end
 
 endmodule
-`default_nettype wire

@@ -13,7 +13,6 @@
 // limitations under the License.
 // SPDX-License-Identifier: Apache-2.0
 
-`default_nettype none
 `timescale 1 ns / 1 ps
 
 module simple_por(
@@ -22,12 +21,12 @@ module simple_por(
     inout vdd1v8,
     inout vss,
 `endif
-    output porb_h,
-    output porb_l,
-    output por_l
+    output wire porb_h,
+    output wire porb_l,
+    output wire por_l
 );
 
-    wire mid, porb_h;
+    wire mid;
     reg inode;
 
     // This is a behavioral model!  Actual circuit is a resitor dumping
@@ -89,4 +88,3 @@ module simple_por(
     // replaced by a proper inverter
     assign por_l = ~porb_l;
 endmodule
-`default_nettype wire

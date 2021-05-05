@@ -13,7 +13,6 @@
 // limitations under the License.
 // SPDX-License-Identifier: Apache-2.0
 
-`default_nettype none
 /* Simple 32-bit counter-timer for Caravel. */
 
 /* Counter acts as low 32 bits of a 64-bit counter
@@ -96,42 +95,37 @@ module counter_timer_low_wb # (
 endmodule
 
 module counter_timer_low (
-    input resetn,
-    input clkin,
+    input  wire 	resetn,
+    input  wire 	clkin,
 
-    input  [3:0]  reg_val_we,
-    input  [31:0] reg_val_di,
-    output [31:0] reg_val_do,
+    input  wire 	[3:0]  reg_val_we,
+    input  wire 	[31:0] reg_val_di,
+    output wire 	[31:0] reg_val_do,
 
-    input 	  reg_cfg_we,
-    input  [31:0] reg_cfg_di,
-    output [31:0] reg_cfg_do,
+    input  wire  		   reg_cfg_we,
+    input  wire 	[31:0] reg_cfg_di,
+    output wire 	[31:0] reg_cfg_do,
 
-    input  [3:0]  reg_dat_we,
-    input  [31:0] reg_dat_di,
-    output [31:0] reg_dat_do,
+    input  wire		[3:0]  reg_dat_we,
+    input  wire		[31:0] reg_dat_di,
+    output wire		[31:0] reg_dat_do,
 
-    input	  stop_in,
-    input	  enable_in,
-    output	  strobe,
-    output	  enable_out,
-    output	  stop_out,
-    output	  is_offset,
-    output	  irq_out
+    input	wire  	stop_in, // High 32 bits counter has stopped
+    input	wire 	enable_in,
+    output	reg  	strobe, // Strobe to high 32 bits counter; occurs
+							// one cycle before actual timeout and
+							// irq signal.
+    output	wire  	enable_out,
+    output	reg  	stop_out, // Stop condition flag
+    output	wire  	is_offset,
+    output	reg  	irq_out
 );
 
 reg [31:0] value_cur;
-reg [31:0] value_reset;
-reg	   irq_out;
-wire	   stop_in;		// High 32 bits counter has stopped
-reg	   strobe;		// Strobe to high 32 bits counter; occurs
-				// one cycle before actual timeout and
-				// irq signal.
-reg	   stop_out;		// Stop condition flag
+reg [31:0] value_reset;			
 
 wire [31:0] value_cur_plus;	// Next value, on up-count
 wire [31:0] value_cur_minus;	// Next value, on down-count
-wire	    is_offset;
 wire	    loc_enable;
 
 reg enable;	// Enable (start) the counter/timer
@@ -324,4 +318,3 @@ always @(posedge clkin or negedge resetn) begin
 end
 
 endmodule
-`default_nettype wire

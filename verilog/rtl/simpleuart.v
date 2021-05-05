@@ -1,4 +1,3 @@
-`default_nettype none
 /*
  *  SPDX-FileCopyrightText: 2015 Clifford Wolf
  *  PicoSoC - A simple example SoC using PicoRV32
@@ -97,7 +96,7 @@ module simpleuart (
     input clk,
     input resetn,
 
-    output enabled,
+    output reg enabled,
     output ser_tx,
     input  ser_rx,
 
@@ -116,7 +115,6 @@ module simpleuart (
     output        reg_dat_wait
 );
     reg [31:0] cfg_divider;
-    reg        enabled;
 
     reg [3:0] recv_state;
     reg [31:0] recv_divcnt;
@@ -220,4 +218,3 @@ module simpleuart (
         end
     end
 endmodule
-`default_nettype wire

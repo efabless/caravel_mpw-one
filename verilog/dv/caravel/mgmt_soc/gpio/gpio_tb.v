@@ -1,4 +1,3 @@
-`default_nettype none
 /*
  *  SPDX-FileCopyrightText: 2017  Clifford Wolf, 2018  Tim Edwards
  *
@@ -193,4 +192,3 @@ module gpio_tb;
 	);
 
 endmodule
-`default_nettype wire

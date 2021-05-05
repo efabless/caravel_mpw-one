@@ -13,7 +13,6 @@
 // limitations under the License.
 // SPDX-License-Identifier: Apache-2.0
 
-`default_nettype none
  
 module storage (
     // MGMT_AREA R/W Interface 
@@ -62,4 +61,3 @@ module storage (
     );  
 
 endmodule
-`default_nettype wire

@@ -13,7 +13,6 @@
 // limitations under the License.
 // SPDX-License-Identifier: Apache-2.0
 
-`default_nettype none
 //-------------------------------------
 // SPI controller for Caravel (PicoSoC)
 //-------------------------------------
@@ -491,4 +490,3 @@ module housekeeping_spi_slave(reset, SCK, SDI, CSB, SDO,
     end			// always @ SCK
 
 endmodule // housekeeping_spi_slave
-`default_nettype wire

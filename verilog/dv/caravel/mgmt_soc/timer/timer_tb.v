@@ -1,4 +1,3 @@
-`default_nettype none
 /*
  *  SPDX-FileCopyrightText: 2017  Clifford Wolf, 2018  Tim Edwards
  *
@@ -198,4 +197,3 @@ module timer_tb;
 	);
 
 endmodule
-`default_nettype wire

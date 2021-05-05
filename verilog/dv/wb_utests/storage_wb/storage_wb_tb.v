@@ -13,7 +13,6 @@
 // limitations under the License.
 // SPDX-License-Identifier: Apache-2.0
 
-`default_nettype none
 // `define DBG
 
 `define STORAGE_BASE_ADR  32'h0100_0000
