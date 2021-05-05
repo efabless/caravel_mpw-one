@@ -67,42 +67,42 @@ module gpio_control_block #(
     `endif
 
     // Management Soc-facing signals
-    input  	     resetn,		// Global reset, locally propagated
-    output       resetn_out,
-    input  	     serial_clock,		// Global clock, locally propatated
-    output  	 serial_clock_out,
+    input  	 wire resetn,		// Global reset, locally propagated
+    output   wire resetn_out,
+    input  	 wire serial_clock,		// Global clock, locally propatated
+    output   wire serial_clock_out,
 
-    output       mgmt_gpio_in,		// Management from pad (input only)
-    input        mgmt_gpio_out,		// Management to pad (output only)
-    input        mgmt_gpio_oeb,		// Management to pad (output only)
+    output   wire mgmt_gpio_in,		// Management from pad (input only)
+    input    wire mgmt_gpio_out,    // Management to pad (output only)
+    input    wire mgmt_gpio_oeb,	// Management to pad (output only)
 
     // Serial data chain for pad configuration
-    input  	 serial_data_in,
-    output 	 serial_data_out,
+    input  	 wire serial_data_in,
+    output 	 wire serial_data_out,
 
     // User-facing signals
-    input        user_gpio_out,		// User space to pad
-    input        user_gpio_oeb,		// Output enable (user)
-    output	 user_gpio_in,		// Pad to user space
+    input    wire user_gpio_out,		// User space to pad
+    input    wire user_gpio_oeb,		// Output enable (user)
+    output	 wire user_gpio_in,		// Pad to user space
 
     // Pad-facing signals (Pad GPIOv2)
-    output	 pad_gpio_holdover,
-    output	 pad_gpio_slow_sel,
-    output	 pad_gpio_vtrip_sel,
-    output       pad_gpio_inenb,
-    output       pad_gpio_ib_mode_sel,
-    output	 pad_gpio_ana_en,
-    output	 pad_gpio_ana_sel,
-    output	 pad_gpio_ana_pol,
-    output [2:0] pad_gpio_dm,
-    output       pad_gpio_outenb,
-    output	 pad_gpio_out,
-    input	 pad_gpio_in,
+    output	 wire pad_gpio_holdover,
+    output	 wire pad_gpio_slow_sel,
+    output	 wire pad_gpio_vtrip_sel,
+    output   wire pad_gpio_inenb,
+    output   wire pad_gpio_ib_mode_sel,
+    output	 wire pad_gpio_ana_en,
+    output	 wire pad_gpio_ana_sel,
+    output	 wire pad_gpio_ana_pol,
+    output   wire [2:0] pad_gpio_dm,
+    output   wire pad_gpio_outenb,
+    output	 wire pad_gpio_out,
+    input	 wire pad_gpio_in,
 
     // to provide a way to automatically disable/enable output
     // from the outside with needing a conb cell
-    output	 one,
-    output	 zero
+    output	 wire one,
+    output	 wire zero
 );
 
     /* Parameters defining the bit offset of each function in the chain */
@@ -131,23 +131,6 @@ module gpio_control_block #(
     reg	 	gpio_ana_sel;
     reg	 	gpio_ana_pol;
 
-    /* Derived output values */
-    wire	pad_gpio_holdover;
-    wire	pad_gpio_slow_sel;
-    wire	pad_gpio_vtrip_sel;
-    wire      	pad_gpio_inenb;
-    wire       	pad_gpio_ib_mode_sel;
-    wire	pad_gpio_ana_en;
-    wire	pad_gpio_ana_sel;
-    wire	pad_gpio_ana_pol;
-    wire [2:0]  pad_gpio_dm;
-    wire        pad_gpio_outenb;
-    wire	pad_gpio_out;
-    wire	pad_gpio_in;
-    wire	one;
-    wire	zero;
-
-    wire user_gpio_in;
     wire gpio_in_unbuf;
     wire gpio_logic1;
 

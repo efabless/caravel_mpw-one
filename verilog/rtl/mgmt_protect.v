@@ -79,10 +79,10 @@ module mgmt_protect (
     output [31:0] mprj_adr_o_user,
     output [31:0] mprj_dat_o_user,
     output [2:0]  user_irq,
-    output	  user1_vcc_powergood,
-    output	  user2_vcc_powergood,
-    output	  user1_vdd_powergood,
-    output	  user2_vdd_powergood
+    output wire user1_vcc_powergood,
+    output wire	user2_vcc_powergood,
+    output wire user1_vdd_powergood,
+    output wire user2_vdd_powergood
 );
 
 	wire [461:0] mprj_logic1;
@@ -92,11 +92,6 @@ module mgmt_protect (
 	wire mprj2_vdd_logic1_h;
 	wire mprj_vdd_logic1;
 	wire mprj2_vdd_logic1;
-
-	wire user1_vcc_powergood;
-	wire user2_vcc_powergood;
-	wire user1_vdd_powergood;
-	wire user2_vdd_powergood;
 
 	wire [127:0] la_data_in_mprj_bar;
 	wire [2:0] user_irq_bar;

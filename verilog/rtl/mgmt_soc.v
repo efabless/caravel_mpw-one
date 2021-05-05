@@ -500,6 +500,12 @@ module mgmt_soc (
         .ser_rx(mgmt_in_data[5])
     );
 
+    // WB Slave User Project Control
+    wire mprj_ctrl_stb_i;
+    wire mprj_ctrl_ack_o;
+    wire [31:0] mprj_ctrl_dat_o;
+    wire [`MPRJ_IO_PADS-1:0] mgmt_out_pre;
+
     // Wishbone SPI master
     wire spi_master_stb_i;
     wire spi_master_ack_o;
@@ -715,12 +721,6 @@ module mgmt_soc (
     assign mprj_sel_o = cpu_sel_o;
     assign mprj_adr_o = cpu_adr_o;
     assign mprj_dat_o = cpu_dat_o;
-
-    // WB Slave User Project Control
-    wire mprj_ctrl_stb_i;
-    wire mprj_ctrl_ack_o;
-    wire [31:0] mprj_ctrl_dat_o;
-    wire [`MPRJ_IO_PADS-1:0] mgmt_out_pre;
 
     // Bits assigned to specific functions as outputs prevent the
     // mprj GPIO-as-output from applying data when that function

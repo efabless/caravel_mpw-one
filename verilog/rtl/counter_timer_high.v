@@ -95,36 +95,31 @@ module counter_timer_high_wb # (
 endmodule
 
 module counter_timer_high (
-    input resetn,
-    input clkin,
+    input  wire resetn,
+    input  wire clkin,
 
-    input  [3:0]  reg_val_we,
-    input  [31:0] reg_val_di,
-    output [31:0] reg_val_do,
+    input  wire [3:0]  reg_val_we,
+    input  wire [31:0] reg_val_di,
+    output wire [31:0] reg_val_do,
 
-    input 	  reg_cfg_we,
-    input  [31:0] reg_cfg_di,
-    output [31:0] reg_cfg_do,
+    input  wire 	  reg_cfg_we,
+    input  wire [31:0] reg_cfg_di,
+    output wire [31:0] reg_cfg_do,
 
     input  [3:0]  reg_dat_we,
     input  [31:0] reg_dat_di,
     output [31:0] reg_dat_do,
-    input	  stop_in,
-    input	  enable_in,
-    input	  is_offset,
-    input	  strobe,
-    output	  stop_out,
-    output	  enable_out,
-    output	  irq_out
+    input  wire  	stop_in,
+    input  wire 	enable_in, 	// Enable from chained counter
+    input  wire	  	is_offset,
+    input  wire  	strobe,		// Count strobe from low word counter
+    output reg	  	stop_out,	// Stop signal to low word counter
+    output wire	  	enable_out, // Enable to chained counter (sync)
+    output reg  	irq_out
 );
 
 reg [31:0] value_cur;
 reg [31:0] value_reset;
-reg	   irq_out;
-wire	   enable_in;		// Enable from chained counter
-wire	   strobe;		// Count strobe from low word counter
-wire	   enable_out;		// Enable to chained counter (sync)
-reg	   stop_out;		// Stop signal to low word counter
 
 wire [31:0] value_cur_plus;	// Next value, on up-count
 wire [31:0] value_cur_minus;	// Next value, on down-count

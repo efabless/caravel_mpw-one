@@ -20,106 +20,105 @@ module mgmt_core (
 	inout VGND,
 `endif
 	// GPIO (dedicated pad)
-	output gpio_out_pad,		// Connect to out on gpio pad
-	input  gpio_in_pad,		// Connect to in on gpio pad
-	output gpio_mode0_pad,		// Connect to dm[0] on gpio pad
-	output gpio_mode1_pad,		// Connect to dm[2] on gpio pad
-	output gpio_outenb_pad,		// Connect to oe_n on gpio pad
-	output gpio_inenb_pad,		// Connect to inp_dis on gpio pad
+	output wire gpio_out_pad,		// Connect to out on gpio pad
+	input  wire gpio_in_pad,		// Connect to in on gpio pad
+	output wire gpio_mode0_pad,		// Connect to dm[0] on gpio pad
+	output wire gpio_mode1_pad,		// Connect to dm[2] on gpio pad
+	output wire gpio_outenb_pad,		// Connect to oe_n on gpio pad
+	output wire gpio_inenb_pad,		// Connect to inp_dis on gpio pad
 	// Flash memory control (SPI master)
-	output flash_csb,
-	output flash_clk,
-	output flash_csb_oeb,
-	output flash_clk_oeb,
-	output flash_io0_oeb,
-	output flash_io1_oeb,
-	output flash_io2_oeb,	// through GPIO 36
-	output flash_io3_oeb,	// through GPIO 37
-	output flash_csb_ieb,
-	output flash_clk_ieb,
-	output flash_io0_ieb,
-	output flash_io1_ieb,
-	output flash_io0_do,
-	output flash_io1_do,
-	output flash_io2_do,	// through GPIO 36
-	output flash_io3_do,	// through GPIO 37
-	input flash_io0_di,
-	input flash_io1_di,
+	output wire flash_csb,
+	output wire flash_clk,
+	output wire flash_csb_oeb,
+	output wire flash_clk_oeb,
+	output wire flash_io0_oeb,
+	output wire flash_io1_oeb,
+	output wire flash_io2_oeb,	// through GPIO 36
+	output wire flash_io3_oeb,	// through GPIO 37
+	output wire flash_csb_ieb,
+	output wire flash_clk_ieb,
+	output wire flash_io0_ieb,
+	output wire flash_io1_ieb,
+	output wire flash_io0_do,
+	output wire flash_io1_do,
+	output wire flash_io2_do,	// through GPIO 36
+	output wire flash_io3_do,	// through GPIO 37
+	input  wire flash_io0_di,
+	input  wire flash_io1_di,
 	// Master reset
-	input resetb,
-	input porb,
+	input  wire resetb,
+	input  wire porb,
 	// Clocking
-	input clock,
+	input  wire clock,
 	// LA signals
-    	input  [127:0] la_input,           	// From User Project to cpu
-    	output [127:0] la_output,          	// From CPU to User Project
-    	output [127:0] la_oenb,                 // LA output enable  
-    	output [127:0] la_iena,                 // LA input enable  
+	input  wire [127:0] la_input,           	// From User Project to cpu
+	output wire [127:0] la_output,          	// From CPU to User Project
+	output wire [127:0] la_oenb,                 // LA output enable  
+	output wire [127:0] la_iena,                 // LA input enable  
 	// Housekeeping SPI
-	output sdo_out,
-	output sdo_outenb,
+	output wire sdo_out,
+	output wire sdo_outenb,
 	// JTAG
-	output jtag_out,
-	output jtag_outenb,
+	output wire jtag_out,
+	output wire jtag_outenb,
 	// User Project Control Signals
-	input [`MPRJ_IO_PADS-1:0] mgmt_in_data,
-	output [`MPRJ_IO_PADS-1:0] mgmt_out_data,
-	output [`MPRJ_PWR_PADS-1:0] pwr_ctrl_out,
-	input mprj_vcc_pwrgood,
-	input mprj2_vcc_pwrgood,
-	input mprj_vdd_pwrgood,
-	input mprj2_vdd_pwrgood,
-	output mprj_io_loader_resetn,
-	output mprj_io_loader_clock,
-	output mprj_io_loader_data_1,
-	output mprj_io_loader_data_2,
+	input  wire [`MPRJ_IO_PADS-1:0] mgmt_in_data,
+	output wire [`MPRJ_IO_PADS-1:0] mgmt_out_data,
+	output wire [`MPRJ_PWR_PADS-1:0] pwr_ctrl_out,
+	input  wire mprj_vcc_pwrgood,
+	input  wire mprj2_vcc_pwrgood,
+	input  wire mprj_vdd_pwrgood,
+	input  wire mprj2_vdd_pwrgood,
+	output wire mprj_io_loader_resetn,
+	output wire mprj_io_loader_clock,
+	output wire mprj_io_loader_data_1,
+	output wire mprj_io_loader_data_2,
 	// WB MI A (User project)
-    	input mprj_ack_i,
-	input [31:0] mprj_dat_i,
-    	output mprj_cyc_o,
-	output mprj_stb_o,
-	output mprj_we_o,
-	output [3:0] mprj_sel_o,
-	output [31:0] mprj_adr_o,
-	output [31:0] mprj_dat_o,
+	input  wire mprj_ack_i,
+	input  wire [31:0] mprj_dat_i,
+	output wire mprj_cyc_o,
+	output wire mprj_stb_o,
+	output wire mprj_we_o,
+	output wire [3:0] mprj_sel_o,
+	output wire [31:0] mprj_adr_o,
+	output wire [31:0] mprj_dat_o,
 	
-    	output core_clk,
-    	output user_clk,
-    	output core_rstn,
-	input [2:0] user_irq,
-	output [2:0] user_irq_ena,
+    output wire core_clk,
+    output wire user_clk,
+    output wire core_rstn,
+	input  wire [2:0] user_irq,
+	output wire [2:0] user_irq_ena,
 
 	// Metal programmed user ID / mask revision vector
-	input [31:0] mask_rev,
+	input  wire [31:0] mask_rev,
 	
     // MGMT area R/W interface for mgmt RAM
-    output [`RAM_BLOCKS-1:0] mgmt_ena, 
-    output [(`RAM_BLOCKS*4)-1:0] mgmt_wen_mask,
-    output [`RAM_BLOCKS-1:0] mgmt_wen,
-    output [7:0] mgmt_addr,
-    output [31:0] mgmt_wdata,
-    input  [(`RAM_BLOCKS*32)-1:0] mgmt_rdata,
+    output wire [`RAM_BLOCKS-1:0] mgmt_ena, 
+    output wire [(`RAM_BLOCKS*4)-1:0] mgmt_wen_mask,
+    output wire [`RAM_BLOCKS-1:0] mgmt_wen,
+    output wire [7:0] mgmt_addr,
+    output wire [31:0] mgmt_wdata,
+    input  wire [(`RAM_BLOCKS*32)-1:0] mgmt_rdata,
 
     // MGMT area RO interface for user RAM 
-    output mgmt_ena_ro,
-    output [7:0] mgmt_addr_ro,
-    input  [31:0] mgmt_rdata_ro
+    output wire mgmt_ena_ro,
+    output wire [7:0] mgmt_addr_ro,
+    input  wire [31:0] mgmt_rdata_ro
 );
-    	wire ext_clk_sel;
-    	wire pll_clk, pll_clk90;
-    	wire ext_reset;
+
+	wire ext_clk_sel;
+    wire pll_clk, pll_clk90;
+    wire ext_reset;
 	wire hk_connect;
 	wire trap;
 	wire irq_spi;
 
 	// JTAG (to be implemented)
-	wire jtag_out;
 	wire jtag_out_pre = 1'b0;
-	wire jtag_outenb = 1'b1;
+	//wire jtag_outenb = 1'b1;
 	wire jtag_oenb_state;
 
 	// SDO
-	wire sdo_out;
 	wire sdo_out_pre;
 	wire sdo_oenb_state;
 
@@ -154,10 +153,8 @@ module mgmt_core (
 
 	// These wires are defined in the SoC but are not being used because
 	// the SoC flash is reduced to a 2-pin I/O
-	wire flash_io2_oeb, flash_io3_oeb;
 	wire flash_io2_ieb, flash_io3_ieb;
 	wire flash_io2_di, flash_io3_di;
-	wire flash_io2_do, flash_io3_do;
 
 	wire pass_thru_mgmt_sdo, pass_thru_mgmt_csb;
 	wire pass_thru_mgmt_sck, pass_thru_mgmt_sdi;
