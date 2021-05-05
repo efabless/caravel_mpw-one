@@ -66,7 +66,7 @@ INSTALL_SRAM ?= disabled
 .DEFAULT_GOAL := ship
 # We need portable GDS_FILE pointers...
 .PHONY: ship
-ship: check-env uncompress
+ship: check-env uncompress uncompress-caravel
 ifeq ($(FOREGROUND),1)
 	@echo "Running make ship in the foreground..."
 	$(MAKE) __ship
@@ -96,6 +96,41 @@ __ship:
 	@mkdir -p ./signoff/build
 	@cd $(CARAVEL_ROOT)/mag && PDKPATH=${PDK_ROOT}/sky130A magic -noc -dnull mag2gds_caravel.tcl 2>&1 | tee $(UPRJ_ROOT)/signoff/build/make_ship.out
 	@rm $(CARAVEL_ROOT)/mag/mag2gds_caravel.tcl
+
+truck: check-env uncompress uncompress-caravel
+ifeq ($(FOREGROUND),1)
+	@echo "Running make truck in the foreground..."
+	mkdir -p ./signoff
+	mkdir -p ./build
+	$(MAKE) __truck
+	@echo "Make truck completed." 2>&1 | tee -a ./signoff/build/make_truck.out
+else
+	@echo "Running make truck in the background..."
+	mkdir -p ./signoff
+	mkdir -p ./build
+	nohup $(MAKE) __truck >/dev/null 2>&1 &
+	tail -f signoff/build/make_truck.out
+	@echo "Make truck completed."  2>&1 | tee -a ./signoff/build/make_truck.out
+endif
+
+__truck: 
+	@echo "###############################################"
+	@echo "Generating Caravan GDS (sources are in the 'gds' directory)"
+	@sleep 1
+#### Runs from the CARAVEL_ROOT mag directory 
+	@echo "\
+		random seed `$(CARAVEL_ROOT)/scripts/set_user_id.py -report`; \
+		gds readonly true; \
+		gds rescale false; \
+		gds read $(UPRJ_ROOT)/gds/user_analog_project_wrapper.gds; \
+		load caravan -dereference;\
+		select top cell;\
+		gds write $(UPRJ_ROOT)/gds/caravan.gds; \
+		exit;" > $(CARAVEL_ROOT)/mag/mag2gds_caravan.tcl
+### Runs from UPRJ_ROOT
+	@mkdir -p ./signoff/build
+	@cd $(CARAVEL_ROOT)/mag && PDKPATH=${PDK_ROOT}/sky130A magic -noc -dnull mag2gds_caravan.tcl 2>&1 | tee $(UPRJ_ROOT)/signoff/build/make_truck.out
+	@rm $(CARAVEL_ROOT)/mag/mag2gds_caravan.tcl
 
 .PHONY: clean
 clean:
@@ -154,9 +189,14 @@ $(SPLIT_FILES_SOURCES): %: $$(sort $$(wildcard %.$(ARCHIVE_EXT).*.split))
 uncompress: $(SPLIT_FILES_SOURCES) $(ARCHIVE_SOURCES)
 	@echo "All files are uncompressed!"
 
+# Needed for targets that are run from UPRJ_ROOT for which caravel isn't submoduled. 
+.PHONY: uncompress-caravel
+uncompress-caravel:
+	cd $(CARAVEL_ROOT) && \
+	$(MAKE) uncompress
 
 # verify that the wrapper was respected
-xor-wrapper: uncompress
+xor-wrapper: uncompress uncompress-caravel
 ### first erase the user's user_project_wrapper.gds
 	sh $(CARAVEL_ROOT)/utils/erase_box.sh gds/user_project_wrapper.gds 0 0 2920 3520
 ### do the same for the empty wrapper
@@ -181,7 +221,7 @@ xor-wrapper: uncompress
 	@cat signoff/user_project_wrapper_xor/total.txt
 
 # verify that the wrapper was respected
-xor-analog-wrapper: uncompress
+xor-analog-wrapper: uncompress uncompress-caravel
 ### first erase the user's user_project_wrapper.gds
 	sh $(CARAVEL_ROOT)/utils/erase_box.sh gds/user_analog_project_wrapper.gds 0 0 2920 3520
 ### do the same for the empty wrapper
@@ -364,7 +404,7 @@ __generate_fill:
 
 
 .PHONY: final
-final: check-env check-uid uncompress
+final: check-env check-uid uncompress uncompress-caravel
 ifeq ($(FOREGROUND),1)
 	$(MAKE) __final
 	@echo "Final build completed." 2>&1 | tee -a ./signoff/build/final_build.out
@@ -386,7 +426,7 @@ __final:
 	@rm -rf ./mag/tmp
 
 .PHONY: set_user_id
-set_user_id: check-env check-uid uncompress
+set_user_id: check-env check-uid uncompress uncompress-caravel
 ifeq ($(FOREGROUND),1)
 	$(MAKE) __set_user_id 
 	@echo "Set user ID completed." 2>&1 | tee -a ./signoff/build/set_user_id.out
