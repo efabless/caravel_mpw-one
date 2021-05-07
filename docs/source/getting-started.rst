@@ -97,7 +97,15 @@ Digital user projects should adhere the following requirements:
 Analog User Project
 ------------------
 
-> :construction: Under construction :construction:
+If you are building an analog project for the user space, check a sample project at  `caravel_user_project_analog <https://github.com/efabless/caravel_user_project_analog>`__. 
+
+Analog user projects should adhere the following requirements: 
+
+- Top module is named ``user_analog_project_wrapper`` 
+
+- The ``user_analog_project_wrapper`` uses the `empty analog wrapper <mag/user_analog_project_wrapper_empty.mag>`__.
+
+- The ``user_analog_project_wrapper`` adheres to the same pin order and placement of the `empty analog wrapper <mag/user_analog_project_wrapper_empty.mag>`__.
 
 ------
 
@@ -126,7 +134,7 @@ Required Directory Structure
    project.
 -  ``maglef`` : includes all the maglef files used or produced from the
    project.
--  ``spi/lvs/`` : includes all the maglef files used or produced from the
+-  ``spi/lvs/`` : includes all the spice files used or produced from the
    project.
 -  ``verilog/dv`` : includes all the simulation test benches and how to
    run them.
@@ -155,6 +163,7 @@ Additional Material
 MPW Two
 --------
 
+- `Open MPW Program - MPW-TWO Walkthrough <https://www.youtube.com/watch?v=jBrBqhVNgDo>`__
 - `MPW Two Shuttle Program <https://efabless.com/open_shuttle_program/2>`__
 
 .. _mpw-one:
@@ -167,7 +176,7 @@ MPW One
 -  `Things to Clarify About Caravel -- What versions to use with Caravel? <https://youtu.be/-LZ522mxXMw>`__ 
 - `45 Chips in 30 Days: Open Source ASIC at its best! <https://www.youtube.com/watch?v=qlBzE27at6M>`__
 
-Check ``mpw-one-final`` for the caravel used for the mpw-one tapeout. 
+Check `mpw-one-final <https://github.com/efabless/caravel/tree/mpw-one-final>`__ for the caravel used for the mpw-one tapeout. 
 
 > :warning: You don't need to integrate your design with Caravel GDS for **MPW two**. Running ``make ship`` is no longer required.
 
