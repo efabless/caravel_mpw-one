@@ -195,6 +195,7 @@ uncompress-caravel:
 	cd $(CARAVEL_ROOT) && \
 	$(MAKE) uncompress
 
+# Digital Wrapper
 # verify that the wrapper was respected
 xor-wrapper: uncompress uncompress-caravel
 ### first erase the user's user_project_wrapper.gds
@@ -220,12 +221,13 @@ xor-wrapper: uncompress uncompress-caravel
 		signoff/user_project_wrapper_xor/user_project_wrapper.xor.gds
 	@cat signoff/user_project_wrapper_xor/total.txt
 
+# Analog Wrapper
 # verify that the wrapper was respected
 xor-analog-wrapper: uncompress uncompress-caravel
 ### first erase the user's user_project_wrapper.gds
-	sh $(CARAVEL_ROOT)/utils/erase_box.sh gds/user_analog_project_wrapper.gds 0 0 2920 3520
+	sh $(CARAVEL_ROOT)/utils/erase_box.sh gds/user_analog_project_wrapper.gds 0 0 2920 3520 -8 -8 
 ### do the same for the empty wrapper
-	sh $(CARAVEL_ROOT)/utils/erase_box.sh $(CARAVEL_ROOT)/gds/user_analog_project_wrapper_empty.gds 0 0 2920 3520
+	sh $(CARAVEL_ROOT)/utils/erase_box.sh $(CARAVEL_ROOT)/gds/user_analog_project_wrapper_empty.gds 0 0 2920 3520 -8 -8 
 	mkdir -p signoff/user_analog_project_wrapper_xor
 ### XOR the two resulting layouts
 	sh $(CARAVEL_ROOT)/utils/xor.sh \
