@@ -27,13 +27,16 @@ init_floorplan
 remove_nets -input $::env(CURRENT_DEF)
 remove_components -input $::env(CURRENT_DEF)
 
-place_io_ol
+set ::env(SAVE_DEF) [index_file $::env(ioPlacer_tmp_file_tag).def]
+try_catch openroad -exit $script_dir/or_ioplace.tcl |& tee $::env(TERMINAL_OUTPUT) [index_file $::env(ioPlacer_log_file_tag).log 0]
+set_def $::env(SAVE_DEF)
 
-# apply_route_obs
-
-# run_power_grid_generation
+# rename "duplicate" pins
+exec /bin/bash $script_dir/../../utils/rename_pins.sh $::env(SAVE_DEF) "io_analog_1_4,io_analog_1_5,io_analog_1_6,vdda1_1,vdda1_2,vdda1_3,vdda2_1,vssa1_1,vssa1_2,vssa1_3,vssa2_1,vccd1_1,vccd2_1,vssd1_1,vssd2_1" "io_analog\[4\],io_analog\[5\],io_analog\[6\],vdda1,vdda1,vdda1,vdda2,vssa1,vssa1,vssa1,vssa2,vccd1,vccd2,vssd1,vssd2"
 
 run_magic
+
+run_magic_drc
 
 save_views       -lef_path $::env(magic_result_file_tag).lef \
                  -def_path $::env(CURRENT_DEF) \
@@ -42,15 +45,21 @@ save_views       -lef_path $::env(magic_result_file_tag).lef \
                  -save_path $save_path \
                  -tag $::env(RUN_TAG)
 
-# # produce "obstructed" LEF to be used for routing
-# set gap 0.4
-# set llx [expr [lindex $::env(DIE_AREA) 0]-$gap]
-# set lly [expr [lindex $::env(DIE_AREA) 1]-$gap]
-# set urx [expr [lindex $::env(DIE_AREA) 2]+$gap]
-# set ury [expr [lindex $::env(DIE_AREA) 3]+$gap]
-# exec python3 $::env(OPENLANE_ROOT)/scripts/rectify.py $llx $lly $urx $ury \
-# 	< $::env(magic_result_file_tag).lef \
-# 	| python3 $::env(OPENLANE_ROOT)/scripts/obs.py {*}$::env(DIE_AREA) li1 met1 met2 met3 \
-# 	| python3 $::env(OPENLANE_ROOT)/scripts/obs.py -42.88 -37.53 2962.50 3557.21 met4 met5 \
-# 	> $::env(magic_result_file_tag).obstructed.lef
-# file copy -force $::env(magic_result_file_tag).obstructed.lef $save_path/lef
+# make pin labels visible in the magview
+exec /bin/bash $script_dir/../../utils/export_pin_labels.sh $script_dir/../../mag/$::env(RUN_TAG).mag 0 3498 2920 3520 0 -20 2920 4 >@stdout 2>@stderr
+
+# Draw Boundary in the magview
+exec /bin/bash $script_dir/../../utils/draw_boundary.sh $script_dir/../../mag/$::env(RUN_TAG).mag 0 0 2920 3520  >@stdout 2>@stderr
+
+# produce "obstructed" LEF to be used for routing
+set gap 0.4
+set llx [expr [lindex $::env(DIE_AREA) 0]-$gap]
+set lly [expr [lindex $::env(DIE_AREA) 1]-$gap]
+set urx [expr [lindex $::env(DIE_AREA) 2]+$gap]
+set ury [expr [lindex $::env(DIE_AREA) 3]+$gap]
+exec python3 $::env(OPENLANE_ROOT)/scripts/rectify.py $llx $lly $urx $ury \
+	< $::env(magic_result_file_tag).lef \
+	| python3 $::env(OPENLANE_ROOT)/scripts/obs.py {*}$::env(DIE_AREA) li1 met1 met2 met3 \
+	| python3 $::env(OPENLANE_ROOT)/scripts/obs.py -42.88 -37.53 2962.50 3557.21 met4 met5 \
+	> $::env(magic_result_file_tag).obstructed.lef
+file copy -force $::env(magic_result_file_tag).obstructed.lef $save_path/lef

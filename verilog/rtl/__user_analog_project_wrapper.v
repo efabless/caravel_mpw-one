@@ -25,9 +25,7 @@
  *-------------------------------------------------------------
  */
 
-module user_analog_project_wrapper #(
-    parameter BITS = 32
-)(
+module user_analog_project_wrapper (
 `ifdef USE_POWER_PINS
     inout vdda1,	// User area 1 3.3V supply
     inout vdda2,	// User area 2 3.3V supply
@@ -86,7 +84,7 @@ module user_analog_project_wrapper #(
      * GPIO pads, and so the analog_io indexing is offset from the
      * GPIO indexing by 7, as follows:
      *
-     * gpio_analog/noesd [18:7]  <--->  mprj_io[35:24]
+     * gpio_analog/noesd [17:7]  <--->  mprj_io[35:25]
      * gpio_analog/noesd [6:0]   <--->  mprj_io[13:7]	
      *
      */

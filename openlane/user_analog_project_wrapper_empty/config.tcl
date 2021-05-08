@@ -18,8 +18,6 @@ source $script_dir/fixed_wrapper_cfgs.tcl
 
 set ::env(DESIGN_NAME) user_analog_project_wrapper
 
-set ::env(FP_PDN_CHECK_NODES) 0
-
 set ::env(GLB_RT_OBS) "met1 0 0 $::env(DIE_AREA),\
 					   met2 0 0 $::env(DIE_AREA),\
 					   met3 0 0 $::env(DIE_AREA),\
@@ -31,8 +29,8 @@ set ::env(CLOCK_NET)  "wb_clk_i"
 
 set ::env(CLOCK_PERIOD) "10"
 
-set ::env(PL_OPENPHYSYN_OPTIMIZATIONS) 0
 set ::env(DIODE_INSERTION_STRATEGY) 0
+set ::env(SYNTH_DEFINES) "USE_POWER_PINS"
 
 set ::env(MAGIC_WRITE_FULL_LEF) 1
 
