@@ -64,12 +64,12 @@ Please stick to the v0.15 `tag <https://github.com/efabless/openlane/tree/v0.15>
 Caravel/Caravel-lite
 --------------------
 
-Please stick to the ``mpw-two-b`` tag.
+Please stick to the ``mpw-two-c`` tag.
 
 .. code:: bash
 
-    git clone https://github.com/efabless/caravel.git -b mpw-two-b
-    git clone https://github.com/efabless/caravel-lite.git -b mpw-two-b
+    git clone https://github.com/efabless/caravel.git -b mpw-two-c
+    git clone https://github.com/efabless/caravel-lite.git -b mpw-two-c caravel
 
 Open\_mpw\_precheck
 -------------------
