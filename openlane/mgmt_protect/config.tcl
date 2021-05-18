@@ -45,7 +45,7 @@ set ::env(FP_PIN_ORDER_CFG) $script_dir/pin_order.cfg
 # set ::env(FP_CONTEXT_LEF) $script_dir/../caravel/runs/caravel/tmp/merged_unpadded.lef
 
 set ::env(FP_SIZING) absolute
-set ::env(DIE_AREA) "0 0 1000 150"
+set ::env(DIE_AREA) "0 0 1000 145"
 set ::env(BOTTOM_MARGIN_MULT) 2
 set ::env(TOP_MARGIN_MULT) 2
 set ::env(LEFT_MARGIN_MULT) 12
@@ -77,11 +77,11 @@ set ::env(FP_PDN_LOWER_LAYER) met4
 set ::env(FP_PDN_UPPER_LAYER) met3
 set ::env(GLB_RT_MAXLAYER) 5
 set ::env(GLB_RT_OBS) "met5 $::env(DIE_AREA)"
-set ::env(GLB_RT_ADJUSTMENT) 0.018
+set ::env(GLB_RT_ADJUSTMENT) 0.015
 set ::env(GLB_RT_TILES) 15
-set ::env(GLB_RT_OVERFLOW_ITERS) 220
+set ::env(GLB_RT_OVERFLOW_ITERS) 250
 
-set ::env(FP_VERTICAL_HALO) 3
+set ::env(FP_VERTICAL_HALO) 5
 
 set ::env(PL_TARGET_DENSITY) 0.2
 

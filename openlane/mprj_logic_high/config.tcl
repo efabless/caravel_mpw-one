@@ -34,13 +34,13 @@ set ::env(CELL_PAD) 0
 set ::env(VDD_NETS) "vccd1"
 set ::env(GND_NETS) "vssd1"
 
-set ::env(BOTTOM_MARGIN_MULT) 1
-set ::env(TOP_MARGIN_MULT) 1
-set ::env(LEFT_MARGIN_MULT) 10
-set ::env(RIGHT_MARGIN_MULT) 10
+set ::env(BOTTOM_MARGIN_MULT) 2
+set ::env(TOP_MARGIN_MULT) 2
+set ::env(LEFT_MARGIN_MULT) 12
+set ::env(RIGHT_MARGIN_MULT) 12
 
-set ::env(FP_IO_VLENGTH) 2
-set ::env(FP_IO_HLENGTH) 2
+set ::env(FP_IO_VLENGTH) 5
+set ::env(FP_IO_HLENGTH) 5
 set ::env(FP_IO_MIN_DISTANCE) 3
 
 set ::env(FP_PDN_LOWER_LAYER) met2
@@ -64,6 +64,7 @@ set ::env(PL_RESIZER_TIMING_OPTIMIZATIONS) 0
 
 set ::env(PL_RANDOM_INITIAL_PLACEMENT) 1
 set ::env(FP_SIZING) absolute
-set ::env(DIE_AREA) "0 0 335 23"
+# 335
+set ::env(DIE_AREA) "0 0 370 25"
 set ::env(PL_TARGET_DENSITY) 0.88
 
