@@ -254,7 +254,7 @@ module MUX2x1 #(parameter   SIZE=32)
     endgenerate
 endmodule
 
-module BYTE #(  parameter   USE_LATCH=1)( 
+module BYTE #(  parameter   USE_LATCH=0)( 
 `ifdef USE_POWER_PINS
     input wire VPWR,
     input wire VGND,
@@ -351,7 +351,7 @@ module BYTE #(  parameter   USE_LATCH=1)(
   
 endmodule
 
-module BYTE_1RW1R #(  parameter   USE_LATCH=1)( 
+module BYTE_1RW1R #(  parameter   USE_LATCH=0)( 
 `ifdef USE_POWER_PINS
     input wire VPWR,
     input wire VGND,
@@ -469,8 +469,8 @@ module BYTE_1RW1R #(  parameter   USE_LATCH=1)(
   
 endmodule
 
-module WORD #( parameter    USE_LATCH=1,
-                            SIZE=1 ) (
+module WORD #( parameter    USE_LATCH=0,
+                            SIZE=`DFFRAM_SIZE ) (
 `ifdef USE_POWER_PINS
     input wire VPWR,
     input wire VGND,
@@ -515,8 +515,8 @@ module WORD #( parameter    USE_LATCH=1,
     
 endmodule 
 
-module WORD_1RW1R #( parameter  USE_LATCH=1,
-                                SIZE=1 ) (
+module WORD_1RW1R #( parameter  USE_LATCH=0,
+                                SIZE=`DFFRAM_SIZE ) (
 `ifdef USE_POWER_PINS
     input wire VPWR,
     input wire VGND,
@@ -579,8 +579,8 @@ module WORD_1RW1R #( parameter  USE_LATCH=1,
     
 endmodule 
 
-module RAM8 #( parameter    USE_LATCH=1,
-                            SIZE=1 ) (
+module RAM8 #( parameter    USE_LATCH=0,
+                            SIZE=`DFFRAM_SIZE ) (
 `ifdef USE_POWER_PINS
     input wire VPWR,
     input wire VGND,
@@ -636,8 +636,8 @@ module RAM8 #( parameter    USE_LATCH=1,
 
 endmodule
 
-module RAM8_1RW1R #( parameter     USE_LATCH=1,
-                                    SIZE=1 ) (
+module RAM8_1RW1R #( parameter     USE_LATCH=0,
+                                    SIZE=`DFFRAM_SIZE ) (
 `ifdef USE_POWER_PINS
     input wire VPWR,
     input wire VGND,
@@ -712,8 +712,8 @@ module RAM8_1RW1R #( parameter     USE_LATCH=1,
 endmodule
 
 // 4 x RAM8 slices (128 bytes) with registered outout 
-module RAM32 #( parameter   USE_LATCH=1,
-                            SIZE=1 ) 
+module RAM32 #( parameter   USE_LATCH=0,
+                            SIZE=`DFFRAM_SIZE ) 
 (
 
 `ifdef USE_POWER_PINS
@@ -848,8 +848,8 @@ module RAM32 #( parameter   USE_LATCH=1,
 
 endmodule
 
-module RAM128 #(parameter   USE_LATCH=1,
-                            SIZE=1 ) 
+module RAM128 #(parameter   USE_LATCH=0,
+                            SIZE=`DFFRAM_SIZE ) 
 (
 `ifdef USE_POWER_PINS
     input wire VPWR,
