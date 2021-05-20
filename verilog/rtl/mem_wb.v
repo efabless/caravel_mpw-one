@@ -108,7 +108,7 @@ module soc_mem
 );
 
 `ifndef USE_OPENRAM
-    DFFRAM #(.COLS(`COLS)) SRAM (
+    DFFRAM_1K #(.SIZE(`DFFRAM_SIZE), .USE_LATCH(`DFFRAM_USE_LATCH)) SRAM (
     `ifdef USE_POWER_PINS
         .VPWR(VPWR),
         .VGND(VGND),

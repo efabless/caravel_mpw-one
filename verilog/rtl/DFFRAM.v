@@ -16,7 +16,7 @@
 `default_nettype none
 `ifndef USE_CUSTOM_DFFRAM
 
-module DFFRAM(
+module DFFRAM_1K (
 `ifdef USE_POWER_PINS
     input VPWR,
     input VGND,
@@ -45,131 +45,56 @@ endmodule
 
 `else
 
-module DFFRAM #( parameter COLS=1)
+module DFFRAM_1K #(parameter USE_LATCH=1,
+                            SIZE=4 ) 
 (
 `ifdef USE_POWER_PINS
-    VPWR,
-    VGND,
+    input wire VPWR,
+    input wire VGND,
 `endif
-    CLK,
-    WE,
-    EN,
-    Di,
-    Do,
-    A
+    input   wire                CLK,    // FO: 2
+    input   wire [SIZE-1:0]     WE,     // FO: 2
+    input                       EN,     // FO: 2
+    input   wire [7:0]          A,      // FO: 5
+    input   wire [(SIZE*8-1):0] Di,     // FO: 2
+    output  wire [(SIZE*8-1):0] Do
+
 );
 
-    input           CLK;
-    input   [3:0]   WE;
-    input           EN;
-    input   [31:0]  Di;
-    output  [31:0]  Do;
-    input   [7+$clog2(COLS):0]   A;
+    wire [1:0]             SEL;
+    wire [(SIZE*8-1):0]    Do_pre[SIZE-1:0]; 
 
-`ifdef USE_POWER_PINS
-    input VPWR;
-    input VGND;
-`endif
-
-    wire [31:0]     DOUT [COLS-1:0];
-    wire [31:0]     Do_pre;
-    wire [COLS-1:0] EN_lines;
-
-    generate
-        genvar i;
-        for (i=0; i<COLS; i=i+1) begin : COLUMN
-            DFFRAM_COL4 RAMCOLS (
-                                `ifdef USE_POWER_PINS
-                                    .VPWR(VPWR),
-                                    .VGND(VGND),
-                                `endif
-                                    .CLK(CLK), 
-                                    .WE(WE), 
-                                    .EN(EN_lines[i]), 
-                                    .Di(Di), 
-                                    .Do(DOUT[i]), 
-                                    .A(A[7:0]) 
-                                );    
-        end
-        if(COLS==4) begin
-            MUX4x1_32 MUX ( 
-            `ifdef USE_POWER_PINS
-                .VPWR(VPWR),
-                .VGND(VGND),
-            `endif
-                .A0(DOUT[0]),
-                .A1(DOUT[1]),
-                .A2(DOUT[2]),
-                .A3(DOUT[3]),
-                .S(A[9:8]),
-                .X(Do_pre)
-            );
-            DEC2x4 DEC (
-            `ifdef USE_POWER_PINS
-                .VPWR(VPWR),
-                .VGND(VGND),
-            `endif 
-                .EN(EN),
-                .A(A[9:8]),
-                .SEL(EN_lines)
-            );
-        end
-        else if(COLS==2) begin
-            MUX2x1_32 MUX ( 
-            `ifdef USE_POWER_PINS
-                .VPWR(VPWR),
-                .VGND(VGND),
-            `endif 
-                .A0(DOUT[0]),
-                .A1(DOUT[1]),
-                .S(A[8]),
-                .X(Do_pre)
-            );
-            //sky130_fd_sc_hd__inv_4 DEC0 ( .Y(EN_lines[0]), .A(A[8]) );
-            //sky130_fd_sc_hd__clkbuf_4 DEC1 (.X(EN_lines[1]), .A(A[8]) );
-            DEC1x2 DEC ( 
-            `ifdef USE_POWER_PINS
-                .VPWR(VPWR),
-                .VGND(VGND),
-            `endif 
-                .EN(EN),
-                .A(A[8]),
-                .SEL(EN_lines[1:0]) 
-            );
-            
-        end
-        else begin
-            PASS MUX ( 
-            `ifdef USE_POWER_PINS
-                .VPWR(VPWR),
-                .VGND(VGND),
-            `endif 
-                .A(DOUT[0]),
-                .X(Do_pre)
-            );
-            sky130_fd_sc_hd__clkbuf_4 ENBUF (
-           `ifdef USE_POWER_PINS
-                .VPWR(VPWR),
-                .VGND(VGND),
-                .VPB(VPWR),
-                .VNB(VGND),
-            `endif 
-                .X(EN_lines[0]),
-                .A(EN)
-            );
-        end
-    endgenerate
-    
-    sky130_fd_sc_hd__clkbuf_4 DOBUF[31:0] (
+    // 1x2 DEC
+    sky130_fd_sc_hd__inv_2 DEC (
     `ifdef USE_POWER_PINS
         .VPWR(VPWR),
         .VGND(VGND),
         .VPB(VPWR),
         .VNB(VGND),
-    `endif 
-        .X(Do),
-        .A(Do_pre)
-    );
+    `endif
+        .Y(SEL[0]), .A(A[7]));
+
+    assign SEL[1] = A[7];
+
+    generate
+        genvar i;
+        for (i=0; i< 2; i=i+1) begin : BLOCK
+            RAM128 #(.USE_LATCH(USE_LATCH), .SIZE(SIZE)) RAM128 (
+            `ifdef USE_POWER_PINS
+                .VPWR(VPWR),
+                .VGND(VGND),
+            `endif
+                .CLK(CLK), .EN(SEL[i]), .WE(WE), .Di(Di), .Do(Do_pre[i]), .A(A[6:0]) );        
+        end
+     endgenerate
+
+    // Output MUX    
+    MUX2x1 #(.SIZE(SIZE*8)) DoMUX ( 
+    `ifdef USE_POWER_PINS
+        .VPWR(VPWR),
+        .VGND(VGND),
+    `endif
+        .A0(Do_pre[0]), .A1(Do_pre[1]), .S(A[7]), .X(Do) );
 
 endmodule
 
