@@ -169,24 +169,24 @@ module DEC3x8 (
 
 endmodule
 
-module MUX4x1 #(parameter   SIZE=32)
-(
+module MUX4x1 #(parameter   WIDTH=32) (
 `ifdef USE_POWER_PINS
     input wire VPWR,
     input wire VGND,
 `endif
-    input   wire [SIZE-1:0]     A0, A1, A2, A3,
+    input   wire [WIDTH-1:0]     A0, A1, A2, A3,
     input   wire [1:0]          S,
-    output  wire [SIZE-1:0]     X
+    output  wire [WIDTH-1:0]     X
 );
+    localparam SIZE = WIDTH/8;
     wire [SIZE-1:0] SEL0, SEL1;
-
+   
     sky130_fd_sc_hd__clkbuf_2 SEL0BUF[SIZE-1:0] (
     `ifdef USE_POWER_PINS
-        .VPWR(VPWR),
-        .VGND(VGND),
-        .VPB(VPWR),
-        .VNB(VGND),
+                .VPWR(VPWR),
+                .VGND(VGND),
+                .VPB(VPWR),
+                .VNB(VGND),
     `endif
         .X(SEL0), .A(S[0]));
 
@@ -198,10 +198,9 @@ module MUX4x1 #(parameter   SIZE=32)
         .VNB(VGND),
     `endif
         .X(SEL1), .A(S[1]));
-
     generate
         genvar i;
-        for(i=0; i<SIZE / 8; i=i+1) begin : M
+        for(i=0; i<SIZE; i=i+1) begin : M
             sky130_fd_sc_hd__mux4_1 MUX[7:0] (
             `ifdef USE_POWER_PINS
                 .VPWR(VPWR),
@@ -220,18 +219,19 @@ module MUX4x1 #(parameter   SIZE=32)
     endgenerate
 endmodule
 
-module MUX2x1 #(parameter   SIZE=32)
-(
+module MUX2x1 #(parameter   WIDTH=32) (
 `ifdef USE_POWER_PINS
     input wire VPWR,
     input wire VGND,
 `endif
-    input   wire [SIZE-1:0]     A0, A1, A2, A3,
-    input   wire           S,
-    output  wire [SIZE-1:0]     X
+    input   wire [WIDTH-1:0]     A0, A1, A2, A3,
+    input   wire          S,
+    output  wire [WIDTH-1:0]     X
 );
-    wire SEL;
-    sky130_fd_sc_hd__clkbuf_2 SEL0BUF[SIZE-1:0] (
+    localparam SIZE = WIDTH/8;
+    wire [SIZE-1:0] SEL;
+  
+    sky130_fd_sc_hd__clkbuf_2 SELBUF[SIZE-1:0] (
     `ifdef USE_POWER_PINS
         .VPWR(VPWR),
         .VGND(VGND),
@@ -239,9 +239,10 @@ module MUX2x1 #(parameter   SIZE=32)
         .VNB(VGND),
     `endif
         .X(SEL), .A(S));
+
     generate
         genvar i;
-        for(i=0; i<SIZE / 8; i=i+1) begin : M
+        for(i=0; i<SIZE; i=i+1) begin : M
             sky130_fd_sc_hd__mux2_1 MUX[7:0] (
             `ifdef USE_POWER_PINS
                 .VPWR(VPWR),
@@ -249,7 +250,7 @@ module MUX2x1 #(parameter   SIZE=32)
                 .VPB(VPWR),
                 .VNB(VGND),
             `endif
-                .A0(A0[(i+1)*8-1:i*8]), .A1(A1[(i+1)*8-1:i*8]), .S(SEL), .X(X[(i+1)*8-1:i*8]) );
+                .A0(A0[(i+1)*8-1:i*8]), .A1(A1[(i+1)*8-1:i*8]), .S(SEL[i]), .X(X[(i+1)*8-1:i*8]) );
         end
     endgenerate
 endmodule
