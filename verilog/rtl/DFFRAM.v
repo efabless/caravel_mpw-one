@@ -45,8 +45,8 @@ endmodule
 
 `else
 
-module DFFRAM_1K #(parameter USE_LATCH=1,
-                            SIZE=4 ) 
+module DFFRAM #(parameter USE_LATCH=`DFFRAM_USE_LATCH,
+                            SIZE=`DFFRAM_SIZE ) 
 (
 `ifdef USE_POWER_PINS
     input wire VPWR,
