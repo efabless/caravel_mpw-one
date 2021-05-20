@@ -89,7 +89,7 @@ module DFFRAM #(parameter USE_LATCH=`DFFRAM_USE_LATCH,
      endgenerate
 
     // Output MUX    
-    MUX2x1 #(.SIZE(SIZE*8)) DoMUX ( 
+    MUX2x1 #(.WIDTH(SIZE*8)) DoMUX ( 
     `ifdef USE_POWER_PINS
         .VPWR(VPWR),
         .VGND(VGND),
