@@ -16,6 +16,8 @@
 set script_dir [file dirname [file normalize [info script]]]
 # User config
 set ::env(DESIGN_NAME) DFFRAM
+ 
+set ::env(RUN_KLAYOUT) 0
 
 # Change if needed
 set ::env(VERILOG_FILES) "\
@@ -26,20 +28,27 @@ set ::env(VERILOG_FILES) "\
 set ::env(SYNTH_TOP_LEVEL) 1
 set ::env(SYNTH_READ_BLACKBOX_LIB) 1
 # Fill this
-set ::env(CLOCK_PERIOD) "10"
+# 8 -> 6 ants
+set ::env(CLOCK_PERIOD) "8"
 set ::env(CLOCK_PORT) "CLK"
 set ::env(CLOCK_TREE_SYNTH) 0
 
-set ::env(FP_PIN_ORDER_CFG) $::env(DESIGN_DIR)/pin_order.cfg
+#set ::env(FP_PIN_ORDER_CFG) $::env(DESIGN_DIR)/pin_order.cfg
+set ::env(FP_CONTEXT_DEF) $script_dir/../mgmt_core/runs/mgmt_core/tmp/floorplan/4-ioPlacer.macro_placement.def
+set ::env(FP_CONTEXT_LEF) $script_dir/../mgmt_core/runs/mgmt_core/tmp/merged_unpadded.lef
 
 set ::env(FP_SIZING) absolute
 set ::env(DIE_AREA) "0 0 750 525"
 
 set ::env(PDN_CFG) $script_dir/pdn.tcl
+set ::env(GLB_RT_ADJUSTMENT) 0.015
 set ::env(GLB_RT_MAXLAYER) 5
 
 set ::env(PL_OPENPHYSYN_OPTIMIZATIONS) 0
-set ::env(PL_TARGET_DENSITY) 0.85
+set ::env(PL_RESIZER_TIMING_OPTIMIZATIONS) 0
+set ::env(PL_RESIZER_DESIGN_OPTIMIZATIONS) 0
+ 
+set ::env(PL_TARGET_DENSITY) 0.88
 
 set ::env(CELL_PAD) 0
-set ::env(DIODE_INSERTION_STRATEGY) 0
+set ::env(DIODE_INSERTION_STRATEGY) 4

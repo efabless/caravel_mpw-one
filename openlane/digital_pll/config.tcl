@@ -19,26 +19,44 @@ set ::env(DESIGN_NAME) digital_pll
 
 # Change if needed
 set ::env(VERILOG_FILES) $script_dir/../../verilog/rtl/digital_pll.v
+# Synthesis
 set ::env(SYNTH_READ_BLACKBOX_LIB) 1
-
-# Fill this
-set ::env(CLOCK_TREE_SYNTH) 0
-
-set ::env(PDN_CFG) $script_dir/pdn.tcl
-set ::env(FP_PDN_CORE_RING) 0
-set ::env(FP_PDN_VPITCH) 50
-set ::env(FP_PDN_HPITCH) 50
-
-
+set ::env(SYNTH_MAX_FANOUT) 6
 set ::env(SYNTH_BUFFERING) 0
 set ::env(SYNTH_SIZING) 0
 
-set ::env(CELL_PAD) 4
+set ::env(RUN_KLAYOUT_DRC) 1 
+# Fill this
+set ::env(DESIGN_IS_CORE) 0
 
-set ::env(FP_CORE_UTIL) 50
-set ::env(PL_TARGET_DENSITY) 0.55
-set ::env(SYNTH_MAX_FANOUT) 6
+set ::env(CLOCK_TREE_SYNTH) 0
+
+set ::env(PDN_CFG) $script_dir/pdn.tcl
+#set ::env(FP_PIN_ORDER_CFG) $script_dir/pin_order.cfg
+
+set ::env(TOP_MARGIN_MULT) 2
+set ::env(BOTTOM_MARGIN_MULT) 2
 
 set ::env(FP_PDN_CORE_RING) 1
-set ::env(DESIGN_IS_CORE) 0
+set ::env(FP_PDN_VPITCH) 40
+set ::env(FP_PDN_HPITCH) 40
+set ::env(FP_PDN_CORE_RING_HOFFSET) "20"
+set ::env(FP_PDN_CORE_RING_VOFFSET) "20"
+set ::env(FP_PDN_CORE_RING_VWIDTH) 20
+set ::env(FP_PDN_CORE_RING_HWIDTH) 20
+set ::env(FP_PDN_CORE_RING_VSPACING) 5
+set ::env(FP_PDN_CORE_RING_HSPACING) 5
+
+set ::env(FP_SIZING) absolute
+set ::env(DIE_AREA) "0 0 95 85"
+
+set ::env(MAGIC_ZEROIZE_ORIGIN) 1
+
+set ::env(PL_RESIZER_DESIGN_OPTIMIZATIONS) 0
+set ::env(PL_RESIZER_TIMING_OPTIMIZATIONS) 0
+set ::env(PL_TARGET_DENSITY) 0.65
+
+set ::env(CELL_PAD)  4 
+
 set ::env(GLB_RT_MAXLAYER) 5
+set ::env(GLB_RT_ADJUSTMENT) 0.05

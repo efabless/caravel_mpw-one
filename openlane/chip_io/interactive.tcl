@@ -41,7 +41,7 @@ verilog_elaborate
 init_floorplan
 
 puts_info "Generating pad frame"
-exec -ignorestderr python3 $::env(SCRIPTS_DIR)/padringer.py\
+exec python3 $::env(SCRIPTS_DIR)/padringer.py\
 	--def-netlist $::env(CURRENT_DEF)\
 	--design $::env(DESIGN_NAME)\
 	--lefs $::env(TECH_LEF) {*}$::env(GPIO_PADS_LEF)\
