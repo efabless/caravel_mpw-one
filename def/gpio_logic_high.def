@@ -1,0 +1,159 @@
+VERSION 5.8 ;
+DIVIDERCHAR "/" ;
+BUSBITCHARS "[]" ;
+DESIGN gpio_logic_high ;
+UNITS DISTANCE MICRONS 1000 ;
+
+DIEAREA ( 0 0 ) ( 8000 8000 ) ;
+
+ROW ROW_0 unithd 0 0 FS DO 17 BY 1 STEP 460 0
+ ;
+ROW ROW_1 unithd 0 2720 N DO 17 BY 1 STEP 460 0
+ ;
+TRACKS X 230 DO 17 STEP 460 LAYER li1 ;
+TRACKS Y 170 DO 24 STEP 340 LAYER li1 ;
+TRACKS X 170 DO 24 STEP 340 LAYER met1 ;
+TRACKS Y 170 DO 24 STEP 340 LAYER met1 ;
+TRACKS X 230 DO 17 STEP 460 LAYER met2 ;
+TRACKS Y 230 DO 17 STEP 460 LAYER met2 ;
+TRACKS X 340 DO 12 STEP 680 LAYER met3 ;
+TRACKS Y 340 DO 12 STEP 680 LAYER met3 ;
+TRACKS X 460 DO 9 STEP 920 LAYER met4 ;
+TRACKS Y 460 DO 9 STEP 920 LAYER met4 ;
+TRACKS X 1700 DO 2 STEP 3400 LAYER met5 ;
+TRACKS Y 1700 DO 2 STEP 3400 LAYER met5 ;
+
+VIAS 4 ;
+- via2_FR 
++ RECT met2 ( -140 -185 ) ( 140 185 ) 
++ RECT via2 ( -100 -100 ) ( 100 100 ) 
++ RECT met3 ( -165 -165 ) ( 165 165 ) 
+ 
+ ;
+- via4_FR 
++ RECT met4 ( -590 -590 ) ( 590 590 ) 
++ RECT via4 ( -400 -400 ) ( 400 400 ) 
++ RECT met5 ( -710 -710 ) ( 710 710 ) 
+ 
+ ;
+- via2_400x400 
+ 
++ VIARULE M2M3_PR
+  + CUTSIZE 200 200
+  + LAYERS met2 via2 met3
+  + CUTSPACING 200 200
+  + ENCLOSURE 100 100 100 100
+ ;
+- via_400x480 
+ 
++ VIARULE M1M2_PR
+  + CUTSIZE 150 150
+  + LAYERS met1 via met2
+  + CUTSPACING 170 170
+  + ENCLOSURE 125 165 125 165
+ ;
+END VIAS
+
+COMPONENTS 11 ;
+- gpio_logic_high sky130_fd_sc_hd__conb_1 + PLACED ( 4600 0 ) S ;
+- PHY_0 sky130_fd_sc_hd__decap_3 + FIXED ( 0 0 ) FS ;
+- PHY_1 sky130_fd_sc_hd__decap_3 + FIXED ( 6440 0 ) S ;
+- PHY_2 sky130_fd_sc_hd__decap_3 + FIXED ( 0 2720 ) N ;
+- PHY_3 sky130_fd_sc_hd__decap_3 + FIXED ( 6440 2720 ) FN ;
+- PHY_4 sky130_fd_sc_hd__tapvpwrvgnd_1 + FIXED ( 4140 0 ) FS ;
+- PHY_5 sky130_fd_sc_hd__tapvpwrvgnd_1 + FIXED ( 4140 2720 ) N ;
+- FILLER_0_3 sky130_fd_sc_hd__decap_6 + PLACED ( 1380 0 ) FS ;
+- FILLER_0_13 sky130_fd_sc_hd__fill_1 + PLACED ( 5980 0 ) FS ;
+- FILLER_1_3 sky130_fd_sc_hd__decap_6 + PLACED ( 1380 2720 ) N ;
+- FILLER_1_10 sky130_fd_sc_hd__decap_4 + PLACED ( 4600 2720 ) N ;
+END COMPONENTS
+
+PINS 11 ;
+- gpio_logic1 + NET gpio_logic1 + DIRECTION OUTPUT + USE SIGNAL 
+  + LAYER met3 ( -2000 -300 ) ( 2000 300 )
+  + PLACED ( 6000 4420 ) N ;
+- vccd1 + NET vccd1 + DIRECTION INOUT + USE POWER 
+  + LAYER met2 ( -200 -2960 ) ( 200 2960 )
+  + FIXED ( 7000 2720 ) N + SPECIAL ;
+- vccd1 + NET vccd1 + DIRECTION INOUT + USE POWER 
+  + LAYER met2 ( -200 -2960 ) ( 200 2960 )
+  + FIXED ( 5000 2720 ) N + SPECIAL ;
+- vccd1 + NET vccd1 + DIRECTION INOUT + USE POWER 
+  + LAYER met2 ( -200 -2960 ) ( 200 2960 )
+  + FIXED ( 3000 2720 ) N + SPECIAL ;
+- vccd1 + NET vccd1 + DIRECTION INOUT + USE POWER 
+  + LAYER met2 ( -200 -2960 ) ( 200 2960 )
+  + FIXED ( 1000 2720 ) N + SPECIAL ;
+- vccd1 + NET vccd1 + DIRECTION INOUT + USE POWER 
+  + LAYER met3 ( -3910 -200 ) ( 3910 200 )
+  + FIXED ( 3910 5260 ) N + SPECIAL ;
+- vccd1 + NET vccd1 + DIRECTION INOUT + USE POWER 
+  + LAYER met3 ( -3910 -200 ) ( 3910 200 )
+  + FIXED ( 3910 760 ) N + SPECIAL ;
+- vssd1 + NET vssd1 + DIRECTION INOUT + USE GROUND 
+  + LAYER met2 ( -200 -2960 ) ( 200 2960 )
+  + FIXED ( 6000 2720 ) N + SPECIAL ;
+- vssd1 + NET vssd1 + DIRECTION INOUT + USE GROUND 
+  + LAYER met2 ( -200 -2960 ) ( 200 2960 )
+  + FIXED ( 4000 2720 ) N + SPECIAL ;
+- vssd1 + NET vssd1 + DIRECTION INOUT + USE GROUND 
+  + LAYER met2 ( -200 -2960 ) ( 200 2960 )
+  + FIXED ( 2000 2720 ) N + SPECIAL ;
+- vssd1 + NET vssd1 + DIRECTION INOUT + USE GROUND 
+  + LAYER met3 ( -3910 -200 ) ( 3910 200 )
+  + FIXED ( 3910 3010 ) N + SPECIAL ;
+END PINS
+
+SPECIALNETS 2 ;
+- vccd1 ( PIN vccd1 ) 
+  + ROUTED met1 0 + SHAPE STRIPE ( 7000 5440 ) via_400x480 
+    NEW met1 0 + SHAPE STRIPE ( 5000 5440 ) via_400x480 
+    NEW met1 0 + SHAPE STRIPE ( 3000 5440 ) via_400x480 
+    NEW met1 0 + SHAPE STRIPE ( 1000 5440 ) via_400x480 
+    NEW met1 0 + SHAPE STRIPE ( 7000 0 ) via_400x480 
+    NEW met1 0 + SHAPE STRIPE ( 5000 0 ) via_400x480 
+    NEW met1 0 + SHAPE STRIPE ( 3000 0 ) via_400x480 
+    NEW met1 0 + SHAPE STRIPE ( 1000 0 ) via_400x480 
+    NEW met2 0 + SHAPE STRIPE ( 7000 5260 ) via2_400x400 
+    NEW met2 0 + SHAPE STRIPE ( 5000 5260 ) via2_400x400 
+    NEW met2 0 + SHAPE STRIPE ( 3000 5260 ) via2_400x400 
+    NEW met2 0 + SHAPE STRIPE ( 1000 5260 ) via2_400x400 
+    NEW met2 0 + SHAPE STRIPE ( 7000 760 ) via2_400x400 
+    NEW met2 0 + SHAPE STRIPE ( 5000 760 ) via2_400x400 
+    NEW met2 0 + SHAPE STRIPE ( 3000 760 ) via2_400x400 
+    NEW met2 0 + SHAPE STRIPE ( 1000 760 ) via2_400x400 
+    NEW met3 400 + SHAPE STRIPE ( 0 5260 ) ( 7820 5260 ) 
+    NEW met3 400 + SHAPE STRIPE ( 0 760 ) ( 7820 760 ) 
+    NEW met2 400 + SHAPE STRIPE ( 7000 -240 ) ( 7000 5680 ) 
+    NEW met2 400 + SHAPE STRIPE ( 5000 -240 ) ( 5000 5680 ) 
+    NEW met2 400 + SHAPE STRIPE ( 3000 -240 ) ( 3000 5680 ) 
+    NEW met2 400 + SHAPE STRIPE ( 1000 -240 ) ( 1000 5680 ) 
+    NEW met1 480 + SHAPE FOLLOWPIN ( 0 5440 ) ( 7820 5440 ) 
+    NEW met1 480 + SHAPE FOLLOWPIN ( 0 0 ) ( 7820 0 ) 
+  + USE POWER ;
+- vssd1 ( PIN vssd1 ) 
+  + ROUTED met1 0 + SHAPE STRIPE ( 6000 2720 ) via_400x480 
+    NEW met1 0 + SHAPE STRIPE ( 4000 2720 ) via_400x480 
+    NEW met1 0 + SHAPE STRIPE ( 2000 2720 ) via_400x480 
+    NEW met2 0 + SHAPE STRIPE ( 6000 3010 ) via2_400x400 
+    NEW met2 0 + SHAPE STRIPE ( 4000 3010 ) via2_400x400 
+    NEW met2 0 + SHAPE STRIPE ( 2000 3010 ) via2_400x400 
+    NEW met3 400 + SHAPE STRIPE ( 0 3010 ) ( 7820 3010 ) 
+    NEW met2 400 + SHAPE STRIPE ( 6000 -240 ) ( 6000 5680 ) 
+    NEW met2 400 + SHAPE STRIPE ( 4000 -240 ) ( 4000 5680 ) 
+    NEW met2 400 + SHAPE STRIPE ( 2000 -240 ) ( 2000 5680 ) 
+    NEW met1 480 + SHAPE FOLLOWPIN ( 0 2720 ) ( 7820 2720 ) 
+  + USE GROUND ;
+END SPECIALNETS
+
+NETS 1 ;
+- gpio_logic1 ( PIN gpio_logic1 ) ( gpio_logic_high HI ) 
+  + ROUTED met1 ( 230 2210 ) ( 5750 2210 )
+    NEW met2 ( 230 2210 ) ( 230 4420 )
+    NEW met3 ( 230 4420 ) ( 4140 4420 0 )
+    NEW li1 ( 5750 2210 ) L1M1_PR_MR
+    NEW met1 ( 230 2210 ) M1M2_PR
+    NEW met2 ( 230 4420 ) via2_FR
++ USE SIGNAL ;
+END NETS
+END DESIGN
