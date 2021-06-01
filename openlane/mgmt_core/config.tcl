@@ -30,6 +30,7 @@ set ::env(SYNTH_STRATEGY) "AREA 2"
 set ::env(SYNTH_MAX_FANOUT) 4
 
 set ::env(FP_PDN_VPITCH) 50
+set ::env(FP_PDN_HPITCH) 130
 set ::env(PDN_CFG) $script_dir/pdn.tcl
 
 #set ::env(FP_DEF_TEMPLATE) $script_dir/../../def/mgmt_core.def
@@ -38,11 +39,10 @@ set ::env(FP_PIN_ORDER_CFG) $script_dir/pin_order.cfg
 #set ::env(FP_CONTEXT_DEF) $script_dir/../caravel/runs/caravel/tmp/floorplan/verilog2def_openroad.def.macro_placement.def
 #set ::env(FP_CONTEXT_LEF) $script_dir/../caravel/runs/caravel/tmp/merged_unpadded.lef
 set ::env(FP_SIZING) absolute
-set ::env(DIE_AREA) "0 0 2150 900"
-
+set ::env(DIE_AREA) "0 0 2150 860"
 
 set ::env(MACRO_PLACEMENT_CFG) $script_dir/macro_placement.cfg
-set ::env(PL_TARGET_DENSITY) 0.28
+set ::env(PL_TARGET_DENSITY) 0.25
 #set ::env(PL_TARGET_DENSITY_CELLS) 0.2
 set ::env(CELL_PAD) 0
 
@@ -58,10 +58,11 @@ set ::env(GLB_RT_ALLOW_CONGESTION) 0
 set ::env(GLB_RT_OVERFLOW_ITERS) 200
 
 # Add met4 routing obstruction on DFFRAM macro
-#set ::env(GLB_RT_OBS) "\
-#   met4 302.695 156.400 1052.695 681.4 "
+set ::env(GLB_RT_OBS) "\
+   met4 122.000 111.000 872.000 636.000"
 
 set ::env(DIODE_INSERTION_STRATEGY) 4
+
  
 set ::env(VERILOG_FILES) "\
 	$script_dir/../../verilog/rtl/defines.v\

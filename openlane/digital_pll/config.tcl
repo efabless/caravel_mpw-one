@@ -25,19 +25,18 @@ set ::env(SYNTH_MAX_FANOUT) 6
 set ::env(SYNTH_BUFFERING) 0
 set ::env(SYNTH_SIZING) 0
 
-set ::env(RUN_KLAYOUT_DRC) 1 
 # Fill this
 set ::env(DESIGN_IS_CORE) 0
 
 set ::env(CLOCK_TREE_SYNTH) 0
 
-set ::env(PDN_CFG) $script_dir/pdn.tcl
+#set ::env(PDN_CFG) $script_dir/pdn.tcl
 #set ::env(FP_PIN_ORDER_CFG) $script_dir/pin_order.cfg
 
 set ::env(TOP_MARGIN_MULT) 2
 set ::env(BOTTOM_MARGIN_MULT) 2
 
-set ::env(FP_PDN_CORE_RING) 1
+set ::env(FP_PDN_CORE_RING) 0
 set ::env(FP_PDN_VPITCH) 40
 set ::env(FP_PDN_HPITCH) 40
 set ::env(FP_PDN_CORE_RING_HOFFSET) "20"
@@ -48,15 +47,15 @@ set ::env(FP_PDN_CORE_RING_VSPACING) 5
 set ::env(FP_PDN_CORE_RING_HSPACING) 5
 
 set ::env(FP_SIZING) absolute
-set ::env(DIE_AREA) "0 0 95 85"
+set ::env(DIE_AREA) "0 0 75 85"
 
-set ::env(MAGIC_ZEROIZE_ORIGIN) 1
+set ::env(MAGIC_ZEROIZE_ORIGIN) 0
 
 set ::env(PL_RESIZER_DESIGN_OPTIMIZATIONS) 0
 set ::env(PL_RESIZER_TIMING_OPTIMIZATIONS) 0
-set ::env(PL_TARGET_DENSITY) 0.65
+set ::env(PL_TARGET_DENSITY) 0.75
 
-set ::env(CELL_PAD)  4 
+set ::env(CELL_PAD)  2 
 
 set ::env(GLB_RT_MAXLAYER) 5
 set ::env(GLB_RT_ADJUSTMENT) 0.05
