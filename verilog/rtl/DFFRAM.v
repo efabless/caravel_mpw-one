@@ -45,41 +45,50 @@ endmodule
 
 `else
 
-module DFFRAM #(parameter USE_LATCH=`DFFRAM_USE_LATCH,
-                            SIZE=`DFFRAM_SIZE ) 
+module DFFRAM #(parameter   USE_LATCH=`DFFRAM_USE_LATCH,
+                            WSIZE=`DFFRAM_WSIZE ) 
 (
 `ifdef USE_POWER_PINS
     input wire VPWR,
     input wire VGND,
 `endif
     input   wire                CLK,    // FO: 2
-    input   wire [SIZE-1:0]     WE,     // FO: 2
+    input   wire [WSIZE-1:0]     WE,     // FO: 2
     input                       EN,     // FO: 2
     input   wire [7:0]          A,      // FO: 5
-    input   wire [(SIZE*8-1):0] Di,     // FO: 2
-    output  wire [(SIZE*8-1):0] Do
+    input   wire [(WSIZE*8-1):0] Di,     // FO: 2
+    output  wire [(WSIZE*8-1):0] Do
 
 );
 
     wire [1:0]             SEL;
-    wire [(SIZE*8-1):0]    Do_pre[SIZE-1:0]; 
+    wire [(WSIZE*8-1):0]    Do_pre[1:0]; 
 
     // 1x2 DEC
-    sky130_fd_sc_hd__inv_2 DEC (
+    DEC1x2 DEC (
     `ifdef USE_POWER_PINS
         .VPWR(VPWR),
         .VGND(VGND),
-        .VPB(VPWR),
-        .VNB(VGND),
     `endif
-        .Y(SEL[0]), .A(A[7]));
+        .EN(EN),
+        .A(A[7]),
+        .SEL(SEL)
+    );
 
-    assign SEL[1] = A[7];
+    // sky130_fd_sc_hd__inv_2 DEC (
+    //  `ifdef USE_POWER_PINS
+    //     .VPWR(VPWR),
+    //     .VGND(VGND),
+    //     .VPB(VPWR),
+    //     .VNB(VGND),
+    // `endif
+    //     .Y(SEL[0]), .A(A[7]));
+    // assign SEL[1] = A[7];
 
     generate
         genvar i;
         for (i=0; i< 2; i=i+1) begin : BLOCK
-            RAM128 #(.USE_LATCH(USE_LATCH), .SIZE(SIZE)) RAM128 (
+            RAM128 #(.USE_LATCH(USE_LATCH), .WSIZE(WSIZE)) RAM128 (
             `ifdef USE_POWER_PINS
                 .VPWR(VPWR),
                 .VGND(VGND),
@@ -89,7 +98,7 @@ module DFFRAM #(parameter USE_LATCH=`DFFRAM_USE_LATCH,
      endgenerate
 
     // Output MUX    
-    MUX2x1 #(.WIDTH(SIZE*8)) DoMUX ( 
+    MUX2x1 #(.WIDTH(WSIZE*8)) DoMUX ( 
     `ifdef USE_POWER_PINS
         .VPWR(VPWR),
         .VGND(VGND),

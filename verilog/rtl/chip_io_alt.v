@@ -260,7 +260,7 @@ module chip_io_alt #(
     	);
 
 	// Last analog pad is a power pad, to provide a clamp resource.
-    	sky130_fd_io__top_power_hvc_wpadv2 user1_analog_pad_with_clamp  (
+    	sky130_ef_io__top_power_hvc user1_analog_pad_with_clamp  (
 		`USER1_ABUTMENT_PINS
 `ifdef TOP_ROUTING
 		.VDDIO(vddio)
@@ -282,7 +282,7 @@ module chip_io_alt #(
     	);
 
 	// Last two analog pads are power pads, to provide clamp resources.
-    	sky130_fd_io__top_power_hvc_wpadv2 user2_analog_pad_with_clamp [1:0] (
+    	sky130_ef_io__top_power_hvc user2_analog_pad_with_clamp [1:0] (
 		`USER2_ABUTMENT_PINS
 `ifdef TOP_ROUTING
 		.VDDIO(vddio)
