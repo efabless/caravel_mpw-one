@@ -45,7 +45,7 @@ set ::env(FP_PIN_ORDER_CFG) $script_dir/pin_order.cfg
 # set ::env(FP_CONTEXT_LEF) $script_dir/../caravel/runs/caravel/tmp/merged_unpadded.lef
 
 set ::env(FP_SIZING) absolute
-set ::env(DIE_AREA) "0 0 1000 90"
+set ::env(DIE_AREA) "0 0 1000 146"
 set ::env(BOTTOM_MARGIN_MULT) 2
 set ::env(TOP_MARGIN_MULT) 2
 set ::env(LEFT_MARGIN_MULT) 12
@@ -69,7 +69,7 @@ set ::env(FP_PDN_CORE_RING_VOFFSET) 7
 set ::env(FP_PDN_CORE_RING_HOFFSET) 7
 set ::env(FP_PDN_VWIDTH) 0.9
 set ::env(FP_PDN_HWIDTH) 0.9
-set ::env(FP_PDN_VPITCH) 150
+set ::env(FP_PDN_VPITCH) 145
 set ::env(FP_PDN_HPITCH) 5.44
 set ::env(FP_PDN_VSPACING) 3.2
 
@@ -77,11 +77,17 @@ set ::env(FP_PDN_LOWER_LAYER) met4
 set ::env(FP_PDN_UPPER_LAYER) met3
 set ::env(GLB_RT_MAXLAYER) 5
 set ::env(GLB_RT_OBS) "met5 $::env(DIE_AREA)"
+set ::env(GLB_RT_ADJUSTMENT) 0.01
+set ::env(GLB_RT_TILES) 15
+set ::env(GLB_RT_OVERFLOW_ITERS) 250
 
-set ::env(FP_VERTICAL_HALO) 3
+set ::env(FP_VERTICAL_HALO) 5
+set ::env(FP_HORIZONTAL_HALO) 12
 
-set ::env(PL_TARGET_DENSITY) 0.3
+set ::env(PL_TARGET_DENSITY) 0.18
+set ::env(PL_RESIZER_DESIGN_OPTIMIZATIONS) 0
+set ::env(PL_RESIZER_TIMING_OPTIMIZATIONS) 0
 
 set ::env(MACRO_PLACEMENT_CFG) $script_dir/macro_placement.cfg
-# set ::env(GLB_RT_ALLOW_CONGESTION) 1
-set ::env(DIODE_INSERTION_STRATEGY) 1
+#set ::env(GLB_RT_ALLOW_CONGESTION) 1
+set ::env(DIODE_INSERTION_STRATEGY) 4

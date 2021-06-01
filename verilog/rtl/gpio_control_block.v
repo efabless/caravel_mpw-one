@@ -243,15 +243,12 @@ module gpio_control_block #(
 
     /* Buffer user_gpio_in with an enable that is set by the user domain vccd */
 
-    sky130_fd_sc_hd__conb_1 gpio_logic_high (
+    gpio_logic_high gpio_logic_high (
 `ifdef USE_POWER_PINS
-            .VPWR(vccd1),
-            .VGND(vssd1),
-            .VPB(vccd1),
-            .VNB(vssd1),
+            .vccd1(vccd1),
+            .vssd1(vssd1),
 `endif
-            .HI(gpio_logic1),
-            .LO()
+            .gpio_logic1(gpio_logic1)
     );
 
     sky130_fd_sc_hd__einvp_8 gpio_in_buf (
