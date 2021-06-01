@@ -67,4 +67,3 @@ set ::env(FP_SIZING) absolute
 # 335
 set ::env(DIE_AREA) "0 0 370 25"
 set ::env(PL_TARGET_DENSITY) 0.88
-
