@@ -125,6 +125,9 @@ module mgmt_core (
 	assign sdo_out = (sdo_oenb_state == 1'b0) ? mgmt_out_data[1] : sdo_out_pre;
 	assign jtag_out = (jtag_oenb_state == 1'b0) ? mgmt_out_data[0] : jtag_out_pre;
 
+	wire _core_clk_;
+	wire _core_rstn_;
+
 	caravel_clocking clocking(
 	`ifdef USE_POWER_PINS
 		.vdd1v8(VPWR),
@@ -138,9 +141,9 @@ module mgmt_core (
 		.sel(spi_pll_sel),
 		.sel2(spi_pll90_sel),
 		.ext_reset(ext_reset),	// From housekeeping SPI
-		.core_clk(core_clk),
+		.core_clk(_core_clk_),
 		.user_clk(user_clk),
-		.resetb_sync(core_rstn)
+		.resetb_sync(_core_rstn_)
 	);
 
 	// These wires are defined in the SoC but are not being used because
@@ -186,8 +189,8 @@ module mgmt_core (
         	.vdd1v8(VPWR),
         	.vss(VGND),
     	    `endif
-		.clk(core_clk),
-		.resetn(core_rstn),
+		.clk(_core_clk_),
+		.resetn(_core_rstn_),
 		.trap(trap),
 		// GPIO
 		.gpio_out_pad(gpio_out_pad),

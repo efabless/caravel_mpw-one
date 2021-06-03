@@ -351,9 +351,9 @@ module caravel (
 		.porb(porb_l),
 		// Clocks and reset
 		.clock(clock_core),
-        	.core_clk(caravel_clk),
-        	.user_clk(caravel_clk2),
-        	.core_rstn(caravel_rstn),
+		.core_clk(caravel_clk),         		// --> NOT driven from mgmt_core <--
+		.user_clk(caravel_clk2),
+		.core_rstn(caravel_rstn),  				// --> NOT driven from mgmt_core <--
 		// Logic Analyzer
 		.la_input(la_data_in_mprj),
 		.la_output(la_data_out_mprj),
@@ -629,6 +629,12 @@ module caravel (
 		.A(rstb_h),
 		.X(rstb_l)
     );
+
+	// --> Simulates the metal fix  <--
+	// (core_rstn) caravel_rstn is connected to the X output of the level shifter
+	assign caravel_rstn = rstb_l;
+	// (core_clk) caravel_clk is connected to the secondary clock
+	assign caravel_clk =  caravel_clk2;
 
 	// Storage area
 	storage storage(

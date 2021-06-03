@@ -3584,12 +3584,20 @@ module caravel(vddio, vssio, vdda, vssa, vccd, vssd, vdda1, vdda2, vssa1, vssa2,
     .VPWR(vddio),
     .X(rstb_l)
   );
+
+  /* --> Simulates the metal fix  <--
+    (core_rstn) caravel_rstn is connected to the X output of the level shifter
+	  (core_clk) caravel_clk is connected to the secondary clock output from the mgmt_core
+  */ 
+	assign caravel_rstn = rstb_l;
+	assign caravel_clk =  caravel_clk2;
+
   mgmt_core soc (
     .VGND(vssd),
     .VPWR(vccd),
     .clock(clock_core),
-    .core_clk(caravel_clk),
-    .core_rstn(caravel_rstn),
+    .core_clk(caravel_clk),             // --> NOT driven from mgmt_core <--
+    .core_rstn(caravel_rstn),           // --> NOT driven from mgmt_core <--
     .flash_clk(flash_clk_core),
     .flash_clk_ieb(flash_clk_ieb_core),
     .flash_clk_oeb(flash_clk_oeb_core),
