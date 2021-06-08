@@ -91,7 +91,16 @@ module pll_tb;
 		RSTB <= 1'b0;
 		#1000;
 		RSTB <= 1'b1;	    // Release reset
+		`ifdef GL
+			// Force feedback loop to an initial state
+			#1 force uut.soc.pll.\ringosc.c[0] = 0;
+			#1 force uut.soc.pll.\ringosc.dstage[11].id.out = 1; 
+			#1;
+			release uut.soc.pll.\ringosc.c[0] ;
+			release uut.soc.pll.\ringosc.dstage[11].id.out ;
+		`endif
 		#2000;
+		
 	end
 
 	initial begin
