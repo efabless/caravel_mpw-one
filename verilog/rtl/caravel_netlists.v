@@ -37,11 +37,12 @@
 
 `ifdef GL
 	`include "gl/mgmt_core.v"
-	`include "gl/digital_pll.v"
 	`include "gl/DFFRAM.v"
 	`include "gl/storage.v"
 	`include "gl/user_id_programming.v"
 	`include "gl/chip_io.v"
+	`include "gl/pll_cells.v"
+	`include "gl/digital_pll_sim.v"
 	`include "gl/mprj_logic_high.v"
     `include "gl/mprj2_logic_high.v"
 	`include "gl/mgmt_protect.v"

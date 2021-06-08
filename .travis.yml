@@ -20,6 +20,7 @@ branches:
     - develop
     - master
     - fix_gpio
+    - mpw-one-final-metal-fix
     - /^(?i:develop)-.*$/
 
 services:
@@ -75,7 +76,7 @@ jobs:
       script: bash .travisCI/base_checks/gds-pointers.sh
     - name: "The mgmt_soc DV Test: Set 1"
       stage: test
-      if: branch = master OR type=cron
+#      if: branch = master OR type=cron
       install: bash .travisCI/utils/bash_run_wrapper.sh .travisCI/utils/pdkBuild.sh
       script: bash .travisCI/dv/dv-check-wrapper.sh mgmt_soc 1
     - name: "The mgmt_soc DV Test: Set 2"
@@ -85,32 +86,32 @@ jobs:
       script: bash .travisCI/dv/dv-check-wrapper.sh mgmt_soc 2
     - name: "The mgmt_soc DV Test: Set 3"
       stage: test
-      if: branch = master OR type=cron
+#     if: branch = master OR type=cron
       install: bash .travisCI/utils/bash_run_wrapper.sh .travisCI/utils/pdkBuild.sh
       script: bash .travisCI/dv/dv-check-wrapper.sh mgmt_soc 3
     - name: "The mgmt_soc DV Test: Set 4"
       stage: test
-      if: branch = master OR type=cron
+#      if: branch = master OR type=cron
       install: bash .travisCI/utils/bash_run_wrapper.sh .travisCI/utils/pdkBuild.sh
       script: bash .travisCI/dv/dv-check-wrapper.sh mgmt_soc 4
     - name: "The mgmt_soc DV Test: Set 5"
       stage: test
-      if: branch = master OR type=cron
+#      if: branch = master OR type=cron
       install: bash .travisCI/utils/bash_run_wrapper.sh .travisCI/utils/pdkBuild.sh
       script: bash .travisCI/dv/dv-check-wrapper.sh mgmt_soc 5
     - name: "The user_proj_example DV Test: Set 1"
       stage: test
-      if: branch = master OR type=cron
+#      if: branch = master OR type=cron
       install: bash .travisCI/utils/bash_run_wrapper.sh .travisCI/utils/pdkBuild.sh
       script: bash .travisCI/dv/dv-check-wrapper.sh user_proj_example 1
     - name: "The user_proj_example DV Test: Set 2"
       stage: test
-      if: branch = master OR type=cron
+#      if: branch = master OR type=cron
       install: bash .travisCI/utils/bash_run_wrapper.sh .travisCI/utils/pdkBuild.sh
       script: bash .travisCI/dv/dv-check-wrapper.sh user_proj_example 2
     - name: "The wb_utests DV Test"
       stage: test
-      if: branch = master OR type=cron
+#      if: branch = master OR type=cron
       install: bash .travisCI/utils/bash_run_wrapper.sh .travisCI/utils/pdkBuild.sh
       script: bash .travisCI/dv/dv-check-wrapper.sh wb_utests 1
     - name: "The Full User Build Test"
