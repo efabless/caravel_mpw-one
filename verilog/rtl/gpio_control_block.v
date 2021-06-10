@@ -67,8 +67,10 @@ module gpio_control_block #(
     `endif
 
     // Management Soc-facing signals
-    input  	 resetn,		// Global reset
-    input  	 serial_clock,
+    input  	     resetn,		// Global reset, locally propagated
+    output       resetn_out,
+    input  	     serial_clock,		// Global clock, locally propatated
+    output  	 serial_clock_out,
 
     output       mgmt_gpio_in,		// Management from pad (input only)
     input        mgmt_gpio_out,		// Management to pad (output only)
@@ -161,6 +163,11 @@ module gpio_control_block #(
     assign int_reset = (~resetn) & (~serial_clock);
     assign load_data = (~resetn) & serial_clock;
 
+    /* Propagate the clock and reset signals so that they aren't wired	*/
+    /* all over the chip, but are just wired between the blocks.	*/
+    assign serial_clock_out = serial_clock;
+    assign resetn_out = resetn;
+
     always @(posedge serial_clock or posedge int_reset) begin
 	if (int_reset == 1'b1) begin
 	    /* Clear shift register */
@@ -236,15 +243,12 @@ module gpio_control_block #(
 
     /* Buffer user_gpio_in with an enable that is set by the user domain vccd */
 
-    sky130_fd_sc_hd__conb_1 gpio_logic_high (
+    gpio_logic_high gpio_logic_high (
 `ifdef USE_POWER_PINS
-            .VPWR(vccd1),
-            .VGND(vssd1),
-            .VPB(vccd1),
-            .VNB(vssd1),
+            .vccd1(vccd1),
+            .vssd1(vssd1),
 `endif
-            .HI(gpio_logic1),
-            .LO()
+            .gpio_logic1(gpio_logic1)
     );
 
     sky130_fd_sc_hd__einvp_8 gpio_in_buf (

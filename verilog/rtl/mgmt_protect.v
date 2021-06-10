@@ -52,17 +52,21 @@ module mgmt_protect (
     input [3:0]   mprj_sel_o_core,
     input [31:0]  mprj_adr_o_core,
     input [31:0]  mprj_dat_o_core,
+    input [2:0]	  user_irq_core,
 
     // All signal in/out directions are the reverse of the signal
     // names at the buffer intrface.
 
     output [127:0] la_data_in_mprj,
     input  [127:0] la_data_out_mprj,
-    input  [127:0] la_oen_mprj,
+    input  [127:0] la_oenb_mprj,
+    input  [127:0] la_iena_mprj,
 
     input  [127:0] la_data_out_core,
     output [127:0] la_data_in_core,
-    output [127:0] la_oen_core,
+    output [127:0] la_oenb_core,
+
+    input  [2:0]  user_irq_ena,
 
     output 	  user_clock,
     output 	  user_clock2,
@@ -74,13 +78,14 @@ module mgmt_protect (
     output [3:0]  mprj_sel_o_user,
     output [31:0] mprj_adr_o_user,
     output [31:0] mprj_dat_o_user,
+    output [2:0]  user_irq,
     output	  user1_vcc_powergood,
     output	  user2_vcc_powergood,
     output	  user1_vdd_powergood,
     output	  user2_vdd_powergood
 );
 
-	wire [458:0] mprj_logic1;
+	wire [461:0] mprj_logic1;
 	wire	     mprj2_logic1;
 
 	wire mprj_vdd_logic1_h;
@@ -94,6 +99,11 @@ module mgmt_protect (
 	wire user2_vdd_powergood;
 
 	wire [127:0] la_data_in_mprj_bar;
+	wire [2:0] user_irq_bar;
+
+	wire [127:0] la_data_in_enable;
+	wire [127:0] la_data_out_enable;
+	wire [2:0] user_irq_enable;
 
         mprj_logic_high mprj_logic_high_inst (
 `ifdef USE_POWER_PINS
@@ -126,7 +136,6 @@ module mgmt_protect (
 	    .mprj2_vdd_logic1(mprj2_vdd_logic1)
 	);
 
-
 	// Buffering from the user side to the management side.
 	// NOTE:  This is intended to be better protected, by a full
 	// chain of an lv-to-hv buffer followed by an hv-to-lv buffer.
@@ -134,6 +143,18 @@ module mgmt_protect (
 	// checked and characterized.  The function below forces the
 	// data input to the management core to be a solid logic 0 when
 	// the user project is powered down.
+
+	sky130_fd_sc_hd__and2_1 user_to_mprj_in_ena_buf [127:0] (
+`ifdef USE_POWER_PINS
+                .VPWR(vccd),
+                .VGND(vssd),
+                .VPB(vccd),
+                .VNB(vssd),
+`endif
+		.X(la_data_in_enable),
+		.A(la_iena_mprj),
+		.B(mprj_logic1[457:330])
+	);
 
 	sky130_fd_sc_hd__nand2_4 user_to_mprj_in_gates [127:0] (
 `ifdef USE_POWER_PINS
@@ -144,7 +165,7 @@ module mgmt_protect (
 `endif
 		.Y(la_data_in_mprj_bar),
 		.A(la_data_out_core),
-		.B(mprj_logic1[457:330])
+		.B(la_data_in_enable)
 	);
 
 	sky130_fd_sc_hd__inv_8 user_to_mprj_in_buffers [127:0] (
@@ -156,6 +177,43 @@ module mgmt_protect (
 `endif
 		.Y(la_data_in_mprj),
 		.A(la_data_in_mprj_bar)
+	);
+
+	// Protection, similar to the above, for the three user IRQ lines
+
+	sky130_fd_sc_hd__and2_1 user_irq_ena_buf [2:0] (
+`ifdef USE_POWER_PINS
+                .VPWR(vccd),
+                .VGND(vssd),
+                .VPB(vccd),
+                .VNB(vssd),
+`endif
+		.X(user_irq_enable),
+		.A(user_irq_ena),
+		.B(mprj_logic1[460:458])
+	);
+
+	sky130_fd_sc_hd__nand2_4 user_irq_gates [2:0] (
+`ifdef USE_POWER_PINS
+                .VPWR(vccd),
+                .VGND(vssd),
+                .VPB(vccd),
+                .VNB(vssd),
+`endif
+		.Y(user_irq_bar),
+		.A(user_irq_core),
+		.B(user_irq_enable)
+	);
+
+	sky130_fd_sc_hd__inv_8 user_irq_buffers [2:0] (
+`ifdef USE_POWER_PINS
+                .VPWR(vccd),
+                .VGND(vssd),
+                .VPB(vccd),
+                .VNB(vssd),
+`endif
+		.Y(user_irq),
+		.A(user_irq_bar)
 	);
 
 	// The remaining circuitry guards against the management
@@ -272,6 +330,20 @@ module mgmt_protect (
                 .TE(mprj_logic1[73:42])
         );
 
+	/* Create signal to tristate the outputs to the user project */
+
+        sky130_fd_sc_hd__and2b_1 la_buf_enable [127:0] (
+`ifdef USE_POWER_PINS
+                .VPWR(vccd),
+                .VGND(vssd),
+                .VPB(vccd),
+                .VNB(vssd),
+`endif
+                .X(la_data_out_enable),
+		.A_N(la_oenb_mprj),
+                .B(mprj_logic1[201:74])
+        );
+
 	/* Project data out from the managment side to the user project	*/
 	/* area when the user project is powered down.			*/
 
@@ -284,7 +356,7 @@ module mgmt_protect (
 `endif
                 .Z(la_data_in_core),
                 .A(~la_data_out_mprj),
-                .TE(mprj_logic1[201:74])
+                .TE(la_data_out_enable)
         );
 
 	/* Project data out enable (bar) from the managment side to the	*/
@@ -297,8 +369,8 @@ module mgmt_protect (
                 .VPB(vccd),
                 .VNB(vssd),
 `endif
-		.Z(la_oen_core),
-		.A(~la_oen_mprj),
+		.Z(la_oenb_core),
+		.A(~la_oenb_mprj),
                 .TE(mprj_logic1[329:202])
 	);
 
@@ -313,7 +385,7 @@ module mgmt_protect (
                 .VPB(vccd),
                 .VNB(vssd),
 `endif
-                .A(mprj_logic1[458]),
+                .A(mprj_logic1[461]),
                 .X(user1_vcc_powergood)
 	);
 

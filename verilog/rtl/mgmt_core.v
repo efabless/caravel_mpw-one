@@ -33,11 +33,16 @@ module mgmt_core (
 	output flash_clk_oeb,
 	output flash_io0_oeb,
 	output flash_io1_oeb,
+	output flash_io2_oeb,	// through GPIO 36
+	output flash_io3_oeb,	// through GPIO 37
 	output flash_csb_ieb,
 	output flash_clk_ieb,
-	output flash_io0_ieb, output flash_io1_ieb,
+	output flash_io0_ieb,
+	output flash_io1_ieb,
 	output flash_io0_do,
 	output flash_io1_do,
+	output flash_io2_do,	// through GPIO 36
+	output flash_io3_do,	// through GPIO 37
 	input flash_io0_di,
 	input flash_io1_di,
 	// Master reset
@@ -48,7 +53,8 @@ module mgmt_core (
 	// LA signals
     	input  [127:0] la_input,           	// From User Project to cpu
     	output [127:0] la_output,          	// From CPU to User Project
-    	output [127:0] la_oen,              // LA output enable  
+    	output [127:0] la_oenb,                 // LA output enable  
+    	output [127:0] la_iena,                 // LA input enable  
 	// Housekeeping SPI
 	output sdo_out,
 	output sdo_outenb,
@@ -65,7 +71,8 @@ module mgmt_core (
 	input mprj2_vdd_pwrgood,
 	output mprj_io_loader_resetn,
 	output mprj_io_loader_clock,
-	output mprj_io_loader_data,
+	output mprj_io_loader_data_1,
+	output mprj_io_loader_data_2,
 	// WB MI A (User project)
     	input mprj_ack_i,
 	input [31:0] mprj_dat_i,
@@ -79,6 +86,8 @@ module mgmt_core (
     	output core_clk,
     	output user_clk,
     	output core_rstn,
+	input [2:0] user_irq,
+	output [2:0] user_irq_ena,
 
 	// Metal programmed user ID / mask revision vector
 	input [31:0] mask_rev,
@@ -236,7 +245,8 @@ module mgmt_core (
 		// Logic Analyzer
 		.la_input(la_input),
 		.la_output(la_output),
-		.la_oen(la_oen),
+		.la_oenb(la_oenb),
+		.la_iena(la_iena),
 		// User Project I/O Configuration
 		.mprj_vcc_pwrgood(mprj_vcc_pwrgood),
 		.mprj2_vcc_pwrgood(mprj2_vcc_pwrgood),
@@ -244,7 +254,11 @@ module mgmt_core (
 		.mprj2_vdd_pwrgood(mprj2_vdd_pwrgood),
 		.mprj_io_loader_resetn(mprj_io_loader_resetn),
 		.mprj_io_loader_clock(mprj_io_loader_clock),
-		.mprj_io_loader_data(mprj_io_loader_data),
+		.mprj_io_loader_data_1(mprj_io_loader_data_1),
+		.mprj_io_loader_data_2(mprj_io_loader_data_2),
+		// User project IRQ
+		.user_irq(user_irq),
+		.user_irq_ena(user_irq_ena),
 		// I/O data
 		.mgmt_in_data(mgmt_in_data),
 		.mgmt_out_data(mgmt_out_data),

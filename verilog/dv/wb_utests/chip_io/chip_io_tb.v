@@ -98,7 +98,7 @@ module chip_io_tb;
     reg [`MPRJ_IO_PADS-1:0] mprj_io_out;
     
     wire [`MPRJ_IO_PADS-1:0] mprj_io_in;
-    wire [`MPRJ_IO_PADS-8:0] mprj_analog_io;
+    wire [`MPRJ_IO_PADS-10:0] mprj_analog_io;
 
     always #12.5 clock <= (clock === 1'b0);
 

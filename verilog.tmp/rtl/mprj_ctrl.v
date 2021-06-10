@@ -1,0 +1,384 @@
+// SPDX-FileCopyrightText: 2020 Efabless Corporation
+//
+// Licensed under the Apache License, Version 2.0 (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+//
+//      http://www.apache.org/licenses/LICENSE-2.0
+//
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an "AS IS" BASIS,
+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+// See the License for the specific language governing permissions and
+// limitations under the License.
+// SPDX-License-Identifier: Apache-2.0
+
+`default_nettype none
+module mprj_ctrl_wb #(
+    parameter BASE_ADR  = 32'h 2300_0000,
+    parameter XFER      = 8'h 00,
+    parameter PWRDATA   = 8'h 04,
+    parameter IODATA    = 8'h 08, // One word per 32 IOs
+    parameter IOCONFIG  = 8'h 20
+)(
+    input wb_clk_i,
+    input wb_rst_i,
+
+    input [31:0] wb_dat_i,
+    input [31:0] wb_adr_i,
+    input [3:0] wb_sel_i,
+    input wb_cyc_i,
+    input wb_stb_i,
+    input wb_we_i,
+
+    output [31:0] wb_dat_o,
+    output wb_ack_o,
+
+    // Output is to serial loader
+    output serial_clock,
+    output serial_resetn,
+    output serial_data_out,
+
+    // Pass state of OEB bit on SDO and JTAG back to the core
+    // so that the function can be overridden for management output
+    output sdo_oenb_state,
+    output jtag_oenb_state,
+
+    // Read/write data to each GPIO pad from management SoC
+    input [`MPRJ_IO_PADS-1:0] mgmt_gpio_in,
+    output [`MPRJ_IO_PADS-1:0] mgmt_gpio_out,
+
+    // Write data to power controls
+    output [`MPRJ_PWR_PADS-1:0] pwr_ctrl_out
+);
+    wire resetn;
+    wire valid;
+    wire ready;
+    wire [3:0] iomem_we;
+
+    assign resetn = ~wb_rst_i;
+    assign valid  = wb_stb_i && wb_cyc_i; 
+
+    assign iomem_we = wb_sel_i & {4{wb_we_i}};
+    assign wb_ack_o = ready;
+
+    mprj_ctrl #(
+        .BASE_ADR(BASE_ADR),
+        .XFER(XFER),
+	.PWRDATA(PWRDATA),
+	.IODATA(IODATA),
+        .IOCONFIG(IOCONFIG)
+    ) mprj_ctrl (
+        .clk(wb_clk_i),
+        .resetn(resetn),
+        .iomem_addr(wb_adr_i),
+        .iomem_valid(valid),
+        .iomem_wstrb(iomem_we[1:0]),
+        .iomem_wdata(wb_dat_i),
+        .iomem_rdata(wb_dat_o),
+        .iomem_ready(ready),
+
+	.serial_clock(serial_clock),
+	.serial_resetn(serial_resetn),
+	.serial_data_out(serial_data_out),
+	.sdo_oenb_state(sdo_oenb_state),
+	.jtag_oenb_state(jtag_oenb_state),
+	// .mgmt_gpio_io(mgmt_gpio_io)
+	.mgmt_gpio_in(mgmt_gpio_in),
+	.mgmt_gpio_out(mgmt_gpio_out)
+    );
+
+endmodule
+
+module mprj_ctrl #(
+    parameter BASE_ADR  = 32'h 2300_0000,
+    parameter XFER      = 8'h 00,
+    parameter PWRDATA   = 8'h 04,
+    parameter IODATA    = 8'h 08,
+    parameter IOCONFIG  = 8'h 20,
+    parameter IO_CTRL_BITS = 13
+)(
+    input clk,
+    input resetn,
+
+    input [31:0] iomem_addr,
+    input iomem_valid,
+    input [1:0] iomem_wstrb,
+    input [31:0] iomem_wdata,
+    output reg [31:0] iomem_rdata,
+    output reg iomem_ready,
+
+    output serial_clock,
+    output serial_resetn,
+    output serial_data_out,
+    output sdo_oenb_state,
+    output jtag_oenb_state,
+    input  [`MPRJ_IO_PADS-1:0] mgmt_gpio_in,
+    output [`MPRJ_IO_PADS-1:0] mgmt_gpio_out
+);
+
+`define IDLE	2'b00
+`define START	2'b01
+`define XBYTE	2'b10
+`define LOAD	2'b11
+
+    localparam IO_WORDS = (`MPRJ_IO_PADS % 32 != 0) + (`MPRJ_IO_PADS / 32);
+
+    localparam IO_BASE_ADR = (BASE_ADR | IOCONFIG);
+
+    localparam OEB = 1;			// Offset of output enable in shift register.
+    localparam INP_DIS = 3;		// Offset of input disable in shift register. 
+
+    reg  [IO_CTRL_BITS-1:0] io_ctrl[`MPRJ_IO_PADS-1:0];  // I/O control, 1 word per gpio pad
+    reg  [`MPRJ_IO_PADS-1:0] mgmt_gpio_outr; 	 // I/O write data, 1 bit per gpio pad
+    wire [`MPRJ_IO_PADS-1:0] mgmt_gpio_out;	 // I/O write data output when input disabled
+    reg  [`MPRJ_PWR_PADS-1:0] pwr_ctrl_out;	 // Power write data, 1 bit per power pad
+    reg xfer_ctrl;			 // Transfer control (1 bit)
+
+    wire [IO_WORDS-1:0] io_data_sel;	// wishbone selects
+    wire pwr_data_sel;
+    wire xfer_sel;
+    wire busy;
+    wire selected;
+    wire [`MPRJ_IO_PADS-1:0] io_ctrl_sel;
+    reg [31:0] iomem_rdata_pre;
+
+    wire [`MPRJ_IO_PADS-1:0] mgmt_gpio_in;
+
+    wire sdo_oenb_state, jtag_oenb_state;
+
+    // JTAG and housekeeping SDO are normally controlled by their respective
+    // modules with OEB set to the default 1 value.  If configured for an
+    // additional output by setting the OEB bit low, then pass this information
+    // back to the core so that the default signals can be overridden.
+
+    assign jtag_oenb_state = io_ctrl[0][OEB];
+    assign sdo_oenb_state = io_ctrl[1][OEB];
+
+    `define wtop (((i+1)*32 > `MPRJ_IO_PADS) ? `MPRJ_IO_PADS-1 : (i+1)*32-1)
+    `define wbot (i*32)
+    `define rtop (`wtop - `wbot)
+
+    genvar i;
+
+    // Assign selection bits per address
+
+    assign xfer_sel = (iomem_addr[7:0] == XFER);
+    assign pwr_data_sel = (iomem_addr[7:0] == PWRDATA);
+
+    generate
+        for (i=0; i<IO_WORDS; i=i+1) begin
+    	    assign io_data_sel[i] = (iomem_addr[7:0] == (IODATA + i*4)); 
+	end
+
+        for (i=0; i<`MPRJ_IO_PADS; i=i+1) begin
+            assign io_ctrl_sel[i] = (iomem_addr[7:0] == (IO_BASE_ADR[7:0] + i*4)); 
+    	    assign mgmt_gpio_out[i] = (io_ctrl[i][INP_DIS] == 1'b1) ?
+			mgmt_gpio_outr[i] : 1'bz;
+        end
+    endgenerate
+
+    // Set selection and iomem_rdata_pre
+
+    assign selected = xfer_sel || pwr_data_sel || (|io_data_sel) || (|io_ctrl_sel);
+
+    wire [31:0] io_data_arr[0:IO_WORDS-1];
+    wire [31:0] io_ctrl_arr[0:`MPRJ_IO_PADS-1];
+    generate
+            for (i=0; i<IO_WORDS; i=i+1) begin
+                assign io_data_arr[i] = {{(31-`rtop){1'b0}}, mgmt_gpio_in[`wtop:`wbot]};
+
+            end
+            for (i=0; i<`MPRJ_IO_PADS; i=i+1) begin
+                assign io_ctrl_arr[i] = {{(32-IO_CTRL_BITS){1'b0}}, io_ctrl[i]};
+            end
+    endgenerate
+
+
+    integer j;
+    always @ * begin
+        iomem_rdata_pre = 'b0;
+        if (xfer_sel) begin
+            iomem_rdata_pre = {31'b0, busy};
+        end else if (pwr_data_sel) begin
+            iomem_rdata_pre = {{(32-`MPRJ_PWR_PADS){1'b0}}, pwr_ctrl_out};
+        end else if (|io_data_sel) begin
+            for (j=0; j<IO_WORDS; j=j+1) begin
+                if (io_data_sel[j]) begin
+                    iomem_rdata_pre = io_data_arr[j];
+                end
+            end
+        end else begin
+            for (j=0; j<`MPRJ_IO_PADS; j=j+1) begin
+                if (io_ctrl_sel[j]) begin
+                    iomem_rdata_pre = io_ctrl_arr[j];
+                end
+            end
+        end
+    end
+
+    // General I/O transfer
+
+    always @(posedge clk) begin
+	if (!resetn) begin
+            iomem_rdata <= 0;
+	    iomem_ready <= 0;
+	end else begin
+	    iomem_ready <= 0;
+	    if (iomem_valid && !iomem_ready && iomem_addr[31:8] == BASE_ADR[31:8]) begin
+		iomem_ready <= 1'b 1;
+
+		if (selected) begin
+		    iomem_rdata <= iomem_rdata_pre;
+		end
+	    end
+	end
+    end
+
+    // I/O write of xfer bit.  Also handles iomem_ready signal and power data.
+
+    always @(posedge clk) begin
+	if (!resetn) begin
+	    xfer_ctrl <= 0;
+            pwr_ctrl_out <= 0;
+	end else begin
+	    if (iomem_valid && !iomem_ready && iomem_addr[31:8] == BASE_ADR[31:8]) begin
+		if (xfer_sel) begin
+		    if (iomem_wstrb[0]) xfer_ctrl <= iomem_wdata[0];
+		end else if (pwr_data_sel) begin
+                    if (iomem_wstrb[0]) pwr_ctrl_out <= iomem_wdata[`MPRJ_PWR_PADS-1:0];
+		end
+	    end else begin
+		xfer_ctrl <= 1'b0;	// Immediately self-resetting
+	    end
+	end
+    end
+
+    // I/O transfer of gpio data to/from user project region under management
+    // SoC control
+
+    generate 
+        for (i=0; i<IO_WORDS; i=i+1) begin
+	    always @(posedge clk) begin
+		if (!resetn) begin
+		    mgmt_gpio_outr[`wtop:`wbot] <= 'd0;
+		end else begin
+		    if (iomem_valid && !iomem_ready && iomem_addr[31:8] ==
+					BASE_ADR[31:8]) begin
+			if (io_data_sel[i]) begin
+			    if (iomem_wstrb[0]) begin
+				mgmt_gpio_outr[`wtop:`wbot] <= iomem_wdata[`rtop:0];
+			    end
+			end
+		    end
+		end
+	    end
+	end
+
+        for (i=0; i<`MPRJ_IO_PADS; i=i+1) begin
+             always @(posedge clk) begin
+                if (!resetn) begin
+		    // NOTE:  This initialization must match the defaults passed
+		    // to the control blocks.  Specifically, 0x1803 is for a
+		    // bidirectional pad, and 0x0403 is for a simple input pad
+		    if (i < 2) begin
+                    	io_ctrl[i] <= 'h1803;
+		    end else begin
+                    	io_ctrl[i] <= 'h0403;
+		    end
+                end else begin
+                    if (iomem_valid && !iomem_ready &&
+					iomem_addr[31:8] == BASE_ADR[31:8]) begin
+                        if (io_ctrl_sel[i]) begin
+			    // NOTE:  Byte-wide write to io_ctrl is prohibited
+                            if (iomem_wstrb[0])
+				io_ctrl[i] <= iomem_wdata[IO_CTRL_BITS-1:0];
+                        end 
+                    end
+                end
+            end
+        end
+    endgenerate
+
+    reg [3:0]  xfer_count;
+    reg [5:0]  pad_count;
+    reg [1:0]  xfer_state;
+    reg	       serial_clock;
+    reg	       serial_resetn;
+
+    reg [IO_CTRL_BITS-1:0] serial_data_staging;
+
+    wire       serial_data_out;
+
+    assign serial_data_out = serial_data_staging[IO_CTRL_BITS-1];
+    assign busy = (xfer_state != `IDLE);
+ 
+    always @(posedge clk or negedge resetn) begin
+	if (resetn == 1'b0) begin
+
+	    xfer_state <= `IDLE;
+	    xfer_count <= 4'd0;
+	    pad_count  <= `MPRJ_IO_PADS;
+	    serial_resetn <= 1'b0;
+	    serial_clock <= 1'b0;
+
+	end else begin
+
+	    if (xfer_state == `IDLE) begin
+	    	pad_count  <= `MPRJ_IO_PADS;
+	    	serial_resetn <= 1'b1;
+		serial_clock <= 1'b0;
+		if (xfer_ctrl == 1'b1) begin
+		    xfer_state <= `START;
+		end
+	    end else if (xfer_state == `START) begin
+	    	serial_resetn <= 1'b1;
+		serial_clock <= 1'b0;
+	    	xfer_count <= 6'd0;
+		pad_count <= pad_count - 1;
+		xfer_state <= `XBYTE;
+		serial_data_staging <= io_ctrl[pad_count - 1];
+	    end else if (xfer_state == `XBYTE) begin
+	    	serial_resetn <= 1'b1;
+		serial_clock <= ~serial_clock;
+		if (serial_clock == 1'b0) begin
+		    if (xfer_count == IO_CTRL_BITS - 1) begin
+			if (pad_count == 0) begin
+		    	    xfer_state <= `LOAD;
+			end else begin
+		    	    xfer_state <= `START;
+			end
+		    end else begin
+		    	xfer_count <= xfer_count + 1;
+		    end
+		end else begin
+		    serial_data_staging <= {serial_data_staging[IO_CTRL_BITS-2:0], 1'b0};
+		end
+	    end else if (xfer_state == `LOAD) begin
+		xfer_count <= xfer_count + 1;
+
+		/* Load sequence:  Raise clock for final data shift in;
+		 * Pulse reset low while clock is high
+		 * Set clock back to zero.
+		 * Return to idle mode.
+		 */
+		if (xfer_count == 4'd0) begin
+		    serial_clock <= 1'b1;
+		    serial_resetn <= 1'b1;
+		end else if (xfer_count == 4'd1) begin
+		    serial_clock <= 1'b1;
+		    serial_resetn <= 1'b0;
+		end else if (xfer_count == 4'd2) begin
+		    serial_clock <= 1'b1;
+		    serial_resetn <= 1'b1;
+		end else if (xfer_count == 4'd3) begin
+		    serial_resetn <= 1'b1;
+		    serial_clock <= 1'b0;
+		    xfer_state <= `IDLE;
+		end
+	    end	
+	end
+    end
+
+endmodule
+`default_nettype wire

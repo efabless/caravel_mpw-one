@@ -33,6 +33,7 @@ module la_wb_tb;
 
 	wire wb_ack_o;
 	wire [31:0] wb_dat_o;
+    wire [127:0] la_data; 
 
     initial begin
         wb_clk_i = 0; 
@@ -67,20 +68,30 @@ module la_wb_tb;
     wire [31:0] la_data_adr_2   = uut.BASE_ADR | uut.LA_DATA_2;
     wire [31:0] la_data_adr_3   = uut.BASE_ADR | uut.LA_DATA_3;
     
-    wire [31:0] la_ena_adr_0 = uut.BASE_ADR | uut.LA_ENA_0;
-    wire [31:0] la_ena_adr_1 = uut.BASE_ADR | uut.LA_ENA_1;
-    wire [31:0] la_ena_adr_2 = uut.BASE_ADR | uut.LA_ENA_2;
-    wire [31:0] la_ena_adr_3 = uut.BASE_ADR | uut.LA_ENA_3;
+    wire [31:0] la_iena_adr_0 = uut.BASE_ADR | uut.LA_IENA_0;
+    wire [31:0] la_iena_adr_1 = uut.BASE_ADR | uut.LA_IENA_1;
+    wire [31:0] la_iena_adr_2 = uut.BASE_ADR | uut.LA_IENA_2;
+    wire [31:0] la_iena_adr_3 = uut.BASE_ADR | uut.LA_IENA_3;
+
+    wire [31:0] la_oenb_adr_0 = uut.BASE_ADR | uut.LA_OENB_0;
+    wire [31:0] la_oenb_adr_1 = uut.BASE_ADR | uut.LA_OENB_1;
+    wire [31:0] la_oenb_adr_2 = uut.BASE_ADR | uut.LA_OENB_2;
+    wire [31:0] la_oenb_adr_3 = uut.BASE_ADR | uut.LA_OENB_3;
 
     reg [31:0] la_data_0;
     reg [31:0] la_data_1; 
     reg [31:0] la_data_2;
     reg [31:0] la_data_3; 
 
-    reg [31:0] la_ena_0;
-    reg [31:0] la_ena_1; 
-    reg [31:0] la_ena_2;
-    reg [31:0] la_ena_3; 
+    reg [31:0] la_iena_0;
+    reg [31:0] la_iena_1; 
+    reg [31:0] la_iena_2;
+    reg [31:0] la_iena_3; 
+
+    reg [31:0] la_oenb_0;
+    reg [31:0] la_oenb_1; 
+    reg [31:0] la_oenb_2;
+    reg [31:0] la_oenb_3; 
 
     initial begin
         // Reset Operation
@@ -89,40 +100,77 @@ module la_wb_tb;
         wb_rst_i = 0; 
         #2;
 
-        // Write to la emable registers
-        la_ena_0 = 32'h0000_0000;
-        la_ena_1 = 32'h0000_0000;
-        la_ena_2 = 32'h0000_0000;
-        la_ena_3 = 32'h0000_0000;
+        // Write to la input enable registers
+        la_iena_0 = 32'hF0F0_F0F0;
+        la_iena_1 = 32'hA0A0_A0A0;
+        la_iena_2 = 32'hB0B0_B0B0;
+        la_iena_3 = 32'hC0C0_C0C0;
 
-        write(la_ena_adr_0, la_ena_0);
-        write(la_ena_adr_1, la_ena_1);
-        write(la_ena_adr_2, la_ena_2);
-        write(la_ena_adr_3, la_ena_3);
+        write(la_iena_adr_0, la_iena_0);
+        write(la_iena_adr_1, la_iena_1);
+        write(la_iena_adr_2, la_iena_2);
+        write(la_iena_adr_3, la_iena_3);
 
         #2;
-        // Read from la data registers
-        read(la_ena_adr_0);
-        if (wb_dat_o !== la_ena_0) begin
-            $display("Monitor: Error reading from la_ena_0 reg");
+        // Read from la input enable registers
+        read(la_iena_adr_0);
+        if (wb_dat_o !== la_iena_0) begin
+            $display("Monitor: Error reading from la_iena_0 reg");
             $finish;
         end
         
-        read(la_ena_adr_1);
-        if (wb_dat_o !== la_ena_1) begin
-            $display("Monitor: Error reading from la_ena_1 reg");
+        read(la_iena_adr_1);
+        if (wb_dat_o !== la_iena_1) begin
+            $display("Monitor: Error reading from la_iena_1 reg");
             $finish;
         end
         
-        read(la_ena_adr_2);
-        if (wb_dat_o !== la_ena_1) begin
-            $display("Monitor: Error reading from la_ena_2 reg");
+        read(la_iena_adr_2);
+        if (wb_dat_o !== la_iena_2) begin
+            $display("Monitor: Error reading from la_iena_2 reg");
             $finish;
         end
 
-        read(la_ena_adr_3);
-        if (wb_dat_o !== la_ena_3) begin
-            $display("Monitor: Error reading from la_ena_3 reg");
+        read(la_iena_adr_3);
+        if (wb_dat_o !== la_iena_3) begin
+            $display("Monitor: Error reading from la_iena_3 reg");
+            $finish;
+        end
+
+        // Write to la output enable registers
+        la_oenb_0 = 32'hC00C_0CC0;
+        la_oenb_1 = 32'hD00D_0DD0;
+        la_oenb_2 = 32'h0FF0_0FF0;
+        la_oenb_3 = 32'hA00A_A00A;
+
+        write(la_oenb_adr_0, la_oenb_0);
+        write(la_oenb_adr_1, la_oenb_1);
+        write(la_oenb_adr_2, la_oenb_2);
+        write(la_oenb_adr_3, la_oenb_3);
+
+        #2;
+        // Read from la output enable registers
+        read(la_oenb_adr_0);
+        if (wb_dat_o !== la_oenb_0) begin
+            $display("Monitor: Error reading from la_oenb_0 reg");
+            $finish;
+        end
+        
+        read(la_oenb_adr_1);
+        if (wb_dat_o !== la_oenb_1) begin
+            $display("Monitor: Error reading from la_oenb_1 reg");
+            $finish;
+        end
+        
+        read(la_oenb_adr_2);
+        if (wb_dat_o !== la_oenb_2) begin
+            $display("Monitor: Error reading from la_oenb_2 reg");
+            $finish;
+        end
+
+        read(la_oenb_adr_3);
+        if (wb_dat_o !== la_oenb_3) begin
+            $display("Monitor: Error reading from la_oenb_3 reg");
             $finish;
         end
 
@@ -139,31 +187,23 @@ module la_wb_tb;
 
         // #2;
         // Read from la data registers
-        read(la_data_adr_0);
-        $display("%0b", wb_dat_o);
-        $display("%0b", la_data_0);
-
-        if (wb_dat_o !== la_data_0) begin
+        #25;  
+        if (la_data[31:0] !== la_data_0) begin
             $display("Monitor: Error reading from la data_0 reg");
             $finish;
         end
         
-        read(la_data_adr_1);
-        if (wb_dat_o !== la_data_1) begin
+        if (la_data[63:32] !== la_data_1) begin
             $display("Monitor: Error reading from la data_1 reg");
             $finish;
         end
         
-        read(la_data_adr_2);
-        $display("%0b", wb_dat_o);
-        $display("%0b", la_data_0);
-        if (wb_dat_o !== la_data_2) begin
+        if (la_data[95:64] !== la_data_2) begin
             $display("Monitor: Error reading from la data_2 reg");
             $finish;
         end
 
-        read(la_data_adr_3);
-        if (wb_dat_o !== la_data_3) begin
+        if (la_data[127:96] !== la_data_3) begin
             $display("Monitor: Error reading from la data_3 reg");
             $finish;
         end
@@ -224,7 +264,8 @@ module la_wb_tb;
 	    .wb_dat_i(wb_dat_i),
 	    .wb_adr_i(wb_adr_i), 
         .wb_ack_o(wb_ack_o),
-	    .wb_dat_o(wb_dat_o)
+	    .wb_dat_o(wb_dat_o),
+        .la_data(la_data)
     );
 
 endmodule

@@ -18,7 +18,7 @@ BLOCKS = $(shell find * -maxdepth 0 -type d)
 CONFIG = $(foreach block,$(BLOCKS), ./$(block)/config.tcl)
 CLEAN = $(foreach block,$(BLOCKS), clean-$(block))
 
-OPENLANE_TAG ?= rc7
+OPENLANE_TAG ?= v0.15
 OPENLANE_IMAGE_NAME ?= efabless/openlane:$(OPENLANE_TAG)
 OPENLANE_BASIC_COMMAND = "cd /project/openlane && flow.tcl -design ./$* -save_path .. -save -tag $* -overwrite"
 OPENLANE_INTERACTIVE_COMMAND = "cd /project/openlane && flow.tcl -it -file ./$*/interactive.tcl"
@@ -56,6 +56,10 @@ endif
 		-u $(shell id -u $(USER)):$(shell id -g $(USER)) \
 		$(OPENLANE_IMAGE_NAME) sh -c $(OPENLANE_BASIC_COMMAND);\
 	fi
+	mkdir -p ../signoff/$*/
+	cp $*/runs/$*/OPENLANE_VERSION ../signoff/$*/
+	cp $*/runs/$*/PDK_SOURCES ../signoff/$*/
+	cp $*/runs/$*/reports/final_summary_report.csv ../signoff/$*/
 
 .PHONY: openlane
 openlane:

@@ -51,6 +51,8 @@ module spiflash #(
 	localparam integer latency = 8;
 	
 	reg [7:0] buffer;
+	reg [3:0] reset_count = 0;
+	reg [3:0] reset_monitor = 0;
 	integer bitcount = 0;
 	integer bytecount = 0;
 	integer dummycount = 0;
@@ -284,12 +286,40 @@ module spiflash #(
 			io1_oe = 0;
 			io2_oe = 0;
 			io3_oe = 0;
+
+			// Handle MBR.  If in XIP continuous mode, the following
+			// 8 clock cycles are normally not expected to be a command.
+			// If followed by CSB high, however, if the address bits
+			// are consistent with io0 == 1 for 8 clk cycles, then an
+			// MBR has been issued and the system must exit XIP
+			// continuous mode.
+			if (xip_cmd == 8'hbb || xip_cmd == 8'heb
+					|| xip_cmd == 8'hed) begin
+				if (reset_count == 4'h8 && reset_monitor == 4'h8) begin
+					xip_cmd = 8'h00;
+					spi_cmd = 8'h03;
+				end
+			end
 		end else
 		if (xip_cmd) begin
 			buffer = xip_cmd;
 			bitcount = 0;
 			bytecount = 1;
 			spi_action;
+		end
+	end
+
+	always @(posedge clk or posedge csb) begin
+		if (csb == 1'b1) begin
+			reset_count = 0;
+			reset_monitor = 0;
+		end else begin
+			if (reset_count < 4'h9) begin
+				reset_count = reset_count + 1;
+				if (io0_delayed == 1'b1) begin
+				    reset_monitor = reset_monitor + 1;
+				end
+			end
 		end
 	end
 

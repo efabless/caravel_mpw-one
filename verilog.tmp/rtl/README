@@ -1,0 +1,216 @@
+<!---
+# SPDX-FileCopyrightText: 2020 Efabless Corporation
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#      http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+#
+# SPDX-License-Identifier: Apache-2.0
+-->
+
+A quick documentation of the Caravel memory map and operation
+---------------------------------------------------------------
+
+Caravel pinout:
+---------------
+
+	vddio	   3.3V supply for all I/O and ESD
+	vssio	   Ground for all I/O and ESD
+	vdda	   3.3V supply for management area
+	vssa	   Ground for management area
+	vccd	   1.8V supply for management area
+	vssd	   Digital ground for management area
+
+	vdda1	   3.3V supply for user area 1
+	vdda2	   3.3V supply for user area 2
+	vssa1	   Ground for user area 1
+	vssa2	   Ground for user area 2
+	vccd1	   1.8 supply for user area 1
+	vccd2	   1.8 supply for user area 2
+	vssd1	   Digital ground for user area 1
+	vssd2	   Digital ground for user area 2
+
+	clock	   Master clock input
+	gpio	   1 bit, mainly used for external LDO control of user power supply
+	mprj_io	   32 bits general purpose programmable digital	or analog I/O
+	resetb	   Master reset (sense inverted) input
+	flash_csb  SPI flash controller chip select (sense inverted)
+	flash_clk  SPI flash controller clock
+	flash_io0  SPI flash controller data out
+	flash_io1  SPI flash controller data in
+
+Special-use pins for the management SoC:
+----------------------------------------
+
+    On power-up, the "mprj_io" GPIO are under complete control of the managment
+    SoC.  The first 8 user GPIO are special-purpose pads with dedicated functions
+    for the management SoC:
+
+	mprj_io[0]	JTAG I/O
+	mprj_io[1]	SDO, housekeeping SPI
+	mprj_io[2]	SDI, housekeeping SPI
+	mprj_io[3]	CSB, housekeeping SPI
+	mprj_io[4]	SCK, housekeeping SPI
+	mprj_io[5]	Rx, UART
+	mprj_io[6]	Tx, UART
+	mprj_io[7]	IRQ
+
+    The next 4 user GPIO are designed to be used with an SPI flash controller in
+    the user space.  They allow the four pins to be overridden by the housekeeping
+    SPI to access the SPI flash in pass-through mode.
+
+	mprj_io[8]	user flash CSB
+	mprj_io[9]	user flash SCK
+	mprj_io[10]	user flash IO0
+	mprj_io[11]	user flash IO1
+
+    The user may additionally use any available GPIO for the SPI flash IO2 and IO3
+    lines;  the pass-through mode only uses the basic 4-pin SPI mode.
+
+    All of the special-use pins are configured through a memory-mapped region.  But
+    to avoid a large number of wires in the user space to reach all of the GPIO
+    pad controls, each user GPIO pad has a corresponding local control block.  The
+    control block holds the configuration data for the corresponding pad.  This
+    configuration data is a mirror of the data in the memory-mapped region, and is
+    loaded by a "transfer" bit in another memory-mapped register.  In addition to
+    all of the static control bits for the GPIO, each block contains a single bit
+    that specifies whether that pad is under the control of the user or the management
+    area.  All pins are configured from the management area.  However, the configuration
+    of static control bits leaves three dynamic signals:  input, output, and output
+    enable.  One set of these three signals is available to the user when the pad is
+    under user control.  The other set of these three signals is available to the
+    management SoC.  Again, to reduce wiring, only the two pads for JTAG and the
+    housekeeping SDO have all three pins under control of the SoC;  the remaining
+    pads have a single wire to the management SoC which is either an input wire
+    or an output wire, depending on how the control signals for the pad are set.
+
+    This setup gives a simplified view of the pad to the user:  For digital
+    applications, the user can treat the pad as a simple bidirectional digital
+    pad with an output enable to switch between output and input functions.
+    The user can set the output enable line high or low for a static input or
+    output function.  The user will also have access to the ESD-protected
+    pad connections for analog signals, and can connect to the VDDA domain
+    input digital signal if needed.
+
+Memory map:
+-----------
+
+    The Caravel memory map is as follows:
+
+	SRAM:				0000 0000
+
+	Flash:		Config:		1000 0000
+
+	UART:		Clock divider:	2000 0000
+			Data:		2000 0004
+			Enable		2000 0008
+
+	GPIO:		Data:		2100 0000
+			Output enable:	2100 0004
+			Pullup		2100 0008
+			Pulldown	2100 000c 
+
+	Counter 1:	Config:		2200 0000
+			Value:		2200 0004
+			Data:		2200 0008
+
+	Counter 2:	Config:		2300 0000
+			Value:		2300 0004
+			Data:		2300 0008
+
+	SPI master:	Config:		2400 0000
+			Data:		2400 0004
+
+	Logic analyzer:	Data 0:		2500 0000
+			Data 1:		2500 0004
+			Data 2:		2500 0008
+			Data 3:		2500 000c
+			Enable 0:	2500 0010
+			Enable 1:	2500 0014
+			Enable 2:	2500 0018
+			Enable 3:	2500 001c
+
+	Project ctrl:	Data (L):	2600 0000
+			Data (H):	2600 0004
+			Transfer:	2600 0008
+			I/O Config:	2600 000c
+			to		2600 009c
+			Power Config:	2600 00a0
+			to		2600 0130
+
+	Flash ctrl:	Config:		2D00 0000
+
+	System:		PLL out:	2F00 0000
+			Trap out:	2F00 0004
+			IRQ7 source:	2F00 0008
+
+	User area base:			3000 0000
+
+	Crossbar:	QSPI control	8000 0000
+			Storage area	9000 0000
+			Any slave 1	a000 0000
+			Any slave 2	b000 0000
+
+Project I/O Control:
+---------------------
+
+	Configuration bits per I/O (13 bits for each GPIO pad):
+								Global Default
+		Bits 12-10:	digital mode (3 bits)		001
+		Bit   9:	voltage trip point select	  0
+		Bit   8:	slow slew select		  0
+		Bit   7:	analog bus polarity		  0
+		Bit   6:	analog bus select		  0
+		Bit   5:	analog bus enable		  0
+		Bit   4:	IB mode select			  0
+		Bit   3:	input disable			  0
+		Bit   2:	holdover value			  0
+		Bit   1:	output disable			  1
+		Bit   0:	management control enable	  1
+
+Default I/O modes:
+------------------
+	mprj_io[0]	JTAG I/O		110 0 0 0 0 0 0 0 0 0 1
+	mprj_io[1]	SDO, housekeeping SPI	110 0 0 0 0 0 0 0 0 0 1
+	all others:				001 0 0 0 0 0 0 0 0 1 1
+	
+
+    Standard GPIO output configuration:
+	mprj_io[6]	Tx, UART		110 0 0 0 0 0 0 1 0 0 1
+
+    Standard GPIO input configuration:
+	mprj_io[*]				001 0 0 0 0 0 0 0 0 1 1
+
+    Standard GPIO input configuration with pullup:
+	mprj_io[*]				010 0 0 0 0 0 0 0 0 1 1
+
+    Standard GPIO input configuration with pulldown:
+	mprj_io[*]				011 0 0 0 0 0 0 0 0 1 1
+
+    Specifically:
+	JTAG and SDO are set to output.  The output enable configure bit
+	is a don't-care, since the output enable line is directly controlled
+	by the module (JTAG or housekeeping SPI, respectively).
+
+	All other I/O are set as input mode only, with output disabled.
+	
+	Tx is set to input like the others;  before enabling the UART
+	from a program in flash, the I/O must be set to an output configuration.
+	
+	Note that the standard input configurations with pull-up and pull-down
+	require that "out" be set 1 or 0, respectively;  since the I/O are
+	designed with minimal wiring, there is only one wire for input and
+	output, so the wire is used for input in these cases, and special
+	signal handling is done locally to set the value of "out" equal to
+	~dm[0].  This is a (minor) restriction on the available I/O modes.
+
+	Other possible modes are open-drain (for I2C), weak drive strength
+	output (5k up + down), and analog mode (digital disabled)

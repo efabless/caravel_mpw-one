@@ -129,10 +129,8 @@ module simpleuart (
     reg [31:0] send_divcnt;
     reg send_dummy;
 
-    wire reg_ena_do;
-
     assign reg_div_do = cfg_divider;
-    assign reg_ena_do = {31'd0, enabled};
+    assign reg_cfg_do = {31'd0, enabled};
 
     assign reg_dat_wait = reg_dat_we && (send_bitcnt || send_dummy);
     assign reg_dat_do = recv_buf_valid ? recv_buf_data : ~0;

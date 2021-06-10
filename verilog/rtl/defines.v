@@ -14,10 +14,26 @@
 // SPDX-License-Identifier: Apache-2.0
 
 `default_nettype none
-// Global parameters
 
-`define MPRJ_IO_PADS 38
-`define MPRJ_PWR_PADS 4		/* vdda1, vccd1, vdda2, vccd2 */
+`ifndef __GLOBAL_DEFINE_H
+// Global parameters
+`define __GLOBAL_DEFINE_H
+
+`define MPRJ_IO_PADS_1 19	/* number of user GPIO pads on user1 side */
+`define MPRJ_IO_PADS_2 19	/* number of user GPIO pads on user2 side */
+`define MPRJ_IO_PADS (`MPRJ_IO_PADS_1 + `MPRJ_IO_PADS_2)
+
+`define MPRJ_PWR_PADS_1 2	/* vdda1, vccd1 enable/disable control */
+`define MPRJ_PWR_PADS_2 2	/* vdda2, vccd2 enable/disable control */
+`define MPRJ_PWR_PADS (`MPRJ_PWR_PADS_1 + `MPRJ_PWR_PADS_2)
+
+// Analog pads are only used by the "caravan" module and associated
+// modules such as user_analog_project_wrapper and chip_io_alt.
+
+`define ANALOG_PADS_1 5
+`define ANALOG_PADS_2 6
+
+`define ANALOG_PADS (`ANALOG_PADS_1 + `ANALOG_PADS_2)
 
 // Size of soc_mem_synth
 
@@ -29,7 +45,8 @@
 
 // Number of columns in the custom memory; takes one of three values:
 // 1 column : 1 KB, 2 column: 2 KB, 4 column: 4KB
-`define COLS 1
+`define DFFRAM_WSIZE 4
+`define DFFRAM_USE_LATCH 0
 
 // not really parameterized but just to easily keep track of the number
 // of ram_block across different modules
@@ -41,3 +58,5 @@
 // GPIO conrol default mode and enable
 `define DM_INIT 3'b110
 `define OENB_INIT 1'b1
+
+`endif // __GLOBAL_DEFINE_H

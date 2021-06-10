@@ -1,0 +1,60 @@
+magic
+tech sky130A
+magscale 1 2
+timestamp 1621450693
+<< nwell >>
+rect -38 805 1602 1126
+rect -38 -38 1602 283
+<< obsli1 >>
+rect 0 -17 1564 1105
+<< obsm1 >>
+rect 0 -48 1564 1136
+<< metal2 >>
+rect 160 -48 240 1136
+rect 360 -48 440 1136
+rect 560 -48 640 1136
+rect 760 -48 840 1136
+rect 960 -48 1040 1136
+rect 1160 -48 1240 1136
+rect 1360 -48 1440 1136
+<< obsm2 >>
+rect 18 410 74 921
+<< metal3 >>
+rect 0 1012 1564 1092
+rect 800 824 1600 944
+rect 0 562 1564 642
+rect 0 112 1564 192
+<< obsm3 >>
+rect 13 851 720 917
+<< labels >>
+rlabel metal3 s 800 824 1600 944 6 gpio_logic1
+port 1 nsew signal output
+rlabel metal2 s 1360 -48 1440 1136 6 vccd1
+port 2 nsew power bidirectional
+rlabel metal2 s 960 -48 1040 1136 6 vccd1
+port 3 nsew power bidirectional
+rlabel metal2 s 560 -48 640 1136 6 vccd1
+port 4 nsew power bidirectional
+rlabel metal2 s 160 -48 240 1136 6 vccd1
+port 5 nsew power bidirectional
+rlabel metal3 s 0 1012 1564 1092 6 vccd1
+port 6 nsew power bidirectional
+rlabel metal3 s 0 112 1564 192 6 vccd1
+port 7 nsew power bidirectional
+rlabel metal2 s 1160 -48 1240 1136 6 vssd1
+port 8 nsew ground bidirectional
+rlabel metal2 s 760 -48 840 1136 6 vssd1
+port 9 nsew ground bidirectional
+rlabel metal2 s 360 -48 440 1136 6 vssd1
+port 10 nsew ground bidirectional
+rlabel metal3 s 0 562 1564 642 6 vssd1
+port 11 nsew ground bidirectional
+<< properties >>
+string LEFclass BLOCK
+string FIXED_BBOX 0 0 1600 1600
+string LEFview TRUE
+string GDS_FILE /project/openlane/gpio_logic_high/runs/gpio_logic_high/results/magic/gpio_logic_high.gds
+string GDS_END 20458
+string GDS_START 15042
+<< end >>
+

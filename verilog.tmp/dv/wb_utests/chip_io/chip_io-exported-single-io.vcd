@@ -1,0 +1,144 @@
+$date
+	Fri Feb 19 12:56:32 2021
+$end
+$version
+	GTKWave Analyzer v3.3.98 (w)1999-2019 BSI
+$end
+$timescale
+	1ps
+$end
+$scope module chip_io_tb $end
+$scope module uut $end
+$scope module mprj_pads $end
+$scope module area1_io_pad[0] $end
+$var wire 1 # AMUXBUS_B $end
+$var wire 1 " AMUXBUS_A $end
+$var wire 1 $ ANALOG_EN $end
+$var wire 1 % ANALOG_POL $end
+$var wire 1 & ANALOG_SEL $end
+$var wire 3 ' DM[2:0] $end
+$var wire 1 ( ENABLE_H $end
+$var wire 1 * ENABLE_VDDA_H $end
+$var wire 1 + ENABLE_VDDIO $end
+$var wire 1 , ENABLE_VSWITCH_H $end
+$var wire 1 - HLD_H_N $end
+$var wire 1 . HLD_OVR $end
+$var wire 1 / IB_MODE_SEL $end
+$var wire 1 1 INP_DIS $end
+$var wire 1 3 OE_N $end
+$var wire 1 4 OUT $end
+$var wire 1 5 PAD $end
+$var wire 1 6 PAD_A_ESD_0_H $end
+$var wire 1 7 PAD_A_ESD_1_H $end
+$var wire 1 8 PAD_A_NOESD_H $end
+$var wire 1 9 SLOW $end
+$var wire 1 < VCCD $end
+$var wire 1 = VCCHIB $end
+$var wire 1 > VDDA $end
+$var wire 1 ? VDDIO $end
+$var wire 1 @ VDDIO_Q $end
+$var wire 1 A VSSA $end
+$var wire 1 B VSSD $end
+$var wire 1 C VSSIO $end
+$var wire 1 D VSSIO_Q $end
+$var wire 1 E VSWITCH $end
+$var wire 1 F VTRIP_SEL $end
+$var wire 1 ; TIE_LO_ESD $end
+$var wire 1 : TIE_HI_ESD $end
+$var wire 1 2 IN_H $end
+$var wire 1 0 IN $end
+$var wire 1 ) ENABLE_INP_H $end
+$upscope $end
+$upscope $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+$dumpvars
+#0
+0E
+0<
+x0
+0;
+0%
+z#
+z"
+0F
+0*
+x4
+x6
+x2
+x5
+x:
+0+
+0-
+0&
+0)
+x7
+09
+0,
+x8
+0D
+0/
+bx '
+0=
+0$
+0?
+0.
+0>
+x3
+0(
+0@
+0A
+0C
+x1
+0B
+#200000
+1E
+02
+1-
+1:
+1?
+1>
+1@
+#400000
+1<
+1+
+1=
+#500000
+1*
+x2
+1(
+#1175000
+05
+00
+04
+06
+07
+02
+08
+11
+b110 '
+03
+#1200000
+13
+16
+10
+15
+b1 '
+18
+12
+17
+01
+#1225000
+z4
+b110 '
+#1250000
+06
+03
+00
+04
+07
+08
+05
+02
+#3275000

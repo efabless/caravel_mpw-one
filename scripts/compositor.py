@@ -28,12 +28,18 @@ import subprocess
 
 def usage():
     print("Usage:")
-    print("compositor.py [<path_to_project>] [-keep]")
+    print("compositor.py [<user_id_value>] [<path_to_project>] [<path_to_mag_dir>] [<path_to_gds_dir] [-keep]")
     print("")
     print("where:")
+    print("   <user_id_value>   is a character string of eight hex digits, and")
     print("   <path_to_project> is the path to the project top level directory.")
+    print("   <path_to_mag_dir> is the path to the mag directory.")
+    print("   <path_to_gds_dir> is the path to the gds directory.")
     print("")
+    print("  If <user_id_value> is not given, then it must exist in the info.yaml file.")
     print("  If <path_to_project> is not given, then it is assumed to be the cwd.")
+    print("  If <path_to_mag_dir> is not given, then it is assumed to be the <path_to_project>/tmp.")
+    print("  If <path_to_gds_dir> is not given, then it is assumed to be the <path_to_project>/gds.")
     print("  If '-keep' is specified, then keep the generation script.")
     return 0
 
@@ -51,15 +57,42 @@ if __name__ == '__main__':
         else:
             arguments.append(option)
 
-    if len(arguments) > 1:
+    if len(arguments) > 4:
         print("Wrong number of arguments given to compositor.py.")
         usage()
         sys.exit(0)
 
-    if len(arguments) == 1:
-        user_project_path = arguments[0]
+    user_id_value = None
+    if len(arguments) > 0:
+        user_id_value = arguments[0]
+
+        # Convert to binary
+        try:
+            user_id_int = int('0x' + user_id_value, 0)
+            user_id_bits = '{0:032b}'.format(user_id_int)
+        except:
+            user_project_path = arguments[0]
+            user_id_value = None
+
+    if len(arguments) == 2 and user_project_path == None:
+        user_project_path = arguments[1]
+        mag_dir_path = user_project_path + "/mag"
+        gds_dir_path = "../gds"
+    if len(arguments) == 3 and user_project_path == None:
+        user_project_path = arguments[1]
+        mag_dir_path = arguments[2]
+        gds_dir_path = "../gds"
+    if len(arguments) == 4:
+        user_project_path = arguments[1]
+        mag_dir_path = arguments[2]
+        gds_dir_path =  arguments[3]
+    elif len(arguments) == 3 and user_project_path != None:
+        mag_dir_path = arguments[1]
+        gds_dir_path =  arguments[2]
     else:
         user_project_path = os.getcwd()
+        mag_dir_path = user_project_path + "/mag"
+        gds_dir_path = "../gds"
 
     # Check for valid user path
 
@@ -67,19 +100,31 @@ if __name__ == '__main__':
         print('Error:  Project path "' + user_project_path + '" does not exist or is not readable.')
         sys.exit(1)
 
+    # Check for valid mag path
+
+    if not os.path.isdir(mag_dir_path):
+        print('Error:  Mag directory path "' + mag_dir_path + '" does not exist or is not readable.')
+        sys.exit(1)
+
+    # Check for valid gds path
+
+    if not os.path.isdir(gds_dir_path):
+        print('Error:  GDS directory path "' + gds_dir_path + '" does not exist or is not readable.')
+        sys.exit(1)
+
     # Check for valid user ID
-    user_id_value = None
-    if os.path.isfile(user_project_path + '/info.yaml'):
-        with open(user_project_path + '/info.yaml', 'r') as ifile:
-            infolines = ifile.read().splitlines()
-            for line in infolines:
-                kvpair = line.split(':')
-                if len(kvpair) == 2:
-                    key = kvpair[0].strip()
-                    value = kvpair[1].strip()
-                    if key == 'project_id':
-                        user_id_value = value.strip('"\'')
-                        break
+    if not user_id_value:
+        if os.path.isfile(user_project_path + '/info.yaml'):
+            with open(user_project_path + '/info.yaml', 'r') as ifile:
+                infolines = ifile.read().splitlines()
+                for line in infolines:
+                    kvpair = line.split(':')
+                    if len(kvpair) == 2:
+                        key = kvpair[0].strip()
+                        value = kvpair[1].strip()
+                        if key == 'project_id':
+                            user_id_value = value.strip('"\'')
+                            break
 
     if user_id_value:
         project = 'caravel'
@@ -94,8 +139,10 @@ if __name__ == '__main__':
     if '-keep' in optionlist:
         keepmode = True
 
-    magpath = user_project_path + '/mag'
+    magpath = mag_dir_path
     rcfile = magpath + '/.magicrc'
+
+    gdspath = gds_dir_path
 
     # The compositor script will create <project_with_id>.mag, but is uses
     # "load", so the file must not already exist.
@@ -113,7 +160,7 @@ if __name__ == '__main__':
         # Read project from .mag but set GDS properties so that it points
         # to the GDS file created by "make ship".
         print('load ' + project + ' -dereference', file=ofile)
-        print('property GDS_FILE ../gds/' + project + '.gds', file=ofile)
+        print('property GDS_FILE ' + gdspath + '/' + project + '.gds', file=ofile)
         print('property GDS_START 0', file=ofile)
         print('select top cell', file=ofile)
         print('set bbox [box values]', file=ofile)
@@ -127,7 +174,7 @@ if __name__ == '__main__':
         print('snap internal', file=ofile)
         print('box values {*}$bbox', file=ofile)
         print('paint comment', file=ofile)
-        print('property GDS_FILE ../gds/' + project_with_id + '_fill_pattern.gds', file=ofile)
+        print('property GDS_FILE ' + gdspath + '/' + project_with_id + '_fill_pattern.gds', file=ofile)
         print('property GDS_START 0', file=ofile)
         print('property FIXED_BBOX "$bbox"', file=ofile)
 
@@ -153,7 +200,7 @@ if __name__ == '__main__':
         print('flush stdout', file=ofile)
         print('gds undefined allow', file=ofile)
         print('cif *hier write disable', file=ofile)
-        print('gds write ../gds/' + project_with_id + '.gds', file=ofile)
+        print('gds write ' + gdspath + '/' + project_with_id + '.gds', file=ofile)
         print('quit -noprompt', file=ofile)
 
     myenv = os.environ.copy()

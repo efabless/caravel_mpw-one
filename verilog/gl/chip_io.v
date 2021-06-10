@@ -45,7 +45,7 @@ module chip_io(vddio, vssio, vccd, vssd, vdda, vssa, vdda1, vdda2, vssa1, vssa2,
   wire loop_flash_io0;
   wire loop_flash_io1;
   wire loop_gpio;
-  inout [30:0] mprj_analog_io;
+  inout [28:0] mprj_analog_io;
   inout [37:0] mprj_io;
   input [37:0] mprj_io_analog_en;
   input [37:0] mprj_io_analog_pol;
@@ -122,9 +122,7 @@ module chip_io(vddio, vssio, vccd, vssd, vdda, vssa, vdda1, vdda2, vssa1, vssa2,
   wire \mprj_pads.analog_io[26] ;
   wire \mprj_pads.analog_io[27] ;
   wire \mprj_pads.analog_io[28] ;
-  wire \mprj_pads.analog_io[29] ;
   wire \mprj_pads.analog_io[2] ;
-  wire \mprj_pads.analog_io[30] ;
   wire \mprj_pads.analog_io[3] ;
   wire \mprj_pads.analog_io[4] ;
   wire \mprj_pads.analog_io[5] ;
@@ -132,6 +130,35 @@ module chip_io(vddio, vssio, vccd, vssd, vdda, vssa, vdda1, vdda2, vssa1, vssa2,
   wire \mprj_pads.analog_io[7] ;
   wire \mprj_pads.analog_io[8] ;
   wire \mprj_pads.analog_io[9] ;
+  wire \mprj_pads.analog_noesd_io[0] ;
+  wire \mprj_pads.analog_noesd_io[10] ;
+  wire \mprj_pads.analog_noesd_io[11] ;
+  wire \mprj_pads.analog_noesd_io[12] ;
+  wire \mprj_pads.analog_noesd_io[13] ;
+  wire \mprj_pads.analog_noesd_io[14] ;
+  wire \mprj_pads.analog_noesd_io[15] ;
+  wire \mprj_pads.analog_noesd_io[16] ;
+  wire \mprj_pads.analog_noesd_io[17] ;
+  wire \mprj_pads.analog_noesd_io[18] ;
+  wire \mprj_pads.analog_noesd_io[19] ;
+  wire \mprj_pads.analog_noesd_io[1] ;
+  wire \mprj_pads.analog_noesd_io[20] ;
+  wire \mprj_pads.analog_noesd_io[21] ;
+  wire \mprj_pads.analog_noesd_io[22] ;
+  wire \mprj_pads.analog_noesd_io[23] ;
+  wire \mprj_pads.analog_noesd_io[24] ;
+  wire \mprj_pads.analog_noesd_io[25] ;
+  wire \mprj_pads.analog_noesd_io[26] ;
+  wire \mprj_pads.analog_noesd_io[27] ;
+  wire \mprj_pads.analog_noesd_io[28] ;
+  wire \mprj_pads.analog_noesd_io[2] ;
+  wire \mprj_pads.analog_noesd_io[3] ;
+  wire \mprj_pads.analog_noesd_io[4] ;
+  wire \mprj_pads.analog_noesd_io[5] ;
+  wire \mprj_pads.analog_noesd_io[6] ;
+  wire \mprj_pads.analog_noesd_io[7] ;
+  wire \mprj_pads.analog_noesd_io[8] ;
+  wire \mprj_pads.analog_noesd_io[9] ;
   wire \mprj_pads.analog_pol[0] ;
   wire \mprj_pads.analog_pol[10] ;
   wire \mprj_pads.analog_pol[11] ;
@@ -588,6 +615,44 @@ module chip_io(vddio, vssio, vccd, vssd, vdda, vssa, vdda1, vdda2, vssa1, vssa2,
   wire \mprj_pads.io_in[7] ;
   wire \mprj_pads.io_in[8] ;
   wire \mprj_pads.io_in[9] ;
+  wire \mprj_pads.io_in_3v3[0] ;
+  wire \mprj_pads.io_in_3v3[10] ;
+  wire \mprj_pads.io_in_3v3[11] ;
+  wire \mprj_pads.io_in_3v3[12] ;
+  wire \mprj_pads.io_in_3v3[13] ;
+  wire \mprj_pads.io_in_3v3[14] ;
+  wire \mprj_pads.io_in_3v3[15] ;
+  wire \mprj_pads.io_in_3v3[16] ;
+  wire \mprj_pads.io_in_3v3[17] ;
+  wire \mprj_pads.io_in_3v3[18] ;
+  wire \mprj_pads.io_in_3v3[19] ;
+  wire \mprj_pads.io_in_3v3[1] ;
+  wire \mprj_pads.io_in_3v3[20] ;
+  wire \mprj_pads.io_in_3v3[21] ;
+  wire \mprj_pads.io_in_3v3[22] ;
+  wire \mprj_pads.io_in_3v3[23] ;
+  wire \mprj_pads.io_in_3v3[24] ;
+  wire \mprj_pads.io_in_3v3[25] ;
+  wire \mprj_pads.io_in_3v3[26] ;
+  wire \mprj_pads.io_in_3v3[27] ;
+  wire \mprj_pads.io_in_3v3[28] ;
+  wire \mprj_pads.io_in_3v3[29] ;
+  wire \mprj_pads.io_in_3v3[2] ;
+  wire \mprj_pads.io_in_3v3[30] ;
+  wire \mprj_pads.io_in_3v3[31] ;
+  wire \mprj_pads.io_in_3v3[32] ;
+  wire \mprj_pads.io_in_3v3[33] ;
+  wire \mprj_pads.io_in_3v3[34] ;
+  wire \mprj_pads.io_in_3v3[35] ;
+  wire \mprj_pads.io_in_3v3[36] ;
+  wire \mprj_pads.io_in_3v3[37] ;
+  wire \mprj_pads.io_in_3v3[3] ;
+  wire \mprj_pads.io_in_3v3[4] ;
+  wire \mprj_pads.io_in_3v3[5] ;
+  wire \mprj_pads.io_in_3v3[6] ;
+  wire \mprj_pads.io_in_3v3[7] ;
+  wire \mprj_pads.io_in_3v3[8] ;
+  wire \mprj_pads.io_in_3v3[9] ;
   wire \mprj_pads.io_out[0] ;
   wire \mprj_pads.io_out[10] ;
   wire \mprj_pads.io_out[11] ;
@@ -664,13 +729,24 @@ module chip_io(vddio, vssio, vccd, vssd, vdda, vssa, vdda1, vdda2, vssa1, vssa2,
   wire \mprj_pads.loop1_io[7] ;
   wire \mprj_pads.loop1_io[8] ;
   wire \mprj_pads.loop1_io[9] ;
-  wire \mprj_pads.no_connect[0] ;
-  wire \mprj_pads.no_connect[1] ;
-  wire \mprj_pads.no_connect[2] ;
-  wire \mprj_pads.no_connect[3] ;
-  wire \mprj_pads.no_connect[4] ;
-  wire \mprj_pads.no_connect[5] ;
-  wire \mprj_pads.no_connect[6] ;
+  wire \mprj_pads.no_connect_1a[0] ;
+  wire \mprj_pads.no_connect_1a[1] ;
+  wire \mprj_pads.no_connect_1a[2] ;
+  wire \mprj_pads.no_connect_1a[3] ;
+  wire \mprj_pads.no_connect_1a[4] ;
+  wire \mprj_pads.no_connect_1a[5] ;
+  wire \mprj_pads.no_connect_1a[6] ;
+  wire \mprj_pads.no_connect_1b[0] ;
+  wire \mprj_pads.no_connect_1b[1] ;
+  wire \mprj_pads.no_connect_1b[2] ;
+  wire \mprj_pads.no_connect_1b[3] ;
+  wire \mprj_pads.no_connect_1b[4] ;
+  wire \mprj_pads.no_connect_1b[5] ;
+  wire \mprj_pads.no_connect_1b[6] ;
+  wire \mprj_pads.no_connect_2a[0] ;
+  wire \mprj_pads.no_connect_2a[1] ;
+  wire \mprj_pads.no_connect_2b[0] ;
+  wire \mprj_pads.no_connect_2b[1] ;
   wire \mprj_pads.oeb[0] ;
   wire \mprj_pads.oeb[10] ;
   wire \mprj_pads.oeb[11] ;
@@ -1214,13 +1290,13 @@ module chip_io(vddio, vssio, vccd, vssd, vdda, vssa, vdda1, vdda2, vssa1, vssa2,
     .IB_MODE_SEL(mprj_io_ib_mode_sel[0]),
     .IN(\mprj_pads.io_in[0] ),
     .INP_DIS(mprj_io_inp_dis[0]),
-    .IN_H(),
+    .IN_H(\mprj_pads.io_in_3v3[0] ),
     .OE_N(mprj_io_oeb[0]),
     .OUT(mprj_io_out[0]),
     .PAD(mprj_io[0]),
-    .PAD_A_ESD_0_H(\mprj_pads.no_connect[0] ),
+    .PAD_A_ESD_0_H(\mprj_pads.no_connect_1b[0] ),
     .PAD_A_ESD_1_H(),
-    .PAD_A_NOESD_H(),
+    .PAD_A_NOESD_H(\mprj_pads.no_connect_1a[0] ),
     .SLOW(mprj_io_slow_sel[0]),
     .TIE_HI_ESD(),
     .TIE_LO_ESD(\mprj_pads.loop1_io[0] ),
@@ -1253,13 +1329,13 @@ module chip_io(vddio, vssio, vccd, vssd, vdda, vssa, vdda1, vdda2, vssa1, vssa2,
     .IB_MODE_SEL(mprj_io_ib_mode_sel[10]),
     .IN(\mprj_pads.io_in[10] ),
     .INP_DIS(mprj_io_inp_dis[10]),
-    .IN_H(),
+    .IN_H(\mprj_pads.io_in_3v3[10] ),
     .OE_N(mprj_io_oeb[10]),
     .OUT(mprj_io_out[10]),
     .PAD(mprj_io[10]),
     .PAD_A_ESD_0_H(mprj_analog_io[3]),
     .PAD_A_ESD_1_H(),
-    .PAD_A_NOESD_H(),
+    .PAD_A_NOESD_H(\mprj_pads.analog_noesd_io[3] ),
     .SLOW(mprj_io_slow_sel[10]),
     .TIE_HI_ESD(),
     .TIE_LO_ESD(\mprj_pads.loop1_io[10] ),
@@ -1292,13 +1368,13 @@ module chip_io(vddio, vssio, vccd, vssd, vdda, vssa, vdda1, vdda2, vssa1, vssa2,
     .IB_MODE_SEL(mprj_io_ib_mode_sel[11]),
     .IN(\mprj_pads.io_in[11] ),
     .INP_DIS(mprj_io_inp_dis[11]),
-    .IN_H(),
+    .IN_H(\mprj_pads.io_in_3v3[11] ),
     .OE_N(mprj_io_oeb[11]),
     .OUT(mprj_io_out[11]),
     .PAD(mprj_io[11]),
     .PAD_A_ESD_0_H(mprj_analog_io[4]),
     .PAD_A_ESD_1_H(),
-    .PAD_A_NOESD_H(),
+    .PAD_A_NOESD_H(\mprj_pads.analog_noesd_io[4] ),
     .SLOW(mprj_io_slow_sel[11]),
     .TIE_HI_ESD(),
     .TIE_LO_ESD(\mprj_pads.loop1_io[11] ),
@@ -1331,13 +1407,13 @@ module chip_io(vddio, vssio, vccd, vssd, vdda, vssa, vdda1, vdda2, vssa1, vssa2,
     .IB_MODE_SEL(mprj_io_ib_mode_sel[12]),
     .IN(\mprj_pads.io_in[12] ),
     .INP_DIS(mprj_io_inp_dis[12]),
-    .IN_H(),
+    .IN_H(\mprj_pads.io_in_3v3[12] ),
     .OE_N(mprj_io_oeb[12]),
     .OUT(mprj_io_out[12]),
     .PAD(mprj_io[12]),
     .PAD_A_ESD_0_H(mprj_analog_io[5]),
     .PAD_A_ESD_1_H(),
-    .PAD_A_NOESD_H(),
+    .PAD_A_NOESD_H(\mprj_pads.analog_noesd_io[5] ),
     .SLOW(mprj_io_slow_sel[12]),
     .TIE_HI_ESD(),
     .TIE_LO_ESD(\mprj_pads.loop1_io[12] ),
@@ -1370,13 +1446,13 @@ module chip_io(vddio, vssio, vccd, vssd, vdda, vssa, vdda1, vdda2, vssa1, vssa2,
     .IB_MODE_SEL(mprj_io_ib_mode_sel[13]),
     .IN(\mprj_pads.io_in[13] ),
     .INP_DIS(mprj_io_inp_dis[13]),
-    .IN_H(),
+    .IN_H(\mprj_pads.io_in_3v3[13] ),
     .OE_N(mprj_io_oeb[13]),
     .OUT(mprj_io_out[13]),
     .PAD(mprj_io[13]),
     .PAD_A_ESD_0_H(mprj_analog_io[6]),
     .PAD_A_ESD_1_H(),
-    .PAD_A_NOESD_H(),
+    .PAD_A_NOESD_H(\mprj_pads.analog_noesd_io[6] ),
     .SLOW(mprj_io_slow_sel[13]),
     .TIE_HI_ESD(),
     .TIE_LO_ESD(\mprj_pads.loop1_io[13] ),
@@ -1409,13 +1485,13 @@ module chip_io(vddio, vssio, vccd, vssd, vdda, vssa, vdda1, vdda2, vssa1, vssa2,
     .IB_MODE_SEL(mprj_io_ib_mode_sel[14]),
     .IN(\mprj_pads.io_in[14] ),
     .INP_DIS(mprj_io_inp_dis[14]),
-    .IN_H(),
+    .IN_H(\mprj_pads.io_in_3v3[14] ),
     .OE_N(mprj_io_oeb[14]),
     .OUT(mprj_io_out[14]),
     .PAD(mprj_io[14]),
     .PAD_A_ESD_0_H(mprj_analog_io[7]),
     .PAD_A_ESD_1_H(),
-    .PAD_A_NOESD_H(),
+    .PAD_A_NOESD_H(\mprj_pads.analog_noesd_io[7] ),
     .SLOW(mprj_io_slow_sel[14]),
     .TIE_HI_ESD(),
     .TIE_LO_ESD(\mprj_pads.loop1_io[14] ),
@@ -1448,13 +1524,13 @@ module chip_io(vddio, vssio, vccd, vssd, vdda, vssa, vdda1, vdda2, vssa1, vssa2,
     .IB_MODE_SEL(mprj_io_ib_mode_sel[15]),
     .IN(\mprj_pads.io_in[15] ),
     .INP_DIS(mprj_io_inp_dis[15]),
-    .IN_H(),
+    .IN_H(\mprj_pads.io_in_3v3[15] ),
     .OE_N(mprj_io_oeb[15]),
     .OUT(mprj_io_out[15]),
     .PAD(mprj_io[15]),
     .PAD_A_ESD_0_H(mprj_analog_io[8]),
     .PAD_A_ESD_1_H(),
-    .PAD_A_NOESD_H(),
+    .PAD_A_NOESD_H(\mprj_pads.analog_noesd_io[8] ),
     .SLOW(mprj_io_slow_sel[15]),
     .TIE_HI_ESD(),
     .TIE_LO_ESD(\mprj_pads.loop1_io[15] ),
@@ -1487,13 +1563,13 @@ module chip_io(vddio, vssio, vccd, vssd, vdda, vssa, vdda1, vdda2, vssa1, vssa2,
     .IB_MODE_SEL(mprj_io_ib_mode_sel[16]),
     .IN(\mprj_pads.io_in[16] ),
     .INP_DIS(mprj_io_inp_dis[16]),
-    .IN_H(),
+    .IN_H(\mprj_pads.io_in_3v3[16] ),
     .OE_N(mprj_io_oeb[16]),
     .OUT(mprj_io_out[16]),
     .PAD(mprj_io[16]),
     .PAD_A_ESD_0_H(mprj_analog_io[9]),
     .PAD_A_ESD_1_H(),
-    .PAD_A_NOESD_H(),
+    .PAD_A_NOESD_H(\mprj_pads.analog_noesd_io[9] ),
     .SLOW(mprj_io_slow_sel[16]),
     .TIE_HI_ESD(),
     .TIE_LO_ESD(\mprj_pads.loop1_io[16] ),
@@ -1526,13 +1602,13 @@ module chip_io(vddio, vssio, vccd, vssd, vdda, vssa, vdda1, vdda2, vssa1, vssa2,
     .IB_MODE_SEL(mprj_io_ib_mode_sel[17]),
     .IN(\mprj_pads.io_in[17] ),
     .INP_DIS(mprj_io_inp_dis[17]),
-    .IN_H(),
+    .IN_H(\mprj_pads.io_in_3v3[17] ),
     .OE_N(mprj_io_oeb[17]),
     .OUT(mprj_io_out[17]),
     .PAD(mprj_io[17]),
     .PAD_A_ESD_0_H(mprj_analog_io[10]),
     .PAD_A_ESD_1_H(),
-    .PAD_A_NOESD_H(),
+    .PAD_A_NOESD_H(\mprj_pads.analog_noesd_io[10] ),
     .SLOW(mprj_io_slow_sel[17]),
     .TIE_HI_ESD(),
     .TIE_LO_ESD(\mprj_pads.loop1_io[17] ),
@@ -1547,6 +1623,45 @@ module chip_io(vddio, vssio, vccd, vssd, vdda, vssa, vdda1, vdda2, vssa1, vssa2,
     .VSSIO_Q(\mprj_pads.vssio_q ),
     .VSWITCH(vddio),
     .VTRIP_SEL(mprj_io_vtrip_sel[17])
+  );
+  sky130_ef_io__gpiov2_pad_wrapped \mprj_pads.area1_io_pad[18]  (
+    .AMUXBUS_A(\mprj_pads.analog_a ),
+    .AMUXBUS_B(\mprj_pads.analog_b ),
+    .ANALOG_EN(mprj_io_analog_en[18]),
+    .ANALOG_POL(mprj_io_analog_pol[18]),
+    .ANALOG_SEL(mprj_io_analog_sel[18]),
+    .DM(mprj_io_dm[56:54]),
+    .ENABLE_H(mprj_io_enh[18]),
+    .ENABLE_INP_H(\mprj_pads.loop1_io[18] ),
+    .ENABLE_VDDA_H(porb_h),
+    .ENABLE_VDDIO(vccd),
+    .ENABLE_VSWITCH_H(vssio),
+    .HLD_H_N(mprj_io_hldh_n[18]),
+    .HLD_OVR(mprj_io_holdover[18]),
+    .IB_MODE_SEL(mprj_io_ib_mode_sel[18]),
+    .IN(\mprj_pads.io_in[18] ),
+    .INP_DIS(mprj_io_inp_dis[18]),
+    .IN_H(\mprj_pads.io_in_3v3[18] ),
+    .OE_N(mprj_io_oeb[18]),
+    .OUT(mprj_io_out[18]),
+    .PAD(mprj_io[18]),
+    .PAD_A_ESD_0_H(mprj_analog_io[11]),
+    .PAD_A_ESD_1_H(),
+    .PAD_A_NOESD_H(\mprj_pads.analog_noesd_io[11] ),
+    .SLOW(mprj_io_slow_sel[18]),
+    .TIE_HI_ESD(),
+    .TIE_LO_ESD(\mprj_pads.loop1_io[18] ),
+    .VCCD(vccd1),
+    .VCCHIB(vccd),
+    .VDDA(vdda1),
+    .VDDIO(vddio),
+    .VDDIO_Q(\mprj_pads.vddio_q ),
+    .VSSA(vssa1),
+    .VSSD(vssd1),
+    .VSSIO(vssio),
+    .VSSIO_Q(\mprj_pads.vssio_q ),
+    .VSWITCH(vddio),
+    .VTRIP_SEL(mprj_io_vtrip_sel[18])
   );
   sky130_ef_io__gpiov2_pad_wrapped \mprj_pads.area1_io_pad[1]  (
     .AMUXBUS_A(\mprj_pads.analog_a ),
@@ -1565,13 +1680,13 @@ module chip_io(vddio, vssio, vccd, vssd, vdda, vssa, vdda1, vdda2, vssa1, vssa2,
     .IB_MODE_SEL(mprj_io_ib_mode_sel[1]),
     .IN(\mprj_pads.io_in[1] ),
     .INP_DIS(mprj_io_inp_dis[1]),
-    .IN_H(),
+    .IN_H(\mprj_pads.io_in_3v3[1] ),
     .OE_N(mprj_io_oeb[1]),
     .OUT(mprj_io_out[1]),
     .PAD(mprj_io[1]),
-    .PAD_A_ESD_0_H(\mprj_pads.no_connect[1] ),
+    .PAD_A_ESD_0_H(\mprj_pads.no_connect_1b[1] ),
     .PAD_A_ESD_1_H(),
-    .PAD_A_NOESD_H(),
+    .PAD_A_NOESD_H(\mprj_pads.no_connect_1a[1] ),
     .SLOW(mprj_io_slow_sel[1]),
     .TIE_HI_ESD(),
     .TIE_LO_ESD(\mprj_pads.loop1_io[1] ),
@@ -1604,13 +1719,13 @@ module chip_io(vddio, vssio, vccd, vssd, vdda, vssa, vdda1, vdda2, vssa1, vssa2,
     .IB_MODE_SEL(mprj_io_ib_mode_sel[2]),
     .IN(\mprj_pads.io_in[2] ),
     .INP_DIS(mprj_io_inp_dis[2]),
-    .IN_H(),
+    .IN_H(\mprj_pads.io_in_3v3[2] ),
     .OE_N(mprj_io_oeb[2]),
     .OUT(mprj_io_out[2]),
     .PAD(mprj_io[2]),
-    .PAD_A_ESD_0_H(\mprj_pads.no_connect[2] ),
+    .PAD_A_ESD_0_H(\mprj_pads.no_connect_1b[2] ),
     .PAD_A_ESD_1_H(),
-    .PAD_A_NOESD_H(),
+    .PAD_A_NOESD_H(\mprj_pads.no_connect_1a[2] ),
     .SLOW(mprj_io_slow_sel[2]),
     .TIE_HI_ESD(),
     .TIE_LO_ESD(\mprj_pads.loop1_io[2] ),
@@ -1643,13 +1758,13 @@ module chip_io(vddio, vssio, vccd, vssd, vdda, vssa, vdda1, vdda2, vssa1, vssa2,
     .IB_MODE_SEL(mprj_io_ib_mode_sel[3]),
     .IN(\mprj_pads.io_in[3] ),
     .INP_DIS(mprj_io_inp_dis[3]),
-    .IN_H(),
+    .IN_H(\mprj_pads.io_in_3v3[3] ),
     .OE_N(mprj_io_oeb[3]),
     .OUT(mprj_io_out[3]),
     .PAD(mprj_io[3]),
-    .PAD_A_ESD_0_H(\mprj_pads.no_connect[3] ),
+    .PAD_A_ESD_0_H(\mprj_pads.no_connect_1b[3] ),
     .PAD_A_ESD_1_H(),
-    .PAD_A_NOESD_H(),
+    .PAD_A_NOESD_H(\mprj_pads.no_connect_1a[3] ),
     .SLOW(mprj_io_slow_sel[3]),
     .TIE_HI_ESD(),
     .TIE_LO_ESD(\mprj_pads.loop1_io[3] ),
@@ -1682,13 +1797,13 @@ module chip_io(vddio, vssio, vccd, vssd, vdda, vssa, vdda1, vdda2, vssa1, vssa2,
     .IB_MODE_SEL(mprj_io_ib_mode_sel[4]),
     .IN(\mprj_pads.io_in[4] ),
     .INP_DIS(mprj_io_inp_dis[4]),
-    .IN_H(),
+    .IN_H(\mprj_pads.io_in_3v3[4] ),
     .OE_N(mprj_io_oeb[4]),
     .OUT(mprj_io_out[4]),
     .PAD(mprj_io[4]),
-    .PAD_A_ESD_0_H(\mprj_pads.no_connect[4] ),
+    .PAD_A_ESD_0_H(\mprj_pads.no_connect_1b[4] ),
     .PAD_A_ESD_1_H(),
-    .PAD_A_NOESD_H(),
+    .PAD_A_NOESD_H(\mprj_pads.no_connect_1a[4] ),
     .SLOW(mprj_io_slow_sel[4]),
     .TIE_HI_ESD(),
     .TIE_LO_ESD(\mprj_pads.loop1_io[4] ),
@@ -1721,13 +1836,13 @@ module chip_io(vddio, vssio, vccd, vssd, vdda, vssa, vdda1, vdda2, vssa1, vssa2,
     .IB_MODE_SEL(mprj_io_ib_mode_sel[5]),
     .IN(\mprj_pads.io_in[5] ),
     .INP_DIS(mprj_io_inp_dis[5]),
-    .IN_H(),
+    .IN_H(\mprj_pads.io_in_3v3[5] ),
     .OE_N(mprj_io_oeb[5]),
     .OUT(mprj_io_out[5]),
     .PAD(mprj_io[5]),
-    .PAD_A_ESD_0_H(\mprj_pads.no_connect[5] ),
+    .PAD_A_ESD_0_H(\mprj_pads.no_connect_1b[5] ),
     .PAD_A_ESD_1_H(),
-    .PAD_A_NOESD_H(),
+    .PAD_A_NOESD_H(\mprj_pads.no_connect_1a[5] ),
     .SLOW(mprj_io_slow_sel[5]),
     .TIE_HI_ESD(),
     .TIE_LO_ESD(\mprj_pads.loop1_io[5] ),
@@ -1760,13 +1875,13 @@ module chip_io(vddio, vssio, vccd, vssd, vdda, vssa, vdda1, vdda2, vssa1, vssa2,
     .IB_MODE_SEL(mprj_io_ib_mode_sel[6]),
     .IN(\mprj_pads.io_in[6] ),
     .INP_DIS(mprj_io_inp_dis[6]),
-    .IN_H(),
+    .IN_H(\mprj_pads.io_in_3v3[6] ),
     .OE_N(mprj_io_oeb[6]),
     .OUT(mprj_io_out[6]),
     .PAD(mprj_io[6]),
-    .PAD_A_ESD_0_H(\mprj_pads.no_connect[6] ),
+    .PAD_A_ESD_0_H(\mprj_pads.no_connect_1b[6] ),
     .PAD_A_ESD_1_H(),
-    .PAD_A_NOESD_H(),
+    .PAD_A_NOESD_H(\mprj_pads.no_connect_1a[6] ),
     .SLOW(mprj_io_slow_sel[6]),
     .TIE_HI_ESD(),
     .TIE_LO_ESD(\mprj_pads.loop1_io[6] ),
@@ -1799,13 +1914,13 @@ module chip_io(vddio, vssio, vccd, vssd, vdda, vssa, vdda1, vdda2, vssa1, vssa2,
     .IB_MODE_SEL(mprj_io_ib_mode_sel[7]),
     .IN(\mprj_pads.io_in[7] ),
     .INP_DIS(mprj_io_inp_dis[7]),
-    .IN_H(),
+    .IN_H(\mprj_pads.io_in_3v3[7] ),
     .OE_N(mprj_io_oeb[7]),
     .OUT(mprj_io_out[7]),
     .PAD(mprj_io[7]),
     .PAD_A_ESD_0_H(mprj_analog_io[0]),
     .PAD_A_ESD_1_H(),
-    .PAD_A_NOESD_H(),
+    .PAD_A_NOESD_H(\mprj_pads.analog_noesd_io[0] ),
     .SLOW(mprj_io_slow_sel[7]),
     .TIE_HI_ESD(),
     .TIE_LO_ESD(\mprj_pads.loop1_io[7] ),
@@ -1838,13 +1953,13 @@ module chip_io(vddio, vssio, vccd, vssd, vdda, vssa, vdda1, vdda2, vssa1, vssa2,
     .IB_MODE_SEL(mprj_io_ib_mode_sel[8]),
     .IN(\mprj_pads.io_in[8] ),
     .INP_DIS(mprj_io_inp_dis[8]),
-    .IN_H(),
+    .IN_H(\mprj_pads.io_in_3v3[8] ),
     .OE_N(mprj_io_oeb[8]),
     .OUT(mprj_io_out[8]),
     .PAD(mprj_io[8]),
     .PAD_A_ESD_0_H(mprj_analog_io[1]),
     .PAD_A_ESD_1_H(),
-    .PAD_A_NOESD_H(),
+    .PAD_A_NOESD_H(\mprj_pads.analog_noesd_io[1] ),
     .SLOW(mprj_io_slow_sel[8]),
     .TIE_HI_ESD(),
     .TIE_LO_ESD(\mprj_pads.loop1_io[8] ),
@@ -1877,13 +1992,13 @@ module chip_io(vddio, vssio, vccd, vssd, vdda, vssa, vdda1, vdda2, vssa1, vssa2,
     .IB_MODE_SEL(mprj_io_ib_mode_sel[9]),
     .IN(\mprj_pads.io_in[9] ),
     .INP_DIS(mprj_io_inp_dis[9]),
-    .IN_H(),
+    .IN_H(\mprj_pads.io_in_3v3[9] ),
     .OE_N(mprj_io_oeb[9]),
     .OUT(mprj_io_out[9]),
     .PAD(mprj_io[9]),
     .PAD_A_ESD_0_H(mprj_analog_io[2]),
     .PAD_A_ESD_1_H(),
-    .PAD_A_NOESD_H(),
+    .PAD_A_NOESD_H(\mprj_pads.analog_noesd_io[2] ),
     .SLOW(mprj_io_slow_sel[9]),
     .TIE_HI_ESD(),
     .TIE_LO_ESD(\mprj_pads.loop1_io[9] ),
@@ -1902,30 +2017,30 @@ module chip_io(vddio, vssio, vccd, vssd, vdda, vssa, vdda1, vdda2, vssa1, vssa2,
   sky130_ef_io__gpiov2_pad_wrapped \mprj_pads.area2_io_pad[0]  (
     .AMUXBUS_A(\mprj_pads.analog_a ),
     .AMUXBUS_B(\mprj_pads.analog_b ),
-    .ANALOG_EN(mprj_io_analog_en[18]),
-    .ANALOG_POL(mprj_io_analog_pol[18]),
-    .ANALOG_SEL(mprj_io_analog_sel[18]),
-    .DM(mprj_io_dm[56:54]),
-    .ENABLE_H(mprj_io_enh[18]),
-    .ENABLE_INP_H(\mprj_pads.loop1_io[18] ),
+    .ANALOG_EN(mprj_io_analog_en[19]),
+    .ANALOG_POL(mprj_io_analog_pol[19]),
+    .ANALOG_SEL(mprj_io_analog_sel[19]),
+    .DM(mprj_io_dm[59:57]),
+    .ENABLE_H(mprj_io_enh[19]),
+    .ENABLE_INP_H(\mprj_pads.loop1_io[19] ),
     .ENABLE_VDDA_H(porb_h),
     .ENABLE_VDDIO(vccd),
     .ENABLE_VSWITCH_H(vssio),
-    .HLD_H_N(mprj_io_hldh_n[18]),
-    .HLD_OVR(mprj_io_holdover[18]),
-    .IB_MODE_SEL(mprj_io_ib_mode_sel[18]),
-    .IN(\mprj_pads.io_in[18] ),
-    .INP_DIS(mprj_io_inp_dis[18]),
-    .IN_H(),
-    .OE_N(mprj_io_oeb[18]),
-    .OUT(mprj_io_out[18]),
-    .PAD(mprj_io[18]),
-    .PAD_A_ESD_0_H(mprj_analog_io[11]),
+    .HLD_H_N(mprj_io_hldh_n[19]),
+    .HLD_OVR(mprj_io_holdover[19]),
+    .IB_MODE_SEL(mprj_io_ib_mode_sel[19]),
+    .IN(\mprj_pads.io_in[19] ),
+    .INP_DIS(mprj_io_inp_dis[19]),
+    .IN_H(\mprj_pads.io_in_3v3[19] ),
+    .OE_N(mprj_io_oeb[19]),
+    .OUT(mprj_io_out[19]),
+    .PAD(mprj_io[19]),
+    .PAD_A_ESD_0_H(mprj_analog_io[12]),
     .PAD_A_ESD_1_H(),
-    .PAD_A_NOESD_H(),
-    .SLOW(mprj_io_slow_sel[18]),
+    .PAD_A_NOESD_H(\mprj_pads.analog_noesd_io[12] ),
+    .SLOW(mprj_io_slow_sel[19]),
     .TIE_HI_ESD(),
-    .TIE_LO_ESD(\mprj_pads.loop1_io[18] ),
+    .TIE_LO_ESD(\mprj_pads.loop1_io[19] ),
     .VCCD(vccd2),
     .VCCHIB(vccd),
     .VDDA(vdda2),
@@ -1936,48 +2051,9 @@ module chip_io(vddio, vssio, vccd, vssd, vdda, vssa, vdda1, vdda2, vssa1, vssa2,
     .VSSIO(vssio),
     .VSSIO_Q(\mprj_pads.vssio_q ),
     .VSWITCH(vddio),
-    .VTRIP_SEL(mprj_io_vtrip_sel[18])
+    .VTRIP_SEL(mprj_io_vtrip_sel[19])
   );
   sky130_ef_io__gpiov2_pad_wrapped \mprj_pads.area2_io_pad[10]  (
-    .AMUXBUS_A(\mprj_pads.analog_a ),
-    .AMUXBUS_B(\mprj_pads.analog_b ),
-    .ANALOG_EN(mprj_io_analog_en[28]),
-    .ANALOG_POL(mprj_io_analog_pol[28]),
-    .ANALOG_SEL(mprj_io_analog_sel[28]),
-    .DM(mprj_io_dm[86:84]),
-    .ENABLE_H(mprj_io_enh[28]),
-    .ENABLE_INP_H(\mprj_pads.loop1_io[28] ),
-    .ENABLE_VDDA_H(porb_h),
-    .ENABLE_VDDIO(vccd),
-    .ENABLE_VSWITCH_H(vssio),
-    .HLD_H_N(mprj_io_hldh_n[28]),
-    .HLD_OVR(mprj_io_holdover[28]),
-    .IB_MODE_SEL(mprj_io_ib_mode_sel[28]),
-    .IN(\mprj_pads.io_in[28] ),
-    .INP_DIS(mprj_io_inp_dis[28]),
-    .IN_H(),
-    .OE_N(mprj_io_oeb[28]),
-    .OUT(mprj_io_out[28]),
-    .PAD(mprj_io[28]),
-    .PAD_A_ESD_0_H(mprj_analog_io[21]),
-    .PAD_A_ESD_1_H(),
-    .PAD_A_NOESD_H(),
-    .SLOW(mprj_io_slow_sel[28]),
-    .TIE_HI_ESD(),
-    .TIE_LO_ESD(\mprj_pads.loop1_io[28] ),
-    .VCCD(vccd2),
-    .VCCHIB(vccd),
-    .VDDA(vdda2),
-    .VDDIO(vddio),
-    .VDDIO_Q(\mprj_pads.vddio_q ),
-    .VSSA(vssa2),
-    .VSSD(vssd2),
-    .VSSIO(vssio),
-    .VSSIO_Q(\mprj_pads.vssio_q ),
-    .VSWITCH(vddio),
-    .VTRIP_SEL(mprj_io_vtrip_sel[28])
-  );
-  sky130_ef_io__gpiov2_pad_wrapped \mprj_pads.area2_io_pad[11]  (
     .AMUXBUS_A(\mprj_pads.analog_a ),
     .AMUXBUS_B(\mprj_pads.analog_b ),
     .ANALOG_EN(mprj_io_analog_en[29]),
@@ -1994,13 +2070,13 @@ module chip_io(vddio, vssio, vccd, vssd, vdda, vssa, vdda1, vdda2, vssa1, vssa2,
     .IB_MODE_SEL(mprj_io_ib_mode_sel[29]),
     .IN(\mprj_pads.io_in[29] ),
     .INP_DIS(mprj_io_inp_dis[29]),
-    .IN_H(),
+    .IN_H(\mprj_pads.io_in_3v3[29] ),
     .OE_N(mprj_io_oeb[29]),
     .OUT(mprj_io_out[29]),
     .PAD(mprj_io[29]),
     .PAD_A_ESD_0_H(mprj_analog_io[22]),
     .PAD_A_ESD_1_H(),
-    .PAD_A_NOESD_H(),
+    .PAD_A_NOESD_H(\mprj_pads.analog_noesd_io[22] ),
     .SLOW(mprj_io_slow_sel[29]),
     .TIE_HI_ESD(),
     .TIE_LO_ESD(\mprj_pads.loop1_io[29] ),
@@ -2016,7 +2092,7 @@ module chip_io(vddio, vssio, vccd, vssd, vdda, vssa, vdda1, vdda2, vssa1, vssa2,
     .VSWITCH(vddio),
     .VTRIP_SEL(mprj_io_vtrip_sel[29])
   );
-  sky130_ef_io__gpiov2_pad_wrapped \mprj_pads.area2_io_pad[12]  (
+  sky130_ef_io__gpiov2_pad_wrapped \mprj_pads.area2_io_pad[11]  (
     .AMUXBUS_A(\mprj_pads.analog_a ),
     .AMUXBUS_B(\mprj_pads.analog_b ),
     .ANALOG_EN(mprj_io_analog_en[30]),
@@ -2033,13 +2109,13 @@ module chip_io(vddio, vssio, vccd, vssd, vdda, vssa, vdda1, vdda2, vssa1, vssa2,
     .IB_MODE_SEL(mprj_io_ib_mode_sel[30]),
     .IN(\mprj_pads.io_in[30] ),
     .INP_DIS(mprj_io_inp_dis[30]),
-    .IN_H(),
+    .IN_H(\mprj_pads.io_in_3v3[30] ),
     .OE_N(mprj_io_oeb[30]),
     .OUT(mprj_io_out[30]),
     .PAD(mprj_io[30]),
     .PAD_A_ESD_0_H(mprj_analog_io[23]),
     .PAD_A_ESD_1_H(),
-    .PAD_A_NOESD_H(),
+    .PAD_A_NOESD_H(\mprj_pads.analog_noesd_io[23] ),
     .SLOW(mprj_io_slow_sel[30]),
     .TIE_HI_ESD(),
     .TIE_LO_ESD(\mprj_pads.loop1_io[30] ),
@@ -2055,7 +2131,7 @@ module chip_io(vddio, vssio, vccd, vssd, vdda, vssa, vdda1, vdda2, vssa1, vssa2,
     .VSWITCH(vddio),
     .VTRIP_SEL(mprj_io_vtrip_sel[30])
   );
-  sky130_ef_io__gpiov2_pad_wrapped \mprj_pads.area2_io_pad[13]  (
+  sky130_ef_io__gpiov2_pad_wrapped \mprj_pads.area2_io_pad[12]  (
     .AMUXBUS_A(\mprj_pads.analog_a ),
     .AMUXBUS_B(\mprj_pads.analog_b ),
     .ANALOG_EN(mprj_io_analog_en[31]),
@@ -2072,13 +2148,13 @@ module chip_io(vddio, vssio, vccd, vssd, vdda, vssa, vdda1, vdda2, vssa1, vssa2,
     .IB_MODE_SEL(mprj_io_ib_mode_sel[31]),
     .IN(\mprj_pads.io_in[31] ),
     .INP_DIS(mprj_io_inp_dis[31]),
-    .IN_H(),
+    .IN_H(\mprj_pads.io_in_3v3[31] ),
     .OE_N(mprj_io_oeb[31]),
     .OUT(mprj_io_out[31]),
     .PAD(mprj_io[31]),
     .PAD_A_ESD_0_H(mprj_analog_io[24]),
     .PAD_A_ESD_1_H(),
-    .PAD_A_NOESD_H(),
+    .PAD_A_NOESD_H(\mprj_pads.analog_noesd_io[24] ),
     .SLOW(mprj_io_slow_sel[31]),
     .TIE_HI_ESD(),
     .TIE_LO_ESD(\mprj_pads.loop1_io[31] ),
@@ -2094,7 +2170,7 @@ module chip_io(vddio, vssio, vccd, vssd, vdda, vssa, vdda1, vdda2, vssa1, vssa2,
     .VSWITCH(vddio),
     .VTRIP_SEL(mprj_io_vtrip_sel[31])
   );
-  sky130_ef_io__gpiov2_pad_wrapped \mprj_pads.area2_io_pad[14]  (
+  sky130_ef_io__gpiov2_pad_wrapped \mprj_pads.area2_io_pad[13]  (
     .AMUXBUS_A(\mprj_pads.analog_a ),
     .AMUXBUS_B(\mprj_pads.analog_b ),
     .ANALOG_EN(mprj_io_analog_en[32]),
@@ -2111,13 +2187,13 @@ module chip_io(vddio, vssio, vccd, vssd, vdda, vssa, vdda1, vdda2, vssa1, vssa2,
     .IB_MODE_SEL(mprj_io_ib_mode_sel[32]),
     .IN(\mprj_pads.io_in[32] ),
     .INP_DIS(mprj_io_inp_dis[32]),
-    .IN_H(),
+    .IN_H(\mprj_pads.io_in_3v3[32] ),
     .OE_N(mprj_io_oeb[32]),
     .OUT(mprj_io_out[32]),
     .PAD(mprj_io[32]),
     .PAD_A_ESD_0_H(mprj_analog_io[25]),
     .PAD_A_ESD_1_H(),
-    .PAD_A_NOESD_H(),
+    .PAD_A_NOESD_H(\mprj_pads.analog_noesd_io[25] ),
     .SLOW(mprj_io_slow_sel[32]),
     .TIE_HI_ESD(),
     .TIE_LO_ESD(\mprj_pads.loop1_io[32] ),
@@ -2133,7 +2209,7 @@ module chip_io(vddio, vssio, vccd, vssd, vdda, vssa, vdda1, vdda2, vssa1, vssa2,
     .VSWITCH(vddio),
     .VTRIP_SEL(mprj_io_vtrip_sel[32])
   );
-  sky130_ef_io__gpiov2_pad_wrapped \mprj_pads.area2_io_pad[15]  (
+  sky130_ef_io__gpiov2_pad_wrapped \mprj_pads.area2_io_pad[14]  (
     .AMUXBUS_A(\mprj_pads.analog_a ),
     .AMUXBUS_B(\mprj_pads.analog_b ),
     .ANALOG_EN(mprj_io_analog_en[33]),
@@ -2150,13 +2226,13 @@ module chip_io(vddio, vssio, vccd, vssd, vdda, vssa, vdda1, vdda2, vssa1, vssa2,
     .IB_MODE_SEL(mprj_io_ib_mode_sel[33]),
     .IN(\mprj_pads.io_in[33] ),
     .INP_DIS(mprj_io_inp_dis[33]),
-    .IN_H(),
+    .IN_H(\mprj_pads.io_in_3v3[33] ),
     .OE_N(mprj_io_oeb[33]),
     .OUT(mprj_io_out[33]),
     .PAD(mprj_io[33]),
     .PAD_A_ESD_0_H(mprj_analog_io[26]),
     .PAD_A_ESD_1_H(),
-    .PAD_A_NOESD_H(),
+    .PAD_A_NOESD_H(\mprj_pads.analog_noesd_io[26] ),
     .SLOW(mprj_io_slow_sel[33]),
     .TIE_HI_ESD(),
     .TIE_LO_ESD(\mprj_pads.loop1_io[33] ),
@@ -2172,7 +2248,7 @@ module chip_io(vddio, vssio, vccd, vssd, vdda, vssa, vdda1, vdda2, vssa1, vssa2,
     .VSWITCH(vddio),
     .VTRIP_SEL(mprj_io_vtrip_sel[33])
   );
-  sky130_ef_io__gpiov2_pad_wrapped \mprj_pads.area2_io_pad[16]  (
+  sky130_ef_io__gpiov2_pad_wrapped \mprj_pads.area2_io_pad[15]  (
     .AMUXBUS_A(\mprj_pads.analog_a ),
     .AMUXBUS_B(\mprj_pads.analog_b ),
     .ANALOG_EN(mprj_io_analog_en[34]),
@@ -2189,13 +2265,13 @@ module chip_io(vddio, vssio, vccd, vssd, vdda, vssa, vdda1, vdda2, vssa1, vssa2,
     .IB_MODE_SEL(mprj_io_ib_mode_sel[34]),
     .IN(\mprj_pads.io_in[34] ),
     .INP_DIS(mprj_io_inp_dis[34]),
-    .IN_H(),
+    .IN_H(\mprj_pads.io_in_3v3[34] ),
     .OE_N(mprj_io_oeb[34]),
     .OUT(mprj_io_out[34]),
     .PAD(mprj_io[34]),
     .PAD_A_ESD_0_H(mprj_analog_io[27]),
     .PAD_A_ESD_1_H(),
-    .PAD_A_NOESD_H(),
+    .PAD_A_NOESD_H(\mprj_pads.analog_noesd_io[27] ),
     .SLOW(mprj_io_slow_sel[34]),
     .TIE_HI_ESD(),
     .TIE_LO_ESD(\mprj_pads.loop1_io[34] ),
@@ -2211,7 +2287,7 @@ module chip_io(vddio, vssio, vccd, vssd, vdda, vssa, vdda1, vdda2, vssa1, vssa2,
     .VSWITCH(vddio),
     .VTRIP_SEL(mprj_io_vtrip_sel[34])
   );
-  sky130_ef_io__gpiov2_pad_wrapped \mprj_pads.area2_io_pad[17]  (
+  sky130_ef_io__gpiov2_pad_wrapped \mprj_pads.area2_io_pad[16]  (
     .AMUXBUS_A(\mprj_pads.analog_a ),
     .AMUXBUS_B(\mprj_pads.analog_b ),
     .ANALOG_EN(mprj_io_analog_en[35]),
@@ -2228,13 +2304,13 @@ module chip_io(vddio, vssio, vccd, vssd, vdda, vssa, vdda1, vdda2, vssa1, vssa2,
     .IB_MODE_SEL(mprj_io_ib_mode_sel[35]),
     .IN(\mprj_pads.io_in[35] ),
     .INP_DIS(mprj_io_inp_dis[35]),
-    .IN_H(),
+    .IN_H(\mprj_pads.io_in_3v3[35] ),
     .OE_N(mprj_io_oeb[35]),
     .OUT(mprj_io_out[35]),
     .PAD(mprj_io[35]),
     .PAD_A_ESD_0_H(mprj_analog_io[28]),
     .PAD_A_ESD_1_H(),
-    .PAD_A_NOESD_H(),
+    .PAD_A_NOESD_H(\mprj_pads.analog_noesd_io[28] ),
     .SLOW(mprj_io_slow_sel[35]),
     .TIE_HI_ESD(),
     .TIE_LO_ESD(\mprj_pads.loop1_io[35] ),
@@ -2250,7 +2326,7 @@ module chip_io(vddio, vssio, vccd, vssd, vdda, vssa, vdda1, vdda2, vssa1, vssa2,
     .VSWITCH(vddio),
     .VTRIP_SEL(mprj_io_vtrip_sel[35])
   );
-  sky130_ef_io__gpiov2_pad_wrapped \mprj_pads.area2_io_pad[18]  (
+  sky130_ef_io__gpiov2_pad_wrapped \mprj_pads.area2_io_pad[17]  (
     .AMUXBUS_A(\mprj_pads.analog_a ),
     .AMUXBUS_B(\mprj_pads.analog_b ),
     .ANALOG_EN(mprj_io_analog_en[36]),
@@ -2267,13 +2343,13 @@ module chip_io(vddio, vssio, vccd, vssd, vdda, vssa, vdda1, vdda2, vssa1, vssa2,
     .IB_MODE_SEL(mprj_io_ib_mode_sel[36]),
     .IN(\mprj_pads.io_in[36] ),
     .INP_DIS(mprj_io_inp_dis[36]),
-    .IN_H(),
+    .IN_H(\mprj_pads.io_in_3v3[36] ),
     .OE_N(mprj_io_oeb[36]),
     .OUT(mprj_io_out[36]),
     .PAD(mprj_io[36]),
-    .PAD_A_ESD_0_H(mprj_analog_io[29]),
+    .PAD_A_ESD_0_H(\mprj_pads.no_connect_2b[0] ),
     .PAD_A_ESD_1_H(),
-    .PAD_A_NOESD_H(),
+    .PAD_A_NOESD_H(\mprj_pads.no_connect_2a[0] ),
     .SLOW(mprj_io_slow_sel[36]),
     .TIE_HI_ESD(),
     .TIE_LO_ESD(\mprj_pads.loop1_io[36] ),
@@ -2289,7 +2365,7 @@ module chip_io(vddio, vssio, vccd, vssd, vdda, vssa, vdda1, vdda2, vssa1, vssa2,
     .VSWITCH(vddio),
     .VTRIP_SEL(mprj_io_vtrip_sel[36])
   );
-  sky130_ef_io__gpiov2_pad_wrapped \mprj_pads.area2_io_pad[19]  (
+  sky130_ef_io__gpiov2_pad_wrapped \mprj_pads.area2_io_pad[18]  (
     .AMUXBUS_A(\mprj_pads.analog_a ),
     .AMUXBUS_B(\mprj_pads.analog_b ),
     .ANALOG_EN(mprj_io_analog_en[37]),
@@ -2306,13 +2382,13 @@ module chip_io(vddio, vssio, vccd, vssd, vdda, vssa, vdda1, vdda2, vssa1, vssa2,
     .IB_MODE_SEL(mprj_io_ib_mode_sel[37]),
     .IN(\mprj_pads.io_in[37] ),
     .INP_DIS(mprj_io_inp_dis[37]),
-    .IN_H(),
+    .IN_H(\mprj_pads.io_in_3v3[37] ),
     .OE_N(mprj_io_oeb[37]),
     .OUT(mprj_io_out[37]),
     .PAD(mprj_io[37]),
-    .PAD_A_ESD_0_H(mprj_analog_io[30]),
+    .PAD_A_ESD_0_H(\mprj_pads.no_connect_2b[1] ),
     .PAD_A_ESD_1_H(),
-    .PAD_A_NOESD_H(),
+    .PAD_A_NOESD_H(\mprj_pads.no_connect_2a[1] ),
     .SLOW(mprj_io_slow_sel[37]),
     .TIE_HI_ESD(),
     .TIE_LO_ESD(\mprj_pads.loop1_io[37] ),
@@ -2331,45 +2407,6 @@ module chip_io(vddio, vssio, vccd, vssd, vdda, vssa, vdda1, vdda2, vssa1, vssa2,
   sky130_ef_io__gpiov2_pad_wrapped \mprj_pads.area2_io_pad[1]  (
     .AMUXBUS_A(\mprj_pads.analog_a ),
     .AMUXBUS_B(\mprj_pads.analog_b ),
-    .ANALOG_EN(mprj_io_analog_en[19]),
-    .ANALOG_POL(mprj_io_analog_pol[19]),
-    .ANALOG_SEL(mprj_io_analog_sel[19]),
-    .DM(mprj_io_dm[59:57]),
-    .ENABLE_H(mprj_io_enh[19]),
-    .ENABLE_INP_H(\mprj_pads.loop1_io[19] ),
-    .ENABLE_VDDA_H(porb_h),
-    .ENABLE_VDDIO(vccd),
-    .ENABLE_VSWITCH_H(vssio),
-    .HLD_H_N(mprj_io_hldh_n[19]),
-    .HLD_OVR(mprj_io_holdover[19]),
-    .IB_MODE_SEL(mprj_io_ib_mode_sel[19]),
-    .IN(\mprj_pads.io_in[19] ),
-    .INP_DIS(mprj_io_inp_dis[19]),
-    .IN_H(),
-    .OE_N(mprj_io_oeb[19]),
-    .OUT(mprj_io_out[19]),
-    .PAD(mprj_io[19]),
-    .PAD_A_ESD_0_H(mprj_analog_io[12]),
-    .PAD_A_ESD_1_H(),
-    .PAD_A_NOESD_H(),
-    .SLOW(mprj_io_slow_sel[19]),
-    .TIE_HI_ESD(),
-    .TIE_LO_ESD(\mprj_pads.loop1_io[19] ),
-    .VCCD(vccd2),
-    .VCCHIB(vccd),
-    .VDDA(vdda2),
-    .VDDIO(vddio),
-    .VDDIO_Q(\mprj_pads.vddio_q ),
-    .VSSA(vssa2),
-    .VSSD(vssd2),
-    .VSSIO(vssio),
-    .VSSIO_Q(\mprj_pads.vssio_q ),
-    .VSWITCH(vddio),
-    .VTRIP_SEL(mprj_io_vtrip_sel[19])
-  );
-  sky130_ef_io__gpiov2_pad_wrapped \mprj_pads.area2_io_pad[2]  (
-    .AMUXBUS_A(\mprj_pads.analog_a ),
-    .AMUXBUS_B(\mprj_pads.analog_b ),
     .ANALOG_EN(mprj_io_analog_en[20]),
     .ANALOG_POL(mprj_io_analog_pol[20]),
     .ANALOG_SEL(mprj_io_analog_sel[20]),
@@ -2384,13 +2421,13 @@ module chip_io(vddio, vssio, vccd, vssd, vdda, vssa, vdda1, vdda2, vssa1, vssa2,
     .IB_MODE_SEL(mprj_io_ib_mode_sel[20]),
     .IN(\mprj_pads.io_in[20] ),
     .INP_DIS(mprj_io_inp_dis[20]),
-    .IN_H(),
+    .IN_H(\mprj_pads.io_in_3v3[20] ),
     .OE_N(mprj_io_oeb[20]),
     .OUT(mprj_io_out[20]),
     .PAD(mprj_io[20]),
     .PAD_A_ESD_0_H(mprj_analog_io[13]),
     .PAD_A_ESD_1_H(),
-    .PAD_A_NOESD_H(),
+    .PAD_A_NOESD_H(\mprj_pads.analog_noesd_io[13] ),
     .SLOW(mprj_io_slow_sel[20]),
     .TIE_HI_ESD(),
     .TIE_LO_ESD(\mprj_pads.loop1_io[20] ),
@@ -2406,7 +2443,7 @@ module chip_io(vddio, vssio, vccd, vssd, vdda, vssa, vdda1, vdda2, vssa1, vssa2,
     .VSWITCH(vddio),
     .VTRIP_SEL(mprj_io_vtrip_sel[20])
   );
-  sky130_ef_io__gpiov2_pad_wrapped \mprj_pads.area2_io_pad[3]  (
+  sky130_ef_io__gpiov2_pad_wrapped \mprj_pads.area2_io_pad[2]  (
     .AMUXBUS_A(\mprj_pads.analog_a ),
     .AMUXBUS_B(\mprj_pads.analog_b ),
     .ANALOG_EN(mprj_io_analog_en[21]),
@@ -2423,13 +2460,13 @@ module chip_io(vddio, vssio, vccd, vssd, vdda, vssa, vdda1, vdda2, vssa1, vssa2,
     .IB_MODE_SEL(mprj_io_ib_mode_sel[21]),
     .IN(\mprj_pads.io_in[21] ),
     .INP_DIS(mprj_io_inp_dis[21]),
-    .IN_H(),
+    .IN_H(\mprj_pads.io_in_3v3[21] ),
     .OE_N(mprj_io_oeb[21]),
     .OUT(mprj_io_out[21]),
     .PAD(mprj_io[21]),
     .PAD_A_ESD_0_H(mprj_analog_io[14]),
     .PAD_A_ESD_1_H(),
-    .PAD_A_NOESD_H(),
+    .PAD_A_NOESD_H(\mprj_pads.analog_noesd_io[14] ),
     .SLOW(mprj_io_slow_sel[21]),
     .TIE_HI_ESD(),
     .TIE_LO_ESD(\mprj_pads.loop1_io[21] ),
@@ -2445,7 +2482,7 @@ module chip_io(vddio, vssio, vccd, vssd, vdda, vssa, vdda1, vdda2, vssa1, vssa2,
     .VSWITCH(vddio),
     .VTRIP_SEL(mprj_io_vtrip_sel[21])
   );
-  sky130_ef_io__gpiov2_pad_wrapped \mprj_pads.area2_io_pad[4]  (
+  sky130_ef_io__gpiov2_pad_wrapped \mprj_pads.area2_io_pad[3]  (
     .AMUXBUS_A(\mprj_pads.analog_a ),
     .AMUXBUS_B(\mprj_pads.analog_b ),
     .ANALOG_EN(mprj_io_analog_en[22]),
@@ -2462,13 +2499,13 @@ module chip_io(vddio, vssio, vccd, vssd, vdda, vssa, vdda1, vdda2, vssa1, vssa2,
     .IB_MODE_SEL(mprj_io_ib_mode_sel[22]),
     .IN(\mprj_pads.io_in[22] ),
     .INP_DIS(mprj_io_inp_dis[22]),
-    .IN_H(),
+    .IN_H(\mprj_pads.io_in_3v3[22] ),
     .OE_N(mprj_io_oeb[22]),
     .OUT(mprj_io_out[22]),
     .PAD(mprj_io[22]),
     .PAD_A_ESD_0_H(mprj_analog_io[15]),
     .PAD_A_ESD_1_H(),
-    .PAD_A_NOESD_H(),
+    .PAD_A_NOESD_H(\mprj_pads.analog_noesd_io[15] ),
     .SLOW(mprj_io_slow_sel[22]),
     .TIE_HI_ESD(),
     .TIE_LO_ESD(\mprj_pads.loop1_io[22] ),
@@ -2484,7 +2521,7 @@ module chip_io(vddio, vssio, vccd, vssd, vdda, vssa, vdda1, vdda2, vssa1, vssa2,
     .VSWITCH(vddio),
     .VTRIP_SEL(mprj_io_vtrip_sel[22])
   );
-  sky130_ef_io__gpiov2_pad_wrapped \mprj_pads.area2_io_pad[5]  (
+  sky130_ef_io__gpiov2_pad_wrapped \mprj_pads.area2_io_pad[4]  (
     .AMUXBUS_A(\mprj_pads.analog_a ),
     .AMUXBUS_B(\mprj_pads.analog_b ),
     .ANALOG_EN(mprj_io_analog_en[23]),
@@ -2501,13 +2538,13 @@ module chip_io(vddio, vssio, vccd, vssd, vdda, vssa, vdda1, vdda2, vssa1, vssa2,
     .IB_MODE_SEL(mprj_io_ib_mode_sel[23]),
     .IN(\mprj_pads.io_in[23] ),
     .INP_DIS(mprj_io_inp_dis[23]),
-    .IN_H(),
+    .IN_H(\mprj_pads.io_in_3v3[23] ),
     .OE_N(mprj_io_oeb[23]),
     .OUT(mprj_io_out[23]),
     .PAD(mprj_io[23]),
     .PAD_A_ESD_0_H(mprj_analog_io[16]),
     .PAD_A_ESD_1_H(),
-    .PAD_A_NOESD_H(),
+    .PAD_A_NOESD_H(\mprj_pads.analog_noesd_io[16] ),
     .SLOW(mprj_io_slow_sel[23]),
     .TIE_HI_ESD(),
     .TIE_LO_ESD(\mprj_pads.loop1_io[23] ),
@@ -2523,7 +2560,7 @@ module chip_io(vddio, vssio, vccd, vssd, vdda, vssa, vdda1, vdda2, vssa1, vssa2,
     .VSWITCH(vddio),
     .VTRIP_SEL(mprj_io_vtrip_sel[23])
   );
-  sky130_ef_io__gpiov2_pad_wrapped \mprj_pads.area2_io_pad[6]  (
+  sky130_ef_io__gpiov2_pad_wrapped \mprj_pads.area2_io_pad[5]  (
     .AMUXBUS_A(\mprj_pads.analog_a ),
     .AMUXBUS_B(\mprj_pads.analog_b ),
     .ANALOG_EN(mprj_io_analog_en[24]),
@@ -2540,13 +2577,13 @@ module chip_io(vddio, vssio, vccd, vssd, vdda, vssa, vdda1, vdda2, vssa1, vssa2,
     .IB_MODE_SEL(mprj_io_ib_mode_sel[24]),
     .IN(\mprj_pads.io_in[24] ),
     .INP_DIS(mprj_io_inp_dis[24]),
-    .IN_H(),
+    .IN_H(\mprj_pads.io_in_3v3[24] ),
     .OE_N(mprj_io_oeb[24]),
     .OUT(mprj_io_out[24]),
     .PAD(mprj_io[24]),
     .PAD_A_ESD_0_H(mprj_analog_io[17]),
     .PAD_A_ESD_1_H(),
-    .PAD_A_NOESD_H(),
+    .PAD_A_NOESD_H(\mprj_pads.analog_noesd_io[17] ),
     .SLOW(mprj_io_slow_sel[24]),
     .TIE_HI_ESD(),
     .TIE_LO_ESD(\mprj_pads.loop1_io[24] ),
@@ -2562,7 +2599,7 @@ module chip_io(vddio, vssio, vccd, vssd, vdda, vssa, vdda1, vdda2, vssa1, vssa2,
     .VSWITCH(vddio),
     .VTRIP_SEL(mprj_io_vtrip_sel[24])
   );
-  sky130_ef_io__gpiov2_pad_wrapped \mprj_pads.area2_io_pad[7]  (
+  sky130_ef_io__gpiov2_pad_wrapped \mprj_pads.area2_io_pad[6]  (
     .AMUXBUS_A(\mprj_pads.analog_a ),
     .AMUXBUS_B(\mprj_pads.analog_b ),
     .ANALOG_EN(mprj_io_analog_en[25]),
@@ -2579,13 +2616,13 @@ module chip_io(vddio, vssio, vccd, vssd, vdda, vssa, vdda1, vdda2, vssa1, vssa2,
     .IB_MODE_SEL(mprj_io_ib_mode_sel[25]),
     .IN(\mprj_pads.io_in[25] ),
     .INP_DIS(mprj_io_inp_dis[25]),
-    .IN_H(),
+    .IN_H(\mprj_pads.io_in_3v3[25] ),
     .OE_N(mprj_io_oeb[25]),
     .OUT(mprj_io_out[25]),
     .PAD(mprj_io[25]),
     .PAD_A_ESD_0_H(mprj_analog_io[18]),
     .PAD_A_ESD_1_H(),
-    .PAD_A_NOESD_H(),
+    .PAD_A_NOESD_H(\mprj_pads.analog_noesd_io[18] ),
     .SLOW(mprj_io_slow_sel[25]),
     .TIE_HI_ESD(),
     .TIE_LO_ESD(\mprj_pads.loop1_io[25] ),
@@ -2601,7 +2638,7 @@ module chip_io(vddio, vssio, vccd, vssd, vdda, vssa, vdda1, vdda2, vssa1, vssa2,
     .VSWITCH(vddio),
     .VTRIP_SEL(mprj_io_vtrip_sel[25])
   );
-  sky130_ef_io__gpiov2_pad_wrapped \mprj_pads.area2_io_pad[8]  (
+  sky130_ef_io__gpiov2_pad_wrapped \mprj_pads.area2_io_pad[7]  (
     .AMUXBUS_A(\mprj_pads.analog_a ),
     .AMUXBUS_B(\mprj_pads.analog_b ),
     .ANALOG_EN(mprj_io_analog_en[26]),
@@ -2618,13 +2655,13 @@ module chip_io(vddio, vssio, vccd, vssd, vdda, vssa, vdda1, vdda2, vssa1, vssa2,
     .IB_MODE_SEL(mprj_io_ib_mode_sel[26]),
     .IN(\mprj_pads.io_in[26] ),
     .INP_DIS(mprj_io_inp_dis[26]),
-    .IN_H(),
+    .IN_H(\mprj_pads.io_in_3v3[26] ),
     .OE_N(mprj_io_oeb[26]),
     .OUT(mprj_io_out[26]),
     .PAD(mprj_io[26]),
     .PAD_A_ESD_0_H(mprj_analog_io[19]),
     .PAD_A_ESD_1_H(),
-    .PAD_A_NOESD_H(),
+    .PAD_A_NOESD_H(\mprj_pads.analog_noesd_io[19] ),
     .SLOW(mprj_io_slow_sel[26]),
     .TIE_HI_ESD(),
     .TIE_LO_ESD(\mprj_pads.loop1_io[26] ),
@@ -2640,7 +2677,7 @@ module chip_io(vddio, vssio, vccd, vssd, vdda, vssa, vdda1, vdda2, vssa1, vssa2,
     .VSWITCH(vddio),
     .VTRIP_SEL(mprj_io_vtrip_sel[26])
   );
-  sky130_ef_io__gpiov2_pad_wrapped \mprj_pads.area2_io_pad[9]  (
+  sky130_ef_io__gpiov2_pad_wrapped \mprj_pads.area2_io_pad[8]  (
     .AMUXBUS_A(\mprj_pads.analog_a ),
     .AMUXBUS_B(\mprj_pads.analog_b ),
     .ANALOG_EN(mprj_io_analog_en[27]),
@@ -2657,13 +2694,13 @@ module chip_io(vddio, vssio, vccd, vssd, vdda, vssa, vdda1, vdda2, vssa1, vssa2,
     .IB_MODE_SEL(mprj_io_ib_mode_sel[27]),
     .IN(\mprj_pads.io_in[27] ),
     .INP_DIS(mprj_io_inp_dis[27]),
-    .IN_H(),
+    .IN_H(\mprj_pads.io_in_3v3[27] ),
     .OE_N(mprj_io_oeb[27]),
     .OUT(mprj_io_out[27]),
     .PAD(mprj_io[27]),
     .PAD_A_ESD_0_H(mprj_analog_io[20]),
     .PAD_A_ESD_1_H(),
-    .PAD_A_NOESD_H(),
+    .PAD_A_NOESD_H(\mprj_pads.analog_noesd_io[20] ),
     .SLOW(mprj_io_slow_sel[27]),
     .TIE_HI_ESD(),
     .TIE_LO_ESD(\mprj_pads.loop1_io[27] ),
@@ -2678,6 +2715,45 @@ module chip_io(vddio, vssio, vccd, vssd, vdda, vssa, vdda1, vdda2, vssa1, vssa2,
     .VSSIO_Q(\mprj_pads.vssio_q ),
     .VSWITCH(vddio),
     .VTRIP_SEL(mprj_io_vtrip_sel[27])
+  );
+  sky130_ef_io__gpiov2_pad_wrapped \mprj_pads.area2_io_pad[9]  (
+    .AMUXBUS_A(\mprj_pads.analog_a ),
+    .AMUXBUS_B(\mprj_pads.analog_b ),
+    .ANALOG_EN(mprj_io_analog_en[28]),
+    .ANALOG_POL(mprj_io_analog_pol[28]),
+    .ANALOG_SEL(mprj_io_analog_sel[28]),
+    .DM(mprj_io_dm[86:84]),
+    .ENABLE_H(mprj_io_enh[28]),
+    .ENABLE_INP_H(\mprj_pads.loop1_io[28] ),
+    .ENABLE_VDDA_H(porb_h),
+    .ENABLE_VDDIO(vccd),
+    .ENABLE_VSWITCH_H(vssio),
+    .HLD_H_N(mprj_io_hldh_n[28]),
+    .HLD_OVR(mprj_io_holdover[28]),
+    .IB_MODE_SEL(mprj_io_ib_mode_sel[28]),
+    .IN(\mprj_pads.io_in[28] ),
+    .INP_DIS(mprj_io_inp_dis[28]),
+    .IN_H(\mprj_pads.io_in_3v3[28] ),
+    .OE_N(mprj_io_oeb[28]),
+    .OUT(mprj_io_out[28]),
+    .PAD(mprj_io[28]),
+    .PAD_A_ESD_0_H(mprj_analog_io[21]),
+    .PAD_A_ESD_1_H(),
+    .PAD_A_NOESD_H(\mprj_pads.analog_noesd_io[21] ),
+    .SLOW(mprj_io_slow_sel[28]),
+    .TIE_HI_ESD(),
+    .TIE_LO_ESD(\mprj_pads.loop1_io[28] ),
+    .VCCD(vccd2),
+    .VCCHIB(vccd),
+    .VDDA(vdda2),
+    .VDDIO(vddio),
+    .VDDIO_Q(\mprj_pads.vddio_q ),
+    .VSSA(vssa2),
+    .VSSD(vssd2),
+    .VSSIO(vssio),
+    .VSSIO_Q(\mprj_pads.vssio_q ),
+    .VSWITCH(vddio),
+    .VTRIP_SEL(mprj_io_vtrip_sel[28])
   );
   sky130_fd_io__top_xres4v2 resetb_pad (
     .AMUXBUS_A(\mprj_pads.analog_a ),
@@ -2874,215 +2950,6 @@ module chip_io(vddio, vssio, vccd, vssd, vdda, vssa, vdda1, vdda2, vssa1, vssa2,
     .VSSIO_Q(\mprj_pads.vssio_q ),
     .VSWITCH(vddio)
   );
-  assign \mprj_pads.slow_sel[19]  = mprj_io_slow_sel[19];
-  assign \mprj_pads.slow_sel[18]  = mprj_io_slow_sel[18];
-  assign \mprj_pads.slow_sel[17]  = mprj_io_slow_sel[17];
-  assign \mprj_pads.slow_sel[16]  = mprj_io_slow_sel[16];
-  assign \mprj_pads.slow_sel[15]  = mprj_io_slow_sel[15];
-  assign \mprj_pads.slow_sel[14]  = mprj_io_slow_sel[14];
-  assign \mprj_pads.slow_sel[13]  = mprj_io_slow_sel[13];
-  assign \mprj_pads.slow_sel[12]  = mprj_io_slow_sel[12];
-  assign \mprj_pads.slow_sel[11]  = mprj_io_slow_sel[11];
-  assign \mprj_pads.slow_sel[10]  = mprj_io_slow_sel[10];
-  assign \mprj_pads.slow_sel[9]  = mprj_io_slow_sel[9];
-  assign \mprj_pads.slow_sel[8]  = mprj_io_slow_sel[8];
-  assign \mprj_pads.slow_sel[7]  = mprj_io_slow_sel[7];
-  assign \mprj_pads.slow_sel[6]  = mprj_io_slow_sel[6];
-  assign \mprj_pads.slow_sel[5]  = mprj_io_slow_sel[5];
-  assign \mprj_pads.slow_sel[4]  = mprj_io_slow_sel[4];
-  assign \mprj_pads.slow_sel[3]  = mprj_io_slow_sel[3];
-  assign \mprj_pads.slow_sel[2]  = mprj_io_slow_sel[2];
-  assign \mprj_pads.slow_sel[1]  = mprj_io_slow_sel[1];
-  assign \mprj_pads.slow_sel[0]  = mprj_io_slow_sel[0];
-  assign \mprj_pads.enh[37]  = mprj_io_enh[37];
-  assign \mprj_pads.enh[36]  = mprj_io_enh[36];
-  assign \mprj_pads.enh[35]  = mprj_io_enh[35];
-  assign \mprj_pads.enh[34]  = mprj_io_enh[34];
-  assign \mprj_pads.enh[33]  = mprj_io_enh[33];
-  assign \mprj_pads.enh[32]  = mprj_io_enh[32];
-  assign \mprj_pads.enh[31]  = mprj_io_enh[31];
-  assign \mprj_pads.enh[30]  = mprj_io_enh[30];
-  assign \mprj_pads.enh[29]  = mprj_io_enh[29];
-  assign \mprj_pads.enh[28]  = mprj_io_enh[28];
-  assign \mprj_pads.enh[27]  = mprj_io_enh[27];
-  assign \mprj_pads.enh[26]  = mprj_io_enh[26];
-  assign \mprj_pads.enh[25]  = mprj_io_enh[25];
-  assign \mprj_pads.enh[24]  = mprj_io_enh[24];
-  assign \mprj_pads.enh[23]  = mprj_io_enh[23];
-  assign \mprj_pads.enh[22]  = mprj_io_enh[22];
-  assign \mprj_pads.enh[21]  = mprj_io_enh[21];
-  assign \mprj_pads.enh[20]  = mprj_io_enh[20];
-  assign \mprj_pads.enh[19]  = mprj_io_enh[19];
-  assign \mprj_pads.enh[18]  = mprj_io_enh[18];
-  assign \mprj_pads.enh[17]  = mprj_io_enh[17];
-  assign \mprj_pads.enh[16]  = mprj_io_enh[16];
-  assign \mprj_pads.enh[15]  = mprj_io_enh[15];
-  assign \mprj_pads.enh[14]  = mprj_io_enh[14];
-  assign \mprj_pads.enh[13]  = mprj_io_enh[13];
-  assign \mprj_pads.enh[12]  = mprj_io_enh[12];
-  assign \mprj_pads.enh[11]  = mprj_io_enh[11];
-  assign \mprj_pads.enh[10]  = mprj_io_enh[10];
-  assign \mprj_pads.enh[9]  = mprj_io_enh[9];
-  assign \mprj_pads.enh[8]  = mprj_io_enh[8];
-  assign \mprj_pads.enh[7]  = mprj_io_enh[7];
-  assign \mprj_pads.enh[6]  = mprj_io_enh[6];
-  assign \mprj_pads.enh[5]  = mprj_io_enh[5];
-  assign \mprj_pads.enh[4]  = mprj_io_enh[4];
-  assign \mprj_pads.enh[3]  = mprj_io_enh[3];
-  assign \mprj_pads.enh[2]  = mprj_io_enh[2];
-  assign \mprj_pads.enh[1]  = mprj_io_enh[1];
-  assign \mprj_pads.enh[0]  = mprj_io_enh[0];
-  assign \mprj_pads.hldh_n[37]  = mprj_io_hldh_n[37];
-  assign \mprj_pads.hldh_n[36]  = mprj_io_hldh_n[36];
-  assign \mprj_pads.hldh_n[35]  = mprj_io_hldh_n[35];
-  assign \mprj_pads.hldh_n[34]  = mprj_io_hldh_n[34];
-  assign \mprj_pads.hldh_n[33]  = mprj_io_hldh_n[33];
-  assign \mprj_pads.hldh_n[32]  = mprj_io_hldh_n[32];
-  assign \mprj_pads.hldh_n[31]  = mprj_io_hldh_n[31];
-  assign \mprj_pads.hldh_n[30]  = mprj_io_hldh_n[30];
-  assign \mprj_pads.hldh_n[29]  = mprj_io_hldh_n[29];
-  assign \mprj_pads.hldh_n[28]  = mprj_io_hldh_n[28];
-  assign \mprj_pads.hldh_n[27]  = mprj_io_hldh_n[27];
-  assign \mprj_pads.hldh_n[26]  = mprj_io_hldh_n[26];
-  assign \mprj_pads.hldh_n[25]  = mprj_io_hldh_n[25];
-  assign \mprj_pads.hldh_n[24]  = mprj_io_hldh_n[24];
-  assign \mprj_pads.hldh_n[23]  = mprj_io_hldh_n[23];
-  assign \mprj_pads.hldh_n[22]  = mprj_io_hldh_n[22];
-  assign \mprj_pads.hldh_n[21]  = mprj_io_hldh_n[21];
-  assign \mprj_pads.hldh_n[20]  = mprj_io_hldh_n[20];
-  assign \mprj_pads.hldh_n[19]  = mprj_io_hldh_n[19];
-  assign \mprj_pads.hldh_n[18]  = mprj_io_hldh_n[18];
-  assign \mprj_pads.hldh_n[17]  = mprj_io_hldh_n[17];
-  assign \mprj_pads.hldh_n[16]  = mprj_io_hldh_n[16];
-  assign \mprj_pads.hldh_n[15]  = mprj_io_hldh_n[15];
-  assign \mprj_pads.hldh_n[14]  = mprj_io_hldh_n[14];
-  assign \mprj_pads.hldh_n[13]  = mprj_io_hldh_n[13];
-  assign \mprj_pads.hldh_n[12]  = mprj_io_hldh_n[12];
-  assign \mprj_pads.hldh_n[11]  = mprj_io_hldh_n[11];
-  assign \mprj_pads.hldh_n[10]  = mprj_io_hldh_n[10];
-  assign \mprj_pads.hldh_n[9]  = mprj_io_hldh_n[9];
-  assign \mprj_pads.hldh_n[8]  = mprj_io_hldh_n[8];
-  assign \mprj_pads.hldh_n[7]  = mprj_io_hldh_n[7];
-  assign \mprj_pads.hldh_n[6]  = mprj_io_hldh_n[6];
-  assign \mprj_pads.hldh_n[5]  = mprj_io_hldh_n[5];
-  assign \mprj_pads.hldh_n[4]  = mprj_io_hldh_n[4];
-  assign \mprj_pads.hldh_n[3]  = mprj_io_hldh_n[3];
-  assign \mprj_pads.hldh_n[2]  = mprj_io_hldh_n[2];
-  assign \mprj_pads.hldh_n[1]  = mprj_io_hldh_n[1];
-  assign \mprj_pads.hldh_n[0]  = mprj_io_hldh_n[0];
-  assign \mprj_pads.io[37]  = mprj_io[37];
-  assign \mprj_pads.io[36]  = mprj_io[36];
-  assign \mprj_pads.io[35]  = mprj_io[35];
-  assign \mprj_pads.io[34]  = mprj_io[34];
-  assign \mprj_pads.io[33]  = mprj_io[33];
-  assign \mprj_pads.io[32]  = mprj_io[32];
-  assign \mprj_pads.io[31]  = mprj_io[31];
-  assign \mprj_pads.io[30]  = mprj_io[30];
-  assign \mprj_pads.io[29]  = mprj_io[29];
-  assign \mprj_pads.io[28]  = mprj_io[28];
-  assign \mprj_pads.io[27]  = mprj_io[27];
-  assign \mprj_pads.io[26]  = mprj_io[26];
-  assign \mprj_pads.io[25]  = mprj_io[25];
-  assign \mprj_pads.io[24]  = mprj_io[24];
-  assign \mprj_pads.io[23]  = mprj_io[23];
-  assign \mprj_pads.io[22]  = mprj_io[22];
-  assign \mprj_pads.io[21]  = mprj_io[21];
-  assign \mprj_pads.io[20]  = mprj_io[20];
-  assign \mprj_pads.io[19]  = mprj_io[19];
-  assign \mprj_pads.io[18]  = mprj_io[18];
-  assign \mprj_pads.io[17]  = mprj_io[17];
-  assign \mprj_pads.io[16]  = mprj_io[16];
-  assign \mprj_pads.io[15]  = mprj_io[15];
-  assign \mprj_pads.io[14]  = mprj_io[14];
-  assign \mprj_pads.io[13]  = mprj_io[13];
-  assign \mprj_pads.io[12]  = mprj_io[12];
-  assign \mprj_pads.io[11]  = mprj_io[11];
-  assign \mprj_pads.io[10]  = mprj_io[10];
-  assign \mprj_pads.io[9]  = mprj_io[9];
-  assign \mprj_pads.io[8]  = mprj_io[8];
-  assign \mprj_pads.io[7]  = mprj_io[7];
-  assign \mprj_pads.io[6]  = mprj_io[6];
-  assign \mprj_pads.io[5]  = mprj_io[5];
-  assign \mprj_pads.io[4]  = mprj_io[4];
-  assign \mprj_pads.io[3]  = mprj_io[3];
-  assign \mprj_pads.io[2]  = mprj_io[2];
-  assign \mprj_pads.io[1]  = mprj_io[1];
-  assign \mprj_pads.io[0]  = mprj_io[0];
-  assign \mprj_pads.analog_io[30]  = mprj_analog_io[30];
-  assign \mprj_pads.analog_io[29]  = mprj_analog_io[29];
-  assign \mprj_pads.analog_io[28]  = mprj_analog_io[28];
-  assign \mprj_pads.analog_io[27]  = mprj_analog_io[27];
-  assign \mprj_pads.analog_io[26]  = mprj_analog_io[26];
-  assign \mprj_pads.analog_io[25]  = mprj_analog_io[25];
-  assign \mprj_pads.analog_io[24]  = mprj_analog_io[24];
-  assign \mprj_pads.analog_io[23]  = mprj_analog_io[23];
-  assign \mprj_pads.analog_io[22]  = mprj_analog_io[22];
-  assign \mprj_pads.analog_io[21]  = mprj_analog_io[21];
-  assign \mprj_pads.analog_io[20]  = mprj_analog_io[20];
-  assign \mprj_pads.analog_io[19]  = mprj_analog_io[19];
-  assign \mprj_pads.analog_io[18]  = mprj_analog_io[18];
-  assign \mprj_pads.analog_io[17]  = mprj_analog_io[17];
-  assign \mprj_pads.analog_io[16]  = mprj_analog_io[16];
-  assign \mprj_pads.analog_io[15]  = mprj_analog_io[15];
-  assign \mprj_pads.analog_io[14]  = mprj_analog_io[14];
-  assign \mprj_pads.analog_io[13]  = mprj_analog_io[13];
-  assign \mprj_pads.analog_io[12]  = mprj_analog_io[12];
-  assign \mprj_pads.analog_io[11]  = mprj_analog_io[11];
-  assign \mprj_pads.analog_io[10]  = mprj_analog_io[10];
-  assign \mprj_pads.analog_io[9]  = mprj_analog_io[9];
-  assign \mprj_pads.analog_io[8]  = mprj_analog_io[8];
-  assign \mprj_pads.analog_io[7]  = mprj_analog_io[7];
-  assign \mprj_pads.analog_io[6]  = mprj_analog_io[6];
-  assign \mprj_pads.analog_io[5]  = mprj_analog_io[5];
-  assign \mprj_pads.analog_io[4]  = mprj_analog_io[4];
-  assign \mprj_pads.analog_io[3]  = mprj_analog_io[3];
-  assign \mprj_pads.analog_io[2]  = mprj_analog_io[2];
-  assign \mprj_pads.analog_io[1]  = mprj_analog_io[1];
-  assign \mprj_pads.analog_io[0]  = mprj_analog_io[0];
-  assign \flash_io1_mode[2]  = flash_io1_ieb_core;
-  assign \flash_io1_mode[1]  = flash_io1_ieb_core;
-  assign \flash_io1_mode[0]  = flash_io1_oeb_core;
-  assign \dm_all[2]  = gpio_mode1_core;
-  assign \dm_all[1]  = gpio_mode1_core;
-  assign \dm_all[0]  = gpio_mode0_core;
-  assign \mprj_pads.analog_sel[37]  = mprj_io_analog_sel[37];
-  assign \mprj_pads.analog_sel[36]  = mprj_io_analog_sel[36];
-  assign \mprj_pads.analog_sel[35]  = mprj_io_analog_sel[35];
-  assign \mprj_pads.analog_sel[34]  = mprj_io_analog_sel[34];
-  assign \mprj_pads.analog_sel[33]  = mprj_io_analog_sel[33];
-  assign \mprj_pads.analog_sel[32]  = mprj_io_analog_sel[32];
-  assign \mprj_pads.analog_sel[31]  = mprj_io_analog_sel[31];
-  assign \mprj_pads.analog_sel[30]  = mprj_io_analog_sel[30];
-  assign \mprj_pads.analog_sel[29]  = mprj_io_analog_sel[29];
-  assign \mprj_pads.analog_sel[28]  = mprj_io_analog_sel[28];
-  assign \mprj_pads.analog_sel[27]  = mprj_io_analog_sel[27];
-  assign \mprj_pads.analog_sel[26]  = mprj_io_analog_sel[26];
-  assign \mprj_pads.analog_sel[25]  = mprj_io_analog_sel[25];
-  assign \mprj_pads.analog_sel[24]  = mprj_io_analog_sel[24];
-  assign \mprj_pads.analog_sel[23]  = mprj_io_analog_sel[23];
-  assign \mprj_pads.analog_sel[22]  = mprj_io_analog_sel[22];
-  assign \mprj_pads.analog_sel[21]  = mprj_io_analog_sel[21];
-  assign \mprj_pads.analog_sel[20]  = mprj_io_analog_sel[20];
-  assign \mprj_pads.analog_sel[19]  = mprj_io_analog_sel[19];
-  assign \mprj_pads.analog_sel[18]  = mprj_io_analog_sel[18];
-  assign \mprj_pads.analog_sel[17]  = mprj_io_analog_sel[17];
-  assign \mprj_pads.analog_sel[16]  = mprj_io_analog_sel[16];
-  assign \mprj_pads.analog_sel[15]  = mprj_io_analog_sel[15];
-  assign \mprj_pads.analog_sel[14]  = mprj_io_analog_sel[14];
-  assign \mprj_pads.analog_sel[13]  = mprj_io_analog_sel[13];
-  assign \mprj_pads.analog_sel[12]  = mprj_io_analog_sel[12];
-  assign \mprj_pads.analog_sel[11]  = mprj_io_analog_sel[11];
-  assign \mprj_pads.analog_sel[10]  = mprj_io_analog_sel[10];
-  assign \mprj_pads.analog_sel[9]  = mprj_io_analog_sel[9];
-  assign \mprj_pads.analog_sel[8]  = mprj_io_analog_sel[8];
-  assign \mprj_pads.analog_sel[7]  = mprj_io_analog_sel[7];
-  assign \mprj_pads.analog_sel[6]  = mprj_io_analog_sel[6];
-  assign \mprj_pads.analog_sel[5]  = mprj_io_analog_sel[5];
-  assign \mprj_pads.analog_sel[4]  = mprj_io_analog_sel[4];
-  assign \mprj_pads.analog_sel[3]  = mprj_io_analog_sel[3];
-  assign \mprj_pads.analog_sel[2]  = mprj_io_analog_sel[2];
-  assign \mprj_pads.analog_sel[1]  = mprj_io_analog_sel[1];
-  assign \mprj_pads.analog_sel[0]  = mprj_io_analog_sel[0];
   assign \mprj_pads.vtrip_sel[37]  = mprj_io_vtrip_sel[37];
   assign \mprj_pads.vtrip_sel[36]  = mprj_io_vtrip_sel[36];
   assign \mprj_pads.vtrip_sel[35]  = mprj_io_vtrip_sel[35];
@@ -3121,82 +2988,82 @@ module chip_io(vddio, vssio, vccd, vssd, vdda, vssa, vdda1, vdda2, vssa1, vssa2,
   assign \mprj_pads.vtrip_sel[2]  = mprj_io_vtrip_sel[2];
   assign \mprj_pads.vtrip_sel[1]  = mprj_io_vtrip_sel[1];
   assign \mprj_pads.vtrip_sel[0]  = mprj_io_vtrip_sel[0];
-  assign \mprj_pads.analog_pol[37]  = mprj_io_analog_pol[37];
-  assign \mprj_pads.analog_pol[36]  = mprj_io_analog_pol[36];
-  assign \mprj_pads.analog_pol[35]  = mprj_io_analog_pol[35];
-  assign \mprj_pads.analog_pol[34]  = mprj_io_analog_pol[34];
-  assign \mprj_pads.analog_pol[33]  = mprj_io_analog_pol[33];
-  assign \mprj_pads.analog_pol[32]  = mprj_io_analog_pol[32];
-  assign \mprj_pads.analog_pol[31]  = mprj_io_analog_pol[31];
-  assign \mprj_pads.analog_pol[30]  = mprj_io_analog_pol[30];
-  assign \mprj_pads.analog_pol[29]  = mprj_io_analog_pol[29];
-  assign \mprj_pads.analog_pol[28]  = mprj_io_analog_pol[28];
-  assign \mprj_pads.analog_pol[27]  = mprj_io_analog_pol[27];
-  assign \mprj_pads.analog_pol[26]  = mprj_io_analog_pol[26];
-  assign \mprj_pads.analog_pol[25]  = mprj_io_analog_pol[25];
-  assign \mprj_pads.analog_pol[24]  = mprj_io_analog_pol[24];
-  assign \mprj_pads.analog_pol[23]  = mprj_io_analog_pol[23];
-  assign \mprj_pads.analog_pol[22]  = mprj_io_analog_pol[22];
-  assign \mprj_pads.analog_pol[21]  = mprj_io_analog_pol[21];
-  assign \mprj_pads.analog_pol[20]  = mprj_io_analog_pol[20];
-  assign \mprj_pads.analog_pol[19]  = mprj_io_analog_pol[19];
-  assign \mprj_pads.analog_pol[18]  = mprj_io_analog_pol[18];
-  assign \mprj_pads.analog_pol[17]  = mprj_io_analog_pol[17];
-  assign \mprj_pads.analog_pol[16]  = mprj_io_analog_pol[16];
-  assign \mprj_pads.analog_pol[15]  = mprj_io_analog_pol[15];
-  assign \mprj_pads.analog_pol[14]  = mprj_io_analog_pol[14];
-  assign \mprj_pads.analog_pol[13]  = mprj_io_analog_pol[13];
-  assign \mprj_pads.analog_pol[12]  = mprj_io_analog_pol[12];
-  assign \mprj_pads.analog_pol[11]  = mprj_io_analog_pol[11];
-  assign \mprj_pads.analog_pol[10]  = mprj_io_analog_pol[10];
-  assign \mprj_pads.analog_pol[9]  = mprj_io_analog_pol[9];
-  assign \mprj_pads.analog_pol[8]  = mprj_io_analog_pol[8];
-  assign \mprj_pads.analog_pol[7]  = mprj_io_analog_pol[7];
-  assign \mprj_pads.analog_pol[6]  = mprj_io_analog_pol[6];
-  assign \mprj_pads.analog_pol[5]  = mprj_io_analog_pol[5];
-  assign \mprj_pads.analog_pol[4]  = mprj_io_analog_pol[4];
-  assign \mprj_pads.analog_pol[3]  = mprj_io_analog_pol[3];
-  assign \mprj_pads.analog_pol[2]  = mprj_io_analog_pol[2];
-  assign \mprj_pads.analog_pol[1]  = mprj_io_analog_pol[1];
-  assign \mprj_pads.analog_pol[0]  = mprj_io_analog_pol[0];
-  assign \mprj_pads.oeb[37]  = mprj_io_oeb[37];
-  assign \mprj_pads.oeb[36]  = mprj_io_oeb[36];
-  assign \mprj_pads.oeb[35]  = mprj_io_oeb[35];
-  assign \mprj_pads.oeb[34]  = mprj_io_oeb[34];
-  assign \mprj_pads.oeb[33]  = mprj_io_oeb[33];
-  assign \mprj_pads.oeb[32]  = mprj_io_oeb[32];
-  assign \mprj_pads.oeb[31]  = mprj_io_oeb[31];
-  assign \mprj_pads.oeb[30]  = mprj_io_oeb[30];
-  assign \mprj_pads.oeb[29]  = mprj_io_oeb[29];
-  assign \mprj_pads.oeb[28]  = mprj_io_oeb[28];
-  assign \mprj_pads.oeb[27]  = mprj_io_oeb[27];
-  assign \mprj_pads.oeb[26]  = mprj_io_oeb[26];
-  assign \mprj_pads.oeb[25]  = mprj_io_oeb[25];
-  assign \mprj_pads.oeb[24]  = mprj_io_oeb[24];
-  assign \mprj_pads.oeb[23]  = mprj_io_oeb[23];
-  assign \mprj_pads.oeb[22]  = mprj_io_oeb[22];
-  assign \mprj_pads.oeb[21]  = mprj_io_oeb[21];
-  assign \mprj_pads.oeb[20]  = mprj_io_oeb[20];
-  assign \mprj_pads.oeb[19]  = mprj_io_oeb[19];
-  assign \mprj_pads.oeb[18]  = mprj_io_oeb[18];
-  assign \mprj_pads.oeb[17]  = mprj_io_oeb[17];
-  assign \mprj_pads.oeb[16]  = mprj_io_oeb[16];
-  assign \mprj_pads.oeb[15]  = mprj_io_oeb[15];
-  assign \mprj_pads.oeb[14]  = mprj_io_oeb[14];
-  assign \mprj_pads.oeb[13]  = mprj_io_oeb[13];
-  assign \mprj_pads.oeb[12]  = mprj_io_oeb[12];
-  assign \mprj_pads.oeb[11]  = mprj_io_oeb[11];
-  assign \mprj_pads.oeb[10]  = mprj_io_oeb[10];
-  assign \mprj_pads.oeb[9]  = mprj_io_oeb[9];
-  assign \mprj_pads.oeb[8]  = mprj_io_oeb[8];
-  assign \mprj_pads.oeb[7]  = mprj_io_oeb[7];
-  assign \mprj_pads.oeb[6]  = mprj_io_oeb[6];
-  assign \mprj_pads.oeb[5]  = mprj_io_oeb[5];
-  assign \mprj_pads.oeb[4]  = mprj_io_oeb[4];
-  assign \mprj_pads.oeb[3]  = mprj_io_oeb[3];
-  assign \mprj_pads.oeb[2]  = mprj_io_oeb[2];
-  assign \mprj_pads.oeb[1]  = mprj_io_oeb[1];
-  assign \mprj_pads.oeb[0]  = mprj_io_oeb[0];
+  assign \mprj_pads.holdover[37]  = mprj_io_holdover[37];
+  assign \mprj_pads.holdover[36]  = mprj_io_holdover[36];
+  assign \mprj_pads.holdover[35]  = mprj_io_holdover[35];
+  assign \mprj_pads.holdover[34]  = mprj_io_holdover[34];
+  assign \mprj_pads.holdover[33]  = mprj_io_holdover[33];
+  assign \mprj_pads.holdover[32]  = mprj_io_holdover[32];
+  assign \mprj_pads.holdover[31]  = mprj_io_holdover[31];
+  assign \mprj_pads.holdover[30]  = mprj_io_holdover[30];
+  assign \mprj_pads.holdover[29]  = mprj_io_holdover[29];
+  assign \mprj_pads.holdover[28]  = mprj_io_holdover[28];
+  assign \mprj_pads.holdover[27]  = mprj_io_holdover[27];
+  assign \mprj_pads.holdover[26]  = mprj_io_holdover[26];
+  assign \mprj_pads.holdover[25]  = mprj_io_holdover[25];
+  assign \mprj_pads.holdover[24]  = mprj_io_holdover[24];
+  assign \mprj_pads.holdover[23]  = mprj_io_holdover[23];
+  assign \mprj_pads.holdover[22]  = mprj_io_holdover[22];
+  assign \mprj_pads.holdover[21]  = mprj_io_holdover[21];
+  assign \mprj_pads.holdover[20]  = mprj_io_holdover[20];
+  assign \mprj_pads.holdover[19]  = mprj_io_holdover[19];
+  assign \mprj_pads.holdover[18]  = mprj_io_holdover[18];
+  assign \mprj_pads.holdover[17]  = mprj_io_holdover[17];
+  assign \mprj_pads.holdover[16]  = mprj_io_holdover[16];
+  assign \mprj_pads.holdover[15]  = mprj_io_holdover[15];
+  assign \mprj_pads.holdover[14]  = mprj_io_holdover[14];
+  assign \mprj_pads.holdover[13]  = mprj_io_holdover[13];
+  assign \mprj_pads.holdover[12]  = mprj_io_holdover[12];
+  assign \mprj_pads.holdover[11]  = mprj_io_holdover[11];
+  assign \mprj_pads.holdover[10]  = mprj_io_holdover[10];
+  assign \mprj_pads.holdover[9]  = mprj_io_holdover[9];
+  assign \mprj_pads.holdover[8]  = mprj_io_holdover[8];
+  assign \mprj_pads.holdover[7]  = mprj_io_holdover[7];
+  assign \mprj_pads.holdover[6]  = mprj_io_holdover[6];
+  assign \mprj_pads.holdover[5]  = mprj_io_holdover[5];
+  assign \mprj_pads.holdover[4]  = mprj_io_holdover[4];
+  assign \mprj_pads.holdover[3]  = mprj_io_holdover[3];
+  assign \mprj_pads.holdover[2]  = mprj_io_holdover[2];
+  assign \mprj_pads.holdover[1]  = mprj_io_holdover[1];
+  assign \mprj_pads.holdover[0]  = mprj_io_holdover[0];
+  assign \mprj_pads.inp_dis[37]  = mprj_io_inp_dis[37];
+  assign \mprj_pads.inp_dis[36]  = mprj_io_inp_dis[36];
+  assign \mprj_pads.inp_dis[35]  = mprj_io_inp_dis[35];
+  assign \mprj_pads.inp_dis[34]  = mprj_io_inp_dis[34];
+  assign \mprj_pads.inp_dis[33]  = mprj_io_inp_dis[33];
+  assign \mprj_pads.inp_dis[32]  = mprj_io_inp_dis[32];
+  assign \mprj_pads.inp_dis[31]  = mprj_io_inp_dis[31];
+  assign \mprj_pads.inp_dis[30]  = mprj_io_inp_dis[30];
+  assign \mprj_pads.inp_dis[29]  = mprj_io_inp_dis[29];
+  assign \mprj_pads.inp_dis[28]  = mprj_io_inp_dis[28];
+  assign \mprj_pads.inp_dis[27]  = mprj_io_inp_dis[27];
+  assign \mprj_pads.inp_dis[26]  = mprj_io_inp_dis[26];
+  assign \mprj_pads.inp_dis[25]  = mprj_io_inp_dis[25];
+  assign \mprj_pads.inp_dis[24]  = mprj_io_inp_dis[24];
+  assign \mprj_pads.inp_dis[23]  = mprj_io_inp_dis[23];
+  assign \mprj_pads.inp_dis[22]  = mprj_io_inp_dis[22];
+  assign \mprj_pads.inp_dis[21]  = mprj_io_inp_dis[21];
+  assign \mprj_pads.inp_dis[20]  = mprj_io_inp_dis[20];
+  assign \mprj_pads.inp_dis[19]  = mprj_io_inp_dis[19];
+  assign \mprj_pads.inp_dis[18]  = mprj_io_inp_dis[18];
+  assign \mprj_pads.inp_dis[17]  = mprj_io_inp_dis[17];
+  assign \mprj_pads.inp_dis[16]  = mprj_io_inp_dis[16];
+  assign \mprj_pads.inp_dis[15]  = mprj_io_inp_dis[15];
+  assign \mprj_pads.inp_dis[14]  = mprj_io_inp_dis[14];
+  assign \mprj_pads.inp_dis[13]  = mprj_io_inp_dis[13];
+  assign \mprj_pads.inp_dis[12]  = mprj_io_inp_dis[12];
+  assign \mprj_pads.inp_dis[11]  = mprj_io_inp_dis[11];
+  assign \mprj_pads.inp_dis[10]  = mprj_io_inp_dis[10];
+  assign \mprj_pads.inp_dis[9]  = mprj_io_inp_dis[9];
+  assign \mprj_pads.inp_dis[8]  = mprj_io_inp_dis[8];
+  assign \mprj_pads.inp_dis[7]  = mprj_io_inp_dis[7];
+  assign \mprj_pads.inp_dis[6]  = mprj_io_inp_dis[6];
+  assign \mprj_pads.inp_dis[5]  = mprj_io_inp_dis[5];
+  assign \mprj_pads.inp_dis[4]  = mprj_io_inp_dis[4];
+  assign \mprj_pads.inp_dis[3]  = mprj_io_inp_dis[3];
+  assign \mprj_pads.inp_dis[2]  = mprj_io_inp_dis[2];
+  assign \mprj_pads.inp_dis[1]  = mprj_io_inp_dis[1];
+  assign \mprj_pads.inp_dis[0]  = mprj_io_inp_dis[0];
   assign \mprj_pads.analog_en[37]  = mprj_io_analog_en[37];
   assign \mprj_pads.analog_en[36]  = mprj_io_analog_en[36];
   assign \mprj_pads.analog_en[35]  = mprj_io_analog_en[35];
@@ -3235,6 +3102,339 @@ module chip_io(vddio, vssio, vccd, vssd, vdda, vssa, vdda1, vdda2, vssa1, vssa2,
   assign \mprj_pads.analog_en[2]  = mprj_io_analog_en[2];
   assign \mprj_pads.analog_en[1]  = mprj_io_analog_en[1];
   assign \mprj_pads.analog_en[0]  = mprj_io_analog_en[0];
+  assign \mprj_pads.hldh_n[37]  = mprj_io_hldh_n[37];
+  assign \mprj_pads.hldh_n[36]  = mprj_io_hldh_n[36];
+  assign \mprj_pads.hldh_n[35]  = mprj_io_hldh_n[35];
+  assign \mprj_pads.hldh_n[34]  = mprj_io_hldh_n[34];
+  assign \mprj_pads.hldh_n[33]  = mprj_io_hldh_n[33];
+  assign \mprj_pads.hldh_n[32]  = mprj_io_hldh_n[32];
+  assign \mprj_pads.hldh_n[31]  = mprj_io_hldh_n[31];
+  assign \mprj_pads.hldh_n[30]  = mprj_io_hldh_n[30];
+  assign \mprj_pads.hldh_n[29]  = mprj_io_hldh_n[29];
+  assign \mprj_pads.hldh_n[28]  = mprj_io_hldh_n[28];
+  assign \mprj_pads.hldh_n[27]  = mprj_io_hldh_n[27];
+  assign \mprj_pads.hldh_n[26]  = mprj_io_hldh_n[26];
+  assign \mprj_pads.hldh_n[25]  = mprj_io_hldh_n[25];
+  assign \mprj_pads.hldh_n[24]  = mprj_io_hldh_n[24];
+  assign \mprj_pads.hldh_n[23]  = mprj_io_hldh_n[23];
+  assign \mprj_pads.hldh_n[22]  = mprj_io_hldh_n[22];
+  assign \mprj_pads.hldh_n[21]  = mprj_io_hldh_n[21];
+  assign \mprj_pads.hldh_n[20]  = mprj_io_hldh_n[20];
+  assign \mprj_pads.hldh_n[19]  = mprj_io_hldh_n[19];
+  assign \mprj_pads.hldh_n[18]  = mprj_io_hldh_n[18];
+  assign \mprj_pads.hldh_n[17]  = mprj_io_hldh_n[17];
+  assign \mprj_pads.hldh_n[16]  = mprj_io_hldh_n[16];
+  assign \mprj_pads.hldh_n[15]  = mprj_io_hldh_n[15];
+  assign \mprj_pads.hldh_n[14]  = mprj_io_hldh_n[14];
+  assign \mprj_pads.hldh_n[13]  = mprj_io_hldh_n[13];
+  assign \mprj_pads.hldh_n[12]  = mprj_io_hldh_n[12];
+  assign \mprj_pads.hldh_n[11]  = mprj_io_hldh_n[11];
+  assign \mprj_pads.hldh_n[10]  = mprj_io_hldh_n[10];
+  assign \mprj_pads.hldh_n[9]  = mprj_io_hldh_n[9];
+  assign \mprj_pads.hldh_n[8]  = mprj_io_hldh_n[8];
+  assign \mprj_pads.hldh_n[7]  = mprj_io_hldh_n[7];
+  assign \mprj_pads.hldh_n[6]  = mprj_io_hldh_n[6];
+  assign \mprj_pads.hldh_n[5]  = mprj_io_hldh_n[5];
+  assign \mprj_pads.hldh_n[4]  = mprj_io_hldh_n[4];
+  assign \mprj_pads.hldh_n[3]  = mprj_io_hldh_n[3];
+  assign \mprj_pads.hldh_n[2]  = mprj_io_hldh_n[2];
+  assign \mprj_pads.hldh_n[1]  = mprj_io_hldh_n[1];
+  assign \mprj_pads.hldh_n[0]  = mprj_io_hldh_n[0];
+  assign \mprj_pads.slow_sel[37]  = mprj_io_slow_sel[37];
+  assign \mprj_pads.slow_sel[36]  = mprj_io_slow_sel[36];
+  assign \mprj_pads.slow_sel[35]  = mprj_io_slow_sel[35];
+  assign \mprj_pads.slow_sel[34]  = mprj_io_slow_sel[34];
+  assign \mprj_pads.slow_sel[33]  = mprj_io_slow_sel[33];
+  assign \mprj_pads.slow_sel[32]  = mprj_io_slow_sel[32];
+  assign \mprj_pads.slow_sel[31]  = mprj_io_slow_sel[31];
+  assign \mprj_pads.slow_sel[30]  = mprj_io_slow_sel[30];
+  assign \mprj_pads.slow_sel[29]  = mprj_io_slow_sel[29];
+  assign \mprj_pads.slow_sel[28]  = mprj_io_slow_sel[28];
+  assign \mprj_pads.slow_sel[27]  = mprj_io_slow_sel[27];
+  assign \mprj_pads.slow_sel[26]  = mprj_io_slow_sel[26];
+  assign \mprj_pads.slow_sel[25]  = mprj_io_slow_sel[25];
+  assign \mprj_pads.slow_sel[24]  = mprj_io_slow_sel[24];
+  assign \mprj_pads.slow_sel[23]  = mprj_io_slow_sel[23];
+  assign \mprj_pads.slow_sel[22]  = mprj_io_slow_sel[22];
+  assign \mprj_pads.slow_sel[21]  = mprj_io_slow_sel[21];
+  assign \mprj_pads.slow_sel[20]  = mprj_io_slow_sel[20];
+  assign \mprj_pads.slow_sel[19]  = mprj_io_slow_sel[19];
+  assign \mprj_pads.slow_sel[18]  = mprj_io_slow_sel[18];
+  assign \mprj_pads.slow_sel[17]  = mprj_io_slow_sel[17];
+  assign \mprj_pads.slow_sel[16]  = mprj_io_slow_sel[16];
+  assign \mprj_pads.slow_sel[15]  = mprj_io_slow_sel[15];
+  assign \mprj_pads.slow_sel[14]  = mprj_io_slow_sel[14];
+  assign \mprj_pads.slow_sel[13]  = mprj_io_slow_sel[13];
+  assign \mprj_pads.slow_sel[12]  = mprj_io_slow_sel[12];
+  assign \mprj_pads.slow_sel[11]  = mprj_io_slow_sel[11];
+  assign \mprj_pads.slow_sel[10]  = mprj_io_slow_sel[10];
+  assign \mprj_pads.slow_sel[9]  = mprj_io_slow_sel[9];
+  assign \mprj_pads.slow_sel[8]  = mprj_io_slow_sel[8];
+  assign \mprj_pads.slow_sel[7]  = mprj_io_slow_sel[7];
+  assign \mprj_pads.slow_sel[6]  = mprj_io_slow_sel[6];
+  assign \mprj_pads.slow_sel[5]  = mprj_io_slow_sel[5];
+  assign \mprj_pads.slow_sel[4]  = mprj_io_slow_sel[4];
+  assign \mprj_pads.slow_sel[3]  = mprj_io_slow_sel[3];
+  assign \mprj_pads.slow_sel[2]  = mprj_io_slow_sel[2];
+  assign \mprj_pads.slow_sel[1]  = mprj_io_slow_sel[1];
+  assign \mprj_pads.slow_sel[0]  = mprj_io_slow_sel[0];
+  assign \mprj_pads.ib_mode_sel[37]  = mprj_io_ib_mode_sel[37];
+  assign \mprj_pads.ib_mode_sel[36]  = mprj_io_ib_mode_sel[36];
+  assign \mprj_pads.ib_mode_sel[35]  = mprj_io_ib_mode_sel[35];
+  assign \mprj_pads.ib_mode_sel[34]  = mprj_io_ib_mode_sel[34];
+  assign \mprj_pads.ib_mode_sel[33]  = mprj_io_ib_mode_sel[33];
+  assign \mprj_pads.ib_mode_sel[32]  = mprj_io_ib_mode_sel[32];
+  assign \mprj_pads.ib_mode_sel[31]  = mprj_io_ib_mode_sel[31];
+  assign \mprj_pads.ib_mode_sel[30]  = mprj_io_ib_mode_sel[30];
+  assign \mprj_pads.ib_mode_sel[29]  = mprj_io_ib_mode_sel[29];
+  assign \mprj_pads.ib_mode_sel[28]  = mprj_io_ib_mode_sel[28];
+  assign \mprj_pads.ib_mode_sel[27]  = mprj_io_ib_mode_sel[27];
+  assign \mprj_pads.ib_mode_sel[26]  = mprj_io_ib_mode_sel[26];
+  assign \mprj_pads.ib_mode_sel[25]  = mprj_io_ib_mode_sel[25];
+  assign \mprj_pads.ib_mode_sel[24]  = mprj_io_ib_mode_sel[24];
+  assign \mprj_pads.ib_mode_sel[23]  = mprj_io_ib_mode_sel[23];
+  assign \mprj_pads.ib_mode_sel[22]  = mprj_io_ib_mode_sel[22];
+  assign \mprj_pads.ib_mode_sel[21]  = mprj_io_ib_mode_sel[21];
+  assign \mprj_pads.ib_mode_sel[20]  = mprj_io_ib_mode_sel[20];
+  assign \mprj_pads.ib_mode_sel[19]  = mprj_io_ib_mode_sel[19];
+  assign \mprj_pads.ib_mode_sel[18]  = mprj_io_ib_mode_sel[18];
+  assign \mprj_pads.ib_mode_sel[17]  = mprj_io_ib_mode_sel[17];
+  assign \mprj_pads.ib_mode_sel[16]  = mprj_io_ib_mode_sel[16];
+  assign \mprj_pads.ib_mode_sel[15]  = mprj_io_ib_mode_sel[15];
+  assign \mprj_pads.ib_mode_sel[14]  = mprj_io_ib_mode_sel[14];
+  assign \mprj_pads.ib_mode_sel[13]  = mprj_io_ib_mode_sel[13];
+  assign \mprj_pads.ib_mode_sel[12]  = mprj_io_ib_mode_sel[12];
+  assign \mprj_pads.ib_mode_sel[11]  = mprj_io_ib_mode_sel[11];
+  assign \mprj_pads.ib_mode_sel[10]  = mprj_io_ib_mode_sel[10];
+  assign \mprj_pads.ib_mode_sel[9]  = mprj_io_ib_mode_sel[9];
+  assign \mprj_pads.ib_mode_sel[8]  = mprj_io_ib_mode_sel[8];
+  assign \mprj_pads.ib_mode_sel[7]  = mprj_io_ib_mode_sel[7];
+  assign \mprj_pads.ib_mode_sel[6]  = mprj_io_ib_mode_sel[6];
+  assign \mprj_pads.ib_mode_sel[5]  = mprj_io_ib_mode_sel[5];
+  assign \mprj_pads.ib_mode_sel[4]  = mprj_io_ib_mode_sel[4];
+  assign \mprj_pads.ib_mode_sel[3]  = mprj_io_ib_mode_sel[3];
+  assign \mprj_pads.ib_mode_sel[2]  = mprj_io_ib_mode_sel[2];
+  assign \mprj_pads.ib_mode_sel[1]  = mprj_io_ib_mode_sel[1];
+  assign \mprj_pads.ib_mode_sel[0]  = mprj_io_ib_mode_sel[0];
+  assign \mprj_pads.analog_sel[37]  = mprj_io_analog_sel[37];
+  assign \mprj_pads.analog_sel[36]  = mprj_io_analog_sel[36];
+  assign \mprj_pads.analog_sel[35]  = mprj_io_analog_sel[35];
+  assign \mprj_pads.analog_sel[34]  = mprj_io_analog_sel[34];
+  assign \mprj_pads.analog_sel[33]  = mprj_io_analog_sel[33];
+  assign \mprj_pads.analog_sel[32]  = mprj_io_analog_sel[32];
+  assign \mprj_pads.analog_sel[31]  = mprj_io_analog_sel[31];
+  assign \mprj_pads.analog_sel[30]  = mprj_io_analog_sel[30];
+  assign \mprj_pads.analog_sel[29]  = mprj_io_analog_sel[29];
+  assign \mprj_pads.analog_sel[28]  = mprj_io_analog_sel[28];
+  assign \mprj_pads.analog_sel[27]  = mprj_io_analog_sel[27];
+  assign \mprj_pads.analog_sel[26]  = mprj_io_analog_sel[26];
+  assign \mprj_pads.analog_sel[25]  = mprj_io_analog_sel[25];
+  assign \mprj_pads.analog_sel[24]  = mprj_io_analog_sel[24];
+  assign \mprj_pads.analog_sel[23]  = mprj_io_analog_sel[23];
+  assign \mprj_pads.analog_sel[22]  = mprj_io_analog_sel[22];
+  assign \mprj_pads.analog_sel[21]  = mprj_io_analog_sel[21];
+  assign \mprj_pads.analog_sel[20]  = mprj_io_analog_sel[20];
+  assign \mprj_pads.analog_sel[19]  = mprj_io_analog_sel[19];
+  assign \mprj_pads.analog_sel[18]  = mprj_io_analog_sel[18];
+  assign \mprj_pads.analog_sel[17]  = mprj_io_analog_sel[17];
+  assign \mprj_pads.analog_sel[16]  = mprj_io_analog_sel[16];
+  assign \mprj_pads.analog_sel[15]  = mprj_io_analog_sel[15];
+  assign \mprj_pads.analog_sel[14]  = mprj_io_analog_sel[14];
+  assign \mprj_pads.analog_sel[13]  = mprj_io_analog_sel[13];
+  assign \mprj_pads.analog_sel[12]  = mprj_io_analog_sel[12];
+  assign \mprj_pads.analog_sel[11]  = mprj_io_analog_sel[11];
+  assign \mprj_pads.analog_sel[10]  = mprj_io_analog_sel[10];
+  assign \mprj_pads.analog_sel[9]  = mprj_io_analog_sel[9];
+  assign \mprj_pads.analog_sel[8]  = mprj_io_analog_sel[8];
+  assign \mprj_pads.analog_sel[7]  = mprj_io_analog_sel[7];
+  assign \mprj_pads.analog_sel[6]  = mprj_io_analog_sel[6];
+  assign \mprj_pads.analog_sel[5]  = mprj_io_analog_sel[5];
+  assign \mprj_pads.analog_sel[4]  = mprj_io_analog_sel[4];
+  assign \mprj_pads.analog_sel[3]  = mprj_io_analog_sel[3];
+  assign \mprj_pads.analog_sel[2]  = mprj_io_analog_sel[2];
+  assign \mprj_pads.analog_sel[1]  = mprj_io_analog_sel[1];
+  assign \mprj_pads.analog_sel[0]  = mprj_io_analog_sel[0];
+  assign \mprj_pads.analog_io[28]  = mprj_analog_io[28];
+  assign \mprj_pads.analog_io[27]  = mprj_analog_io[27];
+  assign \mprj_pads.analog_io[26]  = mprj_analog_io[26];
+  assign \mprj_pads.analog_io[25]  = mprj_analog_io[25];
+  assign \mprj_pads.analog_io[24]  = mprj_analog_io[24];
+  assign \mprj_pads.analog_io[23]  = mprj_analog_io[23];
+  assign \mprj_pads.analog_io[22]  = mprj_analog_io[22];
+  assign \mprj_pads.analog_io[21]  = mprj_analog_io[21];
+  assign \mprj_pads.analog_io[20]  = mprj_analog_io[20];
+  assign \mprj_pads.analog_io[19]  = mprj_analog_io[19];
+  assign \mprj_pads.analog_io[18]  = mprj_analog_io[18];
+  assign \mprj_pads.analog_io[17]  = mprj_analog_io[17];
+  assign \mprj_pads.analog_io[16]  = mprj_analog_io[16];
+  assign \mprj_pads.analog_io[15]  = mprj_analog_io[15];
+  assign \mprj_pads.analog_io[14]  = mprj_analog_io[14];
+  assign \mprj_pads.analog_io[13]  = mprj_analog_io[13];
+  assign \mprj_pads.analog_io[12]  = mprj_analog_io[12];
+  assign \mprj_pads.analog_io[11]  = mprj_analog_io[11];
+  assign \mprj_pads.analog_io[10]  = mprj_analog_io[10];
+  assign \mprj_pads.analog_io[9]  = mprj_analog_io[9];
+  assign \mprj_pads.analog_io[8]  = mprj_analog_io[8];
+  assign \mprj_pads.analog_io[7]  = mprj_analog_io[7];
+  assign \mprj_pads.analog_io[6]  = mprj_analog_io[6];
+  assign \mprj_pads.analog_io[5]  = mprj_analog_io[5];
+  assign \mprj_pads.analog_io[4]  = mprj_analog_io[4];
+  assign \mprj_pads.analog_io[3]  = mprj_analog_io[3];
+  assign \mprj_pads.analog_io[2]  = mprj_analog_io[2];
+  assign \mprj_pads.analog_io[1]  = mprj_analog_io[1];
+  assign \mprj_pads.analog_io[0]  = mprj_analog_io[0];
+  assign \mprj_pads.enh[37]  = mprj_io_enh[37];
+  assign \mprj_pads.enh[36]  = mprj_io_enh[36];
+  assign \mprj_pads.enh[35]  = mprj_io_enh[35];
+  assign \mprj_pads.enh[34]  = mprj_io_enh[34];
+  assign \mprj_pads.enh[33]  = mprj_io_enh[33];
+  assign \mprj_pads.enh[32]  = mprj_io_enh[32];
+  assign \mprj_pads.enh[31]  = mprj_io_enh[31];
+  assign \mprj_pads.enh[30]  = mprj_io_enh[30];
+  assign \mprj_pads.enh[29]  = mprj_io_enh[29];
+  assign \mprj_pads.enh[28]  = mprj_io_enh[28];
+  assign \mprj_pads.enh[27]  = mprj_io_enh[27];
+  assign \mprj_pads.enh[26]  = mprj_io_enh[26];
+  assign \mprj_pads.enh[25]  = mprj_io_enh[25];
+  assign \mprj_pads.enh[24]  = mprj_io_enh[24];
+  assign \mprj_pads.enh[23]  = mprj_io_enh[23];
+  assign \mprj_pads.enh[22]  = mprj_io_enh[22];
+  assign \mprj_pads.enh[21]  = mprj_io_enh[21];
+  assign \mprj_pads.enh[20]  = mprj_io_enh[20];
+  assign \mprj_pads.enh[19]  = mprj_io_enh[19];
+  assign \mprj_pads.enh[18]  = mprj_io_enh[18];
+  assign \mprj_pads.enh[17]  = mprj_io_enh[17];
+  assign \mprj_pads.enh[16]  = mprj_io_enh[16];
+  assign \mprj_pads.enh[15]  = mprj_io_enh[15];
+  assign \mprj_pads.enh[14]  = mprj_io_enh[14];
+  assign \mprj_pads.enh[13]  = mprj_io_enh[13];
+  assign \mprj_pads.enh[12]  = mprj_io_enh[12];
+  assign \mprj_pads.enh[11]  = mprj_io_enh[11];
+  assign \mprj_pads.enh[10]  = mprj_io_enh[10];
+  assign \mprj_pads.enh[9]  = mprj_io_enh[9];
+  assign \mprj_pads.enh[8]  = mprj_io_enh[8];
+  assign \mprj_pads.enh[7]  = mprj_io_enh[7];
+  assign \mprj_pads.enh[6]  = mprj_io_enh[6];
+  assign \mprj_pads.enh[5]  = mprj_io_enh[5];
+  assign \mprj_pads.enh[4]  = mprj_io_enh[4];
+  assign \mprj_pads.enh[3]  = mprj_io_enh[3];
+  assign \mprj_pads.enh[2]  = mprj_io_enh[2];
+  assign \mprj_pads.enh[1]  = mprj_io_enh[1];
+  assign \mprj_pads.enh[0]  = mprj_io_enh[0];
+  assign \mprj_pads.io_out[37]  = mprj_io_out[37];
+  assign \mprj_pads.io_out[36]  = mprj_io_out[36];
+  assign \mprj_pads.io_out[35]  = mprj_io_out[35];
+  assign \mprj_pads.io_out[34]  = mprj_io_out[34];
+  assign \mprj_pads.io_out[33]  = mprj_io_out[33];
+  assign \mprj_pads.io_out[32]  = mprj_io_out[32];
+  assign \mprj_pads.io_out[31]  = mprj_io_out[31];
+  assign \mprj_pads.io_out[30]  = mprj_io_out[30];
+  assign \mprj_pads.io_out[29]  = mprj_io_out[29];
+  assign \mprj_pads.io_out[28]  = mprj_io_out[28];
+  assign \mprj_pads.io_out[27]  = mprj_io_out[27];
+  assign \mprj_pads.io_out[26]  = mprj_io_out[26];
+  assign \mprj_pads.io_out[25]  = mprj_io_out[25];
+  assign \mprj_pads.io_out[24]  = mprj_io_out[24];
+  assign \mprj_pads.io_out[23]  = mprj_io_out[23];
+  assign \mprj_pads.io_out[22]  = mprj_io_out[22];
+  assign \mprj_pads.io_out[21]  = mprj_io_out[21];
+  assign \mprj_pads.io_out[20]  = mprj_io_out[20];
+  assign \mprj_pads.io_out[19]  = mprj_io_out[19];
+  assign \mprj_pads.io_out[18]  = mprj_io_out[18];
+  assign \mprj_pads.io_out[17]  = mprj_io_out[17];
+  assign \mprj_pads.io_out[16]  = mprj_io_out[16];
+  assign \mprj_pads.io_out[15]  = mprj_io_out[15];
+  assign \mprj_pads.io_out[14]  = mprj_io_out[14];
+  assign \mprj_pads.io_out[13]  = mprj_io_out[13];
+  assign \mprj_pads.io_out[12]  = mprj_io_out[12];
+  assign \mprj_pads.io_out[11]  = mprj_io_out[11];
+  assign \mprj_pads.io_out[10]  = mprj_io_out[10];
+  assign \mprj_pads.io_out[9]  = mprj_io_out[9];
+  assign \mprj_pads.io_out[8]  = mprj_io_out[8];
+  assign \mprj_pads.io_out[7]  = mprj_io_out[7];
+  assign \mprj_pads.io_out[6]  = mprj_io_out[6];
+  assign \mprj_pads.io_out[5]  = mprj_io_out[5];
+  assign \mprj_pads.io_out[4]  = mprj_io_out[4];
+  assign \mprj_pads.io_out[3]  = mprj_io_out[3];
+  assign \mprj_pads.io_out[2]  = mprj_io_out[2];
+  assign \mprj_pads.io_out[1]  = mprj_io_out[1];
+  assign \mprj_pads.io_out[0]  = mprj_io_out[0];
+  assign \mprj_pads.analog_pol[37]  = mprj_io_analog_pol[37];
+  assign \mprj_pads.analog_pol[36]  = mprj_io_analog_pol[36];
+  assign \mprj_pads.analog_pol[35]  = mprj_io_analog_pol[35];
+  assign \mprj_pads.analog_pol[34]  = mprj_io_analog_pol[34];
+  assign \mprj_pads.analog_pol[33]  = mprj_io_analog_pol[33];
+  assign \mprj_pads.analog_pol[32]  = mprj_io_analog_pol[32];
+  assign \mprj_pads.analog_pol[31]  = mprj_io_analog_pol[31];
+  assign \mprj_pads.analog_pol[30]  = mprj_io_analog_pol[30];
+  assign \mprj_pads.analog_pol[29]  = mprj_io_analog_pol[29];
+  assign \mprj_pads.analog_pol[28]  = mprj_io_analog_pol[28];
+  assign \mprj_pads.analog_pol[27]  = mprj_io_analog_pol[27];
+  assign \mprj_pads.analog_pol[26]  = mprj_io_analog_pol[26];
+  assign \mprj_pads.analog_pol[25]  = mprj_io_analog_pol[25];
+  assign \mprj_pads.analog_pol[24]  = mprj_io_analog_pol[24];
+  assign \mprj_pads.analog_pol[23]  = mprj_io_analog_pol[23];
+  assign \mprj_pads.analog_pol[22]  = mprj_io_analog_pol[22];
+  assign \mprj_pads.analog_pol[21]  = mprj_io_analog_pol[21];
+  assign \mprj_pads.analog_pol[20]  = mprj_io_analog_pol[20];
+  assign \mprj_pads.analog_pol[19]  = mprj_io_analog_pol[19];
+  assign \mprj_pads.analog_pol[18]  = mprj_io_analog_pol[18];
+  assign \mprj_pads.analog_pol[17]  = mprj_io_analog_pol[17];
+  assign \mprj_pads.analog_pol[16]  = mprj_io_analog_pol[16];
+  assign \mprj_pads.analog_pol[15]  = mprj_io_analog_pol[15];
+  assign \mprj_pads.analog_pol[14]  = mprj_io_analog_pol[14];
+  assign \mprj_pads.analog_pol[13]  = mprj_io_analog_pol[13];
+  assign \mprj_pads.analog_pol[12]  = mprj_io_analog_pol[12];
+  assign \mprj_pads.analog_pol[11]  = mprj_io_analog_pol[11];
+  assign \mprj_pads.analog_pol[10]  = mprj_io_analog_pol[10];
+  assign \mprj_pads.analog_pol[9]  = mprj_io_analog_pol[9];
+  assign \mprj_pads.analog_pol[8]  = mprj_io_analog_pol[8];
+  assign \mprj_pads.analog_pol[7]  = mprj_io_analog_pol[7];
+  assign \mprj_pads.analog_pol[6]  = mprj_io_analog_pol[6];
+  assign \mprj_pads.analog_pol[5]  = mprj_io_analog_pol[5];
+  assign \mprj_pads.analog_pol[4]  = mprj_io_analog_pol[4];
+  assign \mprj_pads.analog_pol[3]  = mprj_io_analog_pol[3];
+  assign \mprj_pads.analog_pol[2]  = mprj_io_analog_pol[2];
+  assign \mprj_pads.analog_pol[1]  = mprj_io_analog_pol[1];
+  assign \mprj_pads.analog_pol[0]  = mprj_io_analog_pol[0];
+  assign \mprj_pads.io[37]  = mprj_io[37];
+  assign \mprj_pads.io[36]  = mprj_io[36];
+  assign \mprj_pads.io[35]  = mprj_io[35];
+  assign \mprj_pads.io[34]  = mprj_io[34];
+  assign \mprj_pads.io[33]  = mprj_io[33];
+  assign \mprj_pads.io[32]  = mprj_io[32];
+  assign \mprj_pads.io[31]  = mprj_io[31];
+  assign \mprj_pads.io[30]  = mprj_io[30];
+  assign \mprj_pads.io[29]  = mprj_io[29];
+  assign \mprj_pads.io[28]  = mprj_io[28];
+  assign \mprj_pads.io[27]  = mprj_io[27];
+  assign \mprj_pads.io[26]  = mprj_io[26];
+  assign \mprj_pads.io[25]  = mprj_io[25];
+  assign \mprj_pads.io[24]  = mprj_io[24];
+  assign \mprj_pads.io[23]  = mprj_io[23];
+  assign \mprj_pads.io[22]  = mprj_io[22];
+  assign \mprj_pads.io[21]  = mprj_io[21];
+  assign \mprj_pads.io[20]  = mprj_io[20];
+  assign \mprj_pads.io[19]  = mprj_io[19];
+  assign \mprj_pads.io[18]  = mprj_io[18];
+  assign \mprj_pads.io[17]  = mprj_io[17];
+  assign \mprj_pads.io[16]  = mprj_io[16];
+  assign \mprj_pads.io[15]  = mprj_io[15];
+  assign \mprj_pads.io[14]  = mprj_io[14];
+  assign \mprj_pads.io[13]  = mprj_io[13];
+  assign \mprj_pads.io[12]  = mprj_io[12];
+  assign \mprj_pads.io[11]  = mprj_io[11];
+  assign \mprj_pads.io[10]  = mprj_io[10];
+  assign \mprj_pads.io[9]  = mprj_io[9];
+  assign \mprj_pads.io[8]  = mprj_io[8];
+  assign \mprj_pads.io[7]  = mprj_io[7];
+  assign \mprj_pads.io[6]  = mprj_io[6];
+  assign \mprj_pads.io[5]  = mprj_io[5];
+  assign \mprj_pads.io[4]  = mprj_io[4];
+  assign \mprj_pads.io[3]  = mprj_io[3];
+  assign \mprj_pads.io[2]  = mprj_io[2];
+  assign \mprj_pads.io[1]  = mprj_io[1];
+  assign \mprj_pads.io[0]  = mprj_io[0];
   assign \mprj_pads.dm[113]  = mprj_io_dm[113];
   assign \mprj_pads.dm[112]  = mprj_io_dm[112];
   assign \mprj_pads.dm[111]  = mprj_io_dm[111];
@@ -3349,158 +3549,44 @@ module chip_io(vddio, vssio, vccd, vssd, vdda, vssa, vdda1, vdda2, vssa1, vssa2,
   assign \mprj_pads.dm[2]  = mprj_io_dm[2];
   assign \mprj_pads.dm[1]  = mprj_io_dm[1];
   assign \mprj_pads.dm[0]  = mprj_io_dm[0];
-  assign \mprj_pads.inp_dis[37]  = mprj_io_inp_dis[37];
-  assign \mprj_pads.inp_dis[36]  = mprj_io_inp_dis[36];
-  assign \mprj_pads.inp_dis[35]  = mprj_io_inp_dis[35];
-  assign \mprj_pads.inp_dis[34]  = mprj_io_inp_dis[34];
-  assign \mprj_pads.inp_dis[33]  = mprj_io_inp_dis[33];
-  assign \mprj_pads.inp_dis[32]  = mprj_io_inp_dis[32];
-  assign \mprj_pads.inp_dis[31]  = mprj_io_inp_dis[31];
-  assign \mprj_pads.inp_dis[30]  = mprj_io_inp_dis[30];
-  assign \mprj_pads.inp_dis[29]  = mprj_io_inp_dis[29];
-  assign \mprj_pads.inp_dis[28]  = mprj_io_inp_dis[28];
-  assign \mprj_pads.inp_dis[27]  = mprj_io_inp_dis[27];
-  assign \mprj_pads.inp_dis[26]  = mprj_io_inp_dis[26];
-  assign \mprj_pads.inp_dis[25]  = mprj_io_inp_dis[25];
-  assign \mprj_pads.inp_dis[24]  = mprj_io_inp_dis[24];
-  assign \mprj_pads.inp_dis[23]  = mprj_io_inp_dis[23];
-  assign \mprj_pads.inp_dis[22]  = mprj_io_inp_dis[22];
-  assign \mprj_pads.inp_dis[21]  = mprj_io_inp_dis[21];
-  assign \mprj_pads.inp_dis[20]  = mprj_io_inp_dis[20];
-  assign \mprj_pads.inp_dis[19]  = mprj_io_inp_dis[19];
-  assign \mprj_pads.inp_dis[18]  = mprj_io_inp_dis[18];
-  assign \mprj_pads.inp_dis[17]  = mprj_io_inp_dis[17];
-  assign \mprj_pads.inp_dis[16]  = mprj_io_inp_dis[16];
-  assign \mprj_pads.inp_dis[15]  = mprj_io_inp_dis[15];
-  assign \mprj_pads.inp_dis[14]  = mprj_io_inp_dis[14];
-  assign \mprj_pads.inp_dis[13]  = mprj_io_inp_dis[13];
-  assign \mprj_pads.inp_dis[12]  = mprj_io_inp_dis[12];
-  assign \mprj_pads.inp_dis[11]  = mprj_io_inp_dis[11];
-  assign \mprj_pads.inp_dis[10]  = mprj_io_inp_dis[10];
-  assign \mprj_pads.inp_dis[9]  = mprj_io_inp_dis[9];
-  assign \mprj_pads.inp_dis[8]  = mprj_io_inp_dis[8];
-  assign \mprj_pads.inp_dis[7]  = mprj_io_inp_dis[7];
-  assign \mprj_pads.inp_dis[6]  = mprj_io_inp_dis[6];
-  assign \mprj_pads.inp_dis[5]  = mprj_io_inp_dis[5];
-  assign \mprj_pads.inp_dis[4]  = mprj_io_inp_dis[4];
-  assign \mprj_pads.inp_dis[3]  = mprj_io_inp_dis[3];
-  assign \mprj_pads.inp_dis[2]  = mprj_io_inp_dis[2];
-  assign \mprj_pads.inp_dis[1]  = mprj_io_inp_dis[1];
-  assign \mprj_pads.inp_dis[0]  = mprj_io_inp_dis[0];
-  assign \mprj_pads.io_out[37]  = mprj_io_out[37];
-  assign \mprj_pads.io_out[36]  = mprj_io_out[36];
-  assign \mprj_pads.io_out[35]  = mprj_io_out[35];
-  assign \mprj_pads.io_out[34]  = mprj_io_out[34];
-  assign \mprj_pads.io_out[33]  = mprj_io_out[33];
-  assign \mprj_pads.io_out[32]  = mprj_io_out[32];
-  assign \mprj_pads.io_out[31]  = mprj_io_out[31];
-  assign \mprj_pads.io_out[30]  = mprj_io_out[30];
-  assign \mprj_pads.io_out[29]  = mprj_io_out[29];
-  assign \mprj_pads.io_out[28]  = mprj_io_out[28];
-  assign \mprj_pads.io_out[27]  = mprj_io_out[27];
-  assign \mprj_pads.io_out[26]  = mprj_io_out[26];
-  assign \mprj_pads.io_out[25]  = mprj_io_out[25];
-  assign \mprj_pads.io_out[24]  = mprj_io_out[24];
-  assign \mprj_pads.io_out[23]  = mprj_io_out[23];
-  assign \mprj_pads.io_out[22]  = mprj_io_out[22];
-  assign \mprj_pads.io_out[21]  = mprj_io_out[21];
-  assign \mprj_pads.io_out[20]  = mprj_io_out[20];
-  assign \mprj_pads.io_out[19]  = mprj_io_out[19];
-  assign \mprj_pads.io_out[18]  = mprj_io_out[18];
-  assign \mprj_pads.io_out[17]  = mprj_io_out[17];
-  assign \mprj_pads.io_out[16]  = mprj_io_out[16];
-  assign \mprj_pads.io_out[15]  = mprj_io_out[15];
-  assign \mprj_pads.io_out[14]  = mprj_io_out[14];
-  assign \mprj_pads.io_out[13]  = mprj_io_out[13];
-  assign \mprj_pads.io_out[12]  = mprj_io_out[12];
-  assign \mprj_pads.io_out[11]  = mprj_io_out[11];
-  assign \mprj_pads.io_out[10]  = mprj_io_out[10];
-  assign \mprj_pads.io_out[9]  = mprj_io_out[9];
-  assign \mprj_pads.io_out[8]  = mprj_io_out[8];
-  assign \mprj_pads.io_out[7]  = mprj_io_out[7];
-  assign \mprj_pads.io_out[6]  = mprj_io_out[6];
-  assign \mprj_pads.io_out[5]  = mprj_io_out[5];
-  assign \mprj_pads.io_out[4]  = mprj_io_out[4];
-  assign \mprj_pads.io_out[3]  = mprj_io_out[3];
-  assign \mprj_pads.io_out[2]  = mprj_io_out[2];
-  assign \mprj_pads.io_out[1]  = mprj_io_out[1];
-  assign \mprj_pads.io_out[0]  = mprj_io_out[0];
-  assign \mprj_pads.holdover[37]  = mprj_io_holdover[37];
-  assign \mprj_pads.holdover[36]  = mprj_io_holdover[36];
-  assign \mprj_pads.holdover[35]  = mprj_io_holdover[35];
-  assign \mprj_pads.holdover[34]  = mprj_io_holdover[34];
-  assign \mprj_pads.holdover[33]  = mprj_io_holdover[33];
-  assign \mprj_pads.holdover[32]  = mprj_io_holdover[32];
-  assign \mprj_pads.holdover[31]  = mprj_io_holdover[31];
-  assign \mprj_pads.holdover[30]  = mprj_io_holdover[30];
-  assign \mprj_pads.holdover[29]  = mprj_io_holdover[29];
-  assign \mprj_pads.holdover[28]  = mprj_io_holdover[28];
-  assign \mprj_pads.holdover[27]  = mprj_io_holdover[27];
-  assign \mprj_pads.holdover[26]  = mprj_io_holdover[26];
-  assign \mprj_pads.holdover[25]  = mprj_io_holdover[25];
-  assign \mprj_pads.holdover[24]  = mprj_io_holdover[24];
-  assign \mprj_pads.holdover[23]  = mprj_io_holdover[23];
-  assign \mprj_pads.holdover[22]  = mprj_io_holdover[22];
-  assign \mprj_pads.holdover[21]  = mprj_io_holdover[21];
-  assign \mprj_pads.holdover[20]  = mprj_io_holdover[20];
-  assign \mprj_pads.holdover[19]  = mprj_io_holdover[19];
-  assign \mprj_pads.holdover[18]  = mprj_io_holdover[18];
-  assign \mprj_pads.holdover[17]  = mprj_io_holdover[17];
-  assign \mprj_pads.holdover[16]  = mprj_io_holdover[16];
-  assign \mprj_pads.holdover[15]  = mprj_io_holdover[15];
-  assign \mprj_pads.holdover[14]  = mprj_io_holdover[14];
-  assign \mprj_pads.holdover[13]  = mprj_io_holdover[13];
-  assign \mprj_pads.holdover[12]  = mprj_io_holdover[12];
-  assign \mprj_pads.holdover[11]  = mprj_io_holdover[11];
-  assign \mprj_pads.holdover[10]  = mprj_io_holdover[10];
-  assign \mprj_pads.holdover[9]  = mprj_io_holdover[9];
-  assign \mprj_pads.holdover[8]  = mprj_io_holdover[8];
-  assign \mprj_pads.holdover[7]  = mprj_io_holdover[7];
-  assign \mprj_pads.holdover[6]  = mprj_io_holdover[6];
-  assign \mprj_pads.holdover[5]  = mprj_io_holdover[5];
-  assign \mprj_pads.holdover[4]  = mprj_io_holdover[4];
-  assign \mprj_pads.holdover[3]  = mprj_io_holdover[3];
-  assign \mprj_pads.holdover[2]  = mprj_io_holdover[2];
-  assign \mprj_pads.holdover[1]  = mprj_io_holdover[1];
-  assign \mprj_pads.holdover[0]  = mprj_io_holdover[0];
-  assign \mprj_pads.ib_mode_sel[37]  = mprj_io_ib_mode_sel[37];
-  assign \mprj_pads.ib_mode_sel[36]  = mprj_io_ib_mode_sel[36];
-  assign \mprj_pads.ib_mode_sel[35]  = mprj_io_ib_mode_sel[35];
-  assign \mprj_pads.ib_mode_sel[34]  = mprj_io_ib_mode_sel[34];
-  assign \mprj_pads.ib_mode_sel[33]  = mprj_io_ib_mode_sel[33];
-  assign \mprj_pads.ib_mode_sel[32]  = mprj_io_ib_mode_sel[32];
-  assign \mprj_pads.ib_mode_sel[31]  = mprj_io_ib_mode_sel[31];
-  assign \mprj_pads.ib_mode_sel[30]  = mprj_io_ib_mode_sel[30];
-  assign \mprj_pads.ib_mode_sel[29]  = mprj_io_ib_mode_sel[29];
-  assign \mprj_pads.ib_mode_sel[28]  = mprj_io_ib_mode_sel[28];
-  assign \mprj_pads.ib_mode_sel[27]  = mprj_io_ib_mode_sel[27];
-  assign \mprj_pads.ib_mode_sel[26]  = mprj_io_ib_mode_sel[26];
-  assign \mprj_pads.ib_mode_sel[25]  = mprj_io_ib_mode_sel[25];
-  assign \mprj_pads.ib_mode_sel[24]  = mprj_io_ib_mode_sel[24];
-  assign \mprj_pads.ib_mode_sel[23]  = mprj_io_ib_mode_sel[23];
-  assign \mprj_pads.ib_mode_sel[22]  = mprj_io_ib_mode_sel[22];
-  assign \mprj_pads.ib_mode_sel[21]  = mprj_io_ib_mode_sel[21];
-  assign \mprj_pads.ib_mode_sel[20]  = mprj_io_ib_mode_sel[20];
-  assign \mprj_pads.ib_mode_sel[19]  = mprj_io_ib_mode_sel[19];
-  assign \mprj_pads.ib_mode_sel[18]  = mprj_io_ib_mode_sel[18];
-  assign \mprj_pads.ib_mode_sel[17]  = mprj_io_ib_mode_sel[17];
-  assign \mprj_pads.ib_mode_sel[16]  = mprj_io_ib_mode_sel[16];
-  assign \mprj_pads.ib_mode_sel[15]  = mprj_io_ib_mode_sel[15];
-  assign \mprj_pads.ib_mode_sel[14]  = mprj_io_ib_mode_sel[14];
-  assign \mprj_pads.ib_mode_sel[13]  = mprj_io_ib_mode_sel[13];
-  assign \mprj_pads.ib_mode_sel[12]  = mprj_io_ib_mode_sel[12];
-  assign \mprj_pads.ib_mode_sel[11]  = mprj_io_ib_mode_sel[11];
-  assign \mprj_pads.ib_mode_sel[10]  = mprj_io_ib_mode_sel[10];
-  assign \mprj_pads.ib_mode_sel[9]  = mprj_io_ib_mode_sel[9];
-  assign \mprj_pads.ib_mode_sel[8]  = mprj_io_ib_mode_sel[8];
-  assign \mprj_pads.ib_mode_sel[7]  = mprj_io_ib_mode_sel[7];
-  assign \mprj_pads.ib_mode_sel[6]  = mprj_io_ib_mode_sel[6];
-  assign \mprj_pads.ib_mode_sel[5]  = mprj_io_ib_mode_sel[5];
-  assign \mprj_pads.ib_mode_sel[4]  = mprj_io_ib_mode_sel[4];
-  assign \mprj_pads.ib_mode_sel[3]  = mprj_io_ib_mode_sel[3];
-  assign \mprj_pads.ib_mode_sel[2]  = mprj_io_ib_mode_sel[2];
-  assign \mprj_pads.ib_mode_sel[1]  = mprj_io_ib_mode_sel[1];
-  assign \mprj_pads.ib_mode_sel[0]  = mprj_io_ib_mode_sel[0];
+  assign \mprj_pads.oeb[37]  = mprj_io_oeb[37];
+  assign \mprj_pads.oeb[36]  = mprj_io_oeb[36];
+  assign \mprj_pads.oeb[35]  = mprj_io_oeb[35];
+  assign \mprj_pads.oeb[34]  = mprj_io_oeb[34];
+  assign \mprj_pads.oeb[33]  = mprj_io_oeb[33];
+  assign \mprj_pads.oeb[32]  = mprj_io_oeb[32];
+  assign \mprj_pads.oeb[31]  = mprj_io_oeb[31];
+  assign \mprj_pads.oeb[30]  = mprj_io_oeb[30];
+  assign \mprj_pads.oeb[29]  = mprj_io_oeb[29];
+  assign \mprj_pads.oeb[28]  = mprj_io_oeb[28];
+  assign \mprj_pads.oeb[27]  = mprj_io_oeb[27];
+  assign \mprj_pads.oeb[26]  = mprj_io_oeb[26];
+  assign \mprj_pads.oeb[25]  = mprj_io_oeb[25];
+  assign \mprj_pads.oeb[24]  = mprj_io_oeb[24];
+  assign \mprj_pads.oeb[23]  = mprj_io_oeb[23];
+  assign \mprj_pads.oeb[22]  = mprj_io_oeb[22];
+  assign \mprj_pads.oeb[21]  = mprj_io_oeb[21];
+  assign \mprj_pads.oeb[20]  = mprj_io_oeb[20];
+  assign \mprj_pads.oeb[19]  = mprj_io_oeb[19];
+  assign \mprj_pads.oeb[18]  = mprj_io_oeb[18];
+  assign \mprj_pads.oeb[17]  = mprj_io_oeb[17];
+  assign \mprj_pads.oeb[16]  = mprj_io_oeb[16];
+  assign \mprj_pads.oeb[15]  = mprj_io_oeb[15];
+  assign \mprj_pads.oeb[14]  = mprj_io_oeb[14];
+  assign \mprj_pads.oeb[13]  = mprj_io_oeb[13];
+  assign \mprj_pads.oeb[12]  = mprj_io_oeb[12];
+  assign \mprj_pads.oeb[11]  = mprj_io_oeb[11];
+  assign \mprj_pads.oeb[10]  = mprj_io_oeb[10];
+  assign \mprj_pads.oeb[9]  = mprj_io_oeb[9];
+  assign \mprj_pads.oeb[8]  = mprj_io_oeb[8];
+  assign \mprj_pads.oeb[7]  = mprj_io_oeb[7];
+  assign \mprj_pads.oeb[6]  = mprj_io_oeb[6];
+  assign \mprj_pads.oeb[5]  = mprj_io_oeb[5];
+  assign \mprj_pads.oeb[4]  = mprj_io_oeb[4];
+  assign \mprj_pads.oeb[3]  = mprj_io_oeb[3];
+  assign \mprj_pads.oeb[2]  = mprj_io_oeb[2];
+  assign \mprj_pads.oeb[1]  = mprj_io_oeb[1];
+  assign \mprj_pads.oeb[0]  = mprj_io_oeb[0];
   assign \mprj_pads.vddio  = vddio;
   assign \mprj_pads.vssio  = vssio;
   assign \mprj_pads.vccd  = vccd;
@@ -3514,27 +3600,15 @@ module chip_io(vddio, vssio, vccd, vssd, vdda, vssa, vdda1, vdda2, vssa1, vssa2,
   assign \mprj_pads.vssd1  = vssd1;
   assign \mprj_pads.vssd2  = vssd2;
   assign \mprj_pads.porb_h  = porb_h;
-  assign \mprj_pads.slow_sel[36]  = mprj_io_slow_sel[36];
-  assign \mprj_pads.slow_sel[23]  = mprj_io_slow_sel[23];
-  assign \mprj_pads.slow_sel[28]  = mprj_io_slow_sel[28];
-  assign \mprj_pads.slow_sel[37]  = mprj_io_slow_sel[37];
   assign \flash_io0_mode[0]  = flash_io0_oeb_core;
-  assign \mprj_pads.slow_sel[24]  = mprj_io_slow_sel[24];
-  assign \mprj_pads.slow_sel[21]  = mprj_io_slow_sel[21];
-  assign \mprj_pads.slow_sel[31]  = mprj_io_slow_sel[31];
-  assign \flash_io0_mode[1]  = flash_io0_ieb_core;
-  assign \mprj_pads.slow_sel[22]  = mprj_io_slow_sel[22];
-  assign \mprj_pads.slow_sel[27]  = mprj_io_slow_sel[27];
-  assign \mprj_pads.slow_sel[32]  = mprj_io_slow_sel[32];
-  assign \mprj_pads.slow_sel[30]  = mprj_io_slow_sel[30];
-  assign \mprj_pads.slow_sel[26]  = mprj_io_slow_sel[26];
-  assign \mprj_pads.slow_sel[29]  = mprj_io_slow_sel[29];
-  assign \mprj_pads.slow_sel[35]  = mprj_io_slow_sel[35];
-  assign \mprj_pads.slow_sel[25]  = mprj_io_slow_sel[25];
-  assign \mprj_pads.slow_sel[20]  = mprj_io_slow_sel[20];
-  assign \mprj_pads.slow_sel[34]  = mprj_io_slow_sel[34];
   assign \flash_io0_mode[2]  = flash_io0_ieb_core;
-  assign \mprj_pads.slow_sel[33]  = mprj_io_slow_sel[33];
+  assign \flash_io1_mode[1]  = flash_io1_ieb_core;
+  assign \flash_io1_mode[0]  = flash_io1_oeb_core;
+  assign \flash_io0_mode[1]  = flash_io0_ieb_core;
+  assign \flash_io1_mode[2]  = flash_io1_ieb_core;
+  assign \dm_all[1]  = gpio_mode1_core;
+  assign \dm_all[0]  = gpio_mode0_core;
+  assign \dm_all[2]  = gpio_mode1_core;
   assign vssio_q = \mprj_pads.vssio_q ;
   assign vddio_q = \mprj_pads.vddio_q ;
   assign analog_b = \mprj_pads.analog_b ;
