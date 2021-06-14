@@ -293,7 +293,6 @@ module caravel (
 
 	wire 	    mprj_clock;
 	wire 	    mprj_clock2;
-	wire 	    mprj_resetn;
 	wire 	    mprj_reset;
 	wire 	    mprj_cyc_o_user;
 	wire 	    mprj_stb_o_user;
@@ -447,7 +446,6 @@ module caravel (
 
 		.user_clock(mprj_clock),
 		.user_clock2(mprj_clock2),
-		.user_resetn(mprj_resetn),
 		.user_reset(mprj_reset),
 		.mprj_cyc_o_user(mprj_cyc_o_user),
 		.mprj_stb_o_user(mprj_stb_o_user),
