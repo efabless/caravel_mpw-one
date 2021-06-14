@@ -26,21 +26,21 @@
 /*--------------------------------------------------------------*/
 
 module caravel (
-    inout vddio,	// Common 3.3V padframe/ESD power
-    inout vssio,	// Common padframe/ESD ground
-    inout vdda,		// Management 3.3V power
-    inout vssa,		// Common analog ground
-    inout vccd,		// Management/Common 1.8V power
-    inout vssd,		// Common digital ground
-    inout vdda1,	// User area 1 3.3V power
-    inout vdda2,	// User area 2 3.3V power
-    inout vssa1,	// User area 1 analog ground
-    inout vssa2,	// User area 2 analog ground
-    inout vccd1,	// User area 1 1.8V power
-    inout vccd2,	// User area 2 1.8V power
-    inout vssd1,	// User area 1 digital ground
-    inout vssd2,	// User area 2 digital ground
-
+ 
+	inout  vddio_pad,	// Common padframe/ESD supply
+	inout  vssio_pad,	// Common padframe/ESD ground
+	inout  vccd_pad,	// Common 1.8V supply
+	inout  vssd_pad,	// Common digital ground
+	inout  vdda_pad,	// Management analog 3.3V supply
+	inout  vssa_pad,	// Management analog ground
+	inout  vdda1_pad,	// User area 1 3.3V supply
+	inout  vdda2_pad,	// User area 2 3.3V supply
+	inout  vssa1_pad,	// User area 1 analog ground
+	inout  vssa2_pad,	// User area 2 analog ground
+	inout  vccd1_pad,	// User area 1 1.8V supply
+	inout  vccd2_pad,	// User area 2 1.8V supply
+	inout  vssd1_pad,	// User area 1 digital ground
+	inout  vssd2_pad,	// User area 2 digital ground
     inout gpio,			// Used for external LDO control
     inout [`MPRJ_IO_PADS-1:0] mprj_io,
     output [`MPRJ_PWR_PADS-1:0] pwr_ctrl_out,
@@ -188,6 +188,23 @@ module caravel (
 
     chip_io padframe(
 	// Package Pins
+
+	.vddio_pad(vddio_pad),
+	.vssio_pad(vssio_pad),
+	.vdda_pad(vdda_pad),
+	.vssa_pad(vssa_pad),
+	.vccd_pad(vccd_pad),
+	.vssd_pad(vssd_pad),
+	.vdda1_pad(vdda1_pad),
+	.vdda2_pad(vdda2_pad),
+	.vssa1_pad(vssa1_pad),
+	.vssa2_pad(vssa2_pad),
+	.vccd1_pad(vccd1_pad),
+	.vccd2_pad(vccd2_pad),
+	.vssd1_pad(vssd1_pad),
+	.vssd2_pad(vssd2_pad),
+
+	// Core Pins
 	.vddio(vddio),
 	.vssio(vssio),
 	.vdda(vdda),

@@ -135,13 +135,13 @@ module gpio_tb;
 				checkbits_hi, checkbits_lo);
 	end
 
-	wire VDD3V3;
-	wire VDD1V8;
-	wire VSS;
+	wire VDD3V3_PKG;
+	wire VDD1V8_PKG;
+	wire VSS_PKG;
 
-	assign VDD3V3 = power1;
-	assign VDD1V8 = power2;
-	assign VSS = 1'b0;
+	assign VDD3V3_PKG = power1;
+	assign VDD1V8_PKG = power2;
+	assign VSS_PKG    = 1'b0;
 
 	// These are the mappings of mprj_io GPIO pads that are set to
 	// specific functions on startup:
@@ -156,20 +156,20 @@ module gpio_tb;
 	// irq       = mgmt_gpio_io[7]              (input)
 
 	caravel uut (
-		.vddio	  (VDD3V3),
-		.vssio	  (VSS),
-		.vdda	  (VDD3V3),
-		.vssa	  (VSS),
-		.vccd	  (VDD1V8),
-		.vssd	  (VSS),
-		.vdda1    (VDD3V3),
-		.vdda2    (VDD3V3),
-		.vssa1	  (VSS),
-		.vssa2	  (VSS),
-		.vccd1	  (VDD1V8),
-		.vccd2	  (VDD1V8),
-		.vssd1	  (VSS),
-		.vssd2	  (VSS),
+	       	.vddio_pad  	(VDD3V3_PKG),
+		.vssio_pad	(VSS_PKG),
+		.vdda_pad	(VDD3V3_PKG),
+		.vssa_pad	(VSS_PKG),
+		.vccd_pad	(VDD1V8_PKG),
+		.vssd_pad	(VSS_PKG),
+		.vdda1_pad  	(VDD3V3_PKG),
+		.vdda2_pad    	(VDD3V3_PKG),
+		.vssa1_pad	(VSS_PKG),
+		.vssa2_pad	(VSS_PKG),
+		.vccd1_pad	(VDD1V8_PKG),
+		.vccd2_pad	(VDD1V8_PKG),
+		.vssd1_pad	(VSS_PKG),
+		.vssd2_pad	(VSS_PKG),
 		.clock	  (clock),
 		.gpio     (gpio),
 		.mprj_io  (mprj_io),
