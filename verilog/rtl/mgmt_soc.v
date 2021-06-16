@@ -114,8 +114,6 @@ module mgmt_soc (
 
     output flash_io0_do,
     output flash_io1_do,
-    output flash_io2_do,
-    output flash_io3_do,
 
     input  flash_io0_di,
     input  flash_io1_di,
@@ -413,6 +411,9 @@ module mgmt_soc (
     wire [31:0] spimemio_cfg_dat_o;
     wire spimemio_quad_mode;
 
+    wire flash_io2_do;
+    wire flash_io3_do;
+
     spimemio_wb spimemio (
         .wb_clk_i(wb_clk_i),
         .wb_rst_i(wb_rst_i),
@@ -433,12 +434,12 @@ module mgmt_soc (
         .wb_cfg_ack_o(spimemio_cfg_ack_o),
         .wb_cfg_dat_o(spimemio_cfg_dat_o),
 
-	.quad_mode(spimemio_quad_mode),
-	.pass_thru(pass_thru_mgmt),
-	.pass_thru_csb(pass_thru_mgmt_csb),
-	.pass_thru_sck(pass_thru_mgmt_sck),
-	.pass_thru_sdi(pass_thru_mgmt_sdi),
-	.pass_thru_sdo(pass_thru_mgmt_sdo),
+        .quad_mode(spimemio_quad_mode),
+        .pass_thru(pass_thru_mgmt),
+        .pass_thru_csb(pass_thru_mgmt_csb),
+        .pass_thru_sck(pass_thru_mgmt_sck),
+        .pass_thru_sdi(pass_thru_mgmt_sdi),
+        .pass_thru_sdo(pass_thru_mgmt_sdo),
 
         .flash_csb (flash_csb),
         .flash_clk (flash_clk),

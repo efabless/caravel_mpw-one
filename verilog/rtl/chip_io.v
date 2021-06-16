@@ -44,11 +44,11 @@ module chip_io(
 	output resetb_core_h,
 	output clock_core,
 	input  gpio_out_core,
-    	output gpio_in_core,
-    	input  gpio_mode0_core,
-    	input  gpio_mode1_core,
-    	input  gpio_outenb_core,
-    	input  gpio_inenb_core,
+	output gpio_in_core,
+	input  gpio_mode0_core,
+	input  gpio_mode1_core,
+	input  gpio_outenb_core,
+	input  gpio_inenb_core,
 	input  flash_csb_core,
 	input  flash_clk_core,
 	input  flash_csb_oeb_core,
@@ -67,23 +67,31 @@ module chip_io(
 	inout [`MPRJ_IO_PADS-1:0] mprj_io,
 	input [`MPRJ_IO_PADS-1:0] mprj_io_out,
 	input [`MPRJ_IO_PADS-1:0] mprj_io_oeb,
-    	input [`MPRJ_IO_PADS-1:0] mprj_io_hldh_n,
-	input [`MPRJ_IO_PADS-1:0] mprj_io_enh,
-    	input [`MPRJ_IO_PADS-1:0] mprj_io_inp_dis,
-    	input [`MPRJ_IO_PADS-1:0] mprj_io_ib_mode_sel,
-    	input [`MPRJ_IO_PADS-1:0] mprj_io_vtrip_sel,
-    	input [`MPRJ_IO_PADS-1:0] mprj_io_slow_sel,
-    	input [`MPRJ_IO_PADS-1:0] mprj_io_holdover,
-    	input [`MPRJ_IO_PADS-1:0] mprj_io_analog_en,
-    	input [`MPRJ_IO_PADS-1:0] mprj_io_analog_sel,
-    	input [`MPRJ_IO_PADS-1:0] mprj_io_analog_pol,
-    	input [`MPRJ_IO_PADS*3-1:0] mprj_io_dm,
+	input [`MPRJ_IO_PADS-1:0] mprj_io_inp_dis,
+	input [`MPRJ_IO_PADS-1:0] mprj_io_ib_mode_sel,
+	input [`MPRJ_IO_PADS-1:0] mprj_io_vtrip_sel,
+	input [`MPRJ_IO_PADS-1:0] mprj_io_slow_sel,
+	input [`MPRJ_IO_PADS-1:0] mprj_io_holdover,
+	input [`MPRJ_IO_PADS-1:0] mprj_io_analog_en,
+	input [`MPRJ_IO_PADS-1:0] mprj_io_analog_sel,
+	input [`MPRJ_IO_PADS-1:0] mprj_io_analog_pol,
+	input [`MPRJ_IO_PADS*3-1:0] mprj_io_dm,
 	output [`MPRJ_IO_PADS-1:0] mprj_io_in,
 	// User project direct access to gpio pad connections for analog
 	// (all but the lowest-numbered 7 pads)
 	inout [`MPRJ_IO_PADS-10:0] mprj_analog_io
 );
 
+	// To be considered:  Master hold signal on all user pads (?)
+    // For now, set holdh_n to 1 (NOTE:  This is in the 3.3V domain)
+    // and setting enh to porb_h.
+
+    wire [`MPRJ_IO_PADS-1:0] mprj_io_hldh_n;
+    wire [`MPRJ_IO_PADS-1:0] mprj_io_enh;
+
+    assign mprj_io_hldh_n = {`MPRJ_IO_PADS{vddio}};
+    assign mprj_io_enh = {`MPRJ_IO_PADS{porb_h}};
+	
 	wire analog_a, analog_b;
 	wire vddio_q, vssio_q;
 

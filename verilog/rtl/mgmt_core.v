@@ -41,8 +41,6 @@ module mgmt_core (
 	output flash_io1_ieb,
 	output flash_io0_do,
 	output flash_io1_do,
-	output flash_io2_do,	// through GPIO 36
-	output flash_io3_do,	// through GPIO 37
 	input flash_io0_di,
 	input flash_io1_di,
 	// Master reset
@@ -157,7 +155,6 @@ module mgmt_core (
 	wire flash_io2_oeb, flash_io3_oeb;
 	wire flash_io2_ieb, flash_io3_ieb;
 	wire flash_io2_di, flash_io3_di;
-	wire flash_io2_do, flash_io3_do;
 
 	wire pass_thru_mgmt_sdo, pass_thru_mgmt_csb;
 	wire pass_thru_mgmt_sck, pass_thru_mgmt_sdi;
@@ -223,8 +220,6 @@ module mgmt_core (
 		.flash_io3_ieb(flash_io3_ieb),
 		.flash_io0_do(flash_io0_do),
 		.flash_io1_do(flash_io1_do),
-		.flash_io2_do(flash_io2_do),
-		.flash_io3_do(flash_io3_do),
 		.flash_io0_di(flash_io0_di),
 		.flash_io1_di(flash_io1_di),
 		.flash_io2_di(flash_io2_di),

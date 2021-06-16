@@ -60,11 +60,11 @@ module chip_io_alt #(
 	output resetb_core_h,
 	output clock_core,
 	input  gpio_out_core,
-    	output gpio_in_core,
-    	input  gpio_mode0_core,
-    	input  gpio_mode1_core,
-    	input  gpio_outenb_core,
-    	input  gpio_inenb_core,
+	output gpio_in_core,
+	input  gpio_mode0_core,
+	input  gpio_mode1_core,
+	input  gpio_outenb_core,
+	input  gpio_inenb_core,
 	input  flash_csb_core,
 	input  flash_clk_core,
 	input  flash_csb_oeb_core,
@@ -85,17 +85,15 @@ module chip_io_alt #(
 	// The section below is for the digital pads only.
 	input [`MPRJ_IO_PADS-ANALOG_PADS_1-ANALOG_PADS_2-1:0] mprj_io_out,
 	input [`MPRJ_IO_PADS-ANALOG_PADS_1-ANALOG_PADS_2-1:0] mprj_io_oeb,
-    	input [`MPRJ_IO_PADS-ANALOG_PADS_1-ANALOG_PADS_2-1:0] mprj_io_hldh_n,
-	input [`MPRJ_IO_PADS-ANALOG_PADS_1-ANALOG_PADS_2-1:0] mprj_io_enh,
-    	input [`MPRJ_IO_PADS-ANALOG_PADS_1-ANALOG_PADS_2-1:0] mprj_io_inp_dis,
-    	input [`MPRJ_IO_PADS-ANALOG_PADS_1-ANALOG_PADS_2-1:0] mprj_io_ib_mode_sel,
-    	input [`MPRJ_IO_PADS-ANALOG_PADS_1-ANALOG_PADS_2-1:0] mprj_io_vtrip_sel,
-    	input [`MPRJ_IO_PADS-ANALOG_PADS_1-ANALOG_PADS_2-1:0] mprj_io_slow_sel,
-    	input [`MPRJ_IO_PADS-ANALOG_PADS_1-ANALOG_PADS_2-1:0] mprj_io_holdover,
-    	input [`MPRJ_IO_PADS-ANALOG_PADS_1-ANALOG_PADS_2-1:0] mprj_io_analog_en,
-    	input [`MPRJ_IO_PADS-ANALOG_PADS_1-ANALOG_PADS_2-1:0] mprj_io_analog_sel,
-    	input [`MPRJ_IO_PADS-ANALOG_PADS_1-ANALOG_PADS_2-1:0] mprj_io_analog_pol,
-    	input [(`MPRJ_IO_PADS-ANALOG_PADS_1-ANALOG_PADS_2)*3-1:0] mprj_io_dm,
+	input [`MPRJ_IO_PADS-ANALOG_PADS_1-ANALOG_PADS_2-1:0] mprj_io_inp_dis,
+	input [`MPRJ_IO_PADS-ANALOG_PADS_1-ANALOG_PADS_2-1:0] mprj_io_ib_mode_sel,
+	input [`MPRJ_IO_PADS-ANALOG_PADS_1-ANALOG_PADS_2-1:0] mprj_io_vtrip_sel,
+	input [`MPRJ_IO_PADS-ANALOG_PADS_1-ANALOG_PADS_2-1:0] mprj_io_slow_sel,
+	input [`MPRJ_IO_PADS-ANALOG_PADS_1-ANALOG_PADS_2-1:0] mprj_io_holdover,
+	input [`MPRJ_IO_PADS-ANALOG_PADS_1-ANALOG_PADS_2-1:0] mprj_io_analog_en,
+	input [`MPRJ_IO_PADS-ANALOG_PADS_1-ANALOG_PADS_2-1:0] mprj_io_analog_sel,
+	input [`MPRJ_IO_PADS-ANALOG_PADS_1-ANALOG_PADS_2-1:0] mprj_io_analog_pol,
+	input [(`MPRJ_IO_PADS-ANALOG_PADS_1-ANALOG_PADS_2)*3-1:0] mprj_io_dm,
 	output [`MPRJ_IO_PADS-ANALOG_PADS_1-ANALOG_PADS_2-1:0] mprj_io_in,
 	output [`MPRJ_IO_PADS-ANALOG_PADS_1-ANALOG_PADS_2-1:0] mprj_io_in_3v3,
 
@@ -120,6 +118,15 @@ module chip_io_alt #(
 
 	wire analog_a, analog_b;
 	wire vddio_q, vssio_q;
+
+	// To be considered:  Master hold signal on all user pads (?)
+    // For now, set holdh_n to 1 (NOTE:  This is in the 3.3V domain)
+    // and setting enh to porb_h.
+	wire [`MPRJ_IO_PADS-`ANALOG_PADS-1:0] mprj_io_hldh_n;
+    wire [`MPRJ_IO_PADS-`ANALOG_PADS-1:0] mprj_io_enh;
+
+    assign mprj_io_hldh_n = {`MPRJ_IO_PADS{vddio}};
+    assign mprj_io_enh = {`MPRJ_IO_PADS{porb_h}};
 
 	// Instantiate power and ground pads for management domain
 	// 12 pads:  vddio, vssio, vdda, vssa, vccd, vssd

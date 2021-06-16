@@ -137,8 +137,6 @@ module caravan (
     wire gpio_inenb_core;
 
     // 27 GPIO pads with full controls
-    wire [`MPRJ_IO_PADS-`ANALOG_PADS-1:0] mprj_io_hldh_n;
-    wire [`MPRJ_IO_PADS-`ANALOG_PADS-1:0] mprj_io_enh;
     wire [`MPRJ_IO_PADS-`ANALOG_PADS-1:0] mprj_io_inp_dis;
     wire [`MPRJ_IO_PADS-`ANALOG_PADS-1:0] mprj_io_oeb;
     wire [`MPRJ_IO_PADS-`ANALOG_PADS-1:0] mprj_io_ib_mode_sel;
@@ -221,14 +219,7 @@ module caravan (
     wire flash_io2_oeb_core, flash_io3_oeb_core;
     wire flash_io0_ieb_core, flash_io1_ieb_core;
     wire flash_io0_do_core,  flash_io1_do_core;
-    wire flash_io2_do_core,  flash_io3_do_core;
     wire flash_io0_di_core,  flash_io1_di_core;
-
-    // To be considered:  Master hold signal on all user pads (?)
-    // For now, set holdh_n to 1 (NOTE:  This is in the 3.3V domain)
-    // and setting enh to porb_h.
-    assign mprj_io_hldh_n = {`MPRJ_IO_PADS{vddio}};
-    assign mprj_io_enh = {`MPRJ_IO_PADS{porb_h}};
 
     chip_io_alt #(
 	.ANALOG_PADS_1(`ANALOG_PADS_1),
@@ -287,8 +278,6 @@ module caravan (
 	.mprj_io_in_3v3(mprj_io_in_3v3),
 	.mprj_io_out(mprj_io_out),
 	.mprj_io_oeb(mprj_io_oeb),
-	.mprj_io_hldh_n(mprj_io_hldh_n),
-	.mprj_io_enh(mprj_io_enh),
 	.mprj_io_inp_dis(mprj_io_inp_dis),
 	.mprj_io_ib_mode_sel(mprj_io_ib_mode_sel),
 	.mprj_io_vtrip_sel(mprj_io_vtrip_sel),
@@ -436,8 +425,6 @@ module caravan (
 		.sdo_outenb(sdo_outenb),
 		.jtag_out(jtag_out),
 		.jtag_outenb(jtag_outenb),
-		.flash_io2_do(flash_io2_do_core),
-		.flash_io3_do(flash_io3_do_core),
 		.flash_io2_oeb(flash_io2_oeb_core),
 		.flash_io3_oeb(flash_io3_oeb_core),
 		// User Project Slave ports (WB MI A)
