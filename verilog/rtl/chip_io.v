@@ -18,14 +18,18 @@ module chip_io(
 	// Package Pins
 
 	inout  vddio_pad,	// Common padframe/ESD supply
+	inout  vddio_pad2,	// Common padframe/ESD supply
 	inout  vssio_pad,	// Common padframe/ESD ground
+	inout  vssio_pad2,	// Common padframe/ESD ground
 	inout  vccd_pad,	// Common 1.8V supply
 	inout  vssd_pad,	// Common digital ground
 	inout  vdda_pad,	// Management analog 3.3V supply
 	inout  vssa_pad,	// Management analog ground
 	inout  vdda1_pad,	// User area 1 3.3V supply
+	inout  vdda1_pad2,	// User area 1 3.3V supply	
 	inout  vdda2_pad,	// User area 2 3.3V supply
 	inout  vssa1_pad,	// User area 1 analog ground
+	inout  vssa1_pad2,	// User area 1 analog ground
 	inout  vssa2_pad,	// User area 2 analog ground
 	inout  vccd1_pad,	// User area 1 1.8V supply
 	inout  vccd2_pad,	// User area 2 1.8V supply
@@ -127,7 +131,7 @@ module chip_io(
 	// lies in user area 2
     	sky130_ef_io__vddio_hvc_clamped_pad \mgmt_vddio_hvclamp_pad[1]  (
 		`USER2_ABUTMENT_PINS,
-		.VDDIO_PAD(vddio_pad)
+		.VDDIO_PAD(vddio_pad2)
 `ifdef TOP_ROUTING
 		.VDDIO(vddio)
 `endif
@@ -152,7 +156,7 @@ module chip_io(
 
     	sky130_ef_io__vssio_hvc_clamped_pad \mgmt_vssio_hvclamp_pad[0]  (
 		`MGMT_ABUTMENT_PINS,
-		.VSSIO_PAD(vssio_pad)
+		.VSSIO_PAD(vssio_pad2)
 `ifdef TOP_ROUTING
 		.VSSIO(vssio),
 `endif
@@ -186,13 +190,22 @@ module chip_io(
 	// Instantiate power and ground pads for user 1 domain
 	// 8 pads:  vdda, vssa, vccd, vssd;  One each HV and LV clamp.
 
-    	sky130_ef_io__vdda_hvc_clamped_pad user1_vdda_hvclamp_pad [1:0] (
+    	sky130_ef_io__vdda_hvc_clamped_pad \user1_vdda_hvclamp_pad[0] (
 		`USER1_ABUTMENT_PINS,
 		.VDDA_PAD(vdda1_pad)
 `ifdef TOP_ROUTING
 		.VDDA(vdda1)
 `endif
     	);
+
+    	sky130_ef_io__vdda_hvc_clamped_pad \user1_vdda_hvclamp_pad[1] (
+		`USER1_ABUTMENT_PINS,
+		.VDDA_PAD(vdda1_pad2)
+`ifdef TOP_ROUTING
+		.VDDA(vdda1)
+`endif
+    	);
+
 
     	sky130_ef_io__vccd_lvc_clamped2_pad user1_vccd_lvclamp_pad (
 		`USER1_ABUTMENT_PINS,
@@ -202,9 +215,17 @@ module chip_io(
 `endif
     	);
 
-    	sky130_ef_io__vssa_hvc_clamped_pad user1_vssa_hvclamp_pad [1:0] (
+    	sky130_ef_io__vssa_hvc_clamped_pad \user1_vssa_hvclamp_pad[0] (
 		`USER1_ABUTMENT_PINS,
 		.VSSA_PAD(vssa1_pad)
+`ifdef TOP_ROUTING
+		.VSSA(vssa1)
+`endif
+    	);
+
+    	sky130_ef_io__vssa_hvc_clamped_pad \user1_vssa_hvclamp_pad[1] (
+		`USER1_ABUTMENT_PINS,
+		.VSSA_PAD(vssa1_pad2)
 `ifdef TOP_ROUTING
 		.VSSA(vssa1)
 `endif

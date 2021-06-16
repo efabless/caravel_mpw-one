@@ -1,5 +1,5 @@
 $date
-	Mon Jun 14 10:57:12 2021
+	Wed Jun 16 11:30:20 2021
 $end
 $version
 	Icarus Verilog
@@ -121,15 +121,18 @@ $var wire 1 8 vccd_pad $end
 $var wire 1 " vdda $end
 $var wire 1 " vdda1 $end
 $var wire 1 # vdda1_pad $end
+$var wire 1 # vdda1_pad2 $end
 $var wire 1 " vdda2 $end
 $var wire 1 # vdda2_pad $end
 $var wire 1 # vdda_pad $end
 $var wire 1 " vddio $end
 $var wire 1 # vddio_pad $end
+$var wire 1 # vddio_pad2 $end
 $var wire 1 o vddio_q $end
 $var wire 1 $ vssa $end
 $var wire 1 $ vssa1 $end
 $var wire 1 % vssa1_pad $end
+$var wire 1 % vssa1_pad2 $end
 $var wire 1 $ vssa2 $end
 $var wire 1 % vssa2_pad $end
 $var wire 1 % vssa_pad $end
@@ -141,6 +144,7 @@ $var wire 1 % vssd2_pad $end
 $var wire 1 % vssd_pad $end
 $var wire 1 $ vssio $end
 $var wire 1 % vssio_pad $end
+$var wire 1 % vssio_pad2 $end
 $var wire 1 p vssio_q $end
 $var wire 1 q xresloop $end
 $var wire 1 . resetb_core_h $end
@@ -9517,8 +9521,8 @@ $var wire 1 ] AMUXBUS_B $end
 $var wire 1 $ BDY2_B2B $end
 $var wire 1 ! DRN_LVC1 $end
 $var wire 1 ! DRN_LVC2 $end
-$var wire 1 $ G_CORE $end
-$var wire 1 % G_PAD $end
+$var wire 1 % G_CORE $end
+$var wire 1 $ G_PAD $end
 $var wire 1 Q] OGC_LVC $end
 $var wire 1 $ SRC_BDY_LVC1 $end
 $var wire 1 $ SRC_BDY_LVC2 $end
@@ -9673,8 +9677,8 @@ $var wire 1 ] AMUXBUS_B $end
 $var wire 1 $ BDY2_B2B $end
 $var wire 1 ! DRN_LVC1 $end
 $var wire 1 ! DRN_LVC2 $end
-$var wire 1 $ G_CORE $end
-$var wire 1 % G_PAD $end
+$var wire 1 % G_CORE $end
+$var wire 1 $ G_PAD $end
 $var wire 1 U] OGC_LVC $end
 $var wire 1 $ SRC_BDY_LVC1 $end
 $var wire 1 $ SRC_BDY_LVC2 $end
