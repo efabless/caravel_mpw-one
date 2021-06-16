@@ -1,4 +1,4 @@
-module chip_io(vccd_pad, vccd1_pad, vccd2_pad, vdda_pad, vdda1_pad, vdda2_pad, vddio_pad, vssa_pad, vssa1_pad, vssa2_pad, vssd_pad, vssd1_pad, vssd2_pad, vssio_pad, vddio, vssio, vccd, vssd, vdda, vssa, vdda1, vdda2, vssa1, vssa2, vccd1, vccd2, vssd1, vssd2, gpio, clock, resetb, flash_csb, flash_clk, flash_io0, flash_io1, porb_h, por, resetb_core_h, clock_core, gpio_out_core, gpio_in_core, gpio_mode0_core, gpio_mode1_core, gpio_outenb_core, gpio_inenb_core, flash_csb_core, flash_clk_core, flash_csb_oeb_core, flash_clk_oeb_core, flash_io0_oeb_core, flash_io1_oeb_core, flash_csb_ieb_core, flash_clk_ieb_core, flash_io0_ieb_core, flash_io1_ieb_core, flash_io0_do_core, flash_io1_do_core, flash_io0_di_core, flash_io1_di_core, mprj_io, mprj_io_out, mprj_io_oeb, mprj_io_hldh_n, mprj_io_enh, mprj_io_inp_dis, mprj_io_ib_mode_sel, mprj_io_vtrip_sel, mprj_io_slow_sel, mprj_io_holdover, mprj_io_analog_en, mprj_io_analog_sel, mprj_io_analog_pol, mprj_io_dm, mprj_io_in, mprj_analog_io);
+module chip_io(vccd_pad, vccd1_pad, vccd2_pad, vdda_pad, vdda1_pad, vdda1_pad2, vdda2_pad, vddio_pad, vddio_pad2, vssa_pad, vssa1_pad, vssa1_pad2, vssa2_pad, vssd_pad, vssd1_pad, vssd2_pad, vssio_pad, vssio_pad2, vddio, vssio, vccd, vssd, vdda, vssa, vdda1, vdda2, vssa1, vssa2, vccd1, vccd2, vssd1, vssd2, gpio, clock, resetb, flash_csb, flash_clk, flash_io0, flash_io1, porb_h, por, resetb_core_h, clock_core, gpio_out_core, gpio_in_core, gpio_mode0_core, gpio_mode1_core, gpio_outenb_core, gpio_inenb_core, flash_csb_core, flash_clk_core, flash_csb_oeb_core, flash_clk_oeb_core, flash_io0_oeb_core, flash_io1_oeb_core, flash_csb_ieb_core, flash_clk_ieb_core, flash_io0_ieb_core, flash_io1_ieb_core, flash_io0_do_core, flash_io1_do_core, flash_io0_di_core, flash_io1_di_core, mprj_io, mprj_io_out, mprj_io_oeb, mprj_io_hldh_n, mprj_io_enh, mprj_io_inp_dis, mprj_io_ib_mode_sel, mprj_io_vtrip_sel, mprj_io_slow_sel, mprj_io_holdover, mprj_io_analog_en, mprj_io_analog_sel, mprj_io_analog_pol, mprj_io_dm, mprj_io_in, mprj_analog_io);
 
 
   wire analog_a;
@@ -828,15 +828,19 @@ module chip_io(vccd_pad, vccd1_pad, vccd2_pad, vdda_pad, vdda1_pad, vdda2_pad, v
   inout vccd2_pad;
   inout  vdda_pad;
   inout vdda1_pad;
+  inout vdda1_pad2;
   inout vdda2_pad;
   inout vddio_pad;
+  inout vddio_pad2;  
   inout  vssa_pad;
   inout vssa1_pad;
+  inout vssa1_pad2;
   inout vssa2_pad;
   inout  vssd_pad;
   inout vssd1_pad;
   inout vssd2_pad;
   inout vssio_pad;
+  inout vssio_pad2;
 
 // ################################################################################################
 // ################################################################################################
@@ -930,7 +934,7 @@ module chip_io(vccd_pad, vccd1_pad, vccd2_pad, vdda_pad, vdda1_pad, vdda2_pad, v
     .VSSIO(vssio),
     .VSSIO_Q(\mprj_pads.vssio_q ),
     .VSWITCH(vddio),
-    .VDDIO_PAD(vddio_pad)
+    .VDDIO_PAD(vddio_pad2)
   );
   sky130_ef_io__vssa_hvc_clamped_pad mgmt_vssa_hvclamp_pad (
     .AMUXBUS_A(\mprj_pads.analog_a ),
@@ -975,7 +979,7 @@ module chip_io(vccd_pad, vccd1_pad, vccd2_pad, vdda_pad, vdda1_pad, vdda2_pad, v
     .VSSIO(vssio),
     .VSSIO_Q(\mprj_pads.vssio_q ),
     .VSWITCH(vddio),
-    .VSSIO_PAD(vssio_pad)
+    .VSSIO_PAD(vssio_pad2)
   );
   sky130_ef_io__vssio_hvc_clamped_pad \mgmt_vssio_hvclamp_pad[1]  (
     .AMUXBUS_A(\mprj_pads.analog_a ),
@@ -1078,13 +1082,13 @@ module chip_io(vccd_pad, vccd1_pad, vccd2_pad, vdda_pad, vdda1_pad, vdda2_pad, v
     .VSSIO(vssio),
     .VSSIO_Q(\mprj_pads.vssio_q ),
     .VSWITCH(vddio),
-    .VDDA_PAD(vdda1_pad)
+    .VDDA_PAD(vdda1_pad2)
   );
   sky130_ef_io__vssa_hvc_clamped_pad \user1_vssa_hvclamp_pad[0]  (
     .AMUXBUS_A(\mprj_pads.analog_a ),
     .AMUXBUS_B(\mprj_pads.analog_b ),
     .VCCD(vccd1),
-    .VCCHIB(vccd),
+    .VCCHIB(vccd),   
     .VDDA(vdda1),
     .VDDIO(vddio),
     .VDDIO_Q(\mprj_pads.vddio_q ),
@@ -1108,7 +1112,7 @@ module chip_io(vccd_pad, vccd1_pad, vccd2_pad, vdda_pad, vdda1_pad, vdda2_pad, v
     .VSSIO(vssio),
     .VSSIO_Q(\mprj_pads.vssio_q ),
     .VSWITCH(vddio),
-    .VSSA_PAD(vssa1_pad)
+    .VSSA_PAD(vssa1_pad2)
   );
   sky130_ef_io__vssd_lvc_clamped2_pad user1_vssd_lvclmap_pad (
     .AMUXBUS_A(\mprj_pads.analog_a ),
