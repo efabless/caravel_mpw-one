@@ -346,8 +346,6 @@ module chip_io_tb;
         `MPRJ_IO_IN,
         `MPRJ_IO_OUT,
         `MPRJ_IO_OEB,
-        // `MPRJ_IO_HLDH_N,
-        // `MPRJ_IO_ENH,
         `MPRJ_IO_INP_DIS,
         `MPRJ_IO_IB_MODE_SEL,
         `MPRJ_IO_VTRIP_SEL,
