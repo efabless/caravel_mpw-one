@@ -28,14 +28,18 @@
 module caravel (
  
 	inout  vddio_pad,	// Common padframe/ESD supply
+	inout  vddio_pad2,	// Common padframe/ESD supply
 	inout  vssio_pad,	// Common padframe/ESD ground
+	inout  vssio_pad2,	// Common padframe/ESD supply
 	inout  vccd_pad,	// Common 1.8V supply
 	inout  vssd_pad,	// Common digital ground
 	inout  vdda_pad,	// Management analog 3.3V supply
 	inout  vssa_pad,	// Management analog ground
 	inout  vdda1_pad,	// User area 1 3.3V supply
+	inout  vdda1_pad2,	// User area 1 3.3V supply
 	inout  vdda2_pad,	// User area 2 3.3V supply
 	inout  vssa1_pad,	// User area 1 analog ground
+	inout  vssa1_pad2,	// User area 1 analog ground
 	inout  vssa2_pad,	// User area 2 analog ground
 	inout  vccd1_pad,	// User area 1 1.8V supply
 	inout  vccd2_pad,	// User area 2 1.8V supply
@@ -180,6 +184,22 @@ module caravel (
     wire flash_io0_di_core,  flash_io1_di_core;
     wire flash_io2_di_core,  flash_io3_di_core;
 
+
+  wire vccd;
+  wire vccd1;
+  wire vccd2;
+  wire vdda;
+  wire vdda1;
+  wire vdda2;
+  wire vddio;
+  wire vssa;
+  wire vssa1;
+  wire vssa2;
+  wire vssd;
+  wire vssd1;
+  wire vssd2;
+  wire vssio;
+
     // To be considered:  Master hold signal on all user pads (?)
     // For now, set holdh_n to 1 (NOTE:  This is in the 3.3V domain)
     // and setting enh to porb_h.
@@ -190,14 +210,18 @@ module caravel (
 	// Package Pins
 
 	.vddio_pad(vddio_pad),
+	.vddio_pad2(vddio_pad2),
 	.vssio_pad(vssio_pad),
+	.vssio_pad2(vssio_pad2),
 	.vdda_pad(vdda_pad),
 	.vssa_pad(vssa_pad),
 	.vccd_pad(vccd_pad),
 	.vssd_pad(vssd_pad),
 	.vdda1_pad(vdda1_pad),
+	.vdda1_pad2(vdda1_pad2),
 	.vdda2_pad(vdda2_pad),
 	.vssa1_pad(vssa1_pad),
+	.vssa1_pad2(vssa1_pad2),
 	.vssa2_pad(vssa2_pad),
 	.vccd1_pad(vccd1_pad),
 	.vccd2_pad(vccd2_pad),

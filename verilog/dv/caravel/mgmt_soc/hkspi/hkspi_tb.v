@@ -362,13 +362,13 @@ module hkspi_tb;
  	    $finish;
 	end
 
-	wire VDD3V3;
-	wire VDD1V8;
-	wire VSS;
+	wire VDD3V3_PKG;
+	wire VDD1V8_PKG;
+	wire VSS_PKG;
 
-	assign VDD3V3 = power1;
-	assign VDD1V8 = power2;
-	assign VSS = 1'b0;
+	assign VDD3V3_PKG = power1;
+	assign VDD1V8_PKG = power2;
+	assign VSS_PKG    = 1'b0;
 
 	wire hk_sck;
 	wire hk_csb;
@@ -387,20 +387,24 @@ module hkspi_tb;
 	assign SDO = mprj_io[1];
 	
 	caravel uut (
-		.vddio_pad	  (VDD3V3),
-		.vssio_pad	  (VSS),
-		.vdda_pad	  (VDD3V3),
-		.vssa_pad	  (VSS),
-		.vccd_pad	  (VDD1V8),
-		.vssd_pad	  (VSS),
-		.vdda1_pad    (VDD3V3),
-		.vdda2_pad   (VDD3V3),
-		.vssa1_pad	  (VSS),
-		.vssa2_pad	  (VSS),
-		.vccd1_pad	  (VDD1V8),
-		.vccd2_pad	  (VDD1V8),
-		.vssd1_pad	  (VSS),
-		.vssd2_pad	  (VSS),
+	       	.vddio_pad  	(VDD3V3_PKG),
+	       	.vddio_pad2 	(VDD3V3_PKG),
+		.vssio_pad	(VSS_PKG),
+		.vssio_pad2	(VSS_PKG),
+		.vdda_pad	(VDD3V3_PKG),
+		.vssa_pad	(VSS_PKG),
+		.vccd_pad	(VDD1V8_PKG),
+		.vssd_pad	(VSS_PKG),
+		.vdda1_pad  	(VDD3V3_PKG),
+		.vdda1_pad2  	(VDD3V3_PKG),
+		.vdda2_pad    	(VDD3V3_PKG),
+		.vssa1_pad	(VSS_PKG),
+		.vssa1_pad2	(VSS_PKG),
+		.vssa2_pad	(VSS_PKG),
+		.vccd1_pad	(VDD1V8_PKG),
+		.vccd2_pad	(VDD1V8_PKG),
+		.vssd1_pad	(VSS_PKG),
+		.vssd2_pad	(VSS_PKG),
 		.clock	  (clock),
 		.gpio     (gpio),
 		.mprj_io  (mprj_io),
@@ -410,6 +414,7 @@ module hkspi_tb;
 		.flash_io1(flash_io1),
 		.resetb	  (RSTB)
 	);
+
 
 	spiflash #(
 		.FILENAME("hkspi.hex")

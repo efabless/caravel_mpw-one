@@ -157,14 +157,18 @@ module gpio_tb;
 
 	caravel uut (
 	       	.vddio_pad  	(VDD3V3_PKG),
+	       	.vddio_pad2 	(VDD3V3_PKG),
 		.vssio_pad	(VSS_PKG),
+		.vssio_pad2	(VSS_PKG),
 		.vdda_pad	(VDD3V3_PKG),
 		.vssa_pad	(VSS_PKG),
 		.vccd_pad	(VDD1V8_PKG),
 		.vssd_pad	(VSS_PKG),
 		.vdda1_pad  	(VDD3V3_PKG),
+		.vdda1_pad2  	(VDD3V3_PKG),
 		.vdda2_pad    	(VDD3V3_PKG),
 		.vssa1_pad	(VSS_PKG),
+		.vssa1_pad2	(VSS_PKG),
 		.vssa2_pad	(VSS_PKG),
 		.vccd1_pad	(VDD1V8_PKG),
 		.vccd2_pad	(VDD1V8_PKG),
