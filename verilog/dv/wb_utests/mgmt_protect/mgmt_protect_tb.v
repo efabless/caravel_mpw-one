@@ -66,7 +66,6 @@ module mgmt_protect_tb;
 
     wire 	  user_clock;
     wire 	  user_clock2;
-    wire 	  user_resetn;
     wire 	  user_reset;
     wire 	  mprj_cyc_o_user;
     wire 	  mprj_stb_o_user;
@@ -174,10 +173,6 @@ module mgmt_protect_tb;
         wait(user1_vcc_powergood === 1'b1);
         wait(user2_vcc_powergood === 1'b1);
         #25;
-
-        if (user_resetn !== caravel_rstn) begin 
-            $display("Monitor: Error on user_resetn. "); $finish; 
-        end
         if (user_reset !== ~caravel_rstn) begin 
             $display("Monitor: Error on user_reset. "); $finish; 
         end
@@ -248,7 +243,6 @@ module mgmt_protect_tb;
 
 		.user_clock (user_clock),
 		.user_clock2(user_clock2),
-		.user_resetn(user_resetn),
 		.user_reset (user_reset),
 
 		.mprj_cyc_o_user(mprj_cyc_o_user),

@@ -14,6 +14,10 @@
 #
 # SPDX-License-Identifier: Apache-2.0
 
+PDK_PATH?=$(PDK_ROOT)/sky130A
+VERILOG_PATH = ../../../
+RTL_PATH = $(VERILOG_PATH)/rtl
+
 .SUFFIXES:
 
 PATTERN = storage_wb
@@ -21,7 +25,7 @@ PATTERN = storage_wb
 all:  ${PATTERN:=.vcd}
 
 %.vvp: %_tb.v
-	iverilog  -I ../../../rtl \
+	iverilog -DFUNCTIONAL -I $(PDK_PATH) -I $(VERILOG_PATH) -I .. -I $(RTL_PATH) \
 	$< -o $@
 
 %.vcd: %.vvp
