@@ -18,6 +18,12 @@
 
 `define STORAGE_BASE_ADR  32'h0100_0000
 
+`define UNIT_DELAY #1
+`define USE_POWER_PINS 
+
+`include "libs.ref/sky130_fd_sc_hd/verilog/primitives.v"
+`include "libs.ref/sky130_fd_sc_hd/verilog/sky130_fd_sc_hd.v"
+
 `include "defines.v"
 `include "sram_1rw1r_32_256_8_sky130.v"
 `include "storage.v"
@@ -58,6 +64,7 @@ module storage_tb;
     wire ro_ena;
     wire [7:0] ro_addr;
     wire [31:0] ro_rdata;
+    reg power1;
 
     initial begin
         wb_clk_i = 0;
@@ -69,6 +76,17 @@ module storage_tb;
         wb_dat_i = 0; 
         wb_adr_i = 0; 
     end
+
+    initial begin		// Power-up sequence
+		power1 <= 1'b0;
+		#1;
+		power1 <= 1'b1;
+	end
+
+    wire VPWR;
+	wire VGND;
+	assign VGND = 1'b0;
+	assign VPWR = power1;
 
     always #1 wb_clk_i = ~wb_clk_i;
 
@@ -212,6 +230,10 @@ module storage_tb;
     );
 
     storage uut (
+        `ifdef USE_POWER_PINS
+            .VPWR(VPWR),
+            .VGND(VGND),
+        `endif
         // Management R/W WB interface
         .mgmt_clk(wb_clk_i),
         .mgmt_ena(mgmt_ena),
