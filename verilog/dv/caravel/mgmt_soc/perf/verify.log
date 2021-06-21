@@ -1,5 +1,0 @@
-make[1]: Entering directory `/home/mk/foss/designs/caravel.mpw-one-final-metal-fix/verilog/dv/caravel/mgmt_soc/perf'
-/ef/apps/bin/riscv32-unknown-elf-gcc -march=rv32imc -mabi=ilp32 -Wl,-Bstatic,-T,../../sections.lds,--strip-debug -ffreestanding -nostdlib -o perf.elf ../../start.s perf.c
-/ef/apps/riscv32i/4e51f26-20170504/libexec/gcc/riscv32-unknown-elf/7.1.0/cc1: error while loading shared libraries: libmpc.so.2: cannot open shared object file: No such file or directory
-make[1]: *** [perf.elf] Error 1
-make[1]: Leaving directory `/home/mk/foss/designs/caravel.mpw-one-final-metal-fix/verilog/dv/caravel/mgmt_soc/perf'
