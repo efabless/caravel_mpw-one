@@ -442,7 +442,9 @@ __set_user_id:
 	mkdir -p ./signoff/build
 	# Update info.yaml
 	sed -r "s/^(\s*project_id\s*:\s*).*/\1${USER_ID}/" -i info.yaml
-	python3 $(CARAVEL_ROOT)/scripts/set_user_id.py $(USER_ID) $(CARAVEL_ROOT) 2>&1 | tee ./signoff/build/set_user_id.out
+	cp $(CARAVEL_ROOT)/gds/user_id_programming.gds ./gds/.
+	cp $(CARAVEL_ROOT)/mag/user_id_programming.mag ./mag/.
+	python3 $(CARAVEL_ROOT)/scripts/set_user_id.py $(USER_ID) $(shell pwd) 2>&1 | tee ./signoff/build/set_user_id.out
 
 .PHONY: update_caravel
 update_caravel:
