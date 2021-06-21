@@ -722,27 +722,49 @@ module mgmt_soc (
     wire mprj_ctrl_ack_o;
     wire [31:0] mprj_ctrl_dat_o;
     wire [`MPRJ_IO_PADS-1:0] mgmt_out_pre;
+    wire [`MPRJ_IO_PADS-1:0] mgmt_out_predata;
+    wire [`MPRJ_IO_PADS-1:0] mgmt_oeb_data;
 
-    // Bits assigned to specific functions as outputs prevent the
-    // mprj GPIO-as-output from applying data when that function
-    // is active
+    // All but the first two and last two IOs share the in and out data line
+    // and so the output data line must be high-impedence when the input is
+    // enabled.
 
-    assign mgmt_out_data[`MPRJ_IO_PADS-3:16] = mgmt_out_pre[`MPRJ_IO_PADS-3:16];
+    genvar i;
+
+    generate
+       for (i = 0; i < 2; i = i + 1) begin
+	  assign mgmt_out_data[i] = mgmt_out_predata[i];
+       end
+       for (i = 2; i < `MPRJ_IO_PADS-2; i = i + 1) begin
+	  assign mgmt_out_data[i] = (mgmt_oeb_data[i]) ? 1'bz : mgmt_out_predata[i];
+       end
+       for (i = `MPRJ_IO_PADS-2; i < `MPRJ_IO_PADS; i = i + 1) begin
+	  assign mgmt_out_data[i] = mgmt_out_predata[i];
+       end
+    endgenerate
+
+    // Bits assigned to specific functions as outputs prevent the mprj
+    // GPIO-as-output from applying data when that function is active
+
+    assign mgmt_out_predata[`MPRJ_IO_PADS-3:16] = mgmt_out_pre[`MPRJ_IO_PADS-3:16];
 
     // spimemio module controls last two data out lines when in quad mode.
     // These go to GPIO 36 and 37.  The input and OEB lines are routed
     // individually and have their own independent signal names.
-    assign mgmt_out_data[`MPRJ_IO_PADS-1] = spimemio_quad_mode ? flash_io3_do : mgmt_out_pre[`MPRJ_IO_PADS-1];
-    assign mgmt_out_data[`MPRJ_IO_PADS-2] = spimemio_quad_mode ? flash_io2_do : mgmt_out_pre[`MPRJ_IO_PADS-2];
+
+    assign mgmt_out_predata[`MPRJ_IO_PADS-1] = (spimemio_quad_mode) ?
+		flash_io3_do : mgmt_out_pre[`MPRJ_IO_PADS-1];
+    assign mgmt_out_predata[`MPRJ_IO_PADS-2] = (spimemio_quad_mode) ?
+		flash_io2_do : mgmt_out_pre[`MPRJ_IO_PADS-2];
 
     // Routing of output monitors (PLL, trap, clk1, clk2)
-    assign mgmt_out_data[15] = clk2_output_dest ? user_clk : mgmt_out_pre[15];
-    assign mgmt_out_data[14] = clk1_output_dest ? clk : mgmt_out_pre[14];
-    assign mgmt_out_data[13] = trap_output_dest ? trap : mgmt_out_pre[13];
+    assign mgmt_out_predata[15] = clk2_output_dest ? user_clk : mgmt_out_pre[15];
+    assign mgmt_out_predata[14] = clk1_output_dest ? clk : mgmt_out_pre[14];
+    assign mgmt_out_predata[13] = trap_output_dest ? trap : mgmt_out_pre[13];
 
-    assign mgmt_out_data[12:7] = mgmt_out_pre[12:7];
-    assign mgmt_out_data[6] = uart_enabled ? ser_tx : mgmt_out_pre[6];
-    assign mgmt_out_data[5:0] = mgmt_out_pre[5:0];
+    assign mgmt_out_predata[12:7] = mgmt_out_pre[12:7];
+    assign mgmt_out_predata[6] = uart_enabled ? ser_tx : mgmt_out_pre[6];
+    assign mgmt_out_predata[5:0] = mgmt_out_pre[5:0];
 
     mprj_ctrl_wb #(
         .BASE_ADR(MPRJ_CTRL_ADR)
@@ -768,6 +790,7 @@ module mgmt_soc (
 	.flash_io2_oenb_state(flash_io2_oenb_state),
 	.flash_io3_oenb_state(flash_io3_oenb_state),
 	.mgmt_gpio_out(mgmt_out_pre),
+	.mgmt_gpio_oeb(mgmt_oeb_data),
 	.mgmt_gpio_in(mgmt_in_data),
 	.pwr_ctrl_out(pwr_ctrl_out),
 	.user_irq_ena(user_irq_ena)
