@@ -127,10 +127,31 @@ module mgmt_core (
 	wire [2:0]  spi_pll90_sel;
 	wire [25:0] spi_pll_trim;
 
+    	// All but the first two and last two IOs share the in and out data line
+    	// and so the output data line must be high-impedence when the input is
+    	// enabled.
+
+	wire [`MPRJ_IO_PADS-1:0] mgmt_oeb_data;
+	wire [`MPRJ_IO_PADS-1:0] mgmt_out_predata;
+
+    	genvar i;
+
+    	generate
+       	    for (i = 0; i < 2; i = i + 1) begin
+          	assign mgmt_out_data[i] = mgmt_out_predata[i];
+       	    end
+            for (i = 2; i < `MPRJ_IO_PADS-2; i = i + 1) begin
+                assign mgmt_out_data[i] = (mgmt_oeb_data[i]) ? 1'bz : mgmt_out_predata[i];
+            end
+            for (i = `MPRJ_IO_PADS-2; i < `MPRJ_IO_PADS; i = i + 1) begin
+                assign mgmt_out_data[i] = mgmt_out_predata[i];
+            end
+    	endgenerate
+
 	// Override default function for SDO and JTAG outputs if purposely
 	// set for override by the management SoC.
-	assign sdo_out = (sdo_oenb_state == 1'b0) ? mgmt_out_data[1] : sdo_out_pre;
-	assign jtag_out = (jtag_oenb_state == 1'b0) ? mgmt_out_data[0] : jtag_out_pre;
+	assign sdo_out = (sdo_oenb_state == 1'b0) ? mgmt_out_predata[1] : sdo_out_pre;
+	assign jtag_out = (jtag_oenb_state == 1'b0) ? mgmt_out_predata[0] : jtag_out_pre;
 
 	caravel_clocking clocking(
 	`ifdef USE_POWER_PINS
@@ -256,7 +277,8 @@ module mgmt_core (
 		.user_irq_ena(user_irq_ena),
 		// I/O data
 		.mgmt_in_data(mgmt_in_data),
-		.mgmt_out_data(mgmt_out_data),
+		.mgmt_out_data(mgmt_out_predata),
+		.mgmt_oeb_data(mgmt_oeb_data),
 		.pwr_ctrl_out(pwr_ctrl_out),
 		// User Project Slave ports (WB MI A)
 		.mprj_cyc_o(mprj_cyc_o),

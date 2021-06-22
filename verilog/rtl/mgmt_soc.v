@@ -85,6 +85,7 @@ module mgmt_soc (
     // User Project pad data (when management SoC controls the pad)
     input [`MPRJ_IO_PADS-1:0] mgmt_in_data,
     output [`MPRJ_IO_PADS-1:0] mgmt_out_data,
+    output [`MPRJ_IO_PADS-1:0] mgmt_oeb_data,
     output [`MPRJ_PWR_PADS-1:0] pwr_ctrl_out,
 
     // IRQ
@@ -722,49 +723,29 @@ module mgmt_soc (
     wire mprj_ctrl_ack_o;
     wire [31:0] mprj_ctrl_dat_o;
     wire [`MPRJ_IO_PADS-1:0] mgmt_out_pre;
-    wire [`MPRJ_IO_PADS-1:0] mgmt_out_predata;
-    wire [`MPRJ_IO_PADS-1:0] mgmt_oeb_data;
-
-    // All but the first two and last two IOs share the in and out data line
-    // and so the output data line must be high-impedence when the input is
-    // enabled.
-
-    genvar i;
-
-    generate
-       for (i = 0; i < 2; i = i + 1) begin
-	  assign mgmt_out_data[i] = mgmt_out_predata[i];
-       end
-       for (i = 2; i < `MPRJ_IO_PADS-2; i = i + 1) begin
-	  assign mgmt_out_data[i] = (mgmt_oeb_data[i]) ? 1'bz : mgmt_out_predata[i];
-       end
-       for (i = `MPRJ_IO_PADS-2; i < `MPRJ_IO_PADS; i = i + 1) begin
-	  assign mgmt_out_data[i] = mgmt_out_predata[i];
-       end
-    endgenerate
 
     // Bits assigned to specific functions as outputs prevent the mprj
     // GPIO-as-output from applying data when that function is active
 
-    assign mgmt_out_predata[`MPRJ_IO_PADS-3:16] = mgmt_out_pre[`MPRJ_IO_PADS-3:16];
+    assign mgmt_out_data[`MPRJ_IO_PADS-3:16] = mgmt_out_pre[`MPRJ_IO_PADS-3:16];
 
     // spimemio module controls last two data out lines when in quad mode.
     // These go to GPIO 36 and 37.  The input and OEB lines are routed
     // individually and have their own independent signal names.
 
-    assign mgmt_out_predata[`MPRJ_IO_PADS-1] = (spimemio_quad_mode) ?
+    assign mgmt_out_data[`MPRJ_IO_PADS-1] = (spimemio_quad_mode) ?
 		flash_io3_do : mgmt_out_pre[`MPRJ_IO_PADS-1];
-    assign mgmt_out_predata[`MPRJ_IO_PADS-2] = (spimemio_quad_mode) ?
+    assign mgmt_out_data[`MPRJ_IO_PADS-2] = (spimemio_quad_mode) ?
 		flash_io2_do : mgmt_out_pre[`MPRJ_IO_PADS-2];
 
     // Routing of output monitors (PLL, trap, clk1, clk2)
-    assign mgmt_out_predata[15] = clk2_output_dest ? user_clk : mgmt_out_pre[15];
-    assign mgmt_out_predata[14] = clk1_output_dest ? clk : mgmt_out_pre[14];
-    assign mgmt_out_predata[13] = trap_output_dest ? trap : mgmt_out_pre[13];
+    assign mgmt_out_data[15] = clk2_output_dest ? user_clk : mgmt_out_pre[15];
+    assign mgmt_out_data[14] = clk1_output_dest ? clk : mgmt_out_pre[14];
+    assign mgmt_out_data[13] = trap_output_dest ? trap : mgmt_out_pre[13];
 
-    assign mgmt_out_predata[12:7] = mgmt_out_pre[12:7];
-    assign mgmt_out_predata[6] = uart_enabled ? ser_tx : mgmt_out_pre[6];
-    assign mgmt_out_predata[5:0] = mgmt_out_pre[5:0];
+    assign mgmt_out_data[12:7] = mgmt_out_pre[12:7];
+    assign mgmt_out_data[6] = uart_enabled ? ser_tx : mgmt_out_pre[6];
+    assign mgmt_out_data[5:0] = mgmt_out_pre[5:0];
 
     mprj_ctrl_wb #(
         .BASE_ADR(MPRJ_CTRL_ADR)
