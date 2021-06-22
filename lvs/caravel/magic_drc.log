@@ -1,0 +1,346 @@
+
+Magic 8.3 revision 179 - Compiled on Mon Jun 14 08:23:20 PDT 2021.
+Starting magic under Tcl interpreter
+Using the terminal as the console.
+Using NULL graphics device.
+site.pre: In custom site.pre...
+site.pre: altered 'path sys' to: . $CAD_ROOT/magic/sys/ef-lib-magic/sys/style $CAD_ROOT/magic/sys $CAD_ROOT/magic/sys/current
+Processing system .magicrc file
+site.def: In custom site.def...
+Sourcing design .magicrc for technology sky130A ...
+2 Magic internal units = 1 Lambda
+Input style sky130(): scaleFactor=2, multiplier=2
+Scaled tech values by 2 / 1 to match internal grid scaling
+Loading sky130A Device Generator Menu ...
+Loading "run_extract_caravel_m2fix.tcl" from command line.
+Scaled magic input cell user_project_wrapper geometry by factor of 2
+caravel: 10000 rects
+caravel: 20000 rects
+caravel: 30000 rects
+caravel: 40000 rects
+caravel: 50000 rects
+caravel: 60000 rects
+caravel: 70000 rects
+caravel: 80000 rects
+Processing timestamp mismatches: user_project_wrapper, gpio_control_block, mgmt_protect, mgmt_core, simple_por, storage.
+Scaled magic input cell user_id_textblock geometry by factor of 2
+Warning:  Parent cell lists instance of "alpha_0" at bad file path /home/mk/foss/designs/caravel.mpw-one-final-metal-fix/mag/alpha_0.mag.
+The cell exists in the search paths at /home/mk/foss/designs/caravel.mpw-one-final-metal-fix/mag/hexdigits/alpha_0.mag.
+The discovered version will be used.
+Scaled magic input cell alpha_0 geometry by factor of 72
+Warning:  Parent cell lists instance of "font_73" at bad file path /home/mk/foss/designs/caravel.mpw-one-final-metal-fix/mag/font_73.mag.
+The cell exists in the search paths at /home/mk/foss/pdks/sky130A/libs.ref/sky130_ml_xx_hd/mag/font_73.mag.
+The discovered version will be used.
+Scaled magic input cell font_73 geometry by factor of 24
+Warning:  Parent cell lists instance of "font_6C" at bad file path /home/mk/foss/designs/caravel.mpw-one-final-metal-fix/mag/font_6C.mag.
+The cell exists in the search paths at /home/mk/foss/pdks/sky130A/libs.ref/sky130_ml_xx_hd/mag/font_6C.mag.
+The discovered version will be used.
+Scaled magic input cell font_6C geometry by factor of 24
+Warning:  Parent cell lists instance of "font_65" at bad file path /home/mk/foss/designs/caravel.mpw-one-final-metal-fix/mag/font_65.mag.
+The cell exists in the search paths at /home/mk/foss/pdks/sky130A/libs.ref/sky130_ml_xx_hd/mag/font_65.mag.
+The discovered version will be used.
+Scaled magic input cell font_65 geometry by factor of 24
+Warning:  Parent cell lists instance of "font_61" at bad file path /home/mk/foss/designs/caravel.mpw-one-final-metal-fix/mag/font_61.mag.
+The cell exists in the search paths at /home/mk/foss/pdks/sky130A/libs.ref/sky130_ml_xx_hd/mag/font_61.mag.
+The discovered version will be used.
+Scaled magic input cell font_61 geometry by factor of 24
+Warning:  Parent cell lists instance of "font_62" at bad file path /home/mk/foss/designs/caravel.mpw-one-final-metal-fix/mag/font_62.mag.
+The cell exists in the search paths at /home/mk/foss/pdks/sky130A/libs.ref/sky130_ml_xx_hd/mag/font_62.mag.
+The discovered version will be used.
+Scaled magic input cell font_62 geometry by factor of 24
+Warning:  Parent cell lists instance of "font_66" at bad file path /home/mk/foss/designs/caravel.mpw-one-final-metal-fix/mag/font_66.mag.
+The cell exists in the search paths at /home/mk/foss/pdks/sky130A/libs.ref/sky130_ml_xx_hd/mag/font_66.mag.
+The discovered version will be used.
+Scaled magic input cell font_66 geometry by factor of 24
+Warning:  Parent cell lists instance of "font_20" at bad file path /home/mk/foss/designs/caravel.mpw-one-final-metal-fix/mag/font_20.mag.
+The cell exists in the search paths at /home/mk/foss/pdks/sky130A/libs.ref/sky130_ml_xx_hd/mag/font_20.mag.
+The discovered version will be used.
+Scaled magic input cell font_20 geometry by factor of 24
+Warning:  Parent cell lists instance of "font_29" at bad file path /home/mk/foss/designs/caravel.mpw-one-final-metal-fix/mag/font_29.mag.
+The cell exists in the search paths at /home/mk/foss/pdks/sky130A/libs.ref/sky130_ml_xx_hd/mag/font_29.mag.
+The discovered version will be used.
+Scaled magic input cell font_29 geometry by factor of 24
+Warning:  Parent cell lists instance of "font_28" at bad file path /home/mk/foss/designs/caravel.mpw-one-final-metal-fix/mag/font_28.mag.
+The cell exists in the search paths at /home/mk/foss/pdks/sky130A/libs.ref/sky130_ml_xx_hd/mag/font_28.mag.
+The discovered version will be used.
+Scaled magic input cell font_28 geometry by factor of 24
+Warning:  Parent cell lists instance of "font_43" at bad file path /home/mk/foss/designs/caravel.mpw-one-final-metal-fix/mag/font_43.mag.
+The cell exists in the search paths at /home/mk/foss/pdks/sky130A/libs.ref/sky130_ml_xx_hd/mag/font_43.mag.
+The discovered version will be used.
+Scaled magic input cell font_43 geometry by factor of 24
+Warning:  Parent cell lists instance of "font_76" at bad file path /home/mk/foss/designs/caravel.mpw-one-final-metal-fix/mag/font_76.mag.
+The cell exists in the search paths at /home/mk/foss/pdks/sky130A/libs.ref/sky130_ml_xx_hd/mag/font_76.mag.
+The discovered version will be used.
+Scaled magic input cell font_76 geometry by factor of 24
+Warning:  Parent cell lists instance of "font_72" at bad file path /home/mk/foss/designs/caravel.mpw-one-final-metal-fix/mag/font_72.mag.
+The cell exists in the search paths at /home/mk/foss/pdks/sky130A/libs.ref/sky130_ml_xx_hd/mag/font_72.mag.
+The discovered version will be used.
+Scaled magic input cell font_72 geometry by factor of 24
+Warning:  Parent cell lists instance of "font_2D" at bad file path /home/mk/foss/designs/caravel.mpw-one-final-metal-fix/mag/font_2D.mag.
+The cell exists in the search paths at /home/mk/foss/pdks/sky130A/libs.ref/sky130_ml_xx_hd/mag/font_2D.mag.
+The discovered version will be used.
+Scaled magic input cell font_2D geometry by factor of 24
+Warning:  Parent cell lists instance of "font_4B" at bad file path /home/mk/foss/designs/caravel.mpw-one-final-metal-fix/mag/font_4B.mag.
+The cell exists in the search paths at /home/mk/foss/pdks/sky130A/libs.ref/sky130_ml_xx_hd/mag/font_4B.mag.
+The discovered version will be used.
+Scaled magic input cell font_4B geometry by factor of 24
+Warning:  Parent cell lists instance of "font_44" at bad file path /home/mk/foss/designs/caravel.mpw-one-final-metal-fix/mag/font_44.mag.
+The cell exists in the search paths at /home/mk/foss/pdks/sky130A/libs.ref/sky130_ml_xx_hd/mag/font_44.mag.
+The discovered version will be used.
+Scaled magic input cell font_44 geometry by factor of 24
+Warning:  Parent cell lists instance of "font_50" at bad file path /home/mk/foss/designs/caravel.mpw-one-final-metal-fix/mag/font_50.mag.
+The cell exists in the search paths at /home/mk/foss/pdks/sky130A/libs.ref/sky130_ml_xx_hd/mag/font_50.mag.
+The discovered version will be used.
+Scaled magic input cell font_50 geometry by factor of 24
+Warning:  Parent cell lists instance of "font_6E" at bad file path /home/mk/foss/designs/caravel.mpw-one-final-metal-fix/mag/font_6E.mag.
+The cell exists in the search paths at /home/mk/foss/pdks/sky130A/libs.ref/sky130_ml_xx_hd/mag/font_6E.mag.
+The discovered version will be used.
+Scaled magic input cell font_6E geometry by factor of 24
+Warning:  Parent cell lists instance of "font_70" at bad file path /home/mk/foss/designs/caravel.mpw-one-final-metal-fix/mag/font_70.mag.
+The cell exists in the search paths at /home/mk/foss/pdks/sky130A/libs.ref/sky130_ml_xx_hd/mag/font_70.mag.
+The discovered version will be used.
+Scaled magic input cell font_70 geometry by factor of 24
+Warning:  Parent cell lists instance of "font_6F" at bad file path /home/mk/foss/designs/caravel.mpw-one-final-metal-fix/mag/font_6F.mag.
+The cell exists in the search paths at /home/mk/foss/pdks/sky130A/libs.ref/sky130_ml_xx_hd/mag/font_6F.mag.
+The discovered version will be used.
+Scaled magic input cell font_6F geometry by factor of 24
+Warning:  Parent cell lists instance of "font_74" at bad file path /home/mk/foss/designs/caravel.mpw-one-final-metal-fix/mag/font_74.mag.
+The cell exists in the search paths at /home/mk/foss/pdks/sky130A/libs.ref/sky130_ml_xx_hd/mag/font_74.mag.
+The discovered version will be used.
+Scaled magic input cell font_74 geometry by factor of 24
+Warning:  Parent cell lists instance of "font_57" at bad file path /home/mk/foss/designs/caravel.mpw-one-final-metal-fix/mag/font_57.mag.
+The cell exists in the search paths at /home/mk/foss/pdks/sky130A/libs.ref/sky130_ml_xx_hd/mag/font_57.mag.
+The discovered version will be used.
+Scaled magic input cell font_57 geometry by factor of 24
+Warning:  Parent cell lists instance of "font_6B" at bad file path /home/mk/foss/designs/caravel.mpw-one-final-metal-fix/mag/font_6B.mag.
+The cell exists in the search paths at /home/mk/foss/pdks/sky130A/libs.ref/sky130_ml_xx_hd/mag/font_6B.mag.
+The discovered version will be used.
+Scaled magic input cell font_6B geometry by factor of 24
+Warning:  Parent cell lists instance of "font_79" at bad file path /home/mk/foss/designs/caravel.mpw-one-final-metal-fix/mag/font_79.mag.
+The cell exists in the search paths at /home/mk/foss/pdks/sky130A/libs.ref/sky130_ml_xx_hd/mag/font_79.mag.
+The discovered version will be used.
+Scaled magic input cell font_79 geometry by factor of 24
+Warning:  Parent cell lists instance of "font_53" at bad file path /home/mk/foss/designs/caravel.mpw-one-final-metal-fix/mag/font_53.mag.
+The cell exists in the search paths at /home/mk/foss/pdks/sky130A/libs.ref/sky130_ml_xx_hd/mag/font_53.mag.
+The discovered version will be used.
+Scaled magic input cell font_53 geometry by factor of 24
+Warning:  Parent cell lists instance of "font_67" at bad file path /home/mk/foss/designs/caravel.mpw-one-final-metal-fix/mag/font_67.mag.
+The cell exists in the search paths at /home/mk/foss/pdks/sky130A/libs.ref/sky130_ml_xx_hd/mag/font_67.mag.
+The discovered version will be used.
+Scaled magic input cell font_67 geometry by factor of 24
+Warning:  Parent cell lists instance of "font_47" at bad file path /home/mk/foss/designs/caravel.mpw-one-final-metal-fix/mag/font_47.mag.
+The cell exists in the search paths at /home/mk/foss/pdks/sky130A/libs.ref/sky130_ml_xx_hd/mag/font_47.mag.
+The discovered version will be used.
+Scaled magic input cell font_47 geometry by factor of 24
+Warning:  Parent cell lists instance of "font_30" at bad file path /home/mk/foss/designs/caravel.mpw-one-final-metal-fix/mag/font_30.mag.
+The cell exists in the search paths at /home/mk/foss/pdks/sky130A/libs.ref/sky130_ml_xx_hd/mag/font_30.mag.
+The discovered version will be used.
+Scaled magic input cell font_30 geometry by factor of 24
+Warning:  Parent cell lists instance of "font_32" at bad file path /home/mk/foss/designs/caravel.mpw-one-final-metal-fix/mag/font_32.mag.
+The cell exists in the search paths at /home/mk/foss/pdks/sky130A/libs.ref/sky130_ml_xx_hd/mag/font_32.mag.
+The discovered version will be used.
+Scaled magic input cell font_32 geometry by factor of 24
+Warning:  Parent cell lists instance of "font_6D" at bad file path /home/mk/foss/designs/caravel.mpw-one-final-metal-fix/mag/font_6D.mag.
+The cell exists in the search paths at /home/mk/foss/pdks/sky130A/libs.ref/sky130_ml_xx_hd/mag/font_6D.mag.
+The discovered version will be used.
+Scaled magic input cell font_6D geometry by factor of 24
+Warning:  Parent cell lists instance of "font_63" at bad file path /home/mk/foss/designs/caravel.mpw-one-final-metal-fix/mag/font_63.mag.
+The cell exists in the search paths at /home/mk/foss/pdks/sky130A/libs.ref/sky130_ml_xx_hd/mag/font_63.mag.
+The discovered version will be used.
+Scaled magic input cell font_63 geometry by factor of 24
+Warning:  Parent cell lists instance of "sky130_fd_sc_hvl__lsbufhv2lv_1" at bad file path /home/mk/foss/designs/caravel.mpw-one-final-metal-fix/mag/sky130_fd_sc_hvl__lsbufhv2lv_1.mag.
+The cell exists in the search paths at /home/mk/foss/pdks/sky130A/libs.ref/sky130_fd_sc_hvl/mag/sky130_fd_sc_hvl__lsbufhv2lv_1.mag.
+The discovered version will be used.
+Warning:  Parent cell lists instance of "sky130_fd_sc_hvl__fill_1" at bad file path /home/mk/foss/designs/caravel.mpw-one-final-metal-fix/mag/sky130_fd_sc_hvl__fill_1.mag.
+The cell exists in the search paths at /home/mk/foss/pdks/sky130A/libs.ref/sky130_fd_sc_hvl/mag/sky130_fd_sc_hvl__fill_1.mag.
+The discovered version will be used.
+Warning:  Parent cell lists instance of "sky130_fd_sc_hvl__fill_2" at bad file path /home/mk/foss/designs/caravel.mpw-one-final-metal-fix/mag/sky130_fd_sc_hvl__fill_2.mag.
+The cell exists in the search paths at /home/mk/foss/pdks/sky130A/libs.ref/sky130_fd_sc_hvl/mag/sky130_fd_sc_hvl__fill_2.mag.
+The discovered version will be used.
+Warning:  Parent cell lists instance of "sky130_fd_sc_hvl__decap_8" at bad file path /home/mk/foss/designs/caravel.mpw-one-final-metal-fix/mag/sky130_fd_sc_hvl__decap_8.mag.
+The cell exists in the search paths at /home/mk/foss/pdks/sky130A/libs.ref/sky130_fd_sc_hvl/mag/sky130_fd_sc_hvl__decap_8.mag.
+The discovered version will be used.
+Warning:  Parent cell lists instance of "sky130_fd_sc_hvl__diode_2" at bad file path /home/mk/foss/designs/caravel.mpw-one-final-metal-fix/mag/sky130_fd_sc_hvl__diode_2.mag.
+The cell exists in the search paths at /home/mk/foss/pdks/sky130A/libs.ref/sky130_fd_sc_hvl/mag/sky130_fd_sc_hvl__diode_2.mag.
+The discovered version will be used.
+Warning:  Parent cell lists instance of "sky130_fd_sc_hvl__decap_4" at bad file path /home/mk/foss/designs/caravel.mpw-one-final-metal-fix/mag/sky130_fd_sc_hvl__decap_4.mag.
+The cell exists in the search paths at /home/mk/foss/pdks/sky130A/libs.ref/sky130_fd_sc_hvl/mag/sky130_fd_sc_hvl__decap_4.mag.
+The discovered version will be used.
+Warning:  Parent cell lists instance of "open_source" at bad file path /home/mk/foss/designs/caravel.mpw-one-final-metal-fix/mag/open_source.mag.
+The cell exists in the search paths at /home/mk/foss/designs/caravel.mpw-one-final-metal-fix/mag/hexdigits/open_source.mag.
+The discovered version will be used.
+Scaled magic input cell open_source geometry by factor of 2
+Warning:  Parent cell lists instance of "sky130_fd_sc_hd__decap_6" at bad file path /home/mk/foss/designs/caravel.mpw-one-final-metal-fix/mag/sky130_fd_sc_hd__decap_6.mag.
+The cell exists in the search paths at /home/mk/foss/pdks/sky130A/libs.ref/sky130_fd_sc_hd/mag/sky130_fd_sc_hd__decap_6.mag.
+The discovered version will be used.
+Warning:  Parent cell lists instance of "sky130_fd_sc_hd__decap_3" at bad file path /home/mk/foss/designs/caravel.mpw-one-final-metal-fix/mag/sky130_fd_sc_hd__decap_3.mag.
+The cell exists in the search paths at /home/mk/foss/pdks/sky130A/libs.ref/sky130_fd_sc_hd/mag/sky130_fd_sc_hd__decap_3.mag.
+The discovered version will be used.
+Warning:  Parent cell lists instance of "sky130_fd_sc_hd__decap_12" at bad file path /home/mk/foss/designs/caravel.mpw-one-final-metal-fix/mag/sky130_fd_sc_hd__decap_12.mag.
+The cell exists in the search paths at /home/mk/foss/pdks/sky130A/libs.ref/sky130_fd_sc_hd/mag/sky130_fd_sc_hd__decap_12.mag.
+The discovered version will be used.
+Warning:  Parent cell lists instance of "sky130_fd_sc_hd__decap_4" at bad file path /home/mk/foss/designs/caravel.mpw-one-final-metal-fix/mag/sky130_fd_sc_hd__decap_4.mag.
+The cell exists in the search paths at /home/mk/foss/pdks/sky130A/libs.ref/sky130_fd_sc_hd/mag/sky130_fd_sc_hd__decap_4.mag.
+The discovered version will be used.
+Warning:  Parent cell lists instance of "sky130_fd_sc_hd__tapvpwrvgnd_1" at bad file path /home/mk/foss/designs/caravel.mpw-one-final-metal-fix/mag/sky130_fd_sc_hd__tapvpwrvgnd_1.mag.
+The cell exists in the search paths at /home/mk/foss/pdks/sky130A/libs.ref/sky130_fd_sc_hd/mag/sky130_fd_sc_hd__tapvpwrvgnd_1.mag.
+The discovered version will be used.
+Warning:  Parent cell lists instance of "sky130_fd_sc_hd__fill_2" at bad file path /home/mk/foss/designs/caravel.mpw-one-final-metal-fix/mag/sky130_fd_sc_hd__fill_2.mag.
+The cell exists in the search paths at /home/mk/foss/pdks/sky130A/libs.ref/sky130_fd_sc_hd/mag/sky130_fd_sc_hd__fill_2.mag.
+The discovered version will be used.
+Warning:  Parent cell lists instance of "sky130_fd_sc_hd__decap_8" at bad file path /home/mk/foss/designs/caravel.mpw-one-final-metal-fix/mag/sky130_fd_sc_hd__decap_8.mag.
+The cell exists in the search paths at /home/mk/foss/pdks/sky130A/libs.ref/sky130_fd_sc_hd/mag/sky130_fd_sc_hd__decap_8.mag.
+The discovered version will be used.
+Warning:  Parent cell lists instance of "sky130_fd_sc_hd__fill_1" at bad file path /home/mk/foss/designs/caravel.mpw-one-final-metal-fix/mag/sky130_fd_sc_hd__fill_1.mag.
+The cell exists in the search paths at /home/mk/foss/pdks/sky130A/libs.ref/sky130_fd_sc_hd/mag/sky130_fd_sc_hd__fill_1.mag.
+The discovered version will be used.
+Warning:  Parent cell lists instance of "sky130_fd_sc_hd__conb_1" at bad file path /home/mk/foss/designs/caravel.mpw-one-final-metal-fix/mag/sky130_fd_sc_hd__conb_1.mag.
+The cell exists in the search paths at /home/mk/foss/pdks/sky130A/libs.ref/sky130_fd_sc_hd/mag/sky130_fd_sc_hd__conb_1.mag.
+The discovered version will be used.
+Warning:  Parent cell lists instance of "sky130_ef_io__com_bus_slice_20um" at bad file path /home/mk/foss/designs/caravel.mpw-one-final-metal-fix/mag/sky130_ef_io__com_bus_slice_20um.mag.
+The cell exists in the search paths at /home/mk/foss/pdks/sky130A/libs.ref/sky130_fd_io/mag/sky130_ef_io__com_bus_slice_20um.mag.
+The discovered version will be used.
+Warning:  Parent cell lists instance of "sky130_ef_io__corner_pad" at bad file path /home/mk/foss/designs/caravel.mpw-one-final-metal-fix/mag/sky130_ef_io__corner_pad.mag.
+The cell exists in the search paths at /home/mk/foss/pdks/sky130A/libs.ref/sky130_fd_io/mag/sky130_ef_io__corner_pad.mag.
+The discovered version will be used.
+sky130_fd_io__corner_bus_overlay: 10000 rects
+Warning:  Parent cell lists instance of "sky130_ef_io__connect_vcchib_vccd_and_vswitch_vddio_slice_20um" at bad file path /home/mk/foss/designs/caravel.mpw-one-final-metal-fix/mag/sky130_ef_io__connect_vcchib_vccd_and_vswitch_vddio_slice_20um.mag.
+The cell exists in the search paths at /home/mk/foss/pdks/sky130A/libs.ref/sky130_fd_io/mag/sky130_ef_io__connect_vcchib_vccd_and_vswitch_vddio_slice_20um.mag.
+The discovered version will be used.
+Warning:  Parent cell lists instance of "sky130_ef_io__com_bus_slice_10um" at bad file path /home/mk/foss/designs/caravel.mpw-one-final-metal-fix/mag/sky130_ef_io__com_bus_slice_10um.mag.
+The cell exists in the search paths at /home/mk/foss/pdks/sky130A/libs.ref/sky130_fd_io/mag/sky130_ef_io__com_bus_slice_10um.mag.
+The discovered version will be used.
+Warning:  Parent cell lists instance of "sky130_ef_io__com_bus_slice_5um" at bad file path /home/mk/foss/designs/caravel.mpw-one-final-metal-fix/mag/sky130_ef_io__com_bus_slice_5um.mag.
+The cell exists in the search paths at /home/mk/foss/pdks/sky130A/libs.ref/sky130_fd_io/mag/sky130_ef_io__com_bus_slice_5um.mag.
+The discovered version will be used.
+Warning:  Parent cell lists instance of "sky130_ef_io__com_bus_slice_1um" at bad file path /home/mk/foss/designs/caravel.mpw-one-final-metal-fix/mag/sky130_ef_io__com_bus_slice_1um.mag.
+The cell exists in the search paths at /home/mk/foss/pdks/sky130A/libs.ref/sky130_fd_io/mag/sky130_ef_io__com_bus_slice_1um.mag.
+The discovered version will be used.
+Warning:  Parent cell lists instance of "sky130_ef_io__gpiov2_pad_wrapped" at bad file path /home/mk/foss/designs/caravel.mpw-one-final-metal-fix/mag/sky130_ef_io__gpiov2_pad_wrapped.mag.
+The cell exists in the search paths at /home/mk/foss/pdks/sky130A/libs.ref/sky130_fd_io/mag/sky130_ef_io__gpiov2_pad_wrapped.mag.
+The discovered version will be used.
+Warning:  Parent cell lists instance of "sky130_ef_io__disconnect_vdda_slice_5um" at bad file path /home/mk/foss/designs/caravel.mpw-one-final-metal-fix/mag/sky130_ef_io__disconnect_vdda_slice_5um.mag.
+The cell exists in the search paths at /home/mk/foss/pdks/sky130A/libs.ref/sky130_fd_io/mag/sky130_ef_io__disconnect_vdda_slice_5um.mag.
+The discovered version will be used.
+Warning:  Parent cell lists instance of "sky130_ef_io__disconnect_vccd_slice_5um" at bad file path /home/mk/foss/designs/caravel.mpw-one-final-metal-fix/mag/sky130_ef_io__disconnect_vccd_slice_5um.mag.
+The cell exists in the search paths at /home/mk/foss/pdks/sky130A/libs.ref/sky130_fd_io/mag/sky130_ef_io__disconnect_vccd_slice_5um.mag.
+The discovered version will be used.
+Processing timestamp mismatches: sky130_ef_io__disconnect_vccd_slice_5um, sky130_ef_io__disconnect_vdda_slice_5um, sky130_fd_io__top_gpiov2, sky130_ef_io__gpiov2_pad_wrapped, sky130_ef_io__com_bus_slice_1um, sky130_ef_io__com_bus_slice_5um, sky130_ef_io__com_bus_slice_10um, sky130_ef_io__connect_vcchib_vccd_and_vswitch_vddio_slice_20um, sky130_ef_io__corner_pad, sky130_ef_io__com_bus_slice_20um, chip_io, sky130_ef_io__vssa_hvc_clamped_pad, sky130_ef_io__vssio_hvc_clamped_pad, sky130_ef_io__vccd_lvc_clamped2_pad, sky130_ef_io__vddio_hvc_clamped_pad, sky130_ef_io__vdda_hvc_clamped_pad, sky130_ef_io__vssd_lvc_clamped2_pad, sky130_ef_io__vccd_lvc_clamped_pad, sky130_ef_io__vssd_lvc_clamped_pad, sky130_fd_io__top_xres4v2, sky130_fd_sc_hd__conb_1, sky130_fd_sc_hd__fill_1, sky130_fd_sc_hd__decap_8, sky130_fd_sc_hd__fill_2, sky130_fd_sc_hd__tapvpwrvgnd_1, sky130_fd_sc_hd__decap_4, sky130_fd_sc_hd__decap_12, sky130_fd_sc_hd__decap_3, sky130_fd_sc_hd__decap_6, open_source, sky130_fd_sc_hvl__decap_4, sky130_fd_sc_hvl__diode_2, sky130_fd_sc_hvl__decap_8, sky130_fd_sc_hvl__fill_2, sky130_fd_sc_hvl__fill_1, sky130_fd_sc_hvl__lsbufhv2lv_1.
+Extracting user_project_wrapper into user_project_wrapper.ext:
+Extracting sky130_ef_io__vccd_lvc_clamped2_pad into sky130_ef_io__vccd_lvc_clamped2_pad.ext:
+Extracting sky130_ef_io__vssd_lvc_clamped2_pad into sky130_ef_io__vssd_lvc_clamped2_pad.ext:
+Extracting sky130_ef_io__vddio_hvc_clamped_pad into sky130_ef_io__vddio_hvc_clamped_pad.ext:
+Extracting sky130_ef_io__disconnect_vccd_slice_5um into sky130_ef_io__disconnect_vccd_slice_5um.ext:
+sky130_ef_io__disconnect_vccd_slice_5um: 58 warnings
+Extracting sky130_ef_io__disconnect_vdda_slice_5um into sky130_ef_io__disconnect_vdda_slice_5um.ext:
+sky130_ef_io__disconnect_vdda_slice_5um: 49 warnings
+Extracting sky130_ef_io__vccd_lvc_clamped_pad into sky130_ef_io__vccd_lvc_clamped_pad.ext:
+Extracting sky130_ef_io__vdda_hvc_clamped_pad into sky130_ef_io__vdda_hvc_clamped_pad.ext:
+Extracting sky130_ef_io__vssio_hvc_clamped_pad into sky130_ef_io__vssio_hvc_clamped_pad.ext:
+Extracting sky130_ef_io__vssd_lvc_clamped_pad into sky130_ef_io__vssd_lvc_clamped_pad.ext:
+Extracting sky130_fd_pr__genrivetdlring__example_559591418082 into sky130_fd_pr__genrivetdlring__example_559591418082.ext:
+Extracting sky130_fd_pr__gendlring__example_559591418081 into sky130_fd_pr__gendlring__example_559591418081.ext:
+Extracting sky130_fd_pr__padplhp__example_559591418080 into sky130_fd_pr__padplhp__example_559591418080.ext:
+Extracting sky130_fd_io__top_gpio_pad into sky130_fd_io__top_gpio_pad.ext:
+Extracting sky130_fd_io__com_bus_slice_m4 into sky130_fd_io__com_bus_slice_m4.ext:
+Extracting sky130_fd_io__overlay_gpiov2_m4 into sky130_fd_io__overlay_gpiov2_m4.ext:
+sky130_fd_io__overlay_gpiov2_m4: 34 warnings
+Extracting sky130_fd_io__overlay_gpiov2 into sky130_fd_io__overlay_gpiov2.ext:
+sky130_fd_io__overlay_gpiov2: 36 warnings
+Extracting sky130_fd_io__top_gpiov2 into sky130_fd_io__top_gpiov2.ext:
+Extracting sky130_ef_io__gpiov2_pad into sky130_ef_io__gpiov2_pad.ext:
+sky130_ef_io__gpiov2_pad: 15571 fatal errors 107 warnings
+Extracting sky130_ef_io__gpiov2_pad_wrapped into sky130_ef_io__gpiov2_pad_wrapped.ext:
+sky130_ef_io__gpiov2_pad_wrapped: 2 fatal errors 105 warnings
+Extracting sky130_fd_io__top_xres4v2 into sky130_fd_io__top_xres4v2.ext:
+Extracting sky130_ef_io__vssa_hvc_clamped_pad into sky130_ef_io__vssa_hvc_clamped_pad.ext:
+Extracting sky130_ef_io__com_bus_slice_1um into sky130_ef_io__com_bus_slice_1um.ext:
+sky130_ef_io__com_bus_slice_1um: 42 warnings
+Extracting sky130_ef_io__com_bus_slice_5um into sky130_ef_io__com_bus_slice_5um.ext:
+sky130_ef_io__com_bus_slice_5um: 94 warnings
+Extracting sky130_ef_io__com_bus_slice_10um into sky130_ef_io__com_bus_slice_10um.ext:
+sky130_ef_io__com_bus_slice_10um: 94 warnings
+Extracting sky130_ef_io__connect_vcchib_vccd_and_vswitch_vddio_slice_20um into sky130_ef_io__connect_vcchib_vccd_and_vswitch_vddio_slice_20um.ext:
+sky130_ef_io__connect_vcchib_vccd_and_vswitch_vddio_slice_20um: 70 warnings
+Extracting sky130_fd_io__corner_bus_overlay into sky130_fd_io__corner_bus_overlay.ext:
+sky130_fd_io__corner_bus_overlay: 57 warnings
+Extracting sky130_ef_io__corner_pad into sky130_ef_io__corner_pad.ext:
+sky130_ef_io__corner_pad: 109 warnings
+Extracting sky130_ef_io__com_bus_slice_20um into sky130_ef_io__com_bus_slice_20um.ext:
+sky130_ef_io__com_bus_slice_20um: 94 warnings
+Extracting chip_io into chip_io.ext:
+chip_io: 211 fatal errors 125 warnings
+Extracting mgmt_protect into mgmt_protect.ext:
+Extracting mgmt_core into mgmt_core.ext:
+Extracting simple_por into simple_por.ext:
+Extracting gpio_control_block into gpio_control_block.ext:
+Extracting sky130_fd_sc_hd__conb_1 into sky130_fd_sc_hd__conb_1.ext:
+Extracting sky130_fd_sc_hd__fill_1 into sky130_fd_sc_hd__fill_1.ext:
+Extracting sky130_fd_sc_hd__decap_8 into sky130_fd_sc_hd__decap_8.ext:
+sky130_fd_sc_hd__decap_8: 2 warnings
+Extracting sky130_fd_sc_hd__fill_2 into sky130_fd_sc_hd__fill_2.ext:
+Extracting sky130_fd_sc_hd__tapvpwrvgnd_1 into sky130_fd_sc_hd__tapvpwrvgnd_1.ext:
+Extracting sky130_fd_sc_hd__decap_4 into sky130_fd_sc_hd__decap_4.ext:
+Extract error:  Duplicate tile position, ignoring
+sky130_fd_sc_hd__decap_4: 2 warnings
+Extracting sky130_fd_sc_hd__decap_12 into sky130_fd_sc_hd__decap_12.ext:
+Extract error:  Duplicate tile position, ignoring
+sky130_fd_sc_hd__decap_12: 2 warnings
+Extracting sky130_fd_sc_hd__decap_3 into sky130_fd_sc_hd__decap_3.ext:
+Extract error:  Duplicate tile position, ignoring
+sky130_fd_sc_hd__decap_3: 2 warnings
+Extracting sky130_fd_sc_hd__decap_6 into sky130_fd_sc_hd__decap_6.ext:
+Extract error:  Duplicate tile position, ignoring
+sky130_fd_sc_hd__decap_6: 2 warnings
+Extracting user_id_programming into user_id_programming.ext:
+Extracting storage into storage.ext:
+Extracting sky130_fd_sc_hvl__decap_4 into sky130_fd_sc_hvl__decap_4.ext:
+sky130_fd_sc_hvl__decap_4: 2 warnings
+Extracting sky130_fd_sc_hvl__diode_2 into sky130_fd_sc_hvl__diode_2.ext:
+Extracting sky130_fd_sc_hvl__decap_8 into sky130_fd_sc_hvl__decap_8.ext:
+sky130_fd_sc_hvl__decap_8: 4 warnings
+Extracting sky130_fd_sc_hvl__fill_2 into sky130_fd_sc_hvl__fill_2.ext:
+Extracting sky130_fd_sc_hvl__fill_1 into sky130_fd_sc_hvl__fill_1.ext:
+Extracting sky130_fd_sc_hvl__lsbufhv2lv_1 into sky130_fd_sc_hvl__lsbufhv2lv_1.ext:
+sky130_fd_sc_hvl__lsbufhv2lv_1: 4 warnings
+Extracting sky130_fd_sc_hvl__lsbufhv2lv_1_wrapped into sky130_fd_sc_hvl__lsbufhv2lv_1_wrapped.ext:
+Extracting font_63 into font_63.ext:
+Extracting font_6D into font_6D.ext:
+Extracting font_32 into font_32.ext:
+Extracting font_30 into font_30.ext:
+Extracting font_47 into font_47.ext:
+Extracting font_67 into font_67.ext:
+Extracting font_53 into font_53.ext:
+Extracting font_79 into font_79.ext:
+Extracting font_6B into font_6B.ext:
+Extracting font_57 into font_57.ext:
+Extracting font_74 into font_74.ext:
+Extracting font_6F into font_6F.ext:
+Extracting font_70 into font_70.ext:
+Extracting font_6E into font_6E.ext:
+Extracting font_50 into font_50.ext:
+Extracting font_44 into font_44.ext:
+Extracting font_4B into font_4B.ext:
+Extracting font_2D into font_2D.ext:
+Extracting font_72 into font_72.ext:
+Extracting font_76 into font_76.ext:
+Extracting font_43 into font_43.ext:
+Extracting font_28 into font_28.ext:
+Extracting font_29 into font_29.ext:
+Extracting font_20 into font_20.ext:
+Extracting font_66 into font_66.ext:
+Extracting font_62 into font_62.ext:
+Extracting font_61 into font_61.ext:
+Extracting font_65 into font_65.ext:
+Extracting font_6C into font_6C.ext:
+Extracting font_73 into font_73.ext:
+Extracting copyright_block into copyright_block.ext:
+Extracting alpha_0 into alpha_0.ext:
+Extracting user_id_textblock into user_id_textblock.ext:
+Extracting open_source into open_source.ext:
+Extracting caravel into caravel.ext:
+caravel: 744 fatal errors
+Total of 16528 errors (check feedback entries).
+Total of 1094 warnings.
+exttospice finished.
+Using technology "sky130A", version 1.0.179-3-gaac3d1a

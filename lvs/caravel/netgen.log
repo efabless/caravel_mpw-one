@@ -1,0 +1,14 @@
+Netgen 1.5.183 compiled on Thu Jun  3 18:36:38 PDT 2021
+Warning: netgen command 'format' use fully-qualified name '::netgen::format'
+Warning: netgen command 'global' use fully-qualified name '::netgen::global'
+Reading netlist file ../spi/lvs/caravel.spice
+Error in SPICE file read: No file ../spi/lvs/caravel.spice
+-1
+    while executing
+"netgen::readnet $file1"
+    (procedure "lvs" line 58)
+    invoked from within
+"lvs {../spi/lvs/caravel.spice caravel} {../../verilog/gl/caravel.v caravel} sky130A_setup.tcl caravel_comp.out"
+    ("eval" body line 1)
+    invoked from within
+"eval $argv"

@@ -1,13 +1,10 @@
 #!/bin/sh
 #
 
-# cd $PROJECT_ROOT
-# mkdir -p ./lvs/caravel
-# cd ./lvs/caravel	
-# for x in `ls ../../mag/*.mag` ; do ln -s $x . ; done
-
 cd ../../mag
+mv ../maglef/sky130_fd_sc_hvl__lsbufhv2lv_1_wrapped.mag ../maglef/sky130_fd_sc_hvl__lsbufhv2lv_1_wrapped.mag.tmp
 maglef2lvs.sh caravel.mag
+mv ../maglef/sky130_fd_sc_hvl__lsbufhv2lv_1_wrapped.mag.tmp ../maglef/sky130_fd_sc_hvl__lsbufhv2lv_1_wrapped.mag
 cd ../lvs/caravel
-netgen -batch lvs "caravel.maglef.lay.spice caravel" "../../verilog/gl/caravel.v caravel" sky130A_setup.tcl caravel_comp.out
+netgen -batch lvs "../spi/lvs/caravel.spice caravel" "../../verilog/gl/caravel.v caravel" sky130A_setup.tcl caravel_comp.out |& tee netgen.log
 cat caravel_comp.out
