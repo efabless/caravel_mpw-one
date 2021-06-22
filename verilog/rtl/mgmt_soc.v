@@ -506,6 +506,8 @@ module mgmt_soc (
     wire spi_master_stb_i;
     wire spi_master_ack_o;
     wire [31:0] spi_master_dat_o;
+    wire spi_enabled;
+    wire spi_csb, spi_sck, spi_sdo;
 
     simple_spi_master_wb #(
         .BASE_ADR(SPI_MASTER_BASE_ADR),
@@ -527,10 +529,11 @@ module mgmt_soc (
         .wb_dat_o(spi_master_dat_o),
 
 	.hk_connect(hk_connect),
-        .csb(mgmt_out_pre[3]),
-        .sck(mgmt_out_pre[4]),
+	.spi_enabled(spi_enabled),
+        .csb(spi_csb),
+        .sck(spi_sck),
+        .sdo(spi_sdo),
         .sdi(mgmt_in_data[1]),
-        .sdo(mgmt_out_pre[2]),
         .sdoenb(),
 	.irq(irq_spi_master)
     );
@@ -745,7 +748,14 @@ module mgmt_soc (
 
     assign mgmt_out_data[12:7] = mgmt_out_pre[12:7];
     assign mgmt_out_data[6] = uart_enabled ? ser_tx : mgmt_out_pre[6];
-    assign mgmt_out_data[5:0] = mgmt_out_pre[5:0];
+
+    assign mgmt_out_data[0] = mgmt_out_pre[0];
+    assign mgmt_out_data[1] = mgmt_out_pre[1];
+    assign mgmt_out_data[5] = mgmt_out_pre[5];
+
+    assign mgmt_out_data[2] = spi_enabled ? spi_sdo : mgmt_out_pre[2];
+    assign mgmt_out_data[3] = spi_enabled ? spi_csb : mgmt_out_pre[3];
+    assign mgmt_out_data[4] = spi_enabled ? spi_sck : mgmt_out_pre[4];
 
     mprj_ctrl_wb #(
         .BASE_ADR(MPRJ_CTRL_ADR)

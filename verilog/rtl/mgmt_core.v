@@ -323,9 +323,9 @@ module mgmt_core (
 		.vss(VGND),
 	    `endif
 	    .RSTB(porb),
-	    .SCK((hk_connect) ? mgmt_out_data[4] : mgmt_in_data[4]),
-	    .SDI((hk_connect) ? mgmt_out_data[2] : mgmt_in_data[2]),
-	    .CSB((hk_connect) ? mgmt_out_data[3] : mgmt_in_data[3]),
+	    .SCK((hk_connect) ? mgmt_out_predata[4] : mgmt_in_data[4]),
+	    .SDI((hk_connect) ? mgmt_out_predata[2] : mgmt_in_data[2]),
+	    .CSB((hk_connect) ? mgmt_out_predata[3] : mgmt_in_data[3]),
 	    .SDO(sdo_out_pre),
 	    .sdo_enb(sdo_outenb),
 	    .pll_dco_ena(spi_pll_dco_ena),
