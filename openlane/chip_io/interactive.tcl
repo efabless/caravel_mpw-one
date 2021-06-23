@@ -60,10 +60,10 @@ set core_obs "
 	met1 225 235 3365 4950, \
 	met2 225 235 3365 4950, \
 	met3 225 235 3365 4950, \
-	met4 225 235 3365 4950, \ 
-	met5 225 235 3365 4950
+	met4 225 235 3365 4955, \ 
+	met5 225 235 3365 4955
 "
-set gpio_m3_pins_north "met3 469.965 4972.585 1619.445 4988.785"
+set gpio_m3_pins_north "met3 469.965 4972.585 3200.4450 4988.785"
 
 set gpio_m3_pins_west_0 "met3 198.400 1002.125 215.185 2202.125"
 
@@ -72,6 +72,10 @@ set gpio_m3_pins_west_1 "met3 198.400 2726.820 215.185 4126.82"
 set gpio_m3_pins_west_2 "met3 198.400 4641.655 215.185 4755.305"
 
 set gpio_m3_pins_east "met3 3370.840 600.050 3387.01 4731.99"
+
+#set vssa_m3_east "met3 3387.79500 2102.44500 3390.02500 2130.06500"
+
+#set vssa_m2_east  "met2 3387.67500 2128.50000 3388.00500 2152.50000"
 
 set ::env(GLB_RT_OBS) "$core_obs"
 
@@ -166,22 +170,22 @@ li1_hack_end
 label_macro_pins\
 	-lef $::env(TMP_DIR)/lvs.lef\
 	-netlist_def $::env(TMP_DIR)/lvs.def\
-	-pad_pin_name "PAD"\
-	-extra_args {-v\
-	--map mgmt_vdda_hvclamp_pad VDDA vdda INOUT\
-	--map user1_vdda_hvclamp_pad\\\[0\\] VDDA vdda1 INOUT\
-	--map user2_vdda_hvclamp_pad VDDA vdda2 INOUT\
-	--map mgmt_vssa_hvclamp_pad VSSA vssa INOUT\
-	--map user1_vssa_hvclamp_pad\\\[0\\] VSSA vssa1 INOUT\
-	--map user2_vssa_hvclamp_pad VSSA vssa2 INOUT\
-	--map mgmt_vccd_lvclamp_pad VCCD vccd INOUT\
-	--map user1_vccd_lvclamp_pad VCCD vccd1 INOUT\
-	--map user2_vccd_lvclamp_pad VCCD vccd2 INOUT\
-	--map mgmt_vssd_lvclmap_pad VSSD vssd INOUT\
-	--map user1_vssd_lvclmap_pad VSSD vssd1 INOUT\
-	--map user2_vssd_lvclmap_pad VSSD vssd2 INOUT\
-	--map mgmt_vddio_hvclamp_pad\\\[0\\] VDDIO vddio INOUT\
-	--map mgmt_vssio_hvclamp_pad\\\[0\\] VSSIO vssio INOUT}
+	-pad_pin_name "PAD"
+	# -extra_args {-v\
+	# --map mgmt_vdda_hvclamp_pad VDDA vdda INOUT\
+	# --map user1_vdda_hvclamp_pad\\\[0\\] VDDA vdda1 INOUT\
+	# --map user2_vdda_hvclamp_pad VDDA vdda2 INOUT\
+	# --map mgmt_vssa_hvclamp_pad VSSA vssa INOUT\
+	# --map user1_vssa_hvclamp_pad\\\[0\\] VSSA vssa1 INOUT\
+	# --map user2_vssa_hvclamp_pad VSSA vssa2 INOUT\
+	# --map mgmt_vccd_lvclamp_pad VCCD vccd INOUT\
+	# --map user1_vccd_lvclamp_pad VCCD vccd1 INOUT\
+	# --map user2_vccd_lvclamp_pad VCCD vccd2 INOUT\
+	# --map mgmt_vssd_lvclmap_pad VSSD vssd INOUT\
+	# --map user1_vssd_lvclmap_pad VSSD vssd1 INOUT\
+	# --map user2_vssd_lvclmap_pad VSSD vssd2 INOUT\
+	# --map mgmt_vddio_hvclamp_pad\\\[0\\] VDDIO vddio INOUT\
+	# --map mgmt_vssio_hvclamp_pad\\\[0\\] VSSIO vssio INOUT}
 
 
 run_magic

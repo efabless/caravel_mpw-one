@@ -1945,7 +1945,7 @@ COMPONENTS 818 ;
     - mprj_pads.area1_io_pad\[15\] sky130_ef_io__gpiov2_pad_wrapped + FIXED ( 3130000 4977035 ) N ;
     - mprj_pads.area1_io_pad\[16\] sky130_ef_io__gpiov2_pad_wrapped + FIXED ( 2621000 4977035 ) N ;
     - mprj_pads.area1_io_pad\[17\] sky130_ef_io__gpiov2_pad_wrapped + FIXED ( 2364000 4977035 ) N ;
-    - mprj_pads.area1_io_pad\[18\] sky130_ef_io__gpiov2_pad_wrapped + FIXED ( 1919000 4977035 ) N ;
+    - mprj_pads.area1_io_pad\[18\] sky130_ef_io__gpiov2_pad_wrapped + FIXED ( 2106000 4977035 ) N ;
     - mprj_pads.area1_io_pad\[1\] sky130_ef_io__gpiov2_pad_wrapped + FIXED ( 3377035 726000 ) E ;
     - mprj_pads.area1_io_pad\[2\] sky130_ef_io__gpiov2_pad_wrapped + FIXED ( 3377035 951000 ) E ;
     - mprj_pads.area1_io_pad\[3\] sky130_ef_io__gpiov2_pad_wrapped + FIXED ( 3377035 1177000 ) E ;
@@ -2072,20 +2072,20 @@ COMPONENTS 818 ;
     - FILLER_93 sky130_ef_io__com_bus_slice_5um + FIXED ( 1912000 4990035 ) N ;
     - FILLER_94 sky130_ef_io__com_bus_slice_1um + FIXED ( 1917000 4990035 ) N ;
     - FILLER_95 sky130_ef_io__com_bus_slice_1um + FIXED ( 1918000 4990035 ) N ;
-    - FILLER_97 sky130_ef_io__com_bus_slice_20um + FIXED ( 1999000 4990035 ) N ;
-    - FILLER_98 sky130_ef_io__com_bus_slice_20um + FIXED ( 2019000 4990035 ) N ;
-    - FILLER_99 sky130_ef_io__com_bus_slice_20um + FIXED ( 2039000 4990035 ) N ;
-    - FILLER_100 sky130_ef_io__com_bus_slice_20um + FIXED ( 2059000 4990035 ) N ;
-    - FILLER_101 sky130_ef_io__com_bus_slice_20um + FIXED ( 2079000 4990035 ) N ;
-    - FILLER_102 sky130_ef_io__com_bus_slice_20um + FIXED ( 2099000 4990035 ) N ;
-    - FILLER_103 sky130_ef_io__com_bus_slice_20um + FIXED ( 2119000 4990035 ) N ;
-    - FILLER_104 sky130_ef_io__com_bus_slice_20um + FIXED ( 2139000 4990035 ) N ;
-    - FILLER_105 sky130_ef_io__com_bus_slice_10um + FIXED ( 2159000 4990035 ) N ;
-    - FILLER_106 sky130_ef_io__com_bus_slice_5um + FIXED ( 2169000 4990035 ) N ;
-    - FILLER_107 sky130_ef_io__com_bus_slice_1um + FIXED ( 2174000 4990035 ) N ;
-    - FILLER_108 sky130_ef_io__com_bus_slice_1um + FIXED ( 2175000 4990035 ) N ;
-    - disconnect_vdda_0 sky130_ef_io__disconnect_vdda_slice_5um + FIXED ( 2176000 4990035 ) N ;
-    - disconnect_vccd_0 sky130_ef_io__disconnect_vccd_slice_5um + FIXED ( 2181000 4990035 ) N ;
+    - disconnect_vdda_0 sky130_ef_io__disconnect_vdda_slice_5um + FIXED ( 1919000 4990035 ) N ;
+    - disconnect_vccd_0 sky130_ef_io__disconnect_vccd_slice_5um + FIXED ( 1924000 4990035 ) N ;
+    - FILLER_98 sky130_ef_io__com_bus_slice_20um + FIXED ( 1929000 4990035 ) N ;
+    - FILLER_99 sky130_ef_io__com_bus_slice_20um + FIXED ( 1949000 4990035 ) N ;
+    - FILLER_100 sky130_ef_io__com_bus_slice_20um + FIXED ( 1969000 4990035 ) N ;
+    - FILLER_101 sky130_ef_io__com_bus_slice_20um + FIXED ( 1989000 4990035 ) N ;
+    - FILLER_102 sky130_ef_io__com_bus_slice_20um + FIXED ( 2009000 4990035 ) N ;
+    - FILLER_103 sky130_ef_io__com_bus_slice_20um + FIXED ( 2029000 4990035 ) N ;
+    - FILLER_104 sky130_ef_io__com_bus_slice_20um + FIXED ( 2049000 4990035 ) N ;
+    - FILLER_105 sky130_ef_io__com_bus_slice_20um + FIXED ( 2069000 4990035 ) N ;
+    - FILLER_106 sky130_ef_io__com_bus_slice_10um + FIXED ( 2089000 4990035 ) N ;
+    - FILLER_107 sky130_ef_io__com_bus_slice_5um + FIXED ( 2099000 4990035 ) N ;
+    - FILLER_108 sky130_ef_io__com_bus_slice_1um + FIXED ( 2104000 4990035 ) N ;
+    - FILLER_109 sky130_ef_io__com_bus_slice_1um + FIXED ( 2105000 4990035 ) N ;
     - FILLER_111 sky130_ef_io__com_bus_slice_20um + FIXED ( 2186000 4990035 ) N ;
     - FILLER_112 sky130_ef_io__com_bus_slice_20um + FIXED ( 2206000 4990035 ) N ;
     - FILLER_113 sky130_ef_io__com_bus_slice_20um + FIXED ( 2226000 4990035 ) N ;
@@ -2919,22 +2919,22 @@ PINS 662 ;
     - mprj_io_slow_sel[17] + NET mprj_io_slow_sel[17] + DIRECTION INPUT + USE SIGNAL + PLACED ( 2430025 4978235 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
     - mprj_io_vtrip_sel[17] + NET mprj_io_vtrip_sel[17] + DIRECTION INPUT + USE SIGNAL + PLACED ( 2374825 4978235 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
     - mprj_io_in[17] + NET mprj_io_in[17] + DIRECTION OUTPUT + USE SIGNAL + PLACED ( 2439225 4978235 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - mprj_analog_io[11] + NET mprj_analog_io[11] + DIRECTION INOUT + USE SIGNAL + PLACED ( 1981805 4978235 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - mprj_io[18] + NET mprj_io[18] + DIRECTION INOUT + USE SIGNAL + PLACED ( 1961500 5123785 ) N + LAYER met5 ( -31300 -31225 ) ( 31300 31225 ) ;
-    - mprj_io_analog_en[18] + NET mprj_io_analog_en[18] + DIRECTION INPUT + USE SIGNAL + PLACED ( 1969845 4978235 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - mprj_io_analog_pol[18] + NET mprj_io_analog_pol[18] + DIRECTION INPUT + USE SIGNAL + PLACED ( 1963405 4978235 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - mprj_io_analog_sel[18] + NET mprj_io_analog_sel[18] + DIRECTION INPUT + USE SIGNAL + PLACED ( 1948225 4978235 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - mprj_io_dm[54] + NET mprj_io_dm[54] + DIRECTION INPUT + USE SIGNAL + PLACED ( 1966625 4978235 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - mprj_io_dm[55] + NET mprj_io_dm[55] + DIRECTION INPUT + USE SIGNAL + PLACED ( 1975825 4978235 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - mprj_io_dm[56] + NET mprj_io_dm[56] + DIRECTION INPUT + USE SIGNAL + PLACED ( 1945005 4978235 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - mprj_io_holdover[18] + NET mprj_io_holdover[18] + DIRECTION INPUT + USE SIGNAL + PLACED ( 1941785 4978235 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - mprj_io_ib_mode_sel[18] + NET mprj_io_ib_mode_sel[18] + DIRECTION INPUT + USE SIGNAL + PLACED ( 1926605 4978235 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - mprj_io_inp_dis[18] + NET mprj_io_inp_dis[18] + DIRECTION INPUT + USE SIGNAL + PLACED ( 1960645 4978235 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - mprj_io_oeb[18] + NET mprj_io_oeb[18] + DIRECTION INPUT + USE SIGNAL + PLACED ( 1923385 4978235 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - mprj_io_out[18] + NET mprj_io_out[18] + DIRECTION INPUT + USE SIGNAL + PLACED ( 1939025 4978235 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - mprj_io_slow_sel[18] + NET mprj_io_slow_sel[18] + DIRECTION INPUT + USE SIGNAL + PLACED ( 1985025 4978235 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - mprj_io_vtrip_sel[18] + NET mprj_io_vtrip_sel[18] + DIRECTION INPUT + USE SIGNAL + PLACED ( 1929825 4978235 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
-    - mprj_io_in[18] + NET mprj_io_in[18] + DIRECTION OUTPUT + USE SIGNAL + PLACED ( 1994225 4978235 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
+    - mprj_analog_io[11] + NET mprj_analog_io[11] + DIRECTION INOUT + USE SIGNAL + PLACED ( 2168805 4978235 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
+    - mprj_io[18] + NET mprj_io[18] + DIRECTION INOUT + USE SIGNAL + PLACED ( 2148500 5123785 ) N + LAYER met5 ( -31300 -31225 ) ( 31300 31225 ) ;
+    - mprj_io_analog_en[18] + NET mprj_io_analog_en[18] + DIRECTION INPUT + USE SIGNAL + PLACED ( 2156845 4978235 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
+    - mprj_io_analog_pol[18] + NET mprj_io_analog_pol[18] + DIRECTION INPUT + USE SIGNAL + PLACED ( 2150405 4978235 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
+    - mprj_io_analog_sel[18] + NET mprj_io_analog_sel[18] + DIRECTION INPUT + USE SIGNAL + PLACED ( 2135225 4978235 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
+    - mprj_io_dm[54] + NET mprj_io_dm[54] + DIRECTION INPUT + USE SIGNAL + PLACED ( 2153625 4978235 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
+    - mprj_io_dm[55] + NET mprj_io_dm[55] + DIRECTION INPUT + USE SIGNAL + PLACED ( 2162825 4978235 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
+    - mprj_io_dm[56] + NET mprj_io_dm[56] + DIRECTION INPUT + USE SIGNAL + PLACED ( 2132005 4978235 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
+    - mprj_io_holdover[18] + NET mprj_io_holdover[18] + DIRECTION INPUT + USE SIGNAL + PLACED ( 2128785 4978235 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
+    - mprj_io_ib_mode_sel[18] + NET mprj_io_ib_mode_sel[18] + DIRECTION INPUT + USE SIGNAL + PLACED ( 2113605 4978235 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
+    - mprj_io_inp_dis[18] + NET mprj_io_inp_dis[18] + DIRECTION INPUT + USE SIGNAL + PLACED ( 2147645 4978235 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
+    - mprj_io_oeb[18] + NET mprj_io_oeb[18] + DIRECTION INPUT + USE SIGNAL + PLACED ( 2110385 4978235 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
+    - mprj_io_out[18] + NET mprj_io_out[18] + DIRECTION INPUT + USE SIGNAL + PLACED ( 2126025 4978235 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
+    - mprj_io_slow_sel[18] + NET mprj_io_slow_sel[18] + DIRECTION INPUT + USE SIGNAL + PLACED ( 2172025 4978235 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
+    - mprj_io_vtrip_sel[18] + NET mprj_io_vtrip_sel[18] + DIRECTION INPUT + USE SIGNAL + PLACED ( 2116825 4978235 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
+    - mprj_io_in[18] + NET mprj_io_in[18] + DIRECTION OUTPUT + USE SIGNAL + PLACED ( 2181225 4978235 ) N + LAYER met2 ( -140 -1200 ) ( 140 1200 ) ;
     - mprj_io[1] + NET mprj_io[1] + DIRECTION INOUT + USE SIGNAL + PLACED ( 3523785 763500 ) N + LAYER met5 ( -31225 -31300 ) ( 31225 31300 ) ;
     - mprj_io_analog_en[1] + NET mprj_io_analog_en[1] + DIRECTION INPUT + USE SIGNAL + PLACED ( 3378235 755155 ) N + LAYER met2 ( -1200 -140 ) ( 1200 140 ) ;
     - mprj_io_analog_pol[1] + NET mprj_io_analog_pol[1] + DIRECTION INPUT + USE SIGNAL + PLACED ( 3378235 761595 ) N + LAYER met2 ( -1200 -140 ) ( 1200 140 ) ;
@@ -3409,7 +3409,7 @@ BLOCKAGES 10 ;
     - LAYER met3 RECT ( 225000 235000 ) ( 3365000 4950000 ) ;
     - LAYER met4 RECT ( 225000 235000 ) ( 3365000 4955000 ) ;
     - LAYER met5 RECT ( 225000 235000 ) ( 3365000 4955000 ) ;
-    - LAYER met3 RECT ( 469965 4972585 ) ( 1619445 4988785 ) ;
+    - LAYER met3 RECT ( 469965 4972585 ) ( 3200445 4988785 ) ;
     - LAYER met3 RECT ( 198400 1002125 ) ( 215185 2202125 ) ;
     - LAYER met3 RECT ( 198400 2726820 ) ( 215185 4126819 ) ;
     - LAYER met3 RECT ( 198400 4641655 ) ( 215185 4755305 ) ;
@@ -3617,15 +3617,10 @@ NETS 707 ;
       NEW met2 ( 1165410 4977260 ) ( 1165585 * 0 )
       NEW met2 ( 1165410 4952950 ) ( * 4977260 )
       NEW met1 ( 1165410 4952950 ) ( 1187030 * )
-      NEW met2 ( 1372410 4952780 ) ( * 4952950 )
-      NEW met2 ( 1372410 4952780 ) ( 1373330 * )
-      NEW met2 ( 1373330 4952780 ) ( * 4953290 )
-      NEW met2 ( 1373330 4953290 ) ( 1373790 * )
-      NEW met2 ( 1954310 4952950 ) ( * 4977260 0 )
-      NEW met2 ( 1932690 4952950 ) ( * 4977260 0 )
-      NEW met1 ( 1932690 4952950 ) ( 1954310 * )
-      NEW met1 ( 1932690 4952950 ) ( * 4953290 )
-      NEW met2 ( 2377510 4952950 ) ( * 4977260 0 )
+      NEW met2 ( 2141070 4953290 ) ( * 4977260 0 )
+      NEW met2 ( 2119450 4953290 ) ( * 4977260 0 )
+      NEW met1 ( 2119450 4953290 ) ( 2141070 * )
+      NEW met2 ( 2377510 4953290 ) ( * 4977260 0 )
       NEW met2 ( 3143410 4977260 ) ( 3143585 * 0 )
       NEW met2 ( 3143410 4952950 ) ( * 4977260 )
       NEW met2 ( 718290 220830 ) ( * 227970 )
@@ -3682,15 +3677,15 @@ NETS 707 ;
       NEW met2 ( 3377090 3704810 ) ( * 3707415 0 )
       NEW met1 ( 3376170 3704810 ) ( 3377090 * )
       NEW met2 ( 3376170 3685090 ) ( * 3704810 )
-      NEW met1 ( 3368810 3704810 ) ( 3376170 * )
+      NEW met1 ( 3369730 3704810 ) ( 3376170 * )
       NEW met2 ( 3377090 3908130 ) ( * 3910795 0 )
-      NEW met1 ( 3368810 3908130 ) ( 3377090 * )
+      NEW met1 ( 3369730 3908130 ) ( 3377090 * )
       NEW met2 ( 3377090 3929890 ) ( * 3932415 0 )
       NEW met1 ( 3376170 3929890 ) ( 3377090 * )
       NEW met2 ( 3376170 3908130 ) ( * 3929890 )
       NEW met1 ( 3369270 3929890 ) ( 3376170 * )
       NEW met2 ( 3377090 4824415 0 ) ( * 4826470 )
-      NEW met1 ( 3369270 4826470 ) ( 3377090 * )
+      NEW met1 ( 3368810 4826470 ) ( 3377090 * )
       NEW met2 ( 3376630 4802795 ) ( 3377090 * 0 )
       NEW met2 ( 3376630 4802795 ) ( * 4824415 )
       NEW met2 ( 3376630 4824415 ) ( 3377090 * 0 )
@@ -3704,19 +3699,24 @@ NETS 707 ;
       NEW met1 ( 908730 4952950 ) ( 930350 * )
       NEW met1 ( 416070 4952950 ) ( 908730 * )
       NEW met1 ( 930350 4952950 ) ( 1165410 * )
-      NEW met1 ( 1187030 4952950 ) ( 1372410 * )
+      NEW met1 ( 1187030 4952950 ) ( 1228200 * )
+      NEW met1 ( 1228200 4952950 ) ( * 4953290 )
       NEW met2 ( 1423470 4953290 ) ( * 4977260 0 )
       NEW met2 ( 1445090 4953290 ) ( * 4977260 0 )
-      NEW met1 ( 1373790 4953290 ) ( 1932690 * )
-      NEW met2 ( 2399130 4952950 ) ( * 4977260 0 )
+      NEW met1 ( 1228200 4953290 ) ( 2119450 * )
+      NEW met2 ( 2400970 4952610 ) ( * 4953290 )
+      NEW met1 ( 2400970 4952610 ) ( 2484000 * )
+      NEW met1 ( 2484000 4952610 ) ( * 4952950 )
+      NEW met2 ( 2399130 4953290 ) ( * 4977260 0 )
+      NEW met1 ( 2141070 4953290 ) ( 2400970 * )
       NEW met2 ( 2634650 4952950 ) ( * 4977260 0 )
       NEW met2 ( 2656270 4952950 ) ( * 4977260 0 )
       NEW met1 ( 2634650 4952950 ) ( 2656270 * )
-      NEW met1 ( 1954310 4952950 ) ( 2634650 * )
-      NEW met2 ( 3173770 4950570 ) ( * 4952950 )
+      NEW met1 ( 2484000 4952950 ) ( 2634650 * )
+      NEW met2 ( 3173310 4950570 ) ( * 4952950 )
       NEW met2 ( 3165030 4977260 ) ( 3165205 * 0 )
       NEW met2 ( 3165030 4952950 ) ( * 4977260 )
-      NEW met1 ( 2656270 4952950 ) ( 3173770 * )
+      NEW met1 ( 2656270 4952950 ) ( 3173310 * )
       NEW met2 ( 3377090 542130 ) ( * 544795 0 )
       NEW met1 ( 3368350 542130 ) ( 3377090 * )
       NEW met2 ( 3376630 544795 ) ( 3377090 * 0 )
@@ -3754,20 +3754,20 @@ NETS 707 ;
       NEW met2 ( 3377090 3255670 ) ( * 3256415 0 )
       NEW met1 ( 3368810 3255670 ) ( 3377090 * )
       NEW met2 ( 3368810 3028890 ) ( * 3232210 )
-      NEW met2 ( 3368810 3704810 ) ( * 3908130 )
+      NEW met2 ( 3369730 3704810 ) ( * 3908130 )
       NEW met2 ( 3377090 4378415 0 ) ( * 4379030 )
-      NEW met1 ( 3368350 4379030 ) ( 3377090 * )
+      NEW met1 ( 3368810 4379030 ) ( 3377090 * )
       NEW met2 ( 3376630 4356795 ) ( 3377090 * 0 )
       NEW met2 ( 3376630 4356795 ) ( * 4378415 )
       NEW met2 ( 3376630 4378415 ) ( 3377090 * 0 )
       NEW met1 ( 3369270 4356590 ) ( 3376630 * )
       NEW met2 ( 3376630 4356590 ) ( * 4356795 )
       NEW met2 ( 3369270 3929890 ) ( * 4356590 )
-      NEW met1 ( 3368350 4800290 ) ( 3377090 * )
-      NEW met2 ( 3368350 4379030 ) ( * 4800290 )
+      NEW met1 ( 3368810 4800290 ) ( 3377090 * )
+      NEW met2 ( 3368810 4379030 ) ( * 4800290 )
       NEW met2 ( 3377090 4800290 ) ( * 4802795 0 )
-      NEW met1 ( 3173770 4950570 ) ( 3369270 * )
-      NEW met2 ( 3369270 4826470 ) ( * 4950570 )
+      NEW met1 ( 3173310 4950570 ) ( 3368810 * )
+      NEW met2 ( 3368810 4826470 ) ( * 4950570 )
       NEW met2 ( 208610 2877205 0 ) ( 211830 * )
       NEW met2 ( 208610 2855660 0 ) ( 209070 * )
       NEW met2 ( 209070 2855660 ) ( * 2856340 )
@@ -3832,11 +3832,9 @@ NETS 707 ;
       NEW met1 ( 394450 4951250 ) M1M2_PR
       NEW met1 ( 1187030 4952950 ) M1M2_PR
       NEW met1 ( 1165410 4952950 ) M1M2_PR
-      NEW met1 ( 1372410 4952950 ) M1M2_PR
-      NEW met1 ( 1373790 4953290 ) M1M2_PR
-      NEW met1 ( 1954310 4952950 ) M1M2_PR
-      NEW met1 ( 1932690 4952950 ) M1M2_PR
-      NEW met1 ( 2377510 4952950 ) M1M2_PR
+      NEW met1 ( 2141070 4953290 ) M1M2_PR
+      NEW met1 ( 2119450 4953290 ) M1M2_PR
+      NEW met1 ( 2377510 4953290 ) M1M2_PR
       NEW met1 ( 3143410 4952950 ) M1M2_PR
       NEW met1 ( 718290 220830 ) M1M2_PR
       NEW met1 ( 718290 227970 ) M1M2_PR
@@ -3865,26 +3863,28 @@ NETS 707 ;
       NEW met1 ( 3377090 3704810 ) M1M2_PR
       NEW met1 ( 3376170 3704810 ) M1M2_PR
       NEW met1 ( 3376170 3685090 ) M1M2_PR
-      NEW met1 ( 3368810 3704810 ) M1M2_PR
+      NEW met1 ( 3369730 3704810 ) M1M2_PR
       NEW met1 ( 3377090 3908130 ) M1M2_PR
-      NEW met1 ( 3368810 3908130 ) M1M2_PR
+      NEW met1 ( 3369730 3908130 ) M1M2_PR
       NEW met1 ( 3377090 3929890 ) M1M2_PR
       NEW met1 ( 3376170 3929890 ) M1M2_PR
       NEW met1 ( 3376170 3908130 ) M1M2_PR
       NEW met1 ( 3369270 3929890 ) M1M2_PR
       NEW met1 ( 3377090 4826470 ) M1M2_PR
-      NEW met1 ( 3369270 4826470 ) M1M2_PR
+      NEW met1 ( 3368810 4826470 ) M1M2_PR
       NEW met1 ( 651590 4952950 ) M1M2_PR
       NEW met1 ( 673210 4952950 ) M1M2_PR
       NEW met1 ( 908730 4952950 ) M1M2_PR
       NEW met1 ( 930350 4952950 ) M1M2_PR
       NEW met1 ( 1423470 4953290 ) M1M2_PR
       NEW met1 ( 1445090 4953290 ) M1M2_PR
-      NEW met1 ( 2399130 4952950 ) M1M2_PR
+      NEW met1 ( 2400970 4953290 ) M1M2_PR
+      NEW met1 ( 2400970 4952610 ) M1M2_PR
+      NEW met1 ( 2399130 4953290 ) M1M2_PR
       NEW met1 ( 2634650 4952950 ) M1M2_PR
       NEW met1 ( 2656270 4952950 ) M1M2_PR
-      NEW met1 ( 3173770 4952950 ) M1M2_PR
-      NEW met1 ( 3173770 4950570 ) M1M2_PR
+      NEW met1 ( 3173310 4952950 ) M1M2_PR
+      NEW met1 ( 3173310 4950570 ) M1M2_PR
       NEW met1 ( 3165030 4952950 ) M1M2_PR
       NEW met1 ( 3377090 542130 ) M1M2_PR
       NEW met1 ( 3368350 542130 ) M1M2_PR
@@ -3907,12 +3907,12 @@ NETS 707 ;
       NEW met1 ( 3377090 3255670 ) M1M2_PR
       NEW met1 ( 3368810 3255670 ) M1M2_PR
       NEW met1 ( 3377090 4379030 ) M1M2_PR
-      NEW met1 ( 3368350 4379030 ) M1M2_PR
+      NEW met1 ( 3368810 4379030 ) M1M2_PR
       NEW met1 ( 3369270 4356590 ) M1M2_PR
       NEW met1 ( 3376630 4356590 ) M1M2_PR
-      NEW met1 ( 3368350 4800290 ) M1M2_PR
+      NEW met1 ( 3368810 4800290 ) M1M2_PR
       NEW met1 ( 3377090 4800290 ) M1M2_PR
-      NEW met1 ( 3369270 4950570 ) M1M2_PR
+      NEW met1 ( 3368810 4950570 ) M1M2_PR
       NEW met1 ( 3377090 3460350 ) M1M2_PR
       NEW met1 ( 3368810 3460350 ) M1M2_PR
       NEW met1 ( 3377090 3479730 ) M1M2_PR
@@ -3931,7 +3931,7 @@ NETS 707 ;
       NEW met2 ( 211830 3739490 ) RECT ( -70 -485 70 0 ) 
       NEW met2 ( 212750 4805730 ) RECT ( -70 -485 70 0 ) 
       NEW met2 ( 212290 3934990 ) RECT ( -70 -485 70 0 ) 
-      NEW met1 ( 2377510 4952950 ) RECT ( -595 -70 0 70 ) 
+      NEW met1 ( 2377510 4953290 ) RECT ( -595 -70 0 70 ) 
       NEW met1 ( 3143410 4952950 ) RECT ( -595 -70 0 70 ) 
       NEW met1 ( 725650 220830 ) RECT ( -595 -70 0 70 ) 
       NEW met1 ( 1815390 221510 ) RECT ( -595 -70 0 70 ) 
@@ -3944,7 +3944,7 @@ NETS 707 ;
       NEW met1 ( 673210 4952950 ) RECT ( -595 -70 0 70 ) 
       NEW met1 ( 1423470 4953290 ) RECT ( -595 -70 0 70 ) 
       NEW met1 ( 1445090 4953290 ) RECT ( -595 -70 0 70 ) 
-      NEW met1 ( 2399130 4952950 ) RECT ( -595 -70 0 70 ) 
+      NEW met1 ( 2399130 4953290 ) RECT ( -595 -70 0 70 ) 
       NEW met1 ( 3165030 4952950 ) RECT ( -595 -70 0 70 ) 
       NEW met1 ( 3376170 3009170 ) RECT ( -595 -70 0 70 ) 
       NEW met2 ( 3368810 3255670 ) RECT ( -70 -485 70 0 ) 
@@ -4058,11 +4058,14 @@ NETS 707 ;
       NEW met1 ( 441830 4950230 ) ( * 4950570 )
       NEW met2 ( 450110 4953630 ) ( * 4977260 0 )
       NEW met2 ( 964245 4977260 0 ) ( 964390 * )
-      NEW met2 ( 964390 4953630 ) ( * 4977260 )
+      NEW met2 ( 964390 4951930 ) ( * 4977260 )
+      NEW met1 ( 1183350 4951930 ) ( * 4952610 )
       NEW met2 ( 1221070 4977260 ) ( 1221245 * 0 )
-      NEW met2 ( 1221070 4953630 ) ( * 4977260 )
-      NEW met2 ( 1988350 4953630 ) ( * 4977260 0 )
-      NEW met2 ( 2690310 4953630 ) ( * 4977260 0 )
+      NEW met2 ( 1221070 4952610 ) ( * 4977260 )
+      NEW met2 ( 2175110 4953970 ) ( * 4977260 0 )
+      NEW met2 ( 2690770 4952270 ) ( * 4953630 )
+      NEW met2 ( 2690310 4977260 0 ) ( 2690770 * )
+      NEW met2 ( 2690770 4953630 ) ( * 4977260 )
       NEW met3 ( 729100 199920 0 ) ( 729340 * )
       NEW met3 ( 729340 199920 ) ( * 201620 )
       NEW met3 ( 729100 201620 ) ( 729340 * )
@@ -4102,13 +4105,15 @@ NETS 707 ;
       NEW met2 ( 707250 4953630 ) ( * 4977260 0 )
       NEW met1 ( 441830 4953630 ) ( 707250 * )
       NEW met1 ( 707250 4953630 ) ( 964390 * )
-      NEW met2 ( 1479130 4953630 ) ( * 4977260 0 )
-      NEW met1 ( 964390 4953630 ) ( 1479130 * )
-      NEW met2 ( 2433170 4953630 ) ( * 4977260 0 )
-      NEW met1 ( 1479130 4953630 ) ( 2433170 * )
+      NEW met1 ( 964390 4951930 ) ( 1183350 * )
+      NEW met2 ( 1479130 4952610 ) ( * 4977260 0 )
+      NEW met1 ( 1183350 4952610 ) ( 1479130 * )
+      NEW met2 ( 2433170 4952270 ) ( * 4977260 0 )
+      NEW met1 ( 1479130 4953970 ) ( 2433170 * )
+      NEW met1 ( 2433170 4952270 ) ( 2690770 * )
       NEW met2 ( 3199070 4977260 ) ( 3199245 * 0 )
       NEW met2 ( 3199070 4951250 ) ( * 4977260 )
-      NEW met1 ( 2433170 4953630 ) ( 3199070 * )
+      NEW met1 ( 2690770 4953630 ) ( 3199070 * )
       NEW met2 ( 3377090 508470 ) ( * 510755 0 )
       NEW met1 ( 3368810 508470 ) ( 3377090 * )
       NEW met2 ( 3368810 227630 ) ( * 508470 )
@@ -4133,15 +4138,15 @@ NETS 707 ;
       NEW met1 ( 3367890 3203310 ) ( 3377090 * )
       NEW met2 ( 3367890 2978230 ) ( * 3203310 )
       NEW met2 ( 3367430 3654490 ) ( * 3879230 )
-      NEW met1 ( 3367430 4352850 ) ( 3368810 * )
+      NEW met1 ( 3367430 4352850 ) ( 3368350 * )
       NEW met2 ( 3377090 4322250 ) ( * 4322755 0 )
       NEW met1 ( 3367430 4322250 ) ( 3377090 * )
       NEW met2 ( 3367430 3879230 ) ( * 4352850 )
       NEW met2 ( 3377090 4766630 ) ( * 4768755 0 )
-      NEW met1 ( 3368810 4766630 ) ( 3377090 * )
-      NEW met2 ( 3368810 4352850 ) ( * 4766630 )
-      NEW met1 ( 3199070 4951250 ) ( 3368810 * )
-      NEW met2 ( 3368810 4766630 ) ( * 4951250 )
+      NEW met1 ( 3368350 4766630 ) ( 3377090 * )
+      NEW met2 ( 3368350 4352850 ) ( * 4766630 )
+      NEW met1 ( 3199070 4951250 ) ( 3368350 * )
+      NEW met2 ( 3368350 4766630 ) ( * 4951250 )
       NEW met2 ( 212750 2925600 ) ( * 3014950 )
       NEW met2 ( 208610 2911245 0 ) ( 209070 * )
       NEW met2 ( 209070 2908530 ) ( * 2911245 )
@@ -4234,10 +4239,12 @@ NETS 707 ;
       NEW met1 ( 441830 4953630 ) M1M2_PR
       NEW met1 ( 441830 4950570 ) M1M2_PR
       NEW met1 ( 450110 4953630 ) M1M2_PR
+      NEW met1 ( 964390 4951930 ) M1M2_PR
       NEW met1 ( 964390 4953630 ) M1M2_PR
-      NEW met1 ( 1221070 4953630 ) M1M2_PR
-      NEW met1 ( 1988350 4953630 ) M1M2_PR
-      NEW met1 ( 2690310 4953630 ) M1M2_PR
+      NEW met1 ( 1221070 4952610 ) M1M2_PR
+      NEW met1 ( 2175110 4953970 ) M1M2_PR
+      NEW met1 ( 2690770 4952270 ) M1M2_PR
+      NEW met1 ( 2690770 4953630 ) M1M2_PR
       NEW met2 ( 717830 202300 ) via2_FR
       NEW met1 ( 717830 234430 ) M1M2_PR
       NEW met2 ( 1485570 234260 ) via2_FR
@@ -4259,8 +4266,10 @@ NETS 707 ;
       NEW met1 ( 3377090 3879230 ) M1M2_PR
       NEW met1 ( 3367430 3879230 ) M1M2_PR
       NEW met1 ( 707250 4953630 ) M1M2_PR
-      NEW met1 ( 1479130 4953630 ) M1M2_PR
-      NEW met1 ( 2433170 4953630 ) M1M2_PR
+      NEW met1 ( 1479130 4952610 ) M1M2_PR
+      NEW met1 ( 1479130 4953970 ) M1M2_PR
+      NEW met1 ( 2433170 4952270 ) M1M2_PR
+      NEW met1 ( 2433170 4953970 ) M1M2_PR
       NEW met1 ( 3199070 4951250 ) M1M2_PR
       NEW met1 ( 3199070 4953630 ) M1M2_PR
       NEW met1 ( 3377090 508470 ) M1M2_PR
@@ -4278,12 +4287,12 @@ NETS 707 ;
       NEW met1 ( 3377090 3203310 ) M1M2_PR
       NEW met1 ( 3367890 3203310 ) M1M2_PR
       NEW met1 ( 3367430 4352850 ) M1M2_PR
-      NEW met1 ( 3368810 4352850 ) M1M2_PR
+      NEW met1 ( 3368350 4352850 ) M1M2_PR
       NEW met1 ( 3377090 4322250 ) M1M2_PR
       NEW met1 ( 3367430 4322250 ) M1M2_PR
       NEW met1 ( 3377090 4766630 ) M1M2_PR
-      NEW met1 ( 3368810 4766630 ) M1M2_PR
-      NEW met1 ( 3368810 4951250 ) M1M2_PR
+      NEW met1 ( 3368350 4766630 ) M1M2_PR
+      NEW met1 ( 3368350 4951250 ) M1M2_PR
       NEW met1 ( 209070 2908530 ) M1M2_PR
       NEW met1 ( 212290 2908530 ) M1M2_PR
       NEW met1 ( 212290 2855830 ) M1M2_PR
@@ -4300,11 +4309,13 @@ NETS 707 ;
       NEW met1 ( 3369730 2752470 ) M1M2_PR
       NEW met3 ( 221030 359380 ) RECT ( -800 -150 0 150 ) 
       NEW met1 ( 450110 4953630 ) RECT ( -595 -70 0 70 ) 
-      NEW met1 ( 1221070 4953630 ) RECT ( -595 -70 0 70 ) 
-      NEW met1 ( 1988350 4953630 ) RECT ( -595 -70 0 70 ) 
-      NEW met1 ( 2690310 4953630 ) RECT ( -595 -70 0 70 ) 
+      NEW met2 ( 964390 4953630 ) RECT ( -70 -485 70 0 ) 
+      NEW met1 ( 1221070 4952610 ) RECT ( -595 -70 0 70 ) 
+      NEW met1 ( 2175110 4953970 ) RECT ( -595 -70 0 70 ) 
       NEW met1 ( 2581750 221170 ) RECT ( -595 -70 0 70 ) 
       NEW met1 ( 3369730 3654490 ) RECT ( -595 -70 0 70 ) 
+      NEW met2 ( 1479130 4953970 ) RECT ( -70 -485 70 0 ) 
+      NEW met2 ( 2433170 4953970 ) RECT ( -70 -485 70 0 ) 
       NEW met2 ( 3199070 4953630 ) RECT ( -70 -485 70 0 ) 
       NEW met1 ( 3369270 1861670 ) RECT ( -595 -70 0 70 ) 
       NEW met1 ( 3369730 2978230 ) RECT ( -595 -70 0 70 ) 
@@ -4437,9 +4448,8 @@ NETS 707 ;
       NEW met2 ( 412850 4950570 ) ( * 4977260 0 )
       NEW met2 ( 1183810 4977260 ) ( 1183985 * 0 )
       NEW met2 ( 1183810 4953970 ) ( * 4977260 )
-      NEW met2 ( 1183810 4952610 ) ( * 4953970 )
-      NEW met2 ( 1951090 4953290 ) ( * 4977260 0 )
-      NEW met2 ( 1951090 4952610 ) ( * 4953290 )
+      NEW met2 ( 1183810 4952270 ) ( * 4953970 )
+      NEW met2 ( 2137850 4953630 ) ( * 4977260 0 )
       NEW met1 ( 224710 227630 ) ( 980030 * )
       NEW met1 ( 1021890 220830 ) ( 1750070 * )
       NEW met2 ( 2071150 209100 0 ) ( * 222190 )
@@ -4469,19 +4479,18 @@ NETS 707 ;
       NEW met2 ( 927130 4953970 ) ( * 4977260 )
       NEW met1 ( 675970 4952270 ) ( 924830 * )
       NEW met1 ( 924830 4953970 ) ( 1183810 * )
-      NEW met2 ( 1441870 4952610 ) ( * 4977260 0 )
-      NEW met1 ( 1183810 4952610 ) ( 1951090 * )
-      NEW met2 ( 2400970 4952270 ) ( * 4953290 )
-      NEW met2 ( 2395910 4953290 ) ( * 4977260 0 )
-      NEW met1 ( 1951090 4953290 ) ( 2400970 * )
-      NEW met1 ( 2677200 4952270 ) ( * 4952610 )
-      NEW met2 ( 2653050 4952270 ) ( * 4977260 0 )
-      NEW met1 ( 2400970 4952270 ) ( 2677200 * )
-      NEW met1 ( 2677200 4952610 ) ( 3160200 * )
-      NEW met1 ( 3160200 4950910 ) ( * 4952610 )
+      NEW met2 ( 1446010 4952270 ) ( * 4953630 )
+      NEW met2 ( 1441870 4952270 ) ( * 4977260 0 )
+      NEW met1 ( 1183810 4952270 ) ( 1446010 * )
+      NEW met1 ( 1446010 4953630 ) ( 2137850 * )
+      NEW met2 ( 2395910 4953630 ) ( * 4977260 0 )
+      NEW met1 ( 2677200 4953630 ) ( * 4953970 )
+      NEW met2 ( 2653050 4953630 ) ( * 4977260 0 )
+      NEW met1 ( 2137850 4953630 ) ( 2677200 * )
+      NEW met2 ( 3173770 4950910 ) ( * 4953970 )
       NEW met2 ( 3161810 4977260 ) ( 3161985 * 0 )
-      NEW met2 ( 3161810 4952610 ) ( * 4977260 )
-      NEW met1 ( 3160200 4952610 ) ( 3161810 * )
+      NEW met2 ( 3161810 4953970 ) ( * 4977260 )
+      NEW met1 ( 2677200 4953970 ) ( 3173770 * )
       NEW met2 ( 3377090 547570 ) ( * 548015 0 )
       NEW met1 ( 3367890 547570 ) ( 3377090 * )
       NEW met2 ( 3368350 745200 ) ( * 776050 )
@@ -4500,10 +4509,12 @@ NETS 707 ;
       NEW met1 ( 3368350 3235270 ) ( 3377090 * )
       NEW met2 ( 3368350 3014610 ) ( * 3235270 )
       NEW met2 ( 3368350 3690530 ) ( * 3911530 )
+      NEW met2 ( 3368350 3911530 ) ( * 3933000 )
+      NEW met2 ( 3368350 3933000 ) ( 3368810 * )
       NEW met2 ( 3377090 4360015 0 ) ( * 4362030 )
       NEW met1 ( 3367430 4362030 ) ( 3377090 * )
-      NEW met2 ( 3370190 3911530 ) ( * 4362030 )
-      NEW met1 ( 3160200 4950910 ) ( 3367430 * )
+      NEW met2 ( 3368810 3933000 ) ( * 4362030 )
+      NEW met1 ( 3173770 4950910 ) ( 3367430 * )
       NEW met2 ( 3367430 4362030 ) ( * 4950910 )
       NEW met2 ( 208610 2874020 0 ) ( 209070 * )
       NEW met2 ( 209070 2874020 ) ( * 2876230 )
@@ -4573,9 +4584,8 @@ NETS 707 ;
       NEW met1 ( 412850 4950570 ) M1M2_PR
       NEW met1 ( 412850 4953970 ) M1M2_PR
       NEW met1 ( 1183810 4953970 ) M1M2_PR
-      NEW met1 ( 1183810 4952610 ) M1M2_PR
-      NEW met1 ( 1951090 4953290 ) M1M2_PR
-      NEW met1 ( 1951090 4952610 ) M1M2_PR
+      NEW met1 ( 1183810 4952270 ) M1M2_PR
+      NEW met1 ( 2137850 4953630 ) M1M2_PR
       NEW met1 ( 2071150 222190 ) M1M2_PR
       NEW met1 ( 2071150 220830 ) M1M2_PR
       NEW met1 ( 2619010 227970 ) M1M2_PR
@@ -4591,7 +4601,6 @@ NETS 707 ;
       NEW met1 ( 3368350 3690530 ) M1M2_PR
       NEW met1 ( 3377090 3911530 ) M1M2_PR
       NEW met1 ( 3368350 3911530 ) M1M2_PR
-      NEW met1 ( 3370190 3911530 ) M1M2_PR
       NEW met1 ( 3377090 4806750 ) M1M2_PR
       NEW met1 ( 3367430 4806750 ) M1M2_PR
       NEW met1 ( 675970 4953970 ) M1M2_PR
@@ -4600,12 +4609,14 @@ NETS 707 ;
       NEW met1 ( 924830 4953970 ) M1M2_PR
       NEW met1 ( 924830 4952270 ) M1M2_PR
       NEW met1 ( 927130 4953970 ) M1M2_PR
-      NEW met1 ( 1441870 4952610 ) M1M2_PR
-      NEW met1 ( 2400970 4953290 ) M1M2_PR
-      NEW met1 ( 2400970 4952270 ) M1M2_PR
-      NEW met1 ( 2395910 4953290 ) M1M2_PR
-      NEW met1 ( 2653050 4952270 ) M1M2_PR
-      NEW met1 ( 3161810 4952610 ) M1M2_PR
+      NEW met1 ( 1446010 4952270 ) M1M2_PR
+      NEW met1 ( 1446010 4953630 ) M1M2_PR
+      NEW met1 ( 1441870 4952270 ) M1M2_PR
+      NEW met1 ( 2395910 4953630 ) M1M2_PR
+      NEW met1 ( 2653050 4953630 ) M1M2_PR
+      NEW met1 ( 3173770 4953970 ) M1M2_PR
+      NEW met1 ( 3173770 4950910 ) M1M2_PR
+      NEW met1 ( 3161810 4953970 ) M1M2_PR
       NEW met1 ( 3377090 547570 ) M1M2_PR
       NEW met1 ( 3367890 547570 ) M1M2_PR
       NEW met1 ( 3377090 1672290 ) M1M2_PR
@@ -4619,7 +4630,7 @@ NETS 707 ;
       NEW met1 ( 3368350 3235270 ) M1M2_PR
       NEW met1 ( 3377090 4362030 ) M1M2_PR
       NEW met1 ( 3367430 4362030 ) M1M2_PR
-      NEW met1 ( 3370190 4362030 ) M1M2_PR
+      NEW met1 ( 3368810 4362030 ) M1M2_PR
       NEW met1 ( 3367430 4950910 ) M1M2_PR
       NEW met1 ( 209070 2876230 ) M1M2_PR
       NEW met1 ( 213670 2876230 ) M1M2_PR
@@ -4644,16 +4655,16 @@ NETS 707 ;
       NEW met2 ( 2071150 220830 ) RECT ( -70 -485 70 0 ) 
       NEW met2 ( 2619010 221850 ) RECT ( -70 -485 70 0 ) 
       NEW met2 ( 3368350 1224510 ) RECT ( -70 -485 70 0 ) 
-      NEW met1 ( 3370190 3911530 ) RECT ( -595 -70 0 70 ) 
       NEW met2 ( 3367430 4806750 ) RECT ( -70 -485 70 0 ) 
       NEW met1 ( 669990 4953970 ) RECT ( -595 -70 0 70 ) 
       NEW met1 ( 927130 4953970 ) RECT ( -595 -70 0 70 ) 
-      NEW met1 ( 1441870 4952610 ) RECT ( -595 -70 0 70 ) 
-      NEW met1 ( 2395910 4953290 ) RECT ( -595 -70 0 70 ) 
-      NEW met1 ( 2653050 4952270 ) RECT ( -595 -70 0 70 ) 
+      NEW met1 ( 1441870 4952270 ) RECT ( -595 -70 0 70 ) 
+      NEW met1 ( 2395910 4953630 ) RECT ( -595 -70 0 70 ) 
+      NEW met1 ( 2653050 4953630 ) RECT ( -595 -70 0 70 ) 
+      NEW met1 ( 3161810 4953970 ) RECT ( -595 -70 0 70 ) 
       NEW met2 ( 3367890 547570 ) RECT ( -70 -485 70 0 ) 
       NEW met1 ( 3369270 3014610 ) RECT ( -595 -70 0 70 ) 
-      NEW met1 ( 3370190 4362030 ) RECT ( -595 -70 0 70 ) 
+      NEW met1 ( 3368810 4362030 ) RECT ( -595 -70 0 70 ) 
       NEW met1 ( 3368810 1447550 ) RECT ( -595 -70 0 70 )  ;
     - vssa ( PIN vssa ) ( resetb_pad VSSA ) ( mgmt_vssa_hvclamp_pad VSSA ) ( gpio_pad ENABLE_VSWITCH_H ) ( flash_io1_pad ENABLE_VSWITCH_H ) ( flash_io0_pad ENABLE_VSWITCH_H ) ( flash_csb_pad ENABLE_VSWITCH_H )
       ( flash_clk_pad ENABLE_VSWITCH_H ) ( clock_pad ENABLE_VSWITCH_H ) + USE SIGNAL
@@ -4697,16 +4708,17 @@ NETS 707 ;
       NEW met1 ( 2086790 208930 ) M1M2_PR
       NEW met1 ( 2633730 208930 ) M1M2_PR ;
     - vssa1 ( PIN vssa1 ) ( user1_vssd_lvclmap_pad VSSA ) ( user1_vssa_hvclamp_pad\[1\] VSSA ) ( user1_vssa_hvclamp_pad\[0\] VSSA ) + USE SIGNAL
-      + ROUTED met3 ( 2928820 4987460 ) ( * 4988140 0 )
-      NEW met3 ( 2925370 4987460 ) ( 2928820 * )
-      NEW met2 ( 2925370 4961110 ) ( * 4987460 )
+      + ROUTED met3 ( 2928820 4988140 0 ) ( * 4989500 )
+      NEW met3 ( 2927670 4989500 ) ( 2928820 * )
+      NEW met2 ( 2925370 4989500 ) ( 2927670 * )
+      NEW met2 ( 2925370 4961110 ) ( * 4989500 )
       NEW met1 ( 3373870 2139110 ) ( 3387670 * )
       NEW met2 ( 3387670 2128060 ) ( * 2139110 )
       NEW met3 ( 3387670 2128060 ) ( 3388820 * )
       NEW met3 ( 3388820 2128060 ) ( * 2128740 0 )
       NEW met1 ( 2925370 4961110 ) ( 3373870 * )
       NEW met2 ( 3373870 2139110 ) ( * 4961110 )
-      NEW met2 ( 2925370 4987460 ) via2_FR
+      NEW met2 ( 2927670 4989500 ) via2_FR
       NEW met1 ( 2925370 4961110 ) M1M2_PR
       NEW met1 ( 3373870 2139110 ) M1M2_PR
       NEW met1 ( 3387670 2139110 ) M1M2_PR
@@ -4986,14 +4998,11 @@ NETS 707 ;
       NEW met2 ( 397670 4953290 ) ( * 4977260 0 )
       NEW met2 ( 397670 4950910 ) ( * 4953290 )
       NEW met2 ( 1168630 4977260 ) ( 1168805 * 0 )
-      NEW met2 ( 1168630 4953290 ) ( * 4977260 )
-      NEW met1 ( 1373330 4952950 ) ( * 4953290 )
-      NEW met3 ( 1718100 4987460 ) ( * 4988140 0 )
-      NEW met2 ( 1935910 4952270 ) ( * 4977260 0 )
-      NEW met2 ( 1932230 4952270 ) ( * 4952950 )
-      NEW met1 ( 1932230 4952270 ) ( 1935910 * )
-      NEW met2 ( 2380730 4952610 ) ( * 4977260 0 )
-      NEW met2 ( 3159050 4950570 ) ( * 4953290 )
+      NEW met2 ( 1168630 4953630 ) ( * 4977260 )
+      NEW met2 ( 1168630 4952610 ) ( * 4953630 )
+      NEW met2 ( 2122670 4952950 ) ( * 4977260 0 )
+      NEW met2 ( 2380730 4952950 ) ( * 4977260 0 )
+      NEW met2 ( 3158130 4950570 ) ( * 4953290 )
       NEW met2 ( 3146630 4977260 ) ( 3146805 * 0 )
       NEW met2 ( 3146630 4953290 ) ( * 4977260 )
       NEW met2 ( 705110 199920 0 ) ( * 200940 )
@@ -5034,24 +5043,22 @@ NETS 707 ;
       NEW met2 ( 3377090 3928530 ) ( * 3929195 0 )
       NEW met1 ( 3367890 3928530 ) ( 3377090 * )
       NEW met2 ( 3377090 4821195 0 ) ( * 4823750 )
-      NEW met1 ( 3368350 4823750 ) ( 3377090 * )
+      NEW met1 ( 3367890 4823750 ) ( 3377090 * )
       NEW met1 ( 211370 4950910 ) ( 397670 * )
       NEW met2 ( 654810 4953290 ) ( * 4977260 0 )
       NEW met2 ( 911805 4977260 0 ) ( 911950 * )
       NEW met2 ( 911950 4953290 ) ( * 4977260 )
+      NEW met2 ( 911950 4952610 ) ( * 4953290 )
       NEW met1 ( 397670 4953290 ) ( 911950 * )
-      NEW met1 ( 911950 4953290 ) ( 1168630 * )
-      NEW met1 ( 1168630 4953290 ) ( 1373330 * )
-      NEW met2 ( 1426690 4952950 ) ( * 4977260 0 )
-      NEW met2 ( 1710970 4952950 ) ( * 4987460 )
-      NEW met3 ( 1710970 4987460 ) ( 1718100 * )
-      NEW met1 ( 1373330 4952950 ) ( 1932230 * )
-      NEW met1 ( 1935910 4952270 ) ( 2194200 * )
-      NEW met1 ( 2194200 4952270 ) ( * 4952610 )
-      NEW met2 ( 2637870 4952610 ) ( * 4977260 0 )
-      NEW met1 ( 2194200 4952610 ) ( 2637870 * )
-      NEW met1 ( 2637870 4953290 ) ( 3159050 * )
-      NEW met1 ( 3159050 4950570 ) ( 3160200 * )
+      NEW met1 ( 911950 4952610 ) ( 1168630 * )
+      NEW met2 ( 1434970 4952950 ) ( * 4953630 )
+      NEW met2 ( 1426690 4953630 ) ( * 4977260 0 )
+      NEW met1 ( 1168630 4953630 ) ( 1434970 * )
+      NEW met1 ( 2435470 4952950 ) ( * 4953290 )
+      NEW met2 ( 2637870 4953290 ) ( * 4977260 0 )
+      NEW met1 ( 2435470 4953290 ) ( 2637870 * )
+      NEW met1 ( 2637870 4953290 ) ( 3158130 * )
+      NEW met1 ( 3158130 4950570 ) ( 3160200 * )
       NEW met1 ( 3160200 4950230 ) ( * 4950570 )
       NEW met2 ( 3367430 213690 ) ( * 565930 )
       NEW met2 ( 3367430 565930 ) ( * 791180 )
@@ -5070,11 +5077,9 @@ NETS 707 ;
       NEW met2 ( 3377090 4372570 ) ( * 4375195 0 )
       NEW met1 ( 3367890 4372570 ) ( 3377090 * )
       NEW met2 ( 3367890 3701750 ) ( * 4372570 )
-      NEW met2 ( 3368350 4802400 ) ( * 4823750 )
-      NEW met2 ( 3367890 4802400 ) ( 3368350 * )
-      NEW met2 ( 3367890 4372570 ) ( * 4802400 )
-      NEW met1 ( 3160200 4950230 ) ( 3368350 * )
-      NEW met2 ( 3368350 4823750 ) ( * 4950230 )
+      NEW met2 ( 3367890 4372570 ) ( * 4823750 )
+      NEW met1 ( 3160200 4950230 ) ( 3367890 * )
+      NEW met2 ( 3367890 4823750 ) ( * 4950230 )
       NEW met2 ( 208610 2858805 0 ) ( 209070 * )
       NEW met2 ( 209070 2858805 ) ( * 2861270 )
       NEW met1 ( 209070 2861270 ) ( 214130 * )
@@ -5095,6 +5100,12 @@ NETS 707 ;
       NEW met1 ( 3367430 2799730 ) ( 3377090 * )
       NEW met2 ( 3367430 1917770 ) ( * 2799730 )
       NEW met2 ( 3367430 2799730 ) ( * 3025490 )
+      NEW met3 ( 1718100 4988140 0 ) ( * 4988820 )
+      NEW met4 ( 1718100 4971820 ) ( * 4988820 )
+      NEW met3 ( 1718100 4971820 ) ( 1718330 * )
+      NEW met2 ( 1718330 4952950 ) ( * 4971820 )
+      NEW met1 ( 1434970 4952950 ) ( 1718330 * )
+      NEW met1 ( 1718330 4952950 ) ( 2435470 * )
       NEW met1 ( 211370 228310 ) M1M2_PR
       NEW met1 ( 209070 1143250 ) M1M2_PR
       NEW met1 ( 213210 1143250 ) M1M2_PR
@@ -5129,13 +5140,12 @@ NETS 707 ;
       NEW met1 ( 211370 4950910 ) M1M2_PR
       NEW met1 ( 397670 4953290 ) M1M2_PR
       NEW met1 ( 397670 4950910 ) M1M2_PR
-      NEW met1 ( 1168630 4953290 ) M1M2_PR
-      NEW met1 ( 1935910 4952270 ) M1M2_PR
-      NEW met1 ( 1932230 4952950 ) M1M2_PR
-      NEW met1 ( 1932230 4952270 ) M1M2_PR
-      NEW met1 ( 2380730 4952610 ) M1M2_PR
-      NEW met1 ( 3159050 4950570 ) M1M2_PR
-      NEW met1 ( 3159050 4953290 ) M1M2_PR
+      NEW met1 ( 1168630 4953630 ) M1M2_PR
+      NEW met1 ( 1168630 4952610 ) M1M2_PR
+      NEW met1 ( 2122670 4952950 ) M1M2_PR
+      NEW met1 ( 2380730 4952950 ) M1M2_PR
+      NEW met1 ( 3158130 4950570 ) M1M2_PR
+      NEW met1 ( 3158130 4953290 ) M1M2_PR
       NEW met1 ( 3146630 4953290 ) M1M2_PR
       NEW met1 ( 704950 228310 ) M1M2_PR
       NEW met1 ( 705110 200430 ) M1M2_PR
@@ -5162,13 +5172,13 @@ NETS 707 ;
       NEW met1 ( 3377090 3928530 ) M1M2_PR
       NEW met1 ( 3367890 3928530 ) M1M2_PR
       NEW met1 ( 3377090 4823750 ) M1M2_PR
-      NEW met1 ( 3368350 4823750 ) M1M2_PR
+      NEW met1 ( 3367890 4823750 ) M1M2_PR
       NEW met1 ( 654810 4953290 ) M1M2_PR
       NEW met1 ( 911950 4953290 ) M1M2_PR
-      NEW met1 ( 1426690 4952950 ) M1M2_PR
-      NEW met2 ( 1710970 4987460 ) via2_FR
-      NEW met1 ( 1710970 4952950 ) M1M2_PR
-      NEW met1 ( 2637870 4952610 ) M1M2_PR
+      NEW met1 ( 911950 4952610 ) M1M2_PR
+      NEW met1 ( 1434970 4953630 ) M1M2_PR
+      NEW met1 ( 1434970 4952950 ) M1M2_PR
+      NEW met1 ( 1426690 4953630 ) M1M2_PR
       NEW met1 ( 2637870 4953290 ) M1M2_PR
       NEW met1 ( 3377090 1242870 ) M1M2_PR
       NEW met1 ( 3367430 1242870 ) M1M2_PR
@@ -5181,7 +5191,7 @@ NETS 707 ;
       NEW met1 ( 3367430 3252610 ) M1M2_PR
       NEW met1 ( 3377090 4372570 ) M1M2_PR
       NEW met1 ( 3367890 4372570 ) M1M2_PR
-      NEW met1 ( 3368350 4950230 ) M1M2_PR
+      NEW met1 ( 3367890 4950230 ) M1M2_PR
       NEW met1 ( 209070 2861270 ) M1M2_PR
       NEW met1 ( 214130 2861270 ) M1M2_PR
       NEW met1 ( 212750 2861270 ) M1M2_PR
@@ -5192,20 +5202,24 @@ NETS 707 ;
       NEW met1 ( 3367430 1465910 ) M1M2_PR
       NEW met1 ( 3377090 2799730 ) M1M2_PR
       NEW met1 ( 3367430 2799730 ) M1M2_PR
+      NEW met3 ( 1718100 4988820 ) M3M4_PR_M
+      NEW met3 ( 1718100 4971820 ) M3M4_PR_M
+      NEW met2 ( 1718330 4971820 ) via2_FR
+      NEW met1 ( 1718330 4952950 ) M1M2_PR
       NEW met1 ( 212290 1570290 ) RECT ( -595 -70 0 70 ) 
-      NEW met1 ( 2380730 4952610 ) RECT ( -595 -70 0 70 ) 
+      NEW met1 ( 2122670 4952950 ) RECT ( -595 -70 0 70 ) 
+      NEW met1 ( 2380730 4952950 ) RECT ( -595 -70 0 70 ) 
       NEW met1 ( 3146630 4953290 ) RECT ( -595 -70 0 70 ) 
       NEW met2 ( 705110 200430 ) RECT ( -70 -485 70 0 ) 
       NEW met1 ( 3370190 1011670 ) RECT ( -595 -70 0 70 ) 
       NEW met2 ( 3367890 3928530 ) RECT ( -70 -485 70 0 ) 
       NEW met1 ( 654810 4953290 ) RECT ( -595 -70 0 70 ) 
-      NEW met1 ( 1426690 4952950 ) RECT ( -595 -70 0 70 ) 
-      NEW met1 ( 1710970 4952950 ) RECT ( -595 -70 0 70 ) 
-      NEW met2 ( 2637870 4953290 ) RECT ( -70 -485 70 0 ) 
+      NEW met1 ( 1426690 4953630 ) RECT ( -595 -70 0 70 ) 
       NEW met1 ( 3370190 1242870 ) RECT ( -595 -70 0 70 ) 
       NEW met2 ( 3367430 3252610 ) RECT ( -70 -485 70 0 ) 
       NEW met1 ( 212750 2861270 ) RECT ( -595 -70 0 70 ) 
-      NEW met1 ( 3369270 3476670 ) RECT ( -595 -70 0 70 )  ;
+      NEW met1 ( 3369270 3476670 ) RECT ( -595 -70 0 70 ) 
+      NEW met3 ( 1718100 4971820 ) RECT ( -390 -150 0 150 )  ;
     - loop_clock ( clock_pad TIE_LO_ESD ) ( clock_pad ENABLE_INP_H ) + USE SIGNAL
       + ROUTED met2 ( 973590 209100 0 ) ( * 228310 )
       NEW met2 ( 933570 209100 0 ) ( * 228310 )
@@ -5307,11 +5321,11 @@ NETS 707 ;
       NEW met1 ( 2402350 4976410 ) M1M2_PR
       NEW met1 ( 2442370 4976410 ) M1M2_PR ;
     - mprj_pads.loop1_io\[18\] ( mprj_pads.area1_io_pad\[18\] TIE_LO_ESD ) ( mprj_pads.area1_io_pad\[18\] ENABLE_INP_H ) + USE SIGNAL
-      + ROUTED met2 ( 1957530 4976410 ) ( * 4977260 0 )
-      NEW met1 ( 1957530 4976410 ) ( 1997550 * )
-      NEW met2 ( 1997550 4976410 ) ( * 4977260 0 )
-      NEW met1 ( 1957530 4976410 ) M1M2_PR
-      NEW met1 ( 1997550 4976410 ) M1M2_PR ;
+      + ROUTED met2 ( 2144290 4976410 ) ( * 4977260 0 )
+      NEW met1 ( 2144290 4976410 ) ( 2184310 * )
+      NEW met2 ( 2184310 4976410 ) ( * 4977260 0 )
+      NEW met1 ( 2144290 4976410 ) M1M2_PR
+      NEW met1 ( 2184310 4976410 ) M1M2_PR ;
     - mprj_pads.loop1_io\[19\] ( mprj_pads.area2_io_pad\[0\] TIE_LO_ESD ) ( mprj_pads.area2_io_pad\[0\] ENABLE_INP_H ) + USE SIGNAL
       + ROUTED met2 ( 1448310 4976410 ) ( * 4977260 0 )
       NEW met1 ( 1448310 4976410 ) ( 1488330 * )
@@ -5331,13 +5345,13 @@ NETS 707 ;
       NEW met1 ( 1191170 4978110 ) M1M2_PR
       NEW met1 ( 1229810 4978110 ) M1M2_PR ;
     - mprj_pads.loop1_io\[21\] ( mprj_pads.area2_io_pad\[2\] TIE_LO_ESD ) ( mprj_pads.area2_io_pad\[2\] ENABLE_INP_H ) + USE SIGNAL
-      + ROUTED met2 ( 973590 4952610 ) ( * 4977260 )
+      + ROUTED met2 ( 973590 4953290 ) ( * 4977260 )
       NEW met2 ( 973445 4977260 0 ) ( 973590 * )
       NEW met2 ( 933425 4977260 0 ) ( 933570 * )
-      NEW met2 ( 933570 4952610 ) ( * 4977260 )
-      NEW met1 ( 933570 4952610 ) ( 973590 * )
-      NEW met1 ( 973590 4952610 ) M1M2_PR
-      NEW met1 ( 933570 4952610 ) M1M2_PR ;
+      NEW met2 ( 933570 4953290 ) ( * 4977260 )
+      NEW met1 ( 933570 4953290 ) ( 973590 * )
+      NEW met1 ( 973590 4953290 ) M1M2_PR
+      NEW met1 ( 933570 4953290 ) M1M2_PR ;
     - mprj_pads.loop1_io\[22\] ( mprj_pads.area2_io_pad\[3\] TIE_LO_ESD ) ( mprj_pads.area2_io_pad\[3\] ENABLE_INP_H ) + USE SIGNAL
       + ROUTED met2 ( 676430 4977260 0 ) ( 676890 * )
       NEW met2 ( 676890 4977260 ) ( * 4977430 )
