@@ -207,13 +207,12 @@ module simple_spi_master (
     wire	  spi_enabled;
 
     // Define behavior for inverted SCK and inverted CSB
-    assign    	  csb = (enable == 1'b0) ? 1'bz : (invcsb) ? ~icsb : icsb;
-    assign	  sck = (enable == 1'b0) ? 1'bz : (invsck) ? ~isck : isck;
+    assign    	  csb = (invcsb) ? ~icsb : icsb;
+    assign	  sck = (invsck) ? ~isck : isck;
 
     // No bidirectional 3-pin mode defined, so SDO is enabled whenever CSB is low.
     assign	  sdoenb = icsb;
-    // assign	  sdo = (enable == 1'b0) ? 1'bz : icsb ? 1'bz : isdo;
-    assign	  sdo = (enable == 1'b0) ? 1'bz : isdo;
+    assign	  sdo = isdo;
 
     assign	  irq_out = irqena & done;
     assign	  hk_connect = (enable == 1'b1) ? hkconn : 1'b0;

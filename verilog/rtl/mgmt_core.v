@@ -134,13 +134,35 @@ module mgmt_core (
 	wire [`MPRJ_IO_PADS-1:0] mgmt_oeb_data;
 	wire [`MPRJ_IO_PADS-1:0] mgmt_out_predata;
 
+	wire mgmt_mux_csb, mgmt_mux_sck, mgmt_mux_sdi;
+	wire pass_thru_user_csb, pass_thru_user_sck, pass_thru_user_sdi;
+
+	// During external reset, data lines 8 to 10 are used by the user flash
+	// pass-through mode.
+
+	assign mgmt_mux_csb = (ext_reset == 1'b1) ?
+			pass_thru_user_csb : mgmt_out_predata[8];
+	assign mgmt_mux_sck = (ext_reset == 1'b1) ?
+			pass_thru_user_sck : mgmt_out_predata[9];
+	assign mgmt_mux_sdi = (ext_reset == 1'b1) ?
+			pass_thru_user_sdi : mgmt_out_predata[10];
+
     	genvar i;
 
     	generate
        	    for (i = 0; i < 2; i = i + 1) begin
           	assign mgmt_out_data[i] = mgmt_out_predata[i];
        	    end
-            for (i = 2; i < `MPRJ_IO_PADS-2; i = i + 1) begin
+            for (i = 2; i < 8; i = i + 1) begin
+                assign mgmt_out_data[i] = (mgmt_oeb_data[i]) ? 1'bz : mgmt_out_predata[i];
+            end
+            assign mgmt_out_data[8] = (mgmt_oeb_data[8] & ~ext_reset) ?
+					1'bz : mgmt_mux_csb;
+            assign mgmt_out_data[9] = (mgmt_oeb_data[9] & ~ext_reset) ?
+					1'bz : mgmt_mux_sck;
+            assign mgmt_out_data[10] = (mgmt_oeb_data[10] & ~ext_reset)
+					? 1'bz : mgmt_mux_sdi;
+            for (i = 11; i < `MPRJ_IO_PADS-2; i = i + 1) begin
                 assign mgmt_out_data[i] = (mgmt_oeb_data[i]) ? 1'bz : mgmt_out_predata[i];
             end
             for (i = `MPRJ_IO_PADS-2; i < `MPRJ_IO_PADS; i = i + 1) begin
@@ -344,9 +366,9 @@ module mgmt_core (
     	    .pass_thru_mgmt_csb(pass_thru_mgmt_csb),
     	    .pass_thru_mgmt_sdi(pass_thru_mgmt_sdi),
     	    .pass_thru_mgmt_sdo(pass_thru_mgmt_sdo),
-    	    .pass_thru_user_sck(mgmt_out_data[9]),
-    	    .pass_thru_user_csb(mgmt_out_data[8]),
-    	    .pass_thru_user_sdi(mgmt_out_data[10]),
+    	    .pass_thru_user_sck(pass_thru_user_sck),
+    	    .pass_thru_user_csb(pass_thru_user_csb),
+    	    .pass_thru_user_sdi(pass_thru_user_sdi),
     	    .pass_thru_user_sdo(mgmt_in_data[11])
 	);
 
