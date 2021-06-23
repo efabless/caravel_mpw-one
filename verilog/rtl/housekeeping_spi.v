@@ -70,7 +70,8 @@ module housekeeping_spi(
     RSTB, SCK, SDI, CSB, SDO, sdo_enb,
     pll_ena, pll_dco_ena, pll_div, pll_sel,
     pll90_sel, pll_trim, pll_bypass, irq, reset,
-    trap, mask_rev_in, pass_thru_reset,
+    trap, mask_rev_in,
+    pass_thru_mgmt_reset, pass_thru_user_reset,
     pass_thru_mgmt_sck, pass_thru_mgmt_csb,
     pass_thru_mgmt_sdi, pass_thru_mgmt_sdo,
     pass_thru_user_sck, pass_thru_user_csb,
@@ -103,7 +104,8 @@ module housekeeping_spi(
     input [31:0] mask_rev_in;	// metal programmed;  3.3V domain
 
     // Pass-through programming mode for management area SPI flash
-    output pass_thru_reset;
+    output pass_thru_mgmt_reset;
+    output pass_thru_user_reset;
     output pass_thru_mgmt_sck;
     output pass_thru_mgmt_csb;
     output pass_thru_mgmt_sdi;
@@ -143,15 +145,15 @@ module housekeeping_spi(
 
     assign pass_thru_mgmt_csb = ~pass_thru_mgmt_delay;
     assign pass_thru_mgmt_sck = (pass_thru_mgmt ? SCK : 1'b0);
-    assign pass_thru_mgmt_sdi = (pass_thru_mgmt ? SDI : 1'b0);
+    assign pass_thru_mgmt_sdi = (pass_thru_mgmt_delay ? SDI : 1'b0);
 
     assign pass_thru_user_csb = ~pass_thru_user_delay;
     assign pass_thru_user_sck = (pass_thru_user ? SCK : 1'b0);
-    assign pass_thru_user_sdi = (pass_thru_user ? SDI : 1'b0);
+    assign pass_thru_user_sdi = (pass_thru_user_delay ? SDI : 1'b0);
 
     assign SDO = pass_thru_mgmt ? pass_thru_mgmt_sdo :
 		 pass_thru_user ? pass_thru_user_sdo : loc_sdo;
-    assign reset = pass_thru_reset ? 1'b1 : reset_reg;
+    assign reset = pass_thru_mgmt_reset ? 1'b1 : reset_reg;
 
     // Instantiate the SPI slave module
 
@@ -171,7 +173,8 @@ module housekeeping_spi(
     	.pass_thru_mgmt_delay(pass_thru_mgmt_delay),
     	.pass_thru_user(pass_thru_user),
     	.pass_thru_user_delay(pass_thru_user_delay),
-    	.pass_thru_reset(pass_thru_reset)
+    	.pass_thru_mgmt_reset(pass_thru_mgmt_reset),
+    	.pass_thru_user_reset(pass_thru_user_reset)
     );
 
     wire [11:0] mfgr_id;
@@ -321,7 +324,8 @@ endmodule	// housekeeping_spi
 module housekeeping_spi_slave(reset, SCK, SDI, CSB, SDO,
 	sdoenb, idata, odata, oaddr, rdstb, wrstb,
 	pass_thru_mgmt, pass_thru_mgmt_delay,
-	pass_thru_user, pass_thru_user_delay, pass_thru_reset);
+	pass_thru_user, pass_thru_user_delay,
+	pass_thru_mgmt_reset, pass_thru_user_reset);
 
     input reset;
     input SCK;
@@ -338,7 +342,8 @@ module housekeeping_spi_slave(reset, SCK, SDI, CSB, SDO,
     output pass_thru_mgmt_delay;
     output pass_thru_user;
     output pass_thru_user_delay;
-    output pass_thru_reset;
+    output pass_thru_mgmt_reset;
+    output pass_thru_user_reset;
 
     reg  [7:0]  addr;
     reg		wrstb;
@@ -365,7 +370,8 @@ module housekeeping_spi_slave(reset, SCK, SDI, CSB, SDO,
     assign oaddr = (state == `ADDRESS) ? {addr[6:0], SDI} : addr;
     assign SDO = ldata[7];
     assign csb_reset = CSB | reset;
-    assign pass_thru_reset = pass_thru_mgmt_delay | pre_pass_thru_mgmt;
+    assign pass_thru_mgmt_reset = pass_thru_mgmt_delay | pre_pass_thru_mgmt;
+    assign pass_thru_user_reset = pass_thru_user_delay | pre_pass_thru_user;
 
     // Readback data is captured on the falling edge of SCK so that
     // it is guaranteed valid at the next rising edge.

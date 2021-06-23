@@ -66,6 +66,11 @@ void main()
     reg_mprj_io_17 = GPIO_MODE_MGMT_STD_OUTPUT;
     reg_mprj_io_16 = GPIO_MODE_MGMT_STD_OUTPUT;
 
+    // Management needs to apply output on these pads to access the user area SPI flash
+    reg_mprj_io_10 = GPIO_MODE_MGMT_STD_OUTPUT;
+    reg_mprj_io_9 = GPIO_MODE_MGMT_STD_OUTPUT;
+    reg_mprj_io_8 = GPIO_MODE_MGMT_STD_OUTPUT;
+
     reg_mprj_io_6 = GPIO_MODE_MGMT_STD_OUTPUT;
 
     // Apply configuration

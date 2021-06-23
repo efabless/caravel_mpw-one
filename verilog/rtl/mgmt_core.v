@@ -136,15 +136,19 @@ module mgmt_core (
 
 	wire mgmt_mux_csb, mgmt_mux_sck, mgmt_mux_sdi;
 	wire pass_thru_user_csb, pass_thru_user_sck, pass_thru_user_sdi;
+	wire pass_thru_mgmt_sdo, pass_thru_mgmt_csb;
+	wire pass_thru_mgmt_sck, pass_thru_mgmt_sdi;
+	wire pass_thru_mgmt, pass_thru_user;
+	wire spi_pll_ena, spi_pll_dco_ena;
 
 	// During external reset, data lines 8 to 10 are used by the user flash
 	// pass-through mode.
 
-	assign mgmt_mux_csb = (ext_reset == 1'b1) ?
+	assign mgmt_mux_csb = (pass_thru_user == 1'b1) ?
 			pass_thru_user_csb : mgmt_out_predata[8];
-	assign mgmt_mux_sck = (ext_reset == 1'b1) ?
+	assign mgmt_mux_sck = (pass_thru_user == 1'b1) ?
 			pass_thru_user_sck : mgmt_out_predata[9];
-	assign mgmt_mux_sdi = (ext_reset == 1'b1) ?
+	assign mgmt_mux_sdi = (pass_thru_user == 1'b1) ?
 			pass_thru_user_sdi : mgmt_out_predata[10];
 
     	genvar i;
@@ -156,12 +160,9 @@ module mgmt_core (
             for (i = 2; i < 8; i = i + 1) begin
                 assign mgmt_out_data[i] = (mgmt_oeb_data[i]) ? 1'bz : mgmt_out_predata[i];
             end
-            assign mgmt_out_data[8] = (mgmt_oeb_data[8] & ~ext_reset) ?
-					1'bz : mgmt_mux_csb;
-            assign mgmt_out_data[9] = (mgmt_oeb_data[9] & ~ext_reset) ?
-					1'bz : mgmt_mux_sck;
-            assign mgmt_out_data[10] = (mgmt_oeb_data[10] & ~ext_reset)
-					? 1'bz : mgmt_mux_sdi;
+            assign mgmt_out_data[8] = (mgmt_oeb_data[8]) ?  1'bz : mgmt_mux_csb;
+            assign mgmt_out_data[9] = (mgmt_oeb_data[9]) ?  1'bz : mgmt_mux_sck;
+            assign mgmt_out_data[10] = (mgmt_oeb_data[10]) ?  1'bz : mgmt_mux_sdi;
             for (i = 11; i < `MPRJ_IO_PADS-2; i = i + 1) begin
                 assign mgmt_out_data[i] = (mgmt_oeb_data[i]) ? 1'bz : mgmt_out_predata[i];
             end
@@ -198,11 +199,6 @@ module mgmt_core (
 	wire flash_io2_oeb, flash_io3_oeb;
 	wire flash_io2_ieb, flash_io3_ieb;
 	wire flash_io2_di, flash_io3_di;
-
-	wire pass_thru_mgmt_sdo, pass_thru_mgmt_csb;
-	wire pass_thru_mgmt_sck, pass_thru_mgmt_sdi;
-	wire pass_thru_reset;
-	wire spi_pll_ena, spi_pll_dco_ena;
 
 	// The following functions are connected to specific user project
 	// area pins, when under control of the management area (during
@@ -268,7 +264,7 @@ module mgmt_core (
 		.flash_io2_di(flash_io2_di),
 		.flash_io3_di(flash_io3_di),
 		// SPI pass-through to/from SPI flash controller
-		.pass_thru_mgmt(pass_thru_reset),
+		.pass_thru_mgmt(pass_thru_mgmt),
 		.pass_thru_mgmt_csb(pass_thru_mgmt_csb),
 		.pass_thru_mgmt_sck(pass_thru_mgmt_sck),
 		.pass_thru_mgmt_sdi(pass_thru_mgmt_sdi),
@@ -361,7 +357,8 @@ module mgmt_core (
 	    .reset(ext_reset),
 	    .trap(trap),
 	    .mask_rev_in(mask_rev),
-    	    .pass_thru_reset(pass_thru_reset),
+    	    .pass_thru_mgmt_reset(pass_thru_mgmt),
+    	    .pass_thru_user_reset(pass_thru_user),
     	    .pass_thru_mgmt_sck(pass_thru_mgmt_sck),
     	    .pass_thru_mgmt_csb(pass_thru_mgmt_csb),
     	    .pass_thru_mgmt_sdi(pass_thru_mgmt_sdi),

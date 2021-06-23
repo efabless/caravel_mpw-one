@@ -164,13 +164,13 @@ module hkspi_tb;
 	    // Toggle external reset
 	    start_csb();
 	    write_byte(8'h80);	// Write stream command
-	    write_byte(8'h07);	// Address (register 7 = external reset)
+	    write_byte(8'h0b);	// Address (register 7 = external reset)
 	    write_byte(8'h01);	// Data = 0x01 (apply external reset)
 	    end_csb();
 
 	    start_csb();
 	    write_byte(8'h80);	// Write stream command
-	    write_byte(8'h07);	// Address (register 7 = external reset)
+	    write_byte(8'h0b);	// Address (register 7 = external reset)
 	    write_byte(8'h00);	// Data = 0x00 (release external reset)
 	    end_csb();
 

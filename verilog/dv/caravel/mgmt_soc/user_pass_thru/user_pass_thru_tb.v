@@ -166,6 +166,7 @@ module user_pass_thru_tb;
 	    read_byte(tbdata);
 	    end_csb();
 	    #10;
+
 	    $display("Read data = 0x%02x (should be 0x10)", tbdata);
 	    if(tbdata !== 8'h10) begin 
 			`ifdef GL
@@ -175,9 +176,20 @@ module user_pass_thru_tb;
 			`endif
 		end
 
+	    // The SPI flash may need to be reset.
 	    start_csb();
-	    write_byte(8'hc2);	// User pass-thru mode
-	    write_byte(8'h03);	// Command 03 (read values w/3-byte address
+	    write_byte(8'hc2);	// Apply user pass-thru command to housekeeping SPI
+	    write_byte(8'hff);	// SPI flash command ff
+	    end_csb();
+
+	    start_csb();
+	    write_byte(8'hc2);	// Apply user pass-thru command to housekeeping SPI
+	    write_byte(8'hab);	// SPI flash command ab
+	    end_csb();
+
+	    start_csb();
+	    write_byte(8'hc2); // Apply user pass-thru command to housekeeping SPI
+	    write_byte(8'h03);	// Command 03 (read values w/3-byte address)
 	    write_byte(8'h00);	// Address is next three bytes (0x000000)
 	    write_byte(8'h00);
 	    write_byte(8'h00);
@@ -255,6 +267,19 @@ module user_pass_thru_tb;
 			`endif
 		end
 
+	    end_csb();
+
+	    // Reset processor
+	    start_csb();
+	    write_byte(8'h80);	// Write stream command
+	    write_byte(8'h0b);	// Address (register 11 = reset)
+	    write_byte(8'h01);	// Data (value 1 = apply reset)
+	    end_csb();
+
+	    start_csb();
+	    write_byte(8'h80);	// Write stream command
+	    write_byte(8'h0b);	// Address (register 11 = reset)
+	    write_byte(8'h00);	// Data (value 1 = apply reset)
 	    end_csb();
 
 	    // Wait for processor to restart
@@ -352,7 +377,11 @@ module user_pass_thru_tb;
 		.io3()			// not used
 	);
 
-	spiflash secondary (
+	// Use the same flash; this is just to put known data in memory that can be
+	// checked by reading it back through a pass-through command.
+	spiflash #(
+		.FILENAME("user_pass_thru.hex")
+	) secondary (
 		.csb(user_csb),
 		.clk(user_clk),
 		.io0(user_io0),

@@ -170,6 +170,7 @@ module pass_thru_tb;
 			`endif
 		end
 
+	    // Now write a command directly to the SPI flash.
 	    start_csb();
 	    write_byte(8'hc4);	// Pass-thru mode
 	    write_byte(8'h03);	// Command 03 (read values w/3-byte address
