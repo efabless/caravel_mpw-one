@@ -33,7 +33,7 @@ notifications:
 
 env:
   global:
-    - OPENLANE_TAG=rc7
+    - OPENLANE_TAG=v0.20
 stages:
   - commit-compliance
   - test
