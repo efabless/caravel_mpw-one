@@ -19,7 +19,7 @@ set ::env(DESIGN_NAME) storage
 
 set ::env(RUN_KLAYOUT) 0
 
-set ::env(SYNTH_TOP_LEVEL) 1
+set ::env(SYNTH_READ_BLACKBOX_LIB) 1
 
 set ::env(CLOCK_PORT) "mgmt_clk"
 

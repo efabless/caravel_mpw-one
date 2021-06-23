@@ -44,7 +44,7 @@ MACRO mprj2_logic_high
     USE POWER ;
     PORT
       LAYER met3 ;
-        RECT 0.000 1.610 99.820 1.910 ;
+        RECT 0.000 1.535 99.820 1.985 ;
     END
   END vccd2
   PIN vssd2
@@ -68,7 +68,7 @@ MACRO mprj2_logic_high
     USE GROUND ;
     PORT
       LAYER met3 ;
-        RECT 0.000 4.410 99.820 4.710 ;
+        RECT 0.000 4.435 99.820 4.885 ;
     END
   END vssd2
   OBS
@@ -82,15 +82,15 @@ MACRO mprj2_logic_high
       LAYER met1 ;
         RECT 0.000 -0.240 99.820 5.680 ;
       LAYER met2 ;
-        RECT 15.730 0.835 20.570 3.925 ;
+        RECT 20.330 0.835 20.570 3.925 ;
         RECT 21.430 0.835 40.570 3.925 ;
         RECT 41.430 0.835 60.570 3.925 ;
         RECT 61.430 0.835 80.570 3.925 ;
-        RECT 81.430 0.835 84.090 3.925 ;
+        RECT 81.430 0.835 94.210 3.925 ;
       LAYER met3 ;
-        RECT 4.400 3.040 84.115 4.010 ;
-        RECT 0.835 2.310 84.115 3.040 ;
-        RECT 0.835 0.855 84.115 1.210 ;
+        RECT 4.400 3.040 94.235 3.905 ;
+        RECT 4.000 2.385 94.235 3.040 ;
+        RECT 4.000 0.855 94.235 1.135 ;
   END
 END mprj2_logic_high
 END LIBRARY

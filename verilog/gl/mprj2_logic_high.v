@@ -126,27 +126,23 @@ module mprj2_logic_high (HI,
     .VNB(vssd2),
     .VPB(vccd2),
     .VPWR(vccd2));
- sky130_fd_sc_hd__decap_6 FILLER_0_175 (.VGND(vssd2),
+ sky130_fd_sc_hd__decap_12 FILLER_0_175 (.VGND(vssd2),
     .VNB(vssd2),
     .VPB(vccd2),
     .VPWR(vccd2));
- sky130_fd_sc_hd__fill_1 FILLER_0_181 (.VGND(vssd2),
+ sky130_fd_sc_hd__decap_12 FILLER_0_187 (.VGND(vssd2),
     .VNB(vssd2),
     .VPB(vccd2),
     .VPWR(vccd2));
- sky130_fd_sc_hd__decap_12 FILLER_0_185 (.VGND(vssd2),
+ sky130_fd_sc_hd__decap_4 FILLER_0_199 (.VGND(vssd2),
     .VNB(vssd2),
     .VPB(vccd2),
     .VPWR(vccd2));
- sky130_fd_sc_hd__decap_6 FILLER_0_197 (.VGND(vssd2),
+ sky130_fd_sc_hd__decap_6 FILLER_0_207 (.VGND(vssd2),
     .VNB(vssd2),
     .VPB(vccd2),
     .VPWR(vccd2));
- sky130_fd_sc_hd__decap_8 FILLER_0_204 (.VGND(vssd2),
-    .VNB(vssd2),
-    .VPB(vccd2),
-    .VPWR(vccd2));
- sky130_fd_sc_hd__fill_2 FILLER_0_212 (.VGND(vssd2),
+ sky130_fd_sc_hd__fill_1 FILLER_0_213 (.VGND(vssd2),
     .VNB(vssd2),
     .VPB(vccd2),
     .VPWR(vccd2));

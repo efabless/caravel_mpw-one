@@ -1,7 +1,7 @@
 magic
 tech sky130A
 magscale 1 2
-timestamp 1622497373
+timestamp 1623523102
 << nwell >>
 rect -38 805 20002 1126
 rect -38 -38 20002 283
@@ -16,19 +16,19 @@ rect 8170 -48 8230 1136
 rect 12170 -48 12230 1136
 rect 16170 -48 16230 1136
 << obsm2 >>
-rect 3146 167 4114 785
+rect 4066 167 4114 785
 rect 4286 167 8114 785
 rect 8286 167 12114 785
 rect 12286 167 16114 785
-rect 16286 167 16818 785
+rect 16286 167 18842 785
 << metal3 >>
-rect 0 882 19964 942
+rect 0 887 19964 977
 rect 0 688 800 808
-rect 0 322 19964 382
+rect 0 307 19964 397
 << obsm3 >>
-rect 880 608 16823 802
-rect 167 462 16823 608
-rect 167 171 16823 242
+rect 880 608 18847 781
+rect 800 477 18847 608
+rect 800 171 18847 227
 << labels >>
 rlabel metal3 s 0 688 800 808 6 HI
 port 1 nsew signal output
@@ -38,20 +38,20 @@ rlabel metal2 s 8170 -48 8230 1136 6 vccd2
 port 3 nsew power bidirectional
 rlabel metal2 s 170 -48 230 1136 6 vccd2
 port 4 nsew power bidirectional
-rlabel metal3 s 0 322 19964 382 6 vccd2
+rlabel metal3 s 0 307 19964 397 6 vccd2
 port 5 nsew power bidirectional
 rlabel metal2 s 12170 -48 12230 1136 6 vssd2
 port 6 nsew ground bidirectional
 rlabel metal2 s 4170 -48 4230 1136 6 vssd2
 port 7 nsew ground bidirectional
-rlabel metal3 s 0 882 19964 942 6 vssd2
+rlabel metal3 s 0 887 19964 977 6 vssd2
 port 8 nsew ground bidirectional
 << properties >>
 string LEFclass BLOCK
 string FIXED_BBOX 0 0 20000 1400
 string LEFview TRUE
 string GDS_FILE /project/openlane/mprj2_logic_high/runs/mprj2_logic_high/results/magic/mprj2_logic_high.gds
-string GDS_END 33734
+string GDS_END 33020
 string GDS_START 24116
 << end >>
 

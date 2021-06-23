@@ -47,6 +47,8 @@ set ::env(CELL_PAD) 0
 
 set ::env(MACRO_PLACEMENT_CFG) $script_dir/macro_placement.cfg
 
+# Disable resizer design optimizations to prevent adding a buffer after tristate cells
+set ::env(PL_RESIZER_DESIGN_OPTIMIZATIONS) 0
 
 set ::env(FP_IO_VEXTEND) 20
 #set ::env(FP_IO_HEXTEND) 100
@@ -69,11 +71,11 @@ set ::env(FP_VERTICAL_HALO) 2
 set ::env(FP_PDN_CORE_RING) 1
 set ::env(FP_PDN_AUTO_ADJUST) 0
 
-set ::env(FP_PDN_HOFFSET) 2
-set ::env(FP_PDN_HPITCH) 16
+set ::env(FP_PDN_HOFFSET) 1.5
+set ::env(FP_PDN_HPITCH) 15.5
 
-set ::env(FP_PDN_VOFFSET) 2
-set ::env(FP_PDN_VPITCH) 16
+set ::env(FP_PDN_VOFFSET) 1.5
+set ::env(FP_PDN_VPITCH) 15.5
 
 set ::env(FP_PDN_CORE_RING_VOFFSET) 2
 set ::env(FP_PDN_CORE_RING_HOFFSET) 2

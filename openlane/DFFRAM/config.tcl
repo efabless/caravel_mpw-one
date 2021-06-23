@@ -28,7 +28,7 @@ set ::env(VERILOG_FILES) "\
 #set ::env(SYNTH_TOP_LEVEL) 1
 set ::env(SYNTH_READ_BLACKBOX_LIB) 1
 # Fill this
-# 8 -> 6 ants
+
 set ::env(CLOCK_PERIOD) "8"
 set ::env(CLOCK_PORT) "CLK"
 set ::env(CLOCK_TREE_SYNTH) 0

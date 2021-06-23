@@ -1,19 +1,11 @@
 * NGSPICE file created from mgmt_protect_hv.ext - technology: sky130A
 
-* Black-box entry subcircuit for sky130_fd_sc_hvl__decap_8 abstract view
-.subckt sky130_fd_sc_hvl__decap_8 VGND VNB VPB VPWR
-.ends
-
 * Black-box entry subcircuit for sky130_fd_sc_hvl__conb_1 abstract view
 .subckt sky130_fd_sc_hvl__conb_1 VGND VNB VPB VPWR HI LO
 .ends
 
 * Black-box entry subcircuit for sky130_fd_sc_hvl__fill_2 abstract view
 .subckt sky130_fd_sc_hvl__fill_2 VGND VNB VPB VPWR
-.ends
-
-* Black-box entry subcircuit for sky130_fd_sc_hvl__decap_4 abstract view
-.subckt sky130_fd_sc_hvl__decap_4 VGND VNB VPB VPWR
 .ends
 
 * Black-box entry subcircuit for sky130_fd_sc_hvl__fill_1 abstract view
@@ -25,88 +17,15 @@
 .ends
 
 .subckt mgmt_protect_hv mprj2_vdd_logic1 mprj_vdd_logic1 vccd vssa2 vdda1 vdda2
-XFILLER_2_187 vssa2 vssa2 vccd vccd sky130_fd_sc_hvl__decap_8
-XFILLER_0_24 vssa2 vssa2 vccd vccd sky130_fd_sc_hvl__decap_8
-XFILLER_0_264 vssa2 vssa2 vccd vccd sky130_fd_sc_hvl__decap_8
-XFILLER_2_155 vssa2 vssa2 vccd vccd sky130_fd_sc_hvl__decap_8
-XFILLER_0_232 vssa2 vssa2 vccd vccd sky130_fd_sc_hvl__decap_8
-XFILLER_1_0 vssa2 vssa2 vccd vccd sky130_fd_sc_hvl__decap_8
-XFILLER_0_200 vssa2 vssa2 vccd vccd sky130_fd_sc_hvl__decap_8
-XFILLER_1_180 vssa2 vssa2 vccd vccd sky130_fd_sc_hvl__decap_8
-XFILLER_2_179 vssa2 vssa2 vccd vccd sky130_fd_sc_hvl__decap_8
-XFILLER_0_16 vssa2 vssa2 vccd vccd sky130_fd_sc_hvl__decap_8
-XFILLER_0_256 vssa2 vssa2 vccd vccd sky130_fd_sc_hvl__decap_8
-XFILLER_2_115 vssa2 vssa2 FILLER_2_115/VPB FILLER_2_115/VPB sky130_fd_sc_hvl__decap_8
-XFILLER_0_224 vssa2 vssa2 vccd vccd sky130_fd_sc_hvl__decap_8
 Xmprj2_logic_high_hvl vssa2 vssa2 vdda2 vdda2 mprj2_logic_high_lv/A mprj2_logic_high_hvl/LO
 + sky130_fd_sc_hvl__conb_1
-XFILLER_1_62 vssa2 vssa2 vdda2 vdda2 sky130_fd_sc_hvl__decap_8
-XFILLER_1_172 vssa2 vssa2 vccd vccd sky130_fd_sc_hvl__decap_8
-XFILLER_0_248 vssa2 vssa2 vccd vccd sky130_fd_sc_hvl__decap_8
-XFILLER_0_216 vssa2 vssa2 vccd vccd sky130_fd_sc_hvl__decap_8
-XFILLER_1_140 vssa2 vssa2 vdda1 vdda1 sky130_fd_sc_hvl__decap_8
-XFILLER_2_107 vssa2 vssa2 FILLER_2_115/VPB FILLER_2_115/VPB sky130_fd_sc_hvl__decap_8
 XFILLER_1_300 vssa2 vssa2 vdda1 vdda1 sky130_fd_sc_hvl__fill_2
-XFILLER_1_196 vssa2 vssa2 vccd vccd sky130_fd_sc_hvl__decap_8
-XFILLER_1_32 vssa2 vssa2 vccd vccd sky130_fd_sc_hvl__decap_8
-XFILLER_1_164 vssa2 vssa2 vccd vccd sky130_fd_sc_hvl__decap_8
-XFILLER_1_131 vssa2 vssa2 vdda1 vdda1 sky130_fd_sc_hvl__decap_4
-XFILLER_1_8 vssa2 vssa2 vccd vccd sky130_fd_sc_hvl__decap_8
-XFILLER_0_208 vssa2 vssa2 vccd vccd sky130_fd_sc_hvl__decap_8
 XFILLER_1_56 vssa2 vssa2 vdda2 vdda2 sky130_fd_sc_hvl__fill_1
-XFILLER_1_188 vssa2 vssa2 vccd vccd sky130_fd_sc_hvl__decap_8
-XFILLER_1_156 vssa2 vssa2 vccd vccd sky130_fd_sc_hvl__decap_8
 Xmprj_logic_high_hvl vssa2 vssa2 vdda1 vdda1 mprj_logic_high_lv/A mprj_logic_high_hvl/LO
 + sky130_fd_sc_hvl__conb_1
-XFILLER_1_24 vssa2 vssa2 vccd vccd sky130_fd_sc_hvl__decap_8
-XFILLER_2_251 vssa2 vssa2 vccd vccd sky130_fd_sc_hvl__decap_8
-XFILLER_1_48 vssa2 vssa2 vdda2 vdda2 sky130_fd_sc_hvl__decap_8
-XFILLER_1_16 vssa2 vssa2 vccd vccd sky130_fd_sc_hvl__decap_8
-XFILLER_2_243 vssa2 vssa2 vccd vccd sky130_fd_sc_hvl__decap_8
-XFILLER_0_192 vssa2 vssa2 vccd vccd sky130_fd_sc_hvl__decap_8
-XFILLER_1_115 vssa2 vssa2 FILLER_2_115/VPB FILLER_2_115/VPB sky130_fd_sc_hvl__decap_8
-XFILLER_2_211 vssa2 vssa2 vccd vccd sky130_fd_sc_hvl__decap_8
-XFILLER_0_160 vssa2 vssa2 vccd vccd sky130_fd_sc_hvl__decap_8
-XFILLER_2_267 vssa2 vssa2 vccd vccd sky130_fd_sc_hvl__decap_8
-XFILLER_2_0 vssa2 vssa2 vccd vccd sky130_fd_sc_hvl__decap_8
-XFILLER_2_235 vssa2 vssa2 vccd vccd sky130_fd_sc_hvl__decap_8
-XFILLER_0_184 vssa2 vssa2 vccd vccd sky130_fd_sc_hvl__decap_8
-XFILLER_1_107 vssa2 vssa2 FILLER_2_115/VPB FILLER_2_115/VPB sky130_fd_sc_hvl__decap_8
-XFILLER_2_203 vssa2 vssa2 vccd vccd sky130_fd_sc_hvl__decap_8
-XFILLER_2_259 vssa2 vssa2 vccd vccd sky130_fd_sc_hvl__decap_8
-XFILLER_2_32 vssa2 vssa2 vccd vccd sky130_fd_sc_hvl__decap_8
-XFILLER_0_0 vssa2 vssa2 vccd vccd sky130_fd_sc_hvl__decap_8
-XFILLER_1_260 vssa2 vssa2 vccd vccd sky130_fd_sc_hvl__decap_8
-XFILLER_2_227 vssa2 vssa2 vccd vccd sky130_fd_sc_hvl__decap_8
-XFILLER_0_176 vssa2 vssa2 vccd vccd sky130_fd_sc_hvl__decap_8
-XFILLER_0_112 vssa2 vssa2 vccd vccd sky130_fd_sc_hvl__decap_8
-XFILLER_2_219 vssa2 vssa2 vccd vccd sky130_fd_sc_hvl__decap_8
-XFILLER_0_168 vssa2 vssa2 vccd vccd sky130_fd_sc_hvl__decap_8
-XFILLER_2_24 vssa2 vssa2 vccd vccd sky130_fd_sc_hvl__decap_8
-XFILLER_1_252 vssa2 vssa2 vccd vccd sky130_fd_sc_hvl__decap_8
-XFILLER_1_220 vssa2 vssa2 vccd vccd sky130_fd_sc_hvl__decap_8
-XFILLER_0_80 vssa2 vssa2 vccd vccd sky130_fd_sc_hvl__decap_8
-XFILLER_0_104 vssa2 vssa2 vccd vccd sky130_fd_sc_hvl__decap_8
-XFILLER_2_8 vssa2 vssa2 vccd vccd sky130_fd_sc_hvl__decap_8
-XFILLER_2_16 vssa2 vssa2 vccd vccd sky130_fd_sc_hvl__decap_8
-XFILLER_1_244 vssa2 vssa2 vccd vccd sky130_fd_sc_hvl__decap_8
-XFILLER_1_212 vssa2 vssa2 vccd vccd sky130_fd_sc_hvl__decap_8
-XFILLER_0_8 vssa2 vssa2 vccd vccd sky130_fd_sc_hvl__decap_8
-XFILLER_1_268 vssa2 vssa2 vccd vccd sky130_fd_sc_hvl__decap_8
-XFILLER_2_171 vssa2 vssa2 vccd vccd sky130_fd_sc_hvl__decap_8
-XFILLER_0_96 vssa2 vssa2 vccd vccd sky130_fd_sc_hvl__decap_8
-XFILLER_1_236 vssa2 vssa2 vccd vccd sky130_fd_sc_hvl__decap_8
-XFILLER_1_204 vssa2 vssa2 vccd vccd sky130_fd_sc_hvl__decap_8
-XFILLER_2_195 vssa2 vssa2 vccd vccd sky130_fd_sc_hvl__decap_8
-XFILLER_0_32 vssa2 vssa2 vccd vccd sky130_fd_sc_hvl__decap_8
-XFILLER_2_300 vssa2 vssa2 vdda1 vdda1 sky130_fd_sc_hvl__fill_2
 Xmprj_logic_high_lv mprj_logic_high_lv/A vccd vssa2 vssa2 vdda1 vdda1 mprj_vdd_logic1
 + sky130_fd_sc_hvl__lsbufhv2lv_1
-XFILLER_1_228 vssa2 vssa2 vccd vccd sky130_fd_sc_hvl__decap_8
-XFILLER_2_163 vssa2 vssa2 vccd vccd sky130_fd_sc_hvl__decap_8
-XFILLER_0_88 vssa2 vssa2 vccd vccd sky130_fd_sc_hvl__decap_8
-XFILLER_0_272 vssa2 vssa2 vccd vccd sky130_fd_sc_hvl__decap_8
-XFILLER_0_240 vssa2 vssa2 vccd vccd sky130_fd_sc_hvl__decap_8
+XFILLER_2_300 vssa2 vssa2 vdda1 vdda1 sky130_fd_sc_hvl__fill_2
 Xmprj2_logic_high_lv mprj2_logic_high_lv/A vccd vssa2 vssa2 vdda2 vdda2 mprj2_vdd_logic1
 + sky130_fd_sc_hvl__lsbufhv2lv_1
 .ends

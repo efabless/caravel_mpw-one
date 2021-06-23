@@ -236,7 +236,7 @@ MACRO gpio_control_block
     USE POWER ;
     PORT
       LAYER met4 ;
-        RECT 38.300 4.780 39.900 63.220 ;
+        RECT 36.800 4.780 38.400 63.220 ;
     END
   END vccd
   PIN vccd
@@ -244,7 +244,7 @@ MACRO gpio_control_block
     USE POWER ;
     PORT
       LAYER met4 ;
-        RECT 22.300 4.780 23.900 63.220 ;
+        RECT 21.300 4.780 22.900 63.220 ;
     END
   END vccd
   PIN vccd
@@ -252,7 +252,7 @@ MACRO gpio_control_block
     USE POWER ;
     PORT
       LAYER met4 ;
-        RECT 6.300 22.160 7.900 63.220 ;
+        RECT 5.800 28.160 7.400 63.220 ;
     END
   END vccd
   PIN vccd
@@ -276,7 +276,7 @@ MACRO gpio_control_block
     USE POWER ;
     PORT
       LAYER met4 ;
-        RECT 6.300 4.780 7.900 10.640 ;
+        RECT 5.800 4.780 7.400 10.640 ;
     END
   END vccd
   PIN vccd
@@ -292,7 +292,7 @@ MACRO gpio_control_block
     USE POWER ;
     PORT
       LAYER met5 ;
-        RECT -1.500 44.580 55.320 46.180 ;
+        RECT -1.500 43.080 55.320 44.680 ;
     END
   END vccd
   PIN vccd
@@ -300,7 +300,7 @@ MACRO gpio_control_block
     USE POWER ;
     PORT
       LAYER met5 ;
-        RECT -1.500 28.580 55.320 30.180 ;
+        RECT -1.500 27.580 55.320 29.180 ;
     END
   END vccd
   PIN vccd
@@ -308,7 +308,7 @@ MACRO gpio_control_block
     USE POWER ;
     PORT
       LAYER met5 ;
-        RECT -1.500 12.580 55.320 14.180 ;
+        RECT -1.500 12.080 55.320 13.680 ;
     END
   END vccd
   PIN vccd
@@ -332,7 +332,7 @@ MACRO gpio_control_block
     USE GROUND ;
     PORT
       LAYER met4 ;
-        RECT 46.300 4.780 47.900 63.220 ;
+        RECT 44.550 4.780 46.150 63.220 ;
     END
   END vssd
   PIN vssd
@@ -340,7 +340,7 @@ MACRO gpio_control_block
     USE GROUND ;
     PORT
       LAYER met4 ;
-        RECT 30.300 4.780 31.900 63.220 ;
+        RECT 29.050 4.780 30.650 63.220 ;
     END
   END vssd
   PIN vssd
@@ -348,7 +348,7 @@ MACRO gpio_control_block
     USE GROUND ;
     PORT
       LAYER met4 ;
-        RECT 14.300 22.160 15.900 63.220 ;
+        RECT 13.550 28.160 15.150 63.220 ;
     END
   END vssd
   PIN vssd
@@ -364,7 +364,7 @@ MACRO gpio_control_block
     USE GROUND ;
     PORT
       LAYER met4 ;
-        RECT 14.300 4.780 15.900 10.640 ;
+        RECT 13.550 4.780 15.150 10.640 ;
     END
   END vssd
   PIN vssd
@@ -380,7 +380,7 @@ MACRO gpio_control_block
     USE GROUND ;
     PORT
       LAYER met5 ;
-        RECT -1.500 52.580 55.320 54.180 ;
+        RECT -1.500 50.830 55.320 52.430 ;
     END
   END vssd
   PIN vssd
@@ -388,7 +388,7 @@ MACRO gpio_control_block
     USE GROUND ;
     PORT
       LAYER met5 ;
-        RECT -1.500 36.580 55.320 38.180 ;
+        RECT -1.500 35.330 55.320 36.930 ;
     END
   END vssd
   PIN vssd
@@ -396,7 +396,7 @@ MACRO gpio_control_block
     USE GROUND ;
     PORT
       LAYER met5 ;
-        RECT -1.500 20.580 55.320 22.180 ;
+        RECT -1.500 19.830 55.320 21.430 ;
     END
   END vssd
   PIN vssd
@@ -412,7 +412,7 @@ MACRO gpio_control_block
     USE POWER ;
     PORT
       LAYER met4 ;
-        RECT 42.800 -1.820 44.400 69.820 ;
+        RECT 41.300 -1.820 42.900 69.820 ;
     END
   END vccd1
   PIN vccd1
@@ -420,7 +420,7 @@ MACRO gpio_control_block
     USE POWER ;
     PORT
       LAYER met4 ;
-        RECT 26.800 -1.820 28.400 69.820 ;
+        RECT 25.800 -1.820 27.400 69.820 ;
     END
   END vccd1
   PIN vccd1
@@ -428,7 +428,7 @@ MACRO gpio_control_block
     USE POWER ;
     PORT
       LAYER met4 ;
-        RECT 10.800 22.400 12.400 69.820 ;
+        RECT 10.300 28.400 11.900 69.820 ;
     END
   END vccd1
   PIN vccd1
@@ -452,7 +452,7 @@ MACRO gpio_control_block
     USE POWER ;
     PORT
       LAYER met4 ;
-        RECT 10.800 -1.820 12.400 10.400 ;
+        RECT 10.300 -1.820 11.900 10.400 ;
     END
   END vccd1
   PIN vccd1
@@ -468,7 +468,7 @@ MACRO gpio_control_block
     USE POWER ;
     PORT
       LAYER met5 ;
-        RECT -8.100 49.080 61.920 50.680 ;
+        RECT -8.100 47.580 61.920 49.180 ;
     END
   END vccd1
   PIN vccd1
@@ -476,7 +476,7 @@ MACRO gpio_control_block
     USE POWER ;
     PORT
       LAYER met5 ;
-        RECT -8.100 33.080 61.920 34.680 ;
+        RECT -8.100 32.080 61.920 33.680 ;
     END
   END vccd1
   PIN vccd1
@@ -484,7 +484,7 @@ MACRO gpio_control_block
     USE POWER ;
     PORT
       LAYER met5 ;
-        RECT -8.100 17.080 61.920 18.680 ;
+        RECT -8.100 16.580 61.920 18.180 ;
     END
   END vccd1
   PIN vccd1
@@ -508,7 +508,7 @@ MACRO gpio_control_block
     USE GROUND ;
     PORT
       LAYER met4 ;
-        RECT 34.800 -1.820 36.400 69.820 ;
+        RECT 33.550 -1.820 35.150 69.820 ;
     END
   END vssd1
   PIN vssd1
@@ -516,7 +516,7 @@ MACRO gpio_control_block
     USE GROUND ;
     PORT
       LAYER met4 ;
-        RECT 18.800 -1.820 20.400 69.820 ;
+        RECT 18.050 28.400 19.650 69.820 ;
     END
   END vssd1
   PIN vssd1
@@ -525,6 +525,14 @@ MACRO gpio_control_block
     PORT
       LAYER met4 ;
         RECT -8.100 -1.820 -6.500 69.820 ;
+    END
+  END vssd1
+  PIN vssd1
+    DIRECTION INOUT ;
+    USE GROUND ;
+    PORT
+      LAYER met4 ;
+        RECT 18.050 -1.820 19.650 10.400 ;
     END
   END vssd1
   PIN vssd1
@@ -540,7 +548,7 @@ MACRO gpio_control_block
     USE GROUND ;
     PORT
       LAYER met5 ;
-        RECT -8.100 41.080 61.920 42.680 ;
+        RECT -8.100 39.830 61.920 41.430 ;
     END
   END vssd1
   PIN vssd1
@@ -548,7 +556,7 @@ MACRO gpio_control_block
     USE GROUND ;
     PORT
       LAYER met5 ;
-        RECT -8.100 25.080 61.920 26.680 ;
+        RECT -8.100 24.330 61.920 25.930 ;
     END
   END vssd1
   PIN vssd1
@@ -563,11 +571,13 @@ MACRO gpio_control_block
       LAYER li1 ;
         RECT 4.600 10.795 49.220 57.205 ;
       LAYER met1 ;
-        RECT 4.600 0.040 72.150 63.200 ;
+        RECT 4.600 5.140 72.150 66.260 ;
       LAYER met2 ;
-        RECT 6.070 0.010 72.130 68.525 ;
+        RECT 5.860 0.835 72.130 68.525 ;
       LAYER met3 ;
-        RECT 5.980 10.715 47.900 57.285 ;
+        RECT 5.800 10.715 46.150 57.285 ;
+      LAYER met4 ;
+        RECT 7.390 12.160 16.570 26.240 ;
   END
 END gpio_control_block
 END LIBRARY

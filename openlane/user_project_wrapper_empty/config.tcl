@@ -36,7 +36,7 @@ set ::env(CLOCK_PERIOD) "10"
 set ::env(PL_OPENPHYSYN_OPTIMIZATIONS) 0
 set ::env(DIODE_INSERTION_STRATEGY) 0
 
-set ::env(MAGIC_WRITE_FULL_LEF) 1
+set ::env(MAGIC_WRITE_FULL_LEF) 0
 
 set ::env(VERILOG_FILES) "\
 	$script_dir/../../verilog/rtl/defines.v \

@@ -36,13 +36,13 @@ VIAS 4 ;
 + RECT met5 ( -710 -710 ) ( 710 710 ) 
  
  ;
-- via2_300x300 
+- via2_300x450 
  
 + VIARULE M2M3_PR
   + CUTSIZE 200 200
   + LAYERS met2 via2 met3
   + CUTSPACING 200 200
-  + ENCLOSURE 50 85 65 65
+  + ENCLOSURE 50 125 65 125
  ;
 - via_300x480 
  
@@ -54,8 +54,8 @@ VIAS 4 ;
  ;
 END VIAS
 
-COMPONENTS 66 ;
-- inst sky130_fd_sc_hd__conb_1 + PLACED ( 83720 0 ) FS ;
+COMPONENTS 65 ;
+- inst sky130_fd_sc_hd__conb_1 + PLACED ( 93840 0 ) FS ;
 - PHY_0 sky130_fd_sc_hd__decap_3 + FIXED ( 0 0 ) FS ;
 - PHY_1 sky130_fd_sc_hd__decap_3 + FIXED ( 98440 0 ) S ;
 - PHY_2 sky130_fd_sc_hd__decap_3 + FIXED ( 0 2720 ) N ;
@@ -92,12 +92,11 @@ COMPONENTS 66 ;
 - FILLER_0_146 sky130_fd_sc_hd__decap_12 + PLACED ( 67160 0 ) FS ;
 - FILLER_0_158 sky130_fd_sc_hd__decap_12 + PLACED ( 72680 0 ) FS ;
 - FILLER_0_170 sky130_fd_sc_hd__decap_4 + PLACED ( 78200 0 ) FS ;
-- FILLER_0_175 sky130_fd_sc_hd__decap_6 + PLACED ( 80500 0 ) FS ;
-- FILLER_0_181 sky130_fd_sc_hd__fill_1 + PLACED ( 83260 0 ) FS ;
-- FILLER_0_185 sky130_fd_sc_hd__decap_12 + PLACED ( 85100 0 ) FS ;
-- FILLER_0_197 sky130_fd_sc_hd__decap_6 + PLACED ( 90620 0 ) FS ;
-- FILLER_0_204 sky130_fd_sc_hd__decap_8 + PLACED ( 93840 0 ) FS ;
-- FILLER_0_212 sky130_fd_sc_hd__fill_2 + PLACED ( 97520 0 ) FS ;
+- FILLER_0_175 sky130_fd_sc_hd__decap_12 + PLACED ( 80500 0 ) FS ;
+- FILLER_0_187 sky130_fd_sc_hd__decap_12 + PLACED ( 86020 0 ) FS ;
+- FILLER_0_199 sky130_fd_sc_hd__decap_4 + PLACED ( 91540 0 ) FS ;
+- FILLER_0_207 sky130_fd_sc_hd__decap_6 + PLACED ( 95220 0 ) FS ;
+- FILLER_0_213 sky130_fd_sc_hd__fill_1 + PLACED ( 97980 0 ) FS ;
 - FILLER_1_3 sky130_fd_sc_hd__decap_12 + PLACED ( 1380 2720 ) N ;
 - FILLER_1_15 sky130_fd_sc_hd__decap_12 + PLACED ( 6900 2720 ) N ;
 - FILLER_1_27 sky130_fd_sc_hd__fill_2 + PLACED ( 12420 2720 ) N ;
@@ -137,7 +136,7 @@ PINS 8 ;
   + LAYER met2 ( -150 -2960 ) ( 150 2960 )
   + FIXED ( 1000 2720 ) N + SPECIAL ;
 - vccd2 + NET vccd2 + DIRECTION INOUT + USE POWER 
-  + LAYER met3 ( -49910 -150 ) ( 49910 150 )
+  + LAYER met3 ( -49910 -225 ) ( 49910 225 )
   + FIXED ( 49910 1760 ) N + SPECIAL ;
 - vssd2 + NET vssd2 + DIRECTION INOUT + USE GROUND 
   + LAYER met2 ( -150 -2960 ) ( 150 2960 )
@@ -146,8 +145,8 @@ PINS 8 ;
   + LAYER met2 ( -150 -2960 ) ( 150 2960 )
   + FIXED ( 21000 2720 ) N + SPECIAL ;
 - vssd2 + NET vssd2 + DIRECTION INOUT + USE GROUND 
-  + LAYER met3 ( -49910 -150 ) ( 49910 150 )
-  + FIXED ( 49910 4560 ) N + SPECIAL ;
+  + LAYER met3 ( -49910 -225 ) ( 49910 225 )
+  + FIXED ( 49910 4660 ) N + SPECIAL ;
 END PINS
 
 BLOCKAGES 2 ;
@@ -167,10 +166,10 @@ SPECIALNETS 2 ;
     NEW met1 0 + SHAPE STRIPE ( 81000 0 ) via_300x480 
     NEW met1 0 + SHAPE STRIPE ( 41000 0 ) via_300x480 
     NEW met1 0 + SHAPE STRIPE ( 1000 0 ) via_300x480 
-    NEW met2 0 + SHAPE STRIPE ( 81000 1760 ) via2_300x300 
-    NEW met2 0 + SHAPE STRIPE ( 41000 1760 ) via2_300x300 
-    NEW met2 0 + SHAPE STRIPE ( 1000 1760 ) via2_300x300 
-    NEW met3 300 + SHAPE STRIPE ( 0 1760 ) ( 99820 1760 ) 
+    NEW met2 0 + SHAPE STRIPE ( 81000 1760 ) via2_300x450 
+    NEW met2 0 + SHAPE STRIPE ( 41000 1760 ) via2_300x450 
+    NEW met2 0 + SHAPE STRIPE ( 1000 1760 ) via2_300x450 
+    NEW met3 450 + SHAPE STRIPE ( 0 1760 ) ( 99820 1760 ) 
     NEW met2 300 + SHAPE STRIPE ( 81000 -240 ) ( 81000 5680 ) 
     NEW met2 300 + SHAPE STRIPE ( 41000 -240 ) ( 41000 5680 ) 
     NEW met2 300 + SHAPE STRIPE ( 1000 -240 ) ( 1000 5680 ) 
@@ -180,9 +179,9 @@ SPECIALNETS 2 ;
 - vssd2 ( PIN vssd2 ) 
   + ROUTED met1 0 + SHAPE STRIPE ( 61000 2720 ) via_300x480 
     NEW met1 0 + SHAPE STRIPE ( 21000 2720 ) via_300x480 
-    NEW met2 0 + SHAPE STRIPE ( 61000 4560 ) via2_300x300 
-    NEW met2 0 + SHAPE STRIPE ( 21000 4560 ) via2_300x300 
-    NEW met3 300 + SHAPE STRIPE ( 0 4560 ) ( 99820 4560 ) 
+    NEW met2 0 + SHAPE STRIPE ( 61000 4660 ) via2_300x450 
+    NEW met2 0 + SHAPE STRIPE ( 21000 4660 ) via2_300x450 
+    NEW met3 450 + SHAPE STRIPE ( 0 4660 ) ( 99820 4660 ) 
     NEW met2 300 + SHAPE STRIPE ( 61000 -240 ) ( 61000 5680 ) 
     NEW met2 300 + SHAPE STRIPE ( 21000 -240 ) ( 21000 5680 ) 
     NEW met1 480 + SHAPE FOLLOWPIN ( 0 2720 ) ( 99820 2720 ) 
@@ -191,16 +190,16 @@ END SPECIALNETS
 
 NETS 1 ;
 - HI ( PIN HI ) ( inst HI ) 
-  + ROUTED met3 ( 3220 3740 0 ) ( 15870 3740 )
-    NEW met2 ( 15870 1020 ) ( 15870 3740 )
-    NEW met2 ( 83950 1020 ) ( 83950 1190 )
-    NEW met3 ( 15870 1020 ) ( 83950 1020 )
-    NEW met2 ( 15870 3740 ) via2_FR
-    NEW met2 ( 15870 1020 ) via2_FR
-    NEW met2 ( 83950 1020 ) via2_FR
-    NEW li1 ( 83950 1190 ) L1M1_PR_MR
-    NEW met1 ( 83950 1190 ) M1M2_PR
-    NEW met1 ( 83950 1190 ) RECT ( -355 -70 0 70 )
+  + ROUTED met3 ( 3220 3740 0 ) ( 20470 3740 )
+    NEW met2 ( 20470 1020 ) ( 20470 3740 )
+    NEW met2 ( 94070 1020 ) ( 94070 1190 )
+    NEW met3 ( 20470 1020 ) ( 94070 1020 )
+    NEW met2 ( 20470 3740 ) via2_FR
+    NEW met2 ( 20470 1020 ) via2_FR
+    NEW met2 ( 94070 1020 ) via2_FR
+    NEW li1 ( 94070 1190 ) L1M1_PR_MR
+    NEW met1 ( 94070 1190 ) M1M2_PR
+    NEW met1 ( 94070 1190 ) RECT ( -355 -70 0 70 )
 + USE SIGNAL ;
 END NETS
 END DESIGN

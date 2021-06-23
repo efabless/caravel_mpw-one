@@ -43,9 +43,9 @@ set ::env(FP_PDN_CORE_RING_HSPACING) 0.4
 set ::env(FP_PDN_VOFFSET) 1
 set ::env(FP_PDN_HOFFSET) 2
 set ::env(FP_PDN_VWIDTH) 0.3
-set ::env(FP_PDN_HWIDTH) 0.3
+set ::env(FP_PDN_HWIDTH) 0.45
 set ::env(FP_PDN_VPITCH) 40
-set ::env(FP_PDN_HPITCH) 5.6
+set ::env(FP_PDN_HPITCH) 5.8
 
 set ::env(GLB_RT_MAXLAYER) 4
 
