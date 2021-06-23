@@ -68,6 +68,7 @@
 	`include "mgmt_protect.v"
     `include "mgmt_protect_hv.v"
 	`include "gpio_control_block.v"
+	`include "gpio_logic_high.v"
     `include "sky130_fd_sc_hvl__lsbufhv2lv_1_wrapped.v"
     `include "caravan.v"
 `endif

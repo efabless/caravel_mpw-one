@@ -78,7 +78,13 @@ module user_project_wrapper #(
     output [2:0] user_irq
 );
 
-// Dummy assignment so that we can take it through the openlane flow
+// Dummy assignments so that we can take it through the openlane flow
+`ifdef SIM
+// Needed for running GL simulation
+assign io_out = 0;
+assign io_oeb = 0;
+`else
 assign io_out = io_in;
+`endif
 
 endmodule	// user_project_wrapper

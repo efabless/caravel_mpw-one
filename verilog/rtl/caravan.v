@@ -62,14 +62,18 @@
 
 module caravan (
     inout vddio,	// Common 3.3V padframe/ESD power
+    inout vddio_2,	// Common 3.3V padframe/ESD power
     inout vssio,	// Common padframe/ESD ground
+    inout vssio_2,	// Common padframe/ESD ground
     inout vdda,		// Management 3.3V power
     inout vssa,		// Common analog ground
     inout vccd,		// Management/Common 1.8V power
     inout vssd,		// Common digital ground
     inout vdda1,	// User area 1 3.3V power
+    inout vdda1_2,	// User area 1 3.3V power
     inout vdda2,	// User area 2 3.3V power
     inout vssa1,	// User area 1 analog ground
+    inout vssa1_2,	// User area 1 analog ground
     inout vssa2,	// User area 2 analog ground
     inout vccd1,	// User area 1 1.8V power
     inout vccd2,	// User area 2 1.8V power
@@ -225,21 +229,43 @@ module caravan (
 	.ANALOG_PADS_1(`ANALOG_PADS_1),
 	.ANALOG_PADS_2(`ANALOG_PADS_2)
     ) padframe (
-	// Package Pins
-	.vddio(vddio),
-	.vssio(vssio),
-	.vdda(vdda),
-	.vssa(vssa),
-	.vccd(vccd),
-	.vssd(vssd),
-	.vdda1(vdda1),
-	.vdda2(vdda2),
-	.vssa1(vssa1),
-	.vssa2(vssa2),
-	.vccd1(vccd1),
-	.vccd2(vccd2),
-	.vssd1(vssd1),
-	.vssd2(vssd2),
+	`ifndef TOP_ROUTING
+		// Package Pins
+		.vddio_pad	(vddio),		// Common padframe/ESD supply
+		.vddio_pad2	(vddio_2),
+		.vssio_pad	(vssio),		// Common padframe/ESD ground
+		.vssio_pad2	(vssio_2),
+		.vccd_pad	(vccd),			// Common 1.8V supply
+		.vssd_pad	(vssd),			// Common digital ground
+		.vdda_pad	(vdda),			// Management analog 3.3V supply
+		.vssa_pad	(vssa),			// Management analog ground
+		.vdda1_pad	(vdda1),		// User area 1 3.3V supply
+		.vdda1_pad2	(vdda1_2),		
+		.vdda2_pad	(vdda2),		// User area 2 3.3V supply
+		.vssa1_pad	(vssa1),		// User area 1 analog ground
+		.vssa1_pad2	(vssa1_2),
+		.vssa2_pad	(vssa2),		// User area 2 analog ground
+		.vccd1_pad	(vccd1),		// User area 1 1.8V supply
+		.vccd2_pad	(vccd2),		// User area 2 1.8V supply
+		.vssd1_pad	(vssd1),		// User area 1 digital ground
+		.vssd2_pad	(vssd2),		// User area 2 digital ground
+	`endif
+	
+	// Core Side Pins
+	.vddio	(vddio_core),
+	.vssio	(vssio_core),
+	.vdda	(vdda_core),
+	.vssa	(vssa_core),
+	.vccd	(vccd_core),
+	.vssd	(vssd_core),
+	.vdda1	(vdda1_core),
+	.vdda2	(vdda2_core),
+	.vssa1	(vssa1_core),
+	.vssa2	(vssa2_core),
+	.vccd1	(vccd1_core),
+	.vccd2	(vccd2_core),
+	.vssd1	(vssd1_core),
+	.vssd2	(vssd2_core),
 
 	.gpio(gpio),
 	.mprj_io(mprj_io),
@@ -366,8 +392,8 @@ module caravan (
 
     mgmt_core soc (
 	`ifdef USE_POWER_PINS
-		.VPWR(vccd),
-		.VGND(vssd),
+		.VPWR(vccd_core),
+		.VGND(vssd_core),
 	`endif
 		// GPIO (1 pin)
 		.gpio_out_pad(gpio_out_core),
@@ -458,17 +484,17 @@ module caravan (
 
 	mgmt_protect mgmt_buffers (
 	`ifdef USE_POWER_PINS
-		.vccd(vccd),
-		.vssd(vssd),
-		.vccd1(vccd1),
-		.vssd1(vssd1),
-		.vccd2(vccd2),
-		.vssd2(vssd2),
-		.vdda1(vdda1),
-		.vssa1(vssa1),
-		.vdda2(vdda2),
-		.vssa2(vssa2),
-        `endif
+		.vccd(vccd_core),
+		.vssd(vssd_core),
+		.vccd1(vccd1_core),
+		.vssd1(vssd1_core),
+		.vccd2(vccd2_core),
+		.vssd2(vssd2_core),
+		.vdda1(vdda1_core),
+		.vssa1(vssa1_core),
+		.vdda2(vdda2_core),
+		.vssa2(vssa2_core),
+    `endif
 
 		.caravel_clk(caravel_clk),
 		.caravel_clk2(caravel_clk2),
@@ -512,15 +538,15 @@ module caravan (
 
 	user_analog_project_wrapper mprj ( 
 	`ifdef USE_POWER_PINS
-		.vdda1(vdda1),	// User area 1 3.3V power
-		.vdda2(vdda2),	// User area 2 3.3V power
-		.vssa1(vssa1),	// User area 1 analog ground
-		.vssa2(vssa2),	// User area 2 analog ground
-		.vccd1(vccd1),	// User area 1 1.8V power
-		.vccd2(vccd2),	// User area 2 1.8V power
-		.vssd1(vssd1),	// User area 1 digital ground
-		.vssd2(vssd2),	// User area 2 digital ground
-        `endif
+		.vdda1(vdda1_core),		// User area 1 3.3V power
+		.vdda2(vdda2_core),		// User area 2 3.3V power
+		.vssa1(vssa1_core),		// User area 1 analog ground
+		.vssa2(vssa2_core),		// User area 2 analog ground
+		.vccd1(vccd1_core),		// User area 1 1.8V power
+		.vccd2(vccd2_core),		// User area 2 1.8V power
+		.vssd1(vssd1_core),		// User area 1 digital ground
+		.vssd2(vssd2_core),		// User area 2 digital ground
+    `endif
 
     		.wb_clk_i(mprj_clock),
     		.wb_rst_i(mprj_reset),
@@ -605,12 +631,12 @@ module caravan (
 	.DM_INIT(`DM_INIT),	// Mode = output, strong up/down
 	.OENB_INIT(`OENB_INIT)	// Enable output signaling from wire
     ) gpio_control_bidir_1 [1:0] (
-    	`ifdef USE_POWER_PINS
-			.vccd(vccd),
-			.vssd(vssd),
-			.vccd1(vccd1),
-			.vssd1(vssd1),
-        `endif
+   	`ifdef USE_POWER_PINS
+			.vccd(vccd_core),
+			.vssd(vssd_core),
+			.vccd1(vccd1_core),
+			.vssd1(vssd1_core),
+    `endif
 
     	// Management Soc-facing signals
 
@@ -654,12 +680,12 @@ module caravan (
     /* Section 1 GPIOs (GPIO 0 to 18) */
     wire [`MPRJ_IO_PADS_1-`ANALOG_PADS_1-3:0] one_loop1;
     gpio_control_block gpio_control_in_1 [`MPRJ_IO_PADS_1-`ANALOG_PADS_1-3:0] (
-    	`ifdef USE_POWER_PINS
-        	.vccd(vccd),
-		.vssd(vssd),
-		.vccd1(vccd1),
-		.vssd1(vssd1),
-        `endif
+    `ifdef USE_POWER_PINS
+        .vccd(vccd_core),
+		.vssd(vssd_core),
+		.vccd1(vccd1_core),
+		.vssd1(vssd1_core),
+    `endif
 
     	// Management Soc-facing signals
 
@@ -706,23 +732,23 @@ module caravan (
 	.OENB_INIT(`OENB_INIT)	// Enable output signaling from wire
     ) gpio_control_bidir_2 [1:0] (
     	`ifdef USE_POWER_PINS
-			.vccd(vccd),
-			.vssd(vssd),
-			.vccd1(vccd1),
-			.vssd1(vssd1),
+			.vccd(vccd_core),
+			.vssd(vssd_core),
+			.vccd1(vccd1_core),
+			.vssd1(vssd1_core),
         `endif
 
     	// Management Soc-facing signals
 
-	.resetn(gpio_resetn_1_shifted[(`MPRJ_IO_PADS_2-`ANALOG_PADS_2-1):(`MPRJ_IO_PADS_2-`ANALOG_PADS_2-2)]),
-	.serial_clock(gpio_clock_1_shifted[(`MPRJ_IO_PADS_2-`ANALOG_PADS_2-1):(`MPRJ_IO_PADS_2-`ANALOG_PADS_2-2)]),
+		.resetn(gpio_resetn_1_shifted[(`MPRJ_IO_PADS_2-`ANALOG_PADS_2-1):(`MPRJ_IO_PADS_2-`ANALOG_PADS_2-2)]),
+		.serial_clock(gpio_clock_1_shifted[(`MPRJ_IO_PADS_2-`ANALOG_PADS_2-1):(`MPRJ_IO_PADS_2-`ANALOG_PADS_2-2)]),
 
-	.resetn_out(gpio_resetn_1[(`MPRJ_IO_PADS_2-`ANALOG_PADS_2-1):(`MPRJ_IO_PADS_2-`ANALOG_PADS_2-2)]),
-	.serial_clock_out(gpio_clock_1[(`MPRJ_IO_PADS_2-`ANALOG_PADS_2-1):(`MPRJ_IO_PADS_2-`ANALOG_PADS_2-2)]),
+		.resetn_out(gpio_resetn_1[(`MPRJ_IO_PADS_2-`ANALOG_PADS_2-1):(`MPRJ_IO_PADS_2-`ANALOG_PADS_2-2)]),
+		.serial_clock_out(gpio_clock_1[(`MPRJ_IO_PADS_2-`ANALOG_PADS_2-1):(`MPRJ_IO_PADS_2-`ANALOG_PADS_2-2)]),
 
-    	.mgmt_gpio_in(mgmt_io_in[(`DIG2_TOP):(`DIG2_TOP-1)]),
-   	.mgmt_gpio_out({gpio_flash_io3_out, gpio_flash_io2_out}),
-   	.mgmt_gpio_oeb({flash_io3_oeb_core, flash_io2_oeb_core}),
+		.mgmt_gpio_in(mgmt_io_in[(`DIG2_TOP):(`DIG2_TOP-1)]),
+		.mgmt_gpio_out({gpio_flash_io3_out, gpio_flash_io2_out}),
+		.mgmt_gpio_oeb({flash_io3_oeb_core, flash_io2_oeb_core}),
 
         .one(),
         .zero(),
@@ -754,24 +780,24 @@ module caravan (
     /* Section 2 GPIOs (GPIO 19 to 37) */
     wire [`MPRJ_IO_PADS_2-`ANALOG_PADS_2-3:0] one_loop2;
     gpio_control_block gpio_control_in_2 [`MPRJ_IO_PADS_2-`ANALOG_PADS_2-3:0] (
-    	`ifdef USE_POWER_PINS
-        	.vccd(vccd),
-		.vssd(vssd),
-		.vccd1(vccd1),
-		.vssd1(vssd1),
-        `endif
+    `ifdef USE_POWER_PINS
+        .vccd(vccd_core),
+		.vssd(vssd_core),
+		.vccd1(vccd1_core),
+		.vssd1(vssd1_core),
+    `endif
 
     	// Management Soc-facing signals
 
-	.resetn(gpio_resetn_1_shifted[(`MPRJ_IO_PADS_2-`ANALOG_PADS_2-3):0]),
-	.serial_clock(gpio_clock_1_shifted[(`MPRJ_IO_PADS_2-`ANALOG_PADS_2-3):0]),
+		.resetn(gpio_resetn_1_shifted[(`MPRJ_IO_PADS_2-`ANALOG_PADS_2-3):0]),
+		.serial_clock(gpio_clock_1_shifted[(`MPRJ_IO_PADS_2-`ANALOG_PADS_2-3):0]),
 
-	.resetn_out(gpio_resetn_1[(`MPRJ_IO_PADS_2-`ANALOG_PADS_2-3):0]),
-	.serial_clock_out(gpio_clock_1[(`MPRJ_IO_PADS_2-`ANALOG_PADS_2-3):0]),
+		.resetn_out(gpio_resetn_1[(`MPRJ_IO_PADS_2-`ANALOG_PADS_2-3):0]),
+		.serial_clock_out(gpio_clock_1[(`MPRJ_IO_PADS_2-`ANALOG_PADS_2-3):0]),
 
-	.mgmt_gpio_in(mgmt_io_in[(`DIG2_TOP-2):`DIG2_BOT]),
-	.mgmt_gpio_out(mgmt_io_in[(`DIG2_TOP-2):`DIG2_BOT]),
-	.mgmt_gpio_oeb(one_loop2),
+		.mgmt_gpio_in(mgmt_io_in[(`DIG2_TOP-2):`DIG2_BOT]),
+		.mgmt_gpio_out(mgmt_io_in[(`DIG2_TOP-2):`DIG2_BOT]),
+		.mgmt_gpio_oeb(one_loop2),
 
         .one(one_loop2),
         .zero(),
@@ -803,20 +829,20 @@ module caravan (
     user_id_programming #(
 	.USER_PROJECT_ID(USER_PROJECT_ID)
     ) user_id_value (
-`ifdef USE_POWER_PINS
-	.VPWR(vccd),
-	.VGND(vssd),
-`endif
+	`ifdef USE_POWER_PINS
+		.VPWR(vccd_core),
+		.VGND(vssd_core),
+	`endif
 	.mask_rev(mask_rev)
     );
 
     // Power-on-reset circuit
     simple_por por (
-`ifdef USE_POWER_PINS
-		.vdd3v3(vddio),
-		.vdd1v8(vccd),
-		.vss(vssio),
-`endif
+	`ifdef USE_POWER_PINS
+		.vdd3v3(vddio_core),
+		.vdd1v8(vccd_core),
+		.vss(vssio_core),
+	`endif
 		.porb_h(porb_h),
 		.porb_l(porb_l),
 		.por_l(por_l)
@@ -824,17 +850,21 @@ module caravan (
 
     // XRES (chip input pin reset) reset level converter
     sky130_fd_sc_hvl__lsbufhv2lv_1_wrapped rstb_level (
-`ifdef USE_POWER_PINS
-		.VPWR(vddio),
-		.LVPWR(vccd),
-		.VGND(vssio),
-`endif
+	`ifdef USE_POWER_PINS
+		.VPWR(vddio_core),
+		.LVPWR(vccd_core),
+		.VGND(vssio_core),
+	`endif
 		.A(rstb_h),
 		.X(rstb_l)
     );
 
 	// Storage area
 	storage storage(
+	`ifdef USE_POWER_PINS
+        .VPWR(vccd_core),
+        .VGND(vssd_core),
+    `endif
 		.mgmt_clk(caravel_clk),
         .mgmt_ena(mgmt_ena),
         .mgmt_wen(mgmt_wen),

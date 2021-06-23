@@ -46,6 +46,7 @@
 	`include "gl/mgmt_protect.v"
     `include "gl/mgmt_protect_hv.v"
 	`include "gl/gpio_control_block.v"
+	`include "gl/gpio_logic_high.v"
 	`include "gl/sky130_fd_sc_hvl__lsbufhv2lv_1_wrapped.v"
     `include "gl/caravel.v"
 `else
