@@ -1,0 +1,49 @@
+make[1]: Entering directory `/home/mk/foss/designs/caravel.mpw-one-final-metal-fix/verilog/dv/wb_utests/la_wb'
+iverilog -I .. -I ../../../rtl \
+la_wb_tb.v -o la_wb.vvp
+Starting Iverilog in development mode, version /ef/apps/ivl.p/current
+WARNING: selected non-privileged Iverilog, /ef/apps/ivl.p/current
+vvp la_wb.vvp
+Starting Iverilog in development mode, version /ef/apps/ivl.p/current
+WARNING: selected non-privileged Iverilog, /ef/apps/ivl.p/current
+VCD info: dumpfile la_wb_tb.vcd opened for output.
+Write Cycle Started.
+Write Cycle Ended.
+Write Cycle Started.
+Write Cycle Ended.
+Write Cycle Started.
+Write Cycle Ended.
+Write Cycle Started.
+Write Cycle Ended.
+Read Cycle Started.
+Read Cycle Ended.
+Read Cycle Started.
+Read Cycle Ended.
+Read Cycle Started.
+Read Cycle Ended.
+Read Cycle Started.
+Read Cycle Ended.
+Write Cycle Started.
+Write Cycle Ended.
+Write Cycle Started.
+Write Cycle Ended.
+Write Cycle Started.
+Write Cycle Ended.
+Write Cycle Started.
+Write Cycle Ended.
+Read Cycle Started.
+Read Cycle Ended.
+100100100001010100110101001001
+100100100001010100110101001001
+Read Cycle Started.
+Read Cycle Ended.
+Read Cycle Started.
+Read Cycle Ended.
+1001000010011010110000010
+100100100001010100110101001001
+Read Cycle Started.
+Read Cycle Ended.
+Monitor: Test LA Wishbone Success!
+Monitor: Test LA Wishbone Passed!
+rm la_wb.vvp
+make[1]: Leaving directory `/home/mk/foss/designs/caravel.mpw-one-final-metal-fix/verilog/dv/wb_utests/la_wb'

@@ -83418,7 +83418,7 @@ rlabel metal5 s 698512 639240 711002 651760 6 mprj_io[9]
 port 43 nsew signal bidirectional
 rlabel metal5 s 136713 7143 144149 18309 6 resetb
 port 44 nsew signal input
-rlabel metal3 s 39593 120278 39999 125058 6 vddio_pad
+rlabel metal3 s 39593 120278 39999 125058 6 vddio
 port 54 nsew signal bidirectional
 rlabel metal2 s 225172 53602 225228 54402 6 pwr_ctrl_out[0]
 port 59 nsew signal tristate
@@ -83430,40 +83430,68 @@ rlabel metal2 s 226276 53602 226332 54402 6 pwr_ctrl_out[3]
 port 62 nsew signal tristate
 rlabel metal5 s 386040 1018512 398560 1031002 6 mprj_io[18]
 port 15 nsew signal bidirectional
-rlabel metal5 80222 6811 92390 18976 1 vssa_pad
+rlabel metal5 80222 6811 92390 18976 1 vssa
 port 63 n
-rlabel metal5 243266 6167 254146 19620 1 vssd_pad
+rlabel metal5 243266 6167 254146 19620 1 vssd
 port 64 n
-rlabel metal5 624222 6811 636390 18976 1 vdda_pad
+rlabel metal5 624222 6811 636390 18976 1 vdda
 port 65 n
-rlabel metal5 697980 461866 711433 472746 1 vssd1_pad
+rlabel metal5 697980 461866 711433 472746 1 vssd1
 port 66 n
-rlabel metal5 698624 819822 710789 831990 1 vdda1_pad
+rlabel metal5 698624 819822 710789 831990 1 vdda1
 port 67 n
-rlabel metal5 697980 909666 711433 920546 1 vccd1_pad
+rlabel metal5 697980 909666 711433 920546 1 vccd1
 port 68 n
-rlabel metal5 577010 1018624 589178 1030789 1 vssa1_pad
+rlabel metal5 577010 1018624 589178 1030789 1 vssa1
 port 69 n
-rlabel metal5 334810 1018624 346978 1030789 1 vssio_pad
+rlabel metal5 334810 1018624 346978 1030789 1 vssio
 port 70 n
-rlabel metal5 6167 914054 19620 924934 1 vccd2_pad
+rlabel metal5 6167 914054 19620 924934 1 vccd2
 port 71 n
-rlabel metal5 6811 829010 18976 841178 1 vssa2_pad
+rlabel metal5 6811 829010 18976 841178 1 vssa2
 port 72 n
-rlabel metal5 6811 484410 18976 496578 1 vdda2_pad
+rlabel metal5 6811 484410 18976 496578 1 vdda2
 port 73 n
-rlabel metal5 6167 442854 19620 453734 1 vssd2_pad
+rlabel metal5 6167 442854 19620 453734 1 vssd2
 port 74 n
-rlabel metal5 6167 70054 19620 80934 1 vccd_pad
+rlabel metal5 6167 70054 19620 80934 1 vccd
 port 75 n
+rlabel metal5 80222 6811 92390 18976 1 vssa_pad
+port 727 n
+rlabel metal5 243266 6167 254146 19620 1 vssd_pad
+port 733 n
+rlabel metal5 570422 6811 582590 18976 1 vssio_pad
+port 735 n
+rlabel metal5 624222 6811 636390 18976 1 vdda_pad
+port 719 n
+rlabel metal5 697980 461866 711433 472746 1 vssd1_pad
+port 730 n
+rlabel metal5 698624 819822 710789 831990 1 vdda1_pad
+port 716 n
+rlabel metal5 697980 909666 711433 920546 1 vccd1_pad
+port 710 n
+rlabel metal5 577010 1018624 589178 1030789 1 vssa1_pad
+port 724 n
+rlabel metal5 6167 914054 19620 924934 1 vccd2_pad
+port 712 n
+rlabel metal5 6811 829010 18976 841178 1 vssa2_pad
+port 726 n
+rlabel metal5 6811 484410 18976 496578 1 vdda2_pad
+port 718 n
+rlabel metal5 6167 442854 19620 453734 1 vssd2_pad
+port 732 n
+rlabel metal5 6811 111610 18976 123778 1 vddio_pad
+port 721 n
+rlabel metal5 6167 70054 19620 80934 1 vccd_pad
+port 713 n
 rlabel metal5 334810 1018624 346978 1030789 1 vssio_pad2
-port 76 n
+port 736 n
 flabel metal5 6811 871210 18976 883378 0 FreeSans 1600 0 0 0 vddio_pad2
-port 77 nsew
+port 737 nsew
 flabel metal5 698624 417022 710789 429190 0 FreeSans 1600 0 0 0 vssa1_pad2
-port 78 nsew
+port 738 nsew
 flabel metal5 698624 505222 710789 517390 0 FreeSans 1600 0 0 0 vdda1_pad2
-port 79 nsew
+port 739 nsew
 << properties >>
 string FIXED_BBOX 0 0 717600 1037600
 << end >>

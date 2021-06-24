@@ -274,7 +274,12 @@ foreach dev $devices {
 # Schematic cells which are not extractable
 #---------------------------------------------------------------
 
-set devices {sky130_fd_io__condiode sky130_fd_io__tap_1}
+#set devices {sky130_fd_sc_hd__diode_2 sky130_fd_sc_hd__conb_1 sky130_fd_sc_hvl__conb_1 sky130_fd_pr__model__parasitic__diode_ps2nw sky130_fd_io__condiode sky130_fd_io__tap_1}
+#set devices {sky130_fd_sc_hd__fill_2 sky130_fd_sc_hd__tapvpwrvgnd_1 sky130_fd_sc_hd__diode_2 sky130_fd_pr__model__parasitic__diode_ps2nw sky130_fd_io__condiode sky130_fd_io__tap_1}
+#set devices {sky130_fd_sc_hd__diode_2 sky130_fd_pr__model__parasitic__diode_ps2nw sky130_fd_io__condiode sky130_fd_io__tap_1}
+set devices {sky130_fd_pr__model__parasitic__diode_ps2nw sky130_fd_io__condiode sky130_fd_io__tap_1}
+
+
 
 foreach dev $devices {
     if {[lsearch $cells1 $dev] >= 0} {

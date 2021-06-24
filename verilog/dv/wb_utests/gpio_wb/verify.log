@@ -1,0 +1,29 @@
+make[1]: Entering directory `/home/mk/foss/designs/caravel.mpw-one-final-metal-fix/verilog/dv/wb_utests/gpio_wb'
+iverilog -I .. -I ../../../rtl \
+gpio_wb_tb.v -o gpio_wb.vvp
+Starting Iverilog in development mode, version /ef/apps/ivl.p/current
+WARNING: selected non-privileged Iverilog, /ef/apps/ivl.p/current
+vvp gpio_wb.vvp
+Starting Iverilog in development mode, version /ef/apps/ivl.p/current
+WARNING: selected non-privileged Iverilog, /ef/apps/ivl.p/current
+VCD info: dumpfile gpio_wb_tb.vcd opened for output.
+Write Cycle Started.
+Write Cycle Ended.
+Read Cycle Started.
+Read Cycle Ended.
+Write Cycle Started.
+Write Cycle Ended.
+Read Cycle Started.
+Read Cycle Ended.
+Write Cycle Started.
+Write Cycle Ended.
+Read Cycle Started.
+Read Cycle Ended.
+Write Cycle Started.
+Write Cycle Ended.
+Read Cycle Started.
+Read Cycle Ended.
+Monitor: GPIO WB Success!
+Monitor: GPIO WB Passed!
+rm gpio_wb.vvp
+make[1]: Leaving directory `/home/mk/foss/designs/caravel.mpw-one-final-metal-fix/verilog/dv/wb_utests/gpio_wb'
