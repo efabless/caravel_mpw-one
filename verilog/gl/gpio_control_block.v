@@ -1137,4 +1137,5 @@ module gpio_control_block (mgmt_gpio_in,
     .VNB(vssd),
     .VPB(vccd),
     .VPWR(vccd));
+   assign vssd1 = vssd;
 endmodule

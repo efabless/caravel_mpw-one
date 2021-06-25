@@ -37,7 +37,7 @@ set ::env(VERILOG_FILES_BLACKBOX) "\
 	$verilog_root/rtl/chip_io.v \
 	$verilog_root/rtl/mgmt_core.v \
 	$verilog_root/rtl/storage.v \
-	$verilog_root/rtl/user_project_wrapper.v \
+	$verilog_root/rtl/__user_project_wrapper.v \
 	$verilog_root/rtl/mgmt_protect.v \
 	$verilog_root/rtl/gpio_control_block.v \
 	$verilog_root/rtl/user_id_programming.v \
@@ -97,6 +97,15 @@ set ::env(GLB_RT_OVERFLOW_ITERS) 50
 set ::env(GLB_RT_TILES) 30
 set ::env(GLB_RT_MINLAYER) 2
 set ::env(GLB_RT_MAXLAYER) 5
+
+set ::env(GLB_RT_ADJUSTMENT) "0"
+set ::env(GLB_RT_L1_ADJUSTMENT) "0.99"
+set ::env(GLB_RT_L2_ADJUSTMENT) "0.1"
+set ::env(GLB_RT_L3_ADJUSTMENT) "0.1"
+set ::env(GLB_RT_L4_ADJUSTMENT) "0.15"
+set ::env(GLB_RT_L5_ADJUSTMENT) "0.15"
+set ::env(GLB_RT_L6_ADJUSTMENT) "0"
+
 # set ::env(ROUTING_OPT_ITERS) 7
 # set ::env(GLB_RT_UNIDIRECTIONAL) 0
 
@@ -106,3 +115,5 @@ set ::env(FILL_INSERTION) 0
 set ::env(LVS_INSERT_POWER_PINS) 0
 
 set ::env(MAGIC_GENERATE_LEF) 0
+
+set ::env(QUIT_ON_ILLEGAL_OVERLAPS) 0

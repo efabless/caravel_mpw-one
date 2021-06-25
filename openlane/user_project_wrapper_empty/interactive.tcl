@@ -29,24 +29,18 @@ remove_components -input $::env(CURRENT_DEF)
 
 place_io_ol
 
-# add_macro_obs \
-# 	-defFile $::env(CURRENT_DEF) \
-# 	-lefFile $::env(MERGED_LEF_UNPADDED) \
-# 	-obstruction core_obs \
-# 	-placementX $::env(FP_IO_HLENGTH) \
-# 	-placementY $::env(FP_IO_VLENGTH) \
-# 	-sizeWidth  [expr [lindex $::env(DIE_AREA) 2]-$::env(FP_IO_HLENGTH)*2] \
-# 	-sizeHeight [expr [lindex $::env(DIE_AREA) 3]-$::env(FP_IO_VLENGTH)*2] \
-# 	-fixed 1 \
-# 	-layerNames "met1 met2 met3 met4 met5"
-
-# exec -ignorestderr openroad -exit $script_dir/gen_pdn.tcl
-
 apply_route_obs
 
 run_power_grid_generation
 
-# set_def $::env(pdn_tmp_file_tag).def
+# pdngen-related hack
+# remove .extra\d+ "pins" so that magic
+# generates shapes for each stripes without the ".extra" postfix
+# until OpenDB can understand this syntax...
+exec sed \
+    -i -E {/^PINS/,/^END PINS/ s/\.extra[[:digit:]]+(.*USE (GROUND|POWER))/\1/g} \
+    $::env(CURRENT_DEF)
+        
 
 run_magic
 

@@ -60,7 +60,7 @@ SPECIAL_VOLTAGE_LIBRARY ?= sky130_fd_sc_hvl
 IO_LIBRARY ?= sky130_fd_io
 PRIMITIVES_LIBRARY ?= sky130_fd_pr
 SKYWATER_COMMIT ?= bb2f842ac8d1b750677ca25bc71fb312859edb82
-OPEN_PDKS_COMMIT ?= e696c086ff2b8d6e72ef78c272d0c072adaef1fd
+OPEN_PDKS_COMMIT ?= 91ddc9a08ff6ed5bcb07e4e8a64bc18fc72c23de
 INSTALL_SRAM ?= disabled
 
 .DEFAULT_GOAL := ship
@@ -483,7 +483,7 @@ skywater-timing: check-env $(PDK_ROOT)/skywater-pdk
 		$(MAKE) timing
 ### OPEN_PDKS
 $(PDK_ROOT)/open_pdks:
-	git clone https://github.com/RTimothyEdwards/open_pdks.git $(PDK_ROOT)/open_pdks
+	git clone git://opencircuitdesign.com/open_pdks $(PDK_ROOT)/open_pdks
 
 .PHONY: open_pdks
 open_pdks: check-env $(PDK_ROOT)/open_pdks
