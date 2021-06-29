@@ -26,7 +26,13 @@
 
 `include "defines.v"
 `include "sram_1rw1r_32_256_8_sky130.v"
-`include "storage.v"
+
+`ifdef GL
+    `include "gl/storage.v"
+`else
+    `include "storage.v"
+`endif
+
 `include "storage_bridge_wb.v"
 
 module storage_tb;
@@ -132,6 +138,7 @@ module storage_tb;
             for ( j = 0; j < 100; j = j + 1) begin 
                 block_adr = (storage_rw_adr[24*i+:24] + (j << 2))  | `STORAGE_BASE_ADR;
                 read(block_adr, 0);
+                #2;
                 if (wb_rw_dat_o !== ref_data[j]) begin
                     $display("Got %0h, Expected %0h from addr %0h: ",wb_rw_dat_o,ref_data[j], block_adr);
                     $display("Monitor: MGMT R/W Operation Failed");

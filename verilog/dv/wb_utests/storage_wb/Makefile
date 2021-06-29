@@ -18,6 +18,8 @@ PDK_PATH?=$(PDK_ROOT)/sky130A
 VERILOG_PATH = ../../../
 RTL_PATH = $(VERILOG_PATH)/rtl
 
+SIM?=RTL
+
 .SUFFIXES:
 
 PATTERN = storage_wb
@@ -25,8 +27,13 @@ PATTERN = storage_wb
 all:  ${PATTERN:=.vcd}
 
 %.vvp: %_tb.v
+ifeq ($(SIM),RTL)
 	iverilog -DFUNCTIONAL -I $(PDK_PATH) -I $(VERILOG_PATH) -I .. -I $(RTL_PATH) \
 	$< -o $@
+else
+	iverilog -DFUNCTIONAL -DGL -I $(PDK_PATH) -I $(VERILOG_PATH) -I .. -I $(RTL_PATH) \
+	$< -o $@
+endif
 
 %.vcd: %.vvp
 	vvp $<

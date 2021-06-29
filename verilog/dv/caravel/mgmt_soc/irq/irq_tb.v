@@ -65,7 +65,7 @@ module irq_tb;
 
 	assign checkbits = mprj_io[19:16];
 	assign status = mprj_io[35:32];
-	// assign mprj_io[3] = 1'b1;	// Force CSB high.
+	assign mprj_io[3] = 1'b1;	// Force CSB high.
 
 	wire flash_csb;
 	wire flash_clk;
