@@ -1,7 +1,7 @@
 magic
 tech sky130A
 magscale 1 2
-timestamp 1624907698
+timestamp 1624978002
 << metal1 >>
 rect 284662 995256 284668 995308
 rect 284720 995296 284726 995308
@@ -6022,7 +6022,7 @@ rect 515440 6598 527960 19088
 rect 570422 6811 582590 18975
 rect 624222 6811 636390 18975
 use sky130_ef_io__corner_pad  mgmt_corner\[0\] $PDKPATH/libs.ref/sky130_fd_io/maglef
-timestamp 1624649926
+timestamp 1624978002
 transform -1 0 40000 0 -1 40800
 box 0 0 40000 40800
 use sky130_ef_io__com_bus_slice_20um  FILLER_170 $PDKPATH/libs.ref/sky130_fd_io/maglef
@@ -6830,7 +6830,7 @@ timestamp 1624649926
 transform -1 0 675200 0 -1 39593
 box 0 0 2000 39593
 use sky130_ef_io__corner_pad  mgmt_corner\[1\]
-timestamp 1624649926
+timestamp 1624978002
 transform 0 1 676800 -1 0 40000
 box 0 0 40000 40800
 use sky130_ef_io__com_bus_slice_20um  FILLER_605
@@ -8566,7 +8566,7 @@ timestamp 1624649926
 transform 0 -1 39593 1 0 997200
 box 0 0 200 39593
 use sky130_ef_io__corner_pad  user2_corner
-timestamp 1624649926
+timestamp 1624978002
 transform 0 -1 40800 1 0 997600
 box 0 0 40000 40800
 use sky130_ef_io__com_bus_slice_20um  FILLER_5
@@ -9246,7 +9246,7 @@ timestamp 1624649926
 transform 0 1 678007 -1 0 996800
 box 0 0 200 39593
 use sky130_ef_io__corner_pad  user1_corner
-timestamp 1624649926
+timestamp 1624978002
 transform 1 0 677600 0 1 996800
 box 0 0 40000 40800
 use sky130_ef_io__com_bus_slice_5um  FILLER_166
