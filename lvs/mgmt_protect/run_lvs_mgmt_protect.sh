@@ -3,10 +3,13 @@
 
 cd ../../mag
 mv ../maglef/mgmt_protect.mag ../maglef/mgmt_protect.mag.tmp
+mv ../maglef/mgmt_protect_hv.mag ../maglef/mgmt_protect_hv.mag.tmp
 
 maglef2lvs.sh mgmt_protect.mag
 
 mv ../maglef/mgmt_protect.mag.tmp ../maglef/mgmt_protect.mag
+mv ../maglef/mgmt_protect_hv.mag.tmp ../maglef/mgmt_protect_hv.mag
+
 cd ../lvs/mgmt_protect
 
 

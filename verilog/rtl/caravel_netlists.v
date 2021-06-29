@@ -27,7 +27,9 @@
 /* NOTE: Need to pass the PDK root directory to iverilog with option -I */
 
 `include "libs.ref/sky130_fd_io/verilog/sky130_fd_io.v"
+
 //`include "libs.ref/sky130_fd_io/verilog/sky130_ef_io.v" bad file with vccd pad core <--> pad
+
 `include "../gl/sky130_ef_io-vccd-vssd-clamps-swapped.v"
 `include "libs.ref/sky130_fd_io/verilog/sky130_ef_io__gpiov2_pad_wrapped.v"
 
@@ -42,8 +44,8 @@
 	`include "gl/storage.v"
 	`include "gl/user_id_programming.v"
 	`include "gl/chip_io.v"
-	`include "gl/pll_cells.v"
-	`include "gl/digital_pll_sim.v"
+	`include "dv/caravel/mgmt_soc/pll/pll_cells.v"
+	`include "dv/caravel/mgmt_soc/pll/digital_pll_sim.v"
 	`include "gl/mprj_logic_high.v"
     `include "gl/mprj2_logic_high.v"
 	`include "gl/mgmt_protect.v"

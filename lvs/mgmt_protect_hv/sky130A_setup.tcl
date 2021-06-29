@@ -277,7 +277,7 @@ foreach dev $devices {
 #set devices {sky130_fd_sc_hd__diode_2 sky130_fd_sc_hd__conb_1 sky130_fd_sc_hvl__conb_1 sky130_fd_pr__model__parasitic__diode_ps2nw sky130_fd_io__condiode sky130_fd_io__tap_1}
 #set devices {sky130_fd_sc_hd__fill_2 sky130_fd_sc_hd__tapvpwrvgnd_1 sky130_fd_sc_hd__diode_2 sky130_fd_pr__model__parasitic__diode_ps2nw sky130_fd_io__condiode sky130_fd_io__tap_1}
 #set devices {sky130_fd_sc_hd__diode_2 sky130_fd_pr__model__parasitic__diode_ps2nw sky130_fd_io__condiode sky130_fd_io__tap_1}
-set devices {sky130_fd_sc_hvl__decap_8 sky130_fd_sc_hvl__decap_4 sky130_fd_pr__model__parasitic__diode_ps2nw sky130_fd_io__condiode sky130_fd_io__tap_1}
+set devices {sky130_fd_pr__model__parasitic__diode_ps2nw sky130_fd_io__condiode sky130_fd_io__tap_1}
 
 
 
@@ -298,21 +298,21 @@ foreach dev $devices {
 #---------------------------------------------------------------
 
 if { [info exist ::env(MAGIC_EXT_USE_GDS)] && $::env(MAGIC_EXT_USE_GDS) } {
-    foreach cell $cells1 {
-#        if {[regexp {sky130_fd_sc_[^_]+__decap_[[:digit:]]+} $cell match]} {
-#            ignore class "-circuit1 $cell"
-#        }
-        if {[regexp {sky130_fd_sc_[^_]+__fill_[[:digit:]]+} $cell match]} {
-            ignore class "-circuit1 $cell"
-        }
-        if {[regexp {sky130_fd_sc_[^_]+__tapvpwrvgnd_[[:digit:]]+} $cell match]} {
-            ignore class "-circuit1 $cell"
-        }
-    }
-    foreach cell $cells2 {
-#        if {[regexp {sky130_fd_sc_[^_]+__decap_[[:digit:]]+} $cell match]} {
-#            ignore class "-circuit2 $cell"
-#        }
+   foreach cell $cells1 {
+	if {[regexp {sky130_fd_sc_[^_]+__decap_[[:digit:]]+} $cell match]} {
+	    ignore class "-circuit1 $cell"
+	}
+       if {[regexp {sky130_fd_sc_[^_]+__fill_[[:digit:]]+} $cell match]} {
+	   ignore class "-circuit1 $cell"
+       }
+       if {[regexp {sky130_fd_sc_[^_]+__tapvpwrvgnd_[[:digit:]]+} $cell match]} {
+	   ignore class "-circuit1 $cell"
+       }
+   }
+   foreach cell $cells2 {
+	if {[regexp {sky130_fd_sc_[^_]+__decap_[[:digit:]]+} $cell match]} {
+	    ignore class "-circuit2 $cell"
+	}
         if {[regexp {sky130_fd_sc_[^_]+__fill_[[:digit:]]+} $cell match]} {
             ignore class "-circuit2 $cell"
         }
