@@ -328,43 +328,43 @@ module chip_io_alt #(
 	// Instantiate analog pads in user area 1 using the custom analog pad
     	sky130_ef_io__analog_pad user1_analog_pad [ANALOG_PADS_1-2:0]  (
 		`USER1_ABUTMENT_PINS
-`ifdef TOP_ROUTING
-		.VDDIO(vddio)
-`endif
+`ifndef TOP_ROUTING
+		// .VDDIO(vddio)
 		,.P_PAD(mprj_io[`MPRJ_IO_PADS_1-1:`MPRJ_IO_PADS_1-ANALOG_PADS_1+1]),
+`endif
 		.P_CORE(mprj_analog[ANALOG_PADS_1-1:1])
     	);
 
 	// Last analog pad is a power pad, to provide a clamp resource.
     	sky130_ef_io__top_power_hvc user1_analog_pad_with_clamp  (
 		`USER1_ABUTMENT_PINS
-`ifdef TOP_ROUTING
-		.VDDIO(vddio)
+`ifndef TOP_ROUTING
+		// .VDDIO(vddio)
+		,.P_PAD(mprj_io[`MPRJ_IO_PADS_1-ANALOG_PADS_1]),
 `endif
-		,`HVCLAMP_PINS(mprj_clamp_high[0],
+		`HVCLAMP_PINS(mprj_clamp_high[0],
 		   	      mprj_clamp_low[0]),
-		.P_PAD(mprj_io[`MPRJ_IO_PADS_1-ANALOG_PADS_1]),
 		.P_CORE(mprj_analog[0])
     	);
 
 	// Instantiate analog pads in user area 2 using the custom analog pad.
     	sky130_ef_io__analog_pad user2_analog_pad [ANALOG_PADS_2-3:0]  (
 		`USER2_ABUTMENT_PINS
-`ifdef TOP_ROUTING
-		.VDDIO(vddio)
-`endif
+`ifndef TOP_ROUTING
+		// .VDDIO(vddio)
 		,.P_PAD(mprj_io[`MPRJ_IO_PADS_1+ANALOG_PADS_2-1:`MPRJ_IO_PADS_1+2]),
+`endif
 		.P_CORE(mprj_analog[ANALOG_PADS_2+ANALOG_PADS_1-1:ANALOG_PADS_1+2])
     	);
 
 	// Last two analog pads are power pads, to provide clamp resources.
     	sky130_ef_io__top_power_hvc user2_analog_pad_with_clamp [1:0] (
 		`USER2_ABUTMENT_PINS
-`ifdef TOP_ROUTING
-		.VDDIO(vddio)
+`ifndef TOP_ROUTING
+		// .VDDIO(vddio)
+		,.P_PAD(mprj_io[`MPRJ_IO_PADS_1+1:`MPRJ_IO_PADS_1]),
 `endif
-		,`HVCLAMP_PINS(mprj_clamp_high[2:1], mprj_clamp_low[2:1]),
-		.P_PAD(mprj_io[`MPRJ_IO_PADS_1+1:`MPRJ_IO_PADS_1]),
+		`HVCLAMP_PINS(mprj_clamp_high[2:1], mprj_clamp_low[2:1]),
 		.P_CORE(mprj_analog[`ANALOG_PADS_1+1:ANALOG_PADS_1])
     	);
 

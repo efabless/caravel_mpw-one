@@ -350,16 +350,6 @@ module caravan (
     wire mprj_ack_i_core;
     wire [31:0] mprj_dat_i_core;
 
-    // WB MI B (xbar)
-    wire xbar_cyc_o_core;
-    wire xbar_stb_o_core;
-    wire xbar_we_o_core;
-    wire [3:0] xbar_sel_o_core;
-    wire [31:0] xbar_adr_o_core;
-    wire [31:0] xbar_dat_o_core;
-    wire xbar_ack_i_core;
-    wire [31:0] xbar_dat_i_core;
-
     // Mask revision
     wire [31:0] mask_rev;
 
@@ -536,6 +526,8 @@ module caravan (
 	/* Wrapper module around the user project 	*/
 	/*----------------------------------------------*/
 
+	assign user_io_in_3v3 = mprj_io_in_3v3;
+	
 	user_analog_project_wrapper mprj ( 
 	`ifdef USE_POWER_PINS
 		.vdda1(vdda1_core),		// User area 1 3.3V power
@@ -598,10 +590,10 @@ module caravan (
     wire [`MPRJ_IO_PADS_2-1:0] gpio_clock_2;
     wire [`MPRJ_IO_PADS_1-1:0] gpio_resetn_1;
     wire [`MPRJ_IO_PADS_2-1:0] gpio_resetn_2;
-    wire [`MPRJ_IO_PADS_1-1:0] gpio_clock_1_shifted;
-    wire [`MPRJ_IO_PADS_2-1:0] gpio_clock_2_shifted;
-    wire [`MPRJ_IO_PADS_1-1:0] gpio_resetn_1_shifted;
-    wire [`MPRJ_IO_PADS_2-1:0] gpio_resetn_2_shifted;
+    wire [`MPRJ_IO_PADS_1-6:0] gpio_clock_1_shifted;
+    wire [`MPRJ_IO_PADS_2-7:0] gpio_clock_2_shifted;
+    wire [`MPRJ_IO_PADS_1-6:0] gpio_resetn_1_shifted;
+    wire [`MPRJ_IO_PADS_2-7:0] gpio_resetn_2_shifted;
 
     assign gpio_clock_1_shifted = {gpio_clock_1[`MPRJ_IO_PADS_1-`ANALOG_PADS_1-2:0],
 				mprj_io_loader_clock};
