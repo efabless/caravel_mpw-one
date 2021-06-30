@@ -1,7 +1,12 @@
 magic
 tech sky130A
 magscale 1 2
-timestamp 1611581575
+timestamp 1625001731
+<< checkpaint >>
+rect -1312 512 8748 13090
+<< isosubstrate >>
+rect -24 10798 520 11506
+rect 852 2054 7176 11546
 << locali >>
 rect 7573 7191 7607 7497
 rect 765 6443 799 6817
@@ -5824,737 +5829,737 @@ rect 4738 -322 9346 -86
 rect 9582 -322 9624 -86
 rect -1620 -364 9624 -322
 use sky130_fd_sc_hd__dfrtp_4  _098_ $PDKPATH/libs.ref/sky130_fd_sc_hd/mag
-timestamp 1611581575
+timestamp 1623807121
 transform 1 0 1656 0 1 2720
 box -38 -48 2154 592
 use sky130_fd_sc_hd__decap_3  PHY_0 $PDKPATH/libs.ref/sky130_fd_sc_hd/mag
-timestamp 1611581575
+timestamp 1623807121
 transform 1 0 920 0 -1 2720
 box -38 -48 314 592
 use sky130_fd_sc_hd__decap_3  PHY_2
-timestamp 1611581575
+timestamp 1623807121
 transform 1 0 920 0 1 2720
 box -38 -48 314 592
 use sky130_fd_sc_hd__decap_12  FILLER_0_3 $PDKPATH/libs.ref/sky130_fd_sc_hd/mag
-timestamp 1611581575
+timestamp 1623807121
 transform 1 0 1196 0 -1 2720
 box -38 -48 1142 592
 use sky130_fd_sc_hd__decap_8  FILLER_0_15 $PDKPATH/libs.ref/sky130_fd_sc_hd/mag
-timestamp 1611581575
+timestamp 1623807121
 transform 1 0 2300 0 -1 2720
 box -38 -48 774 592
-use sky130_fd_sc_hd__fill_2  FILLER_0_23 $PDKPATH/libs.ref/sky130_fd_sc_hd/mag
-timestamp 1611581575
-transform 1 0 3036 0 -1 2720
-box -38 -48 222 592
 use sky130_fd_sc_hd__decap_4  FILLER_1_3 $PDKPATH/libs.ref/sky130_fd_sc_hd/mag
-timestamp 1611581575
+timestamp 1623807121
 transform 1 0 1196 0 1 2720
 box -38 -48 406 592
 use sky130_fd_sc_hd__fill_1  FILLER_1_7 $PDKPATH/libs.ref/sky130_fd_sc_hd/mag
-timestamp 1611581575
+timestamp 1623807121
 transform 1 0 1564 0 1 2720
 box -38 -48 130 592
-use sky130_fd_sc_hd__buf_2  _057_ $PDKPATH/libs.ref/sky130_fd_sc_hd/mag
-timestamp 1611581575
-transform 1 0 3864 0 1 2720
-box -38 -48 406 592
-use sky130_fd_sc_hd__buf_2  _059_
-timestamp 1611581575
+use sky130_fd_sc_hd__fill_2  FILLER_0_23 $PDKPATH/libs.ref/sky130_fd_sc_hd/mag
+timestamp 1623807121
+transform 1 0 3036 0 -1 2720
+box -38 -48 222 592
+use sky130_fd_sc_hd__buf_2  _059_ $PDKPATH/libs.ref/sky130_fd_sc_hd/mag
+timestamp 1623807121
 transform 1 0 3220 0 -1 2720
 box -38 -48 406 592
-use sky130_fd_sc_hd__tapvpwrvgnd_1  PHY_34 $PDKPATH/libs.ref/sky130_fd_sc_hd/mag
-timestamp 1611581575
-transform 1 0 3772 0 -1 2720
-box -38 -48 130 592
-use sky130_fd_sc_hd__tapvpwrvgnd_1  PHY_36
-timestamp 1611581575
+use sky130_fd_sc_hd__tapvpwrvgnd_1  PHY_36 $PDKPATH/libs.ref/sky130_fd_sc_hd/mag
+timestamp 1623807121
 transform 1 0 3772 0 1 2720
 box -38 -48 130 592
-use sky130_fd_sc_hd__fill_2  FILLER_0_29
-timestamp 1611581575
-transform 1 0 3588 0 -1 2720
-box -38 -48 222 592
+use sky130_fd_sc_hd__tapvpwrvgnd_1  PHY_34
+timestamp 1623807121
+transform 1 0 3772 0 -1 2720
+box -38 -48 130 592
 use sky130_fd_sc_hd__decap_6  FILLER_0_32 $PDKPATH/libs.ref/sky130_fd_sc_hd/mag
-timestamp 1611581575
+timestamp 1623807121
 transform 1 0 3864 0 -1 2720
 box -38 -48 590 592
 use sky130_fd_sc_hd__fill_2  FILLER_1_36
-timestamp 1611581575
+timestamp 1623807121
 transform 1 0 4232 0 1 2720
 box -38 -48 222 592
+use sky130_fd_sc_hd__fill_2  FILLER_0_29
+timestamp 1623807121
+transform 1 0 3588 0 -1 2720
+box -38 -48 222 592
+use sky130_fd_sc_hd__buf_2  _057_
+timestamp 1623807121
+transform 1 0 3864 0 1 2720
+box -38 -48 406 592
 use sky130_fd_sc_hd__fill_1  FILLER_0_38
-timestamp 1611581575
+timestamp 1623807121
 transform 1 0 4416 0 -1 2720
 box -38 -48 130 592
-use sky130_fd_sc_hd__dfrtp_4  _093_
-timestamp 1611581575
-transform 1 0 4508 0 -1 2720
-box -38 -48 2154 592
 use sky130_fd_sc_hd__dfstp_4  _094_ $PDKPATH/libs.ref/sky130_fd_sc_hd/mag
-timestamp 1611581575
+timestamp 1623807121
 transform 1 0 4416 0 1 2720
 box -38 -48 2246 592
+use sky130_fd_sc_hd__dfrtp_4  _093_
+timestamp 1623807121
+transform 1 0 4508 0 -1 2720
+box -38 -48 2154 592
 use sky130_fd_sc_hd__decap_3  PHY_1
-timestamp 1611581575
+timestamp 1623807121
 transform -1 0 7084 0 -1 2720
 box -38 -48 314 592
 use sky130_fd_sc_hd__decap_3  PHY_3
-timestamp 1611581575
+timestamp 1623807121
 transform -1 0 7084 0 1 2720
 box -38 -48 314 592
-use sky130_fd_sc_hd__tapvpwrvgnd_1  PHY_35
-timestamp 1611581575
-transform 1 0 6624 0 -1 2720
-box -38 -48 130 592
 use sky130_fd_sc_hd__fill_1  FILLER_0_63
-timestamp 1611581575
+timestamp 1623807121
 transform 1 0 6716 0 -1 2720
 box -38 -48 130 592
 use sky130_fd_sc_hd__fill_2  FILLER_1_62
-timestamp 1611581575
+timestamp 1623807121
 transform 1 0 6624 0 1 2720
 box -38 -48 222 592
-use sky130_fd_sc_hd__dfrtp_4  _096_
-timestamp 1611581575
-transform 1 0 2576 0 -1 3808
-box -38 -48 2154 592
+use sky130_fd_sc_hd__tapvpwrvgnd_1  PHY_35
+timestamp 1623807121
+transform 1 0 6624 0 -1 2720
+box -38 -48 130 592
 use sky130_fd_sc_hd__decap_3  PHY_4
-timestamp 1611581575
+timestamp 1623807121
 transform 1 0 920 0 -1 3808
 box -38 -48 314 592
-use sky130_fd_sc_hd__decap_12  FILLER_2_3
-timestamp 1611581575
-transform 1 0 1196 0 -1 3808
-box -38 -48 1142 592
 use sky130_fd_sc_hd__decap_3  FILLER_2_15
-timestamp 1611581575
+timestamp 1623807121
 transform 1 0 2300 0 -1 3808
 box -38 -48 314 592
+use sky130_fd_sc_hd__decap_12  FILLER_2_3
+timestamp 1623807121
+transform 1 0 1196 0 -1 3808
+box -38 -48 1142 592
+use sky130_fd_sc_hd__dfrtp_4  _096_
+timestamp 1623807121
+transform 1 0 2576 0 -1 3808
+box -38 -48 2154 592
+use sky130_fd_sc_hd__diode_2  ANTENNA_0 $PDKPATH/libs.ref/sky130_fd_sc_hd/mag
+timestamp 1623807121
+transform 1 0 5704 0 -1 3808
+box -38 -48 222 592
+use sky130_fd_sc_hd__decap_3  PHY_5
+timestamp 1623807121
+transform -1 0 7084 0 -1 3808
+box -38 -48 314 592
+use sky130_fd_sc_hd__fill_1  FILLER_2_41
+timestamp 1623807121
+transform 1 0 4692 0 -1 3808
+box -38 -48 130 592
 use sky130_fd_sc_hd__buf_2  _062_
-timestamp 1611581575
+timestamp 1623807121
 transform 1 0 5152 0 -1 3808
 box -38 -48 406 592
 use sky130_fd_sc_hd__buf_2  _063_
-timestamp 1611581575
+timestamp 1623807121
 transform 1 0 4784 0 -1 3808
 box -38 -48 406 592
-use sky130_fd_sc_hd__fill_1  FILLER_2_41
-timestamp 1611581575
-transform 1 0 4692 0 -1 3808
-box -38 -48 130 592
-use sky130_fd_sc_hd__or2_4  _078_ $PDKPATH/libs.ref/sky130_fd_sc_hd/mag
-timestamp 1611581575
-transform 1 0 5888 0 -1 3808
-box -38 -48 682 592
-use sky130_fd_sc_hd__decap_3  PHY_5
-timestamp 1611581575
-transform -1 0 7084 0 -1 3808
-box -38 -48 314 592
-use sky130_fd_sc_hd__tapvpwrvgnd_1  PHY_37
-timestamp 1611581575
-transform 1 0 6532 0 -1 3808
-box -38 -48 130 592
-use sky130_fd_sc_hd__diode_2  ANTENNA_0 $PDKPATH/libs.ref/sky130_fd_sc_hd/mag
-timestamp 1611581575
-transform 1 0 5704 0 -1 3808
-box -38 -48 222 592
 use sky130_fd_sc_hd__fill_2  FILLER_2_50
-timestamp 1611581575
+timestamp 1623807121
 transform 1 0 5520 0 -1 3808
 box -38 -48 222 592
 use sky130_fd_sc_hd__fill_2  FILLER_2_62
-timestamp 1611581575
+timestamp 1623807121
 transform 1 0 6624 0 -1 3808
 box -38 -48 222 592
+use sky130_fd_sc_hd__tapvpwrvgnd_1  PHY_37
+timestamp 1623807121
+transform 1 0 6532 0 -1 3808
+box -38 -48 130 592
+use sky130_fd_sc_hd__or2_4  _078_ $PDKPATH/libs.ref/sky130_fd_sc_hd/mag
+timestamp 1623807121
+transform 1 0 5888 0 -1 3808
+box -38 -48 682 592
 use sky130_fd_sc_hd__dfrtp_4  _106_
-timestamp 1611581575
+timestamp 1623807121
 transform 1 0 1196 0 1 3808
 box -38 -48 2154 592
 use sky130_fd_sc_hd__decap_3  PHY_6
-timestamp 1611581575
+timestamp 1623807121
 transform 1 0 920 0 1 3808
 box -38 -48 314 592
-use sky130_fd_sc_hd__buf_2  _058_
-timestamp 1611581575
-transform 1 0 3312 0 1 3808
-box -38 -48 406 592
 use sky130_fd_sc_hd__dfrtp_4  _109_
-timestamp 1611581575
+timestamp 1623807121
 transform 1 0 3864 0 1 3808
 box -38 -48 2154 592
-use sky130_fd_sc_hd__tapvpwrvgnd_1  PHY_38
-timestamp 1611581575
-transform 1 0 3772 0 1 3808
-box -38 -48 130 592
 use sky130_fd_sc_hd__fill_1  FILLER_3_30
-timestamp 1611581575
+timestamp 1623807121
 transform 1 0 3680 0 1 3808
 box -38 -48 130 592
-use sky130_fd_sc_hd__and3_4  _077_ $PDKPATH/libs.ref/sky130_fd_sc_hd/mag
-timestamp 1611581575
-transform 1 0 5980 0 1 3808
-box -38 -48 866 592
+use sky130_fd_sc_hd__buf_2  _058_
+timestamp 1623807121
+transform 1 0 3312 0 1 3808
+box -38 -48 406 592
+use sky130_fd_sc_hd__tapvpwrvgnd_1  PHY_38
+timestamp 1623807121
+transform 1 0 3772 0 1 3808
+box -38 -48 130 592
 use sky130_fd_sc_hd__decap_3  PHY_7
-timestamp 1611581575
+timestamp 1623807121
 transform -1 0 7084 0 1 3808
 box -38 -48 314 592
+use sky130_fd_sc_hd__and3_4  _077_ $PDKPATH/libs.ref/sky130_fd_sc_hd/mag
+timestamp 1623807121
+transform 1 0 5980 0 1 3808
+box -38 -48 866 592
+use sky130_fd_sc_hd__decap_3  PHY_8
+timestamp 1623807121
+transform 1 0 920 0 -1 4896
+box -38 -48 314 592
 use sky130_fd_sc_hd__buf_2  _046_
-timestamp 1611581575
+timestamp 1623807121
 transform 1 0 2116 0 -1 4896
 box -38 -48 406 592
 use sky130_fd_sc_hd__buf_2  _047_
-timestamp 1611581575
+timestamp 1623807121
 transform 1 0 1748 0 -1 4896
 box -38 -48 406 592
 use sky130_fd_sc_hd__buf_2  _049_
-timestamp 1611581575
+timestamp 1623807121
 transform 1 0 1380 0 -1 4896
 box -38 -48 406 592
-use sky130_fd_sc_hd__dfrtp_4  _097_
-timestamp 1611581575
-transform 1 0 2484 0 -1 4896
-box -38 -48 2154 592
-use sky130_fd_sc_hd__decap_3  PHY_8
-timestamp 1611581575
-transform 1 0 920 0 -1 4896
-box -38 -48 314 592
 use sky130_fd_sc_hd__fill_2  FILLER_4_3
-timestamp 1611581575
+timestamp 1623807121
 transform 1 0 1196 0 -1 4896
 box -38 -48 222 592
-use sky130_fd_sc_hd__inv_2  _076_ $PDKPATH/libs.ref/sky130_fd_sc_hd/mag
-timestamp 1611581575
-transform 1 0 5428 0 -1 4896
-box -38 -48 314 592
-use sky130_fd_sc_hd__buf_2  _084_
-timestamp 1611581575
-transform 1 0 5060 0 -1 4896
-box -38 -48 406 592
-use sky130_fd_sc_hd__conb_1  const_source $PDKPATH/libs.ref/sky130_fd_sc_hd/mag
-timestamp 1611581575
-transform 1 0 4784 0 -1 4896
-box -38 -48 314 592
+use sky130_fd_sc_hd__dfrtp_4  _097_
+timestamp 1623807121
+transform 1 0 2484 0 -1 4896
+box -38 -48 2154 592
 use sky130_fd_sc_hd__fill_2  FILLER_4_40
-timestamp 1611581575
+timestamp 1623807121
 transform 1 0 4600 0 -1 4896
 box -38 -48 222 592
 use sky130_fd_sc_hd__nand2_4  _079_ $PDKPATH/libs.ref/sky130_fd_sc_hd/mag
-timestamp 1611581575
+timestamp 1623807121
 transform 1 0 5704 0 -1 4896
 box -38 -48 866 592
+use sky130_fd_sc_hd__inv_2  _076_ $PDKPATH/libs.ref/sky130_fd_sc_hd/mag
+timestamp 1623807121
+transform 1 0 5428 0 -1 4896
+box -38 -48 314 592
 use sky130_fd_sc_hd__decap_3  PHY_9
-timestamp 1611581575
+timestamp 1623807121
 transform -1 0 7084 0 -1 4896
 box -38 -48 314 592
-use sky130_fd_sc_hd__tapvpwrvgnd_1  PHY_39
-timestamp 1611581575
-transform 1 0 6532 0 -1 4896
-box -38 -48 130 592
+use sky130_fd_sc_hd__buf_2  _084_
+timestamp 1623807121
+transform 1 0 5060 0 -1 4896
+box -38 -48 406 592
 use sky130_fd_sc_hd__fill_2  FILLER_4_62
-timestamp 1611581575
+timestamp 1623807121
 transform 1 0 6624 0 -1 4896
 box -38 -48 222 592
+use sky130_fd_sc_hd__tapvpwrvgnd_1  PHY_39
+timestamp 1623807121
+transform 1 0 6532 0 -1 4896
+box -38 -48 130 592
+use sky130_fd_sc_hd__conb_1  const_source $PDKPATH/libs.ref/sky130_fd_sc_hd/mag
+timestamp 1623807121
+transform 1 0 4784 0 -1 4896
+box -38 -48 314 592
 use sky130_fd_sc_hd__dfrtp_4  _105_
-timestamp 1611581575
+timestamp 1623807121
 transform 1 0 1196 0 1 4896
 box -38 -48 2154 592
 use sky130_fd_sc_hd__decap_3  PHY_10
-timestamp 1611581575
+timestamp 1623807121
 transform 1 0 920 0 1 4896
 box -38 -48 314 592
-use sky130_fd_sc_hd__buf_2  _043_
-timestamp 1611581575
-transform 1 0 3312 0 1 4896
-box -38 -48 406 592
-use sky130_fd_sc_hd__buf_2  _044_
-timestamp 1611581575
-transform 1 0 3956 0 1 4896
-box -38 -48 406 592
-use sky130_fd_sc_hd__dfstp_4  _095_
-timestamp 1611581575
-transform 1 0 4600 0 1 4896
-box -38 -48 2246 592
-use sky130_fd_sc_hd__tapvpwrvgnd_1  PHY_40
-timestamp 1611581575
-transform 1 0 3772 0 1 4896
-box -38 -48 130 592
+use sky130_fd_sc_hd__decap_3  FILLER_5_37
+timestamp 1623807121
+transform 1 0 4324 0 1 4896
+box -38 -48 314 592
 use sky130_fd_sc_hd__fill_1  FILLER_5_30
-timestamp 1611581575
+timestamp 1623807121
 transform 1 0 3680 0 1 4896
 box -38 -48 130 592
 use sky130_fd_sc_hd__fill_1  FILLER_5_32
-timestamp 1611581575
+timestamp 1623807121
 transform 1 0 3864 0 1 4896
 box -38 -48 130 592
-use sky130_fd_sc_hd__decap_3  FILLER_5_37
-timestamp 1611581575
-transform 1 0 4324 0 1 4896
-box -38 -48 314 592
+use sky130_fd_sc_hd__buf_2  _043_
+timestamp 1623807121
+transform 1 0 3312 0 1 4896
+box -38 -48 406 592
+use sky130_fd_sc_hd__buf_2  _044_
+timestamp 1623807121
+transform 1 0 3956 0 1 4896
+box -38 -48 406 592
+use sky130_fd_sc_hd__tapvpwrvgnd_1  PHY_40
+timestamp 1623807121
+transform 1 0 3772 0 1 4896
+box -38 -48 130 592
+use sky130_fd_sc_hd__dfstp_4  _095_
+timestamp 1623807121
+transform 1 0 4600 0 1 4896
+box -38 -48 2246 592
 use sky130_fd_sc_hd__decap_3  PHY_11
-timestamp 1611581575
+timestamp 1623807121
 transform -1 0 7084 0 1 4896
 box -38 -48 314 592
 use sky130_fd_sc_hd__dfrtp_4  _104_
-timestamp 1611581575
+timestamp 1623807121
 transform 1 0 1196 0 1 5984
 box -38 -48 2154 592
 use sky130_fd_sc_hd__dfrtp_4  _107_
-timestamp 1611581575
+timestamp 1623807121
 transform 1 0 1380 0 -1 5984
 box -38 -48 2154 592
 use sky130_fd_sc_hd__decap_3  PHY_12
-timestamp 1611581575
+timestamp 1623807121
 transform 1 0 920 0 -1 5984
 box -38 -48 314 592
 use sky130_fd_sc_hd__decap_3  PHY_14
-timestamp 1611581575
+timestamp 1623807121
 transform 1 0 920 0 1 5984
 box -38 -48 314 592
 use sky130_fd_sc_hd__fill_2  FILLER_6_3
-timestamp 1611581575
+timestamp 1623807121
 transform 1 0 1196 0 -1 5984
 box -38 -48 222 592
-use sky130_fd_sc_hd__buf_2  _045_
-timestamp 1611581575
-transform 1 0 3864 0 1 5984
-box -38 -48 406 592
-use sky130_fd_sc_hd__buf_2  _050_
-timestamp 1611581575
-transform 1 0 3312 0 1 5984
-box -38 -48 406 592
 use sky130_fd_sc_hd__dfrtp_4  _091_
-timestamp 1611581575
+timestamp 1623807121
 transform 1 0 4324 0 1 5984
 box -38 -48 2154 592
 use sky130_fd_sc_hd__dfrtp_4  _108_
-timestamp 1611581575
+timestamp 1623807121
 transform 1 0 3496 0 -1 5984
 box -38 -48 2154 592
-use sky130_fd_sc_hd__tapvpwrvgnd_1  PHY_42
-timestamp 1611581575
-transform 1 0 3772 0 1 5984
-box -38 -48 130 592
 use sky130_fd_sc_hd__fill_1  FILLER_7_30
-timestamp 1611581575
+timestamp 1623807121
 transform 1 0 3680 0 1 5984
 box -38 -48 130 592
 use sky130_fd_sc_hd__fill_1  FILLER_7_36
-timestamp 1611581575
+timestamp 1623807121
 transform 1 0 4232 0 1 5984
 box -38 -48 130 592
-use sky130_fd_sc_hd__buf_2  _060_
-timestamp 1611581575
-transform 1 0 5612 0 -1 5984
+use sky130_fd_sc_hd__buf_2  _045_
+timestamp 1623807121
+transform 1 0 3864 0 1 5984
 box -38 -48 406 592
-use sky130_fd_sc_hd__buf_2  _061_
-timestamp 1611581575
-transform 1 0 5980 0 -1 5984
+use sky130_fd_sc_hd__buf_2  _050_
+timestamp 1623807121
+transform 1 0 3312 0 1 5984
 box -38 -48 406 592
-use sky130_fd_sc_hd__buf_2  _065_
-timestamp 1611581575
-transform 1 0 6440 0 1 5984
-box -38 -48 406 592
+use sky130_fd_sc_hd__tapvpwrvgnd_1  PHY_42
+timestamp 1623807121
+transform 1 0 3772 0 1 5984
+box -38 -48 130 592
 use sky130_fd_sc_hd__decap_3  PHY_13
-timestamp 1611581575
+timestamp 1623807121
 transform -1 0 7084 0 -1 5984
 box -38 -48 314 592
 use sky130_fd_sc_hd__decap_3  PHY_15
-timestamp 1611581575
+timestamp 1623807121
 transform -1 0 7084 0 1 5984
 box -38 -48 314 592
-use sky130_fd_sc_hd__tapvpwrvgnd_1  PHY_41
-timestamp 1611581575
-transform 1 0 6532 0 -1 5984
-box -38 -48 130 592
+use sky130_fd_sc_hd__buf_2  _060_
+timestamp 1623807121
+transform 1 0 5612 0 -1 5984
+box -38 -48 406 592
+use sky130_fd_sc_hd__buf_2  _061_
+timestamp 1623807121
+transform 1 0 5980 0 -1 5984
+box -38 -48 406 592
+use sky130_fd_sc_hd__buf_2  _065_
+timestamp 1623807121
+transform 1 0 6440 0 1 5984
+box -38 -48 406 592
 use sky130_fd_sc_hd__fill_2  FILLER_6_59
-timestamp 1611581575
+timestamp 1623807121
 transform 1 0 6348 0 -1 5984
 box -38 -48 222 592
 use sky130_fd_sc_hd__fill_2  FILLER_6_62
-timestamp 1611581575
+timestamp 1623807121
 transform 1 0 6624 0 -1 5984
 box -38 -48 222 592
-use sky130_fd_sc_hd__dfrtp_4  _110_
-timestamp 1611581575
-transform 1 0 3036 0 -1 7072
-box -38 -48 2154 592
+use sky130_fd_sc_hd__tapvpwrvgnd_1  PHY_41
+timestamp 1623807121
+transform 1 0 6532 0 -1 5984
+box -38 -48 130 592
 use sky130_fd_sc_hd__decap_3  PHY_16
-timestamp 1611581575
+timestamp 1623807121
 transform 1 0 920 0 -1 7072
 box -38 -48 314 592
 use sky130_fd_sc_hd__clkbuf_16  clkbuf_0_serial_clock $PDKPATH/libs.ref/sky130_fd_sc_hd/mag
-timestamp 1611581575
+timestamp 1623807121
 transform 1 0 1196 0 -1 7072
 box -38 -48 1878 592
-use sky130_fd_sc_hd__buf_2  _053_
-timestamp 1611581575
-transform 1 0 5152 0 -1 7072
-box -38 -48 406 592
-use sky130_fd_sc_hd__ebufn_2  _085_ $PDKPATH/libs.ref/sky130_fd_sc_hd/mag
-timestamp 1611581575
-transform 1 0 5704 0 -1 7072
-box -38 -48 866 592
+use sky130_fd_sc_hd__dfrtp_4  _110_
+timestamp 1623807121
+transform 1 0 3036 0 -1 7072
+box -38 -48 2154 592
 use sky130_fd_sc_hd__decap_3  PHY_17
-timestamp 1611581575
+timestamp 1623807121
 transform -1 0 7084 0 -1 7072
 box -38 -48 314 592
-use sky130_fd_sc_hd__tapvpwrvgnd_1  PHY_43
-timestamp 1611581575
-transform 1 0 6532 0 -1 7072
-box -38 -48 130 592
+use sky130_fd_sc_hd__buf_2  _053_
+timestamp 1623807121
+transform 1 0 5152 0 -1 7072
+box -38 -48 406 592
 use sky130_fd_sc_hd__fill_2  FILLER_8_50
-timestamp 1611581575
+timestamp 1623807121
 transform 1 0 5520 0 -1 7072
 box -38 -48 222 592
 use sky130_fd_sc_hd__fill_2  FILLER_8_62
-timestamp 1611581575
+timestamp 1623807121
 transform 1 0 6624 0 -1 7072
 box -38 -48 222 592
+use sky130_fd_sc_hd__tapvpwrvgnd_1  PHY_43
+timestamp 1623807121
+transform 1 0 6532 0 -1 7072
+box -38 -48 130 592
+use sky130_fd_sc_hd__ebufn_2  _085_ $PDKPATH/libs.ref/sky130_fd_sc_hd/mag
+timestamp 1623807121
+transform 1 0 5704 0 -1 7072
+box -38 -48 866 592
 use sky130_fd_sc_hd__dfrtp_4  _103_
-timestamp 1611581575
+timestamp 1623807121
 transform 1 0 1288 0 1 7072
 box -38 -48 2154 592
 use sky130_fd_sc_hd__decap_3  PHY_18
-timestamp 1611581575
+timestamp 1623807121
 transform 1 0 920 0 1 7072
 box -38 -48 314 592
 use sky130_fd_sc_hd__fill_1  FILLER_9_3
-timestamp 1611581575
+timestamp 1623807121
 transform 1 0 1196 0 1 7072
 box -38 -48 130 592
-use sky130_fd_sc_hd__buf_2  _051_
-timestamp 1611581575
-transform 1 0 3404 0 1 7072
-box -38 -48 406 592
 use sky130_fd_sc_hd__dfrtp_4  _090_
-timestamp 1611581575
+timestamp 1623807121
 transform 1 0 3864 0 1 7072
 box -38 -48 2154 592
+use sky130_fd_sc_hd__buf_2  _051_
+timestamp 1623807121
+transform 1 0 3404 0 1 7072
+box -38 -48 406 592
 use sky130_fd_sc_hd__tapvpwrvgnd_1  PHY_44
-timestamp 1611581575
+timestamp 1623807121
 transform 1 0 3772 0 1 7072
 box -38 -48 130 592
-use sky130_fd_sc_hd__or2_4  _073_
-timestamp 1611581575
-transform 1 0 5980 0 1 7072
-box -38 -48 682 592
 use sky130_fd_sc_hd__decap_3  PHY_19
-timestamp 1611581575
+timestamp 1623807121
 transform -1 0 7084 0 1 7072
 box -38 -48 314 592
 use sky130_fd_sc_hd__fill_2  FILLER_9_62
-timestamp 1611581575
+timestamp 1623807121
 transform 1 0 6624 0 1 7072
 box -38 -48 222 592
+use sky130_fd_sc_hd__or2_4  _073_
+timestamp 1623807121
+transform 1 0 5980 0 1 7072
+box -38 -48 682 592
 use sky130_fd_sc_hd__dfrtp_4  _102_
-timestamp 1611581575
+timestamp 1623807121
 transform 1 0 1196 0 -1 8160
 box -38 -48 2154 592
 use sky130_fd_sc_hd__decap_3  PHY_20
-timestamp 1611581575
+timestamp 1623807121
 transform 1 0 920 0 -1 8160
 box -38 -48 314 592
 use sky130_fd_sc_hd__buf_2  _048_
-timestamp 1611581575
+timestamp 1623807121
 transform 1 0 3312 0 -1 8160
 box -38 -48 406 592
 use sky130_fd_sc_hd__dfstp_4  _092_
-timestamp 1611581575
+timestamp 1623807121
 transform 1 0 3956 0 -1 8160
 box -38 -48 2246 592
 use sky130_fd_sc_hd__clkbuf_1  clkbuf_1_0_0_serial_clock $PDKPATH/libs.ref/sky130_fd_sc_hd/mag
-timestamp 1611581575
+timestamp 1623807121
 transform 1 0 3680 0 -1 8160
 box -38 -48 314 592
-use sky130_fd_sc_hd__buf_2  _064_
-timestamp 1611581575
-transform 1 0 6164 0 -1 8160
-box -38 -48 406 592
 use sky130_fd_sc_hd__decap_3  PHY_21
-timestamp 1611581575
+timestamp 1623807121
 transform -1 0 7084 0 -1 8160
 box -38 -48 314 592
-use sky130_fd_sc_hd__tapvpwrvgnd_1  PHY_45
-timestamp 1611581575
-transform 1 0 6532 0 -1 8160
-box -38 -48 130 592
+use sky130_fd_sc_hd__buf_2  _064_
+timestamp 1623807121
+transform 1 0 6164 0 -1 8160
+box -38 -48 406 592
 use sky130_fd_sc_hd__fill_2  FILLER_10_62
-timestamp 1611581575
+timestamp 1623807121
 transform 1 0 6624 0 -1 8160
 box -38 -48 222 592
+use sky130_fd_sc_hd__tapvpwrvgnd_1  PHY_45
+timestamp 1623807121
+transform 1 0 6532 0 -1 8160
+box -38 -48 130 592
 use sky130_fd_sc_hd__dfrtp_4  _101_
-timestamp 1611581575
+timestamp 1623807121
 transform 1 0 1196 0 1 8160
 box -38 -48 2154 592
 use sky130_fd_sc_hd__decap_3  PHY_22
-timestamp 1611581575
+timestamp 1623807121
 transform 1 0 920 0 1 8160
 box -38 -48 314 592
-use sky130_fd_sc_hd__buf_2  _052_
-timestamp 1611581575
-transform 1 0 3312 0 1 8160
-box -38 -48 406 592
-use sky130_fd_sc_hd__buf_2  _067_
-timestamp 1611581575
-transform 1 0 3956 0 1 8160
-box -38 -48 406 592
 use sky130_fd_sc_hd__dfrtp_4  _111_
-timestamp 1611581575
+timestamp 1623807121
 transform 1 0 4324 0 1 8160
 box -38 -48 2154 592
-use sky130_fd_sc_hd__tapvpwrvgnd_1  PHY_46
-timestamp 1611581575
-transform 1 0 3772 0 1 8160
-box -38 -48 130 592
 use sky130_fd_sc_hd__fill_1  FILLER_11_30
-timestamp 1611581575
+timestamp 1623807121
 transform 1 0 3680 0 1 8160
 box -38 -48 130 592
 use sky130_fd_sc_hd__fill_1  FILLER_11_32
-timestamp 1611581575
+timestamp 1623807121
 transform 1 0 3864 0 1 8160
 box -38 -48 130 592
-use sky130_fd_sc_hd__buf_2  _070_
-timestamp 1611581575
-transform 1 0 6440 0 1 8160
+use sky130_fd_sc_hd__buf_2  _052_
+timestamp 1623807121
+transform 1 0 3312 0 1 8160
 box -38 -48 406 592
+use sky130_fd_sc_hd__buf_2  _067_
+timestamp 1623807121
+transform 1 0 3956 0 1 8160
+box -38 -48 406 592
+use sky130_fd_sc_hd__tapvpwrvgnd_1  PHY_46
+timestamp 1623807121
+transform 1 0 3772 0 1 8160
+box -38 -48 130 592
 use sky130_fd_sc_hd__decap_3  PHY_23
-timestamp 1611581575
+timestamp 1623807121
 transform -1 0 7084 0 1 8160
 box -38 -48 314 592
-use sky130_fd_sc_hd__a32o_4  _080_ $PDKPATH/libs.ref/sky130_fd_sc_hd/mag
-timestamp 1611581575
-transform 1 0 1380 0 -1 9248
-box -38 -48 1602 592
-use sky130_fd_sc_hd__dfrtp_4  _087_
-timestamp 1611581575
-transform 1 0 2944 0 -1 9248
-box -38 -48 2154 592
+use sky130_fd_sc_hd__buf_2  _070_
+timestamp 1623807121
+transform 1 0 6440 0 1 8160
+box -38 -48 406 592
 use sky130_fd_sc_hd__decap_3  PHY_24
-timestamp 1611581575
+timestamp 1623807121
 transform 1 0 920 0 -1 9248
 box -38 -48 314 592
 use sky130_fd_sc_hd__fill_2  FILLER_12_3
-timestamp 1611581575
+timestamp 1623807121
 transform 1 0 1196 0 -1 9248
 box -38 -48 222 592
-use sky130_fd_sc_hd__buf_2  _042_
-timestamp 1611581575
-transform 1 0 5060 0 -1 9248
-box -38 -48 406 592
-use sky130_fd_sc_hd__buf_2  _066_
-timestamp 1611581575
-transform 1 0 5428 0 -1 9248
-box -38 -48 406 592
-use sky130_fd_sc_hd__buf_2  _069_
-timestamp 1611581575
-transform 1 0 5796 0 -1 9248
-box -38 -48 406 592
+use sky130_fd_sc_hd__a32o_4  _080_ $PDKPATH/libs.ref/sky130_fd_sc_hd/mag
+timestamp 1623807121
+transform 1 0 1380 0 -1 9248
+box -38 -48 1602 592
+use sky130_fd_sc_hd__dfrtp_4  _087_
+timestamp 1623807121
+transform 1 0 2944 0 -1 9248
+box -38 -48 2154 592
 use sky130_fd_sc_hd__inv_2  _072_
-timestamp 1611581575
+timestamp 1623807121
 transform 1 0 6256 0 -1 9248
 box -38 -48 314 592
 use sky130_fd_sc_hd__decap_3  PHY_25
-timestamp 1611581575
+timestamp 1623807121
 transform -1 0 7084 0 -1 9248
 box -38 -48 314 592
-use sky130_fd_sc_hd__tapvpwrvgnd_1  PHY_47
-timestamp 1611581575
-transform 1 0 6532 0 -1 9248
-box -38 -48 130 592
 use sky130_fd_sc_hd__fill_1  FILLER_12_57
-timestamp 1611581575
+timestamp 1623807121
 transform 1 0 6164 0 -1 9248
 box -38 -48 130 592
+use sky130_fd_sc_hd__buf_2  _042_
+timestamp 1623807121
+transform 1 0 5060 0 -1 9248
+box -38 -48 406 592
+use sky130_fd_sc_hd__buf_2  _066_
+timestamp 1623807121
+transform 1 0 5428 0 -1 9248
+box -38 -48 406 592
+use sky130_fd_sc_hd__buf_2  _069_
+timestamp 1623807121
+transform 1 0 5796 0 -1 9248
+box -38 -48 406 592
 use sky130_fd_sc_hd__fill_2  FILLER_12_62
-timestamp 1611581575
+timestamp 1623807121
 transform 1 0 6624 0 -1 9248
 box -38 -48 222 592
-use sky130_fd_sc_hd__buf_2  _054_
-timestamp 1611581575
-transform 1 0 1840 0 1 9248
-box -38 -48 406 592
-use sky130_fd_sc_hd__a32o_4  _075_
-timestamp 1611581575
-transform 1 0 2208 0 1 9248
-box -38 -48 1602 592
+use sky130_fd_sc_hd__tapvpwrvgnd_1  PHY_47
+timestamp 1623807121
+transform 1 0 6532 0 -1 9248
+box -38 -48 130 592
 use sky130_fd_sc_hd__dfrtp_4  _100_
-timestamp 1611581575
+timestamp 1623807121
 transform 1 0 1196 0 -1 10336
 box -38 -48 2154 592
 use sky130_fd_sc_hd__decap_3  PHY_26
-timestamp 1611581575
+timestamp 1623807121
 transform 1 0 920 0 1 9248
 box -38 -48 314 592
 use sky130_fd_sc_hd__decap_3  PHY_28
-timestamp 1611581575
+timestamp 1623807121
 transform 1 0 920 0 -1 10336
 box -38 -48 314 592
-use sky130_fd_sc_hd__decap_6  FILLER_13_3
-timestamp 1611581575
-transform 1 0 1196 0 1 9248
-box -38 -48 590 592
 use sky130_fd_sc_hd__fill_1  FILLER_13_9
-timestamp 1611581575
+timestamp 1623807121
 transform 1 0 1748 0 1 9248
 box -38 -48 130 592
-use sky130_fd_sc_hd__dfstp_4  _086_
-timestamp 1611581575
-transform 1 0 3312 0 -1 10336
-box -38 -48 2246 592
+use sky130_fd_sc_hd__buf_2  _054_
+timestamp 1623807121
+transform 1 0 1840 0 1 9248
+box -38 -48 406 592
+use sky130_fd_sc_hd__decap_6  FILLER_13_3
+timestamp 1623807121
+transform 1 0 1196 0 1 9248
+box -38 -48 590 592
+use sky130_fd_sc_hd__a32o_4  _075_
+timestamp 1623807121
+transform 1 0 2208 0 1 9248
+box -38 -48 1602 592
 use sky130_fd_sc_hd__dfrtp_4  _088_
-timestamp 1611581575
+timestamp 1623807121
 transform 1 0 3864 0 1 9248
 box -38 -48 2154 592
 use sky130_fd_sc_hd__tapvpwrvgnd_1  PHY_48
-timestamp 1611581575
+timestamp 1623807121
 transform 1 0 3772 0 1 9248
 box -38 -48 130 592
+use sky130_fd_sc_hd__dfstp_4  _086_
+timestamp 1623807121
+transform 1 0 3312 0 -1 10336
+box -38 -48 2246 592
 use sky130_fd_sc_hd__or2_4  _041_
-timestamp 1611581575
+timestamp 1623807121
 transform 1 0 5520 0 -1 10336
 box -38 -48 682 592
 use sky130_fd_sc_hd__buf_2  _068_
-timestamp 1611581575
+timestamp 1623807121
 transform 1 0 5980 0 1 9248
 box -38 -48 406 592
-use sky130_fd_sc_hd__fill_1  FILLER_14_57
-timestamp 1611581575
-transform 1 0 6164 0 -1 10336
-box -38 -48 130 592
 use sky130_fd_sc_hd__inv_2  _074_
-timestamp 1611581575
+timestamp 1623807121
 transform 1 0 6348 0 1 9248
 box -38 -48 314 592
 use sky130_fd_sc_hd__inv_2  _081_
-timestamp 1611581575
+timestamp 1623807121
 transform 1 0 6256 0 -1 10336
 box -38 -48 314 592
-use sky130_fd_sc_hd__decap_3  PHY_27
-timestamp 1611581575
-transform -1 0 7084 0 1 9248
-box -38 -48 314 592
-use sky130_fd_sc_hd__decap_3  PHY_29
-timestamp 1611581575
-transform -1 0 7084 0 -1 10336
-box -38 -48 314 592
 use sky130_fd_sc_hd__tapvpwrvgnd_1  PHY_49
-timestamp 1611581575
+timestamp 1623807121
 transform 1 0 6532 0 -1 10336
 box -38 -48 130 592
-use sky130_fd_sc_hd__fill_2  FILLER_13_62
-timestamp 1611581575
-transform 1 0 6624 0 1 9248
-box -38 -48 222 592
 use sky130_fd_sc_hd__fill_2  FILLER_14_62
-timestamp 1611581575
+timestamp 1623807121
 transform 1 0 6624 0 -1 10336
 box -38 -48 222 592
+use sky130_fd_sc_hd__fill_2  FILLER_13_62
+timestamp 1623807121
+transform 1 0 6624 0 1 9248
+box -38 -48 222 592
+use sky130_fd_sc_hd__fill_1  FILLER_14_57
+timestamp 1623807121
+transform 1 0 6164 0 -1 10336
+box -38 -48 130 592
+use sky130_fd_sc_hd__decap_3  PHY_29
+timestamp 1623807121
+transform -1 0 7084 0 -1 10336
+box -38 -48 314 592
+use sky130_fd_sc_hd__decap_3  PHY_27
+timestamp 1623807121
+transform -1 0 7084 0 1 9248
+box -38 -48 314 592
+use sky130_fd_sc_hd__diode_2  ANTENNA_1
+timestamp 1623807121
+transform 1 0 1472 0 1 10336
+box -38 -48 222 592
 use sky130_fd_sc_hd__dfrtp_4  _099_
-timestamp 1611581575
+timestamp 1623807121
 transform 1 0 1656 0 1 10336
 box -38 -48 2154 592
 use sky130_fd_sc_hd__decap_3  PHY_30
-timestamp 1611581575
+timestamp 1623807121
 transform 1 0 920 0 1 10336
 box -38 -48 314 592
-use sky130_fd_sc_hd__diode_2  ANTENNA_1
-timestamp 1611581575
-transform 1 0 1472 0 1 10336
-box -38 -48 222 592
 use sky130_fd_sc_hd__decap_3  FILLER_15_3
-timestamp 1611581575
+timestamp 1623807121
 transform 1 0 1196 0 1 10336
 box -38 -48 314 592
-use sky130_fd_sc_hd__buf_2  _071_
-timestamp 1611581575
-transform 1 0 4048 0 1 10336
-box -38 -48 406 592
 use sky130_fd_sc_hd__dfrtp_4  _089_
-timestamp 1611581575
+timestamp 1623807121
 transform 1 0 4416 0 1 10336
 box -38 -48 2154 592
-use sky130_fd_sc_hd__tapvpwrvgnd_1  PHY_50
-timestamp 1611581575
-transform 1 0 3772 0 1 10336
-box -38 -48 130 592
+use sky130_fd_sc_hd__buf_2  _071_
+timestamp 1623807121
+transform 1 0 4048 0 1 10336
+box -38 -48 406 592
 use sky130_fd_sc_hd__fill_2  FILLER_15_32
-timestamp 1611581575
+timestamp 1623807121
 transform 1 0 3864 0 1 10336
 box -38 -48 222 592
+use sky130_fd_sc_hd__tapvpwrvgnd_1  PHY_50
+timestamp 1623807121
+transform 1 0 3772 0 1 10336
+box -38 -48 130 592
 use sky130_fd_sc_hd__inv_2  _082_
-timestamp 1611581575
+timestamp 1623807121
 transform 1 0 6532 0 1 10336
 box -38 -48 314 592
 use sky130_fd_sc_hd__decap_3  PHY_31
-timestamp 1611581575
+timestamp 1623807121
 transform -1 0 7084 0 1 10336
 box -38 -48 314 592
 use sky130_fd_sc_hd__decap_3  PHY_32
-timestamp 1611581575
+timestamp 1623807121
 transform 1 0 1196 0 -1 11424
 box -38 -48 314 592
-use sky130_fd_sc_hd__buf_2  _055_
-timestamp 1611581575
-transform 1 0 2760 0 -1 11424
-box -38 -48 406 592
-use sky130_fd_sc_hd__buf_2  _056_
-timestamp 1611581575
-transform 1 0 3128 0 -1 11424
-box -38 -48 406 592
 use sky130_fd_sc_hd__decap_12  FILLER_16_6
-timestamp 1611581575
+timestamp 1623807121
 transform 1 0 1472 0 -1 11424
 box -38 -48 1142 592
-use sky130_fd_sc_hd__fill_2  FILLER_16_18
-timestamp 1611581575
-transform 1 0 2576 0 -1 11424
-box -38 -48 222 592
-use sky130_fd_sc_hd__and2_4  _083_ $PDKPATH/libs.ref/sky130_fd_sc_hd/mag
-timestamp 1611581575
-transform 1 0 4324 0 -1 11424
-box -38 -48 682 592
-use sky130_fd_sc_hd__einvp_8  gpio_in_buf $PDKPATH/libs.ref/sky130_fd_sc_hd/mag
-timestamp 1611581575
-transform 1 0 4968 0 -1 11424
-box -38 -48 1694 592
-use sky130_fd_sc_hd__tapvpwrvgnd_1  PHY_51
-timestamp 1611581575
-transform 1 0 3772 0 -1 11424
-box -38 -48 130 592
-use sky130_fd_sc_hd__clkbuf_1  clkbuf_1_1_0_serial_clock
-timestamp 1611581575
-transform 1 0 3496 0 -1 11424
-box -38 -48 314 592
-use sky130_fd_sc_hd__decap_4  FILLER_16_32
-timestamp 1611581575
-transform 1 0 3864 0 -1 11424
-box -38 -48 406 592
-use sky130_fd_sc_hd__fill_1  FILLER_16_36
-timestamp 1611581575
-transform 1 0 4232 0 -1 11424
-box -38 -48 130 592
-use sky130_fd_sc_hd__decap_3  PHY_33
-timestamp 1611581575
-transform -1 0 7084 0 -1 11424
-box -38 -48 314 592
-use sky130_fd_sc_hd__tapvpwrvgnd_1  PHY_52
-timestamp 1611581575
-transform 1 0 6624 0 -1 11424
-box -38 -48 130 592
-use sky130_fd_sc_hd__fill_1  FILLER_16_63
-timestamp 1611581575
-transform 1 0 6716 0 -1 11424
-box -38 -48 130 592
 use sky130_fd_sc_hd__tapvpwrvgnd_1  sky130_fd_sc_hd__tapvpwrvgnd_1_0
-timestamp 1611581575
+timestamp 1623807121
 transform -1 0 460 0 -1 11424
 box -38 -48 130 592
 use sky130_fd_sc_hd__conb_1  gpio_logic_high
-timestamp 1611581575
+timestamp 1623807121
 transform 1 0 92 0 -1 11424
 box -38 -48 314 592
+use sky130_fd_sc_hd__decap_4  FILLER_16_32
+timestamp 1623807121
+transform 1 0 3864 0 -1 11424
+box -38 -48 406 592
+use sky130_fd_sc_hd__fill_1  FILLER_16_36
+timestamp 1623807121
+transform 1 0 4232 0 -1 11424
+box -38 -48 130 592
+use sky130_fd_sc_hd__buf_2  _055_
+timestamp 1623807121
+transform 1 0 2760 0 -1 11424
+box -38 -48 406 592
+use sky130_fd_sc_hd__buf_2  _056_
+timestamp 1623807121
+transform 1 0 3128 0 -1 11424
+box -38 -48 406 592
+use sky130_fd_sc_hd__fill_2  FILLER_16_18
+timestamp 1623807121
+transform 1 0 2576 0 -1 11424
+box -38 -48 222 592
+use sky130_fd_sc_hd__tapvpwrvgnd_1  PHY_51
+timestamp 1623807121
+transform 1 0 3772 0 -1 11424
+box -38 -48 130 592
+use sky130_fd_sc_hd__clkbuf_1  clkbuf_1_1_0_serial_clock
+timestamp 1623807121
+transform 1 0 3496 0 -1 11424
+box -38 -48 314 592
+use sky130_fd_sc_hd__and2_4  _083_ $PDKPATH/libs.ref/sky130_fd_sc_hd/mag
+timestamp 1623807121
+transform 1 0 4324 0 -1 11424
+box -38 -48 682 592
+use sky130_fd_sc_hd__einvp_8  gpio_in_buf $PDKPATH/libs.ref/sky130_fd_sc_hd/mag
+timestamp 1623807121
+transform 1 0 4968 0 -1 11424
+box -38 -48 1694 592
+use sky130_fd_sc_hd__decap_3  PHY_33
+timestamp 1623807121
+transform -1 0 7084 0 -1 11424
+box -38 -48 314 592
+use sky130_fd_sc_hd__fill_1  FILLER_16_63
+timestamp 1623807121
+transform 1 0 6716 0 -1 11424
+box -38 -48 130 592
+use sky130_fd_sc_hd__tapvpwrvgnd_1  PHY_52
+timestamp 1623807121
+transform 1 0 6624 0 -1 11424
+box -38 -48 130 592
 << labels >>
 rlabel metal3 s 14000 1096 34000 1216 6 mgmt_gpio_in
 port 0 nsew signal tristate

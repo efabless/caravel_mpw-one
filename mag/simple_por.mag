@@ -1,7 +1,12 @@
 magic
 tech sky130A
 magscale 1 2
-timestamp 1606688983
+timestamp 1625006199
+<< checkpaint >>
+rect 6151 8586 12163 9595
+rect -1334 -1316 12230 8586
+<< isosubstrate >>
+rect -2 -56 10930 8354
 << nwell >>
 rect 70 7344 6652 7795
 rect 7401 6799 10893 7301
@@ -553,24 +558,24 @@ use sky130_fd_pr__pfet_g5v0d10v5_YUHPXE  sky130_fd_pr__pfet_g5v0d10v5_YUHPXE_0
 timestamp 1606063140
 transform 1 0 6158 0 1 7841
 box -338 -497 338 497
-use sky130_fd_sc_hvl__buf_8  sky130_fd_sc_hvl__buf_8_0 ~/projects/efabless/tech/SW/sky130A/libs.ref/sky130_fd_sc_hvl/mag
-timestamp 1606688983
-transform 1 0 8523 0 1 6404
-box -66 -23 1986 897
-use sky130_fd_sc_hvl__buf_8  sky130_fd_sc_hvl__buf_8_1
-timestamp 1606688983
+use sky130_fd_sc_hvl__buf_8  sky130_fd_sc_hvl__buf_8_1 $PDKPATH/libs.ref/sky130_fd_sc_hvl/maglef
+timestamp 1623807150
 transform 1 0 7477 0 1 7438
 box -66 -23 1986 897
-use sky130_fd_sc_hvl__schmittbuf_1  sky130_fd_sc_hvl__schmittbuf_1_0 ~/projects/efabless/tech/SW/sky130A/libs.ref/sky130_fd_sc_hvl/mag
-timestamp 1606688983
+use sky130_fd_sc_hvl__buf_8  sky130_fd_sc_hvl__buf_8_0
+timestamp 1623807150
+transform 1 0 8523 0 1 6404
+box -66 -23 1986 897
+use sky130_fd_sc_hvl__schmittbuf_1  sky130_fd_sc_hvl__schmittbuf_1_0 $PDKPATH/libs.ref/sky130_fd_sc_hvl/maglef
+timestamp 1623807150
 transform 1 0 7467 0 1 6404
 box -66 -23 1122 897
-use sky130_fd_sc_hvl__inv_8  sky130_fd_sc_hvl__inv_8_0 ~/projects/efabless/tech/SW/sky130A/libs.ref/sky130_fd_sc_hvl/mag
-timestamp 1606688983
+use sky130_fd_sc_hvl__inv_8  sky130_fd_sc_hvl__inv_8_0 $PDKPATH/libs.ref/sky130_fd_sc_hvl/maglef
+timestamp 1623807150
 transform 1 0 9397 0 1 7438
 box -66 -23 1506 897
-use sky130_fd_sc_hvl__fill_4  sky130_fd_sc_hvl__fill_4_0 ~/projects/efabless/tech/SW/sky130A/libs.ref/sky130_fd_sc_hvl/mag
-timestamp 1606688983
+use sky130_fd_sc_hvl__fill_4  sky130_fd_sc_hvl__fill_4_0 $PDKPATH/libs.ref/sky130_fd_sc_hvl/maglef
+timestamp 1623807150
 transform 1 0 10443 0 1 6404
 box -66 -23 450 897
 use sky130_fd_pr__res_xhigh_po_0p69_S5N9F3  sky130_fd_pr__res_xhigh_po_0p69_S5N9F3_0

@@ -1,23 +1,26 @@
 magic
 tech sky130A
 magscale 1 2
-timestamp 1624500072
+timestamp 1625009460
 << checkpaint >>
-rect -366 4082 6126 4559
-rect 7506 4082 14094 4559
-rect -366 3785 14094 4082
-rect 14514 3785 31278 4559
-rect -366 325 31278 3785
-rect -366 52 13806 325
-rect -366 -529 6126 52
-rect 7314 -529 13806 52
-rect 14994 75 30577 325
-rect 14994 56 29998 75
-rect 14994 28 29996 56
-rect 14994 -529 29166 28
+rect 7362 4655 14188 4664
+rect -8423 4559 23089 4655
+rect -8423 325 31278 4559
+rect -8423 75 30577 325
+rect -8423 56 29998 75
+rect -8423 28 29996 56
+rect -8423 -307 29166 28
+rect -366 -529 6254 -307
+rect 7314 -529 13806 -307
+rect 14994 -529 29166 -307
+rect -360 -572 6254 -529
 << isosubstrate >>
+rect 896 2816 4892 3340
+rect 782 1312 4880 1962
 rect 5228 1388 8178 2854
+rect 8500 662 12918 3404
 rect 13268 1330 15388 2696
+rect 15642 480 30372 3498
 << viali >>
 rect 8959 2610 8993 2644
 rect 28255 2610 28289 2644
@@ -493,18 +496,22 @@ use sky130_fd_sc_hvl__decap_8  FILLER_1_48
 timestamp 1623807126
 transform 1 0 5568 0 1 1628
 box -66 -43 834 897
-use sky130_fd_sc_hvl__decap_8  FILLER_1_62
-timestamp 1623807126
-transform 1 0 6912 0 1 1628
-box -66 -43 834 897
 use sky130_fd_sc_hvl__fill_1  FILLER_1_56 $PDKPATH/libs.ref/sky130_fd_sc_hvl/mag
 timestamp 1623807126
 transform 1 0 6336 0 1 1628
 box -66 -43 162 897
+use sky130_fd_sc_hvl__decap_8  FILLER_1_62
+timestamp 1623807126
+transform 1 0 6912 0 1 1628
+box -66 -43 834 897
 use sky130_fd_sc_hvl__conb_1  mprj2_logic_high_hvl $PDKPATH/libs.ref/sky130_fd_sc_hvl/mag
 timestamp 1623807126
 transform 1 0 6432 0 1 1628
 box -66 -43 546 897
+use sky130_fd_sc_hvl__lsbufhv2lv_1  mprj2_logic_high_lv $PDKPATH/libs.ref/sky130_fd_sc_hvl/mag
+timestamp 1623807126
+transform 1 0 8832 0 1 1628
+box -66 -43 1698 1671
 use sky130_fd_sc_hvl__decap_8  FILLER_0_88
 timestamp 1623807126
 transform 1 0 9408 0 -1 1628
@@ -513,10 +520,6 @@ use sky130_fd_sc_hvl__decap_8  FILLER_0_80
 timestamp 1623807126
 transform 1 0 8640 0 -1 1628
 box -66 -43 834 897
-use sky130_fd_sc_hvl__lsbufhv2lv_1  mprj2_logic_high_lv $PDKPATH/libs.ref/sky130_fd_sc_hvl/mag
-timestamp 1623807126
-transform 1 0 8832 0 1 1628
-box -66 -43 1698 1671
 use sky130_fd_sc_hvl__decap_8  FILLER_0_104
 timestamp 1623807126
 transform 1 0 10944 0 -1 1628
@@ -549,14 +552,14 @@ use sky130_fd_sc_hvl__decap_8  FILLER_1_140
 timestamp 1623807126
 transform 1 0 14400 0 1 1628
 box -66 -43 834 897
-use sky130_fd_sc_hvl__conb_1  mprj_logic_high_hvl
-timestamp 1623807126
-transform 1 0 13920 0 1 1628
-box -66 -43 546 897
 use sky130_fd_sc_hvl__decap_4  FILLER_1_131 $PDKPATH/libs.ref/sky130_fd_sc_hvl/mag
 timestamp 1623807126
 transform 1 0 13536 0 1 1628
 box -66 -43 450 897
+use sky130_fd_sc_hvl__conb_1  mprj_logic_high_hvl
+timestamp 1623807126
+transform 1 0 13920 0 1 1628
+box -66 -43 546 897
 use sky130_fd_sc_hvl__decap_8  FILLER_0_160
 timestamp 1623807126
 transform 1 0 16320 0 -1 1628
