@@ -1,24 +1,31 @@
 #!/bin/sh
 #
 
+export NETGEN=/ef/apps/ocd/netgen/1.5.190-202106241453/bin/netgen
+
+\rm -r caravel.spice comp.out-clean 
+
 cd ../../mag
+
 mv ../maglef/sky130_fd_sc_hvl__lsbufhv2lv_1_wrapped.mag 	../maglef/sky130_fd_sc_hvl__lsbufhv2lv_1_wrapped.mag.tmp
-#mv ../maglef/mgmt_protect.mag 					../maglef/mgmt_protect.mag.tmp
+mv ../maglef/mgmt_protect.mag 					../maglef/mgmt_protect.mag.tmp
 mv ../maglef/chip_io.mag 					../maglef/chip_io.mag.tmp
 
 maglef2lvs.sh caravel.mag
 
 mv ../maglef/sky130_fd_sc_hvl__lsbufhv2lv_1_wrapped.mag.tmp 	../maglef/sky130_fd_sc_hvl__lsbufhv2lv_1_wrapped.mag
-#mv ../maglef/mgmt_protect.mag.tmp 				../maglef/mgmt_protect.mag
+mv ../maglef/mgmt_protect.mag.tmp 				../maglef/mgmt_protect.mag
 mv ../maglef/chip_io.mag.tmp					../maglef/chip_io.mag
-
 
 cd ../lvs/caravel
 
-
-netgen -batch lvs "caravel.spice caravel" "../../verilog/gl/caravel.v caravel" \
-	sky130A_setup.tcl comp.out
+$NETGEN -batch lvs "caravel.spice caravel" "../../verilog/gl/caravel.v caravel" sky130A_setup.tcl comp.out-clean
 #	|& tee netgen.log
+
+
+
+
+
 
 #netgen -batch lvs "caravel.spice caravel" "../../../caravel.mpw-one-final/verilog/gl/caravel.v caravel" \
 #	sky130A_setup.tcl comp.out-new-layout-vs-mpw-one-final-vlog
