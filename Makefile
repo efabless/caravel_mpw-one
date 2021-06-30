@@ -89,13 +89,17 @@ __ship:
 		gds rescale false; \
 		gds read $(UPRJ_ROOT)/gds/user_project_wrapper.gds; \
 		load caravel -dereference;\
+		cellname list filepath user_id_programming $(UPRJ_ROOT)/mag;\
+		cellname list filepath user_id_textblock $(UPRJ_ROOT)/mag;\
+		flush user_id_programming;\
+		flush user_id_textblock;\
 		select top cell;\
 		gds write $(UPRJ_ROOT)/gds/caravel.gds; \
-		exit;" > $(CARAVEL_ROOT)/mag/mag2gds_caravel.tcl
-### Runs from UPRJ_ROOT
+		exit;" > $(UPRJ_ROOT)/mag/mag2gds_caravel.tcl
+### Runs from CARAVEL_ROOT
 	@mkdir -p ./signoff/build
-	@cd $(CARAVEL_ROOT)/mag && PDKPATH=${PDK_ROOT}/sky130A magic -noc -dnull mag2gds_caravel.tcl 2>&1 | tee $(UPRJ_ROOT)/signoff/build/make_ship.out
-	@rm $(CARAVEL_ROOT)/mag/mag2gds_caravel.tcl
+	@cd $(CARAVEL_ROOT)/mag && PDKPATH=${PDK_ROOT}/sky130A magic -noc -dnull $(UPRJ_ROOT)/mag/mag2gds_caravel.tcl 2>&1 | tee $(UPRJ_ROOT)/signoff/build/make_ship.out
+	@rm $(UPRJ_ROOT)/mag/mag2gds_caravel.tcl
 
 truck: check-env uncompress uncompress-caravel
 ifeq ($(FOREGROUND),1)
@@ -124,13 +128,17 @@ __truck:
 		gds rescale false; \
 		gds read $(UPRJ_ROOT)/gds/user_analog_project_wrapper.gds; \
 		load caravan -dereference;\
+		cellname list filepath user_id_programming $(UPRJ_ROOT)/mag;\
+		cellname list filepath user_id_textblock $(UPRJ_ROOT)/mag;\
+		flush user_id_programming;\
+		flush user_id_textblock;\
 		select top cell;\
 		gds write $(UPRJ_ROOT)/gds/caravan.gds; \
-		exit;" > $(CARAVEL_ROOT)/mag/mag2gds_caravan.tcl
-### Runs from UPRJ_ROOT
+		exit;" > $(UPRJ_ROOT)/mag/mag2gds_caravan.tcl
+### Runs from CARAVEL_ROOT
 	@mkdir -p ./signoff/build
-	@cd $(CARAVEL_ROOT)/mag && PDKPATH=${PDK_ROOT}/sky130A magic -noc -dnull mag2gds_caravan.tcl 2>&1 | tee $(UPRJ_ROOT)/signoff/build/make_truck.out
-	@rm $(CARAVEL_ROOT)/mag/mag2gds_caravan.tcl
+	@cd $(CARAVEL_ROOT)/mag && PDKPATH=${PDK_ROOT}/sky130A magic -noc -dnull $(UPRJ_ROOT)/mag/mag2gds_caravan.tcl 2>&1 | tee $(UPRJ_ROOT)/signoff/build/make_truck.out
+	@rm $(UPRJ_ROOT)/mag/mag2gds_caravan.tcl
 
 .PHONY: clean
 clean:
@@ -441,8 +449,12 @@ endif
 __set_user_id: 
 	mkdir -p ./signoff/build
 	# Update info.yaml
-	sed -r "s/^(\s*project_id\s*:\s*).*/\1${USER_ID}/" -i info.yaml
-	python3 $(CARAVEL_ROOT)/scripts/set_user_id.py $(USER_ID) $(CARAVEL_ROOT) 2>&1 | tee ./signoff/build/set_user_id.out
+	# sed -r "s/^(\s*project_id\s*:\s*).*/\1${USER_ID}/" -i info.yaml
+	cp $(CARAVEL_ROOT)/gds/user_id_programming.gds ./gds/user_id_programming.gds
+	cp $(CARAVEL_ROOT)/mag/user_id_programming.mag ./mag/user_id_programming.mag
+	cp $(CARAVEL_ROOT)/mag/user_id_textblock.mag ./mag/user_id_textblock.mag
+	cp $(CARAVEL_ROOT)/verilog/rtl/caravel.v ./verilog/rtl/caravel.v
+	python3 $(CARAVEL_ROOT)/scripts/set_user_id.py $(USER_ID) $(shell pwd) 2>&1 | tee ./signoff/build/set_user_id.out
 
 .PHONY: update_caravel
 update_caravel:
