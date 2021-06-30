@@ -57,7 +57,7 @@ add_macro_placement "gpio_control_bidir_2\\\[0\\\]" $west_x 1214.000 R0
 add_macro_placement "gpio_control_in_2\\\[10\\\]" $west_x 1430.000 R0
 add_macro_placement "gpio_control_in_2\\\[9\\\]" $west_x 1646.000 R0
 add_macro_placement "gpio_control_in_2\\\[8\\\]" $west_x 1862.000 R0
-add_macro_placement "gpio_control_in_2\\\[7\\\]" $west_x 2078.000 R0
+add_macro_placement "gpio_control_in_2\\\[7\\\]" $west_x 2067.000 R0
 add_macro_placement "gpio_control_in_2\\\[6\\\]" $west_x 2312.000 R0
 
 add_macro_placement "gpio_control_in_2\\\[5\\\]" $west_x 2941.120 R0
@@ -69,20 +69,20 @@ add_macro_placement "gpio_control_in_2\\\[0\\\]" $west_x 4021.000 R0
 
 # east
 set east_x 3381.015
-add_macro_placement "gpio_control_bidir_1\\\[0\\\]" $east_x 581.000 MY
-add_macro_placement "gpio_control_bidir_1\\\[1\\\]" $east_x 802.000 MY
-add_macro_placement "gpio_control_in_1\\\[0\\\]" $east_x 1032.000 MY
-add_macro_placement "gpio_control_in_1\\\[1\\\]" $east_x 1247.000 MY
-add_macro_placement "gpio_control_in_1\\\[2\\\]" $east_x 1462.000 MY
-add_macro_placement "gpio_control_in_1\\\[3\\\]" $east_x 1692.000 MY
-add_macro_placement "gpio_control_in_1\\\[4\\\]" $east_x 1915.000 MY
-add_macro_placement "gpio_control_in_1\\\[5\\\]" $east_x 2345.000 MY
-add_macro_placement "gpio_control_in_1\\\[6\\\]" $east_x 2559.000 MY
-add_macro_placement "gpio_control_in_1\\\[7\\\]" $east_x 2779.000 MY
-add_macro_placement "gpio_control_in_1\\\[8\\\]" $east_x 3005.000 MY
-add_macro_placement "gpio_control_in_1\\\[9\\\]" $east_x 3227.000 MY
-add_macro_placement "gpio_control_in_1\\\[10\\\]" $east_x 3448.000 MY
-add_macro_placement "gpio_control_in_1\\\[11\\\]" $east_x 4334.000 MY
+add_macro_placement "gpio_control_bidir_1\\\[0\\\]" $east_x 592.000 MY
+add_macro_placement "gpio_control_bidir_1\\\[1\\\]" $east_x 820.000 MY
+add_macro_placement "gpio_control_in_1\\\[0\\\]" $east_x 1042.000 MY
+add_macro_placement "gpio_control_in_1\\\[1\\\]" $east_x 1268.000 MY
+add_macro_placement "gpio_control_in_1\\\[2\\\]" $east_x 1494.000 MY
+add_macro_placement "gpio_control_in_1\\\[3\\\]" $east_x 1723.000 MY
+add_macro_placement "gpio_control_in_1\\\[4\\\]" $east_x 1945.000 MY
+add_macro_placement "gpio_control_in_1\\\[5\\\]" $east_x 2386.000 MY
+add_macro_placement "gpio_control_in_1\\\[6\\\]" $east_x 2608.000 MY
+add_macro_placement "gpio_control_in_1\\\[7\\\]" $east_x 2824.000 MY
+add_macro_placement "gpio_control_in_1\\\[8\\\]" $east_x 3059.000 MY
+add_macro_placement "gpio_control_in_1\\\[9\\\]" $east_x 3285.000 MY
+add_macro_placement "gpio_control_in_1\\\[10\\\]" $east_x 3510.000 MY
+add_macro_placement "gpio_control_in_1\\\[11\\\]" $east_x 4404.000 MY
 
 manual_macro_placement f
 
@@ -106,12 +106,12 @@ set m4_south_obs "
 	met4 721.82000 264.80000 950.71500 1226.04000"
 
 set vssa1_p2_east_obs "
-	met4 3262.25500 2041.85500 3388.17000 2116.93500, \
-	met3 3262.25500 2041.85500 3388.17000 2116.93500"
+	met4 3262.79500	2076.55000 3262.79500 2151.63000, \
+	met3 3262.79500	2076.55000 3262.79500 2151.63000"
 
 set vssd1_east_obs "
-	met3 3262.46500 2246.52000 3378.66500 2344.55500, \
-	met4 3262.46500 2246.52000 3378.66500 2344.55500"
+	met3 3269.73000	2281.14500 3269.73000 2379.18000, \
+	met4 3269.73000	2281.14500 3269.73000 2379.18000"
 	
 set ::env(GLB_RT_OBS) "
 	$wrapper_obs, \
