@@ -330,7 +330,7 @@ module chip_io_alt #(
 		`USER1_ABUTMENT_PINS
 `ifndef TOP_ROUTING
 		// .VDDIO(vddio)
-		,.P_PAD(mprj_io[`MPRJ_IO_PADS_1-1:`MPRJ_IO_PADS_1-ANALOG_PADS_1+1]),
+		,.P_PAD(mprj_io[`MPRJ_IO_PADS_1-2:`MPRJ_IO_PADS_1-ANALOG_PADS_1]),
 `endif
 		.P_CORE(mprj_analog[ANALOG_PADS_1-2:0])
     	);
@@ -340,7 +340,7 @@ module chip_io_alt #(
 		`USER1_ABUTMENT_PINS
 `ifndef TOP_ROUTING
 		// .VDDIO(vddio)
-		,.P_PAD(mprj_io[`MPRJ_IO_PADS_1-ANALOG_PADS_1]),
+		,.P_PAD(mprj_io[`MPRJ_IO_PADS_1-1]),
 `endif
 		`HVCLAMP_PINS(mprj_clamp_high[0],
 		   	      mprj_clamp_low[0]),
