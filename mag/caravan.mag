@@ -1,15 +1,15 @@
 magic
 tech sky130A
 magscale 1 2
-timestamp 1625167798
+timestamp 1625170718
 << checkpaint >>
 rect 426855 1038860 447918 1043510
-rect -1260 1035309 718860 1038860
-rect -1260 1033509 724107 1035309
-rect -1260 38357 724807 1033509
-rect -1260 38047 724797 38357
-rect -1260 24157 724107 38047
-rect -1260 -1260 718860 24157
+rect -2260 1035309 719860 1038860
+rect -2260 1033509 724107 1035309
+rect -2260 38357 724807 1033509
+rect -2260 38047 724797 38357
+rect -2260 24157 724107 38047
+rect -2260 -1260 719860 24157
 << metal1 >>
 rect 483664 1005153 483670 1005205
 rect 483722 1005193 483728 1005205
@@ -57662,15 +57662,15 @@ rect 78610 1018624 90778 1030788
 rect 130010 1018624 142178 1030788
 rect 181410 1018624 193578 1030788
 rect 231810 1018624 243978 1030788
-rect 283410 1018624 295578 1030788
+rect 284410 1018624 296578 1030788
 rect 334810 1018624 346978 1030788
-rect 385210 1018624 397378 1030788
+rect 386210 1018624 398378 1030788
 rect 475210 1018624 487378 1030788
 rect 526610 1018624 538778 1030788
 rect 577010 1018624 589178 1030788
 rect 628410 1018624 640578 1030788
 rect 6811 956610 18975 968778
-rect 698624 955022 710788 967190
+rect 698624 953022 710788 965190
 rect 6167 914054 19619 924934
 rect 697980 909666 711432 920546
 rect 6811 871210 18975 883378
@@ -57733,150 +57733,150 @@ rect 460640 6598 473180 19088
 rect 515440 6598 527980 19088
 rect 570422 6811 582590 18975
 rect 624222 6811 636390 18975
-use user_id_programming  user_id_value ../maglef
-timestamp 1607107372
-transform 1 0 656624 0 1 80926
-box 0 0 7109 7077
-use storage  storage ../maglef
-timestamp 1624446576
-transform 1 0 52032 0 1 53156
-box 1066 70 92000 191480
-use mgmt_core  soc ../maglef
-timestamp 1624566096
-transform 1 0 190434 0 1 53602
-box 0 0 450000 168026
-use sky130_fd_sc_hvl__lsbufhv2lv_1_wrapped  rstb_level
-timestamp 1608587411
-transform -1 0 145710 0 -1 50488
-box 414 -400 3522 3800
+use gpio_control_block  gpio_control_bidir_1\[0\] ../maglef
+timestamp 1624273664
+transform -1 0 710203 0 1 118400
+box -1620 -364 34000 13964
+use gpio_control_block  gpio_control_bidir_1\[1\]
+timestamp 1624273664
+transform -1 0 710203 0 1 164000
+box -1620 -364 34000 13964
 use simple_por  por ../maglef
 timestamp 1606790297
 transform 1 0 654146 0 -1 112882
 box 25 11 11344 8291
-use gpio_control_block  gpio_control_bidir_1\[1\] ../maglef
+use sky130_fd_sc_hvl__lsbufhv2lv_1_wrapped  rstb_level
+timestamp 1608587411
+transform -1 0 145710 0 -1 50488
+box 414 -400 3522 3800
+use mgmt_core  soc ../maglef
+timestamp 1624566096
+transform 1 0 190434 0 1 53602
+box 0 0 450000 168026
+use storage  storage ../maglef
+timestamp 1624446576
+transform 1 0 52032 0 1 53156
+box 1066 70 92000 191480
+use user_id_programming  user_id_value ../maglef
+timestamp 1607107372
+transform 1 0 656624 0 1 80926
+box 0 0 7109 7077
+use gpio_control_block  gpio_control_in_2\[10\]
 timestamp 1624273664
-transform -1 0 710203 0 1 164000
-box -1620 -364 34000 13964
-use gpio_control_block  gpio_control_bidir_1\[0\]
-timestamp 1624273664
-transform -1 0 710203 0 1 118400
-box -1620 -364 34000 13964
-use mgmt_protect  mgmt_buffers ../maglef
-timestamp 1624984707
-transform 1 0 192180 0 1 240036
-box -2762 -2778 222734 26170
-use gpio_control_block  gpio_control_bidir_2\[0\]
-timestamp 1624273664
-transform 1 0 7631 0 1 242800
+transform 1 0 7631 0 1 286000
 box -1620 -364 34000 13964
 use gpio_control_block  gpio_control_bidir_2\[1\]
 timestamp 1624273664
 transform 1 0 7631 0 1 199600
 box -1620 -364 34000 13964
-use gpio_control_block  gpio_control_in_2\[10\]
+use gpio_control_block  gpio_control_bidir_2\[0\]
 timestamp 1624273664
-transform 1 0 7631 0 1 286000
+transform 1 0 7631 0 1 242800
+box -1620 -364 34000 13964
+use mgmt_protect  mgmt_buffers ../maglef
+timestamp 1624984707
+transform 1 0 192180 0 1 240036
+box -2762 -2778 222734 26170
+use gpio_control_block  gpio_control_in_1\[1\]
+timestamp 1624273664
+transform -1 0 710203 0 1 253600
 box -1620 -364 34000 13964
 use gpio_control_block  gpio_control_in_1\[0\]
 timestamp 1624273664
 transform -1 0 710203 0 1 208400
 box -1620 -364 34000 13964
-use gpio_control_block  gpio_control_in_1\[1\]
+use gpio_control_block  gpio_control_in_2\[9\]
 timestamp 1624273664
-transform -1 0 710203 0 1 253600
+transform 1 0 7631 0 1 329200
 box -1620 -364 34000 13964
 use gpio_control_block  gpio_control_in_2\[8\]
 timestamp 1624273664
 transform 1 0 7631 0 1 372400
 box -1620 -364 34000 13964
-use gpio_control_block  gpio_control_in_2\[9\]
+use gpio_control_block  gpio_control_in_1\[3\]
 timestamp 1624273664
-transform 1 0 7631 0 1 329200
+transform -1 0 710203 0 1 344600
 box -1620 -364 34000 13964
 use gpio_control_block  gpio_control_in_1\[2\]
 timestamp 1624273664
 transform -1 0 710203 0 1 298800
 box -1620 -364 34000 13964
-use gpio_control_block  gpio_control_in_1\[3\]
+use gpio_control_block  gpio_control_in_1\[4\]
 timestamp 1624273664
-transform -1 0 710203 0 1 344600
-box -1620 -364 34000 13964
-use gpio_control_block  gpio_control_in_2\[7\]
-timestamp 1624273664
-transform 1 0 7631 0 1 415000
-box -1620 -364 34000 13964
-use gpio_control_block  gpio_control_in_2\[6\]
-timestamp 1624273664
-transform 1 0 7631 0 1 462400
+transform -1 0 710203 0 1 389000
 box -1620 -364 34000 13964
 use gpio_control_block  gpio_control_in_1\[5\]
 timestamp 1624273664
 transform -1 0 710203 0 1 477200
 box -1620 -364 34000 13964
-use gpio_control_block  gpio_control_in_1\[4\]
+use gpio_control_block  gpio_control_in_2\[6\]
 timestamp 1624273664
-transform -1 0 710203 0 1 389000
+transform 1 0 7631 0 1 462400
 box -1620 -364 34000 13964
-use gpio_control_block  gpio_control_in_2\[5\]
+use gpio_control_block  gpio_control_in_2\[7\]
 timestamp 1624273664
-transform 1 0 7631 0 1 588224
-box -1620 -364 34000 13964
-use gpio_control_block  gpio_control_in_2\[4\]
-timestamp 1624273664
-transform 1 0 7631 0 1 631400
+transform 1 0 7631 0 1 415000
 box -1620 -364 34000 13964
 use gpio_control_block  gpio_control_in_2\[3\]
 timestamp 1624273664
 transform 1 0 7631 0 1 674600
 box -1620 -364 34000 13964
-use gpio_control_block  gpio_control_in_1\[9\]
+use gpio_control_block  gpio_control_in_2\[4\]
 timestamp 1624273664
-transform -1 0 710203 0 1 657000
+transform 1 0 7631 0 1 631400
 box -1620 -364 34000 13964
-use gpio_control_block  gpio_control_in_1\[8\]
+use gpio_control_block  gpio_control_in_2\[5\]
 timestamp 1624273664
-transform -1 0 710203 0 1 611800
-box -1620 -364 34000 13964
-use gpio_control_block  gpio_control_in_1\[7\]
-timestamp 1624273664
-transform -1 0 710203 0 1 564800
-box -1620 -364 34000 13964
-use gpio_control_block  gpio_control_in_1\[6\]
-timestamp 1624273664
-transform -1 0 710203 0 1 521600
+transform 1 0 7631 0 1 588224
 box -1620 -364 34000 13964
 use gpio_control_block  gpio_control_in_1\[10\]
 timestamp 1624273664
 transform -1 0 710203 0 1 702000
 box -1620 -364 34000 13964
-use gpio_control_block  gpio_control_in_2\[2\]
+use gpio_control_block  gpio_control_in_1\[6\]
 timestamp 1624273664
-transform 1 0 7631 0 1 717800
+transform -1 0 710203 0 1 521600
 box -1620 -364 34000 13964
-use gpio_control_block  gpio_control_in_2\[1\]
+use gpio_control_block  gpio_control_in_1\[7\]
 timestamp 1624273664
-transform 1 0 7631 0 1 761000
+transform -1 0 710203 0 1 564800
+box -1620 -364 34000 13964
+use gpio_control_block  gpio_control_in_1\[8\]
+timestamp 1624273664
+transform -1 0 710203 0 1 611800
+box -1620 -364 34000 13964
+use gpio_control_block  gpio_control_in_1\[9\]
+timestamp 1624273664
+transform -1 0 710203 0 1 657000
 box -1620 -364 34000 13964
 use gpio_control_block  gpio_control_in_2\[0\]
 timestamp 1624273664
 transform 1 0 7631 0 1 804200
 box -1620 -364 34000 13964
+use gpio_control_block  gpio_control_in_2\[1\]
+timestamp 1624273664
+transform 1 0 7631 0 1 761000
+box -1620 -364 34000 13964
+use gpio_control_block  gpio_control_in_2\[2\]
+timestamp 1624273664
+transform 1 0 7631 0 1 717800
+box -1620 -364 34000 13964
 use gpio_control_block  gpio_control_in_1\[11\]
 timestamp 1624273664
 transform -1 0 710203 0 1 880800
 box -1620 -364 34000 13964
-use caravan_power_routing  caravan_power_routing_0
-timestamp 1625167798
-transform 1 0 38561 0 1 38708
-box -33118 599 673272 959285
+use chip_io_alt  padframe
+timestamp 1625169553
+transform 1 0 0 0 1 0
+box 0 0 717600 1037600
 use user_analog_project_wrapper  mprj
 timestamp 1620244087
 transform 1 0 65308 0 1 278718
 box -800 -800 584800 704800
-use chip_io_alt  padframe
-timestamp 1625148733
-transform 1 0 0 0 1 0
-box 0 0 717600 1037600
+use caravan_power_routing  caravan_power_routing_0
+timestamp 1625170718
+transform 1 0 38561 0 1 38708
+box -33118 599 673272 959285
 << labels >>
 flabel metal5 s 187640 6598 200180 19088 0 FreeSans 16000 0 0 0 clock
 port 0 nsew signal input
@@ -57900,18 +57900,12 @@ flabel metal5 s 698512 774440 711002 786980 0 FreeSans 16000 0 0 0 mprj_io[12]
 port 9 nsew signal bidirectional
 flabel metal5 s 698512 863640 711002 876180 0 FreeSans 16000 0 0 0 mprj_io[13]
 port 10 nsew signal bidirectional
-flabel metal5 s 385210 1018624 397378 1030788 0 FreeSans 16000 0 0 0 mprj_io[18]
-port 11 nsew signal bidirectional
 flabel metal5 s 628410 1018624 640578 1030788 0 FreeSans 16000 0 0 0 mprj_io[15]
 port 12 nsew signal bidirectional
 flabel metal5 s 526610 1018624 538778 1030788 0 FreeSans 16000 0 0 0 mprj_io[16]
 port 13 nsew signal bidirectional
 flabel metal5 s 475210 1018624 487378 1030788 0 FreeSans 16000 0 0 0 mprj_io[17]
 port 14 nsew signal bidirectional
-flabel metal5 s 698624 955022 710788 967190 0 FreeSans 16000 0 0 0 mprj_io[14]
-port 15 nsew signal bidirectional
-flabel metal5 s 283410 1018624 295578 1030788 0 FreeSans 16000 0 0 0 mprj_io[19]
-port 16 nsew signal bidirectional
 flabel metal5 s 698512 146440 711002 158980 0 FreeSans 16000 0 0 0 mprj_io[1]
 port 17 nsew signal bidirectional
 flabel metal5 s 231810 1018624 243978 1030788 0 FreeSans 16000 0 0 0 mprj_io[20]
@@ -58024,6 +58018,12 @@ flabel metal5 182956 261182 182956 261182 0 FreeSans 8000 0 0 0 vssd2_core
 flabel metal5 184920 263575 184920 263575 0 FreeSans 8000 0 0 0 vccd2_core
 flabel metal5 668612 70870 668612 70870 0 FreeSans 8000 90 0 0 vddio_core
 flabel metal5 672443 71154 672443 71154 0 FreeSans 8000 90 0 0 vssio_core
+flabel metal5 s 698624 953022 710788 965190 0 FreeSans 16000 0 0 0 mprj_io[14]
+port 15 nsew signal bidirectional
+flabel metal5 s 284410 1018624 296578 1030788 0 FreeSans 16000 0 0 0 mprj_io[19]
+port 16 nsew signal bidirectional
+flabel metal5 s 386210 1018624 398378 1030788 0 FreeSans 16000 0 0 0 mprj_io[18]
+port 11 nsew signal bidirectional
 << properties >>
 string FIXED_BBOX 0 0 717600 1037600
 << end >>

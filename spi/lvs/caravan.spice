@@ -1475,9 +1475,8 @@ Xgpio_control_in_2\[6\] soc/mgmt_in_data[31] gpio_control_in_2\[6\]/one soc/mgmt
 + padframe/mprj_io_slow_sel[20] padframe/mprj_io_vtrip_sel[20] gpio_control_in_2\[6\]/resetn
 + gpio_control_in_2\[7\]/resetn gpio_control_in_2\[6\]/serial_clock gpio_control_in_2\[7\]/serial_clock
 + gpio_control_in_2\[6\]/serial_data_in gpio_control_in_2\[5\]/serial_data_in mprj/io_in[20]
-+ mprj/io_oeb[20] mprj/io_out[20] gpio_control_in_2\[6\]/zero gpio_control_in_2\[6\]/vccd
-+ gpio_control_in_2\[6\]/vssd gpio_control_in_2\[6\]/vccd1 gpio_control_in_2\[6\]/vssd1
-+ gpio_control_block
++ mprj/io_oeb[20] mprj/io_out[20] gpio_control_in_2\[6\]/zero mprj_io[31] mprj_io[31]
++ mprj_io[31] mprj_io[31] gpio_control_block
 Xgpio_control_in_1\[1\] soc/mgmt_in_data[3] gpio_control_in_1\[1\]/one soc/mgmt_in_data[3]
 + gpio_control_in_1\[1\]/one padframe/mprj_io_analog_en[3] padframe/mprj_io_analog_pol[3]
 + padframe/mprj_io_analog_sel[3] padframe/mprj_io_dm[9] padframe/mprj_io_dm[10] padframe/mprj_io_dm[11]
