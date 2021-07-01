@@ -111,9 +111,9 @@
 + mprj_io[34] mprj_io_analog_en[23] mprj_io_analog_pol[23] mprj_io_analog_sel[23]
 + mprj_io_dm[69] mprj_io_dm[70] mprj_io_dm[71] mprj_io_holdover[23] mprj_io_ib_mode_sel[23]
 + mprj_io_inp_dis[23] mprj_io_oeb[23] mprj_io_out[23] mprj_io_slow_sel[23] mprj_io_vtrip_sel[23]
-+ mprj_io_in[23] mprj_io_in_3v3[23] porb_h resetb resetb_core_h vdda vssa vssd mprj_analog[1]
-+ mprj_io[15] mprj_analog[2] mprj_io[16] mprj_analog[3] mprj_io[17] mprj_analog[4]
-+ mprj_io[18] mprj_analog[0] mprj_clamp_high[0] mprj_clamp_low[0] mprj_io[14] vccd1_pad
++ mprj_io_in[23] mprj_io_in_3v3[23] porb_h resetb resetb_core_h vdda vssa vssd mprj_analog[0]
++ mprj_io[15] mprj_analog[1] mprj_io[16] mprj_analog[2] mprj_io[17] mprj_analog[3]
++ mprj_io[18] mprj_analog[4] mprj_clamp_high[0] mprj_clamp_low[0] mprj_io[14] vccd1_pad
 + vdda1_pad vdda1_pad2 vssa1_pad vssa1_pad2 vccd1 vdda1 vssa1 vssd1 vssd1_pad mprj_analog[7]
 + mprj_io[21] mprj_analog[8] mprj_io[22] mprj_analog[9] mprj_io[23] mprj_analog[10]
 + mprj_io[24] mprj_analog[5] mprj_clamp_high[1] mprj_clamp_low[1] mprj_io[19] mprj_analog[6]
@@ -835,8 +835,8 @@ Xpadframe clock soc/clock por/por_l flash_clk soc/flash_clk soc/flash_clk_ieb so
 + padframe/mprj_io_ib_mode_sel[23] padframe/mprj_io_inp_dis[23] padframe/mprj_io_oeb[23]
 + padframe/mprj_io_out[23] padframe/mprj_io_slow_sel[23] padframe/mprj_io_vtrip_sel[23]
 + padframe/mprj_io_in[23] mprj/io_in_3v3[23] por/porb_h resetb rstb_level/A padframe/vdda
-+ padframe/vssa padframe/vssd mprj/io_analog[1] mprj_io[15] mprj/io_analog[2] mprj_io[16]
-+ mprj/io_analog[3] mprj_io[17] mprj/io_analog[4] mprj_io[18] mprj/io_analog[0] mprj/io_clamp_high[0]
++ padframe/vssa padframe/vssd mprj/io_analog[0] mprj_io[15] mprj/io_analog[1] mprj_io[16]
++ mprj/io_analog[2] mprj_io[17] mprj/io_analog[3] mprj_io[18] mprj/io_analog[4] mprj/io_clamp_high[0]
 + mprj/io_clamp_low[0] mprj_io[14] vccd1 vdda1 vdda1_2 vssa1 vssa1_2 padframe/vccd1
 + padframe/vdda1 padframe/vssa1 padframe/vssd1 vssd1 mprj/io_analog[7] mprj_io[21]
 + mprj/io_analog[8] mprj_io[22] mprj/io_analog[9] mprj_io[23] mprj/io_analog[10] mprj_io[24]
