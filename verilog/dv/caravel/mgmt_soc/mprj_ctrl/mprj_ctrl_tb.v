@@ -157,7 +157,7 @@ module mprj_ctrl_tb;
 		.vssd2_pad	(VSS_PKG),
 		.clock	  (clock),
 		.gpio     (gpio),
-		.mprj_io  (mprj_io),
+		.mprj_io  (user_io),
 		.flash_csb(flash_csb),
 		.flash_clk(flash_clk),
 		.flash_io0(flash_io0),
