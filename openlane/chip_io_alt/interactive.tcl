@@ -112,18 +112,18 @@ set ::env(GLB_RT_OBS) "
 	$vdda1_east_obs
 "
 
-# try_catch python3 $::env(SCRIPTS_DIR)/add_def_obstructions.py \
-# 	--input-def $::env(CURRENT_DEF) \
-# 	--lef $::env(MERGED_LEF) \
-# 	--obstructions $::env(GLB_RT_OBS) \
-# 	--output [file rootname $::env(CURRENT_DEF)].obs.def |& tee $::env(TERMINAL_OUTPUT) $::env(LOG_DIR)/obs.log
+try_catch python3 $::env(SCRIPTS_DIR)/add_def_obstructions.py \
+	--input-def $::env(CURRENT_DEF) \
+	--lef $::env(MERGED_LEF) \
+	--obstructions $::env(GLB_RT_OBS) \
+	--output [file rootname $::env(CURRENT_DEF)].obs.def |& tee $::env(TERMINAL_OUTPUT) $::env(LOG_DIR)/obs.log
 
-# set_def [file rootname $::env(CURRENT_DEF)].obs.def
+set_def [file rootname $::env(CURRENT_DEF)].obs.def
 
-# li1_hack_start
-# global_routing
-# detailed_routing
-# li1_hack_end
+li1_hack_start
+global_routing
+detailed_routing
+li1_hack_end
 
 label_macro_pins\
 	-lef $::env(TMP_DIR)/lvs.lef\
@@ -135,7 +135,7 @@ run_magic
 
 # run_magic_drc
 
-# run_magic_spice_export
+run_magic_spice_export
 
 save_views       -lef_path $::env(magic_result_file_tag).lef \
                  -def_path $::env(CURRENT_DEF) \
@@ -147,4 +147,7 @@ save_views       -lef_path $::env(magic_result_file_tag).lef \
                  -save_path $save_path \
                  -tag $::env(RUN_TAG)
 
-# run_lvs $::env(magic_result_file_tag).spice $::env(TMP_DIR)/lvs.v
+run_lvs $::env(magic_result_file_tag).spice $::env(TMP_DIR)/lvs.v
+
+calc_total_runtime
+generate_final_summary_report
