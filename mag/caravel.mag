@@ -67798,15 +67798,15 @@ rect 460640 6598 473160 19088
 rect 515440 6598 527960 19088
 rect 570422 6811 582590 18975
 rect 624222 6811 636390 18975
-use mgmt_core  soc ~/gits/caravel/maglef
+use mgmt_core  soc
 timestamp 1624566096
 transform 1 0 190434 0 1 53602
 box 0 0 450000 168026
-use storage  storage ~/gits/caravel/maglef
+use storage  storage
 timestamp 1624446576
 transform 1 0 52032 0 1 53156
 box 1066 70 92000 191480
-use gpio_control_block  gpio_control_bidir_1\[0\] ~/gits/caravel/maglef
+use gpio_control_block  gpio_control_bidir_1\[0\]
 timestamp 1624273664
 transform -1 0 710203 0 1 121000
 box -1620 -364 34000 13964
@@ -67814,15 +67814,15 @@ use gpio_control_block  gpio_control_bidir_1\[1\]
 timestamp 1624273664
 transform -1 0 710203 0 1 166200
 box -1620 -364 34000 13964
-use sky130_fd_sc_hvl__lsbufhv2lv_1_wrapped  rstb_level ~/gits/caravel/maglef
+use sky130_fd_sc_hvl__lsbufhv2lv_1_wrapped  rstb_level
 timestamp 1608587524
 transform -1 0 145710 0 -1 50488
 box 480 -400 3456 3800
-use user_id_programming  user_id_value ~/gits/caravel/maglef
+use user_id_programming  user_id_value
 timestamp 1607107372
 transform 1 0 656624 0 1 80926
 box 0 0 7109 7077
-use simple_por  por ~/gits/caravel/maglef
+use simple_por  por
 timestamp 1606790297
 transform 1 0 654146 0 -1 112882
 box 25 11 11344 8291
@@ -67834,7 +67834,7 @@ use gpio_control_block  gpio_control_bidir_2\[0\]
 timestamp 1624273664
 transform 1 0 7631 0 1 245800
 box -1620 -364 34000 13964
-use mgmt_protect  mgmt_buffers ~/gits/caravel/maglef
+use mgmt_protect  mgmt_buffers
 timestamp 1624984707
 transform 1 0 192180 0 1 240036
 box -2762 -2778 222734 26170
