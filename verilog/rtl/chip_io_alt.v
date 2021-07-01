@@ -332,7 +332,7 @@ module chip_io_alt #(
 		// .VDDIO(vddio)
 		,.P_PAD(mprj_io[`MPRJ_IO_PADS_1-1:`MPRJ_IO_PADS_1-ANALOG_PADS_1+1]),
 `endif
-		.P_CORE(mprj_analog[ANALOG_PADS_1-1:1])
+		.P_CORE(mprj_analog[ANALOG_PADS_1-2:0])
     	);
 
 	// Last analog pad is a power pad, to provide a clamp resource.
@@ -344,7 +344,7 @@ module chip_io_alt #(
 `endif
 		`HVCLAMP_PINS(mprj_clamp_high[0],
 		   	      mprj_clamp_low[0]),
-		.P_CORE(mprj_analog[0])
+		.P_CORE(mprj_analog[ANALOG_PADS_1-1])
     	);
 
 	// Instantiate analog pads in user area 2 using the custom analog pad.
