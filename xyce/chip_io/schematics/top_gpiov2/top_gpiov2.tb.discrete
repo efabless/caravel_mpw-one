@@ -1,0 +1,80 @@
+*** UC SPICE *** , MIN_RESIST 4.0, MIN_CAPAC 0.1FF
+
+.include /home/mk/foss/pdks/sky130_fd_pr/models/corners/tt/discrete.spice
+.include ./sky130_fd_io__top_gpiov2.spice
+.include ./io.spice
+.include ./sky130_fd_io__condiode.spice
+.include ./sky130_fd_pr__res_generic_po.spice
+
+*.PININFO ANALOG_EN:I ANALOG_POL:I ANALOG_SEL:I DM[2]:I DM[1]:I
+*.PININFO DM[0]:I ENABLE_H:I ENABLE_INP_H:I ENABLE_VDDA_H:I
+*.PININFO ENABLE_VDDIO:I ENABLE_VSWITCH_H:I HLD_H_N:I HLD_OVR:I
+*.PININFO IB_MODE_SEL:I INP_DIS:I OE_N:I OUT:I SLOW:I VTRIP_SEL:I IN:O
+*.PININFO IN_H:O TIE_HI_ESD:O TIE_LO_ESD:O AMUXBUS_A:B AMUXBUS_B:B
+*.PININFO PAD:B PAD_A_ESD_0_H:B PAD_A_ESD_1_H:B PAD_A_NOESD_H:B VCCD:B
+*.PININFO VCCHIB:B VDDA:B VDDIO:B VDDIO_Q:B VSSA:B VSSD:B VSSIO:B
+*.PININFO VSSIO_Q:B VSWITCH:B
+
+
+Xsky130_fd_io__top_gpiov2
++ zero	  ; analog_en
++ zero	  ; analog_pol
++ zero	  ; analog_sel
++ one	  ; dm<2>
++ one	  ; dm<1>
++ zero	  ; dm<0>
++ one3v3  ; enable_h
++ one3v3  ; enable_inp_h
++ one3v3  ; enable_vdda_h
++ one	  ; enable_vddio
++ zero	  ; enable_vswitch_h
++ one3v3  ; hld_h_n
++ zero	  ; hld_ovr
++ zero	  ; ib_mode_sel 
++ zero	  ; inp_dis
++ zero	  ; oe_n
++ out	  ; out
++ zero	  ; slow
++ zero	  ; vtrip_sel
++ in	  ; in
++ open4	  ; in_h
++ open5	  ; tie_hi_esd
++ open6   ; tie_lo_esd
++ open7	  ; amuxbus_a
++ open8   ; amuxbus_b
++ pad	  ; pad
++ open1	  ; pad_a_esd_0_h
++ open2	  ; pad_a_esd_1_h
++ open3   ; pad_a_noesd_h
++ vdd1v8  ; vccd
++ vcchib  ; vdd1v8
++ vdda	  ; vdd3v3
++ vddio	  ; vdd3v3
++ vddio_q ; vdd3v3
++ vssa	  ; vss
++ vssd	  ; vss
++ vssio	  ; vss
++ vssio_q ; vss
++ vswitch ; vss
++ sky130_fd_io__top_gpiov2
+
+vvss		vss		0		dc 	0
+*vvdd3v3	vdd3v3		0		pwl	0 0 10u 3.3  1m 3.3
+*vvdd1v8	vdd1v8		0		pwl	0 0 50u 1.8  1m 1.8
+
+vvdd3v3		vdd3v3		0		3.3
+vvdd1v8		vdd1v8		0		1.8
+
+vzero		zero		vss		dc	0
+vone		one		vdd1v8		dc	0
+vone3v3		one3v3		vdd3v3		dc	0
+
+vout		out		0		pwl	0 0 1u 0  1.1u 1.8 4u 1.8 4.1u 0 8u 0
+rload		pad		0		100K
+
+.TRAN 	1u 	8u
+*.OPTION ITL4=10000
+*.OPTION RELTOL=1e-3
+.SAVE v(pad) v(in) i(vvda3v3) i(vvda1v8)
+
+.END

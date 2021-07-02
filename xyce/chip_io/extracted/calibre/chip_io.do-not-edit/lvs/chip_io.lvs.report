@@ -1,0 +1,1749 @@
+
+
+
+                  ##################################################
+                  ##                                              ##
+                  ##         C A L I B R E    S Y S T E M         ##
+                  ##                                              ##
+                  ##             L V S   R E P O R T              ##
+                  ##                                              ##
+                  ##################################################
+
+
+
+REPORT FILE NAME:         chip_io.lvs.report
+LAYOUT NAME:              /usr/local/google/home/tansell/work/openflow-drc-tests/torture_tests/chip_io//chip_io.extracted.spice ('chip_io')
+SOURCE NAME:              /usr/local/google/home/tansell/work/openflow-drc-tests/torture_tests/chip_io/chip_io.cdl ('chip_io')
+RULE FILE:                /usr/local/google/home/tansell/work/openflow-drc-tests/torture_tests/chip_io/lvs/_local_lvs_opts_
+CREATION TIME:            Mon ... XX XX:XX:XX 2...
+CURRENT DIRECTORY:        /usr/local/google/home/tansell/gob/foss-eda-tools/openflow-drc-tests/torture_tests/chip_io/lvs
+USER NAME:                tansell
+CALIBRE VERSION:          v2018.4_34.26    Mon Dec 3 14:41:18 PST 2018
+
+
+
+                               OVERALL COMPARISON RESULTS
+
+
+
+                  #   #         #####################  
+                   # #          #                   #  
+                    #           #     INCORRECT     #  
+                   # #          #                   #  
+                  #   #         #####################  
+
+
+  Error:    Different numbers of ports.
+  Error:    Different numbers of nets.
+  Error:    Different numbers of instances.
+  Error:    Connectivity errors.
+  Error:    Instances of different types or subtypes were matched.
+  Error:    Property errors.
+  Warning:  Ambiguity points were found and resolved arbitrarily.
+
+
+**************************************************************************************************************
+                                      CELL  SUMMARY
+**************************************************************************************************************
+
+  Result         Layout                        Source
+  -----------    -----------                   --------------
+  INCORRECT      chip_io                       chip_io
+
+
+
+**************************************************************************************************************
+                                      LVS PARAMETERS
+**************************************************************************************************************
+
+
+o LVS Setup:
+
+   // LVS COMPONENT TYPE PROPERTY
+   // LVS COMPONENT SUBTYPE PROPERTY
+   // LVS PIN NAME PROPERTY
+   // LVS POWER NAME
+   // LVS GROUND NAME
+   LVS CELL SUPPLY                        NO
+   LVS RECOGNIZE GATES                    ALL
+   LVS IGNORE PORTS                       NO
+   LVS CHECK PORT NAMES                   YES
+   LVS IGNORE TRIVIAL NAMED PORTS         NO
+   LVS BUILTIN DEVICE PIN SWAP            YES
+   LVS ALL CAPACITOR PINS SWAPPABLE       NO
+   LVS DISCARD PINS BY DEVICE             YES
+   LVS SOFT SUBSTRATE PINS                NO
+   LVS INJECT LOGIC                       NO
+   LVS EXPAND UNBALANCED CELLS            YES
+   LVS FLATTEN INSIDE CELL                NO
+   LVS EXPAND SEED PROMOTIONS             NO
+   LVS PRESERVE PARAMETERIZED CELLS       NO
+   LVS GLOBALS ARE PORTS                  YES
+   LVS REVERSE WL                         NO
+   LVS SPICE PREFER PINS                  YES
+   LVS SPICE SLASH IS SPACE               NO
+   LVS SPICE ALLOW FLOATING PINS          YES
+   LVS SPICE ALLOW INLINE PARAMETERS      NO
+   LVS SPICE ALLOW UNQUOTED STRINGS       YES
+   LVS SPICE CONDITIONAL LDD              NO
+   LVS SPICE CULL PRIMITIVE SUBCIRCUITS   NO
+   // LVS SPICE EXCLUDE CELL SOURCE
+   // LVS SPICE EXCLUDE CELL LAYOUT
+   LVS SPICE IMPLIED MOS AREA             NO
+   // LVS SPICE MULTIPLIER NAME
+   LVS SPICE OVERRIDE GLOBALS             YES
+   LVS SPICE REDEFINE PARAM               YES
+   LVS SPICE REPLICATE DEVICES            YES
+   LVS SPICE SCALE X PARAMETERS           NO
+   LVS SPICE STRICT WL                    YES
+   // LVS SPICE OPTION
+   LVS STRICT SUBTYPES                    YES
+   LVS EXACT SUBTYPES                     NO
+   LAYOUT CASE                            NO
+   SOURCE CASE                            NO
+   LVS COMPARE CASE                       NO
+   LVS DOWNCASE DEVICE                    NO
+   LVS REPORT MAXIMUM                     50
+   LVS PROPERTY RESOLUTION MAXIMUM        ALL
+   LVS SIGNATURE MAXIMUM                  ALL
+   // LVS FILTER UNUSED OPTION
+   // LVS REPORT OPTION
+   LVS REPORT UNITS                       YES
+   // LVS NON USER NAME PORT
+   LVS NON USER NAME NET                  "^n[0-9]*$" "^net[0-9]*$"
+   // LVS NON USER NAME INSTANCE
+   // LVS IGNORE DEVICE PIN
+   // LVS PREFER NETS FILTER SOURCE
+   // LVS PREFER NETS FILTER LAYOUT
+
+   // Device Type Map
+
+   LVS DEVICE TYPE                        RESISTOR "xhrpoly_0p35" SOURCE LAYOUT
+   LVS DEVICE TYPE                        RESISTOR "xuhrpoly_0p35" SOURCE LAYOUT
+   LVS DEVICE TYPE                        RESISTOR "xhrpoly_0p69" SOURCE LAYOUT
+   LVS DEVICE TYPE                        RESISTOR "xuhrpoly_0p69" SOURCE LAYOUT
+   LVS DEVICE TYPE                        RESISTOR "xhrpoly_1p41" SOURCE LAYOUT
+   LVS DEVICE TYPE                        RESISTOR "xuhrpoly_1p41" SOURCE LAYOUT
+   LVS DEVICE TYPE                        RESISTOR "xhrpoly_2p85" SOURCE LAYOUT
+   LVS DEVICE TYPE                        RESISTOR "xuhrpoly_2p85" SOURCE LAYOUT
+
+   // Reduction
+
+   LVS REDUCE SERIES MOS                  NO
+   LVS REDUCE PARALLEL MOS                NO
+   LVS REDUCE SEMI SERIES MOS             NO
+   LVS REDUCE SPLIT GATES                 YES [ TOLERANCE l 1 w 1 ]
+   LVS REDUCE PARALLEL BIPOLAR            NO
+   LVS REDUCE SERIES CAPACITORS           NO
+   LVS REDUCE PARALLEL CAPACITORS         NO
+   LVS REDUCE SERIES RESISTORS            NO
+   LVS REDUCE PARALLEL RESISTORS          NO
+   LVS REDUCE PARALLEL DIODES             NO
+
+   LVS REDUCE  condiode  PARALLEL
+   LVS REDUCE  condiodeHvPsub  PARALLEL
+   LVS REDUCE  p20vhv1  PARALLEL [ TOLERANCE l 1 w 1 ]
+   LVS REDUCE  n20vhviso1  PARALLEL [ TOLERANCE l 1 w 1 ]
+   LVS REDUCE  nvhv  PARALLEL [ TOLERANCE l 1 w 1 ]
+   LVS REDUCE  pvhv  PARALLEL [ TOLERANCE l 1 w 1 ]
+   LVS REDUCE  MP  PARALLEL [ TOLERANCE l 1 w 1 ]
+   LVS REDUCE  M  PARALLEL [ TOLERANCE l 1 w 1 ]
+   LVS REDUCE  MN  PARALLEL [ TOLERANCE l 1 w 1 ]
+   LVS REDUCE  Q(npnpar1x1)  PARALLEL
+   LVS REDUCE  Q(npnpar1x2)  PARALLEL
+   LVS REDUCE  Q(npn_1x1_2p0_hv)  PARALLEL
+   LVS REDUCE  Q(pnppar)  PARALLEL [ TOLERANCE bArea 1 bPeri 1 eArea 1 ePeri 1 ]
+   LVS REDUCE  Q(pnppar5x)  PARALLEL [ TOLERANCE bArea 1 bPeri 1 eArea 1 ePeri 1 ]
+   LVS REDUCE  D  PARALLEL [ TOLERANCE a 1 p 1 ]
+   LVS REDUCE  D  SERIES POS NEG NO
+   LVS REDUCE  C(xcmimc1)  PARALLEL [ TOLERANCE w 1 l 1 ]
+   LVS REDUCE  C(xcmimc2)  PARALLEL [ TOLERANCE w 1 l 1 ]
+   LVS REDUCE  R(mrp1)  PARALLEL [ TOLERANCE w 1 l 1 ]
+   LVS REDUCE  R  PARALLEL [ TOLERANCE w 1 l 1 ]
+   LVS REDUCE  R  SERIES POS NEG NO
+   LVS REDUCE  R(short)  PARALLEL
+   LVS REDUCE  R(short)  SERIES POS NEG NO
+   LVS REDUCE  R(fuse)  PARALLEL NO
+   LVS REDUCE  R(fuse)  SERIES POS NEG NO
+   LVS REDUCE  R(metop)  PARALLEL [ TOLERANCE metopNumber 0 ]
+   LVS REDUCE  R(metop)  SERIES POS NEG NO
+   LVS REDUCTION PRIORITY                 PARALLEL
+   
+   LVS SHORT EQUIVALENT NODES             NO
+
+   // Filter
+
+   LVS FILTER  D  OPEN LAYOUT
+   LVS FILTER  R(cds_thru)  SHORT SOURCE
+   LVS FILTER  R(cds_thru)  SHORT LAYOUT
+   LVS FILTER  Dpar  OPEN SOURCE
+   LVS FILTER  Dpar  OPEN LAYOUT
+   LVS FILTER  Probe  OPEN SOURCE
+   LVS FILTER  Probe  OPEN LAYOUT
+   LVS FILTER  icecap  OPEN SOURCE
+   LVS FILTER  s8fmlt_iref_termx  OPEN SOURCE
+   LVS FILTER  s8fmlt_neg_termx  OPEN SOURCE
+   LVS FILTER  s8fmlt_termx  OPEN SOURCE
+   LVS FILTER  s8fmlt_vdac_termx  OPEN SOURCE
+   LVS FILTER  D  OPEN SOURCE
+   LVS FILTER  diff_dev  OPEN SOURCE
+   LVS FILTER  diff_dev  OPEN LAYOUT
+   LVS FILTER  tap_dev  OPEN SOURCE
+   LVS FILTER  tap_dev  OPEN LAYOUT
+   LVS FILTER  cad_dummy_open_device  OPEN SOURCE
+   LVS FILTER  cad_dummy_open_device  OPEN LAYOUT
+
+   // Trace Property
+
+   TRACE PROPERTY  xcnwvc  m m 0
+   TRACE PROPERTY  xcnwvc  w w 0
+   TRACE PROPERTY  xcnwvc  l l 0
+   TRACE PROPERTY  xcnwvc2  m m 0
+   TRACE PROPERTY  xcnwvc2  w w 0
+   TRACE PROPERTY  xcnwvc2  l l 0
+   TRACE PROPERTY  xchvnwc  m m 0
+   TRACE PROPERTY  q(npnpar1x1)  m m 0
+   TRACE PROPERTY  q(npnpar1x2)  m m 0
+   TRACE PROPERTY  q(npn_1x1_2p0_hv)  m m 0
+   TRACE PROPERTY  q(pnppar)  barea barea 0
+   TRACE PROPERTY  q(pnppar)  bperi bperi 0
+   TRACE PROPERTY  q(pnppar)  earea earea 0
+   TRACE PROPERTY  q(pnppar)  eperi eperi 0
+   TRACE PROPERTY  q(pnppar)  m m 0
+   TRACE PROPERTY  q(pnppar5x)  barea barea 0
+   TRACE PROPERTY  q(pnppar5x)  bperi bperi 0
+   TRACE PROPERTY  q(pnppar5x)  earea earea 0
+   TRACE PROPERTY  q(pnppar5x)  eperi eperi 0
+   TRACE PROPERTY  q(pnppar5x)  m m 0
+   TRACE PROPERTY  d(ndiode)  a a 1
+   TRACE PROPERTY  d(ndiode)  p p 1
+   TRACE PROPERTY  d(ndiode)  m m 0
+   TRACE PROPERTY  d(ndiode_h)  a a 1
+   TRACE PROPERTY  d(ndiode_h)  p p 1
+   TRACE PROPERTY  d(ndiode_h)  m m 0
+   TRACE PROPERTY  d(xesd_ndiode_h_100)  a a 1
+   TRACE PROPERTY  d(xesd_ndiode_h_100)  p p 1
+   TRACE PROPERTY  d(xesd_ndiode_h_100)  m m 0
+   TRACE PROPERTY  d(xesd_ndiode_h_200)  a a 1
+   TRACE PROPERTY  d(xesd_ndiode_h_200)  p p 1
+   TRACE PROPERTY  d(xesd_ndiode_h_200)  m m 0
+   TRACE PROPERTY  d(xesd_ndiode_h_300)  a a 1
+   TRACE PROPERTY  d(xesd_ndiode_h_300)  p p 1
+   TRACE PROPERTY  d(xesd_ndiode_h_300)  m m 0
+   TRACE PROPERTY  d(pdiode)  a a 1
+   TRACE PROPERTY  d(pdiode)  p p 1
+   TRACE PROPERTY  d(pdiode)  m m 0
+   TRACE PROPERTY  d(pdiode_h)  a a 1
+   TRACE PROPERTY  d(pdiode_h)  p p 1
+   TRACE PROPERTY  d(pdiode_h)  m m 0
+   TRACE PROPERTY  d(xesd_pdiode_h_100)  a a 1
+   TRACE PROPERTY  d(xesd_pdiode_h_100)  p p 1
+   TRACE PROPERTY  d(xesd_pdiode_h_100)  m m 0
+   TRACE PROPERTY  d(xesd_pdiode_h_200)  a a 1
+   TRACE PROPERTY  d(xesd_pdiode_h_200)  p p 1
+   TRACE PROPERTY  d(xesd_pdiode_h_200)  m m 0
+   TRACE PROPERTY  d(xesd_pdiode_h_300)  a a 1
+   TRACE PROPERTY  d(xesd_pdiode_h_300)  p p 1
+   TRACE PROPERTY  d(xesd_pdiode_h_300)  m m 0
+   TRACE PROPERTY  d(dnwdiode_psub)  a a 1
+   TRACE PROPERTY  d(dnwdiode_psub)  p p 1
+   TRACE PROPERTY  d(dnwdiode_psub)  m m 0
+   TRACE PROPERTY  d(xesd_ndiode_h_dnwl_100)  a a 1
+   TRACE PROPERTY  d(xesd_ndiode_h_dnwl_100)  p p 1
+   TRACE PROPERTY  d(xesd_ndiode_h_dnwl_100)  m m 0
+   TRACE PROPERTY  d(xesd_ndiode_h_dnwl_200)  a a 1
+   TRACE PROPERTY  d(xesd_ndiode_h_dnwl_200)  p p 1
+   TRACE PROPERTY  d(xesd_ndiode_h_dnwl_200)  m m 0
+   TRACE PROPERTY  d(xesd_ndiode_h_dnwl_300)  a a 1
+   TRACE PROPERTY  d(xesd_ndiode_h_dnwl_300)  p p 1
+   TRACE PROPERTY  d(xesd_ndiode_h_dnwl_300)  m m 0
+   TRACE PROPERTY  xcmvpp  m m 0
+   TRACE PROPERTY  xcmvpp_2  m m 0
+   TRACE PROPERTY  xcmvpp2_nhvnative10x4  m m 0
+   TRACE PROPERTY  xcmvpp2_phv5x4  m m 0
+   TRACE PROPERTY  xcmvpp_hd5_atlas_fingercap2_l5  m m 0
+   TRACE PROPERTY  xcmvpp_hd5_atlas_wafflecap2  m m 0
+   TRACE PROPERTY  xcmvpp_hd5_atlas_wafflecap1  m m 0
+   TRACE PROPERTY  xcmvpp_hd5_atlas_fingercap_l40  m m 0
+   TRACE PROPERTY  xcmvpp_hd5_atlas_fingercap_l20  m m 0
+   TRACE PROPERTY  xcmvpp_hd5_atlas_fingercap_l10  m m 0
+   TRACE PROPERTY  xcmvpp_hd5_atlas_fingercap_l5  m m 0
+   TRACE PROPERTY  xcmvpp_hd5_5x2_met5pullin  m m 0
+   TRACE PROPERTY  xcmvpp_hd5_5x2  m m 0
+   TRACE PROPERTY  xcmvpp_hd5_5x1_met5pullin  m m 0
+   TRACE PROPERTY  xcmvpp_hd5_5x1  m m 0
+   TRACE PROPERTY  xcmvpp_hd5_4x2  m m 0
+   TRACE PROPERTY  xcmvpp_hd5_4x1  m m 0
+   TRACE PROPERTY  xcmvpp_hd5_3x2  m m 0
+   TRACE PROPERTY  xcmvpp_hd5_3x1  m m 0
+   TRACE PROPERTY  xcmvpp_hd5_2x2  m m 0
+   TRACE PROPERTY  xcmvpp_hd5_2x1  m m 0
+   TRACE PROPERTY  xcmvpp_hd5_1x2  m m 0
+   TRACE PROPERTY  xcmvpp_hd5_1x1  m m 0
+   TRACE PROPERTY  xcmvppx4_2xnhvnative10x4  m m 0
+   TRACE PROPERTY  xcmvpp11p5x11p7_polym50p4shield  m m 0
+   TRACE PROPERTY  xcmvpp4p4x4p6_m3_lim5shield  m m 0
+   TRACE PROPERTY  xcmvpp11p5x11p7_m3_lim5shield  m m 0
+   TRACE PROPERTY  xcmvpp8p6x7p9_m3_lim5shield  m m 0
+   TRACE PROPERTY  xcmvpp11p5x11p7_lim5shield  m m 0
+   TRACE PROPERTY  xcmvpp11p5x11p7_polym5shield  m m 0
+   TRACE PROPERTY  xcmvpp11p5x11p7_m5shield  m m 0
+   TRACE PROPERTY  xcmvpp6p8x6p1_lim4shield  m m 0
+   TRACE PROPERTY  xcmvpp6p8x6p1_polym4shield  m m 0
+   TRACE PROPERTY  xcmvpp11p5x11p7_polym4shield  m m 0
+   TRACE PROPERTY  xcmvpp11p5x11p7_m4shield  m m 0
+   TRACE PROPERTY  xcmvpp1p8x1p8  m m 0
+   TRACE PROPERTY  xcmvpp4p4x4p6_m3_lishield  m m 0
+   TRACE PROPERTY  xcmvpp8p6x7p9_m3_lishield  m m 0
+   TRACE PROPERTY  xcmvpp11p5x11p7_m3_lishield  m m 0
+   TRACE PROPERTY  xcmvpp11p5x11p7_m3shield  m m 0
+   TRACE PROPERTY  xcmvpp8p6x7p9_m3shield  m m 0
+   TRACE PROPERTY  xcmvpp4p4x4p6_m3shield  m m 0
+   TRACE PROPERTY  xcmvpp1p8x1p8_m3shield  m m 0
+   TRACE PROPERTY  xcmvpp11p5x11p7_m1m4m5shield  m m 0
+   TRACE PROPERTY  xcmvpp11p5x11p7_m1m4  m m 0
+   TRACE PROPERTY  xcmvpp11p5x11p7_m1m2  m m 0
+   TRACE PROPERTY  xcmvpp4p4x4p6_m1m2  m m 0
+   TRACE PROPERTY  xcmvpp5  m m 0
+   TRACE PROPERTY  xcmvpp4  m m 0
+   TRACE PROPERTY  xcmvpp3  m m 0
+   TRACE PROPERTY  r(mrdn)  w w 1
+   TRACE PROPERTY  r(mrdn)  l l 1
+   TRACE PROPERTY  r(mrdn)  m m 0
+   TRACE PROPERTY  r(mrdn_hv)  w w 1
+   TRACE PROPERTY  r(mrdn_hv)  l l 1
+   TRACE PROPERTY  r(mrdn_hv)  m m 0
+   TRACE PROPERTY  r(mrdp)  w w 1
+   TRACE PROPERTY  r(mrdp)  l l 1
+   TRACE PROPERTY  r(mrdp)  m m 0
+   TRACE PROPERTY  r(mrdp_hv)  w w 1
+   TRACE PROPERTY  r(mrdp_hv)  l l 1
+   TRACE PROPERTY  r(mrdp_hv)  m m 0
+   TRACE PROPERTY  r(mrl1)  w w 1
+   TRACE PROPERTY  r(mrl1)  l l 1
+   TRACE PROPERTY  r(mrl1)  m m 0
+   TRACE PROPERTY  r(xpwres)  w w 1
+   TRACE PROPERTY  r(xpwres)  l l 1
+   TRACE PROPERTY  r(xpwres)  m m 0
+   TRACE PROPERTY  r(short)  m m 0
+   TRACE PROPERTY  r(fuse)  w w 1
+   TRACE PROPERTY  r(fuse)  l l 1
+   TRACE PROPERTY  r(fuse)  m m 0
+   TRACE PROPERTY  r(metop)  metopnumber metopnumber 0
+   TRACE PROPERTY  d(dnwdiode_psub_victim)  a a 10
+   TRACE PROPERTY  d(dnwdiode_psub_victim)  p p 10
+   TRACE PROPERTY  d(dnwdiode_psub_victim)  m m 0
+   TRACE PROPERTY  d(nwdiode_victim)  a a 10
+   TRACE PROPERTY  d(nwdiode_victim)  p p 10
+   TRACE PROPERTY  d(nwdiode_victim)  m m 0
+   TRACE PROPERTY  d(dnwdiode_psub_aggressor)  a a 10
+   TRACE PROPERTY  d(dnwdiode_psub_aggressor)  p p 10
+   TRACE PROPERTY  d(dnwdiode_psub_aggressor)  m m 0
+   TRACE PROPERTY  d(nwdiode_aggressor)  a a 10
+   TRACE PROPERTY  d(nwdiode_aggressor)  p p 10
+   TRACE PROPERTY  d(nwdiode_aggressor)  m m 0
+
+   // User Trace Property
+
+   TRACE PROPERTY  mn(nshort)  m mult w l
+   TRACE PROPERTY  mn(npass)  m mult w l
+   TRACE PROPERTY  mn(nlowvt)  m mult w l
+   TRACE PROPERTY  m(sonos_e)  m mult w l
+   TRACE PROPERTY  m  m mult w l
+   TRACE PROPERTY  m(fnpass)  m mult w l
+   TRACE PROPERTY  mn(nhv)  m mult w l
+   TRACE PROPERTY  mn(nhvnative)  m mult w l
+   TRACE PROPERTY  mn(ntvnative)  m mult w l
+   TRACE PROPERTY  mp(pshort)  m mult w l
+   TRACE PROPERTY  mp  m mult w l
+   TRACE PROPERTY  mp(phighvt)  m mult w l
+   TRACE PROPERTY  mp(plowvt)  m mult w l
+   TRACE PROPERTY  mp(phv)  m mult w l
+   TRACE PROPERTY  mn(nshortesd)  m mult w l
+   TRACE PROPERTY  mn(nhvesd)  m mult w l
+   TRACE PROPERTY  mn(nhvnativeesd)  m mult w l
+   TRACE PROPERTY  mp(phvesd)  m mult w l
+   TRACE PROPERTY  nvhv  m mult w l
+   TRACE PROPERTY  n20vhv1  m mult w l
+   TRACE PROPERTY  n20nativevhv1  m mult w l
+   TRACE PROPERTY  n20vhviso1  m mult w l
+   TRACE PROPERTY  n20nativevhviso1  m mult w l
+   TRACE PROPERTY  pvhv  m mult w l
+   TRACE PROPERTY  p20vhv1  m mult w l
+   TRACE PROPERTY  c(xcmimc1)  w l m
+   TRACE PROPERTY  c(xcmimc2)  w l m
+   TRACE PROPERTY  r(mrp1)  m w l
+   TRACE PROPERTY  xhrpoly_0p35  m w l
+   TRACE PROPERTY  xuhrpoly_0p35  m w l
+   TRACE PROPERTY  xhrpoly_0p69  m w l
+   TRACE PROPERTY  xuhrpoly_0p69  m w l
+   TRACE PROPERTY  xhrpoly_1p41  m w l
+   TRACE PROPERTY  xuhrpoly_1p41  m w l
+   TRACE PROPERTY  xhrpoly_2p85  m w l
+   TRACE PROPERTY  xuhrpoly_2p85  m w l
+
+
+
+                   CELL COMPARISON RESULTS ( TOP LEVEL )
+
+
+
+                  #   #         #####################  
+                   # #          #                   #  
+                    #           #     INCORRECT     #  
+                   # #          #                   #  
+                  #   #         #####################  
+
+
+  Error:    Different numbers of ports (see below).
+  Error:    Different numbers of nets (see below).
+  Error:    Different numbers of instances (see below).
+  Error:    Connectivity errors.
+  Error:    Instances of different types or subtypes were matched.
+  Error:    Property errors.
+  Warning:  Ambiguity points were found and resolved arbitrarily.
+
+LAYOUT CELL NAME:         chip_io
+SOURCE CELL NAME:         chip_io
+
+--------------------------------------------------------------------------------------------------------------
+
+INITIAL NUMBERS OF OBJECTS
+--------------------------
+
+                Layout    Source         Component Type
+                ------    ------         --------------
+ Ports:            720       736    *
+
+ Nets:            1524     33071    *
+
+ Instances:       4725     49957    *    MN (4 pins)
+                   979     34903    *    MP (4 pins)
+                   453     11937    *    R (2 pins)
+                     0        48    *    D (2 pins): p n
+                    48         0    *    D (2 pins): p n
+                     0        44    *    cad_dummy_open_device (2 pins)
+                    67       642    *    condiode (2 pins)
+                   403         0    *    Dpar (2 pins)
+                     0        46    *    icecap (1 pins)
+                     0         4    *    sky130_ef_io__corner_pad (12 pins)
+                ------    ------
+ Total Inst:      6675     97581
+
+
+NUMBERS OF OBJECTS AFTER TRANSFORMATION
+---------------------------------------
+
+                Layout    Source         Component Type
+                ------    ------         --------------
+ Ports:            720       736    *
+
+ Nets:            1176     26933    *
+
+ Instances:        170     19140    *    MN (4 pins)
+                    73     13362    *    MP (4 pins)
+                   443     11615    *    R (2 pins)
+                     5       189    *    condiode (2 pins)
+                     0         4    *    sky130_ef_io__corner_pad (12 pins)
+                     1      2157    *    SMN2 (4 pins)
+                     0        88    *    SMN3 (5 pins)
+                     0        88    *    SMN4 (6 pins)
+                     0        88    *    SMN5 (7 pins)
+                     0      1628    *    SMP2 (4 pins)
+                     0        88    *    SMP3 (5 pins)
+                     1         1         SPMN_2_1 (5 pins)
+                     1        45    *    SPMP_2_1 (5 pins)
+                     0        44    *    SPMP(((2*1)+2)*1) (8 pins)
+                     0        44    *    SPMP((3+2)*1) (8 pins)
+                ------    ------
+ Total Inst:       694     48581
+
+
+       * = Number of objects in layout different from number in source.
+
+
+
+**************************************************************************************************************
+                                 INCORRECT OBJECTS
+**************************************************************************************************************
+
+
+LEGEND:
+-------
+
+  ne  = Naming Error (same layout name found in source
+        circuit, but object was matched otherwise).
+
+
+**************************************************************************************************************
+                                   INCORRECT NETS
+
+DISC#  LAYOUT NAME                                               SOURCE NAME
+**************************************************************************************************************
+
+  1    Net MPRJ_IO_OEB[24]                                       MPRJ_IO_OEB[24]
+       --- 1 Connections On This Net ---                         --- 3 Connections On This Net ---
+       --------------------------                                --------------------------
+       
+       ** missing connection **                                  Xmprj_pads.area2_io_pad[6]/Xgpiov2_base/Xopath/Xopath/Xdatoe/Xoe_ls/MI32:g
+       ** missing connection **                                  Xmprj_pads.area2_io_pad[6]/Xgpiov2_base/Xopath/Xopath/Xdatoe/Xoe_ls/MI34:g
+       
+
+--------------------------------------------------------------------------------------------------------------
+
+  2    Net MPRJ_IO_IB_MODE_SEL[24]                               MPRJ_IO_IB_MODE_SEL[24]
+       --- 1 Connections On This Net ---                         --- 3 Connections On This Net ---
+       --------------------------                                --------------------------
+       
+       ** missing connection **                                  Xmprj_pads.area2_io_pad[6]/Xgpiov2_base/Xctrl/Xls_bank/XI595/MI27:g
+       ** missing connection **                                  Xmprj_pads.area2_io_pad[6]/Xgpiov2_base/Xctrl/Xls_bank/XI595/MI29:g
+       
+
+--------------------------------------------------------------------------------------------------------------
+
+  3    Net MPRJ_IO_VTRIP_SEL[24]                                 MPRJ_IO_VTRIP_SEL[24]
+       --- 1 Connections On This Net ---                         --- 3 Connections On This Net ---
+       --------------------------                                --------------------------
+       
+       ** missing connection **                                  Xmprj_pads.area2_io_pad[6]/Xgpiov2_base/Xctrl/Xls_bank/Xtrip_sel_ls/MI27:g
+       ** missing connection **                                  Xmprj_pads.area2_io_pad[6]/Xgpiov2_base/Xctrl/Xls_bank/Xtrip_sel_ls/MI29:g
+       
+
+--------------------------------------------------------------------------------------------------------------
+
+  4    Net MPRJ_IO_OUT[24]                                       MPRJ_IO_OUT[24]
+       --- 1 Connections On This Net ---                         --- 5 Connections On This Net ---
+       --------------------------                                --------------------------
+       
+       ** missing connection **                                  Xmprj_pads.area2_io_pad[6]/Xgpiov2_base/Xopath/Xopath/Xdatoe/Xdat_ls/MI32:g
+       ** missing connection **                                  Xmprj_pads.area2_io_pad[6]/Xgpiov2_base/Xopath/Xopath/Xdatoe/Xdat_ls/MI34:g
+       ** missing connection **                                  Xmprj_pads.area2_io_pad[6]/Xgpiov2_base/Xamux/XBBM_logic/Xamux_lv_decoder/XI43/MMIP1:g
+       ** missing connection **                                  Xmprj_pads.area2_io_pad[6]/Xgpiov2_base/Xamux/XBBM_logic/Xamux_lv_decoder/XI43/MMIN1:g
+       
+
+--------------------------------------------------------------------------------------------------------------
+
+  5    Net MPRJ_IO_HOLDOVER[24]                                  MPRJ_IO_HOLDOVER[24]
+       --- 1 Connections On This Net ---                         --- 3 Connections On This Net ---
+       --------------------------                                --------------------------
+       
+       ** missing connection **                                  Xmprj_pads.area2_io_pad[6]/Xgpiov2_base/Xctrl/Xhld_dis_blk/Xhld_ovr_ls/MI27:g
+       ** missing connection **                                  Xmprj_pads.area2_io_pad[6]/Xgpiov2_base/Xctrl/Xhld_dis_blk/Xhld_ovr_ls/MI29:g
+       
+
+--------------------------------------------------------------------------------------------------------------
+
+  6    Net MPRJ_IO_DM[74]                                        MPRJ_IO_DM[74]
+       --- 1 Connections On This Net ---                         --- 3 Connections On This Net ---
+       --------------------------                                --------------------------
+       
+       ** missing connection **                                  Xmprj_pads.area2_io_pad[6]/Xgpiov2_base/Xctrl/Xls_bank/Xdm_ls<2>/MI27:g
+       ** missing connection **                                  Xmprj_pads.area2_io_pad[6]/Xgpiov2_base/Xctrl/Xls_bank/Xdm_ls<2>/MI29:g
+       
+
+--------------------------------------------------------------------------------------------------------------
+
+  7    Net MPRJ_IO_ANALOG_SEL[24]                                MPRJ_IO_ANALOG_SEL[24]
+       --- 1 Connections On This Net ---                         --- 3 Connections On This Net ---
+       --------------------------                                --------------------------
+       
+       ** missing connection **                                  Xmprj_pads.area2_io_pad[6]/Xgpiov2_base/Xamux/XBBM_logic/Xamux_lv_decoder/XI39/MMIP1:g
+       ** missing connection **                                  Xmprj_pads.area2_io_pad[6]/Xgpiov2_base/Xamux/XBBM_logic/Xamux_lv_decoder/XI39/MMIN1:g
+       
+
+--------------------------------------------------------------------------------------------------------------
+
+  8    Net MPRJ_IO_HLDH_N[24]                                    MPRJ_IO_HLDH_N[24]
+       --- 1 Connections On This Net ---                         --- 3 Connections On This Net ---
+       --------------------------                                --------------------------
+       
+       ** missing connection **                                  (SMN2):input
+                                                                   Xmprj_pads.area2_io_pad[6]/Xgpiov2_base/Xctrl/Xhld_dis_blk/Xhld_nand/MI1:g
+       
+       
+       ** missing connection **                                  Xmprj_pads.area2_io_pad[6]/Xgpiov2_base/Xctrl/Xhld_dis_blk/Xhld_nand/MI5:g
+       
+
+--------------------------------------------------------------------------------------------------------------
+
+  9    Net MPRJ_IO_ENH[24]                                       MPRJ_IO_ENH[24]
+       --- 1 Connections On This Net ---                         --- 7 Connections On This Net ---
+       --------------------------                                --------------------------
+       
+       ** missing connection **                                  (SMN2):input
+                                                                   Xmprj_pads.area2_io_pad[6]/Xgpiov2_base/Xctrl/Xhld_dis_blk/Xhld_nand/MI6:g
+       
+       
+       ** missing connection **                                  (SMP2):input
+                                                                   Xmprj_pads.area2_io_pad[6]/Xgpiov2_base/Xctrl/XI75/MI12:g
+       
+       
+       ** missing connection **                                  Xmprj_pads.area2_io_pad[6]/Xgpiov2_base/Xctrl/Xhld_dis_blk/Xod_h_inv/MI2:g
+       ** missing connection **                                  Xmprj_pads.area2_io_pad[6]/Xgpiov2_base/Xctrl/Xhld_dis_blk/Xod_h_inv/MI1:g
+       ** missing connection **                                  Xmprj_pads.area2_io_pad[6]/Xgpiov2_base/Xctrl/XI75/MI6:g
+       ** missing connection **                                  Xmprj_pads.area2_io_pad[6]/Xgpiov2_base/Xctrl/Xhld_dis_blk/Xhld_nand/MI3:g
+       
+
+--------------------------------------------------------------------------------------------------------------
+
+ 10    Net MPRJ_IO_INP_DIS[24]                                   MPRJ_IO_INP_DIS[24]
+       --- 1 Connections On This Net ---                         --- 3 Connections On This Net ---
+       --------------------------                                --------------------------
+       
+       ** missing connection **                                  Xmprj_pads.area2_io_pad[6]/Xgpiov2_base/Xctrl/Xls_bank/Xinp_dis_ls/MI27:g
+       ** missing connection **                                  Xmprj_pads.area2_io_pad[6]/Xgpiov2_base/Xctrl/Xls_bank/Xinp_dis_ls/MI29:g
+       
+
+--------------------------------------------------------------------------------------------------------------
+
+ 11    Net MPRJ_IO_ANALOG_POL[24]                                MPRJ_IO_ANALOG_POL[24]
+       --- 1 Connections On This Net ---                         --- 3 Connections On This Net ---
+       --------------------------                                --------------------------
+       
+       ** missing connection **                                  Xmprj_pads.area2_io_pad[6]/Xgpiov2_base/Xamux/XBBM_logic/Xamux_lv_decoder/XI35/MMIP1:g
+       ** missing connection **                                  Xmprj_pads.area2_io_pad[6]/Xgpiov2_base/Xamux/XBBM_logic/Xamux_lv_decoder/XI35/MMIN1:g
+       
+
+--------------------------------------------------------------------------------------------------------------
+
+ 12    Net MPRJ_IO_DM[72]                                        MPRJ_IO_DM[72]
+       --- 1 Connections On This Net ---                         --- 3 Connections On This Net ---
+       --------------------------                                --------------------------
+       
+       ** missing connection **                                  Xmprj_pads.area2_io_pad[6]/Xgpiov2_base/Xctrl/Xls_bank/Xdm_ls<0>/MI27:g
+       ** missing connection **                                  Xmprj_pads.area2_io_pad[6]/Xgpiov2_base/Xctrl/Xls_bank/Xdm_ls<0>/MI29:g
+       
+
+--------------------------------------------------------------------------------------------------------------
+
+ 13    Net MPRJ_IO_ANALOG_EN[24]                                 MPRJ_IO_ANALOG_EN[24]
+       --- 1 Connections On This Net ---                         --- 5 Connections On This Net ---
+       --------------------------                                --------------------------
+       
+       ** missing connection **                                  Xmprj_pads.area2_io_pad[6]/Xgpiov2_base/Xamux/XBBM_logic/Xamux_ls/XI15/MI29:g
+       ** missing connection **                                  Xmprj_pads.area2_io_pad[6]/Xgpiov2_base/Xamux/XBBM_logic/Xamux_ls/XI15/MI27:g
+       ** missing connection **                                  Xmprj_pads.area2_io_pad[6]/Xgpiov2_base/Xamux/XBBM_logic/Xamux_lv_decoder/XI58/MMIP1:g
+       ** missing connection **                                  Xmprj_pads.area2_io_pad[6]/Xgpiov2_base/Xamux/XBBM_logic/Xamux_lv_decoder/XI58/MMIN1:g
+       
+
+--------------------------------------------------------------------------------------------------------------
+
+ 14    Net MPRJ_IO_DM[73]                                        MPRJ_IO_DM[73]
+       --- 1 Connections On This Net ---                         --- 3 Connections On This Net ---
+       --------------------------                                --------------------------
+       
+       ** missing connection **                                  Xmprj_pads.area2_io_pad[6]/Xgpiov2_base/Xctrl/Xls_bank/Xdm_ls<1>/MI27:g
+       ** missing connection **                                  Xmprj_pads.area2_io_pad[6]/Xgpiov2_base/Xctrl/Xls_bank/Xdm_ls<1>/MI29:g
+       
+
+--------------------------------------------------------------------------------------------------------------
+
+ 15    Net MPRJ_IO_SLOW_SEL[24]                                  MPRJ_IO_SLOW_SEL[24]
+       --- 1 Connections On This Net ---                         --- 3 Connections On This Net ---
+       --------------------------                                --------------------------
+       
+       ** missing connection **                                  Xmprj_pads.area2_io_pad[6]/Xgpiov2_base/Xopath/Xopath/Xctl/Xls_slow/MI27:g
+       ** missing connection **                                  Xmprj_pads.area2_io_pad[6]/Xgpiov2_base/Xopath/Xopath/Xctl/Xls_slow/MI29:g
+       
+
+--------------------------------------------------------------------------------------------------------------
+
+ 16    Net MPRJ_IO_IN[24]                                        MPRJ_IO_IN[24]
+       --- 1 Connections On This Net ---                         --- 3 Connections On This Net ---
+       --------------------------                                --------------------------
+       
+       ** missing connection **                                  Xmprj_pads.area2_io_pad[6]/Xgpiov2_base/Xipath/XI106/Xlvls/MI349:d
+       ** missing connection **                                  Xmprj_pads.area2_io_pad[6]/Xgpiov2_base/Xipath/XI106/Xlvls/MI337:d
+       
+
+--------------------------------------------------------------------------------------------------------------
+
+ 17    Net PORB_H                                                PORB_H
+       --- 5 Connections On This Net ---                         --- 173 Connections On This Net ---
+       --------------------------                                --------------------------
+       
+       ** missing connection **                                  (SMN2):input
+                                                                   Xgpio_pad/Xgpiov2_base/Xctrl/Xhld_dis_blk/Xhld_nand/MI6:g
+       
+       
+       ** missing connection **                                  (SMP2):input
+                                                                   Xgpio_pad/Xgpiov2_base/Xctrl/XI75/MI12:g
+       
+       
+       ** missing connection **                                  (SMN2):input
+                                                                   Xflash_io1_pad/Xgpiov2_base/Xctrl/Xhld_dis_blk/Xhld_nand/MI6:g
+       
+       
+       ** missing connection **                                  (SMP2):input
+                                                                   Xflash_io1_pad/Xgpiov2_base/Xctrl/XI75/MI12:g
+       
+       
+       ** missing connection **                                  (SMN2):input
+                                                                   Xflash_io0_pad/Xgpiov2_base/Xctrl/Xhld_dis_blk/Xhld_nand/MI6:g
+       
+       
+       ** missing connection **                                  (SMP2):input
+                                                                   Xflash_io0_pad/Xgpiov2_base/Xctrl/XI75/MI12:g
+       
+       
+       ** missing connection **                                  (SMN2):input
+                                                                   Xflash_csb_pad/Xgpiov2_base/Xctrl/Xhld_dis_blk/Xhld_nand/MI6:g
+       
+       
+       ** missing connection **                                  (SMP2):input
+                                                                   Xflash_csb_pad/Xgpiov2_base/Xctrl/XI75/MI12:g
+       
+       
+       ** missing connection **                                  (SMN2):input
+                                                                   Xflash_clk_pad/Xgpiov2_base/Xctrl/Xhld_dis_blk/Xhld_nand/MI6:g
+       
+       
+       ** missing connection **                                  (SMP2):input
+                                                                   Xflash_clk_pad/Xgpiov2_base/Xctrl/XI75/MI12:g
+       
+       
+       ** missing connection **                                  (SMN2):input
+                                                                   Xclock_pad/Xgpiov2_base/Xctrl/Xhld_dis_blk/Xhld_nand/MI6:g
+       
+       
+       ** missing connection **                                  (SMP2):input
+                                                                   Xclock_pad/Xgpiov2_base/Xctrl/XI75/MI12:g
+       
+       
+       X7/X311/M0(719.610,173.420):g                             ** unmatched connection **
+       X7/M64(731.080,170.340):g                                 ** unmatched connection **
+       
+       ** unmatched connection **                                Xmprj_pads.area2_io_pad[9]/Xgpiov2_base/Xamux/XBBM_logic/Xamux_ls/Xpd_vdda_ls/MI64:g
+       ** unmatched connection **                                Xmprj_pads.area2_io_pad[9]/Xgpiov2_base/Xamux/XBBM_logic/Xamux_ls/XI32/MI1:g
+       ** unmatched connection **                                Xmprj_pads.area2_io_pad[9]/Xgpiov2_base/Xamux/XBBM_logic/Xamux_ls/XI32/MI2:g
+       ** unmatched connection **                                Xmprj_pads.area2_io_pad[8]/Xgpiov2_base/Xamux/XBBM_logic/Xamux_ls/Xpd_vdda_ls/MI64:g
+       ** unmatched connection **                                Xmprj_pads.area2_io_pad[8]/Xgpiov2_base/Xamux/XBBM_logic/Xamux_ls/XI32/MI1:g
+       ** unmatched connection **                                Xmprj_pads.area2_io_pad[8]/Xgpiov2_base/Xamux/XBBM_logic/Xamux_ls/XI32/MI2:g
+       ** unmatched connection **                                Xmprj_pads.area2_io_pad[7]/Xgpiov2_base/Xamux/XBBM_logic/Xamux_ls/Xpd_vdda_ls/MI64:g
+       ** unmatched connection **                                Xmprj_pads.area2_io_pad[7]/Xgpiov2_base/Xamux/XBBM_logic/Xamux_ls/XI32/MI1:g
+       ** unmatched connection **                                Xmprj_pads.area2_io_pad[7]/Xgpiov2_base/Xamux/XBBM_logic/Xamux_ls/XI32/MI2:g
+       ** unmatched connection **                                Xmprj_pads.area2_io_pad[6]/Xgpiov2_base/Xamux/XBBM_logic/Xamux_ls/Xpd_vdda_ls/MI64:g
+       ** unmatched connection **                                Xmprj_pads.area2_io_pad[6]/Xgpiov2_base/Xamux/XBBM_logic/Xamux_ls/XI32/MI1:g
+       ** unmatched connection **                                Xmprj_pads.area2_io_pad[6]/Xgpiov2_base/Xamux/XBBM_logic/Xamux_ls/XI32/MI2:g
+       ** unmatched connection **                                Xmprj_pads.area2_io_pad[5]/Xgpiov2_base/Xamux/XBBM_logic/Xamux_ls/Xpd_vdda_ls/MI64:g
+       ** unmatched connection **                                Xmprj_pads.area2_io_pad[5]/Xgpiov2_base/Xamux/XBBM_logic/Xamux_ls/XI32/MI1:g
+       ** unmatched connection **                                Xmprj_pads.area2_io_pad[5]/Xgpiov2_base/Xamux/XBBM_logic/Xamux_ls/XI32/MI2:g
+       ** unmatched connection **                                Xmprj_pads.area2_io_pad[4]/Xgpiov2_base/Xamux/XBBM_logic/Xamux_ls/Xpd_vdda_ls/MI64:g
+       ** unmatched connection **                                Xmprj_pads.area2_io_pad[4]/Xgpiov2_base/Xamux/XBBM_logic/Xamux_ls/XI32/MI1:g
+       ** unmatched connection **                                Xmprj_pads.area2_io_pad[4]/Xgpiov2_base/Xamux/XBBM_logic/Xamux_ls/XI32/MI2:g
+       ** unmatched connection **                                Xmprj_pads.area2_io_pad[3]/Xgpiov2_base/Xamux/XBBM_logic/Xamux_ls/Xpd_vdda_ls/MI64:g
+       ** unmatched connection **                                Xmprj_pads.area2_io_pad[3]/Xgpiov2_base/Xamux/XBBM_logic/Xamux_ls/XI32/MI1:g
+       ** unmatched connection **                                Xmprj_pads.area2_io_pad[3]/Xgpiov2_base/Xamux/XBBM_logic/Xamux_ls/XI32/MI2:g
+       ** unmatched connection **                                Xmprj_pads.area2_io_pad[2]/Xgpiov2_base/Xamux/XBBM_logic/Xamux_ls/Xpd_vdda_ls/MI64:g
+       ** unmatched connection **                                Xmprj_pads.area2_io_pad[2]/Xgpiov2_base/Xamux/XBBM_logic/Xamux_ls/XI32/MI1:g
+       ** unmatched connection **                                Xmprj_pads.area2_io_pad[2]/Xgpiov2_base/Xamux/XBBM_logic/Xamux_ls/XI32/MI2:g
+       ** unmatched connection **                                Xmprj_pads.area2_io_pad[1]/Xgpiov2_base/Xamux/XBBM_logic/Xamux_ls/Xpd_vdda_ls/MI64:g
+       ** unmatched connection **                                Xmprj_pads.area2_io_pad[1]/Xgpiov2_base/Xamux/XBBM_logic/Xamux_ls/XI32/MI1:g
+       ** unmatched connection **                                Xmprj_pads.area2_io_pad[1]/Xgpiov2_base/Xamux/XBBM_logic/Xamux_ls/XI32/MI2:g
+       ** unmatched connection **                                Xmprj_pads.area2_io_pad[19]/Xgpiov2_base/Xamux/XBBM_logic/Xamux_ls/Xpd_vdda_ls/MI64:g
+       ** unmatched connection **                                Xmprj_pads.area2_io_pad[19]/Xgpiov2_base/Xamux/XBBM_logic/Xamux_ls/XI32/MI1:g
+       ** unmatched connection **                                Xmprj_pads.area2_io_pad[19]/Xgpiov2_base/Xamux/XBBM_logic/Xamux_ls/XI32/MI2:g
+       ** unmatched connection **                                Xmprj_pads.area2_io_pad[18]/Xgpiov2_base/Xamux/XBBM_logic/Xamux_ls/Xpd_vdda_ls/MI64:g
+       ** unmatched connection **                                Xmprj_pads.area2_io_pad[18]/Xgpiov2_base/Xamux/XBBM_logic/Xamux_ls/XI32/MI1:g
+       ** unmatched connection **                                Xmprj_pads.area2_io_pad[18]/Xgpiov2_base/Xamux/XBBM_logic/Xamux_ls/XI32/MI2:g
+       ** unmatched connection **                                Xmprj_pads.area2_io_pad[17]/Xgpiov2_base/Xamux/XBBM_logic/Xamux_ls/Xpd_vdda_ls/MI64:g
+       ** unmatched connection **                                Xmprj_pads.area2_io_pad[17]/Xgpiov2_base/Xamux/XBBM_logic/Xamux_ls/XI32/MI1:g
+       ** unmatched connection **                                Xmprj_pads.area2_io_pad[17]/Xgpiov2_base/Xamux/XBBM_logic/Xamux_ls/XI32/MI2:g
+       
+
+--------------------------------------------------------------------------------------------------------------
+
+ 18    Net MPRJ_IO_OEB[23]                                       MPRJ_IO_OEB[23]
+       --- 1 Connections On This Net ---                         --- 3 Connections On This Net ---
+       --------------------------                                --------------------------
+       
+       ** missing connection **                                  Xmprj_pads.area2_io_pad[5]/Xgpiov2_base/Xopath/Xopath/Xdatoe/Xoe_ls/MI32:g
+       ** missing connection **                                  Xmprj_pads.area2_io_pad[5]/Xgpiov2_base/Xopath/Xopath/Xdatoe/Xoe_ls/MI34:g
+       
+
+--------------------------------------------------------------------------------------------------------------
+
+ 19    Net MPRJ_IO_IB_MODE_SEL[23]                               MPRJ_IO_IB_MODE_SEL[23]
+       --- 1 Connections On This Net ---                         --- 3 Connections On This Net ---
+       --------------------------                                --------------------------
+       
+       ** missing connection **                                  Xmprj_pads.area2_io_pad[5]/Xgpiov2_base/Xctrl/Xls_bank/XI595/MI27:g
+       ** missing connection **                                  Xmprj_pads.area2_io_pad[5]/Xgpiov2_base/Xctrl/Xls_bank/XI595/MI29:g
+       
+
+--------------------------------------------------------------------------------------------------------------
+
+ 20    Net MPRJ_IO_VTRIP_SEL[23]                                 MPRJ_IO_VTRIP_SEL[23]
+       --- 1 Connections On This Net ---                         --- 3 Connections On This Net ---
+       --------------------------                                --------------------------
+       
+       ** missing connection **                                  Xmprj_pads.area2_io_pad[5]/Xgpiov2_base/Xctrl/Xls_bank/Xtrip_sel_ls/MI27:g
+       ** missing connection **                                  Xmprj_pads.area2_io_pad[5]/Xgpiov2_base/Xctrl/Xls_bank/Xtrip_sel_ls/MI29:g
+       
+
+--------------------------------------------------------------------------------------------------------------
+
+ 21    Net MPRJ_IO_OUT[23]                                       MPRJ_IO_OUT[23]
+       --- 1 Connections On This Net ---                         --- 5 Connections On This Net ---
+       --------------------------                                --------------------------
+       
+       ** missing connection **                                  Xmprj_pads.area2_io_pad[5]/Xgpiov2_base/Xopath/Xopath/Xdatoe/Xdat_ls/MI32:g
+       ** missing connection **                                  Xmprj_pads.area2_io_pad[5]/Xgpiov2_base/Xopath/Xopath/Xdatoe/Xdat_ls/MI34:g
+       ** missing connection **                                  Xmprj_pads.area2_io_pad[5]/Xgpiov2_base/Xamux/XBBM_logic/Xamux_lv_decoder/XI43/MMIP1:g
+       ** missing connection **                                  Xmprj_pads.area2_io_pad[5]/Xgpiov2_base/Xamux/XBBM_logic/Xamux_lv_decoder/XI43/MMIN1:g
+       
+
+--------------------------------------------------------------------------------------------------------------
+
+ 22    Net MPRJ_IO_HOLDOVER[23]                                  MPRJ_IO_HOLDOVER[23]
+       --- 1 Connections On This Net ---                         --- 3 Connections On This Net ---
+       --------------------------                                --------------------------
+       
+       ** missing connection **                                  Xmprj_pads.area2_io_pad[5]/Xgpiov2_base/Xctrl/Xhld_dis_blk/Xhld_ovr_ls/MI27:g
+       ** missing connection **                                  Xmprj_pads.area2_io_pad[5]/Xgpiov2_base/Xctrl/Xhld_dis_blk/Xhld_ovr_ls/MI29:g
+       
+
+--------------------------------------------------------------------------------------------------------------
+
+ 23    Net MPRJ_IO_DM[71]                                        MPRJ_IO_DM[71]
+       --- 1 Connections On This Net ---                         --- 3 Connections On This Net ---
+       --------------------------                                --------------------------
+       
+       ** missing connection **                                  Xmprj_pads.area2_io_pad[5]/Xgpiov2_base/Xctrl/Xls_bank/Xdm_ls<2>/MI27:g
+       ** missing connection **                                  Xmprj_pads.area2_io_pad[5]/Xgpiov2_base/Xctrl/Xls_bank/Xdm_ls<2>/MI29:g
+       
+
+--------------------------------------------------------------------------------------------------------------
+
+ 24    Net MPRJ_IO_ANALOG_SEL[23]                                MPRJ_IO_ANALOG_SEL[23]
+       --- 1 Connections On This Net ---                         --- 3 Connections On This Net ---
+       --------------------------                                --------------------------
+       
+       ** missing connection **                                  Xmprj_pads.area2_io_pad[5]/Xgpiov2_base/Xamux/XBBM_logic/Xamux_lv_decoder/XI39/MMIP1:g
+       ** missing connection **                                  Xmprj_pads.area2_io_pad[5]/Xgpiov2_base/Xamux/XBBM_logic/Xamux_lv_decoder/XI39/MMIN1:g
+       
+
+--------------------------------------------------------------------------------------------------------------
+
+ 25    Net MPRJ_IO_HLDH_N[23]                                    MPRJ_IO_HLDH_N[23]
+       --- 1 Connections On This Net ---                         --- 3 Connections On This Net ---
+       --------------------------                                --------------------------
+       
+       ** missing connection **                                  (SMN2):input
+                                                                   Xmprj_pads.area2_io_pad[5]/Xgpiov2_base/Xctrl/Xhld_dis_blk/Xhld_nand/MI1:g
+       
+       
+       ** missing connection **                                  Xmprj_pads.area2_io_pad[5]/Xgpiov2_base/Xctrl/Xhld_dis_blk/Xhld_nand/MI5:g
+       
+
+--------------------------------------------------------------------------------------------------------------
+
+ 26    Net MPRJ_IO_ENH[23]                                       MPRJ_IO_ENH[23]
+       --- 1 Connections On This Net ---                         --- 7 Connections On This Net ---
+       --------------------------                                --------------------------
+       
+       ** missing connection **                                  (SMN2):input
+                                                                   Xmprj_pads.area2_io_pad[5]/Xgpiov2_base/Xctrl/Xhld_dis_blk/Xhld_nand/MI6:g
+       
+       
+       ** missing connection **                                  (SMP2):input
+                                                                   Xmprj_pads.area2_io_pad[5]/Xgpiov2_base/Xctrl/XI75/MI12:g
+       
+       
+       ** missing connection **                                  Xmprj_pads.area2_io_pad[5]/Xgpiov2_base/Xctrl/Xhld_dis_blk/Xod_h_inv/MI2:g
+       ** missing connection **                                  Xmprj_pads.area2_io_pad[5]/Xgpiov2_base/Xctrl/Xhld_dis_blk/Xod_h_inv/MI1:g
+       ** missing connection **                                  Xmprj_pads.area2_io_pad[5]/Xgpiov2_base/Xctrl/XI75/MI6:g
+       ** missing connection **                                  Xmprj_pads.area2_io_pad[5]/Xgpiov2_base/Xctrl/Xhld_dis_blk/Xhld_nand/MI3:g
+       
+
+--------------------------------------------------------------------------------------------------------------
+
+ 27    Net MPRJ_IO_INP_DIS[23]                                   MPRJ_IO_INP_DIS[23]
+       --- 1 Connections On This Net ---                         --- 3 Connections On This Net ---
+       --------------------------                                --------------------------
+       
+       ** missing connection **                                  Xmprj_pads.area2_io_pad[5]/Xgpiov2_base/Xctrl/Xls_bank/Xinp_dis_ls/MI27:g
+       ** missing connection **                                  Xmprj_pads.area2_io_pad[5]/Xgpiov2_base/Xctrl/Xls_bank/Xinp_dis_ls/MI29:g
+       
+
+--------------------------------------------------------------------------------------------------------------
+
+ 28    Net MPRJ_IO_ANALOG_POL[23]                                MPRJ_IO_ANALOG_POL[23]
+       --- 1 Connections On This Net ---                         --- 3 Connections On This Net ---
+       --------------------------                                --------------------------
+       
+       ** missing connection **                                  Xmprj_pads.area2_io_pad[5]/Xgpiov2_base/Xamux/XBBM_logic/Xamux_lv_decoder/XI35/MMIP1:g
+       ** missing connection **                                  Xmprj_pads.area2_io_pad[5]/Xgpiov2_base/Xamux/XBBM_logic/Xamux_lv_decoder/XI35/MMIN1:g
+       
+
+--------------------------------------------------------------------------------------------------------------
+
+ 29    Net MPRJ_IO_DM[69]                                        MPRJ_IO_DM[69]
+       --- 1 Connections On This Net ---                         --- 3 Connections On This Net ---
+       --------------------------                                --------------------------
+       
+       ** missing connection **                                  Xmprj_pads.area2_io_pad[5]/Xgpiov2_base/Xctrl/Xls_bank/Xdm_ls<0>/MI27:g
+       ** missing connection **                                  Xmprj_pads.area2_io_pad[5]/Xgpiov2_base/Xctrl/Xls_bank/Xdm_ls<0>/MI29:g
+       
+
+--------------------------------------------------------------------------------------------------------------
+
+ 30    Net MPRJ_IO_ANALOG_EN[23]                                 MPRJ_IO_ANALOG_EN[23]
+       --- 1 Connections On This Net ---                         --- 5 Connections On This Net ---
+       --------------------------                                --------------------------
+       
+       ** missing connection **                                  Xmprj_pads.area2_io_pad[5]/Xgpiov2_base/Xamux/XBBM_logic/Xamux_ls/XI15/MI29:g
+       ** missing connection **                                  Xmprj_pads.area2_io_pad[5]/Xgpiov2_base/Xamux/XBBM_logic/Xamux_ls/XI15/MI27:g
+       ** missing connection **                                  Xmprj_pads.area2_io_pad[5]/Xgpiov2_base/Xamux/XBBM_logic/Xamux_lv_decoder/XI58/MMIP1:g
+       ** missing connection **                                  Xmprj_pads.area2_io_pad[5]/Xgpiov2_base/Xamux/XBBM_logic/Xamux_lv_decoder/XI58/MMIN1:g
+       
+
+--------------------------------------------------------------------------------------------------------------
+
+ 31    Net MPRJ_IO_DM[70]                                        MPRJ_IO_DM[70]
+       --- 1 Connections On This Net ---                         --- 3 Connections On This Net ---
+       --------------------------                                --------------------------
+       
+       ** missing connection **                                  Xmprj_pads.area2_io_pad[5]/Xgpiov2_base/Xctrl/Xls_bank/Xdm_ls<1>/MI27:g
+       ** missing connection **                                  Xmprj_pads.area2_io_pad[5]/Xgpiov2_base/Xctrl/Xls_bank/Xdm_ls<1>/MI29:g
+       
+
+--------------------------------------------------------------------------------------------------------------
+
+ 32    Net MPRJ_IO_SLOW_SEL[23]                                  MPRJ_IO_SLOW_SEL[23]
+       --- 1 Connections On This Net ---                         --- 3 Connections On This Net ---
+       --------------------------                                --------------------------
+       
+       ** missing connection **                                  Xmprj_pads.area2_io_pad[5]/Xgpiov2_base/Xopath/Xopath/Xctl/Xls_slow/MI27:g
+       ** missing connection **                                  Xmprj_pads.area2_io_pad[5]/Xgpiov2_base/Xopath/Xopath/Xctl/Xls_slow/MI29:g
+       
+
+--------------------------------------------------------------------------------------------------------------
+
+ 33    Net MPRJ_IO_IN[23]                                        MPRJ_IO_IN[23]
+       --- 1 Connections On This Net ---                         --- 3 Connections On This Net ---
+       --------------------------                                --------------------------
+       
+       ** missing connection **                                  Xmprj_pads.area2_io_pad[5]/Xgpiov2_base/Xipath/XI106/Xlvls/MI349:d
+       ** missing connection **                                  Xmprj_pads.area2_io_pad[5]/Xgpiov2_base/Xipath/XI106/Xlvls/MI337:d
+       
+
+--------------------------------------------------------------------------------------------------------------
+
+ 34    Net MPRJ_IO_OEB[22]                                       MPRJ_IO_OEB[22]
+       --- 1 Connections On This Net ---                         --- 3 Connections On This Net ---
+       --------------------------                                --------------------------
+       
+       ** missing connection **                                  Xmprj_pads.area2_io_pad[4]/Xgpiov2_base/Xopath/Xopath/Xdatoe/Xoe_ls/MI32:g
+       ** missing connection **                                  Xmprj_pads.area2_io_pad[4]/Xgpiov2_base/Xopath/Xopath/Xdatoe/Xoe_ls/MI34:g
+       
+
+--------------------------------------------------------------------------------------------------------------
+
+ 35    Net MPRJ_IO_IB_MODE_SEL[22]                               MPRJ_IO_IB_MODE_SEL[22]
+       --- 1 Connections On This Net ---                         --- 3 Connections On This Net ---
+       --------------------------                                --------------------------
+       
+       ** missing connection **                                  Xmprj_pads.area2_io_pad[4]/Xgpiov2_base/Xctrl/Xls_bank/XI595/MI27:g
+       ** missing connection **                                  Xmprj_pads.area2_io_pad[4]/Xgpiov2_base/Xctrl/Xls_bank/XI595/MI29:g
+       
+
+--------------------------------------------------------------------------------------------------------------
+
+ 36    Net MPRJ_IO_VTRIP_SEL[22]                                 MPRJ_IO_VTRIP_SEL[22]
+       --- 1 Connections On This Net ---                         --- 3 Connections On This Net ---
+       --------------------------                                --------------------------
+       
+       ** missing connection **                                  Xmprj_pads.area2_io_pad[4]/Xgpiov2_base/Xctrl/Xls_bank/Xtrip_sel_ls/MI27:g
+       ** missing connection **                                  Xmprj_pads.area2_io_pad[4]/Xgpiov2_base/Xctrl/Xls_bank/Xtrip_sel_ls/MI29:g
+       
+
+--------------------------------------------------------------------------------------------------------------
+
+ 37    Net MPRJ_IO_OUT[22]                                       MPRJ_IO_OUT[22]
+       --- 1 Connections On This Net ---                         --- 5 Connections On This Net ---
+       --------------------------                                --------------------------
+       
+       ** missing connection **                                  Xmprj_pads.area2_io_pad[4]/Xgpiov2_base/Xopath/Xopath/Xdatoe/Xdat_ls/MI32:g
+       ** missing connection **                                  Xmprj_pads.area2_io_pad[4]/Xgpiov2_base/Xopath/Xopath/Xdatoe/Xdat_ls/MI34:g
+       ** missing connection **                                  Xmprj_pads.area2_io_pad[4]/Xgpiov2_base/Xamux/XBBM_logic/Xamux_lv_decoder/XI43/MMIP1:g
+       ** missing connection **                                  Xmprj_pads.area2_io_pad[4]/Xgpiov2_base/Xamux/XBBM_logic/Xamux_lv_decoder/XI43/MMIN1:g
+       
+
+--------------------------------------------------------------------------------------------------------------
+
+ 38    Net MPRJ_IO_HOLDOVER[22]                                  MPRJ_IO_HOLDOVER[22]
+       --- 1 Connections On This Net ---                         --- 3 Connections On This Net ---
+       --------------------------                                --------------------------
+       
+       ** missing connection **                                  Xmprj_pads.area2_io_pad[4]/Xgpiov2_base/Xctrl/Xhld_dis_blk/Xhld_ovr_ls/MI27:g
+       ** missing connection **                                  Xmprj_pads.area2_io_pad[4]/Xgpiov2_base/Xctrl/Xhld_dis_blk/Xhld_ovr_ls/MI29:g
+       
+
+--------------------------------------------------------------------------------------------------------------
+
+ 39    Net MPRJ_IO_DM[68]                                        MPRJ_IO_DM[68]
+       --- 1 Connections On This Net ---                         --- 3 Connections On This Net ---
+       --------------------------                                --------------------------
+       
+       ** missing connection **                                  Xmprj_pads.area2_io_pad[4]/Xgpiov2_base/Xctrl/Xls_bank/Xdm_ls<2>/MI27:g
+       ** missing connection **                                  Xmprj_pads.area2_io_pad[4]/Xgpiov2_base/Xctrl/Xls_bank/Xdm_ls<2>/MI29:g
+       
+
+--------------------------------------------------------------------------------------------------------------
+
+ 40    Net MPRJ_IO_ANALOG_SEL[22]                                MPRJ_IO_ANALOG_SEL[22]
+       --- 1 Connections On This Net ---                         --- 3 Connections On This Net ---
+       --------------------------                                --------------------------
+       
+       ** missing connection **                                  Xmprj_pads.area2_io_pad[4]/Xgpiov2_base/Xamux/XBBM_logic/Xamux_lv_decoder/XI39/MMIP1:g
+       ** missing connection **                                  Xmprj_pads.area2_io_pad[4]/Xgpiov2_base/Xamux/XBBM_logic/Xamux_lv_decoder/XI39/MMIN1:g
+       
+
+--------------------------------------------------------------------------------------------------------------
+
+ 41    Net MPRJ_IO_HLDH_N[22]                                    MPRJ_IO_HLDH_N[22]
+       --- 1 Connections On This Net ---                         --- 3 Connections On This Net ---
+       --------------------------                                --------------------------
+       
+       ** missing connection **                                  (SMN2):input
+                                                                   Xmprj_pads.area2_io_pad[4]/Xgpiov2_base/Xctrl/Xhld_dis_blk/Xhld_nand/MI1:g
+       
+       
+       ** missing connection **                                  Xmprj_pads.area2_io_pad[4]/Xgpiov2_base/Xctrl/Xhld_dis_blk/Xhld_nand/MI5:g
+       
+
+--------------------------------------------------------------------------------------------------------------
+
+ 42    Net MPRJ_IO_ENH[22]                                       MPRJ_IO_ENH[22]
+       --- 1 Connections On This Net ---                         --- 7 Connections On This Net ---
+       --------------------------                                --------------------------
+       
+       ** missing connection **                                  (SMN2):input
+                                                                   Xmprj_pads.area2_io_pad[4]/Xgpiov2_base/Xctrl/Xhld_dis_blk/Xhld_nand/MI6:g
+       
+       
+       ** missing connection **                                  (SMP2):input
+                                                                   Xmprj_pads.area2_io_pad[4]/Xgpiov2_base/Xctrl/XI75/MI12:g
+       
+       
+       ** missing connection **                                  Xmprj_pads.area2_io_pad[4]/Xgpiov2_base/Xctrl/Xhld_dis_blk/Xod_h_inv/MI2:g
+       ** missing connection **                                  Xmprj_pads.area2_io_pad[4]/Xgpiov2_base/Xctrl/Xhld_dis_blk/Xod_h_inv/MI1:g
+       ** missing connection **                                  Xmprj_pads.area2_io_pad[4]/Xgpiov2_base/Xctrl/XI75/MI6:g
+       ** missing connection **                                  Xmprj_pads.area2_io_pad[4]/Xgpiov2_base/Xctrl/Xhld_dis_blk/Xhld_nand/MI3:g
+       
+
+--------------------------------------------------------------------------------------------------------------
+
+ 43    Net MPRJ_IO_INP_DIS[22]                                   MPRJ_IO_INP_DIS[22]
+       --- 1 Connections On This Net ---                         --- 3 Connections On This Net ---
+       --------------------------                                --------------------------
+       
+       ** missing connection **                                  Xmprj_pads.area2_io_pad[4]/Xgpiov2_base/Xctrl/Xls_bank/Xinp_dis_ls/MI27:g
+       ** missing connection **                                  Xmprj_pads.area2_io_pad[4]/Xgpiov2_base/Xctrl/Xls_bank/Xinp_dis_ls/MI29:g
+       
+
+--------------------------------------------------------------------------------------------------------------
+
+ 44    Net MPRJ_IO_ANALOG_POL[22]                                MPRJ_IO_ANALOG_POL[22]
+       --- 1 Connections On This Net ---                         --- 3 Connections On This Net ---
+       --------------------------                                --------------------------
+       
+       ** missing connection **                                  Xmprj_pads.area2_io_pad[4]/Xgpiov2_base/Xamux/XBBM_logic/Xamux_lv_decoder/XI35/MMIP1:g
+       ** missing connection **                                  Xmprj_pads.area2_io_pad[4]/Xgpiov2_base/Xamux/XBBM_logic/Xamux_lv_decoder/XI35/MMIN1:g
+       
+
+--------------------------------------------------------------------------------------------------------------
+
+ 45    Net MPRJ_IO_DM[66]                                        MPRJ_IO_DM[66]
+       --- 1 Connections On This Net ---                         --- 3 Connections On This Net ---
+       --------------------------                                --------------------------
+       
+       ** missing connection **                                  Xmprj_pads.area2_io_pad[4]/Xgpiov2_base/Xctrl/Xls_bank/Xdm_ls<0>/MI27:g
+       ** missing connection **                                  Xmprj_pads.area2_io_pad[4]/Xgpiov2_base/Xctrl/Xls_bank/Xdm_ls<0>/MI29:g
+       
+
+--------------------------------------------------------------------------------------------------------------
+
+ 46    Net MPRJ_IO_ANALOG_EN[22]                                 MPRJ_IO_ANALOG_EN[22]
+       --- 1 Connections On This Net ---                         --- 5 Connections On This Net ---
+       --------------------------                                --------------------------
+       
+       ** missing connection **                                  Xmprj_pads.area2_io_pad[4]/Xgpiov2_base/Xamux/XBBM_logic/Xamux_ls/XI15/MI29:g
+       ** missing connection **                                  Xmprj_pads.area2_io_pad[4]/Xgpiov2_base/Xamux/XBBM_logic/Xamux_ls/XI15/MI27:g
+       ** missing connection **                                  Xmprj_pads.area2_io_pad[4]/Xgpiov2_base/Xamux/XBBM_logic/Xamux_lv_decoder/XI58/MMIP1:g
+       ** missing connection **                                  Xmprj_pads.area2_io_pad[4]/Xgpiov2_base/Xamux/XBBM_logic/Xamux_lv_decoder/XI58/MMIN1:g
+       
+
+--------------------------------------------------------------------------------------------------------------
+
+ 47    Net MPRJ_IO_DM[67]                                        MPRJ_IO_DM[67]
+       --- 1 Connections On This Net ---                         --- 3 Connections On This Net ---
+       --------------------------                                --------------------------
+       
+       ** missing connection **                                  Xmprj_pads.area2_io_pad[4]/Xgpiov2_base/Xctrl/Xls_bank/Xdm_ls<1>/MI27:g
+       ** missing connection **                                  Xmprj_pads.area2_io_pad[4]/Xgpiov2_base/Xctrl/Xls_bank/Xdm_ls<1>/MI29:g
+       
+
+--------------------------------------------------------------------------------------------------------------
+
+ 48    Net MPRJ_IO_SLOW_SEL[22]                                  MPRJ_IO_SLOW_SEL[22]
+       --- 1 Connections On This Net ---                         --- 3 Connections On This Net ---
+       --------------------------                                --------------------------
+       
+       ** missing connection **                                  Xmprj_pads.area2_io_pad[4]/Xgpiov2_base/Xopath/Xopath/Xctl/Xls_slow/MI27:g
+       ** missing connection **                                  Xmprj_pads.area2_io_pad[4]/Xgpiov2_base/Xopath/Xopath/Xctl/Xls_slow/MI29:g
+       
+
+--------------------------------------------------------------------------------------------------------------
+
+ 49    Net MPRJ_IO_IN[22]                                        MPRJ_IO_IN[22]
+       --- 1 Connections On This Net ---                         --- 3 Connections On This Net ---
+       --------------------------                                --------------------------
+       
+       ** missing connection **                                  Xmprj_pads.area2_io_pad[4]/Xgpiov2_base/Xipath/XI106/Xlvls/MI349:d
+       ** missing connection **                                  Xmprj_pads.area2_io_pad[4]/Xgpiov2_base/Xipath/XI106/Xlvls/MI337:d
+       
+
+--------------------------------------------------------------------------------------------------------------
+
+ 50    Net MPRJ_IO_OEB[21]                                       MPRJ_IO_OEB[21]
+       --- 1 Connections On This Net ---                         --- 3 Connections On This Net ---
+       --------------------------                                --------------------------
+       
+       ** missing connection **                                  Xmprj_pads.area2_io_pad[3]/Xgpiov2_base/Xopath/Xopath/Xdatoe/Xoe_ls/MI32:g
+       ** missing connection **                                  Xmprj_pads.area2_io_pad[3]/Xgpiov2_base/Xopath/Xopath/Xdatoe/Xoe_ls/MI34:g
+       
+
+
+**************************************************************************************************************
+                                   INCORRECT PORTS
+
+DISC#  LAYOUT NAME                                               SOURCE NAME
+**************************************************************************************************************
+
+ 51    ** missing port **                                        VDDIO on net: VDDIO
+ 52    ** missing port **                                        VSSIO on net: VSSIO
+ 53    ** missing port **                                        VCCD on net: VCCD
+ 54    ** missing port **                                        VSSD on net: VSSD
+ 55    ** missing port **                                        VDDA on net: VDDA
+ 56    ** missing port **                                        VSSA on net: VSSA
+ 57    ** missing port **                                        VDDA1 on net: VDDA1
+ 58    ** missing port **                                        VDDA2 on net: VDDA2
+ 59    ** missing port **                                        VSSA1 on net: VSSA1
+ 60    ** missing port **                                        VSSA2 on net: VSSA2
+ 61    ** missing port **                                        VCCD1 on net: VCCD1
+ 62    ** missing port **                                        VCCD2 on net: VCCD2
+ 63    ** missing port **                                        VSSD1 on net: VSSD1
+ 64    ** missing port **                                        VSSD2 on net: VSSD2
+ 65    ** missing port **                                        MPRJ_ANALOG_IO[30] on net: MPRJ_ANALOG_IO[30]
+ 66    ** missing port **                                        MPRJ_ANALOG_IO[29] on net: MPRJ_ANALOG_IO[29]
+
+
+**************************************************************************************************************
+                                 INCORRECT INSTANCES
+
+DISC#  LAYOUT NAME                                               SOURCE NAME
+**************************************************************************************************************
+
+ 67    X7/X303/X0/R0(719.940,196.270)  R(MRP1)                   Xmprj_pads.area2_io_pad[8]/Xgpiov2_base/Xopath/Xodrvr/Xodrvr/Xpddrvr_strong/XI95/RI2  R(SHORT)
+         bad component subtype
+
+--------------------------------------------------------------------------------------------------------------
+
+ 68    X7/X304/X0/R0(719.940,195.030)  R(MRP1)                   Xmprj_pads.area2_io_pad[8]/Xgpiov2_base/Xopath/Xodrvr/Xodrvr/Xpddrvr_strong/XI95/RI1  R(SHORT)
+         bad component subtype
+
+--------------------------------------------------------------------------------------------------------------
+
+ 69    X7/M1(729.540,192.500)  MN(NHV)                           Xresetb_pad/Xgpio_inbuf/XI35/MI6  MN(NHV)
+         g: X7/34                                                  g: Xresetb_pad/en_vddio_sig_h_n
+         b: 1                                                      ** no similar net **
+         ** no similar net **                                      b: VSSD
+
+--------------------------------------------------------------------------------------------------------------
+
+ 70    X7/M2(728.660,192.500)  MN(NHV)                           Xresetb_pad/Xgpio_inbuf/XI35/MI1  MN(NHV)
+         g: PORB_H                                                 g: PORB_H
+         b: 1                                                      ** no similar net **
+         ** no similar net **                                      b: VSSD
+
+--------------------------------------------------------------------------------------------------------------
+
+ 71    X7/M25(707.280,190.220)  MN(NHV)                          Xresetb_pad/XI367/mI5  MN(NHV)
+         g: X7/42                                                  g: Xresetb_pad/out_rcfilt_h
+         b: 1                                                      ** no similar net **
+         ** no similar net **                                      b: VSSD
+
+--------------------------------------------------------------------------------------------------------------
+
+ 72    X7/M24(707.560,185.550)  MN(NHV)                          Xresetb_pad/XI367/mI11  MN(NHV)
+         g: X7/41                                                  g: Xresetb_pad/out_hysbuf_h
+         b: 1                                                      ** no similar net **
+         ** no similar net **                                      b: VSSD
+
+--------------------------------------------------------------------------------------------------------------
+
+ 73    X7/M26(707.280,188.940)  MN(NHV)                          Xresetb_pad/XI367/mI4  MN(NHV)
+         g: X7/42                                                  g: Xresetb_pad/out_rcfilt_h
+         b: 1                                                      ** no similar net **
+         ** no similar net **                                      b: VSSD
+
+--------------------------------------------------------------------------------------------------------------
+
+ 74    X7/M100(711.580,190.220)  MP(PHV)                         Xresetb_pad/XI367/mI7  MP(PHV)
+         g: X7/42                                                  g: Xresetb_pad/out_rcfilt_h
+         b: 193                                                    ** no similar net **
+         ** no similar net **                                      b: VDDIO
+
+--------------------------------------------------------------------------------------------------------------
+
+ 75    X7/M88(711.295,185.390)  MP(PHV)                          Xresetb_pad/XI367/mI10  MP(PHV)
+         g: X7/41                                                  g: Xresetb_pad/out_hysbuf_h
+         b: 193                                                    ** no similar net **
+         ** no similar net **                                      b: VDDIO
+
+--------------------------------------------------------------------------------------------------------------
+
+ 76    X7/M101(711.580,188.940)  MP(PHV)                         Xresetb_pad/XI367/mI8  MP(PHV)
+         g: X7/42                                                  g: Xresetb_pad/out_rcfilt_h
+         b: 193                                                    ** no similar net **
+         ** no similar net **                                      b: VDDIO
+
+--------------------------------------------------------------------------------------------------------------
+
+ 77    ** missing instance **                                    Xmgmt_corner[0]  sky130_ef_io__corner_pad
+
+--------------------------------------------------------------------------------------------------------------
+
+ 78    ** missing instance **                                    Xmgmt_corner[1]  sky130_ef_io__corner_pad
+
+--------------------------------------------------------------------------------------------------------------
+
+ 79    ** missing instance **                                    Xresetb_pad/XI326/Resd_r  R(MRP1)
+
+--------------------------------------------------------------------------------------------------------------
+
+ 80    ** missing instance **                                    Xresetb_pad/XI49/Resd_r  R(MRP1)
+
+--------------------------------------------------------------------------------------------------------------
+
+ 81    ** missing instance **                                    Xresetb_pad/Xxresesd/Xesd/Xggnfet2/RI8  R(SHORT)
+
+--------------------------------------------------------------------------------------------------------------
+
+ 82    ** missing instance **                                    Xresetb_pad/Xxresesd/Xesd/Xggnfet2/RI9  R(SHORT)
+
+--------------------------------------------------------------------------------------------------------------
+
+ 83    ** missing instance **                                    Xresetb_pad/Xxresesd/Xesd/Xggnfet6/RI8  R(SHORT)
+
+--------------------------------------------------------------------------------------------------------------
+
+ 84    ** missing instance **                                    Xresetb_pad/Xxresesd/Xesd/Xggnfet6/RI9  R(SHORT)
+
+--------------------------------------------------------------------------------------------------------------
+
+ 85    ** missing instance **                                    Xresetb_pad/Xxresesd/Xesd/Xggnfet5/RI8  R(SHORT)
+
+--------------------------------------------------------------------------------------------------------------
+
+ 86    ** missing instance **                                    Xresetb_pad/Xxresesd/Xesd/Xggnfet5/RI9  R(SHORT)
+
+--------------------------------------------------------------------------------------------------------------
+
+ 87    ** missing instance **                                    Xresetb_pad/Xxresesd/Xesd/Xggnfet1/RI8  R(SHORT)
+
+--------------------------------------------------------------------------------------------------------------
+
+ 88    ** missing instance **                                    Xresetb_pad/Xxresesd/Xesd/Xggnfet1/RI9  R(SHORT)
+
+--------------------------------------------------------------------------------------------------------------
+
+ 89    ** missing instance **                                    Xresetb_pad/XI335/Xe9/RI2  R(SHORT)
+
+--------------------------------------------------------------------------------------------------------------
+
+ 90    ** missing instance **                                    Xresetb_pad/XI335/Xe9/RI1  R(SHORT)
+
+--------------------------------------------------------------------------------------------------------------
+
+ 91    ** missing instance **                                    Xresetb_pad/XI335/Xe11/RI2  R(SHORT)
+
+--------------------------------------------------------------------------------------------------------------
+
+ 92    ** missing instance **                                    Xresetb_pad/XI335/Xe11/RI1  R(SHORT)
+
+--------------------------------------------------------------------------------------------------------------
+
+ 93    ** missing instance **                                    Xresetb_pad/XI335/Xe10/RI2  R(SHORT)
+
+--------------------------------------------------------------------------------------------------------------
+
+ 94    ** missing instance **                                    Xresetb_pad/XI335/Xe10/RI1  R(SHORT)
+
+--------------------------------------------------------------------------------------------------------------
+
+ 95    ** missing instance **                                    Xresetb_pad/XI335/Xe12/RI2  R(SHORT)
+
+--------------------------------------------------------------------------------------------------------------
+
+ 96    ** missing instance **                                    Xresetb_pad/XI335/Xe12/RI1  R(SHORT)
+
+--------------------------------------------------------------------------------------------------------------
+
+ 97    ** missing instance **                                    Xresetb_pad/XI335/Xe13/RI2  R(SHORT)
+
+--------------------------------------------------------------------------------------------------------------
+
+ 98    ** missing instance **                                    Xresetb_pad/XI335/Xe13/RI1  R(SHORT)
+
+--------------------------------------------------------------------------------------------------------------
+
+ 99    ** missing instance **                                    Xresetb_pad/XI335/Xe14/RI2  R(SHORT)
+
+--------------------------------------------------------------------------------------------------------------
+
+100    ** missing instance **                                    Xresetb_pad/XI335/Xe14/RI1  R(SHORT)
+
+--------------------------------------------------------------------------------------------------------------
+
+101    ** missing instance **                                    Xresetb_pad/XI335/rI84  R(MRP1)
+
+--------------------------------------------------------------------------------------------------------------
+
+102    ** missing instance **                                    Xresetb_pad/XI335/rI62  R(MRP1)
+
+--------------------------------------------------------------------------------------------------------------
+
+103    ** missing instance **                                    Xresetb_pad/XI335/rI82  R(MRP1)
+
+--------------------------------------------------------------------------------------------------------------
+
+104    ** missing instance **                                    Xresetb_pad/XI335/rI83  R(MRP1)
+
+--------------------------------------------------------------------------------------------------------------
+
+105    ** missing instance **                                    Xresetb_pad/XI335/rI116  R(MRP1)
+
+--------------------------------------------------------------------------------------------------------------
+
+106    ** missing instance **                                    Xresetb_pad/XI335/rI104  R(MRP1)
+
+--------------------------------------------------------------------------------------------------------------
+
+107    ** missing instance **                                    Xresetb_pad/XI335/rI134  R(MRP1)
+
+--------------------------------------------------------------------------------------------------------------
+
+108    ** missing instance **                                    Xresetb_pad/XI368/XI198/rI1  R(SHORT)
+
+--------------------------------------------------------------------------------------------------------------
+
+109    ** missing instance **                                    Xresetb_pad/XI368/XI197/rI1  R(SHORT)
+
+--------------------------------------------------------------------------------------------------------------
+
+110    ** missing instance **                                    Xresetb_pad/XI368/XI187/rI1  R(SHORT)
+
+--------------------------------------------------------------------------------------------------------------
+
+111    ** missing instance **                                    Xresetb_pad/XI368/XI186/rI1  R(SHORT)
+
+--------------------------------------------------------------------------------------------------------------
+
+112    ** missing instance **                                    Xresetb_pad/XI368/XI183/rI2  R(SHORT)
+
+--------------------------------------------------------------------------------------------------------------
+
+113    ** missing instance **                                    Xresetb_pad/XI368/XI181/rI2  R(SHORT)
+
+--------------------------------------------------------------------------------------------------------------
+
+114    ** missing instance **                                    Xresetb_pad/XI368/XI202/rI2  R(SHORT)
+
+--------------------------------------------------------------------------------------------------------------
+
+115    ** missing instance **                                    Xresetb_pad/XI368/XI202/rI1  R(SHORT)
+
+--------------------------------------------------------------------------------------------------------------
+
+116    ** missing instance **                                    Xresetb_pad/XI368/XI201/rI2  R(SHORT)
+
+
+
+**************************************************************************************************************
+                                      PROPERTY ERRORS
+
+DISC#  LAYOUT                                                    SOURCE                      ERROR
+**************************************************************************************************************
+
+117    X1/X2/X0/R152(1673.670,5093.345)  R(SHORT)                Xmgmt_vssio_hvclamp_pad[1]/Xsky130_fd_io__top_ground_hvc_base/rI13  R(SHORT)
+       m: 1                                                      m: 2                          50%
+
+118    X1/X3/X0/R152(2884.670,5093.345)  R(SHORT)                Xuser1_vssa_hvclamp_pad[1]/Xsky130_fd_io__top_ground_hvc_base/rI13  R(SHORT)
+       m: 1                                                      m: 2                          50%
+
+119    X3/X1/X0/R152(3493.345,4160.330)  R(SHORT)                Xuser1_vdda_hvclamp_pad[1]/Xsky130_fd_io__top_power_hvc_base/rI13  R(SHORT)
+       m: 1                                                      m: 2                          50%
+
+120    X5/X1/X0/R152(94.655,557.670)  R(SHORT)                   Xmgmt_vddio_hvclamp_pad[1]/Xsky130_fd_io__top_power_hvc_base/rI13  R(SHORT)
+       m: 1                                                      m: 2                          50%
+
+121    X7/X262/R0(719.415,156.315)  R(MRP1)                      Xmprj_pads.area2_io_pad[7]/Xgpiov2_base/Xopath/Xodrvr/Xodrvr/Xres_weak/RI83  R(MRP1)
+       l: 6                                                      l: 1.5                       300%
+
+122    X7/X265/R0(718.555,155.515)  R(MRP1)                      Xmprj_pads.area2_io_pad[5]/Xgpiov2_base/Xipath/XI120/Xesd_res/RI175  R(MRP1)
+       w: 0.8                                                    w: 2                          60%
+       l: 12                                                     l: 10.07                    19.2%
+
+
+
+**************************************************************************************************************
+                               INFORMATION AND WARNINGS
+**************************************************************************************************************
+
+
+                  Matched    Matched    Unmatched    Unmatched    Component
+                   Layout     Source       Layout       Source    Type
+                  -------    -------    ---------    ---------    ---------
+   Ports:             720        720            0           16
+
+   Nets:             1162       1162           14        25771
+
+   Instances:          92         92            9        13391    MN(NHV)
+                        0          0            4           92    MN(NHVESD)
+                        3          3            1         1497    MN(NHVNATIVE)
+                        0          0            0         1496    MN(NLOWVT)
+                       43         43           18         2526    MN(NSHORT)
+                        1          1            0         2068    MP(PHIGHVT)
+                       59         59            1        10914    MP(PHV)
+                       12         12            0          308    MP(PSHORT)
+                       68         68            0            0    R(MRDN)
+                        1          1            0            0    R(MRDN_HV)
+                       94         94            0         1762    R(MRP1)
+                      280        280            0         9410    R(SHORT)
+                        0          0            5          189    condiode
+                        0          0            0            4    sky130_ef_io__corner_pad
+                        1          1            0         2156    SMN2
+                        0          0            0           88    SMN3
+                        0          0            0           88    SMN4
+                        0          0            0           88    SMN5
+                        0          0            0         1628    SMP2
+                        0          0            0           88    SMP3
+                        1          1            0            0    SPMN_2_1
+                        1          1            0           44    SPMP_2_1
+                        0          0            0           44    SPMP(((2*1)+2)*1)
+                        0          0            0           44    SPMP((3+2)*1)
+                  -------    -------    ---------    ---------
+   Total Inst:        656        656           38        47925
+
+
+o Statistics:
+
+   345 isolated layout nets were deleted.
+
+   703 passthrough layout nets were found.
+
+   451 layout instances were filtered and their pins removed from adjoining nets.
+   138 source instances were filtered and their pins removed from adjoining nets.
+
+   5630 layout mos transistors were reduced to 177.
+     5453 mos transistors were deleted by parallel reduction.
+   59530 source mos transistors were reduced to 16728.  176 connecting nets were deleted.
+     42450 mos transistors were deleted by parallel reduction.
+     352 mos transistors and 176 connecting nets were deleted by split-gate reduction.
+
+   18 parallel layout resistors were reduced to 8.
+   598 parallel source resistors were reduced to 276.
+
+   67 parallel layout user-defined devices were reduced to 5.
+   466 parallel source user-defined devices were reduced to 13.
+
+   150 source nets had all their pins removed and were deleted.
+
+   53 nets and 12 instances were matched arbitrarily.
+
+
+o Passthrough Layout Nets And Their Ports:
+
+      (Layout nets which are connected only to ports).
+
+   GPIO (port: GPIO), FLASH_IO1 (port: FLASH_IO1), FLASH_IO0 (port: FLASH_IO0),
+   FLASH_CLK (port: FLASH_CLK), FLASH_CSB (port: FLASH_CSB), CLOCK (port: CLOCK),
+   MPRJ_IO[6] (port: MPRJ_IO[6]), MPRJ_IO[5] (port: MPRJ_IO[5]), MPRJ_IO[4] (port: MPRJ_IO[4]),
+   MPRJ_IO[3] (port: MPRJ_IO[3]), MPRJ_IO[2] (port: MPRJ_IO[2]), MPRJ_IO[1] (port: MPRJ_IO[1]),
+   MPRJ_IO[0] (port: MPRJ_IO[0]), MPRJ_IO[32] (port: MPRJ_IO[32]),
+   MPRJ_IO[33] (port: MPRJ_IO[33]), MPRJ_IO[34] (port: MPRJ_IO[34]),
+   MPRJ_IO[35] (port: MPRJ_IO[35]), MPRJ_IO[36] (port: MPRJ_IO[36]),
+   MPRJ_IO[37] (port: MPRJ_IO[37]), MPRJ_IO[12] (port: MPRJ_IO[12]),
+   MPRJ_IO[11] (port: MPRJ_IO[11]), MPRJ_IO[10] (port: MPRJ_IO[10]),
+   MPRJ_IO[9] (port: MPRJ_IO[9]), MPRJ_IO[8] (port: MPRJ_IO[8]), MPRJ_IO[7] (port: MPRJ_IO[7]),
+   MPRJ_IO[25] (port: MPRJ_IO[25]), MPRJ_IO[26] (port: MPRJ_IO[26]),
+   MPRJ_IO[27] (port: MPRJ_IO[27]), MPRJ_IO[28] (port: MPRJ_IO[28]),
+   MPRJ_IO[29] (port: MPRJ_IO[29]), MPRJ_IO[30] (port: MPRJ_IO[30]),
+   MPRJ_IO[31] (port: MPRJ_IO[31]), MPRJ_IO[13] (port: MPRJ_IO[13]),
+   MPRJ_IO[14] (port: MPRJ_IO[14]), MPRJ_IO[15] (port: MPRJ_IO[15]),
+   MPRJ_IO[16] (port: MPRJ_IO[16]), MPRJ_IO[17] (port: MPRJ_IO[17]),
+   MPRJ_IO[18] (port: MPRJ_IO[18]), MPRJ_IO[19] (port: MPRJ_IO[19]),
+   MPRJ_IO[20] (port: MPRJ_IO[20]), MPRJ_IO[21] (port: MPRJ_IO[21]),
+   MPRJ_IO[22] (port: MPRJ_IO[22]), MPRJ_IO[23] (port: MPRJ_IO[23]),
+   MPRJ_IO[24] (port: MPRJ_IO[24]), GPIO_OUTENB_CORE (port: GPIO_OUTENB_CORE),
+   GPIO_OUT_CORE (port: GPIO_OUT_CORE), GPIO_MODE1_CORE (port: GPIO_MODE1_CORE),
+   GPIO_INENB_CORE (port: GPIO_INENB_CORE), GPIO_MODE0_CORE (port: GPIO_MODE0_CORE),
+   GPIO_IN_CORE (port: GPIO_IN_CORE),
+
+
+o Initial Correspondence Points:
+
+   Ports:        MPRJ_IO_OEB[24] MPRJ_IO_IB_MODE_SEL[24] MPRJ_IO_VTRIP_SEL[24] MPRJ_IO_OUT[24]
+                 MPRJ_IO_HOLDOVER[24] MPRJ_IO_DM[74] MPRJ_IO_ANALOG_SEL[24] MPRJ_IO_HLDH_N[24]
+                 MPRJ_IO_ENH[24] MPRJ_IO_INP_DIS[24] MPRJ_IO_ANALOG_POL[24] MPRJ_IO_DM[72]
+                 MPRJ_IO_ANALOG_EN[24] MPRJ_IO_DM[73] MPRJ_ANALOG_IO[17] MPRJ_IO_SLOW_SEL[24]
+                 MPRJ_IO_IN[24] PORB_H MPRJ_IO_OEB[23] MPRJ_IO_IB_MODE_SEL[23]
+                 MPRJ_IO_VTRIP_SEL[23] MPRJ_IO_OUT[23] MPRJ_IO_HOLDOVER[23] MPRJ_IO_DM[71]
+                 MPRJ_IO_ANALOG_SEL[23] MPRJ_IO_HLDH_N[23] MPRJ_IO_ENH[23] MPRJ_IO_INP_DIS[23]
+                 MPRJ_IO_ANALOG_POL[23] MPRJ_IO_DM[69] MPRJ_IO_ANALOG_EN[23] MPRJ_IO_DM[70]
+                 MPRJ_ANALOG_IO[16] MPRJ_IO_SLOW_SEL[23] MPRJ_IO_IN[23] MPRJ_IO_OEB[22]
+                 MPRJ_IO_IB_MODE_SEL[22] MPRJ_IO_VTRIP_SEL[22] MPRJ_IO_OUT[22]
+                 MPRJ_IO_HOLDOVER[22] MPRJ_IO_DM[68] MPRJ_IO_ANALOG_SEL[22] MPRJ_IO_HLDH_N[22]
+                 MPRJ_IO_ENH[22] MPRJ_IO_INP_DIS[22] MPRJ_IO_ANALOG_POL[22] MPRJ_IO_DM[66]
+                 MPRJ_IO_ANALOG_EN[22] MPRJ_IO_DM[67] MPRJ_ANALOG_IO[15]
+
+
+o Ambiguity Resolution Points:
+
+      (Each one of the following objects belongs to a group of indistinguishable objects.
+       The listed objects were matched arbitrarily by the Ambiguity Resolution feature of LVS.
+       Arbitrary matching may be prevented by assigning names to these objects or to adjacent nets).
+
+       Layout                                                    Source
+       ------                                                    ------
+
+                                     Nets
+                                     ----
+
+       X5/X1/X0/18                                               Xmgmt_vddio_hvclamp_pad[0]/Xsky130_fd_io__top_power_hvc_base/net63
+       X6/X0/X0/21                                               Xmgmt_vddio_hvclamp_pad[1]/Xsky130_fd_io__top_power_hvc_base/net63
+       X1/X2/X0/21                                               Xuser2_vssa_hvclamp_pad/Xsky130_fd_io__top_ground_hvc_base/net90
+       X6/X0/X0/18                                               Xmgmt_vssio_hvclamp_pad[1]/Xsky130_fd_io__top_ground_hvc_base/g_pdpre
+       X5/X1/X0/19                                               Xmgmt_vssio_hvclamp_pad[0]/Xsky130_fd_io__top_ground_hvc_base/g_pdpre
+       X2/X0/X0/19                                               Xmgmt_vssa_hvclamp_pad/Xsky130_fd_io__top_ground_hvc_base/g_pdpre
+       X7/65                                                     Xmprj_pads.area2_io_pad[9]/Xgpiov2_base/Xopath/Xodrvr/Xodrvr/Xres_weak/n<0>
+       X7/69                                                     Xmprj_pads.area2_io_pad[9]/Xgpiov2_base/Xopath/Xodrvr/Xodrvr/Xres_weak/n<2>
+       X7/68                                                     Xmprj_pads.area2_io_pad[9]/Xgpiov2_base/Xopath/Xodrvr/Xodrvr/Xres_weak/n<1>
+       X7/X269/X175/5                                            Xresetb_pad/XI368/XI172/Xr1a/Xe1/net7
+       X7/X269/X165/6                                            Xresetb_pad/XI368/XI199/net3
+       X7/X198/7                                                 Xresetb_pad/Xxresesd/Xpudrvr_strong/XI123/net7
+       X7/X200/7                                                 Xresetb_pad/Xxresesd/Xpudrvr_strong/XI107/net7
+       X7/X351/X15/7                                             Xresetb_pad/Xxresesd/Xpddrvr_strong/XI110/net7
+       X7/X269/X183/X0/6                                         Xresetb_pad/XI368/XI196/Xr1b/Xe1/net7
+       X7/X269/X183/X1/5                                         Xresetb_pad/XI368/XI196/Xr1b/Xe1/net2
+       X7/X269/X164/6                                            Xresetb_pad/XI368/XI172/Xr1b/Xe1/net7
+       X7/X269/X232/X1/5                                         Xresetb_pad/XI368/XI172/Xr1b/Xe1/net2
+       X7/X269/X231/X1/5                                         Xresetb_pad/XI368/XI173/Xr1b/Xe1/net7
+       X7/X269/X231/X1/6                                         Xresetb_pad/XI368/XI173/Xr1b/Xe1/net2
+       X7/X269/X230/X1/5                                         Xresetb_pad/XI368/XI175/Xr1b/Xe1/net7
+       X7/X269/X230/X1/6                                         Xresetb_pad/XI368/XI175/Xr1b/Xe1/net2
+       X7/X269/X174/5                                            Xresetb_pad/XI368/XI178/Xr1a/Xe2/net3
+       X7/X269/X174/6                                            Xresetb_pad/XI368/XI178/Xr1b/Xe1/net7
+       X7/X269/X228/X1/5                                         Xresetb_pad/XI368/XI179/Xr1b/Xe1/net7
+       X7/X269/X228/X1/6                                         Xresetb_pad/XI368/XI179/Xr1b/Xe1/net2
+       X7/X269/X178/X0/6                                         Xresetb_pad/XI368/XI177/Xr1b/Xe1/net7
+       X7/X269/X178/X1/5                                         Xresetb_pad/XI368/XI177/Xr1b/Xe1/net2
+       X7/X269/X179/X0/6                                         Xresetb_pad/XI368/XI176/Xr1b/Xe1/net7
+       X7/X269/X179/X1/5                                         Xresetb_pad/XI368/XI176/Xr1b/Xe1/net2
+       X7/X269/X229/X1/5                                         Xresetb_pad/XI368/XI174/Xr1b/Xe1/net7
+       X7/X269/X229/X1/6                                         Xresetb_pad/XI368/XI174/Xr1b/Xe1/net2
+       X7/82                                                     Xresetb_pad/XI368/net45
+       X7/81                                                     Xresetb_pad/XI368/net57
+       X7/47                                                     Xresetb_pad/Xxresesd/Xpudrvr_strong/net53
+       X7/48                                                     Xresetb_pad/Xxresesd/Xpudrvr_strong/net49
+       X7/X351/X19/6                                             Xresetb_pad/Xxresesd/Xpddrvr_strong/XI102/net8
+       X7/X351/X18/6                                             Xresetb_pad/Xxresesd/Xpddrvr_strong/XI113/net8
+       X7/X269/X181/X0/6                                         Xresetb_pad/XI368/XI185/Xr1b/Xe1/net7
+       X7/X269/X181/X1/5                                         Xresetb_pad/XI368/XI185/Xr1b/Xe1/net2
+       X7/X269/X167/6                                            Xresetb_pad/XI368/XI193/net3
+       X7/X269/X194/7                                            Xresetb_pad/XI368/XI186/net8
+       X7/X269/X182/X0/6                                         Xresetb_pad/XI368/XI195/Xr1b/Xe1/net7
+       X7/X269/X182/X1/5                                         Xresetb_pad/XI368/XI195/Xr1b/Xe1/net2
+       X7/X269/X180/X0/6                                         Xresetb_pad/XI368/XI184/Xr1b/Xe1/net7
+       X7/X269/X180/X1/5                                         Xresetb_pad/XI368/XI184/Xr1b/Xe1/net2
+       X7/X269/X223/X0/6                                         Xresetb_pad/XI368/XI200/net3
+       X7/X269/X193/7                                            Xresetb_pad/XI368/XI198/net8
+       X7/X269/X168/6                                            Xresetb_pad/XI368/XI197/net8
+       X7/X269/X195/7                                            Xresetb_pad/XI368/XI194/net3
+
+
+                                   Instances
+                                   ---------
+
+       X6/X2/X0/X249/R0(3187.120,156.810)  R(MRP1)               Xmgmt_vdda_hvclamp_pad/Xsky130_fd_io__top_power_hvc_base/rI37  R(MRP1)
+       X6/X1/X0/X249/R0(467.120,156.810)  R(MRP1)                Xmgmt_vssio_hvclamp_pad[0]/Xsky130_fd_io__top_ground_hvc_base/rI37  R(MRP1)
+       X3/X1/X0/X249/R0(3431.190,4165.120)  R(MRP1)              Xuser2_vdda_hvclamp_pad/Xsky130_fd_io__top_power_hvc_base/rI37  R(MRP1)
+       X1/X3/X0/X249/R0(2879.880,5031.190)  R(MRP1)              Xuser1_vssa_hvclamp_pad[1]/Xsky130_fd_io__top_ground_hvc_base/rI37  R(MRP1)
+       X4/X0/X0/X249/R0(156.810,2416.880)  R(MRP1)               Xmgmt_vssio_hvclamp_pad[1]/Xsky130_fd_io__top_ground_hvc_base/rI37  R(MRP1)
+       X4/X0/X0/X153/R0(158.235,2487.675)  R(MRP1)               Xmgmt_vdda_hvclamp_pad/Xsky130_fd_io__top_power_hvc_base/rrc_res  R(MRP1)
+       X6/X2/X0/X153/R0(3116.325,158.235)  R(MRP1)               Xmgmt_vddio_hvclamp_pad[1]/Xsky130_fd_io__top_power_hvc_base/rrc_res  R(MRP1)
+       X6/X1/X0/X153/R0(396.325,157.235)  R(MRP1)                Xuser2_vssa_hvclamp_pad/Xsky130_fd_io__top_ground_hvc_base/rrc_res  R(MRP1)
+       X7/X250/R0(729.440,156.930)  R(SHORT)                     Xmprj_pads.area2_io_pad[8]/Xgpiov2_base/Xopath/Xodrvr/Xodrvr/Xres_weak/Xe10/RI1  R(SHORT)
+       X7/X265/R0(718.555,155.515)  R(MRP1)                      Xmprj_pads.area2_io_pad[5]/Xgpiov2_base/Xipath/XI120/Xesd_res/RI175  R(MRP1)
+       X7/R189(719.685,156.240)  R(SHORT)                        Xmprj_pads.area2_io_pad[7]/Xgpiov2_base/Xopath/Xodrvr/Xodrvr/Xpddrvr_strong/XI106/RI2  R(SHORT)
+       X7/R187(726.425,156.240)  R(SHORT)                        Xmprj_pads.area2_io_pad[7]/Xgpiov2_base/Xopath/Xodrvr/Xodrvr/Xpddrvr_strong/XI87/RI2  R(SHORT)
+
+
+
+
+**************************************************************************************************************
+                                  UNMATCHED OBJECTS
+       LAYOUT                                                    SOURCE
+**************************************************************************************************************
+
+       X1/X0/X0/M12(122.195,4572.975)  MN(NSHORT)                ** unmatched instance **
+       X1/X0/X0/M72(122.195,4577.255)  MN(NSHORT)                ** unmatched instance **
+       X1/X0/X0/M136(115.195,4585.535)  MN(NSHORT)               ** unmatched instance **
+       X1/X1/X0/M12(3465.805,4600.025)  MN(NSHORT)               ** unmatched instance **
+       X1/X1/X0/M72(3465.805,4595.745)  MN(NSHORT)               ** unmatched instance **
+       X1/X1/X0/M136(3472.805,4587.465)  MN(NSHORT)              ** unmatched instance **
+       X4/X2/X0/M12(122.195,2216.975)  MN(NSHORT)                ** unmatched instance **
+       X4/X2/X0/M72(122.195,2221.255)  MN(NSHORT)                ** unmatched instance **
+       X4/X2/X0/M136(115.195,2229.535)  MN(NSHORT)               ** unmatched instance **
+       X4/X3/X0/M12(3465.805,2361.025)  MN(NSHORT)               ** unmatched instance **
+       X4/X3/X0/M72(3465.805,2356.745)  MN(NSHORT)               ** unmatched instance **
+       X4/X3/X0/M136(3472.805,2348.465)  MN(NSHORT)              ** unmatched instance **
+       X8/X0/M12(1268.025,122.195)  MN(NSHORT)                   ** unmatched instance **
+       X8/X0/M72(1263.745,122.195)  MN(NSHORT)                   ** unmatched instance **
+       X8/X0/M136(1255.465,115.195)  MN(NSHORT)                  ** unmatched instance **
+       X9/X0/M12(122.195,352.975)  MN(NSHORT)                    ** unmatched instance **
+       X9/X0/M72(122.195,357.255)  MN(NSHORT)                    ** unmatched instance **
+       X9/X0/M136(115.195,365.535)  MN(NSHORT)                   ** unmatched instance **
+       X1/X2/X0/M0(1682.885,5035.180)  MN(NHV)                   ** unmatched instance **
+       X1/X2/X0/M3(1682.885,5173.180)  MN(NHV)                   ** unmatched instance **
+       X2/X0/X0/M0(152.820,4364.885)  MN(NHV)                    ** unmatched instance **
+       X2/X0/X0/M3(14.820,4364.885)  MN(NHV)                     ** unmatched instance **
+       X5/X1/X0/M0(152.820,566.885)  MN(NHV)                     ** unmatched instance **
+       X5/X1/X0/M3(14.820,566.885)  MN(NHV)                      ** unmatched instance **
+       X6/X0/X0/M0(2904.115,152.820)  MN(NHV)                    ** unmatched instance **
+       X6/X0/X0/M3(2904.115,14.820)  MN(NHV)                     ** unmatched instance **
+       X4/X0/X0/X145(2.325,2483.375)  condiode                   ** unmatched instance **
+       X5/X0/X0/X145(3585.675,2084.625)  condiode                ** unmatched instance **
+       X6/X2/X0/X145(3120.625,2.325)  condiode                   ** unmatched instance **
+       X7/M42(714.510,173.255)  MN(NHVNATIVE)                    ** unmatched instance **
+       X7/M64(731.080,170.340)  MP(PHV)                          ** unmatched instance **
+       X7/X311/M0(719.610,173.420)  MN(NHV)                      ** unmatched instance **
+       X7/X348/X7/M0(728.710,133.085)  MN(NHVESD)                ** unmatched instance **
+       X7/X348/X8/M0(728.710,149.245)  MN(NHVESD)                ** unmatched instance **
+       X7/X348/X9/M0(722.720,133.085)  MN(NHVESD)                ** unmatched instance **
+       X7/X348/X10/M0(722.720,149.245)  MN(NHVESD)               ** unmatched instance **
+       X7/X351/X0(731.620,52.745)  condiode                      ** unmatched instance **
+       X9/X0/X415(1.920,380.640)  condiode                       ** unmatched instance **
+
+       ** unmatched net **                                       Xresetb_pad/XI335/n<5>
+       ** unmatched net **                                       Xresetb_pad/XI335/Xe9/net8
+       ** unmatched net **                                       Xresetb_pad/XI335/Xe11/net8
+       ** unmatched net **                                       Xresetb_pad/XI335/Xe10/net8
+       ** unmatched net **                                       Xresetb_pad/XI335/Xe12/net8
+       ** unmatched net **                                       Xresetb_pad/XI335/Xe13/net8
+       ** unmatched net **                                       Xclock_pad/Xgpiov2_base/net204
+       ** unmatched net **                                       Xclock_pad/Xgpiov2_base/net210
+       ** unmatched net **                                       Xclock_pad/Xgpiov2_base/Xamux/net166
+       ** unmatched net **                                       Xclock_pad/Xgpiov2_base/Xamux/net168
+       ** unmatched net **                                       Xclock_pad/Xgpiov2_base/Xopath/Xodrvr/Xodrvr/Xpddrvr_strong/XI113/net8
+       ** unmatched net **                                       Xclock_pad/Xgpiov2_base/Xopath/Xodrvr/Xodrvr/Xpddrvr_strong/XI96/net8
+       ** unmatched net **                                       Xclock_pad/Xgpiov2_base/Xopath/Xodrvr/Xodrvr/Xpddrvr_strong/XI104/net8
+       ** unmatched net **                                       Xclock_pad/Xgpiov2_base/Xopath/Xodrvr/Xodrvr/Xpddrvr_strong/XI102/net8
+       ** unmatched net **                                       Xclock_pad/Xgpiov2_base/Xopath/Xodrvr/Xodrvr/Xpddrvr_strong/XI109/net8
+       ** unmatched net **                                       Xclock_pad/Xgpiov2_base/Xopath/Xodrvr/Xodrvr/Xpddrvr_strong/XI108/net8
+       ** unmatched net **                                       Xclock_pad/Xgpiov2_base/Xopath/Xodrvr/Xodrvr/Xpddrvr_strong/XI97/net8
+       ** unmatched net **                                       Xclock_pad/Xgpiov2_base/Xopath/Xodrvr/Xodrvr/Xpudrvr_strong/XI125/net8
+       ** unmatched net **                                       Xclock_pad/Xgpiov2_base/Xopath/Xodrvr/Xodrvr/Xpudrvr_strong/XI104/net8
+       ** unmatched net **                                       Xclock_pad/Xgpiov2_base/Xopath/Xodrvr/Xodrvr/Xpudrvr_strong/XI109/net8
+       ** unmatched net **                                       Xclock_pad/Xgpiov2_base/Xopath/Xodrvr/Xodrvr/Xpudrvr_strong/XI108/net8
+       ** unmatched net **                                       Xclock_pad/Xgpiov2_base/Xopath/Xodrvr/Xodrvr/Xpudrvr_strong/XI112/net8
+       ** unmatched net **                                       Xclock_pad/Xgpiov2_base/Xopath/Xodrvr/Xodrvr/Xres/net34
+       ** unmatched net **                                       Xclock_pad/Xgpiov2_base/Xopath/Xodrvr/Xodrvr/Xres/net30
+       ** unmatched net **                                       Xclock_pad/Xgpiov2_base/Xopath/Xodrvr/Xodrvr/Xres/XI28/net8
+       ** unmatched net **                                       Xclock_pad/Xgpiov2_base/Xopath/Xodrvr/Xodrvr/Xres_weak/n<5>
+       ** unmatched net **                                       Xclock_pad/Xgpiov2_base/Xopath/Xodrvr/Xodrvr/Xres_weak/net64
+       ** unmatched net **                                       Xclock_pad/Xgpiov2_base/Xopath/Xodrvr/Xodrvr/Xres_weak/Xe13/net8
+       ** unmatched net **                                       Xclock_pad/Xgpiov2_base/Xopath/Xodrvr/Xodrvr/Xres_weak/Xe12/net8
+       ** unmatched net **                                       Xclock_pad/Xgpiov2_base/Xopath/Xodrvr/Xodrvr/Xres_weak/Xe10/net8
+       ** unmatched net **                                       Xclock_pad/Xgpiov2_base/Xopath/Xodrvr/Xodrvr/Xres_weak/Xe11/net8
+       ** unmatched net **                                       Xclock_pad/Xgpiov2_base/Xopath/Xodrvr/Xodrvr/Xres_weak/Xe9/net8
+       ** unmatched net **                                       Xclock_pad/Xgpiov2_base/Xopath/Xodrvr/Xodrvr/Xresd/net12
+       ** unmatched net **                                       Xclock_pad/Xgpiov2_base/Xopath/Xodrvr/Xodrvr/Xresd/net16
+       ** unmatched net **                                       Xclock_pad/Xgpiov2_base/Xopath/Xopath/Xpredrvr/Xpu_strong/Xnd2a/int_res
+       ** unmatched net **                                       Xclock_pad/Xgpiov2_base/Xopath/Xopath/Xpredrvr/Xpu_strong/Xnd2a/XE1/net8
+       ** unmatched net **                                       Xclock_pad/Xgpiov2_base/Xopath/Xopath/Xpredrvr/Xpu_strong/Xnd2b/int_res
+       ** unmatched net **                                       Xclock_pad/Xgpiov2_base/Xopath/Xopath/Xpredrvr/Xpu_strong/Xnd2b/XE1/net8
+       ** unmatched net **                                       Xclock_pad/Xgpiov2_base/Xopath/Xopath/Xpredrvr/Xpu_strong/XI97/Xe1/net8
+       ** unmatched net **                                       Xclock_pad/Xgpiov2_base/Xopath/Xopath/Xpredrvr/Xpu_strong/XI98/Xe1/net8
+       ** unmatched net **                                       Xclock_pad/Xgpiov2_base/Xopath/Xopath/Xpredrvr/Xpu_strong/XI93/Xe2/net8
+       ** unmatched net **                                       Xclock_pad/Xgpiov2_base/Xopath/Xopath/Xpredrvr/Xpu_strong/XI96/Xe2/net8
+       ** unmatched net **                                       Xclock_pad/Xgpiov2_base/Xopath/Xopath/Xpredrvr/Xpu_strong/XI92/Xe2/net8
+       ** unmatched net **                                       Xclock_pad/Xgpiov2_base/Xopath/Xopath/Xpredrvr/Xpu_strong/Xnbias/XI36/Xe2/net8
+       ** unmatched net **                                       Xclock_pad/Xgpiov2_base/Xopath/Xopath/Xpredrvr/Xpu_strong/Xnbias/XE6/net8
+       ** unmatched net **                                       Xclock_pad/Xgpiov2_base/Xopath/Xopath/Xpredrvr/Xpu_strong/Xnbias/XE7/net8
+       ** unmatched net **                                       Xclock_pad/Xgpiov2_base/Xopath/Xopath/Xpredrvr/Xpu_strong/Xnbias/XE4/net8
+       ** unmatched net **                                       Xclock_pad/Xgpiov2_base/Xopath/Xopath/Xpredrvr/Xpu_strong/Xnbias/XE5/net8
+       ** unmatched net **                                       Xclock_pad/Xgpiov2_base/Xopath/Xopath/Xpredrvr/Xpd_strong/net118
+       ** unmatched net **                                       Xclock_pad/Xgpiov2_base/Xopath/Xopath/Xpredrvr/Xpd_strong/XI76/Xe2/net8
+
+       ** unmatched instance **                                  Xmprj_pads.area2_io_pad[9]/Xgpiov2_base/Xipath/XI106/Xhvls/MI328  MN(NHV)
+       ** unmatched instance **                                  Xmprj_pads.area2_io_pad[9]/Xgpiov2_base/Xamux/XBBM_logic/Xamux_lv_decoder/XI45/MMNaoi20  MN(NSHORT)
+       ** unmatched instance **                                  Xmprj_pads.area2_io_pad[8]/Xgpiov2_base/Xipath/XI106/Xhvls/MI328  MN(NHV)
+       ** unmatched instance **                                  Xmprj_pads.area2_io_pad[8]/Xgpiov2_base/Xamux/XBBM_logic/Xamux_lv_decoder/XI45/MMNaoi20  MN(NSHORT)
+       ** unmatched instance **                                  Xmprj_pads.area2_io_pad[7]/Xgpiov2_base/Xipath/XI106/Xhvls/MI328  MN(NHV)
+       ** unmatched instance **                                  Xmprj_pads.area2_io_pad[7]/Xgpiov2_base/Xamux/XBBM_logic/Xamux_lv_decoder/XI45/MMNaoi20  MN(NSHORT)
+       ** unmatched instance **                                  Xmprj_pads.area2_io_pad[6]/Xgpiov2_base/Xipath/XI106/Xhvls/MI328  MN(NHV)
+       ** unmatched instance **                                  Xmprj_pads.area2_io_pad[6]/Xgpiov2_base/Xamux/XBBM_logic/Xamux_lv_decoder/XI45/MMNaoi20  MN(NSHORT)
+       ** unmatched instance **                                  Xmprj_pads.area2_io_pad[5]/Xgpiov2_base/Xipath/XI106/Xhvls/MI328  MN(NHV)
+       ** unmatched instance **                                  Xmprj_pads.area2_io_pad[5]/Xgpiov2_base/Xamux/XBBM_logic/Xamux_lv_decoder/XI45/MMNaoi20  MN(NSHORT)
+       ** unmatched instance **                                  Xmprj_pads.area2_io_pad[4]/Xgpiov2_base/Xipath/XI106/Xhvls/MI328  MN(NHV)
+       ** unmatched instance **                                  Xmprj_pads.area2_io_pad[4]/Xgpiov2_base/Xamux/XBBM_logic/Xamux_lv_decoder/XI45/MMNaoi20  MN(NSHORT)
+       ** unmatched instance **                                  Xmprj_pads.area2_io_pad[3]/Xgpiov2_base/Xipath/XI106/Xhvls/MI328  MN(NHV)
+       ** unmatched instance **                                  Xmprj_pads.area2_io_pad[3]/Xgpiov2_base/Xamux/XBBM_logic/Xamux_lv_decoder/XI45/MMNaoi20  MN(NSHORT)
+       ** unmatched instance **                                  Xmprj_pads.area2_io_pad[2]/Xgpiov2_base/Xipath/XI106/Xhvls/MI328  MN(NHV)
+       ** unmatched instance **                                  Xmprj_pads.area2_io_pad[2]/Xgpiov2_base/Xamux/XBBM_logic/Xamux_lv_decoder/XI45/MMNaoi20  MN(NSHORT)
+       ** unmatched instance **                                  Xmprj_pads.area2_io_pad[1]/Xgpiov2_base/Xipath/XI106/Xhvls/MI328  MN(NHV)
+       ** unmatched instance **                                  Xmprj_pads.area2_io_pad[1]/Xgpiov2_base/Xamux/XBBM_logic/Xamux_lv_decoder/XI45/MMNaoi20  MN(NSHORT)
+       ** unmatched instance **                                  Xmprj_pads.area2_io_pad[19]/Xgpiov2_base/Xipath/XI106/Xhvls/MI328  MN(NHV)
+       ** unmatched instance **                                  Xmprj_pads.area2_io_pad[19]/Xgpiov2_base/Xamux/XBBM_logic/Xamux_lv_decoder/XI45/MMNaoi20  MN(NSHORT)
+       ** unmatched instance **                                  Xmprj_pads.area2_io_pad[18]/Xgpiov2_base/Xipath/XI106/Xhvls/MI328  MN(NHV)
+       ** unmatched instance **                                  Xmprj_pads.area2_io_pad[18]/Xgpiov2_base/Xamux/XBBM_logic/Xamux_lv_decoder/XI45/MMNaoi20  MN(NSHORT)
+       ** unmatched instance **                                  Xmprj_pads.area2_io_pad[17]/Xgpiov2_base/Xipath/XI106/Xhvls/MI328  MN(NHV)
+       ** unmatched instance **                                  Xmprj_pads.area2_io_pad[17]/Xgpiov2_base/Xamux/XBBM_logic/Xamux_lv_decoder/XI45/MMNaoi20  MN(NSHORT)
+       ** unmatched instance **                                  Xmprj_pads.area2_io_pad[16]/Xgpiov2_base/Xipath/XI106/Xhvls/MI328  MN(NHV)
+       ** unmatched instance **                                  Xmprj_pads.area2_io_pad[16]/Xgpiov2_base/Xamux/XBBM_logic/Xamux_lv_decoder/XI45/MMNaoi20  MN(NSHORT)
+       ** unmatched instance **                                  Xmprj_pads.area2_io_pad[15]/Xgpiov2_base/Xipath/XI106/Xhvls/MI328  MN(NHV)
+       ** unmatched instance **                                  Xmprj_pads.area2_io_pad[15]/Xgpiov2_base/Xamux/XBBM_logic/Xamux_lv_decoder/XI45/MMNaoi20  MN(NSHORT)
+       ** unmatched instance **                                  Xmprj_pads.area2_io_pad[14]/Xgpiov2_base/Xipath/XI106/Xhvls/MI328  MN(NHV)
+       ** unmatched instance **                                  Xmprj_pads.area2_io_pad[14]/Xgpiov2_base/Xamux/XBBM_logic/Xamux_lv_decoder/XI45/MMNaoi20  MN(NSHORT)
+       ** unmatched instance **                                  Xmprj_pads.area2_io_pad[13]/Xgpiov2_base/Xipath/XI106/Xhvls/MI328  MN(NHV)
+       ** unmatched instance **                                  Xmprj_pads.area2_io_pad[13]/Xgpiov2_base/Xamux/XBBM_logic/Xamux_lv_decoder/XI45/MMNaoi20  MN(NSHORT)
+       ** unmatched instance **                                  Xmprj_pads.area2_io_pad[12]/Xgpiov2_base/Xipath/XI106/Xhvls/MI328  MN(NHV)
+       ** unmatched instance **                                  Xmprj_pads.area2_io_pad[12]/Xgpiov2_base/Xamux/XBBM_logic/Xamux_lv_decoder/XI45/MMNaoi20  MN(NSHORT)
+       ** unmatched instance **                                  Xmprj_pads.area2_io_pad[11]/Xgpiov2_base/Xipath/XI106/Xhvls/MI328  MN(NHV)
+       ** unmatched instance **                                  Xmprj_pads.area2_io_pad[11]/Xgpiov2_base/Xamux/XBBM_logic/Xamux_lv_decoder/XI45/MMNaoi20  MN(NSHORT)
+       ** unmatched instance **                                  Xmprj_pads.area2_io_pad[10]/Xgpiov2_base/Xipath/XI106/Xhvls/MI328  MN(NHV)
+       ** unmatched instance **                                  Xmprj_pads.area2_io_pad[10]/Xgpiov2_base/Xamux/XBBM_logic/Xamux_lv_decoder/XI45/MMNaoi20  MN(NSHORT)
+       ** unmatched instance **                                  Xmprj_pads.area2_io_pad[0]/Xgpiov2_base/Xipath/XI106/Xhvls/MI328  MN(NHV)
+       ** unmatched instance **                                  Xmprj_pads.area2_io_pad[0]/Xgpiov2_base/Xamux/XBBM_logic/Xamux_lv_decoder/XI45/MMNaoi20  MN(NSHORT)
+       ** unmatched instance **                                  Xmprj_pads.area1_io_pad[9]/Xgpiov2_base/Xipath/XI106/Xhvls/MI328  MN(NHV)
+       ** unmatched instance **                                  Xmprj_pads.area1_io_pad[9]/Xgpiov2_base/Xamux/XBBM_logic/Xamux_lv_decoder/XI45/MMNaoi20  MN(NSHORT)
+       ** unmatched instance **                                  Xmprj_pads.area1_io_pad[8]/Xgpiov2_base/Xipath/XI106/Xhvls/MI328  MN(NHV)
+       ** unmatched instance **                                  Xmprj_pads.area1_io_pad[8]/Xgpiov2_base/Xamux/XBBM_logic/Xamux_lv_decoder/XI45/MMNaoi20  MN(NSHORT)
+       ** unmatched instance **                                  Xmprj_pads.area1_io_pad[7]/Xgpiov2_base/Xipath/XI106/Xhvls/MI328  MN(NHV)
+       ** unmatched instance **                                  Xmprj_pads.area1_io_pad[7]/Xgpiov2_base/Xamux/XBBM_logic/Xamux_lv_decoder/XI45/MMNaoi20  MN(NSHORT)
+       ** unmatched instance **                                  Xmprj_pads.area1_io_pad[6]/Xgpiov2_base/Xipath/XI106/Xhvls/MI328  MN(NHV)
+       ** unmatched instance **                                  Xmprj_pads.area1_io_pad[6]/Xgpiov2_base/Xamux/XBBM_logic/Xamux_lv_decoder/XI45/MMNaoi20  MN(NSHORT)
+       ** unmatched instance **                                  Xmprj_pads.area1_io_pad[5]/Xgpiov2_base/Xipath/XI106/Xhvls/MI328  MN(NHV)
+       ** unmatched instance **                                  Xmprj_pads.area1_io_pad[5]/Xgpiov2_base/Xamux/XBBM_logic/Xamux_lv_decoder/XI45/MMNaoi20  MN(NSHORT)
+
+
+**************************************************************************************************************
+                                         SUMMARY
+**************************************************************************************************************
+
+Total CPU Time:      1 sec
+Total Elapsed Time:  2 sec

@@ -1,0 +1,29 @@
+* hydra_v2p0 analog part subcircuit
+
+.subckt hydra_v2p0_ana
++ SDI_A SDO_A CSB_A SCK_A BGP_A 
++ SDI_D SDO_D SDO_EN_D CSB_D SCK_D
++ por bgena VDDA VSSA 
+
+* Padframe cells
+XpadSDO  SDO_D clampc SDO_EN_D VSSA VDDA VDDA VSSA VDDA SDO_A A_BT6NF
+XpadSCK  clampc VSSA VDDA VDDA VSSA VDDA SCK_A VSSA NC01 SCK_D A_ICF
+XpadSDI  clampc VSSA VDDA VDDA VSSA VDDA SDI_A VSSA NC02 SDI_D A_ICF
+XpadCSB  clampc VSSA VDDA VDDA VSSA VDDA CSB_A VSSA NC03 CSB_D A_ICF
+XpadBG   bgout clampc VSSA VDDA VDDA VSSA VDDA BGP_A H_ANPOF
+
+* Padframe clamps
+Xclamp1 clampc VSSA VDDA VDDA VSSA VDDA IOCLMF
+Xclamp2 clampc VSSA VDDA VDDA VSSA VDDA IOCLMF
+
+* Power pads
+Xpower  clampc VSSA VSSA VDDA VDDALLF
+Xground clampc VSSA VDDA VDDA VDDA GNDALLF
+
+* X-Fab power-on reseet
+Xaporc01 por VDDA VSSA aporc01
+
+* X-Fab bandgap
+Xabgpc01 bgena bgout bgvtn VDDA VSSA abgpc01
+
+.ends

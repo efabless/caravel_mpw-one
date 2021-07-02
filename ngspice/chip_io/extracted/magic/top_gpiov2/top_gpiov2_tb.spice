@@ -1,0 +1,88 @@
+*** UC SPICE *** , MIN_RESIST 4.0, MIN_CAPAC 0.1FF
+
+* .lib /home/tim/projects/efabless/tech/SW/sky130A/libs.tech/ngspice/sky130.lib.spice tt
+
+.lib  ~/foss/pdks/sky130A/libs.tech/ngspice/sky130.lib.spice tt
+.include ./sky130_fd_pr__res_generic_po.spice
+.include ./sky130_fd_io__top_gpiov2.spice
+
+*.PININFO ANALOG_EN:I ANALOG_POL:I ANALOG_SEL:I DM[2]:I DM[1]:I
+*.PININFO DM[0]:I ENABLE_H:I ENABLE_INP_H:I ENABLE_VDDA_H:I
+*.PININFO ENABLE_VDDIO:I ENABLE_VSWITCH_H:I HLD_H_N:I HLD_OVR:I
+*.PININFO IB_MODE_SEL:I INP_DIS:I OE_N:I OUT:I SLOW:I VTRIP_SEL:I IN:O
+*.PININFO IN_H:O TIE_HI_ESD:O TIE_LO_ESD:O AMUXBUS_A:B AMUXBUS_B:B
+*.PININFO PAD:B PAD_A_ESD_0_H:B PAD_A_ESD_1_H:B PAD_A_NOESD_H:B VCCD:B
+*.PININFO VCCHIB:B VDDA:B VDDIO:B VDDIO_Q:B VSSA:B VSSD:B VSSIO:B
+*.PININFO VSSIO_Q:B VSWITCH:B
+
+* .subckt sky130_fd_io__top_gpiov2 PAD VSSIO AMUXBUS_B AMUXBUS_A VDDIO_Q VDDIO VSWITCH
+* VDDA VCCD VCCHIB VSSIO_Q PAD_A_NOESD_H ANALOG_POL ENABLE_VDDIO IN_H IN ANALOG_EN
+* OUT TIE_HI_ESD PAD_A_ESD_1_H DM[0] DM[1] DM[2] HLD_H_N HLD_OVR INP_DIS ENABLE_VDDA_H
+* VTRIP_SEL OE_N SLOW TIE_LO_ESD PAD_A_ESD_0_H ANALOG_SEL ENABLE_INP_H ENABLE_H IB_MODE_SEL
+* ENABLE_VSWITCH_H
+
+Xsky130_fd_io__top_gpiov2
++ pad	  ; pad
++ vss	  ; vssio
++ open8   ; amuxbus_b
++ open7	  ; amuxbus_a
++ vdd3v3  ; vddio_q
++ vdd3v3  ; vddio
++ vdd3v3  ; vswitch
++ vdd3v3  ; vdda
++ vdd1v8  ; vccd
++ vdd1v8  ; vcchib
++ vss	  ; vssio_q
++ open3   ; pad_a_noesd_h
++ zero	  ; analog_pol
++ one	  ; enable_vddio
++ open4	  ; in_h
++ in	  ; in
++ zero	  ; analog_en
++ out	  ; out
++ open5	  ; tie_hi_esd
++ open2	  ; pad_a_esd_1_h
++ zero	  ; dm<0>
++ one	  ; dm<1>
++ one	  ; dm<2>
++ one3v3  ; hld_h_n
++ zero	  ; hld_ovr
++ zero	  ; inp_dis
++ one3v3  ; enable_vdda_h
++ zero	  ; vtrip_sel
++ zero	  ; oe_n
++ zero	  ; slow
++ open6   ; tie_lo_esd
++ open1	  ; pad_a_esd_0_h
++ zero	  ; analog_sel
++ one3v3  ; enable_inp_h
++ one3v3  ; enable_h
++ zero	  ; ib_mode_sel 
++ zero	  ; enable_vswitch_h
++ sky130_fd_io__top_gpiov2
+
+vvss	vss	0 dc 	0
+vvdd3v3	vdd3v3	0 pwl	0 0 2u 3.3  1m 3.3
+vvdd1v8	vdd1v8	0 pwl	0 0 5u 1.8  1m 1.8
+
+vzero		zero		vss		dc	0
+vone		one		vdd1v8		dc	0
+vone3v3		one3v3		vdd3v3		dc	0
+
+vout		out		0		pwl	0 0 8u 0  8.1u 1.8 11u 1.8 11.1u 0 15u 0
+rload		pad		0		100K
+
+*.OPTION ITL4=10000
+*.OPTION RELTOL=1e-3
+*.OPTION RSHUNT=1e15
+
+.SAVE v(pad) v(out) i(vout) i(vvdd3v3) i(vvdd1v8) v(vdd3v3) v(vdd1v8) i(rload)
+.TRAN 1u 15u
+
+****.control
+****tran 1u 15u
+****plot v(pad) v(out) v(vdd3v3) v(vdd1v8)
+****plot i(vvdd3v3) i(vvdd1v8)
+****.endc
+
+.END

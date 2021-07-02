@@ -1,0 +1,17 @@
+Full-chip mixed-mode simulation (test)
+
+This directory simulates a combination of the digital SPI controller for
+hydra 2.0 coupled with an X-FAB XH035 SPICE wrapper containing a power
+supply voltage source and the aporc01 power-on-reset cell from A_CELLS to
+reset the controller.
+
+
+For this version
+-----------------------------------------------
+To run:			./hydra_v2p0_test.sh
+
+View digital traces:	gtkwave test.vcd
+
+View analog traces:	symprobe hydra_spi_tb.raw
+
+View both traces simultaneously:  Need ngspice compiled with gtk option (see git branches)

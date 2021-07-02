@@ -1,0 +1,77 @@
+*** SPICE deck for cell hydra_v2p0{sch} from library hydra_v2p0
+*** Created on Tue Jan 26, 2016 00:40:02
+*** Last revised on Thu Apr 27, 2017 15:43:07
+*** Written on Thu Apr 27, 2017 15:43:32 by Electric VLSI Design System, version 9.06.0703
+*** Layout tech: mocmos, foundry MOSIS
+*** UC SPICE *** , MIN_RESIST 4.0, MIN_CAPAC 0.1FF
+.options parhier=local
+
+*** SUBCIRCUIT hydra_v2p0__hydra_padframe FROM CELL hydra_v2p0:hydra_padframe{sch}
+.SUBCKT hydra_v2p0__hydra_padframe en_sdo padCS padSCK padSDI padSDO padXI padXO x08 xA00 xA01 xA02 xA03 xA04 xA05 xA06 xA07 xA09 xA10 xA11 xA12 xA13 xA14 xA15 xA16 xA17 xAGND_E xAGND_N xAGND_S xAVDD_E xAVDD_N xAVDD_S xCLKXTAL xDGND xDVDD xSCK xSDI xSDO xSSN xXTAL_EN
+xA_BT6NP_A_BT6NP@0 xSDO clampc en_sdo xDGND xDVDD xDVDD xDGND xDVDD padSDO A_BT6NP
+xA_ICP_A_ICP@0 clampc xDGND xDVDD xDVDD xDGND xDVDD padCS xSSN A_ICP
+xA_ICP_A_ICP@1 clampc xDGND xDVDD xDVDD xDGND xDVDD padSDI xSDI A_ICP
+xA_ICP_A_ICP@2 clampc xDGND xDVDD xDVDD xDGND xDVDD padSCK xSCK A_ICP
+xGNDALLP_GNDALLP@2 clampc xDGND xDVDD xDVDD xDVDD GNDALLP
+xGNDAN1P_GNDAN1P@0 xAGND_S clampc xDGND xDVDD xDVDD xDGND xDVDD GNDAN1P
+xGNDAN1P_GNDAN1P@1 xAGND_E clampc xDGND xDVDD xDVDD xDGND xDVDD GNDAN1P
+xGNDAN1P_GNDAN1P@2 xAGND_N clampc xDGND xDVDD xDVDD xDGND xDVDD GNDAN1P
+xH_ANIMP_H_ANIMP@0 clampc xDGND xDVDD xDVDD xDGND xDVDD xA00 xDVDD H_ANIMP
+xH_ANIMP_H_ANIMP@1 clampc xDGND xDVDD xDVDD xDGND xDVDD xA01 xDVDD H_ANIMP
+xH_ANIMP_H_ANIMP@2 clampc xDGND xDVDD xDVDD xDGND xDVDD xA02 xDVDD H_ANIMP
+xH_ANIMP_H_ANIMP@3 clampc xDGND xDVDD xDVDD xDGND xDVDD xA03 xDVDD H_ANIMP
+xH_ANIMP_H_ANIMP@4 clampc xDGND xDVDD xDVDD xDGND xDVDD xA04 xDVDD H_ANIMP
+xH_ANIMP_H_ANIMP@5 clampc xDGND xDVDD xDVDD xDGND xDVDD xA05 xDVDD H_ANIMP
+xH_ANIMP_H_ANIMP@6 clampc xDGND xDVDD xDVDD xDGND xDVDD xA11 xDVDD H_ANIMP
+xH_ANIMP_H_ANIMP@7 clampc xDGND xDVDD xDVDD xDGND xDVDD xA10 xDVDD H_ANIMP
+xH_ANIMP_H_ANIMP@8 clampc xDGND xDVDD xDVDD xDGND xDVDD xA09 xDVDD H_ANIMP
+xH_ANIMP_H_ANIMP@9 clampc xDGND xDVDD xDVDD xDGND xDVDD x08 xDVDD H_ANIMP
+xH_ANIMP_H_ANIMP@10 clampc xDGND xDVDD xDVDD xDGND xDVDD xA07 xDVDD H_ANIMP
+xH_ANIMP_H_ANIMP@11 clampc xDGND xDVDD xDVDD xDGND xDVDD xA06 xDVDD H_ANIMP
+xH_ANIMP_H_ANIMP@12 clampc xDGND xDVDD xDVDD xDGND xDVDD xA12 xDVDD H_ANIMP
+xH_ANIMP_H_ANIMP@13 clampc xDGND xDVDD xDVDD xDGND xDVDD xA13 xDVDD H_ANIMP
+xH_ANIMP_H_ANIMP@14 clampc xDGND xDVDD xDVDD xDGND xDVDD xA14 xDVDD H_ANIMP
+xH_ANIMP_H_ANIMP@15 clampc xDGND xDVDD xDVDD xDGND xDVDD xA15 xDVDD H_ANIMP
+xH_ANIMP_H_ANIMP@16 clampc xDGND xDVDD xDVDD xDGND xDVDD xA16 xDVDD H_ANIMP
+xH_ANIMP_H_ANIMP@17 clampc xDGND xDVDD xDVDD xDGND xDVDD xA17 xDVDD H_ANIMP
+xIOCORNCLMRP_IOCORNCL@1 xDVDD clampc xDGND xDVDD xDVDD xDGND IOCORNCLMRP
+xIOCORNCLMRP_IOCORNCL@2 xDVDD clampc xDGND xDVDD xDVDD xDGND IOCORNCLMRP
+xIOCORNCLMRP_IOCORNCL@3 xDVDD clampc xDGND xDVDD xDVDD xDGND IOCORNCLMRP
+xIOCORNCLMRP_IOCORNCL@4 xDVDD clampc xDGND xDVDD xDVDD xDGND IOCORNCLMRP
+xVDDALLP_VDDALLP@4 clampc xDGND xDGND xDVDD VDDALLP
+xVDDAN1P_VDDAN1P@0 xAVDD_S clampc xDGND xDVDD xDVDD xDGND xDVDD VDDAN1P
+xVDDAN1P_VDDAN1P@2 xAVDD_N clampc xDGND xDVDD xDVDD xDGND xDVDD VDDAN1P
+xVDDAN1P_VDDAN1P@3 xAVDD_E clampc xDGND xDVDD xDVDD xDGND xDVDD VDDAN1P
+xaxtoc01_axtoc01@2 clampc xCLKXTAL xXTAL_EN xDGND xDVDD xDVDD xDGND xDVDD padXI padXO axtoc01
+.ENDS hydra_v2p0__hydra_padframe
+
+*** TOP LEVEL CELL: hydra_v2p0:hydra_v2p0{sch}
+xaadcc02_aadcc02@0 xsck D[9] D[8] D[7] D[6] D[5] D[4] D[3] D[2] D[1] D[0] adcdone xA00 adcena adcconvert xDVDD xAVDD xA02 xA01 xDGND xAGND aadcc02
+xabgpc04_abgpc04@0 bg0ena xA08 xAVDD xAGND abgpc04
+xaporc01_aporc01@0 porrst xDVDD xDGND aporc01
+xefx0001__efx0001_efx0001@1 bg1ena bg1tr[3] bg1tr[2] bg1tr[1] bg1tr[0] xAGND xA11 xAVDD xAGND efx0001__efx0001
+xefx0002__efx0002_efx0002@0 bg2ena bg2tr[3] bg2tr[2] bg2tr[1] bg2tr[0] xAGND xA10 xAVDD xAGND efx0002__efx0002
+xefx0003__efx0003_efx0003@0 bg3ena bg3tr[3] bg3tr[2] bg3tr[1] bg3tr[0] xAGND xA09 xAVDD xAGND efx0003__efx0003
+Xhydra_pa@0 en_sdo padCS padSCK padSDI padSDO padX1 padX0 xA08 xA00 xA01 xA02 xA03 xA04 xA05 xA06 xA07 xA09 xA10 xA11 xA12 xA13 xA14 xA15 xA16 xA17 xAGND xAGND xAGND xAVDD xAVDD xAVDD xA17 xDGND xDVDD xsck xsdi xsdo xssn xxtal_en hydra_v2p0__hydra_padframe
+** xhydra_spi_controller_hydra_sp@2 xDVDD xDGND porrst xsck xsdi xssn D[0] D[1] D[2] D[3] D[4] D[5] D[6] D[7] D[8] D[9] adcdone xsdo bg1ena bg1tr[0] bg1tr[1] bg1tr[2] bg1tr[3] bg2ena bg2tr[0] bg2tr[1] bg2tr[2] bg2tr[3] bg3ena bg3tr[0] bg3tr[1] bg3tr[2] bg3tr[3] bg0ena xxtal_en adcena adcconvert hydra_spi_controller
+
+* SPI controller and testbench inputs replaced by digital model
+.MODEL dm_hdl d_hdl(rise_delay=1n fall_delay=1n IC=0 DEBUG=0)
+* WIP
+
+* Spice Code nodes in cell cell 'hydra_v2p0:hydra_v2p0{sch}'
+**------------------------------------------------------------
+** IO_CELLS library
+.include ~/gits/hydra_v2p0/tech/XFAB/EFXH035LEGACY/libs.ref/spi/IO_CELLS/IO_CELLS.spi.dev.reduced
+**------------------------------------------------------------
+** IO_CELLS_MV library
+.include ~/gits/hydra_v2p0/tech/XFAB/EFXH035LEGACY/libs.ref/spi/IO_CELLS_MV/H_ANIMP.spi
+**------------------------------------------------------------
+** CUSTOM SPICE SUBCKTS 
+** .include ~/gits/hydra_v2p0/ip/hydra_spi_controller/spi/hydra_spi_controller/hydra_spi_controller__hydra_spi_controller.spi
+**------------------------------------------------------------
+.include ~/gits/hydra_v2p0/ip/efx0001/spi-rcx/efx0001/efx0001__efx0001.spi
+.include ~/gits/hydra_v2p0/ip/efx0002/spi-rcx/efx0002/efx0002__efx0002.spi
+.include ~/gits/hydra_v2p0/ip/efx0003/spi-rcx/efx0003/efx0003__efx0003.spi
+**------------------------------------------------------------
+.END

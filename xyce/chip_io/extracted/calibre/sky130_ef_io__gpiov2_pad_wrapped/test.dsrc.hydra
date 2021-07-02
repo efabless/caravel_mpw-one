@@ -1,0 +1,38 @@
+***  
+
+
+.subckt sourcevector 111 112 113 114 115 116 117 118 119 120 121 122
+a3[1 2 3 4 5 6 7 8 9 10 11 12] input_vector3
+ abridge1     [1]  [111] dac1
+ abridge2     [2]  [112] dac1
+ abridge3     [3]  [113] dac1
+ abridge4     [4]  [114] dac1
+ abridge5     [5]  [115] dac1
+ abridge6     [6]  [116] dac1
+ abridge7     [7]  [117] dac1
+ abridge8     [8]  [118] dac1
+ abridge9     [9]  [119] dac1
+ abridge10   [10]  [120] dac1
+ abridge11   [11]  [121] dac1
+ abridge12   [12]  [122] dac1
+**---------------------------------
+.model input_vector3
++d_source(input_file = "df_source2.text"
+.model dac1 dac_bridge(
++out_low = 0 
++out_high = 3.3 
++out_undef = 1.65 
++input_load = 5.0e-15 
++t_rise = 1e-09 
++t_fall = 1e-09)
+.ends sourcevector
+**---------------------------------
+
+xinput  111 112 113 114 115 116 117 118 119 120 121 122 sourcevector
+
+
+
+.SAVE All
+.TRAN 1n 1u
+
+.END

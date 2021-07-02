@@ -1,0 +1,96 @@
+***  
+
+.subckt sourcevector 111 112 113 114 115 116 117 118 119 1210 1211 1212 1113 1114 1115 1116 1117 1118 1119 1120 1121 1222 1223 1224 1125 1126 1127 1128 1129 1130 1131 1132 1133 1234 1235 1236
+a3 [1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36] input_vector3
+ abridge1     [1]   [111]  dac1
+ abridge2     [2]   [112]  dac1
+ abridge3     [3]   [113]  dac1
+ abridge4     [4]   [114]  dac1
+ abridge5     [5]   [115]  dac1
+ abridge6     [6]   [116]  dac1
+ abridge7     [7]   [117]  dac1
+ abridge8     [8]   [118]  dac1
+ abridge9     [9]   [119]  dac1
+ abridge10    [10]  [1210] dac1
+ abridge11    [11]  [1211] dac1
+ abridge12    [12]  [1212] dac1
+ abridge13    [13]  [1113] dac1
+ abridge14    [14]  [1114] dac1
+ abridge15    [15]  [1115] dac1
+ abridge16    [16]  [1116] dac1
+ abridge17    [17]  [1117] dac1
+ abridge18    [18]  [1118] dac1
+ abridge19    [19]  [1119] dac1
+ abridge20    [20]  [1120] dac1
+ abridge21    [21]  [1121] dac1
+ abridge22    [22]  [1222] dac1
+ abridge23    [23]  [1223] dac1
+ abridge24    [24]  [1224] dac1
+ abridge25    [25]  [1125] dac1
+ abridge26    [26]  [1126] dac1
+ abridge27    [27]  [1127] dac1
+ abridge28    [28]  [1128] dac1
+ abridge29    [29]  [1129] dac1
+ abridge30    [30]  [1130] dac1
+ abridge31    [31]  [1131] dac1
+ abridge32    [32]  [1132] dac1
+ abridge33    [33]  [1133] dac1
+ abridge34    [34]  [1234] dac1
+ abridge35    [35]  [1235] dac1
+ abridge36    [36]  [1236] dac1
+**---------------------------------
+.model input_vector3
++d_source(input_file = "df_source.text"
+.model dac1 dac_bridge(
++out_low = 0 
++out_high = 3.3 
++out_undef = 1.65 
++input_load = 5.0e-15 
++t_rise = 1e-09 
++t_fall = 1e-09)
+.ends sourcevector
+**---------------------------------
+
+xinput 
++ AMUXBUS_A	
++ AMUXBUS_B	
++ ANALOG_EN	
++ ANALOG_POL	
++ ANALOG_SEL	
++ ENABLE_H	
++ ENABLE_INP_H	
++ ENABLE_VDDA_H	
++ ENABLE_VDDIO	
++ ENABLE_VSWITCH_H	
++ HLD_H_N	
++ HLD_OVR	
++ IB_MODE_SEL	
++ IN	
++ INP_DIS	
++ IN_H	
++ OE_N	
++ OUT	
++ PAD	
++ PAD_A_ESD_0_H	
++ PAD_A_ESD_1_H	
++ PAD_A_NOESD_H	
++ SLOW	
++ TIE_HI_ESD	
++ TIE_LO_ESD	
++ VCCD	
++ VCCHIB	
++ VDDA	
++ VDDIO	
++ VDDIO_Q	
++ VSSA	
++ VSSD	
++ VSSIO	
++ VSSIO_Q	
++ VSWITCH	
++ VTRIP_SEL  
++sourcevector
+
+.SAVE All
+.TRAN 1n 2u
+
+.END
