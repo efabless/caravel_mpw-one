@@ -36,6 +36,8 @@
 `include "libs.ref/sky130_fd_sc_hvl/verilog/sky130_fd_sc_hvl.v"
 
 `ifdef GL
+    // Assume default net type to be wire because GL netlists don't have the wire definitions
+    `default_nettype wire
 	`include "gl/mgmt_core.v"
 	`include "gl/digital_pll.v"
 	`include "gl/DFFRAM.v"

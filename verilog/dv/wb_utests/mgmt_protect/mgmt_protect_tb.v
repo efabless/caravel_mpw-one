@@ -31,6 +31,8 @@
 `include "defines.v"
 
 `ifdef GL
+    // Assume default net type to be wire because GL netlists don't have the wire definitions
+    `default_nettype wire
     `include "gl/mprj_logic_high.v"
     `include "gl/mprj2_logic_high.v"
     `include "gl/mgmt_protect.v"
