@@ -47,7 +47,7 @@ for PATTERN in ${PATTERNS[*]}
 do
     echo "Executing DV on $PATTERN";
     cd $PATTERN;
-    for x in RTL 
+    for x in RTL GL
     do
         export SIM=$x
         echo "Running $PATTERN $SIM.."

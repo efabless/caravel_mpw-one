@@ -31,7 +31,7 @@ fi
 echo "Running Full LVS:"
 for BLOCK in ${BLOCKS[*]}
 do
-        if [ $BLOCK != DFFRAM ] && [ $BLOCK != user_analog_project_wrapper_empty ]; then
+        if [ $BLOCK != user_analog_project_wrapper_empty ]; then
                 echo "Running Full LVS on block $BLOCK:"
                 docker run -it -v $CARAVEL_PATH:$CARAVEL_PATH -e CARAVEL_PATH=$CARAVEL_PATH -v $PDK_ROOT:$PDK_ROOT -e PDK_ROOT=$PDK_ROOT -u $(id -u $USER):$(id -g $USER) $IMAGE_NAME  bash -c "cd $CARAVEL_PATH; make lvs-$BLOCK"
 
@@ -48,11 +48,7 @@ do
                 cat $lvs_report
                 echo "Total Count: $lvs_total_errors"
                 if [[ $BLOCK != caravel ]]; then
-                        if [[ $BLOCK != chip_io ]]; then
-                                if [[ $lvs_total_errors -ne 0 ]]; then exit 2; fi
-                        else
-                                if [[ $lvs_total_errors -gt 64 ]]; then exit 2; fi
-                        fi
+                        if [[ $lvs_total_errors -ne 0 ]]; then exit 2; fi
                 else
                         if [[ $lvs_total_errors -gt 6 ]]; then exit 2; fi
                 fi
