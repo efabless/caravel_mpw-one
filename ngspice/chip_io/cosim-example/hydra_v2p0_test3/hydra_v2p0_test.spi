@@ -1,0 +1,72 @@
+* Test of hydra_v2p0 in mixed-mode simulation
+* The SPI controller and testbench are in verilog
+* The remainder of the circuit is just a few voltage sources to bias and
+* RC loads.
+
+* Include X-Fab primitive devices
+.lib /ef/tech/XFAB/EFXH035A/libs.tech/models/ngspice/models.current/mos/xh035.lib tm
+.lib /ef/tech/XFAB/EFXH035A/libs.tech/models/ngspice/models.current/mos/param.lib 3s
+
+* Include X-Fab A_CELLS
+.include /ef/tech/XFAB/EFXH035LEGACY/libs.ref/spi/A_CELLS/A_CELLS.lib
+
+* Include X-Fab IO_CELLS
+.include /ef/tech/XFAB/EFXH035LEGACY/libs.ref/spi/IO_CELLS_F/IO_CELLS_F.lib
+
+* Include Hydra test chip (analog part)
+.include hydra_v2p0_ana.spi
+
+.option TEMP = 27
+.option RELTOL = 1.0E-3
+
+*-----------------------------------------------------------------------
+* Analog <--> digital bridge models
+.MODEL bridge_3V_todig adc_bridge(in_high=2.0 in_low=1.0 rise_delay=100n fall_delay=100n)
+.MODEL bridge_3V_toana dac_bridge(out_high=2.7 out_low=0.3)
+
+* Analog <--> digital bridge
+AA2D00 [RST] [D_RST] bridge_3v_todig
+
+AD2A00 [d_bgena] [bgena] bridge_3v_toana
+
+AA2D12 [SDI_CORE] [D_SDI] bridge_3v_todig
+AA2D13 [SCK_CORE] [D_SCK] bridge_3v_todig
+AA2D14 [CSB_CORE] [D_CSB] bridge_3v_todig
+
+AD2A04 [D_SDO] [SDO_PAD] bridge_3v_toana
+AD2A05 [A_SDI] [SDI_PAD] bridge_3v_toana
+AD2A06 [A_SCK] [SCK_PAD] bridge_3v_toana
+AD2A07 [A_CSB] [CSB_PAD] bridge_3v_toana
+
+AD2A08 [d_sdoena] [SDO_EN_CORE] bridge_3v_toana
+AD2A09 [d_sdopin] [SDO_CORE] bridge_3v_toana
+
+* Power supply
+VVSSA VSSA 0 0.0
+VVDDA VDDA VSSA PWL(0 0 0.1m 0 0.2m 3.0)
+
+*-----------------------------------------------------------------------
+* The analog part of the chip is below.
+
+Xhydra SDI_PAD SDO_PAD CSB_PAD SCK_PAD BGP_PAD
++ SDI_CORE SDO_CORE SDO_EN_CORE CSB_CORE SCK_CORE
++ RST bgena VDDA VSSA hydra_v2p0_ana
+
+*-----------------------------------------------------------------------
+* Connection to digital SPI controller and verilog testbench
+
+.MODEL dm_hdl d_hdl(rise_delay=1n fall_delay=1n IC=0 DEBUG=0)
+AHDL [D_SDO D_CSB D_SCK D_SDI D_RST]
++ [A_CSB A_SDI A_SCK d_bgena d_sdoena d_sdopin]
++ trigger dm_hdl
+
+* trigger runs continuously, provides a sync point for the digital simulator.
+
+.MODEL dm_clk d_osc(cntl_array=[0 3] freq_array=[1e6 1e6] duty_cycle=0.5 init_phase=0)
+ACLK VDDA trigger dm_clk
+
+*-----------------------------------------------------------------------
+* Simulation control
+
+.tran 100n 2m
+.end

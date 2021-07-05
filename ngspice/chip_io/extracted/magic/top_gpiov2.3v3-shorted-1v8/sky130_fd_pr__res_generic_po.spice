@@ -1,0 +1,24 @@
+* Copyright 2020 The SkyWater PDK Authors
+*
+* Licensed under the Apache License, Version 2.0 (the "License");
+* you may not use this file except in compliance with the License.
+* You may obtain a copy of the License at
+*
+*     https://www.apache.org/licenses/LICENSE-2.0
+*
+* Unless required by applicable law or agreed to in writing, software
+* distributed under the License is distributed on an "AS IS" BASIS,
+* WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+* See the License for the specific language governing permissions and
+* limitations under the License.
+
+* Corrected model sky130_fd_pr__res_generic_po (the one in the sky130_fd_pr
+* library was commented out, which also caused it not to be converted from
+* the spectre model).
+
+.model sky130_fd_pr__res_generic_po r tc1r = {tc1rsgpu} tc2r = {tc2rsgpu} rsh = {rp1} dw = {"-tol_poly/2-poly_dw/2"} tnom = 30.0
+
+* Resistor model "short" with fixed res=0.01ohm.
+* .model short r res=0.01
+
+

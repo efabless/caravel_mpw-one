@@ -1,0 +1,78 @@
+*** UC SPICE *** , MIN_RESIST 4.0, MIN_CAPAC 0.1FF
+
+* Most models come from here:
+ .lib ~/foss/pdks/sky130A/libs.tech/ngspice/sky130.lib.spice tt
+
+****.include /home/mk/foss/pdks/sky130_fd_pr/models/corners/tt/discrete.spice
+
+* Include chip_io .subckt extracted using Calibre:
+*.include ./chip_io.sky130.spice
+
+ .include ../netlists/sky130_ef_io__gpiov2_pad_wrapped.extracted.ngspice
+
+
+* Correction for the missing res_generic_po device:
+ .include ./sky130_fd_pr__res_generic_po.spice
+
+* This device is also missing from the libraries:
+ .include ./sky130_fd_io__condiode.spice
+ .include ./sky130_fd_pr__model__parasitic__diode_ps2nw.spice 
+ .include ./sky130_fd_pr__model__parasitic__diode_pw2dn.spice
+ .include ./sky130_fd_pr__model__parasitic__diode_ps2dn.spice
+
+***************************************
+Xsky130_ef_io__gpiov2_pad_wrapped 
++ VSS		; VSSD 
++ VSS		; VSSA 
++ VSS		; VSSIO 
++ VSS		; VSSIO_Q 
++ VDD3V3	; VDDIO 
++ VDD3V3	; VDDIO_Q 
++ PAD 		; PAD 
++ OPEN1		; PAD_A_ESD_0_H 
++ ZERO		; IB_MODE_SEL 
++ ONE3V3	; ENABLE_INP_H 
++ ONE3V3	; ENABLE_H 
++ VDD3V3	; VDDA 
++ VDD1V8	; VCCD 
++ ZERO		; OE_N 
++ ONE3V3	; ENABLE_VDDA_H 
++ ZERO		; OVTRIP_SEL 
++ VDD1V8	; VCCHIB 
++ ZERO		; ENABLE_VSWITCH_H 
++ OUT		; OUT 
++ ZERO		; HLD_OVR
++ ONE		; DM[2] 
++ ZERO		; ANALOG_SEL 
++ ONE3V3	; HLD_H_N 
++ ZERO		; ANALOG_EN 
++ ZERO		; INP_DIS 
++ ZERO		; ANALOG_POL 
++ ZERO		; DM[0] 
++ ONE		; DM[1] 
++ ZERO		; SLOW
++ IN		; IN 
++ ONE		; ENABLE_VDDIO 
++ OPEN2		; TIE_LO_ESD 
++ VDD3V3	; VSWITCH 
++ OPEN3		; AMUXBUS_A 
++ OPEN4		; AMUXBUS_B
++ sky130_ef_io__gpiov2_pad_wrapped
+
+
+vvss	vss	0 dc 	0
+vvdd1v8	vdd1v8	0 pwl	0 0 2u 1.8  1m 1.8
+vvdd3v3	vdd3v3	0 pwl	0 0 5u 3.3  1m 3.3
+
+vzero		zero		vss		dc	0
+vone		one		vdd1v8		dc	0
+vone3v3		one3v3		vdd3v3		dc	0
+
+vout		out		0		pwl	0 0 8u 0  8.1u 1.8 11u 1.8 11.1u 0 15u 0
+rload		pad		0		100K
+
+.OPTION RSHUNT=1e15
+.SAVE v(pad) v(out) i(vvdd3v3) i(vvdd1v8) v(vdd3v3) v(vdd1v8)
+.TRAN 1u 15u
+
+.END

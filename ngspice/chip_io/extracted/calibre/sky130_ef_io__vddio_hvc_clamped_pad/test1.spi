@@ -1,0 +1,14 @@
+*** UC SPICE *** , MIN_RESIST 4.0, MIN_CAPAC 0.1FF
+
+* Most models come from here:
+
+ .lib ~/foss/pdks/sky130A/libs.tech/ngspice/sky130.lib.spice tt
+
+vvss		VSS		0 		dc 	0
+vvdd3v3		VDD3V3		0 		pwl	0 0 2u 3.3  1m 3.3
+RL		VDD3V3		0		1
+
+.SAVE   i(vvdd3v3) v(vdd3v3) 
+.TRAN 10n 15u
+
+.END

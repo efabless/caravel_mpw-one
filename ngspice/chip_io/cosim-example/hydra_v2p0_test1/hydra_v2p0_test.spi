@@ -1,0 +1,33 @@
+* Test of hydra_v2p0 in mixed-mode simulation
+* The SPI controller and testbench are in verilog
+* The remainder of the circuit is just a few voltage sources to bias and
+* RC loads.
+
+* Analog <--> digital bridge models
+.MODEL bridge_3V_todig adc_bridge(in_high=2.0 in_low=1.0 rise_delay=100n fall_delay=100n)
+.MODEL bridge_3V_toana dac_bridge(out_high=2.7 out_low=0.3)
+
+* Analog part of the chip (power supply and delayed reset mimicking a POR circuit)
+
+VVSSA VSSA 0 0.0
+VVDDA VDDA VSSA 3.0
+VVRST RST VSSA PWL(0 3 0.2m 3 0.21m 0)
+
+* One would add the analog part of the chip here. . .
+
+.MODEL dm_hdl d_hdl(rise_delay=1n fall_delay=1n IC=0 DEBUG=0)
+Ahdl [D_RST] [d_bgena] trigger_SCK dm_hdl
+
+ATOANA [d_bgena] [bgena] bridge_3v_toana
+
+ATODIG [RST] [D_RST] bridge_3v_todig
+
+* trigger_SCK runs continuously
+
+.MODEL dm_clk d_osc(cntl_array=[0 3] freq_array=[2e6 2e6] duty_cycle=0.5 init_phase=0)
+ACLK VDDA trigger_SCK dm_clk
+
+* Simulation settings
+
+.tran 100n 2m
+.end

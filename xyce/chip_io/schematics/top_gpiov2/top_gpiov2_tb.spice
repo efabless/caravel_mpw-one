@@ -1,0 +1,89 @@
+*** UC SPICE *** , MIN_RESIST 4.0, MIN_CAPAC 0.1FF
+
+* Most models come from here:
+.lib ~/foss/pdks/sky130A/libs.tech/ngspice/sky130.lib.spice tt
+
+* The sky130_fd_io cells are in the sky130-pdk-scratch library which has all files listed here:
+ .include ./io.spice
+
+* Correction for the missing res_generic_po device:
+ .include ./sky130_fd_pr__res_generic_po.spice
+
+* This device is also missing from the libraries:
+ .include ./sky130_fd_io__condiode.spice
+
+*.PININFO ANALOG_EN:I ANALOG_POL:I ANALOG_SEL:I DM[2]:I DM[1]:I
+*.PININFO DM[0]:I ENABLE_H:I ENABLE_INP_H:I ENABLE_VDDA_H:I
+*.PININFO ENABLE_VDDIO:I ENABLE_VSWITCH_H:I HLD_H_N:I HLD_OVR:I
+*.PININFO IB_MODE_SEL:I INP_DIS:I OE_N:I OUT:I SLOW:I VTRIP_SEL:I IN:O
+*.PININFO IN_H:O TIE_HI_ESD:O TIE_LO_ESD:O AMUXBUS_A:B AMUXBUS_B:B
+*.PININFO PAD:B PAD_A_ESD_0_H:B PAD_A_ESD_1_H:B PAD_A_NOESD_H:B VCCD:B
+*.PININFO VCCHIB:B VDDA:B VDDIO:B VDDIO_Q:B VSSA:B VSSD:B VSSIO:B
+*.PININFO VSSIO_Q:B VSWITCH:B
+
+Xsky130_fd_io__top_gpiov2
++ open7	  ; amuxbus_a
++ open8   ; amuxbus_b
++ zero	  ; analog_en
++ zero	  ; analog_pol
++ zero	  ; analog_sel
++ one	  ; dm<2>
++ one	  ; dm<1>
++ zero	  ; dm<0>
++ one3v3  ; enable_h
++ one3v3  ; enable_inp_h
++ one3v3  ; enable_vdda_h
++ one	  ; enable_vddio
++ zero	  ; enable_vswitch_h
++ one3v3  ; hld_h_n
++ zero	  ; hld_ovr
++ zero	  ; ib_mode_sel 
++ in	  ; in
++ open4	  ; in_h
++ zero	  ; inp_dis
++ zero	  ; oe_n
++ out	  ; out
++ pad	  ; pad
++ open1	  ; pad_a_esd_0_h
++ open2	  ; pad_a_esd_1_h
++ open3   ; pad_a_noesd_h
++ zero	  ; slow
++ open5	  ; tie_hi_esd
++ open6   ; tie_lo_esd
++ vdd1v8  ; vccd
++ vdd1v8  ; vcchib
++ vdd3v3  ; vdda
++ vdd3v3  ; vddio
++ vdd3v3  ; vddio_q
++ vss	  ; vssa
++ vss	  ; vssd
++ vss	  ; vssio
++ vss	  ; vssio_q
++ vdd3v3  ; vswitch
++ zero	  ; vtrip_sel
++ sky130_fd_io__top_gpiov2
+
+vvss	vss	0 dc 	0
+vvdd3v3	vdd3v3	0 pwl	0 0 2u 3.3  1m 3.3
+vvdd1v8	vdd1v8	0 pwl	0 0 5u 1.8  1m 1.8
+
+vzero		zero		vss		dc	0
+vone		one		vdd1v8		dc	0
+vone3v3		one3v3		vdd3v3		dc	0
+
+vout		out		0		pwl	0 0 8u 0  8.1u 1.8 11u 1.8 11.1u 0 15u 0
+rload		pad		0		100K
+
+*.OPTION ITL4=10000
+*.OPTION RELTOL=1e-3
+
+.OPTION RSHUNT=1e15
+.SAVE v(pad) v(out) i(vvdd3v3) i(vvdd1v8) v(vdd3v3) v(vdd1v8)
+.TRAN 1u 15u
+
+*.control
+*tran 1u 15u
+*plot v(pad) v(out) i(vvdd3v3) i(vvdd1v8)
+*.endc
+
+.END
