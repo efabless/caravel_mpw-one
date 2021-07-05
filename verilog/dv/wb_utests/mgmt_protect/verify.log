@@ -1,0 +1,13 @@
+make[1]: Entering directory `/home/mk/foss/designs/caravel.mpw-one-final-metal-fix/verilog/dv/wb_utests/mgmt_protect'
+iverilog -DFUNCTIONAL -I /home/mk/foss/pdks/sky130A -I ../../../ -I .. -I ../../..//rtl \
+mgmt_protect_tb.v -o mgmt_protect.vvp
+Starting Iverilog in development mode, version /ef/apps/ivl.p/current
+WARNING: selected non-privileged Iverilog, /ef/apps/ivl.p/current
+vvp mgmt_protect.vvp
+Starting Iverilog in development mode, version /ef/apps/ivl.p/current
+WARNING: selected non-privileged Iverilog, /ef/apps/ivl.p/current
+VCD info: dumpfile mgmt_protect.vcd opened for output.
+Success!
+Monitor: Test Management Protect Passed
+rm mgmt_protect.vvp
+make[1]: Leaving directory `/home/mk/foss/designs/caravel.mpw-one-final-metal-fix/verilog/dv/wb_utests/mgmt_protect'

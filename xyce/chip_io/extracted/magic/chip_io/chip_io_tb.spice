@@ -1,20 +1,10 @@
 *** This is a chip_io smoke test with transient supply ramps
 
 * Most models come from here:
- .lib ~/foss/pdks/sky130A-xyce/libs.tech/ngspice/sky130.lib.spice tt
+* .lib $PDK_ROOT/sky130A-xyce/libs.tech/xyce/sky130.lib.spice tt
+.lib ../../../../../../../pdks/sky130A-xyce/libs.tech/xyce/sky130.lib.spice tt
 
-****.include /home/mk/foss/pdks/sky130_fd_pr/models/corners/tt/discrete.spice
-
-* Include chip_io .subckt extracted using Calibre:
- .include ./chip_io-magic.spice
-
-* This device is also missing from the libraries:
- .include ./sky130_fd_io__condiode.spice
-* .include ./sky130_fd_pr__model__parasitic__diode_ps2nw.spice 
-* .include ./sky130_fd_pr__model__parasitic__diode_pw2dn.spice
-* .include ./sky130_fd_pr__model__parasitic__diode_ps2dn.spice
-* .include ./sky130_fd_pr__diode_pd2nw_05v5.spice
-* .include ./sky130_fd_pr__diode_pw2nd_11v0.spice
+.include "chip_io-magic.spice"
 
 ***************************************
 
@@ -167,46 +157,45 @@ Xchip_io clock clock_core flash_clk flash_clk_core flash_clk_ieb_core flash_clk_
 + vccd1_pad vccd2 vccd2_pad vccd_pad vdda vdda1 vdda1_pad vdda2 vdda2_pad vdda_pad
 + vddio vddio_pad vssa vssa1 vssa1_pad vssa2 vssa2_pad vssa_pad vssd vssd1 vssd1_pad
 + vssd2 vssd2_pad vssd_pad vssio vssio_pad vssio_pad2 vddio_pad2 vssa1_pad2 vdda1_pad2
-**
 + chip_io
 
 ***  
 
-v1		vddio_pad	vdd3v3
-v2		vddio_pad2	vdd3v3
-v3		vssio_pad	vss3v3
-v4		vssio_pad2	vss3v3
-v5		vdda_pad	vdd3v3
-v6		vssa_pad	vss3v3
-v7		vccd_pad	vdd1v8	
-v8		vssd_pad	vss1v8
-v9		vdda1_pad	vdd3v3
-v10		vdda1_pad2	vdd3v3
-v11		vdda2_pad	vdd3v3
-v12		vssa1_pad	vss3v3
-v13		vssa1_pad2	vss3v3
-v14		vssa2_pad	vss3v3
-v15		vccd1_pad	vdd1v8
-v16		vccd2_pad	vdd1v8
-v17		vssd1_pad	vss1v8
-v18		vssd2_pad	vss1v8
+v1		vddio_pad	vdd3v3		0
+v2		vddio_pad2	vdd3v3		0
+v3		vssio_pad	vss3v3		0
+v4		vssio_pad2	vss3v3		0
+v5		vdda_pad	vdd3v3		0
+v6		vssa_pad	vss3v3		0
+v7		vccd_pad	vdd1v8		0
+v8		vssd_pad	vss1v8		0
+v9		vdda1_pad	vdd3v3		0
+v10		vdda1_pad2	vdd3v3		0
+v11		vdda2_pad	vdd3v3		0
+v12		vssa1_pad	vss3v3		0
+v13		vssa1_pad2	vss3v3		0
+v14		vssa2_pad	vss3v3		0
+v15		vccd1_pad	vdd1v8		0
+v16		vccd2_pad	vdd1v8		0
+v17		vssd1_pad	vss1v8		0
+v18		vssd2_pad	vss1v8		0
 
 		
-vvdd3v3		vdd3v3 	      	pwl(	0 	0	2u  3.3  1m 3.3)
+vvdd3v3		vdd3v3 	      	pwl	0 0	2u 3.3v		1m 3.3v
 vvss3p3		vss3v3 	      	dc	0
-vvdd1v8		vdd1v8 	      	pwl( 	0 	0	3u  1.8  1m 1.8)
+vvdd1v8		vdd1v8 	      	pwl 	0 0	3u 1.8v  	1m 1.8v
 vvss1v8		vss1v8 	      	dc	0
 
 
-.OPTION RSHUNT=1e15
-**.OPTION SAVECURRENTS
+*.OPTION RSHUNT=1e15
+*.OPTION SAVECURRENTS
 
 *.SAVE All(v)
-.SAVE 
-+ vdd3v3    
-+ vss3v3
-+ vdd1v8
-+ vss1v8
+*.SAVE 
+*+ vdd3v3    
+*+ vss3v3
+*+ vdd1v8
+*+ vss1v8
 
 .TRAN 10n 2u
 
