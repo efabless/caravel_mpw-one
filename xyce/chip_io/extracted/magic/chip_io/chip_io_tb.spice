@@ -181,9 +181,9 @@ v17		vssd1_pad	vss1v8		0
 v18		vssd2_pad	vss1v8		0
 
 		
-vvdd3v3		vdd3v3 	      	pwl	0 0	2u 3.3v		1m 3.3v
+vvdd3v3		vdd3v3 	      	pwl	0 0v	2u 3.3v		1m 3.3v
 vvss3p3		vss3v3 	      	dc	0
-vvdd1v8		vdd1v8 	      	pwl 	0 0	3u 1.8v  	1m 1.8v
+vvdd1v8		vdd1v8 	      	pwl 	0 0v	3u 1.8v  	1m 1.8v
 vvss1v8		vss1v8 	      	dc	0
 
 
