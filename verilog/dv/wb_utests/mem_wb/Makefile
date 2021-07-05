@@ -14,6 +14,7 @@
 #
 # SPDX-License-Identifier: Apache-2.0
 
+PDK_PATH?=$(PDK_ROOT)/sky130A
 
 
 .SUFFIXES:
@@ -23,7 +24,7 @@ PATTERN = mem_wb
 all:  ${PATTERN:=.vcd}
 
 %.vvp: %_tb.v
-	iverilog -s mem_wb_tb -DFUNCTIONAL -I $(PDK_ROOT)/sky130A -I .. -I ../../../rtl \
+	iverilog -s mem_wb_tb -DFUNCTIONAL -I $(PDK_PATH) -I .. -I ../../../rtl \
 	$< -o $@
 
 %.vcd: %.vvp
