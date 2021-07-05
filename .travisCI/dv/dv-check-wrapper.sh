@@ -15,6 +15,8 @@
 # SPDX-License-Identifier: Apache-2.0
 
 export PDK_PATH=$(pwd)/../pdks/sky130A
+export GCC_PATH=/opt/riscv32i/bin
+export GCC_PREFIX=riscv32-unknown-elf
 
 export TARGET_PATH=$(pwd)
 
@@ -26,7 +28,7 @@ target_id=$2
 bash $RUN_WRAPPER "docker pull efabless/dv_setup:latest"
 
 docker run -it -v $TARGET_PATH:$TARGET_PATH -v $PDK_PATH:$PDK_PATH \
-            -e TARGET_PATH=$TARGET_PATH -e PDK_PATH=$PDK_PATH \
+            -e TARGET_PATH=$TARGET_PATH -e PDK_PATH=$PDK_PATH -e GCC_PATH=$GCC_PATH -e GCC_PREFIX=$GCC_PREFIX\
             -u $(id -u $USER):$(id -g $USER) efabless/dv_setup:latest \
             bash -c "bash $TARGET_PATH/.travisCI/dv/run-dv-$target_dv.sh $PDK_PATH $TARGET_PATH $target_id"
 
