@@ -67,7 +67,7 @@ endif
 ifeq (,$(wildcard $(PDK_ROOT)/sky130A))
 	$(error $(PDK_ROOT)/sky130A not found, please install pdk before running make)
 endif
-ifneq (,$(wildcard $(GCC_PATH)/$(GCC_PREFIX)-gcc ))
+ifeq (,$(wildcard $(GCC_PATH)/$(GCC_PREFIX)-gcc ))
 	$(error $(GCC_PATH)/$(GCC_PREFIX)-gcc is not found, please export GCC_PATH and GCC_PREFIX before running make)
 endif
 
