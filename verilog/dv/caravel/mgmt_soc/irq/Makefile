@@ -16,13 +16,13 @@
 
 FIRMWARE_PATH = ../..
 VERILOG_PATH = ../../../..
+PDK_PATH = $(PDK_ROOT)/sky130A
 RTL_PATH = $(VERILOG_PATH)/rtl
 IP_PATH = ../../../../ip
 BEHAVIOURAL_MODELS = ../../ 
 
 GCC_PATH?=/ef/apps/bin
 GCC_PREFIX?=riscv32-unknown-elf
-PDK_PATH?=$(PDK_ROOT)/sky130A
 
 SIM?=RTL
 
@@ -36,16 +36,16 @@ ex:  ${PATTERN:=.hex}
 
 %.vvp: %_tb.v %.hex
 ifeq ($(SIM),RTL)
-	iverilog -DFUNCTIONAL -DSIM -I $(BEHAVIOURAL_MODELS) \
+	iverilog -Ttyp -DFUNCTIONAL -DSIM -I $(BEHAVIOURAL_MODELS) \
 	-I $(PDK_PATH) -I $(IP_PATH) -I $(RTL_PATH) \
 	$< -o $@ 
 else  
-	iverilog -DFUNCTIONAL -DSIM -DGL -I $(BEHAVIOURAL_MODELS) \
+	iverilog -Ttyp -DFUNCTIONAL -DSIM -DGL -I $(BEHAVIOURAL_MODELS) \
 	-I $(PDK_PATH) -I $(IP_PATH) -I $(VERILOG_PATH) -I $(RTL_PATH) \
 	$< -o $@ 
 endif
 
-%.vcd: %.vvp
+%.vcd: %.vvp check-env
 	vvp $<
 
 %.elf: %.c sections.lds start.S
@@ -58,6 +58,17 @@ endif
 
 %.bin: %.elf
 	${GCC_PATH}/${GCC_PREFIX}-objcopy -O binary $< /dev/stdout | tail -c +1048577 > $@
+
+check-env:
+ifndef PDK_ROOT
+	$(error PDK_ROOT is undefined, please export it before running make)
+endif
+ifeq (,$(wildcard $(PDK_ROOT)/sky130A))
+	$(error $(PDK_ROOT)/sky130A not found, please install pdk before running make)
+endif
+ifeq (,$(wildcard $(GCC_PATH)/$(GCC_PREFIX)-gcc ))
+	$(error $(GCC_PATH)/$(GCC_PREFIX)-gcc is not found, please export GCC_PATH and GCC_PREFIX before running make)
+endif
 
 # ---- Clean ----
 
