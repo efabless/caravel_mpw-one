@@ -16,6 +16,8 @@
 export TARGET_PATH=$(pwd)
 cd ../
 export PDK_PATH=$(pwd)/pdks/sky130A
+export PDK_ROOT=$(pwd)/pdks
+
 cd $TARGET_PATH
 
 export RUN_WRAPPER=$TARGET_PATH/.travisCI/utils/run_wrapper.sh
@@ -25,8 +27,8 @@ target_id=$2
 
 bash $RUN_WRAPPER "docker pull efabless/dv_setup:latest"
 
-docker run -it -v $TARGET_PATH:$TARGET_PATH -v $PDK_PATH:$PDK_PATH \
-            -e TARGET_PATH=$TARGET_PATH -e PDK_PATH=$PDK_PATH \
+docker run -it -v $TARGET_PATH:$TARGET_PATH -v $PDK_PATH:$PDK_PATH -v $PDK_ROOT:$PDK_ROOT\
+            -e TARGET_PATH=$TARGET_PATH -e PDK_PATH=$PDK_PATH -e PDK_ROOT=$PDK_ROOT \
             -u $(id -u $USER):$(id -g $USER) efabless/dv_setup:latest \
             bash -c "bash $TARGET_PATH/.travisCI/dv/run-dv-$target_dv.sh $PDK_PATH $TARGET_PATH $target_id"
 

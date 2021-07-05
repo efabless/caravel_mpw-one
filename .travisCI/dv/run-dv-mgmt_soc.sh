@@ -18,8 +18,8 @@ PDK_PATH=$1
 TARGET_PATH=$2
 ID=$3
 MGMT_SOC_PATTERNS_1=(gpio perf hkspi sysctrl)
-MGMT_SOC_PATTERNS_2=(mprj_ctrl pass_thru storage)
-MGMT_SOC_PATTERNS_3=(uart)
+MGMT_SOC_PATTERNS_2=(mprj_ctrl pass_thru user_pass_thru storage)
+MGMT_SOC_PATTERNS_3=(uart irq)
 MGMT_SOC_PATTERNS_4=(timer timer2 caravan)
 MGMT_SOC_PATTERNS_5=(mem pll qspi)
 
@@ -37,7 +37,7 @@ case $ID in
   2)
     bash $TARGET_PATH/.travisCI/dv/run-dv-set.sh $PDK_PATH "${MGMT_SOC_PATTERNS_2[@]}" caravel mgmt_soc 2 $TARGET_PATH
     len=${#MGMT_SOC_PATTERNS_2[@]}
-    export TOTAL=16
+    export TOTAL=18
     ;;
 
   3)
