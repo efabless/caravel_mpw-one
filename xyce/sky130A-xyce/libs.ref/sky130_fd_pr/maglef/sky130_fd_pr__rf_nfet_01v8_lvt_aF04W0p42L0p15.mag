@@ -1,0 +1,82 @@
+magic
+tech sky130A
+magscale 1 2
+timestamp 1623348513
+<< pwell >>
+rect 78 130 89 137
+<< obsli1 >>
+rect 101 201 371 217
+rect 101 167 111 201
+rect 145 167 183 201
+rect 217 167 255 201
+rect 289 167 327 201
+rect 361 167 371 201
+rect 101 151 371 167
+rect 47 94 81 110
+rect 47 44 81 60
+rect 133 44 167 110
+rect 219 94 253 110
+rect 219 44 253 60
+rect 305 44 339 110
+rect 391 94 425 110
+rect 391 44 425 60
+<< obsli1c >>
+rect 111 167 145 201
+rect 183 167 217 201
+rect 255 167 289 201
+rect 327 167 361 201
+rect 47 60 81 94
+rect 219 60 253 94
+rect 391 60 425 94
+<< metal1 >>
+rect 99 201 373 213
+rect 99 167 111 201
+rect 145 167 183 201
+rect 217 167 255 201
+rect 289 167 327 201
+rect 361 167 373 201
+rect 99 155 373 167
+rect 41 94 87 110
+rect 41 60 47 94
+rect 81 60 87 94
+rect 41 -29 87 60
+rect 213 94 259 110
+rect 213 60 219 94
+rect 253 60 259 94
+rect 213 -29 259 60
+rect 385 94 431 110
+rect 385 60 391 94
+rect 425 60 431 94
+rect 385 -29 431 60
+rect 41 -89 431 -29
+<< obsm1 >>
+rect 124 42 176 110
+rect 296 42 348 110
+<< obsm2 >>
+rect 122 41 178 118
+rect 294 41 350 115
+<< metal3 >>
+rect 117 45 355 111
+<< labels >>
+rlabel metal3 s 117 45 355 111 6 DRAIN
+port 1 nsew
+rlabel metal1 s 99 155 373 213 6 GATE
+port 2 nsew
+rlabel metal1 s 385 -29 431 110 6 SOURCE
+port 3 nsew
+rlabel metal1 s 213 -29 259 110 6 SOURCE
+port 3 nsew
+rlabel metal1 s 41 -29 87 110 6 SOURCE
+port 3 nsew
+rlabel metal1 s 41 -89 431 -29 8 SOURCE
+port 3 nsew
+rlabel pwell s 78 130 89 137 6 SUBSTRATE
+port 4 nsew
+<< properties >>
+string LEFclass BLOCK
+string FIXED_BBOX 36 -89 436 217
+string LEFview TRUE
+string GDS_FILE $PDKPATH/libs.ref/sky130_fd_pr/gds/sky130_fd_pr.gds
+string GDS_END 5814518
+string GDS_START 5808984
+<< end >>

@@ -1,0 +1,19 @@
+v { version=2.9.8 file_version=1.2}
+G {}
+K {type=primitive
+format="@name @@KAPWR @VGND @VNB @VPB @VPWR @prefix\\\\lpflow_decapkapwr_6"
+template="name=x1 VGND=VGND VNB=VNB VPB=VPB VPWR=VPWR prefix=sky130_fd_sc_hd__ "
+extra="VGND VNB VPB VPWR prefix"
+highlight=true}
+V {}
+S {}
+E {}
+L 4 -70 -10 70 -10 {}
+L 4 -70 10 70 10 {}
+L 4 -70 -10 -70 10 {}
+L 4 70 -10 70 10 {}
+L 4 -90 0 -70 0 {}
+B 5 -92.5 -2.5 -87.5 2.5 {name=KAPWR dir=in }
+T {@symname} 0 -36 0 0 0.3 0.3 {hcenter=true}
+T {@name} 75 -22 0 0 0.2 0.2 {}
+T {KAPWR} -65 -4 0 0 0.2 0.2 {}

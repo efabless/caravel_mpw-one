@@ -1,0 +1,100 @@
+magic
+tech sky130A
+magscale 1 2
+timestamp 1623348513
+<< pwell >>
+rect 77 128 90 142
+<< obsli1 >>
+rect 119 201 525 217
+rect 119 167 125 201
+rect 159 167 197 201
+rect 231 167 269 201
+rect 303 167 341 201
+rect 375 167 413 201
+rect 447 167 485 201
+rect 519 167 525 201
+rect 119 151 525 167
+rect 47 101 81 117
+rect 47 51 81 67
+rect 133 51 167 117
+rect 219 101 253 117
+rect 219 51 253 67
+rect 305 51 339 117
+rect 391 101 425 117
+rect 391 51 425 67
+rect 477 51 511 117
+rect 563 101 597 117
+rect 563 51 597 67
+<< obsli1c >>
+rect 125 167 159 201
+rect 197 167 231 201
+rect 269 167 303 201
+rect 341 167 375 201
+rect 413 167 447 201
+rect 485 167 519 201
+rect 47 67 81 101
+rect 219 67 253 101
+rect 391 67 425 101
+rect 563 67 597 101
+<< metal1 >>
+rect 113 201 531 213
+rect 113 167 125 201
+rect 159 167 197 201
+rect 231 167 269 201
+rect 303 167 341 201
+rect 375 167 413 201
+rect 447 167 485 201
+rect 519 167 531 201
+rect 113 155 531 167
+rect 41 101 87 117
+rect 41 67 47 101
+rect 81 67 87 101
+rect 41 -29 87 67
+rect 213 101 259 117
+rect 213 67 219 101
+rect 253 67 259 101
+rect 213 -29 259 67
+rect 385 101 431 117
+rect 385 67 391 101
+rect 425 67 431 101
+rect 385 -29 431 67
+rect 557 101 603 117
+rect 557 67 563 101
+rect 597 67 603 101
+rect 557 -29 603 67
+rect 41 -89 603 -29
+<< obsm1 >>
+rect 124 49 176 117
+rect 296 49 348 117
+rect 468 49 520 117
+<< obsm2 >>
+rect 122 41 178 115
+rect 294 41 350 115
+rect 466 41 522 115
+<< metal3 >>
+rect 117 45 527 111
+<< labels >>
+rlabel metal3 s 117 45 527 111 6 DRAIN
+port 1 nsew
+rlabel metal1 s 113 155 531 213 6 GATE
+port 2 nsew
+rlabel metal1 s 557 -29 603 117 6 SOURCE
+port 3 nsew
+rlabel metal1 s 385 -29 431 117 6 SOURCE
+port 3 nsew
+rlabel metal1 s 213 -29 259 117 6 SOURCE
+port 3 nsew
+rlabel metal1 s 41 -29 87 117 6 SOURCE
+port 3 nsew
+rlabel metal1 s 41 -89 603 -29 8 SOURCE
+port 3 nsew
+rlabel pwell s 77 128 90 142 6 SUBSTRATE
+port 4 nsew
+<< properties >>
+string LEFclass BLOCK
+string FIXED_BBOX 36 -89 608 217
+string LEFview TRUE
+string GDS_FILE $PDKPATH/libs.ref/sky130_fd_pr/gds/sky130_fd_pr.gds
+string GDS_END 5837486
+string GDS_START 5829872
+<< end >>

@@ -1,0 +1,32 @@
+magic
+tech sky130A
+magscale 1 2
+timestamp 1623348512
+<< checkpaint >>
+rect -1260 -1260 4626 4330
+<< pwell >>
+rect 1179 1269 1189 1279
+<< metal2 >>
+rect 648 1517 679 1546
+rect 839 1438 863 1466
+<< metal5 >>
+rect 1001 546 1092 637
+use sky130_fd_pr__cap_vpp_08p6x07p8_m1m2m3_shieldl1m5_floatm4  sky130_fd_pr__cap_vpp_08p6x07p8_m1m2m3_shieldl1m5_floatm4_0
+array 0 1 1650 0 1 1502
+timestamp 1623348512
+transform 1 0 0 0 1 0
+box 0 0 1716 1568
+<< labels >>
+flabel metal5 s 1001 546 1092 637 0 FreeSans 2000 0 0 0 M5
+port 1 nsew
+flabel pwell s 1179 1269 1189 1279 0 FreeSans 2000 0 0 0 SUB
+port 2 nsew
+flabel metal2 s 648 1517 679 1546 0 FreeSans 600 0 0 0 C0
+port 3 nsew
+flabel metal2 s 839 1438 863 1466 0 FreeSans 600 0 0 0 C1
+port 4 nsew
+<< properties >>
+string GDS_FILE $PDKPATH/libs.ref/sky130_fd_pr/gds/sky130_fd_pr.gds
+string GDS_END 380426
+string GDS_START 379846
+<< end >>

@@ -1,0 +1,54 @@
+v {xschem version=2.9.8 file_version=1.2}
+K {type=subcircuit
+format="@name @pinlist @symname"
+template="name=x1"
+}
+
+T {@symname} -54 -6 0 0 0.3 0.3 {}
+T {@name} 135 -122 0 0 0.2 0.2 {}
+L 4 -130 -110 130 -110 {}
+L 4 -130 110 130 110 {}
+L 4 -130 -110 -130 110 {}
+L 4 130 -110 130 110 {}
+B 5 -152.5 -102.5 -147.5 -97.5 {name=clk dir=in name=p2 }
+L 4 -150 -100 -130 -100 {}
+T {clk} -125 -104 0 0 0.2 0.2 {}
+B 5 -152.5 -82.5 -147.5 -77.5 {name=rst dir=in name=p3 }
+L 4 -150 -80 -130 -80 {}
+T {rst} -125 -84 0 0 0.2 0.2 {}
+B 5 -152.5 -62.5 -147.5 -57.5 {name=alucontrol[2:0] dir=in name=p5 }
+L 4 -150 -60 -130 -60 {}
+T {alucontrol[2:0]} -125 -64 0 0 0.2 0.2 {}
+B 5 -152.5 -42.5 -147.5 -37.5 {name=alu_src dir=in name=p6 }
+L 4 -150 -40 -130 -40 {}
+T {alu_src} -125 -44 0 0 0.2 0.2 {}
+B 5 -152.5 -22.5 -147.5 -17.5 {name=branch dir=in name=p7 }
+L 4 -150 -20 -130 -20 {}
+T {branch} -125 -24 0 0 0.2 0.2 {}
+B 5 -152.5 -2.5 -147.5 2.5 {name=jump dir=in name=p8 }
+L 4 -150 0 -130 0 {}
+T {jump} -125 -4 0 0 0.2 0.2 {}
+B 5 -152.5 17.5 -147.5 22.5 {name=mem_to_reg dir=in name=p9 }
+L 4 -150 20 -130 20 {}
+T {mem_to_reg} -125 16 0 0 0.2 0.2 {}
+B 5 147.5 -102.5 152.5 -97.5 {name=pc[31:0] verilog_type=reg dir=out name=p15 }
+L 4 130 -100 150 -100 {}
+T {pc[31:0]} 125 -104 0 1 0.2 0.2 {}
+B 5 -152.5 37.5 -147.5 42.5 {name=reg_dst dir=in name=p11 }
+L 4 -150 40 -130 40 {}
+T {reg_dst} -125 36 0 0 0.2 0.2 {}
+B 5 147.5 -82.5 152.5 -77.5 {name=alu_result[31:0] dir=out name=p16 }
+L 4 130 -80 150 -80 {}
+T {alu_result[31:0]} 125 -84 0 1 0.2 0.2 {}
+B 5 -152.5 57.5 -147.5 62.5 {name=reg_write dir=in name=p12 }
+L 4 -150 60 -130 60 {}
+T {reg_write} -125 56 0 0 0.2 0.2 {}
+B 5 147.5 -62.5 152.5 -57.5 {name=write_data[31:0] dir=out name=p17 }
+L 4 130 -60 150 -60 {}
+T {write_data[31:0]} 125 -64 0 1 0.2 0.2 {}
+B 5 -152.5 77.5 -147.5 82.5 {name=instr[31:0] dir=in name=p14 }
+L 4 -150 80 -130 80 {}
+T {instr[31:0]} -125 76 0 0 0.2 0.2 {}
+B 5 -152.5 97.5 -147.5 102.5 {name=read_data[31:0] dir=in name=p1 }
+L 4 -150 100 -130 100 {}
+T {read_data[31:0]} -125 96 0 0 0.2 0.2 {}

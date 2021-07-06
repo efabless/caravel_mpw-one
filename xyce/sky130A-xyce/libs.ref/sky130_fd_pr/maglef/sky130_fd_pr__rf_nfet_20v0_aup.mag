@@ -1,0 +1,39 @@
+magic
+tech sky130A
+magscale 1 2
+timestamp 1623348513
+<< obsli1 >>
+rect -1140 7100 1290 7182
+rect -1140 -1100 -1058 7100
+rect -962 9 -896 5991
+rect 8 43 142 5957
+rect 1046 9 1112 5991
+rect -296 -857 460 -643
+rect 1208 -1100 1290 7100
+rect -1140 -1182 1290 -1100
+<< obsm1 >>
+rect -1140 7100 1290 7182
+rect -1140 6519 -1058 7100
+tri -1058 6519 -477 7100 nw
+tri 627 6519 1208 7100 ne
+rect 1208 6519 1290 7100
+rect -958 19 -900 5981
+rect 10 55 140 5945
+rect 1050 19 1108 5981
+rect -1140 -1100 -1058 -519
+tri -1058 -1100 -477 -519 sw
+rect -296 -785 460 -643
+tri 627 -1100 1208 -519 se
+rect 1208 -1100 1290 -519
+rect -1140 -1182 1290 -1100
+<< obsm2 >>
+rect 11 57 139 5945
+rect -296 -857 460 -643
+<< properties >>
+string LEFclass BLOCK
+string FIXED_BBOX -1140 -1182 1290 7182
+string LEFview TRUE
+string GDS_FILE $PDKPATH/libs.ref/sky130_fd_pr/gds/sky130_fd_pr.gds
+string GDS_END 7288838
+string GDS_START 7183566
+<< end >>

@@ -1,0 +1,66 @@
+magic
+tech sky130A
+magscale 1 2
+timestamp 1623348572
+<< metal4 >>
+rect 0 10625 16000 11221
+rect 0 9673 16000 10269
+<< obsm4 >>
+rect 0 11301 16000 40000
+rect 0 10349 16000 10545
+rect 0 407 16000 9593
+<< metal5 >>
+rect 2220 20879 14760 33392
+rect 0 14007 16000 18997
+rect 0 12837 16000 13687
+rect 0 11667 16000 12517
+rect 0 9547 16000 11347
+rect 0 8337 16000 9227
+rect 0 6397 16000 7047
+rect 0 5187 16000 6077
+rect 0 3007 16000 3657
+rect 0 1797 16000 2687
+rect 0 427 16000 1477
+<< obsm5 >>
+rect 0 33712 16000 40000
+rect 0 20559 1900 33712
+rect 15080 20559 16000 33712
+rect 0 19317 16000 20559
+rect 0 7367 16000 8017
+rect 0 3977 16000 4867
+<< labels >>
+rlabel metal4 s 0 10625 16000 11221 6 AMUXBUS_A
+port 1 nsew signal default
+rlabel metal4 s 0 9673 16000 10269 6 AMUXBUS_B
+port 2 nsew signal default
+rlabel metal5 s 2220 20879 14760 33392 6 PAD
+port 3 nsew signal default
+rlabel metal5 s 0 1797 16000 2687 6 VCCD
+port 4 nsew power bidirectional
+rlabel metal5 s 0 427 16000 1477 6 VCCHIB
+port 5 nsew power bidirectional
+rlabel metal5 s 0 3007 16000 3657 6 VDDA
+port 6 nsew power bidirectional
+rlabel metal5 s 0 14007 16000 18997 6 VDDIO
+port 7 nsew power bidirectional
+rlabel metal5 s 0 12837 16000 13687 6 VDDIO_Q
+port 8 nsew power bidirectional
+rlabel metal5 s 0 9547 16000 11347 6 VSSA
+port 9 nsew ground bidirectional
+rlabel metal5 s 0 8337 16000 9227 6 VSSD
+port 10 nsew ground bidirectional
+rlabel metal5 s 0 5187 16000 6077 6 VSSIO
+port 11 nsew ground bidirectional
+rlabel metal5 s 0 11667 16000 12517 6 VSSIO_Q
+port 12 nsew ground bidirectional
+rlabel metal5 s 0 6397 16000 7047 6 VSWITCH
+port 13 nsew power bidirectional
+<< properties >>
+string LEFclass PAD
+string FIXED_BBOX 0 0 16000 40000
+string LEFsymmetry X Y R90
+string LEFview TRUE
+string GDS_FILE $PDKPATH/libs.ref/sky130_fd_io/gds/sky130_ef_io__gpiov2_pad_wrapped.gds
+string GDS_END 8232698
+string GDS_START 8058808
+<< end >>

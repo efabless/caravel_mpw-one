@@ -1,0 +1,24 @@
+magic
+tech sky130A
+magscale 1 2
+timestamp 1623348570
+<< checkpaint >>
+rect -1260 -1260 3530 1664
+<< metal1 >>
+rect 0 1 2 403
+rect 2268 1 2270 403
+use sky130_fd_io__res250_sub_small  sky130_fd_io__res250_sub_small_0
+timestamp 1623348570
+transform 1 0 0 0 1 0
+box 0 0 2270 404
+<< labels >>
+flabel comment s 1156 206 1156 206 0 FreeSans 400 0 0 0 250 OHM
+flabel metal1 s 0 1 2 403 0 FreeSans 200 0 0 0 PAD
+port 1 nsew
+flabel metal1 s 2268 1 2270 403 0 FreeSans 400 0 0 0 ROUT
+port 2 nsew
+<< properties >>
+string GDS_FILE $PDKPATH/libs.ref/sky130_fd_io/gds/sky130_ef_io__gpiov2_pad_wrapped.gds
+string GDS_END 3519882
+string GDS_START 3518860
+<< end >>

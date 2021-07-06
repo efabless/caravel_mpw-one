@@ -1,0 +1,280 @@
+magic
+tech sky130A
+magscale 1 2
+timestamp 1623348572
+<< metal4 >>
+rect 0 35890 287 40733
+rect 0 14740 529 19733
+rect 0 13550 296 14440
+rect 0 12380 325 13270
+rect 0 12014 4635 12080
+rect 0 11358 4582 11954
+rect 0 11062 4310 11298
+rect 0 10406 4187 11002
+rect 0 10280 3915 10346
+rect 0 9050 295 9980
+rect 0 8080 267 8770
+rect 0 7110 277 7800
+rect 0 5900 320 6830
+rect 0 4690 305 5620
+rect 0 3720 294 4410
+rect 0 2510 757 3440
+rect 0 1140 470 2230
+rect 407 0 1497 254
+rect 1777 0 2707 254
+rect 2987 0 3677 251
+rect 3957 0 4887 254
+rect 5167 0 6097 254
+rect 6377 0 7067 254
+rect 7347 0 8037 254
+rect 8317 0 9247 254
+rect 9547 0 9613 4648
+rect 9673 0 10269 4175
+rect 10329 0 10565 4311
+rect 10625 0 11221 3695
+rect 11281 0 11347 5368
+rect 11647 0 12537 254
+rect 12817 0 13707 254
+rect 14007 0 19000 304
+rect 35157 0 40000 254
+<< obsm4 >>
+rect 367 35810 40000 40733
+rect 0 19813 40000 35810
+rect 609 14660 40000 19813
+rect 0 14520 40000 14660
+rect 376 13470 40000 14520
+rect 0 13350 40000 13470
+rect 405 12300 40000 13350
+rect 0 12160 40000 12300
+rect 4715 11934 40000 12160
+rect 4662 11278 40000 11934
+rect 4390 10982 40000 11278
+rect 4267 10326 40000 10982
+rect 3995 10200 40000 10326
+rect 0 10060 40000 10200
+rect 375 8970 40000 10060
+rect 0 8850 40000 8970
+rect 347 8000 40000 8850
+rect 0 7880 40000 8000
+rect 357 7030 40000 7880
+rect 0 6910 40000 7030
+rect 400 5820 40000 6910
+rect 0 5700 40000 5820
+rect 385 5448 40000 5700
+rect 385 4728 11201 5448
+rect 385 4610 9467 4728
+rect 0 4490 9467 4610
+rect 374 3640 9467 4490
+rect 0 3520 9467 3640
+rect 837 2430 9467 3520
+rect 0 2310 9467 2430
+rect 550 1060 9467 2310
+rect 0 334 9467 1060
+rect 0 251 327 334
+rect 1577 251 1697 334
+rect 2787 331 3877 334
+rect 2787 251 2907 331
+rect 3757 251 3877 331
+rect 4967 251 5087 334
+rect 6177 251 6297 334
+rect 7147 251 7267 334
+rect 8117 251 8237 334
+rect 9327 251 9467 334
+rect 9693 4391 11201 4728
+rect 9693 4255 10249 4391
+rect 10645 3775 11201 4391
+rect 11427 384 40000 5448
+rect 11427 334 13927 384
+rect 11427 251 11567 334
+rect 12617 251 12737 334
+rect 13787 251 13927 334
+rect 19080 334 40000 384
+rect 19080 251 35077 334
+<< metal5 >>
+rect 0 35890 287 40733
+rect 0 14740 529 19730
+rect 0 13570 296 14420
+rect 0 12400 325 13250
+rect 0 10280 4631 12080
+rect 0 9070 295 9960
+rect 0 8100 267 8750
+rect 0 7130 277 7780
+rect 0 5920 320 6810
+rect 0 4710 305 5600
+rect 0 3740 294 4390
+rect 0 2530 757 3420
+rect 0 1160 470 2210
+rect 427 0 1477 254
+rect 1797 0 2687 254
+rect 3007 0 3657 251
+rect 3977 0 4867 254
+rect 5187 0 6077 254
+rect 6397 0 7047 254
+rect 7368 0 8017 254
+rect 8337 0 9227 254
+rect 9547 0 11347 5364
+rect 11667 0 12517 254
+rect 12837 0 13687 254
+rect 14007 0 18997 304
+rect 35157 0 40000 254
+<< obsm5 >>
+rect 607 35570 40000 40733
+rect 0 20050 40000 35570
+rect 849 14420 40000 20050
+rect 616 13570 40000 14420
+rect 645 12400 40000 13570
+rect 4951 9960 40000 12400
+rect 615 8750 40000 9960
+rect 587 8100 40000 8750
+rect 597 7130 40000 8100
+rect 640 5684 40000 7130
+rect 640 5600 9227 5684
+rect 625 4390 9227 5600
+rect 614 3740 9227 4390
+rect 1077 2210 9227 3740
+rect 790 840 9227 2210
+rect 0 574 9227 840
+rect 0 0 107 574
+rect 3007 571 3657 574
+rect 11667 624 40000 5684
+rect 11667 574 13687 624
+rect 19317 574 40000 624
+rect 19317 0 34837 574
+<< labels >>
+rlabel metal4 s 0 11358 4582 11954 6 AMUXBUS_A
+port 1 nsew signal bidirectional
+rlabel metal4 s 10625 0 11221 3695 6 AMUXBUS_A
+port 1 nsew signal bidirectional
+rlabel metal4 s 0 10406 4187 11002 6 AMUXBUS_B
+port 2 nsew signal bidirectional
+rlabel metal4 s 9673 0 10269 4175 6 AMUXBUS_B
+port 2 nsew signal bidirectional
+rlabel metal4 s 0 2510 757 3440 6 VCCD
+port 3 nsew signal bidirectional
+rlabel metal4 s 1777 0 2707 254 6 VCCD
+port 3 nsew signal bidirectional
+rlabel metal5 s 0 2530 757 3420 6 VCCD
+port 3 nsew signal bidirectional
+rlabel metal5 s 1797 0 2687 254 6 VCCD
+port 3 nsew signal bidirectional
+rlabel metal4 s 0 1140 470 2230 6 VCCHIB
+port 4 nsew signal bidirectional
+rlabel metal4 s 407 0 1497 254 6 VCCHIB
+port 4 nsew signal bidirectional
+rlabel metal5 s 0 1160 470 2210 6 VCCHIB
+port 4 nsew signal bidirectional
+rlabel metal5 s 427 0 1477 254 6 VCCHIB
+port 4 nsew signal bidirectional
+rlabel metal4 s 0 3720 294 4410 6 VDDA
+port 5 nsew signal bidirectional
+rlabel metal4 s 2987 0 3677 251 6 VDDA
+port 5 nsew signal bidirectional
+rlabel metal5 s 0 3740 294 4390 6 VDDA
+port 5 nsew signal bidirectional
+rlabel metal5 s 3007 0 3657 251 6 VDDA
+port 5 nsew signal bidirectional
+rlabel metal4 s 0 4690 305 5620 6 VDDIO
+port 6 nsew signal bidirectional
+rlabel metal4 s 0 14740 529 19733 6 VDDIO
+port 6 nsew signal bidirectional
+rlabel metal4 s 3957 0 4887 254 6 VDDIO
+port 6 nsew signal bidirectional
+rlabel metal4 s 14007 0 19000 304 6 VDDIO
+port 6 nsew signal bidirectional
+rlabel metal5 s 0 4710 305 5600 6 VDDIO
+port 6 nsew signal bidirectional
+rlabel metal5 s 0 14740 529 19730 6 VDDIO
+port 6 nsew signal bidirectional
+rlabel metal5 s 3977 0 4867 254 6 VDDIO
+port 6 nsew signal bidirectional
+rlabel metal5 s 14007 0 18997 304 6 VDDIO
+port 6 nsew signal bidirectional
+rlabel metal4 s 0 13550 296 14440 6 VDDIO_Q
+port 7 nsew signal bidirectional
+rlabel metal4 s 12817 0 13707 254 6 VDDIO_Q
+port 7 nsew signal bidirectional
+rlabel metal5 s 0 13570 296 14420 6 VDDIO_Q
+port 7 nsew signal bidirectional
+rlabel metal5 s 12837 0 13687 254 6 VDDIO_Q
+port 7 nsew signal bidirectional
+rlabel metal4 s 0 8080 267 8770 6 VSSA
+port 8 nsew signal bidirectional
+rlabel metal4 s 0 10280 3915 10346 6 VSSA
+port 8 nsew signal bidirectional
+rlabel metal4 s 0 11062 4310 11298 6 VSSA
+port 8 nsew signal bidirectional
+rlabel metal4 s 0 12014 4635 12080 6 VSSA
+port 8 nsew signal bidirectional
+rlabel metal4 s 7347 0 8037 254 6 VSSA
+port 8 nsew signal bidirectional
+rlabel metal4 s 9547 0 9613 4648 6 VSSA
+port 8 nsew signal bidirectional
+rlabel metal4 s 10329 0 10565 4311 6 VSSA
+port 8 nsew signal bidirectional
+rlabel metal4 s 11281 0 11347 5368 6 VSSA
+port 8 nsew signal bidirectional
+rlabel metal5 s 0 8100 267 8750 6 VSSA
+port 8 nsew signal bidirectional
+rlabel metal5 s 0 10280 4631 12080 6 VSSA
+port 8 nsew signal bidirectional
+rlabel metal5 s 126 11137 128 11139 6 VSSA
+port 8 nsew signal bidirectional
+rlabel metal5 s 7368 0 8017 254 6 VSSA
+port 8 nsew signal bidirectional
+rlabel metal5 s 9547 0 11347 5364 6 VSSA
+port 8 nsew signal bidirectional
+rlabel metal5 s 10257 126 10259 128 6 VSSA
+port 8 nsew signal bidirectional
+rlabel metal4 s 0 9050 295 9980 6 VSSD
+port 9 nsew signal bidirectional
+rlabel metal4 s 8317 0 9247 254 6 VSSD
+port 9 nsew signal bidirectional
+rlabel metal5 s 0 9070 295 9960 6 VSSD
+port 9 nsew signal bidirectional
+rlabel metal5 s 8337 0 9227 254 6 VSSD
+port 9 nsew signal bidirectional
+rlabel metal4 s 0 35890 287 40733 6 VSSIO
+port 10 nsew signal bidirectional
+rlabel metal4 s 0 5900 320 6830 6 VSSIO
+port 10 nsew signal bidirectional
+rlabel metal4 s 126 38906 128 38908 6 VSSIO
+port 10 nsew signal bidirectional
+rlabel metal4 s 35157 0 40000 254 6 VSSIO
+port 10 nsew signal bidirectional
+rlabel metal4 s 38173 126 38175 128 6 VSSIO
+port 10 nsew signal bidirectional
+rlabel metal4 s 5167 0 6097 254 6 VSSIO
+port 10 nsew signal bidirectional
+rlabel metal5 s 0 35890 287 40733 6 VSSIO
+port 10 nsew signal bidirectional
+rlabel metal5 s 0 5920 320 6810 6 VSSIO
+port 10 nsew signal bidirectional
+rlabel metal5 s 35157 0 40000 254 6 VSSIO
+port 10 nsew signal bidirectional
+rlabel metal5 s 5187 0 6077 254 6 VSSIO
+port 10 nsew signal bidirectional
+rlabel metal4 s 0 12380 325 13270 6 VSSIO_Q
+port 11 nsew signal bidirectional
+rlabel metal4 s 11647 0 12537 254 6 VSSIO_Q
+port 11 nsew signal bidirectional
+rlabel metal5 s 0 12400 325 13250 6 VSSIO_Q
+port 11 nsew signal bidirectional
+rlabel metal5 s 11667 0 12517 254 6 VSSIO_Q
+port 11 nsew signal bidirectional
+rlabel metal4 s 0 7110 277 7800 6 VSWITCH
+port 12 nsew signal bidirectional
+rlabel metal4 s 6377 0 7067 254 6 VSWITCH
+port 12 nsew signal bidirectional
+rlabel metal5 s 0 7130 277 7780 6 VSWITCH
+port 12 nsew signal bidirectional
+rlabel metal5 s 6397 0 7047 254 6 VSWITCH
+port 12 nsew signal bidirectional
+<< properties >>
+string LEFclass PAD
+string FIXED_BBOX 0 0 40000 40733
+string LEFsymmetry X Y R90
+string LEFview TRUE
+string GDS_FILE $PDKPATH/libs.ref/sky130_fd_io/gds/sky130_fd_io.gds
+string GDS_END 35676190
+string GDS_START 35411134
+<< end >>

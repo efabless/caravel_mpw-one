@@ -1,0 +1,22 @@
+magic
+tech sky130A
+magscale 1 2
+timestamp 1623348570
+<< checkpaint >>
+rect -1288 -1260 2888 1289
+use sky130_fd_pr__hvdfl1sd__example_55959141808122  sky130_fd_pr__hvdfl1sd__example_55959141808122_0
+timestamp 1623348570
+transform -1 0 0 0 1 0
+box 0 0 1 1
+use sky130_fd_pr__hvdfl1sd__example_55959141808122  sky130_fd_pr__hvdfl1sd__example_55959141808122_1
+timestamp 1623348570
+transform 1 0 1600 0 1 0
+box 0 0 1 1
+<< labels >>
+flabel comment s 1628 29 1628 29 0 FreeSans 300 0 0 0 D
+flabel comment s -28 29 -28 29 0 FreeSans 300 0 0 0 S
+<< properties >>
+string GDS_FILE $PDKPATH/libs.ref/sky130_fd_io/gds/sky130_ef_io__gpiov2_pad_wrapped.gds
+string GDS_END 1787682
+string GDS_START 1786628
+<< end >>

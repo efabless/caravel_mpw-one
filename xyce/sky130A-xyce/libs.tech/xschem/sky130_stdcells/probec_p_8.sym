@@ -1,0 +1,17 @@
+K {type=primitive
+format="@name @@A @VGND @VNB @VPB @VPWR @@X @prefix\\\\probec_p_8"
+template="name=x1 VGND=VGND VNB=VNB VPB=VPB VPWR=VPWR prefix=sky130_fd_sc_hd__ "
+extra="VGND VNB VPB VPWR prefix"
+highlight=true}
+T {@symname} 0 -6 0 0 0.3 0.3 {hcenter=true}
+T {@name} 75 -22 0 0 0.2 0.2 {}
+L 4 -70 -10 70 -10 {}
+L 4 -70 10 70 10 {}
+L 4 -70 -10 -70 10 {}
+L 4 70 -10 70 10 {}
+B 5 -92.5 -2.5 -87.5 2.5 {name=A dir=in goto=1 propag=1 }
+L 4 -90 0 -70 0 {}
+T {A} -65 -4 0 0 0.2 0.2 {}
+B 5 87.5 -2.5 92.5 2.5 {name=X dir=out }
+L 4 70 0 90 0 {}
+T {X} 65 -4 0 1 0.2 0.2 {}

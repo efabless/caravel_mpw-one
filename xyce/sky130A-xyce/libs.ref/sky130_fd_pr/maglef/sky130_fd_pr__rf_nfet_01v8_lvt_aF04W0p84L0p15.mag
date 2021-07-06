@@ -1,0 +1,103 @@
+magic
+tech sky130A
+magscale 1 2
+timestamp 1623348513
+<< pwell >>
+rect 73 217 90 227
+<< obsli1 >>
+rect 101 285 371 301
+rect 101 251 111 285
+rect 145 251 183 285
+rect 217 251 255 285
+rect 289 251 327 285
+rect 361 251 371 285
+rect 101 235 371 251
+rect 47 173 81 189
+rect 47 101 81 139
+rect 47 51 81 67
+rect 133 51 167 189
+rect 219 173 253 189
+rect 219 101 253 139
+rect 219 51 253 67
+rect 305 51 339 189
+rect 391 173 425 189
+rect 391 101 425 139
+rect 391 51 425 67
+<< obsli1c >>
+rect 111 251 145 285
+rect 183 251 217 285
+rect 255 251 289 285
+rect 327 251 361 285
+rect 47 139 81 173
+rect 47 67 81 101
+rect 219 139 253 173
+rect 219 67 253 101
+rect 391 139 425 173
+rect 391 67 425 101
+<< metal1 >>
+rect 99 285 373 297
+rect 99 251 111 285
+rect 145 251 183 285
+rect 217 251 255 285
+rect 289 251 327 285
+rect 361 251 373 285
+rect 99 239 373 251
+rect 41 173 87 189
+rect 41 139 47 173
+rect 81 139 87 173
+rect 41 101 87 139
+rect 41 67 47 101
+rect 81 67 87 101
+rect 41 -29 87 67
+rect 213 173 259 189
+rect 213 139 219 173
+rect 253 139 259 173
+rect 213 101 259 139
+rect 213 67 219 101
+rect 253 67 259 101
+rect 213 -29 259 67
+rect 385 173 431 189
+rect 385 139 391 173
+rect 425 139 431 173
+rect 385 101 431 139
+rect 385 67 391 101
+rect 425 67 431 101
+rect 385 -29 431 67
+rect 41 -89 431 -29
+<< obsm1 >>
+rect 124 51 176 189
+rect 296 51 348 189
+<< obsm2 >>
+rect 117 41 183 195
+rect 289 41 355 195
+<< metal3 >>
+rect 117 129 355 195
+rect 117 41 183 129
+rect 289 41 355 129
+<< labels >>
+rlabel metal3 s 289 41 355 129 6 DRAIN
+port 1 nsew
+rlabel metal3 s 117 129 355 195 6 DRAIN
+port 1 nsew
+rlabel metal3 s 117 41 183 129 6 DRAIN
+port 1 nsew
+rlabel metal1 s 99 239 373 297 6 GATE
+port 2 nsew
+rlabel metal1 s 385 -29 431 189 6 SOURCE
+port 3 nsew
+rlabel metal1 s 213 -29 259 189 6 SOURCE
+port 3 nsew
+rlabel metal1 s 41 -29 87 189 6 SOURCE
+port 3 nsew
+rlabel metal1 s 41 -89 431 -29 8 SOURCE
+port 3 nsew
+rlabel pwell s 73 217 90 227 6 SUBSTRATE
+port 4 nsew
+<< properties >>
+string LEFclass BLOCK
+string FIXED_BBOX 36 -89 436 301
+string LEFview TRUE
+string GDS_FILE $PDKPATH/libs.ref/sky130_fd_pr/gds/sky130_fd_pr.gds
+string GDS_END 5863650
+string GDS_START 5856492
+<< end >>

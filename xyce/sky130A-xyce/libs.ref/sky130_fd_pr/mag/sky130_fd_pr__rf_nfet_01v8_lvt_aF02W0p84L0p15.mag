@@ -1,0 +1,134 @@
+magic
+tech sky130A
+magscale 1 2
+timestamp 1623348512
+<< checkpaint >>
+rect -1250 -1349 1550 1561
+<< pwell >>
+rect 10 10 290 230
+<< nmoslvt >>
+rect 92 36 122 204
+rect 178 36 208 204
+<< ndiff >>
+rect 36 173 92 204
+rect 36 139 47 173
+rect 81 139 92 173
+rect 36 101 92 139
+rect 36 67 47 101
+rect 81 67 92 101
+rect 36 36 92 67
+rect 122 173 178 204
+rect 122 139 133 173
+rect 167 139 178 173
+rect 122 101 178 139
+rect 122 67 133 101
+rect 167 67 178 101
+rect 122 36 178 67
+rect 208 173 264 204
+rect 208 139 219 173
+rect 253 139 264 173
+rect 208 101 264 139
+rect 208 67 219 101
+rect 253 67 264 101
+rect 208 36 264 67
+<< ndiffc >>
+rect 47 139 81 173
+rect 47 67 81 101
+rect 133 139 167 173
+rect 133 67 167 101
+rect 219 139 253 173
+rect 219 67 253 101
+<< poly >>
+rect 83 285 217 301
+rect 83 251 99 285
+rect 133 251 167 285
+rect 201 251 217 285
+rect 83 235 217 251
+rect 92 230 208 235
+rect 92 204 122 230
+rect 178 204 208 230
+rect 92 10 122 36
+rect 178 10 208 36
+<< polycont >>
+rect 99 251 133 285
+rect 167 251 201 285
+<< locali >>
+rect 83 285 217 301
+rect 83 251 97 285
+rect 133 251 167 285
+rect 203 251 217 285
+rect 83 235 217 251
+rect 47 173 81 189
+rect 47 101 81 139
+rect 47 51 81 67
+rect 133 173 167 189
+rect 133 101 167 139
+rect 133 51 167 67
+rect 219 173 253 189
+rect 219 101 253 139
+rect 219 51 253 67
+<< viali >>
+rect 97 251 99 285
+rect 99 251 131 285
+rect 169 251 201 285
+rect 201 251 203 285
+rect 47 139 81 173
+rect 47 67 81 101
+rect 133 139 167 173
+rect 133 67 167 101
+rect 219 139 253 173
+rect 219 67 253 101
+<< metal1 >>
+rect 85 285 215 297
+rect 85 251 97 285
+rect 131 251 169 285
+rect 203 251 215 285
+rect 85 239 215 251
+rect 41 173 87 189
+rect 41 139 47 173
+rect 81 139 87 173
+rect 41 101 87 139
+rect 41 67 47 101
+rect 81 67 87 101
+rect 41 -29 87 67
+rect 124 178 176 189
+rect 124 114 176 126
+rect 124 51 176 62
+rect 213 173 259 189
+rect 213 139 219 173
+rect 253 139 259 173
+rect 213 101 259 139
+rect 213 67 219 101
+rect 253 67 259 101
+rect 213 -29 259 67
+rect 41 -89 259 -29
+<< via1 >>
+rect 124 173 176 178
+rect 124 139 133 173
+rect 133 139 167 173
+rect 167 139 176 173
+rect 124 126 176 139
+rect 124 101 176 114
+rect 124 67 133 101
+rect 133 67 167 101
+rect 167 67 176 101
+rect 124 62 176 67
+<< metal2 >>
+rect 124 178 176 184
+rect 124 114 176 126
+rect 124 56 176 62
+<< labels >>
+flabel metal2 s 124 56 176 184 0 FreeSans 400 0 0 0 DRAIN
+port 1 nsew
+flabel metal1 s 85 239 215 297 0 FreeSans 400 0 0 0 GATE
+port 2 nsew
+flabel metal1 s 41 -89 259 -29 0 FreeSans 400 0 0 0 SOURCE
+port 3 nsew
+flabel pwell s 69 217 90 224 0 FreeSans 200 0 0 0 SUBSTRATE
+port 4 nsew
+<< properties >>
+string GDS_FILE $PDKPATH/libs.ref/sky130_fd_pr/gds/sky130_fd_pr.gds
+string GDS_END 5829794
+string GDS_START 5825704
+string path 5.900 4.725 5.900 -2.225 
+<< end >>

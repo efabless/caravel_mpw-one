@@ -1,0 +1,60 @@
+v {xschem version=2.9.8 file_version=1.2
+
+* Copyright 2020 Stefan Frederik Schippers
+* 
+* Licensed under the Apache License, Version 2.0 (the "License");
+* you may not use this file except in compliance with the License.
+* You may obtain a copy of the License at
+*
+*     https://www.apache.org/licenses/LICENSE-2.0
+*
+* Unless required by applicable law or agreed to in writing, software
+* distributed under the License is distributed on an "AS IS" BASIS,
+* WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+* See the License for the specific language governing permissions and
+* limitations under the License.
+
+}
+G {type=stdcell
+vhdl_stop=true
+verilog_stop=true
+format="@name @pinlist @VCCPIN @VSSPIN @VCCBPIN @VSSBPIN @symname"
+template="name=x1 VCCPIN=VCC VSSPIN=VSS VCCBPIN=VCC VSSBPIN=VSS"
+generic_type="VCCPIN=string VSSPIN=string VCCBPIN=string VSSBPIN=string"
+extra="VCCPIN VSSPIN VCCBPIN VSSBPIN"}
+V {}
+S {}
+E {}
+L 4 -80 -60 -52.5 -60 {}
+L 4 -80 -20 -52.5 -20 {}
+L 4 67.5 0 80 0 {}
+L 4 -57.5 -70 -50 -70 {}
+L 4 -57.5 -10 -50 -10 {}
+L 4 10 -30 27.5 -30 {}
+L 4 10 -30 10 30 {}
+L 4 10 30 27.5 30 {}
+L 4 -80 20 -52.5 20 {}
+L 4 -80 60 -52.5 60 {}
+L 4 -57.5 10 -50 10 {}
+L 4 -57.5 70 -50 70 {}
+L 4 -5 -40 0 -40 {}
+L 4 0 -40 -0 -20 {}
+L 4 -0 -20 10 -20 {}
+L 4 -5 40 0 40 {}
+L 4 0 20 0 40 {}
+L 4 0 20 10 20 {}
+B 5 77.5 -2.5 82.5 2.5 {name=Y dir=out verilog_type=wire}
+B 5 -82.5 -62.5 -77.5 -57.5 {name=A dir=in}
+B 5 -82.5 -22.5 -77.5 -17.5 {name=B dir=in}
+B 5 -82.5 17.5 -77.5 22.5 {name=C dir=in}
+B 5 -82.5 57.5 -77.5 62.5 {name=D dir=in}
+A 4 62.5 0 5 0 360 {}
+A 4 -105 -40 56.18051263561058 327.7243556854224 64.55128862915524 {}
+A 4 27.5 0 30 270 180 {}
+A 4 -54.64285714285714 -14.28571428571428 55.90740340153566 27.38350663876661 57.85285167050722 {}
+A 4 -54.64285714285714 -65.71428571428572 55.90740340153566 274.7636416907262 57.85285167050722 {}
+A 4 -105 40 56.18051263561058 327.7243556854224 64.55128862915524 {}
+A 4 -54.64285714285714 65.71428571428572 55.90740340153566 27.38350663876661 57.85285167050722 {}
+A 4 -54.64285714285714 14.28571428571428 55.90740340153566 274.7636416907262 57.85285167050722 {}
+T {@name} 15 -5 0 0 0.2 0.2 {}
+T {@symname} -11.25 -65 0 0 0.2 0.2 {}

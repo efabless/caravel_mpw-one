@@ -1,0 +1,187 @@
+magic
+tech sky130A
+magscale 1 2
+timestamp 1623348570
+<< checkpaint >>
+rect -1260 -853 17260 41260
+<< metal4 >>
+rect 0 35157 254 40000
+rect 15746 35157 16000 40000
+rect 0 14007 254 19000
+rect 15746 14007 16000 19000
+rect 0 12817 254 13707
+rect 15746 12817 16000 13707
+rect 0 11647 254 12537
+rect 15746 11647 16000 12537
+rect 0 11281 254 11347
+rect 15746 11281 16000 11347
+rect 0 10625 254 11221
+rect 15746 10625 16000 11221
+rect 0 10329 254 10565
+rect 15746 10329 16000 10565
+rect 0 9673 254 10269
+rect 15746 9673 16000 10269
+rect 0 9547 254 9613
+rect 15746 9547 16000 9613
+rect 0 8317 254 9247
+rect 15746 8317 16000 9247
+rect 0 7347 254 8037
+rect 15746 7347 16000 8037
+rect 0 6377 254 7067
+rect 15746 6377 16000 7067
+rect 0 5167 254 6097
+rect 15746 5167 16000 6097
+rect 0 3957 254 4887
+rect 15746 3957 16000 4887
+rect 0 2987 193 3677
+rect 15807 2987 16000 3677
+rect 0 1777 254 2707
+rect 15746 1777 16000 2707
+rect 0 407 254 1497
+rect 15746 407 16000 1497
+<< metal5 >>
+rect 6366 25518 10674 29827
+use sky130_fd_io__top_gpio_pad  sky130_fd_io__top_gpio_pad_0
+timestamp 1623348570
+transform 1 0 1000 0 1 626
+box 960 18991 14040 34071
+use sky130_fd_io__com_bus_slice_m4  sky130_fd_io__com_bus_slice_m4_0
+timestamp 1623348570
+transform 1 0 0 0 1 -5908
+box 0 6315 1000 45908
+use sky130_fd_io__com_bus_slice_m4  sky130_fd_io__com_bus_slice_m4_1
+timestamp 1623348570
+transform 1 0 11000 0 1 -5908
+box 0 6315 1000 45908
+use sky130_fd_io__com_bus_slice_m4  sky130_fd_io__com_bus_slice_m4_2
+timestamp 1623348570
+transform 1 0 12000 0 1 -5908
+box 0 6315 1000 45908
+use sky130_fd_io__com_bus_slice_m4  sky130_fd_io__com_bus_slice_m4_3
+timestamp 1623348570
+transform 1 0 13000 0 1 -5908
+box 0 6315 1000 45908
+use sky130_fd_io__com_bus_slice_m4  sky130_fd_io__com_bus_slice_m4_4
+timestamp 1623348570
+transform 1 0 14000 0 1 -5908
+box 0 6315 1000 45908
+use sky130_fd_io__com_bus_slice_m4  sky130_fd_io__com_bus_slice_m4_5
+timestamp 1623348570
+transform 1 0 15000 0 1 -5908
+box 0 6315 1000 45908
+use sky130_fd_io__com_bus_slice_m4  sky130_fd_io__com_bus_slice_m4_6
+timestamp 1623348570
+transform 1 0 10000 0 1 -5908
+box 0 6315 1000 45908
+use sky130_fd_io__com_bus_slice_m4  sky130_fd_io__com_bus_slice_m4_7
+timestamp 1623348570
+transform 1 0 9000 0 1 -5908
+box 0 6315 1000 45908
+use sky130_fd_io__com_bus_slice_m4  sky130_fd_io__com_bus_slice_m4_8
+timestamp 1623348570
+transform 1 0 8000 0 1 -5908
+box 0 6315 1000 45908
+use sky130_fd_io__com_bus_slice_m4  sky130_fd_io__com_bus_slice_m4_9
+timestamp 1623348570
+transform 1 0 7000 0 1 -5908
+box 0 6315 1000 45908
+use sky130_fd_io__com_bus_slice_m4  sky130_fd_io__com_bus_slice_m4_10
+timestamp 1623348570
+transform 1 0 4000 0 1 -5908
+box 0 6315 1000 45908
+use sky130_fd_io__com_bus_slice_m4  sky130_fd_io__com_bus_slice_m4_11
+timestamp 1623348570
+transform 1 0 6000 0 1 -5908
+box 0 6315 1000 45908
+use sky130_fd_io__com_bus_slice_m4  sky130_fd_io__com_bus_slice_m4_12
+timestamp 1623348570
+transform 1 0 5000 0 1 -5908
+box 0 6315 1000 45908
+use sky130_fd_io__com_bus_slice_m4  sky130_fd_io__com_bus_slice_m4_13
+timestamp 1623348570
+transform 1 0 3000 0 1 -5908
+box 0 6315 1000 45908
+use sky130_fd_io__com_bus_slice_m4  sky130_fd_io__com_bus_slice_m4_14
+timestamp 1623348570
+transform 1 0 2000 0 1 -5908
+box 0 6315 1000 45908
+use sky130_fd_io__com_bus_slice_m4  sky130_fd_io__com_bus_slice_m4_15
+timestamp 1623348570
+transform 1 0 1000 0 1 -5908
+box 0 6315 1000 45908
+<< labels >>
+flabel metal4 s 0 9673 254 10269 3 FreeSans 520 0 0 0 AMUXBUS_B
+port 1 nsew
+flabel metal4 s 0 8317 254 9247 3 FreeSans 520 0 0 0 VSSD
+port 2 nsew
+flabel metal4 s 0 7347 254 8037 3 FreeSans 520 0 0 0 VSSA
+port 3 nsew
+flabel metal4 s 0 11281 254 11347 3 FreeSans 520 0 0 0 VSSA
+port 3 nsew
+flabel metal4 s 0 10625 254 11221 3 FreeSans 520 0 0 0 AMUXBUS_A
+port 4 nsew
+flabel metal4 s 0 2987 193 3677 3 FreeSans 520 0 0 0 VDDA
+port 5 nsew
+flabel metal4 s 0 5167 254 6097 3 FreeSans 520 0 0 0 VSSIO
+port 6 nsew
+flabel metal4 s 0 11647 254 12537 3 FreeSans 520 0 0 0 VSSIO_Q
+port 7 nsew
+flabel metal4 s 0 10329 254 10565 3 FreeSans 520 0 0 0 VSSA
+port 3 nsew
+flabel metal4 s 0 407 254 1497 3 FreeSans 520 0 0 0 VCCHIB
+port 8 nsew
+flabel metal4 s 0 6377 254 7067 3 FreeSans 520 0 0 0 VSWITCH
+port 9 nsew
+flabel metal4 s 0 9547 254 9613 3 FreeSans 520 0 0 0 VSSA
+port 3 nsew
+flabel metal4 s 0 1777 254 2707 3 FreeSans 520 0 0 0 VCCD
+port 10 nsew
+flabel metal4 s 0 14007 254 19000 3 FreeSans 520 0 0 0 VDDIO
+port 11 nsew
+flabel metal4 s 0 12817 254 13707 3 FreeSans 520 0 0 0 VDDIO_Q
+port 12 nsew
+flabel metal4 s 0 3957 254 4887 3 FreeSans 520 0 0 0 VDDIO
+port 11 nsew
+flabel metal4 s 0 35157 254 40000 3 FreeSans 520 0 0 0 VSSIO
+port 6 nsew
+flabel metal4 s 15746 14007 16000 19000 3 FreeSans 520 180 0 0 VDDIO
+port 11 nsew
+flabel metal4 s 15746 9673 16000 10269 3 FreeSans 520 180 0 0 AMUXBUS_B
+port 1 nsew
+flabel metal4 s 15746 1777 16000 2707 3 FreeSans 520 180 0 0 VCCD
+port 10 nsew
+flabel metal4 s 15746 12817 16000 13707 3 FreeSans 520 180 0 0 VDDIO_Q
+port 12 nsew
+flabel metal4 s 15746 7347 16000 8037 3 FreeSans 520 180 0 0 VSSA
+port 3 nsew
+flabel metal4 s 15746 9547 16000 9613 3 FreeSans 520 180 0 0 VSSA
+port 3 nsew
+flabel metal4 s 15746 3957 16000 4887 3 FreeSans 520 180 0 0 VDDIO
+port 11 nsew
+flabel metal4 s 15746 407 16000 1497 3 FreeSans 520 180 0 0 VCCHIB
+port 8 nsew
+flabel metal4 s 15746 11281 16000 11347 3 FreeSans 520 180 0 0 VSSA
+port 3 nsew
+flabel metal4 s 15746 10329 16000 10565 3 FreeSans 520 180 0 0 VSSA
+port 3 nsew
+flabel metal4 s 15746 6377 16000 7067 3 FreeSans 520 180 0 0 VSWITCH
+port 9 nsew
+flabel metal4 s 15746 5167 16000 6097 3 FreeSans 520 180 0 0 VSSIO
+port 6 nsew
+flabel metal4 s 15746 11647 16000 12537 3 FreeSans 520 180 0 0 VSSIO_Q
+port 7 nsew
+flabel metal4 s 15807 2987 16000 3677 3 FreeSans 520 180 0 0 VDDA
+port 5 nsew
+flabel metal4 s 15746 8317 16000 9247 3 FreeSans 520 180 0 0 VSSD
+port 2 nsew
+flabel metal4 s 15746 10625 16000 11221 3 FreeSans 520 180 0 0 AMUXBUS_A
+port 4 nsew
+flabel metal4 s 15746 35157 16000 40000 3 FreeSans 520 180 0 0 VSSIO
+port 6 nsew
+flabel metal5 s 6366 25518 10674 29827 3 FreeSans 2000 0 0 0 PAD
+port 13 nsew
+<< properties >>
+string GDS_FILE $PDKPATH/libs.ref/sky130_fd_io/gds/sky130_ef_io__gpiov2_pad_wrapped.gds
+string GDS_END 18186
+string GDS_START 12534
+<< end >>

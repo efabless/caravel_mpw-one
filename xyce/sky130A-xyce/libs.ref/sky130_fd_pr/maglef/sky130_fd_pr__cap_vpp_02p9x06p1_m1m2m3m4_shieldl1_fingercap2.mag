@@ -1,0 +1,68 @@
+magic
+tech sky130A
+magscale 1 2
+timestamp 1623348513
+<< pwell >>
+rect 266 564 287 613
+<< obsli1 >>
+rect 16 0 50 1220
+rect 520 0 554 1220
+<< obsm1 >>
+rect 16 1154 554 1220
+rect 16 126 50 1154
+rect 78 66 114 1094
+rect 142 126 176 1154
+rect 204 66 240 1094
+rect 268 126 302 1154
+rect 330 66 366 1094
+rect 394 126 428 1154
+rect 456 66 492 1094
+rect 520 126 554 1154
+rect 66 0 504 66
+<< obsm2 >>
+rect 16 1154 554 1220
+rect 16 126 50 1154
+rect 78 66 114 1094
+rect 142 126 176 1154
+rect 204 66 240 1094
+rect 268 126 302 1154
+rect 330 66 366 1094
+rect 394 126 428 1154
+rect 456 66 492 1094
+rect 520 126 554 1154
+rect 66 0 504 66
+<< obsm3 >>
+rect 0 1154 570 1220
+rect 0 126 66 1154
+rect 126 66 192 1094
+rect 252 126 318 1154
+rect 378 66 444 1094
+rect 504 126 570 1154
+rect 66 0 504 66
+<< metal4 >>
+rect 0 66 66 1220
+rect 126 0 192 1154
+rect 252 66 318 1220
+rect 378 0 444 1154
+rect 504 66 570 1220
+<< labels >>
+rlabel metal4 s 504 66 570 1220 6 C0
+port 1 nsew
+rlabel metal4 s 252 66 318 1220 6 C0
+port 1 nsew
+rlabel metal4 s 0 66 66 1220 6 C0
+port 1 nsew
+rlabel metal4 s 378 0 444 1154 6 C1
+port 2 nsew
+rlabel metal4 s 126 0 192 1154 6 C1
+port 2 nsew
+rlabel pwell s 266 564 287 613 6 SUB
+port 3 nsew
+<< properties >>
+string LEFclass BLOCK
+string FIXED_BBOX 0 0 570 1220
+string LEFview TRUE
+string GDS_FILE $PDKPATH/libs.ref/sky130_fd_pr/gds/sky130_fd_pr.gds
+string GDS_END 13256
+string GDS_START 4472
+<< end >>

@@ -1,0 +1,43 @@
+v {xschem version=2.9.9 file_version=1.2 }
+G {}
+K {type=capacitor
+format="@spiceprefix@name @pinlist sky130_fd_pr__@model W=@W L=@L mult=@mult m=@mult"
+template="name=C1
+model=cap_vpp_11p5x11p7_l1m1m2m3m4_shieldm5
+W=1
+L=1 
+mult=1 
+spiceprefix=X"
+
+available_models="
+cap_vpp_11p5x11p7_l1m1m2m3m4_shieldm5
+cap_vpp_11p5x11p7_l1m1m2m3m4_shieldpom5
+cap_vpp_11p5x11p7_m1m2m3m4_shieldl1m5
+cap_vpp_04p4x04p6_m1m2m3_shieldl1m5_floatm4
+cap_vpp_08p6x07p8_m1m2m3_shieldl1m5_floatm4
+cap_vpp_11p5x11p7_m1m2m3_shieldl1m5_floatm4
+cap_vpp_11p5x11p7_l1m1m2m3_shieldm4
+cap_vpp_06p8x06p1_l1m1m2m3_shieldpom4
+cap_vpp_06p8x06p1_m1m2m3_shieldl1m4
+cap_vpp_11p3x11p8_l1m1m2m3m4_shieldm5
+"
+
+}
+V {}
+S {}
+E {}
+L 4 0 2.5 0 30 {}
+L 4 0 -30 0 -5 {}
+L 4 -10 -5 10 -5 {}
+B 5 -2.5 -32.5 2.5 -27.5 {name=c0 dir=inout}
+B 5 -2.5 27.5 2.5 32.5 {name=c1 dir=inout}
+B 5 -22.5 -12.5 -17.5 -7.5 {name=top dir=in}
+B 5 -22.5 7.5 -17.5 12.5 {name=sub dir=in}
+A 4 -0 23.75 21.25 61.92751306414704 56.14497387170592 {}
+T {c0} 5 -27.5 0 0 0.15 0.15 {layer=7}
+T {c1} 5 18.75 0 0 0.15 0.15 {layer=7}
+T {@name} 20 -28.75 0 0 0.2 0.2 {}
+T {mult=@mult} 20 16.25 0 0 0.2 0.2 {}
+T {@model} 5 -13.75 0 0 0.1 0.1 {}
+T {top} -15 -17.5 0 0 0.15 0.15 {layer=7}
+T {sub} -15 7.5 0 0 0.15 0.15 {layer=7}

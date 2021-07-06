@@ -1,0 +1,66 @@
+magic
+tech sky130A
+magscale 1 2
+timestamp 1623348572
+<< obsm3 >>
+rect 99 3958 14858 18953
+<< metal4 >>
+rect 0 10625 15000 11221
+rect 0 9673 15000 10269
+<< obsm4 >>
+rect 0 11301 15000 40000
+rect 0 10349 15000 10545
+rect 0 407 15000 9593
+<< metal5 >>
+rect 14746 14007 15000 18997
+rect 14746 12837 15000 13687
+rect 14746 11667 15000 12517
+rect 14746 9547 15000 11347
+rect 14746 8337 15000 9227
+rect 14746 6397 15000 7047
+rect 14746 5187 15000 6077
+rect 14807 3007 15000 3657
+rect 14746 1797 15000 2687
+rect 14746 427 15000 1477
+<< obsm5 >>
+rect 0 19317 15000 40000
+rect 0 8017 14426 19317
+rect 0 7367 15000 8017
+rect 0 4867 14426 7367
+rect 0 3977 15000 4867
+rect 0 3007 14487 3977
+rect 0 427 14426 3007
+<< labels >>
+rlabel metal4 s 0 10625 15000 11221 6 AMUXBUS_A
+port 1 nsew signal default
+rlabel metal4 s 0 9673 15000 10269 6 AMUXBUS_B
+port 2 nsew signal default
+rlabel metal5 s 14746 1797 15000 2687 6 VCCD
+port 3 nsew signal default
+rlabel metal5 s 14746 427 15000 1477 6 VCCHIB
+port 4 nsew signal default
+rlabel metal5 s 14807 3007 15000 3657 6 VDDA
+port 5 nsew signal default
+rlabel metal5 s 14746 14007 15000 18997 6 VDDIO
+port 6 nsew signal default
+rlabel metal5 s 14746 12837 15000 13687 6 VDDIO_Q
+port 7 nsew signal default
+rlabel metal5 s 14746 9547 15000 11347 6 VSSA
+port 8 nsew signal default
+rlabel metal5 s 14746 8337 15000 9227 6 VSSD
+port 9 nsew signal default
+rlabel metal5 s 14746 5187 15000 6077 6 VSSIO
+port 10 nsew signal default
+rlabel metal5 s 14746 11667 15000 12517 6 VSSIO_Q
+port 11 nsew signal default
+rlabel metal5 s 14746 6397 15000 7047 6 VSWITCH
+port 12 nsew signal default
+<< properties >>
+string LEFclass PAD
+string FIXED_BBOX 0 0 15000 40000
+string LEFsymmetry X Y R90
+string LEFview TRUE
+string GDS_FILE $PDKPATH/libs.ref/sky130_fd_io/gds/sky130_fd_io.gds
+string GDS_END 25524494
+string GDS_START 24899806
+<< end >>

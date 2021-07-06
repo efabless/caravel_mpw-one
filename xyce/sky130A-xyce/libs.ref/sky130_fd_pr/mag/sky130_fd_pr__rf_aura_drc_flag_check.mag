@@ -1,0 +1,169 @@
+magic
+tech sky130A
+magscale 1 2
+timestamp 1623348512
+<< checkpaint >>
+rect -1260 -44054 312366 40900
+<< dnwell >>
+rect 4927 3772 308245 36105
+<< nwell >>
+rect 303230 39610 311106 39640
+rect 0 31750 311106 39610
+rect 0 7206 7829 31750
+rect 303230 7206 311106 31750
+rect 0 0 311106 7206
+rect 303230 -3184 311106 -3154
+rect 0 -42794 311106 -3184
+<< pwell >>
+rect 13077 20740 13201 20876
+rect 15198 20199 15322 20851
+rect 11759 17686 13156 19032
+<< ndiff >>
+rect 13130 20766 13148 20850
+rect 15251 20225 15269 20825
+<< pdiff >>
+rect 13103 20766 13130 20850
+rect 13148 20766 13175 20850
+rect 15224 20225 15251 20825
+rect 15269 20225 15296 20825
+rect 13906 -25066 13984 -24898
+rect 15540 -25066 15612 -24066
+<< psubdiff >>
+rect 11785 18533 13130 19006
+rect 11785 18499 12218 18533
+rect 12252 18499 13130 18533
+rect 11785 17712 13130 18499
+<< nsubdiff >>
+rect 1592 2125 2937 2598
+rect 1592 2091 2025 2125
+rect 2059 2091 2937 2125
+rect 1592 1304 2937 2091
+rect 1592 -40669 2937 -40196
+rect 1592 -40703 2025 -40669
+rect 2059 -40703 2937 -40669
+rect 1592 -41490 2937 -40703
+<< psubdiffcont >>
+rect 12218 18499 12252 18533
+<< nsubdiffcont >>
+rect 2025 2091 2059 2125
+rect 2025 -40703 2059 -40669
+<< locali >>
+rect 12028 18533 12590 18733
+rect 12028 18499 12218 18533
+rect 12252 18499 12590 18533
+rect 12028 18138 12590 18499
+rect 1835 2125 2397 2325
+rect 1835 2091 2025 2125
+rect 2059 2091 2397 2125
+rect 1835 1730 2397 2091
+rect 1835 -40669 2397 -40469
+rect 1835 -40703 2025 -40669
+rect 2059 -40703 2397 -40669
+rect 1835 -41064 2397 -40703
+use sky130_fd_pr__rf_nfet_01v8_lvt_aF02W0p42L0p15  sky130_fd_pr__rf_nfet_01v8_lvt_aF02W0p42L0p15_0
+timestamp 1623348512
+transform 1 0 19770 0 1 20420
+box 10 -89 290 217
+use sky130_fd_pr__rf_nfet_01v8_lvt_aF02W0p42L0p15  sky130_fd_pr__rf_nfet_01v8_lvt_aF02W0p42L0p15_1
+timestamp 1623348512
+transform 1 0 20052 0 1 20420
+box 10 -89 290 217
+use sky130_fd_pr__rf_nfet_01v8_lvt_aF02W0p42L0p15  sky130_fd_pr__rf_nfet_01v8_lvt_aF02W0p42L0p15_2
+timestamp 1623348512
+transform 1 0 13139 0 1 20730
+box 10 -89 290 217
+use sky130_fd_pr__rf_nfet_01v8_lvt_aF02W0p42L0p15  sky130_fd_pr__rf_nfet_01v8_lvt_aF02W0p42L0p15_3
+timestamp 1623348512
+transform 1 0 22852 0 1 20435
+box 10 -89 290 217
+use sky130_fd_pr__rf_nfet_01v8_lvt_aF02W0p42L0p15  sky130_fd_pr__rf_nfet_01v8_lvt_aF02W0p42L0p15_4
+timestamp 1623348512
+transform -1 0 20352 0 -1 20788
+box 10 -89 290 217
+use sky130_fd_pr__rf_nfet_01v8_lvt_aF02W0p42L0p15  sky130_fd_pr__rf_nfet_01v8_lvt_aF02W0p42L0p15_5
+timestamp 1623348512
+transform 1 0 12839 0 1 20730
+box 10 -89 290 217
+use sky130_fd_pr__rf_pfet_01v8_aF02W0p84L0p15  sky130_fd_pr__rf_pfet_01v8_aF02W0p84L0p15_0
+timestamp 1623348512
+transform 1 0 20136 0 1 -25102
+box 0 -89 300 303
+use sky130_fd_pr__rf_pfet_01v8_aF02W0p84L0p15  sky130_fd_pr__rf_pfet_01v8_aF02W0p84L0p15_1
+timestamp 1623348512
+transform -1 0 20442 0 -1 -24562
+box 0 -89 300 303
+use sky130_fd_pr__rf_pfet_01v8_aF02W0p84L0p15  sky130_fd_pr__rf_pfet_01v8_aF02W0p84L0p15_2
+timestamp 1623348512
+transform 1 0 13642 0 1 -25102
+box 0 -89 300 303
+use sky130_fd_pr__rf_pfet_01v8_aF02W0p84L0p15  sky130_fd_pr__rf_pfet_01v8_aF02W0p84L0p15_3
+timestamp 1623348512
+transform 1 0 13942 0 1 -25102
+box 0 -89 300 303
+use sky130_fd_pr__rf_nfet_01v8_lvt_aF08W3p00L0p15  sky130_fd_pr__rf_nfet_01v8_lvt_aF08W3p00L0p15_0
+timestamp 1623348512
+transform -1 0 16076 0 -1 20861
+box 10 -89 806 733
+use sky130_fd_pr__rf_nfet_01v8_lvt_aF08W3p00L0p15  sky130_fd_pr__rf_nfet_01v8_lvt_aF08W3p00L0p15_1
+timestamp 1623348512
+transform -1 0 15260 0 -1 20861
+box 10 -89 806 733
+use sky130_fd_pr__rf_nfet_01v8_lvt_aF08W3p00L0p15  sky130_fd_pr__rf_nfet_01v8_lvt_aF08W3p00L0p15_2
+timestamp 1623348512
+transform -1 0 23410 0 -1 21319
+box 10 -89 806 733
+use sky130_fd_pr__rf_nfet_01v8_lvt_aF04W0p84L0p15  sky130_fd_pr__rf_nfet_01v8_lvt_aF04W0p84L0p15_0
+timestamp 1623348512
+transform 1 0 20945 0 1 20420
+box 10 -89 462 301
+use sky130_fd_pr__rf_nfet_01v8_lvt_aF04W0p84L0p15  sky130_fd_pr__rf_nfet_01v8_lvt_aF04W0p84L0p15_1
+timestamp 1623348512
+transform -1 0 21417 0 -1 20956
+box 10 -89 462 301
+use sky130_fd_pr__rf_pfet_01v8_aF02W5p00L0p15  sky130_fd_pr__rf_pfet_01v8_aF02W5p00L0p15_0
+timestamp 1623348512
+transform 1 0 15576 0 1 -25102
+box 0 -97 294 1134
+use sky130_fd_pr__rf_pfet_01v8_aF02W5p00L0p15  sky130_fd_pr__rf_pfet_01v8_aF02W5p00L0p15_1
+timestamp 1623348512
+transform 1 0 23413 0 1 -25765
+box 0 -97 294 1134
+use sky130_fd_pr__rf_pfet_01v8_aF02W5p00L0p15  sky130_fd_pr__rf_pfet_01v8_aF02W5p00L0p15_2
+timestamp 1623348512
+transform 1 0 15282 0 1 -25102
+box 0 -97 294 1134
+use sky130_fd_pr__rf_pfet_01v8_aF04W1p68L0p15  sky130_fd_pr__rf_pfet_01v8_aF04W1p68L0p15_0
+timestamp 1623348512
+transform 1 0 21953 0 1 -25102
+box 0 -89 466 471
+use sky130_fd_pr__rf_pfet_01v8_aF04W1p68L0p15  sky130_fd_pr__rf_pfet_01v8_aF04W1p68L0p15_1
+timestamp 1623348512
+transform 1 0 21505 0 1 -25102
+box 0 -89 466 471
+use sky130_fd_pr__rf_pfet_01v8_aF04W1p68L0p15  sky130_fd_pr__rf_pfet_01v8_aF04W1p68L0p15_2
+timestamp 1623348512
+transform -1 0 21971 0 -1 -24226
+box 0 -89 466 471
+use sky130_fd_pr__rf_pfet_01v8_aF04W1p68L0p15  sky130_fd_pr__rf_pfet_01v8_aF04W1p68L0p15_3
+timestamp 1623348512
+transform -1 0 23793 0 -1 -24226
+box 0 -89 466 471
+<< labels >>
+flabel comment s 21977 21924 21977 21924 0 FreeSans 2000 0 0 0 Gate Contact Overlap Not Allowed (3errors)
+flabel comment s 22768 -22124 22768 -22124 0 FreeSans 2000 0 0 0 Gate Contact Overlap Not Allowed (3errors)
+flabel comment s 14488 21924 14488 21924 0 FreeSans 2000 0 0 0 Diff Butting not allowed (2 errors)
+flabel comment s 9976 31045 9976 31045 0 FreeSans 2000 0 0 0 condiode
+flabel comment s 15279 -22124 15279 -22124 0 FreeSans 2000 0 0 0 Diff Butting not allowed (2 errors)
+flabel comment s 22694 -16013 22694 -16013 0 FreeSans 20000 0 0 0 pshort DRC test
+flabel comment s 22694 25316 22694 25316 0 FreeSans 20000 0 0 0 nlowvt DRC test
+flabel locali s 12401 18220 12529 18665 0 FreeSans 2000 0 0 0 VGND
+port 1 nsew
+flabel locali s 2191 1808 2304 2253 0 FreeSans 2000 0 0 0 NWELL
+port 2 nsew
+flabel locali s 2209 -40991 2318 -40518 0 FreeSans 2000 0 0 0 B_P
+port 3 nsew
+<< properties >>
+string GDS_FILE $PDKPATH/libs.ref/sky130_fd_pr/gds/sky130_fd_pr.gds
+string GDS_END 10456508
+string GDS_START 10452054
+<< end >>

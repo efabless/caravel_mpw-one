@@ -1,0 +1,1818 @@
+.subckt decred_controller CLK_LED DATA_AVAILABLE[0] DATA_AVAILABLE[1] DATA_AVAILABLE[2]
++ DATA_AVAILABLE[3] DATA_FROM_HASH[0] DATA_FROM_HASH[1] DATA_FROM_HASH[2] DATA_FROM_HASH[3]
++ DATA_FROM_HASH[4] DATA_FROM_HASH[5] DATA_FROM_HASH[6] DATA_FROM_HASH[7] DATA_TO_HASH[0]
++ DATA_TO_HASH[1] DATA_TO_HASH[2] DATA_TO_HASH[3] DATA_TO_HASH[4] DATA_TO_HASH[5]
++ DATA_TO_HASH[6] DATA_TO_HASH[7] EXT_RESET_N_fromHost EXT_RESET_N_toClient HASH_ADDR[0]
++ HASH_ADDR[1] HASH_ADDR[2] HASH_ADDR[3] HASH_ADDR[4] HASH_ADDR[5] HASH_EN HASH_LED
++ ID_fromClient ID_toHost IRQ_OUT_fromClient IRQ_OUT_toHost M1_CLK_IN M1_CLK_SELECT
++ MACRO_RD_SELECT[0] MACRO_RD_SELECT[1] MACRO_RD_SELECT[2] MACRO_RD_SELECT[3] MACRO_WR_SELECT[0]
++ MACRO_WR_SELECT[1] MACRO_WR_SELECT[2] MACRO_WR_SELECT[3] MISO_fromClient MISO_toHost
++ MOSI_fromHost MOSI_toClient PLL_INPUT S1_CLK_IN S1_CLK_SELECT SCLK_fromHost SCLK_toClient
++ SCSN_fromHost SCSN_toClient THREAD_COUNT[0] THREAD_COUNT[1] THREAD_COUNT[2] THREAD_COUNT[3]
++ m1_clk_local one zero VPWR VGND
+X_2037_ _2043_/C _2047_/A _2043_/D _2037_/D _2038_/B sky130_fd_sc_hd__nand4_4
+X_2106_ _1222_/A SCSN_fromHost _2106_/X sky130_fd_sc_hd__or2_4
+X_1270_ _1270_/A _2010_/B sky130_fd_sc_hd__buf_2
+X_1606_ _1426_/A _1428_/D _1609_/B sky130_fd_sc_hd__nor2_4
+X_1399_ _2618_/Q _1397_/Y _1398_/Y _1400_/A sky130_fd_sc_hd__a21o_4
+X_1537_ _1424_/Y _1537_/X sky130_fd_sc_hd__buf_2
+X_1468_ _1428_/Y _1548_/D sky130_fd_sc_hd__buf_2
+X_2586_ _2606_/CLK _2586_/D _1459_/A sky130_fd_sc_hd__dfxtp_4
+X_2440_ _2598_/CLK _2143_/Y _1964_/A sky130_fd_sc_hd__dfxtp_4
+X_2371_ _2370_/CLK _2371_/D _2371_/Q sky130_fd_sc_hd__dfxtp_4
+X_1253_ _2363_/Q _1374_/A sky130_fd_sc_hd__inv_2
+X_1322_ _1239_/Y _1321_/X _1316_/D _1323_/A sky130_fd_sc_hd__nand3_4
+Xclkbuf_1_0_0_m1_clk_local clkbuf_0_m1_clk_local/X clkbuf_2_1_0_m1_clk_local/A
++ sky130_fd_sc_hd__clkbuf_1
+X_1184_ _1528_/A _1185_/A sky130_fd_sc_hd__buf_2
+X_2569_ _2570_/CLK _2569_/D _1735_/D sky130_fd_sc_hd__dfxtp_4
+X_2638_ _2638_/CLK _2638_/D _1295_/A sky130_fd_sc_hd__dfxtp_4
+XINSDIODE2_4 _1955_/X sky130_fd_sc_hd__diode_2
+X_1871_ _1870_/X DATA_FROM_HASH[7] _2566_/D sky130_fd_sc_hd__and2_4
+X_1940_ _1938_/A _1746_/Y _1940_/Y sky130_fd_sc_hd__nor2_4
+X_2423_ _2408_/CLK _2271_/Y _1746_/A sky130_fd_sc_hd__dfxtp_4
+X_1236_ _1236_/A _2623_/Q _1237_/A sky130_fd_sc_hd__nand2_4
+X_2354_ _2097_/B _1179_/A _2353_/X _2354_/Y sky130_fd_sc_hd__o21ai_4
+X_1305_ _1318_/B _1308_/C _1243_/X _1246_/D _1305_/X sky130_fd_sc_hd__and4_4
+Xclkbuf_0_m1_clk_local m1_clk_local clkbuf_0_m1_clk_local/X sky130_fd_sc_hd__clkbuf_16
+X_2285_ _2276_/X _2253_/Y _2278_/X _1923_/Y _2280_/X _2285_/Y
++ sky130_fd_sc_hd__o32ai_4
+Xclkbuf_3_3_0_m1_clk_local clkbuf_3_3_0_m1_clk_local/A clkbuf_4_7_0_m1_clk_local/A
++ sky130_fd_sc_hd__clkbuf_1
+X_2070_ _2070_/A _2070_/Y sky130_fd_sc_hd__inv_2
+X_1785_ _1783_/Y _1784_/Y _1781_/X _2588_/D sky130_fd_sc_hd__a21oi_4
+X_1854_ _1854_/A _1640_/X _1854_/X sky130_fd_sc_hd__or2_4
+X_1923_ _2151_/B _1923_/Y sky130_fd_sc_hd__inv_2
+X_2406_ _2408_/CLK _2303_/Y HASH_LED sky130_fd_sc_hd__dfxtp_4
+X_1219_ _2384_/Q _1219_/X sky130_fd_sc_hd__buf_2
+X_2337_ _2337_/A _1575_/Y _1683_/Y _2338_/A sky130_fd_sc_hd__nand3_4
+X_2199_ _1623_/Y _2428_/Q _2199_/Y sky130_fd_sc_hd__nand2_4
+X_2268_ _2268_/A _2268_/Y sky130_fd_sc_hd__inv_2
+X_1570_ _1570_/A _1571_/A sky130_fd_sc_hd__buf_2
+X_2053_ _1992_/A _2060_/A _1992_/D _2053_/Y sky130_fd_sc_hd__nor3_4
+X_2122_ _1874_/A _2121_/X _1420_/A _2122_/Y sky130_fd_sc_hd__nand3_4
+X_1837_ _1836_/X _2570_/D sky130_fd_sc_hd__inv_2
+X_1906_ _2154_/B _1906_/Y sky130_fd_sc_hd__inv_2
+X_1768_ _1438_/B _1768_/B _1768_/X sky130_fd_sc_hd__xor2_4
+X_1699_ _1693_/Y _1698_/Y _1454_/X _2594_/D sky130_fd_sc_hd__a21oi_4
+X_1622_ _2426_/Q _1622_/Y sky130_fd_sc_hd__inv_2
+X_1553_ _1490_/A _1527_/Y _1530_/Y _1552_/Y _1557_/A sky130_fd_sc_hd__a211o_4
+X_1484_ _1484_/A _1505_/B sky130_fd_sc_hd__buf_2
+X_2036_ _2037_/D _2035_/X _1374_/X _2038_/A sky130_fd_sc_hd__o21a_4
+X_2105_ _1222_/A _2105_/B _2105_/X sky130_fd_sc_hd__or2_4
+X_1605_ _1605_/A _1651_/A sky130_fd_sc_hd__buf_2
+X_2585_ _2581_/CLK _1796_/X _1477_/A sky130_fd_sc_hd__dfxtp_4
+X_1536_ _1525_/Y _1532_/Y _1535_/X _2604_/D sky130_fd_sc_hd__a21oi_4
+X_1398_ _2618_/Q _1397_/Y _1374_/X _1398_/Y sky130_fd_sc_hd__o21ai_4
+X_1467_ _2602_/Q _1467_/Y sky130_fd_sc_hd__inv_2
+X_2019_ _1395_/A _2019_/B _2019_/C _2019_/Y sky130_fd_sc_hd__nor3_4
+X_2370_ _2370_/CLK _2369_/Q _2371_/D sky130_fd_sc_hd__dfxtp_4
+X_1321_ _1241_/Y _1321_/X sky130_fd_sc_hd__buf_2
+X_1252_ _1271_/C _1251_/Y _1263_/A sky130_fd_sc_hd__nand2_4
+X_1183_ _2353_/A _1179_/X _1182_/X _1183_/Y sky130_fd_sc_hd__o21ai_4
+Xclkbuf_3_4_0_addressalyzerBlock.SPI_CLK clkbuf_3_5_0_addressalyzerBlock.SPI_CLK/A
++ clkbuf_4_9_0_addressalyzerBlock.SPI_CLK/A sky130_fd_sc_hd__clkbuf_1
+XINSDIODE2_5 _1920_/X sky130_fd_sc_hd__diode_2
+X_2499_ _2470_/CLK _1971_/X MACRO_WR_SELECT[0] sky130_fd_sc_hd__dfxtp_4
+X_2568_ _2550_/CLK _2568_/D _1862_/B sky130_fd_sc_hd__dfxtp_4
+X_2637_ _2477_/CLK _2637_/D _1299_/A sky130_fd_sc_hd__dfxtp_4
+X_1519_ _1473_/B _1440_/B _1518_/Y _1519_/Y sky130_fd_sc_hd__o21ai_4
+X_1870_ _1840_/B _1870_/X sky130_fd_sc_hd__buf_2
+X_2353_ _2353_/A _1180_/Y _2353_/X sky130_fd_sc_hd__or2_4
+X_2422_ _2408_/CLK _2422_/D _1941_/A sky130_fd_sc_hd__dfxtp_4
+X_1235_ _1235_/A _1365_/D sky130_fd_sc_hd__inv_2
+X_1304_ _2635_/Q _1308_/C sky130_fd_sc_hd__buf_2
+X_2284_ _2276_/X _2133_/Y _2278_/X _1744_/B _2280_/X _2415_/D
++ sky130_fd_sc_hd__o32ai_4
+X_1999_ _1999_/A _1999_/B _2011_/A _2492_/Q _2010_/C sky130_fd_sc_hd__nand4_4
+X_1922_ _1932_/A _2537_/Q _2531_/D sky130_fd_sc_hd__and2_4
+X_1784_ _1678_/Y _2349_/A _1784_/Y sky130_fd_sc_hd__nand2_4
+X_1853_ _1850_/X _1852_/X _1471_/X _1853_/Y sky130_fd_sc_hd__a21oi_4
+X_2336_ _1575_/Y _2328_/X _2335_/Y _2388_/D sky130_fd_sc_hd__o21ai_4
+X_2405_ _2557_/CLK _2305_/Y _1232_/A sky130_fd_sc_hd__dfxtp_4
+X_1218_ _1218_/A _1218_/B _1218_/Y sky130_fd_sc_hd__nand2_4
+X_2267_ _2266_/Y _2262_/X _2258_/X _1937_/Y _2264_/X _2425_/D
++ sky130_fd_sc_hd__o32ai_4
+X_2198_ _2196_/Y _1708_/X _2198_/C _2198_/Y sky130_fd_sc_hd__nand3_4
+X_2052_ _2014_/X _2040_/X _2051_/Y _2052_/Y sky130_fd_sc_hd__a21oi_4
+X_2121_ _1696_/A _2121_/X sky130_fd_sc_hd__buf_2
+X_1905_ _1901_/X _1905_/B _1905_/Y sky130_fd_sc_hd__nor2_4
+X_1836_ _1735_/C _1834_/Y _1835_/Y _1836_/X sky130_fd_sc_hd__a21o_4
+X_1698_ _1698_/A _1697_/Y _1689_/Y _2340_/B _1698_/Y sky130_fd_sc_hd__nand4_4
+X_1767_ _1483_/B _1767_/B _1767_/X sky130_fd_sc_hd__xor2_4
+X_2319_ _1771_/Y _2310_/X _1503_/A _2312_/X _2319_/X sky130_fd_sc_hd__a2bb2o_4
+X_1552_ _1537_/X _1548_/D _1544_/Y _1552_/Y sky130_fd_sc_hd__a21oi_4
+X_1621_ _2410_/Q _2181_/A _1617_/Y _1620_/Y _1621_/X sky130_fd_sc_hd__a211o_4
+X_2104_ _2104_/A _2091_/Y _2103_/Y _2468_/Q _2104_/X sky130_fd_sc_hd__and4_4
+X_1483_ _1482_/Y _1483_/B _2604_/Q _2603_/Q _1484_/A sky130_fd_sc_hd__and4_4
+X_2035_ _2029_/Y _2030_/X _2017_/B _2043_/D _2035_/X sky130_fd_sc_hd__and4_4
+X_1819_ _2575_/Q _1809_/X _1818_/X _2576_/D sky130_fd_sc_hd__o21a_4
+X_1604_ _1559_/B _2600_/Q _1605_/A sky130_fd_sc_hd__and2_4
+X_1535_ _1556_/A _1534_/X _1500_/X _1535_/X sky130_fd_sc_hd__a21o_4
+X_2584_ _2606_/CLK _1798_/X _1490_/A sky130_fd_sc_hd__dfxtp_4
+X_1397_ _1397_/A _1397_/B _1397_/C _1397_/Y sky130_fd_sc_hd__nor3_4
+X_1466_ _1466_/A _1466_/Y sky130_fd_sc_hd__inv_2
+X_2018_ _2488_/Q _2017_/X _1984_/A _1999_/A _2011_/A _2019_/C
++ sky130_fd_sc_hd__a41oi_4
+X_1320_ _1319_/Y _2634_/D sky130_fd_sc_hd__inv_2
+X_1182_ _1182_/A _1194_/B _1182_/X sky130_fd_sc_hd__or2_4
+X_1251_ _1251_/A _1251_/Y sky130_fd_sc_hd__inv_2
+X_2636_ _2477_/CLK _2636_/D _2636_/Q sky130_fd_sc_hd__dfxtp_4
+X_2498_ _2498_/CLK _2498_/D _1973_/A sky130_fd_sc_hd__dfxtp_4
+X_2567_ _2498_/CLK _1869_/Y _2567_/Q sky130_fd_sc_hd__dfxtp_4
+X_1518_ _1473_/B _1482_/Y _1473_/C _1466_/A _2340_/C _1518_/Y
++ sky130_fd_sc_hd__a41oi_4
+X_1449_ _1441_/Y _1449_/B _1449_/Y sky130_fd_sc_hd__nand2_4
+X_2352_ _2543_/Q _2544_/Q _2352_/C IRQ_OUT_toHost sky130_fd_sc_hd__or3_4
+X_1303_ _1258_/Y _1318_/B sky130_fd_sc_hd__buf_2
+X_2283_ _2276_/X _2130_/Y _2278_/X _1845_/B _2280_/X _2416_/D
++ sky130_fd_sc_hd__o32ai_4
+X_2421_ _2408_/CLK _2421_/D _1944_/A sky130_fd_sc_hd__dfxtp_4
+X_1234_ _1385_/A _2621_/Q _1235_/A sky130_fd_sc_hd__nand2_4
+X_1998_ _1998_/A _2008_/A _1999_/B sky130_fd_sc_hd__nor2_4
+X_2619_ _2370_/CLK _1395_/Y _2619_/Q sky130_fd_sc_hd__dfxtp_4
+X_1921_ _1254_/X _1932_/A sky130_fd_sc_hd__buf_2
+X_1852_ _2444_/Q _1751_/A _1633_/X _1851_/Y _1852_/X sky130_fd_sc_hd__a211o_4
+X_1783_ _1678_/A _1783_/B _1779_/C _1783_/D _1783_/Y sky130_fd_sc_hd__nand4_4
+X_2335_ _2335_/A _2335_/B _1218_/B _1577_/X _2335_/Y sky130_fd_sc_hd__nand4_4
+X_2266_ _2266_/A _2266_/Y sky130_fd_sc_hd__inv_2
+X_2404_ _2408_/CLK _2307_/Y _2404_/Q sky130_fd_sc_hd__dfxtp_4
+X_1217_ _1185_/A _1218_/B sky130_fd_sc_hd__buf_2
+X_2197_ _2404_/Q _2175_/B _2198_/C sky130_fd_sc_hd__nand2_4
+X_2120_ _2123_/A _2120_/X sky130_fd_sc_hd__buf_2
+X_2051_ _2014_/X _2040_/X _1346_/X _2051_/Y sky130_fd_sc_hd__o21ai_4
+X_1835_ _1735_/C _1834_/Y _1831_/B _1835_/Y sky130_fd_sc_hd__o21ai_4
+X_1904_ _2431_/Q _1905_/B sky130_fd_sc_hd__inv_2
+X_1697_ _1697_/A _1697_/Y sky130_fd_sc_hd__inv_2
+X_1766_ _1438_/C _1766_/B _1766_/Y sky130_fd_sc_hd__nor2_4
+X_2249_ _2248_/X _2249_/X sky130_fd_sc_hd__buf_2
+X_2318_ _2158_/B _2311_/X _2253_/C _2313_/X _2318_/X sky130_fd_sc_hd__a2bb2o_4
+X_1551_ _1546_/X _1550_/Y _1454_/X _1551_/Y sky130_fd_sc_hd__a21oi_4
+X_1620_ _2175_/B _1620_/B _1620_/Y sky130_fd_sc_hd__nor2_4
+X_1482_ _1467_/Y _1424_/Y _1428_/Y _1482_/Y sky130_fd_sc_hd__nor3_4
+X_2103_ _2103_/A _2103_/Y sky130_fd_sc_hd__inv_2
+X_2034_ _2017_/C _2032_/X _2033_/Y _2034_/X sky130_fd_sc_hd__o21a_4
+X_1818_ _2576_/Q _1810_/X _1813_/X _1818_/X sky130_fd_sc_hd__o21a_4
+X_1749_ _1745_/X _1748_/Y _1628_/X _1749_/X sky130_fd_sc_hd__a21o_4
+Xclkbuf_4_4_0_addressalyzerBlock.SPI_CLK clkbuf_4_5_0_addressalyzerBlock.SPI_CLK/A
++ _2557_/CLK sky130_fd_sc_hd__clkbuf_1
+X_2652_ _2570_/CLK _2652_/D _2097_/B sky130_fd_sc_hd__dfxtp_4
+X_1534_ _1534_/A _1534_/X sky130_fd_sc_hd__buf_2
+X_1603_ _1602_/Y _1603_/Y sky130_fd_sc_hd__inv_2
+X_2583_ _2606_/CLK _2583_/D _1497_/A sky130_fd_sc_hd__dfxtp_4
+X_1465_ _1458_/Y _1463_/Y _1464_/Y _2611_/D sky130_fd_sc_hd__a21oi_4
+X_2017_ _2047_/A _2017_/B _2017_/C _2017_/D _2017_/X sky130_fd_sc_hd__and4_4
+X_1396_ _1231_/B _1397_/A sky130_fd_sc_hd__inv_2
+X_1181_ _1180_/Y _1194_/B sky130_fd_sc_hd__buf_2
+X_1250_ _1262_/C _1277_/B _1277_/D _1249_/Y _1271_/C sky130_fd_sc_hd__nand4_4
+X_2635_ _2477_/CLK _2635_/D _2635_/Q sky130_fd_sc_hd__dfxtp_4
+Xclkbuf_4_8_0_m1_clk_local clkbuf_4_9_0_m1_clk_local/A _2618_/CLK
++ sky130_fd_sc_hd__clkbuf_1
+X_2497_ _2496_/CLK _1978_/X _2497_/Q sky130_fd_sc_hd__dfxtp_4
+X_2566_ _2557_/CLK _2566_/D _2566_/Q sky130_fd_sc_hd__dfxtp_4
+X_1517_ _1513_/X _1515_/Y _1516_/X _2606_/D sky130_fd_sc_hd__a21oi_4
+X_1448_ _1448_/A _1449_/B sky130_fd_sc_hd__buf_2
+X_1379_ _1379_/A _1379_/X sky130_fd_sc_hd__buf_2
+X_2420_ _2408_/CLK _2420_/D _2420_/Q sky130_fd_sc_hd__dfxtp_4
+X_2351_ _2351_/A _2546_/Q _2351_/C _2352_/C sky130_fd_sc_hd__or3_4
+X_1233_ _1233_/A _1397_/B _1233_/C _1397_/C _1379_/A sky130_fd_sc_hd__nor4_4
+X_1302_ _1301_/Y _2637_/D sky130_fd_sc_hd__inv_2
+X_2282_ _2276_/X _2127_/Y _2278_/X _1705_/Y _2280_/X _2417_/D
++ sky130_fd_sc_hd__o32ai_4
+X_1997_ _2017_/C _1994_/Y _2488_/Q _2017_/D _2008_/A sky130_fd_sc_hd__nand4_4
+X_2549_ _2550_/CLK _2549_/D _1897_/B sky130_fd_sc_hd__dfxtp_4
+X_2618_ _2618_/CLK _1400_/Y _2618_/Q sky130_fd_sc_hd__dfxtp_4
+Xclkbuf_1_0_0_addressalyzerBlock.SPI_CLK clkbuf_0_addressalyzerBlock.SPI_CLK/X
++ clkbuf_2_1_0_addressalyzerBlock.SPI_CLK/A sky130_fd_sc_hd__clkbuf_1
+X_1851_ _1635_/X _1766_/B _1851_/Y sky130_fd_sc_hd__nor2_4
+X_1920_ _1918_/A _2538_/Q _1920_/X sky130_fd_sc_hd__and2_4
+X_1782_ _1779_/Y _1780_/Y _1781_/X _1782_/Y sky130_fd_sc_hd__a21oi_4
+X_2403_ _2408_/CLK _2403_/D _2089_/A sky130_fd_sc_hd__dfxtp_4
+X_1216_ _1194_/B _1216_/B _2645_/Q _1216_/Y sky130_fd_sc_hd__nand3_4
+X_2334_ _1529_/Y _2333_/Y _1781_/X _2389_/D sky130_fd_sc_hd__a21oi_4
+X_2265_ _1420_/Y _2262_/X _2258_/X _1622_/Y _2264_/X _2426_/D
++ sky130_fd_sc_hd__o32ai_4
+X_2196_ _2151_/A _1927_/A _2196_/Y sky130_fd_sc_hd__nand2_4
+X_2050_ _2049_/Y _2050_/Y sky130_fd_sc_hd__inv_2
+X_1834_ _1834_/A _1834_/Y sky130_fd_sc_hd__inv_2
+X_1903_ _1901_/X _1902_/Y _1903_/Y sky130_fd_sc_hd__nor2_4
+X_1765_ _1765_/A _1766_/B sky130_fd_sc_hd__inv_2
+X_1696_ _1696_/A _1698_/A sky130_fd_sc_hd__buf_2
+X_2317_ _1751_/B _2311_/X _1490_/A _2313_/X _2399_/D sky130_fd_sc_hd__a2bb2o_4
+X_2179_ _2177_/Y _2179_/B _2179_/C _2179_/Y sky130_fd_sc_hd__nand3_4
+X_2248_ _1583_/X _1594_/X _1600_/B _1696_/A _1736_/A _2248_/X
++ sky130_fd_sc_hd__a41o_4
+X_1550_ _1547_/X _1548_/Y _1549_/Y _1550_/Y sky130_fd_sc_hd__o21ai_4
+X_1481_ _1436_/B _1487_/A sky130_fd_sc_hd__buf_2
+X_2033_ _2043_/C _2047_/A _2017_/C _2017_/D _1275_/X _2033_/Y
++ sky130_fd_sc_hd__a41oi_4
+X_2102_ _2102_/A _2103_/A _2468_/Q _2091_/Y _2461_/D sky130_fd_sc_hd__nor4_4
+X_1817_ _2576_/Q _1809_/X _1816_/X _1817_/X sky130_fd_sc_hd__o21a_4
+X_1748_ _1746_/Y _1624_/X _1747_/Y _1748_/Y sky130_fd_sc_hd__o21ai_4
+X_1679_ _1566_/X _1683_/A _1679_/Y sky130_fd_sc_hd__nor2_4
+X_2651_ _2457_/CLK _1193_/Y _2353_/A sky130_fd_sc_hd__dfxtp_4
+X_1602_ _1602_/A _1600_/Y _1602_/C _1602_/Y sky130_fd_sc_hd__nand3_4
+X_2582_ _2581_/CLK _2582_/D _1503_/A sky130_fd_sc_hd__dfxtp_4
+X_1395_ _1395_/A _1379_/X _1394_/Y _1395_/Y sky130_fd_sc_hd__nor3_4
+X_1464_ _1438_/B _1449_/B _1213_/X _1464_/Y sky130_fd_sc_hd__o21ai_4
+X_1533_ _2604_/Q _1534_/A sky130_fd_sc_hd__inv_2
+X_2016_ _1987_/A _2017_/B sky130_fd_sc_hd__buf_2
+X_1180_ _1178_/A _1180_/Y sky130_fd_sc_hd__inv_2
+X_2634_ _2626_/CLK _2634_/D _1318_/A sky130_fd_sc_hd__dfxtp_4
+X_2565_ _2562_/CLK _2565_/D _2565_/Q sky130_fd_sc_hd__dfxtp_4
+X_1516_ _1450_/X _1512_/Y _1500_/X _1516_/X sky130_fd_sc_hd__a21o_4
+X_2496_ _2496_/CLK _2496_/D _2496_/Q sky130_fd_sc_hd__dfxtp_4
+X_1378_ _1378_/A _2624_/D sky130_fd_sc_hd__inv_2
+X_1447_ _1446_/Y _1448_/A sky130_fd_sc_hd__inv_2
+X_2350_ _2349_/A _2348_/Y _2349_/Y MISO_toHost sky130_fd_sc_hd__a21oi_4
+X_1232_ _1232_/A _2615_/Q _1409_/B _1232_/D _1397_/C sky130_fd_sc_hd__nand4_4
+X_1301_ _1301_/A _2006_/B _1300_/Y _1301_/Y sky130_fd_sc_hd__nand3_4
+X_2281_ _2276_/X _2122_/Y _2278_/X _1620_/B _2280_/X _2281_/Y
++ sky130_fd_sc_hd__o32ai_4
+X_1996_ _1995_/Y _2017_/D sky130_fd_sc_hd__inv_2
+X_2548_ _2550_/CLK _1894_/X _1899_/B sky130_fd_sc_hd__dfxtp_4
+X_2617_ _2618_/CLK _1404_/Y _1231_/B sky130_fd_sc_hd__dfxtp_4
+X_2479_ _2483_/CLK _2065_/X _1993_/A sky130_fd_sc_hd__dfxtp_4
+X_1781_ _1781_/A _1781_/X sky130_fd_sc_hd__buf_2
+X_1850_ _1846_/X _1849_/Y _1628_/X _1850_/X sky130_fd_sc_hd__a21o_4
+X_2333_ _1218_/B _2333_/B _2333_/Y sky130_fd_sc_hd__nand2_4
+X_2402_ _2445_/CLK _2402_/D _1636_/A sky130_fd_sc_hd__dfxtp_4
+X_1215_ _1211_/Y _2322_/A _1214_/Y _1215_/Y sky130_fd_sc_hd__a21oi_4
+X_2195_ _1534_/A _2552_/Q _2148_/X _2195_/Y sky130_fd_sc_hd__o21ai_4
+X_2264_ _2263_/X _2264_/X sky130_fd_sc_hd__buf_2
+X_1979_ _1979_/A _2496_/Q _1979_/X sky130_fd_sc_hd__or2_4
+X_1902_ _1902_/A _1902_/Y sky130_fd_sc_hd__inv_2
+X_1833_ _1178_/A _1735_/D _1834_/A sky130_fd_sc_hd__nand2_4
+X_1764_ _1764_/A _1764_/Y sky130_fd_sc_hd__inv_2
+X_2316_ _1766_/B _2311_/X _2268_/A _2313_/X _2316_/X sky130_fd_sc_hd__a2bb2o_4
+X_1695_ _1694_/X _1696_/A sky130_fd_sc_hd__buf_2
+X_2247_ _2246_/Y _2247_/X sky130_fd_sc_hd__buf_2
+X_2178_ _1944_/A _1703_/A _2179_/C sky130_fd_sc_hd__nand2_4
+Xclkbuf_4_9_0_addressalyzerBlock.SPI_CLK clkbuf_4_9_0_addressalyzerBlock.SPI_CLK/A
++ _2388_/CLK sky130_fd_sc_hd__clkbuf_1
+X_1480_ _1476_/Y _1478_/Y _1479_/Y _1480_/Y sky130_fd_sc_hd__a21oi_4
+X_2032_ _2029_/Y _2030_/X _2043_/C _2017_/D _2032_/X sky130_fd_sc_hd__and4_4
+X_2101_ _1221_/A _2102_/A sky130_fd_sc_hd__buf_2
+X_1678_ _1678_/A _1678_/Y sky130_fd_sc_hd__inv_2
+X_1816_ _2577_/Q _1810_/X _1813_/X _1816_/X sky130_fd_sc_hd__o21a_4
+X_1747_ _1625_/X _2431_/Q _1708_/X _1747_/Y sky130_fd_sc_hd__a21oi_4
+X_2650_ _2457_/CLK _1197_/Y _1182_/A sky130_fd_sc_hd__dfxtp_4
+X_2581_ _2581_/CLK _1805_/X _1514_/A sky130_fd_sc_hd__dfxtp_4
+X_1601_ _1555_/A _1602_/C sky130_fd_sc_hd__buf_2
+X_1532_ _1420_/A _1527_/Y _1556_/A _1532_/Y sky130_fd_sc_hd__a21oi_4
+X_1394_ _2619_/Q _1383_/A _1394_/Y sky130_fd_sc_hd__nor2_4
+X_1463_ _2266_/A _2333_/B _1462_/X _1463_/Y sky130_fd_sc_hd__a21oi_4
+X_2015_ _2014_/X _1986_/Y _1994_/D _2047_/A sky130_fd_sc_hd__nor3_4
+Xclkbuf_2_1_0_m1_clk_local clkbuf_2_1_0_m1_clk_local/A clkbuf_3_3_0_m1_clk_local/A
++ sky130_fd_sc_hd__clkbuf_1
+Xclkbuf_2_0_0_addressalyzerBlock.SPI_CLK clkbuf_2_1_0_addressalyzerBlock.SPI_CLK/A
++ clkbuf_2_0_0_addressalyzerBlock.SPI_CLK/X sky130_fd_sc_hd__clkbuf_1
+X_2495_ _2496_/CLK _2495_/D _1979_/A sky130_fd_sc_hd__dfxtp_4
+X_2633_ _2626_/CLK _2633_/D _1244_/B sky130_fd_sc_hd__dfxtp_4
+X_2564_ _2557_/CLK _2564_/D _2564_/Q sky130_fd_sc_hd__dfxtp_4
+X_1515_ _1514_/X _1460_/X _1462_/X _1515_/Y sky130_fd_sc_hd__a21oi_4
+X_1377_ _1375_/X _1376_/Y _1378_/A sky130_fd_sc_hd__nand2_4
+X_1446_ _1442_/X _1445_/A _1545_/A _1446_/Y sky130_fd_sc_hd__nand3_4
+X_1231_ _2618_/Q _1231_/B _1233_/C sky130_fd_sc_hd__nand2_4
+X_1300_ _1260_/Y _1300_/B _1300_/Y sky130_fd_sc_hd__nand2_4
+X_2280_ _2279_/X _2280_/X sky130_fd_sc_hd__buf_2
+X_1995_ _2043_/D _2037_/D _1995_/Y sky130_fd_sc_hd__nand2_4
+X_2616_ _2618_/CLK _1408_/Y _2616_/Q sky130_fd_sc_hd__dfxtp_4
+X_2547_ _2550_/CLK _2547_/D _2547_/Q sky130_fd_sc_hd__dfxtp_4
+X_2478_ _2483_/CLK _2478_/D _2478_/Q sky130_fd_sc_hd__dfxtp_4
+X_1429_ _1424_/Y _1428_/Y _1429_/Y sky130_fd_sc_hd__nor2_4
+Xclkbuf_4_4_0_m1_clk_local clkbuf_4_5_0_m1_clk_local/A _2477_/CLK
++ sky130_fd_sc_hd__clkbuf_1
+X_1780_ _1678_/Y _1780_/B _1780_/Y sky130_fd_sc_hd__nand2_4
+X_2332_ _1218_/B _2392_/Q _2102_/A _1729_/Y _2391_/D sky130_fd_sc_hd__a211o_4
+X_2401_ _2410_/CLK _2401_/D _1768_/B sky130_fd_sc_hd__dfxtp_4
+X_1214_ _2436_/Q _1187_/A _1213_/X _1214_/Y sky130_fd_sc_hd__o21ai_4
+X_2194_ _1409_/B _1571_/A _1568_/A _1660_/A _2146_/Y _2194_/Y
++ sky130_fd_sc_hd__o41ai_4
+X_2263_ _1583_/X _1594_/X _1669_/B _1694_/X _1736_/A _2263_/X
++ sky130_fd_sc_hd__a41o_4
+X_1978_ _1980_/A _1978_/B _1978_/C _1978_/X sky130_fd_sc_hd__and3_4
+X_1832_ _1829_/Y _1830_/Y _1831_/Y _2571_/D sky130_fd_sc_hd__a21oi_4
+X_1901_ _2063_/A _1901_/X sky130_fd_sc_hd__buf_2
+X_1763_ _1740_/Y _1760_/Y _1762_/Y _2590_/D sky130_fd_sc_hd__o21ai_4
+X_1694_ _2594_/Q _1694_/X sky130_fd_sc_hd__buf_2
+X_2315_ _1713_/Y _2311_/X _2266_/A _2313_/X _2401_/D sky130_fd_sc_hd__a2bb2o_4
+X_2246_ _2246_/A _2246_/Y sky130_fd_sc_hd__inv_2
+X_2177_ _2151_/A _2177_/B _2177_/Y sky130_fd_sc_hd__nand2_4
+Xclkbuf_4_14_0_addressalyzerBlock.SPI_CLK clkbuf_3_7_0_addressalyzerBlock.SPI_CLK/X
++ _2570_/CLK sky130_fd_sc_hd__clkbuf_1
+XPHY_120 sky130_fd_sc_hd__decap_3
+X_2100_ _1781_/X _2099_/C _2098_/Y _2462_/D sky130_fd_sc_hd__nor3_4
+X_2031_ _2017_/B _2043_/C sky130_fd_sc_hd__buf_2
+XPHY_0 sky130_fd_sc_hd__decap_3
+X_1815_ _2577_/Q _1809_/X _1814_/X _2578_/D sky130_fd_sc_hd__o21a_4
+X_1677_ _1674_/Y _1676_/Y _2596_/D sky130_fd_sc_hd__nand2_4
+X_1746_ _1746_/A _1746_/Y sky130_fd_sc_hd__inv_2
+X_2229_ _1645_/A _1333_/A _1612_/A _2229_/Y sky130_fd_sc_hd__a21oi_4
+X_1531_ _1530_/Y _1556_/A sky130_fd_sc_hd__buf_2
+X_1600_ _1549_/A _1600_/B _1600_/Y sky130_fd_sc_hd__nand2_4
+X_1462_ _1450_/X _1462_/X sky130_fd_sc_hd__buf_2
+X_2580_ _2581_/CLK _1807_/X _1520_/A sky130_fd_sc_hd__dfxtp_4
+X_1393_ _1385_/D _1379_/X _1392_/Y _2620_/D sky130_fd_sc_hd__o21a_4
+X_2014_ _1985_/Y _2014_/X sky130_fd_sc_hd__buf_2
+X_1729_ _2386_/Q _1566_/A _1689_/Y _1729_/Y sky130_fd_sc_hd__nor3_4
+X_2632_ _2626_/CLK _1337_/Y _1335_/A sky130_fd_sc_hd__dfxtp_4
+X_2563_ _2562_/CLK _1876_/X _2563_/Q sky130_fd_sc_hd__dfxtp_4
+X_1445_ _1445_/A _1434_/Y _1444_/Y _1445_/D _1545_/A sky130_fd_sc_hd__nand4_4
+X_2494_ _2388_/CLK _1983_/Y _1528_/A sky130_fd_sc_hd__dfxtp_4
+X_1514_ _1514_/A _1514_/X sky130_fd_sc_hd__buf_2
+X_1376_ _1366_/X _1236_/A _1373_/B _1376_/Y sky130_fd_sc_hd__nand3_4
+Xclkbuf_4_12_0_m1_clk_local clkbuf_3_6_0_m1_clk_local/X _2367_/CLK
++ sky130_fd_sc_hd__clkbuf_1
+X_1230_ _2616_/Q _1397_/B sky130_fd_sc_hd__inv_2
+X_1994_ _1985_/Y _1986_/Y _1994_/C _1994_/D _1994_/Y sky130_fd_sc_hd__nor4_4
+X_2615_ _2618_/CLK _1412_/X _2615_/Q sky130_fd_sc_hd__dfxtp_4
+X_2546_ _2550_/CLK _2546_/D _2546_/Q sky130_fd_sc_hd__dfxtp_4
+X_2477_ _2477_/CLK _2070_/Y _2477_/Q sky130_fd_sc_hd__dfxtp_4
+X_1428_ _1570_/A _1428_/B _1428_/C _1428_/D _1428_/Y sky130_fd_sc_hd__nand4_4
+X_1359_ _1358_/Y _2627_/D sky130_fd_sc_hd__inv_2
+X_2400_ _2606_/CLK _2316_/X _1765_/A sky130_fd_sc_hd__dfxtp_4
+X_1213_ _2096_/A _1213_/X sky130_fd_sc_hd__buf_2
+X_2331_ _1222_/X _2330_/Y _2390_/D sky130_fd_sc_hd__nor2_4
+X_2262_ _1649_/B _2262_/X sky130_fd_sc_hd__buf_2
+X_2193_ _1726_/A _2191_/Y _2192_/Y _2193_/Y sky130_fd_sc_hd__o21ai_4
+X_1977_ _1979_/A _2496_/Q _2497_/Q _1978_/C sky130_fd_sc_hd__a21o_4
+X_2529_ _2528_/CLK _2529_/D _2529_/Q sky130_fd_sc_hd__dfxtp_4
+X_1900_ _1900_/A _2547_/Q _2543_/D sky130_fd_sc_hd__and2_4
+X_1831_ _1831_/A _1831_/B _1831_/Y sky130_fd_sc_hd__nand2_4
+X_1762_ _1762_/A _1762_/B _1762_/Y sky130_fd_sc_hd__nand2_4
+X_1693_ _1688_/Y _1690_/Y _1692_/X _1693_/Y sky130_fd_sc_hd__o21ai_4
+X_2245_ _1219_/X _2245_/B _1691_/Y _2246_/A sky130_fd_sc_hd__nor3_4
+X_2314_ _1637_/B _2311_/X _1420_/A _2313_/X _2402_/D sky130_fd_sc_hd__a2bb2o_4
+X_2176_ _2174_/Y _1708_/X _2176_/C _2176_/Y sky130_fd_sc_hd__nand3_4
+XPHY_121 sky130_fd_sc_hd__decap_3
+XPHY_110 sky130_fd_sc_hd__decap_3
+X_2030_ _2030_/A _2030_/X sky130_fd_sc_hd__buf_2
+XPHY_1 sky130_fd_sc_hd__decap_3
+X_1814_ _2578_/Q _1810_/X _1813_/X _1814_/X sky130_fd_sc_hd__o21a_4
+X_1745_ _2300_/C _1703_/X _2179_/B _1744_/Y _1745_/X sky130_fd_sc_hd__a211o_4
+X_1676_ _1726_/A _1676_/B _1676_/Y sky130_fd_sc_hd__nand2_4
+X_2228_ _2217_/Y _2226_/Y _2227_/Y _2228_/Y sky130_fd_sc_hd__o21ai_4
+X_2159_ _1960_/A _1635_/X _1632_/Y _2158_/Y _2159_/X sky130_fd_sc_hd__a211o_4
+Xclkbuf_3_0_0_addressalyzerBlock.SPI_CLK clkbuf_2_0_0_addressalyzerBlock.SPI_CLK/X
++ clkbuf_4_1_0_addressalyzerBlock.SPI_CLK/A sky130_fd_sc_hd__clkbuf_1
+X_1392_ _1379_/X _1385_/D _2063_/A _1392_/Y sky130_fd_sc_hd__a21oi_4
+X_1530_ _1442_/X _1545_/A _1529_/Y _1530_/Y sky130_fd_sc_hd__nand3_4
+X_1461_ _1460_/X _2333_/B sky130_fd_sc_hd__buf_2
+X_2013_ _2002_/X _2003_/Y _2013_/C _2013_/D _2019_/B sky130_fd_sc_hd__nor4_4
+X_1728_ _1697_/A _1689_/A _1728_/C _1728_/Y sky130_fd_sc_hd__nor3_4
+X_1659_ _1659_/A _1660_/A sky130_fd_sc_hd__buf_2
+X_2562_ _2562_/CLK _2562_/D _2562_/Q sky130_fd_sc_hd__dfxtp_4
+X_2631_ _2626_/CLK _1341_/X _1242_/B sky130_fd_sc_hd__dfxtp_4
+X_2493_ _2470_/CLK _2493_/D CLK_LED sky130_fd_sc_hd__dfxtp_4
+X_1375_ _1236_/A _1373_/X _1374_/X _1375_/X sky130_fd_sc_hd__o21a_4
+X_1444_ _2385_/Q _1444_/Y sky130_fd_sc_hd__inv_2
+X_1513_ _1511_/Y _1512_/Y _1508_/X _1513_/X sky130_fd_sc_hd__a21o_4
+X_1993_ _1993_/A _1993_/B _1993_/C _1993_/D _1994_/D sky130_fd_sc_hd__nand4_4
+X_2545_ _2550_/CLK _2545_/D _2351_/A sky130_fd_sc_hd__dfxtp_4
+X_2614_ _2618_/CLK _2614_/D _1409_/B sky130_fd_sc_hd__dfxtp_4
+X_2476_ _2483_/CLK _2075_/Y _1990_/B sky130_fd_sc_hd__dfxtp_4
+X_1358_ _1358_/A _2006_/B _1358_/C _1358_/Y sky130_fd_sc_hd__nand3_4
+X_1427_ _1427_/A _1428_/D sky130_fd_sc_hd__buf_2
+X_1289_ _1289_/A _1971_/A _1289_/C _1290_/A sky130_fd_sc_hd__nand3_4
+X_2192_ _1762_/A _2437_/Q _2192_/Y sky130_fd_sc_hd__nand2_4
+X_1212_ _1188_/A _2322_/A sky130_fd_sc_hd__buf_2
+X_2330_ _2463_/Q _2385_/Q _2322_/A _2333_/B _2330_/Y sky130_fd_sc_hd__a22oi_4
+X_2261_ _2243_/Y _2260_/Y _2258_/X _1914_/B _2248_/X _2427_/D
++ sky130_fd_sc_hd__o32ai_4
+X_1976_ _1976_/A _1976_/B _1980_/A sky130_fd_sc_hd__nor2_4
+X_2528_ _2528_/CLK _2528_/D _1933_/B sky130_fd_sc_hd__dfxtp_4
+X_2459_ _2570_/CLK _2105_/X _2103_/A sky130_fd_sc_hd__dfxtp_4
+Xclkbuf_4_0_0_m1_clk_local clkbuf_4_1_0_m1_clk_local/A _2519_/CLK
++ sky130_fd_sc_hd__clkbuf_1
+X_1830_ _1179_/X _1735_/C _1735_/D _1830_/Y sky130_fd_sc_hd__nand3_4
+X_1761_ _1739_/A _1762_/A sky130_fd_sc_hd__buf_2
+X_1692_ _1691_/Y _1488_/X _1780_/B _1731_/B _1692_/X sky130_fd_sc_hd__a2bb2o_4
+X_2313_ _2312_/X _2313_/X sky130_fd_sc_hd__buf_2
+X_2244_ _2243_/Y _2244_/X sky130_fd_sc_hd__buf_2
+X_2175_ _1232_/A _2175_/B _2176_/C sky130_fd_sc_hd__nand2_4
+X_1959_ _1969_/A _2515_/Q _1959_/X sky130_fd_sc_hd__and2_4
+XPHY_100 sky130_fd_sc_hd__decap_3
+XPHY_122 sky130_fd_sc_hd__decap_3
+XPHY_111 sky130_fd_sc_hd__decap_3
+Xclkbuf_3_6_0_m1_clk_local clkbuf_3_7_0_m1_clk_local/A clkbuf_3_6_0_m1_clk_local/X
++ sky130_fd_sc_hd__clkbuf_1
+XPHY_2 sky130_fd_sc_hd__decap_3
+X_1813_ _1838_/A _1813_/X sky130_fd_sc_hd__buf_2
+X_1744_ _1630_/X _1744_/B _1744_/Y sky130_fd_sc_hd__nor2_4
+X_1675_ _1739_/A _1726_/A sky130_fd_sc_hd__buf_2
+X_2227_ _1300_/B _1640_/X _1651_/X _1856_/A _2227_/Y sky130_fd_sc_hd__a2bb2oi_4
+X_2089_ _2089_/A _2089_/Y sky130_fd_sc_hd__inv_2
+X_2158_ _1703_/X _2158_/B _2158_/Y sky130_fd_sc_hd__nor2_4
+X_1391_ _1274_/X _2063_/A sky130_fd_sc_hd__buf_2
+X_1460_ _2390_/Q _1460_/X sky130_fd_sc_hd__buf_2
+X_2012_ _2008_/A _2013_/D sky130_fd_sc_hd__buf_2
+X_1727_ _1725_/X _1726_/Y _2593_/D sky130_fd_sc_hd__nand2_4
+X_1658_ _1612_/X _1653_/Y _1657_/Y _1658_/Y sky130_fd_sc_hd__o21ai_4
+X_1589_ _1426_/A _1590_/B sky130_fd_sc_hd__inv_2
+X_2492_ _2372_/CLK _2492_/D _2492_/Q sky130_fd_sc_hd__dfxtp_4
+X_2561_ _2550_/CLK _2561_/D _2561_/Q sky130_fd_sc_hd__dfxtp_4
+X_2630_ _2477_/CLK _1343_/X _1242_/C sky130_fd_sc_hd__dfxtp_4
+X_1512_ _1486_/A _1512_/Y sky130_fd_sc_hd__inv_2
+X_1374_ _1374_/A _1374_/X sky130_fd_sc_hd__buf_2
+X_1443_ _1443_/A _1445_/A sky130_fd_sc_hd__inv_2
+X_1992_ _1992_/A _1992_/B _2060_/A _1992_/D _1993_/B sky130_fd_sc_hd__nor4_4
+X_2544_ _2550_/CLK _1899_/X _2544_/Q sky130_fd_sc_hd__dfxtp_4
+X_2475_ _2477_/CLK _2475_/D _2071_/A sky130_fd_sc_hd__dfxtp_4
+X_2613_ _2370_/CLK _1419_/X _1232_/D sky130_fd_sc_hd__dfxtp_4
+X_1357_ _1228_/Y _1350_/X _1349_/Y _1358_/C sky130_fd_sc_hd__o21ai_4
+X_1426_ _1426_/A _1428_/C sky130_fd_sc_hd__buf_2
+X_1288_ _1257_/X _1260_/Y _1225_/X _1289_/C sky130_fd_sc_hd__o21ai_4
+X_2191_ _2351_/A _1739_/B _2190_/Y _2168_/Y _2191_/Y sky130_fd_sc_hd__a22oi_4
+X_1211_ _2645_/Q _1194_/B _1210_/X _1211_/Y sky130_fd_sc_hd__o21ai_4
+X_2260_ _1840_/B _1698_/A _1520_/X _2260_/Y sky130_fd_sc_hd__nand3_4
+X_1975_ _1976_/A _1976_/B _1975_/C _2498_/D sky130_fd_sc_hd__nor3_4
+X_1409_ _1409_/A _1409_/B _1409_/C _1409_/Y sky130_fd_sc_hd__nand3_4
+X_2458_ _2570_/CLK _2106_/X _2105_/B sky130_fd_sc_hd__dfxtp_4
+X_2527_ _2506_/CLK _2527_/D _2527_/Q sky130_fd_sc_hd__dfxtp_4
+X_2389_ _2390_/CLK _2389_/D _1443_/A sky130_fd_sc_hd__dfxtp_4
+Xclkbuf_4_0_0_addressalyzerBlock.SPI_CLK clkbuf_4_1_0_addressalyzerBlock.SPI_CLK/A
++ _2428_/CLK sky130_fd_sc_hd__clkbuf_1
+X_1760_ _1758_/Y _1759_/Y _1673_/C _1760_/Y sky130_fd_sc_hd__a21oi_4
+X_1691_ _2594_/Q _1691_/Y sky130_fd_sc_hd__inv_2
+X_2312_ _1609_/B _1189_/Y _2245_/B _1694_/X _2312_/X sky130_fd_sc_hd__and4_4
+X_2174_ _2151_/A _2174_/B _2174_/Y sky130_fd_sc_hd__nand2_4
+X_2243_ _1609_/B _2243_/Y sky130_fd_sc_hd__inv_2
+X_1889_ _1891_/A _2560_/Q _1889_/X sky130_fd_sc_hd__and2_4
+X_1958_ _1969_/A _1958_/B _1958_/X sky130_fd_sc_hd__and2_4
+Xclkbuf_3_5_0_addressalyzerBlock.SPI_CLK clkbuf_3_5_0_addressalyzerBlock.SPI_CLK/A
++ clkbuf_3_5_0_addressalyzerBlock.SPI_CLK/X sky130_fd_sc_hd__clkbuf_1
+XPHY_123 sky130_fd_sc_hd__decap_3
+XPHY_112 sky130_fd_sc_hd__decap_3
+XPHY_101 sky130_fd_sc_hd__decap_3
+XPHY_3 sky130_fd_sc_hd__decap_3
+X_1674_ _1658_/Y _1661_/X _1673_/Y _1674_/Y sky130_fd_sc_hd__nand3_4
+X_1743_ _2415_/Q _1744_/B sky130_fd_sc_hd__inv_2
+X_1812_ _2578_/Q _1809_/X _1811_/X _2579_/D sky130_fd_sc_hd__o21a_4
+X_2226_ _2222_/X _2225_/X _1471_/X _2226_/Y sky130_fd_sc_hd__a21oi_4
+X_2088_ _1971_/A _2088_/B _2088_/X sky130_fd_sc_hd__and2_4
+X_2157_ _2153_/Y _2156_/Y _1628_/X _2157_/X sky130_fd_sc_hd__a21o_4
+X_1390_ _1395_/A _1390_/B _1390_/C _1390_/Y sky130_fd_sc_hd__nor3_4
+X_2011_ _2011_/A _2013_/C sky130_fd_sc_hd__inv_2
+X_1726_ _1726_/A _2593_/Q _1726_/Y sky130_fd_sc_hd__nand2_4
+X_1657_ _1612_/X _2628_/Q _1656_/X _1657_/Y sky130_fd_sc_hd__a21oi_4
+X_1588_ _1577_/X _1460_/X _1514_/X _1588_/Y sky130_fd_sc_hd__o21ai_4
+X_2209_ _1611_/A _1385_/A _1654_/Y _2209_/X sky130_fd_sc_hd__a21o_4
+X_2491_ _2470_/CLK _2019_/Y _2011_/A sky130_fd_sc_hd__dfxtp_4
+X_2560_ _2554_/CLK _2560_/D _2560_/Q sky130_fd_sc_hd__dfxtp_4
+X_1442_ _1434_/Y _1422_/A _1528_/A _1442_/X sky130_fd_sc_hd__a21o_4
+X_1511_ _1505_/B _1511_/Y sky130_fd_sc_hd__inv_2
+X_1373_ _1379_/A _1373_/B _1383_/C _1365_/D _1373_/X sky130_fd_sc_hd__and4_4
+X_1709_ _1709_/A _1710_/B sky130_fd_sc_hd__inv_2
+X_1991_ _1991_/A _1991_/B _1991_/C _1991_/D _1992_/D sky130_fd_sc_hd__nand4_4
+X_2612_ _2390_/CLK _1455_/Y _2335_/B sky130_fd_sc_hd__dfxtp_4
+X_2543_ _2550_/CLK _2543_/D _2543_/Q sky130_fd_sc_hd__dfxtp_4
+X_2474_ _2477_/CLK _2474_/D _1991_/D sky130_fd_sc_hd__dfxtp_4
+X_1425_ _2600_/Q _1570_/A sky130_fd_sc_hd__buf_2
+X_1356_ _1356_/A _1358_/A sky130_fd_sc_hd__inv_2
+X_1287_ _1277_/B _1289_/A sky130_fd_sc_hd__inv_2
+X_1210_ _1206_/A _1178_/A _1210_/X sky130_fd_sc_hd__or2_4
+X_2190_ _2172_/Y _2188_/Y _2189_/Y _2190_/Y sky130_fd_sc_hd__o21ai_4
+X_1974_ _1978_/B _1973_/A _1973_/Y _1975_/C sky130_fd_sc_hd__a21oi_4
+X_2457_ _2457_/CLK _2107_/X _2093_/B sky130_fd_sc_hd__dfxtp_4
+X_1408_ _1395_/A _1408_/B _1407_/Y _1408_/Y sky130_fd_sc_hd__nor3_4
+X_2388_ _2388_/CLK _2388_/D _1566_/A sky130_fd_sc_hd__dfxtp_4
+X_2526_ _2528_/CLK _2526_/D MACRO_RD_SELECT[3] sky130_fd_sc_hd__dfxtp_4
+X_1339_ _1274_/X _1339_/X sky130_fd_sc_hd__buf_2
+X_1690_ _1697_/A _1728_/C _1689_/Y _1690_/Y sky130_fd_sc_hd__nor3_4
+X_2311_ _2310_/X _2311_/X sky130_fd_sc_hd__buf_2
+X_2242_ _2122_/Y _2239_/Y _2241_/Y _2434_/D sky130_fd_sc_hd__o21ai_4
+X_2173_ _1534_/A _2553_/Q _2148_/X _2173_/Y sky130_fd_sc_hd__o21ai_4
+X_1957_ _1969_/A _1957_/B _2509_/D sky130_fd_sc_hd__and2_4
+X_1888_ _1891_/A _2561_/Q _2553_/D sky130_fd_sc_hd__and2_4
+X_2509_ _2519_/CLK _2509_/D DATA_TO_HASH[2] sky130_fd_sc_hd__dfxtp_4
+XPHY_124 sky130_fd_sc_hd__decap_3
+XPHY_113 sky130_fd_sc_hd__decap_3
+XPHY_102 sky130_fd_sc_hd__decap_3
+X_1811_ _2579_/Q _1810_/X _1799_/X _1811_/X sky130_fd_sc_hd__o21a_4
+XPHY_4 sky130_fd_sc_hd__decap_3
+X_1673_ _1739_/A _2166_/A _1673_/C _1739_/B _1673_/Y sky130_fd_sc_hd__nor4_4
+X_1742_ _1316_/B _1646_/X _1741_/Y _1742_/Y sky130_fd_sc_hd__o21ai_4
+X_2225_ _1966_/A _1751_/A _1633_/X _2224_/Y _2225_/X sky130_fd_sc_hd__a211o_4
+X_2087_ _1284_/X _2078_/X _2087_/Y sky130_fd_sc_hd__nor2_4
+X_2156_ _2154_/Y _2179_/B _2156_/C _2156_/Y sky130_fd_sc_hd__nand3_4
+X_2010_ _2009_/X _2010_/B _2010_/C _2492_/D sky130_fd_sc_hd__and3_4
+Xclkbuf_3_2_0_m1_clk_local clkbuf_3_3_0_m1_clk_local/A clkbuf_4_5_0_m1_clk_local/A
++ sky130_fd_sc_hd__clkbuf_1
+X_1725_ _1722_/Y _1723_/Y _1724_/X _1725_/X sky130_fd_sc_hd__a21o_4
+X_1656_ _1656_/A _1656_/X sky130_fd_sc_hd__buf_2
+X_1587_ _1545_/X _1576_/X _1578_/Y _1582_/Y _1586_/X _1587_/Y
++ sky130_fd_sc_hd__a41oi_4
+X_2208_ _1242_/C _1646_/A _1741_/Y _2208_/X sky130_fd_sc_hd__o21a_4
+X_2139_ _1594_/X _2245_/B _1669_/B _2121_/X _1221_/A _2139_/X
++ sky130_fd_sc_hd__a41o_4
+X_2490_ _2470_/CLK _2490_/D _1999_/A sky130_fd_sc_hd__dfxtp_4
+X_1510_ _1507_/Y _1509_/X _1454_/X _2607_/D sky130_fd_sc_hd__a21oi_4
+X_1441_ _1420_/Y _1445_/D _1440_/Y _1441_/Y sky130_fd_sc_hd__o21ai_4
+X_1372_ _2623_/Q _1373_/B sky130_fd_sc_hd__buf_2
+X_1708_ _2448_/Q _1708_/X sky130_fd_sc_hd__buf_2
+X_1639_ _1629_/X _1638_/X _1471_/X _1639_/Y sky130_fd_sc_hd__a21oi_4
+X_1990_ _2071_/A _1990_/B _2060_/A sky130_fd_sc_hd__nand2_4
+X_2542_ _2519_/CLK _1903_/Y _2542_/Q sky130_fd_sc_hd__dfxtp_4
+X_2611_ _2581_/CLK _2611_/D _1438_/B sky130_fd_sc_hd__dfxtp_4
+X_1355_ _1354_/Y _2628_/D sky130_fd_sc_hd__inv_2
+X_2473_ _2477_/CLK _2473_/D _1991_/C sky130_fd_sc_hd__dfxtp_4
+X_1424_ _1608_/B _1424_/Y sky130_fd_sc_hd__inv_2
+X_1286_ _1284_/X _1261_/Y _1286_/C _2640_/D sky130_fd_sc_hd__nor3_4
+Xclkbuf_4_5_0_addressalyzerBlock.SPI_CLK clkbuf_4_5_0_addressalyzerBlock.SPI_CLK/A
++ _2562_/CLK sky130_fd_sc_hd__clkbuf_1
+X_1973_ _1973_/A _1980_/B _1973_/Y sky130_fd_sc_hd__nor2_4
+X_2525_ _2528_/CLK _2525_/D MACRO_RD_SELECT[2] sky130_fd_sc_hd__dfxtp_4
+X_2456_ _2457_/CLK _2456_/D _2456_/Q sky130_fd_sc_hd__dfxtp_4
+X_1407_ _1409_/A _2615_/Q _1409_/B _1409_/C _2616_/Q _1407_/Y
++ sky130_fd_sc_hd__a41oi_4
+X_1338_ _1324_/X _1335_/D _1329_/X _1321_/X _1338_/X sky130_fd_sc_hd__and4_4
+X_2387_ _2390_/CLK _2387_/D _1683_/A sky130_fd_sc_hd__dfxtp_4
+X_1269_ _1374_/A _1270_/A sky130_fd_sc_hd__buf_2
+X_2172_ _2615_/Q _1571_/A _1568_/A _1660_/A _2146_/Y _2172_/Y
++ sky130_fd_sc_hd__o41ai_4
+X_2241_ _2239_/Y _2298_/B _2434_/Q _2241_/Y sky130_fd_sc_hd__nand3_4
+X_2310_ _1594_/X _1600_/B _2245_/B _1696_/A _1736_/A _2310_/X
++ sky130_fd_sc_hd__a41o_4
+X_1887_ _1891_/A _2562_/Q _1887_/X sky130_fd_sc_hd__and2_4
+X_1956_ _1254_/X _1969_/A sky130_fd_sc_hd__buf_2
+X_2508_ _2496_/CLK _1958_/X DATA_TO_HASH[1] sky130_fd_sc_hd__dfxtp_4
+X_2439_ _2557_/CLK _2439_/D _1966_/A sky130_fd_sc_hd__dfxtp_4
+XPHY_125 sky130_fd_sc_hd__decap_3
+XPHY_114 sky130_fd_sc_hd__decap_3
+XPHY_103 sky130_fd_sc_hd__decap_3
+XPHY_5 sky130_fd_sc_hd__decap_3
+X_1741_ _1611_/A _1741_/Y sky130_fd_sc_hd__inv_2
+X_1810_ _2461_/Q _1810_/X sky130_fd_sc_hd__buf_2
+X_1672_ _1672_/A _1739_/B sky130_fd_sc_hd__buf_2
+X_2155_ _1941_/A _1703_/A _2156_/C sky130_fd_sc_hd__nand2_4
+X_2224_ _1703_/X _2223_/Y _2224_/Y sky130_fd_sc_hd__nor2_4
+X_2086_ _2078_/X _1991_/B _2085_/Y _2086_/X sky130_fd_sc_hd__o21a_4
+X_1939_ _1938_/A _1847_/Y _2520_/D sky130_fd_sc_hd__nor2_4
+Xclkbuf_1_1_0_addressalyzerBlock.SPI_CLK clkbuf_0_addressalyzerBlock.SPI_CLK/X
++ clkbuf_2_3_0_addressalyzerBlock.SPI_CLK/A sky130_fd_sc_hd__clkbuf_1
+X_1724_ _1667_/A _1856_/A _1662_/Y _1672_/A _1724_/X sky130_fd_sc_hd__a211o_4
+X_1655_ _1654_/Y _1656_/A sky130_fd_sc_hd__buf_2
+X_1586_ _1549_/A _1583_/X _1781_/A _1586_/X sky130_fd_sc_hd__a21o_4
+X_2069_ _2058_/X _2060_/Y _2068_/Y _2070_/A sky130_fd_sc_hd__o21ai_4
+X_2207_ _2195_/Y _2205_/Y _2206_/Y _2207_/Y sky130_fd_sc_hd__o21ai_4
+X_2138_ _2138_/A _2138_/Y sky130_fd_sc_hd__inv_2
+X_1371_ _1360_/Y _1350_/X _1370_/Y _2625_/D sky130_fd_sc_hd__a21oi_4
+X_1440_ _1423_/Y _1440_/B _1435_/Y _1440_/D _1440_/Y sky130_fd_sc_hd__nand4_4
+X_1638_ _2125_/C _1751_/A _1633_/X _1637_/Y _1638_/X sky130_fd_sc_hd__a211o_4
+X_1707_ _2295_/C _1703_/X _2179_/B _1706_/Y _1712_/A sky130_fd_sc_hd__a211o_4
+X_1569_ _1731_/B _1566_/X _1661_/C _1569_/X sky130_fd_sc_hd__o21a_4
+X_2472_ _2477_/CLK _2086_/X _1991_/B sky130_fd_sc_hd__dfxtp_4
+X_2541_ _2519_/CLK _1905_/Y _2541_/Q sky130_fd_sc_hd__dfxtp_4
+X_2610_ _2581_/CLK _1480_/Y _1438_/C sky130_fd_sc_hd__dfxtp_4
+X_1354_ _1352_/X _1353_/Y _1354_/Y sky130_fd_sc_hd__nand2_4
+X_1285_ _1225_/X _1226_/Y _1257_/X _1246_/Y _1256_/Y _1286_/C
++ sky130_fd_sc_hd__o41a_4
+X_1423_ _2335_/B _1423_/Y sky130_fd_sc_hd__inv_2
+Xclkbuf_4_10_0_addressalyzerBlock.SPI_CLK clkbuf_3_5_0_addressalyzerBlock.SPI_CLK/X
++ _2581_/CLK sky130_fd_sc_hd__clkbuf_1
+X_1972_ _1979_/A _2496_/Q _2497_/Q _1978_/B sky130_fd_sc_hd__nand3_4
+X_2455_ _2457_/CLK _2109_/X _2455_/Q sky130_fd_sc_hd__dfxtp_4
+X_2524_ _2506_/CLK _2524_/D MACRO_RD_SELECT[1] sky130_fd_sc_hd__dfxtp_4
+X_1337_ _1336_/Y _1337_/Y sky130_fd_sc_hd__inv_2
+X_1406_ _1232_/D _1409_/C sky130_fd_sc_hd__buf_2
+X_2386_ _2570_/CLK _2329_/Y _2386_/Q sky130_fd_sc_hd__dfxtp_4
+X_1268_ _1268_/A _1719_/A _1268_/Y sky130_fd_sc_hd__nand2_4
+X_1199_ _1194_/A _1179_/X _1198_/X _1199_/Y sky130_fd_sc_hd__o21ai_4
+X_2171_ _1726_/A _2169_/Y _2170_/Y _2438_/D sky130_fd_sc_hd__o21ai_4
+X_2240_ _1555_/A _2298_/B sky130_fd_sc_hd__buf_2
+X_1886_ _1874_/A _1891_/A sky130_fd_sc_hd__buf_2
+X_1955_ _1952_/A _2518_/Q _1955_/X sky130_fd_sc_hd__and2_4
+X_2438_ _2550_/CLK _2438_/D _2170_/B sky130_fd_sc_hd__dfxtp_4
+X_2507_ _2638_/CLK _1959_/X DATA_TO_HASH[0] sky130_fd_sc_hd__dfxtp_4
+X_2369_ _2370_/CLK _2369_/D _2369_/Q sky130_fd_sc_hd__dfxtp_4
+XPHY_126 sky130_fd_sc_hd__decap_3
+XPHY_115 sky130_fd_sc_hd__decap_3
+XPHY_104 sky130_fd_sc_hd__decap_3
+XPHY_6 sky130_fd_sc_hd__decap_3
+X_1740_ _1739_/Y _1740_/Y sky130_fd_sc_hd__inv_2
+X_1671_ _1571_/A _1660_/A _2234_/D _1672_/A sky130_fd_sc_hd__nor3_4
+X_2085_ _2078_/X _1991_/B _2063_/A _2085_/Y sky130_fd_sc_hd__a21oi_4
+X_2223_ _1767_/B _2223_/Y sky130_fd_sc_hd__inv_2
+X_2154_ _2151_/A _2154_/B _2154_/Y sky130_fd_sc_hd__nand2_4
+X_1869_ _1976_/A _1869_/B _1869_/Y sky130_fd_sc_hd__nor2_4
+X_1938_ _1938_/A _1937_/Y _1938_/Y sky130_fd_sc_hd__nor2_4
+X_1723_ _1656_/X _2619_/Q _2166_/A _1723_/Y sky130_fd_sc_hd__a21oi_4
+X_1654_ _1570_/A _1568_/A _1659_/A _1654_/Y sky130_fd_sc_hd__nor3_4
+X_2206_ _1293_/Y _1613_/Y _1651_/A _1649_/Y _2206_/Y sky130_fd_sc_hd__a2bb2oi_4
+X_1585_ _1736_/A _1781_/A sky130_fd_sc_hd__buf_2
+X_2068_ _2060_/Y _2058_/X _1283_/X _2068_/Y sky130_fd_sc_hd__a21oi_4
+X_2137_ _1221_/A _1691_/Y _2138_/A sky130_fd_sc_hd__nor2_4
+X_1370_ _1360_/Y _1350_/X _1346_/X _1370_/Y sky130_fd_sc_hd__o21ai_4
+X_1706_ _1630_/X _1705_/Y _1706_/Y sky130_fd_sc_hd__nor2_4
+X_1637_ _1635_/X _1637_/B _1637_/Y sky130_fd_sc_hd__nor2_4
+X_1568_ _1568_/A _1661_/C sky130_fd_sc_hd__buf_2
+X_1499_ _1487_/A _1499_/Y sky130_fd_sc_hd__inv_2
+X_2471_ _2477_/CLK _2087_/Y _1991_/A sky130_fd_sc_hd__dfxtp_4
+X_2540_ _2519_/CLK _2540_/D _2540_/Q sky130_fd_sc_hd__dfxtp_4
+X_1422_ _1422_/A _1445_/D sky130_fd_sc_hd__buf_2
+X_1353_ _1324_/X _2628_/Q _1349_/A _1353_/Y sky130_fd_sc_hd__nand3_4
+X_1284_ _1283_/X _1284_/X sky130_fd_sc_hd__buf_2
+X_1971_ _1971_/A _2503_/Q _1971_/X sky130_fd_sc_hd__and2_4
+X_2454_ _2457_/CLK _2454_/D _2109_/B sky130_fd_sc_hd__dfxtp_4
+X_1405_ _1232_/A _1409_/A sky130_fd_sc_hd__buf_2
+X_2385_ _2570_/CLK _2385_/D _2385_/Q sky130_fd_sc_hd__dfxtp_4
+X_2523_ _2506_/CLK _2523_/D MACRO_RD_SELECT[0] sky130_fd_sc_hd__dfxtp_4
+X_1198_ _2648_/Q _1180_/Y _1198_/X sky130_fd_sc_hd__or2_4
+X_1336_ _1331_/X _1335_/Y _1336_/Y sky130_fd_sc_hd__nand2_4
+X_1267_ _1262_/C _1719_/A sky130_fd_sc_hd__inv_2
+Xclkbuf_0_addressalyzerBlock.SPI_CLK _2347_/X clkbuf_0_addressalyzerBlock.SPI_CLK/X
++ sky130_fd_sc_hd__clkbuf_16
+X_2170_ _1762_/A _2170_/B _2170_/Y sky130_fd_sc_hd__nand2_4
+X_1954_ _1952_/A _2519_/Q _1954_/X sky130_fd_sc_hd__and2_4
+Xclkbuf_2_1_0_addressalyzerBlock.SPI_CLK clkbuf_2_1_0_addressalyzerBlock.SPI_CLK/A
++ clkbuf_2_1_0_addressalyzerBlock.SPI_CLK/X sky130_fd_sc_hd__clkbuf_1
+X_1885_ _1885_/A _2563_/Q _1885_/X sky130_fd_sc_hd__and2_4
+X_2368_ _2372_/CLK _2367_/Q _2369_/D sky130_fd_sc_hd__dfxtp_4
+Xclkbuf_4_7_0_m1_clk_local clkbuf_4_7_0_m1_clk_local/A _2470_/CLK
++ sky130_fd_sc_hd__clkbuf_1
+X_2437_ _2590_/CLK _2193_/Y _2437_/Q sky130_fd_sc_hd__dfxtp_4
+X_2506_ _2506_/CLK _2506_/D _1968_/B sky130_fd_sc_hd__dfxtp_4
+XPHY_116 sky130_fd_sc_hd__decap_3
+XPHY_105 sky130_fd_sc_hd__decap_3
+X_1319_ _1319_/A _1318_/Y _1319_/Y sky130_fd_sc_hd__nand2_4
+X_2299_ _2268_/Y _2291_/X _2298_/Y _2299_/Y sky130_fd_sc_hd__o21ai_4
+XPHY_127 sky130_fd_sc_hd__decap_3
+XPHY_7 sky130_fd_sc_hd__decap_3
+X_1670_ _1669_/Y _2234_/D sky130_fd_sc_hd__inv_2
+X_2222_ _2219_/Y _2221_/Y _1628_/X _2222_/X sky130_fd_sc_hd__a21o_4
+X_2084_ _2084_/A _2044_/B _2084_/C _2473_/D sky130_fd_sc_hd__and3_4
+X_2153_ _2151_/Y _1708_/X _2153_/C _2153_/Y sky130_fd_sc_hd__nand3_4
+X_1937_ _1937_/A _1937_/Y sky130_fd_sc_hd__inv_2
+X_1868_ _2567_/Q _1976_/B _1869_/B sky130_fd_sc_hd__xnor2_4
+X_1799_ _1555_/A _1799_/X sky130_fd_sc_hd__buf_2
+X_1722_ _1700_/X _1720_/Y _1721_/Y _1722_/Y sky130_fd_sc_hd__o21ai_4
+X_1653_ _1642_/Y _1646_/X _1652_/X _1653_/Y sky130_fd_sc_hd__a21oi_4
+X_1584_ _1219_/X _1736_/A sky130_fd_sc_hd__buf_2
+X_2205_ _2202_/X _2204_/X _1701_/A _2205_/Y sky130_fd_sc_hd__a21oi_4
+X_2067_ _2063_/A _1993_/B _2066_/Y _2478_/D sky130_fd_sc_hd__nor3_4
+X_2136_ _2253_/C _2136_/Y sky130_fd_sc_hd__inv_2
+X_1705_ _2417_/Q _1705_/Y sky130_fd_sc_hd__inv_2
+X_1567_ _1428_/B _1428_/C _1428_/D _1568_/A sky130_fd_sc_hd__nand3_4
+X_1636_ _1636_/A _1637_/B sky130_fd_sc_hd__inv_2
+X_2119_ _2119_/A _2123_/A sky130_fd_sc_hd__inv_2
+X_1498_ _2253_/C _2333_/B _1462_/X _1498_/Y sky130_fd_sc_hd__a21oi_4
+Xclkbuf_4_15_0_addressalyzerBlock.SPI_CLK clkbuf_3_7_0_addressalyzerBlock.SPI_CLK/X
++ _2457_/CLK sky130_fd_sc_hd__clkbuf_1
+X_2470_ _2470_/CLK _2088_/X HASH_EN sky130_fd_sc_hd__dfxtp_4
+X_1421_ _2390_/Q _1422_/A sky130_fd_sc_hd__inv_2
+X_1283_ _2363_/Q _1283_/X sky130_fd_sc_hd__buf_2
+X_1352_ _2628_/Q _1356_/A _1306_/X _1352_/X sky130_fd_sc_hd__o21a_4
+X_2599_ _2590_/CLK _1587_/Y _1428_/B sky130_fd_sc_hd__dfxtp_4
+X_1619_ _1619_/A _1620_/B sky130_fd_sc_hd__inv_2
+X_1970_ _1971_/A _2504_/Q _2500_/D sky130_fd_sc_hd__and2_4
+X_2522_ _2528_/CLK _2522_/D _1951_/B sky130_fd_sc_hd__dfxtp_4
+Xclkbuf_4_15_0_m1_clk_local clkbuf_3_7_0_m1_clk_local/X _2496_/CLK
++ sky130_fd_sc_hd__clkbuf_1
+X_2384_ _2550_/CLK _2384_/D _2384_/Q sky130_fd_sc_hd__dfxtp_4
+X_1404_ _1404_/A _1404_/Y sky130_fd_sc_hd__inv_2
+X_1335_ _1335_/A _1333_/Y _1335_/C _1335_/D _1335_/Y sky130_fd_sc_hd__nand4_4
+X_2453_ _2390_/CLK _2111_/Y _2099_/C sky130_fd_sc_hd__dfxtp_4
+X_1197_ _1195_/Y _1187_/X _1196_/Y _1197_/Y sky130_fd_sc_hd__a21oi_4
+X_1266_ _1277_/D _1265_/Y _1224_/A _1249_/Y _1268_/A sky130_fd_sc_hd__nand4_4
+X_1884_ _1885_/A _2564_/Q _2556_/D sky130_fd_sc_hd__and2_4
+X_1953_ _1952_/A _1953_/B _1953_/X sky130_fd_sc_hd__and2_4
+X_2505_ _2641_/CLK _1963_/Y _2505_/Q sky130_fd_sc_hd__dfxtp_4
+X_2367_ _2367_/CLK _1864_/A _2367_/Q sky130_fd_sc_hd__dfxtp_4
+X_2436_ _2590_/CLK _2215_/Y _2436_/Q sky130_fd_sc_hd__dfxtp_4
+X_1318_ _1318_/A _1318_/B _1316_/B _1316_/D _1318_/Y sky130_fd_sc_hd__nand4_4
+X_2298_ _2304_/A _2298_/B ID_toHost _2298_/Y sky130_fd_sc_hd__nand3_4
+XPHY_128 sky130_fd_sc_hd__decap_3
+XPHY_117 sky130_fd_sc_hd__decap_3
+XPHY_106 sky130_fd_sc_hd__decap_3
+X_1249_ _1249_/A _1249_/Y sky130_fd_sc_hd__inv_2
+XPHY_8 sky130_fd_sc_hd__decap_3
+X_2221_ _1948_/Y _1624_/X _2220_/Y _2221_/Y sky130_fd_sc_hd__o21ai_4
+X_2152_ HASH_LED _2175_/B _2153_/C sky130_fd_sc_hd__nand2_4
+X_2083_ _2078_/X _1991_/B _1991_/C _2084_/A sky130_fd_sc_hd__a21o_4
+X_1867_ _1973_/A _2497_/Q _1980_/B _1976_/B sky130_fd_sc_hd__nor3_4
+X_1936_ _1938_/A _1622_/Y _2522_/D sky130_fd_sc_hd__nor2_4
+X_1798_ _1983_/B _2576_/Q _1797_/X _1798_/X sky130_fd_sc_hd__o21a_4
+X_2419_ _2408_/CLK _2419_/D _1948_/A sky130_fd_sc_hd__dfxtp_4
+X_1721_ _1612_/X _1349_/Y _1656_/X _1721_/Y sky130_fd_sc_hd__a21oi_4
+X_1652_ _1856_/A _2636_/Q _1651_/X _1652_/X sky130_fd_sc_hd__and3_4
+X_1583_ _1559_/B _1583_/X sky130_fd_sc_hd__buf_2
+X_2135_ _2120_/X _2133_/Y _2134_/Y _2135_/Y sky130_fd_sc_hd__o21ai_4
+X_2204_ _1964_/A _1635_/X _1632_/Y _2203_/Y _2204_/X sky130_fd_sc_hd__a211o_4
+X_2066_ _2060_/Y _2058_/X _2062_/B _2066_/Y sky130_fd_sc_hd__a21oi_4
+X_1919_ _1918_/A _2539_/Q _2533_/D sky130_fd_sc_hd__and2_4
+X_1704_ _1617_/Y _2179_/B sky130_fd_sc_hd__buf_2
+X_1566_ _1566_/A _1566_/X sky130_fd_sc_hd__buf_2
+X_1497_ _1497_/A _2253_/C sky130_fd_sc_hd__buf_2
+X_1635_ _1703_/A _1635_/X sky130_fd_sc_hd__buf_2
+X_2049_ _2049_/A _2006_/B _2048_/Y _2049_/Y sky130_fd_sc_hd__nand3_4
+X_2118_ _1590_/B _1579_/X _1669_/B _1694_/X _2119_/A sky130_fd_sc_hd__and4_4
+X_1351_ _1349_/Y _1228_/Y _1350_/X _1356_/A sky130_fd_sc_hd__nor3_4
+X_1420_ _1420_/A _1420_/Y sky130_fd_sc_hd__inv_2
+X_1282_ _1281_/Y _2010_/B _1282_/C _1282_/X sky130_fd_sc_hd__and3_4
+X_1618_ _2447_/Q _2175_/B sky130_fd_sc_hd__buf_2
+X_1549_ _1549_/A _1549_/Y sky130_fd_sc_hd__inv_2
+X_2598_ _2598_/CLK _2598_/D _1426_/A sky130_fd_sc_hd__dfxtp_4
+Xclkbuf_3_1_0_addressalyzerBlock.SPI_CLK clkbuf_2_0_0_addressalyzerBlock.SPI_CLK/X
++ clkbuf_4_3_0_addressalyzerBlock.SPI_CLK/A sky130_fd_sc_hd__clkbuf_1
+X_2521_ _2641_/CLK _1938_/Y _2521_/Q sky130_fd_sc_hd__dfxtp_4
+X_2383_ _2550_/CLK _2383_/D _2384_/D sky130_fd_sc_hd__dfxtp_4
+X_1403_ _1231_/B _1408_/B _1402_/Y _1404_/A sky130_fd_sc_hd__o21ai_4
+X_1334_ _1242_/C _1335_/D sky130_fd_sc_hd__buf_2
+X_2452_ _2570_/CLK _2112_/Y _2452_/Q sky130_fd_sc_hd__dfxtp_4
+X_1265_ _1257_/X _1260_/Y _1265_/Y sky130_fd_sc_hd__nor2_4
+X_1196_ _1862_/B _1216_/B _1191_/X _1196_/Y sky130_fd_sc_hd__o21ai_4
+Xclkbuf_2_0_0_m1_clk_local clkbuf_2_1_0_m1_clk_local/A clkbuf_3_1_0_m1_clk_local/A
++ sky130_fd_sc_hd__clkbuf_1
+X_1883_ _1885_/A _2565_/Q _2557_/D sky130_fd_sc_hd__and2_4
+X_1952_ _1952_/A _2521_/Q _1952_/X sky130_fd_sc_hd__and2_4
+X_2435_ _2590_/CLK _2237_/Y _1218_/A sky130_fd_sc_hd__dfxtp_4
+X_2504_ _2638_/CLK _1965_/Y _2504_/Q sky130_fd_sc_hd__dfxtp_4
+X_2366_ _2367_/CLK _2365_/Q _1864_/A sky130_fd_sc_hd__dfxtp_4
+X_1317_ _1318_/A _1316_/X _1306_/X _1319_/A sky130_fd_sc_hd__o21a_4
+X_1248_ _1277_/A _2641_/Q _1249_/A sky130_fd_sc_hd__nand2_4
+X_2297_ _2290_/Y _2304_/A sky130_fd_sc_hd__buf_2
+XPHY_129 sky130_fd_sc_hd__decap_3
+XPHY_118 sky130_fd_sc_hd__decap_3
+XPHY_107 sky130_fd_sc_hd__decap_3
+X_1179_ _1179_/A _1179_/X sky130_fd_sc_hd__buf_2
+XPHY_9 sky130_fd_sc_hd__decap_3
+X_2082_ _2081_/X _2044_/B _2060_/B _2474_/D sky130_fd_sc_hd__and3_4
+X_2220_ _1625_/X _1913_/A _2448_/Q _2220_/Y sky130_fd_sc_hd__a21oi_4
+X_2151_ _2151_/A _2151_/B _2151_/Y sky130_fd_sc_hd__nand2_4
+X_1866_ _1979_/A _2496_/Q _1980_/B sky130_fd_sc_hd__nand2_4
+X_1797_ _1788_/X _1490_/A _2326_/A _1797_/X sky130_fd_sc_hd__o21a_4
+X_1935_ _1339_/X _1938_/A sky130_fd_sc_hd__buf_2
+X_2418_ _2445_/CLK _2281_/Y _1619_/A sky130_fd_sc_hd__dfxtp_4
+X_2349_ _2349_/A MISO_fromClient _2349_/Y sky130_fd_sc_hd__nor2_4
+Xclkbuf_4_3_0_m1_clk_local clkbuf_4_3_0_m1_clk_local/A _2641_/CLK
++ sky130_fd_sc_hd__clkbuf_1
+X_1651_ _1651_/A _1651_/X sky130_fd_sc_hd__buf_2
+X_1720_ _1718_/Y _1719_/X _1645_/A _1720_/Y sky130_fd_sc_hd__a21oi_4
+X_1582_ _1581_/X _1562_/Y _1569_/X _1582_/Y sky130_fd_sc_hd__o21ai_4
+X_2065_ _2055_/X _1993_/B _2064_/Y _2065_/X sky130_fd_sc_hd__o21a_4
+X_2134_ _2123_/A _2335_/A _2134_/C _2134_/Y sky130_fd_sc_hd__nand3_4
+X_2203_ _2181_/A _1764_/Y _2203_/Y sky130_fd_sc_hd__nor2_4
+X_1849_ _1847_/Y _1624_/X _1848_/Y _1849_/Y sky130_fd_sc_hd__o21ai_4
+X_1918_ _1918_/A _2540_/Q _1918_/X sky130_fd_sc_hd__and2_4
+X_1634_ _2447_/Q _1703_/A sky130_fd_sc_hd__buf_2
+X_1703_ _1703_/A _1703_/X sky130_fd_sc_hd__buf_2
+X_1565_ _2386_/Q _1731_/B sky130_fd_sc_hd__buf_2
+X_1496_ _1487_/A _1494_/X _1495_/Y _1496_/Y sky130_fd_sc_hd__o21ai_4
+X_2048_ _2014_/X _2040_/X _1986_/Y _2048_/Y sky130_fd_sc_hd__o21ai_4
+X_2117_ _1602_/Y _2117_/Y sky130_fd_sc_hd__inv_2
+X_1350_ _1238_/Y _1350_/X sky130_fd_sc_hd__buf_2
+X_1281_ _1256_/Y _1225_/X _1257_/X _1260_/Y _1280_/Y _1281_/Y
++ sky130_fd_sc_hd__o41ai_4
+X_2597_ _2598_/CLK _1603_/Y _1427_/A sky130_fd_sc_hd__dfxtp_4
+X_1617_ _2448_/Q _1617_/Y sky130_fd_sc_hd__inv_2
+X_1548_ _2602_/Q _1537_/X _1451_/X _1548_/D _1548_/Y sky130_fd_sc_hd__nor4_4
+X_1479_ _1456_/X _1449_/B _1213_/X _1479_/Y sky130_fd_sc_hd__o21ai_4
+X_1402_ _1408_/B _1231_/B _1283_/X _1402_/Y sky130_fd_sc_hd__a21oi_4
+X_2451_ _2390_/CLK _2113_/X _1779_/C sky130_fd_sc_hd__dfxtp_4
+X_2520_ _2528_/CLK _2520_/D _1953_/B sky130_fd_sc_hd__dfxtp_4
+X_2382_ _2372_/CLK _2341_/Y _2363_/D sky130_fd_sc_hd__dfxtp_4
+X_1333_ _1333_/A _1228_/Y _1240_/Y _1238_/Y _1333_/Y sky130_fd_sc_hd__nor4_4
+X_1264_ _1263_/Y _1264_/Y sky130_fd_sc_hd__inv_2
+X_1195_ _1182_/A _1179_/X _1194_/X _1195_/Y sky130_fd_sc_hd__o21ai_4
+X_2649_ _2457_/CLK _1201_/Y _1194_/A sky130_fd_sc_hd__dfxtp_4
+X_1882_ _1885_/A _2566_/Q _2558_/D sky130_fd_sc_hd__and2_4
+X_1951_ _1952_/A _1951_/B _1951_/X sky130_fd_sc_hd__and2_4
+X_2365_ _2372_/CLK _2365_/D _2365_/Q sky130_fd_sc_hd__dfxtp_4
+X_2503_ _2641_/CLK _2503_/D _2503_/Q sky130_fd_sc_hd__dfxtp_4
+X_2434_ _2557_/CLK _2434_/D _2434_/Q sky130_fd_sc_hd__dfxtp_4
+X_1178_ _1178_/A _1179_/A sky130_fd_sc_hd__buf_2
+X_1316_ _1239_/Y _1316_/B _1241_/Y _1316_/D _1316_/X sky130_fd_sc_hd__and4_4
+X_1247_ _1225_/X _1226_/Y _1257_/A _1246_/Y _1277_/B sky130_fd_sc_hd__nor4_4
+X_2296_ _2266_/Y _2291_/X _2295_/Y _2296_/Y sky130_fd_sc_hd__o21ai_4
+XPHY_119 sky130_fd_sc_hd__decap_3
+XPHY_108 sky130_fd_sc_hd__decap_3
+Xclkbuf_4_11_0_m1_clk_local clkbuf_3_5_0_m1_clk_local/X _2506_/CLK
++ sky130_fd_sc_hd__clkbuf_1
+X_2081_ _1991_/D _2080_/Y _2081_/X sky130_fd_sc_hd__or2_4
+X_2150_ _1623_/Y _2151_/A sky130_fd_sc_hd__buf_2
+X_1934_ _1932_/A _2527_/Q _2523_/D sky130_fd_sc_hd__and2_4
+X_1865_ _2365_/Q _2365_/D _1865_/C _1976_/A sky130_fd_sc_hd__nor3_4
+X_1796_ _1983_/B _2577_/Q _1795_/X _1796_/X sky130_fd_sc_hd__o21a_4
+X_2348_ _2464_/Q _2348_/Y sky130_fd_sc_hd__inv_2
+X_2417_ _2428_/CLK _2417_/D _2417_/Q sky130_fd_sc_hd__dfxtp_4
+X_2279_ _1583_/X _1600_/B _1428_/C _1694_/X _1219_/X _2279_/X
++ sky130_fd_sc_hd__a41o_4
+X_1650_ _1649_/Y _1856_/A sky130_fd_sc_hd__buf_2
+X_1581_ _2245_/B _1581_/X sky130_fd_sc_hd__buf_2
+X_2202_ _2198_/Y _2201_/Y _2449_/Q _2202_/X sky130_fd_sc_hd__a21o_4
+X_2064_ _2058_/X _2060_/Y _2062_/B _2055_/X _1275_/X _2064_/Y
++ sky130_fd_sc_hd__a41oi_4
+X_2133_ _1874_/A _2121_/X _1490_/A _2133_/Y sky130_fd_sc_hd__nand3_4
+X_1917_ _1918_/A _2541_/Q _1917_/X sky130_fd_sc_hd__and2_4
+X_1779_ _1778_/X _1678_/A _1779_/C _1779_/Y sky130_fd_sc_hd__nand3_4
+X_1848_ _1625_/X _1902_/A _2448_/Q _1848_/Y sky130_fd_sc_hd__a21oi_4
+Xclkbuf_4_1_0_addressalyzerBlock.SPI_CLK clkbuf_4_1_0_addressalyzerBlock.SPI_CLK/A
++ _2408_/CLK sky130_fd_sc_hd__clkbuf_1
+X_1564_ _1530_/Y _1563_/Y _1564_/X sky130_fd_sc_hd__or2_4
+X_1702_ _1701_/Y _1702_/Y sky130_fd_sc_hd__inv_2
+X_1633_ _1632_/Y _1633_/X sky130_fd_sc_hd__buf_2
+X_1495_ _1487_/A _1505_/B _1494_/B _1505_/C _2340_/C _1495_/Y
++ sky130_fd_sc_hd__a41oi_4
+X_2047_ _2047_/A _2049_/A sky130_fd_sc_hd__inv_2
+X_2116_ _1545_/X _1576_/X _1588_/Y _1593_/Y _1595_/X _2448_/D
++ sky130_fd_sc_hd__a41oi_4
+Xclkbuf_3_6_0_addressalyzerBlock.SPI_CLK clkbuf_3_7_0_addressalyzerBlock.SPI_CLK/A
++ clkbuf_3_6_0_addressalyzerBlock.SPI_CLK/X sky130_fd_sc_hd__clkbuf_1
+X_1280_ _2641_/Q _1280_/Y sky130_fd_sc_hd__inv_2
+X_2596_ _2590_/CLK _2596_/D _1676_/B sky130_fd_sc_hd__dfxtp_4
+X_1547_ _1443_/A _2390_/Q _1477_/A _1547_/X sky130_fd_sc_hd__o21a_4
+X_1616_ _2447_/Q _2181_/A sky130_fd_sc_hd__buf_2
+X_1478_ _2268_/A _2333_/B _1462_/X _1478_/Y sky130_fd_sc_hd__a21oi_4
+X_2381_ _2498_/CLK _2381_/D _2383_/D sky130_fd_sc_hd__dfxtp_4
+X_1401_ _1397_/B _1397_/C _1408_/B sky130_fd_sc_hd__nor2_4
+X_2450_ _2390_/CLK _2114_/X _2113_/B sky130_fd_sc_hd__dfxtp_4
+X_1194_ _1194_/A _1194_/B _1194_/X sky130_fd_sc_hd__or2_4
+X_1332_ _2629_/Q _1333_/A sky130_fd_sc_hd__inv_2
+X_1263_ _1263_/A _1971_/A _1263_/C _1263_/Y sky130_fd_sc_hd__nand3_4
+X_2648_ _2457_/CLK _1205_/Y _2648_/Q sky130_fd_sc_hd__dfxtp_4
+X_2579_ _2606_/CLK _2579_/D _2579_/Q sky130_fd_sc_hd__dfxtp_4
+X_1950_ _1254_/X _1952_/A sky130_fd_sc_hd__buf_2
+X_1881_ _1885_/A DATA_FROM_HASH[0] _2559_/D sky130_fd_sc_hd__and2_4
+X_2502_ _2513_/CLK _2502_/D MACRO_WR_SELECT[3] sky130_fd_sc_hd__dfxtp_4
+X_2364_ _2372_/CLK _2363_/Q _2365_/D sky130_fd_sc_hd__dfxtp_4
+X_1315_ _1244_/B _1316_/B sky130_fd_sc_hd__buf_2
+X_2433_ _2428_/CLK _2433_/D _1709_/A sky130_fd_sc_hd__dfxtp_4
+X_1246_ _1239_/Y _1241_/Y _1243_/X _1246_/D _1246_/Y sky130_fd_sc_hd__nand4_4
+X_2295_ _2292_/X _2298_/B _2295_/C _2295_/Y sky130_fd_sc_hd__nand3_4
+XPHY_109 sky130_fd_sc_hd__decap_3
+X_2080_ _2084_/C _2080_/Y sky130_fd_sc_hd__inv_2
+X_1933_ _1932_/A _1933_/B _2524_/D sky130_fd_sc_hd__and2_4
+X_1864_ _1864_/A _1865_/C sky130_fd_sc_hd__inv_2
+X_1795_ _1788_/X _2268_/A _2326_/A _1795_/X sky130_fd_sc_hd__o21a_4
+X_2347_ _2567_/Q S1_CLK_SELECT _2346_/Y _2347_/X sky130_fd_sc_hd__o21a_4
+X_2416_ _2445_/CLK _2416_/D _1844_/A sky130_fd_sc_hd__dfxtp_4
+X_2278_ _2278_/A _2278_/X sky130_fd_sc_hd__buf_2
+X_1229_ _2619_/Q _1233_/A sky130_fd_sc_hd__inv_2
+X_1580_ _1579_/X _2245_/B sky130_fd_sc_hd__buf_2
+X_2132_ _2120_/X _2130_/Y _2131_/Y _2444_/D sky130_fd_sc_hd__o21ai_4
+X_2201_ _2199_/Y _2179_/B _2201_/C _2201_/Y sky130_fd_sc_hd__nand3_4
+X_2063_ _2063_/A _2061_/Y _2062_/X _2480_/D sky130_fd_sc_hd__nor3_4
+X_1847_ _1847_/A _1847_/Y sky130_fd_sc_hd__inv_2
+X_1916_ _1918_/A _2542_/Q _1916_/X sky130_fd_sc_hd__and2_4
+X_1778_ _1783_/B _1783_/D _1440_/D _1778_/X sky130_fd_sc_hd__a21o_4
+X_1701_ _1701_/A _1701_/B _1701_/Y sky130_fd_sc_hd__nand2_4
+X_1563_ _1435_/Y _1667_/A _1562_/Y _1497_/A _1527_/Y _1563_/Y
++ sky130_fd_sc_hd__a32oi_4
+X_1494_ _1433_/A _1494_/B _1505_/C _1438_/D _1494_/X sky130_fd_sc_hd__and4_4
+X_1632_ _2449_/Q _1632_/Y sky130_fd_sc_hd__inv_2
+X_2115_ _1545_/X _1576_/X _1578_/Y _1582_/Y _1586_/X _2449_/D
++ sky130_fd_sc_hd__a41oi_4
+X_2046_ _1395_/A _1994_/Y _2046_/C _2046_/Y sky130_fd_sc_hd__nor3_4
+Xclkbuf_3_5_0_m1_clk_local clkbuf_3_4_0_m1_clk_local/A clkbuf_3_5_0_m1_clk_local/X
++ sky130_fd_sc_hd__clkbuf_1
+X_2595_ _2390_/CLK _1686_/Y _1678_/A sky130_fd_sc_hd__dfxtp_4
+X_1546_ _1544_/Y _1442_/X _1545_/X _1529_/Y _1467_/Y _1546_/X
++ sky130_fd_sc_hd__a41o_4
+X_1615_ _1534_/X _2558_/Q _1614_/X _1615_/Y sky130_fd_sc_hd__o21ai_4
+X_1477_ _1477_/A _2268_/A sky130_fd_sc_hd__buf_2
+X_2029_ _2014_/X _1994_/D _2029_/Y sky130_fd_sc_hd__nor2_4
+X_2380_ _2498_/CLK _2379_/Q _2381_/D sky130_fd_sc_hd__dfxtp_4
+X_1400_ _1400_/A _1400_/Y sky130_fd_sc_hd__inv_2
+X_1331_ _1335_/A _1330_/X _1306_/X _1331_/X sky130_fd_sc_hd__o21a_4
+X_1193_ _1183_/Y _1187_/X _1192_/Y _1193_/Y sky130_fd_sc_hd__a21oi_4
+X_1262_ _1251_/A _1261_/Y _1262_/C _1249_/Y _1263_/C sky130_fd_sc_hd__nand4_4
+X_2647_ _2457_/CLK _2647_/D _2647_/Q sky130_fd_sc_hd__dfxtp_4
+X_1529_ _1528_/Y _1529_/Y sky130_fd_sc_hd__inv_2
+X_2578_ _2606_/CLK _2578_/D _2578_/Q sky130_fd_sc_hd__dfxtp_4
+XPHY_90 sky130_fd_sc_hd__decap_3
+X_1880_ _1874_/A _1885_/A sky130_fd_sc_hd__buf_2
+X_2501_ _2496_/CLK _1969_/X MACRO_WR_SELECT[2] sky130_fd_sc_hd__dfxtp_4
+X_2363_ _2372_/CLK _2363_/D _2363_/Q sky130_fd_sc_hd__dfxtp_4
+X_1314_ _1314_/A _2635_/D sky130_fd_sc_hd__inv_2
+X_2432_ _2428_/CLK _2432_/D _1902_/A sky130_fd_sc_hd__dfxtp_4
+X_2294_ _1420_/Y _2291_/X _2293_/Y _2410_/D sky130_fd_sc_hd__o21ai_4
+X_1245_ _1245_/A _1246_/D sky130_fd_sc_hd__inv_2
+X_1863_ _1861_/Y _1862_/Y _2568_/D sky130_fd_sc_hd__nand2_4
+X_1932_ _1932_/A _2529_/Q _2525_/D sky130_fd_sc_hd__and2_4
+X_2415_ _2428_/CLK _2415_/D _2415_/Q sky130_fd_sc_hd__dfxtp_4
+X_1794_ _1983_/B _2578_/Q _1793_/X _2586_/D sky130_fd_sc_hd__o21a_4
+X_2346_ _2345_/Y S1_CLK_SELECT _2346_/Y sky130_fd_sc_hd__nand2_4
+X_1228_ _1367_/A _1360_/A _1228_/Y sky130_fd_sc_hd__nand2_4
+X_2277_ _1613_/A _2278_/A sky130_fd_sc_hd__inv_2
+X_2062_ _2053_/Y _2062_/B _2055_/X _1993_/C _2062_/X sky130_fd_sc_hd__and4_4
+X_2131_ _2123_/A _2335_/A _2444_/Q _2131_/Y sky130_fd_sc_hd__nand3_4
+X_2200_ _2420_/Q _1703_/A _2201_/C sky130_fd_sc_hd__nand2_4
+Xclkbuf_4_6_0_addressalyzerBlock.SPI_CLK clkbuf_4_7_0_addressalyzerBlock.SPI_CLK/A
++ _2598_/CLK sky130_fd_sc_hd__clkbuf_1
+X_1915_ _1254_/X _1918_/A sky130_fd_sc_hd__buf_2
+X_1777_ _1777_/A _1777_/B _1777_/C _1777_/D _1783_/D sky130_fd_sc_hd__and4_4
+X_1846_ ID_toHost _2181_/A _1617_/Y _1845_/Y _1846_/X sky130_fd_sc_hd__a211o_4
+X_2329_ _2102_/A _2322_/A _1683_/Y _2337_/A _2328_/X _2329_/Y
++ sky130_fd_sc_hd__o32ai_4
+X_1700_ _1645_/A _1308_/C _1612_/A _1700_/X sky130_fd_sc_hd__a21o_4
+X_1631_ _1630_/X _1751_/A sky130_fd_sc_hd__buf_2
+X_1562_ _1562_/A _1562_/Y sky130_fd_sc_hd__inv_2
+X_1493_ _1222_/X _1492_/Y _1493_/Y sky130_fd_sc_hd__nor2_4
+X_2045_ _2029_/Y _2030_/X _2043_/C _2046_/C sky130_fd_sc_hd__a21oi_4
+X_2114_ _2104_/A ID_fromClient _2114_/X sky130_fd_sc_hd__and2_4
+X_1829_ _1829_/A _1829_/Y sky130_fd_sc_hd__inv_2
+X_2594_ _2388_/CLK _2594_/D _2594_/Q sky130_fd_sc_hd__dfxtp_4
+X_1614_ _1613_/Y _1614_/X sky130_fd_sc_hd__buf_2
+X_1545_ _1545_/A _1545_/X sky130_fd_sc_hd__buf_2
+X_1476_ _1456_/X _1473_/X _1475_/Y _1476_/Y sky130_fd_sc_hd__o21ai_4
+X_2028_ _2028_/A _2044_/B _2013_/D _2028_/X sky130_fd_sc_hd__and3_4
+X_1330_ _1318_/B _1335_/C _1242_/C _1329_/X _1330_/X sky130_fd_sc_hd__and4_4
+X_1261_ _1256_/Y _1225_/X _1257_/X _1260_/Y _1261_/Y sky130_fd_sc_hd__nor4_4
+X_1192_ _2593_/Q _1216_/B _1191_/X _1192_/Y sky130_fd_sc_hd__o21ai_4
+X_2646_ _2570_/CLK _1215_/Y _1206_/A sky130_fd_sc_hd__dfxtp_4
+X_2577_ _2581_/CLK _1817_/X _2577_/Q sky130_fd_sc_hd__dfxtp_4
+X_1528_ _1528_/A _1445_/A _1528_/Y sky130_fd_sc_hd__nor2_4
+X_1459_ _1459_/A _2266_/A sky130_fd_sc_hd__buf_2
+XPHY_91 sky130_fd_sc_hd__decap_3
+XPHY_80 sky130_fd_sc_hd__decap_3
+X_2431_ _2428_/CLK _2431_/D _2431_/Q sky130_fd_sc_hd__dfxtp_4
+X_2500_ _2519_/CLK _2500_/D MACRO_WR_SELECT[1] sky130_fd_sc_hd__dfxtp_4
+X_2362_ SCSN_fromHost SCSN_toClient sky130_fd_sc_hd__buf_2
+X_1313_ _1308_/C _1308_/A _1312_/Y _1314_/A sky130_fd_sc_hd__o21ai_4
+X_1244_ _1318_/A _1244_/B _1245_/A sky130_fd_sc_hd__nand2_4
+X_2293_ _2292_/X _2298_/B _2410_/Q _2293_/Y sky130_fd_sc_hd__nand3_4
+X_2629_ _2626_/CLK _2629_/D _2629_/Q sky130_fd_sc_hd__dfxtp_4
+X_1862_ _1762_/A _1862_/B _1862_/Y sky130_fd_sc_hd__nand2_4
+X_1793_ _1788_/X _2266_/A _2326_/A _1793_/X sky130_fd_sc_hd__o21a_4
+X_1931_ _1932_/A _1931_/B _2526_/D sky130_fd_sc_hd__and2_4
+X_2414_ _2428_/CLK _2285_/Y _2151_/B sky130_fd_sc_hd__dfxtp_4
+X_2345_ S1_CLK_IN _2345_/Y sky130_fd_sc_hd__inv_2
+X_1227_ _1295_/A _1299_/A _1257_/A sky130_fd_sc_hd__nand2_4
+X_2276_ _1581_/X _2276_/X sky130_fd_sc_hd__buf_2
+Xclkbuf_4_11_0_addressalyzerBlock.SPI_CLK clkbuf_3_5_0_addressalyzerBlock.SPI_CLK/X
++ _2390_/CLK sky130_fd_sc_hd__clkbuf_1
+X_2061_ _2058_/X _2060_/Y _2062_/B _2055_/X _1993_/C _2061_/Y
++ sky130_fd_sc_hd__a41oi_4
+X_2130_ _1840_/B _2121_/X _2268_/A _2130_/Y sky130_fd_sc_hd__nand3_4
+X_1914_ _1930_/A _1914_/B _2537_/D sky130_fd_sc_hd__nor2_4
+X_1776_ _1512_/Y _1764_/A _1494_/B _1771_/Y _1777_/D sky130_fd_sc_hd__a22oi_4
+X_1845_ _2175_/B _1845_/B _1845_/Y sky130_fd_sc_hd__nor2_4
+X_2328_ _1187_/A _1680_/B _1781_/A _2328_/X sky130_fd_sc_hd__a21o_4
+X_2259_ _2243_/Y _2257_/Y _2258_/X _1911_/B _2248_/X _2428_/D
++ sky130_fd_sc_hd__o32ai_4
+X_1630_ _2447_/Q _1630_/X sky130_fd_sc_hd__buf_2
+X_1561_ _1428_/C _1669_/B _1562_/A sky130_fd_sc_hd__nand2_4
+X_1492_ _2609_/Q _1489_/X _1491_/Y _1449_/B _1492_/Y sky130_fd_sc_hd__a22oi_4
+X_2044_ _2044_/A _2044_/B _2044_/C _2044_/X sky130_fd_sc_hd__and3_4
+X_2113_ _2104_/A _2113_/B _2113_/X sky130_fd_sc_hd__and2_4
+X_1759_ _1656_/X _1397_/A _2166_/A _1759_/Y sky130_fd_sc_hd__a21oi_4
+X_1828_ _1808_/Y _2455_/Q _1827_/X _2572_/D sky130_fd_sc_hd__o21a_4
+X_2593_ _2590_/CLK _2593_/D _2593_/Q sky130_fd_sc_hd__dfxtp_4
+X_1613_ _1613_/A _1651_/A _1667_/C _1667_/D _1613_/Y sky130_fd_sc_hd__nand4_4
+X_1544_ _1537_/X _1548_/D _1435_/Y _1544_/Y sky130_fd_sc_hd__o21ai_4
+X_1475_ _1456_/X _1440_/B _1473_/B _1438_/A _2340_/C _1475_/Y
++ sky130_fd_sc_hd__a41oi_4
+X_2027_ _1270_/A _2044_/B sky130_fd_sc_hd__buf_2
+X_1191_ _2096_/A _1191_/X sky130_fd_sc_hd__buf_2
+X_1260_ _1258_/Y _1243_/X _1246_/D _1292_/C _1260_/Y sky130_fd_sc_hd__nand4_4
+Xclkbuf_3_1_0_m1_clk_local clkbuf_3_1_0_m1_clk_local/A clkbuf_4_3_0_m1_clk_local/A
++ sky130_fd_sc_hd__clkbuf_1
+X_2645_ _2570_/CLK _2645_/D _2645_/Q sky130_fd_sc_hd__dfxtp_4
+X_1527_ _1526_/Y _1527_/Y sky130_fd_sc_hd__inv_2
+X_2576_ _2581_/CLK _2576_/D _2576_/Q sky130_fd_sc_hd__dfxtp_4
+X_1389_ _1379_/X _1385_/D _2621_/Q _1390_/C sky130_fd_sc_hd__a21oi_4
+X_1458_ _1438_/B _1457_/X _1452_/Y _1458_/Y sky130_fd_sc_hd__o21ai_4
+XPHY_92 sky130_fd_sc_hd__decap_3
+XPHY_81 sky130_fd_sc_hd__decap_3
+XPHY_70 sky130_fd_sc_hd__decap_3
+X_2361_ SCLK_fromHost SCLK_toClient sky130_fd_sc_hd__buf_2
+X_2430_ _2428_/CLK _2254_/Y _2154_/B sky130_fd_sc_hd__dfxtp_4
+X_1243_ _1243_/A _1243_/X sky130_fd_sc_hd__buf_2
+X_1312_ _1308_/C _1318_/B _1316_/D _1246_/D _1274_/X _1312_/Y
++ sky130_fd_sc_hd__a41oi_4
+X_2292_ _2290_/Y _2292_/X sky130_fd_sc_hd__buf_2
+X_2628_ _2626_/CLK _2628_/D _2628_/Q sky130_fd_sc_hd__dfxtp_4
+X_2559_ _2554_/CLK _2559_/D _2559_/Q sky130_fd_sc_hd__dfxtp_4
+X_1930_ _1930_/A _1929_/Y _2527_/D sky130_fd_sc_hd__nor2_4
+X_1861_ _1859_/Y _1673_/Y _1860_/X _1861_/Y sky130_fd_sc_hd__nand3_4
+X_1792_ _1983_/B _2579_/Q _1791_/X _1792_/X sky130_fd_sc_hd__o21a_4
+X_2413_ _2445_/CLK _2413_/D _2174_/B sky130_fd_sc_hd__dfxtp_4
+X_2344_ _2342_/Y M1_CLK_SELECT _2343_/Y m1_clk_local sky130_fd_sc_hd__a21oi_4
+X_1226_ _2636_/Q _2635_/Q _1226_/Y sky130_fd_sc_hd__nand2_4
+X_2275_ _2144_/Y _1649_/B _2270_/X _1948_/Y _2263_/X _2419_/D
++ sky130_fd_sc_hd__o32ai_4
+X_2060_ _2060_/A _2060_/B _2060_/Y sky130_fd_sc_hd__nor2_4
+X_1913_ _1913_/A _1914_/B sky130_fd_sc_hd__inv_2
+X_1844_ _1844_/A _1845_/B sky130_fd_sc_hd__inv_2
+X_1775_ _1499_/Y _1773_/A _1456_/X _1766_/B _1777_/C sky130_fd_sc_hd__a22oi_4
+X_2327_ _1222_/A _1218_/B _1680_/B _1683_/Y _2326_/Y _2387_/D
++ sky130_fd_sc_hd__o41ai_4
+X_2258_ _2246_/Y _2258_/X sky130_fd_sc_hd__buf_2
+X_1209_ _1207_/Y _1187_/X _1208_/Y _2647_/D sky130_fd_sc_hd__a21oi_4
+X_2189_ _2146_/A THREAD_COUNT[2] _2189_/Y sky130_fd_sc_hd__nand2_4
+X_1560_ _1428_/D _1669_/B sky130_fd_sc_hd__buf_2
+X_2112_ _1870_/X _2103_/Y _2112_/Y sky130_fd_sc_hd__nand2_4
+X_1491_ _2609_/Q _1451_/X _1487_/Y _1490_/Y _1445_/D _1491_/Y
++ sky130_fd_sc_hd__o32ai_4
+X_2043_ _2030_/X _2029_/Y _2043_/C _2043_/D _2044_/C sky130_fd_sc_hd__nand4_4
+X_1827_ _2572_/Q _2461_/Q _2257_/A _1827_/X sky130_fd_sc_hd__o21a_4
+X_1758_ _1742_/Y _1756_/Y _1757_/Y _1758_/Y sky130_fd_sc_hd__o21ai_4
+X_1689_ _1689_/A _1689_/Y sky130_fd_sc_hd__inv_2
+Xclkbuf_2_2_0_addressalyzerBlock.SPI_CLK clkbuf_2_3_0_addressalyzerBlock.SPI_CLK/A
++ clkbuf_3_5_0_addressalyzerBlock.SPI_CLK/A sky130_fd_sc_hd__clkbuf_1
+X_1612_ _1612_/A _1612_/X sky130_fd_sc_hd__buf_2
+X_2592_ _2590_/CLK _2592_/D _1662_/A sky130_fd_sc_hd__dfxtp_4
+X_1474_ _1451_/X _2340_/C sky130_fd_sc_hd__buf_2
+X_1543_ _1539_/Y _1540_/Y _1542_/X _2603_/D sky130_fd_sc_hd__a21oi_4
+X_2026_ _2047_/A _2017_/B _2017_/C _2017_/D _2488_/Q _2028_/A
++ sky130_fd_sc_hd__a41o_4
+X_1190_ _1189_/Y _2096_/A sky130_fd_sc_hd__buf_2
+X_2644_ _2638_/CLK _1264_/Y _1251_/A sky130_fd_sc_hd__dfxtp_4
+X_1526_ _1443_/A _2390_/Q _1526_/Y sky130_fd_sc_hd__nor2_4
+X_2575_ _2581_/CLK _2575_/D _2575_/Q sky130_fd_sc_hd__dfxtp_4
+X_1457_ _1440_/B _1456_/X _1438_/D _1438_/A _1457_/X sky130_fd_sc_hd__and4_4
+X_1388_ _1283_/X _1395_/A sky130_fd_sc_hd__buf_2
+X_2009_ _2008_/Y _1984_/A _1999_/A _2011_/A _2492_/Q _2009_/X
++ sky130_fd_sc_hd__a41o_4
+XPHY_82 sky130_fd_sc_hd__decap_3
+XPHY_71 sky130_fd_sc_hd__decap_3
+XPHY_60 sky130_fd_sc_hd__decap_3
+XPHY_93 sky130_fd_sc_hd__decap_3
+X_1311_ _1243_/X _1316_/D sky130_fd_sc_hd__buf_2
+X_2360_ MOSI_fromHost MOSI_toClient sky130_fd_sc_hd__buf_2
+X_2291_ _2290_/Y _2291_/X sky130_fd_sc_hd__buf_2
+X_1242_ _1335_/A _1242_/B _1242_/C _2629_/Q _1243_/A sky130_fd_sc_hd__and4_4
+X_2627_ _2626_/CLK _2627_/D _1349_/A sky130_fd_sc_hd__dfxtp_4
+X_2489_ _2470_/CLK _2025_/Y _1984_/A sky130_fd_sc_hd__dfxtp_4
+X_2558_ _2562_/CLK _2558_/D _2558_/Q sky130_fd_sc_hd__dfxtp_4
+X_1509_ _1508_/X _1448_/A _1505_/A _1509_/X sky130_fd_sc_hd__a21o_4
+X_1860_ _2618_/Q _1860_/B _1661_/C _1661_/D _1860_/X sky130_fd_sc_hd__or4_4
+X_1791_ _1788_/X _1420_/A _2326_/A _1791_/X sky130_fd_sc_hd__o21a_4
+X_2343_ PLL_INPUT M1_CLK_SELECT _2343_/Y sky130_fd_sc_hd__nor2_4
+X_2412_ _2410_/CLK _2412_/D _1927_/A sky130_fd_sc_hd__dfxtp_4
+X_2274_ _2142_/Y _1649_/B _2270_/X _1947_/B _2263_/X _2420_/D
++ sky130_fd_sc_hd__o32ai_4
+X_1225_ _1225_/A _1225_/X sky130_fd_sc_hd__buf_2
+X_1989_ _2478_/Q _1992_/B sky130_fd_sc_hd__inv_2
+X_1843_ _1534_/X _2556_/Q _1614_/X _1843_/Y sky130_fd_sc_hd__o21ai_4
+X_1912_ _1339_/X _1930_/A sky130_fd_sc_hd__buf_2
+X_1774_ _1751_/B _2609_/Q _1487_/A _2158_/B _1777_/B sky130_fd_sc_hd__a22oi_4
+X_1208_ _2437_/Q _1187_/A _1191_/X _1208_/Y sky130_fd_sc_hd__o21ai_4
+X_2326_ _2326_/A _1423_/Y _1185_/A _1577_/X _2326_/Y sky130_fd_sc_hd__nand4_4
+X_2257_ _2257_/A _1698_/A _1514_/X _2257_/Y sky130_fd_sc_hd__nand3_4
+X_2188_ _2185_/Y _2186_/X _2187_/X _2188_/Y sky130_fd_sc_hd__a21oi_4
+X_1490_ _1490_/A _1490_/Y sky130_fd_sc_hd__inv_2
+X_2042_ _2041_/Y _1985_/A _2030_/X _2017_/B _2043_/D _2044_/A
++ sky130_fd_sc_hd__a41o_4
+X_2111_ _1870_/X _2098_/Y _2111_/Y sky130_fd_sc_hd__nand2_4
+X_1826_ _2572_/Q _1808_/Y _1825_/X _2573_/D sky130_fd_sc_hd__o21a_4
+X_1757_ _1612_/A _1360_/A _1656_/A _1757_/Y sky130_fd_sc_hd__a21oi_4
+X_1688_ _1731_/B _1566_/X _2340_/B _1688_/Y sky130_fd_sc_hd__nor3_4
+X_2309_ _2144_/Y _2292_/X _2308_/Y _2403_/D sky130_fd_sc_hd__o21ai_4
+X_1611_ _1611_/A _1612_/A sky130_fd_sc_hd__buf_2
+X_1542_ _1549_/A _1466_/Y _1500_/X _1542_/X sky130_fd_sc_hd__a21o_4
+X_2591_ _2581_/CLK _2591_/D _2591_/Q sky130_fd_sc_hd__dfxtp_4
+X_1473_ _1469_/Y _1473_/B _1473_/C _1438_/A _1473_/X sky130_fd_sc_hd__and4_4
+X_2025_ _2002_/X _2013_/D _2024_/Y _2025_/Y sky130_fd_sc_hd__a21oi_4
+X_1809_ _1808_/Y _1809_/X sky130_fd_sc_hd__buf_2
+X_2643_ _2638_/CLK _2643_/D _1262_/C sky130_fd_sc_hd__dfxtp_4
+X_2574_ _2581_/CLK _2574_/D _2574_/Q sky130_fd_sc_hd__dfxtp_4
+X_1387_ _1387_/A _2622_/D sky130_fd_sc_hd__inv_2
+X_1456_ _1438_/C _1456_/X sky130_fd_sc_hd__buf_2
+X_1525_ _1473_/C _1469_/Y _1524_/Y _1525_/Y sky130_fd_sc_hd__o21ai_4
+X_2008_ _2008_/A _2008_/Y sky130_fd_sc_hd__inv_2
+XPHY_94 sky130_fd_sc_hd__decap_3
+XPHY_83 sky130_fd_sc_hd__decap_3
+XPHY_72 sky130_fd_sc_hd__decap_3
+XPHY_61 sky130_fd_sc_hd__decap_3
+XPHY_50 sky130_fd_sc_hd__decap_3
+X_1241_ _1240_/Y _1241_/Y sky130_fd_sc_hd__inv_2
+X_1310_ _1309_/Y _2636_/D sky130_fd_sc_hd__inv_2
+X_2290_ _2290_/A _2290_/Y sky130_fd_sc_hd__inv_2
+X_2626_ _2626_/CLK _2626_/D _1367_/A sky130_fd_sc_hd__dfxtp_4
+X_2557_ _2557_/CLK _2557_/D _1701_/B sky130_fd_sc_hd__dfxtp_4
+X_2488_ _2470_/CLK _2028_/X _2488_/Q sky130_fd_sc_hd__dfxtp_4
+X_1439_ _1439_/A _1440_/D sky130_fd_sc_hd__buf_2
+X_1508_ _1469_/Y _1505_/C _1438_/D _1473_/C _1451_/X _1508_/X
++ sky130_fd_sc_hd__a41o_4
+X_1790_ _1838_/A _2326_/A sky130_fd_sc_hd__buf_2
+X_2411_ _2445_/CLK _2411_/D _2411_/Q sky130_fd_sc_hd__dfxtp_4
+X_1224_ _1224_/A _1225_/A sky130_fd_sc_hd__inv_2
+X_2342_ M1_CLK_IN _2342_/Y sky130_fd_sc_hd__inv_2
+X_2273_ _1503_/Y _1649_/B _2270_/X _1945_/B _2263_/X _2421_/D
++ sky130_fd_sc_hd__o32ai_4
+X_1988_ _2477_/Q _1992_/A sky130_fd_sc_hd__inv_2
+Xclkbuf_2_3_0_m1_clk_local clkbuf_2_3_0_m1_clk_local/A clkbuf_3_7_0_m1_clk_local/A
++ sky130_fd_sc_hd__clkbuf_1
+X_2609_ _2388_/CLK _1493_/Y _2609_/Q sky130_fd_sc_hd__dfxtp_4
+Xclkbuf_3_2_0_addressalyzerBlock.SPI_CLK clkbuf_2_1_0_addressalyzerBlock.SPI_CLK/X
++ clkbuf_4_5_0_addressalyzerBlock.SPI_CLK/A sky130_fd_sc_hd__clkbuf_1
+X_1842_ _1179_/X _1735_/D _1841_/Y _2569_/D sky130_fd_sc_hd__o21a_4
+X_1773_ _1773_/A _2158_/B sky130_fd_sc_hd__inv_2
+X_1911_ _1901_/X _1911_/B _1911_/Y sky130_fd_sc_hd__nor2_4
+X_1207_ _2647_/Q _1179_/A _1206_/X _1207_/Y sky130_fd_sc_hd__o21ai_4
+X_2187_ _1611_/A _1373_/B _1656_/A _2187_/X sky130_fd_sc_hd__a21o_4
+X_2325_ _2324_/X _1688_/Y _1870_/X _2325_/X sky130_fd_sc_hd__o21a_4
+X_2256_ _2244_/X _2255_/Y _2247_/X _1908_/Y _2249_/X _2429_/D
++ sky130_fd_sc_hd__o32ai_4
+X_2041_ _2040_/X _2041_/Y sky130_fd_sc_hd__inv_2
+X_2110_ _2108_/A MOSI_fromHost _2454_/D sky130_fd_sc_hd__and2_4
+X_1756_ _1753_/X _1754_/X _1755_/Y _1756_/Y sky130_fd_sc_hd__a21oi_4
+X_1825_ _2573_/Q _2461_/Q _2257_/A _1825_/X sky130_fd_sc_hd__o21a_4
+Xclkbuf_4_6_0_m1_clk_local clkbuf_4_7_0_m1_clk_local/A _2626_/CLK
++ sky130_fd_sc_hd__clkbuf_1
+X_1687_ _1728_/C _2340_/B sky130_fd_sc_hd__inv_2
+X_2308_ _2290_/Y _1602_/C _2089_/A _2308_/Y sky130_fd_sc_hd__nand3_4
+X_2239_ _2239_/A _2239_/Y sky130_fd_sc_hd__inv_2
+X_2590_ _2590_/CLK _2590_/D _1762_/B sky130_fd_sc_hd__dfxtp_4
+X_1610_ _1609_/X _1611_/A sky130_fd_sc_hd__buf_2
+X_1541_ _1530_/Y _1549_/A sky130_fd_sc_hd__buf_2
+X_1472_ _1471_/X _1473_/C sky130_fd_sc_hd__buf_2
+X_2024_ _2002_/X _2013_/D _1346_/X _2024_/Y sky130_fd_sc_hd__o21ai_4
+X_1739_ _1739_/A _1739_/B _1739_/Y sky130_fd_sc_hd__nor2_4
+X_1808_ _2461_/Q _1808_/Y sky130_fd_sc_hd__inv_2
+X_2642_ _2641_/CLK _1279_/Y _1277_/A sky130_fd_sc_hd__dfxtp_4
+X_2573_ _2581_/CLK _2573_/D _2573_/Q sky130_fd_sc_hd__dfxtp_4
+X_1524_ _1473_/C _1429_/Y _1466_/A _2602_/Q _2340_/C _1524_/Y
++ sky130_fd_sc_hd__a41oi_4
+X_1386_ _1384_/X _1385_/Y _1387_/A sky130_fd_sc_hd__nand2_4
+X_1455_ _1449_/Y _1453_/Y _1454_/X _1455_/Y sky130_fd_sc_hd__a21oi_4
+X_2007_ _2006_/Y _2493_/D sky130_fd_sc_hd__inv_2
+XPHY_95 sky130_fd_sc_hd__decap_3
+XPHY_84 sky130_fd_sc_hd__decap_3
+XPHY_73 sky130_fd_sc_hd__decap_3
+XPHY_62 sky130_fd_sc_hd__decap_3
+XPHY_51 sky130_fd_sc_hd__decap_3
+XPHY_40 sky130_fd_sc_hd__decap_3
+X_1240_ _2628_/Q _1349_/A _1240_/Y sky130_fd_sc_hd__nand2_4
+X_2625_ _2470_/CLK _2625_/D _1360_/A sky130_fd_sc_hd__dfxtp_4
+X_2487_ _2470_/CLK _2034_/X _2017_/C sky130_fd_sc_hd__dfxtp_4
+X_2556_ _2562_/CLK _2556_/D _2556_/Q sky130_fd_sc_hd__dfxtp_4
+X_1507_ _1506_/Y _1449_/B _1507_/Y sky130_fd_sc_hd__nand2_4
+X_1369_ _1368_/Y _2626_/D sky130_fd_sc_hd__inv_2
+X_1438_ _1438_/A _1438_/B _1438_/C _1438_/D _1439_/A sky130_fd_sc_hd__and4_4
+X_2341_ EXT_RESET_N_fromHost _2341_/Y sky130_fd_sc_hd__inv_2
+X_2410_ _2410_/CLK _2410_/D _2410_/Q sky130_fd_sc_hd__dfxtp_4
+X_1223_ _1216_/Y _1218_/Y _1222_/X _2645_/D sky130_fd_sc_hd__a21oi_4
+X_2272_ _2136_/Y _2262_/X _2270_/X _1942_/B _2264_/X _2422_/D
++ sky130_fd_sc_hd__o32ai_4
+X_1987_ _1987_/A _1994_/C sky130_fd_sc_hd__inv_2
+X_2539_ _2519_/CLK _2539_/D _2539_/Q sky130_fd_sc_hd__dfxtp_4
+X_2608_ _2606_/CLK _1502_/Y _1436_/B sky130_fd_sc_hd__dfxtp_4
+X_1910_ _2428_/Q _1911_/B sky130_fd_sc_hd__inv_2
+X_1841_ _1841_/A _1841_/Y sky130_fd_sc_hd__inv_2
+X_1772_ _2609_/Q _1751_/B _1436_/C _1771_/Y _1777_/A sky130_fd_sc_hd__o22a_4
+X_2324_ _1731_/B _1566_/X _1689_/A _2324_/X sky130_fd_sc_hd__o21a_4
+Xclkbuf_4_14_0_m1_clk_local clkbuf_3_7_0_m1_clk_local/X _2498_/CLK
++ sky130_fd_sc_hd__clkbuf_1
+X_1206_ _1206_/A _1180_/Y _1206_/X sky130_fd_sc_hd__or2_4
+X_2186_ _1335_/C _1646_/A _1741_/Y _2186_/X sky130_fd_sc_hd__o21a_4
+X_2255_ _2257_/A _1698_/A _1503_/A _2255_/Y sky130_fd_sc_hd__nand3_4
+X_2040_ _1994_/D _2040_/X sky130_fd_sc_hd__buf_2
+X_1755_ _1280_/Y _1614_/X _1646_/X _1755_/Y sky130_fd_sc_hd__o21ai_4
+X_1686_ _1678_/Y _1682_/Y _1685_/X _1686_/Y sky130_fd_sc_hd__a21oi_4
+X_1824_ _1838_/A _2257_/A sky130_fd_sc_hd__buf_2
+X_2307_ _2142_/Y _2292_/X _2306_/Y _2307_/Y sky130_fd_sc_hd__o21ai_4
+X_2238_ _1609_/B _1189_/Y _1583_/X _1696_/A _2239_/A sky130_fd_sc_hd__and4_4
+X_2169_ _2546_/Q _1739_/B _2167_/Y _2168_/Y _2169_/Y sky130_fd_sc_hd__a22oi_4
+X_1540_ _2266_/A _1527_/Y _1556_/A _1540_/Y sky130_fd_sc_hd__a21oi_4
+X_1471_ _2604_/Q _1471_/X sky130_fd_sc_hd__buf_2
+X_2023_ _2022_/Y _2490_/D sky130_fd_sc_hd__inv_2
+X_1807_ _1786_/Y _2572_/Q _1806_/X _1807_/X sky130_fd_sc_hd__o21a_4
+X_1738_ _1831_/A _1738_/B _2591_/D sky130_fd_sc_hd__nor2_4
+X_1669_ _1579_/X _1669_/B _1590_/B _1669_/Y sky130_fd_sc_hd__nor3_4
+X_1454_ _1222_/A _1454_/X sky130_fd_sc_hd__buf_2
+X_2641_ _2641_/CLK _1282_/X _2641_/Q sky130_fd_sc_hd__dfxtp_4
+X_2572_ _2581_/CLK _2572_/D _2572_/Q sky130_fd_sc_hd__dfxtp_4
+X_1523_ _1519_/Y _1521_/Y _1522_/Y _2605_/D sky130_fd_sc_hd__a21oi_4
+X_1385_ _1385_/A _1379_/A _2621_/Q _1385_/D _1385_/Y sky130_fd_sc_hd__nand4_4
+X_2006_ _2001_/Y _2006_/B _2005_/Y _2006_/Y sky130_fd_sc_hd__nand3_4
+XPHY_30 sky130_fd_sc_hd__decap_3
+XPHY_96 sky130_fd_sc_hd__decap_3
+XPHY_85 sky130_fd_sc_hd__decap_3
+XPHY_74 sky130_fd_sc_hd__decap_3
+XPHY_63 sky130_fd_sc_hd__decap_3
+XPHY_52 sky130_fd_sc_hd__decap_3
+XPHY_41 sky130_fd_sc_hd__decap_3
+X_2624_ _2370_/CLK _2624_/D _1236_/A sky130_fd_sc_hd__dfxtp_4
+X_2486_ _2483_/CLK _2486_/D _2037_/D sky130_fd_sc_hd__dfxtp_4
+X_2555_ _2562_/CLK _1885_/X _2555_/Q sky130_fd_sc_hd__dfxtp_4
+Xclkbuf_4_2_0_addressalyzerBlock.SPI_CLK clkbuf_4_3_0_addressalyzerBlock.SPI_CLK/A
++ _2445_/CLK sky130_fd_sc_hd__clkbuf_1
+X_1437_ _1483_/B _1438_/D sky130_fd_sc_hd__buf_2
+X_1506_ _1503_/Y _1445_/D _1505_/Y _1506_/Y sky130_fd_sc_hd__o21ai_4
+X_1368_ _1362_/X _1367_/Y _1368_/Y sky130_fd_sc_hd__nand2_4
+X_1299_ _1299_/A _1300_/B sky130_fd_sc_hd__inv_2
+Xclkbuf_3_7_0_addressalyzerBlock.SPI_CLK clkbuf_3_7_0_addressalyzerBlock.SPI_CLK/A
++ clkbuf_3_7_0_addressalyzerBlock.SPI_CLK/X sky130_fd_sc_hd__clkbuf_1
+X_2340_ _2102_/A _2340_/B _2340_/C _2393_/D sky130_fd_sc_hd__nor3_4
+X_2271_ _1490_/Y _2262_/X _2270_/X _1746_/Y _2264_/X _2271_/Y
++ sky130_fd_sc_hd__o32ai_4
+X_1222_ _1222_/A _1222_/X sky130_fd_sc_hd__buf_2
+X_1986_ _2030_/A _1986_/Y sky130_fd_sc_hd__inv_2
+X_2607_ _2606_/CLK _2607_/D _1436_/C sky130_fd_sc_hd__dfxtp_4
+X_2469_ _2641_/CLK _2090_/Y _2088_/B sky130_fd_sc_hd__dfxtp_4
+X_2538_ _2519_/CLK _1911_/Y _2538_/Q sky130_fd_sc_hd__dfxtp_4
+X_1840_ _1834_/A _1840_/B _1840_/C _1841_/A sky130_fd_sc_hd__nand3_4
+X_1771_ _2397_/Q _1771_/Y sky130_fd_sc_hd__inv_2
+X_2323_ _2322_/Y _1697_/Y _1781_/X _2392_/D sky130_fd_sc_hd__a21oi_4
+X_2254_ _2244_/X _2253_/Y _2247_/X _1906_/Y _2249_/X _2254_/Y
++ sky130_fd_sc_hd__o32ai_4
+X_1205_ _1203_/Y _1187_/X _1204_/Y _1205_/Y sky130_fd_sc_hd__a21oi_4
+X_2185_ _2173_/Y _2183_/Y _2184_/Y _2185_/Y sky130_fd_sc_hd__o21ai_4
+X_1969_ _1969_/A _2505_/Q _1969_/X sky130_fd_sc_hd__and2_4
+X_1823_ _2573_/Q _1808_/Y _1822_/X _2574_/D sky130_fd_sc_hd__o21a_4
+X_1754_ _1534_/X _2555_/Q _1614_/X _1754_/X sky130_fd_sc_hd__o21a_4
+X_1685_ _1681_/X _1684_/Y _1500_/X _1685_/X sky130_fd_sc_hd__a21o_4
+X_2237_ _2235_/Y _1662_/A _2236_/Y _2237_/Y sky130_fd_sc_hd__a21oi_4
+X_2306_ _2304_/A _1602_/C _2404_/Q _2306_/Y sky130_fd_sc_hd__nand3_4
+X_2168_ _1673_/C _1672_/A _2168_/Y sky130_fd_sc_hd__nor2_4
+X_2099_ _2104_/A _2098_/Y _2099_/C _2099_/X sky130_fd_sc_hd__and3_4
+X_1470_ _1438_/D _1473_/B sky130_fd_sc_hd__buf_2
+X_2022_ _2022_/A _2006_/B _2021_/Y _2022_/Y sky130_fd_sc_hd__nand3_4
+X_1806_ _2591_/Q _1520_/X _1799_/X _1806_/X sky130_fd_sc_hd__o21a_4
+X_1737_ _1831_/B _1738_/B sky130_fd_sc_hd__inv_2
+X_1668_ _1667_/X _1673_/C sky130_fd_sc_hd__buf_2
+X_1599_ _1600_/B _1488_/X _1598_/X _1530_/Y _1602_/A sky130_fd_sc_hd__a211o_4
+Xclkbuf_4_2_0_m1_clk_local clkbuf_4_3_0_m1_clk_local/A _2528_/CLK
++ sky130_fd_sc_hd__clkbuf_1
+X_2640_ _2638_/CLK _2640_/D _1277_/D sky130_fd_sc_hd__dfxtp_4
+X_2571_ _2457_/CLK _2571_/D _1829_/A sky130_fd_sc_hd__dfxtp_4
+X_1522_ _1473_/B _1448_/A _1213_/X _1522_/Y sky130_fd_sc_hd__o21ai_4
+X_1453_ _1450_/X _1452_/Y _2335_/B _1453_/Y sky130_fd_sc_hd__o21ai_4
+X_2005_ _2011_/A _2020_/A _2492_/Q CLK_LED _2005_/Y sky130_fd_sc_hd__nand4_4
+X_1384_ _1385_/A _1390_/B _1374_/X _1384_/X sky130_fd_sc_hd__o21a_4
+XPHY_64 sky130_fd_sc_hd__decap_3
+XPHY_53 sky130_fd_sc_hd__decap_3
+XPHY_20 sky130_fd_sc_hd__decap_3
+XPHY_31 sky130_fd_sc_hd__decap_3
+XPHY_42 sky130_fd_sc_hd__decap_3
+XPHY_97 sky130_fd_sc_hd__decap_3
+XPHY_86 sky130_fd_sc_hd__decap_3
+XPHY_75 sky130_fd_sc_hd__decap_3
+X_2554_ _2554_/CLK _1887_/X _2554_/Q sky130_fd_sc_hd__dfxtp_4
+X_2623_ _2367_/CLK _2623_/D _2623_/Q sky130_fd_sc_hd__dfxtp_4
+X_2485_ _2483_/CLK _2044_/X _2043_/D sky130_fd_sc_hd__dfxtp_4
+X_1367_ _1367_/A _1366_/X _1360_/A _1238_/D _1367_/Y sky130_fd_sc_hd__nand4_4
+X_1436_ _2609_/Q _1436_/B _1436_/C _1486_/A _1438_/A sky130_fd_sc_hd__and4_4
+X_1505_ _1505_/A _1505_/B _1505_/C _1435_/Y _1505_/Y sky130_fd_sc_hd__nand4_4
+X_1298_ _1270_/A _2006_/B sky130_fd_sc_hd__buf_2
+X_1221_ _1221_/A _1222_/A sky130_fd_sc_hd__buf_2
+X_2270_ _2246_/Y _2270_/X sky130_fd_sc_hd__buf_2
+X_1985_ _1985_/A _1985_/Y sky130_fd_sc_hd__inv_2
+X_2537_ _2506_/CLK _2537_/D _2537_/Q sky130_fd_sc_hd__dfxtp_4
+X_2606_ _2606_/CLK _2606_/D _1486_/A sky130_fd_sc_hd__dfxtp_4
+X_1419_ _1419_/A _2010_/B _1419_/C _1419_/X sky130_fd_sc_hd__and3_4
+X_2468_ _2570_/CLK _2092_/Y _2468_/Q sky130_fd_sc_hd__dfxtp_4
+X_2399_ _2606_/CLK _2399_/D _1750_/A sky130_fd_sc_hd__dfxtp_4
+X_1770_ _1769_/X _1783_/B sky130_fd_sc_hd__inv_2
+X_1204_ _2170_/B _1216_/B _1191_/X _1204_/Y sky130_fd_sc_hd__o21ai_4
+X_2322_ _2322_/A _2392_/Q _2322_/Y sky130_fd_sc_hd__nand2_4
+X_2184_ _1225_/A _2148_/X _1651_/X _1649_/Y _2184_/Y sky130_fd_sc_hd__a2bb2oi_4
+X_2253_ _2257_/A _1698_/A _2253_/C _2253_/Y sky130_fd_sc_hd__nand3_4
+X_1899_ _1900_/A _1899_/B _1899_/X sky130_fd_sc_hd__and2_4
+X_1968_ _1969_/A _1968_/B _2502_/D sky130_fd_sc_hd__and2_4
+X_1822_ _2574_/Q _2461_/Q _1813_/X _1822_/X sky130_fd_sc_hd__o21a_4
+X_1753_ _1749_/X _1752_/X _1471_/X _1753_/X sky130_fd_sc_hd__a21o_4
+X_1684_ _1575_/Y _1683_/Y _1444_/Y _1684_/Y sky130_fd_sc_hd__nand3_4
+X_2167_ _2147_/Y _2165_/Y _2166_/Y _2167_/Y sky130_fd_sc_hd__o21ai_4
+X_2236_ _1662_/A _1218_/A _2236_/Y sky130_fd_sc_hd__nor2_4
+X_2305_ _1503_/Y _2292_/X _2304_/Y _2305_/Y sky130_fd_sc_hd__o21ai_4
+X_2098_ _2452_/Q _2098_/Y sky130_fd_sc_hd__inv_2
+Xclkbuf_4_10_0_m1_clk_local clkbuf_3_5_0_m1_clk_local/X _2513_/CLK
++ sky130_fd_sc_hd__clkbuf_1
+X_2021_ _2002_/X _2013_/D _2003_/Y _2021_/Y sky130_fd_sc_hd__o21ai_4
+X_1736_ _1736_/A _2463_/Q _1831_/B sky130_fd_sc_hd__nor2_4
+X_1805_ _1786_/Y _2573_/Q _1804_/X _1805_/X sky130_fd_sc_hd__o21a_4
+X_1667_ _1667_/A _1667_/B _1667_/C _1667_/D _1667_/X sky130_fd_sc_hd__and4_4
+X_1598_ _1443_/A _2390_/Q _1520_/A _1598_/X sky130_fd_sc_hd__o21a_4
+X_2219_ _2089_/Y _1624_/X _2218_/Y _2219_/Y sky130_fd_sc_hd__o21ai_4
+X_2570_ _2570_/CLK _2570_/D _1735_/C sky130_fd_sc_hd__dfxtp_4
+X_1383_ _1383_/A _2621_/Q _1383_/C _2619_/Q _1390_/B sky130_fd_sc_hd__and4_4
+X_1452_ _1440_/B _1440_/D _1451_/X _1452_/Y sky130_fd_sc_hd__a21oi_4
+X_1521_ _1520_/X _1460_/X _1462_/X _1521_/Y sky130_fd_sc_hd__a21oi_4
+X_2004_ _2002_/X _2003_/Y _2008_/A _2020_/A sky130_fd_sc_hd__nor3_4
+Xclkbuf_4_7_0_addressalyzerBlock.SPI_CLK clkbuf_4_7_0_addressalyzerBlock.SPI_CLK/A
++ _2554_/CLK sky130_fd_sc_hd__clkbuf_1
+X_1719_ _1719_/A _1640_/X _1719_/X sky130_fd_sc_hd__or2_4
+XPHY_98 sky130_fd_sc_hd__decap_3
+XPHY_87 sky130_fd_sc_hd__decap_3
+XPHY_76 sky130_fd_sc_hd__decap_3
+XPHY_65 sky130_fd_sc_hd__decap_3
+XPHY_54 sky130_fd_sc_hd__decap_3
+XPHY_10 sky130_fd_sc_hd__decap_3
+XPHY_21 sky130_fd_sc_hd__decap_3
+XPHY_32 sky130_fd_sc_hd__decap_3
+XPHY_43 sky130_fd_sc_hd__decap_3
+X_2553_ _2550_/CLK _2553_/D _2553_/Q sky130_fd_sc_hd__dfxtp_4
+X_2622_ _2367_/CLK _2622_/D _1385_/A sky130_fd_sc_hd__dfxtp_4
+X_1504_ _1494_/B _1505_/A sky130_fd_sc_hd__inv_2
+X_2484_ _2470_/CLK _2046_/Y _1987_/A sky130_fd_sc_hd__dfxtp_4
+X_1366_ _1365_/X _1366_/X sky130_fd_sc_hd__buf_2
+X_1435_ _1434_/Y _1435_/Y sky130_fd_sc_hd__inv_2
+X_1297_ _1296_/Y _2638_/D sky130_fd_sc_hd__inv_2
+X_1220_ _1219_/X _1221_/A sky130_fd_sc_hd__buf_2
+X_1984_ _1984_/A _1998_/A sky130_fd_sc_hd__inv_2
+X_2467_ _2457_/CLK _2467_/D _2467_/Q sky130_fd_sc_hd__dfxtp_4
+X_2536_ _2519_/CLK _1916_/X HASH_ADDR[5] sky130_fd_sc_hd__dfxtp_4
+X_2605_ _2388_/CLK _2605_/D _1483_/B sky130_fd_sc_hd__dfxtp_4
+X_1349_ _1349_/A _1349_/Y sky130_fd_sc_hd__inv_2
+X_1418_ _1409_/A _1409_/C _1419_/A sky130_fd_sc_hd__or2_4
+X_2398_ _2606_/CLK _2318_/X _1773_/A sky130_fd_sc_hd__dfxtp_4
+X_2321_ _2223_/Y _2310_/X _1520_/X _2312_/X _2395_/D sky130_fd_sc_hd__a2bb2o_4
+X_1203_ _2647_/Q _1194_/B _1202_/X _1203_/Y sky130_fd_sc_hd__o21ai_4
+X_2252_ _2244_/X _2133_/Y _2247_/X _1905_/B _2249_/X _2431_/D
++ sky130_fd_sc_hd__o32ai_4
+X_2183_ _2180_/X _2182_/X _1701_/A _2183_/Y sky130_fd_sc_hd__a21oi_4
+X_1898_ _2096_/A _1900_/A sky130_fd_sc_hd__buf_2
+X_1967_ _1284_/X _1966_/Y _2503_/D sky130_fd_sc_hd__nor2_4
+X_2519_ _2519_/CLK _1940_/Y _2519_/Q sky130_fd_sc_hd__dfxtp_4
+X_1683_ _1683_/A _1683_/Y sky130_fd_sc_hd__inv_2
+X_1821_ _2574_/Q _1809_/X _1820_/X _2575_/D sky130_fd_sc_hd__o21a_4
+X_1752_ _2134_/C _1751_/A _1633_/X _1751_/Y _1752_/X sky130_fd_sc_hd__a211o_4
+X_2304_ _2304_/A _1602_/C _1409_/A _2304_/Y sky130_fd_sc_hd__nand3_4
+X_2097_ _2108_/A _2097_/B _2097_/X sky130_fd_sc_hd__and2_4
+X_2166_ _2166_/A THREAD_COUNT[3] _2166_/Y sky130_fd_sc_hd__nand2_4
+X_2235_ _2233_/Y _2234_/X _2235_/Y sky130_fd_sc_hd__nand2_4
+X_2020_ _2020_/A _2022_/A sky130_fd_sc_hd__inv_2
+X_1735_ _1829_/A _1179_/A _1735_/C _1735_/D _1831_/A sky130_fd_sc_hd__nand4_4
+X_1666_ _2146_/A _2166_/A sky130_fd_sc_hd__buf_2
+X_1804_ _2591_/Q _1514_/X _1799_/X _1804_/X sky130_fd_sc_hd__o21a_4
+X_1597_ _1664_/A _1600_/B sky130_fd_sc_hd__buf_2
+X_2149_ _1534_/A _2554_/Q _2148_/X _2149_/Y sky130_fd_sc_hd__o21ai_4
+X_2218_ _1625_/X _2411_/Q _1617_/Y _2218_/Y sky130_fd_sc_hd__a21oi_4
+Xclkbuf_1_1_0_m1_clk_local clkbuf_0_m1_clk_local/X clkbuf_2_3_0_m1_clk_local/A
++ sky130_fd_sc_hd__clkbuf_1
+X_1520_ _1520_/A _1520_/X sky130_fd_sc_hd__buf_2
+X_1382_ _1373_/B _1366_/X _1381_/Y _2623_/D sky130_fd_sc_hd__o21a_4
+Xclkbuf_4_12_0_addressalyzerBlock.SPI_CLK clkbuf_3_6_0_addressalyzerBlock.SPI_CLK/X
++ _2590_/CLK sky130_fd_sc_hd__clkbuf_1
+X_1451_ _1434_/Y _1451_/X sky130_fd_sc_hd__buf_2
+X_2003_ _1999_/A _2003_/Y sky130_fd_sc_hd__inv_2
+X_1649_ _1659_/A _1649_/B _1649_/Y sky130_fd_sc_hd__nor2_4
+X_1718_ _1702_/Y _1717_/Y _1614_/X _1718_/Y sky130_fd_sc_hd__o21ai_4
+XPHY_99 sky130_fd_sc_hd__decap_3
+XPHY_88 sky130_fd_sc_hd__decap_3
+XPHY_77 sky130_fd_sc_hd__decap_3
+XPHY_66 sky130_fd_sc_hd__decap_3
+XPHY_55 sky130_fd_sc_hd__decap_3
+XPHY_11 sky130_fd_sc_hd__decap_3
+XPHY_22 sky130_fd_sc_hd__decap_3
+XPHY_33 sky130_fd_sc_hd__decap_3
+XPHY_44 sky130_fd_sc_hd__decap_3
+X_2483_ _2483_/CLK _2050_/Y _2030_/A sky130_fd_sc_hd__dfxtp_4
+X_2621_ _2367_/CLK _1390_/Y _2621_/Q sky130_fd_sc_hd__dfxtp_4
+X_2552_ _2554_/CLK _1889_/X _2552_/Q sky130_fd_sc_hd__dfxtp_4
+X_1503_ _1503_/A _1503_/Y sky130_fd_sc_hd__inv_2
+X_1365_ _1383_/A _1383_/C _2619_/Q _1365_/D _1365_/X sky130_fd_sc_hd__and4_4
+X_1434_ _2386_/Q _1566_/A _1434_/Y sky130_fd_sc_hd__nor2_4
+X_1296_ _1296_/A _1296_/B _1296_/Y sky130_fd_sc_hd__nand2_4
+Xclkbuf_3_4_0_m1_clk_local clkbuf_3_4_0_m1_clk_local/A clkbuf_4_9_0_m1_clk_local/A
++ sky130_fd_sc_hd__clkbuf_1
+X_1983_ _1222_/X _1983_/B _1983_/Y sky130_fd_sc_hd__nor2_4
+X_2604_ _2598_/CLK _2604_/D _2604_/Q sky130_fd_sc_hd__dfxtp_4
+X_2466_ _2550_/CLK _2094_/X _2351_/C sky130_fd_sc_hd__dfxtp_4
+X_1417_ _1417_/A _2614_/D sky130_fd_sc_hd__inv_2
+X_2535_ _2519_/CLK _1917_/X HASH_ADDR[4] sky130_fd_sc_hd__dfxtp_4
+X_1348_ _1347_/Y _2629_/D sky130_fd_sc_hd__inv_2
+X_1279_ _1279_/A _1279_/Y sky130_fd_sc_hd__inv_2
+X_2397_ _2410_/CLK _2319_/X _2397_/Q sky130_fd_sc_hd__dfxtp_4
+X_2251_ _2244_/X _2130_/Y _2247_/X _1902_/Y _2249_/X _2432_/D
++ sky130_fd_sc_hd__o32ai_4
+X_2320_ _1764_/Y _2310_/X _1514_/X _2312_/X _2320_/X sky130_fd_sc_hd__a2bb2o_4
+X_1202_ _2648_/Q _1179_/A _1202_/X sky130_fd_sc_hd__or2_4
+X_2182_ _2441_/Q _1635_/X _1632_/Y _2181_/Y _2182_/X sky130_fd_sc_hd__a211o_4
+X_1966_ _1966_/A _1966_/Y sky130_fd_sc_hd__inv_2
+X_1897_ _1896_/A _1897_/B _2545_/D sky130_fd_sc_hd__and2_4
+X_2449_ _2598_/CLK _2449_/D _2449_/Q sky130_fd_sc_hd__dfxtp_4
+X_2518_ _2528_/CLK _2518_/D _2518_/Q sky130_fd_sc_hd__dfxtp_4
+X_1820_ _2575_/Q _1810_/X _1813_/X _1820_/X sky130_fd_sc_hd__o21a_4
+X_1682_ _1566_/X _1577_/X _1683_/A _2385_/Q _1681_/X _1682_/Y
++ sky130_fd_sc_hd__o41ai_4
+X_1751_ _1751_/A _1751_/B _1751_/Y sky130_fd_sc_hd__nor2_4
+X_2234_ _1860_/B _2543_/Q _1661_/D _2234_/D _2234_/X sky130_fd_sc_hd__or4_4
+X_2303_ _2136_/Y _2291_/X _2302_/Y _2303_/Y sky130_fd_sc_hd__o21ai_4
+X_2096_ _2096_/A _2108_/A sky130_fd_sc_hd__buf_2
+X_2165_ _2162_/Y _2163_/X _2164_/X _2165_/Y sky130_fd_sc_hd__a21oi_4
+X_1949_ _1947_/A _1948_/Y _1949_/Y sky130_fd_sc_hd__nor2_4
+X_1803_ _1786_/Y _2574_/Q _1802_/X _2582_/D sky130_fd_sc_hd__o21a_4
+X_1734_ _1733_/Y _2592_/D sky130_fd_sc_hd__inv_2
+X_1665_ _1570_/A _1664_/Y _1660_/A _2146_/A sky130_fd_sc_hd__nor3_4
+X_1596_ _1545_/X _1576_/X _1588_/Y _1593_/Y _1595_/X _2598_/D
++ sky130_fd_sc_hd__a41oi_4
+X_2217_ _1534_/X _2551_/Q _1640_/X _2217_/Y sky130_fd_sc_hd__o21ai_4
+X_2079_ _2078_/X _1991_/B _1991_/C _2084_/C sky130_fd_sc_hd__nand3_4
+X_2148_ _1613_/Y _2148_/X sky130_fd_sc_hd__buf_2
+X_1450_ _1446_/Y _1450_/X sky130_fd_sc_hd__buf_2
+X_1381_ _1373_/B _1379_/X _1385_/D _1365_/D _1275_/X _1381_/Y
++ sky130_fd_sc_hd__a41oi_4
+X_2002_ _1998_/A _2002_/X sky130_fd_sc_hd__buf_2
+X_1648_ _1667_/B _1649_/B sky130_fd_sc_hd__inv_2
+X_1579_ _1428_/B _1579_/X sky130_fd_sc_hd__buf_2
+X_1717_ _1712_/Y _1633_/X _1716_/Y _1717_/Y sky130_fd_sc_hd__a21oi_4
+XPHY_12 sky130_fd_sc_hd__decap_3
+XPHY_89 sky130_fd_sc_hd__decap_3
+XPHY_78 sky130_fd_sc_hd__decap_3
+XPHY_67 sky130_fd_sc_hd__decap_3
+XPHY_56 sky130_fd_sc_hd__decap_3
+XPHY_23 sky130_fd_sc_hd__decap_3
+XPHY_34 sky130_fd_sc_hd__decap_3
+XPHY_45 sky130_fd_sc_hd__decap_3
+X_2620_ _2367_/CLK _2620_/D _2620_/Q sky130_fd_sc_hd__dfxtp_4
+X_2482_ _2483_/CLK _2052_/Y _1985_/A sky130_fd_sc_hd__dfxtp_4
+X_2551_ _2554_/CLK _2551_/D _2551_/Q sky130_fd_sc_hd__dfxtp_4
+X_1502_ _1496_/Y _1498_/Y _1501_/X _1502_/Y sky130_fd_sc_hd__a21oi_4
+X_1433_ _1433_/A _1440_/B sky130_fd_sc_hd__buf_2
+X_1364_ _2620_/Q _1383_/C sky130_fd_sc_hd__buf_2
+X_1295_ _1295_/A _1308_/A _1299_/A _1292_/C _1296_/B sky130_fd_sc_hd__nand4_4
+Xclkbuf_2_3_0_addressalyzerBlock.SPI_CLK clkbuf_2_3_0_addressalyzerBlock.SPI_CLK/A
++ clkbuf_3_7_0_addressalyzerBlock.SPI_CLK/A sky130_fd_sc_hd__clkbuf_1
+X_1982_ _1981_/X _2495_/D sky130_fd_sc_hd__inv_2
+X_2534_ _2496_/CLK _1918_/X HASH_ADDR[3] sky130_fd_sc_hd__dfxtp_4
+X_2603_ _2598_/CLK _2603_/D _2603_/Q sky130_fd_sc_hd__dfxtp_4
+X_2465_ _2457_/CLK _2095_/X _2094_/B sky130_fd_sc_hd__dfxtp_4
+X_1416_ _1413_/Y _1419_/C _1415_/Y _1417_/A sky130_fd_sc_hd__o21ai_4
+X_1347_ _1344_/X _1345_/Y _1346_/X _1347_/Y sky130_fd_sc_hd__nand3_4
+X_2396_ _2410_/CLK _2320_/X _1764_/A sky130_fd_sc_hd__dfxtp_4
+X_1278_ _1276_/Y _1278_/B _1279_/A sky130_fd_sc_hd__nand2_4
+X_1201_ _1199_/Y _1187_/X _1200_/Y _1201_/Y sky130_fd_sc_hd__a21oi_4
+X_2250_ _2244_/X _2127_/Y _2247_/X _1710_/B _2249_/X _2433_/D
++ sky130_fd_sc_hd__o32ai_4
+X_2181_ _2181_/A _1771_/Y _2181_/Y sky130_fd_sc_hd__nor2_4
+X_1965_ _1284_/X _1965_/B _1965_/Y sky130_fd_sc_hd__nor2_4
+X_1896_ _1896_/A _2550_/Q _2546_/D sky130_fd_sc_hd__and2_4
+X_2517_ _2638_/CLK _1945_/Y _1957_/B sky130_fd_sc_hd__dfxtp_4
+X_2379_ _2498_/CLK _2379_/D _2379_/Q sky130_fd_sc_hd__dfxtp_4
+X_2448_ _2557_/CLK _2448_/D _2448_/Q sky130_fd_sc_hd__dfxtp_4
+X_1750_ _1750_/A _1751_/B sky130_fd_sc_hd__inv_2
+X_1681_ _1679_/Y _1680_/X _1529_/Y _1681_/X sky130_fd_sc_hd__o21a_4
+X_2233_ _2216_/Y _2231_/Y _2232_/Y _2233_/Y sky130_fd_sc_hd__o21ai_4
+X_2164_ _1611_/A _1236_/A _1656_/A _2164_/X sky130_fd_sc_hd__a21o_4
+X_2302_ _2304_/A _1602_/C HASH_LED _2302_/Y sky130_fd_sc_hd__nand3_4
+X_2095_ _1900_/A IRQ_OUT_fromClient _2095_/X sky130_fd_sc_hd__and2_4
+X_1879_ _1878_/A DATA_FROM_HASH[1] _2560_/D sky130_fd_sc_hd__and2_4
+X_1948_ _1948_/A _1948_/Y sky130_fd_sc_hd__inv_2
+X_1733_ _1730_/X _1731_/Y _1732_/Y _1733_/Y sky130_fd_sc_hd__o21ai_4
+X_1802_ _2591_/Q _1503_/A _1799_/X _1802_/X sky130_fd_sc_hd__o21a_4
+X_1664_ _1664_/A _1579_/X _1428_/C _1664_/Y sky130_fd_sc_hd__nand3_4
+X_1595_ _1549_/A _1594_/X _1781_/A _1595_/X sky130_fd_sc_hd__a21o_4
+X_2147_ _2616_/Q _1571_/A _1661_/C _1661_/D _2146_/Y _2147_/Y
++ sky130_fd_sc_hd__o41ai_4
+X_2216_ _1409_/C _1860_/B _1661_/C _1661_/D _2146_/Y _2216_/Y
++ sky130_fd_sc_hd__o41ai_4
+X_2078_ _1991_/A _2078_/X sky130_fd_sc_hd__buf_2
+X_1380_ _1383_/C _1385_/D sky130_fd_sc_hd__buf_2
+X_2001_ _2010_/C _2001_/B _2001_/Y sky130_fd_sc_hd__nand2_4
+X_1716_ _1715_/X _1534_/A _1716_/Y sky130_fd_sc_hd__nand2_4
+X_1647_ _1667_/C _1667_/D _1659_/A sky130_fd_sc_hd__nand2_4
+X_1578_ _1577_/X _1460_/X _1503_/A _1578_/Y sky130_fd_sc_hd__o21ai_4
+XPHY_13 sky130_fd_sc_hd__decap_3
+XPHY_24 sky130_fd_sc_hd__decap_3
+XPHY_35 sky130_fd_sc_hd__decap_3
+XPHY_46 sky130_fd_sc_hd__decap_3
+XPHY_79 sky130_fd_sc_hd__decap_3
+XPHY_68 sky130_fd_sc_hd__decap_3
+XPHY_57 sky130_fd_sc_hd__decap_3
+X_2550_ _2550_/CLK _2550_/D _2550_/Q sky130_fd_sc_hd__dfxtp_4
+X_2481_ _2483_/CLK _2057_/X _1993_/D sky130_fd_sc_hd__dfxtp_4
+X_1363_ _1397_/B _1233_/C _1397_/C _1383_/A sky130_fd_sc_hd__nor3_4
+X_1501_ _1450_/X _1499_/Y _1500_/X _1501_/X sky130_fd_sc_hd__a21o_4
+X_1432_ _1429_/Y _1701_/A _1466_/A _2602_/Q _1433_/A sky130_fd_sc_hd__and4_4
+X_1294_ _1301_/A _1293_/Y _1275_/X _1296_/A sky130_fd_sc_hd__a21oi_4
+X_1981_ _1979_/A _1976_/A _1976_/B _1981_/X sky130_fd_sc_hd__or3_4
+X_2602_ _2388_/CLK _1551_/Y _2602_/Q sky130_fd_sc_hd__dfxtp_4
+X_2533_ _2519_/CLK _2533_/D HASH_ADDR[2] sky130_fd_sc_hd__dfxtp_4
+X_2464_ _2457_/CLK _2097_/X _2464_/Q sky130_fd_sc_hd__dfxtp_4
+X_1415_ _1419_/C _1413_/Y _1283_/X _1415_/Y sky130_fd_sc_hd__a21oi_4
+X_1346_ _1270_/A _1346_/X sky130_fd_sc_hd__buf_2
+X_2395_ _2410_/CLK _2395_/D _1767_/B sky130_fd_sc_hd__dfxtp_4
+X_1277_ _1277_/A _1277_/B _2641_/Q _1277_/D _1278_/B sky130_fd_sc_hd__nand4_4
+X_1200_ _1762_/B _1216_/B _1191_/X _1200_/Y sky130_fd_sc_hd__o21ai_4
+X_2180_ _2176_/Y _2179_/Y _2449_/Q _2180_/X sky130_fd_sc_hd__a21o_4
+X_1895_ _1896_/A DATA_AVAILABLE[0] _2547_/D sky130_fd_sc_hd__and2_4
+Xclkbuf_3_0_0_m1_clk_local clkbuf_3_1_0_m1_clk_local/A clkbuf_4_1_0_m1_clk_local/A
++ sky130_fd_sc_hd__clkbuf_1
+X_1964_ _1964_/A _1965_/B sky130_fd_sc_hd__inv_2
+X_2447_ _2557_/CLK _2117_/Y _2447_/Q sky130_fd_sc_hd__dfxtp_4
+X_2516_ _2638_/CLK _1947_/Y _1958_/B sky130_fd_sc_hd__dfxtp_4
+X_2378_ _2498_/CLK _2377_/Q _2379_/D sky130_fd_sc_hd__dfxtp_4
+X_1329_ _2629_/Q _1329_/X sky130_fd_sc_hd__buf_2
+X_1680_ _1185_/A _1680_/B _1680_/X sky130_fd_sc_hd__or2_4
+X_2301_ _1490_/Y _2291_/X _2300_/Y _2407_/D sky130_fd_sc_hd__o21ai_4
+X_2232_ THREAD_COUNT[0] _2166_/A _2168_/Y _2232_/Y sky130_fd_sc_hd__a21boi_4
+X_2163_ _1335_/A _1646_/X _1741_/Y _2163_/X sky130_fd_sc_hd__o21a_4
+X_2094_ _1900_/A _2094_/B _2094_/X sky130_fd_sc_hd__and2_4
+X_1878_ _1878_/A DATA_FROM_HASH[2] _2561_/D sky130_fd_sc_hd__and2_4
+X_1947_ _1947_/A _1947_/B _1947_/Y sky130_fd_sc_hd__nor2_4
+X_1732_ _1730_/X _1739_/A _1781_/A _1732_/Y sky130_fd_sc_hd__a21oi_4
+X_1663_ _1662_/Y _1739_/A sky130_fd_sc_hd__buf_2
+X_1801_ _1786_/Y _2575_/Q _1800_/X _2583_/D sky130_fd_sc_hd__o21a_4
+X_1594_ _1590_/B _1594_/X sky130_fd_sc_hd__buf_2
+X_2146_ _2146_/A _2146_/Y sky130_fd_sc_hd__inv_2
+X_2077_ _2071_/Y _2060_/B _2076_/Y _2475_/D sky130_fd_sc_hd__a21oi_4
+X_2215_ _1726_/A _2213_/Y _2214_/Y _2215_/Y sky130_fd_sc_hd__o21ai_4
+X_2000_ CLK_LED _2001_/B sky130_fd_sc_hd__inv_2
+Xclkbuf_3_3_0_addressalyzerBlock.SPI_CLK clkbuf_2_1_0_addressalyzerBlock.SPI_CLK/X
++ clkbuf_4_7_0_addressalyzerBlock.SPI_CLK/A sky130_fd_sc_hd__clkbuf_1
+X_1646_ _1646_/A _1646_/X sky130_fd_sc_hd__buf_2
+Xclkbuf_4_9_0_m1_clk_local clkbuf_4_9_0_m1_clk_local/A _2370_/CLK
++ sky130_fd_sc_hd__clkbuf_1
+X_1715_ _2445_/Q _1703_/X _1632_/Y _1714_/Y _1715_/X sky130_fd_sc_hd__a211o_4
+X_1577_ _1443_/A _1577_/X sky130_fd_sc_hd__buf_2
+XPHY_69 sky130_fd_sc_hd__decap_3
+XPHY_58 sky130_fd_sc_hd__decap_3
+XPHY_47 sky130_fd_sc_hd__decap_3
+XPHY_14 sky130_fd_sc_hd__decap_3
+X_2129_ _2120_/X _2127_/Y _2128_/Y _2445_/D sky130_fd_sc_hd__o21ai_4
+XPHY_25 sky130_fd_sc_hd__decap_3
+XPHY_36 sky130_fd_sc_hd__decap_3
+X_2480_ _2483_/CLK _2480_/D _1993_/C sky130_fd_sc_hd__dfxtp_4
+X_1500_ _1221_/A _1500_/X sky130_fd_sc_hd__buf_2
+X_1362_ _1367_/A _1361_/Y _1306_/X _1362_/X sky130_fd_sc_hd__o21a_4
+X_1293_ _1295_/A _1293_/Y sky130_fd_sc_hd__inv_2
+X_1431_ _2603_/Q _1466_/A sky130_fd_sc_hd__buf_2
+X_1629_ _1621_/X _1627_/Y _1628_/X _1629_/X sky130_fd_sc_hd__a21o_4
+X_1980_ _1980_/A _1980_/B _1979_/X _2496_/D sky130_fd_sc_hd__and3_4
+X_2532_ _2496_/CLK _1920_/X HASH_ADDR[1] sky130_fd_sc_hd__dfxtp_4
+X_2463_ _2570_/CLK _2099_/X _2463_/Q sky130_fd_sc_hd__dfxtp_4
+X_2601_ _2388_/CLK _1557_/X _1608_/B sky130_fd_sc_hd__dfxtp_4
+X_1345_ _1333_/Y _1345_/Y sky130_fd_sc_hd__inv_2
+X_1414_ _1409_/A _1409_/C _1419_/C sky130_fd_sc_hd__nand2_4
+X_2394_ _2590_/CLK _2325_/X _1728_/C sky130_fd_sc_hd__dfxtp_4
+X_1276_ _1282_/C _1854_/A _1275_/X _1276_/Y sky130_fd_sc_hd__a21oi_4
+X_1894_ _1896_/A DATA_AVAILABLE[1] _1894_/X sky130_fd_sc_hd__and2_4
+X_1963_ _1947_/A _1963_/B _1963_/Y sky130_fd_sc_hd__nor2_4
+X_2446_ _2410_/CLK _2446_/D _2125_/C sky130_fd_sc_hd__dfxtp_4
+X_2515_ _2638_/CLK _1949_/Y _2515_/Q sky130_fd_sc_hd__dfxtp_4
+X_2377_ _2498_/CLK _2377_/D _2377_/Q sky130_fd_sc_hd__dfxtp_4
+X_1328_ _1242_/B _1335_/C sky130_fd_sc_hd__buf_2
+X_1259_ _1226_/Y _1292_/C sky130_fd_sc_hd__inv_2
+X_2231_ _2228_/Y _2229_/Y _2230_/X _2231_/Y sky130_fd_sc_hd__a21oi_4
+X_2300_ _2304_/A _2298_/B _2300_/C _2300_/Y sky130_fd_sc_hd__nand3_4
+X_2093_ _1900_/A _2093_/B _2467_/D sky130_fd_sc_hd__and2_4
+X_2162_ _2149_/Y _2160_/Y _2161_/Y _2162_/Y sky130_fd_sc_hd__o21ai_4
+X_1877_ _1878_/A DATA_FROM_HASH[3] _2562_/D sky130_fd_sc_hd__and2_4
+X_1946_ _2420_/Q _1947_/B sky130_fd_sc_hd__inv_2
+X_2429_ _2428_/CLK _2429_/D _2177_/B sky130_fd_sc_hd__dfxtp_4
+X_1800_ _1788_/X _2253_/C _1799_/X _1800_/X sky130_fd_sc_hd__o21a_4
+X_1662_ _1662_/A _1662_/Y sky130_fd_sc_hd__inv_2
+X_1731_ _1697_/A _1731_/B _1689_/A _1731_/Y sky130_fd_sc_hd__nor3_4
+X_2214_ _1762_/A _2436_/Q _2214_/Y sky130_fd_sc_hd__nand2_4
+X_1593_ _1613_/A _1667_/B _1488_/X _1593_/Y sky130_fd_sc_hd__o21ai_4
+X_2076_ _2071_/Y _2060_/B _1346_/X _2076_/Y sky130_fd_sc_hd__o21ai_4
+X_2145_ _2144_/Y _2138_/Y _2125_/A _1966_/Y _2139_/X _2439_/D
++ sky130_fd_sc_hd__o32ai_4
+X_1929_ _2411_/Q _1929_/Y sky130_fd_sc_hd__inv_2
+X_1645_ _1645_/A _1646_/A sky130_fd_sc_hd__inv_2
+X_1576_ _2337_/A _1575_/Y _1445_/A _1445_/D _1185_/A _1576_/X
++ sky130_fd_sc_hd__a41o_4
+X_1714_ _1630_/X _1713_/Y _1714_/Y sky130_fd_sc_hd__nor2_4
+X_2059_ _1992_/D _2060_/B sky130_fd_sc_hd__buf_2
+XPHY_59 sky130_fd_sc_hd__decap_3
+XPHY_48 sky130_fd_sc_hd__decap_3
+XPHY_15 sky130_fd_sc_hd__decap_3
+X_2128_ _2125_/A _2335_/A _2445_/Q _2128_/Y sky130_fd_sc_hd__nand3_4
+XPHY_26 sky130_fd_sc_hd__decap_3
+XPHY_37 sky130_fd_sc_hd__decap_3
+X_1430_ _2604_/Q _1701_/A sky130_fd_sc_hd__buf_2
+X_1361_ _1360_/Y _1350_/X _1361_/Y sky130_fd_sc_hd__nor2_4
+X_1292_ _1308_/A _1299_/A _1292_/C _1301_/A sky130_fd_sc_hd__nand3_4
+X_1559_ _1570_/A _1559_/B _1667_/A sky130_fd_sc_hd__nor2_4
+X_1628_ _2449_/Q _1628_/X sky130_fd_sc_hd__buf_2
+X_2600_ _2590_/CLK _2600_/D _2600_/Q sky130_fd_sc_hd__dfxtp_4
+X_1413_ _1409_/B _1413_/Y sky130_fd_sc_hd__inv_2
+X_2393_ _2570_/CLK _2393_/D _1697_/A sky130_fd_sc_hd__dfxtp_4
+X_2462_ _2390_/CLK _2462_/D _1680_/B sky130_fd_sc_hd__dfxtp_4
+X_2531_ _2513_/CLK _2531_/D HASH_ADDR[0] sky130_fd_sc_hd__dfxtp_4
+X_1275_ _1274_/X _1275_/X sky130_fd_sc_hd__buf_2
+X_1344_ _1324_/X _1321_/X _1329_/X _1344_/X sky130_fd_sc_hd__a21o_4
+X_1962_ _2441_/Q _1963_/B sky130_fd_sc_hd__inv_2
+X_1893_ _1896_/A DATA_AVAILABLE[2] _2549_/D sky130_fd_sc_hd__and2_4
+X_2376_ _2498_/CLK _2376_/D _2377_/D sky130_fd_sc_hd__dfxtp_4
+X_2514_ _2513_/CLK _1951_/X DATA_TO_HASH[7] sky130_fd_sc_hd__dfxtp_4
+X_2445_ _2445_/CLK _2445_/D _2445_/Q sky130_fd_sc_hd__dfxtp_4
+X_1258_ _1228_/Y _1240_/Y _1238_/Y _1258_/Y sky130_fd_sc_hd__nor3_4
+X_1189_ _2384_/Q _1189_/Y sky130_fd_sc_hd__inv_2
+X_1327_ _1326_/Y _2633_/D sky130_fd_sc_hd__inv_2
+X_2230_ _1612_/A _2621_/Q _1656_/A _2230_/X sky130_fd_sc_hd__a21o_4
+X_2092_ _1222_/X _2091_/Y _2092_/Y sky130_fd_sc_hd__nor2_4
+X_2161_ _1256_/Y _2148_/X _1651_/X _1856_/A _2161_/Y sky130_fd_sc_hd__a2bb2oi_4
+X_1945_ _1947_/A _1945_/B _1945_/Y sky130_fd_sc_hd__nor2_4
+X_1876_ _1878_/A DATA_FROM_HASH[4] _1876_/X sky130_fd_sc_hd__and2_4
+X_2359_ EXT_RESET_N_fromHost EXT_RESET_N_toClient sky130_fd_sc_hd__buf_2
+X_2428_ _2428_/CLK _2428_/D _2428_/Q sky130_fd_sc_hd__dfxtp_4
+Xclkbuf_4_3_0_addressalyzerBlock.SPI_CLK clkbuf_4_3_0_addressalyzerBlock.SPI_CLK/A
++ _2410_/CLK sky130_fd_sc_hd__clkbuf_1
+X_1661_ _1383_/C _1860_/B _1661_/C _1661_/D _1661_/X sky130_fd_sc_hd__or4_4
+X_1730_ _1728_/C _1434_/Y _1728_/Y _1729_/Y _1730_/X sky130_fd_sc_hd__a211o_4
+X_1592_ _1426_/A _1664_/A _1667_/B sky130_fd_sc_hd__nor2_4
+X_2213_ _2544_/Q _1739_/B _2212_/Y _2168_/Y _2213_/Y sky130_fd_sc_hd__a22oi_4
+X_2144_ _1520_/X _2144_/Y sky130_fd_sc_hd__inv_2
+X_2075_ _2075_/A _2075_/Y sky130_fd_sc_hd__inv_2
+X_1859_ _1612_/X _1857_/Y _1858_/Y _1859_/Y sky130_fd_sc_hd__o21ai_4
+X_1928_ _1930_/A _1927_/Y _2528_/D sky130_fd_sc_hd__nor2_4
+Xclkbuf_2_2_0_m1_clk_local clkbuf_2_3_0_m1_clk_local/A clkbuf_3_4_0_m1_clk_local/A
++ sky130_fd_sc_hd__clkbuf_1
+X_1713_ _1768_/B _1713_/Y sky130_fd_sc_hd__inv_2
+X_1644_ _1643_/X _1645_/A sky130_fd_sc_hd__buf_2
+X_1575_ _1566_/A _1575_/Y sky130_fd_sc_hd__inv_2
+X_2127_ _1840_/B _2121_/X _1459_/A _2127_/Y sky130_fd_sc_hd__nand3_4
+X_2058_ _2477_/Q _2058_/X sky130_fd_sc_hd__buf_2
+XPHY_49 sky130_fd_sc_hd__decap_3
+XPHY_16 sky130_fd_sc_hd__decap_3
+XPHY_27 sky130_fd_sc_hd__decap_3
+XPHY_38 sky130_fd_sc_hd__decap_3
+X_1360_ _1360_/A _1360_/Y sky130_fd_sc_hd__inv_2
+X_1291_ _1246_/Y _1308_/A sky130_fd_sc_hd__inv_2
+X_1558_ _1428_/B _1559_/B sky130_fd_sc_hd__inv_2
+X_1627_ _1622_/Y _1624_/X _1626_/Y _1627_/Y sky130_fd_sc_hd__o21ai_4
+X_1489_ _1487_/Y _1488_/X _1450_/X _1489_/X sky130_fd_sc_hd__a21o_4
+Xclkbuf_4_5_0_m1_clk_local clkbuf_4_5_0_m1_clk_local/A _2483_/CLK
++ sky130_fd_sc_hd__clkbuf_1
+X_2530_ _2528_/CLK _1924_/Y _1931_/B sky130_fd_sc_hd__dfxtp_4
+X_1412_ _1411_/X _2010_/B _1397_/C _1412_/X sky130_fd_sc_hd__and3_4
+X_1343_ _1335_/D _1333_/Y _1342_/Y _1343_/X sky130_fd_sc_hd__o21a_4
+X_2392_ _2570_/CLK _2392_/D _2392_/Q sky130_fd_sc_hd__dfxtp_4
+X_2461_ _2390_/CLK _2461_/D _2461_/Q sky130_fd_sc_hd__dfxtp_4
+X_1274_ _2363_/Q _1274_/X sky130_fd_sc_hd__buf_2
+X_1892_ _2096_/A _1896_/A sky130_fd_sc_hd__buf_2
+X_1961_ _1947_/A _1960_/Y _2506_/D sky130_fd_sc_hd__nor2_4
+X_2513_ _2513_/CLK _1952_/X DATA_TO_HASH[6] sky130_fd_sc_hd__dfxtp_4
+X_2375_ _2496_/CLK _2375_/D _2376_/D sky130_fd_sc_hd__dfxtp_4
+X_1326_ _1316_/B _1323_/Y _1325_/Y _1326_/Y sky130_fd_sc_hd__o21ai_4
+X_2444_ _2445_/CLK _2444_/D _2444_/Q sky130_fd_sc_hd__dfxtp_4
+X_1188_ _1188_/A _1216_/B sky130_fd_sc_hd__buf_2
+X_1257_ _1257_/A _1257_/X sky130_fd_sc_hd__buf_2
+XINSDIODE2_0 DATA_AVAILABLE[2] sky130_fd_sc_hd__diode_2
+X_2160_ _2157_/X _2159_/X _1701_/A _2160_/Y sky130_fd_sc_hd__a21oi_4
+X_2091_ _2467_/Q _2091_/Y sky130_fd_sc_hd__inv_2
+X_1875_ _1878_/A DATA_FROM_HASH[5] _2564_/D sky130_fd_sc_hd__and2_4
+X_1944_ _1944_/A _1945_/B sky130_fd_sc_hd__inv_2
+X_2427_ _2445_/CLK _2427_/D _1913_/A sky130_fd_sc_hd__dfxtp_4
+X_1309_ _1307_/X _1308_/Y _1309_/Y sky130_fd_sc_hd__nand2_4
+X_2289_ _1219_/X _1579_/X _1691_/Y _1562_/A _2290_/A sky130_fd_sc_hd__nor4_4
+X_2358_ _2358_/HI zero sky130_fd_sc_hd__conb_1
+X_1660_ _1660_/A _1661_/D sky130_fd_sc_hd__buf_2
+X_1591_ _1427_/A _1664_/A sky130_fd_sc_hd__inv_2
+X_2212_ _2194_/Y _2210_/Y _2211_/Y _2212_/Y sky130_fd_sc_hd__o21ai_4
+X_2143_ _2142_/Y _2138_/Y _2125_/A _1965_/B _2139_/X _2143_/Y
++ sky130_fd_sc_hd__o32ai_4
+X_2074_ _1990_/B _2072_/Y _2073_/Y _2075_/A sky130_fd_sc_hd__a21o_4
+X_1858_ _1612_/X _1367_/A _1656_/X _1858_/Y sky130_fd_sc_hd__a21oi_4
+X_1927_ _1927_/A _1927_/Y sky130_fd_sc_hd__inv_2
+X_1789_ _1189_/Y _1838_/A sky130_fd_sc_hd__buf_2
+X_1643_ _1651_/A _1667_/B _1667_/C _1667_/D _1643_/X sky130_fd_sc_hd__and4_4
+X_1712_ _1712_/A _1711_/X _1712_/Y sky130_fd_sc_hd__nand2_4
+X_1574_ _2386_/Q _2337_/A sky130_fd_sc_hd__inv_2
+Xclkbuf_4_13_0_m1_clk_local clkbuf_3_6_0_m1_clk_local/X _2372_/CLK
++ sky130_fd_sc_hd__clkbuf_1
+X_2057_ _2056_/X _2044_/B _2040_/X _2057_/X sky130_fd_sc_hd__and3_4
+XPHY_17 sky130_fd_sc_hd__decap_3
+X_2126_ _2120_/X _2122_/Y _2125_/Y _2446_/D sky130_fd_sc_hd__o21ai_4
+XPHY_28 sky130_fd_sc_hd__decap_3
+XPHY_39 sky130_fd_sc_hd__decap_3
+X_1290_ _1290_/A _1290_/Y sky130_fd_sc_hd__inv_2
+X_1626_ _1625_/X _2434_/Q _2448_/Q _1626_/Y sky130_fd_sc_hd__a21oi_4
+X_1557_ _1557_/A _2104_/A _1557_/C _1557_/X sky130_fd_sc_hd__and3_4
+X_1488_ _1435_/Y _1488_/X sky130_fd_sc_hd__buf_2
+X_2109_ _2108_/A _2109_/B _2109_/X sky130_fd_sc_hd__and2_4
+X_2460_ _2570_/CLK _2104_/X _1178_/A sky130_fd_sc_hd__dfxtp_4
+X_1411_ _2615_/Q _1411_/B _1411_/X sky130_fd_sc_hd__or2_4
+X_1342_ _1335_/D _1324_/X _1329_/X _1321_/X _1339_/X _1342_/Y
++ sky130_fd_sc_hd__a41oi_4
+X_2391_ _2570_/CLK _2391_/D _1689_/A sky130_fd_sc_hd__dfxtp_4
+X_1273_ _1277_/A _1854_/A sky130_fd_sc_hd__inv_2
+X_1609_ _1651_/A _1609_/B _1667_/C _1667_/D _1609_/X sky130_fd_sc_hd__and4_4
+X_2589_ _2390_/CLK _1782_/Y _1780_/B sky130_fd_sc_hd__dfxtp_4
+X_1891_ _1891_/A DATA_AVAILABLE[3] _2550_/D sky130_fd_sc_hd__and2_4
+X_1960_ _1960_/A _1960_/Y sky130_fd_sc_hd__inv_2
+X_2443_ _2445_/CLK _2135_/Y _2134_/C sky130_fd_sc_hd__dfxtp_4
+X_2512_ _2513_/CLK _1953_/X DATA_TO_HASH[5] sky130_fd_sc_hd__dfxtp_4
+X_2374_ _2496_/CLK _2373_/Q _2375_/D sky130_fd_sc_hd__dfxtp_4
+X_1325_ _1316_/B _1324_/X _1321_/X _1316_/D _1274_/X _1325_/Y
++ sky130_fd_sc_hd__a41oi_4
+X_1256_ _1277_/D _1256_/Y sky130_fd_sc_hd__inv_2
+X_1187_ _1187_/A _1187_/X sky130_fd_sc_hd__buf_2
+XINSDIODE2_1 DATA_FROM_HASH[5] sky130_fd_sc_hd__diode_2
+Xclkbuf_4_8_0_addressalyzerBlock.SPI_CLK clkbuf_4_9_0_addressalyzerBlock.SPI_CLK/A
++ _2606_/CLK sky130_fd_sc_hd__clkbuf_1
+X_2090_ _1284_/X _2089_/Y _2090_/Y sky130_fd_sc_hd__nor2_4
+X_1874_ _1874_/A _1878_/A sky130_fd_sc_hd__buf_2
+X_1943_ _1339_/X _1947_/A sky130_fd_sc_hd__buf_2
+X_2426_ _2428_/CLK _2426_/D _2426_/Q sky130_fd_sc_hd__dfxtp_4
+X_1239_ _1228_/Y _1238_/Y _1239_/Y sky130_fd_sc_hd__nor2_4
+X_1308_ _1308_/A _2636_/Q _1308_/C _1308_/Y sky130_fd_sc_hd__nand3_4
+X_2288_ _1581_/X _2260_/Y _2278_/A _1929_/Y _2279_/X _2411_/D
++ sky130_fd_sc_hd__o32ai_4
+X_2357_ one _2357_/LO sky130_fd_sc_hd__conb_1
+X_1590_ _1428_/D _1590_/B _1613_/A sky130_fd_sc_hd__nor2_4
+X_2073_ _1990_/B _2072_/Y _1374_/X _2073_/Y sky130_fd_sc_hd__o21ai_4
+X_2211_ _2146_/A THREAD_COUNT[1] _2211_/Y sky130_fd_sc_hd__nand2_4
+X_2142_ _1514_/A _2142_/Y sky130_fd_sc_hd__inv_2
+X_1857_ _1855_/Y _1646_/X _1856_/X _1857_/Y sky130_fd_sc_hd__a21oi_4
+X_1788_ _2591_/Q _1788_/X sky130_fd_sc_hd__buf_2
+X_1926_ _1930_/A _1925_/Y _2529_/D sky130_fd_sc_hd__nor2_4
+X_2409_ _2408_/CLK _2296_/Y _2295_/C sky130_fd_sc_hd__dfxtp_4
+X_1642_ _1615_/Y _1639_/Y _1641_/X _1642_/Y sky130_fd_sc_hd__o21ai_4
+X_1711_ _1937_/A _2181_/A _1708_/X _1710_/Y _1711_/X sky130_fd_sc_hd__a211o_4
+X_1573_ _1564_/X _1572_/Y _1454_/X _2600_/D sky130_fd_sc_hd__a21oi_4
+X_2056_ _2053_/Y _2062_/B _2055_/X _1993_/C _1993_/D _2056_/X
++ sky130_fd_sc_hd__a41o_4
+XPHY_18 sky130_fd_sc_hd__decap_3
+X_2125_ _2125_/A _2335_/A _2125_/C _2125_/Y sky130_fd_sc_hd__nand3_4
+XPHY_29 sky130_fd_sc_hd__decap_3
+X_1909_ _1901_/X _1908_/Y _2539_/D sky130_fd_sc_hd__nor2_4
+X_1556_ _1556_/A _1537_/X _1557_/C sky130_fd_sc_hd__nand2_4
+X_1625_ _1623_/Y _1625_/X sky130_fd_sc_hd__buf_2
+X_1487_ _1487_/A _1505_/B _1494_/B _1505_/C _1487_/Y sky130_fd_sc_hd__nand4_4
+X_2108_ _2108_/A SCLK_fromHost _2456_/D sky130_fd_sc_hd__and2_4
+X_2039_ _2039_/A _2486_/D sky130_fd_sc_hd__inv_2
+X_1410_ _1409_/Y _1411_/B sky130_fd_sc_hd__inv_2
+X_1341_ _1335_/C _1338_/X _1340_/Y _1341_/X sky130_fd_sc_hd__o21a_4
+X_2390_ _2390_/CLK _2390_/D _2390_/Q sky130_fd_sc_hd__dfxtp_4
+X_1272_ _2641_/Q _1265_/Y _1277_/D _1224_/A _1282_/C sky130_fd_sc_hd__nand4_4
+X_1608_ _2602_/Q _1608_/B _1667_/D sky130_fd_sc_hd__nor2_4
+X_2588_ _2390_/CLK _2588_/D _2349_/A sky130_fd_sc_hd__dfxtp_4
+X_1539_ _1466_/A _1482_/Y _1538_/X _1539_/Y sky130_fd_sc_hd__o21ai_4
+Xclkbuf_4_1_0_m1_clk_local clkbuf_4_1_0_m1_clk_local/A _2638_/CLK
++ sky130_fd_sc_hd__clkbuf_1
+X_1890_ _1891_/A _2559_/Q _2551_/D sky130_fd_sc_hd__and2_4
+X_2373_ _2496_/CLK _2373_/D _2373_/Q sky130_fd_sc_hd__dfxtp_4
+X_2511_ _2483_/CLK _1954_/X DATA_TO_HASH[4] sky130_fd_sc_hd__dfxtp_4
+X_2442_ _2598_/CLK _2442_/D _1960_/A sky130_fd_sc_hd__dfxtp_4
+Xclkbuf_4_13_0_addressalyzerBlock.SPI_CLK clkbuf_3_6_0_addressalyzerBlock.SPI_CLK/X
++ _2550_/CLK sky130_fd_sc_hd__clkbuf_1
+X_1324_ _1239_/Y _1324_/X sky130_fd_sc_hd__buf_2
+X_1186_ _1188_/A _1187_/A sky130_fd_sc_hd__buf_2
+X_1255_ _1254_/X _1971_/A sky130_fd_sc_hd__buf_2
+XINSDIODE2_2 SCLK_fromHost sky130_fd_sc_hd__diode_2
+Xclkbuf_3_7_0_m1_clk_local clkbuf_3_7_0_m1_clk_local/A clkbuf_3_7_0_m1_clk_local/X
++ sky130_fd_sc_hd__clkbuf_1
+X_1942_ _1938_/A _1942_/B _2518_/D sky130_fd_sc_hd__nor2_4
+X_1873_ _1838_/A _1874_/A sky130_fd_sc_hd__buf_2
+X_2356_ _2354_/Y _2322_/A _2355_/Y _2652_/D sky130_fd_sc_hd__a21oi_4
+X_2425_ _2408_/CLK _2425_/D _1937_/A sky130_fd_sc_hd__dfxtp_4
+X_1238_ _2620_/Q _1379_/A _1365_/D _1238_/D _1238_/Y sky130_fd_sc_hd__nand4_4
+X_1307_ _2636_/Q _1305_/X _1306_/X _1307_/X sky130_fd_sc_hd__o21a_4
+X_2287_ _1581_/X _2257_/Y _2278_/A _1927_/Y _2279_/X _2412_/D
++ sky130_fd_sc_hd__o32ai_4
+X_2210_ _2207_/Y _2208_/X _2209_/X _2210_/Y sky130_fd_sc_hd__a21oi_4
+X_2072_ _2071_/Y _2060_/B _2072_/Y sky130_fd_sc_hd__nor2_4
+X_2141_ _1503_/Y _2138_/Y _2125_/A _1963_/B _2139_/X _2441_/D
++ sky130_fd_sc_hd__o32ai_4
+X_1925_ _2174_/B _1925_/Y sky130_fd_sc_hd__inv_2
+X_1856_ _1856_/A _1318_/A _1651_/X _1856_/X sky130_fd_sc_hd__and3_4
+X_1787_ _1786_/Y _1983_/B sky130_fd_sc_hd__buf_2
+X_2339_ _1840_/C _2385_/Q _2102_/A _2338_/X _2385_/D sky130_fd_sc_hd__a211o_4
+X_2408_ _2408_/CLK _2299_/Y ID_toHost sky130_fd_sc_hd__dfxtp_4
+X_1572_ _1569_/X _1556_/A _1860_/B _1572_/Y sky130_fd_sc_hd__o21ai_4
+X_1641_ _1251_/Y _1640_/X _1641_/X sky130_fd_sc_hd__or2_4
+X_1710_ _1630_/X _1710_/B _1710_/Y sky130_fd_sc_hd__nor2_4
+X_2124_ _1555_/A _2335_/A sky130_fd_sc_hd__buf_2
+X_2055_ _1993_/A _2055_/X sky130_fd_sc_hd__buf_2
+XPHY_19 sky130_fd_sc_hd__decap_3
+X_1839_ _2463_/Q _1840_/C sky130_fd_sc_hd__inv_2
+X_1908_ _2177_/B _1908_/Y sky130_fd_sc_hd__inv_2
+X_1624_ _1623_/Y _1624_/X sky130_fd_sc_hd__buf_2
+X_1555_ _1555_/A _2104_/A sky130_fd_sc_hd__buf_2
+X_2107_ _2108_/A _2456_/Q _2107_/X sky130_fd_sc_hd__and2_4
+X_1486_ _1486_/A _1505_/C sky130_fd_sc_hd__buf_2
+X_2038_ _2038_/A _2038_/B _2039_/A sky130_fd_sc_hd__nand2_4
+X_1340_ _1335_/C _1318_/B _1335_/D _1329_/X _1339_/X _1340_/Y
++ sky130_fd_sc_hd__a41oi_4
+X_1271_ _1268_/Y _2010_/B _1271_/C _2643_/D sky130_fd_sc_hd__and3_4
+X_1538_ _1466_/Y _1467_/Y _1537_/X _1548_/D _1488_/X _1538_/X
++ sky130_fd_sc_hd__o41a_4
+X_1469_ _1466_/Y _1467_/Y _1424_/Y _1548_/D _1469_/Y sky130_fd_sc_hd__nor4_4
+X_2587_ _2606_/CLK _1792_/X _1420_/A sky130_fd_sc_hd__dfxtp_4
+X_1607_ _2604_/Q _2603_/Q _1667_/C sky130_fd_sc_hd__nor2_4
+X_2510_ _2513_/CLK _1955_/X DATA_TO_HASH[3] sky130_fd_sc_hd__dfxtp_4
+X_2372_ _2372_/CLK _2371_/Q _2373_/D sky130_fd_sc_hd__dfxtp_4
+X_1323_ _1323_/A _1323_/Y sky130_fd_sc_hd__inv_2
+X_2441_ _2598_/CLK _2441_/D _2441_/Q sky130_fd_sc_hd__dfxtp_4
+X_1185_ _1185_/A _1188_/A sky130_fd_sc_hd__inv_2
+X_1254_ _1374_/A _1254_/X sky130_fd_sc_hd__buf_2
+X_2639_ _2638_/CLK _1290_/Y _1224_/A sky130_fd_sc_hd__dfxtp_4
+XINSDIODE2_3 _1969_/X sky130_fd_sc_hd__diode_2
+X_1872_ _1870_/X DATA_FROM_HASH[6] _2565_/D sky130_fd_sc_hd__and2_4
+X_1941_ _1941_/A _1942_/B sky130_fd_sc_hd__inv_2
+X_2355_ _1676_/B _1187_/A _1213_/X _2355_/Y sky130_fd_sc_hd__o21ai_4
+X_1306_ _1270_/A _1306_/X sky130_fd_sc_hd__buf_2
+X_2286_ _1581_/X _2255_/Y _2278_/A _1925_/Y _2279_/X _2413_/D
++ sky130_fd_sc_hd__o32ai_4
+X_2424_ _2428_/CLK _2424_/D _1847_/A sky130_fd_sc_hd__dfxtp_4
+X_1237_ _1237_/A _1238_/D sky130_fd_sc_hd__inv_2
+X_2140_ _2136_/Y _2138_/Y _2120_/X _1960_/Y _2139_/X _2442_/D
++ sky130_fd_sc_hd__o32ai_4
+X_2071_ _2071_/A _2071_/Y sky130_fd_sc_hd__inv_2
+X_1855_ _1843_/Y _1853_/Y _1854_/X _1855_/Y sky130_fd_sc_hd__o21ai_4
+X_1924_ _1930_/A _1923_/Y _1924_/Y sky130_fd_sc_hd__nor2_4
+X_1786_ _2591_/Q _1786_/Y sky130_fd_sc_hd__inv_2
+X_2338_ _2338_/A _1188_/A _1680_/B _2338_/X sky130_fd_sc_hd__and3_4
+X_2269_ _2268_/Y _2262_/X _2258_/X _1847_/Y _2264_/X _2424_/D
++ sky130_fd_sc_hd__o32ai_4
+X_2407_ _2408_/CLK _2407_/D _2300_/C sky130_fd_sc_hd__dfxtp_4
+X_1571_ _1571_/A _1860_/B sky130_fd_sc_hd__buf_2
+X_1640_ _1613_/Y _1640_/X sky130_fd_sc_hd__buf_2
+X_2123_ _2123_/A _2125_/A sky130_fd_sc_hd__buf_2
+X_2054_ _2478_/Q _2062_/B sky130_fd_sc_hd__buf_2
+X_1838_ _1838_/A _1840_/B sky130_fd_sc_hd__buf_2
+X_1907_ _1901_/X _1906_/Y _2540_/D sky130_fd_sc_hd__nor2_4
+X_1769_ _1486_/A _1764_/Y _1766_/Y _1767_/X _1768_/X _1769_/X
++ sky130_fd_sc_hd__a2111o_4
+X_1485_ _1436_/C _1494_/B sky130_fd_sc_hd__buf_2
+X_1623_ _2447_/Q _1623_/Y sky130_fd_sc_hd__inv_2
+X_1554_ _1189_/Y _1555_/A sky130_fd_sc_hd__buf_2
+.ends
+

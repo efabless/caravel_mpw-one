@@ -1,0 +1,132 @@
+magic
+tech sky130A
+magscale 1 2
+timestamp 1623348513
+<< pwell >>
+rect 80 640 90 657
+<< obsli1 >>
+rect 83 717 217 733
+rect 83 683 97 717
+rect 131 683 169 717
+rect 203 683 217 717
+rect 83 667 217 683
+rect 47 605 81 621
+rect 47 533 81 571
+rect 47 461 81 499
+rect 47 389 81 427
+rect 47 317 81 355
+rect 47 245 81 283
+rect 47 173 81 211
+rect 47 101 81 139
+rect 47 47 81 67
+rect 133 51 167 621
+rect 219 605 253 621
+rect 219 533 253 571
+rect 219 461 253 499
+rect 219 389 253 427
+rect 219 317 253 355
+rect 219 245 253 283
+rect 219 173 253 211
+rect 219 101 253 139
+rect 219 51 253 67
+<< obsli1c >>
+rect 97 683 131 717
+rect 169 683 203 717
+rect 47 571 81 605
+rect 47 499 81 533
+rect 47 427 81 461
+rect 47 355 81 389
+rect 47 283 81 317
+rect 47 211 81 245
+rect 47 139 81 173
+rect 47 67 81 101
+rect 219 571 253 605
+rect 219 499 253 533
+rect 219 427 253 461
+rect 219 355 253 389
+rect 219 283 253 317
+rect 219 211 253 245
+rect 219 139 253 173
+rect 219 67 253 101
+<< metal1 >>
+rect 85 717 215 729
+rect 85 683 97 717
+rect 131 683 169 717
+rect 203 683 215 717
+rect 85 671 215 683
+rect 41 605 87 621
+rect 41 571 47 605
+rect 81 571 87 605
+rect 41 533 87 571
+rect 41 499 47 533
+rect 81 499 87 533
+rect 41 461 87 499
+rect 41 427 47 461
+rect 81 427 87 461
+rect 41 389 87 427
+rect 41 355 47 389
+rect 81 355 87 389
+rect 41 317 87 355
+rect 41 283 47 317
+rect 81 283 87 317
+rect 41 245 87 283
+rect 41 211 47 245
+rect 81 211 87 245
+rect 41 173 87 211
+rect 41 139 47 173
+rect 81 139 87 173
+rect 41 101 87 139
+rect 41 67 47 101
+rect 81 67 87 101
+rect 41 -29 87 67
+rect 213 605 259 621
+rect 213 571 219 605
+rect 253 571 259 605
+rect 213 533 259 571
+rect 213 499 219 533
+rect 253 499 259 533
+rect 213 461 259 499
+rect 213 427 219 461
+rect 253 427 259 461
+rect 213 389 259 427
+rect 213 355 219 389
+rect 253 355 259 389
+rect 213 317 259 355
+rect 213 283 219 317
+rect 253 283 259 317
+rect 213 245 259 283
+rect 213 211 219 245
+rect 253 211 259 245
+rect 213 173 259 211
+rect 213 139 219 173
+rect 253 139 259 173
+rect 213 101 259 139
+rect 213 67 219 101
+rect 253 67 259 101
+rect 213 -29 259 67
+rect 41 -89 259 -29
+<< obsm1 >>
+rect 124 51 176 621
+<< metal2 >>
+rect 124 488 176 616
+<< labels >>
+rlabel metal2 s 124 488 176 616 6 DRAIN
+port 1 nsew
+rlabel metal1 s 85 671 215 729 6 GATE
+port 2 nsew
+rlabel metal1 s 213 -29 259 621 6 SOURCE
+port 3 nsew
+rlabel metal1 s 41 -29 87 621 6 SOURCE
+port 3 nsew
+rlabel metal1 s 41 -89 259 -29 8 SOURCE
+port 3 nsew
+rlabel pwell s 80 640 90 657 6 SUBSTRATE
+port 4 nsew
+<< properties >>
+string LEFclass BLOCK
+string FIXED_BBOX 36 -89 264 733
+string LEFview TRUE
+string GDS_FILE $PDKPATH/libs.ref/sky130_fd_pr/gds/sky130_fd_pr.gds
+string GDS_END 5820926
+string GDS_START 5814596
+<< end >>

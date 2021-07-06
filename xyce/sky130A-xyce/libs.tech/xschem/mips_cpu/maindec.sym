@@ -1,0 +1,35 @@
+v {xschem version=2.9.8 file_version=1.2}
+K {type=subcircuit
+format="@name @pinlist @symname"
+template="name=x1"
+}
+T {@symname} -49.5 -6 0 0 0.3 0.3 {}
+T {@name} 135 -82 0 0 0.2 0.2 {}
+L 4 -130 -70 130 -70 {}
+L 4 -130 70 130 70 {}
+L 4 -130 -70 -130 70 {}
+L 4 130 -70 130 70 {}
+B 5 -152.5 -62.5 -147.5 -57.5 {name=instr[31:0] dir=in name=p11 }
+L 4 -150 -60 -130 -60 {}
+T {instr[31:0]} -125 -64 0 0 0.2 0.2 {}
+B 5 147.5 -62.5 152.5 -57.5 {name=branch dir=out name=p1 }
+L 4 130 -60 150 -60 {}
+T {branch} 125 -64 0 1 0.2 0.2 {}
+B 5 147.5 -42.5 152.5 -37.5 {name=jump dir=out name=p2 }
+L 4 130 -40 150 -40 {}
+T {jump} 125 -44 0 1 0.2 0.2 {}
+B 5 147.5 -22.5 152.5 -17.5 {name=mem_to_reg dir=out name=p3 }
+L 4 130 -20 150 -20 {}
+T {mem_to_reg} 125 -24 0 1 0.2 0.2 {}
+B 5 147.5 -2.5 152.5 2.5 {name=mem_write dir=out name=p4 }
+L 4 130 0 150 0 {}
+T {mem_write} 125 -4 0 1 0.2 0.2 {}
+B 5 147.5 17.5 152.5 22.5 {name=reg_dst dir=out name=p5 }
+L 4 130 20 150 20 {}
+T {reg_dst} 125 16 0 1 0.2 0.2 {}
+B 5 147.5 37.5 152.5 42.5 {name=reg_write dir=out name=p6 }
+L 4 130 40 150 40 {}
+T {reg_write} 125 36 0 1 0.2 0.2 {}
+B 5 147.5 57.5 152.5 62.5 {name=alu_src dir=out name=p7 }
+L 4 130 60 150 60 {}
+T {alu_src} 125 56 0 1 0.2 0.2 {}

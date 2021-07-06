@@ -1,0 +1,98 @@
+magic
+tech sky130A
+magscale 1 2
+timestamp 1623348513
+<< obsli1 >>
+rect 80 519 214 535
+rect 80 485 94 519
+rect 128 485 166 519
+rect 200 485 214 519
+rect 80 467 214 485
+rect 44 397 78 421
+rect 44 325 78 363
+rect 44 253 78 291
+rect 44 181 78 219
+rect 44 109 78 147
+rect 44 47 78 75
+rect 130 51 164 421
+rect 216 397 250 421
+rect 216 325 250 363
+rect 216 253 250 291
+rect 216 181 250 219
+rect 216 109 250 147
+rect 216 51 250 75
+<< obsli1c >>
+rect 94 485 128 519
+rect 166 485 200 519
+rect 44 363 78 397
+rect 44 291 78 325
+rect 44 219 78 253
+rect 44 147 78 181
+rect 44 75 78 109
+rect 216 363 250 397
+rect 216 291 250 325
+rect 216 219 250 253
+rect 216 147 250 181
+rect 216 75 250 109
+<< metal1 >>
+rect 82 519 212 531
+rect 82 485 94 519
+rect 128 485 166 519
+rect 200 485 212 519
+rect 82 473 212 485
+rect 38 397 84 421
+rect 38 363 44 397
+rect 78 363 84 397
+rect 38 325 84 363
+rect 38 291 44 325
+rect 78 291 84 325
+rect 38 253 84 291
+rect 38 219 44 253
+rect 78 219 84 253
+rect 38 181 84 219
+rect 38 147 44 181
+rect 78 147 84 181
+rect 38 109 84 147
+rect 38 75 44 109
+rect 78 75 84 109
+rect 38 -29 84 75
+rect 210 397 256 421
+rect 210 363 216 397
+rect 250 363 256 397
+rect 210 325 256 363
+rect 210 291 216 325
+rect 250 291 256 325
+rect 210 253 256 291
+rect 210 219 216 253
+rect 250 219 256 253
+rect 210 181 256 219
+rect 210 147 216 181
+rect 250 147 256 181
+rect 210 109 256 147
+rect 210 75 216 109
+rect 250 75 256 109
+rect 210 -29 256 75
+rect 38 -89 256 -29
+<< obsm1 >>
+rect 121 51 173 421
+<< metal2 >>
+rect 121 288 173 416
+<< labels >>
+rlabel metal2 s 121 288 173 416 6 DRAIN
+port 1 nsew
+rlabel metal1 s 82 473 212 531 6 GATE
+port 2 nsew
+rlabel metal1 s 210 -29 256 421 6 SOURCE
+port 3 nsew
+rlabel metal1 s 38 -29 84 421 6 SOURCE
+port 3 nsew
+rlabel metal1 s 38 -89 256 -29 8 SOURCE
+port 3 nsew
+<< properties >>
+string LEFclass BLOCK
+string FIXED_BBOX 0 -89 294 535
+string LEFview TRUE
+string GDS_FILE $PDKPATH/libs.ref/sky130_fd_pr/gds/sky130_fd_pr.gds
+string GDS_END 9181656
+string GDS_START 9176656
+<< end >>

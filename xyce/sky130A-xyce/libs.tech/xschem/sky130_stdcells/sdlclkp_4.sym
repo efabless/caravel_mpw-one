@@ -1,0 +1,23 @@
+K {type=primitive
+format="@name @@CLK @@GATE @@SCE @VGND @VNB @VPB @VPWR @@GCLK @prefix\\\\sdlclkp_4"
+template="name=x1 VGND=VGND VNB=VNB VPB=VPB VPWR=VPWR prefix=sky130_fd_sc_hd__ "
+extra="VGND VNB VPB VPWR prefix"
+}
+T {@symname} 0 -6 0 0 0.3 0.3 {hcenter=true}
+T {@name} 75 -42 0 0 0.2 0.2 {}
+L 4 -70 -30 70 -30 {}
+L 4 -70 30 70 30 {}
+L 4 -70 -30 -70 30 {}
+L 4 70 -30 70 30 {}
+B 5 -92.5 -22.5 -87.5 -17.5 {name=CLK dir=in }
+L 4 -90 -20 -70 -20 {}
+T {CLK} -65 -24 0 0 0.2 0.2 {}
+B 5 -92.5 -2.5 -87.5 2.5 {name=GATE dir=in }
+L 4 -90 0 -70 0 {}
+T {GATE} -65 -4 0 0 0.2 0.2 {}
+B 5 -92.5 17.5 -87.5 22.5 {name=SCE dir=in }
+L 4 -90 20 -70 20 {}
+T {SCE} -65 16 0 0 0.2 0.2 {}
+B 5 87.5 -22.5 92.5 -17.5 {name=GCLK dir=out }
+L 4 70 -20 90 -20 {}
+T {GCLK} 65 -24 0 1 0.2 0.2 {}

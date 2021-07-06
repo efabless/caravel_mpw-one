@@ -1,0 +1,17 @@
+## CONTENTS
+- `all_sky130_gates.sch` a list of all the sky130 'high density' standard cells in all available sizing.
+- `gates.sch` generic process agnostic standard cell set
+- `gates_sky130.sch` Sky130 Standard cell library, these are from the high density (hs) set
+- `test_bipolar.sch` test pnp bipolar transistor
+- `test_comparator.sch` monte-carlo test run of a cmos self calibrating comparator
+- `test_diode.sch` test various well/diffusion diodes
+- `test_format_override.sch` xschem feature test to redefine netlisting rule for a component
+- `test_inv.sch` ring oscillator test with 01v8 and 01v8_lvt transistors
+- `test_nmos.sch` test the various n-channel mos flavors
+- `test_nmos_sizes.sch` test model binning with different sized mos
+- `test_pmos.sch` test the various p-channel mos flavors
+- `test_res.sch` test various diffusion / poly / well resistors
+- `test_stdcells.sch` simple test circuit with some standard cells (combinatrial / sequential)
+- `test_varactor.sch` mos capacitor test
+- `test_vpp_cap.sch` vertical metal capacitor test
+- `top.sch`  top level schematic containing all the other

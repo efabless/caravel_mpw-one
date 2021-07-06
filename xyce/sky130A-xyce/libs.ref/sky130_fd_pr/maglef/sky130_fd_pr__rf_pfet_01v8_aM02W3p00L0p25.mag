@@ -1,0 +1,201 @@
+magic
+tech sky130A
+magscale 1 2
+timestamp 1623348513
+<< locali >>
+rect 181 752 193 786
+rect 227 752 265 786
+rect 299 752 337 786
+rect 371 752 383 786
+rect 48 672 82 674
+rect 48 600 82 638
+rect 48 528 82 566
+rect 48 456 82 494
+rect 48 384 82 422
+rect 48 312 82 350
+rect 48 240 82 278
+rect 48 168 82 206
+rect 48 132 82 134
+rect 482 672 516 674
+rect 482 600 516 638
+rect 482 528 516 566
+rect 482 456 516 494
+rect 482 384 516 422
+rect 482 312 516 350
+rect 482 240 516 278
+rect 482 168 516 206
+rect 482 132 516 134
+rect 181 20 193 54
+rect 227 20 265 54
+rect 299 20 337 54
+rect 371 20 383 54
+<< viali >>
+rect 193 752 227 786
+rect 265 752 299 786
+rect 337 752 371 786
+rect 48 638 82 672
+rect 48 566 82 600
+rect 48 494 82 528
+rect 48 422 82 456
+rect 48 350 82 384
+rect 48 278 82 312
+rect 48 206 82 240
+rect 48 134 82 168
+rect 482 638 516 672
+rect 482 566 516 600
+rect 482 494 516 528
+rect 482 422 516 456
+rect 482 350 516 384
+rect 482 278 516 312
+rect 482 206 516 240
+rect 482 134 516 168
+rect 193 20 227 54
+rect 265 20 299 54
+rect 337 20 371 54
+<< obsli1 >>
+rect 159 98 193 708
+rect 265 98 299 708
+rect 371 98 405 708
+<< metal1 >>
+rect 181 786 383 806
+rect 181 752 193 786
+rect 227 752 265 786
+rect 299 752 337 786
+rect 371 752 383 786
+rect 181 740 383 752
+rect 36 672 94 684
+rect 36 638 48 672
+rect 82 638 94 672
+rect 36 600 94 638
+rect 36 566 48 600
+rect 82 566 94 600
+rect 36 528 94 566
+rect 36 494 48 528
+rect 82 494 94 528
+rect 36 456 94 494
+rect 36 422 48 456
+rect 82 422 94 456
+rect 36 384 94 422
+rect 36 350 48 384
+rect 82 350 94 384
+rect 36 312 94 350
+rect 36 278 48 312
+rect 82 278 94 312
+rect 36 240 94 278
+rect 36 206 48 240
+rect 82 206 94 240
+rect 36 168 94 206
+rect 36 134 48 168
+rect 82 134 94 168
+rect 36 122 94 134
+rect 470 672 528 684
+rect 470 638 482 672
+rect 516 638 528 672
+rect 470 600 528 638
+rect 470 566 482 600
+rect 516 566 528 600
+rect 470 528 528 566
+rect 470 494 482 528
+rect 516 494 528 528
+rect 470 456 528 494
+rect 470 422 482 456
+rect 516 422 528 456
+rect 470 384 528 422
+rect 470 350 482 384
+rect 516 350 528 384
+rect 470 312 528 350
+rect 470 278 482 312
+rect 516 278 528 312
+rect 470 240 528 278
+rect 470 206 482 240
+rect 516 206 528 240
+rect 470 168 528 206
+rect 470 134 482 168
+rect 516 134 528 168
+rect 470 122 528 134
+rect 181 54 383 66
+rect 181 20 193 54
+rect 227 20 265 54
+rect 299 20 337 54
+rect 371 20 383 54
+rect 181 0 383 20
+<< obsm1 >>
+rect 150 122 202 684
+rect 256 122 308 684
+rect 362 122 414 684
+<< metal2 >>
+rect 10 428 554 684
+rect 10 122 554 378
+<< labels >>
+rlabel viali s 482 638 516 672 6 BULK
+port 1 nsew
+rlabel viali s 482 566 516 600 6 BULK
+port 1 nsew
+rlabel viali s 482 494 516 528 6 BULK
+port 1 nsew
+rlabel viali s 482 422 516 456 6 BULK
+port 1 nsew
+rlabel viali s 482 350 516 384 6 BULK
+port 1 nsew
+rlabel viali s 482 278 516 312 6 BULK
+port 1 nsew
+rlabel viali s 482 206 516 240 6 BULK
+port 1 nsew
+rlabel viali s 482 134 516 168 6 BULK
+port 1 nsew
+rlabel viali s 48 638 82 672 6 BULK
+port 1 nsew
+rlabel viali s 48 566 82 600 6 BULK
+port 1 nsew
+rlabel viali s 48 494 82 528 6 BULK
+port 1 nsew
+rlabel viali s 48 422 82 456 6 BULK
+port 1 nsew
+rlabel viali s 48 350 82 384 6 BULK
+port 1 nsew
+rlabel viali s 48 278 82 312 6 BULK
+port 1 nsew
+rlabel viali s 48 206 82 240 6 BULK
+port 1 nsew
+rlabel viali s 48 134 82 168 6 BULK
+port 1 nsew
+rlabel locali s 482 132 516 674 6 BULK
+port 1 nsew
+rlabel locali s 48 132 82 674 6 BULK
+port 1 nsew
+rlabel metal1 s 470 122 528 684 6 BULK
+port 1 nsew
+rlabel metal1 s 36 122 94 684 6 BULK
+port 1 nsew
+rlabel metal2 s 10 428 554 684 6 DRAIN
+port 2 nsew
+rlabel viali s 337 752 371 786 6 GATE
+port 3 nsew
+rlabel viali s 337 20 371 54 6 GATE
+port 3 nsew
+rlabel viali s 265 752 299 786 6 GATE
+port 3 nsew
+rlabel viali s 265 20 299 54 6 GATE
+port 3 nsew
+rlabel viali s 193 752 227 786 6 GATE
+port 3 nsew
+rlabel viali s 193 20 227 54 6 GATE
+port 3 nsew
+rlabel locali s 181 752 383 786 6 GATE
+port 3 nsew
+rlabel locali s 181 20 383 54 6 GATE
+port 3 nsew
+rlabel metal1 s 181 740 383 806 6 GATE
+port 3 nsew
+rlabel metal1 s 181 0 383 66 6 GATE
+port 3 nsew
+rlabel metal2 s 10 122 554 378 6 SOURCE
+port 4 nsew
+<< properties >>
+string LEFclass BLOCK
+string FIXED_BBOX 0 0 564 806
+string LEFview TRUE
+string GDS_FILE $PDKPATH/libs.ref/sky130_fd_pr/gds/sky130_fd_pr.gds
+string GDS_END 9320414
+string GDS_START 9309498
+<< end >>

@@ -1,0 +1,29 @@
+{
+    "foundry" : "SW",
+    "foundry-name" : "SkyWater",
+    "node" : "sky130A",
+    "feature-size" : "130nm",
+    "status" : "active",
+    "description" : "Skywater 0.13um CMOS, local interconntect + high-resistance poly + 5 metal layer backend stack + MiM caps + redistribution layer",
+    "options" : [
+        "METAL5",
+        "MIM",
+        "REDISTRIBUTION"
+    ],
+    "stdcells" : [
+	"sky130_fd_sc_hd",
+	"sky130_fd_sc_hdll",
+	"sky130_fd_sc_hs",
+	"sky130_fd_sc_hvl",
+	"sky130_fd_sc_lp",
+	"sky130_fd_sc_ls",
+	"sky130_fd_sc_ms",
+	"sky130_osu_sc",
+	"sky130_osu_sc_t12",
+	"sky130_osu_sc_t15",
+	"sky130_osu_sc_t18"
+    ],
+    "iocells" : [
+        "sky130_fd_io"
+    ]
+}

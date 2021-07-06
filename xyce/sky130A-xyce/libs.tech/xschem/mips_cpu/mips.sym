@@ -1,0 +1,36 @@
+v {xschem version=2.9.8 file_version=1.2}
+K {type=subcircuit
+format="@name @pinlist @symname"
+template="name=x1"
+}
+
+T {@symname} -36 -6 0 0 0.3 0.3 {}
+T {@name} 135 -52 0 0 0.2 0.2 {}
+L 4 -130 -40 130 -40 {}
+L 4 -130 40 130 40 {}
+L 4 -130 -40 -130 40 {}
+L 4 130 -40 130 40 {}
+B 5 147.5 -32.5 152.5 -27.5 {name=imem_addr[31:0] dir=out name=p1 }
+L 4 130 -30 150 -30 {}
+T {imem_addr[31:0]} 125 -34 0 1 0.2 0.2 {}
+B 5 -152.5 -32.5 -147.5 -27.5 {name=clk dir=in name=p11 }
+L 4 -150 -30 -130 -30 {}
+T {clk} -125 -34 0 0 0.2 0.2 {}
+B 5 147.5 -12.5 152.5 -7.5 {name=dmem_we dir=out name=p5 }
+L 4 130 -10 150 -10 {}
+T {dmem_we} 125 -14 0 1 0.2 0.2 {}
+B 5 -152.5 -12.5 -147.5 -7.5 {name=rst dir=in name=p2 }
+L 4 -150 -10 -130 -10 {}
+T {rst} -125 -14 0 0 0.2 0.2 {}
+B 5 -152.5 7.5 -147.5 12.5 {name=imem_data[31:0] dir=in name=p3 }
+L 4 -150 10 -130 10 {}
+T {imem_data[31:0]} -125 6 0 0 0.2 0.2 {}
+B 5 147.5 7.5 152.5 12.5 {name=dmem_addr[31:0] dir=out name=p6 }
+L 4 130 10 150 10 {}
+T {dmem_addr[31:0]} 125 6 0 1 0.2 0.2 {}
+B 5 -152.5 27.5 -147.5 32.5 {name=dmem_rdata[31:0] dir=in name=p4 }
+L 4 -150 30 -130 30 {}
+T {dmem_rdata[31:0]} -125 26 0 0 0.2 0.2 {}
+B 5 147.5 27.5 152.5 32.5 {name=dmem_wdata[31:0] dir=out name=p7 }
+L 4 130 30 150 30 {}
+T {dmem_wdata[31:0]} 125 26 0 1 0.2 0.2 {}

@@ -1,0 +1,18 @@
+v {xschem version=2.9.8 file_version=1.2}
+K {type=subcircuit
+format="@name @pinlist @symname"
+template="name=x1"
+}
+
+T {@symname} -31.5 -6 0 0 0.3 0.3 {}
+T {@name} 135 -32 0 0 0.2 0.2 {}
+L 4 -130 -20 130 -20 {}
+L 4 -130 20 130 20 {}
+L 4 -130 -20 -130 20 {}
+L 4 130 -20 130 20 {}
+B 5 -152.5 -12.5 -147.5 -7.5 {name=clk dir=in name=p11 }
+L 4 -150 -10 -130 -10 {}
+T {clk} -125 -14 0 0 0.2 0.2 {}
+B 5 -152.5 7.5 -147.5 12.5 {name=reset dir=in name=p2 }
+L 4 -150 10 -130 10 {}
+T {reset} -125 6 0 0 0.2 0.2 {}

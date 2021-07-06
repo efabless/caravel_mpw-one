@@ -1,0 +1,126 @@
+magic
+tech sky130A
+magscale 1 2
+timestamp 1623348513
+<< locali >>
+rect 161 480 173 514
+rect 207 480 245 514
+rect 279 480 317 514
+rect 351 480 363 514
+rect 161 20 173 54
+rect 207 20 245 54
+rect 279 20 317 54
+rect 351 20 363 54
+<< viali >>
+rect 173 480 207 514
+rect 245 480 279 514
+rect 317 480 351 514
+rect 173 20 207 54
+rect 245 20 279 54
+rect 317 20 351 54
+<< obsli1 >>
+rect 48 392 82 402
+rect 48 320 82 358
+rect 48 248 82 286
+rect 48 176 82 214
+rect 48 132 82 142
+rect 159 98 193 436
+rect 245 98 279 436
+rect 331 98 365 436
+rect 442 392 476 402
+rect 442 320 476 358
+rect 442 248 476 286
+rect 442 176 476 214
+rect 442 132 476 142
+<< obsli1c >>
+rect 48 358 82 392
+rect 48 286 82 320
+rect 48 214 82 248
+rect 48 142 82 176
+rect 442 358 476 392
+rect 442 286 476 320
+rect 442 214 476 248
+rect 442 142 476 176
+<< metal1 >>
+rect 161 514 363 534
+rect 161 480 173 514
+rect 207 480 245 514
+rect 279 480 317 514
+rect 351 480 363 514
+rect 161 468 363 480
+rect 36 392 94 420
+rect 36 358 48 392
+rect 82 358 94 392
+rect 36 320 94 358
+rect 36 286 48 320
+rect 82 286 94 320
+rect 36 248 94 286
+rect 36 214 48 248
+rect 82 214 94 248
+rect 36 176 94 214
+rect 36 142 48 176
+rect 82 142 94 176
+rect 36 114 94 142
+rect 430 392 488 420
+rect 430 358 442 392
+rect 476 358 488 392
+rect 430 320 488 358
+rect 430 286 442 320
+rect 476 286 488 320
+rect 430 248 488 286
+rect 430 214 442 248
+rect 476 214 488 248
+rect 430 176 488 214
+rect 430 142 442 176
+rect 476 142 488 176
+rect 430 114 488 142
+rect 161 54 363 66
+rect 161 20 173 54
+rect 207 20 245 54
+rect 279 20 317 54
+rect 351 20 363 54
+rect 161 0 363 20
+<< obsm1 >>
+rect 150 114 202 420
+rect 236 114 288 420
+rect 322 114 374 420
+<< metal2 >>
+rect 10 292 514 420
+rect 10 114 514 242
+<< labels >>
+rlabel metal1 s 430 114 488 420 6 BULK
+port 1 nsew
+rlabel metal1 s 36 114 94 420 6 BULK
+port 1 nsew
+rlabel metal2 s 10 292 514 420 6 DRAIN
+port 2 nsew
+rlabel viali s 317 480 351 514 6 GATE
+port 3 nsew
+rlabel viali s 317 20 351 54 6 GATE
+port 3 nsew
+rlabel viali s 245 480 279 514 6 GATE
+port 3 nsew
+rlabel viali s 245 20 279 54 6 GATE
+port 3 nsew
+rlabel viali s 173 480 207 514 6 GATE
+port 3 nsew
+rlabel viali s 173 20 207 54 6 GATE
+port 3 nsew
+rlabel locali s 161 480 363 514 6 GATE
+port 3 nsew
+rlabel locali s 161 20 363 54 6 GATE
+port 3 nsew
+rlabel metal1 s 161 468 363 534 6 GATE
+port 3 nsew
+rlabel metal1 s 161 0 363 66 6 GATE
+port 3 nsew
+rlabel metal2 s 10 114 514 242 6 SOURCE
+port 4 nsew
+<< properties >>
+string LEFclass BLOCK
+string FIXED_BBOX 0 0 524 534
+string LEFview TRUE
+string GDS_FILE $PDKPATH/libs.ref/sky130_fd_pr/gds/sky130_fd_pr.gds
+string GDS_END 9309424
+string GDS_START 9301772
+<< end >>

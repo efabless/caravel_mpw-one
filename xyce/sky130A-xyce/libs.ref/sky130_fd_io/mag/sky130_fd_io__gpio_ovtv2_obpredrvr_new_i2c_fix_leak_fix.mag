@@ -1,0 +1,97 @@
+magic
+tech sky130A
+magscale 1 2
+timestamp 1623348570
+<< checkpaint >>
+rect -1005 -20890 29392 6440
+<< locali >>
+rect 11972 4081 12003 4119
+rect 18105 4088 18135 4117
+rect 18283 4076 18318 4111
+rect 16848 4024 16880 4068
+rect 17014 4031 17045 4071
+rect 18469 4070 18505 4106
+rect 19260 4017 19316 4061
+<< metal1 >>
+rect 18571 4744 19157 4946
+rect 17406 4571 17436 4637
+rect 11560 3636 11602 3678
+rect 18630 3590 19225 3745
+rect 19912 2648 19944 2733
+<< metal2 >>
+rect 11323 4774 11686 4958
+rect 16840 4222 16849 4278
+rect 16905 4222 16929 4278
+rect 16985 4222 16994 4278
+rect 2263 704 2421 762
+rect 2077 555 2249 637
+rect 4888 -132 5043 157
+rect 18968 -1684 19076 -1316
+rect 22750 -1688 22858 -1320
+<< via2 >>
+rect 16849 4222 16905 4278
+rect 16929 4222 16985 4278
+<< metal3 >>
+rect 16844 4278 16990 4283
+rect 16844 4222 16849 4278
+rect 16905 4222 16929 4278
+rect 16985 4222 16990 4278
+rect 16844 4217 16990 4222
+rect 21348 -1382 21941 -937
+rect 2695 -10265 2735 -10236
+use sky130_fd_io__gpio_ovtv2_pdpredrvr_strong_i2c_fix_leak_fix  sky130_fd_io__gpio_ovtv2_pdpredrvr_strong_i2c_fix_leak_fix_0
+timestamp 1623348570
+transform 1 0 0 0 1 0
+box 255 -19630 28132 5038
+<< labels >>
+flabel metal1 s 18630 3590 19225 3745 3 FreeSans 520 90 0 0 VGND_IO
+port 1 nsew
+flabel metal1 s 17406 4571 17436 4637 3 FreeSans 520 90 0 0 EN_CMOS_B
+port 2 nsew
+flabel metal1 s 19912 2648 19944 2733 3 FreeSans 520 0 0 0 NSW_EN
+port 3 nsew
+flabel metal1 s 11560 3636 11602 3678 3 FreeSans 520 90 0 0 OE_I_H_N
+port 4 nsew
+flabel metal1 s 18571 4744 19157 4946 3 FreeSans 520 90 0 0 VCC_IO
+port 5 nsew
+flabel locali s 16848 4024 16880 4068 3 FreeSans 520 90 0 0 DRVLO_H_N
+port 6 nsew
+flabel locali s 18105 4088 18135 4117 3 FreeSans 520 90 0 0 I2C_MODE_H_N
+port 7 nsew
+flabel locali s 11972 4081 12003 4119 3 FreeSans 520 90 0 0 PD_DIS_H
+port 8 nsew
+flabel locali s 17014 4031 17045 4071 3 FreeSans 520 90 0 0 PDEN_H_N[1]
+port 9 nsew
+flabel locali s 18469 4070 18505 4106 3 FreeSans 520 90 0 0 SLEW_CTL_H[1]
+port 10 nsew
+flabel locali s 19260 4017 19316 4061 3 FreeSans 520 90 0 0 SLEW_CTL_H_N[0]
+port 11 nsew
+flabel locali s 18283 4076 18318 4111 3 FreeSans 520 90 0 0 SLOW_H_N
+port 12 nsew
+flabel metal3 s 2695 -10265 2735 -10236 0 FreeSans 200 0 0 0 NGHS_H
+port 13 nsew
+flabel metal3 s 21348 -1382 21941 -937 3 FreeSans 520 270 0 0 VGND_IO
+port 1 nsew
+flabel metal3 s 21644 -1159 21644 -1159 3 FreeSans 520 270 0 0 VGND_IO
+port 1 nsew
+flabel metal2 s 11323 4774 11686 4958 3 FreeSans 520 90 0 0 VCC_IO
+port 5 nsew
+flabel metal2 s 22750 -1688 22858 -1320 3 FreeSans 520 0 0 0 PAD
+port 14 nsew
+flabel metal2 s 18968 -1684 19076 -1316 3 FreeSans 520 180 0 0 PAD
+port 14 nsew
+flabel metal2 s 22804 -1504 22804 -1504 3 FreeSans 520 0 0 0 PAD
+port 14 nsew
+flabel metal2 s 2263 704 2421 762 3 FreeSans 520 0 0 0 PD_H[2]
+port 15 nsew
+flabel metal2 s 2077 555 2249 637 3 FreeSans 520 0 0 0 PD_H[3]
+port 16 nsew
+flabel metal2 s 4888 -132 5043 157 3 FreeSans 520 180 0 0 VGND_IO
+port 1 nsew
+flabel metal2 s 4965 12 4965 12 3 FreeSans 520 180 0 0 VGND_IO
+port 1 nsew
+<< properties >>
+string GDS_FILE $PDKPATH/libs.ref/sky130_fd_io/gds/sky130_fd_io.gds
+string GDS_END 38169956
+string GDS_START 38166240
+<< end >>

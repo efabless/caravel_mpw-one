@@ -1,0 +1,50 @@
+v {xschem version=2.9.9 file_version=1.2 
+
+* Copyright 2020 Stefan Frederik Schippers
+* 
+* Licensed under the Apache License, Version 2.0 (the "License");
+* you may not use this file except in compliance with the License.
+* You may obtain a copy of the License at
+*
+*     https://www.apache.org/licenses/LICENSE-2.0
+*
+* Unless required by applicable law or agreed to in writing, software
+* distributed under the License is distributed on an "AS IS" BASIS,
+* WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+* See the License for the specific language governing permissions and
+* limitations under the License.
+
+}
+G {}
+K {type=high_precision_p-_poly_resistor
+format="@spiceprefix@name @pinlist sky130_fd_pr__@model W=@W L=@L mult=@mult m=@mult"
+template="name=R1
+W=1
+L=1
+model=res_xhigh_po
+spiceprefix=X
+mult=1"
+}
+V {}
+S {}
+E {}
+L 4 0 20 0 30 {}
+L 4 0 20 7.5 17.5 {}
+L 4 -7.5 12.5 7.5 17.5 {}
+L 4 -7.5 12.5 7.5 7.5 {}
+L 4 -7.5 2.5 7.5 7.5 {}
+L 4 -7.5 2.5 7.5 -2.5 {}
+L 4 -7.5 -7.5 7.5 -2.5 {}
+L 4 -7.5 -7.5 7.5 -12.5 {}
+L 4 -7.5 -17.5 7.5 -12.5 {}
+L 4 -7.5 -17.5 0 -20 {}
+L 4 0 -30 0 -20 {}
+B 5 -2.5 27.5 2.5 32.5 {name=M dir=inout pinnumber=2 propag=1}
+B 5 -2.5 -32.5 2.5 -27.5 {name=P dir=inout propag=0 pinnumber=1}
+B 5 -22.5 -2.5 -17.5 2.5 {name=B dir=inout pinnumber=1}
+T {@name} 15 -28.75 0 0 0.2 0.2 {}
+T {@mult * @W / @L} 15 6.25 0 0 0.2 0.2 {layer=13}
+T {@model} 15 -11.25 0 0 0.2 0.2 {}
+T {B} -15 -12.5 0 1 0.15 0.15 {layer=7}
+T {@#0:net_name} -10 16.25 0 1 0.15 0.15 {layer=15}
+T {@#1:net_name} -10 -25 0 1 0.15 0.15 {layer=15}

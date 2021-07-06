@@ -1,0 +1,24 @@
+v {xschem version=2.9.9 file_version=1.2 }
+G {}
+K {type=primitive
+function0="H"
+function1="L"
+format="@name @VGND @VNB @VPB @VPWR @@HI @@LO @prefix\\\\conb_1"
+template="name=x1 VGND=VGND VNB=VNB VPB=VPB VPWR=VPWR prefix=sky130_fd_sc_hd__ "
+extra="VGND VNB VPB VPWR prefix"
+highlight=true}
+V {}
+S {}
+E {}
+L 4 -20 -30 40 -30 {}
+L 4 -20 30 40 30 {}
+L 4 -20 -30 -20 30 {}
+L 4 40 -30 40 30 {}
+L 4 40 -20 60 -20 {}
+L 4 40 20 60 20 {}
+B 5 57.5 -22.5 62.5 -17.5 {name=HI dir=out goto=0 propag=0}
+B 5 57.5 17.5 62.5 22.5 {name=LO dir=out goto=1 propag=1}
+T {@symname} -10 -56 0 0 0.3 0.3 {hcenter=true}
+T {@name} 45 -42 0 0 0.2 0.2 {}
+T {HI} 35 -24 0 1 0.2 0.2 {}
+T {LO} 35 16 0 1 0.2 0.2 {}

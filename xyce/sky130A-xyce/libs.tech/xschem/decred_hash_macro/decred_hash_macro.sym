@@ -1,0 +1,42 @@
+v {xschem version=2.9.9 file_version=1.2 }
+G {}
+K {type=subcircuit
+format="@name @@CLK @@DATA_AVAILABLE @@DATA_FROM_HASH[0] @@DATA_FROM_HASH[1] @@DATA_FROM_HASH[2] @@DATA_FROM_HASH[3] @@DATA_FROM_HASH[4] @@DATA_FROM_HASH[5] @@DATA_FROM_HASH[6] @@DATA_FROM_HASH[7] @@DATA_TO_HASH[0] @@DATA_TO_HASH[1] @@DATA_TO_HASH[2] @@DATA_TO_HASH[3] @@DATA_TO_HASH[4] @@DATA_TO_HASH[5] @@DATA_TO_HASH[6] @@DATA_TO_HASH[7] @@HASH_ADDR[0] @@HASH_ADDR[1] @@HASH_ADDR[2] @@HASH_ADDR[3] @@HASH_ADDR[4] @@HASH_ADDR[5] @@HASH_EN @@MACRO_RD_SELECT @@MACRO_WR_SELECT @@THREAD_COUNT[0] @@THREAD_COUNT[1] @@THREAD_COUNT[2] @@THREAD_COUNT[3] @VPWR @VGND decred_hash_macro"
+template="name=x1 VPWR=VPWR VGND=VGND prefix=sky130_fd_sc_hd__ "
+extra="VPWR VGND prefix"}
+V {}
+S {}
+E {}
+L 4 -130 -60 130 -60 {}
+L 4 -130 60 130 60 {}
+L 4 -130 -60 -130 60 {}
+L 4 130 -60 130 60 {}
+L 4 130 -50 150 -50 {}
+L 4 -150 -50 -130 -50 {}
+L 4 -150 -30 -130 -30 {}
+L 4 130 -30 150 -30 {}
+L 4 -150 -10 -130 -10 {}
+L 4 -150 10 -130 10 {}
+L 4 -150 30 -130 30 {}
+L 4 130 -10 150 -10 {}
+L 4 -150 50 -130 50 {}
+B 5 147.5 -52.5 152.5 -47.5 {name=DATA_AVAILABLE dir=out name=p163544 }
+B 5 -152.5 -52.5 -147.5 -47.5 {name=CLK dir=in name=p163543 }
+B 5 -152.5 -32.5 -147.5 -27.5 {name=DATA_TO_HASH[0:7] dir=in name=p163546 }
+B 5 147.5 -32.5 152.5 -27.5 {name=DATA_FROM_HASH[0:7] dir=out name=p163545 }
+B 5 -152.5 -12.5 -147.5 -7.5 {name=HASH_ADDR[0:5] dir=in name=p163547 }
+B 5 -152.5 7.5 -147.5 12.5 {name=HASH_EN dir=in name=p163548 }
+B 5 -152.5 27.5 -147.5 32.5 {name=MACRO_RD_SELECT dir=in name=p163549 }
+B 5 147.5 -12.5 152.5 -7.5 {name=THREAD_COUNT[0:3] dir=out name=p163551 }
+B 5 -152.5 47.5 -147.5 52.5 {name=MACRO_WR_SELECT dir=in name=p163550 }
+T {@symname} -64.5 -76 0 0 0.3 0.3 {}
+T {@name} 135 -72 0 0 0.2 0.2 {}
+T {DATA_AVAILABLE} 125 -54 0 1 0.2 0.2 {}
+T {CLK} -125 -54 0 0 0.2 0.2 {}
+T {DATA_TO_HASH[0:7]} -125 -34 0 0 0.2 0.2 {}
+T {DATA_FROM_HASH[0:7]} 125 -34 0 1 0.2 0.2 {}
+T {HASH_ADDR[0:5]} -125 -14 0 0 0.2 0.2 {}
+T {HASH_EN} -125 6 0 0 0.2 0.2 {}
+T {MACRO_RD_SELECT} -125 26 0 0 0.2 0.2 {}
+T {THREAD_COUNT[0:3]} 125 -14 0 1 0.2 0.2 {}
+T {MACRO_WR_SELECT} -125 46 0 0 0.2 0.2 {}

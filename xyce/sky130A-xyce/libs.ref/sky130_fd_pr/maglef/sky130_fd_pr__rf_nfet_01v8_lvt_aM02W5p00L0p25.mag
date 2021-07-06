@@ -1,0 +1,77 @@
+magic
+tech sky130A
+magscale 1 2
+timestamp 1623348513
+<< locali >>
+rect 181 1150 193 1184
+rect 227 1150 265 1184
+rect 299 1150 337 1184
+rect 371 1150 383 1184
+rect 181 30 193 64
+rect 227 30 265 64
+rect 299 30 337 64
+rect 371 30 383 64
+<< viali >>
+rect 193 1150 227 1184
+rect 265 1150 299 1184
+rect 337 1150 371 1184
+rect 193 30 227 64
+rect 265 30 299 64
+rect 337 30 371 64
+<< obsli1 >>
+rect 48 122 82 1092
+rect 159 98 193 1116
+rect 265 98 299 1116
+rect 371 98 405 1116
+rect 482 122 516 1092
+<< metal1 >>
+rect 181 1184 383 1204
+rect 181 1150 193 1184
+rect 227 1150 265 1184
+rect 299 1150 337 1184
+rect 371 1150 383 1184
+rect 181 1138 383 1150
+rect 181 64 383 76
+rect 181 30 193 64
+rect 227 30 265 64
+rect 299 30 337 64
+rect 371 30 383 64
+rect 181 10 383 30
+<< obsm1 >>
+rect 36 110 94 1104
+rect 150 110 202 1104
+rect 256 110 308 1104
+rect 362 110 414 1104
+rect 470 110 528 1104
+<< obsm2 >>
+rect 10 632 554 1104
+rect 10 110 554 582
+<< labels >>
+rlabel viali s 337 1150 371 1184 6 GATE
+port 1 nsew
+rlabel viali s 337 30 371 64 6 GATE
+port 1 nsew
+rlabel viali s 265 1150 299 1184 6 GATE
+port 1 nsew
+rlabel viali s 265 30 299 64 6 GATE
+port 1 nsew
+rlabel viali s 193 1150 227 1184 6 GATE
+port 1 nsew
+rlabel viali s 193 30 227 64 6 GATE
+port 1 nsew
+rlabel locali s 181 1150 383 1184 6 GATE
+port 1 nsew
+rlabel locali s 181 30 383 64 6 GATE
+port 1 nsew
+rlabel metal1 s 181 1138 383 1204 6 GATE
+port 1 nsew
+rlabel metal1 s 181 10 383 76 6 GATE
+port 1 nsew
+<< properties >>
+string LEFclass BLOCK
+string FIXED_BBOX 10 10 554 1204
+string LEFview TRUE
+string GDS_FILE $PDKPATH/libs.ref/sky130_fd_pr/gds/sky130_fd_pr.gds
+string GDS_END 6015498
+string GDS_START 6000602
+<< end >>

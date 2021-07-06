@@ -1,0 +1,23 @@
+K {type=primitive
+format="@name @@D @@GATE_N @VGND @VNB @VPB @VPWR @@Q @@Q_N @prefix\\\\dlxbn_2"
+template="name=x1 VGND=VGND VNB=VNB VPB=VPB VPWR=VPWR prefix=sky130_fd_sc_hd__ "
+extra="VGND VNB VPB VPWR prefix"
+}
+T {@symname} 0 -6 0 0 0.3 0.3 {hcenter=true}
+T {@name} 75 -32 0 0 0.2 0.2 {}
+L 4 -70 -20 70 -20 {}
+L 4 -70 20 70 20 {}
+L 4 -70 -20 -70 20 {}
+L 4 70 -20 70 20 {}
+B 5 -92.5 -12.5 -87.5 -7.5 {name=D dir=in }
+L 4 -90 -10 -70 -10 {}
+T {D} -65 -14 0 0 0.2 0.2 {}
+B 5 -92.5 7.5 -87.5 12.5 {name=GATE_N dir=in }
+L 4 -90 10 -70 10 {}
+T {GATE_N} -65 6 0 0 0.2 0.2 {}
+B 5 87.5 -12.5 92.5 -7.5 {name=Q dir=out }
+L 4 70 -10 90 -10 {}
+T {Q} 65 -14 0 1 0.2 0.2 {}
+B 5 87.5 7.5 92.5 12.5 {name=Q_N dir=out }
+L 4 70 10 90 10 {}
+T {Q_N} 65 6 0 1 0.2 0.2 {}

@@ -1,0 +1,97 @@
+magic
+tech sky130A
+magscale 1 2
+timestamp 1623348570
+<< checkpaint >>
+rect -1260 -1260 9294 4892
+<< pwell >>
+rect 3984 0 4050 3440
+<< locali >>
+rect 4010 26 4024 3414
+<< metal1 >>
+rect 26 3332 8008 3632
+rect 26 3296 626 3332
+tri 626 3296 662 3332 nw
+tri 902 3296 938 3332 ne
+rect 938 3296 1344 3332
+tri 204 3280 220 3296 ne
+rect 220 3280 610 3296
+tri 610 3280 626 3296 nw
+tri 938 3280 954 3296 ne
+rect 954 3280 1344 3296
+rect 220 3160 520 3280
+tri 520 3190 610 3280 nw
+tri 954 3190 1044 3280 ne
+rect 1044 3160 1344 3280
+tri 1344 3190 1486 3332 nw
+tri 1726 3190 1868 3332 ne
+rect 1868 3160 2168 3332
+tri 2168 3190 2310 3332 nw
+tri 2550 3190 2692 3332 ne
+rect 2692 3160 2992 3332
+tri 2992 3190 3134 3332 nw
+tri 3374 3190 3516 3332 ne
+rect 3516 3160 3816 3332
+tri 3816 3190 3958 3332 nw
+tri 4488 3190 4630 3332 ne
+rect 4630 3160 4930 3332
+tri 4930 3190 5072 3332 nw
+tri 5312 3190 5454 3332 ne
+rect 5454 3160 5754 3332
+tri 5754 3190 5896 3332 nw
+tri 6136 3190 6278 3332 ne
+rect 6278 3160 6578 3332
+tri 6578 3190 6720 3332 nw
+tri 6960 3190 7102 3332 ne
+rect 7102 3160 7402 3332
+tri 7402 3190 7544 3332 nw
+tri 7784 3190 7926 3332 ne
+rect 7926 3190 8008 3332
+rect 681 1681 881 1781
+rect 1507 1681 1707 1781
+rect 2334 1681 2534 1781
+rect 3161 1681 3361 1781
+rect 4010 254 4024 3087
+rect 4269 1681 4469 1781
+rect 5093 1681 5293 1781
+rect 5917 1681 6117 1781
+rect 6740 1681 6940 1781
+rect 7569 1681 7769 1781
+rect 3971 171 4054 254
+rect 4010 154 4024 171
+use sky130_fd_io__gnd2gnd_sub_dnwl  sky130_fd_io__gnd2gnd_sub_dnwl_0
+timestamp 1623348570
+transform 1 0 0 0 1 0
+box 0 0 4036 3440
+use sky130_fd_io__gnd2gnd_sub_dnwl  sky130_fd_io__gnd2gnd_sub_dnwl_1
+timestamp 1623348570
+transform -1 0 8034 0 1 0
+box 0 0 4036 3440
+<< labels >>
+flabel metal1 s 3562 3494 3762 3594 0 FreeSans 300 0 0 0 VSSI
+port 1 nsew
+flabel metal1 s 681 1681 881 1781 0 FreeSans 300 0 0 0 VSS_N
+port 2 nsew
+flabel metal1 s 1507 1681 1707 1781 0 FreeSans 300 0 0 0 VSS_N
+port 2 nsew
+flabel metal1 s 2334 1681 2534 1781 0 FreeSans 300 0 0 0 VSS_N
+port 2 nsew
+flabel metal1 s 3161 1681 3361 1781 0 FreeSans 300 0 0 0 VSS_N
+port 2 nsew
+flabel metal1 s 4269 1681 4469 1781 0 FreeSans 300 0 0 0 VSS_N
+port 2 nsew
+flabel metal1 s 5093 1681 5293 1781 0 FreeSans 300 0 0 0 VSS_N
+port 2 nsew
+flabel metal1 s 5917 1681 6117 1781 0 FreeSans 300 0 0 0 VSS_N
+port 2 nsew
+flabel metal1 s 6740 1681 6940 1781 0 FreeSans 300 0 0 0 VSS_N
+port 2 nsew
+flabel metal1 s 7569 1681 7769 1781 0 FreeSans 300 0 0 0 VSS_N
+port 2 nsew
+flabel metal1 s 3971 171 4054 254 0 FreeSans 400 0 0 0 VSUB
+port 3 nsew
+<< properties >>
+string GDS_FILE $PDKPATH/libs.ref/sky130_fd_io/gds/sky130_fd_io.gds
+string GDS_END 8833098
+string GDS_START 8830710
+<< end >>

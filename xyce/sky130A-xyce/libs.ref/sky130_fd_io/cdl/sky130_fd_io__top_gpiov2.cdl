@@ -1,0 +1,2823 @@
+*********************************************************
+* Copyright (c) 2017 by Cypress Semiconductor
+* Cypress Confidential Information
+*********************************************************
+
+*.BIPOLAR
+*.RESI=1
+*.RESVAL
+*.CAPVAL
+*.DIOPERI
+*.DIOAREA
+*.EQUATION
+*.LDD
+*.SCALE MICRON
+*.MEGA
+*.PARAM
+*.OPTION SCALE=1E-6
+
+************************************************************************
+* auCdl Netlist:
+*
+* Library Name: s8iom0s8
+* Top Cell Name: sky130_fd_io__top_gpiov2
+* View Name: schematic
+* Netlisted on: ... XX XX:XX:XX 2...
+************************************************************************
+
+
+
+
+************************************************************************
+* Library Name: s8_esd
+* Cell Name: s8_esd_res75only_small
+* View Name: schematic
+************************************************************************
+
+.SUBCKT s8_esd_res75only_small pad rout
+*.PININFO pad:B rout:B
+RI175 pad rout sky130_fd_pr__res_generic_po l=3.15 m=1 w=2
+.ENDS
+
+************************************************************************
+* Library Name: s8iom0s8
+* Cell Name: sky130_fd_io__gpiov2_amux_switch
+* View Name: schematic
+************************************************************************
+
+.SUBCKT sky130_fd_io__gpiov2_amux_switch amuxbus_hv ng_amx_vpmp_h ng_pad_vpmp_h nmid_vccd pad_hv_n0
++ pad_hv_n1 pad_hv_n2 pad_hv_n3 pad_hv_p0 pad_hv_p1 pd_h_vdda pd_h_vddio pg_amx_vdda_h_n
++ pg_pad_vddioq_h_n vdda vddio vssa vssd
+*.PININFO ng_amx_vpmp_h:I ng_pad_vpmp_h:I nmid_vccd:I pd_h_vdda:I pd_h_vddio:I
+*.PININFO pg_amx_vdda_h_n:I pg_pad_vddioq_h_n:I vdda:I vddio:I vssa:I vssd:I
+*.PININFO amuxbus_hv:B pad_hv_n0:B pad_hv_n1:B pad_hv_n2:B pad_hv_n3:B
+*.PININFO pad_hv_p0:B pad_hv_p1:B
+XI70 mid vdda condiode
+XI71 mid1 vdda condiode
+XI72 vssa vdda condiode
+XI12 vssa net77 / s8_esd_res75only_small
+XI56 vssa net79 / s8_esd_res75only_small
+XMI45 mid1 ng_pad_vpmp_h pad_hv_n2 mid1 sky130_fd_pr__nfet_g5v0d10v5 AD=0 AS=0 PD=0 PS=0
++ a=(7.00)*(0.50) l=0.50 m=4*1 p=2*(7.00)+2*(0.50) sa=265e-3 sb=265e-3
++ sd=280e-3 w=7.00
+XMI24 pad_hv_n0 ng_pad_vpmp_h mid mid sky130_fd_pr__nfet_g5v0d10v5 AD=0 AS=0 PD=0 PS=0
++ a=(7.00)*(0.50) l=0.50 m=3*1 p=2*(7.00)+2*(0.50) sa=265e-3 sb=265e-3
++ sd=280e-3 w=7.00
+XMI35 mid ng_pad_vpmp_h pad_hv_n1 mid sky130_fd_pr__nfet_g5v0d10v5 AD=0 AS=0 PD=0 PS=0
++ a=(7.00)*(0.50) l=0.50 m=4*1 p=2*(7.00)+2*(0.50) sa=265e-3 sb=265e-3
++ sd=280e-3 w=7.00
+XMI46 pad_hv_n3 ng_pad_vpmp_h mid1 mid1 sky130_fd_pr__nfet_g5v0d10v5 AD=0 AS=0 PD=0 PS=0
++ a=(7.00)*(0.50) l=0.50 m=4*1 p=2*(7.00)+2*(0.50) sa=265e-3 sb=265e-3
++ sd=280e-3 w=7.00
+XMI1 mid nmid_vccd net77 vssa sky130_fd_pr__nfet_g5v0d10v5 AD=0 AS=0 PD=0 PS=0
++ a=(3.00)*(0.50) l=0.50 m=1*1 p=2*(3.00)+2*(0.50) sa=265e-3 sb=265e-3
++ sd=280e-3 w=3.00
+XMI77<1> mid pd_h_vddio vssa vssa sky130_fd_pr__nfet_g5v0d10v5 AD=0 AS=0 PD=0 PS=0
++ a=(0.42)*(0.50) l=0.50 m=1*1 p=2*(0.42)+2*(0.50) sa=265e-3 sb=265e-3
++ sd=280e-3 w=0.42
+XMI77<0> mid1 pd_h_vddio vssa vssa sky130_fd_pr__nfet_g5v0d10v5 AD=0 AS=0 PD=0 PS=0
++ a=(0.42)*(0.50) l=0.50 m=1*1 p=2*(0.42)+2*(0.50) sa=265e-3 sb=265e-3
++ sd=280e-3 w=0.42
+XMI78<1> mid pd_h_vdda vssa vssa sky130_fd_pr__nfet_g5v0d10v5 AD=0 AS=0 PD=0 PS=0
++ a=(0.42)*(0.50) l=0.50 m=1*1 p=2*(0.42)+2*(0.50) sa=265e-3 sb=265e-3
++ sd=280e-3 w=0.42
+XMI78<0> mid1 pd_h_vdda vssa vssa sky130_fd_pr__nfet_g5v0d10v5 AD=0 AS=0 PD=0 PS=0
++ a=(0.42)*(0.50) l=0.50 m=1*1 p=2*(0.42)+2*(0.50) sa=265e-3 sb=265e-3
++ sd=280e-3 w=0.42
+XMI47 mid1 ng_amx_vpmp_h amuxbus_hv mid1 sky130_fd_pr__nfet_g5v0d10v5 AD=0 AS=0 PD=0 PS=0
++ a=(7.00)*(0.50) l=0.50 m=7*1 p=2*(7.00)+2*(0.50) sa=265e-3 sb=265e-3
++ sd=280e-3 w=7.00
+XMI57 mid1 nmid_vccd net79 vssa sky130_fd_pr__nfet_g5v0d10v5 AD=0 AS=0 PD=0 PS=0
++ a=(3.00)*(0.50) l=0.50 m=1*1 p=2*(3.00)+2*(0.50) sa=265e-3 sb=265e-3
++ sd=280e-3 w=3.00
+XMI28 mid ng_amx_vpmp_h amuxbus_hv mid sky130_fd_pr__nfet_g5v0d10v5 AD=0 AS=0 PD=0 PS=0
++ a=(7.00)*(0.50) l=0.50 m=7*1 p=2*(7.00)+2*(0.50) sa=265e-3 sb=265e-3
++ sd=280e-3 w=7.00
+XMI26 mid pg_amx_vdda_h_n amuxbus_hv vdda sky130_fd_pr__pfet_g5v0d10v5 AD=0 AS=0 PD=0 PS=0
++ a=(7.00)*(0.50) l=0.50 m=5*1 p=2*(7.00)+2*(0.50) sa=265e-3 sb=265e-3
++ sd=280e-3 w=7.00
+XMI36 mid pg_pad_vddioq_h_n pad_hv_p0 vddio sky130_fd_pr__pfet_g5v0d10v5 AD=0 AS=0 PD=0 PS=0
++ a=(7.00)*(0.50) l=0.50 m=3*1 p=2*(7.00)+2*(0.50) sa=265e-3 sb=265e-3
++ sd=280e-3 w=7.00
+XMI22 mid pg_pad_vddioq_h_n pad_hv_p1 vddio sky130_fd_pr__pfet_g5v0d10v5 AD=0 AS=0 PD=0 PS=0
++ a=(7.00)*(0.50) l=0.50 m=3*1 p=2*(7.00)+2*(0.50) sa=265e-3 sb=265e-3
++ sd=280e-3 w=7.00
+.ENDS
+
+************************************************************************
+* Library Name: s8iom0s8
+* Cell Name: sky130_fd_io__hvsbt_inv_x1
+* View Name: schematic
+************************************************************************
+
+.SUBCKT sky130_fd_io__hvsbt_inv_x1 in out vgnd vpwr
+*.PININFO in:I vgnd:I vpwr:I out:O
+XMI1 out in vpwr vpwr sky130_fd_pr__pfet_g5v0d10v5 AD=0 AS=0 PD=0 PS=0
++ a=(1.00)*(0.60) l=0.60 m=2*1 p=2*(1.00)+2*(0.60) sa=265e-3 sb=265e-3
++ sd=280e-3 w=1.00
+XMI2 out in vgnd vgnd sky130_fd_pr__nfet_g5v0d10v5 AD=0 AS=0 PD=0 PS=0
++ a=(0.70)*(0.60) l=0.60 m=1*1 p=2*(0.70)+2*(0.60) sa=265e-3 sb=265e-3
++ sd=280e-3 w=0.70
+.ENDS
+
+************************************************************************
+* Library Name: s8iom0s8
+* Cell Name: sky130_fd_io__gpiov2_amx_pucsd_inv
+* View Name: schematic
+************************************************************************
+
+.SUBCKT sky130_fd_io__gpiov2_amx_pucsd_inv A Y vda vssa
+*.PININFO A:I vda:I vssa:I Y:O
+XMI75 Y A vssa vssa sky130_fd_pr__nfet_g5v0d10v5 AD=0 AS=0 PD=0 PS=0
++ a=(0.42)*(0.60) l=0.60 m=7*1 p=2*(0.42)+2*(0.60) sa=265e-3 sb=265e-3
++ sd=280e-3 w=0.42
+XMI74 Y A vda vda sky130_fd_pr__pfet_g5v0d10v5 AD=0 AS=0 PD=0 PS=0
++ a=(1.00)*(0.60) l=0.60 m=7*1 p=2*(1.00)+2*(0.60) sa=265e-3 sb=265e-3
++ sd=280e-3 w=1.00
+.ENDS
+
+************************************************************************
+* Library Name: s8iom0s8
+* Cell Name: sky130_fd_io__gpiov2_amux_drvr_lshv2hv
+* View Name: schematic
+************************************************************************
+
+.SUBCKT sky130_fd_io__gpiov2_amux_drvr_lshv2hv in in_b out_h_n rst_h rst_h_n vgnd vpwr_hv
+*.PININFO in:I in_b:I rst_h:I rst_h_n:I vgnd:I vpwr_hv:I out_h_n:O
+XMI1 fbk_n fbk vpwr_hv vpwr_hv sky130_fd_pr__pfet_g5v0d10v5 AD=0 AS=0 PD=0 PS=0
++ a=(0.42)*(1.00) l=1.00 m=1*1 p=2*(0.42)+2*(1.00) sa=265e-3 sb=265e-3
++ sd=280e-3 w=0.42
+XMI2 fbk fbk_n vpwr_hv vpwr_hv sky130_fd_pr__pfet_g5v0d10v5 AD=0 AS=0 PD=0 PS=0
++ a=(0.42)*(1.00) l=1.00 m=1*1 p=2*(0.42)+2*(1.00) sa=265e-3 sb=265e-3
++ sd=280e-3 w=0.42
+XMI14 out_h_n fbk vpwr_hv vpwr_hv sky130_fd_pr__pfet_g5v0d10v5 AD=0 AS=0 PD=0 PS=0
++ a=(1.00)*(0.50) l=0.50 m=2*1 p=2*(1.00)+2*(0.50) sa=265e-3 sb=265e-3
++ sd=280e-3 w=1.00
+XMI64 net52 rst_h_n vgnd vgnd sky130_fd_pr__nfet_g5v0d10v5 AD=0 AS=0 PD=0 PS=0
++ a=(3.00)*(0.50) l=0.50 m=1*1 p=2*(3.00)+2*(0.50) sa=265e-3 sb=265e-3
++ sd=280e-3 w=3.00
+XMI7 fbk in_b net52 vgnd sky130_fd_pr__nfet_g5v0d10v5 AD=0 AS=0 PD=0 PS=0
++ a=(3.00)*(0.50) l=0.50 m=3*1 p=2*(3.00)+2*(0.50) sa=265e-3 sb=265e-3
++ sd=280e-3 w=3.00
+XMI8 fbk_n in net52 vgnd sky130_fd_pr__nfet_g5v0d10v5 AD=0 AS=0 PD=0 PS=0
++ a=(3.00)*(0.50) l=0.50 m=3*1 p=2*(3.00)+2*(0.50) sa=265e-3 sb=265e-3
++ sd=280e-3 w=3.00
+XMmnrst fbk rst_h vgnd vgnd sky130_fd_pr__nfet_g5v0d10v5 AD=0 AS=0 PD=0 PS=0
++ a=(1.00)*(0.50) l=0.50 m=1*1 p=2*(1.00)+2*(0.50) sa=265e-3 sb=265e-3
++ sd=280e-3 w=1.00
+XMI13 out_h_n fbk vgnd vgnd sky130_fd_pr__nfet_g5v0d10v5 AD=0 AS=0 PD=0 PS=0
++ a=(1.00)*(0.50) l=0.50 m=1*1 p=2*(1.00)+2*(0.50) sa=265e-3 sb=265e-3
++ sd=280e-3 w=1.00
+.ENDS
+
+************************************************************************
+* Library Name: s8iom0s8
+* Cell Name: sky130_fd_io__gpiov2_amx_inv4
+* View Name: schematic
+************************************************************************
+
+.SUBCKT sky130_fd_io__gpiov2_amx_inv4 A Y vda vssa
+*.PININFO A:I vda:I vssa:I Y:O
+XMI75 Y A vssa vssa sky130_fd_pr__nfet_g5v0d10v5 AD=0 AS=0 PD=0 PS=0
++ a=(0.42)*(0.60) l=0.60 m=2*1 p=2*(0.42)+2*(0.60) sa=265e-3 sb=265e-3
++ sd=280e-3 w=0.42
+XMI74 Y A vda vda sky130_fd_pr__pfet_g5v0d10v5 AD=0 AS=0 PD=0 PS=0
++ a=(1.00)*(0.60) l=0.60 m=2*1 p=2*(1.00)+2*(0.60) sa=265e-3 sb=265e-3
++ sd=280e-3 w=1.00
+.ENDS
+
+************************************************************************
+* Library Name: s8iom0s8
+* Cell Name: sky130_fd_io__hvsbt_inv_x2
+* View Name: schematic
+************************************************************************
+
+.SUBCKT sky130_fd_io__hvsbt_inv_x2 in out vgnd vpwr
+*.PININFO in:I vgnd:I vpwr:I out:O
+XMI2 out in vgnd vgnd sky130_fd_pr__nfet_g5v0d10v5 AD=0 AS=0 PD=0 PS=0
++ a=(0.70)*(0.60) l=0.60 m=2*1 p=2*(0.70)+2*(0.60) sa=265e-3 sb=265e-3
++ sd=280e-3 w=0.70
+XMI1 out in vpwr vpwr sky130_fd_pr__pfet_g5v0d10v5 AD=0 AS=0 PD=0 PS=0
++ a=(1.00)*(0.60) l=0.60 m=4*1 p=2*(1.00)+2*(0.60) sa=265e-3 sb=265e-3
++ sd=280e-3 w=1.00
+.ENDS
+
+************************************************************************
+* Library Name: s8iom0s8
+* Cell Name: sky130_fd_io__gpiov2_amx_pdcsd_inv
+* View Name: schematic
+************************************************************************
+
+.SUBCKT sky130_fd_io__gpiov2_amx_pdcsd_inv A Y vda vssa
+*.PININFO A:I vda:I vssa:I Y:O
+XMI519 Y vssa vssa vssa sky130_fd_pr__nfet_g5v0d10v5 AD=0 AS=0 PD=0 PS=0
++ a=(1.50)*(0.50) l=0.50 m=1*1 p=2*(1.50)+2*(0.50) sa=265e-3 sb=265e-3
++ sd=280e-3 w=1.50
+XMI414 Y A vssa vssa sky130_fd_pr__nfet_g5v0d10v5 AD=0 AS=0 PD=0 PS=0
++ a=(1.50)*(0.50) l=0.50 m=1*1 p=2*(1.50)+2*(0.50) sa=265e-3 sb=265e-3
++ sd=280e-3 w=1.50
+XMI429 Y A vda vda sky130_fd_pr__pfet_g5v0d10v5 AD=0 AS=0 PD=0 PS=0
++ a=(0.75)*(2.00) l=2.00 m=1*1 p=2*(0.75)+2*(2.00) sa=265e-3 sb=265e-3
++ sd=280e-3 w=0.75
+XMI517 Y A vda vda sky130_fd_pr__pfet_g5v0d10v5 AD=0 AS=0 PD=0 PS=0
++ a=(0.75)*(2.00) l=2.00 m=1*1 p=2*(0.75)+2*(2.00) sa=265e-3 sb=265e-3
++ sd=280e-3 w=0.75
+.ENDS
+
+************************************************************************
+* Library Name: s8iom0s8
+* Cell Name: sky130_fd_io__amx_inv1
+* View Name: schematic
+************************************************************************
+
+.SUBCKT sky130_fd_io__amx_inv1 A Y vda vssa
+*.PININFO A:I vda:I vssa:I Y:O
+XMI92 Y A vssa vssa sky130_fd_pr__nfet_g5v0d10v5 AD=0 AS=0 PD=0 PS=0
++ a=(0.75)*(0.50) l=0.50 m=1*1 p=2*(0.75)+2*(0.50) sa=265e-3 sb=265e-3
++ sd=280e-3 w=0.75
+XMI54 Y A vda vda sky130_fd_pr__pfet_g5v0d10v5 AD=0 AS=0 PD=0 PS=0
++ a=(1.50)*(0.50) l=0.50 m=1*1 p=2*(1.50)+2*(0.50) sa=265e-3 sb=265e-3
++ sd=280e-3 w=1.50
+.ENDS
+
+************************************************************************
+* Library Name: s8iom0s8
+* Cell Name: sky130_fd_io__gpiov2_amux_drvr_ls
+* View Name: schematic
+************************************************************************
+
+.SUBCKT sky130_fd_io__gpiov2_amux_drvr_ls in in_b out_h out_h_n rst_h rst_h_n vgnd vpwr_hv
++ vpwr_lv
+*.PININFO in:I in_b:I rst_h:I rst_h_n:I vgnd:I vpwr_hv:I vpwr_lv:I out_h:O
+*.PININFO out_h_n:O
+XMI9 out_h out_h_n vpwr_hv vpwr_hv sky130_fd_pr__pfet_g5v0d10v5 AD=0 AS=0 PD=0 PS=0
++ a=(0.70)*(0.60) l=0.60 m=1*1 p=2*(0.70)+2*(0.60) sa=265e-3 sb=265e-3
++ sd=280e-3 w=0.70
+XMI11 out_h_n out_h vpwr_hv vpwr_hv sky130_fd_pr__pfet_g5v0d10v5 AD=0 AS=0 PD=0 PS=0
++ a=(0.70)*(0.60) l=0.60 m=1*1 p=2*(0.70)+2*(0.60) sa=265e-3 sb=265e-3
++ sd=280e-3 w=0.70
+XMI20 net38 vpwr_lv net54 vgnd sky130_fd_pr__nfet_05v0_nvt AD=0 AS=0 PD=0 PS=0
++ a=(1.00)*(0.90) l=0.90 m=2*1 p=2*(1.00)+2*(0.90) sa=265e-3 sb=265e-3
++ sd=280e-3 w=1.00
+XMI21 net42 vpwr_lv net58 vgnd sky130_fd_pr__nfet_05v0_nvt AD=0 AS=0 PD=0 PS=0
++ a=(1.00)*(0.90) l=0.90 m=2*1 p=2*(1.00)+2*(0.90) sa=265e-3 sb=265e-3
++ sd=280e-3 w=1.00
+XMI24 out_h_n rst_h_n net42 vgnd sky130_fd_pr__nfet_g5v0d10v5 AD=0 AS=0 PD=0 PS=0
++ a=(1.50)*(0.50) l=0.50 m=2*1 p=2*(1.50)+2*(0.50) sa=265e-3 sb=265e-3
++ sd=280e-3 w=1.50
+XMI25 out_h rst_h_n net38 vgnd sky130_fd_pr__nfet_g5v0d10v5 AD=0 AS=0 PD=0 PS=0
++ a=(1.50)*(0.50) l=0.50 m=2*1 p=2*(1.50)+2*(0.50) sa=265e-3 sb=265e-3
++ sd=280e-3 w=1.50
+XMI12 net54 in_b vgnd vgnd sky130_fd_pr__nfet_01v8_lvt AD=0 AS=0 PD=0 PS=0
++ a=(1.00)*(0.15) l=0.15 m=2*1 p=2*(1.00)+2*(0.15) sa=265e-3 sb=265e-3
++ sd=280e-3 w=1.00
+XMI6 net58 in vgnd vgnd sky130_fd_pr__nfet_01v8_lvt AD=0 AS=0 PD=0 PS=0
++ a=(1.00)*(0.15) l=0.15 m=2*1 p=2*(1.00)+2*(0.15) sa=265e-3 sb=265e-3
++ sd=280e-3 w=1.00
+XMI17 out_h rst_h vgnd vgnd sky130_fd_pr__nfet_g5v0d10v5 AD=0 AS=0 PD=0 PS=0
++ a=(1.50)*(0.50) l=0.50 m=2*1 p=2*(1.50)+2*(0.50) sa=265e-3 sb=265e-3
++ sd=280e-3 w=1.50
+.ENDS
+
+************************************************************************
+* Library Name: s8iom0s8
+* Cell Name: sky130_fd_io__gpiov2_amux_drvr
+* View Name: schematic
+************************************************************************
+
+.SUBCKT sky130_fd_io__gpiov2_amux_drvr amux_en_vdda_h amux_en_vdda_h_n amux_en_vddio_h amux_en_vddio_h_n
++ amux_en_vswitch_h amux_en_vswitch_h_n amuxbusa_on amuxbusa_on_n amuxbusb_on amuxbusb_on_n
++ nga_amx_vswitch_h nga_pad_vswitch_h nga_pad_vswitch_h_n ngb_amx_vswitch_h ngb_pad_vswitch_h
++ ngb_pad_vswitch_h_n nmida_on_n nmida_vccd nmida_vccd_n nmidb_on_n nmidb_vccd nmidb_vccd_n
++ pd_csd_vswitch_h pd_csd_vswitch_h_n pd_on pd_on_n pga_amx_vdda_h_n pga_pad_vddioq_h_n
++ pgb_amx_vdda_h_n pgb_pad_vddioq_h_n pu_csd_vddioq_h_n pu_on pu_on_n vccd vdda vddio_q vssa vssd
++ vswitch
+*.PININFO amux_en_vdda_h:I amux_en_vdda_h_n:I amux_en_vddio_h:I
+*.PININFO amux_en_vddio_h_n:I amux_en_vswitch_h:I amux_en_vswitch_h_n:I
+*.PININFO amuxbusa_on:I amuxbusa_on_n:I amuxbusb_on:I amuxbusb_on_n:I
+*.PININFO nmida_on_n:I nmidb_on_n:I pd_on:I pd_on_n:I pu_on:I pu_on_n:I vccd:I
+*.PININFO vdda:I vddio_q:I vssa:I vssd:I vswitch:I nga_amx_vswitch_h:O
+*.PININFO nga_pad_vswitch_h:O nga_pad_vswitch_h_n:O ngb_amx_vswitch_h:O
+*.PININFO ngb_pad_vswitch_h:O ngb_pad_vswitch_h_n:O nmida_vccd:O
+*.PININFO nmida_vccd_n:O nmidb_vccd:O nmidb_vccd_n:O pd_csd_vswitch_h:O
+*.PININFO pd_csd_vswitch_h_n:O pga_amx_vdda_h_n:O pga_pad_vddioq_h_n:O
+*.PININFO pgb_amx_vdda_h_n:O pgb_pad_vddioq_h_n:O pu_csd_vddioq_h_n:O
+XI105 nmidb_vccd nmidb_vccd_n vssd vccd / sky130_fd_io__hvsbt_inv_x1
+XI93 nmida_vccd nmida_vccd_n vssd vccd / sky130_fd_io__hvsbt_inv_x1
+XI38 net274 pu_csd_vddioq_h_n vddio_q vssd / sky130_fd_io__gpiov2_amx_pucsd_inv
+XI103 net239 net245 pgb_amx_vdda_h_n amux_en_vdda_h_n amux_en_vdda_h vssa vdda /
++ sky130_fd_io__gpiov2_amux_drvr_lshv2hv
+Xpga_amx_ls net265 net272 pga_amx_vdda_h_n amux_en_vdda_h_n amux_en_vdda_h vssa vdda /
++ sky130_fd_io__gpiov2_amux_drvr_lshv2hv
+XI64 net236 ngb_pad_vswitch_h vswitch vssa / sky130_fd_io__gpiov2_amx_inv4
+XI63 net236 ngb_amx_vswitch_h vswitch vssa / sky130_fd_io__gpiov2_amx_inv4
+XI62 net239 pgb_pad_vddioq_h_n vddio_q vssd / sky130_fd_io__gpiov2_amx_inv4
+XI47 net256 nga_pad_vswitch_h vswitch vssa / sky130_fd_io__gpiov2_amx_inv4
+XI42 net265 pga_pad_vddioq_h_n vddio_q vssd / sky130_fd_io__gpiov2_amx_inv4
+XI45 net256 nga_amx_vswitch_h vswitch vssa / sky130_fd_io__gpiov2_amx_inv4
+XI89 nmida_on_n nmida_vccd vssd vccd / sky130_fd_io__hvsbt_inv_x2
+XI53 nmidb_on_n nmidb_vccd vssd vccd / sky130_fd_io__hvsbt_inv_x2
+Xpdcsd_inv net254 pd_csd_vswitch_h vswitch vssa / sky130_fd_io__gpiov2_amx_pdcsd_inv
+XI90 pd_csd_vswitch_h pd_csd_vswitch_h_n vswitch vssa / sky130_fd_io__amx_inv1
+XI85 ngb_pad_vswitch_h ngb_pad_vswitch_h_n vswitch vssa / sky130_fd_io__amx_inv1
+XI87 nga_pad_vswitch_h nga_pad_vswitch_h_n vswitch vssa / sky130_fd_io__amx_inv1
+XMI104 pd_csd_vswitch_h amux_en_vddio_h_n vssa vssa sky130_fd_pr__nfet_g5v0d10v5 AD=0 AS=0 PD=0 PS=0
++ a=(1.00)*(0.50) l=0.50 m=1*1 p=2*(1.00)+2*(0.50) sa=265e-3 sb=265e-3
++ sd=280e-3 w=1.00
+XMI78 nga_pad_vswitch_h amux_en_vddio_h_n vssa vssa sky130_fd_pr__nfet_g5v0d10v5 AD=0 AS=0 PD=0 PS=0
++ a=(1.00)*(0.50) l=0.50 m=1*1 p=2*(1.00)+2*(0.50) sa=265e-3 sb=265e-3
++ sd=280e-3 w=1.00
+XMI75 nga_amx_vswitch_h amux_en_vdda_h_n vssa vssa sky130_fd_pr__nfet_g5v0d10v5 AD=0 AS=0 PD=0 PS=0
++ a=(1.00)*(0.50) l=0.50 m=1*1 p=2*(1.00)+2*(0.50) sa=265e-3 sb=265e-3
++ sd=280e-3 w=1.00
+XMI77 ngb_pad_vswitch_h amux_en_vddio_h_n vssa vssa sky130_fd_pr__nfet_g5v0d10v5 AD=0 AS=0 PD=0 PS=0
++ a=(1.00)*(0.50) l=0.50 m=1*1 p=2*(1.00)+2*(0.50) sa=265e-3 sb=265e-3
++ sd=280e-3 w=1.00
+XMI76 ngb_amx_vswitch_h amux_en_vdda_h_n vssa vssa sky130_fd_pr__nfet_g5v0d10v5 AD=0 AS=0 PD=0 PS=0
++ a=(1.00)*(0.50) l=0.50 m=1*1 p=2*(1.00)+2*(0.50) sa=265e-3 sb=265e-3
++ sd=280e-3 w=1.00
+Xngb_ls amuxbusb_on amuxbusb_on_n net230 net236 amux_en_vswitch_h_n amux_en_vswitch_h vssa vswitch
++ vccd / sky130_fd_io__gpiov2_amux_drvr_ls
+Xpgb_pad_ls amuxbusb_on amuxbusb_on_n net239 net245 amux_en_vddio_h_n amux_en_vddio_h vssd vddio_q
++ vccd / sky130_fd_io__gpiov2_amux_drvr_ls
+Xpd_csd_ls pd_on pd_on_n net248 net254 amux_en_vswitch_h_n amux_en_vswitch_h vssa vswitch vccd
++ / sky130_fd_io__gpiov2_amux_drvr_ls
+Xnga_ls amuxbusa_on amuxbusa_on_n net257 net256 amux_en_vswitch_h_n amux_en_vswitch_h vssa vswitch
++ vccd / sky130_fd_io__gpiov2_amux_drvr_ls
+Xpga_pad_ls amuxbusa_on amuxbusa_on_n net265 net272 amux_en_vddio_h_n amux_en_vddio_h vssd vddio_q
++ vccd / sky130_fd_io__gpiov2_amux_drvr_ls
+Xpu_csd_ls pu_on pu_on_n net274 net275 amux_en_vddio_h_n amux_en_vddio_h vssd vddio_q vccd
++ / sky130_fd_io__gpiov2_amux_drvr_ls
+.ENDS
+
+************************************************************************
+* Library Name: s8iom0s8
+* Cell Name: sky130_fd_io__nor2_1
+* View Name: schematic
+************************************************************************
+
+.SUBCKT sky130_fd_io__nor2_1 A B Y vgnd vnb vpb vpwr
+*.PININFO A:I B:I vgnd:I vnb:I vpb:I vpwr:I Y:O
+XMMP1 sndPA B Y vpb sky130_fd_pr__pfet_01v8_hvt AD=0 AS=0 PD=0 PS=0
++ a=(1.12)*(0.15) l=0.15 m=1*1 p=2*(1.12)+2*(0.15) sa=265e-3 sb=265e-3
++ sd=280e-3 w=1.12
+XMMP0 vpwr A sndPA vpb sky130_fd_pr__pfet_01v8_hvt AD=0 AS=0 PD=0 PS=0
++ a=(1.12)*(0.15) l=0.15 m=1*1 p=2*(1.12)+2*(0.15) sa=265e-3 sb=265e-3
++ sd=280e-3 w=1.12
+XMMN1 Y B vgnd vnb sky130_fd_pr__nfet_01v8 AD=0 AS=0 PD=0 PS=0
++ a=(740e-3)*(150e-3) l=150e-3 m=1*1 p=2*(740e-3)+2*(150e-3) sa=265e-3
++ sb=265e-3 sd=280e-3 w=740e-3
+XMMN0 Y A vgnd vnb sky130_fd_pr__nfet_01v8 AD=0 AS=0 PD=0 PS=0
++ a=(740e-3)*(150e-3) l=150e-3 m=1*1 p=2*(740e-3)+2*(150e-3) sa=265e-3
++ sb=265e-3 sd=280e-3 w=740e-3
+.ENDS
+
+************************************************************************
+* Library Name: s8iom0s8
+* Cell Name: sky130_fd_io__nand2_1
+* View Name: schematic
+************************************************************************
+
+.SUBCKT sky130_fd_io__nand2_1 A B Y vgnd vnb vpb vpwr
+*.PININFO A:I B:I vgnd:I vnb:I vpb:I vpwr:I Y:O
+XMMP1 Y B vpwr vpb sky130_fd_pr__pfet_01v8_hvt AD=0 AS=0 PD=0 PS=0
++ a=(1.12)*(0.15) l=0.15 m=1*1 p=2*(1.12)+2*(0.15) sa=265e-3 sb=265e-3
++ sd=280e-3 w=1.12
+XMMP0 Y A vpwr vpb sky130_fd_pr__pfet_01v8_hvt AD=0 AS=0 PD=0 PS=0
++ a=(1.12)*(0.15) l=0.15 m=1*1 p=2*(1.12)+2*(0.15) sa=265e-3 sb=265e-3
++ sd=280e-3 w=1.12
+XMMN1 sndA B vgnd vnb sky130_fd_pr__nfet_01v8 AD=0 AS=0 PD=0 PS=0
++ a=(0.74)*(0.15) l=0.15 m=1*1 p=2*(0.74)+2*(0.15) sa=265e-3 sb=265e-3
++ sd=280e-3 w=0.74
+XMMN0 Y A sndA vnb sky130_fd_pr__nfet_01v8 AD=0 AS=0 PD=0 PS=0
++ a=(0.74)*(0.15) l=0.15 m=1*1 p=2*(0.74)+2*(0.15) sa=265e-3 sb=265e-3
++ sd=280e-3 w=0.74
+.ENDS
+
+************************************************************************
+* Library Name: s8iom0s8
+* Cell Name: sky130_fd_io__hvsbt_nor
+* View Name: schematic
+************************************************************************
+
+.SUBCKT sky130_fd_io__hvsbt_nor in0 in1 out vgnd vpwr
+*.PININFO in0:I in1:I vgnd:I vpwr:I out:O
+XMI12 out in1 net16 vpwr sky130_fd_pr__pfet_g5v0d10v5 AD=0 AS=0 PD=0 PS=0
++ a=(1.00)*(0.60) l=0.60 m=1*2 p=2*(1.00)+2*(0.60) sa=265e-3 sb=265e-3
++ sd=280e-3 w=1.00
+XMI3 net16 in0 vpwr vpwr sky130_fd_pr__pfet_g5v0d10v5 AD=0 AS=0 PD=0 PS=0
++ a=(1.00)*(0.60) l=0.60 m=1*2 p=2*(1.00)+2*(0.60) sa=265e-3 sb=265e-3
++ sd=280e-3 w=1.00
+XMI6 out in1 vgnd vgnd sky130_fd_pr__nfet_g5v0d10v5 AD=0 AS=0 PD=0 PS=0
++ a=(0.70)*(0.60) l=0.60 m=1*1 p=2*(0.70)+2*(0.60) sa=265e-3 sb=265e-3
++ sd=280e-3 w=0.70
+XMI1 out in0 vgnd vgnd sky130_fd_pr__nfet_g5v0d10v5 AD=0 AS=0 PD=0 PS=0
++ a=(0.70)*(0.60) l=0.60 m=1*1 p=2*(0.70)+2*(0.60) sa=265e-3 sb=265e-3
++ sd=280e-3 w=0.70
+.ENDS
+
+************************************************************************
+* Library Name: s8iom0s8
+* Cell Name: sky130_fd_io__gpiov2_amux_nand5
+* View Name: schematic
+************************************************************************
+
+.SUBCKT sky130_fd_io__gpiov2_amux_nand5 in0 in1 in2 in3 in4 out vgnd vpwr
+*.PININFO in0:I in1:I in2:I in3:I in4:I vgnd:I vpwr:I out:O
+XMI21 out_n out vpwr vpwr sky130_fd_pr__pfet_g5v0d10v5 AD=0 AS=0 PD=0 PS=0
++ a=(1.00)*(0.60) l=0.60 m=2*1 p=2*(1.00)+2*(0.60) sa=265e-3 sb=265e-3
++ sd=280e-3 w=1.00
+XMI20 out out_n vpwr vpwr sky130_fd_pr__pfet_g5v0d10v5 AD=0 AS=0 PD=0 PS=0
++ a=(0.42)*(0.50) l=0.50 m=1*1 p=2*(0.42)+2*(0.50) sa=265e-3 sb=265e-3
++ sd=280e-3 w=0.42
+XMI3 out in0 vpwr vpwr sky130_fd_pr__pfet_g5v0d10v5 AD=0 AS=0 PD=0 PS=0
++ a=(1.00)*(0.60) l=0.60 m=2*1 p=2*(1.00)+2*(0.60) sa=265e-3 sb=265e-3
++ sd=280e-3 w=1.00
+XMI23 vgnd out_n vgnd vgnd sky130_fd_pr__nfet_g5v0d10v5 AD=0 AS=0 PD=0 PS=0
++ a=(0.42)*(0.50) l=0.50 m=1*1 p=2*(0.42)+2*(0.50) sa=265e-3 sb=265e-3
++ sd=280e-3 w=0.42
+XMI22 out_n out vgnd vgnd sky130_fd_pr__nfet_g5v0d10v5 AD=0 AS=0 PD=0 PS=0
++ a=(0.42)*(0.50) l=0.50 m=1*1 p=2*(0.42)+2*(0.50) sa=265e-3 sb=265e-3
++ sd=280e-3 w=0.42
+XMI14 net51 in2 net55 vgnd sky130_fd_pr__nfet_g5v0d10v5 AD=0 AS=0 PD=0 PS=0
++ a=(5.00)*(0.50) l=0.50 m=1*1 p=2*(5.00)+2*(0.50) sa=265e-3 sb=265e-3
++ sd=280e-3 w=5.00
+XMI15 net55 in3 net63 vgnd sky130_fd_pr__nfet_g5v0d10v5 AD=0 AS=0 PD=0 PS=0
++ a=(5.00)*(0.50) l=0.50 m=1*1 p=2*(5.00)+2*(0.50) sa=265e-3 sb=265e-3
++ sd=280e-3 w=5.00
+XMI6 net59 in0 vgnd vgnd sky130_fd_pr__nfet_g5v0d10v5 AD=0 AS=0 PD=0 PS=0
++ a=(5.00)*(0.50) l=0.50 m=1*1 p=2*(5.00)+2*(0.50) sa=265e-3 sb=265e-3
++ sd=280e-3 w=5.00
+XMI18 net63 in4 net59 vgnd sky130_fd_pr__nfet_g5v0d10v5 AD=0 AS=0 PD=0 PS=0
++ a=(5.00)*(0.50) l=0.50 m=1*1 p=2*(5.00)+2*(0.50) sa=265e-3 sb=265e-3
++ sd=280e-3 w=5.00
+XMI1 out in1 net51 vgnd sky130_fd_pr__nfet_g5v0d10v5 AD=0 AS=0 PD=0 PS=0
++ a=(5.00)*(0.50) l=0.50 m=1*1 p=2*(5.00)+2*(0.50) sa=265e-3 sb=265e-3
++ sd=280e-3 w=5.00
+.ENDS
+
+************************************************************************
+* Library Name: s8iom0s8
+* Cell Name: sky130_fd_io__gpiov2_amux_nand4
+* View Name: schematic
+************************************************************************
+
+.SUBCKT sky130_fd_io__gpiov2_amux_nand4 in0 in1 in2 in3 out vgnd vpwr
+*.PININFO in0:I in1:I in2:I in3:I vgnd:I vpwr:I out:O
+XMI20 out out_n vpwr vpwr sky130_fd_pr__pfet_g5v0d10v5 AD=0 AS=0 PD=0 PS=0
++ a=(0.42)*(0.50) l=0.50 m=1*1 p=2*(0.42)+2*(0.50) sa=265e-3 sb=265e-3
++ sd=280e-3 w=0.42
+XMI19 out_n out vpwr vpwr sky130_fd_pr__pfet_g5v0d10v5 AD=0 AS=0 PD=0 PS=0
++ a=(1.00)*(0.60) l=0.60 m=2*1 p=2*(1.00)+2*(0.60) sa=265e-3 sb=265e-3
++ sd=280e-3 w=1.00
+XMI3 out in0 vpwr vpwr sky130_fd_pr__pfet_g5v0d10v5 AD=0 AS=0 PD=0 PS=0
++ a=(1.00)*(0.60) l=0.60 m=2*1 p=2*(1.00)+2*(0.60) sa=265e-3 sb=265e-3
++ sd=280e-3 w=1.00
+XMI21 vgnd out_n vgnd vgnd sky130_fd_pr__nfet_g5v0d10v5 AD=0 AS=0 PD=0 PS=0
++ a=(0.42)*(0.50) l=0.50 m=1*1 p=2*(0.42)+2*(0.50) sa=265e-3 sb=265e-3
++ sd=280e-3 w=0.42
+XMI18 out_n out vgnd vgnd sky130_fd_pr__nfet_g5v0d10v5 AD=0 AS=0 PD=0 PS=0
++ a=(0.42)*(0.50) l=0.50 m=1*1 p=2*(0.42)+2*(0.50) sa=265e-3 sb=265e-3
++ sd=280e-3 w=0.42
+XMI14 net50 in2 net54 vgnd sky130_fd_pr__nfet_g5v0d10v5 AD=0 AS=0 PD=0 PS=0
++ a=(5.00)*(0.50) l=0.50 m=1*1 p=2*(5.00)+2*(0.50) sa=265e-3 sb=265e-3
++ sd=280e-3 w=5.00
+XMI15 net54 in3 net58 vgnd sky130_fd_pr__nfet_g5v0d10v5 AD=0 AS=0 PD=0 PS=0
++ a=(5.00)*(0.50) l=0.50 m=1*1 p=2*(5.00)+2*(0.50) sa=265e-3 sb=265e-3
++ sd=280e-3 w=5.00
+XMI6 net58 in0 vgnd vgnd sky130_fd_pr__nfet_g5v0d10v5 AD=0 AS=0 PD=0 PS=0
++ a=(5.00)*(0.50) l=0.50 m=1*1 p=2*(5.00)+2*(0.50) sa=265e-3 sb=265e-3
++ sd=280e-3 w=5.00
+XMI1 out in1 net50 vgnd sky130_fd_pr__nfet_g5v0d10v5 AD=0 AS=0 PD=0 PS=0
++ a=(5.00)*(0.50) l=0.50 m=1*1 p=2*(5.00)+2*(0.50) sa=265e-3 sb=265e-3
++ sd=280e-3 w=5.00
+.ENDS
+
+************************************************************************
+* Library Name: s8iom0s8
+* Cell Name: sky130_fd_io__hvsbt_nand2
+* View Name: schematic
+************************************************************************
+
+.SUBCKT sky130_fd_io__hvsbt_nand2 in0 in1 out vgnd vpwr
+*.PININFO in0:I in1:I vgnd:I vpwr:I out:O
+XMI5 out in1 vpwr vpwr sky130_fd_pr__pfet_g5v0d10v5 AD=0 AS=0 PD=0 PS=0
++ a=(1.00)*(0.60) l=0.60 m=2*1 p=2*(1.00)+2*(0.60) sa=265e-3 sb=265e-3
++ sd=280e-3 w=1.00
+XMI3 out in0 vpwr vpwr sky130_fd_pr__pfet_g5v0d10v5 AD=0 AS=0 PD=0 PS=0
++ a=(1.00)*(0.60) l=0.60 m=2*1 p=2*(1.00)+2*(0.60) sa=265e-3 sb=265e-3
++ sd=280e-3 w=1.00
+XMI6 net25 in0 vgnd vgnd sky130_fd_pr__nfet_g5v0d10v5 AD=0 AS=0 PD=0 PS=0
++ a=(0.70)*(0.60) l=0.60 m=1*1 p=2*(0.70)+2*(0.60) sa=265e-3 sb=265e-3
++ sd=280e-3 w=0.70
+XMI1 out in1 net25 vgnd sky130_fd_pr__nfet_g5v0d10v5 AD=0 AS=0 PD=0 PS=0
++ a=(0.70)*(0.60) l=0.60 m=1*1 p=2*(0.70)+2*(0.60) sa=265e-3 sb=265e-3
++ sd=280e-3 w=0.70
+.ENDS
+
+************************************************************************
+* Library Name: s8iom0s8
+* Cell Name: sky130_fd_io__xor2_1
+* View Name: schematic
+************************************************************************
+
+.SUBCKT sky130_fd_io__xor2_1 A B X vgnd vpwr
+*.PININFO A:I B:I vgnd:I vpwr:I X:O
+XMMNaoi20 X inor vgnd vgnd sky130_fd_pr__nfet_01v8 AD=0 AS=0 PD=0 PS=0
++ a=(840e-3)*(150e-3) l=150e-3 m=1*1 p=2*(840e-3)+2*(150e-3) sa=265e-3
++ sb=265e-3 sd=280e-3 w=840e-3
+XMMNaoi11 sndNA B X vgnd sky130_fd_pr__nfet_01v8 AD=0 AS=0 PD=0 PS=0
++ a=(840e-3)*(150e-3) l=150e-3 m=1*1 p=2*(840e-3)+2*(150e-3) sa=265e-3
++ sb=265e-3 sd=280e-3 w=840e-3
+XMMNaoi10 vgnd A sndNA vgnd sky130_fd_pr__nfet_01v8 AD=0 AS=0 PD=0 PS=0
++ a=(840e-3)*(150e-3) l=150e-3 m=1*1 p=2*(840e-3)+2*(150e-3) sa=265e-3
++ sb=265e-3 sd=280e-3 w=840e-3
+XMMNnor1 inor B vgnd vgnd sky130_fd_pr__nfet_01v8 AD=0 AS=0 PD=0 PS=0
++ a=(840e-3)*(150e-3) l=150e-3 m=1*1 p=2*(840e-3)+2*(150e-3) sa=265e-3
++ sb=265e-3 sd=280e-3 w=840e-3
+XMMNnor0 inor A vgnd vgnd sky130_fd_pr__nfet_01v8 AD=0 AS=0 PD=0 PS=0
++ a=(840e-3)*(150e-3) l=150e-3 m=1*1 p=2*(840e-3)+2*(150e-3) sa=265e-3
++ sb=265e-3 sd=280e-3 w=840e-3
+XMMPaoi20 X inor pmid vpwr sky130_fd_pr__pfet_01v8_hvt AD=0 AS=0 PD=0 PS=0
++ a=(1.26)*(150e-3) l=150e-3 m=1*1 p=2*(1.26)+2*(150e-3) sa=265e-3
++ sb=265e-3 sd=280e-3 w=1.26
+XMMPaoi11 pmid B vpwr vpwr sky130_fd_pr__pfet_01v8_hvt AD=0 AS=0 PD=0 PS=0
++ a=(1.26)*(150e-3) l=150e-3 m=1*1 p=2*(1.26)+2*(150e-3) sa=265e-3
++ sb=265e-3 sd=280e-3 w=1.26
+XMMPaoi10 pmid A vpwr vpwr sky130_fd_pr__pfet_01v8_hvt AD=0 AS=0 PD=0 PS=0
++ a=(1.26)*(150e-3) l=150e-3 m=1*1 p=2*(1.26)+2*(150e-3) sa=265e-3
++ sb=265e-3 sd=280e-3 w=1.26
+XMMPnor1 sndPA B inor vpwr sky130_fd_pr__pfet_01v8_hvt AD=0 AS=0 PD=0 PS=0
++ a=(1.26)*(150e-3) l=150e-3 m=1*1 p=2*(1.26)+2*(150e-3) sa=265e-3
++ sb=265e-3 sd=280e-3 w=1.26
+XMMPnor0 vpwr A sndPA vpwr sky130_fd_pr__pfet_01v8_hvt AD=0 AS=0 PD=0 PS=0
++ a=(1.26)*(150e-3) l=150e-3 m=1*1 p=2*(1.26)+2*(150e-3) sa=265e-3
++ sb=265e-3 sd=280e-3 w=1.26
+.ENDS
+
+************************************************************************
+* Library Name: s8iom0s8
+* Cell Name: sky130_fd_io__inv_1
+* View Name: schematic
+************************************************************************
+
+.SUBCKT sky130_fd_io__inv_1 A Y vgnd vnb vpb vpwr
+*.PININFO A:I vgnd:I vnb:I vpb:I vpwr:I Y:O
+XMMIN1 Y A vgnd vnb sky130_fd_pr__nfet_01v8 AD=0 AS=0 PD=0 PS=0
++ a=(0.74)*(0.15) l=0.15 m=1*1 p=2*(0.74)+2*(0.15) sa=265e-3 sb=265e-3
++ sd=280e-3 w=0.74
+XMMIP1 Y A vpwr vpb sky130_fd_pr__pfet_01v8_hvt AD=0 AS=0 PD=0 PS=0
++ a=(1.12)*(0.15) l=0.15 m=1*1 p=2*(1.12)+2*(0.15) sa=265e-3 sb=265e-3
++ sd=280e-3 w=1.12
+.ENDS
+
+************************************************************************
+* Library Name: s8iom0s8
+* Cell Name: sky130_fd_io__gpiov2_amux_decoder
+* View Name: schematic
+************************************************************************
+
+.SUBCKT sky130_fd_io__gpiov2_amux_decoder amuxbusa_on amuxbusa_on_n amuxbusb_on amuxbusb_on_n analog_en
++ analog_pol analog_sel nga_pad_vswitch_h nga_pad_vswitch_h_n ngb_pad_vswitch_h ngb_pad_vswitch_h_n
++ nmida_on_n nmida_vccd_n nmidb_on_n nmidb_vccd_n out pd_on pd_on_n pd_vswitch_h_n pga_amx_vdda_h_n
++ pga_pad_vddioq_h_n pgb_amx_vdda_h_n pgb_pad_vddioq_h_n pu_on pu_on_n pu_vddioq_h_n vccd vssd
+*.PININFO analog_en:I analog_pol:I analog_sel:I nga_pad_vswitch_h:I
+*.PININFO nga_pad_vswitch_h_n:I ngb_pad_vswitch_h:I ngb_pad_vswitch_h_n:I
+*.PININFO nmida_vccd_n:I nmidb_vccd_n:I out:I pd_vswitch_h_n:I
+*.PININFO pga_amx_vdda_h_n:I pga_pad_vddioq_h_n:I pgb_amx_vdda_h_n:I
+*.PININFO pgb_pad_vddioq_h_n:I pu_vddioq_h_n:I vccd:I vssd:I amuxbusa_on:O
+*.PININFO amuxbusa_on_n:O amuxbusb_on:O amuxbusb_on_n:O nmida_on_n:O
+*.PININFO nmidb_on_n:O pd_on:O pd_on_n:O pu_on:O pu_on_n:O
+XI114 ana_en_i_n net137 int_amuxb_on vssd vssd vccd vccd / sky130_fd_io__nor2_1
+XI115 ana_en_i_n int_pu_on_n int_pu_on vssd vssd vccd vccd / sky130_fd_io__nor2_1
+XI113 ana_en_i_n net144 int_amuxa_on vssd vssd vccd vccd / sky130_fd_io__nor2_1
+XI116 ana_en_i_n int_pd_on_n int_pd_on vssd vssd vccd vccd / sky130_fd_io__nor2_1
+XI110 pol_xor_out ana_sel_i net137 vssd vssd vccd vccd / sky130_fd_io__nand2_1
+XI109 ana_sel_i_n pol_xor_out net144 vssd vssd vccd vccd / sky130_fd_io__nand2_1
+XI112 ana_pol_i_n out_i_n int_pd_on_n vssd vssd vccd vccd / sky130_fd_io__nand2_1
+XI111 ana_pol_i out_i int_pu_on_n vssd vssd vccd vccd / sky130_fd_io__nand2_1
+XI102 nga_pad_vswitch_h net222 net167 vssd vccd / sky130_fd_io__hvsbt_nor
+XI106 ngb_pad_vswitch_h net212 net172 vssd vccd / sky130_fd_io__hvsbt_nor
+XI80 int_pd_on pga_pad_vddioq_h_n pgb_pad_vddioq_h_n nga_pad_vswitch_h_n ngb_pad_vswitch_h_n
++ int_fbk_pdon_n vssd vccd / sky130_fd_io__gpiov2_amux_nand5
+XI79 int_pu_on pga_pad_vddioq_h_n pgb_pad_vddioq_h_n nga_pad_vswitch_h_n ngb_pad_vswitch_h_n
++ int_fbk_puon_n vssd vccd / sky130_fd_io__gpiov2_amux_nand5
+XI77 int_amuxa_on pu_vddioq_h_n pd_vswitch_h_n nmida_vccd_n amuxbusa_on_n vssd vccd /
++ sky130_fd_io__gpiov2_amux_nand4
+XI78 int_amuxb_on pu_vddioq_h_n pd_vswitch_h_n nmidb_vccd_n amuxbusb_on_n vssd vccd /
++ sky130_fd_io__gpiov2_amux_nand4
+XI120 int_amux_a_on_n net167 nmida_on_n vssd vccd / sky130_fd_io__hvsbt_nand2
+XI105 pgb_pad_vddioq_h_n pgb_amx_vdda_h_n net212 vssd vccd / sky130_fd_io__hvsbt_nand2
+XI121 int_amux_b_on_n net172 nmidb_on_n vssd vccd / sky130_fd_io__hvsbt_nand2
+XI101 pga_pad_vddioq_h_n pga_amx_vdda_h_n net222 vssd vccd / sky130_fd_io__hvsbt_nand2
+XI45 ana_pol_i out_i pol_xor_out vssd vccd / sky130_fd_io__xor2_1
+XI95 pd_on pd_on_n vssd vssd vccd vccd / sky130_fd_io__inv_1
+XI93 pu_on pu_on_n vssd vssd vccd vccd / sky130_fd_io__inv_1
+XI91 int_amuxb_on int_amux_b_on_n vssd vssd vccd vccd / sky130_fd_io__inv_1
+XI44 out_i_n out_i vssd vssd vccd vccd / sky130_fd_io__inv_1
+XI43 out out_i_n vssd vssd vccd vccd / sky130_fd_io__inv_1
+XI75 int_fbk_puon_n pu_on vssd vssd vccd vccd / sky130_fd_io__inv_1
+XI58 analog_en ana_en_i_n vssd vssd vccd vccd / sky130_fd_io__inv_1
+XI76 int_fbk_pdon_n pd_on vssd vssd vccd vccd / sky130_fd_io__inv_1
+XI73 amuxbusa_on_n amuxbusa_on vssd vssd vccd vccd / sky130_fd_io__inv_1
+XI74 amuxbusb_on_n amuxbusb_on vssd vssd vccd vccd / sky130_fd_io__inv_1
+XI35 analog_pol ana_pol_i_n vssd vssd vccd vccd / sky130_fd_io__inv_1
+XI40 ana_sel_i_n ana_sel_i vssd vssd vccd vccd / sky130_fd_io__inv_1
+XI39 analog_sel ana_sel_i_n vssd vssd vccd vccd / sky130_fd_io__inv_1
+XI89 int_amuxa_on int_amux_a_on_n vssd vssd vccd vccd / sky130_fd_io__inv_1
+XI41 ana_pol_i_n ana_pol_i vssd vssd vccd vccd / sky130_fd_io__inv_1
+.ENDS
+
+************************************************************************
+* Library Name: s8iom0s8
+* Cell Name: sky130_fd_io__gpiov2_amux_ls_inv_x1
+* View Name: schematic
+************************************************************************
+
+.SUBCKT sky130_fd_io__gpiov2_amux_ls_inv_x1 in out vgnd vpwr
+*.PININFO in:I vgnd:I vpwr:I out:O
+XMI2 out in vgnd vgnd sky130_fd_pr__nfet_g5v0d10v5 AD=0 AS=0 PD=0 PS=0
++ a=(1.00)*(0.50) l=0.50 m=1*1 p=2*(1.00)+2*(0.50) sa=265e-3 sb=265e-3
++ sd=280e-3 w=1.00
+XMI1 out in vpwr vpwr sky130_fd_pr__pfet_g5v0d10v5 AD=0 AS=0 PD=0 PS=0
++ a=(1.50)*(0.50) l=0.50 m=2*1 p=2*(1.50)+2*(0.50) sa=265e-3 sb=265e-3
++ sd=280e-3 w=1.50
+.ENDS
+
+************************************************************************
+* Library Name: s8iom0s8
+* Cell Name: sky130_fd_io__gpiov2_amux_ctl_lshv2hv
+* View Name: schematic
+************************************************************************
+
+.SUBCKT sky130_fd_io__gpiov2_amux_ctl_lshv2hv in in_b out_h out_h_n rst_h rst_h_n vgnd vpwr_hv
+*.PININFO in:I in_b:I rst_h:I rst_h_n:I vgnd:I vpwr_hv:I out_h:O out_h_n:O
+XMI1 fbk_n fbk vpwr_hv vpwr_hv sky130_fd_pr__pfet_g5v0d10v5 AD=0 AS=0 PD=0 PS=0
++ a=(0.42)*(1.00) l=1.00 m=1*1 p=2*(0.42)+2*(1.00) sa=265e-3 sb=265e-3
++ sd=280e-3 w=0.42
+XMI2 fbk fbk_n vpwr_hv vpwr_hv sky130_fd_pr__pfet_g5v0d10v5 AD=0 AS=0 PD=0 PS=0
++ a=(0.42)*(1.00) l=1.00 m=1*1 p=2*(0.42)+2*(1.00) sa=265e-3 sb=265e-3
++ sd=280e-3 w=0.42
+XMI11 out_h fbk_n vpwr_hv vpwr_hv sky130_fd_pr__pfet_g5v0d10v5 AD=0 AS=0 PD=0 PS=0
++ a=(1.50)*(0.50) l=0.50 m=1*1 p=2*(1.50)+2*(0.50) sa=265e-3 sb=265e-3
++ sd=280e-3 w=1.50
+XMI14 out_h_n fbk vpwr_hv vpwr_hv sky130_fd_pr__pfet_g5v0d10v5 AD=0 AS=0 PD=0 PS=0
++ a=(1.50)*(0.50) l=0.50 m=1*1 p=2*(1.50)+2*(0.50) sa=265e-3 sb=265e-3
++ sd=280e-3 w=1.50
+XMI64 net64 rst_h_n vgnd vgnd sky130_fd_pr__nfet_g5v0d10v5 AD=0 AS=0 PD=0 PS=0
++ a=(3.00)*(0.50) l=0.50 m=1*1 p=2*(3.00)+2*(0.50) sa=265e-3 sb=265e-3
++ sd=280e-3 w=3.00
+XMI7 fbk in_b net64 vgnd sky130_fd_pr__nfet_g5v0d10v5 AD=0 AS=0 PD=0 PS=0
++ a=(3.00)*(0.50) l=0.50 m=3*1 p=2*(3.00)+2*(0.50) sa=265e-3 sb=265e-3
++ sd=280e-3 w=3.00
+XMI8 fbk_n in net64 vgnd sky130_fd_pr__nfet_g5v0d10v5 AD=0 AS=0 PD=0 PS=0
++ a=(3.00)*(0.50) l=0.50 m=3*1 p=2*(3.00)+2*(0.50) sa=265e-3 sb=265e-3
++ sd=280e-3 w=3.00
+XMmnrst fbk rst_h vgnd vgnd sky130_fd_pr__nfet_g5v0d10v5 AD=0 AS=0 PD=0 PS=0
++ a=(1.00)*(0.50) l=0.50 m=1*1 p=2*(1.00)+2*(0.50) sa=265e-3 sb=265e-3
++ sd=280e-3 w=1.00
+XMI12 out_h fbk_n vgnd vgnd sky130_fd_pr__nfet_g5v0d10v5 AD=0 AS=0 PD=0 PS=0
++ a=(1.00)*(0.50) l=0.50 m=1*1 p=2*(1.00)+2*(0.50) sa=265e-3 sb=265e-3
++ sd=280e-3 w=1.00
+XMI13 out_h_n fbk vgnd vgnd sky130_fd_pr__nfet_g5v0d10v5 AD=0 AS=0 PD=0 PS=0
++ a=(1.00)*(0.50) l=0.50 m=1*1 p=2*(1.00)+2*(0.50) sa=265e-3 sb=265e-3
++ sd=280e-3 w=1.00
+.ENDS
+
+************************************************************************
+* Library Name: s8iom0s8
+* Cell Name: sky130_fd_io__gpiov2_amux_ctl_inv_1
+* View Name: schematic
+************************************************************************
+
+.SUBCKT sky130_fd_io__gpiov2_amux_ctl_inv_1 in out vgnd vpwr
+*.PININFO in:I vgnd:I vpwr:I out:O
+XMI27 out in vgnd vgnd sky130_fd_pr__nfet_01v8 AD=0 AS=0 PD=0 PS=0
++ a=(0.74)*(0.15) l=0.15 m=1*1 p=2*(0.74)+2*(0.15) sa=265e-3 sb=265e-3
++ sd=280e-3 w=0.74
+XMI29 out in vpwr vpwr sky130_fd_pr__pfet_01v8_hvt AD=0 AS=0 PD=0 PS=0
++ a=(1.00)*(0.25) l=0.25 m=1*1 p=2*(1.00)+2*(0.25) sa=265e-3 sb=265e-3
++ sd=280e-3 w=1.00
+.ENDS
+
+************************************************************************
+* Library Name: s8iom0s8
+* Cell Name: sky130_fd_io__gpiov2_amux_ctl_ls
+* View Name: schematic
+************************************************************************
+
+.SUBCKT sky130_fd_io__gpiov2_amux_ctl_ls in in_b out_h out_h_n rst_h rst_h_n vgnd vpwr_hv
++ vpwr_lv
+*.PININFO in:I in_b:I rst_h:I rst_h_n:I vgnd:I vpwr_hv:I vpwr_lv:I out_h:O
+*.PININFO out_h_n:O
+XMI1 fbk fbk_n vpwr_hv vpwr_hv sky130_fd_pr__pfet_g5v0d10v5 AD=0 AS=0 PD=0 PS=0
++ a=(0.75)*(0.50) l=0.50 m=1*1 p=2*(0.75)+2*(0.50) sa=265e-3 sb=265e-3
++ sd=280e-3 w=0.75
+XMI2 fbk_n fbk vpwr_hv vpwr_hv sky130_fd_pr__pfet_g5v0d10v5 AD=0 AS=0 PD=0 PS=0
++ a=(0.75)*(0.50) l=0.50 m=1*1 p=2*(0.75)+2*(0.50) sa=265e-3 sb=265e-3
++ sd=280e-3 w=0.75
+XMI11 out_h_n fbk vpwr_hv vpwr_hv sky130_fd_pr__pfet_g5v0d10v5 AD=0 AS=0 PD=0 PS=0
++ a=(1.50)*(0.50) l=0.50 m=1*1 p=2*(1.50)+2*(0.50) sa=265e-3 sb=265e-3
++ sd=280e-3 w=1.50
+XMI14 out_h fbk_n vpwr_hv vpwr_hv sky130_fd_pr__pfet_g5v0d10v5 AD=0 AS=0 PD=0 PS=0
++ a=(1.50)*(0.50) l=0.50 m=1*1 p=2*(1.50)+2*(0.50) sa=265e-3 sb=265e-3
++ sd=280e-3 w=1.50
+XMI5 net61 rst_h_n vgnd vgnd sky130_fd_pr__nfet_g5v0d10v5 AD=0 AS=0 PD=0 PS=0
++ a=(1.00)*(0.50) l=0.50 m=4*1 p=2*(1.00)+2*(0.50) sa=265e-3 sb=265e-3
++ sd=280e-3 w=1.00
+XMI7 net62 in_b net61 vgnd sky130_fd_pr__nfet_01v8_lvt AD=0 AS=0 PD=0 PS=0
++ a=(1.00)*(0.15) l=0.15 m=4*1 p=2*(1.00)+2*(0.15) sa=265e-3 sb=265e-3
++ sd=280e-3 w=1.00
+XMI8 net66 in net61 vgnd sky130_fd_pr__nfet_01v8_lvt AD=0 AS=0 PD=0 PS=0
++ a=(1.00)*(0.15) l=0.15 m=4*1 p=2*(1.00)+2*(0.15) sa=265e-3 sb=265e-3
++ sd=280e-3 w=1.00
+XMI59 fbk_n vpwr_lv net66 vgnd sky130_fd_pr__nfet_05v0_nvt AD=0 AS=0 PD=0 PS=0
++ a=(1.00)*(0.90) l=0.90 m=4*1 p=2*(1.00)+2*(0.90) sa=265e-3 sb=265e-3
++ sd=280e-3 w=1.00
+XMmnrst fbk rst_h vgnd vgnd sky130_fd_pr__nfet_g5v0d10v5 AD=0 AS=0 PD=0 PS=0
++ a=(1.00)*(0.50) l=0.50 m=1*1 p=2*(1.00)+2*(0.50) sa=265e-3 sb=265e-3
++ sd=280e-3 w=1.00
+XMI58 fbk vpwr_lv net62 vgnd sky130_fd_pr__nfet_05v0_nvt AD=0 AS=0 PD=0 PS=0
++ a=(1.00)*(0.90) l=0.90 m=4*1 p=2*(1.00)+2*(0.90) sa=265e-3 sb=265e-3
++ sd=280e-3 w=1.00
+XMI12 out_h_n fbk vgnd vgnd sky130_fd_pr__nfet_g5v0d10v5 AD=0 AS=0 PD=0 PS=0
++ a=(1.00)*(0.50) l=0.50 m=1*1 p=2*(1.00)+2*(0.50) sa=265e-3 sb=265e-3
++ sd=280e-3 w=1.00
+XMI13 out_h fbk_n vgnd vgnd sky130_fd_pr__nfet_g5v0d10v5 AD=0 AS=0 PD=0 PS=0
++ a=(1.00)*(0.50) l=0.50 m=1*1 p=2*(1.00)+2*(0.50) sa=265e-3 sb=265e-3
++ sd=280e-3 w=1.00
+.ENDS
+
+************************************************************************
+* Library Name: s8iom0s8
+* Cell Name: sky130_fd_io__gpiov2_amux_ls
+* View Name: schematic
+************************************************************************
+
+.SUBCKT sky130_fd_io__gpiov2_amux_ls amux_en_vdda_h amux_en_vdda_h_n amux_en_vddio_h amux_en_vddio_h_n
++ amux_en_vswitch_h amux_en_vswitch_h_n analog_en enable_vdda_h enable_vdda_h_n enable_vswitch_h
++ hld_i_h hld_i_h_n vccd vdda vddio_q vssa vssd vswitch
+*.PININFO analog_en:I enable_vdda_h:I enable_vswitch_h:I hld_i_h:I hld_i_h_n:I
+*.PININFO vccd:I vdda:I vddio_q:I vssa:I vssd:I vswitch:I amux_en_vdda_h:O
+*.PININFO amux_en_vdda_h_n:O amux_en_vddio_h:O amux_en_vddio_h_n:O
+*.PININFO amux_en_vswitch_h:O amux_en_vswitch_h_n:O enable_vdda_h_n:O
+XI32 enable_vdda_h enable_vdda_h_n vssa vdda / sky130_fd_io__gpiov2_amux_ls_inv_x1
+Xpd_vdda_ls amux_en_vddio_h amux_en_vddio_h_n amux_en_vdda_h amux_en_vdda_h_n enable_vdda_h_n
++ enable_vdda_h vssa vdda / sky130_fd_io__gpiov2_amux_ctl_lshv2hv
+Xpd_vswitch_ls amux_en_vddio_h amux_en_vddio_h_n amux_en_vswitch_h amux_en_vswitch_h_n net74
++ enable_vswitch_h vssa vswitch / sky130_fd_io__gpiov2_amux_ctl_lshv2hv
+XI16 ana_en_i_n ana_en_i vssd vccd / sky130_fd_io__gpiov2_amux_ctl_inv_1
+XI15 analog_en ana_en_i_n vssd vccd / sky130_fd_io__gpiov2_amux_ctl_inv_1
+XI18 enable_vswitch_h net74 vssa vswitch / sky130_fd_io__hvsbt_inv_x1
+Xpd_vddio_ls ana_en_i ana_en_i_n amux_en_vddio_h amux_en_vddio_h_n hld_i_h hld_i_h_n vssd vddio_q
++ vccd / sky130_fd_io__gpiov2_amux_ctl_ls
+.ENDS
+
+************************************************************************
+* Library Name: s8iom0s8
+* Cell Name: sky130_fd_io__gpiov2_amux_ctl_logic
+* View Name: schematic
+************************************************************************
+
+.SUBCKT sky130_fd_io__gpiov2_amux_ctl_logic analog_en analog_pol analog_sel enable_vdda_h enable_vdda_h_n
++ enable_vswitch_h hld_i_h hld_i_h_n nga_amx_vswitch_h nga_pad_vswitch_h ngb_amx_vswitch_h
++ ngb_pad_vswitch_h nmida_vccd nmidb_vccd out pd_csd_vswitch_h pga_amx_vdda_h_n pga_pad_vddioq_h_n
++ pgb_amx_vdda_h_n pgb_pad_vddioq_h_n pu_csd_vddioq_h_n vccd vdda vddio_q vssa vssd vswitch
+*.PININFO analog_en:I analog_pol:I analog_sel:I enable_vdda_h:I
+*.PININFO enable_vswitch_h:I hld_i_h:I hld_i_h_n:I out:I vccd:I vdda:I
+*.PININFO vddio_q:I vssa:I vssd:I vswitch:I enable_vdda_h_n:O
+*.PININFO nga_amx_vswitch_h:O nga_pad_vswitch_h:O ngb_amx_vswitch_h:O
+*.PININFO ngb_pad_vswitch_h:O nmida_vccd:O nmidb_vccd:O pd_csd_vswitch_h:O
+*.PININFO pga_amx_vdda_h_n:O pga_pad_vddioq_h_n:O pgb_amx_vdda_h_n:O
+*.PININFO pgb_pad_vddioq_h_n:O pu_csd_vddioq_h_n:O
+Xamux_sw_drvr amux_en_vdda_h amux_en_vdda_h_n amux_en_vddio_h amux_en_vddio_h_n amux_en_vswitch_h
++ amux_en_vswitch_h_n amuxbusa_on amuxbusa_on_n amuxbusb_on amuxbusb_on_n nga_amx_vswitch_h
++ nga_pad_vswitch_h nga_pad_vswitch_h_n ngb_amx_vswitch_h ngb_pad_vswitch_h ngb_pad_vswitch_h_n
++ nmida_on_n nmida_vccd nmida_vccd_n nmidb_on_n nmidb_vccd nmidb_vccd_n pd_csd_vswitch_h
++ pd_csd_vswitch_h_n pd_on pd_on_n pga_amx_vdda_h_n pga_pad_vddioq_h_n pgb_amx_vdda_h_n
++ pgb_pad_vddioq_h_n pu_csd_vddioq_h_n pu_on pu_on_n vccd vdda vddio_q vssa vssd vswitch /
++ sky130_fd_io__gpiov2_amux_drvr
+Xamux_lv_decoder amuxbusa_on amuxbusa_on_n amuxbusb_on amuxbusb_on_n analog_en analog_pol analog_sel
++ nga_pad_vswitch_h nga_pad_vswitch_h_n ngb_pad_vswitch_h ngb_pad_vswitch_h_n nmida_on_n
++ nmida_vccd_n nmidb_on_n nmidb_vccd_n out pd_on pd_on_n pd_csd_vswitch_h_n pga_amx_vdda_h_n
++ pga_pad_vddioq_h_n pgb_amx_vdda_h_n pgb_pad_vddioq_h_n pu_on pu_on_n pu_csd_vddioq_h_n vccd vssd
++ / sky130_fd_io__gpiov2_amux_decoder
+Xamux_ls amux_en_vdda_h amux_en_vdda_h_n amux_en_vddio_h amux_en_vddio_h_n amux_en_vswitch_h
++ amux_en_vswitch_h_n analog_en enable_vdda_h enable_vdda_h_n enable_vswitch_h hld_i_h hld_i_h_n
++ vccd vdda vddio_q vssa vssd vswitch / sky130_fd_io__gpiov2_amux_ls
+.ENDS
+
+************************************************************************
+* Library Name: s8iom0s8
+* Cell Name: sky130_fd_io__gpiov2_amux
+* View Name: schematic
+************************************************************************
+
+.SUBCKT sky130_fd_io__gpiov2_amux amuxbus_a amuxbus_b analog_en analog_pol analog_sel enable_vdda_h
++ enable_vswitch_h hld_i_h hld_i_h_n out pad vccd vdda vddio_q vssa vssd vssio_q
++ vswitch
+*.PININFO analog_en:I analog_pol:I analog_sel:I enable_vdda_h:I
+*.PININFO enable_vswitch_h:I hld_i_h:I hld_i_h_n:I out:I vccd:I vdda:I
+*.PININFO vddio_q:I vssa:I vssd:I vssio_q:I vswitch:I amuxbus_a:B amuxbus_b:B
+*.PININFO pad:B
+XI78 vssa vswitch condiode
+XI43 vssio_q vdda condiode
+XMMP_PU net85 pu_csd_vddioq_h_n vddio_q vddio_q sky130_fd_pr__pfet_g5v0d10v5 AD=0 AS=0 PD=0 PS=0
++ a=(15.0)*(0.50) l=0.50 m=4*1 p=2*(15.0)+2*(0.50) sa=265e-3 sb=265e-3
++ sd=280e-3 w=15.0
+XMI52 net81 pu_csd_vddioq_h_n vddio_q vddio_q sky130_fd_pr__pfet_g5v0d10v5 AD=0 AS=0 PD=0 PS=0
++ a=(15.0)*(0.50) l=0.50 m=3*1 p=2*(15.0)+2*(0.50) sa=265e-3 sb=265e-3
++ sd=280e-3 w=15.0
+XMI49 net81 pd_csd_vswitch_h vssio_q vssio_q sky130_fd_pr__nfet_g5v0d10v5 AD=0 AS=0 PD=0 PS=0
++ a=(5.00)*(0.50) l=0.50 m=6*1 p=2*(5.00)+2*(0.50) sa=265e-3 sb=265e-3
++ sd=280e-3 w=5.00
+XMMN_PD net85 pd_csd_vswitch_h vssio_q vssio_q sky130_fd_pr__nfet_g5v0d10v5 AD=0 AS=0 PD=0 PS=0
++ a=(5.00)*(0.50) l=0.50 m=8*1 p=2*(5.00)+2*(0.50) sa=265e-3 sb=265e-3
++ sd=280e-3 w=5.00
+Xmux_b amuxbus_b ngb_amx_vpmp_h ngb_pad_vpmp_h nmidb_vccd net101 net101 net97 net97 net100
++ net99 net0127 hld_i_h pgb_amx_vdda_h_n pgb_pad_vddioq_h_n vdda vddio_q vssa vssd /
++ sky130_fd_io__gpiov2_amux_switch
+Xmux_a amuxbus_a nga_amx_vpmp_h nga_pad_vpmp_h nmida_vccd net101 net101 net97 net97 net100
++ net99 net0127 hld_i_h pga_amx_vdda_h_n pga_pad_vddioq_h_n vdda vddio_q vssa vssd /
++ sky130_fd_io__gpiov2_amux_switch
+XBBM_logic analog_en analog_pol analog_sel enable_vdda_h net0127 enable_vswitch_h hld_i_h hld_i_h_n
++ nga_amx_vpmp_h nga_pad_vpmp_h ngb_amx_vpmp_h ngb_pad_vpmp_h nmida_vccd nmidb_vccd out
++ pd_csd_vswitch_h pga_amx_vdda_h_n pga_pad_vddioq_h_n pgb_amx_vdda_h_n pgb_pad_vddioq_h_n
++ pu_csd_vddioq_h_n vccd vdda vddio_q vssa vssd vswitch / sky130_fd_io__gpiov2_amux_ctl_logic
+XI40 pad net85 / s8_esd_res75only_small
+XI39 pad net81 / s8_esd_res75only_small
+XI53 pad pad / s8_esd_res75only_small
+XI54 pad net166 / s8_esd_res75only_small
+XI55 pad pad / s8_esd_res75only_small
+XI27 pad net100 / s8_esd_res75only_small
+XI57 pad net168 / s8_esd_res75only_small
+XI28 net166 net101 / s8_esd_res75only_small
+XI58 net168 net97 / s8_esd_res75only_small
+XI26 pad net99 / s8_esd_res75only_small
+.ENDS
+
+************************************************************************
+* Library Name: s8iom0s8
+* Cell Name: sky130_fd_io__tk_em2s
+* View Name: schematic
+************************************************************************
+
+.SUBCKT sky130_fd_io__tk_em2s a b
+*.PININFO a:B b:B
+RI2 b net8 short m=1
+RI1 a net8 short m=1
+.ENDS
+
+************************************************************************
+* Library Name: s8iom0s8
+* Cell Name: sky130_fd_io__tk_em2o
+* View Name: schematic
+************************************************************************
+
+.SUBCKT sky130_fd_io__tk_em2o a b
+*.PININFO a:B b:B
+RI2 b net7 short m=1
+RI1 a net11 short m=1
+.ENDS
+
+************************************************************************
+* Library Name: s8iom0s8
+* Cell Name: sky130_fd_io__tk_tie_r_out_esd
+* View Name: schematic
+************************************************************************
+
+.SUBCKT sky130_fd_io__tk_tie_r_out_esd a b
+*.PININFO a:B b:B
+Resd_r a b sky130_fd_pr__res_generic_po l=10.2 m=1 w=0.5
+.ENDS
+
+************************************************************************
+* Library Name: s8iom0s8
+* Cell Name: sky130_fd_io__com_pddrvr_unit_2_5
+* View Name: schematic
+************************************************************************
+
+.SUBCKT sky130_fd_io__com_pddrvr_unit_2_5 nd ngin ns
+*.PININFO ngin:I nd:B ns:B
+XMndrv nd ngin ns ns sky130_fd_pr__nfet_g5v0d10v5 AD=0 AS=0 PD=0 PS=0
++ a=(5.00)*(0.60) l=0.60 m=2*1 p=2*(5.00)+2*(0.60) sa=265e-3 sb=265e-3
++ sd=280e-3 w=5.00
+.ENDS
+
+************************************************************************
+* Library Name: s8iom0s8
+* Cell Name: sky130_fd_io__gpiov2_pddrvr_strong
+* View Name: schematic
+************************************************************************
+
+.SUBCKT sky130_fd_io__gpiov2_pddrvr_strong pad pd_h<3> pd_h<2> pd_h_i2c tie_lo_esd vcc_io vgnd_io
+*.PININFO pd_h<3>:I pd_h<2>:I pd_h_i2c:I vcc_io:I vgnd_io:I pad:O tie_lo_esd:O
+XI113 pd_h<2> net46 / sky130_fd_io__tk_em2s
+XI96 pd_h<3> net66 / sky130_fd_io__tk_em2s
+XI104 pd_h<3> net68 / sky130_fd_io__tk_em2s
+XI102 pd_h<3> net72 / sky130_fd_io__tk_em2s
+XI109 tie_lo_esd net76 / sky130_fd_io__tk_em2s
+XI108 pd_h<3> net78 / sky130_fd_io__tk_em2s
+XI97 pd_h<3> net80 / sky130_fd_io__tk_em2s
+XI87 tie_lo_esd net46 / sky130_fd_io__tk_em2o
+XI88 pd_h<3> net46 / sky130_fd_io__tk_em2o
+XI94 tie_lo_esd net66 / sky130_fd_io__tk_em2o
+XI95 pd_h<2> net66 / sky130_fd_io__tk_em2o
+XI105 pd_h<2> net68 / sky130_fd_io__tk_em2o
+XI103 tie_lo_esd net68 / sky130_fd_io__tk_em2o
+XI101 pd_h<2> net72 / sky130_fd_io__tk_em2o
+XI100 tie_lo_esd net72 / sky130_fd_io__tk_em2o
+XI111 pd_h<2> net76 / sky130_fd_io__tk_em2o
+XI110 pd_h<3> net76 / sky130_fd_io__tk_em2o
+XI107 tie_lo_esd net78 / sky130_fd_io__tk_em2o
+XI106 pd_h<2> net78 / sky130_fd_io__tk_em2o
+XI98 pd_h<2> net80 / sky130_fd_io__tk_em2o
+XI99 tie_lo_esd net80 / sky130_fd_io__tk_em2o
+XI49 vgnd_io tie_lo_esd / sky130_fd_io__tk_tie_r_out_esd
+Xn31 pad net72 vgnd_io / sky130_fd_io__com_pddrvr_unit_2_5
+Xn13 pad net46 vgnd_io / sky130_fd_io__com_pddrvr_unit_2_5
+Xn11<2> pad pd_h<2> vgnd_io / sky130_fd_io__com_pddrvr_unit_2_5
+Xn11<1> pad pd_h<2> vgnd_io / sky130_fd_io__com_pddrvr_unit_2_5
+Xn11<0> pad pd_h<2> vgnd_io / sky130_fd_io__com_pddrvr_unit_2_5
+Xn34<3> pad net76 vgnd_io / sky130_fd_io__com_pddrvr_unit_2_5
+Xn34<2> pad net76 vgnd_io / sky130_fd_io__com_pddrvr_unit_2_5
+Xn34<1> pad net76 vgnd_io / sky130_fd_io__com_pddrvr_unit_2_5
+Xn34<0> pad net76 vgnd_io / sky130_fd_io__com_pddrvr_unit_2_5
+Xn33<2> pad net78 vgnd_io / sky130_fd_io__com_pddrvr_unit_2_5
+Xn33<1> pad net78 vgnd_io / sky130_fd_io__com_pddrvr_unit_2_5
+Xn33<0> pad net78 vgnd_io / sky130_fd_io__com_pddrvr_unit_2_5
+Xn32<2> pad net68 vgnd_io / sky130_fd_io__com_pddrvr_unit_2_5
+Xn32<1> pad net68 vgnd_io / sky130_fd_io__com_pddrvr_unit_2_5
+Xn32<0> pad net68 vgnd_io / sky130_fd_io__com_pddrvr_unit_2_5
+Xn12 pad pd_h_i2c vgnd_io / sky130_fd_io__com_pddrvr_unit_2_5
+Xn21<2> pad pd_h<3> vgnd_io / sky130_fd_io__com_pddrvr_unit_2_5
+Xn21<1> pad pd_h<3> vgnd_io / sky130_fd_io__com_pddrvr_unit_2_5
+Xn21<0> pad pd_h<3> vgnd_io / sky130_fd_io__com_pddrvr_unit_2_5
+Xn22<2> pad pd_h<3> vgnd_io / sky130_fd_io__com_pddrvr_unit_2_5
+Xn22<1> pad pd_h<3> vgnd_io / sky130_fd_io__com_pddrvr_unit_2_5
+Xn22<0> pad pd_h<3> vgnd_io / sky130_fd_io__com_pddrvr_unit_2_5
+Xn23<2> pad net66 vgnd_io / sky130_fd_io__com_pddrvr_unit_2_5
+Xn23<1> pad net66 vgnd_io / sky130_fd_io__com_pddrvr_unit_2_5
+Xn23<0> pad net66 vgnd_io / sky130_fd_io__com_pddrvr_unit_2_5
+Xn24<2> pad net80 vgnd_io / sky130_fd_io__com_pddrvr_unit_2_5
+Xn24<1> pad net80 vgnd_io / sky130_fd_io__com_pddrvr_unit_2_5
+Xn24<0> pad net80 vgnd_io / sky130_fd_io__com_pddrvr_unit_2_5
+XI72 vgnd_io vcc_io condiode
+.ENDS
+
+************************************************************************
+* Library Name: s8iom0s8
+* Cell Name: sky130_fd_io__gpio_pudrvr_unit_2_5
+* View Name: schematic
+************************************************************************
+
+.SUBCKT sky130_fd_io__gpio_pudrvr_unit_2_5 pd pgin ps
+*.PININFO pgin:I pd:B ps:B
+XMpdrv pd pgin ps ps sky130_fd_pr__pfet_g5v0d10v5 AD=0 AS=0 PD=0 PS=0
++ a=(5.00)*(0.60) l=0.60 m=2*1 p=2*(5.00)+2*(0.60) sa=265e-3 sb=265e-3
++ sd=280e-3 w=5.00
+.ENDS
+
+************************************************************************
+* Library Name: s8iom0s8
+* Cell Name: sky130_fd_io__gpio_pudrvr_strong
+* View Name: schematic
+************************************************************************
+
+.SUBCKT sky130_fd_io__gpio_pudrvr_strong pad pu_h_n<3> pu_h_n<2> tie_hi_esd vcc_io vnb
+*.PININFO pu_h_n<3>:I pu_h_n<2>:I vcc_io:I vnb:I pad:O tie_hi_esd:O
+XI125 pu_h_n<3> net45 / sky130_fd_io__tk_em2s
+XI104 pu_h_n<3> net49 / sky130_fd_io__tk_em2s
+XI109 tie_hi_esd net53 / sky130_fd_io__tk_em2s
+XI108 tie_hi_esd net59 / sky130_fd_io__tk_em2s
+XI112 pu_h_n<2> net43 / sky130_fd_io__tk_em2s
+XI123 pu_h_n<2> net45 / sky130_fd_io__tk_em2o
+XI124 tie_hi_esd net45 / sky130_fd_io__tk_em2o
+XI105 pu_h_n<2> net49 / sky130_fd_io__tk_em2o
+XI103 tie_hi_esd net49 / sky130_fd_io__tk_em2o
+XI111 pu_h_n<2> net53 / sky130_fd_io__tk_em2o
+XI110 pu_h_n<3> net53 / sky130_fd_io__tk_em2o
+XI107 pu_h_n<3> net59 / sky130_fd_io__tk_em2o
+XI106 pu_h_n<2> net59 / sky130_fd_io__tk_em2o
+XI82 tie_hi_esd net43 / sky130_fd_io__tk_em2o
+XI83 pu_h_n<3> net43 / sky130_fd_io__tk_em2o
+XI49 vcc_io tie_hi_esd / sky130_fd_io__tk_tie_r_out_esd
+Xn31<2> pad pu_h_n<3> vcc_io / sky130_fd_io__gpio_pudrvr_unit_2_5
+Xn31<1> pad pu_h_n<3> vcc_io / sky130_fd_io__gpio_pudrvr_unit_2_5
+Xn31<0> pad pu_h_n<3> vcc_io / sky130_fd_io__gpio_pudrvr_unit_2_5
+Xn13<2> pad pu_h_n<2> vcc_io / sky130_fd_io__gpio_pudrvr_unit_2_5
+Xn13<1> pad pu_h_n<2> vcc_io / sky130_fd_io__gpio_pudrvr_unit_2_5
+Xn13<0> pad pu_h_n<2> vcc_io / sky130_fd_io__gpio_pudrvr_unit_2_5
+Xn11<2> pad pu_h_n<2> vcc_io / sky130_fd_io__gpio_pudrvr_unit_2_5
+Xn11<1> pad pu_h_n<2> vcc_io / sky130_fd_io__gpio_pudrvr_unit_2_5
+Xn11<0> pad pu_h_n<2> vcc_io / sky130_fd_io__gpio_pudrvr_unit_2_5
+Xn34<2> pad net53 vcc_io / sky130_fd_io__gpio_pudrvr_unit_2_5
+Xn34<1> pad net53 vcc_io / sky130_fd_io__gpio_pudrvr_unit_2_5
+Xn34<0> pad net53 vcc_io / sky130_fd_io__gpio_pudrvr_unit_2_5
+Xn33<1> pad net59 vcc_io / sky130_fd_io__gpio_pudrvr_unit_2_5
+Xn33<0> pad net59 vcc_io / sky130_fd_io__gpio_pudrvr_unit_2_5
+Xn32<2> pad net49 vcc_io / sky130_fd_io__gpio_pudrvr_unit_2_5
+Xn32<1> pad net49 vcc_io / sky130_fd_io__gpio_pudrvr_unit_2_5
+Xn32<0> pad net49 vcc_io / sky130_fd_io__gpio_pudrvr_unit_2_5
+Xn12<2> pad net43 vcc_io / sky130_fd_io__gpio_pudrvr_unit_2_5
+Xn12<1> pad net43 vcc_io / sky130_fd_io__gpio_pudrvr_unit_2_5
+Xn12<0> pad net43 vcc_io / sky130_fd_io__gpio_pudrvr_unit_2_5
+Xn21 pad pu_h_n<2> vcc_io / sky130_fd_io__gpio_pudrvr_unit_2_5
+Xn22 pad net45 vcc_io / sky130_fd_io__gpio_pudrvr_unit_2_5
+Xn23<2> pad pu_h_n<3> vcc_io / sky130_fd_io__gpio_pudrvr_unit_2_5
+Xn23<1> pad pu_h_n<3> vcc_io / sky130_fd_io__gpio_pudrvr_unit_2_5
+Xn23<0> pad pu_h_n<3> vcc_io / sky130_fd_io__gpio_pudrvr_unit_2_5
+Xn24<2> pad pu_h_n<3> vcc_io / sky130_fd_io__gpio_pudrvr_unit_2_5
+Xn24<1> pad pu_h_n<3> vcc_io / sky130_fd_io__gpio_pudrvr_unit_2_5
+Xn24<0> pad pu_h_n<3> vcc_io / sky130_fd_io__gpio_pudrvr_unit_2_5
+.ENDS
+
+************************************************************************
+* Library Name: s8iom0s8
+* Cell Name: sky130_fd_io__com_pudrvr_weak
+* View Name: schematic
+************************************************************************
+
+.SUBCKT sky130_fd_io__com_pudrvr_weak pad pu_h_n vcc_io vgnd_io vpb_drvr
+*.PININFO pu_h_n:I vcc_io:I vgnd_io:I vpb_drvr:I pad:O
+XMI29 pad pu_h_n vcc_io vpb_drvr sky130_fd_pr__pfet_g5v0d10v5 AD=0 AS=0 PD=0 PS=0
++ a=(5.00)*(0.50) l=0.50 m=4*1 p=2*(5.00)+2*(0.50) sa=265e-3 sb=265e-3
++ sd=280e-3 w=5.00
+XMpdrv pad pu_h_n vcc_io vpb_drvr sky130_fd_pr__pfet_g5v0d10v5 AD=0 AS=0 PD=0 PS=0
++ a=(7.00)*(0.50) l=0.50 m=4*1 p=2*(7.00)+2*(0.50) sa=265e-3 sb=265e-3
++ sd=280e-3 w=7.00
+.ENDS
+
+************************************************************************
+* Library Name: s8iom0s8
+* Cell Name: sky130_fd_io__gpio_pddrvr_weak
+* View Name: schematic
+************************************************************************
+
+.SUBCKT sky130_fd_io__gpio_pddrvr_weak pad pd_h vcc_io vgnd_io
+*.PININFO pd_h:I vcc_io:I vgnd_io:I pad:O
+XMndrv1 pad pd_h vgnd_io vgnd_io sky130_fd_pr__nfet_g5v0d10v5 AD=0 AS=0 PD=0 PS=0
++ a=(5.00)*(0.60) l=0.60 m=6*1 p=2*(5.00)+2*(0.60) sa=265e-3 sb=265e-3
++ sd=280e-3 w=5.00
+.ENDS
+
+************************************************************************
+* Library Name: s8iom0s8
+* Cell Name: sky130_fd_io__gpio_pddrvr_strong_slow
+* View Name: schematic
+************************************************************************
+
+.SUBCKT sky130_fd_io__gpio_pddrvr_strong_slow pad pd_h vcc_io vgnd_io
+*.PININFO pd_h:I vcc_io:I vgnd_io:I pad:O
+XMndrv pad pd_h vgnd_io vgnd_io sky130_fd_pr__nfet_g5v0d10v5 AD=0 AS=0 PD=0 PS=0
++ a=(5.00)*(0.60) l=0.60 m=4*1 p=2*(5.00)+2*(0.60) sa=265e-3 sb=265e-3
++ sd=280e-3 w=5.00
+.ENDS
+
+************************************************************************
+* Library Name: s8iom0s8
+* Cell Name: sky130_fd_io__com_pudrvr_strong_slow
+* View Name: schematic
+************************************************************************
+
+.SUBCKT sky130_fd_io__com_pudrvr_strong_slow pad pu_h_n vcc_io vgnd_io vpb_drvr
+*.PININFO pu_h_n:I vcc_io:I vgnd_io:I vpb_drvr:I pad:O
+XMpdrv pad pu_h_n vcc_io vpb_drvr sky130_fd_pr__pfet_g5v0d10v5 AD=0 AS=0 PD=0 PS=0
++ a=(7.00)*(0.50) l=0.50 m=8*1 p=2*(7.00)+2*(0.50) sa=265e-3 sb=265e-3
++ sd=280e-3 w=7.00
+.ENDS
+
+************************************************************************
+* Library Name: s8iom0s8
+* Cell Name: sky130_fd_io__tk_em1s
+* View Name: schematic
+************************************************************************
+
+.SUBCKT sky130_fd_io__tk_em1s a b
+*.PININFO a:B b:B
+RI2 b net8 short m=1
+RI1 a net8 short m=1
+.ENDS
+
+************************************************************************
+* Library Name: s8iom0s8
+* Cell Name: sky130_fd_io__com_res_strong_slow
+* View Name: schematic
+************************************************************************
+
+.SUBCKT sky130_fd_io__com_res_strong_slow ra rb vgnd_io
+*.PININFO vgnd_io:I ra:B rb:B
+XI28 net34 net30 / sky130_fd_io__tk_em1s
+Rr1 net34 ra sky130_fd_pr__res_generic_po l=5 m=1 w=2
+RI29 net30 net34 sky130_fd_pr__res_generic_po l=3 m=1 w=2
+RI32 rb net30 sky130_fd_pr__res_generic_po l=2 m=1 w=2
+.ENDS
+
+************************************************************************
+* Library Name: s8iom0s8
+* Cell Name: sky130_fd_io__tk_em1o
+* View Name: schematic
+************************************************************************
+
+.SUBCKT sky130_fd_io__tk_em1o a b
+*.PININFO a:B b:B
+RI2 b net7 short m=1
+RI1 a net11 short m=1
+.ENDS
+
+************************************************************************
+* Library Name: s8iom0s8
+* Cell Name: sky130_fd_io__com_res_weak
+* View Name: schematic
+************************************************************************
+
+.SUBCKT sky130_fd_io__com_res_weak ra rb vgnd_io
+*.PININFO vgnd_io:I ra:B rb:B
+Xe13 n<4> n<0> / sky130_fd_io__tk_em1s
+Xe12 n<3> rb / sky130_fd_io__tk_em1s
+Xe10 n<1> n<2> / sky130_fd_io__tk_em1s
+Xe11 n<2> n<3> / sky130_fd_io__tk_em1s
+Xe9 n<0> n<1> / sky130_fd_io__tk_em1s
+Xe14 n<5> n<4> / sky130_fd_io__tk_em1o
+RI134 n<5> n<4> sky130_fd_pr__res_generic_po l=6 m=1 w=0.8
+RI104 n<4> n<0> sky130_fd_pr__res_generic_po l=6 m=1 w=0.8
+RI116 net64 n<5> sky130_fd_pr__res_generic_po l=12 m=1 w=0.8
+RI83 n<1> n<2> sky130_fd_pr__res_generic_po l=1.5 m=1 w=0.8
+RI85 ra net64 sky130_fd_pr__res_generic_po l=50 m=1 w=0.8
+RI82 n<2> n<3> sky130_fd_pr__res_generic_po l=1.5 m=1 w=0.8
+RI62 n<3> rb sky130_fd_pr__res_generic_po l=1.5 m=1 w=0.8
+RI84 n<0> n<1> sky130_fd_pr__res_generic_po l=1.5 m=1 w=0.8
+.ENDS
+
+************************************************************************
+* Library Name: s8_esd
+* Cell Name: s8_esd_res250only_small
+* View Name: schematic
+************************************************************************
+
+.SUBCKT s8_esd_res250only_small pad rout
+*.PININFO pad:B rout:B
+RI228 pad net12 sky130_fd_pr__res_generic_po l=0.17 m=1 w=2
+RI229 net16 rout sky130_fd_pr__res_generic_po l=0.17 m=1 w=2
+RI175 net12 net16 sky130_fd_pr__res_generic_po l=10.07 m=1 w=2
+RI234<1> pad net12 short m=1
+RI234<2> pad net12 short m=1
+RI237<1> net16 rout short m=1
+RI237<2> net16 rout short m=1
+.ENDS
+
+************************************************************************
+* Library Name: s8iom0s8
+* Cell Name: sky130_fd_io__gpiov2_odrvr_sub
+* View Name: schematic
+************************************************************************
+
+.SUBCKT sky130_fd_io__gpiov2_odrvr_sub force_hi_h_n pad pd_h<3> pd_h<2> pd_h<1> pd_h<0> pd_h_i2c
++ pu_h_n<3> pu_h_n<2> pu_h_n<1> pu_h_n<0> tie_hi_esd tie_lo_esd vcc_io vgnd vgnd_io
+*.PININFO force_hi_h_n:I pd_h<3>:I pd_h<2>:I pd_h<1>:I pd_h<0>:I pd_h_i2c:I
+*.PININFO pu_h_n<3>:I pu_h_n<2>:I pu_h_n<1>:I pu_h_n<0>:I vcc_io:I vgnd:I
+*.PININFO vgnd_io:I pad:O tie_hi_esd:B tie_lo_esd:B
+Xpddrvr_strong pad pd_h<3> pd_h<2> pd_h_i2c tie_lo_esd vcc_io vgnd_io /
++ sky130_fd_io__gpiov2_pddrvr_strong
+Xpudrvr_strong pad pu_h_n<3> pu_h_n<2> tie_hi_esd vcc_io vgnd / sky130_fd_io__gpio_pudrvr_strong
+Xpudrvr_weak weak_pad pu_h_n<0> vcc_io vgnd vcc_io / sky130_fd_io__com_pudrvr_weak
+Xpddrvr_weak weak_pad pd_h<0> vcc_io vgnd_io / sky130_fd_io__gpio_pddrvr_weak
+Xstrong_slow_pddrvr strong_slow_pad pd_h<1> vcc_io vgnd_io / sky130_fd_io__gpio_pddrvr_strong_slow
+Xstrong_slow_pudrvr strong_slow_pad pu_h_n<1> vcc_io vgnd vcc_io / sky130_fd_io__com_pudrvr_strong_slow
+Xres strong_slow_pad pad_r250 vgnd_io / sky130_fd_io__com_res_strong_slow
+Xres_weak weak_pad pad_r250 vgnd_io / sky130_fd_io__com_res_weak
+Xresd pad pad_r250 / s8_esd_res250only_small
+XI72 vgnd_io vcc_io condiode
+XI58 vgnd_io vcc_io condiode
+XI59 vgnd_io vcc_io condiode
+XI60 vgnd_io vcc_io condiode
+.ENDS
+
+************************************************************************
+* Library Name: s8iom0s8
+* Cell Name: sky130_fd_io__com_pad
+* View Name: schematic
+************************************************************************
+
+.SUBCKT sky130_fd_io__com_pad pad vgnd_io
+*.PININFO pad:B vgnd_io:B
+XDummyInstance is a cad_dummy_open_device
+.ENDS
+
+************************************************************************
+* Library Name: s8iom0s8
+* Cell Name: sky130_fd_io__gpiov2_odrvr
+* View Name: schematic
+************************************************************************
+
+.SUBCKT sky130_fd_io__gpiov2_odrvr force_hi_h_n pad pd_h<3> pd_h<2> pd_h<1> pd_h<0> pd_h_i2c pu_h_n<3>
++ pu_h_n<2> pu_h_n<1> pu_h_n<0> tie_hi_esd tie_lo_esd vcc_io vgnd vgnd_io
+*.PININFO force_hi_h_n:I pd_h<3>:I pd_h<2>:I pd_h<1>:I pd_h<0>:I pd_h_i2c:I
+*.PININFO pu_h_n<3>:I pu_h_n<2>:I pu_h_n<1>:I pu_h_n<0>:I vcc_io:I vgnd:I
+*.PININFO vgnd_io:I pad:O tie_hi_esd:O tie_lo_esd:O
+Xodrvr force_hi_h_n pad pd_h<3> pd_h<2> pd_h<1> pd_h<0> pd_h_i2c pu_h_n<3> pu_h_n<2>
++ pu_h_n<1> pu_h_n<0> tie_hi_esd tie_lo_esd vcc_io vgnd vgnd_io / sky130_fd_io__gpiov2_odrvr_sub
+Xbondpad pad vgnd_io / sky130_fd_io__com_pad
+.ENDS
+
+************************************************************************
+* Library Name: s8iom0s8
+* Cell Name: sky130_fd_io__gpio_dat_ls
+* View Name: schematic
+************************************************************************
+
+.SUBCKT sky130_fd_io__gpio_dat_ls hld_h_n in out_h out_h_n rst_h set_h vcc_io vgnd
++ vpwr_ka
+*.PININFO hld_h_n:I in:I rst_h:I set_h:I vcc_io:I vgnd:I vpwr_ka:I out_h:O
+*.PININFO out_h_n:O
+XMI30 net79 vpwr_ka net107 vgnd sky130_fd_pr__nfet_05v0_nvt AD=0 AS=0 PD=0 PS=0
++ a=(1.00)*(0.90) l=0.90 m=8*1 p=2*(1.00)+2*(0.90) sa=265e-3 sb=265e-3
++ sd=280e-3 w=1.00
+XMI31 net83 vpwr_ka net103 vgnd sky130_fd_pr__nfet_05v0_nvt AD=0 AS=0 PD=0 PS=0
++ a=(1.00)*(0.90) l=0.90 m=8*1 p=2*(1.00)+2*(0.90) sa=265e-3 sb=265e-3
++ sd=280e-3 w=1.00
+XMI35 in_i in_i_n vgnd vgnd sky130_fd_pr__nfet_01v8 AD=0 AS=0 PD=0 PS=0
++ a=(1.00)*(0.25) l=0.25 m=2*1 p=2*(1.00)+2*(0.25) sa=265e-3 sb=265e-3
++ sd=280e-3 w=1.00
+XMI34 in_i_n in vgnd vgnd sky130_fd_pr__nfet_01v8 AD=0 AS=0 PD=0 PS=0
++ a=(1.00)*(0.25) l=0.25 m=2*1 p=2*(1.00)+2*(0.25) sa=265e-3 sb=265e-3
++ sd=280e-3 w=1.00
+XMmnrst fbk rst_h vgnd vgnd sky130_fd_pr__nfet_g5v0d10v5 AD=0 AS=0 PD=0 PS=0
++ a=(3.00)*(0.60) l=0.60 m=1*1 p=2*(3.00)+2*(0.60) sa=265e-3 sb=265e-3
++ sd=280e-3 w=3.00
+XMmnset fbk_n set_h vgnd vgnd sky130_fd_pr__nfet_g5v0d10v5 AD=0 AS=0 PD=0 PS=0
++ a=(3.00)*(0.60) l=0.60 m=1*1 p=2*(3.00)+2*(0.60) sa=265e-3 sb=265e-3
++ sd=280e-3 w=3.00
+XMI13 out_h_n fbk vgnd vgnd sky130_fd_pr__nfet_g5v0d10v5 AD=0 AS=0 PD=0 PS=0
++ a=(1.00)*(0.60) l=0.60 m=1*1 p=2*(1.00)+2*(0.60) sa=265e-3 sb=265e-3
++ sd=280e-3 w=1.00
+XMI12 out_h fbk_n vgnd vgnd sky130_fd_pr__nfet_g5v0d10v5 AD=0 AS=0 PD=0 PS=0
++ a=(1.00)*(0.60) l=0.60 m=1*1 p=2*(1.00)+2*(0.60) sa=265e-3 sb=265e-3
++ sd=280e-3 w=1.00
+XMI8 net103 in_i vgnd vgnd sky130_fd_pr__nfet_01v8_lvt AD=0 AS=0 PD=0 PS=0
++ a=(1.00)*(0.15) l=0.15 m=8*1 p=2*(1.00)+2*(0.15) sa=265e-3 sb=265e-3
++ sd=280e-3 w=1.00
+XMI7 net107 in_i_n vgnd vgnd sky130_fd_pr__nfet_01v8_lvt AD=0 AS=0 PD=0 PS=0
++ a=(1.00)*(0.15) l=0.15 m=8*1 p=2*(1.00)+2*(0.15) sa=265e-3 sb=265e-3
++ sd=280e-3 w=1.00
+XMI6 fbk_n hld_h_n net83 vgnd sky130_fd_pr__nfet_g5v0d10v5 AD=0 AS=0 PD=0 PS=0
++ a=(5.00)*(0.50) l=0.50 m=1*1 p=2*(5.00)+2*(0.50) sa=265e-3 sb=265e-3
++ sd=280e-3 w=5.00
+XMI5 fbk hld_h_n net79 vgnd sky130_fd_pr__nfet_g5v0d10v5 AD=0 AS=0 PD=0 PS=0
++ a=(5.00)*(0.50) l=0.50 m=1*1 p=2*(5.00)+2*(0.50) sa=265e-3 sb=265e-3
++ sd=280e-3 w=5.00
+XMI4 fbk_n fbk vgnd vgnd sky130_fd_pr__nfet_g5v0d10v5 AD=0 AS=0 PD=0 PS=0
++ a=(0.70)*(0.60) l=0.60 m=1*1 p=2*(0.70)+2*(0.60) sa=265e-3 sb=265e-3
++ sd=280e-3 w=0.70
+XMI3 fbk fbk_n vgnd vgnd sky130_fd_pr__nfet_g5v0d10v5 AD=0 AS=0 PD=0 PS=0
++ a=(0.70)*(0.60) l=0.60 m=1*1 p=2*(0.70)+2*(0.60) sa=265e-3 sb=265e-3
++ sd=280e-3 w=0.70
+XMI32 in_i_n in vpwr_ka vpwr_ka sky130_fd_pr__pfet_01v8_hvt AD=0 AS=0 PD=0 PS=0
++ a=(3.00)*(0.25) l=0.25 m=1*1 p=2*(3.00)+2*(0.25) sa=265e-3 sb=265e-3
++ sd=280e-3 w=3.00
+XMI14 out_h_n fbk vcc_io vcc_io sky130_fd_pr__pfet_g5v0d10v5 AD=0 AS=0 PD=0 PS=0
++ a=(3.00)*(0.50) l=0.50 m=1*1 p=2*(3.00)+2*(0.50) sa=265e-3 sb=265e-3
++ sd=280e-3 w=3.00
+XMI11 out_h fbk_n vcc_io vcc_io sky130_fd_pr__pfet_g5v0d10v5 AD=0 AS=0 PD=0 PS=0
++ a=(3.00)*(0.50) l=0.50 m=1*1 p=2*(3.00)+2*(0.50) sa=265e-3 sb=265e-3
++ sd=280e-3 w=3.00
+XMI33 in_i in_i_n vpwr_ka vpwr_ka sky130_fd_pr__pfet_01v8_hvt AD=0 AS=0 PD=0 PS=0
++ a=(3.00)*(0.25) l=0.25 m=1*1 p=2*(3.00)+2*(0.25) sa=265e-3 sb=265e-3
++ sd=280e-3 w=3.00
+XMI2 fbk fbk_n vcc_io vcc_io sky130_fd_pr__pfet_g5v0d10v5 AD=0 AS=0 PD=0 PS=0
++ a=(1.00)*(0.50) l=0.50 m=1*1 p=2*(1.00)+2*(0.50) sa=265e-3 sb=265e-3
++ sd=280e-3 w=1.00
+XMI1 fbk_n fbk vcc_io vcc_io sky130_fd_pr__pfet_g5v0d10v5 AD=0 AS=0 PD=0 PS=0
++ a=(1.00)*(0.50) l=0.50 m=1*1 p=2*(1.00)+2*(0.50) sa=265e-3 sb=265e-3
++ sd=280e-3 w=1.00
+.ENDS
+
+************************************************************************
+* Library Name: s8iom0s8
+* Cell Name: sky130_fd_io__com_cclat_hvnor3
+* View Name: schematic
+************************************************************************
+
+.SUBCKT sky130_fd_io__com_cclat_hvnor3 in0 in1 in2 out vcc_io vgnd vnb
+*.PININFO in0:I in1:I in2:I vcc_io:I vgnd:I vnb:I out:O
+XMmp1 n<1> in1 n<0> vcc_io sky130_fd_pr__pfet_g5v0d10v5 AD=0 AS=0 PD=0 PS=0
++ a=(5.00)*(0.50) l=0.50 m=4*1 p=2*(5.00)+2*(0.50) sa=265e-3 sb=265e-3
++ sd=280e-3 w=5.00
+XMmp2 out in2 n<1> vcc_io sky130_fd_pr__pfet_g5v0d10v5 AD=0 AS=0 PD=0 PS=0
++ a=(5.00)*(0.50) l=0.50 m=4*1 p=2*(5.00)+2*(0.50) sa=265e-3 sb=265e-3
++ sd=280e-3 w=5.00
+XMmp0 n<0> in0 vcc_io vcc_io sky130_fd_pr__pfet_g5v0d10v5 AD=0 AS=0 PD=0 PS=0
++ a=(5.00)*(0.60) l=0.60 m=8*1 p=2*(5.00)+2*(0.60) sa=265e-3 sb=265e-3
++ sd=280e-3 w=5.00
+XMmn1 out in1 vgnd vnb sky130_fd_pr__nfet_g5v0d10v5 AD=0 AS=0 PD=0 PS=0
++ a=(3.00)*(0.60) l=0.60 m=2*1 p=2*(3.00)+2*(0.60) sa=265e-3 sb=265e-3
++ sd=280e-3 w=3.00
+XMmn2 out in2 vgnd vnb sky130_fd_pr__nfet_g5v0d10v5 AD=0 AS=0 PD=0 PS=0
++ a=(3.00)*(0.60) l=0.60 m=2*1 p=2*(3.00)+2*(0.60) sa=265e-3 sb=265e-3
++ sd=280e-3 w=3.00
+XMmn0 out in0 vgnd vnb sky130_fd_pr__nfet_g5v0d10v5 AD=0 AS=0 PD=0 PS=0
++ a=(3.00)*(0.60) l=0.60 m=2*1 p=2*(3.00)+2*(0.60) sa=265e-3 sb=265e-3
++ sd=280e-3 w=3.00
+.ENDS
+
+************************************************************************
+* Library Name: s8iom0s8
+* Cell Name: sky130_fd_io__com_cclat_hvnand3
+* View Name: schematic
+************************************************************************
+
+.SUBCKT sky130_fd_io__com_cclat_hvnand3 in0 in1 in2 out vcc_io vgnd vnb
+*.PININFO in0:I in1:I in2:I vcc_io:I vgnd:I vnb:I out:O
+XMmp1 out in1 vcc_io vcc_io sky130_fd_pr__pfet_g5v0d10v5 AD=0 AS=0 PD=0 PS=0
++ a=(5.00)*(0.50) l=0.50 m=1*1 p=2*(5.00)+2*(0.50) sa=265e-3 sb=265e-3
++ sd=280e-3 w=5.00
+XMmp2 out in2 vcc_io vcc_io sky130_fd_pr__pfet_g5v0d10v5 AD=0 AS=0 PD=0 PS=0
++ a=(5.00)*(0.50) l=0.50 m=1*1 p=2*(5.00)+2*(0.50) sa=265e-3 sb=265e-3
++ sd=280e-3 w=5.00
+XMmp0 out in0 vcc_io vcc_io sky130_fd_pr__pfet_g5v0d10v5 AD=0 AS=0 PD=0 PS=0
++ a=(5.00)*(0.50) l=0.50 m=1*1 p=2*(5.00)+2*(0.50) sa=265e-3 sb=265e-3
++ sd=280e-3 w=5.00
+XMmn1 n1 in1 n0 vnb sky130_fd_pr__nfet_g5v0d10v5 AD=0 AS=0 PD=0 PS=0
++ a=(3.00)*(0.60) l=0.60 m=2*1 p=2*(3.00)+2*(0.60) sa=265e-3 sb=265e-3
++ sd=280e-3 w=3.00
+XMmn0 n0 in0 vgnd vnb sky130_fd_pr__nfet_g5v0d10v5 AD=0 AS=0 PD=0 PS=0
++ a=(3.00)*(0.60) l=0.60 m=4*1 p=2*(3.00)+2*(0.60) sa=265e-3 sb=265e-3
++ sd=280e-3 w=3.00
+XMmn2 out in2 n1 vnb sky130_fd_pr__nfet_g5v0d10v5 AD=0 AS=0 PD=0 PS=0
++ a=(3.00)*(0.60) l=0.60 m=2*1 p=2*(3.00)+2*(0.60) sa=265e-3 sb=265e-3
++ sd=280e-3 w=3.00
+.ENDS
+
+************************************************************************
+* Library Name: s8iom0s8
+* Cell Name: sky130_fd_io__com_cclat_inv_in
+* View Name: schematic
+************************************************************************
+
+.SUBCKT sky130_fd_io__com_cclat_inv_in in out vcc_io vgnd vnb
+*.PININFO in:I vcc_io:I vgnd:I vnb:I out:O
+XMmp1 out in vcc_io vcc_io sky130_fd_pr__pfet_g5v0d10v5 AD=0 AS=0 PD=0 PS=0
++ a=(5.00)*(0.50) l=0.50 m=1*1 p=2*(5.00)+2*(0.50) sa=265e-3 sb=265e-3
++ sd=280e-3 w=5.00
+XMmn1 out in vgnd vnb sky130_fd_pr__nfet_g5v0d10v5 AD=0 AS=0 PD=0 PS=0
++ a=(3.00)*(0.60) l=0.60 m=1*1 p=2*(3.00)+2*(0.60) sa=265e-3 sb=265e-3
++ sd=280e-3 w=3.00
+.ENDS
+
+************************************************************************
+* Library Name: s8iom0s8
+* Cell Name: sky130_fd_io__com_cclat_inv_out
+* View Name: schematic
+************************************************************************
+
+.SUBCKT sky130_fd_io__com_cclat_inv_out in out vcc_io vgnd vnb
+*.PININFO in:I vcc_io:I vgnd:I vnb:I out:O
+XMI1 out in vcc_io vcc_io sky130_fd_pr__pfet_g5v0d10v5 AD=0 AS=0 PD=0 PS=0
++ a=(5.00)*(0.50) l=0.50 m=6*1 p=2*(5.00)+2*(0.50) sa=265e-3 sb=265e-3
++ sd=280e-3 w=5.00
+XMI2 out in vgnd vnb sky130_fd_pr__nfet_g5v0d10v5 AD=0 AS=0 PD=0 PS=0
++ a=(3.00)*(0.60) l=0.60 m=6*1 p=2*(3.00)+2*(0.60) sa=265e-3 sb=265e-3
++ sd=280e-3 w=3.00
+.ENDS
+
+************************************************************************
+* Library Name: s8iom0s8
+* Cell Name: sky130_fd_io__com_cclat
+* View Name: schematic
+************************************************************************
+
+.SUBCKT sky130_fd_io__com_cclat drvhi_h drvlo_h_n oe_h_n pd_dis_h pu_dis_h vcc_io vgnd
+*.PININFO oe_h_n:I pd_dis_h:I pu_dis_h:I vcc_io:I vgnd:I drvhi_h:O drvlo_h_n:O
+Xnor3 oe_i_h_n drvhi_h pd_dis_h n1 vcc_io vgnd vgnd / sky130_fd_io__com_cclat_hvnor3
+Xnand3 oe_i_h drvlo_h_n pu_dis_h_n n0 vcc_io vgnd vgnd / sky130_fd_io__com_cclat_hvnand3
+Xinv_pudis pu_dis_h pu_dis_h_n vcc_io vgnd vgnd / sky130_fd_io__com_cclat_inv_in
+Xinv_oe2 oe_i_h oe_i_h_n vcc_io vgnd vgnd / sky130_fd_io__com_cclat_inv_in
+Xinv_oe1 oe_h_n oe_i_h vcc_io vgnd vgnd / sky130_fd_io__com_cclat_inv_in
+Xinv_out_1 n0 drvhi_h vcc_io vgnd vgnd / sky130_fd_io__com_cclat_inv_out
+Xinv_out n1 drvlo_h_n vcc_io vgnd vgnd / sky130_fd_io__com_cclat_inv_out
+.ENDS
+
+************************************************************************
+* Library Name: s8iom0s8
+* Cell Name: sky130_fd_io__gpiov2_opath_datoe
+* View Name: schematic
+************************************************************************
+
+.SUBCKT sky130_fd_io__gpiov2_opath_datoe drvhi_h drvlo_h_n hld_h_n hld_i_ovr_h od_h oe_h oe_n out
++ vcc_io vgnd vpwr_ka
+*.PININFO hld_h_n:I hld_i_ovr_h:I od_h:I oe_n:I out:I vcc_io:I vgnd:I
+*.PININFO vpwr_ka:I drvhi_h:O drvlo_h_n:O oe_h:O
+Xoe_ls hld_i_ovr_h oe_n oe_h_n oe_h vgnd od_h vcc_io vgnd vpwr_ka
++ / sky130_fd_io__gpio_dat_ls
+Xdat_ls hld_i_ovr_h out pd_dis_h pu_dis_h vgnd od_h vcc_io vgnd vpwr_ka
++ / sky130_fd_io__gpio_dat_ls
+Xcclat drvhi_h drvlo_h_n oe_h_n pd_dis_h pu_dis_h vcc_io vgnd / sky130_fd_io__com_cclat
+.ENDS
+
+************************************************************************
+* Library Name: s8iom0s8
+* Cell Name: sky130_fd_io__hvsbt_xor
+* View Name: schematic
+************************************************************************
+
+.SUBCKT sky130_fd_io__hvsbt_xor in0 in1 out vgnd vpwr
+*.PININFO in0:I in1:I vgnd:I vpwr:I out:O
+XMI12 out net70 net29 vpwr sky130_fd_pr__pfet_g5v0d10v5 AD=0 AS=0 PD=0 PS=0
++ a=(1.00)*(0.60) l=0.60 m=2*1 p=2*(1.00)+2*(0.60) sa=265e-3 sb=265e-3
++ sd=280e-3 w=1.00
+XMI13 net45 in1 vpwr vpwr sky130_fd_pr__pfet_g5v0d10v5 AD=0 AS=0 PD=0 PS=0
++ a=(1.00)*(0.60) l=0.60 m=2*1 p=2*(1.00)+2*(0.60) sa=265e-3 sb=265e-3
++ sd=280e-3 w=1.00
+XMI18 net54 in0 vpwr vpwr sky130_fd_pr__pfet_g5v0d10v5 AD=0 AS=0 PD=0 PS=0
++ a=(1.00)*(0.60) l=0.60 m=2*1 p=2*(1.00)+2*(0.60) sa=265e-3 sb=265e-3
++ sd=280e-3 w=1.00
+XMI17 net70 in1 vpwr vpwr sky130_fd_pr__pfet_g5v0d10v5 AD=0 AS=0 PD=0 PS=0
++ a=(1.00)*(0.60) l=0.60 m=2*1 p=2*(1.00)+2*(0.60) sa=265e-3 sb=265e-3
++ sd=280e-3 w=1.00
+XMI5 out net54 net45 vpwr sky130_fd_pr__pfet_g5v0d10v5 AD=0 AS=0 PD=0 PS=0
++ a=(1.00)*(0.60) l=0.60 m=2*1 p=2*(1.00)+2*(0.60) sa=265e-3 sb=265e-3
++ sd=280e-3 w=1.00
+XMI3 net29 in0 vpwr vpwr sky130_fd_pr__pfet_g5v0d10v5 AD=0 AS=0 PD=0 PS=0
++ a=(1.00)*(0.60) l=0.60 m=2*1 p=2*(1.00)+2*(0.60) sa=265e-3 sb=265e-3
++ sd=280e-3 w=1.00
+XMI19 net54 in0 vgnd vgnd sky130_fd_pr__nfet_g5v0d10v5 AD=0 AS=0 PD=0 PS=0
++ a=(0.70)*(0.60) l=0.60 m=1*1 p=2*(0.70)+2*(0.60) sa=265e-3 sb=265e-3
++ sd=280e-3 w=0.70
+XMI14 net58 in0 vgnd vgnd sky130_fd_pr__nfet_g5v0d10v5 AD=0 AS=0 PD=0 PS=0
++ a=(0.70)*(0.60) l=0.60 m=1*1 p=2*(0.70)+2*(0.60) sa=265e-3 sb=265e-3
++ sd=280e-3 w=0.70
+XMI15 net62 net54 vgnd vgnd sky130_fd_pr__nfet_g5v0d10v5 AD=0 AS=0 PD=0 PS=0
++ a=(0.70)*(0.60) l=0.60 m=1*1 p=2*(0.70)+2*(0.60) sa=265e-3 sb=265e-3
++ sd=280e-3 w=0.70
+XMI6 out net70 net62 vgnd sky130_fd_pr__nfet_g5v0d10v5 AD=0 AS=0 PD=0 PS=0
++ a=(0.70)*(0.60) l=0.60 m=1*1 p=2*(0.70)+2*(0.60) sa=265e-3 sb=265e-3
++ sd=280e-3 w=0.70
+XMI16 net70 in1 vgnd vgnd sky130_fd_pr__nfet_g5v0d10v5 AD=0 AS=0 PD=0 PS=0
++ a=(0.70)*(0.60) l=0.60 m=1*1 p=2*(0.70)+2*(0.60) sa=265e-3 sb=265e-3
++ sd=280e-3 w=0.70
+XMI1 out in1 net58 vgnd sky130_fd_pr__nfet_g5v0d10v5 AD=0 AS=0 PD=0 PS=0
++ a=(0.70)*(0.60) l=0.60 m=1*1 p=2*(0.70)+2*(0.60) sa=265e-3 sb=265e-3
++ sd=280e-3 w=0.70
+.ENDS
+
+************************************************************************
+* Library Name: s8iom0s8
+* Cell Name: sky130_fd_io__com_ctl_ls
+* View Name: schematic
+************************************************************************
+
+.SUBCKT sky130_fd_io__com_ctl_ls hld_h_n in out_h out_h_n rst_h set_h vcc_io vgnd
++ vpwr
+*.PININFO hld_h_n:I in:I rst_h:I set_h:I vcc_io:I vgnd:I vpwr:I out_h:O
+*.PININFO out_h_n:O
+XMI1 fbk_n fbk vcc_io vcc_io sky130_fd_pr__pfet_g5v0d10v5 AD=0 AS=0 PD=0 PS=0
++ a=(0.75)*(0.50) l=0.50 m=1*1 p=2*(0.75)+2*(0.50) sa=265e-3 sb=265e-3
++ sd=280e-3 w=0.75
+XMI2 fbk fbk_n vcc_io vcc_io sky130_fd_pr__pfet_g5v0d10v5 AD=0 AS=0 PD=0 PS=0
++ a=(0.75)*(0.50) l=0.50 m=1*1 p=2*(0.75)+2*(0.50) sa=265e-3 sb=265e-3
++ sd=280e-3 w=0.75
+XMI11 out_h fbk_n vcc_io vcc_io sky130_fd_pr__pfet_g5v0d10v5 AD=0 AS=0 PD=0 PS=0
++ a=(3.00)*(0.60) l=0.60 m=1*1 p=2*(3.00)+2*(0.60) sa=265e-3 sb=265e-3
++ sd=280e-3 w=3.00
+XMI29 in_i_n in vpwr vpwr sky130_fd_pr__pfet_01v8_hvt AD=0 AS=0 PD=0 PS=0
++ a=(1.00)*(0.25) l=0.25 m=1*1 p=2*(1.00)+2*(0.25) sa=265e-3 sb=265e-3
++ sd=280e-3 w=1.00
+XMI34 in_i in_i_n vpwr vpwr sky130_fd_pr__pfet_01v8_hvt AD=0 AS=0 PD=0 PS=0
++ a=(1.00)*(0.25) l=0.25 m=1*1 p=2*(1.00)+2*(0.25) sa=265e-3 sb=265e-3
++ sd=280e-3 w=1.00
+XMI14 out_h_n fbk vcc_io vcc_io sky130_fd_pr__pfet_g5v0d10v5 AD=0 AS=0 PD=0 PS=0
++ a=(3.00)*(0.60) l=0.60 m=1*1 p=2*(3.00)+2*(0.60) sa=265e-3 sb=265e-3
++ sd=280e-3 w=3.00
+XMI7 net94 in_i_n vgnd vgnd sky130_fd_pr__nfet_01v8_lvt AD=0 AS=0 PD=0 PS=0
++ a=(1.00)*(0.15) l=0.15 m=4*1 p=2*(1.00)+2*(0.15) sa=265e-3 sb=265e-3
++ sd=280e-3 w=1.00
+XMI8 net98 in_i vgnd vgnd sky130_fd_pr__nfet_01v8_lvt AD=0 AS=0 PD=0 PS=0
++ a=(1.00)*(0.15) l=0.15 m=4*1 p=2*(1.00)+2*(0.15) sa=265e-3 sb=265e-3
++ sd=280e-3 w=1.00
+XMI3 fbk fbk_n vgnd vgnd sky130_fd_pr__nfet_g5v0d10v5 AD=0 AS=0 PD=0 PS=0
++ a=(0.75)*(1.00) l=1.00 m=1*1 p=2*(0.75)+2*(1.00) sa=265e-3 sb=265e-3
++ sd=280e-3 w=0.75
+XMI4 fbk_n fbk vgnd vgnd sky130_fd_pr__nfet_g5v0d10v5 AD=0 AS=0 PD=0 PS=0
++ a=(0.75)*(1.00) l=1.00 m=1*1 p=2*(0.75)+2*(1.00) sa=265e-3 sb=265e-3
++ sd=280e-3 w=0.75
+XMI5 fbk hld_h_n net130 vgnd sky130_fd_pr__nfet_g5v0d10v5 AD=0 AS=0 PD=0 PS=0
++ a=(3.00)*(0.60) l=0.60 m=1*1 p=2*(3.00)+2*(0.60) sa=265e-3 sb=265e-3
++ sd=280e-3 w=3.00
+XMI27 in_i_n in vgnd vgnd sky130_fd_pr__nfet_01v8 AD=0 AS=0 PD=0 PS=0
++ a=(1.00)*(0.25) l=0.25 m=1*1 p=2*(1.00)+2*(0.25) sa=265e-3 sb=265e-3
++ sd=280e-3 w=1.00
+XMI6 fbk_n hld_h_n net122 vgnd sky130_fd_pr__nfet_g5v0d10v5 AD=0 AS=0 PD=0 PS=0
++ a=(3.00)*(0.60) l=0.60 m=1*1 p=2*(3.00)+2*(0.60) sa=265e-3 sb=265e-3
++ sd=280e-3 w=3.00
+XMI59 net122 vpwr net98 vgnd sky130_fd_pr__nfet_05v0_nvt AD=0 AS=0 PD=0 PS=0
++ a=(1.00)*(0.90) l=0.90 m=4*1 p=2*(1.00)+2*(0.90) sa=265e-3 sb=265e-3
++ sd=280e-3 w=1.00
+XMmnrst fbk rst_h vgnd vgnd sky130_fd_pr__nfet_g5v0d10v5 AD=0 AS=0 PD=0 PS=0
++ a=(3.00)*(0.60) l=0.60 m=1*1 p=2*(3.00)+2*(0.60) sa=265e-3 sb=265e-3
++ sd=280e-3 w=3.00
+XMI58 net130 vpwr net94 vgnd sky130_fd_pr__nfet_05v0_nvt AD=0 AS=0 PD=0 PS=0
++ a=(1.00)*(0.90) l=0.90 m=4*1 p=2*(1.00)+2*(0.90) sa=265e-3 sb=265e-3
++ sd=280e-3 w=1.00
+XMI12 out_h fbk_n vgnd vgnd sky130_fd_pr__nfet_g5v0d10v5 AD=0 AS=0 PD=0 PS=0
++ a=(1.00)*(0.60) l=0.60 m=1*1 p=2*(1.00)+2*(0.60) sa=265e-3 sb=265e-3
++ sd=280e-3 w=1.00
+XMI32 in_i in_i_n vgnd vgnd sky130_fd_pr__nfet_01v8 AD=0 AS=0 PD=0 PS=0
++ a=(1.00)*(0.25) l=0.25 m=1*1 p=2*(1.00)+2*(0.25) sa=265e-3 sb=265e-3
++ sd=280e-3 w=1.00
+XMmnset fbk_n set_h vgnd vgnd sky130_fd_pr__nfet_g5v0d10v5 AD=0 AS=0 PD=0 PS=0
++ a=(3.00)*(0.60) l=0.60 m=1*1 p=2*(3.00)+2*(0.60) sa=265e-3 sb=265e-3
++ sd=280e-3 w=3.00
+XMI13 out_h_n fbk vgnd vgnd sky130_fd_pr__nfet_g5v0d10v5 AD=0 AS=0 PD=0 PS=0
++ a=(1.00)*(0.60) l=0.60 m=1*1 p=2*(1.00)+2*(0.60) sa=265e-3 sb=265e-3
++ sd=280e-3 w=1.00
+.ENDS
+
+************************************************************************
+* Library Name: s8iom0s8
+* Cell Name: sky130_fd_io__gpiov2_octl
+* View Name: schematic
+************************************************************************
+
+.SUBCKT sky130_fd_io__gpiov2_octl dm_h<2> dm_h<1> dm_h<0> dm_h_n<2> dm_h_n<1> dm_h_n<0> hld_i_h_n od_h
++ pden_h_n<2> pden_h_n<1> pden_h_n<0> puen_0_h puen_2or1_h puen_h<1> puen_h<0> slow slow_h slow_h_n
++ vcc_io vgnd vpwr vreg_en_h_n
+*.PININFO dm_h<2>:I dm_h<1>:I dm_h<0>:I dm_h_n<2>:I dm_h_n<1>:I dm_h_n<0>:I
+*.PININFO hld_i_h_n:I od_h:I slow:I vcc_io:I vgnd:I vpwr:I vreg_en_h_n:I
+*.PININFO pden_h_n<2>:O pden_h_n<1>:O pden_h_n<0>:O puen_0_h:O puen_2or1_h:O
+*.PININFO puen_h<1>:O puen_h<0>:O slow_h:O slow_h_n:O
+XI381 dm_h<1> dm_h<0> net70 vgnd vcc_io / sky130_fd_io__hvsbt_nor
+XI201 dm_h_n<2> dm_h_n<1> n<9> vgnd vcc_io / sky130_fd_io__hvsbt_nor
+XI211 n<8> dm_h_n<1> puen_0_h vgnd vcc_io / sky130_fd_io__hvsbt_nor
+XI200 dm_h<2> dm_h<1> n<10> vgnd vcc_io / sky130_fd_io__hvsbt_xor
+XI210 dm_h<2> dm_h<0> n<8> vgnd vcc_io / sky130_fd_io__hvsbt_xor
+XI382 dm_h<2> net70 pden_h_n<2> vgnd vcc_io / sky130_fd_io__hvsbt_nand2
+XI205 n<1> n<0> puen_2or1_h vgnd vcc_io / sky130_fd_io__hvsbt_nand2
+XI204 n<9> dm_h_n<0> n<0> vgnd vcc_io / sky130_fd_io__hvsbt_nand2
+XI203 n<10> dm_h<0> n<1> vgnd vcc_io / sky130_fd_io__hvsbt_nand2
+XI208 puen_2or1_h vreg_en_h_n n<5> vgnd vcc_io / sky130_fd_io__hvsbt_nand2
+XI187 dm_h<1> dm_h<0> n<3> vgnd vcc_io / sky130_fd_io__hvsbt_nand2
+XI186 dm_h_n<2> dm_h_n<1> n<4> vgnd vcc_io / sky130_fd_io__hvsbt_nand2
+XI185 dm_h_n<0> n<4> net130 vgnd vcc_io / sky130_fd_io__hvsbt_nand2
+XI247 pden_h1 pden_h_n<1> vgnd vcc_io / sky130_fd_io__hvsbt_inv_x2
+XI249 pden_h0 pden_h_n<0> vgnd vcc_io / sky130_fd_io__hvsbt_inv_x2
+XI256 puen_h0_n puen_h<0> vgnd vcc_io / sky130_fd_io__hvsbt_inv_x2
+XI254 puen_h1_n puen_h<1> vgnd vcc_io / sky130_fd_io__hvsbt_inv_x2
+XI375 n<3> pden_h0 vgnd vcc_io / sky130_fd_io__hvsbt_inv_x1
+XI374 net130 pden_h1 vgnd vcc_io / sky130_fd_io__hvsbt_inv_x1
+XI376 n<2> puen_h1_n vgnd vcc_io / sky130_fd_io__hvsbt_inv_x1
+XI209 n<5> n<2> vgnd vcc_io / sky130_fd_io__hvsbt_inv_x1
+XI377 puen_0_h puen_h0_n vgnd vcc_io / sky130_fd_io__hvsbt_inv_x1
+Xls_slow hld_i_h_n slow slow_h slow_h_n od_h vgnd vcc_io vgnd vpwr
++ / sky130_fd_io__com_ctl_ls
+.ENDS
+
+************************************************************************
+* Library Name: s8iom0s8
+* Cell Name: sky130_fd_io__gpiov2_pupredrvr_strong_nd2
+* View Name: schematic
+************************************************************************
+
+.SUBCKT sky130_fd_io__gpiov2_pupredrvr_strong_nd2 drvhi_h en_fast<3> en_fast<2> en_fast<1> en_fast<0>
++ pu_h_n puen_h vcc_io vgnd_io
+*.PININFO drvhi_h:I en_fast<3>:I en_fast<2>:I en_fast<1>:I en_fast<0>:I
+*.PININFO puen_h:I vcc_io:I vgnd_io:I pu_h_n:O
+XE1 net24 pu_h_n / sky130_fd_io__tk_em1s
+Rrespu2 pu_h_n int_res sky130_fd_pr__res_generic_po l=4 m=1 w=0.33
+Rrespu1 int_res net24 sky130_fd_pr__res_generic_po l=11 m=1 w=0.33
+XMmnen_fast<3> int<3> en_fast<3> vgnd_io vgnd_io sky130_fd_pr__nfet_g5v0d10v5 AD=0 AS=0 PD=0 PS=0
++ a=(1.50)*(1.00) l=1.00 m=1*1 p=2*(1.50)+2*(1.00) sa=265e-3 sb=265e-3
++ sd=280e-3 w=1.50
+XMmnen_fast<2> int<2> en_fast<2> vgnd_io vgnd_io sky130_fd_pr__nfet_g5v0d10v5 AD=0 AS=0 PD=0 PS=0
++ a=(1.50)*(1.00) l=1.00 m=1*1 p=2*(1.50)+2*(1.00) sa=265e-3 sb=265e-3
++ sd=280e-3 w=1.50
+XMmnen_fast<1> int<1> en_fast<1> vgnd_io vgnd_io sky130_fd_pr__nfet_g5v0d10v5 AD=0 AS=0 PD=0 PS=0
++ a=(1.50)*(1.00) l=1.00 m=1*1 p=2*(1.50)+2*(1.00) sa=265e-3 sb=265e-3
++ sd=280e-3 w=1.50
+XMmnen_fast<0> int<0> en_fast<0> vgnd_io vgnd_io sky130_fd_pr__nfet_g5v0d10v5 AD=0 AS=0 PD=0 PS=0
++ a=(1.50)*(1.00) l=1.00 m=1*1 p=2*(1.50)+2*(1.00) sa=265e-3 sb=265e-3
++ sd=280e-3 w=1.50
+XMmnin_slow pu_h_n drvhi_h n<2> vgnd_io sky130_fd_pr__nfet_g5v0d10v5 AD=0 AS=0 PD=0 PS=0
++ a=(0.42)*(4.00) l=4.00 m=1*1 p=2*(0.42)+2*(4.00) sa=265e-3 sb=265e-3
++ sd=280e-3 w=0.42
+XMmnen_slow1 n<2> puen_h vgnd_io vgnd_io sky130_fd_pr__nfet_g5v0d10v5 AD=0 AS=0 PD=0 PS=0
++ a=(0.42)*(4.00) l=4.00 m=1*1 p=2*(0.42)+2*(4.00) sa=265e-3 sb=265e-3
++ sd=280e-3 w=0.42
+XMmnin_fast<3> net24 drvhi_h int<3> vgnd_io sky130_fd_pr__nfet_g5v0d10v5 AD=0 AS=0 PD=0 PS=0
++ a=(1.50)*(0.50) l=0.50 m=1*1 p=2*(1.50)+2*(0.50) sa=265e-3 sb=265e-3
++ sd=280e-3 w=1.50
+XMmnin_fast<2> net24 drvhi_h int<2> vgnd_io sky130_fd_pr__nfet_g5v0d10v5 AD=0 AS=0 PD=0 PS=0
++ a=(1.50)*(0.50) l=0.50 m=1*1 p=2*(1.50)+2*(0.50) sa=265e-3 sb=265e-3
++ sd=280e-3 w=1.50
+XMmnin_fast<1> net24 drvhi_h int<1> vgnd_io sky130_fd_pr__nfet_g5v0d10v5 AD=0 AS=0 PD=0 PS=0
++ a=(1.50)*(0.50) l=0.50 m=1*1 p=2*(1.50)+2*(0.50) sa=265e-3 sb=265e-3
++ sd=280e-3 w=1.50
+XMmnin_fast<0> net24 drvhi_h int<0> vgnd_io sky130_fd_pr__nfet_g5v0d10v5 AD=0 AS=0 PD=0 PS=0
++ a=(1.50)*(0.50) l=0.50 m=1*1 p=2*(1.50)+2*(0.50) sa=265e-3 sb=265e-3
++ sd=280e-3 w=1.50
+XMmpin pu_h_n drvhi_h vcc_io vcc_io sky130_fd_pr__pfet_g5v0d10v5 AD=0 AS=0 PD=0 PS=0
++ a=(5.00)*(0.60) l=0.60 m=3*1 p=2*(5.00)+2*(0.60) sa=265e-3 sb=265e-3
++ sd=280e-3 w=5.00
+XMmpen pu_h_n puen_h vcc_io vcc_io sky130_fd_pr__pfet_g5v0d10v5 AD=0 AS=0 PD=0 PS=0
++ a=(5.00)*(0.60) l=0.60 m=1*1 p=2*(5.00)+2*(0.60) sa=265e-3 sb=265e-3
++ sd=280e-3 w=5.00
+.ENDS
+
+************************************************************************
+* Library Name: s8iom0s8
+* Cell Name: sky130_fd_io__tk_opti
+* View Name: schematic
+************************************************************************
+
+.SUBCKT sky130_fd_io__tk_opti out spd spu
+*.PININFO out:B spd:B spu:B
+Xe2 spd out / sky130_fd_io__tk_em1o
+Xe1 out spu / sky130_fd_io__tk_em1s
+.ENDS
+
+************************************************************************
+* Library Name: s8iom0s8
+* Cell Name: sky130_fd_io__tk_opto
+* View Name: schematic
+************************************************************************
+
+.SUBCKT sky130_fd_io__tk_opto out spd spu
+*.PININFO out:B spd:B spu:B
+Xe1 spu out / sky130_fd_io__tk_em1o
+Xe2 out spd / sky130_fd_io__tk_em1s
+.ENDS
+
+************************************************************************
+* Library Name: s8iom0s8
+* Cell Name: sky130_fd_io__com_inv_x1_dnw
+* View Name: schematic
+************************************************************************
+
+.SUBCKT sky130_fd_io__com_inv_x1_dnw in out vgnd vpwr
+*.PININFO in:I vgnd:I vpwr:I out:O
+XMI1 out in vpwr vpwr sky130_fd_pr__pfet_g5v0d10v5 AD=0 AS=0 PD=0 PS=0
++ a=(3.00)*(0.60) l=0.60 m=1*1 p=2*(3.00)+2*(0.60) sa=265e-3 sb=265e-3
++ sd=280e-3 w=3.00
+XMI2 out in vgnd vgnd sky130_fd_pr__nfet_g5v0d10v5 AD=0 AS=0 PD=0 PS=0
++ a=(1.00)*(0.60) l=0.60 m=1*1 p=2*(1.00)+2*(0.60) sa=265e-3 sb=265e-3
++ sd=280e-3 w=1.00
+.ENDS
+
+************************************************************************
+* Library Name: s8iom0s8
+* Cell Name: sky130_fd_io__com_pupredrvr_nbias
+* View Name: schematic
+************************************************************************
+
+.SUBCKT sky130_fd_io__com_pupredrvr_nbias drvhi_h en_h en_h_n nbias pu_h_n puen_h vcc_io vgnd_io
+*.PININFO drvhi_h:I en_h:I en_h_n:I pu_h_n:I puen_h:I vcc_io:I vgnd_io:I
+*.PININFO nbias:O
+XI36 n<2> pu_h_n en_h / sky130_fd_io__tk_opto
+XE6 net141 nbias / sky130_fd_io__tk_em1s
+XE7 bias_g net90 / sky130_fd_io__tk_em1s
+XE4 n<6> net153 / sky130_fd_io__tk_em1s
+XE5 nbias net88 / sky130_fd_io__tk_em1s
+XE2 n<6> nbias / sky130_fd_io__tk_em1o
+XE1 n<2> n<1> / sky130_fd_io__tk_em1o
+XMI56 vcc_io pu_h_n net90 vcc_io sky130_fd_pr__pfet_g5v0d10v5 AD=0 AS=0 PD=0 PS=0
++ a=(0.42)*(8.00) l=8.00 m=1*1 p=2*(0.42)+2*(8.00) sa=265e-3 sb=265e-3
++ sd=280e-3 w=0.42
+XMI50 n<1> puen_h vcc_io vcc_io sky130_fd_pr__pfet_g5v0d10v5 AD=0 AS=0 PD=0 PS=0
++ a=(1.00)*(0.50) l=0.50 m=1*1 p=2*(1.00)+2*(0.50) sa=265e-3 sb=265e-3
++ sd=280e-3 w=1.00
+XMI49 net88 bias_g vcc_io vcc_io sky130_fd_pr__pfet_g5v0d10v5 AD=0 AS=0 PD=0 PS=0
++ a=(1.00)*(0.80) l=0.80 m=4*1 p=2*(1.00)+2*(0.80) sa=265e-3 sb=265e-3
++ sd=280e-3 w=1.00
+XMI47 n<7> bias_g vcc_io vcc_io sky130_fd_pr__pfet_g5v0d10v5 AD=0 AS=0 PD=0 PS=0
++ a=(5.00)*(0.50) l=0.50 m=2*1 p=2*(5.00)+2*(0.50) sa=265e-3 sb=265e-3
++ sd=280e-3 w=5.00
+XMI12 drvhi_i_h_n drvhi_h vcc_io vcc_io sky130_fd_pr__pfet_g5v0d10v5 AD=0 AS=0 PD=0 PS=0
++ a=(1.00)*(0.50) l=0.50 m=2*1 p=2*(1.00)+2*(0.50) sa=265e-3 sb=265e-3
++ sd=280e-3 w=1.00
+XMI21 nbias bias_g vcc_io vcc_io sky130_fd_pr__pfet_g5v0d10v5 AD=0 AS=0 PD=0 PS=0
++ a=(1.00)*(0.80) l=0.80 m=4*1 p=2*(1.00)+2*(0.80) sa=265e-3 sb=265e-3
++ sd=280e-3 w=1.00
+XMI29 bias_g en_h vcc_io vcc_io sky130_fd_pr__pfet_g5v0d10v5 AD=0 AS=0 PD=0 PS=0
++ a=(1.00)*(0.50) l=0.50 m=1*1 p=2*(1.00)+2*(0.50) sa=265e-3 sb=265e-3
++ sd=280e-3 w=1.00
+XMI30 bias_g drvhi_h vcc_io vcc_io sky130_fd_pr__pfet_g5v0d10v5 AD=0 AS=0 PD=0 PS=0
++ a=(1.00)*(0.50) l=0.50 m=1*1 p=2*(1.00)+2*(0.50) sa=265e-3 sb=265e-3
++ sd=280e-3 w=1.00
+XMI31 bias_g n<1> vcc_io vcc_io sky130_fd_pr__pfet_g5v0d10v5 AD=0 AS=0 PD=0 PS=0
++ a=(3.00)*(0.50) l=0.50 m=4*1 p=2*(3.00)+2*(0.50) sa=265e-3 sb=265e-3
++ sd=280e-3 w=3.00
+XMI32 n<1> n<2> n<2> vcc_io sky130_fd_pr__pfet_g5v0d10v5 AD=0 AS=0 PD=0 PS=0
++ a=(3.00)*(0.50) l=0.50 m=1*1 p=2*(3.00)+2*(0.50) sa=265e-3 sb=265e-3
++ sd=280e-3 w=3.00
+XMI34 n<1> drvhi_h vcc_io vcc_io sky130_fd_pr__pfet_g5v0d10v5 AD=0 AS=0 PD=0 PS=0
++ a=(1.00)*(0.50) l=0.50 m=1*1 p=2*(1.00)+2*(0.50) sa=265e-3 sb=265e-3
++ sd=280e-3 w=1.00
+XMI54 net141 bias_g vgnd_io vgnd_io sky130_fd_pr__nfet_g5v0d10v5 AD=0 AS=0 PD=0 PS=0
++ a=(0.42)*(4.00) l=4.00 m=1*1 p=2*(0.42)+2*(4.00) sa=265e-3 sb=265e-3
++ sd=280e-3 w=0.42
+XMI41 n<7> n<7> n<8> vgnd_io sky130_fd_pr__nfet_g5v0d10v5 AD=0 AS=0 PD=0 PS=0
++ a=(3.00)*(0.50) l=0.50 m=2*1 p=2*(3.00)+2*(0.50) sa=265e-3 sb=265e-3
++ sd=280e-3 w=3.00
+XMI44 n<8> n<8> vccio_2vtn vgnd_io sky130_fd_pr__nfet_g5v0d10v5 AD=0 AS=0 PD=0 PS=0
++ a=(3.00)*(0.50) l=0.50 m=2*1 p=2*(3.00)+2*(0.50) sa=265e-3 sb=265e-3
++ sd=280e-3 w=3.00
+XMI39 net153 vccio_2vtn vgnd_io vgnd_io sky130_fd_pr__nfet_g5v0d10v5 AD=0 AS=0 PD=0 PS=0
++ a=(3.00)*(0.50) l=0.50 m=4*1 p=2*(3.00)+2*(0.50) sa=265e-3 sb=265e-3
++ sd=280e-3 w=3.00
+XMI40 vccio_2vtn vcc_io vgnd_io vgnd_io sky130_fd_pr__nfet_g5v0d10v5 AD=0 AS=0 PD=0 PS=0
++ a=(0.42)*(8.00) l=8.00 m=1*1 p=2*(0.42)+2*(8.00) sa=265e-3 sb=265e-3
++ sd=280e-3 w=0.42
+XMI25 nbias drvhi_i_h_n vgnd_io vgnd_io sky130_fd_pr__nfet_g5v0d10v5 AD=0 AS=0 PD=0 PS=0
++ a=(3.00)*(0.50) l=0.50 m=1*1 p=2*(3.00)+2*(0.50) sa=265e-3 sb=265e-3
++ sd=280e-3 w=3.00
+XMI53 vccio_2vtn drvhi_i_h_n vgnd_io vgnd_io sky130_fd_pr__nfet_g5v0d10v5 AD=0 AS=0 PD=0 PS=0
++ a=(3.00)*(0.50) l=0.50 m=1*1 p=2*(3.00)+2*(0.50) sa=265e-3 sb=265e-3
++ sd=280e-3 w=3.00
+XMI24 nbias en_h_n vgnd_io vgnd_io sky130_fd_pr__nfet_g5v0d10v5 AD=0 AS=0 PD=0 PS=0
++ a=(3.00)*(0.50) l=0.50 m=1*1 p=2*(3.00)+2*(0.50) sa=265e-3 sb=265e-3
++ sd=280e-3 w=3.00
+XMI13 drvhi_i_h_n drvhi_h vgnd_io vgnd_io sky130_fd_pr__nfet_g5v0d10v5 AD=0 AS=0 PD=0 PS=0
++ a=(1.00)*(0.60) l=0.60 m=1*1 p=2*(1.00)+2*(0.60) sa=265e-3 sb=265e-3
++ sd=280e-3 w=1.00
+XMI26 n<4> en_h vgnd_io vgnd_io sky130_fd_pr__nfet_g5v0d10v5 AD=0 AS=0 PD=0 PS=0
++ a=(1.50)*(0.50) l=0.50 m=1*1 p=2*(1.50)+2*(0.50) sa=265e-3 sb=265e-3
++ sd=280e-3 w=1.50
+XMI27 n<3> n<2> n<4> vgnd_io sky130_fd_pr__nfet_g5v0d10v5 AD=0 AS=0 PD=0 PS=0
++ a=(1.50)*(0.50) l=0.50 m=1*1 p=2*(1.50)+2*(0.50) sa=265e-3 sb=265e-3
++ sd=280e-3 w=1.50
+XMI28 bias_g drvhi_h n<3> vgnd_io sky130_fd_pr__nfet_g5v0d10v5 AD=0 AS=0 PD=0 PS=0
++ a=(1.50)*(0.50) l=0.50 m=1*1 p=2*(1.50)+2*(0.50) sa=265e-3 sb=265e-3
++ sd=280e-3 w=1.50
+XMI20 nbias nbias n<6> vgnd_io sky130_fd_pr__nfet_g5v0d10v5 AD=0 AS=0 PD=0 PS=0
++ a=(3.00)*(0.50) l=0.50 m=4*1 p=2*(3.00)+2*(0.50) sa=265e-3 sb=265e-3
++ sd=280e-3 w=3.00
+XMI19 n<6> n<6> vgnd_io vgnd_io sky130_fd_pr__nfet_g5v0d10v5 AD=0 AS=0 PD=0 PS=0
++ a=(3.00)*(0.50) l=0.50 m=4*1 p=2*(3.00)+2*(0.50) sa=265e-3 sb=265e-3
++ sd=280e-3 w=3.00
+.ENDS
+
+************************************************************************
+* Library Name: s8iom0s8
+* Cell Name: sky130_fd_io__com_nand2_dnw
+* View Name: schematic
+************************************************************************
+
+.SUBCKT sky130_fd_io__com_nand2_dnw in0 in1 out vgnd vpwr
+*.PININFO in0:I in1:I vgnd:I vpwr:I out:O
+XMI5 out in1 vpwr vpwr sky130_fd_pr__pfet_g5v0d10v5 AD=0 AS=0 PD=0 PS=0
++ a=(3.00)*(0.60) l=0.60 m=1*1 p=2*(3.00)+2*(0.60) sa=265e-3 sb=265e-3
++ sd=280e-3 w=3.00
+XMI3 out in0 vpwr vpwr sky130_fd_pr__pfet_g5v0d10v5 AD=0 AS=0 PD=0 PS=0
++ a=(3.00)*(0.60) l=0.60 m=1*1 p=2*(3.00)+2*(0.60) sa=265e-3 sb=265e-3
++ sd=280e-3 w=3.00
+XMI6 net25 in0 vgnd vgnd sky130_fd_pr__nfet_g5v0d10v5 AD=0 AS=0 PD=0 PS=0
++ a=(1.00)*(0.60) l=0.60 m=1*1 p=2*(1.00)+2*(0.60) sa=265e-3 sb=265e-3
++ sd=280e-3 w=1.00
+XMI1 out in1 net25 vgnd sky130_fd_pr__nfet_g5v0d10v5 AD=0 AS=0 PD=0 PS=0
++ a=(1.00)*(0.60) l=0.60 m=1*1 p=2*(1.00)+2*(0.60) sa=265e-3 sb=265e-3
++ sd=280e-3 w=1.00
+.ENDS
+
+************************************************************************
+* Library Name: s8iom0s8
+* Cell Name: sky130_fd_io__gpiov2_pupredrvr_strong
+* View Name: schematic
+************************************************************************
+
+.SUBCKT sky130_fd_io__gpiov2_pupredrvr_strong drvhi_h pu_h_n<3> pu_h_n<2> puen_h slow_h_n vcc_io vgnd_io
+*.PININFO drvhi_h:I puen_h:I slow_h_n:I vcc_io:I vgnd_io:I pu_h_n<3>:O
+*.PININFO pu_h_n<2>:O
+Xnd2a drvhi_h net54 net54 net54 net54 pu_h_n<2> puen_h vcc_io vgnd_io
++ / sky130_fd_io__gpiov2_pupredrvr_strong_nd2
+Xnd2b drvhi_h en_fast_h_3<3> en_fast_h_3<2> en_fast_h_3<1> en_fast_h_3<0> pu_h_n<3> puen_h vcc_io
++ vgnd_io / sky130_fd_io__gpiov2_pupredrvr_strong_nd2
+XI97 en_fast_h_3<1> en_fast_h_3<3> vgnd_io / sky130_fd_io__tk_opti
+XI98 en_fast_h_3<0> en_fast_h_3<3> vgnd_io / sky130_fd_io__tk_opti
+XI93 net54 nbias_out en_fast_h / sky130_fd_io__tk_opto
+XI96 en_fast_h_3<2> en_fast_h_3<3> vgnd_io / sky130_fd_io__tk_opto
+XI92 en_fast_h_3<3> nbias_out en_fast_h / sky130_fd_io__tk_opto
+Xinv en_fast_h_n en_fast_h vgnd_io vcc_io / sky130_fd_io__com_inv_x1_dnw
+Xnbias drvhi_h en_fast_h en_fast_h_n nbias_out pu_h_n<2> puen_h vcc_io vgnd_io /
++ sky130_fd_io__com_pupredrvr_nbias
+Xnand puen_h slow_h_n en_fast_h_n vgnd_io vcc_io / sky130_fd_io__com_nand2_dnw
+.ENDS
+
+************************************************************************
+* Library Name: s8iom0s8
+* Cell Name: sky130_fd_io__gpiov2_octl_mux
+* View Name: schematic
+************************************************************************
+
+.SUBCKT sky130_fd_io__gpiov2_octl_mux a_h b_h sel_h sel_h_n vccio vssio y_h
+*.PININFO a_h:I b_h:I sel_h:I sel_h_n:I vccio:I vssio:I y_h:O
+XMI3 y_h sel_h_n a_h vccio sky130_fd_pr__pfet_g5v0d10v5 AD=0 AS=0 PD=0 PS=0
++ a=(3.00)*(0.50) l=0.50 m=1*1 p=2*(3.00)+2*(0.50) sa=265e-3 sb=265e-3
++ sd=280e-3 w=3.00
+XMI2 y_h sel_h b_h vccio sky130_fd_pr__pfet_g5v0d10v5 AD=0 AS=0 PD=0 PS=0
++ a=(3.00)*(0.50) l=0.50 m=1*1 p=2*(3.00)+2*(0.50) sa=265e-3 sb=265e-3
++ sd=280e-3 w=3.00
+XMI4 a_h sel_h y_h vssio sky130_fd_pr__nfet_g5v0d10v5 AD=0 AS=0 PD=0 PS=0
++ a=(3.00)*(0.50) l=0.50 m=1*1 p=2*(3.00)+2*(0.50) sa=265e-3 sb=265e-3
++ sd=280e-3 w=3.00
+XMI1 b_h sel_h_n y_h vssio sky130_fd_pr__nfet_g5v0d10v5 AD=0 AS=0 PD=0 PS=0
++ a=(3.00)*(0.50) l=0.50 m=1*1 p=2*(3.00)+2*(0.50) sa=265e-3 sb=265e-3
++ sd=280e-3 w=3.00
+.ENDS
+
+************************************************************************
+* Library Name: s8iom0s8
+* Cell Name: sky130_fd_io__gpiov2_pdpredrvr_strong_nr2
+* View Name: schematic
+************************************************************************
+
+.SUBCKT sky130_fd_io__gpiov2_pdpredrvr_strong_nr2 drvlo_h_n en_fast_n<1> en_fast_n<0> i2c_mode_h pd_h
++ pd_i2c_h pden_h_n vcc_io vgnd_io
+*.PININFO drvlo_h_n:I en_fast_n<1>:I en_fast_n<0>:I i2c_mode_h:I pden_h_n:I
+*.PININFO vcc_io:I vgnd_io:I pd_h:O pd_i2c_h:O
+XMI101 net45 pden_h_n net039 vcc_io sky130_fd_pr__pfet_g5v0d10v5 AD=0 AS=0 PD=0 PS=0
++ a=(0.42)*(4.00) l=4.00 m=1*1 p=2*(0.42)+2*(4.00) sa=265e-3 sb=265e-3
++ sd=280e-3 w=0.42
+XMI73 net42 i2c_mode_h vcc_io vcc_io sky130_fd_pr__pfet_g5v0d10v5 AD=0 AS=0 PD=0 PS=0
++ a=(3.00)*(0.50) l=0.50 m=3*1 p=2*(3.00)+2*(0.50) sa=265e-3 sb=265e-3
++ sd=280e-3 w=3.00
+XMI76 pd_h drvlo_h_n net45 vcc_io sky130_fd_pr__pfet_g5v0d10v5 AD=0 AS=0 PD=0 PS=0
++ a=(0.42)*(4.00) l=4.00 m=1*1 p=2*(0.42)+2*(4.00) sa=265e-3 sb=265e-3
++ sd=280e-3 w=0.42
+XMI75 net039 pden_h_n net42 vcc_io sky130_fd_pr__pfet_g5v0d10v5 AD=0 AS=0 PD=0 PS=0
++ a=(0.42)*(4.00) l=4.00 m=1*1 p=2*(0.42)+2*(4.00) sa=265e-3 sb=265e-3
++ sd=280e-3 w=0.42
+XMI74<1> pd_h drvlo_h_n net53<0> vcc_io sky130_fd_pr__pfet_g5v0d10v5 AD=0 AS=0 PD=0 PS=0
++ a=(3.00)*(0.50) l=0.50 m=2*1 p=2*(3.00)+2*(0.50) sa=265e-3 sb=265e-3
++ sd=280e-3 w=3.00
+XMI74<0> pd_h drvlo_h_n net53<1> vcc_io sky130_fd_pr__pfet_g5v0d10v5 AD=0 AS=0 PD=0 PS=0
++ a=(3.00)*(0.50) l=0.50 m=2*1 p=2*(3.00)+2*(0.50) sa=265e-3 sb=265e-3
++ sd=280e-3 w=3.00
+XMI72<1> net53<0> en_fast_n<1> net42 vcc_io sky130_fd_pr__pfet_g5v0d10v5 AD=0 AS=0 PD=0 PS=0
++ a=(3.00)*(0.50) l=0.50 m=1*1 p=2*(3.00)+2*(0.50) sa=265e-3 sb=265e-3
++ sd=280e-3 w=3.00
+XMI72<0> net53<1> en_fast_n<0> net42 vcc_io sky130_fd_pr__pfet_g5v0d10v5 AD=0 AS=0 PD=0 PS=0
++ a=(3.00)*(0.50) l=0.50 m=1*1 p=2*(3.00)+2*(0.50) sa=265e-3 sb=265e-3
++ sd=280e-3 w=3.00
+XMmpen_fast1 net62 en_fast_n<1> vcc_io vcc_io sky130_fd_pr__pfet_g5v0d10v5 AD=0 AS=0 PD=0 PS=0
++ a=(0.42)*(1.00) l=1.00 m=1*1 p=2*(0.42)+2*(1.00) sa=265e-3 sb=265e-3
++ sd=280e-3 w=0.42
+XMmpin_fast<1> pd_i2c_h drvlo_h_n net62 vcc_io sky130_fd_pr__pfet_g5v0d10v5 AD=0 AS=0 PD=0 PS=0
++ a=(0.42)*(1.00) l=1.00 m=1*1 p=2*(0.42)+2*(1.00) sa=265e-3 sb=265e-3
++ sd=280e-3 w=0.42
+XMmpin_fast<0> pd_i2c_h drvlo_h_n net62 vcc_io sky130_fd_pr__pfet_g5v0d10v5 AD=0 AS=0 PD=0 PS=0
++ a=(0.42)*(1.00) l=1.00 m=1*1 p=2*(0.42)+2*(1.00) sa=265e-3 sb=265e-3
++ sd=280e-3 w=0.42
+XMmpen_slow int_slow pden_h_n vcc_io vcc_io sky130_fd_pr__pfet_g5v0d10v5 AD=0 AS=0 PD=0 PS=0
++ a=(0.42)*(4.00) l=4.00 m=1*1 p=2*(0.42)+2*(4.00) sa=265e-3 sb=265e-3
++ sd=280e-3 w=0.42
+XMmpin_slow pd_i2c_h drvlo_h_n int_slow vcc_io sky130_fd_pr__pfet_g5v0d10v5 AD=0 AS=0 PD=0 PS=0
++ a=(0.42)*(4.00) l=4.00 m=1*1 p=2*(0.42)+2*(4.00) sa=265e-3 sb=265e-3
++ sd=280e-3 w=0.42
+XMI77 pd_h drvlo_h_n vgnd_io vgnd_io sky130_fd_pr__nfet_g5v0d10v5 AD=0 AS=0 PD=0 PS=0
++ a=(3.00)*(0.60) l=0.60 m=2*1 p=2*(3.00)+2*(0.60) sa=265e-3 sb=265e-3
++ sd=280e-3 w=3.00
+XMI78 pd_h pden_h_n vgnd_io vgnd_io sky130_fd_pr__nfet_g5v0d10v5 AD=0 AS=0 PD=0 PS=0
++ a=(3.00)*(0.60) l=0.60 m=1*1 p=2*(3.00)+2*(0.60) sa=265e-3 sb=265e-3
++ sd=280e-3 w=3.00
+XMmnen pd_i2c_h pden_h_n vgnd_io vgnd_io sky130_fd_pr__nfet_g5v0d10v5 AD=0 AS=0 PD=0 PS=0
++ a=(3.00)*(0.60) l=0.60 m=1*1 p=2*(3.00)+2*(0.60) sa=265e-3 sb=265e-3
++ sd=280e-3 w=3.00
+XMmnin pd_i2c_h drvlo_h_n vgnd_io vgnd_io sky130_fd_pr__nfet_g5v0d10v5 AD=0 AS=0 PD=0 PS=0
++ a=(3.00)*(0.60) l=0.60 m=2*1 p=2*(3.00)+2*(0.60) sa=265e-3 sb=265e-3
++ sd=280e-3 w=3.00
+XMI94 pd_h i2c_mode_h vgnd_io vgnd_io sky130_fd_pr__nfet_g5v0d10v5 AD=0 AS=0 PD=0 PS=0
++ a=(3.00)*(0.60) l=0.60 m=1*1 p=2*(3.00)+2*(0.60) sa=265e-3 sb=265e-3
++ sd=280e-3 w=3.00
+.ENDS
+
+************************************************************************
+* Library Name: s8iom0s8
+* Cell Name: sky130_fd_io__gpiov2_pdpredrvr_strong_nr3
+* View Name: schematic
+************************************************************************
+
+.SUBCKT sky130_fd_io__gpiov2_pdpredrvr_strong_nr3 drvlo_h_n en_fast_n<1> en_fast_n<0> i2c_mode_h pd_h
++ pden_h_n vcc_io vgnd_io
+*.PININFO drvlo_h_n:I en_fast_n<1>:I en_fast_n<0>:I i2c_mode_h:I pden_h_n:I
+*.PININFO vcc_io:I vgnd_io:I pd_h:O
+XMI85 int1 i2c_mode_h vcc_io vcc_io sky130_fd_pr__pfet_g5v0d10v5 AD=0 AS=0 PD=0 PS=0
++ a=(1.00)*(0.50) l=0.50 m=2*1 p=2*(1.00)+2*(0.50) sa=265e-3 sb=265e-3
++ sd=280e-3 w=1.00
+XMI86<1> int2 en_fast_n<1> int1 vcc_io sky130_fd_pr__pfet_g5v0d10v5 AD=0 AS=0 PD=0 PS=0
++ a=(0.42)*(0.50) l=0.50 m=1*1 p=2*(0.42)+2*(0.50) sa=265e-3 sb=265e-3
++ sd=280e-3 w=0.42
+XMI86<0> int2 en_fast_n<0> int1 vcc_io sky130_fd_pr__pfet_g5v0d10v5 AD=0 AS=0 PD=0 PS=0
++ a=(0.42)*(0.50) l=0.50 m=1*1 p=2*(0.42)+2*(0.50) sa=265e-3 sb=265e-3
++ sd=280e-3 w=0.42
+XMI87<1> pd_h drvlo_h_n int2 vcc_io sky130_fd_pr__pfet_g5v0d10v5 AD=0 AS=0 PD=0 PS=0
++ a=(0.42)*(0.50) l=0.50 m=1*1 p=2*(0.42)+2*(0.50) sa=265e-3 sb=265e-3
++ sd=280e-3 w=0.42
+XMI87<0> pd_h drvlo_h_n int2 vcc_io sky130_fd_pr__pfet_g5v0d10v5 AD=0 AS=0 PD=0 PS=0
++ a=(0.42)*(0.50) l=0.50 m=1*1 p=2*(0.42)+2*(0.50) sa=265e-3 sb=265e-3
++ sd=280e-3 w=0.42
+XMI56 net43 pden_h_n int1 vcc_io sky130_fd_pr__pfet_g5v0d10v5 AD=0 AS=0 PD=0 PS=0
++ a=(0.42)*(2.00) l=2.00 m=1*1 p=2*(0.42)+2*(2.00) sa=265e-3 sb=265e-3
++ sd=280e-3 w=0.42
+XMI90 pd_h drvlo_h_n net43 vcc_io sky130_fd_pr__pfet_g5v0d10v5 AD=0 AS=0 PD=0 PS=0
++ a=(0.42)*(2.00) l=2.00 m=1*1 p=2*(0.42)+2*(2.00) sa=265e-3 sb=265e-3
++ sd=280e-3 w=0.42
+XMmpen_fast<1> int_nor<1> en_fast_n<1> vcc_io vcc_io sky130_fd_pr__pfet_g5v0d10v5 AD=0 AS=0 PD=0 PS=0
++ a=(1.50)*(0.50) l=0.50 m=1*1 p=2*(1.50)+2*(0.50) sa=265e-3 sb=265e-3
++ sd=280e-3 w=1.50
+XMmpen_fast<0> int_nor<0> en_fast_n<0> vcc_io vcc_io sky130_fd_pr__pfet_g5v0d10v5 AD=0 AS=0 PD=0 PS=0
++ a=(1.50)*(0.50) l=0.50 m=1*1 p=2*(1.50)+2*(0.50) sa=265e-3 sb=265e-3
++ sd=280e-3 w=1.50
+XMmpin_fast<1> pd_h drvlo_h_n int_nor<1> vcc_io sky130_fd_pr__pfet_g5v0d10v5 AD=0 AS=0 PD=0 PS=0
++ a=(1.50)*(0.50) l=0.50 m=1*1 p=2*(1.50)+2*(0.50) sa=265e-3 sb=265e-3
++ sd=280e-3 w=1.50
+XMmpin_fast<0> pd_h drvlo_h_n int_nor<0> vcc_io sky130_fd_pr__pfet_g5v0d10v5 AD=0 AS=0 PD=0 PS=0
++ a=(1.50)*(0.50) l=0.50 m=1*1 p=2*(1.50)+2*(0.50) sa=265e-3 sb=265e-3
++ sd=280e-3 w=1.50
+XMmpen_slow int_slow pden_h_n vcc_io vcc_io sky130_fd_pr__pfet_g5v0d10v5 AD=0 AS=0 PD=0 PS=0
++ a=(0.42)*(4.00) l=4.00 m=1*1 p=2*(0.42)+2*(4.00) sa=265e-3 sb=265e-3
++ sd=280e-3 w=0.42
+XMmpin_slow pd_h drvlo_h_n int_slow vcc_io sky130_fd_pr__pfet_g5v0d10v5 AD=0 AS=0 PD=0 PS=0
++ a=(0.42)*(2.00) l=2.00 m=1*1 p=2*(0.42)+2*(2.00) sa=265e-3 sb=265e-3
++ sd=280e-3 w=0.42
+XMmnen pd_h pden_h_n vgnd_io vgnd_io sky130_fd_pr__nfet_g5v0d10v5 AD=0 AS=0 PD=0 PS=0
++ a=(3.00)*(0.60) l=0.60 m=2*1 p=2*(3.00)+2*(0.60) sa=265e-3 sb=265e-3
++ sd=280e-3 w=3.00
+XMmnin pd_h drvlo_h_n vgnd_io vgnd_io sky130_fd_pr__nfet_g5v0d10v5 AD=0 AS=0 PD=0 PS=0
++ a=(3.00)*(0.60) l=0.60 m=5*1 p=2*(3.00)+2*(0.60) sa=265e-3 sb=265e-3
++ sd=280e-3 w=3.00
+.ENDS
+
+************************************************************************
+* Library Name: s8iom0s8
+* Cell Name: sky130_fd_io__com_pdpredrvr_pbias
+* View Name: schematic
+************************************************************************
+
+.SUBCKT sky130_fd_io__com_pdpredrvr_pbias drvlo_h_n en_h en_h_n pbias pd_h pden_h_n vcc_io vgnd_io
+*.PININFO drvlo_h_n:I en_h:I en_h_n:I pd_h:I pden_h_n:I vcc_io:I vgnd_io:I
+*.PININFO pbias:O
+XI27 n<0> pd_h en_h_n / sky130_fd_io__tk_opto
+XE2 pbias pbias1 / sky130_fd_io__tk_em1o
+XE1 n<1> n<0> / sky130_fd_io__tk_em1o
+XE5 n<101> bias_g / sky130_fd_io__tk_em1s
+XE6 pbias net84 / sky130_fd_io__tk_em1s
+XE4 net108 pbias / sky130_fd_io__tk_em1s
+XE3 pbias1 net88 / sky130_fd_io__tk_em1s
+XMI41 n<101> pd_h n<100> vgnd_io sky130_fd_pr__nfet_g5v0d10v5 AD=0 AS=0 PD=0 PS=0
++ a=(0.42)*(4.00) l=4.00 m=1*1 p=2*(0.42)+2*(4.00) sa=265e-3 sb=265e-3
++ sd=280e-3 w=0.42
+XMI48 n<100> pd_h vgnd_io vgnd_io sky130_fd_pr__nfet_g5v0d10v5 AD=0 AS=0 PD=0 PS=0
++ a=(0.42)*(4.00) l=4.00 m=1*1 p=2*(0.42)+2*(4.00) sa=265e-3 sb=265e-3
++ sd=280e-3 w=0.42
+XMI38 n<1> pden_h_n vgnd_io vgnd_io sky130_fd_pr__nfet_g5v0d10v5 AD=0 AS=0 PD=0 PS=0
++ a=(1.00)*(0.60) l=0.60 m=1*1 p=2*(1.00)+2*(0.60) sa=265e-3 sb=265e-3
++ sd=280e-3 w=1.00
+XMI36 net108 bias_g vgnd_io vgnd_io sky130_fd_pr__nfet_g5v0d10v5 AD=0 AS=0 PD=0 PS=0
++ a=(1.00)*(1.00) l=1.00 m=2*1 p=2*(1.00)+2*(1.00) sa=265e-3 sb=265e-3
++ sd=280e-3 w=1.00
+XMI34 net157 bias_g vgnd_io vgnd_io sky130_fd_pr__nfet_g5v0d10v5 AD=0 AS=0 PD=0 PS=0
++ a=(5.00)*(0.60) l=0.60 m=1*1 p=2*(5.00)+2*(0.60) sa=265e-3 sb=265e-3
++ sd=280e-3 w=5.00
+XMI19 bias_g en_h_n vgnd_io vgnd_io sky130_fd_pr__nfet_g5v0d10v5 AD=0 AS=0 PD=0 PS=0
++ a=(1.00)*(0.60) l=0.60 m=1*1 p=2*(1.00)+2*(0.60) sa=265e-3 sb=265e-3
++ sd=280e-3 w=1.00
+XMI20 bias_g n<1> vgnd_io vgnd_io sky130_fd_pr__nfet_g5v0d10v5 AD=0 AS=0 PD=0 PS=0
++ a=(5.00)*(0.60) l=0.60 m=1*1 p=2*(5.00)+2*(0.60) sa=265e-3 sb=265e-3
++ sd=280e-3 w=5.00
+XMI13 drvlo_i_h drvlo_h_n vgnd_io vgnd_io sky130_fd_pr__nfet_g5v0d10v5 AD=0 AS=0 PD=0 PS=0
++ a=(1.00)*(0.60) l=0.60 m=1*1 p=2*(1.00)+2*(0.60) sa=265e-3 sb=265e-3
++ sd=280e-3 w=1.00
+XMI23 n<0> n<0> n<1> vgnd_io sky130_fd_pr__nfet_g5v0d10v5 AD=0 AS=0 PD=0 PS=0
++ a=(3.00)*(0.50) l=0.50 m=1*1 p=2*(3.00)+2*(0.50) sa=265e-3 sb=265e-3
++ sd=280e-3 w=3.00
+XMI18 bias_g drvlo_h_n vgnd_io vgnd_io sky130_fd_pr__nfet_g5v0d10v5 AD=0 AS=0 PD=0 PS=0
++ a=(1.00)*(0.60) l=0.60 m=1*1 p=2*(1.00)+2*(0.60) sa=265e-3 sb=265e-3
++ sd=280e-3 w=1.00
+XMI24 n<1> drvlo_h_n vgnd_io vgnd_io sky130_fd_pr__nfet_g5v0d10v5 AD=0 AS=0 PD=0 PS=0
++ a=(1.00)*(0.60) l=0.60 m=1*1 p=2*(1.00)+2*(0.60) sa=265e-3 sb=265e-3
++ sd=280e-3 w=1.00
+XMI47 pbias bias_g vgnd_io vgnd_io sky130_fd_pr__nfet_g5v0d10v5 AD=0 AS=0 PD=0 PS=0
++ a=(1.00)*(1.00) l=1.00 m=2*1 p=2*(1.00)+2*(1.00) sa=265e-3 sb=265e-3
++ sd=280e-3 w=1.00
+XMI40 2vtp drvlo_i_h vcc_io vcc_io sky130_fd_pr__pfet_g5v0d10v5 AD=0 AS=0 PD=0 PS=0
++ a=(5.00)*(0.50) l=0.50 m=1*1 p=2*(5.00)+2*(0.50) sa=265e-3 sb=265e-3
++ sd=280e-3 w=5.00
+XMI43 net84 bias_g vcc_io vcc_io sky130_fd_pr__pfet_g5v0d10v5 AD=0 AS=0 PD=0 PS=0
++ a=(0.42)*(4.00) l=4.00 m=1*1 p=2*(0.42)+2*(4.00) sa=265e-3 sb=265e-3
++ sd=280e-3 w=0.42
+XMI30 net88 2vtp vcc_io vcc_io sky130_fd_pr__pfet_g5v0d10v5 AD=0 AS=0 PD=0 PS=0
++ a=(5.00)*(0.50) l=0.50 m=8*1 p=2*(5.00)+2*(0.50) sa=265e-3 sb=265e-3
++ sd=280e-3 w=5.00
+XMI31 net157 net157 net161 vcc_io sky130_fd_pr__pfet_g5v0d10v5 AD=0 AS=0 PD=0 PS=0
++ a=(5.00)*(0.50) l=0.50 m=4*1 p=2*(5.00)+2*(0.50) sa=265e-3 sb=265e-3
++ sd=280e-3 w=5.00
+XMI32 net161 net161 2vtp vcc_io sky130_fd_pr__pfet_g5v0d10v5 AD=0 AS=0 PD=0 PS=0
++ a=(5.00)*(0.50) l=0.50 m=4*1 p=2*(5.00)+2*(0.50) sa=265e-3 sb=265e-3
++ sd=280e-3 w=5.00
+XMI33 2vtp vgnd_io vcc_io vcc_io sky130_fd_pr__pfet_g5v0d10v5 AD=0 AS=0 PD=0 PS=0
++ a=(0.42)*(8.00) l=8.00 m=1*1 p=2*(0.42)+2*(8.00) sa=265e-3 sb=265e-3
++ sd=280e-3 w=0.42
+XMI14 pbias drvlo_i_h vcc_io vcc_io sky130_fd_pr__pfet_g5v0d10v5 AD=0 AS=0 PD=0 PS=0
++ a=(5.00)*(0.50) l=0.50 m=1*1 p=2*(5.00)+2*(0.50) sa=265e-3 sb=265e-3
++ sd=280e-3 w=5.00
+XMI17 bias_g drvlo_h_n net171 vcc_io sky130_fd_pr__pfet_g5v0d10v5 AD=0 AS=0 PD=0 PS=0
++ a=(3.00)*(0.50) l=0.50 m=1*1 p=2*(3.00)+2*(0.50) sa=265e-3 sb=265e-3
++ sd=280e-3 w=3.00
+XMI12 drvlo_i_h drvlo_h_n vcc_io vcc_io sky130_fd_pr__pfet_g5v0d10v5 AD=0 AS=0 PD=0 PS=0
++ a=(1.00)*(0.50) l=0.50 m=2*1 p=2*(1.00)+2*(0.50) sa=265e-3 sb=265e-3
++ sd=280e-3 w=1.00
+XMI6 pbias en_h vcc_io vcc_io sky130_fd_pr__pfet_g5v0d10v5 AD=0 AS=0 PD=0 PS=0
++ a=(5.00)*(0.50) l=0.50 m=1*1 p=2*(5.00)+2*(0.50) sa=265e-3 sb=265e-3
++ sd=280e-3 w=5.00
+XMI16 net171 n<0> net183 vcc_io sky130_fd_pr__pfet_g5v0d10v5 AD=0 AS=0 PD=0 PS=0
++ a=(3.00)*(0.50) l=0.50 m=1*1 p=2*(3.00)+2*(0.50) sa=265e-3 sb=265e-3
++ sd=280e-3 w=3.00
+XMI15 net183 en_h_n vcc_io vcc_io sky130_fd_pr__pfet_g5v0d10v5 AD=0 AS=0 PD=0 PS=0
++ a=(3.00)*(0.50) l=0.50 m=1*1 p=2*(3.00)+2*(0.50) sa=265e-3 sb=265e-3
++ sd=280e-3 w=3.00
+XMI45 pbias1 pbias1 vcc_io vcc_io sky130_fd_pr__pfet_g5v0d10v5 AD=0 AS=0 PD=0 PS=0
++ a=(5.00)*(0.50) l=0.50 m=8*1 p=2*(5.00)+2*(0.50) sa=265e-3 sb=265e-3
++ sd=280e-3 w=5.00
+XMI44 pbias pbias pbias1 vcc_io sky130_fd_pr__pfet_g5v0d10v5 AD=0 AS=0 PD=0 PS=0
++ a=(5.00)*(0.50) l=0.50 m=8*1 p=2*(5.00)+2*(0.50) sa=265e-3 sb=265e-3
++ sd=280e-3 w=5.00
+.ENDS
+
+************************************************************************
+* Library Name: s8iom0s8
+* Cell Name: sky130_fd_io__com_nor2_dnw
+* View Name: schematic
+************************************************************************
+
+.SUBCKT sky130_fd_io__com_nor2_dnw in0 in1 out vgnd vpwr
+*.PININFO in0:I in1:I vgnd:I vpwr:I out:O
+XMI12 out in1 net17 vpwr sky130_fd_pr__pfet_g5v0d10v5 AD=0 AS=0 PD=0 PS=0
++ a=(3.00)*(0.60) l=0.60 m=1*1 p=2*(3.00)+2*(0.60) sa=265e-3 sb=265e-3
++ sd=280e-3 w=3.00
+XMI3 net17 in0 vpwr vpwr sky130_fd_pr__pfet_g5v0d10v5 AD=0 AS=0 PD=0 PS=0
++ a=(3.00)*(0.60) l=0.60 m=1*1 p=2*(3.00)+2*(0.60) sa=265e-3 sb=265e-3
++ sd=280e-3 w=3.00
+XMI6 out in1 vgnd vgnd sky130_fd_pr__nfet_g5v0d10v5 AD=0 AS=0 PD=0 PS=0
++ a=(1.00)*(0.60) l=0.60 m=1*1 p=2*(1.00)+2*(0.60) sa=265e-3 sb=265e-3
++ sd=280e-3 w=1.00
+XMI1 out in0 vgnd vgnd sky130_fd_pr__nfet_g5v0d10v5 AD=0 AS=0 PD=0 PS=0
++ a=(1.00)*(0.60) l=0.60 m=1*1 p=2*(1.00)+2*(0.60) sa=265e-3 sb=265e-3
++ sd=280e-3 w=1.00
+.ENDS
+
+************************************************************************
+* Library Name: s8iom0s8
+* Cell Name: sky130_fd_io__gpiov2_pdpredrvr_strong
+* View Name: schematic
+************************************************************************
+
+.SUBCKT sky130_fd_io__gpiov2_pdpredrvr_strong drvlo_h_n i2c_mode_h_n pd_h<4> pd_h<3> pd_h<2> pden_h_n
++ slow_h tie_hi_esd vcc_io vgnd vgnd_io
+*.PININFO drvlo_h_n:I i2c_mode_h_n:I pden_h_n:I slow_h:I tie_hi_esd:I vcc_io:I
+*.PININFO vgnd:I vgnd_io:I pd_h<4>:O pd_h<3>:O pd_h<2>:O
+XMI87 mod_drvlo_h_n_i2c pd_h<4> vcc_io vcc_io sky130_fd_pr__pfet_g5v0d10v5 AD=0 AS=0 PD=0 PS=0
++ a=(3.00)*(0.50) l=0.50 m=1*1 p=2*(3.00)+2*(0.50) sa=265e-3 sb=265e-3
++ sd=280e-3 w=3.00
+XMI88 mod_drvlo_h_n_i2c pd_h<4> vgnd vgnd sky130_fd_pr__nfet_g5v0d10v5 AD=0 AS=0 PD=0 PS=0
++ a=(0.42)*(0.50) l=0.50 m=1*1 p=2*(0.42)+2*(0.50) sa=265e-3 sb=265e-3
++ sd=280e-3 w=0.42
+XI98 i2c_mode_h slow_h int_slow1 vgnd vcc_io / sky130_fd_io__hvsbt_nand2
+XI160 i2c_mode_h_n slow_h net75 vgnd vcc_io / sky130_fd_io__hvsbt_nand2
+XI93 i2c_mode_h_n i2c_mode_h vgnd vcc_io / sky130_fd_io__hvsbt_inv_x1
+XI97 int_slow1 mod_slow_h vgnd vcc_io / sky130_fd_io__hvsbt_inv_x1
+XI161 net75 net142 vgnd vcc_io / sky130_fd_io__hvsbt_inv_x1
+Xmux mod_drvlo_h_n_i2c drvlo_h_n i2c_mode_h i2c_mode_h_n vcc_io vgnd_io mod_drvlo_h_n /
++ sky130_fd_io__gpiov2_octl_mux
+Xnr3 drvlo_h_n pbias_out pbias_out mod_slow_h pd_h<2> pd_h<4> pden_h_n vcc_io vgnd_io
++ / sky130_fd_io__gpiov2_pdpredrvr_strong_nr2
+Xnr2 mod_drvlo_h_n en_fast2_n<1> en_fast2_n<0> mod_slow_h pd_h<3> pden_h_n vcc_io vgnd_io /
++ sky130_fd_io__gpiov2_pdpredrvr_strong_nr3
+XI76 net118 pbias_out en_fast_h_n / sky130_fd_io__tk_opto
+XI77 en_fast2_n<1> pbias_out en_fast_h_n / sky130_fd_io__tk_opto
+XI79 en_fast2_n<0> en_fast2_n<1> vcc_io / sky130_fd_io__tk_opti
+Xinv en_fast_h en_fast_h_n vgnd_io vcc_io / sky130_fd_io__com_inv_x1_dnw
+Xbias drvlo_h_n en_fast_h en_fast_h_n pbias_out pd_h<4> pden_h_n vcc_io vgnd_io /
++ sky130_fd_io__com_pdpredrvr_pbias
+Xnor net142 pden_h_n en_fast_h vgnd_io vcc_io / sky130_fd_io__com_nor2_dnw
+.ENDS
+
+************************************************************************
+* Library Name: s8iom0s8
+* Cell Name: sky130_fd_io__com_pupredrvr_weak
+* View Name: schematic
+************************************************************************
+
+.SUBCKT sky130_fd_io__com_pupredrvr_weak drvhi_h pu_h_n puen_h vcc_io vgnd_io
+*.PININFO drvhi_h:I puen_h:I vcc_io:I vgnd_io:I pu_h_n:O
+XMI39 net21 puen_h vgnd_io vgnd_io sky130_fd_pr__nfet_g5v0d10v5 AD=0 AS=0 PD=0 PS=0
++ a=(3.00)*(0.60) l=0.60 m=1*1 p=2*(3.00)+2*(0.60) sa=265e-3 sb=265e-3
++ sd=280e-3 w=3.00
+XMI3 pu_h_n drvhi_h net21 vgnd_io sky130_fd_pr__nfet_g5v0d10v5 AD=0 AS=0 PD=0 PS=0
++ a=(3.00)*(0.60) l=0.60 m=1*1 p=2*(3.00)+2*(0.60) sa=265e-3 sb=265e-3
++ sd=280e-3 w=3.00
+XMI37 pu_h_n drvhi_h vcc_io vcc_io sky130_fd_pr__pfet_g5v0d10v5 AD=0 AS=0 PD=0 PS=0
++ a=(5.00)*(0.60) l=0.60 m=2*1 p=2*(5.00)+2*(0.60) sa=265e-3 sb=265e-3
++ sd=280e-3 w=5.00
+XMI38 pu_h_n puen_h vcc_io vcc_io sky130_fd_pr__pfet_g5v0d10v5 AD=0 AS=0 PD=0 PS=0
++ a=(5.00)*(0.60) l=0.60 m=1*1 p=2*(5.00)+2*(0.60) sa=265e-3 sb=265e-3
++ sd=280e-3 w=5.00
+.ENDS
+
+************************************************************************
+* Library Name: s8iom0s8
+* Cell Name: sky130_fd_io__com_pdpredrvr_weak
+* View Name: schematic
+************************************************************************
+
+.SUBCKT sky130_fd_io__com_pdpredrvr_weak drvlo_h_n pd_h pden_h_n vcc_io vgnd_io
+*.PININFO drvlo_h_n:I pden_h_n:I vcc_io:I vgnd_io:I pd_h:O
+XMI25 pd_h drvlo_h_n vgnd_io vgnd_io sky130_fd_pr__nfet_g5v0d10v5 AD=0 AS=0 PD=0 PS=0
++ a=(3.00)*(0.60) l=0.60 m=1*1 p=2*(3.00)+2*(0.60) sa=265e-3 sb=265e-3
++ sd=280e-3 w=3.00
+XMI26 pd_h pden_h_n vgnd_io vgnd_io sky130_fd_pr__nfet_g5v0d10v5 AD=0 AS=0 PD=0 PS=0
++ a=(3.00)*(0.60) l=0.60 m=1*1 p=2*(3.00)+2*(0.60) sa=265e-3 sb=265e-3
++ sd=280e-3 w=3.00
+XMI23 pd_h drvlo_h_n net25 vcc_io sky130_fd_pr__pfet_g5v0d10v5 AD=0 AS=0 PD=0 PS=0
++ a=(3.00)*(0.60) l=0.60 m=1*1 p=2*(3.00)+2*(0.60) sa=265e-3 sb=265e-3
++ sd=280e-3 w=3.00
+XMI24 net25 pden_h_n vcc_io vcc_io sky130_fd_pr__pfet_g5v0d10v5 AD=0 AS=0 PD=0 PS=0
++ a=(3.00)*(0.60) l=0.60 m=2*1 p=2*(3.00)+2*(0.60) sa=265e-3 sb=265e-3
++ sd=280e-3 w=3.00
+.ENDS
+
+************************************************************************
+* Library Name: s8iom0s8
+* Cell Name: sky130_fd_io__com_pupredrvr_strong_slow
+* View Name: schematic
+************************************************************************
+
+.SUBCKT sky130_fd_io__com_pupredrvr_strong_slow drvhi_h pu_h_n puen_h vcc_io vgnd_io
+*.PININFO drvhi_h:I puen_h:I vcc_io:I vgnd_io:I pu_h_n:O
+XMI39 net17 puen_h vgnd_io vgnd_io sky130_fd_pr__nfet_g5v0d10v5 AD=0 AS=0 PD=0 PS=0
++ a=(3.00)*(0.60) l=0.60 m=2*1 p=2*(3.00)+2*(0.60) sa=265e-3 sb=265e-3
++ sd=280e-3 w=3.00
+XMI3 pu_h_n drvhi_h net17 vgnd_io sky130_fd_pr__nfet_g5v0d10v5 AD=0 AS=0 PD=0 PS=0
++ a=(3.00)*(0.60) l=0.60 m=2*1 p=2*(3.00)+2*(0.60) sa=265e-3 sb=265e-3
++ sd=280e-3 w=3.00
+XMI37 pu_h_n drvhi_h vcc_io vcc_io sky130_fd_pr__pfet_g5v0d10v5 AD=0 AS=0 PD=0 PS=0
++ a=(3.00)*(0.50) l=0.50 m=3*1 p=2*(3.00)+2*(0.50) sa=265e-3 sb=265e-3
++ sd=280e-3 w=3.00
+XMI38 pu_h_n puen_h vcc_io vcc_io sky130_fd_pr__pfet_g5v0d10v5 AD=0 AS=0 PD=0 PS=0
++ a=(3.00)*(0.50) l=0.50 m=1*1 p=2*(3.00)+2*(0.50) sa=265e-3 sb=265e-3
++ sd=280e-3 w=3.00
+.ENDS
+
+************************************************************************
+* Library Name: s8iom0s8
+* Cell Name: sky130_fd_io__com_pdpredrvr_strong_slow
+* View Name: schematic
+************************************************************************
+
+.SUBCKT sky130_fd_io__com_pdpredrvr_strong_slow drvlo_h_n pd_h pden_h_n vcc_io vgnd_io
+*.PININFO drvlo_h_n:I pden_h_n:I vcc_io:I vgnd_io:I pd_h:O
+XMI25 pd_h drvlo_h_n vgnd_io vgnd_io sky130_fd_pr__nfet_g5v0d10v5 AD=0 AS=0 PD=0 PS=0
++ a=(3.00)*(0.60) l=0.60 m=1*1 p=2*(3.00)+2*(0.60) sa=265e-3 sb=265e-3
++ sd=280e-3 w=3.00
+XMI26 pd_h pden_h_n vgnd_io vgnd_io sky130_fd_pr__nfet_g5v0d10v5 AD=0 AS=0 PD=0 PS=0
++ a=(3.00)*(0.60) l=0.60 m=1*1 p=2*(3.00)+2*(0.60) sa=265e-3 sb=265e-3
++ sd=280e-3 w=3.00
+XMI23 pd_h drvlo_h_n net25 vcc_io sky130_fd_pr__pfet_g5v0d10v5 AD=0 AS=0 PD=0 PS=0
++ a=(3.00)*(0.50) l=0.50 m=2*1 p=2*(3.00)+2*(0.50) sa=265e-3 sb=265e-3
++ sd=280e-3 w=3.00
+XMI24 net25 pden_h_n vcc_io vcc_io sky130_fd_pr__pfet_g5v0d10v5 AD=0 AS=0 PD=0 PS=0
++ a=(3.00)*(0.50) l=0.50 m=2*1 p=2*(3.00)+2*(0.50) sa=265e-3 sb=265e-3
++ sd=280e-3 w=3.00
+.ENDS
+
+************************************************************************
+* Library Name: s8iom0s8
+* Cell Name: sky130_fd_io__gpiov2_obpredrvr
+* View Name: schematic
+************************************************************************
+
+.SUBCKT sky130_fd_io__gpiov2_obpredrvr drvhi_h drvlo_h_n i2c_mode_h_n pd_h<4> pd_h<3> pd_h<2> pd_h<1>
++ pd_h<0> pden_h_n<1> pden_h_n<0> pu_h_n<3> pu_h_n<2> pu_h_n<1> pu_h_n<0> puen_h<1> puen_h<0>
++ slow_h slow_h_n tie_hi_esd vcc_io vgnd vgnd_io
+*.PININFO drvhi_h:I drvlo_h_n:I i2c_mode_h_n:I pden_h_n<1>:I pden_h_n<0>:I
+*.PININFO puen_h<1>:I puen_h<0>:I slow_h:I slow_h_n:I tie_hi_esd:I vcc_io:I
+*.PININFO vgnd:I vgnd_io:I pd_h<4>:O pd_h<3>:O pd_h<2>:O pd_h<1>:O pd_h<0>:O
+*.PININFO pu_h_n<3>:O pu_h_n<2>:O pu_h_n<1>:O pu_h_n<0>:O
+Xpu_strong drvhi_h pu_h_n<3> pu_h_n<2> puen_h<1> slow_h_n vcc_io vgnd_io /
++ sky130_fd_io__gpiov2_pupredrvr_strong
+Xpd_strong drvlo_h_n i2c_mode_h_n pd_h<4> pd_h<3> pd_h<2> pden_h_n<1> slow_h tie_hi_esd vcc_io
++ vgnd vgnd_io / sky130_fd_io__gpiov2_pdpredrvr_strong
+Xpu_weak drvhi_h pu_h_n<0> puen_h<0> vcc_io vgnd_io / sky130_fd_io__com_pupredrvr_weak
+Xpd_weak drvlo_h_n pd_h<0> pden_h_n<0> vcc_io vgnd_io / sky130_fd_io__com_pdpredrvr_weak
+Xpu_strong_slow drvhi_h pu_h_n<1> puen_h<1> vcc_io vgnd_io / sky130_fd_io__com_pupredrvr_strong_slow
+Xpd_strong_slow drvlo_h_n pd_h<1> pden_h_n<1> vcc_io vgnd_io / sky130_fd_io__com_pdpredrvr_strong_slow
+XI15 vgnd_io vcc_io condiode
+.ENDS
+
+************************************************************************
+* Library Name: s8iom0s8
+* Cell Name: sky130_fd_io__gpiov2_octl_dat
+* View Name: schematic
+************************************************************************
+
+.SUBCKT sky130_fd_io__gpiov2_octl_dat dm_h<2> dm_h<1> dm_h<0> dm_h_n<2> dm_h_n<1> dm_h_n<0> drvhi_h
++ hld_i_h_n hld_i_ovr_h od_h oe_n out pd_h<4> pd_h<3> pd_h<2> pd_h<1> pd_h<0> pu_h_n<3>
++ pu_h_n<2> pu_h_n<1> pu_h_n<0> slow slow_h_n tie_hi_esd vcc_io vgnd vgnd_io vpwr vpwr_ka
+*.PININFO dm_h<2>:I dm_h<1>:I dm_h<0>:I dm_h_n<2>:I dm_h_n<1>:I dm_h_n<0>:I
+*.PININFO hld_i_h_n:I hld_i_ovr_h:I od_h:I oe_n:I out:I slow:I tie_hi_esd:I
+*.PININFO vcc_io:I vgnd:I vgnd_io:I vpwr:I vpwr_ka:I drvhi_h:O pd_h<4>:O
+*.PININFO pd_h<3>:O pd_h<2>:O pd_h<1>:O pd_h<0>:O pu_h_n<3>:O pu_h_n<2>:O
+*.PININFO pu_h_n<1>:O pu_h_n<0>:O slow_h_n:O
+Xdatoe drvhi_h drvlo_h_n hld_i_h_n hld_i_ovr_h od_h oe_h oe_n out vcc_io
++ vgnd vpwr_ka / sky130_fd_io__gpiov2_opath_datoe
+Xctl dm_h<2> dm_h<1> dm_h<0> dm_h_n<2> dm_h_n<1> dm_h_n<0> hld_i_h_n od_h pden_h_n<2>
++ pden_h_n<1> pden_h_n<0> puen_0_h puen_2or1_h puen_h<1> puen_h<0> slow slow_h slow_h_n vcc_io vgnd
++ vpwr vcc_io / sky130_fd_io__gpiov2_octl
+Xpredrvr drvhi_h drvlo_h_n pden_h_n<2> pd_h<4> pd_h<3> pd_h<2> pd_h<1> pd_h<0> pden_h_n<1>
++ pden_h_n<0> pu_h_n<3> pu_h_n<2> pu_h_n<1> pu_h_n<0> puen_h<1> puen_h<0> slow_h slow_h_n
++ tie_hi_esd vcc_io vgnd vgnd_io / sky130_fd_io__gpiov2_obpredrvr
+.ENDS
+
+************************************************************************
+* Library Name: s8iom0s8
+* Cell Name: sky130_fd_io__gpiov2_opath
+* View Name: schematic
+************************************************************************
+
+.SUBCKT sky130_fd_io__gpiov2_opath dm_h<2> dm_h<1> dm_h<0> dm_h_n<2> dm_h_n<1> dm_h_n<0> hld_i_h_n
++ hld_i_ovr_h od_h oe_n out pad slow tie_hi_esd tie_lo_esd vcc_io vgnd vgnd_io
++ vpwr vpwr_ka
+*.PININFO dm_h<2>:I dm_h<1>:I dm_h<0>:I dm_h_n<2>:I dm_h_n<1>:I dm_h_n<0>:I
+*.PININFO hld_i_h_n:I hld_i_ovr_h:I od_h:I oe_n:I out:I slow:I vcc_io:I vgnd:I
+*.PININFO vgnd_io:I vpwr:I vpwr_ka:I pad:O tie_hi_esd:O tie_lo_esd:O
+Xodrvr net70 pad pd_h<3> pd_h<2> pd_h<1> pd_h<0> pd_h<4> pu_h_n<3> pu_h_n<2>
++ pu_h_n<1> pu_h_n<0> tie_hi_esd tie_lo_esd vcc_io vgnd vgnd_io / sky130_fd_io__gpiov2_odrvr
+Xopath dm_h<2> dm_h<1> dm_h<0> dm_h_n<2> dm_h_n<1> dm_h_n<0> drvhi_h hld_i_h_n hld_i_ovr_h
++ od_h oe_n out pd_h<4> pd_h<3> pd_h<2> pd_h<1> pd_h<0> pu_h_n<3> pu_h_n<2> pu_h_n<1>
++ pu_h_n<0> slow slow_h_n tie_hi_esd vcc_io vgnd vgnd_io vpwr vpwr_ka / sky130_fd_io__gpiov2_octl_dat
+.ENDS
+
+************************************************************************
+* Library Name: s8iom0s8
+* Cell Name: sky130_fd_io__hvsbt_inv_x4
+* View Name: schematic
+************************************************************************
+
+.SUBCKT sky130_fd_io__hvsbt_inv_x4 in out vgnd vpwr
+*.PININFO in:I vgnd:I vpwr:I out:O
+XMI1 out in vpwr vpwr sky130_fd_pr__pfet_g5v0d10v5 AD=0 AS=0 PD=0 PS=0
++ a=(1.00)*(0.60) l=0.60 m=8*1 p=2*(1.00)+2*(0.60) sa=265e-3 sb=265e-3
++ sd=280e-3 w=1.00
+XMI2 out in vgnd vgnd sky130_fd_pr__nfet_g5v0d10v5 AD=0 AS=0 PD=0 PS=0
++ a=(0.70)*(0.60) l=0.60 m=4*1 p=2*(0.70)+2*(0.60) sa=265e-3 sb=265e-3
++ sd=280e-3 w=0.70
+.ENDS
+
+************************************************************************
+* Library Name: s8iom0s8
+* Cell Name: sky130_fd_io__hvsbt_inv_x8
+* View Name: schematic
+************************************************************************
+
+.SUBCKT sky130_fd_io__hvsbt_inv_x8 in out vgnd vpwr
+*.PININFO in:I vgnd:I vpwr:I out:O
+XMI2 out in vgnd vgnd sky130_fd_pr__nfet_g5v0d10v5 AD=0 AS=0 PD=0 PS=0
++ a=(0.70)*(0.60) l=0.60 m=8*1 p=2*(0.70)+2*(0.60) sa=265e-3 sb=265e-3
++ sd=280e-3 w=0.70
+XMI1 out in vpwr vpwr sky130_fd_pr__pfet_g5v0d10v5 AD=0 AS=0 PD=0 PS=0
++ a=(1.00)*(0.60) l=0.60 m=16*1 p=2*(1.00)+2*(0.60) sa=265e-3 sb=265e-3
++ sd=280e-3 w=1.00
+.ENDS
+
+************************************************************************
+* Library Name: s8iom0s8
+* Cell Name: sky130_fd_io__gpiov2_ctl_hld
+* View Name: schematic
+************************************************************************
+
+.SUBCKT sky130_fd_io__gpiov2_ctl_hld enable_h hld_h_n hld_i_h hld_i_h_n hld_i_ovr_h hld_ovr od_i_h vcc_io
++ vgnd vpwr
+*.PININFO enable_h:I hld_h_n:I hld_ovr:I vcc_io:I vgnd:I vpwr:I hld_i_h:O
+*.PININFO hld_i_h_n:O hld_i_ovr_h:O od_i_h:O
+Xhld_ovr_ls net65 hld_ovr hld_ovr_h net37 od_h vgnd vcc_io vgnd vpwr
++ / sky130_fd_io__com_ctl_ls
+XI26 net65 hld_ovr_h hld_i_ovr_h_n vgnd vcc_io / sky130_fd_io__hvsbt_nor
+XI30 od_i_h hld_i_ovr_h_n hld_i_ovr_h vgnd vcc_io / sky130_fd_io__hvsbt_nor
+XI31 od_i_h_n od_i_h vgnd vcc_io / sky130_fd_io__hvsbt_inv_x4
+Xhld_i_h_inv4 net65 enable_vdda_h_n vgnd vcc_io / sky130_fd_io__hvsbt_inv_x4
+Xhld_nand enable_h hld_h_n net64 vgnd vcc_io / sky130_fd_io__hvsbt_nand2
+XI32 od_h od_i_h_n vgnd vcc_io / sky130_fd_io__hvsbt_inv_x1
+Xhld_i_h_inv1 net64 net65 vgnd vcc_io / sky130_fd_io__hvsbt_inv_x1
+Xod_h_inv enable_h od_h vgnd vcc_io / sky130_fd_io__hvsbt_inv_x1
+Xhld_i_h_inv8<1> enable_vdda_h_n hld_i_h_n_net<1> vgnd vcc_io / sky130_fd_io__hvsbt_inv_x8
+Xhld_i_h_inv8<0> enable_vdda_h_n hld_i_h_n_net<0> vgnd vcc_io / sky130_fd_io__hvsbt_inv_x8
+Rshort_hld_i_h enable_vdda_h_n hld_i_h short m=1
+Rshort<1> hld_i_h_n_net<1> hld_i_h_n short m=1
+Rshort<0> hld_i_h_n_net<0> hld_i_h_n short m=1
+.ENDS
+
+************************************************************************
+* Library Name: s8iom0s8
+* Cell Name: sky130_fd_io__gpiov2_ctl_lsbank
+* View Name: schematic
+************************************************************************
+
+.SUBCKT sky130_fd_io__gpiov2_ctl_lsbank dm<2> dm<1> dm<0> dm_h<2> dm_h<1> dm_h<0> dm_h_n<2> dm_h_n<1>
++ dm_h_n<0> hld_i_h_n ib_mode_sel ib_mode_sel_h ib_mode_sel_h_n inp_dis inp_dis_h inp_dis_h_n
++ od_i_h startup_rst_h startup_st_h vcc_io vgnd vpwr vtrip_sel vtrip_sel_h vtrip_sel_h_n
+*.PININFO dm<2>:I dm<1>:I dm<0>:I hld_i_h_n:I ib_mode_sel:I inp_dis:I od_i_h:I
+*.PININFO startup_rst_h:I startup_st_h:I vcc_io:I vgnd:I vpwr:I vtrip_sel:I
+*.PININFO dm_h<2>:O dm_h<1>:O dm_h<0>:O dm_h_n<2>:O dm_h_n<1>:O dm_h_n<0>:O
+*.PININFO ib_mode_sel_h:O ib_mode_sel_h_n:O inp_dis_h:O inp_dis_h_n:O
+*.PININFO vtrip_sel_h:O vtrip_sel_h_n:O
+XI337<1> dm_st_h<0> startup_rst_h startup_st_h / sky130_fd_io__tk_opti
+XI597 ib_mode_sel_rst_h vgnd od_i_h / sky130_fd_io__tk_opti
+XI598 ib_mode_sel_st_h od_i_h vgnd / sky130_fd_io__tk_opti
+XI805<1> dm_rst_h<1> vgnd od_i_h / sky130_fd_io__tk_opti
+XI804<1> dm_rst_h<2> vgnd od_i_h / sky130_fd_io__tk_opti
+XI802<1> dm_st_h<2> od_i_h vgnd / sky130_fd_io__tk_opti
+XI803<1> dm_st_h<1> od_i_h vgnd / sky130_fd_io__tk_opti
+XI338<1> dm_rst_h<0> startup_st_h startup_rst_h / sky130_fd_io__tk_opti
+Xie_n_st ie_n_st_h startup_st_h startup_rst_h / sky130_fd_io__tk_opti
+Xie_n_rst ie_n_rst_h startup_rst_h startup_st_h / sky130_fd_io__tk_opti
+Xtrip_sel_rst trip_sel_rst_h vgnd od_i_h / sky130_fd_io__tk_opti
+Xtrip_sel_st trip_sel_st_h od_i_h vgnd / sky130_fd_io__tk_opti
+XI595 hld_i_h_n ib_mode_sel ib_mode_sel_h ib_mode_sel_h_n ib_mode_sel_rst_h ib_mode_sel_st_h vcc_io
++ vgnd vpwr / sky130_fd_io__com_ctl_ls
+Xdm_ls<2> hld_i_h_n dm<2> dm_h<2> dm_h_n<2> dm_rst_h<2> dm_st_h<2> vcc_io vgnd vpwr
++ / sky130_fd_io__com_ctl_ls
+Xdm_ls<1> hld_i_h_n dm<1> dm_h<1> dm_h_n<1> dm_rst_h<1> dm_st_h<1> vcc_io vgnd vpwr
++ / sky130_fd_io__com_ctl_ls
+Xtrip_sel_ls hld_i_h_n vtrip_sel vtrip_sel_h vtrip_sel_h_n trip_sel_rst_h trip_sel_st_h vcc_io vgnd
++ vpwr / sky130_fd_io__com_ctl_ls
+Xinp_dis_ls hld_i_h_n inp_dis inp_dis_h inp_dis_h_n ie_n_rst_h ie_n_st_h vcc_io vgnd vpwr
++ / sky130_fd_io__com_ctl_ls
+Xdm_ls<0> hld_i_h_n dm<0> dm_h<0> dm_h_n<0> dm_rst_h<0> dm_st_h<0> vcc_io vgnd vpwr
++ / sky130_fd_io__com_ctl_ls
+.ENDS
+
+************************************************************************
+* Library Name: s8iom0s8
+* Cell Name: sky130_fd_io__gpiov2_ctl
+* View Name: schematic
+************************************************************************
+
+.SUBCKT sky130_fd_io__gpiov2_ctl dm<2> dm<1> dm<0> dm_h<2> dm_h<1> dm_h<0> dm_h_n<2> dm_h_n<1>
++ dm_h_n<0> enable_h enable_inp_h hld_h_n hld_i_h hld_i_h_n hld_i_ovr_h hld_ovr ib_mode_sel
++ ib_mode_sel_h ib_mode_sel_h_n inp_dis inp_dis_h_n od_i_h vcc_io vgnd vpwr vtrip_sel vtrip_sel_h
++ vtrip_sel_h_n
+*.PININFO dm<2>:I dm<1>:I dm<0>:I enable_h:I enable_inp_h:I hld_h_n:I
+*.PININFO hld_ovr:I ib_mode_sel:I inp_dis:I vcc_io:I vgnd:I vpwr:I vtrip_sel:I
+*.PININFO dm_h<2>:O dm_h<1>:O dm_h<0>:O dm_h_n<2>:O dm_h_n<1>:O dm_h_n<0>:O
+*.PININFO hld_i_h:O hld_i_h_n:O hld_i_ovr_h:O ib_mode_sel_h:O
+*.PININFO ib_mode_sel_h_n:O inp_dis_h_n:O od_i_h:O vtrip_sel_h:O
+*.PININFO vtrip_sel_h_n:O
+XI75 enable_inp_h enable_h startup_rst_h vgnd vcc_io / sky130_fd_io__hvsbt_nor
+Xhld_dis_blk enable_h hld_h_n hld_i_h hld_i_h_n hld_i_ovr_h hld_ovr od_i_h vcc_io vgnd
++ vpwr / sky130_fd_io__gpiov2_ctl_hld
+Xls_bank dm<2> dm<1> dm<0> dm_h<2> dm_h<1> dm_h<0> dm_h_n<2> dm_h_n<1> dm_h_n<0>
++ hld_i_h_n ib_mode_sel ib_mode_sel_h ib_mode_sel_h_n inp_dis net80 inp_dis_h_n od_i_h
++ startup_rst_h inp_startup_en_h vcc_io vgnd vpwr vtrip_sel vtrip_sel_h vtrip_sel_h_n /
++ sky130_fd_io__gpiov2_ctl_lsbank
+XI56 od_i_h enable_inp_h net92 vgnd vcc_io / sky130_fd_io__hvsbt_nand2
+XI57 net92 inp_startup_en_h vgnd vcc_io / sky130_fd_io__hvsbt_inv_x1
+.ENDS
+
+************************************************************************
+* Library Name: s8iom0s8
+* Cell Name: sky130_fd_io__gpiov2_inbuf_lvinv_x1
+* View Name: schematic
+************************************************************************
+
+.SUBCKT sky130_fd_io__gpiov2_inbuf_lvinv_x1 in out vgnd vnb vpb vpwr
+*.PININFO in:I vgnd:I vnb:I vpb:I vpwr:I out:O
+XMI2 out in vgnd vnb sky130_fd_pr__nfet_01v8 AD=0 AS=0 PD=0 PS=0
++ a=(1.00)*(0.25) l=0.25 m=1*1 p=2*(1.00)+2*(0.25) sa=265e-3 sb=265e-3
++ sd=280e-3 w=1.00
+XMI1 out in vpwr vpb sky130_fd_pr__pfet_01v8_hvt AD=0 AS=0 PD=0 PS=0
++ a=(3.00)*(0.25) l=0.25 m=1*1 p=2*(3.00)+2*(0.25) sa=265e-3 sb=265e-3
++ sd=280e-3 w=3.00
+.ENDS
+
+************************************************************************
+* Library Name: s8iom0s8
+* Cell Name: sky130_fd_io__gpiov2_ipath_lvls
+* View Name: schematic
+************************************************************************
+
+.SUBCKT sky130_fd_io__gpiov2_ipath_lvls in_vcchib in_vddio mode_normal_lv mode_normal_lv_n mode_vcchib_lv
++ mode_vcchib_lv_n out out_b vcchib vssd
+*.PININFO in_vcchib:I in_vddio:I mode_normal_lv:I mode_normal_lv_n:I
+*.PININFO mode_vcchib_lv:I mode_vcchib_lv_n:I vcchib:I vssd:I out:O out_b:O
+XMI336 out_b in_vcchib net50 vcchib sky130_fd_pr__pfet_01v8 AD=0 AS=0 PD=0 PS=0
++ a=(3.00)*(0.25) l=0.25 m=2*1 p=2*(3.00)+2*(0.25) sa=265e-3 sb=265e-3
++ sd=280e-3 w=3.00
+XMI337 out out_b vcchib vcchib sky130_fd_pr__pfet_01v8 AD=0 AS=0 PD=0 PS=0
++ a=(3.00)*(0.25) l=0.25 m=4*1 p=2*(3.00)+2*(0.25) sa=265e-3 sb=265e-3
++ sd=280e-3 w=3.00
+XMI338 fbk fbk_n vcchib vcchib sky130_fd_pr__pfet_01v8 AD=0 AS=0 PD=0 PS=0
++ a=(5.00)*(0.25) l=0.25 m=1*1 p=2*(5.00)+2*(0.25) sa=265e-3 sb=265e-3
++ sd=280e-3 w=5.00
+XMI339 fbk_n mode_normal_lv vcchib vcchib sky130_fd_pr__pfet_01v8 AD=0 AS=0 PD=0 PS=0
++ a=(5.00)*(0.25) l=0.25 m=1*1 p=2*(5.00)+2*(0.25) sa=265e-3 sb=265e-3
++ sd=280e-3 w=5.00
+XMI340 net50 mode_vcchib_lv_n vcchib vcchib sky130_fd_pr__pfet_01v8 AD=0 AS=0 PD=0 PS=0
++ a=(3.00)*(0.25) l=0.25 m=2*1 p=2*(3.00)+2*(0.25) sa=265e-3 sb=265e-3
++ sd=280e-3 w=3.00
+XMI341 out_b mode_normal_lv net70 vcchib sky130_fd_pr__pfet_01v8 AD=0 AS=0 PD=0 PS=0
++ a=(3.00)*(0.25) l=0.25 m=1*1 p=2*(3.00)+2*(0.25) sa=265e-3 sb=265e-3
++ sd=280e-3 w=3.00
+XMI342 net78 mode_normal_lv_n vcchib vcchib sky130_fd_pr__pfet_01v8 AD=0 AS=0 PD=0 PS=0
++ a=(3.00)*(0.25) l=0.25 m=2*1 p=2*(3.00)+2*(0.25) sa=265e-3 sb=265e-3
++ sd=280e-3 w=3.00
+XMI343 out_b fbk net78 vcchib sky130_fd_pr__pfet_01v8 AD=0 AS=0 PD=0 PS=0
++ a=(3.00)*(0.25) l=0.25 m=2*1 p=2*(3.00)+2*(0.25) sa=265e-3 sb=265e-3
++ sd=280e-3 w=3.00
+XMI344 net70 mode_vcchib_lv vcchib vcchib sky130_fd_pr__pfet_01v8 AD=0 AS=0 PD=0 PS=0
++ a=(3.00)*(0.25) l=0.25 m=1*1 p=2*(3.00)+2*(0.25) sa=265e-3 sb=265e-3
++ sd=280e-3 w=3.00
+XMI345 fbk_n in_vddio vcchib vcchib sky130_fd_pr__pfet_g5v0d10v5 AD=0 AS=0 PD=0 PS=0
++ a=(5.00)*(0.50) l=0.50 m=2*1 p=2*(5.00)+2*(0.50) sa=265e-3 sb=265e-3
++ sd=280e-3 w=5.00
+XMI346 out_b in_vcchib net95 vssd sky130_fd_pr__nfet_01v8 AD=0 AS=0 PD=0 PS=0
++ a=(3.00)*(0.25) l=0.25 m=2*1 p=2*(3.00)+2*(0.25) sa=265e-3 sb=265e-3
++ sd=280e-3 w=3.00
+XMI347 net95 mode_vcchib_lv vssd vssd sky130_fd_pr__nfet_01v8 AD=0 AS=0 PD=0 PS=0
++ a=(3.00)*(0.25) l=0.25 m=2*1 p=2*(3.00)+2*(0.25) sa=265e-3 sb=265e-3
++ sd=280e-3 w=3.00
+XMI348 fbk fbk_n vssd vssd sky130_fd_pr__nfet_01v8 AD=0 AS=0 PD=0 PS=0
++ a=(3.00)*(0.25) l=0.25 m=1*1 p=2*(3.00)+2*(0.25) sa=265e-3 sb=265e-3
++ sd=280e-3 w=3.00
+XMI349 out out_b vssd vssd sky130_fd_pr__nfet_01v8 AD=0 AS=0 PD=0 PS=0
++ a=(3.00)*(0.25) l=0.25 m=2*1 p=2*(3.00)+2*(0.25) sa=265e-3 sb=265e-3
++ sd=280e-3 w=3.00
+XMI350 out_b fbk net111 vssd sky130_fd_pr__nfet_01v8 AD=0 AS=0 PD=0 PS=0
++ a=(3.00)*(0.25) l=0.25 m=2*1 p=2*(3.00)+2*(0.25) sa=265e-3 sb=265e-3
++ sd=280e-3 w=3.00
+XMI351 net111 mode_normal_lv vssd vssd sky130_fd_pr__nfet_01v8 AD=0 AS=0 PD=0 PS=0
++ a=(3.00)*(0.25) l=0.25 m=2*1 p=2*(3.00)+2*(0.25) sa=265e-3 sb=265e-3
++ sd=280e-3 w=3.00
+XMI352 net115 mode_normal_lv vssd vssd sky130_fd_pr__nfet_01v8 AD=0 AS=0 PD=0 PS=0
++ a=(3.00)*(0.25) l=0.25 m=1*1 p=2*(3.00)+2*(0.25) sa=265e-3 sb=265e-3
++ sd=280e-3 w=3.00
+XMI353 fbk_n in_vddio net115 vssd sky130_fd_pr__nfet_g5v0d10v5 AD=0 AS=0 PD=0 PS=0
++ a=(1.50)*(0.50) l=0.50 m=1*1 p=2*(1.50)+2*(0.50) sa=265e-3 sb=265e-3
++ sd=280e-3 w=1.50
+.ENDS
+
+************************************************************************
+* Library Name: s8iom0s8
+* Cell Name: sky130_fd_io__gpiov2_ipath_hvls
+* View Name: schematic
+************************************************************************
+
+.SUBCKT sky130_fd_io__gpiov2_ipath_hvls in_vcchib in_vddio inb_vcchib mode_normal mode_normal_n
++ mode_vcchib mode_vcchib_n out out_b vddio_q vssd
+*.PININFO in_vcchib:I in_vddio:I inb_vcchib:I mode_normal:I mode_normal_n:I
+*.PININFO mode_vcchib:I mode_vcchib_n:I vddio_q:I vssd:I out:O out_b:O
+XMI336 net84 fbk_b vddio_q vddio_q sky130_fd_pr__pfet_g5v0d10v5 AD=0 AS=0 PD=0 PS=0
++ a=(1.50)*(0.50) l=0.50 m=1*1 p=2*(1.50)+2*(0.50) sa=265e-3 sb=265e-3
++ sd=280e-3 w=1.50
+XMI317 out_b net84 net55 vddio_q sky130_fd_pr__pfet_g5v0d10v5 AD=0 AS=0 PD=0 PS=0
++ a=(5.00)*(0.50) l=0.50 m=2*1 p=2*(5.00)+2*(0.50) sa=265e-3 sb=265e-3
++ sd=280e-3 w=5.00
+XMI318 net55 mode_vcchib_n vddio_q vddio_q sky130_fd_pr__pfet_g5v0d10v5 AD=0 AS=0 PD=0 PS=0
++ a=(5.00)*(0.50) l=0.50 m=2*1 p=2*(5.00)+2*(0.50) sa=265e-3 sb=265e-3
++ sd=280e-3 w=5.00
+XMI319 out_b mode_vcchib net63 vddio_q sky130_fd_pr__pfet_g5v0d10v5 AD=0 AS=0 PD=0 PS=0
++ a=(5.00)*(0.50) l=0.50 m=1*1 p=2*(5.00)+2*(0.50) sa=265e-3 sb=265e-3
++ sd=280e-3 w=5.00
+XMI320 out out_b vddio_q vddio_q sky130_fd_pr__pfet_g5v0d10v5 AD=0 AS=0 PD=0 PS=0
++ a=(5.00)*(0.50) l=0.50 m=5*1 p=2*(5.00)+2*(0.50) sa=265e-3 sb=265e-3
++ sd=280e-3 w=5.00
+XMI321 net75 mode_normal_n vddio_q vddio_q sky130_fd_pr__pfet_g5v0d10v5 AD=0 AS=0 PD=0 PS=0
++ a=(5.00)*(0.50) l=0.50 m=2*1 p=2*(5.00)+2*(0.50) sa=265e-3 sb=265e-3
++ sd=280e-3 w=5.00
+XMI322 out_b in_vddio net75 vddio_q sky130_fd_pr__pfet_g5v0d10v5 AD=0 AS=0 PD=0 PS=0
++ a=(5.00)*(0.50) l=0.50 m=2*1 p=2*(5.00)+2*(0.50) sa=265e-3 sb=265e-3
++ sd=280e-3 w=5.00
+XMI323 net63 mode_normal vddio_q vddio_q sky130_fd_pr__pfet_g5v0d10v5 AD=0 AS=0 PD=0 PS=0
++ a=(5.00)*(0.50) l=0.50 m=1*1 p=2*(5.00)+2*(0.50) sa=265e-3 sb=265e-3
++ sd=280e-3 w=5.00
+XMI324 fbk_b fbk vddio_q vddio_q sky130_fd_pr__pfet_g5v0d10v5 AD=0 AS=0 PD=0 PS=0
++ a=(1.50)*(0.50) l=0.50 m=1*1 p=2*(1.50)+2*(0.50) sa=265e-3 sb=265e-3
++ sd=280e-3 w=1.50
+XMI325 fbk fbk_b vddio_q vddio_q sky130_fd_pr__pfet_g5v0d10v5 AD=0 AS=0 PD=0 PS=0
++ a=(1.50)*(0.50) l=0.50 m=1*1 p=2*(1.50)+2*(0.50) sa=265e-3 sb=265e-3
++ sd=280e-3 w=1.50
+XMI337 net84 fbk_b vssd vssd sky130_fd_pr__nfet_g5v0d10v5 AD=0 AS=0 PD=0 PS=0
++ a=(1.50)*(0.50) l=0.50 m=1*1 p=2*(1.50)+2*(0.50) sa=265e-3 sb=265e-3
++ sd=280e-3 w=1.50
+XMI326 net88 mode_vcchib vssd vssd sky130_fd_pr__nfet_g5v0d10v5 AD=0 AS=0 PD=0 PS=0
++ a=(3.00)*(0.50) l=0.50 m=1*1 p=2*(3.00)+2*(0.50) sa=265e-3 sb=265e-3
++ sd=280e-3 w=3.00
+XMI327 net92 mode_vcchib vssd vssd sky130_fd_pr__nfet_g5v0d10v5 AD=0 AS=0 PD=0 PS=0
++ a=(5.00)*(0.50) l=0.50 m=4*1 p=2*(5.00)+2*(0.50) sa=265e-3 sb=265e-3
++ sd=280e-3 w=5.00
+XMI328 fbk mode_vcchib_n vssd vssd sky130_fd_pr__nfet_g5v0d10v5 AD=0 AS=0 PD=0 PS=0
++ a=(5.00)*(0.50) l=0.50 m=1*1 p=2*(5.00)+2*(0.50) sa=265e-3 sb=265e-3
++ sd=280e-3 w=5.00
+XMI329 fbk_b in_vcchib net92 vssd sky130_fd_pr__nfet_g5v0d10v5 AD=0 AS=0 PD=0 PS=0
++ a=(5.00)*(0.50) l=0.50 m=3*1 p=2*(5.00)+2*(0.50) sa=265e-3 sb=265e-3
++ sd=280e-3 w=5.00
+XMI330 out_b in_vddio net112 vssd sky130_fd_pr__nfet_g5v0d10v5 AD=0 AS=0 PD=0 PS=0
++ a=(3.00)*(0.50) l=0.50 m=1*1 p=2*(3.00)+2*(0.50) sa=265e-3 sb=265e-3
++ sd=280e-3 w=3.00
+XMI331 out out_b vssd vssd sky130_fd_pr__nfet_g5v0d10v5 AD=0 AS=0 PD=0 PS=0
++ a=(5.00)*(0.50) l=0.50 m=3*1 p=2*(5.00)+2*(0.50) sa=265e-3 sb=265e-3
++ sd=280e-3 w=5.00
+XMI332 net112 mode_normal vssd vssd sky130_fd_pr__nfet_g5v0d10v5 AD=0 AS=0 PD=0 PS=0
++ a=(3.00)*(0.50) l=0.50 m=1*1 p=2*(3.00)+2*(0.50) sa=265e-3 sb=265e-3
++ sd=280e-3 w=3.00
+XMI333 net116 mode_vcchib vssd vssd sky130_fd_pr__nfet_g5v0d10v5 AD=0 AS=0 PD=0 PS=0
++ a=(5.00)*(0.50) l=0.50 m=4*1 p=2*(5.00)+2*(0.50) sa=265e-3 sb=265e-3
++ sd=280e-3 w=5.00
+XMI334 fbk inb_vcchib net116 vssd sky130_fd_pr__nfet_g5v0d10v5 AD=0 AS=0 PD=0 PS=0
++ a=(5.00)*(0.50) l=0.50 m=3*1 p=2*(5.00)+2*(0.50) sa=265e-3 sb=265e-3
++ sd=280e-3 w=5.00
+XMI335 out_b net84 net88 vssd sky130_fd_pr__nfet_g5v0d10v5 AD=0 AS=0 PD=0 PS=0
++ a=(3.00)*(0.50) l=0.50 m=1*1 p=2*(3.00)+2*(0.50) sa=265e-3 sb=265e-3
++ sd=280e-3 w=3.00
+.ENDS
+
+************************************************************************
+* Library Name: s8iom0s8
+* Cell Name: sky130_fd_io__gpiov2_vcchib_in_buf
+* View Name: schematic
+************************************************************************
+
+.SUBCKT sky130_fd_io__gpiov2_vcchib_in_buf in_h mode_vcchib_lv_n out out_n vcchib vssd
+*.PININFO in_h:I mode_vcchib_lv_n:I vcchib:I vssd:I out:O out_n:O
+XMI552 vssd vssd vssd vssd sky130_fd_pr__nfet_g5v0d10v5 AD=0 AS=0 PD=0 PS=0
++ a=(1.00)*(0.80) l=0.80 m=1*1 p=2*(1.00)+2*(0.80) sa=265e-3 sb=265e-3
++ sd=280e-3 w=1.00
+XMI420 net57 in_b fbk vssd sky130_fd_pr__nfet_g5v0d10v5 AD=0 AS=0 PD=0 PS=0
++ a=(1.00)*(0.80) l=0.80 m=3*1 p=2*(1.00)+2*(0.80) sa=265e-3 sb=265e-3
++ sd=280e-3 w=1.00
+XMI541 net81 mode_vcchib_lv_n vssd vssd sky130_fd_pr__nfet_01v8 AD=0 AS=0 PD=0 PS=0
++ a=(1.00)*(0.25) l=0.25 m=2*1 p=2*(1.00)+2*(0.25) sa=265e-3 sb=265e-3
++ sd=280e-3 w=1.00
+XMI487 out out_n vssd vssd sky130_fd_pr__nfet_01v8 AD=0 AS=0 PD=0 PS=0
++ a=(1.00)*(0.25) l=0.25 m=3*1 p=2*(1.00)+2*(0.25) sa=265e-3 sb=265e-3
++ sd=280e-3 w=1.00
+XMI545 in_b in_h fbk vssd sky130_fd_pr__nfet_g5v0d10v5 AD=0 AS=0 PD=0 PS=0
++ a=(5.00)*(0.80) l=0.80 m=2*1 p=2*(5.00)+2*(0.80) sa=265e-3 sb=265e-3
++ sd=280e-3 w=5.00
+XMI423 out_n net81 vssd vssd sky130_fd_pr__nfet_01v8 AD=0 AS=0 PD=0 PS=0
++ a=(1.00)*(0.25) l=0.25 m=1*1 p=2*(1.00)+2*(0.25) sa=265e-3 sb=265e-3
++ sd=280e-3 w=1.00
+XMI424 net81 in_b vssd vssd sky130_fd_pr__nfet_01v8 AD=0 AS=0 PD=0 PS=0
++ a=(1.00)*(0.25) l=0.25 m=2*1 p=2*(1.00)+2*(0.25) sa=265e-3 sb=265e-3
++ sd=280e-3 w=1.00
+XMI551 vssd vssd vssd vssd sky130_fd_pr__nfet_g5v0d10v5 AD=0 AS=0 PD=0 PS=0
++ a=(5.00)*(0.80) l=0.80 m=1*1 p=2*(5.00)+2*(0.80) sa=265e-3 sb=265e-3
++ sd=280e-3 w=5.00
+XMI544 fbk in_h vssd vssd sky130_fd_pr__nfet_g5v0d10v5 AD=0 AS=0 PD=0 PS=0
++ a=(5.00)*(0.80) l=0.80 m=2*1 p=2*(5.00)+2*(0.80) sa=265e-3 sb=265e-3
++ sd=280e-3 w=5.00
+XMI547 net108 mode_vcchib_lv_n vcchib vcchib sky130_fd_pr__pfet_01v8 AD=0 AS=0 PD=0 PS=0
++ a=(5.00)*(0.25) l=0.25 m=3*1 p=2*(5.00)+2*(0.25) sa=265e-3 sb=265e-3
++ sd=280e-3 w=5.00
+XMI489 out out_n vcchib vcchib sky130_fd_pr__pfet_01v8 AD=0 AS=0 PD=0 PS=0
++ a=(5.00)*(0.25) l=0.25 m=1*1 p=2*(5.00)+2*(0.25) sa=265e-3 sb=265e-3
++ sd=280e-3 w=5.00
+XMI538 net112 mode_vcchib_lv_n vcchib vcchib sky130_fd_pr__pfet_01v8 AD=0 AS=0 PD=0 PS=0
++ a=(3.00)*(0.25) l=0.25 m=1*1 p=2*(3.00)+2*(0.25) sa=265e-3 sb=265e-3
++ sd=280e-3 w=3.00
+XMI429 out_n net81 vcchib vcchib sky130_fd_pr__pfet_01v8 AD=0 AS=0 PD=0 PS=0
++ a=(5.00)*(0.25) l=0.25 m=1*1 p=2*(5.00)+2*(0.25) sa=265e-3 sb=265e-3
++ sd=280e-3 w=5.00
+XMI543 in_b in_h net108 vcchib sky130_fd_pr__pfet_g5v0d10v5 AD=0 AS=0 PD=0 PS=0
++ a=(5.00)*(0.80) l=0.80 m=2*1 p=2*(5.00)+2*(0.80) sa=265e-3 sb=265e-3
++ sd=280e-3 w=5.00
+XMI436 net81 in_b net112 vcchib sky130_fd_pr__pfet_01v8 AD=0 AS=0 PD=0 PS=0
++ a=(1.00)*(0.25) l=0.25 m=2*1 p=2*(1.00)+2*(0.25) sa=265e-3 sb=265e-3
++ sd=280e-3 w=1.00
+XMI549 net57 mode_vcchib_lv_n vcchib vcchib sky130_fd_pr__pfet_01v8 AD=0 AS=0 PD=0 PS=0
++ a=(5.00)*(0.25) l=0.25 m=1*1 p=2*(5.00)+2*(0.25) sa=265e-3 sb=265e-3
++ sd=280e-3 w=5.00
+.ENDS
+
+************************************************************************
+* Library Name: s8iom0s8
+* Cell Name: sky130_fd_io__gpiov2_in_buf
+* View Name: schematic
+************************************************************************
+
+.SUBCKT sky130_fd_io__gpiov2_in_buf in_h in_vt mode_normal_n out out_n vddio_q vssd vtrip_sel_h
++ vtrip_sel_h_n
+*.PININFO in_h:I in_vt:I mode_normal_n:I vddio_q:I vssd:I vtrip_sel_h:I
+*.PININFO vtrip_sel_h_n:I out:O out_n:O
+XI43 mode_normal_cmos_h mode_normal_cmos_h_n vssd vddio_q / sky130_fd_io__hvsbt_inv_x1
+XI488 vtrip_sel_h mode_normal_n mode_normal_cmos_h vssd vddio_q / sky130_fd_io__hvsbt_nor
+XMI583 in_vt vtrip_sel_h_n vssd vssd sky130_fd_pr__nfet_g5v0d10v5 AD=0 AS=0 PD=0 PS=0
++ a=(3.00)*(1.00) l=1.00 m=1*1 p=2*(3.00)+2*(1.00) sa=265e-3 sb=265e-3
++ sd=280e-3 w=3.00
+XMI642 out out_n vssd vssd sky130_fd_pr__nfet_g5v0d10v5 AD=0 AS=0 PD=0 PS=0
++ a=(5.00)*(0.50) l=0.50 m=1*1 p=2*(5.00)+2*(0.50) sa=265e-3 sb=265e-3
++ sd=280e-3 w=5.00
+XMI586 out_n net91 vssd vssd sky130_fd_pr__nfet_g5v0d10v5 AD=0 AS=0 PD=0 PS=0
++ a=(5.00)*(0.50) l=0.50 m=1*1 p=2*(5.00)+2*(0.50) sa=265e-3 sb=265e-3
++ sd=280e-3 w=5.00
+XMI587 in_b in_h fbk vssd sky130_fd_pr__nfet_g5v0d10v5 AD=0 AS=0 PD=0 PS=0
++ a=(5.00)*(0.80) l=0.80 m=5*1 p=2*(5.00)+2*(0.80) sa=265e-3 sb=265e-3
++ sd=280e-3 w=5.00
+XMI588 fbk in_vt vssd vssd sky130_fd_pr__nfet_g5v0d10v5 AD=0 AS=0 PD=0 PS=0
++ a=(5.00)*(0.80) l=0.80 m=1*1 p=2*(5.00)+2*(0.80) sa=265e-3 sb=265e-3
++ sd=280e-3 w=5.00
+XMI589 net91 in_b vssd vssd sky130_fd_pr__nfet_g5v0d10v5 AD=0 AS=0 PD=0 PS=0
++ a=(3.00)*(0.50) l=0.50 m=2*1 p=2*(3.00)+2*(0.50) sa=265e-3 sb=265e-3
++ sd=280e-3 w=3.00
+XMI590 fbk2 in_b fbk vssd sky130_fd_pr__nfet_g5v0d10v5 AD=0 AS=0 PD=0 PS=0
++ a=(5.00)*(0.80) l=0.80 m=4*1 p=2*(5.00)+2*(0.80) sa=265e-3 sb=265e-3
++ sd=280e-3 w=5.00
+XMI591 fbk in_h vssd vssd sky130_fd_pr__nfet_g5v0d10v5 AD=0 AS=0 PD=0 PS=0
++ a=(5.00)*(0.80) l=0.80 m=6*1 p=2*(5.00)+2*(0.80) sa=265e-3 sb=265e-3
++ sd=280e-3 w=5.00
+XMI592 net103 in_b fbk vssd sky130_fd_pr__nfet_g5v0d10v5 AD=0 AS=0 PD=0 PS=0
++ a=(1.00)*(0.80) l=0.80 m=4*1 p=2*(1.00)+2*(0.80) sa=265e-3 sb=265e-3
++ sd=280e-3 w=1.00
+XMI593 net91 mode_normal_n vssd vssd sky130_fd_pr__nfet_g5v0d10v5 AD=0 AS=0 PD=0 PS=0
++ a=(3.00)*(0.50) l=0.50 m=2*1 p=2*(3.00)+2*(0.50) sa=265e-3 sb=265e-3
++ sd=280e-3 w=3.00
+XMI646 vssd vssd vssd vssd sky130_fd_pr__nfet_g5v0d10v5 AD=0 AS=0 PD=0 PS=0
++ a=(5.00)*(0.80) l=0.80 m=1*1 p=2*(5.00)+2*(0.80) sa=265e-3 sb=265e-3
++ sd=280e-3 w=5.00
+XMI644 vssd vssd vssd vssd sky130_fd_pr__nfet_g5v0d10v5 AD=0 AS=0 PD=0 PS=0
++ a=(5.00)*(0.80) l=0.80 m=1*1 p=2*(5.00)+2*(0.80) sa=265e-3 sb=265e-3
++ sd=280e-3 w=5.00
+XMI643 out out_n vddio_q vddio_q sky130_fd_pr__pfet_g5v0d10v5 AD=0 AS=0 PD=0 PS=0
++ a=(5.00)*(0.50) l=0.50 m=1*1 p=2*(5.00)+2*(0.50) sa=265e-3 sb=265e-3
++ sd=280e-3 w=5.00
+XMI631 in_b in_h net122 vddio_q sky130_fd_pr__pfet_g5v0d10v5 AD=0 AS=0 PD=0 PS=0
++ a=(5.00)*(0.80) l=0.80 m=1*1 p=2*(5.00)+2*(0.80) sa=265e-3 sb=265e-3
++ sd=280e-3 w=5.00
+XMI595 net138 mode_normal_n vddio_q vddio_q sky130_fd_pr__pfet_g5v0d10v5 AD=0 AS=0 PD=0 PS=0
++ a=(5.00)*(0.50) l=0.50 m=1*1 p=2*(5.00)+2*(0.50) sa=265e-3 sb=265e-3
++ sd=280e-3 w=5.00
+XMI596 out_n net91 vddio_q vddio_q sky130_fd_pr__pfet_g5v0d10v5 AD=0 AS=0 PD=0 PS=0
++ a=(5.00)*(0.50) l=0.50 m=1*1 p=2*(5.00)+2*(0.50) sa=265e-3 sb=265e-3
++ sd=280e-3 w=5.00
+XMI597 fbk2 mode_normal_cmos_h_n vddio_q vddio_q sky130_fd_pr__pfet_g5v0d10v5 AD=0 AS=0 PD=0 PS=0
++ a=(5.00)*(0.50) l=0.50 m=2*1 p=2*(5.00)+2*(0.50) sa=265e-3 sb=265e-3
++ sd=280e-3 w=5.00
+XMI598 net91 in_b net138 vddio_q sky130_fd_pr__pfet_g5v0d10v5 AD=0 AS=0 PD=0 PS=0
++ a=(3.00)*(0.50) l=0.50 m=1*1 p=2*(3.00)+2*(0.50) sa=265e-3 sb=265e-3
++ sd=280e-3 w=3.00
+XMI600 net103 mode_normal_n vddio_q vddio_q sky130_fd_pr__pfet_g5v0d10v5 AD=0 AS=0 PD=0 PS=0
++ a=(5.00)*(0.50) l=0.50 m=2*1 p=2*(5.00)+2*(0.50) sa=265e-3 sb=265e-3
++ sd=280e-3 w=5.00
+XMI647 vddio_q vddio_q vddio_q vddio_q sky130_fd_pr__pfet_g5v0d10v5 AD=0 AS=0 PD=0 PS=0
++ a=(5.00)*(0.80) l=0.80 m=1*1 p=2*(5.00)+2*(0.80) sa=265e-3 sb=265e-3
++ sd=280e-3 w=5.00
+XMI632 net122 mode_normal_n vddio_q vddio_q sky130_fd_pr__pfet_g5v0d10v5 AD=0 AS=0 PD=0 PS=0
++ a=(5.00)*(0.50) l=0.50 m=2*1 p=2*(5.00)+2*(0.50) sa=265e-3 sb=265e-3
++ sd=280e-3 w=5.00
+XMI636 net158 mode_normal_cmos_h_n vddio_q vddio_q sky130_fd_pr__pfet_g5v0d10v5 AD=0 AS=0 PD=0 PS=0
++ a=(5.00)*(0.50) l=0.50 m=2*1 p=2*(5.00)+2*(0.50) sa=265e-3 sb=265e-3
++ sd=280e-3 w=5.00
+XMI629 in_b in_h net158 vddio_q sky130_fd_pr__pfet_g5v0d10v5 AD=0 AS=0 PD=0 PS=0
++ a=(5.00)*(0.80) l=0.80 m=1*1 p=2*(5.00)+2*(0.80) sa=265e-3 sb=265e-3
++ sd=280e-3 w=5.00
+.ENDS
+
+************************************************************************
+* Library Name: s8iom0s8
+* Cell Name: sky130_fd_io__gpiov2_ibuf_se
+* View Name: schematic
+************************************************************************
+
+.SUBCKT sky130_fd_io__gpiov2_ibuf_se enable_vddio_lv ibufmux_out ibufmux_out_h in_h in_vt mode_normal_n
++ mode_vcchib_n vcchib vddio_q vssd vtrip_sel_h vtrip_sel_h_n
+*.PININFO enable_vddio_lv:I in_h:I in_vt:I mode_normal_n:I mode_vcchib_n:I
+*.PININFO vcchib:I vddio_q:I vssd:I vtrip_sel_h:I vtrip_sel_h_n:I
+*.PININFO ibufmux_out:O ibufmux_out_h:O
+XI149 enable_vddio_lv mode_normal mode_normal_lv_n vssd vcchib / sky130_fd_io__hvsbt_nand2
+XI148 enable_vddio_lv mode_vcchib mode_vcchib_lv_n vssd vcchib / sky130_fd_io__hvsbt_nand2
+XI111 mode_vcchib_lv_n mode_vcchib_lv vssd vssd vcchib vcchib / sky130_fd_io__gpiov2_inbuf_lvinv_x1
+XI112 mode_normal_lv_n mode_normal_lv vssd vssd vcchib vcchib / sky130_fd_io__gpiov2_inbuf_lvinv_x1
+Xlvls out_vcchib out_vddio mode_normal_lv mode_normal_lv_n mode_vcchib_lv mode_vcchib_lv_n
++ ibufmux_out net57 vcchib vssd / sky130_fd_io__gpiov2_ipath_lvls
+Xhvls out_vcchib out_vddio out_n_vcchib mode_normal mode_normal_n mode_vcchib mode_vcchib_n
++ ibufmux_out_h net68 vddio_q vssd / sky130_fd_io__gpiov2_ipath_hvls
+XI88 in_h mode_vcchib_lv_n out_vcchib out_n_vcchib vcchib vssd / sky130_fd_io__gpiov2_vcchib_in_buf
+Xbuf in_h in_vt mode_normal_n out_vddio out_n_vddio vddio_q vssd vtrip_sel_h vtrip_sel_h_n
++ / sky130_fd_io__gpiov2_in_buf
+XI105 mode_vcchib_n mode_vcchib vssd vddio_q / sky130_fd_io__hvsbt_inv_x1
+XI491 mode_normal_n mode_normal vssd vddio_q / sky130_fd_io__hvsbt_inv_x1
+.ENDS
+
+************************************************************************
+* Library Name: s8iom0s8
+* Cell Name: sky130_fd_io__gpiov2_ictl_logic
+* View Name: schematic
+************************************************************************
+
+.SUBCKT sky130_fd_io__gpiov2_ictl_logic dm_h_n<2> dm_h_n<1> dm_h_n<0> ib_mode_sel_h ib_mode_sel_h_n
++ inp_dis_h_n inp_dis_i_h inp_dis_i_h_n mode_normal_n mode_vcchib_n tripsel_i_h tripsel_i_h_n
++ vddio_q vssd vtrip_sel_h_n
+*.PININFO dm_h_n<2>:I dm_h_n<1>:I dm_h_n<0>:I ib_mode_sel_h:I
+*.PININFO ib_mode_sel_h_n:I inp_dis_h_n:I vddio_q:I vssd:I vtrip_sel_h_n:I
+*.PININFO inp_dis_i_h:O inp_dis_i_h_n:O mode_normal_n:O mode_vcchib_n:O
+*.PININFO tripsel_i_h:O tripsel_i_h_n:O
+XI71 vtrip_sel_h_n mode_normal_n tripsel_i_h vssd vddio_q / sky130_fd_io__hvsbt_nor
+XI35 inp_dis_i_h_n ib_mode_sel_h_n mode_normal_n vssd vddio_q / sky130_fd_io__hvsbt_nand2
+XI36 inp_dis_i_h_n ib_mode_sel_h mode_vcchib_n vssd vddio_q / sky130_fd_io__hvsbt_nand2
+XI78 dm_h_n<1> dm_h_n<0> nand_dm01 vssd vddio_q / sky130_fd_io__hvsbt_nand2
+XI79 dm_h_n<2> and_dm01 dm_buf_dis_n vssd vddio_q / sky130_fd_io__hvsbt_nand2
+XI80 dm_buf_dis_n inp_dis_h_n inp_dis_i_h vssd vddio_q / sky130_fd_io__hvsbt_nand2
+XI74 tripsel_i_h tripsel_i_h_n vssd vddio_q / sky130_fd_io__hvsbt_inv_x1
+XI75 nand_dm01 and_dm01 vssd vddio_q / sky130_fd_io__hvsbt_inv_x1
+XI111 inp_dis_i_h inp_dis_i_h_n vssd vddio_q / sky130_fd_io__hvsbt_inv_x1
+.ENDS
+
+************************************************************************
+* Library Name: s8_esd
+* Cell Name: s8_esd_signal_5_sym_hv_local_5term
+* View Name: schematic
+************************************************************************
+
+.SUBCKT s8_esd_signal_5_sym_hv_local_5term gate in nbody nwellRing vgnd
+*.PININFO gate:I in:B nbody:B nwellRing:B vgnd:B
+XMI1 in gate vgnd nbody sky130_fd_pr__esd_nfet_g5v0d10v5 AD=0 AS=0 PD=0 PS=0
++ a=(5.40)*(0.60) l=0.60 m=1*1 p=2*(5.40)+2*(0.60) sa=0.0 sb=0.0 sd=0.0
++ w=5.40
+RI8 net16 nwellRing short m=1
+RI9 net18 nbody short m=1
+.ENDS
+
+************************************************************************
+* Library Name: s8iom0s8
+* Cell Name: sky130_fd_io__gpio_ovtv2_buf_localesd
+* View Name: schematic
+************************************************************************
+
+.SUBCKT sky130_fd_io__gpio_ovtv2_buf_localesd in_h out_h out_vt vddio_q vssd vtrip_sel_h
+*.PININFO in_h:I vtrip_sel_h:I out_h:O out_vt:O vddio_q:B vssd:B
+XMhv_passgate out_h vtrip_sel_h out_vt vssd sky130_fd_pr__nfet_g5v0d10v5 AD=0 AS=0 PD=0 PS=0
++ a=(3.00)*(1.00) l=1.00 m=1*1 p=2*(3.00)+2*(1.00) sa=265e-3 sb=265e-3
++ sd=280e-3 w=3.00
+Xesd_res in_h out_h / s8_esd_res250only_small
+Xggnfet1 vssd out_h vssd vddio_q vssd / s8_esd_signal_5_sym_hv_local_5term
+Xggnfet6 vssd vddio_q vssd vddio_q out_h / s8_esd_signal_5_sym_hv_local_5term
+.ENDS
+
+************************************************************************
+* Library Name: s8iom0s8
+* Cell Name: sky130_fd_io__gpiov2_ipath
+* View Name: schematic
+************************************************************************
+
+.SUBCKT sky130_fd_io__gpiov2_ipath dm_h_n<2> dm_h_n<1> dm_h_n<0> enable_vddio_lv ib_mode_sel_h
++ ib_mode_sel_h_n inp_dis_h_n out out_h pad vcchib vddio_q vssd vtrip_sel_h_n
+*.PININFO dm_h_n<2>:I dm_h_n<1>:I dm_h_n<0>:I enable_vddio_lv:I
+*.PININFO ib_mode_sel_h:I ib_mode_sel_h_n:I inp_dis_h_n:I vcchib:I vddio_q:I
+*.PININFO vssd:I vtrip_sel_h_n:I out:O out_h:O pad:B
+XI106 enable_vddio_lv out out_h in_h in_vt mode_normal_n mode_vcchib_n vcchib vddio_q
++ vssd tripsel_i_h tripsel_i_h_n / sky130_fd_io__gpiov2_ibuf_se
+XI107 dm_h_n<2> dm_h_n<1> dm_h_n<0> ib_mode_sel_h ib_mode_sel_h_n inp_dis_h_n en_h_n en_h
++ mode_normal_n mode_vcchib_n tripsel_i_h tripsel_i_h_n vddio_q vssd vtrip_sel_h_n /
++ sky130_fd_io__gpiov2_ictl_logic
+XI120 pad in_h in_vt vddio_q vssd tripsel_i_h / sky130_fd_io__gpio_ovtv2_buf_localesd
+.ENDS
+
+************************************************************************
+* Library Name: s8iom0s8
+* Cell Name: sky130_fd_io__top_gpiov2
+* View Name: schematic
+************************************************************************
+
+.SUBCKT sky130_fd_io__top_gpiov2 amuxbus_a amuxbus_b analog_en analog_pol analog_sel dm[2] dm[1] dm[0]
++ enable_h enable_inp_h enable_vdda_h enable_vddio enable_vswitch_h hld_h_n hld_ovr ib_mode_sel in
++ in_h inp_dis oe_n out pad pad_a_esd_0_h pad_a_esd_1_h pad_a_noesd_h slow tie_hi_esd tie_lo_esd
++ vccd vcchib vdda vddio vddio_q vssa vssd vssio vssio_q vswitch vtrip_sel
+*.PININFO analog_en:I analog_pol:I analog_sel:I dm[2]:I dm[1]:I dm[0]:I
+*.PININFO enable_h:I enable_inp_h:I enable_vdda_h:I enable_vddio:I
+*.PININFO enable_vswitch_h:I hld_h_n:I hld_ovr:I ib_mode_sel:I inp_dis:I
+*.PININFO oe_n:I out:I slow:I vtrip_sel:I in:O in_h:O tie_hi_esd:O
+*.PININFO tie_lo_esd:O amuxbus_a:B amuxbus_b:B pad:B pad_a_esd_0_h:B
+*.PININFO pad_a_esd_1_h:B pad_a_noesd_h:B vccd:B vcchib:B vdda:B vddio:B
+*.PININFO vddio_q:B vssa:B vssd:B vssio:B vssio_q:B vswitch:B
+Xamux amuxbus_a amuxbus_b analog_en analog_pol analog_sel enable_vdda_h enable_vswitch_h hld_i_h
++ hld_i_h_n out pad vccd vdda vddio_q vssa vssd vssio_q vswitch /
++ sky130_fd_io__gpiov2_amux
+Xopath dm_h<2> dm_h<1> dm_h<0> dm_h_n<2> dm_h_n<1> dm_h_n<0> hld_i_h_n hld_i_ovr_h od_i_h
++ oe_n out pad slow tie_hi_esd tie_lo_esd vddio vssd vssio vccd vcchib
++ / sky130_fd_io__gpiov2_opath
+Xctrl dm[2] dm[1] dm[0] dm_h<2> dm_h<1> dm_h<0> dm_h_n<2> dm_h_n<1> dm_h_n<0>
++ enable_h enable_inp_h hld_h_n hld_i_h hld_i_h_n hld_i_ovr_h hld_ovr ib_mode_sel ib_mode_sel_h
++ ib_mode_sel_h_n inp_dis inp_dis_h_n od_i_h vddio_q vssd vccd vtrip_sel vtrip_sel_h vtrip_sel_h_n
++ / sky130_fd_io__gpiov2_ctl
+Xipath dm_h_n<2> dm_h_n<1> dm_h_n<0> enable_vddio ib_mode_sel_h ib_mode_sel_h_n inp_dis_h_n in in_h
++ pad vcchib vddio_q vssd vtrip_sel_h_n / sky130_fd_io__gpiov2_ipath
+Xresd2 pad_a_esd_0_h net204 / s8_esd_res75only_small
+Xresd4 net210 pad / s8_esd_res75only_small
+Xresd1 net204 pad / s8_esd_res75only_small
+Xresd3 pad_a_esd_1_h net210 / s8_esd_res75only_small
+RS0<2> pad pad_a_noesd_h short m=1
+RS0<1> pad pad_a_noesd_h short m=1
+RS0<0> pad pad_a_noesd_h short m=1
+.ENDS
+
+.SUBCKT cad_dummy_open_device pin0 pin1
+.ENDS cad_dummy_open_device
+.SUBCKT condiode  pin0 pin1
+.ENDS condiode

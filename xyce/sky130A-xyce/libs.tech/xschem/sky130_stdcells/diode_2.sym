@@ -1,0 +1,14 @@
+K {type=primitive
+format="@name @@DIODE @VGND @VNB @VPB @VPWR @prefix\\\\diode_2"
+template="name=x1 VGND=VGND VNB=VNB VPB=VPB VPWR=VPWR prefix=sky130_fd_sc_hd__ "
+extra="VGND VNB VPB VPWR prefix"
+}
+T {@symname} 0 -6 0 0 0.3 0.3 {hcenter=true}
+T {@name} 75 -22 0 0 0.2 0.2 {}
+L 4 -70 -10 70 -10 {}
+L 4 -70 10 70 10 {}
+L 4 -70 -10 -70 10 {}
+L 4 70 -10 70 10 {}
+B 5 -92.5 -2.5 -87.5 2.5 {name=DIODE dir=in }
+L 4 -90 0 -70 0 {}
+T {DIODE} -65 -4 0 0 0.2 0.2 {}

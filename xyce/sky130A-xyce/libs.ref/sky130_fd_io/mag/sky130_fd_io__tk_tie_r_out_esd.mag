@@ -1,0 +1,72 @@
+magic
+tech sky130A
+magscale 1 2
+timestamp 1623348570
+<< checkpaint >>
+rect -1178 -1041 3633 1579
+<< poly >>
+rect 82 286 200 319
+rect 82 252 98 286
+rect 132 252 166 286
+rect 82 219 200 252
+rect 2240 286 2358 319
+rect 2274 252 2308 286
+rect 2342 252 2358 286
+rect 2240 219 2358 252
+<< polycont >>
+rect 98 252 132 286
+rect 166 252 200 286
+rect 2240 252 2274 286
+rect 2308 252 2342 286
+<< npolyres >>
+rect 200 219 2240 319
+<< locali >>
+rect 82 286 217 302
+rect 82 252 95 286
+rect 132 252 166 286
+rect 201 252 217 286
+rect 82 236 217 252
+rect 2222 286 2373 302
+rect 2222 285 2240 286
+rect 2222 251 2237 285
+rect 2274 252 2308 286
+rect 2342 285 2373 286
+rect 2271 251 2309 252
+rect 2343 251 2373 285
+rect 2222 236 2373 251
+<< viali >>
+rect 95 252 98 286
+rect 98 252 129 286
+rect 167 252 200 286
+rect 200 252 201 286
+rect 2237 252 2240 285
+rect 2240 252 2271 285
+rect 2309 252 2342 285
+rect 2342 252 2343 285
+rect 2237 251 2271 252
+rect 2309 251 2343 252
+<< metal1 >>
+rect 83 286 213 292
+rect 83 252 95 286
+rect 129 252 167 286
+rect 201 252 213 286
+rect 83 246 213 252
+rect 2225 285 2355 291
+rect 2225 251 2237 285
+rect 2271 251 2309 285
+rect 2343 251 2355 285
+rect 2225 245 2355 251
+use sky130_fd_pr__res_generic_po__example_5595914180838  sky130_fd_pr__res_generic_po__example_5595914180838_0
+timestamp 1623348570
+transform 1 0 200 0 1 219
+box 15 17 2025 18
+<< labels >>
+flabel metal1 s 108 252 187 288 3 FreeSans 520 0 0 0 A
+port 1 nsew
+flabel metal1 s 2241 248 2330 288 3 FreeSans 520 0 0 0 B
+port 2 nsew
+<< properties >>
+string GDS_FILE $PDKPATH/libs.ref/sky130_fd_io/gds/sky130_fd_io.gds
+string GDS_END 13712786
+string GDS_START 13711046
+<< end >>

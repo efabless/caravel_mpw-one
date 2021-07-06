@@ -1,0 +1,64 @@
+v {xschem version=2.9.9 file_version=1.2 
+
+* Copyright 2020 Stefan Frederik Schippers
+* 
+* Licensed under the Apache License, Version 2.0 (the "License");
+* you may not use this file except in compliance with the License.
+* You may obtain a copy of the License at
+*
+*     https://www.apache.org/licenses/LICENSE-2.0
+*
+* Unless required by applicable law or agreed to in writing, software
+* distributed under the License is distributed on an "AS IS" BASIS,
+* WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+* See the License for the specific language governing permissions and
+* limitations under the License.
+
+}
+G {}
+K {type=nmos
+format="@spiceprefix@name @pinlist sky130_fd_pr__@model W=@W L=@L m=@mult"
+template="name=M1
+L=1.5
+W=30
+mult=1
+model=nfet_20v0_nvt
+spiceprefix=X
+"}
+V {}
+S {}
+E {}
+L 4 20 -30 20 -17.5 {}
+L 4 20 17.5 20 30 {}
+L 4 8.75 -17.5 20 -17.5 {}
+L 4 8.75 17.5 15 17.5 {}
+L 4 8.75 -22.5 8.75 22.5 {}
+L 4 2.5 -15 8.75 -15 {}
+L 4 2.5 -5 8.75 -5 {}
+L 4 2.5 -8.75 8.75 -8.75 {}
+L 4 -20 0 -2.5 0 {}
+L 4 2.5 -10 3.75 -8.75 {}
+L 4 7.5 -8.75 8.75 -10 {}
+L 4 7.5 -15 8.75 -13.75 {}
+L 4 2.5 -13.75 3.75 -15 {}
+L 4 7.5 -13.75 7.8125 -14.0625 {}
+L 4 3.4375 -9.6875 3.75 -10 {}
+L 4 3.4375 -14.0625 3.75 -13.75 {}
+L 4 7.5 -10 7.8125 -9.6875 {}
+B 4 4.375 -13.125 6.875 -10.625 {}
+B 5 17.5 -32.5 22.5 -27.5 {name=S dir=inout}
+B 5 -22.5 -2.5 -17.5 2.5 {name=G dir=in}
+B 5 17.5 27.5 22.5 32.5 {name=S dir=inout}
+B 5 19.921875 -0.078125 20.078125 0.078125 {name=B dir=in}
+B 5 -12.5 17.5 -7.5 22.5 {name=sub dir=in}
+P 4 4 15 15 20 17.5 15 20 15 15 {fill=true}
+P 4 5 -2.5 15 -2.5 -15 2.5 -15 2.5 15 -2.5 15 {}
+P 5 4 20 -2.5 15 0 20 2.5 20 -2.5 {fill=true}
+T {@name} 5 -30 0 1 0.2 0.2 {}
+T {S} 22.5 17.5 0 0 0.15 0.15 {layer=7}
+T {D} 22.5 -17.5 2 1 0.15 0.15 {layer=7}
+T {B} 20 -10 0 0 0.15 0.15 {layer=7}
+T {G} -10 -10 0 1 0.15 0.15 {layer=7}
+T {@model} 30 -8.75 2 1 0.2 0.2 {}
+T {@mult x @W / @L} 31.25 11.25 0 0 0.2 0.2 { layer=13}
+T {sub} -6.25 20 0 0 0.15 0.15 {layer=7}

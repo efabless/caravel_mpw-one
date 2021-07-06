@@ -1,0 +1,19 @@
+magic
+tech sky130A
+magscale 1 2
+timestamp 1623348570
+<< checkpaint >>
+rect -1293 -844 9951 2170
+use sky130_fd_io__gpio_ovtv2_amux_switch_pmos  sky130_fd_io__gpio_ovtv2_amux_switch_pmos_0
+timestamp 1623348570
+transform -1 0 8611 0 1 -353
+box -80 769 4262 1263
+use sky130_fd_io__gpio_ovtv2_amux_switch_pmos  sky130_fd_io__gpio_ovtv2_amux_switch_pmos_1
+timestamp 1623348570
+transform 1 0 47 0 1 -353
+box -80 769 4262 1263
+<< properties >>
+string GDS_FILE $PDKPATH/libs.ref/sky130_fd_io/gds/sky130_fd_io.gds
+string GDS_END 47714732
+string GDS_START 47714578
+<< end >>

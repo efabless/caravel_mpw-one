@@ -1,0 +1,50 @@
+magic
+tech sky130A
+timestamp 1623348572
+<< metal4 >>
+rect -270 7258 6270 7270
+rect -270 -258 -258 7258
+rect -140 7000 6140 7140
+rect -140 0 0 7000
+rect 6000 0 6140 7000
+rect -140 -140 6140 0
+rect 6258 -258 6270 7258
+rect -270 -270 6270 -258
+<< via4 >>
+rect -258 7140 6258 7258
+rect -258 -140 -140 7140
+rect 6140 -140 6258 7140
+rect -258 -258 6258 -140
+<< metal5 >>
+rect -270 7258 6270 7270
+rect -270 -258 -258 7258
+rect -140 -140 6140 7140
+rect 6258 -258 6270 7258
+rect -270 -270 6270 -258
+<< labels >>
+rlabel metal5 s -270 -270 6270 7270 6 PAD
+port 1 nsew
+rlabel via4 s -258 -258 6258 -140 8 PAD
+port 1 nsew
+rlabel via4 s 6140 -140 6258 7140 6 PAD
+port 1 nsew
+rlabel via4 s -258 -140 -140 7140 4 PAD
+port 1 nsew
+rlabel via4 s -258 7140 6258 7258 6 PAD
+port 1 nsew
+rlabel metal4 s -270 -270 6270 0 8 PAD
+port 1 nsew
+rlabel metal4 s 6000 0 6270 7000 6 PAD
+port 1 nsew
+rlabel metal4 s -270 0 0 7000 4 PAD
+port 1 nsew
+rlabel metal4 s -270 7000 6270 7270 6 PAD
+port 1 nsew
+<< properties >>
+string LEFclass BLOCK
+string FIXED_BBOX -270 -270 6270 7270
+string LEFview TRUE
+string GDS_FILE $PDKPATH/libs.ref/sky130_fd_io/gds/sky130_ef_io__bare_pad.gds
+string GDS_END 11530
+string GDS_START 134
+<< end >>

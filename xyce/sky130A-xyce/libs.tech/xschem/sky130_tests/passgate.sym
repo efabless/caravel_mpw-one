@@ -1,0 +1,52 @@
+v {xschem version=2.9.9 file_version=1.2 
+
+* Copyright 2020 Stefan Frederik Schippers
+* 
+* Licensed under the Apache License, Version 2.0 (the "License");
+* you may not use this file except in compliance with the License.
+* You may obtain a copy of the License at
+*
+*     https://www.apache.org/licenses/LICENSE-2.0
+*
+* Unless required by applicable law or agreed to in writing, software
+* distributed under the License is distributed on an "AS IS" BASIS,
+* WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+* See the License for the specific language governing permissions and
+* limitations under the License.
+
+}
+G {}
+K {type=subcircuit
+format="@name @pinlist @VCCBPIN @VSSBPIN @symname W_N=@W_N L_N=@L_N W_P=@W_P L_P=@L_P m=@m"
+template="name=x1 W_N=1 L_N=0.2 W_P=1 L_P=0.2 VCCBPIN=VCC VSSBPIN=VSS m=1"
+extra="VCCBPIN VSSBPIN"
+
+}
+V {}
+S {}
+E {}
+L 4 -20 -20 -20 -0 {}
+L 4 -20 -0 20 -20 {}
+L 4 20 -20 20 -0 {}
+L 4 -20 -20 20 -0 {}
+L 4 -0 -30 0 -20.625 {}
+L 4 -20 0 -20 20 {}
+L 4 -20 20 20 0 {}
+L 4 20 0 20 20 {}
+L 4 -20 0 20 20 {}
+L 4 -0 10 0 30 {}
+L 4 -40 0 -20 0 {}
+L 4 20 -0 40 0 {}
+B 5 37.5 -2.5 42.5 2.5 {name=Z dir=inout}
+B 5 -42.5 -2.5 -37.5 2.5 {name=A dir=inout}
+B 5 -2.5 -32.5 2.5 -27.5 {name=GP dir=in}
+B 5 -2.5 27.5 2.5 32.5 {name=GN dir=in}
+A 4 0 -15.625 5 180 360 {}
+T {A} -35 -15 0 0 0.2 0.2 {}
+T {Z} 30 -15 0 0 0.2 0.2 {}
+T {@VCCBPIN} 7.5 -30 0 0 0.15 0.15 {}
+T {@VSSBPIN} 7.5 22.5 0 0 0.15 0.15 {}
+T {@name
+@W_N / @L_N} 10 40 0 0 0.2 0.2 {}
+T {m=@m
+@W_P / @L_P} 10 -60 0 0 0.2 0.2 {}

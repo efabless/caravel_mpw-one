@@ -1,0 +1,249 @@
+magic
+tech sky130A
+magscale 1 2
+timestamp 1623348572
+<< obsli1 >>
+rect 581 9653 14409 36220
+<< obsm1 >>
+rect 850 9251 14088 9771
+<< obsm2 >>
+rect 850 9251 14088 9771
+<< metal3 >>
+rect 4944 0 9944 16470
+<< obsm3 >>
+rect 91 16550 14850 34663
+rect 91 2981 4864 16550
+rect 10024 2981 14850 16550
+<< metal4 >>
+rect 0 35157 254 40000
+rect 14746 35157 15000 40000
+rect 0 14007 254 19000
+rect 14746 14007 15000 19000
+rect 0 12817 254 13707
+rect 14746 12817 15000 13707
+rect 0 11647 254 12537
+rect 14746 11647 15000 12537
+rect 0 11281 15000 11347
+rect 0 10625 15000 11221
+rect 0 10329 254 10565
+rect 14746 10329 15000 10565
+rect 0 9673 15000 10269
+rect 0 9547 15000 9613
+rect 0 8317 254 9247
+rect 14746 8317 15000 9247
+rect 0 7347 254 8037
+rect 14746 7347 15000 8037
+rect 0 6377 254 7067
+rect 14746 6377 15000 7067
+rect 0 5167 254 6097
+rect 14746 5167 15000 6097
+rect 0 3957 254 4887
+rect 14746 3957 15000 4887
+rect 0 2987 193 3677
+rect 14807 2987 15000 3677
+rect 0 1777 254 2707
+rect 14746 1777 15000 2707
+rect 0 407 254 1497
+rect 14746 407 15000 1497
+<< obsm4 >>
+rect 334 35077 14666 40000
+rect 193 19080 14807 35077
+rect 334 13927 14666 19080
+rect 193 13787 14807 13927
+rect 334 12737 14666 13787
+rect 193 12617 14807 12737
+rect 334 11567 14666 12617
+rect 193 11427 14807 11567
+rect 334 10349 14666 10545
+rect 193 9327 14807 9467
+rect 334 8237 14666 9327
+rect 193 8117 14807 8237
+rect 334 7267 14666 8117
+rect 193 7147 14807 7267
+rect 334 6297 14666 7147
+rect 193 6177 14807 6297
+rect 334 5087 14666 6177
+rect 193 4967 14807 5087
+rect 334 3877 14666 4967
+rect 193 3757 14807 3877
+rect 273 2907 14727 3757
+rect 193 2787 14807 2907
+rect 334 1697 14666 2787
+rect 193 1577 14807 1697
+rect 334 407 14666 1577
+<< metal5 >>
+rect 0 35157 254 40000
+rect 14746 35157 15000 40000
+rect 1410 21024 13578 33189
+rect 0 14007 254 18997
+rect 0 12837 254 13687
+rect 0 11667 254 12517
+rect 0 9547 254 11347
+rect 0 8337 254 9227
+rect 0 7368 254 8017
+rect 14746 14007 15000 18997
+rect 14746 12837 15000 13687
+rect 14746 11667 15000 12517
+rect 14746 9547 15000 11347
+rect 14746 8337 15000 9227
+rect 14746 7368 15000 8017
+rect 0 6397 254 7047
+rect 0 5187 254 6077
+rect 0 3977 254 4867
+rect 14746 6397 15000 7047
+rect 14746 5187 15000 6077
+rect 14746 3977 15000 4867
+rect 0 3007 193 3657
+rect 14807 3007 15000 3657
+rect 0 1797 254 2687
+rect 0 427 254 1477
+rect 14746 1797 15000 2687
+rect 14746 427 15000 1477
+<< obsm5 >>
+rect 574 34837 14426 40000
+rect 0 33509 15000 34837
+rect 0 20704 1090 33509
+rect 13898 20704 15000 33509
+rect 0 19317 15000 20704
+rect 574 7368 14426 19317
+rect 0 7367 15000 7368
+rect 574 3657 14426 7367
+rect 513 3007 14487 3657
+rect 574 427 14426 3007
+<< labels >>
+rlabel metal3 s 4944 0 9944 16470 6 P_CORE
+port 1 nsew
+rlabel metal4 s 0 7347 254 8037 6 VSSA
+port 2 nsew
+rlabel metal4 s 0 11281 15000 11347 6 VSSA
+port 2 nsew
+rlabel metal4 s 0 9547 15000 9613 6 VSSA
+port 2 nsew
+rlabel metal4 s 0 10329 254 10565 6 VSSA
+port 2 nsew
+rlabel metal4 s 14746 7347 15000 8037 6 VSSA
+port 2 nsew
+rlabel metal4 s 14746 11281 15000 11347 6 VSSA
+port 2 nsew
+rlabel metal4 s 14746 9547 15000 9613 6 VSSA
+port 2 nsew
+rlabel metal4 s 14746 10329 15000 10565 6 VSSA
+port 2 nsew
+rlabel metal5 s 14746 7368 15000 8017 6 VSSA
+port 2 nsew
+rlabel metal5 s 0 9547 254 11347 6 VSSA
+port 2 nsew
+rlabel metal5 s 0 7368 254 8017 6 VSSA
+port 2 nsew
+rlabel metal5 s 14746 9547 15000 11347 6 VSSA
+port 2 nsew
+rlabel metal4 s 0 8317 254 9247 6 VSSD
+port 3 nsew
+rlabel metal4 s 14746 8317 15000 9247 6 VSSD
+port 3 nsew
+rlabel metal5 s 0 8337 254 9227 6 VSSD
+port 3 nsew
+rlabel metal5 s 14746 8337 15000 9227 6 VSSD
+port 3 nsew
+rlabel metal4 s 0 9673 15000 10269 6 AMUXBUS_B
+port 4 nsew
+rlabel metal4 s 14746 9673 15000 10269 6 AMUXBUS_B
+port 4 nsew
+rlabel metal4 s 0 10625 15000 11221 6 AMUXBUS_A
+port 5 nsew
+rlabel metal4 s 14746 10625 15000 11221 6 AMUXBUS_A
+port 5 nsew
+rlabel metal4 s 0 12817 254 13707 6 VDDIO_Q
+port 6 nsew
+rlabel metal4 s 14746 12817 15000 13707 6 VDDIO_Q
+port 6 nsew
+rlabel metal5 s 14746 12837 15000 13687 6 VDDIO_Q
+port 6 nsew
+rlabel metal5 s 0 12837 254 13687 6 VDDIO_Q
+port 6 nsew
+rlabel metal4 s 0 14007 254 19000 6 VDDIO
+port 7 nsew
+rlabel metal4 s 0 3957 254 4887 6 VDDIO
+port 7 nsew
+rlabel metal4 s 14746 14007 15000 19000 6 VDDIO
+port 7 nsew
+rlabel metal4 s 14746 3957 15000 4887 6 VDDIO
+port 7 nsew
+rlabel metal5 s 0 3977 254 4867 6 VDDIO
+port 7 nsew
+rlabel metal5 s 0 14007 254 18997 6 VDDIO
+port 7 nsew
+rlabel metal5 s 14746 3977 15000 4867 6 VDDIO
+port 7 nsew
+rlabel metal5 s 14746 14007 15000 18997 6 VDDIO
+port 7 nsew
+rlabel metal4 s 0 6377 254 7067 6 VSWITCH
+port 8 nsew
+rlabel metal4 s 14746 6377 15000 7067 6 VSWITCH
+port 8 nsew
+rlabel metal5 s 14746 6397 15000 7047 6 VSWITCH
+port 8 nsew
+rlabel metal5 s 0 6397 254 7047 6 VSWITCH
+port 8 nsew
+rlabel metal4 s 0 5167 254 6097 6 VSSIO
+port 9 nsew
+rlabel metal4 s 14746 5167 15000 6097 6 VSSIO
+port 9 nsew
+rlabel metal4 s 0 35157 254 40000 6 VSSIO
+port 9 nsew
+rlabel metal4 s 126 38320 128 38322 6 VSSIO
+port 9 nsew
+rlabel metal4 s 14746 35157 15000 40000 6 VSSIO
+port 9 nsew
+rlabel metal4 s 14872 38320 14874 38322 6 VSSIO
+port 9 nsew
+rlabel metal5 s 14746 5187 15000 6077 6 VSSIO
+port 9 nsew
+rlabel metal5 s 14746 35157 15000 40000 6 VSSIO
+port 9 nsew
+rlabel metal5 s 0 35157 254 40000 6 VSSIO
+port 9 nsew
+rlabel metal5 s 0 5187 254 6077 6 VSSIO
+port 9 nsew
+rlabel metal4 s 0 2987 193 3677 6 VDDA
+port 10 nsew
+rlabel metal4 s 14807 2987 15000 3677 6 VDDA
+port 10 nsew
+rlabel metal5 s 0 3007 193 3657 6 VDDA
+port 10 nsew
+rlabel metal5 s 14807 3007 15000 3657 6 VDDA
+port 10 nsew
+rlabel metal4 s 0 1777 254 2707 6 VCCD
+port 11 nsew
+rlabel metal4 s 14746 1777 15000 2707 6 VCCD
+port 11 nsew
+rlabel metal5 s 0 1797 254 2687 6 VCCD
+port 11 nsew
+rlabel metal5 s 14746 1797 15000 2687 6 VCCD
+port 11 nsew
+rlabel metal4 s 0 407 254 1497 6 VCCHIB
+port 12 nsew
+rlabel metal4 s 14746 407 15000 1497 6 VCCHIB
+port 12 nsew
+rlabel metal5 s 0 427 254 1477 6 VCCHIB
+port 12 nsew
+rlabel metal5 s 14746 427 15000 1477 6 VCCHIB
+port 12 nsew
+rlabel metal4 s 0 11647 254 12537 6 VSSIO_Q
+port 13 nsew
+rlabel metal4 s 14746 11647 15000 12537 6 VSSIO_Q
+port 13 nsew
+rlabel metal5 s 14746 11667 15000 12517 6 VSSIO_Q
+port 13 nsew
+rlabel metal5 s 0 11667 254 12517 6 VSSIO_Q
+port 13 nsew
+rlabel metal5 s 1410 21024 13578 33189 6 P_PAD
+port 14 nsew
+<< properties >>
+string LEFclass PAD
+string FIXED_BBOX 0 0 15000 40000
+string LEFview TRUE
+string GDS_FILE $PDKPATH/libs.ref/sky130_fd_io/gds/sky130_ef_io__analog.gds
+string GDS_END 278340
+string GDS_START 265746
+<< end >>

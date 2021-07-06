@@ -1,0 +1,190 @@
+magic
+tech sky130A
+magscale 1 2
+timestamp 1623348513
+<< locali >>
+rect 169 732 177 766
+rect 211 732 249 766
+rect 283 732 321 766
+rect 355 732 393 766
+rect 427 732 465 766
+rect 499 732 507 766
+rect 169 20 177 54
+rect 211 20 249 54
+rect 283 20 321 54
+rect 355 20 393 54
+rect 427 20 465 54
+rect 499 20 507 54
+<< viali >>
+rect 177 732 211 766
+rect 249 732 283 766
+rect 321 732 355 766
+rect 393 732 427 766
+rect 465 732 499 766
+rect 177 20 211 54
+rect 249 20 283 54
+rect 321 20 355 54
+rect 393 20 427 54
+rect 465 20 499 54
+<< obsli1 >>
+rect 38 662 72 664
+rect 38 590 72 628
+rect 38 518 72 556
+rect 38 446 72 484
+rect 38 374 72 412
+rect 38 302 72 340
+rect 38 230 72 268
+rect 38 158 72 196
+rect 38 122 72 124
+rect 149 88 183 698
+rect 235 88 269 698
+rect 321 88 355 698
+rect 407 88 441 698
+rect 493 88 527 698
+rect 604 662 638 664
+rect 604 590 638 628
+rect 604 518 638 556
+rect 604 446 638 484
+rect 604 374 638 412
+rect 604 302 638 340
+rect 604 230 638 268
+rect 604 158 638 196
+rect 604 122 638 124
+<< obsli1c >>
+rect 38 628 72 662
+rect 38 556 72 590
+rect 38 484 72 518
+rect 38 412 72 446
+rect 38 340 72 374
+rect 38 268 72 302
+rect 38 196 72 230
+rect 38 124 72 158
+rect 604 628 638 662
+rect 604 556 638 590
+rect 604 484 638 518
+rect 604 412 638 446
+rect 604 340 638 374
+rect 604 268 638 302
+rect 604 196 638 230
+rect 604 124 638 158
+<< metal1 >>
+rect 165 766 511 786
+rect 165 732 177 766
+rect 211 732 249 766
+rect 283 732 321 766
+rect 355 732 393 766
+rect 427 732 465 766
+rect 499 732 511 766
+rect 165 720 511 732
+rect 26 662 84 674
+rect 26 628 38 662
+rect 72 628 84 662
+rect 26 590 84 628
+rect 26 556 38 590
+rect 72 556 84 590
+rect 26 518 84 556
+rect 26 484 38 518
+rect 72 484 84 518
+rect 26 446 84 484
+rect 26 412 38 446
+rect 72 412 84 446
+rect 26 374 84 412
+rect 26 340 38 374
+rect 72 340 84 374
+rect 26 302 84 340
+rect 26 268 38 302
+rect 72 268 84 302
+rect 26 230 84 268
+rect 26 196 38 230
+rect 72 196 84 230
+rect 26 158 84 196
+rect 26 124 38 158
+rect 72 124 84 158
+rect 26 112 84 124
+rect 592 662 650 674
+rect 592 628 604 662
+rect 638 628 650 662
+rect 592 590 650 628
+rect 592 556 604 590
+rect 638 556 650 590
+rect 592 518 650 556
+rect 592 484 604 518
+rect 638 484 650 518
+rect 592 446 650 484
+rect 592 412 604 446
+rect 638 412 650 446
+rect 592 374 650 412
+rect 592 340 604 374
+rect 638 340 650 374
+rect 592 302 650 340
+rect 592 268 604 302
+rect 638 268 650 302
+rect 592 230 650 268
+rect 592 196 604 230
+rect 638 196 650 230
+rect 592 158 650 196
+rect 592 124 604 158
+rect 638 124 650 158
+rect 592 112 650 124
+rect 165 54 511 66
+rect 165 20 177 54
+rect 211 20 249 54
+rect 283 20 321 54
+rect 355 20 393 54
+rect 427 20 465 54
+rect 499 20 511 54
+rect 165 0 511 20
+<< obsm1 >>
+rect 140 112 192 674
+rect 226 112 278 674
+rect 312 112 364 674
+rect 398 112 450 674
+rect 484 112 536 674
+<< metal2 >>
+rect 0 418 676 674
+rect 0 112 676 368
+<< labels >>
+rlabel metal2 s 0 418 676 674 6 DRAIN
+port 1 nsew
+rlabel viali s 465 732 499 766 6 GATE
+port 2 nsew
+rlabel viali s 465 20 499 54 6 GATE
+port 2 nsew
+rlabel viali s 393 732 427 766 6 GATE
+port 2 nsew
+rlabel viali s 393 20 427 54 6 GATE
+port 2 nsew
+rlabel viali s 321 732 355 766 6 GATE
+port 2 nsew
+rlabel viali s 321 20 355 54 6 GATE
+port 2 nsew
+rlabel viali s 249 732 283 766 6 GATE
+port 2 nsew
+rlabel viali s 249 20 283 54 6 GATE
+port 2 nsew
+rlabel viali s 177 732 211 766 6 GATE
+port 2 nsew
+rlabel viali s 177 20 211 54 6 GATE
+port 2 nsew
+rlabel locali s 169 732 507 766 6 GATE
+port 2 nsew
+rlabel locali s 169 20 507 54 6 GATE
+port 2 nsew
+rlabel metal1 s 165 720 511 786 6 GATE
+port 2 nsew
+rlabel metal1 s 165 0 511 66 6 GATE
+port 2 nsew
+rlabel metal2 s 0 112 676 368 6 SOURCE
+port 3 nsew
+rlabel metal1 s 26 112 84 674 6 SUBSTRATE
+port 4 nsew
+rlabel metal1 s 592 112 650 674 6 SUBSTRATE
+port 4 nsew
+<< properties >>
+string LEFclass BLOCK
+string FIXED_BBOX 0 0 676 786
+string LEFview TRUE
+string GDS_FILE $PDKPATH/libs.ref/sky130_fd_pr/gds/sky130_fd_pr.gds
+string GDS_END 6073180
+string GDS_START 6057682
+<< end >>

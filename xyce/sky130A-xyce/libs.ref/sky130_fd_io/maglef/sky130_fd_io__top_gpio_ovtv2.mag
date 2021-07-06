@@ -1,0 +1,217 @@
+magic
+tech sky130A
+magscale 1 2
+timestamp 1623348572
+<< obsli1 >>
+rect 46 40 28000 39956
+<< obsm1 >>
+rect 16 0 28000 39962
+<< obsm2 >>
+rect 16 0 28000 39991
+<< metal3 >>
+rect 66 0 186 14276
+rect 320 0 440 1094
+rect 577 0 697 1180
+rect 1153 0 1273 2494
+rect 1422 0 1488 134
+rect 1623 0 1689 2814
+rect 1754 0 1820 1583
+rect 3927 0 3993 3597
+rect 4076 0 4142 2262
+rect 4427 0 4493 6030
+rect 4876 0 4942 188
+rect 5471 0 5537 2811
+rect 8807 0 8873 977
+rect 9071 0 9137 1612
+rect 9241 0 9307 4196
+rect 10331 0 10397 1612
+rect 13047 0 13113 233
+rect 13217 0 13283 4196
+rect 13387 0 13453 4196
+rect 14825 0 14891 2973
+rect 17363 0 17429 4196
+rect 17533 0 17599 4196
+rect 19169 0 19243 4151
+rect 21509 0 21575 1612
+rect 21679 0 21745 4128
+rect 23058 0 23178 7807
+rect 24889 0 24955 1612
+rect 25028 0 25094 2393
+rect 25655 0 25721 4036
+rect 25825 0 25891 4191
+rect 25995 0 26061 12331
+<< obsm3 >>
+rect 66 14356 28000 39943
+rect 266 12411 28000 14356
+rect 266 7887 25915 12411
+rect 266 6110 22978 7887
+rect 266 3677 4347 6110
+rect 266 2894 3847 3677
+rect 266 2574 1543 2894
+rect 266 1260 1073 2574
+rect 266 1174 497 1260
+rect 777 0 1073 1260
+rect 1353 214 1543 2574
+rect 1769 1663 3847 2894
+rect 1900 0 3847 1663
+rect 4073 2342 4347 3677
+rect 4222 0 4347 2342
+rect 4573 4276 22978 6110
+rect 4573 2891 9161 4276
+rect 4573 268 5391 2891
+rect 4573 0 4796 268
+rect 5022 0 5391 268
+rect 5617 1692 9161 2891
+rect 5617 1057 8991 1692
+rect 5617 0 8727 1057
+rect 8953 0 8991 1057
+rect 9387 1692 13137 4276
+rect 9387 0 10251 1692
+rect 10477 313 13137 1692
+rect 10477 0 12967 313
+rect 13533 3053 17283 4276
+rect 17679 4231 22978 4276
+rect 13533 0 14745 3053
+rect 14971 0 17283 3053
+rect 17679 0 19089 4231
+rect 19323 4208 22978 4231
+rect 19323 1692 21599 4208
+rect 19323 0 21429 1692
+rect 21825 0 22978 4208
+rect 23258 4271 25915 7887
+rect 23258 4116 25745 4271
+rect 23258 2473 25575 4116
+rect 23258 1692 24948 2473
+rect 23258 0 24809 1692
+rect 25174 0 25575 2473
+rect 26141 0 28000 12411
+<< metal4 >>
+rect 9786 10625 28000 11221
+rect 19942 9673 28000 10269
+<< obsm4 >>
+rect 0 11301 28000 40000
+rect 0 10545 9706 11301
+rect 0 10349 28000 10545
+rect 0 9593 19862 10349
+rect 0 232 28000 9593
+<< metal5 >>
+rect 3586 23506 17265 32581
+rect 27746 14007 28000 18997
+rect 27746 12837 28000 13687
+rect 27746 11667 28000 12517
+rect 27746 9547 28000 11347
+rect 27746 8337 28000 9227
+rect 27746 6397 28000 7047
+rect 27746 5187 28000 6077
+rect 27807 3007 28000 3657
+rect 27746 1797 28000 2687
+rect 27746 427 28000 1477
+<< obsm5 >>
+rect 0 32901 28000 40000
+rect 0 23186 3266 32901
+rect 17585 23186 28000 32901
+rect 0 19317 28000 23186
+rect 0 8017 27426 19317
+rect 0 7367 28000 8017
+rect 0 4867 27426 7367
+rect 0 3977 28000 4867
+rect 0 3007 27487 3977
+rect 0 427 27426 3007
+<< labels >>
+rlabel metal4 s 9786 10625 28000 11221 6 AMUXBUS_A
+port 1 nsew signal bidirectional
+rlabel metal4 s 19942 9673 28000 10269 6 AMUXBUS_B
+port 2 nsew signal bidirectional
+rlabel metal3 s 1623 0 1689 2814 6 ANALOG_EN
+port 3 nsew signal input
+rlabel metal3 s 13047 0 13113 233 6 ANALOG_POL
+port 4 nsew signal input
+rlabel metal3 s 10331 0 10397 1612 6 ANALOG_SEL
+port 5 nsew signal input
+rlabel metal3 s 25825 0 25891 4191 6 DM[0]
+port 6 nsew signal input
+rlabel metal3 s 25655 0 25721 4036 6 DM[1]
+port 7 nsew signal input
+rlabel metal3 s 21679 0 21745 4128 6 DM[2]
+port 8 nsew signal input
+rlabel metal3 s 4427 0 4493 6030 6 ENABLE_H
+port 9 nsew signal input
+rlabel metal3 s 1422 0 1488 134 6 ENABLE_INP_H
+port 10 nsew signal input
+rlabel metal3 s 1754 0 1820 1583 6 ENABLE_VDDA_H
+port 11 nsew signal input
+rlabel metal3 s 19169 0 19243 4151 6 ENABLE_VDDIO
+port 12 nsew signal input
+rlabel metal3 s 1153 0 1273 2494 6 ENABLE_VSWITCH_H
+port 13 nsew signal input
+rlabel metal3 s 3927 0 3993 3597 6 HLD_H_N
+port 14 nsew signal input
+rlabel metal3 s 5471 0 5537 2811 6 HLD_OVR
+port 15 nsew signal input
+rlabel metal3 s 9071 0 9137 1612 6 HYS_TRIM
+port 16 nsew signal input
+rlabel metal3 s 17363 0 17429 4196 6 IB_MODE_SEL[0]
+port 17 nsew signal input
+rlabel metal3 s 13387 0 13453 4196 6 IB_MODE_SEL[1]
+port 18 nsew signal input
+rlabel metal3 s 4076 0 4142 2262 6 IN
+port 19 nsew signal output
+rlabel metal3 s 21509 0 21575 1612 6 INP_DIS
+port 20 nsew signal input
+rlabel metal3 s 4876 0 4942 188 6 IN_H
+port 21 nsew signal output
+rlabel metal3 s 24889 0 24955 1612 6 OE_N
+port 22 nsew signal input
+rlabel metal3 s 14825 0 14891 2973 6 OUT
+port 23 nsew signal input
+rlabel metal5 s 3586 23506 17265 32581 6 PAD
+port 24 nsew signal bidirectional
+rlabel metal3 s 320 0 440 1094 6 PAD_A_ESD_0_H
+port 25 nsew signal bidirectional
+rlabel metal3 s 66 0 186 14276 6 PAD_A_ESD_1_H
+port 26 nsew signal bidirectional
+rlabel metal3 s 577 0 697 1180 6 PAD_A_NOESD_H
+port 27 nsew signal bidirectional
+rlabel metal3 s 13217 0 13283 4196 6 SLEW_CTL[0]
+port 28 nsew signal input
+rlabel metal3 s 9241 0 9307 4196 6 SLEW_CTL[1]
+port 29 nsew signal input
+rlabel metal3 s 25028 0 25094 2393 6 SLOW
+port 30 nsew signal input
+rlabel metal3 s 25995 0 26061 12331 6 TIE_HI_ESD
+port 31 nsew signal output
+rlabel metal3 s 23058 0 23178 7807 6 TIE_LO_ESD
+port 32 nsew signal output
+rlabel metal3 s 8807 0 8873 977 6 VINREF
+port 33 nsew signal input
+rlabel metal3 s 17533 0 17599 4196 6 VTRIP_SEL
+port 34 nsew signal input
+rlabel metal5 s 27746 1797 28000 2687 6 VCCD
+port 35 nsew power bidirectional
+rlabel metal5 s 27746 427 28000 1477 6 VCCHIB
+port 36 nsew power bidirectional
+rlabel metal5 s 27807 3007 28000 3657 6 VDDA
+port 37 nsew power bidirectional
+rlabel metal5 s 27746 14007 28000 18997 6 VDDIO
+port 38 nsew power bidirectional
+rlabel metal5 s 27746 12837 28000 13687 6 VDDIO_Q
+port 39 nsew power bidirectional
+rlabel metal5 s 27746 9547 28000 11347 6 VSSA
+port 40 nsew ground bidirectional
+rlabel metal5 s 27746 8337 28000 9227 6 VSSD
+port 41 nsew ground bidirectional
+rlabel metal5 s 27746 5187 28000 6077 6 VSSIO
+port 42 nsew ground bidirectional
+rlabel metal5 s 27746 11667 28000 12517 6 VSSIO_Q
+port 43 nsew ground bidirectional
+rlabel metal5 s 27746 6397 28000 7047 6 VSWITCH
+port 44 nsew power bidirectional
+<< properties >>
+string LEFclass PAD
+string FIXED_BBOX 0 0 28000 40000
+string LEFsymmetry X Y R90
+string LEFview TRUE
+string GDS_FILE $PDKPATH/libs.ref/sky130_fd_io/gds/sky130_fd_io.gds
+string GDS_END 51046754
+string GDS_START 50420550
+<< end >>

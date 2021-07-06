@@ -1,0 +1,59 @@
+magic
+tech sky130A
+magscale 1 2
+timestamp 1623348513
+<< pwell >>
+rect 90 486 106 503
+<< obsm1 >>
+rect -88 854 396 918
+rect -88 92 -34 854
+rect 0 64 28 826
+rect 56 92 84 854
+rect 112 64 140 826
+rect 168 92 196 854
+rect 224 64 252 826
+rect 280 92 308 854
+rect 342 92 396 854
+rect 0 0 308 64
+<< metal2 >>
+rect -88 854 396 918
+rect -88 92 -34 854
+rect 0 92 28 854
+rect 56 64 84 826
+rect 112 92 140 854
+rect 168 64 196 826
+rect 224 92 252 854
+rect 280 64 308 826
+rect 342 92 396 854
+rect 0 0 308 64
+<< labels >>
+rlabel metal2 s 280 64 308 826 6 C0
+port 1 nsew
+rlabel metal2 s 168 64 196 826 6 C0
+port 1 nsew
+rlabel metal2 s 56 64 84 826 6 C0
+port 1 nsew
+rlabel metal2 s 0 0 308 64 6 C0
+port 1 nsew
+rlabel metal2 s 342 92 396 854 6 C1
+port 2 nsew
+rlabel metal2 s 224 92 252 854 6 C1
+port 2 nsew
+rlabel metal2 s 112 92 140 854 6 C1
+port 2 nsew
+rlabel metal2 s 0 92 28 854 6 C1
+port 2 nsew
+rlabel metal2 s -88 854 396 918 6 C1
+port 2 nsew
+rlabel metal2 s -88 92 -34 854 4 C1
+port 2 nsew
+rlabel pwell s 90 486 106 503 6 SUB
+port 3 nsew
+<< properties >>
+string LEFclass BLOCK
+string FIXED_BBOX -88 0 396 918
+string LEFview TRUE
+string GDS_FILE $PDKPATH/libs.ref/sky130_fd_pr/gds/sky130_fd_pr.gds
+string GDS_END 59910
+string GDS_START 55878
+<< end >>

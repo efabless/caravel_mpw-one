@@ -1,0 +1,902 @@
+diff -Naur sky130_fd_pr/latest/cells/nfet_01v8/sky130_fd_pr__nfet_01v8__ff.pm3.spice sky130_fd_pr_ngspice/latest/cells/nfet_01v8/sky130_fd_pr__nfet_01v8__ff.pm3.spice
+--- sky130_fd_pr/latest/cells/nfet_01v8/sky130_fd_pr__nfet_01v8__ff.pm3.spice	2020-11-08 01:33:06.385642949 +0100
++++ sky130_fd_pr_ngspice/latest/cells/nfet_01v8/sky130_fd_pr__nfet_01v8__ff.pm3.spice	2020-12-08 04:28:01.986577051 +0100
+@@ -27,8 +27,8 @@
+ * }
+ .subckt  sky130_fd_pr__nfet_01v8 d g s b
+ + 
+-.param  l = 1 w = 1 ad = 0 as = 0 pd = 0 ps = 0 nrd = 0 nrs = 0 sa = 0 sb = 0 sd = 0 mult = 1 nf = 1.0
+-msky130_fd_pr__nfet_01v8 d g s b sky130_fd_pr__nfet_01v8__model l = {l} w = {w} ad = {ad} as = {as} pd = {pd} ps = {ps} nrd = {nrd} nrs = {nrs} sa = {sa} sb = {sb} sd = {sd} nf = {nf}
++.param  l = 1 w = 1 nf = 1.0 ad = 0 as = 0 pd = 0 ps = 0 nrd = 0 nrs = 0 sa = 0 sb = 0 sd = 0 mult = 1 
++msky130_fd_pr__nfet_01v8 d g s b sky130_fd_pr__nfet_01v8__model l = {l} w = {w} nf = {nf} ad = {ad} as = {as} pd = {pd} ps = {ps} nrd = {nrd} nrs = {nrs} sa = {sa} sb = {sb} sd = {sd} 
+ .model sky130_fd_pr__nfet_01v8__model.0 nmos
+ * Model Flag Parameters
+ + lmin = 2.0e-05 lmax = 0.0001 wmin = 7.0e-06 wmax = 0.0001
+diff -Naur sky130_fd_pr/latest/cells/nfet_01v8/sky130_fd_pr__nfet_01v8__fs.pm3.spice sky130_fd_pr_ngspice/latest/cells/nfet_01v8/sky130_fd_pr__nfet_01v8__fs.pm3.spice
+--- sky130_fd_pr/latest/cells/nfet_01v8/sky130_fd_pr__nfet_01v8__fs.pm3.spice	2020-11-08 01:33:06.397642948 +0100
++++ sky130_fd_pr_ngspice/latest/cells/nfet_01v8/sky130_fd_pr__nfet_01v8__fs.pm3.spice	2020-12-08 04:28:02.106577048 +0100
+@@ -27,8 +27,8 @@
+ * }
+ .subckt  sky130_fd_pr__nfet_01v8 d g s b
+ + 
+-.param  l = 1 w = 1 ad = 0 as = 0 pd = 0 ps = 0 nrd = 0 nrs = 0 sa = 0 sb = 0 sd = 0 mult = 1 nf = 1.0
+-msky130_fd_pr__nfet_01v8 d g s b sky130_fd_pr__nfet_01v8__model l = {l} w = {w} ad = {ad} as = {as} pd = {pd} ps = {ps} nrd = {nrd} nrs = {nrs} sa = {sa} sb = {sb} sd = {sd} nf = {nf}
++.param  l = 1 w = 1 nf = 1.0 ad = 0 as = 0 pd = 0 ps = 0 nrd = 0 nrs = 0 sa = 0 sb = 0 sd = 0 mult = 1 
++msky130_fd_pr__nfet_01v8 d g s b sky130_fd_pr__nfet_01v8__model l = {l} w = {w} nf = {nf} ad = {ad} as = {as} pd = {pd} ps = {ps} nrd = {nrd} nrs = {nrs} sa = {sa} sb = {sb} sd = {sd} 
+ .model sky130_fd_pr__nfet_01v8__model.0 nmos
+ * Model Flag Parameters
+ + lmin = 2.0e-05 lmax = 0.0001 wmin = 7.0e-06 wmax = 0.0001
+diff -Naur sky130_fd_pr/latest/cells/nfet_01v8/sky130_fd_pr__nfet_01v8__leak.pm3.spice sky130_fd_pr_ngspice/latest/cells/nfet_01v8/sky130_fd_pr__nfet_01v8__leak.pm3.spice
+--- sky130_fd_pr/latest/cells/nfet_01v8/sky130_fd_pr__nfet_01v8__leak.pm3.spice	2020-11-08 01:33:06.405642948 +0100
++++ sky130_fd_pr_ngspice/latest/cells/nfet_01v8/sky130_fd_pr__nfet_01v8__leak.pm3.spice	2020-12-08 04:28:02.122577048 +0100
+@@ -27,8 +27,8 @@
+ * }
+ .subckt  sky130_fd_pr__nfet_01v8 d g s b
+ + 
+-.param  l = 1 w = 1 ad = 0 as = 0 pd = 0 ps = 0 nrd = 0 nrs = 0 sa = 0 sb = 0 sd = 0 mult = 1 nf = 1.0
+-msky130_fd_pr__nfet_01v8 d g s b sky130_fd_pr__nfet_01v8__model l = {l} w = {w} ad = {ad} as = {as} pd = {pd} ps = {ps} nrd = {nrd} nrs = {nrs} sa = {sa} sb = {sb} sd = {sd} nf = {nf}
++.param  l = 1 w = 1 nf = 1.0 ad = 0 as = 0 pd = 0 ps = 0 nrd = 0 nrs = 0 sa = 0 sb = 0 sd = 0 mult = 1 
++msky130_fd_pr__nfet_01v8 d g s b sky130_fd_pr__nfet_01v8__model l = {l} w = {w} nf = {nf} ad = {ad} as = {as} pd = {pd} ps = {ps} nrd = {nrd} nrs = {nrs} sa = {sa} sb = {sb} sd = {sd} 
+ .model sky130_fd_pr__nfet_01v8__model.0 nmos
+ * Model Flag Parameters
+ + lmin = 2.0e-05 lmax = 0.0001 wmin = 7.0e-06 wmax = 0.0001
+diff -Naur sky130_fd_pr/latest/cells/nfet_01v8/sky130_fd_pr__nfet_01v8.pm3.spice sky130_fd_pr_ngspice/latest/cells/nfet_01v8/sky130_fd_pr__nfet_01v8.pm3.spice
+--- sky130_fd_pr/latest/cells/nfet_01v8/sky130_fd_pr__nfet_01v8.pm3.spice	2020-11-08 01:33:06.373642950 +0100
++++ sky130_fd_pr_ngspice/latest/cells/nfet_01v8/sky130_fd_pr__nfet_01v8.pm3.spice	2020-12-08 04:28:02.126577047 +0100
+@@ -29,8 +29,8 @@
+ * }
+ .subckt  sky130_fd_pr__nfet_01v8 d g s b
+ + 
+-.param  l = 1 w = 1 ad = 0 as = 0 pd = 0 ps = 0 nrd = 0 nrs = 0 sa = 0 sb = 0 sd = 0 mult = 1 nf = 1.0
+-msky130_fd_pr__nfet_01v8 d g s b sky130_fd_pr__nfet_01v8__model l = {l} w = {w} ad = {ad} as = {as} pd = {pd} ps = {ps} nrd = {nrd} nrs = {nrs} sa = {sa} sb = {sb} sd = {sd} nf = {nf}
++.param  l = 1 w = 1 nf = 1.0 ad = 0 as = 0 pd = 0 ps = 0 nrd = 0 nrs = 0 sa = 0 sb = 0 sd = 0 mult = 1 
++msky130_fd_pr__nfet_01v8 d g s b sky130_fd_pr__nfet_01v8__model l = {l} w = {w} nf = {nf} ad = {ad} as = {as} pd = {pd} ps = {ps} nrd = {nrd} nrs = {nrs} sa = {sa} sb = {sb} sd = {sd} 
+ .model sky130_fd_pr__nfet_01v8__model.0 nmos
+ * DC IV MOS Parameters
+ + lmin = 1.45e-07 lmax = 1.55e-07 wmin = 1.255e-06 wmax = 1.265e-6
+diff -Naur sky130_fd_pr/latest/cells/nfet_01v8/sky130_fd_pr__nfet_01v8__sf.pm3.spice sky130_fd_pr_ngspice/latest/cells/nfet_01v8/sky130_fd_pr__nfet_01v8__sf.pm3.spice
+--- sky130_fd_pr/latest/cells/nfet_01v8/sky130_fd_pr__nfet_01v8__sf.pm3.spice	2020-11-08 01:33:06.413642948 +0100
++++ sky130_fd_pr_ngspice/latest/cells/nfet_01v8/sky130_fd_pr__nfet_01v8__sf.pm3.spice	2020-12-08 04:28:02.142577047 +0100
+@@ -27,8 +27,8 @@
+ * }
+ .subckt  sky130_fd_pr__nfet_01v8 d g s b
+ + 
+-.param  l = 1 w = 1 ad = 0 as = 0 pd = 0 ps = 0 nrd = 0 nrs = 0 sa = 0 sb = 0 sd = 0 mult = 1 nf = 1.0
+-msky130_fd_pr__nfet_01v8 d g s b sky130_fd_pr__nfet_01v8__model l = {l} w = {w} ad = {ad} as = {as} pd = {pd} ps = {ps} nrd = {nrd} nrs = {nrs} sa = {sa} sb = {sb} sd = {sd} nf = {nf}
++.param  l = 1 w = 1 nf = 1.0 ad = 0 as = 0 pd = 0 ps = 0 nrd = 0 nrs = 0 sa = 0 sb = 0 sd = 0 mult = 1 
++msky130_fd_pr__nfet_01v8 d g s b sky130_fd_pr__nfet_01v8__model l = {l} w = {w} nf = {nf} ad = {ad} as = {as} pd = {pd} ps = {ps} nrd = {nrd} nrs = {nrs} sa = {sa} sb = {sb} sd = {sd} 
+ .model sky130_fd_pr__nfet_01v8__model.0 nmos
+ * Model Flag Parameters
+ + lmin = 2.0e-05 lmax = 0.0001 wmin = 7.0e-06 wmax = 0.0001
+diff -Naur sky130_fd_pr/latest/cells/nfet_01v8/sky130_fd_pr__nfet_01v8__ss.pm3.spice sky130_fd_pr_ngspice/latest/cells/nfet_01v8/sky130_fd_pr__nfet_01v8__ss.pm3.spice
+--- sky130_fd_pr/latest/cells/nfet_01v8/sky130_fd_pr__nfet_01v8__ss.pm3.spice	2020-11-08 01:33:06.417642948 +0100
++++ sky130_fd_pr_ngspice/latest/cells/nfet_01v8/sky130_fd_pr__nfet_01v8__ss.pm3.spice	2020-12-08 04:28:02.158577047 +0100
+@@ -27,8 +27,8 @@
+ * }
+ .subckt  sky130_fd_pr__nfet_01v8 d g s b
+ + 
+-.param  l = 1 w = 1 ad = 0 as = 0 pd = 0 ps = 0 nrd = 0 nrs = 0 sa = 0 sb = 0 sd = 0 mult = 1 nf = 1.0
+-msky130_fd_pr__nfet_01v8 d g s b sky130_fd_pr__nfet_01v8__model l = {l} w = {w} ad = {ad} as = {as} pd = {pd} ps = {ps} nrd = {nrd} nrs = {nrs} sa = {sa} sb = {sb} sd = {sd} nf = {nf}
++.param  l = 1 w = 1 nf = 1.0 ad = 0 as = 0 pd = 0 ps = 0 nrd = 0 nrs = 0 sa = 0 sb = 0 sd = 0 mult = 1 
++msky130_fd_pr__nfet_01v8 d g s b sky130_fd_pr__nfet_01v8__model l = {l} w = {w} nf = {nf} ad = {ad} as = {as} pd = {pd} ps = {ps} nrd = {nrd} nrs = {nrs} sa = {sa} sb = {sb} sd = {sd} 
+ .model sky130_fd_pr__nfet_01v8__model.0 nmos
+ * Model Flag Parameters
+ + lmin = 2.0e-05 lmax = 0.0001 wmin = 7.0e-06 wmax = 0.0001
+diff -Naur sky130_fd_pr/latest/cells/nfet_01v8/sky130_fd_pr__nfet_01v8__tt_leak.pm3.spice sky130_fd_pr_ngspice/latest/cells/nfet_01v8/sky130_fd_pr__nfet_01v8__tt_leak.pm3.spice
+--- sky130_fd_pr/latest/cells/nfet_01v8/sky130_fd_pr__nfet_01v8__tt_leak.pm3.spice	2020-11-08 01:33:06.425642947 +0100
++++ sky130_fd_pr_ngspice/latest/cells/nfet_01v8/sky130_fd_pr__nfet_01v8__tt_leak.pm3.spice	2020-12-08 04:28:02.298577044 +0100
+@@ -27,8 +27,8 @@
+ * }
+ .subckt  sky130_fd_pr__nfet_01v8 d g s b
+ + 
+-.param  l = 1 w = 1 ad = 0 as = 0 pd = 0 ps = 0 nrd = 0 nrs = 0 sa = 0 sb = 0 sd = 0 mult = 1 nf = 1.0
+-msky130_fd_pr__nfet_01v8 d g s b sky130_fd_pr__nfet_01v8__model l = {l} w = {w} ad = {ad} as = {as} pd = {pd} ps = {ps} nrd = {nrd} nrs = {nrs} sa = {sa} sb = {sb} sd = {sd} nf = {nf}
++.param  l = 1 w = 1 nf = 1.0 ad = 0 as = 0 pd = 0 ps = 0 nrd = 0 nrs = 0 sa = 0 sb = 0 sd = 0 mult = 1 
++msky130_fd_pr__nfet_01v8 d g s b sky130_fd_pr__nfet_01v8__model l = {l} w = {w} nf = {nf} ad = {ad} as = {as} pd = {pd} ps = {ps} nrd = {nrd} nrs = {nrs} sa = {sa} sb = {sb} sd = {sd} 
+ .model sky130_fd_pr__nfet_01v8__model.0 nmos
+ * Model Flag Parameters
+ + lmin = 2.0e-05 lmax = 0.0001 wmin = 7.0e-06 wmax = 0.0001
+diff -Naur sky130_fd_pr/latest/cells/nfet_01v8/sky130_fd_pr__nfet_01v8__tt.pm3.spice sky130_fd_pr_ngspice/latest/cells/nfet_01v8/sky130_fd_pr__nfet_01v8__tt.pm3.spice
+--- sky130_fd_pr/latest/cells/nfet_01v8/sky130_fd_pr__nfet_01v8__tt.pm3.spice	2020-11-08 01:33:06.421642947 +0100
++++ sky130_fd_pr_ngspice/latest/cells/nfet_01v8/sky130_fd_pr__nfet_01v8__tt.pm3.spice	2020-12-15 13:33:10.243355060 +0100
+@@ -27,8 +27,8 @@
+ * }
+ .subckt  sky130_fd_pr__nfet_01v8 d g s b
+ + 
+-.param  l = 1 w = 1 ad = 0 as = 0 pd = 0 ps = 0 nrd = 0 nrs = 0 sa = 0 sb = 0 sd = 0 mult = 1 nf = 1.0
+-msky130_fd_pr__nfet_01v8 d g s b sky130_fd_pr__nfet_01v8__model l = {l} w = {w} ad = {ad} as = {as} pd = {pd} ps = {ps} nrd = {nrd} nrs = {nrs} sa = {sa} sb = {sb} sd = {sd} nf = {nf}
++.param  l = 1 w = 1 nf = 1.0 ad = 0 as = 0 pd = 0 ps = 0 nrd = 0 nrs = 0 sa = 0 sb = 0 sd = 0 mult = 1 
++msky130_fd_pr__nfet_01v8 d g s b sky130_fd_pr__nfet_01v8__model l = {l} w = {w} nf = {nf} ad = {ad} as = {as} pd = {pd} ps = {ps} nrd = {nrd} nrs = {nrs} sa = {sa} sb = {sb} sd = {sd} 
+ .model sky130_fd_pr__nfet_01v8__model.0 nmos
+ * Model Flag Parameters
+ + lmin = 2.0e-05 lmax = 0.0001 wmin = 7.0e-06 wmax = 0.0001
+diff -Naur sky130_fd_pr/latest/cells/nfet_01v8_lvt/sky130_fd_pr__nfet_01v8_lvt__ff.pm3.spice sky130_fd_pr_ngspice/latest/cells/nfet_01v8_lvt/sky130_fd_pr__nfet_01v8_lvt__ff.pm3.spice
+--- sky130_fd_pr/latest/cells/nfet_01v8_lvt/sky130_fd_pr__nfet_01v8_lvt__ff.pm3.spice	2020-11-08 01:33:06.445642946 +0100
++++ sky130_fd_pr_ngspice/latest/cells/nfet_01v8_lvt/sky130_fd_pr__nfet_01v8_lvt__ff.pm3.spice	2020-12-08 04:28:01.710577057 +0100
+@@ -29,8 +29,8 @@
+ * }
+ .subckt  sky130_fd_pr__nfet_01v8_lvt d g s b
+ + 
+-.param  l = 1 w = 1 ad = 0 as = 0 pd = 0 ps = 0 nrd = 0 nrs = 0 sa = 0 sb = 0 sd = 0 mult = 1 nf = 1.0
+-msky130_fd_pr__nfet_01v8_lvt d g s b sky130_fd_pr__nfet_01v8_lvt__model l = {l} w = {w} ad = {ad} as = {as} pd = {pd} ps = {ps} nrd = {nrd} nrs = {nrs} sa = {sa} sb = {sb} sd = {sd} nf = {nf}
++.param  l = 1 w = 1 nf = 1.0 ad = 0 as = 0 pd = 0 ps = 0 nrd = 0 nrs = 0 sa = 0 sb = 0 sd = 0 mult = 1 
++msky130_fd_pr__nfet_01v8_lvt d g s b sky130_fd_pr__nfet_01v8_lvt__model l = {l} w = {w} nf = {nf} ad = {ad} as = {as} pd = {pd} ps = {ps} nrd = {nrd} nrs = {nrs} sa = {sa} sb = {sb} sd = {sd} 
+ .model sky130_fd_pr__nfet_01v8_lvt__model.0 nmos
+ * DC IV MOS Parameters
+ + lmin = 8e-06 lmax = 1.0e-04 wmin = 7e-06 wmax = 1.0e-4
+diff -Naur sky130_fd_pr/latest/cells/nfet_01v8_lvt/sky130_fd_pr__nfet_01v8_lvt__fs.pm3.spice sky130_fd_pr_ngspice/latest/cells/nfet_01v8_lvt/sky130_fd_pr__nfet_01v8_lvt__fs.pm3.spice
+--- sky130_fd_pr/latest/cells/nfet_01v8_lvt/sky130_fd_pr__nfet_01v8_lvt__fs.pm3.spice	2020-11-08 01:33:06.453642946 +0100
++++ sky130_fd_pr_ngspice/latest/cells/nfet_01v8_lvt/sky130_fd_pr__nfet_01v8_lvt__fs.pm3.spice	2020-12-08 04:28:01.722577057 +0100
+@@ -29,8 +29,8 @@
+ * }
+ .subckt  sky130_fd_pr__nfet_01v8_lvt d g s b
+ + 
+-.param  l = 1 w = 1 ad = 0 as = 0 pd = 0 ps = 0 nrd = 0 nrs = 0 sa = 0 sb = 0 sd = 0 mult = 1 nf = 1.0
+-msky130_fd_pr__nfet_01v8_lvt d g s b sky130_fd_pr__nfet_01v8_lvt__model l = {l} w = {w} ad = {ad} as = {as} pd = {pd} ps = {ps} nrd = {nrd} nrs = {nrs} sa = {sa} sb = {sb} sd = {sd} nf = {nf}
++.param  l = 1 w = 1 nf = 1.0 ad = 0 as = 0 pd = 0 ps = 0 nrd = 0 nrs = 0 sa = 0 sb = 0 sd = 0 mult = 1 
++msky130_fd_pr__nfet_01v8_lvt d g s b sky130_fd_pr__nfet_01v8_lvt__model l = {l} w = {w} nf = {nf} ad = {ad} as = {as} pd = {pd} ps = {ps} nrd = {nrd} nrs = {nrs} sa = {sa} sb = {sb} sd = {sd} 
+ .model sky130_fd_pr__nfet_01v8_lvt__model.0 nmos
+ * DC IV MOS Parameters
+ + lmin = 8e-06 lmax = 1.0e-04 wmin = 7e-06 wmax = 1.0e-4
+diff -Naur sky130_fd_pr/latest/cells/nfet_01v8_lvt/sky130_fd_pr__nfet_01v8_lvt__leak.pm3.spice sky130_fd_pr_ngspice/latest/cells/nfet_01v8_lvt/sky130_fd_pr__nfet_01v8_lvt__leak.pm3.spice
+--- sky130_fd_pr/latest/cells/nfet_01v8_lvt/sky130_fd_pr__nfet_01v8_lvt__leak.pm3.spice	2020-11-08 01:33:06.457642946 +0100
++++ sky130_fd_pr_ngspice/latest/cells/nfet_01v8_lvt/sky130_fd_pr__nfet_01v8_lvt__leak.pm3.spice	2020-12-08 04:28:01.730577056 +0100
+@@ -29,8 +29,8 @@
+ * }
+ .subckt  sky130_fd_pr__nfet_01v8_lvt d g s b
+ + 
+-.param  l = 1 w = 1 ad = 0 as = 0 pd = 0 ps = 0 nrd = 0 nrs = 0 sa = 0 sb = 0 sd = 0 mult = 1 nf = 1.0
+-msky130_fd_pr__nfet_01v8_lvt d g s b sky130_fd_pr__nfet_01v8_lvt__model l = {l} w = {w} ad = {ad} as = {as} pd = {pd} ps = {ps} nrd = {nrd} nrs = {nrs} sa = {sa} sb = {sb} sd = {sd} nf = {nf}
++.param  l = 1 w = 1 nf = 1.0 ad = 0 as = 0 pd = 0 ps = 0 nrd = 0 nrs = 0 sa = 0 sb = 0 sd = 0 mult = 1 
++msky130_fd_pr__nfet_01v8_lvt d g s b sky130_fd_pr__nfet_01v8_lvt__model l = {l} w = {w} nf = {nf} ad = {ad} as = {as} pd = {pd} ps = {ps} nrd = {nrd} nrs = {nrs} sa = {sa} sb = {sb} sd = {sd} 
+ .model sky130_fd_pr__nfet_01v8_lvt__model.0 nmos
+ * DC IV MOS Parameters
+ + lmin = 8e-06 lmax = 1.0e-04 wmin = 7e-06 wmax = 1.0e-4
+diff -Naur sky130_fd_pr/latest/cells/nfet_01v8_lvt/sky130_fd_pr__nfet_01v8_lvt.pm3.spice sky130_fd_pr_ngspice/latest/cells/nfet_01v8_lvt/sky130_fd_pr__nfet_01v8_lvt.pm3.spice
+--- sky130_fd_pr/latest/cells/nfet_01v8_lvt/sky130_fd_pr__nfet_01v8_lvt.pm3.spice	2020-11-08 01:33:06.441642947 +0100
++++ sky130_fd_pr_ngspice/latest/cells/nfet_01v8_lvt/sky130_fd_pr__nfet_01v8_lvt.pm3.spice	2020-12-08 04:28:01.734577056 +0100
+@@ -29,8 +29,8 @@
+ * }
+ .subckt  sky130_fd_pr__nfet_01v8_lvt d g s b
+ + 
+-.param  l = 1 w = 1 ad = 0 as = 0 pd = 0 ps = 0 nrd = 0 nrs = 0 sa = 0 sb = 0 sd = 0 mult = 1 nf = 1.0
+-msky130_fd_pr__nfet_01v8_lvt d g s b sky130_fd_pr__nfet_01v8_lvt__model l = {l} w = {w} ad = {ad} as = {as} pd = {pd} ps = {ps} nrd = {nrd} nrs = {nrs} sa = {sa} sb = {sb} sd = {sd} nf = {nf}
++.param  l = 1 w = 1 nf = 1.0 ad = 0 as = 0 pd = 0 ps = 0 nrd = 0 nrs = 0 sa = 0 sb = 0 sd = 0 mult = 1 
++msky130_fd_pr__nfet_01v8_lvt d g s b sky130_fd_pr__nfet_01v8_lvt__model l = {l} w = {w} nf = {nf} ad = {ad} as = {as} pd = {pd} ps = {ps} nrd = {nrd} nrs = {nrs} sa = {sa} sb = {sb} sd = {sd} 
+ .model sky130_fd_pr__nfet_01v8_lvt__model.0 nmos
+ * DC IV MOS Parameters
+ + lmin = 9.95e-07 lmax = 1.005e-06 wmin = 9.95e-07 wmax = 1.005e-6
+diff -Naur sky130_fd_pr/latest/cells/nfet_01v8_lvt/sky130_fd_pr__nfet_01v8_lvt__sf.pm3.spice sky130_fd_pr_ngspice/latest/cells/nfet_01v8_lvt/sky130_fd_pr__nfet_01v8_lvt__sf.pm3.spice
+--- sky130_fd_pr/latest/cells/nfet_01v8_lvt/sky130_fd_pr__nfet_01v8_lvt__sf.pm3.spice	2020-11-08 01:33:06.461642946 +0100
++++ sky130_fd_pr_ngspice/latest/cells/nfet_01v8_lvt/sky130_fd_pr__nfet_01v8_lvt__sf.pm3.spice	2020-12-08 04:28:01.742577056 +0100
+@@ -29,8 +29,8 @@
+ * }
+ .subckt  sky130_fd_pr__nfet_01v8_lvt d g s b
+ + 
+-.param  l = 1 w = 1 ad = 0 as = 0 pd = 0 ps = 0 nrd = 0 nrs = 0 sa = 0 sb = 0 sd = 0 mult = 1 nf = 1.0
+-msky130_fd_pr__nfet_01v8_lvt d g s b sky130_fd_pr__nfet_01v8_lvt__model l = {l} w = {w} ad = {ad} as = {as} pd = {pd} ps = {ps} nrd = {nrd} nrs = {nrs} sa = {sa} sb = {sb} sd = {sd} nf = {nf}
++.param  l = 1 w = 1 nf = 1.0 ad = 0 as = 0 pd = 0 ps = 0 nrd = 0 nrs = 0 sa = 0 sb = 0 sd = 0 mult = 1 
++msky130_fd_pr__nfet_01v8_lvt d g s b sky130_fd_pr__nfet_01v8_lvt__model l = {l} w = {w} nf = {nf} ad = {ad} as = {as} pd = {pd} ps = {ps} nrd = {nrd} nrs = {nrs} sa = {sa} sb = {sb} sd = {sd} 
+ .model sky130_fd_pr__nfet_01v8_lvt__model.0 nmos
+ * DC IV MOS Parameters
+ + lmin = 8e-06 lmax = 1.0e-04 wmin = 7e-06 wmax = 1.0e-4
+diff -Naur sky130_fd_pr/latest/cells/nfet_01v8_lvt/sky130_fd_pr__nfet_01v8_lvt__ss.pm3.spice sky130_fd_pr_ngspice/latest/cells/nfet_01v8_lvt/sky130_fd_pr__nfet_01v8_lvt__ss.pm3.spice
+--- sky130_fd_pr/latest/cells/nfet_01v8_lvt/sky130_fd_pr__nfet_01v8_lvt__ss.pm3.spice	2020-11-08 01:33:06.465642946 +0100
++++ sky130_fd_pr_ngspice/latest/cells/nfet_01v8_lvt/sky130_fd_pr__nfet_01v8_lvt__ss.pm3.spice	2020-12-08 04:28:01.750577056 +0100
+@@ -29,8 +29,8 @@
+ * }
+ .subckt  sky130_fd_pr__nfet_01v8_lvt d g s b
+ + 
+-.param  l = 1 w = 1 ad = 0 as = 0 pd = 0 ps = 0 nrd = 0 nrs = 0 sa = 0 sb = 0 sd = 0 mult = 1 nf = 1.0
+-msky130_fd_pr__nfet_01v8_lvt d g s b sky130_fd_pr__nfet_01v8_lvt__model l = {l} w = {w} ad = {ad} as = {as} pd = {pd} ps = {ps} nrd = {nrd} nrs = {nrs} sa = {sa} sb = {sb} sd = {sd} nf = {nf}
++.param  l = 1 w = 1 nf = 1.0 ad = 0 as = 0 pd = 0 ps = 0 nrd = 0 nrs = 0 sa = 0 sb = 0 sd = 0 mult = 1 
++msky130_fd_pr__nfet_01v8_lvt d g s b sky130_fd_pr__nfet_01v8_lvt__model l = {l} w = {w} nf = {nf} ad = {ad} as = {as} pd = {pd} ps = {ps} nrd = {nrd} nrs = {nrs} sa = {sa} sb = {sb} sd = {sd} 
+ .model sky130_fd_pr__nfet_01v8_lvt__model.0 nmos
+ * DC IV MOS Parameters
+ + lmin = 8e-06 lmax = 1.0e-04 wmin = 7e-06 wmax = 1.0e-4
+diff -Naur sky130_fd_pr/latest/cells/nfet_01v8_lvt/sky130_fd_pr__nfet_01v8_lvt__tt_leak.pm3.spice sky130_fd_pr_ngspice/latest/cells/nfet_01v8_lvt/sky130_fd_pr__nfet_01v8_lvt__tt_leak.pm3.spice
+--- sky130_fd_pr/latest/cells/nfet_01v8_lvt/sky130_fd_pr__nfet_01v8_lvt__tt_leak.pm3.spice	2020-11-08 01:33:06.469642945 +0100
++++ sky130_fd_pr_ngspice/latest/cells/nfet_01v8_lvt/sky130_fd_pr__nfet_01v8_lvt__tt_leak.pm3.spice	2020-12-08 04:28:01.966577051 +0100
+@@ -29,8 +29,8 @@
+ * }
+ .subckt  sky130_fd_pr__nfet_01v8_lvt d g s b
+ + 
+-.param  l = 1 w = 1 ad = 0 as = 0 pd = 0 ps = 0 nrd = 0 nrs = 0 sa = 0 sb = 0 sd = 0 mult = 1 nf = 1.0
+-msky130_fd_pr__nfet_01v8_lvt d g s b sky130_fd_pr__nfet_01v8_lvt__model l = {l} w = {w} ad = {ad} as = {as} pd = {pd} ps = {ps} nrd = {nrd} nrs = {nrs} sa = {sa} sb = {sb} sd = {sd} nf = {nf}
++.param  l = 1 w = 1 nf = 1.0 ad = 0 as = 0 pd = 0 ps = 0 nrd = 0 nrs = 0 sa = 0 sb = 0 sd = 0 mult = 1 
++msky130_fd_pr__nfet_01v8_lvt d g s b sky130_fd_pr__nfet_01v8_lvt__model l = {l} w = {w} nf = {nf} ad = {ad} as = {as} pd = {pd} ps = {ps} nrd = {nrd} nrs = {nrs} sa = {sa} sb = {sb} sd = {sd} 
+ .model sky130_fd_pr__nfet_01v8_lvt__model.0 nmos
+ * DC IV MOS Parameters
+ + lmin = 8e-06 lmax = 1.0e-04 wmin = 7e-06 wmax = 1.0e-4
+diff -Naur sky130_fd_pr/latest/cells/nfet_01v8_lvt/sky130_fd_pr__nfet_01v8_lvt__tt.pm3.spice sky130_fd_pr_ngspice/latest/cells/nfet_01v8_lvt/sky130_fd_pr__nfet_01v8_lvt__tt.pm3.spice
+--- sky130_fd_pr/latest/cells/nfet_01v8_lvt/sky130_fd_pr__nfet_01v8_lvt__tt.pm3.spice	2020-11-08 01:33:06.465642946 +0100
++++ sky130_fd_pr_ngspice/latest/cells/nfet_01v8_lvt/sky130_fd_pr__nfet_01v8_lvt__tt.pm3.spice	2020-12-08 04:28:01.970577051 +0100
+@@ -29,8 +29,8 @@
+ * }
+ .subckt  sky130_fd_pr__nfet_01v8_lvt d g s b
+ + 
+-.param  l = 1 w = 1 ad = 0 as = 0 pd = 0 ps = 0 nrd = 0 nrs = 0 sa = 0 sb = 0 sd = 0 mult = 1 nf = 1.0
+-msky130_fd_pr__nfet_01v8_lvt d g s b sky130_fd_pr__nfet_01v8_lvt__model l = {l} w = {w} ad = {ad} as = {as} pd = {pd} ps = {ps} nrd = {nrd} nrs = {nrs} sa = {sa} sb = {sb} sd = {sd} nf = {nf}
++.param  l = 1 w = 1 nf = 1.0 ad = 0 as = 0 pd = 0 ps = 0 nrd = 0 nrs = 0 sa = 0 sb = 0 sd = 0 mult = 1 
++msky130_fd_pr__nfet_01v8_lvt d g s b sky130_fd_pr__nfet_01v8_lvt__model l = {l} w = {w} nf = {nf} ad = {ad} as = {as} pd = {pd} ps = {ps} nrd = {nrd} nrs = {nrs} sa = {sa} sb = {sb} sd = {sd} 
+ .model sky130_fd_pr__nfet_01v8_lvt__model.0 nmos
+ * DC IV MOS Parameters
+ + lmin = 8e-06 lmax = 1.0e-04 wmin = 7e-06 wmax = 1.0e-4
+diff -Naur sky130_fd_pr/latest/cells/nfet_03v3_nvt/sky130_fd_pr__nfet_03v3_nvt.pm3.spice sky130_fd_pr_ngspice/latest/cells/nfet_03v3_nvt/sky130_fd_pr__nfet_03v3_nvt.pm3.spice
+--- sky130_fd_pr/latest/cells/nfet_03v3_nvt/sky130_fd_pr__nfet_03v3_nvt.pm3.spice	2020-11-08 01:33:06.485642945 +0100
++++ sky130_fd_pr_ngspice/latest/cells/nfet_03v3_nvt/sky130_fd_pr__nfet_03v3_nvt.pm3.spice	2020-12-08 04:28:02.478577040 +0100
+@@ -29,8 +29,8 @@
+ * }
+ .subckt  sky130_fd_pr__nfet_03v3_nvt d g s b
+ + 
+-.param  l = 1 w = 1 ad = 0 as = 0 pd = 0 ps = 0 nrd = 0 nrs = 0 sa = 0 sb = 0 sd = 0 mult = 1 nf = 1.0
+-msky130_fd_pr__nfet_03v3_nvt d g s b sky130_fd_pr__nfet_03v3_nvt__model l = {l} w = {w} ad = {ad} as = {as} pd = {pd} ps = {ps} nrd = {nrd} nrs = {nrs} sa = {sa} sb = {sb} sd = {sd} nf = {nf}
++.param  l = 1 w = 1 nf = 1.0 ad = 0 as = 0 pd = 0 ps = 0 nrd = 0 nrs = 0 sa = 0 sb = 0 sd = 0 mult = 1 
++msky130_fd_pr__nfet_03v3_nvt d g s b sky130_fd_pr__nfet_03v3_nvt__model l = {l} w = {w} nf = {nf} ad = {ad} as = {as} pd = {pd} ps = {ps} nrd = {nrd} nrs = {nrs} sa = {sa} sb = {sb} sd = {sd} 
+ .model sky130_fd_pr__nfet_03v3_nvt__model.0 nmos
+ * DC IV MOS Parameters
+ + lmin = 4.95e-07 lmax = 5.05e-07 wmin = 9.995e-06 wmax = 1.0005e-5
+diff -Naur sky130_fd_pr/latest/cells/nfet_05v0_nvt/sky130_fd_pr__nfet_05v0_nvt.pm3.spice sky130_fd_pr_ngspice/latest/cells/nfet_05v0_nvt/sky130_fd_pr__nfet_05v0_nvt.pm3.spice
+--- sky130_fd_pr/latest/cells/nfet_05v0_nvt/sky130_fd_pr__nfet_05v0_nvt.pm3.spice	2020-11-08 01:33:06.501642944 +0100
++++ sky130_fd_pr_ngspice/latest/cells/nfet_05v0_nvt/sky130_fd_pr__nfet_05v0_nvt.pm3.spice	2020-12-08 04:28:02.482577039 +0100
+@@ -32,8 +32,8 @@
+ * }
+ .subckt  sky130_fd_pr__nfet_05v0_nvt d g s b
+ + 
+-.param  l = 1 w = 1 ad = 0 as = 0 pd = 0 ps = 0 nrd = 0 nrs = 0 sa = 0 sb = 0 sd = 0 mult = 1 nf = 1.0
+-msky130_fd_pr__nfet_05v0_nvt d g s b sky130_fd_pr__nfet_05v0_nvt__model l = {l} w = {w} ad = {ad} as = {as} pd = {pd} ps = {ps} nrd = {nrd} nrs = {nrs} sa = {sa} sb = {sb} sd = {sd} nf = {nf}
++.param  l = 1 w = 1 nf = 1.0 ad = 0 as = 0 pd = 0 ps = 0 nrd = 0 nrs = 0 sa = 0 sb = 0 sd = 0 mult = 1 
++msky130_fd_pr__nfet_05v0_nvt d g s b sky130_fd_pr__nfet_05v0_nvt__model l = {l} w = {w} nf = {nf} ad = {ad} as = {as} pd = {pd} ps = {ps} nrd = {nrd} nrs = {nrs} sa = {sa} sb = {sb} sd = {sd} 
+ .model sky130_fd_pr__nfet_05v0_nvt__model.0 nmos
+ * DC IV MOS Parameters
+ + lmin = 1.995e-06 lmax = 2.005e-06 wmin = 9.995e-06 wmax = 1.0005e-5
+diff -Naur sky130_fd_pr/latest/cells/nfet_g5v0d10v5/sky130_fd_pr__nfet_g5v0d10v5__ff.pm3.spice sky130_fd_pr_ngspice/latest/cells/nfet_g5v0d10v5/sky130_fd_pr__nfet_g5v0d10v5__ff.pm3.spice
+--- sky130_fd_pr/latest/cells/nfet_g5v0d10v5/sky130_fd_pr__nfet_g5v0d10v5__ff.pm3.spice	2020-11-08 01:33:06.621642939 +0100
++++ sky130_fd_pr_ngspice/latest/cells/nfet_g5v0d10v5/sky130_fd_pr__nfet_g5v0d10v5__ff.pm3.spice	2020-12-08 04:28:02.498577039 +0100
+@@ -29,8 +29,8 @@
+ * }
+ .subckt  sky130_fd_pr__nfet_g5v0d10v5 d g s b
+ + 
+-.param  l = 1 w = 1 ad = 0 as = 0 pd = 0 ps = 0 nrd = 0 nrs = 0 sa = 0 sb = 0 sd = 0 mult = 1 nf = 1.0
+-msky130_fd_pr__nfet_g5v0d10v5 d g s b sky130_fd_pr__nfet_g5v0d10v5__model l = {l} w = {w} ad = {ad} as = {as} pd = {pd} ps = {ps} nrd = {nrd} nrs = {nrs} sa = {sa} sb = {sb} sd = {sd} nf = {nf}
++.param  l = 1 w = 1 nf = 1.0 ad = 0 as = 0 pd = 0 ps = 0 nrd = 0 nrs = 0 sa = 0 sb = 0 sd = 0 mult = 1 
++msky130_fd_pr__nfet_g5v0d10v5 d g s b sky130_fd_pr__nfet_g5v0d10v5__model l = {l} w = {w} nf = {nf} ad = {ad} as = {as} pd = {pd} ps = {ps} nrd = {nrd} nrs = {nrs} sa = {sa} sb = {sb} sd = {sd} 
+ .model sky130_fd_pr__nfet_g5v0d10v5__model.0 nmos
+ * DC IV MOS Parameters
+ + lmin = 2.0e-05 lmax = 1.0e-04 wmin = 2.0e-05 wmax = 1.0e-4
+diff -Naur sky130_fd_pr/latest/cells/nfet_g5v0d10v5/sky130_fd_pr__nfet_g5v0d10v5__fs.pm3.spice sky130_fd_pr_ngspice/latest/cells/nfet_g5v0d10v5/sky130_fd_pr__nfet_g5v0d10v5__fs.pm3.spice
+--- sky130_fd_pr/latest/cells/nfet_g5v0d10v5/sky130_fd_pr__nfet_g5v0d10v5__fs.pm3.spice	2020-11-08 01:33:06.625642939 +0100
++++ sky130_fd_pr_ngspice/latest/cells/nfet_g5v0d10v5/sky130_fd_pr__nfet_g5v0d10v5__fs.pm3.spice	2020-12-08 04:28:02.510577039 +0100
+@@ -29,8 +29,8 @@
+ * }
+ .subckt  sky130_fd_pr__nfet_g5v0d10v5 d g s b
+ + 
+-.param  l = 1 w = 1 ad = 0 as = 0 pd = 0 ps = 0 nrd = 0 nrs = 0 sa = 0 sb = 0 sd = 0 mult = 1 nf = 1.0
+-msky130_fd_pr__nfet_g5v0d10v5 d g s b sky130_fd_pr__nfet_g5v0d10v5__model l = {l} w = {w} ad = {ad} as = {as} pd = {pd} ps = {ps} nrd = {nrd} nrs = {nrs} sa = {sa} sb = {sb} sd = {sd} nf = {nf}
++.param  l = 1 w = 1 nf = 1.0 ad = 0 as = 0 pd = 0 ps = 0 nrd = 0 nrs = 0 sa = 0 sb = 0 sd = 0 mult = 1 
++msky130_fd_pr__nfet_g5v0d10v5 d g s b sky130_fd_pr__nfet_g5v0d10v5__model l = {l} w = {w} nf = {nf} ad = {ad} as = {as} pd = {pd} ps = {ps} nrd = {nrd} nrs = {nrs} sa = {sa} sb = {sb} sd = {sd} 
+ .model sky130_fd_pr__nfet_g5v0d10v5__model.0 nmos
+ * DC IV MOS Parameters
+ + lmin = 2.0e-05 lmax = 1.0e-04 wmin = 2.0e-05 wmax = 1.0e-4
+diff -Naur sky130_fd_pr/latest/cells/nfet_g5v0d10v5/sky130_fd_pr__nfet_g5v0d10v5__leak.pm3.spice sky130_fd_pr_ngspice/latest/cells/nfet_g5v0d10v5/sky130_fd_pr__nfet_g5v0d10v5__leak.pm3.spice
+--- sky130_fd_pr/latest/cells/nfet_g5v0d10v5/sky130_fd_pr__nfet_g5v0d10v5__leak.pm3.spice	2020-11-08 01:33:06.625642939 +0100
++++ sky130_fd_pr_ngspice/latest/cells/nfet_g5v0d10v5/sky130_fd_pr__nfet_g5v0d10v5__leak.pm3.spice	2020-12-08 04:28:02.518577039 +0100
+@@ -29,8 +29,8 @@
+ * }
+ .subckt  sky130_fd_pr__nfet_g5v0d10v5 d g s b
+ + 
+-.param  l = 1 w = 1 ad = 0 as = 0 pd = 0 ps = 0 nrd = 0 nrs = 0 sa = 0 sb = 0 sd = 0 mult = 1 nf = 1.0
+-msky130_fd_pr__nfet_g5v0d10v5 d g s b sky130_fd_pr__nfet_g5v0d10v5__model l = {l} w = {w} ad = {ad} as = {as} pd = {pd} ps = {ps} nrd = {nrd} nrs = {nrs} sa = {sa} sb = {sb} sd = {sd} nf = {nf}
++.param  l = 1 w = 1 nf = 1.0 ad = 0 as = 0 pd = 0 ps = 0 nrd = 0 nrs = 0 sa = 0 sb = 0 sd = 0 mult = 1 
++msky130_fd_pr__nfet_g5v0d10v5 d g s b sky130_fd_pr__nfet_g5v0d10v5__model l = {l} w = {w} nf = {nf} ad = {ad} as = {as} pd = {pd} ps = {ps} nrd = {nrd} nrs = {nrs} sa = {sa} sb = {sb} sd = {sd} 
+ .model sky130_fd_pr__nfet_g5v0d10v5__model.0 nmos
+ * DC IV MOS Parameters
+ + lmin = 2.0e-05 lmax = 1.0e-04 wmin = 2.0e-05 wmax = 1.0e-4
+diff -Naur sky130_fd_pr/latest/cells/nfet_g5v0d10v5/sky130_fd_pr__nfet_g5v0d10v5.pm3.spice sky130_fd_pr_ngspice/latest/cells/nfet_g5v0d10v5/sky130_fd_pr__nfet_g5v0d10v5.pm3.spice
+--- sky130_fd_pr/latest/cells/nfet_g5v0d10v5/sky130_fd_pr__nfet_g5v0d10v5.pm3.spice	2020-11-08 01:33:06.617642939 +0100
++++ sky130_fd_pr_ngspice/latest/cells/nfet_g5v0d10v5/sky130_fd_pr__nfet_g5v0d10v5.pm3.spice	2020-12-08 04:28:02.522577039 +0100
+@@ -29,8 +29,8 @@
+ * }
+ .subckt  sky130_fd_pr__nfet_g5v0d10v5 d g s b
+ + 
+-.param  l = 1 w = 1 ad = 0 as = 0 pd = 0 ps = 0 nrd = 0 nrs = 0 sa = 0 sb = 0 sd = 0 mult = 1 nf = 1.0
+-msky130_fd_pr__nfet_g5v0d10v5 d g s b sky130_fd_pr__nfet_g5v0d10v5__model l = {l} w = {w} ad = {ad} as = {as} pd = {pd} ps = {ps} nrd = {nrd} nrs = {nrs} sa = {sa} sb = {sb} sd = {sd} nf = {nf}
++.param  l = 1 w = 1 nf = 1.0 ad = 0 as = 0 pd = 0 ps = 0 nrd = 0 nrs = 0 sa = 0 sb = 0 sd = 0 mult = 1 
++msky130_fd_pr__nfet_g5v0d10v5 d g s b sky130_fd_pr__nfet_g5v0d10v5__model l = {l} w = {w} nf = {nf} ad = {ad} as = {as} pd = {pd} ps = {ps} nrd = {nrd} nrs = {nrs} sa = {sa} sb = {sb} sd = {sd} 
+ .model sky130_fd_pr__nfet_g5v0d10v5__model.0 nmos
+ * DC IV MOS Parameters
+ + lmin = 4.95e-07 lmax = 5.05e-07 wmin = 9.995e-06 wmax = 1.0005e-5
+diff -Naur sky130_fd_pr/latest/cells/nfet_g5v0d10v5/sky130_fd_pr__nfet_g5v0d10v5__sf.pm3.spice sky130_fd_pr_ngspice/latest/cells/nfet_g5v0d10v5/sky130_fd_pr__nfet_g5v0d10v5__sf.pm3.spice
+--- sky130_fd_pr/latest/cells/nfet_g5v0d10v5/sky130_fd_pr__nfet_g5v0d10v5__sf.pm3.spice	2020-11-08 01:33:06.629642939 +0100
++++ sky130_fd_pr_ngspice/latest/cells/nfet_g5v0d10v5/sky130_fd_pr__nfet_g5v0d10v5__sf.pm3.spice	2020-12-08 04:28:02.558577038 +0100
+@@ -29,8 +29,8 @@
+ * }
+ .subckt  sky130_fd_pr__nfet_g5v0d10v5 d g s b
+ + 
+-.param  l = 1 w = 1 ad = 0 as = 0 pd = 0 ps = 0 nrd = 0 nrs = 0 sa = 0 sb = 0 sd = 0 mult = 1 nf = 1.0
+-msky130_fd_pr__nfet_g5v0d10v5 d g s b sky130_fd_pr__nfet_g5v0d10v5__model l = {l} w = {w} ad = {ad} as = {as} pd = {pd} ps = {ps} nrd = {nrd} nrs = {nrs} sa = {sa} sb = {sb} sd = {sd} nf = {nf}
++.param  l = 1 w = 1 nf = 1.0 ad = 0 as = 0 pd = 0 ps = 0 nrd = 0 nrs = 0 sa = 0 sb = 0 sd = 0 mult = 1 
++msky130_fd_pr__nfet_g5v0d10v5 d g s b sky130_fd_pr__nfet_g5v0d10v5__model l = {l} w = {w} nf = {nf} ad = {ad} as = {as} pd = {pd} ps = {ps} nrd = {nrd} nrs = {nrs} sa = {sa} sb = {sb} sd = {sd} 
+ .model sky130_fd_pr__nfet_g5v0d10v5__model.0 nmos
+ * DC IV MOS Parameters
+ + lmin = 2.0e-05 lmax = 1.0e-04 wmin = 2.0e-05 wmax = 1.0e-4
+diff -Naur sky130_fd_pr/latest/cells/nfet_g5v0d10v5/sky130_fd_pr__nfet_g5v0d10v5__ss.pm3.spice sky130_fd_pr_ngspice/latest/cells/nfet_g5v0d10v5/sky130_fd_pr__nfet_g5v0d10v5__ss.pm3.spice
+--- sky130_fd_pr/latest/cells/nfet_g5v0d10v5/sky130_fd_pr__nfet_g5v0d10v5__ss.pm3.spice	2020-11-08 01:33:06.629642939 +0100
++++ sky130_fd_pr_ngspice/latest/cells/nfet_g5v0d10v5/sky130_fd_pr__nfet_g5v0d10v5__ss.pm3.spice	2020-12-08 04:28:02.570577037 +0100
+@@ -29,8 +29,8 @@
+ * }
+ .subckt  sky130_fd_pr__nfet_g5v0d10v5 d g s b
+ + 
+-.param  l = 1 w = 1 ad = 0 as = 0 pd = 0 ps = 0 nrd = 0 nrs = 0 sa = 0 sb = 0 sd = 0 mult = 1 nf = 1.0
+-msky130_fd_pr__nfet_g5v0d10v5 d g s b sky130_fd_pr__nfet_g5v0d10v5__model l = {l} w = {w} ad = {ad} as = {as} pd = {pd} ps = {ps} nrd = {nrd} nrs = {nrs} sa = {sa} sb = {sb} sd = {sd} nf = {nf}
++.param  l = 1 w = 1 nf = 1.0 ad = 0 as = 0 pd = 0 ps = 0 nrd = 0 nrs = 0 sa = 0 sb = 0 sd = 0 mult = 1 
++msky130_fd_pr__nfet_g5v0d10v5 d g s b sky130_fd_pr__nfet_g5v0d10v5__model l = {l} w = {w} nf = {nf} ad = {ad} as = {as} pd = {pd} ps = {ps} nrd = {nrd} nrs = {nrs} sa = {sa} sb = {sb} sd = {sd} 
+ .model sky130_fd_pr__nfet_g5v0d10v5__model.0 nmos
+ * DC IV MOS Parameters
+ + lmin = 2.0e-05 lmax = 1.0e-04 wmin = 2.0e-05 wmax = 1.0e-4
+diff -Naur sky130_fd_pr/latest/cells/nfet_g5v0d10v5/sky130_fd_pr__nfet_g5v0d10v5__tt_leak.pm3.spice sky130_fd_pr_ngspice/latest/cells/nfet_g5v0d10v5/sky130_fd_pr__nfet_g5v0d10v5__tt_leak.pm3.spice
+--- sky130_fd_pr/latest/cells/nfet_g5v0d10v5/sky130_fd_pr__nfet_g5v0d10v5__tt_leak.pm3.spice	2020-11-08 01:33:06.637642938 +0100
++++ sky130_fd_pr_ngspice/latest/cells/nfet_g5v0d10v5/sky130_fd_pr__nfet_g5v0d10v5__tt_leak.pm3.spice	2020-12-08 04:28:02.594577037 +0100
+@@ -29,8 +29,8 @@
+ * }
+ .subckt  sky130_fd_pr__nfet_g5v0d10v5 d g s b
+ + 
+-.param  l = 1 w = 1 ad = 0 as = 0 pd = 0 ps = 0 nrd = 0 nrs = 0 sa = 0 sb = 0 sd = 0 mult = 1 nf = 1.0
+-msky130_fd_pr__nfet_g5v0d10v5 d g s b sky130_fd_pr__nfet_g5v0d10v5__model l = {l} w = {w} ad = {ad} as = {as} pd = {pd} ps = {ps} nrd = {nrd} nrs = {nrs} sa = {sa} sb = {sb} sd = {sd} nf = {nf}
++.param  l = 1 w = 1 nf = 1.0 ad = 0 as = 0 pd = 0 ps = 0 nrd = 0 nrs = 0 sa = 0 sb = 0 sd = 0 mult = 1 
++msky130_fd_pr__nfet_g5v0d10v5 d g s b sky130_fd_pr__nfet_g5v0d10v5__model l = {l} w = {w} nf = {nf} ad = {ad} as = {as} pd = {pd} ps = {ps} nrd = {nrd} nrs = {nrs} sa = {sa} sb = {sb} sd = {sd} 
+ .model sky130_fd_pr__nfet_g5v0d10v5__model.0 nmos
+ * DC IV MOS Parameters
+ + lmin = 2.0e-05 lmax = 1.0e-04 wmin = 2.0e-05 wmax = 1.0e-4
+diff -Naur sky130_fd_pr/latest/cells/nfet_g5v0d10v5/sky130_fd_pr__nfet_g5v0d10v5__tt.pm3.spice sky130_fd_pr_ngspice/latest/cells/nfet_g5v0d10v5/sky130_fd_pr__nfet_g5v0d10v5__tt.pm3.spice
+--- sky130_fd_pr/latest/cells/nfet_g5v0d10v5/sky130_fd_pr__nfet_g5v0d10v5__tt.pm3.spice	2020-11-08 01:33:06.633642938 +0100
++++ sky130_fd_pr_ngspice/latest/cells/nfet_g5v0d10v5/sky130_fd_pr__nfet_g5v0d10v5__tt.pm3.spice	2020-12-08 04:28:02.758577033 +0100
+@@ -29,8 +29,8 @@
+ * }
+ .subckt  sky130_fd_pr__nfet_g5v0d10v5 d g s b
+ + 
+-.param  l = 1 w = 1 ad = 0 as = 0 pd = 0 ps = 0 nrd = 0 nrs = 0 sa = 0 sb = 0 sd = 0 mult = 1 nf = 1.0
+-msky130_fd_pr__nfet_g5v0d10v5 d g s b sky130_fd_pr__nfet_g5v0d10v5__model l = {l} w = {w} ad = {ad} as = {as} pd = {pd} ps = {ps} nrd = {nrd} nrs = {nrs} sa = {sa} sb = {sb} sd = {sd} nf = {nf}
++.param  l = 1 w = 1 nf = 1.0 ad = 0 as = 0 pd = 0 ps = 0 nrd = 0 nrs = 0 sa = 0 sb = 0 sd = 0 mult = 1 
++msky130_fd_pr__nfet_g5v0d10v5 d g s b sky130_fd_pr__nfet_g5v0d10v5__model l = {l} w = {w} nf = {nf} ad = {ad} as = {as} pd = {pd} ps = {ps} nrd = {nrd} nrs = {nrs} sa = {sa} sb = {sb} sd = {sd} 
+ .model sky130_fd_pr__nfet_g5v0d10v5__model.0 nmos
+ * DC IV MOS Parameters
+ + lmin = 2.0e-05 lmax = 1.0e-04 wmin = 2.0e-05 wmax = 1.0e-4
+diff -Naur sky130_fd_pr/latest/cells/nfet_g5v0d16v0/sky130_fd_pr__nfet_g5v0d16v0.pm3.spice sky130_fd_pr_ngspice/latest/cells/nfet_g5v0d16v0/sky130_fd_pr__nfet_g5v0d16v0.pm3.spice
+--- sky130_fd_pr/latest/cells/nfet_g5v0d16v0/sky130_fd_pr__nfet_g5v0d16v0.pm3.spice	2020-11-08 01:33:06.653642938 +0100
++++ sky130_fd_pr_ngspice/latest/cells/nfet_g5v0d16v0/sky130_fd_pr__nfet_g5v0d16v0.pm3.spice	2020-12-08 04:42:22.654557626 +0100
+@@ -35,8 +35,8 @@
+ * }
+ .subckt  sky130_fd_pr__nfet_g5v0d16v0__base d g s b
+ + 
+-.param  l = 1 w = 1 ad = 0 as = 0 pd = 0 ps = 0 nrd = 0 nrs = 0 sa = 0 sb = 0 sd = 0 mult = 1 nf = 1 delvto = 0.0
+-msky130_fd_pr__nfet_g5v0d16v0__base d g s b sky130_fd_pr__nfet_g5v0d16v0__model_base l = {l} w = {w} ad = {ad} as = {as} pd = {pd} ps = {ps} nrd = {nrd} nrs = {nrs} sa = {sa} sb = {sb} sd = {sd} nf = {nf}
++.param  l = 1 w = 1 nf = 1.0 ad = 0 as = 0 pd = 0 ps = 0 nrd = 0 nrs = 0 sa = 0 sb = 0 sd = 0 mult = 1 delvto = 0.0
++msky130_fd_pr__nfet_g5v0d16v0__base d g s b sky130_fd_pr__nfet_g5v0d16v0__model_base l = {l} w = {w} nf = {nf} ad = {ad} as = {as} pd = {pd} ps = {ps} nrd = {nrd} nrs = {nrs} sa = {sa} sb = {sb} sd = {sd} 
+ .model sky130_fd_pr__nfet_g5v0d16v0__model_base.0 nmos
+ * Model Flag Parameters
+ + lmin = 6.95e-007 lmax = 7.05e-007 wmin = 1.9995e-005 wmax = 2.00005e-5
+diff -Naur sky130_fd_pr/latest/cells/nfet_g5v0d16v0/sky130_fd_pr__nfet_g5v0d16v0__subcircuit.pm3.spice sky130_fd_pr_ngspice/latest/cells/nfet_g5v0d16v0/sky130_fd_pr__nfet_g5v0d16v0__subcircuit.pm3.spice
+--- sky130_fd_pr/latest/cells/nfet_g5v0d16v0/sky130_fd_pr__nfet_g5v0d16v0__subcircuit.pm3.spice	2020-11-08 01:33:06.653642938 +0100
++++ sky130_fd_pr_ngspice/latest/cells/nfet_g5v0d16v0/sky130_fd_pr__nfet_g5v0d16v0__subcircuit.pm3.spice	2020-12-08 04:40:53.082559648 +0100
+@@ -13,11 +13,11 @@
+ * limitations under the License.
+ 
+ * SKY130 Spice File.
+-.subckt  sky130_fd_pr__nfet_g5v0d16v0 d g s b  w=5.0 l=0.7 ad=0 as=0 pd=0 ps=0 nrd=0 nrs=0 delvto=0 mf=1 m=1 sa=0.28 sb=2.41 sd=0 mult=1
++.subckt  sky130_fd_pr__nfet_g5v0d16v0 d g s b  w=5.0 l=0.7 nf=1 ad=0 as=0 pd=0 ps=0 nrd=0 nrs=0 delvto=0 m=1 sa=0.28 sb=2.41 sd=0 mult=1
+ .param  sky130_fd_pr__nfet_g5v0d16v0__rdiff=5.906500e+003 sky130_fd_pr__nfet_g5v0d16v0__rdiff_tc1=1.483000e-003 sky130_fd_pr__nfet_g5v0d16v0__rdiff_tc2=7.824000e-006
+ *.param sb_cadfixedvalue_nvhv=2.41
+ .param sb_cadfixedvalue_nvhv=1.585
+-xmain1 d1 g s b sky130_fd_pr__nfet_g5v0d16v0__base  w=w l=l ad=0 as=as pd=0 ps=ps nrd=nrd nrs=nrs delvto=delvto m=m mult=mult sa=sa sb=sb_cadfixedvalue_nvhv
++xmain1 d1 g s b sky130_fd_pr__nfet_g5v0d16v0__base  w=w l=l nf=nf ad=0 as=as pd=0 ps=ps nrd=nrd nrs=nrs delvto=delvto mult=mult sa=sa sb=sb_cadfixedvalue_nvhv m=m
+ rldd_nvhv d d1 R='(1/w)*sky130_fd_pr__nfet_g5v0d16v0__rdiff*sky130_fd_pr__nfet_g5v0d16v0__rdiff_mult' tc1 = 'sky130_fd_pr__nfet_g5v0d16v0__rdiff_tc1' tc2 = 'sky130_fd_pr__nfet_g5v0d16v0__rdiff_tc2'
+ dnw1 b d sky130_fd_pr__model__parasitic__diode_ps2nw  area='ad/2' pj='pd/2'
+ dnw2 b d1 sky130_fd_pr__model__parasitic__diode_ps2nw area='ad/2' pj='pd/2'
+diff -Naur sky130_fd_pr/latest/cells/pfet_01v8/sky130_fd_pr__pfet_01v8__ff.pm3.spice sky130_fd_pr_ngspice/latest/cells/pfet_01v8/sky130_fd_pr__pfet_01v8__ff.pm3.spice
+--- sky130_fd_pr/latest/cells/pfet_01v8/sky130_fd_pr__pfet_01v8__ff.pm3.spice	2020-11-08 01:33:06.745642934 +0100
++++ sky130_fd_pr_ngspice/latest/cells/pfet_01v8/sky130_fd_pr__pfet_01v8__ff.pm3.spice	2020-12-08 04:28:03.346577020 +0100
+@@ -29,8 +29,8 @@
+ * }
+ .subckt  sky130_fd_pr__pfet_01v8 d g s b
+ + 
+-.param  l = 1 w = 1 ad = 0 as = 0 pd = 0 ps = 0 nrd = 0 nrs = 0 sa = 0 sb = 0 sd = 0 mult = 1 nf = 1.0
+-msky130_fd_pr__pfet_01v8 d g s b sky130_fd_pr__pfet_01v8__model l = {l} w = {w} ad = {ad} as = {as} pd = {pd} ps = {ps} nrd = {nrd} nrs = {nrs} sa = {sa} sb = {sb} sd = {sd} nf = {nf}
++.param  l = 1 w = 1 nf = 1.0 ad = 0 as = 0 pd = 0 ps = 0 nrd = 0 nrs = 0 sa = 0 sb = 0 sd = 0 mult = 1 
++msky130_fd_pr__pfet_01v8 d g s b sky130_fd_pr__pfet_01v8__model l = {l} w = {w} nf = {nf} ad = {ad} as = {as} pd = {pd} ps = {ps} nrd = {nrd} nrs = {nrs} sa = {sa} sb = {sb} sd = {sd} 
+ .model sky130_fd_pr__pfet_01v8__model.0 pmos
+ * DC IV MOS Parameters
+ + lmin = 2.0e-05 lmax = 1.0e-04 wmin = 7e-06 wmax = 1.0e-4
+diff -Naur sky130_fd_pr/latest/cells/pfet_01v8/sky130_fd_pr__pfet_01v8__fs.pm3.spice sky130_fd_pr_ngspice/latest/cells/pfet_01v8/sky130_fd_pr__pfet_01v8__fs.pm3.spice
+--- sky130_fd_pr/latest/cells/pfet_01v8/sky130_fd_pr__pfet_01v8__fs.pm3.spice	2020-11-08 01:33:06.749642933 +0100
++++ sky130_fd_pr_ngspice/latest/cells/pfet_01v8/sky130_fd_pr__pfet_01v8__fs.pm3.spice	2020-12-08 04:28:03.354577020 +0100
+@@ -29,8 +29,8 @@
+ * }
+ .subckt  sky130_fd_pr__pfet_01v8 d g s b
+ + 
+-.param  l = 1 w = 1 ad = 0 as = 0 pd = 0 ps = 0 nrd = 0 nrs = 0 sa = 0 sb = 0 sd = 0 mult = 1 nf = 1.0
+-msky130_fd_pr__pfet_01v8 d g s b sky130_fd_pr__pfet_01v8__model l = {l} w = {w} ad = {ad} as = {as} pd = {pd} ps = {ps} nrd = {nrd} nrs = {nrs} sa = {sa} sb = {sb} sd = {sd} nf = {nf}
++.param  l = 1 w = 1 nf = 1.0 ad = 0 as = 0 pd = 0 ps = 0 nrd = 0 nrs = 0 sa = 0 sb = 0 sd = 0 mult = 1 
++msky130_fd_pr__pfet_01v8 d g s b sky130_fd_pr__pfet_01v8__model l = {l} w = {w} nf = {nf} ad = {ad} as = {as} pd = {pd} ps = {ps} nrd = {nrd} nrs = {nrs} sa = {sa} sb = {sb} sd = {sd} 
+ .model sky130_fd_pr__pfet_01v8__model.0 pmos
+ * DC IV MOS Parameters
+ + lmin = 2.0e-05 lmax = 1.0e-04 wmin = 7e-06 wmax = 1.0e-4
+diff -Naur sky130_fd_pr/latest/cells/pfet_01v8/sky130_fd_pr__pfet_01v8__leak.pm3.spice sky130_fd_pr_ngspice/latest/cells/pfet_01v8/sky130_fd_pr__pfet_01v8__leak.pm3.spice
+--- sky130_fd_pr/latest/cells/pfet_01v8/sky130_fd_pr__pfet_01v8__leak.pm3.spice	2020-11-08 01:33:06.749642933 +0100
++++ sky130_fd_pr_ngspice/latest/cells/pfet_01v8/sky130_fd_pr__pfet_01v8__leak.pm3.spice	2020-12-08 04:28:03.366577019 +0100
+@@ -29,8 +29,8 @@
+ * }
+ .subckt  sky130_fd_pr__pfet_01v8 d g s b
+ + 
+-.param  l = 1 w = 1 ad = 0 as = 0 pd = 0 ps = 0 nrd = 0 nrs = 0 sa = 0 sb = 0 sd = 0 mult = 1 nf = 1.0
+-msky130_fd_pr__pfet_01v8 d g s b sky130_fd_pr__pfet_01v8__model l = {l} w = {w} ad = {ad} as = {as} pd = {pd} ps = {ps} nrd = {nrd} nrs = {nrs} sa = {sa} sb = {sb} sd = {sd} nf = {nf}
++.param  l = 1 w = 1 nf = 1.0 ad = 0 as = 0 pd = 0 ps = 0 nrd = 0 nrs = 0 sa = 0 sb = 0 sd = 0 mult = 1 
++msky130_fd_pr__pfet_01v8 d g s b sky130_fd_pr__pfet_01v8__model l = {l} w = {w} nf = {nf} ad = {ad} as = {as} pd = {pd} ps = {ps} nrd = {nrd} nrs = {nrs} sa = {sa} sb = {sb} sd = {sd} 
+ .model sky130_fd_pr__pfet_01v8__model.0 pmos
+ * DC IV MOS Parameters
+ + lmin = 2.0e-05 lmax = 1.0e-04 wmin = 7e-06 wmax = 1.0e-4
+diff -Naur sky130_fd_pr/latest/cells/pfet_01v8/sky130_fd_pr__pfet_01v8.pm3.spice sky130_fd_pr_ngspice/latest/cells/pfet_01v8/sky130_fd_pr__pfet_01v8.pm3.spice
+--- sky130_fd_pr/latest/cells/pfet_01v8/sky130_fd_pr__pfet_01v8.pm3.spice	2020-11-08 01:33:06.741642934 +0100
++++ sky130_fd_pr_ngspice/latest/cells/pfet_01v8/sky130_fd_pr__pfet_01v8.pm3.spice	2020-12-08 04:28:03.370577019 +0100
+@@ -29,8 +29,8 @@
+ * }
+ .subckt  sky130_fd_pr__pfet_01v8 d g s b
+ + 
+-.param  l = 1 w = 1 ad = 0 as = 0 pd = 0 ps = 0 nrd = 0 nrs = 0 sa = 0 sb = 0 sd = 0 mult = 1 nf = 1.0
+-msky130_fd_pr__pfet_01v8 d g s b sky130_fd_pr__pfet_01v8__model l = {l} w = {w} ad = {ad} as = {as} pd = {pd} ps = {ps} nrd = {nrd} nrs = {nrs} sa = {sa} sb = {sb} sd = {sd} nf = {nf}
++.param  l = 1 w = 1 nf = 1.0 ad = 0 as = 0 pd = 0 ps = 0 nrd = 0 nrs = 0 sa = 0 sb = 0 sd = 0 mult = 1 
++msky130_fd_pr__pfet_01v8 d g s b sky130_fd_pr__pfet_01v8__model l = {l} w = {w} nf = {nf} ad = {ad} as = {as} pd = {pd} ps = {ps} nrd = {nrd} nrs = {nrs} sa = {sa} sb = {sb} sd = {sd} 
+ .model sky130_fd_pr__pfet_01v8__model.0 pmos
+ * DC IV MOS Parameters
+ + lmin = 1.45e-07 lmax = 1.55e-07 wmin = 1.255e-06 wmax = 1.265e-6
+diff -Naur sky130_fd_pr/latest/cells/pfet_01v8/sky130_fd_pr__pfet_01v8__sf.pm3.spice sky130_fd_pr_ngspice/latest/cells/pfet_01v8/sky130_fd_pr__pfet_01v8__sf.pm3.spice
+--- sky130_fd_pr/latest/cells/pfet_01v8/sky130_fd_pr__pfet_01v8__sf.pm3.spice	2020-11-08 01:33:06.753642933 +0100
++++ sky130_fd_pr_ngspice/latest/cells/pfet_01v8/sky130_fd_pr__pfet_01v8__sf.pm3.spice	2020-12-08 04:28:03.542577016 +0100
+@@ -29,8 +29,8 @@
+ * }
+ .subckt  sky130_fd_pr__pfet_01v8 d g s b
+ + 
+-.param  l = 1 w = 1 ad = 0 as = 0 pd = 0 ps = 0 nrd = 0 nrs = 0 sa = 0 sb = 0 sd = 0 mult = 1 nf = 1.0
+-msky130_fd_pr__pfet_01v8 d g s b sky130_fd_pr__pfet_01v8__model l = {l} w = {w} ad = {ad} as = {as} pd = {pd} ps = {ps} nrd = {nrd} nrs = {nrs} sa = {sa} sb = {sb} sd = {sd} nf = {nf}
++.param  l = 1 w = 1 nf = 1.0 ad = 0 as = 0 pd = 0 ps = 0 nrd = 0 nrs = 0 sa = 0 sb = 0 sd = 0 mult = 1 
++msky130_fd_pr__pfet_01v8 d g s b sky130_fd_pr__pfet_01v8__model l = {l} w = {w} nf = {nf} ad = {ad} as = {as} pd = {pd} ps = {ps} nrd = {nrd} nrs = {nrs} sa = {sa} sb = {sb} sd = {sd} 
+ .model sky130_fd_pr__pfet_01v8__model.0 pmos
+ * DC IV MOS Parameters
+ + lmin = 2.0e-05 lmax = 1.0e-04 wmin = 7e-06 wmax = 1.0e-4
+diff -Naur sky130_fd_pr/latest/cells/pfet_01v8/sky130_fd_pr__pfet_01v8__ss.pm3.spice sky130_fd_pr_ngspice/latest/cells/pfet_01v8/sky130_fd_pr__pfet_01v8__ss.pm3.spice
+--- sky130_fd_pr/latest/cells/pfet_01v8/sky130_fd_pr__pfet_01v8__ss.pm3.spice	2020-11-08 01:33:06.757642933 +0100
++++ sky130_fd_pr_ngspice/latest/cells/pfet_01v8/sky130_fd_pr__pfet_01v8__ss.pm3.spice	2020-12-08 04:28:03.550577015 +0100
+@@ -29,8 +29,8 @@
+ * }
+ .subckt  sky130_fd_pr__pfet_01v8 d g s b
+ + 
+-.param  l = 1 w = 1 ad = 0 as = 0 pd = 0 ps = 0 nrd = 0 nrs = 0 sa = 0 sb = 0 sd = 0 mult = 1 nf = 1.0
+-msky130_fd_pr__pfet_01v8 d g s b sky130_fd_pr__pfet_01v8__model l = {l} w = {w} ad = {ad} as = {as} pd = {pd} ps = {ps} nrd = {nrd} nrs = {nrs} sa = {sa} sb = {sb} sd = {sd} nf = {nf}
++.param  l = 1 w = 1 nf = 1.0 ad = 0 as = 0 pd = 0 ps = 0 nrd = 0 nrs = 0 sa = 0 sb = 0 sd = 0 mult = 1 
++msky130_fd_pr__pfet_01v8 d g s b sky130_fd_pr__pfet_01v8__model l = {l} w = {w} nf = {nf} ad = {ad} as = {as} pd = {pd} ps = {ps} nrd = {nrd} nrs = {nrs} sa = {sa} sb = {sb} sd = {sd} 
+ .model sky130_fd_pr__pfet_01v8__model.0 pmos
+ * DC IV MOS Parameters
+ + lmin = 2.0e-05 lmax = 1.0e-04 wmin = 7e-06 wmax = 1.0e-4
+diff -Naur sky130_fd_pr/latest/cells/pfet_01v8/sky130_fd_pr__pfet_01v8__tt_leak.pm3.spice sky130_fd_pr_ngspice/latest/cells/pfet_01v8/sky130_fd_pr__pfet_01v8__tt_leak.pm3.spice
+--- sky130_fd_pr/latest/cells/pfet_01v8/sky130_fd_pr__pfet_01v8__tt_leak.pm3.spice	2020-11-08 01:33:06.761642933 +0100
++++ sky130_fd_pr_ngspice/latest/cells/pfet_01v8/sky130_fd_pr__pfet_01v8__tt_leak.pm3.spice	2020-12-08 04:28:03.654577013 +0100
+@@ -29,8 +29,8 @@
+ * }
+ .subckt  sky130_fd_pr__pfet_01v8 d g s b
+ + 
+-.param  l = 1 w = 1 ad = 0 as = 0 pd = 0 ps = 0 nrd = 0 nrs = 0 sa = 0 sb = 0 sd = 0 mult = 1 nf = 1.0
+-msky130_fd_pr__pfet_01v8 d g s b sky130_fd_pr__pfet_01v8__model l = {l} w = {w} ad = {ad} as = {as} pd = {pd} ps = {ps} nrd = {nrd} nrs = {nrs} sa = {sa} sb = {sb} sd = {sd} nf = {nf}
++.param  l = 1 w = 1 nf = 1.0 ad = 0 as = 0 pd = 0 ps = 0 nrd = 0 nrs = 0 sa = 0 sb = 0 sd = 0 mult = 1 
++msky130_fd_pr__pfet_01v8 d g s b sky130_fd_pr__pfet_01v8__model l = {l} w = {w} nf = {nf} ad = {ad} as = {as} pd = {pd} ps = {ps} nrd = {nrd} nrs = {nrs} sa = {sa} sb = {sb} sd = {sd} 
+ .model sky130_fd_pr__pfet_01v8__model.0 pmos
+ * DC IV MOS Parameters
+ + lmin = 2.0e-05 lmax = 1.0e-04 wmin = 7e-06 wmax = 1.0e-4
+diff -Naur sky130_fd_pr/latest/cells/pfet_01v8/sky130_fd_pr__pfet_01v8__tt.pm3.spice sky130_fd_pr_ngspice/latest/cells/pfet_01v8/sky130_fd_pr__pfet_01v8__tt.pm3.spice
+--- sky130_fd_pr/latest/cells/pfet_01v8/sky130_fd_pr__pfet_01v8__tt.pm3.spice	2020-11-08 01:33:06.757642933 +0100
++++ sky130_fd_pr_ngspice/latest/cells/pfet_01v8/sky130_fd_pr__pfet_01v8__tt.pm3.spice	2020-12-08 04:28:03.666577013 +0100
+@@ -29,8 +29,8 @@
+ * }
+ .subckt  sky130_fd_pr__pfet_01v8 d g s b
+ + 
+-.param  l = 1 w = 1 ad = 0 as = 0 pd = 0 ps = 0 nrd = 0 nrs = 0 sa = 0 sb = 0 sd = 0 mult = 1 nf = 1.0
+-msky130_fd_pr__pfet_01v8 d g s b sky130_fd_pr__pfet_01v8__model l = {l} w = {w} ad = {ad} as = {as} pd = {pd} ps = {ps} nrd = {nrd} nrs = {nrs} sa = {sa} sb = {sb} sd = {sd} nf = {nf}
++.param  l = 1 w = 1 nf = 1.0 ad = 0 as = 0 pd = 0 ps = 0 nrd = 0 nrs = 0 sa = 0 sb = 0 sd = 0 mult = 1 
++msky130_fd_pr__pfet_01v8 d g s b sky130_fd_pr__pfet_01v8__model l = {l} w = {w} nf = {nf} ad = {ad} as = {as} pd = {pd} ps = {ps} nrd = {nrd} nrs = {nrs} sa = {sa} sb = {sb} sd = {sd} 
+ .model sky130_fd_pr__pfet_01v8__model.0 pmos
+ * DC IV MOS Parameters
+ + lmin = 2.0e-05 lmax = 1.0e-04 wmin = 7e-06 wmax = 1.0e-4
+diff -Naur sky130_fd_pr/latest/cells/pfet_01v8_hvt/sky130_fd_pr__pfet_01v8_hvt__ff.pm3.spice sky130_fd_pr_ngspice/latest/cells/pfet_01v8_hvt/sky130_fd_pr__pfet_01v8_hvt__ff.pm3.spice
+--- sky130_fd_pr/latest/cells/pfet_01v8_hvt/sky130_fd_pr__pfet_01v8_hvt__ff.pm3.spice	2020-11-08 01:33:06.785642932 +0100
++++ sky130_fd_pr_ngspice/latest/cells/pfet_01v8_hvt/sky130_fd_pr__pfet_01v8_hvt__ff.pm3.spice	2020-12-08 04:28:02.786577033 +0100
+@@ -29,8 +29,8 @@
+ * }
+ .subckt  sky130_fd_pr__pfet_01v8_hvt d g s b
+ + 
+-.param  l = 1 w = 1 ad = 0 as = 0 pd = 0 ps = 0 nrd = 0 nrs = 0 sa = 0 sb = 0 sd = 0 mult = 1 nf = 1.0
+-msky130_fd_pr__pfet_01v8_hvt d g s b sky130_fd_pr__pfet_01v8_hvt__model l = {l} w = {w} ad = {ad} as = {as} pd = {pd} ps = {ps} nrd = {nrd} nrs = {nrs} sa = {sa} sb = {sb} sd = {sd} nf = {nf}
++.param  l = 1 w = 1 nf = 1.0 ad = 0 as = 0 pd = 0 ps = 0 nrd = 0 nrs = 0 sa = 0 sb = 0 sd = 0 mult = 1 
++msky130_fd_pr__pfet_01v8_hvt d g s b sky130_fd_pr__pfet_01v8_hvt__model l = {l} w = {w} nf = {nf} ad = {ad} as = {as} pd = {pd} ps = {ps} nrd = {nrd} nrs = {nrs} sa = {sa} sb = {sb} sd = {sd} 
+ .model sky130_fd_pr__pfet_01v8_hvt__model.0 pmos
+ * Model Flag Parameters
+ + lmin = 2.0e-05 lmax = 0.0001 wmin = 7.0e-06 wmax = 0.0001
+diff -Naur sky130_fd_pr/latest/cells/pfet_01v8_hvt/sky130_fd_pr__pfet_01v8_hvt__fs.pm3.spice sky130_fd_pr_ngspice/latest/cells/pfet_01v8_hvt/sky130_fd_pr__pfet_01v8_hvt__fs.pm3.spice
+--- sky130_fd_pr/latest/cells/pfet_01v8_hvt/sky130_fd_pr__pfet_01v8_hvt__fs.pm3.spice	2020-11-08 01:33:06.793642932 +0100
++++ sky130_fd_pr_ngspice/latest/cells/pfet_01v8_hvt/sky130_fd_pr__pfet_01v8_hvt__fs.pm3.spice	2020-12-08 04:28:02.810577032 +0100
+@@ -29,8 +29,8 @@
+ * }
+ .subckt  sky130_fd_pr__pfet_01v8_hvt d g s b
+ + 
+-.param  l = 1 w = 1 ad = 0 as = 0 pd = 0 ps = 0 nrd = 0 nrs = 0 sa = 0 sb = 0 sd = 0 mult = 1 nf = 1.0
+-msky130_fd_pr__pfet_01v8_hvt d g s b sky130_fd_pr__pfet_01v8_hvt__model l = {l} w = {w} ad = {ad} as = {as} pd = {pd} ps = {ps} nrd = {nrd} nrs = {nrs} sa = {sa} sb = {sb} sd = {sd} nf = {nf}
++.param  l = 1 w = 1 nf = 1.0 ad = 0 as = 0 pd = 0 ps = 0 nrd = 0 nrs = 0 sa = 0 sb = 0 sd = 0 mult = 1 
++msky130_fd_pr__pfet_01v8_hvt d g s b sky130_fd_pr__pfet_01v8_hvt__model l = {l} w = {w} nf = {nf} ad = {ad} as = {as} pd = {pd} ps = {ps} nrd = {nrd} nrs = {nrs} sa = {sa} sb = {sb} sd = {sd} 
+ .model sky130_fd_pr__pfet_01v8_hvt__model.0 pmos
+ * Model Flag Parameters
+ + lmin = 2.0e-05 lmax = 0.0001 wmin = 7.0e-06 wmax = 0.0001
+diff -Naur sky130_fd_pr/latest/cells/pfet_01v8_hvt/sky130_fd_pr__pfet_01v8_hvt__leak.pm3.spice sky130_fd_pr_ngspice/latest/cells/pfet_01v8_hvt/sky130_fd_pr__pfet_01v8_hvt__leak.pm3.spice
+--- sky130_fd_pr/latest/cells/pfet_01v8_hvt/sky130_fd_pr__pfet_01v8_hvt__leak.pm3.spice	2020-11-08 01:33:06.797642931 +0100
++++ sky130_fd_pr_ngspice/latest/cells/pfet_01v8_hvt/sky130_fd_pr__pfet_01v8_hvt__leak.pm3.spice	2020-12-08 04:28:02.830577032 +0100
+@@ -29,8 +29,8 @@
+ * }
+ .subckt  sky130_fd_pr__pfet_01v8_hvt d g s b
+ + 
+-.param  l = 1 w = 1 ad = 0 as = 0 pd = 0 ps = 0 nrd = 0 nrs = 0 sa = 0 sb = 0 sd = 0 mult = 1 nf = 1.0
+-msky130_fd_pr__pfet_01v8_hvt d g s b sky130_fd_pr__pfet_01v8_hvt__model l = {l} w = {w} ad = {ad} as = {as} pd = {pd} ps = {ps} nrd = {nrd} nrs = {nrs} sa = {sa} sb = {sb} sd = {sd} nf = {nf}
++.param  l = 1 w = 1 nf = 1.0 ad = 0 as = 0 pd = 0 ps = 0 nrd = 0 nrs = 0 sa = 0 sb = 0 sd = 0 mult = 1 
++msky130_fd_pr__pfet_01v8_hvt d g s b sky130_fd_pr__pfet_01v8_hvt__model l = {l} w = {w} nf = {nf} ad = {ad} as = {as} pd = {pd} ps = {ps} nrd = {nrd} nrs = {nrs} sa = {sa} sb = {sb} sd = {sd} 
+ .model sky130_fd_pr__pfet_01v8_hvt__model.0 pmos
+ * Model Flag Parameters
+ + lmin = 2.0e-05 lmax = 0.0001 wmin = 7.0e-06 wmax = 0.0001
+diff -Naur sky130_fd_pr/latest/cells/pfet_01v8_hvt/sky130_fd_pr__pfet_01v8_hvt.pm3.spice sky130_fd_pr_ngspice/latest/cells/pfet_01v8_hvt/sky130_fd_pr__pfet_01v8_hvt.pm3.spice
+--- sky130_fd_pr/latest/cells/pfet_01v8_hvt/sky130_fd_pr__pfet_01v8_hvt.pm3.spice	2020-11-08 01:33:06.785642932 +0100
++++ sky130_fd_pr_ngspice/latest/cells/pfet_01v8_hvt/sky130_fd_pr__pfet_01v8_hvt.pm3.spice	2020-12-08 04:28:02.834577031 +0100
+@@ -29,8 +29,8 @@
+ * }
+ .subckt  sky130_fd_pr__pfet_01v8_hvt d g s b
+ + 
+-.param  l = 1 w = 1 ad = 0 as = 0 pd = 0 ps = 0 nrd = 0 nrs = 0 sa = 0 sb = 0 sd = 0 mult = 1 nf = 1.0
+-msky130_fd_pr__pfet_01v8_hvt d g s b sky130_fd_pr__pfet_01v8_hvt__model l = {l} w = {w} ad = {ad} as = {as} pd = {pd} ps = {ps} nrd = {nrd} nrs = {nrs} sa = {sa} sb = {sb} sd = {sd} nf = {nf}
++.param  l = 1 w = 1 nf = 1.0 ad = 0 as = 0 pd = 0 ps = 0 nrd = 0 nrs = 0 sa = 0 sb = 0 sd = 0 mult = 1 
++msky130_fd_pr__pfet_01v8_hvt d g s b sky130_fd_pr__pfet_01v8_hvt__model l = {l} w = {w} nf = {nf} ad = {ad} as = {as} pd = {pd} ps = {ps} nrd = {nrd} nrs = {nrs} sa = {sa} sb = {sb} sd = {sd} 
+ .model sky130_fd_pr__pfet_01v8_hvt__model.0 pmos
+ * DC IV MOS Parameters
+ + lmin = 1.45e-07 lmax = 1.55e-07 wmin = 1.255e-06 wmax = 1.265e-6
+diff -Naur sky130_fd_pr/latest/cells/pfet_01v8_hvt/sky130_fd_pr__pfet_01v8_hvt__sf.pm3.spice sky130_fd_pr_ngspice/latest/cells/pfet_01v8_hvt/sky130_fd_pr__pfet_01v8_hvt__sf.pm3.spice
+--- sky130_fd_pr/latest/cells/pfet_01v8_hvt/sky130_fd_pr__pfet_01v8_hvt__sf.pm3.spice	2020-11-08 01:33:06.801642931 +0100
++++ sky130_fd_pr_ngspice/latest/cells/pfet_01v8_hvt/sky130_fd_pr__pfet_01v8_hvt__sf.pm3.spice	2020-12-08 04:28:02.850577031 +0100
+@@ -29,8 +29,8 @@
+ * }
+ .subckt  sky130_fd_pr__pfet_01v8_hvt d g s b
+ + 
+-.param  l = 1 w = 1 ad = 0 as = 0 pd = 0 ps = 0 nrd = 0 nrs = 0 sa = 0 sb = 0 sd = 0 mult = 1 nf = 1.0
+-msky130_fd_pr__pfet_01v8_hvt d g s b sky130_fd_pr__pfet_01v8_hvt__model l = {l} w = {w} ad = {ad} as = {as} pd = {pd} ps = {ps} nrd = {nrd} nrs = {nrs} sa = {sa} sb = {sb} sd = {sd} nf = {nf}
++.param  l = 1 w = 1 nf = 1.0 ad = 0 as = 0 pd = 0 ps = 0 nrd = 0 nrs = 0 sa = 0 sb = 0 sd = 0 mult = 1 
++msky130_fd_pr__pfet_01v8_hvt d g s b sky130_fd_pr__pfet_01v8_hvt__model l = {l} w = {w} nf = {nf} ad = {ad} as = {as} pd = {pd} ps = {ps} nrd = {nrd} nrs = {nrs} sa = {sa} sb = {sb} sd = {sd} 
+ .model sky130_fd_pr__pfet_01v8_hvt__model.0 pmos
+ * Model Flag Parameters
+ + lmin = 2.0e-05 lmax = 0.0001 wmin = 7.0e-06 wmax = 0.0001
+diff -Naur sky130_fd_pr/latest/cells/pfet_01v8_hvt/sky130_fd_pr__pfet_01v8_hvt__ss.pm3.spice sky130_fd_pr_ngspice/latest/cells/pfet_01v8_hvt/sky130_fd_pr__pfet_01v8_hvt__ss.pm3.spice
+--- sky130_fd_pr/latest/cells/pfet_01v8_hvt/sky130_fd_pr__pfet_01v8_hvt__ss.pm3.spice	2020-11-08 01:33:06.805642931 +0100
++++ sky130_fd_pr_ngspice/latest/cells/pfet_01v8_hvt/sky130_fd_pr__pfet_01v8_hvt__ss.pm3.spice	2020-12-08 04:28:03.118577025 +0100
+@@ -29,8 +29,8 @@
+ * }
+ .subckt  sky130_fd_pr__pfet_01v8_hvt d g s b
+ + 
+-.param  l = 1 w = 1 ad = 0 as = 0 pd = 0 ps = 0 nrd = 0 nrs = 0 sa = 0 sb = 0 sd = 0 mult = 1 nf = 1.0
+-msky130_fd_pr__pfet_01v8_hvt d g s b sky130_fd_pr__pfet_01v8_hvt__model l = {l} w = {w} ad = {ad} as = {as} pd = {pd} ps = {ps} nrd = {nrd} nrs = {nrs} sa = {sa} sb = {sb} sd = {sd} nf = {nf}
++.param  l = 1 w = 1 nf = 1.0 ad = 0 as = 0 pd = 0 ps = 0 nrd = 0 nrs = 0 sa = 0 sb = 0 sd = 0 mult = 1 
++msky130_fd_pr__pfet_01v8_hvt d g s b sky130_fd_pr__pfet_01v8_hvt__model l = {l} w = {w} nf = {nf} ad = {ad} as = {as} pd = {pd} ps = {ps} nrd = {nrd} nrs = {nrs} sa = {sa} sb = {sb} sd = {sd} 
+ .model sky130_fd_pr__pfet_01v8_hvt__model.0 pmos
+ * Model Flag Parameters
+ + lmin = 2.0e-05 lmax = 0.0001 wmin = 7.0e-06 wmax = 0.0001
+diff -Naur sky130_fd_pr/latest/cells/pfet_01v8_hvt/sky130_fd_pr__pfet_01v8_hvt__tt_leak.pm3.spice sky130_fd_pr_ngspice/latest/cells/pfet_01v8_hvt/sky130_fd_pr__pfet_01v8_hvt__tt_leak.pm3.spice
+--- sky130_fd_pr/latest/cells/pfet_01v8_hvt/sky130_fd_pr__pfet_01v8_hvt__tt_leak.pm3.spice	2020-11-08 01:33:06.817642930 +0100
++++ sky130_fd_pr_ngspice/latest/cells/pfet_01v8_hvt/sky130_fd_pr__pfet_01v8_hvt__tt_leak.pm3.spice	2020-12-08 04:28:03.134577025 +0100
+@@ -29,8 +29,8 @@
+ * }
+ .subckt  sky130_fd_pr__pfet_01v8_hvt d g s b
+ + 
+-.param  l = 1 w = 1 ad = 0 as = 0 pd = 0 ps = 0 nrd = 0 nrs = 0 sa = 0 sb = 0 sd = 0 mult = 1 nf = 1.0
+-msky130_fd_pr__pfet_01v8_hvt d g s b sky130_fd_pr__pfet_01v8_hvt__model l = {l} w = {w} ad = {ad} as = {as} pd = {pd} ps = {ps} nrd = {nrd} nrs = {nrs} sa = {sa} sb = {sb} sd = {sd} nf = {nf}
++.param  l = 1 w = 1 nf = 1.0 ad = 0 as = 0 pd = 0 ps = 0 nrd = 0 nrs = 0 sa = 0 sb = 0 sd = 0 mult = 1 
++msky130_fd_pr__pfet_01v8_hvt d g s b sky130_fd_pr__pfet_01v8_hvt__model l = {l} w = {w} nf = {nf} ad = {ad} as = {as} pd = {pd} ps = {ps} nrd = {nrd} nrs = {nrs} sa = {sa} sb = {sb} sd = {sd} 
+ .model sky130_fd_pr__pfet_01v8_hvt__model.0 pmos
+ * Model Flag Parameters
+ + lmin = 2.0e-05 lmax = 0.0001 wmin = 7.0e-06 wmax = 0.0001
+diff -Naur sky130_fd_pr/latest/cells/pfet_01v8_hvt/sky130_fd_pr__pfet_01v8_hvt__tt.pm3.spice sky130_fd_pr_ngspice/latest/cells/pfet_01v8_hvt/sky130_fd_pr__pfet_01v8_hvt__tt.pm3.spice
+--- sky130_fd_pr/latest/cells/pfet_01v8_hvt/sky130_fd_pr__pfet_01v8_hvt__tt.pm3.spice	2020-11-08 01:33:06.809642931 +0100
++++ sky130_fd_pr_ngspice/latest/cells/pfet_01v8_hvt/sky130_fd_pr__pfet_01v8_hvt__tt.pm3.spice	2020-12-15 13:33:26.931354344 +0100
+@@ -29,8 +29,9 @@
+ * }
+ .subckt  sky130_fd_pr__pfet_01v8_hvt d g s b
+ + 
+-.param  l = 1 w = 1 ad = 0 as = 0 pd = 0 ps = 0 nrd = 0 nrs = 0 sa = 0 sb = 0 sd = 0 mult = 1 nf = 1.0
+-msky130_fd_pr__pfet_01v8_hvt d g s b sky130_fd_pr__pfet_01v8_hvt__model l = {l} w = {w} ad = {ad} as = {as} pd = {pd} ps = {ps} nrd = {nrd} nrs = {nrs} sa = {sa} sb = {sb} sd = {sd} nf = {nf}
++.param  l = 1 w = 1 nf = 1.0 ad = 0 as = 0 pd = 0 ps = 0 nrd = 0 nrs = 0 sa = 0 sb = 0 sd = 0 mult = 1 
++msky130_fd_pr__pfet_01v8_hvt d g s b sky130_fd_pr__pfet_01v8_hvt__model l = {l} w = {w} nf = {nf} ad = {ad} as = {as} pd = {pd} ps = {ps} nrd = {nrd} nrs = {nrs} sa = {sa} sb = {sb} sd = {sd} 
++
+ .model sky130_fd_pr__pfet_01v8_hvt__model.0 pmos
+ * Model Flag Parameters
+ + lmin = 2.0e-05 lmax = 0.0001 wmin = 7.0e-06 wmax = 0.0001
+diff -Naur sky130_fd_pr/latest/cells/pfet_01v8_lvt/sky130_fd_pr__pfet_01v8_lvt__ff.pm3.spice sky130_fd_pr_ngspice/latest/cells/pfet_01v8_lvt/sky130_fd_pr__pfet_01v8_lvt__ff.pm3.spice
+--- sky130_fd_pr/latest/cells/pfet_01v8_lvt/sky130_fd_pr__pfet_01v8_lvt__ff.pm3.spice	2020-11-08 01:33:06.833642930 +0100
++++ sky130_fd_pr_ngspice/latest/cells/pfet_01v8_lvt/sky130_fd_pr__pfet_01v8_lvt__ff.pm3.spice	2020-12-08 04:28:03.154577024 +0100
+@@ -29,8 +29,8 @@
+ * }
+ .subckt  sky130_fd_pr__pfet_01v8_lvt d g s b
+ + 
+-.param  l = 1 w = 1 ad = 0 as = 0 pd = 0 ps = 0 nrd = 0 nrs = 0 sa = 0 sb = 0 sd = 0 mult = 1 nf = 1.0
+-msky130_fd_pr__pfet_01v8_lvt d g s b sky130_fd_pr__pfet_01v8_lvt__model l = {l} w = {w} ad = {ad} as = {as} pd = {pd} ps = {ps} nrd = {nrd} nrs = {nrs} sa = {sa} sb = {sb} sd = {sd} nf = {nf}
++.param  l = 1 w = 1 nf = 1.0 ad = 0 as = 0 pd = 0 ps = 0 nrd = 0 nrs = 0 sa = 0 sb = 0 sd = 0 mult = 1 
++msky130_fd_pr__pfet_01v8_lvt d g s b sky130_fd_pr__pfet_01v8_lvt__model l = {l} w = {w} nf = {nf} ad = {ad} as = {as} pd = {pd} ps = {ps} nrd = {nrd} nrs = {nrs} sa = {sa} sb = {sb} sd = {sd} 
+ .model sky130_fd_pr__pfet_01v8_lvt__model.0 pmos
+ * DC IV MOS Parameters
+ + lmin = 2.0e-05 lmax = 1.0e-04 wmin = 7e-06 wmax = 1.0e-4
+diff -Naur sky130_fd_pr/latest/cells/pfet_01v8_lvt/sky130_fd_pr__pfet_01v8_lvt__fs.pm3.spice sky130_fd_pr_ngspice/latest/cells/pfet_01v8_lvt/sky130_fd_pr__pfet_01v8_lvt__fs.pm3.spice
+--- sky130_fd_pr/latest/cells/pfet_01v8_lvt/sky130_fd_pr__pfet_01v8_lvt__fs.pm3.spice	2020-11-08 01:33:06.833642930 +0100
++++ sky130_fd_pr_ngspice/latest/cells/pfet_01v8_lvt/sky130_fd_pr__pfet_01v8_lvt__fs.pm3.spice	2020-12-08 04:28:03.158577024 +0100
+@@ -29,8 +29,8 @@
+ * }
+ .subckt  sky130_fd_pr__pfet_01v8_lvt d g s b
+ + 
+-.param  l = 1 w = 1 ad = 0 as = 0 pd = 0 ps = 0 nrd = 0 nrs = 0 sa = 0 sb = 0 sd = 0 mult = 1 nf = 1.0
+-msky130_fd_pr__pfet_01v8_lvt d g s b sky130_fd_pr__pfet_01v8_lvt__model l = {l} w = {w} ad = {ad} as = {as} pd = {pd} ps = {ps} nrd = {nrd} nrs = {nrs} sa = {sa} sb = {sb} sd = {sd} nf = {nf}
++.param  l = 1 w = 1 nf = 1.0 ad = 0 as = 0 pd = 0 ps = 0 nrd = 0 nrs = 0 sa = 0 sb = 0 sd = 0 mult = 1 
++msky130_fd_pr__pfet_01v8_lvt d g s b sky130_fd_pr__pfet_01v8_lvt__model l = {l} w = {w} nf = {nf} ad = {ad} as = {as} pd = {pd} ps = {ps} nrd = {nrd} nrs = {nrs} sa = {sa} sb = {sb} sd = {sd} 
+ .model sky130_fd_pr__pfet_01v8_lvt__model.0 pmos
+ * DC IV MOS Parameters
+ + lmin = 2.0e-05 lmax = 1.0e-04 wmin = 7e-06 wmax = 1.0e-4
+diff -Naur sky130_fd_pr/latest/cells/pfet_01v8_lvt/sky130_fd_pr__pfet_01v8_lvt__leak.pm3.spice sky130_fd_pr_ngspice/latest/cells/pfet_01v8_lvt/sky130_fd_pr__pfet_01v8_lvt__leak.pm3.spice
+--- sky130_fd_pr/latest/cells/pfet_01v8_lvt/sky130_fd_pr__pfet_01v8_lvt__leak.pm3.spice	2020-11-08 01:33:06.833642930 +0100
++++ sky130_fd_pr_ngspice/latest/cells/pfet_01v8_lvt/sky130_fd_pr__pfet_01v8_lvt__leak.pm3.spice	2020-12-08 04:28:03.310577021 +0100
+@@ -29,8 +29,8 @@
+ * }
+ .subckt  sky130_fd_pr__pfet_01v8_lvt d g s b
+ + 
+-.param  l = 1 w = 1 ad = 0 as = 0 pd = 0 ps = 0 nrd = 0 nrs = 0 sa = 0 sb = 0 sd = 0 mult = 1 nf = 1.0
+-msky130_fd_pr__pfet_01v8_lvt d g s b sky130_fd_pr__pfet_01v8_lvt__model l = {l} w = {w} ad = {ad} as = {as} pd = {pd} ps = {ps} nrd = {nrd} nrs = {nrs} sa = {sa} sb = {sb} sd = {sd} nf = {nf}
++.param  l = 1 w = 1 nf = 1.0 ad = 0 as = 0 pd = 0 ps = 0 nrd = 0 nrs = 0 sa = 0 sb = 0 sd = 0 mult = 1 
++msky130_fd_pr__pfet_01v8_lvt d g s b sky130_fd_pr__pfet_01v8_lvt__model l = {l} w = {w} nf = {nf} ad = {ad} as = {as} pd = {pd} ps = {ps} nrd = {nrd} nrs = {nrs} sa = {sa} sb = {sb} sd = {sd} 
+ .model sky130_fd_pr__pfet_01v8_lvt__model.0 pmos
+ * DC IV MOS Parameters
+ + lmin = 2.0e-05 lmax = 1.0e-04 wmin = 7e-06 wmax = 1.0e-4
+diff -Naur sky130_fd_pr/latest/cells/pfet_01v8_lvt/sky130_fd_pr__pfet_01v8_lvt.pm3.spice sky130_fd_pr_ngspice/latest/cells/pfet_01v8_lvt/sky130_fd_pr__pfet_01v8_lvt.pm3.spice
+--- sky130_fd_pr/latest/cells/pfet_01v8_lvt/sky130_fd_pr__pfet_01v8_lvt.pm3.spice	2020-11-08 01:33:06.829642930 +0100
++++ sky130_fd_pr_ngspice/latest/cells/pfet_01v8_lvt/sky130_fd_pr__pfet_01v8_lvt.pm3.spice	2020-12-08 04:28:03.310577021 +0100
+@@ -29,8 +29,8 @@
+ * }
+ .subckt  sky130_fd_pr__pfet_01v8_lvt d g s b
+ + 
+-.param  l = 1 w = 1 ad = 0 as = 0 pd = 0 ps = 0 nrd = 0 nrs = 0 sa = 0 sb = 0 sd = 0 mult = 1 nf = 1.0
+-msky130_fd_pr__pfet_01v8_lvt d g s b sky130_fd_pr__pfet_01v8_lvt__model l = {l} w = {w} ad = {ad} as = {as} pd = {pd} ps = {ps} nrd = {nrd} nrs = {nrs} sa = {sa} sb = {sb} sd = {sd} nf = {nf}
++.param  l = 1 w = 1 nf = 1.0 ad = 0 as = 0 pd = 0 ps = 0 nrd = 0 nrs = 0 sa = 0 sb = 0 sd = 0 mult = 1 
++msky130_fd_pr__pfet_01v8_lvt d g s b sky130_fd_pr__pfet_01v8_lvt__model l = {l} w = {w} nf = {nf} ad = {ad} as = {as} pd = {pd} ps = {ps} nrd = {nrd} nrs = {nrs} sa = {sa} sb = {sb} sd = {sd} 
+ .model sky130_fd_pr__pfet_01v8_lvt__model.0 pmos
+ * DC IV MOS Parameters
+ + lmin = 9.95e-07 lmax = 1.005e-06 wmin = 9.95e-07 wmax = 1.005e-6
+diff -Naur sky130_fd_pr/latest/cells/pfet_01v8_lvt/sky130_fd_pr__pfet_01v8_lvt__sf.pm3.spice sky130_fd_pr_ngspice/latest/cells/pfet_01v8_lvt/sky130_fd_pr__pfet_01v8_lvt__sf.pm3.spice
+--- sky130_fd_pr/latest/cells/pfet_01v8_lvt/sky130_fd_pr__pfet_01v8_lvt__sf.pm3.spice	2020-11-08 01:33:06.837642930 +0100
++++ sky130_fd_pr_ngspice/latest/cells/pfet_01v8_lvt/sky130_fd_pr__pfet_01v8_lvt__sf.pm3.spice	2020-12-08 04:28:03.314577021 +0100
+@@ -29,8 +29,8 @@
+ * }
+ .subckt  sky130_fd_pr__pfet_01v8_lvt d g s b
+ + 
+-.param  l = 1 w = 1 ad = 0 as = 0 pd = 0 ps = 0 nrd = 0 nrs = 0 sa = 0 sb = 0 sd = 0 mult = 1 nf = 1.0
+-msky130_fd_pr__pfet_01v8_lvt d g s b sky130_fd_pr__pfet_01v8_lvt__model l = {l} w = {w} ad = {ad} as = {as} pd = {pd} ps = {ps} nrd = {nrd} nrs = {nrs} sa = {sa} sb = {sb} sd = {sd} nf = {nf}
++.param  l = 1 w = 1 nf = 1.0 ad = 0 as = 0 pd = 0 ps = 0 nrd = 0 nrs = 0 sa = 0 sb = 0 sd = 0 mult = 1 
++msky130_fd_pr__pfet_01v8_lvt d g s b sky130_fd_pr__pfet_01v8_lvt__model l = {l} w = {w} nf = {nf} ad = {ad} as = {as} pd = {pd} ps = {ps} nrd = {nrd} nrs = {nrs} sa = {sa} sb = {sb} sd = {sd} 
+ .model sky130_fd_pr__pfet_01v8_lvt__model.0 pmos
+ * DC IV MOS Parameters
+ + lmin = 2.0e-05 lmax = 1.0e-04 wmin = 7e-06 wmax = 1.0e-4
+diff -Naur sky130_fd_pr/latest/cells/pfet_01v8_lvt/sky130_fd_pr__pfet_01v8_lvt__ss.pm3.spice sky130_fd_pr_ngspice/latest/cells/pfet_01v8_lvt/sky130_fd_pr__pfet_01v8_lvt__ss.pm3.spice
+--- sky130_fd_pr/latest/cells/pfet_01v8_lvt/sky130_fd_pr__pfet_01v8_lvt__ss.pm3.spice	2020-11-08 01:33:06.837642930 +0100
++++ sky130_fd_pr_ngspice/latest/cells/pfet_01v8_lvt/sky130_fd_pr__pfet_01v8_lvt__ss.pm3.spice	2020-12-08 04:28:03.318577021 +0100
+@@ -29,8 +29,8 @@
+ * }
+ .subckt  sky130_fd_pr__pfet_01v8_lvt d g s b
+ + 
+-.param  l = 1 w = 1 ad = 0 as = 0 pd = 0 ps = 0 nrd = 0 nrs = 0 sa = 0 sb = 0 sd = 0 mult = 1 nf = 1.0
+-msky130_fd_pr__pfet_01v8_lvt d g s b sky130_fd_pr__pfet_01v8_lvt__model l = {l} w = {w} ad = {ad} as = {as} pd = {pd} ps = {ps} nrd = {nrd} nrs = {nrs} sa = {sa} sb = {sb} sd = {sd} nf = {nf}
++.param  l = 1 w = 1 nf = 1.0 ad = 0 as = 0 pd = 0 ps = 0 nrd = 0 nrs = 0 sa = 0 sb = 0 sd = 0 mult = 1 
++msky130_fd_pr__pfet_01v8_lvt d g s b sky130_fd_pr__pfet_01v8_lvt__model l = {l} w = {w} nf = {nf} ad = {ad} as = {as} pd = {pd} ps = {ps} nrd = {nrd} nrs = {nrs} sa = {sa} sb = {sb} sd = {sd} 
+ .model sky130_fd_pr__pfet_01v8_lvt__model.0 pmos
+ * DC IV MOS Parameters
+ + lmin = 2.0e-05 lmax = 1.0e-04 wmin = 7e-06 wmax = 1.0e-4
+diff -Naur sky130_fd_pr/latest/cells/pfet_01v8_lvt/sky130_fd_pr__pfet_01v8_lvt__tt_leak.pm3.spice sky130_fd_pr_ngspice/latest/cells/pfet_01v8_lvt/sky130_fd_pr__pfet_01v8_lvt__tt_leak.pm3.spice
+--- sky130_fd_pr/latest/cells/pfet_01v8_lvt/sky130_fd_pr__pfet_01v8_lvt__tt_leak.pm3.spice	2020-11-08 01:33:06.841642929 +0100
++++ sky130_fd_pr_ngspice/latest/cells/pfet_01v8_lvt/sky130_fd_pr__pfet_01v8_lvt__tt_leak.pm3.spice	2020-12-08 04:28:03.326577020 +0100
+@@ -29,8 +29,8 @@
+ * }
+ .subckt  sky130_fd_pr__pfet_01v8_lvt d g s b
+ + 
+-.param  l = 1 w = 1 ad = 0 as = 0 pd = 0 ps = 0 nrd = 0 nrs = 0 sa = 0 sb = 0 sd = 0 mult = 1 nf = 1.0
+-msky130_fd_pr__pfet_01v8_lvt d g s b sky130_fd_pr__pfet_01v8_lvt__model l = {l} w = {w} ad = {ad} as = {as} pd = {pd} ps = {ps} nrd = {nrd} nrs = {nrs} sa = {sa} sb = {sb} sd = {sd} nf = {nf}
++.param  l = 1 w = 1 nf = 1.0 ad = 0 as = 0 pd = 0 ps = 0 nrd = 0 nrs = 0 sa = 0 sb = 0 sd = 0 mult = 1 
++msky130_fd_pr__pfet_01v8_lvt d g s b sky130_fd_pr__pfet_01v8_lvt__model l = {l} w = {w} nf = {nf} ad = {ad} as = {as} pd = {pd} ps = {ps} nrd = {nrd} nrs = {nrs} sa = {sa} sb = {sb} sd = {sd} 
+ .model sky130_fd_pr__pfet_01v8_lvt__model.0 pmos
+ * DC IV MOS Parameters
+ + lmin = 2.0e-05 lmax = 1.0e-04 wmin = 7e-06 wmax = 1.0e-4
+diff -Naur sky130_fd_pr/latest/cells/pfet_01v8_lvt/sky130_fd_pr__pfet_01v8_lvt__tt.pm3.spice sky130_fd_pr_ngspice/latest/cells/pfet_01v8_lvt/sky130_fd_pr__pfet_01v8_lvt__tt.pm3.spice
+--- sky130_fd_pr/latest/cells/pfet_01v8_lvt/sky130_fd_pr__pfet_01v8_lvt__tt.pm3.spice	2020-11-08 01:33:06.841642929 +0100
++++ sky130_fd_pr_ngspice/latest/cells/pfet_01v8_lvt/sky130_fd_pr__pfet_01v8_lvt__tt.pm3.spice	2020-12-08 04:28:03.338577020 +0100
+@@ -29,8 +29,8 @@
+ * }
+ .subckt  sky130_fd_pr__pfet_01v8_lvt d g s b
+ + 
+-.param  l = 1 w = 1 ad = 0 as = 0 pd = 0 ps = 0 nrd = 0 nrs = 0 sa = 0 sb = 0 sd = 0 mult = 1 nf = 1.0
+-msky130_fd_pr__pfet_01v8_lvt d g s b sky130_fd_pr__pfet_01v8_lvt__model l = {l} w = {w} ad = {ad} as = {as} pd = {pd} ps = {ps} nrd = {nrd} nrs = {nrs} sa = {sa} sb = {sb} sd = {sd} nf = {nf}
++.param  l = 1 w = 1 nf = 1.0 ad = 0 as = 0 pd = 0 ps = 0 nrd = 0 nrs = 0 sa = 0 sb = 0 sd = 0 mult = 1 
++msky130_fd_pr__pfet_01v8_lvt d g s b sky130_fd_pr__pfet_01v8_lvt__model l = {l} w = {w} nf = {nf} ad = {ad} as = {as} pd = {pd} ps = {ps} nrd = {nrd} nrs = {nrs} sa = {sa} sb = {sb} sd = {sd} 
+ .model sky130_fd_pr__pfet_01v8_lvt__model.0 pmos
+ * DC IV MOS Parameters
+ + lmin = 2.0e-05 lmax = 1.0e-04 wmin = 7e-06 wmax = 1.0e-4
+diff -Naur sky130_fd_pr/latest/cells/pfet_01v8_mvt/sky130_fd_pr__pfet_01v8_mvt.pm3.spice sky130_fd_pr_ngspice/latest/cells/pfet_01v8_mvt/sky130_fd_pr__pfet_01v8_mvt.pm3.spice
+--- sky130_fd_pr/latest/cells/pfet_01v8_mvt/sky130_fd_pr__pfet_01v8_mvt.pm3.spice	2020-11-08 01:33:06.857642929 +0100
++++ sky130_fd_pr_ngspice/latest/cells/pfet_01v8_mvt/sky130_fd_pr__pfet_01v8_mvt.pm3.spice	2020-12-08 04:28:03.338577020 +0100
+@@ -31,8 +31,8 @@
+ * }
+ .subckt  sky130_fd_pr__pfet_01v8_mvt d g s b
+ + 
+-.param  l = 1 w = 1 ad = 0 as = 0 pd = 0 ps = 0 nrd = 0 nrs = 0 sa = 0 sb = 0 sd = 0 mult = 1 nf = 1.0
+-msky130_fd_pr__pfet_01v8_mvt d g s b sky130_fd_pr__pfet_01v8_mvt__model l = {l} w = {w} ad = {ad} as = {as} pd = {pd} ps = {ps} nrd = {nrd} nrs = {nrs} sa = {sa} sb = {sb} sd = {sd} nf = {nf}
++.param  l = 1 w = 1 nf = 1.0 ad = 0 as = 0 pd = 0 ps = 0 nrd = 0 nrs = 0 sa = 0 sb = 0 sd = 0 mult = 1 
++msky130_fd_pr__pfet_01v8_mvt d g s b sky130_fd_pr__pfet_01v8_mvt__model l = {l} w = {w} nf = {nf} ad = {ad} as = {as} pd = {pd} ps = {ps} nrd = {nrd} nrs = {nrs} sa = {sa} sb = {sb} sd = {sd} 
+ .model sky130_fd_pr__pfet_01v8_mvt__model.0 pmos
+ * Model Flag Parameters
+ + lmin = 1.45e-007 lmax = 1.55e-007 wmin = 1.675e-006 wmax = 1.685e-6
+diff -Naur sky130_fd_pr/latest/cells/pfet_g5v0d10v5/sky130_fd_pr__pfet_g5v0d10v5__ff.pm3.spice sky130_fd_pr_ngspice/latest/cells/pfet_g5v0d10v5/sky130_fd_pr__pfet_g5v0d10v5__ff.pm3.spice
+--- sky130_fd_pr/latest/cells/pfet_g5v0d10v5/sky130_fd_pr__pfet_g5v0d10v5__ff.pm3.spice	2020-11-08 01:33:06.897642927 +0100
++++ sky130_fd_pr_ngspice/latest/cells/pfet_g5v0d10v5/sky130_fd_pr__pfet_g5v0d10v5__ff.pm3.spice	2020-12-08 04:28:03.678577012 +0100
+@@ -29,8 +29,8 @@
+ * }
+ .subckt  sky130_fd_pr__pfet_g5v0d10v5 d g s b
+ + 
+-.param  l = 1 w = 1 ad = 0 as = 0 pd = 0 ps = 0 nrd = 0 nrs = 0 sa = 0 sb = 0 sd = 0 mult = 1 nf = 1.0
+-msky130_fd_pr__pfet_g5v0d10v5 d g s b sky130_fd_pr__pfet_g5v0d10v5__model l = {l} w = {w} ad = {ad} as = {as} pd = {pd} ps = {ps} nrd = {nrd} nrs = {nrs} sa = {sa} sb = {sb} sd = {sd} nf = {nf}
++.param  l = 1 w = 1 nf = 1.0 ad = 0 as = 0 pd = 0 ps = 0 nrd = 0 nrs = 0 sa = 0 sb = 0 sd = 0 mult = 1 
++msky130_fd_pr__pfet_g5v0d10v5 d g s b sky130_fd_pr__pfet_g5v0d10v5__model l = {l} w = {w} nf = {nf} ad = {ad} as = {as} pd = {pd} ps = {ps} nrd = {nrd} nrs = {nrs} sa = {sa} sb = {sb} sd = {sd} 
+ .model sky130_fd_pr__pfet_g5v0d10v5__model.0 pmos
+ * DC IV MOS Parameters
+ + lmin = 2.0e-05 lmax = 1.0e-04 wmin = 2.0e-05 wmax = 1.0e-4
+diff -Naur sky130_fd_pr/latest/cells/pfet_g5v0d10v5/sky130_fd_pr__pfet_g5v0d10v5__fs.pm3.spice sky130_fd_pr_ngspice/latest/cells/pfet_g5v0d10v5/sky130_fd_pr__pfet_g5v0d10v5__fs.pm3.spice
+--- sky130_fd_pr/latest/cells/pfet_g5v0d10v5/sky130_fd_pr__pfet_g5v0d10v5__fs.pm3.spice	2020-11-08 01:33:06.897642927 +0100
++++ sky130_fd_pr_ngspice/latest/cells/pfet_g5v0d10v5/sky130_fd_pr__pfet_g5v0d10v5__fs.pm3.spice	2020-12-08 04:28:03.738577011 +0100
+@@ -29,8 +29,8 @@
+ * }
+ .subckt  sky130_fd_pr__pfet_g5v0d10v5 d g s b
+ + 
+-.param  l = 1 w = 1 ad = 0 as = 0 pd = 0 ps = 0 nrd = 0 nrs = 0 sa = 0 sb = 0 sd = 0 mult = 1 nf = 1.0
+-msky130_fd_pr__pfet_g5v0d10v5 d g s b sky130_fd_pr__pfet_g5v0d10v5__model l = {l} w = {w} ad = {ad} as = {as} pd = {pd} ps = {ps} nrd = {nrd} nrs = {nrs} sa = {sa} sb = {sb} sd = {sd} nf = {nf}
++.param  l = 1 w = 1 nf = 1.0 ad = 0 as = 0 pd = 0 ps = 0 nrd = 0 nrs = 0 sa = 0 sb = 0 sd = 0 mult = 1 
++msky130_fd_pr__pfet_g5v0d10v5 d g s b sky130_fd_pr__pfet_g5v0d10v5__model l = {l} w = {w} nf = {nf} ad = {ad} as = {as} pd = {pd} ps = {ps} nrd = {nrd} nrs = {nrs} sa = {sa} sb = {sb} sd = {sd} 
+ .model sky130_fd_pr__pfet_g5v0d10v5__model.0 pmos
+ * DC IV MOS Parameters
+ + lmin = 2.0e-05 lmax = 1.0e-04 wmin = 2.0e-05 wmax = 1.0e-4
+diff -Naur sky130_fd_pr/latest/cells/pfet_g5v0d10v5/sky130_fd_pr__pfet_g5v0d10v5__leak.pm3.spice sky130_fd_pr_ngspice/latest/cells/pfet_g5v0d10v5/sky130_fd_pr__pfet_g5v0d10v5__leak.pm3.spice
+--- sky130_fd_pr/latest/cells/pfet_g5v0d10v5/sky130_fd_pr__pfet_g5v0d10v5__leak.pm3.spice	2020-11-08 01:33:06.901642927 +0100
++++ sky130_fd_pr_ngspice/latest/cells/pfet_g5v0d10v5/sky130_fd_pr__pfet_g5v0d10v5__leak.pm3.spice	2020-12-08 04:28:03.750577011 +0100
+@@ -29,8 +29,8 @@
+ * }
+ .subckt  sky130_fd_pr__pfet_g5v0d10v5 d g s b
+ + 
+-.param  l = 1 w = 1 ad = 0 as = 0 pd = 0 ps = 0 nrd = 0 nrs = 0 sa = 0 sb = 0 sd = 0 mult = 1 nf = 1.0
+-msky130_fd_pr__pfet_g5v0d10v5 d g s b sky130_fd_pr__pfet_g5v0d10v5__model l = {l} w = {w} ad = {ad} as = {as} pd = {pd} ps = {ps} nrd = {nrd} nrs = {nrs} sa = {sa} sb = {sb} sd = {sd} nf = {nf}
++.param  l = 1 w = 1 nf = 1.0 ad = 0 as = 0 pd = 0 ps = 0 nrd = 0 nrs = 0 sa = 0 sb = 0 sd = 0 mult = 1 
++msky130_fd_pr__pfet_g5v0d10v5 d g s b sky130_fd_pr__pfet_g5v0d10v5__model l = {l} w = {w} nf = {nf} ad = {ad} as = {as} pd = {pd} ps = {ps} nrd = {nrd} nrs = {nrs} sa = {sa} sb = {sb} sd = {sd} 
+ .model sky130_fd_pr__pfet_g5v0d10v5__model.0 pmos
+ * DC IV MOS Parameters
+ + lmin = 2.0e-05 lmax = 1.0e-04 wmin = 2.0e-05 wmax = 1.0e-4
+diff -Naur sky130_fd_pr/latest/cells/pfet_g5v0d10v5/sky130_fd_pr__pfet_g5v0d10v5.pm3.spice sky130_fd_pr_ngspice/latest/cells/pfet_g5v0d10v5/sky130_fd_pr__pfet_g5v0d10v5.pm3.spice
+--- sky130_fd_pr/latest/cells/pfet_g5v0d10v5/sky130_fd_pr__pfet_g5v0d10v5.pm3.spice	2020-11-08 01:33:06.893642927 +0100
++++ sky130_fd_pr_ngspice/latest/cells/pfet_g5v0d10v5/sky130_fd_pr__pfet_g5v0d10v5.pm3.spice	2020-12-08 04:28:03.754577011 +0100
+@@ -29,8 +29,8 @@
+ * }
+ .subckt  sky130_fd_pr__pfet_g5v0d10v5 d g s b
+ + 
+-.param  l = 1 w = 1 ad = 0 as = 0 pd = 0 ps = 0 nrd = 0 nrs = 0 sa = 0 sb = 0 sd = 0 mult = 1 nf = 1.0
+-msky130_fd_pr__pfet_g5v0d10v5 d g s b sky130_fd_pr__pfet_g5v0d10v5__model l = {l} w = {w} ad = {ad} as = {as} pd = {pd} ps = {ps} nrd = {nrd} nrs = {nrs} sa = {sa} sb = {sb} sd = {sd} nf = {nf}
++.param  l = 1 w = 1 nf = 1.0 ad = 0 as = 0 pd = 0 ps = 0 nrd = 0 nrs = 0 sa = 0 sb = 0 sd = 0 mult = 1 
++msky130_fd_pr__pfet_g5v0d10v5 d g s b sky130_fd_pr__pfet_g5v0d10v5__model l = {l} w = {w} nf = {nf} ad = {ad} as = {as} pd = {pd} ps = {ps} nrd = {nrd} nrs = {nrs} sa = {sa} sb = {sb} sd = {sd} 
+ .model sky130_fd_pr__pfet_g5v0d10v5__model.0 pmos
+ * DC IV MOS Parameters
+ + lmin = 4.95e-07 lmax = 5.05e-07 wmin = 9.995e-06 wmax = 1.0005e-5
+diff -Naur sky130_fd_pr/latest/cells/pfet_g5v0d10v5/sky130_fd_pr__pfet_g5v0d10v5__sf.pm3.spice sky130_fd_pr_ngspice/latest/cells/pfet_g5v0d10v5/sky130_fd_pr__pfet_g5v0d10v5__sf.pm3.spice
+--- sky130_fd_pr/latest/cells/pfet_g5v0d10v5/sky130_fd_pr__pfet_g5v0d10v5__sf.pm3.spice	2020-11-08 01:33:06.901642927 +0100
++++ sky130_fd_pr_ngspice/latest/cells/pfet_g5v0d10v5/sky130_fd_pr__pfet_g5v0d10v5__sf.pm3.spice	2020-12-08 04:28:03.954577006 +0100
+@@ -29,8 +29,8 @@
+ * }
+ .subckt  sky130_fd_pr__pfet_g5v0d10v5 d g s b
+ + 
+-.param  l = 1 w = 1 ad = 0 as = 0 pd = 0 ps = 0 nrd = 0 nrs = 0 sa = 0 sb = 0 sd = 0 mult = 1 nf = 1.0
+-msky130_fd_pr__pfet_g5v0d10v5 d g s b sky130_fd_pr__pfet_g5v0d10v5__model l = {l} w = {w} ad = {ad} as = {as} pd = {pd} ps = {ps} nrd = {nrd} nrs = {nrs} sa = {sa} sb = {sb} sd = {sd} nf = {nf}
++.param  l = 1 w = 1 nf = 1.0 ad = 0 as = 0 pd = 0 ps = 0 nrd = 0 nrs = 0 sa = 0 sb = 0 sd = 0 mult = 1 
++msky130_fd_pr__pfet_g5v0d10v5 d g s b sky130_fd_pr__pfet_g5v0d10v5__model l = {l} w = {w} nf = {nf} ad = {ad} as = {as} pd = {pd} ps = {ps} nrd = {nrd} nrs = {nrs} sa = {sa} sb = {sb} sd = {sd} 
+ .model sky130_fd_pr__pfet_g5v0d10v5__model.0 pmos
+ * DC IV MOS Parameters
+ + lmin = 2.0e-05 lmax = 1.0e-04 wmin = 2.0e-05 wmax = 1.0e-4
+diff -Naur sky130_fd_pr/latest/cells/pfet_g5v0d10v5/sky130_fd_pr__pfet_g5v0d10v5__ss.pm3.spice sky130_fd_pr_ngspice/latest/cells/pfet_g5v0d10v5/sky130_fd_pr__pfet_g5v0d10v5__ss.pm3.spice
+--- sky130_fd_pr/latest/cells/pfet_g5v0d10v5/sky130_fd_pr__pfet_g5v0d10v5__ss.pm3.spice	2020-11-08 01:33:06.905642927 +0100
++++ sky130_fd_pr_ngspice/latest/cells/pfet_g5v0d10v5/sky130_fd_pr__pfet_g5v0d10v5__ss.pm3.spice	2020-12-08 04:28:03.962577006 +0100
+@@ -29,8 +29,8 @@
+ * }
+ .subckt  sky130_fd_pr__pfet_g5v0d10v5 d g s b
+ + 
+-.param  l = 1 w = 1 ad = 0 as = 0 pd = 0 ps = 0 nrd = 0 nrs = 0 sa = 0 sb = 0 sd = 0 mult = 1 nf = 1.0
+-msky130_fd_pr__pfet_g5v0d10v5 d g s b sky130_fd_pr__pfet_g5v0d10v5__model l = {l} w = {w} ad = {ad} as = {as} pd = {pd} ps = {ps} nrd = {nrd} nrs = {nrs} sa = {sa} sb = {sb} sd = {sd} nf = {nf}
++.param  l = 1 w = 1 nf = 1.0 ad = 0 as = 0 pd = 0 ps = 0 nrd = 0 nrs = 0 sa = 0 sb = 0 sd = 0 mult = 1 
++msky130_fd_pr__pfet_g5v0d10v5 d g s b sky130_fd_pr__pfet_g5v0d10v5__model l = {l} w = {w} nf = {nf} ad = {ad} as = {as} pd = {pd} ps = {ps} nrd = {nrd} nrs = {nrs} sa = {sa} sb = {sb} sd = {sd} 
+ .model sky130_fd_pr__pfet_g5v0d10v5__model.0 pmos
+ * DC IV MOS Parameters
+ + lmin = 2.0e-05 lmax = 1.0e-04 wmin = 2.0e-05 wmax = 1.0e-4
+diff -Naur sky130_fd_pr/latest/cells/pfet_g5v0d10v5/sky130_fd_pr__pfet_g5v0d10v5__tt_leak.pm3.spice sky130_fd_pr_ngspice/latest/cells/pfet_g5v0d10v5/sky130_fd_pr__pfet_g5v0d10v5__tt_leak.pm3.spice
+--- sky130_fd_pr/latest/cells/pfet_g5v0d10v5/sky130_fd_pr__pfet_g5v0d10v5__tt_leak.pm3.spice	2020-11-08 01:33:06.909642927 +0100
++++ sky130_fd_pr_ngspice/latest/cells/pfet_g5v0d10v5/sky130_fd_pr__pfet_g5v0d10v5__tt_leak.pm3.spice	2020-12-08 04:28:03.978577006 +0100
+@@ -29,8 +29,8 @@
+ * }
+ .subckt  sky130_fd_pr__pfet_g5v0d10v5 d g s b
+ + 
+-.param  l = 1 w = 1 ad = 0 as = 0 pd = 0 ps = 0 nrd = 0 nrs = 0 sa = 0 sb = 0 sd = 0 mult = 1 nf = 1.0
+-msky130_fd_pr__pfet_g5v0d10v5 d g s b sky130_fd_pr__pfet_g5v0d10v5__model l = {l} w = {w} ad = {ad} as = {as} pd = {pd} ps = {ps} nrd = {nrd} nrs = {nrs} sa = {sa} sb = {sb} sd = {sd} nf = {nf}
++.param  l = 1 w = 1 nf = 1.0 ad = 0 as = 0 pd = 0 ps = 0 nrd = 0 nrs = 0 sa = 0 sb = 0 sd = 0 mult = 1 
++msky130_fd_pr__pfet_g5v0d10v5 d g s b sky130_fd_pr__pfet_g5v0d10v5__model l = {l} w = {w} nf = {nf} ad = {ad} as = {as} pd = {pd} ps = {ps} nrd = {nrd} nrs = {nrs} sa = {sa} sb = {sb} sd = {sd} 
+ .model sky130_fd_pr__pfet_g5v0d10v5__model.0 pmos
+ * DC IV MOS Parameters
+ + lmin = 2.0e-05 lmax = 1.0e-04 wmin = 2.0e-05 wmax = 1.0e-4
+diff -Naur sky130_fd_pr/latest/cells/pfet_g5v0d10v5/sky130_fd_pr__pfet_g5v0d10v5__tt.pm3.spice sky130_fd_pr_ngspice/latest/cells/pfet_g5v0d10v5/sky130_fd_pr__pfet_g5v0d10v5__tt.pm3.spice
+--- sky130_fd_pr/latest/cells/pfet_g5v0d10v5/sky130_fd_pr__pfet_g5v0d10v5__tt.pm3.spice	2020-11-08 01:33:06.905642927 +0100
++++ sky130_fd_pr_ngspice/latest/cells/pfet_g5v0d10v5/sky130_fd_pr__pfet_g5v0d10v5__tt.pm3.spice	2020-12-08 04:28:03.986577005 +0100
+@@ -29,8 +29,8 @@
+ * }
+ .subckt  sky130_fd_pr__pfet_g5v0d10v5 d g s b
+ + 
+-.param  l = 1 w = 1 ad = 0 as = 0 pd = 0 ps = 0 nrd = 0 nrs = 0 sa = 0 sb = 0 sd = 0 mult = 1 nf = 1.0
+-msky130_fd_pr__pfet_g5v0d10v5 d g s b sky130_fd_pr__pfet_g5v0d10v5__model l = {l} w = {w} ad = {ad} as = {as} pd = {pd} ps = {ps} nrd = {nrd} nrs = {nrs} sa = {sa} sb = {sb} sd = {sd} nf = {nf}
++.param  l = 1 w = 1 nf = 1.0 ad = 0 as = 0 pd = 0 ps = 0 nrd = 0 nrs = 0 sa = 0 sb = 0 sd = 0 mult = 1 
++msky130_fd_pr__pfet_g5v0d10v5 d g s b sky130_fd_pr__pfet_g5v0d10v5__model l = {l} w = {w} nf = {nf} ad = {ad} as = {as} pd = {pd} ps = {ps} nrd = {nrd} nrs = {nrs} sa = {sa} sb = {sb} sd = {sd} 
+ .model sky130_fd_pr__pfet_g5v0d10v5__model.0 pmos
+ * DC IV MOS Parameters
+ + lmin = 2.0e-05 lmax = 1.0e-04 wmin = 2.0e-05 wmax = 1.0e-4
+diff -Naur sky130_fd_pr/latest/cells/pfet_g5v0d16v0/sky130_fd_pr__pfet_g5v0d16v0.pm3.spice sky130_fd_pr_ngspice/latest/cells/pfet_g5v0d16v0/sky130_fd_pr__pfet_g5v0d16v0.pm3.spice
+--- sky130_fd_pr/latest/cells/pfet_g5v0d16v0/sky130_fd_pr__pfet_g5v0d16v0.pm3.spice	2020-11-08 01:33:06.921642926 +0100
++++ sky130_fd_pr_ngspice/latest/cells/pfet_g5v0d16v0/sky130_fd_pr__pfet_g5v0d16v0.pm3.spice	2020-12-08 04:51:45.270544928 +0100
+@@ -35,8 +35,8 @@
+ * }
+ .subckt  sky130_fd_pr__pfet_g5v0d16v0__base d g s b
+ + 
+-.param  l = 1 w = 1 ad = 0 as = 0 pd = 0 ps = 0 nrd = 0 nrs = 0 sa = 0 sb = 0 sd = 0 mult = 1 nf = 1 delvto = 0.0
+-msky130_fd_pr__pfet_g5v0d16v0__base d g s b sky130_fd_pr__pfet_g5v0d16v0__model_base l = {l} w = {w} ad = {ad} as = {as} pd = {pd} ps = {ps} nrd = {nrd} nrs = {nrs} sa = {sa} sb = {sb} sd = {sd} nf = {nf}
++.param  l = 1 w = 1 nf = 1.0 ad = 0 as = 0 pd = 0 ps = 0 nrd = 0 nrs = 0 sa = 0 sb = 0 sd = 0 mult = 1 delvto = 0.0
++msky130_fd_pr__pfet_g5v0d16v0__base d g s b sky130_fd_pr__pfet_g5v0d16v0__model_base l = {l} w = {w} nf = {nf} ad = {ad} as = {as} pd = {pd} ps = {ps} nrd = {nrd} nrs = {nrs} sa = {sa} sb = {sb} sd = {sd} 
+ .model sky130_fd_pr__pfet_g5v0d16v0__model_base.0 pmos
+ * Model Flag Parameters
+ + lmin = 0.655e-06 lmax = 0.665e-06 wmin = 4.990000e-006 wmax = 5.010000e-5
+diff -Naur sky130_fd_pr/latest/cells/pfet_g5v0d16v0/sky130_fd_pr__pfet_g5v0d16v0__subcircuit.pm3.spice sky130_fd_pr_ngspice/latest/cells/pfet_g5v0d16v0/sky130_fd_pr__pfet_g5v0d16v0__subcircuit.pm3.spice
+--- sky130_fd_pr/latest/cells/pfet_g5v0d16v0/sky130_fd_pr__pfet_g5v0d16v0__subcircuit.pm3.spice	2020-11-08 01:33:06.921642926 +0100
++++ sky130_fd_pr_ngspice/latest/cells/pfet_g5v0d16v0/sky130_fd_pr__pfet_g5v0d16v0__subcircuit.pm3.spice	2020-12-17 04:20:00.185221141 +0100
+@@ -13,13 +13,13 @@
+ * limitations under the License.
+ 
+ * SKY130 Spice File.
+-.subckt  sky130_fd_pr__pfet_g5v0d16v0 d g s b  w=5.0 l=0.66 ad=0 as=0 pd=0 ps=0.0 m=1 mf=1 nrd=0 nrs=0 sa=0.28 sb=1.19 sd=0 mult=1
++.subckt  sky130_fd_pr__pfet_g5v0d16v0 d g s b  w=5.0 l=0.66 nf=1 ad=0 as=0 pd=0 ps=0.0 m=1 nrd=0 nrs=0 sa=0.28 sb=1.19 sd=0 mult=1
+ .param rdiff='8.900000e+003*sky130_fd_pr__pfet_g5v0d16v0__rdiff_mult'
+ .param rdiff_tc1=2.500000e-003
+ .param rdiff_tc2=2.200000e-006
+ .param sb_cadfixedvalue_pvhv=1.19
+ * sd intentionally left out for sky130_fd_pr__pfet_g5v0d16v0 devices because poly-poly spacing not uniform in DE FET
+-xmain1 d1 g s b sky130_fd_pr__pfet_g5v0d16v0__base  w=w l=l ad=0 as=as pd=0 ps=ps nrd=nrd nrs=nrs m=m mult=mult sa=sa sb=sb_cadfixedvalue_pvhv
++xmain1 d1 g s b sky130_fd_pr__pfet_g5v0d16v0__base  w=w l=l nf=nf ad=0 as=as pd=0 ps=ps nrd=nrd nrs=nrs m=m mult=mult sa=sa sb=sb_cadfixedvalue_pvhv
+ rldd d d1 '(1/w)*rdiff' tc1 = 'rdiff_tc1' tc2 = 'rdiff_tc2'
+ dnw1 d b sky130_fd_pr__pfet_g5v0d16v0__parasitic__diode_pw2dn area='ad/2' pj='pd/2'
+ dnw2 d1 b sky130_fd_pr__pfet_g5v0d16v0__parasitic__diode_pw2dn area='ad/2' pj='pd/2'
+diff -Naur sky130_fd_pr/latest/models/r+c.mrp1monte.spice sky130_fd_pr_ngspice/latest/models/r+c.mrp1monte.spice
+--- sky130_fd_pr/latest/models/r+c.mrp1monte.spice	2020-11-08 01:33:32.389641833 +0100
++++ sky130_fd_pr_ngspice/latest/models/r+c.mrp1monte.spice	2020-12-20 02:30:18.289349469 +0100
+@@ -30,6 +30,6 @@
+ .param  w = 1 l = 0 mult = 1 r = 0 tc1 = {tc1rsgpu*sky130_fd_pr__res_generic_po__tc1_slope} tc2 = {tc2rsgpu*sky130_fd_pr__res_generic_po__tc2_slope}
+ + rp1_mm = {rp1*sky130_fd_pr__res_generic_po__slope/sqrt(2.0*l*w*mult+rp1/100000.0)}
+ + r_tot = {(rp1+rp1_mm)*l/(w-1e6*(-tol_poly-poly_dw))+r}
+-sky130_fd_pr__res_generic_po r0 r1 sky130_fd_pr__res_generic_po__monte r = {r_tot} tc1r = {tc1} tc2r = {tc2}
++rsky130_fd_pr__res_generic_po r0 r1 sky130_fd_pr__res_generic_po__monte r = {r_tot} tc1 = {tc1} tc2 = {tc2}
+ .model sky130_fd_pr__res_generic_po__monte r tref = 30.0
+ .ends sky130_fd_pr__res_generic_po

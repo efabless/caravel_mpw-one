@@ -1,0 +1,103 @@
+magic
+tech sky130A
+magscale 1 2
+timestamp 1623348512
+<< checkpaint >>
+rect -1250 -1349 1550 1477
+<< pwell >>
+rect 10 10 290 146
+<< nmoslvt >>
+rect 92 36 122 120
+rect 178 36 208 120
+<< ndiff >>
+rect 36 101 92 120
+rect 36 67 47 101
+rect 81 67 92 101
+rect 36 36 92 67
+rect 122 101 178 120
+rect 122 67 133 101
+rect 167 67 178 101
+rect 122 36 178 67
+rect 208 101 264 120
+rect 208 67 219 101
+rect 253 67 264 101
+rect 208 36 264 67
+<< ndiffc >>
+rect 47 67 81 101
+rect 133 67 167 101
+rect 219 67 253 101
+<< poly >>
+rect 83 201 217 217
+rect 83 167 99 201
+rect 133 167 167 201
+rect 201 167 217 201
+rect 83 151 217 167
+rect 92 146 208 151
+rect 92 120 122 146
+rect 178 120 208 146
+rect 92 10 122 36
+rect 178 10 208 36
+<< polycont >>
+rect 99 167 133 201
+rect 167 167 201 201
+<< locali >>
+rect 83 201 217 217
+rect 83 167 97 201
+rect 133 167 167 201
+rect 203 167 217 201
+rect 83 151 217 167
+rect 47 101 81 117
+rect 47 51 81 67
+rect 133 101 167 117
+rect 133 51 167 67
+rect 219 101 253 117
+rect 219 51 253 67
+<< viali >>
+rect 97 167 99 201
+rect 99 167 131 201
+rect 169 167 201 201
+rect 201 167 203 201
+rect 47 67 81 101
+rect 133 67 167 101
+rect 219 67 253 101
+<< metal1 >>
+rect 85 201 215 213
+rect 85 167 97 201
+rect 131 167 169 201
+rect 203 167 215 201
+rect 85 155 215 167
+rect 41 101 87 120
+rect 41 67 47 101
+rect 81 67 87 101
+rect 41 -29 87 67
+rect 124 114 176 120
+rect 124 51 176 62
+rect 213 101 259 120
+rect 213 67 219 101
+rect 253 67 259 101
+rect 213 -29 259 67
+rect 41 -89 259 -29
+<< via1 >>
+rect 124 101 176 114
+rect 124 67 133 101
+rect 133 67 167 101
+rect 167 67 176 101
+rect 124 62 176 67
+<< metal2 >>
+rect 124 114 176 120
+rect 124 51 176 62
+<< labels >>
+flabel metal2 s 124 51 176 120 0 FreeSans 400 0 0 0 DRAIN
+port 1 nsew
+flabel metal1 s 85 155 215 213 0 FreeSans 400 0 0 0 GATE
+port 2 nsew
+flabel metal1 s 41 -89 259 -29 0 FreeSans 400 0 0 0 SOURCE
+port 3 nsew
+flabel pwell s 70 129 90 140 0 FreeSans 200 0 0 0 SUBSTRATE
+port 4 nsew
+<< properties >>
+string GDS_FILE $PDKPATH/libs.ref/sky130_fd_pr/gds/sky130_fd_pr.gds
+string GDS_END 5726252
+string GDS_START 5722610
+string path 5.900 3.000 5.900 -2.225 
+<< end >>

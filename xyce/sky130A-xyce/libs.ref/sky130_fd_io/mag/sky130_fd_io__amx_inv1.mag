@@ -1,0 +1,125 @@
+magic
+tech sky130A
+magscale 1 2
+timestamp 1623348570
+<< checkpaint >>
+rect -1260 -1250 1598 2008
+<< nwell >>
+rect 0 316 338 748
+<< pwell >>
+rect 40 10 298 212
+<< mvnmos >>
+rect 119 36 219 186
+<< mvpmos >>
+rect 119 382 219 682
+<< mvndiff >>
+rect 66 150 119 186
+rect 66 116 74 150
+rect 108 116 119 150
+rect 66 82 119 116
+rect 66 48 74 82
+rect 108 48 119 82
+rect 66 36 119 48
+rect 219 150 272 186
+rect 219 116 230 150
+rect 264 116 272 150
+rect 219 82 272 116
+rect 219 48 230 82
+rect 264 48 272 82
+rect 219 36 272 48
+<< mvpdiff >>
+rect 66 670 119 682
+rect 66 636 74 670
+rect 108 636 119 670
+rect 66 602 119 636
+rect 66 568 74 602
+rect 108 568 119 602
+rect 66 534 119 568
+rect 66 500 74 534
+rect 108 500 119 534
+rect 66 466 119 500
+rect 66 432 74 466
+rect 108 432 119 466
+rect 66 382 119 432
+rect 219 670 272 682
+rect 219 636 230 670
+rect 264 636 272 670
+rect 219 602 272 636
+rect 219 568 230 602
+rect 264 568 272 602
+rect 219 534 272 568
+rect 219 500 230 534
+rect 264 500 272 534
+rect 219 466 272 500
+rect 219 432 230 466
+rect 264 432 272 466
+rect 219 382 272 432
+<< mvndiffc >>
+rect 74 116 108 150
+rect 74 48 108 82
+rect 230 116 264 150
+rect 230 48 264 82
+<< mvpdiffc >>
+rect 74 636 108 670
+rect 74 568 108 602
+rect 74 500 108 534
+rect 74 432 108 466
+rect 230 636 264 670
+rect 230 568 264 602
+rect 230 500 264 534
+rect 230 432 264 466
+<< poly >>
+rect 119 682 219 708
+rect 119 333 219 382
+rect 119 299 155 333
+rect 189 299 219 333
+rect 119 265 219 299
+rect 119 231 155 265
+rect 189 231 219 265
+rect 119 186 219 231
+rect 119 10 219 36
+<< polycont >>
+rect 155 299 189 333
+rect 155 231 189 265
+<< locali >>
+rect 74 670 108 686
+rect 74 602 108 636
+rect 74 534 108 568
+rect 74 466 108 500
+rect 74 416 108 432
+rect 230 670 274 686
+rect 264 636 274 670
+rect 230 602 274 636
+rect 264 568 274 602
+rect 230 534 274 568
+rect 264 500 274 534
+rect 230 466 274 500
+rect 264 432 274 466
+rect 155 333 189 349
+rect 155 265 189 299
+rect 155 215 189 231
+rect 74 150 108 166
+rect 74 82 108 116
+rect 74 32 108 48
+rect 230 150 274 432
+rect 264 116 274 150
+rect 230 82 274 116
+rect 264 48 274 82
+rect 230 15 274 48
+use sky130_fd_pr__via_pol1__example_5595914180833  sky130_fd_pr__via_pol1__example_5595914180833_0
+timestamp 1623348570
+transform -1 0 205 0 -1 349
+box 0 0 1 1
+use sky130_fd_pr__nfet_01v8__example_55959141808575  sky130_fd_pr__nfet_01v8__example_55959141808575_0
+timestamp 1623348570
+transform 1 0 119 0 1 36
+box -28 0 128 63
+use sky130_fd_pr__pfet_01v8__example_55959141808574  sky130_fd_pr__pfet_01v8__example_55959141808574_0
+timestamp 1623348570
+transform 1 0 119 0 -1 682
+box -28 0 128 131
+<< properties >>
+string GDS_FILE $PDKPATH/libs.ref/sky130_fd_io/gds/sky130_ef_io__gpiov2_pad_wrapped.gds
+string GDS_END 607410
+string GDS_START 606976
+<< end >>

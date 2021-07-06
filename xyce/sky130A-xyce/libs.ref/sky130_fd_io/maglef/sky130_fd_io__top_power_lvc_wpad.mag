@@ -1,0 +1,284 @@
+magic
+tech sky130A
+magscale 1 2
+timestamp 1623348572
+<< obsli1 >>
+rect 48 204 14951 39556
+<< metal1 >>
+rect 5242 0 5540 34
+<< obsm1 >>
+rect 24 90 14957 39568
+rect 24 0 5186 90
+rect 5596 0 14957 90
+<< metal2 >>
+rect 100 0 4099 297
+rect 6888 0 8888 65
+rect 10943 0 14940 732
+<< obsm2 >>
+rect 100 788 14940 38886
+rect 100 353 10887 788
+rect 4155 121 10887 353
+rect 4155 0 6832 121
+rect 8944 0 10887 121
+<< metal3 >>
+rect 12409 19151 14940 34447
+rect 11680 18422 14940 19151
+rect 10933 18363 11662 18404
+rect 11681 18393 14940 18422
+rect 12409 18363 14940 18393
+rect 10933 17675 14940 18363
+rect 10220 17643 10933 17675
+rect 10961 17673 14940 17675
+rect 12409 17643 14940 17673
+rect 10220 16962 14940 17643
+rect 5200 0 7376 4044
+rect 7676 0 9851 4580
+rect 10151 16923 10220 16962
+rect 10241 16953 14940 16962
+rect 12409 16923 14940 16953
+rect 10151 0 14940 16923
+<< obsm3 >>
+rect 100 34527 12409 37903
+rect 100 19231 12329 34527
+rect 100 18484 11600 19231
+rect 100 17755 10853 18484
+rect 100 17042 10140 17755
+rect 100 4660 10071 17042
+rect 100 4124 7596 4660
+rect 100 0 5120 4124
+rect 7456 0 7596 4124
+rect 9931 0 10071 4660
+<< metal4 >>
+rect 0 10225 15000 10821
+rect 0 9273 15000 9869
+<< obsm4 >>
+rect 0 10901 15000 39600
+rect 0 9949 15000 10145
+rect 0 7 15000 9193
+<< metal5 >>
+rect 1863 20028 13191 33514
+rect 14746 13607 15000 18597
+rect 14746 12437 15000 13287
+rect 14746 11267 15000 12117
+rect 14746 9147 15000 10947
+rect 14746 7937 15000 8827
+rect 14746 5997 15000 6647
+rect 14746 4787 15000 5677
+rect 14807 2607 15000 3257
+rect 14746 1397 15000 2287
+rect 14746 27 15000 1077
+<< obsm5 >>
+rect 0 33834 15000 39600
+rect 0 19708 1543 33834
+rect 13511 19708 15000 33834
+rect 0 18917 15000 19708
+rect 0 7617 14426 18917
+rect 0 6967 15000 7617
+rect 0 4467 14426 6967
+rect 0 3577 15000 4467
+rect 0 2607 14487 3577
+rect 0 27 14426 2607
+<< labels >>
+rlabel metal4 s 0 10225 15000 10821 6 AMUXBUS_A
+port 1 nsew signal bidirectional
+rlabel metal4 s 0 9273 15000 9869 6 AMUXBUS_B
+port 2 nsew signal bidirectional
+rlabel metal5 s 1863 20028 13191 33514 6 P_PAD
+port 3 nsew signal bidirectional
+rlabel metal2 s 6888 0 8888 65 6 BDY2_B2B
+port 4 nsew ground bidirectional
+rlabel metal3 s 5200 0 7376 4044 6 DRN_LVC1
+port 5 nsew power bidirectional
+rlabel metal3 s 7676 0 9851 4580 6 DRN_LVC2
+port 6 nsew power bidirectional
+rlabel metal1 s 5242 0 5540 34 6 OGC_LVC
+port 7 nsew power bidirectional
+rlabel metal3 s 10151 0 14940 16893 6 P_CORE
+port 8 nsew power bidirectional
+rlabel metal3 s 10151 16893 10220 16962 6 P_CORE
+port 8 nsew power bidirectional
+rlabel metal3 s 10181 16893 14940 16923 6 P_CORE
+port 8 nsew power bidirectional
+rlabel metal3 s 10220 16962 10933 17675 6 P_CORE
+port 8 nsew power bidirectional
+rlabel metal3 s 10241 16953 14940 16983 6 P_CORE
+port 8 nsew power bidirectional
+rlabel metal3 s 10271 16983 14940 17013 6 P_CORE
+port 8 nsew power bidirectional
+rlabel metal3 s 10301 17013 14940 17043 6 P_CORE
+port 8 nsew power bidirectional
+rlabel metal3 s 10331 17043 14940 17073 6 P_CORE
+port 8 nsew power bidirectional
+rlabel metal3 s 10361 17073 14940 17103 6 P_CORE
+port 8 nsew power bidirectional
+rlabel metal3 s 10391 17103 14940 17133 6 P_CORE
+port 8 nsew power bidirectional
+rlabel metal3 s 10421 17133 14940 17163 6 P_CORE
+port 8 nsew power bidirectional
+rlabel metal3 s 10451 17163 14940 17193 6 P_CORE
+port 8 nsew power bidirectional
+rlabel metal3 s 10481 17193 14940 17223 6 P_CORE
+port 8 nsew power bidirectional
+rlabel metal3 s 10511 17223 14940 17253 6 P_CORE
+port 8 nsew power bidirectional
+rlabel metal3 s 10541 17253 14940 17283 6 P_CORE
+port 8 nsew power bidirectional
+rlabel metal3 s 10571 17283 14940 17313 6 P_CORE
+port 8 nsew power bidirectional
+rlabel metal3 s 10601 17313 14940 17343 6 P_CORE
+port 8 nsew power bidirectional
+rlabel metal3 s 10631 17343 14940 17373 6 P_CORE
+port 8 nsew power bidirectional
+rlabel metal3 s 10661 17373 14940 17403 6 P_CORE
+port 8 nsew power bidirectional
+rlabel metal3 s 10691 17403 14940 17433 6 P_CORE
+port 8 nsew power bidirectional
+rlabel metal3 s 10721 17433 14940 17463 6 P_CORE
+port 8 nsew power bidirectional
+rlabel metal3 s 10751 17463 14940 17493 6 P_CORE
+port 8 nsew power bidirectional
+rlabel metal3 s 10781 17493 14940 17523 6 P_CORE
+port 8 nsew power bidirectional
+rlabel metal3 s 10811 17523 14940 17553 6 P_CORE
+port 8 nsew power bidirectional
+rlabel metal3 s 10841 17553 14940 17583 6 P_CORE
+port 8 nsew power bidirectional
+rlabel metal3 s 10871 17583 14940 17613 6 P_CORE
+port 8 nsew power bidirectional
+rlabel metal3 s 10901 17613 14940 17643 6 P_CORE
+port 8 nsew power bidirectional
+rlabel metal3 s 10933 17675 11662 18404 6 P_CORE
+port 8 nsew power bidirectional
+rlabel metal3 s 10961 17673 14940 17703 6 P_CORE
+port 8 nsew power bidirectional
+rlabel metal3 s 10991 17703 14940 17733 6 P_CORE
+port 8 nsew power bidirectional
+rlabel metal3 s 11021 17733 14940 17763 6 P_CORE
+port 8 nsew power bidirectional
+rlabel metal3 s 11051 17763 14940 17793 6 P_CORE
+port 8 nsew power bidirectional
+rlabel metal3 s 11081 17793 14940 17823 6 P_CORE
+port 8 nsew power bidirectional
+rlabel metal3 s 11111 17823 14940 17853 6 P_CORE
+port 8 nsew power bidirectional
+rlabel metal3 s 11141 17853 14940 17883 6 P_CORE
+port 8 nsew power bidirectional
+rlabel metal3 s 11171 17883 14940 17913 6 P_CORE
+port 8 nsew power bidirectional
+rlabel metal3 s 11201 17913 14940 17943 6 P_CORE
+port 8 nsew power bidirectional
+rlabel metal3 s 11231 17943 14940 17973 6 P_CORE
+port 8 nsew power bidirectional
+rlabel metal3 s 11261 17973 14940 18003 6 P_CORE
+port 8 nsew power bidirectional
+rlabel metal3 s 11291 18003 14940 18033 6 P_CORE
+port 8 nsew power bidirectional
+rlabel metal3 s 11321 18033 14940 18063 6 P_CORE
+port 8 nsew power bidirectional
+rlabel metal3 s 11351 18063 14940 18093 6 P_CORE
+port 8 nsew power bidirectional
+rlabel metal3 s 11381 18093 14940 18123 6 P_CORE
+port 8 nsew power bidirectional
+rlabel metal3 s 11411 18123 14940 18153 6 P_CORE
+port 8 nsew power bidirectional
+rlabel metal3 s 11441 18153 14940 18183 6 P_CORE
+port 8 nsew power bidirectional
+rlabel metal3 s 11471 18183 14940 18213 6 P_CORE
+port 8 nsew power bidirectional
+rlabel metal3 s 11501 18213 14940 18243 6 P_CORE
+port 8 nsew power bidirectional
+rlabel metal3 s 11531 18243 14940 18273 6 P_CORE
+port 8 nsew power bidirectional
+rlabel metal3 s 11561 18273 14940 18303 6 P_CORE
+port 8 nsew power bidirectional
+rlabel metal3 s 11591 18303 14940 18333 6 P_CORE
+port 8 nsew power bidirectional
+rlabel metal3 s 11621 18333 14940 18363 6 P_CORE
+port 8 nsew power bidirectional
+rlabel metal3 s 11680 18422 12409 19151 6 P_CORE
+port 8 nsew power bidirectional
+rlabel metal3 s 11681 18393 14940 18423 6 P_CORE
+port 8 nsew power bidirectional
+rlabel metal3 s 11711 18423 14940 18453 6 P_CORE
+port 8 nsew power bidirectional
+rlabel metal3 s 11741 18453 14940 18483 6 P_CORE
+port 8 nsew power bidirectional
+rlabel metal3 s 11771 18483 14940 18513 6 P_CORE
+port 8 nsew power bidirectional
+rlabel metal3 s 11801 18513 14940 18543 6 P_CORE
+port 8 nsew power bidirectional
+rlabel metal3 s 11831 18543 14940 18573 6 P_CORE
+port 8 nsew power bidirectional
+rlabel metal3 s 11861 18573 14940 18603 6 P_CORE
+port 8 nsew power bidirectional
+rlabel metal3 s 11891 18603 14940 18633 6 P_CORE
+port 8 nsew power bidirectional
+rlabel metal3 s 11921 18633 14940 18663 6 P_CORE
+port 8 nsew power bidirectional
+rlabel metal3 s 11951 18663 14940 18693 6 P_CORE
+port 8 nsew power bidirectional
+rlabel metal3 s 11981 18693 14940 18723 6 P_CORE
+port 8 nsew power bidirectional
+rlabel metal3 s 12011 18723 14940 18753 6 P_CORE
+port 8 nsew power bidirectional
+rlabel metal3 s 12041 18753 14940 18783 6 P_CORE
+port 8 nsew power bidirectional
+rlabel metal3 s 12071 18783 14940 18813 6 P_CORE
+port 8 nsew power bidirectional
+rlabel metal3 s 12101 18813 14940 18843 6 P_CORE
+port 8 nsew power bidirectional
+rlabel metal3 s 12131 18843 14940 18873 6 P_CORE
+port 8 nsew power bidirectional
+rlabel metal3 s 12161 18873 14940 18903 6 P_CORE
+port 8 nsew power bidirectional
+rlabel metal3 s 12191 18903 14940 18933 6 P_CORE
+port 8 nsew power bidirectional
+rlabel metal3 s 12221 18933 14940 18963 6 P_CORE
+port 8 nsew power bidirectional
+rlabel metal3 s 12251 18963 14940 18993 6 P_CORE
+port 8 nsew power bidirectional
+rlabel metal3 s 12281 18993 14940 19023 6 P_CORE
+port 8 nsew power bidirectional
+rlabel metal3 s 12311 19023 14940 19053 6 P_CORE
+port 8 nsew power bidirectional
+rlabel metal3 s 12341 19053 14940 19083 6 P_CORE
+port 8 nsew power bidirectional
+rlabel metal3 s 12371 19083 14940 19113 6 P_CORE
+port 8 nsew power bidirectional
+rlabel metal3 s 12409 0 14940 19151 6 P_CORE
+port 8 nsew power bidirectional
+rlabel metal3 s 12409 19151 14940 34447 6 P_CORE
+port 8 nsew power bidirectional
+rlabel metal2 s 100 0 4099 297 6 SRC_BDY_LVC1
+port 9 nsew ground bidirectional
+rlabel metal2 s 10943 0 14940 732 6 SRC_BDY_LVC2
+port 10 nsew ground bidirectional
+rlabel metal5 s 14746 1397 15000 2287 6 VCCD
+port 11 nsew power bidirectional
+rlabel metal5 s 14746 27 15000 1077 6 VCCHIB
+port 12 nsew power bidirectional
+rlabel metal5 s 14807 2607 15000 3257 6 VDDA
+port 13 nsew power bidirectional
+rlabel metal5 s 14746 13607 15000 18597 6 VDDIO
+port 14 nsew power bidirectional
+rlabel metal5 s 14746 12437 15000 13287 6 VDDIO_Q
+port 15 nsew power bidirectional
+rlabel metal5 s 14746 9147 15000 10947 6 VSSA
+port 16 nsew ground bidirectional
+rlabel metal5 s 14746 7937 15000 8827 6 VSSD
+port 17 nsew ground bidirectional
+rlabel metal5 s 14746 4787 15000 5677 6 VSSIO
+port 18 nsew ground bidirectional
+rlabel metal5 s 14746 11267 15000 12117 6 VSSIO_Q
+port 19 nsew ground bidirectional
+rlabel metal5 s 14746 5997 15000 6647 6 VSWITCH
+port 20 nsew power bidirectional
+<< properties >>
+string LEFclass PAD
+string FIXED_BBOX 0 0 15000 39600
+string LEFsymmetry X Y R90
+string LEFview TRUE
+string GDS_FILE $PDKPATH/libs.ref/sky130_fd_io/gds/sky130_fd_io.gds
+string GDS_END 34098802
+string GDS_START 30499954
+<< end >>

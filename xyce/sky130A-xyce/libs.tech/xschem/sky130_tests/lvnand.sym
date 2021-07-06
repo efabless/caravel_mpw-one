@@ -1,0 +1,29 @@
+v {xschem version=2.9.9 file_version=1.2 }
+G {}
+K {type=subcircuit
+format="@name @pinlist @VCCPIN @VSSPIN @symname WidthN=@WidthN LenN=@LenN WidthP=@WidthP LenP=@LenP m=@m"
+template="name=x1 WidthN=1 LenN=0.15 WidthP=1 LenP=0.15 VCCPIN=VCC VSSPIN=VSS m=1"
+extra="VCCPIN VSSPIN"
+function2="0 1 & ~"
+}
+V {}
+S {}
+E {}
+L 4 -50 -20 -20 -20 {}
+L 4 -50 20 -20 20 {}
+L 4 -20 -30 -20 30 {}
+L 4 -20 30 15 30 {}
+L 4 -20 -30 15 -30 {}
+L 4 55 0 70 0 {}
+B 5 -52.5 -22.5 -47.5 -17.5 {name=A dir=in goto=2 }
+B 5 -52.5 17.5 -47.5 22.5 {name=B dir=in goto=2 }
+B 5 67.5 -2.5 72.5 2.5 {name=Y dir=out }
+A 4 15 0 30 270 180 {}
+A 4 50 0 5 0 360 {}
+T {@name} -13.75 5 0 0 0.2 0.2 {}
+T {@symname} -15 -15 0 0 0.2 0.2 {}
+T {A} -45 -34 0 0 0.2 0.2 {}
+T {B} -45 6 0 0 0.2 0.2 {}
+T {Y} 65 -14 0 1 0.2 0.2 {}
+T {@WidthP / @LenP} -15 -45 0 0 0.2 0.2 {}
+T {@WidthN / @LenN} -15 35 0 0 0.2 0.2 {}

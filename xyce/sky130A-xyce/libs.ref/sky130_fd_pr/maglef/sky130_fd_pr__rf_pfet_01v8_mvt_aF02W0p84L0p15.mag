@@ -1,0 +1,68 @@
+magic
+tech sky130A
+magscale 1 2
+timestamp 1623348513
+<< obsli1 >>
+rect 86 287 220 303
+rect 86 253 100 287
+rect 134 253 172 287
+rect 206 253 220 287
+rect 86 235 220 253
+rect 50 173 84 189
+rect 50 101 84 139
+rect 50 51 84 67
+rect 136 51 170 189
+rect 222 173 256 189
+rect 222 101 256 139
+rect 222 51 256 67
+<< obsli1c >>
+rect 100 253 134 287
+rect 172 253 206 287
+rect 50 139 84 173
+rect 50 67 84 101
+rect 222 139 256 173
+rect 222 67 256 101
+<< metal1 >>
+rect 88 287 218 299
+rect 88 253 100 287
+rect 134 253 172 287
+rect 206 253 218 287
+rect 88 241 218 253
+rect 44 173 90 189
+rect 44 139 50 173
+rect 84 139 90 173
+rect 44 101 90 139
+rect 44 67 50 101
+rect 84 67 90 101
+rect 44 -29 90 67
+rect 216 173 262 189
+rect 216 139 222 173
+rect 256 139 262 173
+rect 216 101 262 139
+rect 216 67 222 101
+rect 256 67 262 101
+rect 216 -29 262 67
+rect 44 -89 262 -29
+<< obsm1 >>
+rect 127 51 179 189
+<< metal2 >>
+rect 127 56 179 184
+<< labels >>
+rlabel metal2 s 127 56 179 184 6 DRAIN
+port 1 nsew
+rlabel metal1 s 88 241 218 299 6 GATE
+port 2 nsew
+rlabel metal1 s 216 -29 262 189 6 SOURCE
+port 3 nsew
+rlabel metal1 s 44 -29 90 189 6 SOURCE
+port 3 nsew
+rlabel metal1 s 44 -89 262 -29 8 SOURCE
+port 3 nsew
+<< properties >>
+string LEFclass BLOCK
+string FIXED_BBOX 0 -89 300 303
+string LEFview TRUE
+string GDS_FILE $PDKPATH/libs.ref/sky130_fd_pr/gds/sky130_fd_pr.gds
+string GDS_END 10391210
+string GDS_START 10387062
+<< end >>

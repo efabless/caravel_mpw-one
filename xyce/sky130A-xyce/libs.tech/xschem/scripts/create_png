@@ -1,0 +1,3 @@
+# in doc/ directories:
+for i in ../*.sym; do echo C {$i} 0 0 0 0 {} >  `basename -s .sym $i`.sch; done
+for i in ./*.sch;  do xschem $i --tcl='set initial_geometry 320x250' --png --plotfile `basename -s .sch $i`.png -r --quit; done

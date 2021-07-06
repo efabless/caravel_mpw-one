@@ -1,0 +1,124 @@
+magic
+tech sky130A
+magscale 1 2
+timestamp 1623348512
+<< checkpaint >>
+rect -1260 -44054 312366 40900
+<< dnwell >>
+rect 4927 3772 308245 36105
+<< nwell >>
+rect 303230 39610 311106 39640
+rect 0 31750 311106 39610
+rect 0 7206 7829 31750
+rect 303230 7206 311106 31750
+rect 0 0 311106 7206
+rect 303230 -3184 311106 -3154
+rect 0 -42794 311106 -3184
+<< pwell >>
+rect 11759 17686 13156 19032
+<< psubdiff >>
+rect 11785 18533 13130 19006
+rect 11785 18499 12218 18533
+rect 12252 18499 13130 18533
+rect 11785 17712 13130 18499
+<< nsubdiff >>
+rect 1592 2125 2937 2598
+rect 1592 2091 2025 2125
+rect 2059 2091 2937 2125
+rect 1592 1304 2937 2091
+rect 1592 -40669 2937 -40196
+rect 1592 -40703 2025 -40669
+rect 2059 -40703 2937 -40669
+rect 1592 -41490 2937 -40703
+<< psubdiffcont >>
+rect 12218 18499 12252 18533
+<< nsubdiffcont >>
+rect 2025 2091 2059 2125
+rect 2025 -40703 2059 -40669
+<< locali >>
+rect 12028 18533 12590 18733
+rect 12028 18499 12218 18533
+rect 12252 18499 12590 18533
+rect 12028 18138 12590 18499
+rect 1835 2125 2397 2325
+rect 1835 2091 2025 2125
+rect 2059 2091 2397 2125
+rect 1835 1730 2397 2091
+rect 1835 -40669 2397 -40469
+rect 1835 -40703 2025 -40669
+rect 2059 -40703 2397 -40669
+rect 1835 -41064 2397 -40703
+<< metal1 >>
+rect 20494 20671 21056 22366
+rect 13907 20112 13925 20142
+rect 13906 19870 13924 19888
+rect 20408 17651 21142 19853
+rect 20593 -24371 20723 -24111
+rect 13695 -24850 13747 -24814
+rect 13702 -25177 13733 -25150
+rect 20549 -25409 20767 -25191
+<< metal2 >>
+rect 13912 20005 13929 20050
+rect 20120 -24614 20632 -24486
+rect 13716 -25046 13721 -24918
+<< metal3 >>
+rect 21066 20415 21836 20569
+use sky130_fd_pr__rf_nfet_01v8_lvt_aF02W0p42L0p15  sky130_fd_pr__rf_nfet_01v8_lvt_aF02W0p42L0p15_0
+timestamp 1623348512
+transform 1 0 13768 0 1 19942
+box 10 -89 290 217
+use sky130_fd_pr__rf_pfet_01v8_aF02W0p84L0p15  sky130_fd_pr__rf_pfet_01v8_aF02W0p84L0p15_0
+timestamp 1623348512
+transform 1 0 13567 0 1 -25102
+box 0 -89 300 303
+use sky130_fd_pr__rf_pfet_01v8_aF02W3p00L0p15  sky130_fd_pr__rf_pfet_01v8_aF02W3p00L0p15_0
+timestamp 1623348512
+transform 1 0 20511 0 1 -25102
+box 0 -89 294 735
+use sky130_fd_pr__rf_nfet_01v8_lvt_aF08W3p00L0p15  sky130_fd_pr__rf_nfet_01v8_lvt_aF08W3p00L0p15_0
+timestamp 1623348512
+transform 1 0 20367 0 1 19942
+box 10 -89 806 733
+<< labels >>
+flabel comment s 13703 -24191 13703 -24191 0 FreeSans 1000 0 0 0 D_P G_P S_P - no extra parasitics
+flabel comment s 20643 23094 20643 23094 0 FreeSans 1000 0 0 0 D_N2 (0.394fF) G_N2 (1.55fF)) S_N2 (2.3fF)
+flabel comment s 20643 22666 20643 22666 0 FreeSans 1000 0 0 0 D_N2 (0.246 Ohm) G_N2 (0.377 Ohm) S_N2 (0.375 Ohm)
+flabel comment s 13703 20674 13703 20674 0 FreeSans 1000 0 0 0 VPWR G S - no extra parasitics
+flabel comment s 20643 -23265 20643 -23265 0 FreeSans 1000 0 0 0 D_P2 (0.525 Ohm) G_P2 (0.262 Ohm) S_P2 (0.131 Ohm)
+flabel comment s 20643 -22837 20643 -22837 0 FreeSans 1000 0 0 0 D_P2 (0.394fF) G_P2 (0.158fF)) S_P2 (0.179fF)
+flabel comment s 9976 31045 9976 31045 0 FreeSans 2000 0 0 0 condiode
+flabel metal3 s 21835 20415 21836 20569 0 FreeSans 2000 0 0 0 D_N2
+port 1 nsew
+flabel metal1 s 20494 22365 21056 22366 0 FreeSans 2000 0 0 0 G_N2
+port 2 nsew
+flabel metal1 s 13906 19870 13924 19888 0 FreeSans 2000 0 0 0 S
+port 3 nsew
+flabel metal1 s 20593 -24112 20723 -24111 0 FreeSans 2000 0 0 0 G_P2
+port 4 nsew
+flabel metal1 s 20549 -25409 20767 -25408 0 FreeSans 2000 0 0 0 S_P2
+port 5 nsew
+flabel metal1 s 13702 -25177 13733 -25150 0 FreeSans 2000 0 0 0 S_P
+port 6 nsew
+flabel metal1 s 13907 20112 13925 20142 0 FreeSans 2000 0 0 0 G
+port 7 nsew
+flabel metal1 s 13695 -24850 13747 -24814 0 FreeSans 2000 0 0 0 G_P
+port 8 nsew
+flabel metal1 s 20408 17651 21142 17652 0 FreeSans 2000 0 0 0 S_N2
+port 9 nsew
+flabel metal2 s 20120 -24614 20121 -24486 0 FreeSans 2000 0 0 0 D_P2
+port 10 nsew
+flabel metal2 s 13912 20005 13929 20050 0 FreeSans 2000 0 0 0 VPWR
+port 11 nsew
+flabel metal2 s 13712 -24983 13712 -24983 0 FreeSans 2000 0 0 0 D_P
+port 12 nsew
+flabel locali s 12401 18220 12529 18665 0 FreeSans 2000 0 0 0 VGND
+port 13 nsew
+flabel locali s 2191 1808 2304 2253 0 FreeSans 2000 0 0 0 NWELL
+port 14 nsew
+flabel locali s 2209 -40991 2318 -40518 0 FreeSans 2000 0 0 0 B_P
+port 15 nsew
+<< properties >>
+string GDS_FILE $PDKPATH/libs.ref/sky130_fd_pr/gds/sky130_fd_pr.gds
+string GDS_END 10451986
+string GDS_START 10447896
+<< end >>

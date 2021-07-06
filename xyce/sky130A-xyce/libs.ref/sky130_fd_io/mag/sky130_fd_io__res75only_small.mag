@@ -1,0 +1,38 @@
+magic
+tech sky130A
+magscale 1 2
+timestamp 1623348570
+<< checkpaint >>
+rect -1260 -1260 2142 1664
+<< poly >>
+rect 8 351 126 402
+rect 8 45 24 351
+rect 8 2 126 45
+rect 756 351 874 402
+rect 858 45 874 351
+rect 756 2 874 45
+<< polycont >>
+rect 24 45 126 351
+rect 756 45 858 351
+<< npolyres >>
+rect 126 2 756 402
+<< locali >>
+rect 0 351 150 404
+rect 0 45 24 351
+rect 126 45 150 351
+rect 0 0 150 45
+rect 732 351 882 404
+rect 732 45 756 351
+rect 858 45 882 351
+rect 732 0 882 45
+<< labels >>
+flabel locali s 0 1 2 403 3 FreeSans 400 0 0 0 PAD
+port 1 nsew
+flabel locali s 880 1 882 403 7 FreeSans 400 0 0 0 ROUT
+port 2 nsew
+flabel comment s 441 200 441 200 0 FreeSans 400 0 0 0 75 OHM
+<< properties >>
+string GDS_FILE $PDKPATH/libs.ref/sky130_fd_io/gds/sky130_ef_io__gpiov2_pad_wrapped.gds
+string GDS_END 29282
+string GDS_START 27164
+<< end >>

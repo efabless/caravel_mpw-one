@@ -1,0 +1,11 @@
+K {type=primitive
+format="@name @VGND @VPWR @prefix\\\\tapvpwrvgnd_1"
+template="name=x1 VGND=VGND VPWR=VPWR prefix=sky130_fd_sc_hd__ "
+extra="VGND VPWR prefix"
+highlight=true}
+T {@symname} 0 -6 0 0 0.3 0.3 {hcenter=true}
+T {@name} 75 -22 0 0 0.2 0.2 {}
+L 4 -70 -10 70 -10 {}
+L 4 -70 10 70 10 {}
+L 4 -70 -10 -70 10 {}
+L 4 70 -10 70 10 {}

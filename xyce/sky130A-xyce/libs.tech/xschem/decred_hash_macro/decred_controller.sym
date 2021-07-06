@@ -1,0 +1,111 @@
+v {xschem version=2.9.9 file_version=1.2 }
+G {}
+K {type=subcircuit
+format="@name @@CLK_LED @@DATA_AVAILABLE[0] @@DATA_AVAILABLE[1] @@DATA_AVAILABLE[2] @@DATA_AVAILABLE[3] @@DATA_FROM_HASH[0] @@DATA_FROM_HASH[1] @@DATA_FROM_HASH[2] @@DATA_FROM_HASH[3] @@DATA_FROM_HASH[4] @@DATA_FROM_HASH[5] @@DATA_FROM_HASH[6] @@DATA_FROM_HASH[7] @@DATA_TO_HASH[0] @@DATA_TO_HASH[1] @@DATA_TO_HASH[2] @@DATA_TO_HASH[3] @@DATA_TO_HASH[4] @@DATA_TO_HASH[5] @@DATA_TO_HASH[6] @@DATA_TO_HASH[7] @@EXT_RESET_N_fromHost @@EXT_RESET_N_toClient @@HASH_ADDR[0] @@HASH_ADDR[1] @@HASH_ADDR[2] @@HASH_ADDR[3] @@HASH_ADDR[4] @@HASH_ADDR[5] @@HASH_EN @@HASH_LED @@ID_fromClient @@ID_toHost @@IRQ_OUT_fromClient @@IRQ_OUT_toHost @@M1_CLK_IN @@M1_CLK_SELECT @@MACRO_RD_SELECT[0] @@MACRO_RD_SELECT[1] @@MACRO_RD_SELECT[2] @@MACRO_RD_SELECT[3] @@MACRO_WR_SELECT[0] @@MACRO_WR_SELECT[1] @@MACRO_WR_SELECT[2] @@MACRO_WR_SELECT[3] @@MISO_fromClient @@MISO_toHost @@MOSI_fromHost @@MOSI_toClient @@PLL_INPUT @@S1_CLK_IN @@S1_CLK_SELECT @@SCLK_fromHost @@SCLK_toClient @@SCSN_fromHost @@SCSN_toClient @@THREAD_COUNT[0] @@THREAD_COUNT[1] @@THREAD_COUNT[2] @@THREAD_COUNT[3] @@m1_clk_local @@one @@zero @VPWR @VGND decred_controller"
+template="name=x1 VPWR=VPWR VGND=VGND prefix=sky130_fd_sc_hd__ "
+extra="VPWR VGND prefix"}
+V {}
+S {}
+E {}
+L 4 -130 -320 130 -320 {}
+L 4 -130 320 130 320 {}
+L 4 -130 -320 -130 320 {}
+L 4 130 -320 130 320 {}
+L 7 130 -310 150 -310 {}
+L 7 -150 -290 -130 -290 {}
+L 7 -150 -270 -130 -270 {}
+L 7 130 -250 150 -250 {}
+L 7 -150 -230 -130 -230 {}
+L 7 130 -210 150 -210 {}
+L 7 130 -190 150 -190 {}
+L 7 130 -170 150 -170 {}
+L 7 130 -150 150 -150 {}
+L 7 -150 -130 -130 -130 {}
+L 7 130 -110 150 -110 {}
+L 7 -150 -90 -130 -90 {}
+L 7 130 -70 150 -70 {}
+L 7 -150 -50 -130 -50 {}
+L 7 -150 -30 -130 -30 {}
+L 7 130 -10 150 -10 {}
+L 7 130 10 150 10 {}
+L 7 -150 30 -130 30 {}
+L 7 130 50 150 50 {}
+L 7 -150 70 -130 70 {}
+L 7 130 90 150 90 {}
+L 7 -150 110 -130 110 {}
+L 7 -150 130 -130 130 {}
+L 7 -150 150 -130 150 {}
+L 7 -150 170 -130 170 {}
+L 7 130 190 150 190 {}
+L 7 -150 210 -130 210 {}
+L 7 130 230 150 230 {}
+L 7 -150 250 -130 250 {}
+L 7 130 270 150 270 {}
+L 7 130 290 150 290 {}
+L 7 130 310 150 310 {}
+B 5 147.5 -312.5 152.5 -307.5 {name=CLK_LED dir=out }
+B 5 -152.5 -292.5 -147.5 -287.5 {name=DATA_AVAILABLE[0:3] dir=in }
+B 5 -152.5 -272.5 -147.5 -267.5 {name=DATA_FROM_HASH[0:7] dir=in }
+B 5 147.5 -252.5 152.5 -247.5 {name=DATA_TO_HASH[0:7] dir=out }
+B 5 -152.5 -232.5 -147.5 -227.5 {name=EXT_RESET_N_fromHost dir=in }
+B 5 147.5 -212.5 152.5 -207.5 {name=EXT_RESET_N_toClient dir=out }
+B 5 147.5 -192.5 152.5 -187.5 {name=HASH_ADDR[0:5] dir=out }
+B 5 147.5 -172.5 152.5 -167.5 {name=HASH_EN dir=out }
+B 5 147.5 -152.5 152.5 -147.5 {name=HASH_LED dir=out }
+B 5 -152.5 -132.5 -147.5 -127.5 {name=ID_fromClient dir=in }
+B 5 147.5 -112.5 152.5 -107.5 {name=ID_toHost dir=out }
+B 5 -152.5 -92.5 -147.5 -87.5 {name=IRQ_OUT_fromClient dir=in }
+B 5 147.5 -72.5 152.5 -67.5 {name=IRQ_OUT_toHost dir=out }
+B 5 -152.5 -52.5 -147.5 -47.5 {name=M1_CLK_IN dir=in }
+B 5 -152.5 -32.5 -147.5 -27.5 {name=M1_CLK_SELECT dir=in }
+B 5 147.5 -12.5 152.5 -7.5 {name=MACRO_RD_SELECT[0:3] dir=out }
+B 5 147.5 7.5 152.5 12.5 {name=MACRO_WR_SELECT[0:3] dir=out }
+B 5 -152.5 27.5 -147.5 32.5 {name=MISO_fromClient dir=in }
+B 5 147.5 47.5 152.5 52.5 {name=MISO_toHost dir=out }
+B 5 -152.5 67.5 -147.5 72.5 {name=MOSI_fromHost dir=in }
+B 5 147.5 87.5 152.5 92.5 {name=MOSI_toClient dir=out }
+B 5 -152.5 107.5 -147.5 112.5 {name=PLL_INPUT dir=in }
+B 5 -152.5 127.5 -147.5 132.5 {name=S1_CLK_IN dir=in }
+B 5 -152.5 147.5 -147.5 152.5 {name=S1_CLK_SELECT dir=in }
+B 5 -152.5 167.5 -147.5 172.5 {name=SCLK_fromHost dir=in }
+B 5 147.5 187.5 152.5 192.5 {name=SCLK_toClient dir=out }
+B 5 -152.5 207.5 -147.5 212.5 {name=SCSN_fromHost dir=in }
+B 5 147.5 227.5 152.5 232.5 {name=SCSN_toClient dir=out }
+B 5 -152.5 247.5 -147.5 252.5 {name=THREAD_COUNT[0:3] dir=in }
+B 5 147.5 267.5 152.5 272.5 {name=m1_clk_local dir=out }
+B 5 147.5 287.5 152.5 292.5 {name=one dir=out }
+B 5 147.5 307.5 152.5 312.5 {name=zero dir=out }
+T {@symname} -50 -336 0 0 0.3 0.3 {}
+T {@name} 135 -332 0 0 0.2 0.2 {}
+T {CLK_LED} 125 -314 0 1 0.2 0.2 {}
+T {DATA_AVAILABLE[0:3]} -125 -294 0 0 0.2 0.2 {}
+T {DATA_FROM_HASH[0:7]} -125 -274 0 0 0.2 0.2 {}
+T {DATA_TO_HASH[0:7]} 125 -254 0 1 0.2 0.2 {}
+T {EXT_RESET_N_fromHost} -125 -234 0 0 0.2 0.2 {}
+T {EXT_RESET_N_toClient} 125 -214 0 1 0.2 0.2 {}
+T {HASH_ADDR[0:5]} 125 -194 0 1 0.2 0.2 {}
+T {HASH_EN} 125 -174 0 1 0.2 0.2 {}
+T {HASH_LED} 125 -154 0 1 0.2 0.2 {}
+T {ID_fromClient} -125 -134 0 0 0.2 0.2 {}
+T {ID_toHost} 125 -114 0 1 0.2 0.2 {}
+T {IRQ_OUT_fromClient} -125 -94 0 0 0.2 0.2 {}
+T {IRQ_OUT_toHost} 125 -74 0 1 0.2 0.2 {}
+T {M1_CLK_IN} -125 -54 0 0 0.2 0.2 {}
+T {M1_CLK_SELECT} -125 -34 0 0 0.2 0.2 {}
+T {MACRO_RD_SELECT[0:3]} 125 -14 0 1 0.2 0.2 {}
+T {MACRO_WR_SELECT[0:3]} 125 6 0 1 0.2 0.2 {}
+T {MISO_fromClient} -125 26 0 0 0.2 0.2 {}
+T {MISO_toHost} 125 46 0 1 0.2 0.2 {}
+T {MOSI_fromHost} -125 66 0 0 0.2 0.2 {}
+T {MOSI_toClient} 125 86 0 1 0.2 0.2 {}
+T {PLL_INPUT} -125 106 0 0 0.2 0.2 {}
+T {S1_CLK_IN} -125 126 0 0 0.2 0.2 {}
+T {S1_CLK_SELECT} -125 146 0 0 0.2 0.2 {}
+T {SCLK_fromHost} -125 166 0 0 0.2 0.2 {}
+T {SCLK_toClient} 125 186 0 1 0.2 0.2 {}
+T {SCSN_fromHost} -125 206 0 0 0.2 0.2 {}
+T {SCSN_toClient} 125 226 0 1 0.2 0.2 {}
+T {THREAD_COUNT[0:3]} -125 246 0 0 0.2 0.2 {}
+T {m1_clk_local} 125 266 0 1 0.2 0.2 {}
+T {one} 125 286 0 1 0.2 0.2 {}
+T {zero} 125 306 0 1 0.2 0.2 {}
