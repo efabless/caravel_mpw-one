@@ -1,0 +1,566 @@
+* SPICE NETLIST
+***************************************
+
+.SUBCKT drainOnly g s d b
+.ENDS
+***************************************
+.SUBCKT condiode pin0 pin1
+.ENDS
+***************************************
+.SUBCKT nvhv pin0 pin1 pin2 pin3
+.ENDS
+***************************************
+.SUBCKT pvhv pin0 pin1 pin2 pin3
+.ENDS
+***************************************
+.SUBCKT xcnwvc pin0 pin1 pin2
+.ENDS
+***************************************
+.SUBCKT xcnwvc2 pin0 pin1 pin2
+.ENDS
+***************************************
+.SUBCKT xchvnwc pin0 pin1 pin2
+.ENDS
+***************************************
+.SUBCKT Dpar d0 d1
+.ENDS
+***************************************
+.SUBCKT xcmvpp pin0 pin1 pin2
+.ENDS
+***************************************
+.SUBCKT xcmvpp_2 pin0 pin1 pin2
+.ENDS
+***************************************
+.SUBCKT xcmvpp2_nhvnative10x4 pin0 pin1 pin2
+.ENDS
+***************************************
+.SUBCKT xcmvpp2_phv5x4 pin0 pin1 pin2
+.ENDS
+***************************************
+.SUBCKT xcmvpp_hd5_atlas_fingercap2_l5 pin0 pin1 pin2
+.ENDS
+***************************************
+.SUBCKT xcmvpp_hd5_atlas_wafflecap2 pin0 pin1 pin2
+.ENDS
+***************************************
+.SUBCKT xcmvpp_hd5_atlas_wafflecap1 pin0 pin1 pin2
+.ENDS
+***************************************
+.SUBCKT xcmvpp_hd5_atlas_fingercap_l40 pin0 pin1 pin2
+.ENDS
+***************************************
+.SUBCKT xcmvpp_hd5_atlas_fingercap_l20 pin0 pin1 pin2
+.ENDS
+***************************************
+.SUBCKT xcmvpp_hd5_atlas_fingercap_l10 pin0 pin1 pin2
+.ENDS
+***************************************
+.SUBCKT xcmvpp_hd5_atlas_fingercap_l5 pin0 pin1 pin2
+.ENDS
+***************************************
+.SUBCKT xcmvpp_hd5_5x2_met5pullin pin0 pin1 pin2
+.ENDS
+***************************************
+.SUBCKT xcmvpp_hd5_5x2 pin0 pin1 pin2
+.ENDS
+***************************************
+.SUBCKT xcmvpp_hd5_5x1_met5pullin pin0 pin1 pin2
+.ENDS
+***************************************
+.SUBCKT xcmvpp_hd5_5x1 pin0 pin1 pin2
+.ENDS
+***************************************
+.SUBCKT xcmvpp_hd5_4x2 pin0 pin1 pin2
+.ENDS
+***************************************
+.SUBCKT xcmvpp_hd5_4x1 pin0 pin1 pin2
+.ENDS
+***************************************
+.SUBCKT xcmvpp_hd5_3x2 pin0 pin1 pin2
+.ENDS
+***************************************
+.SUBCKT xcmvpp_hd5_3x1 pin0 pin1 pin2
+.ENDS
+***************************************
+.SUBCKT xcmvpp_hd5_2x2 pin0 pin1 pin2
+.ENDS
+***************************************
+.SUBCKT xcmvpp_hd5_2x1 pin0 pin1 pin2
+.ENDS
+***************************************
+.SUBCKT xcmvpp_hd5_1x2 pin0 pin1 pin2
+.ENDS
+***************************************
+.SUBCKT xcmvpp_hd5_1x1 pin0 pin1 pin2
+.ENDS
+***************************************
+.SUBCKT xcmvppx4_2xnhvnative10x4 pin0 pin1 pin2 pin3
+.ENDS
+***************************************
+.SUBCKT xcmvpp11p5x11p7_polym50p4shield pin0 pin1 pin2 pin3
+.ENDS
+***************************************
+.SUBCKT xcmvpp4p4x4p6_m3_lim5shield pin0 pin1 pin2 pin3
+.ENDS
+***************************************
+.SUBCKT xcmvpp11p5x11p7_m3_lim5shield pin0 pin1 pin2 pin3
+.ENDS
+***************************************
+.SUBCKT xcmvpp8p6x7p9_m3_lim5shield pin0 pin1 pin2 pin3
+.ENDS
+***************************************
+.SUBCKT xcmvpp11p5x11p7_lim5shield pin0 pin1 pin2 pin3
+.ENDS
+***************************************
+.SUBCKT xcmvpp11p5x11p7_polym5shield pin0 pin1 pin2 pin3
+.ENDS
+***************************************
+.SUBCKT xcmvpp11p5x11p7_m5shield pin0 pin1 pin2 pin3
+.ENDS
+***************************************
+.SUBCKT xcmvpp6p8x6p1_lim4shield pin0 pin1 pin2 pin3
+.ENDS
+***************************************
+.SUBCKT xcmvpp6p8x6p1_polym4shield pin0 pin1 pin2 pin3
+.ENDS
+***************************************
+.SUBCKT xcmvpp11p5x11p7_polym4shield pin0 pin1 pin2 pin3
+.ENDS
+***************************************
+.SUBCKT xcmvpp11p5x11p7_m4shield pin0 pin1 pin2 pin3
+.ENDS
+***************************************
+.SUBCKT xcmvpp1p8x1p8 pin0 pin1 pin2
+.ENDS
+***************************************
+.SUBCKT xcmvpp4p4x4p6_m3_lishield pin0 pin1 pin2
+.ENDS
+***************************************
+.SUBCKT xcmvpp8p6x7p9_m3_lishield pin0 pin1 pin2
+.ENDS
+***************************************
+.SUBCKT xcmvpp11p5x11p7_m3_lishield pin0 pin1 pin2
+.ENDS
+***************************************
+.SUBCKT xcmvpp11p5x11p7_m3shield c0 c1 b term4
+.ENDS
+***************************************
+.SUBCKT xcmvpp8p6x7p9_m3shield c0 c1 b term4
+.ENDS
+***************************************
+.SUBCKT xcmvpp4p4x4p6_m3shield c0 c1 b term4
+.ENDS
+***************************************
+.SUBCKT xcmvpp1p8x1p8_m3shield c0 c1 b term4
+.ENDS
+***************************************
+.SUBCKT xcmvpp11p5x11p7_m1m4m5shield pin0 pin1 pin2 pin3
+.ENDS
+***************************************
+.SUBCKT xcmvpp11p5x11p7_m1m4 pin0 pin1 pin2
+.ENDS
+***************************************
+.SUBCKT xcmvpp11p5x11p7_m1m2 pin0 pin1 pin2
+.ENDS
+***************************************
+.SUBCKT xcmvpp4p4x4p6_m1m2 pin0 pin1 pin2
+.ENDS
+***************************************
+.SUBCKT xcmvpp5 pin0 pin1 pin2
+.ENDS
+***************************************
+.SUBCKT xcmvpp4 pin0 pin1 pin2
+.ENDS
+***************************************
+.SUBCKT xcmvpp3 pin0 pin1 pin2
+.ENDS
+***************************************
+.SUBCKT balun pin0 pin1 pin2 pin3 pin4 pin5
+.ENDS
+***************************************
+.SUBCKT ind4 pin0 pin1 pin2 pin3
+.ENDS
+***************************************
+.SUBCKT Probe probe conductor
+.ENDS
+***************************************
+.SUBCKT sky130_fd_pr__dfl1sd2__example_55959141808666
+** N=3 EP=0 IP=0 FDC=0
+*.SEEDPROM
+.ENDS
+***************************************
+.SUBCKT sky130_fd_pr__pfet_01v8__example_55959141808687 2 3 4
+** N=4 EP=3 IP=33 FDC=10
+*.SEEDPROM
+M0 4 3 2 2 pshort L=0.18 W=7 m=1 r=38.8889 a=1.26 p=14.36 mult=1 $X=0 $Y=0 $D=79
+M1 2 3 4 2 pshort L=0.18 W=7 m=1 r=38.8889 a=1.26 p=14.36 mult=1 $X=460 $Y=0 $D=79
+M2 4 3 2 2 pshort L=0.18 W=7 m=1 r=38.8889 a=1.26 p=14.36 mult=1 $X=920 $Y=0 $D=79
+M3 2 3 4 2 pshort L=0.18 W=7 m=1 r=38.8889 a=1.26 p=14.36 mult=1 $X=1380 $Y=0 $D=79
+M4 4 3 2 2 pshort L=0.18 W=7 m=1 r=38.8889 a=1.26 p=14.36 mult=1 $X=1840 $Y=0 $D=79
+M5 2 3 4 2 pshort L=0.18 W=7 m=1 r=38.8889 a=1.26 p=14.36 mult=1 $X=2300 $Y=0 $D=79
+M6 4 3 2 2 pshort L=0.18 W=7 m=1 r=38.8889 a=1.26 p=14.36 mult=1 $X=2760 $Y=0 $D=79
+M7 2 3 4 2 pshort L=0.18 W=7 m=1 r=38.8889 a=1.26 p=14.36 mult=1 $X=3220 $Y=0 $D=79
+M8 4 3 2 2 pshort L=0.18 W=7 m=1 r=38.8889 a=1.26 p=14.36 mult=1 $X=3680 $Y=0 $D=79
+M9 2 3 4 2 pshort L=0.18 W=7 m=1 r=38.8889 a=1.26 p=14.36 mult=1 $X=4140 $Y=0 $D=79
+.ENDS
+***************************************
+.SUBCKT sky130_fd_pr__hvdfl1sd__example_5595914180851
+** N=3 EP=0 IP=0 FDC=0
+*.SEEDPROM
+.ENDS
+***************************************
+.SUBCKT sky130_fd_pr__dftpl1s2__example_55959141808702
+** N=2 EP=0 IP=0 FDC=0
+*.SEEDPROM
+.ENDS
+***************************************
+.SUBCKT sky130_fd_pr__dftpl1s2__example_55959141808694
+** N=2 EP=0 IP=0 FDC=0
+*.SEEDPROM
+.ENDS
+***************************************
+.SUBCKT sky130_fd_pr__dfl1__example_55959141808682
+** N=3 EP=0 IP=0 FDC=0
+*.SEEDPROM
+.ENDS
+***************************************
+.SUBCKT ICV_1
+** N=3 EP=0 IP=6 FDC=0
+*.SEEDPROM
+.ENDS
+***************************************
+.SUBCKT sky130_fd_pr__dfl1__example_55959141808681
+** N=4 EP=0 IP=0 FDC=0
+*.SEEDPROM
+.ENDS
+***************************************
+.SUBCKT ICV_2
+** N=4 EP=0 IP=8 FDC=0
+*.SEEDPROM
+.ENDS
+***************************************
+.SUBCKT sky130_fd_pr__hvdfl1sd2__example_55959141808378
+** N=3 EP=0 IP=0 FDC=0
+*.SEEDPROM
+.ENDS
+***************************************
+.SUBCKT sky130_fd_pr__tpl1__example_55959141808685
+** N=1 EP=0 IP=0 FDC=0
+.ENDS
+***************************************
+.SUBCKT sky130_fd_pr__tpl1__example_55959141808686
+** N=1 EP=0 IP=0 FDC=0
+.ENDS
+***************************************
+.SUBCKT sky130_fd_io__gnd2gnd_tap
+** N=2 EP=0 IP=0 FDC=0
+.ENDS
+***************************************
+.SUBCKT sky130_fd_io__gnd2gnd_diff
+** N=2 EP=0 IP=0 FDC=0
+.ENDS
+***************************************
+.SUBCKT sky130_fd_io__gnd2gnd_sub_dnwl 1 2
+** N=3 EP=2 IP=22 FDC=1
+X0 1 2 Dpar a=283.052 p=67.56 m=1 $[nwdiode] $X=900 $Y=900 $D=185
+.ENDS
+***************************************
+.SUBCKT sky130_fd_pr__hvdfl1sd__example_55959141808700
+** N=3 EP=0 IP=0 FDC=0
+*.SEEDPROM
+.ENDS
+***************************************
+.SUBCKT sky130_fd_pr__hvdfl1sd2__example_55959141808559
+** N=5 EP=0 IP=0 FDC=0
+*.SEEDPROM
+.ENDS
+***************************************
+.SUBCKT sky130_fd_pr__nfet_01v8__example_55959141808699 1 2
+** N=6 EP=2 IP=26 FDC=5
+*.SEEDPROM
+M0 1 2 1 1 nshort L=8 W=7 m=1 r=0.875 a=56 p=30 mult=1 $X=0 $Y=0 $D=9
+M1 1 2 1 1 nshort L=8 W=7 m=1 r=0.875 a=56 p=30 mult=1 $X=8280 $Y=0 $D=9
+M2 1 2 1 1 nshort L=8 W=7 m=1 r=0.875 a=56 p=30 mult=1 $X=16560 $Y=0 $D=9
+M3 1 2 1 1 nshort L=8 W=7 m=1 r=0.875 a=56 p=30 mult=1 $X=24840 $Y=0 $D=9
+M4 1 2 1 1 nshort L=8 W=7 m=1 r=0.875 a=56 p=30 mult=1 $X=33120 $Y=0 $D=9
+.ENDS
+***************************************
+.SUBCKT sky130_fd_pr__dfl1sd2__example_55959141808679
+** N=6 EP=0 IP=0 FDC=0
+*.SEEDPROM
+.ENDS
+***************************************
+.SUBCKT sky130_fd_pr__nfet_01v8__example_55959141808696 1 2 3
+** N=7 EP=3 IP=12 FDC=1
+*.SEEDPROM
+M0 1 2 3 1 nshort L=0.18 W=7 m=1 r=38.8889 a=1.26 p=14.36 mult=1 $X=0 $Y=0 $D=9
+.ENDS
+***************************************
+.SUBCKT sky130_fd_pr__nfet_01v8__example_55959141808701 1 2 3
+** N=5 EP=3 IP=38 FDC=38
+*.SEEDPROM
+M0 3 2 1 1 nshort L=0.18 W=7 m=1 r=38.8889 a=1.26 p=14.36 mult=1 $X=0 $Y=0 $D=9
+M1 1 2 3 1 nshort L=0.18 W=7 m=1 r=38.8889 a=1.26 p=14.36 mult=1 $X=1190 $Y=0 $D=9
+M2 3 2 1 1 nshort L=0.18 W=7 m=1 r=38.8889 a=1.26 p=14.36 mult=1 $X=2770 $Y=0 $D=9
+M3 1 2 3 1 nshort L=0.18 W=7 m=1 r=38.8889 a=1.26 p=14.36 mult=1 $X=3960 $Y=0 $D=9
+M4 3 2 1 1 nshort L=0.18 W=7 m=1 r=38.8889 a=1.26 p=14.36 mult=1 $X=5540 $Y=0 $D=9
+M5 1 2 3 1 nshort L=0.18 W=7 m=1 r=38.8889 a=1.26 p=14.36 mult=1 $X=6730 $Y=0 $D=9
+M6 3 2 1 1 nshort L=0.18 W=7 m=1 r=38.8889 a=1.26 p=14.36 mult=1 $X=8310 $Y=0 $D=9
+M7 1 2 3 1 nshort L=0.18 W=7 m=1 r=38.8889 a=1.26 p=14.36 mult=1 $X=9500 $Y=0 $D=9
+M8 3 2 1 1 nshort L=0.18 W=7 m=1 r=38.8889 a=1.26 p=14.36 mult=1 $X=11080 $Y=0 $D=9
+M9 1 2 3 1 nshort L=0.18 W=7 m=1 r=38.8889 a=1.26 p=14.36 mult=1 $X=12270 $Y=0 $D=9
+M10 3 2 1 1 nshort L=0.18 W=7 m=1 r=38.8889 a=1.26 p=14.36 mult=1 $X=13850 $Y=0 $D=9
+M11 1 2 3 1 nshort L=0.18 W=7 m=1 r=38.8889 a=1.26 p=14.36 mult=1 $X=15040 $Y=0 $D=9
+M12 3 2 1 1 nshort L=0.18 W=7 m=1 r=38.8889 a=1.26 p=14.36 mult=1 $X=16620 $Y=0 $D=9
+M13 1 2 3 1 nshort L=0.18 W=7 m=1 r=38.8889 a=1.26 p=14.36 mult=1 $X=17810 $Y=0 $D=9
+M14 3 2 1 1 nshort L=0.18 W=7 m=1 r=38.8889 a=1.26 p=14.36 mult=1 $X=19390 $Y=0 $D=9
+M15 1 2 3 1 nshort L=0.18 W=7 m=1 r=38.8889 a=1.26 p=14.36 mult=1 $X=20580 $Y=0 $D=9
+M16 3 2 1 1 nshort L=0.18 W=7 m=1 r=38.8889 a=1.26 p=14.36 mult=1 $X=22160 $Y=0 $D=9
+M17 1 2 3 1 nshort L=0.18 W=7 m=1 r=38.8889 a=1.26 p=14.36 mult=1 $X=23350 $Y=0 $D=9
+M18 3 2 1 1 nshort L=0.18 W=7 m=1 r=38.8889 a=1.26 p=14.36 mult=1 $X=24930 $Y=0 $D=9
+M19 1 2 3 1 nshort L=0.18 W=7 m=1 r=38.8889 a=1.26 p=14.36 mult=1 $X=26120 $Y=0 $D=9
+M20 3 2 1 1 nshort L=0.18 W=7 m=1 r=38.8889 a=1.26 p=14.36 mult=1 $X=27700 $Y=0 $D=9
+M21 1 2 3 1 nshort L=0.18 W=7 m=1 r=38.8889 a=1.26 p=14.36 mult=1 $X=28890 $Y=0 $D=9
+M22 3 2 1 1 nshort L=0.18 W=7 m=1 r=38.8889 a=1.26 p=14.36 mult=1 $X=30470 $Y=0 $D=9
+M23 1 2 3 1 nshort L=0.18 W=7 m=1 r=38.8889 a=1.26 p=14.36 mult=1 $X=31660 $Y=0 $D=9
+M24 3 2 1 1 nshort L=0.18 W=7 m=1 r=38.8889 a=1.26 p=14.36 mult=1 $X=33240 $Y=0 $D=9
+M25 1 2 3 1 nshort L=0.18 W=7 m=1 r=38.8889 a=1.26 p=14.36 mult=1 $X=34430 $Y=0 $D=9
+M26 3 2 1 1 nshort L=0.18 W=7 m=1 r=38.8889 a=1.26 p=14.36 mult=1 $X=36010 $Y=0 $D=9
+M27 1 2 3 1 nshort L=0.18 W=7 m=1 r=38.8889 a=1.26 p=14.36 mult=1 $X=37200 $Y=0 $D=9
+M28 3 2 1 1 nshort L=0.18 W=7 m=1 r=38.8889 a=1.26 p=14.36 mult=1 $X=38780 $Y=0 $D=9
+M29 1 2 3 1 nshort L=0.18 W=7 m=1 r=38.8889 a=1.26 p=14.36 mult=1 $X=39970 $Y=0 $D=9
+M30 3 2 1 1 nshort L=0.18 W=7 m=1 r=38.8889 a=1.26 p=14.36 mult=1 $X=41550 $Y=0 $D=9
+M31 1 2 3 1 nshort L=0.18 W=7 m=1 r=38.8889 a=1.26 p=14.36 mult=1 $X=42740 $Y=0 $D=9
+M32 3 2 1 1 nshort L=0.18 W=7 m=1 r=38.8889 a=1.26 p=14.36 mult=1 $X=44320 $Y=0 $D=9
+M33 1 2 3 1 nshort L=0.18 W=7 m=1 r=38.8889 a=1.26 p=14.36 mult=1 $X=45510 $Y=0 $D=9
+M34 3 2 1 1 nshort L=0.18 W=7 m=1 r=38.8889 a=1.26 p=14.36 mult=1 $X=47090 $Y=0 $D=9
+M35 1 2 3 1 nshort L=0.18 W=7 m=1 r=38.8889 a=1.26 p=14.36 mult=1 $X=48280 $Y=0 $D=9
+X36 1 1 Dpar a=2.1 p=14.6 m=1 $[ndiode] $X=-1200 $Y=0 $D=175
+X37 1 1 Dpar a=2.1 p=14.6 m=1 $[ndiode] $X=49360 $Y=0 $D=175
+.ENDS
+***************************************
+.SUBCKT sky130_fd_pr__nfet_01v8__example_55959141808703 1 2 3
+** N=7 EP=3 IP=26 FDC=26
+*.SEEDPROM
+M0 3 2 1 1 nshort L=0.18 W=7 m=1 r=38.8889 a=1.26 p=14.36 mult=1 $X=0 $Y=0 $D=9
+M1 1 2 3 1 nshort L=0.18 W=7 m=1 r=38.8889 a=1.26 p=14.36 mult=1 $X=1350 $Y=0 $D=9
+M2 3 2 1 1 nshort L=0.18 W=7 m=1 r=38.8889 a=1.26 p=14.36 mult=1 $X=4180 $Y=0 $D=9
+M3 1 2 3 1 nshort L=0.18 W=7 m=1 r=38.8889 a=1.26 p=14.36 mult=1 $X=5530 $Y=0 $D=9
+M4 3 2 1 1 nshort L=0.18 W=7 m=1 r=38.8889 a=1.26 p=14.36 mult=1 $X=8360 $Y=0 $D=9
+M5 1 2 3 1 nshort L=0.18 W=7 m=1 r=38.8889 a=1.26 p=14.36 mult=1 $X=9710 $Y=0 $D=9
+M6 3 2 1 1 nshort L=0.18 W=7 m=1 r=38.8889 a=1.26 p=14.36 mult=1 $X=12540 $Y=0 $D=9
+M7 1 2 3 1 nshort L=0.18 W=7 m=1 r=38.8889 a=1.26 p=14.36 mult=1 $X=13890 $Y=0 $D=9
+M8 3 2 1 1 nshort L=0.18 W=7 m=1 r=38.8889 a=1.26 p=14.36 mult=1 $X=16720 $Y=0 $D=9
+M9 1 2 3 1 nshort L=0.18 W=7 m=1 r=38.8889 a=1.26 p=14.36 mult=1 $X=18070 $Y=0 $D=9
+M10 3 2 1 1 nshort L=0.18 W=7 m=1 r=38.8889 a=1.26 p=14.36 mult=1 $X=20900 $Y=0 $D=9
+M11 1 2 3 1 nshort L=0.18 W=7 m=1 r=38.8889 a=1.26 p=14.36 mult=1 $X=22250 $Y=0 $D=9
+M12 3 2 1 1 nshort L=0.18 W=7 m=1 r=38.8889 a=1.26 p=14.36 mult=1 $X=25080 $Y=0 $D=9
+M13 1 2 3 1 nshort L=0.18 W=7 m=1 r=38.8889 a=1.26 p=14.36 mult=1 $X=26430 $Y=0 $D=9
+M14 3 2 1 1 nshort L=0.18 W=7 m=1 r=38.8889 a=1.26 p=14.36 mult=1 $X=29260 $Y=0 $D=9
+M15 1 2 3 1 nshort L=0.18 W=7 m=1 r=38.8889 a=1.26 p=14.36 mult=1 $X=30610 $Y=0 $D=9
+M16 3 2 1 1 nshort L=0.18 W=7 m=1 r=38.8889 a=1.26 p=14.36 mult=1 $X=33440 $Y=0 $D=9
+M17 1 2 3 1 nshort L=0.18 W=7 m=1 r=38.8889 a=1.26 p=14.36 mult=1 $X=34790 $Y=0 $D=9
+M18 3 2 1 1 nshort L=0.18 W=7 m=1 r=38.8889 a=1.26 p=14.36 mult=1 $X=37620 $Y=0 $D=9
+M19 1 2 3 1 nshort L=0.18 W=7 m=1 r=38.8889 a=1.26 p=14.36 mult=1 $X=38970 $Y=0 $D=9
+M20 3 2 1 1 nshort L=0.18 W=7 m=1 r=38.8889 a=1.26 p=14.36 mult=1 $X=41800 $Y=0 $D=9
+M21 1 2 3 1 nshort L=0.18 W=7 m=1 r=38.8889 a=1.26 p=14.36 mult=1 $X=43150 $Y=0 $D=9
+M22 3 2 1 1 nshort L=0.18 W=7 m=1 r=38.8889 a=1.26 p=14.36 mult=1 $X=45980 $Y=0 $D=9
+M23 1 2 3 1 nshort L=0.18 W=7 m=1 r=38.8889 a=1.26 p=14.36 mult=1 $X=47330 $Y=0 $D=9
+X24 1 1 Dpar a=2.1 p=14.6 m=1 $[ndiode] $X=-1825 $Y=0 $D=175
+X25 1 1 Dpar a=2.1 p=14.6 m=1 $[ndiode] $X=49035 $Y=0 $D=175
+.ENDS
+***************************************
+.SUBCKT sky130_fd_pr__nfet_01v8__example_55959141808705 1 2 3
+** N=7 EP=3 IP=40 FDC=40
+*.SEEDPROM
+M0 3 2 1 1 nshort L=0.18 W=7 m=1 r=38.8889 a=1.26 p=14.36 mult=1 $X=0 $Y=0 $D=9
+M1 1 2 3 1 nshort L=0.18 W=7 m=1 r=38.8889 a=1.26 p=14.36 mult=1 $X=1190 $Y=0 $D=9
+M2 3 2 1 1 nshort L=0.18 W=7 m=1 r=38.8889 a=1.26 p=14.36 mult=1 $X=2770 $Y=0 $D=9
+M3 1 2 3 1 nshort L=0.18 W=7 m=1 r=38.8889 a=1.26 p=14.36 mult=1 $X=3960 $Y=0 $D=9
+M4 3 2 1 1 nshort L=0.18 W=7 m=1 r=38.8889 a=1.26 p=14.36 mult=1 $X=5540 $Y=0 $D=9
+M5 1 2 3 1 nshort L=0.18 W=7 m=1 r=38.8889 a=1.26 p=14.36 mult=1 $X=6730 $Y=0 $D=9
+M6 3 2 1 1 nshort L=0.18 W=7 m=1 r=38.8889 a=1.26 p=14.36 mult=1 $X=8310 $Y=0 $D=9
+M7 1 2 3 1 nshort L=0.18 W=7 m=1 r=38.8889 a=1.26 p=14.36 mult=1 $X=9500 $Y=0 $D=9
+M8 3 2 1 1 nshort L=0.18 W=7 m=1 r=38.8889 a=1.26 p=14.36 mult=1 $X=11080 $Y=0 $D=9
+M9 1 2 3 1 nshort L=0.18 W=7 m=1 r=38.8889 a=1.26 p=14.36 mult=1 $X=12270 $Y=0 $D=9
+M10 3 2 1 1 nshort L=0.18 W=7 m=1 r=38.8889 a=1.26 p=14.36 mult=1 $X=13850 $Y=0 $D=9
+M11 1 2 3 1 nshort L=0.18 W=7 m=1 r=38.8889 a=1.26 p=14.36 mult=1 $X=15040 $Y=0 $D=9
+M12 3 2 1 1 nshort L=0.18 W=7 m=1 r=38.8889 a=1.26 p=14.36 mult=1 $X=16620 $Y=0 $D=9
+M13 1 2 3 1 nshort L=0.18 W=7 m=1 r=38.8889 a=1.26 p=14.36 mult=1 $X=17810 $Y=0 $D=9
+M14 3 2 1 1 nshort L=0.18 W=7 m=1 r=38.8889 a=1.26 p=14.36 mult=1 $X=19390 $Y=0 $D=9
+M15 1 2 3 1 nshort L=0.18 W=7 m=1 r=38.8889 a=1.26 p=14.36 mult=1 $X=20580 $Y=0 $D=9
+M16 3 2 1 1 nshort L=0.18 W=7 m=1 r=38.8889 a=1.26 p=14.36 mult=1 $X=22160 $Y=0 $D=9
+M17 1 2 3 1 nshort L=0.18 W=7 m=1 r=38.8889 a=1.26 p=14.36 mult=1 $X=23350 $Y=0 $D=9
+M18 3 2 1 1 nshort L=0.18 W=7 m=1 r=38.8889 a=1.26 p=14.36 mult=1 $X=24930 $Y=0 $D=9
+M19 1 2 3 1 nshort L=0.18 W=7 m=1 r=38.8889 a=1.26 p=14.36 mult=1 $X=26120 $Y=0 $D=9
+M20 3 2 1 1 nshort L=0.18 W=7 m=1 r=38.8889 a=1.26 p=14.36 mult=1 $X=27700 $Y=0 $D=9
+M21 1 2 3 1 nshort L=0.18 W=7 m=1 r=38.8889 a=1.26 p=14.36 mult=1 $X=28890 $Y=0 $D=9
+M22 3 2 1 1 nshort L=0.18 W=7 m=1 r=38.8889 a=1.26 p=14.36 mult=1 $X=30470 $Y=0 $D=9
+M23 1 2 3 1 nshort L=0.18 W=7 m=1 r=38.8889 a=1.26 p=14.36 mult=1 $X=31660 $Y=0 $D=9
+M24 3 2 1 1 nshort L=0.18 W=7 m=1 r=38.8889 a=1.26 p=14.36 mult=1 $X=33240 $Y=0 $D=9
+M25 1 2 3 1 nshort L=0.18 W=7 m=1 r=38.8889 a=1.26 p=14.36 mult=1 $X=34430 $Y=0 $D=9
+M26 3 2 1 1 nshort L=0.18 W=7 m=1 r=38.8889 a=1.26 p=14.36 mult=1 $X=36010 $Y=0 $D=9
+M27 1 2 3 1 nshort L=0.18 W=7 m=1 r=38.8889 a=1.26 p=14.36 mult=1 $X=37200 $Y=0 $D=9
+M28 3 2 1 1 nshort L=0.18 W=7 m=1 r=38.8889 a=1.26 p=14.36 mult=1 $X=38780 $Y=0 $D=9
+M29 1 2 3 1 nshort L=0.18 W=7 m=1 r=38.8889 a=1.26 p=14.36 mult=1 $X=39970 $Y=0 $D=9
+M30 3 2 1 1 nshort L=0.18 W=7 m=1 r=38.8889 a=1.26 p=14.36 mult=1 $X=41550 $Y=0 $D=9
+M31 1 2 3 1 nshort L=0.18 W=7 m=1 r=38.8889 a=1.26 p=14.36 mult=1 $X=42740 $Y=0 $D=9
+M32 3 2 1 1 nshort L=0.18 W=7 m=1 r=38.8889 a=1.26 p=14.36 mult=1 $X=44320 $Y=0 $D=9
+M33 1 2 3 1 nshort L=0.18 W=7 m=1 r=38.8889 a=1.26 p=14.36 mult=1 $X=45510 $Y=0 $D=9
+M34 3 2 1 1 nshort L=0.18 W=7 m=1 r=38.8889 a=1.26 p=14.36 mult=1 $X=47090 $Y=0 $D=9
+M35 1 2 3 1 nshort L=0.18 W=7 m=1 r=38.8889 a=1.26 p=14.36 mult=1 $X=48280 $Y=0 $D=9
+M36 3 2 1 1 nshort L=0.18 W=7 m=1 r=38.8889 a=1.26 p=14.36 mult=1 $X=49860 $Y=0 $D=9
+M37 1 2 3 1 nshort L=0.18 W=7 m=1 r=38.8889 a=1.26 p=14.36 mult=1 $X=51050 $Y=0 $D=9
+X38 1 1 Dpar a=2.1 p=14.6 m=1 $[ndiode] $X=-1200 $Y=0 $D=175
+X39 1 1 Dpar a=2.1 p=14.6 m=1 $[ndiode] $X=52130 $Y=0 $D=175
+.ENDS
+***************************************
+.SUBCKT sky130_fd_pr__nfet_01v8__example_55959141808693 1 2 3
+** N=4 EP=3 IP=40 FDC=40
+*.SEEDPROM
+M0 3 2 1 1 nshort L=0.18 W=5 m=1 r=27.7778 a=0.9 p=10.36 mult=1 $X=0 $Y=0 $D=9
+M1 1 2 3 1 nshort L=0.18 W=5 m=1 r=27.7778 a=0.9 p=10.36 mult=1 $X=1190 $Y=0 $D=9
+M2 3 2 1 1 nshort L=0.18 W=5 m=1 r=27.7778 a=0.9 p=10.36 mult=1 $X=2770 $Y=0 $D=9
+M3 1 2 3 1 nshort L=0.18 W=5 m=1 r=27.7778 a=0.9 p=10.36 mult=1 $X=3960 $Y=0 $D=9
+M4 3 2 1 1 nshort L=0.18 W=5 m=1 r=27.7778 a=0.9 p=10.36 mult=1 $X=5540 $Y=0 $D=9
+M5 1 2 3 1 nshort L=0.18 W=5 m=1 r=27.7778 a=0.9 p=10.36 mult=1 $X=6730 $Y=0 $D=9
+M6 3 2 1 1 nshort L=0.18 W=5 m=1 r=27.7778 a=0.9 p=10.36 mult=1 $X=8310 $Y=0 $D=9
+M7 1 2 3 1 nshort L=0.18 W=5 m=1 r=27.7778 a=0.9 p=10.36 mult=1 $X=9500 $Y=0 $D=9
+M8 3 2 1 1 nshort L=0.18 W=5 m=1 r=27.7778 a=0.9 p=10.36 mult=1 $X=11080 $Y=0 $D=9
+M9 1 2 3 1 nshort L=0.18 W=5 m=1 r=27.7778 a=0.9 p=10.36 mult=1 $X=12270 $Y=0 $D=9
+M10 3 2 1 1 nshort L=0.18 W=5 m=1 r=27.7778 a=0.9 p=10.36 mult=1 $X=13850 $Y=0 $D=9
+M11 1 2 3 1 nshort L=0.18 W=5 m=1 r=27.7778 a=0.9 p=10.36 mult=1 $X=15040 $Y=0 $D=9
+M12 3 2 1 1 nshort L=0.18 W=5 m=1 r=27.7778 a=0.9 p=10.36 mult=1 $X=16620 $Y=0 $D=9
+M13 1 2 3 1 nshort L=0.18 W=5 m=1 r=27.7778 a=0.9 p=10.36 mult=1 $X=17810 $Y=0 $D=9
+M14 3 2 1 1 nshort L=0.18 W=5 m=1 r=27.7778 a=0.9 p=10.36 mult=1 $X=19390 $Y=0 $D=9
+M15 1 2 3 1 nshort L=0.18 W=5 m=1 r=27.7778 a=0.9 p=10.36 mult=1 $X=20580 $Y=0 $D=9
+M16 3 2 1 1 nshort L=0.18 W=5 m=1 r=27.7778 a=0.9 p=10.36 mult=1 $X=22160 $Y=0 $D=9
+M17 1 2 3 1 nshort L=0.18 W=5 m=1 r=27.7778 a=0.9 p=10.36 mult=1 $X=23350 $Y=0 $D=9
+M18 3 2 1 1 nshort L=0.18 W=5 m=1 r=27.7778 a=0.9 p=10.36 mult=1 $X=24930 $Y=0 $D=9
+M19 1 2 3 1 nshort L=0.18 W=5 m=1 r=27.7778 a=0.9 p=10.36 mult=1 $X=26120 $Y=0 $D=9
+M20 3 2 1 1 nshort L=0.18 W=5 m=1 r=27.7778 a=0.9 p=10.36 mult=1 $X=27700 $Y=0 $D=9
+M21 1 2 3 1 nshort L=0.18 W=5 m=1 r=27.7778 a=0.9 p=10.36 mult=1 $X=28890 $Y=0 $D=9
+M22 3 2 1 1 nshort L=0.18 W=5 m=1 r=27.7778 a=0.9 p=10.36 mult=1 $X=30470 $Y=0 $D=9
+M23 1 2 3 1 nshort L=0.18 W=5 m=1 r=27.7778 a=0.9 p=10.36 mult=1 $X=31660 $Y=0 $D=9
+M24 3 2 1 1 nshort L=0.18 W=5 m=1 r=27.7778 a=0.9 p=10.36 mult=1 $X=33240 $Y=0 $D=9
+M25 1 2 3 1 nshort L=0.18 W=5 m=1 r=27.7778 a=0.9 p=10.36 mult=1 $X=34430 $Y=0 $D=9
+M26 3 2 1 1 nshort L=0.18 W=5 m=1 r=27.7778 a=0.9 p=10.36 mult=1 $X=36010 $Y=0 $D=9
+M27 1 2 3 1 nshort L=0.18 W=5 m=1 r=27.7778 a=0.9 p=10.36 mult=1 $X=37200 $Y=0 $D=9
+M28 3 2 1 1 nshort L=0.18 W=5 m=1 r=27.7778 a=0.9 p=10.36 mult=1 $X=38780 $Y=0 $D=9
+M29 1 2 3 1 nshort L=0.18 W=5 m=1 r=27.7778 a=0.9 p=10.36 mult=1 $X=39970 $Y=0 $D=9
+M30 3 2 1 1 nshort L=0.18 W=5 m=1 r=27.7778 a=0.9 p=10.36 mult=1 $X=41550 $Y=0 $D=9
+M31 1 2 3 1 nshort L=0.18 W=5 m=1 r=27.7778 a=0.9 p=10.36 mult=1 $X=42740 $Y=0 $D=9
+M32 3 2 1 1 nshort L=0.18 W=5 m=1 r=27.7778 a=0.9 p=10.36 mult=1 $X=44320 $Y=0 $D=9
+M33 1 2 3 1 nshort L=0.18 W=5 m=1 r=27.7778 a=0.9 p=10.36 mult=1 $X=45510 $Y=0 $D=9
+M34 3 2 1 1 nshort L=0.18 W=5 m=1 r=27.7778 a=0.9 p=10.36 mult=1 $X=47090 $Y=0 $D=9
+M35 1 2 3 1 nshort L=0.18 W=5 m=1 r=27.7778 a=0.9 p=10.36 mult=1 $X=48280 $Y=0 $D=9
+M36 3 2 1 1 nshort L=0.18 W=5 m=1 r=27.7778 a=0.9 p=10.36 mult=1 $X=49860 $Y=0 $D=9
+M37 1 2 3 1 nshort L=0.18 W=5 m=1 r=27.7778 a=0.9 p=10.36 mult=1 $X=51050 $Y=0 $D=9
+X38 1 1 Dpar a=1.5 p=10.6 m=1 $[ndiode] $X=-1200 $Y=0 $D=175
+X39 1 1 Dpar a=1.5 p=10.6 m=1 $[ndiode] $X=52130 $Y=0 $D=175
+.ENDS
+***************************************
+.SUBCKT sky130_ef_io__vssd_lvc_clamped_pad VSSD VCCD VDDIO VSSIO VCCHIB VDDA VSWITCH VSSA 16 AMUXBUS_B 18 AMUXBUS_A 20 VSSIO_Q VDDIO_Q 23 24
+** N=24 EP=17 IP=816 FDC=501
+R0 VSSD 24 0.01 m=1 $[short] $X=6670 $Y=103310 $D=269
+M1 VSSD 8 VSSD VSSD nshort L=4 W=5 m=1 r=1.25 a=20 p=18 mult=1 $X=12975 $Y=75770 $D=9
+M2 VSSD 8 VSSD VSSD nshort L=8 W=5 m=1 r=0.625 a=40 p=26 mult=1 $X=17255 $Y=75770 $D=9
+M3 VSSD 8 VSSD VSSD nshort L=8 W=5 m=1 r=0.625 a=40 p=26 mult=1 $X=25535 $Y=75770 $D=9
+M4 VCCD 6 VSSD VSSD nshort L=0.18 W=5 m=1 r=27.7778 a=0.9 p=10.36 mult=1 $X=25815 $Y=128720 $D=9
+M5 VCCD 6 VSSD VSSD nshort L=0.18 W=7 m=1 r=38.8889 a=1.26 p=14.36 mult=1 $X=25815 $Y=136825 $D=9
+M6 VSSD 6 VCCD VSSD nshort L=0.18 W=5 m=1 r=27.7778 a=0.9 p=10.36 mult=1 $X=27165 $Y=128720 $D=9
+M7 VSSD 6 VCCD VSSD nshort L=0.18 W=7 m=1 r=38.8889 a=1.26 p=14.36 mult=1 $X=27165 $Y=136825 $D=9
+M8 VCCD 6 VSSD VSSD nshort L=0.18 W=5 m=1 r=27.7778 a=0.9 p=10.36 mult=1 $X=29995 $Y=128720 $D=9
+M9 VCCD 6 VSSD VSSD nshort L=0.18 W=7 m=1 r=38.8889 a=1.26 p=14.36 mult=1 $X=29995 $Y=136825 $D=9
+M10 VSSD 6 VCCD VSSD nshort L=0.18 W=5 m=1 r=27.7778 a=0.9 p=10.36 mult=1 $X=31345 $Y=128720 $D=9
+M11 VSSD 6 VCCD VSSD nshort L=0.18 W=7 m=1 r=38.8889 a=1.26 p=14.36 mult=1 $X=31345 $Y=136825 $D=9
+M12 VSSD 8 VSSD VSSD nshort L=8 W=5 m=1 r=0.625 a=40 p=26 mult=1 $X=33815 $Y=75770 $D=9
+M13 VCCD 6 VSSD VSSD nshort L=0.18 W=5 m=1 r=27.7778 a=0.9 p=10.36 mult=1 $X=34175 $Y=128720 $D=9
+M14 VCCD 6 VSSD VSSD nshort L=0.18 W=7 m=1 r=38.8889 a=1.26 p=14.36 mult=1 $X=34175 $Y=136825 $D=9
+M15 VSSD 6 VCCD VSSD nshort L=0.18 W=5 m=1 r=27.7778 a=0.9 p=10.36 mult=1 $X=35525 $Y=128720 $D=9
+M16 VSSD 6 VCCD VSSD nshort L=0.18 W=7 m=1 r=38.8889 a=1.26 p=14.36 mult=1 $X=35525 $Y=136825 $D=9
+M17 VCCD 6 VSSD VSSD nshort L=0.18 W=5 m=1 r=27.7778 a=0.9 p=10.36 mult=1 $X=38355 $Y=128720 $D=9
+M18 VCCD 6 VSSD VSSD nshort L=0.18 W=7 m=1 r=38.8889 a=1.26 p=14.36 mult=1 $X=38355 $Y=136825 $D=9
+M19 VSSD 6 VCCD VSSD nshort L=0.18 W=5 m=1 r=27.7778 a=0.9 p=10.36 mult=1 $X=39705 $Y=128720 $D=9
+M20 VSSD 6 VCCD VSSD nshort L=0.18 W=7 m=1 r=38.8889 a=1.26 p=14.36 mult=1 $X=39705 $Y=136825 $D=9
+M21 VSSD 8 VSSD VSSD nshort L=8 W=5 m=1 r=0.625 a=40 p=26 mult=1 $X=42095 $Y=75770 $D=9
+M22 VCCD 6 VSSD VSSD nshort L=0.18 W=5 m=1 r=27.7778 a=0.9 p=10.36 mult=1 $X=42535 $Y=128720 $D=9
+M23 VCCD 6 VSSD VSSD nshort L=0.18 W=7 m=1 r=38.8889 a=1.26 p=14.36 mult=1 $X=42535 $Y=136825 $D=9
+M24 VSSD 6 VCCD VSSD nshort L=0.18 W=5 m=1 r=27.7778 a=0.9 p=10.36 mult=1 $X=43885 $Y=128720 $D=9
+M25 VSSD 6 VCCD VSSD nshort L=0.18 W=7 m=1 r=38.8889 a=1.26 p=14.36 mult=1 $X=43885 $Y=136825 $D=9
+M26 VCCD 6 VSSD VSSD nshort L=0.18 W=5 m=1 r=27.7778 a=0.9 p=10.36 mult=1 $X=46715 $Y=128720 $D=9
+M27 VCCD 6 VSSD VSSD nshort L=0.18 W=7 m=1 r=38.8889 a=1.26 p=14.36 mult=1 $X=46715 $Y=136825 $D=9
+M28 VSSD 6 VCCD VSSD nshort L=0.18 W=5 m=1 r=27.7778 a=0.9 p=10.36 mult=1 $X=48065 $Y=128720 $D=9
+M29 VSSD 6 VCCD VSSD nshort L=0.18 W=7 m=1 r=38.8889 a=1.26 p=14.36 mult=1 $X=48065 $Y=136825 $D=9
+M30 VSSD 8 VSSD VSSD nshort L=8 W=5 m=1 r=0.625 a=40 p=26 mult=1 $X=50375 $Y=75770 $D=9
+M31 VCCD 6 VSSD VSSD nshort L=0.18 W=5 m=1 r=27.7778 a=0.9 p=10.36 mult=1 $X=50895 $Y=128720 $D=9
+M32 VCCD 6 VSSD VSSD nshort L=0.18 W=7 m=1 r=38.8889 a=1.26 p=14.36 mult=1 $X=50895 $Y=136825 $D=9
+M33 VSSD 6 VCCD VSSD nshort L=0.18 W=5 m=1 r=27.7778 a=0.9 p=10.36 mult=1 $X=52245 $Y=128720 $D=9
+M34 VSSD 6 VCCD VSSD nshort L=0.18 W=7 m=1 r=38.8889 a=1.26 p=14.36 mult=1 $X=52245 $Y=136825 $D=9
+M35 VCCD 6 VSSD VSSD nshort L=0.18 W=5 m=1 r=27.7778 a=0.9 p=10.36 mult=1 $X=55075 $Y=128720 $D=9
+M36 VCCD 6 VSSD VSSD nshort L=0.18 W=7 m=1 r=38.8889 a=1.26 p=14.36 mult=1 $X=55075 $Y=136825 $D=9
+M37 VSSD 6 VCCD VSSD nshort L=0.18 W=5 m=1 r=27.7778 a=0.9 p=10.36 mult=1 $X=56425 $Y=128720 $D=9
+M38 VSSD 6 VCCD VSSD nshort L=0.18 W=7 m=1 r=38.8889 a=1.26 p=14.36 mult=1 $X=56425 $Y=136825 $D=9
+M39 VSSD 8 VSSD VSSD nshort L=8 W=5 m=1 r=0.625 a=40 p=26 mult=1 $X=58655 $Y=75770 $D=9
+M40 VCCD 6 VSSD VSSD nshort L=0.18 W=5 m=1 r=27.7778 a=0.9 p=10.36 mult=1 $X=59255 $Y=128720 $D=9
+M41 VCCD 6 VSSD VSSD nshort L=0.18 W=7 m=1 r=38.8889 a=1.26 p=14.36 mult=1 $X=59255 $Y=136825 $D=9
+M42 VSSD 6 VCCD VSSD nshort L=0.18 W=5 m=1 r=27.7778 a=0.9 p=10.36 mult=1 $X=60605 $Y=128720 $D=9
+M43 VSSD 6 VCCD VSSD nshort L=0.18 W=7 m=1 r=38.8889 a=1.26 p=14.36 mult=1 $X=60605 $Y=136825 $D=9
+M44 VCCD 6 VSSD VSSD nshort L=0.18 W=5 m=1 r=27.7778 a=0.9 p=10.36 mult=1 $X=63435 $Y=128720 $D=9
+M45 VCCD 6 VSSD VSSD nshort L=0.18 W=7 m=1 r=38.8889 a=1.26 p=14.36 mult=1 $X=63435 $Y=136825 $D=9
+M46 VSSD 6 VCCD VSSD nshort L=0.18 W=5 m=1 r=27.7778 a=0.9 p=10.36 mult=1 $X=64785 $Y=128720 $D=9
+M47 VSSD 6 VCCD VSSD nshort L=0.18 W=7 m=1 r=38.8889 a=1.26 p=14.36 mult=1 $X=64785 $Y=136825 $D=9
+X48 VSSD VDDIO condiode a=1e-06 p=0.004 m=1 ahftempperim=0.004 $X=40185 $Y=114755 $D=150
+X49 VSSD VDDIO condiode a=1e-06 p=0.004 m=1 ahftempperim=0.004 $X=40605 $Y=34895 $D=150
+X50 VSSD VDDIO condiode a=1e-06 p=0.004 m=1 ahftempperim=0.004 $X=40640 $Y=196045 $D=150
+R51 VCCD 4 L=1950 W=0.33 m=1 $[mrp1] $X=240 $Y=19165 $D=250
+R52 9 5 L=300 W=0.33 m=1 $[mrp1] $X=10045 $Y=19145 $D=250
+R53 7 5 L=720 W=0.33 m=1 $[mrp1] $X=10915 $Y=84295 $D=250
+R54 7 8 L=200 W=0.33 m=1 $[mrp1] $X=57065 $Y=1460 $D=250
+R55 9 VCCD L=900 W=0.33 m=1 $[mrp1] $X=70635 $Y=18095 $D=250
+D56 VSSD VSSIO pdiode AREA=22.5 PJ=33 m=1 ahftempperim=33 $X=19685 $Y=2345 $D=166
+D57 VSSD VSSIO pdiode AREA=22.5 PJ=33 m=1 ahftempperim=33 $X=23805 $Y=2345 $D=166
+D58 VSSD VSSIO pdiode AREA=22.5 PJ=33 m=1 ahftempperim=33 $X=27925 $Y=2345 $D=166
+D59 VSSD VSSIO pdiode AREA=22.5 PJ=33 m=1 ahftempperim=33 $X=32045 $Y=2345 $D=166
+D60 VSSIO VSSD pdiode AREA=22.5 PJ=33 m=1 ahftempperim=33 $X=39675 $Y=2345 $D=166
+D61 VSSIO VSSD pdiode AREA=22.5 PJ=33 m=1 ahftempperim=33 $X=43795 $Y=2345 $D=166
+D62 VSSIO VSSD pdiode AREA=22.5 PJ=33 m=1 ahftempperim=33 $X=47915 $Y=2345 $D=166
+D63 VSSIO VSSD pdiode AREA=22.5 PJ=33 m=1 ahftempperim=33 $X=52035 $Y=2345 $D=166
+X64 VSSD VSSD Dpar a=1.5 p=10.6 m=1 $[ndiode] $X=23990 $Y=128720 $D=175
+X65 VSSD VSSD Dpar a=2.1 p=14.6 m=1 $[ndiode] $X=23990 $Y=136825 $D=175
+X66 VSSD VSSD Dpar a=1.5 p=10.6 m=1 $[ndiode] $X=66490 $Y=128720 $D=175
+X67 VSSD VSSD Dpar a=2.1 p=14.6 m=1 $[ndiode] $X=66490 $Y=136825 $D=175
+X68 VSSD VDDIO Dpar a=5703.29 p=340.89 m=1 $[dnwdiode_pw] $X=10870 $Y=83450 $D=188
+X69 VSSD VDDIO Dpar a=4115.42 p=264.63 m=1 $[dnwdiode_pw] $X=10870 $Y=24940 $D=188
+X70 VSSD VDDIO Dpar a=10516.3 p=468.87 m=1 $[dnwdiode_psub] $X=9500 $Y=23570 $D=187
+X71 VSSD VCCD Dpar a=108.41 p=46.58 m=1 $[nwdiode] $X=1015 $Y=650 $D=185
+X72 VSSD VCCD Dpar a=108.41 p=46.58 m=1 $[nwdiode] $X=67280 $Y=710 $D=185
+X73 VCCD 4 6 sky130_fd_pr__pfet_01v8__example_55959141808687 $T=2070 1985 0 0 $X=1610 $Y=1805
+X74 VCCD 4 6 sky130_fd_pr__pfet_01v8__example_55959141808687 $T=2070 9635 0 0 $X=1610 $Y=9455
+X75 VCCD 8 10 sky130_fd_pr__pfet_01v8__example_55959141808687 $T=68335 2045 0 0 $X=67875 $Y=1865
+X76 VCCD 8 10 sky130_fd_pr__pfet_01v8__example_55959141808687 $T=68335 9695 0 0 $X=67875 $Y=9515
+X296 VSSD VSSIO sky130_fd_io__gnd2gnd_sub_dnwl $T=16525 18445 1 0 $X=16525 $Y=1245
+X297 VSSD VSSD sky130_fd_io__gnd2gnd_sub_dnwl $T=56695 18445 0 180 $X=36515 $Y=1245
+X298 VSSD 8 sky130_fd_pr__nfet_01v8__example_55959141808699 $T=25535 82770 0 0 $X=25140 $Y=82610
+X299 VSSD 8 sky130_fd_pr__nfet_01v8__example_55959141808699 $T=25535 91265 0 0 $X=25140 $Y=91105
+X300 VSSD 4 sky130_fd_pr__nfet_01v8__example_55959141808699 $T=25535 101370 0 0 $X=25140 $Y=101210
+X301 VSSD 4 sky130_fd_pr__nfet_01v8__example_55959141808699 $T=25535 109865 0 0 $X=25140 $Y=109705
+X302 VSSD 4 sky130_fd_pr__nfet_01v8__example_55959141808699 $T=25535 125690 1 0 $X=25140 $Y=118530
+X303 VSSD 8 10 sky130_fd_pr__nfet_01v8__example_55959141808696 $T=24670 82770 0 0 $X=23860 $Y=82610
+X304 VSSD 8 10 sky130_fd_pr__nfet_01v8__example_55959141808696 $T=24670 91265 0 0 $X=23860 $Y=91105
+X305 VSSD 4 6 sky130_fd_pr__nfet_01v8__example_55959141808696 $T=24670 101370 0 0 $X=23860 $Y=101210
+X306 VSSD 4 6 sky130_fd_pr__nfet_01v8__example_55959141808696 $T=24670 109865 0 0 $X=23860 $Y=109705
+X307 VSSD 4 6 sky130_fd_pr__nfet_01v8__example_55959141808696 $T=24670 125690 1 0 $X=23860 $Y=118530
+X308 VSSD 6 VCCD sky130_fd_pr__nfet_01v8__example_55959141808701 $T=17130 176825 0 0 $X=15800 $Y=176665
+X309 VSSD 6 VCCD sky130_fd_pr__nfet_01v8__example_55959141808703 $T=17455 146825 0 0 $X=15500 $Y=146665
+X310 VSSD 6 VCCD sky130_fd_pr__nfet_01v8__example_55959141808703 $T=17455 156825 0 0 $X=15500 $Y=156665
+X311 VSSD 6 VCCD sky130_fd_pr__nfet_01v8__example_55959141808703 $T=17455 166825 0 0 $X=15500 $Y=166665
+X312 VSSD 10 VCCD sky130_fd_pr__nfet_01v8__example_55959141808705 $T=14360 26825 0 0 $X=13030 $Y=26665
+X313 VSSD 10 VCCD sky130_fd_pr__nfet_01v8__example_55959141808705 $T=14360 36825 0 0 $X=13030 $Y=36665
+X314 VSSD 10 VCCD sky130_fd_pr__nfet_01v8__example_55959141808705 $T=14360 46825 0 0 $X=13030 $Y=46665
+X315 VSSD 10 VCCD sky130_fd_pr__nfet_01v8__example_55959141808705 $T=14360 56825 0 0 $X=13030 $Y=56665
+X316 VSSD 6 VCCD sky130_fd_pr__nfet_01v8__example_55959141808705 $T=14360 186825 0 0 $X=13030 $Y=186665
+X317 VSSD 10 VCCD sky130_fd_pr__nfet_01v8__example_55959141808693 $T=14360 66825 0 0 $X=13030 $Y=66665
+*.CALIBRE WARNING OPEN Open circuit(s) detected by extraction in this cell. See extraction report for details.
+.ENDS
+***************************************

@@ -1,0 +1,52 @@
+//
+//  Rule file generated on Thu Jun 10 15:02:49 EDT 2021
+//     by Calibre Interactive - LVS (v2018.4_34.26)
+//
+//      *** PLEASE DO NOT MODIFY THIS FILE ***
+//
+//
+
+LAYOUT PATH  "/usr/local/google/home/tansell/work/openflow-drc-tests/torture_tests/sky130_ef_io__vdda_hvc_clamped_pad/sky130_ef_io__vdda_hvc_clamped_pad.gds"
+LAYOUT PRIMARY "sky130_ef_io__vdda_hvc_clamped_pad"
+LAYOUT SYSTEM GDSII
+
+SOURCE PATH "/usr/local/google/home/tansell/work/openflow-drc-tests/torture_tests/sky130_ef_io__vdda_hvc_clamped_pad/sky130_ef_io__vdda_hvc_clamped_pad.cdl"
+SOURCE PRIMARY "sky130_ef_io__vdda_hvc_clamped_pad"
+SOURCE SYSTEM SPICE
+
+MASK SVDB DIRECTORY "svdb" QUERY XRC CCI NOPINLOC IXF NXF SLPH
+
+LVS REPORT "sky130_ef_io__vdda_hvc_clamped_pad.lvs.report"
+
+LVS REPORT OPTION NONE
+LVS FILTER UNUSED OPTION NONE SOURCE
+LVS FILTER UNUSED OPTION NONE LAYOUT
+LVS REPORT MAXIMUM 50
+
+LVS RECOGNIZE GATES ALL
+
+
+LVS ABORT ON SOFTCHK NO
+LVS ABORT ON SUPPLY ERROR YES
+LVS IGNORE PORTS NO
+LVS SHOW SEED PROMOTIONS NO
+LVS SHOW SEED PROMOTIONS MAXIMUM 50
+
+LVS ISOLATE SHORTS NO
+
+
+VIRTUAL CONNECT COLON NO
+VIRTUAL CONNECT REPORT NO
+
+LVS EXECUTE ERC YES
+ERC RESULTS DATABASE "sky130_ef_io__vdda_hvc_clamped_pad.erc.results"
+ERC SUMMARY REPORT "sky130_ef_io__vdda_hvc_clamped_pad.erc.summary" REPLACE HIER
+ERC CELL NAME YES CELL SPACE XFORM
+ERC MAXIMUM RESULTS 1000
+ERC MAXIMUM VERTEX 4096
+
+DRC ICSTATION YES
+
+
+INCLUDE "/usr/local/google/home/tansell/work/openflow-drc-tests/runsets/local_lvs_opts"
+

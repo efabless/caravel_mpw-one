@@ -1,0 +1,2931 @@
+* SPICE NETLIST
+***************************************
+
+.SUBCKT drainOnly g s d b
+.ENDS
+***************************************
+.SUBCKT condiode pin0 pin1
+.ENDS
+***************************************
+.SUBCKT nvhv pin0 pin1 pin2 pin3
+.ENDS
+***************************************
+.SUBCKT pvhv pin0 pin1 pin2 pin3
+.ENDS
+***************************************
+.SUBCKT xcnwvc pin0 pin1 pin2
+.ENDS
+***************************************
+.SUBCKT xcnwvc2 pin0 pin1 pin2
+.ENDS
+***************************************
+.SUBCKT xchvnwc pin0 pin1 pin2
+.ENDS
+***************************************
+.SUBCKT Dpar d0 d1
+.ENDS
+***************************************
+.SUBCKT xcmvpp pin0 pin1 pin2
+.ENDS
+***************************************
+.SUBCKT xcmvpp_2 pin0 pin1 pin2
+.ENDS
+***************************************
+.SUBCKT xcmvpp2_nhvnative10x4 pin0 pin1 pin2
+.ENDS
+***************************************
+.SUBCKT xcmvpp2_phv5x4 pin0 pin1 pin2
+.ENDS
+***************************************
+.SUBCKT xcmvpp_hd5_atlas_fingercap2_l5 pin0 pin1 pin2
+.ENDS
+***************************************
+.SUBCKT xcmvpp_hd5_atlas_wafflecap2 pin0 pin1 pin2
+.ENDS
+***************************************
+.SUBCKT xcmvpp_hd5_atlas_wafflecap1 pin0 pin1 pin2
+.ENDS
+***************************************
+.SUBCKT xcmvpp_hd5_atlas_fingercap_l40 pin0 pin1 pin2
+.ENDS
+***************************************
+.SUBCKT xcmvpp_hd5_atlas_fingercap_l20 pin0 pin1 pin2
+.ENDS
+***************************************
+.SUBCKT xcmvpp_hd5_atlas_fingercap_l10 pin0 pin1 pin2
+.ENDS
+***************************************
+.SUBCKT xcmvpp_hd5_atlas_fingercap_l5 pin0 pin1 pin2
+.ENDS
+***************************************
+.SUBCKT xcmvpp_hd5_5x2_met5pullin pin0 pin1 pin2
+.ENDS
+***************************************
+.SUBCKT xcmvpp_hd5_5x2 pin0 pin1 pin2
+.ENDS
+***************************************
+.SUBCKT xcmvpp_hd5_5x1_met5pullin pin0 pin1 pin2
+.ENDS
+***************************************
+.SUBCKT xcmvpp_hd5_5x1 pin0 pin1 pin2
+.ENDS
+***************************************
+.SUBCKT xcmvpp_hd5_4x2 pin0 pin1 pin2
+.ENDS
+***************************************
+.SUBCKT xcmvpp_hd5_4x1 pin0 pin1 pin2
+.ENDS
+***************************************
+.SUBCKT xcmvpp_hd5_3x2 pin0 pin1 pin2
+.ENDS
+***************************************
+.SUBCKT xcmvpp_hd5_3x1 pin0 pin1 pin2
+.ENDS
+***************************************
+.SUBCKT xcmvpp_hd5_2x2 pin0 pin1 pin2
+.ENDS
+***************************************
+.SUBCKT xcmvpp_hd5_2x1 pin0 pin1 pin2
+.ENDS
+***************************************
+.SUBCKT xcmvpp_hd5_1x2 pin0 pin1 pin2
+.ENDS
+***************************************
+.SUBCKT xcmvpp_hd5_1x1 pin0 pin1 pin2
+.ENDS
+***************************************
+.SUBCKT xcmvppx4_2xnhvnative10x4 pin0 pin1 pin2 pin3
+.ENDS
+***************************************
+.SUBCKT xcmvpp11p5x11p7_polym50p4shield pin0 pin1 pin2 pin3
+.ENDS
+***************************************
+.SUBCKT xcmvpp4p4x4p6_m3_lim5shield pin0 pin1 pin2 pin3
+.ENDS
+***************************************
+.SUBCKT xcmvpp11p5x11p7_m3_lim5shield pin0 pin1 pin2 pin3
+.ENDS
+***************************************
+.SUBCKT xcmvpp8p6x7p9_m3_lim5shield pin0 pin1 pin2 pin3
+.ENDS
+***************************************
+.SUBCKT xcmvpp11p5x11p7_lim5shield pin0 pin1 pin2 pin3
+.ENDS
+***************************************
+.SUBCKT xcmvpp11p5x11p7_polym5shield pin0 pin1 pin2 pin3
+.ENDS
+***************************************
+.SUBCKT xcmvpp11p5x11p7_m5shield pin0 pin1 pin2 pin3
+.ENDS
+***************************************
+.SUBCKT xcmvpp6p8x6p1_lim4shield pin0 pin1 pin2 pin3
+.ENDS
+***************************************
+.SUBCKT xcmvpp6p8x6p1_polym4shield pin0 pin1 pin2 pin3
+.ENDS
+***************************************
+.SUBCKT xcmvpp11p5x11p7_polym4shield pin0 pin1 pin2 pin3
+.ENDS
+***************************************
+.SUBCKT xcmvpp11p5x11p7_m4shield pin0 pin1 pin2 pin3
+.ENDS
+***************************************
+.SUBCKT xcmvpp1p8x1p8 pin0 pin1 pin2
+.ENDS
+***************************************
+.SUBCKT xcmvpp4p4x4p6_m3_lishield pin0 pin1 pin2
+.ENDS
+***************************************
+.SUBCKT xcmvpp8p6x7p9_m3_lishield pin0 pin1 pin2
+.ENDS
+***************************************
+.SUBCKT xcmvpp11p5x11p7_m3_lishield pin0 pin1 pin2
+.ENDS
+***************************************
+.SUBCKT xcmvpp11p5x11p7_m3shield c0 c1 b term4
+.ENDS
+***************************************
+.SUBCKT xcmvpp8p6x7p9_m3shield c0 c1 b term4
+.ENDS
+***************************************
+.SUBCKT xcmvpp4p4x4p6_m3shield c0 c1 b term4
+.ENDS
+***************************************
+.SUBCKT xcmvpp1p8x1p8_m3shield c0 c1 b term4
+.ENDS
+***************************************
+.SUBCKT xcmvpp11p5x11p7_m1m4m5shield pin0 pin1 pin2 pin3
+.ENDS
+***************************************
+.SUBCKT xcmvpp11p5x11p7_m1m4 pin0 pin1 pin2
+.ENDS
+***************************************
+.SUBCKT xcmvpp11p5x11p7_m1m2 pin0 pin1 pin2
+.ENDS
+***************************************
+.SUBCKT xcmvpp4p4x4p6_m1m2 pin0 pin1 pin2
+.ENDS
+***************************************
+.SUBCKT xcmvpp5 pin0 pin1 pin2
+.ENDS
+***************************************
+.SUBCKT xcmvpp4 pin0 pin1 pin2
+.ENDS
+***************************************
+.SUBCKT xcmvpp3 pin0 pin1 pin2
+.ENDS
+***************************************
+.SUBCKT balun pin0 pin1 pin2 pin3 pin4 pin5
+.ENDS
+***************************************
+.SUBCKT ind4 pin0 pin1 pin2 pin3
+.ENDS
+***************************************
+.SUBCKT Probe probe conductor
+.ENDS
+***************************************
+.SUBCKT sky130_fd_pr__nfet_01v8__example_55959141808592 1 2 3 4
+** N=4 EP=4 IP=0 FDC=1
+M0 4 2 3 1 nhv L=0.5 W=0.42 m=1 r=0.84 a=0.21 p=1.84 mult=1 $X=0 $Y=0 $D=49
+.ENDS
+***************************************
+.SUBCKT sky130_fd_pr__hvdfl1sd2__example_55959141808306
+** N=2 EP=0 IP=0 FDC=0
+.ENDS
+***************************************
+.SUBCKT sky130_fd_pr__nfet_01v8__example_55959141808593 1 2 3 4
+** N=4 EP=4 IP=4 FDC=1
+M0 4 2 3 1 nhv L=0.5 W=3 m=1 r=6 a=1.5 p=7 mult=1 $X=0 $Y=0 $D=49
+.ENDS
+***************************************
+.SUBCKT sky130_fd_pr__hvdfl1sd2__example_55959141808378
+** N=2 EP=0 IP=0 FDC=0
+.ENDS
+***************************************
+.SUBCKT ICV_1
+** N=2 EP=0 IP=4 FDC=0
+.ENDS
+***************************************
+.SUBCKT sky130_fd_io__res75only_small PAD ROUT
+** N=3 EP=2 IP=0 FDC=1
+R0 PAD ROUT L=3.15 W=2 m=1 $[mrp1] $X=630 $Y=10 $D=250
+.ENDS
+***************************************
+.SUBCKT sky130_fd_pr__hvdfl1sd2__example_55959141808559
+** N=2 EP=0 IP=0 FDC=0
+.ENDS
+***************************************
+.SUBCKT ICV_2
+** N=2 EP=0 IP=4 FDC=0
+.ENDS
+***************************************
+.SUBCKT sky130_fd_pr__hvdfm1sd2__example_55959141808251
+** N=2 EP=0 IP=0 FDC=0
+.ENDS
+***************************************
+.SUBCKT sky130_fd_pr__dfm1sd2__example_55959141808561
+** N=2 EP=0 IP=0 FDC=0
+.ENDS
+***************************************
+.SUBCKT sky130_fd_pr__nfet_01v8__example_55959141808560 1 2 3 4 5
+** N=5 EP=5 IP=16 FDC=7
+M0 5 2 3 1 nhv L=0.5 W=7 m=1 r=14 a=3.5 p=15 mult=1 $X=0 $Y=0 $D=49
+M1 3 2 5 1 nhv L=0.5 W=7 m=1 r=14 a=3.5 p=15 mult=1 $X=780 $Y=0 $D=49
+M2 5 2 3 1 nhv L=0.5 W=7 m=1 r=14 a=3.5 p=15 mult=1 $X=1630 $Y=0 $D=49
+M3 4 2 5 1 nhv L=0.5 W=7 m=1 r=14 a=3.5 p=15 mult=1 $X=2410 $Y=0 $D=49
+M4 5 2 4 1 nhv L=0.5 W=7 m=1 r=14 a=3.5 p=15 mult=1 $X=3260 $Y=0 $D=49
+M5 4 2 5 1 nhv L=0.5 W=7 m=1 r=14 a=3.5 p=15 mult=1 $X=4040 $Y=0 $D=49
+M6 5 2 4 1 nhv L=0.5 W=7 m=1 r=14 a=3.5 p=15 mult=1 $X=4890 $Y=0 $D=49
+.ENDS
+***************************************
+.SUBCKT sky130_fd_pr__hvdfm1sd2__example_55959141808563
+** N=3 EP=0 IP=0 FDC=0
+*.SEEDPROM
+.ENDS
+***************************************
+.SUBCKT ICV_3
+** N=4 EP=0 IP=6 FDC=0
+*.SEEDPROM
+.ENDS
+***************************************
+.SUBCKT sky130_fd_io__amux_switch_1v2b VSSD 3 6 VDDIO VDDA PG_PAD_VDDIOQ_H_N PG_AMX_VDDA_H_N NG_AMX_VPMP_H NG_PAD_VPMP_H PAD_HV_P0 PAD_HV_P1 AMUXBUS_HV PAD_HV_N2 PAD_HV_N3 PAD_HV_N0 PAD_HV_N1
+** N=19 EP=16 IP=54 FDC=47
+*.SEEDPROM
+M0 PAD_HV_N2 NG_PAD_VPMP_H 6 6 nhv L=0.5 W=7 m=1 r=14 a=3.5 p=15 mult=1 $X=42660 $Y=2715 $D=49
+M1 6 NG_PAD_VPMP_H PAD_HV_N2 6 nhv L=0.5 W=7 m=1 r=14 a=3.5 p=15 mult=1 $X=43440 $Y=2715 $D=49
+M2 PAD_HV_N2 NG_PAD_VPMP_H 6 6 nhv L=0.5 W=7 m=1 r=14 a=3.5 p=15 mult=1 $X=44290 $Y=2715 $D=49
+M3 6 NG_PAD_VPMP_H PAD_HV_N2 6 nhv L=0.5 W=7 m=1 r=14 a=3.5 p=15 mult=1 $X=45070 $Y=2715 $D=49
+M4 PAD_HV_N3 NG_PAD_VPMP_H 6 6 nhv L=0.5 W=7 m=1 r=14 a=3.5 p=15 mult=1 $X=45920 $Y=2715 $D=49
+M5 6 NG_PAD_VPMP_H PAD_HV_N3 6 nhv L=0.5 W=7 m=1 r=14 a=3.5 p=15 mult=1 $X=46700 $Y=2715 $D=49
+M6 PAD_HV_N3 NG_PAD_VPMP_H 6 6 nhv L=0.5 W=7 m=1 r=14 a=3.5 p=15 mult=1 $X=47550 $Y=2715 $D=49
+M7 6 NG_PAD_VPMP_H PAD_HV_N3 6 nhv L=0.5 W=7 m=1 r=14 a=3.5 p=15 mult=1 $X=48330 $Y=2715 $D=49
+M8 3 PG_PAD_VDDIOQ_H_N PAD_HV_P0 VDDIO phv L=0.5 W=7 m=1 r=14 a=3.5 p=15 mult=1 $X=2070 $Y=2375 $D=109
+M9 PAD_HV_P0 PG_PAD_VDDIOQ_H_N 3 VDDIO phv L=0.5 W=7 m=1 r=14 a=3.5 p=15 mult=1 $X=2850 $Y=2375 $D=109
+M10 3 PG_PAD_VDDIOQ_H_N PAD_HV_P0 VDDIO phv L=0.5 W=7 m=1 r=14 a=3.5 p=15 mult=1 $X=3700 $Y=2375 $D=109
+M11 PAD_HV_P1 PG_PAD_VDDIOQ_H_N 3 VDDIO phv L=0.5 W=7 m=1 r=14 a=3.5 p=15 mult=1 $X=4480 $Y=2375 $D=109
+M12 3 PG_PAD_VDDIOQ_H_N PAD_HV_P1 VDDIO phv L=0.5 W=7 m=1 r=14 a=3.5 p=15 mult=1 $X=5330 $Y=2375 $D=109
+M13 PAD_HV_P1 PG_PAD_VDDIOQ_H_N 3 VDDIO phv L=0.5 W=7 m=1 r=14 a=3.5 p=15 mult=1 $X=6110 $Y=2375 $D=109
+M14 3 PG_AMX_VDDA_H_N AMUXBUS_HV VDDA phv L=0.5 W=7 m=1 r=14 a=3.5 p=15 mult=1 $X=11455 $Y=2375 $D=109
+M15 AMUXBUS_HV PG_AMX_VDDA_H_N 3 VDDA phv L=0.5 W=7 m=1 r=14 a=3.5 p=15 mult=1 $X=12305 $Y=2375 $D=109
+M16 3 PG_AMX_VDDA_H_N AMUXBUS_HV VDDA phv L=0.5 W=7 m=1 r=14 a=3.5 p=15 mult=1 $X=13085 $Y=2375 $D=109
+M17 AMUXBUS_HV PG_AMX_VDDA_H_N 3 VDDA phv L=0.5 W=7 m=1 r=14 a=3.5 p=15 mult=1 $X=13935 $Y=2375 $D=109
+M18 3 PG_AMX_VDDA_H_N AMUXBUS_HV VDDA phv L=0.5 W=7 m=1 r=14 a=3.5 p=15 mult=1 $X=14715 $Y=2375 $D=109
+X19 3 VDDA condiode a=1e-06 p=0.004 m=1 ahftempperim=0.004 $X=25715 $Y=10775 $D=150
+X20 6 VDDA condiode a=1e-06 p=0.004 m=1 ahftempperim=0.004 $X=40885 $Y=10825 $D=150
+X21 VSSD VDDA Dpar a=0.10455 p=0 m=1 $[nwdiode] $X=34850 $Y=-365 $D=183
+X22 3 VDDA Dpar a=141.419 p=48.37 m=1 $[dnwdiode_pw] $X=19595 $Y=1065 $D=188
+X23 6 VDDA Dpar a=144.747 p=49.61 m=1 $[dnwdiode_pw] $X=35050 $Y=1575 $D=188
+X24 VSSD VDDIO Dpar a=64.774 p=32.54 m=1 $[nwdiode] $X=850 $Y=1470 $D=185
+X25 VSSD VDDA Dpar a=66.495 p=33.14 m=1 $[nwdiode] $X=9925 $Y=1120 $D=185
+X31 3 NG_AMX_VPMP_H AMUXBUS_HV AMUXBUS_HV 3 sky130_fd_pr__nfet_01v8__example_55959141808560 $T=26270 2375 1 180 $X=20420 $Y=2195
+X32 3 NG_PAD_VPMP_H PAD_HV_N0 PAD_HV_N1 3 sky130_fd_pr__nfet_01v8__example_55959141808560 $T=27235 2375 0 0 $X=26740 $Y=2195
+X33 6 NG_AMX_VPMP_H 6 6 AMUXBUS_HV sky130_fd_pr__nfet_01v8__example_55959141808560 $T=41695 2715 1 180 $X=35845 $Y=2535
+.ENDS
+***************************************
+.SUBCKT sky130_fd_pr__hvdfl1sd2__example_55959141808178
+** N=3 EP=0 IP=0 FDC=0
+*.SEEDPROM
+.ENDS
+***************************************
+.SUBCKT sky130_fd_pr__hvdfl1sd__example_55959141808278
+** N=2 EP=0 IP=0 FDC=0
+.ENDS
+***************************************
+.SUBCKT sky130_fd_pr__hvdfl1sd2__example_55959141808462
+** N=2 EP=0 IP=0 FDC=0
+.ENDS
+***************************************
+.SUBCKT sky130_fd_pr__nfet_01v8__example_55959141808583 1 2 3 4
+** N=4 EP=4 IP=6 FDC=2
+M0 4 2 3 1 nhv L=0.5 W=1.5 m=1 r=3 a=0.75 p=4 mult=1 $X=0 $Y=0 $D=49
+M1 3 2 4 1 nhv L=0.5 W=1.5 m=1 r=3 a=0.75 p=4 mult=1 $X=780 $Y=0 $D=49
+.ENDS
+***************************************
+.SUBCKT sky130_fd_pr__nfet_01v8__example_55959141808498 1 2 3
+** N=3 EP=3 IP=0 FDC=2
+M0 3 2 1 1 nlowvt L=0.15 W=1 m=1 r=6.66667 a=0.15 p=2.3 mult=1 $X=0 $Y=0 $D=19
+M1 1 2 3 1 nlowvt L=0.15 W=1 m=1 r=6.66667 a=0.15 p=2.3 mult=1 $X=430 $Y=0 $D=19
+.ENDS
+***************************************
+.SUBCKT sky130_fd_pr__pfet_01v8__example_55959141808580 1 2 3
+** N=3 EP=3 IP=0 FDC=1
+M0 3 2 1 1 phv L=0.6 W=0.7 m=1 r=1.16667 a=0.42 p=2.6 mult=1 $X=0 $Y=0 $D=109
+.ENDS
+***************************************
+.SUBCKT sky130_fd_io__gpiov2_amux_drvr_ls VGND VPWR_HV IN_B RST_H IN HLD_H_N OUT_H VPWR_LV OUT_H_N 10 11
+** N=13 EP=11 IP=26 FDC=16
+M0 OUT_H_N HLD_H_N 12 VGND nhv L=0.5 W=1.5 m=1 r=3 a=0.75 p=4 mult=1 $X=4650 $Y=2920 $D=49
+M1 12 HLD_H_N OUT_H_N VGND nhv L=0.5 W=1.5 m=1 r=3 a=0.75 p=4 mult=1 $X=5430 $Y=2920 $D=49
+M2 13 VPWR_LV 10 VGND nhvnative L=0.9 W=1 m=1 r=1.11111 a=0.9 p=3.8 mult=1 $X=3690 $Y=790 $D=59
+M3 10 VPWR_LV 13 VGND nhvnative L=0.9 W=1 m=1 r=1.11111 a=0.9 p=3.8 mult=1 $X=4870 $Y=790 $D=59
+M4 11 VPWR_LV 12 VGND nhvnative L=0.9 W=1 m=1 r=1.11111 a=0.9 p=3.8 mult=1 $X=6640 $Y=790 $D=59
+M5 12 VPWR_LV 11 VGND nhvnative L=0.9 W=1 m=1 r=1.11111 a=0.9 p=3.8 mult=1 $X=7820 $Y=790 $D=59
+X9 VGND RST_H OUT_H VGND sky130_fd_pr__nfet_01v8__example_55959141808583 $T=2190 4420 0 180 $X=465 $Y=2740
+X10 VGND HLD_H_N OUT_H 13 sky130_fd_pr__nfet_01v8__example_55959141808583 $T=3750 4420 0 180 $X=2025 $Y=2740
+X11 VGND IN_B 10 sky130_fd_pr__nfet_01v8__example_55959141808498 $T=1560 790 1 180 $X=535 $Y=610
+X12 VGND IN 11 sky130_fd_pr__nfet_01v8__example_55959141808498 $T=2420 790 1 180 $X=1395 $Y=610
+X13 VPWR_HV OUT_H OUT_H_N sky130_fd_pr__pfet_01v8__example_55959141808580 $T=7825 4820 0 180 $X=6630 $Y=3790
+X14 VPWR_HV OUT_H_N OUT_H sky130_fd_pr__pfet_01v8__example_55959141808580 $T=8105 4820 1 0 $X=7510 $Y=3790
+.ENDS
+***************************************
+.SUBCKT sky130_fd_pr__model__pfet_highvoltage__example_55959141808371 2 3 4
+** N=4 EP=3 IP=0 FDC=1
+M0 4 3 2 2 phv L=0.6 W=1 m=1 r=1.66667 a=0.6 p=3.2 mult=1 $X=0 $Y=0 $D=109
+.ENDS
+***************************************
+.SUBCKT sky130_fd_pr__model__nfet_highvoltage__example_55959141808369 1 2 3
+** N=3 EP=3 IP=0 FDC=1
+M0 3 2 1 1 nhv L=0.6 W=0.7 m=1 r=1.16667 a=0.42 p=2.6 mult=1 $X=0 $Y=0 $D=49
+.ENDS
+***************************************
+.SUBCKT sky130_fd_io__hvsbt_inv_x1 VGND VPWR 3 OUT
+** N=4 EP=4 IP=11 FDC=3
+X0 VPWR 3 OUT sky130_fd_pr__model__pfet_highvoltage__example_55959141808371 $T=595 3410 1 0 $X=0 $Y=2080
+X1 VPWR 3 OUT sky130_fd_pr__model__pfet_highvoltage__example_55959141808371 $T=595 3750 0 0 $X=0 $Y=3420
+X2 VGND 3 OUT sky130_fd_pr__model__nfet_highvoltage__example_55959141808369 $T=595 1420 1 0 $X=150 $Y=540
+.ENDS
+***************************************
+.SUBCKT sky130_fd_pr__model__pfet_highvoltage__example_55959141808421 2 3 4 5 6
+** N=6 EP=5 IP=0 FDC=2
+M0 5 3 2 2 phv L=0.6 W=1 m=1 r=1.66667 a=0.6 p=3.2 mult=1 $X=0 $Y=0 $D=109
+M1 6 4 5 2 phv L=0.6 W=1 m=1 r=1.66667 a=0.6 p=3.2 mult=1 $X=880 $Y=0 $D=109
+.ENDS
+***************************************
+.SUBCKT sky130_fd_io__hvsbt_inv_x2 VGND VPWR IN OUT
+** N=4 EP=4 IP=12 FDC=6
+M0 OUT IN VGND VGND nhv L=0.6 W=0.7 m=1 r=1.16667 a=0.42 p=2.6 mult=1 $X=595 $Y=720 $D=49
+M1 VGND IN OUT VGND nhv L=0.6 W=0.7 m=1 r=1.16667 a=0.42 p=2.6 mult=1 $X=1475 $Y=720 $D=49
+X2 VPWR IN IN OUT VPWR sky130_fd_pr__model__pfet_highvoltage__example_55959141808421 $T=595 3410 1 0 $X=0 $Y=2080
+X3 VPWR IN IN OUT VPWR sky130_fd_pr__model__pfet_highvoltage__example_55959141808421 $T=595 3750 0 0 $X=0 $Y=3420
+.ENDS
+***************************************
+.SUBCKT sky130_fd_io__gpiov2_amx_inv4 VSSA VDA A Y
+** N=4 EP=4 IP=0 FDC=4
+M0 Y A VSSA VSSA nhv L=0.6 W=0.42 m=1 r=0.7 a=0.252 p=2.04 mult=1 $X=595 $Y=180 $D=49
+M1 VSSA A Y VSSA nhv L=0.6 W=0.42 m=1 r=0.7 a=0.252 p=2.04 mult=1 $X=1475 $Y=180 $D=49
+M2 Y A VDA VDA phv L=0.6 W=1 m=1 r=1.66667 a=0.6 p=3.2 mult=1 $X=595 $Y=1750 $D=109
+M3 VDA A Y VDA phv L=0.6 W=1 m=1 r=1.66667 a=0.6 p=3.2 mult=1 $X=1475 $Y=1750 $D=109
+.ENDS
+***************************************
+.SUBCKT sky130_fd_pr__nfet_01v8__example_55959141808570 1 2 3
+** N=3 EP=3 IP=0 FDC=1
+M0 3 2 1 1 nhv L=0.5 W=1 m=1 r=2 a=0.5 p=3 mult=1 $X=0 $Y=0 $D=49
+.ENDS
+***************************************
+.SUBCKT sky130_fd_pr__dfl1sd__example_55959141808106
+** N=2 EP=0 IP=0 FDC=0
+.ENDS
+***************************************
+.SUBCKT sky130_fd_io__amx_inv1 2 3 4 5
+** N=5 EP=4 IP=4 FDC=2
+*.SEEDPROM
+M0 5 4 2 2 nhv L=0.5 W=0.75 m=1 r=1.5 a=0.375 p=2.5 mult=1 $X=595 $Y=180 $D=49
+M1 5 4 3 3 phv L=0.5 W=1.5 m=1 r=3 a=0.75 p=4 mult=1 $X=595 $Y=1910 $D=109
+.ENDS
+***************************************
+.SUBCKT sky130_fd_pr__dfl1sd__example_5595914180819
+** N=2 EP=0 IP=0 FDC=0
+.ENDS
+***************************************
+.SUBCKT sky130_fd_pr__dfl1sd2__example_5595914180884
+** N=2 EP=0 IP=0 FDC=0
+.ENDS
+***************************************
+.SUBCKT sky130_fd_pr__nfet_01v8__example_55959141808569 1 2 3 4
+** N=4 EP=4 IP=8 FDC=3
+M0 4 2 3 1 nhv L=0.5 W=3 m=1 r=6 a=1.5 p=7 mult=1 $X=0 $Y=0 $D=49
+M1 3 2 4 1 nhv L=0.5 W=3 m=1 r=6 a=1.5 p=7 mult=1 $X=780 $Y=0 $D=49
+M2 4 2 3 1 nhv L=0.5 W=3 m=1 r=6 a=1.5 p=7 mult=1 $X=1560 $Y=0 $D=49
+.ENDS
+***************************************
+.SUBCKT sky130_fd_pr__hvdfm1sd__example_55959141808242
+** N=4 EP=0 IP=0 FDC=0
+*.SEEDPROM
+.ENDS
+***************************************
+.SUBCKT sky130_fd_pr__nfet_01v8__example_55959141808579 2 3 4
+** N=5 EP=3 IP=8 FDC=1
+*.SEEDPROM
+M0 4 3 2 2 nhv L=0.5 W=1 m=1 r=2 a=0.5 p=3 mult=1 $X=0 $Y=0 $D=49
+.ENDS
+***************************************
+.SUBCKT sky130_fd_pr__nfet_01v8__example_55959141808568 2 3 4
+** N=5 EP=3 IP=4 FDC=1
+*.SEEDPROM
+M0 4 3 2 2 nhv L=0.5 W=3 m=1 r=6 a=1.5 p=7 mult=1 $X=0 $Y=0 $D=49
+.ENDS
+***************************************
+.SUBCKT sky130_fd_pr__dfl1sd__example_55959141808504
+** N=2 EP=0 IP=0 FDC=0
+.ENDS
+***************************************
+.SUBCKT sky130_fd_pr__pfet_01v8__example_55959141808477 1 2 3
+** N=3 EP=3 IP=0 FDC=1
+M0 3 2 1 1 phv L=1 W=0.42 m=1 r=0.42 a=0.42 p=2.84 mult=1 $X=0 $Y=0 $D=109
+.ENDS
+***************************************
+.SUBCKT sky130_fd_pr__pfet_01v8__example_55959141808567 2 3 4
+** N=4 EP=3 IP=0 FDC=2
+*.SEEDPROM
+M0 4 3 2 2 phv L=0.5 W=1 m=1 r=2 a=0.5 p=3 mult=1 $X=0 $Y=0 $D=109
+M1 2 3 4 2 phv L=0.5 W=1 m=1 r=2 a=0.5 p=3 mult=1 $X=780 $Y=0 $D=109
+.ENDS
+***************************************
+.SUBCKT sky130_fd_io__gpiov2_amux_drvr VSSD VSSA VDDA VSWITCH VCCD VDDIO_Q 9 10 11 12 13 14 AMUX_EN_VDDA_H_N 16 AMUX_EN_VDDA_H 18 AMUX_EN_VDDIO_H_N 20 21 PD_CSD_VSWITCH_H
++ PU_CSD_VDDIOQ_H_N PGA_AMX_VDDA_H_N PGB_AMX_VDDA_H_N PD_CSD_VSWITCH_H_N NGA_PAD_VSWITCH_H NGA_PAD_VSWITCH_H_N AMUX_EN_VSWITCH_H NGA_AMX_VSWITCH_H NGB_AMX_VSWITCH_H NGB_PAD_VSWITCH_H NGB_PAD_VSWITCH_H_N D_B 35 36 NMIDA_ON_N NMIDA_VCCD NMIDA_VCCD_N AMUX_EN_VDDIO_H 41 42
++ 43 44 45 46 47 PGA_PAD_VDDIOQ_H_N PGB_PAD_VDDIOQ_H_N AMUXBUSA_ON_N AMUX_EN_VSWITCH_H_N AMUXBUSB_ON_N AMUXBUSA_ON AMUXBUSB_ON PU_ON_N PU_ON PD_ON_N PD_ON
+** N=77 EP=56 IP=207 FDC=200
+*.SEEDPROM
+M0 PD_CSD_VSWITCH_H 13 VSSA VSSA nhv L=0.5 W=1.5 m=1 r=3 a=0.75 p=4 mult=1 $X=85960 $Y=-52310 $D=49
+M1 VSSA VSSA PD_CSD_VSWITCH_H VSSA nhv L=0.5 W=1.5 m=1 r=3 a=0.75 p=4 mult=1 $X=85960 $Y=-51530 $D=49
+M2 PD_CSD_VSWITCH_H AMUX_EN_VDDIO_H_N VSSA VSSA nhv L=0.5 W=1 m=1 r=2 a=0.5 p=3 mult=1 $X=99715 $Y=-47545 $D=49
+M3 PU_CSD_VDDIOQ_H_N 21 VSSD VSSD nhv L=0.6 W=0.42 m=1 r=0.7 a=0.252 p=2.04 mult=1 $X=116545 $Y=-63050 $D=49
+M4 VSSD 21 PU_CSD_VDDIOQ_H_N VSSD nhv L=0.6 W=0.42 m=1 r=0.7 a=0.252 p=2.04 mult=1 $X=117425 $Y=-63050 $D=49
+M5 PU_CSD_VDDIOQ_H_N 21 VSSD VSSD nhv L=0.6 W=0.42 m=1 r=0.7 a=0.252 p=2.04 mult=1 $X=118305 $Y=-63050 $D=49
+M6 VSSD 21 PU_CSD_VDDIOQ_H_N VSSD nhv L=0.6 W=0.42 m=1 r=0.7 a=0.252 p=2.04 mult=1 $X=119185 $Y=-63050 $D=49
+M7 PU_CSD_VDDIOQ_H_N 21 VSSD VSSD nhv L=0.6 W=0.42 m=1 r=0.7 a=0.252 p=2.04 mult=1 $X=120065 $Y=-63050 $D=49
+M8 VSSD 21 PU_CSD_VDDIOQ_H_N VSSD nhv L=0.6 W=0.42 m=1 r=0.7 a=0.252 p=2.04 mult=1 $X=120945 $Y=-63050 $D=49
+M9 PU_CSD_VDDIOQ_H_N 21 VSSD VSSD nhv L=0.6 W=0.42 m=1 r=0.7 a=0.252 p=2.04 mult=1 $X=121825 $Y=-63050 $D=49
+M10 PD_CSD_VSWITCH_H 13 VSWITCH VSWITCH phv L=2 W=0.75 m=1 r=0.375 a=1.5 p=5.5 mult=1 $X=89285 $Y=-52650 $D=109
+M11 VSWITCH 13 PD_CSD_VSWITCH_H VSWITCH phv L=2 W=0.75 m=1 r=0.375 a=1.5 p=5.5 mult=1 $X=91565 $Y=-52650 $D=109
+M12 PU_CSD_VDDIOQ_H_N 21 VDDIO_Q VDDIO_Q phv L=0.6 W=1 m=1 r=1.66667 a=0.6 p=3.2 mult=1 $X=116545 $Y=-61480 $D=109
+M13 VDDIO_Q 21 PU_CSD_VDDIOQ_H_N VDDIO_Q phv L=0.6 W=1 m=1 r=1.66667 a=0.6 p=3.2 mult=1 $X=117425 $Y=-61480 $D=109
+M14 PU_CSD_VDDIOQ_H_N 21 VDDIO_Q VDDIO_Q phv L=0.6 W=1 m=1 r=1.66667 a=0.6 p=3.2 mult=1 $X=118305 $Y=-61480 $D=109
+M15 VDDIO_Q 21 PU_CSD_VDDIOQ_H_N VDDIO_Q phv L=0.6 W=1 m=1 r=1.66667 a=0.6 p=3.2 mult=1 $X=119185 $Y=-61480 $D=109
+M16 PU_CSD_VDDIOQ_H_N 21 VDDIO_Q VDDIO_Q phv L=0.6 W=1 m=1 r=1.66667 a=0.6 p=3.2 mult=1 $X=120065 $Y=-61480 $D=109
+M17 VDDIO_Q 21 PU_CSD_VDDIOQ_H_N VDDIO_Q phv L=0.6 W=1 m=1 r=1.66667 a=0.6 p=3.2 mult=1 $X=120945 $Y=-61480 $D=109
+M18 PU_CSD_VDDIOQ_H_N 21 VDDIO_Q VDDIO_Q phv L=0.6 W=1 m=1 r=1.66667 a=0.6 p=3.2 mult=1 $X=121825 $Y=-61480 $D=109
+X19 VSSA VSWITCH Dpar a=6.6852 p=10.51 m=1 $[dnwdiode_pw] $X=81395 $Y=-56075 $D=188
+X20 VSSA VSWITCH Dpar a=51.6765 p=33.36 m=1 $[dnwdiode_pw] $X=91140 $Y=-56075 $D=188
+X21 VSSA VSWITCH Dpar a=340.297 p=98.11 m=1 $[dnwdiode_pw] $X=81395 $Y=-51755 $D=188
+X22 VSSD VSWITCH Dpar a=570.063 p=97.15 m=1 $[dnwdiode_psub] $X=80365 $Y=-57105 $D=187
+X23 VSSD VDDIO_Q Dpar a=5.073 p=9.14 m=1 $[nwdiode] $X=87555 $Y=-64335 $D=185
+X24 VSSD VDDIO_Q Dpar a=23.245 p=25.57 m=1 $[nwdiode] $X=112430 $Y=-61810 $D=185
+X25 VSSD VDDIO_Q Dpar a=9.709 p=14.02 m=1 $[nwdiode] $X=129675 $Y=-59735 $D=185
+X26 VSSD VDDIO_Q AMUXBUSA_ON_N AMUX_EN_VDDIO_H_N AMUXBUSA_ON AMUX_EN_VDDIO_H 16 VCCD 14 67 68 sky130_fd_io__gpiov2_amux_drvr_ls $T=80925 -68125 0 0 $X=81020 $Y=-68125
+X27 VSSA VSWITCH AMUXBUSA_ON_N AMUX_EN_VSWITCH_H_N AMUXBUSA_ON AMUX_EN_VSWITCH_H 70 VCCD 41 42 69 sky130_fd_io__gpiov2_amux_drvr_ls $T=81655 -45415 1 0 $X=81750 $Y=-51105
+X28 VSSA VSWITCH AMUXBUSB_ON_N AMUX_EN_VSWITCH_H_N AMUXBUSB_ON AMUX_EN_VSWITCH_H 72 VCCD 43 44 71 sky130_fd_io__gpiov2_amux_drvr_ls $T=81655 -46085 0 0 $X=81750 $Y=-46085
+X29 VSSA VSWITCH PD_ON_N AMUX_EN_VSWITCH_H_N PD_ON AMUX_EN_VSWITCH_H 74 VCCD 13 45 73 sky130_fd_io__gpiov2_amux_drvr_ls $T=100460 -46085 1 180 $X=91160 $Y=-46085
+X30 VSSD VDDIO_Q AMUXBUSB_ON_N AMUX_EN_VDDIO_H_N AMUXBUSB_ON AMUX_EN_VDDIO_H 18 VCCD 20 46 75 sky130_fd_io__gpiov2_amux_drvr_ls $T=123045 -63525 0 0 $X=123140 $Y=-63525
+X31 VSSD VDDIO_Q PU_ON_N AMUX_EN_VDDIO_H_N PU_ON AMUX_EN_VDDIO_H 21 VCCD 76 47 77 sky130_fd_io__gpiov2_amux_drvr_ls $T=141415 -63525 1 180 $X=132115 $Y=-63525
+X32 VSSD VCCD 35 D_B sky130_fd_io__hvsbt_inv_x1 $T=113710 -57510 1 180 $X=111685 $Y=-57510
+X33 VSSD VCCD NMIDA_VCCD NMIDA_VCCD_N sky130_fd_io__hvsbt_inv_x1 $T=116320 -57510 0 0 $X=116090 $Y=-57510
+X34 VSSD VCCD 36 35 sky130_fd_io__hvsbt_inv_x2 $T=112800 -57510 0 0 $X=112800 $Y=-57510
+X35 VSSD VCCD NMIDA_ON_N NMIDA_VCCD sky130_fd_io__hvsbt_inv_x2 $T=114560 -57510 0 0 $X=114560 $Y=-57510
+X36 VSSA VSWITCH 41 NGA_AMX_VSWITCH_H sky130_fd_io__gpiov2_amx_inv4 $T=95240 -47940 0 180 $X=92570 $Y=-51020
+X37 VSSA VSWITCH 43 NGB_AMX_VSWITCH_H sky130_fd_io__gpiov2_amx_inv4 $T=97000 -47940 0 180 $X=94330 $Y=-51020
+X38 VSSA VSWITCH 43 NGB_PAD_VSWITCH_H sky130_fd_io__gpiov2_amx_inv4 $T=96090 -47940 1 0 $X=96090 $Y=-51020
+X39 VSSA VSWITCH 41 NGA_PAD_VSWITCH_H sky130_fd_io__gpiov2_amx_inv4 $T=100520 -47940 0 180 $X=97850 $Y=-51020
+X40 VSSD VDDIO_Q 16 PGA_PAD_VDDIOQ_H_N sky130_fd_io__gpiov2_amx_inv4 $T=112430 -63230 0 0 $X=112430 $Y=-63230
+X41 VSSD VDDIO_Q 18 PGB_PAD_VDDIOQ_H_N sky130_fd_io__gpiov2_amx_inv4 $T=116860 -63230 1 180 $X=114190 $Y=-63230
+X42 VSSA 9 PGA_AMX_VDDA_H_N sky130_fd_pr__nfet_01v8__example_55959141808570 $T=92500 -35830 1 180 $X=91555 $Y=-36010
+X43 VSSA AMUX_EN_VDDA_H_N 9 sky130_fd_pr__nfet_01v8__example_55959141808570 $T=92780 -35830 0 0 $X=92335 $Y=-36010
+X44 VSSA AMUX_EN_VDDA_H_N 10 sky130_fd_pr__nfet_01v8__example_55959141808570 $T=101090 -35830 1 180 $X=100145 $Y=-36010
+X45 VSSA 10 PGB_AMX_VDDA_H_N sky130_fd_pr__nfet_01v8__example_55959141808570 $T=101370 -35830 0 0 $X=100925 $Y=-36010
+X46 VSSA VSWITCH PD_CSD_VSWITCH_H PD_CSD_VSWITCH_H_N sky130_fd_io__amx_inv1 $T=83710 -50175 0 180 $X=81920 $Y=-54085
+X47 VSSA VSWITCH NGA_PAD_VSWITCH_H NGA_PAD_VSWITCH_H_N sky130_fd_io__amx_inv1 $T=82800 -50175 1 0 $X=82800 $Y=-54085
+X48 VSSA VSWITCH NGB_PAD_VSWITCH_H NGB_PAD_VSWITCH_H_N sky130_fd_io__amx_inv1 $T=100880 -47280 1 0 $X=100880 $Y=-51190
+X49 VSSA 14 65 9 sky130_fd_pr__nfet_01v8__example_55959141808569 $T=92640 -39960 1 180 $X=90135 $Y=-40140
+X50 VSSA 16 65 11 sky130_fd_pr__nfet_01v8__example_55959141808569 $T=92920 -39960 0 0 $X=92475 $Y=-40140
+X51 VSSA 18 66 12 sky130_fd_pr__nfet_01v8__example_55959141808569 $T=100950 -39960 1 180 $X=98445 $Y=-40140
+X52 VSSA 20 66 10 sky130_fd_pr__nfet_01v8__example_55959141808569 $T=101230 -39960 0 0 $X=100785 $Y=-40140
+X53 VSSA AMUX_EN_VDDA_H_N NGA_AMX_VSWITCH_H sky130_fd_pr__nfet_01v8__example_55959141808579 $T=94570 -46545 0 180 $X=93625 $Y=-47725
+X54 VSSA AMUX_EN_VDDA_H_N NGB_AMX_VSWITCH_H sky130_fd_pr__nfet_01v8__example_55959141808579 $T=94850 -46545 1 0 $X=94405 $Y=-47725
+X55 VSSA AMUX_EN_VDDIO_H_N NGB_PAD_VSWITCH_H sky130_fd_pr__nfet_01v8__example_55959141808579 $T=98100 -47545 1 180 $X=97155 $Y=-47725
+X56 VSSA AMUX_EN_VDDIO_H_N NGA_PAD_VSWITCH_H sky130_fd_pr__nfet_01v8__example_55959141808579 $T=98380 -47545 0 0 $X=97935 $Y=-47725
+X57 VSSA AMUX_EN_VDDA_H 65 sky130_fd_pr__nfet_01v8__example_55959141808568 $T=96380 -39960 1 180 $X=95435 $Y=-40140
+X58 VSSA AMUX_EN_VDDA_H 66 sky130_fd_pr__nfet_01v8__example_55959141808568 $T=97490 -39960 0 0 $X=97045 $Y=-40140
+X63 VDDA 11 9 sky130_fd_pr__pfet_01v8__example_55959141808477 $T=84780 -23935 0 180 $X=83185 $Y=-24685
+X64 VDDA 12 10 sky130_fd_pr__pfet_01v8__example_55959141808477 $T=84780 -23025 1 180 $X=83185 $Y=-23355
+X65 VDDA 9 11 sky130_fd_pr__pfet_01v8__example_55959141808477 $T=85060 -23935 1 0 $X=84465 $Y=-24685
+X66 VDDA 10 12 sky130_fd_pr__pfet_01v8__example_55959141808477 $T=85060 -23025 0 0 $X=84465 $Y=-23355
+X67 VDDA 9 PGA_AMX_VDDA_H_N sky130_fd_pr__pfet_01v8__example_55959141808567 $T=81600 -24935 0 0 $X=81005 $Y=-25265
+X68 VDDA 10 PGB_AMX_VDDA_H_N sky130_fd_pr__pfet_01v8__example_55959141808567 $T=81600 -22025 1 0 $X=81005 $Y=-23355
+*.CALIBRE WARNING OPEN Open circuit(s) detected by extraction in this cell. See extraction report for details.
+.ENDS
+***************************************
+.SUBCKT sky130_fd_pr__nfet_01v8__example_55959141808465 1 2 3
+** N=3 EP=3 IP=0 FDC=1
+M0 3 2 1 1 nhv L=0.5 W=1 m=1 r=2 a=0.5 p=3 mult=1 $X=0 $Y=0 $D=49
+.ENDS
+***************************************
+.SUBCKT sky130_fd_pr__pfet_01v8__example_55959141808460 2 3 4
+** N=4 EP=3 IP=0 FDC=1
+*.SEEDPROM
+M0 4 3 2 2 phv L=0.5 W=0.75 m=1 r=1.5 a=0.375 p=2.5 mult=1 $X=0 $Y=0 $D=109
+.ENDS
+***************************************
+.SUBCKT sky130_fd_io__gpiov2_amux_ctl_inv_1 VNB VPB IN VPWR OUT VGND
+** N=6 EP=6 IP=0 FDC=2
+*.SEEDPROM
+M0 OUT IN VGND VNB nshort L=0.15 W=0.74 m=1 r=4.93333 a=0.111 p=1.78 mult=1 $X=960 $Y=370 $D=9
+M1 OUT IN VPWR VPB phighvt L=0.25 W=1 m=1 r=4 a=0.25 p=2.5 mult=1 $X=850 $Y=1960 $D=89
+.ENDS
+***************************************
+.SUBCKT sky130_fd_pr__hvdfl1sd__example_55959141808476
+** N=2 EP=0 IP=0 FDC=0
+.ENDS
+***************************************
+.SUBCKT sky130_fd_pr__pfet_01v8__example_55959141808590 2 3 4
+** N=4 EP=3 IP=4 FDC=1
+*.SEEDPROM
+M0 4 3 2 2 phv L=0.5 W=1.5 m=1 r=3 a=0.75 p=4 mult=1 $X=0 $Y=0 $D=109
+.ENDS
+***************************************
+.SUBCKT sky130_fd_io__tap_1
+** N=4 EP=0 IP=0 FDC=0
+*.SEEDPROM
+*.CALIBRE ISOLATED NETS: VNB VPB VGND VPWR
+.ENDS
+***************************************
+.SUBCKT sky130_fd_pr__hvdfl1sd__example_55959141808115
+** N=2 EP=0 IP=0 FDC=0
+.ENDS
+***************************************
+.SUBCKT sky130_fd_pr__nfet_01v8__example_55959141808589 1 2 3
+** N=3 EP=3 IP=4 FDC=1
+M0 3 2 1 1 nhv L=0.5 W=3 m=1 r=6 a=1.5 p=7 mult=1 $X=0 $Y=0 $D=49
+.ENDS
+***************************************
+.SUBCKT sky130_fd_pr__pfet_01v8__example_55959141808475 1 2 3
+** N=3 EP=3 IP=4 FDC=1
+M0 3 2 1 1 phv L=0.5 W=1.5 m=1 r=3 a=0.75 p=4 mult=1 $X=0 $Y=0 $D=109
+.ENDS
+***************************************
+.SUBCKT sky130_fd_pr__model__pfet_highvoltage__example_55959141808588 2 3 4 5
+** N=5 EP=4 IP=4 FDC=1
+*.SEEDPROM
+M0 5 3 4 2 phv L=0.5 W=1.5 m=1 r=3 a=0.75 p=4 mult=1 $X=0 $Y=0 $D=109
+.ENDS
+***************************************
+.SUBCKT sky130_fd_io__gpiov2_amux_ls VSSA VSSD VSWITCH VDDA VDDIO_Q VCCD ENABLE_VDDA_H AMUX_EN_VDDIO_H 15 ENABLE_VSWITCH_H AMUX_EN_VDDIO_H_N 18 19 20 21 HLD_I_H_N HLD_I_H AMUX_EN_VDDA_H_N AMUX_EN_VDDA_H AMUX_EN_VSWITCH_H_N
++ AMUX_EN_VSWITCH_H ANALOG_EN
+** N=38 EP=22 IP=121 FDC=68
+*.SEEDPROM
+M0 35 32 34 VSSD nlowvt L=0.15 W=1 m=1 r=6.66667 a=0.15 p=2.3 mult=1 $X=74835 $Y=9805 $D=19
+M1 34 32 35 VSSD nlowvt L=0.15 W=1 m=1 r=6.66667 a=0.15 p=2.3 mult=1 $X=75265 $Y=9805 $D=19
+M2 35 32 34 VSSD nlowvt L=0.15 W=1 m=1 r=6.66667 a=0.15 p=2.3 mult=1 $X=75695 $Y=9805 $D=19
+M3 34 32 35 VSSD nlowvt L=0.15 W=1 m=1 r=6.66667 a=0.15 p=2.3 mult=1 $X=76125 $Y=9805 $D=19
+M4 36 33 34 VSSD nlowvt L=0.15 W=1 m=1 r=6.66667 a=0.15 p=2.3 mult=1 $X=76555 $Y=9805 $D=19
+M5 34 33 36 VSSD nlowvt L=0.15 W=1 m=1 r=6.66667 a=0.15 p=2.3 mult=1 $X=76985 $Y=9805 $D=19
+M6 36 33 34 VSSD nlowvt L=0.15 W=1 m=1 r=6.66667 a=0.15 p=2.3 mult=1 $X=77415 $Y=9805 $D=19
+M7 34 33 36 VSSD nlowvt L=0.15 W=1 m=1 r=6.66667 a=0.15 p=2.3 mult=1 $X=77845 $Y=9805 $D=19
+M8 18 ENABLE_VDDA_H VSSA VSSA nhv L=0.5 W=1 m=1 r=2 a=0.5 p=3 mult=1 $X=6130 $Y=75645 $D=49
+M9 VSSA ENABLE_VSWITCH_H 21 VSSA nhv L=0.6 W=0.7 m=1 r=1.16667 a=0.42 p=2.6 mult=1 $X=6695 $Y=56350 $D=49
+M10 34 HLD_I_H_N VSSD VSSD nhv L=0.5 W=1 m=1 r=2 a=0.5 p=3 mult=1 $X=77205 $Y=7535 $D=49
+M11 VSSD HLD_I_H_N 34 VSSD nhv L=0.5 W=1 m=1 r=2 a=0.5 p=3 mult=1 $X=77985 $Y=7535 $D=49
+M12 34 HLD_I_H_N VSSD VSSD nhv L=0.5 W=1 m=1 r=2 a=0.5 p=3 mult=1 $X=78765 $Y=7535 $D=49
+M13 VSSD HLD_I_H_N 34 VSSD nhv L=0.5 W=1 m=1 r=2 a=0.5 p=3 mult=1 $X=79545 $Y=7535 $D=49
+M14 30 VCCD 36 VSSD nhvnative L=0.9 W=1 m=1 r=1.11111 a=0.9 p=3.8 mult=1 $X=79635 $Y=10510 $D=59
+M15 31 VCCD 35 VSSD nhvnative L=0.9 W=1 m=1 r=1.11111 a=0.9 p=3.8 mult=1 $X=79635 $Y=12160 $D=59
+M16 36 VCCD 30 VSSD nhvnative L=0.9 W=1 m=1 r=1.11111 a=0.9 p=3.8 mult=1 $X=80815 $Y=10510 $D=59
+M17 35 VCCD 31 VSSD nhvnative L=0.9 W=1 m=1 r=1.11111 a=0.9 p=3.8 mult=1 $X=80815 $Y=12160 $D=59
+M18 30 VCCD 36 VSSD nhvnative L=0.9 W=1 m=1 r=1.11111 a=0.9 p=3.8 mult=1 $X=81995 $Y=10510 $D=59
+M19 31 VCCD 35 VSSD nhvnative L=0.9 W=1 m=1 r=1.11111 a=0.9 p=3.8 mult=1 $X=81995 $Y=12160 $D=59
+M20 36 VCCD 30 VSSD nhvnative L=0.9 W=1 m=1 r=1.11111 a=0.9 p=3.8 mult=1 $X=83175 $Y=10510 $D=59
+M21 35 VCCD 31 VSSD nhvnative L=0.9 W=1 m=1 r=1.11111 a=0.9 p=3.8 mult=1 $X=83175 $Y=12160 $D=59
+X22 VSSD VSWITCH Dpar a=2.8569 p=0 m=1 $[nwdiode] $X=5835 $Y=52845 $D=183
+X23 VSSD VDDIO_Q Dpar a=12.2407 p=15.81 m=1 $[nwdiode] $X=73805 $Y=11375 $D=185
+X24 VSSD VCCD Dpar a=7.1653 p=11.43 m=1 $[nwdiode] $X=72705 $Y=4125 $D=185
+X25 VSWITCH ENABLE_VSWITCH_H ENABLE_VSWITCH_H 21 VSWITCH sky130_fd_pr__model__pfet_highvoltage__example_55959141808421 $T=6430 54175 1 0 $X=5835 $Y=52845
+X26 VSSA 15 AMUX_EN_VDDA_H_N sky130_fd_pr__nfet_01v8__example_55959141808570 $T=8010 75645 1 180 $X=7065 $Y=75465
+X27 VSSA 29 AMUX_EN_VDDA_H sky130_fd_pr__nfet_01v8__example_55959141808570 $T=8290 75645 0 0 $X=7845 $Y=75465
+X28 VSSA 18 15 sky130_fd_pr__nfet_01v8__example_55959141808570 $T=9690 75645 0 0 $X=9245 $Y=75465
+X29 VSSA 20 AMUX_EN_VSWITCH_H sky130_fd_pr__nfet_01v8__example_55959141808570 $T=16410 57235 0 180 $X=15465 $Y=56055
+X30 VSSA 19 AMUX_EN_VSWITCH_H_N sky130_fd_pr__nfet_01v8__example_55959141808570 $T=17810 57235 0 180 $X=16865 $Y=56055
+X31 VSSA 21 19 sky130_fd_pr__nfet_01v8__example_55959141808570 $T=18090 57235 1 0 $X=17645 $Y=56055
+X32 VSSA AMUX_EN_VDDIO_H 37 29 sky130_fd_pr__nfet_01v8__example_55959141808569 $T=8190 71465 1 180 $X=5685 $Y=71285
+X33 VSSA AMUX_EN_VDDIO_H_N 37 15 sky130_fd_pr__nfet_01v8__example_55959141808569 $T=8470 71465 0 0 $X=8025 $Y=71285
+X34 VSSA AMUX_EN_VDDIO_H 38 20 sky130_fd_pr__nfet_01v8__example_55959141808569 $T=23770 58870 0 180 $X=21265 $Y=55690
+X35 VSSA AMUX_EN_VDDIO_H_N 38 19 sky130_fd_pr__nfet_01v8__example_55959141808569 $T=24050 58870 1 0 $X=23605 $Y=55690
+X36 VSWITCH 19 20 sky130_fd_pr__pfet_01v8__example_55959141808477 $T=11105 57025 1 180 $X=9510 $Y=56695
+X37 VDDA 15 29 sky130_fd_pr__pfet_01v8__example_55959141808477 $T=11340 84315 1 180 $X=9745 $Y=83985
+X38 VSWITCH 20 19 sky130_fd_pr__pfet_01v8__example_55959141808477 $T=11385 57025 0 0 $X=10790 $Y=56695
+X39 VDDA 29 15 sky130_fd_pr__pfet_01v8__example_55959141808477 $T=11620 84315 0 0 $X=11025 $Y=83985
+X40 VSSD 31 AMUX_EN_VDDIO_H sky130_fd_pr__nfet_01v8__example_55959141808465 $T=81405 8535 0 180 $X=80460 $Y=7355
+X41 VSSD HLD_I_H 30 sky130_fd_pr__nfet_01v8__example_55959141808465 $T=81685 8535 1 0 $X=81240 $Y=7355
+X42 VSSD 30 AMUX_EN_VDDIO_H_N sky130_fd_pr__nfet_01v8__example_55959141808465 $T=83080 8535 1 0 $X=82635 $Y=7355
+X43 VDDIO_Q 31 30 sky130_fd_pr__pfet_01v8__example_55959141808460 $T=76510 13205 1 0 $X=75915 $Y=12125
+X44 VDDIO_Q 30 31 sky130_fd_pr__pfet_01v8__example_55959141808460 $T=77840 13205 1 0 $X=77245 $Y=12125
+X45 VSSD VCCD 33 VCCD 32 VSSD sky130_fd_io__gpiov2_amux_ctl_inv_1 $T=74915 2470 1 180 $X=73185 $Y=2225
+X46 VSSD VCCD ANALOG_EN VCCD 33 VSSD sky130_fd_io__gpiov2_amux_ctl_inv_1 $T=76460 2470 1 180 $X=74730 $Y=2225
+X47 VDDIO_Q 30 AMUX_EN_VDDIO_H_N sky130_fd_pr__pfet_01v8__example_55959141808590 $T=74900 13205 0 180 $X=73805 $Y=11375
+X48 VDDIO_Q 31 AMUX_EN_VDDIO_H sky130_fd_pr__pfet_01v8__example_55959141808590 $T=75180 13205 1 0 $X=74585 $Y=11375
+X50 VSSA ENABLE_VDDA_H 37 sky130_fd_pr__nfet_01v8__example_55959141808589 $T=11930 71465 1 180 $X=10985 $Y=71285
+X51 VSSA ENABLE_VSWITCH_H 38 sky130_fd_pr__nfet_01v8__example_55959141808589 $T=20310 58870 1 0 $X=19865 $Y=55690
+X52 VDDA 15 AMUX_EN_VDDA_H_N sky130_fd_pr__pfet_01v8__example_55959141808475 $T=7875 83235 1 180 $X=6780 $Y=82905
+X53 VDDA 29 AMUX_EN_VDDA_H sky130_fd_pr__pfet_01v8__example_55959141808475 $T=8155 83235 0 0 $X=7560 $Y=82905
+X54 VSWITCH 19 AMUX_EN_VSWITCH_H_N sky130_fd_pr__pfet_01v8__example_55959141808475 $T=13805 57445 0 180 $X=12710 $Y=55615
+X55 VSWITCH 20 AMUX_EN_VSWITCH_H sky130_fd_pr__pfet_01v8__example_55959141808475 $T=14085 57445 1 0 $X=13490 $Y=55615
+X56 VDDA ENABLE_VDDA_H VDDA 18 sky130_fd_pr__model__pfet_highvoltage__example_55959141808588 $T=5195 84735 1 0 $X=4600 $Y=82905
+X57 VDDA ENABLE_VDDA_H 18 VDDA sky130_fd_pr__model__pfet_highvoltage__example_55959141808588 $T=5975 84735 1 0 $X=5380 $Y=82905
+.ENDS
+***************************************
+.SUBCKT sky130_fd_pr__hvdfm1sd__example_55959141808200
+** N=2 EP=0 IP=0 FDC=0
+*.SEEDPROM
+.ENDS
+***************************************
+.SUBCKT sky130_fd_pr__hvdfm1sd2__example_55959141808449
+** N=3 EP=0 IP=0 FDC=0
+*.SEEDPROM
+.ENDS
+***************************************
+.SUBCKT sky130_fd_pr__pfet_01v8__example_55959141808457 2 3 4
+** N=4 EP=3 IP=7 FDC=2
+*.SEEDPROM
+M0 4 3 2 2 phv L=0.6 W=1 m=1 r=1.66667 a=0.6 p=3.2 mult=1 $X=0 $Y=0 $D=109
+M1 2 3 4 2 phv L=0.6 W=1 m=1 r=1.66667 a=0.6 p=3.2 mult=1 $X=880 $Y=0 $D=109
+.ENDS
+***************************************
+.SUBCKT sky130_fd_pr__hvdfl1sd__example_5595914180851
+** N=2 EP=0 IP=0 FDC=0
+.ENDS
+***************************************
+.SUBCKT sky130_fd_pr__hvdfm1sd__example_55959141808233
+** N=2 EP=0 IP=0 FDC=0
+.ENDS
+***************************************
+.SUBCKT sky130_fd_pr__nfet_01v8__example_55959141808445 1 2 3
+** N=3 EP=3 IP=4 FDC=1
+M0 3 2 1 1 nhv L=0.5 W=5 m=1 r=10 a=2.5 p=11 mult=1 $X=0 $Y=0 $D=49
+.ENDS
+***************************************
+.SUBCKT sky130_fd_pr__pfet_01v8__example_55959141808450 2 3 4
+** N=4 EP=3 IP=7 FDC=2
+*.SEEDPROM
+M0 4 3 2 2 phv L=0.6 W=1 m=1 r=1.66667 a=0.6 p=3.2 mult=1 $X=0 $Y=0 $D=109
+M1 2 3 4 2 phv L=0.6 W=1 m=1 r=1.66667 a=0.6 p=3.2 mult=1 $X=880 $Y=0 $D=109
+.ENDS
+***************************************
+.SUBCKT sky130_fd_pr__nfet_01v8__example_55959141808447 1 2 3 4
+** N=4 EP=4 IP=4 FDC=1
+M0 4 2 3 1 nhv L=0.5 W=5 m=1 r=10 a=2.5 p=11 mult=1 $X=0 $Y=0 $D=49
+.ENDS
+***************************************
+.SUBCKT sky130_fd_pr__pfet_01v8__example_55959141808451 2 3 4
+** N=4 EP=3 IP=0 FDC=1
+*.SEEDPROM
+M0 4 3 2 2 phv L=0.5 W=0.42 m=1 r=0.84 a=0.21 p=1.84 mult=1 $X=0 $Y=0 $D=109
+.ENDS
+***************************************
+.SUBCKT sky130_fd_pr__nfet_01v8__example_55959141808248 1 2 3 4
+** N=4 EP=4 IP=4 FDC=1
+M0 4 2 3 1 nhv L=0.5 W=5 m=1 r=10 a=2.5 p=11 mult=1 $X=0 $Y=0 $D=49
+.ENDS
+***************************************
+.SUBCKT sky130_fd_io__gpiov2_amux_nand5 VGND VPWR OUT IN0 IN4 IN3 IN2 IN1
+** N=13 EP=8 IP=31 FDC=12
+*.SEEDPROM
+M0 VGND 9 VGND VGND nhv L=0.5 W=0.42 m=1 r=0.84 a=0.21 p=1.84 mult=1 $X=560 $Y=3430 $D=49
+M1 VGND OUT 9 VGND nhv L=0.5 W=0.42 m=1 r=0.84 a=0.21 p=1.84 mult=1 $X=560 $Y=5090 $D=49
+X2 VPWR IN0 OUT sky130_fd_pr__pfet_01v8__example_55959141808457 $T=360 8250 1 0 $X=-235 $Y=6920
+X3 VGND IN0 10 sky130_fd_pr__nfet_01v8__example_55959141808445 $T=1430 1140 0 0 $X=985 $Y=960
+X4 VPWR OUT 9 sky130_fd_pr__pfet_01v8__example_55959141808450 $T=3600 8250 0 180 $X=1525 $Y=6920
+X5 VGND IN4 10 11 sky130_fd_pr__nfet_01v8__example_55959141808447 $T=2210 1140 0 0 $X=1765 $Y=960
+X6 VGND IN3 11 12 sky130_fd_pr__nfet_01v8__example_55959141808447 $T=2990 1140 0 0 $X=2545 $Y=960
+X7 VGND IN2 12 13 sky130_fd_pr__nfet_01v8__example_55959141808447 $T=3770 1140 0 0 $X=3325 $Y=960
+X8 VPWR 9 OUT sky130_fd_pr__pfet_01v8__example_55959141808451 $T=3970 8250 1 0 $X=3285 $Y=7500
+X9 VGND IN1 13 OUT sky130_fd_pr__nfet_01v8__example_55959141808248 $T=4550 1140 0 0 $X=4105 $Y=960
+.ENDS
+***************************************
+.SUBCKT sky130_fd_io__gpiov2_amux_nand4 VGND VPWR IN0 OUT IN3 IN2 IN1
+** N=11 EP=7 IP=27 FDC=11
+*.SEEDPROM
+M0 VGND 8 VGND VGND nhv L=0.5 W=0.42 m=1 r=0.84 a=0.21 p=1.84 mult=1 $X=560 $Y=3425 $D=49
+M1 VGND OUT 8 VGND nhv L=0.5 W=0.42 m=1 r=0.84 a=0.21 p=1.84 mult=1 $X=560 $Y=5090 $D=49
+X2 VPWR IN0 OUT sky130_fd_pr__pfet_01v8__example_55959141808457 $T=285 8250 1 0 $X=-310 $Y=6920
+X3 VGND IN0 9 sky130_fd_pr__nfet_01v8__example_55959141808445 $T=1430 1140 0 0 $X=985 $Y=960
+X4 VPWR OUT 8 sky130_fd_pr__pfet_01v8__example_55959141808450 $T=3525 8250 0 180 $X=1450 $Y=6920
+X5 VGND IN3 9 10 sky130_fd_pr__nfet_01v8__example_55959141808447 $T=2210 1140 0 0 $X=1765 $Y=960
+X6 VGND IN2 10 11 sky130_fd_pr__nfet_01v8__example_55959141808447 $T=2990 1140 0 0 $X=2545 $Y=960
+X7 VPWR 8 OUT sky130_fd_pr__pfet_01v8__example_55959141808451 $T=3895 8250 1 0 $X=3210 $Y=7500
+X8 VGND IN1 11 OUT sky130_fd_pr__nfet_01v8__example_55959141808248 $T=3770 1140 0 0 $X=3325 $Y=960
+.ENDS
+***************************************
+.SUBCKT sky130_fd_io__inv_1 VNB VPB A VPWR Y VGND
+** N=6 EP=6 IP=0 FDC=2
+*.SEEDPROM
+M0 Y A VGND VNB nshort L=0.15 W=0.74 m=1 r=4.93333 a=0.111 p=1.78 mult=1 $X=860 $Y=370 $D=9
+M1 Y A VPWR VPB phighvt L=0.15 W=1.12 m=1 r=7.46667 a=0.168 p=2.54 mult=1 $X=850 $Y=1840 $D=89
+.ENDS
+***************************************
+.SUBCKT sky130_fd_io__nand2_1 VNB VPB B A VPWR Y VGND
+** N=8 EP=7 IP=0 FDC=4
+*.SEEDPROM
+M0 8 B VGND VNB nshort L=0.15 W=0.74 m=1 r=4.93333 a=0.111 p=1.78 mult=1 $X=435 $Y=370 $D=9
+M1 Y A 8 VNB nshort L=0.15 W=0.74 m=1 r=4.93333 a=0.111 p=1.78 mult=1 $X=825 $Y=370 $D=9
+M2 Y B VPWR VPB phighvt L=0.15 W=1.12 m=1 r=7.46667 a=0.168 p=2.54 mult=1 $X=420 $Y=1840 $D=89
+M3 VPWR A Y VPB phighvt L=0.15 W=1.12 m=1 r=7.46667 a=0.168 p=2.54 mult=1 $X=870 $Y=1840 $D=89
+.ENDS
+***************************************
+.SUBCKT sky130_fd_pr__model__pfet_highvoltage__example_55959141808420 2 3 4 5
+** N=5 EP=4 IP=0 FDC=1
+M0 5 3 4 2 phv L=0.6 W=1 m=1 r=1.66667 a=0.6 p=3.2 mult=1 $X=0 $Y=0 $D=109
+.ENDS
+***************************************
+.SUBCKT sky130_fd_io__hvsbt_nor 1 2 IN0 4 5
+** N=6 EP=5 IP=16 FDC=6
+M0 5 IN0 1 1 nhv L=0.6 W=0.7 m=1 r=1.16667 a=0.42 p=2.6 mult=1 $X=595 $Y=720 $D=49
+M1 1 4 5 1 nhv L=0.6 W=0.7 m=1 r=1.16667 a=0.42 p=2.6 mult=1 $X=1475 $Y=720 $D=49
+X2 2 IN0 4 6 5 sky130_fd_pr__model__pfet_highvoltage__example_55959141808421 $T=595 3750 0 0 $X=0 $Y=3420
+X3 2 IN0 2 6 sky130_fd_pr__model__pfet_highvoltage__example_55959141808420 $T=595 3410 1 0 $X=0 $Y=2080
+X4 2 4 5 6 sky130_fd_pr__model__pfet_highvoltage__example_55959141808420 $T=2075 3410 0 180 $X=895 $Y=2080
+.ENDS
+***************************************
+.SUBCKT sky130_fd_pr__pfet_01v8__example_559591418085 2 3 4 5
+** N=5 EP=4 IP=0 FDC=1
+M0 5 3 4 2 phv L=0.6 W=1 m=1 r=1.66667 a=0.6 p=3.2 mult=1 $X=0 $Y=0 $D=109
+.ENDS
+***************************************
+.SUBCKT sky130_fd_pr__nfet_01v8__example_559591418089 1 2 3
+** N=3 EP=3 IP=0 FDC=1
+M0 3 2 1 1 nhv L=0.6 W=0.7 m=1 r=1.16667 a=0.42 p=2.6 mult=1 $X=0 $Y=0 $D=49
+.ENDS
+***************************************
+.SUBCKT sky130_fd_pr__nfet_01v8__example_559591418087 1 2 3 4
+** N=4 EP=4 IP=0 FDC=1
+M0 4 2 3 1 nhv L=0.6 W=0.7 m=1 r=1.16667 a=0.42 p=2.6 mult=1 $X=0 $Y=0 $D=49
+.ENDS
+***************************************
+.SUBCKT sky130_fd_io__hvsbt_nand2 VGND VPWR IN0 IN1 OUT
+** N=6 EP=5 IP=27 FDC=6
+X0 VPWR IN0 VPWR OUT sky130_fd_pr__pfet_01v8__example_559591418085 $T=595 3410 1 0 $X=0 $Y=2080
+X1 VPWR IN0 VPWR OUT sky130_fd_pr__pfet_01v8__example_559591418085 $T=595 3750 0 0 $X=0 $Y=3420
+X2 VPWR IN1 OUT VPWR sky130_fd_pr__pfet_01v8__example_559591418085 $T=1475 3410 1 0 $X=880 $Y=2080
+X3 VPWR IN1 OUT VPWR sky130_fd_pr__pfet_01v8__example_559591418085 $T=1475 3750 0 0 $X=880 $Y=3420
+X4 VGND IN0 6 sky130_fd_pr__nfet_01v8__example_559591418089 $T=595 1420 1 0 $X=150 $Y=540
+X5 VGND IN1 6 OUT sky130_fd_pr__nfet_01v8__example_559591418087 $T=1475 1420 1 0 $X=1045 $Y=540
+.ENDS
+***************************************
+.SUBCKT sky130_fd_io__nor2_1 VNB VPB A B VPWR Y VGND
+** N=8 EP=7 IP=0 FDC=4
+*.SEEDPROM
+M0 Y A VGND VNB nshort L=0.15 W=0.74 m=1 r=4.93333 a=0.111 p=1.78 mult=1 $X=440 $Y=370 $D=9
+M1 VGND B Y VNB nshort L=0.15 W=0.74 m=1 r=4.93333 a=0.111 p=1.78 mult=1 $X=870 $Y=370 $D=9
+M2 8 A VPWR VPB phighvt L=0.15 W=1.12 m=1 r=7.46667 a=0.168 p=2.54 mult=1 $X=430 $Y=1840 $D=89
+M3 Y B 8 VPB phighvt L=0.15 W=1.12 m=1 r=7.46667 a=0.168 p=2.54 mult=1 $X=850 $Y=1840 $D=89
+.ENDS
+***************************************
+.SUBCKT sky130_fd_io__gpiov2_amux_decoder VSSD VCCD 5 6 7 ANALOG_SEL 9 10 11 12 AMUXBUSA_ON_N AMUXBUSA_ON 15 PU_ON_N 17 NMIDA_ON_N PU_ON 20 ANALOG_EN D_B
++ 23 PD_ON AMUXBUSB_ON_N PGA_AMX_VDDA_H_N 27 AMUXBUSB_ON PD_ON_N PGA_PAD_VDDIOQ_H_N PGB_AMX_VDDA_H_N 32 33 PGB_PAD_VDDIOQ_H_N NGA_PAD_VSWITCH_H 36 OUT ANALOG_POL NGB_PAD_VSWITCH_H 40 41 NGB_PAD_VSWITCH_H_N
++ NGA_PAD_VSWITCH_H_N PU_VDDIOQ_H_N PD_VSWITCH_H_N 46 NMIDA_VCCD_N
+** N=58 EP=45 IP=218 FDC=156
+*.SEEDPROM
+M0 48 5 VSSD VSSD nshort L=0.15 W=0.84 m=1 r=5.6 a=0.126 p=1.98 mult=1 $X=8235 $Y=12255 $D=9
+M1 VSSD 6 48 VSSD nshort L=0.15 W=0.84 m=1 r=5.6 a=0.126 p=1.98 mult=1 $X=8665 $Y=12255 $D=9
+M2 51 6 VSSD VSSD nshort L=0.15 W=0.84 m=1 r=5.6 a=0.126 p=1.98 mult=1 $X=9095 $Y=12255 $D=9
+M3 7 5 51 VSSD nshort L=0.15 W=0.84 m=1 r=5.6 a=0.126 p=1.98 mult=1 $X=9485 $Y=12255 $D=9
+M4 VSSD 48 7 VSSD nshort L=0.15 W=0.84 m=1 r=5.6 a=0.126 p=1.98 mult=1 $X=10215 $Y=12255 $D=9
+M5 49 5 48 VCCD phighvt L=0.15 W=1.26 m=1 r=8.4 a=0.189 p=2.82 mult=1 $X=8235 $Y=10345 $D=89
+M6 VCCD 6 49 VCCD phighvt L=0.15 W=1.26 m=1 r=8.4 a=0.189 p=2.82 mult=1 $X=8625 $Y=10345 $D=89
+M7 50 6 VCCD VCCD phighvt L=0.15 W=1.26 m=1 r=8.4 a=0.189 p=2.82 mult=1 $X=9075 $Y=10345 $D=89
+M8 VCCD 5 50 VCCD phighvt L=0.15 W=1.26 m=1 r=8.4 a=0.189 p=2.82 mult=1 $X=9505 $Y=10345 $D=89
+M9 50 48 7 VCCD phighvt L=0.15 W=1.26 m=1 r=8.4 a=0.189 p=2.82 mult=1 $X=10570 $Y=10345 $D=89
+X10 VSSD VCCD Dpar a=65.448 p=49.72 m=1 $[nwdiode] $X=1810 $Y=9920 $D=185
+X11 VSSD VCCD Dpar a=50.2164 p=38.54 m=1 $[nwdiode] $X=23740 $Y=6450 $D=185
+X15 VSSD VCCD 40 41 NGB_PAD_VSWITCH_H_N NGA_PAD_VSWITCH_H_N PGB_PAD_VDDIOQ_H_N PGA_PAD_VDDIOQ_H_N sky130_fd_io__gpiov2_amux_nand5 $T=23505 700 1 90 $X=23670 $Y=465
+X16 VSSD VCCD 57 15 NGB_PAD_VSWITCH_H_N NGA_PAD_VSWITCH_H_N PGB_PAD_VDDIOQ_H_N PGA_PAD_VDDIOQ_H_N sky130_fd_io__gpiov2_amux_nand5 $T=41745 700 0 90 $X=32515 $Y=465
+X17 VSSD VCCD 10 AMUXBUSB_ON_N 46 PD_VSWITCH_H_N PU_VDDIOQ_H_N sky130_fd_io__gpiov2_amux_nand4 $T=28730 15570 0 180 $X=23730 $Y=6360
+X18 VSSD VCCD 33 AMUXBUSA_ON_N NMIDA_VCCD_N PD_VSWITCH_H_N PU_VDDIOQ_H_N sky130_fd_io__gpiov2_amux_nand4 $T=28440 15570 1 0 $X=28130 $Y=6360
+X19 VSSD VCCD ANALOG_SEL VCCD 52 VSSD sky130_fd_io__inv_1 $T=2000 13440 1 0 $X=1810 $Y=9865
+X20 VSSD VCCD 52 VCCD 9 VSSD sky130_fd_io__inv_1 $T=3440 13440 1 0 $X=3250 $Y=9865
+X21 VSSD VCCD 10 VCCD 12 VSSD sky130_fd_io__inv_1 $T=4880 6780 0 0 $X=4690 $Y=6535
+X22 VSSD VCCD AMUXBUSA_ON_N VCCD AMUXBUSA_ON VSSD sky130_fd_io__inv_1 $T=6320 13440 1 0 $X=6130 $Y=9865
+X23 VSSD VCCD PU_ON VCCD PU_ON_N VSSD sky130_fd_io__inv_1 $T=9680 6780 1 180 $X=8050 $Y=6535
+X24 VSSD VCCD ANALOG_EN VCCD 53 VSSD sky130_fd_io__inv_1 $T=9680 6780 0 0 $X=9490 $Y=6535
+X25 VSSD VCCD PD_ON VCCD PD_ON_N VSSD sky130_fd_io__inv_1 $T=12560 6780 0 0 $X=12370 $Y=6535
+X26 VSSD VCCD AMUXBUSB_ON_N VCCD AMUXBUSB_ON VSSD sky130_fd_io__inv_1 $T=12560 13440 1 0 $X=12370 $Y=9865
+X27 VSSD VCCD 57 VCCD PU_ON VSSD sky130_fd_io__inv_1 $T=15440 13440 0 180 $X=13810 $Y=9865
+X28 VSSD VCCD 33 VCCD 20 VSSD sky130_fd_io__inv_1 $T=15440 6780 0 0 $X=15250 $Y=6535
+X29 VSSD VCCD 36 VCCD 5 VSSD sky130_fd_io__inv_1 $T=18800 6780 1 180 $X=17170 $Y=6535
+X30 VSSD VCCD 58 VCCD 6 VSSD sky130_fd_io__inv_1 $T=18800 13440 0 180 $X=17170 $Y=9865
+X31 VSSD VCCD OUT VCCD 36 VSSD sky130_fd_io__inv_1 $T=20240 6780 1 180 $X=18610 $Y=6535
+X32 VSSD VCCD ANALOG_POL VCCD 58 VSSD sky130_fd_io__inv_1 $T=20240 13440 0 180 $X=18610 $Y=9865
+X33 VSSD VCCD 40 VCCD PD_ON VSSD sky130_fd_io__inv_1 $T=21680 13440 1 0 $X=21490 $Y=9865
+X34 VSSD VCCD 7 52 VCCD 11 VSSD sky130_fd_io__nand2_1 $T=4880 13440 1 0 $X=4690 $Y=9865
+X35 VSSD VCCD 9 7 VCCD 54 VSSD sky130_fd_io__nand2_1 $T=11120 13440 1 0 $X=10930 $Y=9865
+X36 VSSD VCCD 5 6 VCCD 55 VSSD sky130_fd_io__nand2_1 $T=15440 13440 1 0 $X=15250 $Y=9865
+X37 VSSD VCCD 36 58 VCCD 56 VSSD sky130_fd_io__nand2_1 $T=20240 13440 1 0 $X=20050 $Y=9865
+X38 VSSD VCCD NGA_PAD_VSWITCH_H 27 17 sky130_fd_io__hvsbt_nor $T=16955 695 0 0 $X=16955 $Y=695
+X39 VSSD VCCD NGB_PAD_VSWITCH_H 32 23 sky130_fd_io__hvsbt_nor $T=21980 695 1 180 $X=19310 $Y=695
+X40 VSSD VCCD 20 17 NMIDA_ON_N sky130_fd_io__hvsbt_nand2 $T=10890 695 1 180 $X=8045 $Y=695
+X41 VSSD VCCD 12 23 D_B sky130_fd_io__hvsbt_nand2 $T=9980 695 0 0 $X=9770 $Y=695
+X42 VSSD VCCD PGA_PAD_VDDIOQ_H_N PGA_AMX_VDDA_H_N 27 sky130_fd_io__hvsbt_nand2 $T=14960 695 1 180 $X=12115 $Y=695
+X43 VSSD VCCD PGB_PAD_VDDIOQ_H_N PGB_AMX_VDDA_H_N 32 sky130_fd_io__hvsbt_nand2 $T=17285 695 1 180 $X=14440 $Y=695
+X44 VSSD VCCD 53 54 VCCD 10 VSSD sky130_fd_io__nor2_1 $T=3440 6780 0 0 $X=3250 $Y=6535
+X45 VSSD VCCD 53 55 VCCD 15 VSSD sky130_fd_io__nor2_1 $T=6800 6780 0 0 $X=6610 $Y=6535
+X46 VSSD VCCD 53 56 VCCD 41 VSSD sky130_fd_io__nor2_1 $T=11120 6780 0 0 $X=10930 $Y=6535
+X47 VSSD VCCD 53 11 VCCD 33 VSSD sky130_fd_io__nor2_1 $T=14000 6780 0 0 $X=13810 $Y=6535
+*.CALIBRE WARNING OPEN Open circuit(s) detected by extraction in this cell. See extraction report for details.
+.ENDS
+***************************************
+.SUBCKT sky130_fd_io__gpiov2_amux_ctl_logic VSSD VSSA VDDA VSWITCH VCCD 12 13 14 15 VDDIO_Q 17 PGA_AMX_VDDA_H_N NGB_PAD_VSWITCH_H NGA_PAD_VSWITCH_H AMUX_EN_VDDA_H_N PGB_AMX_VDDA_H_N 23 24 D_B 26
++ NMIDA_VCCD 28 ENABLE_VDDA_H ENABLE_VSWITCH_H 31 AMUX_EN_VDDIO_H_N 33 34 35 36 37 38 39 40 PGA_PAD_VDDIOQ_H_N PGB_PAD_VDDIOQ_H_N 43 44 45 46
++ 47 48 49 50 51 52 PD_CSD_VSWITCH_H 54 55 56 NGA_AMX_VSWITCH_H NGB_AMX_VSWITCH_H 59 60 61 62 PU_CSD_VDDIOQ_H_N 64 65 66
++ ANALOG_EN HLD_I_H_N HLD_I_H ANALOG_SEL 71 72 73 74 75 76 77 78 79 OUT ANALOG_POL 82 83 84 85 86
+** N=92 EP=80 IP=139 FDC=426
+X0 VSSD VDDA Dpar a=43.3597 p=31.46 m=1 $[nwdiode] $X=129575 $Y=5655 $D=185
+X1 VSSD VCCD Dpar a=70.2614 p=46.74 m=1 $[nwdiode] $X=161025 $Y=-24170 $D=185
+X2 VSSD VSSA VDDA VSWITCH VCCD VDDIO_Q 54 52 56 51 55 14 AMUX_EN_VDDA_H_N 17 89 61 AMUX_EN_VDDIO_H_N 62 65 PD_CSD_VSWITCH_H
++ PU_CSD_VDDIOQ_H_N PGA_AMX_VDDA_H_N PGB_AMX_VDDA_H_N 13 NGA_PAD_VSWITCH_H 35 34 NGA_AMX_VSWITCH_H NGB_AMX_VSWITCH_H NGB_PAD_VSWITCH_H 23 24 D_B 12 26 NMIDA_VCCD 43 15 60 49
++ 84 50 59 64 66 PGA_PAD_VDDIOQ_H_N PGB_PAD_VDDIOQ_H_N 40 33 45 39 38 46 47 37 36
++ sky130_fd_io__gpiov2_amux_drvr $T=49310 31265 0 0 $X=129275 $Y=-44955
+X3 VSSA VSSD VSWITCH VDDA VDDIO_Q VCCD ENABLE_VDDA_H 15 31 ENABLE_VSWITCH_H AMUX_EN_VDDIO_H_N 28 91 90 88 HLD_I_H_N HLD_I_H AMUX_EN_VDDA_H_N 89 33
++ 34 ANALOG_EN
++ sky130_fd_io__gpiov2_amux_ls $T=125270 -80155 0 0 $X=129870 $Y=-82295
+X4 VSSD VCCD 85 72 74 ANALOG_SEL 71 83 92 76 40 39 48 46 73 26 47 75 ANALOG_EN 12
++ 77 36 45 PGA_AMX_VDDA_H_N 78 38 37 PGA_PAD_VDDIOQ_H_N PGB_AMX_VDDA_H_N 79 44 PGB_PAD_VDDIOQ_H_N NGA_PAD_VSWITCH_H 86 OUT ANALOG_POL NGB_PAD_VSWITCH_H 82 87 23
++ 35 PU_CSD_VDDIOQ_H_N 13 24 43
++ sky130_fd_io__gpiov2_amux_decoder $T=158870 -26940 0 0 $X=157025 $Y=-30900
+.ENDS
+***************************************
+.SUBCKT sky130_fd_io__gpiov2_amux VSSD VSSA VSSIO_Q 4 5 6 7 VSWITCH VDDIO_Q VDDA HLD_I_H PAD VCCD 15 ENABLE_VDDA_H ENABLE_VSWITCH_H AMUXBUS_B AMUXBUS_A ANALOG_SEL ANALOG_EN
++ OUT ANALOG_POL HLD_I_H_N
+** N=101 EP=23 IP=254 FDC=578
+M0 36 27 VSSIO_Q VSSIO_Q nhv L=0.5 W=5 m=1 r=10 a=2.5 p=11 mult=1 $X=68150 $Y=2000 $D=49
+M1 VSSIO_Q 27 36 VSSIO_Q nhv L=0.5 W=5 m=1 r=10 a=2.5 p=11 mult=1 $X=68150 $Y=2780 $D=49
+M2 36 27 VSSIO_Q VSSIO_Q nhv L=0.5 W=5 m=1 r=10 a=2.5 p=11 mult=1 $X=68150 $Y=3560 $D=49
+M3 VSSIO_Q 27 36 VSSIO_Q nhv L=0.5 W=5 m=1 r=10 a=2.5 p=11 mult=1 $X=68150 $Y=4340 $D=49
+M4 36 27 VSSIO_Q VSSIO_Q nhv L=0.5 W=5 m=1 r=10 a=2.5 p=11 mult=1 $X=68150 $Y=5120 $D=49
+M5 VSSIO_Q 27 36 VSSIO_Q nhv L=0.5 W=5 m=1 r=10 a=2.5 p=11 mult=1 $X=68150 $Y=5900 $D=49
+M6 37 27 VSSIO_Q VSSIO_Q nhv L=0.5 W=5 m=1 r=10 a=2.5 p=11 mult=1 $X=68150 $Y=6680 $D=49
+M7 VSSIO_Q 27 37 VSSIO_Q nhv L=0.5 W=5 m=1 r=10 a=2.5 p=11 mult=1 $X=68150 $Y=7460 $D=49
+M8 37 27 VSSIO_Q VSSIO_Q nhv L=0.5 W=5 m=1 r=10 a=2.5 p=11 mult=1 $X=68150 $Y=8240 $D=49
+M9 VSSIO_Q 27 37 VSSIO_Q nhv L=0.5 W=5 m=1 r=10 a=2.5 p=11 mult=1 $X=68150 $Y=9020 $D=49
+M10 37 27 VSSIO_Q VSSIO_Q nhv L=0.5 W=5 m=1 r=10 a=2.5 p=11 mult=1 $X=68150 $Y=9800 $D=49
+M11 VSSIO_Q 27 37 VSSIO_Q nhv L=0.5 W=5 m=1 r=10 a=2.5 p=11 mult=1 $X=68150 $Y=10580 $D=49
+M12 37 27 VSSIO_Q VSSIO_Q nhv L=0.5 W=5 m=1 r=10 a=2.5 p=11 mult=1 $X=68150 $Y=11360 $D=49
+M13 VSSIO_Q 27 37 VSSIO_Q nhv L=0.5 W=5 m=1 r=10 a=2.5 p=11 mult=1 $X=68150 $Y=12140 $D=49
+M14 37 25 VDDIO_Q VDDIO_Q phv L=0.5 W=15 m=1 r=30 a=7.5 p=31 mult=1 $X=6410 $Y=36955 $D=109
+M15 VDDIO_Q 25 37 VDDIO_Q phv L=0.5 W=15 m=1 r=30 a=7.5 p=31 mult=1 $X=6410 $Y=37735 $D=109
+M16 37 25 VDDIO_Q VDDIO_Q phv L=0.5 W=15 m=1 r=30 a=7.5 p=31 mult=1 $X=6410 $Y=38515 $D=109
+M17 VDDIO_Q 25 37 VDDIO_Q phv L=0.5 W=15 m=1 r=30 a=7.5 p=31 mult=1 $X=6410 $Y=39295 $D=109
+M18 36 25 VDDIO_Q VDDIO_Q phv L=0.5 W=15 m=1 r=30 a=7.5 p=31 mult=1 $X=6410 $Y=40075 $D=109
+M19 VDDIO_Q 25 36 VDDIO_Q phv L=0.5 W=15 m=1 r=30 a=7.5 p=31 mult=1 $X=6410 $Y=40855 $D=109
+M20 36 25 VDDIO_Q VDDIO_Q phv L=0.5 W=15 m=1 r=30 a=7.5 p=31 mult=1 $X=6410 $Y=41635 $D=109
+X21 VSSA VSWITCH condiode a=1e-06 p=0.004 m=1 ahftempperim=0.004 $X=-3980 $Y=17025 $D=150
+X22 VSSA VSWITCH condiode a=1e-06 p=0.004 m=1 ahftempperim=0.004 $X=-1380 $Y=8005 $D=150
+X23 VSSA VSWITCH condiode a=1e-06 p=0.004 m=1 ahftempperim=0.004 $X=15815 $Y=11170 $D=150
+X24 VSSIO_Q VDDA condiode a=1e-06 p=0.004 m=1 ahftempperim=0.004 $X=70255 $Y=1370 $D=150
+X25 VSSA VDDA condiode a=1e-06 p=0.004 m=1 ahftempperim=0.004 $X=71165 $Y=21055 $D=150
+X26 VSSIO_Q VDDA condiode a=1e-06 p=0.004 m=1 ahftempperim=0.004 $X=71315 $Y=13695 $D=150
+X27 VSSD VDDA Dpar a=1.79917 p=0 m=1 $[nwdiode] $X=75555 $Y=-680 $D=183
+X28 VSSIO_Q VDDA Dpar a=96.7472 p=41.01 m=1 $[dnwdiode_pw] $X=66765 $Y=750 $D=188
+X29 VSSA VDDA Dpar a=48.208 p=27.82 m=1 $[dnwdiode_pw] $X=66765 $Y=14745 $D=188
+X30 VSSD VDDA Dpar a=946.67 p=155.39 m=1 $[dnwdiode_psub] $X=42340 $Y=20935 $D=187
+X31 VSSD VDDIO_Q Dpar a=126.767 p=49.03 m=1 $[nwdiode] $X=5495 $Y=35820 $D=185
+X32 VSSA 28 7 VSSA sky130_fd_pr__nfet_01v8__example_55959141808592 $T=68040 15175 0 0 $X=67580 $Y=14995
+X33 VSSA 28 5 VSSA sky130_fd_pr__nfet_01v8__example_55959141808592 $T=68040 16605 1 0 $X=67580 $Y=16005
+X34 VSSA 28 VSSA 4 sky130_fd_pr__nfet_01v8__example_55959141808592 $T=69400 15175 0 0 $X=68940 $Y=14995
+X35 VSSA 28 VSSA 6 sky130_fd_pr__nfet_01v8__example_55959141808592 $T=69400 16605 1 0 $X=68940 $Y=16005
+X36 VSSA HLD_I_H 4 VSSA sky130_fd_pr__nfet_01v8__example_55959141808592 $T=70760 15175 0 0 $X=70300 $Y=14995
+X37 VSSA HLD_I_H 6 VSSA sky130_fd_pr__nfet_01v8__example_55959141808592 $T=70760 16605 1 0 $X=70300 $Y=16005
+X38 VSSA HLD_I_H VSSA 7 sky130_fd_pr__nfet_01v8__example_55959141808592 $T=72120 15175 0 0 $X=71660 $Y=14995
+X39 VSSA HLD_I_H VSSA 5 sky130_fd_pr__nfet_01v8__example_55959141808592 $T=72120 16605 1 0 $X=71660 $Y=16005
+X40 VSSA 26 41 5 sky130_fd_pr__nfet_01v8__example_55959141808593 $T=68015 17075 0 0 $X=67555 $Y=16895
+X41 VSSA 26 39 6 sky130_fd_pr__nfet_01v8__example_55959141808593 $T=69375 17075 0 0 $X=68915 $Y=16895
+X42 VSSA 29 4 40 sky130_fd_pr__nfet_01v8__example_55959141808593 $T=70755 17075 0 0 $X=70295 $Y=16895
+X43 VSSA 29 38 7 sky130_fd_pr__nfet_01v8__example_55959141808593 $T=72115 17075 0 0 $X=71655 $Y=16895
+X52 PAD 30 sky130_fd_io__res75only_small $T=9505 31895 0 180 $X=5095 $Y=29875
+X53 31 32 sky130_fd_io__res75only_small $T=9505 34395 0 180 $X=5095 $Y=32375
+X54 PAD PAD sky130_fd_io__res75only_small $T=13505 31895 0 180 $X=9095 $Y=29875
+X55 PAD 31 sky130_fd_io__res75only_small $T=13505 34395 0 180 $X=9095 $Y=32375
+X56 PAD 33 sky130_fd_io__res75only_small $T=13095 31895 1 0 $X=13095 $Y=29875
+X57 PAD PAD sky130_fd_io__res75only_small $T=13095 34395 1 0 $X=13095 $Y=32375
+X58 33 34 sky130_fd_io__res75only_small $T=17095 31895 1 0 $X=17095 $Y=29875
+X59 PAD 35 sky130_fd_io__res75only_small $T=17095 34395 1 0 $X=17095 $Y=32375
+X60 PAD 36 sky130_fd_io__res75only_small $T=43540 47045 1 180 $X=39130 $Y=47045
+X61 PAD 37 sky130_fd_io__res75only_small $T=43130 47045 0 0 $X=43130 $Y=47045
+X62 VSSA 38 sky130_fd_io__res75only_small $T=59345 15680 0 90 $X=57325 $Y=15680
+X63 VSSA 39 sky130_fd_io__res75only_small $T=61840 15680 0 90 $X=59820 $Y=15680
+X64 VSSA 40 sky130_fd_io__res75only_small $T=62320 16090 0 270 $X=62320 $Y=11680
+X65 VSSA 41 sky130_fd_io__res75only_small $T=62320 15680 1 90 $X=62320 $Y=15680
+X66 VSSD 5 6 VDDIO_Q VDDA 77 15 65 45 30 35 AMUXBUS_B 32 32 34 34 sky130_fd_io__amux_switch_1v2b $T=23775 20900 0 0 $X=23475 $Y=20535
+X67 VSSD 4 7 VDDIO_Q VDDA 73 57 64 46 30 35 AMUXBUS_A 32 32 34 34 sky130_fd_io__amux_switch_1v2b $T=23775 44010 1 0 $X=23475 $Y=31615
+X76 VSSD VSSA VDDA VSWITCH VCCD 75 72 42 43 VDDIO_Q 44 57 45 46 47 15 99 48 26 78
++ 29 28 ENABLE_VDDA_H ENABLE_VSWITCH_H 52 68 51 58 74 67 89 54 53 49 73 77 81 96 50 79
++ 97 80 55 56 59 60 27 61 62 63 64 65 66 69 70 71 25 90 92 95
++ ANALOG_EN HLD_I_H_N HLD_I_H ANALOG_SEL 76 82 83 84 85 86 87 88 91 OUT ANALOG_POL 93 94 98 100 101
++ sky130_fd_io__gpiov2_amux_ctl_logic $T=-134990 31530 0 0 $X=-5715 $Y=-50765
+.ENDS
+***************************************
+.SUBCKT sky130_fd_io__tk_em2s_cdns_55959141808438 2 3
+** N=4 EP=2 IP=0 FDC=2
+R0 2 4 0.01 m=1 $[short] $X=260 $Y=0 $D=266
+R1 4 3 0.01 m=1 $[short] $X=450 $Y=0 $D=266
+.ENDS
+***************************************
+.SUBCKT sky130_fd_io__tk_em1o_cdns_5595914180880 2 3 4
+** N=5 EP=3 IP=0 FDC=2
+R0 2 3 0.01 m=1 $[short] $X=260 $Y=0 $D=265
+R1 5 4 0.01 m=1 $[short] $X=450 $Y=0 $D=265
+.ENDS
+***************************************
+.SUBCKT sky130_fd_io__tk_em1s_cdns_5595914180882 1 2
+** N=3 EP=2 IP=0 FDC=2
+R0 1 3 0.01 m=1 $[short] $X=260 $Y=0 $D=265
+R1 3 2 0.01 m=1 $[short] $X=450 $Y=0 $D=265
+.ENDS
+***************************************
+.SUBCKT sky130_fd_pr__nfet_01v8__example_55959141808620 1 2 3
+** N=3 EP=3 IP=0 FDC=1
+M0 3 2 1 1 nshort L=0.25 W=1 m=1 r=4 a=0.25 p=2.5 mult=1 $X=0 $Y=0 $D=9
+.ENDS
+***************************************
+.SUBCKT sky130_fd_pr__pfet_01v8__example_55959141808430 2 3 4 5 6
+** N=6 EP=5 IP=0 FDC=2
+*.SEEDPROM
+M0 5 3 4 2 phighvt L=0.25 W=1 m=1 r=4 a=0.25 p=2.5 mult=1 $X=0 $Y=0 $D=89
+M1 6 4 5 2 phighvt L=0.25 W=1 m=1 r=4 a=0.25 p=2.5 mult=1 $X=530 $Y=0 $D=89
+.ENDS
+***************************************
+.SUBCKT sky130_fd_pr__nfet_01v8__example_55959141808116 1 2 3 4
+** N=4 EP=4 IP=4 FDC=1
+M0 4 2 3 1 nhv L=0.6 W=3 m=1 r=5 a=1.8 p=7.2 mult=1 $X=0 $Y=0 $D=49
+.ENDS
+***************************************
+.SUBCKT sky130_fd_pr__nfet_01v8__example_55959141808622 1 2 3
+** N=3 EP=3 IP=0 FDC=4
+M0 3 2 1 1 nlowvt L=0.15 W=1 m=1 r=6.66667 a=0.15 p=2.3 mult=1 $X=0 $Y=0 $D=19
+M1 1 2 3 1 nlowvt L=0.15 W=1 m=1 r=6.66667 a=0.15 p=2.3 mult=1 $X=430 $Y=0 $D=19
+M2 3 2 1 1 nlowvt L=0.15 W=1 m=1 r=6.66667 a=0.15 p=2.3 mult=1 $X=860 $Y=0 $D=19
+M3 1 2 3 1 nlowvt L=0.15 W=1 m=1 r=6.66667 a=0.15 p=2.3 mult=1 $X=1290 $Y=0 $D=19
+.ENDS
+***************************************
+.SUBCKT sky130_fd_pr__dfl1sd__example_5595914180811
+** N=2 EP=0 IP=0 FDC=0
+.ENDS
+***************************************
+.SUBCKT sky130_fd_pr__pfet_01v8__example_5595914180813 2 3 4
+** N=4 EP=3 IP=4 FDC=1
+*.SEEDPROM
+M0 4 3 2 2 phv L=0.6 W=3 m=1 r=5 a=1.8 p=7.2 mult=1 $X=0 $Y=0 $D=109
+.ENDS
+***************************************
+.SUBCKT sky130_fd_pr__nfet_01v8__example_55959141808624 1 2 3
+** N=3 EP=3 IP=0 FDC=1
+M0 3 2 1 1 nhv L=0.6 W=1 m=1 r=1.66667 a=0.6 p=3.2 mult=1 $X=0 $Y=0 $D=49
+.ENDS
+***************************************
+.SUBCKT sky130_fd_pr__nfet_01v8__example_55959141808623 1 2 3
+** N=3 EP=3 IP=0 FDC=1
+M0 3 2 1 1 nhv L=1 W=0.75 m=1 r=0.75 a=0.75 p=3.5 mult=1 $X=0 $Y=0 $D=49
+.ENDS
+***************************************
+.SUBCKT sky130_fd_pr__pfet_01v8__example_5595914180822 2 3 4
+** N=4 EP=3 IP=0 FDC=1
+*.SEEDPROM
+M0 4 3 2 2 phv L=0.5 W=0.75 m=1 r=1.5 a=0.375 p=2.5 mult=1 $X=0 $Y=0 $D=109
+.ENDS
+***************************************
+.SUBCKT sky130_fd_io__com_ctl_lsv2 VGND VCC_IO VPWR HLD_H_N SET_H RST_H IN OUT_H OUT_H_N
+** N=17 EP=9 IP=62 FDC=33
+*.SEEDPROM
+M0 16 VPWR 14 VGND nhvnative L=0.9 W=1 m=1 r=1.11111 a=0.9 p=3.8 mult=1 $X=23765 $Y=3190 $D=59
+M1 17 VPWR 15 VGND nhvnative L=0.9 W=1 m=1 r=1.11111 a=0.9 p=3.8 mult=1 $X=23765 $Y=4840 $D=59
+M2 14 VPWR 16 VGND nhvnative L=0.9 W=1 m=1 r=1.11111 a=0.9 p=3.8 mult=1 $X=24945 $Y=3190 $D=59
+M3 15 VPWR 17 VGND nhvnative L=0.9 W=1 m=1 r=1.11111 a=0.9 p=3.8 mult=1 $X=24945 $Y=4840 $D=59
+M4 16 VPWR 14 VGND nhvnative L=0.9 W=1 m=1 r=1.11111 a=0.9 p=3.8 mult=1 $X=26125 $Y=3190 $D=59
+M5 17 VPWR 15 VGND nhvnative L=0.9 W=1 m=1 r=1.11111 a=0.9 p=3.8 mult=1 $X=26125 $Y=4840 $D=59
+M6 16 VPWR 14 VGND nhvnative L=0.9 W=1 m=1 r=1.11111 a=0.9 p=3.8 mult=1 $X=26995 $Y=915 $D=59
+M7 15 VPWR 17 VGND nhvnative L=0.9 W=1 m=1 r=1.11111 a=0.9 p=3.8 mult=1 $X=27305 $Y=4840 $D=59
+X8 VGND VCC_IO Dpar a=12.9015 p=14.37 m=1 $[nwdiode] $X=22885 $Y=-965 $D=185
+X9 VGND IN 12 sky130_fd_pr__nfet_01v8__example_55959141808620 $T=29555 320 1 180 $X=28910 $Y=190
+X10 VGND 12 13 sky130_fd_pr__nfet_01v8__example_55959141808620 $T=29835 320 0 0 $X=29440 $Y=190
+X11 VPWR IN 12 VPWR 13 sky130_fd_pr__pfet_01v8__example_55959141808430 $T=29320 1845 0 0 $X=28875 $Y=1665
+X12 VGND HLD_H_N 15 10 sky130_fd_pr__nfet_01v8__example_55959141808116 $T=26220 6445 0 0 $X=25775 $Y=6265
+X13 VGND SET_H VGND 10 sky130_fd_pr__nfet_01v8__example_55959141808116 $T=27700 6445 1 180 $X=26655 $Y=6265
+X14 VGND RST_H VGND 11 sky130_fd_pr__nfet_01v8__example_55959141808116 $T=27980 6445 0 0 $X=27535 $Y=6265
+X15 VGND HLD_H_N 16 11 sky130_fd_pr__nfet_01v8__example_55959141808116 $T=29460 6445 1 180 $X=28415 $Y=6265
+X16 VGND 12 14 sky130_fd_pr__nfet_01v8__example_55959141808622 $T=24880 12480 1 90 $X=24700 $Y=12035
+X17 VGND 13 17 sky130_fd_pr__nfet_01v8__example_55959141808622 $T=24880 14200 1 90 $X=24700 $Y=13755
+X18 VCC_IO 11 OUT_H_N sky130_fd_pr__pfet_01v8__example_5595914180813 $T=24935 2365 0 180 $X=23740 $Y=-965
+X19 VCC_IO 10 OUT_H sky130_fd_pr__pfet_01v8__example_5595914180813 $T=25215 2365 1 0 $X=24620 $Y=-965
+X20 VGND 10 OUT_H sky130_fd_pr__nfet_01v8__example_55959141808624 $T=24365 6490 1 180 $X=23320 $Y=6310
+X21 VGND 11 OUT_H_N sky130_fd_pr__nfet_01v8__example_55959141808624 $T=24645 6490 0 0 $X=24200 $Y=6310
+X22 VGND 11 10 sky130_fd_pr__nfet_01v8__example_55959141808623 $T=24390 8695 0 0 $X=23945 $Y=8515
+X23 VGND 10 11 sky130_fd_pr__nfet_01v8__example_55959141808623 $T=24390 11080 1 0 $X=23945 $Y=10150
+X24 VCC_IO 11 10 sky130_fd_pr__pfet_01v8__example_5595914180822 $T=24730 -6075 1 180 $X=23635 $Y=-6405
+X25 VCC_IO 10 11 sky130_fd_pr__pfet_01v8__example_5595914180822 $T=24730 -4330 1 180 $X=23635 $Y=-4660
+.ENDS
+***************************************
+.SUBCKT sky130_fd_io__tk_em1o_cdns_5595914180879 1 2
+** N=4 EP=2 IP=0 FDC=2
+R0 1 3 0.01 m=1 $[short] $X=260 $Y=0 $D=265
+R1 4 2 0.01 m=1 $[short] $X=450 $Y=0 $D=265
+.ENDS
+***************************************
+.SUBCKT sky130_fd_io__tk_em1s_cdns_5595914180881 1 2
+** N=3 EP=2 IP=0 FDC=2
+R0 1 3 0.01 m=1 $[short] $X=260 $Y=0 $D=265
+R1 3 2 0.01 m=1 $[short] $X=450 $Y=0 $D=265
+.ENDS
+***************************************
+.SUBCKT sky130_fd_pr__nfet_01v8__example_55959141808383 1 2 3
+** N=3 EP=3 IP=4 FDC=1
+M0 3 2 1 1 nhv L=0.6 W=3 m=1 r=5 a=1.8 p=7.2 mult=1 $X=0 $Y=0 $D=49
+.ENDS
+***************************************
+.SUBCKT sky130_fd_pr__nfet_01v8__example_55959141808382 1 2 3
+** N=3 EP=3 IP=4 FDC=1
+M0 3 2 1 1 nhv L=0.6 W=3 m=1 r=5 a=1.8 p=7.2 mult=1 $X=0 $Y=0 $D=49
+.ENDS
+***************************************
+.SUBCKT sky130_fd_pr__nfet_01v8__example_55959141808423 1 2 3 4
+** N=4 EP=4 IP=0 FDC=2
+M0 1 2 4 1 nshort L=0.25 W=1 m=1 r=4 a=0.25 p=2.5 mult=1 $X=0 $Y=0 $D=9
+M1 2 3 1 1 nshort L=0.25 W=1 m=1 r=4 a=0.25 p=2.5 mult=1 $X=530 $Y=0 $D=9
+.ENDS
+***************************************
+.SUBCKT sky130_fd_pr__nfet_01v8__example_55959141808428 1 2 3 4
+** N=4 EP=4 IP=4 FDC=1
+M0 4 2 3 1 nhv L=0.6 W=3 m=1 r=5 a=1.8 p=7.2 mult=1 $X=0 $Y=0 $D=49
+.ENDS
+***************************************
+.SUBCKT sky130_fd_pr__nfet_01v8__example_55959141808424 1 2 3
+** N=3 EP=3 IP=0 FDC=2
+M0 1 2 3 1 nhv L=1 W=0.75 m=1 r=0.75 a=0.75 p=3.5 mult=1 $X=0 $Y=0 $D=49
+M1 2 3 1 1 nhv L=1 W=0.75 m=1 r=0.75 a=0.75 p=3.5 mult=1 $X=1280 $Y=0 $D=49
+.ENDS
+***************************************
+.SUBCKT sky130_fd_pr__nfet_01v8__example_55959141808429 1 2 3 4
+** N=4 EP=4 IP=4 FDC=1
+M0 4 2 3 1 nhv L=0.6 W=3 m=1 r=5 a=1.8 p=7.2 mult=1 $X=0 $Y=0 $D=49
+.ENDS
+***************************************
+.SUBCKT sky130_fd_pr__nfet_01v8__example_55959141808427 1 2 3
+** N=3 EP=3 IP=0 FDC=4
+M0 3 2 1 1 nlowvt L=0.15 W=1 m=1 r=6.66667 a=0.15 p=2.3 mult=1 $X=0 $Y=0 $D=19
+M1 1 2 3 1 nlowvt L=0.15 W=1 m=1 r=6.66667 a=0.15 p=2.3 mult=1 $X=430 $Y=0 $D=19
+M2 3 2 1 1 nlowvt L=0.15 W=1 m=1 r=6.66667 a=0.15 p=2.3 mult=1 $X=860 $Y=0 $D=19
+M3 1 2 3 1 nlowvt L=0.15 W=1 m=1 r=6.66667 a=0.15 p=2.3 mult=1 $X=1290 $Y=0 $D=19
+.ENDS
+***************************************
+.SUBCKT sky130_fd_pr__nfet_01v8__example_55959141808426 1 2 3 4
+** N=4 EP=4 IP=0 FDC=2
+M0 4 2 3 1 nhvnative L=0.9 W=1 m=1 r=1.11111 a=0.9 p=3.8 mult=1 $X=0 $Y=0 $D=59
+M1 3 2 4 1 nhvnative L=0.9 W=1 m=1 r=1.11111 a=0.9 p=3.8 mult=1 $X=1180 $Y=0 $D=59
+.ENDS
+***************************************
+.SUBCKT sky130_fd_pr__pfet_01v8__example_55959141808432 2 3 4
+** N=4 EP=3 IP=4 FDC=1
+M0 4 3 2 2 phv L=0.6 W=3 m=1 r=5 a=1.8 p=7.2 mult=1 $X=0 $Y=0 $D=109
+.ENDS
+***************************************
+.SUBCKT sky130_fd_pr__hvdfl1sd__example_55959141808102
+** N=2 EP=0 IP=0 FDC=0
+.ENDS
+***************************************
+.SUBCKT sky130_fd_pr__pfet_01v8__example_55959141808431 2 3 4
+** N=4 EP=3 IP=4 FDC=1
+M0 4 3 2 2 phv L=0.6 W=3 m=1 r=5 a=1.8 p=7.2 mult=1 $X=0 $Y=0 $D=109
+.ENDS
+***************************************
+.SUBCKT sky130_fd_pr__via_pol1__example_55959141808394
+** N=2 EP=0 IP=0 FDC=0
+.ENDS
+***************************************
+.SUBCKT sky130_fd_pr__nfet_01v8__example_55959141808380 1 2 3
+** N=3 EP=3 IP=0 FDC=1
+M0 3 2 1 1 nhv L=0.6 W=1 m=1 r=1.66667 a=0.6 p=3.2 mult=1 $X=0 $Y=0 $D=49
+.ENDS
+***************************************
+.SUBCKT sky130_fd_pr__pfet_01v8__example_55959141808435 2 3 4
+** N=4 EP=3 IP=0 FDC=1
+M0 4 3 2 2 phv L=0.5 W=0.75 m=1 r=1.5 a=0.375 p=2.5 mult=1 $X=0 $Y=0 $D=109
+.ENDS
+***************************************
+.SUBCKT sky130_fd_pr__pfet_01v8__example_55959141808433 2 3 4
+** N=4 EP=3 IP=0 FDC=1
+M0 4 3 2 2 phv L=0.5 W=0.75 m=1 r=1.5 a=0.375 p=2.5 mult=1 $X=0 $Y=0 $D=109
+.ENDS
+***************************************
+.SUBCKT sky130_fd_pr__nfet_01v8__example_55959141808379 1 2 3
+** N=3 EP=3 IP=0 FDC=1
+M0 3 2 1 1 nhv L=0.6 W=1 m=1 r=1.66667 a=0.6 p=3.2 mult=1 $X=0 $Y=0 $D=49
+.ENDS
+***************************************
+.SUBCKT sky130_fd_io__com_ctl_ls_1v2 1 VCC_IO VPB VPWR HLD_H_N IN RST_H SET_H OUT_H_N OUT_H
+** N=18 EP=10 IP=73 FDC=32
+*.SEEDPROM
+X0 VPB IN 14 VPWR 13 sky130_fd_pr__pfet_01v8__example_55959141808430 $T=8035 1845 0 0 $X=7590 $Y=1665
+X1 1 SET_H 12 sky130_fd_pr__nfet_01v8__example_55959141808383 $T=9330 6445 0 0 $X=8870 $Y=6265
+X2 1 RST_H 11 sky130_fd_pr__nfet_01v8__example_55959141808382 $T=9050 6445 1 180 $X=8005 $Y=6265
+X3 1 14 IN 13 sky130_fd_pr__nfet_01v8__example_55959141808423 $T=8815 320 1 180 $X=7625 $Y=190
+X4 1 HLD_H_N 11 17 sky130_fd_pr__nfet_01v8__example_55959141808428 $T=8170 6445 1 180 $X=7125 $Y=6265
+X5 1 12 11 sky130_fd_pr__nfet_01v8__example_55959141808424 $T=9850 5475 0 180 $X=7125 $Y=4545
+X6 1 HLD_H_N 15 12 sky130_fd_pr__nfet_01v8__example_55959141808429 $T=6440 3405 0 180 $X=5395 $Y=225
+X7 1 13 16 sky130_fd_pr__nfet_01v8__example_55959141808427 $T=4680 6185 0 180 $X=2780 $Y=4905
+X8 1 14 18 sky130_fd_pr__nfet_01v8__example_55959141808427 $T=6400 6185 0 180 $X=4500 $Y=4905
+X9 1 VPWR 16 15 sky130_fd_pr__nfet_01v8__example_55959141808426 $T=905 6955 0 0 $X=460 $Y=6775
+X10 1 VPWR 16 15 sky130_fd_pr__nfet_01v8__example_55959141808426 $T=905 8425 0 0 $X=460 $Y=8245
+X11 1 VPWR 18 17 sky130_fd_pr__nfet_01v8__example_55959141808426 $T=3885 6955 0 0 $X=3440 $Y=6775
+X12 1 VPWR 18 17 sky130_fd_pr__nfet_01v8__example_55959141808426 $T=3885 9445 1 0 $X=3440 $Y=8265
+X13 VCC_IO 11 OUT_H_N sky130_fd_pr__pfet_01v8__example_55959141808432 $T=2860 3380 1 0 $X=2265 $Y=50
+X14 VCC_IO 12 OUT_H sky130_fd_pr__pfet_01v8__example_55959141808431 $T=2580 3380 0 180 $X=1385 $Y=50
+X16 1 12 OUT_H sky130_fd_pr__nfet_01v8__example_55959141808380 $T=1310 5950 1 0 $X=850 $Y=4770
+X17 VCC_IO 11 12 sky130_fd_pr__pfet_01v8__example_55959141808435 $T=650 3380 1 0 $X=55 $Y=2300
+X18 VCC_IO 12 11 sky130_fd_pr__pfet_01v8__example_55959141808433 $T=650 1785 1 0 $X=55 $Y=705
+X19 1 11 OUT_H_N sky130_fd_pr__nfet_01v8__example_55959141808379 $T=1030 5950 0 180 $X=-30 $Y=4770
+.ENDS
+***************************************
+.SUBCKT sky130_fd_io__com_ctl_ls_v2 1 VCC_IO VPB VPWR HLD_H_N IN RST_H SET_H OUT_H_N OUT_H
+** N=18 EP=10 IP=73 FDC=33
+*.SEEDPROM
+X0 1 VPB Dpar a=3.1672 p=7.24 m=1 $[nwdiode] $X=7590 $Y=1665 $D=185
+X1 VPB IN 14 VPWR 13 sky130_fd_pr__pfet_01v8__example_55959141808430 $T=8035 1845 0 0 $X=7590 $Y=1665
+X2 1 SET_H 12 sky130_fd_pr__nfet_01v8__example_55959141808383 $T=9330 6445 0 0 $X=8870 $Y=6265
+X3 1 RST_H 11 sky130_fd_pr__nfet_01v8__example_55959141808382 $T=9050 6445 1 180 $X=8005 $Y=6265
+X4 1 14 IN 13 sky130_fd_pr__nfet_01v8__example_55959141808423 $T=8815 320 1 180 $X=7625 $Y=190
+X5 1 HLD_H_N 11 17 sky130_fd_pr__nfet_01v8__example_55959141808428 $T=8170 6445 1 180 $X=7125 $Y=6265
+X6 1 12 11 sky130_fd_pr__nfet_01v8__example_55959141808424 $T=9850 5475 0 180 $X=7125 $Y=4545
+X7 1 HLD_H_N 15 12 sky130_fd_pr__nfet_01v8__example_55959141808429 $T=6440 3405 0 180 $X=5395 $Y=225
+X8 1 13 16 sky130_fd_pr__nfet_01v8__example_55959141808427 $T=4680 6185 0 180 $X=2780 $Y=4905
+X9 1 14 18 sky130_fd_pr__nfet_01v8__example_55959141808427 $T=6400 6185 0 180 $X=4500 $Y=4905
+X10 1 VPWR 16 15 sky130_fd_pr__nfet_01v8__example_55959141808426 $T=905 6955 0 0 $X=460 $Y=6775
+X11 1 VPWR 16 15 sky130_fd_pr__nfet_01v8__example_55959141808426 $T=905 8425 0 0 $X=460 $Y=8245
+X12 1 VPWR 18 17 sky130_fd_pr__nfet_01v8__example_55959141808426 $T=3885 6955 0 0 $X=3440 $Y=6775
+X13 1 VPWR 18 17 sky130_fd_pr__nfet_01v8__example_55959141808426 $T=3885 9445 1 0 $X=3440 $Y=8265
+X14 VCC_IO 11 OUT_H_N sky130_fd_pr__pfet_01v8__example_55959141808432 $T=2860 3380 1 0 $X=2265 $Y=50
+X15 VCC_IO 12 OUT_H sky130_fd_pr__pfet_01v8__example_55959141808431 $T=2580 3380 0 180 $X=1385 $Y=50
+X17 1 12 OUT_H sky130_fd_pr__nfet_01v8__example_55959141808380 $T=1310 5950 1 0 $X=850 $Y=4770
+X18 VCC_IO 11 12 sky130_fd_pr__pfet_01v8__example_55959141808435 $T=650 3380 1 0 $X=55 $Y=2300
+X19 VCC_IO 12 11 sky130_fd_pr__pfet_01v8__example_55959141808433 $T=650 1785 1 0 $X=55 $Y=705
+X20 1 11 OUT_H_N sky130_fd_pr__nfet_01v8__example_55959141808379 $T=1030 5950 0 180 $X=-30 $Y=4770
+.ENDS
+***************************************
+.SUBCKT sky130_fd_pr__pfet_01v8__example_55959141808617 2 3 4
+** N=4 EP=3 IP=0 FDC=1
+*.SEEDPROM
+M0 4 3 2 2 phighvt L=0.25 W=1 m=1 r=4 a=0.25 p=2.5 mult=1 $X=0 $Y=0 $D=89
+.ENDS
+***************************************
+.SUBCKT sky130_fd_io__com_ctl_ls_en_1_v2 1 VCC_IO 3 VPWR HLD_H_N DM[1] RST_H SET_H OUT_H_N OUT_H
+** N=19 EP=10 IP=75 FDC=33
+*.SEEDPROM
+*.CALIBRE ISOLATED NETS: VPB
+X0 1 3 Dpar a=3.1008 p=7.28 m=1 $[nwdiode] $X=5570 $Y=-4740 $D=185
+X1 1 SET_H 13 sky130_fd_pr__nfet_01v8__example_55959141808383 $T=9330 6445 0 0 $X=8870 $Y=6265
+X2 1 RST_H 12 sky130_fd_pr__nfet_01v8__example_55959141808382 $T=9050 6445 1 180 $X=8005 $Y=6265
+X3 1 15 DM[1] 14 sky130_fd_pr__nfet_01v8__example_55959141808423 $T=9340 -6380 1 180 $X=8150 $Y=-6510
+X4 1 HLD_H_N 12 18 sky130_fd_pr__nfet_01v8__example_55959141808428 $T=8170 6445 1 180 $X=7125 $Y=6265
+X5 1 13 12 sky130_fd_pr__nfet_01v8__example_55959141808424 $T=9850 5475 0 180 $X=7125 $Y=4545
+X6 1 HLD_H_N 16 13 sky130_fd_pr__nfet_01v8__example_55959141808429 $T=6440 3405 0 180 $X=5395 $Y=225
+X7 1 14 17 sky130_fd_pr__nfet_01v8__example_55959141808427 $T=4680 6185 0 180 $X=2780 $Y=4905
+X8 1 15 19 sky130_fd_pr__nfet_01v8__example_55959141808427 $T=6400 6185 0 180 $X=4500 $Y=4905
+X9 1 VPWR 17 16 sky130_fd_pr__nfet_01v8__example_55959141808426 $T=905 6955 0 0 $X=460 $Y=6775
+X10 1 VPWR 17 16 sky130_fd_pr__nfet_01v8__example_55959141808426 $T=905 8425 0 0 $X=460 $Y=8245
+X11 1 VPWR 19 18 sky130_fd_pr__nfet_01v8__example_55959141808426 $T=3885 6955 0 0 $X=3440 $Y=6775
+X12 1 VPWR 19 18 sky130_fd_pr__nfet_01v8__example_55959141808426 $T=3885 9445 1 0 $X=3440 $Y=8265
+X13 VCC_IO 12 OUT_H_N sky130_fd_pr__pfet_01v8__example_55959141808432 $T=2860 3380 1 0 $X=2265 $Y=50
+X14 VCC_IO 13 OUT_H sky130_fd_pr__pfet_01v8__example_55959141808431 $T=2580 3380 0 180 $X=1385 $Y=50
+X16 1 13 OUT_H sky130_fd_pr__nfet_01v8__example_55959141808380 $T=1310 5950 1 0 $X=850 $Y=4770
+X17 VCC_IO 12 13 sky130_fd_pr__pfet_01v8__example_55959141808435 $T=650 3380 1 0 $X=55 $Y=2300
+X18 VCC_IO 13 12 sky130_fd_pr__pfet_01v8__example_55959141808433 $T=650 1785 1 0 $X=55 $Y=705
+X19 1 12 OUT_H_N sky130_fd_pr__nfet_01v8__example_55959141808379 $T=1030 5950 0 180 $X=-30 $Y=4770
+X20 3 DM[1] 15 sky130_fd_pr__pfet_01v8__example_55959141808617 $T=6750 -3885 1 270 $X=5570 $Y=-4580
+X21 3 15 14 sky130_fd_pr__pfet_01v8__example_55959141808617 $T=6750 -3605 0 90 $X=5570 $Y=-4050
+.ENDS
+***************************************
+.SUBCKT sky130_fd_io__gpiov2_ctl_lsbank VGND VCC_IO VPWR IB_MODE_SEL HLD_I_H_N OD_I_H DM_H[1] DM_H_N[1] DM_H_N[0] DM_H[0] STARTUP_RST_H DM[0] INP_DIS STARTUP_ST_H INP_DIS_H_N DM_H_N[2] DM_H[2] DM[2] VTRIP_SEL_H_N VTRIP_SEL
++ IB_MODE_SEL_H IB_MODE_SEL_H_N DM[1]
+** N=46 EP=23 IP=120 FDC=248
+*.SEEDPROM
+X0 VGND VPWR Dpar a=5.3636 p=10.47 m=1 $[nwdiode] $X=70295 $Y=6995 $D=185
+X1 VGND VCC_IO Dpar a=33.634 p=25.7 m=1 $[nwdiode] $X=16570 $Y=6500 $D=185
+X2 VGND VCC_IO Dpar a=33.634 p=25.7 m=1 $[nwdiode] $X=37340 $Y=6500 $D=185
+R3 OD_I_H 45 0.01 m=1 $[short] $X=74945 $Y=515 $D=266
+R4 46 33 0.01 m=1 $[short] $X=75135 $Y=515 $D=266
+X5 32 OD_I_H sky130_fd_io__tk_em2s_cdns_55959141808438 $T=74450 2305 0 180 $X=73730 $Y=2045
+X6 33 VGND sky130_fd_io__tk_em2s_cdns_55959141808438 $T=75705 1375 0 90 $X=75445 $Y=1375
+X7 OD_I_H 34 35 sky130_fd_io__tk_em1o_cdns_5595914180880 $T=11330 2985 0 270 $X=11330 $Y=2265
+X8 STARTUP_RST_H 36 37 sky130_fd_io__tk_em1o_cdns_5595914180880 $T=31000 2985 1 270 $X=30740 $Y=2265
+X9 38 39 STARTUP_ST_H sky130_fd_io__tk_em1o_cdns_5595914180880 $T=32100 2050 0 270 $X=32100 $Y=1330
+X10 OD_I_H 40 41 sky130_fd_io__tk_em1o_cdns_5595914180880 $T=51770 2985 1 270 $X=51510 $Y=2265
+X11 OD_I_H 42 43 sky130_fd_io__tk_em1o_cdns_5595914180880 $T=72540 1885 0 90 $X=72280 $Y=1885
+X12 VGND 44 32 sky130_fd_io__tk_em1o_cdns_5595914180880 $T=74550 3000 0 270 $X=74550 $Y=2280
+X13 35 VGND sky130_fd_io__tk_em1s_cdns_5595914180882 $T=11330 2050 0 270 $X=11330 $Y=1330
+X14 37 STARTUP_ST_H sky130_fd_io__tk_em1s_cdns_5595914180882 $T=31000 2050 1 270 $X=30740 $Y=1330
+X15 STARTUP_RST_H 38 sky130_fd_io__tk_em1s_cdns_5595914180882 $T=32100 2985 0 270 $X=32100 $Y=2265
+X16 41 VGND sky130_fd_io__tk_em1s_cdns_5595914180882 $T=51770 2050 1 270 $X=51510 $Y=1330
+X17 VGND 43 sky130_fd_io__tk_em1s_cdns_5595914180882 $T=72540 3570 1 270 $X=72280 $Y=2850
+X18 VGND VCC_IO VPWR HLD_I_H_N 33 32 IB_MODE_SEL IB_MODE_SEL_H IB_MODE_SEL_H_N sky130_fd_io__com_ctl_lsv2 $T=102925 10140 0 180 $X=72095 $Y=-6625
+X19 VGND 26 sky130_fd_io__tk_em1o_cdns_5595914180879 $T=12560 1400 0 90 $X=12330 $Y=1400
+X20 STARTUP_ST_H 27 sky130_fd_io__tk_em1o_cdns_5595914180879 $T=29770 1400 1 90 $X=29770 $Y=1400
+X21 28 STARTUP_RST_H sky130_fd_io__tk_em1o_cdns_5595914180879 $T=33270 2055 0 0 $X=33270 $Y=2055
+X22 VGND 30 sky130_fd_io__tk_em1o_cdns_5595914180879 $T=50540 1400 1 90 $X=50540 $Y=1400
+X23 VGND 31 sky130_fd_io__tk_em1o_cdns_5595914180879 $T=71540 3540 1 270 $X=71310 $Y=2820
+X24 26 OD_I_H sky130_fd_io__tk_em1s_cdns_5595914180881 $T=12500 2055 0 0 $X=12500 $Y=2055
+X25 27 STARTUP_RST_H sky130_fd_io__tk_em1s_cdns_5595914180881 $T=29830 2055 1 180 $X=29110 $Y=2055
+X26 STARTUP_ST_H 28 sky130_fd_io__tk_em1s_cdns_5595914180881 $T=33330 1400 0 90 $X=33100 $Y=1400
+X27 30 OD_I_H sky130_fd_io__tk_em1s_cdns_5595914180881 $T=50600 2055 1 180 $X=49880 $Y=2055
+X28 OD_I_H 31 sky130_fd_io__tk_em1s_cdns_5595914180881 $T=70650 1805 0 0 $X=70650 $Y=1805
+X29 VGND VCC_IO VPWR VPWR HLD_I_H_N VTRIP_SEL 31 43 VTRIP_SEL_H_N VTRIP_SEL_H sky130_fd_io__com_ctl_ls_1v2 $T=62705 10140 1 0 $X=61935 $Y=0
+X30 VGND VCC_IO VPWR VPWR HLD_I_H_N DM[0] 27 37 DM_H_N[0] DM_H[0] sky130_fd_io__com_ctl_ls_v2 $T=21165 10140 1 0 $X=20395 $Y=0
+X31 VGND VCC_IO VPWR VPWR HLD_I_H_N INP_DIS 28 38 INP_DIS_H_N INP_DIS_H sky130_fd_io__com_ctl_ls_v2 $T=41935 10140 0 180 $X=31550 $Y=0
+X32 VGND VCC_IO VPWR VPWR HLD_I_H_N DM[2] 30 41 DM_H_N[2] DM_H[2] sky130_fd_io__com_ctl_ls_v2 $T=41935 10140 1 0 $X=41165 $Y=0
+X33 VGND VCC_IO VPWR VPWR HLD_I_H_N DM[1] 26 35 DM_H_N[1] DM_H[1] sky130_fd_io__com_ctl_ls_en_1_v2 $T=21165 10140 0 180 $X=10780 $Y=0
+.ENDS
+***************************************
+.SUBCKT sky130_fd_pr__res_generic_po__example_5595914180864 2 3
+** N=3 EP=2 IP=0 FDC=1
+R0 2 3 L=1.5 W=0.8 m=1 $[mrp1] $X=0 $Y=0 $D=250
+.ENDS
+***************************************
+.SUBCKT sky130_fd_io__tk_em1s_cdns_5595914180859 2 3
+** N=4 EP=2 IP=0 FDC=2
+R0 2 4 0.01 m=1 $[short] $X=260 $Y=0 $D=265
+R1 4 3 0.01 m=1 $[short] $X=1770 $Y=0 $D=265
+.ENDS
+***************************************
+.SUBCKT sky130_fd_io__res250only_small PAD ROUT
+** N=5 EP=2 IP=0 FDC=7
+R0 PAD 4 L=0.17 W=2 m=1 $[mrp1] $X=300 $Y=10 $D=250
+R1 4 5 L=10.07 W=2 m=1 $[mrp1] $X=640 $Y=10 $D=250
+R2 5 ROUT L=0.17 W=2 m=1 $[mrp1] $X=10880 $Y=10 $D=250
+R3 PAD 4 0.01 m=1 $[short] $X=380 $Y=0 $D=264
+R4 5 ROUT 0.01 m=1 $[short] $X=10960 $Y=0 $D=264
+R5 PAD 4 0.01 m=1 $[short] $X=380 $Y=5 $D=265
+R6 5 ROUT 0.01 m=1 $[short] $X=10960 $Y=5 $D=265
+.ENDS
+***************************************
+.SUBCKT sky130_fd_pr__via_pol1__example_5595914180854
+** N=1 EP=0 IP=0 FDC=0
+.ENDS
+***************************************
+.SUBCKT sky130_fd_pr__via_pol1_centered__example_559591418080
+** N=2 EP=0 IP=0 FDC=0
+.ENDS
+***************************************
+.SUBCKT sky130_fd_pr__res_bent_po__example_5595914180862 2 3
+** N=3 EP=2 IP=0 FDC=1
+R0 2 3 L=6 W=0.8 m=1 $[mrp1] $X=0 $Y=0 $D=250
+.ENDS
+***************************************
+.SUBCKT sky130_fd_pr__nfet_01v8__example_5595914180850 1 2 3
+** N=3 EP=3 IP=4 FDC=1
+M0 1 2 3 1 nhv L=0.6 W=5 m=1 r=8.33333 a=3 p=11.2 mult=1 $X=0 $Y=0 $D=49
+.ENDS
+***************************************
+.SUBCKT sky130_fd_io__gpio_pddrvr_weakv2 2 3 PD_H PAD
+** N=5 EP=4 IP=18 FDC=7
+*.SEEDPROM
+X0 2 3 Dpar a=107.174 p=75.96 m=1 $[dnwdiode_pw] $X=840 $Y=840 $D=188
+X1 2 PD_H PAD sky130_fd_pr__nfet_01v8__example_5595914180850 $T=2075 1810 0 0 $X=1630 $Y=1630
+X2 2 PD_H PAD sky130_fd_pr__nfet_01v8__example_5595914180850 $T=2075 7415 0 0 $X=1630 $Y=7235
+X3 2 PD_H PAD sky130_fd_pr__nfet_01v8__example_5595914180850 $T=2075 13020 0 0 $X=1630 $Y=12840
+X4 2 PD_H PAD sky130_fd_pr__nfet_01v8__example_5595914180850 $T=2075 23570 1 0 $X=1630 $Y=18390
+X5 2 PD_H PAD sky130_fd_pr__nfet_01v8__example_5595914180850 $T=2075 29175 1 0 $X=1630 $Y=23995
+X6 2 PD_H PAD sky130_fd_pr__nfet_01v8__example_5595914180850 $T=2075 34780 1 0 $X=1630 $Y=29600
+.ENDS
+***************************************
+.SUBCKT sky130_fd_pr__hvdfm1sd__example_55959141808655
+** N=2 EP=0 IP=0 FDC=0
+*.SEEDPROM
+.ENDS
+***************************************
+.SUBCKT sky130_fd_pr__pfet_01v8__example_55959141808654 2 3 4
+** N=4 EP=3 IP=13 FDC=4
+*.SEEDPROM
+M0 4 3 2 2 phv L=0.5 W=7 m=1 r=14 a=3.5 p=15 mult=1 $X=0 $Y=0 $D=109
+M1 2 3 4 2 phv L=0.5 W=7 m=1 r=14 a=3.5 p=15 mult=1 $X=780 $Y=0 $D=109
+M2 4 3 2 2 phv L=0.5 W=7 m=1 r=14 a=3.5 p=15 mult=1 $X=1560 $Y=0 $D=109
+M3 2 3 4 2 phv L=0.5 W=7 m=1 r=14 a=3.5 p=15 mult=1 $X=2340 $Y=0 $D=109
+.ENDS
+***************************************
+.SUBCKT sky130_fd_io__com_pudrvr_strong_slowv2 2 PU_H_N PAD
+** N=4 EP=3 IP=8 FDC=8
+*.SEEDPROM
+X0 2 PU_H_N PAD sky130_fd_pr__pfet_01v8__example_55959141808654 $T=8780 985 0 90 $X=1450 $Y=390
+X1 2 PU_H_N PAD sky130_fd_pr__pfet_01v8__example_55959141808654 $T=16430 985 0 90 $X=9100 $Y=390
+.ENDS
+***************************************
+.SUBCKT sky130_fd_pr__hvdfm1sd__example_5595914180848
+** N=2 EP=0 IP=0 FDC=0
+*.SEEDPROM
+.ENDS
+***************************************
+.SUBCKT sky130_fd_pr__hvdfm1sd2__example_5595914180849
+** N=3 EP=0 IP=0 FDC=0
+*.SEEDPROM
+.ENDS
+***************************************
+.SUBCKT sky130_fd_io__gpio_pddrvr_strong_slowv2 2 3 PD_H PAD
+** N=5 EP=4 IP=12 FDC=5
+*.SEEDPROM
+X0 2 3 Dpar a=72.759 p=53.54 m=1 $[dnwdiode_pw] $X=840 $Y=840 $D=188
+X1 2 PD_H PAD sky130_fd_pr__nfet_01v8__example_5595914180850 $T=2075 1810 0 0 $X=1630 $Y=1630
+X2 2 PD_H PAD sky130_fd_pr__nfet_01v8__example_5595914180850 $T=2075 12360 1 0 $X=1630 $Y=7180
+X3 2 PD_H PAD sky130_fd_pr__nfet_01v8__example_5595914180850 $T=2075 17965 1 0 $X=1630 $Y=12785
+X4 2 PD_H PAD sky130_fd_pr__nfet_01v8__example_5595914180850 $T=2075 23570 1 0 $X=1630 $Y=18390
+.ENDS
+***************************************
+.SUBCKT sky130_fd_io__tk_em2o_cdns_55959141808653 2 3
+** N=5 EP=2 IP=0 FDC=2
+R0 2 4 0.01 m=1 $[short] $X=260 $Y=0 $D=266
+R1 5 3 0.01 m=1 $[short] $X=1770 $Y=0 $D=266
+.ENDS
+***************************************
+.SUBCKT sky130_fd_io__tk_em2s_cdns_55959141808652 2 3
+** N=4 EP=2 IP=0 FDC=2
+R0 2 4 0.01 m=1 $[short] $X=260 $Y=0 $D=266
+R1 4 3 0.01 m=1 $[short] $X=1770 $Y=0 $D=266
+.ENDS
+***************************************
+.SUBCKT sky130_fd_pr__res_generic_po__example_5595914180838 2 3
+** N=3 EP=2 IP=0 FDC=1
+R0 2 3 L=10.2 W=0.5 m=1 $[mrp1] $X=0 $Y=0 $D=250
+.ENDS
+***************************************
+.SUBCKT sky130_fd_pr__hvdfl1sd2__example_55959141808202
+** N=2 EP=0 IP=0 FDC=0
+.ENDS
+***************************************
+.SUBCKT sky130_fd_pr__pfet_01v8__example_55959141808657 2 3 4
+** N=4 EP=3 IP=0 FDC=1
+*.SEEDPROM
+M0 2 3 4 2 phv L=0.6 W=5 m=1 r=8.33333 a=3 p=11.2 mult=1 $X=0 $Y=0 $D=109
+.ENDS
+***************************************
+.SUBCKT ICV_4
+** N=3 EP=0 IP=4 FDC=0
+*.SEEDPROM
+.ENDS
+***************************************
+.SUBCKT sky130_fd_pr__hvdftpm1s2__example_55959141808659
+** N=2 EP=0 IP=0 FDC=0
+.ENDS
+***************************************
+.SUBCKT sky130_fd_pr__pfet_01v8__example_55959141808658 2 3 4 5 6 7 8 9 10
+** N=10 EP=9 IP=26 FDC=27
+*.SEEDPROM
+M0 10 3 2 2 phv L=0.6 W=5 m=1 r=8.33333 a=3 p=11.2 mult=1 $X=0 $Y=0 $D=109
+M1 2 3 10 2 phv L=0.6 W=5 m=1 r=8.33333 a=3 p=11.2 mult=1 $X=2150 $Y=0 $D=109
+M2 10 3 2 2 phv L=0.6 W=5 m=1 r=8.33333 a=3 p=11.2 mult=1 $X=4960 $Y=0 $D=109
+M3 2 3 10 2 phv L=0.6 W=5 m=1 r=8.33333 a=3 p=11.2 mult=1 $X=7110 $Y=0 $D=109
+M4 10 3 2 2 phv L=0.6 W=5 m=1 r=8.33333 a=3 p=11.2 mult=1 $X=9920 $Y=0 $D=109
+M5 2 3 10 2 phv L=0.6 W=5 m=1 r=8.33333 a=3 p=11.2 mult=1 $X=12070 $Y=0 $D=109
+M6 10 4 2 2 phv L=0.6 W=5 m=1 r=8.33333 a=3 p=11.2 mult=1 $X=14880 $Y=0 $D=109
+M7 2 4 10 2 phv L=0.6 W=5 m=1 r=8.33333 a=3 p=11.2 mult=1 $X=17030 $Y=0 $D=109
+M8 10 4 2 2 phv L=0.6 W=5 m=1 r=8.33333 a=3 p=11.2 mult=1 $X=19840 $Y=0 $D=109
+M9 2 4 10 2 phv L=0.6 W=5 m=1 r=8.33333 a=3 p=11.2 mult=1 $X=21990 $Y=0 $D=109
+M10 10 4 2 2 phv L=0.6 W=5 m=1 r=8.33333 a=3 p=11.2 mult=1 $X=24800 $Y=0 $D=109
+M11 2 4 10 2 phv L=0.6 W=5 m=1 r=8.33333 a=3 p=11.2 mult=1 $X=26950 $Y=0 $D=109
+M12 10 4 2 2 phv L=0.6 W=5 m=1 r=8.33333 a=3 p=11.2 mult=1 $X=29760 $Y=0 $D=109
+M13 2 4 10 2 phv L=0.6 W=5 m=1 r=8.33333 a=3 p=11.2 mult=1 $X=31910 $Y=0 $D=109
+M14 10 4 2 2 phv L=0.6 W=5 m=1 r=8.33333 a=3 p=11.2 mult=1 $X=34720 $Y=0 $D=109
+M15 2 5 10 2 phv L=0.6 W=5 m=1 r=8.33333 a=3 p=11.2 mult=1 $X=36870 $Y=0 $D=109
+M16 10 5 2 2 phv L=0.6 W=5 m=1 r=8.33333 a=3 p=11.2 mult=1 $X=39680 $Y=0 $D=109
+M17 2 5 10 2 phv L=0.6 W=5 m=1 r=8.33333 a=3 p=11.2 mult=1 $X=41830 $Y=0 $D=109
+M18 10 6 2 2 phv L=0.6 W=5 m=1 r=8.33333 a=3 p=11.2 mult=1 $X=44640 $Y=0 $D=109
+M19 2 6 10 2 phv L=0.6 W=5 m=1 r=8.33333 a=3 p=11.2 mult=1 $X=46790 $Y=0 $D=109
+M20 10 6 2 2 phv L=0.6 W=5 m=1 r=8.33333 a=3 p=11.2 mult=1 $X=49600 $Y=0 $D=109
+M21 2 7 10 2 phv L=0.6 W=5 m=1 r=8.33333 a=3 p=11.2 mult=1 $X=51750 $Y=0 $D=109
+M22 10 7 2 2 phv L=0.6 W=5 m=1 r=8.33333 a=3 p=11.2 mult=1 $X=54560 $Y=0 $D=109
+M23 2 7 10 2 phv L=0.6 W=5 m=1 r=8.33333 a=3 p=11.2 mult=1 $X=56710 $Y=0 $D=109
+M24 10 3 2 2 phv L=0.6 W=5 m=1 r=8.33333 a=3 p=11.2 mult=1 $X=59520 $Y=0 $D=109
+M25 2 8 10 2 phv L=0.6 W=5 m=1 r=8.33333 a=3 p=11.2 mult=1 $X=61670 $Y=0 $D=109
+M26 10 9 2 2 phv L=0.6 W=5 m=1 r=8.33333 a=3 p=11.2 mult=1 $X=64480 $Y=0 $D=109
+.ENDS
+***************************************
+.SUBCKT sky130_fd_io__pfet_con_diff_wo_abt_270v2 1 2 3 4 5 6 7 8 9 10
+** N=10 EP=10 IP=118 FDC=57
+X0 1 2 Dpar a=1473.41 p=184.25 m=1 $[nwdiode] $X=2075 $Y=3000 $D=185
+X7 2 9 10 sky130_fd_pr__pfet_01v8__example_55959141808657 $T=70675 7760 0 0 $X=70095 $Y=7430
+X8 2 9 10 sky130_fd_pr__pfet_01v8__example_55959141808657 $T=70675 15760 0 0 $X=70095 $Y=15430
+X35 2 3 4 5 6 7 8 9 10 sky130_fd_pr__pfet_01v8__example_55959141808658 $T=4405 12760 1 0 $X=3825 $Y=7430
+X36 2 3 4 5 6 7 8 9 10 sky130_fd_pr__pfet_01v8__example_55959141808658 $T=4405 15760 0 0 $X=3825 $Y=15430
+.ENDS
+***************************************
+.SUBCKT sky130_fd_io__gpio_pudrvr_strongv2 VNB TIE_HI_ESD VCC_IO PAD PU_H_N[2] PU_H_N[3]
+** N=13 EP=6 IP=58 FDC=88
+X0 TIE_HI_ESD 9 sky130_fd_io__tk_em2o_cdns_55959141808653 $T=50980 -1310 1 90 $X=50980 $Y=-1310
+X1 PU_H_N[3] 9 sky130_fd_io__tk_em2o_cdns_55959141808653 $T=52190 -1310 1 90 $X=52190 $Y=-1310
+X2 TIE_HI_ESD 10 sky130_fd_io__tk_em2o_cdns_55959141808653 $T=54720 -1310 1 90 $X=54720 $Y=-1310
+X3 PU_H_N[2] 10 sky130_fd_io__tk_em2o_cdns_55959141808653 $T=57105 -1310 1 90 $X=57105 $Y=-1310
+X4 PU_H_N[3] 11 sky130_fd_io__tk_em2o_cdns_55959141808653 $T=63035 -1190 1 90 $X=63035 $Y=-1190
+X5 PU_H_N[2] 11 sky130_fd_io__tk_em2o_cdns_55959141808653 $T=64240 -1190 1 90 $X=64240 $Y=-1190
+X6 TIE_HI_ESD 12 sky130_fd_io__tk_em2o_cdns_55959141808653 $T=67960 3020 1 90 $X=67960 $Y=3020
+X7 PU_H_N[2] 12 sky130_fd_io__tk_em2o_cdns_55959141808653 $T=70370 3020 1 90 $X=70370 $Y=3020
+X8 PU_H_N[3] 13 sky130_fd_io__tk_em2o_cdns_55959141808653 $T=72655 3020 1 90 $X=72655 $Y=3020
+X9 PU_H_N[2] 13 sky130_fd_io__tk_em2o_cdns_55959141808653 $T=73840 3020 1 90 $X=73840 $Y=3020
+X10 PU_H_N[2] 9 sky130_fd_io__tk_em2s_cdns_55959141808652 $T=53365 -1310 1 90 $X=53365 $Y=-1310
+X11 PU_H_N[3] 10 sky130_fd_io__tk_em2s_cdns_55959141808652 $T=55930 -1310 1 90 $X=55930 $Y=-1310
+X12 TIE_HI_ESD 11 sky130_fd_io__tk_em2s_cdns_55959141808652 $T=61825 -1190 1 90 $X=61825 $Y=-1190
+X13 PU_H_N[3] 12 sky130_fd_io__tk_em2s_cdns_55959141808652 $T=69185 3020 1 90 $X=69185 $Y=3020
+X14 TIE_HI_ESD 13 sky130_fd_io__tk_em2s_cdns_55959141808652 $T=71430 3020 1 90 $X=71430 $Y=3020
+X15 TIE_HI_ESD VCC_IO sky130_fd_pr__res_generic_po__example_5595914180838 $T=62675 -785 0 0 $X=62405 $Y=-785
+X16 VNB VCC_IO PU_H_N[2] PU_H_N[3] 9 10 11 12 13 PAD sky130_fd_io__pfet_con_diff_wo_abt_270v2 $T=2285 1730 0 0 $X=2285 $Y=3120
+.ENDS
+***************************************
+.SUBCKT sky130_fd_pr__hvdftpl1s__example_55959141808646
+** N=3 EP=0 IP=0 FDC=0
+*.SEEDPROM
+.ENDS
+***************************************
+.SUBCKT sky130_fd_pr__nfet_01v8__example_55959141808647 2 3 4
+** N=5 EP=3 IP=3 FDC=1
+*.SEEDPROM
+M0 4 3 2 2 nhv L=0.6 W=5 m=1 r=8.33333 a=3 p=11.2 mult=1 $X=0 $Y=0 $D=49
+.ENDS
+***************************************
+.SUBCKT sky130_fd_pr__hvdftpm1s2__example_55959141808649
+** N=3 EP=0 IP=0 FDC=0
+*.SEEDPROM
+.ENDS
+***************************************
+.SUBCKT ICV_5
+** N=4 EP=0 IP=4 FDC=0
+*.SEEDPROM
+.ENDS
+***************************************
+.SUBCKT sky130_fd_pr__nfet_01v8__example_55959141808650 2 3 4
+** N=5 EP=3 IP=3 FDC=1
+*.SEEDPROM
+M0 4 3 2 2 nhv L=0.6 W=5 m=1 r=8.33333 a=3 p=11.2 mult=1 $X=0 $Y=0 $D=49
+.ENDS
+***************************************
+.SUBCKT sky130_fd_io__nfet_con_diff_wo_abt_270v2 VSSIO VCC_IO 4 5 6 7 8 9 10 11 12 13 PAD
+** N=14 EP=13 IP=208 FDC=57
+*.SEEDPROM
+M0 PAD 4 VSSIO VSSIO nhv L=0.6 W=5 m=1 r=8.33333 a=3 p=11.2 mult=1 $X=4620 $Y=7285 $D=49
+M1 PAD 4 VSSIO VSSIO nhv L=0.6 W=5 m=1 r=8.33333 a=3 p=11.2 mult=1 $X=9580 $Y=7285 $D=49
+M2 PAD 4 VSSIO VSSIO nhv L=0.6 W=5 m=1 r=8.33333 a=3 p=11.2 mult=1 $X=9580 $Y=15290 $D=49
+M3 VSSIO 4 PAD VSSIO nhv L=0.6 W=5 m=1 r=8.33333 a=3 p=11.2 mult=1 $X=11730 $Y=7285 $D=49
+M4 VSSIO 4 PAD VSSIO nhv L=0.6 W=5 m=1 r=8.33333 a=3 p=11.2 mult=1 $X=11730 $Y=15290 $D=49
+M5 PAD 5 VSSIO VSSIO nhv L=0.6 W=5 m=1 r=8.33333 a=3 p=11.2 mult=1 $X=14540 $Y=7285 $D=49
+M6 PAD 5 VSSIO VSSIO nhv L=0.6 W=5 m=1 r=8.33333 a=3 p=11.2 mult=1 $X=14540 $Y=15290 $D=49
+M7 VSSIO 5 PAD VSSIO nhv L=0.6 W=5 m=1 r=8.33333 a=3 p=11.2 mult=1 $X=16690 $Y=7285 $D=49
+M8 VSSIO 5 PAD VSSIO nhv L=0.6 W=5 m=1 r=8.33333 a=3 p=11.2 mult=1 $X=16690 $Y=15290 $D=49
+M9 PAD 5 VSSIO VSSIO nhv L=0.6 W=5 m=1 r=8.33333 a=3 p=11.2 mult=1 $X=19500 $Y=7285 $D=49
+M10 PAD 5 VSSIO VSSIO nhv L=0.6 W=5 m=1 r=8.33333 a=3 p=11.2 mult=1 $X=19500 $Y=15290 $D=49
+M11 VSSIO 6 PAD VSSIO nhv L=0.6 W=5 m=1 r=8.33333 a=3 p=11.2 mult=1 $X=21650 $Y=7285 $D=49
+M12 VSSIO 6 PAD VSSIO nhv L=0.6 W=5 m=1 r=8.33333 a=3 p=11.2 mult=1 $X=21650 $Y=15290 $D=49
+M13 PAD 6 VSSIO VSSIO nhv L=0.6 W=5 m=1 r=8.33333 a=3 p=11.2 mult=1 $X=24460 $Y=7285 $D=49
+M14 PAD 6 VSSIO VSSIO nhv L=0.6 W=5 m=1 r=8.33333 a=3 p=11.2 mult=1 $X=24460 $Y=15290 $D=49
+M15 VSSIO 6 PAD VSSIO nhv L=0.6 W=5 m=1 r=8.33333 a=3 p=11.2 mult=1 $X=26610 $Y=7285 $D=49
+M16 VSSIO 6 PAD VSSIO nhv L=0.6 W=5 m=1 r=8.33333 a=3 p=11.2 mult=1 $X=26610 $Y=15290 $D=49
+M17 PAD 7 VSSIO VSSIO nhv L=0.6 W=5 m=1 r=8.33333 a=3 p=11.2 mult=1 $X=29420 $Y=7285 $D=49
+M18 PAD 7 VSSIO VSSIO nhv L=0.6 W=5 m=1 r=8.33333 a=3 p=11.2 mult=1 $X=29420 $Y=15290 $D=49
+M19 VSSIO 7 PAD VSSIO nhv L=0.6 W=5 m=1 r=8.33333 a=3 p=11.2 mult=1 $X=31570 $Y=7285 $D=49
+M20 VSSIO 7 PAD VSSIO nhv L=0.6 W=5 m=1 r=8.33333 a=3 p=11.2 mult=1 $X=31570 $Y=15290 $D=49
+M21 PAD 7 VSSIO VSSIO nhv L=0.6 W=5 m=1 r=8.33333 a=3 p=11.2 mult=1 $X=34380 $Y=7285 $D=49
+M22 PAD 7 VSSIO VSSIO nhv L=0.6 W=5 m=1 r=8.33333 a=3 p=11.2 mult=1 $X=34380 $Y=15290 $D=49
+M23 VSSIO 8 PAD VSSIO nhv L=0.6 W=5 m=1 r=8.33333 a=3 p=11.2 mult=1 $X=36530 $Y=7285 $D=49
+M24 VSSIO 8 PAD VSSIO nhv L=0.6 W=5 m=1 r=8.33333 a=3 p=11.2 mult=1 $X=36530 $Y=15290 $D=49
+M25 PAD 9 VSSIO VSSIO nhv L=0.6 W=5 m=1 r=8.33333 a=3 p=11.2 mult=1 $X=39340 $Y=7285 $D=49
+M26 PAD 9 VSSIO VSSIO nhv L=0.6 W=5 m=1 r=8.33333 a=3 p=11.2 mult=1 $X=39340 $Y=15290 $D=49
+M27 VSSIO 9 PAD VSSIO nhv L=0.6 W=5 m=1 r=8.33333 a=3 p=11.2 mult=1 $X=41490 $Y=7285 $D=49
+M28 VSSIO 9 PAD VSSIO nhv L=0.6 W=5 m=1 r=8.33333 a=3 p=11.2 mult=1 $X=41490 $Y=15290 $D=49
+M29 PAD 9 VSSIO VSSIO nhv L=0.6 W=5 m=1 r=8.33333 a=3 p=11.2 mult=1 $X=44300 $Y=7285 $D=49
+M30 PAD 9 VSSIO VSSIO nhv L=0.6 W=5 m=1 r=8.33333 a=3 p=11.2 mult=1 $X=44300 $Y=15290 $D=49
+M31 VSSIO 10 PAD VSSIO nhv L=0.6 W=5 m=1 r=8.33333 a=3 p=11.2 mult=1 $X=46450 $Y=7285 $D=49
+M32 VSSIO 10 PAD VSSIO nhv L=0.6 W=5 m=1 r=8.33333 a=3 p=11.2 mult=1 $X=46450 $Y=15290 $D=49
+M33 PAD 10 VSSIO VSSIO nhv L=0.6 W=5 m=1 r=8.33333 a=3 p=11.2 mult=1 $X=49260 $Y=7285 $D=49
+M34 PAD 10 VSSIO VSSIO nhv L=0.6 W=5 m=1 r=8.33333 a=3 p=11.2 mult=1 $X=49260 $Y=15290 $D=49
+M35 VSSIO 10 PAD VSSIO nhv L=0.6 W=5 m=1 r=8.33333 a=3 p=11.2 mult=1 $X=51410 $Y=7285 $D=49
+M36 VSSIO 10 PAD VSSIO nhv L=0.6 W=5 m=1 r=8.33333 a=3 p=11.2 mult=1 $X=51410 $Y=15290 $D=49
+M37 PAD 10 VSSIO VSSIO nhv L=0.6 W=5 m=1 r=8.33333 a=3 p=11.2 mult=1 $X=54220 $Y=7285 $D=49
+M38 PAD 10 VSSIO VSSIO nhv L=0.6 W=5 m=1 r=8.33333 a=3 p=11.2 mult=1 $X=54220 $Y=15290 $D=49
+M39 VSSIO 10 PAD VSSIO nhv L=0.6 W=5 m=1 r=8.33333 a=3 p=11.2 mult=1 $X=56370 $Y=7285 $D=49
+M40 VSSIO 10 PAD VSSIO nhv L=0.6 W=5 m=1 r=8.33333 a=3 p=11.2 mult=1 $X=56370 $Y=15290 $D=49
+M41 PAD 10 VSSIO VSSIO nhv L=0.6 W=5 m=1 r=8.33333 a=3 p=11.2 mult=1 $X=59180 $Y=7285 $D=49
+M42 PAD 10 VSSIO VSSIO nhv L=0.6 W=5 m=1 r=8.33333 a=3 p=11.2 mult=1 $X=59180 $Y=15290 $D=49
+M43 VSSIO 11 PAD VSSIO nhv L=0.6 W=5 m=1 r=8.33333 a=3 p=11.2 mult=1 $X=61330 $Y=7285 $D=49
+M44 VSSIO 11 PAD VSSIO nhv L=0.6 W=5 m=1 r=8.33333 a=3 p=11.2 mult=1 $X=61330 $Y=15290 $D=49
+M45 PAD 12 VSSIO VSSIO nhv L=0.6 W=5 m=1 r=8.33333 a=3 p=11.2 mult=1 $X=64140 $Y=7285 $D=49
+M46 PAD 12 VSSIO VSSIO nhv L=0.6 W=5 m=1 r=8.33333 a=3 p=11.2 mult=1 $X=64140 $Y=15290 $D=49
+M47 VSSIO 13 PAD VSSIO nhv L=0.6 W=5 m=1 r=8.33333 a=3 p=11.2 mult=1 $X=66290 $Y=7285 $D=49
+M48 VSSIO 13 PAD VSSIO nhv L=0.6 W=5 m=1 r=8.33333 a=3 p=11.2 mult=1 $X=66290 $Y=15290 $D=49
+M49 PAD 13 VSSIO VSSIO nhv L=0.6 W=5 m=1 r=8.33333 a=3 p=11.2 mult=1 $X=69100 $Y=7285 $D=49
+M50 PAD 13 VSSIO VSSIO nhv L=0.6 W=5 m=1 r=8.33333 a=3 p=11.2 mult=1 $X=69100 $Y=15290 $D=49
+X51 VSSIO VCC_IO Dpar a=1576.75 p=188.14 m=1 $[dnwdiode_pw] $X=1810 $Y=3925 $D=188
+X55 VSSIO 4 PAD sky130_fd_pr__nfet_01v8__example_55959141808647 $T=4620 20290 1 0 $X=3055 $Y=15110
+X56 VSSIO 13 PAD sky130_fd_pr__nfet_01v8__example_55959141808647 $T=71490 12285 0 180 $X=70460 $Y=7105
+X57 VSSIO 13 PAD sky130_fd_pr__nfet_01v8__example_55959141808647 $T=71490 20290 0 180 $X=70460 $Y=15110
+X108 VSSIO 4 PAD sky130_fd_pr__nfet_01v8__example_55959141808650 $T=7370 12285 0 180 $X=6340 $Y=7105
+X109 VSSIO 4 PAD sky130_fd_pr__nfet_01v8__example_55959141808650 $T=7370 20290 0 180 $X=6340 $Y=15110
+.ENDS
+***************************************
+.SUBCKT sky130_fd_io__gpiov2_pddrvr_strong VGND_IO VCC_IO TIE_LO_ESD PD_H[2] PD_H[3] PD_H_I2C PAD
+** N=26 EP=7 IP=80 FDC=101
+*.SEEDPROM
+*.CALIBRE ISOLATED NETS: FORCE_LO_H FORCE_LOVOL_H VSSIO_AMX
+X0 VGND_IO VCC_IO condiode a=1e-06 p=0.004 m=1 ahftempperim=0.004 $X=6380 $Y=37530 $D=150
+X1 TIE_LO_ESD 26 sky130_fd_io__tk_em2o_cdns_55959141808653 $T=2065 7920 1 90 $X=2065 $Y=7920
+X2 PD_H[2] 26 sky130_fd_io__tk_em2o_cdns_55959141808653 $T=4480 7920 1 90 $X=4480 $Y=7920
+X3 PD_H[3] 25 sky130_fd_io__tk_em2o_cdns_55959141808653 $T=8470 7920 0 90 $X=7820 $Y=7920
+X4 TIE_LO_ESD 25 sky130_fd_io__tk_em2o_cdns_55959141808653 $T=9885 7920 0 90 $X=9235 $Y=7920
+X5 PD_H[2] 24 sky130_fd_io__tk_em2o_cdns_55959141808653 $T=34665 7920 0 90 $X=34015 $Y=7920
+X6 TIE_LO_ESD 24 sky130_fd_io__tk_em2o_cdns_55959141808653 $T=38965 7920 0 90 $X=38315 $Y=7920
+X7 PD_H[2] 23 sky130_fd_io__tk_em2o_cdns_55959141808653 $T=43175 7920 0 90 $X=42525 $Y=7920
+X8 TIE_LO_ESD 23 sky130_fd_io__tk_em2o_cdns_55959141808653 $T=47475 7920 0 90 $X=46825 $Y=7920
+X9 PD_H[2] 22 sky130_fd_io__tk_em2o_cdns_55959141808653 $T=50575 7920 0 90 $X=49925 $Y=7920
+X10 TIE_LO_ESD 22 sky130_fd_io__tk_em2o_cdns_55959141808653 $T=54875 7920 0 90 $X=54225 $Y=7920
+X11 PD_H[2] 21 sky130_fd_io__tk_em2o_cdns_55959141808653 $T=57290 7920 0 90 $X=56640 $Y=7920
+X12 TIE_LO_ESD 21 sky130_fd_io__tk_em2o_cdns_55959141808653 $T=61590 7920 0 90 $X=60940 $Y=7920
+X13 PD_H[2] 20 sky130_fd_io__tk_em2o_cdns_55959141808653 $T=64460 7920 0 90 $X=63810 $Y=7920
+X14 PD_H[3] 20 sky130_fd_io__tk_em2o_cdns_55959141808653 $T=66610 7920 0 90 $X=65960 $Y=7920
+X15 PD_H[3] 26 sky130_fd_io__tk_em2s_cdns_55959141808652 $T=3275 7920 1 90 $X=3275 $Y=7920
+X16 PD_H[2] 25 sky130_fd_io__tk_em2s_cdns_55959141808652 $T=6950 7920 0 90 $X=6300 $Y=7920
+X17 PD_H[3] 24 sky130_fd_io__tk_em2s_cdns_55959141808652 $T=36815 7920 0 90 $X=36165 $Y=7920
+X18 PD_H[3] 23 sky130_fd_io__tk_em2s_cdns_55959141808652 $T=45325 7920 0 90 $X=44675 $Y=7920
+X19 PD_H[3] 22 sky130_fd_io__tk_em2s_cdns_55959141808652 $T=52725 7920 0 90 $X=52075 $Y=7920
+X20 PD_H[3] 21 sky130_fd_io__tk_em2s_cdns_55959141808652 $T=59440 7920 0 90 $X=58790 $Y=7920
+X21 TIE_LO_ESD 20 sky130_fd_io__tk_em2s_cdns_55959141808652 $T=68760 7920 0 90 $X=68110 $Y=7920
+X22 TIE_LO_ESD VGND_IO sky130_fd_pr__res_generic_po__example_5595914180838 $T=1680 46835 0 0 $X=1410 $Y=46835
+X23 VGND_IO VCC_IO 20 21 22 23 24 PD_H[2] PD_H[3] PD_H_I2C 25 26 PAD sky130_fd_io__nfet_con_diff_wo_abt_270v2 $T=75440 42020 0 180 $X=-425 $Y=14555
+.ENDS
+***************************************
+.SUBCKT sky130_fd_io__gpio_odrvrv2 VGND VGND_IO VCC_IO PU_H_N[0] PAD PD_H[0] PU_H_N[1] PD_H[1] PU_H_N[3] TIE_HI_ESD PU_H_N[2] PD_H[2] PD_H[3] TIE_LO_ESD 25
+** N=40 EP=15 IP=104 FDC=253
+*.SEEDPROM
+*.CALIBRE ISOLATED NETS: FORCE_HI_H_N VSSIO_AMX FORCE_LOVOL_H FORCE_LO_H
+M0 26 PU_H_N[0] VCC_IO VCC_IO phv L=0.5 W=5 m=1 r=10 a=2.5 p=11 mult=1 $X=4170 $Y=1680 $D=109
+M1 VCC_IO PU_H_N[0] 26 VCC_IO phv L=0.5 W=5 m=1 r=10 a=2.5 p=11 mult=1 $X=4170 $Y=2460 $D=109
+M2 26 PU_H_N[0] VCC_IO VCC_IO phv L=0.5 W=5 m=1 r=10 a=2.5 p=11 mult=1 $X=4170 $Y=3240 $D=109
+M3 VCC_IO PU_H_N[0] 26 VCC_IO phv L=0.5 W=5 m=1 r=10 a=2.5 p=11 mult=1 $X=4170 $Y=4020 $D=109
+X4 VGND_IO VCC_IO condiode a=1e-06 p=0.004 m=1 ahftempperim=0.004 $X=7130 $Y=77270 $D=150
+X5 VGND_IO VCC_IO condiode a=1e-06 p=0.004 m=1 ahftempperim=0.004 $X=33775 $Y=77260 $D=150
+R6 26 27 L=50 W=0.8 m=1 $[mrp1] $X=14235 $Y=35800 $D=250
+R7 27 30 L=12 W=0.8 m=1 $[mrp1] $X=41025 $Y=37070 $D=250
+R8 28 29 L=5 W=2 m=1 $[mrp1] $X=43060 $Y=39430 $D=250
+R9 29 31 L=3 W=2 m=1 $[mrp1] $X=48570 $Y=39430 $D=250
+R10 31 32 L=2 W=2 m=1 $[mrp1] $X=52080 $Y=39430 $D=250
+X11 VGND VCC_IO Dpar a=2283.69 p=218.67 m=1 $[dnwdiode_psub] $X=-4575 $Y=49650 $D=187
+X12 VGND VCC_IO Dpar a=167.455 p=75.76 m=1 $[nwdiode] $X=1680 $Y=545 $D=185
+R13 30 38 0.01 m=1 $[short] $X=46330 $Y=33750 $D=265
+R14 39 33 0.01 m=1 $[short] $X=47840 $Y=33750 $D=265
+R15 29 40 0.01 m=1 $[short] $X=49405 $Y=39975 $D=265
+R16 40 31 0.01 m=1 $[short] $X=50915 $Y=39975 $D=265
+X17 36 32 sky130_fd_pr__res_generic_po__example_5595914180864 $T=58255 37070 1 180 $X=56485 $Y=37070
+X18 34 35 sky130_fd_pr__res_generic_po__example_5595914180864 $T=56855 34485 1 0 $X=56585 $Y=33685
+X19 37 36 sky130_fd_pr__res_generic_po__example_5595914180864 $T=61180 37070 1 180 $X=59410 $Y=37070
+X20 35 37 sky130_fd_pr__res_generic_po__example_5595914180864 $T=59780 34485 1 0 $X=59510 $Y=33685
+X21 33 34 sky130_fd_io__tk_em1s_cdns_5595914180859 $T=52780 34410 1 0 $X=52780 $Y=33750
+X22 36 32 sky130_fd_io__tk_em1s_cdns_5595914180859 $T=58605 37145 1 180 $X=56565 $Y=37145
+X23 34 35 sky130_fd_io__tk_em1s_cdns_5595914180859 $T=56670 34410 1 0 $X=56670 $Y=33750
+X24 35 37 sky130_fd_io__tk_em1s_cdns_5595914180859 $T=59470 34410 1 0 $X=59470 $Y=33750
+X25 37 36 sky130_fd_io__tk_em1s_cdns_5595914180859 $T=61510 37145 1 180 $X=59470 $Y=37145
+X26 PAD 32 sky130_fd_io__res250only_small $T=66860 41440 0 180 $X=55510 $Y=39420
+X35 33 30 sky130_fd_pr__res_bent_po__example_5595914180862 $T=49435 34495 0 180 $X=43165 $Y=33695
+X36 34 33 sky130_fd_pr__res_bent_po__example_5595914180862 $T=56145 34495 0 180 $X=49875 $Y=33695
+X37 VGND_IO VCC_IO PD_H[0] 26 sky130_fd_io__gpio_pddrvr_weakv2 $T=26645 78375 0 270 $X=26645 $Y=72615
+X38 VCC_IO PU_H_N[0] 26 sky130_fd_pr__pfet_01v8__example_55959141808654 $T=16820 1680 0 90 $X=9490 $Y=1085
+X39 VCC_IO PU_H_N[1] 28 sky130_fd_io__com_pudrvr_strong_slowv2 $T=35060 695 1 180 $X=17310 $Y=-185
+X45 VGND_IO VCC_IO PD_H[1] 28 sky130_fd_io__gpio_pddrvr_strong_slowv2 $T=2100 78375 0 270 $X=5 $Y=72615
+X46 VGND TIE_HI_ESD VCC_IO PAD PU_H_N[2] PU_H_N[3] sky130_fd_io__gpio_pudrvr_strongv2 $T=-2900 3110 0 0 $X=-615 $Y=-1400
+X47 VGND_IO VCC_IO TIE_LO_ESD PD_H[2] PD_H[3] 25 PAD sky130_fd_io__gpiov2_pddrvr_strong $T=425 88775 1 0 $X=-4575 $Y=-49025
+.ENDS
+***************************************
+.SUBCKT sky130_fd_pr__tpl1__example_55959141808151
+** N=2 EP=0 IP=0 FDC=0
+*.SEEDPROM
+.ENDS
+***************************************
+.SUBCKT sky130_fd_pr__tpl1__example_55959141808148
+** N=2 EP=0 IP=0 FDC=0
+*.SEEDPROM
+.ENDS
+***************************************
+.SUBCKT sky130_fd_pr__tpl1__example_55959141808150
+** N=1 EP=0 IP=0 FDC=0
+.ENDS
+***************************************
+.SUBCKT sky130_fd_pr__tpl1__example_55959141808149
+** N=1 EP=0 IP=0 FDC=0
+.ENDS
+***************************************
+.SUBCKT sky130_fd_pr__dfl1__example_55959141808158
+** N=2 EP=0 IP=0 FDC=0
+.ENDS
+***************************************
+.SUBCKT sky130_fd_io__signal_5_sym_hv_local_5term NBODY NWELLRING GATE VGND IN 7
+** N=8 EP=6 IP=16 FDC=3
+*.SEEDPROM
+M0 IN GATE VGND NBODY nhvesd L=0.6 W=5.4 m=1 r=9 a=3.24 p=12 mult=1 $X=3675 $Y=3360 $D=129
+R1 NWELLRING 7 0.01 m=1 $[short] $X=1015 $Y=330 $D=265
+R2 NBODY 8 0.01 m=1 $[short] $X=2665 $Y=330 $D=265
+.ENDS
+***************************************
+.SUBCKT sky130_fd_io__gpiov2_buf_localesd VSSD VDDIO_Q VTRIP_SEL_H OUT_VT OUT_H IN_H
+** N=8 EP=6 IP=21 FDC=18
+M0 OUT_H VTRIP_SEL_H OUT_VT VSSD nhv L=1 W=3 m=1 r=3 a=3 p=8 mult=1 $X=5815 $Y=2145 $D=49
+X1 VSSD VDDIO_Q Dpar a=67.5428 p=62.24 m=1 $[nwdiode] $X=3685 $Y=0 $D=185
+X2 VSSD VDDIO_Q Dpar a=5.32 p=17.88 m=1 $[nwdiode] $X=4245 $Y=560 $D=184
+X3 VSSD VDDIO_Q Dpar a=8.5092 p=29.27 m=1 $[nwdiode] $X=4765 $Y=5530 $D=184
+X4 VSSD VDDIO_Q Dpar a=8.5092 p=29.27 m=1 $[nwdiode] $X=4765 $Y=12125 $D=184
+X7 IN_H OUT_H sky130_fd_io__res250only_small $T=730 580 1 90 $X=730 $Y=580
+X8 VSSD VDDIO_Q VSSD VSSD OUT_H 8 sky130_fd_io__signal_5_sym_hv_local_5term $T=3685 12405 0 270 $X=3685 $Y=4450
+X9 VSSD VDDIO_Q VSSD OUT_H VDDIO_Q 7 sky130_fd_io__signal_5_sym_hv_local_5term $T=3685 11045 1 90 $X=3685 $Y=11045
+.ENDS
+***************************************
+.SUBCKT sky130_fd_pr__dfl1sd__example_55959141808517
+** N=2 EP=0 IP=0 FDC=0
+.ENDS
+***************************************
+.SUBCKT sky130_fd_pr__nfet_01v8__example_55959141808533 1 2 3 4
+** N=4 EP=4 IP=4 FDC=1
+M0 4 2 3 1 nhv L=0.5 W=5 m=1 r=10 a=2.5 p=11 mult=1 $X=0 $Y=0 $D=49
+.ENDS
+***************************************
+.SUBCKT sky130_fd_pr__nfet_01v8__example_55959141808230 1 2 3
+** N=3 EP=3 IP=6 FDC=2
+M0 3 2 1 1 nhv L=0.5 W=3 m=1 r=6 a=1.5 p=7 mult=1 $X=0 $Y=0 $D=49
+M1 1 2 3 1 nhv L=0.5 W=3 m=1 r=6 a=1.5 p=7 mult=1 $X=780 $Y=0 $D=49
+.ENDS
+***************************************
+.SUBCKT sky130_fd_pr__nfet_01v8__example_55959141808604
+** N=3 EP=0 IP=4 FDC=0
+*.SEEDPROM
+.ENDS
+***************************************
+.SUBCKT sky130_fd_pr__dfl1sd2__example_55959141808518
+** N=2 EP=0 IP=0 FDC=0
+.ENDS
+***************************************
+.SUBCKT sky130_fd_pr__dfl1sd__example_55959141808190
+** N=3 EP=0 IP=0 FDC=0
+*.SEEDPROM
+.ENDS
+***************************************
+.SUBCKT sky130_fd_pr__pfet_01v8__example_55959141808548 2 3 4 5
+** N=5 EP=4 IP=6 FDC=1
+*.SEEDPROM
+M0 5 3 4 2 phv L=0.5 W=5 m=1 r=10 a=2.5 p=11 mult=1 $X=0 $Y=0 $D=109
+.ENDS
+***************************************
+.SUBCKT sky130_fd_pr__dfl1sd2__example_55959141808191
+** N=3 EP=0 IP=0 FDC=0
+*.SEEDPROM
+.ENDS
+***************************************
+.SUBCKT sky130_fd_pr__pfet_01v8__example_55959141808189 2 3 4 5
+** N=5 EP=4 IP=9 FDC=2
+*.SEEDPROM
+M0 5 3 4 2 phv L=0.5 W=5 m=1 r=10 a=2.5 p=11 mult=1 $X=0 $Y=0 $D=109
+M1 4 3 5 2 phv L=0.5 W=5 m=1 r=10 a=2.5 p=11 mult=1 $X=780 $Y=0 $D=109
+.ENDS
+***************************************
+.SUBCKT sky130_fd_pr__pfet_01v8__example_55959141808611
+** N=5 EP=0 IP=6 FDC=0
+*.SEEDPROM
+.ENDS
+***************************************
+.SUBCKT sky130_fd_pr__nfet_01v8__example_55959141808610 1 2 3 4
+** N=4 EP=4 IP=12 FDC=5
+M0 4 2 3 1 nhv L=0.8 W=5 m=1 r=6.25 a=4 p=11.6 mult=1 $X=0 $Y=0 $D=49
+M1 3 2 4 1 nhv L=0.8 W=5 m=1 r=6.25 a=4 p=11.6 mult=1 $X=1080 $Y=0 $D=49
+M2 4 2 3 1 nhv L=0.8 W=5 m=1 r=6.25 a=4 p=11.6 mult=1 $X=2160 $Y=0 $D=49
+M3 3 2 4 1 nhv L=0.8 W=5 m=1 r=6.25 a=4 p=11.6 mult=1 $X=3240 $Y=0 $D=49
+M4 4 2 3 1 nhv L=0.8 W=5 m=1 r=6.25 a=4 p=11.6 mult=1 $X=4320 $Y=0 $D=49
+.ENDS
+***************************************
+.SUBCKT sky130_fd_io__gpiov2_in_buf VSSD VDDIO_Q IN_H MODE_NORMAL_N IN_VT VTRIP_SEL_H_N OUT VTRIP_SEL_H
+** N=20 EP=8 IP=111 FDC=53
+*.SEEDPROM
+M0 19 11 17 VSSD nhv L=0.8 W=5 m=1 r=6.25 a=4 p=11.6 mult=1 $X=12325 $Y=-4010 $D=49
+M1 17 11 19 VSSD nhv L=0.8 W=5 m=1 r=6.25 a=4 p=11.6 mult=1 $X=13405 $Y=-4010 $D=49
+M2 19 11 17 VSSD nhv L=0.8 W=5 m=1 r=6.25 a=4 p=11.6 mult=1 $X=14485 $Y=-4010 $D=49
+M3 17 11 19 VSSD nhv L=0.8 W=5 m=1 r=6.25 a=4 p=11.6 mult=1 $X=15565 $Y=-4010 $D=49
+M4 VSSD VTRIP_SEL_H_N IN_VT VSSD nhv L=1 W=3 m=1 r=3 a=3 p=8 mult=1 $X=22085 $Y=-4010 $D=49
+M5 18 11 17 VSSD nhv L=0.8 W=1 m=1 r=1.25 a=0.8 p=3.6 mult=1 $X=22085 $Y=65 $D=49
+M6 17 11 18 VSSD nhv L=0.8 W=1 m=1 r=1.25 a=0.8 p=3.6 mult=1 $X=23165 $Y=65 $D=49
+M7 18 11 17 VSSD nhv L=0.8 W=1 m=1 r=1.25 a=0.8 p=3.6 mult=1 $X=24245 $Y=65 $D=49
+M8 17 11 18 VSSD nhv L=0.8 W=1 m=1 r=1.25 a=0.8 p=3.6 mult=1 $X=25325 $Y=65 $D=49
+M9 VSSD IN_VT 17 VSSD nhv L=0.8 W=5 m=1 r=6.25 a=4 p=11.6 mult=1 $X=5845 $Y=-4010 $D=49
+M10 VSSD IN_H 17 VSSD nhv L=0.8 W=5 m=1 r=6.25 a=4 p=11.6 mult=1 $X=17195 $Y=-4010 $D=49
+M11 VSSD VSSD VSSD VSSD nhv L=0.8 W=5 m=1 r=6.25 a=4 p=11.6 mult=1 $X=18825 $Y=-4010 $D=49
+M12 VSSD VSSD VSSD VSSD nhv L=0.8 W=5 m=1 r=6.25 a=4 p=11.6 mult=1 $X=20455 $Y=-4010 $D=49
+M13 12 11 14 VDDIO_Q phv L=0.5 W=3 m=1 r=6 a=1.5 p=7 mult=1 $X=12755 $Y=9325 $D=109
+M14 11 IN_H 16 VDDIO_Q phv L=0.8 W=5 m=1 r=6.25 a=4 p=11.6 mult=1 $X=2705 $Y=9325 $D=109
+M15 15 IN_H 11 VDDIO_Q phv L=0.8 W=5 m=1 r=6.25 a=4 p=11.6 mult=1 $X=3785 $Y=9325 $D=109
+M16 VDDIO_Q VDDIO_Q VDDIO_Q VDDIO_Q phv L=0.8 W=5 m=1 r=6.25 a=4 p=11.6 mult=1 $X=7225 $Y=9325 $D=109
+X17 VSSD VDDIO_Q 20 10 sky130_fd_io__hvsbt_inv_x1 $T=18220 9605 0 0 $X=17990 $Y=9605
+X20 VSSD VDDIO_Q VTRIP_SEL_H MODE_NORMAL_N 20 sky130_fd_io__hvsbt_nor $T=19130 9605 1 180 $X=16460 $Y=9605
+X25 VSSD 12 OUT_N VSSD sky130_fd_pr__nfet_01v8__example_55959141808533 $T=27035 -4010 0 0 $X=26590 $Y=-4190
+X26 VSSD OUT_N VSSD OUT sky130_fd_pr__nfet_01v8__example_55959141808533 $T=27815 -4010 0 0 $X=27370 $Y=-4190
+X27 VSSD MODE_NORMAL_N 12 sky130_fd_pr__nfet_01v8__example_55959141808230 $T=23365 -4010 0 0 $X=22920 $Y=-4190
+X28 VSSD 11 12 sky130_fd_pr__nfet_01v8__example_55959141808230 $T=24925 -4010 0 0 $X=24480 $Y=-4190
+X36 VDDIO_Q MODE_NORMAL_N VDDIO_Q 14 sky130_fd_pr__pfet_01v8__example_55959141808548 $T=11425 9325 0 0 $X=10830 $Y=8995
+X37 VDDIO_Q 12 OUT_N VDDIO_Q sky130_fd_pr__pfet_01v8__example_55959141808548 $T=14085 9325 0 0 $X=13490 $Y=8995
+X38 VDDIO_Q OUT_N VDDIO_Q OUT sky130_fd_pr__pfet_01v8__example_55959141808548 $T=14865 9325 0 0 $X=14270 $Y=8995
+X39 VDDIO_Q MODE_NORMAL_N VDDIO_Q 16 sky130_fd_pr__pfet_01v8__example_55959141808189 $T=595 9325 0 0 $X=0 $Y=8995
+X40 VDDIO_Q 10 15 VDDIO_Q sky130_fd_pr__pfet_01v8__example_55959141808189 $T=6145 9325 1 180 $X=4270 $Y=8995
+X41 VDDIO_Q 10 VDDIO_Q 19 sky130_fd_pr__pfet_01v8__example_55959141808189 $T=8305 9325 0 0 $X=7710 $Y=8995
+X42 VDDIO_Q MODE_NORMAL_N VDDIO_Q 18 sky130_fd_pr__pfet_01v8__example_55959141808189 $T=9865 9325 0 0 $X=9270 $Y=8995
+X46 VSSD IN_H 11 17 sky130_fd_pr__nfet_01v8__example_55959141808610 $T=445 -4010 0 0 $X=0 $Y=-4190
+X47 VSSD IN_H VSSD 17 sky130_fd_pr__nfet_01v8__example_55959141808610 $T=6925 -4010 0 0 $X=6480 $Y=-4190
+.ENDS
+***************************************
+.SUBCKT sky130_fd_pr__nfet_01v8__example_55959141808550 1 2 3 4
+** N=4 EP=4 IP=8 FDC=3
+M0 4 2 3 1 nhv L=0.5 W=5 m=1 r=10 a=2.5 p=11 mult=1 $X=0 $Y=0 $D=49
+M1 3 2 4 1 nhv L=0.5 W=5 m=1 r=10 a=2.5 p=11 mult=1 $X=780 $Y=0 $D=49
+M2 4 2 3 1 nhv L=0.5 W=5 m=1 r=10 a=2.5 p=11 mult=1 $X=1560 $Y=0 $D=49
+.ENDS
+***************************************
+.SUBCKT sky130_fd_pr__nfet_01v8__example_55959141808607 1 2 3
+** N=3 EP=3 IP=10 FDC=4
+M0 1 2 3 1 nhv L=0.5 W=5 m=1 r=10 a=2.5 p=11 mult=1 $X=0 $Y=0 $D=49
+M1 3 2 1 1 nhv L=0.5 W=5 m=1 r=10 a=2.5 p=11 mult=1 $X=780 $Y=0 $D=49
+M2 1 2 3 1 nhv L=0.5 W=5 m=1 r=10 a=2.5 p=11 mult=1 $X=1560 $Y=0 $D=49
+M3 3 2 1 1 nhv L=0.5 W=5 m=1 r=10 a=2.5 p=11 mult=1 $X=2340 $Y=0 $D=49
+.ENDS
+***************************************
+.SUBCKT sky130_fd_pr__nfet_01v8__example_55959141808528 1 2 3 4
+** N=4 EP=4 IP=4 FDC=1
+M0 4 2 3 1 nhv L=0.5 W=3 m=1 r=6 a=1.5 p=7 mult=1 $X=0 $Y=0 $D=49
+.ENDS
+***************************************
+.SUBCKT sky130_fd_pr__nfet_01v8__example_55959141808600 1 2 3 4
+** N=4 EP=4 IP=4 FDC=1
+M0 4 2 3 1 nhv L=0.5 W=1.5 m=1 r=3 a=0.75 p=4 mult=1 $X=0 $Y=0 $D=49
+.ENDS
+***************************************
+.SUBCKT sky130_fd_pr__pfet_01v8__example_55959141808481 1 2 3 4
+** N=4 EP=4 IP=4 FDC=1
+M0 4 2 3 1 phv L=0.5 W=1.5 m=1 r=3 a=0.75 p=4 mult=1 $X=0 $Y=0 $D=109
+.ENDS
+***************************************
+.SUBCKT sky130_fd_io__gpiov2_ipath_hvls VSSD VDDIO_Q MODE_VCCHIB_N INB_VCCHIB MODE_VCCHIB MODE_NORMAL_N MODE_NORMAL IN_VDDIO IN_VCCHIB OUT
+** N=21 EP=10 IP=102 FDC=41
+*.SEEDPROM
+M0 VDDIO_Q OUT_B OUT VDDIO_Q phv L=0.5 W=5 m=1 r=10 a=2.5 p=11 mult=1 $X=16165 $Y=14380 $D=109
+M1 OUT OUT_B VDDIO_Q VDDIO_Q phv L=0.5 W=5 m=1 r=10 a=2.5 p=11 mult=1 $X=16945 $Y=14380 $D=109
+M2 VDDIO_Q OUT_B OUT VDDIO_Q phv L=0.5 W=5 m=1 r=10 a=2.5 p=11 mult=1 $X=17725 $Y=14380 $D=109
+M3 OUT OUT_B VDDIO_Q VDDIO_Q phv L=0.5 W=5 m=1 r=10 a=2.5 p=11 mult=1 $X=18505 $Y=14380 $D=109
+M4 VDDIO_Q OUT_B OUT VDDIO_Q phv L=0.5 W=5 m=1 r=10 a=2.5 p=11 mult=1 $X=19285 $Y=14380 $D=109
+X5 VSSD MODE_VCCHIB_N 11 VSSD sky130_fd_pr__nfet_01v8__example_55959141808533 $T=3625 1005 1 180 $X=2680 $Y=825
+X8 VDDIO_Q MODE_VCCHIB 15 OUT_B sky130_fd_pr__pfet_01v8__example_55959141808548 $T=14555 19380 0 180 $X=13460 $Y=14050
+X9 VDDIO_Q MODE_NORMAL VDDIO_Q 15 sky130_fd_pr__pfet_01v8__example_55959141808548 $T=15335 19380 0 180 $X=14240 $Y=14050
+X14 VDDIO_Q 13 16 OUT_B sky130_fd_pr__pfet_01v8__example_55959141808189 $T=7995 19380 0 180 $X=6120 $Y=14050
+X15 VDDIO_Q MODE_VCCHIB_N 16 VDDIO_Q sky130_fd_pr__pfet_01v8__example_55959141808189 $T=9555 19380 0 180 $X=7680 $Y=14050
+X16 VDDIO_Q MODE_NORMAL_N 17 VDDIO_Q sky130_fd_pr__pfet_01v8__example_55959141808189 $T=10385 19380 1 0 $X=9790 $Y=14050
+X17 VDDIO_Q IN_VDDIO 17 OUT_B sky130_fd_pr__pfet_01v8__example_55959141808189 $T=11945 19380 1 0 $X=11350 $Y=14050
+X18 VSSD INB_VCCHIB 18 11 sky130_fd_pr__nfet_01v8__example_55959141808550 $T=5965 1005 1 180 $X=3460 $Y=825
+X19 VSSD IN_VCCHIB 19 12 sky130_fd_pr__nfet_01v8__example_55959141808550 $T=13035 1005 0 0 $X=12590 $Y=825
+X20 VSSD OUT_B OUT VSSD sky130_fd_pr__nfet_01v8__example_55959141808550 $T=18740 10055 0 90 $X=13560 $Y=9610
+X21 VSSD MODE_VCCHIB 18 sky130_fd_pr__nfet_01v8__example_55959141808607 $T=9085 1005 1 180 $X=5800 $Y=825
+X22 VSSD MODE_VCCHIB 19 sky130_fd_pr__nfet_01v8__example_55959141808607 $T=9915 1005 0 0 $X=9470 $Y=825
+X23 VSSD 13 OUT_B 20 sky130_fd_pr__nfet_01v8__example_55959141808528 $T=8760 9275 1 90 $X=8580 $Y=8830
+X24 VSSD MODE_VCCHIB 20 VSSD sky130_fd_pr__nfet_01v8__example_55959141808528 $T=8760 10055 1 90 $X=8580 $Y=9610
+X25 VSSD MODE_NORMAL 21 VSSD sky130_fd_pr__nfet_01v8__example_55959141808528 $T=8760 11335 0 270 $X=8580 $Y=10390
+X26 VSSD IN_VDDIO OUT_B 21 sky130_fd_pr__nfet_01v8__example_55959141808528 $T=8760 12115 0 270 $X=8580 $Y=11170
+X27 VSSD 12 VSSD 13 sky130_fd_pr__nfet_01v8__example_55959141808600 $T=5875 10360 1 90 $X=5695 $Y=9915
+X28 VDDIO_Q 11 VDDIO_Q 12 sky130_fd_pr__pfet_01v8__example_55959141808481 $T=3775 15880 0 180 $X=2680 $Y=14050
+X29 VDDIO_Q 12 11 VDDIO_Q sky130_fd_pr__pfet_01v8__example_55959141808481 $T=4555 15880 0 180 $X=3460 $Y=14050
+X30 VDDIO_Q 12 VDDIO_Q 13 sky130_fd_pr__pfet_01v8__example_55959141808481 $T=5385 15880 1 0 $X=4790 $Y=14050
+.ENDS
+***************************************
+.SUBCKT sky130_fd_pr__nfet_01v8__example_55959141808535 1 2 3 4
+** N=4 EP=4 IP=6 FDC=2
+M0 4 2 3 1 nhv L=0.8 W=5 m=1 r=6.25 a=4 p=11.6 mult=1 $X=0 $Y=0 $D=49
+M1 3 2 4 1 nhv L=0.8 W=5 m=1 r=6.25 a=4 p=11.6 mult=1 $X=1080 $Y=0 $D=49
+.ENDS
+***************************************
+.SUBCKT sky130_fd_pr__nfet_01v8__example_55959141808602 1 2 3
+** N=3 EP=3 IP=0 FDC=2
+M0 3 2 1 1 nshort L=0.25 W=1 m=1 r=4 a=0.25 p=2.5 mult=1 $X=0 $Y=0 $D=9
+M1 1 2 3 1 nshort L=0.25 W=1 m=1 r=4 a=0.25 p=2.5 mult=1 $X=530 $Y=0 $D=9
+.ENDS
+***************************************
+.SUBCKT sky130_fd_pr__nfet_01v8__example_5595914180825 1 2 3
+** N=3 EP=3 IP=0 FDC=1
+M0 1 2 3 1 nshort L=0.25 W=1 m=1 r=4 a=0.25 p=2.5 mult=1 $X=0 $Y=0 $D=9
+.ENDS
+***************************************
+.SUBCKT sky130_fd_pr__pfet_01v8__example_55959141808598 2 3 4 5
+** N=5 EP=4 IP=4 FDC=1
+*.SEEDPROM
+M0 5 3 4 2 pshort L=0.25 W=3 m=1 r=12 a=0.75 p=6.5 mult=1 $X=0 $Y=0 $D=79
+.ENDS
+***************************************
+.SUBCKT sky130_fd_pr__pfet_01v8__example_55959141808596 2 3 4 5
+** N=5 EP=4 IP=6 FDC=1
+*.SEEDPROM
+M0 5 3 4 2 pshort L=0.25 W=5 m=1 r=20 a=1.25 p=10.5 mult=1 $X=0 $Y=0 $D=79
+.ENDS
+***************************************
+.SUBCKT sky130_fd_io__gpiov2_vcchib_in_buf VSSD VCCHIB MODE_VCCHIB_LV_N OUT_N IN_H OUT
+** N=12 EP=6 IP=61 FDC=28
+*.SEEDPROM
+M0 VSSD OUT_N OUT VSSD nshort L=0.25 W=1 m=1 r=4 a=0.25 p=2.5 mult=1 $X=1275 $Y=-635 $D=9
+M1 OUT OUT_N VSSD VSSD nshort L=0.25 W=1 m=1 r=4 a=0.25 p=2.5 mult=1 $X=1805 $Y=-635 $D=9
+M2 VSSD OUT_N OUT VSSD nshort L=0.25 W=1 m=1 r=4 a=0.25 p=2.5 mult=1 $X=2335 $Y=-635 $D=9
+M3 VSSD VSSD VSSD VSSD nhv L=0.8 W=1 m=1 r=1.25 a=0.8 p=3.6 mult=1 $X=1325 $Y=2975 $D=49
+M4 12 8 11 VSSD nhv L=0.8 W=1 m=1 r=1.25 a=0.8 p=3.6 mult=1 $X=2955 $Y=2975 $D=49
+M5 11 8 12 VSSD nhv L=0.8 W=1 m=1 r=1.25 a=0.8 p=3.6 mult=1 $X=4035 $Y=2975 $D=49
+M6 12 8 11 VSSD nhv L=0.8 W=1 m=1 r=1.25 a=0.8 p=3.6 mult=1 $X=5115 $Y=2975 $D=49
+M7 VSSD VSSD VSSD VSSD nhv L=0.8 W=5 m=1 r=6.25 a=4 p=11.6 mult=1 $X=11615 $Y=-1025 $D=49
+M8 VCCHIB MODE_VCCHIB_LV_N 9 VCCHIB pshort L=0.25 W=5 m=1 r=20 a=1.25 p=10.5 mult=1 $X=3060 $Y=12645 $D=79
+M9 9 MODE_VCCHIB_LV_N VCCHIB VCCHIB pshort L=0.25 W=5 m=1 r=20 a=1.25 p=10.5 mult=1 $X=3060 $Y=13175 $D=79
+M10 VCCHIB MODE_VCCHIB_LV_N 9 VCCHIB pshort L=0.25 W=5 m=1 r=20 a=1.25 p=10.5 mult=1 $X=3060 $Y=13705 $D=79
+M11 7 8 10 VCCHIB pshort L=0.25 W=1 m=1 r=4 a=0.25 p=2.5 mult=1 $X=7060 $Y=16925 $D=79
+M12 10 8 7 VCCHIB pshort L=0.25 W=1 m=1 r=4 a=0.25 p=2.5 mult=1 $X=7060 $Y=17455 $D=79
+M13 8 IN_H 9 VCCHIB phv L=0.8 W=5 m=1 r=6.25 a=4 p=11.6 mult=1 $X=3210 $Y=7905 $D=109
+M14 9 IN_H 8 VCCHIB phv L=0.8 W=5 m=1 r=6.25 a=4 p=11.6 mult=1 $X=3210 $Y=8985 $D=109
+X23 VSSD IN_H 12 8 sky130_fd_pr__nfet_01v8__example_55959141808535 $T=6745 -1025 0 0 $X=6300 $Y=-1205
+X24 VSSD IN_H 12 VSSD sky130_fd_pr__nfet_01v8__example_55959141808535 $T=8905 -1025 0 0 $X=8460 $Y=-1205
+X25 VSSD 8 7 sky130_fd_pr__nfet_01v8__example_55959141808602 $T=3945 365 1 0 $X=3550 $Y=-795
+X26 VSSD MODE_VCCHIB_LV_N 7 sky130_fd_pr__nfet_01v8__example_55959141808602 $T=5005 365 1 0 $X=4610 $Y=-795
+X27 VSSD 7 OUT_N sky130_fd_pr__nfet_01v8__example_5595914180825 $T=3415 365 1 0 $X=3020 $Y=-795
+X28 VCCHIB MODE_VCCHIB_LV_N 10 VCCHIB sky130_fd_pr__pfet_01v8__example_55959141808598 $T=6060 16925 0 90 $X=2880 $Y=16480
+X29 VCCHIB MODE_VCCHIB_LV_N VCCHIB 11 sky130_fd_pr__pfet_01v8__example_55959141808596 $T=8060 14235 0 90 $X=2880 $Y=13790
+X30 VCCHIB 7 VCCHIB OUT_N sky130_fd_pr__pfet_01v8__example_55959141808596 $T=8060 15565 1 270 $X=2880 $Y=14870
+X31 VCCHIB OUT_N OUT VCCHIB sky130_fd_pr__pfet_01v8__example_55959141808596 $T=8060 16095 1 270 $X=2880 $Y=15400
+.ENDS
+***************************************
+.SUBCKT sky130_fd_io__gpiov2_inbuf_lvinv_x1 VGND VPWR IN OUT
+** N=4 EP=4 IP=7 FDC=2
+*.SEEDPROM
+M0 VPWR IN OUT VPWR phighvt L=0.25 W=3 m=1 r=12 a=0.75 p=6.5 mult=1 $X=445 $Y=2150 $D=89
+X3 VGND IN OUT sky130_fd_pr__nfet_01v8__example_5595914180825 $T=395 160 0 0 $X=0 $Y=0
+.ENDS
+***************************************
+.SUBCKT sky130_fd_pr__nfet_01v8__example_55959141808547 1 2 3 4
+** N=4 EP=4 IP=6 FDC=2
+M0 4 2 3 1 nshort L=0.25 W=3 m=1 r=12 a=0.75 p=6.5 mult=1 $X=0 $Y=0 $D=9
+M1 3 2 4 1 nshort L=0.25 W=3 m=1 r=12 a=0.75 p=6.5 mult=1 $X=530 $Y=0 $D=9
+.ENDS
+***************************************
+.SUBCKT sky130_fd_pr__dfl1sd2__example_5595914180812
+** N=2 EP=0 IP=0 FDC=0
+.ENDS
+***************************************
+.SUBCKT sky130_fd_pr__pfet_01v8__example_55959141808599 2 3 4 5
+** N=5 EP=4 IP=6 FDC=2
+*.SEEDPROM
+M0 5 3 4 2 pshort L=0.25 W=3 m=1 r=12 a=0.75 p=6.5 mult=1 $X=0 $Y=0 $D=79
+M1 4 3 5 2 pshort L=0.25 W=3 m=1 r=12 a=0.75 p=6.5 mult=1 $X=530 $Y=0 $D=79
+.ENDS
+***************************************
+.SUBCKT sky130_fd_pr__nfet_01v8__example_55959141808546 1 2 3 4
+** N=4 EP=4 IP=4 FDC=1
+M0 4 2 3 1 nshort L=0.25 W=3 m=1 r=12 a=0.75 p=6.5 mult=1 $X=0 $Y=0 $D=9
+.ENDS
+***************************************
+.SUBCKT sky130_fd_io__gpiov2_ipath_lvls VSSD VCCHIB MODE_NORMAL_LV IN_VDDIO 5 MODE_NORMAL_LV_N OUT_B MODE_VCCHIB_LV_N IN_VCCHIB MODE_VCCHIB_LV OUT
+** N=18 EP=11 IP=87 FDC=31
+*.SEEDPROM
+M0 OUT OUT_B VCCHIB VCCHIB pshort L=0.25 W=3 m=1 r=12 a=0.75 p=6.5 mult=1 $X=5115 $Y=13770 $D=79
+M1 VCCHIB OUT_B OUT VCCHIB pshort L=0.25 W=3 m=1 r=12 a=0.75 p=6.5 mult=1 $X=5645 $Y=13770 $D=79
+M2 OUT OUT_B VCCHIB VCCHIB pshort L=0.25 W=3 m=1 r=12 a=0.75 p=6.5 mult=1 $X=6175 $Y=13770 $D=79
+M3 VCCHIB OUT_B OUT VCCHIB pshort L=0.25 W=3 m=1 r=12 a=0.75 p=6.5 mult=1 $X=6705 $Y=13770 $D=79
+X6 VCCHIB IN_VDDIO VCCHIB 12 sky130_fd_pr__pfet_01v8__example_55959141808189 $T=8905 9675 0 90 $X=3575 $Y=9080
+X7 VSSD IN_VDDIO 12 18 sky130_fd_pr__nfet_01v8__example_55959141808600 $T=1080 -85 0 0 $X=635 $Y=-265
+X8 VCCHIB MODE_NORMAL_LV OUT_B 13 sky130_fd_pr__pfet_01v8__example_55959141808598 $T=10455 16770 1 0 $X=10010 $Y=13590
+X9 VCCHIB MODE_VCCHIB_LV 13 VCCHIB sky130_fd_pr__pfet_01v8__example_55959141808598 $T=10985 16770 1 0 $X=10540 $Y=13590
+X10 VCCHIB MODE_NORMAL_LV VCCHIB 12 sky130_fd_pr__pfet_01v8__example_55959141808596 $T=1085 16770 0 180 $X=390 $Y=11590
+X11 VCCHIB 12 VCCHIB 5 sky130_fd_pr__pfet_01v8__example_55959141808596 $T=1365 16770 1 0 $X=920 $Y=11590
+X12 VSSD 5 16 OUT_B sky130_fd_pr__nfet_01v8__example_55959141808547 $T=4380 -1585 0 0 $X=3985 $Y=-1745
+X13 VSSD MODE_NORMAL_LV 16 VSSD sky130_fd_pr__nfet_01v8__example_55959141808547 $T=5440 -1585 0 0 $X=5045 $Y=-1745
+X14 VSSD OUT_B VSSD OUT sky130_fd_pr__nfet_01v8__example_55959141808547 $T=7050 -1585 0 0 $X=6655 $Y=-1745
+X15 VSSD IN_VCCHIB 17 OUT_B sky130_fd_pr__nfet_01v8__example_55959141808547 $T=8660 -1585 0 0 $X=8265 $Y=-1745
+X16 VSSD MODE_VCCHIB_LV 17 VSSD sky130_fd_pr__nfet_01v8__example_55959141808547 $T=9720 -1585 0 0 $X=9325 $Y=-1745
+X20 VCCHIB 5 14 OUT_B sky130_fd_pr__pfet_01v8__example_55959141808599 $T=2445 13770 0 0 $X=2000 $Y=13590
+X21 VCCHIB MODE_NORMAL_LV_N 14 VCCHIB sky130_fd_pr__pfet_01v8__example_55959141808599 $T=3505 13770 0 0 $X=3060 $Y=13590
+X22 VCCHIB MODE_VCCHIB_LV_N 15 VCCHIB sky130_fd_pr__pfet_01v8__example_55959141808599 $T=7785 13770 0 0 $X=7340 $Y=13590
+X23 VCCHIB IN_VCCHIB 15 OUT_B sky130_fd_pr__pfet_01v8__example_55959141808599 $T=8845 13770 0 0 $X=8400 $Y=13590
+X24 VSSD MODE_NORMAL_LV 18 VSSD sky130_fd_pr__nfet_01v8__example_55959141808546 $T=2770 -1585 0 0 $X=2375 $Y=-1745
+X25 VSSD 12 VSSD 5 sky130_fd_pr__nfet_01v8__example_55959141808546 $T=3300 -1585 0 0 $X=2905 $Y=-1745
+.ENDS
+***************************************
+.SUBCKT sky130_fd_io__gpiov2_ibuf_se VSSD VDDIO_Q VCCHIB MODE_NORMAL_N MODE_VCCHIB_N ENABLE_VDDIO_LV IN_H VTRIP_SEL_H VTRIP_SEL_H_N IN_VT IBUFMUX_OUT_H IBUFMUX_OUT 14
+** N=24 EP=13 IP=62 FDC=177
+*.SEEDPROM
+X0 VSSD VCCHIB Dpar a=98.14 p=57.76 m=1 $[nwdiode] $X=43930 $Y=13975 $D=185
+X1 VSSD VCCHIB Dpar a=51.8546 p=44.62 m=1 $[nwdiode] $X=43930 $Y=9085 $D=185
+X2 VSSD VDDIO_Q MODE_NORMAL_N 15 sky130_fd_io__hvsbt_inv_x1 $T=22630 14365 1 180 $X=20605 $Y=14365
+X3 VSSD VDDIO_Q MODE_VCCHIB_N 16 sky130_fd_io__hvsbt_inv_x1 $T=21720 14365 0 0 $X=21490 $Y=14365
+X4 VSSD VCCHIB ENABLE_VDDIO_LV 16 17 sky130_fd_io__hvsbt_nand2 $T=53530 7910 1 180 $X=50685 $Y=7910
+X5 VSSD VCCHIB ENABLE_VDDIO_LV 15 18 sky130_fd_io__hvsbt_nand2 $T=52620 7910 0 0 $X=52410 $Y=7910
+X6 VSSD VDDIO_Q IN_H MODE_NORMAL_N IN_VT VTRIP_SEL_H_N 19 VTRIP_SEL_H sky130_fd_io__gpiov2_in_buf $T=0 4760 0 0 $X=-2335 $Y=-1100
+X7 VSSD VDDIO_Q MODE_VCCHIB_N 21 16 MODE_NORMAL_N 15 19 20 IBUFMUX_OUT_H sky130_fd_io__gpiov2_ipath_hvls $T=44300 -255 1 180 $X=23920 $Y=-1100
+X8 VSSD VCCHIB 17 21 IN_H 20 sky130_fd_io__gpiov2_vcchib_in_buf $T=41050 1775 0 0 $X=41615 $Y=-1100
+X9 VSSD VCCHIB 17 22 sky130_fd_io__gpiov2_inbuf_lvinv_x1 $T=50295 14155 0 0 $X=50295 $Y=14155
+X10 VSSD VCCHIB 18 23 sky130_fd_io__gpiov2_inbuf_lvinv_x1 $T=53045 14155 1 180 $X=51250 $Y=14155
+X11 VSSD VCCHIB 23 19 14 18 24 17 20 22 IBUFMUX_OUT sky130_fd_io__gpiov2_ipath_lvls $T=64995 2355 1 180 $X=53315 $Y=-1100
+.ENDS
+***************************************
+.SUBCKT sky130_fd_io__gpiov2_ictl_logic VSSD VDDIO_Q DM_H_N[1] DM_H_N[0] DM_H_N[2] INP_DIS_H_N IB_MODE_SEL_H MODE_VCCHIB_N IB_MODE_SEL_H_N MODE_NORMAL_N TRIPSEL_I_H VTRIP_SEL_H_N TRIPSEL_I_H_N
+** N=19 EP=13 IP=64 FDC=45
+*.SEEDPROM
+X0 VSSD VDDIO_Q 14 16 sky130_fd_io__hvsbt_inv_x1 $T=4100 0 1 180 $X=2075 $Y=0
+X1 VSSD VDDIO_Q INP_DIS_I_H INP_DIS_I_H_N sky130_fd_io__hvsbt_inv_x1 $T=7260 0 0 0 $X=7030 $Y=0
+X2 VSSD VDDIO_Q TRIPSEL_I_H TRIPSEL_I_H_N sky130_fd_io__hvsbt_inv_x1 $T=14610 0 0 0 $X=14380 $Y=0
+X3 VSSD VDDIO_Q VTRIP_SEL_H_N MODE_NORMAL_N TRIPSEL_I_H sky130_fd_io__hvsbt_nor $T=15520 0 1 180 $X=12850 $Y=0
+X4 VDDIO_Q DM_H_N[1] VDDIO_Q 14 sky130_fd_pr__pfet_01v8__example_559591418085 $T=595 3410 1 0 $X=0 $Y=2080
+X5 VDDIO_Q DM_H_N[1] VDDIO_Q 14 sky130_fd_pr__pfet_01v8__example_559591418085 $T=595 3750 0 0 $X=0 $Y=3420
+X6 VDDIO_Q DM_H_N[0] 14 VDDIO_Q sky130_fd_pr__pfet_01v8__example_559591418085 $T=1475 3410 1 0 $X=880 $Y=2080
+X7 VDDIO_Q DM_H_N[0] 14 VDDIO_Q sky130_fd_pr__pfet_01v8__example_559591418085 $T=1475 3750 0 0 $X=880 $Y=3420
+X8 VSSD DM_H_N[1] 15 sky130_fd_pr__nfet_01v8__example_559591418089 $T=595 1420 1 0 $X=150 $Y=540
+X9 VSSD DM_H_N[0] 15 14 sky130_fd_pr__nfet_01v8__example_559591418087 $T=1475 1420 1 0 $X=1045 $Y=540
+X10 VSSD VDDIO_Q DM_H_N[2] 16 17 sky130_fd_io__hvsbt_nand2 $T=3190 0 0 0 $X=2980 $Y=0
+X11 VSSD VDDIO_Q 17 INP_DIS_H_N INP_DIS_I_H sky130_fd_io__hvsbt_nand2 $T=8170 0 1 180 $X=5325 $Y=0
+X12 VSSD VDDIO_Q INP_DIS_I_H_N IB_MODE_SEL_H MODE_VCCHIB_N sky130_fd_io__hvsbt_nand2 $T=11435 0 1 180 $X=8590 $Y=0
+X13 VSSD VDDIO_Q INP_DIS_I_H_N IB_MODE_SEL_H_N MODE_NORMAL_N sky130_fd_io__hvsbt_nand2 $T=10525 0 0 0 $X=10315 $Y=0
+.ENDS
+***************************************
+.SUBCKT sky130_fd_io__gpiov2_ipath VSSD VDDIO_Q ENABLE_VDDIO_LV DM_H_N[0] 6 OUT_H 8 MODE_VCCHIB_N PAD 11 OUT VCCHIB DM_H_N[1] DM_H_N[2] INP_DIS_H_N IB_MODE_SEL_H IB_MODE_SEL_H_N VTRIP_SEL_H_N
+** N=22 EP=18 IP=33 FDC=240
+*.SEEDPROM
+X0 VSSD VDDIO_Q 8 21 20 PAD sky130_fd_io__gpiov2_buf_localesd $T=15805 180980 1 180 $X=0 $Y=180980
+X1 VSSD VDDIO_Q VCCHIB 6 MODE_VCCHIB_N ENABLE_VDDIO_LV 20 8 11 21 OUT_H OUT 22 sky130_fd_io__gpiov2_ibuf_se $T=15395 180000 0 0 $X=13060 $Y=178900
+X2 VSSD VDDIO_Q DM_H_N[1] DM_H_N[0] DM_H_N[2] INP_DIS_H_N IB_MODE_SEL_H MODE_VCCHIB_N IB_MODE_SEL_H_N 6 8 VTRIP_SEL_H_N 11 sky130_fd_io__gpiov2_ictl_logic $T=61320 5580 0 180 $X=44685 $Y=0
+.ENDS
+***************************************
+.SUBCKT sky130_fd_pr__pfet_01v8__example_55959141808314 2 3 4 5
+** N=5 EP=4 IP=4 FDC=1
+*.SEEDPROM
+M0 5 3 4 2 phv L=0.5 W=3 m=1 r=6 a=1.5 p=7 mult=1 $X=0 $Y=0 $D=109
+.ENDS
+***************************************
+.SUBCKT sky130_fd_pr__hvdfl1sd2__example_55959141808143
+** N=3 EP=0 IP=0 FDC=0
+*.SEEDPROM
+.ENDS
+***************************************
+.SUBCKT sky130_fd_pr__nfet_01v8__example_55959141808362 1 2 3 4
+** N=4 EP=4 IP=6 FDC=2
+M0 4 2 3 1 nhv L=0.6 W=3 m=1 r=5 a=1.8 p=7.2 mult=1 $X=0 $Y=0 $D=49
+M1 3 2 4 1 nhv L=0.6 W=3 m=1 r=5 a=1.8 p=7.2 mult=1 $X=880 $Y=0 $D=49
+.ENDS
+***************************************
+.SUBCKT sky130_fd_pr__pfet_01v8__example_55959141808364 2 3 4 5
+** N=5 EP=4 IP=7 FDC=2
+*.SEEDPROM
+M0 5 3 4 2 phv L=0.5 W=3 m=1 r=6 a=1.5 p=7 mult=1 $X=0 $Y=0 $D=109
+M1 4 3 5 2 phv L=0.5 W=3 m=1 r=6 a=1.5 p=7 mult=1 $X=780 $Y=0 $D=109
+.ENDS
+***************************************
+.SUBCKT sky130_fd_pr__nfet_01v8__example_55959141808360 1 2 3 4
+** N=4 EP=4 IP=4 FDC=1
+M0 4 2 3 1 nhv L=0.6 W=3 m=1 r=5 a=1.8 p=7.2 mult=1 $X=0 $Y=0 $D=49
+.ENDS
+***************************************
+.SUBCKT sky130_fd_pr__hvdfl1sd__example_55959141808194
+** N=2 EP=0 IP=0 FDC=0
+.ENDS
+***************************************
+.SUBCKT sky130_fd_pr__pfet_01v8__example_55959141808284 2 3 4
+** N=4 EP=3 IP=4 FDC=1
+*.SEEDPROM
+M0 4 3 2 2 phv L=0.6 W=5 m=1 r=8.33333 a=3 p=11.2 mult=1 $X=0 $Y=0 $D=109
+.ENDS
+***************************************
+.SUBCKT sky130_fd_pr__nfet_01v8__example_55959141808282 2 3 4 5
+** N=6 EP=4 IP=2 FDC=1
+*.SEEDPROM
+M0 5 3 4 2 nhv L=0.5 W=1.5 m=1 r=3 a=0.75 p=4 mult=1 $X=0 $Y=0 $D=49
+.ENDS
+***************************************
+.SUBCKT sky130_fd_io__tk_em1o_cdns_55959141808289 3 4
+** N=7 EP=2 IP=0 FDC=2
+*.SEEDPROM
+R0 3 6 0.01 m=1 $[short] $X=260 $Y=0 $D=265
+R1 7 4 0.01 m=1 $[short] $X=450 $Y=0 $D=265
+.ENDS
+***************************************
+.SUBCKT sky130_fd_io__tk_em1s_cdns_55959141808288 2 3
+** N=5 EP=2 IP=0 FDC=2
+*.SEEDPROM
+R0 2 5 0.01 m=1 $[short] $X=260 $Y=0 $D=265
+R1 5 3 0.01 m=1 $[short] $X=450 $Y=0 $D=265
+.ENDS
+***************************************
+.SUBCKT sky130_fd_pr__via_pol1__example_55959141808272
+** N=1 EP=0 IP=0 FDC=0
+.ENDS
+***************************************
+.SUBCKT sky130_fd_pr__pfet_01v8__example_55959141808283 2 3 4
+** N=4 EP=3 IP=8 FDC=3
+*.SEEDPROM
+M0 4 3 2 2 phv L=0.6 W=5 m=1 r=8.33333 a=3 p=11.2 mult=1 $X=0 $Y=0 $D=109
+M1 2 3 4 2 phv L=0.6 W=5 m=1 r=8.33333 a=3 p=11.2 mult=1 $X=880 $Y=0 $D=109
+M2 4 3 2 2 phv L=0.6 W=5 m=1 r=8.33333 a=3 p=11.2 mult=1 $X=1760 $Y=0 $D=109
+.ENDS
+***************************************
+.SUBCKT sky130_fd_pr__nfet_01v8__example_55959141808287 2 3 4
+** N=5 EP=3 IP=2 FDC=1
+*.SEEDPROM
+M0 4 3 2 2 nhv L=1 W=1.5 m=1 r=1.5 a=1.5 p=5 mult=1 $X=0 $Y=0 $D=49
+.ENDS
+***************************************
+.SUBCKT ICV_6 2 3 4 5 6
+** N=7 EP=5 IP=10 FDC=2
+*.SEEDPROM
+X0 2 3 5 sky130_fd_pr__nfet_01v8__example_55959141808287 $T=-280 0 1 180 $X=-1710 $Y=-180
+X1 2 4 6 sky130_fd_pr__nfet_01v8__example_55959141808287 $T=0 0 0 0 $X=-445 $Y=-180
+.ENDS
+***************************************
+.SUBCKT sky130_fd_pr__via_pol1__example_55959141808273
+** N=2 EP=0 IP=0 FDC=0
+.ENDS
+***************************************
+.SUBCKT sky130_fd_pr__via_pol1__example_55959141808275
+** N=4 EP=0 IP=0 FDC=0
+*.SEEDPROM
+.ENDS
+***************************************
+.SUBCKT sky130_fd_pr__res_generic_po__example_55959141808285 2 3
+** N=4 EP=2 IP=0 FDC=1
+*.SEEDPROM
+R0 2 3 L=4 W=0.33 m=1 $[mrp1] $X=0 $Y=0 $D=250
+.ENDS
+***************************************
+.SUBCKT sky130_fd_pr__nfet_01v8__example_55959141808281 2 3 4 5
+** N=6 EP=4 IP=0 FDC=1
+*.SEEDPROM
+M0 5 3 4 2 nhv L=4 W=0.42 m=1 r=0.105 a=1.68 p=8.84 mult=1 $X=0 $Y=0 $D=49
+.ENDS
+***************************************
+.SUBCKT sky130_fd_pr__nfet_01v8__example_55959141808644 2 3 4
+** N=5 EP=3 IP=0 FDC=1
+*.SEEDPROM
+M0 4 3 2 2 nhv L=4 W=0.42 m=1 r=0.105 a=1.68 p=8.84 mult=1 $X=0 $Y=0 $D=49
+.ENDS
+***************************************
+.SUBCKT sky130_fd_pr__res_generic_po__example_55959141808286 3 4
+** N=5 EP=2 IP=0 FDC=1
+*.SEEDPROM
+R0 3 4 L=11 W=0.33 m=1 $[mrp1] $X=0 $Y=0 $D=250
+.ENDS
+***************************************
+.SUBCKT sky130_fd_pr__via_pol1__example_55959141808294
+** N=1 EP=0 IP=0 FDC=0
+.ENDS
+***************************************
+.SUBCKT sky130_fd_pr__nfet_01v8__example_55959141808304 2 3 4 5
+** N=6 EP=4 IP=4 FDC=1
+*.SEEDPROM
+M0 5 3 4 2 nhv L=0.5 W=3 m=1 r=6 a=1.5 p=7 mult=1 $X=0 $Y=0 $D=49
+.ENDS
+***************************************
+.SUBCKT sky130_fd_pr__via_pol1__example_55959141808295
+** N=2 EP=0 IP=0 FDC=0
+.ENDS
+***************************************
+.SUBCKT sky130_fd_pr__nfet_01v8__example_55959141808307 2 3 4 5
+** N=6 EP=4 IP=10 FDC=4
+*.SEEDPROM
+M0 5 3 4 2 nhv L=0.5 W=3 m=1 r=6 a=1.5 p=7 mult=1 $X=0 $Y=0 $D=49
+M1 4 3 5 2 nhv L=0.5 W=3 m=1 r=6 a=1.5 p=7 mult=1 $X=780 $Y=0 $D=49
+M2 5 3 4 2 nhv L=0.5 W=3 m=1 r=6 a=1.5 p=7 mult=1 $X=1560 $Y=0 $D=49
+M3 4 3 5 2 nhv L=0.5 W=3 m=1 r=6 a=1.5 p=7 mult=1 $X=2340 $Y=0 $D=49
+.ENDS
+***************************************
+.SUBCKT sky130_fd_pr__pfet_01v8__example_55959141808315 2 3 4
+** N=4 EP=3 IP=0 FDC=4
+*.SEEDPROM
+M0 4 3 2 2 phv L=0.8 W=1 m=1 r=1.25 a=0.8 p=3.6 mult=1 $X=0 $Y=0 $D=109
+M1 2 3 4 2 phv L=0.8 W=1 m=1 r=1.25 a=0.8 p=3.6 mult=1 $X=1080 $Y=0 $D=109
+M2 4 3 2 2 phv L=0.8 W=1 m=1 r=1.25 a=0.8 p=3.6 mult=1 $X=2160 $Y=0 $D=109
+M3 2 3 4 2 phv L=0.8 W=1 m=1 r=1.25 a=0.8 p=3.6 mult=1 $X=3240 $Y=0 $D=109
+.ENDS
+***************************************
+.SUBCKT sky130_fd_pr__pfet_01v8__example_55959141808313 2 3 4
+** N=4 EP=3 IP=0 FDC=1
+*.SEEDPROM
+M0 4 3 2 2 phv L=0.5 W=1 m=1 r=2 a=0.5 p=3 mult=1 $X=0 $Y=0 $D=109
+.ENDS
+***************************************
+.SUBCKT sky130_fd_io__feascom_pupredrvr_nbiasv2 VGND_IO VCC_IO EN_H NBIAS DRVHI_H PUEN_H 8 PU_H_N EN_H_N 11 12 13
+** N=28 EP=12 IP=131 FDC=63
+*.SEEDPROM
+M0 VGND_IO DRVHI_H 17 VGND_IO nhv L=0.6 W=1 m=1 r=1.66667 a=0.6 p=3.2 mult=1 $X=1300 $Y=5070 $D=49
+M1 21 15 20 VGND_IO nhv L=0.5 W=1.5 m=1 r=3 a=0.75 p=4 mult=1 $X=3185 $Y=4570 $D=48
+M2 14 DRVHI_H 21 VGND_IO nhv L=0.5 W=1.5 m=1 r=3 a=0.75 p=4 mult=1 $X=3955 $Y=4570 $D=49
+M3 16 VCC_IO VGND_IO VGND_IO nhv L=8 W=0.42 m=1 r=0.0525 a=3.36 p=16.84 mult=1 $X=9565 $Y=4950 $D=49
+M4 11 11 12 VGND_IO nhv L=0.5 W=3 m=1 r=6 a=1.5 p=7 mult=1 $X=14370 $Y=1100 $D=49
+M5 12 11 11 VGND_IO nhv L=0.5 W=3 m=1 r=6 a=1.5 p=7 mult=1 $X=15150 $Y=1100 $D=49
+M6 16 12 12 VGND_IO nhv L=0.5 W=3 m=1 r=6 a=1.5 p=7 mult=1 $X=15930 $Y=1100 $D=49
+M7 12 12 16 VGND_IO nhv L=0.5 W=3 m=1 r=6 a=1.5 p=7 mult=1 $X=16710 $Y=1100 $D=49
+M8 17 DRVHI_H VCC_IO VCC_IO phv L=0.5 W=1 m=1 r=2 a=0.5 p=3 mult=1 $X=750 $Y=6985 $D=109
+M9 VCC_IO DRVHI_H 17 VCC_IO phv L=0.5 W=1 m=1 r=2 a=0.5 p=3 mult=1 $X=1530 $Y=6985 $D=109
+M10 19 PU_H_N VCC_IO VCC_IO phv L=8 W=0.42 m=1 r=0.0525 a=3.36 p=16.84 mult=1 $X=4105 $Y=10070 $D=109
+M11 14 18 VCC_IO VCC_IO phv L=0.5 W=3 m=1 r=6 a=1.5 p=7 mult=1 $X=12935 $Y=6220 $D=109
+M12 VCC_IO 18 14 VCC_IO phv L=0.5 W=3 m=1 r=6 a=1.5 p=7 mult=1 $X=13715 $Y=6220 $D=109
+M13 14 18 VCC_IO VCC_IO phv L=0.5 W=3 m=1 r=6 a=1.5 p=7 mult=1 $X=14495 $Y=6220 $D=109
+M14 VCC_IO 18 14 VCC_IO phv L=0.5 W=3 m=1 r=6 a=1.5 p=7 mult=1 $X=15275 $Y=6220 $D=109
+M15 11 14 VCC_IO VCC_IO phv L=0.5 W=5 m=1 r=10 a=2.5 p=11 mult=1 $X=16290 $Y=6220 $D=109
+M16 VCC_IO 14 11 VCC_IO phv L=0.5 W=5 m=1 r=10 a=2.5 p=11 mult=1 $X=17070 $Y=6220 $D=109
+R17 24 PU_H_N 0.01 m=1 $[short] $X=3510 $Y=8565 $D=265
+R18 24 15 0.01 m=1 $[short] $X=3510 $Y=8755 $D=265
+R19 26 15 0.01 m=1 $[short] $X=14185 $Y=8965 $D=265
+R20 27 18 0.01 m=1 $[short] $X=14185 $Y=9155 $D=265
+X28 EN_H 28 15 sky130_fd_io__tk_em1o_cdns_5595914180880 $T=2610 6255 0 0 $X=2610 $Y=6255
+X29 8 25 NBIAS sky130_fd_io__tk_em1o_cdns_5595914180880 $T=5525 630 1 180 $X=4805 $Y=630
+X30 22 NBIAS sky130_fd_io__tk_em1s_cdns_5595914180882 $T=5525 3995 1 180 $X=4805 $Y=3995
+X31 14 19 sky130_fd_io__tk_em1s_cdns_5595914180882 $T=13435 9635 1 180 $X=12715 $Y=9635
+X32 NBIAS 23 sky130_fd_io__tk_em1s_cdns_5595914180881 $T=6780 6655 0 0 $X=6780 $Y=6655
+X33 8 13 sky130_fd_io__tk_em1s_cdns_5595914180881 $T=7775 3225 0 0 $X=7775 $Y=3225
+X36 VCC_IO 15 18 15 sky130_fd_pr__pfet_01v8__example_55959141808314 $T=12105 6220 1 180 $X=11010 $Y=5890
+X42 VGND_IO EN_H VGND_IO 20 sky130_fd_pr__nfet_01v8__example_55959141808282 $T=2415 4570 0 0 $X=1970 $Y=4390
+X43 VGND_IO 14 VGND_IO 22 sky130_fd_pr__nfet_01v8__example_55959141808281 $T=9285 5370 0 180 $X=4840 $Y=4770
+X49 VGND_IO EN_H_N NBIAS VGND_IO sky130_fd_pr__nfet_01v8__example_55959141808304 $T=11980 1100 1 180 $X=11035 $Y=920
+X50 VGND_IO 17 NBIAS VGND_IO sky130_fd_pr__nfet_01v8__example_55959141808304 $T=12260 1100 0 0 $X=11815 $Y=920
+X51 VGND_IO 17 VGND_IO 16 sky130_fd_pr__nfet_01v8__example_55959141808304 $T=13040 1100 0 0 $X=12595 $Y=920
+X53 VGND_IO NBIAS 8 NBIAS sky130_fd_pr__nfet_01v8__example_55959141808307 $T=4410 1100 1 180 $X=1125 $Y=920
+X54 VGND_IO 8 VGND_IO 8 sky130_fd_pr__nfet_01v8__example_55959141808307 $T=8080 1100 1 180 $X=4795 $Y=920
+X55 VGND_IO 16 VGND_IO 13 sky130_fd_pr__nfet_01v8__example_55959141808307 $T=11200 1100 1 180 $X=7915 $Y=920
+X56 VCC_IO 14 NBIAS sky130_fd_pr__pfet_01v8__example_55959141808315 $T=2415 6985 0 0 $X=1820 $Y=6655
+X57 VCC_IO 14 23 sky130_fd_pr__pfet_01v8__example_55959141808315 $T=6735 6985 0 0 $X=6140 $Y=6655
+X58 VCC_IO DRVHI_H 14 sky130_fd_pr__pfet_01v8__example_55959141808313 $T=750 9490 0 0 $X=155 $Y=9160
+X59 VCC_IO EN_H 14 sky130_fd_pr__pfet_01v8__example_55959141808313 $T=2030 9490 1 180 $X=935 $Y=9160
+X60 VCC_IO PUEN_H 18 sky130_fd_pr__pfet_01v8__example_55959141808313 $T=2310 9490 0 0 $X=1715 $Y=9160
+X61 VCC_IO DRVHI_H 18 sky130_fd_pr__pfet_01v8__example_55959141808313 $T=3590 9490 1 180 $X=2495 $Y=9160
+.ENDS
+***************************************
+.SUBCKT sky130_fd_pr__model__nfet_highvoltage__example_55959141808144 2 3 4 5
+** N=6 EP=4 IP=0 FDC=1
+*.SEEDPROM
+M0 5 3 4 2 nhv L=0.6 W=1 m=1 r=1.66667 a=0.6 p=3.2 mult=1 $X=0 $Y=0 $D=49
+.ENDS
+***************************************
+.SUBCKT sky130_fd_io__gpio_pupredrvr_strongv2 VGND_IO VCC_IO SLOW_H_N PUEN_H DRVHI_H PU_H_N[2] 8 PU_H_N[3] 10 11 12 13 14
+** N=37 EP=13 IP=226 FDC=125
+*.SEEDPROM
+M0 24 15 VGND_IO VGND_IO nhv L=0.6 W=1 m=1 r=1.66667 a=0.6 p=3.2 mult=1 $X=3575 $Y=5895 $D=49
+M1 15 SLOW_H_N VCC_IO VCC_IO phv L=0.6 W=3 m=1 r=5 a=1.8 p=7.2 mult=1 $X=1715 $Y=7810 $D=109
+M2 VCC_IO PUEN_H 15 VCC_IO phv L=0.6 W=3 m=1 r=5 a=1.8 p=7.2 mult=1 $X=2595 $Y=7810 $D=109
+M3 24 15 VCC_IO VCC_IO phv L=0.6 W=3 m=1 r=5 a=1.8 p=7.2 mult=1 $X=3475 $Y=7810 $D=109
+X4 24 36 16 sky130_fd_io__tk_em1o_cdns_5595914180880 $T=23435 6625 0 0 $X=23435 $Y=6625
+X5 24 37 22 sky130_fd_io__tk_em1o_cdns_5595914180880 $T=28345 2540 0 0 $X=28345 $Y=2540
+X6 16 12 sky130_fd_io__tk_em1s_cdns_5595914180882 $T=23730 7335 1 180 $X=23010 $Y=7335
+X7 18 PU_H_N[2] sky130_fd_io__tk_em1s_cdns_5595914180882 $T=28440 4060 1 90 $X=28440 $Y=4060
+X8 22 12 sky130_fd_io__tk_em1s_cdns_5595914180882 $T=28930 2555 0 270 $X=28930 $Y=1835
+X9 8 PU_H_N[3] sky130_fd_io__tk_em1s_cdns_5595914180882 $T=29440 4060 0 90 $X=29180 $Y=4060
+X15 VCC_IO PUEN_H PU_H_N[2] sky130_fd_pr__pfet_01v8__example_55959141808284 $T=26215 7650 0 0 $X=25620 $Y=7320
+X16 VCC_IO PUEN_H PU_H_N[3] sky130_fd_pr__pfet_01v8__example_55959141808284 $T=31665 7650 1 180 $X=30470 $Y=7320
+X17 VGND_IO DRVHI_H 18 29 sky130_fd_pr__nfet_01v8__example_55959141808282 $T=23575 3160 0 0 $X=23130 $Y=2980
+X18 VGND_IO DRVHI_H 18 30 sky130_fd_pr__nfet_01v8__example_55959141808282 $T=23575 6800 1 0 $X=23130 $Y=5120
+X19 VGND_IO DRVHI_H 18 25 sky130_fd_pr__nfet_01v8__example_55959141808282 $T=27285 3160 1 180 $X=26355 $Y=2980
+X20 VGND_IO DRVHI_H 18 26 sky130_fd_pr__nfet_01v8__example_55959141808282 $T=27285 6800 0 180 $X=26355 $Y=5120
+X21 VGND_IO DRVHI_H 8 27 sky130_fd_pr__nfet_01v8__example_55959141808282 $T=30595 3160 0 0 $X=30150 $Y=2980
+X22 VGND_IO DRVHI_H 8 28 sky130_fd_pr__nfet_01v8__example_55959141808282 $T=30595 6800 1 0 $X=30150 $Y=5120
+X23 VGND_IO DRVHI_H 8 31 sky130_fd_pr__nfet_01v8__example_55959141808282 $T=34305 3160 1 180 $X=33375 $Y=2980
+X24 VGND_IO DRVHI_H 8 32 sky130_fd_pr__nfet_01v8__example_55959141808282 $T=34305 6800 0 180 $X=33375 $Y=5120
+X25 20 VGND_IO sky130_fd_io__tk_em1o_cdns_55959141808289 $T=31975 2575 0 90 $X=31325 $Y=2575
+X26 21 22 sky130_fd_io__tk_em1o_cdns_55959141808289 $T=32145 6560 0 90 $X=31495 $Y=6560
+X27 23 22 sky130_fd_io__tk_em1o_cdns_55959141808289 $T=33425 6560 0 90 $X=32775 $Y=6560
+X28 20 22 sky130_fd_io__tk_em1s_cdns_55959141808288 $T=31325 2835 0 270 $X=31325 $Y=2115
+X29 VGND_IO 21 sky130_fd_io__tk_em1s_cdns_55959141808288 $T=32145 6095 0 90 $X=31495 $Y=6095
+X30 VGND_IO 23 sky130_fd_io__tk_em1s_cdns_55959141808288 $T=33425 6095 0 90 $X=32775 $Y=6095
+X34 VCC_IO DRVHI_H PU_H_N[2] sky130_fd_pr__pfet_01v8__example_55959141808283 $T=25935 7650 1 180 $X=22980 $Y=7320
+X35 VCC_IO DRVHI_H PU_H_N[3] sky130_fd_pr__pfet_01v8__example_55959141808283 $T=31945 7650 0 0 $X=31350 $Y=7320
+X36 VGND_IO 16 16 25 29 ICV_6 $T=25285 3160 1 180 $X=23855 $Y=2980
+X37 VGND_IO 16 16 26 30 ICV_6 $T=25285 6800 0 180 $X=23855 $Y=5120
+X38 VGND_IO 22 20 31 27 ICV_6 $T=32315 3160 1 180 $X=30885 $Y=2980
+X39 VGND_IO 23 21 32 28 ICV_6 $T=32315 6800 0 180 $X=30885 $Y=5120
+X44 17 PU_H_N[2] sky130_fd_pr__res_generic_po__example_55959141808285 $T=27890 12170 1 270 $X=27540 $Y=7900
+X45 19 PU_H_N[3] sky130_fd_pr__res_generic_po__example_55959141808285 $T=29990 12170 0 270 $X=29970 $Y=7900
+X46 VGND_IO DRVHI_H 33 PU_H_N[2] sky130_fd_pr__nfet_01v8__example_55959141808281 $T=23575 1890 0 0 $X=23130 $Y=1710
+X47 VGND_IO DRVHI_H 34 PU_H_N[3] sky130_fd_pr__nfet_01v8__example_55959141808281 $T=34305 1450 1 180 $X=29860 $Y=1270
+X48 VGND_IO PUEN_H 33 sky130_fd_pr__nfet_01v8__example_55959141808644 $T=27575 995 1 180 $X=23130 $Y=815
+X49 VGND_IO PUEN_H 34 sky130_fd_pr__nfet_01v8__example_55959141808644 $T=30305 965 1 0 $X=29860 $Y=365
+X50 17 18 sky130_fd_pr__res_generic_po__example_55959141808286 $T=28700 12170 1 270 $X=28350 $Y=900
+X51 19 8 sky130_fd_pr__res_generic_po__example_55959141808286 $T=29180 12170 0 270 $X=29160 $Y=900
+X52 VGND_IO VCC_IO 24 12 DRVHI_H PUEN_H 10 PU_H_N[2] 15 14 13 11 sky130_fd_io__feascom_pupredrvr_nbiasv2 $T=4155 825 0 0 $X=4155 $Y=825
+X53 VGND_IO SLOW_H_N 15 35 sky130_fd_pr__model__nfet_highvoltage__example_55959141808144 $T=1815 6895 1 0 $X=1370 $Y=5715
+X54 VGND_IO PUEN_H VGND_IO 35 sky130_fd_pr__model__nfet_highvoltage__example_55959141808144 $T=3295 6895 0 180 $X=2265 $Y=5715
+.ENDS
+***************************************
+.SUBCKT sky130_fd_pr__pfet_01v8__example_55959141808636 1 2 3 4
+** N=4 EP=4 IP=0 FDC=1
+M0 4 2 3 1 phv L=2 W=0.42 m=1 r=0.21 a=0.84 p=4.84 mult=1 $X=0 $Y=0 $D=109
+.ENDS
+***************************************
+.SUBCKT sky130_fd_pr__pfet_01v8__example_55959141808630 1 2 3 4
+** N=4 EP=4 IP=0 FDC=1
+M0 4 2 3 1 phv L=4 W=0.42 m=1 r=0.105 a=1.68 p=8.84 mult=1 $X=0 $Y=0 $D=109
+.ENDS
+***************************************
+.SUBCKT sky130_fd_pr__pfet_01v8__example_55959141808634 2 3 4 5
+** N=5 EP=4 IP=0 FDC=1
+*.SEEDPROM
+M0 5 3 4 2 phv L=0.5 W=0.42 m=1 r=0.84 a=0.21 p=1.84 mult=1 $X=0 $Y=0 $D=109
+.ENDS
+***************************************
+.SUBCKT sky130_fd_pr__model__pfet_highvoltage__example_55959141808141 1 2 3 4
+** N=4 EP=4 IP=2 FDC=1
+M0 4 2 3 1 phv L=0.6 W=3 m=1 r=5 a=1.8 p=7.2 mult=1 $X=0 $Y=0 $D=109
+.ENDS
+***************************************
+.SUBCKT sky130_fd_pr__pfet_01v8__example_55959141808629 1 2 3 4
+** N=4 EP=4 IP=0 FDC=1
+M0 4 2 3 1 phv L=1 W=0.42 m=1 r=0.42 a=0.42 p=2.84 mult=1 $X=0 $Y=0 $D=109
+.ENDS
+***************************************
+.SUBCKT sky130_fd_pr__nfet_01v8__example_55959141808631 1 2 3
+** N=3 EP=3 IP=6 FDC=2
+M0 1 2 3 1 nhv L=0.6 W=3 m=1 r=5 a=1.8 p=7.2 mult=1 $X=0 $Y=0 $D=49
+M1 3 2 1 1 nhv L=0.6 W=3 m=1 r=5 a=1.8 p=7.2 mult=1 $X=880 $Y=0 $D=49
+.ENDS
+***************************************
+.SUBCKT sky130_fd_pr__pfet_01v8__example_55959141808354 1 2 3 4
+** N=4 EP=4 IP=0 FDC=1
+M0 4 2 3 1 phv L=4 W=0.42 m=1 r=0.105 a=1.68 p=8.84 mult=1 $X=0 $Y=0 $D=109
+.ENDS
+***************************************
+.SUBCKT sky130_fd_pr__pfet_01v8__example_55959141808628 2 3 4 5
+** N=5 EP=4 IP=4 FDC=1
+*.SEEDPROM
+M0 5 3 4 2 phv L=0.5 W=3 m=1 r=6 a=1.5 p=7 mult=1 $X=0 $Y=0 $D=109
+.ENDS
+***************************************
+.SUBCKT sky130_fd_pr__pfet_01v8__example_55959141808626 1 2 3 4
+** N=4 EP=4 IP=6 FDC=2
+M0 4 2 3 1 phv L=0.5 W=3 m=1 r=6 a=1.5 p=7 mult=1 $X=0 $Y=0 $D=109
+M1 3 2 4 1 phv L=0.5 W=3 m=1 r=6 a=1.5 p=7 mult=1 $X=780 $Y=0 $D=109
+.ENDS
+***************************************
+.SUBCKT sky130_fd_io__gpiov2_pdpredrvr_strong_nr2 VGND_IO VCC_IO I2C_MODE_H DRVLO_H_N EN_FAST_N[0] EN_FAST_N[1] PDEN_H_N PD_H PD_I2C_H
+** N=17 EP=9 IP=76 FDC=24
+*.SEEDPROM
+M0 11 I2C_MODE_H VCC_IO VCC_IO phv L=0.5 W=3 m=1 r=6 a=1.5 p=7 mult=1 $X=23885 $Y=-4570 $D=109
+M1 VCC_IO I2C_MODE_H 11 VCC_IO phv L=0.5 W=3 m=1 r=6 a=1.5 p=7 mult=1 $X=24665 $Y=-4570 $D=109
+M2 11 I2C_MODE_H VCC_IO VCC_IO phv L=0.5 W=3 m=1 r=6 a=1.5 p=7 mult=1 $X=25445 $Y=-4570 $D=109
+X3 VGND_IO I2C_MODE_H VGND_IO PD_H sky130_fd_pr__nfet_01v8__example_55959141808116 $T=32460 -10525 0 0 $X=32015 $Y=-10705
+X4 VGND_IO PDEN_H_N VGND_IO PD_H sky130_fd_pr__nfet_01v8__example_55959141808116 $T=35700 -10525 1 180 $X=34655 $Y=-10705
+X5 VGND_IO PDEN_H_N VGND_IO PD_I2C_H sky130_fd_pr__nfet_01v8__example_55959141808116 $T=35980 -10525 0 0 $X=35535 $Y=-10705
+X10 VCC_IO PDEN_H_N VCC_IO 16 sky130_fd_pr__pfet_01v8__example_55959141808630 $T=37245 -4005 0 180 $X=32650 $Y=-4755
+X11 VCC_IO DRVLO_H_N 16 PD_I2C_H sky130_fd_pr__pfet_01v8__example_55959141808630 $T=33245 -3455 0 0 $X=32650 $Y=-3785
+X12 VCC_IO EN_FAST_N[1] VCC_IO 12 sky130_fd_pr__pfet_01v8__example_55959141808629 $T=38620 -5160 0 270 $X=38290 $Y=-6755
+X13 VCC_IO DRVLO_H_N 12 PD_I2C_H sky130_fd_pr__pfet_01v8__example_55959141808629 $T=38620 -3260 0 270 $X=38290 $Y=-4855
+X14 VCC_IO DRVLO_H_N 12 PD_I2C_H sky130_fd_pr__pfet_01v8__example_55959141808629 $T=38620 -2980 1 90 $X=38290 $Y=-3575
+X15 VGND_IO DRVLO_H_N PD_H sky130_fd_pr__nfet_01v8__example_55959141808631 $T=34820 -10525 1 180 $X=32895 $Y=-10705
+X16 VGND_IO DRVLO_H_N PD_I2C_H sky130_fd_pr__nfet_01v8__example_55959141808631 $T=36860 -10525 0 0 $X=36415 $Y=-10705
+X17 VCC_IO PDEN_H_N 15 17 sky130_fd_pr__pfet_01v8__example_55959141808354 $T=33245 -6635 0 0 $X=32650 $Y=-6965
+X18 VCC_IO PDEN_H_N 11 17 sky130_fd_pr__pfet_01v8__example_55959141808354 $T=33245 -5555 0 0 $X=32650 $Y=-5885
+X19 VCC_IO DRVLO_H_N 15 PD_H sky130_fd_pr__pfet_01v8__example_55959141808354 $T=37245 -2385 1 180 $X=32650 $Y=-2715
+X20 VCC_IO EN_FAST_N[0] 11 13 sky130_fd_pr__pfet_01v8__example_55959141808628 $T=31085 -1570 0 180 $X=29990 $Y=-4900
+X21 VCC_IO EN_FAST_N[1] 11 14 sky130_fd_pr__pfet_01v8__example_55959141808628 $T=31365 -1570 1 0 $X=30770 $Y=-4900
+X22 VCC_IO DRVLO_H_N PD_H 13 sky130_fd_pr__pfet_01v8__example_55959141808626 $T=26845 -1570 1 0 $X=26250 $Y=-4900
+X23 VCC_IO DRVLO_H_N PD_H 14 sky130_fd_pr__pfet_01v8__example_55959141808626 $T=28405 -1570 1 0 $X=27810 $Y=-4900
+.ENDS
+***************************************
+.SUBCKT sky130_fd_pr__nfet_01v8__example_5595914180888 2 3 4 5
+** N=6 EP=4 IP=4 FDC=1
+*.SEEDPROM
+M0 5 3 4 2 nhv L=0.5 W=3 m=1 r=6 a=1.5 p=7 mult=1 $X=0 $Y=0 $D=49
+.ENDS
+***************************************
+.SUBCKT sky130_fd_pr__pfet_01v8__example_55959141808344 2 3 4
+** N=4 EP=3 IP=4 FDC=1
+*.SEEDPROM
+M0 4 3 2 2 phv L=0.5 W=5 m=1 r=10 a=2.5 p=11 mult=1 $X=0 $Y=0 $D=109
+.ENDS
+***************************************
+.SUBCKT sky130_fd_pr__pfet_01v8__example_55959141808346 1 2 3 4
+** N=4 EP=4 IP=10 FDC=4
+M0 4 2 3 1 phv L=0.5 W=5 m=1 r=10 a=2.5 p=11 mult=1 $X=0 $Y=0 $D=109
+M1 3 2 4 1 phv L=0.5 W=5 m=1 r=10 a=2.5 p=11 mult=1 $X=780 $Y=0 $D=109
+M2 4 2 3 1 phv L=0.5 W=5 m=1 r=10 a=2.5 p=11 mult=1 $X=1560 $Y=0 $D=109
+M3 3 2 4 1 phv L=0.5 W=5 m=1 r=10 a=2.5 p=11 mult=1 $X=2340 $Y=0 $D=109
+.ENDS
+***************************************
+.SUBCKT sky130_fd_pr__via_pol1__example_55959141808321
+** N=3 EP=0 IP=0 FDC=0
+*.SEEDPROM
+.ENDS
+***************************************
+.SUBCKT sky130_fd_pr__pfet_01v8__example_55959141808343 2 3 4 5
+** N=5 EP=4 IP=18 FDC=8
+*.SEEDPROM
+M0 5 3 4 2 phv L=0.5 W=5 m=1 r=10 a=2.5 p=11 mult=1 $X=0 $Y=0 $D=109
+M1 4 3 5 2 phv L=0.5 W=5 m=1 r=10 a=2.5 p=11 mult=1 $X=780 $Y=0 $D=109
+M2 5 3 4 2 phv L=0.5 W=5 m=1 r=10 a=2.5 p=11 mult=1 $X=1560 $Y=0 $D=109
+M3 4 3 5 2 phv L=0.5 W=5 m=1 r=10 a=2.5 p=11 mult=1 $X=2340 $Y=0 $D=109
+M4 5 3 4 2 phv L=0.5 W=5 m=1 r=10 a=2.5 p=11 mult=1 $X=3120 $Y=0 $D=109
+M5 4 3 5 2 phv L=0.5 W=5 m=1 r=10 a=2.5 p=11 mult=1 $X=3900 $Y=0 $D=109
+M6 5 3 4 2 phv L=0.5 W=5 m=1 r=10 a=2.5 p=11 mult=1 $X=4680 $Y=0 $D=109
+M7 4 3 5 2 phv L=0.5 W=5 m=1 r=10 a=2.5 p=11 mult=1 $X=5460 $Y=0 $D=109
+.ENDS
+***************************************
+.SUBCKT sky130_fd_pr__nfet_01v8__example_55959141808329 2 3 4
+** N=5 EP=3 IP=0 FDC=1
+*.SEEDPROM
+M0 4 3 2 2 nhv L=0.6 W=1 m=1 r=1.66667 a=0.6 p=3.2 mult=1 $X=0 $Y=0 $D=49
+.ENDS
+***************************************
+.SUBCKT sky130_fd_pr__nfet_01v8__example_55959141808330 1 2 3
+** N=3 EP=3 IP=4 FDC=1
+M0 3 2 1 1 nhv L=0.6 W=5 m=1 r=8.33333 a=3 p=11.2 mult=1 $X=0 $Y=0 $D=49
+.ENDS
+***************************************
+.SUBCKT sky130_fd_pr__via_pol1__example_55959141808322
+** N=2 EP=0 IP=0 FDC=0
+.ENDS
+***************************************
+.SUBCKT sky130_fd_io__com_pdpredrvr_pbiasv2 VGND_IO VCC_IO PD_H DRVLO_H_N PDEN_H_N EN_H_N EN_H 9 PBIAS 11 12 13 14 15
+** N=28 EP=14 IP=102 FDC=72
+*.SEEDPROM
+M0 23 17 VGND_IO VGND_IO nhv L=1 W=1 m=1 r=1 a=1 p=4 mult=1 $X=57905 $Y=21555 $D=49
+M1 VGND_IO 17 23 VGND_IO nhv L=1 W=1 m=1 r=1 a=1 p=4 mult=1 $X=59185 $Y=21555 $D=49
+M2 PBIAS 17 VGND_IO VGND_IO nhv L=1 W=1 m=1 r=1 a=1 p=4 mult=1 $X=60465 $Y=21555 $D=49
+M3 VGND_IO 17 PBIAS VGND_IO nhv L=1 W=1 m=1 r=1 a=1 p=4 mult=1 $X=61745 $Y=21555 $D=49
+M4 VGND_IO PD_H 14 VGND_IO nhv L=4 W=0.42 m=1 r=0.105 a=1.68 p=8.84 mult=1 $X=62170 $Y=16125 $D=49
+M5 24 PD_H 14 VGND_IO nhv L=4 W=0.42 m=1 r=0.105 a=1.68 p=8.84 mult=1 $X=62890 $Y=16125 $D=49
+M6 VGND_IO PDEN_H_N 18 VGND_IO nhv L=0.6 W=1 m=1 r=1.66667 a=0.6 p=3.2 mult=1 $X=63905 $Y=21555 $D=49
+M7 20 17 VCC_IO VCC_IO phv L=4 W=0.42 m=1 r=0.105 a=1.68 p=8.84 mult=1 $X=64530 $Y=16125 $D=109
+M8 21 DRVLO_H_N 17 VCC_IO phv L=0.5 W=3 m=1 r=6 a=1.5 p=7 mult=1 $X=65595 $Y=15390 $D=109
+M9 19 DRVLO_H_N VCC_IO VCC_IO phv L=0.5 W=1 m=1 r=2 a=0.5 p=3 mult=1 $X=66235 $Y=19365 $D=109
+M10 22 16 21 VCC_IO phv L=0.5 W=3 m=1 r=6 a=1.5 p=7 mult=1 $X=66305 $Y=15390 $D=108
+M11 VCC_IO EN_H_N 22 VCC_IO phv L=0.5 W=3 m=1 r=6 a=1.5 p=7 mult=1 $X=67015 $Y=15390 $D=109
+M12 VCC_IO DRVLO_H_N 19 VCC_IO phv L=0.5 W=1 m=1 r=2 a=0.5 p=3 mult=1 $X=67015 $Y=19365 $D=109
+M13 11 VGND_IO VCC_IO VCC_IO phv L=8 W=0.42 m=1 r=0.0525 a=3.36 p=16.84 mult=1 $X=88395 $Y=20860 $D=109
+R14 25 16 0.01 m=1 $[short] $X=57615 $Y=23500 $D=265
+R15 26 18 0.01 m=1 $[short] $X=57615 $Y=23690 $D=265
+R16 16 27 0.01 m=1 $[short] $X=66250 $Y=17350 $D=265
+R17 28 EN_H_N 0.01 m=1 $[short] $X=66440 $Y=17350 $D=265
+X18 16 PD_H sky130_fd_io__tk_em1s_cdns_5595914180882 $T=58140 16930 0 0 $X=58140 $Y=16930
+X19 23 PBIAS sky130_fd_io__tk_em1s_cdns_5595914180882 $T=58935 21905 0 0 $X=58935 $Y=21905
+X20 PBIAS 9 sky130_fd_io__tk_em1o_cdns_5595914180879 $T=76160 15130 1 180 $X=75440 $Y=15130
+X21 9 15 sky130_fd_io__tk_em1s_cdns_5595914180881 $T=83720 17760 0 0 $X=83720 $Y=17760
+X24 24 17 sky130_fd_io__tk_em1s_cdns_55959141808288 $T=63430 20160 0 90 $X=62780 $Y=20160
+X25 PBIAS 20 sky130_fd_io__tk_em1s_cdns_55959141808288 $T=65010 19405 0 90 $X=64360 $Y=19405
+X29 VGND_IO 16 18 16 sky130_fd_pr__nfet_01v8__example_55959141808304 $T=60300 23920 1 270 $X=57120 $Y=22975
+X30 VCC_IO EN_H PBIAS sky130_fd_pr__pfet_01v8__example_55959141808344 $T=69275 20390 0 180 $X=68180 $Y=15060
+X31 VCC_IO 19 11 sky130_fd_pr__pfet_01v8__example_55959141808344 $T=98505 20390 0 180 $X=97410 $Y=15060
+X32 VCC_IO 19 PBIAS sky130_fd_pr__pfet_01v8__example_55959141808344 $T=98785 20390 1 0 $X=98190 $Y=15060
+X33 VCC_IO 12 13 12 sky130_fd_pr__pfet_01v8__example_55959141808346 $T=91215 20390 1 0 $X=90620 $Y=15060
+X34 VCC_IO 13 13 11 sky130_fd_pr__pfet_01v8__example_55959141808346 $T=94335 20390 1 0 $X=93740 $Y=15060
+X38 VCC_IO 9 VCC_IO 9 sky130_fd_pr__pfet_01v8__example_55959141808343 $T=69555 20390 1 0 $X=68960 $Y=15060
+X39 VCC_IO PBIAS 9 PBIAS sky130_fd_pr__pfet_01v8__example_55959141808343 $T=76775 20140 1 0 $X=76180 $Y=14810
+X40 VCC_IO 11 VCC_IO 15 sky130_fd_pr__pfet_01v8__example_55959141808343 $T=89955 20390 0 180 $X=83400 $Y=15060
+X41 VGND_IO DRVLO_H_N 18 sky130_fd_pr__nfet_01v8__example_55959141808329 $T=63025 21555 0 0 $X=62580 $Y=21375
+X42 VGND_IO DRVLO_H_N 17 sky130_fd_pr__nfet_01v8__example_55959141808329 $T=64785 21555 0 0 $X=64340 $Y=21375
+X43 VGND_IO EN_H_N 17 sky130_fd_pr__nfet_01v8__example_55959141808329 $T=66265 21555 1 180 $X=65220 $Y=21375
+X44 VGND_IO DRVLO_H_N 19 sky130_fd_pr__nfet_01v8__example_55959141808329 $T=66545 21555 0 0 $X=66100 $Y=21375
+X45 VGND_IO 17 12 sky130_fd_pr__nfet_01v8__example_55959141808330 $T=61465 22865 1 180 $X=60420 $Y=22685
+X46 VGND_IO 18 17 sky130_fd_pr__nfet_01v8__example_55959141808330 $T=62030 24020 0 270 $X=61850 $Y=22975
+.ENDS
+***************************************
+.SUBCKT sky130_fd_io__gpiov2_pdpredrvr_strong VGND VGND_IO VCC_IO PD_H[4] I2C_MODE_H_N PDEN_H_N 7 PD_H[3] DRVLO_H_N SLOW_H 11 12 13 14 15 16 17 PD_H[2]
+** N=40 EP=18 IP=170 FDC=162
+*.SEEDPROM
+M0 VGND PD_H[4] 26 VGND nhv L=0.5 W=0.42 m=1 r=0.84 a=0.21 p=1.84 mult=1 $X=-6865 $Y=2280 $D=49
+M1 22 PDEN_H_N VGND_IO VGND_IO nhv L=0.6 W=1 m=1 r=1.66667 a=0.6 p=3.2 mult=1 $X=44335 $Y=8115 $D=49
+M2 VGND_IO 21 22 VGND_IO nhv L=0.6 W=1 m=1 r=1.66667 a=0.6 p=3.2 mult=1 $X=45215 $Y=8115 $D=49
+M3 27 22 VGND_IO VGND_IO nhv L=0.6 W=1 m=1 r=1.66667 a=0.6 p=3.2 mult=1 $X=46235 $Y=8115 $D=49
+M4 VGND_IO 7 PD_H[3] VGND_IO nhv L=0.6 W=3 m=1 r=5 a=1.8 p=7.2 mult=1 $X=49405 $Y=9645 $D=49
+M5 PD_H[3] 7 VGND_IO VGND_IO nhv L=0.6 W=3 m=1 r=5 a=1.8 p=7.2 mult=1 $X=50285 $Y=9645 $D=49
+M6 VGND_IO 7 PD_H[3] VGND_IO nhv L=0.6 W=3 m=1 r=5 a=1.8 p=7.2 mult=1 $X=51165 $Y=9645 $D=49
+M7 PD_H[3] 7 VGND_IO VGND_IO nhv L=0.6 W=3 m=1 r=5 a=1.8 p=7.2 mult=1 $X=52045 $Y=9645 $D=49
+M8 VGND_IO 7 PD_H[3] VGND_IO nhv L=0.6 W=3 m=1 r=5 a=1.8 p=7.2 mult=1 $X=52925 $Y=9645 $D=49
+M9 PD_H[3] PDEN_H_N VGND_IO VGND_IO nhv L=0.6 W=3 m=1 r=5 a=1.8 p=7.2 mult=1 $X=53805 $Y=9645 $D=49
+M10 VGND_IO PDEN_H_N PD_H[3] VGND_IO nhv L=0.6 W=3 m=1 r=5 a=1.8 p=7.2 mult=1 $X=54685 $Y=9645 $D=49
+M11 VCC_IO PD_H[4] 26 VCC_IO phv L=0.5 W=3 m=1 r=6 a=1.5 p=7 mult=1 $X=-6865 $Y=3970 $D=109
+M12 27 22 VCC_IO VCC_IO phv L=0.6 W=3 m=1 r=5 a=1.8 p=7.2 mult=1 $X=46235 $Y=3815 $D=109
+M13 VCC_IO 23 28 VCC_IO phv L=0.5 W=1 m=1 r=2 a=0.5 p=3 mult=1 $X=47515 $Y=18290 $D=109
+M14 28 23 VCC_IO VCC_IO phv L=0.5 W=1 m=1 r=2 a=0.5 p=3 mult=1 $X=48295 $Y=18290 $D=109
+M15 PD_H[3] 7 29 VCC_IO phv L=0.5 W=0.42 m=1 r=0.84 a=0.21 p=1.84 mult=1 $X=52205 $Y=18290 $D=109
+M16 29 7 PD_H[3] VCC_IO phv L=0.5 W=0.42 m=1 r=0.84 a=0.21 p=1.84 mult=1 $X=52985 $Y=18290 $D=109
+X17 VCC_IO I2C_MODE_H_N 20 sky130_fd_pr__model__pfet_highvoltage__example_55959141808371 $T=-5465 4970 1 0 $X=-6060 $Y=3640
+X18 VCC_IO I2C_MODE_H_N 20 sky130_fd_pr__model__pfet_highvoltage__example_55959141808371 $T=-5465 5310 0 0 $X=-6060 $Y=4980
+X19 VGND I2C_MODE_H_N 20 sky130_fd_pr__model__nfet_highvoltage__example_55959141808369 $T=-5465 2980 1 0 $X=-5910 $Y=2100
+X20 VGND VCC_IO 35 21 sky130_fd_io__hvsbt_inv_x1 $T=-5585 2090 0 180 $X=-7610 $Y=-3490
+X21 VGND VCC_IO 36 23 sky130_fd_io__hvsbt_inv_x1 $T=-5585 12910 0 180 $X=-7610 $Y=7330
+X31 VGND VCC_IO I2C_MODE_H_N SLOW_H 35 sky130_fd_io__hvsbt_nand2 $T=-6495 2090 1 0 $X=-6705 $Y=-3490
+X32 VGND VCC_IO 20 SLOW_H 36 sky130_fd_io__hvsbt_nand2 $T=-6495 12910 1 0 $X=-6705 $Y=7330
+X33 27 38 37 sky130_fd_io__tk_em1o_cdns_5595914180880 $T=47145 7530 1 90 $X=47145 $Y=7530
+X34 27 39 24 sky130_fd_io__tk_em1o_cdns_5595914180880 $T=47545 7405 0 0 $X=47545 $Y=7405
+X35 25 40 24 sky130_fd_io__tk_em1o_cdns_5595914180880 $T=49145 9030 0 270 $X=49145 $Y=8310
+X36 37 11 sky130_fd_io__tk_em1s_cdns_5595914180882 $T=47275 8375 0 180 $X=46555 $Y=8115
+X37 24 11 sky130_fd_io__tk_em1s_cdns_5595914180882 $T=47590 8895 1 180 $X=46870 $Y=8895
+X38 25 VCC_IO sky130_fd_io__tk_em1s_cdns_5595914180882 $T=48135 13400 0 90 $X=47875 $Y=13400
+X43 VCC_IO 7 30 PD_H[3] sky130_fd_pr__pfet_01v8__example_55959141808481 $T=48345 14230 0 0 $X=47750 $Y=13900
+X44 VCC_IO 7 31 PD_H[3] sky130_fd_pr__pfet_01v8__example_55959141808481 $T=49625 14230 1 180 $X=48530 $Y=13900
+X45 VCC_IO 24 VCC_IO 31 sky130_fd_pr__pfet_01v8__example_55959141808481 $T=50405 14230 1 180 $X=49310 $Y=13900
+X46 VCC_IO 25 VCC_IO 30 sky130_fd_pr__pfet_01v8__example_55959141808481 $T=50685 14230 0 0 $X=50090 $Y=13900
+X47 VCC_IO 7 32 PD_H[3] sky130_fd_pr__pfet_01v8__example_55959141808636 $T=49770 16870 0 0 $X=49175 $Y=16540
+X48 VCC_IO 7 33 PD_H[3] sky130_fd_pr__pfet_01v8__example_55959141808636 $T=54050 16870 1 180 $X=51455 $Y=16540
+X49 VCC_IO PDEN_H_N 28 33 sky130_fd_pr__pfet_01v8__example_55959141808636 $T=56330 16870 1 180 $X=53735 $Y=16540
+X50 VCC_IO PDEN_H_N VCC_IO 32 sky130_fd_pr__pfet_01v8__example_55959141808630 $T=56330 14760 1 180 $X=51735 $Y=14430
+X51 VCC_IO 24 28 29 sky130_fd_pr__pfet_01v8__example_55959141808634 $T=50025 18290 0 0 $X=49430 $Y=17960
+X52 VCC_IO 25 28 29 sky130_fd_pr__pfet_01v8__example_55959141808634 $T=51305 18290 1 180 $X=50210 $Y=17960
+X53 VCC_IO PDEN_H_N 22 34 sky130_fd_pr__model__pfet_highvoltage__example_55959141808141 $T=44335 6815 1 0 $X=43670 $Y=3485
+X54 VCC_IO 21 VCC_IO 34 sky130_fd_pr__model__pfet_highvoltage__example_55959141808141 $T=45815 6815 0 180 $X=44635 $Y=3485
+X55 VCC_IO 20 DRVLO_H_N 7 sky130_fd_pr__pfet_01v8__example_55959141808628 $T=-1585 5160 1 0 $X=-2180 $Y=1830
+X56 VCC_IO I2C_MODE_H_N 26 7 sky130_fd_pr__pfet_01v8__example_55959141808628 $T=-305 5160 0 180 $X=-1400 $Y=1830
+X57 VGND_IO VCC_IO 23 DRVLO_H_N 11 11 PDEN_H_N PD_H[2] PD_H[4] sky130_fd_io__gpiov2_pdpredrvr_strong_nr2 $T=17325 -1655 1 0 $X=40615 $Y=-415
+X58 VGND_IO 20 7 26 sky130_fd_pr__nfet_01v8__example_5595914180888 $T=415 10905 0 180 $X=-530 $Y=7725
+X59 VGND_IO I2C_MODE_H_N 7 DRVLO_H_N sky130_fd_pr__nfet_01v8__example_5595914180888 $T=695 10905 1 0 $X=250 $Y=7725
+X60 VGND_IO VCC_IO PD_H[4] DRVLO_H_N PDEN_H_N 27 22 13 11 17 16 15 12 14 sky130_fd_io__com_pdpredrvr_pbiasv2 $T=100340 -14900 1 180 $X=0 $Y=-1070
+.ENDS
+***************************************
+.SUBCKT sky130_fd_io__gpiov2_obpredrvr VGND VGND_IO VCC_IO DRVHI_H PUEN_H[0] DRVLO_H_N PDEN_H_N[0] PDEN_H_N[1] PUEN_H[1] PD_H[0] PU_H_N[1] PU_H_N[0] 13 PD_H[1] 15 16 17 18 19 PU_H_N[2]
++ 21 22 23 24 25 26 27 28 PD_H[3] SLOW_H_N PU_H_N[3] I2C_MODE_H_N SLOW_H PD_H[2] PD_H[4] 36
+** N=39 EP=36 IP=112 FDC=314
+*.SEEDPROM
+M0 PU_H_N[0] DRVHI_H VCC_IO VCC_IO phv L=0.6 W=5 m=1 r=8.33333 a=3 p=11.2 mult=1 $X=35895 $Y=18315 $D=109
+M1 VCC_IO DRVHI_H PU_H_N[0] VCC_IO phv L=0.6 W=5 m=1 r=8.33333 a=3 p=11.2 mult=1 $X=36775 $Y=18315 $D=109
+M2 37 DRVLO_H_N PD_H[0] VCC_IO phv L=0.6 W=3 m=1 r=5 a=1.8 p=7.2 mult=1 $X=39585 $Y=18315 $D=109
+M3 VCC_IO PDEN_H_N[0] 37 VCC_IO phv L=0.6 W=3 m=1 r=5 a=1.8 p=7.2 mult=1 $X=40465 $Y=18315 $D=109
+M4 37 PDEN_H_N[0] VCC_IO VCC_IO phv L=0.6 W=3 m=1 r=5 a=1.8 p=7.2 mult=1 $X=41345 $Y=18315 $D=109
+M5 VCC_IO DRVHI_H PU_H_N[1] VCC_IO phv L=0.5 W=3 m=1 r=6 a=1.5 p=7 mult=1 $X=47565 $Y=18315 $D=109
+M6 PU_H_N[1] DRVHI_H VCC_IO VCC_IO phv L=0.5 W=3 m=1 r=6 a=1.5 p=7 mult=1 $X=48345 $Y=18315 $D=109
+M7 VCC_IO DRVHI_H PU_H_N[1] VCC_IO phv L=0.5 W=3 m=1 r=6 a=1.5 p=7 mult=1 $X=49125 $Y=18315 $D=109
+X8 VGND_IO VCC_IO condiode a=1e-06 p=0.004 m=1 ahftempperim=0.004 $X=2800 $Y=12040 $D=150
+X9 VGND_IO VCC_IO Dpar a=453.842 p=155.65 m=1 $[dnwdiode_pw] $X=1030 $Y=11200 $D=188
+X10 VGND VCC_IO Dpar a=1211.58 p=164.72 m=1 $[dnwdiode_psub] $X=0 $Y=3830 $D=187
+X19 VCC_IO PUEN_H[1] VCC_IO PU_H_N[1] sky130_fd_pr__pfet_01v8__example_55959141808314 $T=49905 21315 1 0 $X=49310 $Y=17985
+X23 VGND_IO DRVHI_H 13 PU_H_N[1] sky130_fd_pr__nfet_01v8__example_55959141808362 $T=48585 14495 1 180 $X=46660 $Y=14315
+X24 VGND_IO PUEN_H[1] 13 VGND_IO sky130_fd_pr__nfet_01v8__example_55959141808362 $T=50345 14495 1 180 $X=48420 $Y=14315
+X25 VCC_IO PDEN_H_N[1] 38 VCC_IO sky130_fd_pr__pfet_01v8__example_55959141808364 $T=44485 21315 0 180 $X=42610 $Y=17985
+X26 VCC_IO DRVLO_H_N 38 PD_H[1] sky130_fd_pr__pfet_01v8__example_55959141808364 $T=46045 21315 0 180 $X=44170 $Y=17985
+X27 VGND_IO DRVHI_H 39 PU_H_N[0] sky130_fd_pr__nfet_01v8__example_55959141808360 $T=37275 14500 1 180 $X=36230 $Y=14320
+X28 VGND_IO PUEN_H[0] VGND_IO 39 sky130_fd_pr__nfet_01v8__example_55959141808360 $T=38155 14500 1 180 $X=37110 $Y=14320
+X29 VGND_IO DRVLO_H_N VGND_IO PD_H[0] sky130_fd_pr__nfet_01v8__example_55959141808360 $T=39755 14495 0 0 $X=39310 $Y=14315
+X30 VGND_IO PDEN_H_N[0] VGND_IO PD_H[0] sky130_fd_pr__nfet_01v8__example_55959141808360 $T=41235 14495 1 180 $X=40190 $Y=14315
+X31 VGND_IO PDEN_H_N[1] VGND_IO PD_H[1] sky130_fd_pr__nfet_01v8__example_55959141808360 $T=43670 14495 0 0 $X=43225 $Y=14315
+X32 VGND_IO DRVLO_H_N VGND_IO PD_H[1] sky130_fd_pr__nfet_01v8__example_55959141808360 $T=45150 14495 1 180 $X=44105 $Y=14315
+X35 VCC_IO PUEN_H[0] PU_H_N[0] sky130_fd_pr__pfet_01v8__example_55959141808284 $T=37655 23315 1 0 $X=37060 $Y=17985
+X36 VGND_IO VCC_IO SLOW_H_N PUEN_H[1] DRVHI_H PU_H_N[2] 21 PU_H_N[3] 15 16 17 18 19 sky130_fd_io__gpio_pupredrvr_strongv2 $T=330 10665 0 0 $X=0 $Y=10665
+X37 VGND VGND_IO VCC_IO PD_H[4] I2C_MODE_H_N PDEN_H_N[1] 36 PD_H[3] DRVLO_H_N SLOW_H 22 28 27 26 24 25 23 PD_H[2] sky130_fd_io__gpiov2_pdpredrvr_strong $T=3300 4530 0 0 $X=-4790 $Y=1000
+.ENDS
+***************************************
+.SUBCKT sky130_fd_pr__nfet_01v8__example_55959141808417 1 2 3 4
+** N=4 EP=4 IP=0 FDC=1
+M0 4 2 3 1 nhv L=0.6 W=0.7 m=1 r=1.16667 a=0.42 p=2.6 mult=1 $X=0 $Y=0 $D=49
+.ENDS
+***************************************
+.SUBCKT sky130_fd_pr__pfet_01v8__example_55959141808416 2 3 4 5
+** N=5 EP=4 IP=0 FDC=1
+*.SEEDPROM
+M0 5 3 4 2 phv L=0.6 W=1 m=1 r=1.66667 a=0.6 p=3.2 mult=1 $X=0 $Y=0 $D=109
+.ENDS
+***************************************
+.SUBCKT ICV_7 2 3 4 5
+** N=5 EP=4 IP=10 FDC=2
+*.SEEDPROM
+X0 2 3 2 4 sky130_fd_pr__pfet_01v8__example_55959141808416 $T=-280 0 1 180 $X=-1475 $Y=-330
+X1 2 3 2 5 sky130_fd_pr__pfet_01v8__example_55959141808416 $T=0 0 0 0 $X=-595 $Y=-330
+.ENDS
+***************************************
+.SUBCKT sky130_fd_io__com_ctl_ls_octl SET_H VCC_IO VPB 4 HLD_H_N IN RST_H OUT_H_N OUT_H
+** N=16 EP=9 IP=73 FDC=33
+*.SEEDPROM
+X0 SET_H VPB Dpar a=3.1672 p=7.24 m=1 $[nwdiode] $X=7590 $Y=1665 $D=185
+X1 VPB IN 4 VPB 12 sky130_fd_pr__pfet_01v8__example_55959141808430 $T=8035 1845 0 0 $X=7590 $Y=1665
+X2 SET_H SET_H 11 sky130_fd_pr__nfet_01v8__example_55959141808383 $T=9330 6445 0 0 $X=8870 $Y=6265
+X3 SET_H RST_H 10 sky130_fd_pr__nfet_01v8__example_55959141808382 $T=9050 6445 1 180 $X=8005 $Y=6265
+X4 SET_H 4 IN 12 sky130_fd_pr__nfet_01v8__example_55959141808423 $T=8815 320 1 180 $X=7625 $Y=190
+X5 SET_H HLD_H_N 10 15 sky130_fd_pr__nfet_01v8__example_55959141808428 $T=8170 6445 1 180 $X=7125 $Y=6265
+X6 SET_H 11 10 sky130_fd_pr__nfet_01v8__example_55959141808424 $T=9850 5475 0 180 $X=7125 $Y=4545
+X7 SET_H HLD_H_N 13 11 sky130_fd_pr__nfet_01v8__example_55959141808429 $T=6440 3405 0 180 $X=5395 $Y=225
+X8 SET_H 12 14 sky130_fd_pr__nfet_01v8__example_55959141808427 $T=4680 6185 0 180 $X=2780 $Y=4905
+X9 SET_H 4 16 sky130_fd_pr__nfet_01v8__example_55959141808427 $T=6400 6185 0 180 $X=4500 $Y=4905
+X10 SET_H VPB 14 13 sky130_fd_pr__nfet_01v8__example_55959141808426 $T=905 6955 0 0 $X=460 $Y=6775
+X11 SET_H VPB 14 13 sky130_fd_pr__nfet_01v8__example_55959141808426 $T=905 8425 0 0 $X=460 $Y=8245
+X12 SET_H VPB 16 15 sky130_fd_pr__nfet_01v8__example_55959141808426 $T=3885 6955 0 0 $X=3440 $Y=6775
+X13 SET_H VPB 16 15 sky130_fd_pr__nfet_01v8__example_55959141808426 $T=3885 9445 1 0 $X=3440 $Y=8265
+X14 VCC_IO 10 OUT_H_N sky130_fd_pr__pfet_01v8__example_55959141808432 $T=2860 3380 1 0 $X=2265 $Y=50
+X15 VCC_IO 11 OUT_H sky130_fd_pr__pfet_01v8__example_55959141808431 $T=2580 3380 0 180 $X=1385 $Y=50
+X17 SET_H 11 OUT_H sky130_fd_pr__nfet_01v8__example_55959141808380 $T=1310 5950 1 0 $X=850 $Y=4770
+X18 VCC_IO 10 11 sky130_fd_pr__pfet_01v8__example_55959141808435 $T=650 3380 1 0 $X=55 $Y=2300
+X19 VCC_IO 11 10 sky130_fd_pr__pfet_01v8__example_55959141808433 $T=650 1785 1 0 $X=55 $Y=705
+X20 SET_H 10 OUT_H_N sky130_fd_pr__nfet_01v8__example_55959141808379 $T=1030 5950 0 180 $X=-30 $Y=4770
+.ENDS
+***************************************
+.SUBCKT sky130_fd_io__gpiov2_octl VGND VCC_IO DM_H[2] DM_H[0] 6 DM_H[1] 8 DM_H_N[1] DM_H_N[2] DM_H_N[0] 12 13 PDEN_H_N[0] PDEN_H_N[1] VPWR SLOW_H SLOW_H_N HLD_I_H_N SLOW OD_H
+** N=50 EP=20 IP=228 FDC=174
+*.SEEDPROM
+X0 VGND VCC_IO 37 45 sky130_fd_io__hvsbt_inv_x1 $T=26370 27630 1 0 $X=26140 $Y=22050
+X1 VGND VCC_IO 39 46 sky130_fd_io__hvsbt_inv_x1 $T=29715 27920 1 180 $X=27690 $Y=27920
+X2 VGND VCC_IO 44 47 sky130_fd_io__hvsbt_inv_x1 $T=29715 38260 0 180 $X=27690 $Y=32680
+X3 VGND VCC_IO 45 48 sky130_fd_io__hvsbt_inv_x1 $T=29630 27630 1 0 $X=29400 $Y=22050
+X4 VGND VCC_IO 43 49 sky130_fd_io__hvsbt_inv_x1 $T=29765 17210 0 0 $X=29535 $Y=17210
+X5 VGND VCC_IO 48 12 sky130_fd_io__hvsbt_inv_x2 $T=27870 27630 1 0 $X=27870 $Y=22050
+X6 VGND VCC_IO 49 13 sky130_fd_io__hvsbt_inv_x2 $T=28005 17210 0 0 $X=28005 $Y=17210
+X7 VGND VCC_IO 46 PDEN_H_N[0] sky130_fd_io__hvsbt_inv_x2 $T=31475 27920 1 180 $X=28805 $Y=27920
+X8 VGND VCC_IO 47 PDEN_H_N[1] sky130_fd_io__hvsbt_inv_x2 $T=28805 38260 1 0 $X=28805 $Y=32680
+X9 VGND VCC_IO DM_H[1] DM_H[0] 35 sky130_fd_io__hvsbt_nor $T=-44060 9510 1 180 $X=-46730 $Y=9510
+X10 VGND VCC_IO DM_H_N[2] DM_H_N[1] 36 sky130_fd_io__hvsbt_nor $T=21695 27920 1 180 $X=19025 $Y=27920
+X11 VGND VCC_IO 26 DM_H_N[1] 43 sky130_fd_io__hvsbt_nor $T=28915 17210 1 180 $X=26245 $Y=17210
+X12 VGND VCC_IO DM_H[2] 35 8 sky130_fd_io__hvsbt_nand2 $T=-44970 9510 0 0 $X=-45180 $Y=9510
+X13 VGND VCC_IO PUEN_2OR1_H VCC_IO 37 sky130_fd_io__hvsbt_nand2 $T=21695 38260 0 180 $X=18850 $Y=32680
+X14 VGND VCC_IO 36 DM_H_N[0] 40 sky130_fd_io__hvsbt_nand2 $T=21405 27920 0 0 $X=21195 $Y=27920
+X15 VGND VCC_IO DM_H[1] DM_H[0] 39 sky130_fd_io__hvsbt_nand2 $T=24075 38260 0 180 $X=21230 $Y=32680
+X16 VGND VCC_IO DM_H_N[2] DM_H_N[1] 41 sky130_fd_io__hvsbt_nand2 $T=23165 38260 1 0 $X=22955 $Y=32680
+X17 VGND VCC_IO 42 40 PUEN_2OR1_H sky130_fd_io__hvsbt_nand2 $T=26455 27920 1 180 $X=23610 $Y=27920
+X18 VGND VCC_IO 28 DM_H[0] 42 sky130_fd_io__hvsbt_nand2 $T=25545 27920 0 0 $X=25335 $Y=27920
+X19 VGND VCC_IO DM_H_N[0] 41 44 sky130_fd_io__hvsbt_nand2 $T=28215 38260 0 180 $X=25370 $Y=32680
+X20 VGND DM_H[2] VGND 23 sky130_fd_pr__nfet_01v8__example_55959141808417 $T=20530 17070 1 180 $X=19485 $Y=16890
+X21 VGND DM_H[2] VGND 24 sky130_fd_pr__nfet_01v8__example_55959141808417 $T=20695 27445 0 180 $X=19650 $Y=26565
+X22 VGND DM_H[2] VGND 31 sky130_fd_pr__nfet_01v8__example_55959141808417 $T=20810 17070 0 0 $X=20365 $Y=16890
+X23 VGND DM_H[2] VGND 32 sky130_fd_pr__nfet_01v8__example_55959141808417 $T=20975 27445 1 0 $X=20530 $Y=26565
+X24 VGND DM_H[0] 31 26 sky130_fd_pr__nfet_01v8__example_55959141808417 $T=21690 17070 0 0 $X=21245 $Y=16890
+X25 VGND DM_H[1] 32 28 sky130_fd_pr__nfet_01v8__example_55959141808417 $T=21855 27445 1 0 $X=21410 $Y=26565
+X26 VGND 6 33 26 sky130_fd_pr__nfet_01v8__example_55959141808417 $T=23170 17070 1 180 $X=22125 $Y=16890
+X27 VGND 22 34 28 sky130_fd_pr__nfet_01v8__example_55959141808417 $T=23335 27445 0 180 $X=22290 $Y=26565
+X28 VGND 23 VGND 33 sky130_fd_pr__nfet_01v8__example_55959141808417 $T=24050 17070 1 180 $X=23005 $Y=16890
+X29 VGND 24 VGND 34 sky130_fd_pr__nfet_01v8__example_55959141808417 $T=24215 27445 0 180 $X=23170 $Y=26565
+X30 VGND DM_H[0] VGND 6 sky130_fd_pr__nfet_01v8__example_55959141808417 $T=24330 17070 0 0 $X=23885 $Y=16890
+X31 VGND DM_H[1] VGND 22 sky130_fd_pr__nfet_01v8__example_55959141808417 $T=24495 27445 1 0 $X=24050 $Y=26565
+X32 VCC_IO 6 25 26 sky130_fd_pr__pfet_01v8__example_55959141808416 $T=21690 19080 0 0 $X=21095 $Y=18750
+X33 VCC_IO 6 25 26 sky130_fd_pr__pfet_01v8__example_55959141808416 $T=21690 20420 0 0 $X=21095 $Y=20090
+X34 VCC_IO 22 27 28 sky130_fd_pr__pfet_01v8__example_55959141808416 $T=21855 24095 1 0 $X=21260 $Y=22765
+X35 VCC_IO 22 27 28 sky130_fd_pr__pfet_01v8__example_55959141808416 $T=21855 25435 1 0 $X=21260 $Y=24105
+X36 VCC_IO 23 29 26 sky130_fd_pr__pfet_01v8__example_55959141808416 $T=23170 19080 1 180 $X=21975 $Y=18750
+X37 VCC_IO 23 29 26 sky130_fd_pr__pfet_01v8__example_55959141808416 $T=23170 20420 1 180 $X=21975 $Y=20090
+X38 VCC_IO 24 30 28 sky130_fd_pr__pfet_01v8__example_55959141808416 $T=23335 24095 0 180 $X=22140 $Y=22765
+X39 VCC_IO 24 30 28 sky130_fd_pr__pfet_01v8__example_55959141808416 $T=23335 25435 0 180 $X=22140 $Y=24105
+X40 VCC_IO DM_H[2] 25 23 ICV_7 $T=20530 19080 1 180 $X=19335 $Y=18750
+X41 VCC_IO DM_H[2] 25 23 ICV_7 $T=20530 20420 1 180 $X=19335 $Y=20090
+X42 VCC_IO DM_H[2] 27 24 ICV_7 $T=20695 24095 0 180 $X=19500 $Y=22765
+X43 VCC_IO DM_H[2] 27 24 ICV_7 $T=20695 25435 0 180 $X=19500 $Y=24105
+X44 VCC_IO DM_H[0] 6 29 ICV_7 $T=24050 19080 1 180 $X=22855 $Y=18750
+X45 VCC_IO DM_H[0] 6 29 ICV_7 $T=24050 20420 1 180 $X=22855 $Y=20090
+X46 VCC_IO DM_H[1] 22 30 ICV_7 $T=24215 24095 0 180 $X=23020 $Y=22765
+X47 VCC_IO DM_H[1] 22 30 ICV_7 $T=24215 25435 0 180 $X=23020 $Y=24105
+X48 VGND VCC_IO VPWR 50 HLD_I_H_N SLOW OD_H SLOW_H_N SLOW_H sky130_fd_io__com_ctl_ls_octl $T=21405 16010 1 0 $X=20920 $Y=5870
+.ENDS
+***************************************
+.SUBCKT sky130_fd_pr__pfet_01v8__example_55959141808389 2 3 4 5
+** N=5 EP=4 IP=6 FDC=2
+*.SEEDPROM
+M0 2 3 5 2 phighvt L=0.25 W=3 m=1 r=12 a=0.75 p=6.5 mult=1 $X=0 $Y=0 $D=89
+M1 3 4 2 2 phighvt L=0.25 W=3 m=1 r=12 a=0.75 p=6.5 mult=1 $X=530 $Y=0 $D=89
+.ENDS
+***************************************
+.SUBCKT sky130_fd_pr__nfet_01v8__example_55959141808375 1 2 3 4
+** N=4 EP=4 IP=0 FDC=4
+M0 4 2 1 1 nshort L=0.25 W=1 m=1 r=4 a=0.25 p=2.5 mult=1 $X=0 $Y=0 $D=9
+M1 1 2 4 1 nshort L=0.25 W=1 m=1 r=4 a=0.25 p=2.5 mult=1 $X=530 $Y=0 $D=9
+M2 2 3 1 1 nshort L=0.25 W=1 m=1 r=4 a=0.25 p=2.5 mult=1 $X=1060 $Y=0 $D=9
+M3 1 3 2 1 nshort L=0.25 W=1 m=1 r=4 a=0.25 p=2.5 mult=1 $X=1590 $Y=0 $D=9
+.ENDS
+***************************************
+.SUBCKT sky130_fd_pr__nfet_01v8__example_55959141808387 1 2 3 4
+** N=4 EP=4 IP=0 FDC=1
+M0 4 2 3 1 nhvnative L=0.9 W=1 m=1 r=1.11111 a=0.9 p=3.8 mult=1 $X=0 $Y=0 $D=59
+.ENDS
+***************************************
+.SUBCKT sky130_fd_pr__nfet_01v8__example_55959141808388 1 2 3
+** N=3 EP=3 IP=0 FDC=2
+M0 3 2 1 1 nlowvt L=0.15 W=1 m=1 r=6.66667 a=0.15 p=2.3 mult=1 $X=0 $Y=0 $D=19
+M1 1 2 3 1 nlowvt L=0.15 W=1 m=1 r=6.66667 a=0.15 p=2.3 mult=1 $X=430 $Y=0 $D=19
+.ENDS
+***************************************
+.SUBCKT ICV_8 1 2 3 4 5 6
+** N=6 EP=6 IP=7 FDC=3
+X0 1 2 4 5 sky130_fd_pr__nfet_01v8__example_55959141808387 $T=0 0 0 0 $X=-445 $Y=-280
+X1 1 3 6 sky130_fd_pr__nfet_01v8__example_55959141808388 $T=1800 0 0 0 $X=1355 $Y=-280
+.ENDS
+***************************************
+.SUBCKT sky130_fd_pr__nfet_01v8__example_55959141808376 1 2 3 4
+** N=4 EP=4 IP=4 FDC=1
+M0 4 2 3 1 nhv L=0.5 W=5 m=1 r=10 a=2.5 p=11 mult=1 $X=0 $Y=0 $D=49
+.ENDS
+***************************************
+.SUBCKT sky130_fd_pr__nfet_01v8__example_55959141808377 1 2 3 4
+** N=4 EP=4 IP=4 FDC=1
+M0 4 2 3 1 nhv L=0.5 W=5 m=1 r=10 a=2.5 p=11 mult=1 $X=0 $Y=0 $D=49
+.ENDS
+***************************************
+.SUBCKT sky130_fd_pr__nfet_01v8__example_55959141808386 1 2 3 4
+** N=4 EP=4 IP=0 FDC=2
+M0 4 2 3 1 nhvnative L=0.9 W=1 m=1 r=1.11111 a=0.9 p=3.8 mult=1 $X=0 $Y=0 $D=59
+M1 3 2 4 1 nhvnative L=0.9 W=1 m=1 r=1.11111 a=0.9 p=3.8 mult=1 $X=1180 $Y=0 $D=59
+.ENDS
+***************************************
+.SUBCKT sky130_fd_pr__tpl1__example_55959141808374
+** N=1 EP=0 IP=0 FDC=0
+.ENDS
+***************************************
+.SUBCKT sky130_fd_pr__nfet_01v8__example_55959141808384 1 2 3
+** N=3 EP=3 IP=0 FDC=1
+M0 3 2 1 1 nhv L=0.6 W=0.7 m=1 r=1.16667 a=0.42 p=2.6 mult=1 $X=0 $Y=0 $D=49
+.ENDS
+***************************************
+.SUBCKT sky130_fd_pr__nfet_01v8__example_55959141808381 1 2 3
+** N=3 EP=3 IP=0 FDC=1
+M0 3 2 1 1 nhv L=0.6 W=0.7 m=1 r=1.16667 a=0.42 p=2.6 mult=1 $X=0 $Y=0 $D=49
+.ENDS
+***************************************
+.SUBCKT sky130_fd_pr__pfet_01v8__example_55959141808392 2 3 4
+** N=4 EP=3 IP=4 FDC=1
+*.SEEDPROM
+M0 4 3 2 2 phv L=0.5 W=3 m=1 r=6 a=1.5 p=7 mult=1 $X=0 $Y=0 $D=109
+.ENDS
+***************************************
+.SUBCKT sky130_fd_pr__pfet_01v8__example_55959141808393 2 3 4
+** N=4 EP=3 IP=4 FDC=1
+*.SEEDPROM
+M0 4 3 2 2 phv L=0.5 W=3 m=1 r=6 a=1.5 p=7 mult=1 $X=0 $Y=0 $D=109
+.ENDS
+***************************************
+.SUBCKT sky130_fd_pr__pfet_01v8__example_55959141808391 2 3 4
+** N=4 EP=3 IP=0 FDC=1
+*.SEEDPROM
+M0 4 3 2 2 phv L=0.5 W=1 m=1 r=2 a=0.5 p=3 mult=1 $X=0 $Y=0 $D=109
+.ENDS
+***************************************
+.SUBCKT sky130_fd_pr__pfet_01v8__example_55959141808390 2 3 4
+** N=4 EP=3 IP=0 FDC=1
+*.SEEDPROM
+M0 4 3 2 2 phv L=0.5 W=1 m=1 r=2 a=0.5 p=3 mult=1 $X=0 $Y=0 $D=109
+.ENDS
+***************************************
+.SUBCKT sky130_fd_io__gpio_dat_lsv2 VGND VCC_IO VPWR_KA 4 RST_H SET_H HLD_H_N IN OUT_H OUT_H_N
+** N=17 EP=10 IP=119 FDC=50
+*.SEEDPROM
+X0 VGND RST_H 4 sky130_fd_pr__nfet_01v8__example_55959141808383 $T=4730 10120 0 180 $X=3685 $Y=6940
+X1 VGND SET_H 11 sky130_fd_pr__nfet_01v8__example_55959141808382 $T=5010 10120 1 0 $X=4550 $Y=6940
+X2 VGND 4 OUT_H_N sky130_fd_pr__nfet_01v8__example_55959141808380 $T=1310 6410 1 0 $X=850 $Y=5230
+X3 VGND 11 OUT_H sky130_fd_pr__nfet_01v8__example_55959141808379 $T=1030 6410 0 180 $X=-30 $Y=5230
+X6 VPWR_KA 13 IN 12 sky130_fd_pr__pfet_01v8__example_55959141808389 $T=14120 9210 1 0 $X=13675 $Y=6030
+X7 VGND 13 IN 12 sky130_fd_pr__nfet_01v8__example_55959141808375 $T=13395 4120 0 0 $X=13000 $Y=3990
+X8 VGND VPWR_KA 12 16 17 15 ICV_8 $T=9500 640 0 0 $X=9055 $Y=360
+X9 VGND VPWR_KA 12 16 17 15 ICV_8 $T=9500 1940 0 0 $X=9055 $Y=1660
+X10 VGND VPWR_KA 12 16 17 15 ICV_8 $T=9500 3240 0 0 $X=9055 $Y=2960
+X11 VGND VPWR_KA 12 16 17 15 ICV_8 $T=9500 4540 0 0 $X=9055 $Y=4260
+X12 VGND VPWR_KA 13 16 17 17 ICV_8 $T=9500 6110 0 0 $X=9055 $Y=5830
+X13 VGND VPWR_KA 13 16 17 17 ICV_8 $T=9500 7410 0 0 $X=9055 $Y=7130
+X14 VGND VPWR_KA 13 16 17 17 ICV_8 $T=9500 8710 0 0 $X=9055 $Y=8430
+X15 VGND VPWR_KA 13 16 17 17 ICV_8 $T=9500 10010 0 0 $X=9055 $Y=9730
+X16 VGND HLD_H_N 4 16 sky130_fd_pr__nfet_01v8__example_55959141808376 $T=8100 11010 1 0 $X=7655 $Y=5830
+X17 VGND HLD_H_N 14 11 sky130_fd_pr__nfet_01v8__example_55959141808377 $T=7055 11010 0 180 $X=6110 $Y=5830
+X18 VGND VPWR_KA 14 15 sky130_fd_pr__nfet_01v8__example_55959141808386 $T=6520 640 0 0 $X=6075 $Y=360
+X19 VGND VPWR_KA 14 15 sky130_fd_pr__nfet_01v8__example_55959141808386 $T=6520 1940 0 0 $X=6075 $Y=1660
+X20 VGND VPWR_KA 14 15 sky130_fd_pr__nfet_01v8__example_55959141808386 $T=6520 3240 0 0 $X=6075 $Y=2960
+X21 VGND VPWR_KA 14 15 sky130_fd_pr__nfet_01v8__example_55959141808386 $T=6520 4540 0 0 $X=6075 $Y=4260
+X23 VGND 4 11 sky130_fd_pr__nfet_01v8__example_55959141808384 $T=5010 6110 1 0 $X=4550 $Y=5230
+X24 VGND 11 4 sky130_fd_pr__nfet_01v8__example_55959141808381 $T=4730 6110 0 180 $X=3685 $Y=5230
+X25 VCC_IO 11 OUT_H sky130_fd_pr__pfet_01v8__example_55959141808392 $T=2350 3660 1 0 $X=1755 $Y=330
+X26 VCC_IO 4 OUT_H_N sky130_fd_pr__pfet_01v8__example_55959141808393 $T=2070 3660 0 180 $X=975 $Y=330
+X27 VCC_IO 11 4 sky130_fd_pr__pfet_01v8__example_55959141808391 $T=140 4295 1 0 $X=-455 $Y=2965
+X28 VCC_IO 4 11 sky130_fd_pr__pfet_01v8__example_55959141808390 $T=140 2160 1 0 $X=-455 $Y=830
+.ENDS
+***************************************
+.SUBCKT sky130_fd_io__gpio_dat_ls_1v2 VGND VCC_IO VPWR_KA RST_H SET_H HLD_H_N IN OUT_H OUT_H_N
+** N=17 EP=9 IP=119 FDC=50
+*.SEEDPROM
+X0 VGND RST_H 11 sky130_fd_pr__nfet_01v8__example_55959141808383 $T=4730 10120 0 180 $X=3685 $Y=6940
+X1 VGND SET_H 10 sky130_fd_pr__nfet_01v8__example_55959141808382 $T=5010 10120 1 0 $X=4550 $Y=6940
+X2 VGND 11 OUT_H_N sky130_fd_pr__nfet_01v8__example_55959141808380 $T=1310 6410 1 0 $X=850 $Y=5230
+X3 VGND 10 OUT_H sky130_fd_pr__nfet_01v8__example_55959141808379 $T=1030 6410 0 180 $X=-30 $Y=5230
+X6 VPWR_KA 13 IN 12 sky130_fd_pr__pfet_01v8__example_55959141808389 $T=14120 9210 1 0 $X=13675 $Y=6030
+X7 VGND 13 IN 12 sky130_fd_pr__nfet_01v8__example_55959141808375 $T=13395 4120 0 0 $X=13000 $Y=3990
+X8 VGND VPWR_KA 12 16 17 15 ICV_8 $T=9500 640 0 0 $X=9055 $Y=360
+X9 VGND VPWR_KA 12 16 17 15 ICV_8 $T=9500 1940 0 0 $X=9055 $Y=1660
+X10 VGND VPWR_KA 12 16 17 15 ICV_8 $T=9500 3240 0 0 $X=9055 $Y=2960
+X11 VGND VPWR_KA 12 16 17 15 ICV_8 $T=9500 4540 0 0 $X=9055 $Y=4260
+X12 VGND VPWR_KA 13 16 17 17 ICV_8 $T=9500 6110 0 0 $X=9055 $Y=5830
+X13 VGND VPWR_KA 13 16 17 17 ICV_8 $T=9500 7410 0 0 $X=9055 $Y=7130
+X14 VGND VPWR_KA 13 16 17 17 ICV_8 $T=9500 8710 0 0 $X=9055 $Y=8430
+X15 VGND VPWR_KA 13 16 17 17 ICV_8 $T=9500 10010 0 0 $X=9055 $Y=9730
+X16 VGND HLD_H_N 11 16 sky130_fd_pr__nfet_01v8__example_55959141808376 $T=8100 11010 1 0 $X=7655 $Y=5830
+X17 VGND HLD_H_N 14 10 sky130_fd_pr__nfet_01v8__example_55959141808377 $T=7055 11010 0 180 $X=6110 $Y=5830
+X18 VGND VPWR_KA 14 15 sky130_fd_pr__nfet_01v8__example_55959141808386 $T=6520 640 0 0 $X=6075 $Y=360
+X19 VGND VPWR_KA 14 15 sky130_fd_pr__nfet_01v8__example_55959141808386 $T=6520 1940 0 0 $X=6075 $Y=1660
+X20 VGND VPWR_KA 14 15 sky130_fd_pr__nfet_01v8__example_55959141808386 $T=6520 3240 0 0 $X=6075 $Y=2960
+X21 VGND VPWR_KA 14 15 sky130_fd_pr__nfet_01v8__example_55959141808386 $T=6520 4540 0 0 $X=6075 $Y=4260
+X23 VGND 11 10 sky130_fd_pr__nfet_01v8__example_55959141808384 $T=5010 6110 1 0 $X=4550 $Y=5230
+X24 VGND 10 11 sky130_fd_pr__nfet_01v8__example_55959141808381 $T=4730 6110 0 180 $X=3685 $Y=5230
+X25 VCC_IO 10 OUT_H sky130_fd_pr__pfet_01v8__example_55959141808392 $T=2350 3660 1 0 $X=1755 $Y=330
+X26 VCC_IO 11 OUT_H_N sky130_fd_pr__pfet_01v8__example_55959141808393 $T=2070 3660 0 180 $X=975 $Y=330
+X27 VCC_IO 10 11 sky130_fd_pr__pfet_01v8__example_55959141808391 $T=140 4295 1 0 $X=-455 $Y=2965
+X28 VCC_IO 11 10 sky130_fd_pr__pfet_01v8__example_55959141808390 $T=140 2160 1 0 $X=-455 $Y=830
+.ENDS
+***************************************
+.SUBCKT sky130_fd_pr__tpl1__example_55959141808625
+** N=1 EP=0 IP=0 FDC=0
+.ENDS
+***************************************
+.SUBCKT sky130_fd_pr__nfet_01v8__example_55959141808406 1 2 3
+** N=3 EP=3 IP=6 FDC=2
+M0 3 2 1 1 nhv L=0.6 W=3 m=1 r=5 a=1.8 p=7.2 mult=1 $X=0 $Y=0 $D=49
+M1 1 2 3 1 nhv L=0.6 W=3 m=1 r=5 a=1.8 p=7.2 mult=1 $X=880 $Y=0 $D=49
+.ENDS
+***************************************
+.SUBCKT sky130_fd_pr__via_pol1__example_55959141808396
+** N=2 EP=0 IP=0 FDC=0
+.ENDS
+***************************************
+.SUBCKT ICV_9
+** N=3 EP=0 IP=4 FDC=0
+*.SEEDPROM
+.ENDS
+***************************************
+.SUBCKT sky130_fd_pr__nfet_01v8__example_55959141808404 1 2 3
+** N=3 EP=3 IP=14 FDC=6
+M0 3 2 1 1 nhv L=0.6 W=3 m=1 r=5 a=1.8 p=7.2 mult=1 $X=0 $Y=0 $D=49
+M1 1 2 3 1 nhv L=0.6 W=3 m=1 r=5 a=1.8 p=7.2 mult=1 $X=880 $Y=0 $D=49
+M2 3 2 1 1 nhv L=0.6 W=3 m=1 r=5 a=1.8 p=7.2 mult=1 $X=1760 $Y=0 $D=49
+M3 1 2 3 1 nhv L=0.6 W=3 m=1 r=5 a=1.8 p=7.2 mult=1 $X=2640 $Y=0 $D=49
+M4 3 2 1 1 nhv L=0.6 W=3 m=1 r=5 a=1.8 p=7.2 mult=1 $X=3520 $Y=0 $D=49
+M5 1 2 3 1 nhv L=0.6 W=3 m=1 r=5 a=1.8 p=7.2 mult=1 $X=4400 $Y=0 $D=49
+.ENDS
+***************************************
+.SUBCKT ICV_10
+** N=3 EP=0 IP=4 FDC=0
+*.SEEDPROM
+.ENDS
+***************************************
+.SUBCKT sky130_fd_pr__pfet_01v8__example_55959141808409 2 3 4 5
+** N=5 EP=4 IP=4 FDC=1
+*.SEEDPROM
+M0 5 3 4 2 phv L=0.5 W=5 m=1 r=10 a=2.5 p=11 mult=1 $X=0 $Y=0 $D=109
+.ENDS
+***************************************
+.SUBCKT sky130_fd_io__com_cclat VGND VCC_IO OE_H_N PU_DIS_H DRVLO_H_N DRVHI_H PD_DIS_H
+** N=16 EP=7 IP=138 FDC=63
+*.SEEDPROM
+M0 12 8 VGND VGND nhv L=0.6 W=3 m=1 r=5 a=1.8 p=7.2 mult=1 $X=2025 $Y=1395 $D=49
+M1 15 8 VGND VGND nhv L=0.6 W=3 m=1 r=5 a=1.8 p=7.2 mult=1 $X=4335 $Y=1395 $D=49
+M2 VGND 8 15 VGND nhv L=0.6 W=3 m=1 r=5 a=1.8 p=7.2 mult=1 $X=5215 $Y=1395 $D=49
+M3 15 8 VGND VGND nhv L=0.6 W=3 m=1 r=5 a=1.8 p=7.2 mult=1 $X=6095 $Y=1395 $D=49
+M4 VGND 8 15 VGND nhv L=0.6 W=3 m=1 r=5 a=1.8 p=7.2 mult=1 $X=6975 $Y=1395 $D=49
+M5 DRVHI_H 10 VCC_IO VCC_IO phv L=0.5 W=5 m=1 r=10 a=2.5 p=11 mult=1 $X=7125 $Y=5965 $D=109
+M6 VCC_IO 10 DRVHI_H VCC_IO phv L=0.5 W=5 m=1 r=10 a=2.5 p=11 mult=1 $X=7905 $Y=5965 $D=109
+M7 DRVHI_H 10 VCC_IO VCC_IO phv L=0.5 W=5 m=1 r=10 a=2.5 p=11 mult=1 $X=8685 $Y=5965 $D=109
+M8 VCC_IO 10 DRVHI_H VCC_IO phv L=0.5 W=5 m=1 r=10 a=2.5 p=11 mult=1 $X=9465 $Y=5965 $D=109
+M9 DRVHI_H 10 VCC_IO VCC_IO phv L=0.5 W=5 m=1 r=10 a=2.5 p=11 mult=1 $X=10245 $Y=5965 $D=109
+M10 VCC_IO 10 DRVHI_H VCC_IO phv L=0.5 W=5 m=1 r=10 a=2.5 p=11 mult=1 $X=11025 $Y=5965 $D=109
+M11 DRVLO_H_N 11 VCC_IO VCC_IO phv L=0.5 W=5 m=1 r=10 a=2.5 p=11 mult=1 $X=11805 $Y=5965 $D=109
+M12 VCC_IO 11 DRVLO_H_N VCC_IO phv L=0.5 W=5 m=1 r=10 a=2.5 p=11 mult=1 $X=12585 $Y=5965 $D=109
+M13 DRVLO_H_N 11 VCC_IO VCC_IO phv L=0.5 W=5 m=1 r=10 a=2.5 p=11 mult=1 $X=13365 $Y=5965 $D=109
+M14 VCC_IO 11 DRVLO_H_N VCC_IO phv L=0.5 W=5 m=1 r=10 a=2.5 p=11 mult=1 $X=14145 $Y=5965 $D=109
+M15 DRVLO_H_N 11 VCC_IO VCC_IO phv L=0.5 W=5 m=1 r=10 a=2.5 p=11 mult=1 $X=14925 $Y=5965 $D=109
+M16 VCC_IO 11 DRVLO_H_N VCC_IO phv L=0.5 W=5 m=1 r=10 a=2.5 p=11 mult=1 $X=15705 $Y=5965 $D=109
+M17 13 12 VCC_IO VCC_IO phv L=0.6 W=5 m=1 r=8.33333 a=3 p=11.2 mult=1 $X=16485 $Y=5965 $D=109
+M18 VCC_IO 12 13 VCC_IO phv L=0.6 W=5 m=1 r=8.33333 a=3 p=11.2 mult=1 $X=17365 $Y=5965 $D=109
+M19 13 12 VCC_IO VCC_IO phv L=0.6 W=5 m=1 r=8.33333 a=3 p=11.2 mult=1 $X=18245 $Y=5965 $D=109
+M20 VCC_IO 12 13 VCC_IO phv L=0.6 W=5 m=1 r=8.33333 a=3 p=11.2 mult=1 $X=19125 $Y=5965 $D=109
+M21 13 12 VCC_IO VCC_IO phv L=0.6 W=5 m=1 r=8.33333 a=3 p=11.2 mult=1 $X=20005 $Y=5965 $D=109
+M22 VCC_IO 12 13 VCC_IO phv L=0.6 W=5 m=1 r=8.33333 a=3 p=11.2 mult=1 $X=20885 $Y=5965 $D=109
+M23 13 12 VCC_IO VCC_IO phv L=0.6 W=5 m=1 r=8.33333 a=3 p=11.2 mult=1 $X=21765 $Y=5965 $D=109
+M24 VCC_IO 12 13 VCC_IO phv L=0.6 W=5 m=1 r=8.33333 a=3 p=11.2 mult=1 $X=22645 $Y=5965 $D=109
+X32 VGND OE_H_N VGND 8 sky130_fd_pr__nfet_01v8__example_55959141808429 $T=1745 1395 1 180 $X=700 $Y=1215
+X38 VGND DRVLO_H_N 16 15 sky130_fd_pr__nfet_01v8__example_55959141808362 $T=8405 1395 0 0 $X=7960 $Y=1215
+X39 VGND 9 16 10 sky130_fd_pr__nfet_01v8__example_55959141808362 $T=10165 1395 0 0 $X=9720 $Y=1215
+X40 VGND PU_DIS_H VGND 9 sky130_fd_pr__nfet_01v8__example_55959141808360 $T=4055 1395 1 180 $X=3010 $Y=1215
+X50 VCC_IO DRVHI_H 14 13 sky130_fd_pr__pfet_01v8__example_55959141808346 $T=24075 10965 1 0 $X=23480 $Y=5635
+X51 VCC_IO PD_DIS_H 14 11 sky130_fd_pr__pfet_01v8__example_55959141808346 $T=30035 10965 0 180 $X=26600 $Y=5635
+X54 VGND 12 11 sky130_fd_pr__nfet_01v8__example_55959141808406 $T=23035 1395 0 0 $X=22590 $Y=1215
+X55 VGND DRVHI_H 11 sky130_fd_pr__nfet_01v8__example_55959141808406 $T=24795 1395 0 0 $X=24350 $Y=1215
+X56 VGND PD_DIS_H 11 sky130_fd_pr__nfet_01v8__example_55959141808406 $T=26555 1395 0 0 $X=26110 $Y=1215
+X62 VGND 11 DRVLO_H_N sky130_fd_pr__nfet_01v8__example_55959141808404 $T=17475 1395 1 180 $X=12030 $Y=1215
+X63 VGND 10 DRVHI_H sky130_fd_pr__nfet_01v8__example_55959141808404 $T=17755 1395 0 0 $X=17310 $Y=1215
+X68 VCC_IO OE_H_N VCC_IO 8 sky130_fd_pr__pfet_01v8__example_55959141808409 $T=1745 10965 0 180 $X=650 $Y=5635
+X69 VCC_IO 8 VCC_IO 12 sky130_fd_pr__pfet_01v8__example_55959141808409 $T=2025 10965 1 0 $X=1430 $Y=5635
+X70 VCC_IO PU_DIS_H 9 VCC_IO sky130_fd_pr__pfet_01v8__example_55959141808409 $T=3455 10965 1 0 $X=2860 $Y=5635
+X71 VCC_IO 8 10 VCC_IO sky130_fd_pr__pfet_01v8__example_55959141808409 $T=4735 10965 0 180 $X=3640 $Y=5635
+X72 VCC_IO 9 VCC_IO 10 sky130_fd_pr__pfet_01v8__example_55959141808409 $T=5515 10965 0 180 $X=4420 $Y=5635
+X73 VCC_IO DRVLO_H_N VCC_IO 10 sky130_fd_pr__pfet_01v8__example_55959141808409 $T=5795 10965 1 0 $X=5200 $Y=5635
+.ENDS
+***************************************
+.SUBCKT sky130_fd_io__com_opath_datoev2 VGND VCC_IO VPWR_KA HLD_I_OVR_H OD_H 6 OE_N DRVHI_H DRVLO_H_N OUT
+** N=14 EP=10 IP=28 FDC=164
+*.SEEDPROM
+X0 VGND VPWR_KA Dpar a=13.8768 p=14.98 m=1 $[nwdiode] $X=13675 $Y=2305 $D=185
+X1 VGND VCC_IO VPWR_KA 11 VGND OD_H HLD_I_OVR_H OE_N 12 OE_H sky130_fd_io__gpio_dat_lsv2 $T=0 11695 1 0 $X=-895 $Y=-305
+X2 VGND VCC_IO VPWR_KA VGND OD_H HLD_I_OVR_H OUT 6 13 sky130_fd_io__gpio_dat_ls_1v2 $T=31480 11695 0 180 $X=14920 $Y=-305
+X5 VGND VCC_IO 12 13 DRVLO_H_N DRVHI_H 6 sky130_fd_io__com_cclat $T=31650 0 0 0 $X=30985 $Y=725
+.ENDS
+***************************************
+.SUBCKT sky130_fd_io__gpiov2_octl_dat VGND VGND_IO VCC_IO 5 OD_H 7 8 9 10 11 12 13 14 15 16 17 PU_H_N[2] 19 PU_H_N[0] PD_H[0]
++ 22 PD_H[1] PU_H_N[1] PD_H[3] DM_H[0] DM_H[1] DM_H[2] PU_H_N[3] PD_H[2] PD_H[4] VPWR DM_H_N[1] HLD_I_H_N SLOW VPWR_KA OE_N HLD_I_OVR_H DM_H_N[0] DM_H_N[2] OUT
++ 42
+** N=53 EP=41 IP=67 FDC=652
+*.SEEDPROM
+X0 VGND VGND_IO VCC_IO DRVHI_H 44 DRVLO_H_N 51 50 49 PD_H[0] PU_H_N[1] PU_H_N[0] 5 PD_H[1] 11 12 14 15 17 PU_H_N[2]
++ 19 7 8 9 10 13 16 22 PD_H[3] SLOW_H_N PU_H_N[3] 52 46 PD_H[2] PD_H[4] 42
++ sky130_fd_io__gpiov2_obpredrvr $T=1440 26035 1 0 $X=-3350 $Y=-3000
+X1 VGND VCC_IO DM_H[2] DM_H[0] 43 DM_H[1] 52 DM_H_N[1] DM_H_N[2] DM_H_N[0] 49 44 51 50 VPWR 46 SLOW_H_N HLD_I_H_N SLOW OD_H sky130_fd_io__gpiov2_octl $T=44105 39335 1 0 $X=-2625 $Y=1075
+X2 VGND VCC_IO VPWR_KA HLD_I_OVR_H OD_H 47 OE_N DRVHI_H DRVLO_H_N OUT sky130_fd_io__com_opath_datoev2 $T=2335 34715 1 0 $X=1070 $Y=21905
+.ENDS
+***************************************
+.SUBCKT sky130_fd_pr__model__pfet_highvoltage__example_55959141808616 2 3 4
+** N=4 EP=3 IP=0 FDC=4
+*.SEEDPROM
+M0 4 3 2 2 phv L=0.6 W=1 m=1 r=1.66667 a=0.6 p=3.2 mult=1 $X=0 $Y=0 $D=109
+M1 2 3 4 2 phv L=0.6 W=1 m=1 r=1.66667 a=0.6 p=3.2 mult=1 $X=880 $Y=0 $D=109
+M2 4 3 2 2 phv L=0.6 W=1 m=1 r=1.66667 a=0.6 p=3.2 mult=1 $X=1760 $Y=0 $D=109
+M3 2 3 4 2 phv L=0.6 W=1 m=1 r=1.66667 a=0.6 p=3.2 mult=1 $X=2640 $Y=0 $D=109
+.ENDS
+***************************************
+.SUBCKT sky130_fd_io__hvsbt_inv_x4 1 2 IN OUT
+** N=4 EP=4 IP=8 FDC=12
+*.SEEDPROM
+M0 OUT IN 1 1 nhv L=0.6 W=0.7 m=1 r=1.16667 a=0.42 p=2.6 mult=1 $X=595 $Y=720 $D=49
+M1 1 IN OUT 1 nhv L=0.6 W=0.7 m=1 r=1.16667 a=0.42 p=2.6 mult=1 $X=1475 $Y=720 $D=49
+M2 OUT IN 1 1 nhv L=0.6 W=0.7 m=1 r=1.16667 a=0.42 p=2.6 mult=1 $X=2355 $Y=720 $D=49
+M3 1 IN OUT 1 nhv L=0.6 W=0.7 m=1 r=1.16667 a=0.42 p=2.6 mult=1 $X=3235 $Y=720 $D=49
+X4 2 IN OUT sky130_fd_pr__model__pfet_highvoltage__example_55959141808616 $T=595 3410 1 0 $X=0 $Y=2080
+X5 2 IN OUT sky130_fd_pr__model__pfet_highvoltage__example_55959141808616 $T=595 3750 0 0 $X=0 $Y=3420
+.ENDS
+***************************************
+.SUBCKT sky130_fd_io__com_ctl_ls SET_H VCC_IO VPB VPWR HLD_H_N IN RST_H OUT_H
+** N=17 EP=8 IP=73 FDC=33
+*.SEEDPROM
+X0 SET_H VPB Dpar a=3.1672 p=7.24 m=1 $[nwdiode] $X=7590 $Y=1665 $D=185
+X1 VPB IN 12 VPWR 11 sky130_fd_pr__pfet_01v8__example_55959141808430 $T=8035 1845 0 0 $X=7590 $Y=1665
+X2 SET_H SET_H 10 sky130_fd_pr__nfet_01v8__example_55959141808383 $T=9330 6445 0 0 $X=8870 $Y=6265
+X3 SET_H RST_H 9 sky130_fd_pr__nfet_01v8__example_55959141808382 $T=9050 6445 1 180 $X=8005 $Y=6265
+X4 SET_H 12 IN 11 sky130_fd_pr__nfet_01v8__example_55959141808423 $T=8815 320 1 180 $X=7625 $Y=190
+X5 SET_H HLD_H_N 9 16 sky130_fd_pr__nfet_01v8__example_55959141808428 $T=8170 6445 1 180 $X=7125 $Y=6265
+X6 SET_H 10 9 sky130_fd_pr__nfet_01v8__example_55959141808424 $T=9850 5475 0 180 $X=7125 $Y=4545
+X7 SET_H HLD_H_N 13 10 sky130_fd_pr__nfet_01v8__example_55959141808429 $T=6440 3405 0 180 $X=5395 $Y=225
+X8 SET_H 11 15 sky130_fd_pr__nfet_01v8__example_55959141808427 $T=4680 6185 0 180 $X=2780 $Y=4905
+X9 SET_H 12 17 sky130_fd_pr__nfet_01v8__example_55959141808427 $T=6400 6185 0 180 $X=4500 $Y=4905
+X10 SET_H VPWR 15 13 sky130_fd_pr__nfet_01v8__example_55959141808426 $T=905 6955 0 0 $X=460 $Y=6775
+X11 SET_H VPWR 15 13 sky130_fd_pr__nfet_01v8__example_55959141808426 $T=905 8425 0 0 $X=460 $Y=8245
+X12 SET_H VPWR 17 16 sky130_fd_pr__nfet_01v8__example_55959141808426 $T=3885 6955 0 0 $X=3440 $Y=6775
+X13 SET_H VPWR 17 16 sky130_fd_pr__nfet_01v8__example_55959141808426 $T=3885 9445 1 0 $X=3440 $Y=8265
+X14 VCC_IO 9 OUT_H_N sky130_fd_pr__pfet_01v8__example_55959141808432 $T=2860 3380 1 0 $X=2265 $Y=50
+X15 VCC_IO 10 OUT_H sky130_fd_pr__pfet_01v8__example_55959141808431 $T=2580 3380 0 180 $X=1385 $Y=50
+X17 SET_H 10 OUT_H sky130_fd_pr__nfet_01v8__example_55959141808380 $T=1310 5950 1 0 $X=850 $Y=4770
+X18 VCC_IO 9 10 sky130_fd_pr__pfet_01v8__example_55959141808435 $T=650 3380 1 0 $X=55 $Y=2300
+X19 VCC_IO 10 9 sky130_fd_pr__pfet_01v8__example_55959141808433 $T=650 1785 1 0 $X=55 $Y=705
+X20 SET_H 9 OUT_H_N sky130_fd_pr__nfet_01v8__example_55959141808379 $T=1030 5950 0 180 $X=-30 $Y=4770
+.ENDS
+***************************************
+.SUBCKT sky130_fd_pr__model__pfet_highvoltage__example_55959141808614 2 3 4
+** N=4 EP=3 IP=0 FDC=8
+*.SEEDPROM
+M0 4 3 2 2 phv L=0.6 W=1 m=1 r=1.66667 a=0.6 p=3.2 mult=1 $X=0 $Y=0 $D=109
+M1 2 3 4 2 phv L=0.6 W=1 m=1 r=1.66667 a=0.6 p=3.2 mult=1 $X=880 $Y=0 $D=109
+M2 4 3 2 2 phv L=0.6 W=1 m=1 r=1.66667 a=0.6 p=3.2 mult=1 $X=1760 $Y=0 $D=109
+M3 2 3 4 2 phv L=0.6 W=1 m=1 r=1.66667 a=0.6 p=3.2 mult=1 $X=2640 $Y=0 $D=109
+M4 4 3 2 2 phv L=0.6 W=1 m=1 r=1.66667 a=0.6 p=3.2 mult=1 $X=3520 $Y=0 $D=109
+M5 2 3 4 2 phv L=0.6 W=1 m=1 r=1.66667 a=0.6 p=3.2 mult=1 $X=4400 $Y=0 $D=109
+M6 4 3 2 2 phv L=0.6 W=1 m=1 r=1.66667 a=0.6 p=3.2 mult=1 $X=5280 $Y=0 $D=109
+M7 2 3 4 2 phv L=0.6 W=1 m=1 r=1.66667 a=0.6 p=3.2 mult=1 $X=6160 $Y=0 $D=109
+.ENDS
+***************************************
+.SUBCKT sky130_fd_pr__model__nfet_highvoltage__example_55959141808613 1 2 3
+** N=3 EP=3 IP=0 FDC=8
+M0 3 2 1 1 nhv L=0.6 W=0.7 m=1 r=1.16667 a=0.42 p=2.6 mult=1 $X=0 $Y=0 $D=49
+M1 1 2 3 1 nhv L=0.6 W=0.7 m=1 r=1.16667 a=0.42 p=2.6 mult=1 $X=880 $Y=0 $D=49
+M2 3 2 1 1 nhv L=0.6 W=0.7 m=1 r=1.16667 a=0.42 p=2.6 mult=1 $X=1760 $Y=0 $D=49
+M3 1 2 3 1 nhv L=0.6 W=0.7 m=1 r=1.16667 a=0.42 p=2.6 mult=1 $X=2640 $Y=0 $D=49
+M4 3 2 1 1 nhv L=0.6 W=0.7 m=1 r=1.16667 a=0.42 p=2.6 mult=1 $X=3520 $Y=0 $D=49
+M5 1 2 3 1 nhv L=0.6 W=0.7 m=1 r=1.16667 a=0.42 p=2.6 mult=1 $X=4400 $Y=0 $D=49
+M6 3 2 1 1 nhv L=0.6 W=0.7 m=1 r=1.16667 a=0.42 p=2.6 mult=1 $X=5280 $Y=0 $D=49
+M7 1 2 3 1 nhv L=0.6 W=0.7 m=1 r=1.16667 a=0.42 p=2.6 mult=1 $X=6160 $Y=0 $D=49
+.ENDS
+***************************************
+.SUBCKT sky130_fd_io__com_ctl_hldv2 VGND VCC_IO 3 4 5 OD_I_H HLD_I_H HLD_OVR HLD_I_H_N VPWR
+** N=19 EP=10 IP=65 FDC=135
+*.SEEDPROM
+R0 HLD_I_H 11 0.01 m=1 $[short] $X=18505 $Y=19575 $D=265
+R1 15 HLD_I_H_N 0.01 m=1 $[short] $X=28040 $Y=19575 $D=265
+R2 HLD_I_H_N 16 0.01 m=1 $[short] $X=29030 $Y=19575 $D=265
+X3 VGND VCC_IO 3 12 sky130_fd_io__hvsbt_inv_x1 $T=14550 17180 1 180 $X=12525 $Y=17180
+X4 VGND VCC_IO 13 14 sky130_fd_io__hvsbt_inv_x1 $T=16020 17180 0 0 $X=15790 $Y=17180
+X5 VGND VCC_IO 12 17 sky130_fd_io__hvsbt_inv_x1 $T=37530 17180 1 180 $X=35505 $Y=17180
+X6 VGND VCC_IO OD_I_H 18 5 sky130_fd_io__hvsbt_nor $T=43430 17180 1 180 $X=40760 $Y=17180
+X7 VGND VCC_IO 14 19 18 sky130_fd_io__hvsbt_nor $T=42520 17180 0 0 $X=42520 $Y=17180
+X8 VGND VCC_IO 3 4 13 sky130_fd_io__hvsbt_nand2 $T=13640 17180 0 0 $X=13430 $Y=17180
+X9 VGND VCC_IO 14 11 sky130_fd_io__hvsbt_inv_x4 $T=17520 17180 0 0 $X=17310 $Y=17180
+X10 VGND VCC_IO 17 OD_I_H sky130_fd_io__hvsbt_inv_x4 $T=36620 17180 0 0 $X=36410 $Y=17180
+X11 VGND VCC_IO VPWR VPWR 14 HLD_OVR 12 19 sky130_fd_io__com_ctl_ls $T=30490 16130 0 180 $X=20105 $Y=5990
+X12 VCC_IO 11 15 sky130_fd_pr__model__pfet_highvoltage__example_55959141808614 $T=21635 20590 1 0 $X=21040 $Y=19260
+X13 VCC_IO 11 15 sky130_fd_pr__model__pfet_highvoltage__example_55959141808614 $T=21635 20930 0 0 $X=21040 $Y=20600
+X14 VCC_IO 11 16 sky130_fd_pr__model__pfet_highvoltage__example_55959141808614 $T=28675 20590 1 0 $X=28080 $Y=19260
+X15 VCC_IO 11 16 sky130_fd_pr__model__pfet_highvoltage__example_55959141808614 $T=28675 20930 0 0 $X=28080 $Y=20600
+X16 VGND 11 15 sky130_fd_pr__model__nfet_highvoltage__example_55959141808613 $T=21635 18600 1 0 $X=21190 $Y=17720
+X17 VGND 11 16 sky130_fd_pr__model__nfet_highvoltage__example_55959141808613 $T=28675 18600 1 0 $X=28230 $Y=17720
+.ENDS
+***************************************
+.SUBCKT sky130_ef_io__gpiov2_pad_wrapped VSSD 4 5 VSSIO_Q 9 VDDIO_Q VDDIO PAD_A_ESD_1_H PAD PAD_A_ESD_0_H IB_MODE_SEL ENABLE_INP_H ENABLE_H VDDA VCCD OE_N ENABLE_VDDA_H VTRIP_SEL VCCHIB ENABLE_VSWITCH_H
++ VSSIO OUT HLD_OVR DM[2] ANALOG_SEL HLD_H_N ANALOG_EN INP_DIS ANALOG_POL DM[0] PAD_A_NOESD_H DM[1] SLOW TIE_HI_ESD IN IN_H ENABLE_VDDIO TIE_LO_ESD VSWITCH AMUXBUS_A
++ VSSA AMUXBUS_B
+** N=94 EP=42 IP=170 FDC=2134
+X0 VSSD 9 Dpar a=384.91 p=0 m=1 $[nwdiode] $X=-415 $Y=155845 $D=183
+X1 VSSD VDDIO Dpar a=560.026 p=0 m=1 $[nwdiode] $X=720 $Y=37640 $D=183
+X2 VSSD 9 Dpar a=785.678 p=181.15 m=1 $[nwdiode] $X=-415 $Y=141630 $D=185
+X3 VSSD VDDIO_Q Dpar a=215.42 p=130.01 m=1 $[nwdiode] $X=0 $Y=10965 $D=185
+X4 VSSD VDDIO_Q Dpar a=237.836 p=101.02 m=1 $[nwdiode] $X=15395 $Y=204720 $D=185
+X5 VSSD VDDIO_Q Dpar a=33.634 p=25.7 m=1 $[nwdiode] $X=12325 $Y=17645 $D=185
+R6 PAD_A_NOESD_H PAD 0.01 m=1 $[short] $X=7300 $Y=117550 $D=267
+R7 PAD_A_NOESD_H PAD 0.01 m=1 $[short] $X=62820 $Y=20670 $D=267
+R8 PAD_A_NOESD_H PAD 0.01 m=1 $[short] $X=7300 $Y=117550 $D=268
+X9 PAD_A_ESD_1_H 13 sky130_fd_io__res75only_small $T=69255 14925 1 0 $X=69255 $Y=12905
+X10 13 PAD sky130_fd_io__res75only_small $T=72315 15385 1 90 $X=72315 $Y=15385
+X11 15 PAD sky130_fd_io__res75only_small $T=74910 15385 1 90 $X=74910 $Y=15385
+X12 PAD_A_ESD_0_H 15 sky130_fd_io__res75only_small $T=77410 15385 1 90 $X=77410 $Y=15385
+X13 VSSD VDDIO_Q 33 35 sky130_fd_io__hvsbt_inv_x1 $T=39380 16545 1 0 $X=39150 $Y=10965
+X14 VSSD VDDIO_Q ENABLE_INP_H ENABLE_H 37 sky130_fd_io__hvsbt_nor $T=43550 16545 0 180 $X=40880 $Y=10965
+X15 VSSD VDDIO_Q 34 ENABLE_INP_H 33 sky130_fd_io__hvsbt_nand2 $T=40290 16545 0 180 $X=37445 $Y=10965
+X16 VSSD 5 VSSIO_Q 3 2 6 8 VSWITCH VDDIO_Q VDDA 62 PAD VCCD 86 ENABLE_VDDA_H ENABLE_VSWITCH_H AMUXBUS_B AMUXBUS_A ANALOG_SEL ANALOG_EN
++ OUT ANALOG_POL 57
++ sky130_fd_io__gpiov2_amux $T=5000 62265 0 0 $X=-715 $Y=11500
+X17 VSSD VDDIO_Q VCCD IB_MODE_SEL 57 34 77 75 40 73 37 DM[0] INP_DIS 35 72 65 67 DM[2] 56 VTRIP_SEL
++ 47 48 DM[1]
++ sky130_fd_io__gpiov2_ctl_lsbank $T=79625 27735 0 180 $X=-415 $Y=10965
+X18 VSSD VSSIO 9 43 PAD 44 46 45 78 TIE_HI_ESD 30 71 39 TIE_LO_ESD 88 sky130_fd_io__gpio_odrvrv2 $T=4575 106975 0 0 $X=-415 $Y=51660
+X19 VSSD VDDIO_Q ENABLE_VDDIO 40 84 IN_H 83 49 PAD 85 IN VCCHIB 75 65 72 47 48 56 sky130_fd_io__gpiov2_ipath $T=0 10965 0 0 $X=0 $Y=10965
+X20 VSSD 4 VDDIO 17 34 19 20 21 22 23 24 25 26 27 29 28 30 31 43 44
++ 38 45 46 39 73 77 67 78 71 88 VCCD 75 57 SLOW VCCHIB OE_N 50 40 65 OUT
++ 93
++ sky130_fd_io__gpiov2_octl_dat $T=3560 26970 0 0 $X=210 $Y=19005
+X21 VSSD VDDIO_Q ENABLE_H HLD_H_N 50 34 62 HLD_OVR 57 VCCD sky130_fd_io__com_ctl_hldv2 $T=47410 33725 0 180 $X=1865 $Y=10965
+*.CALIBRE WARNING OPEN Open circuit(s) detected by extraction in this cell. See extraction report for details.
+.ENDS
+***************************************

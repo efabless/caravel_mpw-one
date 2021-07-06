@@ -1,0 +1,1137 @@
+* SPICE NETLIST
+***************************************
+
+.SUBCKT drainOnly g s d b
+.ENDS
+***************************************
+.SUBCKT condiode pin0 pin1
+.ENDS
+***************************************
+.SUBCKT nvhv pin0 pin1 pin2 pin3
+.ENDS
+***************************************
+.SUBCKT pvhv pin0 pin1 pin2 pin3
+.ENDS
+***************************************
+.SUBCKT xcnwvc pin0 pin1 pin2
+.ENDS
+***************************************
+.SUBCKT xcnwvc2 pin0 pin1 pin2
+.ENDS
+***************************************
+.SUBCKT xchvnwc pin0 pin1 pin2
+.ENDS
+***************************************
+.SUBCKT Dpar d0 d1
+.ENDS
+***************************************
+.SUBCKT xcmvpp pin0 pin1 pin2
+.ENDS
+***************************************
+.SUBCKT xcmvpp_2 pin0 pin1 pin2
+.ENDS
+***************************************
+.SUBCKT xcmvpp2_nhvnative10x4 pin0 pin1 pin2
+.ENDS
+***************************************
+.SUBCKT xcmvpp2_phv5x4 pin0 pin1 pin2
+.ENDS
+***************************************
+.SUBCKT xcmvpp_hd5_atlas_fingercap2_l5 pin0 pin1 pin2
+.ENDS
+***************************************
+.SUBCKT xcmvpp_hd5_atlas_wafflecap2 pin0 pin1 pin2
+.ENDS
+***************************************
+.SUBCKT xcmvpp_hd5_atlas_wafflecap1 pin0 pin1 pin2
+.ENDS
+***************************************
+.SUBCKT xcmvpp_hd5_atlas_fingercap_l40 pin0 pin1 pin2
+.ENDS
+***************************************
+.SUBCKT xcmvpp_hd5_atlas_fingercap_l20 pin0 pin1 pin2
+.ENDS
+***************************************
+.SUBCKT xcmvpp_hd5_atlas_fingercap_l10 pin0 pin1 pin2
+.ENDS
+***************************************
+.SUBCKT xcmvpp_hd5_atlas_fingercap_l5 pin0 pin1 pin2
+.ENDS
+***************************************
+.SUBCKT xcmvpp_hd5_5x2_met5pullin pin0 pin1 pin2
+.ENDS
+***************************************
+.SUBCKT xcmvpp_hd5_5x2 pin0 pin1 pin2
+.ENDS
+***************************************
+.SUBCKT xcmvpp_hd5_5x1_met5pullin pin0 pin1 pin2
+.ENDS
+***************************************
+.SUBCKT xcmvpp_hd5_5x1 pin0 pin1 pin2
+.ENDS
+***************************************
+.SUBCKT xcmvpp_hd5_4x2 pin0 pin1 pin2
+.ENDS
+***************************************
+.SUBCKT xcmvpp_hd5_4x1 pin0 pin1 pin2
+.ENDS
+***************************************
+.SUBCKT xcmvpp_hd5_3x2 pin0 pin1 pin2
+.ENDS
+***************************************
+.SUBCKT xcmvpp_hd5_3x1 pin0 pin1 pin2
+.ENDS
+***************************************
+.SUBCKT xcmvpp_hd5_2x2 pin0 pin1 pin2
+.ENDS
+***************************************
+.SUBCKT xcmvpp_hd5_2x1 pin0 pin1 pin2
+.ENDS
+***************************************
+.SUBCKT xcmvpp_hd5_1x2 pin0 pin1 pin2
+.ENDS
+***************************************
+.SUBCKT xcmvpp_hd5_1x1 pin0 pin1 pin2
+.ENDS
+***************************************
+.SUBCKT xcmvppx4_2xnhvnative10x4 pin0 pin1 pin2 pin3
+.ENDS
+***************************************
+.SUBCKT xcmvpp11p5x11p7_polym50p4shield pin0 pin1 pin2 pin3
+.ENDS
+***************************************
+.SUBCKT xcmvpp4p4x4p6_m3_lim5shield pin0 pin1 pin2 pin3
+.ENDS
+***************************************
+.SUBCKT xcmvpp11p5x11p7_m3_lim5shield pin0 pin1 pin2 pin3
+.ENDS
+***************************************
+.SUBCKT xcmvpp8p6x7p9_m3_lim5shield pin0 pin1 pin2 pin3
+.ENDS
+***************************************
+.SUBCKT xcmvpp11p5x11p7_lim5shield pin0 pin1 pin2 pin3
+.ENDS
+***************************************
+.SUBCKT xcmvpp11p5x11p7_polym5shield pin0 pin1 pin2 pin3
+.ENDS
+***************************************
+.SUBCKT xcmvpp11p5x11p7_m5shield pin0 pin1 pin2 pin3
+.ENDS
+***************************************
+.SUBCKT xcmvpp6p8x6p1_lim4shield pin0 pin1 pin2 pin3
+.ENDS
+***************************************
+.SUBCKT xcmvpp6p8x6p1_polym4shield pin0 pin1 pin2 pin3
+.ENDS
+***************************************
+.SUBCKT xcmvpp11p5x11p7_polym4shield pin0 pin1 pin2 pin3
+.ENDS
+***************************************
+.SUBCKT xcmvpp11p5x11p7_m4shield pin0 pin1 pin2 pin3
+.ENDS
+***************************************
+.SUBCKT xcmvpp1p8x1p8 pin0 pin1 pin2
+.ENDS
+***************************************
+.SUBCKT xcmvpp4p4x4p6_m3_lishield pin0 pin1 pin2
+.ENDS
+***************************************
+.SUBCKT xcmvpp8p6x7p9_m3_lishield pin0 pin1 pin2
+.ENDS
+***************************************
+.SUBCKT xcmvpp11p5x11p7_m3_lishield pin0 pin1 pin2
+.ENDS
+***************************************
+.SUBCKT xcmvpp11p5x11p7_m3shield c0 c1 b term4
+.ENDS
+***************************************
+.SUBCKT xcmvpp8p6x7p9_m3shield c0 c1 b term4
+.ENDS
+***************************************
+.SUBCKT xcmvpp4p4x4p6_m3shield c0 c1 b term4
+.ENDS
+***************************************
+.SUBCKT xcmvpp1p8x1p8_m3shield c0 c1 b term4
+.ENDS
+***************************************
+.SUBCKT xcmvpp11p5x11p7_m1m4m5shield pin0 pin1 pin2 pin3
+.ENDS
+***************************************
+.SUBCKT xcmvpp11p5x11p7_m1m4 pin0 pin1 pin2
+.ENDS
+***************************************
+.SUBCKT xcmvpp11p5x11p7_m1m2 pin0 pin1 pin2
+.ENDS
+***************************************
+.SUBCKT xcmvpp4p4x4p6_m1m2 pin0 pin1 pin2
+.ENDS
+***************************************
+.SUBCKT xcmvpp5 pin0 pin1 pin2
+.ENDS
+***************************************
+.SUBCKT xcmvpp4 pin0 pin1 pin2
+.ENDS
+***************************************
+.SUBCKT xcmvpp3 pin0 pin1 pin2
+.ENDS
+***************************************
+.SUBCKT balun pin0 pin1 pin2 pin3 pin4 pin5
+.ENDS
+***************************************
+.SUBCKT ind4 pin0 pin1 pin2 pin3
+.ENDS
+***************************************
+.SUBCKT Probe probe conductor
+.ENDS
+***************************************
+.SUBCKT sky130_fd_io__tk_em2o_cdns_55959141808653 2 3
+** N=5 EP=2 IP=0 FDC=2
+R0 2 4 0.01 m=1 $[short] $X=260 $Y=0 $D=266
+R1 5 3 0.01 m=1 $[short] $X=1770 $Y=0 $D=266
+.ENDS
+***************************************
+.SUBCKT sky130_fd_pr__hvdfl1sd2__example_55959141808202
+** N=3 EP=0 IP=0 FDC=0
+*.SEEDPROM
+.ENDS
+***************************************
+.SUBCKT sky130_fd_pr__pfet_01v8__example_55959141808657 2 3 4
+** N=4 EP=3 IP=0 FDC=1
+*.SEEDPROM
+M0 2 3 4 2 phv L=0.6 W=5 m=1 r=8.33333 a=3 p=11.2 mult=1 $X=0 $Y=0 $D=109
+.ENDS
+***************************************
+.SUBCKT sky130_fd_io__tk_em2s_cdns_55959141808652 2 3
+** N=4 EP=2 IP=0 FDC=2
+R0 2 4 0.01 m=1 $[short] $X=260 $Y=0 $D=266
+R1 4 3 0.01 m=1 $[short] $X=1770 $Y=0 $D=266
+.ENDS
+***************************************
+.SUBCKT ICV_1
+** N=3 EP=0 IP=6 FDC=0
+*.SEEDPROM
+.ENDS
+***************************************
+.SUBCKT sky130_fd_pr__res_generic_po__example_5595914180838 2 3
+** N=3 EP=2 IP=0 FDC=1
+R0 2 3 L=10.2 W=0.5 m=1 $[mrp1] $X=0 $Y=0 $D=250
+.ENDS
+***************************************
+.SUBCKT sky130_fd_pr__res_generic_po__example_5595914180864 2 3
+** N=3 EP=2 IP=0 FDC=1
+R0 2 3 L=1.5 W=0.8 m=1 $[mrp1] $X=0 $Y=0 $D=250
+.ENDS
+***************************************
+.SUBCKT sky130_fd_io__tk_em1s_cdns_5595914180859 2 3
+** N=4 EP=2 IP=0 FDC=2
+R0 2 4 0.01 m=1 $[short] $X=260 $Y=0 $D=265
+R1 4 3 0.01 m=1 $[short] $X=1770 $Y=0 $D=265
+.ENDS
+***************************************
+.SUBCKT sky130_fd_io__res250only_small PAD ROUT
+** N=5 EP=2 IP=0 FDC=7
+R0 PAD 4 L=0.17 W=2 m=1 $[mrp1] $X=300 $Y=10 $D=250
+R1 4 5 L=10.07 W=2 m=1 $[mrp1] $X=640 $Y=10 $D=250
+R2 5 ROUT L=0.17 W=2 m=1 $[mrp1] $X=10880 $Y=10 $D=250
+R3 PAD 4 0.01 m=1 $[short] $X=380 $Y=0 $D=264
+R4 5 ROUT 0.01 m=1 $[short] $X=10960 $Y=0 $D=264
+R5 PAD 4 0.01 m=1 $[short] $X=380 $Y=5 $D=265
+R6 5 ROUT 0.01 m=1 $[short] $X=10960 $Y=5 $D=265
+.ENDS
+***************************************
+.SUBCKT sky130_fd_pr__res_bent_po__example_5595914180862 2 3
+** N=3 EP=2 IP=0 FDC=1
+R0 2 3 L=6 W=0.8 m=1 $[mrp1] $X=0 $Y=0 $D=250
+.ENDS
+***************************************
+.SUBCKT sky130_fd_pr__res_bent_po__example_5595914180863 2 3
+** N=3 EP=2 IP=0 FDC=1
+R0 2 3 L=12 W=0.8 m=1 $[mrp1] $X=0 $Y=0 $D=250
+.ENDS
+***************************************
+.SUBCKT sky130_fd_pr__model__pfet_highvoltage__example_55959141808616 2 3 4
+** N=4 EP=3 IP=0 FDC=4
+*.SEEDPROM
+M0 4 3 2 2 phv L=0.6 W=1 m=1 r=1.66667 a=0.6 p=3.2 mult=1 $X=0 $Y=0 $D=109
+M1 2 3 4 2 phv L=0.6 W=1 m=1 r=1.66667 a=0.6 p=3.2 mult=1 $X=880 $Y=0 $D=109
+M2 4 3 2 2 phv L=0.6 W=1 m=1 r=1.66667 a=0.6 p=3.2 mult=1 $X=1760 $Y=0 $D=109
+M3 2 3 4 2 phv L=0.6 W=1 m=1 r=1.66667 a=0.6 p=3.2 mult=1 $X=2640 $Y=0 $D=109
+.ENDS
+***************************************
+.SUBCKT sky130_fd_io__hvsbt_inv_x4 1 2 IN OUT
+** N=4 EP=4 IP=8 FDC=12
+*.SEEDPROM
+M0 OUT IN 1 1 nhv L=0.6 W=0.7 m=1 r=1.16667 a=0.42 p=2.6 mult=1 $X=595 $Y=720 $D=49
+M1 1 IN OUT 1 nhv L=0.6 W=0.7 m=1 r=1.16667 a=0.42 p=2.6 mult=1 $X=1475 $Y=720 $D=49
+M2 OUT IN 1 1 nhv L=0.6 W=0.7 m=1 r=1.16667 a=0.42 p=2.6 mult=1 $X=2355 $Y=720 $D=49
+M3 1 IN OUT 1 nhv L=0.6 W=0.7 m=1 r=1.16667 a=0.42 p=2.6 mult=1 $X=3235 $Y=720 $D=49
+X4 2 IN OUT sky130_fd_pr__model__pfet_highvoltage__example_55959141808616 $T=595 3410 1 0 $X=0 $Y=2080
+X5 2 IN OUT sky130_fd_pr__model__pfet_highvoltage__example_55959141808616 $T=595 3750 0 0 $X=0 $Y=3420
+.ENDS
+***************************************
+.SUBCKT sky130_fd_io__xres_tk_p_em1o_cdns_55959141808757 2 3
+** N=5 EP=2 IP=0 FDC=2
+R0 2 4 0.01 m=1 $[short] $X=130 $Y=0 $D=265
+R1 5 3 0.01 m=1 $[short] $X=280 $Y=0 $D=265
+.ENDS
+***************************************
+.SUBCKT sky130_fd_io__xres_p_em1c_cdns_55959141808753 2
+** N=4 EP=1 IP=0 FDC=2
+R0 2 3 0.01 m=1 $[short] $X=160 $Y=0 $D=265
+R1 2 4 0.01 m=1 $[short] $X=160 $Y=250 $D=265
+.ENDS
+***************************************
+.SUBCKT ICV_2 2 3
+** N=3 EP=2 IP=5 FDC=4
+X0 2 3 sky130_fd_io__xres_tk_p_em1o_cdns_55959141808757 $T=0 0 0 0 $X=0 $Y=0
+X1 2 sky130_fd_io__xres_p_em1c_cdns_55959141808753 $T=-10 -770 0 0 $X=-10 $Y=-770
+.ENDS
+***************************************
+.SUBCKT sky130_fd_pr__res_generic_nd__example_55959141808754 2 3
+** N=3 EP=2 IP=0 FDC=1
+*.SEEDPROM
+R0 2 3 L=14 W=0.5 m=1 $[mrdn] $X=0 $Y=0 $D=246
+.ENDS
+***************************************
+.SUBCKT ICV_3 2 3 4 5
+** N=5 EP=4 IP=6 FDC=2
+*.SEEDPROM
+X0 2 3 sky130_fd_pr__res_generic_nd__example_55959141808754 $T=14000 -770 1 180 $X=-340 $Y=-900
+X1 4 5 sky130_fd_pr__res_generic_nd__example_55959141808754 $T=0 0 0 0 $X=-340 $Y=-130
+.ENDS
+***************************************
+.SUBCKT ICV_4 2 3 4 5 6 7 8 9
+** N=9 EP=8 IP=10 FDC=4
+*.SEEDPROM
+X0 4 2 3 5 ICV_3 $T=0 -1540 0 0 $X=-340 $Y=-2440
+X1 8 6 7 9 ICV_3 $T=0 0 0 0 $X=-340 $Y=-900
+.ENDS
+***************************************
+.SUBCKT sky130_fd_io__xres_tk_p_em1o_cdns_55959141808758 2 3
+** N=5 EP=2 IP=0 FDC=2
+R0 2 4 0.01 m=1 $[short] $X=130 $Y=0 $D=265
+R1 5 3 0.01 m=1 $[short] $X=280 $Y=0 $D=265
+.ENDS
+***************************************
+.SUBCKT sky130_fd_io__xres_tk_p_em1c_cdns_55959141808760 2
+** N=4 EP=1 IP=0 FDC=2
+R0 2 3 0.01 m=1 $[short] $X=160 $Y=0 $D=265
+R1 2 4 0.01 m=1 $[short] $X=160 $Y=640 $D=265
+.ENDS
+***************************************
+.SUBCKT sky130_fd_io__xres_tk_p_em1c_cdns_55959141808761 2
+** N=4 EP=1 IP=0 FDC=2
+R0 2 3 0.01 m=1 $[short] $X=160 $Y=0 $D=265
+R1 2 4 0.01 m=1 $[short] $X=160 $Y=250 $D=265
+.ENDS
+***************************************
+.SUBCKT sky130_fd_pr__hvdfl1sd__example_55959141808700
+** N=1 EP=0 IP=0 FDC=0
+.ENDS
+***************************************
+.SUBCKT sky130_fd_pr__hvdfl1sd__example_55959141808338
+** N=2 EP=0 IP=0 FDC=0
+*.SEEDPROM
+.ENDS
+***************************************
+.SUBCKT sky130_fd_pr__hvdfl1sd2__example_55959141808559
+** N=1 EP=0 IP=0 FDC=0
+.ENDS
+***************************************
+.SUBCKT sky130_fd_pr__dfl1sd2__example_55959141808666
+** N=2 EP=0 IP=0 FDC=0
+*.SEEDPROM
+.ENDS
+***************************************
+.SUBCKT sky130_fd_pr__hvdfl1sd2__example_55959141808337
+** N=2 EP=0 IP=0 FDC=0
+*.SEEDPROM
+.ENDS
+***************************************
+.SUBCKT sky130_fd_pr__via_pol1__example_55959141808273
+** N=2 EP=0 IP=0 FDC=0
+.ENDS
+***************************************
+.SUBCKT ICV_5
+** N=3 EP=0 IP=4 FDC=0
+.ENDS
+***************************************
+.SUBCKT ICV_6
+** N=5 EP=0 IP=6 FDC=0
+.ENDS
+***************************************
+.SUBCKT sky130_fd_io__xres_tk_p_em1c_cdns_55959141808759 1
+** N=3 EP=1 IP=0 FDC=2
+R0 1 2 0.01 m=1 $[short] $X=160 $Y=0 $D=265
+R1 1 3 0.01 m=1 $[short] $X=160 $Y=280 $D=265
+.ENDS
+***************************************
+.SUBCKT ICV_7 2 3 4
+** N=4 EP=3 IP=5 FDC=4
+X0 2 3 sky130_fd_io__xres_tk_p_em1o_cdns_55959141808757 $T=0 0 0 0 $X=0 $Y=0
+X1 4 sky130_fd_io__xres_p_em1c_cdns_55959141808753 $T=-10 770 0 0 $X=-10 $Y=770
+.ENDS
+***************************************
+.SUBCKT sky130_fd_io__xres_tk_p_em1o_cdns_55959141808756 1 2
+** N=4 EP=2 IP=0 FDC=2
+R0 2 3 0.01 m=1 $[short] $X=130 $Y=0 $D=265
+R1 4 1 0.01 m=1 $[short] $X=280 $Y=0 $D=265
+.ENDS
+***************************************
+.SUBCKT sky130_fd_pr__res_generic_nd__example_55959141808755 2 3
+** N=3 EP=2 IP=0 FDC=1
+*.SEEDPROM
+R0 2 3 L=47 W=0.5 m=1 $[mrdn] $X=0 $Y=0 $D=246
+.ENDS
+***************************************
+.SUBCKT ICV_8 2 3 4
+** N=4 EP=3 IP=6 FDC=2
+*.SEEDPROM
+X0 2 3 sky130_fd_pr__res_generic_nd__example_55959141808754 $T=0 0 0 0 $X=-340 $Y=-130
+X1 4 2 sky130_fd_pr__res_generic_nd__example_55959141808755 $T=-47510 0 0 0 $X=-47850 $Y=-130
+.ENDS
+***************************************
+.SUBCKT ICV_9 2 3
+** N=3 EP=2 IP=6 FDC=2
+*.SEEDPROM
+X0 2 2 sky130_fd_pr__res_generic_nd__example_55959141808754 $T=0 0 0 0 $X=-340 $Y=-130
+X1 2 3 sky130_fd_pr__res_generic_nd__example_55959141808755 $T=14510 0 0 0 $X=14170 $Y=-130
+.ENDS
+***************************************
+.SUBCKT ICV_10 2 3 4 5 6
+** N=6 EP=5 IP=7 FDC=4
+*.SEEDPROM
+X0 3 4 2 ICV_8 $T=0 0 0 0 $X=-47850 $Y=-130
+X1 5 6 ICV_9 $T=14000 770 1 180 $X=-47850 $Y=640
+.ENDS
+***************************************
+.SUBCKT ICV_11 2 3 4 5 6 7 8 9 10 11
+** N=11 EP=10 IP=12 FDC=8
+*.SEEDPROM
+X0 2 4 6 5 3 ICV_10 $T=0 0 0 0 $X=-47850 $Y=-130
+X1 7 9 11 10 8 ICV_10 $T=0 1540 0 0 $X=-47850 $Y=1410
+.ENDS
+***************************************
+.SUBCKT sky130_fd_io__xres2v2_rcfilter_lpfv2 1 VCC_IO 3 4 5 6 7 8 9 10 11 12 13 IN
+** N=50 EP=14 IP=340 FDC=361
+M0 1 3 1 1 nhv L=4 W=7 m=1 r=1.75 a=28 p=22 mult=1 $X=2725 $Y=11605 $D=49
+M1 1 4 1 1 nhv L=4 W=7 m=1 r=1.75 a=28 p=22 mult=1 $X=7005 $Y=11605 $D=49
+M2 1 5 1 1 nhv L=4 W=7 m=1 r=1.75 a=28 p=22 mult=1 $X=11285 $Y=11605 $D=49
+M3 1 6 1 1 nhv L=4 W=7 m=1 r=1.75 a=28 p=22 mult=1 $X=15565 $Y=11605 $D=49
+M4 1 7 1 1 nhv L=4 W=7 m=1 r=1.75 a=28 p=22 mult=1 $X=19845 $Y=11605 $D=49
+M5 1 8 1 1 nhv L=4 W=7 m=1 r=1.75 a=28 p=22 mult=1 $X=24125 $Y=11605 $D=49
+M6 1 9 1 1 nhv L=4 W=7 m=1 r=1.75 a=28 p=22 mult=1 $X=28405 $Y=11605 $D=49
+M7 1 10 1 1 nhv L=4 W=7 m=1 r=1.75 a=28 p=22 mult=1 $X=32685 $Y=11605 $D=49
+M8 1 11 1 1 nhv L=4 W=7 m=1 r=1.75 a=28 p=22 mult=1 $X=36965 $Y=11605 $D=49
+M9 1 11 1 1 nhv L=4 W=7 m=1 r=1.75 a=28 p=22 mult=1 $X=41245 $Y=11605 $D=49
+M10 1 12 1 1 nhv L=4 W=7 m=1 r=1.75 a=28 p=22 mult=1 $X=45525 $Y=11605 $D=49
+M11 1 13 1 1 nhv L=4 W=7 m=1 r=1.75 a=28 p=22 mult=1 $X=49805 $Y=11605 $D=49
+M12 VCC_IO 3 VCC_IO VCC_IO phv L=4 W=7 m=1 r=1.75 a=28 p=22 mult=1 $X=2625 $Y=21435 $D=109
+M13 VCC_IO 4 VCC_IO VCC_IO phv L=4 W=7 m=1 r=1.75 a=28 p=22 mult=1 $X=6905 $Y=21435 $D=109
+M14 VCC_IO 5 VCC_IO VCC_IO phv L=4 W=7 m=1 r=1.75 a=28 p=22 mult=1 $X=11185 $Y=21435 $D=109
+M15 VCC_IO 6 VCC_IO VCC_IO phv L=4 W=7 m=1 r=1.75 a=28 p=22 mult=1 $X=15465 $Y=21435 $D=109
+M16 VCC_IO 7 VCC_IO VCC_IO phv L=4 W=7 m=1 r=1.75 a=28 p=22 mult=1 $X=19745 $Y=21435 $D=109
+M17 VCC_IO 8 VCC_IO VCC_IO phv L=4 W=7 m=1 r=1.75 a=28 p=22 mult=1 $X=24025 $Y=21435 $D=109
+M18 VCC_IO 9 VCC_IO VCC_IO phv L=4 W=7 m=1 r=1.75 a=28 p=22 mult=1 $X=28305 $Y=21435 $D=109
+M19 VCC_IO 10 VCC_IO VCC_IO phv L=4 W=7 m=1 r=1.75 a=28 p=22 mult=1 $X=32585 $Y=21435 $D=109
+M20 VCC_IO 11 VCC_IO VCC_IO phv L=4 W=7 m=1 r=1.75 a=28 p=22 mult=1 $X=36865 $Y=21435 $D=109
+M21 VCC_IO 11 VCC_IO VCC_IO phv L=4 W=7 m=1 r=1.75 a=28 p=22 mult=1 $X=41145 $Y=21435 $D=109
+M22 VCC_IO 12 VCC_IO VCC_IO phv L=4 W=7 m=1 r=1.75 a=28 p=22 mult=1 $X=45425 $Y=21435 $D=109
+M23 VCC_IO 13 VCC_IO VCC_IO phv L=4 W=7 m=1 r=1.75 a=28 p=22 mult=1 $X=49705 $Y=21435 $D=109
+X24 1 8 Dpar a=3.7735 p=15.594 m=1 $[ndiode] $X=2360 $Y=815 $D=175
+X25 1 1 Dpar a=3.774 p=15.596 m=1 $[ndiode] $X=2360 $Y=1585 $D=175
+X26 1 7 Dpar a=3.7735 p=15.594 m=1 $[ndiode] $X=2360 $Y=2355 $D=175
+X27 1 1 Dpar a=3.774 p=15.596 m=1 $[ndiode] $X=2360 $Y=3125 $D=175
+X28 1 6 Dpar a=3.7735 p=15.594 m=1 $[ndiode] $X=2360 $Y=3895 $D=175
+X29 1 1 Dpar a=3.774 p=15.596 m=1 $[ndiode] $X=2360 $Y=4665 $D=175
+X30 1 5 Dpar a=3.7735 p=15.594 m=1 $[ndiode] $X=2360 $Y=5435 $D=175
+X31 1 1 Dpar a=3.774 p=15.596 m=1 $[ndiode] $X=2360 $Y=6205 $D=175
+X32 1 4 Dpar a=3.7735 p=15.594 m=1 $[ndiode] $X=2360 $Y=6975 $D=175
+X33 1 3 Dpar a=3.774 p=15.596 m=1 $[ndiode] $X=2360 $Y=7745 $D=175
+X34 1 3 Dpar a=3.7735 p=15.594 m=1 $[ndiode] $X=2360 $Y=8515 $D=175
+X35 1 9 Dpar a=3.774 p=15.596 m=1 $[ndiode] $X=2360 $Y=9285 $D=175
+X36 1 15 Dpar a=3.774 p=15.596 m=1 $[ndiode] $X=2360 $Y=30560 $D=175
+X37 1 15 Dpar a=3.7735 p=15.594 m=1 $[ndiode] $X=2360 $Y=31330 $D=175
+X38 1 16 Dpar a=3.774 p=15.596 m=1 $[ndiode] $X=2360 $Y=32100 $D=175
+X39 1 16 Dpar a=3.7735 p=15.594 m=1 $[ndiode] $X=2360 $Y=32870 $D=175
+X40 1 17 Dpar a=3.774 p=15.596 m=1 $[ndiode] $X=2360 $Y=33640 $D=175
+X41 1 17 Dpar a=3.7735 p=15.594 m=1 $[ndiode] $X=2360 $Y=34410 $D=175
+X42 1 18 Dpar a=3.774 p=15.596 m=1 $[ndiode] $X=2360 $Y=35180 $D=175
+X43 1 18 Dpar a=3.7735 p=15.594 m=1 $[ndiode] $X=2360 $Y=35950 $D=175
+X44 1 19 Dpar a=3.774 p=15.596 m=1 $[ndiode] $X=2360 $Y=36720 $D=175
+X45 1 19 Dpar a=3.7735 p=15.594 m=1 $[ndiode] $X=2360 $Y=37490 $D=175
+X46 1 20 Dpar a=3.774 p=15.596 m=1 $[ndiode] $X=2360 $Y=38260 $D=175
+X47 1 20 Dpar a=3.7735 p=15.594 m=1 $[ndiode] $X=2360 $Y=39030 $D=175
+X48 1 21 Dpar a=15.5025 p=62.01 m=1 $[ndiode] $X=9912 $Y=815 $D=175
+X49 1 1 Dpar a=15.5025 p=62.01 m=1 $[ndiode] $X=9913 $Y=1585 $D=175
+X50 1 22 Dpar a=15.5025 p=62.01 m=1 $[ndiode] $X=9912 $Y=2355 $D=175
+X51 1 1 Dpar a=15.5025 p=62.01 m=1 $[ndiode] $X=9913 $Y=3125 $D=175
+X52 1 23 Dpar a=15.5025 p=62.01 m=1 $[ndiode] $X=9912 $Y=3895 $D=175
+X53 1 1 Dpar a=15.5025 p=62.01 m=1 $[ndiode] $X=9913 $Y=4665 $D=175
+X54 1 24 Dpar a=15.5025 p=62.01 m=1 $[ndiode] $X=9912 $Y=5435 $D=175
+X55 1 1 Dpar a=15.5025 p=62.01 m=1 $[ndiode] $X=9913 $Y=6205 $D=175
+X56 1 25 Dpar a=15.5025 p=62.01 m=1 $[ndiode] $X=9912 $Y=6975 $D=175
+X57 1 3 Dpar a=15.5025 p=62.01 m=1 $[ndiode] $X=9913 $Y=7745 $D=175
+X58 1 26 Dpar a=15.5025 p=62.01 m=1 $[ndiode] $X=9912 $Y=8515 $D=175
+X59 1 9 Dpar a=15.5025 p=62.01 m=1 $[ndiode] $X=9913 $Y=9285 $D=175
+X60 1 15 Dpar a=15.5025 p=62.01 m=1 $[ndiode] $X=9913 $Y=30560 $D=175
+X61 1 27 Dpar a=15.5025 p=62.01 m=1 $[ndiode] $X=9912 $Y=31330 $D=175
+X62 1 16 Dpar a=15.5025 p=62.01 m=1 $[ndiode] $X=9913 $Y=32100 $D=175
+X63 1 28 Dpar a=15.5025 p=62.01 m=1 $[ndiode] $X=9912 $Y=32870 $D=175
+X64 1 17 Dpar a=15.5025 p=62.01 m=1 $[ndiode] $X=9913 $Y=33640 $D=175
+X65 1 29 Dpar a=15.5025 p=62.01 m=1 $[ndiode] $X=9912 $Y=34410 $D=175
+X66 1 18 Dpar a=15.5025 p=62.01 m=1 $[ndiode] $X=9913 $Y=35180 $D=175
+X67 1 30 Dpar a=15.5025 p=62.01 m=1 $[ndiode] $X=9912 $Y=35950 $D=175
+X68 1 19 Dpar a=15.5025 p=62.01 m=1 $[ndiode] $X=9913 $Y=36720 $D=175
+X69 1 31 Dpar a=15.5025 p=62.01 m=1 $[ndiode] $X=9912 $Y=37490 $D=175
+X70 1 20 Dpar a=15.5025 p=62.01 m=1 $[ndiode] $X=9913 $Y=38260 $D=175
+X71 1 32 Dpar a=15.5025 p=62.01 m=1 $[ndiode] $X=9912 $Y=39030 $D=175
+X72 1 33 Dpar a=3.7735 p=15.594 m=1 $[ndiode] $X=58090 $Y=10735 $D=175
+X73 1 33 Dpar a=3.774 p=15.596 m=1 $[ndiode] $X=58090 $Y=11505 $D=175
+X74 1 34 Dpar a=3.7735 p=15.594 m=1 $[ndiode] $X=58090 $Y=12275 $D=175
+X75 1 34 Dpar a=3.774 p=15.596 m=1 $[ndiode] $X=58090 $Y=13045 $D=175
+X76 1 35 Dpar a=3.7735 p=15.594 m=1 $[ndiode] $X=58090 $Y=13815 $D=175
+X77 1 35 Dpar a=3.774 p=15.596 m=1 $[ndiode] $X=58090 $Y=14585 $D=175
+X78 1 36 Dpar a=3.7735 p=15.594 m=1 $[ndiode] $X=58090 $Y=15355 $D=175
+X79 1 36 Dpar a=3.774 p=15.596 m=1 $[ndiode] $X=58090 $Y=16125 $D=175
+X80 1 37 Dpar a=3.7735 p=15.594 m=1 $[ndiode] $X=58090 $Y=16895 $D=175
+X81 1 37 Dpar a=3.774 p=15.596 m=1 $[ndiode] $X=58090 $Y=17665 $D=175
+X82 1 38 Dpar a=3.7735 p=15.594 m=1 $[ndiode] $X=58090 $Y=18435 $D=175
+X83 1 38 Dpar a=3.774 p=15.596 m=1 $[ndiode] $X=58090 $Y=19205 $D=175
+X84 1 IN Dpar a=3.774 p=15.596 m=1 $[ndiode] $X=58090 $Y=20635 $D=175
+X85 1 13 Dpar a=3.7735 p=15.594 m=1 $[ndiode] $X=58090 $Y=21405 $D=175
+X86 1 13 Dpar a=3.774 p=15.596 m=1 $[ndiode] $X=58090 $Y=22175 $D=175
+X87 1 12 Dpar a=3.7735 p=15.594 m=1 $[ndiode] $X=58090 $Y=22945 $D=175
+X88 1 12 Dpar a=3.774 p=15.596 m=1 $[ndiode] $X=58090 $Y=23715 $D=175
+X89 1 11 Dpar a=3.7735 p=15.594 m=1 $[ndiode] $X=58090 $Y=24485 $D=175
+X90 1 11 Dpar a=3.774 p=15.596 m=1 $[ndiode] $X=58090 $Y=25255 $D=175
+X91 1 11 Dpar a=3.7735 p=15.594 m=1 $[ndiode] $X=58090 $Y=26025 $D=175
+X92 1 11 Dpar a=3.774 p=15.596 m=1 $[ndiode] $X=58090 $Y=26795 $D=175
+X93 1 10 Dpar a=3.7735 p=15.594 m=1 $[ndiode] $X=58090 $Y=27565 $D=175
+X94 1 10 Dpar a=3.774 p=15.596 m=1 $[ndiode] $X=58090 $Y=28335 $D=175
+X95 1 9 Dpar a=3.7735 p=15.594 m=1 $[ndiode] $X=58090 $Y=29105 $D=175
+X96 1 38 Dpar a=12.024 p=48.596 m=1 $[ndiode] $X=40922 $Y=815 $D=175
+X97 1 39 Dpar a=12.0235 p=48.594 m=1 $[ndiode] $X=40923 $Y=1585 $D=175
+X98 1 37 Dpar a=12.024 p=48.596 m=1 $[ndiode] $X=40922 $Y=2355 $D=175
+X99 1 40 Dpar a=12.0235 p=48.594 m=1 $[ndiode] $X=40923 $Y=3125 $D=175
+X100 1 36 Dpar a=12.024 p=48.596 m=1 $[ndiode] $X=40922 $Y=3895 $D=175
+X101 1 41 Dpar a=12.0235 p=48.594 m=1 $[ndiode] $X=40923 $Y=4665 $D=175
+X102 1 35 Dpar a=12.024 p=48.596 m=1 $[ndiode] $X=40922 $Y=5435 $D=175
+X103 1 42 Dpar a=12.0235 p=48.594 m=1 $[ndiode] $X=40923 $Y=6205 $D=175
+X104 1 34 Dpar a=12.024 p=48.596 m=1 $[ndiode] $X=40922 $Y=6975 $D=175
+X105 1 43 Dpar a=12.0235 p=48.594 m=1 $[ndiode] $X=40923 $Y=7745 $D=175
+X106 1 33 Dpar a=12.024 p=48.596 m=1 $[ndiode] $X=40922 $Y=8515 $D=175
+X107 1 44 Dpar a=12.0235 p=48.594 m=1 $[ndiode] $X=40923 $Y=9285 $D=175
+X108 1 45 Dpar a=12.0235 p=48.594 m=1 $[ndiode] $X=40923 $Y=30560 $D=175
+X109 1 10 Dpar a=12.024 p=48.596 m=1 $[ndiode] $X=40922 $Y=31330 $D=175
+X110 1 46 Dpar a=12.0235 p=48.594 m=1 $[ndiode] $X=40923 $Y=32100 $D=175
+X111 1 11 Dpar a=12.024 p=48.596 m=1 $[ndiode] $X=40922 $Y=32870 $D=175
+X112 1 47 Dpar a=12.0235 p=48.594 m=1 $[ndiode] $X=40923 $Y=33640 $D=175
+X113 1 11 Dpar a=12.024 p=48.596 m=1 $[ndiode] $X=40922 $Y=34410 $D=175
+X114 1 48 Dpar a=12.0235 p=48.594 m=1 $[ndiode] $X=40923 $Y=35180 $D=175
+X115 1 12 Dpar a=12.024 p=48.596 m=1 $[ndiode] $X=40922 $Y=35950 $D=175
+X116 1 49 Dpar a=12.0235 p=48.594 m=1 $[ndiode] $X=40923 $Y=36720 $D=175
+X117 1 13 Dpar a=12.024 p=48.596 m=1 $[ndiode] $X=40922 $Y=37490 $D=175
+X118 1 50 Dpar a=12.0235 p=48.594 m=1 $[ndiode] $X=40923 $Y=38260 $D=175
+X119 1 IN Dpar a=12.024 p=48.596 m=1 $[ndiode] $X=40922 $Y=39030 $D=175
+X120 1 44 Dpar a=3.774 p=15.596 m=1 $[ndiode] $X=65642 $Y=10735 $D=175
+X121 1 33 Dpar a=3.7735 p=15.594 m=1 $[ndiode] $X=65643 $Y=11505 $D=175
+X122 1 43 Dpar a=3.774 p=15.596 m=1 $[ndiode] $X=65642 $Y=12275 $D=175
+X123 1 34 Dpar a=3.7735 p=15.594 m=1 $[ndiode] $X=65643 $Y=13045 $D=175
+X124 1 42 Dpar a=3.774 p=15.596 m=1 $[ndiode] $X=65642 $Y=13815 $D=175
+X125 1 35 Dpar a=3.7735 p=15.594 m=1 $[ndiode] $X=65643 $Y=14585 $D=175
+X126 1 41 Dpar a=3.774 p=15.596 m=1 $[ndiode] $X=65642 $Y=15355 $D=175
+X127 1 36 Dpar a=3.7735 p=15.594 m=1 $[ndiode] $X=65643 $Y=16125 $D=175
+X128 1 40 Dpar a=3.774 p=15.596 m=1 $[ndiode] $X=65642 $Y=16895 $D=175
+X129 1 37 Dpar a=3.7735 p=15.594 m=1 $[ndiode] $X=65643 $Y=17665 $D=175
+X130 1 39 Dpar a=3.774 p=15.596 m=1 $[ndiode] $X=65642 $Y=18435 $D=175
+X131 1 38 Dpar a=3.7735 p=15.594 m=1 $[ndiode] $X=65643 $Y=19205 $D=175
+X132 1 IN Dpar a=3.7735 p=15.594 m=1 $[ndiode] $X=65643 $Y=20635 $D=175
+X133 1 50 Dpar a=3.774 p=15.596 m=1 $[ndiode] $X=65642 $Y=21405 $D=175
+X134 1 13 Dpar a=3.7735 p=15.594 m=1 $[ndiode] $X=65643 $Y=22175 $D=175
+X135 1 49 Dpar a=3.774 p=15.596 m=1 $[ndiode] $X=65642 $Y=22945 $D=175
+X136 1 12 Dpar a=3.7735 p=15.594 m=1 $[ndiode] $X=65643 $Y=23715 $D=175
+X137 1 48 Dpar a=3.774 p=15.596 m=1 $[ndiode] $X=65642 $Y=24485 $D=175
+X138 1 11 Dpar a=3.7735 p=15.594 m=1 $[ndiode] $X=65643 $Y=25255 $D=175
+X139 1 47 Dpar a=3.774 p=15.596 m=1 $[ndiode] $X=65642 $Y=26025 $D=175
+X140 1 11 Dpar a=3.7735 p=15.594 m=1 $[ndiode] $X=65643 $Y=26795 $D=175
+X141 1 46 Dpar a=3.774 p=15.596 m=1 $[ndiode] $X=65642 $Y=27565 $D=175
+X142 1 10 Dpar a=3.7735 p=15.594 m=1 $[ndiode] $X=65643 $Y=28335 $D=175
+X143 1 45 Dpar a=3.774 p=15.596 m=1 $[ndiode] $X=65642 $Y=29105 $D=175
+X144 1 VCC_IO Dpar a=501.44 p=125.96 m=1 $[nwdiode] $X=1350 $Y=20095 $D=185
+X145 20 32 sky130_fd_io__xres_tk_p_em1o_cdns_55959141808757 $T=16535 39150 0 0 $X=16535 $Y=39150
+X146 8 4 sky130_fd_io__xres_tk_p_em1o_cdns_55959141808757 $T=54510 935 0 0 $X=54510 $Y=935
+X147 7 4 sky130_fd_io__xres_tk_p_em1o_cdns_55959141808757 $T=54510 2475 0 0 $X=54510 $Y=2475
+X148 6 4 sky130_fd_io__xres_tk_p_em1o_cdns_55959141808757 $T=54510 4015 0 0 $X=54510 $Y=4015
+X149 5 4 sky130_fd_io__xres_tk_p_em1o_cdns_55959141808757 $T=54510 5555 0 0 $X=54510 $Y=5555
+X150 3 4 sky130_fd_io__xres_tk_p_em1o_cdns_55959141808757 $T=54510 8635 0 0 $X=54510 $Y=8635
+X151 9 4 sky130_fd_io__xres_tk_p_em1o_cdns_55959141808757 $T=71780 29485 0 180 $X=71360 $Y=29225
+X152 12 49 sky130_fd_io__xres_tk_p_em1o_cdns_55959141808757 $T=72265 23325 1 0 $X=72265 $Y=23065
+X153 11 47 sky130_fd_io__xres_tk_p_em1o_cdns_55959141808757 $T=72265 26405 1 0 $X=72265 $Y=26145
+X154 9 45 sky130_fd_io__xres_tk_p_em1o_cdns_55959141808757 $T=72265 29485 1 0 $X=72265 $Y=29225
+X155 15 sky130_fd_io__xres_p_em1c_cdns_55959141808753 $T=16525 30680 0 0 $X=16525 $Y=30680
+X156 IN sky130_fd_io__xres_p_em1c_cdns_55959141808753 $T=72255 21015 1 0 $X=72255 $Y=20755
+X157 12 sky130_fd_io__xres_p_em1c_cdns_55959141808753 $T=72255 24095 1 0 $X=72255 $Y=23835
+X158 11 sky130_fd_io__xres_p_em1c_cdns_55959141808753 $T=72255 27175 1 0 $X=72255 $Y=26915
+X159 33 44 ICV_2 $T=72265 11115 1 0 $X=72255 $Y=10855
+X160 34 43 ICV_2 $T=72265 12655 1 0 $X=72255 $Y=12395
+X161 35 42 ICV_2 $T=72265 14195 1 0 $X=72255 $Y=13935
+X162 36 41 ICV_2 $T=72265 15735 1 0 $X=72255 $Y=15475
+X163 37 40 ICV_2 $T=72265 17275 1 0 $X=72255 $Y=17015
+X164 38 39 ICV_2 $T=72265 18815 1 0 $X=72255 $Y=18555
+X165 13 50 ICV_2 $T=72265 21785 1 0 $X=72255 $Y=21525
+X166 11 48 ICV_2 $T=72265 24865 1 0 $X=72255 $Y=24605
+X167 10 46 ICV_2 $T=72265 27945 1 0 $X=72255 $Y=27685
+X168 34 43 34 34 33 44 33 33 ICV_4 $T=72640 11235 0 180 $X=58300 $Y=10605
+X169 36 41 36 36 35 42 35 35 ICV_4 $T=72640 14315 0 180 $X=58300 $Y=13685
+X170 38 39 38 38 37 40 37 37 ICV_4 $T=72640 17395 0 180 $X=58300 $Y=16765
+X171 12 13 49 13 13 IN 50 IN ICV_4 $T=58640 21135 1 0 $X=58300 $Y=20505
+X172 11 11 47 11 11 12 48 12 ICV_4 $T=58640 24215 1 0 $X=58300 $Y=23585
+X173 9 10 45 10 10 11 46 11 ICV_4 $T=58640 27295 1 0 $X=58300 $Y=26665
+X174 1 7 sky130_fd_io__xres_tk_p_em1o_cdns_55959141808758 $T=2980 2025 0 90 $X=2330 $Y=2025
+X175 1 6 sky130_fd_io__xres_tk_p_em1o_cdns_55959141808758 $T=2980 3565 0 90 $X=2330 $Y=3565
+X176 1 5 sky130_fd_io__xres_tk_p_em1o_cdns_55959141808758 $T=2980 5100 0 90 $X=2330 $Y=5100
+X177 1 4 sky130_fd_io__xres_tk_p_em1o_cdns_55959141808758 $T=2980 6640 0 90 $X=2330 $Y=6640
+X178 13 12 sky130_fd_io__xres_tk_p_em1o_cdns_55959141808758 $T=58060 22600 1 90 $X=58060 $Y=22600
+X179 12 11 sky130_fd_io__xres_tk_p_em1o_cdns_55959141808758 $T=58060 24140 1 90 $X=58060 $Y=24140
+X180 11 10 sky130_fd_io__xres_tk_p_em1o_cdns_55959141808758 $T=58060 27220 1 90 $X=58060 $Y=27220
+X181 10 9 sky130_fd_io__xres_tk_p_em1o_cdns_55959141808758 $T=58060 28760 1 90 $X=58060 $Y=28760
+X182 3 sky130_fd_io__xres_tk_p_em1c_cdns_55959141808760 $T=2980 8155 0 90 $X=2330 $Y=8155
+X183 11 sky130_fd_io__xres_tk_p_em1c_cdns_55959141808760 $T=58060 25680 1 90 $X=58060 $Y=25680
+X184 9 sky130_fd_io__xres_tk_p_em1c_cdns_55959141808761 $T=29530 9405 0 0 $X=29530 $Y=9405
+X185 4 sky130_fd_io__xres_tk_p_em1c_cdns_55959141808761 $T=54470 7095 0 0 $X=54470 $Y=7095
+X218 1 sky130_fd_io__xres_tk_p_em1c_cdns_55959141808759 $T=15570 6585 0 90 $X=15280 $Y=6585
+X219 1 sky130_fd_io__xres_tk_p_em1c_cdns_55959141808759 $T=24130 5045 0 90 $X=23840 $Y=5045
+X220 1 sky130_fd_io__xres_tk_p_em1c_cdns_55959141808759 $T=28410 3505 0 90 $X=28120 $Y=3505
+X221 1 sky130_fd_io__xres_tk_p_em1c_cdns_55959141808759 $T=32690 1965 0 90 $X=32400 $Y=1965
+X222 8 21 1 ICV_7 $T=16535 935 0 0 $X=16525 $Y=935
+X223 7 22 1 ICV_7 $T=16535 2475 0 0 $X=16525 $Y=2475
+X224 6 23 1 ICV_7 $T=16535 4015 0 0 $X=16525 $Y=4015
+X225 5 24 1 ICV_7 $T=16535 5555 0 0 $X=16525 $Y=5555
+X226 4 25 3 ICV_7 $T=16535 7095 0 0 $X=16525 $Y=7095
+X227 3 26 9 ICV_7 $T=16535 8635 0 0 $X=16525 $Y=8635
+X228 15 27 16 ICV_7 $T=16535 31450 0 0 $X=16525 $Y=31450
+X229 16 28 17 ICV_7 $T=16535 32990 0 0 $X=16525 $Y=32990
+X230 17 29 18 ICV_7 $T=16535 34530 0 0 $X=16525 $Y=34530
+X231 18 30 19 ICV_7 $T=16535 36070 0 0 $X=16525 $Y=36070
+X232 19 31 20 ICV_7 $T=16535 37610 0 0 $X=16525 $Y=37610
+X233 1 9 sky130_fd_io__xres_tk_p_em1o_cdns_55959141808756 $T=7010 9665 0 90 $X=6720 $Y=9665
+X234 1 3 sky130_fd_io__xres_tk_p_em1o_cdns_55959141808756 $T=11290 8125 0 90 $X=11000 $Y=8125
+X235 32 20 IN ICV_8 $T=16910 39030 1 180 $X=2570 $Y=38900
+X236 15 45 ICV_9 $T=2910 30560 0 0 $X=2570 $Y=30430
+X237 13 31 19 20 50 ICV_10 $T=16910 37490 1 180 $X=2570 $Y=37360
+X238 38 39 21 1 8 37 40 22 1 7 ICV_11 $T=16910 815 1 180 $X=2570 $Y=685
+X239 36 41 23 1 6 35 42 24 1 5 ICV_11 $T=16910 3895 1 180 $X=2570 $Y=3765
+X240 34 43 25 3 4 33 44 26 9 3 ICV_11 $T=16910 6975 1 180 $X=2570 $Y=6845
+X241 10 46 27 16 15 11 47 28 17 16 ICV_11 $T=16910 31330 1 180 $X=2570 $Y=31200
+X242 11 48 29 18 17 12 49 30 19 18 ICV_11 $T=16910 34410 1 180 $X=2570 $Y=34280
+.ENDS
+***************************************
+.SUBCKT sky130_fd_pr__hvdfm1sd2__example_55959141808243
+** N=2 EP=0 IP=0 FDC=0
+.ENDS
+***************************************
+.SUBCKT sky130_fd_pr__nfet_01v8__example_55959141808723 1 2 3 4
+** N=4 EP=4 IP=4 FDC=1
+M0 4 2 3 1 nhv L=1 W=1 m=1 r=1 a=1 p=4 mult=1 $X=0 $Y=0 $D=49
+.ENDS
+***************************************
+.SUBCKT sky130_fd_pr__hvdfm1sd__example_5595914180848
+** N=2 EP=0 IP=0 FDC=0
+*.SEEDPROM
+.ENDS
+***************************************
+.SUBCKT sky130_fd_pr__hvdfm1sd2__example_5595914180849
+** N=3 EP=0 IP=0 FDC=0
+*.SEEDPROM
+.ENDS
+***************************************
+.SUBCKT sky130_fd_pr__model__pfet_highvoltage__example_55959141808371 2 3 4
+** N=4 EP=3 IP=0 FDC=1
+*.SEEDPROM
+M0 4 3 2 2 phv L=0.6 W=1 m=1 r=1.66667 a=0.6 p=3.2 mult=1 $X=0 $Y=0 $D=109
+.ENDS
+***************************************
+.SUBCKT sky130_fd_io__hvsbt_inv_x1 VGND VPWR 3 OUT
+** N=4 EP=4 IP=8 FDC=3
+*.SEEDPROM
+M0 OUT 3 VGND VGND nhv L=0.6 W=0.7 m=1 r=1.16667 a=0.42 p=2.6 mult=1 $X=595 $Y=720 $D=49
+X1 VPWR 3 OUT sky130_fd_pr__model__pfet_highvoltage__example_55959141808371 $T=595 3410 1 0 $X=0 $Y=2080
+X2 VPWR 3 OUT sky130_fd_pr__model__pfet_highvoltage__example_55959141808371 $T=595 3750 0 0 $X=0 $Y=3420
+.ENDS
+***************************************
+.SUBCKT sky130_fd_pr__model__pfet_highvoltage__example_55959141808421 2 3 4
+** N=4 EP=3 IP=0 FDC=2
+*.SEEDPROM
+M0 4 3 2 2 phv L=0.6 W=1 m=1 r=1.66667 a=0.6 p=3.2 mult=1 $X=0 $Y=0 $D=109
+M1 2 3 4 2 phv L=0.6 W=1 m=1 r=1.66667 a=0.6 p=3.2 mult=1 $X=880 $Y=0 $D=109
+.ENDS
+***************************************
+.SUBCKT sky130_fd_io__hvsbt_inv_x2 VGND VPWR IN OUT
+** N=4 EP=4 IP=8 FDC=6
+*.SEEDPROM
+M0 OUT IN VGND VGND nhv L=0.6 W=0.7 m=1 r=1.16667 a=0.42 p=2.6 mult=1 $X=595 $Y=720 $D=49
+M1 VGND IN OUT VGND nhv L=0.6 W=0.7 m=1 r=1.16667 a=0.42 p=2.6 mult=1 $X=1475 $Y=720 $D=49
+X2 VPWR IN OUT sky130_fd_pr__model__pfet_highvoltage__example_55959141808421 $T=595 3410 1 0 $X=0 $Y=2080
+X3 VPWR IN OUT sky130_fd_pr__model__pfet_highvoltage__example_55959141808421 $T=595 3750 0 0 $X=0 $Y=3420
+.ENDS
+***************************************
+.SUBCKT sky130_fd_pr__hvdfm1sd2__example_55959141808719
+** N=3 EP=0 IP=0 FDC=0
+*.SEEDPROM
+.ENDS
+***************************************
+.SUBCKT sky130_fd_pr__pfet_01v8__example_55959141808720 2 3 4 5
+** N=5 EP=4 IP=6 FDC=1
+*.SEEDPROM
+M0 5 3 4 2 phv L=1 W=3 m=1 r=3 a=3 p=8 mult=1 $X=0 $Y=0 $D=109
+.ENDS
+***************************************
+.SUBCKT sky130_fd_pr__hvdfm1sd2__example_5595914180829
+** N=2 EP=0 IP=0 FDC=0
+.ENDS
+***************************************
+.SUBCKT sky130_fd_pr__pfet_01v8__example_55959141808767 2 3 4 5
+** N=5 EP=4 IP=6 FDC=1
+*.SEEDPROM
+M0 5 3 4 2 phv L=0.5 W=3 m=1 r=6 a=1.5 p=7 mult=1 $X=0 $Y=0 $D=109
+.ENDS
+***************************************
+.SUBCKT sky130_fd_io__tk_tie_r_out_esd A B
+** N=3 EP=2 IP=3 FDC=1
+X0 A B sky130_fd_pr__res_generic_po__example_5595914180838 $T=1000 1095 0 0 $X=730 $Y=1095
+.ENDS
+***************************************
+.SUBCKT sky130_fd_pr__hvdfm1sd2__example_55959141808765
+** N=2 EP=0 IP=0 FDC=0
+.ENDS
+***************************************
+.SUBCKT sky130_fd_pr__nfet_01v8__example_55959141808764 1 2 3 4
+** N=4 EP=4 IP=4 FDC=1
+M0 4 2 3 1 nhv L=0.5 W=3 m=1 r=6 a=1.5 p=7 mult=1 $X=0 $Y=0 $D=49
+.ENDS
+***************************************
+.SUBCKT sky130_fd_pr__nfet_01v8__example_55959141808779 1 2 3 4
+** N=4 EP=4 IP=4 FDC=1
+M0 4 2 3 1 nhvnative L=0.9 W=1 m=1 r=1.11111 a=0.9 p=3.8 mult=1 $X=0 $Y=0 $D=59
+.ENDS
+***************************************
+.SUBCKT sky130_fd_pr__nfet_01v8__example_55959141808777 1 2 3
+** N=3 EP=3 IP=2 FDC=1
+M0 3 2 1 1 nhv L=0.5 W=3 m=1 r=6 a=1.5 p=7 mult=1 $X=0 $Y=0 $D=49
+.ENDS
+***************************************
+.SUBCKT sky130_fd_pr__hvdfm1sd2__example_5595914180827
+** N=2 EP=0 IP=0 FDC=0
+.ENDS
+***************************************
+.SUBCKT sky130_fd_pr__hvdfm1sd__example_55959141808233
+** N=2 EP=0 IP=0 FDC=0
+.ENDS
+***************************************
+.SUBCKT sky130_fd_pr__nfet_01v8__example_55959141808778 1 2 3
+** N=3 EP=3 IP=6 FDC=2
+M0 3 2 1 1 nhv L=0.5 W=5 m=1 r=10 a=2.5 p=11 mult=1 $X=0 $Y=0 $D=49
+M1 1 2 3 1 nhv L=0.5 W=5 m=1 r=10 a=2.5 p=11 mult=1 $X=780 $Y=0 $D=49
+.ENDS
+***************************************
+.SUBCKT sky130_fd_pr__hvdfm1sd2__example_55959141808449
+** N=3 EP=0 IP=0 FDC=0
+*.SEEDPROM
+.ENDS
+***************************************
+.SUBCKT sky130_fd_pr__pfet_01v8__example_55959141808784 2 3 4
+** N=4 EP=3 IP=6 FDC=1
+*.SEEDPROM
+M0 2 3 4 2 phv L=0.8 W=1 m=1 r=1.25 a=0.8 p=3.6 mult=1 $X=0 $Y=0 $D=109
+.ENDS
+***************************************
+.SUBCKT sky130_fd_pr__pfet_01v8__example_559591418085 2 3 4 5
+** N=5 EP=4 IP=0 FDC=1
+*.SEEDPROM
+M0 5 3 4 2 phv L=0.6 W=1 m=1 r=1.66667 a=0.6 p=3.2 mult=1 $X=0 $Y=0 $D=109
+.ENDS
+***************************************
+.SUBCKT sky130_fd_pr__pfet_01v8__example_55959141808783 2 3 4
+** N=4 EP=3 IP=0 FDC=1
+*.SEEDPROM
+M0 4 3 2 2 phv L=0.5 W=0.42 m=1 r=0.84 a=0.21 p=1.84 mult=1 $X=0 $Y=0 $D=109
+.ENDS
+***************************************
+.SUBCKT sky130_fd_pr__hvdfm1sd__example_55959141808782
+** N=2 EP=0 IP=0 FDC=0
+*.SEEDPROM
+.ENDS
+***************************************
+.SUBCKT sky130_fd_pr__pfet_01v8__example_55959141808786 2 3 4
+** N=4 EP=3 IP=5 FDC=1
+*.SEEDPROM
+M0 4 3 2 2 phv L=0.5 W=5 m=1 r=10 a=2.5 p=11 mult=1 $X=0 $Y=0 $D=109
+.ENDS
+***************************************
+.SUBCKT sky130_fd_pr__pfet_01v8__example_55959141808787 2 3 4 5
+** N=5 EP=4 IP=6 FDC=1
+*.SEEDPROM
+M0 5 3 4 2 phv L=0.5 W=5 m=1 r=10 a=2.5 p=11 mult=1 $X=0 $Y=0 $D=109
+.ENDS
+***************************************
+.SUBCKT sky130_fd_pr__tpl1__example_55959141808151
+** N=2 EP=0 IP=0 FDC=0
+*.SEEDPROM
+.ENDS
+***************************************
+.SUBCKT sky130_fd_pr__tpl1__example_55959141808148
+** N=2 EP=0 IP=0 FDC=0
+*.SEEDPROM
+.ENDS
+***************************************
+.SUBCKT sky130_fd_pr__tpl1__example_55959141808150
+** N=1 EP=0 IP=0 FDC=0
+.ENDS
+***************************************
+.SUBCKT sky130_fd_pr__tpl1__example_55959141808149
+** N=1 EP=0 IP=0 FDC=0
+.ENDS
+***************************************
+.SUBCKT sky130_fd_pr__dfl1__example_55959141808158
+** N=2 EP=0 IP=0 FDC=0
+.ENDS
+***************************************
+.SUBCKT sky130_fd_io__signal_5_sym_hv_local_5term NBODY NWELLRING GATE VGND IN 7
+** N=8 EP=6 IP=16 FDC=3
+*.SEEDPROM
+M0 IN GATE VGND NBODY nhvesd L=0.6 W=5.4 m=1 r=9 a=3.24 p=12 mult=1 $X=3675 $Y=3360 $D=129
+R1 NWELLRING 7 0.01 m=1 $[short] $X=1015 $Y=330 $D=265
+R2 NBODY 8 0.01 m=1 $[short] $X=2665 $Y=330 $D=265
+.ENDS
+***************************************
+.SUBCKT sky130_fd_pr__dfl1sd__example_5595914180819
+** N=2 EP=0 IP=0 FDC=0
+.ENDS
+***************************************
+.SUBCKT sky130_fd_io__gpio_buf_localesdv2 VGND VCC_IO VTRIP_SEL_H OUT_H 5
+** N=10 EP=5 IP=35 FDC=26
+M0 OUT_VT VTRIP_SEL_H OUT_H VGND nhv L=1 W=3 m=1 r=3 a=3 p=8 mult=1 $X=16175 $Y=17310 $D=49
+X1 VGND VCC_IO Dpar a=108.48 p=83.5 m=1 $[nwdiode] $X=380 $Y=690 $D=185
+X2 VGND VCC_IO Dpar a=8.5092 p=29.27 m=1 $[nwdiode] $X=1460 $Y=1770 $D=184
+X3 VGND VCC_IO Dpar a=8.5092 p=29.27 m=1 $[nwdiode] $X=1460 $Y=12530 $D=184
+X4 VGND VCC_IO Dpar a=8.5092 p=29.27 m=1 $[nwdiode] $X=8055 $Y=1770 $D=184
+X5 VGND VCC_IO Dpar a=8.5092 p=29.27 m=1 $[nwdiode] $X=8055 $Y=12530 $D=184
+X6 VGND VCC_IO Dpar a=5.1688 p=17.34 m=1 $[nwdiode] $X=14650 $Y=15810 $D=184
+X7 5 OUT_H sky130_fd_io__res250only_small $T=17545 -185 0 90 $X=15525 $Y=-185
+X8 VGND VCC_IO VGND VGND OUT_VT 8 sky130_fd_io__signal_5_sym_hv_local_5term $T=8335 690 1 180 $X=380 $Y=690
+X9 VGND VCC_IO VGND VGND OUT_H 10 sky130_fd_io__signal_5_sym_hv_local_5term $T=8335 23570 0 180 $X=380 $Y=11450
+X10 VGND VCC_IO VGND OUT_VT VCC_IO 7 sky130_fd_io__signal_5_sym_hv_local_5term $T=6975 690 0 0 $X=6975 $Y=690
+X11 VGND VCC_IO VGND OUT_H VCC_IO 9 sky130_fd_io__signal_5_sym_hv_local_5term $T=6975 23570 1 0 $X=6975 $Y=11450
+.ENDS
+***************************************
+.SUBCKT sky130_fd_pr__hvdftpm1s2__example_55959141808659
+** N=2 EP=0 IP=0 FDC=0
+.ENDS
+***************************************
+.SUBCKT sky130_fd_pr__pfet_01v8__example_55959141808658 2 3 4 5 6 7 8 9
+** N=9 EP=8 IP=26 FDC=27
+*.SEEDPROM
+M0 9 3 2 2 phv L=0.6 W=5 m=1 r=8.33333 a=3 p=11.2 mult=1 $X=0 $Y=0 $D=109
+M1 2 3 9 2 phv L=0.6 W=5 m=1 r=8.33333 a=3 p=11.2 mult=1 $X=2150 $Y=0 $D=109
+M2 9 3 2 2 phv L=0.6 W=5 m=1 r=8.33333 a=3 p=11.2 mult=1 $X=4960 $Y=0 $D=109
+M3 2 3 9 2 phv L=0.6 W=5 m=1 r=8.33333 a=3 p=11.2 mult=1 $X=7110 $Y=0 $D=109
+M4 9 3 2 2 phv L=0.6 W=5 m=1 r=8.33333 a=3 p=11.2 mult=1 $X=9920 $Y=0 $D=109
+M5 2 3 9 2 phv L=0.6 W=5 m=1 r=8.33333 a=3 p=11.2 mult=1 $X=12070 $Y=0 $D=109
+M6 9 3 2 2 phv L=0.6 W=5 m=1 r=8.33333 a=3 p=11.2 mult=1 $X=14880 $Y=0 $D=109
+M7 2 3 9 2 phv L=0.6 W=5 m=1 r=8.33333 a=3 p=11.2 mult=1 $X=17030 $Y=0 $D=109
+M8 9 3 2 2 phv L=0.6 W=5 m=1 r=8.33333 a=3 p=11.2 mult=1 $X=19840 $Y=0 $D=109
+M9 2 3 9 2 phv L=0.6 W=5 m=1 r=8.33333 a=3 p=11.2 mult=1 $X=21990 $Y=0 $D=109
+M10 9 3 2 2 phv L=0.6 W=5 m=1 r=8.33333 a=3 p=11.2 mult=1 $X=24800 $Y=0 $D=109
+M11 2 3 9 2 phv L=0.6 W=5 m=1 r=8.33333 a=3 p=11.2 mult=1 $X=26950 $Y=0 $D=109
+M12 9 3 2 2 phv L=0.6 W=5 m=1 r=8.33333 a=3 p=11.2 mult=1 $X=29760 $Y=0 $D=109
+M13 2 3 9 2 phv L=0.6 W=5 m=1 r=8.33333 a=3 p=11.2 mult=1 $X=31910 $Y=0 $D=109
+M14 9 3 2 2 phv L=0.6 W=5 m=1 r=8.33333 a=3 p=11.2 mult=1 $X=34720 $Y=0 $D=109
+M15 2 4 9 2 phv L=0.6 W=5 m=1 r=8.33333 a=3 p=11.2 mult=1 $X=36870 $Y=0 $D=109
+M16 9 4 2 2 phv L=0.6 W=5 m=1 r=8.33333 a=3 p=11.2 mult=1 $X=39680 $Y=0 $D=109
+M17 2 4 9 2 phv L=0.6 W=5 m=1 r=8.33333 a=3 p=11.2 mult=1 $X=41830 $Y=0 $D=109
+M18 9 5 2 2 phv L=0.6 W=5 m=1 r=8.33333 a=3 p=11.2 mult=1 $X=44640 $Y=0 $D=109
+M19 2 5 9 2 phv L=0.6 W=5 m=1 r=8.33333 a=3 p=11.2 mult=1 $X=46790 $Y=0 $D=109
+M20 9 5 2 2 phv L=0.6 W=5 m=1 r=8.33333 a=3 p=11.2 mult=1 $X=49600 $Y=0 $D=109
+M21 2 6 9 2 phv L=0.6 W=5 m=1 r=8.33333 a=3 p=11.2 mult=1 $X=51750 $Y=0 $D=109
+M22 9 6 2 2 phv L=0.6 W=5 m=1 r=8.33333 a=3 p=11.2 mult=1 $X=54560 $Y=0 $D=109
+M23 2 6 9 2 phv L=0.6 W=5 m=1 r=8.33333 a=3 p=11.2 mult=1 $X=56710 $Y=0 $D=109
+M24 9 3 2 2 phv L=0.6 W=5 m=1 r=8.33333 a=3 p=11.2 mult=1 $X=59520 $Y=0 $D=109
+M25 2 7 9 2 phv L=0.6 W=5 m=1 r=8.33333 a=3 p=11.2 mult=1 $X=61670 $Y=0 $D=109
+M26 9 8 2 2 phv L=0.6 W=5 m=1 r=8.33333 a=3 p=11.2 mult=1 $X=64480 $Y=0 $D=109
+.ENDS
+***************************************
+.SUBCKT sky130_fd_pr__hvdftpl1s__example_55959141808646
+** N=1 EP=0 IP=0 FDC=0
+.ENDS
+***************************************
+.SUBCKT sky130_fd_pr__nfet_01v8__example_55959141808647 1 2 3
+** N=3 EP=3 IP=1 FDC=1
+M0 3 2 1 1 nhv L=0.6 W=5 m=1 r=8.33333 a=3 p=11.2 mult=1 $X=0 $Y=0 $D=49
+.ENDS
+***************************************
+.SUBCKT sky130_fd_pr__hvdfl1sd2__example_55959141808378
+** N=2 EP=0 IP=0 FDC=0
+.ENDS
+***************************************
+.SUBCKT sky130_fd_pr__hvdftpm1s2__example_55959141808649
+** N=1 EP=0 IP=0 FDC=0
+.ENDS
+***************************************
+.SUBCKT ICV_12
+** N=2 EP=0 IP=4 FDC=0
+.ENDS
+***************************************
+.SUBCKT sky130_fd_pr__nfet_01v8__example_55959141808650 1 2 3
+** N=3 EP=3 IP=1 FDC=1
+M0 3 2 1 1 nhv L=0.6 W=5 m=1 r=8.33333 a=3 p=11.2 mult=1 $X=0 $Y=0 $D=49
+.ENDS
+***************************************
+.SUBCKT sky130_fd_io__nfet_con_diff_wo_abt_270_xres4v2 1 2 VCC_IO 4 5 6 7 8 9 10 11 12 13 14
+** N=14 EP=14 IP=96 FDC=59
+M0 14 4 2 2 nhv L=0.6 W=5 m=1 r=8.33333 a=3 p=11.2 mult=1 $X=4620 $Y=7285 $D=49
+M1 14 4 2 2 nhv L=0.6 W=5 m=1 r=8.33333 a=3 p=11.2 mult=1 $X=9580 $Y=7285 $D=49
+M2 14 4 2 2 nhv L=0.6 W=5 m=1 r=8.33333 a=3 p=11.2 mult=1 $X=9580 $Y=15290 $D=49
+M3 2 4 14 2 nhv L=0.6 W=5 m=1 r=8.33333 a=3 p=11.2 mult=1 $X=11730 $Y=7285 $D=49
+M4 2 4 14 2 nhv L=0.6 W=5 m=1 r=8.33333 a=3 p=11.2 mult=1 $X=11730 $Y=15290 $D=49
+M5 14 5 2 2 nhv L=0.6 W=5 m=1 r=8.33333 a=3 p=11.2 mult=1 $X=14540 $Y=7285 $D=49
+M6 14 5 2 2 nhv L=0.6 W=5 m=1 r=8.33333 a=3 p=11.2 mult=1 $X=14540 $Y=15290 $D=49
+M7 2 5 14 2 nhv L=0.6 W=5 m=1 r=8.33333 a=3 p=11.2 mult=1 $X=16690 $Y=7285 $D=49
+M8 2 5 14 2 nhv L=0.6 W=5 m=1 r=8.33333 a=3 p=11.2 mult=1 $X=16690 $Y=15290 $D=49
+M9 14 5 2 2 nhv L=0.6 W=5 m=1 r=8.33333 a=3 p=11.2 mult=1 $X=19500 $Y=7285 $D=49
+M10 14 5 2 2 nhv L=0.6 W=5 m=1 r=8.33333 a=3 p=11.2 mult=1 $X=19500 $Y=15290 $D=49
+M11 2 6 14 2 nhv L=0.6 W=5 m=1 r=8.33333 a=3 p=11.2 mult=1 $X=21650 $Y=7285 $D=49
+M12 2 6 14 2 nhv L=0.6 W=5 m=1 r=8.33333 a=3 p=11.2 mult=1 $X=21650 $Y=15290 $D=49
+M13 14 6 2 2 nhv L=0.6 W=5 m=1 r=8.33333 a=3 p=11.2 mult=1 $X=24460 $Y=7285 $D=49
+M14 14 6 2 2 nhv L=0.6 W=5 m=1 r=8.33333 a=3 p=11.2 mult=1 $X=24460 $Y=15290 $D=49
+M15 2 6 14 2 nhv L=0.6 W=5 m=1 r=8.33333 a=3 p=11.2 mult=1 $X=26610 $Y=7285 $D=49
+M16 2 6 14 2 nhv L=0.6 W=5 m=1 r=8.33333 a=3 p=11.2 mult=1 $X=26610 $Y=15290 $D=49
+M17 14 7 2 2 nhv L=0.6 W=5 m=1 r=8.33333 a=3 p=11.2 mult=1 $X=29420 $Y=7285 $D=49
+M18 14 7 2 2 nhv L=0.6 W=5 m=1 r=8.33333 a=3 p=11.2 mult=1 $X=29420 $Y=15290 $D=49
+M19 2 7 14 2 nhv L=0.6 W=5 m=1 r=8.33333 a=3 p=11.2 mult=1 $X=31570 $Y=7285 $D=49
+M20 2 7 14 2 nhv L=0.6 W=5 m=1 r=8.33333 a=3 p=11.2 mult=1 $X=31570 $Y=15290 $D=49
+M21 14 7 2 2 nhv L=0.6 W=5 m=1 r=8.33333 a=3 p=11.2 mult=1 $X=34380 $Y=7285 $D=49
+M22 14 7 2 2 nhv L=0.6 W=5 m=1 r=8.33333 a=3 p=11.2 mult=1 $X=34380 $Y=15290 $D=49
+M23 2 8 14 2 nhv L=0.6 W=5 m=1 r=8.33333 a=3 p=11.2 mult=1 $X=36530 $Y=7285 $D=49
+M24 2 8 14 2 nhv L=0.6 W=5 m=1 r=8.33333 a=3 p=11.2 mult=1 $X=36530 $Y=15290 $D=49
+M25 14 9 2 2 nhv L=0.6 W=5 m=1 r=8.33333 a=3 p=11.2 mult=1 $X=39340 $Y=7285 $D=49
+M26 14 9 2 2 nhv L=0.6 W=5 m=1 r=8.33333 a=3 p=11.2 mult=1 $X=39340 $Y=15290 $D=49
+M27 2 9 14 2 nhv L=0.6 W=5 m=1 r=8.33333 a=3 p=11.2 mult=1 $X=41490 $Y=7285 $D=49
+M28 2 9 14 2 nhv L=0.6 W=5 m=1 r=8.33333 a=3 p=11.2 mult=1 $X=41490 $Y=15290 $D=49
+M29 14 9 2 2 nhv L=0.6 W=5 m=1 r=8.33333 a=3 p=11.2 mult=1 $X=44300 $Y=7285 $D=49
+M30 14 9 2 2 nhv L=0.6 W=5 m=1 r=8.33333 a=3 p=11.2 mult=1 $X=44300 $Y=15290 $D=49
+M31 2 10 14 2 nhv L=0.6 W=5 m=1 r=8.33333 a=3 p=11.2 mult=1 $X=46450 $Y=7285 $D=49
+M32 2 10 14 2 nhv L=0.6 W=5 m=1 r=8.33333 a=3 p=11.2 mult=1 $X=46450 $Y=15290 $D=49
+M33 14 10 2 2 nhv L=0.6 W=5 m=1 r=8.33333 a=3 p=11.2 mult=1 $X=49260 $Y=7285 $D=49
+M34 14 10 2 2 nhv L=0.6 W=5 m=1 r=8.33333 a=3 p=11.2 mult=1 $X=49260 $Y=15290 $D=49
+M35 2 10 14 2 nhv L=0.6 W=5 m=1 r=8.33333 a=3 p=11.2 mult=1 $X=51410 $Y=7285 $D=49
+M36 2 10 14 2 nhv L=0.6 W=5 m=1 r=8.33333 a=3 p=11.2 mult=1 $X=51410 $Y=15290 $D=49
+M37 14 10 2 2 nhv L=0.6 W=5 m=1 r=8.33333 a=3 p=11.2 mult=1 $X=54220 $Y=7285 $D=49
+M38 14 10 2 2 nhv L=0.6 W=5 m=1 r=8.33333 a=3 p=11.2 mult=1 $X=54220 $Y=15290 $D=49
+M39 2 10 14 2 nhv L=0.6 W=5 m=1 r=8.33333 a=3 p=11.2 mult=1 $X=56370 $Y=7285 $D=49
+M40 2 10 14 2 nhv L=0.6 W=5 m=1 r=8.33333 a=3 p=11.2 mult=1 $X=56370 $Y=15290 $D=49
+M41 14 10 2 2 nhv L=0.6 W=5 m=1 r=8.33333 a=3 p=11.2 mult=1 $X=59180 $Y=7285 $D=49
+M42 14 10 2 2 nhv L=0.6 W=5 m=1 r=8.33333 a=3 p=11.2 mult=1 $X=59180 $Y=15290 $D=49
+M43 2 11 14 2 nhv L=0.6 W=5 m=1 r=8.33333 a=3 p=11.2 mult=1 $X=61330 $Y=7285 $D=49
+M44 2 11 14 2 nhv L=0.6 W=5 m=1 r=8.33333 a=3 p=11.2 mult=1 $X=61330 $Y=15290 $D=49
+M45 14 12 2 2 nhv L=0.6 W=5 m=1 r=8.33333 a=3 p=11.2 mult=1 $X=64140 $Y=7285 $D=49
+M46 14 12 2 2 nhv L=0.6 W=5 m=1 r=8.33333 a=3 p=11.2 mult=1 $X=64140 $Y=15290 $D=49
+M47 2 13 14 2 nhv L=0.6 W=5 m=1 r=8.33333 a=3 p=11.2 mult=1 $X=66290 $Y=7285 $D=49
+M48 2 13 14 2 nhv L=0.6 W=5 m=1 r=8.33333 a=3 p=11.2 mult=1 $X=66290 $Y=15290 $D=49
+M49 14 13 2 2 nhv L=0.6 W=5 m=1 r=8.33333 a=3 p=11.2 mult=1 $X=69100 $Y=7285 $D=49
+M50 14 13 2 2 nhv L=0.6 W=5 m=1 r=8.33333 a=3 p=11.2 mult=1 $X=69100 $Y=15290 $D=49
+X51 1 VCC_IO Dpar a=57.3765 p=0 m=1 $[nwdiode] $X=-180 $Y=2115 $D=183
+X52 2 VCC_IO Dpar a=1558.74 p=186.49 m=1 $[dnwdiode_pw] $X=2345 $Y=3925 $D=188
+X53 1 VCC_IO Dpar a=1791.37 p=197.77 m=1 $[dnwdiode_psub] $X=440 $Y=2895 $D=187
+X55 2 4 14 sky130_fd_pr__nfet_01v8__example_55959141808647 $T=4620 20290 1 0 $X=3055 $Y=15110
+X56 2 13 14 sky130_fd_pr__nfet_01v8__example_55959141808647 $T=71490 12285 0 180 $X=70460 $Y=7105
+X57 2 13 14 sky130_fd_pr__nfet_01v8__example_55959141808647 $T=71490 20290 0 180 $X=70460 $Y=15110
+X110 2 4 14 sky130_fd_pr__nfet_01v8__example_55959141808650 $T=7370 12285 0 180 $X=6340 $Y=7105
+X111 2 4 14 sky130_fd_pr__nfet_01v8__example_55959141808650 $T=7370 20290 0 180 $X=6340 $Y=15110
+.ENDS
+***************************************
+.SUBCKT sky130_fd_io__gpio_pddrvr_strong_xres4v2 1 TIE_LO_ESD 3 VCC_IO PD_H[2] PD_H[3] 7 8
+** N=15 EP=8 IP=89 FDC=109
+X0 3 VCC_IO condiode a=1e-06 p=0.004 m=1 ahftempperim=0.004 $X=6380 $Y=37555 $D=150
+X1 PD_H[3] 7 sky130_fd_io__tk_em2o_cdns_55959141808653 $T=3275 5230 1 90 $X=3275 $Y=5230
+X2 PD_H[2] 7 sky130_fd_io__tk_em2o_cdns_55959141808653 $T=4480 5230 1 90 $X=4480 $Y=5230
+X3 PD_H[3] 15 sky130_fd_io__tk_em2o_cdns_55959141808653 $T=8470 5230 0 90 $X=7820 $Y=5230
+X4 TIE_LO_ESD 15 sky130_fd_io__tk_em2o_cdns_55959141808653 $T=9885 5230 0 90 $X=9235 $Y=5230
+X5 PD_H[3] 14 sky130_fd_io__tk_em2o_cdns_55959141808653 $T=16120 5230 0 90 $X=15470 $Y=5230
+X6 TIE_LO_ESD 14 sky130_fd_io__tk_em2o_cdns_55959141808653 $T=17535 5230 0 90 $X=16885 $Y=5230
+X7 PD_H[2] 13 sky130_fd_io__tk_em2o_cdns_55959141808653 $T=34665 5230 0 90 $X=34015 $Y=5230
+X8 TIE_LO_ESD 13 sky130_fd_io__tk_em2o_cdns_55959141808653 $T=38965 5230 0 90 $X=38315 $Y=5230
+X9 PD_H[2] 12 sky130_fd_io__tk_em2o_cdns_55959141808653 $T=43175 5230 0 90 $X=42525 $Y=5230
+X10 TIE_LO_ESD 12 sky130_fd_io__tk_em2o_cdns_55959141808653 $T=47475 5230 0 90 $X=46825 $Y=5230
+X11 PD_H[2] 11 sky130_fd_io__tk_em2o_cdns_55959141808653 $T=50575 5230 0 90 $X=49925 $Y=5230
+X12 TIE_LO_ESD 11 sky130_fd_io__tk_em2o_cdns_55959141808653 $T=54875 5230 0 90 $X=54225 $Y=5230
+X13 PD_H[2] 10 sky130_fd_io__tk_em2o_cdns_55959141808653 $T=57290 5230 0 90 $X=56640 $Y=5230
+X14 TIE_LO_ESD 10 sky130_fd_io__tk_em2o_cdns_55959141808653 $T=61590 5230 0 90 $X=60940 $Y=5230
+X15 PD_H[2] 9 sky130_fd_io__tk_em2o_cdns_55959141808653 $T=64460 5230 0 90 $X=63810 $Y=5230
+X16 PD_H[3] 9 sky130_fd_io__tk_em2o_cdns_55959141808653 $T=66610 5230 0 90 $X=65960 $Y=5230
+X17 TIE_LO_ESD 7 sky130_fd_io__tk_em2s_cdns_55959141808652 $T=2065 5230 1 90 $X=2065 $Y=5230
+X18 PD_H[2] 15 sky130_fd_io__tk_em2s_cdns_55959141808652 $T=6950 5230 0 90 $X=6300 $Y=5230
+X19 PD_H[2] 14 sky130_fd_io__tk_em2s_cdns_55959141808652 $T=14600 5230 0 90 $X=13950 $Y=5230
+X20 PD_H[3] 13 sky130_fd_io__tk_em2s_cdns_55959141808652 $T=36815 5230 0 90 $X=36165 $Y=5230
+X21 PD_H[3] 12 sky130_fd_io__tk_em2s_cdns_55959141808652 $T=45325 5230 0 90 $X=44675 $Y=5230
+X22 PD_H[3] 11 sky130_fd_io__tk_em2s_cdns_55959141808652 $T=52725 5230 0 90 $X=52075 $Y=5230
+X23 PD_H[3] 10 sky130_fd_io__tk_em2s_cdns_55959141808652 $T=59440 5230 0 90 $X=58790 $Y=5230
+X24 TIE_LO_ESD 9 sky130_fd_io__tk_em2s_cdns_55959141808652 $T=68760 5230 0 90 $X=68110 $Y=5230
+X25 TIE_LO_ESD 3 sky130_fd_pr__res_generic_po__example_5595914180838 $T=2320 46835 0 0 $X=2050 $Y=46835
+X26 1 3 VCC_IO 9 10 11 12 13 PD_H[2] PD_H[3] 14 15 7 8 sky130_fd_io__nfet_con_diff_wo_abt_270_xres4v2 $T=75440 42045 0 180 $X=-515 $Y=14600
+.ENDS
+***************************************
+.SUBCKT sky130_fd_io__top_xres4v2 VSSD 2 VCCHIB VDDIO_Q ENABLE_H EN_VDDIO_SIG_H INP_SEL_H ENABLE_VDDIO PAD PULLUP_H DISABLE_PULLUP_H PAD_A_ESD_H 79 VDDIO VSSIO FILT_IN_H TIE_LO_ESD XRES_H_N TIE_HI_ESD TIE_WEAK_HI_H
++ VCCD VDDA VSWITCH VSSA 99 AMUXBUS_B 101 AMUXBUS_A 103 VSSIO_Q
+** N=104 EP=30 IP=536 FDC=777
+R0 42 36 L=1077.19 W=0.29 m=1 $[mrdn_hv] $X=8720 $Y=183570 $D=247
+M1 VSSD ENABLE_VDDIO 19 VSSD nshort L=0.15 W=0.74 m=1 r=4.93333 a=0.111 p=1.78 mult=1 $X=16840 $Y=40175 $D=9
+M2 47 15 VSSD VSSD nhv L=0.6 W=0.7 m=1 r=1.16667 a=0.42 p=2.6 mult=1 $X=8460 $Y=7500 $D=49
+M3 40 ENABLE_H 47 VSSD nhv L=0.6 W=0.7 m=1 r=1.16667 a=0.42 p=2.6 mult=1 $X=9340 $Y=7500 $D=49
+M4 50 20 48 VSSD nhv L=0.8 W=5 m=1 r=6.25 a=4 p=11.6 mult=1 $X=15315 $Y=28245 $D=49
+M5 48 20 50 VSSD nhv L=0.8 W=5 m=1 r=6.25 a=4 p=11.6 mult=1 $X=15315 $Y=29325 $D=49
+M6 50 20 48 VSSD nhv L=0.8 W=5 m=1 r=6.25 a=4 p=11.6 mult=1 $X=15315 $Y=30405 $D=49
+M7 48 20 50 VSSD nhv L=0.8 W=5 m=1 r=6.25 a=4 p=11.6 mult=1 $X=15315 $Y=31485 $D=49
+M8 VSSD 11 48 VSSD nhv L=0.8 W=5 m=1 r=6.25 a=4 p=11.6 mult=1 $X=15315 $Y=32565 $D=49
+M9 48 11 VSSD VSSD nhv L=0.8 W=5 m=1 r=6.25 a=4 p=11.6 mult=1 $X=15315 $Y=33645 $D=49
+M10 20 11 48 VSSD nhv L=0.8 W=5 m=1 r=6.25 a=4 p=11.6 mult=1 $X=15315 $Y=34725 $D=49
+M11 48 11 20 VSSD nhv L=0.8 W=5 m=1 r=6.25 a=4 p=11.6 mult=1 $X=15315 $Y=35805 $D=49
+M12 48 20 43 VSSD nhv L=0.8 W=5 m=1 r=6.25 a=4 p=11.6 mult=1 $X=15315 $Y=37540 $D=49
+M13 VSSD 12 37 VSSD nhv L=0.5 W=1 m=1 r=2 a=0.5 p=3 mult=1 $X=21425 $Y=21690 $D=49
+M14 37 12 VSSD VSSD nhv L=0.5 W=1 m=1 r=2 a=0.5 p=3 mult=1 $X=21425 $Y=22470 $D=49
+M15 VSSD 12 37 VSSD nhv L=0.5 W=1 m=1 r=2 a=0.5 p=3 mult=1 $X=21425 $Y=23250 $D=49
+M16 VSSD 26 49 VSSD nhv L=1 W=0.42 m=1 r=0.42 a=0.42 p=2.84 mult=1 $X=30440 $Y=14450 $D=49
+M17 26 29 VSSD VSSD nhv L=0.5 W=1 m=1 r=2 a=0.5 p=3 mult=1 $X=30720 $Y=12990 $D=49
+M18 4 17 46 VSSD nhvnative L=0.9 W=10 m=1 r=11.1111 a=9 p=21.8 mult=1 $X=21675 $Y=26745 $D=59
+M19 VSSD VSSD VSSD VSSD nhvnative L=0.9 W=10 m=1 r=11.1111 a=9 p=21.8 mult=1 $X=23490 $Y=26745 $D=59
+M20 36 11 20 VDDIO_Q phv L=0.5 W=5 m=1 r=10 a=2.5 p=11 mult=1 $X=6920 $Y=31460 $D=109
+M21 VDDIO_Q 12 37 VDDIO_Q phv L=0.5 W=3 m=1 r=6 a=1.5 p=7 mult=1 $X=7095 $Y=19975 $D=109
+M22 37 12 VDDIO_Q VDDIO_Q phv L=0.5 W=3 m=1 r=6 a=1.5 p=7 mult=1 $X=7095 $Y=20755 $D=109
+M23 VDDIO_Q 12 37 VDDIO_Q phv L=0.5 W=3 m=1 r=6 a=1.5 p=7 mult=1 $X=7095 $Y=21535 $D=109
+M24 VDDIO_Q 13 12 VDDIO_Q phv L=0.5 W=3 m=1 r=6 a=1.5 p=7 mult=1 $X=7095 $Y=22950 $D=109
+M25 26 29 VDDIO_Q VDDIO_Q phv L=0.5 W=3 m=1 r=6 a=1.5 p=7 mult=1 $X=26420 $Y=12990 $D=109
+M26 38 26 VDDIO_Q VDDIO_Q phv L=1 W=0.42 m=1 r=0.42 a=0.42 p=2.84 mult=1 $X=26705 $Y=14610 $D=109
+M27 10 28 2 2 phv L=0.5 W=5 m=1 r=10 a=2.5 p=11 mult=1 $X=27850 $Y=35625 $D=109
+M28 2 28 10 2 phv L=0.5 W=5 m=1 r=10 a=2.5 p=11 mult=1 $X=28630 $Y=35625 $D=109
+M29 10 28 2 2 phv L=0.5 W=5 m=1 r=10 a=2.5 p=11 mult=1 $X=29410 $Y=35625 $D=109
+M30 2 28 10 2 phv L=0.5 W=5 m=1 r=10 a=2.5 p=11 mult=1 $X=30190 $Y=35625 $D=109
+M31 VCCHIB ENABLE_VDDIO 19 VCCHIB phighvt L=0.15 W=1.12 m=1 r=7.46667 a=0.168 p=2.54 mult=1 $X=14990 $Y=40185 $D=89
+R32 30 7 L=713.695 W=0.4 m=1 $[mrp1] $X=3520 $Y=87005 $D=250
+R33 9 10 L=50 W=0.8 m=1 $[mrp1] $X=5800 $Y=45140 $D=250
+R34 2 21 L=50 W=0.8 m=1 $[mrp1] $X=13810 $Y=131810 $D=250
+X35 VSSD 42 Dpar a=156.97 p=1082.84 m=1 $[ndiode_h] $X=8720 $Y=183570 $D=176
+X36 VSSD 36 Dpar a=156.981 p=1082.92 m=1 $[ndiode_h] $X=8720 $Y=189310 $D=176
+X37 VSSD 2 Dpar a=735.037 p=170.75 m=1 $[nwdiode] $X=-330 $Y=130665 $D=185
+X38 VSSD 2 Dpar a=1473.41 p=184.25 m=1 $[nwdiode] $X=1735 $Y=102850 $D=185
+X39 VSSD VCCHIB Dpar a=15.5 p=17.4 m=1 $[nwdiode] $X=6050 $Y=39075 $D=185
+X40 VSSD 4 Dpar a=23.8226 p=21.54 m=1 $[nwdiode] $X=6220 $Y=9200 $D=185
+X41 VSSD 5 Dpar a=21.9076 p=21.04 m=1 $[nwdiode] $X=6220 $Y=14310 $D=185
+X42 VSSD VDDIO_Q Dpar a=96.7627 p=49.03 m=1 $[nwdiode] $X=6050 $Y=19410 $D=185
+X43 VSSD VDDIO_Q Dpar a=16.2631 p=16.27 m=1 $[nwdiode] $X=7655 $Y=3340 $D=185
+X44 VSSD VCCHIB Dpar a=4.2823 p=8.33 m=1 $[nwdiode] $X=14430 $Y=39555 $D=185
+X45 VSSD 2 Dpar a=36.4812 p=24.46 m=1 $[nwdiode] $X=26670 $Y=34430 $D=185
+X46 VSSD VDDIO_Q Dpar a=32.0172 p=25.17 m=1 $[nwdiode] $X=27040 $Y=17115 $D=185
+X47 VSSD VDDIO_Q Dpar a=40.2643 p=30.01 m=1 $[nwdiode] $X=20935 $Y=9430 $D=185
+X48 VSSD 2 Dpar a=15.7043 p=15.95 m=1 $[nwdiode] $X=29110 $Y=28450 $D=185
+X49 VSSD VDDIO_Q Dpar a=16.8897 p=16.63 m=1 $[nwdiode] $X=34550 $Y=610 $D=185
+R50 51 81 0.01 m=1 $[short] $X=11385 $Y=43760 $D=265
+R51 81 54 0.01 m=1 $[short] $X=11575 $Y=43760 $D=265
+R52 54 85 0.01 m=1 $[short] $X=18125 $Y=43760 $D=265
+R53 86 57 0.01 m=1 $[short] $X=18315 $Y=43760 $D=265
+R54 61 91 0.01 m=1 $[short] $X=45905 $Y=129760 $D=265
+R55 92 62 0.01 m=1 $[short] $X=47415 $Y=129760 $D=265
+X56 8 31 sky130_fd_io__tk_em2o_cdns_55959141808653 $T=44185 96810 1 90 $X=44185 $Y=96810
+X57 8 31 sky130_fd_io__tk_em2o_cdns_55959141808653 $T=45395 96810 1 90 $X=45395 $Y=96810
+X58 8 32 sky130_fd_io__tk_em2o_cdns_55959141808653 $T=52095 96810 1 90 $X=52095 $Y=96810
+X59 8 32 sky130_fd_io__tk_em2o_cdns_55959141808653 $T=54480 96810 1 90 $X=54480 $Y=96810
+X60 8 33 sky130_fd_io__tk_em2o_cdns_55959141808653 $T=59920 96455 1 90 $X=59920 $Y=96455
+X61 8 33 sky130_fd_io__tk_em2o_cdns_55959141808653 $T=61125 96455 1 90 $X=61125 $Y=96455
+X62 8 34 sky130_fd_io__tk_em2o_cdns_55959141808653 $T=65335 101140 1 90 $X=65335 $Y=101140
+X63 8 34 sky130_fd_io__tk_em2o_cdns_55959141808653 $T=67745 101140 1 90 $X=67745 $Y=101140
+X64 8 35 sky130_fd_io__tk_em2o_cdns_55959141808653 $T=70030 101140 1 90 $X=70030 $Y=101140
+X65 8 35 sky130_fd_io__tk_em2o_cdns_55959141808653 $T=71215 101140 1 90 $X=71215 $Y=101140
+X72 2 35 PAD sky130_fd_pr__pfet_01v8__example_55959141808657 $T=70335 107610 0 0 $X=69755 $Y=107280
+X73 2 35 PAD sky130_fd_pr__pfet_01v8__example_55959141808657 $T=70335 115610 0 0 $X=69755 $Y=115280
+X74 8 31 sky130_fd_io__tk_em2s_cdns_55959141808652 $T=46570 96810 1 90 $X=46570 $Y=96810
+X75 8 32 sky130_fd_io__tk_em2s_cdns_55959141808652 $T=53305 96810 1 90 $X=53305 $Y=96810
+X76 8 33 sky130_fd_io__tk_em2s_cdns_55959141808652 $T=58710 96455 1 90 $X=58710 $Y=96455
+X77 8 34 sky130_fd_io__tk_em2s_cdns_55959141808652 $T=66560 101140 1 90 $X=66560 $Y=101140
+X78 8 35 sky130_fd_io__tk_em2s_cdns_55959141808652 $T=68805 101140 1 90 $X=68805 $Y=101140
+X105 8 2 sky130_fd_pr__res_generic_po__example_5595914180838 $T=60050 98360 0 0 $X=59780 $Y=98360
+X106 53 PULLUP_H sky130_fd_pr__res_generic_po__example_5595914180864 $T=8510 43145 0 180 $X=6740 $Y=42345
+X107 55 53 sky130_fd_pr__res_generic_po__example_5595914180864 $T=11435 43145 0 180 $X=9665 $Y=42345
+X108 56 55 sky130_fd_pr__res_generic_po__example_5595914180864 $T=14215 42335 1 180 $X=12445 $Y=42335
+X109 51 56 sky130_fd_pr__res_generic_po__example_5595914180864 $T=17140 42335 1 180 $X=15370 $Y=42335
+X110 66 63 sky130_fd_pr__res_generic_po__example_5595914180864 $T=57830 133080 1 180 $X=56060 $Y=133080
+X111 64 65 sky130_fd_pr__res_generic_po__example_5595914180864 $T=56430 130495 1 0 $X=56160 $Y=129695
+X112 67 66 sky130_fd_pr__res_generic_po__example_5595914180864 $T=60755 133080 1 180 $X=58985 $Y=133080
+X113 65 67 sky130_fd_pr__res_generic_po__example_5595914180864 $T=59355 130495 1 0 $X=59085 $Y=129695
+X114 53 PULLUP_H sky130_fd_io__tk_em1s_cdns_5595914180859 $T=8820 43070 0 180 $X=6780 $Y=42410
+X115 55 53 sky130_fd_io__tk_em1s_cdns_5595914180859 $T=11620 43070 0 180 $X=9580 $Y=42410
+X116 56 55 sky130_fd_io__tk_em1s_cdns_5595914180859 $T=14565 42410 1 180 $X=12525 $Y=42410
+X117 51 56 sky130_fd_io__tk_em1s_cdns_5595914180859 $T=17470 42410 1 180 $X=15430 $Y=42410
+X118 62 64 sky130_fd_io__tk_em1s_cdns_5595914180859 $T=52355 130420 1 0 $X=52355 $Y=129760
+X119 66 63 sky130_fd_io__tk_em1s_cdns_5595914180859 $T=58180 133155 1 180 $X=56140 $Y=133155
+X120 64 65 sky130_fd_io__tk_em1s_cdns_5595914180859 $T=56245 130420 1 0 $X=56245 $Y=129760
+X121 65 67 sky130_fd_io__tk_em1s_cdns_5595914180859 $T=59045 130420 1 0 $X=59045 $Y=129760
+X122 67 66 sky130_fd_io__tk_em1s_cdns_5595914180859 $T=61085 133155 1 180 $X=59045 $Y=133155
+X123 PAD PAD_A_ESD_H sky130_fd_io__res250only_small $T=5710 1135 0 0 $X=5710 $Y=1135
+X124 TIE_WEAK_HI_H 63 sky130_fd_io__res250only_small $T=66435 137450 0 180 $X=55085 $Y=135430
+X125 54 51 sky130_fd_pr__res_bent_po__example_5595914180862 $T=11875 43685 1 180 $X=5605 $Y=43685
+X126 57 54 sky130_fd_pr__res_bent_po__example_5595914180862 $T=18585 43685 1 180 $X=12315 $Y=43685
+X127 62 61 sky130_fd_pr__res_bent_po__example_5595914180862 $T=49010 130505 0 180 $X=42740 $Y=129705
+X128 64 62 sky130_fd_pr__res_bent_po__example_5595914180862 $T=55720 130505 0 180 $X=49450 $Y=129705
+X129 57 9 sky130_fd_pr__res_bent_po__example_5595914180863 $T=19445 44485 1 0 $X=19175 $Y=43685
+X130 61 21 sky130_fd_pr__res_bent_po__example_5595914180863 $T=52600 133880 0 180 $X=40330 $Y=133080
+X131 VSSD VDDIO_Q 60 XRES_H_N sky130_fd_io__hvsbt_inv_x4 $T=32660 25065 1 270 $X=27080 $Y=20500
+X132 VSSD VDDIO_Q 60 XRES_H_N sky130_fd_io__hvsbt_inv_x4 $T=34760 6190 1 0 $X=34550 $Y=610
+X133 VSSD VDDIO_Q 69 27 70 71 72 73 74 75 76 77 78 84 sky130_fd_io__xres2v2_rcfilter_lpfv2 $T=73595 4860 0 90 $X=33055 $Y=6020
+X139 VSSD 27 VSSD 49 sky130_fd_pr__nfet_01v8__example_55959141808723 $T=31720 9780 0 90 $X=30540 $Y=9320
+X140 VSSD 27 49 29 sky130_fd_pr__nfet_01v8__example_55959141808723 $T=31720 11060 0 90 $X=30540 $Y=10600
+X148 VSSD VDDIO_Q 40 17 sky130_fd_io__hvsbt_inv_x1 $T=10250 8920 1 0 $X=10020 $Y=3340
+X149 VSSD VDDIO_Q 26 60 sky130_fd_io__hvsbt_inv_x1 $T=32660 24155 0 90 $X=27080 $Y=23925
+X150 VSSD 2 59 28 sky130_fd_io__hvsbt_inv_x2 $T=27035 31120 0 270 $X=27035 $Y=28450
+X151 VSSD 2 DISABLE_PULLUP_H 59 sky130_fd_io__hvsbt_inv_x2 $T=27035 32880 0 270 $X=27035 $Y=30210
+X152 VSSD VDDIO_Q INP_SEL_H 23 sky130_fd_io__hvsbt_inv_x2 $T=32660 19785 1 270 $X=27080 $Y=17115
+X153 VSSD VDDIO_Q EN_VDDIO_SIG_H 15 sky130_fd_io__hvsbt_inv_x2 $T=32660 21545 1 270 $X=27080 $Y=18875
+X160 VDDIO_Q 27 VDDIO_Q 38 sky130_fd_pr__pfet_01v8__example_55959141808720 $T=26420 9780 1 90 $X=26090 $Y=9170
+X161 VDDIO_Q 27 38 29 sky130_fd_pr__pfet_01v8__example_55959141808720 $T=26420 11060 1 90 $X=26090 $Y=10450
+X165 VDDIO_Q INP_SEL_H 37 84 sky130_fd_pr__pfet_01v8__example_55959141808767 $T=21265 10040 1 90 $X=20935 $Y=9430
+X166 VDDIO_Q 23 84 FILT_IN_H sky130_fd_pr__pfet_01v8__example_55959141808767 $T=21265 11470 1 90 $X=20935 $Y=10860
+X167 VSSIO TIE_LO_ESD sky130_fd_io__tk_tie_r_out_esd $T=17060 2635 0 0 $X=17450 $Y=3730
+X168 VDDIO TIE_HI_ESD sky130_fd_io__tk_tie_r_out_esd $T=17060 3875 0 0 $X=17450 $Y=4970
+X169 VSSD 23 37 84 sky130_fd_pr__nfet_01v8__example_55959141808764 $T=20005 10040 0 90 $X=16825 $Y=9580
+X170 VSSD INP_SEL_H 84 FILT_IN_H sky130_fd_pr__nfet_01v8__example_55959141808764 $T=20005 11470 0 90 $X=16825 $Y=11010
+X171 VSSD 11 50 44 sky130_fd_pr__nfet_01v8__example_55959141808779 $T=13635 35115 1 90 $X=13455 $Y=34655
+X172 VSSD 17 45 5 sky130_fd_pr__nfet_01v8__example_55959141808779 $T=16525 17790 1 270 $X=15345 $Y=16430
+X173 VSSD 13 12 sky130_fd_pr__nfet_01v8__example_55959141808777 $T=18315 20005 1 270 $X=15135 $Y=19045
+X174 VSSD 20 22 sky130_fd_pr__nfet_01v8__example_55959141808777 $T=18390 25165 1 270 $X=15210 $Y=24205
+X175 VSSD ENABLE_H 41 sky130_fd_pr__nfet_01v8__example_55959141808777 $T=18390 26580 1 270 $X=15210 $Y=25620
+X189 VSSD 22 14 sky130_fd_pr__nfet_01v8__example_55959141808778 $T=20285 22190 1 270 $X=15105 $Y=20465
+X190 VSSD 20 13 sky130_fd_pr__nfet_01v8__example_55959141808778 $T=20285 23750 1 270 $X=15105 $Y=22025
+X191 4 4 4 sky130_fd_pr__pfet_01v8__example_55959141808784 $T=8380 11155 1 270 $X=7050 $Y=9745
+X192 4 11 20 sky130_fd_pr__pfet_01v8__example_55959141808784 $T=10910 10355 0 90 $X=9580 $Y=9745
+X193 VDDIO_Q 15 VDDIO_Q 40 sky130_fd_pr__pfet_01v8__example_559591418085 $T=8460 5170 1 0 $X=7865 $Y=3840
+X194 VDDIO_Q 15 VDDIO_Q 40 sky130_fd_pr__pfet_01v8__example_559591418085 $T=8460 5510 0 0 $X=7865 $Y=5180
+X195 VDDIO_Q ENABLE_H 40 VDDIO_Q sky130_fd_pr__pfet_01v8__example_559591418085 $T=9340 5170 1 0 $X=8745 $Y=3840
+X196 VDDIO_Q ENABLE_H 40 VDDIO_Q sky130_fd_pr__pfet_01v8__example_559591418085 $T=9340 5510 0 0 $X=8745 $Y=5180
+X197 VDDIO_Q 13 14 sky130_fd_pr__pfet_01v8__example_55959141808783 $T=7410 24900 0 270 $X=7080 $Y=23790
+X198 VDDIO_Q 14 13 sky130_fd_pr__pfet_01v8__example_55959141808783 $T=7410 25180 1 90 $X=7080 $Y=24585
+X201 VDDIO_Q ENABLE_H 41 sky130_fd_pr__pfet_01v8__example_55959141808786 $T=11920 30160 1 270 $X=6590 $Y=29050
+X202 VDDIO_Q 17 42 sky130_fd_pr__pfet_01v8__example_55959141808786 $T=11920 32875 0 90 $X=6590 $Y=32280
+X203 VDDIO_Q 15 43 sky130_fd_pr__pfet_01v8__example_55959141808786 $T=11920 35615 1 270 $X=6590 $Y=34505
+X204 VDDIO_Q EN_VDDIO_SIG_H 44 sky130_fd_pr__pfet_01v8__example_55959141808786 $T=11920 35895 0 90 $X=6590 $Y=35300
+X205 VCCHIB 19 45 sky130_fd_pr__pfet_01v8__example_55959141808786 $T=11920 40185 1 270 $X=6590 $Y=39075
+X206 VCCHIB 19 46 sky130_fd_pr__pfet_01v8__example_55959141808786 $T=11920 40465 0 90 $X=6590 $Y=39870
+X207 VDDIO_Q 17 7 sky130_fd_pr__pfet_01v8__example_55959141808786 $T=12095 28695 1 270 $X=6765 $Y=27585
+X208 VDDIO_Q 15 42 36 sky130_fd_pr__pfet_01v8__example_55959141808787 $T=11920 33655 0 90 $X=6590 $Y=33045
+X209 5 20 22 5 sky130_fd_pr__pfet_01v8__example_55959141808787 $T=7095 15515 1 90 $X=6765 $Y=14905
+X210 VDDIO_Q 20 30 22 sky130_fd_pr__pfet_01v8__example_55959141808787 $T=12095 27135 1 270 $X=6765 $Y=26025
+X211 VDDIO_Q 15 7 30 sky130_fd_pr__pfet_01v8__example_55959141808787 $T=12095 27915 1 270 $X=6765 $Y=26805
+X212 VSSD 2 VSSD 11 PAD sky130_fd_io__gpio_buf_localesdv2 $T=4630 70965 1 0 $X=4923 $Y=47395
+X213 2 8 31 32 33 34 35 PAD sky130_fd_pr__pfet_01v8__example_55959141808658 $T=4065 112610 1 0 $X=3485 $Y=107280
+X214 2 8 31 32 33 34 35 PAD sky130_fd_pr__pfet_01v8__example_55959141808658 $T=4065 115610 0 0 $X=3485 $Y=115280
+X215 VSSD 94 79 2 94 94 80 PAD sky130_fd_io__gpio_pddrvr_strong_xres4v2 $T=0 184810 1 0 $X=-515 $Y=137270
+*.CALIBRE WARNING OPEN Open circuit(s) detected by extraction in this cell. See extraction report for details.
+.ENDS
+***************************************

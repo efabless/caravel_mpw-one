@@ -1,7 +1,7 @@
 ***  
 * Most models come from here:
 
-.lib ../../../../../../../pdks/sky130A-xyce/libs.tech/xyce/sky130.lib.spice tt
+.lib ../../../../sky130A-xyce/libs.tech/xyce/sky130.lib.spice tt
 
 .include ./sky130_fd_io__condiode.spice
 .include ./sky130_fd_pr__model__parasitic__diode_ps2nw.spice 
@@ -16,8 +16,9 @@
 
 ***************************************
 
-*.include   ./sky130_ef_io__gpiov2_pad_wrapped.extracted.spice-calibre-202103-hs2ng
-.include  ./sky130_ef_io__gpiov2_pad_wrapped-extracted.spice-calibre-202107-hs2ng
+*.include    	./calibre2xyce/sky130_ef_io__gpiov2_pad_wrapped.extracted.spice-calibre-202103-hs2ng
+*.include  	./calibre2xyce/sky130_ef_io__gpiov2_pad_wrapped-extracted.spice-calibre-202107-hs2ng 	
+.include 	./calibre2xyce/sky130_ef_io__gpiov2_pad_wrapped-extracted.xyce
 
 *** no space before the .include
 *** removed subckts without any ports

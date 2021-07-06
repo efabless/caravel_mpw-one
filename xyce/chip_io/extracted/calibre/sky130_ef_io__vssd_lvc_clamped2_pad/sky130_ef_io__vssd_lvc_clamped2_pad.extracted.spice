@@ -1,0 +1,830 @@
+* SPICE NETLIST
+***************************************
+
+.SUBCKT MN g s d b
+.ENDS
+***************************************
+.SUBCKT MP g s d b
+.ENDS
+***************************************
+.SUBCKT condiode pin0 pin1
+.ENDS
+***************************************
+.SUBCKT condiodeHvPsub pin0 pin1
+.ENDS
+***************************************
+.SUBCKT nvhv pin0 pin1 pin2 pin3
+.ENDS
+***************************************
+.SUBCKT n20vhv1 pin0 pin1 pin2 pin3
+.ENDS
+***************************************
+.SUBCKT n20nativevhv1 pin0 pin1 pin2 pin3
+.ENDS
+***************************************
+.SUBCKT n20vhviso1 pin0 pin1 pin2 pin3 pin4
+.ENDS
+***************************************
+.SUBCKT n20nativevhviso1 pin0 pin1 pin2 pin3 pin4
+.ENDS
+***************************************
+.SUBCKT pvhv pin0 pin1 pin2 pin3
+.ENDS
+***************************************
+.SUBCKT p20vhv1 pin0 pin1 pin2 pin3
+.ENDS
+***************************************
+.SUBCKT xcnwvc pin0 pin1 pin2
+.ENDS
+***************************************
+.SUBCKT xcnwvc2 pin0 pin1 pin2
+.ENDS
+***************************************
+.SUBCKT xchvnwc pin0 pin1 pin2
+.ENDS
+***************************************
+.SUBCKT Dpar d0 d1
+.ENDS
+***************************************
+.SUBCKT xcmvpp pin0 pin1 pin2
+.ENDS
+***************************************
+.SUBCKT xcmvpp_2 pin0 pin1 pin2
+.ENDS
+***************************************
+.SUBCKT xcmvpp2_nhvnative10x4 pin0 pin1 pin2
+.ENDS
+***************************************
+.SUBCKT xcmvpp2_phv5x4 pin0 pin1 pin2
+.ENDS
+***************************************
+.SUBCKT xcmvpp_hd5_atlas_fingercap2_l5 pin0 pin1 pin2
+.ENDS
+***************************************
+.SUBCKT xcmvpp_hd5_atlas_wafflecap2 pin0 pin1 pin2
+.ENDS
+***************************************
+.SUBCKT xcmvpp_hd5_atlas_wafflecap1 pin0 pin1 pin2
+.ENDS
+***************************************
+.SUBCKT xcmvpp_hd5_atlas_fingercap_l40 pin0 pin1 pin2
+.ENDS
+***************************************
+.SUBCKT xcmvpp_hd5_atlas_fingercap_l20 pin0 pin1 pin2
+.ENDS
+***************************************
+.SUBCKT xcmvpp_hd5_atlas_fingercap_l10 pin0 pin1 pin2
+.ENDS
+***************************************
+.SUBCKT xcmvpp_hd5_atlas_fingercap_l5 pin0 pin1 pin2
+.ENDS
+***************************************
+.SUBCKT xcmvpp_hd5_5x2_met5pullin pin0 pin1 pin2
+.ENDS
+***************************************
+.SUBCKT xcmvpp_hd5_5x2 pin0 pin1 pin2
+.ENDS
+***************************************
+.SUBCKT xcmvpp_hd5_5x1_met5pullin pin0 pin1 pin2
+.ENDS
+***************************************
+.SUBCKT xcmvpp_hd5_5x1 pin0 pin1 pin2
+.ENDS
+***************************************
+.SUBCKT xcmvpp_hd5_4x2 pin0 pin1 pin2
+.ENDS
+***************************************
+.SUBCKT xcmvpp_hd5_4x1 pin0 pin1 pin2
+.ENDS
+***************************************
+.SUBCKT xcmvpp_hd5_3x2 pin0 pin1 pin2
+.ENDS
+***************************************
+.SUBCKT xcmvpp_hd5_3x1 pin0 pin1 pin2
+.ENDS
+***************************************
+.SUBCKT xcmvpp_hd5_2x2 pin0 pin1 pin2
+.ENDS
+***************************************
+.SUBCKT xcmvpp_hd5_2x1 pin0 pin1 pin2
+.ENDS
+***************************************
+.SUBCKT xcmvpp_hd5_1x2 pin0 pin1 pin2
+.ENDS
+***************************************
+.SUBCKT xcmvpp_hd5_1x1 pin0 pin1 pin2
+.ENDS
+***************************************
+.SUBCKT xcmvppx4_2xnhvnative10x4 pin0 pin1 pin2 pin3
+.ENDS
+***************************************
+.SUBCKT xcmvpp11p5x11p7_polym50p4shield pin0 pin1 pin2 pin3
+.ENDS
+***************************************
+.SUBCKT xcmvpp4p4x4p6_m3_lim5shield pin0 pin1 pin2 pin3
+.ENDS
+***************************************
+.SUBCKT xcmvpp11p5x11p7_m3_lim5shield pin0 pin1 pin2 pin3
+.ENDS
+***************************************
+.SUBCKT xcmvpp8p6x7p9_m3_lim5shield pin0 pin1 pin2 pin3
+.ENDS
+***************************************
+.SUBCKT xcmvpp11p5x11p7_lim5shield pin0 pin1 pin2 pin3
+.ENDS
+***************************************
+.SUBCKT xcmvpp11p5x11p7_polym5shield pin0 pin1 pin2 pin3
+.ENDS
+***************************************
+.SUBCKT xcmvpp11p5x11p7_m5shield pin0 pin1 pin2 pin3
+.ENDS
+***************************************
+.SUBCKT xcmvpp6p8x6p1_lim4shield pin0 pin1 pin2 pin3
+.ENDS
+***************************************
+.SUBCKT xcmvpp6p8x6p1_polym4shield pin0 pin1 pin2 pin3
+.ENDS
+***************************************
+.SUBCKT xcmvpp11p5x11p7_polym4shield pin0 pin1 pin2 pin3
+.ENDS
+***************************************
+.SUBCKT xcmvpp11p5x11p7_m4shield pin0 pin1 pin2 pin3
+.ENDS
+***************************************
+.SUBCKT xcmvpp1p8x1p8 pin0 pin1 pin2
+.ENDS
+***************************************
+.SUBCKT xcmvpp4p4x4p6_m3_lishield pin0 pin1 pin2
+.ENDS
+***************************************
+.SUBCKT xcmvpp8p6x7p9_m3_lishield pin0 pin1 pin2
+.ENDS
+***************************************
+.SUBCKT xcmvpp11p5x11p7_m3_lishield pin0 pin1 pin2
+.ENDS
+***************************************
+.SUBCKT xcmvpp11p5x11p7_m3shield c0 c1 b term4
+.ENDS
+***************************************
+.SUBCKT xcmvpp8p6x7p9_m3shield c0 c1 b term4
+.ENDS
+***************************************
+.SUBCKT xcmvpp4p4x4p6_m3shield c0 c1 b term4
+.ENDS
+***************************************
+.SUBCKT xcmvpp1p8x1p8_m3shield c0 c1 b term4
+.ENDS
+***************************************
+.SUBCKT xcmvpp11p5x11p7_m1m4m5shield pin0 pin1 pin2 pin3
+.ENDS
+***************************************
+.SUBCKT xcmvpp11p5x11p7_m1m4 pin0 pin1 pin2
+.ENDS
+***************************************
+.SUBCKT xcmvpp11p5x11p7_m1m2 pin0 pin1 pin2
+.ENDS
+***************************************
+.SUBCKT xcmvpp4p4x4p6_m1m2 pin0 pin1 pin2
+.ENDS
+***************************************
+.SUBCKT xcmvpp5 pin0 pin1 pin2
+.ENDS
+***************************************
+.SUBCKT xcmvpp4 pin0 pin1 pin2
+.ENDS
+***************************************
+.SUBCKT xcmvpp3 pin0 pin1 pin2
+.ENDS
+***************************************
+.SUBCKT balun pin0 pin1 pin2 pin3 pin4 pin5
+.ENDS
+***************************************
+.SUBCKT ind4 pin0 pin1 pin2 pin3
+.ENDS
+***************************************
+.SUBCKT xhrpoly_0p35 POS NEG SUB
+.ENDS
+***************************************
+.SUBCKT xuhrpoly_0p35 POS NEG SUB
+.ENDS
+***************************************
+.SUBCKT xhrpoly_0p69 POS NEG SUB
+.ENDS
+***************************************
+.SUBCKT xuhrpoly_0p69 POS NEG SUB
+.ENDS
+***************************************
+.SUBCKT xhrpoly_1p41 POS NEG SUB
+.ENDS
+***************************************
+.SUBCKT xuhrpoly_1p41 POS NEG SUB
+.ENDS
+***************************************
+.SUBCKT xhrpoly_2p85 POS NEG SUB
+.ENDS
+***************************************
+.SUBCKT xuhrpoly_2p85 POS NEG SUB
+.ENDS
+***************************************
+.SUBCKT xhrpoly_5p73 POS NEG SUB
+.ENDS
+***************************************
+.SUBCKT xuhrpoly_5p73 POS NEG SUB
+.ENDS
+***************************************
+.SUBCKT Probe probe conductor
+.ENDS
+***************************************
+.SUBCKT sky130_fd_pr__dfl1sd2__example_55959141808666
+** N=23 EP=0 IP=0 FDC=0
+*.SEEDPROM
+.ENDS
+***************************************
+.SUBCKT sky130_fd_pr__pfet_01v8__example_55959141808687 2 3 4
+** N=54 EP=3 IP=33 FDC=10
+*.SEEDPROM
+M0 4 3 2 2 pshort L=0.18 W=7 AD=0.98 AS=1.96 PD=7.28 PS=14.56 NRD=0 NRS=0 m=1 r=38.8889 sa=90000.2 sb=90004.3 a=1.26 p=14.36 mult=1 $X=0 $Y=0 $D=79
+M1 2 3 4 2 pshort L=0.18 W=7 AD=0.98 AS=0.98 PD=7.28 PS=7.28 NRD=0 NRS=0 m=1 r=38.8889 sa=90000.7 sb=90003.9 a=1.26 p=14.36 mult=1 $X=460 $Y=0 $D=79
+M2 4 3 2 2 pshort L=0.18 W=7 AD=0.98 AS=0.98 PD=7.28 PS=7.28 NRD=0 NRS=0 m=1 r=38.8889 sa=90001.1 sb=90003.4 a=1.26 p=14.36 mult=1 $X=920 $Y=0 $D=79
+M3 2 3 4 2 pshort L=0.18 W=7 AD=0.98 AS=0.98 PD=7.28 PS=7.28 NRD=0 NRS=0 m=1 r=38.8889 sa=90001.6 sb=90002.9 a=1.26 p=14.36 mult=1 $X=1380 $Y=0 $D=79
+M4 4 3 2 2 pshort L=0.18 W=7 AD=0.98 AS=0.98 PD=7.28 PS=7.28 NRD=0 NRS=0 m=1 r=38.8889 sa=90002 sb=90002.5 a=1.26 p=14.36 mult=1 $X=1840 $Y=0 $D=79
+M5 2 3 4 2 pshort L=0.18 W=7 AD=0.98 AS=0.98 PD=7.28 PS=7.28 NRD=0 NRS=0 m=1 r=38.8889 sa=90002.5 sb=90002 a=1.26 p=14.36 mult=1 $X=2300 $Y=0 $D=79
+M6 4 3 2 2 pshort L=0.18 W=7 AD=0.98 AS=0.98 PD=7.28 PS=7.28 NRD=0 NRS=0 m=1 r=38.8889 sa=90002.9 sb=90001.6 a=1.26 p=14.36 mult=1 $X=2760 $Y=0 $D=79
+M7 2 3 4 2 pshort L=0.18 W=7 AD=0.98 AS=0.98 PD=7.28 PS=7.28 NRD=0 NRS=0 m=1 r=38.8889 sa=90003.4 sb=90001.1 a=1.26 p=14.36 mult=1 $X=3220 $Y=0 $D=79
+M8 4 3 2 2 pshort L=0.18 W=7 AD=0.98 AS=0.98 PD=7.28 PS=7.28 NRD=0 NRS=0 m=1 r=38.8889 sa=90003.9 sb=90000.7 a=1.26 p=14.36 mult=1 $X=3680 $Y=0 $D=79
+M9 2 3 4 2 pshort L=0.18 W=7 AD=1.96 AS=0.98 PD=14.56 PS=7.28 NRD=0 NRS=0 m=1 r=38.8889 sa=90004.3 sb=90000.2 a=1.26 p=14.36 mult=1 $X=4140 $Y=0 $D=79
+.ENDS
+***************************************
+.SUBCKT sky130_fd_pr__hvdfl1sd__example_5595914180851
+** N=16 EP=0 IP=0 FDC=0
+*.SEEDPROM
+.ENDS
+***************************************
+.SUBCKT sky130_fd_pr__dftpl1s2__example_55959141808702
+** N=63 EP=0 IP=0 FDC=0
+*.SEEDPROM
+.ENDS
+***************************************
+.SUBCKT sky130_fd_pr__dftpl1s2__example_55959141808694
+** N=45 EP=0 IP=0 FDC=0
+*.SEEDPROM
+.ENDS
+***************************************
+.SUBCKT sky130_fd_pr__dfl1__example_55959141808682
+** N=24 EP=0 IP=0 FDC=0
+*.SEEDPROM
+.ENDS
+***************************************
+.SUBCKT ICV_1
+** N=4 EP=0 IP=8 FDC=0
+*.SEEDPROM
+.ENDS
+***************************************
+.SUBCKT sky130_fd_pr__dfl1__example_55959141808681
+** N=19 EP=0 IP=0 FDC=0
+*.SEEDPROM
+.ENDS
+***************************************
+.SUBCKT ICV_2
+** N=5 EP=0 IP=10 FDC=0
+*.SEEDPROM
+.ENDS
+***************************************
+.SUBCKT sky130_fd_pr__hvdfl1sd2__example_55959141808378
+** N=16 EP=0 IP=0 FDC=0
+*.SEEDPROM
+.ENDS
+***************************************
+.SUBCKT sky130_fd_pr__tpl1__example_55959141808685
+** N=48 EP=0 IP=0 FDC=0
+.ENDS
+***************************************
+.SUBCKT sky130_fd_pr__tpl1__example_55959141808686
+** N=57 EP=0 IP=0 FDC=0
+.ENDS
+***************************************
+.SUBCKT sky130_fd_io__gnd2gnd_tap
+** N=174 EP=0 IP=0 FDC=0
+.ENDS
+***************************************
+.SUBCKT sky130_fd_io__gnd2gnd_diff
+** N=174 EP=0 IP=0 FDC=0
+.ENDS
+***************************************
+.SUBCKT sky130_fd_io__gnd2gnd_sub_dnwl 1 2
+** N=3 EP=2 IP=22 FDC=1
+X0 1 2 Dpar a=283.052 p=67.56 m=1 $[nwdiode] $X=900 $Y=900 $D=191
+.ENDS
+***************************************
+.SUBCKT sky130_fd_pr__hvdfl1sd__example_55959141808700
+** N=24 EP=0 IP=0 FDC=0
+*.SEEDPROM
+.ENDS
+***************************************
+.SUBCKT sky130_fd_pr__hvdfl1sd2__example_55959141808559
+** N=25 EP=0 IP=0 FDC=0
+*.SEEDPROM
+.ENDS
+***************************************
+.SUBCKT sky130_fd_pr__nfet_01v8__example_55959141808699
+** N=70 EP=0 IP=68 FDC=0
+*.SEEDPROM
+.ENDS
+***************************************
+.SUBCKT sky130_fd_pr__dfl1sd2__example_55959141808679
+** N=26 EP=0 IP=0 FDC=0
+*.SEEDPROM
+.ENDS
+***************************************
+.SUBCKT sky130_fd_pr__nfet_01v8__example_55959141808696
+** N=48 EP=0 IP=52 FDC=0
+*.SEEDPROM
+.ENDS
+***************************************
+.SUBCKT sky130_fd_pr__nfet_01v8__example_55959141808701 2
+** N=41 EP=1 IP=57 FDC=2
+*.SEEDPROM
+X0 2 2 Dpar a=2.1 p=14.6 m=1 $[ndiode] $X=-1200 $Y=0 $D=181
+X1 2 2 Dpar a=2.1 p=14.6 m=1 $[ndiode] $X=49360 $Y=0 $D=181
+.ENDS
+***************************************
+.SUBCKT sky130_fd_pr__nfet_01v8__example_55959141808703 2
+** N=30 EP=1 IP=39 FDC=2
+*.SEEDPROM
+X0 2 2 Dpar a=2.1 p=14.6 m=1 $[ndiode] $X=-1825 $Y=0 $D=181
+X1 2 2 Dpar a=2.1 p=14.6 m=1 $[ndiode] $X=49035 $Y=0 $D=181
+.ENDS
+***************************************
+.SUBCKT sky130_fd_pr__nfet_01v8__example_55959141808705 2
+** N=46 EP=1 IP=60 FDC=2
+*.SEEDPROM
+X0 2 2 Dpar a=2.1 p=14.6 m=1 $[ndiode] $X=-1200 $Y=0 $D=181
+X1 2 2 Dpar a=2.1 p=14.6 m=1 $[ndiode] $X=52130 $Y=0 $D=181
+.ENDS
+***************************************
+.SUBCKT sky130_fd_pr__nfet_01v8__example_55959141808693 1
+** N=42 EP=1 IP=60 FDC=2
+*.SEEDPROM
+X0 1 1 Dpar a=1.5 p=10.6 m=1 $[ndiode] $X=-1200 $Y=0 $D=181
+X1 1 1 Dpar a=1.5 p=10.6 m=1 $[ndiode] $X=52130 $Y=0 $D=181
+.ENDS
+***************************************
+.SUBCKT sky130_ef_io__vssd_lvc_clamped2_pad VSSD VSSIO VCCD VDDIO VSSA VCCHIB VDDA VSWITCH AMUXBUS_B AMUXBUS_A VSSIO_Q VDDIO_Q
+** N=12830 EP=12 IP=1370 FDC=501
+M0 VCCD 11 VSSD VSSD nshort L=0.18 W=7 AD=3.535 AS=3.5 PD=8.01 PS=15 NRD=3.336 NRS=3.42 m=1 r=38.8889 sa=90001.1 sb=90019.9 a=1.26 p=14.36 mult=1 $X=14360 $Y=26825 $D=9
+M1 VCCD 11 VSSD VSSD nshort L=0.18 W=7 AD=3.535 AS=3.5 PD=8.01 PS=15 NRD=3.336 NRS=3.42 m=1 r=38.8889 sa=90001.1 sb=90019.9 a=1.26 p=14.36 mult=1 $X=14360 $Y=36825 $D=9
+M2 VCCD 11 VSSD VSSD nshort L=0.18 W=7 AD=3.535 AS=3.5 PD=8.01 PS=15 NRD=3.336 NRS=3.42 m=1 r=38.8889 sa=90001.1 sb=90019.9 a=1.26 p=14.36 mult=1 $X=14360 $Y=46825 $D=9
+M3 VCCD 11 VSSD VSSD nshort L=0.18 W=7 AD=3.535 AS=3.5 PD=8.01 PS=15 NRD=3.336 NRS=3.42 m=1 r=38.8889 sa=90001.1 sb=90019.9 a=1.26 p=14.36 mult=1 $X=14360 $Y=56825 $D=9
+M4 VCCD 11 VSSD VSSD nshort L=0.18 W=5 AD=2.525 AS=2.5 PD=6.01 PS=11 NRD=4.68 NRS=4.8 m=1 r=27.7778 sa=90001.1 sb=90019.9 a=0.9 p=10.36 mult=1 $X=14360 $Y=66825 $D=9
+M5 VCCD 7 VSSIO VSSIO nshort L=0.18 W=7 AD=3.535 AS=3.5 PD=8.01 PS=15 NRD=3.336 NRS=3.42 m=1 r=38.8889 sa=90001.1 sb=90019.9 a=1.26 p=14.36 mult=1 $X=14360 $Y=186825 $D=9
+M6 VSSD 11 VCCD VSSD nshort L=0.18 W=7 AD=3.5 AS=3.535 PD=15 PS=8.01 NRD=3.42 NRS=3.336 m=1 r=38.8889 sa=90002.3 sb=90019.9 a=1.26 p=14.36 mult=1 $X=15550 $Y=26825 $D=9
+M7 VSSD 11 VCCD VSSD nshort L=0.18 W=7 AD=3.5 AS=3.535 PD=15 PS=8.01 NRD=3.42 NRS=3.336 m=1 r=38.8889 sa=90002.3 sb=90019.9 a=1.26 p=14.36 mult=1 $X=15550 $Y=36825 $D=9
+M8 VSSD 11 VCCD VSSD nshort L=0.18 W=7 AD=3.5 AS=3.535 PD=15 PS=8.01 NRD=3.42 NRS=3.336 m=1 r=38.8889 sa=90002.3 sb=90019.9 a=1.26 p=14.36 mult=1 $X=15550 $Y=46825 $D=9
+M9 VSSD 11 VCCD VSSD nshort L=0.18 W=7 AD=3.5 AS=3.535 PD=15 PS=8.01 NRD=3.42 NRS=3.336 m=1 r=38.8889 sa=90002.3 sb=90019.9 a=1.26 p=14.36 mult=1 $X=15550 $Y=56825 $D=9
+M10 VSSD 11 VCCD VSSD nshort L=0.18 W=5 AD=2.5 AS=2.525 PD=11 PS=6.01 NRD=4.8 NRS=4.68 m=1 r=27.7778 sa=90002.3 sb=90019.9 a=0.9 p=10.36 mult=1 $X=15550 $Y=66825 $D=9
+M11 VSSIO 7 VCCD VSSIO nshort L=0.18 W=7 AD=3.5 AS=3.535 PD=15 PS=8.01 NRD=3.42 NRS=3.336 m=1 r=38.8889 sa=90002.3 sb=90019.9 a=1.26 p=14.36 mult=1 $X=15550 $Y=186825 $D=9
+M12 VSSD 9 VSSD VSSD nshort L=4 W=5 AD=0.7 AS=1.325 PD=5.28 PS=10.53 NRD=0 NRS=0 m=1 r=1.25 sa=2e+06 sb=2.00002e+06 a=20 p=18 mult=1 $X=12975 $Y=75770 $D=9
+M13 VCCD 11 VSSD VSSD nshort L=0.18 W=7 AD=3.535 AS=3.5 PD=8.01 PS=15 NRD=3.336 NRS=3.42 m=1 r=38.8889 sa=90003.9 sb=90019.9 a=1.26 p=14.36 mult=1 $X=17130 $Y=26825 $D=9
+M14 VCCD 11 VSSD VSSD nshort L=0.18 W=7 AD=3.535 AS=3.5 PD=8.01 PS=15 NRD=3.336 NRS=3.42 m=1 r=38.8889 sa=90003.9 sb=90019.9 a=1.26 p=14.36 mult=1 $X=17130 $Y=36825 $D=9
+M15 VCCD 11 VSSD VSSD nshort L=0.18 W=7 AD=3.535 AS=3.5 PD=8.01 PS=15 NRD=3.336 NRS=3.42 m=1 r=38.8889 sa=90003.9 sb=90019.9 a=1.26 p=14.36 mult=1 $X=17130 $Y=46825 $D=9
+M16 VCCD 11 VSSD VSSD nshort L=0.18 W=7 AD=3.535 AS=3.5 PD=8.01 PS=15 NRD=3.336 NRS=3.42 m=1 r=38.8889 sa=90003.9 sb=90019.9 a=1.26 p=14.36 mult=1 $X=17130 $Y=56825 $D=9
+M17 VCCD 11 VSSD VSSD nshort L=0.18 W=5 AD=2.525 AS=2.5 PD=6.01 PS=11 NRD=4.68 NRS=4.8 m=1 r=27.7778 sa=90003.9 sb=90019.9 a=0.9 p=10.36 mult=1 $X=17130 $Y=66825 $D=9
+M18 VCCD 7 VSSIO VSSIO nshort L=0.18 W=7 AD=3.535 AS=3.5 PD=8.01 PS=15 NRD=3.336 NRS=3.42 m=1 r=38.8889 sa=90001.1 sb=90019.9 a=1.26 p=14.36 mult=1 $X=17130 $Y=176825 $D=9
+M19 VCCD 7 VSSIO VSSIO nshort L=0.18 W=7 AD=3.535 AS=3.5 PD=8.01 PS=15 NRD=3.336 NRS=3.42 m=1 r=38.8889 sa=90003.9 sb=90019.9 a=1.26 p=14.36 mult=1 $X=17130 $Y=186825 $D=9
+M20 VCCD 7 VSSIO VSSIO nshort L=0.18 W=7 AD=4.095 AS=7.875 PD=8.17 PS=16.25 NRD=4.704 NRS=14.136 m=1 r=38.8889 sa=90001.7 sb=90019.9 a=1.26 p=14.36 mult=1 $X=17455 $Y=146825 $D=9
+M21 VCCD 7 VSSIO VSSIO nshort L=0.18 W=7 AD=4.095 AS=7.875 PD=8.17 PS=16.25 NRD=4.704 NRS=14.136 m=1 r=38.8889 sa=90001.7 sb=90019.9 a=1.26 p=14.36 mult=1 $X=17455 $Y=156825 $D=9
+M22 VCCD 7 VSSIO VSSIO nshort L=0.18 W=7 AD=4.095 AS=7.875 PD=8.17 PS=16.25 NRD=4.704 NRS=14.136 m=1 r=38.8889 sa=90001.7 sb=90019.9 a=1.26 p=14.36 mult=1 $X=17455 $Y=166825 $D=9
+M23 VSSD 11 VCCD VSSD nshort L=0.18 W=7 AD=3.5 AS=3.535 PD=15 PS=8.01 NRD=3.42 NRS=3.336 m=1 r=38.8889 sa=90005.1 sb=90019.9 a=1.26 p=14.36 mult=1 $X=18320 $Y=26825 $D=9
+M24 VSSD 11 VCCD VSSD nshort L=0.18 W=7 AD=3.5 AS=3.535 PD=15 PS=8.01 NRD=3.42 NRS=3.336 m=1 r=38.8889 sa=90005.1 sb=90019.9 a=1.26 p=14.36 mult=1 $X=18320 $Y=36825 $D=9
+M25 VSSD 11 VCCD VSSD nshort L=0.18 W=7 AD=3.5 AS=3.535 PD=15 PS=8.01 NRD=3.42 NRS=3.336 m=1 r=38.8889 sa=90005.1 sb=90019.9 a=1.26 p=14.36 mult=1 $X=18320 $Y=46825 $D=9
+M26 VSSD 11 VCCD VSSD nshort L=0.18 W=7 AD=3.5 AS=3.535 PD=15 PS=8.01 NRD=3.42 NRS=3.336 m=1 r=38.8889 sa=90005.1 sb=90019.9 a=1.26 p=14.36 mult=1 $X=18320 $Y=56825 $D=9
+M27 VSSD 11 VCCD VSSD nshort L=0.18 W=5 AD=2.5 AS=2.525 PD=11 PS=6.01 NRD=4.8 NRS=4.68 m=1 r=27.7778 sa=90005.1 sb=90019.9 a=0.9 p=10.36 mult=1 $X=18320 $Y=66825 $D=9
+M28 VSSIO 7 VCCD VSSIO nshort L=0.18 W=7 AD=3.5 AS=3.535 PD=15 PS=8.01 NRD=3.42 NRS=3.336 m=1 r=38.8889 sa=90002.3 sb=90019.9 a=1.26 p=14.36 mult=1 $X=18320 $Y=176825 $D=9
+M29 VSSIO 7 VCCD VSSIO nshort L=0.18 W=7 AD=3.5 AS=3.535 PD=15 PS=8.01 NRD=3.42 NRS=3.336 m=1 r=38.8889 sa=90005.1 sb=90019.9 a=1.26 p=14.36 mult=1 $X=18320 $Y=186825 $D=9
+M30 VSSIO 7 VCCD VSSIO nshort L=0.18 W=7 AD=7.875 AS=4.095 PD=16.25 PS=8.17 NRD=14.136 NRS=4.704 m=1 r=38.8889 sa=90003.1 sb=90019.9 a=1.26 p=14.36 mult=1 $X=18805 $Y=146825 $D=9
+M31 VSSIO 7 VCCD VSSIO nshort L=0.18 W=7 AD=7.875 AS=4.095 PD=16.25 PS=8.17 NRD=14.136 NRS=4.704 m=1 r=38.8889 sa=90003.1 sb=90019.9 a=1.26 p=14.36 mult=1 $X=18805 $Y=156825 $D=9
+M32 VSSIO 7 VCCD VSSIO nshort L=0.18 W=7 AD=7.875 AS=4.095 PD=16.25 PS=8.17 NRD=14.136 NRS=4.704 m=1 r=38.8889 sa=90003.1 sb=90019.9 a=1.26 p=14.36 mult=1 $X=18805 $Y=166825 $D=9
+M33 VCCD 11 VSSD VSSD nshort L=0.18 W=7 AD=3.535 AS=3.5 PD=8.01 PS=15 NRD=3.336 NRS=3.42 m=1 r=38.8889 sa=90006.6 sb=90019.9 a=1.26 p=14.36 mult=1 $X=19900 $Y=26825 $D=9
+M34 VCCD 11 VSSD VSSD nshort L=0.18 W=7 AD=3.535 AS=3.5 PD=8.01 PS=15 NRD=3.336 NRS=3.42 m=1 r=38.8889 sa=90006.6 sb=90019.9 a=1.26 p=14.36 mult=1 $X=19900 $Y=36825 $D=9
+M35 VCCD 11 VSSD VSSD nshort L=0.18 W=7 AD=3.535 AS=3.5 PD=8.01 PS=15 NRD=3.336 NRS=3.42 m=1 r=38.8889 sa=90006.6 sb=90019.9 a=1.26 p=14.36 mult=1 $X=19900 $Y=46825 $D=9
+M36 VCCD 11 VSSD VSSD nshort L=0.18 W=7 AD=3.535 AS=3.5 PD=8.01 PS=15 NRD=3.336 NRS=3.42 m=1 r=38.8889 sa=90006.6 sb=90019.9 a=1.26 p=14.36 mult=1 $X=19900 $Y=56825 $D=9
+M37 VCCD 11 VSSD VSSD nshort L=0.18 W=5 AD=2.525 AS=2.5 PD=6.01 PS=11 NRD=4.68 NRS=4.8 m=1 r=27.7778 sa=90006.6 sb=90019.9 a=0.9 p=10.36 mult=1 $X=19900 $Y=66825 $D=9
+M38 VCCD 7 VSSIO VSSIO nshort L=0.18 W=7 AD=3.535 AS=3.5 PD=8.01 PS=15 NRD=3.336 NRS=3.42 m=1 r=38.8889 sa=90003.9 sb=90019.9 a=1.26 p=14.36 mult=1 $X=19900 $Y=176825 $D=9
+M39 VCCD 7 VSSIO VSSIO nshort L=0.18 W=7 AD=3.535 AS=3.5 PD=8.01 PS=15 NRD=3.336 NRS=3.42 m=1 r=38.8889 sa=90006.6 sb=90019.9 a=1.26 p=14.36 mult=1 $X=19900 $Y=186825 $D=9
+M40 VSSD 11 VCCD VSSD nshort L=0.18 W=7 AD=3.5 AS=3.535 PD=15 PS=8.01 NRD=3.42 NRS=3.336 m=1 r=38.8889 sa=90007.8 sb=90019.9 a=1.26 p=14.36 mult=1 $X=21090 $Y=26825 $D=9
+M41 VSSD 11 VCCD VSSD nshort L=0.18 W=7 AD=3.5 AS=3.535 PD=15 PS=8.01 NRD=3.42 NRS=3.336 m=1 r=38.8889 sa=90007.8 sb=90019.9 a=1.26 p=14.36 mult=1 $X=21090 $Y=36825 $D=9
+M42 VSSD 11 VCCD VSSD nshort L=0.18 W=7 AD=3.5 AS=3.535 PD=15 PS=8.01 NRD=3.42 NRS=3.336 m=1 r=38.8889 sa=90007.8 sb=90019.9 a=1.26 p=14.36 mult=1 $X=21090 $Y=46825 $D=9
+M43 VSSD 11 VCCD VSSD nshort L=0.18 W=7 AD=3.5 AS=3.535 PD=15 PS=8.01 NRD=3.42 NRS=3.336 m=1 r=38.8889 sa=90007.8 sb=90019.9 a=1.26 p=14.36 mult=1 $X=21090 $Y=56825 $D=9
+M44 VSSD 11 VCCD VSSD nshort L=0.18 W=5 AD=2.5 AS=2.525 PD=11 PS=6.01 NRD=4.8 NRS=4.68 m=1 r=27.7778 sa=90007.8 sb=90019.9 a=0.9 p=10.36 mult=1 $X=21090 $Y=66825 $D=9
+M45 VSSIO 7 VCCD VSSIO nshort L=0.18 W=7 AD=3.5 AS=3.535 PD=15 PS=8.01 NRD=3.42 NRS=3.336 m=1 r=38.8889 sa=90005.1 sb=90019.9 a=1.26 p=14.36 mult=1 $X=21090 $Y=176825 $D=9
+M46 VSSIO 7 VCCD VSSIO nshort L=0.18 W=7 AD=3.5 AS=3.535 PD=15 PS=8.01 NRD=3.42 NRS=3.336 m=1 r=38.8889 sa=90007.8 sb=90019.9 a=1.26 p=14.36 mult=1 $X=21090 $Y=186825 $D=9
+M47 VCCD 7 VSSIO VSSIO nshort L=0.18 W=7 AD=4.095 AS=7.875 PD=8.17 PS=16.25 NRD=4.704 NRS=14.136 m=1 r=38.8889 sa=90005.9 sb=90019.9 a=1.26 p=14.36 mult=1 $X=21635 $Y=146825 $D=9
+M48 VCCD 7 VSSIO VSSIO nshort L=0.18 W=7 AD=4.095 AS=7.875 PD=8.17 PS=16.25 NRD=4.704 NRS=14.136 m=1 r=38.8889 sa=90005.9 sb=90019.9 a=1.26 p=14.36 mult=1 $X=21635 $Y=156825 $D=9
+M49 VCCD 7 VSSIO VSSIO nshort L=0.18 W=7 AD=4.095 AS=7.875 PD=8.17 PS=16.25 NRD=4.704 NRS=14.136 m=1 r=38.8889 sa=90005.9 sb=90019.9 a=1.26 p=14.36 mult=1 $X=21635 $Y=166825 $D=9
+M50 VCCD 11 VSSD VSSD nshort L=0.18 W=7 AD=3.535 AS=3.5 PD=8.01 PS=15 NRD=3.336 NRS=3.42 m=1 r=38.8889 sa=90009.4 sb=90019.9 a=1.26 p=14.36 mult=1 $X=22670 $Y=26825 $D=9
+M51 VCCD 11 VSSD VSSD nshort L=0.18 W=7 AD=3.535 AS=3.5 PD=8.01 PS=15 NRD=3.336 NRS=3.42 m=1 r=38.8889 sa=90009.4 sb=90019.9 a=1.26 p=14.36 mult=1 $X=22670 $Y=36825 $D=9
+M52 VCCD 11 VSSD VSSD nshort L=0.18 W=7 AD=3.535 AS=3.5 PD=8.01 PS=15 NRD=3.336 NRS=3.42 m=1 r=38.8889 sa=90009.4 sb=90019.9 a=1.26 p=14.36 mult=1 $X=22670 $Y=46825 $D=9
+M53 VCCD 11 VSSD VSSD nshort L=0.18 W=7 AD=3.535 AS=3.5 PD=8.01 PS=15 NRD=3.336 NRS=3.42 m=1 r=38.8889 sa=90009.4 sb=90019.9 a=1.26 p=14.36 mult=1 $X=22670 $Y=56825 $D=9
+M54 VCCD 11 VSSD VSSD nshort L=0.18 W=5 AD=2.525 AS=2.5 PD=6.01 PS=11 NRD=4.68 NRS=4.8 m=1 r=27.7778 sa=90009.4 sb=90019.9 a=0.9 p=10.36 mult=1 $X=22670 $Y=66825 $D=9
+M55 VCCD 7 VSSIO VSSIO nshort L=0.18 W=7 AD=3.535 AS=3.5 PD=8.01 PS=15 NRD=3.336 NRS=3.42 m=1 r=38.8889 sa=90006.6 sb=90019.9 a=1.26 p=14.36 mult=1 $X=22670 $Y=176825 $D=9
+M56 VCCD 7 VSSIO VSSIO nshort L=0.18 W=7 AD=3.535 AS=3.5 PD=8.01 PS=15 NRD=3.336 NRS=3.42 m=1 r=38.8889 sa=90009.4 sb=90019.9 a=1.26 p=14.36 mult=1 $X=22670 $Y=186825 $D=9
+M57 VSSIO 7 VCCD VSSIO nshort L=0.18 W=7 AD=7.875 AS=4.095 PD=16.25 PS=8.17 NRD=14.136 NRS=4.704 m=1 r=38.8889 sa=90007.3 sb=90019.9 a=1.26 p=14.36 mult=1 $X=22985 $Y=146825 $D=9
+M58 VSSIO 7 VCCD VSSIO nshort L=0.18 W=7 AD=7.875 AS=4.095 PD=16.25 PS=8.17 NRD=14.136 NRS=4.704 m=1 r=38.8889 sa=90007.3 sb=90019.9 a=1.26 p=14.36 mult=1 $X=22985 $Y=156825 $D=9
+M59 VSSIO 7 VCCD VSSIO nshort L=0.18 W=7 AD=7.875 AS=4.095 PD=16.25 PS=8.17 NRD=14.136 NRS=4.704 m=1 r=38.8889 sa=90007.3 sb=90019.9 a=1.26 p=14.36 mult=1 $X=22985 $Y=166825 $D=9
+M60 VSSD 11 VCCD VSSD nshort L=0.18 W=7 AD=3.5 AS=3.535 PD=15 PS=8.01 NRD=3.42 NRS=3.336 m=1 r=38.8889 sa=90010.6 sb=90019.9 a=1.26 p=14.36 mult=1 $X=23860 $Y=26825 $D=9
+M61 VSSD 11 VCCD VSSD nshort L=0.18 W=7 AD=3.5 AS=3.535 PD=15 PS=8.01 NRD=3.42 NRS=3.336 m=1 r=38.8889 sa=90010.6 sb=90019.9 a=1.26 p=14.36 mult=1 $X=23860 $Y=36825 $D=9
+M62 VSSD 11 VCCD VSSD nshort L=0.18 W=7 AD=3.5 AS=3.535 PD=15 PS=8.01 NRD=3.42 NRS=3.336 m=1 r=38.8889 sa=90010.6 sb=90019.9 a=1.26 p=14.36 mult=1 $X=23860 $Y=46825 $D=9
+M63 VSSD 11 VCCD VSSD nshort L=0.18 W=7 AD=3.5 AS=3.535 PD=15 PS=8.01 NRD=3.42 NRS=3.336 m=1 r=38.8889 sa=90010.6 sb=90019.9 a=1.26 p=14.36 mult=1 $X=23860 $Y=56825 $D=9
+M64 VSSD 11 VCCD VSSD nshort L=0.18 W=5 AD=2.5 AS=2.525 PD=11 PS=6.01 NRD=4.8 NRS=4.68 m=1 r=27.7778 sa=90010.6 sb=90019.9 a=0.9 p=10.36 mult=1 $X=23860 $Y=66825 $D=9
+M65 VSSIO 7 VCCD VSSIO nshort L=0.18 W=7 AD=3.5 AS=3.535 PD=15 PS=8.01 NRD=3.42 NRS=3.336 m=1 r=38.8889 sa=90007.8 sb=90019.9 a=1.26 p=14.36 mult=1 $X=23860 $Y=176825 $D=9
+M66 VSSIO 7 VCCD VSSIO nshort L=0.18 W=7 AD=3.5 AS=3.535 PD=15 PS=8.01 NRD=3.42 NRS=3.336 m=1 r=38.8889 sa=90010.6 sb=90019.9 a=1.26 p=14.36 mult=1 $X=23860 $Y=186825 $D=9
+M67 VSSD 9 11 VSSD nshort L=0.18 W=7 AD=2.3975 AS=4.76 PD=7.685 PS=15.36 NRD=6.936 NRS=6.852 m=1 r=38.8889 sa=90000.6 sb=90019.9 a=1.26 p=14.36 mult=1 $X=24670 $Y=82770 $D=9
+M68 VSSD 9 11 VSSD nshort L=0.18 W=7 AD=2.3975 AS=4.76 PD=7.685 PS=15.36 NRD=6.936 NRS=6.852 m=1 r=38.8889 sa=90000.6 sb=90019.9 a=1.26 p=14.36 mult=1 $X=24670 $Y=91265 $D=9
+M69 VSSIO 5 7 VSSIO nshort L=0.18 W=7 AD=2.3975 AS=4.76 PD=7.685 PS=15.36 NRD=6.936 NRS=6.852 m=1 r=38.8889 sa=90000.6 sb=90019.9 a=1.26 p=14.36 mult=1 $X=24670 $Y=101370 $D=9
+M70 VSSIO 5 7 VSSIO nshort L=0.18 W=7 AD=2.3975 AS=4.76 PD=7.685 PS=15.36 NRD=6.936 NRS=6.852 m=1 r=38.8889 sa=90000.6 sb=90019.9 a=1.26 p=14.36 mult=1 $X=24670 $Y=109865 $D=9
+M71 VSSIO 5 7 VSSIO nshort L=0.18 W=7 AD=2.3975 AS=4.76 PD=7.685 PS=15.36 NRD=6.936 NRS=6.852 m=1 r=38.8889 sa=90000.6 sb=90019.9 a=1.26 p=14.36 mult=1 $X=24670 $Y=118690 $D=9
+M72 VSSD 9 VSSD VSSD nshort L=8 W=5 AD=0.7 AS=0.7 PD=5.28 PS=5.28 NRD=0 NRS=0 m=1 r=0.625 sa=4e+06 sb=4.00002e+06 a=40 p=26 mult=1 $X=17255 $Y=75770 $D=9
+M73 VCCD 11 VSSD VSSD nshort L=0.18 W=7 AD=3.535 AS=3.5 PD=8.01 PS=15 NRD=3.336 NRS=3.42 m=1 r=38.8889 sa=90012.2 sb=90019.9 a=1.26 p=14.36 mult=1 $X=25440 $Y=26825 $D=9
+M74 VCCD 11 VSSD VSSD nshort L=0.18 W=7 AD=3.535 AS=3.5 PD=8.01 PS=15 NRD=3.336 NRS=3.42 m=1 r=38.8889 sa=90012.2 sb=90019.9 a=1.26 p=14.36 mult=1 $X=25440 $Y=36825 $D=9
+M75 VCCD 11 VSSD VSSD nshort L=0.18 W=7 AD=3.535 AS=3.5 PD=8.01 PS=15 NRD=3.336 NRS=3.42 m=1 r=38.8889 sa=90012.2 sb=90019.9 a=1.26 p=14.36 mult=1 $X=25440 $Y=46825 $D=9
+M76 VCCD 11 VSSD VSSD nshort L=0.18 W=7 AD=3.535 AS=3.5 PD=8.01 PS=15 NRD=3.336 NRS=3.42 m=1 r=38.8889 sa=90012.2 sb=90019.9 a=1.26 p=14.36 mult=1 $X=25440 $Y=56825 $D=9
+M77 VCCD 11 VSSD VSSD nshort L=0.18 W=5 AD=2.525 AS=2.5 PD=6.01 PS=11 NRD=4.68 NRS=4.8 m=1 r=27.7778 sa=90012.2 sb=90019.9 a=0.9 p=10.36 mult=1 $X=25440 $Y=66825 $D=9
+M78 VCCD 7 VSSIO VSSIO nshort L=0.18 W=7 AD=3.535 AS=3.5 PD=8.01 PS=15 NRD=3.336 NRS=3.42 m=1 r=38.8889 sa=90009.4 sb=90019.9 a=1.26 p=14.36 mult=1 $X=25440 $Y=176825 $D=9
+M79 VCCD 7 VSSIO VSSIO nshort L=0.18 W=7 AD=3.535 AS=3.5 PD=8.01 PS=15 NRD=3.336 NRS=3.42 m=1 r=38.8889 sa=90012.2 sb=90019.9 a=1.26 p=14.36 mult=1 $X=25440 $Y=186825 $D=9
+M80 VCCD 7 VSSIO VSSIO nshort L=0.18 W=5 AD=2.925 AS=5.625 PD=6.17 PS=12.25 NRD=6.6 NRS=19.788 m=1 r=27.7778 sa=90001.7 sb=90019.9 a=0.9 p=10.36 mult=1 $X=25815 $Y=128720 $D=9
+M81 VCCD 7 VSSIO VSSIO nshort L=0.18 W=7 AD=4.095 AS=7.875 PD=8.17 PS=16.25 NRD=4.704 NRS=14.136 m=1 r=38.8889 sa=90001.7 sb=90019.9 a=1.26 p=14.36 mult=1 $X=25815 $Y=136825 $D=9
+M82 VCCD 7 VSSIO VSSIO nshort L=0.18 W=7 AD=4.095 AS=7.875 PD=8.17 PS=16.25 NRD=4.704 NRS=14.136 m=1 r=38.8889 sa=90010.1 sb=90019.9 a=1.26 p=14.36 mult=1 $X=25815 $Y=146825 $D=9
+M83 VCCD 7 VSSIO VSSIO nshort L=0.18 W=7 AD=4.095 AS=7.875 PD=8.17 PS=16.25 NRD=4.704 NRS=14.136 m=1 r=38.8889 sa=90010.1 sb=90019.9 a=1.26 p=14.36 mult=1 $X=25815 $Y=156825 $D=9
+M84 VCCD 7 VSSIO VSSIO nshort L=0.18 W=7 AD=4.095 AS=7.875 PD=8.17 PS=16.25 NRD=4.704 NRS=14.136 m=1 r=38.8889 sa=90010.1 sb=90019.9 a=1.26 p=14.36 mult=1 $X=25815 $Y=166825 $D=9
+M85 VSSD 11 VCCD VSSD nshort L=0.18 W=7 AD=3.5 AS=3.535 PD=15 PS=8.01 NRD=3.42 NRS=3.336 m=1 r=38.8889 sa=90013.4 sb=90019.9 a=1.26 p=14.36 mult=1 $X=26630 $Y=26825 $D=9
+M86 VSSD 11 VCCD VSSD nshort L=0.18 W=7 AD=3.5 AS=3.535 PD=15 PS=8.01 NRD=3.42 NRS=3.336 m=1 r=38.8889 sa=90013.4 sb=90019.9 a=1.26 p=14.36 mult=1 $X=26630 $Y=36825 $D=9
+M87 VSSD 11 VCCD VSSD nshort L=0.18 W=7 AD=3.5 AS=3.535 PD=15 PS=8.01 NRD=3.42 NRS=3.336 m=1 r=38.8889 sa=90013.4 sb=90019.9 a=1.26 p=14.36 mult=1 $X=26630 $Y=46825 $D=9
+M88 VSSD 11 VCCD VSSD nshort L=0.18 W=7 AD=3.5 AS=3.535 PD=15 PS=8.01 NRD=3.42 NRS=3.336 m=1 r=38.8889 sa=90013.4 sb=90019.9 a=1.26 p=14.36 mult=1 $X=26630 $Y=56825 $D=9
+M89 VSSD 11 VCCD VSSD nshort L=0.18 W=5 AD=2.5 AS=2.525 PD=11 PS=6.01 NRD=4.8 NRS=4.68 m=1 r=27.7778 sa=90013.4 sb=90019.9 a=0.9 p=10.36 mult=1 $X=26630 $Y=66825 $D=9
+M90 VSSIO 7 VCCD VSSIO nshort L=0.18 W=7 AD=3.5 AS=3.535 PD=15 PS=8.01 NRD=3.42 NRS=3.336 m=1 r=38.8889 sa=90010.6 sb=90019.9 a=1.26 p=14.36 mult=1 $X=26630 $Y=176825 $D=9
+M91 VSSIO 7 VCCD VSSIO nshort L=0.18 W=7 AD=3.5 AS=3.535 PD=15 PS=8.01 NRD=3.42 NRS=3.336 m=1 r=38.8889 sa=90013.4 sb=90019.9 a=1.26 p=14.36 mult=1 $X=26630 $Y=186825 $D=9
+M92 VSSIO 7 VCCD VSSIO nshort L=0.18 W=5 AD=5.625 AS=2.925 PD=12.25 PS=6.17 NRD=19.788 NRS=6.6 m=1 r=27.7778 sa=90003.1 sb=90019.9 a=0.9 p=10.36 mult=1 $X=27165 $Y=128720 $D=9
+M93 VSSIO 7 VCCD VSSIO nshort L=0.18 W=7 AD=7.875 AS=4.095 PD=16.25 PS=8.17 NRD=14.136 NRS=4.704 m=1 r=38.8889 sa=90003.1 sb=90019.9 a=1.26 p=14.36 mult=1 $X=27165 $Y=136825 $D=9
+M94 VSSIO 7 VCCD VSSIO nshort L=0.18 W=7 AD=7.875 AS=4.095 PD=16.25 PS=8.17 NRD=14.136 NRS=4.704 m=1 r=38.8889 sa=90011.4 sb=90019.9 a=1.26 p=14.36 mult=1 $X=27165 $Y=146825 $D=9
+M95 VSSIO 7 VCCD VSSIO nshort L=0.18 W=7 AD=7.875 AS=4.095 PD=16.25 PS=8.17 NRD=14.136 NRS=4.704 m=1 r=38.8889 sa=90011.4 sb=90019.9 a=1.26 p=14.36 mult=1 $X=27165 $Y=156825 $D=9
+M96 VSSIO 7 VCCD VSSIO nshort L=0.18 W=7 AD=7.875 AS=4.095 PD=16.25 PS=8.17 NRD=14.136 NRS=4.704 m=1 r=38.8889 sa=90011.4 sb=90019.9 a=1.26 p=14.36 mult=1 $X=27165 $Y=166825 $D=9
+M97 VCCD 11 VSSD VSSD nshort L=0.18 W=7 AD=3.535 AS=3.5 PD=8.01 PS=15 NRD=3.336 NRS=3.42 m=1 r=38.8889 sa=90015 sb=90019.9 a=1.26 p=14.36 mult=1 $X=28210 $Y=26825 $D=9
+M98 VCCD 11 VSSD VSSD nshort L=0.18 W=7 AD=3.535 AS=3.5 PD=8.01 PS=15 NRD=3.336 NRS=3.42 m=1 r=38.8889 sa=90015 sb=90019.9 a=1.26 p=14.36 mult=1 $X=28210 $Y=36825 $D=9
+M99 VCCD 11 VSSD VSSD nshort L=0.18 W=7 AD=3.535 AS=3.5 PD=8.01 PS=15 NRD=3.336 NRS=3.42 m=1 r=38.8889 sa=90015 sb=90019.9 a=1.26 p=14.36 mult=1 $X=28210 $Y=46825 $D=9
+M100 VCCD 11 VSSD VSSD nshort L=0.18 W=7 AD=3.535 AS=3.5 PD=8.01 PS=15 NRD=3.336 NRS=3.42 m=1 r=38.8889 sa=90015 sb=90019.9 a=1.26 p=14.36 mult=1 $X=28210 $Y=56825 $D=9
+M101 VCCD 11 VSSD VSSD nshort L=0.18 W=5 AD=2.525 AS=2.5 PD=6.01 PS=11 NRD=4.68 NRS=4.8 m=1 r=27.7778 sa=90015 sb=90019.9 a=0.9 p=10.36 mult=1 $X=28210 $Y=66825 $D=9
+M102 VCCD 7 VSSIO VSSIO nshort L=0.18 W=7 AD=3.535 AS=3.5 PD=8.01 PS=15 NRD=3.336 NRS=3.42 m=1 r=38.8889 sa=90012.2 sb=90019.9 a=1.26 p=14.36 mult=1 $X=28210 $Y=176825 $D=9
+M103 VCCD 7 VSSIO VSSIO nshort L=0.18 W=7 AD=3.535 AS=3.5 PD=8.01 PS=15 NRD=3.336 NRS=3.42 m=1 r=38.8889 sa=90015 sb=90019.9 a=1.26 p=14.36 mult=1 $X=28210 $Y=186825 $D=9
+M104 VSSD 11 VCCD VSSD nshort L=0.18 W=7 AD=3.5 AS=3.535 PD=15 PS=8.01 NRD=3.42 NRS=3.336 m=1 r=38.8889 sa=90016.2 sb=90019.9 a=1.26 p=14.36 mult=1 $X=29400 $Y=26825 $D=9
+M105 VSSD 11 VCCD VSSD nshort L=0.18 W=7 AD=3.5 AS=3.535 PD=15 PS=8.01 NRD=3.42 NRS=3.336 m=1 r=38.8889 sa=90016.2 sb=90019.9 a=1.26 p=14.36 mult=1 $X=29400 $Y=36825 $D=9
+M106 VSSD 11 VCCD VSSD nshort L=0.18 W=7 AD=3.5 AS=3.535 PD=15 PS=8.01 NRD=3.42 NRS=3.336 m=1 r=38.8889 sa=90016.2 sb=90019.9 a=1.26 p=14.36 mult=1 $X=29400 $Y=46825 $D=9
+M107 VSSD 11 VCCD VSSD nshort L=0.18 W=7 AD=3.5 AS=3.535 PD=15 PS=8.01 NRD=3.42 NRS=3.336 m=1 r=38.8889 sa=90016.2 sb=90019.9 a=1.26 p=14.36 mult=1 $X=29400 $Y=56825 $D=9
+M108 VSSD 11 VCCD VSSD nshort L=0.18 W=5 AD=2.5 AS=2.525 PD=11 PS=6.01 NRD=4.8 NRS=4.68 m=1 r=27.7778 sa=90016.1 sb=90019.9 a=0.9 p=10.36 mult=1 $X=29400 $Y=66825 $D=9
+M109 VSSIO 7 VCCD VSSIO nshort L=0.18 W=7 AD=3.5 AS=3.535 PD=15 PS=8.01 NRD=3.42 NRS=3.336 m=1 r=38.8889 sa=90013.4 sb=90019.9 a=1.26 p=14.36 mult=1 $X=29400 $Y=176825 $D=9
+M110 VSSIO 7 VCCD VSSIO nshort L=0.18 W=7 AD=3.5 AS=3.535 PD=15 PS=8.01 NRD=3.42 NRS=3.336 m=1 r=38.8889 sa=90016.2 sb=90019.9 a=1.26 p=14.36 mult=1 $X=29400 $Y=186825 $D=9
+M111 VCCD 7 VSSIO VSSIO nshort L=0.18 W=5 AD=2.925 AS=5.625 PD=6.17 PS=12.25 NRD=6.6 NRS=19.788 m=1 r=27.7778 sa=90005.9 sb=90019.9 a=0.9 p=10.36 mult=1 $X=29995 $Y=128720 $D=9
+M112 VCCD 7 VSSIO VSSIO nshort L=0.18 W=7 AD=4.095 AS=7.875 PD=8.17 PS=16.25 NRD=4.704 NRS=14.136 m=1 r=38.8889 sa=90005.9 sb=90019.9 a=1.26 p=14.36 mult=1 $X=29995 $Y=136825 $D=9
+M113 VCCD 7 VSSIO VSSIO nshort L=0.18 W=7 AD=4.095 AS=7.875 PD=8.17 PS=16.25 NRD=4.704 NRS=14.136 m=1 r=38.8889 sa=90014.3 sb=90019.9 a=1.26 p=14.36 mult=1 $X=29995 $Y=146825 $D=9
+M114 VCCD 7 VSSIO VSSIO nshort L=0.18 W=7 AD=4.095 AS=7.875 PD=8.17 PS=16.25 NRD=4.704 NRS=14.136 m=1 r=38.8889 sa=90014.3 sb=90019.9 a=1.26 p=14.36 mult=1 $X=29995 $Y=156825 $D=9
+M115 VCCD 7 VSSIO VSSIO nshort L=0.18 W=7 AD=4.095 AS=7.875 PD=8.17 PS=16.25 NRD=4.704 NRS=14.136 m=1 r=38.8889 sa=90014.3 sb=90019.9 a=1.26 p=14.36 mult=1 $X=29995 $Y=166825 $D=9
+M116 VCCD 11 VSSD VSSD nshort L=0.18 W=7 AD=3.535 AS=3.5 PD=8.01 PS=15 NRD=3.336 NRS=3.42 m=1 r=38.8889 sa=90017.7 sb=90019.9 a=1.26 p=14.36 mult=1 $X=30980 $Y=26825 $D=9
+M117 VCCD 11 VSSD VSSD nshort L=0.18 W=7 AD=3.535 AS=3.5 PD=8.01 PS=15 NRD=3.336 NRS=3.42 m=1 r=38.8889 sa=90017.7 sb=90019.9 a=1.26 p=14.36 mult=1 $X=30980 $Y=36825 $D=9
+M118 VCCD 11 VSSD VSSD nshort L=0.18 W=7 AD=3.535 AS=3.5 PD=8.01 PS=15 NRD=3.336 NRS=3.42 m=1 r=38.8889 sa=90017.7 sb=90019.9 a=1.26 p=14.36 mult=1 $X=30980 $Y=46825 $D=9
+M119 VCCD 11 VSSD VSSD nshort L=0.18 W=7 AD=3.535 AS=3.5 PD=8.01 PS=15 NRD=3.336 NRS=3.42 m=1 r=38.8889 sa=90017.7 sb=90019.9 a=1.26 p=14.36 mult=1 $X=30980 $Y=56825 $D=9
+M120 VCCD 11 VSSD VSSD nshort L=0.18 W=5 AD=2.525 AS=2.5 PD=6.01 PS=11 NRD=4.68 NRS=4.8 m=1 r=27.7778 sa=90017.7 sb=90019.9 a=0.9 p=10.36 mult=1 $X=30980 $Y=66825 $D=9
+M121 VCCD 7 VSSIO VSSIO nshort L=0.18 W=7 AD=3.535 AS=3.5 PD=8.01 PS=15 NRD=3.336 NRS=3.42 m=1 r=38.8889 sa=90015 sb=90019.9 a=1.26 p=14.36 mult=1 $X=30980 $Y=176825 $D=9
+M122 VCCD 7 VSSIO VSSIO nshort L=0.18 W=7 AD=3.535 AS=3.5 PD=8.01 PS=15 NRD=3.336 NRS=3.42 m=1 r=38.8889 sa=90017.7 sb=90019.9 a=1.26 p=14.36 mult=1 $X=30980 $Y=186825 $D=9
+M123 VSSIO 7 VCCD VSSIO nshort L=0.18 W=5 AD=5.625 AS=2.925 PD=12.25 PS=6.17 NRD=19.788 NRS=6.6 m=1 r=27.7778 sa=90007.3 sb=90019.9 a=0.9 p=10.36 mult=1 $X=31345 $Y=128720 $D=9
+M124 VSSIO 7 VCCD VSSIO nshort L=0.18 W=7 AD=7.875 AS=4.095 PD=16.25 PS=8.17 NRD=14.136 NRS=4.704 m=1 r=38.8889 sa=90007.3 sb=90019.9 a=1.26 p=14.36 mult=1 $X=31345 $Y=136825 $D=9
+M125 VSSIO 7 VCCD VSSIO nshort L=0.18 W=7 AD=7.875 AS=4.095 PD=16.25 PS=8.17 NRD=14.136 NRS=4.704 m=1 r=38.8889 sa=90015.6 sb=90019.9 a=1.26 p=14.36 mult=1 $X=31345 $Y=146825 $D=9
+M126 VSSIO 7 VCCD VSSIO nshort L=0.18 W=7 AD=7.875 AS=4.095 PD=16.25 PS=8.17 NRD=14.136 NRS=4.704 m=1 r=38.8889 sa=90015.6 sb=90019.9 a=1.26 p=14.36 mult=1 $X=31345 $Y=156825 $D=9
+M127 VSSIO 7 VCCD VSSIO nshort L=0.18 W=7 AD=7.875 AS=4.095 PD=16.25 PS=8.17 NRD=14.136 NRS=4.704 m=1 r=38.8889 sa=90015.6 sb=90019.9 a=1.26 p=14.36 mult=1 $X=31345 $Y=166825 $D=9
+M128 VSSD 11 VCCD VSSD nshort L=0.18 W=7 AD=3.5 AS=3.535 PD=15 PS=8.01 NRD=3.42 NRS=3.336 m=1 r=38.8889 sa=90018.9 sb=90019.9 a=1.26 p=14.36 mult=1 $X=32170 $Y=26825 $D=9
+M129 VSSD 11 VCCD VSSD nshort L=0.18 W=7 AD=3.5 AS=3.535 PD=15 PS=8.01 NRD=3.42 NRS=3.336 m=1 r=38.8889 sa=90018.9 sb=90019.9 a=1.26 p=14.36 mult=1 $X=32170 $Y=36825 $D=9
+M130 VSSD 11 VCCD VSSD nshort L=0.18 W=7 AD=3.5 AS=3.535 PD=15 PS=8.01 NRD=3.42 NRS=3.336 m=1 r=38.8889 sa=90018.9 sb=90019.9 a=1.26 p=14.36 mult=1 $X=32170 $Y=46825 $D=9
+M131 VSSD 11 VCCD VSSD nshort L=0.18 W=7 AD=3.5 AS=3.535 PD=15 PS=8.01 NRD=3.42 NRS=3.336 m=1 r=38.8889 sa=90018.9 sb=90019.9 a=1.26 p=14.36 mult=1 $X=32170 $Y=56825 $D=9
+M132 VSSD 11 VCCD VSSD nshort L=0.18 W=5 AD=2.5 AS=2.525 PD=11 PS=6.01 NRD=4.8 NRS=4.68 m=1 r=27.7778 sa=90018.9 sb=90019.9 a=0.9 p=10.36 mult=1 $X=32170 $Y=66825 $D=9
+M133 VSSIO 7 VCCD VSSIO nshort L=0.18 W=7 AD=3.5 AS=3.535 PD=15 PS=8.01 NRD=3.42 NRS=3.336 m=1 r=38.8889 sa=90016.2 sb=90019.9 a=1.26 p=14.36 mult=1 $X=32170 $Y=176825 $D=9
+M134 VSSIO 7 VCCD VSSIO nshort L=0.18 W=7 AD=3.5 AS=3.535 PD=15 PS=8.01 NRD=3.42 NRS=3.336 m=1 r=38.8889 sa=90018.9 sb=90019.9 a=1.26 p=14.36 mult=1 $X=32170 $Y=186825 $D=9
+M135 VSSD 9 VSSD VSSD nshort L=8 W=5 AD=0.7 AS=0.7 PD=5.28 PS=5.28 NRD=0 NRS=0 m=1 r=0.625 sa=4.00001e+06 sb=4.00002e+06 a=40 p=26 mult=1 $X=25535 $Y=75770 $D=9
+M136 VSSD 9 VSSD VSSD nshort L=8 W=7 AD=0.98 AS=2.3975 PD=7.28 PS=7.685 NRD=0 NRS=0 m=1 r=0.875 sa=4e+06 sb=4.00002e+06 a=56 p=30 mult=1 $X=25535 $Y=82770 $D=9
+M137 VSSD 9 VSSD VSSD nshort L=8 W=7 AD=0.98 AS=2.3975 PD=7.28 PS=7.685 NRD=0 NRS=0 m=1 r=0.875 sa=4e+06 sb=4.00002e+06 a=56 p=30 mult=1 $X=25535 $Y=91265 $D=9
+M138 VSSIO 5 VSSIO VSSIO nshort L=8 W=7 AD=0.98 AS=2.3975 PD=7.28 PS=7.685 NRD=0 NRS=0 m=1 r=0.875 sa=4e+06 sb=4.00002e+06 a=56 p=30 mult=1 $X=25535 $Y=101370 $D=9
+M139 VSSIO 5 VSSIO VSSIO nshort L=8 W=7 AD=0.98 AS=2.3975 PD=7.28 PS=7.685 NRD=0 NRS=0 m=1 r=0.875 sa=4e+06 sb=4.00002e+06 a=56 p=30 mult=1 $X=25535 $Y=109865 $D=9
+M140 VSSIO 5 VSSIO VSSIO nshort L=8 W=7 AD=0.98 AS=2.3975 PD=7.28 PS=7.685 NRD=0 NRS=0 m=1 r=0.875 sa=4e+06 sb=4.00002e+06 a=56 p=30 mult=1 $X=25535 $Y=118690 $D=9
+M141 VCCD 11 VSSD VSSD nshort L=0.18 W=7 AD=3.535 AS=3.5 PD=8.01 PS=15 NRD=3.336 NRS=3.42 m=1 r=38.8889 sa=90019.9 sb=90019.9 a=1.26 p=14.36 mult=1 $X=33750 $Y=26825 $D=9
+M142 VCCD 11 VSSD VSSD nshort L=0.18 W=7 AD=3.535 AS=3.5 PD=8.01 PS=15 NRD=3.336 NRS=3.42 m=1 r=38.8889 sa=90019.9 sb=90019.9 a=1.26 p=14.36 mult=1 $X=33750 $Y=36825 $D=9
+M143 VCCD 11 VSSD VSSD nshort L=0.18 W=7 AD=3.535 AS=3.5 PD=8.01 PS=15 NRD=3.336 NRS=3.42 m=1 r=38.8889 sa=90019.9 sb=90019.9 a=1.26 p=14.36 mult=1 $X=33750 $Y=46825 $D=9
+M144 VCCD 11 VSSD VSSD nshort L=0.18 W=7 AD=3.535 AS=3.5 PD=8.01 PS=15 NRD=3.336 NRS=3.42 m=1 r=38.8889 sa=90019.9 sb=90019.9 a=1.26 p=14.36 mult=1 $X=33750 $Y=56825 $D=9
+M145 VCCD 11 VSSD VSSD nshort L=0.18 W=5 AD=2.525 AS=2.5 PD=6.01 PS=11 NRD=4.68 NRS=4.8 m=1 r=27.7778 sa=90019.9 sb=90019.9 a=0.9 p=10.36 mult=1 $X=33750 $Y=66825 $D=9
+M146 VCCD 7 VSSIO VSSIO nshort L=0.18 W=7 AD=3.535 AS=3.5 PD=8.01 PS=15 NRD=3.336 NRS=3.42 m=1 r=38.8889 sa=90017.7 sb=90019.9 a=1.26 p=14.36 mult=1 $X=33750 $Y=176825 $D=9
+M147 VCCD 7 VSSIO VSSIO nshort L=0.18 W=7 AD=3.535 AS=3.5 PD=8.01 PS=15 NRD=3.336 NRS=3.42 m=1 r=38.8889 sa=90019.9 sb=90019.9 a=1.26 p=14.36 mult=1 $X=33750 $Y=186825 $D=9
+M148 VCCD 7 VSSIO VSSIO nshort L=0.18 W=5 AD=2.925 AS=5.625 PD=6.17 PS=12.25 NRD=6.6 NRS=19.788 m=1 r=27.7778 sa=90010.1 sb=90019.9 a=0.9 p=10.36 mult=1 $X=34175 $Y=128720 $D=9
+M149 VCCD 7 VSSIO VSSIO nshort L=0.18 W=7 AD=4.095 AS=7.875 PD=8.17 PS=16.25 NRD=4.704 NRS=14.136 m=1 r=38.8889 sa=90010.1 sb=90019.9 a=1.26 p=14.36 mult=1 $X=34175 $Y=136825 $D=9
+M150 VCCD 7 VSSIO VSSIO nshort L=0.18 W=7 AD=4.095 AS=7.875 PD=8.17 PS=16.25 NRD=4.704 NRS=14.136 m=1 r=38.8889 sa=90018.5 sb=90019.9 a=1.26 p=14.36 mult=1 $X=34175 $Y=146825 $D=9
+M151 VCCD 7 VSSIO VSSIO nshort L=0.18 W=7 AD=4.095 AS=7.875 PD=8.17 PS=16.25 NRD=4.704 NRS=14.136 m=1 r=38.8889 sa=90018.5 sb=90019.9 a=1.26 p=14.36 mult=1 $X=34175 $Y=156825 $D=9
+M152 VCCD 7 VSSIO VSSIO nshort L=0.18 W=7 AD=4.095 AS=7.875 PD=8.17 PS=16.25 NRD=4.704 NRS=14.136 m=1 r=38.8889 sa=90018.5 sb=90019.9 a=1.26 p=14.36 mult=1 $X=34175 $Y=166825 $D=9
+M153 VSSD 11 VCCD VSSD nshort L=0.18 W=7 AD=3.5 AS=3.535 PD=15 PS=8.01 NRD=3.42 NRS=3.336 m=1 r=38.8889 sa=90019.9 sb=90019.9 a=1.26 p=14.36 mult=1 $X=34940 $Y=26825 $D=9
+M154 VSSD 11 VCCD VSSD nshort L=0.18 W=7 AD=3.5 AS=3.535 PD=15 PS=8.01 NRD=3.42 NRS=3.336 m=1 r=38.8889 sa=90019.9 sb=90019.9 a=1.26 p=14.36 mult=1 $X=34940 $Y=36825 $D=9
+M155 VSSD 11 VCCD VSSD nshort L=0.18 W=7 AD=3.5 AS=3.535 PD=15 PS=8.01 NRD=3.42 NRS=3.336 m=1 r=38.8889 sa=90019.9 sb=90019.9 a=1.26 p=14.36 mult=1 $X=34940 $Y=46825 $D=9
+M156 VSSD 11 VCCD VSSD nshort L=0.18 W=7 AD=3.5 AS=3.535 PD=15 PS=8.01 NRD=3.42 NRS=3.336 m=1 r=38.8889 sa=90019.9 sb=90019.9 a=1.26 p=14.36 mult=1 $X=34940 $Y=56825 $D=9
+M157 VSSD 11 VCCD VSSD nshort L=0.18 W=5 AD=2.5 AS=2.525 PD=11 PS=6.01 NRD=4.8 NRS=4.68 m=1 r=27.7778 sa=90019.9 sb=90019.9 a=0.9 p=10.36 mult=1 $X=34940 $Y=66825 $D=9
+M158 VSSIO 7 VCCD VSSIO nshort L=0.18 W=7 AD=3.5 AS=3.535 PD=15 PS=8.01 NRD=3.42 NRS=3.336 m=1 r=38.8889 sa=90018.9 sb=90019.9 a=1.26 p=14.36 mult=1 $X=34940 $Y=176825 $D=9
+M159 VSSIO 7 VCCD VSSIO nshort L=0.18 W=7 AD=3.5 AS=3.535 PD=15 PS=8.01 NRD=3.42 NRS=3.336 m=1 r=38.8889 sa=90019.9 sb=90019.9 a=1.26 p=14.36 mult=1 $X=34940 $Y=186825 $D=9
+M160 VSSIO 7 VCCD VSSIO nshort L=0.18 W=5 AD=5.625 AS=2.925 PD=12.25 PS=6.17 NRD=19.788 NRS=6.6 m=1 r=27.7778 sa=90011.4 sb=90019.9 a=0.9 p=10.36 mult=1 $X=35525 $Y=128720 $D=9
+M161 VSSIO 7 VCCD VSSIO nshort L=0.18 W=7 AD=7.875 AS=4.095 PD=16.25 PS=8.17 NRD=14.136 NRS=4.704 m=1 r=38.8889 sa=90011.4 sb=90019.9 a=1.26 p=14.36 mult=1 $X=35525 $Y=136825 $D=9
+M162 VSSIO 7 VCCD VSSIO nshort L=0.18 W=7 AD=7.875 AS=4.095 PD=16.25 PS=8.17 NRD=14.136 NRS=4.704 m=1 r=38.8889 sa=90019.8 sb=90019.9 a=1.26 p=14.36 mult=1 $X=35525 $Y=146825 $D=9
+M163 VSSIO 7 VCCD VSSIO nshort L=0.18 W=7 AD=7.875 AS=4.095 PD=16.25 PS=8.17 NRD=14.136 NRS=4.704 m=1 r=38.8889 sa=90019.8 sb=90019.9 a=1.26 p=14.36 mult=1 $X=35525 $Y=156825 $D=9
+M164 VSSIO 7 VCCD VSSIO nshort L=0.18 W=7 AD=7.875 AS=4.095 PD=16.25 PS=8.17 NRD=14.136 NRS=4.704 m=1 r=38.8889 sa=90019.8 sb=90019.9 a=1.26 p=14.36 mult=1 $X=35525 $Y=166825 $D=9
+M165 VCCD 11 VSSD VSSD nshort L=0.18 W=7 AD=3.535 AS=3.5 PD=8.01 PS=15 NRD=3.336 NRS=3.42 m=1 r=38.8889 sa=90019.9 sb=90019.9 a=1.26 p=14.36 mult=1 $X=36520 $Y=26825 $D=9
+M166 VCCD 11 VSSD VSSD nshort L=0.18 W=7 AD=3.535 AS=3.5 PD=8.01 PS=15 NRD=3.336 NRS=3.42 m=1 r=38.8889 sa=90019.9 sb=90019.9 a=1.26 p=14.36 mult=1 $X=36520 $Y=36825 $D=9
+M167 VCCD 11 VSSD VSSD nshort L=0.18 W=7 AD=3.535 AS=3.5 PD=8.01 PS=15 NRD=3.336 NRS=3.42 m=1 r=38.8889 sa=90019.9 sb=90019.9 a=1.26 p=14.36 mult=1 $X=36520 $Y=46825 $D=9
+M168 VCCD 11 VSSD VSSD nshort L=0.18 W=7 AD=3.535 AS=3.5 PD=8.01 PS=15 NRD=3.336 NRS=3.42 m=1 r=38.8889 sa=90019.9 sb=90019.9 a=1.26 p=14.36 mult=1 $X=36520 $Y=56825 $D=9
+M169 VCCD 11 VSSD VSSD nshort L=0.18 W=5 AD=2.525 AS=2.5 PD=6.01 PS=11 NRD=4.68 NRS=4.8 m=1 r=27.7778 sa=90019.9 sb=90019.9 a=0.9 p=10.36 mult=1 $X=36520 $Y=66825 $D=9
+M170 VCCD 7 VSSIO VSSIO nshort L=0.18 W=7 AD=3.535 AS=3.5 PD=8.01 PS=15 NRD=3.336 NRS=3.42 m=1 r=38.8889 sa=90019.9 sb=90019.9 a=1.26 p=14.36 mult=1 $X=36520 $Y=176825 $D=9
+M171 VCCD 7 VSSIO VSSIO nshort L=0.18 W=7 AD=3.535 AS=3.5 PD=8.01 PS=15 NRD=3.336 NRS=3.42 m=1 r=38.8889 sa=90019.9 sb=90019.9 a=1.26 p=14.36 mult=1 $X=36520 $Y=186825 $D=9
+M172 VSSD 11 VCCD VSSD nshort L=0.18 W=7 AD=3.5 AS=3.535 PD=15 PS=8.01 NRD=3.42 NRS=3.336 m=1 r=38.8889 sa=90019.9 sb=90019.9 a=1.26 p=14.36 mult=1 $X=37710 $Y=26825 $D=9
+M173 VSSD 11 VCCD VSSD nshort L=0.18 W=7 AD=3.5 AS=3.535 PD=15 PS=8.01 NRD=3.42 NRS=3.336 m=1 r=38.8889 sa=90019.9 sb=90019.9 a=1.26 p=14.36 mult=1 $X=37710 $Y=36825 $D=9
+M174 VSSD 11 VCCD VSSD nshort L=0.18 W=7 AD=3.5 AS=3.535 PD=15 PS=8.01 NRD=3.42 NRS=3.336 m=1 r=38.8889 sa=90019.9 sb=90019.9 a=1.26 p=14.36 mult=1 $X=37710 $Y=46825 $D=9
+M175 VSSD 11 VCCD VSSD nshort L=0.18 W=7 AD=3.5 AS=3.535 PD=15 PS=8.01 NRD=3.42 NRS=3.336 m=1 r=38.8889 sa=90019.9 sb=90019.9 a=1.26 p=14.36 mult=1 $X=37710 $Y=56825 $D=9
+M176 VSSD 11 VCCD VSSD nshort L=0.18 W=5 AD=2.5 AS=2.525 PD=11 PS=6.01 NRD=4.8 NRS=4.68 m=1 r=27.7778 sa=90019.9 sb=90019.9 a=0.9 p=10.36 mult=1 $X=37710 $Y=66825 $D=9
+M177 VSSIO 7 VCCD VSSIO nshort L=0.18 W=7 AD=3.5 AS=3.535 PD=15 PS=8.01 NRD=3.42 NRS=3.336 m=1 r=38.8889 sa=90019.9 sb=90019.9 a=1.26 p=14.36 mult=1 $X=37710 $Y=176825 $D=9
+M178 VSSIO 7 VCCD VSSIO nshort L=0.18 W=7 AD=3.5 AS=3.535 PD=15 PS=8.01 NRD=3.42 NRS=3.336 m=1 r=38.8889 sa=90019.9 sb=90019.9 a=1.26 p=14.36 mult=1 $X=37710 $Y=186825 $D=9
+M179 VCCD 7 VSSIO VSSIO nshort L=0.18 W=5 AD=2.925 AS=5.625 PD=6.17 PS=12.25 NRD=6.6 NRS=19.788 m=1 r=27.7778 sa=90014.3 sb=90019.9 a=0.9 p=10.36 mult=1 $X=38355 $Y=128720 $D=9
+M180 VCCD 7 VSSIO VSSIO nshort L=0.18 W=7 AD=4.095 AS=7.875 PD=8.17 PS=16.25 NRD=4.704 NRS=14.136 m=1 r=38.8889 sa=90014.3 sb=90019.9 a=1.26 p=14.36 mult=1 $X=38355 $Y=136825 $D=9
+M181 VCCD 7 VSSIO VSSIO nshort L=0.18 W=7 AD=4.095 AS=7.875 PD=8.17 PS=16.25 NRD=4.704 NRS=14.136 m=1 r=38.8889 sa=90019.9 sb=90019.9 a=1.26 p=14.36 mult=1 $X=38355 $Y=146825 $D=9
+M182 VCCD 7 VSSIO VSSIO nshort L=0.18 W=7 AD=4.095 AS=7.875 PD=8.17 PS=16.25 NRD=4.704 NRS=14.136 m=1 r=38.8889 sa=90019.9 sb=90019.9 a=1.26 p=14.36 mult=1 $X=38355 $Y=156825 $D=9
+M183 VCCD 7 VSSIO VSSIO nshort L=0.18 W=7 AD=4.095 AS=7.875 PD=8.17 PS=16.25 NRD=4.704 NRS=14.136 m=1 r=38.8889 sa=90019.9 sb=90019.9 a=1.26 p=14.36 mult=1 $X=38355 $Y=166825 $D=9
+M184 VCCD 11 VSSD VSSD nshort L=0.18 W=7 AD=3.535 AS=3.5 PD=8.01 PS=15 NRD=3.336 NRS=3.42 m=1 r=38.8889 sa=90019.9 sb=90019.9 a=1.26 p=14.36 mult=1 $X=39290 $Y=26825 $D=9
+M185 VCCD 11 VSSD VSSD nshort L=0.18 W=7 AD=3.535 AS=3.5 PD=8.01 PS=15 NRD=3.336 NRS=3.42 m=1 r=38.8889 sa=90019.9 sb=90019.9 a=1.26 p=14.36 mult=1 $X=39290 $Y=36825 $D=9
+M186 VCCD 11 VSSD VSSD nshort L=0.18 W=7 AD=3.535 AS=3.5 PD=8.01 PS=15 NRD=3.336 NRS=3.42 m=1 r=38.8889 sa=90019.9 sb=90019.9 a=1.26 p=14.36 mult=1 $X=39290 $Y=46825 $D=9
+M187 VCCD 11 VSSD VSSD nshort L=0.18 W=7 AD=3.535 AS=3.5 PD=8.01 PS=15 NRD=3.336 NRS=3.42 m=1 r=38.8889 sa=90019.9 sb=90019.9 a=1.26 p=14.36 mult=1 $X=39290 $Y=56825 $D=9
+M188 VCCD 11 VSSD VSSD nshort L=0.18 W=5 AD=2.525 AS=2.5 PD=6.01 PS=11 NRD=4.68 NRS=4.8 m=1 r=27.7778 sa=90019.9 sb=90019.9 a=0.9 p=10.36 mult=1 $X=39290 $Y=66825 $D=9
+M189 VCCD 7 VSSIO VSSIO nshort L=0.18 W=7 AD=3.535 AS=3.5 PD=8.01 PS=15 NRD=3.336 NRS=3.42 m=1 r=38.8889 sa=90019.9 sb=90019.9 a=1.26 p=14.36 mult=1 $X=39290 $Y=176825 $D=9
+M190 VCCD 7 VSSIO VSSIO nshort L=0.18 W=7 AD=3.535 AS=3.5 PD=8.01 PS=15 NRD=3.336 NRS=3.42 m=1 r=38.8889 sa=90019.9 sb=90019.9 a=1.26 p=14.36 mult=1 $X=39290 $Y=186825 $D=9
+M191 VSSIO 7 VCCD VSSIO nshort L=0.18 W=5 AD=5.625 AS=2.925 PD=12.25 PS=6.17 NRD=19.788 NRS=6.6 m=1 r=27.7778 sa=90015.6 sb=90019.9 a=0.9 p=10.36 mult=1 $X=39705 $Y=128720 $D=9
+M192 VSSIO 7 VCCD VSSIO nshort L=0.18 W=7 AD=7.875 AS=4.095 PD=16.25 PS=8.17 NRD=14.136 NRS=4.704 m=1 r=38.8889 sa=90015.6 sb=90019.9 a=1.26 p=14.36 mult=1 $X=39705 $Y=136825 $D=9
+M193 VSSIO 7 VCCD VSSIO nshort L=0.18 W=7 AD=7.875 AS=4.095 PD=16.25 PS=8.17 NRD=14.136 NRS=4.704 m=1 r=38.8889 sa=90019.9 sb=90019.9 a=1.26 p=14.36 mult=1 $X=39705 $Y=146825 $D=9
+M194 VSSIO 7 VCCD VSSIO nshort L=0.18 W=7 AD=7.875 AS=4.095 PD=16.25 PS=8.17 NRD=14.136 NRS=4.704 m=1 r=38.8889 sa=90019.9 sb=90019.9 a=1.26 p=14.36 mult=1 $X=39705 $Y=156825 $D=9
+M195 VSSIO 7 VCCD VSSIO nshort L=0.18 W=7 AD=7.875 AS=4.095 PD=16.25 PS=8.17 NRD=14.136 NRS=4.704 m=1 r=38.8889 sa=90019.9 sb=90019.9 a=1.26 p=14.36 mult=1 $X=39705 $Y=166825 $D=9
+M196 VSSD 11 VCCD VSSD nshort L=0.18 W=7 AD=3.5 AS=3.535 PD=15 PS=8.01 NRD=3.42 NRS=3.336 m=1 r=38.8889 sa=90019.9 sb=90019.9 a=1.26 p=14.36 mult=1 $X=40480 $Y=26825 $D=9
+M197 VSSD 11 VCCD VSSD nshort L=0.18 W=7 AD=3.5 AS=3.535 PD=15 PS=8.01 NRD=3.42 NRS=3.336 m=1 r=38.8889 sa=90019.9 sb=90019.9 a=1.26 p=14.36 mult=1 $X=40480 $Y=36825 $D=9
+M198 VSSD 11 VCCD VSSD nshort L=0.18 W=7 AD=3.5 AS=3.535 PD=15 PS=8.01 NRD=3.42 NRS=3.336 m=1 r=38.8889 sa=90019.9 sb=90019.9 a=1.26 p=14.36 mult=1 $X=40480 $Y=46825 $D=9
+M199 VSSD 11 VCCD VSSD nshort L=0.18 W=7 AD=3.5 AS=3.535 PD=15 PS=8.01 NRD=3.42 NRS=3.336 m=1 r=38.8889 sa=90019.9 sb=90019.9 a=1.26 p=14.36 mult=1 $X=40480 $Y=56825 $D=9
+M200 VSSD 11 VCCD VSSD nshort L=0.18 W=5 AD=2.5 AS=2.525 PD=11 PS=6.01 NRD=4.8 NRS=4.68 m=1 r=27.7778 sa=90019.9 sb=90019.9 a=0.9 p=10.36 mult=1 $X=40480 $Y=66825 $D=9
+M201 VSSIO 7 VCCD VSSIO nshort L=0.18 W=7 AD=3.5 AS=3.535 PD=15 PS=8.01 NRD=3.42 NRS=3.336 m=1 r=38.8889 sa=90019.9 sb=90019.9 a=1.26 p=14.36 mult=1 $X=40480 $Y=176825 $D=9
+M202 VSSIO 7 VCCD VSSIO nshort L=0.18 W=7 AD=3.5 AS=3.535 PD=15 PS=8.01 NRD=3.42 NRS=3.336 m=1 r=38.8889 sa=90019.9 sb=90019.9 a=1.26 p=14.36 mult=1 $X=40480 $Y=186825 $D=9
+M203 VSSD 9 VSSD VSSD nshort L=8 W=5 AD=0.7 AS=0.7 PD=5.28 PS=5.28 NRD=0 NRS=0 m=1 r=0.625 sa=4.00002e+06 sb=4.00002e+06 a=40 p=26 mult=1 $X=33815 $Y=75770 $D=9
+M204 VSSD 9 VSSD VSSD nshort L=8 W=7 AD=0.98 AS=0.98 PD=7.28 PS=7.28 NRD=0 NRS=0 m=1 r=0.875 sa=4.00001e+06 sb=4.00002e+06 a=56 p=30 mult=1 $X=33815 $Y=82770 $D=9
+M205 VSSD 9 VSSD VSSD nshort L=8 W=7 AD=0.98 AS=0.98 PD=7.28 PS=7.28 NRD=0 NRS=0 m=1 r=0.875 sa=4.00001e+06 sb=4.00002e+06 a=56 p=30 mult=1 $X=33815 $Y=91265 $D=9
+M206 VSSIO 5 VSSIO VSSIO nshort L=8 W=7 AD=0.98 AS=0.98 PD=7.28 PS=7.28 NRD=0 NRS=0 m=1 r=0.875 sa=4.00001e+06 sb=4.00002e+06 a=56 p=30 mult=1 $X=33815 $Y=101370 $D=9
+M207 VSSIO 5 VSSIO VSSIO nshort L=8 W=7 AD=0.98 AS=0.98 PD=7.28 PS=7.28 NRD=0 NRS=0 m=1 r=0.875 sa=4.00001e+06 sb=4.00002e+06 a=56 p=30 mult=1 $X=33815 $Y=109865 $D=9
+M208 VSSIO 5 VSSIO VSSIO nshort L=8 W=7 AD=0.98 AS=0.98 PD=7.28 PS=7.28 NRD=0 NRS=0 m=1 r=0.875 sa=4.00001e+06 sb=4.00002e+06 a=56 p=30 mult=1 $X=33815 $Y=118690 $D=9
+M209 VCCD 11 VSSD VSSD nshort L=0.18 W=7 AD=3.535 AS=3.5 PD=8.01 PS=15 NRD=3.336 NRS=3.42 m=1 r=38.8889 sa=90019.9 sb=90019.9 a=1.26 p=14.36 mult=1 $X=42060 $Y=26825 $D=9
+M210 VCCD 11 VSSD VSSD nshort L=0.18 W=7 AD=3.535 AS=3.5 PD=8.01 PS=15 NRD=3.336 NRS=3.42 m=1 r=38.8889 sa=90019.9 sb=90019.9 a=1.26 p=14.36 mult=1 $X=42060 $Y=36825 $D=9
+M211 VCCD 11 VSSD VSSD nshort L=0.18 W=7 AD=3.535 AS=3.5 PD=8.01 PS=15 NRD=3.336 NRS=3.42 m=1 r=38.8889 sa=90019.9 sb=90019.9 a=1.26 p=14.36 mult=1 $X=42060 $Y=46825 $D=9
+M212 VCCD 11 VSSD VSSD nshort L=0.18 W=7 AD=3.535 AS=3.5 PD=8.01 PS=15 NRD=3.336 NRS=3.42 m=1 r=38.8889 sa=90019.9 sb=90019.9 a=1.26 p=14.36 mult=1 $X=42060 $Y=56825 $D=9
+M213 VCCD 11 VSSD VSSD nshort L=0.18 W=5 AD=2.525 AS=2.5 PD=6.01 PS=11 NRD=4.68 NRS=4.8 m=1 r=27.7778 sa=90019.9 sb=90019.9 a=0.9 p=10.36 mult=1 $X=42060 $Y=66825 $D=9
+M214 VCCD 7 VSSIO VSSIO nshort L=0.18 W=7 AD=3.535 AS=3.5 PD=8.01 PS=15 NRD=3.336 NRS=3.42 m=1 r=38.8889 sa=90019.9 sb=90019.9 a=1.26 p=14.36 mult=1 $X=42060 $Y=176825 $D=9
+M215 VCCD 7 VSSIO VSSIO nshort L=0.18 W=7 AD=3.535 AS=3.5 PD=8.01 PS=15 NRD=3.336 NRS=3.42 m=1 r=38.8889 sa=90019.9 sb=90019.9 a=1.26 p=14.36 mult=1 $X=42060 $Y=186825 $D=9
+M216 VCCD 7 VSSIO VSSIO nshort L=0.18 W=5 AD=2.925 AS=5.625 PD=6.17 PS=12.25 NRD=6.6 NRS=19.788 m=1 r=27.7778 sa=90018.5 sb=90019.9 a=0.9 p=10.36 mult=1 $X=42535 $Y=128720 $D=9
+M217 VCCD 7 VSSIO VSSIO nshort L=0.18 W=7 AD=4.095 AS=7.875 PD=8.17 PS=16.25 NRD=4.704 NRS=14.136 m=1 r=38.8889 sa=90018.5 sb=90019.9 a=1.26 p=14.36 mult=1 $X=42535 $Y=136825 $D=9
+M218 VCCD 7 VSSIO VSSIO nshort L=0.18 W=7 AD=4.095 AS=7.875 PD=8.17 PS=16.25 NRD=4.704 NRS=14.136 m=1 r=38.8889 sa=90019.9 sb=90019.9 a=1.26 p=14.36 mult=1 $X=42535 $Y=146825 $D=9
+M219 VCCD 7 VSSIO VSSIO nshort L=0.18 W=7 AD=4.095 AS=7.875 PD=8.17 PS=16.25 NRD=4.704 NRS=14.136 m=1 r=38.8889 sa=90019.9 sb=90019.9 a=1.26 p=14.36 mult=1 $X=42535 $Y=156825 $D=9
+M220 VCCD 7 VSSIO VSSIO nshort L=0.18 W=7 AD=4.095 AS=7.875 PD=8.17 PS=16.25 NRD=4.704 NRS=14.136 m=1 r=38.8889 sa=90019.9 sb=90019.9 a=1.26 p=14.36 mult=1 $X=42535 $Y=166825 $D=9
+M221 VSSD 11 VCCD VSSD nshort L=0.18 W=7 AD=3.5 AS=3.535 PD=15 PS=8.01 NRD=3.42 NRS=3.336 m=1 r=38.8889 sa=90019.9 sb=90019.9 a=1.26 p=14.36 mult=1 $X=43250 $Y=26825 $D=9
+M222 VSSD 11 VCCD VSSD nshort L=0.18 W=7 AD=3.5 AS=3.535 PD=15 PS=8.01 NRD=3.42 NRS=3.336 m=1 r=38.8889 sa=90019.9 sb=90019.9 a=1.26 p=14.36 mult=1 $X=43250 $Y=36825 $D=9
+M223 VSSD 11 VCCD VSSD nshort L=0.18 W=7 AD=3.5 AS=3.535 PD=15 PS=8.01 NRD=3.42 NRS=3.336 m=1 r=38.8889 sa=90019.9 sb=90019.9 a=1.26 p=14.36 mult=1 $X=43250 $Y=46825 $D=9
+M224 VSSD 11 VCCD VSSD nshort L=0.18 W=7 AD=3.5 AS=3.535 PD=15 PS=8.01 NRD=3.42 NRS=3.336 m=1 r=38.8889 sa=90019.9 sb=90019.9 a=1.26 p=14.36 mult=1 $X=43250 $Y=56825 $D=9
+M225 VSSD 11 VCCD VSSD nshort L=0.18 W=5 AD=2.5 AS=2.525 PD=11 PS=6.01 NRD=4.8 NRS=4.68 m=1 r=27.7778 sa=90019.9 sb=90019.9 a=0.9 p=10.36 mult=1 $X=43250 $Y=66825 $D=9
+M226 VSSIO 7 VCCD VSSIO nshort L=0.18 W=7 AD=3.5 AS=3.535 PD=15 PS=8.01 NRD=3.42 NRS=3.336 m=1 r=38.8889 sa=90019.9 sb=90019.9 a=1.26 p=14.36 mult=1 $X=43250 $Y=176825 $D=9
+M227 VSSIO 7 VCCD VSSIO nshort L=0.18 W=7 AD=3.5 AS=3.535 PD=15 PS=8.01 NRD=3.42 NRS=3.336 m=1 r=38.8889 sa=90019.9 sb=90019.9 a=1.26 p=14.36 mult=1 $X=43250 $Y=186825 $D=9
+M228 VSSIO 7 VCCD VSSIO nshort L=0.18 W=5 AD=5.625 AS=2.925 PD=12.25 PS=6.17 NRD=19.788 NRS=6.6 m=1 r=27.7778 sa=90019.8 sb=90019.9 a=0.9 p=10.36 mult=1 $X=43885 $Y=128720 $D=9
+M229 VSSIO 7 VCCD VSSIO nshort L=0.18 W=7 AD=7.875 AS=4.095 PD=16.25 PS=8.17 NRD=14.136 NRS=4.704 m=1 r=38.8889 sa=90019.8 sb=90019.9 a=1.26 p=14.36 mult=1 $X=43885 $Y=136825 $D=9
+M230 VSSIO 7 VCCD VSSIO nshort L=0.18 W=7 AD=7.875 AS=4.095 PD=16.25 PS=8.17 NRD=14.136 NRS=4.704 m=1 r=38.8889 sa=90019.9 sb=90019.9 a=1.26 p=14.36 mult=1 $X=43885 $Y=146825 $D=9
+M231 VSSIO 7 VCCD VSSIO nshort L=0.18 W=7 AD=7.875 AS=4.095 PD=16.25 PS=8.17 NRD=14.136 NRS=4.704 m=1 r=38.8889 sa=90019.9 sb=90019.9 a=1.26 p=14.36 mult=1 $X=43885 $Y=156825 $D=9
+M232 VSSIO 7 VCCD VSSIO nshort L=0.18 W=7 AD=7.875 AS=4.095 PD=16.25 PS=8.17 NRD=14.136 NRS=4.704 m=1 r=38.8889 sa=90019.9 sb=90019.9 a=1.26 p=14.36 mult=1 $X=43885 $Y=166825 $D=9
+M233 VCCD 11 VSSD VSSD nshort L=0.18 W=7 AD=3.535 AS=3.5 PD=8.01 PS=15 NRD=3.336 NRS=3.42 m=1 r=38.8889 sa=90019.9 sb=90019.9 a=1.26 p=14.36 mult=1 $X=44830 $Y=26825 $D=9
+M234 VCCD 11 VSSD VSSD nshort L=0.18 W=7 AD=3.535 AS=3.5 PD=8.01 PS=15 NRD=3.336 NRS=3.42 m=1 r=38.8889 sa=90019.9 sb=90019.9 a=1.26 p=14.36 mult=1 $X=44830 $Y=36825 $D=9
+M235 VCCD 11 VSSD VSSD nshort L=0.18 W=7 AD=3.535 AS=3.5 PD=8.01 PS=15 NRD=3.336 NRS=3.42 m=1 r=38.8889 sa=90019.9 sb=90019.9 a=1.26 p=14.36 mult=1 $X=44830 $Y=46825 $D=9
+M236 VCCD 11 VSSD VSSD nshort L=0.18 W=7 AD=3.535 AS=3.5 PD=8.01 PS=15 NRD=3.336 NRS=3.42 m=1 r=38.8889 sa=90019.9 sb=90019.9 a=1.26 p=14.36 mult=1 $X=44830 $Y=56825 $D=9
+M237 VCCD 11 VSSD VSSD nshort L=0.18 W=5 AD=2.525 AS=2.5 PD=6.01 PS=11 NRD=4.68 NRS=4.8 m=1 r=27.7778 sa=90019.9 sb=90019.9 a=0.9 p=10.36 mult=1 $X=44830 $Y=66825 $D=9
+M238 VCCD 7 VSSIO VSSIO nshort L=0.18 W=7 AD=3.535 AS=3.5 PD=8.01 PS=15 NRD=3.336 NRS=3.42 m=1 r=38.8889 sa=90019.9 sb=90019.9 a=1.26 p=14.36 mult=1 $X=44830 $Y=176825 $D=9
+M239 VCCD 7 VSSIO VSSIO nshort L=0.18 W=7 AD=3.535 AS=3.5 PD=8.01 PS=15 NRD=3.336 NRS=3.42 m=1 r=38.8889 sa=90019.9 sb=90019.9 a=1.26 p=14.36 mult=1 $X=44830 $Y=186825 $D=9
+M240 VSSD 11 VCCD VSSD nshort L=0.18 W=7 AD=3.5 AS=3.535 PD=15 PS=8.01 NRD=3.42 NRS=3.336 m=1 r=38.8889 sa=90019.9 sb=90019.9 a=1.26 p=14.36 mult=1 $X=46020 $Y=26825 $D=9
+M241 VSSD 11 VCCD VSSD nshort L=0.18 W=7 AD=3.5 AS=3.535 PD=15 PS=8.01 NRD=3.42 NRS=3.336 m=1 r=38.8889 sa=90019.9 sb=90019.9 a=1.26 p=14.36 mult=1 $X=46020 $Y=36825 $D=9
+M242 VSSD 11 VCCD VSSD nshort L=0.18 W=7 AD=3.5 AS=3.535 PD=15 PS=8.01 NRD=3.42 NRS=3.336 m=1 r=38.8889 sa=90019.9 sb=90019.9 a=1.26 p=14.36 mult=1 $X=46020 $Y=46825 $D=9
+M243 VSSD 11 VCCD VSSD nshort L=0.18 W=7 AD=3.5 AS=3.535 PD=15 PS=8.01 NRD=3.42 NRS=3.336 m=1 r=38.8889 sa=90019.9 sb=90019.9 a=1.26 p=14.36 mult=1 $X=46020 $Y=56825 $D=9
+M244 VSSD 11 VCCD VSSD nshort L=0.18 W=5 AD=2.5 AS=2.525 PD=11 PS=6.01 NRD=4.8 NRS=4.68 m=1 r=27.7778 sa=90019.9 sb=90019.9 a=0.9 p=10.36 mult=1 $X=46020 $Y=66825 $D=9
+M245 VSSIO 7 VCCD VSSIO nshort L=0.18 W=7 AD=3.5 AS=3.535 PD=15 PS=8.01 NRD=3.42 NRS=3.336 m=1 r=38.8889 sa=90019.9 sb=90019.9 a=1.26 p=14.36 mult=1 $X=46020 $Y=176825 $D=9
+M246 VSSIO 7 VCCD VSSIO nshort L=0.18 W=7 AD=3.5 AS=3.535 PD=15 PS=8.01 NRD=3.42 NRS=3.336 m=1 r=38.8889 sa=90019.9 sb=90019.9 a=1.26 p=14.36 mult=1 $X=46020 $Y=186825 $D=9
+M247 VCCD 7 VSSIO VSSIO nshort L=0.18 W=5 AD=2.925 AS=5.625 PD=6.17 PS=12.25 NRD=6.6 NRS=19.788 m=1 r=27.7778 sa=90019.9 sb=90019.8 a=0.9 p=10.36 mult=1 $X=46715 $Y=128720 $D=9
+M248 VCCD 7 VSSIO VSSIO nshort L=0.18 W=7 AD=4.095 AS=7.875 PD=8.17 PS=16.25 NRD=4.704 NRS=14.136 m=1 r=38.8889 sa=90019.9 sb=90019.8 a=1.26 p=14.36 mult=1 $X=46715 $Y=136825 $D=9
+M249 VCCD 7 VSSIO VSSIO nshort L=0.18 W=7 AD=4.095 AS=7.875 PD=8.17 PS=16.25 NRD=4.704 NRS=14.136 m=1 r=38.8889 sa=90019.9 sb=90019.8 a=1.26 p=14.36 mult=1 $X=46715 $Y=146825 $D=9
+M250 VCCD 7 VSSIO VSSIO nshort L=0.18 W=7 AD=4.095 AS=7.875 PD=8.17 PS=16.25 NRD=4.704 NRS=14.136 m=1 r=38.8889 sa=90019.9 sb=90019.8 a=1.26 p=14.36 mult=1 $X=46715 $Y=156825 $D=9
+M251 VCCD 7 VSSIO VSSIO nshort L=0.18 W=7 AD=4.095 AS=7.875 PD=8.17 PS=16.25 NRD=4.704 NRS=14.136 m=1 r=38.8889 sa=90019.9 sb=90019.8 a=1.26 p=14.36 mult=1 $X=46715 $Y=166825 $D=9
+M252 VCCD 11 VSSD VSSD nshort L=0.18 W=7 AD=3.535 AS=3.5 PD=8.01 PS=15 NRD=3.336 NRS=3.42 m=1 r=38.8889 sa=90019.9 sb=90018.9 a=1.26 p=14.36 mult=1 $X=47600 $Y=26825 $D=9
+M253 VCCD 11 VSSD VSSD nshort L=0.18 W=7 AD=3.535 AS=3.5 PD=8.01 PS=15 NRD=3.336 NRS=3.42 m=1 r=38.8889 sa=90019.9 sb=90018.9 a=1.26 p=14.36 mult=1 $X=47600 $Y=36825 $D=9
+M254 VCCD 11 VSSD VSSD nshort L=0.18 W=7 AD=3.535 AS=3.5 PD=8.01 PS=15 NRD=3.336 NRS=3.42 m=1 r=38.8889 sa=90019.9 sb=90018.9 a=1.26 p=14.36 mult=1 $X=47600 $Y=46825 $D=9
+M255 VCCD 11 VSSD VSSD nshort L=0.18 W=7 AD=3.535 AS=3.5 PD=8.01 PS=15 NRD=3.336 NRS=3.42 m=1 r=38.8889 sa=90019.9 sb=90018.9 a=1.26 p=14.36 mult=1 $X=47600 $Y=56825 $D=9
+M256 VCCD 11 VSSD VSSD nshort L=0.18 W=5 AD=2.525 AS=2.5 PD=6.01 PS=11 NRD=4.68 NRS=4.8 m=1 r=27.7778 sa=90019.9 sb=90018.9 a=0.9 p=10.36 mult=1 $X=47600 $Y=66825 $D=9
+M257 VCCD 7 VSSIO VSSIO nshort L=0.18 W=7 AD=3.535 AS=3.5 PD=8.01 PS=15 NRD=3.336 NRS=3.42 m=1 r=38.8889 sa=90019.9 sb=90018.9 a=1.26 p=14.36 mult=1 $X=47600 $Y=176825 $D=9
+M258 VCCD 7 VSSIO VSSIO nshort L=0.18 W=7 AD=3.535 AS=3.5 PD=8.01 PS=15 NRD=3.336 NRS=3.42 m=1 r=38.8889 sa=90019.9 sb=90018.9 a=1.26 p=14.36 mult=1 $X=47600 $Y=186825 $D=9
+M259 VSSIO 7 VCCD VSSIO nshort L=0.18 W=5 AD=5.625 AS=2.925 PD=12.25 PS=6.17 NRD=19.788 NRS=6.6 m=1 r=27.7778 sa=90019.9 sb=90018.5 a=0.9 p=10.36 mult=1 $X=48065 $Y=128720 $D=9
+M260 VSSIO 7 VCCD VSSIO nshort L=0.18 W=7 AD=7.875 AS=4.095 PD=16.25 PS=8.17 NRD=14.136 NRS=4.704 m=1 r=38.8889 sa=90019.9 sb=90018.5 a=1.26 p=14.36 mult=1 $X=48065 $Y=136825 $D=9
+M261 VSSIO 7 VCCD VSSIO nshort L=0.18 W=7 AD=7.875 AS=4.095 PD=16.25 PS=8.17 NRD=14.136 NRS=4.704 m=1 r=38.8889 sa=90019.9 sb=90018.5 a=1.26 p=14.36 mult=1 $X=48065 $Y=146825 $D=9
+M262 VSSIO 7 VCCD VSSIO nshort L=0.18 W=7 AD=7.875 AS=4.095 PD=16.25 PS=8.17 NRD=14.136 NRS=4.704 m=1 r=38.8889 sa=90019.9 sb=90018.5 a=1.26 p=14.36 mult=1 $X=48065 $Y=156825 $D=9
+M263 VSSIO 7 VCCD VSSIO nshort L=0.18 W=7 AD=7.875 AS=4.095 PD=16.25 PS=8.17 NRD=14.136 NRS=4.704 m=1 r=38.8889 sa=90019.9 sb=90018.5 a=1.26 p=14.36 mult=1 $X=48065 $Y=166825 $D=9
+M264 VSSD 11 VCCD VSSD nshort L=0.18 W=7 AD=3.5 AS=3.535 PD=15 PS=8.01 NRD=3.42 NRS=3.336 m=1 r=38.8889 sa=90019.9 sb=90017.7 a=1.26 p=14.36 mult=1 $X=48790 $Y=26825 $D=9
+M265 VSSD 11 VCCD VSSD nshort L=0.18 W=7 AD=3.5 AS=3.535 PD=15 PS=8.01 NRD=3.42 NRS=3.336 m=1 r=38.8889 sa=90019.9 sb=90017.7 a=1.26 p=14.36 mult=1 $X=48790 $Y=36825 $D=9
+M266 VSSD 11 VCCD VSSD nshort L=0.18 W=7 AD=3.5 AS=3.535 PD=15 PS=8.01 NRD=3.42 NRS=3.336 m=1 r=38.8889 sa=90019.9 sb=90017.7 a=1.26 p=14.36 mult=1 $X=48790 $Y=46825 $D=9
+M267 VSSD 11 VCCD VSSD nshort L=0.18 W=7 AD=3.5 AS=3.535 PD=15 PS=8.01 NRD=3.42 NRS=3.336 m=1 r=38.8889 sa=90019.9 sb=90017.7 a=1.26 p=14.36 mult=1 $X=48790 $Y=56825 $D=9
+M268 VSSD 11 VCCD VSSD nshort L=0.18 W=5 AD=2.5 AS=2.525 PD=11 PS=6.01 NRD=4.8 NRS=4.68 m=1 r=27.7778 sa=90019.9 sb=90017.7 a=0.9 p=10.36 mult=1 $X=48790 $Y=66825 $D=9
+M269 VSSIO 7 VCCD VSSIO nshort L=0.18 W=7 AD=3.5 AS=3.535 PD=15 PS=8.01 NRD=3.42 NRS=3.336 m=1 r=38.8889 sa=90019.9 sb=90017.7 a=1.26 p=14.36 mult=1 $X=48790 $Y=176825 $D=9
+M270 VSSIO 7 VCCD VSSIO nshort L=0.18 W=7 AD=3.5 AS=3.535 PD=15 PS=8.01 NRD=3.42 NRS=3.336 m=1 r=38.8889 sa=90019.9 sb=90017.7 a=1.26 p=14.36 mult=1 $X=48790 $Y=186825 $D=9
+M271 VSSD 9 VSSD VSSD nshort L=8 W=5 AD=0.7 AS=0.7 PD=5.28 PS=5.28 NRD=0 NRS=0 m=1 r=0.625 sa=4.00002e+06 sb=4.00001e+06 a=40 p=26 mult=1 $X=42095 $Y=75770 $D=9
+M272 VSSD 9 VSSD VSSD nshort L=8 W=7 AD=0.98 AS=0.98 PD=7.28 PS=7.28 NRD=0 NRS=0 m=1 r=0.875 sa=4.00001e+06 sb=4.00001e+06 a=56 p=30 mult=1 $X=42095 $Y=82770 $D=9
+M273 VSSD 9 VSSD VSSD nshort L=8 W=7 AD=0.98 AS=0.98 PD=7.28 PS=7.28 NRD=0 NRS=0 m=1 r=0.875 sa=4.00001e+06 sb=4.00001e+06 a=56 p=30 mult=1 $X=42095 $Y=91265 $D=9
+M274 VSSIO 5 VSSIO VSSIO nshort L=8 W=7 AD=0.98 AS=0.98 PD=7.28 PS=7.28 NRD=0 NRS=0 m=1 r=0.875 sa=4.00001e+06 sb=4.00001e+06 a=56 p=30 mult=1 $X=42095 $Y=101370 $D=9
+M275 VSSIO 5 VSSIO VSSIO nshort L=8 W=7 AD=0.98 AS=0.98 PD=7.28 PS=7.28 NRD=0 NRS=0 m=1 r=0.875 sa=4.00001e+06 sb=4.00001e+06 a=56 p=30 mult=1 $X=42095 $Y=109865 $D=9
+M276 VSSIO 5 VSSIO VSSIO nshort L=8 W=7 AD=0.98 AS=0.98 PD=7.28 PS=7.28 NRD=0 NRS=0 m=1 r=0.875 sa=4.00001e+06 sb=4.00001e+06 a=56 p=30 mult=1 $X=42095 $Y=118690 $D=9
+M277 VCCD 11 VSSD VSSD nshort L=0.18 W=7 AD=3.535 AS=3.5 PD=8.01 PS=15 NRD=3.336 NRS=3.42 m=1 r=38.8889 sa=90019.9 sb=90016.2 a=1.26 p=14.36 mult=1 $X=50370 $Y=26825 $D=9
+M278 VCCD 11 VSSD VSSD nshort L=0.18 W=7 AD=3.535 AS=3.5 PD=8.01 PS=15 NRD=3.336 NRS=3.42 m=1 r=38.8889 sa=90019.9 sb=90016.2 a=1.26 p=14.36 mult=1 $X=50370 $Y=36825 $D=9
+M279 VCCD 11 VSSD VSSD nshort L=0.18 W=7 AD=3.535 AS=3.5 PD=8.01 PS=15 NRD=3.336 NRS=3.42 m=1 r=38.8889 sa=90019.9 sb=90016.2 a=1.26 p=14.36 mult=1 $X=50370 $Y=46825 $D=9
+M280 VCCD 11 VSSD VSSD nshort L=0.18 W=7 AD=3.535 AS=3.5 PD=8.01 PS=15 NRD=3.336 NRS=3.42 m=1 r=38.8889 sa=90019.9 sb=90016.2 a=1.26 p=14.36 mult=1 $X=50370 $Y=56825 $D=9
+M281 VCCD 11 VSSD VSSD nshort L=0.18 W=5 AD=2.525 AS=2.5 PD=6.01 PS=11 NRD=4.68 NRS=4.8 m=1 r=27.7778 sa=90019.9 sb=90016.1 a=0.9 p=10.36 mult=1 $X=50370 $Y=66825 $D=9
+M282 VCCD 7 VSSIO VSSIO nshort L=0.18 W=7 AD=3.535 AS=3.5 PD=8.01 PS=15 NRD=3.336 NRS=3.42 m=1 r=38.8889 sa=90019.9 sb=90016.2 a=1.26 p=14.36 mult=1 $X=50370 $Y=176825 $D=9
+M283 VCCD 7 VSSIO VSSIO nshort L=0.18 W=7 AD=3.535 AS=3.5 PD=8.01 PS=15 NRD=3.336 NRS=3.42 m=1 r=38.8889 sa=90019.9 sb=90016.2 a=1.26 p=14.36 mult=1 $X=50370 $Y=186825 $D=9
+M284 VCCD 7 VSSIO VSSIO nshort L=0.18 W=5 AD=2.925 AS=5.625 PD=6.17 PS=12.25 NRD=6.6 NRS=19.788 m=1 r=27.7778 sa=90019.9 sb=90015.6 a=0.9 p=10.36 mult=1 $X=50895 $Y=128720 $D=9
+M285 VCCD 7 VSSIO VSSIO nshort L=0.18 W=7 AD=4.095 AS=7.875 PD=8.17 PS=16.25 NRD=4.704 NRS=14.136 m=1 r=38.8889 sa=90019.9 sb=90015.6 a=1.26 p=14.36 mult=1 $X=50895 $Y=136825 $D=9
+M286 VCCD 7 VSSIO VSSIO nshort L=0.18 W=7 AD=4.095 AS=7.875 PD=8.17 PS=16.25 NRD=4.704 NRS=14.136 m=1 r=38.8889 sa=90019.9 sb=90015.6 a=1.26 p=14.36 mult=1 $X=50895 $Y=146825 $D=9
+M287 VCCD 7 VSSIO VSSIO nshort L=0.18 W=7 AD=4.095 AS=7.875 PD=8.17 PS=16.25 NRD=4.704 NRS=14.136 m=1 r=38.8889 sa=90019.9 sb=90015.6 a=1.26 p=14.36 mult=1 $X=50895 $Y=156825 $D=9
+M288 VCCD 7 VSSIO VSSIO nshort L=0.18 W=7 AD=4.095 AS=7.875 PD=8.17 PS=16.25 NRD=4.704 NRS=14.136 m=1 r=38.8889 sa=90019.9 sb=90015.6 a=1.26 p=14.36 mult=1 $X=50895 $Y=166825 $D=9
+M289 VSSD 11 VCCD VSSD nshort L=0.18 W=7 AD=3.5 AS=3.535 PD=15 PS=8.01 NRD=3.42 NRS=3.336 m=1 r=38.8889 sa=90019.9 sb=90015 a=1.26 p=14.36 mult=1 $X=51560 $Y=26825 $D=9
+M290 VSSD 11 VCCD VSSD nshort L=0.18 W=7 AD=3.5 AS=3.535 PD=15 PS=8.01 NRD=3.42 NRS=3.336 m=1 r=38.8889 sa=90019.9 sb=90015 a=1.26 p=14.36 mult=1 $X=51560 $Y=36825 $D=9
+M291 VSSD 11 VCCD VSSD nshort L=0.18 W=7 AD=3.5 AS=3.535 PD=15 PS=8.01 NRD=3.42 NRS=3.336 m=1 r=38.8889 sa=90019.9 sb=90015 a=1.26 p=14.36 mult=1 $X=51560 $Y=46825 $D=9
+M292 VSSD 11 VCCD VSSD nshort L=0.18 W=7 AD=3.5 AS=3.535 PD=15 PS=8.01 NRD=3.42 NRS=3.336 m=1 r=38.8889 sa=90019.9 sb=90015 a=1.26 p=14.36 mult=1 $X=51560 $Y=56825 $D=9
+M293 VSSD 11 VCCD VSSD nshort L=0.18 W=5 AD=2.5 AS=2.525 PD=11 PS=6.01 NRD=4.8 NRS=4.68 m=1 r=27.7778 sa=90019.9 sb=90015 a=0.9 p=10.36 mult=1 $X=51560 $Y=66825 $D=9
+M294 VSSIO 7 VCCD VSSIO nshort L=0.18 W=7 AD=3.5 AS=3.535 PD=15 PS=8.01 NRD=3.42 NRS=3.336 m=1 r=38.8889 sa=90019.9 sb=90015 a=1.26 p=14.36 mult=1 $X=51560 $Y=176825 $D=9
+M295 VSSIO 7 VCCD VSSIO nshort L=0.18 W=7 AD=3.5 AS=3.535 PD=15 PS=8.01 NRD=3.42 NRS=3.336 m=1 r=38.8889 sa=90019.9 sb=90015 a=1.26 p=14.36 mult=1 $X=51560 $Y=186825 $D=9
+M296 VSSIO 7 VCCD VSSIO nshort L=0.18 W=5 AD=5.625 AS=2.925 PD=12.25 PS=6.17 NRD=19.788 NRS=6.6 m=1 r=27.7778 sa=90019.9 sb=90014.3 a=0.9 p=10.36 mult=1 $X=52245 $Y=128720 $D=9
+M297 VSSIO 7 VCCD VSSIO nshort L=0.18 W=7 AD=7.875 AS=4.095 PD=16.25 PS=8.17 NRD=14.136 NRS=4.704 m=1 r=38.8889 sa=90019.9 sb=90014.3 a=1.26 p=14.36 mult=1 $X=52245 $Y=136825 $D=9
+M298 VSSIO 7 VCCD VSSIO nshort L=0.18 W=7 AD=7.875 AS=4.095 PD=16.25 PS=8.17 NRD=14.136 NRS=4.704 m=1 r=38.8889 sa=90019.9 sb=90014.3 a=1.26 p=14.36 mult=1 $X=52245 $Y=146825 $D=9
+M299 VSSIO 7 VCCD VSSIO nshort L=0.18 W=7 AD=7.875 AS=4.095 PD=16.25 PS=8.17 NRD=14.136 NRS=4.704 m=1 r=38.8889 sa=90019.9 sb=90014.3 a=1.26 p=14.36 mult=1 $X=52245 $Y=156825 $D=9
+M300 VSSIO 7 VCCD VSSIO nshort L=0.18 W=7 AD=7.875 AS=4.095 PD=16.25 PS=8.17 NRD=14.136 NRS=4.704 m=1 r=38.8889 sa=90019.9 sb=90014.3 a=1.26 p=14.36 mult=1 $X=52245 $Y=166825 $D=9
+M301 VCCD 11 VSSD VSSD nshort L=0.18 W=7 AD=3.535 AS=3.5 PD=8.01 PS=15 NRD=3.336 NRS=3.42 m=1 r=38.8889 sa=90019.9 sb=90013.4 a=1.26 p=14.36 mult=1 $X=53140 $Y=26825 $D=9
+M302 VCCD 11 VSSD VSSD nshort L=0.18 W=7 AD=3.535 AS=3.5 PD=8.01 PS=15 NRD=3.336 NRS=3.42 m=1 r=38.8889 sa=90019.9 sb=90013.4 a=1.26 p=14.36 mult=1 $X=53140 $Y=36825 $D=9
+M303 VCCD 11 VSSD VSSD nshort L=0.18 W=7 AD=3.535 AS=3.5 PD=8.01 PS=15 NRD=3.336 NRS=3.42 m=1 r=38.8889 sa=90019.9 sb=90013.4 a=1.26 p=14.36 mult=1 $X=53140 $Y=46825 $D=9
+M304 VCCD 11 VSSD VSSD nshort L=0.18 W=7 AD=3.535 AS=3.5 PD=8.01 PS=15 NRD=3.336 NRS=3.42 m=1 r=38.8889 sa=90019.9 sb=90013.4 a=1.26 p=14.36 mult=1 $X=53140 $Y=56825 $D=9
+M305 VCCD 11 VSSD VSSD nshort L=0.18 W=5 AD=2.525 AS=2.5 PD=6.01 PS=11 NRD=4.68 NRS=4.8 m=1 r=27.7778 sa=90019.9 sb=90013.4 a=0.9 p=10.36 mult=1 $X=53140 $Y=66825 $D=9
+M306 VCCD 7 VSSIO VSSIO nshort L=0.18 W=7 AD=3.535 AS=3.5 PD=8.01 PS=15 NRD=3.336 NRS=3.42 m=1 r=38.8889 sa=90019.9 sb=90013.4 a=1.26 p=14.36 mult=1 $X=53140 $Y=176825 $D=9
+M307 VCCD 7 VSSIO VSSIO nshort L=0.18 W=7 AD=3.535 AS=3.5 PD=8.01 PS=15 NRD=3.336 NRS=3.42 m=1 r=38.8889 sa=90019.9 sb=90013.4 a=1.26 p=14.36 mult=1 $X=53140 $Y=186825 $D=9
+M308 VSSD 11 VCCD VSSD nshort L=0.18 W=7 AD=3.5 AS=3.535 PD=15 PS=8.01 NRD=3.42 NRS=3.336 m=1 r=38.8889 sa=90019.9 sb=90012.2 a=1.26 p=14.36 mult=1 $X=54330 $Y=26825 $D=9
+M309 VSSD 11 VCCD VSSD nshort L=0.18 W=7 AD=3.5 AS=3.535 PD=15 PS=8.01 NRD=3.42 NRS=3.336 m=1 r=38.8889 sa=90019.9 sb=90012.2 a=1.26 p=14.36 mult=1 $X=54330 $Y=36825 $D=9
+M310 VSSD 11 VCCD VSSD nshort L=0.18 W=7 AD=3.5 AS=3.535 PD=15 PS=8.01 NRD=3.42 NRS=3.336 m=1 r=38.8889 sa=90019.9 sb=90012.2 a=1.26 p=14.36 mult=1 $X=54330 $Y=46825 $D=9
+M311 VSSD 11 VCCD VSSD nshort L=0.18 W=7 AD=3.5 AS=3.535 PD=15 PS=8.01 NRD=3.42 NRS=3.336 m=1 r=38.8889 sa=90019.9 sb=90012.2 a=1.26 p=14.36 mult=1 $X=54330 $Y=56825 $D=9
+M312 VSSD 11 VCCD VSSD nshort L=0.18 W=5 AD=2.5 AS=2.525 PD=11 PS=6.01 NRD=4.8 NRS=4.68 m=1 r=27.7778 sa=90019.9 sb=90012.2 a=0.9 p=10.36 mult=1 $X=54330 $Y=66825 $D=9
+M313 VSSIO 7 VCCD VSSIO nshort L=0.18 W=7 AD=3.5 AS=3.535 PD=15 PS=8.01 NRD=3.42 NRS=3.336 m=1 r=38.8889 sa=90019.9 sb=90012.2 a=1.26 p=14.36 mult=1 $X=54330 $Y=176825 $D=9
+M314 VSSIO 7 VCCD VSSIO nshort L=0.18 W=7 AD=3.5 AS=3.535 PD=15 PS=8.01 NRD=3.42 NRS=3.336 m=1 r=38.8889 sa=90019.9 sb=90012.2 a=1.26 p=14.36 mult=1 $X=54330 $Y=186825 $D=9
+M315 VCCD 7 VSSIO VSSIO nshort L=0.18 W=5 AD=2.925 AS=5.625 PD=6.17 PS=12.25 NRD=6.6 NRS=19.788 m=1 r=27.7778 sa=90019.9 sb=90011.4 a=0.9 p=10.36 mult=1 $X=55075 $Y=128720 $D=9
+M316 VCCD 7 VSSIO VSSIO nshort L=0.18 W=7 AD=4.095 AS=7.875 PD=8.17 PS=16.25 NRD=4.704 NRS=14.136 m=1 r=38.8889 sa=90019.9 sb=90011.4 a=1.26 p=14.36 mult=1 $X=55075 $Y=136825 $D=9
+M317 VCCD 7 VSSIO VSSIO nshort L=0.18 W=7 AD=4.095 AS=7.875 PD=8.17 PS=16.25 NRD=4.704 NRS=14.136 m=1 r=38.8889 sa=90019.9 sb=90011.4 a=1.26 p=14.36 mult=1 $X=55075 $Y=146825 $D=9
+M318 VCCD 7 VSSIO VSSIO nshort L=0.18 W=7 AD=4.095 AS=7.875 PD=8.17 PS=16.25 NRD=4.704 NRS=14.136 m=1 r=38.8889 sa=90019.9 sb=90011.4 a=1.26 p=14.36 mult=1 $X=55075 $Y=156825 $D=9
+M319 VCCD 7 VSSIO VSSIO nshort L=0.18 W=7 AD=4.095 AS=7.875 PD=8.17 PS=16.25 NRD=4.704 NRS=14.136 m=1 r=38.8889 sa=90019.9 sb=90011.4 a=1.26 p=14.36 mult=1 $X=55075 $Y=166825 $D=9
+M320 VCCD 11 VSSD VSSD nshort L=0.18 W=7 AD=3.535 AS=3.5 PD=8.01 PS=15 NRD=3.336 NRS=3.42 m=1 r=38.8889 sa=90019.9 sb=90010.6 a=1.26 p=14.36 mult=1 $X=55910 $Y=26825 $D=9
+M321 VCCD 11 VSSD VSSD nshort L=0.18 W=7 AD=3.535 AS=3.5 PD=8.01 PS=15 NRD=3.336 NRS=3.42 m=1 r=38.8889 sa=90019.9 sb=90010.6 a=1.26 p=14.36 mult=1 $X=55910 $Y=36825 $D=9
+M322 VCCD 11 VSSD VSSD nshort L=0.18 W=7 AD=3.535 AS=3.5 PD=8.01 PS=15 NRD=3.336 NRS=3.42 m=1 r=38.8889 sa=90019.9 sb=90010.6 a=1.26 p=14.36 mult=1 $X=55910 $Y=46825 $D=9
+M323 VCCD 11 VSSD VSSD nshort L=0.18 W=7 AD=3.535 AS=3.5 PD=8.01 PS=15 NRD=3.336 NRS=3.42 m=1 r=38.8889 sa=90019.9 sb=90010.6 a=1.26 p=14.36 mult=1 $X=55910 $Y=56825 $D=9
+M324 VCCD 11 VSSD VSSD nshort L=0.18 W=5 AD=2.525 AS=2.5 PD=6.01 PS=11 NRD=4.68 NRS=4.8 m=1 r=27.7778 sa=90019.9 sb=90010.6 a=0.9 p=10.36 mult=1 $X=55910 $Y=66825 $D=9
+M325 VCCD 7 VSSIO VSSIO nshort L=0.18 W=7 AD=3.535 AS=3.5 PD=8.01 PS=15 NRD=3.336 NRS=3.42 m=1 r=38.8889 sa=90019.9 sb=90010.6 a=1.26 p=14.36 mult=1 $X=55910 $Y=176825 $D=9
+M326 VCCD 7 VSSIO VSSIO nshort L=0.18 W=7 AD=3.535 AS=3.5 PD=8.01 PS=15 NRD=3.336 NRS=3.42 m=1 r=38.8889 sa=90019.9 sb=90010.6 a=1.26 p=14.36 mult=1 $X=55910 $Y=186825 $D=9
+M327 VSSIO 7 VCCD VSSIO nshort L=0.18 W=5 AD=5.625 AS=2.925 PD=12.25 PS=6.17 NRD=19.788 NRS=6.6 m=1 r=27.7778 sa=90019.9 sb=90010.1 a=0.9 p=10.36 mult=1 $X=56425 $Y=128720 $D=9
+M328 VSSIO 7 VCCD VSSIO nshort L=0.18 W=7 AD=7.875 AS=4.095 PD=16.25 PS=8.17 NRD=14.136 NRS=4.704 m=1 r=38.8889 sa=90019.9 sb=90010.1 a=1.26 p=14.36 mult=1 $X=56425 $Y=136825 $D=9
+M329 VSSIO 7 VCCD VSSIO nshort L=0.18 W=7 AD=7.875 AS=4.095 PD=16.25 PS=8.17 NRD=14.136 NRS=4.704 m=1 r=38.8889 sa=90019.9 sb=90010.1 a=1.26 p=14.36 mult=1 $X=56425 $Y=146825 $D=9
+M330 VSSIO 7 VCCD VSSIO nshort L=0.18 W=7 AD=7.875 AS=4.095 PD=16.25 PS=8.17 NRD=14.136 NRS=4.704 m=1 r=38.8889 sa=90019.9 sb=90010.1 a=1.26 p=14.36 mult=1 $X=56425 $Y=156825 $D=9
+M331 VSSIO 7 VCCD VSSIO nshort L=0.18 W=7 AD=7.875 AS=4.095 PD=16.25 PS=8.17 NRD=14.136 NRS=4.704 m=1 r=38.8889 sa=90019.9 sb=90010.1 a=1.26 p=14.36 mult=1 $X=56425 $Y=166825 $D=9
+M332 VSSD 11 VCCD VSSD nshort L=0.18 W=7 AD=3.5 AS=3.535 PD=15 PS=8.01 NRD=3.42 NRS=3.336 m=1 r=38.8889 sa=90019.9 sb=90009.4 a=1.26 p=14.36 mult=1 $X=57100 $Y=26825 $D=9
+M333 VSSD 11 VCCD VSSD nshort L=0.18 W=7 AD=3.5 AS=3.535 PD=15 PS=8.01 NRD=3.42 NRS=3.336 m=1 r=38.8889 sa=90019.9 sb=90009.4 a=1.26 p=14.36 mult=1 $X=57100 $Y=36825 $D=9
+M334 VSSD 11 VCCD VSSD nshort L=0.18 W=7 AD=3.5 AS=3.535 PD=15 PS=8.01 NRD=3.42 NRS=3.336 m=1 r=38.8889 sa=90019.9 sb=90009.4 a=1.26 p=14.36 mult=1 $X=57100 $Y=46825 $D=9
+M335 VSSD 11 VCCD VSSD nshort L=0.18 W=7 AD=3.5 AS=3.535 PD=15 PS=8.01 NRD=3.42 NRS=3.336 m=1 r=38.8889 sa=90019.9 sb=90009.4 a=1.26 p=14.36 mult=1 $X=57100 $Y=56825 $D=9
+M336 VSSD 11 VCCD VSSD nshort L=0.18 W=5 AD=2.5 AS=2.525 PD=11 PS=6.01 NRD=4.8 NRS=4.68 m=1 r=27.7778 sa=90019.9 sb=90009.4 a=0.9 p=10.36 mult=1 $X=57100 $Y=66825 $D=9
+M337 VSSIO 7 VCCD VSSIO nshort L=0.18 W=7 AD=3.5 AS=3.535 PD=15 PS=8.01 NRD=3.42 NRS=3.336 m=1 r=38.8889 sa=90019.9 sb=90009.4 a=1.26 p=14.36 mult=1 $X=57100 $Y=176825 $D=9
+M338 VSSIO 7 VCCD VSSIO nshort L=0.18 W=7 AD=3.5 AS=3.535 PD=15 PS=8.01 NRD=3.42 NRS=3.336 m=1 r=38.8889 sa=90019.9 sb=90009.4 a=1.26 p=14.36 mult=1 $X=57100 $Y=186825 $D=9
+M339 VSSD 9 VSSD VSSD nshort L=8 W=5 AD=0.7 AS=0.7 PD=5.28 PS=5.28 NRD=0 NRS=0 m=1 r=0.625 sa=4.00002e+06 sb=4e+06 a=40 p=26 mult=1 $X=50375 $Y=75770 $D=9
+M340 VSSD 9 VSSD VSSD nshort L=8 W=7 AD=0.98 AS=0.98 PD=7.28 PS=7.28 NRD=0 NRS=0 m=1 r=0.875 sa=4.00002e+06 sb=4e+06 a=56 p=30 mult=1 $X=50375 $Y=82770 $D=9
+M341 VSSD 9 VSSD VSSD nshort L=8 W=7 AD=0.98 AS=0.98 PD=7.28 PS=7.28 NRD=0 NRS=0 m=1 r=0.875 sa=4.00002e+06 sb=4e+06 a=56 p=30 mult=1 $X=50375 $Y=91265 $D=9
+M342 VSSIO 5 VSSIO VSSIO nshort L=8 W=7 AD=0.98 AS=0.98 PD=7.28 PS=7.28 NRD=0 NRS=0 m=1 r=0.875 sa=4.00002e+06 sb=4e+06 a=56 p=30 mult=1 $X=50375 $Y=101370 $D=9
+M343 VSSIO 5 VSSIO VSSIO nshort L=8 W=7 AD=0.98 AS=0.98 PD=7.28 PS=7.28 NRD=0 NRS=0 m=1 r=0.875 sa=4.00002e+06 sb=4e+06 a=56 p=30 mult=1 $X=50375 $Y=109865 $D=9
+M344 VSSIO 5 VSSIO VSSIO nshort L=8 W=7 AD=0.98 AS=0.98 PD=7.28 PS=7.28 NRD=0 NRS=0 m=1 r=0.875 sa=4.00002e+06 sb=4e+06 a=56 p=30 mult=1 $X=50375 $Y=118690 $D=9
+M345 VCCD 11 VSSD VSSD nshort L=0.18 W=7 AD=3.535 AS=3.5 PD=8.01 PS=15 NRD=3.336 NRS=3.42 m=1 r=38.8889 sa=90019.9 sb=90007.8 a=1.26 p=14.36 mult=1 $X=58680 $Y=26825 $D=9
+M346 VCCD 11 VSSD VSSD nshort L=0.18 W=7 AD=3.535 AS=3.5 PD=8.01 PS=15 NRD=3.336 NRS=3.42 m=1 r=38.8889 sa=90019.9 sb=90007.8 a=1.26 p=14.36 mult=1 $X=58680 $Y=36825 $D=9
+M347 VCCD 11 VSSD VSSD nshort L=0.18 W=7 AD=3.535 AS=3.5 PD=8.01 PS=15 NRD=3.336 NRS=3.42 m=1 r=38.8889 sa=90019.9 sb=90007.8 a=1.26 p=14.36 mult=1 $X=58680 $Y=46825 $D=9
+M348 VCCD 11 VSSD VSSD nshort L=0.18 W=7 AD=3.535 AS=3.5 PD=8.01 PS=15 NRD=3.336 NRS=3.42 m=1 r=38.8889 sa=90019.9 sb=90007.8 a=1.26 p=14.36 mult=1 $X=58680 $Y=56825 $D=9
+M349 VCCD 11 VSSD VSSD nshort L=0.18 W=5 AD=2.525 AS=2.5 PD=6.01 PS=11 NRD=4.68 NRS=4.8 m=1 r=27.7778 sa=90019.9 sb=90007.8 a=0.9 p=10.36 mult=1 $X=58680 $Y=66825 $D=9
+M350 VCCD 7 VSSIO VSSIO nshort L=0.18 W=7 AD=3.535 AS=3.5 PD=8.01 PS=15 NRD=3.336 NRS=3.42 m=1 r=38.8889 sa=90019.9 sb=90007.8 a=1.26 p=14.36 mult=1 $X=58680 $Y=176825 $D=9
+M351 VCCD 7 VSSIO VSSIO nshort L=0.18 W=7 AD=3.535 AS=3.5 PD=8.01 PS=15 NRD=3.336 NRS=3.42 m=1 r=38.8889 sa=90019.9 sb=90007.8 a=1.26 p=14.36 mult=1 $X=58680 $Y=186825 $D=9
+M352 VCCD 7 VSSIO VSSIO nshort L=0.18 W=5 AD=2.925 AS=5.625 PD=6.17 PS=12.25 NRD=6.6 NRS=19.788 m=1 r=27.7778 sa=90019.9 sb=90007.3 a=0.9 p=10.36 mult=1 $X=59255 $Y=128720 $D=9
+M353 VCCD 7 VSSIO VSSIO nshort L=0.18 W=7 AD=4.095 AS=7.875 PD=8.17 PS=16.25 NRD=4.704 NRS=14.136 m=1 r=38.8889 sa=90019.9 sb=90007.3 a=1.26 p=14.36 mult=1 $X=59255 $Y=136825 $D=9
+M354 VCCD 7 VSSIO VSSIO nshort L=0.18 W=7 AD=4.095 AS=7.875 PD=8.17 PS=16.25 NRD=4.704 NRS=14.136 m=1 r=38.8889 sa=90019.9 sb=90007.3 a=1.26 p=14.36 mult=1 $X=59255 $Y=146825 $D=9
+M355 VCCD 7 VSSIO VSSIO nshort L=0.18 W=7 AD=4.095 AS=7.875 PD=8.17 PS=16.25 NRD=4.704 NRS=14.136 m=1 r=38.8889 sa=90019.9 sb=90007.3 a=1.26 p=14.36 mult=1 $X=59255 $Y=156825 $D=9
+M356 VCCD 7 VSSIO VSSIO nshort L=0.18 W=7 AD=4.095 AS=7.875 PD=8.17 PS=16.25 NRD=4.704 NRS=14.136 m=1 r=38.8889 sa=90019.9 sb=90007.3 a=1.26 p=14.36 mult=1 $X=59255 $Y=166825 $D=9
+M357 VSSD 11 VCCD VSSD nshort L=0.18 W=7 AD=3.5 AS=3.535 PD=15 PS=8.01 NRD=3.42 NRS=3.336 m=1 r=38.8889 sa=90019.9 sb=90006.6 a=1.26 p=14.36 mult=1 $X=59870 $Y=26825 $D=9
+M358 VSSD 11 VCCD VSSD nshort L=0.18 W=7 AD=3.5 AS=3.535 PD=15 PS=8.01 NRD=3.42 NRS=3.336 m=1 r=38.8889 sa=90019.9 sb=90006.6 a=1.26 p=14.36 mult=1 $X=59870 $Y=36825 $D=9
+M359 VSSD 11 VCCD VSSD nshort L=0.18 W=7 AD=3.5 AS=3.535 PD=15 PS=8.01 NRD=3.42 NRS=3.336 m=1 r=38.8889 sa=90019.9 sb=90006.6 a=1.26 p=14.36 mult=1 $X=59870 $Y=46825 $D=9
+M360 VSSD 11 VCCD VSSD nshort L=0.18 W=7 AD=3.5 AS=3.535 PD=15 PS=8.01 NRD=3.42 NRS=3.336 m=1 r=38.8889 sa=90019.9 sb=90006.6 a=1.26 p=14.36 mult=1 $X=59870 $Y=56825 $D=9
+M361 VSSD 11 VCCD VSSD nshort L=0.18 W=5 AD=2.5 AS=2.525 PD=11 PS=6.01 NRD=4.8 NRS=4.68 m=1 r=27.7778 sa=90019.9 sb=90006.6 a=0.9 p=10.36 mult=1 $X=59870 $Y=66825 $D=9
+M362 VSSIO 7 VCCD VSSIO nshort L=0.18 W=7 AD=3.5 AS=3.535 PD=15 PS=8.01 NRD=3.42 NRS=3.336 m=1 r=38.8889 sa=90019.9 sb=90006.6 a=1.26 p=14.36 mult=1 $X=59870 $Y=176825 $D=9
+M363 VSSIO 7 VCCD VSSIO nshort L=0.18 W=7 AD=3.5 AS=3.535 PD=15 PS=8.01 NRD=3.42 NRS=3.336 m=1 r=38.8889 sa=90019.9 sb=90006.6 a=1.26 p=14.36 mult=1 $X=59870 $Y=186825 $D=9
+M364 VSSIO 7 VCCD VSSIO nshort L=0.18 W=5 AD=5.625 AS=2.925 PD=12.25 PS=6.17 NRD=19.788 NRS=6.6 m=1 r=27.7778 sa=90019.9 sb=90005.9 a=0.9 p=10.36 mult=1 $X=60605 $Y=128720 $D=9
+M365 VSSIO 7 VCCD VSSIO nshort L=0.18 W=7 AD=7.875 AS=4.095 PD=16.25 PS=8.17 NRD=14.136 NRS=4.704 m=1 r=38.8889 sa=90019.9 sb=90005.9 a=1.26 p=14.36 mult=1 $X=60605 $Y=136825 $D=9
+M366 VSSIO 7 VCCD VSSIO nshort L=0.18 W=7 AD=7.875 AS=4.095 PD=16.25 PS=8.17 NRD=14.136 NRS=4.704 m=1 r=38.8889 sa=90019.9 sb=90005.9 a=1.26 p=14.36 mult=1 $X=60605 $Y=146825 $D=9
+M367 VSSIO 7 VCCD VSSIO nshort L=0.18 W=7 AD=7.875 AS=4.095 PD=16.25 PS=8.17 NRD=14.136 NRS=4.704 m=1 r=38.8889 sa=90019.9 sb=90005.9 a=1.26 p=14.36 mult=1 $X=60605 $Y=156825 $D=9
+M368 VSSIO 7 VCCD VSSIO nshort L=0.18 W=7 AD=7.875 AS=4.095 PD=16.25 PS=8.17 NRD=14.136 NRS=4.704 m=1 r=38.8889 sa=90019.9 sb=90005.9 a=1.26 p=14.36 mult=1 $X=60605 $Y=166825 $D=9
+M369 VCCD 11 VSSD VSSD nshort L=0.18 W=7 AD=3.535 AS=3.5 PD=8.01 PS=15 NRD=3.336 NRS=3.42 m=1 r=38.8889 sa=90019.9 sb=90005.1 a=1.26 p=14.36 mult=1 $X=61450 $Y=26825 $D=9
+M370 VCCD 11 VSSD VSSD nshort L=0.18 W=7 AD=3.535 AS=3.5 PD=8.01 PS=15 NRD=3.336 NRS=3.42 m=1 r=38.8889 sa=90019.9 sb=90005.1 a=1.26 p=14.36 mult=1 $X=61450 $Y=36825 $D=9
+M371 VCCD 11 VSSD VSSD nshort L=0.18 W=7 AD=3.535 AS=3.5 PD=8.01 PS=15 NRD=3.336 NRS=3.42 m=1 r=38.8889 sa=90019.9 sb=90005.1 a=1.26 p=14.36 mult=1 $X=61450 $Y=46825 $D=9
+M372 VCCD 11 VSSD VSSD nshort L=0.18 W=7 AD=3.535 AS=3.5 PD=8.01 PS=15 NRD=3.336 NRS=3.42 m=1 r=38.8889 sa=90019.9 sb=90005.1 a=1.26 p=14.36 mult=1 $X=61450 $Y=56825 $D=9
+M373 VCCD 11 VSSD VSSD nshort L=0.18 W=5 AD=2.525 AS=2.5 PD=6.01 PS=11 NRD=4.68 NRS=4.8 m=1 r=27.7778 sa=90019.9 sb=90005.1 a=0.9 p=10.36 mult=1 $X=61450 $Y=66825 $D=9
+M374 VCCD 7 VSSIO VSSIO nshort L=0.18 W=7 AD=3.535 AS=3.5 PD=8.01 PS=15 NRD=3.336 NRS=3.42 m=1 r=38.8889 sa=90019.9 sb=90005.1 a=1.26 p=14.36 mult=1 $X=61450 $Y=176825 $D=9
+M375 VCCD 7 VSSIO VSSIO nshort L=0.18 W=7 AD=3.535 AS=3.5 PD=8.01 PS=15 NRD=3.336 NRS=3.42 m=1 r=38.8889 sa=90019.9 sb=90005.1 a=1.26 p=14.36 mult=1 $X=61450 $Y=186825 $D=9
+M376 VSSD 11 VCCD VSSD nshort L=0.18 W=7 AD=3.5 AS=3.535 PD=15 PS=8.01 NRD=3.42 NRS=3.336 m=1 r=38.8889 sa=90019.9 sb=90003.9 a=1.26 p=14.36 mult=1 $X=62640 $Y=26825 $D=9
+M377 VSSD 11 VCCD VSSD nshort L=0.18 W=7 AD=3.5 AS=3.535 PD=15 PS=8.01 NRD=3.42 NRS=3.336 m=1 r=38.8889 sa=90019.9 sb=90003.9 a=1.26 p=14.36 mult=1 $X=62640 $Y=36825 $D=9
+M378 VSSD 11 VCCD VSSD nshort L=0.18 W=7 AD=3.5 AS=3.535 PD=15 PS=8.01 NRD=3.42 NRS=3.336 m=1 r=38.8889 sa=90019.9 sb=90003.9 a=1.26 p=14.36 mult=1 $X=62640 $Y=46825 $D=9
+M379 VSSD 11 VCCD VSSD nshort L=0.18 W=7 AD=3.5 AS=3.535 PD=15 PS=8.01 NRD=3.42 NRS=3.336 m=1 r=38.8889 sa=90019.9 sb=90003.9 a=1.26 p=14.36 mult=1 $X=62640 $Y=56825 $D=9
+M380 VSSD 11 VCCD VSSD nshort L=0.18 W=5 AD=2.5 AS=2.525 PD=11 PS=6.01 NRD=4.8 NRS=4.68 m=1 r=27.7778 sa=90019.9 sb=90003.9 a=0.9 p=10.36 mult=1 $X=62640 $Y=66825 $D=9
+M381 VSSIO 7 VCCD VSSIO nshort L=0.18 W=7 AD=3.5 AS=3.535 PD=15 PS=8.01 NRD=3.42 NRS=3.336 m=1 r=38.8889 sa=90019.9 sb=90003.9 a=1.26 p=14.36 mult=1 $X=62640 $Y=176825 $D=9
+M382 VSSIO 7 VCCD VSSIO nshort L=0.18 W=7 AD=3.5 AS=3.535 PD=15 PS=8.01 NRD=3.42 NRS=3.336 m=1 r=38.8889 sa=90019.9 sb=90003.9 a=1.26 p=14.36 mult=1 $X=62640 $Y=186825 $D=9
+M383 VCCD 7 VSSIO VSSIO nshort L=0.18 W=5 AD=2.925 AS=5.625 PD=6.17 PS=12.25 NRD=6.6 NRS=19.788 m=1 r=27.7778 sa=90019.9 sb=90003.1 a=0.9 p=10.36 mult=1 $X=63435 $Y=128720 $D=9
+M384 VCCD 7 VSSIO VSSIO nshort L=0.18 W=7 AD=4.095 AS=7.875 PD=8.17 PS=16.25 NRD=4.704 NRS=14.136 m=1 r=38.8889 sa=90019.9 sb=90003.1 a=1.26 p=14.36 mult=1 $X=63435 $Y=136825 $D=9
+M385 VCCD 7 VSSIO VSSIO nshort L=0.18 W=7 AD=4.095 AS=7.875 PD=8.17 PS=16.25 NRD=4.704 NRS=14.136 m=1 r=38.8889 sa=90019.9 sb=90003.1 a=1.26 p=14.36 mult=1 $X=63435 $Y=146825 $D=9
+M386 VCCD 7 VSSIO VSSIO nshort L=0.18 W=7 AD=4.095 AS=7.875 PD=8.17 PS=16.25 NRD=4.704 NRS=14.136 m=1 r=38.8889 sa=90019.9 sb=90003.1 a=1.26 p=14.36 mult=1 $X=63435 $Y=156825 $D=9
+M387 VCCD 7 VSSIO VSSIO nshort L=0.18 W=7 AD=4.095 AS=7.875 PD=8.17 PS=16.25 NRD=4.704 NRS=14.136 m=1 r=38.8889 sa=90019.9 sb=90003.1 a=1.26 p=14.36 mult=1 $X=63435 $Y=166825 $D=9
+M388 VCCD 11 VSSD VSSD nshort L=0.18 W=7 AD=3.535 AS=3.5 PD=8.01 PS=15 NRD=3.336 NRS=3.42 m=1 r=38.8889 sa=90019.9 sb=90002.3 a=1.26 p=14.36 mult=1 $X=64220 $Y=26825 $D=9
+M389 VCCD 11 VSSD VSSD nshort L=0.18 W=7 AD=3.535 AS=3.5 PD=8.01 PS=15 NRD=3.336 NRS=3.42 m=1 r=38.8889 sa=90019.9 sb=90002.3 a=1.26 p=14.36 mult=1 $X=64220 $Y=36825 $D=9
+M390 VCCD 11 VSSD VSSD nshort L=0.18 W=7 AD=3.535 AS=3.5 PD=8.01 PS=15 NRD=3.336 NRS=3.42 m=1 r=38.8889 sa=90019.9 sb=90002.3 a=1.26 p=14.36 mult=1 $X=64220 $Y=46825 $D=9
+M391 VCCD 11 VSSD VSSD nshort L=0.18 W=7 AD=3.535 AS=3.5 PD=8.01 PS=15 NRD=3.336 NRS=3.42 m=1 r=38.8889 sa=90019.9 sb=90002.3 a=1.26 p=14.36 mult=1 $X=64220 $Y=56825 $D=9
+M392 VCCD 11 VSSD VSSD nshort L=0.18 W=5 AD=2.525 AS=2.5 PD=6.01 PS=11 NRD=4.68 NRS=4.8 m=1 r=27.7778 sa=90019.9 sb=90002.3 a=0.9 p=10.36 mult=1 $X=64220 $Y=66825 $D=9
+M393 VCCD 7 VSSIO VSSIO nshort L=0.18 W=7 AD=3.535 AS=3.5 PD=8.01 PS=15 NRD=3.336 NRS=3.42 m=1 r=38.8889 sa=90019.9 sb=90002.3 a=1.26 p=14.36 mult=1 $X=64220 $Y=176825 $D=9
+M394 VCCD 7 VSSIO VSSIO nshort L=0.18 W=7 AD=3.535 AS=3.5 PD=8.01 PS=15 NRD=3.336 NRS=3.42 m=1 r=38.8889 sa=90019.9 sb=90002.3 a=1.26 p=14.36 mult=1 $X=64220 $Y=186825 $D=9
+M395 VSSIO 7 VCCD VSSIO nshort L=0.18 W=5 AD=5.625 AS=2.925 PD=12.25 PS=6.17 NRD=19.788 NRS=6.6 m=1 r=27.7778 sa=90019.9 sb=90001.7 a=0.9 p=10.36 mult=1 $X=64785 $Y=128720 $D=9
+M396 VSSIO 7 VCCD VSSIO nshort L=0.18 W=7 AD=7.875 AS=4.095 PD=16.25 PS=8.17 NRD=14.136 NRS=4.704 m=1 r=38.8889 sa=90019.9 sb=90001.7 a=1.26 p=14.36 mult=1 $X=64785 $Y=136825 $D=9
+M397 VSSIO 7 VCCD VSSIO nshort L=0.18 W=7 AD=7.875 AS=4.095 PD=16.25 PS=8.17 NRD=14.136 NRS=4.704 m=1 r=38.8889 sa=90019.9 sb=90001.7 a=1.26 p=14.36 mult=1 $X=64785 $Y=146825 $D=9
+M398 VSSIO 7 VCCD VSSIO nshort L=0.18 W=7 AD=7.875 AS=4.095 PD=16.25 PS=8.17 NRD=14.136 NRS=4.704 m=1 r=38.8889 sa=90019.9 sb=90001.7 a=1.26 p=14.36 mult=1 $X=64785 $Y=156825 $D=9
+M399 VSSIO 7 VCCD VSSIO nshort L=0.18 W=7 AD=7.875 AS=4.095 PD=16.25 PS=8.17 NRD=14.136 NRS=4.704 m=1 r=38.8889 sa=90019.9 sb=90001.7 a=1.26 p=14.36 mult=1 $X=64785 $Y=166825 $D=9
+M400 VSSD 11 VCCD VSSD nshort L=0.18 W=7 AD=3.5 AS=3.535 PD=15 PS=8.01 NRD=3.42 NRS=3.336 m=1 r=38.8889 sa=90019.9 sb=90001.1 a=1.26 p=14.36 mult=1 $X=65410 $Y=26825 $D=9
+M401 VSSD 11 VCCD VSSD nshort L=0.18 W=7 AD=3.5 AS=3.535 PD=15 PS=8.01 NRD=3.42 NRS=3.336 m=1 r=38.8889 sa=90019.9 sb=90001.1 a=1.26 p=14.36 mult=1 $X=65410 $Y=36825 $D=9
+M402 VSSD 11 VCCD VSSD nshort L=0.18 W=7 AD=3.5 AS=3.535 PD=15 PS=8.01 NRD=3.42 NRS=3.336 m=1 r=38.8889 sa=90019.9 sb=90001.1 a=1.26 p=14.36 mult=1 $X=65410 $Y=46825 $D=9
+M403 VSSD 11 VCCD VSSD nshort L=0.18 W=7 AD=3.5 AS=3.535 PD=15 PS=8.01 NRD=3.42 NRS=3.336 m=1 r=38.8889 sa=90019.9 sb=90001.1 a=1.26 p=14.36 mult=1 $X=65410 $Y=56825 $D=9
+M404 VSSD 11 VCCD VSSD nshort L=0.18 W=5 AD=2.5 AS=2.525 PD=11 PS=6.01 NRD=4.8 NRS=4.68 m=1 r=27.7778 sa=90019.9 sb=90001.1 a=0.9 p=10.36 mult=1 $X=65410 $Y=66825 $D=9
+M405 VSSIO 7 VCCD VSSIO nshort L=0.18 W=7 AD=3.5 AS=3.535 PD=15 PS=8.01 NRD=3.42 NRS=3.336 m=1 r=38.8889 sa=90019.9 sb=90001.1 a=1.26 p=14.36 mult=1 $X=65410 $Y=176825 $D=9
+M406 VSSIO 7 VCCD VSSIO nshort L=0.18 W=7 AD=3.5 AS=3.535 PD=15 PS=8.01 NRD=3.42 NRS=3.336 m=1 r=38.8889 sa=90019.9 sb=90001.1 a=1.26 p=14.36 mult=1 $X=65410 $Y=186825 $D=9
+M407 VSSD 9 VSSD VSSD nshort L=8 W=5 AD=1.325 AS=0.7 PD=10.53 PS=5.28 NRD=0 NRS=0 m=1 r=0.625 sa=4.00002e+06 sb=4e+06 a=40 p=26 mult=1 $X=58655 $Y=75770 $D=9
+M408 VSSD 9 VSSD VSSD nshort L=8 W=7 AD=1.855 AS=0.98 PD=14.53 PS=7.28 NRD=0 NRS=0 m=1 r=0.875 sa=4.00002e+06 sb=4e+06 a=56 p=30 mult=1 $X=58655 $Y=82770 $D=9
+M409 VSSD 9 VSSD VSSD nshort L=8 W=7 AD=1.855 AS=0.98 PD=14.53 PS=7.28 NRD=0 NRS=0 m=1 r=0.875 sa=4.00002e+06 sb=4e+06 a=56 p=30 mult=1 $X=58655 $Y=91265 $D=9
+M410 VSSIO 5 VSSIO VSSIO nshort L=8 W=7 AD=1.855 AS=0.98 PD=14.53 PS=7.28 NRD=0 NRS=0 m=1 r=0.875 sa=4.00002e+06 sb=4e+06 a=56 p=30 mult=1 $X=58655 $Y=101370 $D=9
+M411 VSSIO 5 VSSIO VSSIO nshort L=8 W=7 AD=1.855 AS=0.98 PD=14.53 PS=7.28 NRD=0 NRS=0 m=1 r=0.875 sa=4.00002e+06 sb=4e+06 a=56 p=30 mult=1 $X=58655 $Y=109865 $D=9
+M412 VSSIO 5 VSSIO VSSIO nshort L=8 W=7 AD=1.855 AS=0.98 PD=14.53 PS=7.28 NRD=0 NRS=0 m=1 r=0.875 sa=4.00002e+06 sb=4e+06 a=56 p=30 mult=1 $X=58655 $Y=118690 $D=9
+X413 VSSIO VDDIO condiode a=1e-06 p=0.004 m=1 ahftempperim=0.004 $X=40185 $Y=114755 $D=150
+X414 VSSD VDDIO condiode a=1e-06 p=0.004 m=1 ahftempperim=0.004 $X=40605 $Y=34895 $D=150
+X415 VSSIO VDDIO condiode a=1e-06 p=0.004 m=1 ahftempperim=0.004 $X=40640 $Y=196045 $D=150
+D416 VSSIO VSSA pdiode AREA=22.5 PJ=33 m=1 ahftempperim=33 $X=19685 $Y=2345 $D=172
+D417 VSSIO VSSA pdiode AREA=22.5 PJ=33 m=1 ahftempperim=33 $X=23805 $Y=2345 $D=172
+D418 VSSIO VSSA pdiode AREA=22.5 PJ=33 m=1 ahftempperim=33 $X=27925 $Y=2345 $D=172
+D419 VSSIO VSSA pdiode AREA=22.5 PJ=33 m=1 ahftempperim=33 $X=32045 $Y=2345 $D=172
+D420 VSSA VSSIO pdiode AREA=22.5 PJ=33 m=1 ahftempperim=33 $X=39675 $Y=2345 $D=172
+D421 VSSA VSSIO pdiode AREA=22.5 PJ=33 m=1 ahftempperim=33 $X=43795 $Y=2345 $D=172
+D422 VSSA VSSIO pdiode AREA=22.5 PJ=33 m=1 ahftempperim=33 $X=47915 $Y=2345 $D=172
+D423 VSSA VSSIO pdiode AREA=22.5 PJ=33 m=1 ahftempperim=33 $X=52035 $Y=2345 $D=172
+X424 VSSIO VSSIO Dpar a=1.5 p=10.6 m=1 $[ndiode] $X=23990 $Y=128720 $D=181
+X425 VSSIO VSSIO Dpar a=2.1 p=14.6 m=1 $[ndiode] $X=23990 $Y=136825 $D=181
+X426 VSSIO VSSIO Dpar a=1.5 p=10.6 m=1 $[ndiode] $X=66490 $Y=128720 $D=181
+X427 VSSIO VSSIO Dpar a=2.1 p=14.6 m=1 $[ndiode] $X=66490 $Y=136825 $D=181
+X428 VSSD VCCD Dpar a=108.41 p=46.58 m=1 $[nwdiode] $X=1015 $Y=650 $D=191
+X429 VSSD VCCD Dpar a=108.41 p=46.58 m=1 $[nwdiode] $X=67280 $Y=710 $D=191
+X430 VSSD VDDIO Dpar a=10516.3 p=468.87 m=1 $[dnwdiode_psub] $X=9500 $Y=23570 $D=193
+X431 VSSD VDDIO Dpar a=4115.42 p=264.63 m=1 $[dnwdiode_pw] $X=10870 $Y=24940 $D=194
+X432 VSSIO VDDIO Dpar a=5703.29 p=340.89 m=1 $[dnwdiode_pw] $X=10870 $Y=83450 $D=194
+R433 VCCD 5 L=1950 W=0.33 m=1 mult=1 model="mrp1" $[mrp1] $X=240 $Y=19165 $D=257
+R434 8 6 L=720 W=0.33 m=1 mult=1 model="mrp1" $[mrp1] $X=10915 $Y=84295 $D=257
+R435 8 9 L=200 W=0.33 m=1 mult=1 model="mrp1" $[mrp1] $X=57065 $Y=1460 $D=257
+R436 10 6 L=300 W=0.33 m=1 mult=1 model="mrp1" $[mrp1] $X=10045 $Y=19145 $D=257
+R437 10 VCCD L=900 W=0.33 m=1 mult=1 model="mrp1" $[mrp1] $X=70635 $Y=18095 $D=257
+R438 VSSD VSSD 0.01 m=1 $[short] $X=6670 $Y=103310 $D=286
+X439 VCCD 5 7 sky130_fd_pr__pfet_01v8__example_55959141808687 $T=2070 1985 0 0 $X=1610 $Y=1805
+X440 VCCD 5 7 sky130_fd_pr__pfet_01v8__example_55959141808687 $T=2070 9635 0 0 $X=1610 $Y=9455
+X441 VCCD 9 11 sky130_fd_pr__pfet_01v8__example_55959141808687 $T=68335 2045 0 0 $X=67875 $Y=1865
+X442 VCCD 9 11 sky130_fd_pr__pfet_01v8__example_55959141808687 $T=68335 9695 0 0 $X=67875 $Y=9515
+X662 VSSD VSSA sky130_fd_io__gnd2gnd_sub_dnwl $T=16525 18445 1 0 $X=16525 $Y=1245
+X663 VSSD VSSIO sky130_fd_io__gnd2gnd_sub_dnwl $T=56695 18445 0 180 $X=36515 $Y=1245
+X674 VSSIO sky130_fd_pr__nfet_01v8__example_55959141808701 $T=17130 176825 0 0 $X=15800 $Y=176665
+X675 VSSIO sky130_fd_pr__nfet_01v8__example_55959141808703 $T=17455 146825 0 0 $X=15500 $Y=146665
+X676 VSSIO sky130_fd_pr__nfet_01v8__example_55959141808703 $T=17455 156825 0 0 $X=15500 $Y=156665
+X677 VSSIO sky130_fd_pr__nfet_01v8__example_55959141808703 $T=17455 166825 0 0 $X=15500 $Y=166665
+X678 VSSD sky130_fd_pr__nfet_01v8__example_55959141808705 $T=14360 26825 0 0 $X=13030 $Y=26665
+X679 VSSD sky130_fd_pr__nfet_01v8__example_55959141808705 $T=14360 36825 0 0 $X=13030 $Y=36665
+X680 VSSD sky130_fd_pr__nfet_01v8__example_55959141808705 $T=14360 46825 0 0 $X=13030 $Y=46665
+X681 VSSD sky130_fd_pr__nfet_01v8__example_55959141808705 $T=14360 56825 0 0 $X=13030 $Y=56665
+X682 VSSIO sky130_fd_pr__nfet_01v8__example_55959141808705 $T=14360 186825 0 0 $X=13030 $Y=186665
+X683 VSSD sky130_fd_pr__nfet_01v8__example_55959141808693 $T=14360 66825 0 0 $X=13030 $Y=66665
+.ENDS
+***************************************

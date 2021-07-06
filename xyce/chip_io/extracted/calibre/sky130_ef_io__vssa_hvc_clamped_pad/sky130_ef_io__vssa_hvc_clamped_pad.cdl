@@ -1,0 +1,470 @@
+* SPICE NETLIST
+***************************************
+
+.SUBCKT drainOnly g s d b
+.ENDS
+***************************************
+.SUBCKT condiode pin0 pin1
+.ENDS
+***************************************
+.SUBCKT nvhv pin0 pin1 pin2 pin3
+.ENDS
+***************************************
+.SUBCKT pvhv pin0 pin1 pin2 pin3
+.ENDS
+***************************************
+.SUBCKT xcnwvc pin0 pin1 pin2
+.ENDS
+***************************************
+.SUBCKT xcnwvc2 pin0 pin1 pin2
+.ENDS
+***************************************
+.SUBCKT xchvnwc pin0 pin1 pin2
+.ENDS
+***************************************
+.SUBCKT Dpar d0 d1
+.ENDS
+***************************************
+.SUBCKT xcmvpp pin0 pin1 pin2
+.ENDS
+***************************************
+.SUBCKT xcmvpp_2 pin0 pin1 pin2
+.ENDS
+***************************************
+.SUBCKT xcmvpp2_nhvnative10x4 pin0 pin1 pin2
+.ENDS
+***************************************
+.SUBCKT xcmvpp2_phv5x4 pin0 pin1 pin2
+.ENDS
+***************************************
+.SUBCKT xcmvpp_hd5_atlas_fingercap2_l5 pin0 pin1 pin2
+.ENDS
+***************************************
+.SUBCKT xcmvpp_hd5_atlas_wafflecap2 pin0 pin1 pin2
+.ENDS
+***************************************
+.SUBCKT xcmvpp_hd5_atlas_wafflecap1 pin0 pin1 pin2
+.ENDS
+***************************************
+.SUBCKT xcmvpp_hd5_atlas_fingercap_l40 pin0 pin1 pin2
+.ENDS
+***************************************
+.SUBCKT xcmvpp_hd5_atlas_fingercap_l20 pin0 pin1 pin2
+.ENDS
+***************************************
+.SUBCKT xcmvpp_hd5_atlas_fingercap_l10 pin0 pin1 pin2
+.ENDS
+***************************************
+.SUBCKT xcmvpp_hd5_atlas_fingercap_l5 pin0 pin1 pin2
+.ENDS
+***************************************
+.SUBCKT xcmvpp_hd5_5x2_met5pullin pin0 pin1 pin2
+.ENDS
+***************************************
+.SUBCKT xcmvpp_hd5_5x2 pin0 pin1 pin2
+.ENDS
+***************************************
+.SUBCKT xcmvpp_hd5_5x1_met5pullin pin0 pin1 pin2
+.ENDS
+***************************************
+.SUBCKT xcmvpp_hd5_5x1 pin0 pin1 pin2
+.ENDS
+***************************************
+.SUBCKT xcmvpp_hd5_4x2 pin0 pin1 pin2
+.ENDS
+***************************************
+.SUBCKT xcmvpp_hd5_4x1 pin0 pin1 pin2
+.ENDS
+***************************************
+.SUBCKT xcmvpp_hd5_3x2 pin0 pin1 pin2
+.ENDS
+***************************************
+.SUBCKT xcmvpp_hd5_3x1 pin0 pin1 pin2
+.ENDS
+***************************************
+.SUBCKT xcmvpp_hd5_2x2 pin0 pin1 pin2
+.ENDS
+***************************************
+.SUBCKT xcmvpp_hd5_2x1 pin0 pin1 pin2
+.ENDS
+***************************************
+.SUBCKT xcmvpp_hd5_1x2 pin0 pin1 pin2
+.ENDS
+***************************************
+.SUBCKT xcmvpp_hd5_1x1 pin0 pin1 pin2
+.ENDS
+***************************************
+.SUBCKT xcmvppx4_2xnhvnative10x4 pin0 pin1 pin2 pin3
+.ENDS
+***************************************
+.SUBCKT xcmvpp11p5x11p7_polym50p4shield pin0 pin1 pin2 pin3
+.ENDS
+***************************************
+.SUBCKT xcmvpp4p4x4p6_m3_lim5shield pin0 pin1 pin2 pin3
+.ENDS
+***************************************
+.SUBCKT xcmvpp11p5x11p7_m3_lim5shield pin0 pin1 pin2 pin3
+.ENDS
+***************************************
+.SUBCKT xcmvpp8p6x7p9_m3_lim5shield pin0 pin1 pin2 pin3
+.ENDS
+***************************************
+.SUBCKT xcmvpp11p5x11p7_lim5shield pin0 pin1 pin2 pin3
+.ENDS
+***************************************
+.SUBCKT xcmvpp11p5x11p7_polym5shield pin0 pin1 pin2 pin3
+.ENDS
+***************************************
+.SUBCKT xcmvpp11p5x11p7_m5shield pin0 pin1 pin2 pin3
+.ENDS
+***************************************
+.SUBCKT xcmvpp6p8x6p1_lim4shield pin0 pin1 pin2 pin3
+.ENDS
+***************************************
+.SUBCKT xcmvpp6p8x6p1_polym4shield pin0 pin1 pin2 pin3
+.ENDS
+***************************************
+.SUBCKT xcmvpp11p5x11p7_polym4shield pin0 pin1 pin2 pin3
+.ENDS
+***************************************
+.SUBCKT xcmvpp11p5x11p7_m4shield pin0 pin1 pin2 pin3
+.ENDS
+***************************************
+.SUBCKT xcmvpp1p8x1p8 pin0 pin1 pin2
+.ENDS
+***************************************
+.SUBCKT xcmvpp4p4x4p6_m3_lishield pin0 pin1 pin2
+.ENDS
+***************************************
+.SUBCKT xcmvpp8p6x7p9_m3_lishield pin0 pin1 pin2
+.ENDS
+***************************************
+.SUBCKT xcmvpp11p5x11p7_m3_lishield pin0 pin1 pin2
+.ENDS
+***************************************
+.SUBCKT xcmvpp11p5x11p7_m3shield c0 c1 b term4
+.ENDS
+***************************************
+.SUBCKT xcmvpp8p6x7p9_m3shield c0 c1 b term4
+.ENDS
+***************************************
+.SUBCKT xcmvpp4p4x4p6_m3shield c0 c1 b term4
+.ENDS
+***************************************
+.SUBCKT xcmvpp1p8x1p8_m3shield c0 c1 b term4
+.ENDS
+***************************************
+.SUBCKT xcmvpp11p5x11p7_m1m4m5shield pin0 pin1 pin2 pin3
+.ENDS
+***************************************
+.SUBCKT xcmvpp11p5x11p7_m1m4 pin0 pin1 pin2
+.ENDS
+***************************************
+.SUBCKT xcmvpp11p5x11p7_m1m2 pin0 pin1 pin2
+.ENDS
+***************************************
+.SUBCKT xcmvpp4p4x4p6_m1m2 pin0 pin1 pin2
+.ENDS
+***************************************
+.SUBCKT xcmvpp5 pin0 pin1 pin2
+.ENDS
+***************************************
+.SUBCKT xcmvpp4 pin0 pin1 pin2
+.ENDS
+***************************************
+.SUBCKT xcmvpp3 pin0 pin1 pin2
+.ENDS
+***************************************
+.SUBCKT balun pin0 pin1 pin2 pin3 pin4 pin5
+.ENDS
+***************************************
+.SUBCKT ind4 pin0 pin1 pin2 pin3
+.ENDS
+***************************************
+.SUBCKT Probe probe conductor
+.ENDS
+***************************************
+.SUBCKT sky130_fd_pr__dfl1sd__example_55959141808678
+** N=2 EP=0 IP=0 FDC=0
+.ENDS
+***************************************
+.SUBCKT sky130_fd_pr__hvdftpl1s__example_55959141808675
+** N=3 EP=0 IP=0 FDC=0
+*.SEEDPROM
+.ENDS
+***************************************
+.SUBCKT sky130_fd_pr__dfl1sd2__example_55959141808679
+** N=2 EP=0 IP=0 FDC=0
+.ENDS
+***************************************
+.SUBCKT ICV_1
+** N=2 EP=0 IP=4 FDC=0
+.ENDS
+***************************************
+.SUBCKT sky130_fd_pr__dfl1__example_55959141808662
+** N=4 EP=0 IP=0 FDC=0
+*.SEEDPROM
+.ENDS
+***************************************
+.SUBCKT sky130_fd_pr__dfl1__example_55959141808663
+** N=4 EP=0 IP=0 FDC=0
+*.SEEDPROM
+.ENDS
+***************************************
+.SUBCKT sky130_fd_pr__hvdfl1sd__example_5595914180851
+** N=3 EP=0 IP=0 FDC=0
+*.SEEDPROM
+.ENDS
+***************************************
+.SUBCKT sky130_fd_pr__model__nfet_highvoltage__example_55959141808664 2 3
+** N=4 EP=2 IP=6 FDC=1
+*.SEEDPROM
+M0 2 3 2 2 nhv L=4 W=5 m=1 r=1.25 a=20 p=18 mult=1 $X=0 $Y=0 $D=49
+.ENDS
+***************************************
+.SUBCKT sky130_fd_io__sio_clamp_pcap_4x5 2 3
+** N=4 EP=2 IP=4 FDC=1
+*.SEEDPROM
+X0 2 3 sky130_fd_pr__model__nfet_highvoltage__example_55959141808664 $T=1145 720 0 0 $X=700 $Y=540
+.ENDS
+***************************************
+.SUBCKT sky130_fd_pr__hvdftpl1s2__example_55959141808676
+** N=3 EP=0 IP=0 FDC=0
+*.SEEDPROM
+.ENDS
+***************************************
+.SUBCKT sky130_fd_io__esd_rcclamp_nfetcap 2 3
+** N=4 EP=2 IP=6 FDC=1
+*.SEEDPROM
+M0 2 3 2 2 nhv L=8 W=5 m=1 r=0.625 a=40 p=26 mult=1 $X=895 $Y=630 $D=49
+.ENDS
+***************************************
+.SUBCKT ICV_2 2 3
+** N=4 EP=2 IP=8 FDC=2
+*.SEEDPROM
+X0 2 3 sky130_fd_io__esd_rcclamp_nfetcap $T=-9760 0 0 0 $X=-10010 $Y=-90
+X1 2 3 sky130_fd_io__esd_rcclamp_nfetcap $T=0 0 0 0 $X=-250 $Y=-90
+.ENDS
+***************************************
+.SUBCKT sky130_fd_pr__hvdftpl1s__example_55959141808671
+** N=3 EP=0 IP=0 FDC=0
+*.SEEDPROM
+.ENDS
+***************************************
+.SUBCKT sky130_fd_pr__hvdftpl1s2__example_55959141808672
+** N=3 EP=0 IP=0 FDC=0
+*.SEEDPROM
+.ENDS
+***************************************
+.SUBCKT sky130_fd_pr__nfet_01v8__example_55959141808670 2 3 4
+** N=5 EP=3 IP=30 FDC=18
+*.SEEDPROM
+M0 4 3 2 2 nhv L=0.5 W=20 m=1 r=40 a=10 p=41 mult=1 $X=0 $Y=0 $D=49
+M1 2 3 4 2 nhv L=0.5 W=20 m=1 r=40 a=10 p=41 mult=1 $X=2010 $Y=0 $D=49
+M2 4 3 2 2 nhv L=0.5 W=20 m=1 r=40 a=10 p=41 mult=1 $X=4600 $Y=0 $D=49
+M3 2 3 4 2 nhv L=0.5 W=20 m=1 r=40 a=10 p=41 mult=1 $X=6610 $Y=0 $D=49
+M4 4 3 2 2 nhv L=0.5 W=20 m=1 r=40 a=10 p=41 mult=1 $X=9200 $Y=0 $D=49
+M5 2 3 4 2 nhv L=0.5 W=20 m=1 r=40 a=10 p=41 mult=1 $X=11210 $Y=0 $D=49
+M6 4 3 2 2 nhv L=0.5 W=20 m=1 r=40 a=10 p=41 mult=1 $X=13800 $Y=0 $D=49
+M7 2 3 4 2 nhv L=0.5 W=20 m=1 r=40 a=10 p=41 mult=1 $X=15810 $Y=0 $D=49
+M8 4 3 2 2 nhv L=0.5 W=20 m=1 r=40 a=10 p=41 mult=1 $X=18400 $Y=0 $D=49
+M9 2 3 4 2 nhv L=0.5 W=20 m=1 r=40 a=10 p=41 mult=1 $X=20410 $Y=0 $D=49
+M10 4 3 2 2 nhv L=0.5 W=20 m=1 r=40 a=10 p=41 mult=1 $X=23000 $Y=0 $D=49
+M11 2 3 4 2 nhv L=0.5 W=20 m=1 r=40 a=10 p=41 mult=1 $X=25010 $Y=0 $D=49
+M12 4 3 2 2 nhv L=0.5 W=20 m=1 r=40 a=10 p=41 mult=1 $X=27600 $Y=0 $D=49
+M13 2 3 4 2 nhv L=0.5 W=20 m=1 r=40 a=10 p=41 mult=1 $X=29610 $Y=0 $D=49
+M14 4 3 2 2 nhv L=0.5 W=20 m=1 r=40 a=10 p=41 mult=1 $X=32200 $Y=0 $D=49
+M15 2 3 4 2 nhv L=0.5 W=20 m=1 r=40 a=10 p=41 mult=1 $X=34210 $Y=0 $D=49
+M16 4 3 2 2 nhv L=0.5 W=20 m=1 r=40 a=10 p=41 mult=1 $X=36800 $Y=0 $D=49
+M17 2 3 4 2 nhv L=0.5 W=20 m=1 r=40 a=10 p=41 mult=1 $X=38810 $Y=0 $D=49
+.ENDS
+***************************************
+.SUBCKT sky130_fd_pr__nfet_01v8__example_55959141808673 2 3 4
+** N=5 EP=3 IP=36 FDC=22
+*.SEEDPROM
+M0 4 3 2 2 nhv L=0.5 W=20 m=1 r=40 a=10 p=41 mult=1 $X=0 $Y=0 $D=49
+M1 2 3 4 2 nhv L=0.5 W=20 m=1 r=40 a=10 p=41 mult=1 $X=2010 $Y=0 $D=49
+M2 4 3 2 2 nhv L=0.5 W=20 m=1 r=40 a=10 p=41 mult=1 $X=4600 $Y=0 $D=49
+M3 2 3 4 2 nhv L=0.5 W=20 m=1 r=40 a=10 p=41 mult=1 $X=6610 $Y=0 $D=49
+M4 4 3 2 2 nhv L=0.5 W=20 m=1 r=40 a=10 p=41 mult=1 $X=9200 $Y=0 $D=49
+M5 2 3 4 2 nhv L=0.5 W=20 m=1 r=40 a=10 p=41 mult=1 $X=11210 $Y=0 $D=49
+M6 4 3 2 2 nhv L=0.5 W=20 m=1 r=40 a=10 p=41 mult=1 $X=13800 $Y=0 $D=49
+M7 2 3 4 2 nhv L=0.5 W=20 m=1 r=40 a=10 p=41 mult=1 $X=15810 $Y=0 $D=49
+M8 4 3 2 2 nhv L=0.5 W=20 m=1 r=40 a=10 p=41 mult=1 $X=18400 $Y=0 $D=49
+M9 2 3 4 2 nhv L=0.5 W=20 m=1 r=40 a=10 p=41 mult=1 $X=20410 $Y=0 $D=49
+M10 4 3 2 2 nhv L=0.5 W=20 m=1 r=40 a=10 p=41 mult=1 $X=23000 $Y=0 $D=49
+M11 2 3 4 2 nhv L=0.5 W=20 m=1 r=40 a=10 p=41 mult=1 $X=25010 $Y=0 $D=49
+M12 4 3 2 2 nhv L=0.5 W=20 m=1 r=40 a=10 p=41 mult=1 $X=27600 $Y=0 $D=49
+M13 2 3 4 2 nhv L=0.5 W=20 m=1 r=40 a=10 p=41 mult=1 $X=29610 $Y=0 $D=49
+M14 4 3 2 2 nhv L=0.5 W=20 m=1 r=40 a=10 p=41 mult=1 $X=32200 $Y=0 $D=49
+M15 2 3 4 2 nhv L=0.5 W=20 m=1 r=40 a=10 p=41 mult=1 $X=34210 $Y=0 $D=49
+M16 4 3 2 2 nhv L=0.5 W=20 m=1 r=40 a=10 p=41 mult=1 $X=36800 $Y=0 $D=49
+M17 2 3 4 2 nhv L=0.5 W=20 m=1 r=40 a=10 p=41 mult=1 $X=38810 $Y=0 $D=49
+M18 4 3 2 2 nhv L=0.5 W=20 m=1 r=40 a=10 p=41 mult=1 $X=41400 $Y=0 $D=49
+M19 2 3 4 2 nhv L=0.5 W=20 m=1 r=40 a=10 p=41 mult=1 $X=43410 $Y=0 $D=49
+M20 4 3 2 2 nhv L=0.5 W=20 m=1 r=40 a=10 p=41 mult=1 $X=46000 $Y=0 $D=49
+M21 2 3 4 2 nhv L=0.5 W=20 m=1 r=40 a=10 p=41 mult=1 $X=48010 $Y=0 $D=49
+.ENDS
+***************************************
+.SUBCKT sky130_fd_pr__dfl1sd__example_55959141808336
+** N=2 EP=0 IP=0 FDC=0
+*.SEEDPROM
+.ENDS
+***************************************
+.SUBCKT sky130_fd_pr__dfl1sd2__example_55959141808666
+** N=3 EP=0 IP=0 FDC=0
+*.SEEDPROM
+.ENDS
+***************************************
+.SUBCKT ICV_3
+** N=3 EP=0 IP=6 FDC=0
+*.SEEDPROM
+.ENDS
+***************************************
+.SUBCKT ICV_4
+** N=3 EP=0 IP=6 FDC=0
+*.SEEDPROM
+.ENDS
+***************************************
+.SUBCKT ICV_5
+** N=3 EP=0 IP=6 FDC=0
+*.SEEDPROM
+.ENDS
+***************************************
+.SUBCKT ICV_6
+** N=3 EP=0 IP=6 FDC=0
+*.SEEDPROM
+.ENDS
+***************************************
+.SUBCKT sky130_fd_pr__pfet_01v8__example_55959141808665 2 3 4
+** N=4 EP=3 IP=16 FDC=50
+*.SEEDPROM
+M0 4 3 2 2 phv L=0.5 W=7 m=1 r=14 a=3.5 p=15 mult=1 $X=0 $Y=0 $D=109
+M1 2 3 4 2 phv L=0.5 W=7 m=1 r=14 a=3.5 p=15 mult=1 $X=780 $Y=0 $D=109
+M2 4 3 2 2 phv L=0.5 W=7 m=1 r=14 a=3.5 p=15 mult=1 $X=1560 $Y=0 $D=109
+M3 2 3 4 2 phv L=0.5 W=7 m=1 r=14 a=3.5 p=15 mult=1 $X=2340 $Y=0 $D=109
+M4 4 3 2 2 phv L=0.5 W=7 m=1 r=14 a=3.5 p=15 mult=1 $X=3120 $Y=0 $D=109
+M5 2 3 4 2 phv L=0.5 W=7 m=1 r=14 a=3.5 p=15 mult=1 $X=3900 $Y=0 $D=109
+M6 4 3 2 2 phv L=0.5 W=7 m=1 r=14 a=3.5 p=15 mult=1 $X=4680 $Y=0 $D=109
+M7 2 3 4 2 phv L=0.5 W=7 m=1 r=14 a=3.5 p=15 mult=1 $X=5460 $Y=0 $D=109
+M8 4 3 2 2 phv L=0.5 W=7 m=1 r=14 a=3.5 p=15 mult=1 $X=6240 $Y=0 $D=109
+M9 2 3 4 2 phv L=0.5 W=7 m=1 r=14 a=3.5 p=15 mult=1 $X=7020 $Y=0 $D=109
+M10 4 3 2 2 phv L=0.5 W=7 m=1 r=14 a=3.5 p=15 mult=1 $X=7800 $Y=0 $D=109
+M11 2 3 4 2 phv L=0.5 W=7 m=1 r=14 a=3.5 p=15 mult=1 $X=8580 $Y=0 $D=109
+M12 4 3 2 2 phv L=0.5 W=7 m=1 r=14 a=3.5 p=15 mult=1 $X=9360 $Y=0 $D=109
+M13 2 3 4 2 phv L=0.5 W=7 m=1 r=14 a=3.5 p=15 mult=1 $X=10140 $Y=0 $D=109
+M14 4 3 2 2 phv L=0.5 W=7 m=1 r=14 a=3.5 p=15 mult=1 $X=10920 $Y=0 $D=109
+M15 2 3 4 2 phv L=0.5 W=7 m=1 r=14 a=3.5 p=15 mult=1 $X=11700 $Y=0 $D=109
+M16 4 3 2 2 phv L=0.5 W=7 m=1 r=14 a=3.5 p=15 mult=1 $X=12480 $Y=0 $D=109
+M17 2 3 4 2 phv L=0.5 W=7 m=1 r=14 a=3.5 p=15 mult=1 $X=13260 $Y=0 $D=109
+M18 4 3 2 2 phv L=0.5 W=7 m=1 r=14 a=3.5 p=15 mult=1 $X=14040 $Y=0 $D=109
+M19 2 3 4 2 phv L=0.5 W=7 m=1 r=14 a=3.5 p=15 mult=1 $X=14820 $Y=0 $D=109
+M20 4 3 2 2 phv L=0.5 W=7 m=1 r=14 a=3.5 p=15 mult=1 $X=15600 $Y=0 $D=109
+M21 2 3 4 2 phv L=0.5 W=7 m=1 r=14 a=3.5 p=15 mult=1 $X=16380 $Y=0 $D=109
+M22 4 3 2 2 phv L=0.5 W=7 m=1 r=14 a=3.5 p=15 mult=1 $X=17160 $Y=0 $D=109
+M23 2 3 4 2 phv L=0.5 W=7 m=1 r=14 a=3.5 p=15 mult=1 $X=17940 $Y=0 $D=109
+M24 4 3 2 2 phv L=0.5 W=7 m=1 r=14 a=3.5 p=15 mult=1 $X=18720 $Y=0 $D=109
+M25 2 3 4 2 phv L=0.5 W=7 m=1 r=14 a=3.5 p=15 mult=1 $X=19500 $Y=0 $D=109
+M26 4 3 2 2 phv L=0.5 W=7 m=1 r=14 a=3.5 p=15 mult=1 $X=20280 $Y=0 $D=109
+M27 2 3 4 2 phv L=0.5 W=7 m=1 r=14 a=3.5 p=15 mult=1 $X=21060 $Y=0 $D=109
+M28 4 3 2 2 phv L=0.5 W=7 m=1 r=14 a=3.5 p=15 mult=1 $X=21840 $Y=0 $D=109
+M29 2 3 4 2 phv L=0.5 W=7 m=1 r=14 a=3.5 p=15 mult=1 $X=22620 $Y=0 $D=109
+M30 4 3 2 2 phv L=0.5 W=7 m=1 r=14 a=3.5 p=15 mult=1 $X=23400 $Y=0 $D=109
+M31 2 3 4 2 phv L=0.5 W=7 m=1 r=14 a=3.5 p=15 mult=1 $X=24180 $Y=0 $D=109
+M32 4 3 2 2 phv L=0.5 W=7 m=1 r=14 a=3.5 p=15 mult=1 $X=24960 $Y=0 $D=109
+M33 2 3 4 2 phv L=0.5 W=7 m=1 r=14 a=3.5 p=15 mult=1 $X=25740 $Y=0 $D=109
+M34 4 3 2 2 phv L=0.5 W=7 m=1 r=14 a=3.5 p=15 mult=1 $X=26520 $Y=0 $D=109
+M35 2 3 4 2 phv L=0.5 W=7 m=1 r=14 a=3.5 p=15 mult=1 $X=27300 $Y=0 $D=109
+M36 4 3 2 2 phv L=0.5 W=7 m=1 r=14 a=3.5 p=15 mult=1 $X=28080 $Y=0 $D=109
+M37 2 3 4 2 phv L=0.5 W=7 m=1 r=14 a=3.5 p=15 mult=1 $X=28860 $Y=0 $D=109
+M38 4 3 2 2 phv L=0.5 W=7 m=1 r=14 a=3.5 p=15 mult=1 $X=29640 $Y=0 $D=109
+M39 2 3 4 2 phv L=0.5 W=7 m=1 r=14 a=3.5 p=15 mult=1 $X=30420 $Y=0 $D=109
+M40 4 3 2 2 phv L=0.5 W=7 m=1 r=14 a=3.5 p=15 mult=1 $X=31200 $Y=0 $D=109
+M41 2 3 4 2 phv L=0.5 W=7 m=1 r=14 a=3.5 p=15 mult=1 $X=31980 $Y=0 $D=109
+M42 4 3 2 2 phv L=0.5 W=7 m=1 r=14 a=3.5 p=15 mult=1 $X=32760 $Y=0 $D=109
+M43 2 3 4 2 phv L=0.5 W=7 m=1 r=14 a=3.5 p=15 mult=1 $X=33540 $Y=0 $D=109
+M44 4 3 2 2 phv L=0.5 W=7 m=1 r=14 a=3.5 p=15 mult=1 $X=34320 $Y=0 $D=109
+M45 2 3 4 2 phv L=0.5 W=7 m=1 r=14 a=3.5 p=15 mult=1 $X=35100 $Y=0 $D=109
+M46 4 3 2 2 phv L=0.5 W=7 m=1 r=14 a=3.5 p=15 mult=1 $X=35880 $Y=0 $D=109
+M47 2 3 4 2 phv L=0.5 W=7 m=1 r=14 a=3.5 p=15 mult=1 $X=36660 $Y=0 $D=109
+M48 4 3 2 2 phv L=0.5 W=7 m=1 r=14 a=3.5 p=15 mult=1 $X=37440 $Y=0 $D=109
+M49 2 3 4 2 phv L=0.5 W=7 m=1 r=14 a=3.5 p=15 mult=1 $X=38220 $Y=0 $D=109
+.ENDS
+***************************************
+.SUBCKT sky130_ef_io__vssa_hvc_clamped_pad VSSD VSSA VDDA VDDIO VCCHIB VCCD VSSIO VSWITCH AMUXBUS_B AMUXBUS_A VSSIO_Q VDDIO_Q 17 18 19
+** N=19 EP=15 IP=428 FDC=241
+R0 VSSA 19 0.01 m=1 $[short] $X=6670 $Y=103310 $D=269
+M1 VDDA 8 VSSA VSSA nhv L=0.5 W=10 m=1 r=20 a=5 p=21 mult=1 $X=15885 $Y=183145 $D=49
+M2 VSSA 8 VDDA VSSA nhv L=0.5 W=10 m=1 r=20 a=5 p=21 mult=1 $X=17895 $Y=183145 $D=49
+M3 VDDA 8 VSSA VSSA nhv L=0.5 W=10 m=1 r=20 a=5 p=21 mult=1 $X=20485 $Y=183145 $D=49
+M4 VSSA 8 VDDA VSSA nhv L=0.5 W=10 m=1 r=20 a=5 p=21 mult=1 $X=22495 $Y=183145 $D=49
+M5 VDDA 8 VSSA VSSA nhv L=0.5 W=10 m=1 r=20 a=5 p=21 mult=1 $X=25085 $Y=183145 $D=49
+M6 VSSA 8 VDDA VSSA nhv L=0.5 W=10 m=1 r=20 a=5 p=21 mult=1 $X=27095 $Y=183145 $D=49
+M7 VDDA 8 VSSA VSSA nhv L=0.5 W=10 m=1 r=20 a=5 p=21 mult=1 $X=29685 $Y=183145 $D=49
+M8 VSSA 8 VDDA VSSA nhv L=0.5 W=10 m=1 r=20 a=5 p=21 mult=1 $X=31695 $Y=183145 $D=49
+M9 VDDA 8 VSSA VSSA nhv L=0.5 W=10 m=1 r=20 a=5 p=21 mult=1 $X=34285 $Y=183145 $D=49
+M10 VSSA 8 VDDA VSSA nhv L=0.5 W=10 m=1 r=20 a=5 p=21 mult=1 $X=36295 $Y=183145 $D=49
+M11 VDDA 8 VSSA VSSA nhv L=0.5 W=10 m=1 r=20 a=5 p=21 mult=1 $X=38885 $Y=183145 $D=49
+M12 VSSA 8 VDDA VSSA nhv L=0.5 W=10 m=1 r=20 a=5 p=21 mult=1 $X=40895 $Y=183145 $D=49
+M13 VDDA 8 VSSA VSSA nhv L=0.5 W=10 m=1 r=20 a=5 p=21 mult=1 $X=43485 $Y=183145 $D=49
+M14 VSSA 8 VDDA VSSA nhv L=0.5 W=10 m=1 r=20 a=5 p=21 mult=1 $X=45495 $Y=183145 $D=49
+M15 VDDA 8 VSSA VSSA nhv L=0.5 W=10 m=1 r=20 a=5 p=21 mult=1 $X=48085 $Y=183145 $D=49
+M16 VSSA 8 VDDA VSSA nhv L=0.5 W=10 m=1 r=20 a=5 p=21 mult=1 $X=50095 $Y=183145 $D=49
+M17 VDDA 8 VSSA VSSA nhv L=0.5 W=10 m=1 r=20 a=5 p=21 mult=1 $X=52685 $Y=183145 $D=49
+M18 VSSA 8 VDDA VSSA nhv L=0.5 W=10 m=1 r=20 a=5 p=21 mult=1 $X=54695 $Y=183145 $D=49
+M19 8 6 VSSA VSSA nhv L=0.5 W=7 m=1 r=14 a=3.5 p=15 mult=1 $X=54915 $Y=30545 $D=49
+M20 VSSA 6 8 VSSA nhv L=0.5 W=7 m=1 r=14 a=3.5 p=15 mult=1 $X=55695 $Y=30545 $D=49
+M21 8 6 VSSA VSSA nhv L=0.5 W=7 m=1 r=14 a=3.5 p=15 mult=1 $X=56475 $Y=30545 $D=49
+M22 VSSA 6 8 VSSA nhv L=0.5 W=7 m=1 r=14 a=3.5 p=15 mult=1 $X=57255 $Y=30545 $D=49
+M23 VDDA 8 VSSA VSSA nhv L=0.5 W=10 m=1 r=20 a=5 p=21 mult=1 $X=57285 $Y=183145 $D=49
+M24 8 6 VSSA VSSA nhv L=0.5 W=7 m=1 r=14 a=3.5 p=15 mult=1 $X=58035 $Y=30545 $D=49
+M25 VSSA 6 8 VSSA nhv L=0.5 W=7 m=1 r=14 a=3.5 p=15 mult=1 $X=58815 $Y=30545 $D=49
+M26 VSSA 8 VDDA VSSA nhv L=0.5 W=10 m=1 r=20 a=5 p=21 mult=1 $X=59295 $Y=183145 $D=49
+M27 8 6 VSSA VSSA nhv L=0.5 W=7 m=1 r=14 a=3.5 p=15 mult=1 $X=59595 $Y=30545 $D=49
+M28 VSSA 6 8 VSSA nhv L=0.5 W=7 m=1 r=14 a=3.5 p=15 mult=1 $X=60375 $Y=30545 $D=49
+M29 8 6 VSSA VSSA nhv L=0.5 W=7 m=1 r=14 a=3.5 p=15 mult=1 $X=61155 $Y=30545 $D=49
+M30 VDDA 8 VSSA VSSA nhv L=0.5 W=10 m=1 r=20 a=5 p=21 mult=1 $X=61885 $Y=183145 $D=49
+M31 VSSA 6 8 VSSA nhv L=0.5 W=7 m=1 r=14 a=3.5 p=15 mult=1 $X=61935 $Y=30545 $D=49
+M32 8 6 VSSA VSSA nhv L=0.5 W=7 m=1 r=14 a=3.5 p=15 mult=1 $X=62715 $Y=30545 $D=49
+M33 VSSA 6 8 VSSA nhv L=0.5 W=7 m=1 r=14 a=3.5 p=15 mult=1 $X=63495 $Y=30545 $D=49
+M34 VSSA 8 VDDA VSSA nhv L=0.5 W=10 m=1 r=20 a=5 p=21 mult=1 $X=63895 $Y=183145 $D=49
+M35 8 6 VSSA VSSA nhv L=0.5 W=7 m=1 r=14 a=3.5 p=15 mult=1 $X=64275 $Y=30545 $D=49
+M36 VSSA 6 8 VSSA nhv L=0.5 W=7 m=1 r=14 a=3.5 p=15 mult=1 $X=65055 $Y=30545 $D=49
+M37 8 6 VSSA VSSA nhv L=0.5 W=7 m=1 r=14 a=3.5 p=15 mult=1 $X=65835 $Y=30545 $D=49
+X38 VSSA VDDIO condiode a=1e-06 p=0.004 m=1 ahftempperim=0.004 $X=51225 $Y=19700 $D=150
+X39 VSSA VDDIO condiode a=1e-06 p=0.004 m=1 ahftempperim=0.004 $X=51225 $Y=43275 $D=150
+X40 VSSA VDDIO condiode a=1e-06 p=0.004 m=1 ahftempperim=0.004 $X=64770 $Y=38800 $D=150
+X41 VSSA VDDIO condiode a=1e-06 p=0.004 m=1 ahftempperim=0.004 $X=68375 $Y=195640 $D=150
+R42 5 7 L=1550 W=0.33 m=1 $[mrp1] $X=1070 $Y=41405 $D=250
+R43 5 VDDA L=700 W=0.33 m=1 $[mrp1] $X=9500 $Y=72320 $D=250
+R44 7 6 L=470 W=0.33 m=1 $[mrp1] $X=70725 $Y=40980 $D=250
+X45 VSSD VDDIO Dpar a=126.883 p=0 m=1 $[nwdiode] $X=8835 $Y=41140 $D=183
+X46 VSSA VDDIO Dpar a=137.463 p=47.72 m=1 $[dnwdiode_pw] $X=53530 $Y=29360 $D=188
+X47 VSSA VDDIO Dpar a=1172.63 p=163 m=1 $[dnwdiode_pw] $X=13380 $Y=170 $D=188
+X48 VSSA VDDIO Dpar a=8184.99 p=443.22 m=1 $[dnwdiode_pw] $X=10695 $Y=43000 $D=188
+X49 VSSD VDDIO Dpar a=10358.7 p=619.08 m=1 $[dnwdiode_psub] $X=9500 $Y=131800 $D=187
+X50 VSSD VDDA Dpar a=376.949 p=101.73 m=1 $[nwdiode] $X=4400 $Y=26890 $D=185
+X133 VSSA 6 sky130_fd_pr__model__nfet_highvoltage__example_55959141808664 $T=61815 25110 0 180 $X=57370 $Y=19930
+X134 VSSA 6 sky130_fd_io__sio_clamp_pcap_4x5 $T=19920 7170 0 180 $X=13630 $Y=420
+X135 VSSA 6 sky130_fd_io__sio_clamp_pcap_4x5 $T=19920 13390 0 180 $X=13630 $Y=6640
+X136 VSSA 6 sky130_fd_io__sio_clamp_pcap_4x5 $T=19920 19610 0 180 $X=13630 $Y=12860
+X137 VSSA 6 sky130_fd_io__sio_clamp_pcap_4x5 $T=68720 25830 0 180 $X=62430 $Y=19080
+X148 VSSA 6 sky130_fd_io__esd_rcclamp_nfetcap $T=68470 7080 0 180 $X=58430 $Y=420
+X149 VSSA 6 sky130_fd_io__esd_rcclamp_nfetcap $T=68470 13300 0 180 $X=58430 $Y=6640
+X150 VSSA 6 sky130_fd_io__esd_rcclamp_nfetcap $T=68470 19520 0 180 $X=58430 $Y=12860
+X151 VSSA 6 ICV_2 $T=29430 7080 0 180 $X=19390 $Y=420
+X152 VSSA 6 ICV_2 $T=29430 13300 0 180 $X=19390 $Y=6640
+X153 VSSA 6 ICV_2 $T=29430 19520 0 180 $X=19390 $Y=12860
+X154 VSSA 6 ICV_2 $T=48950 7080 0 180 $X=38910 $Y=420
+X155 VSSA 6 ICV_2 $T=48950 13300 0 180 $X=38910 $Y=6640
+X156 VSSA 6 ICV_2 $T=48950 19520 0 180 $X=38910 $Y=12860
+X157 VSSA 8 VDDA sky130_fd_pr__nfet_01v8__example_55959141808670 $T=25085 68145 0 0 $X=23510 $Y=67965
+X158 VSSA 8 VDDA sky130_fd_pr__nfet_01v8__example_55959141808670 $T=25085 91145 0 0 $X=23510 $Y=90965
+X159 VSSA 8 VDDA sky130_fd_pr__nfet_01v8__example_55959141808670 $T=25085 114145 0 0 $X=23510 $Y=113965
+X160 VSSA 8 VDDA sky130_fd_pr__nfet_01v8__example_55959141808673 $T=15885 45145 0 0 $X=14310 $Y=44965
+X161 VSSA 8 VDDA sky130_fd_pr__nfet_01v8__example_55959141808673 $T=15885 137145 0 0 $X=14310 $Y=136965
+X162 VSSA 8 VDDA sky130_fd_pr__nfet_01v8__example_55959141808673 $T=15885 160145 0 0 $X=14310 $Y=159965
+X163 VDDA 6 8 sky130_fd_pr__pfet_01v8__example_55959141808665 $T=6340 27765 0 0 $X=5745 $Y=27435
+*.CALIBRE WARNING OPEN Open circuit(s) detected by extraction in this cell. See extraction report for details.
+.ENDS
+***************************************
