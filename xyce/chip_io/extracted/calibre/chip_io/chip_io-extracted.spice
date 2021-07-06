@@ -1,249 +1,16 @@
-* SPICE NETLIST
+I* SPICE NETLIST
 ***************************************
 
-.SUBCKT MN g s d b
-.ENDS
+
 ***************************************
-.SUBCKT MP g s d b
-.ENDS
-***************************************
-.SUBCKT condiode pin0 pin1
-.ENDS
-***************************************
-.SUBCKT condiodeHvPsub pin0 pin1
-.ENDS
-***************************************
-.SUBCKT sky130_fd_pr__nfet_g5v0d16v0 pin0 pin1 pin2 pin3
-.ENDS
-***************************************
-.SUBCKT sky130_fd_pr__nfet_20v0 pin0 pin1 pin2 pin3
-.ENDS
-***************************************
-.SUBCKT sky130_fd_pr__nfet_20v0_nvt pin0 pin1 pin2 pin3
-.ENDS
-***************************************
-.SUBCKT sky130_fd_pr__nfet_20v0_iso pin0 pin1 pin2 pin3 pin4
-.ENDS
-***************************************
-.SUBCKT sky130_fd_pr__nfet_20v0_nvt_iso pin0 pin1 pin2 pin3 pin4
-.ENDS
-***************************************
-.SUBCKT sky130_fd_pr__pfet_g5v0d16v0 pin0 pin1 pin2 pin3
-.ENDS
-***************************************
-.SUBCKT sky130_fd_pr__pfet_20v0 pin0 pin1 pin2 pin3
-.ENDS
-***************************************
-.SUBCKT sky130_fd_pr__cap_var_lvt pin0 pin1 pin2
-.ENDS
-***************************************
-.SUBCKT sky130_fd_pr__cap_var_hvt pin0 pin1 pin2
-.ENDS
-***************************************
-.SUBCKT sky130_fd_pr__cap_var pin0 pin1 pin2
-.ENDS
-***************************************
-.SUBCKT Dpar d0 d1
-.ENDS
-***************************************
-.SUBCKT sky130_fd_pr__cap_vpp_08p6x07p8_l1m1m2_noshield_o1 pin0 pin1 pin2
-.ENDS
-***************************************
-.SUBCKT sky130_fd_pr__cap_vpp_04p4x04p6_l1m1m2_noshield_o1 pin0 pin1 pin2
-.ENDS
-***************************************
-.SUBCKT sky130_fd_pr__cap_vpp_04p4x04p6_m1m2_noshield_o1nhv pin0 pin1 pin2
-.ENDS
-***************************************
-.SUBCKT sky130_fd_pr__cap_vpp_04p4x04p6_m1m2_noshield_o1phv pin0 pin1 pin2
-.ENDS
-***************************************
-.SUBCKT sky130_fd_pr__cap_vpp_02p9x06p1_m1m2m3m4_shieldl1_fingercap2 pin0 pin1 pin2
-.ENDS
-***************************************
-.SUBCKT sky130_fd_pr__cap_vpp_05p9x05p9_m1m2m3m4_shieldl1_wafflecap pin0 pin1 pin2
-.ENDS
-***************************************
-.SUBCKT sky130_fd_pr__cap_vpp_11p3x11p3_m1m2m3m4_shieldl1_wafflecap pin0 pin1 pin2
-.ENDS
-***************************************
-.SUBCKT sky130_fd_pr__cap_vpp_02p7x41p1_m1m2m3m4_shieldl1_fingercap pin0 pin1 pin2
-.ENDS
-***************************************
-.SUBCKT sky130_fd_pr__cap_vpp_02p7x21p1_m1m2m3m4_shieldl1_fingercap pin0 pin1 pin2
-.ENDS
-***************************************
-.SUBCKT sky130_fd_pr__cap_vpp_02p7x11p1_m1m2m3m4_shieldl1_fingercap pin0 pin1 pin2
-.ENDS
-***************************************
-.SUBCKT sky130_fd_pr__cap_vpp_02p7x06p1_m1m2m3m4_shieldl1_fingercap pin0 pin1 pin2
-.ENDS
-***************************************
-.SUBCKT sky130_fd_pr__cap_vpp_55p8x23p1_pol1m1m2m3m4m5_noshield_m5pullin pin0 pin1 pin2
-.ENDS
-***************************************
-.SUBCKT sky130_fd_pr__cap_vpp_55p8x23p1_pol1m1m2m3m4m5_noshield pin0 pin1 pin2
-.ENDS
-***************************************
-.SUBCKT sky130_fd_pr__cap_vpp_55p8x11p7_pol1m1m2m3m4m5_noshield_m5pullin pin0 pin1 pin2
-.ENDS
-***************************************
-.SUBCKT sky130_fd_pr__cap_vpp_55p8x11p7_pol1m1m2m3m4m5_noshield pin0 pin1 pin2
-.ENDS
-***************************************
-.SUBCKT sky130_fd_pr__cap_vpp_44p7x23p1_pol1m1m2m3m4m5_noshield pin0 pin1 pin2
-.ENDS
-***************************************
-.SUBCKT sky130_fd_pr__cap_vpp_44p7x11p7_pol1m1m2m3m4m5_noshield pin0 pin1 pin2
-.ENDS
-***************************************
-.SUBCKT sky130_fd_pr__cap_vpp_33p6x23p1_pol1m1m2m3m4m5_noshield pin0 pin1 pin2
-.ENDS
-***************************************
-.SUBCKT sky130_fd_pr__cap_vpp_33p6x11p7_pol1m1m2m3m4m5_noshield pin0 pin1 pin2
-.ENDS
-***************************************
-.SUBCKT sky130_fd_pr__cap_vpp_22p5x23p1_pol1m1m2m3m4m5_noshield pin0 pin1 pin2
-.ENDS
-***************************************
-.SUBCKT sky130_fd_pr__cap_vpp_22p5x11p7_pol1m1m2m3m4m5_noshield pin0 pin1 pin2
-.ENDS
-***************************************
-.SUBCKT sky130_fd_pr__cap_vpp_11p5x23p1_pol1m1m2m3m4m5_noshield pin0 pin1 pin2
-.ENDS
-***************************************
-.SUBCKT sky130_fd_pr__cap_vpp_11p5x11p7_pol1m1m2m3m4m5_noshield pin0 pin1 pin2
-.ENDS
-***************************************
-.SUBCKT sky130_fd_pr__cap_vpp_11p3x11p8_l1m1m2m3m4_shieldm5_nhv pin0 pin1 pin2 pin3
-.ENDS
-***************************************
-.SUBCKT sky130_fd_pr__cap_vpp_11p5x11p7_l1m1m2m3m4_shieldpom5_x pin0 pin1 pin2 pin3
-.ENDS
-***************************************
-.SUBCKT sky130_fd_pr__cap_vpp_04p4x04p6_m1m2m3_shieldl1m5_floatm4 pin0 pin1 pin2 pin3
-.ENDS
-***************************************
-.SUBCKT sky130_fd_pr__cap_vpp_11p5x11p7_m1m2m3_shieldl1m5_floatm4 pin0 pin1 pin2 pin3
-.ENDS
-***************************************
-.SUBCKT sky130_fd_pr__cap_vpp_08p6x07p8_m1m2m3_shieldl1m5_floatm4 pin0 pin1 pin2 pin3
-.ENDS
-***************************************
-.SUBCKT sky130_fd_pr__cap_vpp_11p5x11p7_m1m2m3m4_shieldl1m5 pin0 pin1 pin2 pin3
-.ENDS
-***************************************
-.SUBCKT sky130_fd_pr__cap_vpp_11p5x11p7_l1m1m2m3m4_shieldpom5 pin0 pin1 pin2 pin3
-.ENDS
-***************************************
-.SUBCKT sky130_fd_pr__cap_vpp_11p5x11p7_l1m1m2m3m4_shieldm5 pin0 pin1 pin2 pin3
-.ENDS
-***************************************
-.SUBCKT sky130_fd_pr__cap_vpp_06p8x06p1_m1m2m3_shieldl1m4 pin0 pin1 pin2 pin3
-.ENDS
-***************************************
-.SUBCKT sky130_fd_pr__cap_vpp_06p8x06p1_l1m1m2m3_shieldpom4 pin0 pin1 pin2 pin3
-.ENDS
-***************************************
-.SUBCKT sky130_fd_pr__cap_vpp_11p5x11p7_l1m1m2m3_shieldpom4 pin0 pin1 pin2 pin3
-.ENDS
-***************************************
-.SUBCKT sky130_fd_pr__cap_vpp_11p5x11p7_l1m1m2m3_shieldm4 pin0 pin1 pin2 pin3
-.ENDS
-***************************************
-.SUBCKT sky130_fd_pr__cap_vpp_01p8x01p8_m1m2_noshield pin0 pin1 pin2
-.ENDS
-***************************************
-.SUBCKT sky130_fd_pr__cap_vpp_04p4x04p6_m1m2m3_shieldl1 pin0 pin1 pin2
-.ENDS
-***************************************
-.SUBCKT sky130_fd_pr__cap_vpp_08p6x07p8_m1m2m3_shieldl1 pin0 pin1 pin2
-.ENDS
-***************************************
-.SUBCKT sky130_fd_pr__cap_vpp_11p5x11p7_m1m2m3_shieldl1 pin0 pin1 pin2
-.ENDS
-***************************************
-.SUBCKT sky130_fd_pr__cap_vpp_11p5x11p7_l1m1m2_shieldpom3 c0 c1 b term4
-.ENDS
-***************************************
-.SUBCKT sky130_fd_pr__cap_vpp_08p6x07p8_l1m1m2_shieldpo_floatm3 c0 c1 b term4
-.ENDS
-***************************************
-.SUBCKT sky130_fd_pr__cap_vpp_04p4x04p6_l1m1m2_shieldpo_floatm3 c0 c1 b term4
-.ENDS
-***************************************
-.SUBCKT sky130_fd_pr__cap_vpp_03p9x03p9_m1m2_shieldl1_floatm3 c0 c1 b term4
-.ENDS
-***************************************
-.SUBCKT sky130_fd_pr__cap_vpp_11p5x11p7_m1m2m3m4_shieldm5 pin0 pin1 pin2 pin3
-.ENDS
-***************************************
-.SUBCKT sky130_fd_pr__cap_vpp_11p5x11p7_m1m4_noshield pin0 pin1 pin2
-.ENDS
-***************************************
-.SUBCKT sky130_fd_pr__cap_vpp_11p5x11p7_m1m2_noshield pin0 pin1 pin2
-.ENDS
-***************************************
-.SUBCKT sky130_fd_pr__cap_vpp_04p4x04p6_m1m2_noshield pin0 pin1 pin2
-.ENDS
-***************************************
-.SUBCKT sky130_fd_pr__cap_vpp_02p4x04p6_m1m2_noshield pin0 pin1 pin2
-.ENDS
-***************************************
-.SUBCKT sky130_fd_pr__cap_vpp_04p4x04p6_m1m2_noshield_o2 pin0 pin1 pin2
-.ENDS
-***************************************
-.SUBCKT sky130_fd_pr__cap_vpp_08p6x07p8_m1m2_noshield pin0 pin1 pin2
-.ENDS
-***************************************
-.SUBCKT balun pin0 pin1 pin2 pin3 pin4 pin5
-.ENDS
-***************************************
-.SUBCKT sky130_fd_pr__ind_04 pin0 pin1 pin2 pin3
-.ENDS
-***************************************
-.SUBCKT sky130_fd_pr__res_high_po_0p35 POS NEG SUB
-.ENDS
-***************************************
-.SUBCKT sky130_fd_pr__res_xhigh_po_0p35 POS NEG SUB
-.ENDS
-***************************************
-.SUBCKT sky130_fd_pr__res_high_po_0p69 POS NEG SUB
-.ENDS
-***************************************
-.SUBCKT sky130_fd_pr__res_xhigh_po_0p69 POS NEG SUB
-.ENDS
-***************************************
-.SUBCKT sky130_fd_pr__res_high_po_1p41 POS NEG SUB
-.ENDS
-***************************************
-.SUBCKT sky130_fd_pr__res_xhigh_po_1p41 POS NEG SUB
-.ENDS
-***************************************
-.SUBCKT sky130_fd_pr__res_high_po_2p85 POS NEG SUB
-.ENDS
-***************************************
-.SUBCKT sky130_fd_pr__res_xhigh_po_2p85 POS NEG SUB
-.ENDS
-***************************************
-.SUBCKT sky130_fd_pr__res_high_po_5p73 POS NEG SUB
-.ENDS
-***************************************
-.SUBCKT sky130_fd_pr__res_xhigh_po_5p73 POS NEG SUB
-.ENDS
-***************************************
-.SUBCKT Probe probe conductor
-.ENDS
+
 ***************************************
 .SUBCKT sky130_fd_pr__res_bent_po__example_55959141808692 2 3
 **
 R0 3 2 sky130_fd_pr__res_generic_po L=900 W=0.33 m=1
 .ENDS
-***************************************
-.SUBCKT sky130_fd_pr__dfl1sd2__example_55959141808666
-**
-*.SEEDPROM
-.ENDS
+
+
 ***************************************
 .SUBCKT sky130_fd_pr__pfet_01v8__example_55959141808687 2 3 4
 **
@@ -260,48 +27,16 @@ XM8 4 3 2 2 sky130_fd_pr__pfet_01v8 L=0.18 W=7 AD=0.98 AS=0.98 PD=7.28 PS=7.28 N
 XM9 2 3 4 2 sky130_fd_pr__pfet_01v8 L=0.18 W=7 AD=1.96 AS=0.98 PD=14.56 PS=7.28 NRD=0 NRS=0 m=1 sa=90004.3 sb=90000.2 a=1.26 p=14.36
 .ENDS
 ***************************************
-.SUBCKT sky130_fd_pr__dfl1__example_55959141808682
-**
-*.SEEDPROM
-.ENDS
-***************************************
-.SUBCKT ICV_4
-**
-*.SEEDPROM
-.ENDS
-***************************************
-.SUBCKT sky130_fd_pr__dfl1__example_55959141808681
-**
-*.SEEDPROM
-.ENDS
-***************************************
-.SUBCKT ICV_5
-**
-*.SEEDPROM
-.ENDS
+
+
 ***************************************
 .SUBCKT sky130_fd_pr__res_bent_po__example_55959141808691 2 3
 **
 R0 3 2 sky130_fd_pr__res_generic_po L=200 W=0.33 m=1
 .ENDS
 ***************************************
-.SUBCKT sky130_fd_pr__hvdfl1sd__example_55959141808700
-**
-.ENDS
-***************************************
-.SUBCKT sky130_fd_pr__hvdfl1sd2__example_55959141808559
-**
-.ENDS
-***************************************
-.SUBCKT sky130_fd_pr__nfet_01v8__example_55959141808699
-**
-*.SEEDPROM
-.ENDS
-***************************************
-.SUBCKT sky130_fd_pr__dftpl1s2__example_55959141808702
-**
-*.SEEDPROM
-.ENDS
+
+
 ***************************************
 .SUBCKT sky130_fd_pr__nfet_01v8__example_55959141808704 2
 **
@@ -309,11 +44,7 @@ R0 3 2 sky130_fd_pr__res_generic_po L=200 W=0.33 m=1
 X0 2 2 sky130_fd_pr__diode_pw2nd_05v5 a=2.1 p=14.6 m=1
 X1 2 2 sky130_fd_pr__diode_pw2nd_05v5 a=2.1 p=14.6 m=1
 .ENDS
-***************************************
-.SUBCKT sky130_fd_pr__dftpl1s2__example_55959141808694
-**
-*.SEEDPROM
-.ENDS
+
 ***************************************
 .SUBCKT sky130_fd_pr__nfet_01v8__example_55959141808695 2
 **
@@ -321,47 +52,9 @@ X1 2 2 sky130_fd_pr__diode_pw2nd_05v5 a=2.1 p=14.6 m=1
 X0 2 2 sky130_fd_pr__diode_pw2nd_05v5 a=1.5 p=10.6 m=1
 X1 2 2 sky130_fd_pr__diode_pw2nd_05v5 a=1.5 p=10.6 m=1
 .ENDS
-***************************************
-.SUBCKT sky130_fd_pr__dfl1sd2__example_55959141808679
-**
-*.SEEDPROM
-.ENDS
-***************************************
-.SUBCKT sky130_fd_pr__nfet_01v8__example_55959141808696
-**
-*.SEEDPROM
-.ENDS
-***************************************
-.SUBCKT sky130_fd_pr__hvdfl1sd__example_5595914180851
-**
-*.SEEDPROM
-.ENDS
-***************************************
-.SUBCKT sky130_fd_pr__hvdfl1sd2__example_55959141808378
-**
-*.SEEDPROM
-.ENDS
-***************************************
-.SUBCKT sky130_fd_pr__nfet_01v8__example_55959141808698
-**
-*.SEEDPROM
-.ENDS
-***************************************
-.SUBCKT sky130_fd_pr__tpl1__example_55959141808685
-**
-.ENDS
-***************************************
-.SUBCKT sky130_fd_pr__tpl1__example_55959141808686
-**
-.ENDS
-***************************************
-.SUBCKT sky130_fd_io__gnd2gnd_tap
-**
-.ENDS
-***************************************
-.SUBCKT sky130_fd_io__gnd2gnd_diff
-**
-.ENDS
+
+
+
 ***************************************
 .SUBCKT sky130_fd_io__gnd2gnd_sub_dnwl 1 2
 **
@@ -410,11 +103,7 @@ X0 2 2 sky130_fd_pr__diode_pw2nd_05v5 a=1.5 p=10.6 m=1
 X1 2 2 sky130_fd_pr__diode_pw2nd_05v5 a=1.5 p=10.6 m=1
 .ENDS
 ***************************************
-.SUBCKT sky130_fd_pr__nfet_01v8__example_55959141808697
-**
-*.SEEDPROM
-.ENDS
-***************************************
+**************************************
 .SUBCKT sky130_fd_pr__res_bent_po__example_55959141808688 3 4
 **
 *.SEEDPROM
@@ -886,15 +575,7 @@ X0 VSSD VSSD VSSIO VCCD VDDIO VCCD VSSA VCCD VCCD_PAD sky130_fd_io__top_power_lv
 R0 2 3 sky130_fd_pr__res_generic_po L=470 W=0.33 m=1
 .ENDS
 ***************************************
-.SUBCKT sky130_fd_pr__dfl1__example_55959141808662
-**
-*.SEEDPROM
-.ENDS
-***************************************
-.SUBCKT sky130_fd_pr__dfl1__example_55959141808663
-**
-*.SEEDPROM
-.ENDS
+
 ***************************************
 .SUBCKT sky130_fd_pr__model__nfet_highvoltage__example_55959141808664 2 3
 **
@@ -913,20 +594,7 @@ X0 2 3 sky130_fd_pr__model__nfet_highvoltage__example_55959141808664
 *.SEEDPROM
 XM0 2 3 2 2 sky130_fd_pr__nfet_g5v0d10v5 L=8 W=5 AD=1.325 AS=1.325 PD=10.53 PS=10.53 NRD=0 NRS=0 m=1 sa=4e+06 sb=4e+06 a=40 p=26
 .ENDS
-***************************************
-.SUBCKT sky130_fd_pr__dfl1sd__example_55959141808678
-**
-.ENDS
-***************************************
-.SUBCKT ICV_6
-**
-*.SEEDPROM
-.ENDS
-***************************************
-.SUBCKT ICV_7
-**
-*.SEEDPROM
-.ENDS
+
 ***************************************
 .SUBCKT sky130_fd_pr__nfet_01v8__example_55959141808677 2 3 4
 **
@@ -955,70 +623,16 @@ X0 2 3 sky130_fd_io__esd_rcclamp_nfetcap
 X1 2 3 sky130_fd_io__esd_rcclamp_nfetcap
 .ENDS
 ***************************************
-.SUBCKT sky130_fd_pr__hvdftpl1s__example_55959141808671
-**
-*.SEEDPROM
-.ENDS
-***************************************
-.SUBCKT sky130_fd_pr__hvdftpl1s2__example_55959141808672
-**
-*.SEEDPROM
-.ENDS
-***************************************
-.SUBCKT sky130_fd_pr__nfet_01v8__example_55959141808670
-**
-*.SEEDPROM
-.ENDS
-***************************************
-.SUBCKT sky130_fd_pr__hvdftpl1s__example_55959141808675
-**
-*.SEEDPROM
-.ENDS
-***************************************
-.SUBCKT sky130_fd_pr__hvdftpl1s2__example_55959141808676
-**
-*.SEEDPROM
-.ENDS
-***************************************
-.SUBCKT sky130_fd_pr__nfet_01v8__example_55959141808674
-**
-*.SEEDPROM
-.ENDS
-***************************************
-.SUBCKT sky130_fd_pr__nfet_01v8__example_55959141808673
-**
-*.SEEDPROM
-.ENDS
+
+
+
 ***************************************
 .SUBCKT sky130_fd_pr__res_bent_po__example_55959141808668 2 3
 **
 R0 2 3 sky130_fd_pr__res_generic_po L=700 W=0.33 m=1
 .ENDS
 ***************************************
-.SUBCKT sky130_fd_pr__dfl1sd__example_55959141808336
-**
-*.SEEDPROM
-.ENDS
-***************************************
-.SUBCKT ICV_9
-**
-*.SEEDPROM
-.ENDS
-***************************************
-.SUBCKT ICV_10
-**
-*.SEEDPROM
-.ENDS
-***************************************
-.SUBCKT ICV_11
-**
-*.SEEDPROM
-.ENDS
-***************************************
-.SUBCKT ICV_12
-**
-*.SEEDPROM
-.ENDS
+
 ***************************************
 .SUBCKT sky130_fd_pr__pfet_01v8__example_55959141808665 2 3 4
 **
@@ -1961,15 +1575,7 @@ R0 2 6 0.01 short m=1
 R1 7 3 0.01 short m=1
 .ENDS
 ***************************************
-.SUBCKT sky130_fd_pr__hvdfl1sd2__example_55959141808202
-**
-*.SEEDPROM
-.ENDS
-***************************************
-.SUBCKT sky130_fd_pr__pfet_01v8__example_55959141808657
-**
-*.SEEDPROM
-.ENDS
+
 ***************************************
 .SUBCKT sky130_fd_io__tk_em2s_cdns_55959141808652 2 3
 **
@@ -1977,10 +1583,8 @@ R0 2 6 0.01 short m=1
 R1 6 3 0.01 short m=1
 .ENDS
 ***************************************
-.SUBCKT ICV_19
-**
-*.SEEDPROM
-.ENDS
+
+
 ***************************************
 .SUBCKT sky130_fd_pr__res_generic_po__example_5595914180838 2 3
 **
@@ -2019,16 +1623,7 @@ R0 2 3 sky130_fd_pr__res_generic_po L=6 W=0.8 m=1
 R0 2 3 sky130_fd_pr__res_generic_po L=12 W=0.8 m=1
 .ENDS
 ***************************************
-.SUBCKT sky130_fd_pr__model__pfet_highvoltage__example_55959141808616
-**
-*.SEEDPROM
-.ENDS
-***************************************
-.SUBCKT sky130_fd_io__hvsbt_inv_x4
-**
-*.SEEDPROM
-*.CALIBRE ISOLATED NETS: IN OUT
-.ENDS
+
 ***************************************
 .SUBCKT sky130_fd_io__xres_tk_p_em1o_cdns_55959141808757 2 3
 **
@@ -2086,27 +1681,8 @@ R0 2 5 0.01 short m=1
 R1 2 6 0.01 short m=1
 .ENDS
 ***************************************
-.SUBCKT sky130_fd_pr__hvdfl1sd__example_55959141808338
-**
-*.SEEDPROM
-.ENDS
-***************************************
-.SUBCKT sky130_fd_pr__hvdfl1sd2__example_55959141808337
-**
-*.SEEDPROM
-.ENDS
-***************************************
-.SUBCKT sky130_fd_pr__via_pol1__example_55959141808273
-**
-.ENDS
-***************************************
-.SUBCKT ICV_23
-**
-.ENDS
-***************************************
-.SUBCKT ICV_24
-**
-.ENDS
+
+
 ***************************************
 .SUBCKT sky130_fd_io__xres_tk_p_em1c_cdns_55959141808759 1
 **
@@ -2374,76 +1950,16 @@ X240 34 43 25 3 4 33 44 26 9 3 ICV_29
 X241 10 46 27 16 15 11 47 28 17 16 ICV_29
 X242 11 48 29 18 17 12 49 30 19 18 ICV_29
 .ENDS
-***************************************
-.SUBCKT sky130_fd_pr__hvdfm1sd2__example_55959141808243
-**
-.ENDS
-***************************************
-.SUBCKT sky130_fd_pr__nfet_01v8__example_55959141808723
-**
-*.SEEDPROM
-.ENDS
-***************************************
-.SUBCKT sky130_fd_pr__hvdfm1sd__example_5595914180848
-**
-*.SEEDPROM
-.ENDS
-***************************************
-.SUBCKT sky130_fd_pr__hvdfm1sd2__example_5595914180849
-**
-*.SEEDPROM
-.ENDS
-***************************************
-.SUBCKT sky130_fd_pr__model__pfet_highvoltage__example_55959141808371
-**
-*.SEEDPROM
-.ENDS
-***************************************
-.SUBCKT sky130_fd_io__hvsbt_inv_x1
-**
-*.SEEDPROM
-*.CALIBRE ISOLATED NETS: VGND VPWR OUT
-.ENDS
-***************************************
-.SUBCKT sky130_fd_pr__model__pfet_highvoltage__example_55959141808421
-**
-*.SEEDPROM
-.ENDS
-***************************************
-.SUBCKT sky130_fd_io__hvsbt_inv_x2
-**
-*.SEEDPROM
-*.CALIBRE ISOLATED NETS: VGND VPWR IN OUT
-.ENDS
-***************************************
-.SUBCKT sky130_fd_pr__hvdfm1sd2__example_55959141808719
-**
-*.SEEDPROM
-.ENDS
-***************************************
-.SUBCKT sky130_fd_pr__pfet_01v8__example_55959141808720
-**
-*.SEEDPROM
-.ENDS
-***************************************
-.SUBCKT sky130_fd_pr__hvdfm1sd2__example_5595914180829
-**
-.ENDS
+
+
 ***************************************
 .SUBCKT sky130_fd_pr__pfet_01v8__example_55959141808767 2 3 4 5
 **
 *.SEEDPROM
 XM0 5 3 4 2 sky130_fd_pr__pfet_g5v0d10v5 L=0.5 W=3 AD=0.84 AS=0.84 PD=6.56 PS=6.56 NRD=0 NRS=0 m=1 sa=250000 sb=250000 a=1.5 p=7
 .ENDS
-***************************************
-.SUBCKT sky130_fd_io__tk_tie_r_out_esd A B
-**
-X0 A B sky130_fd_pr__res_generic_po__example_5595914180838
-.ENDS
-***************************************
-.SUBCKT sky130_fd_pr__hvdfm1sd2__example_55959141808765
-**
-.ENDS
+
+
 ***************************************
 .SUBCKT sky130_fd_pr__nfet_01v8__example_55959141808764 1 2 3 4
 **
@@ -2459,24 +1975,7 @@ XM0 4 2 3 1 sky130_fd_pr__nfet_05v0_nvt L=0.9 W=1 AD=0.28 AS=0.28 PD=2.56 PS=2.5
 **
 XM0 3 2 1 1 sky130_fd_pr__nfet_g5v0d10v5 L=0.5 W=3 AD=0.84 AS=0.795 PD=6.56 PS=6.53 NRD=0 NRS=0 m=1 sa=250000 sb=250000 a=1.5 p=7
 .ENDS
-***************************************
-.SUBCKT sky130_fd_pr__hvdfm1sd2__example_5595914180827
-**
-.ENDS
-***************************************
-.SUBCKT sky130_fd_pr__hvdfm1sd__example_55959141808233
-**
-.ENDS
-***************************************
-.SUBCKT sky130_fd_pr__nfet_01v8__example_55959141808778
-**
-*.SEEDPROM
-.ENDS
-***************************************
-.SUBCKT sky130_fd_pr__hvdfm1sd2__example_55959141808449
-**
-*.SEEDPROM
-.ENDS
+
 ***************************************
 .SUBCKT sky130_fd_pr__pfet_01v8__example_55959141808784 2 3 4
 **
@@ -2484,52 +1983,7 @@ XM0 3 2 1 1 sky130_fd_pr__nfet_g5v0d10v5 L=0.5 W=3 AD=0.84 AS=0.795 PD=6.56 PS=6
 XM0 2 3 4 2 sky130_fd_pr__pfet_g5v0d10v5 L=0.8 W=1 AD=0.28 AS=0.28 PD=2.56 PS=2.56 NRD=0 NRS=0 m=1 sa=400000 sb=400000 a=0.8 p=3.6
 .ENDS
 ***************************************
-.SUBCKT sky130_fd_pr__pfet_01v8__example_559591418085
-**
-*.SEEDPROM
-.ENDS
-***************************************
-.SUBCKT sky130_fd_pr__pfet_01v8__example_55959141808783
-**
-*.SEEDPROM
-.ENDS
-***************************************
-.SUBCKT sky130_fd_pr__hvdfm1sd__example_55959141808782
-**
-*.SEEDPROM
-.ENDS
-***************************************
-.SUBCKT sky130_fd_pr__pfet_01v8__example_55959141808786
-**
-*.SEEDPROM
-.ENDS
-***************************************
-.SUBCKT sky130_fd_pr__pfet_01v8__example_55959141808787
-**
-*.SEEDPROM
-.ENDS
-***************************************
-.SUBCKT sky130_fd_pr__tpl1__example_55959141808151
-**
-*.SEEDPROM
-.ENDS
-***************************************
-.SUBCKT sky130_fd_pr__tpl1__example_55959141808148
-**
-*.SEEDPROM
-.ENDS
-***************************************
-.SUBCKT sky130_fd_pr__tpl1__example_55959141808150
-**
-.ENDS
-***************************************
-.SUBCKT sky130_fd_pr__tpl1__example_55959141808149
-**
-.ENDS
-***************************************
-.SUBCKT sky130_fd_pr__dfl1__example_55959141808158
-**
-.ENDS
+
 ***************************************
 .SUBCKT sky130_fd_io__signal_5_sym_hv_local_5term NBODY NWELLRING GATE VGND IN 7
 **
@@ -2539,9 +1993,7 @@ R1 NWELLRING 7 0.01 short m=1
 R2 NBODY 51 0.01 short m=1
 .ENDS
 ***************************************
-.SUBCKT sky130_fd_pr__dfl1sd__example_5595914180819
-**
-.ENDS
+
 ***************************************
 .SUBCKT sky130_fd_io__gpio_buf_localesdv2 VGND VCC_IO VTRIP_SEL_H OUT_H 5
 **
@@ -2558,40 +2010,8 @@ X8 VGND VCC_IO VGND VGND OUT_H 10 sky130_fd_io__signal_5_sym_hv_local_5term
 X9 VGND VCC_IO VGND OUT_VT VCC_IO 7 sky130_fd_io__signal_5_sym_hv_local_5term
 X10 VGND VCC_IO VGND OUT_H VCC_IO 9 sky130_fd_io__signal_5_sym_hv_local_5term
 .ENDS
-***************************************
-.SUBCKT sky130_fd_pr__hvdftpm1s2__example_55959141808659
-**
-.ENDS
-***************************************
-.SUBCKT sky130_fd_pr__pfet_01v8__example_55959141808658
-**
-*.SEEDPROM
-.ENDS
-***************************************
-.SUBCKT sky130_fd_pr__hvdftpl1s__example_55959141808646
-**
-*.SEEDPROM
-.ENDS
-***************************************
-.SUBCKT sky130_fd_pr__nfet_01v8__example_55959141808647
-**
-*.SEEDPROM
-.ENDS
-***************************************
-.SUBCKT sky130_fd_pr__hvdftpm1s2__example_55959141808649
-**
-*.SEEDPROM
-.ENDS
-***************************************
-.SUBCKT ICV_30
-**
-*.SEEDPROM
-.ENDS
-***************************************
-.SUBCKT sky130_fd_pr__nfet_01v8__example_55959141808650
-**
-*.SEEDPROM
-.ENDS
+
+
 ***************************************
 .SUBCKT sky130_fd_io__nfet_con_diff_wo_abt_270_xres4v2 1 2 VCC_IO 4 5 6 7 8 9 10 11 12 13 14
 **

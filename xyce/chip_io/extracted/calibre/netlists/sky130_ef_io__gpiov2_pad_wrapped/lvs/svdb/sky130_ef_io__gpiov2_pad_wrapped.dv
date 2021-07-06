@@ -1,0 +1,11 @@
+# CALIBRE-LVS DISCREPANCY VIEWER TCL FILE 
+# FILE: svdb/sky130_ef_io__gpiov2_pad_wrapped.dv
+dv_start matched                                  
+dv_global
+dv_discrep 1 {Warning: Duplicate subckt}
+dv_discrep_line {Duplicate subckt definition "sky130_ef_io__gpiov2_pad_wrapped" at line 6 in file "/usr/local/google/home/tansell/work/openflow-drc-tests/torture_tests/sky130_ef_io__gpiov2_pad_wrapped/sky130_ef_io__gpiov2_pad_wrapped.cdl"}
+dv_discrep_line {         previously defined at line 391 in file "/usr/local/google/home/tansell/work/openflow-drc-tests/torture_tests/sky130_ef_io__gpiov2_pad_wrapped//libraries.cdl"}
+dv_discrep_line {}
+dv_cell {sky130_ef_io__gpiov2_pad_wrapped} {sky130_ef_io__gpiov2_pad_wrapped} matched
+dv_obj_count -transformed_nets {619 619} -transformed_inst {1095 1095} -transformed_port {39 39}
+dv_end

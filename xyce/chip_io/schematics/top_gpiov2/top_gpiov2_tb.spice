@@ -1,16 +1,16 @@
 *** UC SPICE *** , MIN_RESIST 4.0, MIN_CAPAC 0.1FF
 
 * Most models come from here:
-.lib ~/foss/pdks/sky130A/libs.tech/ngspice/sky130.lib.spice tt
+.lib /chipignite/pdks/sky130A-xyce/libs.tech/xyce/sky130.lib.spice tt
 
 * The sky130_fd_io cells are in the sky130-pdk-scratch library which has all files listed here:
- .include ./io.spice
+.include ./io.spice
 
 * Correction for the missing res_generic_po device:
- .include ./sky130_fd_pr__res_generic_po.spice
+.include ./sky130_fd_pr__res_generic_po.spice
 
 * This device is also missing from the libraries:
- .include ./sky130_fd_io__condiode.spice
+.include ./sky130_fd_io__condiode.spice
 
 *.PININFO ANALOG_EN:I ANALOG_POL:I ANALOG_SEL:I DM[2]:I DM[1]:I
 *.PININFO DM[0]:I ENABLE_H:I ENABLE_INP_H:I ENABLE_VDDA_H:I
@@ -77,13 +77,8 @@ rload		pad		0		100K
 *.OPTION ITL4=10000
 *.OPTION RELTOL=1e-3
 
-.OPTION RSHUNT=1e15
-.SAVE v(pad) v(out) i(vvdd3v3) i(vvdd1v8) v(vdd3v3) v(vdd1v8)
+*.OPTION RSHUNT=1e15
+.PRINT TRAN FORMAT=RAW v(pad) v(out) i(vvdd3v3) i(vvdd1v8) v(vdd3v3) v(vdd1v8)
 .TRAN 1u 15u
-
-*.control
-*tran 1u 15u
-*plot v(pad) v(out) i(vvdd3v3) i(vvdd1v8)
-*.endc
 
 .END

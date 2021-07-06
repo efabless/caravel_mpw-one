@@ -1,18 +1,14 @@
 *** This is a chip_io smoke test with transient supply ramps
 
-* Most models come from here:
- .lib ~/foss/pdks/sky130A/libs.tech/ngspice/sky130.lib.spice tt
-
-****.include /home/mk/foss/pdks/sky130_fd_pr/models/corners/tt/discrete.spice
-
-* Include chip_io .subckt extracted using Calibre:
- .include ../netlists/chip_io.extracted.ngspice
+.lib ../../../../../../../pdks/sky130A-xyce/libs.tech/xyce/sky130.lib.spice tt
+.include ../netlists/chip_io.extracted.ngspice
 
 * This device is also missing from the libraries:
- .include ./sky130_fd_io__condiode.spice
- .include ./sky130_fd_pr__model__parasitic__diode_ps2nw.spice 
- .include ./sky130_fd_pr__model__parasitic__diode_pw2dn.spice
- .include ./sky130_fd_pr__model__parasitic__diode_ps2dn.spice
+
+.include ./sky130_fd_io__condiode.spice
+.include ./sky130_fd_pr__model__parasitic__diode_ps2nw.spice 
+.include ./sky130_fd_pr__model__parasitic__diode_pw2dn.spice
+.include ./sky130_fd_pr__model__parasitic__diode_ps2dn.spice
 
 ***************************************
 
@@ -67,10 +63,7 @@ vone3v3		ONE3V3		0		pwl	0 0 5.5u 0 5.6u 3.3  1m 3.3
 vout		OUT		0		pwl	0 0 8u 0  8.1u 1.8 11u 1.8 11.1u 0 15u 0
 rload		PAD		0		1000K
 
-.OPTION RSHUNT=1e15
-**.OPTION SAVECURRENTS
-.SAVE All(v)
-.SAVE v(pad) v(out) i(vvdd3v3) i(vvdd1v8) v(vdd3v3) v(vdd1v8) v(ONE1V8) v(ONE3V3) i(vone1v8) i(vone3v3) i(vout) i(rload)
+.PRINT TRAN FORMAT=RAW  v(pad) v(out) i(vvdd3v3) i(vvdd1v8) v(vdd3v3) v(vdd1v8) v(ONE1V8) v(ONE3V3) i(vone1v8) i(vone3v3) i(vout) i(rload)
 .TRAN 10n 15u
 
 
