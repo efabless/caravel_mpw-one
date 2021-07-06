@@ -425,7 +425,7 @@ else
 endif
 
 __final:
-	python3 $(CARAVEL_ROOT)/scripts/compositor.py $(USER_ID) $(shell pwd) $(CARAVEL_ROOT)/mag $(shell pwd)/gds -keep
+	python3 $(CARAVEL_ROOT)/scripts/compositor.py $(USER_ID) $(shell pwd) $(CARAVEL_ROOT)/mag $(shell pwd)/gds
 	mv $(CARAVEL_ROOT)/mag/caravel_$(USER_ID).mag ./mag/
 	@rm -rf ./mag/tmp
 
