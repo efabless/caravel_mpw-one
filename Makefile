@@ -281,9 +281,9 @@ $(LVS_BLOCKS): lvs-% : ./mag/%.mag ./verilog/gl/%.v
 		exit;" > ./mag/extract_$*.tcl
 	cd mag && \
 		export MAGTYPE=maglef; \
-		magic -rcfile ${PDK_ROOT}/sky130A/libs.tech/magic/sky130A.magicrc -noc -dnull extract_$*.tcl < /dev/null
+		magic -rcfile .magicrc -noc -dnull extract_$*.tcl < /dev/null
 	mv ./mag/$*.spice ./spi/lvs
-	rm ./mag/*.ext
+	#rm ./mag/*.ext
 	mv -f ./mag/extract_$*.tcl ./mag/tmp
 	mv -f ./mag/extract_$*.log ./mag/tmp
 	####
@@ -425,14 +425,8 @@ else
 endif
 
 __final:
-	mkdir -p ./mag/tmp 
-	cp -r ./mag/*.mag ./mag/tmp
-	cp -r $(CARAVEL_ROOT)/mag/* mag/tmp/
-	cp -r $(CARAVEL_ROOT)/mag/.magicrc mag/tmp/
-	sed -i 's@../gds@../../$(CARAVEL_ROOT)/gds@g' ./mag/tmp/*.mag
-	sed -i 's@../maglef@../../$(CARAVEL_ROOT)/maglef@g' ./mag/tmp/caravel.mag
-	sed -i 's@../subcells@../../$(CARAVEL_ROOT)/subcells@g' ./mag/tmp/.magicrc
-	python3 $(CARAVEL_ROOT)/scripts/compositor.py $(USER_ID) $(shell pwd) $(shell pwd)/mag/tmp $(shell pwd)/gds
+	python3 $(CARAVEL_ROOT)/scripts/compositor.py $(USER_ID) $(shell pwd) $(CARAVEL_ROOT)/mag $(shell pwd)/gds -keep
+	mv $(CARAVEL_ROOT)/mag/caravel_$(USER_ID).mag ./mag/
 	@rm -rf ./mag/tmp
 
 .PHONY: set_user_id
