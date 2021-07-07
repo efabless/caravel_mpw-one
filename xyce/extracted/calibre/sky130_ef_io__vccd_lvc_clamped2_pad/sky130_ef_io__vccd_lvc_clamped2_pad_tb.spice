@@ -1,7 +1,7 @@
 ***  
 * Most models come from here:
 
-.lib ../../../../sky130A-xyce/libs.tech/xyce/sky130.lib.spice tt
+.lib ../../../sky130A-xyce/libs.tech/xyce/sky130.lib.spice tt
 
 .include ./sky130_fd_io__condiode.spice
 .include ./sky130_fd_pr__model__parasitic__diode_ps2nw.spice 
@@ -16,9 +16,7 @@
 
 ***************************************
 
-*.include    	./calibre2xyce/sky130_ef_io__gpiov2_pad_wrapped.extracted.spice-calibre-202103-hs2ng
-*.include  	./calibre2xyce/sky130_ef_io__gpiov2_pad_wrapped-extracted.spice-calibre-202107-hs2ng 	
-.include 	./calibre2xyce/sky130_ef_io__gpiov2_pad_wrapped-extracted.xyce
+.include 	../NETLISTS/sky130_ef_io__vccd_lvc_clamped2_pad-extracted.spice
 
 *** no space before the .include
 *** removed subckts without any ports
@@ -27,47 +25,23 @@
 *** used sky130A-xyce PDK from MG
 
 ***************************************
-Xsky130_ef_io__gpiov2_pad_wrapped 
+
+
+Xsky130_ef_io__vccd_lvc_clamped2_pad  
 + VSS		; VSSD 
-+ VSS		; VSSIO 
-+ VSS		; VSSA 
-+ VSS		; VSSIO_Q 
-+ VDD3V3	; VDDIO 
-+ VDD3V3	; VDDIO_Q 
-+ OPEN1 	; PAD_A_ESD_1_H 
-+ PAD		; PAD 
-+ OPEN2		; PAD_A_ESD_0_H 
-+ ZERO		; IB_MODE_SEL 
-+ ONE3V3	; ENABLE_INP_H 
-+ ONE3V3	; ENABLE_H 
-+ VDD3V3	; VDDA 
-+ ONE3V3	; ENABLE_VDDA_H 
++ VSS		; VSSIO
 + VDD1V8	; VCCD 
-+ ZERO		; OE_N 
-+ ZERO		; VTRIP_SEL 
++ VDD3V3	; VDDIO 
++ VSS		; VSSA 
 + VDD1V8	; VCCHIB 
-+ ZERO		; ENABLE_VSWITCH_H 
-+ OUT		; OUT
-+ ZERO		; HLD_OVR 
-+ ONE1V8	; DM[2] 
-+ ZERO		; ANALOG_SEL 
-+ ONE3V3	; HLD_H_N 
-+ ZERO		; ANALOG_EN 
-+ ZERO		; INP_DIS 
-+ ZERO		; ANALOG_POL 
-+ ZERO		; DM[0] 
-+ OPEN3		; PAD_A_NOESD_H 
-+ ONE1V8	; DM[1] 
-+ ZERO		; SLOW 
-+ OPEN4		; TIE_HI_ESD 
-+ IN		; IN 
-+ OPEN5		; IN_H 
-+ ONE1V8	; ENABLE_VDDIO 
-+ OPEN6		; TIE_LO_ESD 
++ VDD3V3	; VDDA 
 + VDD3V3	; VSWITCH 
-+ OPEN7		; AMUXBUS_A 
-+ OPEN8		; AMUXBUS_B
-+ sky130_ef_io__gpiov2_pad_wrapped
++ OPEN1		; AMUXBUS_B 
++ OPEN2		; AMUXBUS_A 
++ VSS		; VSSIO_Q 
++ VDD3V3	; VDDIO_Q
++ sky130_ef_io__vccd_lvc_clamped2_pad
+
 
 
 vvss		VSS		0 		dc 	0
