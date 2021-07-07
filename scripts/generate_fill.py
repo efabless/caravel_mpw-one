@@ -90,7 +90,7 @@ if __name__ == '__main__':
         else:
             arguments.append(option)
 
-    if len(arguments) != 3:
+    if len(arguments) < 3:
         print("Wrong number of arguments given to generate_fill.py.")
         usage()
         sys.exit(1)
