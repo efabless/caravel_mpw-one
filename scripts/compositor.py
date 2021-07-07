@@ -154,11 +154,11 @@ if __name__ == '__main__':
     # The compositor script will create <project_with_id>.mag, but is uses
     # "load", so the file must not already exist.
 
-    if os.path.isfile(magpath + '/' + project_with_id + '.mag'):
+    if os.path.isfile(user_project_path + '/mag/' + project_with_id + '.mag'):
         print('Error:  File ' + project_with_id + '.mag exists already!  Exiting. . .')
         sys.exit(1)
 
-    with open(magpath + '/compose_final.tcl', 'w') as ofile:
+    with open(user_project_path + '/mag/compose_final.tcl', 'w') as ofile:
         print('#!/bin/env wish', file=ofile)
         print('drc off', file=ofile)
         # Set the random seed from the project ID
@@ -200,7 +200,7 @@ if __name__ == '__main__':
         print('getcell advSeal_6um_gen', file=ofile)
 
         # Write out completed project as "caravel_" + the user ID
-        print('save ' + project_with_id, file=ofile)
+        print('save '  + user_project_path + '/mag/' + project_with_id, file=ofile)
 
         # Generate final GDS
         print('puts stdout "Writing final GDS. . . "', file=ofile)
@@ -217,7 +217,7 @@ if __name__ == '__main__':
     print('Building final GDS file ' + project_with_id + '.gds', flush=True)
 
     mproc = subprocess.run(['magic', '-dnull', '-noconsole',
-		'-rcfile', rcfile, magpath + '/compose_final.tcl'],
+		'-rcfile', rcfile, user_project_path + '/mag/compose_final.tcl'],
 		stdin = subprocess.DEVNULL,
 		stdout = subprocess.PIPE,
 		stderr = subprocess.PIPE,
@@ -247,7 +247,7 @@ if __name__ == '__main__':
             print('ERROR:  Magic exited with status ' + str(mproc.returncode))
 
     if not keepmode:
-        os.remove(magpath + '/compose_final.tcl')
+        os.remove(user_project_path + '/mag/compose_final.tcl')
 
     print('Done!')
     exit(0)
