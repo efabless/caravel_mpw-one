@@ -69,11 +69,11 @@ INSTALL_SRAM ?= disabled
 ship: check-env uncompress uncompress-caravel
 ifeq ($(FOREGROUND),1)
 	@echo "Running make ship in the foreground..."
-	$(MAKE) __ship
+	$(MAKE) -f $(CARAVEL_ROOT)/Makefile __ship
 	@echo "Make ship completed." 2>&1 | tee -a ./signoff/build/make_ship.out
 else
 	@echo "Running make ship in the background..."
-	nohup $(MAKE) __ship >/dev/null 2>&1 &
+	nohup $(MAKE) -f $(CARAVEL_ROOT)/Makefile __ship >/dev/null 2>&1 &
 	tail -f signoff/build/make_ship.out
 	@echo "Make ship completed."  2>&1 | tee -a ./signoff/build/make_ship.out
 endif
@@ -106,13 +106,13 @@ ifeq ($(FOREGROUND),1)
 	@echo "Running make truck in the foreground..."
 	mkdir -p ./signoff
 	mkdir -p ./build
-	$(MAKE) __truck
+	$(MAKE) -f $(CARAVEL_ROOT)/Makefile __truck
 	@echo "Make truck completed." 2>&1 | tee -a ./signoff/build/make_truck.out
 else
 	@echo "Running make truck in the background..."
 	mkdir -p ./signoff
 	mkdir -p ./build
-	nohup $(MAKE) __truck >/dev/null 2>&1 &
+	nohup $(MAKE) -f $(CARAVEL_ROOT)/Makefile __truck >/dev/null 2>&1 &
 	tail -f signoff/build/make_truck.out
 	@echo "Make truck completed."  2>&1 | tee -a ./signoff/build/make_truck.out
 endif
@@ -398,11 +398,11 @@ help:
 generate_fill: check-env check-uid check-project uncompress
 ifeq ($(FOREGROUND),1)
 	@echo "Running generate_fill in the foreground..."
-	$(MAKE) __generate_fill
+	$(MAKE) -f $(CARAVEL_ROOT)/Makefile __generate_fill
 	@echo "Generate fill completed." 2>&1 | tee -a ./signoff/build/generate_fill.out
 else
 	@echo "Running generate_fill in the background..."
-	@nohup $(MAKE) __generate_fill >/dev/null 2>&1 &
+	@nohup $(MAKE) -f $(CARAVEL_ROOT)/Makefile __generate_fill >/dev/null 2>&1 &
 	tail -f signoff/build/generate_fill.out
 	@echo "Generate fill completed." | tee -a signoff/build/generate_fill.out
 endif
@@ -416,10 +416,10 @@ __generate_fill:
 .PHONY: final
 final: check-env check-uid check-project uncompress uncompress-caravel
 ifeq ($(FOREGROUND),1)
-	$(MAKE) __final
+	$(MAKE) -f $(CARAVEL_ROOT)/Makefile __final
 	@echo "Final build completed." 2>&1 | tee -a ./signoff/build/final_build.out
 else
-	$(MAKE) __final >/dev/null 2>&1 &
+	$(MAKE) -f $(CARAVEL_ROOT)/Makefile __final >/dev/null 2>&1 &
 	tail -f signoff/build/final_build.out
 	@echo "Final build completed." 2>&1 | tee -a ./signoff/build/final_build.out
 endif
@@ -432,10 +432,10 @@ __final:
 .PHONY: set_user_id
 set_user_id: check-env check-uid uncompress uncompress-caravel
 ifeq ($(FOREGROUND),1)
-	$(MAKE) __set_user_id 
+	$(MAKE) -f $(CARAVEL_ROOT)/Makefile __set_user_id
 	@echo "Set user ID completed." 2>&1 | tee -a ./signoff/build/set_user_id.out
 else
-	$(MAKE) __set_user_id >/dev/null 2>&1 &
+	$(MAKE) -f $(CARAVEL_ROOT)/Makefile __set_user_id >/dev/null 2>&1 &
 	tail -f signoff/build/set_user_id.out
 	@echo "Set user ID completed." 2>&1 | tee -a ./signoff/build/set_user_id.out
 endif
