@@ -134,7 +134,8 @@ if __name__ == '__main__':
 
     if user_id_value:
         # project = 'caravel'
-        project_with_id = project + '_' + user_id_value
+        # project_with_id = project + '_' + user_id_value
+        project_with_id = 'caravel_' + user_id_value
         user_id_decimal = str(int(user_id_value, 16))
     else:
         print('Error:  No project_id found in info.yaml file.')

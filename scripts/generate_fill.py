@@ -138,7 +138,7 @@ if __name__ == '__main__':
     #                         break
 
     if user_id_value:
-        project_with_id = project + '_' + user_id_value
+        project_with_id = 'caravel_' + user_id_value
     else:
         print('Error:  No project_id found in info.yaml file.')
         sys.exit(1)
