@@ -200,7 +200,7 @@ if __name__ == '__main__':
         print('getcell advSeal_6um_gen', file=ofile)
 
         # Write out completed project as "caravel_" + the user ID
-        print('save '  + user_project_path + '/mag/' + project_with_id, file=ofile)
+        # print('save '  + user_project_path + '/mag/' + project_with_id, file=ofile)
 
         # Generate final GDS
         print('puts stdout "Writing final GDS. . . "', file=ofile)
