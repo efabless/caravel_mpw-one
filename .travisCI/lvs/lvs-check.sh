@@ -25,7 +25,7 @@ make uncompress
 # LVS
 BLOCKS=($block)
 if [ $block == all ]; then
-        BLOCKS=$(cd openlane && find * -maxdepth 0 -type d ! -name "caravel" ! -name "gpio_control_block" ! -name "caravan" ! -name "chip_io_alt" ! -name "chip_io" ! -name "mgmt_core" ! -name "user_project_wrapper_empty" ! -name "user_analog_project_wrapper_empty")
+        BLOCKS=$(cd openlane && find * -maxdepth 0 -type d ! -name "caravel" ! -name "caravan" ! -name "chip_io_alt" ! -name "chip_io" ! -name "mgmt_core" ! -name "user_project_wrapper_empty" ! -name "user_analog_project_wrapper_empty")
 fi
 
 echo "Running Full LVS:"

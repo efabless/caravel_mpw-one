@@ -16,7 +16,7 @@
 .subckt sky130_fd_sc_hvl__lsbufhv2lv_1 A LVPWR VGND VNB VPB VPWR X
 .ends
 
-.subckt mgmt_protect_hv mprj2_vdd_logic1 mprj_vdd_logic1 vccd vssa2 vdda1 vdda2
+.subckt mgmt_protect_hv vccd vssa2 vdda1 vdda2 mprj2_vdd_logic1 mprj_vdd_logic1
 Xmprj2_logic_high_hvl vssa2 vssa2 vdda2 vdda2 mprj2_logic_high_lv/A mprj2_logic_high_hvl/LO
 + sky130_fd_sc_hvl__conb_1
 XFILLER_1_300 vssa2 vssa2 vdda1 vdda1 sky130_fd_sc_hvl__fill_2
