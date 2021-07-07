@@ -67,11 +67,11 @@ def makegds(file):
         for line in mproc.stdout.splitlines():
             print(line)
     if mproc.stderr:
-        print('Error message output from magic:')
+        print('{{ FILL }} Error message output from magic:')
         for line in mproc.stderr.splitlines():
             print(line)
         if mproc.returncode != 0:
-            print('ERROR:  Magic exited with status ' + str(mproc.returncode))
+            print('{{ FILL }} ERROR:  Magic exited with status ' + str(mproc.returncode))
 
 
 if __name__ == '__main__':
@@ -175,7 +175,7 @@ if __name__ == '__main__':
     print('set stepheight [lindex $stepbox 3]', file=ofile)
     print('', file=ofile)
     print('set starttime [orig_clock format [orig_clock seconds] -format "%D %T"]', file=ofile)
-    print('puts stdout "Started: $starttime"', file=ofile)
+    print('puts stdout "{{ FILL }} Started: $starttime"', file=ofile)
     print('', file=ofile)
     # Read the user project from GDS, as there is not necessarily a magic database file
     # to go along with this.
@@ -218,7 +218,7 @@ if __name__ == '__main__':
     print('        box grow c 1.6um', file=ofile)
 
     # Flatten into a cell with a new name
-    print('        puts stdout "Flattening layout of tile x=$x y=$y. . . "', file=ofile)
+    print('        puts stdout "{{ FILL }} Flattening layout of tile x=$x y=$y. . . "', file=ofile)
     print('        flush stdout', file=ofile)
     print('        update idletasks', file=ofile)
     print('        flatten -dobox -nolabels ' + project_with_id + '_fill_pattern_${x}_$y', file=ofile)
@@ -233,7 +233,7 @@ if __name__ == '__main__':
     print('        paint comment', file=ofile)
 
     if not distmode:
-        print('        puts stdout "Writing GDS. . . "', file=ofile)
+        print('        puts stdout "{{ FILL }} Writing GDS. . . "', file=ofile)
 
     print('        flush stdout', file=ofile)
     print('        update idletasks', file=ofile)
@@ -320,7 +320,7 @@ if __name__ == '__main__':
     print('}', file=ofile)
 
     # And write final GDS
-    print('puts stdout "Writing final GDS"', file=ofile)
+    print('puts stdout "{{ FILL }} Writing final GDS"', file=ofile)
 
     print('cif *hier write disable', file=ofile)
     print('cif *array write disable', file=ofile)
@@ -329,7 +329,7 @@ if __name__ == '__main__':
     else:
         print('gds write ' + project_with_id + '_fill_pattern.gds', file=ofile)
     print('set endtime [orig_clock format [orig_clock seconds] -format "%D %T"]', file=ofile)
-    print('puts stdout "Ended: $endtime"', file=ofile)
+    print('puts stdout "{{ FILL }} Ended: $endtime"', file=ofile)
     print('quit -noprompt', file=ofile)
     ofile.close()
 
@@ -353,11 +353,11 @@ if __name__ == '__main__':
             for line in mproc.stdout.splitlines():
                 print(line)
         if mproc.stderr:
-            print('Error message output from magic:')
+            print('{{ FILL }} Error message output from magic:')
             for line in mproc.stderr.splitlines():
                 print(line)
             if mproc.returncode != 0:
-                print('ERROR:  Magic exited with status ' + str(mproc.returncode))
+                print('{{ FILL }} ERROR:  Magic exited with status ' + str(mproc.returncode))
 
         if distmode:
             # If using distributed mode, then run magic on each of the generated
@@ -387,11 +387,11 @@ if __name__ == '__main__':
                 for line in mproc.stdout.splitlines():
                     print(line)
             if mproc.stderr:
-                print('Error message output from magic:')
+                print('{{ FILL }} Error message output from magic:')
                 for line in mproc.stderr.splitlines():
                     print(line)
                 if mproc.returncode != 0:
-                    print('ERROR:  Magic exited with status ' + str(mproc.returncode))
+                    print('{{ FILL }} ERROR:  Magic exited with status ' + str(mproc.returncode))
 
     if not keepmode:
         # Remove fill generation script
@@ -412,5 +412,5 @@ if __name__ == '__main__':
                 for file in magfiles:
                     os.remove(file)
 
-    print('Done!')
+    print('{{ FILL }} Done!')
     exit(0)
