@@ -395,7 +395,7 @@ help:
 	@$(MAKE) -pRrq -f $(lastword $(MAKEFILE_LIST)) : 2>/dev/null | awk -v RS= -F: '/^# File/,/^# Finished Make data base/ {if ($$1 !~ "^[#.]") {print $$1}}' | sort | egrep -v -e '^[^[:alnum:]]' -e '^$@$$'
 
 .PHONY: generate_fill
-generate_fill: check-env check-uid uncompress
+generate_fill: check-env check-uid check-project uncompress
 ifeq ($(FOREGROUND),1)
 	@echo "Running generate_fill in the foreground..."
 	$(MAKE) __generate_fill
@@ -410,11 +410,11 @@ endif
 __generate_fill:
 	@mkdir -p ./signoff/build
 	@cp -r $(CARAVEL_ROOT)/mag/.magicrc $(shell pwd)/mag
-	python3 $(CARAVEL_ROOT)/scripts/generate_fill.py $(USER_ID) $(shell pwd) -dist 2>&1 | tee ./signoff/build/generate_fill.out
+	python3 $(CARAVEL_ROOT)/scripts/generate_fill.py $(USER_ID) $(PROJECT) $(shell pwd) -dist 2>&1 | tee ./signoff/build/generate_fill.out
 
 
 .PHONY: final
-final: check-env check-uid uncompress uncompress-caravel
+final: check-env check-uid check-project uncompress uncompress-caravel
 ifeq ($(FOREGROUND),1)
 	$(MAKE) __final
 	@echo "Final build completed." 2>&1 | tee -a ./signoff/build/final_build.out
@@ -425,7 +425,7 @@ else
 endif
 
 __final:
-	python3 $(CARAVEL_ROOT)/scripts/compositor.py $(USER_ID) $(shell pwd) $(CARAVEL_ROOT)/mag $(shell pwd)/gds
+	python3 $(CARAVEL_ROOT)/scripts/compositor.py $(USER_ID) $(PROJECT) $(shell pwd) $(CARAVEL_ROOT)/mag $(shell pwd)/gds
 	mv $(CARAVEL_ROOT)/mag/caravel_$(USER_ID).mag ./mag/
 	@rm -rf ./mag/tmp
 
@@ -531,6 +531,13 @@ ifndef USER_ID
 	$(error USER_ID is undefined, please export it before running make set_user_id)
 else 
 	@echo USER_ID is set to $(USER_ID)
+endif
+
+check-project:
+ifndef PROJECT
+	$(error PROJECT is undefined, please export it before running make generate_fill or make final)
+else
+	@echo PROJECT is set to $(PROJECT)
 endif
 
 # Make README.rst

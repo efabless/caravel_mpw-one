@@ -28,7 +28,7 @@ import subprocess
 
 def usage():
     print("Usage:")
-    print("compositor.py [<user_id_value>] [<path_to_project>] [<path_to_mag_dir>] [<path_to_gds_dir] [-keep]")
+    print("compositor.py <user_id_value> <project> <path_to_project> <path_to_mag_dir> <path_to_gds_dir [-keep]")
     print("")
     print("where:")
     print("   <user_id_value>   is a character string of eight hex digits, and")
@@ -57,42 +57,48 @@ if __name__ == '__main__':
         else:
             arguments.append(option)
 
-    if len(arguments) > 4:
+    if len(arguments) != 5:
         print("Wrong number of arguments given to compositor.py.")
         usage()
         sys.exit(0)
 
-    user_id_value = None
-    if len(arguments) > 0:
-        user_id_value = arguments[0]
+    user_id_value = arguments[0]
+    project = arguments[1]
+    user_project_path = arguments[2]
+    mag_dir_path = arguments[3]
+    gds_dir_path = arguments[4]
 
-        # Convert to binary
-        try:
-            user_id_int = int('0x' + user_id_value, 0)
-            user_id_bits = '{0:032b}'.format(user_id_int)
-        except:
-            user_project_path = arguments[0]
-            user_id_value = None
+    # if len(arguments) > 0:
+    #     user_id_value = arguments[0]
 
-    if len(arguments) == 2 and user_project_path == None:
-        user_project_path = arguments[1]
-        mag_dir_path = user_project_path + "/mag"
-        gds_dir_path = "../gds"
-    if len(arguments) == 3 and user_project_path == None:
-        user_project_path = arguments[1]
-        mag_dir_path = arguments[2]
-        gds_dir_path = "../gds"
-    if len(arguments) == 4:
-        user_project_path = arguments[1]
-        mag_dir_path = arguments[2]
-        gds_dir_path =  arguments[3]
-    elif len(arguments) == 3 and user_project_path != None:
-        mag_dir_path = arguments[1]
-        gds_dir_path =  arguments[2]
-    else:
-        user_project_path = os.getcwd()
-        mag_dir_path = user_project_path + "/mag"
-        gds_dir_path = "../gds"
+    # Convert to binary
+    try:
+        user_id_int = int('0x' + user_id_value, 0)
+        user_id_bits = '{0:032b}'.format(user_id_int)
+    except:
+        print("User ID not recognized")
+        usage()
+        sys.exit(1)
+
+    # if len(arguments) == 2 and user_project_path == None:
+    #     user_project_path = arguments[1]
+    #     mag_dir_path = user_project_path + "/mag"
+    #     gds_dir_path = "../gds"
+    # if len(arguments) == 3 and user_project_path == None:
+    #     user_project_path = arguments[1]
+    #     mag_dir_path = arguments[2]
+    #     gds_dir_path = "../gds"
+    # if len(arguments) == 4:
+    #     user_project_path = arguments[1]
+    #     mag_dir_path = arguments[2]
+    #     gds_dir_path =  arguments[3]
+    # elif len(arguments) == 3 and user_project_path != None:
+    #     mag_dir_path = arguments[1]
+    #     gds_dir_path =  arguments[2]
+    # else:
+    #     user_project_path = os.getcwd()
+    #     mag_dir_path = user_project_path + "/mag"
+    #     gds_dir_path = "../gds"
 
     # Check for valid user path
 
@@ -113,22 +119,22 @@ if __name__ == '__main__':
         sys.exit(1)
 
     # Check for valid user ID
-    if not user_id_value:
-        if os.path.isfile(user_project_path + '/info.yaml'):
-            with open(user_project_path + '/info.yaml', 'r') as ifile:
-                infolines = ifile.read().splitlines()
-                for line in infolines:
-                    kvpair = line.split(':')
-                    if len(kvpair) == 2:
-                        key = kvpair[0].strip()
-                        value = kvpair[1].strip()
-                        if key == 'project_id':
-                            user_id_value = value.strip('"\'')
-                            break
+    # if not user_id_value:
+    #     if os.path.isfile(user_project_path + '/info.yaml'):
+    #         with open(user_project_path + '/info.yaml', 'r') as ifile:
+    #             infolines = ifile.read().splitlines()
+    #             for line in infolines:
+    #                 kvpair = line.split(':')
+    #                 if len(kvpair) == 2:
+    #                     key = kvpair[0].strip()
+    #                     value = kvpair[1].strip()
+    #                     if key == 'project_id':
+    #                         user_id_value = value.strip('"\'')
+    #                         break
 
     if user_id_value:
-        project = 'caravel'
-        project_with_id = 'caravel_' + user_id_value
+        # project = 'caravel'
+        project_with_id = project + '_' + user_id_value
         user_id_decimal = str(int(user_id_value, 16))
     else:
         print('Error:  No project_id found in info.yaml file.')
