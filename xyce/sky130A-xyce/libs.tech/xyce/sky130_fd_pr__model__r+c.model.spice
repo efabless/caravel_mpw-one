@@ -164,7 +164,8 @@ D0 N P sky130_fd_pr__diode_pw2nd_05v5 area=a pj=p
 .ends
 * (corresponds to current PDK)
 .subckt sky130_fd_pr__diode_pw2nd_05v5 N P area=0 perimeter=0
-D0 N P sky130_fd_pr__diode_pw2nd_05v5 area=area pj=perimeter
+D0 N P sky130_fd_pr__diode_pw2nd_05v5 
+**+ area=area pj=perimeter
 .ends
 * Subcircuit definition HV diffusion resistors
 

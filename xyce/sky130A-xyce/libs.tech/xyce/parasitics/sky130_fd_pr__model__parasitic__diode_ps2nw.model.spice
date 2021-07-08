@@ -15,6 +15,8 @@
 * SKY130 Spice File.
 .model sky130_fd_pr__model__parasitic__diode_ps2nw d
 + level = 2.0
+**+ level = 3.0
+** Xyce 7.3 doesn't have D model Level=3.0
 + tlevc = 1.0
 + area = 1.0e+12
 * Junction Capacitance Parameters

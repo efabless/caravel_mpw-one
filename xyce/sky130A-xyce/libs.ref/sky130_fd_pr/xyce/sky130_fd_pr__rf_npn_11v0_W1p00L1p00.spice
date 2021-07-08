@@ -1,0 +1,13 @@
+* NGSPICE file created from sky130_fd_pr__rf_npn_11v0_W1p00L1p00.ext - technology: sky130A
+
+.subckt sky130_fd_pr__rf_npn_11v0_W1p00L1p00 E B C
+X0 C B a_512_512# VSUBS sky130_fd_pr__npn_11v0 area=8.01025e+13p
+C0 E B 0.42fF
+C1 C B 3.12fF
+C2 a_512_512# E 0.38fF
+C3 C E 0.30fF
+C4 E VSUBS 0.19fF
+C5 B VSUBS -0.43fF
+C6 C VSUBS 0.97fF
+.ends
+

@@ -48,7 +48,7 @@ X0 1 1 sky130_fd_pr__diode_pw2nd_05v5 a=1.5 p=10.6 m=1
 X1 1 1 sky130_fd_pr__diode_pw2nd_05v5 a=1.5 p=10.6 m=1
 .ENDS
 ***************************************
-.SUBCKT sky130_ef_io__vccd_lvc_clamped2_pad  VSSD VSSIO VCCD VDDIO VSSA VCCHIB VDDA VSWITCH AMUXBUS_B AMUXBUS_A VSSIO_Q VDDIO_Q
+.SUBCKT sky130_ef_io__vccd_lvc_clamped2_pad   VSSD VSSIO VCCD VDDIO VSSA VCCHIB VDDA VSWITCH AMUXBUS_B AMUXBUS_A VSSIO_Q VDDIO_Q
 **
 XM0 VCCD 11 VSSD VSSD sky130_fd_pr__nfet_01v8 L=0.18 W=7 AD=3.535 AS=3.5 PD=8.01 PS=15 NRD=3.336 NRS=3.42 m=1 sa=90001.1 sb=90019.9 a=1.26 p=14.36
 XM1 VCCD 11 VSSD VSSD sky130_fd_pr__nfet_01v8 L=0.18 W=7 AD=3.535 AS=3.5 PD=8.01 PS=15 NRD=3.336 NRS=3.42 m=1 sa=90001.1 sb=90019.9 a=1.26 p=14.36

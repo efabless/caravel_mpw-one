@@ -1,0 +1,48 @@
+***  
+* Most models come from here:
+
+.lib ../../../sky130A-xyce/libs.tech/xyce/sky130.lib.spice tt
+
+.include ./sky130_fd_io__condiode.spice
+.include ./sky130_fd_pr__model__parasitic__diode_ps2nw.spice 
+.include ./sky130_fd_pr__model__parasitic__diode_pw2dn.spice
+.include ./sky130_fd_pr__model__parasitic__diode_ps2dn.spice
+.include ./sky130_fd_pr__diode_pd2nw_05v5.spice
+
+***************************************
+
+.include 	../NETLISTS/sky130_ef_io__vdda_hvc_clamped_pad-extracted.spice
+
+*** no space before the .include
+*** removed subckts without any ports
+*** converted calibre extracted netlist to spice with hs2ng
+*** changed parasitic diodes to level=2.0
+*** used sky130A-xyce PDK from MG
+
+***************************************
+
+Xsky130_ef_io__vdda_hvc_clamped_pad  
++ VSS		;  VSSD 
++ VSS		;  VSSA 
++ VDD3V3	;  VDDA 
++ VDD3V3	;  VDDIO 
++ VDD1V8	;  VCCHIB 
++ VDD1V8	;  VCCD 
++ VSS		;  VSSIO 
++ VDD3V3	;  VSWITCH 
++ OPEN1		;  AMUXBUS_B 
++ OPEN2		;  AMUXBUS_A 
++ VSS		;  VSSIO_Q 
++ VDD3V3	;  VDDIO_Q
++ sky130_ef_io__vdda_hvc_clamped_pad
+
+
+vvss		VSS		0 		dc 	0
+vvdd1v8		VDD1V8		0 		pwl	0 0 3u  1.8  1m 1.8
+vvdd3v3		VDD3V3		0 		pwl	0 0 2u  3.3  1m 3.3
+
+
+.PRINT TRAN FORMAT=RAW i(vvdd3v3) i(vvdd1v8) v(vdd3v3) v(vdd1v8) 
+.TRAN 10n 15u
+
+.END
