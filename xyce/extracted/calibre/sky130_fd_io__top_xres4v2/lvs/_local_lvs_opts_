@@ -1,0 +1,52 @@
+//
+//  Rule file generated on Sun Jun 06 13:24:56 EDT 2021
+//     by Calibre Interactive - LVS (v2018.4_34.26)
+//
+//      *** PLEASE DO NOT MODIFY THIS FILE ***
+//
+//
+
+LAYOUT PATH  "/usr/local/google/home/tansell/work/openflow-drc-tests/torture_tests/sky130_fd_io__top_xres4v2/sky130_fd_io__top_xres4v2.gds"
+LAYOUT PRIMARY "sky130_fd_io__top_xres4v2"
+LAYOUT SYSTEM GDSII
+
+SOURCE PATH "/usr/local/google/home/tansell/work/openflow-drc-tests/torture_tests/sky130_fd_io__top_xres4v2/sky130_fd_io__top_xres4v2.cdl"
+SOURCE PRIMARY "sky130_fd_io__top_xres4v2"
+SOURCE SYSTEM SPICE
+
+MASK SVDB DIRECTORY "svdb" QUERY XRC CCI NOPINLOC IXF NXF SLPH
+
+LVS REPORT "sky130_fd_io__top_xres4v2.lvs.report"
+
+LVS REPORT OPTION NONE
+LVS FILTER UNUSED OPTION NONE SOURCE
+LVS FILTER UNUSED OPTION NONE LAYOUT
+LVS REPORT MAXIMUM 50
+
+LVS RECOGNIZE GATES ALL
+
+
+LVS ABORT ON SOFTCHK NO
+LVS ABORT ON SUPPLY ERROR YES
+LVS IGNORE PORTS NO
+LVS SHOW SEED PROMOTIONS NO
+LVS SHOW SEED PROMOTIONS MAXIMUM 50
+
+LVS ISOLATE SHORTS NO
+
+
+VIRTUAL CONNECT COLON NO
+VIRTUAL CONNECT REPORT NO
+
+LVS EXECUTE ERC YES
+ERC RESULTS DATABASE "sky130_fd_io__top_xres4v2.erc.results"
+ERC SUMMARY REPORT "sky130_fd_io__top_xres4v2.erc.summary" REPLACE HIER
+ERC CELL NAME YES CELL SPACE XFORM
+ERC MAXIMUM RESULTS 1000
+ERC MAXIMUM VERTEX 4096
+
+DRC ICSTATION YES
+
+
+INCLUDE "/usr/local/google/home/tansell/work/openflow-drc-tests/runsets/local_lvs_opts"
+

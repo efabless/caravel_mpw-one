@@ -1,0 +1,2417 @@
+//  Calibre Interactive - DRC  v2018.4_34.26    Mon Dec 3 14:41:19 PST 2018
+//
+//        Copyright Mentor Graphics Corporation 1996-2018
+//                       All Rights Reserved.
+//   THIS WORK CONTAINS TRADE SECRET AND PROPRIETARY INFORMATION
+//      WHICH IS THE PROPERTY OF MENTOR GRAPHICS CORPORATION
+//        OR ITS LICENSORS AND IS SUBJECT TO LICENSE TERMS.
+//
+//  The registered trademark Linux is used pursuant to a sublicense from LMI, the
+//  exclusive licensee of Linus Torvalds, owner of the mark on a world-wide basis.
+//
+//  Mentor Graphics software executing under x86-64 Linux
+//
+//  Running on Linux tansell-u.c.googlers.com 5.10.28-1rodete2-amd64 #1 SMP Debian 5.10.28-1rodete2 (2021-05-12) x86_64
+//  64 bit virtual addressing enabled
+//
+//  Starting time: Sun Jun  6 13:24:34 2021
+//
+//  calinteractive license acquired.
+//  WARNING: calinteractive license(s) (1817@gchips-licenses.corp.google.com SN=71739823, HostID=00259057cd72) will expire in 8 days.
+//  Calibre Interactive authorized.
+// Calibre Interactive: Creating Run Directory directory /usr/local/google/home/tansell/work/openflow-drc-tests/torture_tests/sky130_fd_io__top_xres4v2//soft
+MGC_HOME = /usr/local/google/edatools/mentor/calibre/2018.4.34.26/aoj_cal_2018.4_34.26/
+$MGC_HOME/bin/calibre -drc -hier -nowait /usr/local/google/home/tansell/work/openflow-drc-tests/torture_tests/sky130_fd_io__top_xres4v2/soft/_s8_softRules_
+
+//  Calibre v2018.4_34.26    Mon Dec 3 14:41:18 PST 2018
+//  Calibre Utility Library   v0-9_13-2018-1    Fri Sep 14 02:48:37 PDT 2018
+//  Litho Libraries v2018.4_34.26  Mon Dec 3 14:41:18 PST 2018
+//
+//        Copyright Mentor Graphics Corporation 1996-2018
+//                       All Rights Reserved.
+//   THIS WORK CONTAINS TRADE SECRET AND PROPRIETARY INFORMATION
+//      WHICH IS THE PROPERTY OF MENTOR GRAPHICS CORPORATION
+//        OR ITS LICENSORS AND IS SUBJECT TO LICENSE TERMS.
+//
+//  The registered trademark Linux is used pursuant to a sublicense from LMI, the
+//  exclusive licensee of Linus Torvalds, owner of the mark on a world-wide basis.
+//
+//  Mentor Graphics software executing under x86-64 Linux
+//
+//  Running on Linux tansell-u.c.googlers.com 5.10.28-1rodete2-amd64 #1 SMP Debian 5.10.28-1rodete2 (2021-05-12) x86_64 glibc 2.31/NPTL 2.31
+//  OS: Unknown[5.10.28-1rodete2-amd64]
+//
+//  Entries in /proc/meminfo:
+//
+//  MemTotal:       131922160 kB
+//  MemFree:        123050724 kB
+//  MemAvailable:   128203956 kB
+//  Buffers:          943964 kB
+//  Cached:          4735956 kB
+//  SwapCached:            0 kB
+//  Active:          3229556 kB
+//  Inactive:        4478900 kB
+//  Active(anon):        692 kB
+//  Inactive(anon):  2060716 kB
+//  Active(file):    3228864 kB
+//  Inactive(file):  2418184 kB
+//  Unevictable:       61332 kB
+//  Mlocked:           61332 kB
+//  SwapTotal:       4194300 kB
+//  SwapFree:        4194300 kB
+//  Dirty:              1588 kB
+//  Writeback:             0 kB
+//  AnonPages:       1945824 kB
+//  Mapped:           908480 kB
+//  Shmem:               872 kB
+//  KReclaimable:     755508 kB
+//  Slab:             863236 kB
+//  SReclaimable:     755508 kB
+//  SUnreclaim:       107728 kB
+//  KernelStack:       31888 kB
+//  PageTables:        18284 kB
+//  NFS_Unstable:          0 kB
+//  Bounce:                0 kB
+//  WritebackTmp:          0 kB
+//  CommitLimit:    70155380 kB
+//  Committed_AS:    7828072 kB
+//  VmallocTotal:   34359738367 kB
+//  VmallocUsed:       46784 kB
+//  VmallocChunk:          0 kB
+//  Percpu:            12736 kB
+//  HardwareCorrupted:     0 kB
+//  AnonHugePages:   1265664 kB
+//  ShmemHugePages:        0 kB
+//  ShmemPmdMapped:        0 kB
+//  FileHugePages:         0 kB
+//  FilePmdMapped:         0 kB
+//  HugePages_Total:       0
+//  HugePages_Free:        0
+//  HugePages_Rsvd:        0
+//  HugePages_Surp:        0
+//  Hugepagesize:       2048 kB
+//  Hugetlb:               0 kB
+//  DirectMap4k:      182256 kB
+//  DirectMap2M:     9254912 kB
+//  DirectMap1G:    126877696 kB
+//
+//  User limits:
+//
+//  Data size: unlimited
+//  RSS: unlimited
+//  Stack size: 8192 kB
+//  Max user processes: 131072
+//  VM: unlimited
+//  nf_conntrack_max: 262144
+//
+//  Processor Intel(R) Xeon(R) CPU @ 2.20GHz [06790] (4th generation)
+//  CPU Info: Cores = 8, SMT enabled with 8 additional virtual processors
+//  Max file descriptors: 131072
+//  64 bit virtual addressing enabled
+//  Running aoj_cal_2018.4_34.26//pkgs/icv/pvt/calibre -drc -hier -nowait /usr/local/google/home/tansell/work/openflow-drc-tests/torture_tests/sky130_fd_io__top_xres4v2/soft/_s8_softRules_
+//  Process ID: 43426
+//
+//  Starting time: Sun Jun  6 13:24:36 2021
+//
+//  Running on 1 CPU (pending licensing) 
+//
+//
+
+--- CALIBRE::DRC-H - Sun Jun  6 13:24:36 2021
+
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+-----          STANDARD VERIFICATION RULE FILE COMPILATION MODULE          -----
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+
+--- RULE FILE = /usr/local/google/home/tansell/work/openflow-drc-tests/torture_tests/sky130_fd_io__top_xres4v2/soft/_s8_softRules_
+
+//
+//  Rule file generated on Sun Jun 06 13:24:36 EDT 2021
+//     by Calibre Interactive - DRC (v2018.4_34.26)
+//
+//      *** PLEASE DO NOT MODIFY THIS FILE ***
+//
+//
+
+LAYOUT PATH  "/usr/local/google/home/tansell/work/openflow-drc-tests/torture_tests/sky130_fd_io__top_xres4v2/sky130_fd_io__top_xres4v2.gds"
+LAYOUT PRIMARY "sky130_fd_io__top_xres4v2"
+LAYOUT SYSTEM GDSII
+
+DRC RESULTS DATABASE "soft.drc.results" ASCII 
+DRC MAXIMUM RESULTS 1000
+DRC MAXIMUM VERTEX 4096
+
+DRC CELL NAME YES CELL SPACE XFORM
+DRC SUMMARY REPORT "soft.drc.summary" REPLACE HIER
+
+VIRTUAL CONNECT COLON NO
+VIRTUAL CONNECT REPORT NO
+
+DRC SELECT CHECK
+	"r_0_soft_majority_diff_tap"
+	"r_1_soft_majority_Nwell_cond"
+	"r_2_soft_float_Nwell_cond"
+	"r_3_soft_float_substrate"
+	"r_4_soft_majority_substrate"
+	"r_5_soft_multinet_Poly_check"
+	"r_6_soft_majority_dnwell"
+
+DRC ICSTATION YES
+
+
+INCLUDE "/data/pdks/skywater/s8/V1.3.0/DRC/Calibre/s8_softRules"
+
+
+
+--- STANDARD VERIFICATION RULE FILE COMPILATION MODULE COMPLETED.  CPU TIME = 0  REAL TIME = 0  LVHEAP = 1/3/3
+
+--- CALIBRE_* ENVIRONMENT VARIABLES:
+
+CALIBRE_ATOMIC_LVHEAP=0
+CALIBRE_CMD_LINE='/usr/local/google/edatools/mentor/calibre/2018.4.34.26/aoj_cal_2018.4_34.26//pkgs/icv/pvt/calibre  -drc -hier -nowait /usr/local/google/home/tansell/work/openflow-drc-tests/torture_tests/sky130_fd_io__top_xres4v2/soft/_s8_softRules_'
+CALIBRE_DISABLE_RHEL5_WARNING=1
+CALIBRE_HOME=/usr/local/google/edatools/mentor/calibre/2018.4.34.26/aoj_cal_2018.4_34.26/
+CALIBRE_INITIAL_CMD_LINE='/usr/local/google/edatools/mentor/calibre/2018.4.34.26/aoj_cal_2018.4_34.26/bin/calibre -drc -hier -nowait /usr/local/google/home/tansell/work/openflow-drc-tests/torture_tests/sky130_fd_io__top_xres4v2/soft/_s8_softRules_'
+CALIBRE_READDB_LD_LIBRARY_PATH=/usr/local/google/edatools/mentor/calibre/2018.4.34.26/aoj_cal_2018.4_34.26//shared/pkgs/icv/tools/calibre_client/lib/64:/usr/local/google/edatools/mentor/calibre/2018.4.34.26/aoj_cal_2018.4_34.26//pkgs/calibre_base/lib64:/usr/local/google/edatools/mentor/calibre/2018.4.34.26/aoj_cal_2018.4_34.26//pkgs/icv_lib/lib64:/usr/local/google/edatools/mentor/calibre/2018.4.34.26/aoj_cal_2018.4_34.26//pkgs/umc_libs/lib/lnx32:/usr/local/google/edatools/mentor/calibre/2018.4.34.26/aoj_cal_2018.4_34.26//pkgs/icv_oa/22.41p004/lib/linux_rhel68_gcc44x_64/opt
+CALIBRE_SKIP_OS_CHECKS=
+CALIBRE_VERSION_DASH=2018.4_34.26
+CALIBRE_VERSION_DOT=2018.4.34.26
+
+--- SELECTED RULE CHECKS:
+    r_0_soft_majority_diff_tap
+    r_1_soft_majority_Nwell_cond
+    r_2_soft_float_Nwell_cond
+    r_3_soft_float_substrate
+    r_4_soft_majority_substrate
+    r_5_soft_multinet_Poly_check
+    r_6_soft_majority_dnwell
+
+--- UNSELECTED RULE CHECKS:
+
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+-----                  CALIBRE::DRC-H - LICENSING MODULE                   -----
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+
+
+//  Applying licensing policy...
+//  calibrehdrc license acquired.
+//  WARNING: calibrehdrc license(s) (1817@gchips-licenses.corp.google.com SN=275680266, HostID=00259057cd72) will expire in 9 days.
+//  calibredrc license acquired.
+//  WARNING: calibredrc license(s) (1817@gchips-licenses.corp.google.com SN=275680270, HostID=00259057cd72) will expire in 9 days.
+
+//  Licensed Products
+//  -----------------
+//  Base products running on 1 core:
+//  - DRC (Hierarchical)
+
+--- CALIBRE::DRC-H LICENSING MODULE COMPLETED.  CPU TIME = 0  REAL TIME = 2
+
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+-----                   CALIBRE LAYOUT DATA INPUT MODULE                   -----
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+
+--- LAYOUT SYSTEM = GDS
+--- LAYOUT MAGNIFICATION = 1
+
+--------------------------------------------------------------------------------
+-----                     GDS FILE SUMMARY INFORMATION                     -----
+--------------------------------------------------------------------------------
+
+GDS FILENAME:        /usr/local/google/home/tansell/work/openflow-drc-tests/torture_tests/sky130_fd_io__top_xres4v2/sky130_fd_io__top_xres4v2.gds
+GDS VERSION:         3
+LIBRARY NAME:        sky130_fd_io__top_xres4v2
+LAST MODIFIED:       ON 1970/1/1 AT 2:0:0
+LAST ACCESSED:       ON 2021/3/25 AT 19:4:12
+DATABASE PRECISION:  0.001 user units per database unit
+PHYSICAL PRECISION:  1e-09 meters per database unit
+MAGNIFICATION:       1
+
+--------------------------------------------------------------------------------
+-----                 GDS INPUT DATA FOR INDIVIDUAL CELLS                  -----
+--------------------------------------------------------------------------------
+     CELL NAME                  PLACEMENTS   ARRAYS   POLYGONS    PATHS    TEXTS
+--------------------------------------------------------------------------------
+sky130_fd_io__res250_sub_small           0        0         42        0        0
+sky130_fd_io__res250only_small           1        0         12        0        3
+sky130_fd_pr__hvdfm1sd2__example_55959141808719
+                                         0        0         21        0        0
+sky130_fd_pr__pfet_01v8__example_55959141808767
+                                         2        0         12        0        2
+sky130_fd_pr__hvdfm1sd2__example_55959141808765
+                                         0        0         20        0        0
+sky130_fd_pr__nfet_01v8__example_55959141808764
+                                         2        0         10        0        2
+sky130_fd_pr__via_pol1__example_5595914180839
+                                         0        0          4        0        0
+sky130_fd_pr__res_generic_po__example_5595914180838
+                                         2        0          5        0        0
+sky130_fd_io__tk_tie_r_out_esd           1        0         24        0        2
+sky130_fd_pr__hvdfm1sd2__example_55959141808243
+                                         0        0         10        0        0
+sky130_fd_pr__nfet_01v8__example_55959141808723
+                                         2        0         10        0        2
+sky130_fd_pr__nfet_01v8__example_55959141808722
+                                         2        0         10        0        2
+sky130_fd_pr__hvdfm1sd2__example_5595914180890
+                                         0        0          6        0        0
+sky130_fd_pr__nfet_01v8__example_55959141808721
+                                         2        0         10        0        2
+sky130_fd_pr__pfet_01v8__example_55959141808720
+                                         2        0         12        0        2
+sky130_fd_pr__pfet_01v8__example_55959141808718
+                                         2        0         12        0        2
+sky130_fd_pr__hvdfm1sd2__example_55959141808717
+                                         0        0          7        0        0
+sky130_fd_pr__pfet_01v8__example_55959141808716
+                                         2        0         12        0        2
+sky130_fd_io__xres_inv_hysv2             8        0        244        0        3
+sky130_fd_pr__via_l1m1__example_559591418084
+                                         0        0          4        0        0
+sky130_fd_pr__via_l1m1__example_5595914180858
+                                         0        0          6        0        0
+sky130_fd_pr__via_l1m1__example_55959141808264
+                                         0        0          8        0        0
+sky130_fd_pr__via_pol1__example_5595914180833
+                                         0        0          5        0        0
+sky130_fd_pr__res_generic_po__example_5595914180864
+                                         2        0          5        0        0
+sky130_fd_io__tk_em1s_cdns_5595914180859
+                                         0        0          7        0        3
+sky130_fd_io__tk_em1s_cdns_55959141808288
+                                         0        0          7        0        3
+sky130_fd_pr__res_bent_po__example_5595914180863
+                                         2        0          6        0        0
+sky130_fd_pr__res_bent_po__example_5595914180862
+                                         2        0          6        0        0
+sky130_fd_pr__res_bent_po__example_55959141808715
+                                         2        0         10        0        0
+sky130_fd_io__tk_em1o_cdns_55959141808289
+                                         0        0          8        0        3
+sky130_fd_io__com_res_weak_v2           23        0         85        0        0
+sky130_fd_pr__via_m1m2__example_55959141808728
+                                         0        0         10        0        0
+sky130_fd_pr__via_m1m2__example_55959141808727
+                                         0        0         14        0        0
+sky130_fd_pr__via_m1m2__example_55959141808726
+                                         0        0         35        0        0
+sky130_fd_pr__via_m1m2__example_55959141808554
+                                         0        0         32        0        0
+sky130_fd_pr__via_m1m2__example_55959141808725
+                                         0        0         22        0        0
+sky130_fd_pr__via_m1m2__example_55959141808553
+                                         0        0          8        0        0
+sky130_fd_pr__via_m1m2__example_55959141808261
+                                         0        0          5        0        0
+sky130_fd_pr__via_m1m2__example_55959141808259
+                                         0        0          7        0        0
+sky130_fd_pr__via_m1m2__example_55959141808724
+                                         0        0         12        0        0
+sky130_fd_pr__via_m1m2__example_55959141808402
+                                         0        0          8        0        0
+sky130_fd_pr__via_m1m2__example_55959141808260
+                                         0        0          4        0        0
+sky130_fd_pr__via_m1m2__example_55959141808350
+                                         0        0          6        0        0
+sky130_fd_pr__via_m1m2__example_55959141808552
+                                         0        0          8        0        0
+sky130_fd_pr__via_m1m2__example_55959141808551
+                                         0        0         10        0        0
+sky130_fd_pr__via_l1m1__example_5595914180897
+                                         0        0          5        0        0
+sky130_fd_pr__via_l1m1__example_55959141808127
+                                         0        0          6        0        0
+sky130_fd_pr__via_l1m1__example_55959141808290
+                                         0        0         10        0        0
+sky130_fd_pr__via_l1m1__example_55959141808326
+                                         0        0         13        0        0
+sky130_fd_pr__via_l1m1__example_55959141808372
+                                         0        0          7        0        0
+sky130_fd_pr__via_l1m1__example_55959141808128
+                                         0        0          5        0        0
+sky130_fd_pr__via_l1m1__example_55959141808400
+                                         0        0         14        0        0
+sky130_fd_pr__via_pol1__example_55959141808274
+                                         0        0          6        0        0
+sky130_fd_pr__dfl1__example_55959141808158
+                                         0        0         17        0        0
+sky130_fd_pr__via_l1m1__example_55959141808157
+                                         0        0          4        0        0
+sky130_fd_pr__via_l1m1__example_55959141808156
+                                         0        0          7        0        0
+sky130_fd_pr__via_l1m1__example_55959141808155
+                                         0        0         14        0        0
+sky130_fd_pr__via_l1m1__example_55959141808154
+                                         0        0         22        0        0
+sky130_fd_pr__via_l1m1__example_55959141808153
+                                         0        0         27        0        0
+sky130_fd_pr__via_l1m1__example_55959141808152
+                                         0        0          5        0        0
+sky130_fd_pr__tpl1__example_55959141808151
+                                         0        0         32        0        0
+sky130_fd_pr__tpl1__example_55959141808150
+                                         0        0         22        0        0
+sky130_fd_pr__tpl1__example_55959141808149
+                                         0        0         13        0        0
+sky130_fd_pr__tpl1__example_55959141808148
+                                         0        0         19        0        0
+sky130_fd_pr__via_pol1__example_55959141808147
+                                         0        0          7        0        0
+sky130_fd_io__signal_5_sym_hv_local_5term
+                                        23        0         30        0        8
+sky130_fd_pr__dfl1sd__example_5595914180819
+                                         0        0         11        0        0
+sky130_fd_pr__nfet_01v8__example_55959141808555
+                                         2        0         10        0        2
+sky130_fd_io__gpio_buf_localesdv2
+                                        69        0        296        0        6
+sky130_fd_pr__via_pol1__example_559591418083
+                                         0        0          5        0        0
+sky130_fd_pr__dfl1sd__example_559591418086
+                                         0        0          7        0        0
+sky130_fd_pr__hvdfl1sd2__example_55959141808316
+                                         0        0          7        0        0
+sky130_fd_pr__hvdfl1sd__example_55959141808137
+                                         0        0          7        0        0
+sky130_fd_pr__model__pfet_highvoltage__example_55959141808421
+                                         3        0         20        0        3
+sky130_fd_pr__dfl1sd__example_559591418088
+                                         0        0          5        0        0
+sky130_fd_pr__hvdfl1sd2__example_55959141808385
+                                         0        0          5        0        0
+sky130_fd_pr__hvdfl1sd__example_55959141808370
+                                         0        0          5        0        0
+sky130_fd_pr__model__nfet_highvoltage__example_55959141808422
+                                         3        0         19        0        3
+sky130_fd_io__hvsbt_inv_x2               9        0         19        0        4
+sky130_fd_pr__model__nfet_highvoltage__example_55959141808615
+                                         5        0         33        0        5
+sky130_fd_pr__model__pfet_highvoltage__example_55959141808616
+                                         5        0         34        0        5
+sky130_fd_pr__via_pol1__example_55959141808612
+                                         0        0          7        0        0
+sky130_fd_io__hvsbt_inv_x4              12        0         50        0        2
+sky130_fd_pr__model__pfet_highvoltage__example_55959141808371
+                                         2        0         13        0        2
+sky130_fd_pr__model__nfet_highvoltage__example_55959141808369
+                                         2        0         12        0        2
+sky130_fd_io__hvsbt_inv_x1               6        0         14        0        5
+sky130_fd_pr__hvdfm1sd2__example_5595914180849
+                                         0        0         33        0        0
+sky130_fd_pr__hvdfm1sd__example_5595914180848
+                                         0        0         33        0        0
+sky130_fd_pr__pfet_01v8__example_55959141808766
+                                         5        0         30        0        5
+sky130_fd_pr__via_m2m3__example_55959141808714
+                                         0        0          8        0        0
+sky130_fd_io__tk_em2s_cdns_55959141808652
+                                         0        0          7        0        3
+sky130_fd_io__tk_em2o_cdns_55959141808653
+                                         0        0          8        0        3
+sky130_fd_pr__via_pol1_centered__example_559591418081
+                                         0        0          6        0        0
+sky130_fd_pr__via_l1m1_centered__example_559591418086
+                                         0        0          4        0        0
+sky130_fd_pr__via_l1m1_centered__example_559591418084
+                                         0        0          6        0        0
+sky130_fd_pr__hvdfl1sd2__example_55959141808202
+                                         0        0         18        0        0
+sky130_fd_pr__pfet_01v8__example_55959141808657
+                                         0        0         10        0        2
+sky130_fd_pr__hvdftpm1s2__example_55959141808659
+                                         0        0         66        0        0
+sky130_fd_pr__pfet_01v8__example_55959141808658
+                                        13        0        179        0       28
+sky130_fd_pr__via_l1m1_centered__example_5595914180811
+                                         0        0        132        0        0
+sky130_fd_pr__via_l1m1_centered__example_5595914180812
+                                         0        0        134        0        0
+sky130_fd_io__pfet_con_diff_wo_abt_270_xres4v2
+                                        92        0      12212        0        0
+sky130_fd_io__gpio_pudrvr_strong_axres4v2
+                                        19        0        411        0        5
+sky130_fd_pr__dfl1__example_55959141808729
+                                         0        0          5        0        0
+sky130_fd_io__xres_tk_p_em1o_cdns_55959141808757
+                                         0        0          8        0        3
+sky130_fd_io__xres_tk_p_em1c_cdns_55959141808761
+                                         0        0          7        0        3
+sky130_fd_pr__via_m1m2__example_55959141808740
+                                         0        0         16        0        0
+sky130_fd_pr__via_l1m1__example_55959141808750
+                                         0        0         21        0        0
+sky130_fd_pr__via_pol1__example_55959141808273
+                                         0        0         14        0        0
+sky130_fd_pr__via_l1m1__example_55959141808748
+                                         0        0         23        0        0
+sky130_fd_io__xres_p_em1c_cdns_55959141808753
+                                         0        0          7        0        3
+sky130_fd_pr__dfl1__example_55959141808187
+                                         0        0          4        0        0
+sky130_fd_pr__res_generic_nd__example_55959141808754
+                                         2        0          6        0        0
+sky130_fd_pr__via_l1m1__example_55959141808749
+                                         0        0         29        0        0
+sky130_fd_pr__via_l1m1__example_55959141808742
+                                         0        0         46        0        0
+sky130_fd_pr__via_m1m2__example_55959141808730
+                                         0        0         52        0        0
+sky130_fd_io__xres_tk_p_em1c_cdns_55959141808759
+                                         0        0          7        0        3
+sky130_fd_io__xres_tk_p_em1o_cdns_55959141808758
+                                         0        0          8        0        3
+sky130_fd_io__xres_tk_p_em1o_cdns_55959141808756
+                                         0        0          8        0        3
+sky130_fd_io__xres_tk_p_em1c_cdns_55959141808760
+                                         0        0          7        0        3
+sky130_fd_pr__via_m1m2__example_55959141808735
+                                         0        0          6        0        0
+sky130_fd_pr__via_l1m1__example_55959141808752
+                                         0        0         15        0        0
+sky130_fd_pr__via_l1m1__example_55959141808751
+                                         0        0         24        0        0
+sky130_fd_pr__via_l1m1__example_55959141808270
+                                         0        0          8        0        0
+sky130_fd_pr__via_m1m2__example_55959141808739
+                                         0        0          9        0        0
+sky130_fd_pr__via_l1m1__example_55959141808746
+                                         0        0         28        0        0
+sky130_fd_pr__via_m1m2__example_55959141808737
+                                         0        0         32        0        0
+sky130_fd_pr__via_l1m1__example_55959141808747
+                                         0        0         53        0        0
+sky130_fd_pr__via_m1m2__example_55959141808738
+                                         0        0         60        0        0
+sky130_fd_pr__via_l1m1__example_55959141808324
+                                         0        0         18        0        0
+sky130_fd_pr__via_m1m2__example_55959141808733
+                                         0        0         20        0        0
+sky130_fd_pr__via_m1m2__example_55959141808734
+                                         0        0         11        0        0
+sky130_fd_pr__via_l1m1__example_55959141808741
+                                         0        0         38        0        0
+sky130_fd_pr__via_l1m1__example_55959141808745
+                                         0        0         96        0        0
+sky130_fd_pr__via_l1m1__example_55959141808744
+                                         0        0         62        0        0
+sky130_fd_pr__via_l1m1__example_55959141808743
+                                         0        0        189        0        0
+sky130_fd_pr__via_m1m2__example_55959141808736
+                                         0        0        109        0        0
+sky130_fd_pr__via_m1m2__example_55959141808732
+                                         0        0         70        0        0
+sky130_fd_pr__via_m1m2__example_55959141808731
+                                         0        0        213        0        0
+sky130_fd_pr__hvdfl1sd2__example_55959141808337
+                                         0        0         24        0        0
+sky130_fd_pr__dfl1sd2__example_55959141808666
+                                         0        0         24        0        0
+sky130_fd_pr__hvdfl1sd__example_55959141808338
+                                         0        0         24        0        0
+sky130_fd_pr__pfet_01v8__example_55959141808763
+                                        13        0         78        0       13
+sky130_fd_pr__hvdfl1sd2__example_55959141808559
+                                         0        0         23        0        0
+sky130_fd_pr__hvdfl1sd__example_55959141808700
+                                         0        0         23        0        0
+sky130_fd_pr__nfet_01v8__example_55959141808762
+                                        13        0         76        0       13
+sky130_fd_pr__res_generic_nd__example_55959141808755
+                                         2        0          6        0        0
+sky130_fd_io__xres2v2_rcfilter_lpfv2
+                                       688        0       7458        0        4
+sky130_fd_pr__res_bent_po__example_5595914180861
+                                         2        0         10        0        0
+sky130_fd_io__com_res_weak_bentbigres
+                                         6        0          1        0        0
+sky130_fd_io__tk_em1o_cdns_5595914180860
+                                         0        0          8        0        3
+sky130_fd_io__com_res_weak              25        0         18        0        2
+sky130_fd_pr__via_l1m1__example_5595914180857
+                                         0        0          8        0        0
+sky130_fd_pr__hvdfl1sd2__example_55959141808378
+                                         0        0         17        0        0
+sky130_fd_pr__hvdftpm1s2__example_55959141808649
+                                         0        0         66        0        0
+sky130_fd_pr__nfet_01v8__example_55959141808651
+                                        12        0        164        0       26
+sky130_fd_pr__nfet_01v8__example_55959141808650
+                                         1        0         10        0        2
+sky130_fd_pr__nfet_01v8__example_55959141808648
+                                        12        0        164        0       26
+sky130_fd_pr__hvdftpl1s__example_55959141808646
+                                         0        0         34        0        0
+sky130_fd_pr__nfet_01v8__example_55959141808647
+                                         1        0         10        0        2
+sky130_fd_pr__nfet_01v8__example_55959141808645
+                                         1        0         10        0        2
+sky130_fd_io__nfet_con_diff_wo_abt_270_xres4v2
+                                        90        0      12411        0        1
+sky130_fd_io__gpio_pddrvr_strong_xres4v2
+                                        28        0        348        0        9
+sky130_fd_pr__res_bent_nd__example_55959141808769
+                                         2        0         75        0        0
+sky130_fd_pr__res_bent_po__example_55959141808768
+                                         2        0         47        0        0
+sky130_fd_pr__hvdfm1sd2__example_5595914180829
+                                         0        0         61        0        0
+sky130_fd_pr__hvdfm1sd__example_55959141808237
+                                         0        0         61        0        0
+sky130_fd_pr__nfet_01v8__example_55959141808772
+                                         2        0         11        0        2
+sky130_fd_pr__hvdfm1sd2__example_5595914180827
+                                         0        0         32        0        0
+sky130_fd_pr__nfet_01v8__example_55959141808776
+                                         3        0         16        0        3
+sky130_fd_pr__nfet_01v8__example_55959141808773
+                                         2        0         11        0        2
+sky130_fd_pr__hvdfm1sd__example_55959141808233
+                                         0        0         32        0        0
+sky130_fd_pr__nfet_01v8__example_55959141808771
+                                         3        0         16        0        3
+sky130_fd_pr__nfet_01v8__example_55959141808770
+                                         2        0         10        0        2
+sky130_fd_io__inv_1                      0        0         45        0       13
+sky130_fd_io__tap_1                      0        0         36        0       11
+sky130_fd_pr__pfet_01v8__example_55959141808787
+                                         2        0         12        0        2
+sky130_fd_pr__pfet_01v8__example_55959141808786
+                                         2        0         12        0        2
+sky130_fd_pr__nfet_01v8__example_55959141808779
+                                         2        0         11        0        2
+sky130_fd_pr__nfet_01v8__example_55959141808778
+                                         3        0         16        0        3
+sky130_fd_pr__hvdfm1sd__example_5595914180835
+                                         0        0         20        0        0
+sky130_fd_pr__nfet_01v8__example_55959141808777
+                                         2        0         10        0        2
+sky130_fd_pr__nfet_01v8__example_55959141808775
+                                         5        0         28        0        5
+sky130_fd_pr__hvdfm1sd__example_55959141808242
+                                         0        0         10        0        0
+sky130_fd_pr__nfet_01v8__example_55959141808774
+                                         4        0         22        0        4
+sky130_fd_pr__pfet_01v8__example_55959141808780
+                                         2        0         12        0        2
+sky130_fd_pr__hvdfm1sd__example_55959141808782
+                                         0        0         21        0        0
+sky130_fd_pr__pfet_01v8__example_55959141808785
+                                         4        0         24        0        4
+sky130_fd_pr__hvdfm1sd__example_55959141808452
+                                         0        0          7        0        0
+sky130_fd_pr__pfet_01v8__example_55959141808783
+                                         2        0         12        0        2
+sky130_fd_pr__pfet_01v8__example_55959141808781
+                                         2        0         12        0        2
+sky130_fd_pr__hvdfm1sd2__example_55959141808449
+                                         0        0         11        0        0
+sky130_fd_pr__pfet_01v8__example_55959141808784
+                                         2        0         12        0        2
+sky130_fd_pr__pfet_01v8__example_559591418085
+                                         2        0         12        0        2
+sky130_fd_pr__nfet_01v8__example_559591418087
+                                         1        0          9        0        2
+sky130_fd_pr__nfet_01v8__example_559591418089
+                                         1        0          9        0        2
+sky130_fd_io__hvsbt_nand2               11        0         20        0        5
+sky130_fd_io__xres4v2_in_buf            38        0      18131        0       13
+sky130_fd_pr__genrivetdlring__example_559591418082
+                                         0        0        156        0        0
+sky130_fd_pr__gendlring__example_559591418081
+                                         0        0          0        0        0
+sky130_fd_pr__padplhp__example_559591418080
+                                         2        0          7        0        3
+sky130_fd_io__top_gpio_pad               1        0          0        0        0
+sky130_fd_io__com_bus_slice              0        0         37        0        0
+sky130_fd_io__com_bus_hookup             0       15       2415        0       60
+sky130_fd_io__com_busses                 2        0          0        0        0
+sky130_fd_io__top_xres4v2               37        0      63712        0       96
+
+NOTE: UNUSED geometric data is present on the following layer/datatype pairs:
+    LAYER = 64 DATATYPE = 16
+    LAYER = 65 DATATYPE = 14
+    LAYER = 66 DATATYPE = 9
+    LAYER = 66 DATATYPE = 14
+    LAYER = 67 DATATYPE = 15
+    LAYER = 67 DATATYPE = 16
+    LAYER = 68 DATATYPE = 15
+    LAYER = 68 DATATYPE = 16
+    LAYER = 69 DATATYPE = 15
+    LAYER = 69 DATATYPE = 16
+    LAYER = 70 DATATYPE = 16
+    LAYER = 71 DATATYPE = 16
+    LAYER = 72 DATATYPE = 16
+    LAYER = 75 DATATYPE = 20
+    LAYER = 78 DATATYPE = 44
+    LAYER = 81 DATATYPE = 4
+    LAYER = 81 DATATYPE = 6
+    LAYER = 81 DATATYPE = 8
+    LAYER = 81 DATATYPE = 19
+    LAYER = 81 DATATYPE = 20
+    LAYER = 93 DATATYPE = 44
+    LAYER = 94 DATATYPE = 20
+    LAYER = 122 DATATYPE = 16
+    LAYER = 125 DATATYPE = 44
+
+NOTE: USED geometric data is present on the following layer/datatype pairs:
+    SIMPLE LAYER = 1000
+        LAYER = 65 DATATYPE = 20
+    SIMPLE LAYER = 1001
+        LAYER = 64 DATATYPE = 18
+    SIMPLE LAYER = 1002
+        LAYER = 65 DATATYPE = 44
+    SIMPLE LAYER = 1006
+        LAYER = 95 DATATYPE = 20
+    SIMPLE LAYER = 1010
+        LAYER = 66 DATATYPE = 44
+    SIMPLE LAYER = 1011
+        LAYER = 68 DATATYPE = 20
+    SIMPLE LAYER = 1012
+        LAYER = 69 DATATYPE = 20
+    SIMPLE LAYER = 1013
+        LAYER = 70 DATATYPE = 20
+    SIMPLE LAYER = 1014
+        LAYER = 71 DATATYPE = 20
+    SIMPLE LAYER = 1015
+        LAYER = 72 DATATYPE = 20
+    SIMPLE LAYER = 1017
+        LAYER = 68 DATATYPE = 44
+    SIMPLE LAYER = 1018
+        LAYER = 69 DATATYPE = 44
+    SIMPLE LAYER = 1019
+        LAYER = 70 DATATYPE = 44
+    SIMPLE LAYER = 1020
+        LAYER = 71 DATATYPE = 44
+    SIMPLE LAYER = 1021
+        LAYER = 67 DATATYPE = 20
+    SIMPLE LAYER = 1022
+        LAYER = 66 DATATYPE = 20
+    SIMPLE LAYER = 1023
+        LAYER = 64 DATATYPE = 20
+    SIMPLE LAYER = 1024
+        LAYER = 67 DATATYPE = 44
+    SIMPLE LAYER = 1025
+        LAYER = 76 DATATYPE = 20
+    SIMPLE LAYER = 1034
+        LAYER = 66 DATATYPE = 13
+    SIMPLE LAYER = 1035
+        LAYER = 65 DATATYPE = 13
+
+NOTE: The following required simple layers are EMPTY:
+    1016
+    1030
+    1031
+    1033
+    1068
+    4000
+
+NOTE: The following simple layers which are LAYOUT BASE LAYERs are EMPTY:
+    1009
+    1026
+    1068
+
+--- LAYOUT DATABASE CONSTRUCTOR COMPLETED.  CPU TIME = 0  REAL TIME = 0  LVHEAP = 4/5/5
+
+CONSTRUCTING HIERARCHICAL DATABASE
+    COPYING LAYOUT DATABASE
+    COPY COMPLETE. CPU TIME = 0  REAL TIME = 0  LVHEAP = 2/5/7
+    (P=1382 A=0(0) AX=0(0) AY=0(0) D=0)
+    LITHO HEURISTICS OFF
+    MDP HEURISTICS OFF
+    CLONE STATE: LCTP(Y/N/U) = U LCRP(Y/N/U) = U LITHO(0/1/2) = 0 DFM(0/1/2) = 0
+    PROCESSING TEXT
+    ELIMINATING DUPLICATE TEXT
+    DUPLICATE TEXT ELIMINATION COMPLETE (0 -> 84 = 0). CPU TIME = 0  REAL TIME = 0  LVHEAP = 2/5/7
+    ELIMINATING EMPTY CELLS
+    EMPTY CELL ELIMINATION COMPLETE CPU TIME = 0  REAL TIME = 0  LVHEAP = 2/5/7
+    COMPUTING RECTANGULAR EXTENTS
+    RECTANGULAR EXTENTS COMPLETE. CPU TIME = 0  REAL TIME = 0  LVHEAP = 2/5/7
+    IDENTIFYING TOP LAYER CELLS
+        sky130_fd_pr__via_m2m3__example_55959141808714
+        sky130_fd_pr__via_l1m1__example_55959141808264
+        sky130_fd_pr__via_l1m1__example_5595914180857
+        sky130_fd_pr__genrivetdlring__example_559591418082
+        sky130_fd_pr__padplhp__example_559591418080
+        sky130_fd_io__top_gpio_pad
+        sky130_fd_io__com_bus_slice
+        sky130_fd_io__com_bus_hookup
+        sky130_fd_io__com_busses
+        sky130_fd_pr__via_l1m1__example_559591418084
+        sky130_fd_pr__via_l1m1__example_5595914180858
+        sky130_fd_io__tk_em1o_cdns_5595914180860
+        sky130_fd_io__tk_em1s_cdns_5595914180859
+        sky130_fd_io__tk_em2o_cdns_55959141808653
+        sky130_fd_io__tk_em2s_cdns_55959141808652
+        sky130_fd_pr__via_l1m1_centered__example_559591418084
+        sky130_fd_pr__via_l1m1_centered__example_559591418086
+        sky130_fd_pr__via_l1m1_centered__example_5595914180812
+        sky130_fd_pr__via_l1m1_centered__example_5595914180811
+        sky130_fd_io__xres_tk_p_em1o_cdns_55959141808757
+        sky130_fd_pr__via_m1m2__example_55959141808260
+        sky130_fd_io__xres_tk_p_em1c_cdns_55959141808761
+        sky130_fd_pr__via_m1m2__example_55959141808740
+        sky130_fd_pr__via_l1m1__example_55959141808750
+        sky130_fd_pr__via_l1m1__example_55959141808748
+        sky130_fd_io__xres_p_em1c_cdns_55959141808753
+        sky130_fd_pr__via_l1m1__example_55959141808749
+        sky130_fd_pr__via_l1m1__example_55959141808742
+        sky130_fd_pr__via_m1m2__example_55959141808730
+        sky130_fd_io__xres_tk_p_em1c_cdns_55959141808759
+        sky130_fd_io__xres_tk_p_em1o_cdns_55959141808758
+        sky130_fd_pr__via_l1m1__example_55959141808372
+        sky130_fd_pr__via_m1m2__example_55959141808553
+        sky130_fd_io__xres_tk_p_em1o_cdns_55959141808756
+        sky130_fd_io__xres_tk_p_em1c_cdns_55959141808760
+        sky130_fd_pr__via_m1m2__example_55959141808735
+        sky130_fd_pr__via_m1m2__example_55959141808259
+        sky130_fd_pr__via_l1m1__example_55959141808752
+        sky130_fd_pr__via_l1m1__example_55959141808751
+        sky130_fd_pr__via_l1m1__example_5595914180897
+        sky130_fd_pr__via_l1m1__example_55959141808270
+        sky130_fd_pr__via_m1m2__example_55959141808739
+        sky130_fd_pr__via_l1m1__example_55959141808127
+        sky130_fd_pr__via_l1m1__example_55959141808746
+        sky130_fd_pr__via_m1m2__example_55959141808737
+        sky130_fd_pr__via_l1m1__example_55959141808747
+        sky130_fd_pr__via_m1m2__example_55959141808738
+        sky130_fd_pr__via_l1m1__example_55959141808324
+        sky130_fd_pr__via_m1m2__example_55959141808733
+        sky130_fd_pr__via_m1m2__example_55959141808734
+        sky130_fd_pr__via_l1m1__example_55959141808290
+        sky130_fd_pr__via_l1m1__example_55959141808741
+        sky130_fd_pr__via_l1m1__example_55959141808745
+        sky130_fd_pr__via_l1m1__example_55959141808744
+        sky130_fd_pr__via_l1m1__example_55959141808743
+        sky130_fd_pr__via_m1m2__example_55959141808736
+        sky130_fd_pr__via_m1m2__example_55959141808732
+        sky130_fd_pr__via_m1m2__example_55959141808731
+        sky130_fd_pr__via_m1m2__example_55959141808728
+        sky130_fd_pr__via_m1m2__example_55959141808727
+        sky130_fd_pr__via_m1m2__example_55959141808726
+        sky130_fd_pr__via_m1m2__example_55959141808554
+        sky130_fd_pr__via_m1m2__example_55959141808725
+        sky130_fd_pr__via_m1m2__example_55959141808261
+        sky130_fd_pr__via_m1m2__example_55959141808724
+        sky130_fd_pr__via_m1m2__example_55959141808402
+        sky130_fd_pr__via_m1m2__example_55959141808350
+        sky130_fd_pr__via_m1m2__example_55959141808552
+        sky130_fd_pr__via_m1m2__example_55959141808551
+        sky130_fd_pr__via_l1m1__example_55959141808326
+        sky130_fd_pr__via_l1m1__example_55959141808128
+        sky130_fd_pr__via_l1m1__example_55959141808400
+        sky130_fd_pr__via_l1m1__example_55959141808157
+        sky130_fd_pr__via_l1m1__example_55959141808156
+        sky130_fd_pr__via_l1m1__example_55959141808155
+        sky130_fd_pr__via_l1m1__example_55959141808154
+        sky130_fd_pr__via_l1m1__example_55959141808153
+        sky130_fd_pr__via_l1m1__example_55959141808152
+        sky130_fd_io__tk_em1s_cdns_55959141808288
+        sky130_fd_io__tk_em1o_cdns_55959141808289
+    TOP LAYER CELL IDENTIFICATION COMPLETE CPU TIME = 0  REAL TIME = 0  LVHEAP = 2/5/7
+    IDENTIFYING VERY SMALL CELLS
+        sky130_fd_pr__via_m2m3__example_55959141808714
+        sky130_fd_pr__via_l1m1__example_55959141808264
+        sky130_fd_pr__via_l1m1__example_5595914180857
+        sky130_fd_pr__via_l1m1__example_559591418084
+        sky130_fd_pr__via_l1m1__example_5595914180858
+        sky130_fd_pr__via_pol1__example_5595914180833
+        sky130_fd_pr__res_generic_po__example_5595914180864
+        sky130_fd_io__tk_em1o_cdns_5595914180860
+        sky130_fd_io__tk_em1s_cdns_5595914180859
+        sky130_fd_pr__hvdfm1sd2__example_55959141808449
+        sky130_fd_pr__hvdfm1sd2__example_55959141808717
+        sky130_fd_pr__hvdfm1sd__example_55959141808452
+        sky130_fd_pr__via_pol1__example_559591418083
+        sky130_fd_pr__dfl1sd__example_559591418088
+        sky130_fd_pr__dfl1sd__example_559591418086
+        sky130_fd_pr__hvdfl1sd__example_55959141808137
+        sky130_fd_pr__hvdfl1sd__example_55959141808370
+        sky130_fd_pr__dfl1__example_55959141808187
+        sky130_fd_pr__via_pol1__example_5595914180839
+        sky130_fd_pr__via_pol1__example_55959141808612
+        sky130_fd_pr__hvdfl1sd2__example_55959141808316
+        sky130_fd_pr__hvdfl1sd2__example_55959141808385
+        sky130_fd_pr__via_pol1_centered__example_559591418081
+        sky130_fd_io__tk_em2o_cdns_55959141808653
+        sky130_fd_io__tk_em2s_cdns_55959141808652
+        sky130_fd_pr__via_l1m1_centered__example_559591418084
+        sky130_fd_pr__via_l1m1_centered__example_559591418086
+        sky130_fd_pr__dfl1__example_55959141808729
+        sky130_fd_io__xres_tk_p_em1o_cdns_55959141808757
+        sky130_fd_pr__via_m1m2__example_55959141808260
+        sky130_fd_io__xres_tk_p_em1c_cdns_55959141808761
+        sky130_fd_io__xres_p_em1c_cdns_55959141808753
+        sky130_fd_io__xres_tk_p_em1c_cdns_55959141808759
+        sky130_fd_io__xres_tk_p_em1o_cdns_55959141808758
+        sky130_fd_pr__via_l1m1__example_55959141808372
+        sky130_fd_pr__via_m1m2__example_55959141808553
+        sky130_fd_io__xres_tk_p_em1o_cdns_55959141808756
+        sky130_fd_io__xres_tk_p_em1c_cdns_55959141808760
+        sky130_fd_pr__via_m1m2__example_55959141808735
+        sky130_fd_pr__via_m1m2__example_55959141808259
+        sky130_fd_pr__via_l1m1__example_5595914180897
+        sky130_fd_pr__via_l1m1__example_55959141808270
+        sky130_fd_pr__via_m1m2__example_55959141808739
+        sky130_fd_pr__via_l1m1__example_55959141808127
+        sky130_fd_pr__via_m1m2__example_55959141808734
+        sky130_fd_pr__via_l1m1__example_55959141808290
+        sky130_fd_pr__via_m1m2__example_55959141808728
+        sky130_fd_pr__via_m1m2__example_55959141808261
+        sky130_fd_pr__via_m1m2__example_55959141808402
+        sky130_fd_pr__via_m1m2__example_55959141808350
+        sky130_fd_pr__via_m1m2__example_55959141808552
+        sky130_fd_pr__via_m1m2__example_55959141808551
+        sky130_fd_pr__via_l1m1__example_55959141808128
+        sky130_fd_pr__via_pol1__example_55959141808274
+        sky130_fd_pr__via_l1m1__example_55959141808157
+        sky130_fd_pr__via_l1m1__example_55959141808156
+        sky130_fd_pr__via_l1m1__example_55959141808152
+        sky130_fd_pr__via_pol1__example_55959141808147
+        sky130_fd_pr__hvdfm1sd2__example_5595914180890
+        sky130_fd_io__tk_em1s_cdns_55959141808288
+        sky130_fd_io__tk_em1o_cdns_55959141808289
+    VERY SMALL CELL IDENTIFICATION COMPLETE CPU TIME = 0  REAL TIME = 0  LVHEAP = 2/5/7
+    CHECKING ACUTE/SKEW/ANGLED/OFFGRID
+    ELIMINATING DUPLICATE PLACEMENTS
+    DUPLICATE PLACEMENT ELIMINATION COMPLETE (1373 -> 1373 = 0). CPU TIME = 0  REAL TIME = 0  LVHEAP = 2/5/7
+    FLATTENING SELECTED LAYERS
+    EXPANDING UNIQUE ICV PLACEMENTS
+    COMPUTING RECTILINEAR EXTENTS
+    RECTILINEAR EXTENTS COMPLETE. CPU TIME = 0  REAL TIME = 0  LVHEAP = 2/5/7
+    SORTING PLACEMENTS VERTICALLY
+    SORT COMPLETE. CPU TIME = 0  REAL TIME = 0  LVHEAP = 2/5/7
+    ELIMINATING DUPLICATE PLACEMENTS
+    DUPLICATE PLACEMENT ELIMINATION COMPLETE (1373 -> 1373 = 0). CPU TIME = 0  REAL TIME = 0  LVHEAP = 2/5/7
+    EXPANDING UNIQUE TRANSPARENT CELL PLACEMENTS
+        sky130_fd_io__com_res_weak_bentbigres in sky130_fd_io__com_res_weak at (-0.79,5.07)
+        sky130_fd_io__res250_sub_small in sky130_fd_io__res250only_small at (0,0)
+    EXPAND COMPLETE. CPU TIME = 0  REAL TIME = 0  LVHEAP = 2/5/7
+    EXPANDING UNIQUE LIGHT-WEIGHT CELL PLACEMENTS
+        sky130_fd_pr__nfet_01v8__example_55959141808648 in sky130_fd_io__nfet_con_diff_wo_abt_270_xres4v2 at (9.33,15.13)
+        sky130_fd_pr__nfet_01v8__example_55959141808651 in sky130_fd_io__nfet_con_diff_wo_abt_270_xres4v2 at (9.33,7.125)
+        sky130_fd_pr__nfet_01v8__example_55959141808645 in sky130_fd_io__nfet_con_diff_wo_abt_270_xres4v2 at (3.235,7.125)
+        sky130_fd_pr__via_l1m1_centered__example_5595914180811 in sky130_fd_io__pfet_con_diff_wo_abt_270_xres4v2 at (74.475,2.04)
+        sky130_fd_pr__via_l1m1_centered__example_559591418086 in sky130_fd_io__pfet_con_diff_wo_abt_270_xres4v2 at (4.56,5.66)
+        sky130_fd_pr__via_l1m1_centered__example_5595914180812 in sky130_fd_io__pfet_con_diff_wo_abt_270_xres4v2 at (0.565,1.595)
+        sky130_fd_pr__genrivetdlring__example_559591418082 in sky130_fd_pr__padplhp__example_559591418080 at (-2.39,-2.39)
+        sky130_fd_pr__padplhp__example_559591418080 in sky130_fd_io__top_gpio_pad at (4.8,94.955)
+        sky130_fd_io__top_gpio_pad in sky130_fd_io__com_busses at (4.8,94.955)
+        sky130_fd_pr__hvdfm1sd__example_55959141808237 in sky130_fd_pr__nfet_01v8__example_55959141808772 at (-0.265,-0.08)
+        sky130_fd_pr__hvdfm1sd__example_5595914180835 in sky130_fd_pr__nfet_01v8__example_55959141808777 at (-0.265,-0.08)
+        sky130_fd_pr__hvdfm1sd__example_55959141808452 in sky130_fd_pr__pfet_01v8__example_55959141808783 at (-0.445,-0.18)
+        sky130_fd_pr__hvdfm1sd__example_55959141808242 in sky130_fd_pr__nfet_01v8__example_55959141808774 at (-0.265,-0.08)
+        sky130_fd_pr__model__nfet_highvoltage__example_55959141808369 in sky130_fd_io__hvsbt_inv_x1 at (0.33,0.59)
+        sky130_fd_pr__nfet_01v8__example_559591418087 in sky130_fd_io__hvsbt_nand2 at (1.225,0.59)
+        sky130_fd_pr__nfet_01v8__example_559591418089 in sky130_fd_io__hvsbt_nand2 at (0.33,0.59)
+        sky130_fd_io__hvsbt_nand2 in sky130_fd_io__xres4v2_in_buf at (28.66,14.11)
+        sky130_fd_pr__pfet_01v8__example_55959141808785 in sky130_fd_io__xres4v2_in_buf at (14.83,14.395)
+        sky130_fd_pr__nfet_01v8__example_55959141808774 in sky130_fd_io__xres4v2_in_buf at (13.445,2.235)
+        sky130_fd_pr__pfet_01v8__example_55959141808781 in sky130_fd_io__xres4v2_in_buf at (13.415,14.395)
+        sky130_fd_pr__nfet_01v8__example_55959141808775 in sky130_fd_io__xres4v2_in_buf at (4.895,4.345)
+        sky130_fd_pr__pfet_01v8__example_55959141808780 in sky130_fd_io__xres4v2_in_buf at (4.89,12.57)
+        sky130_fd_pr__nfet_01v8__example_55959141808771 in sky130_fd_io__xres4v2_in_buf at (2.75,4.345)
+        sky130_fd_pr__nfet_01v8__example_55959141808776 in sky130_fd_io__xres4v2_in_buf at (0.575,4.345)
+        sky130_fd_pr__nfet_01v8__example_55959141808773 in sky130_fd_io__xres4v2_in_buf at (0.555,1.965)
+        sky130_fd_pr__nfet_01v8__example_55959141808772 in sky130_fd_io__xres4v2_in_buf at (0.555,0.15)
+        sky130_fd_pr__nfet_01v8__example_55959141808770 in sky130_fd_io__xres4v2_in_buf at (-1.16,4.345)
+        sky130_fd_io__inv_1 in sky130_fd_io__xres4v2_in_buf at (-3.915,6.625)
+        sky130_fd_io__tap_1 in sky130_fd_io__xres4v2_in_buf at (-4.395,6.625)
+        sky130_fd_pr__res_bent_po__example_55959141808768 in sky130_fd_io__xres4v2_in_buf at (-57.865,-43.565)
+        sky130_fd_pr__res_bent_nd__example_55959141808769 in sky130_fd_io__xres4v2_in_buf at (-157.64,-43.695)
+        sky130_fd_pr__via_l1m1__example_55959141808157 in sky130_fd_io__signal_5_sym_hv_local_5term at (3.565,9.035)
+        sky130_fd_pr__via_pol1__example_55959141808147 in sky130_fd_io__signal_5_sym_hv_local_5term at (3.28,8.96)
+        sky130_fd_pr__via_m1m2__example_55959141808728 in sky130_fd_io__gpio_buf_localesdv2 at (17.62,3.86)
+        sky130_fd_pr__via_pol1__example_55959141808274 in sky130_fd_io__gpio_buf_localesdv2 at (16.155,16.83)
+        sky130_fd_pr__nfet_01v8__example_55959141808555 in sky130_fd_io__gpio_buf_localesdv2 at (15.91,17.18)
+        sky130_fd_pr__via_l1m1__example_55959141808400 in sky130_fd_io__gpio_buf_localesdv2 at (15.34,16.57)
+        sky130_fd_pr__via_m1m2__example_55959141808725 in sky130_fd_io__gpio_buf_localesdv2 at (14.74,16.235)
+        sky130_fd_pr__via_m1m2__example_55959141808551 in sky130_fd_io__gpio_buf_localesdv2 at (12.275,22.55)
+        sky130_fd_pr__via_m1m2__example_55959141808726 in sky130_fd_io__gpio_buf_localesdv2 at (4.495,14.62)
+        sky130_fd_pr__res_bent_po__example_55959141808715 in sky130_fd_io__com_res_weak_v2 at (1.39,5.57)
+        sky130_fd_io__tk_em1o_cdns_55959141808289 in sky130_fd_io__com_res_weak_v2 at (0.01,17.635)
+        sky130_fd_io__tk_em1s_cdns_55959141808288 in sky130_fd_io__com_res_weak_v2 at (0.01,10.895)
+        sky130_fd_pr__res_bent_po__example_5595914180861 in sky130_fd_io__com_res_weak at (1.315,5.07)
+        sky130_fd_io__tk_em1o_cdns_5595914180860 in sky130_fd_io__com_res_weak at (-0.735,36.905)
+        sky130_fd_pr__nfet_01v8__example_55959141808721 in sky130_fd_io__xres_inv_hysv2 at (5.12,0.72)
+        sky130_fd_pr__pfet_01v8__example_55959141808716 in sky130_fd_io__xres_inv_hysv2 at (5.11,4.125)
+        sky130_fd_pr__nfet_01v8__example_55959141808722 in sky130_fd_io__xres_inv_hysv2 at (3.54,0.56)
+        sky130_fd_pr__pfet_01v8__example_55959141808718 in sky130_fd_io__xres_inv_hysv2 at (3.21,2.69)
+        sky130_fd_pr__model__nfet_highvoltage__example_55959141808422 in sky130_fd_io__hvsbt_inv_x2 at (0.33,0.59)
+        sky130_fd_pr__via_pol1__example_55959141808612 in sky130_fd_io__hvsbt_inv_x4 at (1.49,1.685)
+        sky130_fd_pr__model__nfet_highvoltage__example_55959141808615 in sky130_fd_io__hvsbt_inv_x4 at (0.33,0.59)
+        sky130_fd_pr__via_l1m1__example_55959141808742 in sky130_fd_io__xres2v2_rcfilter_lpfv2 at (57.98,10.145)
+        sky130_fd_pr__via_m1m2__example_55959141808730 in sky130_fd_io__xres2v2_rcfilter_lpfv2 at (57.895,10.13)
+        sky130_fd_pr__via_l1m1__example_55959141808741 in sky130_fd_io__xres2v2_rcfilter_lpfv2 at (52.63,29.965)
+        sky130_fd_pr__via_l1m1__example_55959141808745 in sky130_fd_io__xres2v2_rcfilter_lpfv2 at (34.19,39.89)
+        sky130_fd_pr__via_m1m2__example_55959141808736 in sky130_fd_io__xres2v2_rcfilter_lpfv2 at (34.02,39.875)
+        sky130_fd_pr__via_l1m1__example_55959141808324 in sky130_fd_io__xres2v2_rcfilter_lpfv2 at (23.805,29.965)
+        sky130_fd_pr__via_l1m1__example_55959141808746 in sky130_fd_io__xres2v2_rcfilter_lpfv2 at (23.77,39.89)
+        sky130_fd_pr__via_m1m2__example_55959141808733 in sky130_fd_io__xres2v2_rcfilter_lpfv2 at (23.755,29.95)
+        sky130_fd_pr__via_m1m2__example_55959141808737 in sky130_fd_io__xres2v2_rcfilter_lpfv2 at (23.58,39.875)
+        sky130_fd_pr__via_l1m1__example_55959141808743 in sky130_fd_io__xres2v2_rcfilter_lpfv2 at (4.515,0.22)
+        sky130_fd_pr__via_m1m2__example_55959141808731 in sky130_fd_io__xres2v2_rcfilter_lpfv2 at (4.4,0.205)
+        sky130_fd_pr__nfet_01v8__example_55959141808762 in sky130_fd_io__xres2v2_rcfilter_lpfv2 at (2.46,11.475)
+        sky130_fd_pr__pfet_01v8__example_55959141808763 in sky130_fd_io__xres2v2_rcfilter_lpfv2 at (2.03,21.105)
+        sky130_fd_pr__via_l1m1__example_5595914180857 in sky130_fd_io__top_xres4v2 at (38.91,131.015)
+        sky130_fd_pr__pfet_01v8__example_55959141808766 in sky130_fd_io__top_xres4v2 at (27.255,35.295)
+        sky130_fd_io__xres_inv_hysv2 in sky130_fd_io__top_xres4v2 at (25.55,9.17)
+        sky130_fd_io__com_res_weak in sky130_fd_io__top_xres4v2 at (13.81,129.695)
+        sky130_fd_io__com_res_weak_v2 in sky130_fd_io__top_xres4v2 at (5.605,42.335)
+        sky130_fd_io__com_busses in sky130_fd_io__top_xres4v2 at (0,2.035)
+    EXPAND COMPLETE. CPU TIME = 0  REAL TIME = 0  LVHEAP = 2/5/7
+    EXPANDING TRIVIAL CELL PLACEMENTS
+        sky130_fd_io__tk_em2s_cdns_55959141808652 (simple=13 array=0 total=13)
+        sky130_fd_io__tk_em2o_cdns_55959141808653 (simple=26 array=0 total=26)
+        sky130_fd_io__tk_em1s_cdns_5595914180859 (simple=9 array=0 total=9)
+        sky130_fd_io__xres_tk_p_em1o_cdns_55959141808758 (simple=8 array=0 total=8)
+        sky130_fd_io__xres_tk_p_em1c_cdns_55959141808760 (simple=2 array=0 total=2)
+        sky130_fd_io__xres_tk_p_em1o_cdns_55959141808756 (simple=2 array=0 total=2)
+        sky130_fd_io__xres_tk_p_em1c_cdns_55959141808759 (simple=4 array=0 total=4)
+        sky130_fd_io__xres_p_em1c_cdns_55959141808753 (simple=24 array=0 total=24)
+        sky130_fd_io__xres_tk_p_em1o_cdns_55959141808757 (simple=30 array=0 total=30)
+        sky130_fd_io__xres_tk_p_em1c_cdns_55959141808761 (simple=2 array=0 total=2)
+    EXPAND COMPLETE. CPU TIME = 0  REAL TIME = 0  LVHEAP = 2/5/7
+    EXPANDING VERY SPARSE ARRAY PLACEMENTS
+    EXPANDING LARGE CELL ARRAY PLACEMENTS
+    EXPANDING VERY SPARSE CELL PLACEMENTS
+    ELIMINATING DUPLICATE SUPER-HIERARCHICAL PLACEMENTS
+    DUPLICATE SUPER-HIERARCHICAL PLACEMENT ELIMINATION COMPLETE. CPU TIME = 0  REAL TIME = 0  LVHEAP = 2/5/7
+    EXPANDING DENSE OVERLAPS
+    EXPANDING UNIQUE META-CELL PLACEMENTS
+        sky130_fd_io__xres4v2_in_buf in sky130_fd_io__top_xres4v2 at (0.34,3.3)
+        sky130_fd_io__com_bus_hookup in sky130_fd_io__top_xres4v2 at (0,2.035)
+    EXPAND COMPLETE. CPU TIME = 0  REAL TIME = 0  LVHEAP = 2/5/7
+    EXPANDING DENSE OVERLAPS
+    ANALYZING HIERARCHY FOR AUTOMATIC TURBO FLEX
+    ANALYSIS COMPLETE (TA=15232.5231). CPU TIME = 0  REAL TIME = 0  LVHEAP = 2/5/7
+    IDENTIFYING MULTI-CORE CELLS
+    INJECTING HIERARCHY
+      INJECTION PREP COMPLETE CPU TIME = 0  REAL TIME = 0  LVHEAP = 2/5/7
+        sky130_fd_io__nfet_con_diff_wo_abt_270_xres4v2 (priority8)
+        sky130_fd_io__pfet_con_diff_wo_abt_270_xres4v2 (priority4)
+        sky130_fd_io__xres2v2_rcfilter_lpfv2 (priority8)
+      PRIORITY INJECTION COMPLETE CPU TIME = 0  REAL TIME = 0  LVHEAP = 2/5/7
+    INJECTION POST COMPLETE (0 0). CPU TIME = 0  REAL TIME = 0  LVHEAP = 2/5/7
+    INJECTION COMPLETE. CPU TIME = 0  REAL TIME = 0  LVHEAP = 2/5/7
+    COMPUTING RECTANGULAR EXTENTS
+    RECTANGULAR EXTENTS COMPLETE. CPU TIME = 0  REAL TIME = 0  LVHEAP = 2/5/7
+    COMPUTING RECTILINEAR EXTENTS
+    RECTILINEAR EXTENTS COMPLETE. CPU TIME = 0  REAL TIME = 0  LVHEAP = 2/5/7
+    SORTING PLACEMENTS VERTICALLY
+    SORT COMPLETE. CPU TIME = 0  REAL TIME = 0  LVHEAP = 2/5/7
+    PUSHING VERY SMALL CELL PLACEMENTS
+    PUSH COMPLETE (P=1 PA1=0 PA2=0) CPU TIME = 0  REAL TIME = 0  LVHEAP = 2/5/7
+    ELIMINATING DUPLICATE PLACEMENTS
+    DUPLICATE PLACEMENT ELIMINATION COMPLETE (1074 -> 1074 = 0). CPU TIME = 0  REAL TIME = 0  LVHEAP = 2/5/7
+    PUSHING TOP LAYER CELL PLACEMENTS
+    PUSH COMPLETE (P=0 PA1=0 PA2=0) CPU TIME = 0  REAL TIME = 0  LVHEAP = 2/5/7
+    COMPUTING CELL-TO-WORLD TRANSFORMS
+    COMPUTE COMPLETE. CPU TIME = 0  REAL TIME = 0  LVHEAP = 2/5/7
+    SORTING PLACEMENTS BY CELL
+    SORT COMPLETE. CPU TIME = 0  REAL TIME = 0  LVHEAP = 2/5/7
+    PACKING HIERARCHY. (C=3 CN=1 P1=3 P2=0 XF=0) LVHEAP = 2/5/7
+    PACKING COMPLETE. (C=2 CN=1 P=2 XF=0) CPU TIME = 0  REAL TIME = 0  LVHEAP = 2/5/7
+    COMPUTING PLACEMENT OVERLAPS
+    COMPUTE COMPLETE (OC=538 V1=233 V2=24 SC=32 FC=520). CPU TIME = 0  REAL TIME = 0  LVHEAP = 4/5/7
+    COMPUTING CELL OVERLAP AREAS
+    COMPUTE COMPLETE. CPU TIME = 0  REAL TIME = 0  LVHEAP = 2/5/7
+    COMPUTING PLACEMENT / OVERLAP AREA INTERSECTIONS
+    COMPUTE COMPLETE. CPU TIME = 0  REAL TIME = 0  LVHEAP = 2/5/7
+HIERARCHICAL DATABASE CONSTRUCTOR COMPLETE. CPU TIME = 0  REAL TIME = 0  LVHEAP = 2/5/7
+(C=2 CN=1 P=2 G=33 GH=7 D=0 TXT=2 XF=0 PO=1)
+
+--------------------------------------------------------------------------------
+-----               TEXT OBJECTS FOR CONNECTIVITY EXTRACTION               -----
+--------------------------------------------------------------------------------
+
+VDDA (0.48,16.74) 1048 sky130_fd_io__top_xres4v2
+VDDA (0.48,16.74) 1051 sky130_fd_io__top_xres4v2
+VCCHIB (0.635,4.385) 1048 sky130_fd_io__top_xres4v2
+VCCHIB (0.635,4.385) 1051 sky130_fd_io__top_xres4v2
+VCCD (0.635,10.435) 1048 sky130_fd_io__top_xres4v2
+VCCD (0.635,10.435) 1051 sky130_fd_io__top_xres4v2
+VDDIO (0.635,21.61) 1051 sky130_fd_io__top_xres4v2
+VDDIO (0.635,21.61) 1048 sky130_fd_io__top_xres4v2
+VSSIO (0.635,26.545) 1048 sky130_fd_io__top_xres4v2
+VSSIO (0.635,26.545) 1051 sky130_fd_io__top_xres4v2
+VSWITCH (0.635,33.235) 1048 sky130_fd_io__top_xres4v2
+VSWITCH (0.635,33.235) 1051 sky130_fd_io__top_xres4v2
+VSSA (0.635,38.09) 1051 sky130_fd_io__top_xres4v2
+VSSA (0.635,38.09) 1048 sky130_fd_io__top_xres4v2
+VSSD (0.635,43.135) 1048 sky130_fd_io__top_xres4v2
+VSSD (0.635,43.135) 1051 sky130_fd_io__top_xres4v2
+VSSA (0.635,47.895) 1051 sky130_fd_io__top_xres4v2
+AMUXBUS_B (0.635,49.245) 1051 sky130_fd_io__top_xres4v2
+VSSA (0.635,52.025) 1048 sky130_fd_io__top_xres4v2
+VSSA (0.635,52.03) 1051 sky130_fd_io__top_xres4v2
+AMUXBUS_A (0.635,54.595) 1051 sky130_fd_io__top_xres4v2
+VSSA (0.635,56.565) 1051 sky130_fd_io__top_xres4v2
+VSSIO_Q (0.635,60.4) 1051 sky130_fd_io__top_xres4v2
+VSSIO_Q (0.635,60.4) 1048 sky130_fd_io__top_xres4v2
+VDDIO_Q (0.635,65.635) 1051 sky130_fd_io__top_xres4v2
+VDDIO_Q (0.635,65.635) 1048 sky130_fd_io__top_xres4v2
+VDDIO (0.635,80.15) 1048 sky130_fd_io__top_xres4v2
+VDDIO (0.635,80.15) 1051 sky130_fd_io__top_xres4v2
+VSSIO (0.635,191.605) 1051 sky130_fd_io__top_xres4v2
+VSSIO (0.635,191.605) 1048 sky130_fd_io__top_xres4v2
+ENABLE_VDDIO (8.635,0.165) 1057 sky130_fd_io__top_xres4v2
+ENABLE_VDDIO (8.66,0.165) 1054 sky130_fd_io__top_xres4v2
+ENABLE_H (12.415,0.165) 1060 sky130_fd_io__top_xres4v2
+ENABLE_H (12.415,0.165) 1057 sky130_fd_io__top_xres4v2
+PULLUP_H (14.845,0.165) 1057 sky130_fd_io__top_xres4v2
+PULLUP_H (14.845,0.165) 1060 sky130_fd_io__top_xres4v2
+PAD_A_ESD_H (18.08,0.165) 1054 sky130_fd_io__top_xres4v2
+PAD_A_ESD_H (18.08,0.165) 1057 sky130_fd_io__top_xres4v2
+FILT_IN_H (20.65,0.705) 1057 sky130_fd_io__top_xres4v2
+FILT_IN_H (20.65,0.705) 1054 sky130_fd_io__top_xres4v2
+EN_VDDIO_SIG_H (22.51,0.165) 1057 sky130_fd_io__top_xres4v2
+EN_VDDIO_SIG_H (22.51,0.165) 1060 sky130_fd_io__top_xres4v2
+INP_SEL_H (25.025,0.165) 1060 sky130_fd_io__top_xres4v2
+TIE_LO_ESD (27.905,0.165) 1057 sky130_fd_io__top_xres4v2
+TIE_LO_ESD (27.905,0.165) 1060 sky130_fd_io__top_xres4v2
+XRES_H_N (29.3,0.165) 1054 sky130_fd_io__top_xres4v2
+XRES_H_N (29.3,0.165) 1057 sky130_fd_io__top_xres4v2
+TIE_HI_ESD (30.83,0.165) 1060 sky130_fd_io__top_xres4v2
+TIE_HI_ESD (30.83,0.165) 1057 sky130_fd_io__top_xres4v2
+DISABLE_PULLUP_H (32.89,0.165) 1060 sky130_fd_io__top_xres4v2
+DISABLE_PULLUP_H (32.89,0.165) 1057 sky130_fd_io__top_xres4v2
+PAD (35.845,141.94) 1048 sky130_fd_io__top_xres4v2
+TIE_WEAK_HI_H (72.355,0.165) 1057 sky130_fd_io__top_xres4v2
+TIE_WEAK_HI_H (72.365,0.165) 1054 sky130_fd_io__top_xres4v2
+VCCHIB (74.365,4.385) 1051 sky130_fd_io__top_xres4v2
+VCCHIB (74.365,4.385) 1048 sky130_fd_io__top_xres4v2
+VCCD (74.365,10.435) 1051 sky130_fd_io__top_xres4v2
+VCCD (74.365,10.435) 1048 sky130_fd_io__top_xres4v2
+VDDIO (74.365,21.61) 1051 sky130_fd_io__top_xres4v2
+VDDIO (74.365,21.61) 1048 sky130_fd_io__top_xres4v2
+VSSIO (74.365,26.545) 1048 sky130_fd_io__top_xres4v2
+VSSIO (74.365,26.545) 1051 sky130_fd_io__top_xres4v2
+VSWITCH (74.365,33.235) 1051 sky130_fd_io__top_xres4v2
+VSWITCH (74.365,33.235) 1048 sky130_fd_io__top_xres4v2
+VSSA (74.365,38.09) 1051 sky130_fd_io__top_xres4v2
+VSSA (74.365,38.09) 1048 sky130_fd_io__top_xres4v2
+VSSD (74.365,43.135) 1051 sky130_fd_io__top_xres4v2
+VSSD (74.365,43.135) 1048 sky130_fd_io__top_xres4v2
+VSSA (74.365,47.895) 1051 sky130_fd_io__top_xres4v2
+AMUXBUS_B (74.365,49.245) 1051 sky130_fd_io__top_xres4v2
+VSSA (74.365,52.025) 1048 sky130_fd_io__top_xres4v2
+VSSA (74.365,52.03) 1051 sky130_fd_io__top_xres4v2
+AMUXBUS_A (74.365,54.595) 1051 sky130_fd_io__top_xres4v2
+VSSA (74.365,56.565) 1051 sky130_fd_io__top_xres4v2
+VSSIO_Q (74.365,60.4) 1051 sky130_fd_io__top_xres4v2
+VSSIO_Q (74.365,60.4) 1048 sky130_fd_io__top_xres4v2
+VDDIO_Q (74.365,65.635) 1051 sky130_fd_io__top_xres4v2
+VDDIO_Q (74.365,65.635) 1048 sky130_fd_io__top_xres4v2
+VDDIO (74.365,80.15) 1051 sky130_fd_io__top_xres4v2
+VDDIO (74.365,80.15) 1048 sky130_fd_io__top_xres4v2
+VSSIO (74.365,191.605) 1048 sky130_fd_io__top_xres4v2
+VSSIO (74.365,191.605) 1051 sky130_fd_io__top_xres4v2
+VDDA (74.52,16.74) 1051 sky130_fd_io__top_xres4v2
+VDDA (74.52,16.74) 1048 sky130_fd_io__top_xres4v2
+
+--------------------------------------------------------------------------------
+-----                TEXT OBJECTS FOR WITH TEXT OPERATIONS                 -----
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+-----               TEXT OBJECTS FOR EXPAND TEXT OPERATIONS                -----
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+-----                  TEXT OBJECTS FOR CAPI OPERATIONS                    -----
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+-----             LAYER READ SUMMARY (SIMPLE LAYER GEOMETRIES)             -----
+--------------------------------------------------------------------------------
+SIMPLE LAYER      GEOMETRIES                                                    
+--------------------------------------------------------------------------------
+
+  1000                 585
+  1001                   1
+  1002                 191
+  1006                 230
+  1010               46694
+  1011                2040
+  1012                1083
+  1013                 307
+  1014                 111
+  1015                  29
+  1016                   0
+  1017               16951
+  1018                8993
+  1019                7256
+  1020                2490
+  1021                1178
+  1022                 820
+  1023                 112
+  1024               32439
+  1025                   1
+  1030                   0
+  1031                   0
+  1033                   0
+  1034                  37
+  1035                  37
+  1068                   0
+  4000                   0
+
+--------------------------------------------------------------------------------
+-----            LAYER READ SUMMARY (ORIGINAL LAYER GEOMETRIES)            -----
+--------------------------------------------------------------------------------
+ORIGINAL LAYER       INITIAL GEOMETRIES                 FINAL GEOMETRIES        
+--------------------------------------------------------------------------------
+
+polyres                   37 (61)                          37 (61)              
+poly_cond                820 (1233)                       820 (1233)            
+fuse                       0 (0)                            0 (0)               
+met4                     111 (363)                        111 (363)             
+diffres                   37 (107)                         37 (107)             
+diffTap                  776 (1941)                       776 (1941)            
+licon1                 46694 (53375)                    46694 (53375)           
+Met5_cond                 29 (253)                         29 (253)             
+Via4_cond               2490 (2532)                      2490 (2532)            
+4000                       0 (0)                            0 (0)               
+Nwell_cond               112 (355)                        112 (355)             
+dnwell                     1 (1)                            1 (1)               
+pwcut                      0 (0)                            0 (0)               
+photoID                    0 (0)                            0 (0)               
+localSub                   0 (0)                            0 (0)               
+tap                      191 (278)                        191 (278)             
+diff                     585 (1663)                       585 (1663)            
+Li1_cond                1178 (2560)                      1178 (2560)            
+Mcon_cond              32439 (35978)                    32439 (35978)           
+npc                      230 (322)                        230 (322)             
+Via_cond               16951 (18073)                    16951 (18073)           
+Via2_cond               8993 (8999)                      8993 (8999)            
+Via3_cond               7256 (7256)                      7256 (7256)            
+Met1_cond               2040 (3109)                      2296 (3109)            
+Met2_cond               1083 (1438)                      1219 (1438)            
+Met3_cond                307 (308)                        307 (308)             
+Pad_cond                   1 (1)                            1 (1)               
+rdl                        0 (0)                            0 (0)               
+
+--------------------------------------------------------------------------------
+-----         LAYER READ SUMMARY (TEXT FOR CONNECTIVITY EXTRACTION)        -----
+--------------------------------------------------------------------------------
+SIMPLE LAYER              TEXTS                                                 
+--------------------------------------------------------------------------------
+
+  1048                    27 (27)              
+  1051                    34 (34)              
+  1054                     5 (5)               
+  1057                    11 (11)              
+  1060                     7 (7)               
+
+--------------------------------------------------------------------------------
+-----          LAYER READ SUMMARY (TEXT FOR WITH TEXT OPERATIONS)          -----
+--------------------------------------------------------------------------------
+SIMPLE LAYER              TEXTS                                                 
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+-----         LAYER READ SUMMARY (TEXT FOR EXPAND TEXT OPERATIONS)         -----
+--------------------------------------------------------------------------------
+SIMPLE LAYER              TEXTS                                                 
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+-----            LAYER READ SUMMARY (TEXT FOR CAPI OPERATIONS)             -----
+--------------------------------------------------------------------------------
+SIMPLE LAYER              TEXTS                                                 
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+-----                      CELL AND PLACEMENT SUMMARY                      -----
+--------------------------------------------------------------------------------
+CELL TYPE                 CELLS           PLACEMENTS       FLAT PLACEMENTS      
+--------------------------------------------------------------------------------
+
+USER                        120                  999                  1574
+ VERY SMALL                  39                  667                   946
+ TOP LAYER                   41                  576                   629
+  VERY SMALL                 23                  477                   512
+PSEUDO                       10                   80                   128
+TOTAL                       130                 1079                  1702
+
+--------------------------------------------------------------------------------
+-----                   LAYOUT DATA INPUT MODULE SUMMARY                   -----
+--------------------------------------------------------------------------------
+
+--- TOTAL GEOMETRIES READ FROM SIMPLE LAYERS = 121585
+--- TOTAL GEOMETRIES READ FROM ORIGINAL LAYERS = 122361 (140206)
+--- TOTAL GEOMETRIES WRITTEN TO ORIGINAL LAYERS = 122753 (140206)
+--- LVHEAP = 2/5/7
+--- DATABASE EXTENT = [ -0.515 , 0 ] -> [ 75.62 , 200 ]
+--- GEOMETRIC DEPTH = ALL
+--- TEXT DEPTH FOR CONNECTIVITY EXTRACTION = PRIMARY
+--- TOTAL TEXT OBJECTS FOR CONNECTIVITY EXTRACTION = 84 (84)
+--- TOTAL TEXT OBJECTS FOR WITH TEXT OPERATIONS = 0 (0)
+--- TOTAL TEXT OBJECTS FOR EXPAND TEXT OPERATIONS = 0 (0)
+--- TOTAL TEXT OBJECTS FOR CAPI OPERATIONS = 0 (0)
+--- GEOMETRY FLAGGING = ACUTE (NO)  SKEW (NO)  ANGLED (NO)  OFFGRID (NO)
+                        NONSIMPLE POLYGON (NO)  NONSIMPLE PATH (NO)
+--- PRIMARY CELL = sky130_fd_io__top_xres4v2
+--- EXCLUDED CELLS =
+--- LAYOUT BASE LAYER = diff tap poly_cond lvtn hvi
+                        npc nsdm psdm ESDID COREID
+                        diffres polyres fuse pnp
+--- LAYOUT TOP LAYER = (NOT SPECIFIED)
+
+--- CALIBRE LAYOUT DATA INPUT MODULE COMPLETED.  CPU TIME = 0  REAL TIME = 0
+
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+-----        CALIBRE::DRC-H - RESULTS DATABASE INITIALIZATION MODULE       -----
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+
+--- GLOBAL DRC RESULTS DATABASE FILE = soft.drc.results (ASCII)
+--- GLOBAL MAXIMUM RESULTS PER RULECHECK = 1000
+--- GLOBAL MAXIMUM VERTICES PER RESULT POLYGON = 4096
+--- CHECK TEXT MAPPING = COMMENTS + RULE FILE INFORMATION
+--- KEEP EMPTY RULE CHECKS = YES
+--- DRC RESULTS MAGNIFICATION = 1
+--- DRC RESULTS DATABASE PRECISION = 1000
+
+--------------------------------------------------------------------------------
+-----              DRC RULECHECK -> RESULTS DATABASE MAPPING               -----
+--------------------------------------------------------------------------------
+                                                          DATA        MAX    MAX
+RULECHECK            RESULTS DATABASE         TYPE LAYER  TYPE     RESULT VERTEX
+--------------------------------------------------------------------------------
+r_0_soft_majority_diff_tap
+                     soft.drc.results        ASCII   N/A   N/A       1000   4096
+r_1_soft_majority_Nwell_cond
+                     soft.drc.results        ASCII   N/A   N/A       1000   4096
+r_2_soft_float_Nwell_cond
+                     soft.drc.results        ASCII   N/A   N/A       1000   4096
+r_3_soft_float_substrate
+                     soft.drc.results        ASCII   N/A   N/A       1000   4096
+r_4_soft_majority_substrate
+                     soft.drc.results        ASCII   N/A   N/A       1000   4096
+r_5_soft_multinet_Poly_check
+                     soft.drc.results        ASCII   N/A   N/A       1000   4096
+r_6_soft_majority_dnwell
+                     soft.drc.results        ASCII   N/A   N/A       1000   4096
+
+--- CALIBRE::DRC-H RESULTS DATABASE INITIALIZATION MODULE COMPLETED.  CPU TIME = 0  REAL TIME = 0
+
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+-----                   CALIBRE::DRC-H - EXECUTIVE MODULE                  -----
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+
+licon1 = OR licon1
+------------------
+licon1 (HIER TYP=1 CFG=1 HGC=46694 FGC=53375 HEC=186776 FEC=213500 IGC=14180 VHC=F VPC=F)
+CPU TIME = 0  REAL TIME = 0  LVHEAP = 2/5/7  OPS COMPLETE = 1 OF 92  ELAPSED TIME = 2
+
+Original Layer licon1 DELETED -- LVHEAP = 2/5/7
+
+diffTap = OR diffTap
+--------------------
+diffTap (HIER TYP=1 CFG=1 HGC=344 FGC=1155 HEC=1707 FEC=4981 IGC=204 VHC=F VPC=F)
+CPU TIME = 0  REAL TIME = 0  LVHEAP = 2/5/7  OPS COMPLETE = 2 OF 92  ELAPSED TIME = 2
+
+Original Layer diffTap DELETED -- LVHEAP = 2/5/7
+
+poly_cond = OR poly_cond
+------------------------
+poly_cond (HIER TYP=1 CFG=1 HGC=267 FGC=470 HEC=1220 FEC=2084 IGC=158 VHC=F VPC=F)
+CPU TIME = 0  REAL TIME = 0  LVHEAP = 2/5/7  OPS COMPLETE = 3 OF 92  ELAPSED TIME = 2
+
+Original Layer poly_cond DELETED -- LVHEAP = 2/5/7
+
+polyres = OR polyres
+--------------------
+polyres (HIER TYP=1 CFG=0 HGC=10 FGC=30 HEC=88 FEC=168 IGC=17 VHC=F VPC=F)
+CPU TIME = 0  REAL TIME = 0  LVHEAP = 2/5/7  OPS COMPLETE = 4 OF 92  ELAPSED TIME = 2
+
+Original Layer polyres DELETED -- LVHEAP = 2/5/7
+
+PolyNoRes = poly_cond NOT polyres
+---------------------------------
+PolyNoRes (HIER TYP=1 CFG=1 HGC=274 FGC=454 HEC=1216 FEC=1988 IGC=159 VHC=F VPC=F)
+CPU TIME = 0  REAL TIME = 0  LVHEAP = 2/5/7  OPS COMPLETE = 5 OF 92  ELAPSED TIME = 2
+
+Layer polyres DELETED -- LVHEAP = 2/5/7
+
+diffres = OR diffres
+--------------------
+diffres (HIER TYP=1 CFG=0 HGC=3 FGC=73 HEC=80 FEC=360 IGC=6 VHC=F VPC=F)
+CPU TIME = 0  REAL TIME = 0  LVHEAP = 2/5/7  OPS COMPLETE = 6 OF 92  ELAPSED TIME = 2
+
+Original Layer diffres DELETED -- LVHEAP = 2/5/7
+
+TMP<1> = PolyNoRes OR diffres
+-----------------------------
+TMP<1> (HIER TYP=1 CFG=0 HGC=277 FGC=527 HEC=1296 FEC=2348 IGC=161 VHC=F VPC=F)
+CPU TIME = 0  REAL TIME = 0  LVHEAP = 2/5/7  OPS COMPLETE = 7 OF 92  ELAPSED TIME = 2
+
+Layer diffres DELETED -- LVHEAP = 2/5/7
+
+SRCDRN = diffTap NOT TMP<1>
+---------------------------
+SRCDRN (HIER TYP=1 CFG=1 HGC=424 FGC=1092 HEC=2443 FEC=5157 IGC=199 VHC=F VPC=F)
+CPU TIME = 0  REAL TIME = 0  LVHEAP = 2/5/7  OPS COMPLETE = 8 OF 92  ELAPSED TIME = 2
+
+Layer TMP<1> DELETED -- LVHEAP = 2/5/7
+
+Licon1fom = licon1 AND SRCDRN
+-----------------------------
+Licon1fom (HIER TYP=1 CFG=1 HGC=46138 FGC=52153 HEC=184552 FEC=208612 IGC=14084 VHC=F VPC=F)
+CPU TIME = 0  REAL TIME = 0  LVHEAP = 2/5/7  OPS COMPLETE = 9 OF 92  ELAPSED TIME = 2
+
+Li1_cond = OR Li1_cond
+----------------------
+Li1_cond (HIER TYP=1 CFG=1 HGC=426 FGC=1784 HEC=2244 FEC=7724 IGC=263 VHC=F VPC=F)
+CPU TIME = 0  REAL TIME = 0  LVHEAP = 2/5/7  OPS COMPLETE = 10 OF 92  ELAPSED TIME = 2
+
+Original Layer Li1_cond DELETED -- LVHEAP = 2/5/7
+
+FOM_CONTACTS = COPY Licon1fom
+-----------------------------
+FOM_CONTACTS (HIER TYP=1 CFG=3 HGC=46138 FGC=52153 HEC=184552 FEC=208612 IGC=14084 VHC=F VPC=F)
+CPU TIME = 0  REAL TIME = 0  LVHEAP = 2/5/7  OPS COMPLETE = 11 OF 92  ELAPSED TIME = 2
+
+Licon1ply = licon1 OUTSIDE diffTap
+----------------------------------
+Licon1ply (HIER TYP=1 CFG=1 HGC=799 FGC=1222 HEC=3196 FEC=4888 IGC=105 VHC=F VPC=F)
+CPU TIME = 0  REAL TIME = 0  LVHEAP = 2/5/7  OPS COMPLETE = 12 OF 92  ELAPSED TIME = 2
+
+Layer diffTap DELETED -- LVHEAP = 2/5/7
+
+Mcon_cond = OR Mcon_cond
+------------------------
+Mcon_cond (HIER TYP=1 CFG=1 HGC=32438 FGC=35977 HEC=129752 FEC=143908 IGC=8497 VHC=F VPC=F)
+CPU TIME = 0  REAL TIME = 0  LVHEAP = 2/5/7  OPS COMPLETE = 13 OF 92  ELAPSED TIME = 2
+
+Original Layer Mcon_cond DELETED -- LVHEAP = 2/5/7
+
+Met1_cond = OR Met1_cond
+------------------------
+Met1_cond (HIER TYP=1 CFG=1 HGC=656 FGC=1456 HEC=4347 FEC=7612 IGC=459 VHC=F VPC=F)
+CPU TIME = 0  REAL TIME = 0  LVHEAP = 2/5/7  OPS COMPLETE = 14 OF 92  ELAPSED TIME = 2
+
+Original Layer Met1_cond DELETED -- LVHEAP = 2/5/7
+
+Via_cond = OR Via_cond
+----------------------
+Via_cond (HIER TYP=1 CFG=1 HGC=16950 FGC=18072 HEC=67800 FEC=72288 IGC=5808 VHC=F VPC=F)
+CPU TIME = 0  REAL TIME = 0  LVHEAP = 2/5/7  OPS COMPLETE = 15 OF 92  ELAPSED TIME = 2
+
+Original Layer Via_cond DELETED -- LVHEAP = 2/5/7
+
+Met2_cond = OR Met2_cond
+------------------------
+Met2_cond (HIER TYP=1 CFG=1 HGC=401 FGC=620 HEC=2665 FEC=3541 IGC=456 VHC=F VPC=F)
+CPU TIME = 0  REAL TIME = 0  LVHEAP = 2/5/7  OPS COMPLETE = 16 OF 92  ELAPSED TIME = 2
+
+Original Layer Met2_cond DELETED -- LVHEAP = 2/5/7
+
+Via2_cond = OR Via2_cond
+------------------------
+Via2_cond (HIER TYP=1 CFG=1 HGC=8993 FGC=8999 HEC=35972 FEC=35996 IGC=15652 VHC=F VPC=F)
+CPU TIME = 0  REAL TIME = 0  LVHEAP = 2/5/7  OPS COMPLETE = 17 OF 92  ELAPSED TIME = 2
+
+Original Layer Via2_cond DELETED -- LVHEAP = 2/5/7
+
+Met3_cond = OR Met3_cond
+------------------------
+Met3_cond (HIER TYP=1 CFG=1 HGC=78 FGC=79 HEC=504 FEC=508 IGC=366 VHC=F VPC=F)
+CPU TIME = 0  REAL TIME = 0  LVHEAP = 2/5/7  OPS COMPLETE = 18 OF 92  ELAPSED TIME = 2
+
+Original Layer Met3_cond DELETED -- LVHEAP = 2/5/7
+
+Via3_cond = OR Via3_cond
+------------------------
+Via3_cond (HIER TYP=1 CFG=1 HGC=7256 FGC=7256 HEC=29024 FEC=29024 IGC=5434 VHC=F VPC=F)
+CPU TIME = 0  REAL TIME = 0  LVHEAP = 2/5/7  OPS COMPLETE = 19 OF 92  ELAPSED TIME = 2
+
+Original Layer Via3_cond DELETED -- LVHEAP = 2/5/7
+
+met4 = OR met4
+--------------
+met4 (HIER TYP=1 CFG=1 HGC=30 FGC=268 HEC=457 FEC=1409 IGC=135 VHC=F VPC=F)
+CPU TIME = 0  REAL TIME = 0  LVHEAP = 2/5/7  OPS COMPLETE = 20 OF 92  ELAPSED TIME = 2
+
+Original Layer met4 DELETED -- LVHEAP = 2/5/7
+
+fuse = OR fuse
+--------------
+fuse (HIER TYP=1 CFG=0 HGC=0 FGC=0 HEC=0 FEC=0 IGC=0 VHC=F VPC=F)
+CPU TIME = 0  REAL TIME = 0  LVHEAP = 2/5/7  OPS COMPLETE = 21 OF 92  ELAPSED TIME = 2
+
+Original Layer fuse DELETED -- LVHEAP = 2/5/7
+
+Met4_cond = met4 NOT fuse
+-------------------------
+Met4_cond (HIER TYP=1 CFG=1 HGC=30 FGC=268 HEC=457 FEC=1409 IGC=135 VHC=F VPC=F)
+CPU TIME = 0  REAL TIME = 0  LVHEAP = 2/5/7  OPS COMPLETE = 22 OF 92  ELAPSED TIME = 2
+
+Layer met4 DELETED -- LVHEAP = 2/5/7
+
+Layer fuse DELETED -- LVHEAP = 2/5/7
+
+Via4_cond = OR Via4_cond
+------------------------
+Via4_cond (HIER TYP=1 CFG=1 HGC=2490 FGC=2532 HEC=9960 FEC=10128 IGC=733 VHC=F VPC=F)
+CPU TIME = 0  REAL TIME = 0  LVHEAP = 2/5/7  OPS COMPLETE = 23 OF 92  ELAPSED TIME = 2
+
+Original Layer Via4_cond DELETED -- LVHEAP = 2/5/7
+
+Met5_cond = OR Met5_cond
+------------------------
+Met5_cond (HIER TYP=1 CFG=1 HGC=26 FGC=208 HEC=108 FEC=836 IGC=130 VHC=F VPC=F)
+CPU TIME = 0  REAL TIME = 0  LVHEAP = 2/5/7  OPS COMPLETE = 24 OF 92  ELAPSED TIME = 2
+
+Original Layer Met5_cond DELETED -- LVHEAP = 2/5/7
+
+Pad_cond = OR Pad_cond
+----------------------
+Pad_cond (HIER TYP=1 CFG=1 HGC=1 FGC=1 HEC=8 FEC=8 IGC=24 VHC=F VPC=F)
+CPU TIME = 0  REAL TIME = 0  LVHEAP = 2/5/7  OPS COMPLETE = 25 OF 92  ELAPSED TIME = 2
+
+Original Layer Pad_cond DELETED -- LVHEAP = 2/5/7
+
+rdl = OR rdl
+------------
+rdl (HIER TYP=1 CFG=1 HGC=0 FGC=0 HEC=0 FEC=0 IGC=0 VHC=F VPC=F)
+CPU TIME = 0  REAL TIME = 0  LVHEAP = 2/5/7  OPS COMPLETE = 26 OF 92  ELAPSED TIME = 2
+
+Original Layer rdl DELETED -- LVHEAP = 2/5/7
+
+Li1_cond2 = COPY Li1_cond
+-------------------------
+Li1_cond2 (HIER TYP=1 CFG=1 HGC=426 FGC=1784 HEC=2244 FEC=7724 IGC=263 VHC=F VPC=F)
+CPU TIME = 0  REAL TIME = 0  LVHEAP = 2/5/7  OPS COMPLETE = 27 OF 92  ELAPSED TIME = 2
+
+npc = OR npc
+------------
+npc (HIER TYP=1 CFG=0 HGC=224 FGC=316 HEC=900 FEC=1268 IGC=123 VHC=F VPC=F)
+CPU TIME = 0  REAL TIME = 0  LVHEAP = 2/5/7  OPS COMPLETE = 28 OF 92  ELAPSED TIME = 2
+
+Original Layer npc DELETED -- LVHEAP = 2/5/7
+
+polyConn = npc AND licon1
+-------------------------
+polyConn (HIER TYP=1 CFG=1 HGC=799 FGC=1222 HEC=3196 FEC=4888 IGC=105 VHC=F VPC=F)
+CPU TIME = 0  REAL TIME = 0  LVHEAP = 2/5/7  OPS COMPLETE = 29 OF 92  ELAPSED TIME = 2
+
+Layer npc DELETED -- LVHEAP = 2/5/7
+
+TMP<16> = PolyNoRes NOT TOUCH licon1
+------------------------------------
+TMP<16> (HIER TYP=1 CFG=1 HGC=274 FGC=454 HEC=1216 FEC=1988 IGC=159 VHC=F VPC=F)
+CPU TIME = 0  REAL TIME = 0  LVHEAP = 3/5/7  OPS COMPLETE = 30 OF 92  ELAPSED TIME = 2
+
+polyLicon1temp = licon1 INTERACT TMP<16>
+----------------------------------------
+polyLicon1temp (HIER TYP=1 CFG=0 HGC=799 FGC=1222 HEC=3196 FEC=4888 IGC=105 VHC=F VPC=F)
+CPU TIME = 0  REAL TIME = 0  LVHEAP = 3/5/7  OPS COMPLETE = 31 OF 92  ELAPSED TIME = 2
+
+Layer TMP<16> DELETED -- LVHEAP = 3/5/7
+
+li1_inpoly = Li1_cond INSIDE poly_cond
+--------------------------------------
+li1_inpoly (HIER TYP=1 CFG=1 HGC=69 FGC=98 HEC=370 FEC=490 IGC=37 VHC=F VPC=F)
+CPU TIME = 0  REAL TIME = 0  LVHEAP = 3/5/7  OPS COMPLETE = 32 OF 92  ELAPSED TIME = 2
+
+Layer poly_cond DELETED -- LVHEAP = 3/5/7
+
+li1_excl = li1_inpoly OUTSIDE Mcon_cond
+---------------------------------------
+li1_excl (HIER TYP=1 CFG=0 HGC=0 FGC=0 HEC=0 FEC=0 IGC=0 VHC=F VPC=F)
+CPU TIME = 0  REAL TIME = 0  LVHEAP = 3/5/7  OPS COMPLETE = 33 OF 92  ELAPSED TIME = 2
+
+Layer li1_inpoly DELETED -- LVHEAP = 3/5/7
+
+licon_li1 = licon1 AND li1_excl
+-------------------------------
+licon_li1 (HIER TYP=1 CFG=0 HGC=0 FGC=0 HEC=0 FEC=0 IGC=0 VHC=F VPC=F)
+CPU TIME = 0  REAL TIME = 0  LVHEAP = 3/5/7  OPS COMPLETE = 34 OF 92  ELAPSED TIME = 2
+
+Layer li1_excl DELETED -- LVHEAP = 3/5/7
+
+polyLicon1 = polyLicon1temp NOT licon_li1
+-----------------------------------------
+polyLicon1 (HIER TYP=1 CFG=3 HGC=799 FGC=1222 HEC=3196 FEC=4888 IGC=105 VHC=F VPC=F)
+CPU TIME = 0  REAL TIME = 0  LVHEAP = 3/5/7  OPS COMPLETE = 35 OF 92  ELAPSED TIME = 2
+
+Layer polyLicon1temp DELETED -- LVHEAP = 3/5/7
+
+Layer licon_li1 DELETED -- LVHEAP = 3/5/7
+
+Mcon_cond2 = COPY Mcon_cond
+---------------------------
+Mcon_cond2 (HIER TYP=1 CFG=1 HGC=32438 FGC=35977 HEC=129752 FEC=143908 IGC=8497 VHC=F VPC=F)
+CPU TIME = 0  REAL TIME = 0  LVHEAP = 3/5/7  OPS COMPLETE = 36 OF 92  ELAPSED TIME = 2
+
+Met1_cond2 = COPY Met1_cond
+---------------------------
+Met1_cond2 (HIER TYP=1 CFG=1 HGC=656 FGC=1456 HEC=4347 FEC=7612 IGC=459 VHC=F VPC=F)
+CPU TIME = 0  REAL TIME = 0  LVHEAP = 3/5/7  OPS COMPLETE = 37 OF 92  ELAPSED TIME = 2
+
+Via_cond2 = COPY Via_cond
+-------------------------
+Via_cond2 (HIER TYP=1 CFG=1 HGC=16950 FGC=18072 HEC=67800 FEC=72288 IGC=5808 VHC=F VPC=F)
+CPU TIME = 0  REAL TIME = 0  LVHEAP = 3/5/7  OPS COMPLETE = 38 OF 92  ELAPSED TIME = 2
+
+Met2_cond2 = COPY Met2_cond
+---------------------------
+Met2_cond2 (HIER TYP=1 CFG=1 HGC=401 FGC=620 HEC=2665 FEC=3541 IGC=456 VHC=F VPC=F)
+CPU TIME = 0  REAL TIME = 0  LVHEAP = 3/5/7  OPS COMPLETE = 39 OF 92  ELAPSED TIME = 2
+
+Via2_cond2 = COPY Via2_cond
+---------------------------
+Via2_cond2 (HIER TYP=1 CFG=1 HGC=8993 FGC=8999 HEC=35972 FEC=35996 IGC=15652 VHC=F VPC=F)
+CPU TIME = 0  REAL TIME = 0  LVHEAP = 3/5/7  OPS COMPLETE = 40 OF 92  ELAPSED TIME = 2
+
+Met3_cond2 = COPY Met3_cond
+---------------------------
+Met3_cond2 (HIER TYP=1 CFG=1 HGC=78 FGC=79 HEC=504 FEC=508 IGC=366 VHC=F VPC=F)
+CPU TIME = 0  REAL TIME = 0  LVHEAP = 3/5/7  OPS COMPLETE = 41 OF 92  ELAPSED TIME = 2
+
+Via3_cond2 = COPY Via3_cond
+---------------------------
+Via3_cond2 (HIER TYP=1 CFG=1 HGC=7256 FGC=7256 HEC=29024 FEC=29024 IGC=5434 VHC=F VPC=F)
+CPU TIME = 0  REAL TIME = 0  LVHEAP = 3/5/7  OPS COMPLETE = 42 OF 92  ELAPSED TIME = 2
+
+lower_met = COPY Met4_cond
+--------------------------
+lower_met (HIER TYP=1 CFG=1 HGC=30 FGC=268 HEC=457 FEC=1409 IGC=135 VHC=F VPC=F)
+CPU TIME = 0  REAL TIME = 0  LVHEAP = 3/5/7  OPS COMPLETE = 43 OF 92  ELAPSED TIME = 2
+
+top_via = COPY Via4_cond
+------------------------
+top_via (HIER TYP=1 CFG=1 HGC=2490 FGC=2532 HEC=9960 FEC=10128 IGC=733 VHC=F VPC=F)
+CPU TIME = 0  REAL TIME = 0  LVHEAP = 3/5/7  OPS COMPLETE = 44 OF 92  ELAPSED TIME = 2
+
+top_met = COPY Met5_cond
+------------------------
+top_met (HIER TYP=1 CFG=1 HGC=26 FGC=208 HEC=108 FEC=836 IGC=130 VHC=F VPC=F)
+CPU TIME = 0  REAL TIME = 0  LVHEAP = 3/5/7  OPS COMPLETE = 45 OF 92  ELAPSED TIME = 2
+
+tap = OR tap
+------------
+tap (HIER TYP=1 CFG=1 HGC=62 FGC=149 HEC=511 FEC=889 IGC=55 VHC=F VPC=F)
+CPU TIME = 0  REAL TIME = 0  LVHEAP = 3/5/7  OPS COMPLETE = 46 OF 92  ELAPSED TIME = 2
+
+Original Layer tap DELETED -- LVHEAP = 3/5/7
+
+TMP<8> = FOM_CONTACTS NOT TOUCH SRCDRN
+--------------------------------------
+TMP<8> (HIER TYP=1 CFG=1 HGC=46138 FGC=52153 HEC=184552 FEC=208612 IGC=14084 VHC=F VPC=F)
+CPU TIME = 0  REAL TIME = 0  LVHEAP = 3/7/7  OPS COMPLETE = 47 OF 92  ELAPSED TIME = 2
+
+SRCDRNcon = SRCDRN INTERACT TMP<8>
+----------------------------------
+SRCDRNcon (HIER TYP=1 CFG=3 HGC=423 FGC=1091 HEC=2439 FEC=5153 IGC=199 VHC=F VPC=F)
+CPU TIME = 0  REAL TIME = 0  LVHEAP = 3/7/7  OPS COMPLETE = 48 OF 92  ELAPSED TIME = 2
+
+Layer TMP<8> DELETED -- LVHEAP = 3/7/7
+
+TMP<9> = SRCDRNcon NOT TOUCH tap
+--------------------------------
+TMP<9> (HIER TYP=1 CFG=1 HGC=423 FGC=1091 HEC=2439 FEC=5153 IGC=199 VHC=F VPC=F)
+CPU TIME = 0  REAL TIME = 0  LVHEAP = 3/7/7  OPS COMPLETE = 49 OF 92  ELAPSED TIME = 2
+
+TAPcon = tap INTERACT TMP<9>
+----------------------------
+TAPcon (HIER TYP=1 CFG=0 HGC=62 FGC=149 HEC=511 FEC=889 IGC=55 VHC=F VPC=F)
+CPU TIME = 0  REAL TIME = 0  LVHEAP = 3/7/7  OPS COMPLETE = 50 OF 92  ELAPSED TIME = 2
+
+Layer tap DELETED -- LVHEAP = 3/7/7
+
+Layer TMP<9> DELETED -- LVHEAP = 3/7/7
+
+Nwell_cond = OR Nwell_cond
+--------------------------
+Nwell_cond (HIER TYP=1 CFG=3 HGC=47 FGC=271 HEC=238 FEC=1149 IGC=75 VHC=F VPC=F)
+CPU TIME = 0  REAL TIME = 0  LVHEAP = 3/7/7  OPS COMPLETE = 51 OF 92  ELAPSED TIME = 2
+
+Original Layer Nwell_cond DELETED -- LVHEAP = 3/7/7
+
+TMP<10> = TAPcon AND Nwell_cond
+-------------------------------
+TMP<10> (HIER TYP=1 CFG=0 HGC=45 FGC=75 HEC=253 FEC=388 IGC=34 VHC=F VPC=F)
+CPU TIME = 0  REAL TIME = 0  LVHEAP = 3/7/7  OPS COMPLETE = 52 OF 92  ELAPSED TIME = 2
+
+NTAPcon = TMP<10> NOT PolyNoRes
+-------------------------------
+NTAPcon (HIER TYP=1 CFG=3 HGC=45 FGC=75 HEC=253 FEC=388 IGC=34 VHC=F VPC=F)
+CPU TIME = 0  REAL TIME = 0  LVHEAP = 3/7/7  OPS COMPLETE = 53 OF 92  ELAPSED TIME = 2
+
+Layer TMP<10> DELETED -- LVHEAP = 3/7/7
+
+PTAPcon = TAPcon NOT Nwell_cond
+-------------------------------
+PTAPcon (HIER TYP=1 CFG=3 HGC=29 FGC=74 HEC=306 FEC=501 IGC=39 VHC=F VPC=F)
+CPU TIME = 0  REAL TIME = 0  LVHEAP = 3/7/7  OPS COMPLETE = 54 OF 92  ELAPSED TIME = 2
+
+Layer TAPcon DELETED -- LVHEAP = 3/7/7
+
+poly_withtext = PolyNoRes WITH TEXT no_jumper_check jmptxt
+----------------------------------------------------------
+poly_withtext (HIER TYP=1 CFG=0 HGC=0 FGC=0 HEC=0 FEC=0 IGC=0 VHC=F VPC=F)
+CPU TIME = 0  REAL TIME = 0  LVHEAP = 3/7/7  OPS COMPLETE = 55 OF 92  ELAPSED TIME = 2
+
+Poly_check = PolyNoRes NOT poly_withtext
+----------------------------------------
+Poly_check (HIER TYP=1 CFG=3 HGC=274 FGC=454 HEC=1216 FEC=1988 IGC=159 VHC=F VPC=F)
+CPU TIME = 0  REAL TIME = 0  LVHEAP = 3/7/7  OPS COMPLETE = 56 OF 92  ELAPSED TIME = 2
+
+Layer poly_withtext DELETED -- LVHEAP = 3/7/7
+
+SubstrateAll = EXTENT
+---------------------
+SubstrateAll (HIER-LSL TYP=1 CFG=0 HGC=76 FGC=622 HEC=1440 FEC=4016 IGC=145 VHC=F VPC=F)
+CPU TIME = 0  REAL TIME = 0  LVHEAP = 3/7/7  OPS COMPLETE = 57 OF 92  ELAPSED TIME = 2
+
+dnwell = OR dnwell
+------------------
+dnwell (HIER TYP=1 CFG=3 HGC=1 FGC=1 HEC=4 FEC=4 IGC=7 VHC=F VPC=F)
+CPU TIME = 0  REAL TIME = 0  LVHEAP = 3/7/7  OPS COMPLETE = 58 OF 92  ELAPSED TIME = 2
+
+Original Layer dnwell DELETED -- LVHEAP = 3/7/7
+
+photoID = OR photoID
+--------------------
+photoID (HIER TYP=1 CFG=0 HGC=0 FGC=0 HEC=0 FEC=0 IGC=0 VHC=F VPC=F)
+CPU TIME = 0  REAL TIME = 0  LVHEAP = 3/7/7  OPS COMPLETE = 59 OF 92  ELAPSED TIME = 2
+
+Original Layer photoID DELETED -- LVHEAP = 3/7/7
+
+TMP<3> = dnwell NOT photoID
+---------------------------
+TMP<3> (HIER TYP=1 CFG=0 HGC=1 FGC=1 HEC=4 FEC=4 IGC=7 VHC=F VPC=F)
+CPU TIME = 0  REAL TIME = 0  LVHEAP = 3/7/7  OPS COMPLETE = 60 OF 92  ELAPSED TIME = 2
+
+Layer photoID DELETED -- LVHEAP = 3/7/7
+
+TMP<4> = SIZE dnwell BY -0.005
+------------------------------
+TMP<4> (HIER TYP=1 CFG=0 HGC=1 FGC=1 HEC=4 FEC=4 IGC=7 VHC=F VPC=F)
+CPU TIME = 0  REAL TIME = 0  LVHEAP = 3/7/7  OPS COMPLETE = 61 OF 92  ELAPSED TIME = 2
+
+TMP<2> = TMP<3> NOT TMP<4>
+--------------------------
+TMP<2> (HIER TYP=1 CFG=0 HGC=1 FGC=1 HEC=9 FEC=9 IGC=0 VHC=F VPC=F)
+CPU TIME = 0  REAL TIME = 0  LVHEAP = 3/7/7  OPS COMPLETE = 62 OF 92  ELAPSED TIME = 2
+
+Layer TMP<3> DELETED -- LVHEAP = 3/7/7
+
+Layer TMP<4> DELETED -- LVHEAP = 3/7/7
+
+dnw_and_nwell = dnwell AND Nwell_cond
+-------------------------------------
+dnw_and_nwell (HIER TYP=1 CFG=0 HGC=1 FGC=1 HEC=9 FEC=9 IGC=0 VHC=F VPC=F)
+CPU TIME = 0  REAL TIME = 0  LVHEAP = 3/7/7  OPS COMPLETE = 63 OF 92  ELAPSED TIME = 2
+
+4000 = OR 4000
+--------------
+4000 (HIER TYP=1 CFG=0 HGC=0 FGC=0 HEC=0 FEC=0 IGC=0 VHC=F VPC=F)
+CPU TIME = 0  REAL TIME = 0  LVHEAP = 3/7/7  OPS COMPLETE = 64 OF 92  ELAPSED TIME = 2
+
+Original Layer 4000 DELETED -- LVHEAP = 3/7/7
+
+Pwbm_cond = COPY 4000
+---------------------
+Pwbm_cond (HIER TYP=1 CFG=0 HGC=0 FGC=0 HEC=0 FEC=0 IGC=0 VHC=F VPC=F)
+CPU TIME = 0  REAL TIME = 0  LVHEAP = 3/7/7  OPS COMPLETE = 65 OF 92  ELAPSED TIME = 2
+
+Layer 4000 DELETED -- LVHEAP = 3/7/7
+
+dnw_and_pwbm = dnwell AND Pwbm_cond
+-----------------------------------
+dnw_and_pwbm (HIER TYP=1 CFG=0 HGC=0 FGC=0 HEC=0 FEC=0 IGC=0 VHC=F VPC=F)
+CPU TIME = 0  REAL TIME = 0  LVHEAP = 3/7/7  OPS COMPLETE = 66 OF 92  ELAPSED TIME = 2
+
+Layer Pwbm_cond DELETED -- LVHEAP = 3/7/7
+
+pwcut = OR pwcut
+----------------
+pwcut (HIER TYP=1 CFG=0 HGC=0 FGC=0 HEC=0 FEC=0 IGC=0 VHC=F VPC=F)
+CPU TIME = 0  REAL TIME = 0  LVHEAP = 3/7/7  OPS COMPLETE = 67 OF 92  ELAPSED TIME = 2
+
+Original Layer pwcut DELETED -- LVHEAP = 3/7/7
+
+TMP<6> = dnw_and_pwbm OR pwcut
+------------------------------
+TMP<6> (HIER TYP=1 CFG=0 HGC=0 FGC=0 HEC=0 FEC=0 IGC=0 VHC=F VPC=F)
+CPU TIME = 0  REAL TIME = 0  LVHEAP = 3/7/7  OPS COMPLETE = 68 OF 92  ELAPSED TIME = 2
+
+Layer dnw_and_pwbm DELETED -- LVHEAP = 3/7/7
+
+Layer pwcut DELETED -- LVHEAP = 3/7/7
+
+TMP<5> = dnw_and_nwell OR TMP<6>
+--------------------------------
+TMP<5> (HIER TYP=1 CFG=0 HGC=1 FGC=1 HEC=9 FEC=9 IGC=0 VHC=F VPC=F)
+CPU TIME = 0  REAL TIME = 0  LVHEAP = 3/7/7  OPS COMPLETE = 69 OF 92  ELAPSED TIME = 2
+
+Layer dnw_and_nwell DELETED -- LVHEAP = 3/7/7
+
+Layer TMP<6> DELETED -- LVHEAP = 3/7/7
+
+SubstrateCutLayer = TMP<2> OR TMP<5>
+------------------------------------
+SubstrateCutLayer (HIER TYP=1 CFG=0 HGC=1 FGC=1 HEC=9 FEC=9 IGC=0 VHC=F VPC=F)
+CPU TIME = 0  REAL TIME = 0  LVHEAP = 3/7/7  OPS COMPLETE = 70 OF 92  ELAPSED TIME = 2
+
+Layer TMP<2> DELETED -- LVHEAP = 3/7/7
+
+Layer TMP<5> DELETED -- LVHEAP = 3/7/7
+
+SUBSTRATE = SubstrateAll NOT SubstrateCutLayer
+----------------------------------------------
+SUBSTRATE (HIER TYP=1 CFG=0 HGC=77 FGC=623 HEC=1449 FEC=4025 IGC=145 VHC=F VPC=F)
+CPU TIME = 0  REAL TIME = 0  LVHEAP = 3/7/7  OPS COMPLETE = 71 OF 92  ELAPSED TIME = 2
+
+Layer SubstrateAll DELETED -- LVHEAP = 3/7/7
+
+Layer SubstrateCutLayer DELETED -- LVHEAP = 3/7/7
+
+localSub = OR localSub
+----------------------
+localSub (HIER TYP=1 CFG=1 HGC=0 FGC=0 HEC=0 FEC=0 IGC=0 VHC=F VPC=F)
+CPU TIME = 0  REAL TIME = 0  LVHEAP = 3/7/7  OPS COMPLETE = 72 OF 92  ELAPSED TIME = 2
+
+Original Layer localSub DELETED -- LVHEAP = 3/7/7
+
+TMP<7> = SIZE localSub BY -0.005
+--------------------------------
+TMP<7> (HIER TYP=1 CFG=0 HGC=0 FGC=0 HEC=0 FEC=0 IGC=0 VHC=F VPC=F)
+CPU TIME = 0  REAL TIME = 0  LVHEAP = 3/7/7  OPS COMPLETE = 73 OF 92  ELAPSED TIME = 2
+
+localSubRing = localSub NOT TMP<7>
+----------------------------------
+localSubRing (HIER TYP=1 CFG=0 HGC=0 FGC=0 HEC=0 FEC=0 IGC=0 VHC=F VPC=F)
+CPU TIME = 0  REAL TIME = 0  LVHEAP = 3/7/7  OPS COMPLETE = 74 OF 92  ELAPSED TIME = 2
+
+Layer localSub DELETED -- LVHEAP = 3/7/7
+
+Layer TMP<7> DELETED -- LVHEAP = 3/7/7
+
+SUBSTRATE1 = SUBSTRATE NOT localSubRing
+---------------------------------------
+SUBSTRATE1 (HIER TYP=1 CFG=3 HGC=77 FGC=623 HEC=1449 FEC=4025 IGC=145 VHC=F VPC=F)
+CPU TIME = 0  REAL TIME = 0  LVHEAP = 3/7/7  OPS COMPLETE = 75 OF 92  ELAPSED TIME = 2
+
+Layer SUBSTRATE DELETED -- LVHEAP = 3/7/7
+
+Layer localSubRing DELETED -- LVHEAP = 3/7/7
+
+diff = OR diff
+--------------
+diff (HIER TYP=1 CFG=1 HGC=291 FGC=1118 HEC=1232 FEC=4540 IGC=159 VHC=F VPC=F)
+CPU TIME = 0  REAL TIME = 0  LVHEAP = 3/7/7  OPS COMPLETE = 76 OF 92  ELAPSED TIME = 2
+
+Original Layer diff DELETED -- LVHEAP = 3/7/7
+
+TMP<14> = diff NOT Nwell_cond
+-----------------------------
+TMP<14> (HIER TYP=1 CFG=1 HGC=215 FGC=761 HEC=928 FEC=3112 IGC=87 VHC=F VPC=F)
+CPU TIME = 0  REAL TIME = 0  LVHEAP = 3/7/7  OPS COMPLETE = 77 OF 92  ELAPSED TIME = 2
+
+Layer diff DELETED -- LVHEAP = 3/7/7
+
+SUBSTRATE1check = SUBSTRATE1 INTERACT TMP<14>
+---------------------------------------------
+SUBSTRATE1check (HIER TYP=1 CFG=1 HGC=77 FGC=623 HEC=1449 FEC=4025 IGC=145 VHC=F VPC=F)
+CPU TIME = 0  REAL TIME = 0  LVHEAP = 3/7/7  OPS COMPLETE = 78 OF 92  ELAPSED TIME = 2
+
+Layer TMP<14> DELETED -- LVHEAP = 3/7/7
+
+NwellInDnwell = Nwell_cond INSIDE dnwell
+----------------------------------------
+NwellInDnwell (HIER TYP=1 CFG=3 HGC=0 FGC=0 HEC=0 FEC=0 IGC=0 VHC=F VPC=F)
+CPU TIME = 0  REAL TIME = 0  LVHEAP = 3/7/7  OPS COMPLETE = 79 OF 92  ELAPSED TIME = 2
+
+CONNECT started.  LVHEAP = 3/7/7  ELAPSED TIME = 2
+
+CONNECT Li1_cond FOM_CONTACTS BY Licon1fom ...
+CONNECT Li1_cond PolyNoRes BY Licon1ply ...
+CONNECT Met1_cond Li1_cond BY Mcon_cond ...
+CONNECT Met2_cond Met1_cond BY Via_cond ...
+CONNECT Met3_cond Met2_cond BY Via2_cond ...
+CONNECT Met4_cond Met3_cond BY Via3_cond ...
+CONNECT Met5_cond Met4_cond BY Via4_cond ...
+CONNECT rdl Met5_cond BY Pad_cond ...
+CONNECT Li1_cond2 SRCDRN BY licon1 ...
+CONNECT Li1_cond2 polyLicon1 BY polyConn ...
+CONNECT Met1_cond2 Li1_cond2 BY Mcon_cond2 ...
+CONNECT Met2_cond2 Met1_cond2 BY Via_cond2 ...
+CONNECT Met3_cond2 Met2_cond2 BY Via2_cond2 ...
+CONNECT lower_met Met3_cond2 BY Via3_cond2 ...
+CONNECT top_met lower_met BY top_via ...
+SCONNECT FOM_CONTACTS NTAPcon ...
+SCONNECT FOM_CONTACTS PTAPcon ...
+SCONNECT FOM_CONTACTS SRCDRNcon ...
+SCONNECT polyLicon1 Poly_check ...
+SCONNECT NTAPcon Nwell_cond ...
+SCONNECT PTAPcon SUBSTRATE1check ...
+SCONNECT PTAPcon SUBSTRATE1 ...
+SCONNECT NTAPcon NwellInDnwell ...
+SCONNECT NwellInDnwell dnwell ...
+
+<HDBG/HPRF: VHC PP:3585 NT:1626>
+<HDBG/HPRF: HCM=0=0PP+0EP+0PB+0NF ELAPSED TIME = 3>
+NODE UPDATE: FOM_CONTACTS
+NODE UPDATE: NTAPcon
+NODE UPDATE: PTAPcon
+NODE UPDATE: SRCDRNcon
+NODE UPDATE: Nwell_cond
+NODE UPDATE: SUBSTRATE1
+NODE UPDATE: polyLicon1
+NODE UPDATE: Poly_check
+NODE UPDATE: NwellInDnwell
+NODE UPDATE: dnwell
+
+NODE UPDATE completed. CPU TIME = 0  REAL TIME = 0  LVHEAP = 6/17/17
+
+CONNECT completed.  CPU TIME = 1  REAL TIME = 1  LVHEAP = 6/17/17  ELAPSED TIME = 3
+
+NETS = 415 (2102)  EPINS = 254 (2029)
+
+WARNING: Open circuit. Label VDDIO used at location (0.635,21.61) and ignored at location (0.635,80.15).
+
+
+WARNING: Open circuit. Label VDDIO used at location (0.635,21.61) and ignored at location (0.635,80.15).
+
+
+WARNING: Open circuit. Label VDDIO used at location (0.635,21.61) and ignored at location (74.365,80.15).
+
+
+WARNING: Open circuit. Label VDDIO used at location (0.635,21.61) and ignored at location (74.365,80.15).
+
+
+WARNING: Open circuit. Label VSSA used at location (0.635,38.09) and ignored at location (0.635,47.895).
+
+
+WARNING: Open circuit. Label VSSA used at location (0.635,38.09) and ignored at location (0.635,52.025).
+
+
+WARNING: Open circuit. Label VSSA used at location (0.635,38.09) and ignored at location (0.635,52.03).
+
+
+WARNING: Open circuit. Label VSSA used at location (0.635,38.09) and ignored at location (0.635,56.565).
+
+
+WARNING: Open circuit. Label VSSA used at location (0.635,38.09) and ignored at location (74.365,47.895).
+
+
+WARNING: Open circuit. Label VSSA used at location (0.635,38.09) and ignored at location (74.365,52.025).
+
+
+WARNING: Open circuit. Label VSSA used at location (0.635,38.09) and ignored at location (74.365,52.03).
+
+
+WARNING: Open circuit. Label VSSA used at location (0.635,38.09) and ignored at location (74.365,56.565).
+
+
+WARNING: Open circuit. Label VSSIO used at location (0.635,26.545) and ignored at location (0.635,191.605).
+
+
+WARNING: Open circuit. Label VSSIO used at location (0.635,26.545) and ignored at location (0.635,191.605).
+
+
+WARNING: Open circuit. Label VSSIO used at location (0.635,26.545) and ignored at location (74.365,191.605).
+
+
+WARNING: Open circuit. Label VSSIO used at location (0.635,26.545) and ignored at location (74.365,191.605).
+
+
+WARNING: Label VSSD at location (0.635,43.135) intersects multiple nets; one net chosen arbitrarily.
+
+
+WARNING: Label VSSD at location (0.635,43.135) intersects multiple nets; one net chosen arbitrarily.
+
+
+WARNING: Label VSSD at location (74.365,43.135) intersects multiple nets; one net chosen arbitrarily.
+
+
+WARNING: Label VSSD at location (74.365,43.135) intersects multiple nets; one net chosen arbitrarily.
+
+
+WARNING: Label VDDIO at location (0.635,80.15) intersects multiple nets; one net chosen arbitrarily.
+
+
+WARNING: Label VDDIO at location (0.635,80.15) intersects multiple nets; one net chosen arbitrarily.
+
+
+WARNING: Label VDDIO at location (74.365,80.15) intersects multiple nets; one net chosen arbitrarily.
+
+
+WARNING: Label VDDIO at location (74.365,80.15) intersects multiple nets; one net chosen arbitrarily.
+
+
+WARNING: Label VDDIO_Q at location (0.635,65.635) intersects multiple nets; one net chosen arbitrarily.
+
+
+WARNING: Label VDDIO_Q at location (0.635,65.635) intersects multiple nets; one net chosen arbitrarily.
+
+
+WARNING: Label VDDIO_Q at location (74.365,65.635) intersects multiple nets; one net chosen arbitrarily.
+
+
+WARNING: Label VDDIO_Q at location (74.365,65.635) intersects multiple nets; one net chosen arbitrarily.
+
+
+WARNING: Label VCCHIB at location (0.635,4.385) intersects multiple nets; one net chosen arbitrarily.
+
+
+WARNING: Label VCCHIB at location (0.635,4.385) intersects multiple nets; one net chosen arbitrarily.
+
+
+WARNING: Label VCCHIB at location (74.365,4.385) intersects multiple nets; one net chosen arbitrarily.
+
+
+WARNING: Label VCCHIB at location (74.365,4.385) intersects multiple nets; one net chosen arbitrarily.
+
+
+WARNING: Label PULLUP_H at location (14.845,0.165) intersects multiple nets; one net chosen arbitrarily.
+
+
+WARNING: Label PULLUP_H at location (14.845,0.165) intersects multiple nets; one net chosen arbitrarily.
+
+
+WARNING: Label ENABLE_H at location (12.415,0.165) intersects multiple nets; one net chosen arbitrarily.
+
+
+WARNING: Label ENABLE_H at location (12.415,0.165) intersects multiple nets; one net chosen arbitrarily.
+
+
+WARNING: Label EN_VDDIO_SIG_H at location (22.51,0.165) intersects multiple nets; one net chosen arbitrarily.
+
+
+WARNING: Label EN_VDDIO_SIG_H at location (22.51,0.165) intersects multiple nets; one net chosen arbitrarily.
+
+
+WARNING: Label ENABLE_VDDIO at location (8.635,0.165) intersects multiple nets; one net chosen arbitrarily.
+
+
+WARNING: Label ENABLE_VDDIO at location (8.66,0.165) intersects multiple nets; one net chosen arbitrarily.
+
+
+WARNING: Label INP_SEL_H at location (25.025,0.165) intersects multiple nets; one net chosen arbitrarily.
+
+
+WARNING: Label DISABLE_PULLUP_H at location (32.89,0.165) intersects multiple nets; one net chosen arbitrarily.
+
+
+WARNING: Label DISABLE_PULLUP_H at location (32.89,0.165) intersects multiple nets; one net chosen arbitrarily.
+
+
+WARNING: Label VSSIO at location (0.635,191.605) intersects multiple nets; one net chosen arbitrarily.
+
+
+WARNING: Label VSSIO at location (0.635,191.605) intersects multiple nets; one net chosen arbitrarily.
+
+
+WARNING: Label VSSIO at location (74.365,191.605) intersects multiple nets; one net chosen arbitrarily.
+
+
+WARNING: Label VSSIO at location (74.365,191.605) intersects multiple nets; one net chosen arbitrarily.
+
+
+WARNING: Label PAD_A_ESD_H at location (18.08,0.165) intersects multiple nets; one net chosen arbitrarily.
+
+
+WARNING: Label PAD_A_ESD_H at location (18.08,0.165) intersects multiple nets; one net chosen arbitrarily.
+
+
+WARNING: Label PAD at location (35.845,141.94) intersects multiple nets; one net chosen arbitrarily.
+
+
+WARNING: Label VDDIO at location (0.635,21.61) intersects multiple nets; one net chosen arbitrarily.
+
+
+WARNING: Label VDDIO at location (0.635,21.61) intersects multiple nets; one net chosen arbitrarily.
+
+
+WARNING: Label VDDIO at location (74.365,21.61) intersects multiple nets; one net chosen arbitrarily.
+
+
+WARNING: Label VDDIO at location (74.365,21.61) intersects multiple nets; one net chosen arbitrarily.
+
+
+WARNING: Label VSSIO at location (0.635,26.545) intersects multiple nets; one net chosen arbitrarily.
+
+
+WARNING: Label VSSIO at location (0.635,26.545) intersects multiple nets; one net chosen arbitrarily.
+
+
+WARNING: Label VSSIO at location (74.365,26.545) intersects multiple nets; one net chosen arbitrarily.
+
+
+WARNING: Label VSSIO at location (74.365,26.545) intersects multiple nets; one net chosen arbitrarily.
+
+
+WARNING: Label FILT_IN_H at location (20.65,0.705) intersects multiple nets; one net chosen arbitrarily.
+
+
+WARNING: Label FILT_IN_H at location (20.65,0.705) intersects multiple nets; one net chosen arbitrarily.
+
+
+WARNING: Label TIE_LO_ESD at location (27.905,0.165) intersects multiple nets; one net chosen arbitrarily.
+
+
+WARNING: Label TIE_LO_ESD at location (27.905,0.165) intersects multiple nets; one net chosen arbitrarily.
+
+
+WARNING: Label XRES_H_N at location (29.3,0.165) intersects multiple nets; one net chosen arbitrarily.
+
+
+WARNING: Label XRES_H_N at location (29.3,0.165) intersects multiple nets; one net chosen arbitrarily.
+
+
+WARNING: Label TIE_HI_ESD at location (30.83,0.165) intersects multiple nets; one net chosen arbitrarily.
+
+
+WARNING: Label TIE_HI_ESD at location (30.83,0.165) intersects multiple nets; one net chosen arbitrarily.
+
+
+WARNING: Label TIE_WEAK_HI_H at location (72.355,0.165) intersects multiple nets; one net chosen arbitrarily.
+
+
+WARNING: Label TIE_WEAK_HI_H at location (72.365,0.165) intersects multiple nets; one net chosen arbitrarily.
+
+
+WARNING: Label VCCD at location (0.635,10.435) intersects multiple nets; one net chosen arbitrarily.
+
+
+WARNING: Label VCCD at location (0.635,10.435) intersects multiple nets; one net chosen arbitrarily.
+
+
+WARNING: Label VCCD at location (74.365,10.435) intersects multiple nets; one net chosen arbitrarily.
+
+
+WARNING: Label VCCD at location (74.365,10.435) intersects multiple nets; one net chosen arbitrarily.
+
+
+WARNING: Label VDDA at location (0.48,16.74) intersects multiple nets; one net chosen arbitrarily.
+
+
+WARNING: Label VDDA at location (0.48,16.74) intersects multiple nets; one net chosen arbitrarily.
+
+
+WARNING: Label VDDA at location (74.52,16.74) intersects multiple nets; one net chosen arbitrarily.
+
+
+WARNING: Label VDDA at location (74.52,16.74) intersects multiple nets; one net chosen arbitrarily.
+
+
+WARNING: Label VSWITCH at location (0.635,33.235) intersects multiple nets; one net chosen arbitrarily.
+
+
+WARNING: Label VSWITCH at location (0.635,33.235) intersects multiple nets; one net chosen arbitrarily.
+
+
+WARNING: Label VSWITCH at location (74.365,33.235) intersects multiple nets; one net chosen arbitrarily.
+
+
+WARNING: Label VSWITCH at location (74.365,33.235) intersects multiple nets; one net chosen arbitrarily.
+
+
+WARNING: Label VSSA at location (0.635,38.09) intersects multiple nets; one net chosen arbitrarily.
+
+
+WARNING: Label VSSA at location (0.635,38.09) intersects multiple nets; one net chosen arbitrarily.
+
+
+WARNING: Label VSSA at location (74.365,38.09) intersects multiple nets; one net chosen arbitrarily.
+
+
+WARNING: Label VSSA at location (74.365,38.09) intersects multiple nets; one net chosen arbitrarily.
+
+
+WARNING: Label VSSIO_Q at location (0.635,60.4) intersects multiple nets; one net chosen arbitrarily.
+
+
+WARNING: Label VSSIO_Q at location (0.635,60.4) intersects multiple nets; one net chosen arbitrarily.
+
+
+WARNING: Label VSSIO_Q at location (74.365,60.4) intersects multiple nets; one net chosen arbitrarily.
+
+
+WARNING: Label VSSIO_Q at location (74.365,60.4) intersects multiple nets; one net chosen arbitrarily.
+
+
+WARNING: Label VSSA at location (0.635,47.895) intersects multiple nets; one net chosen arbitrarily.
+
+
+WARNING: Label VSSA at location (74.365,47.895) intersects multiple nets; one net chosen arbitrarily.
+
+
+WARNING: Label AMUXBUS_B at location (0.635,49.245) intersects multiple nets; one net chosen arbitrarily.
+
+
+WARNING: Label AMUXBUS_B at location (74.365,49.245) intersects multiple nets; one net chosen arbitrarily.
+
+
+WARNING: Label VSSA at location (0.635,52.025) intersects multiple nets; one net chosen arbitrarily.
+
+
+WARNING: Label VSSA at location (0.635,52.03) intersects multiple nets; one net chosen arbitrarily.
+
+
+WARNING: Label VSSA at location (74.365,52.025) intersects multiple nets; one net chosen arbitrarily.
+
+
+WARNING: Label VSSA at location (74.365,52.03) intersects multiple nets; one net chosen arbitrarily.
+
+
+WARNING: Label AMUXBUS_A at location (0.635,54.595) intersects multiple nets; one net chosen arbitrarily.
+
+
+WARNING: Label AMUXBUS_A at location (74.365,54.595) intersects multiple nets; one net chosen arbitrarily.
+
+
+WARNING: Label VSSA at location (0.635,56.565) intersects multiple nets; one net chosen arbitrarily.
+
+
+WARNING: Label VSSA at location (74.365,56.565) intersects multiple nets; one net chosen arbitrarily.
+
+
+Layer Licon1fom DELETED -- LVHEAP = 6/17/17
+
+Layer Licon1ply DELETED -- LVHEAP = 6/17/17
+
+Layer PolyNoRes DELETED -- LVHEAP = 6/17/17
+
+Layer Mcon_cond DELETED -- LVHEAP = 6/17/17
+
+Layer Li1_cond DELETED -- LVHEAP = 6/17/17
+
+Layer Via_cond DELETED -- LVHEAP = 6/17/17
+
+Layer Met1_cond DELETED -- LVHEAP = 6/17/17
+
+Layer Via2_cond DELETED -- LVHEAP = 6/17/17
+
+Layer Met2_cond DELETED -- LVHEAP = 6/17/17
+
+Layer Via3_cond DELETED -- LVHEAP = 6/17/17
+
+Layer Met3_cond DELETED -- LVHEAP = 6/17/17
+
+Layer Via4_cond DELETED -- LVHEAP = 6/17/17
+
+Layer Met4_cond DELETED -- LVHEAP = 6/17/17
+
+Layer Pad_cond DELETED -- LVHEAP = 6/17/17
+
+Layer rdl DELETED -- LVHEAP = 6/17/17
+
+Layer Met5_cond DELETED -- LVHEAP = 6/17/17
+
+Layer licon1 DELETED -- LVHEAP = 6/17/17
+
+Layer SRCDRN DELETED -- LVHEAP = 5/17/17
+
+Layer polyConn DELETED -- LVHEAP = 5/17/17
+
+Layer Mcon_cond2 DELETED -- LVHEAP = 5/17/17
+
+Layer Li1_cond2 DELETED -- LVHEAP = 5/17/17
+
+Layer Via_cond2 DELETED -- LVHEAP = 5/17/17
+
+Layer Met1_cond2 DELETED -- LVHEAP = 5/17/17
+
+Layer Via2_cond2 DELETED -- LVHEAP = 5/17/17
+
+Layer Met2_cond2 DELETED -- LVHEAP = 5/17/17
+
+Layer Via3_cond2 DELETED -- LVHEAP = 5/17/17
+
+Layer Met3_cond2 DELETED -- LVHEAP = 5/17/17
+
+Layer top_via DELETED -- LVHEAP = 5/17/17
+
+Layer top_met DELETED -- LVHEAP = 5/17/17
+
+Layer lower_met DELETED -- LVHEAP = 5/17/17
+
+HIERARCHICAL CONNECTIVITY marked on layer FOM_CONTACTS
+
+HIERARCHICAL CONNECTIVITY marked on layer NTAPcon
+
+HIERARCHICAL CONNECTIVITY marked on layer PTAPcon
+
+HIERARCHICAL CONNECTIVITY marked on layer SRCDRNcon
+
+HIERARCHICAL CONNECTIVITY marked on layer Nwell_cond
+
+HIERARCHICAL CONNECTIVITY marked on layer SUBSTRATE1
+
+HIERARCHICAL CONNECTIVITY marked on layer polyLicon1
+
+HIERARCHICAL CONNECTIVITY marked on layer Poly_check
+
+HIERARCHICAL CONNECTIVITY marked on layer NwellInDnwell
+
+HIERARCHICAL CONNECTIVITY marked on layer dnwell
+
+r_0_soft_majority_diff_tap::TMP<11> = EXT [FOM_CONTACTS] SRCDRNcon == 0 NOT CONNECTED INSIDE ALSO
+-------------------------------------------------------------------------------------------------
+r_0_soft_majority_diff_tap::TMP<11> (HIER-PMF TYP=2 CFG=1 HGC=0 FGC=0 HEC=0 FEC=0 IGC=0 VHC=F VPC=F)
+CPU TIME = 0  REAL TIME = 0  LVHEAP = 5/17/17  OPS COMPLETE = 80 OF 92  ELAPSED TIME = 3
+
+Layer SRCDRNcon DELETED -- LVHEAP = 5/17/17
+
+r_0_soft_majority_diff_tap::<1> = FOM_CONTACTS WITH EDGE r_0_soft_majority_diff_tap::TMP<11>
+--------------------------------------------------------------------------------------------
+r_0_soft_majority_diff_tap::<1> (HIER TYP=1 CFG=1 HGC=0 FGC=0 HEC=0 FEC=0 IGC=0 VHC=F VPC=F)
+CPU TIME = 0  REAL TIME = 0  LVHEAP = 5/17/17  OPS COMPLETE = 81 OF 92  ELAPSED TIME = 3
+
+Layer FOM_CONTACTS DELETED -- LVHEAP = 5/17/17
+
+Layer r_0_soft_majority_diff_tap::TMP<11> DELETED -- LVHEAP = 5/17/17
+
+Layer r_0_soft_majority_diff_tap::<1> DELETED -- LVHEAP = 5/17/17
+
+DRC RuleCheck r_0_soft_majority_diff_tap COMPLETED. Number of Results = 0 (0)
+
+r_1_soft_majority_Nwell_cond::TMP<12> = EXT [NTAPcon] Nwell_cond == 0 NOT CONNECTED INSIDE ALSO
+-----------------------------------------------------------------------------------------------
+r_1_soft_majority_Nwell_cond::TMP<12> (HIER-PMF TYP=2 CFG=1 HGC=0 FGC=0 HEC=0 FEC=0 IGC=0 VHC=F VPC=F)
+CPU TIME = 0  REAL TIME = 0  LVHEAP = 5/17/17  OPS COMPLETE = 82 OF 92  ELAPSED TIME = 3
+
+r_1_soft_majority_Nwell_cond::<1> = NTAPcon WITH EDGE r_1_soft_majority_Nwell_cond::TMP<12>
+-------------------------------------------------------------------------------------------
+r_1_soft_majority_Nwell_cond::<1> (HIER TYP=1 CFG=1 HGC=0 FGC=0 HEC=0 FEC=0 IGC=0 VHC=F VPC=F)
+CPU TIME = 0  REAL TIME = 0  LVHEAP = 5/17/17  OPS COMPLETE = 83 OF 92  ELAPSED TIME = 3
+
+Layer r_1_soft_majority_Nwell_cond::TMP<12> DELETED -- LVHEAP = 5/17/17
+
+Layer r_1_soft_majority_Nwell_cond::<1> DELETED -- LVHEAP = 5/17/17
+
+DRC RuleCheck r_1_soft_majority_Nwell_cond COMPLETED. Number of Results = 0 (0)
+
+r_2_soft_float_Nwell_cond::<1> = Nwell_cond NOT ENCLOSE NTAPcon
+---------------------------------------------------------------
+r_2_soft_float_Nwell_cond::<1> (HIER TYP=1 CFG=1 HGC=0 FGC=0 HEC=0 FEC=0 IGC=0 VHC=F VPC=F)
+CPU TIME = 0  REAL TIME = 0  LVHEAP = 5/17/17  OPS COMPLETE = 84 OF 92  ELAPSED TIME = 3
+
+Layer Nwell_cond DELETED -- LVHEAP = 5/17/17
+
+Layer NTAPcon DELETED -- LVHEAP = 5/17/17
+
+Layer r_2_soft_float_Nwell_cond::<1> DELETED -- LVHEAP = 5/17/17
+
+DRC RuleCheck r_2_soft_float_Nwell_cond COMPLETED. Number of Results = 0 (0)
+
+r_3_soft_float_substrate::<1> = SUBSTRATE1check NOT ENCLOSE PTAPcon
+-------------------------------------------------------------------
+r_3_soft_float_substrate::<1> (HIER TYP=1 CFG=1 HGC=0 FGC=0 HEC=0 FEC=0 IGC=0 VHC=F VPC=F)
+CPU TIME = 0  REAL TIME = 0  LVHEAP = 5/17/17  OPS COMPLETE = 85 OF 92  ELAPSED TIME = 3
+
+Layer SUBSTRATE1check DELETED -- LVHEAP = 5/17/17
+
+Layer r_3_soft_float_substrate::<1> DELETED -- LVHEAP = 5/17/17
+
+DRC RuleCheck r_3_soft_float_substrate COMPLETED. Number of Results = 0 (0)
+
+r_4_soft_majority_substrate::TMP<15> = EXT [PTAPcon] SUBSTRATE1 == 0 NOT CONNECTED INSIDE ALSO
+----------------------------------------------------------------------------------------------
+r_4_soft_majority_substrate::TMP<15> (HIER-PMF TYP=2 CFG=1 HGC=0 FGC=0 HEC=0 FEC=0 IGC=0 VHC=F VPC=F)
+CPU TIME = 0  REAL TIME = 0  LVHEAP = 5/17/17  OPS COMPLETE = 86 OF 92  ELAPSED TIME = 3
+
+Layer SUBSTRATE1 DELETED -- LVHEAP = 5/17/17
+
+r_4_soft_majority_substrate::<1> = PTAPcon WITH EDGE r_4_soft_majority_substrate::TMP<15>
+-----------------------------------------------------------------------------------------
+r_4_soft_majority_substrate::<1> (HIER TYP=1 CFG=1 HGC=0 FGC=0 HEC=0 FEC=0 IGC=0 VHC=F VPC=F)
+CPU TIME = 0  REAL TIME = 0  LVHEAP = 5/17/17  OPS COMPLETE = 87 OF 92  ELAPSED TIME = 3
+
+Layer PTAPcon DELETED -- LVHEAP = 5/17/17
+
+Layer r_4_soft_majority_substrate::TMP<15> DELETED -- LVHEAP = 5/17/17
+
+Layer r_4_soft_majority_substrate::<1> DELETED -- LVHEAP = 5/17/17
+
+DRC RuleCheck r_4_soft_majority_substrate COMPLETED. Number of Results = 0 (0)
+
+r_5_soft_multinet_Poly_check::TMP<18> = EXT [polyLicon1] Poly_check == 0 NOT CONNECTED INSIDE ALSO
+--------------------------------------------------------------------------------------------------
+r_5_soft_multinet_Poly_check::TMP<18> (HIER-PMF TYP=2 CFG=1 HGC=0 FGC=0 HEC=0 FEC=0 IGC=0 VHC=F VPC=F)
+CPU TIME = 0  REAL TIME = 0  LVHEAP = 5/17/17  OPS COMPLETE = 88 OF 92  ELAPSED TIME = 3
+
+r_5_soft_multinet_Poly_check::TMP<17> = polyLicon1 WITH EDGE r_5_soft_multinet_Poly_check::TMP<18>
+--------------------------------------------------------------------------------------------------
+r_5_soft_multinet_Poly_check::TMP<17> (HIER TYP=1 CFG=1 HGC=0 FGC=0 HEC=0 FEC=0 IGC=0 VHC=F VPC=F)
+CPU TIME = 0  REAL TIME = 0  LVHEAP = 5/17/17  OPS COMPLETE = 89 OF 92  ELAPSED TIME = 3
+
+Layer polyLicon1 DELETED -- LVHEAP = 5/17/17
+
+Layer r_5_soft_multinet_Poly_check::TMP<18> DELETED -- LVHEAP = 5/17/17
+
+r_5_soft_multinet_Poly_check::<1> = Poly_check INTERACT r_5_soft_multinet_Poly_check::TMP<17>
+---------------------------------------------------------------------------------------------
+r_5_soft_multinet_Poly_check::<1> (HIER TYP=1 CFG=1 HGC=0 FGC=0 HEC=0 FEC=0 IGC=0 VHC=F VPC=F)
+CPU TIME = 0  REAL TIME = 0  LVHEAP = 5/17/17  OPS COMPLETE = 90 OF 92  ELAPSED TIME = 3
+
+Layer Poly_check DELETED -- LVHEAP = 5/17/17
+
+Layer r_5_soft_multinet_Poly_check::TMP<17> DELETED -- LVHEAP = 5/17/17
+
+Layer r_5_soft_multinet_Poly_check::<1> DELETED -- LVHEAP = 5/17/17
+
+DRC RuleCheck r_5_soft_multinet_Poly_check COMPLETED. Number of Results = 0 (0)
+
+r_6_soft_majority_dnwell::TMP<19> = EXT [NwellInDnwell] dnwell == 0 NOT CONNECTED INSIDE ALSO
+---------------------------------------------------------------------------------------------
+r_6_soft_majority_dnwell::TMP<19> (HIER-PMF TYP=2 CFG=1 HGC=0 FGC=0 HEC=0 FEC=0 IGC=0 VHC=F VPC=F)
+CPU TIME = 0  REAL TIME = 0  LVHEAP = 5/17/17  OPS COMPLETE = 91 OF 92  ELAPSED TIME = 3
+
+Layer dnwell DELETED -- LVHEAP = 5/17/17
+
+r_6_soft_majority_dnwell::<1> = NwellInDnwell WITH EDGE r_6_soft_majority_dnwell::TMP<19>
+-----------------------------------------------------------------------------------------
+r_6_soft_majority_dnwell::<1> (HIER TYP=1 CFG=1 HGC=0 FGC=0 HEC=0 FEC=0 IGC=0 VHC=F VPC=F)
+CPU TIME = 0  REAL TIME = 0  LVHEAP = 5/17/17  OPS COMPLETE = 92 OF 92  ELAPSED TIME = 3
+
+Layer NwellInDnwell DELETED -- LVHEAP = 5/17/17
+
+Layer r_6_soft_majority_dnwell::TMP<19> DELETED -- LVHEAP = 5/17/17
+
+Layer r_6_soft_majority_dnwell::<1> DELETED -- LVHEAP = 5/17/17
+
+WRITE to ASCII DRC Results Database soft.drc.results COMPLETED
+
+DRC RuleCheck r_6_soft_majority_dnwell COMPLETED. Number of Results = 0 (0)
+
+Cumulative ONE-LAYER BOOLEAN Time: CPU = 0  REAL = 0
+Cumulative TWO-LAYER BOOLEAN Time: CPU = 0  REAL = 0
+Cumulative POLYGON TOPOLOGICAL Time: CPU = 0  REAL = 0
+Cumulative SIZE Time: CPU = 0  REAL = 0
+Cumulative TWO-LAYER DRC Time: CPU = 0  REAL = 0
+Cumulative WITH EDGE Time: CPU = 0  REAL = 0
+Cumulative MISCELLANEOUS Time: CPU = 0  REAL = 0
+Cumulative CONNECT Time: CPU = 0  REAL = 0
+Cumulative RDB Time: CPU = 0  REAL = 0
+
+--- CALIBRE::DRC-H EXECUTIVE MODULE COMPLETED.  CPU TIME = 1  REAL TIME = 1
+--- TOTAL RULECHECKS EXECUTED = 7
+--- TOTAL RESULTS GENERATED = 0 (0)
+--- DRC RESULTS DATABASE FILE = soft.drc.results (ASCII)
+
+--- CALIBRE::DRC-H COMPLETED - Sun Jun  6 13:24:39 2021
+--- TOTAL CPU TIME = 1  REAL TIME = 3
+--- PROCESSOR COUNT = 1
+--- SUMMARY REPORT FILE = soft.drc.summary
+

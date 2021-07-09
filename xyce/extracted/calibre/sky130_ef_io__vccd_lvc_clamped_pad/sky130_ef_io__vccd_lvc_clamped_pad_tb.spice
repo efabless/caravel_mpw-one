@@ -24,34 +24,26 @@
 
 Xsky130_ef_io__vccd_lvc_clamped_pad  
 + VSS		; VSSD 
-+ VSS		; VSSIO
 + VDD1V8	; VCCD 
 + VDD3V3	; VDDIO 
-+ VSS		; VSSA 
++ vss		; VSSIO 
 + VDD1V8	; VCCHIB 
 + VDD3V3	; VDDA 
 + VDD3V3	; VSWITCH 
-+ OPEN1		; AMUXBUS_B 
-+ OPEN2		; AMUXBUS_A 
++ VSS		; VSSA 
++ OPEN1		; AMUXBUS_B  
++ OPEN2		; AMUXBUS_A  
 + VSS		; VSSIO_Q 
 + VDD3V3	; VDDIO_Q
 + sky130_ef_io__vccd_lvc_clamped_pad
-
 
 
 vvss		VSS		0 		dc 	0
 vvdd1v8		VDD1V8		0 		pwl	0 0 3u  1.8  1m 1.8
 vvdd3v3		VDD3V3		0 		pwl	0 0 2u  3.3  1m 3.3
 
-vzero		ZERO		0		dc	0
-vone1v8		ONE1V8		0		pwl	0 0 5.5u 0 5.6u 1.8  1m 1.8
-vone3v3		ONE3V3		0		pwl	0 0 5.5u 0 5.6u 3.3  1m 3.3
 
-vout		OUT		0		pwl	0 0 8u 0  8.1u 1.8 11u 1.8 11.1u 0 15u 0
-rload		PAD		0		1000K
-
-
-.PRINT TRAN FORMAT=RAW v(pad) v(out) i(vvdd3v3) i(vvdd1v8) v(vdd3v3) v(vdd1v8) v(ONE1V8) v(ONE3V3) i(vone1v8) i(vone3v3) i(vout) i(rload)
+.PRINT TRAN FORMAT=RAW i(vvdd3v3) i(vvdd1v8) v(vdd3v3) v(vdd1v8) 
 .TRAN 10n 15u
 
 .END
