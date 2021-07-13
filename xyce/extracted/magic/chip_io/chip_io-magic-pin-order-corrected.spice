@@ -5,7 +5,8 @@
 
 *******
 
-* Black-box entry subcircuit for sky130_ef_io__com_bus_slice_20um abstract view
+*********------------------------------------------ Black-box entry subcircuit for sky130_ef_io__com_bus_slice_20um abstract view
+
 .subckt sky130_ef_io__com_bus_slice_20um AMUXBUS_A AMUXBUS_B VSSA VDDA VSWITCH VDDIO_Q
 + VCCHIB VDDIO VCCD VSSIO VSSD VSSIO_Q
 .ends
@@ -15,9 +16,9 @@
 + VCCHIB VDDIO VCCD VSSIO VSSD VSSIO_Q
 .ends
 
-***********************************
 
-* Black-box entry subcircuit for sky130_ef_io__gpiov2_pad_wrapped abstract view
+*********------------------------------------------  Black-box entry subcircuit for sky130_ef_io__gpiov2_pad_wrapped abstract view
+
 .subckt sky130_ef_io__gpiov2_pad_wrapped IN_H PAD_A_NOESD_H PAD_A_ESD_0_H PAD_A_ESD_1_H
 + PAD DM[2] DM[1] DM[0] HLD_H_N IN INP_DIS IB_MODE_SEL ENABLE_H ENABLE_VDDA_H ENABLE_INP_H
 + OE_N TIE_HI_ESD TIE_LO_ESD SLOW VTRIP_SEL HLD_OVR ANALOG_EN ANALOG_SEL ENABLE_VDDIO
@@ -26,35 +27,39 @@
 ******
 ******
 XXsky130_ef_io__gpiov2_pad_wrapped   VSSD VSSIO VSSA VSSIO_Q VDDIO VDDIO_Q PAD_A_ESD_1_H PAD PAD_A_ESD_0_H IB_MODE_SEL ENABLE_INP_H ENABLE_H VDDA ENABLE_VDDA_H VCCD OE_N VTRIP_SEL VCCHIB ENABLE_VSWITCH_H OUT
-+ HLD_OVR DM[2] ANALOG_SEL HLD_H_N ANALOG_EN INP_DIS ANALOG_POL DM[0] PAD_A_NOESD_H DM[1] SLOW TIE_HI_ESD IN IN_H ENABLE_VDDIO TIE_LO_ESD VSWITCH AMUXBUS_A AMUXBUS_B
++ HLD_OVR DM[2] ANALOG_SEL HLD_H_N ANALOG_EN INP_DIS ANALOG_POL DM[0] PAD_A_NOESD_H DM[1] SLOW TIE_HI_ESD IN IN_H ENABLE_VDDIO TIE_LO_ESD VSWITCH AMUXBUS_A AMUXBUS_B 
 ******
 ******
 .ends
 
-***********************************
 
+*********------------------------------------------ Black-box entry subcircuit for sky130_ef_io__com_bus_slice_5um abstract view
 
-* Black-box entry subcircuit for sky130_ef_io__com_bus_slice_5um abstract view
 .subckt sky130_ef_io__com_bus_slice_5um AMUXBUS_A AMUXBUS_B VSSA VDDA VSWITCH VDDIO_Q
 + VCCHIB VDDIO VCCD VSSIO VSSD VSSIO_Q
 .ends
 
-* Black-box entry subcircuit for sky130_ef_io__vccd_lvc_clamped_pad abstract view
+*********------------------------------------------ Black-box entry subcircuit for sky130_ef_io__vccd_lvc_clamped_pad abstract view
+
 .subckt sky130_ef_io__vccd_lvc_clamped_pad AMUXBUS_A AMUXBUS_B VCCD_PAD VSSA VDDA
 + VSWITCH VDDIO_Q VCCHIB VDDIO VCCD VSSIO VSSD VSSIO_Q
+
+XXsky130_ef_io__vccd_lvc_clamped_pad    VSSD VCCD VDDIO VSSIO VCCHIB VDDA VSWITCH VSSA AMUXBUS_B AMUXBUS_A VSSIO_Q VDDIO_Q
+
 .ends
 
-* Black-box entry subcircuit for sky130_ef_io__com_bus_slice_10um abstract view
+*********------------------------------------------ Black-box entry subcircuit for sky130_ef_io__com_bus_slice_10um abstract view
 .subckt sky130_ef_io__com_bus_slice_10um AMUXBUS_A AMUXBUS_B VSSA VDDA VSWITCH VDDIO_Q
 + VCCHIB VDDIO VCCD VSSIO VSSD VSSIO_Q
 .ends
 
-* Black-box entry subcircuit for sky130_ef_io__disconnect_vdda_slice_5um abstract view
+*********------------------------------------------ Black-box entry subcircuit for sky130_ef_io__disconnect_vdda_slice_5um abstract view
 .subckt sky130_ef_io__disconnect_vdda_slice_5um AMUXBUS_A AMUXBUS_B VSWITCH VDDIO_Q
 + VCCHIB VDDIO VCCD VSSIO VSSD VSSIO_Q
 .ends
 
-* Black-box entry subcircuit for sky130_ef_io__corner_pad abstract view
+*********------------------------------------------ Black-box entry subcircuit for sky130_ef_io__corner_pad abstract view
+
 .subckt sky130_ef_io__corner_pad AMUXBUS_A AMUXBUS_B VSSA VDDA VSWITCH VDDIO_Q VCCHIB
 + VDDIO VCCD VSSIO VSSD VSSIO_Q
 .ends
@@ -69,7 +74,8 @@ XXsky130_ef_io__vddio_hvc_clamped_pad   VSSD VSSIO VDDIO VSSA AMUXBUS_B AMUXBUS_
 ******
 .ends
 
-* Black-box entry subcircuit for sky130_ef_io__vssio_hvc_clamped_pad abstract view
+********------------------------------------------Black-box entry subcircuit for sky130_ef_io__vssio_hvc_clamped_pad abstract view
+
 .subckt sky130_ef_io__vssio_hvc_clamped_pad AMUXBUS_A AMUXBUS_B VSSIO_PAD VSSA VDDA
 + VSWITCH VDDIO_Q VCCHIB VDDIO VCCD VSSIO VSSD VSSIO_Q
 ******
@@ -79,12 +85,14 @@ XXsky130_ef_io__vssio_hvc_clamped_pad   VSSD VSSIO VDDIO VCCHIB VCCD VDDA VSWITC
 ******
 .ends
 
-* Black-box entry subcircuit for sky130_ef_io__connect_vcchib_vccd_and_vswitch_vddio_slice_20um abstract view
+*********------------------------------------------ Black-box entry subcircuit for sky130_ef_io__connect_vcchib_vccd_and_vswitch_vddio_slice_20um abstract view
+
 .subckt sky130_ef_io__connect_vcchib_vccd_and_vswitch_vddio_slice_20um AMUXBUS_A AMUXBUS_B
 + VSSA VDDA VDDIO_Q VDDIO VCCD VSSIO VSSD VSSIO_Q VSWITCH VCCHIB
 .ends
 
-* Black-box entry subcircuit for sky130_ef_io__vdda_hvc_clamped_pad abstract view
+*********------------------------------------------ Black-box entry subcircuit for sky130_ef_io__vdda_hvc_clamped_pad abstract view
+
 .subckt sky130_ef_io__vdda_hvc_clamped_pad AMUXBUS_A AMUXBUS_B VDDA_PAD VSSA VDDA
 + VSWITCH VDDIO_Q VCCHIB VDDIO VCCD VSSIO VSSD VSSIO_Q
 ******
@@ -94,17 +102,19 @@ XX sky130_ef_io__vdda_hvc_clamped_pad   VSSD VSSA VDDA VDDIO VCCHIB VCCD VSSIO V
 ******
 .ends
 
-* Black-box entry subcircuit for sky130_ef_io__vccd_lvc_clamped2_pad abstract view
+*********------------------------------------------ Black-box entry subcircuit for sky130_ef_io__vccd_lvc_clamped2_pad abstract view
+
 .subckt sky130_ef_io__vccd_lvc_clamped2_pad AMUXBUS_A AMUXBUS_B VCCD_PAD VSSA VDDA
 + VSWITCH VDDIO_Q VCCHIB VDDIO VCCD VSSIO VSSD VSSIO_Q
 ******
 ******
-XXsky130_ef_io__vccd_lvc_clamped_pad    VSSD VCCD VDDIO VSSIO VCCHIB VDDA VSWITCH VSSA AMUXBUS_B AMUXBUS_A VSSIO_Q VDDIO_Q
+XXsky130_ef_io__vccd_lvc_clamped2_pad   VSSD VSSIO VCCD VDDIO VSSA VCCHIB VDDA VSWITCH AMUXBUS_B AMUXBUS_A VSSIO_Q VDDIO_Q
 ******
 ******
 .ends
 
-* Black-box entry subcircuit for sky130_ef_io__vssa_hvc_clamped_pad abstract view
+*********------------------------------------------ Black-box entry subcircuit for sky130_ef_io__vssa_hvc_clamped_pad abstract view
+
 .subckt sky130_ef_io__vssa_hvc_clamped_pad AMUXBUS_A AMUXBUS_B VSSA_PAD VSSA VDDA
 + VSWITCH VDDIO_Q VCCHIB VDDIO VCCD VSSIO VSSD VSSIO_Q
 ******
@@ -114,7 +124,8 @@ XXsky130_ef_io__vssa_hvc_clamped_pad   VSSD VSSA VDDA VDDIO VCCHIB VCCD VSSIO VS
 ******
 .ends
 
-* Black-box entry subcircuit for sky130_ef_io__disconnect_vccd_slice_5um abstract view
+********------------------------------------------* Black-box entry subcircuit for sky130_ef_io__disconnect_vccd_slice_5um abstract view
+
 .subckt sky130_ef_io__disconnect_vccd_slice_5um AMUXBUS_A AMUXBUS_B VSSA VDDA VSWITCH
 + VDDIO_Q VCCHIB VDDIO VSSIO VSSIO_Q
 .ends
@@ -131,7 +142,8 @@ XXsky130_fd_io__top_xres4v2  VSSD VDDIO VCCHIB VDDIO_Q ENABLE_H EN_VDDIO_SIG_H I
 ******
 .ends
 
-* Black-box entry subcircuit for sky130_ef_io__vssd_lvc_clamped2_pad abstract view
+*********------------------------------------------ Black-box entry subcircuit for sky130_ef_io__vssd_lvc_clamped2_pad abstract view
+
 .subckt sky130_ef_io__vssd_lvc_clamped2_pad AMUXBUS_A AMUXBUS_B VSSD_PAD VSSA VDDA
 + VSWITCH VDDIO_Q VCCHIB VDDIO VCCD VSSIO VSSD VSSIO_Q
 ******
@@ -141,7 +153,8 @@ XXsky130_ef_io__vssd_lvc_clamped2_pad   VSSD VSSIO VCCD VDDIO VSSA VCCHIB VDDA V
 ******
 .ends
 
-* Black-box entry subcircuit for sky130_ef_io__vssd_lvc_clamped_pad abstract view
+*********------------------------------------------ Black-box entry subcircuit for sky130_ef_io__vssd_lvc_clamped_pad abstract view
+
 .subckt sky130_ef_io__vssd_lvc_clamped_pad AMUXBUS_A AMUXBUS_B VSSD_PAD VSSA VDDA
 + VSWITCH VDDIO_Q VCCHIB VDDIO VCCD VSSIO VSSD VSSIO_Q
 ******

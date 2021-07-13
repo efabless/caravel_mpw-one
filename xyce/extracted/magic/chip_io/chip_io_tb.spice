@@ -4,7 +4,7 @@
 * .lib $PDK_ROOT/sky130A-xyce/libs.tech/xyce/sky130.lib.spice tt
 .lib ../../../../../../../pdks/sky130A-xyce/libs.tech/xyce/sky130.lib.spice tt
 
-.include "chip_io-magic.spice"
+.include "chip_io-magic-pin-order-corrected.spice"
 
 ***************************************
 
