@@ -777,8 +777,10 @@ XFILLER_716 gpio_pad/AMUXBUS_A gpio_pad/AMUXBUS_B vssa1 vdda1 vddio gpio_pad/VDD
 + vccd vddio vccd1 vssio vssd1 gpio_pad/VSSIO_Q sky130_ef_io__com_bus_slice_20um
 XFILLER_705 gpio_pad/AMUXBUS_A gpio_pad/AMUXBUS_B vssa1 vdda1 vddio gpio_pad/VDDIO_Q
 + vccd vddio vccd1 vssio vssd1 gpio_pad/VSSIO_Q sky130_ef_io__com_bus_slice_1um
-Xuser2_vdda_hvclamp_pad gpio_pad/AMUXBUS_A gpio_pad/AMUXBUS_B vdda2_pad vssa2 vdda2
-+ vddio gpio_pad/VDDIO_Q vccd vddio vccd2 vssio vssd2 gpio_pad/VSSIO_Q sky130_ef_io__vdda_hvc_clamped_pad
+Xuser2_vdda_hvclamp_pad gpio_pad/AMUXBUS_A gpio_pad/AMUXBUS_B vssa2 vdda2  vddio gpio_pad/VDDIO_Q vccd vddio     vccd2     vssio   vssd2 gpio_pad/VSSIO_Q sky130_ef_io__vdda_hvc_clamped_pad
+
+***.subckt sky130_ef_io__vdda_hvc_clamped_pad AMUXBUS_A AMUXBUS_B VSSA VDDA  VSWITCH VDDIO_Q VCCHIB VDDIO VCCD VSSIO VSSD VSSIO_Q
+
 XFILLER_579 gpio_pad/AMUXBUS_A gpio_pad/AMUXBUS_B vssa2 vdda2 vddio gpio_pad/VDDIO_Q
 + vccd vddio vccd2 vssio vssd2 gpio_pad/VSSIO_Q sky130_ef_io__com_bus_slice_5um
 XFILLER_568 gpio_pad/AMUXBUS_A gpio_pad/AMUXBUS_B vssa2 vdda2 vddio gpio_pad/VDDIO_Q

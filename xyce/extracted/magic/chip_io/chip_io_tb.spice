@@ -3,10 +3,23 @@
 * Most models come from here:
 * .lib $PDK_ROOT/sky130A-xyce/libs.tech/xyce/sky130.lib.spice tt
 
-.lib ../../../../../../../pdks/sky130A-xyce/libs.tech/xyce/sky130.lib.spice tt
+.lib ../../../sky130A-xyce/libs.tech/xyce/sky130.lib.spice tt
+
+.include ./sky130_fd_io__condiode.spice
+.include ./sky130_fd_pr__model__parasitic__diode_ps2nw.spice 
+.include ./sky130_fd_pr__model__parasitic__diode_pw2dn.spice
+.include ./sky130_fd_pr__model__parasitic__diode_ps2dn.spice
+
+
+*.include ./sky130_fd_pr__model__parasitic__diode_ps2nw.model.spice 
+*.include ./sky130_fd_pr__model__parasitic__diode_pw2dn.model.spice
+*.include ./sky130_fd_pr__model__parasitic__diode_ps2dn.model.spice
+
+
+
 
 .include "chip_io-magic-pin-order-corrected.spice"
-.include "../NETLISTS/chip_io-cells-extracted-calibre.spice"
+.include "../NETLISTS/chip_io-cells-extracted-calibre.xyce.unique"
 
 ***************************************
 

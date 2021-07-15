@@ -1,0 +1,370 @@
+* SPICE NETLIST
+***************************************
+
+***************************************
+***************************************
+***************************************
+***************************************
+***************************************
+***************************************
+***************************************
+***************************************
+***************************************
+***************************************
+***************************************
+***************************************
+***************************************
+***************************************
+***************************************
+***************************************
+***************************************
+***************************************
+***************************************
+***************************************
+***************************************
+***************************************
+***************************************
+***************************************
+***************************************
+***************************************
+***************************************
+***************************************
+***************************************
+***************************************
+***************************************
+***************************************
+***************************************
+***************************************
+***************************************
+***************************************
+***************************************
+***************************************
+***************************************
+***************************************
+***************************************
+***************************************
+***************************************
+***************************************
+***************************************
+***************************************
+***************************************
+***************************************
+***************************************
+***************************************
+***************************************
+***************************************
+***************************************
+***************************************
+***************************************
+***************************************
+***************************************
+***************************************
+***************************************
+***************************************
+***************************************
+***************************************
+***************************************
+***************************************
+***************************************
+***************************************
+***************************************
+***************************************
+***************************************
+***************************************
+***************************************
+***************************************
+***************************************
+***************************************
+***************************************
+***************************************
+***************************************
+***************************************
+***************************************
+***************************************
+***************************************
+***************************************
+***************************************
+***************************************
+***************************************
+.SUBCKT sky130_fd_pr__model__nfet_highvoltage__example_55959141808664 2 3
+**
+*.SEEDPROM
+XM0 2 3 2 2 sky130_fd_pr__nfet_g5v0d10v5 L=4 W=5 AD=1.325 AS=1.325 PD=10.53 PS=10.53 NRD=0 NRS=0 m=1 sa=2e+06 sb=2e+06 a=20 p=18
+.ENDS
+***************************************
+.SUBCKT sky130_fd_io__sio_clamp_pcap_4x5 2 3
+**
+*.SEEDPROM
+X0 2 3 sky130_fd_pr__model__nfet_highvoltage__example_55959141808664
+.ENDS
+***************************************
+***************************************
+.SUBCKT sky130_fd_io__esd_rcclamp_nfetcap 2 3
+**
+*.SEEDPROM
+XM0 2 3 2 2 sky130_fd_pr__nfet_g5v0d10v5 L=8 W=5 AD=1.325 AS=1.325 PD=10.53 PS=10.53 NRD=0 NRS=0 m=1 sa=4e+06 sb=4e+06 a=40 p=26
+.ENDS
+***************************************
+.SUBCKT ICV_2 2 3
+**
+*.SEEDPROM
+X0 2 3 sky130_fd_io__esd_rcclamp_nfetcap
+X1 2 3 sky130_fd_io__esd_rcclamp_nfetcap
+.ENDS
+***************************************
+***************************************
+***************************************
+***************************************
+***************************************
+***************************************
+***************************************
+***************************************
+***************************************
+***************************************
+***************************************
+.SUBCKT sky130_fd_pr__pfet_01v8__example_55959141808665 2 3 4
+**
+*.SEEDPROM
+XM0 4 3 2 2 sky130_fd_pr__pfet_g5v0d10v5 L=0.5 W=7 AD=0.98 AS=1.855 PD=7.28 PS=14.53 NRD=0 NRS=0 m=1 sa=250000 sb=250020 a=3.5 p=15
+XM1 2 3 4 2 sky130_fd_pr__pfet_g5v0d10v5 L=0.5 W=7 AD=0.98 AS=0.98 PD=7.28 PS=7.28 NRD=0 NRS=0 m=1 sa=250001 sb=250020 a=3.5 p=15
+XM2 4 3 2 2 sky130_fd_pr__pfet_g5v0d10v5 L=0.5 W=7 AD=0.98 AS=0.98 PD=7.28 PS=7.28 NRD=0 NRS=0 m=1 sa=250002 sb=250020 a=3.5 p=15
+XM3 2 3 4 2 sky130_fd_pr__pfet_g5v0d10v5 L=0.5 W=7 AD=0.98 AS=0.98 PD=7.28 PS=7.28 NRD=0 NRS=0 m=1 sa=250002 sb=250020 a=3.5 p=15
+XM4 4 3 2 2 sky130_fd_pr__pfet_g5v0d10v5 L=0.5 W=7 AD=0.98 AS=0.98 PD=7.28 PS=7.28 NRD=0 NRS=0 m=1 sa=250003 sb=250020 a=3.5 p=15
+XM5 2 3 4 2 sky130_fd_pr__pfet_g5v0d10v5 L=0.5 W=7 AD=0.98 AS=0.98 PD=7.28 PS=7.28 NRD=0 NRS=0 m=1 sa=250004 sb=250020 a=3.5 p=15
+XM6 4 3 2 2 sky130_fd_pr__pfet_g5v0d10v5 L=0.5 W=7 AD=0.98 AS=0.98 PD=7.28 PS=7.28 NRD=0 NRS=0 m=1 sa=250005 sb=250020 a=3.5 p=15
+XM7 2 3 4 2 sky130_fd_pr__pfet_g5v0d10v5 L=0.5 W=7 AD=0.98 AS=0.98 PD=7.28 PS=7.28 NRD=0 NRS=0 m=1 sa=250005 sb=250020 a=3.5 p=15
+XM8 4 3 2 2 sky130_fd_pr__pfet_g5v0d10v5 L=0.5 W=7 AD=0.98 AS=0.98 PD=7.28 PS=7.28 NRD=0 NRS=0 m=1 sa=250006 sb=250020 a=3.5 p=15
+XM9 2 3 4 2 sky130_fd_pr__pfet_g5v0d10v5 L=0.5 W=7 AD=0.98 AS=0.98 PD=7.28 PS=7.28 NRD=0 NRS=0 m=1 sa=250007 sb=250020 a=3.5 p=15
+XM10 4 3 2 2 sky130_fd_pr__pfet_g5v0d10v5 L=0.5 W=7 AD=0.98 AS=0.98 PD=7.28 PS=7.28 NRD=0 NRS=0 m=1 sa=250008 sb=250020 a=3.5 p=15
+XM11 2 3 4 2 sky130_fd_pr__pfet_g5v0d10v5 L=0.5 W=7 AD=0.98 AS=0.98 PD=7.28 PS=7.28 NRD=0 NRS=0 m=1 sa=250009 sb=250020 a=3.5 p=15
+XM12 4 3 2 2 sky130_fd_pr__pfet_g5v0d10v5 L=0.5 W=7 AD=0.98 AS=0.98 PD=7.28 PS=7.28 NRD=0 NRS=0 m=1 sa=250009 sb=250020 a=3.5 p=15
+XM13 2 3 4 2 sky130_fd_pr__pfet_g5v0d10v5 L=0.5 W=7 AD=0.98 AS=0.98 PD=7.28 PS=7.28 NRD=0 NRS=0 m=1 sa=250010 sb=250020 a=3.5 p=15
+XM14 4 3 2 2 sky130_fd_pr__pfet_g5v0d10v5 L=0.5 W=7 AD=0.98 AS=0.98 PD=7.28 PS=7.28 NRD=0 NRS=0 m=1 sa=250011 sb=250020 a=3.5 p=15
+XM15 2 3 4 2 sky130_fd_pr__pfet_g5v0d10v5 L=0.5 W=7 AD=0.98 AS=0.98 PD=7.28 PS=7.28 NRD=0 NRS=0 m=1 sa=250012 sb=250020 a=3.5 p=15
+XM16 4 3 2 2 sky130_fd_pr__pfet_g5v0d10v5 L=0.5 W=7 AD=0.98 AS=0.98 PD=7.28 PS=7.28 NRD=0 NRS=0 m=1 sa=250012 sb=250020 a=3.5 p=15
+XM17 2 3 4 2 sky130_fd_pr__pfet_g5v0d10v5 L=0.5 W=7 AD=0.98 AS=0.98 PD=7.28 PS=7.28 NRD=0 NRS=0 m=1 sa=250013 sb=250020 a=3.5 p=15
+XM18 4 3 2 2 sky130_fd_pr__pfet_g5v0d10v5 L=0.5 W=7 AD=0.98 AS=0.98 PD=7.28 PS=7.28 NRD=0 NRS=0 m=1 sa=250014 sb=250020 a=3.5 p=15
+XM19 2 3 4 2 sky130_fd_pr__pfet_g5v0d10v5 L=0.5 W=7 AD=0.98 AS=0.98 PD=7.28 PS=7.28 NRD=0 NRS=0 m=1 sa=250015 sb=250020 a=3.5 p=15
+XM20 4 3 2 2 sky130_fd_pr__pfet_g5v0d10v5 L=0.5 W=7 AD=0.98 AS=0.98 PD=7.28 PS=7.28 NRD=0 NRS=0 m=1 sa=250016 sb=250020 a=3.5 p=15
+XM21 2 3 4 2 sky130_fd_pr__pfet_g5v0d10v5 L=0.5 W=7 AD=0.98 AS=0.98 PD=7.28 PS=7.28 NRD=0 NRS=0 m=1 sa=250016 sb=250020 a=3.5 p=15
+XM22 4 3 2 2 sky130_fd_pr__pfet_g5v0d10v5 L=0.5 W=7 AD=0.98 AS=0.98 PD=7.28 PS=7.28 NRD=0 NRS=0 m=1 sa=250017 sb=250020 a=3.5 p=15
+XM23 2 3 4 2 sky130_fd_pr__pfet_g5v0d10v5 L=0.5 W=7 AD=0.98 AS=0.98 PD=7.28 PS=7.28 NRD=0 NRS=0 m=1 sa=250018 sb=250020 a=3.5 p=15
+XM24 4 3 2 2 sky130_fd_pr__pfet_g5v0d10v5 L=0.5 W=7 AD=0.98 AS=0.98 PD=7.28 PS=7.28 NRD=0 NRS=0 m=1 sa=250019 sb=250020 a=3.5 p=15
+XM25 2 3 4 2 sky130_fd_pr__pfet_g5v0d10v5 L=0.5 W=7 AD=0.98 AS=0.98 PD=7.28 PS=7.28 NRD=0 NRS=0 m=1 sa=250020 sb=250019 a=3.5 p=15
+XM26 4 3 2 2 sky130_fd_pr__pfet_g5v0d10v5 L=0.5 W=7 AD=0.98 AS=0.98 PD=7.28 PS=7.28 NRD=0 NRS=0 m=1 sa=250020 sb=250018 a=3.5 p=15
+XM27 2 3 4 2 sky130_fd_pr__pfet_g5v0d10v5 L=0.5 W=7 AD=0.98 AS=0.98 PD=7.28 PS=7.28 NRD=0 NRS=0 m=1 sa=250020 sb=250017 a=3.5 p=15
+XM28 4 3 2 2 sky130_fd_pr__pfet_g5v0d10v5 L=0.5 W=7 AD=0.98 AS=0.98 PD=7.28 PS=7.28 NRD=0 NRS=0 m=1 sa=250020 sb=250016 a=3.5 p=15
+XM29 2 3 4 2 sky130_fd_pr__pfet_g5v0d10v5 L=0.5 W=7 AD=0.98 AS=0.98 PD=7.28 PS=7.28 NRD=0 NRS=0 m=1 sa=250020 sb=250016 a=3.5 p=15
+XM30 4 3 2 2 sky130_fd_pr__pfet_g5v0d10v5 L=0.5 W=7 AD=0.98 AS=0.98 PD=7.28 PS=7.28 NRD=0 NRS=0 m=1 sa=250020 sb=250015 a=3.5 p=15
+XM31 2 3 4 2 sky130_fd_pr__pfet_g5v0d10v5 L=0.5 W=7 AD=0.98 AS=0.98 PD=7.28 PS=7.28 NRD=0 NRS=0 m=1 sa=250020 sb=250014 a=3.5 p=15
+XM32 4 3 2 2 sky130_fd_pr__pfet_g5v0d10v5 L=0.5 W=7 AD=0.98 AS=0.98 PD=7.28 PS=7.28 NRD=0 NRS=0 m=1 sa=250020 sb=250013 a=3.5 p=15
+XM33 2 3 4 2 sky130_fd_pr__pfet_g5v0d10v5 L=0.5 W=7 AD=0.98 AS=0.98 PD=7.28 PS=7.28 NRD=0 NRS=0 m=1 sa=250020 sb=250012 a=3.5 p=15
+XM34 4 3 2 2 sky130_fd_pr__pfet_g5v0d10v5 L=0.5 W=7 AD=0.98 AS=0.98 PD=7.28 PS=7.28 NRD=0 NRS=0 m=1 sa=250020 sb=250012 a=3.5 p=15
+XM35 2 3 4 2 sky130_fd_pr__pfet_g5v0d10v5 L=0.5 W=7 AD=0.98 AS=0.98 PD=7.28 PS=7.28 NRD=0 NRS=0 m=1 sa=250020 sb=250011 a=3.5 p=15
+XM36 4 3 2 2 sky130_fd_pr__pfet_g5v0d10v5 L=0.5 W=7 AD=0.98 AS=0.98 PD=7.28 PS=7.28 NRD=0 NRS=0 m=1 sa=250020 sb=250010 a=3.5 p=15
+XM37 2 3 4 2 sky130_fd_pr__pfet_g5v0d10v5 L=0.5 W=7 AD=0.98 AS=0.98 PD=7.28 PS=7.28 NRD=0 NRS=0 m=1 sa=250020 sb=250009 a=3.5 p=15
+XM38 4 3 2 2 sky130_fd_pr__pfet_g5v0d10v5 L=0.5 W=7 AD=0.98 AS=0.98 PD=7.28 PS=7.28 NRD=0 NRS=0 m=1 sa=250020 sb=250009 a=3.5 p=15
+XM39 2 3 4 2 sky130_fd_pr__pfet_g5v0d10v5 L=0.5 W=7 AD=0.98 AS=0.98 PD=7.28 PS=7.28 NRD=0 NRS=0 m=1 sa=250020 sb=250008 a=3.5 p=15
+XM40 4 3 2 2 sky130_fd_pr__pfet_g5v0d10v5 L=0.5 W=7 AD=0.98 AS=0.98 PD=7.28 PS=7.28 NRD=0 NRS=0 m=1 sa=250020 sb=250007 a=3.5 p=15
+XM41 2 3 4 2 sky130_fd_pr__pfet_g5v0d10v5 L=0.5 W=7 AD=0.98 AS=0.98 PD=7.28 PS=7.28 NRD=0 NRS=0 m=1 sa=250020 sb=250006 a=3.5 p=15
+XM42 4 3 2 2 sky130_fd_pr__pfet_g5v0d10v5 L=0.5 W=7 AD=0.98 AS=0.98 PD=7.28 PS=7.28 NRD=0 NRS=0 m=1 sa=250020 sb=250005 a=3.5 p=15
+XM43 2 3 4 2 sky130_fd_pr__pfet_g5v0d10v5 L=0.5 W=7 AD=0.98 AS=0.98 PD=7.28 PS=7.28 NRD=0 NRS=0 m=1 sa=250020 sb=250005 a=3.5 p=15
+XM44 4 3 2 2 sky130_fd_pr__pfet_g5v0d10v5 L=0.5 W=7 AD=0.98 AS=0.98 PD=7.28 PS=7.28 NRD=0 NRS=0 m=1 sa=250020 sb=250004 a=3.5 p=15
+XM45 2 3 4 2 sky130_fd_pr__pfet_g5v0d10v5 L=0.5 W=7 AD=0.98 AS=0.98 PD=7.28 PS=7.28 NRD=0 NRS=0 m=1 sa=250020 sb=250003 a=3.5 p=15
+XM46 4 3 2 2 sky130_fd_pr__pfet_g5v0d10v5 L=0.5 W=7 AD=0.98 AS=0.98 PD=7.28 PS=7.28 NRD=0 NRS=0 m=1 sa=250020 sb=250002 a=3.5 p=15
+XM47 2 3 4 2 sky130_fd_pr__pfet_g5v0d10v5 L=0.5 W=7 AD=0.98 AS=0.98 PD=7.28 PS=7.28 NRD=0 NRS=0 m=1 sa=250020 sb=250002 a=3.5 p=15
+XM48 4 3 2 2 sky130_fd_pr__pfet_g5v0d10v5 L=0.5 W=7 AD=0.98 AS=0.98 PD=7.28 PS=7.28 NRD=0 NRS=0 m=1 sa=250020 sb=250001 a=3.5 p=15
+XM49 2 3 4 2 sky130_fd_pr__pfet_g5v0d10v5 L=0.5 W=7 AD=1.855 AS=0.98 PD=14.53 PS=7.28 NRD=0 NRS=0 m=1 sa=250020 sb=250000 a=3.5 p=15
+.ENDS
+***************************************
+.SUBCKT sky130_ef_io__vssio_hvc_clamped_pad   VSSD VSSIO VDDIO VCCHIB VCCD VDDA VSWITCH VSSA AMUXBUS_B AMUXBUS_A VDDIO_Q
+**
+XM0 VDDIO 7 VSSIO VSSIO sky130_fd_pr__nfet_g5v0d10v5 L=0.5 W=20 AD=15.1 AS=13.9 PD=21.51 PS=41.39 NRD=2.5308 NRS=2.2458 m=1 sa=250001 sb=250020 a=10 p=41
+XM1 VDDIO 7 VSSIO VSSIO sky130_fd_pr__nfet_g5v0d10v5 L=0.5 W=20 AD=15.1 AS=13.9 PD=21.51 PS=41.39 NRD=2.5308 NRS=2.2458 m=1 sa=250001 sb=250020 a=10 p=41
+XM2 VDDIO 7 VSSIO VSSIO sky130_fd_pr__nfet_g5v0d10v5 L=0.5 W=20 AD=15.1 AS=13.9 PD=21.51 PS=41.39 NRD=2.5308 NRS=2.2458 m=1 sa=250001 sb=250020 a=10 p=41
+XM3 VDDIO 7 VSSIO VSSIO sky130_fd_pr__nfet_g5v0d10v5 L=0.5 W=10 AD=7.55 AS=6.95 PD=11.51 PS=21.39 NRD=5.073 NRS=4.503 m=1 sa=250001 sb=250020 a=5 p=21
+XM4 VSSIO 7 VDDIO VSSIO sky130_fd_pr__nfet_g5v0d10v5 L=0.5 W=20 AD=13.9 AS=15.1 PD=41.39 PS=21.51 NRD=2.2458 NRS=2.5308 m=1 sa=250003 sb=250020 a=10 p=41
+XM5 VSSIO 7 VDDIO VSSIO sky130_fd_pr__nfet_g5v0d10v5 L=0.5 W=20 AD=13.9 AS=15.1 PD=41.39 PS=21.51 NRD=2.2458 NRS=2.5308 m=1 sa=250003 sb=250020 a=10 p=41
+XM6 VSSIO 7 VDDIO VSSIO sky130_fd_pr__nfet_g5v0d10v5 L=0.5 W=20 AD=13.9 AS=15.1 PD=41.39 PS=21.51 NRD=2.2458 NRS=2.5308 m=1 sa=250003 sb=250020 a=10 p=41
+XM7 VSSIO 7 VDDIO VSSIO sky130_fd_pr__nfet_g5v0d10v5 L=0.5 W=10 AD=6.95 AS=7.55 PD=21.39 PS=11.51 NRD=4.503 NRS=5.073 m=1 sa=250003 sb=250020 a=5 p=21
+XM8 VDDIO 7 VSSIO VSSIO sky130_fd_pr__nfet_g5v0d10v5 L=0.5 W=20 AD=15.1 AS=13.9 PD=21.51 PS=41.39 NRD=2.5308 NRS=2.2458 m=1 sa=250006 sb=250020 a=10 p=41
+XM9 VDDIO 7 VSSIO VSSIO sky130_fd_pr__nfet_g5v0d10v5 L=0.5 W=20 AD=15.1 AS=13.9 PD=21.51 PS=41.39 NRD=2.5308 NRS=2.2458 m=1 sa=250006 sb=250020 a=10 p=41
+XM10 VDDIO 7 VSSIO VSSIO sky130_fd_pr__nfet_g5v0d10v5 L=0.5 W=20 AD=15.1 AS=13.9 PD=21.51 PS=41.39 NRD=2.5308 NRS=2.2458 m=1 sa=250006 sb=250020 a=10 p=41
+XM11 VDDIO 7 VSSIO VSSIO sky130_fd_pr__nfet_g5v0d10v5 L=0.5 W=10 AD=7.55 AS=6.95 PD=11.51 PS=21.39 NRD=5.073 NRS=4.503 m=1 sa=250006 sb=250020 a=5 p=21
+XM12 VSSIO 7 VDDIO VSSIO sky130_fd_pr__nfet_g5v0d10v5 L=0.5 W=20 AD=13.9 AS=15.1 PD=41.39 PS=21.51 NRD=2.2458 NRS=2.5308 m=1 sa=250008 sb=250020 a=10 p=41
+XM13 VSSIO 7 VDDIO VSSIO sky130_fd_pr__nfet_g5v0d10v5 L=0.5 W=20 AD=13.9 AS=15.1 PD=41.39 PS=21.51 NRD=2.2458 NRS=2.5308 m=1 sa=250008 sb=250020 a=10 p=41
+XM14 VSSIO 7 VDDIO VSSIO sky130_fd_pr__nfet_g5v0d10v5 L=0.5 W=20 AD=13.9 AS=15.1 PD=41.39 PS=21.51 NRD=2.2458 NRS=2.5308 m=1 sa=250008 sb=250020 a=10 p=41
+XM15 VSSIO 7 VDDIO VSSIO sky130_fd_pr__nfet_g5v0d10v5 L=0.5 W=10 AD=6.95 AS=7.55 PD=21.39 PS=11.51 NRD=4.503 NRS=5.073 m=1 sa=250008 sb=250020 a=5 p=21
+XM16 VDDIO 7 VSSIO VSSIO sky130_fd_pr__nfet_g5v0d10v5 L=0.5 W=20 AD=15.1 AS=13.9 PD=21.51 PS=41.39 NRD=2.5308 NRS=2.2458 m=1 sa=250010 sb=250020 a=10 p=41
+XM17 VDDIO 7 VSSIO VSSIO sky130_fd_pr__nfet_g5v0d10v5 L=0.5 W=20 AD=15.1 AS=13.9 PD=21.51 PS=41.39 NRD=2.5308 NRS=2.2458 m=1 sa=250001 sb=250020 a=10 p=41
+XM18 VDDIO 7 VSSIO VSSIO sky130_fd_pr__nfet_g5v0d10v5 L=0.5 W=20 AD=15.1 AS=13.9 PD=21.51 PS=41.39 NRD=2.5308 NRS=2.2458 m=1 sa=250001 sb=250020 a=10 p=41
+XM19 VDDIO 7 VSSIO VSSIO sky130_fd_pr__nfet_g5v0d10v5 L=0.5 W=20 AD=15.1 AS=13.9 PD=21.51 PS=41.39 NRD=2.5308 NRS=2.2458 m=1 sa=250001 sb=250020 a=10 p=41
+XM20 VDDIO 7 VSSIO VSSIO sky130_fd_pr__nfet_g5v0d10v5 L=0.5 W=20 AD=15.1 AS=13.9 PD=21.51 PS=41.39 NRD=2.5308 NRS=2.2458 m=1 sa=250010 sb=250020 a=10 p=41
+XM21 VDDIO 7 VSSIO VSSIO sky130_fd_pr__nfet_g5v0d10v5 L=0.5 W=20 AD=15.1 AS=13.9 PD=21.51 PS=41.39 NRD=2.5308 NRS=2.2458 m=1 sa=250010 sb=250020 a=10 p=41
+XM22 VDDIO 7 VSSIO VSSIO sky130_fd_pr__nfet_g5v0d10v5 L=0.5 W=10 AD=7.55 AS=6.95 PD=11.51 PS=21.39 NRD=5.073 NRS=4.503 m=1 sa=250010 sb=250020 a=5 p=21
+XM23 VSSIO 7 VDDIO VSSIO sky130_fd_pr__nfet_g5v0d10v5 L=0.5 W=20 AD=13.9 AS=15.1 PD=41.39 PS=21.51 NRD=2.2458 NRS=2.5308 m=1 sa=250012 sb=250020 a=10 p=41
+XM24 VSSIO 7 VDDIO VSSIO sky130_fd_pr__nfet_g5v0d10v5 L=0.5 W=20 AD=13.9 AS=15.1 PD=41.39 PS=21.51 NRD=2.2458 NRS=2.5308 m=1 sa=250003 sb=250020 a=10 p=41
+XM25 VSSIO 7 VDDIO VSSIO sky130_fd_pr__nfet_g5v0d10v5 L=0.5 W=20 AD=13.9 AS=15.1 PD=41.39 PS=21.51 NRD=2.2458 NRS=2.5308 m=1 sa=250003 sb=250020 a=10 p=41
+XM26 VSSIO 7 VDDIO VSSIO sky130_fd_pr__nfet_g5v0d10v5 L=0.5 W=20 AD=13.9 AS=15.1 PD=41.39 PS=21.51 NRD=2.2458 NRS=2.5308 m=1 sa=250003 sb=250020 a=10 p=41
+XM27 VSSIO 7 VDDIO VSSIO sky130_fd_pr__nfet_g5v0d10v5 L=0.5 W=20 AD=13.9 AS=15.1 PD=41.39 PS=21.51 NRD=2.2458 NRS=2.5308 m=1 sa=250012 sb=250020 a=10 p=41
+XM28 VSSIO 7 VDDIO VSSIO sky130_fd_pr__nfet_g5v0d10v5 L=0.5 W=20 AD=13.9 AS=15.1 PD=41.39 PS=21.51 NRD=2.2458 NRS=2.5308 m=1 sa=250012 sb=250020 a=10 p=41
+XM29 VSSIO 7 VDDIO VSSIO sky130_fd_pr__nfet_g5v0d10v5 L=0.5 W=10 AD=6.95 AS=7.55 PD=21.39 PS=11.51 NRD=4.503 NRS=5.073 m=1 sa=250012 sb=250020 a=5 p=21
+XM30 VDDIO 7 VSSIO VSSIO sky130_fd_pr__nfet_g5v0d10v5 L=0.5 W=20 AD=15.1 AS=13.9 PD=21.51 PS=41.39 NRD=2.5308 NRS=2.2458 m=1 sa=250015 sb=250020 a=10 p=41
+XM31 VDDIO 7 VSSIO VSSIO sky130_fd_pr__nfet_g5v0d10v5 L=0.5 W=20 AD=15.1 AS=13.9 PD=21.51 PS=41.39 NRD=2.5308 NRS=2.2458 m=1 sa=250006 sb=250020 a=10 p=41
+XM32 VDDIO 7 VSSIO VSSIO sky130_fd_pr__nfet_g5v0d10v5 L=0.5 W=20 AD=15.1 AS=13.9 PD=21.51 PS=41.39 NRD=2.5308 NRS=2.2458 m=1 sa=250006 sb=250020 a=10 p=41
+XM33 VDDIO 7 VSSIO VSSIO sky130_fd_pr__nfet_g5v0d10v5 L=0.5 W=20 AD=15.1 AS=13.9 PD=21.51 PS=41.39 NRD=2.5308 NRS=2.2458 m=1 sa=250006 sb=250020 a=10 p=41
+XM34 VDDIO 7 VSSIO VSSIO sky130_fd_pr__nfet_g5v0d10v5 L=0.5 W=20 AD=15.1 AS=13.9 PD=21.51 PS=41.39 NRD=2.5308 NRS=2.2458 m=1 sa=250015 sb=250020 a=10 p=41
+XM35 VDDIO 7 VSSIO VSSIO sky130_fd_pr__nfet_g5v0d10v5 L=0.5 W=20 AD=15.1 AS=13.9 PD=21.51 PS=41.39 NRD=2.5308 NRS=2.2458 m=1 sa=250015 sb=250020 a=10 p=41
+XM36 VDDIO 7 VSSIO VSSIO sky130_fd_pr__nfet_g5v0d10v5 L=0.5 W=10 AD=7.55 AS=6.95 PD=11.51 PS=21.39 NRD=5.073 NRS=4.503 m=1 sa=250015 sb=250020 a=5 p=21
+XM37 VSSIO 7 VDDIO VSSIO sky130_fd_pr__nfet_g5v0d10v5 L=0.5 W=20 AD=13.9 AS=15.1 PD=41.39 PS=21.51 NRD=2.2458 NRS=2.5308 m=1 sa=250017 sb=250020 a=10 p=41
+XM38 VSSIO 7 VDDIO VSSIO sky130_fd_pr__nfet_g5v0d10v5 L=0.5 W=20 AD=13.9 AS=15.1 PD=41.39 PS=21.51 NRD=2.2458 NRS=2.5308 m=1 sa=250008 sb=250020 a=10 p=41
+XM39 VSSIO 7 VDDIO VSSIO sky130_fd_pr__nfet_g5v0d10v5 L=0.5 W=20 AD=13.9 AS=15.1 PD=41.39 PS=21.51 NRD=2.2458 NRS=2.5308 m=1 sa=250008 sb=250020 a=10 p=41
+XM40 VSSIO 7 VDDIO VSSIO sky130_fd_pr__nfet_g5v0d10v5 L=0.5 W=20 AD=13.9 AS=15.1 PD=41.39 PS=21.51 NRD=2.2458 NRS=2.5308 m=1 sa=250008 sb=250020 a=10 p=41
+XM41 VSSIO 7 VDDIO VSSIO sky130_fd_pr__nfet_g5v0d10v5 L=0.5 W=20 AD=13.9 AS=15.1 PD=41.39 PS=21.51 NRD=2.2458 NRS=2.5308 m=1 sa=250017 sb=250020 a=10 p=41
+XM42 VSSIO 7 VDDIO VSSIO sky130_fd_pr__nfet_g5v0d10v5 L=0.5 W=20 AD=13.9 AS=15.1 PD=41.39 PS=21.51 NRD=2.2458 NRS=2.5308 m=1 sa=250017 sb=250020 a=10 p=41
+XM43 VSSIO 7 VDDIO VSSIO sky130_fd_pr__nfet_g5v0d10v5 L=0.5 W=10 AD=6.95 AS=7.55 PD=21.39 PS=11.51 NRD=4.503 NRS=5.073 m=1 sa=250017 sb=250020 a=5 p=21
+XM44 VDDIO 7 VSSIO VSSIO sky130_fd_pr__nfet_g5v0d10v5 L=0.5 W=20 AD=15.1 AS=13.9 PD=21.51 PS=41.39 NRD=2.5308 NRS=2.2458 m=1 sa=250020 sb=250020 a=10 p=41
+XM45 VDDIO 7 VSSIO VSSIO sky130_fd_pr__nfet_g5v0d10v5 L=0.5 W=20 AD=15.1 AS=13.9 PD=21.51 PS=41.39 NRD=2.5308 NRS=2.2458 m=1 sa=250010 sb=250020 a=10 p=41
+XM46 VDDIO 7 VSSIO VSSIO sky130_fd_pr__nfet_g5v0d10v5 L=0.5 W=20 AD=15.1 AS=13.9 PD=21.51 PS=41.39 NRD=2.5308 NRS=2.2458 m=1 sa=250010 sb=250020 a=10 p=41
+XM47 VDDIO 7 VSSIO VSSIO sky130_fd_pr__nfet_g5v0d10v5 L=0.5 W=20 AD=15.1 AS=13.9 PD=21.51 PS=41.39 NRD=2.5308 NRS=2.2458 m=1 sa=250010 sb=250020 a=10 p=41
+XM48 VDDIO 7 VSSIO VSSIO sky130_fd_pr__nfet_g5v0d10v5 L=0.5 W=20 AD=15.1 AS=13.9 PD=21.51 PS=41.39 NRD=2.5308 NRS=2.2458 m=1 sa=250020 sb=250020 a=10 p=41
+XM49 VDDIO 7 VSSIO VSSIO sky130_fd_pr__nfet_g5v0d10v5 L=0.5 W=20 AD=15.1 AS=13.9 PD=21.51 PS=41.39 NRD=2.5308 NRS=2.2458 m=1 sa=250020 sb=250020 a=10 p=41
+XM50 VDDIO 7 VSSIO VSSIO sky130_fd_pr__nfet_g5v0d10v5 L=0.5 W=10 AD=7.55 AS=6.95 PD=11.51 PS=21.39 NRD=5.073 NRS=4.503 m=1 sa=250020 sb=250020 a=5 p=21
+XM51 VSSIO 7 VDDIO VSSIO sky130_fd_pr__nfet_g5v0d10v5 L=0.5 W=20 AD=13.9 AS=15.1 PD=41.39 PS=21.51 NRD=2.2458 NRS=2.5308 m=1 sa=250020 sb=250020 a=10 p=41
+XM52 VSSIO 7 VDDIO VSSIO sky130_fd_pr__nfet_g5v0d10v5 L=0.5 W=20 AD=13.9 AS=15.1 PD=41.39 PS=21.51 NRD=2.2458 NRS=2.5308 m=1 sa=250012 sb=250020 a=10 p=41
+XM53 VSSIO 7 VDDIO VSSIO sky130_fd_pr__nfet_g5v0d10v5 L=0.5 W=20 AD=13.9 AS=15.1 PD=41.39 PS=21.51 NRD=2.2458 NRS=2.5308 m=1 sa=250012 sb=250020 a=10 p=41
+XM54 VSSIO 7 VDDIO VSSIO sky130_fd_pr__nfet_g5v0d10v5 L=0.5 W=20 AD=13.9 AS=15.1 PD=41.39 PS=21.51 NRD=2.2458 NRS=2.5308 m=1 sa=250012 sb=250020 a=10 p=41
+XM55 VSSIO 7 VDDIO VSSIO sky130_fd_pr__nfet_g5v0d10v5 L=0.5 W=20 AD=13.9 AS=15.1 PD=41.39 PS=21.51 NRD=2.2458 NRS=2.5308 m=1 sa=250020 sb=250020 a=10 p=41
+XM56 VSSIO 7 VDDIO VSSIO sky130_fd_pr__nfet_g5v0d10v5 L=0.5 W=20 AD=13.9 AS=15.1 PD=41.39 PS=21.51 NRD=2.2458 NRS=2.5308 m=1 sa=250020 sb=250020 a=10 p=41
+XM57 VSSIO 7 VDDIO VSSIO sky130_fd_pr__nfet_g5v0d10v5 L=0.5 W=10 AD=6.95 AS=7.55 PD=21.39 PS=11.51 NRD=4.503 NRS=5.073 m=1 sa=250020 sb=250020 a=5 p=21
+XM58 VDDIO 7 VSSIO VSSIO sky130_fd_pr__nfet_g5v0d10v5 L=0.5 W=20 AD=15.1 AS=13.9 PD=21.51 PS=41.39 NRD=2.5308 NRS=2.2458 m=1 sa=250020 sb=250020 a=10 p=41
+XM59 VDDIO 7 VSSIO VSSIO sky130_fd_pr__nfet_g5v0d10v5 L=0.5 W=20 AD=15.1 AS=13.9 PD=21.51 PS=41.39 NRD=2.5308 NRS=2.2458 m=1 sa=250015 sb=250020 a=10 p=41
+XM60 VDDIO 7 VSSIO VSSIO sky130_fd_pr__nfet_g5v0d10v5 L=0.5 W=20 AD=15.1 AS=13.9 PD=21.51 PS=41.39 NRD=2.5308 NRS=2.2458 m=1 sa=250015 sb=250020 a=10 p=41
+XM61 VDDIO 7 VSSIO VSSIO sky130_fd_pr__nfet_g5v0d10v5 L=0.5 W=20 AD=15.1 AS=13.9 PD=21.51 PS=41.39 NRD=2.5308 NRS=2.2458 m=1 sa=250015 sb=250020 a=10 p=41
+XM62 VDDIO 7 VSSIO VSSIO sky130_fd_pr__nfet_g5v0d10v5 L=0.5 W=20 AD=15.1 AS=13.9 PD=21.51 PS=41.39 NRD=2.5308 NRS=2.2458 m=1 sa=250020 sb=250020 a=10 p=41
+XM63 VDDIO 7 VSSIO VSSIO sky130_fd_pr__nfet_g5v0d10v5 L=0.5 W=20 AD=15.1 AS=13.9 PD=21.51 PS=41.39 NRD=2.5308 NRS=2.2458 m=1 sa=250020 sb=250020 a=10 p=41
+XM64 VDDIO 7 VSSIO VSSIO sky130_fd_pr__nfet_g5v0d10v5 L=0.5 W=10 AD=7.55 AS=6.95 PD=11.51 PS=21.39 NRD=5.073 NRS=4.503 m=1 sa=250020 sb=250020 a=5 p=21
+XM65 VSSIO 7 VDDIO VSSIO sky130_fd_pr__nfet_g5v0d10v5 L=0.5 W=20 AD=13.9 AS=15.1 PD=41.39 PS=21.51 NRD=2.2458 NRS=2.5308 m=1 sa=250020 sb=250020 a=10 p=41
+XM66 VSSIO 7 VDDIO VSSIO sky130_fd_pr__nfet_g5v0d10v5 L=0.5 W=20 AD=13.9 AS=15.1 PD=41.39 PS=21.51 NRD=2.2458 NRS=2.5308 m=1 sa=250017 sb=250020 a=10 p=41
+XM67 VSSIO 7 VDDIO VSSIO sky130_fd_pr__nfet_g5v0d10v5 L=0.5 W=20 AD=13.9 AS=15.1 PD=41.39 PS=21.51 NRD=2.2458 NRS=2.5308 m=1 sa=250017 sb=250020 a=10 p=41
+XM68 VSSIO 7 VDDIO VSSIO sky130_fd_pr__nfet_g5v0d10v5 L=0.5 W=20 AD=13.9 AS=15.1 PD=41.39 PS=21.51 NRD=2.2458 NRS=2.5308 m=1 sa=250017 sb=250020 a=10 p=41
+XM69 VSSIO 7 VDDIO VSSIO sky130_fd_pr__nfet_g5v0d10v5 L=0.5 W=20 AD=13.9 AS=15.1 PD=41.39 PS=21.51 NRD=2.2458 NRS=2.5308 m=1 sa=250020 sb=250020 a=10 p=41
+XM70 VSSIO 7 VDDIO VSSIO sky130_fd_pr__nfet_g5v0d10v5 L=0.5 W=20 AD=13.9 AS=15.1 PD=41.39 PS=21.51 NRD=2.2458 NRS=2.5308 m=1 sa=250020 sb=250020 a=10 p=41
+XM71 VSSIO 7 VDDIO VSSIO sky130_fd_pr__nfet_g5v0d10v5 L=0.5 W=10 AD=6.95 AS=7.55 PD=21.39 PS=11.51 NRD=4.503 NRS=5.073 m=1 sa=250020 sb=250020 a=5 p=21
+XM72 VDDIO 7 VSSIO VSSIO sky130_fd_pr__nfet_g5v0d10v5 L=0.5 W=20 AD=15.1 AS=13.9 PD=21.51 PS=41.39 NRD=2.5308 NRS=2.2458 m=1 sa=250020 sb=250020 a=10 p=41
+XM73 VDDIO 7 VSSIO VSSIO sky130_fd_pr__nfet_g5v0d10v5 L=0.5 W=20 AD=15.1 AS=13.9 PD=21.51 PS=41.39 NRD=2.5308 NRS=2.2458 m=1 sa=250020 sb=250020 a=10 p=41
+XM74 VDDIO 7 VSSIO VSSIO sky130_fd_pr__nfet_g5v0d10v5 L=0.5 W=20 AD=15.1 AS=13.9 PD=21.51 PS=41.39 NRD=2.5308 NRS=2.2458 m=1 sa=250020 sb=250020 a=10 p=41
+XM75 VDDIO 7 VSSIO VSSIO sky130_fd_pr__nfet_g5v0d10v5 L=0.5 W=20 AD=15.1 AS=13.9 PD=21.51 PS=41.39 NRD=2.5308 NRS=2.2458 m=1 sa=250020 sb=250020 a=10 p=41
+XM76 VDDIO 7 VSSIO VSSIO sky130_fd_pr__nfet_g5v0d10v5 L=0.5 W=20 AD=15.1 AS=13.9 PD=21.51 PS=41.39 NRD=2.5308 NRS=2.2458 m=1 sa=250020 sb=250020 a=10 p=41
+XM77 VDDIO 7 VSSIO VSSIO sky130_fd_pr__nfet_g5v0d10v5 L=0.5 W=20 AD=15.1 AS=13.9 PD=21.51 PS=41.39 NRD=2.5308 NRS=2.2458 m=1 sa=250020 sb=250020 a=10 p=41
+XM78 VDDIO 7 VSSIO VSSIO sky130_fd_pr__nfet_g5v0d10v5 L=0.5 W=10 AD=7.55 AS=6.95 PD=11.51 PS=21.39 NRD=5.073 NRS=4.503 m=1 sa=250020 sb=250020 a=5 p=21
+XM79 VSSIO 7 VDDIO VSSIO sky130_fd_pr__nfet_g5v0d10v5 L=0.5 W=20 AD=13.9 AS=15.1 PD=41.39 PS=21.51 NRD=2.2458 NRS=2.5308 m=1 sa=250020 sb=250020 a=10 p=41
+XM80 VSSIO 7 VDDIO VSSIO sky130_fd_pr__nfet_g5v0d10v5 L=0.5 W=20 AD=13.9 AS=15.1 PD=41.39 PS=21.51 NRD=2.2458 NRS=2.5308 m=1 sa=250020 sb=250020 a=10 p=41
+XM81 VSSIO 7 VDDIO VSSIO sky130_fd_pr__nfet_g5v0d10v5 L=0.5 W=20 AD=13.9 AS=15.1 PD=41.39 PS=21.51 NRD=2.2458 NRS=2.5308 m=1 sa=250020 sb=250020 a=10 p=41
+XM82 VSSIO 7 VDDIO VSSIO sky130_fd_pr__nfet_g5v0d10v5 L=0.5 W=20 AD=13.9 AS=15.1 PD=41.39 PS=21.51 NRD=2.2458 NRS=2.5308 m=1 sa=250020 sb=250020 a=10 p=41
+XM83 VSSIO 7 VDDIO VSSIO sky130_fd_pr__nfet_g5v0d10v5 L=0.5 W=20 AD=13.9 AS=15.1 PD=41.39 PS=21.51 NRD=2.2458 NRS=2.5308 m=1 sa=250020 sb=250020 a=10 p=41
+XM84 VSSIO 7 VDDIO VSSIO sky130_fd_pr__nfet_g5v0d10v5 L=0.5 W=20 AD=13.9 AS=15.1 PD=41.39 PS=21.51 NRD=2.2458 NRS=2.5308 m=1 sa=250020 sb=250020 a=10 p=41
+XM85 VSSIO 7 VDDIO VSSIO sky130_fd_pr__nfet_g5v0d10v5 L=0.5 W=10 AD=6.95 AS=7.55 PD=21.39 PS=11.51 NRD=4.503 NRS=5.073 m=1 sa=250020 sb=250020 a=5 p=21
+XM86 VDDIO 7 VSSIO VSSIO sky130_fd_pr__nfet_g5v0d10v5 L=0.5 W=20 AD=15.1 AS=13.9 PD=21.51 PS=41.39 NRD=2.5308 NRS=2.2458 m=1 sa=250020 sb=250017 a=10 p=41
+XM87 VDDIO 7 VSSIO VSSIO sky130_fd_pr__nfet_g5v0d10v5 L=0.5 W=20 AD=15.1 AS=13.9 PD=21.51 PS=41.39 NRD=2.5308 NRS=2.2458 m=1 sa=250020 sb=250017 a=10 p=41
+XM88 VDDIO 7 VSSIO VSSIO sky130_fd_pr__nfet_g5v0d10v5 L=0.5 W=20 AD=15.1 AS=13.9 PD=21.51 PS=41.39 NRD=2.5308 NRS=2.2458 m=1 sa=250020 sb=250017 a=10 p=41
+XM89 VDDIO 7 VSSIO VSSIO sky130_fd_pr__nfet_g5v0d10v5 L=0.5 W=20 AD=15.1 AS=13.9 PD=21.51 PS=41.39 NRD=2.5308 NRS=2.2458 m=1 sa=250020 sb=250017 a=10 p=41
+XM90 VDDIO 7 VSSIO VSSIO sky130_fd_pr__nfet_g5v0d10v5 L=0.5 W=20 AD=15.1 AS=13.9 PD=21.51 PS=41.39 NRD=2.5308 NRS=2.2458 m=1 sa=250020 sb=250017 a=10 p=41
+XM91 VDDIO 7 VSSIO VSSIO sky130_fd_pr__nfet_g5v0d10v5 L=0.5 W=20 AD=15.1 AS=13.9 PD=21.51 PS=41.39 NRD=2.5308 NRS=2.2458 m=1 sa=250020 sb=250017 a=10 p=41
+XM92 VDDIO 7 VSSIO VSSIO sky130_fd_pr__nfet_g5v0d10v5 L=0.5 W=10 AD=7.55 AS=6.95 PD=11.51 PS=21.39 NRD=5.073 NRS=4.503 m=1 sa=250020 sb=250017 a=5 p=21
+XM93 VSSIO 7 VDDIO VSSIO sky130_fd_pr__nfet_g5v0d10v5 L=0.5 W=20 AD=13.9 AS=15.1 PD=41.39 PS=21.51 NRD=2.2458 NRS=2.5308 m=1 sa=250020 sb=250015 a=10 p=41
+XM94 VSSIO 7 VDDIO VSSIO sky130_fd_pr__nfet_g5v0d10v5 L=0.5 W=20 AD=13.9 AS=15.1 PD=41.39 PS=21.51 NRD=2.2458 NRS=2.5308 m=1 sa=250020 sb=250015 a=10 p=41
+XM95 VSSIO 7 VDDIO VSSIO sky130_fd_pr__nfet_g5v0d10v5 L=0.5 W=20 AD=13.9 AS=15.1 PD=41.39 PS=21.51 NRD=2.2458 NRS=2.5308 m=1 sa=250020 sb=250015 a=10 p=41
+XM96 VSSIO 7 VDDIO VSSIO sky130_fd_pr__nfet_g5v0d10v5 L=0.5 W=20 AD=13.9 AS=15.1 PD=41.39 PS=21.51 NRD=2.2458 NRS=2.5308 m=1 sa=250020 sb=250015 a=10 p=41
+XM97 VSSIO 7 VDDIO VSSIO sky130_fd_pr__nfet_g5v0d10v5 L=0.5 W=20 AD=13.9 AS=15.1 PD=41.39 PS=21.51 NRD=2.2458 NRS=2.5308 m=1 sa=250020 sb=250015 a=10 p=41
+XM98 VSSIO 7 VDDIO VSSIO sky130_fd_pr__nfet_g5v0d10v5 L=0.5 W=20 AD=13.9 AS=15.1 PD=41.39 PS=21.51 NRD=2.2458 NRS=2.5308 m=1 sa=250020 sb=250015 a=10 p=41
+XM99 VSSIO 7 VDDIO VSSIO sky130_fd_pr__nfet_g5v0d10v5 L=0.5 W=10 AD=6.95 AS=7.55 PD=21.39 PS=11.51 NRD=4.503 NRS=5.073 m=1 sa=250020 sb=250015 a=5 p=21
+XM100 VDDIO 7 VSSIO VSSIO sky130_fd_pr__nfet_g5v0d10v5 L=0.5 W=20 AD=15.1 AS=13.9 PD=21.51 PS=41.39 NRD=2.5308 NRS=2.2458 m=1 sa=250020 sb=250012 a=10 p=41
+XM101 VDDIO 7 VSSIO VSSIO sky130_fd_pr__nfet_g5v0d10v5 L=0.5 W=20 AD=15.1 AS=13.9 PD=21.51 PS=41.39 NRD=2.5308 NRS=2.2458 m=1 sa=250020 sb=250012 a=10 p=41
+XM102 VDDIO 7 VSSIO VSSIO sky130_fd_pr__nfet_g5v0d10v5 L=0.5 W=20 AD=15.1 AS=13.9 PD=21.51 PS=41.39 NRD=2.5308 NRS=2.2458 m=1 sa=250020 sb=250012 a=10 p=41
+XM103 VDDIO 7 VSSIO VSSIO sky130_fd_pr__nfet_g5v0d10v5 L=0.5 W=20 AD=15.1 AS=13.9 PD=21.51 PS=41.39 NRD=2.5308 NRS=2.2458 m=1 sa=250020 sb=250012 a=10 p=41
+XM104 VDDIO 7 VSSIO VSSIO sky130_fd_pr__nfet_g5v0d10v5 L=0.5 W=20 AD=15.1 AS=13.9 PD=21.51 PS=41.39 NRD=2.5308 NRS=2.2458 m=1 sa=250020 sb=250012 a=10 p=41
+XM105 VDDIO 7 VSSIO VSSIO sky130_fd_pr__nfet_g5v0d10v5 L=0.5 W=20 AD=15.1 AS=13.9 PD=21.51 PS=41.39 NRD=2.5308 NRS=2.2458 m=1 sa=250020 sb=250012 a=10 p=41
+XM106 VDDIO 7 VSSIO VSSIO sky130_fd_pr__nfet_g5v0d10v5 L=0.5 W=10 AD=7.55 AS=6.95 PD=11.51 PS=21.39 NRD=5.073 NRS=4.503 m=1 sa=250020 sb=250012 a=5 p=21
+XM107 VSSIO 7 VDDIO VSSIO sky130_fd_pr__nfet_g5v0d10v5 L=0.5 W=20 AD=13.9 AS=15.1 PD=41.39 PS=21.51 NRD=2.2458 NRS=2.5308 m=1 sa=250020 sb=250010 a=10 p=41
+XM108 VSSIO 7 VDDIO VSSIO sky130_fd_pr__nfet_g5v0d10v5 L=0.5 W=20 AD=13.9 AS=15.1 PD=41.39 PS=21.51 NRD=2.2458 NRS=2.5308 m=1 sa=250020 sb=250010 a=10 p=41
+XM109 VSSIO 7 VDDIO VSSIO sky130_fd_pr__nfet_g5v0d10v5 L=0.5 W=20 AD=13.9 AS=15.1 PD=41.39 PS=21.51 NRD=2.2458 NRS=2.5308 m=1 sa=250020 sb=250010 a=10 p=41
+XM110 VSSIO 7 VDDIO VSSIO sky130_fd_pr__nfet_g5v0d10v5 L=0.5 W=20 AD=13.9 AS=15.1 PD=41.39 PS=21.51 NRD=2.2458 NRS=2.5308 m=1 sa=250020 sb=250010 a=10 p=41
+XM111 VSSIO 7 VDDIO VSSIO sky130_fd_pr__nfet_g5v0d10v5 L=0.5 W=20 AD=13.9 AS=15.1 PD=41.39 PS=21.51 NRD=2.2458 NRS=2.5308 m=1 sa=250020 sb=250010 a=10 p=41
+XM112 VSSIO 7 VDDIO VSSIO sky130_fd_pr__nfet_g5v0d10v5 L=0.5 W=20 AD=13.9 AS=15.1 PD=41.39 PS=21.51 NRD=2.2458 NRS=2.5308 m=1 sa=250020 sb=250010 a=10 p=41
+XM113 VSSIO 7 VDDIO VSSIO sky130_fd_pr__nfet_g5v0d10v5 L=0.5 W=10 AD=6.95 AS=7.55 PD=21.39 PS=11.51 NRD=4.503 NRS=5.073 m=1 sa=250020 sb=250010 a=5 p=21
+XM114 7 5 VSSIO VSSIO sky130_fd_pr__nfet_g5v0d10v5 L=0.5 W=7 AD=0.98 AS=1.855 PD=7.28 PS=14.53 NRD=0 NRS=0 m=1 sa=250000 sb=250011 a=3.5 p=15
+XM115 VSSIO 5 7 VSSIO sky130_fd_pr__nfet_g5v0d10v5 L=0.5 W=7 AD=0.98 AS=0.98 PD=7.28 PS=7.28 NRD=0 NRS=0 m=1 sa=250001 sb=250010 a=3.5 p=15
+XM116 7 5 VSSIO VSSIO sky130_fd_pr__nfet_g5v0d10v5 L=0.5 W=7 AD=0.98 AS=0.98 PD=7.28 PS=7.28 NRD=0 NRS=0 m=1 sa=250002 sb=250009 a=3.5 p=15
+XM117 VSSIO 5 7 VSSIO sky130_fd_pr__nfet_g5v0d10v5 L=0.5 W=7 AD=0.98 AS=0.98 PD=7.28 PS=7.28 NRD=0 NRS=0 m=1 sa=250002 sb=250009 a=3.5 p=15
+XM118 VDDIO 7 VSSIO VSSIO sky130_fd_pr__nfet_g5v0d10v5 L=0.5 W=20 AD=15.1 AS=13.9 PD=21.51 PS=41.39 NRD=2.5308 NRS=2.2458 m=1 sa=250020 sb=250008 a=10 p=41
+XM119 VDDIO 7 VSSIO VSSIO sky130_fd_pr__nfet_g5v0d10v5 L=0.5 W=20 AD=15.1 AS=13.9 PD=21.51 PS=41.39 NRD=2.5308 NRS=2.2458 m=1 sa=250020 sb=250008 a=10 p=41
+XM120 VDDIO 7 VSSIO VSSIO sky130_fd_pr__nfet_g5v0d10v5 L=0.5 W=20 AD=15.1 AS=13.9 PD=21.51 PS=41.39 NRD=2.5308 NRS=2.2458 m=1 sa=250020 sb=250008 a=10 p=41
+XM121 VDDIO 7 VSSIO VSSIO sky130_fd_pr__nfet_g5v0d10v5 L=0.5 W=20 AD=15.1 AS=13.9 PD=21.51 PS=41.39 NRD=2.5308 NRS=2.2458 m=1 sa=250020 sb=250008 a=10 p=41
+XM122 VDDIO 7 VSSIO VSSIO sky130_fd_pr__nfet_g5v0d10v5 L=0.5 W=20 AD=15.1 AS=13.9 PD=21.51 PS=41.39 NRD=2.5308 NRS=2.2458 m=1 sa=250020 sb=250008 a=10 p=41
+XM123 VDDIO 7 VSSIO VSSIO sky130_fd_pr__nfet_g5v0d10v5 L=0.5 W=20 AD=15.1 AS=13.9 PD=21.51 PS=41.39 NRD=2.5308 NRS=2.2458 m=1 sa=250020 sb=250008 a=10 p=41
+XM124 VDDIO 7 VSSIO VSSIO sky130_fd_pr__nfet_g5v0d10v5 L=0.5 W=10 AD=7.55 AS=6.95 PD=11.51 PS=21.39 NRD=5.073 NRS=4.503 m=1 sa=250020 sb=250008 a=5 p=21
+XM125 7 5 VSSIO VSSIO sky130_fd_pr__nfet_g5v0d10v5 L=0.5 W=7 AD=0.98 AS=0.98 PD=7.28 PS=7.28 NRD=0 NRS=0 m=1 sa=250003 sb=250008 a=3.5 p=15
+XM126 VSSIO 5 7 VSSIO sky130_fd_pr__nfet_g5v0d10v5 L=0.5 W=7 AD=0.98 AS=0.98 PD=7.28 PS=7.28 NRD=0 NRS=0 m=1 sa=250004 sb=250007 a=3.5 p=15
+XM127 VSSIO 7 VDDIO VSSIO sky130_fd_pr__nfet_g5v0d10v5 L=0.5 W=20 AD=13.9 AS=15.1 PD=41.39 PS=21.51 NRD=2.2458 NRS=2.5308 m=1 sa=250020 sb=250006 a=10 p=41
+XM128 VSSIO 7 VDDIO VSSIO sky130_fd_pr__nfet_g5v0d10v5 L=0.5 W=20 AD=13.9 AS=15.1 PD=41.39 PS=21.51 NRD=2.2458 NRS=2.5308 m=1 sa=250020 sb=250006 a=10 p=41
+XM129 VSSIO 7 VDDIO VSSIO sky130_fd_pr__nfet_g5v0d10v5 L=0.5 W=20 AD=13.9 AS=15.1 PD=41.39 PS=21.51 NRD=2.2458 NRS=2.5308 m=1 sa=250020 sb=250006 a=10 p=41
+XM130 VSSIO 7 VDDIO VSSIO sky130_fd_pr__nfet_g5v0d10v5 L=0.5 W=20 AD=13.9 AS=15.1 PD=41.39 PS=21.51 NRD=2.2458 NRS=2.5308 m=1 sa=250020 sb=250006 a=10 p=41
+XM131 VSSIO 7 VDDIO VSSIO sky130_fd_pr__nfet_g5v0d10v5 L=0.5 W=20 AD=13.9 AS=15.1 PD=41.39 PS=21.51 NRD=2.2458 NRS=2.5308 m=1 sa=250020 sb=250006 a=10 p=41
+XM132 VSSIO 7 VDDIO VSSIO sky130_fd_pr__nfet_g5v0d10v5 L=0.5 W=20 AD=13.9 AS=15.1 PD=41.39 PS=21.51 NRD=2.2458 NRS=2.5308 m=1 sa=250020 sb=250006 a=10 p=41
+XM133 VSSIO 7 VDDIO VSSIO sky130_fd_pr__nfet_g5v0d10v5 L=0.5 W=10 AD=6.95 AS=7.55 PD=21.39 PS=11.51 NRD=4.503 NRS=5.073 m=1 sa=250020 sb=250006 a=5 p=21
+XM134 7 5 VSSIO VSSIO sky130_fd_pr__nfet_g5v0d10v5 L=0.5 W=7 AD=0.98 AS=0.98 PD=7.28 PS=7.28 NRD=0 NRS=0 m=1 sa=250005 sb=250006 a=3.5 p=15
+XM135 VSSIO 5 7 VSSIO sky130_fd_pr__nfet_g5v0d10v5 L=0.5 W=7 AD=0.98 AS=0.98 PD=7.28 PS=7.28 NRD=0 NRS=0 m=1 sa=250005 sb=250005 a=3.5 p=15
+XM136 7 5 VSSIO VSSIO sky130_fd_pr__nfet_g5v0d10v5 L=0.5 W=7 AD=0.98 AS=0.98 PD=7.28 PS=7.28 NRD=0 NRS=0 m=1 sa=250006 sb=250005 a=3.5 p=15
+XM137 VDDIO 7 VSSIO VSSIO sky130_fd_pr__nfet_g5v0d10v5 L=0.5 W=20 AD=15.1 AS=13.9 PD=21.51 PS=41.39 NRD=2.5308 NRS=2.2458 m=1 sa=250020 sb=250003 a=10 p=41
+XM138 VDDIO 7 VSSIO VSSIO sky130_fd_pr__nfet_g5v0d10v5 L=0.5 W=20 AD=15.1 AS=13.9 PD=21.51 PS=41.39 NRD=2.5308 NRS=2.2458 m=1 sa=250020 sb=250003 a=10 p=41
+XM139 VDDIO 7 VSSIO VSSIO sky130_fd_pr__nfet_g5v0d10v5 L=0.5 W=20 AD=15.1 AS=13.9 PD=21.51 PS=41.39 NRD=2.5308 NRS=2.2458 m=1 sa=250020 sb=250003 a=10 p=41
+XM140 VDDIO 7 VSSIO VSSIO sky130_fd_pr__nfet_g5v0d10v5 L=0.5 W=20 AD=15.1 AS=13.9 PD=21.51 PS=41.39 NRD=2.5308 NRS=2.2458 m=1 sa=250020 sb=250003 a=10 p=41
+XM141 VDDIO 7 VSSIO VSSIO sky130_fd_pr__nfet_g5v0d10v5 L=0.5 W=20 AD=15.1 AS=13.9 PD=21.51 PS=41.39 NRD=2.5308 NRS=2.2458 m=1 sa=250020 sb=250003 a=10 p=41
+XM142 VDDIO 7 VSSIO VSSIO sky130_fd_pr__nfet_g5v0d10v5 L=0.5 W=20 AD=15.1 AS=13.9 PD=21.51 PS=41.39 NRD=2.5308 NRS=2.2458 m=1 sa=250020 sb=250003 a=10 p=41
+XM143 VDDIO 7 VSSIO VSSIO sky130_fd_pr__nfet_g5v0d10v5 L=0.5 W=10 AD=7.55 AS=6.95 PD=11.51 PS=21.39 NRD=5.073 NRS=4.503 m=1 sa=250020 sb=250003 a=5 p=21
+XM144 VSSIO 5 7 VSSIO sky130_fd_pr__nfet_g5v0d10v5 L=0.5 W=7 AD=0.98 AS=0.98 PD=7.28 PS=7.28 NRD=0 NRS=0 m=1 sa=250007 sb=250004 a=3.5 p=15
+XM145 7 5 VSSIO VSSIO sky130_fd_pr__nfet_g5v0d10v5 L=0.5 W=7 AD=0.98 AS=0.98 PD=7.28 PS=7.28 NRD=0 NRS=0 m=1 sa=250008 sb=250003 a=3.5 p=15
+XM146 VSSIO 5 7 VSSIO sky130_fd_pr__nfet_g5v0d10v5 L=0.5 W=7 AD=0.98 AS=0.98 PD=7.28 PS=7.28 NRD=0 NRS=0 m=1 sa=250009 sb=250002 a=3.5 p=15
+XM147 VSSIO 7 VDDIO VSSIO sky130_fd_pr__nfet_g5v0d10v5 L=0.5 W=20 AD=13.9 AS=15.1 PD=41.39 PS=21.51 NRD=2.2458 NRS=2.5308 m=1 sa=250020 sb=250001 a=10 p=41
+XM148 VSSIO 7 VDDIO VSSIO sky130_fd_pr__nfet_g5v0d10v5 L=0.5 W=20 AD=13.9 AS=15.1 PD=41.39 PS=21.51 NRD=2.2458 NRS=2.5308 m=1 sa=250020 sb=250001 a=10 p=41
+XM149 VSSIO 7 VDDIO VSSIO sky130_fd_pr__nfet_g5v0d10v5 L=0.5 W=20 AD=13.9 AS=15.1 PD=41.39 PS=21.51 NRD=2.2458 NRS=2.5308 m=1 sa=250020 sb=250001 a=10 p=41
+XM150 VSSIO 7 VDDIO VSSIO sky130_fd_pr__nfet_g5v0d10v5 L=0.5 W=20 AD=13.9 AS=15.1 PD=41.39 PS=21.51 NRD=2.2458 NRS=2.5308 m=1 sa=250020 sb=250001 a=10 p=41
+XM151 VSSIO 7 VDDIO VSSIO sky130_fd_pr__nfet_g5v0d10v5 L=0.5 W=20 AD=13.9 AS=15.1 PD=41.39 PS=21.51 NRD=2.2458 NRS=2.5308 m=1 sa=250020 sb=250001 a=10 p=41
+XM152 VSSIO 7 VDDIO VSSIO sky130_fd_pr__nfet_g5v0d10v5 L=0.5 W=20 AD=13.9 AS=15.1 PD=41.39 PS=21.51 NRD=2.2458 NRS=2.5308 m=1 sa=250020 sb=250001 a=10 p=41
+XM153 VSSIO 7 VDDIO VSSIO sky130_fd_pr__nfet_g5v0d10v5 L=0.5 W=10 AD=6.95 AS=7.55 PD=21.39 PS=11.51 NRD=4.503 NRS=5.073 m=1 sa=250020 sb=250001 a=5 p=21
+XM154 7 5 VSSIO VSSIO sky130_fd_pr__nfet_g5v0d10v5 L=0.5 W=7 AD=0.98 AS=0.98 PD=7.28 PS=7.28 NRD=0 NRS=0 m=1 sa=250009 sb=250002 a=3.5 p=15
+XM155 VSSIO 5 7 VSSIO sky130_fd_pr__nfet_g5v0d10v5 L=0.5 W=7 AD=0.98 AS=0.98 PD=7.28 PS=7.28 NRD=0 NRS=0 m=1 sa=250010 sb=250001 a=3.5 p=15
+XM156 7 5 VSSIO VSSIO sky130_fd_pr__nfet_g5v0d10v5 L=0.5 W=7 AD=1.855 AS=0.98 PD=14.53 PS=7.28 NRD=0 NRS=0 m=1 sa=250011 sb=250000 a=3.5 p=15
+X157 VSSIO VDDIO condiode a=1e-06 p=0.004 m=1
+X158 VSSIO VDDIO condiode a=1e-06 p=0.004 m=1
+X159 VSSIO VDDIO condiode a=1e-06 p=0.004 m=1
+X160 VSSIO VDDIO condiode a=1e-06 p=0.004 m=1
+X161 VSSD VDDIO sky130_fd_pr__model__parasitic__diode_ps2nw a=126.883 p=0 m=1
+X162 VSSD VDDIO sky130_fd_pr__model__parasitic__diode_ps2nw a=376.949 p=101.73 m=1
+X163 VSSD VDDIO sky130_fd_pr__model__parasitic__diode_ps2dn a=10358.7 p=619.08 m=1
+X164 VSSIO VDDIO sky130_fd_pr__model__parasitic__diode_pw2dn a=137.463 p=47.72 m=1
+X165 VSSIO VDDIO sky130_fd_pr__model__parasitic__diode_pw2dn a=8184.99 p=443.22 m=1
+X166 VSSIO VDDIO sky130_fd_pr__model__parasitic__diode_pw2dn a=1172.63 p=163 m=1
+R167 4 6 sky130_fd_pr__res_generic_po L=1550 W=0.33 m=1
+R168 4 VDDIO sky130_fd_pr__res_generic_po L=700 W=0.33 m=1
+R169 6 5 sky130_fd_pr__res_generic_po L=470 W=0.33 m=1
+R170 VSSIO VSSIO 0.01 short m=1
+X253 VSSIO 5 sky130_fd_pr__model__nfet_highvoltage__example_55959141808664
+X254 VSSIO 5 sky130_fd_io__sio_clamp_pcap_4x5
+X255 VSSIO 5 sky130_fd_io__sio_clamp_pcap_4x5
+X256 VSSIO 5 sky130_fd_io__sio_clamp_pcap_4x5
+X257 VSSIO 5 sky130_fd_io__sio_clamp_pcap_4x5
+X268 VSSIO 5 sky130_fd_io__esd_rcclamp_nfetcap
+X269 VSSIO 5 sky130_fd_io__esd_rcclamp_nfetcap
+X270 VSSIO 5 sky130_fd_io__esd_rcclamp_nfetcap
+X271 VSSIO 5 ICV_2
+X272 VSSIO 5 ICV_2
+X273 VSSIO 5 ICV_2
+X274 VSSIO 5 ICV_2
+X275 VSSIO 5 ICV_2
+X276 VSSIO 5 ICV_2
+X283 VDDIO 5 7 sky130_fd_pr__pfet_01v8__example_55959141808665
+*.CALIBRE WARNING SHORT Short circuit(s) detected by extraction in this cell. See extraction report for details.
+.ENDS
+***************************************
