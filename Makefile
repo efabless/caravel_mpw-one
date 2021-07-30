@@ -85,12 +85,12 @@ __ship:
 #### Runs from the CARAVEL_ROOT mag directory 
 	@echo "\
 		random seed `$(CARAVEL_ROOT)/scripts/set_user_id.py -report`; \
-		drc off;\
+		drc off; \
+		crashbackups stop; \
 		gds readonly true; \
 		gds rescale false; \
 		cif *hier write disable; \
 		cif *array write disable; \
-		crashbackups stop;\
 		gds read $(UPRJ_ROOT)/gds/user_project_wrapper.gds; \
 		load caravel -dereference;\
 		cellname list filepath user_id_programming $(UPRJ_ROOT)/mag;\
@@ -103,7 +103,7 @@ __ship:
 ### Runs from CARAVEL_ROOT
 	@mkdir -p ./signoff/build
 	@cd $(CARAVEL_ROOT)/mag && PDKPATH=${PDK_ROOT}/sky130A magic -noc -dnull $(UPRJ_ROOT)/mag/mag2gds_caravel.tcl 2>&1 | tee $(UPRJ_ROOT)/signoff/build/make_ship.out
-	@rm $(UPRJ_ROOT)/mag/mag2gds_caravel.tcl
+###	@rm $(UPRJ_ROOT)/mag/mag2gds_caravel.tcl
 
 truck: check-env uncompress uncompress-caravel
 ifeq ($(FOREGROUND),1)
@@ -128,12 +128,12 @@ __truck:
 #### Runs from the CARAVEL_ROOT mag directory 
 	@echo "\
 		random seed `$(CARAVEL_ROOT)/scripts/set_user_id.py -report`; \
-		drc off;\
+		drc off; \
+		crashbackups stop; \
 		gds readonly true; \
 		gds rescale false; \
 		cif *hier write disable; \
 		cif *array write disable; \
-		crashbackups stop;\
 		gds read $(UPRJ_ROOT)/gds/user_analog_project_wrapper.gds; \
 		load caravan -dereference;\
 		cellname list filepath user_id_programming $(UPRJ_ROOT)/mag;\
@@ -146,7 +146,7 @@ __truck:
 ### Runs from CARAVEL_ROOT
 	@mkdir -p ./signoff/build
 	@cd $(CARAVEL_ROOT)/mag && PDKPATH=${PDK_ROOT}/sky130A magic -noc -dnull $(UPRJ_ROOT)/mag/mag2gds_caravan.tcl 2>&1 | tee $(UPRJ_ROOT)/signoff/build/make_truck.out
-	@rm $(UPRJ_ROOT)/mag/mag2gds_caravan.tcl
+###	@rm $(UPRJ_ROOT)/mag/mag2gds_caravan.tcl
 
 .PHONY: clean
 clean:
