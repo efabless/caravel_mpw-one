@@ -530,6 +530,18 @@ manifest: mag/ maglef/ verilog/rtl/ Makefile
 # find maglef/*.mag -type f ! -name "user_project_wrapper.mag" -exec shasum {} \; >> manifest && \
 # shasum mag/caravel.mag mag/.magicrc >> manifest
 
+.RECIPE: master_manifest
+master_manifest:
+	find verilog/rtl/* -type f -exec shasum {} \; > master_manifest && \
+	find verilog/gl/* -type f -exec shasum {} \; >> master_manifest && \
+	shasum scripts/set_user_id.py scripts/generate_fill.py scripts/compositor.py >> master_manifest && \
+	find lef/*.lef -type f -exec shasum {} \; >> master_manifest && \
+	find def/*.def -type f -exec shasum {} \; >> master_manifest && \
+	find mag/*.mag -type f  -exec shasum {} \; >> master_manifest && \
+	find maglef/*.mag -type f -exec shasum {} \; >> master_manifest && \
+	find spi/lvs/*.spice -type f -exec shasum {} \; >> master_manifest && \
+	find gds/*.gds -type f -exec shasum {} \; >> master_manifest 
+	
 check-env:
 ifndef PDK_ROOT
 	$(error PDK_ROOT is undefined, please export it before running make)
