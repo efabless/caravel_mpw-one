@@ -46,7 +46,7 @@ do
         echo "LVS summary:"
         cat $lvs_report
         echo "Total Count: $lvs_total_errors"
-        if [[ $BLOCK != caravel ]]; then
+        if [[ $BLOCK != caravel ]] ||  [[ $BLOCK != caravan ]] ; then
                 if [[ $lvs_total_errors -ne 0 ]]; then exit 2; fi
         else
                 if [[ $lvs_total_errors -gt 6 ]]; then exit 2; fi

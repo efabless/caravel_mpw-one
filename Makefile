@@ -270,6 +270,7 @@ $(LVS_BLOCKS): lvs-% : ./mag/%.mag ./verilog/gl/%.v
 	echo "Extracting $*"
 	mkdir -p ./mag/tmp
 	echo "addpath $(CARAVEL_ROOT)/mag/hexdigits;\
+		addpath $(CARAVEL_ROOT)/subcells/simple_por/mag;\
 		addpath \$$PDKPATH/libs.ref/sky130_ml_xx_hd/mag;\
 		load $* -dereference;\
 		select top cell;\
@@ -398,6 +399,25 @@ $(ANTENNA_BLOCKS): antenna-% : ./gds/%.gds
 	mv -f ./gds/*.ext ./gds/tmp/
 	@echo "Antenna result: ./gds/tmp/$*.antenna"
 
+# MAG2GDS
+BLOCKS = $(shell cd openlane && find * -maxdepth 0 -type d)
+MAG_BLOCKS = $(foreach block, $(BLOCKS), mag2gds-$(block))
+$(MAG_BLOCKS): mag2gds-% : ./mag/%.mag
+	echo "Converting mag file $* to GDS..."
+	echo "addpath $(CARAVEL_ROOT)/mag/hexdigits;\
+		addpath ${PDKPATH}/libs.ref/sky130_ml_xx_hd/mag;\
+		addpath ${CARAVEL_ROOT}/subcells/simple_por/mag;\
+		drc off;\
+		gds rescale false;\
+		load $* -dereference;\
+		select top cell;\
+		expand;\
+		cif *hier write disable;\
+		gds write $*.gds;\
+		exit;" > ./mag/mag2gds_$*.tcl
+	cd ./mag && magic -rcfile ${PDK_ROOT}/sky130A/libs.tech/magic/sky130A.magicrc -noc -dnull mag2gds_$*.tcl < /dev/null
+	rm ./mag/mag2gds_$*.tcl
+	
 .PHONY: help
 help:
 	@$(MAKE) -pRrq -f $(lastword $(MAKEFILE_LIST)) : 2>/dev/null | awk -v RS= -F: '/^# File/,/^# Finished Make data base/ {if ($$1 !~ "^[#.]") {print $$1}}' | sort | egrep -v -e '^[^[:alnum:]]' -e '^$@$$'
@@ -525,7 +545,7 @@ build-pdk: check-env $(PDK_ROOT)/open_pdks $(PDK_ROOT)/skywater-pdk
 manifest: mag/ maglef/ verilog/rtl/ Makefile
 	touch manifest && \
 	find verilog/rtl/* -type f ! -name "caravel_netlists.v" ! -name "user_*.v" ! -name "README" ! -name "defines.v" -exec shasum {} \; > manifest && \
-#	shasum scripts/set_user_id.py scripts/generate_fill.py scripts/compositor.py >> manifest
+	shasum scripts/set_user_id.py scripts/generate_fill.py scripts/compositor.py >> manifest
 # shasum lef/user_project_wrapper_empty.lef >> manifest
 # find maglef/*.mag -type f ! -name "user_project_wrapper.mag" -exec shasum {} \; >> manifest && \
 # shasum mag/caravel.mag mag/.magicrc >> manifest
