@@ -17,7 +17,7 @@ block=$1
 export IMAGE_NAME=efabless/openlane:$OPENLANE_TAG
 export CARAVEL_PATH=$(pwd)
 cd ../
-export PDK_ROOT=$(pwd)/pdks
+#export PDK_ROOT=$(pwd)/pdks
 cd $CARAVEL_PATH
 export PDKPATH=$PDK_ROOT/sky130A
 make uncompress
@@ -46,7 +46,7 @@ do
         echo "LVS summary:"
         cat $lvs_report
         echo "Total Count: $lvs_total_errors"
-        if [[ $BLOCK != caravel ]] ||  [[ $BLOCK != caravan ]] ; then
+        if [[ $BLOCK != caravel ]] &&  [[ $BLOCK != caravan ]] ; then
                 if [[ $lvs_total_errors -ne 0 ]]; then exit 2; fi
         else
                 if [[ $lvs_total_errors -gt 7 ]]; then exit 2; fi
