@@ -49,7 +49,7 @@ do
         if [[ $BLOCK != caravel ]] ||  [[ $BLOCK != caravan ]] ; then
                 if [[ $lvs_total_errors -ne 0 ]]; then exit 2; fi
         else
-                if [[ $lvs_total_errors -gt 6 ]]; then exit 2; fi
+                if [[ $lvs_total_errors -gt 7 ]]; then exit 2; fi
         fi
 done
 echo "All LVS checks on all blocks passed!"
