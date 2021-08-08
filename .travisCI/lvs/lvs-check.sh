@@ -17,7 +17,7 @@ block=$1
 export IMAGE_NAME=efabless/openlane:$OPENLANE_TAG
 export CARAVEL_PATH=$(pwd)
 cd ../
-#export PDK_ROOT=$(pwd)/pdks
+export PDK_ROOT=$(pwd)/pdks
 cd $CARAVEL_PATH
 export PDKPATH=$PDK_ROOT/sky130A
 make uncompress
