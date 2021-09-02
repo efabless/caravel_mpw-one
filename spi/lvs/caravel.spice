@@ -8,6 +8,101 @@
 + serial_data_out user_gpio_in user_gpio_oeb user_gpio_out zero vccd vssd vccd1 vssd1
 .ends
 
+* Black-box entry subcircuit for sky130_ef_io__com_bus_slice_5um abstract view
+.subckt sky130_ef_io__com_bus_slice_5um AMUXBUS_A AMUXBUS_B VSSA VDDA VSWITCH VDDIO_Q
++ VCCHIB VDDIO VCCD VSSIO VSSD VSSIO_Q
+.ends
+
+* Black-box entry subcircuit for sky130_ef_io__com_bus_slice_10um abstract view
+.subckt sky130_ef_io__com_bus_slice_10um AMUXBUS_A AMUXBUS_B VSSA VDDA VSWITCH VDDIO_Q
++ VCCHIB VDDIO VCCD VSSIO VSSD VSSIO_Q
+.ends
+
+* Black-box entry subcircuit for sky130_ef_io__com_bus_slice_20um abstract view
+.subckt sky130_ef_io__com_bus_slice_20um AMUXBUS_A AMUXBUS_B VSSA VDDA VSWITCH VDDIO_Q
++ VCCHIB VDDIO VCCD VSSIO VSSD VSSIO_Q
+.ends
+
+* Black-box entry subcircuit for sky130_ef_io__gpiov2_pad_wrapped abstract view
+.subckt sky130_ef_io__gpiov2_pad_wrapped IN_H PAD_A_NOESD_H PAD_A_ESD_0_H PAD_A_ESD_1_H
++ PAD DM[2] DM[1] DM[0] HLD_H_N IN INP_DIS IB_MODE_SEL ENABLE_H ENABLE_VDDA_H ENABLE_INP_H
++ OE_N TIE_HI_ESD TIE_LO_ESD SLOW VTRIP_SEL HLD_OVR ANALOG_EN ANALOG_SEL ENABLE_VDDIO
++ ENABLE_VSWITCH_H ANALOG_POL OUT AMUXBUS_A AMUXBUS_B VSSA VDDA VSWITCH VDDIO_Q VCCHIB
++ VDDIO VCCD VSSIO VSSD VSSIO_Q
+.ends
+
+* Black-box entry subcircuit for sky130_ef_io__com_bus_slice_1um abstract view
+.subckt sky130_ef_io__com_bus_slice_1um AMUXBUS_A AMUXBUS_B VSSA VDDA VSWITCH VDDIO_Q
++ VCCHIB VDDIO VCCD VSSIO VSSD VSSIO_Q
+.ends
+
+* Black-box entry subcircuit for sky130_ef_io__vccd_lvc_clamped_pad abstract view
+.subckt sky130_ef_io__vccd_lvc_clamped_pad AMUXBUS_A AMUXBUS_B VCCD_PAD VSSA VDDA
++ VSWITCH VDDIO_Q VCCHIB VDDIO VCCD VSSIO VSSD VSSIO_Q
+.ends
+
+* Black-box entry subcircuit for sky130_ef_io__disconnect_vdda_slice_5um abstract view
+.subckt sky130_ef_io__disconnect_vdda_slice_5um AMUXBUS_A AMUXBUS_B VSWITCH VDDIO_Q
++ VCCHIB VDDIO VCCD VSSIO VSSD VSSIO_Q
+.ends
+
+* Black-box entry subcircuit for sky130_ef_io__corner_pad abstract view
+.subckt sky130_ef_io__corner_pad AMUXBUS_A AMUXBUS_B VSSA VDDA VSWITCH VDDIO_Q VCCHIB
++ VDDIO VCCD VSSIO VSSD VSSIO_Q
+.ends
+
+* Black-box entry subcircuit for sky130_ef_io__vddio_hvc_clamped_pad abstract view
+.subckt sky130_ef_io__vddio_hvc_clamped_pad AMUXBUS_A AMUXBUS_B VDDIO_PAD VSSA VDDA
++ VSWITCH VDDIO_Q VCCHIB VDDIO VCCD VSSIO VSSD VSSIO_Q
+.ends
+
+* Black-box entry subcircuit for sky130_ef_io__vssio_hvc_clamped_pad abstract view
+.subckt sky130_ef_io__vssio_hvc_clamped_pad AMUXBUS_A AMUXBUS_B VSSIO_PAD VSSA VDDA
++ VSWITCH VDDIO_Q VCCHIB VDDIO VCCD VSSIO VSSD VSSIO_Q
+.ends
+
+* Black-box entry subcircuit for sky130_ef_io__connect_vcchib_vccd_and_vswitch_vddio_slice_20um abstract view
+.subckt sky130_ef_io__connect_vcchib_vccd_and_vswitch_vddio_slice_20um AMUXBUS_A AMUXBUS_B
++ VSSA VDDA VDDIO_Q VDDIO VCCD VSSIO VSSD VSSIO_Q VSWITCH VCCHIB
+.ends
+
+* Black-box entry subcircuit for sky130_ef_io__vdda_hvc_clamped_pad abstract view
+.subckt sky130_ef_io__vdda_hvc_clamped_pad AMUXBUS_A AMUXBUS_B VDDA_PAD VSSA VDDA
++ VSWITCH VDDIO_Q VCCHIB VDDIO VCCD VSSIO VSSD VSSIO_Q
+.ends
+
+* Black-box entry subcircuit for sky130_ef_io__vccd_lvc_clamped2_pad abstract view
+.subckt sky130_ef_io__vccd_lvc_clamped2_pad AMUXBUS_A AMUXBUS_B VCCD_PAD VSSA VDDA
++ VSWITCH VDDIO_Q VCCHIB VDDIO VCCD VSSIO VSSD VSSIO_Q
+.ends
+
+* Black-box entry subcircuit for sky130_ef_io__vssa_hvc_clamped_pad abstract view
+.subckt sky130_ef_io__vssa_hvc_clamped_pad AMUXBUS_A AMUXBUS_B VSSA_PAD VSSA VDDA
++ VSWITCH VDDIO_Q VCCHIB VDDIO VCCD VSSIO VSSD VSSIO_Q
+.ends
+
+* Black-box entry subcircuit for sky130_ef_io__disconnect_vccd_slice_5um abstract view
+.subckt sky130_ef_io__disconnect_vccd_slice_5um AMUXBUS_A AMUXBUS_B VSSA VDDA VSWITCH
++ VDDIO_Q VCCHIB VDDIO VSSIO VSSIO_Q
+.ends
+
+* Black-box entry subcircuit for sky130_fd_io__top_xres4v2 abstract view
+.subckt sky130_fd_io__top_xres4v2 PAD_A_ESD_H XRES_H_N FILT_IN_H ENABLE_VDDIO TIE_WEAK_HI_H
++ ENABLE_H PULLUP_H EN_VDDIO_SIG_H TIE_LO_ESD TIE_HI_ESD DISABLE_PULLUP_H INP_SEL_H
++ VSSIO VSSA VSSD AMUXBUS_B AMUXBUS_A VDDIO_Q VDDIO VSWITCH VDDA VCCD VCCHIB VSSIO_Q
++ PAD
+.ends
+
+* Black-box entry subcircuit for sky130_ef_io__vssd_lvc_clamped2_pad abstract view
+.subckt sky130_ef_io__vssd_lvc_clamped2_pad AMUXBUS_A AMUXBUS_B VSSD_PAD VSSA VDDA
++ VSWITCH VDDIO_Q VCCHIB VDDIO VCCD VSSIO VSSD VSSIO_Q
+.ends
+
+* Black-box entry subcircuit for sky130_ef_io__vssd_lvc_clamped_pad abstract view
+.subckt sky130_ef_io__vssd_lvc_clamped_pad AMUXBUS_A AMUXBUS_B VSSD_PAD VSSA VDDA
++ VSWITCH VDDIO_Q VCCHIB VDDIO VCCD VSSIO VSSD VSSIO_Q
+.ends
+
 * Black-box entry subcircuit for chip_io abstract view
 .subckt chip_io clock clock_core por flash_clk flash_clk_core flash_clk_ieb_core flash_clk_oeb_core
 + flash_csb flash_csb_core flash_csb_ieb_core flash_csb_oeb_core flash_io0 flash_io0_di_core
@@ -296,6 +391,10 @@
 + user_irq_ena[1] user_irq_ena[2] VPWR VGND
 .ends
 
+* Black-box entry subcircuit for user_id_textblock abstract view
+.subckt user_id_textblock VSUBS
+.ends
+
 * Black-box entry subcircuit for simple_por abstract view
 .subckt simple_por vdd3v3 vdd1v8 vss porb_h por_l porb_l
 .ends
@@ -306,6 +405,10 @@
 + mask_rev[20] mask_rev[21] mask_rev[22] mask_rev[23] mask_rev[24] mask_rev[25] mask_rev[26]
 + mask_rev[27] mask_rev[28] mask_rev[29] mask_rev[2] mask_rev[30] mask_rev[31] mask_rev[3]
 + mask_rev[4] mask_rev[5] mask_rev[6] mask_rev[7] mask_rev[8] mask_rev[9] VPWR VGND
+.ends
+
+* Black-box entry subcircuit for open_source abstract view
+.subckt open_source VSUBS
 .ends
 
 * Black-box entry subcircuit for mgmt_protect abstract view
@@ -655,6 +758,10 @@
 + wbs_stb_i wbs_we_i vccd1 vssd1 vccd2 vssd2 vdda1 vssa1 vdda2 vssa2
 .ends
 
+* Black-box entry subcircuit for copyright_block abstract view
+.subckt copyright_block VSUBS
+.ends
+
 * Black-box entry subcircuit for storage abstract view
 .subckt storage mgmt_addr[0] mgmt_addr[1] mgmt_addr[2] mgmt_addr[3] mgmt_addr[4] mgmt_addr[5]
 + mgmt_addr[6] mgmt_addr[7] mgmt_addr_ro[0] mgmt_addr_ro[1] mgmt_addr_ro[2] mgmt_addr_ro[3]
@@ -686,6 +793,11 @@
 + mgmt_wen_mask[5] mgmt_wen_mask[6] mgmt_wen_mask[7] VPWR VGND
 .ends
 
+* Black-box entry subcircuit for caravel_power_routing abstract view
+.subckt caravel_power_routing VSUBS vccd1_core vssd_core vdda1_core vssd2_core vssio_core
++ vssa2_core vddio_core vccd2_core vdda2_core vssd1_core vccd_core vssa1_core
+.ends
+
 .subckt caravel clock flash_clk flash_csb flash_io0 flash_io1 gpio mprj_io[0] mprj_io[10]
 + mprj_io[11] mprj_io[12] mprj_io[13] mprj_io[14] mprj_io[15] mprj_io[16] mprj_io[17]
 + mprj_io[18] mprj_io[19] mprj_io[1] mprj_io[20] mprj_io[21] mprj_io[22] mprj_io[23]
@@ -703,9 +815,8 @@ Xgpio_control_in_1\[16\] soc/mgmt_in_data[18] gpio_control_in_1\[16\]/one soc/mg
 + padframe/mprj_io_slow_sel[18] padframe/mprj_io_vtrip_sel[18] gpio_control_in_1\[16\]/resetn
 + gpio_control_in_1\[16\]/resetn_out gpio_control_in_1\[16\]/serial_clock gpio_control_in_1\[16\]/serial_clock_out
 + gpio_control_in_1\[16\]/serial_data_in gpio_control_in_1\[16\]/serial_data_out mprj/io_in[18]
-+ mprj/io_oeb[18] mprj/io_out[18] gpio_control_in_1\[16\]/zero gpio_control_in_1\[16\]/vccd
-+ gpio_control_in_1\[16\]/vssd gpio_control_in_1\[16\]/vccd1 gpio_control_in_1\[16\]/vssd1
-+ gpio_control_block
++ mprj/io_oeb[18] mprj/io_out[18] gpio_control_in_1\[16\]/zero vccd_core vssd_core
++ vccd1_core vssd1_core gpio_control_block
 Xgpio_control_in_2\[0\] soc/mgmt_in_data[19] gpio_control_in_2\[0\]/one soc/mgmt_in_data[19]
 + gpio_control_in_2\[0\]/one padframe/mprj_io_analog_en[19] padframe/mprj_io_analog_pol[19]
 + padframe/mprj_io_analog_sel[19] padframe/mprj_io_dm[57] padframe/mprj_io_dm[58]
@@ -714,9 +825,8 @@ Xgpio_control_in_2\[0\] soc/mgmt_in_data[19] gpio_control_in_2\[0\]/one soc/mgmt
 + padframe/mprj_io_slow_sel[19] padframe/mprj_io_vtrip_sel[19] soc/mprj_io_loader_resetn
 + gpio_control_in_2\[1\]/resetn soc/mprj_io_loader_clock gpio_control_in_2\[1\]/serial_clock
 + gpio_control_in_2\[0\]/serial_data_in gpio_control_in_2\[0\]/serial_data_out mprj/io_in[19]
-+ mprj/io_oeb[19] mprj/io_out[19] gpio_control_in_2\[0\]/zero gpio_control_in_2\[0\]/vccd
-+ gpio_control_in_2\[0\]/vssd gpio_control_in_2\[0\]/vccd1 gpio_control_in_2\[0\]/vssd1
-+ gpio_control_block
++ mprj/io_oeb[19] mprj/io_out[19] gpio_control_in_2\[0\]/zero vccd_core vssd_core
++ vccd1_core vssd1_core gpio_control_block
 Xgpio_control_in_1\[6\] soc/mgmt_in_data[8] gpio_control_in_1\[6\]/one soc/mgmt_in_data[8]
 + gpio_control_in_1\[6\]/one padframe/mprj_io_analog_en[8] padframe/mprj_io_analog_pol[8]
 + padframe/mprj_io_analog_sel[8] padframe/mprj_io_dm[24] padframe/mprj_io_dm[25] padframe/mprj_io_dm[26]
@@ -725,8 +835,7 @@ Xgpio_control_in_1\[6\] soc/mgmt_in_data[8] gpio_control_in_1\[6\]/one soc/mgmt_
 + padframe/mprj_io_vtrip_sel[8] gpio_control_in_2\[8\]/resetn gpio_control_in_2\[9\]/resetn
 + gpio_control_in_2\[8\]/serial_clock gpio_control_in_2\[9\]/serial_clock gpio_control_in_1\[6\]/serial_data_in
 + gpio_control_in_1\[7\]/serial_data_in mprj/io_in[8] mprj/io_oeb[8] mprj/io_out[8]
-+ gpio_control_in_1\[6\]/zero gpio_control_in_1\[6\]/vccd gpio_control_in_1\[6\]/vssd
-+ gpio_control_in_1\[6\]/vccd1 gpio_control_in_1\[6\]/vssd1 gpio_control_block
++ gpio_control_in_1\[6\]/zero vccd_core vssd_core vccd1_core vssd1_core gpio_control_block
 Xpadframe clock soc/clock por/por_l flash_clk soc/flash_clk soc/flash_clk_ieb soc/flash_clk_oeb
 + flash_csb soc/flash_csb soc/flash_csb_ieb soc/flash_csb_oeb flash_io0 soc/flash_io0_di
 + soc/flash_io0_do soc/flash_io0_ieb soc/flash_io0_oeb flash_io1 soc/flash_io1_di
@@ -901,10 +1010,9 @@ Xpadframe clock soc/clock por/por_l flash_clk soc/flash_clk soc/flash_clk_ieb so
 + padframe/mprj_io_dm[85] padframe/mprj_io_dm[86] padframe/mprj_io_holdover[28] padframe/mprj_io_ib_mode_sel[28]
 + padframe/mprj_io_inp_dis[28] padframe/mprj_io_oeb[28] padframe/mprj_io_out[28] padframe/mprj_io_slow_sel[28]
 + padframe/mprj_io_vtrip_sel[28] padframe/mprj_io_in[28] por/porb_h resetb rstb_level/A
-+ padframe/vdda padframe/vssa padframe/vssd vccd1 vdda1 vdda1_2 vssa1 vssa1_2 padframe/vccd1
-+ padframe/vdda1 padframe/vssa1 padframe/vssd1 vssd1 vccd2 vdda2 vssa2 padframe/vccd
-+ padframe/vccd2 padframe/vdda2 padframe/vddio padframe/vssa2 padframe/vssd2 vssd2
-+ padframe/vssio chip_io
++ padframe/vdda padframe/vssa vssd_core vccd1 vdda1 vdda1_2 vssa1 vssa1_2 vccd1_core
++ vdda1_core vssa1_core vssd1_core vssd1 vccd2 vdda2 vssa2 vccd_core vccd2_core vdda2_core
++ vddio_core vssa2_core vssd2_core vssd2 vssio_core chip_io
 Xgpio_control_in_2\[14\] soc/mgmt_in_data[33] gpio_control_in_2\[14\]/one soc/mgmt_in_data[33]
 + gpio_control_in_2\[14\]/one padframe/mprj_io_analog_en[33] padframe/mprj_io_analog_pol[33]
 + padframe/mprj_io_analog_sel[33] padframe/mprj_io_dm[99] padframe/mprj_io_dm[100]
@@ -913,9 +1021,8 @@ Xgpio_control_in_2\[14\] soc/mgmt_in_data[33] gpio_control_in_2\[14\]/one soc/mg
 + padframe/mprj_io_slow_sel[33] padframe/mprj_io_vtrip_sel[33] gpio_control_in_2\[14\]/resetn
 + gpio_control_in_2\[15\]/resetn gpio_control_in_2\[14\]/serial_clock gpio_control_in_2\[15\]/serial_clock
 + gpio_control_in_2\[14\]/serial_data_in gpio_control_in_2\[13\]/serial_data_in mprj/io_in[33]
-+ mprj/io_oeb[33] mprj/io_out[33] gpio_control_in_2\[14\]/zero gpio_control_in_2\[14\]/vccd
-+ gpio_control_in_2\[14\]/vssd gpio_control_in_2\[14\]/vccd1 gpio_control_in_2\[14\]/vssd1
-+ gpio_control_block
++ mprj/io_oeb[33] mprj/io_out[33] gpio_control_in_2\[14\]/zero vccd_core vssd_core
++ vccd1_core vssd1_core gpio_control_block
 Xgpio_control_bidir_2\[0\] soc/mgmt_in_data[36] soc/flash_io2_oeb soc/mgmt_out_data[36]
 + gpio_control_bidir_2\[0\]/one padframe/mprj_io_analog_en[36] padframe/mprj_io_analog_pol[36]
 + padframe/mprj_io_analog_sel[36] padframe/mprj_io_dm[108] padframe/mprj_io_dm[109]
@@ -924,9 +1031,8 @@ Xgpio_control_bidir_2\[0\] soc/mgmt_in_data[36] soc/flash_io2_oeb soc/mgmt_out_d
 + padframe/mprj_io_slow_sel[36] padframe/mprj_io_vtrip_sel[36] gpio_control_in_1\[15\]/resetn
 + gpio_control_in_1\[16\]/resetn gpio_control_in_1\[15\]/serial_clock gpio_control_in_1\[16\]/serial_clock
 + gpio_control_bidir_2\[0\]/serial_data_in gpio_control_in_2\[16\]/serial_data_in
-+ mprj/io_in[36] mprj/io_oeb[36] mprj/io_out[36] gpio_control_bidir_2\[0\]/zero gpio_control_bidir_2\[0\]/vccd
-+ gpio_control_bidir_2\[0\]/vssd gpio_control_bidir_2\[0\]/vccd1 gpio_control_bidir_2\[0\]/vssd1
-+ gpio_control_block
++ mprj/io_in[36] mprj/io_oeb[36] mprj/io_out[36] gpio_control_bidir_2\[0\]/zero vccd_core
++ vssd_core vccd1_core vssd1_core gpio_control_block
 Xsoc soc/clock soc/core_clk soc/core_rstn soc/flash_clk soc/flash_clk_ieb soc/flash_clk_oeb
 + soc/flash_csb soc/flash_csb_ieb soc/flash_csb_oeb soc/flash_io0_di soc/flash_io0_do
 + soc/flash_io0_ieb soc/flash_io0_oeb soc/flash_io1_di soc/flash_io1_do soc/flash_io1_ieb
@@ -1115,7 +1221,7 @@ Xsoc soc/clock soc/core_clk soc/core_rstn soc/flash_clk soc/flash_clk_ieb soc/fl
 + soc/mprj_vcc_pwrgood soc/mprj_vdd_pwrgood soc/mprj_we_o soc/porb pwr_ctrl_out[0]
 + pwr_ctrl_out[1] pwr_ctrl_out[2] pwr_ctrl_out[3] soc/resetb soc/sdo_out soc/sdo_outenb
 + soc/user_clk soc/user_irq[0] soc/user_irq[1] soc/user_irq[2] soc/user_irq_ena[0]
-+ soc/user_irq_ena[1] soc/user_irq_ena[2] soc/VPWR soc/VGND mgmt_core
++ soc/user_irq_ena[1] soc/user_irq_ena[2] vccd_core vssd_core mgmt_core
 Xgpio_control_in_1\[14\] soc/mgmt_in_data[16] gpio_control_in_1\[14\]/one soc/mgmt_in_data[16]
 + gpio_control_in_1\[14\]/one padframe/mprj_io_analog_en[16] padframe/mprj_io_analog_pol[16]
 + padframe/mprj_io_analog_sel[16] padframe/mprj_io_dm[48] padframe/mprj_io_dm[49]
@@ -1124,9 +1230,8 @@ Xgpio_control_in_1\[14\] soc/mgmt_in_data[16] gpio_control_in_1\[14\]/one soc/mg
 + padframe/mprj_io_slow_sel[16] padframe/mprj_io_vtrip_sel[16] gpio_control_in_2\[16\]/resetn
 + gpio_control_in_1\[15\]/resetn gpio_control_in_2\[16\]/serial_clock gpio_control_in_1\[15\]/serial_clock
 + gpio_control_in_1\[14\]/serial_data_in gpio_control_in_1\[15\]/serial_data_in mprj/io_in[16]
-+ mprj/io_oeb[16] mprj/io_out[16] gpio_control_in_1\[14\]/zero gpio_control_in_1\[14\]/vccd
-+ gpio_control_in_1\[14\]/vssd gpio_control_in_1\[14\]/vccd1 gpio_control_in_1\[14\]/vssd1
-+ gpio_control_block
++ mprj/io_oeb[16] mprj/io_out[16] gpio_control_in_1\[14\]/zero vccd_core vssd_core
++ vccd1_core vssd1_core gpio_control_block
 Xgpio_control_in_2\[9\] soc/mgmt_in_data[28] gpio_control_in_2\[9\]/one soc/mgmt_in_data[28]
 + gpio_control_in_2\[9\]/one padframe/mprj_io_analog_en[28] padframe/mprj_io_analog_pol[28]
 + padframe/mprj_io_analog_sel[28] padframe/mprj_io_dm[84] padframe/mprj_io_dm[85]
@@ -1135,9 +1240,9 @@ Xgpio_control_in_2\[9\] soc/mgmt_in_data[28] gpio_control_in_2\[9\]/one soc/mgmt
 + padframe/mprj_io_slow_sel[28] padframe/mprj_io_vtrip_sel[28] gpio_control_in_2\[9\]/resetn
 + gpio_control_in_1\[8\]/resetn gpio_control_in_2\[9\]/serial_clock gpio_control_in_1\[8\]/serial_clock
 + gpio_control_in_2\[9\]/serial_data_in gpio_control_in_2\[8\]/serial_data_in mprj/io_in[28]
-+ mprj/io_oeb[28] mprj/io_out[28] gpio_control_in_2\[9\]/zero gpio_control_in_2\[9\]/vccd
-+ gpio_control_in_2\[9\]/vssd gpio_control_in_2\[9\]/vccd1 gpio_control_in_2\[9\]/vssd1
-+ gpio_control_block
++ mprj/io_oeb[28] mprj/io_out[28] gpio_control_in_2\[9\]/zero vccd_core vssd_core
++ vccd1_core vssd1_core gpio_control_block
+Xuser_id_textblock_0 VSUBS user_id_textblock
 Xgpio_control_in_1\[4\] soc/mgmt_in_data[6] gpio_control_in_1\[4\]/one soc/mgmt_in_data[6]
 + gpio_control_in_1\[4\]/one padframe/mprj_io_analog_en[6] padframe/mprj_io_analog_pol[6]
 + padframe/mprj_io_analog_sel[6] padframe/mprj_io_dm[18] padframe/mprj_io_dm[19] padframe/mprj_io_dm[20]
@@ -1146,9 +1251,8 @@ Xgpio_control_in_1\[4\] soc/mgmt_in_data[6] gpio_control_in_1\[4\]/one soc/mgmt_
 + padframe/mprj_io_vtrip_sel[6] gpio_control_in_2\[6\]/resetn gpio_control_in_2\[7\]/resetn
 + gpio_control_in_2\[6\]/serial_clock gpio_control_in_2\[7\]/serial_clock gpio_control_in_1\[4\]/serial_data_in
 + gpio_control_in_1\[5\]/serial_data_in mprj/io_in[6] mprj/io_oeb[6] mprj/io_out[6]
-+ gpio_control_in_1\[4\]/zero gpio_control_in_1\[4\]/vccd gpio_control_in_1\[4\]/vssd
-+ gpio_control_in_1\[4\]/vccd1 gpio_control_in_1\[4\]/vssd1 gpio_control_block
-Xpor por/vdd3v3 por/vdd1v8 por/vss por/porb_h por/por_l soc/porb simple_por
++ gpio_control_in_1\[4\]/zero vccd_core vssd_core vccd1_core vssd1_core gpio_control_block
+Xpor vddio_core vccd_core vssio_core por/porb_h por/por_l soc/porb simple_por
 Xgpio_control_in_2\[12\] soc/mgmt_in_data[31] gpio_control_in_2\[12\]/one soc/mgmt_in_data[31]
 + gpio_control_in_2\[12\]/one padframe/mprj_io_analog_en[31] padframe/mprj_io_analog_pol[31]
 + padframe/mprj_io_analog_sel[31] padframe/mprj_io_dm[93] padframe/mprj_io_dm[94]
@@ -1157,9 +1261,8 @@ Xgpio_control_in_2\[12\] soc/mgmt_in_data[31] gpio_control_in_2\[12\]/one soc/mg
 + padframe/mprj_io_slow_sel[31] padframe/mprj_io_vtrip_sel[31] gpio_control_in_2\[12\]/resetn
 + gpio_control_in_2\[13\]/resetn gpio_control_in_2\[12\]/serial_clock gpio_control_in_2\[13\]/serial_clock
 + gpio_control_in_2\[12\]/serial_data_in gpio_control_in_2\[11\]/serial_data_in mprj/io_in[31]
-+ mprj/io_oeb[31] mprj/io_out[31] gpio_control_in_2\[12\]/zero gpio_control_in_2\[12\]/vccd
-+ gpio_control_in_2\[12\]/vssd gpio_control_in_2\[12\]/vccd1 gpio_control_in_2\[12\]/vssd1
-+ gpio_control_block
++ mprj/io_oeb[31] mprj/io_out[31] gpio_control_in_2\[12\]/zero vccd_core vssd_core
++ vccd1_core vssd1_core gpio_control_block
 Xgpio_control_in_1\[12\] soc/mgmt_in_data[14] gpio_control_in_1\[12\]/one soc/mgmt_in_data[14]
 + gpio_control_in_1\[12\]/one padframe/mprj_io_analog_en[14] padframe/mprj_io_analog_pol[14]
 + padframe/mprj_io_analog_sel[14] padframe/mprj_io_dm[42] padframe/mprj_io_dm[43]
@@ -1168,9 +1271,8 @@ Xgpio_control_in_1\[12\] soc/mgmt_in_data[14] gpio_control_in_1\[12\]/one soc/mg
 + padframe/mprj_io_slow_sel[14] padframe/mprj_io_vtrip_sel[14] gpio_control_in_2\[14\]/resetn
 + gpio_control_in_2\[15\]/resetn gpio_control_in_2\[14\]/serial_clock gpio_control_in_2\[15\]/serial_clock
 + gpio_control_in_1\[12\]/serial_data_in gpio_control_in_1\[13\]/serial_data_in mprj/io_in[14]
-+ mprj/io_oeb[14] mprj/io_out[14] gpio_control_in_1\[12\]/zero gpio_control_in_1\[12\]/vccd
-+ gpio_control_in_1\[12\]/vssd gpio_control_in_1\[12\]/vccd1 gpio_control_in_1\[12\]/vssd1
-+ gpio_control_block
++ mprj/io_oeb[14] mprj/io_out[14] gpio_control_in_1\[12\]/zero vccd_core vssd_core
++ vccd1_core vssd1_core gpio_control_block
 Xgpio_control_in_2\[7\] soc/mgmt_in_data[26] gpio_control_in_2\[7\]/one soc/mgmt_in_data[26]
 + gpio_control_in_2\[7\]/one padframe/mprj_io_analog_en[26] padframe/mprj_io_analog_pol[26]
 + padframe/mprj_io_analog_sel[26] padframe/mprj_io_dm[78] padframe/mprj_io_dm[79]
@@ -1179,9 +1281,8 @@ Xgpio_control_in_2\[7\] soc/mgmt_in_data[26] gpio_control_in_2\[7\]/one soc/mgmt
 + padframe/mprj_io_slow_sel[26] padframe/mprj_io_vtrip_sel[26] gpio_control_in_2\[7\]/resetn
 + gpio_control_in_2\[8\]/resetn gpio_control_in_2\[7\]/serial_clock gpio_control_in_2\[8\]/serial_clock
 + gpio_control_in_2\[7\]/serial_data_in gpio_control_in_2\[6\]/serial_data_in mprj/io_in[26]
-+ mprj/io_oeb[26] mprj/io_out[26] gpio_control_in_2\[7\]/zero gpio_control_in_2\[7\]/vccd
-+ gpio_control_in_2\[7\]/vssd gpio_control_in_2\[7\]/vccd1 gpio_control_in_2\[7\]/vssd1
-+ gpio_control_block
++ mprj/io_oeb[26] mprj/io_out[26] gpio_control_in_2\[7\]/zero vccd_core vssd_core
++ vccd1_core vssd1_core gpio_control_block
 Xgpio_control_in_1\[2\] soc/mgmt_in_data[4] gpio_control_in_1\[2\]/one soc/mgmt_in_data[4]
 + gpio_control_in_1\[2\]/one padframe/mprj_io_analog_en[4] padframe/mprj_io_analog_pol[4]
 + padframe/mprj_io_analog_sel[4] padframe/mprj_io_dm[12] padframe/mprj_io_dm[13] padframe/mprj_io_dm[14]
@@ -1190,8 +1291,7 @@ Xgpio_control_in_1\[2\] soc/mgmt_in_data[4] gpio_control_in_1\[2\]/one soc/mgmt_
 + padframe/mprj_io_vtrip_sel[4] gpio_control_in_2\[4\]/resetn gpio_control_in_2\[5\]/resetn
 + gpio_control_in_2\[4\]/serial_clock gpio_control_in_2\[5\]/serial_clock gpio_control_in_1\[2\]/serial_data_in
 + gpio_control_in_1\[3\]/serial_data_in mprj/io_in[4] mprj/io_oeb[4] mprj/io_out[4]
-+ gpio_control_in_1\[2\]/zero gpio_control_in_1\[2\]/vccd gpio_control_in_1\[2\]/vssd
-+ gpio_control_in_1\[2\]/vccd1 gpio_control_in_1\[2\]/vssd1 gpio_control_block
++ gpio_control_in_1\[2\]/zero vccd_core vssd_core vccd1_core vssd1_core gpio_control_block
 Xgpio_control_in_2\[10\] soc/mgmt_in_data[29] gpio_control_in_2\[10\]/one soc/mgmt_in_data[29]
 + gpio_control_in_2\[10\]/one padframe/mprj_io_analog_en[29] padframe/mprj_io_analog_pol[29]
 + padframe/mprj_io_analog_sel[29] padframe/mprj_io_dm[87] padframe/mprj_io_dm[88]
@@ -1200,9 +1300,8 @@ Xgpio_control_in_2\[10\] soc/mgmt_in_data[29] gpio_control_in_2\[10\]/one soc/mg
 + padframe/mprj_io_slow_sel[29] padframe/mprj_io_vtrip_sel[29] gpio_control_in_1\[8\]/resetn
 + gpio_control_in_1\[9\]/resetn gpio_control_in_1\[8\]/serial_clock gpio_control_in_1\[9\]/serial_clock
 + gpio_control_in_2\[10\]/serial_data_in gpio_control_in_2\[9\]/serial_data_in mprj/io_in[29]
-+ mprj/io_oeb[29] mprj/io_out[29] gpio_control_in_2\[10\]/zero gpio_control_in_2\[10\]/vccd
-+ gpio_control_in_2\[10\]/vssd gpio_control_in_2\[10\]/vccd1 gpio_control_in_2\[10\]/vssd1
-+ gpio_control_block
++ mprj/io_oeb[29] mprj/io_out[29] gpio_control_in_2\[10\]/zero vccd_core vssd_core
++ vccd1_core vssd1_core gpio_control_block
 Xgpio_control_in_2\[5\] soc/mgmt_in_data[24] gpio_control_in_2\[5\]/one soc/mgmt_in_data[24]
 + gpio_control_in_2\[5\]/one padframe/mprj_io_analog_en[24] padframe/mprj_io_analog_pol[24]
 + padframe/mprj_io_analog_sel[24] padframe/mprj_io_dm[72] padframe/mprj_io_dm[73]
@@ -1211,9 +1310,8 @@ Xgpio_control_in_2\[5\] soc/mgmt_in_data[24] gpio_control_in_2\[5\]/one soc/mgmt
 + padframe/mprj_io_slow_sel[24] padframe/mprj_io_vtrip_sel[24] gpio_control_in_2\[5\]/resetn
 + gpio_control_in_2\[6\]/resetn gpio_control_in_2\[5\]/serial_clock gpio_control_in_2\[6\]/serial_clock
 + gpio_control_in_2\[5\]/serial_data_in gpio_control_in_2\[4\]/serial_data_in mprj/io_in[24]
-+ mprj/io_oeb[24] mprj/io_out[24] gpio_control_in_2\[5\]/zero gpio_control_in_2\[5\]/vccd
-+ gpio_control_in_2\[5\]/vssd gpio_control_in_2\[5\]/vccd1 gpio_control_in_2\[5\]/vssd1
-+ gpio_control_block
++ mprj/io_oeb[24] mprj/io_out[24] gpio_control_in_2\[5\]/zero vccd_core vssd_core
++ vccd1_core vssd1_core gpio_control_block
 Xgpio_control_in_1\[10\] soc/mgmt_in_data[12] gpio_control_in_1\[10\]/one soc/mgmt_in_data[12]
 + gpio_control_in_1\[10\]/one padframe/mprj_io_analog_en[12] padframe/mprj_io_analog_pol[12]
 + padframe/mprj_io_analog_sel[12] padframe/mprj_io_dm[36] padframe/mprj_io_dm[37]
@@ -1222,9 +1320,8 @@ Xgpio_control_in_1\[10\] soc/mgmt_in_data[12] gpio_control_in_1\[10\]/one soc/mg
 + padframe/mprj_io_slow_sel[12] padframe/mprj_io_vtrip_sel[12] gpio_control_in_2\[12\]/resetn
 + gpio_control_in_2\[13\]/resetn gpio_control_in_2\[12\]/serial_clock gpio_control_in_2\[13\]/serial_clock
 + gpio_control_in_1\[9\]/serial_data_out gpio_control_in_1\[11\]/serial_data_in mprj/io_in[12]
-+ mprj/io_oeb[12] mprj/io_out[12] gpio_control_in_1\[10\]/zero gpio_control_in_1\[10\]/vccd
-+ gpio_control_in_1\[10\]/vssd gpio_control_in_1\[10\]/vccd1 gpio_control_in_1\[10\]/vssd1
-+ gpio_control_block
++ mprj/io_oeb[12] mprj/io_out[12] gpio_control_in_1\[10\]/zero vccd_core vssd_core
++ vccd1_core vssd1_core gpio_control_block
 Xgpio_control_in_1\[0\] soc/mgmt_in_data[2] gpio_control_in_1\[0\]/one soc/mgmt_in_data[2]
 + gpio_control_in_1\[0\]/one padframe/mprj_io_analog_en[2] padframe/mprj_io_analog_pol[2]
 + padframe/mprj_io_analog_sel[2] padframe/mprj_io_dm[6] padframe/mprj_io_dm[7] padframe/mprj_io_dm[8]
@@ -1233,16 +1330,14 @@ Xgpio_control_in_1\[0\] soc/mgmt_in_data[2] gpio_control_in_1\[0\]/one soc/mgmt_
 + padframe/mprj_io_vtrip_sel[2] gpio_control_in_2\[2\]/resetn gpio_control_in_2\[3\]/resetn
 + gpio_control_in_2\[2\]/serial_clock gpio_control_in_2\[3\]/serial_clock gpio_control_in_1\[0\]/serial_data_in
 + gpio_control_in_1\[1\]/serial_data_in mprj/io_in[2] mprj/io_oeb[2] mprj/io_out[2]
-+ gpio_control_in_1\[0\]/zero gpio_control_in_1\[0\]/vccd gpio_control_in_1\[0\]/vssd
-+ gpio_control_in_1\[0\]/vccd1 gpio_control_in_1\[0\]/vssd1 gpio_control_block
++ gpio_control_in_1\[0\]/zero vccd_core vssd_core vccd1_core vssd1_core gpio_control_block
 Xuser_id_value soc/mask_rev[0] soc/mask_rev[10] soc/mask_rev[11] soc/mask_rev[12]
 + soc/mask_rev[13] soc/mask_rev[14] soc/mask_rev[15] soc/mask_rev[16] soc/mask_rev[17]
 + soc/mask_rev[18] soc/mask_rev[19] soc/mask_rev[1] soc/mask_rev[20] soc/mask_rev[21]
 + soc/mask_rev[22] soc/mask_rev[23] soc/mask_rev[24] soc/mask_rev[25] soc/mask_rev[26]
 + soc/mask_rev[27] soc/mask_rev[28] soc/mask_rev[29] soc/mask_rev[2] soc/mask_rev[30]
 + soc/mask_rev[31] soc/mask_rev[3] soc/mask_rev[4] soc/mask_rev[5] soc/mask_rev[6]
-+ soc/mask_rev[7] soc/mask_rev[8] soc/mask_rev[9] user_id_value/VPWR user_id_value/VGND
-+ user_id_programming
++ soc/mask_rev[7] soc/mask_rev[8] soc/mask_rev[9] vccd_core vssd_core user_id_programming
 Xgpio_control_in_2\[3\] soc/mgmt_in_data[22] gpio_control_in_2\[3\]/one soc/mgmt_in_data[22]
 + gpio_control_in_2\[3\]/one padframe/mprj_io_analog_en[22] padframe/mprj_io_analog_pol[22]
 + padframe/mprj_io_analog_sel[22] padframe/mprj_io_dm[66] padframe/mprj_io_dm[67]
@@ -1251,9 +1346,8 @@ Xgpio_control_in_2\[3\] soc/mgmt_in_data[22] gpio_control_in_2\[3\]/one soc/mgmt
 + padframe/mprj_io_slow_sel[22] padframe/mprj_io_vtrip_sel[22] gpio_control_in_2\[3\]/resetn
 + gpio_control_in_2\[4\]/resetn gpio_control_in_2\[3\]/serial_clock gpio_control_in_2\[4\]/serial_clock
 + gpio_control_in_2\[3\]/serial_data_in gpio_control_in_2\[2\]/serial_data_in mprj/io_in[22]
-+ mprj/io_oeb[22] mprj/io_out[22] gpio_control_in_2\[3\]/zero gpio_control_in_2\[3\]/vccd
-+ gpio_control_in_2\[3\]/vssd gpio_control_in_2\[3\]/vccd1 gpio_control_in_2\[3\]/vssd1
-+ gpio_control_block
++ mprj/io_oeb[22] mprj/io_out[22] gpio_control_in_2\[3\]/zero vccd_core vssd_core
++ vccd1_core vssd1_core gpio_control_block
 Xgpio_control_bidir_1\[0\] soc/mgmt_in_data[0] soc/jtag_outenb soc/jtag_out gpio_control_bidir_1\[0\]/one
 + padframe/mprj_io_analog_en[0] padframe/mprj_io_analog_pol[0] padframe/mprj_io_analog_sel[0]
 + padframe/mprj_io_dm[0] padframe/mprj_io_dm[1] padframe/mprj_io_dm[2] padframe/mprj_io_holdover[0]
@@ -1261,9 +1355,9 @@ Xgpio_control_bidir_1\[0\] soc/mgmt_in_data[0] soc/jtag_outenb soc/jtag_out gpio
 + padframe/mprj_io_out[0] padframe/mprj_io_oeb[0] padframe/mprj_io_slow_sel[0] padframe/mprj_io_vtrip_sel[0]
 + soc/mprj_io_loader_resetn gpio_control_in_2\[1\]/resetn soc/mprj_io_loader_clock
 + gpio_control_in_2\[1\]/serial_clock soc/mprj_io_loader_data_1 gpio_control_bidir_1\[1\]/serial_data_in
-+ mprj/io_in[0] mprj/io_oeb[0] mprj/io_out[0] gpio_control_bidir_1\[0\]/zero gpio_control_bidir_1\[0\]/vccd
-+ gpio_control_bidir_1\[0\]/vssd gpio_control_bidir_1\[0\]/vccd1 gpio_control_bidir_1\[0\]/vssd1
-+ gpio_control_block
++ mprj/io_in[0] mprj/io_oeb[0] mprj/io_out[0] gpio_control_bidir_1\[0\]/zero vccd_core
++ vssd_core vccd1_core vssd1_core gpio_control_block
+Xopen_source_0 VSUBS open_source
 Xgpio_control_in_1\[9\] soc/mgmt_in_data[11] gpio_control_in_1\[9\]/one soc/mgmt_in_data[11]
 + gpio_control_in_1\[9\]/one padframe/mprj_io_analog_en[11] padframe/mprj_io_analog_pol[11]
 + padframe/mprj_io_analog_sel[11] padframe/mprj_io_dm[33] padframe/mprj_io_dm[34]
@@ -1272,9 +1366,8 @@ Xgpio_control_in_1\[9\] soc/mgmt_in_data[11] gpio_control_in_1\[9\]/one soc/mgmt
 + padframe/mprj_io_slow_sel[11] padframe/mprj_io_vtrip_sel[11] gpio_control_in_1\[9\]/resetn
 + gpio_control_in_2\[12\]/resetn gpio_control_in_1\[9\]/serial_clock gpio_control_in_2\[12\]/serial_clock
 + gpio_control_in_1\[9\]/serial_data_in gpio_control_in_1\[9\]/serial_data_out mprj/io_in[11]
-+ mprj/io_oeb[11] mprj/io_out[11] gpio_control_in_1\[9\]/zero gpio_control_in_1\[9\]/vccd
-+ gpio_control_in_1\[9\]/vssd gpio_control_in_1\[9\]/vccd1 gpio_control_in_1\[9\]/vssd1
-+ gpio_control_block
++ mprj/io_oeb[11] mprj/io_out[11] gpio_control_in_1\[9\]/zero vccd_core vssd_core
++ vccd1_core vssd1_core gpio_control_block
 Xgpio_control_in_2\[1\] soc/mgmt_in_data[20] gpio_control_in_2\[1\]/one soc/mgmt_in_data[20]
 + gpio_control_in_2\[1\]/one padframe/mprj_io_analog_en[20] padframe/mprj_io_analog_pol[20]
 + padframe/mprj_io_analog_sel[20] padframe/mprj_io_dm[60] padframe/mprj_io_dm[61]
@@ -1283,9 +1376,8 @@ Xgpio_control_in_2\[1\] soc/mgmt_in_data[20] gpio_control_in_2\[1\]/one soc/mgmt
 + padframe/mprj_io_slow_sel[20] padframe/mprj_io_vtrip_sel[20] gpio_control_in_2\[1\]/resetn
 + gpio_control_in_2\[2\]/resetn gpio_control_in_2\[1\]/serial_clock gpio_control_in_2\[2\]/serial_clock
 + gpio_control_in_2\[1\]/serial_data_in gpio_control_in_2\[0\]/serial_data_in mprj/io_in[20]
-+ mprj/io_oeb[20] mprj/io_out[20] gpio_control_in_2\[1\]/zero gpio_control_in_2\[1\]/vccd
-+ gpio_control_in_2\[1\]/vssd gpio_control_in_2\[1\]/vccd1 gpio_control_in_2\[1\]/vssd1
-+ gpio_control_block
++ mprj/io_oeb[20] mprj/io_out[20] gpio_control_in_2\[1\]/zero vccd_core vssd_core
++ vccd1_core vssd1_core gpio_control_block
 Xgpio_control_in_1\[7\] soc/mgmt_in_data[9] gpio_control_in_1\[7\]/one soc/mgmt_in_data[9]
 + gpio_control_in_1\[7\]/one padframe/mprj_io_analog_en[9] padframe/mprj_io_analog_pol[9]
 + padframe/mprj_io_analog_sel[9] padframe/mprj_io_dm[27] padframe/mprj_io_dm[28] padframe/mprj_io_dm[29]
@@ -1294,8 +1386,7 @@ Xgpio_control_in_1\[7\] soc/mgmt_in_data[9] gpio_control_in_1\[7\]/one soc/mgmt_
 + padframe/mprj_io_vtrip_sel[9] gpio_control_in_2\[9\]/resetn gpio_control_in_1\[8\]/resetn
 + gpio_control_in_2\[9\]/serial_clock gpio_control_in_1\[8\]/serial_clock gpio_control_in_1\[7\]/serial_data_in
 + gpio_control_in_1\[8\]/serial_data_in mprj/io_in[9] mprj/io_oeb[9] mprj/io_out[9]
-+ gpio_control_in_1\[7\]/zero gpio_control_in_1\[7\]/vccd gpio_control_in_1\[7\]/vssd
-+ gpio_control_in_1\[7\]/vccd1 gpio_control_in_1\[7\]/vssd1 gpio_control_block
++ gpio_control_in_1\[7\]/zero vccd_core vssd_core vccd1_core vssd1_core gpio_control_block
 Xmgmt_buffers soc/core_clk soc/user_clk soc/core_rstn mprj/la_data_in[0] mprj/la_data_in[100]
 + mprj/la_data_in[101] mprj/la_data_in[102] mprj/la_data_in[103] mprj/la_data_in[104]
 + mprj/la_data_in[105] mprj/la_data_in[106] mprj/la_data_in[107] mprj/la_data_in[108]
@@ -1514,11 +1605,10 @@ Xmgmt_buffers soc/core_clk soc/user_clk soc/core_rstn mprj/la_data_in[0] mprj/la
 + mprj/wbs_stb_i soc/mprj_we_o mprj/wbs_we_i soc/mprj_vcc_pwrgood soc/mprj_vdd_pwrgood
 + soc/mprj2_vcc_pwrgood soc/mprj2_vdd_pwrgood mprj/wb_clk_i mprj/user_clock2 soc/user_irq[0]
 + soc/user_irq[1] soc/user_irq[2] mprj/user_irq[0] mprj/user_irq[1] mprj/user_irq[2]
-+ soc/user_irq_ena[0] soc/user_irq_ena[1] soc/user_irq_ena[2] mprj/wb_rst_i mgmt_buffers/vccd
-+ mgmt_buffers/vssd mgmt_buffers/vccd1 mgmt_buffers/vssd1 mgmt_buffers/vccd2 mgmt_buffers/vssd2
-+ mgmt_buffers/vdda1 mgmt_buffers/vssa1 mgmt_buffers/vdda2 mgmt_buffers/vssa2 mgmt_protect
-Xrstb_level rstb_level/A soc/resetb rstb_level/VPWR rstb_level/VGND rstb_level/LVPWR
-+ rstb_level/LVGND sky130_fd_sc_hvl__lsbufhv2lv_1_wrapped
++ soc/user_irq_ena[0] soc/user_irq_ena[1] soc/user_irq_ena[2] mprj/wb_rst_i vccd_core
++ vssd_core vccd1_core vssd1_core vccd2_core vssd2_core vdda1_core vssa1_core vdda2_core
++ vssa2_core mgmt_protect
+Xrstb_level rstb_level/A soc/resetb vddio_core vssio_core vccd_core vssd_core sky130_fd_sc_hvl__lsbufhv2lv_1_wrapped
 Xgpio_control_in_2\[15\] soc/mgmt_in_data[34] gpio_control_in_2\[15\]/one soc/mgmt_in_data[34]
 + gpio_control_in_2\[15\]/one padframe/mprj_io_analog_en[34] padframe/mprj_io_analog_pol[34]
 + padframe/mprj_io_analog_sel[34] padframe/mprj_io_dm[102] padframe/mprj_io_dm[103]
@@ -1527,9 +1617,8 @@ Xgpio_control_in_2\[15\] soc/mgmt_in_data[34] gpio_control_in_2\[15\]/one soc/mg
 + padframe/mprj_io_slow_sel[34] padframe/mprj_io_vtrip_sel[34] gpio_control_in_2\[15\]/resetn
 + gpio_control_in_2\[16\]/resetn gpio_control_in_2\[15\]/serial_clock gpio_control_in_2\[16\]/serial_clock
 + gpio_control_in_2\[15\]/serial_data_in gpio_control_in_2\[14\]/serial_data_in mprj/io_in[34]
-+ mprj/io_oeb[34] mprj/io_out[34] gpio_control_in_2\[15\]/zero gpio_control_in_2\[15\]/vccd
-+ gpio_control_in_2\[15\]/vssd gpio_control_in_2\[15\]/vccd1 gpio_control_in_2\[15\]/vssd1
-+ gpio_control_block
++ mprj/io_oeb[34] mprj/io_out[34] gpio_control_in_2\[15\]/zero vccd_core vssd_core
++ vccd1_core vssd1_core gpio_control_block
 Xgpio_control_bidir_2\[1\] soc/mgmt_in_data[37] soc/flash_io3_oeb soc/mgmt_out_data[37]
 + gpio_control_bidir_2\[1\]/one padframe/mprj_io_analog_en[37] padframe/mprj_io_analog_pol[37]
 + padframe/mprj_io_analog_sel[37] padframe/mprj_io_dm[111] padframe/mprj_io_dm[112]
@@ -1538,9 +1627,8 @@ Xgpio_control_bidir_2\[1\] soc/mgmt_in_data[37] soc/flash_io3_oeb soc/mgmt_out_d
 + padframe/mprj_io_slow_sel[37] padframe/mprj_io_vtrip_sel[37] gpio_control_in_1\[16\]/resetn
 + gpio_control_in_1\[16\]/resetn_out gpio_control_in_1\[16\]/serial_clock gpio_control_in_1\[16\]/serial_clock_out
 + soc/mprj_io_loader_data_2 gpio_control_bidir_2\[0\]/serial_data_in mprj/io_in[37]
-+ mprj/io_oeb[37] mprj/io_out[37] gpio_control_bidir_2\[1\]/zero gpio_control_bidir_2\[1\]/vccd
-+ gpio_control_bidir_2\[1\]/vssd gpio_control_bidir_2\[1\]/vccd1 gpio_control_bidir_2\[1\]/vssd1
-+ gpio_control_block
++ mprj/io_oeb[37] mprj/io_out[37] gpio_control_bidir_2\[1\]/zero vccd_core vssd_core
++ vccd1_core vssd1_core gpio_control_block
 Xgpio_control_in_1\[15\] soc/mgmt_in_data[17] gpio_control_in_1\[15\]/one soc/mgmt_in_data[17]
 + gpio_control_in_1\[15\]/one padframe/mprj_io_analog_en[17] padframe/mprj_io_analog_pol[17]
 + padframe/mprj_io_analog_sel[17] padframe/mprj_io_dm[51] padframe/mprj_io_dm[52]
@@ -1549,9 +1637,8 @@ Xgpio_control_in_1\[15\] soc/mgmt_in_data[17] gpio_control_in_1\[15\]/one soc/mg
 + padframe/mprj_io_slow_sel[17] padframe/mprj_io_vtrip_sel[17] gpio_control_in_1\[15\]/resetn
 + gpio_control_in_1\[16\]/resetn gpio_control_in_1\[15\]/serial_clock gpio_control_in_1\[16\]/serial_clock
 + gpio_control_in_1\[15\]/serial_data_in gpio_control_in_1\[16\]/serial_data_in mprj/io_in[17]
-+ mprj/io_oeb[17] mprj/io_out[17] gpio_control_in_1\[15\]/zero gpio_control_in_1\[15\]/vccd
-+ gpio_control_in_1\[15\]/vssd gpio_control_in_1\[15\]/vccd1 gpio_control_in_1\[15\]/vssd1
-+ gpio_control_block
++ mprj/io_oeb[17] mprj/io_out[17] gpio_control_in_1\[15\]/zero vccd_core vssd_core
++ vccd1_core vssd1_core gpio_control_block
 Xgpio_control_in_1\[5\] soc/mgmt_in_data[7] gpio_control_in_1\[5\]/one soc/mgmt_in_data[7]
 + gpio_control_in_1\[5\]/one padframe/mprj_io_analog_en[7] padframe/mprj_io_analog_pol[7]
 + padframe/mprj_io_analog_sel[7] padframe/mprj_io_dm[21] padframe/mprj_io_dm[22] padframe/mprj_io_dm[23]
@@ -1560,8 +1647,7 @@ Xgpio_control_in_1\[5\] soc/mgmt_in_data[7] gpio_control_in_1\[5\]/one soc/mgmt_
 + padframe/mprj_io_vtrip_sel[7] gpio_control_in_2\[7\]/resetn gpio_control_in_2\[8\]/resetn
 + gpio_control_in_2\[7\]/serial_clock gpio_control_in_2\[8\]/serial_clock gpio_control_in_1\[5\]/serial_data_in
 + gpio_control_in_1\[6\]/serial_data_in mprj/io_in[7] mprj/io_oeb[7] mprj/io_out[7]
-+ gpio_control_in_1\[5\]/zero gpio_control_in_1\[5\]/vccd gpio_control_in_1\[5\]/vssd
-+ gpio_control_in_1\[5\]/vccd1 gpio_control_in_1\[5\]/vssd1 gpio_control_block
++ gpio_control_in_1\[5\]/zero vccd_core vssd_core vccd1_core vssd1_core gpio_control_block
 Xgpio_control_in_2\[13\] soc/mgmt_in_data[32] gpio_control_in_2\[13\]/one soc/mgmt_in_data[32]
 + gpio_control_in_2\[13\]/one padframe/mprj_io_analog_en[32] padframe/mprj_io_analog_pol[32]
 + padframe/mprj_io_analog_sel[32] padframe/mprj_io_dm[96] padframe/mprj_io_dm[97]
@@ -1570,9 +1656,8 @@ Xgpio_control_in_2\[13\] soc/mgmt_in_data[32] gpio_control_in_2\[13\]/one soc/mg
 + padframe/mprj_io_slow_sel[32] padframe/mprj_io_vtrip_sel[32] gpio_control_in_2\[13\]/resetn
 + gpio_control_in_2\[14\]/resetn gpio_control_in_2\[13\]/serial_clock gpio_control_in_2\[14\]/serial_clock
 + gpio_control_in_2\[13\]/serial_data_in gpio_control_in_2\[12\]/serial_data_in mprj/io_in[32]
-+ mprj/io_oeb[32] mprj/io_out[32] gpio_control_in_2\[13\]/zero gpio_control_in_2\[13\]/vccd
-+ gpio_control_in_2\[13\]/vssd gpio_control_in_2\[13\]/vccd1 gpio_control_in_2\[13\]/vssd1
-+ gpio_control_block
++ mprj/io_oeb[32] mprj/io_out[32] gpio_control_in_2\[13\]/zero vccd_core vssd_core
++ vccd1_core vssd1_core gpio_control_block
 Xgpio_control_in_2\[8\] soc/mgmt_in_data[27] gpio_control_in_2\[8\]/one soc/mgmt_in_data[27]
 + gpio_control_in_2\[8\]/one padframe/mprj_io_analog_en[27] padframe/mprj_io_analog_pol[27]
 + padframe/mprj_io_analog_sel[27] padframe/mprj_io_dm[81] padframe/mprj_io_dm[82]
@@ -1581,9 +1666,8 @@ Xgpio_control_in_2\[8\] soc/mgmt_in_data[27] gpio_control_in_2\[8\]/one soc/mgmt
 + padframe/mprj_io_slow_sel[27] padframe/mprj_io_vtrip_sel[27] gpio_control_in_2\[8\]/resetn
 + gpio_control_in_2\[9\]/resetn gpio_control_in_2\[8\]/serial_clock gpio_control_in_2\[9\]/serial_clock
 + gpio_control_in_2\[8\]/serial_data_in gpio_control_in_2\[7\]/serial_data_in mprj/io_in[27]
-+ mprj/io_oeb[27] mprj/io_out[27] gpio_control_in_2\[8\]/zero gpio_control_in_2\[8\]/vccd
-+ gpio_control_in_2\[8\]/vssd gpio_control_in_2\[8\]/vccd1 gpio_control_in_2\[8\]/vssd1
-+ gpio_control_block
++ mprj/io_oeb[27] mprj/io_out[27] gpio_control_in_2\[8\]/zero vccd_core vssd_core
++ vccd1_core vssd1_core gpio_control_block
 Xgpio_control_in_1\[13\] soc/mgmt_in_data[15] gpio_control_in_1\[13\]/one soc/mgmt_in_data[15]
 + gpio_control_in_1\[13\]/one padframe/mprj_io_analog_en[15] padframe/mprj_io_analog_pol[15]
 + padframe/mprj_io_analog_sel[15] padframe/mprj_io_dm[45] padframe/mprj_io_dm[46]
@@ -1592,9 +1676,8 @@ Xgpio_control_in_1\[13\] soc/mgmt_in_data[15] gpio_control_in_1\[13\]/one soc/mg
 + padframe/mprj_io_slow_sel[15] padframe/mprj_io_vtrip_sel[15] gpio_control_in_2\[15\]/resetn
 + gpio_control_in_2\[16\]/resetn gpio_control_in_2\[15\]/serial_clock gpio_control_in_2\[16\]/serial_clock
 + gpio_control_in_1\[13\]/serial_data_in gpio_control_in_1\[14\]/serial_data_in mprj/io_in[15]
-+ mprj/io_oeb[15] mprj/io_out[15] gpio_control_in_1\[13\]/zero gpio_control_in_1\[13\]/vccd
-+ gpio_control_in_1\[13\]/vssd gpio_control_in_1\[13\]/vccd1 gpio_control_in_1\[13\]/vssd1
-+ gpio_control_block
++ mprj/io_oeb[15] mprj/io_out[15] gpio_control_in_1\[13\]/zero vccd_core vssd_core
++ vccd1_core vssd1_core gpio_control_block
 Xgpio_control_in_1\[3\] soc/mgmt_in_data[5] gpio_control_in_1\[3\]/one soc/mgmt_in_data[5]
 + gpio_control_in_1\[3\]/one padframe/mprj_io_analog_en[5] padframe/mprj_io_analog_pol[5]
 + padframe/mprj_io_analog_sel[5] padframe/mprj_io_dm[15] padframe/mprj_io_dm[16] padframe/mprj_io_dm[17]
@@ -1603,8 +1686,7 @@ Xgpio_control_in_1\[3\] soc/mgmt_in_data[5] gpio_control_in_1\[3\]/one soc/mgmt_
 + padframe/mprj_io_vtrip_sel[5] gpio_control_in_2\[5\]/resetn gpio_control_in_2\[6\]/resetn
 + gpio_control_in_2\[5\]/serial_clock gpio_control_in_2\[6\]/serial_clock gpio_control_in_1\[3\]/serial_data_in
 + gpio_control_in_1\[4\]/serial_data_in mprj/io_in[5] mprj/io_oeb[5] mprj/io_out[5]
-+ gpio_control_in_1\[3\]/zero gpio_control_in_1\[3\]/vccd gpio_control_in_1\[3\]/vssd
-+ gpio_control_in_1\[3\]/vccd1 gpio_control_in_1\[3\]/vssd1 gpio_control_block
++ gpio_control_in_1\[3\]/zero vccd_core vssd_core vccd1_core vssd1_core gpio_control_block
 Xgpio_control_in_2\[11\] soc/mgmt_in_data[30] gpio_control_in_2\[11\]/one soc/mgmt_in_data[30]
 + gpio_control_in_2\[11\]/one padframe/mprj_io_analog_en[30] padframe/mprj_io_analog_pol[30]
 + padframe/mprj_io_analog_sel[30] padframe/mprj_io_dm[90] padframe/mprj_io_dm[91]
@@ -1613,9 +1695,8 @@ Xgpio_control_in_2\[11\] soc/mgmt_in_data[30] gpio_control_in_2\[11\]/one soc/mg
 + padframe/mprj_io_slow_sel[30] padframe/mprj_io_vtrip_sel[30] gpio_control_in_1\[9\]/resetn
 + gpio_control_in_2\[12\]/resetn gpio_control_in_1\[9\]/serial_clock gpio_control_in_2\[12\]/serial_clock
 + gpio_control_in_2\[11\]/serial_data_in gpio_control_in_2\[10\]/serial_data_in mprj/io_in[30]
-+ mprj/io_oeb[30] mprj/io_out[30] gpio_control_in_2\[11\]/zero gpio_control_in_2\[11\]/vccd
-+ gpio_control_in_2\[11\]/vssd gpio_control_in_2\[11\]/vccd1 gpio_control_in_2\[11\]/vssd1
-+ gpio_control_block
++ mprj/io_oeb[30] mprj/io_out[30] gpio_control_in_2\[11\]/zero vccd_core vssd_core
++ vccd1_core vssd1_core gpio_control_block
 Xgpio_control_in_2\[6\] soc/mgmt_in_data[25] gpio_control_in_2\[6\]/one soc/mgmt_in_data[25]
 + gpio_control_in_2\[6\]/one padframe/mprj_io_analog_en[25] padframe/mprj_io_analog_pol[25]
 + padframe/mprj_io_analog_sel[25] padframe/mprj_io_dm[75] padframe/mprj_io_dm[76]
@@ -1624,9 +1705,8 @@ Xgpio_control_in_2\[6\] soc/mgmt_in_data[25] gpio_control_in_2\[6\]/one soc/mgmt
 + padframe/mprj_io_slow_sel[25] padframe/mprj_io_vtrip_sel[25] gpio_control_in_2\[6\]/resetn
 + gpio_control_in_2\[7\]/resetn gpio_control_in_2\[6\]/serial_clock gpio_control_in_2\[7\]/serial_clock
 + gpio_control_in_2\[6\]/serial_data_in gpio_control_in_2\[5\]/serial_data_in mprj/io_in[25]
-+ mprj/io_oeb[25] mprj/io_out[25] gpio_control_in_2\[6\]/zero gpio_control_in_2\[6\]/vccd
-+ gpio_control_in_2\[6\]/vssd gpio_control_in_2\[6\]/vccd1 gpio_control_in_2\[6\]/vssd1
-+ gpio_control_block
++ mprj/io_oeb[25] mprj/io_out[25] gpio_control_in_2\[6\]/zero vccd_core vssd_core
++ vccd1_core vssd1_core gpio_control_block
 Xgpio_control_in_1\[11\] soc/mgmt_in_data[13] gpio_control_in_1\[11\]/one soc/mgmt_in_data[13]
 + gpio_control_in_1\[11\]/one padframe/mprj_io_analog_en[13] padframe/mprj_io_analog_pol[13]
 + padframe/mprj_io_analog_sel[13] padframe/mprj_io_dm[39] padframe/mprj_io_dm[40]
@@ -1635,9 +1715,8 @@ Xgpio_control_in_1\[11\] soc/mgmt_in_data[13] gpio_control_in_1\[11\]/one soc/mg
 + padframe/mprj_io_slow_sel[13] padframe/mprj_io_vtrip_sel[13] gpio_control_in_2\[13\]/resetn
 + gpio_control_in_2\[14\]/resetn gpio_control_in_2\[13\]/serial_clock gpio_control_in_2\[14\]/serial_clock
 + gpio_control_in_1\[11\]/serial_data_in gpio_control_in_1\[12\]/serial_data_in mprj/io_in[13]
-+ mprj/io_oeb[13] mprj/io_out[13] gpio_control_in_1\[11\]/zero gpio_control_in_1\[11\]/vccd
-+ gpio_control_in_1\[11\]/vssd gpio_control_in_1\[11\]/vccd1 gpio_control_in_1\[11\]/vssd1
-+ gpio_control_block
++ mprj/io_oeb[13] mprj/io_out[13] gpio_control_in_1\[11\]/zero vccd_core vssd_core
++ vccd1_core vssd1_core gpio_control_block
 Xgpio_control_in_1\[1\] soc/mgmt_in_data[3] gpio_control_in_1\[1\]/one soc/mgmt_in_data[3]
 + gpio_control_in_1\[1\]/one padframe/mprj_io_analog_en[3] padframe/mprj_io_analog_pol[3]
 + padframe/mprj_io_analog_sel[3] padframe/mprj_io_dm[9] padframe/mprj_io_dm[10] padframe/mprj_io_dm[11]
@@ -1646,8 +1725,7 @@ Xgpio_control_in_1\[1\] soc/mgmt_in_data[3] gpio_control_in_1\[1\]/one soc/mgmt_
 + padframe/mprj_io_vtrip_sel[3] gpio_control_in_2\[3\]/resetn gpio_control_in_2\[4\]/resetn
 + gpio_control_in_2\[3\]/serial_clock gpio_control_in_2\[4\]/serial_clock gpio_control_in_1\[1\]/serial_data_in
 + gpio_control_in_1\[2\]/serial_data_in mprj/io_in[3] mprj/io_oeb[3] mprj/io_out[3]
-+ gpio_control_in_1\[1\]/zero gpio_control_in_1\[1\]/vccd gpio_control_in_1\[1\]/vssd
-+ gpio_control_in_1\[1\]/vccd1 gpio_control_in_1\[1\]/vssd1 gpio_control_block
++ gpio_control_in_1\[1\]/zero vccd_core vssd_core vccd1_core vssd1_core gpio_control_block
 Xmprj mprj/analog_io[0] mprj/analog_io[10] mprj/analog_io[11] mprj/analog_io[12] mprj/analog_io[13]
 + mprj/analog_io[14] mprj/analog_io[15] mprj/analog_io[16] mprj/analog_io[17] mprj/analog_io[18]
 + mprj/analog_io[19] mprj/analog_io[1] mprj/analog_io[20] mprj/analog_io[21] mprj/analog_io[22]
@@ -1782,8 +1860,8 @@ Xmprj mprj/analog_io[0] mprj/analog_io[10] mprj/analog_io[11] mprj/analog_io[12]
 + soc/mprj_dat_i[28] soc/mprj_dat_i[29] soc/mprj_dat_i[2] soc/mprj_dat_i[30] soc/mprj_dat_i[31]
 + soc/mprj_dat_i[3] soc/mprj_dat_i[4] soc/mprj_dat_i[5] soc/mprj_dat_i[6] soc/mprj_dat_i[7]
 + soc/mprj_dat_i[8] soc/mprj_dat_i[9] mprj/wbs_sel_i[0] mprj/wbs_sel_i[1] mprj/wbs_sel_i[2]
-+ mprj/wbs_sel_i[3] mprj/wbs_stb_i mprj/wbs_we_i mprj/vccd1 mprj/vssd1 mprj/vccd2
-+ mprj/vssd2 mprj/vdda1 mprj/vssa1 mprj/vdda2 mprj/vssa2 user_project_wrapper
++ mprj/wbs_sel_i[3] mprj/wbs_stb_i mprj/wbs_we_i vccd1_core vssd1_core vccd2_core
++ vssd2_core vdda1_core vssa1_core vdda2_core vssa2_core user_project_wrapper
 Xgpio_control_in_2\[4\] soc/mgmt_in_data[23] gpio_control_in_2\[4\]/one soc/mgmt_in_data[23]
 + gpio_control_in_2\[4\]/one padframe/mprj_io_analog_en[23] padframe/mprj_io_analog_pol[23]
 + padframe/mprj_io_analog_sel[23] padframe/mprj_io_dm[69] padframe/mprj_io_dm[70]
@@ -1792,9 +1870,8 @@ Xgpio_control_in_2\[4\] soc/mgmt_in_data[23] gpio_control_in_2\[4\]/one soc/mgmt
 + padframe/mprj_io_slow_sel[23] padframe/mprj_io_vtrip_sel[23] gpio_control_in_2\[4\]/resetn
 + gpio_control_in_2\[5\]/resetn gpio_control_in_2\[4\]/serial_clock gpio_control_in_2\[5\]/serial_clock
 + gpio_control_in_2\[4\]/serial_data_in gpio_control_in_2\[3\]/serial_data_in mprj/io_in[23]
-+ mprj/io_oeb[23] mprj/io_out[23] gpio_control_in_2\[4\]/zero gpio_control_in_2\[4\]/vccd
-+ gpio_control_in_2\[4\]/vssd gpio_control_in_2\[4\]/vccd1 gpio_control_in_2\[4\]/vssd1
-+ gpio_control_block
++ mprj/io_oeb[23] mprj/io_out[23] gpio_control_in_2\[4\]/zero vccd_core vssd_core
++ vccd1_core vssd1_core gpio_control_block
 Xgpio_control_bidir_1\[1\] soc/mgmt_in_data[1] soc/sdo_outenb soc/sdo_out gpio_control_bidir_1\[1\]/one
 + padframe/mprj_io_analog_en[1] padframe/mprj_io_analog_pol[1] padframe/mprj_io_analog_sel[1]
 + padframe/mprj_io_dm[3] padframe/mprj_io_dm[4] padframe/mprj_io_dm[5] padframe/mprj_io_holdover[1]
@@ -1802,9 +1879,9 @@ Xgpio_control_bidir_1\[1\] soc/mgmt_in_data[1] soc/sdo_outenb soc/sdo_out gpio_c
 + padframe/mprj_io_out[1] padframe/mprj_io_oeb[1] padframe/mprj_io_slow_sel[1] padframe/mprj_io_vtrip_sel[1]
 + gpio_control_in_2\[1\]/resetn gpio_control_in_2\[2\]/resetn gpio_control_in_2\[1\]/serial_clock
 + gpio_control_in_2\[2\]/serial_clock gpio_control_bidir_1\[1\]/serial_data_in gpio_control_in_1\[0\]/serial_data_in
-+ mprj/io_in[1] mprj/io_oeb[1] mprj/io_out[1] gpio_control_bidir_1\[1\]/zero gpio_control_bidir_1\[1\]/vccd
-+ gpio_control_bidir_1\[1\]/vssd gpio_control_bidir_1\[1\]/vccd1 gpio_control_bidir_1\[1\]/vssd1
-+ gpio_control_block
++ mprj/io_in[1] mprj/io_oeb[1] mprj/io_out[1] gpio_control_bidir_1\[1\]/zero vccd_core
++ vssd_core vccd1_core vssd1_core gpio_control_block
+Xcopyright_block_0 VSUBS copyright_block
 Xgpio_control_in_2\[2\] soc/mgmt_in_data[21] gpio_control_in_2\[2\]/one soc/mgmt_in_data[21]
 + gpio_control_in_2\[2\]/one padframe/mprj_io_analog_en[21] padframe/mprj_io_analog_pol[21]
 + padframe/mprj_io_analog_sel[21] padframe/mprj_io_dm[63] padframe/mprj_io_dm[64]
@@ -1813,9 +1890,8 @@ Xgpio_control_in_2\[2\] soc/mgmt_in_data[21] gpio_control_in_2\[2\]/one soc/mgmt
 + padframe/mprj_io_slow_sel[21] padframe/mprj_io_vtrip_sel[21] gpio_control_in_2\[2\]/resetn
 + gpio_control_in_2\[3\]/resetn gpio_control_in_2\[2\]/serial_clock gpio_control_in_2\[3\]/serial_clock
 + gpio_control_in_2\[2\]/serial_data_in gpio_control_in_2\[1\]/serial_data_in mprj/io_in[21]
-+ mprj/io_oeb[21] mprj/io_out[21] gpio_control_in_2\[2\]/zero gpio_control_in_2\[2\]/vccd
-+ gpio_control_in_2\[2\]/vssd gpio_control_in_2\[2\]/vccd1 gpio_control_in_2\[2\]/vssd1
-+ gpio_control_block
++ mprj/io_oeb[21] mprj/io_out[21] gpio_control_in_2\[2\]/zero vccd_core vssd_core
++ vccd1_core vssd1_core gpio_control_block
 Xstorage soc/mgmt_addr[0] soc/mgmt_addr[1] soc/mgmt_addr[2] soc/mgmt_addr[3] soc/mgmt_addr[4]
 + soc/mgmt_addr[5] soc/mgmt_addr[6] soc/mgmt_addr[7] soc/mgmt_addr_ro[0] soc/mgmt_addr_ro[1]
 + soc/mgmt_addr_ro[2] soc/mgmt_addr_ro[3] soc/mgmt_addr_ro[4] soc/mgmt_addr_ro[5]
@@ -1849,7 +1925,7 @@ Xstorage soc/mgmt_addr[0] soc/mgmt_addr[1] soc/mgmt_addr[2] soc/mgmt_addr[3] soc
 + soc/mgmt_wdata[3] soc/mgmt_wdata[4] soc/mgmt_wdata[5] soc/mgmt_wdata[6] soc/mgmt_wdata[7]
 + soc/mgmt_wdata[8] soc/mgmt_wdata[9] soc/mgmt_wen[0] soc/mgmt_wen[1] soc/mgmt_wen_mask[0]
 + soc/mgmt_wen_mask[1] soc/mgmt_wen_mask[2] soc/mgmt_wen_mask[3] soc/mgmt_wen_mask[4]
-+ soc/mgmt_wen_mask[5] soc/mgmt_wen_mask[6] soc/mgmt_wen_mask[7] storage/VPWR storage/VGND
++ soc/mgmt_wen_mask[5] soc/mgmt_wen_mask[6] soc/mgmt_wen_mask[7] vccd_core vssd_core
 + storage
 Xgpio_control_in_1\[8\] soc/mgmt_in_data[10] gpio_control_in_1\[8\]/one soc/mgmt_in_data[10]
 + gpio_control_in_1\[8\]/one padframe/mprj_io_analog_en[10] padframe/mprj_io_analog_pol[10]
@@ -1859,9 +1935,10 @@ Xgpio_control_in_1\[8\] soc/mgmt_in_data[10] gpio_control_in_1\[8\]/one soc/mgmt
 + padframe/mprj_io_slow_sel[10] padframe/mprj_io_vtrip_sel[10] gpio_control_in_1\[8\]/resetn
 + gpio_control_in_1\[9\]/resetn gpio_control_in_1\[8\]/serial_clock gpio_control_in_1\[9\]/serial_clock
 + gpio_control_in_1\[8\]/serial_data_in gpio_control_in_1\[9\]/serial_data_in mprj/io_in[10]
-+ mprj/io_oeb[10] mprj/io_out[10] gpio_control_in_1\[8\]/zero gpio_control_in_1\[8\]/vccd
-+ gpio_control_in_1\[8\]/vssd gpio_control_in_1\[8\]/vccd1 gpio_control_in_1\[8\]/vssd1
-+ gpio_control_block
++ mprj/io_oeb[10] mprj/io_out[10] gpio_control_in_1\[8\]/zero vccd_core vssd_core
++ vccd1_core vssd1_core gpio_control_block
+Xcaravel_power_routing_0 VSUBS vccd1_core vssd_core vdda1_core vssd2_core vssio_core
++ vssa2_core vddio_core vccd2_core vdda2_core vssd1_core vccd_core vssa1_core caravel_power_routing
 Xgpio_control_in_2\[16\] soc/mgmt_in_data[35] gpio_control_in_2\[16\]/one soc/mgmt_in_data[35]
 + gpio_control_in_2\[16\]/one padframe/mprj_io_analog_en[35] padframe/mprj_io_analog_pol[35]
 + padframe/mprj_io_analog_sel[35] padframe/mprj_io_dm[105] padframe/mprj_io_dm[106]
@@ -1870,8 +1947,7 @@ Xgpio_control_in_2\[16\] soc/mgmt_in_data[35] gpio_control_in_2\[16\]/one soc/mg
 + padframe/mprj_io_slow_sel[35] padframe/mprj_io_vtrip_sel[35] gpio_control_in_2\[16\]/resetn
 + gpio_control_in_1\[15\]/resetn gpio_control_in_2\[16\]/serial_clock gpio_control_in_1\[15\]/serial_clock
 + gpio_control_in_2\[16\]/serial_data_in gpio_control_in_2\[15\]/serial_data_in mprj/io_in[35]
-+ mprj/io_oeb[35] mprj/io_out[35] gpio_control_in_2\[16\]/zero gpio_control_in_2\[16\]/vccd
-+ gpio_control_in_2\[16\]/vssd gpio_control_in_2\[16\]/vccd1 gpio_control_in_2\[16\]/vssd1
-+ gpio_control_block
++ mprj/io_oeb[35] mprj/io_out[35] gpio_control_in_2\[16\]/zero vccd_core vssd_core
++ vccd1_core vssd1_core gpio_control_block
 .ends
 

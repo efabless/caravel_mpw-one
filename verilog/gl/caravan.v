@@ -3164,7 +3164,7 @@ module caravan(vddio, vddio_2, vssio, vssio_2, vdda, vssa, vccd, vssd, vdda1, vd
     .gpio_mode1_core(gpio_mode1_core),
     .gpio_out_core(gpio_out_core),
     .gpio_outenb_core(gpio_outenb_core),
-    .mprj_analog({ \user_analog[10] , \user_analog[9] , \user_analog[8] , \user_analog[7] , \user_analog[6] , \user_analog[5] , \user_analog[4] , \user_analog[3] , \user_analog[2] , \user_analog[1] , \user_analog[0]  }),
+    .mprj_analog({ \user_analog[10] , \user_analog[9] , \user_analog[8] , \user_analog[7] , \user_analog[6] , \user_analog[5] , \user_analog[4] , \user_analog[0] , \user_analog[3] , \user_analog[2] , \user_analog[1]  }),
     .mprj_clamp_high({ \user_clamp_high[2] , \user_clamp_high[1] , \user_clamp_high[0]  }),
     .mprj_clamp_low({ \user_clamp_low[2] , \user_clamp_low[1] , \user_clamp_low[0]  }),
     .mprj_gpio_analog({ \user_gpio_analog[17] , \user_gpio_analog[16] , \user_gpio_analog[15] , \user_gpio_analog[14] , \user_gpio_analog[13] , \user_gpio_analog[12] , \user_gpio_analog[11] , \user_gpio_analog[10] , \user_gpio_analog[9] , \user_gpio_analog[8] , \user_gpio_analog[7] , \user_gpio_analog[6] , \user_gpio_analog[5] , \user_gpio_analog[4] , \user_gpio_analog[3] , \user_gpio_analog[2] , \user_gpio_analog[1] , \user_gpio_analog[0]  }),

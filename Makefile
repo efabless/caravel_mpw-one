@@ -366,7 +366,7 @@ $(LVS_MAGLEF_BLOCKS): lvs-maglef-% : ./mag/%.mag ./verilog/gl/%.v
 		exit;" > ./mag/extract_$*.tcl
 	cd mag && export MAGTYPE=maglef; magic -noc -dnull extract_$*.tcl < /dev/null
 	mv ./mag/$*.spice ./spi/lvs
-	rm ./mag/*.ext
+	rm ./maglef/*.ext
 	mv -f ./mag/extract_$*.tcl ./maglef/tmp
 	mv -f ./mag/extract_$*.log ./maglef/tmp
 	####
@@ -374,7 +374,9 @@ $(LVS_MAGLEF_BLOCKS): lvs-maglef-% : ./mag/%.mag ./verilog/gl/%.v
 	sh $(CARAVEL_ROOT)/spi/lvs/run_lvs.sh ./spi/lvs/$*.spice ./verilog/gl/$*.v $*
 	@echo ""
 	python3 $(CARAVEL_ROOT)/scripts/count_lvs.py -f ./verilog/gl/$*.v_comp.json | tee ./spi/lvs/tmp/$*.maglef.lvs.summary.log
-	mv -f ./verilog/gl/*{.out,.json,.log} ./spi/lvs/tmp 2> /dev/null || true
+	mv -f ./verilog/gl/*.out ./spi/lvs/tmp 2> /dev/null || true
+	mv -f ./verilog/gl/*.json ./spi/lvs/tmp 2> /dev/null || true
+	mv -f ./verilog/gl/*.log ./spi/lvs/tmp 2> /dev/null || true
 	@echo ""
 	@echo "LVS: ./spi/lvs/$*.spice vs. ./verilog/gl/$*.v"
 	@echo "Comparison result: ./spi/lvs/tmp/$*.v_comp.out"
