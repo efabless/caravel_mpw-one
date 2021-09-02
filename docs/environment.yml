@@ -18,6 +18,6 @@ name: caravel-docs
 channels:
 - defaults
 dependencies:
-- python
-- pip:
+- python>3.8
+- pip3:
   - -r file:requirements.txt
