@@ -24,6 +24,8 @@ GCC_PATH?=/ef/apps/bin
 GCC_PREFIX?=riscv32-unknown-elf
 PDK_PATH?=$(PDK_ROOT)/sky130A
 
+SIM_DEFINES = -DFUNCTIONAL -DSIM
+
 SIM?=RTL
 
 .SUFFIXES:
@@ -35,7 +37,7 @@ all:  ${PATTERN:=.vcd}
 hex:  ${PATTERN:=.hex}
 
 %.vvp: %_tb.v %.hex
-	iverilog -Ttyp -DFUNCTIONAL -DSIM -I $(BEHAVIOURAL_MODELS) \
+	iverilog -Ttyp $(SIM_DEFINES) -I $(BEHAVIOURAL_MODELS) \
 	-I $(PDK_PATH) -I $(IP_PATH) -I $(RTL_PATH) \
 	$< -o $@ 
 
@@ -62,6 +64,10 @@ ifeq (,$(wildcard $(PDK_ROOT)/sky130A))
 endif
 ifeq (,$(wildcard $(GCC_PATH)/$(GCC_PREFIX)-gcc ))
 	$(error $(GCC_PATH)/$(GCC_PREFIX)-gcc is not found, please export GCC_PATH and GCC_PREFIX before running make)
+endif
+# check for efabless style installation
+ifeq (,$(wildcard $(PDK_ROOT)/sky130A/libs.ref/*/verilog))
+SIM_DEFINES := ${SIM_DEFINES} -DEF_STYLE
 endif
 
 # ---- Clean ----

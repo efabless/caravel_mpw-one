@@ -14,16 +14,16 @@
 #
 # SPDX-License-Identifier: Apache-2.0
 
-# ---- Test patterns for project striVe ----
-FIRMWARE_PATH = ../..
-VERILOG_PATH = ../../../..
 PDK_PATH = $(PDK_ROOT)/sky130A
+VERILOG_PATH = ../../../..
 RTL_PATH = $(VERILOG_PATH)/rtl
-IP_PATH = ../../../../ip
 BEHAVIOURAL_MODELS = ../../ 
 
+FIRMWARE_PATH = ../..
 GCC_PATH?=/ef/apps/bin
 GCC_PREFIX?=riscv32-unknown-elf
+
+SIM_DEFINES = -DFUNCTIONAL -DSIM
 
 SIM?=RTL
 
@@ -37,12 +37,12 @@ hex:  ${PATTERN:=.hex}
 
 %.vvp: %_tb.v %.hex
 ifeq ($(SIM),RTL)
-	iverilog -Ttyp -DFUNCTIONAL -DSIM -I $(BEHAVIOURAL_MODELS) \
-	-I $(PDK_PATH) -I $(IP_PATH) -I $(RTL_PATH) \
+	iverilog -Ttyp $(SIM_DEFINES) -I $(BEHAVIOURAL_MODELS) \
+	-I $(PDK_PATH) -I $(RTL_PATH) \
 	$< -o $@ 
 else  
-	iverilog -Ttyp -DFUNCTIONAL -DSIM -DGL -I $(BEHAVIOURAL_MODELS) \
-	-I $(PDK_PATH) -I $(IP_PATH) -I $(VERILOG_PATH) -I $(RTL_PATH) \
+	iverilog -Ttyp $(SIM_DEFINES) -DGL -I $(BEHAVIOURAL_MODELS) \
+	-I $(PDK_PATH) -I $(VERILOG_PATH) -I $(RTL_PATH) \
 	$< -o $@ 
 endif
 
@@ -53,7 +53,7 @@ endif
 	${GCC_PATH}/${GCC_PREFIX}-gcc -march=rv32imc -mabi=ilp32 -Wl,-Bstatic,-T,$(FIRMWARE_PATH)/sections.lds,--strip-debug -ffreestanding -nostdlib -o $@ $(FIRMWARE_PATH)/start.s $<
 
 %.hex: %.elf
-	${GCC_PATH}/${GCC_PREFIX}-objcopy -O verilog $< $@
+	${GCC_PATH}/${GCC_PREFIX}-objcopy -O verilog $< $@ 
 	# to fix flash base address
 	sed -i 's/@10000000/@00000000/g' $@
 
@@ -70,7 +70,10 @@ endif
 ifeq (,$(wildcard $(GCC_PATH)/$(GCC_PREFIX)-gcc ))
 	$(error $(GCC_PATH)/$(GCC_PREFIX)-gcc is not found, please export GCC_PATH and GCC_PREFIX before running make)
 endif
-
+# check for efabless style installation
+ifeq (,$(wildcard $(PDK_ROOT)/sky130A/libs.ref/*/verilog))
+SIM_DEFINES := ${SIM_DEFINES} -DEF_STYLE
+endif
 # ---- Clean ----
 
 clean:
