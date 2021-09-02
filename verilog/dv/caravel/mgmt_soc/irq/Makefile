@@ -14,17 +14,16 @@
 #
 # SPDX-License-Identifier: Apache-2.0
 
-PDK_PATH = $(PDK_ROOT)/sky130A
+FIRMWARE_PATH = ../..
 VERILOG_PATH = ../../../..
+PDK_PATH = $(PDK_ROOT)/sky130A
 RTL_PATH = $(VERILOG_PATH)/rtl
 BEHAVIOURAL_MODELS = ../../ 
 
-FIRMWARE_PATH = ../..
 GCC_PATH?=/ef/apps/bin
 GCC_PREFIX?=riscv32-unknown-elf
 
 SIM_DEFINES = -DFUNCTIONAL -DSIM
-
 SIM?=RTL
 
 .SUFFIXES:
@@ -33,7 +32,7 @@ PATTERN = irq
 
 all:  ${PATTERN:=.vcd}
 
-hex:  ${PATTERN:=.hex}
+ex:  ${PATTERN:=.hex}
 
 %.vvp: %_tb.v %.hex
 ifeq ($(SIM),RTL)
@@ -46,11 +45,11 @@ else
 	$< -o $@ 
 endif
 
-%.vcd: %.vvp
+%.vcd: %.vvp check-env
 	vvp $<
 
-%.elf: %.c $(FIRMWARE_PATH)/sections.lds $(FIRMWARE_PATH)/start.s check-env
-	${GCC_PATH}/${GCC_PREFIX}-gcc -march=rv32imc -mabi=ilp32 -Wl,-Bstatic,-T,$(FIRMWARE_PATH)/sections.lds,--strip-debug -ffreestanding -nostdlib -o $@ $(FIRMWARE_PATH)/start.s $<
+%.elf: %.c sections.lds start.S check-env
+	${GCC_PATH}/${GCC_PREFIX}-gcc -march=rv32imc -mabi=ilp32 -Wl,-Bstatic,-T,sections.lds,--strip-debug -ffreestanding -nostdlib -o $@ start.S $<
 
 %.hex: %.elf
 	${GCC_PATH}/${GCC_PREFIX}-objcopy -O verilog $< $@ 
@@ -74,10 +73,10 @@ endif
 ifeq (,$(wildcard $(PDK_ROOT)/sky130A/libs.ref/*/verilog))
 SIM_DEFINES := ${SIM_DEFINES} -DEF_STYLE
 endif
+
 # ---- Clean ----
 
 clean:
 	rm -f *.elf *.hex *.bin *.vvp *.vcd *.log
 
 .PHONY: clean hex all
-
