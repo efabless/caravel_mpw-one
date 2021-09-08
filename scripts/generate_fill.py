@@ -29,7 +29,7 @@ import multiprocessing
 
 def usage():
     print("Usage:")
-    print("generate_fill.py [<user_id_value>] [<path_to_project>] [-keep] [-test] [-dist]")
+    print("generate_fill.py <user_id_value> <project> <path_to_project> [-keep] [-test] [-dist]")
     print("")
     print("where:")
     print("    <user_id_value>   is a character string of eight hex digits, and")
@@ -90,54 +90,55 @@ if __name__ == '__main__':
         else:
             arguments.append(option)
 
-    if len(arguments) > 2:
+    if len(arguments) < 3:
         print("Wrong number of arguments given to generate_fill.py.")
         usage()
         sys.exit(1)
 
-    user_id_value = None
-    user_project_path = None
+    user_id_value = arguments[0]
+    project = arguments[1]
+    user_project_path = arguments[2]
     
-    if len(arguments) > 0:
-        user_id_value = arguments[0]
-
+    try:
         # Convert to binary
-        try:
-            user_id_int = int('0x' + user_id_value, 0)
-            user_id_bits = '{0:032b}'.format(user_id_int)
-        except:
-            user_project_path = arguments[0]
+        user_id_int = int('0x' + user_id_value, 0)
+        user_id_bits = '{0:032b}'.format(user_id_int)
 
-    if len(arguments) == 0:
-        user_project_path = os.getcwd() 
-    elif len(arguments) == 2:
-        user_project_path = arguments[1]
-    elif user_project_path == None:
-        user_project_path = arguments[0]
-    else:
-        user_project_path = os.getcwd()
+    except:
+        print("User ID not recognized")
+        usage()
+        sys.exit(1)
+
+    # if len(arguments) == 0:
+    #     user_project_path = os.getcwd()
+    # elif len(arguments) == 2:
+    #     user_project_path = arguments[1]
+    # elif user_project_path == None:
+    #     user_project_path = arguments[0]
+    # else:
+    #     user_project_path = os.getcwd()
+
 
     if not os.path.isdir(user_project_path):
         print('Error:  Project path "' + user_project_path + '" does not exist or is not readable.')
         sys.exit(1)
 
     # Check for valid user ID
-    if not user_id_value:
-        if os.path.isfile(user_project_path + '/info.yaml'):
-            with open(user_project_path + '/info.yaml', 'r') as ifile:
-                infolines = ifile.read().splitlines()
-                for line in infolines:
-                    kvpair = line.split(':')
-                    if len(kvpair) == 2:
-                        key = kvpair[0].strip()
-                        value = kvpair[1].strip()
-                        if key == 'project_id':
-                            user_id_value = value.strip('"\'')
-                            break
+    # if not user_id_value:
+    #     if os.path.isfile(user_project_path + '/info.yaml'):
+    #         with open(user_project_path + '/info.yaml', 'r') as ifile:
+    #             infolines = ifile.read().splitlines()
+    #             for line in infolines:
+    #                 kvpair = line.split(':')
+    #                 if len(kvpair) == 2:
+    #                     key = kvpair[0].strip()
+    #                     value = kvpair[1].strip()
+    #                     if key == 'project_id':
+    #                         user_id_value = value.strip('"\'')
+    #                         break
 
-    project = 'caravel'
     if user_id_value:
-        project_with_id = project + '_' + user_id_value
+        project_with_id = 'caravel_' + user_id_value
     else:
         print('Error:  No project_id found in info.yaml file.')
         sys.exit(1)
@@ -183,7 +184,7 @@ if __name__ == '__main__':
     # print('load ' + project + ' -dereference', file=ofile)
     print('gds readonly true', file=ofile)
     print('gds rescale false', file=ofile)
-    print('gds read ../gds/caravel', file=ofile)
+    print('gds read ../gds/' + project, file=ofile)
     print('select top cell', file=ofile)
     print('expand', file=ofile)
     if not distmode:

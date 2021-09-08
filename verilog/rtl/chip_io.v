@@ -16,6 +16,26 @@
 // `default_nettype none
 module chip_io(
 	// Package Pins
+	inout  vddio_pad,		// Common padframe/ESD supply
+	inout  vddio_pad2,
+	inout  vssio_pad,		// Common padframe/ESD ground
+	inout  vssio_pad2,
+	inout  vccd_pad,		// Common 1.8V supply
+	inout  vssd_pad,		// Common digital ground
+	inout  vdda_pad,		// Management analog 3.3V supply
+	inout  vssa_pad,		// Management analog ground
+	inout  vdda1_pad,		// User area 1 3.3V supply
+	inout  vdda1_pad2,		
+	inout  vdda2_pad,		// User area 2 3.3V supply
+	inout  vssa1_pad,		// User area 1 analog ground
+	inout  vssa1_pad2,
+	inout  vssa2_pad,		// User area 2 analog ground
+	inout  vccd1_pad,		// User area 1 1.8V supply
+	inout  vccd2_pad,		// User area 2 1.8V supply
+	inout  vssd1_pad,		// User area 1 digital ground
+	inout  vssd2_pad,		// User area 2 digital ground
+
+	// Core Side
 	inout  vddio,		// Common padframe/ESD supply
 	inout  vssio,		// Common padframe/ESD ground
 	inout  vccd,		// Common 1.8V supply
@@ -44,11 +64,11 @@ module chip_io(
 	output resetb_core_h,
 	output clock_core,
 	input  gpio_out_core,
-    	output gpio_in_core,
-    	input  gpio_mode0_core,
-    	input  gpio_mode1_core,
-    	input  gpio_outenb_core,
-    	input  gpio_inenb_core,
+	output gpio_in_core,
+	input  gpio_mode0_core,
+	input  gpio_mode1_core,
+	input  gpio_outenb_core,
+	input  gpio_inenb_core,
 	input  flash_csb_core,
 	input  flash_clk_core,
 	input  flash_csb_oeb_core,
@@ -67,23 +87,31 @@ module chip_io(
 	inout [`MPRJ_IO_PADS-1:0] mprj_io,
 	input [`MPRJ_IO_PADS-1:0] mprj_io_out,
 	input [`MPRJ_IO_PADS-1:0] mprj_io_oeb,
-    	input [`MPRJ_IO_PADS-1:0] mprj_io_hldh_n,
-	input [`MPRJ_IO_PADS-1:0] mprj_io_enh,
-    	input [`MPRJ_IO_PADS-1:0] mprj_io_inp_dis,
-    	input [`MPRJ_IO_PADS-1:0] mprj_io_ib_mode_sel,
-    	input [`MPRJ_IO_PADS-1:0] mprj_io_vtrip_sel,
-    	input [`MPRJ_IO_PADS-1:0] mprj_io_slow_sel,
-    	input [`MPRJ_IO_PADS-1:0] mprj_io_holdover,
-    	input [`MPRJ_IO_PADS-1:0] mprj_io_analog_en,
-    	input [`MPRJ_IO_PADS-1:0] mprj_io_analog_sel,
-    	input [`MPRJ_IO_PADS-1:0] mprj_io_analog_pol,
-    	input [`MPRJ_IO_PADS*3-1:0] mprj_io_dm,
+	input [`MPRJ_IO_PADS-1:0] mprj_io_inp_dis,
+	input [`MPRJ_IO_PADS-1:0] mprj_io_ib_mode_sel,
+	input [`MPRJ_IO_PADS-1:0] mprj_io_vtrip_sel,
+	input [`MPRJ_IO_PADS-1:0] mprj_io_slow_sel,
+	input [`MPRJ_IO_PADS-1:0] mprj_io_holdover,
+	input [`MPRJ_IO_PADS-1:0] mprj_io_analog_en,
+	input [`MPRJ_IO_PADS-1:0] mprj_io_analog_sel,
+	input [`MPRJ_IO_PADS-1:0] mprj_io_analog_pol,
+	input [`MPRJ_IO_PADS*3-1:0] mprj_io_dm,
 	output [`MPRJ_IO_PADS-1:0] mprj_io_in,
 	// User project direct access to gpio pad connections for analog
 	// (all but the lowest-numbered 7 pads)
 	inout [`MPRJ_IO_PADS-10:0] mprj_analog_io
 );
 
+	// To be considered:  Master hold signal on all user pads (?)
+    // For now, set holdh_n to 1 (NOTE:  This is in the 3.3V domain)
+    // and setting enh to porb_h.
+
+    wire [`MPRJ_IO_PADS-1:0] mprj_io_hldh_n;
+    wire [`MPRJ_IO_PADS-1:0] mprj_io_enh;
+
+    assign mprj_io_hldh_n = {`MPRJ_IO_PADS{vddio}};
+    assign mprj_io_enh = {`MPRJ_IO_PADS{porb_h}};
+	
 	wire analog_a, analog_b;
 	wire vddio_q, vssio_q;
 
@@ -100,6 +128,8 @@ module chip_io(
 		`MGMT_ABUTMENT_PINS
 `ifdef TOP_ROUTING
 		.VDDIO(vddio)
+`else 
+		,.VDDIO_PAD(vddio_pad)
 `endif
     	);
 
@@ -108,6 +138,8 @@ module chip_io(
 		`USER2_ABUTMENT_PINS
 `ifdef TOP_ROUTING
 		.VDDIO(vddio)
+`else 
+		,.VDDIO_PAD(vddio_pad2)
 `endif
     	);
 
@@ -115,6 +147,8 @@ module chip_io(
 		`MGMT_ABUTMENT_PINS
 `ifdef TOP_ROUTING
 		.VDDA(vdda)
+`else 
+		,.VDDA_PAD(vdda_pad)
 `endif
     	);
 
@@ -122,6 +156,8 @@ module chip_io(
 		`MGMT_ABUTMENT_PINS
 `ifdef TOP_ROUTING
 		.VCCD(vccd)
+`else 
+		,.VCCD_PAD(vccd_pad)
 `endif
     	);
 
@@ -129,6 +165,8 @@ module chip_io(
 		`MGMT_ABUTMENT_PINS
 `ifdef TOP_ROUTING
 		.VSSIO(vssio)
+`else
+		,.VSSIO_PAD(vssio_pad)
 `endif
     	);
 
@@ -136,6 +174,8 @@ module chip_io(
 		`USER2_ABUTMENT_PINS
 `ifdef TOP_ROUTING
 		.VSSIO(vssio)
+`else
+		,.VSSIO_PAD(vssio_pad2)
 `endif
     	);
 
@@ -143,6 +183,8 @@ module chip_io(
 		`MGMT_ABUTMENT_PINS
 `ifdef TOP_ROUTING
 		.VSSA(vssa)
+`else
+		,.VSSA_PAD(vssa_pad)
 `endif
     	);
 
@@ -150,16 +192,29 @@ module chip_io(
 		`MGMT_ABUTMENT_PINS
 `ifdef TOP_ROUTING
 		.VSSD(vssd)
+`else
+		,.VSSD_PAD(vssd_pad)
 `endif
     	);
 
 	// Instantiate power and ground pads for user 1 domain
 	// 8 pads:  vdda, vssa, vccd, vssd;  One each HV and LV clamp.
 
-    	sky130_ef_io__vdda_hvc_clamped_pad user1_vdda_hvclamp_pad [1:0] (
+    	sky130_ef_io__vdda_hvc_clamped_pad \user1_vdda_hvclamp_pad[0] (
 		`USER1_ABUTMENT_PINS
 `ifdef TOP_ROUTING
 		.VDDA(vdda1)
+`else
+		,.VDDA_PAD(vdda1_pad)
+`endif
+    	);
+
+		sky130_ef_io__vdda_hvc_clamped_pad \user1_vdda_hvclamp_pad[1] (
+		`USER1_ABUTMENT_PINS
+`ifdef TOP_ROUTING
+		.VDDA(vdda1)
+`else
+		,.VDDA_PAD(vdda1_pad2)
 `endif
     	);
 
@@ -167,13 +222,27 @@ module chip_io(
 		`USER1_ABUTMENT_PINS
 `ifdef TOP_ROUTING
 		.VCCD(vccd1)
+`else
+		,.VCCD_PAD(vccd1_pad)
 `endif
     	);
 
-    	sky130_ef_io__vssa_hvc_clamped_pad user1_vssa_hvclamp_pad [1:0] (
+    	sky130_ef_io__vssa_hvc_clamped_pad \user1_vssa_hvclamp_pad[0] (
 		`USER1_ABUTMENT_PINS
 `ifdef TOP_ROUTING
 		.VSSA(vssa1)
+`else
+		,.VSSA_PAD(vssa1_pad)
+`endif
+    	);
+
+
+    	sky130_ef_io__vssa_hvc_clamped_pad \user1_vssa_hvclamp_pad[1] (
+		`USER1_ABUTMENT_PINS
+`ifdef TOP_ROUTING
+		.VSSA(vssa1)
+`else
+		,.VSSA_PAD(vssa1_pad2)
 `endif
     	);
 
@@ -181,6 +250,8 @@ module chip_io(
 		`USER1_ABUTMENT_PINS
 `ifdef TOP_ROUTING
 		.VSSD(vssd1)
+`else
+		,.VSSD_PAD(vssd1_pad)
 `endif
     	);
 
@@ -191,6 +262,8 @@ module chip_io(
 		`USER2_ABUTMENT_PINS
 `ifdef TOP_ROUTING
 		.VDDA(vdda2)
+`else
+		,.VDDA_PAD(vdda2_pad)
 `endif
     	);
 
@@ -198,6 +271,8 @@ module chip_io(
 		`USER2_ABUTMENT_PINS
 `ifdef TOP_ROUTING
 		.VCCD(vccd2)
+`else
+		,.VCCD_PAD(vccd2_pad)
 `endif
     	);
 
@@ -205,6 +280,8 @@ module chip_io(
 		`USER2_ABUTMENT_PINS
 `ifdef TOP_ROUTING
 		.VSSA(vssa2)
+`else
+		,.VSSA_PAD(vssa2_pad)
 `endif
     	);
 
@@ -212,6 +289,8 @@ module chip_io(
 		`USER2_ABUTMENT_PINS
 `ifdef TOP_ROUTING
 		.VSSD(vssd2)
+`else
+		,.VSSD_PAD(vssd2_pad)
 `endif
     	);
 

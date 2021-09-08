@@ -32,6 +32,26 @@ module chip_io_alt #(
 	parameter ANALOG_PADS_2 = 6
 ) (
 	// Package Pins
+	inout  vddio_pad,			// Common padframe/ESD supply
+	inout  vddio_pad2,			// Common padframe/ESD supply
+	inout  vssio_pad,			// Common padframe/ESD ground
+	inout  vssio_pad2,			// Common padframe/ESD ground
+	inout  vccd_pad,			// Common 1.8V supply
+	inout  vssd_pad,			// Common digital ground
+	inout  vdda_pad,			// Management analog 3.3V supply
+	inout  vssa_pad,			// Management analog ground
+	inout  vdda1_pad,			// User area 1 3.3V supply
+	inout  vdda1_pad2,			// User area 1 3.3V supply
+	inout  vdda2_pad,			// User area 2 3.3V supply
+	inout  vssa1_pad,			// User area 1 analog ground
+	inout  vssa1_pad2,			// User area 1 analog ground
+	inout  vssa2_pad,			// User area 2 analog ground
+	inout  vccd1_pad,			// User area 1 1.8V supply
+	inout  vccd2_pad,			// User area 2 1.8V supply
+	inout  vssd1_pad,			// User area 1 digital ground
+	inout  vssd2_pad,			// User area 2 digital ground
+
+	// Core Side
 	inout  vddio,		// Common padframe/ESD supply
 	inout  vssio,		// Common padframe/ESD ground
 	inout  vccd,		// Common 1.8V supply
@@ -60,11 +80,11 @@ module chip_io_alt #(
 	output resetb_core_h,
 	output clock_core,
 	input  gpio_out_core,
-    	output gpio_in_core,
-    	input  gpio_mode0_core,
-    	input  gpio_mode1_core,
-    	input  gpio_outenb_core,
-    	input  gpio_inenb_core,
+	output gpio_in_core,
+	input  gpio_mode0_core,
+	input  gpio_mode1_core,
+	input  gpio_outenb_core,
+	input  gpio_inenb_core,
 	input  flash_csb_core,
 	input  flash_clk_core,
 	input  flash_csb_oeb_core,
@@ -85,17 +105,15 @@ module chip_io_alt #(
 	// The section below is for the digital pads only.
 	input [`MPRJ_IO_PADS-ANALOG_PADS_1-ANALOG_PADS_2-1:0] mprj_io_out,
 	input [`MPRJ_IO_PADS-ANALOG_PADS_1-ANALOG_PADS_2-1:0] mprj_io_oeb,
-    	input [`MPRJ_IO_PADS-ANALOG_PADS_1-ANALOG_PADS_2-1:0] mprj_io_hldh_n,
-	input [`MPRJ_IO_PADS-ANALOG_PADS_1-ANALOG_PADS_2-1:0] mprj_io_enh,
-    	input [`MPRJ_IO_PADS-ANALOG_PADS_1-ANALOG_PADS_2-1:0] mprj_io_inp_dis,
-    	input [`MPRJ_IO_PADS-ANALOG_PADS_1-ANALOG_PADS_2-1:0] mprj_io_ib_mode_sel,
-    	input [`MPRJ_IO_PADS-ANALOG_PADS_1-ANALOG_PADS_2-1:0] mprj_io_vtrip_sel,
-    	input [`MPRJ_IO_PADS-ANALOG_PADS_1-ANALOG_PADS_2-1:0] mprj_io_slow_sel,
-    	input [`MPRJ_IO_PADS-ANALOG_PADS_1-ANALOG_PADS_2-1:0] mprj_io_holdover,
-    	input [`MPRJ_IO_PADS-ANALOG_PADS_1-ANALOG_PADS_2-1:0] mprj_io_analog_en,
-    	input [`MPRJ_IO_PADS-ANALOG_PADS_1-ANALOG_PADS_2-1:0] mprj_io_analog_sel,
-    	input [`MPRJ_IO_PADS-ANALOG_PADS_1-ANALOG_PADS_2-1:0] mprj_io_analog_pol,
-    	input [(`MPRJ_IO_PADS-ANALOG_PADS_1-ANALOG_PADS_2)*3-1:0] mprj_io_dm,
+	input [`MPRJ_IO_PADS-ANALOG_PADS_1-ANALOG_PADS_2-1:0] mprj_io_inp_dis,
+	input [`MPRJ_IO_PADS-ANALOG_PADS_1-ANALOG_PADS_2-1:0] mprj_io_ib_mode_sel,
+	input [`MPRJ_IO_PADS-ANALOG_PADS_1-ANALOG_PADS_2-1:0] mprj_io_vtrip_sel,
+	input [`MPRJ_IO_PADS-ANALOG_PADS_1-ANALOG_PADS_2-1:0] mprj_io_slow_sel,
+	input [`MPRJ_IO_PADS-ANALOG_PADS_1-ANALOG_PADS_2-1:0] mprj_io_holdover,
+	input [`MPRJ_IO_PADS-ANALOG_PADS_1-ANALOG_PADS_2-1:0] mprj_io_analog_en,
+	input [`MPRJ_IO_PADS-ANALOG_PADS_1-ANALOG_PADS_2-1:0] mprj_io_analog_sel,
+	input [`MPRJ_IO_PADS-ANALOG_PADS_1-ANALOG_PADS_2-1:0] mprj_io_analog_pol,
+	input [(`MPRJ_IO_PADS-ANALOG_PADS_1-ANALOG_PADS_2)*3-1:0] mprj_io_dm,
 	output [`MPRJ_IO_PADS-ANALOG_PADS_1-ANALOG_PADS_2-1:0] mprj_io_in,
 	output [`MPRJ_IO_PADS-ANALOG_PADS_1-ANALOG_PADS_2-1:0] mprj_io_in_3v3,
 
@@ -121,6 +139,15 @@ module chip_io_alt #(
 	wire analog_a, analog_b;
 	wire vddio_q, vssio_q;
 
+	// To be considered:  Master hold signal on all user pads (?)
+    // For now, set holdh_n to 1 (NOTE:  This is in the 3.3V domain)
+    // and setting enh to porb_h.
+	wire [`MPRJ_IO_PADS-`ANALOG_PADS-1:0] mprj_io_hldh_n;
+    wire [`MPRJ_IO_PADS-`ANALOG_PADS-1:0] mprj_io_enh;
+
+    assign mprj_io_hldh_n = {`MPRJ_IO_PADS{vddio}};
+    assign mprj_io_enh = {`MPRJ_IO_PADS{porb_h}};
+
 	// Instantiate power and ground pads for management domain
 	// 12 pads:  vddio, vssio, vdda, vssa, vccd, vssd
 	// One each HV and LV clamp.
@@ -134,14 +161,18 @@ module chip_io_alt #(
 		`MGMT_ABUTMENT_PINS
 `ifdef TOP_ROUTING
 		.VDDIO(vddio)
-`endif
-    	);
+`else 
+		,.VDDIO_PAD(vddio_pad)
+`endif    
+		);
 
 	// lies in user area 2
     	sky130_ef_io__vddio_hvc_clamped_pad \mgmt_vddio_hvclamp_pad[1]  (
 		`USER2_ABUTMENT_PINS
 `ifdef TOP_ROUTING
 		.VDDIO(vddio)
+`else 
+		,.VDDIO_PAD(vddio_pad2)
 `endif
     	);
 
@@ -149,20 +180,25 @@ module chip_io_alt #(
 		`MGMT_ABUTMENT_PINS
 `ifdef TOP_ROUTING
 		.VDDA(vdda)
-`endif
-    	);
+`else 
+		,.VDDA_PAD(vdda_pad)
+`endif    	);
 
     	sky130_ef_io__vccd_lvc_clamped_pad mgmt_vccd_lvclamp_pad (
 		`MGMT_ABUTMENT_PINS
 `ifdef TOP_ROUTING
 		.VCCD(vccd)
-`endif
-    	);
+`else 
+		,.VCCD_PAD(vccd_pad)
+`endif    
+		);
 
     	sky130_ef_io__vssio_hvc_clamped_pad \mgmt_vssio_hvclamp_pad[0]  (
 		`MGMT_ABUTMENT_PINS
 `ifdef TOP_ROUTING
 		.VSSIO(vssio)
+`else
+		,.VSSIO_PAD(vssio_pad)
 `endif
     	);
 
@@ -170,6 +206,8 @@ module chip_io_alt #(
 		`USER2_ABUTMENT_PINS
 `ifdef TOP_ROUTING
 		.VSSIO(vssio)
+`else
+		,.VSSIO_PAD(vssio_pad2)
 `endif
     	);
 
@@ -177,6 +215,8 @@ module chip_io_alt #(
 		`MGMT_ABUTMENT_PINS
 `ifdef TOP_ROUTING
 		.VSSA(vssa)
+`else
+		,.VSSA_PAD(vssa_pad)
 `endif
     	);
 
@@ -184,16 +224,29 @@ module chip_io_alt #(
 		`MGMT_ABUTMENT_PINS
 `ifdef TOP_ROUTING
 		.VSSD(vssd)
+`else
+		,.VSSD_PAD(vssd_pad)
 `endif
-    	);
+	 	);
 
 	// Instantiate power and ground pads for user 1 domain
 	// 8 pads:  vdda, vssa, vccd, vssd;  One each HV and LV clamp.
 
-    	sky130_ef_io__vdda_hvc_clamped_pad user1_vdda_hvclamp_pad [1:0] (
+    	sky130_ef_io__vdda_hvc_clamped_pad \user1_vdda_hvclamp_pad[0] (
 		`USER1_ABUTMENT_PINS
 `ifdef TOP_ROUTING
 		.VDDA(vdda1)
+`else
+		,.VDDA_PAD(vdda1_pad)
+`endif
+    	);
+
+	    sky130_ef_io__vdda_hvc_clamped_pad \user1_vdda_hvclamp_pad[1] (
+		`USER1_ABUTMENT_PINS
+`ifdef TOP_ROUTING
+		.VDDA(vdda1)
+`else
+		,.VDDA_PAD(vdda1_pad2)
 `endif
     	);
 
@@ -201,13 +254,26 @@ module chip_io_alt #(
 		`USER1_ABUTMENT_PINS
 `ifdef TOP_ROUTING
 		.VCCD(vccd1)
+`else
+		,.VCCD_PAD(vccd1_pad)
 `endif
     	);
 
-    	sky130_ef_io__vssa_hvc_clamped_pad user1_vssa_hvclamp_pad [1:0] (
+    	sky130_ef_io__vssa_hvc_clamped_pad \user1_vssa_hvclamp_pad[0] (
 		`USER1_ABUTMENT_PINS
 `ifdef TOP_ROUTING
 		.VSSA(vssa1)
+`else
+		,.VSSA_PAD(vssa1_pad)
+`endif
+    	);
+
+		sky130_ef_io__vssa_hvc_clamped_pad \user1_vssa_hvclamp_pad[1] (
+		`USER1_ABUTMENT_PINS
+`ifdef TOP_ROUTING
+		.VSSA(vssa1)
+`else
+		,.VSSA_PAD(vssa1_pad2)
 `endif
     	);
 
@@ -215,6 +281,8 @@ module chip_io_alt #(
 		`USER1_ABUTMENT_PINS
 `ifdef TOP_ROUTING
 		.VSSD(vssd1)
+`else
+		,.VSSD_PAD(vssd1_pad)
 `endif
     	);
 
@@ -225,6 +293,8 @@ module chip_io_alt #(
 		`USER2_ABUTMENT_PINS
 `ifdef TOP_ROUTING
 		.VDDA(vdda2)
+`else
+		,.VDDA_PAD(vdda2_pad)
 `endif
     	);
 
@@ -232,6 +302,8 @@ module chip_io_alt #(
 		`USER2_ABUTMENT_PINS
 `ifdef TOP_ROUTING
 		.VCCD(vccd2)
+`else
+		,.VCCD_PAD(vccd2_pad)
 `endif
     	);
 
@@ -239,6 +311,8 @@ module chip_io_alt #(
 		`USER2_ABUTMENT_PINS
 `ifdef TOP_ROUTING
 		.VSSA(vssa2)
+`else
+		,.VSSA_PAD(vssa2_pad)
 `endif
     	);
 
@@ -246,49 +320,51 @@ module chip_io_alt #(
 		`USER2_ABUTMENT_PINS
 `ifdef TOP_ROUTING
 		.VSSD(vssd2)
+`else
+		,.VSSD_PAD(vssd2_pad)
 `endif
     	);
 
 	// Instantiate analog pads in user area 1 using the custom analog pad
     	sky130_ef_io__analog_pad user1_analog_pad [ANALOG_PADS_1-2:0]  (
 		`USER1_ABUTMENT_PINS
-`ifdef TOP_ROUTING
-		.VDDIO(vddio)
+`ifndef TOP_ROUTING
+		// .VDDIO(vddio)
+		,.P_PAD(mprj_io[`MPRJ_IO_PADS_1-2:`MPRJ_IO_PADS_1-ANALOG_PADS_1]),
 `endif
-		,.P_PAD(mprj_io[`MPRJ_IO_PADS_1-1:`MPRJ_IO_PADS_1-ANALOG_PADS_1+1]),
-		.P_CORE(mprj_analog[ANALOG_PADS_1-1:1])
+		.P_CORE(mprj_analog[ANALOG_PADS_1-2:0])
     	);
 
 	// Last analog pad is a power pad, to provide a clamp resource.
-    	sky130_fd_io__top_power_hvc_wpadv2 user1_analog_pad_with_clamp  (
+    	sky130_ef_io__top_power_hvc user1_analog_pad_with_clamp  (
 		`USER1_ABUTMENT_PINS
-`ifdef TOP_ROUTING
-		.VDDIO(vddio)
+`ifndef TOP_ROUTING
+		// .VDDIO(vddio)
+		,.P_PAD(mprj_io[`MPRJ_IO_PADS_1-1]),
 `endif
-		,`HVCLAMP_PINS(mprj_clamp_high[0],
+		`HVCLAMP_PINS(mprj_clamp_high[0],
 		   	      mprj_clamp_low[0]),
-		.P_PAD(mprj_io[`MPRJ_IO_PADS_1-ANALOG_PADS_1]),
-		.P_CORE(mprj_analog[0])
+		.P_CORE(mprj_analog[ANALOG_PADS_1-1])
     	);
 
 	// Instantiate analog pads in user area 2 using the custom analog pad.
     	sky130_ef_io__analog_pad user2_analog_pad [ANALOG_PADS_2-3:0]  (
 		`USER2_ABUTMENT_PINS
-`ifdef TOP_ROUTING
-		.VDDIO(vddio)
-`endif
+`ifndef TOP_ROUTING
+		// .VDDIO(vddio)
 		,.P_PAD(mprj_io[`MPRJ_IO_PADS_1+ANALOG_PADS_2-1:`MPRJ_IO_PADS_1+2]),
+`endif
 		.P_CORE(mprj_analog[ANALOG_PADS_2+ANALOG_PADS_1-1:ANALOG_PADS_1+2])
     	);
 
 	// Last two analog pads are power pads, to provide clamp resources.
-    	sky130_fd_io__top_power_hvc_wpadv2 user2_analog_pad_with_clamp [1:0] (
+    	sky130_ef_io__top_power_hvc user2_analog_pad_with_clamp [1:0] (
 		`USER2_ABUTMENT_PINS
-`ifdef TOP_ROUTING
-		.VDDIO(vddio)
+`ifndef TOP_ROUTING
+		// .VDDIO(vddio)
+		,.P_PAD(mprj_io[`MPRJ_IO_PADS_1+1:`MPRJ_IO_PADS_1]),
 `endif
-		,`HVCLAMP_PINS(mprj_clamp_high[2:1], mprj_clamp_low[2:1]),
-		.P_PAD(mprj_io[`MPRJ_IO_PADS_1+1:`MPRJ_IO_PADS_1]),
+		`HVCLAMP_PINS(mprj_clamp_high[2:1], mprj_clamp_low[2:1]),
 		.P_CORE(mprj_analog[`ANALOG_PADS_1+1:ANALOG_PADS_1])
     	);
 

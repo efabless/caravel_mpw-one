@@ -58,7 +58,7 @@ module user_project_wrapper #(
     // Logic Analyzer Signals
     input  [127:0] la_data_in,
     output [127:0] la_data_out,
-    input  [127:0] la_oen,
+    input  [127:0] la_oenb,
 
     // IOs
     input  [`MPRJ_IO_PADS-1:0] io_in,
@@ -68,10 +68,24 @@ module user_project_wrapper #(
     // Analog (direct connection to GPIO pad---use with caution)
     // Note that analog I/O is not available on the 7 lowest-numbered
     // GPIO pads, and so the analog_io indexing is offset from the
-    // GPIO indexing by 7.
-    inout [`MPRJ_IO_PADS-8:0] analog_io,
+    // GPIO indexing by 7 (also upper 2 GPIOs do not have analog_io).
+    inout [`MPRJ_IO_PADS-10:0] analog_io,
 
     // Independent clock (on independent integer divider)
-    input   user_clock2
+    input   user_clock2,
+
+    // User maskable interrupt signals
+    output [2:0] user_irq
 );
+
+
+// Dummy assignments so that we can take it through the openlane flow
+`ifdef SIM
+// Needed for running GL simulation
+assign io_out = 0;
+assign io_oeb = 0;
+`else
+assign io_out = io_in;
+`endif
+
 endmodule	// user_project_wrapper

@@ -1,19 +1,4 @@
-#!/usr/bin/python3
-# SPDX-FileCopyrightText: 2020 Efabless Corporation
-#
-# Licensed under the Apache License, Version 2.0 (the "License");
-# you may not use this file except in compliance with the License.
-# You may obtain a copy of the License at
-#
-#      http://www.apache.org/licenses/LICENSE-2.0
-#
-# Unless required by applicable law or agreed to in writing, software
-# distributed under the License is distributed on an "AS IS" BASIS,
-# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-# See the License for the specific language governing permissions and
-# limitations under the License.
-# SPDX-License-Identifier: Apache-2.0
-
+#!ENV_PATH python3
 #
 #---------------------------------------------------------
 # LVS failure check
@@ -97,8 +82,11 @@ def count_LVS_failures(filename):
                     pin0 = re.sub('!$', '', pin[0].lower())
                     pin1 = re.sub('!$', '', pin[1].lower())
                     if pin0 != pin1:
-                        failures += 1
-                        pinfail += 1
+                        # The text "(no pin)" indicates a missing pin that can be
+                        # ignored because the pin in the other netlist is a no-connect
+                        if pin0 != '(no pin)' and pin1 != '(no pin)':
+                            failures += 1
+                            pinfail += 1
 
         # Property errors must be counted for every cell
         if 'properties' in cellrec:
@@ -114,6 +102,7 @@ if __name__ == '__main__':
     parser.add_argument('--file', '-f', required=True)
     args = parser.parse_args()
     failures = count_LVS_failures(args.file)
+
     total = failures[0]
     if total > 0:
         failed = True

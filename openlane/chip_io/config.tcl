@@ -41,10 +41,14 @@ close $fd
 set ::env(MAGIC_WRITE_FULL_LEF) 1
 
 set ::env(DIODE_INSERTION_STRATEGY) 0
-set ::env(GLB_RT_TILES) 30
+set ::env(GLB_RT_TILES) 15
 set ::env(GLB_RT_MAXLAYER) 4
 set ::env(GLB_RT_UNIDIRECTIONAL) 0
 # set ::env(GLB_RT_ALLOW_CONGESTION) 1
 # set ::env(GLB_RT_OVERFLOW_ITERS) 150
 
 set ::env(LVS_CONNECT_BY_LABEL) 1
+
+# "There are areas of ntap and ptap and/or low voltage and high voltage that magic can't parse properly from the GDS. \
+   Those aren't parts of devices, so they don't affect the extraction, but they may raise overlap errors". Tim E. 
+set ::env(QUIT_ON_ILLEGAL_OVERLAPS) 0

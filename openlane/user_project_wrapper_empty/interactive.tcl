@@ -29,24 +29,18 @@ remove_components -input $::env(CURRENT_DEF)
 
 place_io_ol
 
-# add_macro_obs \
-# 	-defFile $::env(CURRENT_DEF) \
-# 	-lefFile $::env(MERGED_LEF_UNPADDED) \
-# 	-obstruction core_obs \
-# 	-placementX $::env(FP_IO_HLENGTH) \
-# 	-placementY $::env(FP_IO_VLENGTH) \
-# 	-sizeWidth  [expr [lindex $::env(DIE_AREA) 2]-$::env(FP_IO_HLENGTH)*2] \
-# 	-sizeHeight [expr [lindex $::env(DIE_AREA) 3]-$::env(FP_IO_VLENGTH)*2] \
-# 	-fixed 1 \
-# 	-layerNames "met1 met2 met3 met4 met5"
-
-# exec -ignorestderr openroad -exit $script_dir/gen_pdn.tcl
-
 apply_route_obs
 
 run_power_grid_generation
 
-# set_def $::env(pdn_tmp_file_tag).def
+# pdngen-related hack
+# remove .extra\d+ "pins" so that magic
+# generates shapes for each stripes without the ".extra" postfix
+# until OpenDB can understand this syntax...
+exec sed \
+    -i -E {/^PINS/,/^END PINS/ s/\.extra[[:digit:]]+(.*USE (GROUND|POWER))/\1/g} \
+    $::env(CURRENT_DEF)
+        
 
 run_magic
 
@@ -63,9 +57,10 @@ set llx [expr [lindex $::env(DIE_AREA) 0]-$gap]
 set lly [expr [lindex $::env(DIE_AREA) 1]-$gap]
 set urx [expr [lindex $::env(DIE_AREA) 2]+$gap]
 set ury [expr [lindex $::env(DIE_AREA) 3]+$gap]
+
 exec python3 $::env(OPENLANE_ROOT)/scripts/rectify.py $llx $lly $urx $ury \
 	< $::env(magic_result_file_tag).lef \
-	| python3 $::env(OPENLANE_ROOT)/scripts/obs.py {*}$::env(DIE_AREA) li1 met1 met2 met3 \
-	| python3 $::env(OPENLANE_ROOT)/scripts/obs.py -42.88 -37.53 2962.50 3557.21 met4 met5 \
+	| python3 $::env(OPENLANE_ROOT)/scripts/obs.py -42.88 -37.53 2962.50 3557.21 met4,met5 \
+	| python3 $::env(OPENLANE_ROOT)/scripts/obs.py {*}$::env(DIE_AREA) li1,met1,met2,met3 \
 	> $::env(magic_result_file_tag).obstructed.lef
 file copy -force $::env(magic_result_file_tag).obstructed.lef $save_path/lef

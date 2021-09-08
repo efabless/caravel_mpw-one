@@ -1,0 +1,84 @@
+VERSION 5.7 ;
+  NOWIREEXTENSIONATPIN ON ;
+  DIVIDERCHAR "/" ;
+  BUSBITCHARS "[]" ;
+MACRO gpio_logic_high
+  CLASS BLOCK ;
+  FOREIGN gpio_logic_high ;
+  ORIGIN 0.000 0.000 ;
+  SIZE 12.000 BY 14.000 ;
+  PIN gpio_logic1
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 8.000 6.840 12.000 7.440 ;
+    END
+  END gpio_logic1
+  PIN vccd1
+    DIRECTION INOUT ;
+    USE POWER ;
+    PORT
+      LAYER met4 ;
+        RECT 9.600 -0.240 10.400 13.840 ;
+    END
+  END vccd1
+  PIN vccd1
+    DIRECTION INOUT ;
+    USE POWER ;
+    PORT
+      LAYER met4 ;
+        RECT 5.600 -0.240 6.400 13.840 ;
+    END
+  END vccd1
+  PIN vccd1
+    DIRECTION INOUT ;
+    USE POWER ;
+    PORT
+      LAYER met4 ;
+        RECT 1.600 -0.240 2.400 13.840 ;
+    END
+  END vccd1
+  PIN vssd1
+    DIRECTION INOUT ;
+    USE GROUND ;
+    PORT
+      LAYER met4 ;
+        RECT 7.600 -0.240 8.400 13.840 ;
+    END
+  END vssd1
+  PIN vssd1
+    DIRECTION INOUT ;
+    USE GROUND ;
+    PORT
+      LAYER met4 ;
+        RECT 3.600 -0.240 4.400 13.840 ;
+    END
+  END vssd1
+  OBS
+      LAYER nwell ;
+        RECT -0.190 9.465 12.150 12.295 ;
+        RECT -0.190 4.025 12.150 6.855 ;
+        RECT -0.190 -0.190 12.150 1.415 ;
+      LAYER li1 ;
+        RECT 0.000 0.085 11.960 13.685 ;
+      LAYER li1 ;
+        RECT 0.000 -0.085 11.960 0.085 ;
+      LAYER met1 ;
+        RECT 0.000 -0.240 11.960 13.840 ;
+      LAYER met2 ;
+        RECT 1.660 0.000 10.340 13.840 ;
+        RECT 1.660 -0.240 2.340 0.000 ;
+        RECT 5.660 -0.240 6.340 0.000 ;
+        RECT 9.660 -0.240 10.340 0.000 ;
+      LAYER met3 ;
+        RECT 1.600 7.840 10.400 13.765 ;
+        RECT 1.600 6.440 7.600 7.840 ;
+        RECT 1.600 0.000 10.400 6.440 ;
+        RECT 1.600 -0.165 2.400 0.000 ;
+        RECT 5.600 -0.165 6.400 0.000 ;
+        RECT 9.600 -0.165 10.400 0.000 ;
+  END
+END gpio_logic_high
+END LIBRARY
+

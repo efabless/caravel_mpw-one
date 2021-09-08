@@ -41,8 +41,6 @@ module mgmt_core (
 	output flash_io1_ieb,
 	output flash_io0_do,
 	output flash_io1_do,
-	output flash_io2_do,	// through GPIO 36
-	output flash_io3_do,	// through GPIO 37
 	input flash_io0_di,
 	input flash_io1_di,
 	// Master reset
@@ -129,10 +127,54 @@ module mgmt_core (
 	wire [2:0]  spi_pll90_sel;
 	wire [25:0] spi_pll_trim;
 
+    	// All but the first two and last two IOs share the in and out data line
+    	// and so the output data line must be high-impedence when the input is
+    	// enabled.
+
+	wire [`MPRJ_IO_PADS-1:0] mgmt_oeb_data;
+	wire [`MPRJ_IO_PADS-1:0] mgmt_out_predata;
+
+	wire mgmt_mux_csb, mgmt_mux_sck, mgmt_mux_sdi;
+	wire pass_thru_user_csb, pass_thru_user_sck, pass_thru_user_sdi;
+	wire pass_thru_mgmt_sdo, pass_thru_mgmt_csb;
+	wire pass_thru_mgmt_sck, pass_thru_mgmt_sdi;
+	wire pass_thru_mgmt, pass_thru_user;
+	wire spi_pll_ena, spi_pll_dco_ena;
+
+	// During external reset, data lines 8 to 10 are used by the user flash
+	// pass-through mode.
+
+	assign mgmt_mux_csb = (pass_thru_user == 1'b1) ?
+			pass_thru_user_csb : mgmt_out_predata[8];
+	assign mgmt_mux_sck = (pass_thru_user == 1'b1) ?
+			pass_thru_user_sck : mgmt_out_predata[9];
+	assign mgmt_mux_sdi = (pass_thru_user == 1'b1) ?
+			pass_thru_user_sdi : mgmt_out_predata[10];
+
+    	genvar i;
+
+    	generate
+       	    for (i = 0; i < 2; i = i + 1) begin
+          	assign mgmt_out_data[i] = mgmt_out_predata[i];
+       	    end
+            for (i = 2; i < 8; i = i + 1) begin
+                assign mgmt_out_data[i] = (mgmt_oeb_data[i]) ? 1'bz : mgmt_out_predata[i];
+            end
+            assign mgmt_out_data[8] = (mgmt_oeb_data[8]) ?  1'bz : mgmt_mux_csb;
+            assign mgmt_out_data[9] = (mgmt_oeb_data[9]) ?  1'bz : mgmt_mux_sck;
+            assign mgmt_out_data[10] = (mgmt_oeb_data[10]) ?  1'bz : mgmt_mux_sdi;
+            for (i = 11; i < `MPRJ_IO_PADS-2; i = i + 1) begin
+                assign mgmt_out_data[i] = (mgmt_oeb_data[i]) ? 1'bz : mgmt_out_predata[i];
+            end
+            for (i = `MPRJ_IO_PADS-2; i < `MPRJ_IO_PADS; i = i + 1) begin
+                assign mgmt_out_data[i] = mgmt_out_predata[i];
+            end
+    	endgenerate
+
 	// Override default function for SDO and JTAG outputs if purposely
 	// set for override by the management SoC.
-	assign sdo_out = (sdo_oenb_state == 1'b0) ? mgmt_out_data[1] : sdo_out_pre;
-	assign jtag_out = (jtag_oenb_state == 1'b0) ? mgmt_out_data[0] : jtag_out_pre;
+	assign sdo_out = (sdo_oenb_state == 1'b0) ? mgmt_out_predata[1] : sdo_out_pre;
+	assign jtag_out = (jtag_oenb_state == 1'b0) ? mgmt_out_predata[0] : jtag_out_pre;
 
 	caravel_clocking clocking(
 	`ifdef USE_POWER_PINS
@@ -157,12 +199,6 @@ module mgmt_core (
 	wire flash_io2_oeb, flash_io3_oeb;
 	wire flash_io2_ieb, flash_io3_ieb;
 	wire flash_io2_di, flash_io3_di;
-	wire flash_io2_do, flash_io3_do;
-
-	wire pass_thru_mgmt_sdo, pass_thru_mgmt_csb;
-	wire pass_thru_mgmt_sck, pass_thru_mgmt_sdi;
-	wire pass_thru_reset;
-	wire spi_pll_ena, spi_pll_dco_ena;
 
 	// The following functions are connected to specific user project
 	// area pins, when under control of the management area (during
@@ -223,14 +259,12 @@ module mgmt_core (
 		.flash_io3_ieb(flash_io3_ieb),
 		.flash_io0_do(flash_io0_do),
 		.flash_io1_do(flash_io1_do),
-		.flash_io2_do(flash_io2_do),
-		.flash_io3_do(flash_io3_do),
 		.flash_io0_di(flash_io0_di),
 		.flash_io1_di(flash_io1_di),
 		.flash_io2_di(flash_io2_di),
 		.flash_io3_di(flash_io3_di),
 		// SPI pass-through to/from SPI flash controller
-		.pass_thru_mgmt(pass_thru_reset),
+		.pass_thru_mgmt(pass_thru_mgmt),
 		.pass_thru_mgmt_csb(pass_thru_mgmt_csb),
 		.pass_thru_mgmt_sck(pass_thru_mgmt_sck),
 		.pass_thru_mgmt_sdi(pass_thru_mgmt_sdi),
@@ -261,7 +295,8 @@ module mgmt_core (
 		.user_irq_ena(user_irq_ena),
 		// I/O data
 		.mgmt_in_data(mgmt_in_data),
-		.mgmt_out_data(mgmt_out_data),
+		.mgmt_out_data(mgmt_out_predata),
+		.mgmt_oeb_data(mgmt_oeb_data),
 		.pwr_ctrl_out(pwr_ctrl_out),
 		// User Project Slave ports (WB MI A)
 		.mprj_cyc_o(mprj_cyc_o),
@@ -306,9 +341,9 @@ module mgmt_core (
 		.vss(VGND),
 	    `endif
 	    .RSTB(porb),
-	    .SCK((hk_connect) ? mgmt_out_data[4] : mgmt_in_data[4]),
-	    .SDI((hk_connect) ? mgmt_out_data[2] : mgmt_in_data[2]),
-	    .CSB((hk_connect) ? mgmt_out_data[3] : mgmt_in_data[3]),
+	    .SCK((hk_connect) ? mgmt_out_predata[4] : mgmt_in_data[4]),
+	    .SDI((hk_connect) ? mgmt_out_predata[2] : mgmt_in_data[2]),
+	    .CSB((hk_connect) ? mgmt_out_predata[3] : mgmt_in_data[3]),
 	    .SDO(sdo_out_pre),
 	    .sdo_enb(sdo_outenb),
 	    .pll_dco_ena(spi_pll_dco_ena),
@@ -322,14 +357,15 @@ module mgmt_core (
 	    .reset(ext_reset),
 	    .trap(trap),
 	    .mask_rev_in(mask_rev),
-    	    .pass_thru_reset(pass_thru_reset),
+    	    .pass_thru_mgmt_reset(pass_thru_mgmt),
+    	    .pass_thru_user_reset(pass_thru_user),
     	    .pass_thru_mgmt_sck(pass_thru_mgmt_sck),
     	    .pass_thru_mgmt_csb(pass_thru_mgmt_csb),
     	    .pass_thru_mgmt_sdi(pass_thru_mgmt_sdi),
     	    .pass_thru_mgmt_sdo(pass_thru_mgmt_sdo),
-    	    .pass_thru_user_sck(mgmt_out_data[9]),
-    	    .pass_thru_user_csb(mgmt_out_data[8]),
-    	    .pass_thru_user_sdi(mgmt_out_data[10]),
+    	    .pass_thru_user_sck(pass_thru_user_sck),
+    	    .pass_thru_user_csb(pass_thru_user_csb),
+    	    .pass_thru_user_sdi(pass_thru_user_sdi),
     	    .pass_thru_user_sdo(mgmt_in_data[11])
 	);
 

@@ -60,7 +60,7 @@ SPECIAL_VOLTAGE_LIBRARY ?= sky130_fd_sc_hvl
 IO_LIBRARY ?= sky130_fd_io
 PRIMITIVES_LIBRARY ?= sky130_fd_pr
 SKYWATER_COMMIT ?= bb2f842ac8d1b750677ca25bc71fb312859edb82
-OPEN_PDKS_COMMIT ?= 7e29496eecf3ee8e1766f1b7f9441f97204d4735
+OPEN_PDKS_COMMIT ?= 804f48b18519aa67b1f822bdc352ecbad1c056cb
 INSTALL_SRAM ?= disabled
 
 .DEFAULT_GOAL := ship
@@ -69,11 +69,11 @@ INSTALL_SRAM ?= disabled
 ship: check-env uncompress uncompress-caravel
 ifeq ($(FOREGROUND),1)
 	@echo "Running make ship in the foreground..."
-	$(MAKE) __ship
+	$(MAKE) -f $(CARAVEL_ROOT)/Makefile __ship
 	@echo "Make ship completed." 2>&1 | tee -a ./signoff/build/make_ship.out
 else
 	@echo "Running make ship in the background..."
-	nohup $(MAKE) __ship >/dev/null 2>&1 &
+	nohup $(MAKE) -f $(CARAVEL_ROOT)/Makefile __ship >/dev/null 2>&1 &
 	tail -f signoff/build/make_ship.out
 	@echo "Make ship completed."  2>&1 | tee -a ./signoff/build/make_ship.out
 endif
@@ -85,30 +85,38 @@ __ship:
 #### Runs from the CARAVEL_ROOT mag directory 
 	@echo "\
 		random seed `$(CARAVEL_ROOT)/scripts/set_user_id.py -report`; \
+		drc off; \
+		crashbackups stop; \
 		gds readonly true; \
 		gds rescale false; \
+		cif *hier write disable; \
+		cif *array write disable; \
 		gds read $(UPRJ_ROOT)/gds/user_project_wrapper.gds; \
 		load caravel -dereference;\
+		cellname list filepath user_id_programming $(UPRJ_ROOT)/mag;\
+		cellname list filepath user_id_textblock $(UPRJ_ROOT)/mag;\
+		flush user_id_programming;\
+		flush user_id_textblock;\
 		select top cell;\
 		gds write $(UPRJ_ROOT)/gds/caravel.gds; \
-		exit;" > $(CARAVEL_ROOT)/mag/mag2gds_caravel.tcl
-### Runs from UPRJ_ROOT
+		exit;" > $(UPRJ_ROOT)/mag/mag2gds_caravel.tcl
+### Runs from CARAVEL_ROOT
 	@mkdir -p ./signoff/build
-	@cd $(CARAVEL_ROOT)/mag && PDKPATH=${PDK_ROOT}/sky130A magic -noc -dnull mag2gds_caravel.tcl 2>&1 | tee $(UPRJ_ROOT)/signoff/build/make_ship.out
-	@rm $(CARAVEL_ROOT)/mag/mag2gds_caravel.tcl
+	@cd $(CARAVEL_ROOT)/mag && PDKPATH=${PDK_ROOT}/sky130A magic -noc -dnull $(UPRJ_ROOT)/mag/mag2gds_caravel.tcl 2>&1 | tee $(UPRJ_ROOT)/signoff/build/make_ship.out
+###	@rm $(UPRJ_ROOT)/mag/mag2gds_caravel.tcl
 
 truck: check-env uncompress uncompress-caravel
 ifeq ($(FOREGROUND),1)
 	@echo "Running make truck in the foreground..."
 	mkdir -p ./signoff
 	mkdir -p ./build
-	$(MAKE) __truck
+	$(MAKE) -f $(CARAVEL_ROOT)/Makefile __truck
 	@echo "Make truck completed." 2>&1 | tee -a ./signoff/build/make_truck.out
 else
 	@echo "Running make truck in the background..."
 	mkdir -p ./signoff
 	mkdir -p ./build
-	nohup $(MAKE) __truck >/dev/null 2>&1 &
+	nohup $(MAKE) -f $(CARAVEL_ROOT)/Makefile __truck >/dev/null 2>&1 &
 	tail -f signoff/build/make_truck.out
 	@echo "Make truck completed."  2>&1 | tee -a ./signoff/build/make_truck.out
 endif
@@ -120,17 +128,25 @@ __truck:
 #### Runs from the CARAVEL_ROOT mag directory 
 	@echo "\
 		random seed `$(CARAVEL_ROOT)/scripts/set_user_id.py -report`; \
+		drc off; \
+		crashbackups stop; \
 		gds readonly true; \
 		gds rescale false; \
+		cif *hier write disable; \
+		cif *array write disable; \
 		gds read $(UPRJ_ROOT)/gds/user_analog_project_wrapper.gds; \
 		load caravan -dereference;\
+		cellname list filepath user_id_programming $(UPRJ_ROOT)/mag;\
+		cellname list filepath user_id_textblock $(UPRJ_ROOT)/mag;\
+		flush user_id_programming;\
+		flush user_id_textblock;\
 		select top cell;\
 		gds write $(UPRJ_ROOT)/gds/caravan.gds; \
-		exit;" > $(CARAVEL_ROOT)/mag/mag2gds_caravan.tcl
-### Runs from UPRJ_ROOT
+		exit;" > $(UPRJ_ROOT)/mag/mag2gds_caravan.tcl
+### Runs from CARAVEL_ROOT
 	@mkdir -p ./signoff/build
-	@cd $(CARAVEL_ROOT)/mag && PDKPATH=${PDK_ROOT}/sky130A magic -noc -dnull mag2gds_caravan.tcl 2>&1 | tee $(UPRJ_ROOT)/signoff/build/make_truck.out
-	@rm $(CARAVEL_ROOT)/mag/mag2gds_caravan.tcl
+	@cd $(CARAVEL_ROOT)/mag && PDKPATH=${PDK_ROOT}/sky130A magic -noc -dnull $(UPRJ_ROOT)/mag/mag2gds_caravan.tcl 2>&1 | tee $(UPRJ_ROOT)/signoff/build/make_truck.out
+###	@rm $(UPRJ_ROOT)/mag/mag2gds_caravan.tcl
 
 .PHONY: clean
 clean:
@@ -254,6 +270,7 @@ $(LVS_BLOCKS): lvs-% : ./mag/%.mag ./verilog/gl/%.v
 	echo "Extracting $*"
 	mkdir -p ./mag/tmp
 	echo "addpath $(CARAVEL_ROOT)/mag/hexdigits;\
+		addpath $(CARAVEL_ROOT)/subcells/simple_por/mag;\
 		addpath \$$PDKPATH/libs.ref/sky130_ml_xx_hd/mag;\
 		load $* -dereference;\
 		select top cell;\
@@ -349,7 +366,7 @@ $(LVS_MAGLEF_BLOCKS): lvs-maglef-% : ./mag/%.mag ./verilog/gl/%.v
 		exit;" > ./mag/extract_$*.tcl
 	cd mag && export MAGTYPE=maglef; magic -noc -dnull extract_$*.tcl < /dev/null
 	mv ./mag/$*.spice ./spi/lvs
-	rm ./mag/*.ext
+	rm ./maglef/*.ext
 	mv -f ./mag/extract_$*.tcl ./maglef/tmp
 	mv -f ./mag/extract_$*.log ./maglef/tmp
 	####
@@ -357,7 +374,9 @@ $(LVS_MAGLEF_BLOCKS): lvs-maglef-% : ./mag/%.mag ./verilog/gl/%.v
 	sh $(CARAVEL_ROOT)/spi/lvs/run_lvs.sh ./spi/lvs/$*.spice ./verilog/gl/$*.v $*
 	@echo ""
 	python3 $(CARAVEL_ROOT)/scripts/count_lvs.py -f ./verilog/gl/$*.v_comp.json | tee ./spi/lvs/tmp/$*.maglef.lvs.summary.log
-	mv -f ./verilog/gl/*{.out,.json,.log} ./spi/lvs/tmp 2> /dev/null || true
+	mv -f ./verilog/gl/*.out ./spi/lvs/tmp 2> /dev/null || true
+	mv -f ./verilog/gl/*.json ./spi/lvs/tmp 2> /dev/null || true
+	mv -f ./verilog/gl/*.log ./spi/lvs/tmp 2> /dev/null || true
 	@echo ""
 	@echo "LVS: ./spi/lvs/$*.spice vs. ./verilog/gl/$*.v"
 	@echo "Comparison result: ./spi/lvs/tmp/$*.v_comp.out"
@@ -382,19 +401,38 @@ $(ANTENNA_BLOCKS): antenna-% : ./gds/%.gds
 	mv -f ./gds/*.ext ./gds/tmp/
 	@echo "Antenna result: ./gds/tmp/$*.antenna"
 
+# MAG2GDS
+BLOCKS = $(shell cd openlane && find * -maxdepth 0 -type d)
+MAG_BLOCKS = $(foreach block, $(BLOCKS), mag2gds-$(block))
+$(MAG_BLOCKS): mag2gds-% : ./mag/%.mag
+	echo "Converting mag file $* to GDS..."
+	echo "addpath $(CARAVEL_ROOT)/mag/hexdigits;\
+		addpath ${PDKPATH}/libs.ref/sky130_ml_xx_hd/mag;\
+		addpath ${CARAVEL_ROOT}/subcells/simple_por/mag;\
+		drc off;\
+		gds rescale false;\
+		load $* -dereference;\
+		select top cell;\
+		expand;\
+		cif *hier write disable;\
+		gds write $*.gds;\
+		exit;" > ./mag/mag2gds_$*.tcl
+	cd ./mag && magic -rcfile ${PDK_ROOT}/sky130A/libs.tech/magic/sky130A.magicrc -noc -dnull mag2gds_$*.tcl < /dev/null
+	rm ./mag/mag2gds_$*.tcl
+	
 .PHONY: help
 help:
 	@$(MAKE) -pRrq -f $(lastword $(MAKEFILE_LIST)) : 2>/dev/null | awk -v RS= -F: '/^# File/,/^# Finished Make data base/ {if ($$1 !~ "^[#.]") {print $$1}}' | sort | egrep -v -e '^[^[:alnum:]]' -e '^$@$$'
 
 .PHONY: generate_fill
-generate_fill: check-env check-uid uncompress
+generate_fill: check-env check-uid check-project uncompress
 ifeq ($(FOREGROUND),1)
 	@echo "Running generate_fill in the foreground..."
-	$(MAKE) __generate_fill
+	$(MAKE) -f $(CARAVEL_ROOT)/Makefile __generate_fill
 	@echo "Generate fill completed." 2>&1 | tee -a ./signoff/build/generate_fill.out
 else
 	@echo "Running generate_fill in the background..."
-	@nohup $(MAKE) __generate_fill >/dev/null 2>&1 &
+	@nohup $(MAKE) -f $(CARAVEL_ROOT)/Makefile __generate_fill >/dev/null 2>&1 &
 	tail -f signoff/build/generate_fill.out
 	@echo "Generate fill completed." | tee -a signoff/build/generate_fill.out
 endif
@@ -402,38 +440,33 @@ endif
 __generate_fill:
 	@mkdir -p ./signoff/build
 	@cp -r $(CARAVEL_ROOT)/mag/.magicrc $(shell pwd)/mag
-	python3 $(CARAVEL_ROOT)/scripts/generate_fill.py $(USER_ID) $(shell pwd) -dist 2>&1 | tee ./signoff/build/generate_fill.out
+	python3 $(CARAVEL_ROOT)/scripts/generate_fill.py $(USER_ID) $(PROJECT) $(shell pwd) -dist 2>&1 | tee ./signoff/build/generate_fill.out
+	#python3 $(CARAVEL_ROOT)/scripts/generate_fill.py $(USER_ID) $(PROJECT) $(shell pwd) -keep 2>&1 | tee ./signoff/build/generate_fill.out
 
 
 .PHONY: final
-final: check-env check-uid uncompress uncompress-caravel
+final: check-env check-uid check-project uncompress uncompress-caravel
 ifeq ($(FOREGROUND),1)
-	$(MAKE) __final
+	$(MAKE) -f $(CARAVEL_ROOT)/Makefile __final
 	@echo "Final build completed." 2>&1 | tee -a ./signoff/build/final_build.out
 else
-	$(MAKE) __final >/dev/null 2>&1 &
+	$(MAKE) -f $(CARAVEL_ROOT)/Makefile __final >/dev/null 2>&1 &
 	tail -f signoff/build/final_build.out
 	@echo "Final build completed." 2>&1 | tee -a ./signoff/build/final_build.out
 endif
 
 __final:
-	mkdir -p ./mag/tmp 
-	cp -r ./mag/*.mag ./mag/tmp
-	cp -r $(CARAVEL_ROOT)/mag/* mag/tmp/
-	cp -r $(CARAVEL_ROOT)/mag/.magicrc mag/tmp/
-	sed -i 's@../gds@../../$(CARAVEL_ROOT)/gds@g' ./mag/tmp/*.mag
-	sed -i 's@../maglef@../../$(CARAVEL_ROOT)/maglef@g' ./mag/tmp/caravel.mag
-	sed -i 's@../subcells@../../$(CARAVEL_ROOT)/subcells@g' ./mag/tmp/.magicrc
-	python3 $(CARAVEL_ROOT)/scripts/compositor.py $(USER_ID) $(shell pwd) $(shell pwd)/mag/tmp $(shell pwd)/gds
+	python3 $(CARAVEL_ROOT)/scripts/compositor.py $(USER_ID) $(PROJECT) $(shell pwd) $(CARAVEL_ROOT)/mag $(shell pwd)/gds -keep
+	#mv $(CARAVEL_ROOT)/mag/caravel_$(USER_ID).mag ./mag/
 	@rm -rf ./mag/tmp
 
 .PHONY: set_user_id
 set_user_id: check-env check-uid uncompress uncompress-caravel
 ifeq ($(FOREGROUND),1)
-	$(MAKE) __set_user_id 
+	$(MAKE) -f $(CARAVEL_ROOT)/Makefile __set_user_id
 	@echo "Set user ID completed." 2>&1 | tee -a ./signoff/build/set_user_id.out
 else
-	$(MAKE) __set_user_id >/dev/null 2>&1 &
+	$(MAKE) -f $(CARAVEL_ROOT)/Makefile __set_user_id >/dev/null 2>&1 &
 	tail -f signoff/build/set_user_id.out
 	@echo "Set user ID completed." 2>&1 | tee -a ./signoff/build/set_user_id.out
 endif
@@ -441,8 +474,12 @@ endif
 __set_user_id: 
 	mkdir -p ./signoff/build
 	# Update info.yaml
-	sed -r "s/^(\s*project_id\s*:\s*).*/\1${USER_ID}/" -i info.yaml
-	python3 $(CARAVEL_ROOT)/scripts/set_user_id.py $(USER_ID) $(CARAVEL_ROOT) 2>&1 | tee ./signoff/build/set_user_id.out
+	# sed -r "s/^(\s*project_id\s*:\s*).*/\1${USER_ID}/" -i info.yaml
+	cp $(CARAVEL_ROOT)/gds/user_id_programming.gds ./gds/user_id_programming.gds
+	cp $(CARAVEL_ROOT)/mag/user_id_programming.mag ./mag/user_id_programming.mag
+	cp $(CARAVEL_ROOT)/mag/user_id_textblock.mag ./mag/user_id_textblock.mag
+	cp $(CARAVEL_ROOT)/verilog/rtl/caravel.v ./verilog/rtl/caravel.v
+	python3 $(CARAVEL_ROOT)/scripts/set_user_id.py $(USER_ID) $(shell pwd) 2>&1 | tee ./signoff/build/set_user_id.out
 
 .PHONY: update_caravel
 update_caravel:
@@ -483,7 +520,7 @@ skywater-timing: check-env $(PDK_ROOT)/skywater-pdk
 		$(MAKE) timing
 ### OPEN_PDKS
 $(PDK_ROOT)/open_pdks:
-	git clone https://github.com/RTimothyEdwards/open_pdks.git $(PDK_ROOT)/open_pdks
+	git clone git://opencircuitdesign.com/open_pdks $(PDK_ROOT)/open_pdks
 
 .PHONY: open_pdks
 open_pdks: check-env $(PDK_ROOT)/open_pdks
@@ -507,7 +544,7 @@ build-pdk: check-env $(PDK_ROOT)/open_pdks $(PDK_ROOT)/skywater-pdk
 		$(MAKE) clean
 
 .RECIPE: manifest
-manifest: mag/ maglef/ verilog/rtl/ scripts/ Makefile
+manifest: mag/ maglef/ verilog/rtl/ Makefile
 	touch manifest && \
 	find verilog/rtl/* -type f ! -name "caravel_netlists.v" ! -name "user_*.v" ! -name "README" ! -name "defines.v" -exec shasum {} \; > manifest && \
 	shasum scripts/set_user_id.py scripts/generate_fill.py scripts/compositor.py >> manifest
@@ -515,6 +552,18 @@ manifest: mag/ maglef/ verilog/rtl/ scripts/ Makefile
 # find maglef/*.mag -type f ! -name "user_project_wrapper.mag" -exec shasum {} \; >> manifest && \
 # shasum mag/caravel.mag mag/.magicrc >> manifest
 
+.RECIPE: master_manifest
+master_manifest:
+	find verilog/rtl/* -type f -exec shasum {} \; > master_manifest && \
+	find verilog/gl/* -type f -exec shasum {} \; >> master_manifest && \
+	shasum scripts/set_user_id.py scripts/generate_fill.py scripts/compositor.py >> master_manifest && \
+	find lef/*.lef -type f -exec shasum {} \; >> master_manifest && \
+	find def/*.def -type f -exec shasum {} \; >> master_manifest && \
+	find mag/*.mag -type f  -exec shasum {} \; >> master_manifest && \
+	find maglef/*.mag -type f -exec shasum {} \; >> master_manifest && \
+	find spi/lvs/*.spice -type f -exec shasum {} \; >> master_manifest && \
+	find gds/*.gds -type f -exec shasum {} \; >> master_manifest 
+	
 check-env:
 ifndef PDK_ROOT
 	$(error PDK_ROOT is undefined, please export it before running make)
@@ -525,6 +574,13 @@ ifndef USER_ID
 	$(error USER_ID is undefined, please export it before running make set_user_id)
 else 
 	@echo USER_ID is set to $(USER_ID)
+endif
+
+check-project:
+ifndef PROJECT
+	$(error PROJECT is undefined, please export it before running make generate_fill or make final)
+else
+	@echo PROJECT is set to $(PROJECT)
 endif
 
 # Make README.rst

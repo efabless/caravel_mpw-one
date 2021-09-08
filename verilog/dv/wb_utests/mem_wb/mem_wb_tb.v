@@ -25,8 +25,16 @@
 `include "libs.ref/sky130_fd_sc_hd/verilog/sky130_fd_sc_hd.v"
 
 `include "defines.v"
-`include "DFFRAMBB.v"
-`include "DFFRAM.v"
+
+`ifdef GL
+    // Assume default net type to be wire because GL netlists don't have the wire definitions
+    `default_nettype wire
+    `include "gl/DFFRAM.v"
+`else 
+    `include "DFFRAMBB.v"
+    `include "DFFRAM.v"
+`endif
+
 `include "mem_wb.v"
 
 module mem_wb_tb;

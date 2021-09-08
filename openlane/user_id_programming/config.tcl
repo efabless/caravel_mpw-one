@@ -26,7 +26,11 @@ set ::env(CLOCK_TREE_SYNTH) 0
 
 set ::env(CELL_PAD) 0
 
-set ::env(FP_CORE_UTIL) 20
+set ::env(PL_RESIZER_DESIGN_OPTIMIZATIONS) 0
+set ::env(PL_RESIZER_TIMING_OPTIMIZATIONS) 0
+
+set ::env(FP_SIZING) absolute
+set ::env(DIE_AREA) "0 0 35 35"
 set ::env(PL_RANDOM_GLB_PLACEMENT) 1
 
 set ::env(BOTTOM_MARGIN_MULT) 2

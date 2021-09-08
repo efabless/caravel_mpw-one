@@ -70,7 +70,6 @@ module mgmt_protect (
 
     output 	  user_clock,
     output 	  user_clock2,
-    output 	  user_resetn,
     output 	  user_reset,
     output 	  mprj_cyc_o_user,
     output 	  mprj_stb_o_user,
@@ -227,12 +226,10 @@ module mgmt_protect (
                 .VPB(vccd),
                 .VNB(vssd),
 `endif
-                .Z(user_resetn),
-                .A(~caravel_rstn),
+                .Z(user_reset),
+                .A(caravel_rstn),
                 .TE(mprj_logic1[0])
         );
-
-        assign user_reset = ~user_resetn;
 
         sky130_fd_sc_hd__einvp_8 mprj_clk_buf (
 `ifdef USE_POWER_PINS

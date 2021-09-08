@@ -22,7 +22,9 @@ BEHAVIOURAL_MODELS = ../../
 
 GCC_PATH?=/ef/apps/bin
 GCC_PREFIX?=riscv32-unknown-elf
-PDK_PATH?=/ef/tech/SW/sky130A
+PDK_PATH?=$(PDK_ROOT)/sky130A
+
+SIM_DEFINES = -DFUNCTIONAL -DSIM
 
 SIM?=RTL
 
@@ -35,11 +37,11 @@ all:  ${PATTERN:=.vcd}
 hex:  ${PATTERN:=.hex}
 
 %.vvp: %_tb.v %.hex
-	iverilog -DFUNCTIONAL -DSIM -I $(BEHAVIOURAL_MODELS) \
+	iverilog -Ttyp $(SIM_DEFINES) -I $(BEHAVIOURAL_MODELS) \
 	-I $(PDK_PATH) -I $(IP_PATH) -I $(RTL_PATH) \
 	$< -o $@ 
 
-%.vcd: %.vvp
+%.vcd: %.vvp check-env
 	vvp $<
 
 %.elf: %.c $(FIRMWARE_PATH)/sections.lds $(FIRMWARE_PATH)/start.s
@@ -52,6 +54,21 @@ hex:  ${PATTERN:=.hex}
 
 %.bin: %.elf
 	${GCC_PATH}/${GCC_PREFIX}-objcopy -O binary $< /dev/stdout | tail -c +1048577 > $@
+
+check-env:
+ifndef PDK_ROOT
+	$(error PDK_ROOT is undefined, please export it before running make)
+endif
+ifeq (,$(wildcard $(PDK_ROOT)/sky130A))
+	$(error $(PDK_ROOT)/sky130A not found, please install pdk before running make)
+endif
+ifeq (,$(wildcard $(GCC_PATH)/$(GCC_PREFIX)-gcc ))
+	$(error $(GCC_PATH)/$(GCC_PREFIX)-gcc is not found, please export GCC_PATH and GCC_PREFIX before running make)
+endif
+# check for efabless style installation
+ifeq (,$(wildcard $(PDK_ROOT)/sky130A/libs.ref/*/verilog))
+SIM_DEFINES := ${SIM_DEFINES} -DEF_STYLE
+endif
 
 # ---- Clean ----
 

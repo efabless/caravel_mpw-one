@@ -83,8 +83,6 @@ module chip_io_tb;
     wire gpio_mode1_core;
 
     wire [`MPRJ_IO_PADS-1:0] mprj_io;
-    wire [`MPRJ_IO_PADS-1:0] mprj_io_hldh_n;
-    wire [`MPRJ_IO_PADS-1:0] mprj_io_enh;
     reg [`MPRJ_IO_PADS-1:0] mprj_io_inp_dis;
     reg [`MPRJ_IO_PADS-1:0] mprj_io_oeb;
     reg [`MPRJ_IO_PADS-1:0] mprj_io_ib_mode_sel;
@@ -176,8 +174,6 @@ module chip_io_tb;
     reg [`MPRJ_IO_PADS-1:0] mprj_io_bits;
 
     assign mprj_io = mprj_io_bits;
-    assign mprj_io_hldh_n = {`MPRJ_IO_PADS{VDD3V3}};
-    assign mprj_io_enh    = {`MPRJ_IO_PADS{porb_h}};
 
     initial begin
         wait(RSTB == 1'b1);        // wait for reset 
@@ -350,8 +346,6 @@ module chip_io_tb;
         `MPRJ_IO_IN,
         `MPRJ_IO_OUT,
         `MPRJ_IO_OEB,
-        `MPRJ_IO_HLDH_N,
-        `MPRJ_IO_ENH,
         `MPRJ_IO_INP_DIS,
         `MPRJ_IO_IB_MODE_SEL,
         `MPRJ_IO_VTRIP_SEL,
@@ -367,8 +361,6 @@ module chip_io_tb;
         .mprj_io_in(mprj_io_in),
         .mprj_io_out(mprj_io_out),
         .mprj_io_oeb(mprj_io_oeb),
-        .mprj_io_hldh_n(mprj_io_hldh_n),
-        .mprj_io_enh(mprj_io_enh),
         .mprj_io_inp_dis(mprj_io_inp_dis),
         .mprj_io_ib_mode_sel(mprj_io_ib_mode_sel),
         .mprj_io_vtrip_sel(mprj_io_vtrip_sel),

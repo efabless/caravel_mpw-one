@@ -51,6 +51,7 @@ module mprj_ctrl_wb #(
     // Read/write data to each GPIO pad from management SoC
     input [`MPRJ_IO_PADS-1:0] mgmt_gpio_in,
     output [`MPRJ_IO_PADS-1:0] mgmt_gpio_out,
+    output [`MPRJ_IO_PADS-1:0] mgmt_gpio_oeb,
 
     // Write data to power controls
     output [`MPRJ_PWR_PADS-1:0] pwr_ctrl_out,
@@ -97,6 +98,7 @@ module mprj_ctrl_wb #(
 	// .mgmt_gpio_io(mgmt_gpio_io)
 	.mgmt_gpio_in(mgmt_gpio_in),
 	.mgmt_gpio_out(mgmt_gpio_out),
+	.mgmt_gpio_oeb(mgmt_gpio_oeb),
 
     	// Write data to power controls
  	.pwr_ctrl_out(pwr_ctrl_out),
@@ -135,6 +137,7 @@ module mprj_ctrl #(
     output flash_io3_oenb_state,
     input  [`MPRJ_IO_PADS-1:0] mgmt_gpio_in,
     output [`MPRJ_IO_PADS-1:0] mgmt_gpio_out,
+    output [`MPRJ_IO_PADS-1:0] mgmt_gpio_oeb,
     output [`MPRJ_PWR_PADS-1:0] pwr_ctrl_out,
     output [2:0] user_irq_ena
 );
@@ -152,8 +155,7 @@ module mprj_ctrl #(
     localparam INP_DIS = 3;		// Offset of input disable in shift register. 
 
     reg  [IO_CTRL_BITS-1:0] io_ctrl[`MPRJ_IO_PADS-1:0];  // I/O control, 1 word per gpio pad
-    reg  [`MPRJ_IO_PADS-1:0] mgmt_gpio_outr; 	 // I/O write data, 1 bit per gpio pad
-    wire [`MPRJ_IO_PADS-1:0] mgmt_gpio_out;	 // I/O write data output when input disabled
+    reg  [`MPRJ_IO_PADS-1:0] mgmt_gpio_out; 	 // I/O write data, 1 bit per gpio pad
     reg  [`MPRJ_PWR_PADS-1:0] pwr_ctrl_out;	 // Power write data, 1 bit per power pad
     reg  [2:0] user_irq_ena;		 // Enable user to raise IRQs
     reg xfer_ctrl;			 // Transfer control (1 bit)
@@ -204,10 +206,10 @@ module mprj_ctrl #(
 
         for (i=0; i<`MPRJ_IO_PADS; i=i+1) begin
             assign io_ctrl_sel[i] = (iomem_addr[7:0] == (IO_BASE_ADR[7:0] + i*4)); 
-    	    assign mgmt_gpio_out[i] = (io_ctrl[i][INP_DIS] == 1'b1) ?
-			mgmt_gpio_outr[i] : 1'bz;
+    	    assign mgmt_gpio_oeb[i] = ~io_ctrl[i][INP_DIS];
         end
     endgenerate
+
 
     // Set selection and iomem_rdata_pre
 
@@ -297,13 +299,13 @@ module mprj_ctrl #(
         for (i=0; i<IO_WORDS; i=i+1) begin
 	    always @(posedge clk) begin
 		if (!resetn) begin
-		    mgmt_gpio_outr[`wtop:`wbot] <= 'd0;
+		    mgmt_gpio_out[`wtop:`wbot] <= 'd0;
 		end else begin
 		    if (iomem_valid && !iomem_ready && iomem_addr[31:8] ==
 					BASE_ADR[31:8]) begin
 			if (io_data_sel[i]) begin
 			    if (iomem_wstrb[0]) begin
-				mgmt_gpio_outr[`wtop:`wbot] <= iomem_wdata[`rtop:0];
+				mgmt_gpio_out[`wtop:`wbot] <= iomem_wdata[`rtop:0];
 			    end
 			end
 		    end

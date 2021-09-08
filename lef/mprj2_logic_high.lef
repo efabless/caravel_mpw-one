@@ -6,13 +6,13 @@ MACRO mprj2_logic_high
   CLASS BLOCK ;
   FOREIGN mprj2_logic_high ;
   ORIGIN 0.000 0.000 ;
-  SIZE 120.000 BY 15.000 ;
+  SIZE 100.000 BY 7.000 ;
   PIN HI
     DIRECTION OUTPUT TRISTATE ;
     USE SIGNAL ;
     PORT
       LAYER met3 ;
-        RECT 0.000 7.520 4.000 8.120 ;
+        RECT 0.000 3.440 4.000 4.040 ;
     END
   END HI
   PIN vccd2
@@ -20,7 +20,7 @@ MACRO mprj2_logic_high
     USE POWER ;
     PORT
       LAYER met2 ;
-        RECT 89.850 2.480 90.150 11.120 ;
+        RECT 80.850 -0.240 81.150 5.680 ;
     END
   END vccd2
   PIN vccd2
@@ -28,7 +28,15 @@ MACRO mprj2_logic_high
     USE POWER ;
     PORT
       LAYER met2 ;
-        RECT 9.850 2.480 10.150 11.120 ;
+        RECT 40.850 -0.240 41.150 5.680 ;
+    END
+  END vccd2
+  PIN vccd2
+    DIRECTION INOUT ;
+    USE POWER ;
+    PORT
+      LAYER met2 ;
+        RECT 0.850 -0.240 1.150 5.680 ;
     END
   END vccd2
   PIN vccd2
@@ -36,7 +44,7 @@ MACRO mprj2_logic_high
     USE POWER ;
     PORT
       LAYER met3 ;
-        RECT 0.000 3.330 119.600 3.630 ;
+        RECT 0.000 1.535 99.820 1.985 ;
     END
   END vccd2
   PIN vssd2
@@ -44,7 +52,15 @@ MACRO mprj2_logic_high
     USE GROUND ;
     PORT
       LAYER met2 ;
-        RECT 49.850 2.480 50.150 11.120 ;
+        RECT 60.850 -0.240 61.150 5.680 ;
+    END
+  END vssd2
+  PIN vssd2
+    DIRECTION INOUT ;
+    USE GROUND ;
+    PORT
+      LAYER met2 ;
+        RECT 20.850 -0.240 21.150 5.680 ;
     END
   END vssd2
   PIN vssd2
@@ -52,19 +68,29 @@ MACRO mprj2_logic_high
     USE GROUND ;
     PORT
       LAYER met3 ;
-        RECT 0.000 8.730 119.600 9.030 ;
+        RECT 0.000 4.435 99.820 4.885 ;
     END
   END vssd2
   OBS
+      LAYER nwell ;
+        RECT -0.190 4.025 100.010 5.630 ;
+        RECT -0.190 -0.190 100.010 1.415 ;
       LAYER li1 ;
-        RECT 0.000 2.635 119.600 10.965 ;
+        RECT 0.000 0.085 99.820 5.525 ;
+      LAYER li1 ;
+        RECT 0.000 -0.085 99.820 0.085 ;
       LAYER met1 ;
-        RECT 0.000 2.480 119.600 11.120 ;
+        RECT 0.000 -0.240 99.820 5.680 ;
       LAYER met2 ;
-        RECT 5.150 6.470 5.430 8.005 ;
+        RECT 20.330 0.835 20.570 3.925 ;
+        RECT 21.430 0.835 40.570 3.925 ;
+        RECT 41.430 0.835 60.570 3.925 ;
+        RECT 61.430 0.835 80.570 3.925 ;
+        RECT 81.430 0.835 94.210 3.925 ;
       LAYER met3 ;
-        RECT 4.400 7.120 90.165 8.330 ;
-        RECT 4.000 4.030 90.165 7.120 ;
+        RECT 4.400 3.040 94.235 3.905 ;
+        RECT 4.000 2.385 94.235 3.040 ;
+        RECT 4.000 0.855 94.235 1.135 ;
   END
 END mprj2_logic_high
 END LIBRARY

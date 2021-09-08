@@ -17,6 +17,8 @@ set script_dir [file dirname [file normalize [info script]]]
 
 set ::env(DESIGN_NAME) mgmt_protect
 
+set ::env(RUN_KLAYOUT) 0
+
 set ::env(VERILOG_FILES) "\
 	$script_dir/../../verilog/rtl/defines.v\
 	$script_dir/../../verilog/rtl/mgmt_protect.v"
@@ -41,11 +43,9 @@ set ::env(SYNTH_READ_BLACKBOX_LIB) 1
 
 set ::env(SYNTH_USE_PG_PINS_DEFINES) "USE_POWER_PINS"
 set ::env(FP_PIN_ORDER_CFG) $script_dir/pin_order.cfg
-# set ::env(FP_CONTEXT_DEF) $script_dir/../caravel/runs/caravel/tmp/floorplan/verilog2def_openroad.def.macro_placement.def
-# set ::env(FP_CONTEXT_LEF) $script_dir/../caravel/runs/caravel/tmp/merged_unpadded.lef
 
 set ::env(FP_SIZING) absolute
-set ::env(DIE_AREA) "0 0 1000 90"
+set ::env(DIE_AREA) "0 0 1100 117"
 set ::env(BOTTOM_MARGIN_MULT) 2
 set ::env(TOP_MARGIN_MULT) 2
 set ::env(LEFT_MARGIN_MULT) 12
@@ -62,26 +62,32 @@ set ::env(FP_PDN_CORE_RING) 1
 set ::env(FP_PDN_CORE_RING_VSPACING) 0.42
 set ::env(FP_PDN_CORE_RING_HSPACING) 0.42
 set ::env(FP_PDN_VOFFSET) 15
-set ::env(FP_PDN_HOFFSET) 32.88
+set ::env(FP_PDN_HOFFSET) 48.88
 set ::env(FP_PDN_CORE_RING_VWIDTH) 0.9
 set ::env(FP_PDN_CORE_RING_HWIDTH) 0.9
 set ::env(FP_PDN_CORE_RING_VOFFSET) 7
 set ::env(FP_PDN_CORE_RING_HOFFSET) 7
 set ::env(FP_PDN_VWIDTH) 0.9
 set ::env(FP_PDN_HWIDTH) 0.9
-set ::env(FP_PDN_VPITCH) 150
+set ::env(FP_PDN_VPITCH) 150.5
 set ::env(FP_PDN_HPITCH) 5.44
 set ::env(FP_PDN_VSPACING) 3.2
 
 set ::env(FP_PDN_LOWER_LAYER) met4
 set ::env(FP_PDN_UPPER_LAYER) met3
+set ::env(GLB_RT_MINLAYER) 2
 set ::env(GLB_RT_MAXLAYER) 5
-set ::env(GLB_RT_OBS) "met5 $::env(DIE_AREA)"
+set ::env(GLB_RT_ADJUSTMENT) 0.00
+set ::env(GLB_RT_TILES) 15
+set ::env(GLB_RT_OVERFLOW_ITERS) 250
 
-set ::env(FP_VERTICAL_HALO) 3
+set ::env(FP_VERTICAL_HALO) 5
+set ::env(FP_HORIZONTAL_HALO) 12
 
-set ::env(PL_TARGET_DENSITY) 0.3
+set ::env(PL_TARGET_DENSITY) 0.15
+set ::env(PL_RESIZER_DESIGN_OPTIMIZATIONS) 0
+set ::env(PL_RESIZER_TIMING_OPTIMIZATIONS) 0
 
 set ::env(MACRO_PLACEMENT_CFG) $script_dir/macro_placement.cfg
-# set ::env(GLB_RT_ALLOW_CONGESTION) 1
-set ::env(DIODE_INSERTION_STRATEGY) 1
+#set ::env(GLB_RT_ALLOW_CONGESTION) 1
+set ::env(DIODE_INSERTION_STRATEGY) 4

@@ -14,7 +14,7 @@
 #
 # SPDX-License-Identifier: Apache-2.0
 
-PDK_PATH?=/ef/tech/SW/sky130A
+PDK_PATH?=$(PDK_ROOT)/sky130A 
 VERILOG_PATH = ../../../
 RTL_PATH = $(VERILOG_PATH)/rtl
 
@@ -28,15 +28,20 @@ all:  ${PATTERN:=.vcd}
 
 %.vvp: %_tb.v
 ifeq ($(SIM),RTL)
-	iverilog -DFUNCTIONAL -I $(PDK_PATH) -I $(VERILOG_PATH) -I .. -I $(RTL_PATH) \
+	iverilog -Ttyp -DFUNCTIONAL -I $(PDK_PATH) -I $(VERILOG_PATH) -I .. -I $(RTL_PATH) \
 	$< -o $@
 else
-	iverilog -DFUNCTIONAL -DGL -I $(PDK_PATH) -I $(VERILOG_PATH) -I .. -I $(RTL_PATH) \
+	iverilog -Ttyp -DFUNCTIONAL -DGL -I $(PDK_PATH) -I $(VERILOG_PATH) -I .. -I $(RTL_PATH) \
 	$< -o $@
 endif
 
-%.vcd: %.vvp
+%.vcd: %.vvp check-env
 	vvp $<
+
+check-env:
+ifndef PDK_ROOT
+	$(error PDK_ROOT is undefined, please export it before running make)
+endif
 
 clean:
 	rm -f *.vvp *.vcd

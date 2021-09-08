@@ -1,42 +1,57 @@
 magic
 tech sky130A
 magscale 1 2
-timestamp 1607952827
+timestamp 1623523102
+<< nwell >>
+rect -38 805 20002 1126
+rect -38 -38 20002 283
 << obsli1 >>
-rect 0 527 23920 2193
+rect 0 -17 19964 1105
 << obsm1 >>
-rect 0 496 23920 2224
+rect 0 -48 19964 1136
 << metal2 >>
-rect 1970 496 2030 2224
-rect 9970 496 10030 2224
-rect 17970 496 18030 2224
+rect 170 -48 230 1136
+rect 4170 -48 4230 1136
+rect 8170 -48 8230 1136
+rect 12170 -48 12230 1136
+rect 16170 -48 16230 1136
 << obsm2 >>
-rect 1030 1294 1086 1601
+rect 4066 167 4114 785
+rect 4286 167 8114 785
+rect 8286 167 12114 785
+rect 12286 167 16114 785
+rect 16286 167 18842 785
 << metal3 >>
-rect 0 1746 23920 1806
-rect 0 1504 800 1624
-rect 0 666 23920 726
+rect 0 887 19964 977
+rect 0 688 800 808
+rect 0 307 19964 397
 << obsm3 >>
-rect 880 1424 18033 1666
-rect 800 806 18033 1424
+rect 880 608 18847 781
+rect 800 477 18847 608
+rect 800 171 18847 227
 << labels >>
-rlabel metal3 s 0 1504 800 1624 6 HI
+rlabel metal3 s 0 688 800 808 6 HI
 port 1 nsew signal output
-rlabel metal2 s 17970 496 18030 2224 6 vccd2
+rlabel metal2 s 16170 -48 16230 1136 6 vccd2
 port 2 nsew power bidirectional
-rlabel metal2 s 1970 496 2030 2224 6 vccd2
+rlabel metal2 s 8170 -48 8230 1136 6 vccd2
 port 3 nsew power bidirectional
-rlabel metal3 s 0 666 23920 726 6 vccd2
+rlabel metal2 s 170 -48 230 1136 6 vccd2
 port 4 nsew power bidirectional
-rlabel metal2 s 9970 496 10030 2224 6 vssd2
-port 5 nsew ground bidirectional
-rlabel metal3 s 0 1746 23920 1806 6 vssd2
+rlabel metal3 s 0 307 19964 397 6 vccd2
+port 5 nsew power bidirectional
+rlabel metal2 s 12170 -48 12230 1136 6 vssd2
 port 6 nsew ground bidirectional
+rlabel metal2 s 4170 -48 4230 1136 6 vssd2
+port 7 nsew ground bidirectional
+rlabel metal3 s 0 887 19964 977 6 vssd2
+port 8 nsew ground bidirectional
 << properties >>
 string LEFclass BLOCK
-string FIXED_BBOX 0 0 24000 3000
+string FIXED_BBOX 0 0 20000 1400
 string LEFview TRUE
 string GDS_FILE ../gds/mprj2_logic_high.gds
-string GDS_END 32228
-string GDS_START 21420
+string GDS_END 33020
+string GDS_START 24116
 << end >>
+
