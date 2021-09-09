@@ -17,11 +17,10 @@ set script_dir [file dirname [file normalize [info script]]]
 source $script_dir/fixed_wrapper_cfgs.tcl
 source $script_dir/default_wrapper_cfg.tcl
 
-set ::env(STD_CELL_LIBRARY_OPT) $::env(STD_CELL_LIBRARY)
-
 set ::env(DESIGN_NAME) user_project_wrapper
 
 set ::env(FP_PDN_CHECK_NODES) 0
+set ::env(FP_PDN_ENABLE_RAILS) 0 
 
 set ::env(GLB_RT_OBS) "met1 0 0 $::env(DIE_AREA),\
 					   met2 0 0 $::env(DIE_AREA),\
@@ -38,12 +37,6 @@ set ::env(PL_OPENPHYSYN_OPTIMIZATIONS) 0
 set ::env(DIODE_INSERTION_STRATEGY) 0
 
 set ::env(MAGIC_WRITE_FULL_LEF) 0
-
-# THE FOLLOWING SECTIONS CAN BE CHANGED IF NEEDED
-
-# PDN Pitch
-set ::env(FP_PDN_VPITCH) 180
-set ::env(FP_PDN_HPITCH) $::env(FP_PDN_VPITCH)
 
 set ::env(VERILOG_FILES) "\
 	$script_dir/../../verilog/rtl/defines.v \
