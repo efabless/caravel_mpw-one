@@ -59,7 +59,7 @@ STD_CELL_LIBRARY ?= sky130_fd_sc_hd
 SPECIAL_VOLTAGE_LIBRARY ?= sky130_fd_sc_hvl
 IO_LIBRARY ?= sky130_fd_io
 PRIMITIVES_LIBRARY ?= sky130_fd_pr
-SKYWATER_COMMIT ?= bb2f842ac8d1b750677ca25bc71fb312859edb82
+SKYWATER_COMMIT ?= c094b6e83a4f9298e47f696ec5a7fd53535ec5eb
 OPEN_PDKS_COMMIT ?= 804f48b18519aa67b1f822bdc352ecbad1c056cb
 INSTALL_SRAM ?= disabled
 
@@ -404,7 +404,7 @@ $(ANTENNA_BLOCKS): antenna-% : ./gds/%.gds
 # MAG2GDS
 BLOCKS = $(shell cd openlane && find * -maxdepth 0 -type d)
 MAG_BLOCKS = $(foreach block, $(BLOCKS), mag2gds-$(block))
-$(MAG_BLOCKS): mag2gds-% : ./mag/%.mag
+$(MAG_BLOCKS): mag2gds-% : ./mag/%.mag uncompress
 	echo "Converting mag file $* to GDS..."
 	echo "addpath $(CARAVEL_ROOT)/mag/hexdigits;\
 		addpath ${PDKPATH}/libs.ref/sky130_ml_xx_hd/mag;\
@@ -419,6 +419,7 @@ $(MAG_BLOCKS): mag2gds-% : ./mag/%.mag
 		exit;" > ./mag/mag2gds_$*.tcl
 	cd ./mag && magic -rcfile ${PDK_ROOT}/sky130A/libs.tech/magic/sky130A.magicrc -noc -dnull mag2gds_$*.tcl < /dev/null
 	rm ./mag/mag2gds_$*.tcl
+	mv -f ./mag/$*.gds ./gds/
 	
 .PHONY: help
 help:
@@ -536,7 +537,7 @@ build-pdk: check-env $(PDK_ROOT)/open_pdks $(PDK_ROOT)/skywater-pdk
 		rm -rf $(PDK_ROOT)/sky130A) || \
 		true
 	cd $(PDK_ROOT)/open_pdks && \
-		./configure --enable-sky130-pdk=$(PDK_ROOT)/skywater-pdk/libraries --with-sky130-local-path=$(PDK_ROOT) --disable-sram-sky130 && \
+		./configure --enable-sky130-pdk=$(PDK_ROOT)/skywater-pdk/libraries --with-sky130-local-path=$(PDK_ROOT) --enable-sram-sky130=$(INSTALL_SRAM) && \
 		cd sky130 && \
 		$(MAKE) veryclean && \
 		$(MAKE) && \
