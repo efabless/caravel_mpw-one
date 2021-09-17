@@ -541,7 +541,7 @@ build-pdk: check-env $(PDK_ROOT)/open_pdks $(PDK_ROOT)/skywater-pdk
 		cd sky130 && \
 		$(MAKE) veryclean && \
 		$(MAKE) && \
-		$(MAKE) install-local && \
+		make SHARED_PDKS_PATH=$(PDK_ROOT) install && \
 		$(MAKE) clean
 
 .RECIPE: manifest
