@@ -15,7 +15,7 @@
 
 set script_dir [file dirname [file normalize [info script]]]
 source $script_dir/fixed_wrapper_cfgs.tcl
-source $script_dir/default_wrapper_cfg.tcl
+source $script_dir/default_wrapper_cfgs.tcl
 
 set ::env(DESIGN_NAME) user_project_wrapper
 
