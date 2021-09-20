@@ -20,8 +20,8 @@ RTL_PATH = $(VERILOG_PATH)/rtl
 IP_PATH = ../../../../ip
 BEHAVIOURAL_MODELS = ../../ 
 
-GCC_PATH?=~/foss/tools/gcc.rv/bin
-GCC_PREFIX?=riscv64-unknown-elf
+GCC_PATH?=$(TOOLS)/rv32/bin
+GCC_PREFIX?=riscv32-unknown-linux-gnu
 PDK_PATH?=$(PDK_ROOT)/sky130A
 
 SIM?=RTL
