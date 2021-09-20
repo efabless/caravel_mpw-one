@@ -425,6 +425,76 @@ $(MAG_BLOCKS): mag2gds-% : ./mag/%.mag uncompress
 help:
 	@$(MAKE) -pRrq -f $(lastword $(MAKEFILE_LIST)) : 2>/dev/null | awk -v RS= -F: '/^# File/,/^# Finished Make data base/ {if ($$1 !~ "^[#.]") {print $$1}}' | sort | egrep -v -e '^[^[:alnum:]]' -e '^$@$$'
 
+# RCX Extraction
+BLOCKS = $(shell cd openlane && find * -maxdepth 0 -type d)
+RCX_BLOCKS = $(foreach block, $(BLOCKS), rcx-$(block))
+OPENLANE_IMAGE_NAME=efabless/openlane:2021.09.16_03.28.21
+$(RCX_BLOCKS): rcx-% : ./def/%.def 
+	echo "Running RC Extraction on $*"
+	mkdir -p ./def/tmp 
+	# merge techlef and standard cell lef files
+	python3 $(OPENLANE_ROOT)/scripts/mergeLef.py -i $(PDK_ROOT)/sky130A/libs.ref/$(STD_CELL_LIBRARY)/techlef/$(STD_CELL_LIBRARY).tlef $(PDK_ROOT)/sky130A/libs.ref/$(STD_CELL_LIBRARY)/lef/*.lef -o ./def/tmp/merged.lef
+	echo "\
+		read_liberty $(PDK_ROOT)/sky130A/libs.ref/$(STD_CELL_LIBRARY)/lib/$(STD_CELL_LIBRARY)__tt_025C_1v80.lib;\
+		read_liberty $(PDK_ROOT)/sky130A/libs.ref/$(SPECIAL_VOLTAGE_LIBRARY)/lib/$(SPECIAL_VOLTAGE_LIBRARY)__tt_025C_3v30.lib;\
+		set std_cell_lef ./def/tmp/merged.lef;\
+		if {[catch {read_lef \$$std_cell_lef} errmsg]} {\
+    			puts stderr \$$errmsg;\
+    			exit 1;\
+		};\
+		foreach lef_file [glob ./lef/*.lef] {\
+			if {[catch {read_lef \$$lef_file} errmsg]} {\
+    			puts stderr \$$errmsg;\
+    			exit 1;\
+			}\
+		};\
+		if {[catch {read_def -order_wires ./def/$*.def} errmsg]} {\
+			puts stderr \$$errmsg;\
+			exit 1;\
+		};\
+		read_sdc ./openlane/$*/base.sdc;\
+		set_propagated_clock [all_clocks];\
+		set rc_values \"mcon 9.249146E-3,via 4.5E-3,via2 3.368786E-3,via3 0.376635E-3,via4 0.00580E-3\";\
+		set vias_rc [split \$$rc_values ","];\
+    	foreach via_rc \$$vias_rc {\
+        		set layer_name [lindex \$$via_rc 0];\
+        		set resistance [lindex \$$via_rc 1];\
+       			set_layer_rc -via \$$layer_name -resistance \$$resistance;\
+    	};\
+		set_wire_rc -signal -layer met2;\
+		set_wire_rc -clock -layer met5;\
+		define_process_corner -ext_model_index 0 X;\
+		extract_parasitics -ext_model_file ${PDK_ROOT}/sky130A/libs.tech/openlane/rcx_rules.info -corner_cnt 1 -max_res 50 -coupling_threshold 0.1 -cc_model 10 -context_depth 5;\
+		write_spef ./def/tmp/$*.spef" > ./def/tmp/or_rcx_$*.tcl
+## Generate Spef file
+	docker run -it -v $(OPENLANE_ROOT):/openLANE_flow -v $(PDK_ROOT):$(PDK_ROOT) -v $(PWD):/caravel -e PDK_ROOT=$(PDK_ROOT) -u $(shell id -u $(USER)):$(shell id -g $(USER)) $(OPENLANE_IMAGE_NAME) \
+	sh -c " cd /caravel; openroad -exit ./def/tmp/or_rcx_$*.tcl |& tee ./def/tmp/or_rcx_$*.log" 
+## Run OpenSTA
+	echo "\
+		set std_cell_lef ./def/tmp/merged.lef;\
+		if {[catch {read_lef \$$std_cell_lef} errmsg]} {\
+    			puts stderr \$$errmsg;\
+    			exit 1;\
+		};\
+		foreach lef_file [glob ./lef/*.lef] {\
+			if {[catch {read_lef \$$lef_file} errmsg]} {\
+    			puts stderr \$$errmsg;\
+    			exit 1;\
+			}\
+		};\
+		set_cmd_units -time ns -capacitance pF -current mA -voltage V -resistance kOhm -distance um;\
+		read_liberty -min ${PDK_ROOT}/sky130A/libs.ref/${STD_CELL_LIBRARY}/lib/${STD_CELL_LIBRARY}__ff_n40C_1v95.lib;\
+		read_liberty -max ${PDK_ROOT}/sky130A/libs.ref/${STD_CELL_LIBRARY}/lib/${STD_CELL_LIBRARY}__ss_100C_1v60.lib;\
+		read_verilog ./verilog/gl/$*.v;\
+		link_design $*;\
+		read_spef ./def/tmp/$*.spef;\
+		read_sdc -echo ./openlane/$*/base.sdc;\
+		report_checks -fields {capacitance slew input_pins nets fanout} -path_delay min_max;\
+		" > ./def/tmp/or_sta_$*.tcl 
+	docker run -it -v $(OPENLANE_ROOT):/openLANE_flow -v $(PDK_ROOT):$(PDK_ROOT) -v $(PWD):/caravel -e PDK_ROOT=$(PDK_ROOT) -u $(shell id -u $(USER)):$(shell id -g $(USER)) $(OPENLANE_IMAGE_NAME) \
+	sh -c "cd /caravel; openroad -exit ./def/tmp/or_sta_$*.tcl |& tee ./def/tmp/or_sta_$*.log" 
+
+###########################################################################
 .PHONY: generate_fill
 generate_fill: check-env check-uid check-project uncompress
 ifeq ($(FOREGROUND),1)
