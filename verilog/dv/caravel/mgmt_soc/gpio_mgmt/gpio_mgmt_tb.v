@@ -166,22 +166,22 @@ module gpio_mgmt_tb;
 		.vssa_pad	  (VSS),
 		.vccd_pad	  (VDD1V8),
 		.vssd_pad         (VSS),
-		.vdda1_pad    (VDD3V3),
-		.vdda2_pad    (VDD3V3),
+		.vdda1_pad    	  (VDD3V3),
+		.vdda2_pad        (VDD3V3),
 		.vssa1_pad	  (VSS),
 		.vssa2_pad	  (VSS),
 		.vccd1_pad	  (VDD1V8),
 		.vccd2_pad	  (VDD1V8),
 		.vssd1_pad	  (VSS),
 		.vssd2_pad	  (VSS),
-		.clock	  (clock),
-		.gpio     (gpio),
-		.mprj_io (mprj_io),
-		.flash_csb(flash_csb),
-		.flash_clk(flash_clk),
-		.flash_io0(flash_io0),
-		.flash_io1(flash_io1),
-		.resetb	  (RSTB)
+		.clock	          (clock),
+		.gpio             (gpio),
+		.mprj_io          (mprj_io),
+		.flash_csb        (flash_csb),
+		.flash_clk        (flash_clk),
+		.flash_io0        (flash_io0),
+		.flash_io1        (flash_io1),
+		.resetb	          (RSTB)
 	);
 
 	spiflash #(
