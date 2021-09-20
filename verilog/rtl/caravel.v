@@ -788,6 +788,7 @@ module caravel (
 	`ifdef USE_POWER_PINS
 		.VPWR(vddio_core),
 		.LVPWR(vccd_core),
+		.LVGND(vssd_core),
 		.VGND(vssio_core),
 	`endif
 		.A(rstb_h),

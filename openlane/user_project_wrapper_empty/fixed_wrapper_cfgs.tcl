@@ -14,6 +14,7 @@
 # SPDX-License-Identifier: Apache-2.0
 
 # DON'T TOUCH THE FOLLOWING SECTIONS
+set script_dir [file dirname [file normalize [info script]]]
 
 # This makes sure that the core rings are outside the boundaries
 # of your block.
@@ -39,19 +40,15 @@ set ::env(FP_IO_HTHICKNESS_MULT) 4
 
 # Power & Pin Configurations. DON'T TOUCH.
 set ::env(FP_PDN_CORE_RING) 1
-set ::env(FP_PDN_CORE_RING_VWIDTH) 3
-set ::env(FP_PDN_CORE_RING_HWIDTH) $::env(FP_PDN_CORE_RING_VWIDTH)
+set ::env(FP_PDN_CORE_RING_VWIDTH) 3.1
+set ::env(FP_PDN_CORE_RING_HWIDTH) 3.1
 set ::env(FP_PDN_CORE_RING_VOFFSET) 14
 set ::env(FP_PDN_CORE_RING_HOFFSET) $::env(FP_PDN_CORE_RING_VOFFSET)
 set ::env(FP_PDN_CORE_RING_VSPACING) 1.7
 set ::env(FP_PDN_CORE_RING_HSPACING) $::env(FP_PDN_CORE_RING_VSPACING)
 
-set ::env(FP_PDN_VWIDTH) 3
-set ::env(FP_PDN_HWIDTH) 3
-set ::env(FP_PDN_VOFFSET) 5
-set ::env(FP_PDN_HOFFSET) $::env(FP_PDN_VOFFSET)
-set ::env(FP_PDN_VPITCH) 180
-set ::env(FP_PDN_HPITCH) $::env(FP_PDN_VPITCH)
+set ::env(FP_PDN_VWIDTH) 3.1
+set ::env(FP_PDN_HWIDTH) 3.1
 set ::env(FP_PDN_VSPACING) [expr 5*$::env(FP_PDN_CORE_RING_VWIDTH)]
 set ::env(FP_PDN_HSPACING) [expr 5*$::env(FP_PDN_CORE_RING_HWIDTH)]
 

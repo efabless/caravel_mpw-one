@@ -21,65 +21,16 @@
 Repositories and versions to use
 ================================
 
-skywater-pdk
-------------
 
-| Please stick to commit hash: ``bb2f842ac8d1b750677ca25bc71fb312859edb82`` |
-
-.. code:: bash
-
-    git clone https://github.com/google/skywater-pdk.git
-    cd skywater-pdk
-    git checkout -qf bb2f842ac8d1b750677ca25bc71fb312859edb82
-    git submodule update --init libraries/sky130_fd_sc_hd/latest
-    git submodule update --init libraries/sky130_fd_sc_hvl/latest
-    git submodule update --init libraries/sky130_fd_sc_hs/latest
-    git submodule update --init libraries/sky130_fd_sc_ms/latest
-    git submodule update --init libraries/sky130_fd_sc_ls/latest
-    git submodule update --init libraries/sky130_fd_sc_hdll/latest
-    git submodule update --init libraries/sky130_fd_io/latest
-    make timing
-
-open\_pdks
-----------
-
-Please stick to the
-`1.0.150 <https://github.com/RTimothyEdwards/open_pdks/tree/1.0.150>`__
-tag.
-
-.. code:: bash
-
-    git clone https://github.com/RTimothyEdwards/open_pdks.git -b 1.0.150 
-
-OpenLane
---------
-
-Please stick to the v0.15 `tag <https://github.com/efabless/openlane/tree/v0.15>`__ of openlane. 
-
-.. code:: bash
-
-    git clone https://github.com/efabless/openlane.git -b v0.15
-
-
-Caravel/Caravel-lite
---------------------
-
-Please stick to the ``mpw-two-c`` tag.
-
-.. code:: bash
-
-    git clone https://github.com/efabless/caravel.git -b mpw-two-c
-    git clone https://github.com/efabless/caravel-lite.git -b mpw-two-c caravel
-
-Open\_mpw\_precheck
--------------------
-
-Please run the offline
-`precheck <https://github.com/efabless/open_mpw_precheck>`__:
-
-.. code:: bash
-
-    git clone https://github.com/efabless/open_mpw_precheck.git
+===================================================================== ================================================ ===========================
+  Repo                                                                         commit                                            version
+===================================================================== ================================================ ===========================
+`skywater-pdk <https://github.com/google/skywater-pdk.git>`__           ``c094b6e83a4f9298e47f696ec5a7fd53535ec5eb``        \-
+`open_pdks <https://github.com/RTimothyEdwards/open_pdks.git>`__        ``6c05bc48dc88784f9d98b89d6791cdfd91526676``    ``1.0.225``
+`OpenLane <https://github.com/The-OpenROAD-Project/OpenLane>`__         ``6905a12d2efe18502c37c3207b5ee84cdf720d9c``    ``2021.09.19_20.25.16``
+`caravel/caravel-lite <https://github.com/efabless/caravel-lite>`__                 \-                                     ``mpw-three``
+`MPW-Precheck <https://github.com/efabless/mpw_precheck>`__                          Latest                                   Latest
+===================================================================== ================================================ ===========================
 
 
 Notes

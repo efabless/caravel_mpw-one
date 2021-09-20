@@ -16,7 +16,7 @@
 package require openlane
 set script_dir [file dirname [file normalize [info script]]]
 
-prep -design $script_dir -tag user_project_wrapper_empty -overwrite
+prep -design $script_dir -tag user_project_wrapper -overwrite
 set save_path $script_dir/../..
 
 verilog_elaborate
@@ -48,6 +48,7 @@ save_views       -lef_path $::env(magic_result_file_tag).lef \
                  -def_path $::env(CURRENT_DEF) \
                  -gds_path $::env(magic_result_file_tag).gds \
                  -mag_path $::env(magic_result_file_tag).mag \
+                 -spice_path $::env(magic_result_file_tag).spice \
                  -save_path $save_path \
                  -tag $::env(RUN_TAG)
 
@@ -64,3 +65,5 @@ exec python3 $::env(OPENLANE_ROOT)/scripts/rectify.py $llx $lly $urx $ury \
 	| python3 $::env(OPENLANE_ROOT)/scripts/obs.py {*}$::env(DIE_AREA) li1,met1,met2,met3 \
 	> $::env(magic_result_file_tag).obstructed.lef
 file copy -force $::env(magic_result_file_tag).obstructed.lef $save_path/lef
+
+generate_final_summary_report
