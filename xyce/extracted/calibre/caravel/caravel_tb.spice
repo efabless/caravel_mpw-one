@@ -1,0 +1,123 @@
+***  
+* Most models come from here:
+
+.lib ../../../sky130A-xyce/libs.tech/xyce/sky130.lib.spice tt
+
+.include ./sky130_fd_io__condiode.spice
+.include ./sky130_fd_pr__model__parasitic__diode_ps2nw.spice 
+.include ./sky130_fd_pr__model__parasitic__diode_pw2dn.spice
+.include ./sky130_fd_pr__model__parasitic__diode_ps2dn.spice
+
+
+*.include ./sky130_fd_pr__model__parasitic__diode_ps2nw.model.spice 
+*.include ./sky130_fd_pr__model__parasitic__diode_pw2dn.model.spice
+*.include ./sky130_fd_pr__model__parasitic__diode_ps2dn.model.spice
+
+
+***************************************
+
+.include 	../NETLISTS/caravel-extracted.spice
+
+*** no space before the .include
+*** removed subckts without any ports
+*** converted calibre extracted netlist to spice with hs2ng
+*** changed parasitic diodes to level=2.0
+*** used sky130A-xyce PDK from MG
+
+* vddio_pad		mprj_io[11]	mprj_io[6]    	mprj_io[17]     gpio	      mprj_io[29]  resetb 
+* pwr_ctrl_out[0]   	mprj_io[12]   	mprj_io[0]	mprj_io[16]	vdda_pad      vssd2_pad    vssd_pad 
+* pwr_ctrl_out[1]   	mprj_io[7] 	mprj_io[1]    	vssa1_pad       vccd2_pad     vdda2_pad    vccd_pad
+* pwr_ctrl_out[2]   	mprj_io[8] 	mprj_io[23]   	mprj_io[15]     mprj_io[24]   mprj_io[31] 
+* pwr_ctrl_out[3]    	mprj_io[9] 	mprj_io[22]   	vssa_pad        vssa2_pad     mprj_io[37] 
+* mprj_io[13]	  	vssd1_pad	mprj_io[21]   	clock	        mprj_io[28]   mprj_io[36] 
+* vccd1_pad	 	mprj_io[2]	mprj_io[20]   	flash_csb       mprj_io[27]   mprj_io[35] 
+* mprj_io[14]	  	mprj_io[3]	mprj_io[19]   	flash_clk       mprj_io[26]   mprj_io[34] 
+* vdda1_pad	  	mprj_io[4]	vssio_pad     	flash_io0       mprj_io[25]   mprj_io[33] 
+* mprj_io[10]	  	mprj_io[5]	mprj_io[18]   	flash_io1       mprj_io[30]   mprj_io[32] 
+
+
+Xcaravel 
++ VDD3V3       ; vddio_pad 
++ nc1	       ; pwr_ctrl_out[0]
++ nc2	       ; pwr_ctrl_out[1]
++ nc3	       ; pwr_ctrl_out[2]
++ nc4	       ; pwr_ctrl_out[3]
++ nc5	       ; mprj_io[13] 
++ VDD1V8       ; vccd1_pad 
++ nc6	       ; mprj_io[14] 
++ VDD3V3       ; vdda1_pad 
++ nc7	       ; mprj_io[10] 
+
++ nc8	       ; mprj_io[11] 
++ nc9	       ; mprj_io[12] 
++ nc10	       ; mprj_io[7] 
++ nc11	       ; mprj_io[8] 
++ nc12	       ; mprj_io[9] 
++ VSS	       ; vssd1_pad 
++ nc13	       ; mprj_io[2] 
++ nc14	       ; mprj_io[3] 
++ nc15	       ; mprj_io[4] 
++ nc16	       ; mprj_io[5]
+
++ nc17	       ; mprj_io[6]  
++ nc18	       ; mprj_io[0]  
++ nc19	       ; mprj_io[1]  
++ nc20	       ; mprj_io[23]  
++ nc21	       ; mprj_io[22]  
++ nc22	       ; mprj_io[21]  
++ nc23	       ; mprj_io[20]  
++ nc24	       ; mprj_io[19]  
++ VSS	       ; vssio_pad   
++ nc25	       ; mprj_io[18] 
+ 
++ nc26	       ; mprj_io[17] 
++ nc27	       ; mprj_io[16] 
++ VSS	       ; vssa1_pad   
++ nc28	       ; mprj_io[15] 
++ VSS	       ; vssa_pad    
++ nc29	       ; clock       
++ nc30	       ; flash_csb   
++ nc31	       ; flash_clk   
++ nc32	       ; flash_io0   
++ nc33	       ; flash_io1 
+  
++ nc34	       ; gpio	      
++ VDD3V3       ; vdda_pad     
++ VDD1V8       ; vccd2_pad    
++ nc35	       ; mprj_io[24]  
++ VSS	       ; vssa2_pad    
++ nc36	       ; mprj_io[28]  
++ nc37	       ; mprj_io[27]  
++ nc38	       ; mprj_io[26]  
++ nc39	       ; mprj_io[25]  
++ nc40	       ; mprj_io[30]  
+
++ nc41	       ; mprj_io[29]   
++ VSS	       ; vssd2_pad    
++ VDD3V3       ; vdda2_pad    
++ nc42	       ; mprj_io[31]   
++ nc43	       ; mprj_io[37]   
++ nc44	       ; mprj_io[36]   
++ nc45	       ; mprj_io[35]   
++ nc46	       ; mprj_io[34]   
++ nc48	       ; mprj_io[33]   
++ nc49	       ; mprj_io[32]  
+ 
++ nc50	       ; resetb 
++ VSS	       ; vssd_pad 
++ VDD1V8       ; vccd_pad 
++ caravel
+
+vvss		VSS		0 		dc 	0
+vvdd1v8		VDD1V8		0 		pwl	0 0 3u  1.8  1m 1.8
+vvdd3v3		VDD3V3		0 		pwl	0 0 2u  3.3  1m 3.3
+
+vzero		ZERO		0		dc	0
+vone1v8		ONE1V8		0		pwl	0 0 5.5u 0 5.6u 1.8  1m 1.8
+vone3v3		ONE3V3		0		pwl	0 0 5.5u 0 5.6u 3.3  1m 3.3
+
+
+.PRINT TRAN FORMAT=RAW i(vvdd3v3) i(vvdd1v8) v(vdd3v3) v(vdd1v8) v(ONE1V8) v(ONE3V3) i(vone1v8) i(vone3v3) i(vout) i(rload)
+.TRAN 10n 15u
+
+.END

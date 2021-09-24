@@ -1,0 +1,353 @@
+#!/usr/bin/python3 -B
+"""
+spiUniquify : netlist processor
+Copyright (c) 2018, efabless Corporation.
+All rights reserved.
+
+usage: spiUniquify <inSPIfile> <topcell1> [ <topcell2> ... ]
+Writes edited spice-netlist to stdout. Sets exit status if there were non-zero errors.
+Most errors/warnings are annotated in-line in the stdout each before the relevant line.
+
+Only locally defined subckts (and not those listed on command-line as topcells), will be
+prefixed both in the .SUBCKT definition and where instantiated with "<topcell1>__".
+
+There are no checks whether a prefix-rename of a subckt is required to make it unique
+(all are blindly renamed), nor are there checks if the new names do not collide with
+each other, or if the input subckt names were not themselves unique to start with.
+
+This is for a limited style of foundry IP analog-cell netlists, where each analog-cell's
+netlist is in a separate file from the rest, and also has 'complete' hierarchy of that cell,
+but between the files for multiple cell there are reused subckt names. We blindly rename all
+sub-subckts found in the file, regardless if it they were reused in other files.
+"""
+
+# TODO:? some foundry netlists have some local subckts named like *_<topcell> and <topcell>_*.
+# Should we avoid adding our own extra prefix in such cases? So far we blindly add always.
+
+# from __future__ import print_function
+import sys, getopt
+import os
+import re
+
+# unfold continued lines
+def unfold(lines):
+    tmp = []
+    prev = ""
+    ndx = 0
+    for i in lines:
+        ndx+=1
+        if i.startswith('+'):
+            prev += i[1:]
+            continue
+        if ndx > 1:
+            tmp += [ prev ]
+        prev = i
+    if ndx > 0:
+        tmp += [ prev ]
+    return tmp
+
+
+# Process subckt line (array of tokens). Return new array of tokens.
+# There might be a ' /' in the line that needs to be deleted. It may be standalone ' / ', or
+# butting against the next token. It may be before all pins, after all pins, or between pins.
+# Do not touch / in a parameter assignment expression.
+# Do not touch / embedded in a pinName.
+# May touch / butting front of very first parameter assignment expression.
+# .subckt NM / p1 p2 p3 x=y g=h
+# .subckt NM /p1 p2 p3 x=y g=h
+# .subckt NM p1 p2 / p3 x=y g=h
+# .subckt NM p1 p2 /p3 x=y g=h
+# .subckt NM p1 p2 p3 / x=y g=h
+# .subckt NM p1 p2 p3 /x=y g=h
+# .subckt NM p1 p2 p3 x=y g=(a/b)     (don't touch this /)
+# .subckt NM p1 p2/3/4 p3 x=y g=(a/b) (don't touch these /)
+def mapSubcktDef(tok):
+    # find index of one-past first token (beyond ".subckt NM") containing an =, if any
+    param0 = len(tok)
+    for i in xrange(2, len(tok)):
+        if '=' in tok[i]:
+            param0 = i+1
+            break
+    # find first token before or including that 1st-param, starting with /:
+    #   strip the slash.
+    for i in xrange(2, param0):
+        if tok[i][0] == '/':
+            tok[i] = tok[i][1:]
+            if tok[i] == "":
+                del tok[i]
+            break
+    return tok
+
+def test_mapSubcktInst():
+    print( " ".join(mapSubcktDef( ".subckt abc p1 p2 p3".split())))
+    print( " ".join(mapSubcktDef( ".subckt abc / p1 p2 p3".split())))
+    print( " ".join(mapSubcktDef( ".subckt abc /p1 p2 p3".split())))
+    print( " ".join(mapSubcktDef( ".subckt abc p1 p2 /p3".split())))
+    print( " ".join(mapSubcktDef( ".subckt abc p1 p2 / p3".split())))
+    print( " ".join(mapSubcktDef( ".subckt abc p1 p2 p3 x=4 /y=5".split())))
+    print( " ".join(mapSubcktDef( ".subckt abc p1 p2 p3 x=4/2 y=5".split())))
+    print( " ".join(mapSubcktDef( ".subckt abc p1 p2 p3 / x=4/2 y=5".split())))
+    print( " ".join(mapSubcktDef( ".subckt abc p1 p2 p3 x=4/2 /y=5".split())))
+    print( " ".join(mapSubcktDef( ".subckt abc p1 p2 p3 /x=4/2 y=5".split())))
+    print( " ".join(mapSubcktDef( ".subckt abc p1/2/3 p2 p3 /x=4/2 y=5".split())))
+
+# Rename the subcktName in a .subckt line to add the uniquifying prefix.
+# Don't touch subckt names known as our topcells.
+def mapSubcktDefName(tok):
+    # find the subckt name.
+    T1 = tok[1]
+    sub = T1.lower()
+
+    # if it's a topcell, do nothing to it. (Comparing this lower-cased subckt-name to set of lower-cased topcell names)
+    if sub in topcells:
+        return tok
+    
+    # add the prefix (Preserving original case).
+    tok[1] = thePrefix + T1
+    return tok
+
+# Rename the subcktName instantiated in an "x*" spice netlisting like to add the uniquifying prefix.
+# Only map subckt-names known as localSubs (defined locally in this file). So we don't
+# touch topcell instances (though should be none) and don't touch subckt instances of PDK primitives.
+def mapSubcktInstRefName(tok):
+    global err, localSubs, localSubsPlaced
+    # find the subckt name.
+    # Work backwards from end of tokens, skipping over any nm=val parameter assignments.
+    # From the end, the first token without "=" in it, is our subckt name.
+    # It's an error if we don't find one (and we don't check first token).
+    ndx = 0
+    for i in xrange(len(tok)-1, 1, -1):
+        if "=" in tok[i]:
+            continue
+        ndx = i
+        break
+
+    if ndx < 1:
+        err+=1
+        msg = "*spiUniquify: ERROR: Missing instantiated subckt name:"
+        return [ msg ] + tok
+
+    t0 = tok[ndx].lower()
+    if t0 in localSubs:
+        # add the prefix (Preserving original case).
+        tok[ndx] = thePrefix + tok[ndx]
+        # mark that the subckt did have instances mapped
+        if not t0 in localSubsPlaced:
+            localSubsPlaced[ t0 ] = True
+    return tok
+
+# Process subckt instance line (array of tokens). Return new array of tokens.
+# (This function does not map possible illegal-chars in instanceName).
+# There might be a ' /' in the line that needs to be deleted. It may be standalone ' / ', or
+# butting against the next token. It can only be after pins, before or butting subcktName.
+#
+# Do not touch / in, butting, or after 1st parameter assignment expression.
+# Do not touch / embedded in a netName.
+# Do not touch / embedded in instanceName (they are handled separately elsewhere).
+# xa/b/c p1 p2 p3 / NM x=y g=h
+# xa/b/c p1 p2 p3 /NM x=y g=h
+# xabc p1 p2/3/4 p3 /NM x=(a/b) g=h
+# xabc p1 p2/3/4 p3 / NM x=(a/b) g=h
+# xabc p1 p2/3/4 p3 NM x=(a/b) / g=h    (don't touch; perhaps needs to be an error trapped somewhere)
+# xabc p1 p2/3/4 p3 NM / x=(a/b) g=h    (don't touch; perhaps needs to be an error trapped somewhere)
+# xa/b/c p1 p2/3/4 p3 NM x=(a/b) g=h    (don't touch these /)
+def mapSubcktInst(tok):
+    # find index of first token (beyond "x<iname>") containing an =, if any
+    param0 = tlen = len(tok)
+    for i in xrange(1, tlen):
+        if '=' in tok[i]:
+            param0 = i
+            break
+    # Determine modelName index. Either just prior to 1st-param (if any) else last token.
+    modndx = tlen - 1
+    if param0 < tlen:
+        modndx = param0 - 1;
+    # If modndx now points to a standalone /, that can't be (would yield missing/empty modelName).
+    # Actual modelName must be before it. We need to check, possibly strip / on/before actual modelName.
+    # (Even though standlone / after model are most likely an independent error: we don't touch 'em).
+    while modndx > 1 and tok[modndx] == "/":
+        modndx-=1
+    # Check for standalone / before modelName. Else for modelName starting with /.
+    slashndx = modndx - 1
+    if slashndx > 0 and tok[slashndx] == "/":
+        del tok[slashndx]
+    else:
+        if modndx > 0 and tok[modndx].startswith("/"):
+            tok[modndx] = tok[modndx][1:]
+    return tok
+
+def test_mapSubcktInst():
+    print( " ".join(mapSubcktInst( "xa/b/c p1 p2 p3 / NM x=y g=h".split())))
+    print( " ".join(mapSubcktInst( "xa/b/c p1 p2 p3 /NM x=y g=h".split())))
+    print( " ".join(mapSubcktInst( "xabc p1 p2/3/4 p3 /NM x=(a/b) g=h".split())))
+    print( " ".join(mapSubcktInst( "xabc p1 p2/3/4 p3 / NM x=(a/b) g=h".split())))
+    print( " ".join(mapSubcktInst( "xabc p1 p2/3/4 p3 NM x=(a/b) / g=h".split())))
+    print( " ".join(mapSubcktInst( "xabc p1 p2/3/4 p3 NM / x=(a/b) g=h".split())))
+    print( " ".join(mapSubcktInst( "xabc p1 p2/3/4 p3 /NM / x=(a/b) g=h".split())))
+    print( " ".join(mapSubcktInst( "xabc p1 p2/3/4 p3 / NM / x=(a/b) g=h".split())))
+    print( " ".join(mapSubcktInst( "xa/b/c p1 p2/3/4 p3 NM x=(a/b) g=h".split())))
+    print( " ".join(mapSubcktInst( "xa/b/c NM x=(a/b) g=h".split())))
+    print( " ".join(mapSubcktInst( "xa/b/c / NM x=(a/b) g=h".split())))
+    print( " ".join(mapSubcktInst( "xa/b/c /NM x=(a/b) g=h".split())))
+    print( " ".join(mapSubcktInst( "xa/b/c /NM".split())))
+
+# From a token-slice, partition into assignments and non-assignments.
+# Return [ assigns, nonAssigns] where each are lists.
+def mapPartAssign(tok):
+    tlen = len(tok)
+    assign=[]
+    nona=[]
+    for i in xrange(len(tok)):
+        if "=" in tok[i]:
+            assign += [ tok[i] ]
+            continue
+        nona += [ tok[i] ]
+    return [ assign, nona ]
+
+def test_mapPartAssign():
+    print( mapPartAssign( "NM X=4 220nm -1.2e-5g LDD M=joe".split()))
+    print( mapPartAssign( "X=4 M=joe".split()))
+    print( mapPartAssign( "NM 220nm -1.2e-5g LDD".split()))
+    print( mapPartAssign( "".split()))
+
+# define our own xrange if none available (python 3.5)
+nativeXrange = False
+try:
+    # throws error if no object xrange exists (before/without calling callable).
+    if callable(xrange):
+        nativeXrange = True
+except:
+    pass
+if not nativeXrange:        
+    def xrange(*args):
+        if len(args) == 1:
+            return range(args[0])
+        if len(args) == 2:
+            return range(args[0], args[1])
+        return     range(args[0], args[1], args[2])
+
+debug = 0
+# debug = 1 # extra print statements, not relevant to the user.
+err = 0
+warn = 0
+
+primch  = 'mdrcq'
+primch2 = 'mdrcqx'
+
+# command line args
+if len(sys.argv) < 3:
+    print( 'Usage: spiUniquify <spiFileName> <topcell1> [ <topcell2> ... ]' )
+    # print( 'Usage: spiUniquify <spiFileName> [<PDKpath>]' )
+    sys.exit(1)
+
+fnmIn = str(sys.argv[1])
+Topcell0 = str(sys.argv[2])
+thePrefix = Topcell0 + "__"
+
+# lowercase set of all topcells (to not edit)
+topcells = {}
+for i in sys.argv[2:]:
+    topcells[str(i).lower()] = True
+
+# get PDK location from argument
+# if len(sys.argv) > 2 :
+#    pdk_path = str(sys.argv[2])
+
+# open/read input file
+try :
+    inFile=open(fnmIn,'r')
+except :
+    sys.stderr.write( '%s %s\n' % ('spiUniquify: failed open:', fnmIn))
+    sys.exit(1)
+lines = inFile.read().splitlines()
+inFile.close()
+
+lines = unfold(lines)
+
+# loop over original SPI: record names of .SUBCKT defined in this file.
+# We only will uniquify instances of locally defined subckts (not NE etc).
+localSubs = {}
+localSubsPlaced = {}
+for i in lines:
+    if i == "":
+        continue
+    tok = i.split()
+    tlen = len(tok)
+    if tlen == 0:
+        continue
+    t0 = tok[0].lower()
+    if t0 == '.subckt' and tlen > 1:
+        t1 = tok[1].lower()
+        # skip topcells
+        if t1 in topcells:
+            continue
+        # record non-topcell locally defined subckts (coerced to lower-case)
+        localSubs[ t1 ] = True
+
+# loop over original SPI: do conversions.
+# Track the subckt-context while we go.
+sub = ""
+tmp = []
+for i in lines:
+    tok = i.split()
+    tlen = len(tok)
+    # AS-IS: empty line or all (preserved) whitespace
+    if tlen == 0:
+        tmp += [ i ]
+        continue
+
+    # get 1st-token original, as lowercase, and 1st-char of 1st-token lowercase.
+    T0 = tok[0]
+    t0 = T0.lower()
+    c0 = t0[0]
+
+    # AS-IS: comment
+    if c0 == '*':
+        tmp += [i]
+        continue
+
+    # AS-IS: .ends; update subckt-context to outside-of-a-subckt
+    if t0 == '.ends':
+        sub = ""
+        tmp += [i]
+        continue
+
+    # track .subckt context; process / in .subckt line, and output it.
+    if t0 == '.subckt':
+        if tlen < 2:
+            err+=1
+            msg = "*spiUniquify: ERROR: Missing subckt name:"
+            tmp += [ msg, i ]
+            continue
+        T1 = tok[1]
+        sub = T1.lower()
+        tok = mapSubcktDef(tok)
+        tok = mapSubcktDefName(tok)     # TODO
+        tmp += [ " ".join(tok) ]
+        continue
+
+    # subckt instance line. Process /, map instanceName (exclude x), and output it.
+    if c0 == 'x':
+        tok = mapSubcktInstRefName(tok) # TODO
+        tmp += [ " ".join(tok) ]
+        continue
+
+    # Anything else. Preserve AS-IS.
+    tmp += [ i ]
+
+lines = tmp
+
+# write output
+for i in lines:
+    print( i )
+
+# exit status: indicates if there were errors.
+print( "*spiUniquify: local .SUBCKT names: " + " ".join( sorted(localSubs.keys()) ))
+print( "*spiUniquify: locals instantiated: " + " ".join( sorted(localSubsPlaced.keys()) ))
+print( "*spiUniquify: %d errors, %d warning" % (err, warn))
+sys.exit(err)
+
+# for emacs syntax-mode:
+# Local Variables:
+# mode:python
+# End:
