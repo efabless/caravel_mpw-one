@@ -4,8 +4,12 @@
 # This is mainly to see if IRSIM will catch hold timing violations on the
 # generation of the first address passed to the SPI flash.
 
-l VGND
-h VPWR
+# Make sure to use IRSIM 9.7.112 or better and use "-p VPWR -g VGND" or else
+# the simulation will take ages to start up.  With specially-handled power
+# rails, it is not necessary to set the supply values.
+
+# l VGND
+# h VPWR
 settle 4
 
 analyzer
@@ -13,7 +17,7 @@ analyzer
 vector mgmt_in_data mgmt_in_data\[37:0\]
 vector mgmt_out_data mgmt_out_data\[37:0\]
 
-ana clock gpio_out_pad gpio_in_pad resetb porb flash_io0_do flash_io1_di flash_clk flash_csb trap
+ana clock gpio_out_pad gpio_outenb_pad gpio_in_pad resetb porb flash_io0_do flash_io1_di flash_clk flash_csb
 
 l clock
 l resetb
@@ -25,10 +29,10 @@ setvector mgmt_in_data 0d0
 
 l flash_io0_di
 l flash_io1_di
-l flash_io2_di
-l flash_io3_di
 
 s 200
+
+# relax l
 
 #-------------------------------------
 # SPI flash emulation
@@ -64,9 +68,8 @@ whenever flash_clk hl {
 	    set flash_addr [expr {$flash_addr << 1 | [query flash_io0_do]}]
 	    if {$flash_addr_count == 24} {
 		set flash_data_count 0
-		set flash_addr [expr {$flash_addr - 0x100000}]
 		set flash_data_out [lindex $flash_contents $flash_addr]
-		puts stdout "Flash SPI Addr = $flash_addr Data = $flash_data_out"
+		puts stdout "Flash SPI Addr = [format "%06x" $flash_addr] Data = [format "%02x" $flash_data_out]"
 	    }
 	} else {
 	    incr flash_data_count
@@ -81,7 +84,7 @@ whenever flash_clk hl {
 	if {$flash_cmd_count == 8 && $flash_addr_count == 24} {
 	    if {$flash_data_count == 0} {
 		set flash_data_out [lindex $flash_contents $flash_addr]
-		puts stdout "Flash SPI Addr = $flash_addr Data = $flash_data_out"
+		puts stdout "Flash SPI Addr = [format "%06x" $flash_addr] Data = [format "%02x" $flash_data_out]"
 	    }
 	    if {[expr {$flash_data_out & 0x80}] != 0} {
 		h flash_io1_di
@@ -98,6 +101,7 @@ whenever flash_clk hl {
 # Load the hex file
 
 set hf [open /home/tim/gits/caravel/verilog/dv/caravel/mgmt_soc/gpio_mgmt/gpio_mgmt.hex r]
+# set hf [open /home/tim/gits/caravel/verilog/dv/caravel/mgmt_soc/boot2/boot2.hex r]
 # Throw away first line
 gets $hf line
 set flash_contents {}

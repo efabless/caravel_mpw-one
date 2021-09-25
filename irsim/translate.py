@@ -8,7 +8,7 @@ if len(sys.argv) < 2:
     sys.exit(1)
 
 print('Input:  ' + sys.argv[1])
-print('Output:  ' + sys.argv[2])
+print('Output: ' + sys.argv[2])
 
 with open(sys.argv[2], 'w') as ofile:
     with open(sys.argv[1], 'r') as ifile:
@@ -46,13 +46,20 @@ with open(sys.argv[2], 'w') as ofile:
                     print(newline, file=ofile)
             elif tokens[0] == 'r':
                 # Resistors---value gets output as zero (need to check why).
-                tokens[-1] = '200.0'
+                tokens[-1] = '515.0'
                 newline = ' '.join(tokens)
                 print(newline, file=ofile)
             elif tokens[0] == 'D':
                 # Replace each diode with an equivalent diffusion capacitance
                 tokens[0] = 'C'
                 tokens.append('0.878')
+                newline = ' '.join(tokens)
+                print(newline, file=ofile)
+            elif tokens[0] == 'C':
+                # Test:  Check for possible over-calculation of parasitics.
+                # by removing all parasitics.
+                cval = float(tokens[-1]) * 0.50;
+                tokens[-1] = str(cval)
                 newline = ' '.join(tokens)
                 print(newline, file=ofile)
             else:
