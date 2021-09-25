@@ -36,7 +36,7 @@
 * mprj_io[10]	  	mprj_io[5]	mprj_io[18]   	flash_io1       mprj_io[30]   mprj_io[32] 
 
 
-Xcaravel 
+Xchip_io 
 + VDD3V3       ; vddio_pad 
 + nc1	       ; pwr_ctrl_out[0]
 + nc2	       ; pwr_ctrl_out[1]
@@ -106,7 +106,7 @@ Xcaravel
 + nc50	       ; resetb 
 + VSS	       ; vssd_pad 
 + VDD1V8       ; vccd_pad 
-+ caravel
++ chip_io
 
 vvss		VSS		0 		dc 	0
 vvdd1v8		VDD1V8		0 		pwl	0 0 3u  1.8  1m 1.8
