@@ -13,7 +13,7 @@
 // limitations under the License.
 // SPDX-License-Identifier: Apache-2.0
 
-`default_nettype none
+`default_nettype wire
 
 `ifndef __GLOBAL_DEFINE_H
 // Global parameters

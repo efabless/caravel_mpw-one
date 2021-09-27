@@ -25,6 +25,7 @@ GCC_PREFIX?=riscv32-unknown-elf
 
 SIM_DEFINES = -DFUNCTIONAL -DSIM
 
+# RTL/GL/GL_SDF
 SIM?=RTL
 
 .SUFFIXES:
@@ -40,10 +41,19 @@ ifeq ($(SIM),RTL)
 	iverilog -Ttyp $(SIM_DEFINES) -I $(BEHAVIOURAL_MODELS) \
 	-I $(PDK_PATH) -I $(RTL_PATH) \
 	$< -o $@ 
-else  
+endif 
+ifeq ($(SIM),GL)
 	iverilog -Ttyp $(SIM_DEFINES) -DGL -I $(BEHAVIOURAL_MODELS) \
 	-I $(PDK_PATH) -I $(VERILOG_PATH) -I $(RTL_PATH) \
 	$< -o $@ 
+endif 
+ifeq ($(SIM),GL_SDF)
+	$(eval BEHAVIOURAL_MODELS_PATH := $(shell realpath --relative-to=$(shell pwd) $(BEHAVIOURAL_MODELS)))
+	$(eval PDK_ABSOLUTE_PATH := $(shell realpath --relative-to=$(shell pwd) $(PDK_PATH)))
+	$(eval RTL_ABSOLUTE_PATH := $(shell realpath --relative-to=$(shell pwd) $(RTL_PATH)))
+	$(eval VERILOG_ABSOLUTE_PATH := $(shell realpath --relative-to=$(shell pwd) $(VERILOG_PATH)))
+	cvc +interp +incdir+$(BEHAVIOURAL_MODELS_PATH)+$(RTL_ABSOLUTE_PATH)+$(VERILOG_ABSOLUTE_PATH)+$(PDK_ABSOLUTE_PATH) \
+	 	+define+FUNCTIONAL +define+SIM +define+GL +define+USE_POWER_PINS +define+ENABLE_SDF +change_port_type $<
 endif
 
 %.vcd: %.vvp

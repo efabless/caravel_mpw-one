@@ -46,6 +46,7 @@
 `endif 
 
 `ifdef GL
+	`default_nettype wire 
 	`include "gl/mgmt_core.v"
 	`include "gl/digital_pll.v"
 	`include "gl/DFFRAM.v"
@@ -59,7 +60,7 @@
 	`include "gl/gpio_control_block.v"
 	`include "gl/gpio_logic_high.v"
 	`include "gl/sky130_fd_sc_hvl__lsbufhv2lv_1_wrapped.v"
-    `include "gl/caravel.v"
+    `include "gl/caravel_no_pads.v"
 `else
 	`include "mgmt_soc.v"
 	`include "housekeeping_spi.v"

@@ -1,4 +1,4 @@
-`default_nettype none
+`default_nettype wire
 /*
  *  SPDX-FileCopyrightText: 2017  Clifford Wolf, 2018  Tim Edwards
  *
@@ -24,6 +24,14 @@
 
 `timescale 1 ns / 1 ps
 
+`define UNIT_DELAY #1
+
+`define SIM 
+`define GL 
+
+`define FUNCTIONAL
+`define USE_POWER_PINS
+
 `include "__uprj_netlists.v"
 `include "caravel_netlists.v"
 `include "spiflash.v"
@@ -34,7 +42,7 @@ module gpio_mgmt_tb;
 	reg power1;
 	reg power2;
 
-	always #10 clock <= (clock === 1'b0);
+	always #50 clock <= (clock === 1'b0);
 
 	initial begin
 		clock <= 0;
@@ -43,9 +51,10 @@ module gpio_mgmt_tb;
 	initial begin
 		$dumpfile("gpio_mgmt.vcd");
 		$dumpvars(0, gpio_mgmt_tb);
+		$sdf_annotate("/home/ma/ef/caravel/def/tmp/mgmt_core.sdf", uut.soc);
 
 		// Repeat cycles of 1000 clock edges as needed to complete testbench
-		repeat (25) begin
+		repeat (50) begin
 			repeat (1000) @(posedge clock);
 			$display("+1000 cycles");
 		end
@@ -120,17 +129,17 @@ module gpio_mgmt_tb;
 	initial begin
 		RSTB <= 1'b0;
 		
-		#1000;
+		#5000;
 		RSTB <= 1'b1;	    // Release reset
-		#2000;
+		#10000;
 	end
 
 	initial begin			// Power-up
 		power1 <= 1'b0;
 		power2 <= 1'b0;
-		#200;
+		#1000;
 		power1 <= 1'b1;
-		#200;
+		#1000;
 		power2 <= 1'b1;
 	end
 		
@@ -186,7 +195,7 @@ module gpio_mgmt_tb;
 	);
 
 	spiflash #(
-		.FILENAME("gpio_mgmt.hex")
+		.FILENAME("/home/ma/ef/caravel/verilog/dv/caravel/mgmt_soc/gpio_mgmt/gpio_mgmt.hex")
 	) spiflash (
 		.csb(flash_csb),
 		.clk(flash_clk),

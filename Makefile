@@ -269,22 +269,14 @@ LVS_BLOCKS = $(foreach block, $(BLOCKS), lvs-$(block))
 $(LVS_BLOCKS): lvs-% : ./mag/%.mag ./verilog/gl/%.v
 	echo "Extracting $*"
 	mkdir -p ./mag/tmp
-	echo "addpath $(CARAVEL_ROOT)/mag/hexdigits;\
-		addpath $(CARAVEL_ROOT)/subcells/simple_por/mag;\
-		addpath \$$PDKPATH/libs.ref/sky130_ml_xx_hd/mag;\
-		load $* -dereference;\
+	echo "load $*;\
 		select top cell;\
-		foreach cell [cellname list children] {\
-			load \$$cell -dereference;\
-			property LEFview TRUE;\
-		};\
-		load $* -dereference;\
-		select top cell;\
+		expand;\
 		extract no all;\
 		extract do local;\
-		extract unique;\
 		extract;\
 		ext2spice lvs;\
+		ext2spice short voltage;\
 		ext2spice $*.ext;\
 		feedback save extract_$*.log;\
 		exit;" > ./mag/extract_$*.tcl
@@ -321,6 +313,7 @@ $(LVS_GDS_BLOCKS): lvs-gds-% : ./gds/%.gds ./verilog/gl/%.v
 		extract unique;\
 		extract;\
 		ext2spice lvs;\
+		ext2spice short resistor;\
 		ext2spice $*.ext;\
 		feedback save extract_$*.log;\
 		exit;" > ./gds/extract_$*.tcl
@@ -483,13 +476,13 @@ $(RCX_BLOCKS): rcx-% : ./def/%.def
 			}\
 		};\
 		set_cmd_units -time ns -capacitance pF -current mA -voltage V -resistance kOhm -distance um;\
-		read_liberty -min ${PDK_ROOT}/sky130A/libs.ref/${STD_CELL_LIBRARY}/lib/${STD_CELL_LIBRARY}__ff_n40C_1v95.lib;\
-		read_liberty -max ${PDK_ROOT}/sky130A/libs.ref/${STD_CELL_LIBRARY}/lib/${STD_CELL_LIBRARY}__ss_100C_1v60.lib;\
+		read_liberty ${PDK_ROOT}/sky130A/libs.ref/${STD_CELL_LIBRARY}/lib/${STD_CELL_LIBRARY}__tt_025C_1v80.lib;\
 		read_verilog ./verilog/gl/$*.v;\
 		link_design $*;\
 		read_spef ./def/tmp/$*.spef;\
 		read_sdc -echo ./openlane/$*/base.sdc;\
-		report_checks -fields {capacitance slew input_pins nets fanout} -path_delay min_max;\
+		report_checks -fields {capacitance slew input_pins nets fanout} -path_delay min;\
+		write_sdf -divider . ./def/tmp/$*.sdf;\
 		" > ./def/tmp/or_sta_$*.tcl 
 	docker run -it -v $(OPENLANE_ROOT):/openLANE_flow -v $(PDK_ROOT):$(PDK_ROOT) -v $(PWD):/caravel -e PDK_ROOT=$(PDK_ROOT) -u $(shell id -u $(USER)):$(shell id -g $(USER)) $(OPENLANE_IMAGE_NAME) \
 	sh -c "cd /caravel; openroad -exit ./def/tmp/or_sta_$*.tcl |& tee ./def/tmp/or_sta_$*.log" 
