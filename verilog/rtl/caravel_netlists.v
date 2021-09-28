@@ -26,10 +26,10 @@
 /* NOTE: Need to pass the PDK root directory to iverilog with option -I */
 
 `ifdef ENABLE_SDF 
-	`include "libs.ref/sky130_fd_io/verilog/sky130_fd_io.v"
-	`include "libs.ref/sky130_fd_io/verilog/sky130_ef_io.v"
-	`include "libs.ref/sky130_fd_io/verilog/sky130_ef_io__gpiov2_pad_wrapped.v"
-	
+	`include "pdk/sky130_fd_io.v"
+	`include "pdk/sky130_ef_io.v"
+	`include "pdk/sky130_ef_io__gpiov2_pad_wrapped.v"
+
 	`include "libs.ref/sky130_fd_sc_hd/verilog/primitives.v"
 	`include "libs.ref/sky130_fd_sc_hvl/verilog/primitives.v"
 	`include "pdk/sky130_fd_sc_hd.v" 
