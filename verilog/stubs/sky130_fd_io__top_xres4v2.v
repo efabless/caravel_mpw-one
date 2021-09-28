@@ -1,4 +1,4 @@
-`default_nettype none
+`default_nettype wire
 /*
  * SPDX-FileCopyrightText: 2020 The SkyWater PDK Authors
  *

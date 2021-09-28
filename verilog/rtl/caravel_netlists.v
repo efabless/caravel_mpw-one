@@ -26,19 +26,28 @@
 
 /* NOTE: Need to pass the PDK root directory to iverilog with option -I */
 
-`include "libs.ref/sky130_fd_io/verilog/sky130_fd_io.v"
 
-//`include "libs.ref/sky130_fd_io/verilog/sky130_ef_io.v" bad file with vccd pad core <--> pad
+`ifdef ENABLE_SDF 
+	`include "pdk/sky130_fd_io.v"
+	`include "pdk/sky130_ef_io-vccd-vssd-clamps-swapped.v"
+	`include "pdk/sky130_ef_io__gpiov2_pad_wrapped.v"
+	`include "pdk/primitives_hd.v"
+	`include "pdk/primitives_hvl.v"
+	`include "pdk/sky130_fd_sc_hd.v" 
+	`include "pdk/sky130_fd_sc_hvl.v"
+`else 
+	`include "libs.ref/sky130_fd_io/verilog/sky130_fd_io.v"
+	//`include "libs.ref/sky130_fd_io/verilog/sky130_ef_io.v" bad file with vccd pad core <--> pad
+	`include "../gl/sky130_ef_io-vccd-vssd-clamps-swapped.v"
+	`include "libs.ref/sky130_fd_io/verilog/sky130_ef_io__gpiov2_pad_wrapped.v"
 
-`include "../gl/sky130_ef_io-vccd-vssd-clamps-swapped.v"
-`include "libs.ref/sky130_fd_io/verilog/sky130_ef_io__gpiov2_pad_wrapped.v"
-
-`include "libs.ref/sky130_fd_sc_hd/verilog/primitives.v"
-`include "libs.ref/sky130_fd_sc_hd/verilog/sky130_fd_sc_hd.v"
-`include "libs.ref/sky130_fd_sc_hvl/verilog/primitives.v"
-`include "libs.ref/sky130_fd_sc_hvl/verilog/sky130_fd_sc_hvl.v"
-
+	`include "libs.ref/sky130_fd_sc_hd/verilog/primitives.v"
+	`include "libs.ref/sky130_fd_sc_hd/verilog/sky130_fd_sc_hd.v"
+	`include "libs.ref/sky130_fd_sc_hvl/verilog/primitives.v"
+	`include "libs.ref/sky130_fd_sc_hvl/verilog/sky130_fd_sc_hvl.v"
+`endif 
 `ifdef GL
+	`default_nettype wire 
 	`include "gl/mgmt_core.v"
 	`include "gl/DFFRAM.v"
 	`include "gl/storage.v"
@@ -53,7 +62,11 @@
 	`include "gl/gpio_control_block.v"
 	`include "gl/sky130_fd_sc_hvl__lsbufhv2lv_1_wrapped.v"
 	`include "gl/user_project_wrapper.v"
-    `include "gl/caravel.v"
+	`ifdef ENABLE_SDF // pad cells don't work correctly in CVC
+    	`include "gl/caravel_no_pads.v"
+	`else 
+    	`include "gl/caravel.v"
+	`endif 
 `else
 	`include "mgmt_soc.v"
 	`include "housekeeping_spi.v"
