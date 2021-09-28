@@ -13,7 +13,7 @@
 // limitations under the License.
 // SPDX-License-Identifier: Apache-2.0
 
-// `default_nettype none
+// `default_nettype wire
 module mprj_io #(
     parameter AREA1PADS = 18	// Highest numbered pad in area 1
 ) (

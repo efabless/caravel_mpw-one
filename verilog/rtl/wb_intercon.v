@@ -13,7 +13,7 @@
 // limitations under the License.
 // SPDX-License-Identifier: Apache-2.0
 
-`default_nettype none
+`default_nettype wire
 module wb_intercon #(
     parameter DW = 32,          // Data Width
     parameter AW = 32,          // Address Width

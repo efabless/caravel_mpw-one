@@ -13,7 +13,7 @@
 // limitations under the License.
 // SPDX-License-Identifier: Apache-2.0
 
-// `default_nettype none
+// `default_nettype wire
 `ifndef TOP_ROUTING 
 	`define USER1_ABUTMENT_PINS \
 	.AMUXBUS_A(analog_a),\

@@ -13,7 +13,7 @@
 // limitations under the License.
 // SPDX-License-Identifier: Apache-2.0
 
-`default_nettype none
+`default_nettype wire
 // Tunable ring oscillator---synthesizable (physical) version.
 //
 // NOTE:  This netlist cannot be simulated correctly due to lack
