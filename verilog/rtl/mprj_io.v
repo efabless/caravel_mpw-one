@@ -13,7 +13,7 @@
 // limitations under the License.
 // SPDX-License-Identifier: Apache-2.0
 
-// `default_nettype none
+// `default_nettype wire
 
 /* Define the array of GPIO pads.  Note that the analog project support
  * version of caravel (caravan) defines fewer GPIO and replaces them

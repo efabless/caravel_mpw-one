@@ -13,7 +13,7 @@
 // limitations under the License.
 // SPDX-License-Identifier: Apache-2.0
 
-`default_nettype none
+`default_nettype wire
 /* Convert the standard set of GPIO signals: input, output, output_enb,
  * pullup, and pulldown into the set needed by the s8 GPIO pads:
  * input, output, output_enb, input_enb, mode.  Note that dm[2] on

@@ -1,4 +1,4 @@
-`default_nettype none
+`default_nettype wire
 /*
  *  SPDX-FileCopyrightText: 2015 Clifford Wolf
  *  PicoSoC - A simple example SoC using PicoRV32

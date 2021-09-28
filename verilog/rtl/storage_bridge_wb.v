@@ -13,7 +13,7 @@
 // limitations under the License.
 // SPDX-License-Identifier: Apache-2.0
 
-`default_nettype none
+`default_nettype wire
 module storage_bridge_wb (
     // MGMT_AREA R/W WB Interface
     input wb_clk_i,

@@ -13,7 +13,7 @@
 // limitations under the License.
 // SPDX-License-Identifier: Apache-2.0
 
-// `default_nettype none
+// `default_nettype wire
 
 /* Alternative padframe that removes the GPIO from the top row,	*/
 /* replacing them with un-overlaid power pads which have a	*/

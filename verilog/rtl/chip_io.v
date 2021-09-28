@@ -13,7 +13,7 @@
 // limitations under the License.
 // SPDX-License-Identifier: Apache-2.0
 
-// `default_nettype none
+// `default_nettype wire
 module chip_io(
 	// Package Pins
 	inout  vddio_pad,		// Common padframe/ESD supply

@@ -26,10 +26,6 @@
 
 `define UNIT_DELAY #1
 
-`define SIM 
-`define GL 
-
-`define FUNCTIONAL
 `define USE_POWER_PINS
 
 `include "__uprj_netlists.v"
@@ -48,13 +44,19 @@ module gpio_mgmt_tb;
 		clock <= 0;
 	end
 
+	`ifdef ENABLE_SDF
+		initial begin
+			$sdf_annotate("../../../../../def/tmp/DFFRAM.sdf", uut.soc.\soc.soc_mem.mem.SRAM );
+			$sdf_annotate("../../../../../def/tmp/mgmt_core.sdf", uut.soc);
+		end
+	`endif 
+
 	initial begin
 		$dumpfile("gpio_mgmt.vcd");
-		$dumpvars(0, gpio_mgmt_tb);
-		$sdf_annotate("/home/ma/ef/caravel/def/tmp/mgmt_core.sdf", uut.soc);
+		$dumpvars(3, gpio_mgmt_tb);
 
 		// Repeat cycles of 1000 clock edges as needed to complete testbench
-		repeat (50) begin
+		repeat (25) begin
 			repeat (1000) @(posedge clock);
 			$display("+1000 cycles");
 		end
@@ -195,7 +197,7 @@ module gpio_mgmt_tb;
 	);
 
 	spiflash #(
-		.FILENAME("/home/ma/ef/caravel/verilog/dv/caravel/mgmt_soc/gpio_mgmt/gpio_mgmt.hex")
+		.FILENAME("gpio_mgmt.hex")
 	) spiflash (
 		.csb(flash_csb),
 		.clk(flash_clk),

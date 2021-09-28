@@ -13,7 +13,7 @@
 // limitations under the License.
 // SPDX-License-Identifier: Apache-2.0
 
-`default_nettype none
+`default_nettype wire
 module la_wb # (
     parameter BASE_ADR  = 32'h 2200_0000,
     parameter LA_DATA_0 = 8'h00,

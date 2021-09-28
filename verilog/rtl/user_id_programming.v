@@ -13,7 +13,7 @@
 // limitations under the License.
 // SPDX-License-Identifier: Apache-2.0
 
-`default_nettype none
+`default_nettype wire
 // This module represents an unprogrammed mask revision
 // block that is configured with via programming on the
 // chip top level.  This value is passed to the block as

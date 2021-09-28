@@ -18,7 +18,7 @@
 */
 
 // Add 1x2 binary decoder
-`default_nettype none
+`default_nettype wire
 
 module DEC1x2 (
 `ifdef USE_POWER_PINS

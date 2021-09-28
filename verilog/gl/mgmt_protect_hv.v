@@ -57,6 +57,6 @@ module mgmt_protect_hv(mprj2_vdd_logic1, mprj_vdd_logic1, vccd, vssd, vdda1, vss
     .VPWR(vdda1),
     .X(mprj_vdd_logic1)
   );
-  assign vssd = vssa2;
-  assign vssa1 = vssa2;
+  // assign vssd = vssa2;
+  // assign vssa1 = vssa2;
 endmodule

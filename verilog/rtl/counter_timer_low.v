@@ -13,7 +13,7 @@
 // limitations under the License.
 // SPDX-License-Identifier: Apache-2.0
 
-`default_nettype none
+`default_nettype wire
 /* Simple 32-bit counter-timer for Caravel. */
 
 /* Counter acts as low 32 bits of a 64-bit counter

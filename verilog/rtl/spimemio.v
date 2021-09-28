@@ -1,4 +1,4 @@
-`default_nettype none
+`default_nettype wire
 /*
  *  SPDX-FileCopyrightText: 2015 Clifford Wolf
  *  PicoSoC - A simple example SoC using PicoRV32
@@ -724,8 +724,7 @@ module spimemio_xfer (
             if (dummy_count) begin
                 flash_clk <= !flash_clk && !flash_csb;
                 dummy_count <= dummy_count - flash_clk;
-            end else
-            if (count) begin
+            end else if (count) begin
                 flash_clk <= !flash_clk && !flash_csb;
                 obuffer <= next_obuffer;
                 ibuffer <= next_ibuffer;
