@@ -29,9 +29,8 @@
 	`include "pdk/sky130_fd_io.v"
 	`include "pdk/sky130_ef_io.v"
 	`include "pdk/sky130_ef_io__gpiov2_pad_wrapped.v"
-
-	`include "libs.ref/sky130_fd_sc_hd/verilog/primitives.v"
-	`include "libs.ref/sky130_fd_sc_hvl/verilog/primitives.v"
+	`include "pdk/primitives_hd.v"
+	`include "pdk/primitives_hvl.v"
 	`include "pdk/sky130_fd_sc_hd.v" 
 	`include "pdk/sky130_fd_sc_hvl.v"
 `else 
