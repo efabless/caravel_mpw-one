@@ -13,7 +13,7 @@
 // limitations under the License.
 // SPDX-License-Identifier: Apache-2.0
 
-`default_nettype none
+`default_nettype wire
 `timescale 1 ns / 1 ps
 
 module simple_por(
@@ -27,7 +27,7 @@ module simple_por(
     output por_l
 );
 
-    wire mid, porb_h;
+    wire mid;
     reg inode;
 
     // This is a behavioral model!  Actual circuit is a resitor dumping
@@ -43,10 +43,10 @@ module simple_por(
     // actual circuit is set to a 15ms delay.
 
     always @(posedge vdd3v3) begin
-	#500 inode <= 1'b1;
+	#2500 inode <= 1'b1;
     end
     always @(negedge vdd3v3) begin
-	#500 inode <= 1'b0;
+	#2500 inode <= 1'b0;
     end
 
     // Instantiate two shmitt trigger buffers in series
