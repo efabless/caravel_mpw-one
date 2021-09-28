@@ -1,4 +1,4 @@
-`default_nettype none
+`default_nettype wire
 /*
  *  SPDX-FileCopyrightText: 2017  Clifford Wolf, 2018  Tim Edwards
  *
