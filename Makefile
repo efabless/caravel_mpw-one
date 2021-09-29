@@ -267,8 +267,8 @@ $(RCX_BLOCKS): rcx-% : ./def/%.def
 	# merge techlef and standard cell lef files
 	python3 $(OPENLANE_ROOT)/scripts/mergeLef.py -i $(PDK_ROOT)/sky130A/libs.ref/$(STD_CELL_LIBRARY)/techlef/$(STD_CELL_LIBRARY).tlef $(PDK_ROOT)/sky130A/libs.ref/$(STD_CELL_LIBRARY)/lef/*.lef -o ./def/tmp/merged.lef
 	echo "\
-		read_liberty $(PDK_ROOT)/sky130A/libs.ref/$(STD_CELL_LIBRARY)/lib/$(STD_CELL_LIBRARY)__ff_n40C_1v95.lib;\
-		read_liberty $(PDK_ROOT)/sky130A/libs.ref/$(SPECIAL_VOLTAGE_LIBRARY)/lib/$(SPECIAL_VOLTAGE_LIBRARY)__ff_n40C_1v95.lib;\
+		read_liberty $(PDK_ROOT)/sky130A/libs.ref/$(STD_CELL_LIBRARY)/lib/$(STD_CELL_LIBRARY)__tt_025C_1v80.lib;\
+		read_liberty $(PDK_ROOT)/sky130A/libs.ref/$(SPECIAL_VOLTAGE_LIBRARY)/lib/$(SPECIAL_VOLTAGE_LIBRARY)__tt_025C_3v30.lib;\
 		set std_cell_lef ./def/tmp/merged.lef;\
 		if {[catch {read_lef \$$std_cell_lef} errmsg]} {\
     			puts stderr \$$errmsg;\
@@ -303,7 +303,7 @@ $(RCX_BLOCKS): rcx-% : ./def/%.def
 	sh -c " cd /caravel; openroad -exit ./def/tmp/or_rcx_$*.tcl |& tee ./def/tmp/or_rcx_$*.log" 
 ## Run OpenSTA
 	echo "\
-		set std_cell_lef ./lef/merged_unpadded.lef;\
+		set std_cell_lef ./def/tmp/merged.lef;\
 		if {[catch {read_lef \$$std_cell_lef} errmsg]} {\
     			puts stderr \$$errmsg;\
     			exit 1;\
@@ -316,7 +316,7 @@ $(RCX_BLOCKS): rcx-% : ./def/%.def
 		};\
 		define_corners typ;\
 		set_cmd_units -time ns -capacitance pF -current mA -voltage V -resistance kOhm -distance um;\
-		read_liberty ${PDK_ROOT}/sky130A/libs.ref/${STD_CELL_LIBRARY}/lib/${STD_CELL_LIBRARY}__ff_n40C_1v95.lib;\
+		read_liberty ${PDK_ROOT}/sky130A/libs.ref/${STD_CELL_LIBRARY}/lib/${STD_CELL_LIBRARY}__tt_025C_1v80.lib;\
 		read_verilog ./verilog/gl/$*.v;\
 		link_design $*;\
 		read_spef ./def/tmp/$*.spef;\
