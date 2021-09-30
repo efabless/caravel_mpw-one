@@ -1,0 +1,14 @@
+Prepare---
+
+	In the mag/ directory, in magic:
+
+	extract do local
+	extract all
+	ext2sim
+	
+To run IRSIM---
+
+Full SoC:
+	translate.py ../mag/mgmt_core.sim ./mgmt_core.sim
+	irsim -p VPWR -g VGND /usr/share/pdk/sky130A/libs.tech/irsim/sky130A_1v80_27.prm mgmt_core.sim -c mgmt_core.tcl
+
