@@ -55,8 +55,10 @@
 // Clock divisor default value
 `define CLK_DIV 3'b010
 
-// GPIO conrol default mode and enable
+// GPIO control default mode and enable for most I/Os
+// Most I/Os set to be user bidirectional pins on power-up.
+`define MGMT_INIT 1'b0
+`define OENB_INIT 1'b0
 `define DM_INIT 3'b110
-`define OENB_INIT 1'b1
 
 `endif // __GLOBAL_DEFINE_H

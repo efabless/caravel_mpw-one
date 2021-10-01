@@ -48,6 +48,7 @@ module gpio_control_block #(
     // The default parameters if unspecified is for the pad to be
     // an input with no pull-up or pull-down, so that it is disconnected
     // from the outside world.
+    parameter MGMT_INIT = 1'b1,
     parameter HOLD_INIT = 1'b0,
     parameter SLOW_INIT = 1'b0,
     parameter TRIP_INIT = 1'b0,
@@ -181,7 +182,7 @@ module gpio_control_block #(
     always @(posedge load_data or posedge int_reset) begin
 	if (int_reset == 1'b1) begin
 	    /* Initial state on reset:  Pad set to management input */
-	    mgmt_ena <= 1'b1;		// Management SoC has control over all I/O
+	    mgmt_ena <= MGMT_INIT;	 // Management SoC has control over all I/O
 	    gpio_holdover <= HOLD_INIT;	 // All signals latched in hold mode
 	    gpio_slow_sel <= SLOW_INIT;	 // Fast slew rate
 	    gpio_vtrip_sel <= TRIP_INIT; // CMOS mode
