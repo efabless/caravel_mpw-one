@@ -57,7 +57,14 @@ module mprj_ctrl_wb #(
     output [`MPRJ_PWR_PADS-1:0] pwr_ctrl_out,
 
     // Enable user project IRQ signals to management SoC
-    output [2:0] user_irq_ena
+    output [2:0] user_irq_ena,
+
+    // External bit-bang controls from the housekeeping SPI
+    input ext_clock,
+    input ext_resetn,
+    input ext_data_1,
+    input ext_data_2,
+    input ext_enable
 );
     wire resetn;
     wire valid;
@@ -103,7 +110,14 @@ module mprj_ctrl_wb #(
     	// Write data to power controls
  	.pwr_ctrl_out(pwr_ctrl_out),
     	// Enable user project IRQ signals to management SoC
-	.user_irq_ena(user_irq_ena)
+	.user_irq_ena(user_irq_ena),
+
+	// External bit-bang control from housekeeping SPI
+	.ext_clock(ext_clock),
+	.ext_resetn(ext_resetn),
+	.ext_data_1(ext_data_1),
+	.ext_data_2(ext_data_2),
+	.ext_enable(ext_enable)
     );
 
 endmodule
@@ -139,7 +153,13 @@ module mprj_ctrl #(
     output [`MPRJ_IO_PADS-1:0] mgmt_gpio_out,
     output [`MPRJ_IO_PADS-1:0] mgmt_gpio_oeb,
     output [`MPRJ_PWR_PADS-1:0] pwr_ctrl_out,
-    output [2:0] user_irq_ena
+    output [2:0] user_irq_ena,
+
+    input ext_clock,
+    input ext_resetn,
+    input ext_data_1,
+    input ext_data_2,
+    input ext_enable
 );
 
 `define IDLE	2'b00
@@ -351,8 +371,10 @@ module mprj_ctrl #(
     wire       serial_data_out_1;
     wire       serial_data_out_2;
 
-    assign serial_data_out_1 = serial_data_staging_1[IO_CTRL_BITS-1];
-    assign serial_data_out_2 = serial_data_staging_2[IO_CTRL_BITS-1];
+    assign serial_data_out_1 = (ext_enable == 1'b1) ? ext_data_1 :
+		serial_data_staging_1[IO_CTRL_BITS-1];
+    assign serial_data_out_2 = (ext_enable == 1'b1) ? ext_data_2 :
+		serial_data_staging_2[IO_CTRL_BITS-1];
     assign busy = (xfer_state != `IDLE);
  
     always @(posedge clk or negedge resetn) begin
@@ -373,7 +395,10 @@ module mprj_ctrl #(
 
 	end else begin
 
-	    if (xfer_state == `IDLE) begin
+	    if (ext_enable == 1'b1) begin
+		serial_clock <= ext_clock;
+		serial_resetn <= ext_resetn;
+	    end else if (xfer_state == `IDLE) begin
 	    	pad_count_1 <= `MPRJ_IO_PADS_1 - 1;
 	    	pad_count_2 <= `MPRJ_IO_PADS_1;
 	    	serial_resetn <= 1'b1;

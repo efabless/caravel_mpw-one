@@ -61,6 +61,7 @@
 // Register 13-16:  PLL trim (26 bits)
 // Register 17:	 PLL output divider (3 bits)
 // Register 18:	 PLL feedback divider (5 bits)
+// Register 19:  User GPIO bit-bang control (5 bits)
 //------------------------------------------------------------
 
 module housekeeping_spi(
@@ -70,6 +71,7 @@ module housekeeping_spi(
     RSTB, SCK, SDI, CSB, SDO, sdo_enb,
     pll_ena, pll_dco_ena, pll_div, pll_sel,
     pll90_sel, pll_trim, pll_bypass, irq, reset,
+    gpio_clock, gpio_resetn, gpio_data_1, gpio_data_2, gpio_enable,
     trap, mask_rev_in,
     pass_thru_mgmt_reset, pass_thru_user_reset,
     pass_thru_mgmt_sck, pass_thru_mgmt_csb,
@@ -103,6 +105,13 @@ module housekeeping_spi(
     input  trap;
     input [31:0] mask_rev_in;	// metal programmed;  3.3V domain
 
+    // Bit-bang control of GPIO serial loader
+    output gpio_enable;
+    output gpio_resetn;
+    output gpio_clock;
+    output gpio_data_1;
+    output gpio_data_2;
+
     // Pass-through programming mode for management area SPI flash
     output pass_thru_mgmt_reset;
     output pass_thru_user_reset;
@@ -126,6 +135,11 @@ module housekeeping_spi(
     reg pll_bypass;
     reg reset_reg;
     reg irq;
+    reg gpio_enable;
+    reg gpio_clock;
+    reg gpio_resetn;
+    reg gpio_data_1;
+    reg gpio_data_2;
 
     wire [7:0] odata;
     wire [7:0] idata;
@@ -209,6 +223,8 @@ module housekeeping_spi(
     (iaddr == 8'h10) ? {6'b000000, pll_trim[25:24]} :
     (iaddr == 8'h11) ? {2'b00, pll90_sel, pll_sel} :
     (iaddr == 8'h12) ? {3'b000, pll_div} :
+    (iaddr == 8'h13) ? {3'b000, gpio_data_2, gpio_data_1, gpio_clock,
+			gpio_resetn, gpio_enable} :
                8'h00;	// Default
 
     // Register mapping and I/O to slave module
@@ -226,6 +242,11 @@ module housekeeping_spi(
         pll_bypass <= 1'b1;	// Default bypass mode (don't use PLL)
         irq <= 1'b0;
         reset_reg <= 1'b0;
+	gpio_enable <= 1'b0;
+	gpio_data_1 <= 1'b0;
+	gpio_data_2 <= 1'b0;
+	gpio_clock <= 1'b0;
+	gpio_resetn <= 1'b0;
     end else if (wrstb == 1'b1) begin
         case (iaddr)
         8'h08: begin
@@ -261,6 +282,13 @@ module housekeeping_spi(
         8'h12: begin
              pll_div <= idata[4:0];
                end
+        8'h13: begin
+	     gpio_enable <= idata[0];
+	     gpio_resetn <= idata[1];
+	     gpio_clock <= idata[2];
+	     gpio_data_1 <= idata[3];
+	     gpio_data_2 <= idata[4];
+	       end
         endcase	// (iaddr)
     end
     end

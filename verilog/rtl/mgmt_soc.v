@@ -82,6 +82,13 @@ module mgmt_soc (
     output mprj_io_loader_data_1,
     output mprj_io_loader_data_2,
 
+    // Bit-bang control of user project I/O configuration
+    input gpio_enable,
+    input gpio_resetn,
+    input gpio_clock,
+    input gpio_data_1,
+    input gpio_data_2,
+
     // User Project pad data (when management SoC controls the pad)
     input [`MPRJ_IO_PADS-1:0] mgmt_in_data,
     output [`MPRJ_IO_PADS-1:0] mgmt_out_data,
@@ -776,6 +783,11 @@ module mgmt_soc (
 	.serial_resetn(mprj_io_loader_resetn),
 	.serial_data_out_1(mprj_io_loader_data_1),
 	.serial_data_out_2(mprj_io_loader_data_2),
+	.ext_enable(gpio_enable),
+	.ext_resetn(gpio_resetn),
+	.ext_clock(gpio_clock),
+	.ext_data_1(gpio_data_1),
+	.ext_data_2(gpio_data_2),
 	.sdo_oenb_state(sdo_oenb_state),
 	.jtag_oenb_state(jtag_oenb_state),
 	.flash_io2_oenb_state(flash_io2_oenb_state),

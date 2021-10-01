@@ -200,6 +200,9 @@ module mgmt_core (
 	wire flash_io2_ieb, flash_io3_ieb;
 	wire flash_io2_di, flash_io3_di;
 
+	// These signals are for bit-bang control of the GPIO serial loader
+	wire gpio_enable, gpio_resetn, gpio_clock, gpio_data_1, gpio_data_2;
+
 	// The following functions are connected to specific user project
 	// area pins, when under control of the management area (during
 	// startup, and when not otherwise programmed for the user project).
@@ -269,6 +272,12 @@ module mgmt_core (
 		.pass_thru_mgmt_sck(pass_thru_mgmt_sck),
 		.pass_thru_mgmt_sdi(pass_thru_mgmt_sdi),
 		.pass_thru_mgmt_sdo(pass_thru_mgmt_sdo),
+		// Bit-bang control of GPIO control
+		.gpio_enable(gpio_enable),
+		.gpio_resetn(gpio_resetn),
+		.gpio_clock(gpio_clock),
+		.gpio_data_1(gpio_data_1),
+		.gpio_data_2(gpio_data_2),
 		// SDO and JTAG state for output override
 		.sdo_oenb_state(sdo_oenb_state),
 		.jtag_oenb_state(jtag_oenb_state),
@@ -357,6 +366,11 @@ module mgmt_core (
 	    .reset(ext_reset),
 	    .trap(trap),
 	    .mask_rev_in(mask_rev),
+	    .gpio_enable(gpio_enable),
+	    .gpio_resetn(gpio_resetn),
+	    .gpio_clock(gpio_clock),
+	    .gpio_data_1(gpio_data_1),
+	    .gpio_data_2(gpio_data_2),
     	    .pass_thru_mgmt_reset(pass_thru_mgmt),
     	    .pass_thru_user_reset(pass_thru_user),
     	    .pass_thru_mgmt_sck(pass_thru_mgmt_sck),
