@@ -101,7 +101,13 @@ module mgmt_core (
     // MGMT area RO interface for user RAM 
     output mgmt_ena_ro,
     output [7:0] mgmt_addr_ro,
-    input  [31:0] mgmt_rdata_ro
+    input  [31:0] mgmt_rdata_ro,
+
+    // HKSPI RO interface for SRAM
+    output hkspi_sram_clk,
+    output hkspi_sram_csb,
+    output [7:0] hkspi_sram_addr,
+    input [31:0] hkspi_sram_rdata
 );
     	wire ext_clk_sel;
     	wire pll_clk, pll_clk90;
@@ -374,6 +380,10 @@ module mgmt_core (
 	    .gpio_clock(gpio_clock),
 	    .gpio_data_1(gpio_data_1),
 	    .gpio_data_2(gpio_data_2),
+	    .sram_clk(hkspi_sram_clk),
+	    .sram_csb(hkspi_sram_csb),
+	    .sram_addr(hkspi_sram_addr),
+	    .sram_rdata(hkspi_sram_rdata),
     	    .pass_thru_mgmt_reset(pass_thru_mgmt),
     	    .pass_thru_user_reset(pass_thru_user),
     	    .pass_thru_mgmt_sck(pass_thru_mgmt_sck),

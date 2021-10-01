@@ -379,6 +379,10 @@ module caravan (
 	wire mgmt_ena_ro;
     wire [7:0] mgmt_addr_ro;
     wire [31:0] mgmt_rdata_ro;
+    wire [31:0] hkspi_sram_rdata;
+    wire [7:0] hkspi_sram_addr;
+    wire hkspi_sram_clk;
+    wire hkspi_sram_csb;
 
     mgmt_core soc (
 	`ifdef USE_POWER_PINS
@@ -464,7 +468,12 @@ module caravan (
     		// MGMT area RO interface
     		.mgmt_ena_ro(mgmt_ena_ro),
     		.mgmt_addr_ro(mgmt_addr_ro),
-    		.mgmt_rdata_ro(mgmt_rdata_ro)
+    		.mgmt_rdata_ro(mgmt_rdata_ro),
+		// HKSPI RO interface
+		.hkspi_sram_clk(hkspi_sram_clk),
+		.hkspi_sram_csb(hkspi_sram_csb),
+		.hkspi_sram_addr(hkspi_sram_addr),
+		.hkspi_sram_rdata(hkspi_sram_rdata)
     	);
 
 	/* Clock and reset to user space are passed through a tristate	*/
@@ -867,7 +876,11 @@ module caravan (
         // Management RO interface
         .mgmt_ena_ro(mgmt_ena_ro),
         .mgmt_addr_ro(mgmt_addr_ro),
-        .mgmt_rdata_ro(mgmt_rdata_ro)
+        .mgmt_rdata_ro(mgmt_rdata_ro),
+	.hkspi_sram_clk(hkspi_sram_clk),
+	.hkspi_sram_csb(hkspi_sram_csb),
+	.hkspi_sram_addr(hkspi_sram_addr),
+	.hkspi_sram_rdata(hkspi_sram_rdata)
 	);
 
 endmodule

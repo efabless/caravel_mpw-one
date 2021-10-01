@@ -62,6 +62,9 @@
 // Register 17:	 PLL output divider (3 bits)
 // Register 18:	 PLL feedback divider (5 bits)
 // Register 19:  User GPIO bit-bang control (5 bits)
+// Register 20:  SRAM read-only control (2 bits)
+// Register 21:  SRAM read-only address (8 bits)
+// Register 22-25:  SRAM read-only data (32 bits)
 //------------------------------------------------------------
 
 module housekeeping_spi(
@@ -72,6 +75,7 @@ module housekeeping_spi(
     pll_ena, pll_dco_ena, pll_div, pll_sel,
     pll90_sel, pll_trim, pll_bypass, irq, reset,
     gpio_clock, gpio_resetn, gpio_data_1, gpio_data_2, gpio_enable,
+    sram_clk, sram_csb, sram_addr, sram_rdata,
     trap, mask_rev_in,
     pass_thru_mgmt_reset, pass_thru_user_reset,
     pass_thru_mgmt_sck, pass_thru_mgmt_csb,
@@ -112,6 +116,12 @@ module housekeeping_spi(
     output gpio_data_1;
     output gpio_data_2;
 
+    // Bit-bang control of SRAM block 2nd read port
+    output sram_clk;
+    output sram_csb;
+    output [7:0] sram_addr;
+    input [31:0] sram_rdata;
+
     // Pass-through programming mode for management area SPI flash
     output pass_thru_mgmt_reset;
     output pass_thru_user_reset;
@@ -140,6 +150,9 @@ module housekeeping_spi(
     reg gpio_resetn;
     reg gpio_data_1;
     reg gpio_data_2;
+    reg sram_clk;
+    reg sram_csb;
+    reg [7:0] sram_addr;
 
     wire [7:0] odata;
     wire [7:0] idata;
@@ -225,6 +238,12 @@ module housekeeping_spi(
     (iaddr == 8'h12) ? {3'b000, pll_div} :
     (iaddr == 8'h13) ? {3'b000, gpio_data_2, gpio_data_1, gpio_clock,
 			gpio_resetn, gpio_enable} :
+    (iaddr == 8'h14) ? {6'b000000, sram_clk, sram_csb} :
+    (iaddr == 8'h15) ? sram_addr :
+    (iaddr == 8'h16) ? sram_rdata[7:0] :
+    (iaddr == 8'h17) ? sram_rdata[15:8] :
+    (iaddr == 8'h18) ? sram_rdata[23:16] :
+    (iaddr == 8'h19) ? sram_rdata[31:24] :
                8'h00;	// Default
 
     // Register mapping and I/O to slave module
@@ -247,6 +266,9 @@ module housekeeping_spi(
 	gpio_data_2 <= 1'b0;
 	gpio_clock <= 1'b0;
 	gpio_resetn <= 1'b0;
+	sram_clk <= 1'b0;
+	sram_csb <= 1'b1;
+	sram_addr <= 8'd0;
     end else if (wrstb == 1'b1) begin
         case (iaddr)
         8'h08: begin
@@ -289,6 +311,14 @@ module housekeeping_spi(
 	     gpio_data_1 <= idata[3];
 	     gpio_data_2 <= idata[4];
 	       end
+	8'h14: begin
+	     sram_csb <= idata[0];
+	     sram_clk <= idata[1];
+	       end
+	8'h15: begin
+	     sram_addr <= idata;
+	       end
+	// Registers 0x16-0x19 are read-only
         endcase	// (iaddr)
     end
     end
