@@ -489,7 +489,7 @@ $(RCX_BLOCKS): rcx-% : ./def/%.def
 		link_design $*;\
 		read_spef ./def/tmp/$*.spef;\
 		read_sdc -echo ./openlane/$*/base.sdc;\
-		report_checks -fields {capacitance slew input_pins nets fanout} -path_delay min_max;\
+		report_checks -fields {capacitance slew input_pins nets fanout} -path_delay min_max -group_count 1000;\
 		" > ./def/tmp/or_sta_$*.tcl 
 	docker run -it -v $(OPENLANE_ROOT):/openLANE_flow -v $(PDK_ROOT):$(PDK_ROOT) -v $(PWD):/caravel -e PDK_ROOT=$(PDK_ROOT) -u $(shell id -u $(USER)):$(shell id -g $(USER)) $(OPENLANE_IMAGE_NAME) \
 	sh -c "cd /caravel; openroad -exit ./def/tmp/or_sta_$*.tcl |& tee ./def/tmp/or_sta_$*.log" 
