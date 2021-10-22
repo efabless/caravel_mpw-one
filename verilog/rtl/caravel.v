@@ -565,7 +565,7 @@ module caravel (
     gpio_control_block_alt #(
 	.DM_INIT(`DM_INIT),	// Mode = output, strong up/down
 	.OENB_INIT(`OENB_INIT)	// Enable output signaling from wire
-    ) gpio_control_bidir_1 [0] (
+    ) gpio_control_bidir_1_0 (
     	`ifdef USE_POWER_PINS
 			.vccd(vccd_core),
 			.vssd(vssd_core),
@@ -579,7 +579,7 @@ module caravel (
     	.serial_clock(gpio_clock_1_shifted[0]),
 
     	.resetn_out(gpio_resetn_1[0]),
-    	.serial_clock_out(gpio_clock_1[1:0]),
+    	.serial_clock_out(gpio_clock_1[0]),
 
     	.mgmt_gpio_in(mgmt_io_in[0]),
 		.mgmt_gpio_out(jtag_out),
@@ -615,7 +615,7 @@ module caravel (
     gpio_control_block #(
 	.DM_INIT(`DM_INIT),	// Mode = output, strong up/down
 	.OENB_INIT(`OENB_INIT)	// Enable output signaling from wire
-    ) gpio_control_bidir_1 [1] (
+    ) gpio_control_bidir_1_1 (
     	`ifdef USE_POWER_PINS
 			.vccd(vccd_core),
 			.vssd(vssd_core),
@@ -665,7 +665,7 @@ module caravel (
     /* Section 1 GPIOs (GPIO 0 to 18) */
     wire [`MPRJ_IO_PADS_1-3:0] one_loop1;
 
-    gpio_control_block gpio_control_in_1 [2:0] (
+    gpio_control_block gpio_control_in_1a [2:0] (
     `ifdef USE_POWER_PINS
         .vccd(vccd_core),
 		.vssd(vssd_core),
@@ -712,7 +712,7 @@ module caravel (
     	.pad_gpio_in(mprj_io_in[4:2])
     );
 
-    gpio_control_block_alt gpio_control_in_1 [`MPRJ_IO_PADS_1-3:3] (
+    gpio_control_block_alt gpio_control_in_1b [`MPRJ_IO_PADS_1-6:0] (
     `ifdef USE_POWER_PINS
         .vccd(vccd_core),
 		.vssd(vssd_core),

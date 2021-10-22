@@ -622,7 +622,7 @@ module caravan (
     gpio_control_block_alt #(
 	.DM_INIT(`DM_INIT),	// Mode = output, strong up/down
 	.OENB_INIT(`OENB_INIT)	// Enable output signaling from wire
-    ) gpio_control_bidir_1 [0] (
+    ) gpio_control_bidir_1_0 (
    	`ifdef USE_POWER_PINS
 			.vccd(vccd_core),
 			.vssd(vssd_core),
@@ -636,7 +636,7 @@ module caravan (
 	.serial_clock(gpio_clock_1_shifted[0]),
 
 	.resetn_out(gpio_resetn_1[0]),
-	.serial_clock_out(gpio_clock_1[1:0]),
+	.serial_clock_out(gpio_clock_1[0]),
 
     	.mgmt_gpio_in(mgmt_io_in[0]),
 	.mgmt_gpio_out(jtag_out),
@@ -672,7 +672,7 @@ module caravan (
     gpio_control_block #(
 	.DM_INIT(`DM_INIT),	// Mode = output, strong up/down
 	.OENB_INIT(`OENB_INIT)	// Enable output signaling from wire
-    ) gpio_control_bidir_1 [1] (
+    ) gpio_control_bidir_1_1 (
    	`ifdef USE_POWER_PINS
 			.vccd(vccd_core),
 			.vssd(vssd_core),
@@ -722,7 +722,7 @@ module caravan (
     /* Section 1 GPIOs (GPIO 0 to 18) */
     wire [`MPRJ_IO_PADS_1-`ANALOG_PADS_1-3:0] one_loop1;
 
-    gpio_control_block gpio_control_in_1 [2:0] (
+    gpio_control_block gpio_control_in_1a [2:0] (
     `ifdef USE_POWER_PINS
         .vccd(vccd_core),
 		.vssd(vssd_core),
@@ -742,7 +742,7 @@ module caravan (
 	.mgmt_gpio_out(mgmt_io_in[4:2]),
 	.mgmt_gpio_oeb(one_loop1[2:0]),
 
-        .one(one_loop1),
+        .one(one_loop1[2:0]),
         .zero(),
 
     	// Serial data chain for pad configuration
@@ -769,7 +769,7 @@ module caravan (
     	.pad_gpio_in(mprj_io_in[4:2])
     );
 
-    gpio_control_block_alt gpio_control_in_1 [`MPRJ_IO_PADS_1-`ANALOG_PADS_1-6:0] (
+    gpio_control_block_alt gpio_control_in_1b [`MPRJ_IO_PADS_1-`ANALOG_PADS_1-6:0] (
     `ifdef USE_POWER_PINS
         .vccd(vccd_core),
 		.vssd(vssd_core),
@@ -789,7 +789,7 @@ module caravan (
 	.mgmt_gpio_out(mgmt_io_in[`DIG1_TOP:5]),
 	.mgmt_gpio_oeb(one_loop1[(`MPRJ_IO_PADS_1-`ANALOG_PADS_1-3):3]),
 
-        .one(one_loop1),
+        .one(one_loop1[(`MPRJ_IO_PADS_1-`ANALOG_PADS_1-3):3]),
         .zero(),
 
     	// Serial data chain for pad configuration
