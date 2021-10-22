@@ -2462,7 +2462,7 @@ module caravel(vddio, vddio_2, vssio, vssio_2, vdda, vssa, vccd, vssd, vdda1, vd
   wire \xbar_sel_o_core[3] ;
   wire xbar_stb_o_core;
   wire xbar_we_o_core;
-  gpio_control_block \gpio_control_bidir_1[0]  (
+  gpio_control_block_alt \gpio_control_bidir_1[0]  (
     .mgmt_gpio_in(\mgmt_io_in[0] ),
     .mgmt_gpio_oeb(jtag_outenb),
     .mgmt_gpio_out(jtag_out),
@@ -2526,7 +2526,7 @@ module caravel(vddio, vddio_2, vssio, vssio_2, vdda, vssa, vccd, vssd, vdda1, vd
     .vssd1(vssd1_core),
     .zero()
   );
-  gpio_control_block \gpio_control_bidir_2[0]  (
+  gpio_control_block_alt \gpio_control_bidir_2[0]  (
     .mgmt_gpio_in(\mgmt_io_in[36] ),
     .mgmt_gpio_oeb(flash_io2_oeb_core),
     .mgmt_gpio_out(gpio_flash_io2_out),
@@ -2558,7 +2558,7 @@ module caravel(vddio, vddio_2, vssio, vssio_2, vdda, vssa, vccd, vssd, vdda1, vd
     .vssd1(vssd1_core),
     .zero()
   );
-  gpio_control_block \gpio_control_bidir_2[1]  (
+  gpio_control_block_alt \gpio_control_bidir_2[1]  (
     .mgmt_gpio_in(\mgmt_io_in[37] ),
     .mgmt_gpio_oeb(flash_io3_oeb_core),
     .mgmt_gpio_out(gpio_flash_io3_out),
@@ -2622,7 +2622,7 @@ module caravel(vddio, vddio_2, vssio, vssio_2, vdda, vssa, vccd, vssd, vdda1, vd
     .vssd1(vssd1_core),
     .zero()
   );
-  gpio_control_block \gpio_control_in_1[10]  (
+  gpio_control_block_alt \gpio_control_in_1[10]  (
     .mgmt_gpio_in(\mgmt_io_in[12] ),
     .mgmt_gpio_oeb(\one_loop1[12] ),
     .mgmt_gpio_out(\mgmt_io_in[12] ),
@@ -2654,7 +2654,7 @@ module caravel(vddio, vddio_2, vssio, vssio_2, vdda, vssa, vccd, vssd, vdda1, vd
     .vssd1(vssd1_core),
     .zero()
   );
-  gpio_control_block \gpio_control_in_1[11]  (
+  gpio_control_block_alt \gpio_control_in_1[11]  (
     .mgmt_gpio_in(\mgmt_io_in[13] ),
     .mgmt_gpio_oeb(\one_loop1[13] ),
     .mgmt_gpio_out(\mgmt_io_in[13] ),
@@ -2686,7 +2686,7 @@ module caravel(vddio, vddio_2, vssio, vssio_2, vdda, vssa, vccd, vssd, vdda1, vd
     .vssd1(vssd1_core),
     .zero()
   );
-  gpio_control_block \gpio_control_in_1[12]  (
+  gpio_control_block_alt \gpio_control_in_1[12]  (
     .mgmt_gpio_in(\mgmt_io_in[14] ),
     .mgmt_gpio_oeb(\one_loop1[14] ),
     .mgmt_gpio_out(\mgmt_io_in[14] ),
@@ -2718,7 +2718,7 @@ module caravel(vddio, vddio_2, vssio, vssio_2, vdda, vssa, vccd, vssd, vdda1, vd
     .vssd1(vssd1_core),
     .zero()
   );
-  gpio_control_block \gpio_control_in_1[13]  (
+  gpio_control_block_alt \gpio_control_in_1[13]  (
     .mgmt_gpio_in(\mgmt_io_in[15] ),
     .mgmt_gpio_oeb(\one_loop1[15] ),
     .mgmt_gpio_out(\mgmt_io_in[15] ),
@@ -2750,7 +2750,7 @@ module caravel(vddio, vddio_2, vssio, vssio_2, vdda, vssa, vccd, vssd, vdda1, vd
     .vssd1(vssd1_core),
     .zero()
   );
-  gpio_control_block \gpio_control_in_1[14]  (
+  gpio_control_block_alt \gpio_control_in_1[14]  (
     .mgmt_gpio_in(\mgmt_io_in[16] ),
     .mgmt_gpio_oeb(\one_loop1[16] ),
     .mgmt_gpio_out(\mgmt_io_in[16] ),
@@ -2782,7 +2782,7 @@ module caravel(vddio, vddio_2, vssio, vssio_2, vdda, vssa, vccd, vssd, vdda1, vd
     .vssd1(vssd1_core),
     .zero()
   );
-  gpio_control_block \gpio_control_in_1[15]  (
+  gpio_control_block_alt \gpio_control_in_1[15]  (
     .mgmt_gpio_in(\mgmt_io_in[17] ),
     .mgmt_gpio_oeb(\one_loop1[17] ),
     .mgmt_gpio_out(\mgmt_io_in[17] ),
@@ -2814,7 +2814,7 @@ module caravel(vddio, vddio_2, vssio, vssio_2, vdda, vssa, vccd, vssd, vdda1, vd
     .vssd1(vssd1_core),
     .zero()
   );
-  gpio_control_block \gpio_control_in_1[16]  (
+  gpio_control_block_alt \gpio_control_in_1[16]  (
     .mgmt_gpio_in(\mgmt_io_in[18] ),
     .mgmt_gpio_oeb(\one_loop1[18] ),
     .mgmt_gpio_out(\mgmt_io_in[18] ),
@@ -2910,7 +2910,7 @@ module caravel(vddio, vddio_2, vssio, vssio_2, vdda, vssa, vccd, vssd, vdda1, vd
     .vssd1(vssd1_core),
     .zero()
   );
-  gpio_control_block \gpio_control_in_1[3]  (
+  gpio_control_block_alt \gpio_control_in_1[3]  (
     .mgmt_gpio_in(\mgmt_io_in[5] ),
     .mgmt_gpio_oeb(\one_loop1[5] ),
     .mgmt_gpio_out(\mgmt_io_in[5] ),
@@ -2942,7 +2942,7 @@ module caravel(vddio, vddio_2, vssio, vssio_2, vdda, vssa, vccd, vssd, vdda1, vd
     .vssd1(vssd1_core),
     .zero()
   );
-  gpio_control_block \gpio_control_in_1[4]  (
+  gpio_control_block_alt \gpio_control_in_1[4]  (
     .mgmt_gpio_in(\mgmt_io_in[6] ),
     .mgmt_gpio_oeb(\one_loop1[6] ),
     .mgmt_gpio_out(\mgmt_io_in[6] ),
@@ -2974,7 +2974,7 @@ module caravel(vddio, vddio_2, vssio, vssio_2, vdda, vssa, vccd, vssd, vdda1, vd
     .vssd1(vssd1_core),
     .zero()
   );
-  gpio_control_block \gpio_control_in_1[5]  (
+  gpio_control_block_alt \gpio_control_in_1[5]  (
     .mgmt_gpio_in(\mgmt_io_in[7] ),
     .mgmt_gpio_oeb(\one_loop1[7] ),
     .mgmt_gpio_out(\mgmt_io_in[7] ),
@@ -3006,7 +3006,7 @@ module caravel(vddio, vddio_2, vssio, vssio_2, vdda, vssa, vccd, vssd, vdda1, vd
     .vssd1(vssd1_core),
     .zero()
   );
-  gpio_control_block \gpio_control_in_1[6]  (
+  gpio_control_block_alt \gpio_control_in_1[6]  (
     .mgmt_gpio_in(\mgmt_io_in[8] ),
     .mgmt_gpio_oeb(\one_loop1[8] ),
     .mgmt_gpio_out(\mgmt_io_in[8] ),
@@ -3038,7 +3038,7 @@ module caravel(vddio, vddio_2, vssio, vssio_2, vdda, vssa, vccd, vssd, vdda1, vd
     .vssd1(vssd1_core),
     .zero()
   );
-  gpio_control_block \gpio_control_in_1[7]  (
+  gpio_control_block_alt \gpio_control_in_1[7]  (
     .mgmt_gpio_in(\mgmt_io_in[9] ),
     .mgmt_gpio_oeb(\one_loop1[9] ),
     .mgmt_gpio_out(\mgmt_io_in[9] ),
@@ -3070,7 +3070,7 @@ module caravel(vddio, vddio_2, vssio, vssio_2, vdda, vssa, vccd, vssd, vdda1, vd
     .vssd1(vssd1_core),
     .zero()
   );
-  gpio_control_block \gpio_control_in_1[8]  (
+  gpio_control_block_alt \gpio_control_in_1[8]  (
     .mgmt_gpio_in(\mgmt_io_in[10] ),
     .mgmt_gpio_oeb(\one_loop1[10] ),
     .mgmt_gpio_out(\mgmt_io_in[10] ),
@@ -3102,7 +3102,7 @@ module caravel(vddio, vddio_2, vssio, vssio_2, vdda, vssa, vccd, vssd, vdda1, vd
     .vssd1(vssd1_core),
     .zero()
   );
-  gpio_control_block \gpio_control_in_1[9]  (
+  gpio_control_block_alt \gpio_control_in_1[9]  (
     .mgmt_gpio_in(\mgmt_io_in[11] ),
     .mgmt_gpio_oeb(\one_loop1[11] ),
     .mgmt_gpio_out(\mgmt_io_in[11] ),
@@ -3134,7 +3134,7 @@ module caravel(vddio, vddio_2, vssio, vssio_2, vdda, vssa, vccd, vssd, vdda1, vd
     .vssd1(vssd1_core),
     .zero()
   );
-  gpio_control_block \gpio_control_in_2[0]  (
+  gpio_control_block_alt \gpio_control_in_2[0]  (
     .mgmt_gpio_in(\mgmt_io_in[19] ),
     .mgmt_gpio_oeb(\one_loop2[0] ),
     .mgmt_gpio_out(\mgmt_io_in[19] ),
@@ -3166,7 +3166,7 @@ module caravel(vddio, vddio_2, vssio, vssio_2, vdda, vssa, vccd, vssd, vdda1, vd
     .vssd1(vssd1_core),
     .zero()
   );
-  gpio_control_block \gpio_control_in_2[10]  (
+  gpio_control_block_alt \gpio_control_in_2[10]  (
     .mgmt_gpio_in(\mgmt_io_in[29] ),
     .mgmt_gpio_oeb(\one_loop2[10] ),
     .mgmt_gpio_out(\mgmt_io_in[29] ),
@@ -3198,7 +3198,7 @@ module caravel(vddio, vddio_2, vssio, vssio_2, vdda, vssa, vccd, vssd, vdda1, vd
     .vssd1(vssd1_core),
     .zero()
   );
-  gpio_control_block \gpio_control_in_2[11]  (
+  gpio_control_block_alt \gpio_control_in_2[11]  (
     .mgmt_gpio_in(\mgmt_io_in[30] ),
     .mgmt_gpio_oeb(\one_loop2[11] ),
     .mgmt_gpio_out(\mgmt_io_in[30] ),
@@ -3230,7 +3230,7 @@ module caravel(vddio, vddio_2, vssio, vssio_2, vdda, vssa, vccd, vssd, vdda1, vd
     .vssd1(vssd1_core),
     .zero()
   );
-  gpio_control_block \gpio_control_in_2[12]  (
+  gpio_control_block_alt \gpio_control_in_2[12]  (
     .mgmt_gpio_in(\mgmt_io_in[31] ),
     .mgmt_gpio_oeb(\one_loop2[12] ),
     .mgmt_gpio_out(\mgmt_io_in[31] ),
@@ -3262,7 +3262,7 @@ module caravel(vddio, vddio_2, vssio, vssio_2, vdda, vssa, vccd, vssd, vdda1, vd
     .vssd1(vssd1_core),
     .zero()
   );
-  gpio_control_block \gpio_control_in_2[13]  (
+  gpio_control_block_alt \gpio_control_in_2[13]  (
     .mgmt_gpio_in(\mgmt_io_in[32] ),
     .mgmt_gpio_oeb(\one_loop2[13] ),
     .mgmt_gpio_out(\mgmt_io_in[32] ),
@@ -3294,7 +3294,7 @@ module caravel(vddio, vddio_2, vssio, vssio_2, vdda, vssa, vccd, vssd, vdda1, vd
     .vssd1(vssd1_core),
     .zero()
   );
-  gpio_control_block \gpio_control_in_2[14]  (
+  gpio_control_block_alt \gpio_control_in_2[14]  (
     .mgmt_gpio_in(\mgmt_io_in[33] ),
     .mgmt_gpio_oeb(\one_loop2[14] ),
     .mgmt_gpio_out(\mgmt_io_in[33] ),
@@ -3326,7 +3326,7 @@ module caravel(vddio, vddio_2, vssio, vssio_2, vdda, vssa, vccd, vssd, vdda1, vd
     .vssd1(vssd1_core),
     .zero()
   );
-  gpio_control_block \gpio_control_in_2[15]  (
+  gpio_control_block_alt \gpio_control_in_2[15]  (
     .mgmt_gpio_in(\mgmt_io_in[34] ),
     .mgmt_gpio_oeb(\one_loop2[15] ),
     .mgmt_gpio_out(\mgmt_io_in[34] ),
@@ -3358,7 +3358,7 @@ module caravel(vddio, vddio_2, vssio, vssio_2, vdda, vssa, vccd, vssd, vdda1, vd
     .vssd1(vssd1_core),
     .zero()
   );
-  gpio_control_block \gpio_control_in_2[16]  (
+  gpio_control_block_alt \gpio_control_in_2[16]  (
     .mgmt_gpio_in(\mgmt_io_in[35] ),
     .mgmt_gpio_oeb(\one_loop2[16] ),
     .mgmt_gpio_out(\mgmt_io_in[35] ),
@@ -3390,7 +3390,7 @@ module caravel(vddio, vddio_2, vssio, vssio_2, vdda, vssa, vccd, vssd, vdda1, vd
     .vssd1(vssd1_core),
     .zero()
   );
-  gpio_control_block \gpio_control_in_2[1]  (
+  gpio_control_block_alt \gpio_control_in_2[1]  (
     .mgmt_gpio_in(\mgmt_io_in[20] ),
     .mgmt_gpio_oeb(\one_loop2[1] ),
     .mgmt_gpio_out(\mgmt_io_in[20] ),
@@ -3422,7 +3422,7 @@ module caravel(vddio, vddio_2, vssio, vssio_2, vdda, vssa, vccd, vssd, vdda1, vd
     .vssd1(vssd1_core),
     .zero()
   );
-  gpio_control_block \gpio_control_in_2[2]  (
+  gpio_control_block_alt \gpio_control_in_2[2]  (
     .mgmt_gpio_in(\mgmt_io_in[21] ),
     .mgmt_gpio_oeb(\one_loop2[2] ),
     .mgmt_gpio_out(\mgmt_io_in[21] ),
@@ -3454,7 +3454,7 @@ module caravel(vddio, vddio_2, vssio, vssio_2, vdda, vssa, vccd, vssd, vdda1, vd
     .vssd1(vssd1_core),
     .zero()
   );
-  gpio_control_block \gpio_control_in_2[3]  (
+  gpio_control_block_alt \gpio_control_in_2[3]  (
     .mgmt_gpio_in(\mgmt_io_in[22] ),
     .mgmt_gpio_oeb(\one_loop2[3] ),
     .mgmt_gpio_out(\mgmt_io_in[22] ),
@@ -3486,7 +3486,7 @@ module caravel(vddio, vddio_2, vssio, vssio_2, vdda, vssa, vccd, vssd, vdda1, vd
     .vssd1(vssd1_core),
     .zero()
   );
-  gpio_control_block \gpio_control_in_2[4]  (
+  gpio_control_block_alt \gpio_control_in_2[4]  (
     .mgmt_gpio_in(\mgmt_io_in[23] ),
     .mgmt_gpio_oeb(\one_loop2[4] ),
     .mgmt_gpio_out(\mgmt_io_in[23] ),
@@ -3518,7 +3518,7 @@ module caravel(vddio, vddio_2, vssio, vssio_2, vdda, vssa, vccd, vssd, vdda1, vd
     .vssd1(vssd1_core),
     .zero()
   );
-  gpio_control_block \gpio_control_in_2[5]  (
+  gpio_control_block_alt \gpio_control_in_2[5]  (
     .mgmt_gpio_in(\mgmt_io_in[24] ),
     .mgmt_gpio_oeb(\one_loop2[5] ),
     .mgmt_gpio_out(\mgmt_io_in[24] ),
@@ -3550,7 +3550,7 @@ module caravel(vddio, vddio_2, vssio, vssio_2, vdda, vssa, vccd, vssd, vdda1, vd
     .vssd1(vssd1_core),
     .zero()
   );
-  gpio_control_block \gpio_control_in_2[6]  (
+  gpio_control_block_alt \gpio_control_in_2[6]  (
     .mgmt_gpio_in(\mgmt_io_in[25] ),
     .mgmt_gpio_oeb(\one_loop2[6] ),
     .mgmt_gpio_out(\mgmt_io_in[25] ),
@@ -3582,7 +3582,7 @@ module caravel(vddio, vddio_2, vssio, vssio_2, vdda, vssa, vccd, vssd, vdda1, vd
     .vssd1(vssd1_core),
     .zero()
   );
-  gpio_control_block \gpio_control_in_2[7]  (
+  gpio_control_block_alt \gpio_control_in_2[7]  (
     .mgmt_gpio_in(\mgmt_io_in[26] ),
     .mgmt_gpio_oeb(\one_loop2[7] ),
     .mgmt_gpio_out(\mgmt_io_in[26] ),
@@ -3614,7 +3614,7 @@ module caravel(vddio, vddio_2, vssio, vssio_2, vdda, vssa, vccd, vssd, vdda1, vd
     .vssd1(vssd1_core),
     .zero()
   );
-  gpio_control_block \gpio_control_in_2[8]  (
+  gpio_control_block_alt \gpio_control_in_2[8]  (
     .mgmt_gpio_in(\mgmt_io_in[27] ),
     .mgmt_gpio_oeb(\one_loop2[8] ),
     .mgmt_gpio_out(\mgmt_io_in[27] ),
@@ -3646,7 +3646,7 @@ module caravel(vddio, vddio_2, vssio, vssio_2, vdda, vssa, vccd, vssd, vdda1, vd
     .vssd1(vssd1_core),
     .zero()
   );
-  gpio_control_block \gpio_control_in_2[9]  (
+  gpio_control_block_alt \gpio_control_in_2[9]  (
     .mgmt_gpio_in(\mgmt_io_in[28] ),
     .mgmt_gpio_oeb(\one_loop2[9] ),
     .mgmt_gpio_out(\mgmt_io_in[28] ),

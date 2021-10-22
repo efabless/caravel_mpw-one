@@ -72,10 +72,12 @@ void main()
 	reg_mprj_io_7  = GPIO_MODE_MGMT_STD_OUTPUT;
 	reg_mprj_io_6  = GPIO_MODE_MGMT_STD_OUTPUT;
 	reg_mprj_io_5  = GPIO_MODE_MGMT_STD_OUTPUT;
-	reg_mprj_io_4  = GPIO_MODE_MGMT_STD_OUTPUT;
-	// reg_mprj_io_3  = GPIO_MODE_MGMT_STD_OUTPUT;
-	reg_mprj_io_2  = GPIO_MODE_MGMT_STD_OUTPUT;
-	reg_mprj_io_1  = GPIO_MODE_MGMT_STD_OUTPUT;
+	// NOTE:  On caravel MPW-two metal fix, GPIOs 1 to 4 have
+	// an inverted sense for the management disable bit (bit 0)
+	reg_mprj_io_4  = GPIO_MODE_USER_STD_OUTPUT;
+	// reg_mprj_io_3  = GPIO_MODE_USER_STD_OUTPUT;
+	reg_mprj_io_2  = GPIO_MODE_USER_STD_OUTPUT;
+	reg_mprj_io_1  = GPIO_MODE_USER_STD_OUTPUT;
 	reg_mprj_io_0  = GPIO_MODE_MGMT_STD_OUTPUT;
 
 	/* Apply configuration */

@@ -57959,7 +57959,7 @@ use gpio_control_block  gpio_control_bidir_1\[1\] ../maglef
 timestamp 1625662158
 transform -1 0 710203 0 1 164000
 box -1620 -364 34000 13964
-use gpio_control_block  gpio_control_bidir_1\[0\]
+use gpio_control_block_alt  gpio_control_bidir_1\[0\]
 timestamp 1625662158
 transform -1 0 710203 0 1 118400
 box -1620 -364 34000 13964
@@ -57975,15 +57975,15 @@ use mgmt_core  soc ../maglef
 timestamp 1625662158
 transform 1 0 190434 0 1 53602
 box 0 0 450000 168026
-use gpio_control_block  gpio_control_bidir_2\[0\]
+use gpio_control_block_alt  gpio_control_bidir_2\[0\]
 timestamp 1625662158
 transform 1 0 7631 0 1 242800
 box -1620 -364 34000 13964
-use gpio_control_block  gpio_control_bidir_2\[1\]
+use gpio_control_block_alt  gpio_control_bidir_2\[1\]
 timestamp 1625662158
 transform 1 0 7631 0 1 199600
 box -1620 -364 34000 13964
-use gpio_control_block  gpio_control_in_2\[10\]
+use gpio_control_block_alt  gpio_control_in_2\[10\]
 timestamp 1625662158
 transform 1 0 7631 0 1 286000
 box -1620 -364 34000 13964
@@ -57999,11 +57999,11 @@ use gpio_control_block  gpio_control_in_1\[1\]
 timestamp 1625662158
 transform -1 0 710203 0 1 253600
 box -1620 -364 34000 13964
-use gpio_control_block  gpio_control_in_2\[8\]
+use gpio_control_block_alt  gpio_control_in_2\[8\]
 timestamp 1625662158
 transform 1 0 7631 0 1 372400
 box -1620 -364 34000 13964
-use gpio_control_block  gpio_control_in_2\[9\]
+use gpio_control_block_alt  gpio_control_in_2\[9\]
 timestamp 1625662158
 transform 1 0 7631 0 1 329200
 box -1620 -364 34000 13964
@@ -58011,71 +58011,71 @@ use gpio_control_block  gpio_control_in_1\[2\]
 timestamp 1625662158
 transform -1 0 710203 0 1 298800
 box -1620 -364 34000 13964
-use gpio_control_block  gpio_control_in_1\[3\]
+use gpio_control_block_alt  gpio_control_in_1\[3\]
 timestamp 1625662158
 transform -1 0 710203 0 1 344600
 box -1620 -364 34000 13964
-use gpio_control_block  gpio_control_in_2\[7\]
+use gpio_control_block_alt  gpio_control_in_2\[7\]
 timestamp 1625662158
 transform 1 0 7631 0 1 415000
 box -1620 -364 34000 13964
-use gpio_control_block  gpio_control_in_2\[6\]
+use gpio_control_block_alt  gpio_control_in_2\[6\]
 timestamp 1625662158
 transform 1 0 7631 0 1 462400
 box -1620 -364 34000 13964
-use gpio_control_block  gpio_control_in_1\[5\]
+use gpio_control_block_alt  gpio_control_in_1\[5\]
 timestamp 1625662158
 transform -1 0 710203 0 1 477200
 box -1620 -364 34000 13964
-use gpio_control_block  gpio_control_in_1\[4\]
+use gpio_control_block_alt  gpio_control_in_1\[4\]
 timestamp 1625662158
 transform -1 0 710203 0 1 389000
 box -1620 -364 34000 13964
-use gpio_control_block  gpio_control_in_2\[5\]
+use gpio_control_block_alt  gpio_control_in_2\[5\]
 timestamp 1625662158
 transform 1 0 7631 0 1 588224
 box -1620 -364 34000 13964
-use gpio_control_block  gpio_control_in_2\[4\]
+use gpio_control_block_alt  gpio_control_in_2\[4\]
 timestamp 1625662158
 transform 1 0 7631 0 1 631400
 box -1620 -364 34000 13964
-use gpio_control_block  gpio_control_in_2\[3\]
+use gpio_control_block_alt  gpio_control_in_2\[3\]
 timestamp 1625662158
 transform 1 0 7631 0 1 674600
 box -1620 -364 34000 13964
-use gpio_control_block  gpio_control_in_1\[9\]
+use gpio_control_block_alt  gpio_control_in_1\[9\]
 timestamp 1625662158
 transform -1 0 710203 0 1 657000
 box -1620 -364 34000 13964
-use gpio_control_block  gpio_control_in_1\[8\]
+use gpio_control_block_alt  gpio_control_in_1\[8\]
 timestamp 1625662158
 transform -1 0 710203 0 1 611800
 box -1620 -364 34000 13964
-use gpio_control_block  gpio_control_in_1\[7\]
+use gpio_control_block_alt  gpio_control_in_1\[7\]
 timestamp 1625662158
 transform -1 0 710203 0 1 564800
 box -1620 -364 34000 13964
-use gpio_control_block  gpio_control_in_1\[6\]
+use gpio_control_block_alt  gpio_control_in_1\[6\]
 timestamp 1625662158
 transform -1 0 710203 0 1 521600
 box -1620 -364 34000 13964
-use gpio_control_block  gpio_control_in_2\[2\]
+use gpio_control_block_alt  gpio_control_in_2\[2\]
 timestamp 1625662158
 transform 1 0 7631 0 1 717800
 box -1620 -364 34000 13964
-use gpio_control_block  gpio_control_in_2\[1\]
+use gpio_control_block_alt  gpio_control_in_2\[1\]
 timestamp 1625662158
 transform 1 0 7631 0 1 761000
 box -1620 -364 34000 13964
-use gpio_control_block  gpio_control_in_2\[0\]
+use gpio_control_block_alt  gpio_control_in_2\[0\]
 timestamp 1625662158
 transform 1 0 7631 0 1 804200
 box -1620 -364 34000 13964
-use gpio_control_block  gpio_control_in_1\[10\]
+use gpio_control_block_alt  gpio_control_in_1\[10\]
 timestamp 1625662158
 transform -1 0 710203 0 1 702000
 box -1620 -364 34000 13964
-use gpio_control_block  gpio_control_in_1\[11\]
+use gpio_control_block_alt  gpio_control_in_1\[11\]
 timestamp 1625662158
 transform -1 0 710203 0 1 880800
 box -1620 -364 34000 13964

@@ -197,20 +197,27 @@ extern uint32_t flashio_worker_end;
 #define DIGITAL_MODE_MASK 0x1c00
 
 // Useful GPIO mode values
-#define GPIO_MODE_MGMT_STD_INPUT_NOPULL    0x0403
-#define GPIO_MODE_MGMT_STD_INPUT_PULLDOWN  0x0803
-#define GPIO_MODE_MGMT_STD_INPUT_PULLUP	   0x0c03
-#define GPIO_MODE_MGMT_STD_OUTPUT	   0x1809
-#define GPIO_MODE_MGMT_STD_BIDIRECTIONAL   0x1801
-#define GPIO_MODE_MGMT_STD_ANALOG   	   0x000b
+// Important note!  GPIOs 1 to 4 have a reversed bit for
+// management disable that requires swapping the values
+// for "USER" and "MGMT" for these four pins.  Normally, use
+// of these pins for user project purposes is discouraged, so
+// it should not be a major issue.
 
-#define GPIO_MODE_USER_STD_INPUT_NOPULL	   0x0402
-#define GPIO_MODE_USER_STD_INPUT_PULLDOWN  0x0802
-#define GPIO_MODE_USER_STD_INPUT_PULLUP	   0x0c02
-#define GPIO_MODE_USER_STD_OUTPUT	   0x1808
-#define GPIO_MODE_USER_STD_BIDIRECTIONAL   0x1800
-#define GPIO_MODE_USER_STD_OUT_MONITORED   0x1802
-#define GPIO_MODE_USER_STD_ANALOG   	   0x000a
+#define GPIO_MODE_USER_STD_INPUT_NOPULL    0x0403
+#define GPIO_MODE_USER_STD_INPUT_PULLDOWN  0x0803
+#define GPIO_MODE_USER_STD_INPUT_PULLUP	   0x0c03
+#define GPIO_MODE_USER_STD_OUTPUT	   0x1809
+#define GPIO_MODE_USER_STD_BIDIRECTIONAL   0x1801
+#define GPIO_MODE_USER_STD_OUT_MONITORED   0x1803
+#define GPIO_MODE_USER_STD_ANALOG   	   0x000b
+
+#define GPIO_MODE_MGMT_STD_INPUT_NOPULL	   0x0402
+#define GPIO_MODE_MGMT_STD_INPUT_PULLDOWN  0x0802
+#define GPIO_MODE_MGMT_STD_INPUT_PULLUP	   0x0c02
+#define GPIO_MODE_MGMT_STD_OUTPUT	   0x1808
+#define GPIO_MODE_MGMT_STD_BIDIRECTIONAL   0x1800
+#define GPIO_MODE_MGMT_STD_OUT_MONITORED   0x1802
+#define GPIO_MODE_MGMT_STD_ANALOG   	   0x000a
 
 // --------------------------------------------------------
 #endif

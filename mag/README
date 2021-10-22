@@ -1,0 +1,27 @@
+Changes made for MPW-two metal fix
+October 22, 2021
+Tim Edwards, Efabless, Inc.
+----------------------------------
+Fixes made only on mask layers m2, via2, and m3.
+
+(1) mgmt_core:  All 32 clock buffers at the 5th tier of the clock
+		tree had their outputs tied together in as much
+		of a grid as possible, to pull the timing closer
+		together.
+
+(2) gpio_control_block:  A new cell gpio_control_block_alt was
+		made, having an inverted sense for the "mgmt_ena"
+		bit, effectively making it "management disable".
+		This modified control block is used everywhere
+		except the four pins used by the SPI, which need
+		to retain their original setting.  This change
+		makes all other GPIO pins user-controlled
+		bidirectional pads.
+
+(3) defs.h:  The values for "USER" and "MGMT" are swapped for
+		the definitions of various GPIO configurations.
+
+NOTE:  This change requires that all testbenches swap "USER"
+and "MGMT" for any settings in the C program for GPIOs 1 to 4,
+which have been left unchanged and therefore are now reversed
+with respect to the definition in defs.h.

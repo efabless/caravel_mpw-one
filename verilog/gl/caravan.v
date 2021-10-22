@@ -2194,7 +2194,7 @@ module caravan(vddio, vddio_2, vssio, vssio_2, vdda, vssa, vccd, vssd, vdda1, vd
   inout vssio;
   inout vssio_2;
   wire vssio_core;
-  gpio_control_block \gpio_control_bidir_1[0]  (
+  gpio_control_block_alt \gpio_control_bidir_1[0]  (
     .mgmt_gpio_in(\mgmt_io_in[0] ),
     .mgmt_gpio_oeb(jtag_outenb),
     .mgmt_gpio_out(jtag_out),
@@ -2258,7 +2258,7 @@ module caravan(vddio, vddio_2, vssio, vssio_2, vdda, vssa, vccd, vssd, vdda1, vd
     .vssd1(vssd1_core),
     .zero()
   );
-  gpio_control_block \gpio_control_bidir_2[0]  (
+  gpio_control_block_alt \gpio_control_bidir_2[0]  (
     .mgmt_gpio_in(\mgmt_io_in[36] ),
     .mgmt_gpio_oeb(flash_io2_oeb_core),
     .mgmt_gpio_out(gpio_flash_io2_out),
@@ -2290,7 +2290,7 @@ module caravan(vddio, vddio_2, vssio, vssio_2, vdda, vssa, vccd, vssd, vdda1, vd
     .vssd1(vssd1_core),
     .zero()
   );
-  gpio_control_block \gpio_control_bidir_2[1]  (
+  gpio_control_block_alt \gpio_control_bidir_2[1]  (
     .mgmt_gpio_in(\mgmt_io_in[37] ),
     .mgmt_gpio_oeb(flash_io3_oeb_core),
     .mgmt_gpio_out(gpio_flash_io3_out),
@@ -2354,7 +2354,7 @@ module caravan(vddio, vddio_2, vssio, vssio_2, vdda, vssa, vccd, vssd, vdda1, vd
     .vssd1(vssd1_core),
     .zero()
   );
-  gpio_control_block \gpio_control_in_1[10]  (
+  gpio_control_block_alt \gpio_control_in_1[10]  (
     .mgmt_gpio_in(\mgmt_io_in[12] ),
     .mgmt_gpio_oeb(\one_loop1[10] ),
     .mgmt_gpio_out(\mgmt_io_in[12] ),
@@ -2386,7 +2386,7 @@ module caravan(vddio, vddio_2, vssio, vssio_2, vdda, vssa, vccd, vssd, vdda1, vd
     .vssd1(vssd1_core),
     .zero()
   );
-  gpio_control_block \gpio_control_in_1[11]  (
+  gpio_control_block_alt \gpio_control_in_1[11]  (
     .mgmt_gpio_in(\mgmt_io_in[13] ),
     .mgmt_gpio_oeb(\one_loop1[11] ),
     .mgmt_gpio_out(\mgmt_io_in[13] ),
@@ -2482,7 +2482,7 @@ module caravan(vddio, vddio_2, vssio, vssio_2, vdda, vssa, vccd, vssd, vdda1, vd
     .vssd1(vssd1_core),
     .zero()
   );
-  gpio_control_block \gpio_control_in_1[3]  (
+  gpio_control_block_alt \gpio_control_in_1[3]  (
     .mgmt_gpio_in(\mgmt_io_in[5] ),
     .mgmt_gpio_oeb(\one_loop1[3] ),
     .mgmt_gpio_out(\mgmt_io_in[5] ),
@@ -2514,7 +2514,7 @@ module caravan(vddio, vddio_2, vssio, vssio_2, vdda, vssa, vccd, vssd, vdda1, vd
     .vssd1(vssd1_core),
     .zero()
   );
-  gpio_control_block \gpio_control_in_1[4]  (
+  gpio_control_block_alt \gpio_control_in_1[4]  (
     .mgmt_gpio_in(\mgmt_io_in[6] ),
     .mgmt_gpio_oeb(\one_loop1[4] ),
     .mgmt_gpio_out(\mgmt_io_in[6] ),
@@ -2546,7 +2546,7 @@ module caravan(vddio, vddio_2, vssio, vssio_2, vdda, vssa, vccd, vssd, vdda1, vd
     .vssd1(vssd1_core),
     .zero()
   );
-  gpio_control_block \gpio_control_in_1[5]  (
+  gpio_control_block_alt \gpio_control_in_1[5]  (
     .mgmt_gpio_in(\mgmt_io_in[7] ),
     .mgmt_gpio_oeb(\one_loop1[5] ),
     .mgmt_gpio_out(\mgmt_io_in[7] ),
@@ -2578,7 +2578,7 @@ module caravan(vddio, vddio_2, vssio, vssio_2, vdda, vssa, vccd, vssd, vdda1, vd
     .vssd1(vssd1_core),
     .zero()
   );
-  gpio_control_block \gpio_control_in_1[6]  (
+  gpio_control_block_alt \gpio_control_in_1[6]  (
     .mgmt_gpio_in(\mgmt_io_in[8] ),
     .mgmt_gpio_oeb(\one_loop1[6] ),
     .mgmt_gpio_out(\mgmt_io_in[8] ),
@@ -2610,7 +2610,7 @@ module caravan(vddio, vddio_2, vssio, vssio_2, vdda, vssa, vccd, vssd, vdda1, vd
     .vssd1(vssd1_core),
     .zero()
   );
-  gpio_control_block \gpio_control_in_1[7]  (
+  gpio_control_block_alt \gpio_control_in_1[7]  (
     .mgmt_gpio_in(\mgmt_io_in[9] ),
     .mgmt_gpio_oeb(\one_loop1[7] ),
     .mgmt_gpio_out(\mgmt_io_in[9] ),
@@ -2642,7 +2642,7 @@ module caravan(vddio, vddio_2, vssio, vssio_2, vdda, vssa, vccd, vssd, vdda1, vd
     .vssd1(vssd1_core),
     .zero()
   );
-  gpio_control_block \gpio_control_in_1[8]  (
+  gpio_control_block_alt \gpio_control_in_1[8]  (
     .mgmt_gpio_in(\mgmt_io_in[10] ),
     .mgmt_gpio_oeb(\one_loop1[8] ),
     .mgmt_gpio_out(\mgmt_io_in[10] ),
@@ -2674,7 +2674,7 @@ module caravan(vddio, vddio_2, vssio, vssio_2, vdda, vssa, vccd, vssd, vdda1, vd
     .vssd1(vssd1_core),
     .zero()
   );
-  gpio_control_block \gpio_control_in_1[9]  (
+  gpio_control_block_alt \gpio_control_in_1[9]  (
     .mgmt_gpio_in(\mgmt_io_in[11] ),
     .mgmt_gpio_oeb(\one_loop1[9] ),
     .mgmt_gpio_out(\mgmt_io_in[11] ),
@@ -2706,7 +2706,7 @@ module caravan(vddio, vddio_2, vssio, vssio_2, vdda, vssa, vccd, vssd, vdda1, vd
     .vssd1(vssd1_core),
     .zero()
   );
-  gpio_control_block \gpio_control_in_2[0]  (
+  gpio_control_block_alt \gpio_control_in_2[0]  (
     .mgmt_gpio_in(\mgmt_io_in[25] ),
     .mgmt_gpio_oeb(\one_loop2[0] ),
     .mgmt_gpio_out(\mgmt_io_in[25] ),
@@ -2738,7 +2738,7 @@ module caravan(vddio, vddio_2, vssio, vssio_2, vdda, vssa, vccd, vssd, vdda1, vd
     .vssd1(vssd1_core),
     .zero()
   );
-  gpio_control_block \gpio_control_in_2[10]  (
+  gpio_control_block_alt \gpio_control_in_2[10]  (
     .mgmt_gpio_in(\mgmt_io_in[35] ),
     .mgmt_gpio_oeb(\one_loop2[10] ),
     .mgmt_gpio_out(\mgmt_io_in[35] ),
@@ -2770,7 +2770,7 @@ module caravan(vddio, vddio_2, vssio, vssio_2, vdda, vssa, vccd, vssd, vdda1, vd
     .vssd1(vssd1_core),
     .zero()
   );
-  gpio_control_block \gpio_control_in_2[1]  (
+  gpio_control_block_alt \gpio_control_in_2[1]  (
     .mgmt_gpio_in(\mgmt_io_in[26] ),
     .mgmt_gpio_oeb(\one_loop2[1] ),
     .mgmt_gpio_out(\mgmt_io_in[26] ),
@@ -2802,7 +2802,7 @@ module caravan(vddio, vddio_2, vssio, vssio_2, vdda, vssa, vccd, vssd, vdda1, vd
     .vssd1(vssd1_core),
     .zero()
   );
-  gpio_control_block \gpio_control_in_2[2]  (
+  gpio_control_block_alt \gpio_control_in_2[2]  (
     .mgmt_gpio_in(\mgmt_io_in[27] ),
     .mgmt_gpio_oeb(\one_loop2[2] ),
     .mgmt_gpio_out(\mgmt_io_in[27] ),
@@ -2834,7 +2834,7 @@ module caravan(vddio, vddio_2, vssio, vssio_2, vdda, vssa, vccd, vssd, vdda1, vd
     .vssd1(vssd1_core),
     .zero()
   );
-  gpio_control_block \gpio_control_in_2[3]  (
+  gpio_control_block_alt \gpio_control_in_2[3]  (
     .mgmt_gpio_in(\mgmt_io_in[28] ),
     .mgmt_gpio_oeb(\one_loop2[3] ),
     .mgmt_gpio_out(\mgmt_io_in[28] ),
@@ -2866,7 +2866,7 @@ module caravan(vddio, vddio_2, vssio, vssio_2, vdda, vssa, vccd, vssd, vdda1, vd
     .vssd1(vssd1_core),
     .zero()
   );
-  gpio_control_block \gpio_control_in_2[4]  (
+  gpio_control_block_alt \gpio_control_in_2[4]  (
     .mgmt_gpio_in(\mgmt_io_in[29] ),
     .mgmt_gpio_oeb(\one_loop2[4] ),
     .mgmt_gpio_out(\mgmt_io_in[29] ),
@@ -2898,7 +2898,7 @@ module caravan(vddio, vddio_2, vssio, vssio_2, vdda, vssa, vccd, vssd, vdda1, vd
     .vssd1(vssd1_core),
     .zero()
   );
-  gpio_control_block \gpio_control_in_2[5]  (
+  gpio_control_block_alt \gpio_control_in_2[5]  (
     .mgmt_gpio_in(\mgmt_io_in[30] ),
     .mgmt_gpio_oeb(\one_loop2[5] ),
     .mgmt_gpio_out(\mgmt_io_in[30] ),
@@ -2930,7 +2930,7 @@ module caravan(vddio, vddio_2, vssio, vssio_2, vdda, vssa, vccd, vssd, vdda1, vd
     .vssd1(vssd1_core),
     .zero()
   );
-  gpio_control_block \gpio_control_in_2[6]  (
+  gpio_control_block_alt \gpio_control_in_2[6]  (
     .mgmt_gpio_in(\mgmt_io_in[31] ),
     .mgmt_gpio_oeb(\one_loop2[6] ),
     .mgmt_gpio_out(\mgmt_io_in[31] ),
@@ -2962,7 +2962,7 @@ module caravan(vddio, vddio_2, vssio, vssio_2, vdda, vssa, vccd, vssd, vdda1, vd
     .vssd1(vssd1_core),
     .zero()
   );
-  gpio_control_block \gpio_control_in_2[7]  (
+  gpio_control_block_alt \gpio_control_in_2[7]  (
     .mgmt_gpio_in(\mgmt_io_in[32] ),
     .mgmt_gpio_oeb(\one_loop2[7] ),
     .mgmt_gpio_out(\mgmt_io_in[32] ),
@@ -2994,7 +2994,7 @@ module caravan(vddio, vddio_2, vssio, vssio_2, vdda, vssa, vccd, vssd, vdda1, vd
     .vssd1(vssd1_core),
     .zero()
   );
-  gpio_control_block \gpio_control_in_2[8]  (
+  gpio_control_block_alt \gpio_control_in_2[8]  (
     .mgmt_gpio_in(\mgmt_io_in[33] ),
     .mgmt_gpio_oeb(\one_loop2[8] ),
     .mgmt_gpio_out(\mgmt_io_in[33] ),
@@ -3026,7 +3026,7 @@ module caravan(vddio, vddio_2, vssio, vssio_2, vdda, vssa, vccd, vssd, vdda1, vd
     .vssd1(vssd1_core),
     .zero()
   );
-  gpio_control_block \gpio_control_in_2[9]  (
+  gpio_control_block_alt \gpio_control_in_2[9]  (
     .mgmt_gpio_in(\mgmt_io_in[34] ),
     .mgmt_gpio_oeb(\one_loop2[9] ),
     .mgmt_gpio_out(\mgmt_io_in[34] ),
