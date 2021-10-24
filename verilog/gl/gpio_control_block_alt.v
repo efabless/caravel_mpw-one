@@ -826,7 +826,7 @@ module gpio_control_block_alt (mgmt_gpio_in,
     .VNB(vssd),
     .VPB(vccd),
     .VPWR(vccd));
- sky130_fd_sc_hd__diode_2 ANTENNA_3 (.DIODE(user_gpio_out),
+ sky130_fd_sc_hd__diode_2 ANTENNA_3 (.DIODE(_004_),
     .VGND(vssd),
     .VNB(vssd),
     .VPB(vccd),
