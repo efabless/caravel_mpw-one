@@ -18,7 +18,7 @@ BLOCKS = $(shell find * -maxdepth 0 -type d)
 CONFIG = $(foreach block,$(BLOCKS), ./$(block)/config.tcl)
 CLEAN = $(foreach block,$(BLOCKS), clean-$(block))
 
-OPENLANE_TAG ?= 2021.09.19_20.25.16
+OPENLANE_TAG ?= mpw-3a
 OPENLANE_IMAGE_NAME ?= efabless/openlane:$(OPENLANE_TAG)
 OPENLANE_BASIC_COMMAND = "cd /project/openlane && flow.tcl -design ./$* -save_path .. -save -tag $* -overwrite"
 OPENLANE_INTERACTIVE_COMMAND = "cd /project/openlane && flow.tcl -it -file ./$*/interactive.tcl"
@@ -71,7 +71,7 @@ ifeq ($(OPENLANE_ROOT),)
 	@echo "Please export OPENLANE_ROOT"
 	@exit 1
 endif
-	git clone https://github.com/The-OpenROAD-Project/OpenLane --branch=$(OPENLANE_TAG) --depth=1 $(OPENLANE_ROOT) && \
+	git clone https://github.com/efabless/OpenLane --branch=$(OPENLANE_TAG) --depth=1 $(OPENLANE_ROOT) && \
 		cd $(OPENLANE_ROOT) && \
 		export IMAGE_NAME=efabless/openlane:$(OPENLANE_TAG) && \
 		make openlane
