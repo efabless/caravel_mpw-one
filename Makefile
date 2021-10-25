@@ -60,7 +60,7 @@ SPECIAL_VOLTAGE_LIBRARY ?= sky130_fd_sc_hvl
 IO_LIBRARY ?= sky130_fd_io
 PRIMITIVES_LIBRARY ?= sky130_fd_pr
 SKYWATER_COMMIT ?= c094b6e83a4f9298e47f696ec5a7fd53535ec5eb
-OPEN_PDKS_COMMIT ?= 6c05bc48dc88784f9d98b89d6791cdfd91526676
+OPEN_PDKS_COMMIT ?= 14db32aa8ba330e88632ff3ad2ff52f4f4dae1ad
 INSTALL_SRAM ?= disabled
 
 .DEFAULT_GOAL := ship
@@ -483,13 +483,14 @@ $(RCX_BLOCKS): rcx-% : ./def/%.def
 			}\
 		};\
 		set_cmd_units -time ns -capacitance pF -current mA -voltage V -resistance kOhm -distance um;\
-		read_liberty -min ${PDK_ROOT}/sky130A/libs.ref/${STD_CELL_LIBRARY}/lib/${STD_CELL_LIBRARY}__ff_n40C_1v95.lib;\
-		read_liberty -max ${PDK_ROOT}/sky130A/libs.ref/${STD_CELL_LIBRARY}/lib/${STD_CELL_LIBRARY}__ss_100C_1v60.lib;\
+		read_liberty $(PDK_ROOT)/sky130A/libs.ref/$(STD_CELL_LIBRARY)/lib/$(STD_CELL_LIBRARY)__tt_025C_1v80.lib;\
 		read_verilog ./verilog/gl/$*.v;\
 		link_design $*;\
 		read_spef ./def/tmp/$*.spef;\
 		read_sdc -echo ./openlane/$*/base.sdc;\
-		report_checks -fields {capacitance slew input_pins nets fanout} -path_delay min_max;\
+		write_sdf $*.sdf;\
+		report_checks -fields {capacitance slew input_pins nets fanout} -path_delay min_max -group_count 1000;\
+		report_check_types -max_slew -max_capacitance -max_fanout -violators;\
 		" > ./def/tmp/or_sta_$*.tcl 
 	docker run -it -v $(OPENLANE_ROOT):/openLANE_flow -v $(PDK_ROOT):$(PDK_ROOT) -v $(PWD):/caravel -e PDK_ROOT=$(PDK_ROOT) -u $(shell id -u $(USER)):$(shell id -g $(USER)) $(OPENLANE_IMAGE_NAME) \
 	sh -c "cd /caravel; openroad -exit ./def/tmp/or_sta_$*.tcl |& tee ./def/tmp/or_sta_$*.log" 
