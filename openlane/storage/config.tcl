@@ -24,6 +24,18 @@ set ::env(SYNTH_READ_BLACKBOX_LIB) 1
 set ::env(CLOCK_PORT) "mgmt_clk"
 
 set ::env(CLOCK_PERIOD) "50"
+set ::env(DESIGN_IS_CORE) 1
+set ::env(DESIGN_IS_CORE) 1
+set ::env(DESIGN_IS_CORE) 1
+
+set ::env(CLOCK_PORT) "mgmt_clk"
+set ::env(CLOCK_PERIOD) "10"
+
+set ::env(CLOCK_PORT) "mgmt_clk"
+set ::env(CLOCK_PERIOD) "10"
+
+set ::env(CLOCK_PORT) "mgmt_clk"
+set ::env(CLOCK_PERIOD) "10"
 
 set ::env(CLOCK_TREE_SYNTH) 0
 
@@ -33,6 +45,8 @@ set ::env(FP_PIN_ORDER_CFG) $script_dir/pin_order.cfg
 # set ::env(FP_CORE_UTIL) 40
 set ::env(FP_SIZING) absolute
 set ::env(DIE_AREA) "0 0 460 960"
+#set ::env(PDN_CFG) $script_dir/pdn.tcl
+set ::env(FP_PIN_ORDER_CFG) $script_dir/pin_order.cfg
 
 set ::env(FP_HORIZONTAL_HALO) 4
 set ::env(FP_VERTICAL_HALO) 20
