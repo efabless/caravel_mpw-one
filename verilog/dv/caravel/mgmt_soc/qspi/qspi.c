@@ -39,7 +39,12 @@ void main()
 	/* Set data out to zero */
 	reg_mprj_datal = 0;
 
-	/* Lower 8 pins are input and upper 8 pins are output */
+	/* Ensure that the SPI flash IO2 and IO3 pins are set 	*/
+	/* to be under management control.			*/
+	reg_mprj_io_37 = GPIO_MODE_MGMT_STD_BIDIRECTIONAL;
+	reg_mprj_io_36 = GPIO_MODE_MGMT_STD_BIDIRECTIONAL;
+
+	/* Lower 8 pins are input and upper 8 pins are output	*/
 	reg_mprj_io_31 = GPIO_MODE_MGMT_STD_OUTPUT;
 	reg_mprj_io_30 = GPIO_MODE_MGMT_STD_OUTPUT;
 	reg_mprj_io_29 = GPIO_MODE_MGMT_STD_OUTPUT;
@@ -65,7 +70,6 @@ void main()
 	/* Now the flash SPI controller can be put in qspi/ddr/crm mode */
 	/* First run DSPI + CRM */
 	reg_spictrl = 0x80580000;	// DSPI + CRM
-	
 
 	// change the pull up and pull down (checked by the TB)
 	reg_mprj_datal = 0xa0000000;
