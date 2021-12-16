@@ -433,7 +433,7 @@ $(RCX_BLOCKS): rcx-% : ./def/%.def
 	echo "Running RC Extraction on $*"
 	mkdir -p ./def/tmp 
 	# merge techlef and standard cell lef files
-	python3 $(OPENLANE_ROOT)/scripts/mergeLef.py -i $(PDK_ROOT)/sky130A/libs.ref/$(STD_CELL_LIBRARY)/techlef/$(STD_CELL_LIBRARY).tlef $(PDK_ROOT)/sky130A/libs.ref/$(STD_CELL_LIBRARY)/lef/*.lef -o ./def/tmp/merged.lef
+	python3 $(OPENLANE_ROOT)/scripts/merge_lef.py -i $(PDK_ROOT)/sky130A/libs.ref/$(STD_CELL_LIBRARY)/techlef/$(STD_CELL_LIBRARY).tlef $(PDK_ROOT)/sky130A/libs.ref/$(STD_CELL_LIBRARY)/lef/*.lef -o ./def/tmp/merged.lef
 	echo "\
 		read_liberty $(PDK_ROOT)/sky130A/libs.ref/$(STD_CELL_LIBRARY)/lib/$(STD_CELL_LIBRARY)__tt_025C_1v80.lib;\
 		read_liberty $(PDK_ROOT)/sky130A/libs.ref/$(SPECIAL_VOLTAGE_LIBRARY)/lib/$(SPECIAL_VOLTAGE_LIBRARY)__tt_025C_3v30.lib;\

@@ -34,7 +34,7 @@ OPENLANE_IMAGE_NAME=efabless/openlane:2021.09.16_03.28.21
 echo "Running RC Extraction on $input_def"
 mkdir -p $output_directory
 # merge techlef and standard cell lef files
-python3 $OPENLANE_ROOT/scripts/mergeLef.py -i $PDK_ROOT/sky130A/libs.ref/sky130_fd_sc_hd/techlef/sky130_fd_sc_hd.tlef $PDK_ROOT/sky130A/libs.ref/sky130_fd_sc_hd/lef/*.lef -o $output_directory/merged.lef
+python3 $OPENLANE_ROOT/scripts/merge_lef.py -i $PDK_ROOT/sky130A/libs.ref/sky130_fd_sc_hd/techlef/sky130_fd_sc_hd.tlef $PDK_ROOT/sky130A/libs.ref/sky130_fd_sc_hd/lef/*.lef -o $output_directory/merged.lef
 echo "\
     read_liberty $PDK_ROOT/sky130A/libs.ref/sky130_fd_sc_hd/lib/sky130_fd_sc_hd__tt_025C_1v80.lib;\
     set std_cell_lef $output_directory/merged.lef;\
