@@ -73,7 +73,7 @@ ifeq ($(OPENLANE_ROOT),)
 endif
 	git clone https://github.com/efabless/OpenLane --branch=$(OPENLANE_TAG) --depth=1 $(OPENLANE_ROOT) && \
 		cd $(OPENLANE_ROOT) && \
-		export IMAGE_NAME=efabless/openlane:$(OPENLANE_TAG) && \
+		export OPENLANE_TAG=$(OPENLANE_TAG) && \
 		make openlane
 
 FORCE:
